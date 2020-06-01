@@ -36,8 +36,8 @@ namespace Model
 
   /**
    * <p>The instance type and the Amazon Resource Name (ARN) of the SageMaker image
-   * created on the instance. The ARN is stored as metadata in Amazon SageMaker
-   * Studio notebooks.</p><p><h3>See Also:</h3>   <a
+   * created on the instance. The ARN is stored as metadata in SageMaker Studio
+   * notebooks.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ResourceSpec">AWS
    * API Reference</a></p>
    */

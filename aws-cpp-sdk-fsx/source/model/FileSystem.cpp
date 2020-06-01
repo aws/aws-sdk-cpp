@@ -15,6 +15,7 @@
 
 #include <aws/fsx/model/FileSystem.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/fsx/model/AdministrativeAction.h>
 
 #include <utility>
 
@@ -49,7 +50,8 @@ FileSystem::FileSystem() :
     m_resourceARNHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_windowsConfigurationHasBeenSet(false),
-    m_lustreConfigurationHasBeenSet(false)
+    m_lustreConfigurationHasBeenSet(false),
+    m_administrativeActionsHasBeenSet(false)
 {
 }
 
@@ -74,7 +76,8 @@ FileSystem::FileSystem(JsonView jsonValue) :
     m_resourceARNHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_windowsConfigurationHasBeenSet(false),
-    m_lustreConfigurationHasBeenSet(false)
+    m_lustreConfigurationHasBeenSet(false),
+    m_administrativeActionsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -209,6 +212,16 @@ FileSystem& FileSystem::operator =(JsonView jsonValue)
     m_lustreConfigurationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("AdministrativeActions"))
+  {
+    Array<JsonView> administrativeActionsJsonList = jsonValue.GetArray("AdministrativeActions");
+    for(unsigned administrativeActionsIndex = 0; administrativeActionsIndex < administrativeActionsJsonList.GetLength(); ++administrativeActionsIndex)
+    {
+      m_administrativeActions.push_back(administrativeActionsJsonList[administrativeActionsIndex].AsObject());
+    }
+    m_administrativeActionsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -326,6 +339,17 @@ JsonValue FileSystem::Jsonize() const
   if(m_lustreConfigurationHasBeenSet)
   {
    payload.WithObject("LustreConfiguration", m_lustreConfiguration.Jsonize());
+
+  }
+
+  if(m_administrativeActionsHasBeenSet)
+  {
+   Array<JsonValue> administrativeActionsJsonList(m_administrativeActions.size());
+   for(unsigned administrativeActionsIndex = 0; administrativeActionsIndex < administrativeActionsJsonList.GetLength(); ++administrativeActionsIndex)
+   {
+     administrativeActionsJsonList[administrativeActionsIndex].AsObject(m_administrativeActions[administrativeActionsIndex].Jsonize());
+   }
+   payload.WithArray("AdministrativeActions", std::move(administrativeActionsJsonList));
 
   }
 

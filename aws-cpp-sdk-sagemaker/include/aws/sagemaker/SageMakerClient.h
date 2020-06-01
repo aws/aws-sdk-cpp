@@ -878,14 +878,11 @@ namespace Model
 
         /**
          * <p>Creates a running App for the specified UserProfile. Supported Apps are
-         * <code>JupyterServer</code>, <code>KernelGateway</code>, and
-         * <code>TensorBoard</code>. This operation is automatically invoked by Amazon
-         * SageMaker Studio upon access to the associated Studio Domain, and when new
-         * kernel configurations are selected by the user. A user may have multiple Apps
-         * active simultaneously. Apps will automatically terminate and be deleted when
-         * stopped from within Studio, or when the DeleteApp API is manually called.
-         * UserProfiles are limited to 5 concurrently running Apps at a time.</p><p><h3>See
-         * Also:</h3>   <a
+         * JupyterServer, KernelGateway, and TensorBoard. This operation is automatically
+         * invoked by Amazon SageMaker Studio upon access to the associated Domain, and
+         * when new kernel configurations are selected by the user. A user may have
+         * multiple Apps active simultaneously. UserProfiles are limited to 5 concurrently
+         * running Apps at a time.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateApp">AWS
          * API Reference</a></p>
          */
@@ -893,14 +890,11 @@ namespace Model
 
         /**
          * <p>Creates a running App for the specified UserProfile. Supported Apps are
-         * <code>JupyterServer</code>, <code>KernelGateway</code>, and
-         * <code>TensorBoard</code>. This operation is automatically invoked by Amazon
-         * SageMaker Studio upon access to the associated Studio Domain, and when new
-         * kernel configurations are selected by the user. A user may have multiple Apps
-         * active simultaneously. Apps will automatically terminate and be deleted when
-         * stopped from within Studio, or when the DeleteApp API is manually called.
-         * UserProfiles are limited to 5 concurrently running Apps at a time.</p><p><h3>See
-         * Also:</h3>   <a
+         * JupyterServer, KernelGateway, and TensorBoard. This operation is automatically
+         * invoked by Amazon SageMaker Studio upon access to the associated Domain, and
+         * when new kernel configurations are selected by the user. A user may have
+         * multiple Apps active simultaneously. UserProfiles are limited to 5 concurrently
+         * running Apps at a time.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateApp">AWS
          * API Reference</a></p>
          *
@@ -910,14 +904,11 @@ namespace Model
 
         /**
          * <p>Creates a running App for the specified UserProfile. Supported Apps are
-         * <code>JupyterServer</code>, <code>KernelGateway</code>, and
-         * <code>TensorBoard</code>. This operation is automatically invoked by Amazon
-         * SageMaker Studio upon access to the associated Studio Domain, and when new
-         * kernel configurations are selected by the user. A user may have multiple Apps
-         * active simultaneously. Apps will automatically terminate and be deleted when
-         * stopped from within Studio, or when the DeleteApp API is manually called.
-         * UserProfiles are limited to 5 concurrently running Apps at a time.</p><p><h3>See
-         * Also:</h3>   <a
+         * JupyterServer, KernelGateway, and TensorBoard. This operation is automatically
+         * invoked by Amazon SageMaker Studio upon access to the associated Domain, and
+         * when new kernel configurations are selected by the user. A user may have
+         * multiple Apps active simultaneously. UserProfiles are limited to 5 concurrently
+         * running Apps at a time.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateApp">AWS
          * API Reference</a></p>
          *
@@ -1097,30 +1088,40 @@ namespace Model
         virtual void CreateCompilationJobAsync(const Model::CreateCompilationJobRequest& request, const CreateCompilationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a Domain for Amazon SageMaker Studio, which can be accessed by
-         * end-users in a web browser. A Domain has an associated directory, list of
-         * authorized users, and a variety of security, application, policies, and Amazon
-         * Virtual Private Cloud configurations. An AWS account is limited to one Domain,
-         * per region. Users within a domain can share notebook files and other artifacts
-         * with each other. When a Domain is created, an Amazon Elastic File System (EFS)
-         * is also created for use by all of the users within the Domain. Each user
-         * receives a private home directory within the EFS for notebooks, Git
-         * repositories, and data files. </p><p><h3>See Also:</h3>   <a
+         * <p>Creates a <code>Domain</code> used by SageMaker Studio. A domain consists of
+         * an associated directory, a list of authorized users, and a variety of security,
+         * application, policy, and Amazon Virtual Private Cloud (VPC) configurations. An
+         * AWS account is limited to one domain per region. Users within a domain can share
+         * notebook files and other artifacts with each other.</p> <p>When a domain is
+         * created, an Amazon Elastic File System (EFS) volume is also created for use by
+         * all of the users within the domain. Each user receives a private home directory
+         * within the EFS for notebooks, Git repositories, and data files.</p> <p>All
+         * traffic between the domain and the EFS volume is communicated through the
+         * specified subnet IDs. All other traffic goes over the Internet through an Amazon
+         * SageMaker system VPC. The EFS traffic uses the NFS/TCP protocol over port
+         * 2049.</p> <important> <p>NFS traffic over TCP on port 2049 needs to be allowed
+         * in both inbound and outbound rules in order to launch a SageMaker Studio app
+         * successfully.</p> </important><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateDomain">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateDomainOutcome CreateDomain(const Model::CreateDomainRequest& request) const;
 
         /**
-         * <p>Creates a Domain for Amazon SageMaker Studio, which can be accessed by
-         * end-users in a web browser. A Domain has an associated directory, list of
-         * authorized users, and a variety of security, application, policies, and Amazon
-         * Virtual Private Cloud configurations. An AWS account is limited to one Domain,
-         * per region. Users within a domain can share notebook files and other artifacts
-         * with each other. When a Domain is created, an Amazon Elastic File System (EFS)
-         * is also created for use by all of the users within the Domain. Each user
-         * receives a private home directory within the EFS for notebooks, Git
-         * repositories, and data files. </p><p><h3>See Also:</h3>   <a
+         * <p>Creates a <code>Domain</code> used by SageMaker Studio. A domain consists of
+         * an associated directory, a list of authorized users, and a variety of security,
+         * application, policy, and Amazon Virtual Private Cloud (VPC) configurations. An
+         * AWS account is limited to one domain per region. Users within a domain can share
+         * notebook files and other artifacts with each other.</p> <p>When a domain is
+         * created, an Amazon Elastic File System (EFS) volume is also created for use by
+         * all of the users within the domain. Each user receives a private home directory
+         * within the EFS for notebooks, Git repositories, and data files.</p> <p>All
+         * traffic between the domain and the EFS volume is communicated through the
+         * specified subnet IDs. All other traffic goes over the Internet through an Amazon
+         * SageMaker system VPC. The EFS traffic uses the NFS/TCP protocol over port
+         * 2049.</p> <important> <p>NFS traffic over TCP on port 2049 needs to be allowed
+         * in both inbound and outbound rules in order to launch a SageMaker Studio app
+         * successfully.</p> </important><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateDomain">AWS
          * API Reference</a></p>
          *
@@ -1129,15 +1130,20 @@ namespace Model
         virtual Model::CreateDomainOutcomeCallable CreateDomainCallable(const Model::CreateDomainRequest& request) const;
 
         /**
-         * <p>Creates a Domain for Amazon SageMaker Studio, which can be accessed by
-         * end-users in a web browser. A Domain has an associated directory, list of
-         * authorized users, and a variety of security, application, policies, and Amazon
-         * Virtual Private Cloud configurations. An AWS account is limited to one Domain,
-         * per region. Users within a domain can share notebook files and other artifacts
-         * with each other. When a Domain is created, an Amazon Elastic File System (EFS)
-         * is also created for use by all of the users within the Domain. Each user
-         * receives a private home directory within the EFS for notebooks, Git
-         * repositories, and data files. </p><p><h3>See Also:</h3>   <a
+         * <p>Creates a <code>Domain</code> used by SageMaker Studio. A domain consists of
+         * an associated directory, a list of authorized users, and a variety of security,
+         * application, policy, and Amazon Virtual Private Cloud (VPC) configurations. An
+         * AWS account is limited to one domain per region. Users within a domain can share
+         * notebook files and other artifacts with each other.</p> <p>When a domain is
+         * created, an Amazon Elastic File System (EFS) volume is also created for use by
+         * all of the users within the domain. Each user receives a private home directory
+         * within the EFS for notebooks, Git repositories, and data files.</p> <p>All
+         * traffic between the domain and the EFS volume is communicated through the
+         * specified subnet IDs. All other traffic goes over the Internet through an Amazon
+         * SageMaker system VPC. The EFS traffic uses the NFS/TCP protocol over port
+         * 2049.</p> <important> <p>NFS traffic over TCP on port 2049 needs to be allowed
+         * in both inbound and outbound rules in order to launch a SageMaker Studio app
+         * successfully.</p> </important><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateDomain">AWS
          * API Reference</a></p>
          *
@@ -1161,16 +1167,27 @@ namespace Model
          * </note> <p>The endpoint name must be unique within an AWS Region in your AWS
          * account. </p> <p>When it receives the request, Amazon SageMaker creates the
          * endpoint, launches the resources (ML compute instances), and deploys the
-         * model(s) on them. </p> <p>When Amazon SageMaker receives the request, it sets
-         * the endpoint status to <code>Creating</code>. After it creates the endpoint, it
-         * sets the status to <code>InService</code>. Amazon SageMaker can then process
-         * incoming requests for inferences. To check the status of an endpoint, use the
-         * <a>DescribeEndpoint</a> API.</p> <p>If any of the models hosted at this endpoint
-         * get model data from an Amazon S3 location, Amazon SageMaker uses AWS Security
-         * Token Service to download model artifacts from the S3 path you provided. AWS STS
-         * is activated in your IAM user account by default. If you previously deactivated
-         * AWS STS for a region, you need to reactivate AWS STS for that region. For more
-         * information, see <a
+         * model(s) on them. </p> <note> <p>When you call <a>CreateEndpoint</a>, a load
+         * call is made to DynamoDB to verify that your endpoint configuration exists. When
+         * you read data from a DynamoDB table supporting <a
+         * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadConsistency.html">
+         * <code>Eventually Consistent Reads</code> </a>, the response might not reflect
+         * the results of a recently completed write operation. The response might include
+         * some stale data. If the dependent entities are not yet in DynamoDB, this causes
+         * a validation error. If you repeat your read request after a short time, the
+         * response should return the latest data. So retry logic is recommended to handle
+         * these possible issues. We also recommend that customers call
+         * <a>DescribeEndpointConfig</a> before calling <a>CreateEndpoint</a> to minimize
+         * the potential impact of a DynamoDB eventually consistent read.</p> </note>
+         * <p>When Amazon SageMaker receives the request, it sets the endpoint status to
+         * <code>Creating</code>. After it creates the endpoint, it sets the status to
+         * <code>InService</code>. Amazon SageMaker can then process incoming requests for
+         * inferences. To check the status of an endpoint, use the <a>DescribeEndpoint</a>
+         * API.</p> <p>If any of the models hosted at this endpoint get model data from an
+         * Amazon S3 location, Amazon SageMaker uses AWS Security Token Service to download
+         * model artifacts from the S3 path you provided. AWS STS is activated in your IAM
+         * user account by default. If you previously deactivated AWS STS for a region, you
+         * need to reactivate AWS STS for that region. For more information, see <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
          * and Deactivating AWS STS in an AWS Region</a> in the <i>AWS Identity and Access
          * Management User Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -1195,16 +1212,27 @@ namespace Model
          * </note> <p>The endpoint name must be unique within an AWS Region in your AWS
          * account. </p> <p>When it receives the request, Amazon SageMaker creates the
          * endpoint, launches the resources (ML compute instances), and deploys the
-         * model(s) on them. </p> <p>When Amazon SageMaker receives the request, it sets
-         * the endpoint status to <code>Creating</code>. After it creates the endpoint, it
-         * sets the status to <code>InService</code>. Amazon SageMaker can then process
-         * incoming requests for inferences. To check the status of an endpoint, use the
-         * <a>DescribeEndpoint</a> API.</p> <p>If any of the models hosted at this endpoint
-         * get model data from an Amazon S3 location, Amazon SageMaker uses AWS Security
-         * Token Service to download model artifacts from the S3 path you provided. AWS STS
-         * is activated in your IAM user account by default. If you previously deactivated
-         * AWS STS for a region, you need to reactivate AWS STS for that region. For more
-         * information, see <a
+         * model(s) on them. </p> <note> <p>When you call <a>CreateEndpoint</a>, a load
+         * call is made to DynamoDB to verify that your endpoint configuration exists. When
+         * you read data from a DynamoDB table supporting <a
+         * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadConsistency.html">
+         * <code>Eventually Consistent Reads</code> </a>, the response might not reflect
+         * the results of a recently completed write operation. The response might include
+         * some stale data. If the dependent entities are not yet in DynamoDB, this causes
+         * a validation error. If you repeat your read request after a short time, the
+         * response should return the latest data. So retry logic is recommended to handle
+         * these possible issues. We also recommend that customers call
+         * <a>DescribeEndpointConfig</a> before calling <a>CreateEndpoint</a> to minimize
+         * the potential impact of a DynamoDB eventually consistent read.</p> </note>
+         * <p>When Amazon SageMaker receives the request, it sets the endpoint status to
+         * <code>Creating</code>. After it creates the endpoint, it sets the status to
+         * <code>InService</code>. Amazon SageMaker can then process incoming requests for
+         * inferences. To check the status of an endpoint, use the <a>DescribeEndpoint</a>
+         * API.</p> <p>If any of the models hosted at this endpoint get model data from an
+         * Amazon S3 location, Amazon SageMaker uses AWS Security Token Service to download
+         * model artifacts from the S3 path you provided. AWS STS is activated in your IAM
+         * user account by default. If you previously deactivated AWS STS for a region, you
+         * need to reactivate AWS STS for that region. For more information, see <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
          * and Deactivating AWS STS in an AWS Region</a> in the <i>AWS Identity and Access
          * Management User Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -1231,16 +1259,27 @@ namespace Model
          * </note> <p>The endpoint name must be unique within an AWS Region in your AWS
          * account. </p> <p>When it receives the request, Amazon SageMaker creates the
          * endpoint, launches the resources (ML compute instances), and deploys the
-         * model(s) on them. </p> <p>When Amazon SageMaker receives the request, it sets
-         * the endpoint status to <code>Creating</code>. After it creates the endpoint, it
-         * sets the status to <code>InService</code>. Amazon SageMaker can then process
-         * incoming requests for inferences. To check the status of an endpoint, use the
-         * <a>DescribeEndpoint</a> API.</p> <p>If any of the models hosted at this endpoint
-         * get model data from an Amazon S3 location, Amazon SageMaker uses AWS Security
-         * Token Service to download model artifacts from the S3 path you provided. AWS STS
-         * is activated in your IAM user account by default. If you previously deactivated
-         * AWS STS for a region, you need to reactivate AWS STS for that region. For more
-         * information, see <a
+         * model(s) on them. </p> <note> <p>When you call <a>CreateEndpoint</a>, a load
+         * call is made to DynamoDB to verify that your endpoint configuration exists. When
+         * you read data from a DynamoDB table supporting <a
+         * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadConsistency.html">
+         * <code>Eventually Consistent Reads</code> </a>, the response might not reflect
+         * the results of a recently completed write operation. The response might include
+         * some stale data. If the dependent entities are not yet in DynamoDB, this causes
+         * a validation error. If you repeat your read request after a short time, the
+         * response should return the latest data. So retry logic is recommended to handle
+         * these possible issues. We also recommend that customers call
+         * <a>DescribeEndpointConfig</a> before calling <a>CreateEndpoint</a> to minimize
+         * the potential impact of a DynamoDB eventually consistent read.</p> </note>
+         * <p>When Amazon SageMaker receives the request, it sets the endpoint status to
+         * <code>Creating</code>. After it creates the endpoint, it sets the status to
+         * <code>InService</code>. Amazon SageMaker can then process incoming requests for
+         * inferences. To check the status of an endpoint, use the <a>DescribeEndpoint</a>
+         * API.</p> <p>If any of the models hosted at this endpoint get model data from an
+         * Amazon S3 location, Amazon SageMaker uses AWS Security Token Service to download
+         * model artifacts from the S3 path you provided. AWS STS is activated in your IAM
+         * user account by default. If you previously deactivated AWS STS for a region, you
+         * need to reactivate AWS STS for that region. For more information, see <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
          * and Deactivating AWS STS in an AWS Region</a> in the <i>AWS Identity and Access
          * Management User Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -1270,7 +1309,19 @@ namespace Model
          * Amazon SageMaker hosting services, see <a
          * href="https://docs.aws.amazon.com/sagemaker/latest/dg/ex1-deploy-model.html#ex1-deploy-model-boto">Deploy
          * the Model to Amazon SageMaker Hosting Services (AWS SDK for Python (Boto
-         * 3)).</a> </p><p><h3>See Also:</h3>   <a
+         * 3)).</a> </p> <note> <p>When you call <a>CreateEndpoint</a>, a load call is made
+         * to DynamoDB to verify that your endpoint configuration exists. When you read
+         * data from a DynamoDB table supporting <a
+         * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadConsistency.html">
+         * <code>Eventually Consistent Reads</code> </a>, the response might not reflect
+         * the results of a recently completed write operation. The response might include
+         * some stale data. If the dependent entities are not yet in DynamoDB, this causes
+         * a validation error. If you repeat your read request after a short time, the
+         * response should return the latest data. So retry logic is recommended to handle
+         * these possible issues. We also recommend that customers call
+         * <a>DescribeEndpointConfig</a> before calling <a>CreateEndpoint</a> to minimize
+         * the potential impact of a DynamoDB eventually consistent read.</p>
+         * </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateEndpointConfig">AWS
          * API Reference</a></p>
          */
@@ -1295,7 +1346,19 @@ namespace Model
          * Amazon SageMaker hosting services, see <a
          * href="https://docs.aws.amazon.com/sagemaker/latest/dg/ex1-deploy-model.html#ex1-deploy-model-boto">Deploy
          * the Model to Amazon SageMaker Hosting Services (AWS SDK for Python (Boto
-         * 3)).</a> </p><p><h3>See Also:</h3>   <a
+         * 3)).</a> </p> <note> <p>When you call <a>CreateEndpoint</a>, a load call is made
+         * to DynamoDB to verify that your endpoint configuration exists. When you read
+         * data from a DynamoDB table supporting <a
+         * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadConsistency.html">
+         * <code>Eventually Consistent Reads</code> </a>, the response might not reflect
+         * the results of a recently completed write operation. The response might include
+         * some stale data. If the dependent entities are not yet in DynamoDB, this causes
+         * a validation error. If you repeat your read request after a short time, the
+         * response should return the latest data. So retry logic is recommended to handle
+         * these possible issues. We also recommend that customers call
+         * <a>DescribeEndpointConfig</a> before calling <a>CreateEndpoint</a> to minimize
+         * the potential impact of a DynamoDB eventually consistent read.</p>
+         * </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateEndpointConfig">AWS
          * API Reference</a></p>
          *
@@ -1322,7 +1385,19 @@ namespace Model
          * Amazon SageMaker hosting services, see <a
          * href="https://docs.aws.amazon.com/sagemaker/latest/dg/ex1-deploy-model.html#ex1-deploy-model-boto">Deploy
          * the Model to Amazon SageMaker Hosting Services (AWS SDK for Python (Boto
-         * 3)).</a> </p><p><h3>See Also:</h3>   <a
+         * 3)).</a> </p> <note> <p>When you call <a>CreateEndpoint</a>, a load call is made
+         * to DynamoDB to verify that your endpoint configuration exists. When you read
+         * data from a DynamoDB table supporting <a
+         * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadConsistency.html">
+         * <code>Eventually Consistent Reads</code> </a>, the response might not reflect
+         * the results of a recently completed write operation. The response might include
+         * some stale data. If the dependent entities are not yet in DynamoDB, this causes
+         * a validation error. If you repeat your read request after a short time, the
+         * response should return the latest data. So retry logic is recommended to handle
+         * these possible issues. We also recommend that customers call
+         * <a>DescribeEndpointConfig</a> before calling <a>CreateEndpoint</a> to minimize
+         * the potential impact of a DynamoDB eventually consistent read.</p>
+         * </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateEndpointConfig">AWS
          * API Reference</a></p>
          *
@@ -1943,9 +2018,9 @@ namespace Model
         /**
          * <p>Creates a URL for a specified UserProfile in a Domain. When accessed in a web
          * browser, the user will be automatically signed in to Amazon SageMaker Studio,
-         * and granted access to all of the Apps and files associated with that Amazon
-         * Elastic File System (EFS). This operation can only be called when AuthMode
-         * equals IAM. </p><p><h3>See Also:</h3>   <a
+         * and granted access to all of the Apps and files associated with the Domain's
+         * Amazon Elastic File System (EFS) volume. This operation can only be called when
+         * the authentication mode equals IAM. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreatePresignedDomainUrl">AWS
          * API Reference</a></p>
          */
@@ -1954,9 +2029,9 @@ namespace Model
         /**
          * <p>Creates a URL for a specified UserProfile in a Domain. When accessed in a web
          * browser, the user will be automatically signed in to Amazon SageMaker Studio,
-         * and granted access to all of the Apps and files associated with that Amazon
-         * Elastic File System (EFS). This operation can only be called when AuthMode
-         * equals IAM. </p><p><h3>See Also:</h3>   <a
+         * and granted access to all of the Apps and files associated with the Domain's
+         * Amazon Elastic File System (EFS) volume. This operation can only be called when
+         * the authentication mode equals IAM. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreatePresignedDomainUrl">AWS
          * API Reference</a></p>
          *
@@ -1967,9 +2042,9 @@ namespace Model
         /**
          * <p>Creates a URL for a specified UserProfile in a Domain. When accessed in a web
          * browser, the user will be automatically signed in to Amazon SageMaker Studio,
-         * and granted access to all of the Apps and files associated with that Amazon
-         * Elastic File System (EFS). This operation can only be called when AuthMode
-         * equals IAM. </p><p><h3>See Also:</h3>   <a
+         * and granted access to all of the Apps and files associated with the Domain's
+         * Amazon Elastic File System (EFS) volume. This operation can only be called when
+         * the authentication mode equals IAM. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreatePresignedDomainUrl">AWS
          * API Reference</a></p>
          *
@@ -1982,14 +2057,16 @@ namespace Model
          * notebook instance. In the Amazon SageMaker console, when you choose
          * <code>Open</code> next to a notebook instance, Amazon SageMaker opens a new tab
          * showing the Jupyter server home page from the notebook instance. The console
-         * uses this API to get the URL and show the page.</p> <p>IAM authorization
-         * policies for this API are also enforced for every HTTP request and WebSocket
-         * frame that attempts to connect to the notebook instance.For example, you can
-         * restrict access to this API and to the URL that it returns to a list of IP
-         * addresses that you specify. Use the <code>NotIpAddress</code> condition operator
-         * and the <code>aws:SourceIP</code> condition context key to specify the list of
-         * IP addresses that you want to have access to the notebook instance. For more
-         * information, see <a
+         * uses this API to get the URL and show the page.</p> <p> The IAM role or user
+         * used to call this API defines the permissions to access the notebook instance.
+         * Once the presigned URL is created, no additional permission is required to
+         * access this URL. IAM authorization policies for this API are also enforced for
+         * every HTTP request and WebSocket frame that attempts to connect to the notebook
+         * instance.</p> <p>You can restrict access to this API and to the URL that it
+         * returns to a list of IP addresses that you specify. Use the
+         * <code>NotIpAddress</code> condition operator and the <code>aws:SourceIP</code>
+         * condition context key to specify the list of IP addresses that you want to have
+         * access to the notebook instance. For more information, see <a
          * href="https://docs.aws.amazon.com/sagemaker/latest/dg/security_iam_id-based-policy-examples.html#nbi-ip-filter">Limit
          * Access to a Notebook Instance by IP Address</a>.</p> <note> <p>The URL that you
          * get from a call to <a>CreatePresignedNotebookInstanceUrl</a> is valid only for 5
@@ -2005,14 +2082,16 @@ namespace Model
          * notebook instance. In the Amazon SageMaker console, when you choose
          * <code>Open</code> next to a notebook instance, Amazon SageMaker opens a new tab
          * showing the Jupyter server home page from the notebook instance. The console
-         * uses this API to get the URL and show the page.</p> <p>IAM authorization
-         * policies for this API are also enforced for every HTTP request and WebSocket
-         * frame that attempts to connect to the notebook instance.For example, you can
-         * restrict access to this API and to the URL that it returns to a list of IP
-         * addresses that you specify. Use the <code>NotIpAddress</code> condition operator
-         * and the <code>aws:SourceIP</code> condition context key to specify the list of
-         * IP addresses that you want to have access to the notebook instance. For more
-         * information, see <a
+         * uses this API to get the URL and show the page.</p> <p> The IAM role or user
+         * used to call this API defines the permissions to access the notebook instance.
+         * Once the presigned URL is created, no additional permission is required to
+         * access this URL. IAM authorization policies for this API are also enforced for
+         * every HTTP request and WebSocket frame that attempts to connect to the notebook
+         * instance.</p> <p>You can restrict access to this API and to the URL that it
+         * returns to a list of IP addresses that you specify. Use the
+         * <code>NotIpAddress</code> condition operator and the <code>aws:SourceIP</code>
+         * condition context key to specify the list of IP addresses that you want to have
+         * access to the notebook instance. For more information, see <a
          * href="https://docs.aws.amazon.com/sagemaker/latest/dg/security_iam_id-based-policy-examples.html#nbi-ip-filter">Limit
          * Access to a Notebook Instance by IP Address</a>.</p> <note> <p>The URL that you
          * get from a call to <a>CreatePresignedNotebookInstanceUrl</a> is valid only for 5
@@ -2030,14 +2109,16 @@ namespace Model
          * notebook instance. In the Amazon SageMaker console, when you choose
          * <code>Open</code> next to a notebook instance, Amazon SageMaker opens a new tab
          * showing the Jupyter server home page from the notebook instance. The console
-         * uses this API to get the URL and show the page.</p> <p>IAM authorization
-         * policies for this API are also enforced for every HTTP request and WebSocket
-         * frame that attempts to connect to the notebook instance.For example, you can
-         * restrict access to this API and to the URL that it returns to a list of IP
-         * addresses that you specify. Use the <code>NotIpAddress</code> condition operator
-         * and the <code>aws:SourceIP</code> condition context key to specify the list of
-         * IP addresses that you want to have access to the notebook instance. For more
-         * information, see <a
+         * uses this API to get the URL and show the page.</p> <p> The IAM role or user
+         * used to call this API defines the permissions to access the notebook instance.
+         * Once the presigned URL is created, no additional permission is required to
+         * access this URL. IAM authorization policies for this API are also enforced for
+         * every HTTP request and WebSocket frame that attempts to connect to the notebook
+         * instance.</p> <p>You can restrict access to this API and to the URL that it
+         * returns to a list of IP addresses that you specify. Use the
+         * <code>NotIpAddress</code> condition operator and the <code>aws:SourceIP</code>
+         * condition context key to specify the list of IP addresses that you want to have
+         * access to the notebook instance. For more information, see <a
          * href="https://docs.aws.amazon.com/sagemaker/latest/dg/security_iam_id-based-policy-examples.html#nbi-ip-filter">Limit
          * Access to a Notebook Instance by IP Address</a>.</p> <note> <p>The URL that you
          * get from a call to <a>CreatePresignedNotebookInstanceUrl</a> is valid only for 5
@@ -2399,13 +2480,13 @@ namespace Model
 
         /**
          * <p>Creates a user profile. A user profile represents a single user within a
-         * Domain, and is the main way to reference a "person" for the purposes of sharing,
-         * reporting and other user-oriented features. This entity is created during
-         * on-boarding to Amazon SageMaker Studio. If an administrator invites a person by
-         * email or imports them from SSO, a UserProfile is automatically created. </p> <p>
-         * This entity is the primary holder of settings for an individual user and,
-         * through the domain, has a reference to the user's private Amazon Elastic File
-         * System (EFS) home directory. </p><p><h3>See Also:</h3>   <a
+         * domain, and is the main way to reference a "person" for the purposes of sharing,
+         * reporting, and other user-oriented features. This entity is created when a user
+         * onboards to Amazon SageMaker Studio. If an administrator invites a person by
+         * email or imports them from SSO, a user profile is automatically created. A user
+         * profile is the primary holder of settings for an individual user and has a
+         * reference to the user's private Amazon Elastic File System (EFS) home directory.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateUserProfile">AWS
          * API Reference</a></p>
          */
@@ -2413,13 +2494,13 @@ namespace Model
 
         /**
          * <p>Creates a user profile. A user profile represents a single user within a
-         * Domain, and is the main way to reference a "person" for the purposes of sharing,
-         * reporting and other user-oriented features. This entity is created during
-         * on-boarding to Amazon SageMaker Studio. If an administrator invites a person by
-         * email or imports them from SSO, a UserProfile is automatically created. </p> <p>
-         * This entity is the primary holder of settings for an individual user and,
-         * through the domain, has a reference to the user's private Amazon Elastic File
-         * System (EFS) home directory. </p><p><h3>See Also:</h3>   <a
+         * domain, and is the main way to reference a "person" for the purposes of sharing,
+         * reporting, and other user-oriented features. This entity is created when a user
+         * onboards to Amazon SageMaker Studio. If an administrator invites a person by
+         * email or imports them from SSO, a user profile is automatically created. A user
+         * profile is the primary holder of settings for an individual user and has a
+         * reference to the user's private Amazon Elastic File System (EFS) home directory.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateUserProfile">AWS
          * API Reference</a></p>
          *
@@ -2429,13 +2510,13 @@ namespace Model
 
         /**
          * <p>Creates a user profile. A user profile represents a single user within a
-         * Domain, and is the main way to reference a "person" for the purposes of sharing,
-         * reporting and other user-oriented features. This entity is created during
-         * on-boarding to Amazon SageMaker Studio. If an administrator invites a person by
-         * email or imports them from SSO, a UserProfile is automatically created. </p> <p>
-         * This entity is the primary holder of settings for an individual user and,
-         * through the domain, has a reference to the user's private Amazon Elastic File
-         * System (EFS) home directory. </p><p><h3>See Also:</h3>   <a
+         * domain, and is the main way to reference a "person" for the purposes of sharing,
+         * reporting, and other user-oriented features. This entity is created when a user
+         * onboards to Amazon SageMaker Studio. If an administrator invites a person by
+         * email or imports them from SSO, a user profile is automatically created. A user
+         * profile is the primary holder of settings for an individual user and has a
+         * reference to the user's private Amazon Elastic File System (EFS) home directory.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateUserProfile">AWS
          * API Reference</a></p>
          *
@@ -2559,20 +2640,20 @@ namespace Model
         virtual void DeleteCodeRepositoryAsync(const Model::DeleteCodeRepositoryRequest& request, const DeleteCodeRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Used to delete a domain. Use with caution. If <code>RetentionPolicy</code> is
-         * set to <code>Delete</code>, all of the members of the domain will lose access to
-         * their EFS volume, including data, notebooks, and other artifacts. </p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Used to delete a domain. If you onboarded with IAM mode, you will need to
+         * delete your domain to onboard again using SSO. Use with caution. All of the
+         * members of the domain will lose access to their EFS volume, including data,
+         * notebooks, and other artifacts. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteDomain">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteDomainOutcome DeleteDomain(const Model::DeleteDomainRequest& request) const;
 
         /**
-         * <p>Used to delete a domain. Use with caution. If <code>RetentionPolicy</code> is
-         * set to <code>Delete</code>, all of the members of the domain will lose access to
-         * their EFS volume, including data, notebooks, and other artifacts. </p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Used to delete a domain. If you onboarded with IAM mode, you will need to
+         * delete your domain to onboard again using SSO. Use with caution. All of the
+         * members of the domain will lose access to their EFS volume, including data,
+         * notebooks, and other artifacts. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteDomain">AWS
          * API Reference</a></p>
          *
@@ -2581,10 +2662,10 @@ namespace Model
         virtual Model::DeleteDomainOutcomeCallable DeleteDomainCallable(const Model::DeleteDomainRequest& request) const;
 
         /**
-         * <p>Used to delete a domain. Use with caution. If <code>RetentionPolicy</code> is
-         * set to <code>Delete</code>, all of the members of the domain will lose access to
-         * their EFS volume, including data, notebooks, and other artifacts. </p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Used to delete a domain. If you onboarded with IAM mode, you will need to
+         * delete your domain to onboard again using SSO. Use with caution. All of the
+         * members of the domain will lose access to their EFS volume, including data,
+         * notebooks, and other artifacts. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteDomain">AWS
          * API Reference</a></p>
          *
@@ -2635,7 +2716,13 @@ namespace Model
         /**
          * <p>Deletes an endpoint configuration. The <code>DeleteEndpointConfig</code> API
          * deletes only the specified configuration. It does not delete endpoints created
-         * using the configuration. </p><p><h3>See Also:</h3>   <a
+         * using the configuration. </p> <p>You must not delete an
+         * <code>EndpointConfig</code> in use by an endpoint that is live or while the
+         * <code>UpdateEndpoint</code> or <code>CreateEndpoint</code> operations are being
+         * performed on the endpoint. If you delete the <code>EndpointConfig</code> of an
+         * endpoint that is active or being created or updated you may lose visibility into
+         * the instance type the endpoint is using. The endpoint must be deleted in order
+         * to stop incurring charges.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteEndpointConfig">AWS
          * API Reference</a></p>
          */
@@ -2644,7 +2731,13 @@ namespace Model
         /**
          * <p>Deletes an endpoint configuration. The <code>DeleteEndpointConfig</code> API
          * deletes only the specified configuration. It does not delete endpoints created
-         * using the configuration. </p><p><h3>See Also:</h3>   <a
+         * using the configuration. </p> <p>You must not delete an
+         * <code>EndpointConfig</code> in use by an endpoint that is live or while the
+         * <code>UpdateEndpoint</code> or <code>CreateEndpoint</code> operations are being
+         * performed on the endpoint. If you delete the <code>EndpointConfig</code> of an
+         * endpoint that is active or being created or updated you may lose visibility into
+         * the instance type the endpoint is using. The endpoint must be deleted in order
+         * to stop incurring charges.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteEndpointConfig">AWS
          * API Reference</a></p>
          *
@@ -2655,7 +2748,13 @@ namespace Model
         /**
          * <p>Deletes an endpoint configuration. The <code>DeleteEndpointConfig</code> API
          * deletes only the specified configuration. It does not delete endpoints created
-         * using the configuration. </p><p><h3>See Also:</h3>   <a
+         * using the configuration. </p> <p>You must not delete an
+         * <code>EndpointConfig</code> in use by an endpoint that is live or while the
+         * <code>UpdateEndpoint</code> or <code>CreateEndpoint</code> operations are being
+         * performed on the endpoint. If you delete the <code>EndpointConfig</code> of an
+         * endpoint that is active or being created or updated you may lose visibility into
+         * the instance type the endpoint is using. The endpoint must be deleted in order
+         * to stop incurring charges.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteEndpointConfig">AWS
          * API Reference</a></p>
          *
@@ -2992,14 +3091,18 @@ namespace Model
         virtual void DeleteTrialComponentAsync(const Model::DeleteTrialComponentRequest& request, const DeleteTrialComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes a user profile.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a user profile. When a user profile is deleted, the user loses access
+         * to their EFS volume, including data, notebooks, and other
+         * artifacts.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteUserProfile">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteUserProfileOutcome DeleteUserProfile(const Model::DeleteUserProfileRequest& request) const;
 
         /**
-         * <p>Deletes a user profile.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a user profile. When a user profile is deleted, the user loses access
+         * to their EFS volume, including data, notebooks, and other
+         * artifacts.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteUserProfile">AWS
          * API Reference</a></p>
          *
@@ -3008,7 +3111,9 @@ namespace Model
         virtual Model::DeleteUserProfileOutcomeCallable DeleteUserProfileCallable(const Model::DeleteUserProfileRequest& request) const;
 
         /**
-         * <p>Deletes a user profile.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a user profile. When a user profile is deleted, the user loses access
+         * to their EFS volume, including data, notebooks, and other
+         * artifacts.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteUserProfile">AWS
          * API Reference</a></p>
          *
@@ -3188,14 +3293,14 @@ namespace Model
         virtual void DescribeCompilationJobAsync(const Model::DescribeCompilationJobRequest& request, const DescribeCompilationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>The desciption of the domain.</p><p><h3>See Also:</h3>   <a
+         * <p>The description of the domain.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeDomain">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeDomainOutcome DescribeDomain(const Model::DescribeDomainRequest& request) const;
 
         /**
-         * <p>The desciption of the domain.</p><p><h3>See Also:</h3>   <a
+         * <p>The description of the domain.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeDomain">AWS
          * API Reference</a></p>
          *
@@ -3204,7 +3309,7 @@ namespace Model
         virtual Model::DescribeDomainOutcomeCallable DescribeDomainCallable(const Model::DescribeDomainRequest& request) const;
 
         /**
-         * <p>The desciption of the domain.</p><p><h3>See Also:</h3>   <a
+         * <p>The description of the domain.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeDomain">AWS
          * API Reference</a></p>
          *
@@ -3705,14 +3810,16 @@ namespace Model
         virtual void DescribeTrialComponentAsync(const Model::DescribeTrialComponentRequest& request, const DescribeTrialComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes the user profile.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes a user profile. For more information, see
+         * <code>CreateUserProfile</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeUserProfile">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeUserProfileOutcome DescribeUserProfile(const Model::DescribeUserProfileRequest& request) const;
 
         /**
-         * <p>Describes the user profile.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes a user profile. For more information, see
+         * <code>CreateUserProfile</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeUserProfile">AWS
          * API Reference</a></p>
          *
@@ -3721,7 +3828,8 @@ namespace Model
         virtual Model::DescribeUserProfileOutcomeCallable DescribeUserProfileCallable(const Model::DescribeUserProfileRequest& request) const;
 
         /**
-         * <p>Describes the user profile.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes a user profile. For more information, see
+         * <code>CreateUserProfile</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeUserProfile">AWS
          * API Reference</a></p>
          *
@@ -5249,7 +5357,7 @@ namespace Model
         virtual void UpdateCodeRepositoryAsync(const Model::UpdateCodeRepositoryRequest& request, const UpdateCodeRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates a domain. Changes will impact all of the people in the
+         * <p>Updates the default settings for new user profiles in the
          * domain.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateDomain">AWS
          * API Reference</a></p>
@@ -5257,7 +5365,7 @@ namespace Model
         virtual Model::UpdateDomainOutcome UpdateDomain(const Model::UpdateDomainRequest& request) const;
 
         /**
-         * <p>Updates a domain. Changes will impact all of the people in the
+         * <p>Updates the default settings for new user profiles in the
          * domain.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateDomain">AWS
          * API Reference</a></p>
@@ -5267,7 +5375,7 @@ namespace Model
         virtual Model::UpdateDomainOutcomeCallable UpdateDomainCallable(const Model::UpdateDomainRequest& request) const;
 
         /**
-         * <p>Updates a domain. Changes will impact all of the people in the
+         * <p>Updates the default settings for new user profiles in the
          * domain.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateDomain">AWS
          * API Reference</a></p>
@@ -5287,7 +5395,11 @@ namespace Model
          * <code>EndpointConfig</code> in use by an endpoint that is live or while the
          * <code>UpdateEndpoint</code> or <code>CreateEndpoint</code> operations are being
          * performed on the endpoint. To update an endpoint, you must create a new
-         * <code>EndpointConfig</code>.</p> </note><p><h3>See Also:</h3>   <a
+         * <code>EndpointConfig</code>.</p> <p>If you delete the
+         * <code>EndpointConfig</code> of an endpoint that is active or being created or
+         * updated you may lose visibility into the instance type the endpoint is using.
+         * The endpoint must be deleted in order to stop incurring charges.</p>
+         * </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateEndpoint">AWS
          * API Reference</a></p>
          */
@@ -5304,7 +5416,11 @@ namespace Model
          * <code>EndpointConfig</code> in use by an endpoint that is live or while the
          * <code>UpdateEndpoint</code> or <code>CreateEndpoint</code> operations are being
          * performed on the endpoint. To update an endpoint, you must create a new
-         * <code>EndpointConfig</code>.</p> </note><p><h3>See Also:</h3>   <a
+         * <code>EndpointConfig</code>.</p> <p>If you delete the
+         * <code>EndpointConfig</code> of an endpoint that is active or being created or
+         * updated you may lose visibility into the instance type the endpoint is using.
+         * The endpoint must be deleted in order to stop incurring charges.</p>
+         * </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateEndpoint">AWS
          * API Reference</a></p>
          *
@@ -5323,7 +5439,11 @@ namespace Model
          * <code>EndpointConfig</code> in use by an endpoint that is live or while the
          * <code>UpdateEndpoint</code> or <code>CreateEndpoint</code> operations are being
          * performed on the endpoint. To update an endpoint, you must create a new
-         * <code>EndpointConfig</code>.</p> </note><p><h3>See Also:</h3>   <a
+         * <code>EndpointConfig</code>.</p> <p>If you delete the
+         * <code>EndpointConfig</code> of an endpoint that is active or being created or
+         * updated you may lose visibility into the instance type the endpoint is using.
+         * The endpoint must be deleted in order to stop incurring charges.</p>
+         * </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateEndpoint">AWS
          * API Reference</a></p>
          *

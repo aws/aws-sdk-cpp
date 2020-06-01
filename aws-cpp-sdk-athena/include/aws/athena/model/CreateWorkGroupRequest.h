@@ -203,50 +203,42 @@ namespace Model
 
 
     /**
-     * <p>One or more tags, separated by commas, that you want to attach to the
-     * workgroup as you create it.</p>
+     * <p>A list of comma separated tags to add to the workgroup that is created.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>One or more tags, separated by commas, that you want to attach to the
-     * workgroup as you create it.</p>
+     * <p>A list of comma separated tags to add to the workgroup that is created.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
-     * <p>One or more tags, separated by commas, that you want to attach to the
-     * workgroup as you create it.</p>
+     * <p>A list of comma separated tags to add to the workgroup that is created.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>One or more tags, separated by commas, that you want to attach to the
-     * workgroup as you create it.</p>
+     * <p>A list of comma separated tags to add to the workgroup that is created.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p>One or more tags, separated by commas, that you want to attach to the
-     * workgroup as you create it.</p>
+     * <p>A list of comma separated tags to add to the workgroup that is created.</p>
      */
     inline CreateWorkGroupRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>One or more tags, separated by commas, that you want to attach to the
-     * workgroup as you create it.</p>
+     * <p>A list of comma separated tags to add to the workgroup that is created.</p>
      */
     inline CreateWorkGroupRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>One or more tags, separated by commas, that you want to attach to the
-     * workgroup as you create it.</p>
+     * <p>A list of comma separated tags to add to the workgroup that is created.</p>
      */
     inline CreateWorkGroupRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     /**
-     * <p>One or more tags, separated by commas, that you want to attach to the
-     * workgroup as you create it.</p>
+     * <p>A list of comma separated tags to add to the workgroup that is created.</p>
      */
     inline CreateWorkGroupRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 

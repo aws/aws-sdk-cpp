@@ -38,8 +38,7 @@ namespace Model
 {
 
   /**
-   * <p>Contains information about an entry in a list of grants.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Contains information about a grant.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/GrantListEntry">AWS
    * API Reference</a></p>
    */
@@ -231,42 +230,90 @@ namespace Model
 
 
     /**
-     * <p>The principal that receives the grant's permissions.</p>
+     * <p>The identity that gets the permissions in the grant.</p> <p>The
+     * <code>GranteePrincipal</code> field in the <code>ListGrants</code> response
+     * usually contains the user or role designated as the grantee principal in the
+     * grant. However, when the grantee principal in the grant is an AWS service, the
+     * <code>GranteePrincipal</code> field contains the <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#principal-services">service
+     * principal</a>, which might represent several different grantee principals.</p>
      */
     inline const Aws::String& GetGranteePrincipal() const{ return m_granteePrincipal; }
 
     /**
-     * <p>The principal that receives the grant's permissions.</p>
+     * <p>The identity that gets the permissions in the grant.</p> <p>The
+     * <code>GranteePrincipal</code> field in the <code>ListGrants</code> response
+     * usually contains the user or role designated as the grantee principal in the
+     * grant. However, when the grantee principal in the grant is an AWS service, the
+     * <code>GranteePrincipal</code> field contains the <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#principal-services">service
+     * principal</a>, which might represent several different grantee principals.</p>
      */
     inline bool GranteePrincipalHasBeenSet() const { return m_granteePrincipalHasBeenSet; }
 
     /**
-     * <p>The principal that receives the grant's permissions.</p>
+     * <p>The identity that gets the permissions in the grant.</p> <p>The
+     * <code>GranteePrincipal</code> field in the <code>ListGrants</code> response
+     * usually contains the user or role designated as the grantee principal in the
+     * grant. However, when the grantee principal in the grant is an AWS service, the
+     * <code>GranteePrincipal</code> field contains the <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#principal-services">service
+     * principal</a>, which might represent several different grantee principals.</p>
      */
     inline void SetGranteePrincipal(const Aws::String& value) { m_granteePrincipalHasBeenSet = true; m_granteePrincipal = value; }
 
     /**
-     * <p>The principal that receives the grant's permissions.</p>
+     * <p>The identity that gets the permissions in the grant.</p> <p>The
+     * <code>GranteePrincipal</code> field in the <code>ListGrants</code> response
+     * usually contains the user or role designated as the grantee principal in the
+     * grant. However, when the grantee principal in the grant is an AWS service, the
+     * <code>GranteePrincipal</code> field contains the <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#principal-services">service
+     * principal</a>, which might represent several different grantee principals.</p>
      */
     inline void SetGranteePrincipal(Aws::String&& value) { m_granteePrincipalHasBeenSet = true; m_granteePrincipal = std::move(value); }
 
     /**
-     * <p>The principal that receives the grant's permissions.</p>
+     * <p>The identity that gets the permissions in the grant.</p> <p>The
+     * <code>GranteePrincipal</code> field in the <code>ListGrants</code> response
+     * usually contains the user or role designated as the grantee principal in the
+     * grant. However, when the grantee principal in the grant is an AWS service, the
+     * <code>GranteePrincipal</code> field contains the <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#principal-services">service
+     * principal</a>, which might represent several different grantee principals.</p>
      */
     inline void SetGranteePrincipal(const char* value) { m_granteePrincipalHasBeenSet = true; m_granteePrincipal.assign(value); }
 
     /**
-     * <p>The principal that receives the grant's permissions.</p>
+     * <p>The identity that gets the permissions in the grant.</p> <p>The
+     * <code>GranteePrincipal</code> field in the <code>ListGrants</code> response
+     * usually contains the user or role designated as the grantee principal in the
+     * grant. However, when the grantee principal in the grant is an AWS service, the
+     * <code>GranteePrincipal</code> field contains the <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#principal-services">service
+     * principal</a>, which might represent several different grantee principals.</p>
      */
     inline GrantListEntry& WithGranteePrincipal(const Aws::String& value) { SetGranteePrincipal(value); return *this;}
 
     /**
-     * <p>The principal that receives the grant's permissions.</p>
+     * <p>The identity that gets the permissions in the grant.</p> <p>The
+     * <code>GranteePrincipal</code> field in the <code>ListGrants</code> response
+     * usually contains the user or role designated as the grantee principal in the
+     * grant. However, when the grantee principal in the grant is an AWS service, the
+     * <code>GranteePrincipal</code> field contains the <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#principal-services">service
+     * principal</a>, which might represent several different grantee principals.</p>
      */
     inline GrantListEntry& WithGranteePrincipal(Aws::String&& value) { SetGranteePrincipal(std::move(value)); return *this;}
 
     /**
-     * <p>The principal that receives the grant's permissions.</p>
+     * <p>The identity that gets the permissions in the grant.</p> <p>The
+     * <code>GranteePrincipal</code> field in the <code>ListGrants</code> response
+     * usually contains the user or role designated as the grantee principal in the
+     * grant. However, when the grantee principal in the grant is an AWS service, the
+     * <code>GranteePrincipal</code> field contains the <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#principal-services">service
+     * principal</a>, which might represent several different grantee principals.</p>
      */
     inline GrantListEntry& WithGranteePrincipal(const char* value) { SetGranteePrincipal(value); return *this;}
 

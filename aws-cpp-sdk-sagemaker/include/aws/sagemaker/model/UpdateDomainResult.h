@@ -43,37 +43,37 @@ namespace Model
 
 
     /**
-     * <p>The domain Amazon Resource Name (ARN).</p>
+     * <p>The Amazon Resource Name (ARN) of the domain.</p>
      */
     inline const Aws::String& GetDomainArn() const{ return m_domainArn; }
 
     /**
-     * <p>The domain Amazon Resource Name (ARN).</p>
+     * <p>The Amazon Resource Name (ARN) of the domain.</p>
      */
     inline void SetDomainArn(const Aws::String& value) { m_domainArn = value; }
 
     /**
-     * <p>The domain Amazon Resource Name (ARN).</p>
+     * <p>The Amazon Resource Name (ARN) of the domain.</p>
      */
     inline void SetDomainArn(Aws::String&& value) { m_domainArn = std::move(value); }
 
     /**
-     * <p>The domain Amazon Resource Name (ARN).</p>
+     * <p>The Amazon Resource Name (ARN) of the domain.</p>
      */
     inline void SetDomainArn(const char* value) { m_domainArn.assign(value); }
 
     /**
-     * <p>The domain Amazon Resource Name (ARN).</p>
+     * <p>The Amazon Resource Name (ARN) of the domain.</p>
      */
     inline UpdateDomainResult& WithDomainArn(const Aws::String& value) { SetDomainArn(value); return *this;}
 
     /**
-     * <p>The domain Amazon Resource Name (ARN).</p>
+     * <p>The Amazon Resource Name (ARN) of the domain.</p>
      */
     inline UpdateDomainResult& WithDomainArn(Aws::String&& value) { SetDomainArn(std::move(value)); return *this;}
 
     /**
-     * <p>The domain Amazon Resource Name (ARN).</p>
+     * <p>The Amazon Resource Name (ARN) of the domain.</p>
      */
     inline UpdateDomainResult& WithDomainArn(const char* value) { SetDomainArn(value); return *this;}
 

@@ -168,6 +168,63 @@ namespace Model
      */
     inline RenderUiTemplateRequest& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 
+
+    /**
+     * <p>The <code>HumanTaskUiArn</code> of the worker UI that you want to render. Do
+     * not provide a <code>HumanTaskUiArn</code> if you use the <code>UiTemplate</code>
+     * parameter.</p>
+     */
+    inline const Aws::String& GetHumanTaskUiArn() const{ return m_humanTaskUiArn; }
+
+    /**
+     * <p>The <code>HumanTaskUiArn</code> of the worker UI that you want to render. Do
+     * not provide a <code>HumanTaskUiArn</code> if you use the <code>UiTemplate</code>
+     * parameter.</p>
+     */
+    inline bool HumanTaskUiArnHasBeenSet() const { return m_humanTaskUiArnHasBeenSet; }
+
+    /**
+     * <p>The <code>HumanTaskUiArn</code> of the worker UI that you want to render. Do
+     * not provide a <code>HumanTaskUiArn</code> if you use the <code>UiTemplate</code>
+     * parameter.</p>
+     */
+    inline void SetHumanTaskUiArn(const Aws::String& value) { m_humanTaskUiArnHasBeenSet = true; m_humanTaskUiArn = value; }
+
+    /**
+     * <p>The <code>HumanTaskUiArn</code> of the worker UI that you want to render. Do
+     * not provide a <code>HumanTaskUiArn</code> if you use the <code>UiTemplate</code>
+     * parameter.</p>
+     */
+    inline void SetHumanTaskUiArn(Aws::String&& value) { m_humanTaskUiArnHasBeenSet = true; m_humanTaskUiArn = std::move(value); }
+
+    /**
+     * <p>The <code>HumanTaskUiArn</code> of the worker UI that you want to render. Do
+     * not provide a <code>HumanTaskUiArn</code> if you use the <code>UiTemplate</code>
+     * parameter.</p>
+     */
+    inline void SetHumanTaskUiArn(const char* value) { m_humanTaskUiArnHasBeenSet = true; m_humanTaskUiArn.assign(value); }
+
+    /**
+     * <p>The <code>HumanTaskUiArn</code> of the worker UI that you want to render. Do
+     * not provide a <code>HumanTaskUiArn</code> if you use the <code>UiTemplate</code>
+     * parameter.</p>
+     */
+    inline RenderUiTemplateRequest& WithHumanTaskUiArn(const Aws::String& value) { SetHumanTaskUiArn(value); return *this;}
+
+    /**
+     * <p>The <code>HumanTaskUiArn</code> of the worker UI that you want to render. Do
+     * not provide a <code>HumanTaskUiArn</code> if you use the <code>UiTemplate</code>
+     * parameter.</p>
+     */
+    inline RenderUiTemplateRequest& WithHumanTaskUiArn(Aws::String&& value) { SetHumanTaskUiArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The <code>HumanTaskUiArn</code> of the worker UI that you want to render. Do
+     * not provide a <code>HumanTaskUiArn</code> if you use the <code>UiTemplate</code>
+     * parameter.</p>
+     */
+    inline RenderUiTemplateRequest& WithHumanTaskUiArn(const char* value) { SetHumanTaskUiArn(value); return *this;}
+
   private:
 
     UiTemplate m_uiTemplate;
@@ -178,6 +235,9 @@ namespace Model
 
     Aws::String m_roleArn;
     bool m_roleArnHasBeenSet;
+
+    Aws::String m_humanTaskUiArn;
+    bool m_humanTaskUiArnHasBeenSet;
   };
 
 } // namespace Model

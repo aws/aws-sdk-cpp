@@ -32,22 +32,31 @@
 #include <aws/athena/AthenaErrorMarshaller.h>
 #include <aws/athena/model/BatchGetNamedQueryRequest.h>
 #include <aws/athena/model/BatchGetQueryExecutionRequest.h>
+#include <aws/athena/model/CreateDataCatalogRequest.h>
 #include <aws/athena/model/CreateNamedQueryRequest.h>
 #include <aws/athena/model/CreateWorkGroupRequest.h>
+#include <aws/athena/model/DeleteDataCatalogRequest.h>
 #include <aws/athena/model/DeleteNamedQueryRequest.h>
 #include <aws/athena/model/DeleteWorkGroupRequest.h>
+#include <aws/athena/model/GetDataCatalogRequest.h>
+#include <aws/athena/model/GetDatabaseRequest.h>
 #include <aws/athena/model/GetNamedQueryRequest.h>
 #include <aws/athena/model/GetQueryExecutionRequest.h>
 #include <aws/athena/model/GetQueryResultsRequest.h>
+#include <aws/athena/model/GetTableMetadataRequest.h>
 #include <aws/athena/model/GetWorkGroupRequest.h>
+#include <aws/athena/model/ListDataCatalogsRequest.h>
+#include <aws/athena/model/ListDatabasesRequest.h>
 #include <aws/athena/model/ListNamedQueriesRequest.h>
 #include <aws/athena/model/ListQueryExecutionsRequest.h>
+#include <aws/athena/model/ListTableMetadataRequest.h>
 #include <aws/athena/model/ListTagsForResourceRequest.h>
 #include <aws/athena/model/ListWorkGroupsRequest.h>
 #include <aws/athena/model/StartQueryExecutionRequest.h>
 #include <aws/athena/model/StopQueryExecutionRequest.h>
 #include <aws/athena/model/TagResourceRequest.h>
 #include <aws/athena/model/UntagResourceRequest.h>
+#include <aws/athena/model/UpdateDataCatalogRequest.h>
 #include <aws/athena/model/UpdateWorkGroupRequest.h>
 
 using namespace Aws;
@@ -192,6 +201,41 @@ void AthenaClient::BatchGetQueryExecutionAsyncHelper(const BatchGetQueryExecutio
   handler(this, request, BatchGetQueryExecution(request), context);
 }
 
+CreateDataCatalogOutcome AthenaClient::CreateDataCatalog(const CreateDataCatalogRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return CreateDataCatalogOutcome(CreateDataCatalogResult(outcome.GetResult()));
+  }
+  else
+  {
+    return CreateDataCatalogOutcome(outcome.GetError());
+  }
+}
+
+CreateDataCatalogOutcomeCallable AthenaClient::CreateDataCatalogCallable(const CreateDataCatalogRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateDataCatalogOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateDataCatalog(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AthenaClient::CreateDataCatalogAsync(const CreateDataCatalogRequest& request, const CreateDataCatalogResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateDataCatalogAsyncHelper( request, handler, context ); } );
+}
+
+void AthenaClient::CreateDataCatalogAsyncHelper(const CreateDataCatalogRequest& request, const CreateDataCatalogResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateDataCatalog(request), context);
+}
+
 CreateNamedQueryOutcome AthenaClient::CreateNamedQuery(const CreateNamedQueryRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -262,6 +306,41 @@ void AthenaClient::CreateWorkGroupAsyncHelper(const CreateWorkGroupRequest& requ
   handler(this, request, CreateWorkGroup(request), context);
 }
 
+DeleteDataCatalogOutcome AthenaClient::DeleteDataCatalog(const DeleteDataCatalogRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DeleteDataCatalogOutcome(DeleteDataCatalogResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DeleteDataCatalogOutcome(outcome.GetError());
+  }
+}
+
+DeleteDataCatalogOutcomeCallable AthenaClient::DeleteDataCatalogCallable(const DeleteDataCatalogRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteDataCatalogOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteDataCatalog(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AthenaClient::DeleteDataCatalogAsync(const DeleteDataCatalogRequest& request, const DeleteDataCatalogResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteDataCatalogAsyncHelper( request, handler, context ); } );
+}
+
+void AthenaClient::DeleteDataCatalogAsyncHelper(const DeleteDataCatalogRequest& request, const DeleteDataCatalogResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteDataCatalog(request), context);
+}
+
 DeleteNamedQueryOutcome AthenaClient::DeleteNamedQuery(const DeleteNamedQueryRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -330,6 +409,76 @@ void AthenaClient::DeleteWorkGroupAsync(const DeleteWorkGroupRequest& request, c
 void AthenaClient::DeleteWorkGroupAsyncHelper(const DeleteWorkGroupRequest& request, const DeleteWorkGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteWorkGroup(request), context);
+}
+
+GetDataCatalogOutcome AthenaClient::GetDataCatalog(const GetDataCatalogRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return GetDataCatalogOutcome(GetDataCatalogResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetDataCatalogOutcome(outcome.GetError());
+  }
+}
+
+GetDataCatalogOutcomeCallable AthenaClient::GetDataCatalogCallable(const GetDataCatalogRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetDataCatalogOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetDataCatalog(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AthenaClient::GetDataCatalogAsync(const GetDataCatalogRequest& request, const GetDataCatalogResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetDataCatalogAsyncHelper( request, handler, context ); } );
+}
+
+void AthenaClient::GetDataCatalogAsyncHelper(const GetDataCatalogRequest& request, const GetDataCatalogResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetDataCatalog(request), context);
+}
+
+GetDatabaseOutcome AthenaClient::GetDatabase(const GetDatabaseRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return GetDatabaseOutcome(GetDatabaseResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetDatabaseOutcome(outcome.GetError());
+  }
+}
+
+GetDatabaseOutcomeCallable AthenaClient::GetDatabaseCallable(const GetDatabaseRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetDatabaseOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetDatabase(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AthenaClient::GetDatabaseAsync(const GetDatabaseRequest& request, const GetDatabaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetDatabaseAsyncHelper( request, handler, context ); } );
+}
+
+void AthenaClient::GetDatabaseAsyncHelper(const GetDatabaseRequest& request, const GetDatabaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetDatabase(request), context);
 }
 
 GetNamedQueryOutcome AthenaClient::GetNamedQuery(const GetNamedQueryRequest& request) const
@@ -437,6 +586,41 @@ void AthenaClient::GetQueryResultsAsyncHelper(const GetQueryResultsRequest& requ
   handler(this, request, GetQueryResults(request), context);
 }
 
+GetTableMetadataOutcome AthenaClient::GetTableMetadata(const GetTableMetadataRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return GetTableMetadataOutcome(GetTableMetadataResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetTableMetadataOutcome(outcome.GetError());
+  }
+}
+
+GetTableMetadataOutcomeCallable AthenaClient::GetTableMetadataCallable(const GetTableMetadataRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetTableMetadataOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetTableMetadata(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AthenaClient::GetTableMetadataAsync(const GetTableMetadataRequest& request, const GetTableMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetTableMetadataAsyncHelper( request, handler, context ); } );
+}
+
+void AthenaClient::GetTableMetadataAsyncHelper(const GetTableMetadataRequest& request, const GetTableMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetTableMetadata(request), context);
+}
+
 GetWorkGroupOutcome AthenaClient::GetWorkGroup(const GetWorkGroupRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -470,6 +654,76 @@ void AthenaClient::GetWorkGroupAsync(const GetWorkGroupRequest& request, const G
 void AthenaClient::GetWorkGroupAsyncHelper(const GetWorkGroupRequest& request, const GetWorkGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetWorkGroup(request), context);
+}
+
+ListDataCatalogsOutcome AthenaClient::ListDataCatalogs(const ListDataCatalogsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ListDataCatalogsOutcome(ListDataCatalogsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListDataCatalogsOutcome(outcome.GetError());
+  }
+}
+
+ListDataCatalogsOutcomeCallable AthenaClient::ListDataCatalogsCallable(const ListDataCatalogsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListDataCatalogsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListDataCatalogs(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AthenaClient::ListDataCatalogsAsync(const ListDataCatalogsRequest& request, const ListDataCatalogsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListDataCatalogsAsyncHelper( request, handler, context ); } );
+}
+
+void AthenaClient::ListDataCatalogsAsyncHelper(const ListDataCatalogsRequest& request, const ListDataCatalogsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListDataCatalogs(request), context);
+}
+
+ListDatabasesOutcome AthenaClient::ListDatabases(const ListDatabasesRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ListDatabasesOutcome(ListDatabasesResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListDatabasesOutcome(outcome.GetError());
+  }
+}
+
+ListDatabasesOutcomeCallable AthenaClient::ListDatabasesCallable(const ListDatabasesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListDatabasesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListDatabases(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AthenaClient::ListDatabasesAsync(const ListDatabasesRequest& request, const ListDatabasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListDatabasesAsyncHelper( request, handler, context ); } );
+}
+
+void AthenaClient::ListDatabasesAsyncHelper(const ListDatabasesRequest& request, const ListDatabasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListDatabases(request), context);
 }
 
 ListNamedQueriesOutcome AthenaClient::ListNamedQueries(const ListNamedQueriesRequest& request) const
@@ -540,6 +794,41 @@ void AthenaClient::ListQueryExecutionsAsync(const ListQueryExecutionsRequest& re
 void AthenaClient::ListQueryExecutionsAsyncHelper(const ListQueryExecutionsRequest& request, const ListQueryExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListQueryExecutions(request), context);
+}
+
+ListTableMetadataOutcome AthenaClient::ListTableMetadata(const ListTableMetadataRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ListTableMetadataOutcome(ListTableMetadataResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListTableMetadataOutcome(outcome.GetError());
+  }
+}
+
+ListTableMetadataOutcomeCallable AthenaClient::ListTableMetadataCallable(const ListTableMetadataRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListTableMetadataOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTableMetadata(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AthenaClient::ListTableMetadataAsync(const ListTableMetadataRequest& request, const ListTableMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListTableMetadataAsyncHelper( request, handler, context ); } );
+}
+
+void AthenaClient::ListTableMetadataAsyncHelper(const ListTableMetadataRequest& request, const ListTableMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListTableMetadata(request), context);
 }
 
 ListTagsForResourceOutcome AthenaClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -750,6 +1039,41 @@ void AthenaClient::UntagResourceAsync(const UntagResourceRequest& request, const
 void AthenaClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UntagResource(request), context);
+}
+
+UpdateDataCatalogOutcome AthenaClient::UpdateDataCatalog(const UpdateDataCatalogRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return UpdateDataCatalogOutcome(UpdateDataCatalogResult(outcome.GetResult()));
+  }
+  else
+  {
+    return UpdateDataCatalogOutcome(outcome.GetError());
+  }
+}
+
+UpdateDataCatalogOutcomeCallable AthenaClient::UpdateDataCatalogCallable(const UpdateDataCatalogRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateDataCatalogOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateDataCatalog(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AthenaClient::UpdateDataCatalogAsync(const UpdateDataCatalogRequest& request, const UpdateDataCatalogResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateDataCatalogAsyncHelper( request, handler, context ); } );
+}
+
+void AthenaClient::UpdateDataCatalogAsyncHelper(const UpdateDataCatalogRequest& request, const UpdateDataCatalogResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateDataCatalog(request), context);
 }
 
 UpdateWorkGroupOutcome AthenaClient::UpdateWorkGroup(const UpdateWorkGroupRequest& request) const

@@ -32,6 +32,7 @@ JobFlowDetail::JobFlowDetail() :
     m_jobFlowIdHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_logUriHasBeenSet(false),
+    m_logEncryptionKmsKeyIdHasBeenSet(false),
     m_amiVersionHasBeenSet(false),
     m_executionStatusDetailHasBeenSet(false),
     m_instancesHasBeenSet(false),
@@ -52,6 +53,7 @@ JobFlowDetail::JobFlowDetail(JsonView jsonValue) :
     m_jobFlowIdHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_logUriHasBeenSet(false),
+    m_logEncryptionKmsKeyIdHasBeenSet(false),
     m_amiVersionHasBeenSet(false),
     m_executionStatusDetailHasBeenSet(false),
     m_instancesHasBeenSet(false),
@@ -90,6 +92,13 @@ JobFlowDetail& JobFlowDetail::operator =(JsonView jsonValue)
     m_logUri = jsonValue.GetString("LogUri");
 
     m_logUriHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("LogEncryptionKmsKeyId"))
+  {
+    m_logEncryptionKmsKeyId = jsonValue.GetString("LogEncryptionKmsKeyId");
+
+    m_logEncryptionKmsKeyIdHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("AmiVersion"))
@@ -200,6 +209,12 @@ JsonValue JobFlowDetail::Jsonize() const
   if(m_logUriHasBeenSet)
   {
    payload.WithString("LogUri", m_logUri);
+
+  }
+
+  if(m_logEncryptionKmsKeyIdHasBeenSet)
+  {
+   payload.WithString("LogEncryptionKmsKeyId", m_logEncryptionKmsKeyId);
 
   }
 

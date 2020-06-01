@@ -49,11 +49,14 @@
 #include <aws/worklink/model/ListDevicesRequest.h>
 #include <aws/worklink/model/ListDomainsRequest.h>
 #include <aws/worklink/model/ListFleetsRequest.h>
+#include <aws/worklink/model/ListTagsForResourceRequest.h>
 #include <aws/worklink/model/ListWebsiteAuthorizationProvidersRequest.h>
 #include <aws/worklink/model/ListWebsiteCertificateAuthoritiesRequest.h>
 #include <aws/worklink/model/RestoreDomainAccessRequest.h>
 #include <aws/worklink/model/RevokeDomainAccessRequest.h>
 #include <aws/worklink/model/SignOutUserRequest.h>
+#include <aws/worklink/model/TagResourceRequest.h>
+#include <aws/worklink/model/UntagResourceRequest.h>
 #include <aws/worklink/model/UpdateAuditStreamConfigurationRequest.h>
 #include <aws/worklink/model/UpdateCompanyNetworkConfigurationRequest.h>
 #include <aws/worklink/model/UpdateDevicePolicyConfigurationRequest.h>
@@ -798,6 +801,47 @@ void WorkLinkClient::ListFleetsAsyncHelper(const ListFleetsRequest& request, con
   handler(this, request, ListFleets(request), context);
 }
 
+ListTagsForResourceOutcome WorkLinkClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
+{
+  if (!request.ResourceArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListTagsForResource", "Required field: ResourceArn, is not set");
+    return ListTagsForResourceOutcome(Aws::Client::AWSError<WorkLinkErrors>(WorkLinkErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/tags/";
+  ss << request.GetResourceArn();
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ListTagsForResourceOutcome(ListTagsForResourceResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListTagsForResourceOutcome(outcome.GetError());
+  }
+}
+
+ListTagsForResourceOutcomeCallable WorkLinkClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTagsForResource(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void WorkLinkClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
+}
+
+void WorkLinkClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListTagsForResource(request), context);
+}
+
 ListWebsiteAuthorizationProvidersOutcome WorkLinkClient::ListWebsiteAuthorizationProviders(const ListWebsiteAuthorizationProvidersRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -971,6 +1015,93 @@ void WorkLinkClient::SignOutUserAsync(const SignOutUserRequest& request, const S
 void WorkLinkClient::SignOutUserAsyncHelper(const SignOutUserRequest& request, const SignOutUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, SignOutUser(request), context);
+}
+
+TagResourceOutcome WorkLinkClient::TagResource(const TagResourceRequest& request) const
+{
+  if (!request.ResourceArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("TagResource", "Required field: ResourceArn, is not set");
+    return TagResourceOutcome(Aws::Client::AWSError<WorkLinkErrors>(WorkLinkErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/tags/";
+  ss << request.GetResourceArn();
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return TagResourceOutcome(TagResourceResult(outcome.GetResult()));
+  }
+  else
+  {
+    return TagResourceOutcome(outcome.GetError());
+  }
+}
+
+TagResourceOutcomeCallable WorkLinkClient::TagResourceCallable(const TagResourceRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TagResource(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void WorkLinkClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
+}
+
+void WorkLinkClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, TagResource(request), context);
+}
+
+UntagResourceOutcome WorkLinkClient::UntagResource(const UntagResourceRequest& request) const
+{
+  if (!request.ResourceArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UntagResource", "Required field: ResourceArn, is not set");
+    return UntagResourceOutcome(Aws::Client::AWSError<WorkLinkErrors>(WorkLinkErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
+  }
+  if (!request.TagKeysHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UntagResource", "Required field: TagKeys, is not set");
+    return UntagResourceOutcome(Aws::Client::AWSError<WorkLinkErrors>(WorkLinkErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TagKeys]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/tags/";
+  ss << request.GetResourceArn();
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return UntagResourceOutcome(UntagResourceResult(outcome.GetResult()));
+  }
+  else
+  {
+    return UntagResourceOutcome(outcome.GetError());
+  }
+}
+
+UntagResourceOutcomeCallable WorkLinkClient::UntagResourceCallable(const UntagResourceRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UntagResource(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void WorkLinkClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
+}
+
+void WorkLinkClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UntagResource(request), context);
 }
 
 UpdateAuditStreamConfigurationOutcome WorkLinkClient::UpdateAuditStreamConfiguration(const UpdateAuditStreamConfigurationRequest& request) const

@@ -37,7 +37,9 @@ namespace Model
 
   /**
    * <p>The metadata and rows that comprise a query result set. The metadata
-   * describes the column structure and data types.</p><p><h3>See Also:</h3>   <a
+   * describes the column structure and data types. To return a
+   * <code>ResultSet</code> object, use <a>GetQueryResults</a>.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ResultSet">AWS
    * API Reference</a></p>
    */

@@ -388,10 +388,10 @@ namespace Model
      * Network errors are preventing AWS KMS from connecting to the custom key
      * store.</p> </li> <li> <p> <code>SUBNET_NOT_FOUND</code> - A subnet in the AWS
      * CloudHSM cluster configuration was deleted. If AWS KMS cannot find all of the
-     * subnets that were configured for the cluster when the custom key store was
-     * created, attempts to connect fail. To fix this error, create a cluster from a
-     * backup and associate it with your custom key store. This process includes
-     * selecting a VPC and subnets. For details, see <a
+     * subnets in the cluster configuration, attempts to connect the custom key store
+     * to the AWS CloudHSM cluster fail. To fix this error, create a cluster from a
+     * recent backup and associate it with your custom key store. (This process creates
+     * a new cluster configuration with a VPC and private subnets.) For details, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html#fix-keystore-failed">How
      * to Fix a Connection Failure</a> in the <i>AWS Key Management Service Developer
      * Guide</i>.</p> </li> <li> <p> <code>USER_LOCKED_OUT</code> - The
@@ -441,10 +441,10 @@ namespace Model
      * Network errors are preventing AWS KMS from connecting to the custom key
      * store.</p> </li> <li> <p> <code>SUBNET_NOT_FOUND</code> - A subnet in the AWS
      * CloudHSM cluster configuration was deleted. If AWS KMS cannot find all of the
-     * subnets that were configured for the cluster when the custom key store was
-     * created, attempts to connect fail. To fix this error, create a cluster from a
-     * backup and associate it with your custom key store. This process includes
-     * selecting a VPC and subnets. For details, see <a
+     * subnets in the cluster configuration, attempts to connect the custom key store
+     * to the AWS CloudHSM cluster fail. To fix this error, create a cluster from a
+     * recent backup and associate it with your custom key store. (This process creates
+     * a new cluster configuration with a VPC and private subnets.) For details, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html#fix-keystore-failed">How
      * to Fix a Connection Failure</a> in the <i>AWS Key Management Service Developer
      * Guide</i>.</p> </li> <li> <p> <code>USER_LOCKED_OUT</code> - The
@@ -494,10 +494,10 @@ namespace Model
      * Network errors are preventing AWS KMS from connecting to the custom key
      * store.</p> </li> <li> <p> <code>SUBNET_NOT_FOUND</code> - A subnet in the AWS
      * CloudHSM cluster configuration was deleted. If AWS KMS cannot find all of the
-     * subnets that were configured for the cluster when the custom key store was
-     * created, attempts to connect fail. To fix this error, create a cluster from a
-     * backup and associate it with your custom key store. This process includes
-     * selecting a VPC and subnets. For details, see <a
+     * subnets in the cluster configuration, attempts to connect the custom key store
+     * to the AWS CloudHSM cluster fail. To fix this error, create a cluster from a
+     * recent backup and associate it with your custom key store. (This process creates
+     * a new cluster configuration with a VPC and private subnets.) For details, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html#fix-keystore-failed">How
      * to Fix a Connection Failure</a> in the <i>AWS Key Management Service Developer
      * Guide</i>.</p> </li> <li> <p> <code>USER_LOCKED_OUT</code> - The
@@ -547,10 +547,10 @@ namespace Model
      * Network errors are preventing AWS KMS from connecting to the custom key
      * store.</p> </li> <li> <p> <code>SUBNET_NOT_FOUND</code> - A subnet in the AWS
      * CloudHSM cluster configuration was deleted. If AWS KMS cannot find all of the
-     * subnets that were configured for the cluster when the custom key store was
-     * created, attempts to connect fail. To fix this error, create a cluster from a
-     * backup and associate it with your custom key store. This process includes
-     * selecting a VPC and subnets. For details, see <a
+     * subnets in the cluster configuration, attempts to connect the custom key store
+     * to the AWS CloudHSM cluster fail. To fix this error, create a cluster from a
+     * recent backup and associate it with your custom key store. (This process creates
+     * a new cluster configuration with a VPC and private subnets.) For details, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html#fix-keystore-failed">How
      * to Fix a Connection Failure</a> in the <i>AWS Key Management Service Developer
      * Guide</i>.</p> </li> <li> <p> <code>USER_LOCKED_OUT</code> - The
@@ -600,10 +600,10 @@ namespace Model
      * Network errors are preventing AWS KMS from connecting to the custom key
      * store.</p> </li> <li> <p> <code>SUBNET_NOT_FOUND</code> - A subnet in the AWS
      * CloudHSM cluster configuration was deleted. If AWS KMS cannot find all of the
-     * subnets that were configured for the cluster when the custom key store was
-     * created, attempts to connect fail. To fix this error, create a cluster from a
-     * backup and associate it with your custom key store. This process includes
-     * selecting a VPC and subnets. For details, see <a
+     * subnets in the cluster configuration, attempts to connect the custom key store
+     * to the AWS CloudHSM cluster fail. To fix this error, create a cluster from a
+     * recent backup and associate it with your custom key store. (This process creates
+     * a new cluster configuration with a VPC and private subnets.) For details, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html#fix-keystore-failed">How
      * to Fix a Connection Failure</a> in the <i>AWS Key Management Service Developer
      * Guide</i>.</p> </li> <li> <p> <code>USER_LOCKED_OUT</code> - The
@@ -653,10 +653,10 @@ namespace Model
      * Network errors are preventing AWS KMS from connecting to the custom key
      * store.</p> </li> <li> <p> <code>SUBNET_NOT_FOUND</code> - A subnet in the AWS
      * CloudHSM cluster configuration was deleted. If AWS KMS cannot find all of the
-     * subnets that were configured for the cluster when the custom key store was
-     * created, attempts to connect fail. To fix this error, create a cluster from a
-     * backup and associate it with your custom key store. This process includes
-     * selecting a VPC and subnets. For details, see <a
+     * subnets in the cluster configuration, attempts to connect the custom key store
+     * to the AWS CloudHSM cluster fail. To fix this error, create a cluster from a
+     * recent backup and associate it with your custom key store. (This process creates
+     * a new cluster configuration with a VPC and private subnets.) For details, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html#fix-keystore-failed">How
      * to Fix a Connection Failure</a> in the <i>AWS Key Management Service Developer
      * Guide</i>.</p> </li> <li> <p> <code>USER_LOCKED_OUT</code> - The

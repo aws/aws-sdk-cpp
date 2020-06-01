@@ -112,37 +112,51 @@ namespace Model
 
 
     /**
-     * <p>Unique identifier of the CMK used to reencrypt the data.</p>
+     * <p>The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key
+     * ARN</a>) of the CMK that was used to reencrypt the data.</p>
      */
     inline const Aws::String& GetKeyId() const{ return m_keyId; }
 
     /**
-     * <p>Unique identifier of the CMK used to reencrypt the data.</p>
+     * <p>The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key
+     * ARN</a>) of the CMK that was used to reencrypt the data.</p>
      */
     inline void SetKeyId(const Aws::String& value) { m_keyId = value; }
 
     /**
-     * <p>Unique identifier of the CMK used to reencrypt the data.</p>
+     * <p>The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key
+     * ARN</a>) of the CMK that was used to reencrypt the data.</p>
      */
     inline void SetKeyId(Aws::String&& value) { m_keyId = std::move(value); }
 
     /**
-     * <p>Unique identifier of the CMK used to reencrypt the data.</p>
+     * <p>The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key
+     * ARN</a>) of the CMK that was used to reencrypt the data.</p>
      */
     inline void SetKeyId(const char* value) { m_keyId.assign(value); }
 
     /**
-     * <p>Unique identifier of the CMK used to reencrypt the data.</p>
+     * <p>The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key
+     * ARN</a>) of the CMK that was used to reencrypt the data.</p>
      */
     inline ReEncryptResult& WithKeyId(const Aws::String& value) { SetKeyId(value); return *this;}
 
     /**
-     * <p>Unique identifier of the CMK used to reencrypt the data.</p>
+     * <p>The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key
+     * ARN</a>) of the CMK that was used to reencrypt the data.</p>
      */
     inline ReEncryptResult& WithKeyId(Aws::String&& value) { SetKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>Unique identifier of the CMK used to reencrypt the data.</p>
+     * <p>The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key
+     * ARN</a>) of the CMK that was used to reencrypt the data.</p>
      */
     inline ReEncryptResult& WithKeyId(const char* value) { SetKeyId(value); return *this;}
 

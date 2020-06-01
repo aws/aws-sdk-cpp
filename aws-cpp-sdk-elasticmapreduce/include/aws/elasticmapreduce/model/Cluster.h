@@ -312,6 +312,63 @@ namespace Model
 
 
     /**
+     * <p> The AWS KMS customer master key (CMK) used for encrypting log files. This
+     * attribute is only available with EMR version 5.30.0 and later, excluding EMR
+     * 6.0.0. </p>
+     */
+    inline const Aws::String& GetLogEncryptionKmsKeyId() const{ return m_logEncryptionKmsKeyId; }
+
+    /**
+     * <p> The AWS KMS customer master key (CMK) used for encrypting log files. This
+     * attribute is only available with EMR version 5.30.0 and later, excluding EMR
+     * 6.0.0. </p>
+     */
+    inline bool LogEncryptionKmsKeyIdHasBeenSet() const { return m_logEncryptionKmsKeyIdHasBeenSet; }
+
+    /**
+     * <p> The AWS KMS customer master key (CMK) used for encrypting log files. This
+     * attribute is only available with EMR version 5.30.0 and later, excluding EMR
+     * 6.0.0. </p>
+     */
+    inline void SetLogEncryptionKmsKeyId(const Aws::String& value) { m_logEncryptionKmsKeyIdHasBeenSet = true; m_logEncryptionKmsKeyId = value; }
+
+    /**
+     * <p> The AWS KMS customer master key (CMK) used for encrypting log files. This
+     * attribute is only available with EMR version 5.30.0 and later, excluding EMR
+     * 6.0.0. </p>
+     */
+    inline void SetLogEncryptionKmsKeyId(Aws::String&& value) { m_logEncryptionKmsKeyIdHasBeenSet = true; m_logEncryptionKmsKeyId = std::move(value); }
+
+    /**
+     * <p> The AWS KMS customer master key (CMK) used for encrypting log files. This
+     * attribute is only available with EMR version 5.30.0 and later, excluding EMR
+     * 6.0.0. </p>
+     */
+    inline void SetLogEncryptionKmsKeyId(const char* value) { m_logEncryptionKmsKeyIdHasBeenSet = true; m_logEncryptionKmsKeyId.assign(value); }
+
+    /**
+     * <p> The AWS KMS customer master key (CMK) used for encrypting log files. This
+     * attribute is only available with EMR version 5.30.0 and later, excluding EMR
+     * 6.0.0. </p>
+     */
+    inline Cluster& WithLogEncryptionKmsKeyId(const Aws::String& value) { SetLogEncryptionKmsKeyId(value); return *this;}
+
+    /**
+     * <p> The AWS KMS customer master key (CMK) used for encrypting log files. This
+     * attribute is only available with EMR version 5.30.0 and later, excluding EMR
+     * 6.0.0. </p>
+     */
+    inline Cluster& WithLogEncryptionKmsKeyId(Aws::String&& value) { SetLogEncryptionKmsKeyId(std::move(value)); return *this;}
+
+    /**
+     * <p> The AWS KMS customer master key (CMK) used for encrypting log files. This
+     * attribute is only available with EMR version 5.30.0 and later, excluding EMR
+     * 6.0.0. </p>
+     */
+    inline Cluster& WithLogEncryptionKmsKeyId(const char* value) { SetLogEncryptionKmsKeyId(value); return *this;}
+
+
+    /**
      * <p>The AMI version requested for this cluster.</p>
      */
     inline const Aws::String& GetRequestedAmiVersion() const{ return m_requestedAmiVersion; }
@@ -1371,6 +1428,9 @@ namespace Model
 
     Aws::String m_logUri;
     bool m_logUriHasBeenSet;
+
+    Aws::String m_logEncryptionKmsKeyId;
+    bool m_logEncryptionKmsKeyIdHasBeenSet;
 
     Aws::String m_requestedAmiVersion;
     bool m_requestedAmiVersionHasBeenSet;

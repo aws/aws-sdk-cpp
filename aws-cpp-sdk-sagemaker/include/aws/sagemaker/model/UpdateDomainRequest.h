@@ -46,42 +46,42 @@ namespace Model
 
 
     /**
-     * <p>The domain ID.</p>
+     * <p>The ID of the domain to be updated.</p>
      */
     inline const Aws::String& GetDomainId() const{ return m_domainId; }
 
     /**
-     * <p>The domain ID.</p>
+     * <p>The ID of the domain to be updated.</p>
      */
     inline bool DomainIdHasBeenSet() const { return m_domainIdHasBeenSet; }
 
     /**
-     * <p>The domain ID.</p>
+     * <p>The ID of the domain to be updated.</p>
      */
     inline void SetDomainId(const Aws::String& value) { m_domainIdHasBeenSet = true; m_domainId = value; }
 
     /**
-     * <p>The domain ID.</p>
+     * <p>The ID of the domain to be updated.</p>
      */
     inline void SetDomainId(Aws::String&& value) { m_domainIdHasBeenSet = true; m_domainId = std::move(value); }
 
     /**
-     * <p>The domain ID.</p>
+     * <p>The ID of the domain to be updated.</p>
      */
     inline void SetDomainId(const char* value) { m_domainIdHasBeenSet = true; m_domainId.assign(value); }
 
     /**
-     * <p>The domain ID.</p>
+     * <p>The ID of the domain to be updated.</p>
      */
     inline UpdateDomainRequest& WithDomainId(const Aws::String& value) { SetDomainId(value); return *this;}
 
     /**
-     * <p>The domain ID.</p>
+     * <p>The ID of the domain to be updated.</p>
      */
     inline UpdateDomainRequest& WithDomainId(Aws::String&& value) { SetDomainId(std::move(value)); return *this;}
 
     /**
-     * <p>The domain ID.</p>
+     * <p>The ID of the domain to be updated.</p>
      */
     inline UpdateDomainRequest& WithDomainId(const char* value) { SetDomainId(value); return *this;}
 

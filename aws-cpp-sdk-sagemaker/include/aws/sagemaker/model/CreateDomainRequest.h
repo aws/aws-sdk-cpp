@@ -90,32 +90,32 @@ namespace Model
 
 
     /**
-     * <p>The mode of authentication that member use to access the domain.</p>
+     * <p>The mode of authentication that members use to access the domain.</p>
      */
     inline const AuthMode& GetAuthMode() const{ return m_authMode; }
 
     /**
-     * <p>The mode of authentication that member use to access the domain.</p>
+     * <p>The mode of authentication that members use to access the domain.</p>
      */
     inline bool AuthModeHasBeenSet() const { return m_authModeHasBeenSet; }
 
     /**
-     * <p>The mode of authentication that member use to access the domain.</p>
+     * <p>The mode of authentication that members use to access the domain.</p>
      */
     inline void SetAuthMode(const AuthMode& value) { m_authModeHasBeenSet = true; m_authMode = value; }
 
     /**
-     * <p>The mode of authentication that member use to access the domain.</p>
+     * <p>The mode of authentication that members use to access the domain.</p>
      */
     inline void SetAuthMode(AuthMode&& value) { m_authModeHasBeenSet = true; m_authMode = std::move(value); }
 
     /**
-     * <p>The mode of authentication that member use to access the domain.</p>
+     * <p>The mode of authentication that members use to access the domain.</p>
      */
     inline CreateDomainRequest& WithAuthMode(const AuthMode& value) { SetAuthMode(value); return *this;}
 
     /**
-     * <p>The mode of authentication that member use to access the domain.</p>
+     * <p>The mode of authentication that members use to access the domain.</p>
      */
     inline CreateDomainRequest& WithAuthMode(AuthMode&& value) { SetAuthMode(std::move(value)); return *this;}
 
@@ -152,145 +152,153 @@ namespace Model
 
 
     /**
-     * <p>Security setting to limit to a set of subnets.</p>
+     * <p>The VPC subnets to use for communication with the EFS volume.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSubnetIds() const{ return m_subnetIds; }
 
     /**
-     * <p>Security setting to limit to a set of subnets.</p>
+     * <p>The VPC subnets to use for communication with the EFS volume.</p>
      */
     inline bool SubnetIdsHasBeenSet() const { return m_subnetIdsHasBeenSet; }
 
     /**
-     * <p>Security setting to limit to a set of subnets.</p>
+     * <p>The VPC subnets to use for communication with the EFS volume.</p>
      */
     inline void SetSubnetIds(const Aws::Vector<Aws::String>& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = value; }
 
     /**
-     * <p>Security setting to limit to a set of subnets.</p>
+     * <p>The VPC subnets to use for communication with the EFS volume.</p>
      */
     inline void SetSubnetIds(Aws::Vector<Aws::String>&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = std::move(value); }
 
     /**
-     * <p>Security setting to limit to a set of subnets.</p>
+     * <p>The VPC subnets to use for communication with the EFS volume.</p>
      */
     inline CreateDomainRequest& WithSubnetIds(const Aws::Vector<Aws::String>& value) { SetSubnetIds(value); return *this;}
 
     /**
-     * <p>Security setting to limit to a set of subnets.</p>
+     * <p>The VPC subnets to use for communication with the EFS volume.</p>
      */
     inline CreateDomainRequest& WithSubnetIds(Aws::Vector<Aws::String>&& value) { SetSubnetIds(std::move(value)); return *this;}
 
     /**
-     * <p>Security setting to limit to a set of subnets.</p>
+     * <p>The VPC subnets to use for communication with the EFS volume.</p>
      */
     inline CreateDomainRequest& AddSubnetIds(const Aws::String& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
 
     /**
-     * <p>Security setting to limit to a set of subnets.</p>
+     * <p>The VPC subnets to use for communication with the EFS volume.</p>
      */
     inline CreateDomainRequest& AddSubnetIds(Aws::String&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>Security setting to limit to a set of subnets.</p>
+     * <p>The VPC subnets to use for communication with the EFS volume.</p>
      */
     inline CreateDomainRequest& AddSubnetIds(const char* value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
 
 
     /**
-     * <p>Security setting to limit the domain's communication to a Amazon Virtual
-     * Private Cloud.</p>
+     * <p>The ID of the Amazon Virtual Private Cloud (VPC) to use for communication
+     * with the EFS volume.</p>
      */
     inline const Aws::String& GetVpcId() const{ return m_vpcId; }
 
     /**
-     * <p>Security setting to limit the domain's communication to a Amazon Virtual
-     * Private Cloud.</p>
+     * <p>The ID of the Amazon Virtual Private Cloud (VPC) to use for communication
+     * with the EFS volume.</p>
      */
     inline bool VpcIdHasBeenSet() const { return m_vpcIdHasBeenSet; }
 
     /**
-     * <p>Security setting to limit the domain's communication to a Amazon Virtual
-     * Private Cloud.</p>
+     * <p>The ID of the Amazon Virtual Private Cloud (VPC) to use for communication
+     * with the EFS volume.</p>
      */
     inline void SetVpcId(const Aws::String& value) { m_vpcIdHasBeenSet = true; m_vpcId = value; }
 
     /**
-     * <p>Security setting to limit the domain's communication to a Amazon Virtual
-     * Private Cloud.</p>
+     * <p>The ID of the Amazon Virtual Private Cloud (VPC) to use for communication
+     * with the EFS volume.</p>
      */
     inline void SetVpcId(Aws::String&& value) { m_vpcIdHasBeenSet = true; m_vpcId = std::move(value); }
 
     /**
-     * <p>Security setting to limit the domain's communication to a Amazon Virtual
-     * Private Cloud.</p>
+     * <p>The ID of the Amazon Virtual Private Cloud (VPC) to use for communication
+     * with the EFS volume.</p>
      */
     inline void SetVpcId(const char* value) { m_vpcIdHasBeenSet = true; m_vpcId.assign(value); }
 
     /**
-     * <p>Security setting to limit the domain's communication to a Amazon Virtual
-     * Private Cloud.</p>
+     * <p>The ID of the Amazon Virtual Private Cloud (VPC) to use for communication
+     * with the EFS volume.</p>
      */
     inline CreateDomainRequest& WithVpcId(const Aws::String& value) { SetVpcId(value); return *this;}
 
     /**
-     * <p>Security setting to limit the domain's communication to a Amazon Virtual
-     * Private Cloud.</p>
+     * <p>The ID of the Amazon Virtual Private Cloud (VPC) to use for communication
+     * with the EFS volume.</p>
      */
     inline CreateDomainRequest& WithVpcId(Aws::String&& value) { SetVpcId(std::move(value)); return *this;}
 
     /**
-     * <p>Security setting to limit the domain's communication to a Amazon Virtual
-     * Private Cloud.</p>
+     * <p>The ID of the Amazon Virtual Private Cloud (VPC) to use for communication
+     * with the EFS volume.</p>
      */
     inline CreateDomainRequest& WithVpcId(const char* value) { SetVpcId(value); return *this;}
 
 
     /**
-     * <p>Each tag consists of a key and an optional value. Tag keys must be unique per
-     * resource.</p>
+     * <p>Tags to associated with the Domain. Each tag consists of a key and an
+     * optional value. Tag keys must be unique per resource. Tags are searchable using
+     * the <a>Search</a> API.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>Each tag consists of a key and an optional value. Tag keys must be unique per
-     * resource.</p>
+     * <p>Tags to associated with the Domain. Each tag consists of a key and an
+     * optional value. Tag keys must be unique per resource. Tags are searchable using
+     * the <a>Search</a> API.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
-     * <p>Each tag consists of a key and an optional value. Tag keys must be unique per
-     * resource.</p>
+     * <p>Tags to associated with the Domain. Each tag consists of a key and an
+     * optional value. Tag keys must be unique per resource. Tags are searchable using
+     * the <a>Search</a> API.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>Each tag consists of a key and an optional value. Tag keys must be unique per
-     * resource.</p>
+     * <p>Tags to associated with the Domain. Each tag consists of a key and an
+     * optional value. Tag keys must be unique per resource. Tags are searchable using
+     * the <a>Search</a> API.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p>Each tag consists of a key and an optional value. Tag keys must be unique per
-     * resource.</p>
+     * <p>Tags to associated with the Domain. Each tag consists of a key and an
+     * optional value. Tag keys must be unique per resource. Tags are searchable using
+     * the <a>Search</a> API.</p>
      */
     inline CreateDomainRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>Each tag consists of a key and an optional value. Tag keys must be unique per
-     * resource.</p>
+     * <p>Tags to associated with the Domain. Each tag consists of a key and an
+     * optional value. Tag keys must be unique per resource. Tags are searchable using
+     * the <a>Search</a> API.</p>
      */
     inline CreateDomainRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>Each tag consists of a key and an optional value. Tag keys must be unique per
-     * resource.</p>
+     * <p>Tags to associated with the Domain. Each tag consists of a key and an
+     * optional value. Tag keys must be unique per resource. Tags are searchable using
+     * the <a>Search</a> API.</p>
      */
     inline CreateDomainRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     /**
-     * <p>Each tag consists of a key and an optional value. Tag keys must be unique per
-     * resource.</p>
+     * <p>Tags to associated with the Domain. Each tag consists of a key and an
+     * optional value. Tag keys must be unique per resource. Tags are searchable using
+     * the <a>Search</a> API.</p>
      */
     inline CreateDomainRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 

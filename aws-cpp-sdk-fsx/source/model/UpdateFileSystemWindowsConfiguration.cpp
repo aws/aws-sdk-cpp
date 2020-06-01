@@ -33,6 +33,8 @@ UpdateFileSystemWindowsConfiguration::UpdateFileSystemWindowsConfiguration() :
     m_dailyAutomaticBackupStartTimeHasBeenSet(false),
     m_automaticBackupRetentionDays(0),
     m_automaticBackupRetentionDaysHasBeenSet(false),
+    m_throughputCapacity(0),
+    m_throughputCapacityHasBeenSet(false),
     m_selfManagedActiveDirectoryConfigurationHasBeenSet(false)
 {
 }
@@ -42,6 +44,8 @@ UpdateFileSystemWindowsConfiguration::UpdateFileSystemWindowsConfiguration(JsonV
     m_dailyAutomaticBackupStartTimeHasBeenSet(false),
     m_automaticBackupRetentionDays(0),
     m_automaticBackupRetentionDaysHasBeenSet(false),
+    m_throughputCapacity(0),
+    m_throughputCapacityHasBeenSet(false),
     m_selfManagedActiveDirectoryConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
@@ -68,6 +72,13 @@ UpdateFileSystemWindowsConfiguration& UpdateFileSystemWindowsConfiguration::oper
     m_automaticBackupRetentionDays = jsonValue.GetInteger("AutomaticBackupRetentionDays");
 
     m_automaticBackupRetentionDaysHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ThroughputCapacity"))
+  {
+    m_throughputCapacity = jsonValue.GetInteger("ThroughputCapacity");
+
+    m_throughputCapacityHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("SelfManagedActiveDirectoryConfiguration"))
@@ -99,6 +110,12 @@ JsonValue UpdateFileSystemWindowsConfiguration::Jsonize() const
   if(m_automaticBackupRetentionDaysHasBeenSet)
   {
    payload.WithInteger("AutomaticBackupRetentionDays", m_automaticBackupRetentionDays);
+
+  }
+
+  if(m_throughputCapacityHasBeenSet)
+  {
+   payload.WithInteger("ThroughputCapacity", m_throughputCapacity);
 
   }
 

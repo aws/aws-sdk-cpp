@@ -44,44 +44,51 @@ namespace Model
 
 
     /**
-     * <p>The unique identifier of the customer master key (CMK) for which deletion is
-     * scheduled.</p>
+     * <p>The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key
+     * ARN</a>) of the CMK whose deletion is scheduled.</p>
      */
     inline const Aws::String& GetKeyId() const{ return m_keyId; }
 
     /**
-     * <p>The unique identifier of the customer master key (CMK) for which deletion is
-     * scheduled.</p>
+     * <p>The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key
+     * ARN</a>) of the CMK whose deletion is scheduled.</p>
      */
     inline void SetKeyId(const Aws::String& value) { m_keyId = value; }
 
     /**
-     * <p>The unique identifier of the customer master key (CMK) for which deletion is
-     * scheduled.</p>
+     * <p>The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key
+     * ARN</a>) of the CMK whose deletion is scheduled.</p>
      */
     inline void SetKeyId(Aws::String&& value) { m_keyId = std::move(value); }
 
     /**
-     * <p>The unique identifier of the customer master key (CMK) for which deletion is
-     * scheduled.</p>
+     * <p>The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key
+     * ARN</a>) of the CMK whose deletion is scheduled.</p>
      */
     inline void SetKeyId(const char* value) { m_keyId.assign(value); }
 
     /**
-     * <p>The unique identifier of the customer master key (CMK) for which deletion is
-     * scheduled.</p>
+     * <p>The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key
+     * ARN</a>) of the CMK whose deletion is scheduled.</p>
      */
     inline ScheduleKeyDeletionResult& WithKeyId(const Aws::String& value) { SetKeyId(value); return *this;}
 
     /**
-     * <p>The unique identifier of the customer master key (CMK) for which deletion is
-     * scheduled.</p>
+     * <p>The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key
+     * ARN</a>) of the CMK whose deletion is scheduled.</p>
      */
     inline ScheduleKeyDeletionResult& WithKeyId(Aws::String&& value) { SetKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>The unique identifier of the customer master key (CMK) for which deletion is
-     * scheduled.</p>
+     * <p>The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key
+     * ARN</a>) of the CMK whose deletion is scheduled.</p>
      */
     inline ScheduleKeyDeletionResult& WithKeyId(const char* value) { SetKeyId(value); return *this;}
 

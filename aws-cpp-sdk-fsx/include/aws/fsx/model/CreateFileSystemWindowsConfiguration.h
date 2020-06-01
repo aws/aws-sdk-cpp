@@ -322,49 +322,57 @@ namespace Model
 
     /**
      * <p>The preferred start time to perform weekly maintenance, formatted d:HH:MM in
-     * the UTC time zone.</p>
+     * the UTC time zone, where d is the weekday number, from 1 through 7, beginning
+     * with Monday and ending with Sunday.</p>
      */
     inline const Aws::String& GetWeeklyMaintenanceStartTime() const{ return m_weeklyMaintenanceStartTime; }
 
     /**
      * <p>The preferred start time to perform weekly maintenance, formatted d:HH:MM in
-     * the UTC time zone.</p>
+     * the UTC time zone, where d is the weekday number, from 1 through 7, beginning
+     * with Monday and ending with Sunday.</p>
      */
     inline bool WeeklyMaintenanceStartTimeHasBeenSet() const { return m_weeklyMaintenanceStartTimeHasBeenSet; }
 
     /**
      * <p>The preferred start time to perform weekly maintenance, formatted d:HH:MM in
-     * the UTC time zone.</p>
+     * the UTC time zone, where d is the weekday number, from 1 through 7, beginning
+     * with Monday and ending with Sunday.</p>
      */
     inline void SetWeeklyMaintenanceStartTime(const Aws::String& value) { m_weeklyMaintenanceStartTimeHasBeenSet = true; m_weeklyMaintenanceStartTime = value; }
 
     /**
      * <p>The preferred start time to perform weekly maintenance, formatted d:HH:MM in
-     * the UTC time zone.</p>
+     * the UTC time zone, where d is the weekday number, from 1 through 7, beginning
+     * with Monday and ending with Sunday.</p>
      */
     inline void SetWeeklyMaintenanceStartTime(Aws::String&& value) { m_weeklyMaintenanceStartTimeHasBeenSet = true; m_weeklyMaintenanceStartTime = std::move(value); }
 
     /**
      * <p>The preferred start time to perform weekly maintenance, formatted d:HH:MM in
-     * the UTC time zone.</p>
+     * the UTC time zone, where d is the weekday number, from 1 through 7, beginning
+     * with Monday and ending with Sunday.</p>
      */
     inline void SetWeeklyMaintenanceStartTime(const char* value) { m_weeklyMaintenanceStartTimeHasBeenSet = true; m_weeklyMaintenanceStartTime.assign(value); }
 
     /**
      * <p>The preferred start time to perform weekly maintenance, formatted d:HH:MM in
-     * the UTC time zone.</p>
+     * the UTC time zone, where d is the weekday number, from 1 through 7, beginning
+     * with Monday and ending with Sunday.</p>
      */
     inline CreateFileSystemWindowsConfiguration& WithWeeklyMaintenanceStartTime(const Aws::String& value) { SetWeeklyMaintenanceStartTime(value); return *this;}
 
     /**
      * <p>The preferred start time to perform weekly maintenance, formatted d:HH:MM in
-     * the UTC time zone.</p>
+     * the UTC time zone, where d is the weekday number, from 1 through 7, beginning
+     * with Monday and ending with Sunday.</p>
      */
     inline CreateFileSystemWindowsConfiguration& WithWeeklyMaintenanceStartTime(Aws::String&& value) { SetWeeklyMaintenanceStartTime(std::move(value)); return *this;}
 
     /**
      * <p>The preferred start time to perform weekly maintenance, formatted d:HH:MM in
-     * the UTC time zone.</p>
+     * the UTC time zone, where d is the weekday number, from 1 through 7, beginning
+     * with Monday and ending with Sunday.</p>
      */
     inline CreateFileSystemWindowsConfiguration& WithWeeklyMaintenanceStartTime(const char* value) { SetWeeklyMaintenanceStartTime(value); return *this;}
 

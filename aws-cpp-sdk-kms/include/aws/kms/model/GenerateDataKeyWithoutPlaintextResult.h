@@ -75,37 +75,51 @@ namespace Model
 
 
     /**
-     * <p>The identifier of the CMK that encrypted the data key.</p>
+     * <p>The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key
+     * ARN</a>) of the CMK that encrypted the data key.</p>
      */
     inline const Aws::String& GetKeyId() const{ return m_keyId; }
 
     /**
-     * <p>The identifier of the CMK that encrypted the data key.</p>
+     * <p>The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key
+     * ARN</a>) of the CMK that encrypted the data key.</p>
      */
     inline void SetKeyId(const Aws::String& value) { m_keyId = value; }
 
     /**
-     * <p>The identifier of the CMK that encrypted the data key.</p>
+     * <p>The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key
+     * ARN</a>) of the CMK that encrypted the data key.</p>
      */
     inline void SetKeyId(Aws::String&& value) { m_keyId = std::move(value); }
 
     /**
-     * <p>The identifier of the CMK that encrypted the data key.</p>
+     * <p>The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key
+     * ARN</a>) of the CMK that encrypted the data key.</p>
      */
     inline void SetKeyId(const char* value) { m_keyId.assign(value); }
 
     /**
-     * <p>The identifier of the CMK that encrypted the data key.</p>
+     * <p>The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key
+     * ARN</a>) of the CMK that encrypted the data key.</p>
      */
     inline GenerateDataKeyWithoutPlaintextResult& WithKeyId(const Aws::String& value) { SetKeyId(value); return *this;}
 
     /**
-     * <p>The identifier of the CMK that encrypted the data key.</p>
+     * <p>The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key
+     * ARN</a>) of the CMK that encrypted the data key.</p>
      */
     inline GenerateDataKeyWithoutPlaintextResult& WithKeyId(Aws::String&& value) { SetKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the CMK that encrypted the data key.</p>
+     * <p>The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key
+     * ARN</a>) of the CMK that encrypted the data key.</p>
      */
     inline GenerateDataKeyWithoutPlaintextResult& WithKeyId(const char* value) { SetKeyId(value); return *this;}
 

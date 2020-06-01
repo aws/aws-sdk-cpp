@@ -210,7 +210,7 @@ namespace Model
      * hard disk drive storage. HDD is supported on <code>SINGLE_AZ_2</code> and
      * <code>MULTI_AZ_1</code> Windows file system deployment types. </p> </li> </ul>
      * <p> Default value is <code>SSD</code>. For more information, see <a
-     * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/optimize-fsx-tco.html#saz-maz-storage-type">
+     * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/optimize-fsx-costs.html#storage-type-options">
      * Storage Type Options</a> in the <i>Amazon FSx for Windows User Guide</i>. </p>
      */
     inline const StorageType& GetStorageType() const{ return m_storageType; }
@@ -223,7 +223,7 @@ namespace Model
      * hard disk drive storage. HDD is supported on <code>SINGLE_AZ_2</code> and
      * <code>MULTI_AZ_1</code> Windows file system deployment types. </p> </li> </ul>
      * <p> Default value is <code>SSD</code>. For more information, see <a
-     * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/optimize-fsx-tco.html#saz-maz-storage-type">
+     * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/optimize-fsx-costs.html#storage-type-options">
      * Storage Type Options</a> in the <i>Amazon FSx for Windows User Guide</i>. </p>
      */
     inline bool StorageTypeHasBeenSet() const { return m_storageTypeHasBeenSet; }
@@ -236,7 +236,7 @@ namespace Model
      * hard disk drive storage. HDD is supported on <code>SINGLE_AZ_2</code> and
      * <code>MULTI_AZ_1</code> Windows file system deployment types. </p> </li> </ul>
      * <p> Default value is <code>SSD</code>. For more information, see <a
-     * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/optimize-fsx-tco.html#saz-maz-storage-type">
+     * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/optimize-fsx-costs.html#storage-type-options">
      * Storage Type Options</a> in the <i>Amazon FSx for Windows User Guide</i>. </p>
      */
     inline void SetStorageType(const StorageType& value) { m_storageTypeHasBeenSet = true; m_storageType = value; }
@@ -249,7 +249,7 @@ namespace Model
      * hard disk drive storage. HDD is supported on <code>SINGLE_AZ_2</code> and
      * <code>MULTI_AZ_1</code> Windows file system deployment types. </p> </li> </ul>
      * <p> Default value is <code>SSD</code>. For more information, see <a
-     * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/optimize-fsx-tco.html#saz-maz-storage-type">
+     * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/optimize-fsx-costs.html#storage-type-options">
      * Storage Type Options</a> in the <i>Amazon FSx for Windows User Guide</i>. </p>
      */
     inline void SetStorageType(StorageType&& value) { m_storageTypeHasBeenSet = true; m_storageType = std::move(value); }
@@ -262,7 +262,7 @@ namespace Model
      * hard disk drive storage. HDD is supported on <code>SINGLE_AZ_2</code> and
      * <code>MULTI_AZ_1</code> Windows file system deployment types. </p> </li> </ul>
      * <p> Default value is <code>SSD</code>. For more information, see <a
-     * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/optimize-fsx-tco.html#saz-maz-storage-type">
+     * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/optimize-fsx-costs.html#storage-type-options">
      * Storage Type Options</a> in the <i>Amazon FSx for Windows User Guide</i>. </p>
      */
     inline CreateFileSystemRequest& WithStorageType(const StorageType& value) { SetStorageType(value); return *this;}
@@ -275,7 +275,7 @@ namespace Model
      * hard disk drive storage. HDD is supported on <code>SINGLE_AZ_2</code> and
      * <code>MULTI_AZ_1</code> Windows file system deployment types. </p> </li> </ul>
      * <p> Default value is <code>SSD</code>. For more information, see <a
-     * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/optimize-fsx-tco.html#saz-maz-storage-type">
+     * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/optimize-fsx-costs.html#storage-type-options">
      * Storage Type Options</a> in the <i>Amazon FSx for Windows User Guide</i>. </p>
      */
     inline CreateFileSystemRequest& WithStorageType(StorageType&& value) { SetStorageType(std::move(value)); return *this;}

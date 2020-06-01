@@ -76,37 +76,51 @@ namespace Model
 
 
     /**
-     * <p>The ID of the key used during encryption.</p>
+     * <p>The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key
+     * ARN</a>) of the CMK that was used to encrypt the plaintext.</p>
      */
     inline const Aws::String& GetKeyId() const{ return m_keyId; }
 
     /**
-     * <p>The ID of the key used during encryption.</p>
+     * <p>The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key
+     * ARN</a>) of the CMK that was used to encrypt the plaintext.</p>
      */
     inline void SetKeyId(const Aws::String& value) { m_keyId = value; }
 
     /**
-     * <p>The ID of the key used during encryption.</p>
+     * <p>The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key
+     * ARN</a>) of the CMK that was used to encrypt the plaintext.</p>
      */
     inline void SetKeyId(Aws::String&& value) { m_keyId = std::move(value); }
 
     /**
-     * <p>The ID of the key used during encryption.</p>
+     * <p>The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key
+     * ARN</a>) of the CMK that was used to encrypt the plaintext.</p>
      */
     inline void SetKeyId(const char* value) { m_keyId.assign(value); }
 
     /**
-     * <p>The ID of the key used during encryption.</p>
+     * <p>The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key
+     * ARN</a>) of the CMK that was used to encrypt the plaintext.</p>
      */
     inline EncryptResult& WithKeyId(const Aws::String& value) { SetKeyId(value); return *this;}
 
     /**
-     * <p>The ID of the key used during encryption.</p>
+     * <p>The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key
+     * ARN</a>) of the CMK that was used to encrypt the plaintext.</p>
      */
     inline EncryptResult& WithKeyId(Aws::String&& value) { SetKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the key used during encryption.</p>
+     * <p>The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key
+     * ARN</a>) of the CMK that was used to encrypt the plaintext.</p>
      */
     inline EncryptResult& WithKeyId(const char* value) { SetKeyId(value); return *this;}
 

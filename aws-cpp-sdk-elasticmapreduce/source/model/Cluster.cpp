@@ -36,6 +36,7 @@ Cluster::Cluster() :
     m_instanceCollectionType(InstanceCollectionType::NOT_SET),
     m_instanceCollectionTypeHasBeenSet(false),
     m_logUriHasBeenSet(false),
+    m_logEncryptionKmsKeyIdHasBeenSet(false),
     m_requestedAmiVersionHasBeenSet(false),
     m_runningAmiVersionHasBeenSet(false),
     m_releaseLabelHasBeenSet(false),
@@ -77,6 +78,7 @@ Cluster::Cluster(JsonView jsonValue) :
     m_instanceCollectionType(InstanceCollectionType::NOT_SET),
     m_instanceCollectionTypeHasBeenSet(false),
     m_logUriHasBeenSet(false),
+    m_logEncryptionKmsKeyIdHasBeenSet(false),
     m_requestedAmiVersionHasBeenSet(false),
     m_runningAmiVersionHasBeenSet(false),
     m_releaseLabelHasBeenSet(false),
@@ -153,6 +155,13 @@ Cluster& Cluster::operator =(JsonView jsonValue)
     m_logUri = jsonValue.GetString("LogUri");
 
     m_logUriHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("LogEncryptionKmsKeyId"))
+  {
+    m_logEncryptionKmsKeyId = jsonValue.GetString("LogEncryptionKmsKeyId");
+
+    m_logEncryptionKmsKeyIdHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("RequestedAmiVersion"))
@@ -357,6 +366,12 @@ JsonValue Cluster::Jsonize() const
   if(m_logUriHasBeenSet)
   {
    payload.WithString("LogUri", m_logUri);
+
+  }
+
+  if(m_logEncryptionKmsKeyIdHasBeenSet)
+  {
+   payload.WithString("LogEncryptionKmsKeyId", m_logEncryptionKmsKeyId);
 
   }
 

@@ -45,44 +45,51 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the customer master key that was used to perform the
-     * decryption.</p>
+     * <p>The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key
+     * ARN</a>) of the CMK that was used to decrypt the ciphertext.</p>
      */
     inline const Aws::String& GetKeyId() const{ return m_keyId; }
 
     /**
-     * <p>The ARN of the customer master key that was used to perform the
-     * decryption.</p>
+     * <p>The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key
+     * ARN</a>) of the CMK that was used to decrypt the ciphertext.</p>
      */
     inline void SetKeyId(const Aws::String& value) { m_keyId = value; }
 
     /**
-     * <p>The ARN of the customer master key that was used to perform the
-     * decryption.</p>
+     * <p>The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key
+     * ARN</a>) of the CMK that was used to decrypt the ciphertext.</p>
      */
     inline void SetKeyId(Aws::String&& value) { m_keyId = std::move(value); }
 
     /**
-     * <p>The ARN of the customer master key that was used to perform the
-     * decryption.</p>
+     * <p>The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key
+     * ARN</a>) of the CMK that was used to decrypt the ciphertext.</p>
      */
     inline void SetKeyId(const char* value) { m_keyId.assign(value); }
 
     /**
-     * <p>The ARN of the customer master key that was used to perform the
-     * decryption.</p>
+     * <p>The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key
+     * ARN</a>) of the CMK that was used to decrypt the ciphertext.</p>
      */
     inline DecryptResult& WithKeyId(const Aws::String& value) { SetKeyId(value); return *this;}
 
     /**
-     * <p>The ARN of the customer master key that was used to perform the
-     * decryption.</p>
+     * <p>The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key
+     * ARN</a>) of the CMK that was used to decrypt the ciphertext.</p>
      */
     inline DecryptResult& WithKeyId(Aws::String&& value) { SetKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the customer master key that was used to perform the
-     * decryption.</p>
+     * <p>The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key
+     * ARN</a>) of the CMK that was used to decrypt the ciphertext.</p>
      */
     inline DecryptResult& WithKeyId(const char* value) { SetKeyId(value); return *this;}
 

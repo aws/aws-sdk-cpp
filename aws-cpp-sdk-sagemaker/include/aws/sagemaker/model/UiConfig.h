@@ -49,73 +49,141 @@ namespace Model
 
 
     /**
-     * <p>The Amazon S3 bucket location of the UI template. For more information about
-     * the contents of a UI template, see <a
+     * <p>The Amazon S3 bucket location of the UI template, or worker task template.
+     * This is the template used to render the worker UI and tools for labeling job
+     * tasks. For more information about the contents of a UI template, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-custom-templates-step2.html">
      * Creating Your Custom Labeling Task Template</a>.</p>
      */
     inline const Aws::String& GetUiTemplateS3Uri() const{ return m_uiTemplateS3Uri; }
 
     /**
-     * <p>The Amazon S3 bucket location of the UI template. For more information about
-     * the contents of a UI template, see <a
+     * <p>The Amazon S3 bucket location of the UI template, or worker task template.
+     * This is the template used to render the worker UI and tools for labeling job
+     * tasks. For more information about the contents of a UI template, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-custom-templates-step2.html">
      * Creating Your Custom Labeling Task Template</a>.</p>
      */
     inline bool UiTemplateS3UriHasBeenSet() const { return m_uiTemplateS3UriHasBeenSet; }
 
     /**
-     * <p>The Amazon S3 bucket location of the UI template. For more information about
-     * the contents of a UI template, see <a
+     * <p>The Amazon S3 bucket location of the UI template, or worker task template.
+     * This is the template used to render the worker UI and tools for labeling job
+     * tasks. For more information about the contents of a UI template, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-custom-templates-step2.html">
      * Creating Your Custom Labeling Task Template</a>.</p>
      */
     inline void SetUiTemplateS3Uri(const Aws::String& value) { m_uiTemplateS3UriHasBeenSet = true; m_uiTemplateS3Uri = value; }
 
     /**
-     * <p>The Amazon S3 bucket location of the UI template. For more information about
-     * the contents of a UI template, see <a
+     * <p>The Amazon S3 bucket location of the UI template, or worker task template.
+     * This is the template used to render the worker UI and tools for labeling job
+     * tasks. For more information about the contents of a UI template, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-custom-templates-step2.html">
      * Creating Your Custom Labeling Task Template</a>.</p>
      */
     inline void SetUiTemplateS3Uri(Aws::String&& value) { m_uiTemplateS3UriHasBeenSet = true; m_uiTemplateS3Uri = std::move(value); }
 
     /**
-     * <p>The Amazon S3 bucket location of the UI template. For more information about
-     * the contents of a UI template, see <a
+     * <p>The Amazon S3 bucket location of the UI template, or worker task template.
+     * This is the template used to render the worker UI and tools for labeling job
+     * tasks. For more information about the contents of a UI template, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-custom-templates-step2.html">
      * Creating Your Custom Labeling Task Template</a>.</p>
      */
     inline void SetUiTemplateS3Uri(const char* value) { m_uiTemplateS3UriHasBeenSet = true; m_uiTemplateS3Uri.assign(value); }
 
     /**
-     * <p>The Amazon S3 bucket location of the UI template. For more information about
-     * the contents of a UI template, see <a
+     * <p>The Amazon S3 bucket location of the UI template, or worker task template.
+     * This is the template used to render the worker UI and tools for labeling job
+     * tasks. For more information about the contents of a UI template, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-custom-templates-step2.html">
      * Creating Your Custom Labeling Task Template</a>.</p>
      */
     inline UiConfig& WithUiTemplateS3Uri(const Aws::String& value) { SetUiTemplateS3Uri(value); return *this;}
 
     /**
-     * <p>The Amazon S3 bucket location of the UI template. For more information about
-     * the contents of a UI template, see <a
+     * <p>The Amazon S3 bucket location of the UI template, or worker task template.
+     * This is the template used to render the worker UI and tools for labeling job
+     * tasks. For more information about the contents of a UI template, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-custom-templates-step2.html">
      * Creating Your Custom Labeling Task Template</a>.</p>
      */
     inline UiConfig& WithUiTemplateS3Uri(Aws::String&& value) { SetUiTemplateS3Uri(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon S3 bucket location of the UI template. For more information about
-     * the contents of a UI template, see <a
+     * <p>The Amazon S3 bucket location of the UI template, or worker task template.
+     * This is the template used to render the worker UI and tools for labeling job
+     * tasks. For more information about the contents of a UI template, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-custom-templates-step2.html">
      * Creating Your Custom Labeling Task Template</a>.</p>
      */
     inline UiConfig& WithUiTemplateS3Uri(const char* value) { SetUiTemplateS3Uri(value); return *this;}
 
+
+    /**
+     * <p>The ARN of the worker task template used to render the worker UI and tools
+     * for labeling job tasks. Do not use this parameter if you use
+     * UiTemplateS3Uri.</p>
+     */
+    inline const Aws::String& GetHumanTaskUiArn() const{ return m_humanTaskUiArn; }
+
+    /**
+     * <p>The ARN of the worker task template used to render the worker UI and tools
+     * for labeling job tasks. Do not use this parameter if you use
+     * UiTemplateS3Uri.</p>
+     */
+    inline bool HumanTaskUiArnHasBeenSet() const { return m_humanTaskUiArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the worker task template used to render the worker UI and tools
+     * for labeling job tasks. Do not use this parameter if you use
+     * UiTemplateS3Uri.</p>
+     */
+    inline void SetHumanTaskUiArn(const Aws::String& value) { m_humanTaskUiArnHasBeenSet = true; m_humanTaskUiArn = value; }
+
+    /**
+     * <p>The ARN of the worker task template used to render the worker UI and tools
+     * for labeling job tasks. Do not use this parameter if you use
+     * UiTemplateS3Uri.</p>
+     */
+    inline void SetHumanTaskUiArn(Aws::String&& value) { m_humanTaskUiArnHasBeenSet = true; m_humanTaskUiArn = std::move(value); }
+
+    /**
+     * <p>The ARN of the worker task template used to render the worker UI and tools
+     * for labeling job tasks. Do not use this parameter if you use
+     * UiTemplateS3Uri.</p>
+     */
+    inline void SetHumanTaskUiArn(const char* value) { m_humanTaskUiArnHasBeenSet = true; m_humanTaskUiArn.assign(value); }
+
+    /**
+     * <p>The ARN of the worker task template used to render the worker UI and tools
+     * for labeling job tasks. Do not use this parameter if you use
+     * UiTemplateS3Uri.</p>
+     */
+    inline UiConfig& WithHumanTaskUiArn(const Aws::String& value) { SetHumanTaskUiArn(value); return *this;}
+
+    /**
+     * <p>The ARN of the worker task template used to render the worker UI and tools
+     * for labeling job tasks. Do not use this parameter if you use
+     * UiTemplateS3Uri.</p>
+     */
+    inline UiConfig& WithHumanTaskUiArn(Aws::String&& value) { SetHumanTaskUiArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The ARN of the worker task template used to render the worker UI and tools
+     * for labeling job tasks. Do not use this parameter if you use
+     * UiTemplateS3Uri.</p>
+     */
+    inline UiConfig& WithHumanTaskUiArn(const char* value) { SetHumanTaskUiArn(value); return *this;}
+
   private:
 
     Aws::String m_uiTemplateS3Uri;
     bool m_uiTemplateS3UriHasBeenSet;
+
+    Aws::String m_humanTaskUiArn;
+    bool m_humanTaskUiArnHasBeenSet;
   };
 
 } // namespace Model

@@ -29,12 +29,14 @@ namespace Model
 {
 
 QueryExecutionContext::QueryExecutionContext() : 
-    m_databaseHasBeenSet(false)
+    m_databaseHasBeenSet(false),
+    m_catalogHasBeenSet(false)
 {
 }
 
 QueryExecutionContext::QueryExecutionContext(JsonView jsonValue) : 
-    m_databaseHasBeenSet(false)
+    m_databaseHasBeenSet(false),
+    m_catalogHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -48,6 +50,13 @@ QueryExecutionContext& QueryExecutionContext::operator =(JsonView jsonValue)
     m_databaseHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Catalog"))
+  {
+    m_catalog = jsonValue.GetString("Catalog");
+
+    m_catalogHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -58,6 +67,12 @@ JsonValue QueryExecutionContext::Jsonize() const
   if(m_databaseHasBeenSet)
   {
    payload.WithString("Database", m_database);
+
+  }
+
+  if(m_catalogHasBeenSet)
+  {
+   payload.WithString("Catalog", m_catalog);
 
   }
 

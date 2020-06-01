@@ -58,6 +58,7 @@ enum class AthenaErrors
 
   INTERNAL_SERVER= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   INVALID_REQUEST,
+  METADATA,
   TOO_MANY_REQUESTS
 };
 namespace AthenaErrorMapper

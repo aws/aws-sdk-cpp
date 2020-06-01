@@ -26,7 +26,8 @@ CreateFleetRequest::CreateFleetRequest() :
     m_fleetNameHasBeenSet(false),
     m_displayNameHasBeenSet(false),
     m_optimizeForEndUserLocation(false),
-    m_optimizeForEndUserLocationHasBeenSet(false)
+    m_optimizeForEndUserLocationHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -49,6 +50,17 @@ Aws::String CreateFleetRequest::SerializePayload() const
   if(m_optimizeForEndUserLocationHasBeenSet)
   {
    payload.WithBool("OptimizeForEndUserLocation", m_optimizeForEndUserLocation);
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   JsonValue tagsJsonMap;
+   for(auto& tagsItem : m_tags)
+   {
+     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+   }
+   payload.WithObject("Tags", std::move(tagsJsonMap));
 
   }
 

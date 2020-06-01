@@ -186,37 +186,44 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>A list of the <a>HyperParameterTrainingJobDefinition</a> objects launched for
+     * this tuning job.</p>
      */
     inline const Aws::Vector<HyperParameterTrainingJobDefinition>& GetTrainingJobDefinitions() const{ return m_trainingJobDefinitions; }
 
     /**
-     * <p/>
+     * <p>A list of the <a>HyperParameterTrainingJobDefinition</a> objects launched for
+     * this tuning job.</p>
      */
     inline void SetTrainingJobDefinitions(const Aws::Vector<HyperParameterTrainingJobDefinition>& value) { m_trainingJobDefinitions = value; }
 
     /**
-     * <p/>
+     * <p>A list of the <a>HyperParameterTrainingJobDefinition</a> objects launched for
+     * this tuning job.</p>
      */
     inline void SetTrainingJobDefinitions(Aws::Vector<HyperParameterTrainingJobDefinition>&& value) { m_trainingJobDefinitions = std::move(value); }
 
     /**
-     * <p/>
+     * <p>A list of the <a>HyperParameterTrainingJobDefinition</a> objects launched for
+     * this tuning job.</p>
      */
     inline DescribeHyperParameterTuningJobResult& WithTrainingJobDefinitions(const Aws::Vector<HyperParameterTrainingJobDefinition>& value) { SetTrainingJobDefinitions(value); return *this;}
 
     /**
-     * <p/>
+     * <p>A list of the <a>HyperParameterTrainingJobDefinition</a> objects launched for
+     * this tuning job.</p>
      */
     inline DescribeHyperParameterTuningJobResult& WithTrainingJobDefinitions(Aws::Vector<HyperParameterTrainingJobDefinition>&& value) { SetTrainingJobDefinitions(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>A list of the <a>HyperParameterTrainingJobDefinition</a> objects launched for
+     * this tuning job.</p>
      */
     inline DescribeHyperParameterTuningJobResult& AddTrainingJobDefinitions(const HyperParameterTrainingJobDefinition& value) { m_trainingJobDefinitions.push_back(value); return *this; }
 
     /**
-     * <p/>
+     * <p>A list of the <a>HyperParameterTrainingJobDefinition</a> objects launched for
+     * this tuning job.</p>
      */
     inline DescribeHyperParameterTuningJobResult& AddTrainingJobDefinitions(HyperParameterTrainingJobDefinition&& value) { m_trainingJobDefinitions.push_back(std::move(value)); return *this; }
 

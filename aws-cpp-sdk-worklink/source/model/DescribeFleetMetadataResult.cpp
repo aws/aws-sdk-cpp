@@ -84,6 +84,15 @@ DescribeFleetMetadataResult& DescribeFleetMetadataResult::operator =(const Aws::
 
   }
 
+  if(jsonValue.ValueExists("Tags"))
+  {
+    Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("Tags").GetAllObjects();
+    for(auto& tagsItem : tagsJsonMap)
+    {
+      m_tags[tagsItem.first] = tagsItem.second.AsString();
+    }
+  }
+
 
 
   return *this;

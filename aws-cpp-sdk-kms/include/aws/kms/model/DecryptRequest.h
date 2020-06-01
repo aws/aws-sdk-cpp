@@ -81,14 +81,16 @@ namespace Model
 
     /**
      * <p>Specifies the encryption context to use when decrypting the data. An
-     * encryption context is valid only for cryptographic operations with a symmetric
-     * CMK. The standard asymmetric encryption algorithms that AWS KMS uses do not
-     * support an encryption context.</p> <p>An <i>encryption context</i> is a
-     * collection of non-secret key-value pairs that represents additional
-     * authenticated data. When you use an encryption context to encrypt data, you must
-     * specify the same (an exact case-sensitive match) encryption context to decrypt
-     * the data. An encryption context is optional when encrypting with a symmetric
-     * CMK, but it is highly recommended.</p> <p>For more information, see <a
+     * encryption context is valid only for <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
+     * operations</a> with a symmetric CMK. The standard asymmetric encryption
+     * algorithms that AWS KMS uses do not support an encryption context.</p> <p>An
+     * <i>encryption context</i> is a collection of non-secret key-value pairs that
+     * represents additional authenticated data. When you use an encryption context to
+     * encrypt data, you must specify the same (an exact case-sensitive match)
+     * encryption context to decrypt the data. An encryption context is optional when
+     * encrypting with a symmetric CMK, but it is highly recommended.</p> <p>For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
      * Context</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */
@@ -96,14 +98,16 @@ namespace Model
 
     /**
      * <p>Specifies the encryption context to use when decrypting the data. An
-     * encryption context is valid only for cryptographic operations with a symmetric
-     * CMK. The standard asymmetric encryption algorithms that AWS KMS uses do not
-     * support an encryption context.</p> <p>An <i>encryption context</i> is a
-     * collection of non-secret key-value pairs that represents additional
-     * authenticated data. When you use an encryption context to encrypt data, you must
-     * specify the same (an exact case-sensitive match) encryption context to decrypt
-     * the data. An encryption context is optional when encrypting with a symmetric
-     * CMK, but it is highly recommended.</p> <p>For more information, see <a
+     * encryption context is valid only for <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
+     * operations</a> with a symmetric CMK. The standard asymmetric encryption
+     * algorithms that AWS KMS uses do not support an encryption context.</p> <p>An
+     * <i>encryption context</i> is a collection of non-secret key-value pairs that
+     * represents additional authenticated data. When you use an encryption context to
+     * encrypt data, you must specify the same (an exact case-sensitive match)
+     * encryption context to decrypt the data. An encryption context is optional when
+     * encrypting with a symmetric CMK, but it is highly recommended.</p> <p>For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
      * Context</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */
@@ -111,14 +115,16 @@ namespace Model
 
     /**
      * <p>Specifies the encryption context to use when decrypting the data. An
-     * encryption context is valid only for cryptographic operations with a symmetric
-     * CMK. The standard asymmetric encryption algorithms that AWS KMS uses do not
-     * support an encryption context.</p> <p>An <i>encryption context</i> is a
-     * collection of non-secret key-value pairs that represents additional
-     * authenticated data. When you use an encryption context to encrypt data, you must
-     * specify the same (an exact case-sensitive match) encryption context to decrypt
-     * the data. An encryption context is optional when encrypting with a symmetric
-     * CMK, but it is highly recommended.</p> <p>For more information, see <a
+     * encryption context is valid only for <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
+     * operations</a> with a symmetric CMK. The standard asymmetric encryption
+     * algorithms that AWS KMS uses do not support an encryption context.</p> <p>An
+     * <i>encryption context</i> is a collection of non-secret key-value pairs that
+     * represents additional authenticated data. When you use an encryption context to
+     * encrypt data, you must specify the same (an exact case-sensitive match)
+     * encryption context to decrypt the data. An encryption context is optional when
+     * encrypting with a symmetric CMK, but it is highly recommended.</p> <p>For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
      * Context</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */
@@ -126,14 +132,16 @@ namespace Model
 
     /**
      * <p>Specifies the encryption context to use when decrypting the data. An
-     * encryption context is valid only for cryptographic operations with a symmetric
-     * CMK. The standard asymmetric encryption algorithms that AWS KMS uses do not
-     * support an encryption context.</p> <p>An <i>encryption context</i> is a
-     * collection of non-secret key-value pairs that represents additional
-     * authenticated data. When you use an encryption context to encrypt data, you must
-     * specify the same (an exact case-sensitive match) encryption context to decrypt
-     * the data. An encryption context is optional when encrypting with a symmetric
-     * CMK, but it is highly recommended.</p> <p>For more information, see <a
+     * encryption context is valid only for <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
+     * operations</a> with a symmetric CMK. The standard asymmetric encryption
+     * algorithms that AWS KMS uses do not support an encryption context.</p> <p>An
+     * <i>encryption context</i> is a collection of non-secret key-value pairs that
+     * represents additional authenticated data. When you use an encryption context to
+     * encrypt data, you must specify the same (an exact case-sensitive match)
+     * encryption context to decrypt the data. An encryption context is optional when
+     * encrypting with a symmetric CMK, but it is highly recommended.</p> <p>For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
      * Context</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */
@@ -141,14 +149,16 @@ namespace Model
 
     /**
      * <p>Specifies the encryption context to use when decrypting the data. An
-     * encryption context is valid only for cryptographic operations with a symmetric
-     * CMK. The standard asymmetric encryption algorithms that AWS KMS uses do not
-     * support an encryption context.</p> <p>An <i>encryption context</i> is a
-     * collection of non-secret key-value pairs that represents additional
-     * authenticated data. When you use an encryption context to encrypt data, you must
-     * specify the same (an exact case-sensitive match) encryption context to decrypt
-     * the data. An encryption context is optional when encrypting with a symmetric
-     * CMK, but it is highly recommended.</p> <p>For more information, see <a
+     * encryption context is valid only for <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
+     * operations</a> with a symmetric CMK. The standard asymmetric encryption
+     * algorithms that AWS KMS uses do not support an encryption context.</p> <p>An
+     * <i>encryption context</i> is a collection of non-secret key-value pairs that
+     * represents additional authenticated data. When you use an encryption context to
+     * encrypt data, you must specify the same (an exact case-sensitive match)
+     * encryption context to decrypt the data. An encryption context is optional when
+     * encrypting with a symmetric CMK, but it is highly recommended.</p> <p>For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
      * Context</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */
@@ -156,14 +166,16 @@ namespace Model
 
     /**
      * <p>Specifies the encryption context to use when decrypting the data. An
-     * encryption context is valid only for cryptographic operations with a symmetric
-     * CMK. The standard asymmetric encryption algorithms that AWS KMS uses do not
-     * support an encryption context.</p> <p>An <i>encryption context</i> is a
-     * collection of non-secret key-value pairs that represents additional
-     * authenticated data. When you use an encryption context to encrypt data, you must
-     * specify the same (an exact case-sensitive match) encryption context to decrypt
-     * the data. An encryption context is optional when encrypting with a symmetric
-     * CMK, but it is highly recommended.</p> <p>For more information, see <a
+     * encryption context is valid only for <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
+     * operations</a> with a symmetric CMK. The standard asymmetric encryption
+     * algorithms that AWS KMS uses do not support an encryption context.</p> <p>An
+     * <i>encryption context</i> is a collection of non-secret key-value pairs that
+     * represents additional authenticated data. When you use an encryption context to
+     * encrypt data, you must specify the same (an exact case-sensitive match)
+     * encryption context to decrypt the data. An encryption context is optional when
+     * encrypting with a symmetric CMK, but it is highly recommended.</p> <p>For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
      * Context</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */
@@ -171,14 +183,16 @@ namespace Model
 
     /**
      * <p>Specifies the encryption context to use when decrypting the data. An
-     * encryption context is valid only for cryptographic operations with a symmetric
-     * CMK. The standard asymmetric encryption algorithms that AWS KMS uses do not
-     * support an encryption context.</p> <p>An <i>encryption context</i> is a
-     * collection of non-secret key-value pairs that represents additional
-     * authenticated data. When you use an encryption context to encrypt data, you must
-     * specify the same (an exact case-sensitive match) encryption context to decrypt
-     * the data. An encryption context is optional when encrypting with a symmetric
-     * CMK, but it is highly recommended.</p> <p>For more information, see <a
+     * encryption context is valid only for <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
+     * operations</a> with a symmetric CMK. The standard asymmetric encryption
+     * algorithms that AWS KMS uses do not support an encryption context.</p> <p>An
+     * <i>encryption context</i> is a collection of non-secret key-value pairs that
+     * represents additional authenticated data. When you use an encryption context to
+     * encrypt data, you must specify the same (an exact case-sensitive match)
+     * encryption context to decrypt the data. An encryption context is optional when
+     * encrypting with a symmetric CMK, but it is highly recommended.</p> <p>For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
      * Context</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */
@@ -186,14 +200,16 @@ namespace Model
 
     /**
      * <p>Specifies the encryption context to use when decrypting the data. An
-     * encryption context is valid only for cryptographic operations with a symmetric
-     * CMK. The standard asymmetric encryption algorithms that AWS KMS uses do not
-     * support an encryption context.</p> <p>An <i>encryption context</i> is a
-     * collection of non-secret key-value pairs that represents additional
-     * authenticated data. When you use an encryption context to encrypt data, you must
-     * specify the same (an exact case-sensitive match) encryption context to decrypt
-     * the data. An encryption context is optional when encrypting with a symmetric
-     * CMK, but it is highly recommended.</p> <p>For more information, see <a
+     * encryption context is valid only for <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
+     * operations</a> with a symmetric CMK. The standard asymmetric encryption
+     * algorithms that AWS KMS uses do not support an encryption context.</p> <p>An
+     * <i>encryption context</i> is a collection of non-secret key-value pairs that
+     * represents additional authenticated data. When you use an encryption context to
+     * encrypt data, you must specify the same (an exact case-sensitive match)
+     * encryption context to decrypt the data. An encryption context is optional when
+     * encrypting with a symmetric CMK, but it is highly recommended.</p> <p>For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
      * Context</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */
@@ -201,14 +217,16 @@ namespace Model
 
     /**
      * <p>Specifies the encryption context to use when decrypting the data. An
-     * encryption context is valid only for cryptographic operations with a symmetric
-     * CMK. The standard asymmetric encryption algorithms that AWS KMS uses do not
-     * support an encryption context.</p> <p>An <i>encryption context</i> is a
-     * collection of non-secret key-value pairs that represents additional
-     * authenticated data. When you use an encryption context to encrypt data, you must
-     * specify the same (an exact case-sensitive match) encryption context to decrypt
-     * the data. An encryption context is optional when encrypting with a symmetric
-     * CMK, but it is highly recommended.</p> <p>For more information, see <a
+     * encryption context is valid only for <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
+     * operations</a> with a symmetric CMK. The standard asymmetric encryption
+     * algorithms that AWS KMS uses do not support an encryption context.</p> <p>An
+     * <i>encryption context</i> is a collection of non-secret key-value pairs that
+     * represents additional authenticated data. When you use an encryption context to
+     * encrypt data, you must specify the same (an exact case-sensitive match)
+     * encryption context to decrypt the data. An encryption context is optional when
+     * encrypting with a symmetric CMK, but it is highly recommended.</p> <p>For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
      * Context</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */
@@ -216,14 +234,16 @@ namespace Model
 
     /**
      * <p>Specifies the encryption context to use when decrypting the data. An
-     * encryption context is valid only for cryptographic operations with a symmetric
-     * CMK. The standard asymmetric encryption algorithms that AWS KMS uses do not
-     * support an encryption context.</p> <p>An <i>encryption context</i> is a
-     * collection of non-secret key-value pairs that represents additional
-     * authenticated data. When you use an encryption context to encrypt data, you must
-     * specify the same (an exact case-sensitive match) encryption context to decrypt
-     * the data. An encryption context is optional when encrypting with a symmetric
-     * CMK, but it is highly recommended.</p> <p>For more information, see <a
+     * encryption context is valid only for <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
+     * operations</a> with a symmetric CMK. The standard asymmetric encryption
+     * algorithms that AWS KMS uses do not support an encryption context.</p> <p>An
+     * <i>encryption context</i> is a collection of non-secret key-value pairs that
+     * represents additional authenticated data. When you use an encryption context to
+     * encrypt data, you must specify the same (an exact case-sensitive match)
+     * encryption context to decrypt the data. An encryption context is optional when
+     * encrypting with a symmetric CMK, but it is highly recommended.</p> <p>For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
      * Context</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */
@@ -231,14 +251,16 @@ namespace Model
 
     /**
      * <p>Specifies the encryption context to use when decrypting the data. An
-     * encryption context is valid only for cryptographic operations with a symmetric
-     * CMK. The standard asymmetric encryption algorithms that AWS KMS uses do not
-     * support an encryption context.</p> <p>An <i>encryption context</i> is a
-     * collection of non-secret key-value pairs that represents additional
-     * authenticated data. When you use an encryption context to encrypt data, you must
-     * specify the same (an exact case-sensitive match) encryption context to decrypt
-     * the data. An encryption context is optional when encrypting with a symmetric
-     * CMK, but it is highly recommended.</p> <p>For more information, see <a
+     * encryption context is valid only for <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
+     * operations</a> with a symmetric CMK. The standard asymmetric encryption
+     * algorithms that AWS KMS uses do not support an encryption context.</p> <p>An
+     * <i>encryption context</i> is a collection of non-secret key-value pairs that
+     * represents additional authenticated data. When you use an encryption context to
+     * encrypt data, you must specify the same (an exact case-sensitive match)
+     * encryption context to decrypt the data. An encryption context is optional when
+     * encrypting with a symmetric CMK, but it is highly recommended.</p> <p>For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
      * Context</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */
@@ -246,14 +268,16 @@ namespace Model
 
     /**
      * <p>Specifies the encryption context to use when decrypting the data. An
-     * encryption context is valid only for cryptographic operations with a symmetric
-     * CMK. The standard asymmetric encryption algorithms that AWS KMS uses do not
-     * support an encryption context.</p> <p>An <i>encryption context</i> is a
-     * collection of non-secret key-value pairs that represents additional
-     * authenticated data. When you use an encryption context to encrypt data, you must
-     * specify the same (an exact case-sensitive match) encryption context to decrypt
-     * the data. An encryption context is optional when encrypting with a symmetric
-     * CMK, but it is highly recommended.</p> <p>For more information, see <a
+     * encryption context is valid only for <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
+     * operations</a> with a symmetric CMK. The standard asymmetric encryption
+     * algorithms that AWS KMS uses do not support an encryption context.</p> <p>An
+     * <i>encryption context</i> is a collection of non-secret key-value pairs that
+     * represents additional authenticated data. When you use an encryption context to
+     * encrypt data, you must specify the same (an exact case-sensitive match)
+     * encryption context to decrypt the data. An encryption context is optional when
+     * encrypting with a symmetric CMK, but it is highly recommended.</p> <p>For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
      * Context</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */
@@ -261,14 +285,16 @@ namespace Model
 
     /**
      * <p>Specifies the encryption context to use when decrypting the data. An
-     * encryption context is valid only for cryptographic operations with a symmetric
-     * CMK. The standard asymmetric encryption algorithms that AWS KMS uses do not
-     * support an encryption context.</p> <p>An <i>encryption context</i> is a
-     * collection of non-secret key-value pairs that represents additional
-     * authenticated data. When you use an encryption context to encrypt data, you must
-     * specify the same (an exact case-sensitive match) encryption context to decrypt
-     * the data. An encryption context is optional when encrypting with a symmetric
-     * CMK, but it is highly recommended.</p> <p>For more information, see <a
+     * encryption context is valid only for <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
+     * operations</a> with a symmetric CMK. The standard asymmetric encryption
+     * algorithms that AWS KMS uses do not support an encryption context.</p> <p>An
+     * <i>encryption context</i> is a collection of non-secret key-value pairs that
+     * represents additional authenticated data. When you use an encryption context to
+     * encrypt data, you must specify the same (an exact case-sensitive match)
+     * encryption context to decrypt the data. An encryption context is optional when
+     * encrypting with a symmetric CMK, but it is highly recommended.</p> <p>For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
      * Context</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */

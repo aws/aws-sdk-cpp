@@ -29,12 +29,14 @@ namespace Model
 {
 
 UiConfig::UiConfig() : 
-    m_uiTemplateS3UriHasBeenSet(false)
+    m_uiTemplateS3UriHasBeenSet(false),
+    m_humanTaskUiArnHasBeenSet(false)
 {
 }
 
 UiConfig::UiConfig(JsonView jsonValue) : 
-    m_uiTemplateS3UriHasBeenSet(false)
+    m_uiTemplateS3UriHasBeenSet(false),
+    m_humanTaskUiArnHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -48,6 +50,13 @@ UiConfig& UiConfig::operator =(JsonView jsonValue)
     m_uiTemplateS3UriHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("HumanTaskUiArn"))
+  {
+    m_humanTaskUiArn = jsonValue.GetString("HumanTaskUiArn");
+
+    m_humanTaskUiArnHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -58,6 +67,12 @@ JsonValue UiConfig::Jsonize() const
   if(m_uiTemplateS3UriHasBeenSet)
   {
    payload.WithString("UiTemplateS3Uri", m_uiTemplateS3Uri);
+
+  }
+
+  if(m_humanTaskUiArnHasBeenSet)
+  {
+   payload.WithString("HumanTaskUiArn", m_humanTaskUiArn);
 
   }
 

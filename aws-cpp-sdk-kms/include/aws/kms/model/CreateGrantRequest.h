@@ -396,9 +396,11 @@ namespace Model
 
 
     /**
-     * <p>Allows a cryptographic operation only when the encryption context matches or
-     * includes the encryption context specified in this structure. For more
-     * information about encryption context, see <a
+     * <p>Allows a <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
+     * operation</a> only when the encryption context matches or includes the
+     * encryption context specified in this structure. For more information about
+     * encryption context, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
      * Context</a> in the <i> <i>AWS Key Management Service Developer Guide</i>
      * </i>.</p>
@@ -406,9 +408,11 @@ namespace Model
     inline const GrantConstraints& GetConstraints() const{ return m_constraints; }
 
     /**
-     * <p>Allows a cryptographic operation only when the encryption context matches or
-     * includes the encryption context specified in this structure. For more
-     * information about encryption context, see <a
+     * <p>Allows a <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
+     * operation</a> only when the encryption context matches or includes the
+     * encryption context specified in this structure. For more information about
+     * encryption context, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
      * Context</a> in the <i> <i>AWS Key Management Service Developer Guide</i>
      * </i>.</p>
@@ -416,9 +420,11 @@ namespace Model
     inline bool ConstraintsHasBeenSet() const { return m_constraintsHasBeenSet; }
 
     /**
-     * <p>Allows a cryptographic operation only when the encryption context matches or
-     * includes the encryption context specified in this structure. For more
-     * information about encryption context, see <a
+     * <p>Allows a <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
+     * operation</a> only when the encryption context matches or includes the
+     * encryption context specified in this structure. For more information about
+     * encryption context, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
      * Context</a> in the <i> <i>AWS Key Management Service Developer Guide</i>
      * </i>.</p>
@@ -426,9 +432,11 @@ namespace Model
     inline void SetConstraints(const GrantConstraints& value) { m_constraintsHasBeenSet = true; m_constraints = value; }
 
     /**
-     * <p>Allows a cryptographic operation only when the encryption context matches or
-     * includes the encryption context specified in this structure. For more
-     * information about encryption context, see <a
+     * <p>Allows a <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
+     * operation</a> only when the encryption context matches or includes the
+     * encryption context specified in this structure. For more information about
+     * encryption context, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
      * Context</a> in the <i> <i>AWS Key Management Service Developer Guide</i>
      * </i>.</p>
@@ -436,9 +444,11 @@ namespace Model
     inline void SetConstraints(GrantConstraints&& value) { m_constraintsHasBeenSet = true; m_constraints = std::move(value); }
 
     /**
-     * <p>Allows a cryptographic operation only when the encryption context matches or
-     * includes the encryption context specified in this structure. For more
-     * information about encryption context, see <a
+     * <p>Allows a <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
+     * operation</a> only when the encryption context matches or includes the
+     * encryption context specified in this structure. For more information about
+     * encryption context, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
      * Context</a> in the <i> <i>AWS Key Management Service Developer Guide</i>
      * </i>.</p>
@@ -446,9 +456,11 @@ namespace Model
     inline CreateGrantRequest& WithConstraints(const GrantConstraints& value) { SetConstraints(value); return *this;}
 
     /**
-     * <p>Allows a cryptographic operation only when the encryption context matches or
-     * includes the encryption context specified in this structure. For more
-     * information about encryption context, see <a
+     * <p>Allows a <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
+     * operation</a> only when the encryption context matches or includes the
+     * encryption context specified in this structure. For more information about
+     * encryption context, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
      * Context</a> in the <i> <i>AWS Key Management Service Developer Guide</i>
      * </i>.</p>

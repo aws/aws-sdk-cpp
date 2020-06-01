@@ -25,6 +25,7 @@ using namespace Aws::Utils;
 RunJobFlowRequest::RunJobFlowRequest() : 
     m_nameHasBeenSet(false),
     m_logUriHasBeenSet(false),
+    m_logEncryptionKmsKeyIdHasBeenSet(false),
     m_additionalInfoHasBeenSet(false),
     m_amiVersionHasBeenSet(false),
     m_releaseLabelHasBeenSet(false),
@@ -69,6 +70,12 @@ Aws::String RunJobFlowRequest::SerializePayload() const
   if(m_logUriHasBeenSet)
   {
    payload.WithString("LogUri", m_logUri);
+
+  }
+
+  if(m_logEncryptionKmsKeyIdHasBeenSet)
+  {
+   payload.WithString("LogEncryptionKmsKeyId", m_logEncryptionKmsKeyId);
 
   }
 

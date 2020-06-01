@@ -52,9 +52,9 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of a Lambda function implements the logic for
      * annotation consolidation.</p> <p>For the built-in bounding box, image
      * classification, semantic segmentation, and text classification task types,
-     * Amazon SageMaker Ground Truth provides the following Lambda functions:</p> <ul>
-     * <li> <p> <i>Bounding box</i> - Finds the most similar boxes from different
-     * workers based on the Jaccard index of the boxes.</p> <p>
+     * Amazon SageMaker Ground Truth provides the following Lambda functions:</p> <p>
+     * <b>Bounding box</b> - Finds the most similar boxes from different workers based
+     * on the Jaccard index of the boxes.</p> <ul> <li> <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-BoundingBox</code> </p>
      * <p> <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-BoundingBox</code>
      * </p> <p>
@@ -76,9 +76,9 @@ namespace Model
      * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-BoundingBox</code>
      * </p> <p>
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-BoundingBox</code>
-     * </p> </li> <li> <p> <i>Image classification</i> - Uses a variant of the
+     * </p> </li> </ul> <p> <b>Image classification</b> - Uses a variant of the
      * Expectation Maximization approach to estimate the true class of an image based
-     * on annotations from individual workers.</p> <p>
+     * on annotations from individual workers.</p> <ul> <li> <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-ImageMultiClass</code>
      * </p> <p>
      * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-ImageMultiClass</code>
@@ -102,9 +102,9 @@ namespace Model
      * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-ImageMultiClass</code>
      * </p> <p>
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-ImageMultiClass</code>
-     * </p> </li> <li> <p> <i>Multi-label image classification</i> - Uses a variant of
+     * </p> </li> </ul> <p> <b>Multi-label image classification</b> - Uses a variant of
      * the Expectation Maximization approach to estimate the true classes of an image
-     * based on annotations from individual workers.</p> <p>
+     * based on annotations from individual workers.</p> <ul> <li> <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-ImageMultiClassMultiLabel</code>
      * </p> <p>
      * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-ImageMultiClassMultiLabel</code>
@@ -128,9 +128,9 @@ namespace Model
      * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-ImageMultiClassMultiLabel</code>
      * </p> <p>
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-ImageMultiClassMultiLabel</code>
-     * </p> </li> <li> <p> <i>Semantic segmentation</i> - Treats each pixel in an image
-     * as a multi-class classification and treats pixel annotations from workers as
-     * "votes" for the correct label.</p> <p>
+     * </p> </li> </ul> <p> <b>Semantic segmentation</b> - Treats each pixel in an
+     * image as a multi-class classification and treats pixel annotations from workers
+     * as "votes" for the correct label.</p> <ul> <li> <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-SemanticSegmentation</code>
      * </p> <p>
      * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-SemanticSegmentation</code>
@@ -154,9 +154,9 @@ namespace Model
      * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-SemanticSegmentation</code>
      * </p> <p>
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-SemanticSegmentation</code>
-     * </p> </li> <li> <p> <i>Text classification</i> - Uses a variant of the
+     * </p> </li> </ul> <p> <b>Text classification</b> - Uses a variant of the
      * Expectation Maximization approach to estimate the true class of text based on
-     * annotations from individual workers.</p> <p>
+     * annotations from individual workers.</p> <ul> <li> <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-TextMultiClass</code>
      * </p> <p>
      * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-TextMultiClass</code>
@@ -180,9 +180,9 @@ namespace Model
      * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-TextMultiClass</code>
      * </p> <p>
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-TextMultiClass</code>
-     * </p> </li> <li> <p> <i>Multi-label text classification</i> - Uses a variant of
+     * </p> </li> </ul> <p> <b>Multi-label text classification</b> - Uses a variant of
      * the Expectation Maximization approach to estimate the true classes of text based
-     * on annotations from individual workers.</p> <p>
+     * on annotations from individual workers.</p> <ul> <li> <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-TextMultiClassMultiLabel</code>
      * </p> <p>
      * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-TextMultiClassMultiLabel</code>
@@ -206,8 +206,9 @@ namespace Model
      * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-TextMultiClassMultiLabel</code>
      * </p> <p>
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-TextMultiClassMultiLabel</code>
-     * </p> </li> <li> <p> <i>Named entity recognition</i> - Groups similar selections
-     * and calculates aggregate boundaries, resolving to most-assigned label.</p> <p>
+     * </p> </li> </ul> <p> <b>Named entity recognition</b> - Groups similar selections
+     * and calculates aggregate boundaries, resolving to most-assigned label.</p> <ul>
+     * <li> <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-NamedEntityRecognition</code>
      * </p> <p>
      * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-NamedEntityRecognition</code>
@@ -231,10 +232,10 @@ namespace Model
      * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-NamedEntityRecognition</code>
      * </p> <p>
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-NamedEntityRecognition</code>
-     * </p> </li> <li> <p> <i>Bounding box verification</i> - Uses a variant of the
+     * </p> </li> </ul> <p> <b>Bounding box verification</b> - Uses a variant of the
      * Expectation Maximization approach to estimate the true class of verification
      * judgement for bounding box labels based on annotations from individual
-     * workers.</p> <p>
+     * workers.</p> <ul> <li> <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-VerificationBoundingBox</code>
      * </p> <p>
      * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-VerificationBoundingBox</code>
@@ -258,10 +259,10 @@ namespace Model
      * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-VerificationBoundingBox</code>
      * </p> <p>
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-VerificationBoundingBox</code>
-     * </p> </li> <li> <p> <i>Semantic segmentation verification</i> - Uses a variant
+     * </p> </li> </ul> <p> <b>Semantic segmentation verification</b> - Uses a variant
      * of the Expectation Maximization approach to estimate the true class of
      * verification judgment for semantic segmentation labels based on annotations from
-     * individual workers.</p> <p>
+     * individual workers.</p> <ul> <li> <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-VerificationSemanticSegmentation</code>
      * </p> <p>
      * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-VerificationSemanticSegmentation</code>
@@ -285,9 +286,9 @@ namespace Model
      * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-VerificationSemanticSegmentation</code>
      * </p> <p>
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-VerificationSemanticSegmentation</code>
-     * </p> </li> <li> <p> <i>Bounding box adjustment</i> - Finds the most similar
+     * </p> </li> </ul> <p> <b>Bounding box adjustment</b> - Finds the most similar
      * boxes from different workers based on the Jaccard index of the adjusted
-     * annotations.</p> <p>
+     * annotations.</p> <ul> <li> <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-AdjustmentBoundingBox</code>
      * </p> <p>
      * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-AdjustmentBoundingBox</code>
@@ -311,9 +312,9 @@ namespace Model
      * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-AdjustmentBoundingBox</code>
      * </p> <p>
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-AdjustmentBoundingBox</code>
-     * </p> </li> <li> <p> <i>Semantic segmentation adjustment</i> - Treats each pixel
+     * </p> </li> </ul> <p> <b>Semantic segmentation adjustment</b> - Treats each pixel
      * in an image as a multi-class classification and treats pixel adjusted
-     * annotations from workers as "votes" for the correct label.</p> <p>
+     * annotations from workers as "votes" for the correct label.</p> <ul> <li> <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-AdjustmentSemanticSegmentation</code>
      * </p> <p>
      * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-AdjustmentSemanticSegmentation</code>
@@ -347,9 +348,9 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of a Lambda function implements the logic for
      * annotation consolidation.</p> <p>For the built-in bounding box, image
      * classification, semantic segmentation, and text classification task types,
-     * Amazon SageMaker Ground Truth provides the following Lambda functions:</p> <ul>
-     * <li> <p> <i>Bounding box</i> - Finds the most similar boxes from different
-     * workers based on the Jaccard index of the boxes.</p> <p>
+     * Amazon SageMaker Ground Truth provides the following Lambda functions:</p> <p>
+     * <b>Bounding box</b> - Finds the most similar boxes from different workers based
+     * on the Jaccard index of the boxes.</p> <ul> <li> <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-BoundingBox</code> </p>
      * <p> <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-BoundingBox</code>
      * </p> <p>
@@ -371,9 +372,9 @@ namespace Model
      * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-BoundingBox</code>
      * </p> <p>
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-BoundingBox</code>
-     * </p> </li> <li> <p> <i>Image classification</i> - Uses a variant of the
+     * </p> </li> </ul> <p> <b>Image classification</b> - Uses a variant of the
      * Expectation Maximization approach to estimate the true class of an image based
-     * on annotations from individual workers.</p> <p>
+     * on annotations from individual workers.</p> <ul> <li> <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-ImageMultiClass</code>
      * </p> <p>
      * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-ImageMultiClass</code>
@@ -397,9 +398,9 @@ namespace Model
      * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-ImageMultiClass</code>
      * </p> <p>
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-ImageMultiClass</code>
-     * </p> </li> <li> <p> <i>Multi-label image classification</i> - Uses a variant of
+     * </p> </li> </ul> <p> <b>Multi-label image classification</b> - Uses a variant of
      * the Expectation Maximization approach to estimate the true classes of an image
-     * based on annotations from individual workers.</p> <p>
+     * based on annotations from individual workers.</p> <ul> <li> <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-ImageMultiClassMultiLabel</code>
      * </p> <p>
      * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-ImageMultiClassMultiLabel</code>
@@ -423,9 +424,9 @@ namespace Model
      * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-ImageMultiClassMultiLabel</code>
      * </p> <p>
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-ImageMultiClassMultiLabel</code>
-     * </p> </li> <li> <p> <i>Semantic segmentation</i> - Treats each pixel in an image
-     * as a multi-class classification and treats pixel annotations from workers as
-     * "votes" for the correct label.</p> <p>
+     * </p> </li> </ul> <p> <b>Semantic segmentation</b> - Treats each pixel in an
+     * image as a multi-class classification and treats pixel annotations from workers
+     * as "votes" for the correct label.</p> <ul> <li> <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-SemanticSegmentation</code>
      * </p> <p>
      * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-SemanticSegmentation</code>
@@ -449,9 +450,9 @@ namespace Model
      * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-SemanticSegmentation</code>
      * </p> <p>
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-SemanticSegmentation</code>
-     * </p> </li> <li> <p> <i>Text classification</i> - Uses a variant of the
+     * </p> </li> </ul> <p> <b>Text classification</b> - Uses a variant of the
      * Expectation Maximization approach to estimate the true class of text based on
-     * annotations from individual workers.</p> <p>
+     * annotations from individual workers.</p> <ul> <li> <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-TextMultiClass</code>
      * </p> <p>
      * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-TextMultiClass</code>
@@ -475,9 +476,9 @@ namespace Model
      * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-TextMultiClass</code>
      * </p> <p>
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-TextMultiClass</code>
-     * </p> </li> <li> <p> <i>Multi-label text classification</i> - Uses a variant of
+     * </p> </li> </ul> <p> <b>Multi-label text classification</b> - Uses a variant of
      * the Expectation Maximization approach to estimate the true classes of text based
-     * on annotations from individual workers.</p> <p>
+     * on annotations from individual workers.</p> <ul> <li> <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-TextMultiClassMultiLabel</code>
      * </p> <p>
      * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-TextMultiClassMultiLabel</code>
@@ -501,8 +502,9 @@ namespace Model
      * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-TextMultiClassMultiLabel</code>
      * </p> <p>
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-TextMultiClassMultiLabel</code>
-     * </p> </li> <li> <p> <i>Named entity recognition</i> - Groups similar selections
-     * and calculates aggregate boundaries, resolving to most-assigned label.</p> <p>
+     * </p> </li> </ul> <p> <b>Named entity recognition</b> - Groups similar selections
+     * and calculates aggregate boundaries, resolving to most-assigned label.</p> <ul>
+     * <li> <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-NamedEntityRecognition</code>
      * </p> <p>
      * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-NamedEntityRecognition</code>
@@ -526,10 +528,10 @@ namespace Model
      * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-NamedEntityRecognition</code>
      * </p> <p>
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-NamedEntityRecognition</code>
-     * </p> </li> <li> <p> <i>Bounding box verification</i> - Uses a variant of the
+     * </p> </li> </ul> <p> <b>Bounding box verification</b> - Uses a variant of the
      * Expectation Maximization approach to estimate the true class of verification
      * judgement for bounding box labels based on annotations from individual
-     * workers.</p> <p>
+     * workers.</p> <ul> <li> <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-VerificationBoundingBox</code>
      * </p> <p>
      * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-VerificationBoundingBox</code>
@@ -553,10 +555,10 @@ namespace Model
      * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-VerificationBoundingBox</code>
      * </p> <p>
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-VerificationBoundingBox</code>
-     * </p> </li> <li> <p> <i>Semantic segmentation verification</i> - Uses a variant
+     * </p> </li> </ul> <p> <b>Semantic segmentation verification</b> - Uses a variant
      * of the Expectation Maximization approach to estimate the true class of
      * verification judgment for semantic segmentation labels based on annotations from
-     * individual workers.</p> <p>
+     * individual workers.</p> <ul> <li> <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-VerificationSemanticSegmentation</code>
      * </p> <p>
      * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-VerificationSemanticSegmentation</code>
@@ -580,9 +582,9 @@ namespace Model
      * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-VerificationSemanticSegmentation</code>
      * </p> <p>
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-VerificationSemanticSegmentation</code>
-     * </p> </li> <li> <p> <i>Bounding box adjustment</i> - Finds the most similar
+     * </p> </li> </ul> <p> <b>Bounding box adjustment</b> - Finds the most similar
      * boxes from different workers based on the Jaccard index of the adjusted
-     * annotations.</p> <p>
+     * annotations.</p> <ul> <li> <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-AdjustmentBoundingBox</code>
      * </p> <p>
      * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-AdjustmentBoundingBox</code>
@@ -606,9 +608,9 @@ namespace Model
      * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-AdjustmentBoundingBox</code>
      * </p> <p>
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-AdjustmentBoundingBox</code>
-     * </p> </li> <li> <p> <i>Semantic segmentation adjustment</i> - Treats each pixel
+     * </p> </li> </ul> <p> <b>Semantic segmentation adjustment</b> - Treats each pixel
      * in an image as a multi-class classification and treats pixel adjusted
-     * annotations from workers as "votes" for the correct label.</p> <p>
+     * annotations from workers as "votes" for the correct label.</p> <ul> <li> <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-AdjustmentSemanticSegmentation</code>
      * </p> <p>
      * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-AdjustmentSemanticSegmentation</code>
@@ -642,9 +644,9 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of a Lambda function implements the logic for
      * annotation consolidation.</p> <p>For the built-in bounding box, image
      * classification, semantic segmentation, and text classification task types,
-     * Amazon SageMaker Ground Truth provides the following Lambda functions:</p> <ul>
-     * <li> <p> <i>Bounding box</i> - Finds the most similar boxes from different
-     * workers based on the Jaccard index of the boxes.</p> <p>
+     * Amazon SageMaker Ground Truth provides the following Lambda functions:</p> <p>
+     * <b>Bounding box</b> - Finds the most similar boxes from different workers based
+     * on the Jaccard index of the boxes.</p> <ul> <li> <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-BoundingBox</code> </p>
      * <p> <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-BoundingBox</code>
      * </p> <p>
@@ -666,9 +668,9 @@ namespace Model
      * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-BoundingBox</code>
      * </p> <p>
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-BoundingBox</code>
-     * </p> </li> <li> <p> <i>Image classification</i> - Uses a variant of the
+     * </p> </li> </ul> <p> <b>Image classification</b> - Uses a variant of the
      * Expectation Maximization approach to estimate the true class of an image based
-     * on annotations from individual workers.</p> <p>
+     * on annotations from individual workers.</p> <ul> <li> <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-ImageMultiClass</code>
      * </p> <p>
      * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-ImageMultiClass</code>
@@ -692,9 +694,9 @@ namespace Model
      * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-ImageMultiClass</code>
      * </p> <p>
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-ImageMultiClass</code>
-     * </p> </li> <li> <p> <i>Multi-label image classification</i> - Uses a variant of
+     * </p> </li> </ul> <p> <b>Multi-label image classification</b> - Uses a variant of
      * the Expectation Maximization approach to estimate the true classes of an image
-     * based on annotations from individual workers.</p> <p>
+     * based on annotations from individual workers.</p> <ul> <li> <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-ImageMultiClassMultiLabel</code>
      * </p> <p>
      * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-ImageMultiClassMultiLabel</code>
@@ -718,9 +720,9 @@ namespace Model
      * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-ImageMultiClassMultiLabel</code>
      * </p> <p>
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-ImageMultiClassMultiLabel</code>
-     * </p> </li> <li> <p> <i>Semantic segmentation</i> - Treats each pixel in an image
-     * as a multi-class classification and treats pixel annotations from workers as
-     * "votes" for the correct label.</p> <p>
+     * </p> </li> </ul> <p> <b>Semantic segmentation</b> - Treats each pixel in an
+     * image as a multi-class classification and treats pixel annotations from workers
+     * as "votes" for the correct label.</p> <ul> <li> <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-SemanticSegmentation</code>
      * </p> <p>
      * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-SemanticSegmentation</code>
@@ -744,9 +746,9 @@ namespace Model
      * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-SemanticSegmentation</code>
      * </p> <p>
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-SemanticSegmentation</code>
-     * </p> </li> <li> <p> <i>Text classification</i> - Uses a variant of the
+     * </p> </li> </ul> <p> <b>Text classification</b> - Uses a variant of the
      * Expectation Maximization approach to estimate the true class of text based on
-     * annotations from individual workers.</p> <p>
+     * annotations from individual workers.</p> <ul> <li> <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-TextMultiClass</code>
      * </p> <p>
      * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-TextMultiClass</code>
@@ -770,9 +772,9 @@ namespace Model
      * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-TextMultiClass</code>
      * </p> <p>
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-TextMultiClass</code>
-     * </p> </li> <li> <p> <i>Multi-label text classification</i> - Uses a variant of
+     * </p> </li> </ul> <p> <b>Multi-label text classification</b> - Uses a variant of
      * the Expectation Maximization approach to estimate the true classes of text based
-     * on annotations from individual workers.</p> <p>
+     * on annotations from individual workers.</p> <ul> <li> <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-TextMultiClassMultiLabel</code>
      * </p> <p>
      * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-TextMultiClassMultiLabel</code>
@@ -796,8 +798,9 @@ namespace Model
      * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-TextMultiClassMultiLabel</code>
      * </p> <p>
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-TextMultiClassMultiLabel</code>
-     * </p> </li> <li> <p> <i>Named entity recognition</i> - Groups similar selections
-     * and calculates aggregate boundaries, resolving to most-assigned label.</p> <p>
+     * </p> </li> </ul> <p> <b>Named entity recognition</b> - Groups similar selections
+     * and calculates aggregate boundaries, resolving to most-assigned label.</p> <ul>
+     * <li> <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-NamedEntityRecognition</code>
      * </p> <p>
      * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-NamedEntityRecognition</code>
@@ -821,10 +824,10 @@ namespace Model
      * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-NamedEntityRecognition</code>
      * </p> <p>
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-NamedEntityRecognition</code>
-     * </p> </li> <li> <p> <i>Bounding box verification</i> - Uses a variant of the
+     * </p> </li> </ul> <p> <b>Bounding box verification</b> - Uses a variant of the
      * Expectation Maximization approach to estimate the true class of verification
      * judgement for bounding box labels based on annotations from individual
-     * workers.</p> <p>
+     * workers.</p> <ul> <li> <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-VerificationBoundingBox</code>
      * </p> <p>
      * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-VerificationBoundingBox</code>
@@ -848,10 +851,10 @@ namespace Model
      * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-VerificationBoundingBox</code>
      * </p> <p>
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-VerificationBoundingBox</code>
-     * </p> </li> <li> <p> <i>Semantic segmentation verification</i> - Uses a variant
+     * </p> </li> </ul> <p> <b>Semantic segmentation verification</b> - Uses a variant
      * of the Expectation Maximization approach to estimate the true class of
      * verification judgment for semantic segmentation labels based on annotations from
-     * individual workers.</p> <p>
+     * individual workers.</p> <ul> <li> <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-VerificationSemanticSegmentation</code>
      * </p> <p>
      * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-VerificationSemanticSegmentation</code>
@@ -875,9 +878,9 @@ namespace Model
      * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-VerificationSemanticSegmentation</code>
      * </p> <p>
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-VerificationSemanticSegmentation</code>
-     * </p> </li> <li> <p> <i>Bounding box adjustment</i> - Finds the most similar
+     * </p> </li> </ul> <p> <b>Bounding box adjustment</b> - Finds the most similar
      * boxes from different workers based on the Jaccard index of the adjusted
-     * annotations.</p> <p>
+     * annotations.</p> <ul> <li> <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-AdjustmentBoundingBox</code>
      * </p> <p>
      * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-AdjustmentBoundingBox</code>
@@ -901,9 +904,9 @@ namespace Model
      * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-AdjustmentBoundingBox</code>
      * </p> <p>
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-AdjustmentBoundingBox</code>
-     * </p> </li> <li> <p> <i>Semantic segmentation adjustment</i> - Treats each pixel
+     * </p> </li> </ul> <p> <b>Semantic segmentation adjustment</b> - Treats each pixel
      * in an image as a multi-class classification and treats pixel adjusted
-     * annotations from workers as "votes" for the correct label.</p> <p>
+     * annotations from workers as "votes" for the correct label.</p> <ul> <li> <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-AdjustmentSemanticSegmentation</code>
      * </p> <p>
      * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-AdjustmentSemanticSegmentation</code>
@@ -937,9 +940,9 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of a Lambda function implements the logic for
      * annotation consolidation.</p> <p>For the built-in bounding box, image
      * classification, semantic segmentation, and text classification task types,
-     * Amazon SageMaker Ground Truth provides the following Lambda functions:</p> <ul>
-     * <li> <p> <i>Bounding box</i> - Finds the most similar boxes from different
-     * workers based on the Jaccard index of the boxes.</p> <p>
+     * Amazon SageMaker Ground Truth provides the following Lambda functions:</p> <p>
+     * <b>Bounding box</b> - Finds the most similar boxes from different workers based
+     * on the Jaccard index of the boxes.</p> <ul> <li> <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-BoundingBox</code> </p>
      * <p> <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-BoundingBox</code>
      * </p> <p>
@@ -961,9 +964,9 @@ namespace Model
      * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-BoundingBox</code>
      * </p> <p>
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-BoundingBox</code>
-     * </p> </li> <li> <p> <i>Image classification</i> - Uses a variant of the
+     * </p> </li> </ul> <p> <b>Image classification</b> - Uses a variant of the
      * Expectation Maximization approach to estimate the true class of an image based
-     * on annotations from individual workers.</p> <p>
+     * on annotations from individual workers.</p> <ul> <li> <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-ImageMultiClass</code>
      * </p> <p>
      * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-ImageMultiClass</code>
@@ -987,9 +990,9 @@ namespace Model
      * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-ImageMultiClass</code>
      * </p> <p>
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-ImageMultiClass</code>
-     * </p> </li> <li> <p> <i>Multi-label image classification</i> - Uses a variant of
+     * </p> </li> </ul> <p> <b>Multi-label image classification</b> - Uses a variant of
      * the Expectation Maximization approach to estimate the true classes of an image
-     * based on annotations from individual workers.</p> <p>
+     * based on annotations from individual workers.</p> <ul> <li> <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-ImageMultiClassMultiLabel</code>
      * </p> <p>
      * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-ImageMultiClassMultiLabel</code>
@@ -1013,9 +1016,9 @@ namespace Model
      * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-ImageMultiClassMultiLabel</code>
      * </p> <p>
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-ImageMultiClassMultiLabel</code>
-     * </p> </li> <li> <p> <i>Semantic segmentation</i> - Treats each pixel in an image
-     * as a multi-class classification and treats pixel annotations from workers as
-     * "votes" for the correct label.</p> <p>
+     * </p> </li> </ul> <p> <b>Semantic segmentation</b> - Treats each pixel in an
+     * image as a multi-class classification and treats pixel annotations from workers
+     * as "votes" for the correct label.</p> <ul> <li> <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-SemanticSegmentation</code>
      * </p> <p>
      * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-SemanticSegmentation</code>
@@ -1039,9 +1042,9 @@ namespace Model
      * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-SemanticSegmentation</code>
      * </p> <p>
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-SemanticSegmentation</code>
-     * </p> </li> <li> <p> <i>Text classification</i> - Uses a variant of the
+     * </p> </li> </ul> <p> <b>Text classification</b> - Uses a variant of the
      * Expectation Maximization approach to estimate the true class of text based on
-     * annotations from individual workers.</p> <p>
+     * annotations from individual workers.</p> <ul> <li> <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-TextMultiClass</code>
      * </p> <p>
      * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-TextMultiClass</code>
@@ -1065,9 +1068,9 @@ namespace Model
      * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-TextMultiClass</code>
      * </p> <p>
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-TextMultiClass</code>
-     * </p> </li> <li> <p> <i>Multi-label text classification</i> - Uses a variant of
+     * </p> </li> </ul> <p> <b>Multi-label text classification</b> - Uses a variant of
      * the Expectation Maximization approach to estimate the true classes of text based
-     * on annotations from individual workers.</p> <p>
+     * on annotations from individual workers.</p> <ul> <li> <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-TextMultiClassMultiLabel</code>
      * </p> <p>
      * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-TextMultiClassMultiLabel</code>
@@ -1091,8 +1094,9 @@ namespace Model
      * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-TextMultiClassMultiLabel</code>
      * </p> <p>
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-TextMultiClassMultiLabel</code>
-     * </p> </li> <li> <p> <i>Named entity recognition</i> - Groups similar selections
-     * and calculates aggregate boundaries, resolving to most-assigned label.</p> <p>
+     * </p> </li> </ul> <p> <b>Named entity recognition</b> - Groups similar selections
+     * and calculates aggregate boundaries, resolving to most-assigned label.</p> <ul>
+     * <li> <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-NamedEntityRecognition</code>
      * </p> <p>
      * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-NamedEntityRecognition</code>
@@ -1116,10 +1120,10 @@ namespace Model
      * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-NamedEntityRecognition</code>
      * </p> <p>
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-NamedEntityRecognition</code>
-     * </p> </li> <li> <p> <i>Bounding box verification</i> - Uses a variant of the
+     * </p> </li> </ul> <p> <b>Bounding box verification</b> - Uses a variant of the
      * Expectation Maximization approach to estimate the true class of verification
      * judgement for bounding box labels based on annotations from individual
-     * workers.</p> <p>
+     * workers.</p> <ul> <li> <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-VerificationBoundingBox</code>
      * </p> <p>
      * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-VerificationBoundingBox</code>
@@ -1143,10 +1147,10 @@ namespace Model
      * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-VerificationBoundingBox</code>
      * </p> <p>
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-VerificationBoundingBox</code>
-     * </p> </li> <li> <p> <i>Semantic segmentation verification</i> - Uses a variant
+     * </p> </li> </ul> <p> <b>Semantic segmentation verification</b> - Uses a variant
      * of the Expectation Maximization approach to estimate the true class of
      * verification judgment for semantic segmentation labels based on annotations from
-     * individual workers.</p> <p>
+     * individual workers.</p> <ul> <li> <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-VerificationSemanticSegmentation</code>
      * </p> <p>
      * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-VerificationSemanticSegmentation</code>
@@ -1170,9 +1174,9 @@ namespace Model
      * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-VerificationSemanticSegmentation</code>
      * </p> <p>
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-VerificationSemanticSegmentation</code>
-     * </p> </li> <li> <p> <i>Bounding box adjustment</i> - Finds the most similar
+     * </p> </li> </ul> <p> <b>Bounding box adjustment</b> - Finds the most similar
      * boxes from different workers based on the Jaccard index of the adjusted
-     * annotations.</p> <p>
+     * annotations.</p> <ul> <li> <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-AdjustmentBoundingBox</code>
      * </p> <p>
      * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-AdjustmentBoundingBox</code>
@@ -1196,9 +1200,9 @@ namespace Model
      * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-AdjustmentBoundingBox</code>
      * </p> <p>
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-AdjustmentBoundingBox</code>
-     * </p> </li> <li> <p> <i>Semantic segmentation adjustment</i> - Treats each pixel
+     * </p> </li> </ul> <p> <b>Semantic segmentation adjustment</b> - Treats each pixel
      * in an image as a multi-class classification and treats pixel adjusted
-     * annotations from workers as "votes" for the correct label.</p> <p>
+     * annotations from workers as "votes" for the correct label.</p> <ul> <li> <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-AdjustmentSemanticSegmentation</code>
      * </p> <p>
      * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-AdjustmentSemanticSegmentation</code>
@@ -1232,9 +1236,9 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of a Lambda function implements the logic for
      * annotation consolidation.</p> <p>For the built-in bounding box, image
      * classification, semantic segmentation, and text classification task types,
-     * Amazon SageMaker Ground Truth provides the following Lambda functions:</p> <ul>
-     * <li> <p> <i>Bounding box</i> - Finds the most similar boxes from different
-     * workers based on the Jaccard index of the boxes.</p> <p>
+     * Amazon SageMaker Ground Truth provides the following Lambda functions:</p> <p>
+     * <b>Bounding box</b> - Finds the most similar boxes from different workers based
+     * on the Jaccard index of the boxes.</p> <ul> <li> <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-BoundingBox</code> </p>
      * <p> <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-BoundingBox</code>
      * </p> <p>
@@ -1256,9 +1260,9 @@ namespace Model
      * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-BoundingBox</code>
      * </p> <p>
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-BoundingBox</code>
-     * </p> </li> <li> <p> <i>Image classification</i> - Uses a variant of the
+     * </p> </li> </ul> <p> <b>Image classification</b> - Uses a variant of the
      * Expectation Maximization approach to estimate the true class of an image based
-     * on annotations from individual workers.</p> <p>
+     * on annotations from individual workers.</p> <ul> <li> <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-ImageMultiClass</code>
      * </p> <p>
      * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-ImageMultiClass</code>
@@ -1282,9 +1286,9 @@ namespace Model
      * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-ImageMultiClass</code>
      * </p> <p>
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-ImageMultiClass</code>
-     * </p> </li> <li> <p> <i>Multi-label image classification</i> - Uses a variant of
+     * </p> </li> </ul> <p> <b>Multi-label image classification</b> - Uses a variant of
      * the Expectation Maximization approach to estimate the true classes of an image
-     * based on annotations from individual workers.</p> <p>
+     * based on annotations from individual workers.</p> <ul> <li> <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-ImageMultiClassMultiLabel</code>
      * </p> <p>
      * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-ImageMultiClassMultiLabel</code>
@@ -1308,9 +1312,9 @@ namespace Model
      * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-ImageMultiClassMultiLabel</code>
      * </p> <p>
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-ImageMultiClassMultiLabel</code>
-     * </p> </li> <li> <p> <i>Semantic segmentation</i> - Treats each pixel in an image
-     * as a multi-class classification and treats pixel annotations from workers as
-     * "votes" for the correct label.</p> <p>
+     * </p> </li> </ul> <p> <b>Semantic segmentation</b> - Treats each pixel in an
+     * image as a multi-class classification and treats pixel annotations from workers
+     * as "votes" for the correct label.</p> <ul> <li> <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-SemanticSegmentation</code>
      * </p> <p>
      * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-SemanticSegmentation</code>
@@ -1334,9 +1338,9 @@ namespace Model
      * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-SemanticSegmentation</code>
      * </p> <p>
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-SemanticSegmentation</code>
-     * </p> </li> <li> <p> <i>Text classification</i> - Uses a variant of the
+     * </p> </li> </ul> <p> <b>Text classification</b> - Uses a variant of the
      * Expectation Maximization approach to estimate the true class of text based on
-     * annotations from individual workers.</p> <p>
+     * annotations from individual workers.</p> <ul> <li> <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-TextMultiClass</code>
      * </p> <p>
      * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-TextMultiClass</code>
@@ -1360,9 +1364,9 @@ namespace Model
      * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-TextMultiClass</code>
      * </p> <p>
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-TextMultiClass</code>
-     * </p> </li> <li> <p> <i>Multi-label text classification</i> - Uses a variant of
+     * </p> </li> </ul> <p> <b>Multi-label text classification</b> - Uses a variant of
      * the Expectation Maximization approach to estimate the true classes of text based
-     * on annotations from individual workers.</p> <p>
+     * on annotations from individual workers.</p> <ul> <li> <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-TextMultiClassMultiLabel</code>
      * </p> <p>
      * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-TextMultiClassMultiLabel</code>
@@ -1386,8 +1390,9 @@ namespace Model
      * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-TextMultiClassMultiLabel</code>
      * </p> <p>
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-TextMultiClassMultiLabel</code>
-     * </p> </li> <li> <p> <i>Named entity recognition</i> - Groups similar selections
-     * and calculates aggregate boundaries, resolving to most-assigned label.</p> <p>
+     * </p> </li> </ul> <p> <b>Named entity recognition</b> - Groups similar selections
+     * and calculates aggregate boundaries, resolving to most-assigned label.</p> <ul>
+     * <li> <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-NamedEntityRecognition</code>
      * </p> <p>
      * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-NamedEntityRecognition</code>
@@ -1411,10 +1416,10 @@ namespace Model
      * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-NamedEntityRecognition</code>
      * </p> <p>
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-NamedEntityRecognition</code>
-     * </p> </li> <li> <p> <i>Bounding box verification</i> - Uses a variant of the
+     * </p> </li> </ul> <p> <b>Bounding box verification</b> - Uses a variant of the
      * Expectation Maximization approach to estimate the true class of verification
      * judgement for bounding box labels based on annotations from individual
-     * workers.</p> <p>
+     * workers.</p> <ul> <li> <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-VerificationBoundingBox</code>
      * </p> <p>
      * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-VerificationBoundingBox</code>
@@ -1438,10 +1443,10 @@ namespace Model
      * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-VerificationBoundingBox</code>
      * </p> <p>
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-VerificationBoundingBox</code>
-     * </p> </li> <li> <p> <i>Semantic segmentation verification</i> - Uses a variant
+     * </p> </li> </ul> <p> <b>Semantic segmentation verification</b> - Uses a variant
      * of the Expectation Maximization approach to estimate the true class of
      * verification judgment for semantic segmentation labels based on annotations from
-     * individual workers.</p> <p>
+     * individual workers.</p> <ul> <li> <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-VerificationSemanticSegmentation</code>
      * </p> <p>
      * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-VerificationSemanticSegmentation</code>
@@ -1465,9 +1470,9 @@ namespace Model
      * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-VerificationSemanticSegmentation</code>
      * </p> <p>
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-VerificationSemanticSegmentation</code>
-     * </p> </li> <li> <p> <i>Bounding box adjustment</i> - Finds the most similar
+     * </p> </li> </ul> <p> <b>Bounding box adjustment</b> - Finds the most similar
      * boxes from different workers based on the Jaccard index of the adjusted
-     * annotations.</p> <p>
+     * annotations.</p> <ul> <li> <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-AdjustmentBoundingBox</code>
      * </p> <p>
      * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-AdjustmentBoundingBox</code>
@@ -1491,9 +1496,9 @@ namespace Model
      * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-AdjustmentBoundingBox</code>
      * </p> <p>
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-AdjustmentBoundingBox</code>
-     * </p> </li> <li> <p> <i>Semantic segmentation adjustment</i> - Treats each pixel
+     * </p> </li> </ul> <p> <b>Semantic segmentation adjustment</b> - Treats each pixel
      * in an image as a multi-class classification and treats pixel adjusted
-     * annotations from workers as "votes" for the correct label.</p> <p>
+     * annotations from workers as "votes" for the correct label.</p> <ul> <li> <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-AdjustmentSemanticSegmentation</code>
      * </p> <p>
      * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-AdjustmentSemanticSegmentation</code>
@@ -1527,9 +1532,9 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of a Lambda function implements the logic for
      * annotation consolidation.</p> <p>For the built-in bounding box, image
      * classification, semantic segmentation, and text classification task types,
-     * Amazon SageMaker Ground Truth provides the following Lambda functions:</p> <ul>
-     * <li> <p> <i>Bounding box</i> - Finds the most similar boxes from different
-     * workers based on the Jaccard index of the boxes.</p> <p>
+     * Amazon SageMaker Ground Truth provides the following Lambda functions:</p> <p>
+     * <b>Bounding box</b> - Finds the most similar boxes from different workers based
+     * on the Jaccard index of the boxes.</p> <ul> <li> <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-BoundingBox</code> </p>
      * <p> <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-BoundingBox</code>
      * </p> <p>
@@ -1551,9 +1556,9 @@ namespace Model
      * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-BoundingBox</code>
      * </p> <p>
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-BoundingBox</code>
-     * </p> </li> <li> <p> <i>Image classification</i> - Uses a variant of the
+     * </p> </li> </ul> <p> <b>Image classification</b> - Uses a variant of the
      * Expectation Maximization approach to estimate the true class of an image based
-     * on annotations from individual workers.</p> <p>
+     * on annotations from individual workers.</p> <ul> <li> <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-ImageMultiClass</code>
      * </p> <p>
      * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-ImageMultiClass</code>
@@ -1577,9 +1582,9 @@ namespace Model
      * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-ImageMultiClass</code>
      * </p> <p>
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-ImageMultiClass</code>
-     * </p> </li> <li> <p> <i>Multi-label image classification</i> - Uses a variant of
+     * </p> </li> </ul> <p> <b>Multi-label image classification</b> - Uses a variant of
      * the Expectation Maximization approach to estimate the true classes of an image
-     * based on annotations from individual workers.</p> <p>
+     * based on annotations from individual workers.</p> <ul> <li> <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-ImageMultiClassMultiLabel</code>
      * </p> <p>
      * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-ImageMultiClassMultiLabel</code>
@@ -1603,9 +1608,9 @@ namespace Model
      * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-ImageMultiClassMultiLabel</code>
      * </p> <p>
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-ImageMultiClassMultiLabel</code>
-     * </p> </li> <li> <p> <i>Semantic segmentation</i> - Treats each pixel in an image
-     * as a multi-class classification and treats pixel annotations from workers as
-     * "votes" for the correct label.</p> <p>
+     * </p> </li> </ul> <p> <b>Semantic segmentation</b> - Treats each pixel in an
+     * image as a multi-class classification and treats pixel annotations from workers
+     * as "votes" for the correct label.</p> <ul> <li> <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-SemanticSegmentation</code>
      * </p> <p>
      * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-SemanticSegmentation</code>
@@ -1629,9 +1634,9 @@ namespace Model
      * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-SemanticSegmentation</code>
      * </p> <p>
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-SemanticSegmentation</code>
-     * </p> </li> <li> <p> <i>Text classification</i> - Uses a variant of the
+     * </p> </li> </ul> <p> <b>Text classification</b> - Uses a variant of the
      * Expectation Maximization approach to estimate the true class of text based on
-     * annotations from individual workers.</p> <p>
+     * annotations from individual workers.</p> <ul> <li> <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-TextMultiClass</code>
      * </p> <p>
      * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-TextMultiClass</code>
@@ -1655,9 +1660,9 @@ namespace Model
      * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-TextMultiClass</code>
      * </p> <p>
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-TextMultiClass</code>
-     * </p> </li> <li> <p> <i>Multi-label text classification</i> - Uses a variant of
+     * </p> </li> </ul> <p> <b>Multi-label text classification</b> - Uses a variant of
      * the Expectation Maximization approach to estimate the true classes of text based
-     * on annotations from individual workers.</p> <p>
+     * on annotations from individual workers.</p> <ul> <li> <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-TextMultiClassMultiLabel</code>
      * </p> <p>
      * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-TextMultiClassMultiLabel</code>
@@ -1681,8 +1686,9 @@ namespace Model
      * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-TextMultiClassMultiLabel</code>
      * </p> <p>
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-TextMultiClassMultiLabel</code>
-     * </p> </li> <li> <p> <i>Named entity recognition</i> - Groups similar selections
-     * and calculates aggregate boundaries, resolving to most-assigned label.</p> <p>
+     * </p> </li> </ul> <p> <b>Named entity recognition</b> - Groups similar selections
+     * and calculates aggregate boundaries, resolving to most-assigned label.</p> <ul>
+     * <li> <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-NamedEntityRecognition</code>
      * </p> <p>
      * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-NamedEntityRecognition</code>
@@ -1706,10 +1712,10 @@ namespace Model
      * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-NamedEntityRecognition</code>
      * </p> <p>
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-NamedEntityRecognition</code>
-     * </p> </li> <li> <p> <i>Bounding box verification</i> - Uses a variant of the
+     * </p> </li> </ul> <p> <b>Bounding box verification</b> - Uses a variant of the
      * Expectation Maximization approach to estimate the true class of verification
      * judgement for bounding box labels based on annotations from individual
-     * workers.</p> <p>
+     * workers.</p> <ul> <li> <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-VerificationBoundingBox</code>
      * </p> <p>
      * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-VerificationBoundingBox</code>
@@ -1733,10 +1739,10 @@ namespace Model
      * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-VerificationBoundingBox</code>
      * </p> <p>
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-VerificationBoundingBox</code>
-     * </p> </li> <li> <p> <i>Semantic segmentation verification</i> - Uses a variant
+     * </p> </li> </ul> <p> <b>Semantic segmentation verification</b> - Uses a variant
      * of the Expectation Maximization approach to estimate the true class of
      * verification judgment for semantic segmentation labels based on annotations from
-     * individual workers.</p> <p>
+     * individual workers.</p> <ul> <li> <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-VerificationSemanticSegmentation</code>
      * </p> <p>
      * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-VerificationSemanticSegmentation</code>
@@ -1760,9 +1766,9 @@ namespace Model
      * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-VerificationSemanticSegmentation</code>
      * </p> <p>
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-VerificationSemanticSegmentation</code>
-     * </p> </li> <li> <p> <i>Bounding box adjustment</i> - Finds the most similar
+     * </p> </li> </ul> <p> <b>Bounding box adjustment</b> - Finds the most similar
      * boxes from different workers based on the Jaccard index of the adjusted
-     * annotations.</p> <p>
+     * annotations.</p> <ul> <li> <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-AdjustmentBoundingBox</code>
      * </p> <p>
      * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-AdjustmentBoundingBox</code>
@@ -1786,9 +1792,9 @@ namespace Model
      * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-AdjustmentBoundingBox</code>
      * </p> <p>
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-AdjustmentBoundingBox</code>
-     * </p> </li> <li> <p> <i>Semantic segmentation adjustment</i> - Treats each pixel
+     * </p> </li> </ul> <p> <b>Semantic segmentation adjustment</b> - Treats each pixel
      * in an image as a multi-class classification and treats pixel adjusted
-     * annotations from workers as "votes" for the correct label.</p> <p>
+     * annotations from workers as "votes" for the correct label.</p> <ul> <li> <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-AdjustmentSemanticSegmentation</code>
      * </p> <p>
      * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-AdjustmentSemanticSegmentation</code>
@@ -1822,9 +1828,9 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of a Lambda function implements the logic for
      * annotation consolidation.</p> <p>For the built-in bounding box, image
      * classification, semantic segmentation, and text classification task types,
-     * Amazon SageMaker Ground Truth provides the following Lambda functions:</p> <ul>
-     * <li> <p> <i>Bounding box</i> - Finds the most similar boxes from different
-     * workers based on the Jaccard index of the boxes.</p> <p>
+     * Amazon SageMaker Ground Truth provides the following Lambda functions:</p> <p>
+     * <b>Bounding box</b> - Finds the most similar boxes from different workers based
+     * on the Jaccard index of the boxes.</p> <ul> <li> <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-BoundingBox</code> </p>
      * <p> <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-BoundingBox</code>
      * </p> <p>
@@ -1846,9 +1852,9 @@ namespace Model
      * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-BoundingBox</code>
      * </p> <p>
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-BoundingBox</code>
-     * </p> </li> <li> <p> <i>Image classification</i> - Uses a variant of the
+     * </p> </li> </ul> <p> <b>Image classification</b> - Uses a variant of the
      * Expectation Maximization approach to estimate the true class of an image based
-     * on annotations from individual workers.</p> <p>
+     * on annotations from individual workers.</p> <ul> <li> <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-ImageMultiClass</code>
      * </p> <p>
      * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-ImageMultiClass</code>
@@ -1872,9 +1878,9 @@ namespace Model
      * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-ImageMultiClass</code>
      * </p> <p>
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-ImageMultiClass</code>
-     * </p> </li> <li> <p> <i>Multi-label image classification</i> - Uses a variant of
+     * </p> </li> </ul> <p> <b>Multi-label image classification</b> - Uses a variant of
      * the Expectation Maximization approach to estimate the true classes of an image
-     * based on annotations from individual workers.</p> <p>
+     * based on annotations from individual workers.</p> <ul> <li> <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-ImageMultiClassMultiLabel</code>
      * </p> <p>
      * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-ImageMultiClassMultiLabel</code>
@@ -1898,9 +1904,9 @@ namespace Model
      * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-ImageMultiClassMultiLabel</code>
      * </p> <p>
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-ImageMultiClassMultiLabel</code>
-     * </p> </li> <li> <p> <i>Semantic segmentation</i> - Treats each pixel in an image
-     * as a multi-class classification and treats pixel annotations from workers as
-     * "votes" for the correct label.</p> <p>
+     * </p> </li> </ul> <p> <b>Semantic segmentation</b> - Treats each pixel in an
+     * image as a multi-class classification and treats pixel annotations from workers
+     * as "votes" for the correct label.</p> <ul> <li> <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-SemanticSegmentation</code>
      * </p> <p>
      * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-SemanticSegmentation</code>
@@ -1924,9 +1930,9 @@ namespace Model
      * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-SemanticSegmentation</code>
      * </p> <p>
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-SemanticSegmentation</code>
-     * </p> </li> <li> <p> <i>Text classification</i> - Uses a variant of the
+     * </p> </li> </ul> <p> <b>Text classification</b> - Uses a variant of the
      * Expectation Maximization approach to estimate the true class of text based on
-     * annotations from individual workers.</p> <p>
+     * annotations from individual workers.</p> <ul> <li> <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-TextMultiClass</code>
      * </p> <p>
      * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-TextMultiClass</code>
@@ -1950,9 +1956,9 @@ namespace Model
      * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-TextMultiClass</code>
      * </p> <p>
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-TextMultiClass</code>
-     * </p> </li> <li> <p> <i>Multi-label text classification</i> - Uses a variant of
+     * </p> </li> </ul> <p> <b>Multi-label text classification</b> - Uses a variant of
      * the Expectation Maximization approach to estimate the true classes of text based
-     * on annotations from individual workers.</p> <p>
+     * on annotations from individual workers.</p> <ul> <li> <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-TextMultiClassMultiLabel</code>
      * </p> <p>
      * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-TextMultiClassMultiLabel</code>
@@ -1976,8 +1982,9 @@ namespace Model
      * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-TextMultiClassMultiLabel</code>
      * </p> <p>
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-TextMultiClassMultiLabel</code>
-     * </p> </li> <li> <p> <i>Named entity recognition</i> - Groups similar selections
-     * and calculates aggregate boundaries, resolving to most-assigned label.</p> <p>
+     * </p> </li> </ul> <p> <b>Named entity recognition</b> - Groups similar selections
+     * and calculates aggregate boundaries, resolving to most-assigned label.</p> <ul>
+     * <li> <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-NamedEntityRecognition</code>
      * </p> <p>
      * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-NamedEntityRecognition</code>
@@ -2001,10 +2008,10 @@ namespace Model
      * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-NamedEntityRecognition</code>
      * </p> <p>
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-NamedEntityRecognition</code>
-     * </p> </li> <li> <p> <i>Bounding box verification</i> - Uses a variant of the
+     * </p> </li> </ul> <p> <b>Bounding box verification</b> - Uses a variant of the
      * Expectation Maximization approach to estimate the true class of verification
      * judgement for bounding box labels based on annotations from individual
-     * workers.</p> <p>
+     * workers.</p> <ul> <li> <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-VerificationBoundingBox</code>
      * </p> <p>
      * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-VerificationBoundingBox</code>
@@ -2028,10 +2035,10 @@ namespace Model
      * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-VerificationBoundingBox</code>
      * </p> <p>
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-VerificationBoundingBox</code>
-     * </p> </li> <li> <p> <i>Semantic segmentation verification</i> - Uses a variant
+     * </p> </li> </ul> <p> <b>Semantic segmentation verification</b> - Uses a variant
      * of the Expectation Maximization approach to estimate the true class of
      * verification judgment for semantic segmentation labels based on annotations from
-     * individual workers.</p> <p>
+     * individual workers.</p> <ul> <li> <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-VerificationSemanticSegmentation</code>
      * </p> <p>
      * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-VerificationSemanticSegmentation</code>
@@ -2055,9 +2062,9 @@ namespace Model
      * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-VerificationSemanticSegmentation</code>
      * </p> <p>
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-VerificationSemanticSegmentation</code>
-     * </p> </li> <li> <p> <i>Bounding box adjustment</i> - Finds the most similar
+     * </p> </li> </ul> <p> <b>Bounding box adjustment</b> - Finds the most similar
      * boxes from different workers based on the Jaccard index of the adjusted
-     * annotations.</p> <p>
+     * annotations.</p> <ul> <li> <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-AdjustmentBoundingBox</code>
      * </p> <p>
      * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-AdjustmentBoundingBox</code>
@@ -2081,9 +2088,9 @@ namespace Model
      * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-AdjustmentBoundingBox</code>
      * </p> <p>
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-AdjustmentBoundingBox</code>
-     * </p> </li> <li> <p> <i>Semantic segmentation adjustment</i> - Treats each pixel
+     * </p> </li> </ul> <p> <b>Semantic segmentation adjustment</b> - Treats each pixel
      * in an image as a multi-class classification and treats pixel adjusted
-     * annotations from workers as "votes" for the correct label.</p> <p>
+     * annotations from workers as "votes" for the correct label.</p> <ul> <li> <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-AdjustmentSemanticSegmentation</code>
      * </p> <p>
      * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-AdjustmentSemanticSegmentation</code>
@@ -2117,9 +2124,9 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of a Lambda function implements the logic for
      * annotation consolidation.</p> <p>For the built-in bounding box, image
      * classification, semantic segmentation, and text classification task types,
-     * Amazon SageMaker Ground Truth provides the following Lambda functions:</p> <ul>
-     * <li> <p> <i>Bounding box</i> - Finds the most similar boxes from different
-     * workers based on the Jaccard index of the boxes.</p> <p>
+     * Amazon SageMaker Ground Truth provides the following Lambda functions:</p> <p>
+     * <b>Bounding box</b> - Finds the most similar boxes from different workers based
+     * on the Jaccard index of the boxes.</p> <ul> <li> <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-BoundingBox</code> </p>
      * <p> <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-BoundingBox</code>
      * </p> <p>
@@ -2141,9 +2148,9 @@ namespace Model
      * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-BoundingBox</code>
      * </p> <p>
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-BoundingBox</code>
-     * </p> </li> <li> <p> <i>Image classification</i> - Uses a variant of the
+     * </p> </li> </ul> <p> <b>Image classification</b> - Uses a variant of the
      * Expectation Maximization approach to estimate the true class of an image based
-     * on annotations from individual workers.</p> <p>
+     * on annotations from individual workers.</p> <ul> <li> <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-ImageMultiClass</code>
      * </p> <p>
      * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-ImageMultiClass</code>
@@ -2167,9 +2174,9 @@ namespace Model
      * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-ImageMultiClass</code>
      * </p> <p>
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-ImageMultiClass</code>
-     * </p> </li> <li> <p> <i>Multi-label image classification</i> - Uses a variant of
+     * </p> </li> </ul> <p> <b>Multi-label image classification</b> - Uses a variant of
      * the Expectation Maximization approach to estimate the true classes of an image
-     * based on annotations from individual workers.</p> <p>
+     * based on annotations from individual workers.</p> <ul> <li> <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-ImageMultiClassMultiLabel</code>
      * </p> <p>
      * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-ImageMultiClassMultiLabel</code>
@@ -2193,9 +2200,9 @@ namespace Model
      * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-ImageMultiClassMultiLabel</code>
      * </p> <p>
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-ImageMultiClassMultiLabel</code>
-     * </p> </li> <li> <p> <i>Semantic segmentation</i> - Treats each pixel in an image
-     * as a multi-class classification and treats pixel annotations from workers as
-     * "votes" for the correct label.</p> <p>
+     * </p> </li> </ul> <p> <b>Semantic segmentation</b> - Treats each pixel in an
+     * image as a multi-class classification and treats pixel annotations from workers
+     * as "votes" for the correct label.</p> <ul> <li> <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-SemanticSegmentation</code>
      * </p> <p>
      * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-SemanticSegmentation</code>
@@ -2219,9 +2226,9 @@ namespace Model
      * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-SemanticSegmentation</code>
      * </p> <p>
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-SemanticSegmentation</code>
-     * </p> </li> <li> <p> <i>Text classification</i> - Uses a variant of the
+     * </p> </li> </ul> <p> <b>Text classification</b> - Uses a variant of the
      * Expectation Maximization approach to estimate the true class of text based on
-     * annotations from individual workers.</p> <p>
+     * annotations from individual workers.</p> <ul> <li> <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-TextMultiClass</code>
      * </p> <p>
      * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-TextMultiClass</code>
@@ -2245,9 +2252,9 @@ namespace Model
      * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-TextMultiClass</code>
      * </p> <p>
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-TextMultiClass</code>
-     * </p> </li> <li> <p> <i>Multi-label text classification</i> - Uses a variant of
+     * </p> </li> </ul> <p> <b>Multi-label text classification</b> - Uses a variant of
      * the Expectation Maximization approach to estimate the true classes of text based
-     * on annotations from individual workers.</p> <p>
+     * on annotations from individual workers.</p> <ul> <li> <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-TextMultiClassMultiLabel</code>
      * </p> <p>
      * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-TextMultiClassMultiLabel</code>
@@ -2271,8 +2278,9 @@ namespace Model
      * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-TextMultiClassMultiLabel</code>
      * </p> <p>
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-TextMultiClassMultiLabel</code>
-     * </p> </li> <li> <p> <i>Named entity recognition</i> - Groups similar selections
-     * and calculates aggregate boundaries, resolving to most-assigned label.</p> <p>
+     * </p> </li> </ul> <p> <b>Named entity recognition</b> - Groups similar selections
+     * and calculates aggregate boundaries, resolving to most-assigned label.</p> <ul>
+     * <li> <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-NamedEntityRecognition</code>
      * </p> <p>
      * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-NamedEntityRecognition</code>
@@ -2296,10 +2304,10 @@ namespace Model
      * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-NamedEntityRecognition</code>
      * </p> <p>
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-NamedEntityRecognition</code>
-     * </p> </li> <li> <p> <i>Bounding box verification</i> - Uses a variant of the
+     * </p> </li> </ul> <p> <b>Bounding box verification</b> - Uses a variant of the
      * Expectation Maximization approach to estimate the true class of verification
      * judgement for bounding box labels based on annotations from individual
-     * workers.</p> <p>
+     * workers.</p> <ul> <li> <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-VerificationBoundingBox</code>
      * </p> <p>
      * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-VerificationBoundingBox</code>
@@ -2323,10 +2331,10 @@ namespace Model
      * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-VerificationBoundingBox</code>
      * </p> <p>
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-VerificationBoundingBox</code>
-     * </p> </li> <li> <p> <i>Semantic segmentation verification</i> - Uses a variant
+     * </p> </li> </ul> <p> <b>Semantic segmentation verification</b> - Uses a variant
      * of the Expectation Maximization approach to estimate the true class of
      * verification judgment for semantic segmentation labels based on annotations from
-     * individual workers.</p> <p>
+     * individual workers.</p> <ul> <li> <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-VerificationSemanticSegmentation</code>
      * </p> <p>
      * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-VerificationSemanticSegmentation</code>
@@ -2350,9 +2358,9 @@ namespace Model
      * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-VerificationSemanticSegmentation</code>
      * </p> <p>
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-VerificationSemanticSegmentation</code>
-     * </p> </li> <li> <p> <i>Bounding box adjustment</i> - Finds the most similar
+     * </p> </li> </ul> <p> <b>Bounding box adjustment</b> - Finds the most similar
      * boxes from different workers based on the Jaccard index of the adjusted
-     * annotations.</p> <p>
+     * annotations.</p> <ul> <li> <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-AdjustmentBoundingBox</code>
      * </p> <p>
      * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-AdjustmentBoundingBox</code>
@@ -2376,9 +2384,9 @@ namespace Model
      * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-AdjustmentBoundingBox</code>
      * </p> <p>
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-AdjustmentBoundingBox</code>
-     * </p> </li> <li> <p> <i>Semantic segmentation adjustment</i> - Treats each pixel
+     * </p> </li> </ul> <p> <b>Semantic segmentation adjustment</b> - Treats each pixel
      * in an image as a multi-class classification and treats pixel adjusted
-     * annotations from workers as "votes" for the correct label.</p> <p>
+     * annotations from workers as "votes" for the correct label.</p> <ul> <li> <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-AdjustmentSemanticSegmentation</code>
      * </p> <p>
      * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-AdjustmentSemanticSegmentation</code>

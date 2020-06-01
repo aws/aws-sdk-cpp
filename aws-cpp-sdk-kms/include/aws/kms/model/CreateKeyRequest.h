@@ -316,12 +316,14 @@ namespace Model
 
 
     /**
-     * <p>Determines the cryptographic operations for which you can use the CMK. The
-     * default value is <code>ENCRYPT_DECRYPT</code>. This parameter is required only
-     * for asymmetric CMKs. You can't change the <code>KeyUsage</code> value after the
-     * CMK is created.</p> <p>Select only one valid value.</p> <ul> <li> <p>For
-     * symmetric CMKs, omit the parameter or specify <code>ENCRYPT_DECRYPT</code>.</p>
-     * </li> <li> <p>For asymmetric CMKs with RSA key material, specify
+     * <p>Determines the <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
+     * operations</a> for which you can use the CMK. The default value is
+     * <code>ENCRYPT_DECRYPT</code>. This parameter is required only for asymmetric
+     * CMKs. You can't change the <code>KeyUsage</code> value after the CMK is
+     * created.</p> <p>Select only one valid value.</p> <ul> <li> <p>For symmetric
+     * CMKs, omit the parameter or specify <code>ENCRYPT_DECRYPT</code>.</p> </li> <li>
+     * <p>For asymmetric CMKs with RSA key material, specify
      * <code>ENCRYPT_DECRYPT</code> or <code>SIGN_VERIFY</code>.</p> </li> <li> <p>For
      * asymmetric CMKs with ECC key material, specify <code>SIGN_VERIFY</code>.</p>
      * </li> </ul>
@@ -329,12 +331,14 @@ namespace Model
     inline const KeyUsageType& GetKeyUsage() const{ return m_keyUsage; }
 
     /**
-     * <p>Determines the cryptographic operations for which you can use the CMK. The
-     * default value is <code>ENCRYPT_DECRYPT</code>. This parameter is required only
-     * for asymmetric CMKs. You can't change the <code>KeyUsage</code> value after the
-     * CMK is created.</p> <p>Select only one valid value.</p> <ul> <li> <p>For
-     * symmetric CMKs, omit the parameter or specify <code>ENCRYPT_DECRYPT</code>.</p>
-     * </li> <li> <p>For asymmetric CMKs with RSA key material, specify
+     * <p>Determines the <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
+     * operations</a> for which you can use the CMK. The default value is
+     * <code>ENCRYPT_DECRYPT</code>. This parameter is required only for asymmetric
+     * CMKs. You can't change the <code>KeyUsage</code> value after the CMK is
+     * created.</p> <p>Select only one valid value.</p> <ul> <li> <p>For symmetric
+     * CMKs, omit the parameter or specify <code>ENCRYPT_DECRYPT</code>.</p> </li> <li>
+     * <p>For asymmetric CMKs with RSA key material, specify
      * <code>ENCRYPT_DECRYPT</code> or <code>SIGN_VERIFY</code>.</p> </li> <li> <p>For
      * asymmetric CMKs with ECC key material, specify <code>SIGN_VERIFY</code>.</p>
      * </li> </ul>
@@ -342,12 +346,14 @@ namespace Model
     inline bool KeyUsageHasBeenSet() const { return m_keyUsageHasBeenSet; }
 
     /**
-     * <p>Determines the cryptographic operations for which you can use the CMK. The
-     * default value is <code>ENCRYPT_DECRYPT</code>. This parameter is required only
-     * for asymmetric CMKs. You can't change the <code>KeyUsage</code> value after the
-     * CMK is created.</p> <p>Select only one valid value.</p> <ul> <li> <p>For
-     * symmetric CMKs, omit the parameter or specify <code>ENCRYPT_DECRYPT</code>.</p>
-     * </li> <li> <p>For asymmetric CMKs with RSA key material, specify
+     * <p>Determines the <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
+     * operations</a> for which you can use the CMK. The default value is
+     * <code>ENCRYPT_DECRYPT</code>. This parameter is required only for asymmetric
+     * CMKs. You can't change the <code>KeyUsage</code> value after the CMK is
+     * created.</p> <p>Select only one valid value.</p> <ul> <li> <p>For symmetric
+     * CMKs, omit the parameter or specify <code>ENCRYPT_DECRYPT</code>.</p> </li> <li>
+     * <p>For asymmetric CMKs with RSA key material, specify
      * <code>ENCRYPT_DECRYPT</code> or <code>SIGN_VERIFY</code>.</p> </li> <li> <p>For
      * asymmetric CMKs with ECC key material, specify <code>SIGN_VERIFY</code>.</p>
      * </li> </ul>
@@ -355,12 +361,14 @@ namespace Model
     inline void SetKeyUsage(const KeyUsageType& value) { m_keyUsageHasBeenSet = true; m_keyUsage = value; }
 
     /**
-     * <p>Determines the cryptographic operations for which you can use the CMK. The
-     * default value is <code>ENCRYPT_DECRYPT</code>. This parameter is required only
-     * for asymmetric CMKs. You can't change the <code>KeyUsage</code> value after the
-     * CMK is created.</p> <p>Select only one valid value.</p> <ul> <li> <p>For
-     * symmetric CMKs, omit the parameter or specify <code>ENCRYPT_DECRYPT</code>.</p>
-     * </li> <li> <p>For asymmetric CMKs with RSA key material, specify
+     * <p>Determines the <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
+     * operations</a> for which you can use the CMK. The default value is
+     * <code>ENCRYPT_DECRYPT</code>. This parameter is required only for asymmetric
+     * CMKs. You can't change the <code>KeyUsage</code> value after the CMK is
+     * created.</p> <p>Select only one valid value.</p> <ul> <li> <p>For symmetric
+     * CMKs, omit the parameter or specify <code>ENCRYPT_DECRYPT</code>.</p> </li> <li>
+     * <p>For asymmetric CMKs with RSA key material, specify
      * <code>ENCRYPT_DECRYPT</code> or <code>SIGN_VERIFY</code>.</p> </li> <li> <p>For
      * asymmetric CMKs with ECC key material, specify <code>SIGN_VERIFY</code>.</p>
      * </li> </ul>
@@ -368,12 +376,14 @@ namespace Model
     inline void SetKeyUsage(KeyUsageType&& value) { m_keyUsageHasBeenSet = true; m_keyUsage = std::move(value); }
 
     /**
-     * <p>Determines the cryptographic operations for which you can use the CMK. The
-     * default value is <code>ENCRYPT_DECRYPT</code>. This parameter is required only
-     * for asymmetric CMKs. You can't change the <code>KeyUsage</code> value after the
-     * CMK is created.</p> <p>Select only one valid value.</p> <ul> <li> <p>For
-     * symmetric CMKs, omit the parameter or specify <code>ENCRYPT_DECRYPT</code>.</p>
-     * </li> <li> <p>For asymmetric CMKs with RSA key material, specify
+     * <p>Determines the <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
+     * operations</a> for which you can use the CMK. The default value is
+     * <code>ENCRYPT_DECRYPT</code>. This parameter is required only for asymmetric
+     * CMKs. You can't change the <code>KeyUsage</code> value after the CMK is
+     * created.</p> <p>Select only one valid value.</p> <ul> <li> <p>For symmetric
+     * CMKs, omit the parameter or specify <code>ENCRYPT_DECRYPT</code>.</p> </li> <li>
+     * <p>For asymmetric CMKs with RSA key material, specify
      * <code>ENCRYPT_DECRYPT</code> or <code>SIGN_VERIFY</code>.</p> </li> <li> <p>For
      * asymmetric CMKs with ECC key material, specify <code>SIGN_VERIFY</code>.</p>
      * </li> </ul>
@@ -381,12 +391,14 @@ namespace Model
     inline CreateKeyRequest& WithKeyUsage(const KeyUsageType& value) { SetKeyUsage(value); return *this;}
 
     /**
-     * <p>Determines the cryptographic operations for which you can use the CMK. The
-     * default value is <code>ENCRYPT_DECRYPT</code>. This parameter is required only
-     * for asymmetric CMKs. You can't change the <code>KeyUsage</code> value after the
-     * CMK is created.</p> <p>Select only one valid value.</p> <ul> <li> <p>For
-     * symmetric CMKs, omit the parameter or specify <code>ENCRYPT_DECRYPT</code>.</p>
-     * </li> <li> <p>For asymmetric CMKs with RSA key material, specify
+     * <p>Determines the <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
+     * operations</a> for which you can use the CMK. The default value is
+     * <code>ENCRYPT_DECRYPT</code>. This parameter is required only for asymmetric
+     * CMKs. You can't change the <code>KeyUsage</code> value after the CMK is
+     * created.</p> <p>Select only one valid value.</p> <ul> <li> <p>For symmetric
+     * CMKs, omit the parameter or specify <code>ENCRYPT_DECRYPT</code>.</p> </li> <li>
+     * <p>For asymmetric CMKs with RSA key material, specify
      * <code>ENCRYPT_DECRYPT</code> or <code>SIGN_VERIFY</code>.</p> </li> <li> <p>For
      * asymmetric CMKs with ECC key material, specify <code>SIGN_VERIFY</code>.</p>
      * </li> </ul>

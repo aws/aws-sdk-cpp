@@ -1021,14 +1021,32 @@ namespace Model
         virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates a file system configuration.</p><p><h3>See Also:</h3>   <a
+         * <p>Use this operation to update the configuration of an existing Amazon FSx file
+         * system. For an Amazon FSx for Lustre file system, you can update only the
+         * WeeklyMaintenanceStartTime. For an Amazon for Windows File Server file system,
+         * you can update the following properties:</p> <ul> <li>
+         * <p>AutomaticBackupRetentionDays</p> </li> <li>
+         * <p>DailyAutomaticBackupStartTime</p> </li> <li>
+         * <p>SelfManagedActiveDirectoryConfiguration</p> </li> <li> <p>StorageCapacity</p>
+         * </li> <li> <p>ThroughputCapacity</p> </li> <li>
+         * <p>WeeklyMaintenanceStartTime</p> </li> </ul> <p>You can update multiple
+         * properties in a single request.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/UpdateFileSystem">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateFileSystemOutcome UpdateFileSystem(const Model::UpdateFileSystemRequest& request) const;
 
         /**
-         * <p>Updates a file system configuration.</p><p><h3>See Also:</h3>   <a
+         * <p>Use this operation to update the configuration of an existing Amazon FSx file
+         * system. For an Amazon FSx for Lustre file system, you can update only the
+         * WeeklyMaintenanceStartTime. For an Amazon for Windows File Server file system,
+         * you can update the following properties:</p> <ul> <li>
+         * <p>AutomaticBackupRetentionDays</p> </li> <li>
+         * <p>DailyAutomaticBackupStartTime</p> </li> <li>
+         * <p>SelfManagedActiveDirectoryConfiguration</p> </li> <li> <p>StorageCapacity</p>
+         * </li> <li> <p>ThroughputCapacity</p> </li> <li>
+         * <p>WeeklyMaintenanceStartTime</p> </li> </ul> <p>You can update multiple
+         * properties in a single request.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/UpdateFileSystem">AWS
          * API Reference</a></p>
          *
@@ -1037,7 +1055,16 @@ namespace Model
         virtual Model::UpdateFileSystemOutcomeCallable UpdateFileSystemCallable(const Model::UpdateFileSystemRequest& request) const;
 
         /**
-         * <p>Updates a file system configuration.</p><p><h3>See Also:</h3>   <a
+         * <p>Use this operation to update the configuration of an existing Amazon FSx file
+         * system. For an Amazon FSx for Lustre file system, you can update only the
+         * WeeklyMaintenanceStartTime. For an Amazon for Windows File Server file system,
+         * you can update the following properties:</p> <ul> <li>
+         * <p>AutomaticBackupRetentionDays</p> </li> <li>
+         * <p>DailyAutomaticBackupStartTime</p> </li> <li>
+         * <p>SelfManagedActiveDirectoryConfiguration</p> </li> <li> <p>StorageCapacity</p>
+         * </li> <li> <p>ThroughputCapacity</p> </li> <li>
+         * <p>WeeklyMaintenanceStartTime</p> </li> </ul> <p>You can update multiple
+         * properties in a single request.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/UpdateFileSystem">AWS
          * API Reference</a></p>
          *

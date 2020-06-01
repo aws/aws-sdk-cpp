@@ -41,6 +41,7 @@ namespace FSx
 {
 namespace Model
 {
+  class AdministrativeAction;
 
   /**
    * <p>A description of a specific Amazon FSx file system.</p><p><h3>See Also:</h3> 
@@ -961,6 +962,71 @@ namespace Model
     
     inline FileSystem& WithLustreConfiguration(LustreFileSystemConfiguration&& value) { SetLustreConfiguration(std::move(value)); return *this;}
 
+
+    /**
+     * <p>A list of administrative actions for the file system that are in process or
+     * waiting to be processed. Administrative actions describe changes to the Windows
+     * file system that you have initiated using the <code>UpdateFileSystem</code>
+     * action. </p>
+     */
+    inline const Aws::Vector<AdministrativeAction>& GetAdministrativeActions() const{ return m_administrativeActions; }
+
+    /**
+     * <p>A list of administrative actions for the file system that are in process or
+     * waiting to be processed. Administrative actions describe changes to the Windows
+     * file system that you have initiated using the <code>UpdateFileSystem</code>
+     * action. </p>
+     */
+    inline bool AdministrativeActionsHasBeenSet() const { return m_administrativeActionsHasBeenSet; }
+
+    /**
+     * <p>A list of administrative actions for the file system that are in process or
+     * waiting to be processed. Administrative actions describe changes to the Windows
+     * file system that you have initiated using the <code>UpdateFileSystem</code>
+     * action. </p>
+     */
+    inline void SetAdministrativeActions(const Aws::Vector<AdministrativeAction>& value) { m_administrativeActionsHasBeenSet = true; m_administrativeActions = value; }
+
+    /**
+     * <p>A list of administrative actions for the file system that are in process or
+     * waiting to be processed. Administrative actions describe changes to the Windows
+     * file system that you have initiated using the <code>UpdateFileSystem</code>
+     * action. </p>
+     */
+    inline void SetAdministrativeActions(Aws::Vector<AdministrativeAction>&& value) { m_administrativeActionsHasBeenSet = true; m_administrativeActions = std::move(value); }
+
+    /**
+     * <p>A list of administrative actions for the file system that are in process or
+     * waiting to be processed. Administrative actions describe changes to the Windows
+     * file system that you have initiated using the <code>UpdateFileSystem</code>
+     * action. </p>
+     */
+    inline FileSystem& WithAdministrativeActions(const Aws::Vector<AdministrativeAction>& value) { SetAdministrativeActions(value); return *this;}
+
+    /**
+     * <p>A list of administrative actions for the file system that are in process or
+     * waiting to be processed. Administrative actions describe changes to the Windows
+     * file system that you have initiated using the <code>UpdateFileSystem</code>
+     * action. </p>
+     */
+    inline FileSystem& WithAdministrativeActions(Aws::Vector<AdministrativeAction>&& value) { SetAdministrativeActions(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of administrative actions for the file system that are in process or
+     * waiting to be processed. Administrative actions describe changes to the Windows
+     * file system that you have initiated using the <code>UpdateFileSystem</code>
+     * action. </p>
+     */
+    inline FileSystem& AddAdministrativeActions(const AdministrativeAction& value) { m_administrativeActionsHasBeenSet = true; m_administrativeActions.push_back(value); return *this; }
+
+    /**
+     * <p>A list of administrative actions for the file system that are in process or
+     * waiting to be processed. Administrative actions describe changes to the Windows
+     * file system that you have initiated using the <code>UpdateFileSystem</code>
+     * action. </p>
+     */
+    inline FileSystem& AddAdministrativeActions(AdministrativeAction&& value) { m_administrativeActionsHasBeenSet = true; m_administrativeActions.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_ownerId;
@@ -1013,6 +1079,9 @@ namespace Model
 
     LustreFileSystemConfiguration m_lustreConfiguration;
     bool m_lustreConfigurationHasBeenSet;
+
+    Aws::Vector<AdministrativeAction> m_administrativeActions;
+    bool m_administrativeActionsHasBeenSet;
   };
 
 } // namespace Model

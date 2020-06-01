@@ -36,7 +36,8 @@ FleetSummary::FleetSummary() :
     m_displayNameHasBeenSet(false),
     m_companyCodeHasBeenSet(false),
     m_fleetStatus(FleetStatus::NOT_SET),
-    m_fleetStatusHasBeenSet(false)
+    m_fleetStatusHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -48,7 +49,8 @@ FleetSummary::FleetSummary(JsonView jsonValue) :
     m_displayNameHasBeenSet(false),
     m_companyCodeHasBeenSet(false),
     m_fleetStatus(FleetStatus::NOT_SET),
-    m_fleetStatusHasBeenSet(false)
+    m_fleetStatusHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -104,6 +106,16 @@ FleetSummary& FleetSummary::operator =(JsonView jsonValue)
     m_fleetStatusHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Tags"))
+  {
+    Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("Tags").GetAllObjects();
+    for(auto& tagsItem : tagsJsonMap)
+    {
+      m_tags[tagsItem.first] = tagsItem.second.AsString();
+    }
+    m_tagsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -148,6 +160,17 @@ JsonValue FleetSummary::Jsonize() const
   if(m_fleetStatusHasBeenSet)
   {
    payload.WithString("FleetStatus", FleetStatusMapper::GetNameForFleetStatus(m_fleetStatus));
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   JsonValue tagsJsonMap;
+   for(auto& tagsItem : m_tags)
+   {
+     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+   }
+   payload.WithObject("Tags", std::move(tagsJsonMap));
+
   }
 
   return payload;

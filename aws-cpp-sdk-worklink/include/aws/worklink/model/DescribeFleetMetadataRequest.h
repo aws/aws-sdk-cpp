@@ -43,42 +43,42 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the fleet.</p>
+     * <p>The Amazon Resource Name (ARN) of the fleet.</p>
      */
     inline const Aws::String& GetFleetArn() const{ return m_fleetArn; }
 
     /**
-     * <p>The ARN of the fleet.</p>
+     * <p>The Amazon Resource Name (ARN) of the fleet.</p>
      */
     inline bool FleetArnHasBeenSet() const { return m_fleetArnHasBeenSet; }
 
     /**
-     * <p>The ARN of the fleet.</p>
+     * <p>The Amazon Resource Name (ARN) of the fleet.</p>
      */
     inline void SetFleetArn(const Aws::String& value) { m_fleetArnHasBeenSet = true; m_fleetArn = value; }
 
     /**
-     * <p>The ARN of the fleet.</p>
+     * <p>The Amazon Resource Name (ARN) of the fleet.</p>
      */
     inline void SetFleetArn(Aws::String&& value) { m_fleetArnHasBeenSet = true; m_fleetArn = std::move(value); }
 
     /**
-     * <p>The ARN of the fleet.</p>
+     * <p>The Amazon Resource Name (ARN) of the fleet.</p>
      */
     inline void SetFleetArn(const char* value) { m_fleetArnHasBeenSet = true; m_fleetArn.assign(value); }
 
     /**
-     * <p>The ARN of the fleet.</p>
+     * <p>The Amazon Resource Name (ARN) of the fleet.</p>
      */
     inline DescribeFleetMetadataRequest& WithFleetArn(const Aws::String& value) { SetFleetArn(value); return *this;}
 
     /**
-     * <p>The ARN of the fleet.</p>
+     * <p>The Amazon Resource Name (ARN) of the fleet.</p>
      */
     inline DescribeFleetMetadataRequest& WithFleetArn(Aws::String&& value) { SetFleetArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the fleet.</p>
+     * <p>The Amazon Resource Name (ARN) of the fleet.</p>
      */
     inline DescribeFleetMetadataRequest& WithFleetArn(const char* value) { SetFleetArn(value); return *this;}
 

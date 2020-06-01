@@ -26,6 +26,8 @@ UpdateFileSystemRequest::UpdateFileSystemRequest() :
     m_fileSystemIdHasBeenSet(false),
     m_clientRequestToken(Aws::Utils::UUID::RandomUUID()),
     m_clientRequestTokenHasBeenSet(true),
+    m_storageCapacity(0),
+    m_storageCapacityHasBeenSet(false),
     m_windowsConfigurationHasBeenSet(false),
     m_lustreConfigurationHasBeenSet(false)
 {
@@ -44,6 +46,12 @@ Aws::String UpdateFileSystemRequest::SerializePayload() const
   if(m_clientRequestTokenHasBeenSet)
   {
    payload.WithString("ClientRequestToken", m_clientRequestToken);
+
+  }
+
+  if(m_storageCapacityHasBeenSet)
+  {
+   payload.WithInteger("StorageCapacity", m_storageCapacity);
 
   }
 

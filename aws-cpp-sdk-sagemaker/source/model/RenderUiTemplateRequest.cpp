@@ -25,7 +25,8 @@ using namespace Aws::Utils;
 RenderUiTemplateRequest::RenderUiTemplateRequest() : 
     m_uiTemplateHasBeenSet(false),
     m_taskHasBeenSet(false),
-    m_roleArnHasBeenSet(false)
+    m_roleArnHasBeenSet(false),
+    m_humanTaskUiArnHasBeenSet(false)
 {
 }
 
@@ -48,6 +49,12 @@ Aws::String RenderUiTemplateRequest::SerializePayload() const
   if(m_roleArnHasBeenSet)
   {
    payload.WithString("RoleArn", m_roleArn);
+
+  }
+
+  if(m_humanTaskUiArnHasBeenSet)
+  {
+   payload.WithString("HumanTaskUiArn", m_humanTaskUiArn);
 
   }
 

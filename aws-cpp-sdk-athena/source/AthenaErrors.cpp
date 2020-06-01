@@ -29,6 +29,7 @@ namespace AthenaErrorMapper
 {
 
 static const int INTERNAL_SERVER_HASH = HashingUtils::HashString("InternalServerException");
+static const int METADATA_HASH = HashingUtils::HashString("MetadataException");
 static const int TOO_MANY_REQUESTS_HASH = HashingUtils::HashString("TooManyRequestsException");
 static const int INVALID_REQUEST_HASH = HashingUtils::HashString("InvalidRequestException");
 
@@ -40,6 +41,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   if (hashCode == INTERNAL_SERVER_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(AthenaErrors::INTERNAL_SERVER), false);
+  }
+  else if (hashCode == METADATA_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(AthenaErrors::METADATA), false);
   }
   else if (hashCode == TOO_MANY_REQUESTS_HASH)
   {

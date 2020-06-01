@@ -150,6 +150,63 @@ namespace Model
 
 
     /**
+     * <p>The AWS KMS customer master key (CMK) used for encrypting log files. If a
+     * value is not provided, the logs will remain encrypted by AES-256. This attribute
+     * is only available with EMR version 5.30.0 and later, excluding EMR 6.0.0.</p>
+     */
+    inline const Aws::String& GetLogEncryptionKmsKeyId() const{ return m_logEncryptionKmsKeyId; }
+
+    /**
+     * <p>The AWS KMS customer master key (CMK) used for encrypting log files. If a
+     * value is not provided, the logs will remain encrypted by AES-256. This attribute
+     * is only available with EMR version 5.30.0 and later, excluding EMR 6.0.0.</p>
+     */
+    inline bool LogEncryptionKmsKeyIdHasBeenSet() const { return m_logEncryptionKmsKeyIdHasBeenSet; }
+
+    /**
+     * <p>The AWS KMS customer master key (CMK) used for encrypting log files. If a
+     * value is not provided, the logs will remain encrypted by AES-256. This attribute
+     * is only available with EMR version 5.30.0 and later, excluding EMR 6.0.0.</p>
+     */
+    inline void SetLogEncryptionKmsKeyId(const Aws::String& value) { m_logEncryptionKmsKeyIdHasBeenSet = true; m_logEncryptionKmsKeyId = value; }
+
+    /**
+     * <p>The AWS KMS customer master key (CMK) used for encrypting log files. If a
+     * value is not provided, the logs will remain encrypted by AES-256. This attribute
+     * is only available with EMR version 5.30.0 and later, excluding EMR 6.0.0.</p>
+     */
+    inline void SetLogEncryptionKmsKeyId(Aws::String&& value) { m_logEncryptionKmsKeyIdHasBeenSet = true; m_logEncryptionKmsKeyId = std::move(value); }
+
+    /**
+     * <p>The AWS KMS customer master key (CMK) used for encrypting log files. If a
+     * value is not provided, the logs will remain encrypted by AES-256. This attribute
+     * is only available with EMR version 5.30.0 and later, excluding EMR 6.0.0.</p>
+     */
+    inline void SetLogEncryptionKmsKeyId(const char* value) { m_logEncryptionKmsKeyIdHasBeenSet = true; m_logEncryptionKmsKeyId.assign(value); }
+
+    /**
+     * <p>The AWS KMS customer master key (CMK) used for encrypting log files. If a
+     * value is not provided, the logs will remain encrypted by AES-256. This attribute
+     * is only available with EMR version 5.30.0 and later, excluding EMR 6.0.0.</p>
+     */
+    inline RunJobFlowRequest& WithLogEncryptionKmsKeyId(const Aws::String& value) { SetLogEncryptionKmsKeyId(value); return *this;}
+
+    /**
+     * <p>The AWS KMS customer master key (CMK) used for encrypting log files. If a
+     * value is not provided, the logs will remain encrypted by AES-256. This attribute
+     * is only available with EMR version 5.30.0 and later, excluding EMR 6.0.0.</p>
+     */
+    inline RunJobFlowRequest& WithLogEncryptionKmsKeyId(Aws::String&& value) { SetLogEncryptionKmsKeyId(std::move(value)); return *this;}
+
+    /**
+     * <p>The AWS KMS customer master key (CMK) used for encrypting log files. If a
+     * value is not provided, the logs will remain encrypted by AES-256. This attribute
+     * is only available with EMR version 5.30.0 and later, excluding EMR 6.0.0.</p>
+     */
+    inline RunJobFlowRequest& WithLogEncryptionKmsKeyId(const char* value) { SetLogEncryptionKmsKeyId(value); return *this;}
+
+
+    /**
      * <p>A JSON string for selecting additional features.</p>
      */
     inline const Aws::String& GetAdditionalInfo() const{ return m_additionalInfo; }
@@ -1597,6 +1654,9 @@ namespace Model
 
     Aws::String m_logUri;
     bool m_logUriHasBeenSet;
+
+    Aws::String m_logEncryptionKmsKeyId;
+    bool m_logEncryptionKmsKeyIdHasBeenSet;
 
     Aws::String m_additionalInfo;
     bool m_additionalInfoHasBeenSet;

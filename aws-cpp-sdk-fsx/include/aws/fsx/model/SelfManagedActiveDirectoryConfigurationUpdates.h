@@ -36,7 +36,7 @@ namespace Model
 
   /**
    * <p>The configuration that Amazon FSx uses to join the Windows File Server
-   * instance to the self-managed Microsoft Active Directory (AD)
+   * instance to a self-managed Microsoft Active Directory (AD)
    * directory.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/SelfManagedActiveDirectoryConfigurationUpdates">AWS
    * API Reference</a></p>
