@@ -30,6 +30,7 @@ namespace Model
 
 Resource::Resource() : 
     m_accessKeyDetailsHasBeenSet(false),
+    m_s3BucketDetailsHasBeenSet(false),
     m_instanceDetailsHasBeenSet(false),
     m_resourceTypeHasBeenSet(false)
 {
@@ -37,6 +38,7 @@ Resource::Resource() :
 
 Resource::Resource(JsonView jsonValue) : 
     m_accessKeyDetailsHasBeenSet(false),
+    m_s3BucketDetailsHasBeenSet(false),
     m_instanceDetailsHasBeenSet(false),
     m_resourceTypeHasBeenSet(false)
 {
@@ -50,6 +52,16 @@ Resource& Resource::operator =(JsonView jsonValue)
     m_accessKeyDetails = jsonValue.GetObject("accessKeyDetails");
 
     m_accessKeyDetailsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("s3BucketDetails"))
+  {
+    Array<JsonView> s3BucketDetailsJsonList = jsonValue.GetArray("s3BucketDetails");
+    for(unsigned s3BucketDetailsIndex = 0; s3BucketDetailsIndex < s3BucketDetailsJsonList.GetLength(); ++s3BucketDetailsIndex)
+    {
+      m_s3BucketDetails.push_back(s3BucketDetailsJsonList[s3BucketDetailsIndex].AsObject());
+    }
+    m_s3BucketDetailsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("instanceDetails"))
@@ -76,6 +88,17 @@ JsonValue Resource::Jsonize() const
   if(m_accessKeyDetailsHasBeenSet)
   {
    payload.WithObject("accessKeyDetails", m_accessKeyDetails.Jsonize());
+
+  }
+
+  if(m_s3BucketDetailsHasBeenSet)
+  {
+   Array<JsonValue> s3BucketDetailsJsonList(m_s3BucketDetails.size());
+   for(unsigned s3BucketDetailsIndex = 0; s3BucketDetailsIndex < s3BucketDetailsJsonList.GetLength(); ++s3BucketDetailsIndex)
+   {
+     s3BucketDetailsJsonList[s3BucketDetailsIndex].AsObject(m_s3BucketDetails[s3BucketDetailsIndex].Jsonize());
+   }
+   payload.WithArray("s3BucketDetails", std::move(s3BucketDetailsJsonList));
 
   }
 
