@@ -16,6 +16,7 @@
 #pragma once
 #include <aws/iam/IAM_EXPORTS.h>
 #include <aws/iam/model/JobStatusType.h>
+#include <aws/iam/model/AccessAdvisorUsageGranularityType.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -72,6 +73,42 @@ namespace Model
      * <p>The status of the job.</p>
      */
     inline GetServiceLastAccessedDetailsResult& WithJobStatus(JobStatusType&& value) { SetJobStatus(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The type of job. Service jobs return information about when each service was
+     * last accessed. Action jobs also include information about when tracked actions
+     * within the service were last accessed.</p>
+     */
+    inline const AccessAdvisorUsageGranularityType& GetJobType() const{ return m_jobType; }
+
+    /**
+     * <p>The type of job. Service jobs return information about when each service was
+     * last accessed. Action jobs also include information about when tracked actions
+     * within the service were last accessed.</p>
+     */
+    inline void SetJobType(const AccessAdvisorUsageGranularityType& value) { m_jobType = value; }
+
+    /**
+     * <p>The type of job. Service jobs return information about when each service was
+     * last accessed. Action jobs also include information about when tracked actions
+     * within the service were last accessed.</p>
+     */
+    inline void SetJobType(AccessAdvisorUsageGranularityType&& value) { m_jobType = std::move(value); }
+
+    /**
+     * <p>The type of job. Service jobs return information about when each service was
+     * last accessed. Action jobs also include information about when tracked actions
+     * within the service were last accessed.</p>
+     */
+    inline GetServiceLastAccessedDetailsResult& WithJobType(const AccessAdvisorUsageGranularityType& value) { SetJobType(value); return *this;}
+
+    /**
+     * <p>The type of job. Service jobs return information about when each service was
+     * last accessed. Action jobs also include information about when tracked actions
+     * within the service were last accessed.</p>
+     */
+    inline GetServiceLastAccessedDetailsResult& WithJobType(AccessAdvisorUsageGranularityType&& value) { SetJobType(std::move(value)); return *this;}
 
 
     /**
@@ -190,8 +227,8 @@ namespace Model
 
 
     /**
-     * <p/> <p>A flag that indicates whether there are more items to return. If your
-     * results were truncated, you can make a subsequent pagination request using the
+     * <p>A flag that indicates whether there are more items to return. If your results
+     * were truncated, you can make a subsequent pagination request using the
      * <code>Marker</code> request parameter to retrieve more items. Note that IAM
      * might return fewer than the <code>MaxItems</code> number of results even when
      * there are more results available. We recommend that you check
@@ -201,8 +238,8 @@ namespace Model
     inline bool GetIsTruncated() const{ return m_isTruncated; }
 
     /**
-     * <p/> <p>A flag that indicates whether there are more items to return. If your
-     * results were truncated, you can make a subsequent pagination request using the
+     * <p>A flag that indicates whether there are more items to return. If your results
+     * were truncated, you can make a subsequent pagination request using the
      * <code>Marker</code> request parameter to retrieve more items. Note that IAM
      * might return fewer than the <code>MaxItems</code> number of results even when
      * there are more results available. We recommend that you check
@@ -212,8 +249,8 @@ namespace Model
     inline void SetIsTruncated(bool value) { m_isTruncated = value; }
 
     /**
-     * <p/> <p>A flag that indicates whether there are more items to return. If your
-     * results were truncated, you can make a subsequent pagination request using the
+     * <p>A flag that indicates whether there are more items to return. If your results
+     * were truncated, you can make a subsequent pagination request using the
      * <code>Marker</code> request parameter to retrieve more items. Note that IAM
      * might return fewer than the <code>MaxItems</code> number of results even when
      * there are more results available. We recommend that you check
@@ -317,6 +354,8 @@ namespace Model
   private:
 
     JobStatusType m_jobStatus;
+
+    AccessAdvisorUsageGranularityType m_jobType;
 
     Aws::Utils::DateTime m_jobCreationDate;
 

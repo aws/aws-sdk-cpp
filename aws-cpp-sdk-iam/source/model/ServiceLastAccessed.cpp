@@ -35,8 +35,10 @@ ServiceLastAccessed::ServiceLastAccessed() :
     m_lastAuthenticatedHasBeenSet(false),
     m_serviceNamespaceHasBeenSet(false),
     m_lastAuthenticatedEntityHasBeenSet(false),
+    m_lastAuthenticatedRegionHasBeenSet(false),
     m_totalAuthenticatedEntities(0),
-    m_totalAuthenticatedEntitiesHasBeenSet(false)
+    m_totalAuthenticatedEntitiesHasBeenSet(false),
+    m_trackedActionsLastAccessedHasBeenSet(false)
 {
 }
 
@@ -45,8 +47,10 @@ ServiceLastAccessed::ServiceLastAccessed(const XmlNode& xmlNode) :
     m_lastAuthenticatedHasBeenSet(false),
     m_serviceNamespaceHasBeenSet(false),
     m_lastAuthenticatedEntityHasBeenSet(false),
+    m_lastAuthenticatedRegionHasBeenSet(false),
     m_totalAuthenticatedEntities(0),
-    m_totalAuthenticatedEntitiesHasBeenSet(false)
+    m_totalAuthenticatedEntitiesHasBeenSet(false),
+    m_trackedActionsLastAccessedHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -81,11 +85,29 @@ ServiceLastAccessed& ServiceLastAccessed::operator =(const XmlNode& xmlNode)
       m_lastAuthenticatedEntity = Aws::Utils::Xml::DecodeEscapedXmlText(lastAuthenticatedEntityNode.GetText());
       m_lastAuthenticatedEntityHasBeenSet = true;
     }
+    XmlNode lastAuthenticatedRegionNode = resultNode.FirstChild("LastAuthenticatedRegion");
+    if(!lastAuthenticatedRegionNode.IsNull())
+    {
+      m_lastAuthenticatedRegion = Aws::Utils::Xml::DecodeEscapedXmlText(lastAuthenticatedRegionNode.GetText());
+      m_lastAuthenticatedRegionHasBeenSet = true;
+    }
     XmlNode totalAuthenticatedEntitiesNode = resultNode.FirstChild("TotalAuthenticatedEntities");
     if(!totalAuthenticatedEntitiesNode.IsNull())
     {
       m_totalAuthenticatedEntities = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(totalAuthenticatedEntitiesNode.GetText()).c_str()).c_str());
       m_totalAuthenticatedEntitiesHasBeenSet = true;
+    }
+    XmlNode trackedActionsLastAccessedNode = resultNode.FirstChild("TrackedActionsLastAccessed");
+    if(!trackedActionsLastAccessedNode.IsNull())
+    {
+      XmlNode trackedActionsLastAccessedMember = trackedActionsLastAccessedNode.FirstChild("member");
+      while(!trackedActionsLastAccessedMember.IsNull())
+      {
+        m_trackedActionsLastAccessed.push_back(trackedActionsLastAccessedMember);
+        trackedActionsLastAccessedMember = trackedActionsLastAccessedMember.NextNode("member");
+      }
+
+      m_trackedActionsLastAccessedHasBeenSet = true;
     }
   }
 
@@ -114,9 +136,25 @@ void ServiceLastAccessed::OutputToStream(Aws::OStream& oStream, const char* loca
       oStream << location << index << locationValue << ".LastAuthenticatedEntity=" << StringUtils::URLEncode(m_lastAuthenticatedEntity.c_str()) << "&";
   }
 
+  if(m_lastAuthenticatedRegionHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".LastAuthenticatedRegion=" << StringUtils::URLEncode(m_lastAuthenticatedRegion.c_str()) << "&";
+  }
+
   if(m_totalAuthenticatedEntitiesHasBeenSet)
   {
       oStream << location << index << locationValue << ".TotalAuthenticatedEntities=" << m_totalAuthenticatedEntities << "&";
+  }
+
+  if(m_trackedActionsLastAccessedHasBeenSet)
+  {
+      unsigned trackedActionsLastAccessedIdx = 1;
+      for(auto& item : m_trackedActionsLastAccessed)
+      {
+        Aws::StringStream trackedActionsLastAccessedSs;
+        trackedActionsLastAccessedSs << location << index << locationValue << ".TrackedActionsLastAccessed.member." << trackedActionsLastAccessedIdx++;
+        item.OutputToStream(oStream, trackedActionsLastAccessedSs.str().c_str());
+      }
   }
 
 }
@@ -139,9 +177,23 @@ void ServiceLastAccessed::OutputToStream(Aws::OStream& oStream, const char* loca
   {
       oStream << location << ".LastAuthenticatedEntity=" << StringUtils::URLEncode(m_lastAuthenticatedEntity.c_str()) << "&";
   }
+  if(m_lastAuthenticatedRegionHasBeenSet)
+  {
+      oStream << location << ".LastAuthenticatedRegion=" << StringUtils::URLEncode(m_lastAuthenticatedRegion.c_str()) << "&";
+  }
   if(m_totalAuthenticatedEntitiesHasBeenSet)
   {
       oStream << location << ".TotalAuthenticatedEntities=" << m_totalAuthenticatedEntities << "&";
+  }
+  if(m_trackedActionsLastAccessedHasBeenSet)
+  {
+      unsigned trackedActionsLastAccessedIdx = 1;
+      for(auto& item : m_trackedActionsLastAccessed)
+      {
+        Aws::StringStream trackedActionsLastAccessedSs;
+        trackedActionsLastAccessedSs << location <<  ".TrackedActionsLastAccessed.member." << trackedActionsLastAccessedIdx++;
+        item.OutputToStream(oStream, trackedActionsLastAccessedSs.str().c_str());
+      }
   }
 }
 

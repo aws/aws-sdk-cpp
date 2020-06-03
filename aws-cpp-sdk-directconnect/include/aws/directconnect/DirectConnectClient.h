@@ -65,6 +65,9 @@
 #include <aws/directconnect/model/DescribeVirtualGatewaysResult.h>
 #include <aws/directconnect/model/DescribeVirtualInterfacesResult.h>
 #include <aws/directconnect/model/DisassociateConnectionFromLagResult.h>
+#include <aws/directconnect/model/ListVirtualInterfaceTestHistoryResult.h>
+#include <aws/directconnect/model/StartBgpFailoverTestResult.h>
+#include <aws/directconnect/model/StopBgpFailoverTestResult.h>
 #include <aws/directconnect/model/TagResourceResult.h>
 #include <aws/directconnect/model/UntagResourceResult.h>
 #include <aws/directconnect/model/UpdateDirectConnectGatewayAssociationResult.h>
@@ -151,6 +154,9 @@ namespace Model
         class DescribeTagsRequest;
         class DescribeVirtualInterfacesRequest;
         class DisassociateConnectionFromLagRequest;
+        class ListVirtualInterfaceTestHistoryRequest;
+        class StartBgpFailoverTestRequest;
+        class StopBgpFailoverTestRequest;
         class TagResourceRequest;
         class UntagResourceRequest;
         class UpdateDirectConnectGatewayAssociationRequest;
@@ -201,6 +207,9 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribeVirtualGatewaysResult, Aws::Client::AWSError<DirectConnectErrors>> DescribeVirtualGatewaysOutcome;
         typedef Aws::Utils::Outcome<DescribeVirtualInterfacesResult, Aws::Client::AWSError<DirectConnectErrors>> DescribeVirtualInterfacesOutcome;
         typedef Aws::Utils::Outcome<DisassociateConnectionFromLagResult, Aws::Client::AWSError<DirectConnectErrors>> DisassociateConnectionFromLagOutcome;
+        typedef Aws::Utils::Outcome<ListVirtualInterfaceTestHistoryResult, Aws::Client::AWSError<DirectConnectErrors>> ListVirtualInterfaceTestHistoryOutcome;
+        typedef Aws::Utils::Outcome<StartBgpFailoverTestResult, Aws::Client::AWSError<DirectConnectErrors>> StartBgpFailoverTestOutcome;
+        typedef Aws::Utils::Outcome<StopBgpFailoverTestResult, Aws::Client::AWSError<DirectConnectErrors>> StopBgpFailoverTestOutcome;
         typedef Aws::Utils::Outcome<TagResourceResult, Aws::Client::AWSError<DirectConnectErrors>> TagResourceOutcome;
         typedef Aws::Utils::Outcome<UntagResourceResult, Aws::Client::AWSError<DirectConnectErrors>> UntagResourceOutcome;
         typedef Aws::Utils::Outcome<UpdateDirectConnectGatewayAssociationResult, Aws::Client::AWSError<DirectConnectErrors>> UpdateDirectConnectGatewayAssociationOutcome;
@@ -251,6 +260,9 @@ namespace Model
         typedef std::future<DescribeVirtualGatewaysOutcome> DescribeVirtualGatewaysOutcomeCallable;
         typedef std::future<DescribeVirtualInterfacesOutcome> DescribeVirtualInterfacesOutcomeCallable;
         typedef std::future<DisassociateConnectionFromLagOutcome> DisassociateConnectionFromLagOutcomeCallable;
+        typedef std::future<ListVirtualInterfaceTestHistoryOutcome> ListVirtualInterfaceTestHistoryOutcomeCallable;
+        typedef std::future<StartBgpFailoverTestOutcome> StartBgpFailoverTestOutcomeCallable;
+        typedef std::future<StopBgpFailoverTestOutcome> StopBgpFailoverTestOutcomeCallable;
         typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
         typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
         typedef std::future<UpdateDirectConnectGatewayAssociationOutcome> UpdateDirectConnectGatewayAssociationOutcomeCallable;
@@ -304,6 +316,9 @@ namespace Model
     typedef std::function<void(const DirectConnectClient*, const Model::DescribeVirtualGatewaysOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeVirtualGatewaysResponseReceivedHandler;
     typedef std::function<void(const DirectConnectClient*, const Model::DescribeVirtualInterfacesRequest&, const Model::DescribeVirtualInterfacesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeVirtualInterfacesResponseReceivedHandler;
     typedef std::function<void(const DirectConnectClient*, const Model::DisassociateConnectionFromLagRequest&, const Model::DisassociateConnectionFromLagOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateConnectionFromLagResponseReceivedHandler;
+    typedef std::function<void(const DirectConnectClient*, const Model::ListVirtualInterfaceTestHistoryRequest&, const Model::ListVirtualInterfaceTestHistoryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListVirtualInterfaceTestHistoryResponseReceivedHandler;
+    typedef std::function<void(const DirectConnectClient*, const Model::StartBgpFailoverTestRequest&, const Model::StartBgpFailoverTestOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartBgpFailoverTestResponseReceivedHandler;
+    typedef std::function<void(const DirectConnectClient*, const Model::StopBgpFailoverTestRequest&, const Model::StopBgpFailoverTestOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopBgpFailoverTestResponseReceivedHandler;
     typedef std::function<void(const DirectConnectClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const DirectConnectClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const DirectConnectClient*, const Model::UpdateDirectConnectGatewayAssociationRequest&, const Model::UpdateDirectConnectGatewayAssociationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDirectConnectGatewayAssociationResponseReceivedHandler;
@@ -1246,7 +1261,14 @@ namespace Model
          * Connecting the private virtual interface to a Direct Connect gateway enables the
          * possibility for connecting to multiple VPCs, including VPCs in different AWS
          * Regions. Connecting the private virtual interface to a VGW only provides access
-         * to a single VPC within the same Region.</p><p><h3>See Also:</h3>   <a
+         * to a single VPC within the same Region.</p> <p>Setting the MTU of a virtual
+         * interface to 9001 (jumbo frames) can cause an update to the underlying physical
+         * connection if it wasn't updated to support jumbo frames. Updating the connection
+         * disrupts network connectivity for all virtual interfaces associated with the
+         * connection for up to 30 seconds. To check whether your connection supports jumbo
+         * frames, call <a>DescribeConnections</a>. To check whether your virtual interface
+         * supports jumbo frames, call <a>DescribeVirtualInterfaces</a>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreatePrivateVirtualInterface">AWS
          * API Reference</a></p>
          */
@@ -1259,7 +1281,14 @@ namespace Model
          * Connecting the private virtual interface to a Direct Connect gateway enables the
          * possibility for connecting to multiple VPCs, including VPCs in different AWS
          * Regions. Connecting the private virtual interface to a VGW only provides access
-         * to a single VPC within the same Region.</p><p><h3>See Also:</h3>   <a
+         * to a single VPC within the same Region.</p> <p>Setting the MTU of a virtual
+         * interface to 9001 (jumbo frames) can cause an update to the underlying physical
+         * connection if it wasn't updated to support jumbo frames. Updating the connection
+         * disrupts network connectivity for all virtual interfaces associated with the
+         * connection for up to 30 seconds. To check whether your connection supports jumbo
+         * frames, call <a>DescribeConnections</a>. To check whether your virtual interface
+         * supports jumbo frames, call <a>DescribeVirtualInterfaces</a>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreatePrivateVirtualInterface">AWS
          * API Reference</a></p>
          *
@@ -1274,7 +1303,14 @@ namespace Model
          * Connecting the private virtual interface to a Direct Connect gateway enables the
          * possibility for connecting to multiple VPCs, including VPCs in different AWS
          * Regions. Connecting the private virtual interface to a VGW only provides access
-         * to a single VPC within the same Region.</p><p><h3>See Also:</h3>   <a
+         * to a single VPC within the same Region.</p> <p>Setting the MTU of a virtual
+         * interface to 9001 (jumbo frames) can cause an update to the underlying physical
+         * connection if it wasn't updated to support jumbo frames. Updating the connection
+         * disrupts network connectivity for all virtual interfaces associated with the
+         * connection for up to 30 seconds. To check whether your connection supports jumbo
+         * frames, call <a>DescribeConnections</a>. To check whether your virtual interface
+         * supports jumbo frames, call <a>DescribeVirtualInterfaces</a>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreatePrivateVirtualInterface">AWS
          * API Reference</a></p>
          *
@@ -1334,7 +1370,14 @@ namespace Model
          * Autonomous System Number (ASN) used by the transit gateway and the Direct
          * Connect gateway must be different. For example, if you use the default ASN 64512
          * for both your the transit gateway and Direct Connect gateway, the association
-         * request fails.</p> </important><p><h3>See Also:</h3>   <a
+         * request fails.</p> </important> <p>Setting the MTU of a virtual interface to
+         * 8500 (jumbo frames) can cause an update to the underlying physical connection if
+         * it wasn't updated to support jumbo frames. Updating the connection disrupts
+         * network connectivity for all virtual interfaces associated with the connection
+         * for up to 30 seconds. To check whether your connection supports jumbo frames,
+         * call <a>DescribeConnections</a>. To check whether your virtual interface
+         * supports jumbo frames, call <a>DescribeVirtualInterfaces</a>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreateTransitVirtualInterface">AWS
          * API Reference</a></p>
          */
@@ -1349,7 +1392,14 @@ namespace Model
          * Autonomous System Number (ASN) used by the transit gateway and the Direct
          * Connect gateway must be different. For example, if you use the default ASN 64512
          * for both your the transit gateway and Direct Connect gateway, the association
-         * request fails.</p> </important><p><h3>See Also:</h3>   <a
+         * request fails.</p> </important> <p>Setting the MTU of a virtual interface to
+         * 8500 (jumbo frames) can cause an update to the underlying physical connection if
+         * it wasn't updated to support jumbo frames. Updating the connection disrupts
+         * network connectivity for all virtual interfaces associated with the connection
+         * for up to 30 seconds. To check whether your connection supports jumbo frames,
+         * call <a>DescribeConnections</a>. To check whether your virtual interface
+         * supports jumbo frames, call <a>DescribeVirtualInterfaces</a>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreateTransitVirtualInterface">AWS
          * API Reference</a></p>
          *
@@ -1366,7 +1416,14 @@ namespace Model
          * Autonomous System Number (ASN) used by the transit gateway and the Direct
          * Connect gateway must be different. For example, if you use the default ASN 64512
          * for both your the transit gateway and Direct Connect gateway, the association
-         * request fails.</p> </important><p><h3>See Also:</h3>   <a
+         * request fails.</p> </important> <p>Setting the MTU of a virtual interface to
+         * 8500 (jumbo frames) can cause an update to the underlying physical connection if
+         * it wasn't updated to support jumbo frames. Updating the connection disrupts
+         * network connectivity for all virtual interfaces associated with the connection
+         * for up to 30 seconds. To check whether your connection supports jumbo frames,
+         * call <a>DescribeConnections</a>. To check whether your virtual interface
+         * supports jumbo frames, call <a>DescribeVirtualInterfaces</a>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreateTransitVirtualInterface">AWS
          * API Reference</a></p>
          *
@@ -2127,6 +2184,111 @@ namespace Model
         virtual void DisassociateConnectionFromLagAsync(const Model::DisassociateConnectionFromLagRequest& request, const DisassociateConnectionFromLagResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Lists the virtual interface failover test history.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/ListVirtualInterfaceTestHistory">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListVirtualInterfaceTestHistoryOutcome ListVirtualInterfaceTestHistory(const Model::ListVirtualInterfaceTestHistoryRequest& request) const;
+
+        /**
+         * <p>Lists the virtual interface failover test history.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/ListVirtualInterfaceTestHistory">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListVirtualInterfaceTestHistoryOutcomeCallable ListVirtualInterfaceTestHistoryCallable(const Model::ListVirtualInterfaceTestHistoryRequest& request) const;
+
+        /**
+         * <p>Lists the virtual interface failover test history.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/ListVirtualInterfaceTestHistory">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListVirtualInterfaceTestHistoryAsync(const Model::ListVirtualInterfaceTestHistoryRequest& request, const ListVirtualInterfaceTestHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Starts the virtual interface failover test that verifies your configuration
+         * meets your resiliency requirements by placing the BGP peering session in the
+         * DOWN state. You can then send traffic to verify that there are no outages.</p>
+         * <p>You can run the test on public, private, transit, and hosted virtual
+         * interfaces.</p> <p>You can use <a
+         * href="https://docs.aws.amazon.com/directconnect/latest/APIReference/API_ListVirtualInterfaceTestHistory.html">ListVirtualInterfaceTestHistory</a>
+         * to view the virtual interface test history.</p> <p>If you need to stop the test
+         * before the test interval completes, use <a
+         * href="https://docs.aws.amazon.com/directconnect/latest/APIReference/API_StopBgpFailoverTest.html">StopBgpFailoverTest</a>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/StartBgpFailoverTest">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartBgpFailoverTestOutcome StartBgpFailoverTest(const Model::StartBgpFailoverTestRequest& request) const;
+
+        /**
+         * <p>Starts the virtual interface failover test that verifies your configuration
+         * meets your resiliency requirements by placing the BGP peering session in the
+         * DOWN state. You can then send traffic to verify that there are no outages.</p>
+         * <p>You can run the test on public, private, transit, and hosted virtual
+         * interfaces.</p> <p>You can use <a
+         * href="https://docs.aws.amazon.com/directconnect/latest/APIReference/API_ListVirtualInterfaceTestHistory.html">ListVirtualInterfaceTestHistory</a>
+         * to view the virtual interface test history.</p> <p>If you need to stop the test
+         * before the test interval completes, use <a
+         * href="https://docs.aws.amazon.com/directconnect/latest/APIReference/API_StopBgpFailoverTest.html">StopBgpFailoverTest</a>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/StartBgpFailoverTest">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::StartBgpFailoverTestOutcomeCallable StartBgpFailoverTestCallable(const Model::StartBgpFailoverTestRequest& request) const;
+
+        /**
+         * <p>Starts the virtual interface failover test that verifies your configuration
+         * meets your resiliency requirements by placing the BGP peering session in the
+         * DOWN state. You can then send traffic to verify that there are no outages.</p>
+         * <p>You can run the test on public, private, transit, and hosted virtual
+         * interfaces.</p> <p>You can use <a
+         * href="https://docs.aws.amazon.com/directconnect/latest/APIReference/API_ListVirtualInterfaceTestHistory.html">ListVirtualInterfaceTestHistory</a>
+         * to view the virtual interface test history.</p> <p>If you need to stop the test
+         * before the test interval completes, use <a
+         * href="https://docs.aws.amazon.com/directconnect/latest/APIReference/API_StopBgpFailoverTest.html">StopBgpFailoverTest</a>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/StartBgpFailoverTest">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void StartBgpFailoverTestAsync(const Model::StartBgpFailoverTestRequest& request, const StartBgpFailoverTestResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Stops the virtual interface failover test.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/StopBgpFailoverTest">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StopBgpFailoverTestOutcome StopBgpFailoverTest(const Model::StopBgpFailoverTestRequest& request) const;
+
+        /**
+         * <p>Stops the virtual interface failover test.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/StopBgpFailoverTest">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::StopBgpFailoverTestOutcomeCallable StopBgpFailoverTestCallable(const Model::StopBgpFailoverTestRequest& request) const;
+
+        /**
+         * <p>Stops the virtual interface failover test.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/StopBgpFailoverTest">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void StopBgpFailoverTestAsync(const Model::StopBgpFailoverTestRequest& request, const StopBgpFailoverTestResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Adds the specified tags to the specified AWS Direct Connect resource. Each
          * resource can have a maximum of 50 tags.</p> <p>Each tag consists of a key and an
          * optional value. If a tag with the same key is already associated with the
@@ -2278,7 +2440,7 @@ namespace Model
          * to support jumbo frames. Updating the connection disrupts network connectivity
          * for all virtual interfaces associated with the connection for up to 30 seconds.
          * To check whether your connection supports jumbo frames, call
-         * <a>DescribeConnections</a>. To check whether your virtual interface supports
+         * <a>DescribeConnections</a>. To check whether your virtual q interface supports
          * jumbo frames, call <a>DescribeVirtualInterfaces</a>.</p><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/UpdateVirtualInterfaceAttributes">AWS
@@ -2293,7 +2455,7 @@ namespace Model
          * to support jumbo frames. Updating the connection disrupts network connectivity
          * for all virtual interfaces associated with the connection for up to 30 seconds.
          * To check whether your connection supports jumbo frames, call
-         * <a>DescribeConnections</a>. To check whether your virtual interface supports
+         * <a>DescribeConnections</a>. To check whether your virtual q interface supports
          * jumbo frames, call <a>DescribeVirtualInterfaces</a>.</p><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/UpdateVirtualInterfaceAttributes">AWS
@@ -2310,7 +2472,7 @@ namespace Model
          * to support jumbo frames. Updating the connection disrupts network connectivity
          * for all virtual interfaces associated with the connection for up to 30 seconds.
          * To check whether your connection supports jumbo frames, call
-         * <a>DescribeConnections</a>. To check whether your virtual interface supports
+         * <a>DescribeConnections</a>. To check whether your virtual q interface supports
          * jumbo frames, call <a>DescribeVirtualInterfaces</a>.</p><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/UpdateVirtualInterfaceAttributes">AWS
@@ -2368,6 +2530,9 @@ namespace Model
         void DescribeVirtualGatewaysAsyncHelper(const DescribeVirtualGatewaysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeVirtualInterfacesAsyncHelper(const Model::DescribeVirtualInterfacesRequest& request, const DescribeVirtualInterfacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisassociateConnectionFromLagAsyncHelper(const Model::DisassociateConnectionFromLagRequest& request, const DisassociateConnectionFromLagResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListVirtualInterfaceTestHistoryAsyncHelper(const Model::ListVirtualInterfaceTestHistoryRequest& request, const ListVirtualInterfaceTestHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void StartBgpFailoverTestAsyncHelper(const Model::StartBgpFailoverTestRequest& request, const StartBgpFailoverTestResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void StopBgpFailoverTestAsyncHelper(const Model::StopBgpFailoverTestRequest& request, const StopBgpFailoverTestResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateDirectConnectGatewayAssociationAsyncHelper(const Model::UpdateDirectConnectGatewayAssociationRequest& request, const UpdateDirectConnectGatewayAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

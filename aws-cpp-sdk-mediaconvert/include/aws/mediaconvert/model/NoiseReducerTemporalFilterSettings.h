@@ -15,6 +15,8 @@
 
 #pragma once
 #include <aws/mediaconvert/MediaConvert_EXPORTS.h>
+#include <aws/mediaconvert/model/NoiseFilterPostTemporalSharpening.h>
+#include <utility>
 
 namespace Aws
 {
@@ -72,6 +74,55 @@ namespace Model
      * aggressively and creates better VQ for low bitrate outputs.
      */
     inline NoiseReducerTemporalFilterSettings& WithAggressiveMode(int value) { SetAggressiveMode(value); return *this;}
+
+
+    /**
+     * Optional. When you set Noise reducer (noiseReducer) to Temporal (TEMPORAL), you
+     * can optionally use this setting to apply additional sharpening. The default
+     * behavior, Auto (AUTO) allows the transcoder to determine whether to apply
+     * filtering, depending on input type and quality.
+     */
+    inline const NoiseFilterPostTemporalSharpening& GetPostTemporalSharpening() const{ return m_postTemporalSharpening; }
+
+    /**
+     * Optional. When you set Noise reducer (noiseReducer) to Temporal (TEMPORAL), you
+     * can optionally use this setting to apply additional sharpening. The default
+     * behavior, Auto (AUTO) allows the transcoder to determine whether to apply
+     * filtering, depending on input type and quality.
+     */
+    inline bool PostTemporalSharpeningHasBeenSet() const { return m_postTemporalSharpeningHasBeenSet; }
+
+    /**
+     * Optional. When you set Noise reducer (noiseReducer) to Temporal (TEMPORAL), you
+     * can optionally use this setting to apply additional sharpening. The default
+     * behavior, Auto (AUTO) allows the transcoder to determine whether to apply
+     * filtering, depending on input type and quality.
+     */
+    inline void SetPostTemporalSharpening(const NoiseFilterPostTemporalSharpening& value) { m_postTemporalSharpeningHasBeenSet = true; m_postTemporalSharpening = value; }
+
+    /**
+     * Optional. When you set Noise reducer (noiseReducer) to Temporal (TEMPORAL), you
+     * can optionally use this setting to apply additional sharpening. The default
+     * behavior, Auto (AUTO) allows the transcoder to determine whether to apply
+     * filtering, depending on input type and quality.
+     */
+    inline void SetPostTemporalSharpening(NoiseFilterPostTemporalSharpening&& value) { m_postTemporalSharpeningHasBeenSet = true; m_postTemporalSharpening = std::move(value); }
+
+    /**
+     * Optional. When you set Noise reducer (noiseReducer) to Temporal (TEMPORAL), you
+     * can optionally use this setting to apply additional sharpening. The default
+     * behavior, Auto (AUTO) allows the transcoder to determine whether to apply
+     * filtering, depending on input type and quality.
+     */
+    inline NoiseReducerTemporalFilterSettings& WithPostTemporalSharpening(const NoiseFilterPostTemporalSharpening& value) { SetPostTemporalSharpening(value); return *this;}
+
+    /**
+     * Optional. When you set Noise reducer (noiseReducer) to Temporal (TEMPORAL), you
+     * can optionally use this setting to apply additional sharpening. The default
+     * behavior, Auto (AUTO) allows the transcoder to determine whether to apply
+     * filtering, depending on input type and quality.
+     */
+    inline NoiseReducerTemporalFilterSettings& WithPostTemporalSharpening(NoiseFilterPostTemporalSharpening&& value) { SetPostTemporalSharpening(std::move(value)); return *this;}
 
 
     /**
@@ -143,6 +194,9 @@ namespace Model
 
     int m_aggressiveMode;
     bool m_aggressiveModeHasBeenSet;
+
+    NoiseFilterPostTemporalSharpening m_postTemporalSharpening;
+    bool m_postTemporalSharpeningHasBeenSet;
 
     int m_speed;
     bool m_speedHasBeenSet;

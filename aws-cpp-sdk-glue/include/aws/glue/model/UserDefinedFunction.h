@@ -94,6 +94,47 @@ namespace Model
 
 
     /**
+     * <p>The name of the database where the function resides.</p>
+     */
+    inline const Aws::String& GetDatabaseName() const{ return m_databaseName; }
+
+    /**
+     * <p>The name of the database where the function resides.</p>
+     */
+    inline bool DatabaseNameHasBeenSet() const { return m_databaseNameHasBeenSet; }
+
+    /**
+     * <p>The name of the database where the function resides.</p>
+     */
+    inline void SetDatabaseName(const Aws::String& value) { m_databaseNameHasBeenSet = true; m_databaseName = value; }
+
+    /**
+     * <p>The name of the database where the function resides.</p>
+     */
+    inline void SetDatabaseName(Aws::String&& value) { m_databaseNameHasBeenSet = true; m_databaseName = std::move(value); }
+
+    /**
+     * <p>The name of the database where the function resides.</p>
+     */
+    inline void SetDatabaseName(const char* value) { m_databaseNameHasBeenSet = true; m_databaseName.assign(value); }
+
+    /**
+     * <p>The name of the database where the function resides.</p>
+     */
+    inline UserDefinedFunction& WithDatabaseName(const Aws::String& value) { SetDatabaseName(value); return *this;}
+
+    /**
+     * <p>The name of the database where the function resides.</p>
+     */
+    inline UserDefinedFunction& WithDatabaseName(Aws::String&& value) { SetDatabaseName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the database where the function resides.</p>
+     */
+    inline UserDefinedFunction& WithDatabaseName(const char* value) { SetDatabaseName(value); return *this;}
+
+
+    /**
      * <p>The Java class that contains the function code.</p>
      */
     inline const Aws::String& GetClassName() const{ return m_className; }
@@ -281,6 +322,9 @@ namespace Model
 
     Aws::String m_functionName;
     bool m_functionNameHasBeenSet;
+
+    Aws::String m_databaseName;
+    bool m_databaseNameHasBeenSet;
 
     Aws::String m_className;
     bool m_classNameHasBeenSet;

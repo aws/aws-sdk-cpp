@@ -39,6 +39,7 @@ namespace Aws
         static const int MP4_HASH = HashingUtils::HashString("MP4");
         static const int MPD_HASH = HashingUtils::HashString("MPD");
         static const int MXF_HASH = HashingUtils::HashString("MXF");
+        static const int WEBM_HASH = HashingUtils::HashString("WEBM");
         static const int RAW_HASH = HashingUtils::HashString("RAW");
 
 
@@ -81,6 +82,10 @@ namespace Aws
           {
             return ContainerType::MXF;
           }
+          else if (hashCode == WEBM_HASH)
+          {
+            return ContainerType::WEBM;
+          }
           else if (hashCode == RAW_HASH)
           {
             return ContainerType::RAW;
@@ -117,6 +122,8 @@ namespace Aws
             return "MPD";
           case ContainerType::MXF:
             return "MXF";
+          case ContainerType::WEBM:
+            return "WEBM";
           case ContainerType::RAW:
             return "RAW";
           default:

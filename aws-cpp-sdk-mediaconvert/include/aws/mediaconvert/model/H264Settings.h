@@ -457,32 +457,38 @@ namespace Model
 
 
     /**
-     * When set to INTERPOLATE, produces smoother motion during frame rate conversion.
+     * Optional. Specify how the transcoder performs framerate conversion. The default
+     * behavior is to use duplicate drop conversion.
      */
     inline const H264FramerateConversionAlgorithm& GetFramerateConversionAlgorithm() const{ return m_framerateConversionAlgorithm; }
 
     /**
-     * When set to INTERPOLATE, produces smoother motion during frame rate conversion.
+     * Optional. Specify how the transcoder performs framerate conversion. The default
+     * behavior is to use duplicate drop conversion.
      */
     inline bool FramerateConversionAlgorithmHasBeenSet() const { return m_framerateConversionAlgorithmHasBeenSet; }
 
     /**
-     * When set to INTERPOLATE, produces smoother motion during frame rate conversion.
+     * Optional. Specify how the transcoder performs framerate conversion. The default
+     * behavior is to use duplicate drop conversion.
      */
     inline void SetFramerateConversionAlgorithm(const H264FramerateConversionAlgorithm& value) { m_framerateConversionAlgorithmHasBeenSet = true; m_framerateConversionAlgorithm = value; }
 
     /**
-     * When set to INTERPOLATE, produces smoother motion during frame rate conversion.
+     * Optional. Specify how the transcoder performs framerate conversion. The default
+     * behavior is to use duplicate drop conversion.
      */
     inline void SetFramerateConversionAlgorithm(H264FramerateConversionAlgorithm&& value) { m_framerateConversionAlgorithmHasBeenSet = true; m_framerateConversionAlgorithm = std::move(value); }
 
     /**
-     * When set to INTERPOLATE, produces smoother motion during frame rate conversion.
+     * Optional. Specify how the transcoder performs framerate conversion. The default
+     * behavior is to use duplicate drop conversion.
      */
     inline H264Settings& WithFramerateConversionAlgorithm(const H264FramerateConversionAlgorithm& value) { SetFramerateConversionAlgorithm(value); return *this;}
 
     /**
-     * When set to INTERPOLATE, produces smoother motion during frame rate conversion.
+     * Optional. Specify how the transcoder performs framerate conversion. The default
+     * behavior is to use duplicate drop conversion.
      */
     inline H264Settings& WithFramerateConversionAlgorithm(H264FramerateConversionAlgorithm&& value) { SetFramerateConversionAlgorithm(std::move(value)); return *this;}
 
@@ -933,44 +939,62 @@ namespace Model
 
 
     /**
-     * Using the API, enable ParFollowSource if you want the service to use the pixel
-     * aspect ratio from the input. Using the console, do this by choosing Follow
-     * source for Pixel aspect ratio.
+     * Optional. Specify how the service determines the pixel aspect ratio (PAR) for
+     * this output. The default behavior, Follow source (INITIALIZE_FROM_SOURCE), uses
+     * the PAR from your input video for your output. To use a different PAR, choose
+     * (SPECIFIED). In the console, SPECIFIED corresponds to any value other than
+     * Follow source. When you choose SPECIFIED for this setting, you must also specify
+     * values for the parNumerator and parDenominator settings.
      */
     inline const H264ParControl& GetParControl() const{ return m_parControl; }
 
     /**
-     * Using the API, enable ParFollowSource if you want the service to use the pixel
-     * aspect ratio from the input. Using the console, do this by choosing Follow
-     * source for Pixel aspect ratio.
+     * Optional. Specify how the service determines the pixel aspect ratio (PAR) for
+     * this output. The default behavior, Follow source (INITIALIZE_FROM_SOURCE), uses
+     * the PAR from your input video for your output. To use a different PAR, choose
+     * (SPECIFIED). In the console, SPECIFIED corresponds to any value other than
+     * Follow source. When you choose SPECIFIED for this setting, you must also specify
+     * values for the parNumerator and parDenominator settings.
      */
     inline bool ParControlHasBeenSet() const { return m_parControlHasBeenSet; }
 
     /**
-     * Using the API, enable ParFollowSource if you want the service to use the pixel
-     * aspect ratio from the input. Using the console, do this by choosing Follow
-     * source for Pixel aspect ratio.
+     * Optional. Specify how the service determines the pixel aspect ratio (PAR) for
+     * this output. The default behavior, Follow source (INITIALIZE_FROM_SOURCE), uses
+     * the PAR from your input video for your output. To use a different PAR, choose
+     * (SPECIFIED). In the console, SPECIFIED corresponds to any value other than
+     * Follow source. When you choose SPECIFIED for this setting, you must also specify
+     * values for the parNumerator and parDenominator settings.
      */
     inline void SetParControl(const H264ParControl& value) { m_parControlHasBeenSet = true; m_parControl = value; }
 
     /**
-     * Using the API, enable ParFollowSource if you want the service to use the pixel
-     * aspect ratio from the input. Using the console, do this by choosing Follow
-     * source for Pixel aspect ratio.
+     * Optional. Specify how the service determines the pixel aspect ratio (PAR) for
+     * this output. The default behavior, Follow source (INITIALIZE_FROM_SOURCE), uses
+     * the PAR from your input video for your output. To use a different PAR, choose
+     * (SPECIFIED). In the console, SPECIFIED corresponds to any value other than
+     * Follow source. When you choose SPECIFIED for this setting, you must also specify
+     * values for the parNumerator and parDenominator settings.
      */
     inline void SetParControl(H264ParControl&& value) { m_parControlHasBeenSet = true; m_parControl = std::move(value); }
 
     /**
-     * Using the API, enable ParFollowSource if you want the service to use the pixel
-     * aspect ratio from the input. Using the console, do this by choosing Follow
-     * source for Pixel aspect ratio.
+     * Optional. Specify how the service determines the pixel aspect ratio (PAR) for
+     * this output. The default behavior, Follow source (INITIALIZE_FROM_SOURCE), uses
+     * the PAR from your input video for your output. To use a different PAR, choose
+     * (SPECIFIED). In the console, SPECIFIED corresponds to any value other than
+     * Follow source. When you choose SPECIFIED for this setting, you must also specify
+     * values for the parNumerator and parDenominator settings.
      */
     inline H264Settings& WithParControl(const H264ParControl& value) { SetParControl(value); return *this;}
 
     /**
-     * Using the API, enable ParFollowSource if you want the service to use the pixel
-     * aspect ratio from the input. Using the console, do this by choosing Follow
-     * source for Pixel aspect ratio.
+     * Optional. Specify how the service determines the pixel aspect ratio (PAR) for
+     * this output. The default behavior, Follow source (INITIALIZE_FROM_SOURCE), uses
+     * the PAR from your input video for your output. To use a different PAR, choose
+     * (SPECIFIED). In the console, SPECIFIED corresponds to any value other than
+     * Follow source. When you choose SPECIFIED for this setting, you must also specify
+     * values for the parNumerator and parDenominator settings.
      */
     inline H264Settings& WithParControl(H264ParControl&& value) { SetParControl(std::move(value)); return *this;}
 
@@ -1018,44 +1042,44 @@ namespace Model
 
 
     /**
-     * Use Quality tuning level (H264QualityTuningLevel) to specifiy whether to use
-     * fast single-pass, high-quality singlepass, or high-quality multipass video
-     * encoding.
+     * Optional. Use Quality tuning level (qualityTuningLevel) to choose how you want
+     * to trade off encoding speed for output video quality. The default behavior is
+     * faster, lower quality, single-pass encoding.
      */
     inline const H264QualityTuningLevel& GetQualityTuningLevel() const{ return m_qualityTuningLevel; }
 
     /**
-     * Use Quality tuning level (H264QualityTuningLevel) to specifiy whether to use
-     * fast single-pass, high-quality singlepass, or high-quality multipass video
-     * encoding.
+     * Optional. Use Quality tuning level (qualityTuningLevel) to choose how you want
+     * to trade off encoding speed for output video quality. The default behavior is
+     * faster, lower quality, single-pass encoding.
      */
     inline bool QualityTuningLevelHasBeenSet() const { return m_qualityTuningLevelHasBeenSet; }
 
     /**
-     * Use Quality tuning level (H264QualityTuningLevel) to specifiy whether to use
-     * fast single-pass, high-quality singlepass, or high-quality multipass video
-     * encoding.
+     * Optional. Use Quality tuning level (qualityTuningLevel) to choose how you want
+     * to trade off encoding speed for output video quality. The default behavior is
+     * faster, lower quality, single-pass encoding.
      */
     inline void SetQualityTuningLevel(const H264QualityTuningLevel& value) { m_qualityTuningLevelHasBeenSet = true; m_qualityTuningLevel = value; }
 
     /**
-     * Use Quality tuning level (H264QualityTuningLevel) to specifiy whether to use
-     * fast single-pass, high-quality singlepass, or high-quality multipass video
-     * encoding.
+     * Optional. Use Quality tuning level (qualityTuningLevel) to choose how you want
+     * to trade off encoding speed for output video quality. The default behavior is
+     * faster, lower quality, single-pass encoding.
      */
     inline void SetQualityTuningLevel(H264QualityTuningLevel&& value) { m_qualityTuningLevelHasBeenSet = true; m_qualityTuningLevel = std::move(value); }
 
     /**
-     * Use Quality tuning level (H264QualityTuningLevel) to specifiy whether to use
-     * fast single-pass, high-quality singlepass, or high-quality multipass video
-     * encoding.
+     * Optional. Use Quality tuning level (qualityTuningLevel) to choose how you want
+     * to trade off encoding speed for output video quality. The default behavior is
+     * faster, lower quality, single-pass encoding.
      */
     inline H264Settings& WithQualityTuningLevel(const H264QualityTuningLevel& value) { SetQualityTuningLevel(value); return *this;}
 
     /**
-     * Use Quality tuning level (H264QualityTuningLevel) to specifiy whether to use
-     * fast single-pass, high-quality singlepass, or high-quality multipass video
-     * encoding.
+     * Optional. Use Quality tuning level (qualityTuningLevel) to choose how you want
+     * to trade off encoding speed for output video quality. The default behavior is
+     * faster, lower quality, single-pass encoding.
      */
     inline H264Settings& WithQualityTuningLevel(H264QualityTuningLevel&& value) { SetQualityTuningLevel(std::move(value)); return *this;}
 

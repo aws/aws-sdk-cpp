@@ -261,7 +261,7 @@ namespace Model
      * frame rate from the dropdown list or choose Custom. The framerates shown in the
      * dropdown list are decimal approximations of fractions. If you choose Custom,
      * specify your frame rate as a fraction. If you are creating your transcoding job
-     * sepecification as a JSON file without the console, use FramerateControl to
+     * specification as a JSON file without the console, use FramerateControl to
      * specify which value the service uses for the frame rate for this output. Choose
      * INITIALIZE_FROM_SOURCE if you want the service to use the frame rate from the
      * input. Choose SPECIFIED if you want the service to use the frame rate you
@@ -276,7 +276,7 @@ namespace Model
      * frame rate from the dropdown list or choose Custom. The framerates shown in the
      * dropdown list are decimal approximations of fractions. If you choose Custom,
      * specify your frame rate as a fraction. If you are creating your transcoding job
-     * sepecification as a JSON file without the console, use FramerateControl to
+     * specification as a JSON file without the console, use FramerateControl to
      * specify which value the service uses for the frame rate for this output. Choose
      * INITIALIZE_FROM_SOURCE if you want the service to use the frame rate from the
      * input. Choose SPECIFIED if you want the service to use the frame rate you
@@ -291,7 +291,7 @@ namespace Model
      * frame rate from the dropdown list or choose Custom. The framerates shown in the
      * dropdown list are decimal approximations of fractions. If you choose Custom,
      * specify your frame rate as a fraction. If you are creating your transcoding job
-     * sepecification as a JSON file without the console, use FramerateControl to
+     * specification as a JSON file without the console, use FramerateControl to
      * specify which value the service uses for the frame rate for this output. Choose
      * INITIALIZE_FROM_SOURCE if you want the service to use the frame rate from the
      * input. Choose SPECIFIED if you want the service to use the frame rate you
@@ -306,7 +306,7 @@ namespace Model
      * frame rate from the dropdown list or choose Custom. The framerates shown in the
      * dropdown list are decimal approximations of fractions. If you choose Custom,
      * specify your frame rate as a fraction. If you are creating your transcoding job
-     * sepecification as a JSON file without the console, use FramerateControl to
+     * specification as a JSON file without the console, use FramerateControl to
      * specify which value the service uses for the frame rate for this output. Choose
      * INITIALIZE_FROM_SOURCE if you want the service to use the frame rate from the
      * input. Choose SPECIFIED if you want the service to use the frame rate you
@@ -321,7 +321,7 @@ namespace Model
      * frame rate from the dropdown list or choose Custom. The framerates shown in the
      * dropdown list are decimal approximations of fractions. If you choose Custom,
      * specify your frame rate as a fraction. If you are creating your transcoding job
-     * sepecification as a JSON file without the console, use FramerateControl to
+     * specification as a JSON file without the console, use FramerateControl to
      * specify which value the service uses for the frame rate for this output. Choose
      * INITIALIZE_FROM_SOURCE if you want the service to use the frame rate from the
      * input. Choose SPECIFIED if you want the service to use the frame rate you
@@ -336,7 +336,7 @@ namespace Model
      * frame rate from the dropdown list or choose Custom. The framerates shown in the
      * dropdown list are decimal approximations of fractions. If you choose Custom,
      * specify your frame rate as a fraction. If you are creating your transcoding job
-     * sepecification as a JSON file without the console, use FramerateControl to
+     * specification as a JSON file without the console, use FramerateControl to
      * specify which value the service uses for the frame rate for this output. Choose
      * INITIALIZE_FROM_SOURCE if you want the service to use the frame rate from the
      * input. Choose SPECIFIED if you want the service to use the frame rate you
@@ -346,32 +346,38 @@ namespace Model
 
 
     /**
-     * When set to INTERPOLATE, produces smoother motion during frame rate conversion.
+     * Optional. Specify how the transcoder performs framerate conversion. The default
+     * behavior is to use duplicate drop conversion.
      */
     inline const Mpeg2FramerateConversionAlgorithm& GetFramerateConversionAlgorithm() const{ return m_framerateConversionAlgorithm; }
 
     /**
-     * When set to INTERPOLATE, produces smoother motion during frame rate conversion.
+     * Optional. Specify how the transcoder performs framerate conversion. The default
+     * behavior is to use duplicate drop conversion.
      */
     inline bool FramerateConversionAlgorithmHasBeenSet() const { return m_framerateConversionAlgorithmHasBeenSet; }
 
     /**
-     * When set to INTERPOLATE, produces smoother motion during frame rate conversion.
+     * Optional. Specify how the transcoder performs framerate conversion. The default
+     * behavior is to use duplicate drop conversion.
      */
     inline void SetFramerateConversionAlgorithm(const Mpeg2FramerateConversionAlgorithm& value) { m_framerateConversionAlgorithmHasBeenSet = true; m_framerateConversionAlgorithm = value; }
 
     /**
-     * When set to INTERPOLATE, produces smoother motion during frame rate conversion.
+     * Optional. Specify how the transcoder performs framerate conversion. The default
+     * behavior is to use duplicate drop conversion.
      */
     inline void SetFramerateConversionAlgorithm(Mpeg2FramerateConversionAlgorithm&& value) { m_framerateConversionAlgorithmHasBeenSet = true; m_framerateConversionAlgorithm = std::move(value); }
 
     /**
-     * When set to INTERPOLATE, produces smoother motion during frame rate conversion.
+     * Optional. Specify how the transcoder performs framerate conversion. The default
+     * behavior is to use duplicate drop conversion.
      */
     inline Mpeg2Settings& WithFramerateConversionAlgorithm(const Mpeg2FramerateConversionAlgorithm& value) { SetFramerateConversionAlgorithm(value); return *this;}
 
     /**
-     * When set to INTERPOLATE, produces smoother motion during frame rate conversion.
+     * Optional. Specify how the transcoder performs framerate conversion. The default
+     * behavior is to use duplicate drop conversion.
      */
     inline Mpeg2Settings& WithFramerateConversionAlgorithm(Mpeg2FramerateConversionAlgorithm&& value) { SetFramerateConversionAlgorithm(std::move(value)); return *this;}
 
@@ -789,44 +795,62 @@ namespace Model
 
 
     /**
-     * Using the API, enable ParFollowSource if you want the service to use the pixel
-     * aspect ratio from the input. Using the console, do this by choosing Follow
-     * source for Pixel aspect ratio.
+     * Optional. Specify how the service determines the pixel aspect ratio (PAR) for
+     * this output. The default behavior, Follow source (INITIALIZE_FROM_SOURCE), uses
+     * the PAR from your input video for your output. To use a different PAR, choose
+     * (SPECIFIED). In the console, SPECIFIED corresponds to any value other than
+     * Follow source. When you choose SPECIFIED for this setting, you must also specify
+     * values for the parNumerator and parDenominator settings.
      */
     inline const Mpeg2ParControl& GetParControl() const{ return m_parControl; }
 
     /**
-     * Using the API, enable ParFollowSource if you want the service to use the pixel
-     * aspect ratio from the input. Using the console, do this by choosing Follow
-     * source for Pixel aspect ratio.
+     * Optional. Specify how the service determines the pixel aspect ratio (PAR) for
+     * this output. The default behavior, Follow source (INITIALIZE_FROM_SOURCE), uses
+     * the PAR from your input video for your output. To use a different PAR, choose
+     * (SPECIFIED). In the console, SPECIFIED corresponds to any value other than
+     * Follow source. When you choose SPECIFIED for this setting, you must also specify
+     * values for the parNumerator and parDenominator settings.
      */
     inline bool ParControlHasBeenSet() const { return m_parControlHasBeenSet; }
 
     /**
-     * Using the API, enable ParFollowSource if you want the service to use the pixel
-     * aspect ratio from the input. Using the console, do this by choosing Follow
-     * source for Pixel aspect ratio.
+     * Optional. Specify how the service determines the pixel aspect ratio (PAR) for
+     * this output. The default behavior, Follow source (INITIALIZE_FROM_SOURCE), uses
+     * the PAR from your input video for your output. To use a different PAR, choose
+     * (SPECIFIED). In the console, SPECIFIED corresponds to any value other than
+     * Follow source. When you choose SPECIFIED for this setting, you must also specify
+     * values for the parNumerator and parDenominator settings.
      */
     inline void SetParControl(const Mpeg2ParControl& value) { m_parControlHasBeenSet = true; m_parControl = value; }
 
     /**
-     * Using the API, enable ParFollowSource if you want the service to use the pixel
-     * aspect ratio from the input. Using the console, do this by choosing Follow
-     * source for Pixel aspect ratio.
+     * Optional. Specify how the service determines the pixel aspect ratio (PAR) for
+     * this output. The default behavior, Follow source (INITIALIZE_FROM_SOURCE), uses
+     * the PAR from your input video for your output. To use a different PAR, choose
+     * (SPECIFIED). In the console, SPECIFIED corresponds to any value other than
+     * Follow source. When you choose SPECIFIED for this setting, you must also specify
+     * values for the parNumerator and parDenominator settings.
      */
     inline void SetParControl(Mpeg2ParControl&& value) { m_parControlHasBeenSet = true; m_parControl = std::move(value); }
 
     /**
-     * Using the API, enable ParFollowSource if you want the service to use the pixel
-     * aspect ratio from the input. Using the console, do this by choosing Follow
-     * source for Pixel aspect ratio.
+     * Optional. Specify how the service determines the pixel aspect ratio (PAR) for
+     * this output. The default behavior, Follow source (INITIALIZE_FROM_SOURCE), uses
+     * the PAR from your input video for your output. To use a different PAR, choose
+     * (SPECIFIED). In the console, SPECIFIED corresponds to any value other than
+     * Follow source. When you choose SPECIFIED for this setting, you must also specify
+     * values for the parNumerator and parDenominator settings.
      */
     inline Mpeg2Settings& WithParControl(const Mpeg2ParControl& value) { SetParControl(value); return *this;}
 
     /**
-     * Using the API, enable ParFollowSource if you want the service to use the pixel
-     * aspect ratio from the input. Using the console, do this by choosing Follow
-     * source for Pixel aspect ratio.
+     * Optional. Specify how the service determines the pixel aspect ratio (PAR) for
+     * this output. The default behavior, Follow source (INITIALIZE_FROM_SOURCE), uses
+     * the PAR from your input video for your output. To use a different PAR, choose
+     * (SPECIFIED). In the console, SPECIFIED corresponds to any value other than
+     * Follow source. When you choose SPECIFIED for this setting, you must also specify
+     * values for the parNumerator and parDenominator settings.
      */
     inline Mpeg2Settings& WithParControl(Mpeg2ParControl&& value) { SetParControl(std::move(value)); return *this;}
 
@@ -874,38 +898,44 @@ namespace Model
 
 
     /**
-     * Use Quality tuning level (Mpeg2QualityTuningLevel) to specifiy whether to use
-     * single-pass or multipass video encoding.
+     * Optional. Use Quality tuning level (qualityTuningLevel) to choose how you want
+     * to trade off encoding speed for output video quality. The default behavior is
+     * faster, lower quality, single-pass encoding.
      */
     inline const Mpeg2QualityTuningLevel& GetQualityTuningLevel() const{ return m_qualityTuningLevel; }
 
     /**
-     * Use Quality tuning level (Mpeg2QualityTuningLevel) to specifiy whether to use
-     * single-pass or multipass video encoding.
+     * Optional. Use Quality tuning level (qualityTuningLevel) to choose how you want
+     * to trade off encoding speed for output video quality. The default behavior is
+     * faster, lower quality, single-pass encoding.
      */
     inline bool QualityTuningLevelHasBeenSet() const { return m_qualityTuningLevelHasBeenSet; }
 
     /**
-     * Use Quality tuning level (Mpeg2QualityTuningLevel) to specifiy whether to use
-     * single-pass or multipass video encoding.
+     * Optional. Use Quality tuning level (qualityTuningLevel) to choose how you want
+     * to trade off encoding speed for output video quality. The default behavior is
+     * faster, lower quality, single-pass encoding.
      */
     inline void SetQualityTuningLevel(const Mpeg2QualityTuningLevel& value) { m_qualityTuningLevelHasBeenSet = true; m_qualityTuningLevel = value; }
 
     /**
-     * Use Quality tuning level (Mpeg2QualityTuningLevel) to specifiy whether to use
-     * single-pass or multipass video encoding.
+     * Optional. Use Quality tuning level (qualityTuningLevel) to choose how you want
+     * to trade off encoding speed for output video quality. The default behavior is
+     * faster, lower quality, single-pass encoding.
      */
     inline void SetQualityTuningLevel(Mpeg2QualityTuningLevel&& value) { m_qualityTuningLevelHasBeenSet = true; m_qualityTuningLevel = std::move(value); }
 
     /**
-     * Use Quality tuning level (Mpeg2QualityTuningLevel) to specifiy whether to use
-     * single-pass or multipass video encoding.
+     * Optional. Use Quality tuning level (qualityTuningLevel) to choose how you want
+     * to trade off encoding speed for output video quality. The default behavior is
+     * faster, lower quality, single-pass encoding.
      */
     inline Mpeg2Settings& WithQualityTuningLevel(const Mpeg2QualityTuningLevel& value) { SetQualityTuningLevel(value); return *this;}
 
     /**
-     * Use Quality tuning level (Mpeg2QualityTuningLevel) to specifiy whether to use
-     * single-pass or multipass video encoding.
+     * Optional. Use Quality tuning level (qualityTuningLevel) to choose how you want
+     * to trade off encoding speed for output video quality. The default behavior is
+     * faster, lower quality, single-pass encoding.
      */
     inline Mpeg2Settings& WithQualityTuningLevel(Mpeg2QualityTuningLevel&& value) { SetQualityTuningLevel(std::move(value)); return *this;}
 

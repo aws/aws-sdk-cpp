@@ -21,7 +21,9 @@ using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
 GenerateServiceLastAccessedDetailsRequest::GenerateServiceLastAccessedDetailsRequest() : 
-    m_arnHasBeenSet(false)
+    m_arnHasBeenSet(false),
+    m_granularity(AccessAdvisorUsageGranularityType::NOT_SET),
+    m_granularityHasBeenSet(false)
 {
 }
 
@@ -32,6 +34,11 @@ Aws::String GenerateServiceLastAccessedDetailsRequest::SerializePayload() const
   if(m_arnHasBeenSet)
   {
     ss << "Arn=" << StringUtils::URLEncode(m_arn.c_str()) << "&";
+  }
+
+  if(m_granularityHasBeenSet)
+  {
+    ss << "Granularity=" << AccessAdvisorUsageGranularityTypeMapper::GetNameForAccessAdvisorUsageGranularityType(m_granularity) << "&";
   }
 
   ss << "Version=2010-05-08";

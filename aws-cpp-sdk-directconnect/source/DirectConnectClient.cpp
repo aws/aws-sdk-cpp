@@ -72,6 +72,9 @@
 #include <aws/directconnect/model/DescribeTagsRequest.h>
 #include <aws/directconnect/model/DescribeVirtualInterfacesRequest.h>
 #include <aws/directconnect/model/DisassociateConnectionFromLagRequest.h>
+#include <aws/directconnect/model/ListVirtualInterfaceTestHistoryRequest.h>
+#include <aws/directconnect/model/StartBgpFailoverTestRequest.h>
+#include <aws/directconnect/model/StopBgpFailoverTestRequest.h>
 #include <aws/directconnect/model/TagResourceRequest.h>
 #include <aws/directconnect/model/UntagResourceRequest.h>
 #include <aws/directconnect/model/UpdateDirectConnectGatewayAssociationRequest.h>
@@ -1684,6 +1687,111 @@ void DirectConnectClient::DisassociateConnectionFromLagAsync(const DisassociateC
 void DirectConnectClient::DisassociateConnectionFromLagAsyncHelper(const DisassociateConnectionFromLagRequest& request, const DisassociateConnectionFromLagResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DisassociateConnectionFromLag(request), context);
+}
+
+ListVirtualInterfaceTestHistoryOutcome DirectConnectClient::ListVirtualInterfaceTestHistory(const ListVirtualInterfaceTestHistoryRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ListVirtualInterfaceTestHistoryOutcome(ListVirtualInterfaceTestHistoryResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListVirtualInterfaceTestHistoryOutcome(outcome.GetError());
+  }
+}
+
+ListVirtualInterfaceTestHistoryOutcomeCallable DirectConnectClient::ListVirtualInterfaceTestHistoryCallable(const ListVirtualInterfaceTestHistoryRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListVirtualInterfaceTestHistoryOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListVirtualInterfaceTestHistory(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DirectConnectClient::ListVirtualInterfaceTestHistoryAsync(const ListVirtualInterfaceTestHistoryRequest& request, const ListVirtualInterfaceTestHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListVirtualInterfaceTestHistoryAsyncHelper( request, handler, context ); } );
+}
+
+void DirectConnectClient::ListVirtualInterfaceTestHistoryAsyncHelper(const ListVirtualInterfaceTestHistoryRequest& request, const ListVirtualInterfaceTestHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListVirtualInterfaceTestHistory(request), context);
+}
+
+StartBgpFailoverTestOutcome DirectConnectClient::StartBgpFailoverTest(const StartBgpFailoverTestRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return StartBgpFailoverTestOutcome(StartBgpFailoverTestResult(outcome.GetResult()));
+  }
+  else
+  {
+    return StartBgpFailoverTestOutcome(outcome.GetError());
+  }
+}
+
+StartBgpFailoverTestOutcomeCallable DirectConnectClient::StartBgpFailoverTestCallable(const StartBgpFailoverTestRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< StartBgpFailoverTestOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartBgpFailoverTest(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DirectConnectClient::StartBgpFailoverTestAsync(const StartBgpFailoverTestRequest& request, const StartBgpFailoverTestResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->StartBgpFailoverTestAsyncHelper( request, handler, context ); } );
+}
+
+void DirectConnectClient::StartBgpFailoverTestAsyncHelper(const StartBgpFailoverTestRequest& request, const StartBgpFailoverTestResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, StartBgpFailoverTest(request), context);
+}
+
+StopBgpFailoverTestOutcome DirectConnectClient::StopBgpFailoverTest(const StopBgpFailoverTestRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return StopBgpFailoverTestOutcome(StopBgpFailoverTestResult(outcome.GetResult()));
+  }
+  else
+  {
+    return StopBgpFailoverTestOutcome(outcome.GetError());
+  }
+}
+
+StopBgpFailoverTestOutcomeCallable DirectConnectClient::StopBgpFailoverTestCallable(const StopBgpFailoverTestRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< StopBgpFailoverTestOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StopBgpFailoverTest(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DirectConnectClient::StopBgpFailoverTestAsync(const StopBgpFailoverTestRequest& request, const StopBgpFailoverTestResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->StopBgpFailoverTestAsyncHelper( request, handler, context ); } );
+}
+
+void DirectConnectClient::StopBgpFailoverTestAsyncHelper(const StopBgpFailoverTestRequest& request, const StopBgpFailoverTestResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, StopBgpFailoverTest(request), context);
 }
 
 TagResourceOutcome DirectConnectClient::TagResource(const TagResourceRequest& request) const

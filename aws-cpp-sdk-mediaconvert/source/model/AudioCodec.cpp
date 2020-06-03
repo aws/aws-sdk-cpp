@@ -38,6 +38,8 @@ namespace Aws
         static const int AC3_HASH = HashingUtils::HashString("AC3");
         static const int EAC3_HASH = HashingUtils::HashString("EAC3");
         static const int EAC3_ATMOS_HASH = HashingUtils::HashString("EAC3_ATMOS");
+        static const int VORBIS_HASH = HashingUtils::HashString("VORBIS");
+        static const int OPUS_HASH = HashingUtils::HashString("OPUS");
         static const int PASSTHROUGH_HASH = HashingUtils::HashString("PASSTHROUGH");
 
 
@@ -76,6 +78,14 @@ namespace Aws
           {
             return AudioCodec::EAC3_ATMOS;
           }
+          else if (hashCode == VORBIS_HASH)
+          {
+            return AudioCodec::VORBIS;
+          }
+          else if (hashCode == OPUS_HASH)
+          {
+            return AudioCodec::OPUS;
+          }
           else if (hashCode == PASSTHROUGH_HASH)
           {
             return AudioCodec::PASSTHROUGH;
@@ -110,6 +120,10 @@ namespace Aws
             return "EAC3";
           case AudioCodec::EAC3_ATMOS:
             return "EAC3_ATMOS";
+          case AudioCodec::VORBIS:
+            return "VORBIS";
+          case AudioCodec::OPUS:
+            return "OPUS";
           case AudioCodec::PASSTHROUGH:
             return "PASSTHROUGH";
           default:

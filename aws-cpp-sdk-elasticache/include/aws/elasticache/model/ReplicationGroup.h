@@ -21,6 +21,7 @@
 #include <aws/elasticache/model/ReplicationGroupPendingModifiedValues.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/elasticache/model/AutomaticFailoverStatus.h>
+#include <aws/elasticache/model/MultiAZStatus.h>
 #include <aws/elasticache/model/Endpoint.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/elasticache/model/NodeGroup.h>
@@ -492,6 +493,25 @@ namespace Model
      * <li> <p>Redis (cluster mode enabled): T1 node types.</p> </li> </ul>
      */
     inline ReplicationGroup& WithAutomaticFailover(AutomaticFailoverStatus&& value) { SetAutomaticFailover(std::move(value)); return *this;}
+
+
+    
+    inline const MultiAZStatus& GetMultiAZ() const{ return m_multiAZ; }
+
+    
+    inline bool MultiAZHasBeenSet() const { return m_multiAZHasBeenSet; }
+
+    
+    inline void SetMultiAZ(const MultiAZStatus& value) { m_multiAZHasBeenSet = true; m_multiAZ = value; }
+
+    
+    inline void SetMultiAZ(MultiAZStatus&& value) { m_multiAZHasBeenSet = true; m_multiAZ = std::move(value); }
+
+    
+    inline ReplicationGroup& WithMultiAZ(const MultiAZStatus& value) { SetMultiAZ(value); return *this;}
+
+    
+    inline ReplicationGroup& WithMultiAZ(MultiAZStatus&& value) { SetMultiAZ(std::move(value)); return *this;}
 
 
     /**
@@ -978,6 +998,9 @@ namespace Model
 
     AutomaticFailoverStatus m_automaticFailover;
     bool m_automaticFailoverHasBeenSet;
+
+    MultiAZStatus m_multiAZ;
+    bool m_multiAZHasBeenSet;
 
     Endpoint m_configurationEndpoint;
     bool m_configurationEndpointHasBeenSet;

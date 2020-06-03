@@ -309,6 +309,19 @@ namespace Model
     inline ModifyReplicationGroupRequest& WithAutomaticFailoverEnabled(bool value) { SetAutomaticFailoverEnabled(value); return *this;}
 
 
+    
+    inline bool GetMultiAZEnabled() const{ return m_multiAZEnabled; }
+
+    
+    inline bool MultiAZEnabledHasBeenSet() const { return m_multiAZEnabledHasBeenSet; }
+
+    
+    inline void SetMultiAZEnabled(bool value) { m_multiAZEnabledHasBeenSet = true; m_multiAZEnabled = value; }
+
+    
+    inline ModifyReplicationGroupRequest& WithMultiAZEnabled(bool value) { SetMultiAZEnabled(value); return *this;}
+
+
     /**
      * <p>A list of cache security group names to authorize for the clusters in this
      * replication group. This change is asynchronously applied as soon as
@@ -1227,6 +1240,9 @@ namespace Model
 
     bool m_automaticFailoverEnabled;
     bool m_automaticFailoverEnabledHasBeenSet;
+
+    bool m_multiAZEnabled;
+    bool m_multiAZEnabledHasBeenSet;
 
     Aws::Vector<Aws::String> m_cacheSecurityGroupNames;
     bool m_cacheSecurityGroupNamesHasBeenSet;

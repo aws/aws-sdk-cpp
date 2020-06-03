@@ -347,7 +347,7 @@ namespace Model
      * frame rate from the dropdown list or choose Custom. The framerates shown in the
      * dropdown list are decimal approximations of fractions. If you choose Custom,
      * specify your frame rate as a fraction. If you are creating your transcoding job
-     * sepecification as a JSON file without the console, use FramerateControl to
+     * specification as a JSON file without the console, use FramerateControl to
      * specify which value the service uses for the frame rate for this output. Choose
      * INITIALIZE_FROM_SOURCE if you want the service to use the frame rate from the
      * input. Choose SPECIFIED if you want the service to use the frame rate you
@@ -362,7 +362,7 @@ namespace Model
      * frame rate from the dropdown list or choose Custom. The framerates shown in the
      * dropdown list are decimal approximations of fractions. If you choose Custom,
      * specify your frame rate as a fraction. If you are creating your transcoding job
-     * sepecification as a JSON file without the console, use FramerateControl to
+     * specification as a JSON file without the console, use FramerateControl to
      * specify which value the service uses for the frame rate for this output. Choose
      * INITIALIZE_FROM_SOURCE if you want the service to use the frame rate from the
      * input. Choose SPECIFIED if you want the service to use the frame rate you
@@ -377,7 +377,7 @@ namespace Model
      * frame rate from the dropdown list or choose Custom. The framerates shown in the
      * dropdown list are decimal approximations of fractions. If you choose Custom,
      * specify your frame rate as a fraction. If you are creating your transcoding job
-     * sepecification as a JSON file without the console, use FramerateControl to
+     * specification as a JSON file without the console, use FramerateControl to
      * specify which value the service uses for the frame rate for this output. Choose
      * INITIALIZE_FROM_SOURCE if you want the service to use the frame rate from the
      * input. Choose SPECIFIED if you want the service to use the frame rate you
@@ -392,7 +392,7 @@ namespace Model
      * frame rate from the dropdown list or choose Custom. The framerates shown in the
      * dropdown list are decimal approximations of fractions. If you choose Custom,
      * specify your frame rate as a fraction. If you are creating your transcoding job
-     * sepecification as a JSON file without the console, use FramerateControl to
+     * specification as a JSON file without the console, use FramerateControl to
      * specify which value the service uses for the frame rate for this output. Choose
      * INITIALIZE_FROM_SOURCE if you want the service to use the frame rate from the
      * input. Choose SPECIFIED if you want the service to use the frame rate you
@@ -407,7 +407,7 @@ namespace Model
      * frame rate from the dropdown list or choose Custom. The framerates shown in the
      * dropdown list are decimal approximations of fractions. If you choose Custom,
      * specify your frame rate as a fraction. If you are creating your transcoding job
-     * sepecification as a JSON file without the console, use FramerateControl to
+     * specification as a JSON file without the console, use FramerateControl to
      * specify which value the service uses for the frame rate for this output. Choose
      * INITIALIZE_FROM_SOURCE if you want the service to use the frame rate from the
      * input. Choose SPECIFIED if you want the service to use the frame rate you
@@ -422,7 +422,7 @@ namespace Model
      * frame rate from the dropdown list or choose Custom. The framerates shown in the
      * dropdown list are decimal approximations of fractions. If you choose Custom,
      * specify your frame rate as a fraction. If you are creating your transcoding job
-     * sepecification as a JSON file without the console, use FramerateControl to
+     * specification as a JSON file without the console, use FramerateControl to
      * specify which value the service uses for the frame rate for this output. Choose
      * INITIALIZE_FROM_SOURCE if you want the service to use the frame rate from the
      * input. Choose SPECIFIED if you want the service to use the frame rate you
@@ -882,44 +882,62 @@ namespace Model
 
 
     /**
-     * Using the API, enable ParFollowSource if you want the service to use the pixel
-     * aspect ratio from the input. Using the console, do this by choosing Follow
-     * source for Pixel aspect ratio.
+     * Optional. Specify how the service determines the pixel aspect ratio (PAR) for
+     * this output. The default behavior, Follow source (INITIALIZE_FROM_SOURCE), uses
+     * the PAR from your input video for your output. To use a different PAR, choose
+     * (SPECIFIED). In the console, SPECIFIED corresponds to any value other than
+     * Follow source. When you choose SPECIFIED for this setting, you must also specify
+     * values for the parNumerator and parDenominator settings.
      */
     inline const H265ParControl& GetParControl() const{ return m_parControl; }
 
     /**
-     * Using the API, enable ParFollowSource if you want the service to use the pixel
-     * aspect ratio from the input. Using the console, do this by choosing Follow
-     * source for Pixel aspect ratio.
+     * Optional. Specify how the service determines the pixel aspect ratio (PAR) for
+     * this output. The default behavior, Follow source (INITIALIZE_FROM_SOURCE), uses
+     * the PAR from your input video for your output. To use a different PAR, choose
+     * (SPECIFIED). In the console, SPECIFIED corresponds to any value other than
+     * Follow source. When you choose SPECIFIED for this setting, you must also specify
+     * values for the parNumerator and parDenominator settings.
      */
     inline bool ParControlHasBeenSet() const { return m_parControlHasBeenSet; }
 
     /**
-     * Using the API, enable ParFollowSource if you want the service to use the pixel
-     * aspect ratio from the input. Using the console, do this by choosing Follow
-     * source for Pixel aspect ratio.
+     * Optional. Specify how the service determines the pixel aspect ratio (PAR) for
+     * this output. The default behavior, Follow source (INITIALIZE_FROM_SOURCE), uses
+     * the PAR from your input video for your output. To use a different PAR, choose
+     * (SPECIFIED). In the console, SPECIFIED corresponds to any value other than
+     * Follow source. When you choose SPECIFIED for this setting, you must also specify
+     * values for the parNumerator and parDenominator settings.
      */
     inline void SetParControl(const H265ParControl& value) { m_parControlHasBeenSet = true; m_parControl = value; }
 
     /**
-     * Using the API, enable ParFollowSource if you want the service to use the pixel
-     * aspect ratio from the input. Using the console, do this by choosing Follow
-     * source for Pixel aspect ratio.
+     * Optional. Specify how the service determines the pixel aspect ratio (PAR) for
+     * this output. The default behavior, Follow source (INITIALIZE_FROM_SOURCE), uses
+     * the PAR from your input video for your output. To use a different PAR, choose
+     * (SPECIFIED). In the console, SPECIFIED corresponds to any value other than
+     * Follow source. When you choose SPECIFIED for this setting, you must also specify
+     * values for the parNumerator and parDenominator settings.
      */
     inline void SetParControl(H265ParControl&& value) { m_parControlHasBeenSet = true; m_parControl = std::move(value); }
 
     /**
-     * Using the API, enable ParFollowSource if you want the service to use the pixel
-     * aspect ratio from the input. Using the console, do this by choosing Follow
-     * source for Pixel aspect ratio.
+     * Optional. Specify how the service determines the pixel aspect ratio (PAR) for
+     * this output. The default behavior, Follow source (INITIALIZE_FROM_SOURCE), uses
+     * the PAR from your input video for your output. To use a different PAR, choose
+     * (SPECIFIED). In the console, SPECIFIED corresponds to any value other than
+     * Follow source. When you choose SPECIFIED for this setting, you must also specify
+     * values for the parNumerator and parDenominator settings.
      */
     inline H265Settings& WithParControl(const H265ParControl& value) { SetParControl(value); return *this;}
 
     /**
-     * Using the API, enable ParFollowSource if you want the service to use the pixel
-     * aspect ratio from the input. Using the console, do this by choosing Follow
-     * source for Pixel aspect ratio.
+     * Optional. Specify how the service determines the pixel aspect ratio (PAR) for
+     * this output. The default behavior, Follow source (INITIALIZE_FROM_SOURCE), uses
+     * the PAR from your input video for your output. To use a different PAR, choose
+     * (SPECIFIED). In the console, SPECIFIED corresponds to any value other than
+     * Follow source. When you choose SPECIFIED for this setting, you must also specify
+     * values for the parNumerator and parDenominator settings.
      */
     inline H265Settings& WithParControl(H265ParControl&& value) { SetParControl(std::move(value)); return *this;}
 
@@ -967,44 +985,44 @@ namespace Model
 
 
     /**
-     * Use Quality tuning level (H265QualityTuningLevel) to specifiy whether to use
-     * fast single-pass, high-quality singlepass, or high-quality multipass video
-     * encoding.
+     * Optional. Use Quality tuning level (qualityTuningLevel) to choose how you want
+     * to trade off encoding speed for output video quality. The default behavior is
+     * faster, lower quality, single-pass encoding.
      */
     inline const H265QualityTuningLevel& GetQualityTuningLevel() const{ return m_qualityTuningLevel; }
 
     /**
-     * Use Quality tuning level (H265QualityTuningLevel) to specifiy whether to use
-     * fast single-pass, high-quality singlepass, or high-quality multipass video
-     * encoding.
+     * Optional. Use Quality tuning level (qualityTuningLevel) to choose how you want
+     * to trade off encoding speed for output video quality. The default behavior is
+     * faster, lower quality, single-pass encoding.
      */
     inline bool QualityTuningLevelHasBeenSet() const { return m_qualityTuningLevelHasBeenSet; }
 
     /**
-     * Use Quality tuning level (H265QualityTuningLevel) to specifiy whether to use
-     * fast single-pass, high-quality singlepass, or high-quality multipass video
-     * encoding.
+     * Optional. Use Quality tuning level (qualityTuningLevel) to choose how you want
+     * to trade off encoding speed for output video quality. The default behavior is
+     * faster, lower quality, single-pass encoding.
      */
     inline void SetQualityTuningLevel(const H265QualityTuningLevel& value) { m_qualityTuningLevelHasBeenSet = true; m_qualityTuningLevel = value; }
 
     /**
-     * Use Quality tuning level (H265QualityTuningLevel) to specifiy whether to use
-     * fast single-pass, high-quality singlepass, or high-quality multipass video
-     * encoding.
+     * Optional. Use Quality tuning level (qualityTuningLevel) to choose how you want
+     * to trade off encoding speed for output video quality. The default behavior is
+     * faster, lower quality, single-pass encoding.
      */
     inline void SetQualityTuningLevel(H265QualityTuningLevel&& value) { m_qualityTuningLevelHasBeenSet = true; m_qualityTuningLevel = std::move(value); }
 
     /**
-     * Use Quality tuning level (H265QualityTuningLevel) to specifiy whether to use
-     * fast single-pass, high-quality singlepass, or high-quality multipass video
-     * encoding.
+     * Optional. Use Quality tuning level (qualityTuningLevel) to choose how you want
+     * to trade off encoding speed for output video quality. The default behavior is
+     * faster, lower quality, single-pass encoding.
      */
     inline H265Settings& WithQualityTuningLevel(const H265QualityTuningLevel& value) { SetQualityTuningLevel(value); return *this;}
 
     /**
-     * Use Quality tuning level (H265QualityTuningLevel) to specifiy whether to use
-     * fast single-pass, high-quality singlepass, or high-quality multipass video
-     * encoding.
+     * Optional. Use Quality tuning level (qualityTuningLevel) to choose how you want
+     * to trade off encoding speed for output video quality. The default behavior is
+     * faster, lower quality, single-pass encoding.
      */
     inline H265Settings& WithQualityTuningLevel(H265QualityTuningLevel&& value) { SetQualityTuningLevel(std::move(value)); return *this;}
 

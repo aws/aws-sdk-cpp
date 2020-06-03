@@ -29,12 +29,14 @@ using namespace Aws;
 
 GetServiceLastAccessedDetailsResult::GetServiceLastAccessedDetailsResult() : 
     m_jobStatus(JobStatusType::NOT_SET),
+    m_jobType(AccessAdvisorUsageGranularityType::NOT_SET),
     m_isTruncated(false)
 {
 }
 
 GetServiceLastAccessedDetailsResult::GetServiceLastAccessedDetailsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
     m_jobStatus(JobStatusType::NOT_SET),
+    m_jobType(AccessAdvisorUsageGranularityType::NOT_SET),
     m_isTruncated(false)
 {
   *this = result;
@@ -56,6 +58,11 @@ GetServiceLastAccessedDetailsResult& GetServiceLastAccessedDetailsResult::operat
     if(!jobStatusNode.IsNull())
     {
       m_jobStatus = JobStatusTypeMapper::GetJobStatusTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(jobStatusNode.GetText()).c_str()).c_str());
+    }
+    XmlNode jobTypeNode = resultNode.FirstChild("JobType");
+    if(!jobTypeNode.IsNull())
+    {
+      m_jobType = AccessAdvisorUsageGranularityTypeMapper::GetAccessAdvisorUsageGranularityTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(jobTypeNode.GetText()).c_str()).c_str());
     }
     XmlNode jobCreationDateNode = resultNode.FirstChild("JobCreationDate");
     if(!jobCreationDateNode.IsNull())

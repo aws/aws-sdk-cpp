@@ -27,6 +27,8 @@ CreateReplicationGroupRequest::CreateReplicationGroupRequest() :
     m_primaryClusterIdHasBeenSet(false),
     m_automaticFailoverEnabled(false),
     m_automaticFailoverEnabledHasBeenSet(false),
+    m_multiAZEnabled(false),
+    m_multiAZEnabledHasBeenSet(false),
     m_numCacheClusters(0),
     m_numCacheClustersHasBeenSet(false),
     m_preferredCacheClusterAZsHasBeenSet(false),
@@ -90,6 +92,11 @@ Aws::String CreateReplicationGroupRequest::SerializePayload() const
   if(m_automaticFailoverEnabledHasBeenSet)
   {
     ss << "AutomaticFailoverEnabled=" << std::boolalpha << m_automaticFailoverEnabled << "&";
+  }
+
+  if(m_multiAZEnabledHasBeenSet)
+  {
+    ss << "MultiAZEnabled=" << std::boolalpha << m_multiAZEnabled << "&";
   }
 
   if(m_numCacheClustersHasBeenSet)

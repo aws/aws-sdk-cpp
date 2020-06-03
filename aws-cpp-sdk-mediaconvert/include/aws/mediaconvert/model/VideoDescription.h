@@ -167,7 +167,8 @@ namespace Model
      * enum that you choose, define the corresponding settings object. The following
      * lists the codec enum, settings object pairs. * FRAME_CAPTURE,
      * FrameCaptureSettings * AV1, Av1Settings * H_264, H264Settings * H_265,
-     * H265Settings * MPEG2, Mpeg2Settings * PRORES, ProresSettings
+     * H265Settings * MPEG2, Mpeg2Settings * PRORES, ProresSettings * VP8, Vp8Settings
+     * * VP9, Vp9Settings
      */
     inline const VideoCodecSettings& GetCodecSettings() const{ return m_codecSettings; }
 
@@ -178,7 +179,8 @@ namespace Model
      * enum that you choose, define the corresponding settings object. The following
      * lists the codec enum, settings object pairs. * FRAME_CAPTURE,
      * FrameCaptureSettings * AV1, Av1Settings * H_264, H264Settings * H_265,
-     * H265Settings * MPEG2, Mpeg2Settings * PRORES, ProresSettings
+     * H265Settings * MPEG2, Mpeg2Settings * PRORES, ProresSettings * VP8, Vp8Settings
+     * * VP9, Vp9Settings
      */
     inline bool CodecSettingsHasBeenSet() const { return m_codecSettingsHasBeenSet; }
 
@@ -189,7 +191,8 @@ namespace Model
      * enum that you choose, define the corresponding settings object. The following
      * lists the codec enum, settings object pairs. * FRAME_CAPTURE,
      * FrameCaptureSettings * AV1, Av1Settings * H_264, H264Settings * H_265,
-     * H265Settings * MPEG2, Mpeg2Settings * PRORES, ProresSettings
+     * H265Settings * MPEG2, Mpeg2Settings * PRORES, ProresSettings * VP8, Vp8Settings
+     * * VP9, Vp9Settings
      */
     inline void SetCodecSettings(const VideoCodecSettings& value) { m_codecSettingsHasBeenSet = true; m_codecSettings = value; }
 
@@ -200,7 +203,8 @@ namespace Model
      * enum that you choose, define the corresponding settings object. The following
      * lists the codec enum, settings object pairs. * FRAME_CAPTURE,
      * FrameCaptureSettings * AV1, Av1Settings * H_264, H264Settings * H_265,
-     * H265Settings * MPEG2, Mpeg2Settings * PRORES, ProresSettings
+     * H265Settings * MPEG2, Mpeg2Settings * PRORES, ProresSettings * VP8, Vp8Settings
+     * * VP9, Vp9Settings
      */
     inline void SetCodecSettings(VideoCodecSettings&& value) { m_codecSettingsHasBeenSet = true; m_codecSettings = std::move(value); }
 
@@ -211,7 +215,8 @@ namespace Model
      * enum that you choose, define the corresponding settings object. The following
      * lists the codec enum, settings object pairs. * FRAME_CAPTURE,
      * FrameCaptureSettings * AV1, Av1Settings * H_264, H264Settings * H_265,
-     * H265Settings * MPEG2, Mpeg2Settings * PRORES, ProresSettings
+     * H265Settings * MPEG2, Mpeg2Settings * PRORES, ProresSettings * VP8, Vp8Settings
+     * * VP9, Vp9Settings
      */
     inline VideoDescription& WithCodecSettings(const VideoCodecSettings& value) { SetCodecSettings(value); return *this;}
 
@@ -222,7 +227,8 @@ namespace Model
      * enum that you choose, define the corresponding settings object. The following
      * lists the codec enum, settings object pairs. * FRAME_CAPTURE,
      * FrameCaptureSettings * AV1, Av1Settings * H_264, H264Settings * H_265,
-     * H265Settings * MPEG2, Mpeg2Settings * PRORES, ProresSettings
+     * H265Settings * MPEG2, Mpeg2Settings * PRORES, ProresSettings * VP8, Vp8Settings
+     * * VP9, Vp9Settings
      */
     inline VideoDescription& WithCodecSettings(VideoCodecSettings&& value) { SetCodecSettings(std::move(value)); return *this;}
 

@@ -28,30 +28,31 @@ namespace ElasticsearchService
 namespace ElasticsearchServiceErrorMapper
 {
 
+static const int DISABLED_OPERATION_HASH = HashingUtils::HashString("DisabledOperationException");
 static const int INTERNAL_HASH = HashingUtils::HashString("InternalException");
 static const int CONFLICT_HASH = HashingUtils::HashString("ConflictException");
-static const int DISABLED_OPERATION_HASH = HashingUtils::HashString("DisabledOperationException");
 static const int RESOURCE_ALREADY_EXISTS_HASH = HashingUtils::HashString("ResourceAlreadyExistsException");
 static const int BASE_HASH = HashingUtils::HashString("BaseException");
 static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
 static const int INVALID_TYPE_HASH = HashingUtils::HashString("InvalidTypeException");
+static const int INVALID_PAGINATION_TOKEN_HASH = HashingUtils::HashString("InvalidPaginationTokenException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == INTERNAL_HASH)
+  if (hashCode == DISABLED_OPERATION_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticsearchServiceErrors::DISABLED_OPERATION), false);
+  }
+  else if (hashCode == INTERNAL_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticsearchServiceErrors::INTERNAL), false);
   }
   else if (hashCode == CONFLICT_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticsearchServiceErrors::CONFLICT), false);
-  }
-  else if (hashCode == DISABLED_OPERATION_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticsearchServiceErrors::DISABLED_OPERATION), false);
   }
   else if (hashCode == RESOURCE_ALREADY_EXISTS_HASH)
   {
@@ -68,6 +69,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == INVALID_TYPE_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticsearchServiceErrors::INVALID_TYPE), false);
+  }
+  else if (hashCode == INVALID_PAGINATION_TOKEN_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticsearchServiceErrors::INVALID_PAGINATION_TOKEN), false);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

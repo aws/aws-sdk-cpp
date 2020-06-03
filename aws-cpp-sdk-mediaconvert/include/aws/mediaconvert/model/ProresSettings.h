@@ -98,7 +98,7 @@ namespace Model
      * frame rate from the dropdown list or choose Custom. The framerates shown in the
      * dropdown list are decimal approximations of fractions. If you choose Custom,
      * specify your frame rate as a fraction. If you are creating your transcoding job
-     * sepecification as a JSON file without the console, use FramerateControl to
+     * specification as a JSON file without the console, use FramerateControl to
      * specify which value the service uses for the frame rate for this output. Choose
      * INITIALIZE_FROM_SOURCE if you want the service to use the frame rate from the
      * input. Choose SPECIFIED if you want the service to use the frame rate you
@@ -113,7 +113,7 @@ namespace Model
      * frame rate from the dropdown list or choose Custom. The framerates shown in the
      * dropdown list are decimal approximations of fractions. If you choose Custom,
      * specify your frame rate as a fraction. If you are creating your transcoding job
-     * sepecification as a JSON file without the console, use FramerateControl to
+     * specification as a JSON file without the console, use FramerateControl to
      * specify which value the service uses for the frame rate for this output. Choose
      * INITIALIZE_FROM_SOURCE if you want the service to use the frame rate from the
      * input. Choose SPECIFIED if you want the service to use the frame rate you
@@ -128,7 +128,7 @@ namespace Model
      * frame rate from the dropdown list or choose Custom. The framerates shown in the
      * dropdown list are decimal approximations of fractions. If you choose Custom,
      * specify your frame rate as a fraction. If you are creating your transcoding job
-     * sepecification as a JSON file without the console, use FramerateControl to
+     * specification as a JSON file without the console, use FramerateControl to
      * specify which value the service uses for the frame rate for this output. Choose
      * INITIALIZE_FROM_SOURCE if you want the service to use the frame rate from the
      * input. Choose SPECIFIED if you want the service to use the frame rate you
@@ -143,7 +143,7 @@ namespace Model
      * frame rate from the dropdown list or choose Custom. The framerates shown in the
      * dropdown list are decimal approximations of fractions. If you choose Custom,
      * specify your frame rate as a fraction. If you are creating your transcoding job
-     * sepecification as a JSON file without the console, use FramerateControl to
+     * specification as a JSON file without the console, use FramerateControl to
      * specify which value the service uses for the frame rate for this output. Choose
      * INITIALIZE_FROM_SOURCE if you want the service to use the frame rate from the
      * input. Choose SPECIFIED if you want the service to use the frame rate you
@@ -158,7 +158,7 @@ namespace Model
      * frame rate from the dropdown list or choose Custom. The framerates shown in the
      * dropdown list are decimal approximations of fractions. If you choose Custom,
      * specify your frame rate as a fraction. If you are creating your transcoding job
-     * sepecification as a JSON file without the console, use FramerateControl to
+     * specification as a JSON file without the console, use FramerateControl to
      * specify which value the service uses for the frame rate for this output. Choose
      * INITIALIZE_FROM_SOURCE if you want the service to use the frame rate from the
      * input. Choose SPECIFIED if you want the service to use the frame rate you
@@ -173,7 +173,7 @@ namespace Model
      * frame rate from the dropdown list or choose Custom. The framerates shown in the
      * dropdown list are decimal approximations of fractions. If you choose Custom,
      * specify your frame rate as a fraction. If you are creating your transcoding job
-     * sepecification as a JSON file without the console, use FramerateControl to
+     * specification as a JSON file without the console, use FramerateControl to
      * specify which value the service uses for the frame rate for this output. Choose
      * INITIALIZE_FROM_SOURCE if you want the service to use the frame rate from the
      * input. Choose SPECIFIED if you want the service to use the frame rate you
@@ -183,32 +183,38 @@ namespace Model
 
 
     /**
-     * When set to INTERPOLATE, produces smoother motion during frame rate conversion.
+     * Optional. Specify how the transcoder performs framerate conversion. The default
+     * behavior is to use duplicate drop conversion.
      */
     inline const ProresFramerateConversionAlgorithm& GetFramerateConversionAlgorithm() const{ return m_framerateConversionAlgorithm; }
 
     /**
-     * When set to INTERPOLATE, produces smoother motion during frame rate conversion.
+     * Optional. Specify how the transcoder performs framerate conversion. The default
+     * behavior is to use duplicate drop conversion.
      */
     inline bool FramerateConversionAlgorithmHasBeenSet() const { return m_framerateConversionAlgorithmHasBeenSet; }
 
     /**
-     * When set to INTERPOLATE, produces smoother motion during frame rate conversion.
+     * Optional. Specify how the transcoder performs framerate conversion. The default
+     * behavior is to use duplicate drop conversion.
      */
     inline void SetFramerateConversionAlgorithm(const ProresFramerateConversionAlgorithm& value) { m_framerateConversionAlgorithmHasBeenSet = true; m_framerateConversionAlgorithm = value; }
 
     /**
-     * When set to INTERPOLATE, produces smoother motion during frame rate conversion.
+     * Optional. Specify how the transcoder performs framerate conversion. The default
+     * behavior is to use duplicate drop conversion.
      */
     inline void SetFramerateConversionAlgorithm(ProresFramerateConversionAlgorithm&& value) { m_framerateConversionAlgorithmHasBeenSet = true; m_framerateConversionAlgorithm = std::move(value); }
 
     /**
-     * When set to INTERPOLATE, produces smoother motion during frame rate conversion.
+     * Optional. Specify how the transcoder performs framerate conversion. The default
+     * behavior is to use duplicate drop conversion.
      */
     inline ProresSettings& WithFramerateConversionAlgorithm(const ProresFramerateConversionAlgorithm& value) { SetFramerateConversionAlgorithm(value); return *this;}
 
     /**
-     * When set to INTERPOLATE, produces smoother motion during frame rate conversion.
+     * Optional. Specify how the transcoder performs framerate conversion. The default
+     * behavior is to use duplicate drop conversion.
      */
     inline ProresSettings& WithFramerateConversionAlgorithm(ProresFramerateConversionAlgorithm&& value) { SetFramerateConversionAlgorithm(std::move(value)); return *this;}
 
@@ -371,56 +377,62 @@ namespace Model
 
 
     /**
-     * Use (ProresParControl) to specify how the service determines the pixel aspect
-     * ratio. Set to Follow source (INITIALIZE_FROM_SOURCE) to use the pixel aspect
-     * ratio from the input.  To specify a different pixel aspect ratio: Using the
-     * console, choose it from the dropdown menu. Using the API, set ProresParControl
-     * to (SPECIFIED) and provide  for (ParNumerator) and (ParDenominator).
+     * Optional. Specify how the service determines the pixel aspect ratio (PAR) for
+     * this output. The default behavior, Follow source (INITIALIZE_FROM_SOURCE), uses
+     * the PAR from your input video for your output. To use a different PAR, choose
+     * (SPECIFIED). In the console, SPECIFIED corresponds to any value other than
+     * Follow source. When you choose SPECIFIED for this setting, you must also specify
+     * values for the parNumerator and parDenominator settings.
      */
     inline const ProresParControl& GetParControl() const{ return m_parControl; }
 
     /**
-     * Use (ProresParControl) to specify how the service determines the pixel aspect
-     * ratio. Set to Follow source (INITIALIZE_FROM_SOURCE) to use the pixel aspect
-     * ratio from the input.  To specify a different pixel aspect ratio: Using the
-     * console, choose it from the dropdown menu. Using the API, set ProresParControl
-     * to (SPECIFIED) and provide  for (ParNumerator) and (ParDenominator).
+     * Optional. Specify how the service determines the pixel aspect ratio (PAR) for
+     * this output. The default behavior, Follow source (INITIALIZE_FROM_SOURCE), uses
+     * the PAR from your input video for your output. To use a different PAR, choose
+     * (SPECIFIED). In the console, SPECIFIED corresponds to any value other than
+     * Follow source. When you choose SPECIFIED for this setting, you must also specify
+     * values for the parNumerator and parDenominator settings.
      */
     inline bool ParControlHasBeenSet() const { return m_parControlHasBeenSet; }
 
     /**
-     * Use (ProresParControl) to specify how the service determines the pixel aspect
-     * ratio. Set to Follow source (INITIALIZE_FROM_SOURCE) to use the pixel aspect
-     * ratio from the input.  To specify a different pixel aspect ratio: Using the
-     * console, choose it from the dropdown menu. Using the API, set ProresParControl
-     * to (SPECIFIED) and provide  for (ParNumerator) and (ParDenominator).
+     * Optional. Specify how the service determines the pixel aspect ratio (PAR) for
+     * this output. The default behavior, Follow source (INITIALIZE_FROM_SOURCE), uses
+     * the PAR from your input video for your output. To use a different PAR, choose
+     * (SPECIFIED). In the console, SPECIFIED corresponds to any value other than
+     * Follow source. When you choose SPECIFIED for this setting, you must also specify
+     * values for the parNumerator and parDenominator settings.
      */
     inline void SetParControl(const ProresParControl& value) { m_parControlHasBeenSet = true; m_parControl = value; }
 
     /**
-     * Use (ProresParControl) to specify how the service determines the pixel aspect
-     * ratio. Set to Follow source (INITIALIZE_FROM_SOURCE) to use the pixel aspect
-     * ratio from the input.  To specify a different pixel aspect ratio: Using the
-     * console, choose it from the dropdown menu. Using the API, set ProresParControl
-     * to (SPECIFIED) and provide  for (ParNumerator) and (ParDenominator).
+     * Optional. Specify how the service determines the pixel aspect ratio (PAR) for
+     * this output. The default behavior, Follow source (INITIALIZE_FROM_SOURCE), uses
+     * the PAR from your input video for your output. To use a different PAR, choose
+     * (SPECIFIED). In the console, SPECIFIED corresponds to any value other than
+     * Follow source. When you choose SPECIFIED for this setting, you must also specify
+     * values for the parNumerator and parDenominator settings.
      */
     inline void SetParControl(ProresParControl&& value) { m_parControlHasBeenSet = true; m_parControl = std::move(value); }
 
     /**
-     * Use (ProresParControl) to specify how the service determines the pixel aspect
-     * ratio. Set to Follow source (INITIALIZE_FROM_SOURCE) to use the pixel aspect
-     * ratio from the input.  To specify a different pixel aspect ratio: Using the
-     * console, choose it from the dropdown menu. Using the API, set ProresParControl
-     * to (SPECIFIED) and provide  for (ParNumerator) and (ParDenominator).
+     * Optional. Specify how the service determines the pixel aspect ratio (PAR) for
+     * this output. The default behavior, Follow source (INITIALIZE_FROM_SOURCE), uses
+     * the PAR from your input video for your output. To use a different PAR, choose
+     * (SPECIFIED). In the console, SPECIFIED corresponds to any value other than
+     * Follow source. When you choose SPECIFIED for this setting, you must also specify
+     * values for the parNumerator and parDenominator settings.
      */
     inline ProresSettings& WithParControl(const ProresParControl& value) { SetParControl(value); return *this;}
 
     /**
-     * Use (ProresParControl) to specify how the service determines the pixel aspect
-     * ratio. Set to Follow source (INITIALIZE_FROM_SOURCE) to use the pixel aspect
-     * ratio from the input.  To specify a different pixel aspect ratio: Using the
-     * console, choose it from the dropdown menu. Using the API, set ProresParControl
-     * to (SPECIFIED) and provide  for (ParNumerator) and (ParDenominator).
+     * Optional. Specify how the service determines the pixel aspect ratio (PAR) for
+     * this output. The default behavior, Follow source (INITIALIZE_FROM_SOURCE), uses
+     * the PAR from your input video for your output. To use a different PAR, choose
+     * (SPECIFIED). In the console, SPECIFIED corresponds to any value other than
+     * Follow source. When you choose SPECIFIED for this setting, you must also specify
+     * values for the parNumerator and parDenominator settings.
      */
     inline ProresSettings& WithParControl(ProresParControl&& value) { SetParControl(std::move(value)); return *this;}
 

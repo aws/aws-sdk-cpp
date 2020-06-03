@@ -30,6 +30,7 @@ namespace Model
 
 UserDefinedFunction::UserDefinedFunction() : 
     m_functionNameHasBeenSet(false),
+    m_databaseNameHasBeenSet(false),
     m_classNameHasBeenSet(false),
     m_ownerNameHasBeenSet(false),
     m_ownerType(PrincipalType::NOT_SET),
@@ -41,6 +42,7 @@ UserDefinedFunction::UserDefinedFunction() :
 
 UserDefinedFunction::UserDefinedFunction(JsonView jsonValue) : 
     m_functionNameHasBeenSet(false),
+    m_databaseNameHasBeenSet(false),
     m_classNameHasBeenSet(false),
     m_ownerNameHasBeenSet(false),
     m_ownerType(PrincipalType::NOT_SET),
@@ -58,6 +60,13 @@ UserDefinedFunction& UserDefinedFunction::operator =(JsonView jsonValue)
     m_functionName = jsonValue.GetString("FunctionName");
 
     m_functionNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("DatabaseName"))
+  {
+    m_databaseName = jsonValue.GetString("DatabaseName");
+
+    m_databaseNameHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("ClassName"))
@@ -108,6 +117,12 @@ JsonValue UserDefinedFunction::Jsonize() const
   if(m_functionNameHasBeenSet)
   {
    payload.WithString("FunctionName", m_functionName);
+
+  }
+
+  if(m_databaseNameHasBeenSet)
+  {
+   payload.WithString("DatabaseName", m_databaseName);
 
   }
 

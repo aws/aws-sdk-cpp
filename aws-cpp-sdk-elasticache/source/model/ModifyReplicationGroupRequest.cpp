@@ -27,6 +27,8 @@ ModifyReplicationGroupRequest::ModifyReplicationGroupRequest() :
     m_snapshottingClusterIdHasBeenSet(false),
     m_automaticFailoverEnabled(false),
     m_automaticFailoverEnabledHasBeenSet(false),
+    m_multiAZEnabled(false),
+    m_multiAZEnabledHasBeenSet(false),
     m_cacheSecurityGroupNamesHasBeenSet(false),
     m_securityGroupIdsHasBeenSet(false),
     m_preferredMaintenanceWindowHasBeenSet(false),
@@ -75,6 +77,11 @@ Aws::String ModifyReplicationGroupRequest::SerializePayload() const
   if(m_automaticFailoverEnabledHasBeenSet)
   {
     ss << "AutomaticFailoverEnabled=" << std::boolalpha << m_automaticFailoverEnabled << "&";
+  }
+
+  if(m_multiAZEnabledHasBeenSet)
+  {
+    ss << "MultiAZEnabled=" << std::boolalpha << m_multiAZEnabled << "&";
   }
 
   if(m_cacheSecurityGroupNamesHasBeenSet)

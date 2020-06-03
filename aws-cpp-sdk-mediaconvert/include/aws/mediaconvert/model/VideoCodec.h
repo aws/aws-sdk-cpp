@@ -31,7 +31,9 @@ namespace Model
     H_264,
     H_265,
     MPEG2,
-    PRORES
+    PRORES,
+    VP8,
+    VP9
   };
 
 namespace VideoCodecMapper

@@ -36,7 +36,9 @@ VideoCodecSettings::VideoCodecSettings() :
     m_h264SettingsHasBeenSet(false),
     m_h265SettingsHasBeenSet(false),
     m_mpeg2SettingsHasBeenSet(false),
-    m_proresSettingsHasBeenSet(false)
+    m_proresSettingsHasBeenSet(false),
+    m_vp8SettingsHasBeenSet(false),
+    m_vp9SettingsHasBeenSet(false)
 {
 }
 
@@ -48,7 +50,9 @@ VideoCodecSettings::VideoCodecSettings(JsonView jsonValue) :
     m_h264SettingsHasBeenSet(false),
     m_h265SettingsHasBeenSet(false),
     m_mpeg2SettingsHasBeenSet(false),
-    m_proresSettingsHasBeenSet(false)
+    m_proresSettingsHasBeenSet(false),
+    m_vp8SettingsHasBeenSet(false),
+    m_vp9SettingsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -104,6 +108,20 @@ VideoCodecSettings& VideoCodecSettings::operator =(JsonView jsonValue)
     m_proresSettingsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("vp8Settings"))
+  {
+    m_vp8Settings = jsonValue.GetObject("vp8Settings");
+
+    m_vp8SettingsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("vp9Settings"))
+  {
+    m_vp9Settings = jsonValue.GetObject("vp9Settings");
+
+    m_vp9SettingsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -149,6 +167,18 @@ JsonValue VideoCodecSettings::Jsonize() const
   if(m_proresSettingsHasBeenSet)
   {
    payload.WithObject("proresSettings", m_proresSettings.Jsonize());
+
+  }
+
+  if(m_vp8SettingsHasBeenSet)
+  {
+   payload.WithObject("vp8Settings", m_vp8Settings.Jsonize());
+
+  }
+
+  if(m_vp9SettingsHasBeenSet)
+  {
+   payload.WithObject("vp9Settings", m_vp9Settings.Jsonize());
 
   }
 

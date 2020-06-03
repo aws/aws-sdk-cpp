@@ -36,6 +36,8 @@ namespace Aws
         static const int H_265_HASH = HashingUtils::HashString("H_265");
         static const int MPEG2_HASH = HashingUtils::HashString("MPEG2");
         static const int PRORES_HASH = HashingUtils::HashString("PRORES");
+        static const int VP8_HASH = HashingUtils::HashString("VP8");
+        static const int VP9_HASH = HashingUtils::HashString("VP9");
 
 
         VideoCodec GetVideoCodecForName(const Aws::String& name)
@@ -65,6 +67,14 @@ namespace Aws
           {
             return VideoCodec::PRORES;
           }
+          else if (hashCode == VP8_HASH)
+          {
+            return VideoCodec::VP8;
+          }
+          else if (hashCode == VP9_HASH)
+          {
+            return VideoCodec::VP9;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -91,6 +101,10 @@ namespace Aws
             return "MPEG2";
           case VideoCodec::PRORES:
             return "PRORES";
+          case VideoCodec::VP8:
+            return "VP8";
+          case VideoCodec::VP9:
+            return "VP9";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

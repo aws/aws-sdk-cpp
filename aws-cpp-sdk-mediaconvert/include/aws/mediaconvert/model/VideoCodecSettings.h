@@ -22,6 +22,8 @@
 #include <aws/mediaconvert/model/H265Settings.h>
 #include <aws/mediaconvert/model/Mpeg2Settings.h>
 #include <aws/mediaconvert/model/ProresSettings.h>
+#include <aws/mediaconvert/model/Vp8Settings.h>
+#include <aws/mediaconvert/model/Vp9Settings.h>
 #include <utility>
 
 namespace Aws
@@ -46,8 +48,8 @@ namespace Model
    * enum that you choose, define the corresponding settings object. The following
    * lists the codec enum, settings object pairs. * FRAME_CAPTURE,
    * FrameCaptureSettings * AV1, Av1Settings * H_264, H264Settings * H_265,
-   * H265Settings * MPEG2, Mpeg2Settings * PRORES, ProresSettings<p><h3>See
-   * Also:</h3>   <a
+   * H265Settings * MPEG2, Mpeg2Settings * PRORES, ProresSettings * VP8, Vp8Settings
+   * * VP9, Vp9Settings<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/VideoCodecSettings">AWS
    * API Reference</a></p>
    */
@@ -312,6 +314,80 @@ namespace Model
      */
     inline VideoCodecSettings& WithProresSettings(ProresSettings&& value) { SetProresSettings(std::move(value)); return *this;}
 
+
+    /**
+     * Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the
+     * value VP8.
+     */
+    inline const Vp8Settings& GetVp8Settings() const{ return m_vp8Settings; }
+
+    /**
+     * Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the
+     * value VP8.
+     */
+    inline bool Vp8SettingsHasBeenSet() const { return m_vp8SettingsHasBeenSet; }
+
+    /**
+     * Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the
+     * value VP8.
+     */
+    inline void SetVp8Settings(const Vp8Settings& value) { m_vp8SettingsHasBeenSet = true; m_vp8Settings = value; }
+
+    /**
+     * Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the
+     * value VP8.
+     */
+    inline void SetVp8Settings(Vp8Settings&& value) { m_vp8SettingsHasBeenSet = true; m_vp8Settings = std::move(value); }
+
+    /**
+     * Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the
+     * value VP8.
+     */
+    inline VideoCodecSettings& WithVp8Settings(const Vp8Settings& value) { SetVp8Settings(value); return *this;}
+
+    /**
+     * Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the
+     * value VP8.
+     */
+    inline VideoCodecSettings& WithVp8Settings(Vp8Settings&& value) { SetVp8Settings(std::move(value)); return *this;}
+
+
+    /**
+     * Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the
+     * value VP9.
+     */
+    inline const Vp9Settings& GetVp9Settings() const{ return m_vp9Settings; }
+
+    /**
+     * Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the
+     * value VP9.
+     */
+    inline bool Vp9SettingsHasBeenSet() const { return m_vp9SettingsHasBeenSet; }
+
+    /**
+     * Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the
+     * value VP9.
+     */
+    inline void SetVp9Settings(const Vp9Settings& value) { m_vp9SettingsHasBeenSet = true; m_vp9Settings = value; }
+
+    /**
+     * Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the
+     * value VP9.
+     */
+    inline void SetVp9Settings(Vp9Settings&& value) { m_vp9SettingsHasBeenSet = true; m_vp9Settings = std::move(value); }
+
+    /**
+     * Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the
+     * value VP9.
+     */
+    inline VideoCodecSettings& WithVp9Settings(const Vp9Settings& value) { SetVp9Settings(value); return *this;}
+
+    /**
+     * Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the
+     * value VP9.
+     */
+    inline VideoCodecSettings& WithVp9Settings(Vp9Settings&& value) { SetVp9Settings(std::move(value)); return *this;}
+
   private:
 
     Av1Settings m_av1Settings;
@@ -334,6 +410,12 @@ namespace Model
 
     ProresSettings m_proresSettings;
     bool m_proresSettingsHasBeenSet;
+
+    Vp8Settings m_vp8Settings;
+    bool m_vp8SettingsHasBeenSet;
+
+    Vp9Settings m_vp9Settings;
+    bool m_vp9SettingsHasBeenSet;
   };
 
 } // namespace Model

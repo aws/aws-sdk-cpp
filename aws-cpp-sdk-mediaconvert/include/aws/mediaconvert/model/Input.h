@@ -149,169 +149,169 @@ namespace Model
 
     /**
      * Use Audio selectors (AudioSelectors) to specify a track or set of tracks from
-     * the input that you will use in your outputs. You can use mutiple Audio selectors
-     * per input.
+     * the input that you will use in your outputs. You can use multiple Audio
+     * selectors per input.
      */
     inline const Aws::Map<Aws::String, AudioSelector>& GetAudioSelectors() const{ return m_audioSelectors; }
 
     /**
      * Use Audio selectors (AudioSelectors) to specify a track or set of tracks from
-     * the input that you will use in your outputs. You can use mutiple Audio selectors
-     * per input.
+     * the input that you will use in your outputs. You can use multiple Audio
+     * selectors per input.
      */
     inline bool AudioSelectorsHasBeenSet() const { return m_audioSelectorsHasBeenSet; }
 
     /**
      * Use Audio selectors (AudioSelectors) to specify a track or set of tracks from
-     * the input that you will use in your outputs. You can use mutiple Audio selectors
-     * per input.
+     * the input that you will use in your outputs. You can use multiple Audio
+     * selectors per input.
      */
     inline void SetAudioSelectors(const Aws::Map<Aws::String, AudioSelector>& value) { m_audioSelectorsHasBeenSet = true; m_audioSelectors = value; }
 
     /**
      * Use Audio selectors (AudioSelectors) to specify a track or set of tracks from
-     * the input that you will use in your outputs. You can use mutiple Audio selectors
-     * per input.
+     * the input that you will use in your outputs. You can use multiple Audio
+     * selectors per input.
      */
     inline void SetAudioSelectors(Aws::Map<Aws::String, AudioSelector>&& value) { m_audioSelectorsHasBeenSet = true; m_audioSelectors = std::move(value); }
 
     /**
      * Use Audio selectors (AudioSelectors) to specify a track or set of tracks from
-     * the input that you will use in your outputs. You can use mutiple Audio selectors
-     * per input.
+     * the input that you will use in your outputs. You can use multiple Audio
+     * selectors per input.
      */
     inline Input& WithAudioSelectors(const Aws::Map<Aws::String, AudioSelector>& value) { SetAudioSelectors(value); return *this;}
 
     /**
      * Use Audio selectors (AudioSelectors) to specify a track or set of tracks from
-     * the input that you will use in your outputs. You can use mutiple Audio selectors
-     * per input.
+     * the input that you will use in your outputs. You can use multiple Audio
+     * selectors per input.
      */
     inline Input& WithAudioSelectors(Aws::Map<Aws::String, AudioSelector>&& value) { SetAudioSelectors(std::move(value)); return *this;}
 
     /**
      * Use Audio selectors (AudioSelectors) to specify a track or set of tracks from
-     * the input that you will use in your outputs. You can use mutiple Audio selectors
-     * per input.
+     * the input that you will use in your outputs. You can use multiple Audio
+     * selectors per input.
      */
     inline Input& AddAudioSelectors(const Aws::String& key, const AudioSelector& value) { m_audioSelectorsHasBeenSet = true; m_audioSelectors.emplace(key, value); return *this; }
 
     /**
      * Use Audio selectors (AudioSelectors) to specify a track or set of tracks from
-     * the input that you will use in your outputs. You can use mutiple Audio selectors
-     * per input.
+     * the input that you will use in your outputs. You can use multiple Audio
+     * selectors per input.
      */
     inline Input& AddAudioSelectors(Aws::String&& key, const AudioSelector& value) { m_audioSelectorsHasBeenSet = true; m_audioSelectors.emplace(std::move(key), value); return *this; }
 
     /**
      * Use Audio selectors (AudioSelectors) to specify a track or set of tracks from
-     * the input that you will use in your outputs. You can use mutiple Audio selectors
-     * per input.
+     * the input that you will use in your outputs. You can use multiple Audio
+     * selectors per input.
      */
     inline Input& AddAudioSelectors(const Aws::String& key, AudioSelector&& value) { m_audioSelectorsHasBeenSet = true; m_audioSelectors.emplace(key, std::move(value)); return *this; }
 
     /**
      * Use Audio selectors (AudioSelectors) to specify a track or set of tracks from
-     * the input that you will use in your outputs. You can use mutiple Audio selectors
-     * per input.
+     * the input that you will use in your outputs. You can use multiple Audio
+     * selectors per input.
      */
     inline Input& AddAudioSelectors(Aws::String&& key, AudioSelector&& value) { m_audioSelectorsHasBeenSet = true; m_audioSelectors.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * Use Audio selectors (AudioSelectors) to specify a track or set of tracks from
-     * the input that you will use in your outputs. You can use mutiple Audio selectors
-     * per input.
+     * the input that you will use in your outputs. You can use multiple Audio
+     * selectors per input.
      */
     inline Input& AddAudioSelectors(const char* key, AudioSelector&& value) { m_audioSelectorsHasBeenSet = true; m_audioSelectors.emplace(key, std::move(value)); return *this; }
 
     /**
      * Use Audio selectors (AudioSelectors) to specify a track or set of tracks from
-     * the input that you will use in your outputs. You can use mutiple Audio selectors
-     * per input.
+     * the input that you will use in your outputs. You can use multiple Audio
+     * selectors per input.
      */
     inline Input& AddAudioSelectors(const char* key, const AudioSelector& value) { m_audioSelectorsHasBeenSet = true; m_audioSelectors.emplace(key, value); return *this; }
 
 
     /**
      * Use Captions selectors (CaptionSelectors) to specify the captions data from the
-     * input that you will use in your outputs. You can use mutiple captions selectors
+     * input that you will use in your outputs. You can use multiple captions selectors
      * per input.
      */
     inline const Aws::Map<Aws::String, CaptionSelector>& GetCaptionSelectors() const{ return m_captionSelectors; }
 
     /**
      * Use Captions selectors (CaptionSelectors) to specify the captions data from the
-     * input that you will use in your outputs. You can use mutiple captions selectors
+     * input that you will use in your outputs. You can use multiple captions selectors
      * per input.
      */
     inline bool CaptionSelectorsHasBeenSet() const { return m_captionSelectorsHasBeenSet; }
 
     /**
      * Use Captions selectors (CaptionSelectors) to specify the captions data from the
-     * input that you will use in your outputs. You can use mutiple captions selectors
+     * input that you will use in your outputs. You can use multiple captions selectors
      * per input.
      */
     inline void SetCaptionSelectors(const Aws::Map<Aws::String, CaptionSelector>& value) { m_captionSelectorsHasBeenSet = true; m_captionSelectors = value; }
 
     /**
      * Use Captions selectors (CaptionSelectors) to specify the captions data from the
-     * input that you will use in your outputs. You can use mutiple captions selectors
+     * input that you will use in your outputs. You can use multiple captions selectors
      * per input.
      */
     inline void SetCaptionSelectors(Aws::Map<Aws::String, CaptionSelector>&& value) { m_captionSelectorsHasBeenSet = true; m_captionSelectors = std::move(value); }
 
     /**
      * Use Captions selectors (CaptionSelectors) to specify the captions data from the
-     * input that you will use in your outputs. You can use mutiple captions selectors
+     * input that you will use in your outputs. You can use multiple captions selectors
      * per input.
      */
     inline Input& WithCaptionSelectors(const Aws::Map<Aws::String, CaptionSelector>& value) { SetCaptionSelectors(value); return *this;}
 
     /**
      * Use Captions selectors (CaptionSelectors) to specify the captions data from the
-     * input that you will use in your outputs. You can use mutiple captions selectors
+     * input that you will use in your outputs. You can use multiple captions selectors
      * per input.
      */
     inline Input& WithCaptionSelectors(Aws::Map<Aws::String, CaptionSelector>&& value) { SetCaptionSelectors(std::move(value)); return *this;}
 
     /**
      * Use Captions selectors (CaptionSelectors) to specify the captions data from the
-     * input that you will use in your outputs. You can use mutiple captions selectors
+     * input that you will use in your outputs. You can use multiple captions selectors
      * per input.
      */
     inline Input& AddCaptionSelectors(const Aws::String& key, const CaptionSelector& value) { m_captionSelectorsHasBeenSet = true; m_captionSelectors.emplace(key, value); return *this; }
 
     /**
      * Use Captions selectors (CaptionSelectors) to specify the captions data from the
-     * input that you will use in your outputs. You can use mutiple captions selectors
+     * input that you will use in your outputs. You can use multiple captions selectors
      * per input.
      */
     inline Input& AddCaptionSelectors(Aws::String&& key, const CaptionSelector& value) { m_captionSelectorsHasBeenSet = true; m_captionSelectors.emplace(std::move(key), value); return *this; }
 
     /**
      * Use Captions selectors (CaptionSelectors) to specify the captions data from the
-     * input that you will use in your outputs. You can use mutiple captions selectors
+     * input that you will use in your outputs. You can use multiple captions selectors
      * per input.
      */
     inline Input& AddCaptionSelectors(const Aws::String& key, CaptionSelector&& value) { m_captionSelectorsHasBeenSet = true; m_captionSelectors.emplace(key, std::move(value)); return *this; }
 
     /**
      * Use Captions selectors (CaptionSelectors) to specify the captions data from the
-     * input that you will use in your outputs. You can use mutiple captions selectors
+     * input that you will use in your outputs. You can use multiple captions selectors
      * per input.
      */
     inline Input& AddCaptionSelectors(Aws::String&& key, CaptionSelector&& value) { m_captionSelectorsHasBeenSet = true; m_captionSelectors.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * Use Captions selectors (CaptionSelectors) to specify the captions data from the
-     * input that you will use in your outputs. You can use mutiple captions selectors
+     * input that you will use in your outputs. You can use multiple captions selectors
      * per input.
      */
     inline Input& AddCaptionSelectors(const char* key, CaptionSelector&& value) { m_captionSelectorsHasBeenSet = true; m_captionSelectors.emplace(key, std::move(value)); return *this; }
 
     /**
      * Use Captions selectors (CaptionSelectors) to specify the captions data from the
-     * input that you will use in your outputs. You can use mutiple captions selectors
+     * input that you will use in your outputs. You can use multiple captions selectors
      * per input.
      */
     inline Input& AddCaptionSelectors(const char* key, const CaptionSelector& value) { m_captionSelectorsHasBeenSet = true; m_captionSelectors.emplace(key, value); return *this; }
@@ -362,42 +362,42 @@ namespace Model
 
     /**
      * Enable Deblock (InputDeblockFilter) to produce smoother motion in the output.
-     * Default is disabled. Only manaully controllable for MPEG2 and uncompressed video
+     * Default is disabled. Only manually controllable for MPEG2 and uncompressed video
      * inputs.
      */
     inline const InputDeblockFilter& GetDeblockFilter() const{ return m_deblockFilter; }
 
     /**
      * Enable Deblock (InputDeblockFilter) to produce smoother motion in the output.
-     * Default is disabled. Only manaully controllable for MPEG2 and uncompressed video
+     * Default is disabled. Only manually controllable for MPEG2 and uncompressed video
      * inputs.
      */
     inline bool DeblockFilterHasBeenSet() const { return m_deblockFilterHasBeenSet; }
 
     /**
      * Enable Deblock (InputDeblockFilter) to produce smoother motion in the output.
-     * Default is disabled. Only manaully controllable for MPEG2 and uncompressed video
+     * Default is disabled. Only manually controllable for MPEG2 and uncompressed video
      * inputs.
      */
     inline void SetDeblockFilter(const InputDeblockFilter& value) { m_deblockFilterHasBeenSet = true; m_deblockFilter = value; }
 
     /**
      * Enable Deblock (InputDeblockFilter) to produce smoother motion in the output.
-     * Default is disabled. Only manaully controllable for MPEG2 and uncompressed video
+     * Default is disabled. Only manually controllable for MPEG2 and uncompressed video
      * inputs.
      */
     inline void SetDeblockFilter(InputDeblockFilter&& value) { m_deblockFilterHasBeenSet = true; m_deblockFilter = std::move(value); }
 
     /**
      * Enable Deblock (InputDeblockFilter) to produce smoother motion in the output.
-     * Default is disabled. Only manaully controllable for MPEG2 and uncompressed video
+     * Default is disabled. Only manually controllable for MPEG2 and uncompressed video
      * inputs.
      */
     inline Input& WithDeblockFilter(const InputDeblockFilter& value) { SetDeblockFilter(value); return *this;}
 
     /**
      * Enable Deblock (InputDeblockFilter) to produce smoother motion in the output.
-     * Default is disabled. Only manaully controllable for MPEG2 and uncompressed video
+     * Default is disabled. Only manually controllable for MPEG2 and uncompressed video
      * inputs.
      */
     inline Input& WithDeblockFilter(InputDeblockFilter&& value) { SetDeblockFilter(std::move(value)); return *this;}

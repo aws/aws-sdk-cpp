@@ -35,6 +35,7 @@ namespace Model
     MP4,
     MPD,
     MXF,
+    WEBM,
     RAW
   };
 

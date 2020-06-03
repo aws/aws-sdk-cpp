@@ -203,8 +203,9 @@ namespace Model
      * Use Extension (Extension) to specify the file extension for outputs in File
      * output groups. If you do not specify a value, the service will use default
      * extensions by container type as follows * MPEG-2 transport stream, m2ts *
-     * Quicktime, mov * MXF container, mxf * MPEG-4 container, mp4 * No Container, the
-     * service will use codec extensions (e.g. AAC, H265, H265, AC3)
+     * Quicktime, mov * MXF container, mxf * MPEG-4 container, mp4 * WebM container,
+     * webm * No Container, the service will use codec extensions (e.g. AAC, H265,
+     * H265, AC3)
      */
     inline const Aws::String& GetExtension() const{ return m_extension; }
 
@@ -212,8 +213,9 @@ namespace Model
      * Use Extension (Extension) to specify the file extension for outputs in File
      * output groups. If you do not specify a value, the service will use default
      * extensions by container type as follows * MPEG-2 transport stream, m2ts *
-     * Quicktime, mov * MXF container, mxf * MPEG-4 container, mp4 * No Container, the
-     * service will use codec extensions (e.g. AAC, H265, H265, AC3)
+     * Quicktime, mov * MXF container, mxf * MPEG-4 container, mp4 * WebM container,
+     * webm * No Container, the service will use codec extensions (e.g. AAC, H265,
+     * H265, AC3)
      */
     inline bool ExtensionHasBeenSet() const { return m_extensionHasBeenSet; }
 
@@ -221,8 +223,9 @@ namespace Model
      * Use Extension (Extension) to specify the file extension for outputs in File
      * output groups. If you do not specify a value, the service will use default
      * extensions by container type as follows * MPEG-2 transport stream, m2ts *
-     * Quicktime, mov * MXF container, mxf * MPEG-4 container, mp4 * No Container, the
-     * service will use codec extensions (e.g. AAC, H265, H265, AC3)
+     * Quicktime, mov * MXF container, mxf * MPEG-4 container, mp4 * WebM container,
+     * webm * No Container, the service will use codec extensions (e.g. AAC, H265,
+     * H265, AC3)
      */
     inline void SetExtension(const Aws::String& value) { m_extensionHasBeenSet = true; m_extension = value; }
 
@@ -230,8 +233,9 @@ namespace Model
      * Use Extension (Extension) to specify the file extension for outputs in File
      * output groups. If you do not specify a value, the service will use default
      * extensions by container type as follows * MPEG-2 transport stream, m2ts *
-     * Quicktime, mov * MXF container, mxf * MPEG-4 container, mp4 * No Container, the
-     * service will use codec extensions (e.g. AAC, H265, H265, AC3)
+     * Quicktime, mov * MXF container, mxf * MPEG-4 container, mp4 * WebM container,
+     * webm * No Container, the service will use codec extensions (e.g. AAC, H265,
+     * H265, AC3)
      */
     inline void SetExtension(Aws::String&& value) { m_extensionHasBeenSet = true; m_extension = std::move(value); }
 
@@ -239,8 +243,9 @@ namespace Model
      * Use Extension (Extension) to specify the file extension for outputs in File
      * output groups. If you do not specify a value, the service will use default
      * extensions by container type as follows * MPEG-2 transport stream, m2ts *
-     * Quicktime, mov * MXF container, mxf * MPEG-4 container, mp4 * No Container, the
-     * service will use codec extensions (e.g. AAC, H265, H265, AC3)
+     * Quicktime, mov * MXF container, mxf * MPEG-4 container, mp4 * WebM container,
+     * webm * No Container, the service will use codec extensions (e.g. AAC, H265,
+     * H265, AC3)
      */
     inline void SetExtension(const char* value) { m_extensionHasBeenSet = true; m_extension.assign(value); }
 
@@ -248,8 +253,9 @@ namespace Model
      * Use Extension (Extension) to specify the file extension for outputs in File
      * output groups. If you do not specify a value, the service will use default
      * extensions by container type as follows * MPEG-2 transport stream, m2ts *
-     * Quicktime, mov * MXF container, mxf * MPEG-4 container, mp4 * No Container, the
-     * service will use codec extensions (e.g. AAC, H265, H265, AC3)
+     * Quicktime, mov * MXF container, mxf * MPEG-4 container, mp4 * WebM container,
+     * webm * No Container, the service will use codec extensions (e.g. AAC, H265,
+     * H265, AC3)
      */
     inline Output& WithExtension(const Aws::String& value) { SetExtension(value); return *this;}
 
@@ -257,8 +263,9 @@ namespace Model
      * Use Extension (Extension) to specify the file extension for outputs in File
      * output groups. If you do not specify a value, the service will use default
      * extensions by container type as follows * MPEG-2 transport stream, m2ts *
-     * Quicktime, mov * MXF container, mxf * MPEG-4 container, mp4 * No Container, the
-     * service will use codec extensions (e.g. AAC, H265, H265, AC3)
+     * Quicktime, mov * MXF container, mxf * MPEG-4 container, mp4 * WebM container,
+     * webm * No Container, the service will use codec extensions (e.g. AAC, H265,
+     * H265, AC3)
      */
     inline Output& WithExtension(Aws::String&& value) { SetExtension(std::move(value)); return *this;}
 
@@ -266,8 +273,9 @@ namespace Model
      * Use Extension (Extension) to specify the file extension for outputs in File
      * output groups. If you do not specify a value, the service will use default
      * extensions by container type as follows * MPEG-2 transport stream, m2ts *
-     * Quicktime, mov * MXF container, mxf * MPEG-4 container, mp4 * No Container, the
-     * service will use codec extensions (e.g. AAC, H265, H265, AC3)
+     * Quicktime, mov * MXF container, mxf * MPEG-4 container, mp4 * WebM container,
+     * webm * No Container, the service will use codec extensions (e.g. AAC, H265,
+     * H265, AC3)
      */
     inline Output& WithExtension(const char* value) { SetExtension(value); return *this;}
 

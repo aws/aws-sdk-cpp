@@ -94,42 +94,58 @@ namespace Model
 
 
     /**
-     * <p>The name of the catalog database where the functions are located.</p>
+     * <p>The name of the catalog database where the functions are located. If none is
+     * provided, functions from all the databases across the catalog will be
+     * returned.</p>
      */
     inline const Aws::String& GetDatabaseName() const{ return m_databaseName; }
 
     /**
-     * <p>The name of the catalog database where the functions are located.</p>
+     * <p>The name of the catalog database where the functions are located. If none is
+     * provided, functions from all the databases across the catalog will be
+     * returned.</p>
      */
     inline bool DatabaseNameHasBeenSet() const { return m_databaseNameHasBeenSet; }
 
     /**
-     * <p>The name of the catalog database where the functions are located.</p>
+     * <p>The name of the catalog database where the functions are located. If none is
+     * provided, functions from all the databases across the catalog will be
+     * returned.</p>
      */
     inline void SetDatabaseName(const Aws::String& value) { m_databaseNameHasBeenSet = true; m_databaseName = value; }
 
     /**
-     * <p>The name of the catalog database where the functions are located.</p>
+     * <p>The name of the catalog database where the functions are located. If none is
+     * provided, functions from all the databases across the catalog will be
+     * returned.</p>
      */
     inline void SetDatabaseName(Aws::String&& value) { m_databaseNameHasBeenSet = true; m_databaseName = std::move(value); }
 
     /**
-     * <p>The name of the catalog database where the functions are located.</p>
+     * <p>The name of the catalog database where the functions are located. If none is
+     * provided, functions from all the databases across the catalog will be
+     * returned.</p>
      */
     inline void SetDatabaseName(const char* value) { m_databaseNameHasBeenSet = true; m_databaseName.assign(value); }
 
     /**
-     * <p>The name of the catalog database where the functions are located.</p>
+     * <p>The name of the catalog database where the functions are located. If none is
+     * provided, functions from all the databases across the catalog will be
+     * returned.</p>
      */
     inline GetUserDefinedFunctionsRequest& WithDatabaseName(const Aws::String& value) { SetDatabaseName(value); return *this;}
 
     /**
-     * <p>The name of the catalog database where the functions are located.</p>
+     * <p>The name of the catalog database where the functions are located. If none is
+     * provided, functions from all the databases across the catalog will be
+     * returned.</p>
      */
     inline GetUserDefinedFunctionsRequest& WithDatabaseName(Aws::String&& value) { SetDatabaseName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the catalog database where the functions are located.</p>
+     * <p>The name of the catalog database where the functions are located. If none is
+     * provided, functions from all the databases across the catalog will be
+     * returned.</p>
      */
     inline GetUserDefinedFunctionsRequest& WithDatabaseName(const char* value) { SetDatabaseName(value); return *this;}
 

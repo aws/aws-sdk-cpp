@@ -34,6 +34,8 @@ namespace Model
     AC3,
     EAC3,
     EAC3_ATMOS,
+    VORBIS,
+    OPUS,
     PASSTHROUGH
   };
 

@@ -334,6 +334,19 @@ namespace Model
     inline CreateReplicationGroupRequest& WithAutomaticFailoverEnabled(bool value) { SetAutomaticFailoverEnabled(value); return *this;}
 
 
+    
+    inline bool GetMultiAZEnabled() const{ return m_multiAZEnabled; }
+
+    
+    inline bool MultiAZEnabledHasBeenSet() const { return m_multiAZEnabledHasBeenSet; }
+
+    
+    inline void SetMultiAZEnabled(bool value) { m_multiAZEnabledHasBeenSet = true; m_multiAZEnabled = value; }
+
+    
+    inline CreateReplicationGroupRequest& WithMultiAZEnabled(bool value) { SetMultiAZEnabled(value); return *this;}
+
+
     /**
      * <p>The number of nodes in the cluster.</p> <p>This parameter is not used if
      * there is more than one node group (shard). You should use
@@ -2429,6 +2442,9 @@ namespace Model
 
     bool m_automaticFailoverEnabled;
     bool m_automaticFailoverEnabledHasBeenSet;
+
+    bool m_multiAZEnabled;
+    bool m_multiAZEnabledHasBeenSet;
 
     int m_numCacheClusters;
     bool m_numCacheClustersHasBeenSet;

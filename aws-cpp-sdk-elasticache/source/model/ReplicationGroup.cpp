@@ -41,6 +41,8 @@ ReplicationGroup::ReplicationGroup() :
     m_snapshottingClusterIdHasBeenSet(false),
     m_automaticFailover(AutomaticFailoverStatus::NOT_SET),
     m_automaticFailoverHasBeenSet(false),
+    m_multiAZ(MultiAZStatus::NOT_SET),
+    m_multiAZHasBeenSet(false),
     m_configurationEndpointHasBeenSet(false),
     m_snapshotRetentionLimit(0),
     m_snapshotRetentionLimitHasBeenSet(false),
@@ -71,6 +73,8 @@ ReplicationGroup::ReplicationGroup(const XmlNode& xmlNode) :
     m_snapshottingClusterIdHasBeenSet(false),
     m_automaticFailover(AutomaticFailoverStatus::NOT_SET),
     m_automaticFailoverHasBeenSet(false),
+    m_multiAZ(MultiAZStatus::NOT_SET),
+    m_multiAZHasBeenSet(false),
     m_configurationEndpointHasBeenSet(false),
     m_snapshotRetentionLimit(0),
     m_snapshotRetentionLimitHasBeenSet(false),
@@ -162,6 +166,12 @@ ReplicationGroup& ReplicationGroup::operator =(const XmlNode& xmlNode)
     {
       m_automaticFailover = AutomaticFailoverStatusMapper::GetAutomaticFailoverStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(automaticFailoverNode.GetText()).c_str()).c_str());
       m_automaticFailoverHasBeenSet = true;
+    }
+    XmlNode multiAZNode = resultNode.FirstChild("MultiAZ");
+    if(!multiAZNode.IsNull())
+    {
+      m_multiAZ = MultiAZStatusMapper::GetMultiAZStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(multiAZNode.GetText()).c_str()).c_str());
+      m_multiAZHasBeenSet = true;
     }
     XmlNode configurationEndpointNode = resultNode.FirstChild("ConfigurationEndpoint");
     if(!configurationEndpointNode.IsNull())
@@ -295,6 +305,11 @@ void ReplicationGroup::OutputToStream(Aws::OStream& oStream, const char* locatio
       oStream << location << index << locationValue << ".AutomaticFailover=" << AutomaticFailoverStatusMapper::GetNameForAutomaticFailoverStatus(m_automaticFailover) << "&";
   }
 
+  if(m_multiAZHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".MultiAZ=" << MultiAZStatusMapper::GetNameForMultiAZStatus(m_multiAZ) << "&";
+  }
+
   if(m_configurationEndpointHasBeenSet)
   {
       Aws::StringStream configurationEndpointLocationAndMemberSs;
@@ -405,6 +420,10 @@ void ReplicationGroup::OutputToStream(Aws::OStream& oStream, const char* locatio
   if(m_automaticFailoverHasBeenSet)
   {
       oStream << location << ".AutomaticFailover=" << AutomaticFailoverStatusMapper::GetNameForAutomaticFailoverStatus(m_automaticFailover) << "&";
+  }
+  if(m_multiAZHasBeenSet)
+  {
+      oStream << location << ".MultiAZ=" << MultiAZStatusMapper::GetNameForMultiAZStatus(m_multiAZ) << "&";
   }
   if(m_configurationEndpointHasBeenSet)
   {
