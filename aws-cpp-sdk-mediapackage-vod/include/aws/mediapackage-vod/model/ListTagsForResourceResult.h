@@ -43,40 +43,64 @@ namespace Model
     ListTagsForResourceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
-    
+    /**
+     * A collection of tags associated with a resource
+     */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
 
-    
+    /**
+     * A collection of tags associated with a resource
+     */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tags = value; }
 
-    
+    /**
+     * A collection of tags associated with a resource
+     */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tags = std::move(value); }
 
-    
+    /**
+     * A collection of tags associated with a resource
+     */
     inline ListTagsForResourceResult& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
 
-    
+    /**
+     * A collection of tags associated with a resource
+     */
     inline ListTagsForResourceResult& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
 
-    
+    /**
+     * A collection of tags associated with a resource
+     */
     inline ListTagsForResourceResult& AddTags(const Aws::String& key, const Aws::String& value) { m_tags.emplace(key, value); return *this; }
 
-    
+    /**
+     * A collection of tags associated with a resource
+     */
     inline ListTagsForResourceResult& AddTags(Aws::String&& key, const Aws::String& value) { m_tags.emplace(std::move(key), value); return *this; }
 
-    
+    /**
+     * A collection of tags associated with a resource
+     */
     inline ListTagsForResourceResult& AddTags(const Aws::String& key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
 
-    
+    /**
+     * A collection of tags associated with a resource
+     */
     inline ListTagsForResourceResult& AddTags(Aws::String&& key, Aws::String&& value) { m_tags.emplace(std::move(key), std::move(value)); return *this; }
 
-    
+    /**
+     * A collection of tags associated with a resource
+     */
     inline ListTagsForResourceResult& AddTags(const char* key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
 
-    
+    /**
+     * A collection of tags associated with a resource
+     */
     inline ListTagsForResourceResult& AddTags(Aws::String&& key, const char* value) { m_tags.emplace(std::move(key), value); return *this; }
 
-    
+    /**
+     * A collection of tags associated with a resource
+     */
     inline ListTagsForResourceResult& AddTags(const char* key, const char* value) { m_tags.emplace(key, value); return *this; }
 
   private:

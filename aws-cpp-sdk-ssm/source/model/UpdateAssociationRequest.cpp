@@ -38,7 +38,9 @@ UpdateAssociationRequest::UpdateAssociationRequest() :
     m_complianceSeverity(AssociationComplianceSeverity::NOT_SET),
     m_complianceSeverityHasBeenSet(false),
     m_syncCompliance(AssociationSyncCompliance::NOT_SET),
-    m_syncComplianceHasBeenSet(false)
+    m_syncComplianceHasBeenSet(false),
+    m_applyOnlyAtCronInterval(false),
+    m_applyOnlyAtCronIntervalHasBeenSet(false)
 {
 }
 
@@ -141,6 +143,12 @@ Aws::String UpdateAssociationRequest::SerializePayload() const
   if(m_syncComplianceHasBeenSet)
   {
    payload.WithString("SyncCompliance", AssociationSyncComplianceMapper::GetNameForAssociationSyncCompliance(m_syncCompliance));
+  }
+
+  if(m_applyOnlyAtCronIntervalHasBeenSet)
+  {
+   payload.WithBool("ApplyOnlyAtCronInterval", m_applyOnlyAtCronInterval);
+
   }
 
   return payload.View().WriteReadable();

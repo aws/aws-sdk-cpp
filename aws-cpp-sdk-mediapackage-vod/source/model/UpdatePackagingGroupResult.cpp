@@ -13,7 +13,7 @@
 * permissions and limitations under the License.
 */
 
-#include <aws/mediapackage-vod/model/CreatePackagingGroupResult.h>
+#include <aws/mediapackage-vod/model/UpdatePackagingGroupResult.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
@@ -26,16 +26,16 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreatePackagingGroupResult::CreatePackagingGroupResult()
+UpdatePackagingGroupResult::UpdatePackagingGroupResult()
 {
 }
 
-CreatePackagingGroupResult::CreatePackagingGroupResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+UpdatePackagingGroupResult::UpdatePackagingGroupResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-CreatePackagingGroupResult& CreatePackagingGroupResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
+UpdatePackagingGroupResult& UpdatePackagingGroupResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("arn"))

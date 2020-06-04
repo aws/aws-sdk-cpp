@@ -31,7 +31,9 @@ namespace Model
     NetworkOut,
     StatusCheckFailed,
     StatusCheckFailed_Instance,
-    StatusCheckFailed_System
+    StatusCheckFailed_System,
+    BurstCapacityTime,
+    BurstCapacityPercentage
   };
 
 namespace InstanceMetricNameMapper

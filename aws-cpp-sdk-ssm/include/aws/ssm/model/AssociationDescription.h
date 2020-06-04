@@ -1066,6 +1066,39 @@ namespace Model
      */
     inline AssociationDescription& WithSyncCompliance(AssociationSyncCompliance&& value) { SetSyncCompliance(std::move(value)); return *this;}
 
+
+    /**
+     * <p>By default, when you create a new associations, the system runs it
+     * immediately after it is created and then according to the schedule you
+     * specified. Specify this option if you don't want an association to run
+     * immediately after you create it.</p>
+     */
+    inline bool GetApplyOnlyAtCronInterval() const{ return m_applyOnlyAtCronInterval; }
+
+    /**
+     * <p>By default, when you create a new associations, the system runs it
+     * immediately after it is created and then according to the schedule you
+     * specified. Specify this option if you don't want an association to run
+     * immediately after you create it.</p>
+     */
+    inline bool ApplyOnlyAtCronIntervalHasBeenSet() const { return m_applyOnlyAtCronIntervalHasBeenSet; }
+
+    /**
+     * <p>By default, when you create a new associations, the system runs it
+     * immediately after it is created and then according to the schedule you
+     * specified. Specify this option if you don't want an association to run
+     * immediately after you create it.</p>
+     */
+    inline void SetApplyOnlyAtCronInterval(bool value) { m_applyOnlyAtCronIntervalHasBeenSet = true; m_applyOnlyAtCronInterval = value; }
+
+    /**
+     * <p>By default, when you create a new associations, the system runs it
+     * immediately after it is created and then according to the schedule you
+     * specified. Specify this option if you don't want an association to run
+     * immediately after you create it.</p>
+     */
+    inline AssociationDescription& WithApplyOnlyAtCronInterval(bool value) { SetApplyOnlyAtCronInterval(value); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -1130,6 +1163,9 @@ namespace Model
 
     AssociationSyncCompliance m_syncCompliance;
     bool m_syncComplianceHasBeenSet;
+
+    bool m_applyOnlyAtCronInterval;
+    bool m_applyOnlyAtCronIntervalHasBeenSet;
   };
 
 } // namespace Model

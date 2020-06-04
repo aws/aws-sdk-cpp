@@ -44,6 +44,12 @@ DescribePackagingGroupResult& DescribePackagingGroupResult::operator =(const Aws
 
   }
 
+  if(jsonValue.ValueExists("authorization"))
+  {
+    m_authorization = jsonValue.GetObject("authorization");
+
+  }
+
   if(jsonValue.ValueExists("domainName"))
   {
     m_domainName = jsonValue.GetString("domainName");

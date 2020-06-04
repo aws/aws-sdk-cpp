@@ -36,12 +36,12 @@ namespace MediaPackageVod
 {
 namespace Model
 {
-  class AWS_MEDIAPACKAGEVOD_API DescribePackagingGroupResult
+  class AWS_MEDIAPACKAGEVOD_API UpdatePackagingGroupResult
   {
   public:
-    DescribePackagingGroupResult();
-    DescribePackagingGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribePackagingGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdatePackagingGroupResult();
+    UpdatePackagingGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdatePackagingGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
@@ -67,17 +67,17 @@ namespace Model
     /**
      * The ARN of the PackagingGroup.
      */
-    inline DescribePackagingGroupResult& WithArn(const Aws::String& value) { SetArn(value); return *this;}
+    inline UpdatePackagingGroupResult& WithArn(const Aws::String& value) { SetArn(value); return *this;}
 
     /**
      * The ARN of the PackagingGroup.
      */
-    inline DescribePackagingGroupResult& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
+    inline UpdatePackagingGroupResult& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
     /**
      * The ARN of the PackagingGroup.
      */
-    inline DescribePackagingGroupResult& WithArn(const char* value) { SetArn(value); return *this;}
+    inline UpdatePackagingGroupResult& WithArn(const char* value) { SetArn(value); return *this;}
 
 
     
@@ -90,10 +90,10 @@ namespace Model
     inline void SetAuthorization(Authorization&& value) { m_authorization = std::move(value); }
 
     
-    inline DescribePackagingGroupResult& WithAuthorization(const Authorization& value) { SetAuthorization(value); return *this;}
+    inline UpdatePackagingGroupResult& WithAuthorization(const Authorization& value) { SetAuthorization(value); return *this;}
 
     
-    inline DescribePackagingGroupResult& WithAuthorization(Authorization&& value) { SetAuthorization(std::move(value)); return *this;}
+    inline UpdatePackagingGroupResult& WithAuthorization(Authorization&& value) { SetAuthorization(std::move(value)); return *this;}
 
 
     /**
@@ -119,17 +119,17 @@ namespace Model
     /**
      * The fully qualified domain name for Assets in the PackagingGroup.
      */
-    inline DescribePackagingGroupResult& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
+    inline UpdatePackagingGroupResult& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
 
     /**
      * The fully qualified domain name for Assets in the PackagingGroup.
      */
-    inline DescribePackagingGroupResult& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
+    inline UpdatePackagingGroupResult& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
 
     /**
      * The fully qualified domain name for Assets in the PackagingGroup.
      */
-    inline DescribePackagingGroupResult& WithDomainName(const char* value) { SetDomainName(value); return *this;}
+    inline UpdatePackagingGroupResult& WithDomainName(const char* value) { SetDomainName(value); return *this;}
 
 
     /**
@@ -155,17 +155,17 @@ namespace Model
     /**
      * The ID of the PackagingGroup.
      */
-    inline DescribePackagingGroupResult& WithId(const Aws::String& value) { SetId(value); return *this;}
+    inline UpdatePackagingGroupResult& WithId(const Aws::String& value) { SetId(value); return *this;}
 
     /**
      * The ID of the PackagingGroup.
      */
-    inline DescribePackagingGroupResult& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
+    inline UpdatePackagingGroupResult& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
      * The ID of the PackagingGroup.
      */
-    inline DescribePackagingGroupResult& WithId(const char* value) { SetId(value); return *this;}
+    inline UpdatePackagingGroupResult& WithId(const char* value) { SetId(value); return *this;}
 
 
     
@@ -178,31 +178,31 @@ namespace Model
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tags = std::move(value); }
 
     
-    inline DescribePackagingGroupResult& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
+    inline UpdatePackagingGroupResult& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
 
     
-    inline DescribePackagingGroupResult& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
+    inline UpdatePackagingGroupResult& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
 
     
-    inline DescribePackagingGroupResult& AddTags(const Aws::String& key, const Aws::String& value) { m_tags.emplace(key, value); return *this; }
+    inline UpdatePackagingGroupResult& AddTags(const Aws::String& key, const Aws::String& value) { m_tags.emplace(key, value); return *this; }
 
     
-    inline DescribePackagingGroupResult& AddTags(Aws::String&& key, const Aws::String& value) { m_tags.emplace(std::move(key), value); return *this; }
+    inline UpdatePackagingGroupResult& AddTags(Aws::String&& key, const Aws::String& value) { m_tags.emplace(std::move(key), value); return *this; }
 
     
-    inline DescribePackagingGroupResult& AddTags(const Aws::String& key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
+    inline UpdatePackagingGroupResult& AddTags(const Aws::String& key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
 
     
-    inline DescribePackagingGroupResult& AddTags(Aws::String&& key, Aws::String&& value) { m_tags.emplace(std::move(key), std::move(value)); return *this; }
+    inline UpdatePackagingGroupResult& AddTags(Aws::String&& key, Aws::String&& value) { m_tags.emplace(std::move(key), std::move(value)); return *this; }
 
     
-    inline DescribePackagingGroupResult& AddTags(const char* key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
+    inline UpdatePackagingGroupResult& AddTags(const char* key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
 
     
-    inline DescribePackagingGroupResult& AddTags(Aws::String&& key, const char* value) { m_tags.emplace(std::move(key), value); return *this; }
+    inline UpdatePackagingGroupResult& AddTags(Aws::String&& key, const char* value) { m_tags.emplace(std::move(key), value); return *this; }
 
     
-    inline DescribePackagingGroupResult& AddTags(const char* key, const char* value) { m_tags.emplace(key, value); return *this; }
+    inline UpdatePackagingGroupResult& AddTags(const char* key, const char* value) { m_tags.emplace(key, value); return *this; }
 
   private:
 

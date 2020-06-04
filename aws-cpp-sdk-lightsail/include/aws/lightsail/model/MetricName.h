@@ -48,7 +48,9 @@ namespace Model
     DiskQueueDepth,
     FreeStorageSpace,
     NetworkReceiveThroughput,
-    NetworkTransmitThroughput
+    NetworkTransmitThroughput,
+    BurstCapacityTime,
+    BurstCapacityPercentage
   };
 
 namespace MetricNameMapper

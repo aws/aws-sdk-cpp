@@ -53,6 +53,8 @@ namespace Aws
         static const int FreeStorageSpace_HASH = HashingUtils::HashString("FreeStorageSpace");
         static const int NetworkReceiveThroughput_HASH = HashingUtils::HashString("NetworkReceiveThroughput");
         static const int NetworkTransmitThroughput_HASH = HashingUtils::HashString("NetworkTransmitThroughput");
+        static const int BurstCapacityTime_HASH = HashingUtils::HashString("BurstCapacityTime");
+        static const int BurstCapacityPercentage_HASH = HashingUtils::HashString("BurstCapacityPercentage");
 
 
         MetricName GetMetricNameForName(const Aws::String& name)
@@ -150,6 +152,14 @@ namespace Aws
           {
             return MetricName::NetworkTransmitThroughput;
           }
+          else if (hashCode == BurstCapacityTime_HASH)
+          {
+            return MetricName::BurstCapacityTime;
+          }
+          else if (hashCode == BurstCapacityPercentage_HASH)
+          {
+            return MetricName::BurstCapacityPercentage;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -210,6 +220,10 @@ namespace Aws
             return "NetworkReceiveThroughput";
           case MetricName::NetworkTransmitThroughput:
             return "NetworkTransmitThroughput";
+          case MetricName::BurstCapacityTime:
+            return "BurstCapacityTime";
+          case MetricName::BurstCapacityPercentage:
+            return "BurstCapacityPercentage";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

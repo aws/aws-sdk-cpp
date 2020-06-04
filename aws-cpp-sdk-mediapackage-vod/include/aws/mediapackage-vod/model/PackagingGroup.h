@@ -16,6 +16,7 @@
 #pragma once
 #include <aws/mediapackage-vod/MediaPackageVod_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mediapackage-vod/model/Authorization.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
@@ -87,6 +88,25 @@ namespace Model
      * The ARN of the PackagingGroup.
      */
     inline PackagingGroup& WithArn(const char* value) { SetArn(value); return *this;}
+
+
+    
+    inline const Authorization& GetAuthorization() const{ return m_authorization; }
+
+    
+    inline bool AuthorizationHasBeenSet() const { return m_authorizationHasBeenSet; }
+
+    
+    inline void SetAuthorization(const Authorization& value) { m_authorizationHasBeenSet = true; m_authorization = value; }
+
+    
+    inline void SetAuthorization(Authorization&& value) { m_authorizationHasBeenSet = true; m_authorization = std::move(value); }
+
+    
+    inline PackagingGroup& WithAuthorization(const Authorization& value) { SetAuthorization(value); return *this;}
+
+    
+    inline PackagingGroup& WithAuthorization(Authorization&& value) { SetAuthorization(std::move(value)); return *this;}
 
 
     /**
@@ -214,6 +234,9 @@ namespace Model
 
     Aws::String m_arn;
     bool m_arnHasBeenSet;
+
+    Authorization m_authorization;
+    bool m_authorizationHasBeenSet;
 
     Aws::String m_domainName;
     bool m_domainNameHasBeenSet;

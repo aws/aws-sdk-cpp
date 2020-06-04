@@ -644,42 +644,42 @@ namespace Model
 
     /**
      * <p>The unit for the metric data request. Valid units depend on the metric data
-     * being required. For the valid units with each available metric, see the
+     * being requested. For the valid units with each available metric, see the
      * <code>metricName</code> parameter.</p>
      */
     inline const MetricUnit& GetUnit() const{ return m_unit; }
 
     /**
      * <p>The unit for the metric data request. Valid units depend on the metric data
-     * being required. For the valid units with each available metric, see the
+     * being requested. For the valid units with each available metric, see the
      * <code>metricName</code> parameter.</p>
      */
     inline bool UnitHasBeenSet() const { return m_unitHasBeenSet; }
 
     /**
      * <p>The unit for the metric data request. Valid units depend on the metric data
-     * being required. For the valid units with each available metric, see the
+     * being requested. For the valid units with each available metric, see the
      * <code>metricName</code> parameter.</p>
      */
     inline void SetUnit(const MetricUnit& value) { m_unitHasBeenSet = true; m_unit = value; }
 
     /**
      * <p>The unit for the metric data request. Valid units depend on the metric data
-     * being required. For the valid units with each available metric, see the
+     * being requested. For the valid units with each available metric, see the
      * <code>metricName</code> parameter.</p>
      */
     inline void SetUnit(MetricUnit&& value) { m_unitHasBeenSet = true; m_unit = std::move(value); }
 
     /**
      * <p>The unit for the metric data request. Valid units depend on the metric data
-     * being required. For the valid units with each available metric, see the
+     * being requested. For the valid units with each available metric, see the
      * <code>metricName</code> parameter.</p>
      */
     inline GetLoadBalancerMetricDataRequest& WithUnit(const MetricUnit& value) { SetUnit(value); return *this;}
 
     /**
      * <p>The unit for the metric data request. Valid units depend on the metric data
-     * being required. For the valid units with each available metric, see the
+     * being requested. For the valid units with each available metric, see the
      * <code>metricName</code> parameter.</p>
      */
     inline GetLoadBalancerMetricDataRequest& WithUnit(MetricUnit&& value) { SetUnit(std::move(value)); return *this;}

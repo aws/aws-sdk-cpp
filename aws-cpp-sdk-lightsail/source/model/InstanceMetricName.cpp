@@ -36,6 +36,8 @@ namespace Aws
         static const int StatusCheckFailed_HASH = HashingUtils::HashString("StatusCheckFailed");
         static const int StatusCheckFailed_Instance_HASH = HashingUtils::HashString("StatusCheckFailed_Instance");
         static const int StatusCheckFailed_System_HASH = HashingUtils::HashString("StatusCheckFailed_System");
+        static const int BurstCapacityTime_HASH = HashingUtils::HashString("BurstCapacityTime");
+        static const int BurstCapacityPercentage_HASH = HashingUtils::HashString("BurstCapacityPercentage");
 
 
         InstanceMetricName GetInstanceMetricNameForName(const Aws::String& name)
@@ -65,6 +67,14 @@ namespace Aws
           {
             return InstanceMetricName::StatusCheckFailed_System;
           }
+          else if (hashCode == BurstCapacityTime_HASH)
+          {
+            return InstanceMetricName::BurstCapacityTime;
+          }
+          else if (hashCode == BurstCapacityPercentage_HASH)
+          {
+            return InstanceMetricName::BurstCapacityPercentage;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -91,6 +101,10 @@ namespace Aws
             return "StatusCheckFailed_Instance";
           case InstanceMetricName::StatusCheckFailed_System:
             return "StatusCheckFailed_System";
+          case InstanceMetricName::BurstCapacityTime:
+            return "BurstCapacityTime";
+          case InstanceMetricName::BurstCapacityPercentage:
+            return "BurstCapacityPercentage";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

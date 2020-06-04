@@ -51,7 +51,9 @@ AssociationDescription::AssociationDescription() :
     m_complianceSeverity(AssociationComplianceSeverity::NOT_SET),
     m_complianceSeverityHasBeenSet(false),
     m_syncCompliance(AssociationSyncCompliance::NOT_SET),
-    m_syncComplianceHasBeenSet(false)
+    m_syncComplianceHasBeenSet(false),
+    m_applyOnlyAtCronInterval(false),
+    m_applyOnlyAtCronIntervalHasBeenSet(false)
 {
 }
 
@@ -78,7 +80,9 @@ AssociationDescription::AssociationDescription(JsonView jsonValue) :
     m_complianceSeverity(AssociationComplianceSeverity::NOT_SET),
     m_complianceSeverityHasBeenSet(false),
     m_syncCompliance(AssociationSyncCompliance::NOT_SET),
-    m_syncComplianceHasBeenSet(false)
+    m_syncComplianceHasBeenSet(false),
+    m_applyOnlyAtCronInterval(false),
+    m_applyOnlyAtCronIntervalHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -245,6 +249,13 @@ AssociationDescription& AssociationDescription::operator =(JsonView jsonValue)
     m_syncComplianceHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ApplyOnlyAtCronInterval"))
+  {
+    m_applyOnlyAtCronInterval = jsonValue.GetBool("ApplyOnlyAtCronInterval");
+
+    m_applyOnlyAtCronIntervalHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -385,6 +396,12 @@ JsonValue AssociationDescription::Jsonize() const
   if(m_syncComplianceHasBeenSet)
   {
    payload.WithString("SyncCompliance", AssociationSyncComplianceMapper::GetNameForAssociationSyncCompliance(m_syncCompliance));
+  }
+
+  if(m_applyOnlyAtCronIntervalHasBeenSet)
+  {
+   payload.WithBool("ApplyOnlyAtCronInterval", m_applyOnlyAtCronInterval);
+
   }
 
   return payload;

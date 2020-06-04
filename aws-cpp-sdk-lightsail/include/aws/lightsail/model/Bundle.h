@@ -51,22 +51,22 @@ namespace Model
 
 
     /**
-     * <p>The price in US dollars (e.g., <code>5.0</code>).</p>
+     * <p>The price in US dollars (e.g., <code>5.0</code>) of the bundle.</p>
      */
     inline double GetPrice() const{ return m_price; }
 
     /**
-     * <p>The price in US dollars (e.g., <code>5.0</code>).</p>
+     * <p>The price in US dollars (e.g., <code>5.0</code>) of the bundle.</p>
      */
     inline bool PriceHasBeenSet() const { return m_priceHasBeenSet; }
 
     /**
-     * <p>The price in US dollars (e.g., <code>5.0</code>).</p>
+     * <p>The price in US dollars (e.g., <code>5.0</code>) of the bundle.</p>
      */
     inline void SetPrice(double value) { m_priceHasBeenSet = true; m_price = value; }
 
     /**
-     * <p>The price in US dollars (e.g., <code>5.0</code>).</p>
+     * <p>The price in US dollars (e.g., <code>5.0</code>) of the bundle.</p>
      */
     inline Bundle& WithPrice(double value) { SetPrice(value); return *this;}
 

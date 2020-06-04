@@ -30,6 +30,7 @@ namespace Model
 
 PackagingGroup::PackagingGroup() : 
     m_arnHasBeenSet(false),
+    m_authorizationHasBeenSet(false),
     m_domainNameHasBeenSet(false),
     m_idHasBeenSet(false),
     m_tagsHasBeenSet(false)
@@ -38,6 +39,7 @@ PackagingGroup::PackagingGroup() :
 
 PackagingGroup::PackagingGroup(JsonView jsonValue) : 
     m_arnHasBeenSet(false),
+    m_authorizationHasBeenSet(false),
     m_domainNameHasBeenSet(false),
     m_idHasBeenSet(false),
     m_tagsHasBeenSet(false)
@@ -52,6 +54,13 @@ PackagingGroup& PackagingGroup::operator =(JsonView jsonValue)
     m_arn = jsonValue.GetString("arn");
 
     m_arnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("authorization"))
+  {
+    m_authorization = jsonValue.GetObject("authorization");
+
+    m_authorizationHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("domainName"))
@@ -88,6 +97,12 @@ JsonValue PackagingGroup::Jsonize() const
   if(m_arnHasBeenSet)
   {
    payload.WithString("arn", m_arn);
+
+  }
+
+  if(m_authorizationHasBeenSet)
+  {
+   payload.WithObject("authorization", m_authorization.Jsonize());
 
   }
 

@@ -45,6 +45,7 @@
 #include <aws/mediapackage-vod/model/ListTagsForResourceRequest.h>
 #include <aws/mediapackage-vod/model/TagResourceRequest.h>
 #include <aws/mediapackage-vod/model/UntagResourceRequest.h>
+#include <aws/mediapackage-vod/model/UpdatePackagingGroupRequest.h>
 
 using namespace Aws;
 using namespace Aws::Auth;
@@ -700,5 +701,46 @@ void MediaPackageVodClient::UntagResourceAsync(const UntagResourceRequest& reque
 void MediaPackageVodClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UntagResource(request), context);
+}
+
+UpdatePackagingGroupOutcome MediaPackageVodClient::UpdatePackagingGroup(const UpdatePackagingGroupRequest& request) const
+{
+  if (!request.IdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdatePackagingGroup", "Required field: Id, is not set");
+    return UpdatePackagingGroupOutcome(Aws::Client::AWSError<MediaPackageVodErrors>(MediaPackageVodErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/packaging_groups/";
+  ss << request.GetId();
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return UpdatePackagingGroupOutcome(UpdatePackagingGroupResult(outcome.GetResult()));
+  }
+  else
+  {
+    return UpdatePackagingGroupOutcome(outcome.GetError());
+  }
+}
+
+UpdatePackagingGroupOutcomeCallable MediaPackageVodClient::UpdatePackagingGroupCallable(const UpdatePackagingGroupRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdatePackagingGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdatePackagingGroup(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void MediaPackageVodClient::UpdatePackagingGroupAsync(const UpdatePackagingGroupRequest& request, const UpdatePackagingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdatePackagingGroupAsyncHelper( request, handler, context ); } );
+}
+
+void MediaPackageVodClient::UpdatePackagingGroupAsyncHelper(const UpdatePackagingGroupRequest& request, const UpdatePackagingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdatePackagingGroup(request), context);
 }
 

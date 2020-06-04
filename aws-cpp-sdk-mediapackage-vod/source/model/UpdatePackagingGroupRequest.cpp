@@ -13,7 +13,7 @@
 * permissions and limitations under the License.
 */
 
-#include <aws/mediapackage-vod/model/CreatePackagingGroupRequest.h>
+#include <aws/mediapackage-vod/model/UpdatePackagingGroupRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 
 #include <utility>
@@ -22,37 +22,19 @@ using namespace Aws::MediaPackageVod::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreatePackagingGroupRequest::CreatePackagingGroupRequest() : 
+UpdatePackagingGroupRequest::UpdatePackagingGroupRequest() : 
     m_authorizationHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_idHasBeenSet(false)
 {
 }
 
-Aws::String CreatePackagingGroupRequest::SerializePayload() const
+Aws::String UpdatePackagingGroupRequest::SerializePayload() const
 {
   JsonValue payload;
 
   if(m_authorizationHasBeenSet)
   {
    payload.WithObject("authorization", m_authorization.Jsonize());
-
-  }
-
-  if(m_idHasBeenSet)
-  {
-   payload.WithString("id", m_id);
-
-  }
-
-  if(m_tagsHasBeenSet)
-  {
-   JsonValue tagsJsonMap;
-   for(auto& tagsItem : m_tags)
-   {
-     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
-   }
-   payload.WithObject("tags", std::move(tagsJsonMap));
 
   }
 

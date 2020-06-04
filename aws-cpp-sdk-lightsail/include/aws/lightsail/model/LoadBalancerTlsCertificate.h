@@ -494,32 +494,32 @@ namespace Model
 
 
     /**
-     * <p>The status of the SSL/TLS certificate. Valid values are below.</p>
+     * <p>The validation status of the SSL/TLS certificate. Valid values are below.</p>
      */
     inline const LoadBalancerTlsCertificateStatus& GetStatus() const{ return m_status; }
 
     /**
-     * <p>The status of the SSL/TLS certificate. Valid values are below.</p>
+     * <p>The validation status of the SSL/TLS certificate. Valid values are below.</p>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
-     * <p>The status of the SSL/TLS certificate. Valid values are below.</p>
+     * <p>The validation status of the SSL/TLS certificate. Valid values are below.</p>
      */
     inline void SetStatus(const LoadBalancerTlsCertificateStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>The status of the SSL/TLS certificate. Valid values are below.</p>
+     * <p>The validation status of the SSL/TLS certificate. Valid values are below.</p>
      */
     inline void SetStatus(LoadBalancerTlsCertificateStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * <p>The status of the SSL/TLS certificate. Valid values are below.</p>
+     * <p>The validation status of the SSL/TLS certificate. Valid values are below.</p>
      */
     inline LoadBalancerTlsCertificate& WithStatus(const LoadBalancerTlsCertificateStatus& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The status of the SSL/TLS certificate. Valid values are below.</p>
+     * <p>The validation status of the SSL/TLS certificate. Valid values are below.</p>
      */
     inline LoadBalancerTlsCertificate& WithStatus(LoadBalancerTlsCertificateStatus&& value) { SetStatus(std::move(value)); return *this;}
 

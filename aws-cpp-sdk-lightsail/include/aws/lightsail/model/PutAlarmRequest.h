@@ -102,9 +102,10 @@ namespace Model
     /**
      * <p>The name of the metric to associate with the alarm.</p> <p>You can configure
      * up to two alarms per metric.</p> <p>The following metrics are available for each
-     * resource type:</p> <ul> <li> <p> <b>Instances</b>: <code>CPUUtilization</code>,
-     * <code>NetworkIn</code>, <code>NetworkOut</code>, <code>StatusCheckFailed</code>,
-     * <code>StatusCheckFailed_Instance</code>, and
+     * resource type:</p> <ul> <li> <p> <b>Instances</b>:
+     * <code>BurstCapacityPercentage</code>, <code>BurstCapacityTime</code>,
+     * <code>CPUUtilization</code>, <code>NetworkIn</code>, <code>NetworkOut</code>,
+     * <code>StatusCheckFailed</code>, <code>StatusCheckFailed_Instance</code>, and
      * <code>StatusCheckFailed_System</code>.</p> </li> <li> <p> <b>Load balancers</b>:
      * <code>ClientTLSNegotiationErrorCount</code>, <code>HealthyHostCount</code>,
      * <code>UnhealthyHostCount</code>, <code>HTTPCode_LB_4XX_Count</code>,
@@ -116,16 +117,20 @@ namespace Model
      * <li> <p> <b>Relational databases</b>: <code>CPUUtilization</code>,
      * <code>DatabaseConnections</code>, <code>DiskQueueDepth</code>,
      * <code>FreeStorageSpace</code>, <code>NetworkReceiveThroughput</code>, and
-     * <code>NetworkTransmitThroughput</code>.</p> </li> </ul>
+     * <code>NetworkTransmitThroughput</code>.</p> </li> </ul> <p>For more information
+     * about these metrics, see <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-resource-health-metrics#available-metrics">Metrics
+     * available in Lightsail</a>.</p>
      */
     inline const MetricName& GetMetricName() const{ return m_metricName; }
 
     /**
      * <p>The name of the metric to associate with the alarm.</p> <p>You can configure
      * up to two alarms per metric.</p> <p>The following metrics are available for each
-     * resource type:</p> <ul> <li> <p> <b>Instances</b>: <code>CPUUtilization</code>,
-     * <code>NetworkIn</code>, <code>NetworkOut</code>, <code>StatusCheckFailed</code>,
-     * <code>StatusCheckFailed_Instance</code>, and
+     * resource type:</p> <ul> <li> <p> <b>Instances</b>:
+     * <code>BurstCapacityPercentage</code>, <code>BurstCapacityTime</code>,
+     * <code>CPUUtilization</code>, <code>NetworkIn</code>, <code>NetworkOut</code>,
+     * <code>StatusCheckFailed</code>, <code>StatusCheckFailed_Instance</code>, and
      * <code>StatusCheckFailed_System</code>.</p> </li> <li> <p> <b>Load balancers</b>:
      * <code>ClientTLSNegotiationErrorCount</code>, <code>HealthyHostCount</code>,
      * <code>UnhealthyHostCount</code>, <code>HTTPCode_LB_4XX_Count</code>,
@@ -137,16 +142,20 @@ namespace Model
      * <li> <p> <b>Relational databases</b>: <code>CPUUtilization</code>,
      * <code>DatabaseConnections</code>, <code>DiskQueueDepth</code>,
      * <code>FreeStorageSpace</code>, <code>NetworkReceiveThroughput</code>, and
-     * <code>NetworkTransmitThroughput</code>.</p> </li> </ul>
+     * <code>NetworkTransmitThroughput</code>.</p> </li> </ul> <p>For more information
+     * about these metrics, see <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-resource-health-metrics#available-metrics">Metrics
+     * available in Lightsail</a>.</p>
      */
     inline bool MetricNameHasBeenSet() const { return m_metricNameHasBeenSet; }
 
     /**
      * <p>The name of the metric to associate with the alarm.</p> <p>You can configure
      * up to two alarms per metric.</p> <p>The following metrics are available for each
-     * resource type:</p> <ul> <li> <p> <b>Instances</b>: <code>CPUUtilization</code>,
-     * <code>NetworkIn</code>, <code>NetworkOut</code>, <code>StatusCheckFailed</code>,
-     * <code>StatusCheckFailed_Instance</code>, and
+     * resource type:</p> <ul> <li> <p> <b>Instances</b>:
+     * <code>BurstCapacityPercentage</code>, <code>BurstCapacityTime</code>,
+     * <code>CPUUtilization</code>, <code>NetworkIn</code>, <code>NetworkOut</code>,
+     * <code>StatusCheckFailed</code>, <code>StatusCheckFailed_Instance</code>, and
      * <code>StatusCheckFailed_System</code>.</p> </li> <li> <p> <b>Load balancers</b>:
      * <code>ClientTLSNegotiationErrorCount</code>, <code>HealthyHostCount</code>,
      * <code>UnhealthyHostCount</code>, <code>HTTPCode_LB_4XX_Count</code>,
@@ -158,16 +167,20 @@ namespace Model
      * <li> <p> <b>Relational databases</b>: <code>CPUUtilization</code>,
      * <code>DatabaseConnections</code>, <code>DiskQueueDepth</code>,
      * <code>FreeStorageSpace</code>, <code>NetworkReceiveThroughput</code>, and
-     * <code>NetworkTransmitThroughput</code>.</p> </li> </ul>
+     * <code>NetworkTransmitThroughput</code>.</p> </li> </ul> <p>For more information
+     * about these metrics, see <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-resource-health-metrics#available-metrics">Metrics
+     * available in Lightsail</a>.</p>
      */
     inline void SetMetricName(const MetricName& value) { m_metricNameHasBeenSet = true; m_metricName = value; }
 
     /**
      * <p>The name of the metric to associate with the alarm.</p> <p>You can configure
      * up to two alarms per metric.</p> <p>The following metrics are available for each
-     * resource type:</p> <ul> <li> <p> <b>Instances</b>: <code>CPUUtilization</code>,
-     * <code>NetworkIn</code>, <code>NetworkOut</code>, <code>StatusCheckFailed</code>,
-     * <code>StatusCheckFailed_Instance</code>, and
+     * resource type:</p> <ul> <li> <p> <b>Instances</b>:
+     * <code>BurstCapacityPercentage</code>, <code>BurstCapacityTime</code>,
+     * <code>CPUUtilization</code>, <code>NetworkIn</code>, <code>NetworkOut</code>,
+     * <code>StatusCheckFailed</code>, <code>StatusCheckFailed_Instance</code>, and
      * <code>StatusCheckFailed_System</code>.</p> </li> <li> <p> <b>Load balancers</b>:
      * <code>ClientTLSNegotiationErrorCount</code>, <code>HealthyHostCount</code>,
      * <code>UnhealthyHostCount</code>, <code>HTTPCode_LB_4XX_Count</code>,
@@ -179,16 +192,20 @@ namespace Model
      * <li> <p> <b>Relational databases</b>: <code>CPUUtilization</code>,
      * <code>DatabaseConnections</code>, <code>DiskQueueDepth</code>,
      * <code>FreeStorageSpace</code>, <code>NetworkReceiveThroughput</code>, and
-     * <code>NetworkTransmitThroughput</code>.</p> </li> </ul>
+     * <code>NetworkTransmitThroughput</code>.</p> </li> </ul> <p>For more information
+     * about these metrics, see <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-resource-health-metrics#available-metrics">Metrics
+     * available in Lightsail</a>.</p>
      */
     inline void SetMetricName(MetricName&& value) { m_metricNameHasBeenSet = true; m_metricName = std::move(value); }
 
     /**
      * <p>The name of the metric to associate with the alarm.</p> <p>You can configure
      * up to two alarms per metric.</p> <p>The following metrics are available for each
-     * resource type:</p> <ul> <li> <p> <b>Instances</b>: <code>CPUUtilization</code>,
-     * <code>NetworkIn</code>, <code>NetworkOut</code>, <code>StatusCheckFailed</code>,
-     * <code>StatusCheckFailed_Instance</code>, and
+     * resource type:</p> <ul> <li> <p> <b>Instances</b>:
+     * <code>BurstCapacityPercentage</code>, <code>BurstCapacityTime</code>,
+     * <code>CPUUtilization</code>, <code>NetworkIn</code>, <code>NetworkOut</code>,
+     * <code>StatusCheckFailed</code>, <code>StatusCheckFailed_Instance</code>, and
      * <code>StatusCheckFailed_System</code>.</p> </li> <li> <p> <b>Load balancers</b>:
      * <code>ClientTLSNegotiationErrorCount</code>, <code>HealthyHostCount</code>,
      * <code>UnhealthyHostCount</code>, <code>HTTPCode_LB_4XX_Count</code>,
@@ -200,16 +217,20 @@ namespace Model
      * <li> <p> <b>Relational databases</b>: <code>CPUUtilization</code>,
      * <code>DatabaseConnections</code>, <code>DiskQueueDepth</code>,
      * <code>FreeStorageSpace</code>, <code>NetworkReceiveThroughput</code>, and
-     * <code>NetworkTransmitThroughput</code>.</p> </li> </ul>
+     * <code>NetworkTransmitThroughput</code>.</p> </li> </ul> <p>For more information
+     * about these metrics, see <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-resource-health-metrics#available-metrics">Metrics
+     * available in Lightsail</a>.</p>
      */
     inline PutAlarmRequest& WithMetricName(const MetricName& value) { SetMetricName(value); return *this;}
 
     /**
      * <p>The name of the metric to associate with the alarm.</p> <p>You can configure
      * up to two alarms per metric.</p> <p>The following metrics are available for each
-     * resource type:</p> <ul> <li> <p> <b>Instances</b>: <code>CPUUtilization</code>,
-     * <code>NetworkIn</code>, <code>NetworkOut</code>, <code>StatusCheckFailed</code>,
-     * <code>StatusCheckFailed_Instance</code>, and
+     * resource type:</p> <ul> <li> <p> <b>Instances</b>:
+     * <code>BurstCapacityPercentage</code>, <code>BurstCapacityTime</code>,
+     * <code>CPUUtilization</code>, <code>NetworkIn</code>, <code>NetworkOut</code>,
+     * <code>StatusCheckFailed</code>, <code>StatusCheckFailed_Instance</code>, and
      * <code>StatusCheckFailed_System</code>.</p> </li> <li> <p> <b>Load balancers</b>:
      * <code>ClientTLSNegotiationErrorCount</code>, <code>HealthyHostCount</code>,
      * <code>UnhealthyHostCount</code>, <code>HTTPCode_LB_4XX_Count</code>,
@@ -221,7 +242,10 @@ namespace Model
      * <li> <p> <b>Relational databases</b>: <code>CPUUtilization</code>,
      * <code>DatabaseConnections</code>, <code>DiskQueueDepth</code>,
      * <code>FreeStorageSpace</code>, <code>NetworkReceiveThroughput</code>, and
-     * <code>NetworkTransmitThroughput</code>.</p> </li> </ul>
+     * <code>NetworkTransmitThroughput</code>.</p> </li> </ul> <p>For more information
+     * about these metrics, see <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-resource-health-metrics#available-metrics">Metrics
+     * available in Lightsail</a>.</p>
      */
     inline PutAlarmRequest& WithMetricName(MetricName&& value) { SetMetricName(std::move(value)); return *this;}
 

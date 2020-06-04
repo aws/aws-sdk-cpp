@@ -91,7 +91,11 @@ namespace Model
    * <fullname>AWS Marketplace Metering Service</fullname> <p>This reference provides
    * descriptions of the low-level AWS Marketplace Metering Service API.</p> <p>AWS
    * Marketplace sellers can use this API to submit usage data for custom usage
-   * dimensions.</p> <p> <b>Submitting Metering Records</b> </p> <ul> <li> <p>
+   * dimensions.</p> <p>For information on the permissions you need to use this API,
+   * see <a
+   * href="https://docs.aws.amazon.com/marketplace/latest/userguide/iam-user-policy-for-aws-marketplace-actions.html">AWS
+   * Marketing metering and entitlement API permissions</a> in the <i>AWS Marketplace
+   * Seller Guide.</i> </p> <p> <b>Submitting Metering Records</b> </p> <ul> <li> <p>
    * <i>MeterUsage</i>- Submits the metering record for a Marketplace product.
    * MeterUsage is called from an EC2 instance or a container running on EKS or
    * ECS.</p> </li> <li> <p> <i>BatchMeterUsage</i>- Submits the metering record for

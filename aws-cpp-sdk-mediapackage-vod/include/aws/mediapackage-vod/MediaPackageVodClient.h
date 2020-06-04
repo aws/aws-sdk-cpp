@@ -34,6 +34,7 @@
 #include <aws/mediapackage-vod/model/ListPackagingConfigurationsResult.h>
 #include <aws/mediapackage-vod/model/ListPackagingGroupsResult.h>
 #include <aws/mediapackage-vod/model/ListTagsForResourceResult.h>
+#include <aws/mediapackage-vod/model/UpdatePackagingGroupResult.h>
 #include <aws/core/NoResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
@@ -89,6 +90,7 @@ namespace Model
         class ListTagsForResourceRequest;
         class TagResourceRequest;
         class UntagResourceRequest;
+        class UpdatePackagingGroupRequest;
 
         typedef Aws::Utils::Outcome<CreateAssetResult, Aws::Client::AWSError<MediaPackageVodErrors>> CreateAssetOutcome;
         typedef Aws::Utils::Outcome<CreatePackagingConfigurationResult, Aws::Client::AWSError<MediaPackageVodErrors>> CreatePackagingConfigurationOutcome;
@@ -105,6 +107,7 @@ namespace Model
         typedef Aws::Utils::Outcome<ListTagsForResourceResult, Aws::Client::AWSError<MediaPackageVodErrors>> ListTagsForResourceOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<MediaPackageVodErrors>> TagResourceOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<MediaPackageVodErrors>> UntagResourceOutcome;
+        typedef Aws::Utils::Outcome<UpdatePackagingGroupResult, Aws::Client::AWSError<MediaPackageVodErrors>> UpdatePackagingGroupOutcome;
 
         typedef std::future<CreateAssetOutcome> CreateAssetOutcomeCallable;
         typedef std::future<CreatePackagingConfigurationOutcome> CreatePackagingConfigurationOutcomeCallable;
@@ -121,6 +124,7 @@ namespace Model
         typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
         typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
         typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
+        typedef std::future<UpdatePackagingGroupOutcome> UpdatePackagingGroupOutcomeCallable;
 } // namespace Model
 
   class MediaPackageVodClient;
@@ -140,6 +144,7 @@ namespace Model
     typedef std::function<void(const MediaPackageVodClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const MediaPackageVodClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const MediaPackageVodClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
+    typedef std::function<void(const MediaPackageVodClient*, const Model::UpdatePackagingGroupRequest&, const Model::UpdatePackagingGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdatePackagingGroupResponseReceivedHandler;
 
   /**
    * AWS Elemental MediaPackage VOD
@@ -501,14 +506,16 @@ namespace Model
         virtual void ListPackagingGroupsAsync(const Model::ListPackagingGroupsRequest& request, const ListPackagingGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * List tags for a given MediaPackage VOD resource<p><h3>See Also:</h3>   <a
+         * Returns a list of the tags assigned to the specified resource.<p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-vod-2018-11-07/ListTagsForResource">AWS
          * API Reference</a></p>
          */
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
         /**
-         * List tags for a given MediaPackage VOD resource<p><h3>See Also:</h3>   <a
+         * Returns a list of the tags assigned to the specified resource.<p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-vod-2018-11-07/ListTagsForResource">AWS
          * API Reference</a></p>
          *
@@ -517,7 +524,8 @@ namespace Model
         virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
 
         /**
-         * List tags for a given MediaPackage VOD resource<p><h3>See Also:</h3>   <a
+         * Returns a list of the tags assigned to the specified resource.<p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-vod-2018-11-07/ListTagsForResource">AWS
          * API Reference</a></p>
          *
@@ -526,14 +534,16 @@ namespace Model
         virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Set tags for a given MediaPackage VOD resource<p><h3>See Also:</h3>   <a
+         * Adds tags to the specified resource. You can specify one or more tags to
+         * add.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-vod-2018-11-07/TagResource">AWS
          * API Reference</a></p>
          */
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
         /**
-         * Set tags for a given MediaPackage VOD resource<p><h3>See Also:</h3>   <a
+         * Adds tags to the specified resource. You can specify one or more tags to
+         * add.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-vod-2018-11-07/TagResource">AWS
          * API Reference</a></p>
          *
@@ -542,7 +552,8 @@ namespace Model
         virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
 
         /**
-         * Set tags for a given MediaPackage VOD resource<p><h3>See Also:</h3>   <a
+         * Adds tags to the specified resource. You can specify one or more tags to
+         * add.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-vod-2018-11-07/TagResource">AWS
          * API Reference</a></p>
          *
@@ -551,14 +562,16 @@ namespace Model
         virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Delete tags for a given MediaPackage VOD resource<p><h3>See Also:</h3>   <a
+         * Removes tags from the specified resource. You can specify one or more tags to
+         * remove.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-vod-2018-11-07/UntagResource">AWS
          * API Reference</a></p>
          */
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
         /**
-         * Delete tags for a given MediaPackage VOD resource<p><h3>See Also:</h3>   <a
+         * Removes tags from the specified resource. You can specify one or more tags to
+         * remove.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-vod-2018-11-07/UntagResource">AWS
          * API Reference</a></p>
          *
@@ -567,13 +580,42 @@ namespace Model
         virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
 
         /**
-         * Delete tags for a given MediaPackage VOD resource<p><h3>See Also:</h3>   <a
+         * Removes tags from the specified resource. You can specify one or more tags to
+         * remove.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-vod-2018-11-07/UntagResource">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * Updates a specific packaging group. You can't change the id attribute or any
+         * other system-generated attributes.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-vod-2018-11-07/UpdatePackagingGroup">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdatePackagingGroupOutcome UpdatePackagingGroup(const Model::UpdatePackagingGroupRequest& request) const;
+
+        /**
+         * Updates a specific packaging group. You can't change the id attribute or any
+         * other system-generated attributes.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-vod-2018-11-07/UpdatePackagingGroup">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdatePackagingGroupOutcomeCallable UpdatePackagingGroupCallable(const Model::UpdatePackagingGroupRequest& request) const;
+
+        /**
+         * Updates a specific packaging group. You can't change the id attribute or any
+         * other system-generated attributes.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-vod-2018-11-07/UpdatePackagingGroup">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdatePackagingGroupAsync(const Model::UpdatePackagingGroupRequest& request, const UpdatePackagingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);
@@ -594,6 +636,7 @@ namespace Model
         void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdatePackagingGroupAsyncHelper(const Model::UpdatePackagingGroupRequest& request, const UpdatePackagingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;
       Aws::String m_configScheme;
