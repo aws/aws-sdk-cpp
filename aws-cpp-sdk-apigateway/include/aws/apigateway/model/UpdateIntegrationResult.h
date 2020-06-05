@@ -21,6 +21,7 @@
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/apigateway/model/ContentHandlingStrategy.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/apigateway/model/TlsConfig.h>
 #include <aws/apigateway/model/IntegrationResponse.h>
 #include <utility>
 
@@ -1539,6 +1540,32 @@ namespace Model
      */
     inline UpdateIntegrationResult& AddIntegrationResponses(const char* key, const IntegrationResponse& value) { m_integrationResponses.emplace(key, value); return *this; }
 
+
+    /**
+     * <p>Specifies the TLS configuration for an integration.</p>
+     */
+    inline const TlsConfig& GetTlsConfig() const{ return m_tlsConfig; }
+
+    /**
+     * <p>Specifies the TLS configuration for an integration.</p>
+     */
+    inline void SetTlsConfig(const TlsConfig& value) { m_tlsConfig = value; }
+
+    /**
+     * <p>Specifies the TLS configuration for an integration.</p>
+     */
+    inline void SetTlsConfig(TlsConfig&& value) { m_tlsConfig = std::move(value); }
+
+    /**
+     * <p>Specifies the TLS configuration for an integration.</p>
+     */
+    inline UpdateIntegrationResult& WithTlsConfig(const TlsConfig& value) { SetTlsConfig(value); return *this;}
+
+    /**
+     * <p>Specifies the TLS configuration for an integration.</p>
+     */
+    inline UpdateIntegrationResult& WithTlsConfig(TlsConfig&& value) { SetTlsConfig(std::move(value)); return *this;}
+
   private:
 
     IntegrationType m_type;
@@ -1568,6 +1595,8 @@ namespace Model
     Aws::Vector<Aws::String> m_cacheKeyParameters;
 
     Aws::Map<Aws::String, IntegrationResponse> m_integrationResponses;
+
+    TlsConfig m_tlsConfig;
   };
 
 } // namespace Model

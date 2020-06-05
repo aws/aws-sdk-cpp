@@ -24,7 +24,8 @@ using namespace Aws::Utils;
 
 DescribeProductRequest::DescribeProductRequest() : 
     m_acceptLanguageHasBeenSet(false),
-    m_idHasBeenSet(false)
+    m_idHasBeenSet(false),
+    m_nameHasBeenSet(false)
 {
 }
 
@@ -41,6 +42,12 @@ Aws::String DescribeProductRequest::SerializePayload() const
   if(m_idHasBeenSet)
   {
    payload.WithString("Id", m_id);
+
+  }
+
+  if(m_nameHasBeenSet)
+  {
+   payload.WithString("Name", m_name);
 
   }
 

@@ -31,6 +31,7 @@ namespace Model
 BatchInferenceJob::BatchInferenceJob() : 
     m_jobNameHasBeenSet(false),
     m_batchInferenceJobArnHasBeenSet(false),
+    m_filterArnHasBeenSet(false),
     m_failureReasonHasBeenSet(false),
     m_solutionVersionArnHasBeenSet(false),
     m_numResults(0),
@@ -47,6 +48,7 @@ BatchInferenceJob::BatchInferenceJob() :
 BatchInferenceJob::BatchInferenceJob(JsonView jsonValue) : 
     m_jobNameHasBeenSet(false),
     m_batchInferenceJobArnHasBeenSet(false),
+    m_filterArnHasBeenSet(false),
     m_failureReasonHasBeenSet(false),
     m_solutionVersionArnHasBeenSet(false),
     m_numResults(0),
@@ -75,6 +77,13 @@ BatchInferenceJob& BatchInferenceJob::operator =(JsonView jsonValue)
     m_batchInferenceJobArn = jsonValue.GetString("batchInferenceJobArn");
 
     m_batchInferenceJobArnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("filterArn"))
+  {
+    m_filterArn = jsonValue.GetString("filterArn");
+
+    m_filterArnHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("failureReason"))
@@ -156,6 +165,12 @@ JsonValue BatchInferenceJob::Jsonize() const
   if(m_batchInferenceJobArnHasBeenSet)
   {
    payload.WithString("batchInferenceJobArn", m_batchInferenceJobArn);
+
+  }
+
+  if(m_filterArnHasBeenSet)
+  {
+   payload.WithString("filterArn", m_filterArn);
 
   }
 

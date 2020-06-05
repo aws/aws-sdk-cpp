@@ -133,6 +133,47 @@ namespace Model
 
 
     /**
+     * <p>The ARN of the filter used on the batch inference job.</p>
+     */
+    inline const Aws::String& GetFilterArn() const{ return m_filterArn; }
+
+    /**
+     * <p>The ARN of the filter used on the batch inference job.</p>
+     */
+    inline bool FilterArnHasBeenSet() const { return m_filterArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the filter used on the batch inference job.</p>
+     */
+    inline void SetFilterArn(const Aws::String& value) { m_filterArnHasBeenSet = true; m_filterArn = value; }
+
+    /**
+     * <p>The ARN of the filter used on the batch inference job.</p>
+     */
+    inline void SetFilterArn(Aws::String&& value) { m_filterArnHasBeenSet = true; m_filterArn = std::move(value); }
+
+    /**
+     * <p>The ARN of the filter used on the batch inference job.</p>
+     */
+    inline void SetFilterArn(const char* value) { m_filterArnHasBeenSet = true; m_filterArn.assign(value); }
+
+    /**
+     * <p>The ARN of the filter used on the batch inference job.</p>
+     */
+    inline BatchInferenceJob& WithFilterArn(const Aws::String& value) { SetFilterArn(value); return *this;}
+
+    /**
+     * <p>The ARN of the filter used on the batch inference job.</p>
+     */
+    inline BatchInferenceJob& WithFilterArn(Aws::String&& value) { SetFilterArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The ARN of the filter used on the batch inference job.</p>
+     */
+    inline BatchInferenceJob& WithFilterArn(const char* value) { SetFilterArn(value); return *this;}
+
+
+    /**
      * <p>If the batch inference job failed, the reason for the failure.</p>
      */
     inline const Aws::String& GetFailureReason() const{ return m_failureReason; }
@@ -495,6 +536,9 @@ namespace Model
 
     Aws::String m_batchInferenceJobArn;
     bool m_batchInferenceJobArnHasBeenSet;
+
+    Aws::String m_filterArn;
+    bool m_filterArnHasBeenSet;
 
     Aws::String m_failureReason;
     bool m_failureReasonHasBeenSet;

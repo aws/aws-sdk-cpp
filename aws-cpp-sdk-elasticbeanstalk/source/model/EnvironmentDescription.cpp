@@ -55,6 +55,7 @@ EnvironmentDescription::EnvironmentDescription() :
     m_tierHasBeenSet(false),
     m_environmentLinksHasBeenSet(false),
     m_environmentArnHasBeenSet(false),
+    m_operationsRoleHasBeenSet(false),
     m_responseMetadataHasBeenSet(false)
 {
 }
@@ -84,6 +85,7 @@ EnvironmentDescription::EnvironmentDescription(const XmlNode& xmlNode) :
     m_tierHasBeenSet(false),
     m_environmentLinksHasBeenSet(false),
     m_environmentArnHasBeenSet(false),
+    m_operationsRoleHasBeenSet(false),
     m_responseMetadataHasBeenSet(false)
 {
   *this = xmlNode;
@@ -221,6 +223,12 @@ EnvironmentDescription& EnvironmentDescription::operator =(const XmlNode& xmlNod
       m_environmentArn = Aws::Utils::Xml::DecodeEscapedXmlText(environmentArnNode.GetText());
       m_environmentArnHasBeenSet = true;
     }
+    XmlNode operationsRoleNode = resultNode.FirstChild("OperationsRole");
+    if(!operationsRoleNode.IsNull())
+    {
+      m_operationsRole = Aws::Utils::Xml::DecodeEscapedXmlText(operationsRoleNode.GetText());
+      m_operationsRoleHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -338,6 +346,11 @@ void EnvironmentDescription::OutputToStream(Aws::OStream& oStream, const char* l
       oStream << location << index << locationValue << ".EnvironmentArn=" << StringUtils::URLEncode(m_environmentArn.c_str()) << "&";
   }
 
+  if(m_operationsRoleHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".OperationsRole=" << StringUtils::URLEncode(m_operationsRole.c_str()) << "&";
+  }
+
   if(m_responseMetadataHasBeenSet)
   {
       Aws::StringStream responseMetadataLocationAndMemberSs;
@@ -438,6 +451,10 @@ void EnvironmentDescription::OutputToStream(Aws::OStream& oStream, const char* l
   if(m_environmentArnHasBeenSet)
   {
       oStream << location << ".EnvironmentArn=" << StringUtils::URLEncode(m_environmentArn.c_str()) << "&";
+  }
+  if(m_operationsRoleHasBeenSet)
+  {
+      oStream << location << ".OperationsRole=" << StringUtils::URLEncode(m_operationsRole.c_str()) << "&";
   }
   if(m_responseMetadataHasBeenSet)
   {

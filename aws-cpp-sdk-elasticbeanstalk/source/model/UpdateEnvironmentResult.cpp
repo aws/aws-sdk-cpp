@@ -162,6 +162,11 @@ UpdateEnvironmentResult& UpdateEnvironmentResult::operator =(const Aws::AmazonWe
     {
       m_environmentArn = Aws::Utils::Xml::DecodeEscapedXmlText(environmentArnNode.GetText());
     }
+    XmlNode operationsRoleNode = resultNode.FirstChild("OperationsRole");
+    if(!operationsRoleNode.IsNull())
+    {
+      m_operationsRole = Aws::Utils::Xml::DecodeEscapedXmlText(operationsRoleNode.GetText());
+    }
   }
 
   if (!rootNode.IsNull()) {

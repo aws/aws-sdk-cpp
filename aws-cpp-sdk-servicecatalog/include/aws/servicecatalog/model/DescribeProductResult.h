@@ -19,6 +19,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/servicecatalog/model/ProvisioningArtifact.h>
 #include <aws/servicecatalog/model/BudgetDetail.h>
+#include <aws/servicecatalog/model/LaunchPath.h>
 #include <utility>
 
 namespace Aws
@@ -142,6 +143,42 @@ namespace Model
      */
     inline DescribeProductResult& AddBudgets(BudgetDetail&& value) { m_budgets.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>Information about the associated launch paths.</p>
+     */
+    inline const Aws::Vector<LaunchPath>& GetLaunchPaths() const{ return m_launchPaths; }
+
+    /**
+     * <p>Information about the associated launch paths.</p>
+     */
+    inline void SetLaunchPaths(const Aws::Vector<LaunchPath>& value) { m_launchPaths = value; }
+
+    /**
+     * <p>Information about the associated launch paths.</p>
+     */
+    inline void SetLaunchPaths(Aws::Vector<LaunchPath>&& value) { m_launchPaths = std::move(value); }
+
+    /**
+     * <p>Information about the associated launch paths.</p>
+     */
+    inline DescribeProductResult& WithLaunchPaths(const Aws::Vector<LaunchPath>& value) { SetLaunchPaths(value); return *this;}
+
+    /**
+     * <p>Information about the associated launch paths.</p>
+     */
+    inline DescribeProductResult& WithLaunchPaths(Aws::Vector<LaunchPath>&& value) { SetLaunchPaths(std::move(value)); return *this;}
+
+    /**
+     * <p>Information about the associated launch paths.</p>
+     */
+    inline DescribeProductResult& AddLaunchPaths(const LaunchPath& value) { m_launchPaths.push_back(value); return *this; }
+
+    /**
+     * <p>Information about the associated launch paths.</p>
+     */
+    inline DescribeProductResult& AddLaunchPaths(LaunchPath&& value) { m_launchPaths.push_back(std::move(value)); return *this; }
+
   private:
 
     ProductViewSummary m_productViewSummary;
@@ -149,6 +186,8 @@ namespace Model
     Aws::Vector<ProvisioningArtifact> m_provisioningArtifacts;
 
     Aws::Vector<BudgetDetail> m_budgets;
+
+    Aws::Vector<LaunchPath> m_launchPaths;
   };
 
 } // namespace Model

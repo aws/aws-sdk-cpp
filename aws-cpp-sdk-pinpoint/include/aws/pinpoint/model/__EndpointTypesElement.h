@@ -26,6 +26,7 @@ namespace Model
   enum class __EndpointTypesElement
   {
     NOT_SET,
+    PUSH,
     GCM,
     APNS,
     APNS_SANDBOX,

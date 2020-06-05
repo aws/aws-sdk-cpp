@@ -27,6 +27,7 @@
 #include <aws/personalize/model/CreateDatasetGroupResult.h>
 #include <aws/personalize/model/CreateDatasetImportJobResult.h>
 #include <aws/personalize/model/CreateEventTrackerResult.h>
+#include <aws/personalize/model/CreateFilterResult.h>
 #include <aws/personalize/model/CreateSchemaResult.h>
 #include <aws/personalize/model/CreateSolutionResult.h>
 #include <aws/personalize/model/CreateSolutionVersionResult.h>
@@ -38,6 +39,7 @@
 #include <aws/personalize/model/DescribeDatasetImportJobResult.h>
 #include <aws/personalize/model/DescribeEventTrackerResult.h>
 #include <aws/personalize/model/DescribeFeatureTransformationResult.h>
+#include <aws/personalize/model/DescribeFilterResult.h>
 #include <aws/personalize/model/DescribeRecipeResult.h>
 #include <aws/personalize/model/DescribeSchemaResult.h>
 #include <aws/personalize/model/DescribeSolutionResult.h>
@@ -49,6 +51,7 @@
 #include <aws/personalize/model/ListDatasetImportJobsResult.h>
 #include <aws/personalize/model/ListDatasetsResult.h>
 #include <aws/personalize/model/ListEventTrackersResult.h>
+#include <aws/personalize/model/ListFiltersResult.h>
 #include <aws/personalize/model/ListRecipesResult.h>
 #include <aws/personalize/model/ListSchemasResult.h>
 #include <aws/personalize/model/ListSolutionVersionsResult.h>
@@ -100,6 +103,7 @@ namespace Model
         class CreateDatasetGroupRequest;
         class CreateDatasetImportJobRequest;
         class CreateEventTrackerRequest;
+        class CreateFilterRequest;
         class CreateSchemaRequest;
         class CreateSolutionRequest;
         class CreateSolutionVersionRequest;
@@ -107,6 +111,7 @@ namespace Model
         class DeleteDatasetRequest;
         class DeleteDatasetGroupRequest;
         class DeleteEventTrackerRequest;
+        class DeleteFilterRequest;
         class DeleteSchemaRequest;
         class DeleteSolutionRequest;
         class DescribeAlgorithmRequest;
@@ -117,6 +122,7 @@ namespace Model
         class DescribeDatasetImportJobRequest;
         class DescribeEventTrackerRequest;
         class DescribeFeatureTransformationRequest;
+        class DescribeFilterRequest;
         class DescribeRecipeRequest;
         class DescribeSchemaRequest;
         class DescribeSolutionRequest;
@@ -128,6 +134,7 @@ namespace Model
         class ListDatasetImportJobsRequest;
         class ListDatasetsRequest;
         class ListEventTrackersRequest;
+        class ListFiltersRequest;
         class ListRecipesRequest;
         class ListSchemasRequest;
         class ListSolutionVersionsRequest;
@@ -140,6 +147,7 @@ namespace Model
         typedef Aws::Utils::Outcome<CreateDatasetGroupResult, Aws::Client::AWSError<PersonalizeErrors>> CreateDatasetGroupOutcome;
         typedef Aws::Utils::Outcome<CreateDatasetImportJobResult, Aws::Client::AWSError<PersonalizeErrors>> CreateDatasetImportJobOutcome;
         typedef Aws::Utils::Outcome<CreateEventTrackerResult, Aws::Client::AWSError<PersonalizeErrors>> CreateEventTrackerOutcome;
+        typedef Aws::Utils::Outcome<CreateFilterResult, Aws::Client::AWSError<PersonalizeErrors>> CreateFilterOutcome;
         typedef Aws::Utils::Outcome<CreateSchemaResult, Aws::Client::AWSError<PersonalizeErrors>> CreateSchemaOutcome;
         typedef Aws::Utils::Outcome<CreateSolutionResult, Aws::Client::AWSError<PersonalizeErrors>> CreateSolutionOutcome;
         typedef Aws::Utils::Outcome<CreateSolutionVersionResult, Aws::Client::AWSError<PersonalizeErrors>> CreateSolutionVersionOutcome;
@@ -147,6 +155,7 @@ namespace Model
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<PersonalizeErrors>> DeleteDatasetOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<PersonalizeErrors>> DeleteDatasetGroupOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<PersonalizeErrors>> DeleteEventTrackerOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<PersonalizeErrors>> DeleteFilterOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<PersonalizeErrors>> DeleteSchemaOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<PersonalizeErrors>> DeleteSolutionOutcome;
         typedef Aws::Utils::Outcome<DescribeAlgorithmResult, Aws::Client::AWSError<PersonalizeErrors>> DescribeAlgorithmOutcome;
@@ -157,6 +166,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribeDatasetImportJobResult, Aws::Client::AWSError<PersonalizeErrors>> DescribeDatasetImportJobOutcome;
         typedef Aws::Utils::Outcome<DescribeEventTrackerResult, Aws::Client::AWSError<PersonalizeErrors>> DescribeEventTrackerOutcome;
         typedef Aws::Utils::Outcome<DescribeFeatureTransformationResult, Aws::Client::AWSError<PersonalizeErrors>> DescribeFeatureTransformationOutcome;
+        typedef Aws::Utils::Outcome<DescribeFilterResult, Aws::Client::AWSError<PersonalizeErrors>> DescribeFilterOutcome;
         typedef Aws::Utils::Outcome<DescribeRecipeResult, Aws::Client::AWSError<PersonalizeErrors>> DescribeRecipeOutcome;
         typedef Aws::Utils::Outcome<DescribeSchemaResult, Aws::Client::AWSError<PersonalizeErrors>> DescribeSchemaOutcome;
         typedef Aws::Utils::Outcome<DescribeSolutionResult, Aws::Client::AWSError<PersonalizeErrors>> DescribeSolutionOutcome;
@@ -168,6 +178,7 @@ namespace Model
         typedef Aws::Utils::Outcome<ListDatasetImportJobsResult, Aws::Client::AWSError<PersonalizeErrors>> ListDatasetImportJobsOutcome;
         typedef Aws::Utils::Outcome<ListDatasetsResult, Aws::Client::AWSError<PersonalizeErrors>> ListDatasetsOutcome;
         typedef Aws::Utils::Outcome<ListEventTrackersResult, Aws::Client::AWSError<PersonalizeErrors>> ListEventTrackersOutcome;
+        typedef Aws::Utils::Outcome<ListFiltersResult, Aws::Client::AWSError<PersonalizeErrors>> ListFiltersOutcome;
         typedef Aws::Utils::Outcome<ListRecipesResult, Aws::Client::AWSError<PersonalizeErrors>> ListRecipesOutcome;
         typedef Aws::Utils::Outcome<ListSchemasResult, Aws::Client::AWSError<PersonalizeErrors>> ListSchemasOutcome;
         typedef Aws::Utils::Outcome<ListSolutionVersionsResult, Aws::Client::AWSError<PersonalizeErrors>> ListSolutionVersionsOutcome;
@@ -180,6 +191,7 @@ namespace Model
         typedef std::future<CreateDatasetGroupOutcome> CreateDatasetGroupOutcomeCallable;
         typedef std::future<CreateDatasetImportJobOutcome> CreateDatasetImportJobOutcomeCallable;
         typedef std::future<CreateEventTrackerOutcome> CreateEventTrackerOutcomeCallable;
+        typedef std::future<CreateFilterOutcome> CreateFilterOutcomeCallable;
         typedef std::future<CreateSchemaOutcome> CreateSchemaOutcomeCallable;
         typedef std::future<CreateSolutionOutcome> CreateSolutionOutcomeCallable;
         typedef std::future<CreateSolutionVersionOutcome> CreateSolutionVersionOutcomeCallable;
@@ -187,6 +199,7 @@ namespace Model
         typedef std::future<DeleteDatasetOutcome> DeleteDatasetOutcomeCallable;
         typedef std::future<DeleteDatasetGroupOutcome> DeleteDatasetGroupOutcomeCallable;
         typedef std::future<DeleteEventTrackerOutcome> DeleteEventTrackerOutcomeCallable;
+        typedef std::future<DeleteFilterOutcome> DeleteFilterOutcomeCallable;
         typedef std::future<DeleteSchemaOutcome> DeleteSchemaOutcomeCallable;
         typedef std::future<DeleteSolutionOutcome> DeleteSolutionOutcomeCallable;
         typedef std::future<DescribeAlgorithmOutcome> DescribeAlgorithmOutcomeCallable;
@@ -197,6 +210,7 @@ namespace Model
         typedef std::future<DescribeDatasetImportJobOutcome> DescribeDatasetImportJobOutcomeCallable;
         typedef std::future<DescribeEventTrackerOutcome> DescribeEventTrackerOutcomeCallable;
         typedef std::future<DescribeFeatureTransformationOutcome> DescribeFeatureTransformationOutcomeCallable;
+        typedef std::future<DescribeFilterOutcome> DescribeFilterOutcomeCallable;
         typedef std::future<DescribeRecipeOutcome> DescribeRecipeOutcomeCallable;
         typedef std::future<DescribeSchemaOutcome> DescribeSchemaOutcomeCallable;
         typedef std::future<DescribeSolutionOutcome> DescribeSolutionOutcomeCallable;
@@ -208,6 +222,7 @@ namespace Model
         typedef std::future<ListDatasetImportJobsOutcome> ListDatasetImportJobsOutcomeCallable;
         typedef std::future<ListDatasetsOutcome> ListDatasetsOutcomeCallable;
         typedef std::future<ListEventTrackersOutcome> ListEventTrackersOutcomeCallable;
+        typedef std::future<ListFiltersOutcome> ListFiltersOutcomeCallable;
         typedef std::future<ListRecipesOutcome> ListRecipesOutcomeCallable;
         typedef std::future<ListSchemasOutcome> ListSchemasOutcomeCallable;
         typedef std::future<ListSolutionVersionsOutcome> ListSolutionVersionsOutcomeCallable;
@@ -223,6 +238,7 @@ namespace Model
     typedef std::function<void(const PersonalizeClient*, const Model::CreateDatasetGroupRequest&, const Model::CreateDatasetGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDatasetGroupResponseReceivedHandler;
     typedef std::function<void(const PersonalizeClient*, const Model::CreateDatasetImportJobRequest&, const Model::CreateDatasetImportJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDatasetImportJobResponseReceivedHandler;
     typedef std::function<void(const PersonalizeClient*, const Model::CreateEventTrackerRequest&, const Model::CreateEventTrackerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateEventTrackerResponseReceivedHandler;
+    typedef std::function<void(const PersonalizeClient*, const Model::CreateFilterRequest&, const Model::CreateFilterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateFilterResponseReceivedHandler;
     typedef std::function<void(const PersonalizeClient*, const Model::CreateSchemaRequest&, const Model::CreateSchemaOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateSchemaResponseReceivedHandler;
     typedef std::function<void(const PersonalizeClient*, const Model::CreateSolutionRequest&, const Model::CreateSolutionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateSolutionResponseReceivedHandler;
     typedef std::function<void(const PersonalizeClient*, const Model::CreateSolutionVersionRequest&, const Model::CreateSolutionVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateSolutionVersionResponseReceivedHandler;
@@ -230,6 +246,7 @@ namespace Model
     typedef std::function<void(const PersonalizeClient*, const Model::DeleteDatasetRequest&, const Model::DeleteDatasetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDatasetResponseReceivedHandler;
     typedef std::function<void(const PersonalizeClient*, const Model::DeleteDatasetGroupRequest&, const Model::DeleteDatasetGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDatasetGroupResponseReceivedHandler;
     typedef std::function<void(const PersonalizeClient*, const Model::DeleteEventTrackerRequest&, const Model::DeleteEventTrackerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteEventTrackerResponseReceivedHandler;
+    typedef std::function<void(const PersonalizeClient*, const Model::DeleteFilterRequest&, const Model::DeleteFilterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteFilterResponseReceivedHandler;
     typedef std::function<void(const PersonalizeClient*, const Model::DeleteSchemaRequest&, const Model::DeleteSchemaOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteSchemaResponseReceivedHandler;
     typedef std::function<void(const PersonalizeClient*, const Model::DeleteSolutionRequest&, const Model::DeleteSolutionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteSolutionResponseReceivedHandler;
     typedef std::function<void(const PersonalizeClient*, const Model::DescribeAlgorithmRequest&, const Model::DescribeAlgorithmOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAlgorithmResponseReceivedHandler;
@@ -240,6 +257,7 @@ namespace Model
     typedef std::function<void(const PersonalizeClient*, const Model::DescribeDatasetImportJobRequest&, const Model::DescribeDatasetImportJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDatasetImportJobResponseReceivedHandler;
     typedef std::function<void(const PersonalizeClient*, const Model::DescribeEventTrackerRequest&, const Model::DescribeEventTrackerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeEventTrackerResponseReceivedHandler;
     typedef std::function<void(const PersonalizeClient*, const Model::DescribeFeatureTransformationRequest&, const Model::DescribeFeatureTransformationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeFeatureTransformationResponseReceivedHandler;
+    typedef std::function<void(const PersonalizeClient*, const Model::DescribeFilterRequest&, const Model::DescribeFilterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeFilterResponseReceivedHandler;
     typedef std::function<void(const PersonalizeClient*, const Model::DescribeRecipeRequest&, const Model::DescribeRecipeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeRecipeResponseReceivedHandler;
     typedef std::function<void(const PersonalizeClient*, const Model::DescribeSchemaRequest&, const Model::DescribeSchemaOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeSchemaResponseReceivedHandler;
     typedef std::function<void(const PersonalizeClient*, const Model::DescribeSolutionRequest&, const Model::DescribeSolutionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeSolutionResponseReceivedHandler;
@@ -251,6 +269,7 @@ namespace Model
     typedef std::function<void(const PersonalizeClient*, const Model::ListDatasetImportJobsRequest&, const Model::ListDatasetImportJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDatasetImportJobsResponseReceivedHandler;
     typedef std::function<void(const PersonalizeClient*, const Model::ListDatasetsRequest&, const Model::ListDatasetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDatasetsResponseReceivedHandler;
     typedef std::function<void(const PersonalizeClient*, const Model::ListEventTrackersRequest&, const Model::ListEventTrackersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListEventTrackersResponseReceivedHandler;
+    typedef std::function<void(const PersonalizeClient*, const Model::ListFiltersRequest&, const Model::ListFiltersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListFiltersResponseReceivedHandler;
     typedef std::function<void(const PersonalizeClient*, const Model::ListRecipesRequest&, const Model::ListRecipesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListRecipesResponseReceivedHandler;
     typedef std::function<void(const PersonalizeClient*, const Model::ListSchemasRequest&, const Model::ListSchemasOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSchemasResponseReceivedHandler;
     typedef std::function<void(const PersonalizeClient*, const Model::ListSolutionVersionsRequest&, const Model::ListSolutionVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSolutionVersionsResponseReceivedHandler;
@@ -732,6 +751,34 @@ namespace Model
         virtual void CreateEventTrackerAsync(const Model::CreateEventTrackerRequest& request, const CreateEventTrackerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Creates a recommendation filter. For more information, see Using Filters with
+         * Amazon Personalize.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/CreateFilter">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateFilterOutcome CreateFilter(const Model::CreateFilterRequest& request) const;
+
+        /**
+         * <p>Creates a recommendation filter. For more information, see Using Filters with
+         * Amazon Personalize.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/CreateFilter">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateFilterOutcomeCallable CreateFilterCallable(const Model::CreateFilterRequest& request) const;
+
+        /**
+         * <p>Creates a recommendation filter. For more information, see Using Filters with
+         * Amazon Personalize.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/CreateFilter">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateFilterAsync(const Model::CreateFilterRequest& request, const CreateFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Creates an Amazon Personalize schema from the specified schema string. The
          * schema you create must be in Avro JSON format.</p> <p>Amazon Personalize
          * recognizes three schema variants. Each schema is associated with a dataset type
@@ -1081,6 +1128,31 @@ namespace Model
         virtual void DeleteEventTrackerAsync(const Model::DeleteEventTrackerRequest& request, const DeleteEventTrackerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Deletes a filter.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DeleteFilter">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteFilterOutcome DeleteFilter(const Model::DeleteFilterRequest& request) const;
+
+        /**
+         * <p>Deletes a filter.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DeleteFilter">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteFilterOutcomeCallable DeleteFilterCallable(const Model::DeleteFilterRequest& request) const;
+
+        /**
+         * <p>Deletes a filter.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DeleteFilter">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteFilterAsync(const Model::DeleteFilterRequest& request, const DeleteFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Deletes a schema. Before deleting a schema, you must delete all datasets
          * referencing the schema. For more information on schemas, see
          * <a>CreateSchema</a>.</p><p><h3>See Also:</h3>   <a
@@ -1392,6 +1464,31 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeFeatureTransformationAsync(const Model::DescribeFeatureTransformationRequest& request, const DescribeFeatureTransformationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Describes a filter's properties.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DescribeFilter">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeFilterOutcome DescribeFilter(const Model::DescribeFilterRequest& request) const;
+
+        /**
+         * <p>Describes a filter's properties.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DescribeFilter">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeFilterOutcomeCallable DescribeFilterCallable(const Model::DescribeFilterRequest& request) const;
+
+        /**
+         * <p>Describes a filter's properties.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DescribeFilter">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeFilterAsync(const Model::DescribeFilterRequest& request, const DescribeFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes a recipe.</p> <p>A recipe contains three items:</p> <ul> <li> <p>An
@@ -1765,6 +1862,34 @@ namespace Model
         virtual void ListEventTrackersAsync(const Model::ListEventTrackersRequest& request, const ListEventTrackersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Lists all filters that belong to a given dataset group.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/ListFilters">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListFiltersOutcome ListFilters(const Model::ListFiltersRequest& request) const;
+
+        /**
+         * <p>Lists all filters that belong to a given dataset group.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/ListFilters">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListFiltersOutcomeCallable ListFiltersCallable(const Model::ListFiltersRequest& request) const;
+
+        /**
+         * <p>Lists all filters that belong to a given dataset group.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/ListFilters">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListFiltersAsync(const Model::ListFiltersRequest& request, const ListFiltersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Returns a list of available recipes. The response provides the properties for
          * each recipe, including the recipe's Amazon Resource Name (ARN).</p><p><h3>See
          * Also:</h3>   <a
@@ -1959,6 +2084,7 @@ namespace Model
         void CreateDatasetGroupAsyncHelper(const Model::CreateDatasetGroupRequest& request, const CreateDatasetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateDatasetImportJobAsyncHelper(const Model::CreateDatasetImportJobRequest& request, const CreateDatasetImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateEventTrackerAsyncHelper(const Model::CreateEventTrackerRequest& request, const CreateEventTrackerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateFilterAsyncHelper(const Model::CreateFilterRequest& request, const CreateFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateSchemaAsyncHelper(const Model::CreateSchemaRequest& request, const CreateSchemaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateSolutionAsyncHelper(const Model::CreateSolutionRequest& request, const CreateSolutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateSolutionVersionAsyncHelper(const Model::CreateSolutionVersionRequest& request, const CreateSolutionVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1966,6 +2092,7 @@ namespace Model
         void DeleteDatasetAsyncHelper(const Model::DeleteDatasetRequest& request, const DeleteDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteDatasetGroupAsyncHelper(const Model::DeleteDatasetGroupRequest& request, const DeleteDatasetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteEventTrackerAsyncHelper(const Model::DeleteEventTrackerRequest& request, const DeleteEventTrackerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteFilterAsyncHelper(const Model::DeleteFilterRequest& request, const DeleteFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteSchemaAsyncHelper(const Model::DeleteSchemaRequest& request, const DeleteSchemaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteSolutionAsyncHelper(const Model::DeleteSolutionRequest& request, const DeleteSolutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeAlgorithmAsyncHelper(const Model::DescribeAlgorithmRequest& request, const DescribeAlgorithmResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1976,6 +2103,7 @@ namespace Model
         void DescribeDatasetImportJobAsyncHelper(const Model::DescribeDatasetImportJobRequest& request, const DescribeDatasetImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeEventTrackerAsyncHelper(const Model::DescribeEventTrackerRequest& request, const DescribeEventTrackerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeFeatureTransformationAsyncHelper(const Model::DescribeFeatureTransformationRequest& request, const DescribeFeatureTransformationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeFilterAsyncHelper(const Model::DescribeFilterRequest& request, const DescribeFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeRecipeAsyncHelper(const Model::DescribeRecipeRequest& request, const DescribeRecipeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeSchemaAsyncHelper(const Model::DescribeSchemaRequest& request, const DescribeSchemaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeSolutionAsyncHelper(const Model::DescribeSolutionRequest& request, const DescribeSolutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1987,6 +2115,7 @@ namespace Model
         void ListDatasetImportJobsAsyncHelper(const Model::ListDatasetImportJobsRequest& request, const ListDatasetImportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListDatasetsAsyncHelper(const Model::ListDatasetsRequest& request, const ListDatasetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListEventTrackersAsyncHelper(const Model::ListEventTrackersRequest& request, const ListEventTrackersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListFiltersAsyncHelper(const Model::ListFiltersRequest& request, const ListFiltersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListRecipesAsyncHelper(const Model::ListRecipesRequest& request, const ListRecipesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListSchemasAsyncHelper(const Model::ListSchemasRequest& request, const ListSchemasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListSolutionVersionsAsyncHelper(const Model::ListSolutionVersionsRequest& request, const ListSolutionVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

@@ -32,6 +32,7 @@
 #include <aws/elasticbeanstalk/ElasticBeanstalkErrorMarshaller.h>
 #include <aws/elasticbeanstalk/model/AbortEnvironmentUpdateRequest.h>
 #include <aws/elasticbeanstalk/model/ApplyEnvironmentManagedActionRequest.h>
+#include <aws/elasticbeanstalk/model/AssociateEnvironmentOperationsRoleRequest.h>
 #include <aws/elasticbeanstalk/model/CheckDNSAvailabilityRequest.h>
 #include <aws/elasticbeanstalk/model/ComposeEnvironmentsRequest.h>
 #include <aws/elasticbeanstalk/model/CreateApplicationRequest.h>
@@ -58,6 +59,7 @@
 #include <aws/elasticbeanstalk/model/DescribeEventsRequest.h>
 #include <aws/elasticbeanstalk/model/DescribeInstancesHealthRequest.h>
 #include <aws/elasticbeanstalk/model/DescribePlatformVersionRequest.h>
+#include <aws/elasticbeanstalk/model/DisassociateEnvironmentOperationsRoleRequest.h>
 #include <aws/elasticbeanstalk/model/ListAvailableSolutionStacksRequest.h>
 #include <aws/elasticbeanstalk/model/ListPlatformBranchesRequest.h>
 #include <aws/elasticbeanstalk/model/ListPlatformVersionsRequest.h>
@@ -227,6 +229,41 @@ void ElasticBeanstalkClient::ApplyEnvironmentManagedActionAsync(const ApplyEnvir
 void ElasticBeanstalkClient::ApplyEnvironmentManagedActionAsyncHelper(const ApplyEnvironmentManagedActionRequest& request, const ApplyEnvironmentManagedActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ApplyEnvironmentManagedAction(request), context);
+}
+
+AssociateEnvironmentOperationsRoleOutcome ElasticBeanstalkClient::AssociateEnvironmentOperationsRole(const AssociateEnvironmentOperationsRoleRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return AssociateEnvironmentOperationsRoleOutcome(NoResult());
+  }
+  else
+  {
+    return AssociateEnvironmentOperationsRoleOutcome(outcome.GetError());
+  }
+}
+
+AssociateEnvironmentOperationsRoleOutcomeCallable ElasticBeanstalkClient::AssociateEnvironmentOperationsRoleCallable(const AssociateEnvironmentOperationsRoleRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< AssociateEnvironmentOperationsRoleOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AssociateEnvironmentOperationsRole(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ElasticBeanstalkClient::AssociateEnvironmentOperationsRoleAsync(const AssociateEnvironmentOperationsRoleRequest& request, const AssociateEnvironmentOperationsRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->AssociateEnvironmentOperationsRoleAsyncHelper( request, handler, context ); } );
+}
+
+void ElasticBeanstalkClient::AssociateEnvironmentOperationsRoleAsyncHelper(const AssociateEnvironmentOperationsRoleRequest& request, const AssociateEnvironmentOperationsRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, AssociateEnvironmentOperationsRole(request), context);
 }
 
 CheckDNSAvailabilityOutcome ElasticBeanstalkClient::CheckDNSAvailability(const CheckDNSAvailabilityRequest& request) const
@@ -1137,6 +1174,41 @@ void ElasticBeanstalkClient::DescribePlatformVersionAsync(const DescribePlatform
 void ElasticBeanstalkClient::DescribePlatformVersionAsyncHelper(const DescribePlatformVersionRequest& request, const DescribePlatformVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribePlatformVersion(request), context);
+}
+
+DisassociateEnvironmentOperationsRoleOutcome ElasticBeanstalkClient::DisassociateEnvironmentOperationsRole(const DisassociateEnvironmentOperationsRoleRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DisassociateEnvironmentOperationsRoleOutcome(NoResult());
+  }
+  else
+  {
+    return DisassociateEnvironmentOperationsRoleOutcome(outcome.GetError());
+  }
+}
+
+DisassociateEnvironmentOperationsRoleOutcomeCallable ElasticBeanstalkClient::DisassociateEnvironmentOperationsRoleCallable(const DisassociateEnvironmentOperationsRoleRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DisassociateEnvironmentOperationsRoleOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DisassociateEnvironmentOperationsRole(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ElasticBeanstalkClient::DisassociateEnvironmentOperationsRoleAsync(const DisassociateEnvironmentOperationsRoleRequest& request, const DisassociateEnvironmentOperationsRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DisassociateEnvironmentOperationsRoleAsyncHelper( request, handler, context ); } );
+}
+
+void ElasticBeanstalkClient::DisassociateEnvironmentOperationsRoleAsyncHelper(const DisassociateEnvironmentOperationsRoleRequest& request, const DisassociateEnvironmentOperationsRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DisassociateEnvironmentOperationsRole(request), context);
 }
 
 ListAvailableSolutionStacksOutcome ElasticBeanstalkClient::ListAvailableSolutionStacks(const ListAvailableSolutionStacksRequest& request) const

@@ -46,7 +46,8 @@ Integration::Integration() :
     m_timeoutInMillisHasBeenSet(false),
     m_cacheNamespaceHasBeenSet(false),
     m_cacheKeyParametersHasBeenSet(false),
-    m_integrationResponsesHasBeenSet(false)
+    m_integrationResponsesHasBeenSet(false),
+    m_tlsConfigHasBeenSet(false)
 {
 }
 
@@ -68,7 +69,8 @@ Integration::Integration(JsonView jsonValue) :
     m_timeoutInMillisHasBeenSet(false),
     m_cacheNamespaceHasBeenSet(false),
     m_cacheKeyParametersHasBeenSet(false),
-    m_integrationResponsesHasBeenSet(false)
+    m_integrationResponsesHasBeenSet(false),
+    m_tlsConfigHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -185,6 +187,13 @@ Integration& Integration::operator =(JsonView jsonValue)
     m_integrationResponsesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("tlsConfig"))
+  {
+    m_tlsConfig = jsonValue.GetObject("tlsConfig");
+
+    m_tlsConfigHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -290,6 +299,12 @@ JsonValue Integration::Jsonize() const
      integrationResponsesJsonMap.WithObject(integrationResponsesItem.first, integrationResponsesItem.second.Jsonize());
    }
    payload.WithObject("integrationResponses", std::move(integrationResponsesJsonMap));
+
+  }
+
+  if(m_tlsConfigHasBeenSet)
+  {
+   payload.WithObject("tlsConfig", m_tlsConfig.Jsonize());
 
   }
 

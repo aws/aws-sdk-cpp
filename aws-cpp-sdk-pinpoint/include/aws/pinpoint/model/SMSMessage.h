@@ -183,50 +183,50 @@ namespace Model
 
 
     /**
-     * <p>The SMS message type. Valid values are: TRANSACTIONAL, the message is
-     * critical or time-sensitive, such as a one-time password that supports a customer
-     * transaction; and, PROMOTIONAL, the message is not critical or time-sensitive,
-     * such as a marketing message.</p>
+     * <p>The SMS message type. Valid values are TRANSACTIONAL (for messages that are
+     * critical or time-sensitive, such as a one-time passwords) and PROMOTIONAL (for
+     * messsages that aren't critical or time-sensitive, such as marketing
+     * messages).</p>
      */
     inline const MessageType& GetMessageType() const{ return m_messageType; }
 
     /**
-     * <p>The SMS message type. Valid values are: TRANSACTIONAL, the message is
-     * critical or time-sensitive, such as a one-time password that supports a customer
-     * transaction; and, PROMOTIONAL, the message is not critical or time-sensitive,
-     * such as a marketing message.</p>
+     * <p>The SMS message type. Valid values are TRANSACTIONAL (for messages that are
+     * critical or time-sensitive, such as a one-time passwords) and PROMOTIONAL (for
+     * messsages that aren't critical or time-sensitive, such as marketing
+     * messages).</p>
      */
     inline bool MessageTypeHasBeenSet() const { return m_messageTypeHasBeenSet; }
 
     /**
-     * <p>The SMS message type. Valid values are: TRANSACTIONAL, the message is
-     * critical or time-sensitive, such as a one-time password that supports a customer
-     * transaction; and, PROMOTIONAL, the message is not critical or time-sensitive,
-     * such as a marketing message.</p>
+     * <p>The SMS message type. Valid values are TRANSACTIONAL (for messages that are
+     * critical or time-sensitive, such as a one-time passwords) and PROMOTIONAL (for
+     * messsages that aren't critical or time-sensitive, such as marketing
+     * messages).</p>
      */
     inline void SetMessageType(const MessageType& value) { m_messageTypeHasBeenSet = true; m_messageType = value; }
 
     /**
-     * <p>The SMS message type. Valid values are: TRANSACTIONAL, the message is
-     * critical or time-sensitive, such as a one-time password that supports a customer
-     * transaction; and, PROMOTIONAL, the message is not critical or time-sensitive,
-     * such as a marketing message.</p>
+     * <p>The SMS message type. Valid values are TRANSACTIONAL (for messages that are
+     * critical or time-sensitive, such as a one-time passwords) and PROMOTIONAL (for
+     * messsages that aren't critical or time-sensitive, such as marketing
+     * messages).</p>
      */
     inline void SetMessageType(MessageType&& value) { m_messageTypeHasBeenSet = true; m_messageType = std::move(value); }
 
     /**
-     * <p>The SMS message type. Valid values are: TRANSACTIONAL, the message is
-     * critical or time-sensitive, such as a one-time password that supports a customer
-     * transaction; and, PROMOTIONAL, the message is not critical or time-sensitive,
-     * such as a marketing message.</p>
+     * <p>The SMS message type. Valid values are TRANSACTIONAL (for messages that are
+     * critical or time-sensitive, such as a one-time passwords) and PROMOTIONAL (for
+     * messsages that aren't critical or time-sensitive, such as marketing
+     * messages).</p>
      */
     inline SMSMessage& WithMessageType(const MessageType& value) { SetMessageType(value); return *this;}
 
     /**
-     * <p>The SMS message type. Valid values are: TRANSACTIONAL, the message is
-     * critical or time-sensitive, such as a one-time password that supports a customer
-     * transaction; and, PROMOTIONAL, the message is not critical or time-sensitive,
-     * such as a marketing message.</p>
+     * <p>The SMS message type. Valid values are TRANSACTIONAL (for messages that are
+     * critical or time-sensitive, such as a one-time passwords) and PROMOTIONAL (for
+     * messsages that aren't critical or time-sensitive, such as marketing
+     * messages).</p>
      */
     inline SMSMessage& WithMessageType(MessageType&& value) { SetMessageType(std::move(value)); return *this;}
 

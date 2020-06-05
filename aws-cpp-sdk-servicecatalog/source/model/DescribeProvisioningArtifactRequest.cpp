@@ -26,6 +26,8 @@ DescribeProvisioningArtifactRequest::DescribeProvisioningArtifactRequest() :
     m_acceptLanguageHasBeenSet(false),
     m_provisioningArtifactIdHasBeenSet(false),
     m_productIdHasBeenSet(false),
+    m_provisioningArtifactNameHasBeenSet(false),
+    m_productNameHasBeenSet(false),
     m_verbose(false),
     m_verboseHasBeenSet(false)
 {
@@ -50,6 +52,18 @@ Aws::String DescribeProvisioningArtifactRequest::SerializePayload() const
   if(m_productIdHasBeenSet)
   {
    payload.WithString("ProductId", m_productId);
+
+  }
+
+  if(m_provisioningArtifactNameHasBeenSet)
+  {
+   payload.WithString("ProvisioningArtifactName", m_provisioningArtifactName);
+
+  }
+
+  if(m_productNameHasBeenSet)
+  {
+   payload.WithString("ProductName", m_productName);
 
   }
 

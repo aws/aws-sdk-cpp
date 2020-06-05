@@ -147,9 +147,9 @@ namespace Model
 
     /**
      * <p>A map that contains the provisioned product properties to be updated.</p>
-     * <p>The <code>OWNER</code> key only accepts user ARNs. The owner is the user that
-     * is allowed to see, update, terminate, and execute service actions in the
-     * provisioned product.</p> <p>The administrator can change the owner of a
+     * <p>The <code>OWNER</code> key accepts user ARNs and role ARNs. The owner is the
+     * user that is allowed to see, update, terminate, and execute service actions in
+     * the provisioned product.</p> <p>The administrator can change the owner of a
      * provisioned product to another IAM user within the same account. Both end user
      * owners and administrators can see ownership history of the provisioned product
      * using the <code>ListRecordHistory</code> API. The new owner can describe all
@@ -167,9 +167,9 @@ namespace Model
 
     /**
      * <p>A map that contains the provisioned product properties to be updated.</p>
-     * <p>The <code>OWNER</code> key only accepts user ARNs. The owner is the user that
-     * is allowed to see, update, terminate, and execute service actions in the
-     * provisioned product.</p> <p>The administrator can change the owner of a
+     * <p>The <code>OWNER</code> key accepts user ARNs and role ARNs. The owner is the
+     * user that is allowed to see, update, terminate, and execute service actions in
+     * the provisioned product.</p> <p>The administrator can change the owner of a
      * provisioned product to another IAM user within the same account. Both end user
      * owners and administrators can see ownership history of the provisioned product
      * using the <code>ListRecordHistory</code> API. The new owner can describe all
@@ -187,9 +187,9 @@ namespace Model
 
     /**
      * <p>A map that contains the provisioned product properties to be updated.</p>
-     * <p>The <code>OWNER</code> key only accepts user ARNs. The owner is the user that
-     * is allowed to see, update, terminate, and execute service actions in the
-     * provisioned product.</p> <p>The administrator can change the owner of a
+     * <p>The <code>OWNER</code> key accepts user ARNs and role ARNs. The owner is the
+     * user that is allowed to see, update, terminate, and execute service actions in
+     * the provisioned product.</p> <p>The administrator can change the owner of a
      * provisioned product to another IAM user within the same account. Both end user
      * owners and administrators can see ownership history of the provisioned product
      * using the <code>ListRecordHistory</code> API. The new owner can describe all
@@ -207,9 +207,9 @@ namespace Model
 
     /**
      * <p>A map that contains the provisioned product properties to be updated.</p>
-     * <p>The <code>OWNER</code> key only accepts user ARNs. The owner is the user that
-     * is allowed to see, update, terminate, and execute service actions in the
-     * provisioned product.</p> <p>The administrator can change the owner of a
+     * <p>The <code>OWNER</code> key accepts user ARNs and role ARNs. The owner is the
+     * user that is allowed to see, update, terminate, and execute service actions in
+     * the provisioned product.</p> <p>The administrator can change the owner of a
      * provisioned product to another IAM user within the same account. Both end user
      * owners and administrators can see ownership history of the provisioned product
      * using the <code>ListRecordHistory</code> API. The new owner can describe all
@@ -227,9 +227,9 @@ namespace Model
 
     /**
      * <p>A map that contains the provisioned product properties to be updated.</p>
-     * <p>The <code>OWNER</code> key only accepts user ARNs. The owner is the user that
-     * is allowed to see, update, terminate, and execute service actions in the
-     * provisioned product.</p> <p>The administrator can change the owner of a
+     * <p>The <code>OWNER</code> key accepts user ARNs and role ARNs. The owner is the
+     * user that is allowed to see, update, terminate, and execute service actions in
+     * the provisioned product.</p> <p>The administrator can change the owner of a
      * provisioned product to another IAM user within the same account. Both end user
      * owners and administrators can see ownership history of the provisioned product
      * using the <code>ListRecordHistory</code> API. The new owner can describe all
@@ -247,9 +247,9 @@ namespace Model
 
     /**
      * <p>A map that contains the provisioned product properties to be updated.</p>
-     * <p>The <code>OWNER</code> key only accepts user ARNs. The owner is the user that
-     * is allowed to see, update, terminate, and execute service actions in the
-     * provisioned product.</p> <p>The administrator can change the owner of a
+     * <p>The <code>OWNER</code> key accepts user ARNs and role ARNs. The owner is the
+     * user that is allowed to see, update, terminate, and execute service actions in
+     * the provisioned product.</p> <p>The administrator can change the owner of a
      * provisioned product to another IAM user within the same account. Both end user
      * owners and administrators can see ownership history of the provisioned product
      * using the <code>ListRecordHistory</code> API. The new owner can describe all
@@ -267,9 +267,9 @@ namespace Model
 
     /**
      * <p>A map that contains the provisioned product properties to be updated.</p>
-     * <p>The <code>OWNER</code> key only accepts user ARNs. The owner is the user that
-     * is allowed to see, update, terminate, and execute service actions in the
-     * provisioned product.</p> <p>The administrator can change the owner of a
+     * <p>The <code>OWNER</code> key accepts user ARNs and role ARNs. The owner is the
+     * user that is allowed to see, update, terminate, and execute service actions in
+     * the provisioned product.</p> <p>The administrator can change the owner of a
      * provisioned product to another IAM user within the same account. Both end user
      * owners and administrators can see ownership history of the provisioned product
      * using the <code>ListRecordHistory</code> API. The new owner can describe all
@@ -287,9 +287,9 @@ namespace Model
 
     /**
      * <p>A map that contains the provisioned product properties to be updated.</p>
-     * <p>The <code>OWNER</code> key only accepts user ARNs. The owner is the user that
-     * is allowed to see, update, terminate, and execute service actions in the
-     * provisioned product.</p> <p>The administrator can change the owner of a
+     * <p>The <code>OWNER</code> key accepts user ARNs and role ARNs. The owner is the
+     * user that is allowed to see, update, terminate, and execute service actions in
+     * the provisioned product.</p> <p>The administrator can change the owner of a
      * provisioned product to another IAM user within the same account. Both end user
      * owners and administrators can see ownership history of the provisioned product
      * using the <code>ListRecordHistory</code> API. The new owner can describe all
@@ -307,9 +307,9 @@ namespace Model
 
     /**
      * <p>A map that contains the provisioned product properties to be updated.</p>
-     * <p>The <code>OWNER</code> key only accepts user ARNs. The owner is the user that
-     * is allowed to see, update, terminate, and execute service actions in the
-     * provisioned product.</p> <p>The administrator can change the owner of a
+     * <p>The <code>OWNER</code> key accepts user ARNs and role ARNs. The owner is the
+     * user that is allowed to see, update, terminate, and execute service actions in
+     * the provisioned product.</p> <p>The administrator can change the owner of a
      * provisioned product to another IAM user within the same account. Both end user
      * owners and administrators can see ownership history of the provisioned product
      * using the <code>ListRecordHistory</code> API. The new owner can describe all
@@ -327,9 +327,9 @@ namespace Model
 
     /**
      * <p>A map that contains the provisioned product properties to be updated.</p>
-     * <p>The <code>OWNER</code> key only accepts user ARNs. The owner is the user that
-     * is allowed to see, update, terminate, and execute service actions in the
-     * provisioned product.</p> <p>The administrator can change the owner of a
+     * <p>The <code>OWNER</code> key accepts user ARNs and role ARNs. The owner is the
+     * user that is allowed to see, update, terminate, and execute service actions in
+     * the provisioned product.</p> <p>The administrator can change the owner of a
      * provisioned product to another IAM user within the same account. Both end user
      * owners and administrators can see ownership history of the provisioned product
      * using the <code>ListRecordHistory</code> API. The new owner can describe all
@@ -347,9 +347,9 @@ namespace Model
 
     /**
      * <p>A map that contains the provisioned product properties to be updated.</p>
-     * <p>The <code>OWNER</code> key only accepts user ARNs. The owner is the user that
-     * is allowed to see, update, terminate, and execute service actions in the
-     * provisioned product.</p> <p>The administrator can change the owner of a
+     * <p>The <code>OWNER</code> key accepts user ARNs and role ARNs. The owner is the
+     * user that is allowed to see, update, terminate, and execute service actions in
+     * the provisioned product.</p> <p>The administrator can change the owner of a
      * provisioned product to another IAM user within the same account. Both end user
      * owners and administrators can see ownership history of the provisioned product
      * using the <code>ListRecordHistory</code> API. The new owner can describe all
@@ -367,9 +367,9 @@ namespace Model
 
     /**
      * <p>A map that contains the provisioned product properties to be updated.</p>
-     * <p>The <code>OWNER</code> key only accepts user ARNs. The owner is the user that
-     * is allowed to see, update, terminate, and execute service actions in the
-     * provisioned product.</p> <p>The administrator can change the owner of a
+     * <p>The <code>OWNER</code> key accepts user ARNs and role ARNs. The owner is the
+     * user that is allowed to see, update, terminate, and execute service actions in
+     * the provisioned product.</p> <p>The administrator can change the owner of a
      * provisioned product to another IAM user within the same account. Both end user
      * owners and administrators can see ownership history of the provisioned product
      * using the <code>ListRecordHistory</code> API. The new owner can describe all

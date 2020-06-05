@@ -30,6 +30,7 @@ namespace Aws
       namespace ChannelTypeMapper
       {
 
+        static const int PUSH_HASH = HashingUtils::HashString("PUSH");
         static const int GCM_HASH = HashingUtils::HashString("GCM");
         static const int APNS_HASH = HashingUtils::HashString("APNS");
         static const int APNS_SANDBOX_HASH = HashingUtils::HashString("APNS_SANDBOX");
@@ -46,7 +47,11 @@ namespace Aws
         ChannelType GetChannelTypeForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == GCM_HASH)
+          if (hashCode == PUSH_HASH)
+          {
+            return ChannelType::PUSH;
+          }
+          else if (hashCode == GCM_HASH)
           {
             return ChannelType::GCM;
           }
@@ -104,6 +109,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ChannelType::PUSH:
+            return "PUSH";
           case ChannelType::GCM:
             return "GCM";
           case ChannelType::APNS:

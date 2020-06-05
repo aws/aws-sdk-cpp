@@ -142,6 +142,12 @@ PutIntegrationResult& PutIntegrationResult::operator =(const Aws::AmazonWebServi
     }
   }
 
+  if(jsonValue.ValueExists("tlsConfig"))
+  {
+    m_tlsConfig = jsonValue.GetObject("tlsConfig");
+
+  }
+
 
 
   return *this;

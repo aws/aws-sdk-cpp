@@ -137,6 +137,55 @@ namespace Model
 
 
     /**
+     * <p>The ARN of the filter to apply to the batch inference job. For more
+     * information on using filters, see Using Filters with Amazon Personalize.</p>
+     */
+    inline const Aws::String& GetFilterArn() const{ return m_filterArn; }
+
+    /**
+     * <p>The ARN of the filter to apply to the batch inference job. For more
+     * information on using filters, see Using Filters with Amazon Personalize.</p>
+     */
+    inline bool FilterArnHasBeenSet() const { return m_filterArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the filter to apply to the batch inference job. For more
+     * information on using filters, see Using Filters with Amazon Personalize.</p>
+     */
+    inline void SetFilterArn(const Aws::String& value) { m_filterArnHasBeenSet = true; m_filterArn = value; }
+
+    /**
+     * <p>The ARN of the filter to apply to the batch inference job. For more
+     * information on using filters, see Using Filters with Amazon Personalize.</p>
+     */
+    inline void SetFilterArn(Aws::String&& value) { m_filterArnHasBeenSet = true; m_filterArn = std::move(value); }
+
+    /**
+     * <p>The ARN of the filter to apply to the batch inference job. For more
+     * information on using filters, see Using Filters with Amazon Personalize.</p>
+     */
+    inline void SetFilterArn(const char* value) { m_filterArnHasBeenSet = true; m_filterArn.assign(value); }
+
+    /**
+     * <p>The ARN of the filter to apply to the batch inference job. For more
+     * information on using filters, see Using Filters with Amazon Personalize.</p>
+     */
+    inline CreateBatchInferenceJobRequest& WithFilterArn(const Aws::String& value) { SetFilterArn(value); return *this;}
+
+    /**
+     * <p>The ARN of the filter to apply to the batch inference job. For more
+     * information on using filters, see Using Filters with Amazon Personalize.</p>
+     */
+    inline CreateBatchInferenceJobRequest& WithFilterArn(Aws::String&& value) { SetFilterArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The ARN of the filter to apply to the batch inference job. For more
+     * information on using filters, see Using Filters with Amazon Personalize.</p>
+     */
+    inline CreateBatchInferenceJobRequest& WithFilterArn(const char* value) { SetFilterArn(value); return *this;}
+
+
+    /**
      * <p>The number of recommendations to retreive.</p>
      */
     inline int GetNumResults() const{ return m_numResults; }
@@ -288,6 +337,9 @@ namespace Model
 
     Aws::String m_solutionVersionArn;
     bool m_solutionVersionArnHasBeenSet;
+
+    Aws::String m_filterArn;
+    bool m_filterArnHasBeenSet;
 
     int m_numResults;
     bool m_numResultsHasBeenSet;

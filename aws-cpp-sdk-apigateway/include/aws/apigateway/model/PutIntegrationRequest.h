@@ -22,6 +22,7 @@
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/apigateway/model/ContentHandlingStrategy.h>
+#include <aws/apigateway/model/TlsConfig.h>
 #include <utility>
 
 namespace Aws
@@ -1274,6 +1275,25 @@ namespace Model
      */
     inline PutIntegrationRequest& WithTimeoutInMillis(int value) { SetTimeoutInMillis(value); return *this;}
 
+
+    
+    inline const TlsConfig& GetTlsConfig() const{ return m_tlsConfig; }
+
+    
+    inline bool TlsConfigHasBeenSet() const { return m_tlsConfigHasBeenSet; }
+
+    
+    inline void SetTlsConfig(const TlsConfig& value) { m_tlsConfigHasBeenSet = true; m_tlsConfig = value; }
+
+    
+    inline void SetTlsConfig(TlsConfig&& value) { m_tlsConfigHasBeenSet = true; m_tlsConfig = std::move(value); }
+
+    
+    inline PutIntegrationRequest& WithTlsConfig(const TlsConfig& value) { SetTlsConfig(value); return *this;}
+
+    
+    inline PutIntegrationRequest& WithTlsConfig(TlsConfig&& value) { SetTlsConfig(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_restApiId;
@@ -1323,6 +1343,9 @@ namespace Model
 
     int m_timeoutInMillis;
     bool m_timeoutInMillisHasBeenSet;
+
+    TlsConfig m_tlsConfig;
+    bool m_tlsConfigHasBeenSet;
   };
 
 } // namespace Model

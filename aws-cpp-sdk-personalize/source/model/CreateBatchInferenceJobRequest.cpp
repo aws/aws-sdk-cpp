@@ -25,6 +25,7 @@ using namespace Aws::Utils;
 CreateBatchInferenceJobRequest::CreateBatchInferenceJobRequest() : 
     m_jobNameHasBeenSet(false),
     m_solutionVersionArnHasBeenSet(false),
+    m_filterArnHasBeenSet(false),
     m_numResults(0),
     m_numResultsHasBeenSet(false),
     m_jobInputHasBeenSet(false),
@@ -46,6 +47,12 @@ Aws::String CreateBatchInferenceJobRequest::SerializePayload() const
   if(m_solutionVersionArnHasBeenSet)
   {
    payload.WithString("solutionVersionArn", m_solutionVersionArn);
+
+  }
+
+  if(m_filterArnHasBeenSet)
+  {
+   payload.WithString("filterArn", m_filterArn);
 
   }
 

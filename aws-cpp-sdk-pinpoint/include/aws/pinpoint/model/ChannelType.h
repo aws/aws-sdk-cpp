@@ -26,6 +26,7 @@ namespace Model
   enum class ChannelType
   {
     NOT_SET,
+    PUSH,
     GCM,
     APNS,
     APNS_SANDBOX,

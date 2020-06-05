@@ -667,9 +667,9 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the custom platform to use with the
      * environment. For more information, see <a
-     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/custom-platforms.html">
-     * Custom Platforms</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p>
-     * <note> <p>If you specify <code>PlatformArn</code>, don't specify
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/custom-platforms.html">Custom
+     * Platforms</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p> <note>
+     * <p>If you specify <code>PlatformArn</code>, don't specify
      * <code>SolutionStackName</code>.</p> </note>
      */
     inline const Aws::String& GetPlatformArn() const{ return m_platformArn; }
@@ -677,9 +677,9 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the custom platform to use with the
      * environment. For more information, see <a
-     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/custom-platforms.html">
-     * Custom Platforms</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p>
-     * <note> <p>If you specify <code>PlatformArn</code>, don't specify
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/custom-platforms.html">Custom
+     * Platforms</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p> <note>
+     * <p>If you specify <code>PlatformArn</code>, don't specify
      * <code>SolutionStackName</code>.</p> </note>
      */
     inline bool PlatformArnHasBeenSet() const { return m_platformArnHasBeenSet; }
@@ -687,9 +687,9 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the custom platform to use with the
      * environment. For more information, see <a
-     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/custom-platforms.html">
-     * Custom Platforms</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p>
-     * <note> <p>If you specify <code>PlatformArn</code>, don't specify
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/custom-platforms.html">Custom
+     * Platforms</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p> <note>
+     * <p>If you specify <code>PlatformArn</code>, don't specify
      * <code>SolutionStackName</code>.</p> </note>
      */
     inline void SetPlatformArn(const Aws::String& value) { m_platformArnHasBeenSet = true; m_platformArn = value; }
@@ -697,9 +697,9 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the custom platform to use with the
      * environment. For more information, see <a
-     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/custom-platforms.html">
-     * Custom Platforms</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p>
-     * <note> <p>If you specify <code>PlatformArn</code>, don't specify
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/custom-platforms.html">Custom
+     * Platforms</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p> <note>
+     * <p>If you specify <code>PlatformArn</code>, don't specify
      * <code>SolutionStackName</code>.</p> </note>
      */
     inline void SetPlatformArn(Aws::String&& value) { m_platformArnHasBeenSet = true; m_platformArn = std::move(value); }
@@ -707,9 +707,9 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the custom platform to use with the
      * environment. For more information, see <a
-     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/custom-platforms.html">
-     * Custom Platforms</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p>
-     * <note> <p>If you specify <code>PlatformArn</code>, don't specify
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/custom-platforms.html">Custom
+     * Platforms</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p> <note>
+     * <p>If you specify <code>PlatformArn</code>, don't specify
      * <code>SolutionStackName</code>.</p> </note>
      */
     inline void SetPlatformArn(const char* value) { m_platformArnHasBeenSet = true; m_platformArn.assign(value); }
@@ -717,9 +717,9 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the custom platform to use with the
      * environment. For more information, see <a
-     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/custom-platforms.html">
-     * Custom Platforms</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p>
-     * <note> <p>If you specify <code>PlatformArn</code>, don't specify
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/custom-platforms.html">Custom
+     * Platforms</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p> <note>
+     * <p>If you specify <code>PlatformArn</code>, don't specify
      * <code>SolutionStackName</code>.</p> </note>
      */
     inline CreateEnvironmentRequest& WithPlatformArn(const Aws::String& value) { SetPlatformArn(value); return *this;}
@@ -727,9 +727,9 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the custom platform to use with the
      * environment. For more information, see <a
-     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/custom-platforms.html">
-     * Custom Platforms</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p>
-     * <note> <p>If you specify <code>PlatformArn</code>, don't specify
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/custom-platforms.html">Custom
+     * Platforms</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p> <note>
+     * <p>If you specify <code>PlatformArn</code>, don't specify
      * <code>SolutionStackName</code>.</p> </note>
      */
     inline CreateEnvironmentRequest& WithPlatformArn(Aws::String&& value) { SetPlatformArn(std::move(value)); return *this;}
@@ -737,9 +737,9 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the custom platform to use with the
      * environment. For more information, see <a
-     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/custom-platforms.html">
-     * Custom Platforms</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p>
-     * <note> <p>If you specify <code>PlatformArn</code>, don't specify
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/custom-platforms.html">Custom
+     * Platforms</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p> <note>
+     * <p>If you specify <code>PlatformArn</code>, don't specify
      * <code>SolutionStackName</code>.</p> </note>
      */
     inline CreateEnvironmentRequest& WithPlatformArn(const char* value) { SetPlatformArn(value); return *this;}
@@ -858,6 +858,103 @@ namespace Model
      */
     inline CreateEnvironmentRequest& AddOptionsToRemove(OptionSpecification&& value) { m_optionsToRemoveHasBeenSet = true; m_optionsToRemove.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of an existing IAM role to be used as the
+     * environment's operations role. If specified, Elastic Beanstalk uses the
+     * operations role for permissions to downstream services during this call and
+     * during subsequent calls acting on this environment. To specify an operations
+     * role, you must have the <code>iam:PassRole</code> permission for the role. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/iam-operationsrole.html">Operations
+     * roles</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p>
+     */
+    inline const Aws::String& GetOperationsRole() const{ return m_operationsRole; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of an existing IAM role to be used as the
+     * environment's operations role. If specified, Elastic Beanstalk uses the
+     * operations role for permissions to downstream services during this call and
+     * during subsequent calls acting on this environment. To specify an operations
+     * role, you must have the <code>iam:PassRole</code> permission for the role. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/iam-operationsrole.html">Operations
+     * roles</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p>
+     */
+    inline bool OperationsRoleHasBeenSet() const { return m_operationsRoleHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of an existing IAM role to be used as the
+     * environment's operations role. If specified, Elastic Beanstalk uses the
+     * operations role for permissions to downstream services during this call and
+     * during subsequent calls acting on this environment. To specify an operations
+     * role, you must have the <code>iam:PassRole</code> permission for the role. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/iam-operationsrole.html">Operations
+     * roles</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p>
+     */
+    inline void SetOperationsRole(const Aws::String& value) { m_operationsRoleHasBeenSet = true; m_operationsRole = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of an existing IAM role to be used as the
+     * environment's operations role. If specified, Elastic Beanstalk uses the
+     * operations role for permissions to downstream services during this call and
+     * during subsequent calls acting on this environment. To specify an operations
+     * role, you must have the <code>iam:PassRole</code> permission for the role. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/iam-operationsrole.html">Operations
+     * roles</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p>
+     */
+    inline void SetOperationsRole(Aws::String&& value) { m_operationsRoleHasBeenSet = true; m_operationsRole = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of an existing IAM role to be used as the
+     * environment's operations role. If specified, Elastic Beanstalk uses the
+     * operations role for permissions to downstream services during this call and
+     * during subsequent calls acting on this environment. To specify an operations
+     * role, you must have the <code>iam:PassRole</code> permission for the role. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/iam-operationsrole.html">Operations
+     * roles</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p>
+     */
+    inline void SetOperationsRole(const char* value) { m_operationsRoleHasBeenSet = true; m_operationsRole.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of an existing IAM role to be used as the
+     * environment's operations role. If specified, Elastic Beanstalk uses the
+     * operations role for permissions to downstream services during this call and
+     * during subsequent calls acting on this environment. To specify an operations
+     * role, you must have the <code>iam:PassRole</code> permission for the role. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/iam-operationsrole.html">Operations
+     * roles</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p>
+     */
+    inline CreateEnvironmentRequest& WithOperationsRole(const Aws::String& value) { SetOperationsRole(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of an existing IAM role to be used as the
+     * environment's operations role. If specified, Elastic Beanstalk uses the
+     * operations role for permissions to downstream services during this call and
+     * during subsequent calls acting on this environment. To specify an operations
+     * role, you must have the <code>iam:PassRole</code> permission for the role. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/iam-operationsrole.html">Operations
+     * roles</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p>
+     */
+    inline CreateEnvironmentRequest& WithOperationsRole(Aws::String&& value) { SetOperationsRole(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of an existing IAM role to be used as the
+     * environment's operations role. If specified, Elastic Beanstalk uses the
+     * operations role for permissions to downstream services during this call and
+     * during subsequent calls acting on this environment. To specify an operations
+     * role, you must have the <code>iam:PassRole</code> permission for the role. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/iam-operationsrole.html">Operations
+     * roles</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p>
+     */
+    inline CreateEnvironmentRequest& WithOperationsRole(const char* value) { SetOperationsRole(value); return *this;}
+
   private:
 
     Aws::String m_applicationName;
@@ -898,6 +995,9 @@ namespace Model
 
     Aws::Vector<OptionSpecification> m_optionsToRemove;
     bool m_optionsToRemoveHasBeenSet;
+
+    Aws::String m_operationsRole;
+    bool m_operationsRoleHasBeenSet;
   };
 
 } // namespace Model

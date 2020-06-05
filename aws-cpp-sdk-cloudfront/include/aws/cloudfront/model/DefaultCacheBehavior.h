@@ -38,10 +38,10 @@ namespace Model
 {
 
   /**
-   * <p>A complex type that describes the default cache behavior if you don't specify
-   * a <code>CacheBehavior</code> element or if files don't match any of the values
-   * of <code>PathPattern</code> in <code>CacheBehavior</code> elements. You must
-   * create exactly one default cache behavior.</p><p><h3>See Also:</h3>   <a
+   * <p>A complex type that describes the default cache behavior if you don’t specify
+   * a <code>CacheBehavior</code> element or if request URLs don’t match any of the
+   * values of <code>PathPattern</code> in <code>CacheBehavior</code> elements. You
+   * must create exactly one default cache behavior.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/DefaultCacheBehavior">AWS
    * API Reference</a></p>
    */
@@ -57,57 +57,49 @@ namespace Model
 
     /**
      * <p>The value of <code>ID</code> for the origin that you want CloudFront to route
-     * requests to when a request matches the path pattern either for a cache behavior
-     * or for the default cache behavior in your distribution.</p>
+     * requests to when they use the default cache behavior.</p>
      */
     inline const Aws::String& GetTargetOriginId() const{ return m_targetOriginId; }
 
     /**
      * <p>The value of <code>ID</code> for the origin that you want CloudFront to route
-     * requests to when a request matches the path pattern either for a cache behavior
-     * or for the default cache behavior in your distribution.</p>
+     * requests to when they use the default cache behavior.</p>
      */
     inline bool TargetOriginIdHasBeenSet() const { return m_targetOriginIdHasBeenSet; }
 
     /**
      * <p>The value of <code>ID</code> for the origin that you want CloudFront to route
-     * requests to when a request matches the path pattern either for a cache behavior
-     * or for the default cache behavior in your distribution.</p>
+     * requests to when they use the default cache behavior.</p>
      */
     inline void SetTargetOriginId(const Aws::String& value) { m_targetOriginIdHasBeenSet = true; m_targetOriginId = value; }
 
     /**
      * <p>The value of <code>ID</code> for the origin that you want CloudFront to route
-     * requests to when a request matches the path pattern either for a cache behavior
-     * or for the default cache behavior in your distribution.</p>
+     * requests to when they use the default cache behavior.</p>
      */
     inline void SetTargetOriginId(Aws::String&& value) { m_targetOriginIdHasBeenSet = true; m_targetOriginId = std::move(value); }
 
     /**
      * <p>The value of <code>ID</code> for the origin that you want CloudFront to route
-     * requests to when a request matches the path pattern either for a cache behavior
-     * or for the default cache behavior in your distribution.</p>
+     * requests to when they use the default cache behavior.</p>
      */
     inline void SetTargetOriginId(const char* value) { m_targetOriginIdHasBeenSet = true; m_targetOriginId.assign(value); }
 
     /**
      * <p>The value of <code>ID</code> for the origin that you want CloudFront to route
-     * requests to when a request matches the path pattern either for a cache behavior
-     * or for the default cache behavior in your distribution.</p>
+     * requests to when they use the default cache behavior.</p>
      */
     inline DefaultCacheBehavior& WithTargetOriginId(const Aws::String& value) { SetTargetOriginId(value); return *this;}
 
     /**
      * <p>The value of <code>ID</code> for the origin that you want CloudFront to route
-     * requests to when a request matches the path pattern either for a cache behavior
-     * or for the default cache behavior in your distribution.</p>
+     * requests to when they use the default cache behavior.</p>
      */
     inline DefaultCacheBehavior& WithTargetOriginId(Aws::String&& value) { SetTargetOriginId(std::move(value)); return *this;}
 
     /**
      * <p>The value of <code>ID</code> for the origin that you want CloudFront to route
-     * requests to when a request matches the path pattern either for a cache behavior
-     * or for the default cache behavior in your distribution.</p>
+     * requests to when they use the default cache behavior.</p>
      */
     inline DefaultCacheBehavior& WithTargetOriginId(const char* value) { SetTargetOriginId(value); return *this;}
 
@@ -157,14 +149,15 @@ namespace Model
      * <code>Enabled</code>, and specify the applicable values for
      * <code>Quantity</code> and <code>Items</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
-     * Private Content through CloudFront</a> in the <i> Amazon CloudFront Developer
-     * Guide</i>.</p> <p>If you don't want to require signed URLs in requests for
-     * objects that match <code>PathPattern</code>, specify <code>false</code> for
-     * <code>Enabled</code> and <code>0</code> for <code>Quantity</code>. Omit
-     * <code>Items</code>.</p> <p>To add, change, or remove one or more trusted
-     * signers, change <code>Enabled</code> to <code>true</code> (if it's currently
-     * <code>false</code>), change <code>Quantity</code> as applicable, and specify all
-     * of the trusted signers that you want to include in the updated distribution.</p>
+     * Private Content with Signed URLs and Signed Cookies</a> in the <i>Amazon
+     * CloudFront Developer Guide</i>.</p> <p>If you don’t want to require signed URLs
+     * in requests for objects that match <code>PathPattern</code>, specify
+     * <code>false</code> for <code>Enabled</code> and <code>0</code> for
+     * <code>Quantity</code>. Omit <code>Items</code>.</p> <p>To add, change, or remove
+     * one or more trusted signers, change <code>Enabled</code> to <code>true</code>
+     * (if it’s currently <code>false</code>), change <code>Quantity</code> as
+     * applicable, and specify all of the trusted signers that you want to include in
+     * the updated distribution.</p>
      */
     inline const TrustedSigners& GetTrustedSigners() const{ return m_trustedSigners; }
 
@@ -176,14 +169,15 @@ namespace Model
      * <code>Enabled</code>, and specify the applicable values for
      * <code>Quantity</code> and <code>Items</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
-     * Private Content through CloudFront</a> in the <i> Amazon CloudFront Developer
-     * Guide</i>.</p> <p>If you don't want to require signed URLs in requests for
-     * objects that match <code>PathPattern</code>, specify <code>false</code> for
-     * <code>Enabled</code> and <code>0</code> for <code>Quantity</code>. Omit
-     * <code>Items</code>.</p> <p>To add, change, or remove one or more trusted
-     * signers, change <code>Enabled</code> to <code>true</code> (if it's currently
-     * <code>false</code>), change <code>Quantity</code> as applicable, and specify all
-     * of the trusted signers that you want to include in the updated distribution.</p>
+     * Private Content with Signed URLs and Signed Cookies</a> in the <i>Amazon
+     * CloudFront Developer Guide</i>.</p> <p>If you don’t want to require signed URLs
+     * in requests for objects that match <code>PathPattern</code>, specify
+     * <code>false</code> for <code>Enabled</code> and <code>0</code> for
+     * <code>Quantity</code>. Omit <code>Items</code>.</p> <p>To add, change, or remove
+     * one or more trusted signers, change <code>Enabled</code> to <code>true</code>
+     * (if it’s currently <code>false</code>), change <code>Quantity</code> as
+     * applicable, and specify all of the trusted signers that you want to include in
+     * the updated distribution.</p>
      */
     inline bool TrustedSignersHasBeenSet() const { return m_trustedSignersHasBeenSet; }
 
@@ -195,14 +189,15 @@ namespace Model
      * <code>Enabled</code>, and specify the applicable values for
      * <code>Quantity</code> and <code>Items</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
-     * Private Content through CloudFront</a> in the <i> Amazon CloudFront Developer
-     * Guide</i>.</p> <p>If you don't want to require signed URLs in requests for
-     * objects that match <code>PathPattern</code>, specify <code>false</code> for
-     * <code>Enabled</code> and <code>0</code> for <code>Quantity</code>. Omit
-     * <code>Items</code>.</p> <p>To add, change, or remove one or more trusted
-     * signers, change <code>Enabled</code> to <code>true</code> (if it's currently
-     * <code>false</code>), change <code>Quantity</code> as applicable, and specify all
-     * of the trusted signers that you want to include in the updated distribution.</p>
+     * Private Content with Signed URLs and Signed Cookies</a> in the <i>Amazon
+     * CloudFront Developer Guide</i>.</p> <p>If you don’t want to require signed URLs
+     * in requests for objects that match <code>PathPattern</code>, specify
+     * <code>false</code> for <code>Enabled</code> and <code>0</code> for
+     * <code>Quantity</code>. Omit <code>Items</code>.</p> <p>To add, change, or remove
+     * one or more trusted signers, change <code>Enabled</code> to <code>true</code>
+     * (if it’s currently <code>false</code>), change <code>Quantity</code> as
+     * applicable, and specify all of the trusted signers that you want to include in
+     * the updated distribution.</p>
      */
     inline void SetTrustedSigners(const TrustedSigners& value) { m_trustedSignersHasBeenSet = true; m_trustedSigners = value; }
 
@@ -214,14 +209,15 @@ namespace Model
      * <code>Enabled</code>, and specify the applicable values for
      * <code>Quantity</code> and <code>Items</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
-     * Private Content through CloudFront</a> in the <i> Amazon CloudFront Developer
-     * Guide</i>.</p> <p>If you don't want to require signed URLs in requests for
-     * objects that match <code>PathPattern</code>, specify <code>false</code> for
-     * <code>Enabled</code> and <code>0</code> for <code>Quantity</code>. Omit
-     * <code>Items</code>.</p> <p>To add, change, or remove one or more trusted
-     * signers, change <code>Enabled</code> to <code>true</code> (if it's currently
-     * <code>false</code>), change <code>Quantity</code> as applicable, and specify all
-     * of the trusted signers that you want to include in the updated distribution.</p>
+     * Private Content with Signed URLs and Signed Cookies</a> in the <i>Amazon
+     * CloudFront Developer Guide</i>.</p> <p>If you don’t want to require signed URLs
+     * in requests for objects that match <code>PathPattern</code>, specify
+     * <code>false</code> for <code>Enabled</code> and <code>0</code> for
+     * <code>Quantity</code>. Omit <code>Items</code>.</p> <p>To add, change, or remove
+     * one or more trusted signers, change <code>Enabled</code> to <code>true</code>
+     * (if it’s currently <code>false</code>), change <code>Quantity</code> as
+     * applicable, and specify all of the trusted signers that you want to include in
+     * the updated distribution.</p>
      */
     inline void SetTrustedSigners(TrustedSigners&& value) { m_trustedSignersHasBeenSet = true; m_trustedSigners = std::move(value); }
 
@@ -233,14 +229,15 @@ namespace Model
      * <code>Enabled</code>, and specify the applicable values for
      * <code>Quantity</code> and <code>Items</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
-     * Private Content through CloudFront</a> in the <i> Amazon CloudFront Developer
-     * Guide</i>.</p> <p>If you don't want to require signed URLs in requests for
-     * objects that match <code>PathPattern</code>, specify <code>false</code> for
-     * <code>Enabled</code> and <code>0</code> for <code>Quantity</code>. Omit
-     * <code>Items</code>.</p> <p>To add, change, or remove one or more trusted
-     * signers, change <code>Enabled</code> to <code>true</code> (if it's currently
-     * <code>false</code>), change <code>Quantity</code> as applicable, and specify all
-     * of the trusted signers that you want to include in the updated distribution.</p>
+     * Private Content with Signed URLs and Signed Cookies</a> in the <i>Amazon
+     * CloudFront Developer Guide</i>.</p> <p>If you don’t want to require signed URLs
+     * in requests for objects that match <code>PathPattern</code>, specify
+     * <code>false</code> for <code>Enabled</code> and <code>0</code> for
+     * <code>Quantity</code>. Omit <code>Items</code>.</p> <p>To add, change, or remove
+     * one or more trusted signers, change <code>Enabled</code> to <code>true</code>
+     * (if it’s currently <code>false</code>), change <code>Quantity</code> as
+     * applicable, and specify all of the trusted signers that you want to include in
+     * the updated distribution.</p>
      */
     inline DefaultCacheBehavior& WithTrustedSigners(const TrustedSigners& value) { SetTrustedSigners(value); return *this;}
 
@@ -252,14 +249,15 @@ namespace Model
      * <code>Enabled</code>, and specify the applicable values for
      * <code>Quantity</code> and <code>Items</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
-     * Private Content through CloudFront</a> in the <i> Amazon CloudFront Developer
-     * Guide</i>.</p> <p>If you don't want to require signed URLs in requests for
-     * objects that match <code>PathPattern</code>, specify <code>false</code> for
-     * <code>Enabled</code> and <code>0</code> for <code>Quantity</code>. Omit
-     * <code>Items</code>.</p> <p>To add, change, or remove one or more trusted
-     * signers, change <code>Enabled</code> to <code>true</code> (if it's currently
-     * <code>false</code>), change <code>Quantity</code> as applicable, and specify all
-     * of the trusted signers that you want to include in the updated distribution.</p>
+     * Private Content with Signed URLs and Signed Cookies</a> in the <i>Amazon
+     * CloudFront Developer Guide</i>.</p> <p>If you don’t want to require signed URLs
+     * in requests for objects that match <code>PathPattern</code>, specify
+     * <code>false</code> for <code>Enabled</code> and <code>0</code> for
+     * <code>Quantity</code>. Omit <code>Items</code>.</p> <p>To add, change, or remove
+     * one or more trusted signers, change <code>Enabled</code> to <code>true</code>
+     * (if it’s currently <code>false</code>), change <code>Quantity</code> as
+     * applicable, and specify all of the trusted signers that you want to include in
+     * the updated distribution.</p>
      */
     inline DefaultCacheBehavior& WithTrustedSigners(TrustedSigners&& value) { SetTrustedSigners(std::move(value)); return *this;}
 
@@ -275,18 +273,18 @@ namespace Model
      * </li> <li> <p> <code>https-only</code>: If a viewer sends an HTTP request,
      * CloudFront returns an HTTP status code of 403 (Forbidden).</p> </li> </ul>
      * <p>For more information about requiring the HTTPS protocol, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/SecureConnections.html">Using
-     * an HTTPS Connection to Access Your Objects</a> in the <i>Amazon CloudFront
-     * Developer Guide</i>.</p> <note> <p>The only way to guarantee that viewers
-     * retrieve an object that was fetched from the origin using HTTPS is never to use
-     * any other protocol to fetch the object. If you have recently changed from HTTP
-     * to HTTPS, we recommend that you clear your objects' cache because cached objects
-     * are protocol agnostic. That means that an edge location will return an object
-     * from the cache regardless of whether the current request protocol matches the
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-https-viewers-to-cloudfront.html">Requiring
+     * HTTPS Between Viewers and CloudFront</a> in the <i>Amazon CloudFront Developer
+     * Guide</i>.</p> <note> <p>The only way to guarantee that viewers retrieve an
+     * object that was fetched from the origin using HTTPS is never to use any other
+     * protocol to fetch the object. If you have recently changed from HTTP to HTTPS,
+     * we recommend that you clear your objects’ cache because cached objects are
+     * protocol agnostic. That means that an edge location will return an object from
+     * the cache regardless of whether the current request protocol matches the
      * protocol used previously. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing
-     * How Long Content Stays in an Edge Cache (Expiration)</a> in the <i>Amazon
-     * CloudFront Developer Guide</i>.</p> </note>
+     * Cache Expiration</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+     * </note>
      */
     inline const ViewerProtocolPolicy& GetViewerProtocolPolicy() const{ return m_viewerProtocolPolicy; }
 
@@ -301,18 +299,18 @@ namespace Model
      * </li> <li> <p> <code>https-only</code>: If a viewer sends an HTTP request,
      * CloudFront returns an HTTP status code of 403 (Forbidden).</p> </li> </ul>
      * <p>For more information about requiring the HTTPS protocol, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/SecureConnections.html">Using
-     * an HTTPS Connection to Access Your Objects</a> in the <i>Amazon CloudFront
-     * Developer Guide</i>.</p> <note> <p>The only way to guarantee that viewers
-     * retrieve an object that was fetched from the origin using HTTPS is never to use
-     * any other protocol to fetch the object. If you have recently changed from HTTP
-     * to HTTPS, we recommend that you clear your objects' cache because cached objects
-     * are protocol agnostic. That means that an edge location will return an object
-     * from the cache regardless of whether the current request protocol matches the
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-https-viewers-to-cloudfront.html">Requiring
+     * HTTPS Between Viewers and CloudFront</a> in the <i>Amazon CloudFront Developer
+     * Guide</i>.</p> <note> <p>The only way to guarantee that viewers retrieve an
+     * object that was fetched from the origin using HTTPS is never to use any other
+     * protocol to fetch the object. If you have recently changed from HTTP to HTTPS,
+     * we recommend that you clear your objects’ cache because cached objects are
+     * protocol agnostic. That means that an edge location will return an object from
+     * the cache regardless of whether the current request protocol matches the
      * protocol used previously. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing
-     * How Long Content Stays in an Edge Cache (Expiration)</a> in the <i>Amazon
-     * CloudFront Developer Guide</i>.</p> </note>
+     * Cache Expiration</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+     * </note>
      */
     inline bool ViewerProtocolPolicyHasBeenSet() const { return m_viewerProtocolPolicyHasBeenSet; }
 
@@ -327,18 +325,18 @@ namespace Model
      * </li> <li> <p> <code>https-only</code>: If a viewer sends an HTTP request,
      * CloudFront returns an HTTP status code of 403 (Forbidden).</p> </li> </ul>
      * <p>For more information about requiring the HTTPS protocol, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/SecureConnections.html">Using
-     * an HTTPS Connection to Access Your Objects</a> in the <i>Amazon CloudFront
-     * Developer Guide</i>.</p> <note> <p>The only way to guarantee that viewers
-     * retrieve an object that was fetched from the origin using HTTPS is never to use
-     * any other protocol to fetch the object. If you have recently changed from HTTP
-     * to HTTPS, we recommend that you clear your objects' cache because cached objects
-     * are protocol agnostic. That means that an edge location will return an object
-     * from the cache regardless of whether the current request protocol matches the
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-https-viewers-to-cloudfront.html">Requiring
+     * HTTPS Between Viewers and CloudFront</a> in the <i>Amazon CloudFront Developer
+     * Guide</i>.</p> <note> <p>The only way to guarantee that viewers retrieve an
+     * object that was fetched from the origin using HTTPS is never to use any other
+     * protocol to fetch the object. If you have recently changed from HTTP to HTTPS,
+     * we recommend that you clear your objects’ cache because cached objects are
+     * protocol agnostic. That means that an edge location will return an object from
+     * the cache regardless of whether the current request protocol matches the
      * protocol used previously. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing
-     * How Long Content Stays in an Edge Cache (Expiration)</a> in the <i>Amazon
-     * CloudFront Developer Guide</i>.</p> </note>
+     * Cache Expiration</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+     * </note>
      */
     inline void SetViewerProtocolPolicy(const ViewerProtocolPolicy& value) { m_viewerProtocolPolicyHasBeenSet = true; m_viewerProtocolPolicy = value; }
 
@@ -353,18 +351,18 @@ namespace Model
      * </li> <li> <p> <code>https-only</code>: If a viewer sends an HTTP request,
      * CloudFront returns an HTTP status code of 403 (Forbidden).</p> </li> </ul>
      * <p>For more information about requiring the HTTPS protocol, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/SecureConnections.html">Using
-     * an HTTPS Connection to Access Your Objects</a> in the <i>Amazon CloudFront
-     * Developer Guide</i>.</p> <note> <p>The only way to guarantee that viewers
-     * retrieve an object that was fetched from the origin using HTTPS is never to use
-     * any other protocol to fetch the object. If you have recently changed from HTTP
-     * to HTTPS, we recommend that you clear your objects' cache because cached objects
-     * are protocol agnostic. That means that an edge location will return an object
-     * from the cache regardless of whether the current request protocol matches the
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-https-viewers-to-cloudfront.html">Requiring
+     * HTTPS Between Viewers and CloudFront</a> in the <i>Amazon CloudFront Developer
+     * Guide</i>.</p> <note> <p>The only way to guarantee that viewers retrieve an
+     * object that was fetched from the origin using HTTPS is never to use any other
+     * protocol to fetch the object. If you have recently changed from HTTP to HTTPS,
+     * we recommend that you clear your objects’ cache because cached objects are
+     * protocol agnostic. That means that an edge location will return an object from
+     * the cache regardless of whether the current request protocol matches the
      * protocol used previously. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing
-     * How Long Content Stays in an Edge Cache (Expiration)</a> in the <i>Amazon
-     * CloudFront Developer Guide</i>.</p> </note>
+     * Cache Expiration</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+     * </note>
      */
     inline void SetViewerProtocolPolicy(ViewerProtocolPolicy&& value) { m_viewerProtocolPolicyHasBeenSet = true; m_viewerProtocolPolicy = std::move(value); }
 
@@ -379,18 +377,18 @@ namespace Model
      * </li> <li> <p> <code>https-only</code>: If a viewer sends an HTTP request,
      * CloudFront returns an HTTP status code of 403 (Forbidden).</p> </li> </ul>
      * <p>For more information about requiring the HTTPS protocol, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/SecureConnections.html">Using
-     * an HTTPS Connection to Access Your Objects</a> in the <i>Amazon CloudFront
-     * Developer Guide</i>.</p> <note> <p>The only way to guarantee that viewers
-     * retrieve an object that was fetched from the origin using HTTPS is never to use
-     * any other protocol to fetch the object. If you have recently changed from HTTP
-     * to HTTPS, we recommend that you clear your objects' cache because cached objects
-     * are protocol agnostic. That means that an edge location will return an object
-     * from the cache regardless of whether the current request protocol matches the
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-https-viewers-to-cloudfront.html">Requiring
+     * HTTPS Between Viewers and CloudFront</a> in the <i>Amazon CloudFront Developer
+     * Guide</i>.</p> <note> <p>The only way to guarantee that viewers retrieve an
+     * object that was fetched from the origin using HTTPS is never to use any other
+     * protocol to fetch the object. If you have recently changed from HTTP to HTTPS,
+     * we recommend that you clear your objects’ cache because cached objects are
+     * protocol agnostic. That means that an edge location will return an object from
+     * the cache regardless of whether the current request protocol matches the
      * protocol used previously. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing
-     * How Long Content Stays in an Edge Cache (Expiration)</a> in the <i>Amazon
-     * CloudFront Developer Guide</i>.</p> </note>
+     * Cache Expiration</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+     * </note>
      */
     inline DefaultCacheBehavior& WithViewerProtocolPolicy(const ViewerProtocolPolicy& value) { SetViewerProtocolPolicy(value); return *this;}
 
@@ -405,18 +403,18 @@ namespace Model
      * </li> <li> <p> <code>https-only</code>: If a viewer sends an HTTP request,
      * CloudFront returns an HTTP status code of 403 (Forbidden).</p> </li> </ul>
      * <p>For more information about requiring the HTTPS protocol, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/SecureConnections.html">Using
-     * an HTTPS Connection to Access Your Objects</a> in the <i>Amazon CloudFront
-     * Developer Guide</i>.</p> <note> <p>The only way to guarantee that viewers
-     * retrieve an object that was fetched from the origin using HTTPS is never to use
-     * any other protocol to fetch the object. If you have recently changed from HTTP
-     * to HTTPS, we recommend that you clear your objects' cache because cached objects
-     * are protocol agnostic. That means that an edge location will return an object
-     * from the cache regardless of whether the current request protocol matches the
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-https-viewers-to-cloudfront.html">Requiring
+     * HTTPS Between Viewers and CloudFront</a> in the <i>Amazon CloudFront Developer
+     * Guide</i>.</p> <note> <p>The only way to guarantee that viewers retrieve an
+     * object that was fetched from the origin using HTTPS is never to use any other
+     * protocol to fetch the object. If you have recently changed from HTTP to HTTPS,
+     * we recommend that you clear your objects’ cache because cached objects are
+     * protocol agnostic. That means that an edge location will return an object from
+     * the cache regardless of whether the current request protocol matches the
      * protocol used previously. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing
-     * How Long Content Stays in an Edge Cache (Expiration)</a> in the <i>Amazon
-     * CloudFront Developer Guide</i>.</p> </note>
+     * Cache Expiration</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+     * </note>
      */
     inline DefaultCacheBehavior& WithViewerProtocolPolicy(ViewerProtocolPolicy&& value) { SetViewerProtocolPolicy(std::move(value)); return *this;}
 
@@ -716,57 +714,57 @@ namespace Model
 
     /**
      * <p>The value of <code>ID</code> for the field-level encryption configuration
-     * that you want CloudFront to use for encrypting specific fields of data for a
-     * cache behavior or for the default cache behavior in your distribution.</p>
+     * that you want CloudFront to use for encrypting specific fields of data for the
+     * default cache behavior.</p>
      */
     inline const Aws::String& GetFieldLevelEncryptionId() const{ return m_fieldLevelEncryptionId; }
 
     /**
      * <p>The value of <code>ID</code> for the field-level encryption configuration
-     * that you want CloudFront to use for encrypting specific fields of data for a
-     * cache behavior or for the default cache behavior in your distribution.</p>
+     * that you want CloudFront to use for encrypting specific fields of data for the
+     * default cache behavior.</p>
      */
     inline bool FieldLevelEncryptionIdHasBeenSet() const { return m_fieldLevelEncryptionIdHasBeenSet; }
 
     /**
      * <p>The value of <code>ID</code> for the field-level encryption configuration
-     * that you want CloudFront to use for encrypting specific fields of data for a
-     * cache behavior or for the default cache behavior in your distribution.</p>
+     * that you want CloudFront to use for encrypting specific fields of data for the
+     * default cache behavior.</p>
      */
     inline void SetFieldLevelEncryptionId(const Aws::String& value) { m_fieldLevelEncryptionIdHasBeenSet = true; m_fieldLevelEncryptionId = value; }
 
     /**
      * <p>The value of <code>ID</code> for the field-level encryption configuration
-     * that you want CloudFront to use for encrypting specific fields of data for a
-     * cache behavior or for the default cache behavior in your distribution.</p>
+     * that you want CloudFront to use for encrypting specific fields of data for the
+     * default cache behavior.</p>
      */
     inline void SetFieldLevelEncryptionId(Aws::String&& value) { m_fieldLevelEncryptionIdHasBeenSet = true; m_fieldLevelEncryptionId = std::move(value); }
 
     /**
      * <p>The value of <code>ID</code> for the field-level encryption configuration
-     * that you want CloudFront to use for encrypting specific fields of data for a
-     * cache behavior or for the default cache behavior in your distribution.</p>
+     * that you want CloudFront to use for encrypting specific fields of data for the
+     * default cache behavior.</p>
      */
     inline void SetFieldLevelEncryptionId(const char* value) { m_fieldLevelEncryptionIdHasBeenSet = true; m_fieldLevelEncryptionId.assign(value); }
 
     /**
      * <p>The value of <code>ID</code> for the field-level encryption configuration
-     * that you want CloudFront to use for encrypting specific fields of data for a
-     * cache behavior or for the default cache behavior in your distribution.</p>
+     * that you want CloudFront to use for encrypting specific fields of data for the
+     * default cache behavior.</p>
      */
     inline DefaultCacheBehavior& WithFieldLevelEncryptionId(const Aws::String& value) { SetFieldLevelEncryptionId(value); return *this;}
 
     /**
      * <p>The value of <code>ID</code> for the field-level encryption configuration
-     * that you want CloudFront to use for encrypting specific fields of data for a
-     * cache behavior or for the default cache behavior in your distribution.</p>
+     * that you want CloudFront to use for encrypting specific fields of data for the
+     * default cache behavior.</p>
      */
     inline DefaultCacheBehavior& WithFieldLevelEncryptionId(Aws::String&& value) { SetFieldLevelEncryptionId(std::move(value)); return *this;}
 
     /**
      * <p>The value of <code>ID</code> for the field-level encryption configuration
-     * that you want CloudFront to use for encrypting specific fields of data for a
-     * cache behavior or for the default cache behavior in your distribution.</p>
+     * that you want CloudFront to use for encrypting specific fields of data for the
+     * default cache behavior.</p>
      */
     inline DefaultCacheBehavior& WithFieldLevelEncryptionId(const char* value) { SetFieldLevelEncryptionId(value); return *this;}
 

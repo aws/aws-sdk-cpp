@@ -62,6 +62,15 @@ DescribeProductResult& DescribeProductResult::operator =(const Aws::AmazonWebSer
     }
   }
 
+  if(jsonValue.ValueExists("LaunchPaths"))
+  {
+    Array<JsonView> launchPathsJsonList = jsonValue.GetArray("LaunchPaths");
+    for(unsigned launchPathsIndex = 0; launchPathsIndex < launchPathsJsonList.GetLength(); ++launchPathsIndex)
+    {
+      m_launchPaths.push_back(launchPathsJsonList[launchPathsIndex].AsObject());
+    }
+  }
+
 
 
   return *this;

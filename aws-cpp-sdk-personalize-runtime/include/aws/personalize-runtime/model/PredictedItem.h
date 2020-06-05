@@ -90,26 +90,30 @@ namespace Model
 
 
     /**
-     * <p>A numeric representation of the model's certainty in the item's suitability.
-     * For more information on scoring logic, see <a>how-scores-work</a>.</p>
+     * <p>A numeric representation of the model's certainty that the item will be the
+     * next user selection. For more information on scoring logic, see
+     * <a>how-scores-work</a>.</p>
      */
     inline double GetScore() const{ return m_score; }
 
     /**
-     * <p>A numeric representation of the model's certainty in the item's suitability.
-     * For more information on scoring logic, see <a>how-scores-work</a>.</p>
+     * <p>A numeric representation of the model's certainty that the item will be the
+     * next user selection. For more information on scoring logic, see
+     * <a>how-scores-work</a>.</p>
      */
     inline bool ScoreHasBeenSet() const { return m_scoreHasBeenSet; }
 
     /**
-     * <p>A numeric representation of the model's certainty in the item's suitability.
-     * For more information on scoring logic, see <a>how-scores-work</a>.</p>
+     * <p>A numeric representation of the model's certainty that the item will be the
+     * next user selection. For more information on scoring logic, see
+     * <a>how-scores-work</a>.</p>
      */
     inline void SetScore(double value) { m_scoreHasBeenSet = true; m_score = value; }
 
     /**
-     * <p>A numeric representation of the model's certainty in the item's suitability.
-     * For more information on scoring logic, see <a>how-scores-work</a>.</p>
+     * <p>A numeric representation of the model's certainty that the item will be the
+     * next user selection. For more information on scoring logic, see
+     * <a>how-scores-work</a>.</p>
      */
     inline PredictedItem& WithScore(double value) { SetScore(value); return *this;}
 

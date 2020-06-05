@@ -105,6 +105,7 @@ namespace Model
 {
         class AbortEnvironmentUpdateRequest;
         class ApplyEnvironmentManagedActionRequest;
+        class AssociateEnvironmentOperationsRoleRequest;
         class CheckDNSAvailabilityRequest;
         class ComposeEnvironmentsRequest;
         class CreateApplicationRequest;
@@ -131,6 +132,7 @@ namespace Model
         class DescribeEventsRequest;
         class DescribeInstancesHealthRequest;
         class DescribePlatformVersionRequest;
+        class DisassociateEnvironmentOperationsRoleRequest;
         class ListAvailableSolutionStacksRequest;
         class ListPlatformBranchesRequest;
         class ListPlatformVersionsRequest;
@@ -151,6 +153,7 @@ namespace Model
 
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ElasticBeanstalkErrors>> AbortEnvironmentUpdateOutcome;
         typedef Aws::Utils::Outcome<ApplyEnvironmentManagedActionResult, Aws::Client::AWSError<ElasticBeanstalkErrors>> ApplyEnvironmentManagedActionOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ElasticBeanstalkErrors>> AssociateEnvironmentOperationsRoleOutcome;
         typedef Aws::Utils::Outcome<CheckDNSAvailabilityResult, Aws::Client::AWSError<ElasticBeanstalkErrors>> CheckDNSAvailabilityOutcome;
         typedef Aws::Utils::Outcome<ComposeEnvironmentsResult, Aws::Client::AWSError<ElasticBeanstalkErrors>> ComposeEnvironmentsOutcome;
         typedef Aws::Utils::Outcome<CreateApplicationResult, Aws::Client::AWSError<ElasticBeanstalkErrors>> CreateApplicationOutcome;
@@ -177,6 +180,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribeEventsResult, Aws::Client::AWSError<ElasticBeanstalkErrors>> DescribeEventsOutcome;
         typedef Aws::Utils::Outcome<DescribeInstancesHealthResult, Aws::Client::AWSError<ElasticBeanstalkErrors>> DescribeInstancesHealthOutcome;
         typedef Aws::Utils::Outcome<DescribePlatformVersionResult, Aws::Client::AWSError<ElasticBeanstalkErrors>> DescribePlatformVersionOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ElasticBeanstalkErrors>> DisassociateEnvironmentOperationsRoleOutcome;
         typedef Aws::Utils::Outcome<ListAvailableSolutionStacksResult, Aws::Client::AWSError<ElasticBeanstalkErrors>> ListAvailableSolutionStacksOutcome;
         typedef Aws::Utils::Outcome<ListPlatformBranchesResult, Aws::Client::AWSError<ElasticBeanstalkErrors>> ListPlatformBranchesOutcome;
         typedef Aws::Utils::Outcome<ListPlatformVersionsResult, Aws::Client::AWSError<ElasticBeanstalkErrors>> ListPlatformVersionsOutcome;
@@ -197,6 +201,7 @@ namespace Model
 
         typedef std::future<AbortEnvironmentUpdateOutcome> AbortEnvironmentUpdateOutcomeCallable;
         typedef std::future<ApplyEnvironmentManagedActionOutcome> ApplyEnvironmentManagedActionOutcomeCallable;
+        typedef std::future<AssociateEnvironmentOperationsRoleOutcome> AssociateEnvironmentOperationsRoleOutcomeCallable;
         typedef std::future<CheckDNSAvailabilityOutcome> CheckDNSAvailabilityOutcomeCallable;
         typedef std::future<ComposeEnvironmentsOutcome> ComposeEnvironmentsOutcomeCallable;
         typedef std::future<CreateApplicationOutcome> CreateApplicationOutcomeCallable;
@@ -223,6 +228,7 @@ namespace Model
         typedef std::future<DescribeEventsOutcome> DescribeEventsOutcomeCallable;
         typedef std::future<DescribeInstancesHealthOutcome> DescribeInstancesHealthOutcomeCallable;
         typedef std::future<DescribePlatformVersionOutcome> DescribePlatformVersionOutcomeCallable;
+        typedef std::future<DisassociateEnvironmentOperationsRoleOutcome> DisassociateEnvironmentOperationsRoleOutcomeCallable;
         typedef std::future<ListAvailableSolutionStacksOutcome> ListAvailableSolutionStacksOutcomeCallable;
         typedef std::future<ListPlatformBranchesOutcome> ListPlatformBranchesOutcomeCallable;
         typedef std::future<ListPlatformVersionsOutcome> ListPlatformVersionsOutcomeCallable;
@@ -246,6 +252,7 @@ namespace Model
 
     typedef std::function<void(const ElasticBeanstalkClient*, const Model::AbortEnvironmentUpdateRequest&, const Model::AbortEnvironmentUpdateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AbortEnvironmentUpdateResponseReceivedHandler;
     typedef std::function<void(const ElasticBeanstalkClient*, const Model::ApplyEnvironmentManagedActionRequest&, const Model::ApplyEnvironmentManagedActionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ApplyEnvironmentManagedActionResponseReceivedHandler;
+    typedef std::function<void(const ElasticBeanstalkClient*, const Model::AssociateEnvironmentOperationsRoleRequest&, const Model::AssociateEnvironmentOperationsRoleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateEnvironmentOperationsRoleResponseReceivedHandler;
     typedef std::function<void(const ElasticBeanstalkClient*, const Model::CheckDNSAvailabilityRequest&, const Model::CheckDNSAvailabilityOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CheckDNSAvailabilityResponseReceivedHandler;
     typedef std::function<void(const ElasticBeanstalkClient*, const Model::ComposeEnvironmentsRequest&, const Model::ComposeEnvironmentsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ComposeEnvironmentsResponseReceivedHandler;
     typedef std::function<void(const ElasticBeanstalkClient*, const Model::CreateApplicationRequest&, const Model::CreateApplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateApplicationResponseReceivedHandler;
@@ -272,6 +279,7 @@ namespace Model
     typedef std::function<void(const ElasticBeanstalkClient*, const Model::DescribeEventsRequest&, const Model::DescribeEventsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeEventsResponseReceivedHandler;
     typedef std::function<void(const ElasticBeanstalkClient*, const Model::DescribeInstancesHealthRequest&, const Model::DescribeInstancesHealthOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeInstancesHealthResponseReceivedHandler;
     typedef std::function<void(const ElasticBeanstalkClient*, const Model::DescribePlatformVersionRequest&, const Model::DescribePlatformVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribePlatformVersionResponseReceivedHandler;
+    typedef std::function<void(const ElasticBeanstalkClient*, const Model::DisassociateEnvironmentOperationsRoleRequest&, const Model::DisassociateEnvironmentOperationsRoleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateEnvironmentOperationsRoleResponseReceivedHandler;
     typedef std::function<void(const ElasticBeanstalkClient*, const Model::ListAvailableSolutionStacksRequest&, const Model::ListAvailableSolutionStacksOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAvailableSolutionStacksResponseReceivedHandler;
     typedef std::function<void(const ElasticBeanstalkClient*, const Model::ListPlatformBranchesRequest&, const Model::ListPlatformBranchesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPlatformBranchesResponseReceivedHandler;
     typedef std::function<void(const ElasticBeanstalkClient*, const Model::ListPlatformVersionsRequest&, const Model::ListPlatformVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPlatformVersionsResponseReceivedHandler;
@@ -297,7 +305,7 @@ namespace Model
    * product, go to the <a href="http://aws.amazon.com/elasticbeanstalk/">AWS Elastic
    * Beanstalk</a> details page. The location of the latest AWS Elastic Beanstalk
    * WSDL is <a
-   * href="http://elasticbeanstalk.s3.amazonaws.com/doc/2010-12-01/AWSElasticBeanstalk.wsdl">http://elasticbeanstalk.s3.amazonaws.com/doc/2010-12-01/AWSElasticBeanstalk.wsdl</a>.
+   * href="https://elasticbeanstalk.s3.amazonaws.com/doc/2010-12-01/AWSElasticBeanstalk.wsdl">https://elasticbeanstalk.s3.amazonaws.com/doc/2010-12-01/AWSElasticBeanstalk.wsdl</a>.
    * To install the Software Development Kits (SDKs), Integrated Development
    * Environment (IDE) Toolkits, and command line tools that enable you to access the
    * API, go to <a href="http://aws.amazon.com/tools/">Tools for Amazon Web
@@ -402,6 +410,49 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ApplyEnvironmentManagedActionAsync(const Model::ApplyEnvironmentManagedActionRequest& request, const ApplyEnvironmentManagedActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Add or change the operations role used by an environment. After this call is
+         * made, Elastic Beanstalk uses the associated operations role for permissions to
+         * downstream services during subsequent calls acting on this environment. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/iam-operationsrole.html">Operations
+         * roles</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/AssociateEnvironmentOperationsRole">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::AssociateEnvironmentOperationsRoleOutcome AssociateEnvironmentOperationsRole(const Model::AssociateEnvironmentOperationsRoleRequest& request) const;
+
+        /**
+         * <p>Add or change the operations role used by an environment. After this call is
+         * made, Elastic Beanstalk uses the associated operations role for permissions to
+         * downstream services during subsequent calls acting on this environment. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/iam-operationsrole.html">Operations
+         * roles</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/AssociateEnvironmentOperationsRole">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::AssociateEnvironmentOperationsRoleOutcomeCallable AssociateEnvironmentOperationsRoleCallable(const Model::AssociateEnvironmentOperationsRoleRequest& request) const;
+
+        /**
+         * <p>Add or change the operations role used by an environment. After this call is
+         * made, Elastic Beanstalk uses the associated operations role for permissions to
+         * downstream services during subsequent calls acting on this environment. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/iam-operationsrole.html">Operations
+         * roles</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/AssociateEnvironmentOperationsRole">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void AssociateEnvironmentOperationsRoleAsync(const Model::AssociateEnvironmentOperationsRoleRequest& request, const AssociateEnvironmentOperationsRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Checks if the specified CNAME is available.</p><p><h3>See Also:</h3>   <a
@@ -1291,6 +1342,49 @@ namespace Model
         virtual void DescribePlatformVersionAsync(const Model::DescribePlatformVersionRequest& request, const DescribePlatformVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Disassociate the operations role from an environment. After this call is
+         * made, Elastic Beanstalk uses the caller's permissions for permissions to
+         * downstream services during subsequent calls acting on this environment. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/iam-operationsrole.html">Operations
+         * roles</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DisassociateEnvironmentOperationsRole">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DisassociateEnvironmentOperationsRoleOutcome DisassociateEnvironmentOperationsRole(const Model::DisassociateEnvironmentOperationsRoleRequest& request) const;
+
+        /**
+         * <p>Disassociate the operations role from an environment. After this call is
+         * made, Elastic Beanstalk uses the caller's permissions for permissions to
+         * downstream services during subsequent calls acting on this environment. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/iam-operationsrole.html">Operations
+         * roles</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DisassociateEnvironmentOperationsRole">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DisassociateEnvironmentOperationsRoleOutcomeCallable DisassociateEnvironmentOperationsRoleCallable(const Model::DisassociateEnvironmentOperationsRoleRequest& request) const;
+
+        /**
+         * <p>Disassociate the operations role from an environment. After this call is
+         * made, Elastic Beanstalk uses the caller's permissions for permissions to
+         * downstream services during subsequent calls acting on this environment. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/iam-operationsrole.html">Operations
+         * roles</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DisassociateEnvironmentOperationsRole">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DisassociateEnvironmentOperationsRoleAsync(const Model::DisassociateEnvironmentOperationsRoleRequest& request, const DisassociateEnvironmentOperationsRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Returns a list of the available solution stack names, with the public version
          * first and then in reverse chronological order.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ListAvailableSolutionStacks">AWS
@@ -1922,6 +2016,7 @@ namespace Model
         void init(const Aws::Client::ClientConfiguration& clientConfiguration);
         void AbortEnvironmentUpdateAsyncHelper(const Model::AbortEnvironmentUpdateRequest& request, const AbortEnvironmentUpdateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ApplyEnvironmentManagedActionAsyncHelper(const Model::ApplyEnvironmentManagedActionRequest& request, const ApplyEnvironmentManagedActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void AssociateEnvironmentOperationsRoleAsyncHelper(const Model::AssociateEnvironmentOperationsRoleRequest& request, const AssociateEnvironmentOperationsRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CheckDNSAvailabilityAsyncHelper(const Model::CheckDNSAvailabilityRequest& request, const CheckDNSAvailabilityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ComposeEnvironmentsAsyncHelper(const Model::ComposeEnvironmentsRequest& request, const ComposeEnvironmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateApplicationAsyncHelper(const Model::CreateApplicationRequest& request, const CreateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1948,6 +2043,7 @@ namespace Model
         void DescribeEventsAsyncHelper(const Model::DescribeEventsRequest& request, const DescribeEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeInstancesHealthAsyncHelper(const Model::DescribeInstancesHealthRequest& request, const DescribeInstancesHealthResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribePlatformVersionAsyncHelper(const Model::DescribePlatformVersionRequest& request, const DescribePlatformVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DisassociateEnvironmentOperationsRoleAsyncHelper(const Model::DisassociateEnvironmentOperationsRoleRequest& request, const DisassociateEnvironmentOperationsRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListAvailableSolutionStacksAsyncHelper(const Model::ListAvailableSolutionStacksRequest& request, const ListAvailableSolutionStacksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListPlatformBranchesAsyncHelper(const Model::ListPlatformBranchesRequest& request, const ListPlatformBranchesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListPlatformVersionsAsyncHelper(const Model::ListPlatformVersionsRequest& request, const ListPlatformVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

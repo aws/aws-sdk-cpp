@@ -162,6 +162,11 @@ TerminateEnvironmentResult& TerminateEnvironmentResult::operator =(const Aws::Am
     {
       m_environmentArn = Aws::Utils::Xml::DecodeEscapedXmlText(environmentArnNode.GetText());
     }
+    XmlNode operationsRoleNode = resultNode.FirstChild("OperationsRole");
+    if(!operationsRoleNode.IsNull())
+    {
+      m_operationsRole = Aws::Utils::Xml::DecodeEscapedXmlText(operationsRoleNode.GetText());
+    }
   }
 
   if (!rootNode.IsNull()) {

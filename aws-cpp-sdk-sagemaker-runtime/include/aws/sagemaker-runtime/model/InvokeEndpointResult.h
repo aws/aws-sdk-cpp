@@ -51,7 +51,7 @@ namespace Model
      * <p>Includes the inference provided by the model.</p> <p>For information about
      * the format of the response body, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/cdf-inference.html">Common
-     * Data Formats—Inference</a>.</p>
+     * Data Formats-Inference</a>.</p>
      */
     inline Aws::IOStream& GetBody() { return m_body.GetUnderlyingStream(); }
 
@@ -59,7 +59,7 @@ namespace Model
      * <p>Includes the inference provided by the model.</p> <p>For information about
      * the format of the response body, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/cdf-inference.html">Common
-     * Data Formats—Inference</a>.</p>
+     * Data Formats-Inference</a>.</p>
      */
     inline void ReplaceBody(Aws::IOStream* body) { m_body = Aws::Utils::Stream::ResponseStream(body); }
 

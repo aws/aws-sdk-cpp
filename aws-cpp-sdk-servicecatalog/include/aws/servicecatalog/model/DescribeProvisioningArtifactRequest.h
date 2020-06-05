@@ -184,6 +184,88 @@ namespace Model
 
 
     /**
+     * <p>The provisioning artifact name.</p>
+     */
+    inline const Aws::String& GetProvisioningArtifactName() const{ return m_provisioningArtifactName; }
+
+    /**
+     * <p>The provisioning artifact name.</p>
+     */
+    inline bool ProvisioningArtifactNameHasBeenSet() const { return m_provisioningArtifactNameHasBeenSet; }
+
+    /**
+     * <p>The provisioning artifact name.</p>
+     */
+    inline void SetProvisioningArtifactName(const Aws::String& value) { m_provisioningArtifactNameHasBeenSet = true; m_provisioningArtifactName = value; }
+
+    /**
+     * <p>The provisioning artifact name.</p>
+     */
+    inline void SetProvisioningArtifactName(Aws::String&& value) { m_provisioningArtifactNameHasBeenSet = true; m_provisioningArtifactName = std::move(value); }
+
+    /**
+     * <p>The provisioning artifact name.</p>
+     */
+    inline void SetProvisioningArtifactName(const char* value) { m_provisioningArtifactNameHasBeenSet = true; m_provisioningArtifactName.assign(value); }
+
+    /**
+     * <p>The provisioning artifact name.</p>
+     */
+    inline DescribeProvisioningArtifactRequest& WithProvisioningArtifactName(const Aws::String& value) { SetProvisioningArtifactName(value); return *this;}
+
+    /**
+     * <p>The provisioning artifact name.</p>
+     */
+    inline DescribeProvisioningArtifactRequest& WithProvisioningArtifactName(Aws::String&& value) { SetProvisioningArtifactName(std::move(value)); return *this;}
+
+    /**
+     * <p>The provisioning artifact name.</p>
+     */
+    inline DescribeProvisioningArtifactRequest& WithProvisioningArtifactName(const char* value) { SetProvisioningArtifactName(value); return *this;}
+
+
+    /**
+     * <p>The product name.</p>
+     */
+    inline const Aws::String& GetProductName() const{ return m_productName; }
+
+    /**
+     * <p>The product name.</p>
+     */
+    inline bool ProductNameHasBeenSet() const { return m_productNameHasBeenSet; }
+
+    /**
+     * <p>The product name.</p>
+     */
+    inline void SetProductName(const Aws::String& value) { m_productNameHasBeenSet = true; m_productName = value; }
+
+    /**
+     * <p>The product name.</p>
+     */
+    inline void SetProductName(Aws::String&& value) { m_productNameHasBeenSet = true; m_productName = std::move(value); }
+
+    /**
+     * <p>The product name.</p>
+     */
+    inline void SetProductName(const char* value) { m_productNameHasBeenSet = true; m_productName.assign(value); }
+
+    /**
+     * <p>The product name.</p>
+     */
+    inline DescribeProvisioningArtifactRequest& WithProductName(const Aws::String& value) { SetProductName(value); return *this;}
+
+    /**
+     * <p>The product name.</p>
+     */
+    inline DescribeProvisioningArtifactRequest& WithProductName(Aws::String&& value) { SetProductName(std::move(value)); return *this;}
+
+    /**
+     * <p>The product name.</p>
+     */
+    inline DescribeProvisioningArtifactRequest& WithProductName(const char* value) { SetProductName(value); return *this;}
+
+
+    /**
      * <p>Indicates whether a verbose level of detail is enabled.</p>
      */
     inline bool GetVerbose() const{ return m_verbose; }
@@ -213,6 +295,12 @@ namespace Model
 
     Aws::String m_productId;
     bool m_productIdHasBeenSet;
+
+    Aws::String m_provisioningArtifactName;
+    bool m_provisioningArtifactNameHasBeenSet;
+
+    Aws::String m_productName;
+    bool m_productNameHasBeenSet;
 
     bool m_verbose;
     bool m_verboseHasBeenSet;

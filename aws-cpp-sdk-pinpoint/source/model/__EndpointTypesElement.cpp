@@ -30,6 +30,7 @@ namespace Aws
       namespace __EndpointTypesElementMapper
       {
 
+        static const int PUSH_HASH = HashingUtils::HashString("PUSH");
         static const int GCM_HASH = HashingUtils::HashString("GCM");
         static const int APNS_HASH = HashingUtils::HashString("APNS");
         static const int APNS_SANDBOX_HASH = HashingUtils::HashString("APNS_SANDBOX");
@@ -46,7 +47,11 @@ namespace Aws
         __EndpointTypesElement Get__EndpointTypesElementForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == GCM_HASH)
+          if (hashCode == PUSH_HASH)
+          {
+            return __EndpointTypesElement::PUSH;
+          }
+          else if (hashCode == GCM_HASH)
           {
             return __EndpointTypesElement::GCM;
           }
@@ -104,6 +109,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case __EndpointTypesElement::PUSH:
+            return "PUSH";
           case __EndpointTypesElement::GCM:
             return "GCM";
           case __EndpointTypesElement::APNS:

@@ -36,7 +36,11 @@ Origin::Origin() :
     m_originPathHasBeenSet(false),
     m_customHeadersHasBeenSet(false),
     m_s3OriginConfigHasBeenSet(false),
-    m_customOriginConfigHasBeenSet(false)
+    m_customOriginConfigHasBeenSet(false),
+    m_connectionAttempts(0),
+    m_connectionAttemptsHasBeenSet(false),
+    m_connectionTimeout(0),
+    m_connectionTimeoutHasBeenSet(false)
 {
 }
 
@@ -46,7 +50,11 @@ Origin::Origin(const XmlNode& xmlNode) :
     m_originPathHasBeenSet(false),
     m_customHeadersHasBeenSet(false),
     m_s3OriginConfigHasBeenSet(false),
-    m_customOriginConfigHasBeenSet(false)
+    m_customOriginConfigHasBeenSet(false),
+    m_connectionAttempts(0),
+    m_connectionAttemptsHasBeenSet(false),
+    m_connectionTimeout(0),
+    m_connectionTimeoutHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -93,6 +101,18 @@ Origin& Origin::operator =(const XmlNode& xmlNode)
       m_customOriginConfig = customOriginConfigNode;
       m_customOriginConfigHasBeenSet = true;
     }
+    XmlNode connectionAttemptsNode = resultNode.FirstChild("ConnectionAttempts");
+    if(!connectionAttemptsNode.IsNull())
+    {
+      m_connectionAttempts = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(connectionAttemptsNode.GetText()).c_str()).c_str());
+      m_connectionAttemptsHasBeenSet = true;
+    }
+    XmlNode connectionTimeoutNode = resultNode.FirstChild("ConnectionTimeout");
+    if(!connectionTimeoutNode.IsNull())
+    {
+      m_connectionTimeout = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(connectionTimeoutNode.GetText()).c_str()).c_str());
+      m_connectionTimeoutHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -135,6 +155,22 @@ void Origin::AddToNode(XmlNode& parentNode) const
   {
    XmlNode customOriginConfigNode = parentNode.CreateChildElement("CustomOriginConfig");
    m_customOriginConfig.AddToNode(customOriginConfigNode);
+  }
+
+  if(m_connectionAttemptsHasBeenSet)
+  {
+   XmlNode connectionAttemptsNode = parentNode.CreateChildElement("ConnectionAttempts");
+   ss << m_connectionAttempts;
+   connectionAttemptsNode.SetText(ss.str());
+   ss.str("");
+  }
+
+  if(m_connectionTimeoutHasBeenSet)
+  {
+   XmlNode connectionTimeoutNode = parentNode.CreateChildElement("ConnectionTimeout");
+   ss << m_connectionTimeout;
+   connectionTimeoutNode.SetText(ss.str());
+   ss.str("");
   }
 
 }

@@ -21,6 +21,7 @@
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/apigateway/model/ContentHandlingStrategy.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/apigateway/model/TlsConfig.h>
 #include <aws/apigateway/model/IntegrationResponse.h>
 #include <utility>
 
@@ -1735,6 +1736,37 @@ namespace Model
      */
     inline Integration& AddIntegrationResponses(const char* key, const IntegrationResponse& value) { m_integrationResponsesHasBeenSet = true; m_integrationResponses.emplace(key, value); return *this; }
 
+
+    /**
+     * <p>Specifies the TLS configuration for an integration.</p>
+     */
+    inline const TlsConfig& GetTlsConfig() const{ return m_tlsConfig; }
+
+    /**
+     * <p>Specifies the TLS configuration for an integration.</p>
+     */
+    inline bool TlsConfigHasBeenSet() const { return m_tlsConfigHasBeenSet; }
+
+    /**
+     * <p>Specifies the TLS configuration for an integration.</p>
+     */
+    inline void SetTlsConfig(const TlsConfig& value) { m_tlsConfigHasBeenSet = true; m_tlsConfig = value; }
+
+    /**
+     * <p>Specifies the TLS configuration for an integration.</p>
+     */
+    inline void SetTlsConfig(TlsConfig&& value) { m_tlsConfigHasBeenSet = true; m_tlsConfig = std::move(value); }
+
+    /**
+     * <p>Specifies the TLS configuration for an integration.</p>
+     */
+    inline Integration& WithTlsConfig(const TlsConfig& value) { SetTlsConfig(value); return *this;}
+
+    /**
+     * <p>Specifies the TLS configuration for an integration.</p>
+     */
+    inline Integration& WithTlsConfig(TlsConfig&& value) { SetTlsConfig(std::move(value)); return *this;}
+
   private:
 
     IntegrationType m_type;
@@ -1778,6 +1810,9 @@ namespace Model
 
     Aws::Map<Aws::String, IntegrationResponse> m_integrationResponses;
     bool m_integrationResponsesHasBeenSet;
+
+    TlsConfig m_tlsConfig;
+    bool m_tlsConfigHasBeenSet;
   };
 
 } // namespace Model

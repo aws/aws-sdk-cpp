@@ -36,6 +36,7 @@
 #include <aws/personalize/model/CreateDatasetGroupRequest.h>
 #include <aws/personalize/model/CreateDatasetImportJobRequest.h>
 #include <aws/personalize/model/CreateEventTrackerRequest.h>
+#include <aws/personalize/model/CreateFilterRequest.h>
 #include <aws/personalize/model/CreateSchemaRequest.h>
 #include <aws/personalize/model/CreateSolutionRequest.h>
 #include <aws/personalize/model/CreateSolutionVersionRequest.h>
@@ -43,6 +44,7 @@
 #include <aws/personalize/model/DeleteDatasetRequest.h>
 #include <aws/personalize/model/DeleteDatasetGroupRequest.h>
 #include <aws/personalize/model/DeleteEventTrackerRequest.h>
+#include <aws/personalize/model/DeleteFilterRequest.h>
 #include <aws/personalize/model/DeleteSchemaRequest.h>
 #include <aws/personalize/model/DeleteSolutionRequest.h>
 #include <aws/personalize/model/DescribeAlgorithmRequest.h>
@@ -53,6 +55,7 @@
 #include <aws/personalize/model/DescribeDatasetImportJobRequest.h>
 #include <aws/personalize/model/DescribeEventTrackerRequest.h>
 #include <aws/personalize/model/DescribeFeatureTransformationRequest.h>
+#include <aws/personalize/model/DescribeFilterRequest.h>
 #include <aws/personalize/model/DescribeRecipeRequest.h>
 #include <aws/personalize/model/DescribeSchemaRequest.h>
 #include <aws/personalize/model/DescribeSolutionRequest.h>
@@ -64,6 +67,7 @@
 #include <aws/personalize/model/ListDatasetImportJobsRequest.h>
 #include <aws/personalize/model/ListDatasetsRequest.h>
 #include <aws/personalize/model/ListEventTrackersRequest.h>
+#include <aws/personalize/model/ListFiltersRequest.h>
 #include <aws/personalize/model/ListRecipesRequest.h>
 #include <aws/personalize/model/ListSchemasRequest.h>
 #include <aws/personalize/model/ListSolutionVersionsRequest.h>
@@ -352,6 +356,41 @@ void PersonalizeClient::CreateEventTrackerAsyncHelper(const CreateEventTrackerRe
   handler(this, request, CreateEventTracker(request), context);
 }
 
+CreateFilterOutcome PersonalizeClient::CreateFilter(const CreateFilterRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return CreateFilterOutcome(CreateFilterResult(outcome.GetResult()));
+  }
+  else
+  {
+    return CreateFilterOutcome(outcome.GetError());
+  }
+}
+
+CreateFilterOutcomeCallable PersonalizeClient::CreateFilterCallable(const CreateFilterRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateFilterOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateFilter(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void PersonalizeClient::CreateFilterAsync(const CreateFilterRequest& request, const CreateFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateFilterAsyncHelper( request, handler, context ); } );
+}
+
+void PersonalizeClient::CreateFilterAsyncHelper(const CreateFilterRequest& request, const CreateFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateFilter(request), context);
+}
+
 CreateSchemaOutcome PersonalizeClient::CreateSchema(const CreateSchemaRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -595,6 +634,41 @@ void PersonalizeClient::DeleteEventTrackerAsync(const DeleteEventTrackerRequest&
 void PersonalizeClient::DeleteEventTrackerAsyncHelper(const DeleteEventTrackerRequest& request, const DeleteEventTrackerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteEventTracker(request), context);
+}
+
+DeleteFilterOutcome PersonalizeClient::DeleteFilter(const DeleteFilterRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DeleteFilterOutcome(NoResult());
+  }
+  else
+  {
+    return DeleteFilterOutcome(outcome.GetError());
+  }
+}
+
+DeleteFilterOutcomeCallable PersonalizeClient::DeleteFilterCallable(const DeleteFilterRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteFilterOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteFilter(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void PersonalizeClient::DeleteFilterAsync(const DeleteFilterRequest& request, const DeleteFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteFilterAsyncHelper( request, handler, context ); } );
+}
+
+void PersonalizeClient::DeleteFilterAsyncHelper(const DeleteFilterRequest& request, const DeleteFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteFilter(request), context);
 }
 
 DeleteSchemaOutcome PersonalizeClient::DeleteSchema(const DeleteSchemaRequest& request) const
@@ -945,6 +1019,41 @@ void PersonalizeClient::DescribeFeatureTransformationAsync(const DescribeFeature
 void PersonalizeClient::DescribeFeatureTransformationAsyncHelper(const DescribeFeatureTransformationRequest& request, const DescribeFeatureTransformationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribeFeatureTransformation(request), context);
+}
+
+DescribeFilterOutcome PersonalizeClient::DescribeFilter(const DescribeFilterRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DescribeFilterOutcome(DescribeFilterResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeFilterOutcome(outcome.GetError());
+  }
+}
+
+DescribeFilterOutcomeCallable PersonalizeClient::DescribeFilterCallable(const DescribeFilterRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeFilterOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeFilter(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void PersonalizeClient::DescribeFilterAsync(const DescribeFilterRequest& request, const DescribeFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeFilterAsyncHelper( request, handler, context ); } );
+}
+
+void PersonalizeClient::DescribeFilterAsyncHelper(const DescribeFilterRequest& request, const DescribeFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeFilter(request), context);
 }
 
 DescribeRecipeOutcome PersonalizeClient::DescribeRecipe(const DescribeRecipeRequest& request) const
@@ -1330,6 +1439,41 @@ void PersonalizeClient::ListEventTrackersAsync(const ListEventTrackersRequest& r
 void PersonalizeClient::ListEventTrackersAsyncHelper(const ListEventTrackersRequest& request, const ListEventTrackersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListEventTrackers(request), context);
+}
+
+ListFiltersOutcome PersonalizeClient::ListFilters(const ListFiltersRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ListFiltersOutcome(ListFiltersResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListFiltersOutcome(outcome.GetError());
+  }
+}
+
+ListFiltersOutcomeCallable PersonalizeClient::ListFiltersCallable(const ListFiltersRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListFiltersOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListFilters(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void PersonalizeClient::ListFiltersAsync(const ListFiltersRequest& request, const ListFiltersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListFiltersAsyncHelper( request, handler, context ); } );
+}
+
+void PersonalizeClient::ListFiltersAsyncHelper(const ListFiltersRequest& request, const ListFiltersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListFilters(request), context);
 }
 
 ListRecipesOutcome PersonalizeClient::ListRecipes(const ListRecipesRequest& request) const

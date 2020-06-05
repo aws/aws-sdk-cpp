@@ -141,6 +141,47 @@ namespace Model
      */
     inline DescribeProductRequest& WithId(const char* value) { SetId(value); return *this;}
 
+
+    /**
+     * <p>The product name.</p>
+     */
+    inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>The product name.</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The product name.</p>
+     */
+    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
+
+    /**
+     * <p>The product name.</p>
+     */
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
+
+    /**
+     * <p>The product name.</p>
+     */
+    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
+
+    /**
+     * <p>The product name.</p>
+     */
+    inline DescribeProductRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
+
+    /**
+     * <p>The product name.</p>
+     */
+    inline DescribeProductRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
+
+    /**
+     * <p>The product name.</p>
+     */
+    inline DescribeProductRequest& WithName(const char* value) { SetName(value); return *this;}
+
   private:
 
     Aws::String m_acceptLanguage;
@@ -148,6 +189,9 @@ namespace Model
 
     Aws::String m_id;
     bool m_idHasBeenSet;
+
+    Aws::String m_name;
+    bool m_nameHasBeenSet;
   };
 
 } // namespace Model

@@ -263,52 +263,109 @@ namespace Model
 
 
     /**
-     * <p>Specifies the model to be requested for an inference when invoking a
-     * multi-model endpoint. </p>
+     * <p>The model to request for inference when invoking a multi-model endpoint. </p>
      */
     inline const Aws::String& GetTargetModel() const{ return m_targetModel; }
 
     /**
-     * <p>Specifies the model to be requested for an inference when invoking a
-     * multi-model endpoint. </p>
+     * <p>The model to request for inference when invoking a multi-model endpoint. </p>
      */
     inline bool TargetModelHasBeenSet() const { return m_targetModelHasBeenSet; }
 
     /**
-     * <p>Specifies the model to be requested for an inference when invoking a
-     * multi-model endpoint. </p>
+     * <p>The model to request for inference when invoking a multi-model endpoint. </p>
      */
     inline void SetTargetModel(const Aws::String& value) { m_targetModelHasBeenSet = true; m_targetModel = value; }
 
     /**
-     * <p>Specifies the model to be requested for an inference when invoking a
-     * multi-model endpoint. </p>
+     * <p>The model to request for inference when invoking a multi-model endpoint. </p>
      */
     inline void SetTargetModel(Aws::String&& value) { m_targetModelHasBeenSet = true; m_targetModel = std::move(value); }
 
     /**
-     * <p>Specifies the model to be requested for an inference when invoking a
-     * multi-model endpoint. </p>
+     * <p>The model to request for inference when invoking a multi-model endpoint. </p>
      */
     inline void SetTargetModel(const char* value) { m_targetModelHasBeenSet = true; m_targetModel.assign(value); }
 
     /**
-     * <p>Specifies the model to be requested for an inference when invoking a
-     * multi-model endpoint. </p>
+     * <p>The model to request for inference when invoking a multi-model endpoint. </p>
      */
     inline InvokeEndpointRequest& WithTargetModel(const Aws::String& value) { SetTargetModel(value); return *this;}
 
     /**
-     * <p>Specifies the model to be requested for an inference when invoking a
-     * multi-model endpoint. </p>
+     * <p>The model to request for inference when invoking a multi-model endpoint. </p>
      */
     inline InvokeEndpointRequest& WithTargetModel(Aws::String&& value) { SetTargetModel(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies the model to be requested for an inference when invoking a
-     * multi-model endpoint. </p>
+     * <p>The model to request for inference when invoking a multi-model endpoint. </p>
      */
     inline InvokeEndpointRequest& WithTargetModel(const char* value) { SetTargetModel(value); return *this;}
+
+
+    /**
+     * <p>Specify the production variant to send the inference request to when invoking
+     * an endpoint that is running two or more variants. Note that this parameter
+     * overrides the default behavior for the endpoint, which is to distribute the
+     * invocation traffic based on the variant weights.</p>
+     */
+    inline const Aws::String& GetTargetVariant() const{ return m_targetVariant; }
+
+    /**
+     * <p>Specify the production variant to send the inference request to when invoking
+     * an endpoint that is running two or more variants. Note that this parameter
+     * overrides the default behavior for the endpoint, which is to distribute the
+     * invocation traffic based on the variant weights.</p>
+     */
+    inline bool TargetVariantHasBeenSet() const { return m_targetVariantHasBeenSet; }
+
+    /**
+     * <p>Specify the production variant to send the inference request to when invoking
+     * an endpoint that is running two or more variants. Note that this parameter
+     * overrides the default behavior for the endpoint, which is to distribute the
+     * invocation traffic based on the variant weights.</p>
+     */
+    inline void SetTargetVariant(const Aws::String& value) { m_targetVariantHasBeenSet = true; m_targetVariant = value; }
+
+    /**
+     * <p>Specify the production variant to send the inference request to when invoking
+     * an endpoint that is running two or more variants. Note that this parameter
+     * overrides the default behavior for the endpoint, which is to distribute the
+     * invocation traffic based on the variant weights.</p>
+     */
+    inline void SetTargetVariant(Aws::String&& value) { m_targetVariantHasBeenSet = true; m_targetVariant = std::move(value); }
+
+    /**
+     * <p>Specify the production variant to send the inference request to when invoking
+     * an endpoint that is running two or more variants. Note that this parameter
+     * overrides the default behavior for the endpoint, which is to distribute the
+     * invocation traffic based on the variant weights.</p>
+     */
+    inline void SetTargetVariant(const char* value) { m_targetVariantHasBeenSet = true; m_targetVariant.assign(value); }
+
+    /**
+     * <p>Specify the production variant to send the inference request to when invoking
+     * an endpoint that is running two or more variants. Note that this parameter
+     * overrides the default behavior for the endpoint, which is to distribute the
+     * invocation traffic based on the variant weights.</p>
+     */
+    inline InvokeEndpointRequest& WithTargetVariant(const Aws::String& value) { SetTargetVariant(value); return *this;}
+
+    /**
+     * <p>Specify the production variant to send the inference request to when invoking
+     * an endpoint that is running two or more variants. Note that this parameter
+     * overrides the default behavior for the endpoint, which is to distribute the
+     * invocation traffic based on the variant weights.</p>
+     */
+    inline InvokeEndpointRequest& WithTargetVariant(Aws::String&& value) { SetTargetVariant(std::move(value)); return *this;}
+
+    /**
+     * <p>Specify the production variant to send the inference request to when invoking
+     * an endpoint that is running two or more variants. Note that this parameter
+     * overrides the default behavior for the endpoint, which is to distribute the
+     * invocation traffic based on the variant weights.</p>
+     */
+    inline InvokeEndpointRequest& WithTargetVariant(const char* value) { SetTargetVariant(value); return *this;}
 
   private:
 
@@ -324,6 +381,9 @@ namespace Model
 
     Aws::String m_targetModel;
     bool m_targetModelHasBeenSet;
+
+    Aws::String m_targetVariant;
+    bool m_targetVariantHasBeenSet;
   };
 
 } // namespace Model

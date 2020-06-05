@@ -33,7 +33,8 @@ CreateEnvironmentRequest::CreateEnvironmentRequest() :
     m_solutionStackNameHasBeenSet(false),
     m_platformArnHasBeenSet(false),
     m_optionSettingsHasBeenSet(false),
-    m_optionsToRemoveHasBeenSet(false)
+    m_optionsToRemoveHasBeenSet(false),
+    m_operationsRoleHasBeenSet(false)
 {
 }
 
@@ -119,6 +120,11 @@ Aws::String CreateEnvironmentRequest::SerializePayload() const
       item.OutputToStream(ss, "OptionsToRemove.member.", optionsToRemoveCount, "");
       optionsToRemoveCount++;
     }
+  }
+
+  if(m_operationsRoleHasBeenSet)
+  {
+    ss << "OperationsRole=" << StringUtils::URLEncode(m_operationsRole.c_str()) << "&";
   }
 
   ss << "Version=2010-12-01";

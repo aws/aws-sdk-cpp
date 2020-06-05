@@ -828,6 +828,63 @@ namespace Model
     inline UpdateEnvironmentResult& WithEnvironmentArn(const char* value) { SetEnvironmentArn(value); return *this;}
 
 
+    /**
+     * <p>The Amazon Resource Name (ARN) of the environment's operations role. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/iam-operationsrole.html">Operations
+     * roles</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p>
+     */
+    inline const Aws::String& GetOperationsRole() const{ return m_operationsRole; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the environment's operations role. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/iam-operationsrole.html">Operations
+     * roles</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p>
+     */
+    inline void SetOperationsRole(const Aws::String& value) { m_operationsRole = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the environment's operations role. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/iam-operationsrole.html">Operations
+     * roles</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p>
+     */
+    inline void SetOperationsRole(Aws::String&& value) { m_operationsRole = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the environment's operations role. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/iam-operationsrole.html">Operations
+     * roles</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p>
+     */
+    inline void SetOperationsRole(const char* value) { m_operationsRole.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the environment's operations role. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/iam-operationsrole.html">Operations
+     * roles</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p>
+     */
+    inline UpdateEnvironmentResult& WithOperationsRole(const Aws::String& value) { SetOperationsRole(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the environment's operations role. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/iam-operationsrole.html">Operations
+     * roles</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p>
+     */
+    inline UpdateEnvironmentResult& WithOperationsRole(Aws::String&& value) { SetOperationsRole(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the environment's operations role. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/iam-operationsrole.html">Operations
+     * roles</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p>
+     */
+    inline UpdateEnvironmentResult& WithOperationsRole(const char* value) { SetOperationsRole(value); return *this;}
+
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -884,6 +941,8 @@ namespace Model
     Aws::Vector<EnvironmentLink> m_environmentLinks;
 
     Aws::String m_environmentArn;
+
+    Aws::String m_operationsRole;
 
     ResponseMetadata m_responseMetadata;
   };
