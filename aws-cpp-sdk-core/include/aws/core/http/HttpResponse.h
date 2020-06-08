@@ -210,12 +210,14 @@ namespace Aws
             /**
              * Gets the response body of the response.
              */
-            virtual Aws::IOStream& GetResponseBody() const = 0;
+            virtual Aws::IStream& GetResponseBody() const = 0;
             /**
              * Gives full control of the memory of the ResponseBody over to the caller. At this point, it is the caller's
              * responsibility to clean up this object.
              */
             virtual Utils::Stream::ResponseStream&& SwapResponseStreamOwnership() = 0;
+
+            virtual Utils::Stream::ResponseStream & GetResponseStream() = 0;
             /**
              * Adds a header to the http response object.
              */

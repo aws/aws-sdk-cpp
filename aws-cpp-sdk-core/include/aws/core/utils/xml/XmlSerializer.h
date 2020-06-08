@@ -193,7 +193,7 @@ namespace Aws
                 /**
                  * Parses the stream into an XMLDocument
                  */
-                static XmlDocument CreateFromXmlStream(Aws::IOStream&);
+                static XmlDocument CreateFromXmlStream(Aws::IStream&);
                 /**
                 * Parses the string into an XMLDocument
                 */
