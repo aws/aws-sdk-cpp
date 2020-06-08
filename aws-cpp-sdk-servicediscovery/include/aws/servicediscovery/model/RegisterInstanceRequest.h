@@ -382,7 +382,9 @@ namespace Model
      * for an SRV record or a Route 53 health check when you created the service.</p>
      * <p> <b>Custom attributes</b> </p> <p>You can add up to 30 custom attributes. For
      * each key-value pair, the maximum length of the attribute name is 255 characters,
-     * and the maximum length of the attribute value is 1,024 characters. </p>
+     * and the maximum length of the attribute value is 1,024 characters. Total size of
+     * all provided attributes (sum of all keys and values) must not exceed 5,000
+     * characters.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetAttributes() const{ return m_attributes; }
 
@@ -439,7 +441,9 @@ namespace Model
      * for an SRV record or a Route 53 health check when you created the service.</p>
      * <p> <b>Custom attributes</b> </p> <p>You can add up to 30 custom attributes. For
      * each key-value pair, the maximum length of the attribute name is 255 characters,
-     * and the maximum length of the attribute value is 1,024 characters. </p>
+     * and the maximum length of the attribute value is 1,024 characters. Total size of
+     * all provided attributes (sum of all keys and values) must not exceed 5,000
+     * characters.</p>
      */
     inline bool AttributesHasBeenSet() const { return m_attributesHasBeenSet; }
 
@@ -496,7 +500,9 @@ namespace Model
      * for an SRV record or a Route 53 health check when you created the service.</p>
      * <p> <b>Custom attributes</b> </p> <p>You can add up to 30 custom attributes. For
      * each key-value pair, the maximum length of the attribute name is 255 characters,
-     * and the maximum length of the attribute value is 1,024 characters. </p>
+     * and the maximum length of the attribute value is 1,024 characters. Total size of
+     * all provided attributes (sum of all keys and values) must not exceed 5,000
+     * characters.</p>
      */
     inline void SetAttributes(const Aws::Map<Aws::String, Aws::String>& value) { m_attributesHasBeenSet = true; m_attributes = value; }
 
@@ -553,7 +559,9 @@ namespace Model
      * for an SRV record or a Route 53 health check when you created the service.</p>
      * <p> <b>Custom attributes</b> </p> <p>You can add up to 30 custom attributes. For
      * each key-value pair, the maximum length of the attribute name is 255 characters,
-     * and the maximum length of the attribute value is 1,024 characters. </p>
+     * and the maximum length of the attribute value is 1,024 characters. Total size of
+     * all provided attributes (sum of all keys and values) must not exceed 5,000
+     * characters.</p>
      */
     inline void SetAttributes(Aws::Map<Aws::String, Aws::String>&& value) { m_attributesHasBeenSet = true; m_attributes = std::move(value); }
 
@@ -610,7 +618,9 @@ namespace Model
      * for an SRV record or a Route 53 health check when you created the service.</p>
      * <p> <b>Custom attributes</b> </p> <p>You can add up to 30 custom attributes. For
      * each key-value pair, the maximum length of the attribute name is 255 characters,
-     * and the maximum length of the attribute value is 1,024 characters. </p>
+     * and the maximum length of the attribute value is 1,024 characters. Total size of
+     * all provided attributes (sum of all keys and values) must not exceed 5,000
+     * characters.</p>
      */
     inline RegisterInstanceRequest& WithAttributes(const Aws::Map<Aws::String, Aws::String>& value) { SetAttributes(value); return *this;}
 
@@ -667,7 +677,9 @@ namespace Model
      * for an SRV record or a Route 53 health check when you created the service.</p>
      * <p> <b>Custom attributes</b> </p> <p>You can add up to 30 custom attributes. For
      * each key-value pair, the maximum length of the attribute name is 255 characters,
-     * and the maximum length of the attribute value is 1,024 characters. </p>
+     * and the maximum length of the attribute value is 1,024 characters. Total size of
+     * all provided attributes (sum of all keys and values) must not exceed 5,000
+     * characters.</p>
      */
     inline RegisterInstanceRequest& WithAttributes(Aws::Map<Aws::String, Aws::String>&& value) { SetAttributes(std::move(value)); return *this;}
 
@@ -724,7 +736,9 @@ namespace Model
      * for an SRV record or a Route 53 health check when you created the service.</p>
      * <p> <b>Custom attributes</b> </p> <p>You can add up to 30 custom attributes. For
      * each key-value pair, the maximum length of the attribute name is 255 characters,
-     * and the maximum length of the attribute value is 1,024 characters. </p>
+     * and the maximum length of the attribute value is 1,024 characters. Total size of
+     * all provided attributes (sum of all keys and values) must not exceed 5,000
+     * characters.</p>
      */
     inline RegisterInstanceRequest& AddAttributes(const Aws::String& key, const Aws::String& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, value); return *this; }
 
@@ -781,7 +795,9 @@ namespace Model
      * for an SRV record or a Route 53 health check when you created the service.</p>
      * <p> <b>Custom attributes</b> </p> <p>You can add up to 30 custom attributes. For
      * each key-value pair, the maximum length of the attribute name is 255 characters,
-     * and the maximum length of the attribute value is 1,024 characters. </p>
+     * and the maximum length of the attribute value is 1,024 characters. Total size of
+     * all provided attributes (sum of all keys and values) must not exceed 5,000
+     * characters.</p>
      */
     inline RegisterInstanceRequest& AddAttributes(Aws::String&& key, const Aws::String& value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), value); return *this; }
 
@@ -838,7 +854,9 @@ namespace Model
      * for an SRV record or a Route 53 health check when you created the service.</p>
      * <p> <b>Custom attributes</b> </p> <p>You can add up to 30 custom attributes. For
      * each key-value pair, the maximum length of the attribute name is 255 characters,
-     * and the maximum length of the attribute value is 1,024 characters. </p>
+     * and the maximum length of the attribute value is 1,024 characters. Total size of
+     * all provided attributes (sum of all keys and values) must not exceed 5,000
+     * characters.</p>
      */
     inline RegisterInstanceRequest& AddAttributes(const Aws::String& key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, std::move(value)); return *this; }
 
@@ -895,7 +913,9 @@ namespace Model
      * for an SRV record or a Route 53 health check when you created the service.</p>
      * <p> <b>Custom attributes</b> </p> <p>You can add up to 30 custom attributes. For
      * each key-value pair, the maximum length of the attribute name is 255 characters,
-     * and the maximum length of the attribute value is 1,024 characters. </p>
+     * and the maximum length of the attribute value is 1,024 characters. Total size of
+     * all provided attributes (sum of all keys and values) must not exceed 5,000
+     * characters.</p>
      */
     inline RegisterInstanceRequest& AddAttributes(Aws::String&& key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), std::move(value)); return *this; }
 
@@ -952,7 +972,9 @@ namespace Model
      * for an SRV record or a Route 53 health check when you created the service.</p>
      * <p> <b>Custom attributes</b> </p> <p>You can add up to 30 custom attributes. For
      * each key-value pair, the maximum length of the attribute name is 255 characters,
-     * and the maximum length of the attribute value is 1,024 characters. </p>
+     * and the maximum length of the attribute value is 1,024 characters. Total size of
+     * all provided attributes (sum of all keys and values) must not exceed 5,000
+     * characters.</p>
      */
     inline RegisterInstanceRequest& AddAttributes(const char* key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, std::move(value)); return *this; }
 
@@ -1009,7 +1031,9 @@ namespace Model
      * for an SRV record or a Route 53 health check when you created the service.</p>
      * <p> <b>Custom attributes</b> </p> <p>You can add up to 30 custom attributes. For
      * each key-value pair, the maximum length of the attribute name is 255 characters,
-     * and the maximum length of the attribute value is 1,024 characters. </p>
+     * and the maximum length of the attribute value is 1,024 characters. Total size of
+     * all provided attributes (sum of all keys and values) must not exceed 5,000
+     * characters.</p>
      */
     inline RegisterInstanceRequest& AddAttributes(Aws::String&& key, const char* value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), value); return *this; }
 
@@ -1066,7 +1090,9 @@ namespace Model
      * for an SRV record or a Route 53 health check when you created the service.</p>
      * <p> <b>Custom attributes</b> </p> <p>You can add up to 30 custom attributes. For
      * each key-value pair, the maximum length of the attribute name is 255 characters,
-     * and the maximum length of the attribute value is 1,024 characters. </p>
+     * and the maximum length of the attribute value is 1,024 characters. Total size of
+     * all provided attributes (sum of all keys and values) must not exceed 5,000
+     * characters.</p>
      */
     inline RegisterInstanceRequest& AddAttributes(const char* key, const char* value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, value); return *this; }
 

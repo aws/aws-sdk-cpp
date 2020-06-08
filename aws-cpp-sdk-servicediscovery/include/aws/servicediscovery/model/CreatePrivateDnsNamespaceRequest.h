@@ -17,6 +17,8 @@
 #include <aws/servicediscovery/ServiceDiscovery_EXPORTS.h>
 #include <aws/servicediscovery/ServiceDiscoveryRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/servicediscovery/model/Tag.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
 
@@ -248,6 +250,63 @@ namespace Model
      */
     inline CreatePrivateDnsNamespaceRequest& WithVpc(const char* value) { SetVpc(value); return *this;}
 
+
+    /**
+     * <p>The tags to add to the namespace. Each tag consists of a key and an optional
+     * value, both of which you define. Tag keys can have a maximum character length of
+     * 128 characters, and tag values can have a maximum length of 256 characters.</p>
+     */
+    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>The tags to add to the namespace. Each tag consists of a key and an optional
+     * value, both of which you define. Tag keys can have a maximum character length of
+     * 128 characters, and tag values can have a maximum length of 256 characters.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>The tags to add to the namespace. Each tag consists of a key and an optional
+     * value, both of which you define. Tag keys can have a maximum character length of
+     * 128 characters, and tag values can have a maximum length of 256 characters.</p>
+     */
+    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>The tags to add to the namespace. Each tag consists of a key and an optional
+     * value, both of which you define. Tag keys can have a maximum character length of
+     * 128 characters, and tag values can have a maximum length of 256 characters.</p>
+     */
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>The tags to add to the namespace. Each tag consists of a key and an optional
+     * value, both of which you define. Tag keys can have a maximum character length of
+     * 128 characters, and tag values can have a maximum length of 256 characters.</p>
+     */
+    inline CreatePrivateDnsNamespaceRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>The tags to add to the namespace. Each tag consists of a key and an optional
+     * value, both of which you define. Tag keys can have a maximum character length of
+     * 128 characters, and tag values can have a maximum length of 256 characters.</p>
+     */
+    inline CreatePrivateDnsNamespaceRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>The tags to add to the namespace. Each tag consists of a key and an optional
+     * value, both of which you define. Tag keys can have a maximum character length of
+     * 128 characters, and tag values can have a maximum length of 256 characters.</p>
+     */
+    inline CreatePrivateDnsNamespaceRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+
+    /**
+     * <p>The tags to add to the namespace. Each tag consists of a key and an optional
+     * value, both of which you define. Tag keys can have a maximum character length of
+     * 128 characters, and tag values can have a maximum length of 256 characters.</p>
+     */
+    inline CreatePrivateDnsNamespaceRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_name;
@@ -261,6 +320,9 @@ namespace Model
 
     Aws::String m_vpc;
     bool m_vpcHasBeenSet;
+
+    Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet;
   };
 
 } // namespace Model

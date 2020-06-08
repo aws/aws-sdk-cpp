@@ -35,7 +35,9 @@ Subscription::Subscription() :
     m_timeCommitmentInSecondsHasBeenSet(false),
     m_autoRenew(AutoRenew::NOT_SET),
     m_autoRenewHasBeenSet(false),
-    m_limitsHasBeenSet(false)
+    m_limitsHasBeenSet(false),
+    m_proactiveEngagementStatus(ProactiveEngagementStatus::NOT_SET),
+    m_proactiveEngagementStatusHasBeenSet(false)
 {
 }
 
@@ -46,7 +48,9 @@ Subscription::Subscription(JsonView jsonValue) :
     m_timeCommitmentInSecondsHasBeenSet(false),
     m_autoRenew(AutoRenew::NOT_SET),
     m_autoRenewHasBeenSet(false),
-    m_limitsHasBeenSet(false)
+    m_limitsHasBeenSet(false),
+    m_proactiveEngagementStatus(ProactiveEngagementStatus::NOT_SET),
+    m_proactiveEngagementStatusHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -91,6 +95,13 @@ Subscription& Subscription::operator =(JsonView jsonValue)
     m_limitsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ProactiveEngagementStatus"))
+  {
+    m_proactiveEngagementStatus = ProactiveEngagementStatusMapper::GetProactiveEngagementStatusForName(jsonValue.GetString("ProactiveEngagementStatus"));
+
+    m_proactiveEngagementStatusHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -128,6 +139,11 @@ JsonValue Subscription::Jsonize() const
    }
    payload.WithArray("Limits", std::move(limitsJsonList));
 
+  }
+
+  if(m_proactiveEngagementStatusHasBeenSet)
+  {
+   payload.WithString("ProactiveEngagementStatus", ProactiveEngagementStatusMapper::GetNameForProactiveEngagementStatus(m_proactiveEngagementStatus));
   }
 
   return payload;

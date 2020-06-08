@@ -18,6 +18,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/shield/model/AutoRenew.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/shield/model/ProactiveEngagementStatus.h>
 #include <aws/shield/model/Limit.h>
 #include <utility>
 
@@ -257,6 +258,73 @@ namespace Model
      */
     inline Subscription& AddLimits(Limit&& value) { m_limitsHasBeenSet = true; m_limits.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>If <code>ENABLED</code>, the DDoS Response Team (DRT) will use email and
+     * phone to notify contacts about escalations to the DRT and to initiate proactive
+     * customer support.</p> <p>If <code>PENDING</code>, you have requested proactive
+     * engagement and the request is pending. The status changes to
+     * <code>ENABLED</code> when your request is fully processed.</p> <p>If
+     * <code>DISABLED</code>, the DRT will not proactively notify contacts about
+     * escalations or to initiate proactive customer support. </p>
+     */
+    inline const ProactiveEngagementStatus& GetProactiveEngagementStatus() const{ return m_proactiveEngagementStatus; }
+
+    /**
+     * <p>If <code>ENABLED</code>, the DDoS Response Team (DRT) will use email and
+     * phone to notify contacts about escalations to the DRT and to initiate proactive
+     * customer support.</p> <p>If <code>PENDING</code>, you have requested proactive
+     * engagement and the request is pending. The status changes to
+     * <code>ENABLED</code> when your request is fully processed.</p> <p>If
+     * <code>DISABLED</code>, the DRT will not proactively notify contacts about
+     * escalations or to initiate proactive customer support. </p>
+     */
+    inline bool ProactiveEngagementStatusHasBeenSet() const { return m_proactiveEngagementStatusHasBeenSet; }
+
+    /**
+     * <p>If <code>ENABLED</code>, the DDoS Response Team (DRT) will use email and
+     * phone to notify contacts about escalations to the DRT and to initiate proactive
+     * customer support.</p> <p>If <code>PENDING</code>, you have requested proactive
+     * engagement and the request is pending. The status changes to
+     * <code>ENABLED</code> when your request is fully processed.</p> <p>If
+     * <code>DISABLED</code>, the DRT will not proactively notify contacts about
+     * escalations or to initiate proactive customer support. </p>
+     */
+    inline void SetProactiveEngagementStatus(const ProactiveEngagementStatus& value) { m_proactiveEngagementStatusHasBeenSet = true; m_proactiveEngagementStatus = value; }
+
+    /**
+     * <p>If <code>ENABLED</code>, the DDoS Response Team (DRT) will use email and
+     * phone to notify contacts about escalations to the DRT and to initiate proactive
+     * customer support.</p> <p>If <code>PENDING</code>, you have requested proactive
+     * engagement and the request is pending. The status changes to
+     * <code>ENABLED</code> when your request is fully processed.</p> <p>If
+     * <code>DISABLED</code>, the DRT will not proactively notify contacts about
+     * escalations or to initiate proactive customer support. </p>
+     */
+    inline void SetProactiveEngagementStatus(ProactiveEngagementStatus&& value) { m_proactiveEngagementStatusHasBeenSet = true; m_proactiveEngagementStatus = std::move(value); }
+
+    /**
+     * <p>If <code>ENABLED</code>, the DDoS Response Team (DRT) will use email and
+     * phone to notify contacts about escalations to the DRT and to initiate proactive
+     * customer support.</p> <p>If <code>PENDING</code>, you have requested proactive
+     * engagement and the request is pending. The status changes to
+     * <code>ENABLED</code> when your request is fully processed.</p> <p>If
+     * <code>DISABLED</code>, the DRT will not proactively notify contacts about
+     * escalations or to initiate proactive customer support. </p>
+     */
+    inline Subscription& WithProactiveEngagementStatus(const ProactiveEngagementStatus& value) { SetProactiveEngagementStatus(value); return *this;}
+
+    /**
+     * <p>If <code>ENABLED</code>, the DDoS Response Team (DRT) will use email and
+     * phone to notify contacts about escalations to the DRT and to initiate proactive
+     * customer support.</p> <p>If <code>PENDING</code>, you have requested proactive
+     * engagement and the request is pending. The status changes to
+     * <code>ENABLED</code> when your request is fully processed.</p> <p>If
+     * <code>DISABLED</code>, the DRT will not proactively notify contacts about
+     * escalations or to initiate proactive customer support. </p>
+     */
+    inline Subscription& WithProactiveEngagementStatus(ProactiveEngagementStatus&& value) { SetProactiveEngagementStatus(std::move(value)); return *this;}
+
   private:
 
     Aws::Utils::DateTime m_startTime;
@@ -273,6 +341,9 @@ namespace Model
 
     Aws::Vector<Limit> m_limits;
     bool m_limitsHasBeenSet;
+
+    ProactiveEngagementStatus m_proactiveEngagementStatus;
+    bool m_proactiveEngagementStatusHasBeenSet;
   };
 
 } // namespace Model

@@ -13,7 +13,7 @@
 * permissions and limitations under the License.
 */
 
-#include <aws/servicediscovery/model/CreateHttpNamespaceRequest.h>
+#include <aws/servicediscovery/model/TagResourceRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 
 #include <utility>
@@ -22,34 +22,19 @@ using namespace Aws::ServiceDiscovery::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateHttpNamespaceRequest::CreateHttpNamespaceRequest() : 
-    m_nameHasBeenSet(false),
-    m_creatorRequestId(Aws::Utils::UUID::RandomUUID()),
-    m_creatorRequestIdHasBeenSet(true),
-    m_descriptionHasBeenSet(false),
+TagResourceRequest::TagResourceRequest() : 
+    m_resourceARNHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
 
-Aws::String CreateHttpNamespaceRequest::SerializePayload() const
+Aws::String TagResourceRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
+  if(m_resourceARNHasBeenSet)
   {
-   payload.WithString("Name", m_name);
-
-  }
-
-  if(m_creatorRequestIdHasBeenSet)
-  {
-   payload.WithString("CreatorRequestId", m_creatorRequestId);
-
-  }
-
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("Description", m_description);
+   payload.WithString("ResourceARN", m_resourceARN);
 
   }
 
@@ -67,10 +52,10 @@ Aws::String CreateHttpNamespaceRequest::SerializePayload() const
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection CreateHttpNamespaceRequest::GetRequestSpecificHeaders() const
+Aws::Http::HeaderValueCollection TagResourceRequest::GetRequestSpecificHeaders() const
 {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "Route53AutoNaming_v20170314.CreateHttpNamespace"));
+  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "Route53AutoNaming_v20170314.TagResource"));
   return headers;
 
 }

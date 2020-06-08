@@ -28,14 +28,16 @@ namespace ServiceDiscovery
 namespace ServiceDiscoveryErrorMapper
 {
 
-static const int SERVICE_ALREADY_EXISTS_HASH = HashingUtils::HashString("ServiceAlreadyExists");
-static const int INVALID_INPUT_HASH = HashingUtils::HashString("InvalidInput");
 static const int NAMESPACE_ALREADY_EXISTS_HASH = HashingUtils::HashString("NamespaceAlreadyExists");
 static const int NAMESPACE_NOT_FOUND_HASH = HashingUtils::HashString("NamespaceNotFound");
 static const int OPERATION_NOT_FOUND_HASH = HashingUtils::HashString("OperationNotFound");
-static const int INSTANCE_NOT_FOUND_HASH = HashingUtils::HashString("InstanceNotFound");
 static const int RESOURCE_IN_USE_HASH = HashingUtils::HashString("ResourceInUse");
 static const int DUPLICATE_REQUEST_HASH = HashingUtils::HashString("DuplicateRequest");
+static const int SERVICE_ALREADY_EXISTS_HASH = HashingUtils::HashString("ServiceAlreadyExists");
+static const int INVALID_INPUT_HASH = HashingUtils::HashString("InvalidInput");
+static const int INSTANCE_NOT_FOUND_HASH = HashingUtils::HashString("InstanceNotFound");
+static const int TOO_MANY_TAGS_HASH = HashingUtils::HashString("TooManyTagsException");
+static const int REQUEST_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("RequestLimitExceeded");
 static const int SERVICE_NOT_FOUND_HASH = HashingUtils::HashString("ServiceNotFound");
 static const int RESOURCE_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("ResourceLimitExceeded");
 static const int CUSTOM_HEALTH_NOT_FOUND_HASH = HashingUtils::HashString("CustomHealthNotFound");
@@ -45,15 +47,7 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == SERVICE_ALREADY_EXISTS_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ServiceDiscoveryErrors::SERVICE_ALREADY_EXISTS), false);
-  }
-  else if (hashCode == INVALID_INPUT_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ServiceDiscoveryErrors::INVALID_INPUT), false);
-  }
-  else if (hashCode == NAMESPACE_ALREADY_EXISTS_HASH)
+  if (hashCode == NAMESPACE_ALREADY_EXISTS_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ServiceDiscoveryErrors::NAMESPACE_ALREADY_EXISTS), false);
   }
@@ -65,10 +59,6 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ServiceDiscoveryErrors::OPERATION_NOT_FOUND), false);
   }
-  else if (hashCode == INSTANCE_NOT_FOUND_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ServiceDiscoveryErrors::INSTANCE_NOT_FOUND), false);
-  }
   else if (hashCode == RESOURCE_IN_USE_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ServiceDiscoveryErrors::RESOURCE_IN_USE), false);
@@ -76,6 +66,26 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == DUPLICATE_REQUEST_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ServiceDiscoveryErrors::DUPLICATE_REQUEST), false);
+  }
+  else if (hashCode == SERVICE_ALREADY_EXISTS_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ServiceDiscoveryErrors::SERVICE_ALREADY_EXISTS), false);
+  }
+  else if (hashCode == INVALID_INPUT_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ServiceDiscoveryErrors::INVALID_INPUT), false);
+  }
+  else if (hashCode == INSTANCE_NOT_FOUND_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ServiceDiscoveryErrors::INSTANCE_NOT_FOUND), false);
+  }
+  else if (hashCode == TOO_MANY_TAGS_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ServiceDiscoveryErrors::TOO_MANY_TAGS), false);
+  }
+  else if (hashCode == REQUEST_LIMIT_EXCEEDED_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ServiceDiscoveryErrors::REQUEST_LIMIT_EXCEEDED), true);
   }
   else if (hashCode == SERVICE_NOT_FOUND_HASH)
   {

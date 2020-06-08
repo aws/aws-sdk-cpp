@@ -27,7 +27,8 @@ CreatePrivateDnsNamespaceRequest::CreatePrivateDnsNamespaceRequest() :
     m_creatorRequestId(Aws::Utils::UUID::RandomUUID()),
     m_creatorRequestIdHasBeenSet(true),
     m_descriptionHasBeenSet(false),
-    m_vpcHasBeenSet(false)
+    m_vpcHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -56,6 +57,17 @@ Aws::String CreatePrivateDnsNamespaceRequest::SerializePayload() const
   if(m_vpcHasBeenSet)
   {
    payload.WithString("Vpc", m_vpc);
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   Array<JsonValue> tagsJsonList(m_tags.size());
+   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+   {
+     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+   }
+   payload.WithArray("Tags", std::move(tagsJsonList));
 
   }
 

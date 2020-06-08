@@ -33,6 +33,7 @@
 #include <aws/shield/model/AssociateDRTLogBucketRequest.h>
 #include <aws/shield/model/AssociateDRTRoleRequest.h>
 #include <aws/shield/model/AssociateHealthCheckRequest.h>
+#include <aws/shield/model/AssociateProactiveEngagementDetailsRequest.h>
 #include <aws/shield/model/CreateProtectionRequest.h>
 #include <aws/shield/model/CreateSubscriptionRequest.h>
 #include <aws/shield/model/DeleteProtectionRequest.h>
@@ -41,9 +42,11 @@
 #include <aws/shield/model/DescribeEmergencyContactSettingsRequest.h>
 #include <aws/shield/model/DescribeProtectionRequest.h>
 #include <aws/shield/model/DescribeSubscriptionRequest.h>
+#include <aws/shield/model/DisableProactiveEngagementRequest.h>
 #include <aws/shield/model/DisassociateDRTLogBucketRequest.h>
 #include <aws/shield/model/DisassociateDRTRoleRequest.h>
 #include <aws/shield/model/DisassociateHealthCheckRequest.h>
+#include <aws/shield/model/EnableProactiveEngagementRequest.h>
 #include <aws/shield/model/GetSubscriptionStateRequest.h>
 #include <aws/shield/model/ListAttacksRequest.h>
 #include <aws/shield/model/ListProtectionsRequest.h>
@@ -225,6 +228,41 @@ void ShieldClient::AssociateHealthCheckAsync(const AssociateHealthCheckRequest& 
 void ShieldClient::AssociateHealthCheckAsyncHelper(const AssociateHealthCheckRequest& request, const AssociateHealthCheckResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, AssociateHealthCheck(request), context);
+}
+
+AssociateProactiveEngagementDetailsOutcome ShieldClient::AssociateProactiveEngagementDetails(const AssociateProactiveEngagementDetailsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return AssociateProactiveEngagementDetailsOutcome(AssociateProactiveEngagementDetailsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return AssociateProactiveEngagementDetailsOutcome(outcome.GetError());
+  }
+}
+
+AssociateProactiveEngagementDetailsOutcomeCallable ShieldClient::AssociateProactiveEngagementDetailsCallable(const AssociateProactiveEngagementDetailsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< AssociateProactiveEngagementDetailsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AssociateProactiveEngagementDetails(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ShieldClient::AssociateProactiveEngagementDetailsAsync(const AssociateProactiveEngagementDetailsRequest& request, const AssociateProactiveEngagementDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->AssociateProactiveEngagementDetailsAsyncHelper( request, handler, context ); } );
+}
+
+void ShieldClient::AssociateProactiveEngagementDetailsAsyncHelper(const AssociateProactiveEngagementDetailsRequest& request, const AssociateProactiveEngagementDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, AssociateProactiveEngagementDetails(request), context);
 }
 
 CreateProtectionOutcome ShieldClient::CreateProtection(const CreateProtectionRequest& request) const
@@ -507,6 +545,41 @@ void ShieldClient::DescribeSubscriptionAsyncHelper(const DescribeSubscriptionReq
   handler(this, request, DescribeSubscription(request), context);
 }
 
+DisableProactiveEngagementOutcome ShieldClient::DisableProactiveEngagement(const DisableProactiveEngagementRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DisableProactiveEngagementOutcome(DisableProactiveEngagementResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DisableProactiveEngagementOutcome(outcome.GetError());
+  }
+}
+
+DisableProactiveEngagementOutcomeCallable ShieldClient::DisableProactiveEngagementCallable(const DisableProactiveEngagementRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DisableProactiveEngagementOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DisableProactiveEngagement(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ShieldClient::DisableProactiveEngagementAsync(const DisableProactiveEngagementRequest& request, const DisableProactiveEngagementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DisableProactiveEngagementAsyncHelper( request, handler, context ); } );
+}
+
+void ShieldClient::DisableProactiveEngagementAsyncHelper(const DisableProactiveEngagementRequest& request, const DisableProactiveEngagementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DisableProactiveEngagement(request), context);
+}
+
 DisassociateDRTLogBucketOutcome ShieldClient::DisassociateDRTLogBucket(const DisassociateDRTLogBucketRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -610,6 +683,41 @@ void ShieldClient::DisassociateHealthCheckAsync(const DisassociateHealthCheckReq
 void ShieldClient::DisassociateHealthCheckAsyncHelper(const DisassociateHealthCheckRequest& request, const DisassociateHealthCheckResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DisassociateHealthCheck(request), context);
+}
+
+EnableProactiveEngagementOutcome ShieldClient::EnableProactiveEngagement(const EnableProactiveEngagementRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return EnableProactiveEngagementOutcome(EnableProactiveEngagementResult(outcome.GetResult()));
+  }
+  else
+  {
+    return EnableProactiveEngagementOutcome(outcome.GetError());
+  }
+}
+
+EnableProactiveEngagementOutcomeCallable ShieldClient::EnableProactiveEngagementCallable(const EnableProactiveEngagementRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< EnableProactiveEngagementOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->EnableProactiveEngagement(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ShieldClient::EnableProactiveEngagementAsync(const EnableProactiveEngagementRequest& request, const EnableProactiveEngagementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->EnableProactiveEngagementAsyncHelper( request, handler, context ); } );
+}
+
+void ShieldClient::EnableProactiveEngagementAsyncHelper(const EnableProactiveEngagementRequest& request, const EnableProactiveEngagementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, EnableProactiveEngagement(request), context);
 }
 
 GetSubscriptionStateOutcome ShieldClient::GetSubscriptionState(const GetSubscriptionStateRequest& request) const

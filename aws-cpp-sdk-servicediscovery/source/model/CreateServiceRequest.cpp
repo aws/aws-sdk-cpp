@@ -30,7 +30,8 @@ CreateServiceRequest::CreateServiceRequest() :
     m_descriptionHasBeenSet(false),
     m_dnsConfigHasBeenSet(false),
     m_healthCheckConfigHasBeenSet(false),
-    m_healthCheckCustomConfigHasBeenSet(false)
+    m_healthCheckCustomConfigHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -77,6 +78,17 @@ Aws::String CreateServiceRequest::SerializePayload() const
   if(m_healthCheckCustomConfigHasBeenSet)
   {
    payload.WithObject("HealthCheckCustomConfig", m_healthCheckCustomConfig.Jsonize());
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   Array<JsonValue> tagsJsonList(m_tags.size());
+   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+   {
+     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+   }
+   payload.WithArray("Tags", std::move(tagsJsonList));
 
   }
 

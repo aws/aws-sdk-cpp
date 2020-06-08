@@ -24,6 +24,7 @@
 #include <aws/shield/model/AssociateDRTLogBucketResult.h>
 #include <aws/shield/model/AssociateDRTRoleResult.h>
 #include <aws/shield/model/AssociateHealthCheckResult.h>
+#include <aws/shield/model/AssociateProactiveEngagementDetailsResult.h>
 #include <aws/shield/model/CreateProtectionResult.h>
 #include <aws/shield/model/CreateSubscriptionResult.h>
 #include <aws/shield/model/DeleteProtectionResult.h>
@@ -32,9 +33,11 @@
 #include <aws/shield/model/DescribeEmergencyContactSettingsResult.h>
 #include <aws/shield/model/DescribeProtectionResult.h>
 #include <aws/shield/model/DescribeSubscriptionResult.h>
+#include <aws/shield/model/DisableProactiveEngagementResult.h>
 #include <aws/shield/model/DisassociateDRTLogBucketResult.h>
 #include <aws/shield/model/DisassociateDRTRoleResult.h>
 #include <aws/shield/model/DisassociateHealthCheckResult.h>
+#include <aws/shield/model/EnableProactiveEngagementResult.h>
 #include <aws/shield/model/GetSubscriptionStateResult.h>
 #include <aws/shield/model/ListAttacksResult.h>
 #include <aws/shield/model/ListProtectionsResult.h>
@@ -82,6 +85,7 @@ namespace Model
         class AssociateDRTLogBucketRequest;
         class AssociateDRTRoleRequest;
         class AssociateHealthCheckRequest;
+        class AssociateProactiveEngagementDetailsRequest;
         class CreateProtectionRequest;
         class CreateSubscriptionRequest;
         class DeleteProtectionRequest;
@@ -90,9 +94,11 @@ namespace Model
         class DescribeEmergencyContactSettingsRequest;
         class DescribeProtectionRequest;
         class DescribeSubscriptionRequest;
+        class DisableProactiveEngagementRequest;
         class DisassociateDRTLogBucketRequest;
         class DisassociateDRTRoleRequest;
         class DisassociateHealthCheckRequest;
+        class EnableProactiveEngagementRequest;
         class GetSubscriptionStateRequest;
         class ListAttacksRequest;
         class ListProtectionsRequest;
@@ -102,6 +108,7 @@ namespace Model
         typedef Aws::Utils::Outcome<AssociateDRTLogBucketResult, Aws::Client::AWSError<ShieldErrors>> AssociateDRTLogBucketOutcome;
         typedef Aws::Utils::Outcome<AssociateDRTRoleResult, Aws::Client::AWSError<ShieldErrors>> AssociateDRTRoleOutcome;
         typedef Aws::Utils::Outcome<AssociateHealthCheckResult, Aws::Client::AWSError<ShieldErrors>> AssociateHealthCheckOutcome;
+        typedef Aws::Utils::Outcome<AssociateProactiveEngagementDetailsResult, Aws::Client::AWSError<ShieldErrors>> AssociateProactiveEngagementDetailsOutcome;
         typedef Aws::Utils::Outcome<CreateProtectionResult, Aws::Client::AWSError<ShieldErrors>> CreateProtectionOutcome;
         typedef Aws::Utils::Outcome<CreateSubscriptionResult, Aws::Client::AWSError<ShieldErrors>> CreateSubscriptionOutcome;
         typedef Aws::Utils::Outcome<DeleteProtectionResult, Aws::Client::AWSError<ShieldErrors>> DeleteProtectionOutcome;
@@ -110,9 +117,11 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribeEmergencyContactSettingsResult, Aws::Client::AWSError<ShieldErrors>> DescribeEmergencyContactSettingsOutcome;
         typedef Aws::Utils::Outcome<DescribeProtectionResult, Aws::Client::AWSError<ShieldErrors>> DescribeProtectionOutcome;
         typedef Aws::Utils::Outcome<DescribeSubscriptionResult, Aws::Client::AWSError<ShieldErrors>> DescribeSubscriptionOutcome;
+        typedef Aws::Utils::Outcome<DisableProactiveEngagementResult, Aws::Client::AWSError<ShieldErrors>> DisableProactiveEngagementOutcome;
         typedef Aws::Utils::Outcome<DisassociateDRTLogBucketResult, Aws::Client::AWSError<ShieldErrors>> DisassociateDRTLogBucketOutcome;
         typedef Aws::Utils::Outcome<DisassociateDRTRoleResult, Aws::Client::AWSError<ShieldErrors>> DisassociateDRTRoleOutcome;
         typedef Aws::Utils::Outcome<DisassociateHealthCheckResult, Aws::Client::AWSError<ShieldErrors>> DisassociateHealthCheckOutcome;
+        typedef Aws::Utils::Outcome<EnableProactiveEngagementResult, Aws::Client::AWSError<ShieldErrors>> EnableProactiveEngagementOutcome;
         typedef Aws::Utils::Outcome<GetSubscriptionStateResult, Aws::Client::AWSError<ShieldErrors>> GetSubscriptionStateOutcome;
         typedef Aws::Utils::Outcome<ListAttacksResult, Aws::Client::AWSError<ShieldErrors>> ListAttacksOutcome;
         typedef Aws::Utils::Outcome<ListProtectionsResult, Aws::Client::AWSError<ShieldErrors>> ListProtectionsOutcome;
@@ -122,6 +131,7 @@ namespace Model
         typedef std::future<AssociateDRTLogBucketOutcome> AssociateDRTLogBucketOutcomeCallable;
         typedef std::future<AssociateDRTRoleOutcome> AssociateDRTRoleOutcomeCallable;
         typedef std::future<AssociateHealthCheckOutcome> AssociateHealthCheckOutcomeCallable;
+        typedef std::future<AssociateProactiveEngagementDetailsOutcome> AssociateProactiveEngagementDetailsOutcomeCallable;
         typedef std::future<CreateProtectionOutcome> CreateProtectionOutcomeCallable;
         typedef std::future<CreateSubscriptionOutcome> CreateSubscriptionOutcomeCallable;
         typedef std::future<DeleteProtectionOutcome> DeleteProtectionOutcomeCallable;
@@ -130,9 +140,11 @@ namespace Model
         typedef std::future<DescribeEmergencyContactSettingsOutcome> DescribeEmergencyContactSettingsOutcomeCallable;
         typedef std::future<DescribeProtectionOutcome> DescribeProtectionOutcomeCallable;
         typedef std::future<DescribeSubscriptionOutcome> DescribeSubscriptionOutcomeCallable;
+        typedef std::future<DisableProactiveEngagementOutcome> DisableProactiveEngagementOutcomeCallable;
         typedef std::future<DisassociateDRTLogBucketOutcome> DisassociateDRTLogBucketOutcomeCallable;
         typedef std::future<DisassociateDRTRoleOutcome> DisassociateDRTRoleOutcomeCallable;
         typedef std::future<DisassociateHealthCheckOutcome> DisassociateHealthCheckOutcomeCallable;
+        typedef std::future<EnableProactiveEngagementOutcome> EnableProactiveEngagementOutcomeCallable;
         typedef std::future<GetSubscriptionStateOutcome> GetSubscriptionStateOutcomeCallable;
         typedef std::future<ListAttacksOutcome> ListAttacksOutcomeCallable;
         typedef std::future<ListProtectionsOutcome> ListProtectionsOutcomeCallable;
@@ -145,6 +157,7 @@ namespace Model
     typedef std::function<void(const ShieldClient*, const Model::AssociateDRTLogBucketRequest&, const Model::AssociateDRTLogBucketOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateDRTLogBucketResponseReceivedHandler;
     typedef std::function<void(const ShieldClient*, const Model::AssociateDRTRoleRequest&, const Model::AssociateDRTRoleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateDRTRoleResponseReceivedHandler;
     typedef std::function<void(const ShieldClient*, const Model::AssociateHealthCheckRequest&, const Model::AssociateHealthCheckOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateHealthCheckResponseReceivedHandler;
+    typedef std::function<void(const ShieldClient*, const Model::AssociateProactiveEngagementDetailsRequest&, const Model::AssociateProactiveEngagementDetailsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateProactiveEngagementDetailsResponseReceivedHandler;
     typedef std::function<void(const ShieldClient*, const Model::CreateProtectionRequest&, const Model::CreateProtectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateProtectionResponseReceivedHandler;
     typedef std::function<void(const ShieldClient*, const Model::CreateSubscriptionRequest&, const Model::CreateSubscriptionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateSubscriptionResponseReceivedHandler;
     typedef std::function<void(const ShieldClient*, const Model::DeleteProtectionRequest&, const Model::DeleteProtectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteProtectionResponseReceivedHandler;
@@ -153,9 +166,11 @@ namespace Model
     typedef std::function<void(const ShieldClient*, const Model::DescribeEmergencyContactSettingsRequest&, const Model::DescribeEmergencyContactSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeEmergencyContactSettingsResponseReceivedHandler;
     typedef std::function<void(const ShieldClient*, const Model::DescribeProtectionRequest&, const Model::DescribeProtectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeProtectionResponseReceivedHandler;
     typedef std::function<void(const ShieldClient*, const Model::DescribeSubscriptionRequest&, const Model::DescribeSubscriptionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeSubscriptionResponseReceivedHandler;
+    typedef std::function<void(const ShieldClient*, const Model::DisableProactiveEngagementRequest&, const Model::DisableProactiveEngagementOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisableProactiveEngagementResponseReceivedHandler;
     typedef std::function<void(const ShieldClient*, const Model::DisassociateDRTLogBucketRequest&, const Model::DisassociateDRTLogBucketOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateDRTLogBucketResponseReceivedHandler;
     typedef std::function<void(const ShieldClient*, const Model::DisassociateDRTRoleRequest&, const Model::DisassociateDRTRoleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateDRTRoleResponseReceivedHandler;
     typedef std::function<void(const ShieldClient*, const Model::DisassociateHealthCheckRequest&, const Model::DisassociateHealthCheckOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateHealthCheckResponseReceivedHandler;
+    typedef std::function<void(const ShieldClient*, const Model::EnableProactiveEngagementRequest&, const Model::EnableProactiveEngagementOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > EnableProactiveEngagementResponseReceivedHandler;
     typedef std::function<void(const ShieldClient*, const Model::GetSubscriptionStateRequest&, const Model::GetSubscriptionStateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSubscriptionStateResponseReceivedHandler;
     typedef std::function<void(const ShieldClient*, const Model::ListAttacksRequest&, const Model::ListAttacksOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAttacksResponseReceivedHandler;
     typedef std::function<void(const ShieldClient*, const Model::ListProtectionsRequest&, const Model::ListProtectionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListProtectionsResponseReceivedHandler;
@@ -201,7 +216,7 @@ namespace Model
 
 
         /**
-         * <p>Authorizes the DDoS Response team (DRT) to access the specified Amazon S3
+         * <p>Authorizes the DDoS Response Team (DRT) to access the specified Amazon S3
          * bucket containing your AWS WAF logs. You can associate up to 10 Amazon S3
          * buckets with your subscription.</p> <p>To use the services of the DRT and make
          * an <code>AssociateDRTLogBucket</code> request, you must be subscribed to the <a
@@ -215,7 +230,7 @@ namespace Model
         virtual Model::AssociateDRTLogBucketOutcome AssociateDRTLogBucket(const Model::AssociateDRTLogBucketRequest& request) const;
 
         /**
-         * <p>Authorizes the DDoS Response team (DRT) to access the specified Amazon S3
+         * <p>Authorizes the DDoS Response Team (DRT) to access the specified Amazon S3
          * bucket containing your AWS WAF logs. You can associate up to 10 Amazon S3
          * buckets with your subscription.</p> <p>To use the services of the DRT and make
          * an <code>AssociateDRTLogBucket</code> request, you must be subscribed to the <a
@@ -231,7 +246,7 @@ namespace Model
         virtual Model::AssociateDRTLogBucketOutcomeCallable AssociateDRTLogBucketCallable(const Model::AssociateDRTLogBucketRequest& request) const;
 
         /**
-         * <p>Authorizes the DDoS Response team (DRT) to access the specified Amazon S3
+         * <p>Authorizes the DDoS Response Team (DRT) to access the specified Amazon S3
          * bucket containing your AWS WAF logs. You can associate up to 10 Amazon S3
          * buckets with your subscription.</p> <p>To use the services of the DRT and make
          * an <code>AssociateDRTLogBucket</code> request, you must be subscribed to the <a
@@ -247,7 +262,7 @@ namespace Model
         virtual void AssociateDRTLogBucketAsync(const Model::AssociateDRTLogBucketRequest& request, const AssociateDRTLogBucketResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Authorizes the DDoS Response team (DRT), using the specified role, to access
+         * <p>Authorizes the DDoS Response Team (DRT), using the specified role, to access
          * your AWS account to assist with DDoS attack mitigation during potential attacks.
          * This enables the DRT to inspect your AWS WAF configuration and create or update
          * AWS WAF rules and web ACLs.</p> <p>You can associate only one
@@ -284,7 +299,7 @@ namespace Model
         virtual Model::AssociateDRTRoleOutcome AssociateDRTRole(const Model::AssociateDRTRoleRequest& request) const;
 
         /**
-         * <p>Authorizes the DDoS Response team (DRT), using the specified role, to access
+         * <p>Authorizes the DDoS Response Team (DRT), using the specified role, to access
          * your AWS account to assist with DDoS attack mitigation during potential attacks.
          * This enables the DRT to inspect your AWS WAF configuration and create or update
          * AWS WAF rules and web ACLs.</p> <p>You can associate only one
@@ -323,7 +338,7 @@ namespace Model
         virtual Model::AssociateDRTRoleOutcomeCallable AssociateDRTRoleCallable(const Model::AssociateDRTRoleRequest& request) const;
 
         /**
-         * <p>Authorizes the DDoS Response team (DRT), using the specified role, to access
+         * <p>Authorizes the DDoS Response Team (DRT), using the specified role, to access
          * your AWS account to assist with DDoS attack mitigation during potential attacks.
          * This enables the DRT to inspect your AWS WAF configuration and create or update
          * AWS WAF rules and web ACLs.</p> <p>You can associate only one
@@ -409,6 +424,67 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void AssociateHealthCheckAsync(const Model::AssociateHealthCheckRequest& request, const AssociateHealthCheckResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Initializes proactive engagement and sets the list of contacts for the DDoS
+         * Response Team (DRT) to use. You must provide at least one phone number in the
+         * emergency contact list. </p> <p>After you have initialized proactive engagement
+         * using this call, to disable or enable proactive engagement, use the calls
+         * <code>DisableProactiveEngagement</code> and
+         * <code>EnableProactiveEngagement</code>. </p> <note> <p>This call defines the
+         * list of email addresses and phone numbers that the DDoS Response Team (DRT) can
+         * use to contact you for escalations to the DRT and to initiate proactive customer
+         * support.</p> <p>The contacts that you provide in the request replace any
+         * contacts that were already defined. If you already have contacts defined and
+         * want to use them, retrieve the list using
+         * <code>DescribeEmergencyContactSettings</code> and then provide it to this call.
+         * </p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/AssociateProactiveEngagementDetails">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::AssociateProactiveEngagementDetailsOutcome AssociateProactiveEngagementDetails(const Model::AssociateProactiveEngagementDetailsRequest& request) const;
+
+        /**
+         * <p>Initializes proactive engagement and sets the list of contacts for the DDoS
+         * Response Team (DRT) to use. You must provide at least one phone number in the
+         * emergency contact list. </p> <p>After you have initialized proactive engagement
+         * using this call, to disable or enable proactive engagement, use the calls
+         * <code>DisableProactiveEngagement</code> and
+         * <code>EnableProactiveEngagement</code>. </p> <note> <p>This call defines the
+         * list of email addresses and phone numbers that the DDoS Response Team (DRT) can
+         * use to contact you for escalations to the DRT and to initiate proactive customer
+         * support.</p> <p>The contacts that you provide in the request replace any
+         * contacts that were already defined. If you already have contacts defined and
+         * want to use them, retrieve the list using
+         * <code>DescribeEmergencyContactSettings</code> and then provide it to this call.
+         * </p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/AssociateProactiveEngagementDetails">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::AssociateProactiveEngagementDetailsOutcomeCallable AssociateProactiveEngagementDetailsCallable(const Model::AssociateProactiveEngagementDetailsRequest& request) const;
+
+        /**
+         * <p>Initializes proactive engagement and sets the list of contacts for the DDoS
+         * Response Team (DRT) to use. You must provide at least one phone number in the
+         * emergency contact list. </p> <p>After you have initialized proactive engagement
+         * using this call, to disable or enable proactive engagement, use the calls
+         * <code>DisableProactiveEngagement</code> and
+         * <code>EnableProactiveEngagement</code>. </p> <note> <p>This call defines the
+         * list of email addresses and phone numbers that the DDoS Response Team (DRT) can
+         * use to contact you for escalations to the DRT and to initiate proactive customer
+         * support.</p> <p>The contacts that you provide in the request replace any
+         * contacts that were already defined. If you already have contacts defined and
+         * want to use them, retrieve the list using
+         * <code>DescribeEmergencyContactSettings</code> and then provide it to this call.
+         * </p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/AssociateProactiveEngagementDetails">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void AssociateProactiveEngagementDetailsAsync(const Model::AssociateProactiveEngagementDetailsRequest& request, const AssociateProactiveEngagementDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Enables AWS Shield Advanced for a specific AWS resource. The resource can be
@@ -587,7 +663,7 @@ namespace Model
 
         /**
          * <p>Returns the current role and list of Amazon S3 log buckets used by the DDoS
-         * Response team (DRT) to access your AWS account while assisting with attack
+         * Response Team (DRT) to access your AWS account while assisting with attack
          * mitigation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DescribeDRTAccess">AWS
          * API Reference</a></p>
@@ -596,7 +672,7 @@ namespace Model
 
         /**
          * <p>Returns the current role and list of Amazon S3 log buckets used by the DDoS
-         * Response team (DRT) to access your AWS account while assisting with attack
+         * Response Team (DRT) to access your AWS account while assisting with attack
          * mitigation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DescribeDRTAccess">AWS
          * API Reference</a></p>
@@ -607,7 +683,7 @@ namespace Model
 
         /**
          * <p>Returns the current role and list of Amazon S3 log buckets used by the DDoS
-         * Response team (DRT) to access your AWS account while assisting with attack
+         * Response Team (DRT) to access your AWS account while assisting with attack
          * mitigation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DescribeDRTAccess">AWS
          * API Reference</a></p>
@@ -617,16 +693,20 @@ namespace Model
         virtual void DescribeDRTAccessAsync(const Model::DescribeDRTAccessRequest& request, const DescribeDRTAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists the email addresses that the DRT can use to contact you during a
-         * suspected attack.</p><p><h3>See Also:</h3>   <a
+         * <p>A list of email addresses and phone numbers that the DDoS Response Team (DRT)
+         * can use to contact you if you have proactive engagement enabled, for escalations
+         * to the DRT and to initiate proactive customer support.</p><p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DescribeEmergencyContactSettings">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeEmergencyContactSettingsOutcome DescribeEmergencyContactSettings(const Model::DescribeEmergencyContactSettingsRequest& request) const;
 
         /**
-         * <p>Lists the email addresses that the DRT can use to contact you during a
-         * suspected attack.</p><p><h3>See Also:</h3>   <a
+         * <p>A list of email addresses and phone numbers that the DDoS Response Team (DRT)
+         * can use to contact you if you have proactive engagement enabled, for escalations
+         * to the DRT and to initiate proactive customer support.</p><p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DescribeEmergencyContactSettings">AWS
          * API Reference</a></p>
          *
@@ -635,8 +715,10 @@ namespace Model
         virtual Model::DescribeEmergencyContactSettingsOutcomeCallable DescribeEmergencyContactSettingsCallable(const Model::DescribeEmergencyContactSettingsRequest& request) const;
 
         /**
-         * <p>Lists the email addresses that the DRT can use to contact you during a
-         * suspected attack.</p><p><h3>See Also:</h3>   <a
+         * <p>A list of email addresses and phone numbers that the DDoS Response Team (DRT)
+         * can use to contact you if you have proactive engagement enabled, for escalations
+         * to the DRT and to initiate proactive customer support.</p><p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DescribeEmergencyContactSettings">AWS
          * API Reference</a></p>
          *
@@ -701,7 +783,38 @@ namespace Model
         virtual void DescribeSubscriptionAsync(const Model::DescribeSubscriptionRequest& request, const DescribeSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Removes the DDoS Response team's (DRT) access to the specified Amazon S3
+         * <p>Removes authorization from the DDoS Response Team (DRT) to notify contacts
+         * about escalations to the DRT and to initiate proactive customer
+         * support.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DisableProactiveEngagement">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DisableProactiveEngagementOutcome DisableProactiveEngagement(const Model::DisableProactiveEngagementRequest& request) const;
+
+        /**
+         * <p>Removes authorization from the DDoS Response Team (DRT) to notify contacts
+         * about escalations to the DRT and to initiate proactive customer
+         * support.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DisableProactiveEngagement">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DisableProactiveEngagementOutcomeCallable DisableProactiveEngagementCallable(const Model::DisableProactiveEngagementRequest& request) const;
+
+        /**
+         * <p>Removes authorization from the DDoS Response Team (DRT) to notify contacts
+         * about escalations to the DRT and to initiate proactive customer
+         * support.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DisableProactiveEngagement">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DisableProactiveEngagementAsync(const Model::DisableProactiveEngagementRequest& request, const DisableProactiveEngagementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Removes the DDoS Response Team's (DRT) access to the specified Amazon S3
          * bucket containing your AWS WAF logs.</p> <p>To make a
          * <code>DisassociateDRTLogBucket</code> request, you must be subscribed to the <a
          * href="https://aws.amazon.com/premiumsupport/business-support/">Business Support
@@ -717,7 +830,7 @@ namespace Model
         virtual Model::DisassociateDRTLogBucketOutcome DisassociateDRTLogBucket(const Model::DisassociateDRTLogBucketRequest& request) const;
 
         /**
-         * <p>Removes the DDoS Response team's (DRT) access to the specified Amazon S3
+         * <p>Removes the DDoS Response Team's (DRT) access to the specified Amazon S3
          * bucket containing your AWS WAF logs.</p> <p>To make a
          * <code>DisassociateDRTLogBucket</code> request, you must be subscribed to the <a
          * href="https://aws.amazon.com/premiumsupport/business-support/">Business Support
@@ -735,7 +848,7 @@ namespace Model
         virtual Model::DisassociateDRTLogBucketOutcomeCallable DisassociateDRTLogBucketCallable(const Model::DisassociateDRTLogBucketRequest& request) const;
 
         /**
-         * <p>Removes the DDoS Response team's (DRT) access to the specified Amazon S3
+         * <p>Removes the DDoS Response Team's (DRT) access to the specified Amazon S3
          * bucket containing your AWS WAF logs.</p> <p>To make a
          * <code>DisassociateDRTLogBucket</code> request, you must be subscribed to the <a
          * href="https://aws.amazon.com/premiumsupport/business-support/">Business Support
@@ -753,7 +866,7 @@ namespace Model
         virtual void DisassociateDRTLogBucketAsync(const Model::DisassociateDRTLogBucketRequest& request, const DisassociateDRTLogBucketResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Removes the DDoS Response team's (DRT) access to your AWS account.</p> <p>To
+         * <p>Removes the DDoS Response Team's (DRT) access to your AWS account.</p> <p>To
          * make a <code>DisassociateDRTRole</code> request, you must be subscribed to the
          * <a href="https://aws.amazon.com/premiumsupport/business-support/">Business
          * Support plan</a> or the <a
@@ -768,7 +881,7 @@ namespace Model
         virtual Model::DisassociateDRTRoleOutcome DisassociateDRTRole(const Model::DisassociateDRTRoleRequest& request) const;
 
         /**
-         * <p>Removes the DDoS Response team's (DRT) access to your AWS account.</p> <p>To
+         * <p>Removes the DDoS Response Team's (DRT) access to your AWS account.</p> <p>To
          * make a <code>DisassociateDRTRole</code> request, you must be subscribed to the
          * <a href="https://aws.amazon.com/premiumsupport/business-support/">Business
          * Support plan</a> or the <a
@@ -785,7 +898,7 @@ namespace Model
         virtual Model::DisassociateDRTRoleOutcomeCallable DisassociateDRTRoleCallable(const Model::DisassociateDRTRoleRequest& request) const;
 
         /**
-         * <p>Removes the DDoS Response team's (DRT) access to your AWS account.</p> <p>To
+         * <p>Removes the DDoS Response Team's (DRT) access to your AWS account.</p> <p>To
          * make a <code>DisassociateDRTRole</code> request, you must be subscribed to the
          * <a href="https://aws.amazon.com/premiumsupport/business-support/">Business
          * Support plan</a> or the <a
@@ -852,6 +965,37 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DisassociateHealthCheckAsync(const Model::DisassociateHealthCheckRequest& request, const DisassociateHealthCheckResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Authorizes the DDoS Response Team (DRT) to use email and phone to notify
+         * contacts about escalations to the DRT and to initiate proactive customer
+         * support.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/EnableProactiveEngagement">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::EnableProactiveEngagementOutcome EnableProactiveEngagement(const Model::EnableProactiveEngagementRequest& request) const;
+
+        /**
+         * <p>Authorizes the DDoS Response Team (DRT) to use email and phone to notify
+         * contacts about escalations to the DRT and to initiate proactive customer
+         * support.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/EnableProactiveEngagement">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::EnableProactiveEngagementOutcomeCallable EnableProactiveEngagementCallable(const Model::EnableProactiveEngagementRequest& request) const;
+
+        /**
+         * <p>Authorizes the DDoS Response Team (DRT) to use email and phone to notify
+         * contacts about escalations to the DRT and to initiate proactive customer
+         * support.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/EnableProactiveEngagement">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void EnableProactiveEngagementAsync(const Model::EnableProactiveEngagementRequest& request, const EnableProactiveEngagementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the <code>SubscriptionState</code>, either <code>Active</code> or
@@ -938,16 +1082,20 @@ namespace Model
         virtual void ListProtectionsAsync(const Model::ListProtectionsRequest& request, const ListProtectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates the details of the list of email addresses that the DRT can use to
-         * contact you during a suspected attack.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates the details of the list of email addresses and phone numbers that the
+         * DDoS Response Team (DRT) can use to contact you if you have proactive engagement
+         * enabled, for escalations to the DRT and to initiate proactive customer
+         * support.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/UpdateEmergencyContactSettings">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateEmergencyContactSettingsOutcome UpdateEmergencyContactSettings(const Model::UpdateEmergencyContactSettingsRequest& request) const;
 
         /**
-         * <p>Updates the details of the list of email addresses that the DRT can use to
-         * contact you during a suspected attack.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates the details of the list of email addresses and phone numbers that the
+         * DDoS Response Team (DRT) can use to contact you if you have proactive engagement
+         * enabled, for escalations to the DRT and to initiate proactive customer
+         * support.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/UpdateEmergencyContactSettings">AWS
          * API Reference</a></p>
          *
@@ -956,8 +1104,10 @@ namespace Model
         virtual Model::UpdateEmergencyContactSettingsOutcomeCallable UpdateEmergencyContactSettingsCallable(const Model::UpdateEmergencyContactSettingsRequest& request) const;
 
         /**
-         * <p>Updates the details of the list of email addresses that the DRT can use to
-         * contact you during a suspected attack.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates the details of the list of email addresses and phone numbers that the
+         * DDoS Response Team (DRT) can use to contact you if you have proactive engagement
+         * enabled, for escalations to the DRT and to initiate proactive customer
+         * support.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/UpdateEmergencyContactSettings">AWS
          * API Reference</a></p>
          *
@@ -1003,6 +1153,7 @@ namespace Model
         void AssociateDRTLogBucketAsyncHelper(const Model::AssociateDRTLogBucketRequest& request, const AssociateDRTLogBucketResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void AssociateDRTRoleAsyncHelper(const Model::AssociateDRTRoleRequest& request, const AssociateDRTRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void AssociateHealthCheckAsyncHelper(const Model::AssociateHealthCheckRequest& request, const AssociateHealthCheckResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void AssociateProactiveEngagementDetailsAsyncHelper(const Model::AssociateProactiveEngagementDetailsRequest& request, const AssociateProactiveEngagementDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateProtectionAsyncHelper(const Model::CreateProtectionRequest& request, const CreateProtectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateSubscriptionAsyncHelper(const Model::CreateSubscriptionRequest& request, const CreateSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteProtectionAsyncHelper(const Model::DeleteProtectionRequest& request, const DeleteProtectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1011,9 +1162,11 @@ namespace Model
         void DescribeEmergencyContactSettingsAsyncHelper(const Model::DescribeEmergencyContactSettingsRequest& request, const DescribeEmergencyContactSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeProtectionAsyncHelper(const Model::DescribeProtectionRequest& request, const DescribeProtectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeSubscriptionAsyncHelper(const Model::DescribeSubscriptionRequest& request, const DescribeSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DisableProactiveEngagementAsyncHelper(const Model::DisableProactiveEngagementRequest& request, const DisableProactiveEngagementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisassociateDRTLogBucketAsyncHelper(const Model::DisassociateDRTLogBucketRequest& request, const DisassociateDRTLogBucketResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisassociateDRTRoleAsyncHelper(const Model::DisassociateDRTRoleRequest& request, const DisassociateDRTRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisassociateHealthCheckAsyncHelper(const Model::DisassociateHealthCheckRequest& request, const DisassociateHealthCheckResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void EnableProactiveEngagementAsyncHelper(const Model::EnableProactiveEngagementRequest& request, const EnableProactiveEngagementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetSubscriptionStateAsyncHelper(const Model::GetSubscriptionStateRequest& request, const GetSubscriptionStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListAttacksAsyncHelper(const Model::ListAttacksRequest& request, const ListAttacksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListProtectionsAsyncHelper(const Model::ListProtectionsRequest& request, const ListProtectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
