@@ -184,7 +184,10 @@ static size_t WriteData(char* ptr, size_t size, size_t nmemb, void* userdata)
             context->m_rateLimiter->ApplyAndPayForCost(static_cast<int64_t>(sizeToWrite));
         }
 
-        response->GetResponseBody().write(ptr, static_cast<std::streamsize>(sizeToWrite));
+        auto stream = std::make_shared<Aws::Utils::Stream::DefaultUnderlyingStream>();
+        stream->write(ptr, static_cast<std::streamsize>(sizeToWrite));
+        stream->flush();
+        response->GetResponseStream().SetUnderlyingStream(stream);
         auto& receivedHandler = context->m_request->GetDataReceivedEventHandler();
         if (receivedHandler)
         {
@@ -703,8 +706,6 @@ void CurlHttpClient::MakeRequestInternal(HttpRequest& request,
         {
             m_curlHandleContainer.ReleaseCurlHandle(connectionHandle);
         }
-        //go ahead and flush the response body stream
-        response->GetResponseBody().flush();
         request.AddRequestMetric(GetHttpClientMetricNameByType(HttpClientMetricsType::RequestLatency), (DateTime::Now() - startTransmissionTime).count());
     }
 

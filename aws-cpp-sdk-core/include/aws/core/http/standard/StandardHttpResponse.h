@@ -67,12 +67,14 @@ namespace Aws
                 /**
                  * Gets the response body of the response.
                  */
-                inline Aws::IOStream& GetResponseBody() const { return bodyStream.GetUnderlyingStream(); }
+                inline Aws::IStream& GetResponseBody() const { return bodyStream.GetUnderlyingStream(); }
                 /**
                  * Gives full control of the memory of the ResponseBody over to the caller. At this point, it is the caller's
                  * responsibility to clean up this object.
                  */
                 inline Utils::Stream::ResponseStream&& SwapResponseStreamOwnership() { return std::move(bodyStream); }
+
+                inline Utils::Stream::ResponseStream& GetResponseStream() { return bodyStream; }
                 /**
                  * Adds a header to the http response object.
                  */

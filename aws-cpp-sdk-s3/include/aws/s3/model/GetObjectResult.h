@@ -58,7 +58,7 @@ namespace Model
     /**
      * <p>Object data.</p>
      */
-    inline Aws::IOStream& GetBody() { return m_body.GetUnderlyingStream(); }
+    inline Aws::IStream& GetBody() { return m_body.GetUnderlyingStream(); }
 
     /**
      * <p>Object data.</p>
