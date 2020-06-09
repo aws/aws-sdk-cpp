@@ -50,42 +50,42 @@ namespace Model
 
 
     /**
-     * <p>Contains the location of the service endpoint used to authenticate users.</p>
+     * <p>Provides the location of the service endpoint used to authenticate users.</p>
      */
     inline const Aws::String& GetUrl() const{ return m_url; }
 
     /**
-     * <p>Contains the location of the service endpoint used to authenticate users.</p>
+     * <p>Provides the location of the service endpoint used to authenticate users.</p>
      */
     inline bool UrlHasBeenSet() const { return m_urlHasBeenSet; }
 
     /**
-     * <p>Contains the location of the service endpoint used to authenticate users.</p>
+     * <p>Provides the location of the service endpoint used to authenticate users.</p>
      */
     inline void SetUrl(const Aws::String& value) { m_urlHasBeenSet = true; m_url = value; }
 
     /**
-     * <p>Contains the location of the service endpoint used to authenticate users.</p>
+     * <p>Provides the location of the service endpoint used to authenticate users.</p>
      */
     inline void SetUrl(Aws::String&& value) { m_urlHasBeenSet = true; m_url = std::move(value); }
 
     /**
-     * <p>Contains the location of the service endpoint used to authenticate users.</p>
+     * <p>Provides the location of the service endpoint used to authenticate users.</p>
      */
     inline void SetUrl(const char* value) { m_urlHasBeenSet = true; m_url.assign(value); }
 
     /**
-     * <p>Contains the location of the service endpoint used to authenticate users.</p>
+     * <p>Provides the location of the service endpoint used to authenticate users.</p>
      */
     inline IdentityProviderDetails& WithUrl(const Aws::String& value) { SetUrl(value); return *this;}
 
     /**
-     * <p>Contains the location of the service endpoint used to authenticate users.</p>
+     * <p>Provides the location of the service endpoint used to authenticate users.</p>
      */
     inline IdentityProviderDetails& WithUrl(Aws::String&& value) { SetUrl(std::move(value)); return *this;}
 
     /**
-     * <p>Contains the location of the service endpoint used to authenticate users.</p>
+     * <p>Provides the location of the service endpoint used to authenticate users.</p>
      */
     inline IdentityProviderDetails& WithUrl(const char* value) { SetUrl(value); return *this;}
 

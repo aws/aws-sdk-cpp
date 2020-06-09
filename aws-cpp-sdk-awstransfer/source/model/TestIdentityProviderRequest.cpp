@@ -24,10 +24,11 @@ using namespace Aws::Utils;
 
 TestIdentityProviderRequest::TestIdentityProviderRequest() : 
     m_serverIdHasBeenSet(false),
-    m_userNameHasBeenSet(false),
-    m_userPasswordHasBeenSet(false),
     m_serverProtocol(Protocol::NOT_SET),
-    m_serverProtocolHasBeenSet(false)
+    m_serverProtocolHasBeenSet(false),
+    m_sourceIpHasBeenSet(false),
+    m_userNameHasBeenSet(false),
+    m_userPasswordHasBeenSet(false)
 {
 }
 
@@ -41,6 +42,17 @@ Aws::String TestIdentityProviderRequest::SerializePayload() const
 
   }
 
+  if(m_serverProtocolHasBeenSet)
+  {
+   payload.WithString("ServerProtocol", ProtocolMapper::GetNameForProtocol(m_serverProtocol));
+  }
+
+  if(m_sourceIpHasBeenSet)
+  {
+   payload.WithString("SourceIp", m_sourceIp);
+
+  }
+
   if(m_userNameHasBeenSet)
   {
    payload.WithString("UserName", m_userName);
@@ -51,11 +63,6 @@ Aws::String TestIdentityProviderRequest::SerializePayload() const
   {
    payload.WithString("UserPassword", m_userPassword);
 
-  }
-
-  if(m_serverProtocolHasBeenSet)
-  {
-   payload.WithString("ServerProtocol", ProtocolMapper::GetNameForProtocol(m_serverProtocol));
   }
 
   return payload.View().WriteReadable();

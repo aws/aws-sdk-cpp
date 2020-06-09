@@ -50,57 +50,57 @@ namespace Model
 
     /**
      * <p>The landing directory (folder) for a user when they log in to the file
-     * transfer protocol-enabled server using the client.</p> <p>An example is
-     * <code>your-Amazon-S3-bucket-name&gt;/home/username</code>.</p>
+     * transfer protocol-enabled server using the client.</p> <p>An example is <i>
+     * <code>your-Amazon-S3-bucket-name&gt;/home/username</code> </i>.</p>
      */
     inline const Aws::String& GetHomeDirectory() const{ return m_homeDirectory; }
 
     /**
      * <p>The landing directory (folder) for a user when they log in to the file
-     * transfer protocol-enabled server using the client.</p> <p>An example is
-     * <code>your-Amazon-S3-bucket-name&gt;/home/username</code>.</p>
+     * transfer protocol-enabled server using the client.</p> <p>An example is <i>
+     * <code>your-Amazon-S3-bucket-name&gt;/home/username</code> </i>.</p>
      */
     inline bool HomeDirectoryHasBeenSet() const { return m_homeDirectoryHasBeenSet; }
 
     /**
      * <p>The landing directory (folder) for a user when they log in to the file
-     * transfer protocol-enabled server using the client.</p> <p>An example is
-     * <code>your-Amazon-S3-bucket-name&gt;/home/username</code>.</p>
+     * transfer protocol-enabled server using the client.</p> <p>An example is <i>
+     * <code>your-Amazon-S3-bucket-name&gt;/home/username</code> </i>.</p>
      */
     inline void SetHomeDirectory(const Aws::String& value) { m_homeDirectoryHasBeenSet = true; m_homeDirectory = value; }
 
     /**
      * <p>The landing directory (folder) for a user when they log in to the file
-     * transfer protocol-enabled server using the client.</p> <p>An example is
-     * <code>your-Amazon-S3-bucket-name&gt;/home/username</code>.</p>
+     * transfer protocol-enabled server using the client.</p> <p>An example is <i>
+     * <code>your-Amazon-S3-bucket-name&gt;/home/username</code> </i>.</p>
      */
     inline void SetHomeDirectory(Aws::String&& value) { m_homeDirectoryHasBeenSet = true; m_homeDirectory = std::move(value); }
 
     /**
      * <p>The landing directory (folder) for a user when they log in to the file
-     * transfer protocol-enabled server using the client.</p> <p>An example is
-     * <code>your-Amazon-S3-bucket-name&gt;/home/username</code>.</p>
+     * transfer protocol-enabled server using the client.</p> <p>An example is <i>
+     * <code>your-Amazon-S3-bucket-name&gt;/home/username</code> </i>.</p>
      */
     inline void SetHomeDirectory(const char* value) { m_homeDirectoryHasBeenSet = true; m_homeDirectory.assign(value); }
 
     /**
      * <p>The landing directory (folder) for a user when they log in to the file
-     * transfer protocol-enabled server using the client.</p> <p>An example is
-     * <code>your-Amazon-S3-bucket-name&gt;/home/username</code>.</p>
+     * transfer protocol-enabled server using the client.</p> <p>An example is <i>
+     * <code>your-Amazon-S3-bucket-name&gt;/home/username</code> </i>.</p>
      */
     inline CreateUserRequest& WithHomeDirectory(const Aws::String& value) { SetHomeDirectory(value); return *this;}
 
     /**
      * <p>The landing directory (folder) for a user when they log in to the file
-     * transfer protocol-enabled server using the client.</p> <p>An example is
-     * <code>your-Amazon-S3-bucket-name&gt;/home/username</code>.</p>
+     * transfer protocol-enabled server using the client.</p> <p>An example is <i>
+     * <code>your-Amazon-S3-bucket-name&gt;/home/username</code> </i>.</p>
      */
     inline CreateUserRequest& WithHomeDirectory(Aws::String&& value) { SetHomeDirectory(std::move(value)); return *this;}
 
     /**
      * <p>The landing directory (folder) for a user when they log in to the file
-     * transfer protocol-enabled server using the client.</p> <p>An example is
-     * <code>your-Amazon-S3-bucket-name&gt;/home/username</code>.</p>
+     * transfer protocol-enabled server using the client.</p> <p>An example is <i>
+     * <code>your-Amazon-S3-bucket-name&gt;/home/username</code> </i>.</p>
      */
     inline CreateUserRequest& WithHomeDirectory(const char* value) { SetHomeDirectory(value); return *this;}
 
@@ -172,8 +172,8 @@ namespace Model
      * specify the "<code>Entry</code>" and "<code>Target</code>" pair, where
      * <code>Entry</code> shows how the path is made visible and <code>Target</code> is
      * the actual Amazon S3 path. If you only specify a target, it will be displayed as
-     * is. You will need to also make sure that your AWS IAM Role provides access to
-     * paths in <code>Target</code>. The following is an example.</p> <p> <code>'[
+     * is. You will need to also make sure that your IAM role provides access to paths
+     * in <code>Target</code>. The following is an example.</p> <p> <code>'[
      * "/bucket2/documentation", { "Entry": "your-personal-report.pdf", "Target":
      * "/bucket3/customized-reports/${transfer:UserName}.pdf" } ]'</code> </p> <p>In
      * most cases, you can use this value instead of the scope-down policy to lock your
@@ -196,8 +196,8 @@ namespace Model
      * specify the "<code>Entry</code>" and "<code>Target</code>" pair, where
      * <code>Entry</code> shows how the path is made visible and <code>Target</code> is
      * the actual Amazon S3 path. If you only specify a target, it will be displayed as
-     * is. You will need to also make sure that your AWS IAM Role provides access to
-     * paths in <code>Target</code>. The following is an example.</p> <p> <code>'[
+     * is. You will need to also make sure that your IAM role provides access to paths
+     * in <code>Target</code>. The following is an example.</p> <p> <code>'[
      * "/bucket2/documentation", { "Entry": "your-personal-report.pdf", "Target":
      * "/bucket3/customized-reports/${transfer:UserName}.pdf" } ]'</code> </p> <p>In
      * most cases, you can use this value instead of the scope-down policy to lock your
@@ -220,8 +220,8 @@ namespace Model
      * specify the "<code>Entry</code>" and "<code>Target</code>" pair, where
      * <code>Entry</code> shows how the path is made visible and <code>Target</code> is
      * the actual Amazon S3 path. If you only specify a target, it will be displayed as
-     * is. You will need to also make sure that your AWS IAM Role provides access to
-     * paths in <code>Target</code>. The following is an example.</p> <p> <code>'[
+     * is. You will need to also make sure that your IAM role provides access to paths
+     * in <code>Target</code>. The following is an example.</p> <p> <code>'[
      * "/bucket2/documentation", { "Entry": "your-personal-report.pdf", "Target":
      * "/bucket3/customized-reports/${transfer:UserName}.pdf" } ]'</code> </p> <p>In
      * most cases, you can use this value instead of the scope-down policy to lock your
@@ -244,8 +244,8 @@ namespace Model
      * specify the "<code>Entry</code>" and "<code>Target</code>" pair, where
      * <code>Entry</code> shows how the path is made visible and <code>Target</code> is
      * the actual Amazon S3 path. If you only specify a target, it will be displayed as
-     * is. You will need to also make sure that your AWS IAM Role provides access to
-     * paths in <code>Target</code>. The following is an example.</p> <p> <code>'[
+     * is. You will need to also make sure that your IAM role provides access to paths
+     * in <code>Target</code>. The following is an example.</p> <p> <code>'[
      * "/bucket2/documentation", { "Entry": "your-personal-report.pdf", "Target":
      * "/bucket3/customized-reports/${transfer:UserName}.pdf" } ]'</code> </p> <p>In
      * most cases, you can use this value instead of the scope-down policy to lock your
@@ -268,8 +268,8 @@ namespace Model
      * specify the "<code>Entry</code>" and "<code>Target</code>" pair, where
      * <code>Entry</code> shows how the path is made visible and <code>Target</code> is
      * the actual Amazon S3 path. If you only specify a target, it will be displayed as
-     * is. You will need to also make sure that your AWS IAM Role provides access to
-     * paths in <code>Target</code>. The following is an example.</p> <p> <code>'[
+     * is. You will need to also make sure that your IAM role provides access to paths
+     * in <code>Target</code>. The following is an example.</p> <p> <code>'[
      * "/bucket2/documentation", { "Entry": "your-personal-report.pdf", "Target":
      * "/bucket3/customized-reports/${transfer:UserName}.pdf" } ]'</code> </p> <p>In
      * most cases, you can use this value instead of the scope-down policy to lock your
@@ -292,8 +292,8 @@ namespace Model
      * specify the "<code>Entry</code>" and "<code>Target</code>" pair, where
      * <code>Entry</code> shows how the path is made visible and <code>Target</code> is
      * the actual Amazon S3 path. If you only specify a target, it will be displayed as
-     * is. You will need to also make sure that your AWS IAM Role provides access to
-     * paths in <code>Target</code>. The following is an example.</p> <p> <code>'[
+     * is. You will need to also make sure that your IAM role provides access to paths
+     * in <code>Target</code>. The following is an example.</p> <p> <code>'[
      * "/bucket2/documentation", { "Entry": "your-personal-report.pdf", "Target":
      * "/bucket3/customized-reports/${transfer:UserName}.pdf" } ]'</code> </p> <p>In
      * most cases, you can use this value instead of the scope-down policy to lock your
@@ -316,8 +316,8 @@ namespace Model
      * specify the "<code>Entry</code>" and "<code>Target</code>" pair, where
      * <code>Entry</code> shows how the path is made visible and <code>Target</code> is
      * the actual Amazon S3 path. If you only specify a target, it will be displayed as
-     * is. You will need to also make sure that your AWS IAM Role provides access to
-     * paths in <code>Target</code>. The following is an example.</p> <p> <code>'[
+     * is. You will need to also make sure that your IAM role provides access to paths
+     * in <code>Target</code>. The following is an example.</p> <p> <code>'[
      * "/bucket2/documentation", { "Entry": "your-personal-report.pdf", "Target":
      * "/bucket3/customized-reports/${transfer:UserName}.pdf" } ]'</code> </p> <p>In
      * most cases, you can use this value instead of the scope-down policy to lock your
@@ -340,8 +340,8 @@ namespace Model
      * specify the "<code>Entry</code>" and "<code>Target</code>" pair, where
      * <code>Entry</code> shows how the path is made visible and <code>Target</code> is
      * the actual Amazon S3 path. If you only specify a target, it will be displayed as
-     * is. You will need to also make sure that your AWS IAM Role provides access to
-     * paths in <code>Target</code>. The following is an example.</p> <p> <code>'[
+     * is. You will need to also make sure that your IAM role provides access to paths
+     * in <code>Target</code>. The following is an example.</p> <p> <code>'[
      * "/bucket2/documentation", { "Entry": "your-personal-report.pdf", "Target":
      * "/bucket3/customized-reports/${transfer:UserName}.pdf" } ]'</code> </p> <p>In
      * most cases, you can use this value instead of the scope-down policy to lock your
@@ -370,7 +370,7 @@ namespace Model
      * <code>Policy</code> argument.</p> <p>For an example of a scope-down policy, see
      * <a
      * href="https://docs.aws.amazon.com/transfer/latest/userguide/users.html#users-policies-scope-down">Creating
-     * a Scope-Down Policy</a>.</p> <p>For more information, see <a
+     * a scope-down policy</a>.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html">AssumeRole</a>
      * in the <i>AWS Security Token Service API Reference</i>.</p> </note>
      */
@@ -387,7 +387,7 @@ namespace Model
      * <code>Policy</code> argument.</p> <p>For an example of a scope-down policy, see
      * <a
      * href="https://docs.aws.amazon.com/transfer/latest/userguide/users.html#users-policies-scope-down">Creating
-     * a Scope-Down Policy</a>.</p> <p>For more information, see <a
+     * a scope-down policy</a>.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html">AssumeRole</a>
      * in the <i>AWS Security Token Service API Reference</i>.</p> </note>
      */
@@ -404,7 +404,7 @@ namespace Model
      * <code>Policy</code> argument.</p> <p>For an example of a scope-down policy, see
      * <a
      * href="https://docs.aws.amazon.com/transfer/latest/userguide/users.html#users-policies-scope-down">Creating
-     * a Scope-Down Policy</a>.</p> <p>For more information, see <a
+     * a scope-down policy</a>.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html">AssumeRole</a>
      * in the <i>AWS Security Token Service API Reference</i>.</p> </note>
      */
@@ -421,7 +421,7 @@ namespace Model
      * <code>Policy</code> argument.</p> <p>For an example of a scope-down policy, see
      * <a
      * href="https://docs.aws.amazon.com/transfer/latest/userguide/users.html#users-policies-scope-down">Creating
-     * a Scope-Down Policy</a>.</p> <p>For more information, see <a
+     * a scope-down policy</a>.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html">AssumeRole</a>
      * in the <i>AWS Security Token Service API Reference</i>.</p> </note>
      */
@@ -438,7 +438,7 @@ namespace Model
      * <code>Policy</code> argument.</p> <p>For an example of a scope-down policy, see
      * <a
      * href="https://docs.aws.amazon.com/transfer/latest/userguide/users.html#users-policies-scope-down">Creating
-     * a Scope-Down Policy</a>.</p> <p>For more information, see <a
+     * a scope-down policy</a>.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html">AssumeRole</a>
      * in the <i>AWS Security Token Service API Reference</i>.</p> </note>
      */
@@ -455,7 +455,7 @@ namespace Model
      * <code>Policy</code> argument.</p> <p>For an example of a scope-down policy, see
      * <a
      * href="https://docs.aws.amazon.com/transfer/latest/userguide/users.html#users-policies-scope-down">Creating
-     * a Scope-Down Policy</a>.</p> <p>For more information, see <a
+     * a scope-down policy</a>.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html">AssumeRole</a>
      * in the <i>AWS Security Token Service API Reference</i>.</p> </note>
      */
@@ -472,7 +472,7 @@ namespace Model
      * <code>Policy</code> argument.</p> <p>For an example of a scope-down policy, see
      * <a
      * href="https://docs.aws.amazon.com/transfer/latest/userguide/users.html#users-policies-scope-down">Creating
-     * a Scope-Down Policy</a>.</p> <p>For more information, see <a
+     * a scope-down policy</a>.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html">AssumeRole</a>
      * in the <i>AWS Security Token Service API Reference</i>.</p> </note>
      */
@@ -489,7 +489,7 @@ namespace Model
      * <code>Policy</code> argument.</p> <p>For an example of a scope-down policy, see
      * <a
      * href="https://docs.aws.amazon.com/transfer/latest/userguide/users.html#users-policies-scope-down">Creating
-     * a Scope-Down Policy</a>.</p> <p>For more information, see <a
+     * a scope-down policy</a>.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html">AssumeRole</a>
      * in the <i>AWS Security Token Service API Reference</i>.</p> </note>
      */

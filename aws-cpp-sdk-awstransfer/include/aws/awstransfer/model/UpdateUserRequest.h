@@ -179,8 +179,8 @@ namespace Model
      * specify the "<code>Entry</code>" and "<code>Target</code>" pair, where
      * <code>Entry</code> shows how the path is made visible and <code>Target</code> is
      * the actual Amazon S3 path. If you only specify a target, it will be displayed as
-     * is. You will need to also make sure that your AWS IAM Role provides access to
-     * paths in <code>Target</code>. The following is an example.</p> <p> <code>'[
+     * is. You will need to also make sure that your IAM role provides access to paths
+     * in <code>Target</code>. The following is an example.</p> <p> <code>'[
      * "/bucket2/documentation", { "Entry": "your-personal-report.pdf", "Target":
      * "/bucket3/customized-reports/${transfer:UserName}.pdf" } ]'</code> </p> <p>In
      * most cases, you can use this value instead of the scope-down policy to lock your
@@ -203,8 +203,8 @@ namespace Model
      * specify the "<code>Entry</code>" and "<code>Target</code>" pair, where
      * <code>Entry</code> shows how the path is made visible and <code>Target</code> is
      * the actual Amazon S3 path. If you only specify a target, it will be displayed as
-     * is. You will need to also make sure that your AWS IAM Role provides access to
-     * paths in <code>Target</code>. The following is an example.</p> <p> <code>'[
+     * is. You will need to also make sure that your IAM role provides access to paths
+     * in <code>Target</code>. The following is an example.</p> <p> <code>'[
      * "/bucket2/documentation", { "Entry": "your-personal-report.pdf", "Target":
      * "/bucket3/customized-reports/${transfer:UserName}.pdf" } ]'</code> </p> <p>In
      * most cases, you can use this value instead of the scope-down policy to lock your
@@ -227,8 +227,8 @@ namespace Model
      * specify the "<code>Entry</code>" and "<code>Target</code>" pair, where
      * <code>Entry</code> shows how the path is made visible and <code>Target</code> is
      * the actual Amazon S3 path. If you only specify a target, it will be displayed as
-     * is. You will need to also make sure that your AWS IAM Role provides access to
-     * paths in <code>Target</code>. The following is an example.</p> <p> <code>'[
+     * is. You will need to also make sure that your IAM role provides access to paths
+     * in <code>Target</code>. The following is an example.</p> <p> <code>'[
      * "/bucket2/documentation", { "Entry": "your-personal-report.pdf", "Target":
      * "/bucket3/customized-reports/${transfer:UserName}.pdf" } ]'</code> </p> <p>In
      * most cases, you can use this value instead of the scope-down policy to lock your
@@ -251,8 +251,8 @@ namespace Model
      * specify the "<code>Entry</code>" and "<code>Target</code>" pair, where
      * <code>Entry</code> shows how the path is made visible and <code>Target</code> is
      * the actual Amazon S3 path. If you only specify a target, it will be displayed as
-     * is. You will need to also make sure that your AWS IAM Role provides access to
-     * paths in <code>Target</code>. The following is an example.</p> <p> <code>'[
+     * is. You will need to also make sure that your IAM role provides access to paths
+     * in <code>Target</code>. The following is an example.</p> <p> <code>'[
      * "/bucket2/documentation", { "Entry": "your-personal-report.pdf", "Target":
      * "/bucket3/customized-reports/${transfer:UserName}.pdf" } ]'</code> </p> <p>In
      * most cases, you can use this value instead of the scope-down policy to lock your
@@ -275,8 +275,8 @@ namespace Model
      * specify the "<code>Entry</code>" and "<code>Target</code>" pair, where
      * <code>Entry</code> shows how the path is made visible and <code>Target</code> is
      * the actual Amazon S3 path. If you only specify a target, it will be displayed as
-     * is. You will need to also make sure that your AWS IAM Role provides access to
-     * paths in <code>Target</code>. The following is an example.</p> <p> <code>'[
+     * is. You will need to also make sure that your IAM role provides access to paths
+     * in <code>Target</code>. The following is an example.</p> <p> <code>'[
      * "/bucket2/documentation", { "Entry": "your-personal-report.pdf", "Target":
      * "/bucket3/customized-reports/${transfer:UserName}.pdf" } ]'</code> </p> <p>In
      * most cases, you can use this value instead of the scope-down policy to lock your
@@ -299,8 +299,8 @@ namespace Model
      * specify the "<code>Entry</code>" and "<code>Target</code>" pair, where
      * <code>Entry</code> shows how the path is made visible and <code>Target</code> is
      * the actual Amazon S3 path. If you only specify a target, it will be displayed as
-     * is. You will need to also make sure that your AWS IAM Role provides access to
-     * paths in <code>Target</code>. The following is an example.</p> <p> <code>'[
+     * is. You will need to also make sure that your IAM role provides access to paths
+     * in <code>Target</code>. The following is an example.</p> <p> <code>'[
      * "/bucket2/documentation", { "Entry": "your-personal-report.pdf", "Target":
      * "/bucket3/customized-reports/${transfer:UserName}.pdf" } ]'</code> </p> <p>In
      * most cases, you can use this value instead of the scope-down policy to lock your
@@ -323,8 +323,8 @@ namespace Model
      * specify the "<code>Entry</code>" and "<code>Target</code>" pair, where
      * <code>Entry</code> shows how the path is made visible and <code>Target</code> is
      * the actual Amazon S3 path. If you only specify a target, it will be displayed as
-     * is. You will need to also make sure that your AWS IAM Role provides access to
-     * paths in <code>Target</code>. The following is an example.</p> <p> <code>'[
+     * is. You will need to also make sure that your IAM role provides access to paths
+     * in <code>Target</code>. The following is an example.</p> <p> <code>'[
      * "/bucket2/documentation", { "Entry": "your-personal-report.pdf", "Target":
      * "/bucket3/customized-reports/${transfer:UserName}.pdf" } ]'</code> </p> <p>In
      * most cases, you can use this value instead of the scope-down policy to lock your
@@ -347,8 +347,8 @@ namespace Model
      * specify the "<code>Entry</code>" and "<code>Target</code>" pair, where
      * <code>Entry</code> shows how the path is made visible and <code>Target</code> is
      * the actual Amazon S3 path. If you only specify a target, it will be displayed as
-     * is. You will need to also make sure that your AWS IAM Role provides access to
-     * paths in <code>Target</code>. The following is an example.</p> <p> <code>'[
+     * is. You will need to also make sure that your IAM role provides access to paths
+     * in <code>Target</code>. The following is an example.</p> <p> <code>'[
      * "/bucket2/documentation", { "Entry": "your-personal-report.pdf", "Target":
      * "/bucket3/customized-reports/${transfer:UserName}.pdf" } ]'</code> </p> <p>In
      * most cases, you can use this value instead of the scope-down policy to lock your
@@ -368,9 +368,9 @@ namespace Model
 
     /**
      * <p>Allows you to supply a scope-down policy for your user so you can use the
-     * same AWS Identity and Access Management (IAM) role across multiple users. The
-     * policy scopes down user access to portions of your Amazon S3 bucket. Variables
-     * you can use inside this policy include <code>${Transfer:UserName}</code>,
+     * same IAM role across multiple users. The policy scopes down user access to
+     * portions of your Amazon S3 bucket. Variables you can use inside this policy
+     * include <code>${Transfer:UserName}</code>,
      * <code>${Transfer:HomeDirectory}</code>, and
      * <code>${Transfer:HomeBucket}</code>.</p> <note> <p>For scope-down policies, AWS
      * Transfer Family stores the policy as a JSON blob, instead of the Amazon Resource
@@ -378,7 +378,7 @@ namespace Model
      * <code>Policy</code> argument.</p> <p>For an example of a scope-down policy, see
      * <a
      * href="https://docs.aws.amazon.com/transfer/latest/userguide/users.html#users-policies-scope-down">Creating
-     * a Scope-Down Policy</a>.</p> <p>For more information, see <a
+     * a scope-down policy</a>.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html">AssumeRole</a>
      * in the <i>AWS Security Token Service API Reference</i>.</p> </note>
      */
@@ -386,9 +386,9 @@ namespace Model
 
     /**
      * <p>Allows you to supply a scope-down policy for your user so you can use the
-     * same AWS Identity and Access Management (IAM) role across multiple users. The
-     * policy scopes down user access to portions of your Amazon S3 bucket. Variables
-     * you can use inside this policy include <code>${Transfer:UserName}</code>,
+     * same IAM role across multiple users. The policy scopes down user access to
+     * portions of your Amazon S3 bucket. Variables you can use inside this policy
+     * include <code>${Transfer:UserName}</code>,
      * <code>${Transfer:HomeDirectory}</code>, and
      * <code>${Transfer:HomeBucket}</code>.</p> <note> <p>For scope-down policies, AWS
      * Transfer Family stores the policy as a JSON blob, instead of the Amazon Resource
@@ -396,7 +396,7 @@ namespace Model
      * <code>Policy</code> argument.</p> <p>For an example of a scope-down policy, see
      * <a
      * href="https://docs.aws.amazon.com/transfer/latest/userguide/users.html#users-policies-scope-down">Creating
-     * a Scope-Down Policy</a>.</p> <p>For more information, see <a
+     * a scope-down policy</a>.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html">AssumeRole</a>
      * in the <i>AWS Security Token Service API Reference</i>.</p> </note>
      */
@@ -404,9 +404,9 @@ namespace Model
 
     /**
      * <p>Allows you to supply a scope-down policy for your user so you can use the
-     * same AWS Identity and Access Management (IAM) role across multiple users. The
-     * policy scopes down user access to portions of your Amazon S3 bucket. Variables
-     * you can use inside this policy include <code>${Transfer:UserName}</code>,
+     * same IAM role across multiple users. The policy scopes down user access to
+     * portions of your Amazon S3 bucket. Variables you can use inside this policy
+     * include <code>${Transfer:UserName}</code>,
      * <code>${Transfer:HomeDirectory}</code>, and
      * <code>${Transfer:HomeBucket}</code>.</p> <note> <p>For scope-down policies, AWS
      * Transfer Family stores the policy as a JSON blob, instead of the Amazon Resource
@@ -414,7 +414,7 @@ namespace Model
      * <code>Policy</code> argument.</p> <p>For an example of a scope-down policy, see
      * <a
      * href="https://docs.aws.amazon.com/transfer/latest/userguide/users.html#users-policies-scope-down">Creating
-     * a Scope-Down Policy</a>.</p> <p>For more information, see <a
+     * a scope-down policy</a>.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html">AssumeRole</a>
      * in the <i>AWS Security Token Service API Reference</i>.</p> </note>
      */
@@ -422,9 +422,9 @@ namespace Model
 
     /**
      * <p>Allows you to supply a scope-down policy for your user so you can use the
-     * same AWS Identity and Access Management (IAM) role across multiple users. The
-     * policy scopes down user access to portions of your Amazon S3 bucket. Variables
-     * you can use inside this policy include <code>${Transfer:UserName}</code>,
+     * same IAM role across multiple users. The policy scopes down user access to
+     * portions of your Amazon S3 bucket. Variables you can use inside this policy
+     * include <code>${Transfer:UserName}</code>,
      * <code>${Transfer:HomeDirectory}</code>, and
      * <code>${Transfer:HomeBucket}</code>.</p> <note> <p>For scope-down policies, AWS
      * Transfer Family stores the policy as a JSON blob, instead of the Amazon Resource
@@ -432,7 +432,7 @@ namespace Model
      * <code>Policy</code> argument.</p> <p>For an example of a scope-down policy, see
      * <a
      * href="https://docs.aws.amazon.com/transfer/latest/userguide/users.html#users-policies-scope-down">Creating
-     * a Scope-Down Policy</a>.</p> <p>For more information, see <a
+     * a scope-down policy</a>.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html">AssumeRole</a>
      * in the <i>AWS Security Token Service API Reference</i>.</p> </note>
      */
@@ -440,9 +440,9 @@ namespace Model
 
     /**
      * <p>Allows you to supply a scope-down policy for your user so you can use the
-     * same AWS Identity and Access Management (IAM) role across multiple users. The
-     * policy scopes down user access to portions of your Amazon S3 bucket. Variables
-     * you can use inside this policy include <code>${Transfer:UserName}</code>,
+     * same IAM role across multiple users. The policy scopes down user access to
+     * portions of your Amazon S3 bucket. Variables you can use inside this policy
+     * include <code>${Transfer:UserName}</code>,
      * <code>${Transfer:HomeDirectory}</code>, and
      * <code>${Transfer:HomeBucket}</code>.</p> <note> <p>For scope-down policies, AWS
      * Transfer Family stores the policy as a JSON blob, instead of the Amazon Resource
@@ -450,7 +450,7 @@ namespace Model
      * <code>Policy</code> argument.</p> <p>For an example of a scope-down policy, see
      * <a
      * href="https://docs.aws.amazon.com/transfer/latest/userguide/users.html#users-policies-scope-down">Creating
-     * a Scope-Down Policy</a>.</p> <p>For more information, see <a
+     * a scope-down policy</a>.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html">AssumeRole</a>
      * in the <i>AWS Security Token Service API Reference</i>.</p> </note>
      */
@@ -458,9 +458,9 @@ namespace Model
 
     /**
      * <p>Allows you to supply a scope-down policy for your user so you can use the
-     * same AWS Identity and Access Management (IAM) role across multiple users. The
-     * policy scopes down user access to portions of your Amazon S3 bucket. Variables
-     * you can use inside this policy include <code>${Transfer:UserName}</code>,
+     * same IAM role across multiple users. The policy scopes down user access to
+     * portions of your Amazon S3 bucket. Variables you can use inside this policy
+     * include <code>${Transfer:UserName}</code>,
      * <code>${Transfer:HomeDirectory}</code>, and
      * <code>${Transfer:HomeBucket}</code>.</p> <note> <p>For scope-down policies, AWS
      * Transfer Family stores the policy as a JSON blob, instead of the Amazon Resource
@@ -468,7 +468,7 @@ namespace Model
      * <code>Policy</code> argument.</p> <p>For an example of a scope-down policy, see
      * <a
      * href="https://docs.aws.amazon.com/transfer/latest/userguide/users.html#users-policies-scope-down">Creating
-     * a Scope-Down Policy</a>.</p> <p>For more information, see <a
+     * a scope-down policy</a>.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html">AssumeRole</a>
      * in the <i>AWS Security Token Service API Reference</i>.</p> </note>
      */
@@ -476,9 +476,9 @@ namespace Model
 
     /**
      * <p>Allows you to supply a scope-down policy for your user so you can use the
-     * same AWS Identity and Access Management (IAM) role across multiple users. The
-     * policy scopes down user access to portions of your Amazon S3 bucket. Variables
-     * you can use inside this policy include <code>${Transfer:UserName}</code>,
+     * same IAM role across multiple users. The policy scopes down user access to
+     * portions of your Amazon S3 bucket. Variables you can use inside this policy
+     * include <code>${Transfer:UserName}</code>,
      * <code>${Transfer:HomeDirectory}</code>, and
      * <code>${Transfer:HomeBucket}</code>.</p> <note> <p>For scope-down policies, AWS
      * Transfer Family stores the policy as a JSON blob, instead of the Amazon Resource
@@ -486,7 +486,7 @@ namespace Model
      * <code>Policy</code> argument.</p> <p>For an example of a scope-down policy, see
      * <a
      * href="https://docs.aws.amazon.com/transfer/latest/userguide/users.html#users-policies-scope-down">Creating
-     * a Scope-Down Policy</a>.</p> <p>For more information, see <a
+     * a scope-down policy</a>.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html">AssumeRole</a>
      * in the <i>AWS Security Token Service API Reference</i>.</p> </note>
      */
@@ -494,9 +494,9 @@ namespace Model
 
     /**
      * <p>Allows you to supply a scope-down policy for your user so you can use the
-     * same AWS Identity and Access Management (IAM) role across multiple users. The
-     * policy scopes down user access to portions of your Amazon S3 bucket. Variables
-     * you can use inside this policy include <code>${Transfer:UserName}</code>,
+     * same IAM role across multiple users. The policy scopes down user access to
+     * portions of your Amazon S3 bucket. Variables you can use inside this policy
+     * include <code>${Transfer:UserName}</code>,
      * <code>${Transfer:HomeDirectory}</code>, and
      * <code>${Transfer:HomeBucket}</code>.</p> <note> <p>For scope-down policies, AWS
      * Transfer Family stores the policy as a JSON blob, instead of the Amazon Resource
@@ -504,7 +504,7 @@ namespace Model
      * <code>Policy</code> argument.</p> <p>For an example of a scope-down policy, see
      * <a
      * href="https://docs.aws.amazon.com/transfer/latest/userguide/users.html#users-policies-scope-down">Creating
-     * a Scope-Down Policy</a>.</p> <p>For more information, see <a
+     * a scope-down policy</a>.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html">AssumeRole</a>
      * in the <i>AWS Security Token Service API Reference</i>.</p> </note>
      */

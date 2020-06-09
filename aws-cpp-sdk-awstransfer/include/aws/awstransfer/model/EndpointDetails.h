@@ -127,145 +127,179 @@ namespace Model
 
     /**
      * <p>A list of subnet IDs that are required to host your file transfer
-     * protocol-enabled server endpoint in your VPC.</p>
+     * protocol-enabled server endpoint in your VPC.</p> <note> <p>This property can
+     * only be used when <code>EndpointType</code> is set to <code>VPC</code>.</p>
+     * </note>
      */
     inline const Aws::Vector<Aws::String>& GetSubnetIds() const{ return m_subnetIds; }
 
     /**
      * <p>A list of subnet IDs that are required to host your file transfer
-     * protocol-enabled server endpoint in your VPC.</p>
+     * protocol-enabled server endpoint in your VPC.</p> <note> <p>This property can
+     * only be used when <code>EndpointType</code> is set to <code>VPC</code>.</p>
+     * </note>
      */
     inline bool SubnetIdsHasBeenSet() const { return m_subnetIdsHasBeenSet; }
 
     /**
      * <p>A list of subnet IDs that are required to host your file transfer
-     * protocol-enabled server endpoint in your VPC.</p>
+     * protocol-enabled server endpoint in your VPC.</p> <note> <p>This property can
+     * only be used when <code>EndpointType</code> is set to <code>VPC</code>.</p>
+     * </note>
      */
     inline void SetSubnetIds(const Aws::Vector<Aws::String>& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = value; }
 
     /**
      * <p>A list of subnet IDs that are required to host your file transfer
-     * protocol-enabled server endpoint in your VPC.</p>
+     * protocol-enabled server endpoint in your VPC.</p> <note> <p>This property can
+     * only be used when <code>EndpointType</code> is set to <code>VPC</code>.</p>
+     * </note>
      */
     inline void SetSubnetIds(Aws::Vector<Aws::String>&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = std::move(value); }
 
     /**
      * <p>A list of subnet IDs that are required to host your file transfer
-     * protocol-enabled server endpoint in your VPC.</p>
+     * protocol-enabled server endpoint in your VPC.</p> <note> <p>This property can
+     * only be used when <code>EndpointType</code> is set to <code>VPC</code>.</p>
+     * </note>
      */
     inline EndpointDetails& WithSubnetIds(const Aws::Vector<Aws::String>& value) { SetSubnetIds(value); return *this;}
 
     /**
      * <p>A list of subnet IDs that are required to host your file transfer
-     * protocol-enabled server endpoint in your VPC.</p>
+     * protocol-enabled server endpoint in your VPC.</p> <note> <p>This property can
+     * only be used when <code>EndpointType</code> is set to <code>VPC</code>.</p>
+     * </note>
      */
     inline EndpointDetails& WithSubnetIds(Aws::Vector<Aws::String>&& value) { SetSubnetIds(std::move(value)); return *this;}
 
     /**
      * <p>A list of subnet IDs that are required to host your file transfer
-     * protocol-enabled server endpoint in your VPC.</p>
+     * protocol-enabled server endpoint in your VPC.</p> <note> <p>This property can
+     * only be used when <code>EndpointType</code> is set to <code>VPC</code>.</p>
+     * </note>
      */
     inline EndpointDetails& AddSubnetIds(const Aws::String& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
 
     /**
      * <p>A list of subnet IDs that are required to host your file transfer
-     * protocol-enabled server endpoint in your VPC.</p>
+     * protocol-enabled server endpoint in your VPC.</p> <note> <p>This property can
+     * only be used when <code>EndpointType</code> is set to <code>VPC</code>.</p>
+     * </note>
      */
     inline EndpointDetails& AddSubnetIds(Aws::String&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of subnet IDs that are required to host your file transfer
-     * protocol-enabled server endpoint in your VPC.</p>
+     * protocol-enabled server endpoint in your VPC.</p> <note> <p>This property can
+     * only be used when <code>EndpointType</code> is set to <code>VPC</code>.</p>
+     * </note>
      */
     inline EndpointDetails& AddSubnetIds(const char* value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
 
 
     /**
-     * <p>The ID of the VPC endpoint.</p>
+     * <p>The ID of the VPC endpoint.</p> <note> <p>This property can only be used when
+     * <code>EndpointType</code> is set to <code>VPC_ENDPOINT</code>.</p> </note>
      */
     inline const Aws::String& GetVpcEndpointId() const{ return m_vpcEndpointId; }
 
     /**
-     * <p>The ID of the VPC endpoint.</p>
+     * <p>The ID of the VPC endpoint.</p> <note> <p>This property can only be used when
+     * <code>EndpointType</code> is set to <code>VPC_ENDPOINT</code>.</p> </note>
      */
     inline bool VpcEndpointIdHasBeenSet() const { return m_vpcEndpointIdHasBeenSet; }
 
     /**
-     * <p>The ID of the VPC endpoint.</p>
+     * <p>The ID of the VPC endpoint.</p> <note> <p>This property can only be used when
+     * <code>EndpointType</code> is set to <code>VPC_ENDPOINT</code>.</p> </note>
      */
     inline void SetVpcEndpointId(const Aws::String& value) { m_vpcEndpointIdHasBeenSet = true; m_vpcEndpointId = value; }
 
     /**
-     * <p>The ID of the VPC endpoint.</p>
+     * <p>The ID of the VPC endpoint.</p> <note> <p>This property can only be used when
+     * <code>EndpointType</code> is set to <code>VPC_ENDPOINT</code>.</p> </note>
      */
     inline void SetVpcEndpointId(Aws::String&& value) { m_vpcEndpointIdHasBeenSet = true; m_vpcEndpointId = std::move(value); }
 
     /**
-     * <p>The ID of the VPC endpoint.</p>
+     * <p>The ID of the VPC endpoint.</p> <note> <p>This property can only be used when
+     * <code>EndpointType</code> is set to <code>VPC_ENDPOINT</code>.</p> </note>
      */
     inline void SetVpcEndpointId(const char* value) { m_vpcEndpointIdHasBeenSet = true; m_vpcEndpointId.assign(value); }
 
     /**
-     * <p>The ID of the VPC endpoint.</p>
+     * <p>The ID of the VPC endpoint.</p> <note> <p>This property can only be used when
+     * <code>EndpointType</code> is set to <code>VPC_ENDPOINT</code>.</p> </note>
      */
     inline EndpointDetails& WithVpcEndpointId(const Aws::String& value) { SetVpcEndpointId(value); return *this;}
 
     /**
-     * <p>The ID of the VPC endpoint.</p>
+     * <p>The ID of the VPC endpoint.</p> <note> <p>This property can only be used when
+     * <code>EndpointType</code> is set to <code>VPC_ENDPOINT</code>.</p> </note>
      */
     inline EndpointDetails& WithVpcEndpointId(Aws::String&& value) { SetVpcEndpointId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the VPC endpoint.</p>
+     * <p>The ID of the VPC endpoint.</p> <note> <p>This property can only be used when
+     * <code>EndpointType</code> is set to <code>VPC_ENDPOINT</code>.</p> </note>
      */
     inline EndpointDetails& WithVpcEndpointId(const char* value) { SetVpcEndpointId(value); return *this;}
 
 
     /**
      * <p>The VPC ID of the VPC in which a file transfer protocol-enabled server's
-     * endpoint will be hosted.</p>
+     * endpoint will be hosted.</p> <note> <p>This property can only be used when
+     * <code>EndpointType</code> is set to <code>VPC</code>.</p> </note>
      */
     inline const Aws::String& GetVpcId() const{ return m_vpcId; }
 
     /**
      * <p>The VPC ID of the VPC in which a file transfer protocol-enabled server's
-     * endpoint will be hosted.</p>
+     * endpoint will be hosted.</p> <note> <p>This property can only be used when
+     * <code>EndpointType</code> is set to <code>VPC</code>.</p> </note>
      */
     inline bool VpcIdHasBeenSet() const { return m_vpcIdHasBeenSet; }
 
     /**
      * <p>The VPC ID of the VPC in which a file transfer protocol-enabled server's
-     * endpoint will be hosted.</p>
+     * endpoint will be hosted.</p> <note> <p>This property can only be used when
+     * <code>EndpointType</code> is set to <code>VPC</code>.</p> </note>
      */
     inline void SetVpcId(const Aws::String& value) { m_vpcIdHasBeenSet = true; m_vpcId = value; }
 
     /**
      * <p>The VPC ID of the VPC in which a file transfer protocol-enabled server's
-     * endpoint will be hosted.</p>
+     * endpoint will be hosted.</p> <note> <p>This property can only be used when
+     * <code>EndpointType</code> is set to <code>VPC</code>.</p> </note>
      */
     inline void SetVpcId(Aws::String&& value) { m_vpcIdHasBeenSet = true; m_vpcId = std::move(value); }
 
     /**
      * <p>The VPC ID of the VPC in which a file transfer protocol-enabled server's
-     * endpoint will be hosted.</p>
+     * endpoint will be hosted.</p> <note> <p>This property can only be used when
+     * <code>EndpointType</code> is set to <code>VPC</code>.</p> </note>
      */
     inline void SetVpcId(const char* value) { m_vpcIdHasBeenSet = true; m_vpcId.assign(value); }
 
     /**
      * <p>The VPC ID of the VPC in which a file transfer protocol-enabled server's
-     * endpoint will be hosted.</p>
+     * endpoint will be hosted.</p> <note> <p>This property can only be used when
+     * <code>EndpointType</code> is set to <code>VPC</code>.</p> </note>
      */
     inline EndpointDetails& WithVpcId(const Aws::String& value) { SetVpcId(value); return *this;}
 
     /**
      * <p>The VPC ID of the VPC in which a file transfer protocol-enabled server's
-     * endpoint will be hosted.</p>
+     * endpoint will be hosted.</p> <note> <p>This property can only be used when
+     * <code>EndpointType</code> is set to <code>VPC</code>.</p> </note>
      */
     inline EndpointDetails& WithVpcId(Aws::String&& value) { SetVpcId(std::move(value)); return *this;}
 
     /**
      * <p>The VPC ID of the VPC in which a file transfer protocol-enabled server's
-     * endpoint will be hosted.</p>
+     * endpoint will be hosted.</p> <note> <p>This property can only be used when
+     * <code>EndpointType</code> is set to <code>VPC</code>.</p> </note>
      */
     inline EndpointDetails& WithVpcId(const char* value) { SetVpcId(value); return *this;}
 
