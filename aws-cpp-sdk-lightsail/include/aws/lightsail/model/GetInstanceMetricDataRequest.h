@@ -97,7 +97,7 @@ namespace Model
      * <code>unit</code> value.</p> <ul> <li> <p> <b>
      * <code>BurstCapacityPercentage</code> </b> - The percentage of CPU performance
      * available for your instance to burst above its baseline. Your instance
-     * continously accrues and consumes burst capacity. Burst capacity stops accruing
+     * continuously accrues and consumes burst capacity. Burst capacity stops accruing
      * when your instance's <code>BurstCapacityPercentage</code> reaches 100%. For more
      * information, see <a
      * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-viewing-instance-burst-capacity">Viewing
@@ -106,7 +106,7 @@ namespace Model
      * <code>Average</code>.</p> <p> <code>Unit</code>: The published unit is
      * <code>Percent</code>.</p> </li> <li> <p> <b> <code>BurstCapacityTime</code> </b>
      * - The available amount of time for your instance to burst at 100% CPU
-     * utilization. Your instance continously accrues and consumes burst capacity.
+     * utilization. Your instance continuously accrues and consumes burst capacity.
      * Burst capacity time stops accruing when your instance's
      * <code>BurstCapacityPercentage</code> metric reaches 100%.</p> <p>Burst capacity
      * time is consumed at the full rate only when your instance operates at 100% CPU
@@ -167,7 +167,7 @@ namespace Model
      * <code>unit</code> value.</p> <ul> <li> <p> <b>
      * <code>BurstCapacityPercentage</code> </b> - The percentage of CPU performance
      * available for your instance to burst above its baseline. Your instance
-     * continously accrues and consumes burst capacity. Burst capacity stops accruing
+     * continuously accrues and consumes burst capacity. Burst capacity stops accruing
      * when your instance's <code>BurstCapacityPercentage</code> reaches 100%. For more
      * information, see <a
      * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-viewing-instance-burst-capacity">Viewing
@@ -176,7 +176,7 @@ namespace Model
      * <code>Average</code>.</p> <p> <code>Unit</code>: The published unit is
      * <code>Percent</code>.</p> </li> <li> <p> <b> <code>BurstCapacityTime</code> </b>
      * - The available amount of time for your instance to burst at 100% CPU
-     * utilization. Your instance continously accrues and consumes burst capacity.
+     * utilization. Your instance continuously accrues and consumes burst capacity.
      * Burst capacity time stops accruing when your instance's
      * <code>BurstCapacityPercentage</code> metric reaches 100%.</p> <p>Burst capacity
      * time is consumed at the full rate only when your instance operates at 100% CPU
@@ -237,7 +237,7 @@ namespace Model
      * <code>unit</code> value.</p> <ul> <li> <p> <b>
      * <code>BurstCapacityPercentage</code> </b> - The percentage of CPU performance
      * available for your instance to burst above its baseline. Your instance
-     * continously accrues and consumes burst capacity. Burst capacity stops accruing
+     * continuously accrues and consumes burst capacity. Burst capacity stops accruing
      * when your instance's <code>BurstCapacityPercentage</code> reaches 100%. For more
      * information, see <a
      * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-viewing-instance-burst-capacity">Viewing
@@ -246,7 +246,7 @@ namespace Model
      * <code>Average</code>.</p> <p> <code>Unit</code>: The published unit is
      * <code>Percent</code>.</p> </li> <li> <p> <b> <code>BurstCapacityTime</code> </b>
      * - The available amount of time for your instance to burst at 100% CPU
-     * utilization. Your instance continously accrues and consumes burst capacity.
+     * utilization. Your instance continuously accrues and consumes burst capacity.
      * Burst capacity time stops accruing when your instance's
      * <code>BurstCapacityPercentage</code> metric reaches 100%.</p> <p>Burst capacity
      * time is consumed at the full rate only when your instance operates at 100% CPU
@@ -307,7 +307,7 @@ namespace Model
      * <code>unit</code> value.</p> <ul> <li> <p> <b>
      * <code>BurstCapacityPercentage</code> </b> - The percentage of CPU performance
      * available for your instance to burst above its baseline. Your instance
-     * continously accrues and consumes burst capacity. Burst capacity stops accruing
+     * continuously accrues and consumes burst capacity. Burst capacity stops accruing
      * when your instance's <code>BurstCapacityPercentage</code> reaches 100%. For more
      * information, see <a
      * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-viewing-instance-burst-capacity">Viewing
@@ -316,7 +316,7 @@ namespace Model
      * <code>Average</code>.</p> <p> <code>Unit</code>: The published unit is
      * <code>Percent</code>.</p> </li> <li> <p> <b> <code>BurstCapacityTime</code> </b>
      * - The available amount of time for your instance to burst at 100% CPU
-     * utilization. Your instance continously accrues and consumes burst capacity.
+     * utilization. Your instance continuously accrues and consumes burst capacity.
      * Burst capacity time stops accruing when your instance's
      * <code>BurstCapacityPercentage</code> metric reaches 100%.</p> <p>Burst capacity
      * time is consumed at the full rate only when your instance operates at 100% CPU
@@ -377,7 +377,7 @@ namespace Model
      * <code>unit</code> value.</p> <ul> <li> <p> <b>
      * <code>BurstCapacityPercentage</code> </b> - The percentage of CPU performance
      * available for your instance to burst above its baseline. Your instance
-     * continously accrues and consumes burst capacity. Burst capacity stops accruing
+     * continuously accrues and consumes burst capacity. Burst capacity stops accruing
      * when your instance's <code>BurstCapacityPercentage</code> reaches 100%. For more
      * information, see <a
      * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-viewing-instance-burst-capacity">Viewing
@@ -386,7 +386,7 @@ namespace Model
      * <code>Average</code>.</p> <p> <code>Unit</code>: The published unit is
      * <code>Percent</code>.</p> </li> <li> <p> <b> <code>BurstCapacityTime</code> </b>
      * - The available amount of time for your instance to burst at 100% CPU
-     * utilization. Your instance continously accrues and consumes burst capacity.
+     * utilization. Your instance continuously accrues and consumes burst capacity.
      * Burst capacity time stops accruing when your instance's
      * <code>BurstCapacityPercentage</code> metric reaches 100%.</p> <p>Burst capacity
      * time is consumed at the full rate only when your instance operates at 100% CPU
@@ -447,7 +447,7 @@ namespace Model
      * <code>unit</code> value.</p> <ul> <li> <p> <b>
      * <code>BurstCapacityPercentage</code> </b> - The percentage of CPU performance
      * available for your instance to burst above its baseline. Your instance
-     * continously accrues and consumes burst capacity. Burst capacity stops accruing
+     * continuously accrues and consumes burst capacity. Burst capacity stops accruing
      * when your instance's <code>BurstCapacityPercentage</code> reaches 100%. For more
      * information, see <a
      * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-viewing-instance-burst-capacity">Viewing
@@ -456,7 +456,7 @@ namespace Model
      * <code>Average</code>.</p> <p> <code>Unit</code>: The published unit is
      * <code>Percent</code>.</p> </li> <li> <p> <b> <code>BurstCapacityTime</code> </b>
      * - The available amount of time for your instance to burst at 100% CPU
-     * utilization. Your instance continously accrues and consumes burst capacity.
+     * utilization. Your instance continuously accrues and consumes burst capacity.
      * Burst capacity time stops accruing when your instance's
      * <code>BurstCapacityPercentage</code> metric reaches 100%.</p> <p>Burst capacity
      * time is consumed at the full rate only when your instance operates at 100% CPU

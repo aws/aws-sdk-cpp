@@ -22,7 +22,6 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/macie2/model/AcceptInvitationResult.h>
-#include <aws/macie2/model/ArchiveFindingsResult.h>
 #include <aws/macie2/model/BatchGetCustomDataIdentifiersResult.h>
 #include <aws/macie2/model/CreateClassificationJobResult.h>
 #include <aws/macie2/model/CreateCustomDataIdentifierResult.h>
@@ -67,7 +66,6 @@
 #include <aws/macie2/model/PutClassificationExportConfigurationResult.h>
 #include <aws/macie2/model/TagResourceResult.h>
 #include <aws/macie2/model/TestCustomDataIdentifierResult.h>
-#include <aws/macie2/model/UnarchiveFindingsResult.h>
 #include <aws/macie2/model/UntagResourceResult.h>
 #include <aws/macie2/model/UpdateClassificationJobResult.h>
 #include <aws/macie2/model/UpdateFindingsFilterResult.h>
@@ -114,7 +112,6 @@ namespace Macie2
 namespace Model
 {
         class AcceptInvitationRequest;
-        class ArchiveFindingsRequest;
         class BatchGetCustomDataIdentifiersRequest;
         class CreateClassificationJobRequest;
         class CreateCustomDataIdentifierRequest;
@@ -159,7 +156,6 @@ namespace Model
         class PutClassificationExportConfigurationRequest;
         class TagResourceRequest;
         class TestCustomDataIdentifierRequest;
-        class UnarchiveFindingsRequest;
         class UntagResourceRequest;
         class UpdateClassificationJobRequest;
         class UpdateFindingsFilterRequest;
@@ -168,7 +164,6 @@ namespace Model
         class UpdateOrganizationConfigurationRequest;
 
         typedef Aws::Utils::Outcome<AcceptInvitationResult, Aws::Client::AWSError<Macie2Errors>> AcceptInvitationOutcome;
-        typedef Aws::Utils::Outcome<ArchiveFindingsResult, Aws::Client::AWSError<Macie2Errors>> ArchiveFindingsOutcome;
         typedef Aws::Utils::Outcome<BatchGetCustomDataIdentifiersResult, Aws::Client::AWSError<Macie2Errors>> BatchGetCustomDataIdentifiersOutcome;
         typedef Aws::Utils::Outcome<CreateClassificationJobResult, Aws::Client::AWSError<Macie2Errors>> CreateClassificationJobOutcome;
         typedef Aws::Utils::Outcome<CreateCustomDataIdentifierResult, Aws::Client::AWSError<Macie2Errors>> CreateCustomDataIdentifierOutcome;
@@ -213,7 +208,6 @@ namespace Model
         typedef Aws::Utils::Outcome<PutClassificationExportConfigurationResult, Aws::Client::AWSError<Macie2Errors>> PutClassificationExportConfigurationOutcome;
         typedef Aws::Utils::Outcome<TagResourceResult, Aws::Client::AWSError<Macie2Errors>> TagResourceOutcome;
         typedef Aws::Utils::Outcome<TestCustomDataIdentifierResult, Aws::Client::AWSError<Macie2Errors>> TestCustomDataIdentifierOutcome;
-        typedef Aws::Utils::Outcome<UnarchiveFindingsResult, Aws::Client::AWSError<Macie2Errors>> UnarchiveFindingsOutcome;
         typedef Aws::Utils::Outcome<UntagResourceResult, Aws::Client::AWSError<Macie2Errors>> UntagResourceOutcome;
         typedef Aws::Utils::Outcome<UpdateClassificationJobResult, Aws::Client::AWSError<Macie2Errors>> UpdateClassificationJobOutcome;
         typedef Aws::Utils::Outcome<UpdateFindingsFilterResult, Aws::Client::AWSError<Macie2Errors>> UpdateFindingsFilterOutcome;
@@ -222,7 +216,6 @@ namespace Model
         typedef Aws::Utils::Outcome<UpdateOrganizationConfigurationResult, Aws::Client::AWSError<Macie2Errors>> UpdateOrganizationConfigurationOutcome;
 
         typedef std::future<AcceptInvitationOutcome> AcceptInvitationOutcomeCallable;
-        typedef std::future<ArchiveFindingsOutcome> ArchiveFindingsOutcomeCallable;
         typedef std::future<BatchGetCustomDataIdentifiersOutcome> BatchGetCustomDataIdentifiersOutcomeCallable;
         typedef std::future<CreateClassificationJobOutcome> CreateClassificationJobOutcomeCallable;
         typedef std::future<CreateCustomDataIdentifierOutcome> CreateCustomDataIdentifierOutcomeCallable;
@@ -267,7 +260,6 @@ namespace Model
         typedef std::future<PutClassificationExportConfigurationOutcome> PutClassificationExportConfigurationOutcomeCallable;
         typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
         typedef std::future<TestCustomDataIdentifierOutcome> TestCustomDataIdentifierOutcomeCallable;
-        typedef std::future<UnarchiveFindingsOutcome> UnarchiveFindingsOutcomeCallable;
         typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
         typedef std::future<UpdateClassificationJobOutcome> UpdateClassificationJobOutcomeCallable;
         typedef std::future<UpdateFindingsFilterOutcome> UpdateFindingsFilterOutcomeCallable;
@@ -279,7 +271,6 @@ namespace Model
   class Macie2Client;
 
     typedef std::function<void(const Macie2Client*, const Model::AcceptInvitationRequest&, const Model::AcceptInvitationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AcceptInvitationResponseReceivedHandler;
-    typedef std::function<void(const Macie2Client*, const Model::ArchiveFindingsRequest&, const Model::ArchiveFindingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ArchiveFindingsResponseReceivedHandler;
     typedef std::function<void(const Macie2Client*, const Model::BatchGetCustomDataIdentifiersRequest&, const Model::BatchGetCustomDataIdentifiersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchGetCustomDataIdentifiersResponseReceivedHandler;
     typedef std::function<void(const Macie2Client*, const Model::CreateClassificationJobRequest&, const Model::CreateClassificationJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateClassificationJobResponseReceivedHandler;
     typedef std::function<void(const Macie2Client*, const Model::CreateCustomDataIdentifierRequest&, const Model::CreateCustomDataIdentifierOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateCustomDataIdentifierResponseReceivedHandler;
@@ -324,7 +315,6 @@ namespace Model
     typedef std::function<void(const Macie2Client*, const Model::PutClassificationExportConfigurationRequest&, const Model::PutClassificationExportConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutClassificationExportConfigurationResponseReceivedHandler;
     typedef std::function<void(const Macie2Client*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const Macie2Client*, const Model::TestCustomDataIdentifierRequest&, const Model::TestCustomDataIdentifierOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TestCustomDataIdentifierResponseReceivedHandler;
-    typedef std::function<void(const Macie2Client*, const Model::UnarchiveFindingsRequest&, const Model::UnarchiveFindingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UnarchiveFindingsResponseReceivedHandler;
     typedef std::function<void(const Macie2Client*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const Macie2Client*, const Model::UpdateClassificationJobRequest&, const Model::UpdateClassificationJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateClassificationJobResponseReceivedHandler;
     typedef std::function<void(const Macie2Client*, const Model::UpdateFindingsFilterRequest&, const Model::UpdateFindingsFilterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateFindingsFilterResponseReceivedHandler;
@@ -391,31 +381,6 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void AcceptInvitationAsync(const Model::AcceptInvitationRequest& request, const AcceptInvitationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
-
-        /**
-         * <p>Archives one or more findings.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ArchiveFindings">AWS
-         * API Reference</a></p>
-         */
-        virtual Model::ArchiveFindingsOutcome ArchiveFindings(const Model::ArchiveFindingsRequest& request) const;
-
-        /**
-         * <p>Archives one or more findings.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ArchiveFindings">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ArchiveFindingsOutcomeCallable ArchiveFindingsCallable(const Model::ArchiveFindingsRequest& request) const;
-
-        /**
-         * <p>Archives one or more findings.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ArchiveFindings">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ArchiveFindingsAsync(const Model::ArchiveFindingsRequest& request, const ArchiveFindingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves information about one or more custom data
@@ -1650,31 +1615,6 @@ namespace Model
         virtual void TestCustomDataIdentifierAsync(const Model::TestCustomDataIdentifierRequest& request, const TestCustomDataIdentifierResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Reactivates (unarchives) one or more findings.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UnarchiveFindings">AWS
-         * API Reference</a></p>
-         */
-        virtual Model::UnarchiveFindingsOutcome UnarchiveFindings(const Model::UnarchiveFindingsRequest& request) const;
-
-        /**
-         * <p>Reactivates (unarchives) one or more findings.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UnarchiveFindings">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::UnarchiveFindingsOutcomeCallable UnarchiveFindingsCallable(const Model::UnarchiveFindingsRequest& request) const;
-
-        /**
-         * <p>Reactivates (unarchives) one or more findings.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UnarchiveFindings">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void UnarchiveFindingsAsync(const Model::UnarchiveFindingsRequest& request, const UnarchiveFindingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
-
-        /**
          * <p>Removes one or more tags (keys and values) from a classification job, custom
          * data identifier, findings filter, or member account.</p><p><h3>See Also:</h3>  
          * <a
@@ -1847,7 +1787,6 @@ namespace Model
     private:
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
         void AcceptInvitationAsyncHelper(const Model::AcceptInvitationRequest& request, const AcceptInvitationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ArchiveFindingsAsyncHelper(const Model::ArchiveFindingsRequest& request, const ArchiveFindingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void BatchGetCustomDataIdentifiersAsyncHelper(const Model::BatchGetCustomDataIdentifiersRequest& request, const BatchGetCustomDataIdentifiersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateClassificationJobAsyncHelper(const Model::CreateClassificationJobRequest& request, const CreateClassificationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateCustomDataIdentifierAsyncHelper(const Model::CreateCustomDataIdentifierRequest& request, const CreateCustomDataIdentifierResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1892,7 +1831,6 @@ namespace Model
         void PutClassificationExportConfigurationAsyncHelper(const Model::PutClassificationExportConfigurationRequest& request, const PutClassificationExportConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void TestCustomDataIdentifierAsyncHelper(const Model::TestCustomDataIdentifierRequest& request, const TestCustomDataIdentifierResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UnarchiveFindingsAsyncHelper(const Model::UnarchiveFindingsRequest& request, const UnarchiveFindingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateClassificationJobAsyncHelper(const Model::UpdateClassificationJobRequest& request, const UpdateClassificationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateFindingsFilterAsyncHelper(const Model::UpdateFindingsFilterRequest& request, const UpdateFindingsFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

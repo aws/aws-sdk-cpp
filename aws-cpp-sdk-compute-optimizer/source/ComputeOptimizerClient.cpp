@@ -30,6 +30,9 @@
 #include <aws/compute-optimizer/ComputeOptimizerClient.h>
 #include <aws/compute-optimizer/ComputeOptimizerEndpoint.h>
 #include <aws/compute-optimizer/ComputeOptimizerErrorMarshaller.h>
+#include <aws/compute-optimizer/model/DescribeRecommendationExportJobsRequest.h>
+#include <aws/compute-optimizer/model/ExportAutoScalingGroupRecommendationsRequest.h>
+#include <aws/compute-optimizer/model/ExportEC2InstanceRecommendationsRequest.h>
 #include <aws/compute-optimizer/model/GetAutoScalingGroupRecommendationsRequest.h>
 #include <aws/compute-optimizer/model/GetEC2InstanceRecommendationsRequest.h>
 #include <aws/compute-optimizer/model/GetEC2RecommendationProjectedMetricsRequest.h>
@@ -107,6 +110,111 @@ void ComputeOptimizerClient::OverrideEndpoint(const Aws::String& endpoint)
   {
       m_uri = m_configScheme + "://" + endpoint;
   }
+}
+
+DescribeRecommendationExportJobsOutcome ComputeOptimizerClient::DescribeRecommendationExportJobs(const DescribeRecommendationExportJobsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DescribeRecommendationExportJobsOutcome(DescribeRecommendationExportJobsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeRecommendationExportJobsOutcome(outcome.GetError());
+  }
+}
+
+DescribeRecommendationExportJobsOutcomeCallable ComputeOptimizerClient::DescribeRecommendationExportJobsCallable(const DescribeRecommendationExportJobsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeRecommendationExportJobsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeRecommendationExportJobs(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ComputeOptimizerClient::DescribeRecommendationExportJobsAsync(const DescribeRecommendationExportJobsRequest& request, const DescribeRecommendationExportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeRecommendationExportJobsAsyncHelper( request, handler, context ); } );
+}
+
+void ComputeOptimizerClient::DescribeRecommendationExportJobsAsyncHelper(const DescribeRecommendationExportJobsRequest& request, const DescribeRecommendationExportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeRecommendationExportJobs(request), context);
+}
+
+ExportAutoScalingGroupRecommendationsOutcome ComputeOptimizerClient::ExportAutoScalingGroupRecommendations(const ExportAutoScalingGroupRecommendationsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ExportAutoScalingGroupRecommendationsOutcome(ExportAutoScalingGroupRecommendationsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ExportAutoScalingGroupRecommendationsOutcome(outcome.GetError());
+  }
+}
+
+ExportAutoScalingGroupRecommendationsOutcomeCallable ComputeOptimizerClient::ExportAutoScalingGroupRecommendationsCallable(const ExportAutoScalingGroupRecommendationsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ExportAutoScalingGroupRecommendationsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ExportAutoScalingGroupRecommendations(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ComputeOptimizerClient::ExportAutoScalingGroupRecommendationsAsync(const ExportAutoScalingGroupRecommendationsRequest& request, const ExportAutoScalingGroupRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ExportAutoScalingGroupRecommendationsAsyncHelper( request, handler, context ); } );
+}
+
+void ComputeOptimizerClient::ExportAutoScalingGroupRecommendationsAsyncHelper(const ExportAutoScalingGroupRecommendationsRequest& request, const ExportAutoScalingGroupRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ExportAutoScalingGroupRecommendations(request), context);
+}
+
+ExportEC2InstanceRecommendationsOutcome ComputeOptimizerClient::ExportEC2InstanceRecommendations(const ExportEC2InstanceRecommendationsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ExportEC2InstanceRecommendationsOutcome(ExportEC2InstanceRecommendationsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ExportEC2InstanceRecommendationsOutcome(outcome.GetError());
+  }
+}
+
+ExportEC2InstanceRecommendationsOutcomeCallable ComputeOptimizerClient::ExportEC2InstanceRecommendationsCallable(const ExportEC2InstanceRecommendationsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ExportEC2InstanceRecommendationsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ExportEC2InstanceRecommendations(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ComputeOptimizerClient::ExportEC2InstanceRecommendationsAsync(const ExportEC2InstanceRecommendationsRequest& request, const ExportEC2InstanceRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ExportEC2InstanceRecommendationsAsyncHelper( request, handler, context ); } );
+}
+
+void ComputeOptimizerClient::ExportEC2InstanceRecommendationsAsyncHelper(const ExportEC2InstanceRecommendationsRequest& request, const ExportEC2InstanceRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ExportEC2InstanceRecommendations(request), context);
 }
 
 GetAutoScalingGroupRecommendationsOutcome ComputeOptimizerClient::GetAutoScalingGroupRecommendations(const GetAutoScalingGroupRecommendationsRequest& request) const

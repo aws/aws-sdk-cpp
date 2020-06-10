@@ -545,19 +545,9 @@ namespace Model
         virtual void CreateProtectionAsync(const Model::CreateProtectionRequest& request, const CreateProtectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Activates AWS Shield Advanced for an account.</p> <p>As part of this request
-         * you can specify <code>EmergencySettings</code> that automaticaly grant the DDoS
-         * response team (DRT) needed permissions to assist you during a suspected DDoS
-         * attack. For more information see <a
-         * href="https://docs.aws.amazon.com/waf/latest/developerguide/authorize-DRT.html">Authorize
-         * the DDoS Response Team to Create Rules and Web ACLs on Your Behalf</a>.</p>
-         * <p>To use the services of the DRT, you must be subscribed to the <a
-         * href="https://aws.amazon.com/premiumsupport/business-support/">Business Support
-         * plan</a> or the <a
-         * href="https://aws.amazon.com/premiumsupport/enterprise-support/">Enterprise
-         * Support plan</a>.</p> <p>When you initally create a subscription, your
-         * subscription is set to be automatically renewed at the end of the existing
-         * subscription period. You can change this by submitting an
+         * <p>Activates AWS Shield Advanced for an account.</p> <p>When you initally create
+         * a subscription, your subscription is set to be automatically renewed at the end
+         * of the existing subscription period. You can change this by submitting an
          * <code>UpdateSubscription</code> request. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/CreateSubscription">AWS
          * API Reference</a></p>
@@ -565,19 +555,9 @@ namespace Model
         virtual Model::CreateSubscriptionOutcome CreateSubscription(const Model::CreateSubscriptionRequest& request) const;
 
         /**
-         * <p>Activates AWS Shield Advanced for an account.</p> <p>As part of this request
-         * you can specify <code>EmergencySettings</code> that automaticaly grant the DDoS
-         * response team (DRT) needed permissions to assist you during a suspected DDoS
-         * attack. For more information see <a
-         * href="https://docs.aws.amazon.com/waf/latest/developerguide/authorize-DRT.html">Authorize
-         * the DDoS Response Team to Create Rules and Web ACLs on Your Behalf</a>.</p>
-         * <p>To use the services of the DRT, you must be subscribed to the <a
-         * href="https://aws.amazon.com/premiumsupport/business-support/">Business Support
-         * plan</a> or the <a
-         * href="https://aws.amazon.com/premiumsupport/enterprise-support/">Enterprise
-         * Support plan</a>.</p> <p>When you initally create a subscription, your
-         * subscription is set to be automatically renewed at the end of the existing
-         * subscription period. You can change this by submitting an
+         * <p>Activates AWS Shield Advanced for an account.</p> <p>When you initally create
+         * a subscription, your subscription is set to be automatically renewed at the end
+         * of the existing subscription period. You can change this by submitting an
          * <code>UpdateSubscription</code> request. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/CreateSubscription">AWS
          * API Reference</a></p>
@@ -587,19 +567,9 @@ namespace Model
         virtual Model::CreateSubscriptionOutcomeCallable CreateSubscriptionCallable(const Model::CreateSubscriptionRequest& request) const;
 
         /**
-         * <p>Activates AWS Shield Advanced for an account.</p> <p>As part of this request
-         * you can specify <code>EmergencySettings</code> that automaticaly grant the DDoS
-         * response team (DRT) needed permissions to assist you during a suspected DDoS
-         * attack. For more information see <a
-         * href="https://docs.aws.amazon.com/waf/latest/developerguide/authorize-DRT.html">Authorize
-         * the DDoS Response Team to Create Rules and Web ACLs on Your Behalf</a>.</p>
-         * <p>To use the services of the DRT, you must be subscribed to the <a
-         * href="https://aws.amazon.com/premiumsupport/business-support/">Business Support
-         * plan</a> or the <a
-         * href="https://aws.amazon.com/premiumsupport/enterprise-support/">Enterprise
-         * Support plan</a>.</p> <p>When you initally create a subscription, your
-         * subscription is set to be automatically renewed at the end of the existing
-         * subscription period. You can change this by submitting an
+         * <p>Activates AWS Shield Advanced for an account.</p> <p>When you initally create
+         * a subscription, your subscription is set to be automatically renewed at the end
+         * of the existing subscription period. You can change this by submitting an
          * <code>UpdateSubscription</code> request. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/CreateSubscription">AWS
          * API Reference</a></p>

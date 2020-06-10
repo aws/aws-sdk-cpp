@@ -55,44 +55,48 @@ namespace Model
     /**
      * <p>The first port in a range of open ports on an instance.</p> <p>Allowed
      * ports:</p> <ul> <li> <p>TCP and UDP - <code>0</code> to <code>65535</code> </p>
-     * </li> <li> <p>ICMP - <code>8</code> (to configure Ping)</p> <note> <p>Ping is
-     * the only communication supported through the ICMP protocol in Lightsail. To
-     * configure ping, specify the <code>fromPort</code> parameter as <code>8</code>,
-     * and the <code>toPort</code> parameter as <code>-1</code>.</p> </note> </li>
-     * </ul>
+     * </li> <li> <p>ICMP - The ICMP type. For example, specify <code>8</code> as the
+     * <code>fromPort</code> (ICMP type), and <code>-1</code> as the
+     * <code>toPort</code> (ICMP code), to enable ICMP Ping. For more information, see
+     * <a
+     * href="https://en.wikipedia.org/wiki/Internet_Control_Message_Protocol#Control_messages">Control
+     * Messages</a> on <i>Wikipedia</i>.</p> </li> </ul>
      */
     inline int GetFromPort() const{ return m_fromPort; }
 
     /**
      * <p>The first port in a range of open ports on an instance.</p> <p>Allowed
      * ports:</p> <ul> <li> <p>TCP and UDP - <code>0</code> to <code>65535</code> </p>
-     * </li> <li> <p>ICMP - <code>8</code> (to configure Ping)</p> <note> <p>Ping is
-     * the only communication supported through the ICMP protocol in Lightsail. To
-     * configure ping, specify the <code>fromPort</code> parameter as <code>8</code>,
-     * and the <code>toPort</code> parameter as <code>-1</code>.</p> </note> </li>
-     * </ul>
+     * </li> <li> <p>ICMP - The ICMP type. For example, specify <code>8</code> as the
+     * <code>fromPort</code> (ICMP type), and <code>-1</code> as the
+     * <code>toPort</code> (ICMP code), to enable ICMP Ping. For more information, see
+     * <a
+     * href="https://en.wikipedia.org/wiki/Internet_Control_Message_Protocol#Control_messages">Control
+     * Messages</a> on <i>Wikipedia</i>.</p> </li> </ul>
      */
     inline bool FromPortHasBeenSet() const { return m_fromPortHasBeenSet; }
 
     /**
      * <p>The first port in a range of open ports on an instance.</p> <p>Allowed
      * ports:</p> <ul> <li> <p>TCP and UDP - <code>0</code> to <code>65535</code> </p>
-     * </li> <li> <p>ICMP - <code>8</code> (to configure Ping)</p> <note> <p>Ping is
-     * the only communication supported through the ICMP protocol in Lightsail. To
-     * configure ping, specify the <code>fromPort</code> parameter as <code>8</code>,
-     * and the <code>toPort</code> parameter as <code>-1</code>.</p> </note> </li>
-     * </ul>
+     * </li> <li> <p>ICMP - The ICMP type. For example, specify <code>8</code> as the
+     * <code>fromPort</code> (ICMP type), and <code>-1</code> as the
+     * <code>toPort</code> (ICMP code), to enable ICMP Ping. For more information, see
+     * <a
+     * href="https://en.wikipedia.org/wiki/Internet_Control_Message_Protocol#Control_messages">Control
+     * Messages</a> on <i>Wikipedia</i>.</p> </li> </ul>
      */
     inline void SetFromPort(int value) { m_fromPortHasBeenSet = true; m_fromPort = value; }
 
     /**
      * <p>The first port in a range of open ports on an instance.</p> <p>Allowed
      * ports:</p> <ul> <li> <p>TCP and UDP - <code>0</code> to <code>65535</code> </p>
-     * </li> <li> <p>ICMP - <code>8</code> (to configure Ping)</p> <note> <p>Ping is
-     * the only communication supported through the ICMP protocol in Lightsail. To
-     * configure ping, specify the <code>fromPort</code> parameter as <code>8</code>,
-     * and the <code>toPort</code> parameter as <code>-1</code>.</p> </note> </li>
-     * </ul>
+     * </li> <li> <p>ICMP - The ICMP type. For example, specify <code>8</code> as the
+     * <code>fromPort</code> (ICMP type), and <code>-1</code> as the
+     * <code>toPort</code> (ICMP code), to enable ICMP Ping. For more information, see
+     * <a
+     * href="https://en.wikipedia.org/wiki/Internet_Control_Message_Protocol#Control_messages">Control
+     * Messages</a> on <i>Wikipedia</i>.</p> </li> </ul>
      */
     inline InstancePortInfo& WithFromPort(int value) { SetFromPort(value); return *this;}
 
@@ -100,44 +104,48 @@ namespace Model
     /**
      * <p>The last port in a range of open ports on an instance.</p> <p>Allowed
      * ports:</p> <ul> <li> <p>TCP and UDP - <code>0</code> to <code>65535</code> </p>
-     * </li> <li> <p>ICMP - <code>-1</code> (to configure Ping)</p> <note> <p>Ping is
-     * the only communication supported through the ICMP protocol in Lightsail. To
-     * configure ping, specify the <code>fromPort</code> parameter as <code>8</code>,
-     * and the <code>toPort</code> parameter as <code>-1</code>.</p> </note> </li>
-     * </ul>
+     * </li> <li> <p>ICMP - The ICMP code. For example, specify <code>8</code> as the
+     * <code>fromPort</code> (ICMP type), and <code>-1</code> as the
+     * <code>toPort</code> (ICMP code), to enable ICMP Ping. For more information, see
+     * <a
+     * href="https://en.wikipedia.org/wiki/Internet_Control_Message_Protocol#Control_messages">Control
+     * Messages</a> on <i>Wikipedia</i>.</p> </li> </ul>
      */
     inline int GetToPort() const{ return m_toPort; }
 
     /**
      * <p>The last port in a range of open ports on an instance.</p> <p>Allowed
      * ports:</p> <ul> <li> <p>TCP and UDP - <code>0</code> to <code>65535</code> </p>
-     * </li> <li> <p>ICMP - <code>-1</code> (to configure Ping)</p> <note> <p>Ping is
-     * the only communication supported through the ICMP protocol in Lightsail. To
-     * configure ping, specify the <code>fromPort</code> parameter as <code>8</code>,
-     * and the <code>toPort</code> parameter as <code>-1</code>.</p> </note> </li>
-     * </ul>
+     * </li> <li> <p>ICMP - The ICMP code. For example, specify <code>8</code> as the
+     * <code>fromPort</code> (ICMP type), and <code>-1</code> as the
+     * <code>toPort</code> (ICMP code), to enable ICMP Ping. For more information, see
+     * <a
+     * href="https://en.wikipedia.org/wiki/Internet_Control_Message_Protocol#Control_messages">Control
+     * Messages</a> on <i>Wikipedia</i>.</p> </li> </ul>
      */
     inline bool ToPortHasBeenSet() const { return m_toPortHasBeenSet; }
 
     /**
      * <p>The last port in a range of open ports on an instance.</p> <p>Allowed
      * ports:</p> <ul> <li> <p>TCP and UDP - <code>0</code> to <code>65535</code> </p>
-     * </li> <li> <p>ICMP - <code>-1</code> (to configure Ping)</p> <note> <p>Ping is
-     * the only communication supported through the ICMP protocol in Lightsail. To
-     * configure ping, specify the <code>fromPort</code> parameter as <code>8</code>,
-     * and the <code>toPort</code> parameter as <code>-1</code>.</p> </note> </li>
-     * </ul>
+     * </li> <li> <p>ICMP - The ICMP code. For example, specify <code>8</code> as the
+     * <code>fromPort</code> (ICMP type), and <code>-1</code> as the
+     * <code>toPort</code> (ICMP code), to enable ICMP Ping. For more information, see
+     * <a
+     * href="https://en.wikipedia.org/wiki/Internet_Control_Message_Protocol#Control_messages">Control
+     * Messages</a> on <i>Wikipedia</i>.</p> </li> </ul>
      */
     inline void SetToPort(int value) { m_toPortHasBeenSet = true; m_toPort = value; }
 
     /**
      * <p>The last port in a range of open ports on an instance.</p> <p>Allowed
      * ports:</p> <ul> <li> <p>TCP and UDP - <code>0</code> to <code>65535</code> </p>
-     * </li> <li> <p>ICMP - <code>-1</code> (to configure Ping)</p> <note> <p>Ping is
-     * the only communication supported through the ICMP protocol in Lightsail. To
-     * configure ping, specify the <code>fromPort</code> parameter as <code>8</code>,
-     * and the <code>toPort</code> parameter as <code>-1</code>.</p> </note> </li>
-     * </ul>
+     * </li> <li> <p>ICMP - The ICMP code. For example, specify <code>8</code> as the
+     * <code>fromPort</code> (ICMP type), and <code>-1</code> as the
+     * <code>toPort</code> (ICMP code), to enable ICMP Ping. For more information, see
+     * <a
+     * href="https://en.wikipedia.org/wiki/Internet_Control_Message_Protocol#Control_messages">Control
+     * Messages</a> on <i>Wikipedia</i>.</p> </li> </ul>
      */
     inline InstancePortInfo& WithToPort(int value) { SetToPort(value); return *this;}
 
@@ -161,11 +169,10 @@ namespace Model
      * instead.</p> </li> <li> <p> <code>icmp</code> - Internet Control Message
      * Protocol (ICMP) is used to send error messages and operational information
      * indicating success or failure when communicating with an instance. For example,
-     * an error is indicated when an instance could not be reached.</p> <note> <p>Ping
-     * is the only communication supported through the ICMP protocol in Lightsail. To
-     * configure ping, specify the <code>fromPort</code> parameter as <code>8</code>,
-     * and the <code>toPort</code> parameter as <code>-1</code>.</p> </note> </li>
-     * </ul>
+     * an error is indicated when an instance could not be reached. When you specify
+     * <code>icmp</code> as the <code>protocol</code>, you must specify the ICMP type
+     * using the <code>fromPort</code> parameter, and ICMP code using the
+     * <code>toPort</code> parameter.</p> </li> </ul>
      */
     inline const NetworkProtocol& GetProtocol() const{ return m_protocol; }
 
@@ -188,11 +195,10 @@ namespace Model
      * instead.</p> </li> <li> <p> <code>icmp</code> - Internet Control Message
      * Protocol (ICMP) is used to send error messages and operational information
      * indicating success or failure when communicating with an instance. For example,
-     * an error is indicated when an instance could not be reached.</p> <note> <p>Ping
-     * is the only communication supported through the ICMP protocol in Lightsail. To
-     * configure ping, specify the <code>fromPort</code> parameter as <code>8</code>,
-     * and the <code>toPort</code> parameter as <code>-1</code>.</p> </note> </li>
-     * </ul>
+     * an error is indicated when an instance could not be reached. When you specify
+     * <code>icmp</code> as the <code>protocol</code>, you must specify the ICMP type
+     * using the <code>fromPort</code> parameter, and ICMP code using the
+     * <code>toPort</code> parameter.</p> </li> </ul>
      */
     inline bool ProtocolHasBeenSet() const { return m_protocolHasBeenSet; }
 
@@ -215,11 +221,10 @@ namespace Model
      * instead.</p> </li> <li> <p> <code>icmp</code> - Internet Control Message
      * Protocol (ICMP) is used to send error messages and operational information
      * indicating success or failure when communicating with an instance. For example,
-     * an error is indicated when an instance could not be reached.</p> <note> <p>Ping
-     * is the only communication supported through the ICMP protocol in Lightsail. To
-     * configure ping, specify the <code>fromPort</code> parameter as <code>8</code>,
-     * and the <code>toPort</code> parameter as <code>-1</code>.</p> </note> </li>
-     * </ul>
+     * an error is indicated when an instance could not be reached. When you specify
+     * <code>icmp</code> as the <code>protocol</code>, you must specify the ICMP type
+     * using the <code>fromPort</code> parameter, and ICMP code using the
+     * <code>toPort</code> parameter.</p> </li> </ul>
      */
     inline void SetProtocol(const NetworkProtocol& value) { m_protocolHasBeenSet = true; m_protocol = value; }
 
@@ -242,11 +247,10 @@ namespace Model
      * instead.</p> </li> <li> <p> <code>icmp</code> - Internet Control Message
      * Protocol (ICMP) is used to send error messages and operational information
      * indicating success or failure when communicating with an instance. For example,
-     * an error is indicated when an instance could not be reached.</p> <note> <p>Ping
-     * is the only communication supported through the ICMP protocol in Lightsail. To
-     * configure ping, specify the <code>fromPort</code> parameter as <code>8</code>,
-     * and the <code>toPort</code> parameter as <code>-1</code>.</p> </note> </li>
-     * </ul>
+     * an error is indicated when an instance could not be reached. When you specify
+     * <code>icmp</code> as the <code>protocol</code>, you must specify the ICMP type
+     * using the <code>fromPort</code> parameter, and ICMP code using the
+     * <code>toPort</code> parameter.</p> </li> </ul>
      */
     inline void SetProtocol(NetworkProtocol&& value) { m_protocolHasBeenSet = true; m_protocol = std::move(value); }
 
@@ -269,11 +273,10 @@ namespace Model
      * instead.</p> </li> <li> <p> <code>icmp</code> - Internet Control Message
      * Protocol (ICMP) is used to send error messages and operational information
      * indicating success or failure when communicating with an instance. For example,
-     * an error is indicated when an instance could not be reached.</p> <note> <p>Ping
-     * is the only communication supported through the ICMP protocol in Lightsail. To
-     * configure ping, specify the <code>fromPort</code> parameter as <code>8</code>,
-     * and the <code>toPort</code> parameter as <code>-1</code>.</p> </note> </li>
-     * </ul>
+     * an error is indicated when an instance could not be reached. When you specify
+     * <code>icmp</code> as the <code>protocol</code>, you must specify the ICMP type
+     * using the <code>fromPort</code> parameter, and ICMP code using the
+     * <code>toPort</code> parameter.</p> </li> </ul>
      */
     inline InstancePortInfo& WithProtocol(const NetworkProtocol& value) { SetProtocol(value); return *this;}
 
@@ -296,11 +299,10 @@ namespace Model
      * instead.</p> </li> <li> <p> <code>icmp</code> - Internet Control Message
      * Protocol (ICMP) is used to send error messages and operational information
      * indicating success or failure when communicating with an instance. For example,
-     * an error is indicated when an instance could not be reached.</p> <note> <p>Ping
-     * is the only communication supported through the ICMP protocol in Lightsail. To
-     * configure ping, specify the <code>fromPort</code> parameter as <code>8</code>,
-     * and the <code>toPort</code> parameter as <code>-1</code>.</p> </note> </li>
-     * </ul>
+     * an error is indicated when an instance could not be reached. When you specify
+     * <code>icmp</code> as the <code>protocol</code>, you must specify the ICMP type
+     * using the <code>fromPort</code> parameter, and ICMP code using the
+     * <code>toPort</code> parameter.</p> </li> </ul>
      */
     inline InstancePortInfo& WithProtocol(NetworkProtocol&& value) { SetProtocol(std::move(value)); return *this;}
 

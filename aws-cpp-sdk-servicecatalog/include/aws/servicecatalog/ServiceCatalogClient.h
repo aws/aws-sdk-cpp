@@ -605,16 +605,18 @@ namespace Model
         virtual void AssociatePrincipalWithPortfolioAsync(const Model::AssociatePrincipalWithPortfolioRequest& request, const AssociatePrincipalWithPortfolioResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Associates the specified product with the specified portfolio.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Associates the specified product with the specified portfolio.</p> <p>A
+         * delegated admin is authorized to invoke this command.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/AssociateProductWithPortfolio">AWS
          * API Reference</a></p>
          */
         virtual Model::AssociateProductWithPortfolioOutcome AssociateProductWithPortfolio(const Model::AssociateProductWithPortfolioRequest& request) const;
 
         /**
-         * <p>Associates the specified product with the specified portfolio.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Associates the specified product with the specified portfolio.</p> <p>A
+         * delegated admin is authorized to invoke this command.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/AssociateProductWithPortfolio">AWS
          * API Reference</a></p>
          *
@@ -623,8 +625,9 @@ namespace Model
         virtual Model::AssociateProductWithPortfolioOutcomeCallable AssociateProductWithPortfolioCallable(const Model::AssociateProductWithPortfolioRequest& request) const;
 
         /**
-         * <p>Associates the specified product with the specified portfolio.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Associates the specified product with the specified portfolio.</p> <p>A
+         * delegated admin is authorized to invoke this command.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/AssociateProductWithPortfolio">AWS
          * API Reference</a></p>
          *
@@ -782,14 +785,16 @@ namespace Model
         virtual void CopyProductAsync(const Model::CopyProductRequest& request, const CopyProductResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a constraint.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a constraint.</p> <p>A delegated admin is authorized to invoke this
+         * command.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/CreateConstraint">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateConstraintOutcome CreateConstraint(const Model::CreateConstraintRequest& request) const;
 
         /**
-         * <p>Creates a constraint.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a constraint.</p> <p>A delegated admin is authorized to invoke this
+         * command.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/CreateConstraint">AWS
          * API Reference</a></p>
          *
@@ -798,7 +803,8 @@ namespace Model
         virtual Model::CreateConstraintOutcomeCallable CreateConstraintCallable(const Model::CreateConstraintRequest& request) const;
 
         /**
-         * <p>Creates a constraint.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a constraint.</p> <p>A delegated admin is authorized to invoke this
+         * command.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/CreateConstraint">AWS
          * API Reference</a></p>
          *
@@ -807,14 +813,16 @@ namespace Model
         virtual void CreateConstraintAsync(const Model::CreateConstraintRequest& request, const CreateConstraintResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a portfolio.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a portfolio.</p> <p>A delegated admin is authorized to invoke this
+         * command.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/CreatePortfolio">AWS
          * API Reference</a></p>
          */
         virtual Model::CreatePortfolioOutcome CreatePortfolio(const Model::CreatePortfolioRequest& request) const;
 
         /**
-         * <p>Creates a portfolio.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a portfolio.</p> <p>A delegated admin is authorized to invoke this
+         * command.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/CreatePortfolio">AWS
          * API Reference</a></p>
          *
@@ -823,7 +831,8 @@ namespace Model
         virtual Model::CreatePortfolioOutcomeCallable CreatePortfolioCallable(const Model::CreatePortfolioRequest& request) const;
 
         /**
-         * <p>Creates a portfolio.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a portfolio.</p> <p>A delegated admin is authorized to invoke this
+         * command.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/CreatePortfolio">AWS
          * API Reference</a></p>
          *
@@ -834,8 +843,11 @@ namespace Model
         /**
          * <p>Shares the specified portfolio with the specified account or organization
          * node. Shares to an organization node can only be created by the master account
-         * of an Organization. AWSOrganizationsAccess must be enabled in order to create a
-         * portfolio share to an organization node.</p><p><h3>See Also:</h3>   <a
+         * of an organization or by a delegated administrator. You can share portfolios to
+         * an organization, an organizational unit, or a specific account.</p> <p>Note that
+         * if a delegated admin is de-registered, they can no longer create portfolio
+         * shares.</p> <p> <code>AWSOrganizationsAccess</code> must be enabled in order to
+         * create a portfolio share to an organization node.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/CreatePortfolioShare">AWS
          * API Reference</a></p>
          */
@@ -844,8 +856,11 @@ namespace Model
         /**
          * <p>Shares the specified portfolio with the specified account or organization
          * node. Shares to an organization node can only be created by the master account
-         * of an Organization. AWSOrganizationsAccess must be enabled in order to create a
-         * portfolio share to an organization node.</p><p><h3>See Also:</h3>   <a
+         * of an organization or by a delegated administrator. You can share portfolios to
+         * an organization, an organizational unit, or a specific account.</p> <p>Note that
+         * if a delegated admin is de-registered, they can no longer create portfolio
+         * shares.</p> <p> <code>AWSOrganizationsAccess</code> must be enabled in order to
+         * create a portfolio share to an organization node.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/CreatePortfolioShare">AWS
          * API Reference</a></p>
          *
@@ -856,8 +871,11 @@ namespace Model
         /**
          * <p>Shares the specified portfolio with the specified account or organization
          * node. Shares to an organization node can only be created by the master account
-         * of an Organization. AWSOrganizationsAccess must be enabled in order to create a
-         * portfolio share to an organization node.</p><p><h3>See Also:</h3>   <a
+         * of an organization or by a delegated administrator. You can share portfolios to
+         * an organization, an organizational unit, or a specific account.</p> <p>Note that
+         * if a delegated admin is de-registered, they can no longer create portfolio
+         * shares.</p> <p> <code>AWSOrganizationsAccess</code> must be enabled in order to
+         * create a portfolio share to an organization node.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/CreatePortfolioShare">AWS
          * API Reference</a></p>
          *
@@ -866,14 +884,16 @@ namespace Model
         virtual void CreatePortfolioShareAsync(const Model::CreatePortfolioShareRequest& request, const CreatePortfolioShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a product.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a product.</p> <p>A delegated admin is authorized to invoke this
+         * command.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/CreateProduct">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateProductOutcome CreateProduct(const Model::CreateProductRequest& request) const;
 
         /**
-         * <p>Creates a product.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a product.</p> <p>A delegated admin is authorized to invoke this
+         * command.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/CreateProduct">AWS
          * API Reference</a></p>
          *
@@ -882,7 +902,8 @@ namespace Model
         virtual Model::CreateProductOutcomeCallable CreateProductCallable(const Model::CreateProductRequest& request) const;
 
         /**
-         * <p>Creates a product.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a product.</p> <p>A delegated admin is authorized to invoke this
+         * command.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/CreateProduct">AWS
          * API Reference</a></p>
          *
@@ -1018,14 +1039,16 @@ namespace Model
         virtual void CreateTagOptionAsync(const Model::CreateTagOptionRequest& request, const CreateTagOptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes the specified constraint.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes the specified constraint.</p> <p>A delegated admin is authorized to
+         * invoke this command.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DeleteConstraint">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteConstraintOutcome DeleteConstraint(const Model::DeleteConstraintRequest& request) const;
 
         /**
-         * <p>Deletes the specified constraint.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes the specified constraint.</p> <p>A delegated admin is authorized to
+         * invoke this command.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DeleteConstraint">AWS
          * API Reference</a></p>
          *
@@ -1034,7 +1057,8 @@ namespace Model
         virtual Model::DeleteConstraintOutcomeCallable DeleteConstraintCallable(const Model::DeleteConstraintRequest& request) const;
 
         /**
-         * <p>Deletes the specified constraint.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes the specified constraint.</p> <p>A delegated admin is authorized to
+         * invoke this command.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DeleteConstraint">AWS
          * API Reference</a></p>
          *
@@ -1045,7 +1069,8 @@ namespace Model
         /**
          * <p>Deletes the specified portfolio.</p> <p>You cannot delete a portfolio if it
          * was shared with you or if it has associated products, users, constraints, or
-         * shared accounts.</p><p><h3>See Also:</h3>   <a
+         * shared accounts.</p> <p>A delegated admin is authorized to invoke this
+         * command.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DeletePortfolio">AWS
          * API Reference</a></p>
          */
@@ -1054,7 +1079,8 @@ namespace Model
         /**
          * <p>Deletes the specified portfolio.</p> <p>You cannot delete a portfolio if it
          * was shared with you or if it has associated products, users, constraints, or
-         * shared accounts.</p><p><h3>See Also:</h3>   <a
+         * shared accounts.</p> <p>A delegated admin is authorized to invoke this
+         * command.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DeletePortfolio">AWS
          * API Reference</a></p>
          *
@@ -1065,7 +1091,8 @@ namespace Model
         /**
          * <p>Deletes the specified portfolio.</p> <p>You cannot delete a portfolio if it
          * was shared with you or if it has associated products, users, constraints, or
-         * shared accounts.</p><p><h3>See Also:</h3>   <a
+         * shared accounts.</p> <p>A delegated admin is authorized to invoke this
+         * command.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DeletePortfolio">AWS
          * API Reference</a></p>
          *
@@ -1076,7 +1103,9 @@ namespace Model
         /**
          * <p>Stops sharing the specified portfolio with the specified account or
          * organization node. Shares to an organization node can only be deleted by the
-         * master account of an Organization.</p><p><h3>See Also:</h3>   <a
+         * master account of an organization or by a delegated administrator.</p> <p>Note
+         * that if a delegated admin is de-registered, portfolio shares created from that
+         * account are removed.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DeletePortfolioShare">AWS
          * API Reference</a></p>
          */
@@ -1085,7 +1114,9 @@ namespace Model
         /**
          * <p>Stops sharing the specified portfolio with the specified account or
          * organization node. Shares to an organization node can only be deleted by the
-         * master account of an Organization.</p><p><h3>See Also:</h3>   <a
+         * master account of an organization or by a delegated administrator.</p> <p>Note
+         * that if a delegated admin is de-registered, portfolio shares created from that
+         * account are removed.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DeletePortfolioShare">AWS
          * API Reference</a></p>
          *
@@ -1096,7 +1127,9 @@ namespace Model
         /**
          * <p>Stops sharing the specified portfolio with the specified account or
          * organization node. Shares to an organization node can only be deleted by the
-         * master account of an Organization.</p><p><h3>See Also:</h3>   <a
+         * master account of an organization or by a delegated administrator.</p> <p>Note
+         * that if a delegated admin is de-registered, portfolio shares created from that
+         * account are removed.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DeletePortfolioShare">AWS
          * API Reference</a></p>
          *
@@ -1106,7 +1139,8 @@ namespace Model
 
         /**
          * <p>Deletes the specified product.</p> <p>You cannot delete a product if it was
-         * shared with you or is associated with a portfolio.</p><p><h3>See Also:</h3>   <a
+         * shared with you or is associated with a portfolio.</p> <p>A delegated admin is
+         * authorized to invoke this command.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DeleteProduct">AWS
          * API Reference</a></p>
          */
@@ -1114,7 +1148,8 @@ namespace Model
 
         /**
          * <p>Deletes the specified product.</p> <p>You cannot delete a product if it was
-         * shared with you or is associated with a portfolio.</p><p><h3>See Also:</h3>   <a
+         * shared with you or is associated with a portfolio.</p> <p>A delegated admin is
+         * authorized to invoke this command.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DeleteProduct">AWS
          * API Reference</a></p>
          *
@@ -1124,7 +1159,8 @@ namespace Model
 
         /**
          * <p>Deletes the specified product.</p> <p>You cannot delete a product if it was
-         * shared with you or is associated with a portfolio.</p><p><h3>See Also:</h3>   <a
+         * shared with you or is associated with a portfolio.</p> <p>A delegated admin is
+         * authorized to invoke this command.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DeleteProduct">AWS
          * API Reference</a></p>
          *
@@ -1304,14 +1340,16 @@ namespace Model
         virtual void DescribeCopyProductStatusAsync(const Model::DescribeCopyProductStatusRequest& request, const DescribeCopyProductStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets information about the specified portfolio.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets information about the specified portfolio.</p> <p>A delegated admin is
+         * authorized to invoke this command.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribePortfolio">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribePortfolioOutcome DescribePortfolio(const Model::DescribePortfolioRequest& request) const;
 
         /**
-         * <p>Gets information about the specified portfolio.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets information about the specified portfolio.</p> <p>A delegated admin is
+         * authorized to invoke this command.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribePortfolio">AWS
          * API Reference</a></p>
          *
@@ -1320,7 +1358,8 @@ namespace Model
         virtual Model::DescribePortfolioOutcomeCallable DescribePortfolioCallable(const Model::DescribePortfolioRequest& request) const;
 
         /**
-         * <p>Gets information about the specified portfolio.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets information about the specified portfolio.</p> <p>A delegated admin is
+         * authorized to invoke this command.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribePortfolio">AWS
          * API Reference</a></p>
          *
@@ -1330,8 +1369,8 @@ namespace Model
 
         /**
          * <p>Gets the status of the specified portfolio share operation. This API can only
-         * be called by the master account in the organization.</p><p><h3>See Also:</h3>  
-         * <a
+         * be called by the master account in the organization or by a delegated
+         * admin.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribePortfolioShareStatus">AWS
          * API Reference</a></p>
          */
@@ -1339,8 +1378,8 @@ namespace Model
 
         /**
          * <p>Gets the status of the specified portfolio share operation. This API can only
-         * be called by the master account in the organization.</p><p><h3>See Also:</h3>  
-         * <a
+         * be called by the master account in the organization or by a delegated
+         * admin.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribePortfolioShareStatus">AWS
          * API Reference</a></p>
          *
@@ -1350,8 +1389,8 @@ namespace Model
 
         /**
          * <p>Gets the status of the specified portfolio share operation. This API can only
-         * be called by the master account in the organization.</p><p><h3>See Also:</h3>  
-         * <a
+         * be called by the master account in the organization or by a delegated
+         * admin.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribePortfolioShareStatus">AWS
          * API Reference</a></p>
          *
@@ -1708,8 +1747,10 @@ namespace Model
          * will not delete your current shares but it will prevent you from creating new
          * shares throughout your organization. Current shares will not be in sync with
          * your organization structure if it changes after calling this API. This API can
-         * only be called by the master account in the organization.</p><p><h3>See
-         * Also:</h3>   <a
+         * only be called by the master account in the organization.</p> <p>This API can't
+         * be invoked if there are active delegated administrators in the organization.</p>
+         * <p>Note that a delegated administrator is not authorized to invoke
+         * <code>DisableAWSOrganizationsAccess</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DisableAWSOrganizationsAccess">AWS
          * API Reference</a></p>
          */
@@ -1720,8 +1761,10 @@ namespace Model
          * will not delete your current shares but it will prevent you from creating new
          * shares throughout your organization. Current shares will not be in sync with
          * your organization structure if it changes after calling this API. This API can
-         * only be called by the master account in the organization.</p><p><h3>See
-         * Also:</h3>   <a
+         * only be called by the master account in the organization.</p> <p>This API can't
+         * be invoked if there are active delegated administrators in the organization.</p>
+         * <p>Note that a delegated administrator is not authorized to invoke
+         * <code>DisableAWSOrganizationsAccess</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DisableAWSOrganizationsAccess">AWS
          * API Reference</a></p>
          *
@@ -1734,8 +1777,10 @@ namespace Model
          * will not delete your current shares but it will prevent you from creating new
          * shares throughout your organization. Current shares will not be in sync with
          * your organization structure if it changes after calling this API. This API can
-         * only be called by the master account in the organization.</p><p><h3>See
-         * Also:</h3>   <a
+         * only be called by the master account in the organization.</p> <p>This API can't
+         * be invoked if there are active delegated administrators in the organization.</p>
+         * <p>Note that a delegated administrator is not authorized to invoke
+         * <code>DisableAWSOrganizationsAccess</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DisableAWSOrganizationsAccess">AWS
          * API Reference</a></p>
          *
@@ -1800,16 +1845,18 @@ namespace Model
         virtual void DisassociatePrincipalFromPortfolioAsync(const Model::DisassociatePrincipalFromPortfolioRequest& request, const DisassociatePrincipalFromPortfolioResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Disassociates the specified product from the specified portfolio.
-         * </p><p><h3>See Also:</h3>   <a
+         * <p>Disassociates the specified product from the specified portfolio. </p> <p>A
+         * delegated admin is authorized to invoke this command.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DisassociateProductFromPortfolio">AWS
          * API Reference</a></p>
          */
         virtual Model::DisassociateProductFromPortfolioOutcome DisassociateProductFromPortfolio(const Model::DisassociateProductFromPortfolioRequest& request) const;
 
         /**
-         * <p>Disassociates the specified product from the specified portfolio.
-         * </p><p><h3>See Also:</h3>   <a
+         * <p>Disassociates the specified product from the specified portfolio. </p> <p>A
+         * delegated admin is authorized to invoke this command.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DisassociateProductFromPortfolio">AWS
          * API Reference</a></p>
          *
@@ -1818,8 +1865,9 @@ namespace Model
         virtual Model::DisassociateProductFromPortfolioOutcomeCallable DisassociateProductFromPortfolioCallable(const Model::DisassociateProductFromPortfolioRequest& request) const;
 
         /**
-         * <p>Disassociates the specified product from the specified portfolio.
-         * </p><p><h3>See Also:</h3>   <a
+         * <p>Disassociates the specified product from the specified portfolio. </p> <p>A
+         * delegated admin is authorized to invoke this command.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DisassociateProductFromPortfolio">AWS
          * API Reference</a></p>
          *
@@ -1890,7 +1938,8 @@ namespace Model
          * master account in the organization.</p> <p>By calling this API Service Catalog
          * will make a call to organizations:EnableAWSServiceAccess on your behalf so that
          * your shares can be in sync with any changes in your AWS Organizations
-         * structure.</p><p><h3>See Also:</h3>   <a
+         * structure.</p> <p>Note that a delegated administrator is not authorized to
+         * invoke <code>EnableAWSOrganizationsAccess</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/EnableAWSOrganizationsAccess">AWS
          * API Reference</a></p>
          */
@@ -1903,7 +1952,8 @@ namespace Model
          * master account in the organization.</p> <p>By calling this API Service Catalog
          * will make a call to organizations:EnableAWSServiceAccess on your behalf so that
          * your shares can be in sync with any changes in your AWS Organizations
-         * structure.</p><p><h3>See Also:</h3>   <a
+         * structure.</p> <p>Note that a delegated administrator is not authorized to
+         * invoke <code>EnableAWSOrganizationsAccess</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/EnableAWSOrganizationsAccess">AWS
          * API Reference</a></p>
          *
@@ -1918,7 +1968,8 @@ namespace Model
          * master account in the organization.</p> <p>By calling this API Service Catalog
          * will make a call to organizations:EnableAWSServiceAccess on your behalf so that
          * your shares can be in sync with any changes in your AWS Organizations
-         * structure.</p><p><h3>See Also:</h3>   <a
+         * structure.</p> <p>Note that a delegated administrator is not authorized to
+         * invoke <code>EnableAWSOrganizationsAccess</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/EnableAWSOrganizationsAccess">AWS
          * API Reference</a></p>
          *
@@ -1984,8 +2035,8 @@ namespace Model
 
         /**
          * <p>Get the Access Status for AWS Organization portfolio share feature. This API
-         * can only be called by the master account in the organization.</p><p><h3>See
-         * Also:</h3>   <a
+         * can only be called by the master account in the organization or by a delegated
+         * admin.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/GetAWSOrganizationsAccessStatus">AWS
          * API Reference</a></p>
          */
@@ -1993,8 +2044,8 @@ namespace Model
 
         /**
          * <p>Get the Access Status for AWS Organization portfolio share feature. This API
-         * can only be called by the master account in the organization.</p><p><h3>See
-         * Also:</h3>   <a
+         * can only be called by the master account in the organization or by a delegated
+         * admin.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/GetAWSOrganizationsAccessStatus">AWS
          * API Reference</a></p>
          *
@@ -2004,8 +2055,8 @@ namespace Model
 
         /**
          * <p>Get the Access Status for AWS Organization portfolio share feature. This API
-         * can only be called by the master account in the organization.</p><p><h3>See
-         * Also:</h3>   <a
+         * can only be called by the master account in the organization or by a delegated
+         * admin.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/GetAWSOrganizationsAccessStatus">AWS
          * API Reference</a></p>
          *
@@ -2133,8 +2184,9 @@ namespace Model
 
         /**
          * <p>Lists the organization nodes that have access to the specified portfolio.
-         * This API can only be called by the master account in the
-         * organization.</p><p><h3>See Also:</h3>   <a
+         * This API can only be called by the master account in the organization or by a
+         * delegated admin.</p> <p>If a delegated admin is de-registered, they can no
+         * longer perform this operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListOrganizationPortfolioAccess">AWS
          * API Reference</a></p>
          */
@@ -2142,8 +2194,9 @@ namespace Model
 
         /**
          * <p>Lists the organization nodes that have access to the specified portfolio.
-         * This API can only be called by the master account in the
-         * organization.</p><p><h3>See Also:</h3>   <a
+         * This API can only be called by the master account in the organization or by a
+         * delegated admin.</p> <p>If a delegated admin is de-registered, they can no
+         * longer perform this operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListOrganizationPortfolioAccess">AWS
          * API Reference</a></p>
          *
@@ -2153,8 +2206,9 @@ namespace Model
 
         /**
          * <p>Lists the organization nodes that have access to the specified portfolio.
-         * This API can only be called by the master account in the
-         * organization.</p><p><h3>See Also:</h3>   <a
+         * This API can only be called by the master account in the organization or by a
+         * delegated admin.</p> <p>If a delegated admin is de-registered, they can no
+         * longer perform this operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListOrganizationPortfolioAccess">AWS
          * API Reference</a></p>
          *
@@ -2163,16 +2217,20 @@ namespace Model
         virtual void ListOrganizationPortfolioAccessAsync(const Model::ListOrganizationPortfolioAccessRequest& request, const ListOrganizationPortfolioAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists the account IDs that have access to the specified
-         * portfolio.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the account IDs that have access to the specified portfolio.</p> <p>A
+         * delegated admin can list the accounts that have access to the shared portfolio.
+         * Note that if a delegated admin is de-registered, they can no longer perform this
+         * operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListPortfolioAccess">AWS
          * API Reference</a></p>
          */
         virtual Model::ListPortfolioAccessOutcome ListPortfolioAccess(const Model::ListPortfolioAccessRequest& request) const;
 
         /**
-         * <p>Lists the account IDs that have access to the specified
-         * portfolio.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the account IDs that have access to the specified portfolio.</p> <p>A
+         * delegated admin can list the accounts that have access to the shared portfolio.
+         * Note that if a delegated admin is de-registered, they can no longer perform this
+         * operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListPortfolioAccess">AWS
          * API Reference</a></p>
          *
@@ -2181,8 +2239,10 @@ namespace Model
         virtual Model::ListPortfolioAccessOutcomeCallable ListPortfolioAccessCallable(const Model::ListPortfolioAccessRequest& request) const;
 
         /**
-         * <p>Lists the account IDs that have access to the specified
-         * portfolio.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the account IDs that have access to the specified portfolio.</p> <p>A
+         * delegated admin can list the accounts that have access to the shared portfolio.
+         * Note that if a delegated admin is de-registered, they can no longer perform this
+         * operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListPortfolioAccess">AWS
          * API Reference</a></p>
          *

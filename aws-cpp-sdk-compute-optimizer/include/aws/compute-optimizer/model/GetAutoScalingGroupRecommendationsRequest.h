@@ -47,56 +47,83 @@ namespace Model
 
 
     /**
-     * <p>The AWS account IDs for which to return Auto Scaling group
-     * recommendations.</p> <p>Only one account ID can be specified per request.</p>
+     * <p>The IDs of the AWS accounts for which to return Auto Scaling group
+     * recommendations.</p> <p>If your account is the master account of an
+     * organization, use this parameter to specify the member accounts for which you
+     * want to return Auto Scaling group recommendations.</p> <p>Only one account ID
+     * can be specified per request.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAccountIds() const{ return m_accountIds; }
 
     /**
-     * <p>The AWS account IDs for which to return Auto Scaling group
-     * recommendations.</p> <p>Only one account ID can be specified per request.</p>
+     * <p>The IDs of the AWS accounts for which to return Auto Scaling group
+     * recommendations.</p> <p>If your account is the master account of an
+     * organization, use this parameter to specify the member accounts for which you
+     * want to return Auto Scaling group recommendations.</p> <p>Only one account ID
+     * can be specified per request.</p>
      */
     inline bool AccountIdsHasBeenSet() const { return m_accountIdsHasBeenSet; }
 
     /**
-     * <p>The AWS account IDs for which to return Auto Scaling group
-     * recommendations.</p> <p>Only one account ID can be specified per request.</p>
+     * <p>The IDs of the AWS accounts for which to return Auto Scaling group
+     * recommendations.</p> <p>If your account is the master account of an
+     * organization, use this parameter to specify the member accounts for which you
+     * want to return Auto Scaling group recommendations.</p> <p>Only one account ID
+     * can be specified per request.</p>
      */
     inline void SetAccountIds(const Aws::Vector<Aws::String>& value) { m_accountIdsHasBeenSet = true; m_accountIds = value; }
 
     /**
-     * <p>The AWS account IDs for which to return Auto Scaling group
-     * recommendations.</p> <p>Only one account ID can be specified per request.</p>
+     * <p>The IDs of the AWS accounts for which to return Auto Scaling group
+     * recommendations.</p> <p>If your account is the master account of an
+     * organization, use this parameter to specify the member accounts for which you
+     * want to return Auto Scaling group recommendations.</p> <p>Only one account ID
+     * can be specified per request.</p>
      */
     inline void SetAccountIds(Aws::Vector<Aws::String>&& value) { m_accountIdsHasBeenSet = true; m_accountIds = std::move(value); }
 
     /**
-     * <p>The AWS account IDs for which to return Auto Scaling group
-     * recommendations.</p> <p>Only one account ID can be specified per request.</p>
+     * <p>The IDs of the AWS accounts for which to return Auto Scaling group
+     * recommendations.</p> <p>If your account is the master account of an
+     * organization, use this parameter to specify the member accounts for which you
+     * want to return Auto Scaling group recommendations.</p> <p>Only one account ID
+     * can be specified per request.</p>
      */
     inline GetAutoScalingGroupRecommendationsRequest& WithAccountIds(const Aws::Vector<Aws::String>& value) { SetAccountIds(value); return *this;}
 
     /**
-     * <p>The AWS account IDs for which to return Auto Scaling group
-     * recommendations.</p> <p>Only one account ID can be specified per request.</p>
+     * <p>The IDs of the AWS accounts for which to return Auto Scaling group
+     * recommendations.</p> <p>If your account is the master account of an
+     * organization, use this parameter to specify the member accounts for which you
+     * want to return Auto Scaling group recommendations.</p> <p>Only one account ID
+     * can be specified per request.</p>
      */
     inline GetAutoScalingGroupRecommendationsRequest& WithAccountIds(Aws::Vector<Aws::String>&& value) { SetAccountIds(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS account IDs for which to return Auto Scaling group
-     * recommendations.</p> <p>Only one account ID can be specified per request.</p>
+     * <p>The IDs of the AWS accounts for which to return Auto Scaling group
+     * recommendations.</p> <p>If your account is the master account of an
+     * organization, use this parameter to specify the member accounts for which you
+     * want to return Auto Scaling group recommendations.</p> <p>Only one account ID
+     * can be specified per request.</p>
      */
     inline GetAutoScalingGroupRecommendationsRequest& AddAccountIds(const Aws::String& value) { m_accountIdsHasBeenSet = true; m_accountIds.push_back(value); return *this; }
 
     /**
-     * <p>The AWS account IDs for which to return Auto Scaling group
-     * recommendations.</p> <p>Only one account ID can be specified per request.</p>
+     * <p>The IDs of the AWS accounts for which to return Auto Scaling group
+     * recommendations.</p> <p>If your account is the master account of an
+     * organization, use this parameter to specify the member accounts for which you
+     * want to return Auto Scaling group recommendations.</p> <p>Only one account ID
+     * can be specified per request.</p>
      */
     inline GetAutoScalingGroupRecommendationsRequest& AddAccountIds(Aws::String&& value) { m_accountIdsHasBeenSet = true; m_accountIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The AWS account IDs for which to return Auto Scaling group
-     * recommendations.</p> <p>Only one account ID can be specified per request.</p>
+     * <p>The IDs of the AWS accounts for which to return Auto Scaling group
+     * recommendations.</p> <p>If your account is the master account of an
+     * organization, use this parameter to specify the member accounts for which you
+     * want to return Auto Scaling group recommendations.</p> <p>Only one account ID
+     * can be specified per request.</p>
      */
     inline GetAutoScalingGroupRecommendationsRequest& AddAccountIds(const char* value) { m_accountIdsHasBeenSet = true; m_accountIds.push_back(value); return *this; }
 
@@ -207,29 +234,29 @@ namespace Model
 
     /**
      * <p>The maximum number of Auto Scaling group recommendations to return with a
-     * single call.</p> <p>To retrieve the remaining results, make another call with
-     * the returned <code>NextToken</code> value.</p>
+     * single request.</p> <p>To retrieve the remaining results, make another request
+     * with the returned <code>NextToken</code> value.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
      * <p>The maximum number of Auto Scaling group recommendations to return with a
-     * single call.</p> <p>To retrieve the remaining results, make another call with
-     * the returned <code>NextToken</code> value.</p>
+     * single request.</p> <p>To retrieve the remaining results, make another request
+     * with the returned <code>NextToken</code> value.</p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
      * <p>The maximum number of Auto Scaling group recommendations to return with a
-     * single call.</p> <p>To retrieve the remaining results, make another call with
-     * the returned <code>NextToken</code> value.</p>
+     * single request.</p> <p>To retrieve the remaining results, make another request
+     * with the returned <code>NextToken</code> value.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
      * <p>The maximum number of Auto Scaling group recommendations to return with a
-     * single call.</p> <p>To retrieve the remaining results, make another call with
-     * the returned <code>NextToken</code> value.</p>
+     * single request.</p> <p>To retrieve the remaining results, make another request
+     * with the returned <code>NextToken</code> value.</p>
      */
     inline GetAutoScalingGroupRecommendationsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 

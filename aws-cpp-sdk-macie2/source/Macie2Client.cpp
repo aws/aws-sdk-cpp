@@ -31,7 +31,6 @@
 #include <aws/macie2/Macie2Endpoint.h>
 #include <aws/macie2/Macie2ErrorMarshaller.h>
 #include <aws/macie2/model/AcceptInvitationRequest.h>
-#include <aws/macie2/model/ArchiveFindingsRequest.h>
 #include <aws/macie2/model/BatchGetCustomDataIdentifiersRequest.h>
 #include <aws/macie2/model/CreateClassificationJobRequest.h>
 #include <aws/macie2/model/CreateCustomDataIdentifierRequest.h>
@@ -76,7 +75,6 @@
 #include <aws/macie2/model/PutClassificationExportConfigurationRequest.h>
 #include <aws/macie2/model/TagResourceRequest.h>
 #include <aws/macie2/model/TestCustomDataIdentifierRequest.h>
-#include <aws/macie2/model/UnarchiveFindingsRequest.h>
 #include <aws/macie2/model/UntagResourceRequest.h>
 #include <aws/macie2/model/UpdateClassificationJobRequest.h>
 #include <aws/macie2/model/UpdateFindingsFilterRequest.h>
@@ -189,41 +187,6 @@ void Macie2Client::AcceptInvitationAsync(const AcceptInvitationRequest& request,
 void Macie2Client::AcceptInvitationAsyncHelper(const AcceptInvitationRequest& request, const AcceptInvitationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, AcceptInvitation(request), context);
-}
-
-ArchiveFindingsOutcome Macie2Client::ArchiveFindings(const ArchiveFindingsRequest& request) const
-{
-  Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/findings/archive";
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ArchiveFindingsOutcome(ArchiveFindingsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ArchiveFindingsOutcome(outcome.GetError());
-  }
-}
-
-ArchiveFindingsOutcomeCallable Macie2Client::ArchiveFindingsCallable(const ArchiveFindingsRequest& request) const
-{
-  auto task = Aws::MakeShared< std::packaged_task< ArchiveFindingsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ArchiveFindings(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
-}
-
-void Macie2Client::ArchiveFindingsAsync(const ArchiveFindingsRequest& request, const ArchiveFindingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  m_executor->Submit( [this, request, handler, context](){ this->ArchiveFindingsAsyncHelper( request, handler, context ); } );
-}
-
-void Macie2Client::ArchiveFindingsAsyncHelper(const ArchiveFindingsRequest& request, const ArchiveFindingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ArchiveFindings(request), context);
 }
 
 BatchGetCustomDataIdentifiersOutcome Macie2Client::BatchGetCustomDataIdentifiers(const BatchGetCustomDataIdentifiersRequest& request) const
@@ -1829,41 +1792,6 @@ void Macie2Client::TestCustomDataIdentifierAsync(const TestCustomDataIdentifierR
 void Macie2Client::TestCustomDataIdentifierAsyncHelper(const TestCustomDataIdentifierRequest& request, const TestCustomDataIdentifierResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, TestCustomDataIdentifier(request), context);
-}
-
-UnarchiveFindingsOutcome Macie2Client::UnarchiveFindings(const UnarchiveFindingsRequest& request) const
-{
-  Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/findings/unarchive";
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UnarchiveFindingsOutcome(UnarchiveFindingsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UnarchiveFindingsOutcome(outcome.GetError());
-  }
-}
-
-UnarchiveFindingsOutcomeCallable Macie2Client::UnarchiveFindingsCallable(const UnarchiveFindingsRequest& request) const
-{
-  auto task = Aws::MakeShared< std::packaged_task< UnarchiveFindingsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UnarchiveFindings(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
-}
-
-void Macie2Client::UnarchiveFindingsAsync(const UnarchiveFindingsRequest& request, const UnarchiveFindingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  m_executor->Submit( [this, request, handler, context](){ this->UnarchiveFindingsAsyncHelper( request, handler, context ); } );
-}
-
-void Macie2Client::UnarchiveFindingsAsyncHelper(const UnarchiveFindingsRequest& request, const UnarchiveFindingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UnarchiveFindings(request), context);
 }
 
 UntagResourceOutcome Macie2Client::UntagResource(const UntagResourceRequest& request) const

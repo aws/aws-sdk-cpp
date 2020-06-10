@@ -29,6 +29,7 @@ namespace ComputeOptimizerErrorMapper
 {
 
 static const int INTERNAL_SERVER_HASH = HashingUtils::HashString("InternalServerException");
+static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
@@ -38,6 +39,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   if (hashCode == INTERNAL_SERVER_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ComputeOptimizerErrors::INTERNAL_SERVER), false);
+  }
+  else if (hashCode == LIMIT_EXCEEDED_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ComputeOptimizerErrors::LIMIT_EXCEEDED), true);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

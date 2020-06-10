@@ -88,26 +88,26 @@ namespace Model
 
 
     /**
-     * <p>Indicates whether to enroll member accounts within the organization, if the
-     * account is a master account of an organization.</p>
+     * <p>Indicates whether to enroll member accounts of the organization if the your
+     * account is the master account of an organization.</p>
      */
     inline bool GetIncludeMemberAccounts() const{ return m_includeMemberAccounts; }
 
     /**
-     * <p>Indicates whether to enroll member accounts within the organization, if the
-     * account is a master account of an organization.</p>
+     * <p>Indicates whether to enroll member accounts of the organization if the your
+     * account is the master account of an organization.</p>
      */
     inline bool IncludeMemberAccountsHasBeenSet() const { return m_includeMemberAccountsHasBeenSet; }
 
     /**
-     * <p>Indicates whether to enroll member accounts within the organization, if the
-     * account is a master account of an organization.</p>
+     * <p>Indicates whether to enroll member accounts of the organization if the your
+     * account is the master account of an organization.</p>
      */
     inline void SetIncludeMemberAccounts(bool value) { m_includeMemberAccountsHasBeenSet = true; m_includeMemberAccounts = value; }
 
     /**
-     * <p>Indicates whether to enroll member accounts within the organization, if the
-     * account is a master account of an organization.</p>
+     * <p>Indicates whether to enroll member accounts of the organization if the your
+     * account is the master account of an organization.</p>
      */
     inline UpdateEnrollmentStatusRequest& WithIncludeMemberAccounts(bool value) { SetIncludeMemberAccounts(value); return *this;}
 

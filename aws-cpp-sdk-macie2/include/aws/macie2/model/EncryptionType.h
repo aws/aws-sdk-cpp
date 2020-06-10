@@ -28,7 +28,8 @@ namespace Model
     NOT_SET,
     NONE,
     AES256,
-    aws_kms
+    aws_kms,
+    UNKNOWN
   };
 
 namespace EncryptionTypeMapper
