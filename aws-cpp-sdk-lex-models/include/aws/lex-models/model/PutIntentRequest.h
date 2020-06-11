@@ -23,6 +23,7 @@
 #include <aws/lex-models/model/FollowUpPrompt.h>
 #include <aws/lex-models/model/CodeHook.h>
 #include <aws/lex-models/model/FulfillmentActivity.h>
+#include <aws/lex-models/model/KendraConfiguration.h>
 #include <aws/lex-models/model/Slot.h>
 #include <utility>
 
@@ -926,6 +927,61 @@ namespace Model
      */
     inline PutIntentRequest& WithCreateVersion(bool value) { SetCreateVersion(value); return *this;}
 
+
+    /**
+     * <p>Configuration information required to use the
+     * <code>AMAZON.KendraSearchIntent</code> intent to connect to an Amazon Kendra
+     * index. For more information, see <a
+     * href="http://docs.aws.amazon.com/lex/latest/dg/built-in-intent-kendra-search.html">
+     * AMAZON.KendraSearchIntent</a>.</p>
+     */
+    inline const KendraConfiguration& GetKendraConfiguration() const{ return m_kendraConfiguration; }
+
+    /**
+     * <p>Configuration information required to use the
+     * <code>AMAZON.KendraSearchIntent</code> intent to connect to an Amazon Kendra
+     * index. For more information, see <a
+     * href="http://docs.aws.amazon.com/lex/latest/dg/built-in-intent-kendra-search.html">
+     * AMAZON.KendraSearchIntent</a>.</p>
+     */
+    inline bool KendraConfigurationHasBeenSet() const { return m_kendraConfigurationHasBeenSet; }
+
+    /**
+     * <p>Configuration information required to use the
+     * <code>AMAZON.KendraSearchIntent</code> intent to connect to an Amazon Kendra
+     * index. For more information, see <a
+     * href="http://docs.aws.amazon.com/lex/latest/dg/built-in-intent-kendra-search.html">
+     * AMAZON.KendraSearchIntent</a>.</p>
+     */
+    inline void SetKendraConfiguration(const KendraConfiguration& value) { m_kendraConfigurationHasBeenSet = true; m_kendraConfiguration = value; }
+
+    /**
+     * <p>Configuration information required to use the
+     * <code>AMAZON.KendraSearchIntent</code> intent to connect to an Amazon Kendra
+     * index. For more information, see <a
+     * href="http://docs.aws.amazon.com/lex/latest/dg/built-in-intent-kendra-search.html">
+     * AMAZON.KendraSearchIntent</a>.</p>
+     */
+    inline void SetKendraConfiguration(KendraConfiguration&& value) { m_kendraConfigurationHasBeenSet = true; m_kendraConfiguration = std::move(value); }
+
+    /**
+     * <p>Configuration information required to use the
+     * <code>AMAZON.KendraSearchIntent</code> intent to connect to an Amazon Kendra
+     * index. For more information, see <a
+     * href="http://docs.aws.amazon.com/lex/latest/dg/built-in-intent-kendra-search.html">
+     * AMAZON.KendraSearchIntent</a>.</p>
+     */
+    inline PutIntentRequest& WithKendraConfiguration(const KendraConfiguration& value) { SetKendraConfiguration(value); return *this;}
+
+    /**
+     * <p>Configuration information required to use the
+     * <code>AMAZON.KendraSearchIntent</code> intent to connect to an Amazon Kendra
+     * index. For more information, see <a
+     * href="http://docs.aws.amazon.com/lex/latest/dg/built-in-intent-kendra-search.html">
+     * AMAZON.KendraSearchIntent</a>.</p>
+     */
+    inline PutIntentRequest& WithKendraConfiguration(KendraConfiguration&& value) { SetKendraConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -966,6 +1022,9 @@ namespace Model
 
     bool m_createVersion;
     bool m_createVersionHasBeenSet;
+
+    KendraConfiguration m_kendraConfiguration;
+    bool m_kendraConfigurationHasBeenSet;
   };
 
 } // namespace Model

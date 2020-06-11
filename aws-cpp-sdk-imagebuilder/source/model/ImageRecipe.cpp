@@ -40,7 +40,8 @@ ImageRecipe::ImageRecipe() :
     m_parentImageHasBeenSet(false),
     m_blockDeviceMappingsHasBeenSet(false),
     m_dateCreatedHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_workingDirectoryHasBeenSet(false)
 {
 }
 
@@ -56,7 +57,8 @@ ImageRecipe::ImageRecipe(JsonView jsonValue) :
     m_parentImageHasBeenSet(false),
     m_blockDeviceMappingsHasBeenSet(false),
     m_dateCreatedHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_workingDirectoryHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -149,6 +151,13 @@ ImageRecipe& ImageRecipe::operator =(JsonView jsonValue)
     m_tagsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("workingDirectory"))
+  {
+    m_workingDirectory = jsonValue.GetString("workingDirectory");
+
+    m_workingDirectoryHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -233,6 +242,12 @@ JsonValue ImageRecipe::Jsonize() const
      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
    }
    payload.WithObject("tags", std::move(tagsJsonMap));
+
+  }
+
+  if(m_workingDirectoryHasBeenSet)
+  {
+   payload.WithString("workingDirectory", m_workingDirectory);
 
   }
 

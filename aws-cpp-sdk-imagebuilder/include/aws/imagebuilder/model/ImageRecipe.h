@@ -517,6 +517,47 @@ namespace Model
      */
     inline ImageRecipe& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
+
+    /**
+     * <p>The working directory to be used during build and test workflows.</p>
+     */
+    inline const Aws::String& GetWorkingDirectory() const{ return m_workingDirectory; }
+
+    /**
+     * <p>The working directory to be used during build and test workflows.</p>
+     */
+    inline bool WorkingDirectoryHasBeenSet() const { return m_workingDirectoryHasBeenSet; }
+
+    /**
+     * <p>The working directory to be used during build and test workflows.</p>
+     */
+    inline void SetWorkingDirectory(const Aws::String& value) { m_workingDirectoryHasBeenSet = true; m_workingDirectory = value; }
+
+    /**
+     * <p>The working directory to be used during build and test workflows.</p>
+     */
+    inline void SetWorkingDirectory(Aws::String&& value) { m_workingDirectoryHasBeenSet = true; m_workingDirectory = std::move(value); }
+
+    /**
+     * <p>The working directory to be used during build and test workflows.</p>
+     */
+    inline void SetWorkingDirectory(const char* value) { m_workingDirectoryHasBeenSet = true; m_workingDirectory.assign(value); }
+
+    /**
+     * <p>The working directory to be used during build and test workflows.</p>
+     */
+    inline ImageRecipe& WithWorkingDirectory(const Aws::String& value) { SetWorkingDirectory(value); return *this;}
+
+    /**
+     * <p>The working directory to be used during build and test workflows.</p>
+     */
+    inline ImageRecipe& WithWorkingDirectory(Aws::String&& value) { SetWorkingDirectory(std::move(value)); return *this;}
+
+    /**
+     * <p>The working directory to be used during build and test workflows.</p>
+     */
+    inline ImageRecipe& WithWorkingDirectory(const char* value) { SetWorkingDirectory(value); return *this;}
+
   private:
 
     Aws::String m_arn;
@@ -551,6 +592,9 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet;
+
+    Aws::String m_workingDirectory;
+    bool m_workingDirectoryHasBeenSet;
   };
 
 } // namespace Model

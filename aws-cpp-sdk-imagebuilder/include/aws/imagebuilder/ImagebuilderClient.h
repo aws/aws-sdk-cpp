@@ -1002,16 +1002,14 @@ namespace Model
         virtual void ListDistributionConfigurationsAsync(const Model::ListDistributionConfigurationsRequest& request, const ListDistributionConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> Returns a list of distribution configurations. </p><p><h3>See Also:</h3>  
-         * <a
+         * <p> Returns a list of image build versions. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListImageBuildVersions">AWS
          * API Reference</a></p>
          */
         virtual Model::ListImageBuildVersionsOutcome ListImageBuildVersions(const Model::ListImageBuildVersionsRequest& request) const;
 
         /**
-         * <p> Returns a list of distribution configurations. </p><p><h3>See Also:</h3>  
-         * <a
+         * <p> Returns a list of image build versions. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListImageBuildVersions">AWS
          * API Reference</a></p>
          *
@@ -1020,8 +1018,7 @@ namespace Model
         virtual Model::ListImageBuildVersionsOutcomeCallable ListImageBuildVersionsCallable(const Model::ListImageBuildVersionsRequest& request) const;
 
         /**
-         * <p> Returns a list of distribution configurations. </p><p><h3>See Also:</h3>  
-         * <a
+         * <p> Returns a list of image build versions. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListImageBuildVersions">AWS
          * API Reference</a></p>
          *
@@ -1108,16 +1105,16 @@ namespace Model
         virtual void ListImageRecipesAsync(const Model::ListImageRecipesRequest& request, const ListImageRecipesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> Returns the list of image build versions for the specified semantic version.
-         * </p><p><h3>See Also:</h3>   <a
+         * <p> Returns the list of images that you have access to. </p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListImages">AWS
          * API Reference</a></p>
          */
         virtual Model::ListImagesOutcome ListImages(const Model::ListImagesRequest& request) const;
 
         /**
-         * <p> Returns the list of image build versions for the specified semantic version.
-         * </p><p><h3>See Also:</h3>   <a
+         * <p> Returns the list of images that you have access to. </p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListImages">AWS
          * API Reference</a></p>
          *
@@ -1126,8 +1123,8 @@ namespace Model
         virtual Model::ListImagesOutcomeCallable ListImagesCallable(const Model::ListImagesRequest& request) const;
 
         /**
-         * <p> Returns the list of image build versions for the specified semantic version.
-         * </p><p><h3>See Also:</h3>   <a
+         * <p> Returns the list of images that you have access to. </p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListImages">AWS
          * API Reference</a></p>
          *

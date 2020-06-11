@@ -13,40 +13,41 @@
 * permissions and limitations under the License.
 */
 
-#include <aws/iot-data/model/DeleteThingShadowRequest.h>
+#include <aws/ecs/model/DeleteCapacityProviderRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/core/http/URI.h>
-#include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
 
-using namespace Aws::IoTDataPlane::Model;
+using namespace Aws::ECS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
-using namespace Aws::Http;
 
-DeleteThingShadowRequest::DeleteThingShadowRequest() : 
-    m_thingNameHasBeenSet(false),
-    m_shadowNameHasBeenSet(false)
+DeleteCapacityProviderRequest::DeleteCapacityProviderRequest() : 
+    m_capacityProviderHasBeenSet(false)
 {
 }
 
-Aws::String DeleteThingShadowRequest::SerializePayload() const
+Aws::String DeleteCapacityProviderRequest::SerializePayload() const
 {
-  return {};
+  JsonValue payload;
+
+  if(m_capacityProviderHasBeenSet)
+  {
+   payload.WithString("capacityProvider", m_capacityProvider);
+
+  }
+
+  return payload.View().WriteReadable();
 }
 
-void DeleteThingShadowRequest::AddQueryStringParameters(URI& uri) const
+Aws::Http::HeaderValueCollection DeleteCapacityProviderRequest::GetRequestSpecificHeaders() const
 {
-    Aws::StringStream ss;
-    if(m_shadowNameHasBeenSet)
-    {
-      ss << m_shadowName;
-      uri.AddQueryStringParameter("name", ss.str());
-      ss.str("");
-    }
+  Aws::Http::HeaderValueCollection headers;
+  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AmazonEC2ContainerServiceV20141113.DeleteCapacityProvider"));
+  return headers;
 
 }
+
 
 
 

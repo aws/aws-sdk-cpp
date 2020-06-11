@@ -37,10 +37,12 @@ namespace Model
 {
 
   /**
-   * <p>A data volume used in a task definition. For tasks that use a Docker volume,
-   * specify a <code>DockerVolumeConfiguration</code>. For tasks that use a bind
-   * mount host volume, specify a <code>host</code> and optional
-   * <code>sourcePath</code>. For more information, see <a
+   * <p>A data volume used in a task definition. For tasks that use Amazon Elastic
+   * File System (Amazon EFS) file storage, specify an
+   * <code>efsVolumeConfiguration</code>. For tasks that use a Docker volume, specify
+   * a <code>DockerVolumeConfiguration</code>. For tasks that use a bind mount host
+   * volume, specify a <code>host</code> and optional <code>sourcePath</code>. For
+   * more information, see <a
    * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_data_volumes.html">Using
    * Data Volumes in Tasks</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/Volume">AWS API
@@ -121,97 +123,91 @@ namespace Model
 
 
     /**
-     * <p>This parameter is specified when you are using bind mount host volumes. Bind
-     * mount host volumes are supported when you are using either the EC2 or Fargate
-     * launch types. The contents of the <code>host</code> parameter determine whether
-     * your bind mount host volume persists on the host container instance and where it
-     * is stored. If the <code>host</code> parameter is empty, then the Docker daemon
-     * assigns a host path for your data volume. However, the data is not guaranteed to
-     * persist after the containers associated with it stop running.</p> <p>Windows
-     * containers can mount whole directories on the same drive as
-     * <code>$env:ProgramData</code>. Windows containers cannot mount directories on a
-     * different drive, and mount point cannot be across drives. For example, you can
-     * mount <code>C:\my\path:C:\my\path</code> and <code>D:\:D:\</code>, but not
+     * <p>This parameter is specified when you are using bind mount host volumes. The
+     * contents of the <code>host</code> parameter determine whether your bind mount
+     * host volume persists on the host container instance and where it is stored. If
+     * the <code>host</code> parameter is empty, then the Docker daemon assigns a host
+     * path for your data volume. However, the data is not guaranteed to persist after
+     * the containers associated with it stop running.</p> <p>Windows containers can
+     * mount whole directories on the same drive as <code>$env:ProgramData</code>.
+     * Windows containers cannot mount directories on a different drive, and mount
+     * point cannot be across drives. For example, you can mount
+     * <code>C:\my\path:C:\my\path</code> and <code>D:\:D:\</code>, but not
      * <code>D:\my\path:C:\my\path</code> or <code>D:\:C:\my\path</code>.</p>
      */
     inline const HostVolumeProperties& GetHost() const{ return m_host; }
 
     /**
-     * <p>This parameter is specified when you are using bind mount host volumes. Bind
-     * mount host volumes are supported when you are using either the EC2 or Fargate
-     * launch types. The contents of the <code>host</code> parameter determine whether
-     * your bind mount host volume persists on the host container instance and where it
-     * is stored. If the <code>host</code> parameter is empty, then the Docker daemon
-     * assigns a host path for your data volume. However, the data is not guaranteed to
-     * persist after the containers associated with it stop running.</p> <p>Windows
-     * containers can mount whole directories on the same drive as
-     * <code>$env:ProgramData</code>. Windows containers cannot mount directories on a
-     * different drive, and mount point cannot be across drives. For example, you can
-     * mount <code>C:\my\path:C:\my\path</code> and <code>D:\:D:\</code>, but not
+     * <p>This parameter is specified when you are using bind mount host volumes. The
+     * contents of the <code>host</code> parameter determine whether your bind mount
+     * host volume persists on the host container instance and where it is stored. If
+     * the <code>host</code> parameter is empty, then the Docker daemon assigns a host
+     * path for your data volume. However, the data is not guaranteed to persist after
+     * the containers associated with it stop running.</p> <p>Windows containers can
+     * mount whole directories on the same drive as <code>$env:ProgramData</code>.
+     * Windows containers cannot mount directories on a different drive, and mount
+     * point cannot be across drives. For example, you can mount
+     * <code>C:\my\path:C:\my\path</code> and <code>D:\:D:\</code>, but not
      * <code>D:\my\path:C:\my\path</code> or <code>D:\:C:\my\path</code>.</p>
      */
     inline bool HostHasBeenSet() const { return m_hostHasBeenSet; }
 
     /**
-     * <p>This parameter is specified when you are using bind mount host volumes. Bind
-     * mount host volumes are supported when you are using either the EC2 or Fargate
-     * launch types. The contents of the <code>host</code> parameter determine whether
-     * your bind mount host volume persists on the host container instance and where it
-     * is stored. If the <code>host</code> parameter is empty, then the Docker daemon
-     * assigns a host path for your data volume. However, the data is not guaranteed to
-     * persist after the containers associated with it stop running.</p> <p>Windows
-     * containers can mount whole directories on the same drive as
-     * <code>$env:ProgramData</code>. Windows containers cannot mount directories on a
-     * different drive, and mount point cannot be across drives. For example, you can
-     * mount <code>C:\my\path:C:\my\path</code> and <code>D:\:D:\</code>, but not
+     * <p>This parameter is specified when you are using bind mount host volumes. The
+     * contents of the <code>host</code> parameter determine whether your bind mount
+     * host volume persists on the host container instance and where it is stored. If
+     * the <code>host</code> parameter is empty, then the Docker daemon assigns a host
+     * path for your data volume. However, the data is not guaranteed to persist after
+     * the containers associated with it stop running.</p> <p>Windows containers can
+     * mount whole directories on the same drive as <code>$env:ProgramData</code>.
+     * Windows containers cannot mount directories on a different drive, and mount
+     * point cannot be across drives. For example, you can mount
+     * <code>C:\my\path:C:\my\path</code> and <code>D:\:D:\</code>, but not
      * <code>D:\my\path:C:\my\path</code> or <code>D:\:C:\my\path</code>.</p>
      */
     inline void SetHost(const HostVolumeProperties& value) { m_hostHasBeenSet = true; m_host = value; }
 
     /**
-     * <p>This parameter is specified when you are using bind mount host volumes. Bind
-     * mount host volumes are supported when you are using either the EC2 or Fargate
-     * launch types. The contents of the <code>host</code> parameter determine whether
-     * your bind mount host volume persists on the host container instance and where it
-     * is stored. If the <code>host</code> parameter is empty, then the Docker daemon
-     * assigns a host path for your data volume. However, the data is not guaranteed to
-     * persist after the containers associated with it stop running.</p> <p>Windows
-     * containers can mount whole directories on the same drive as
-     * <code>$env:ProgramData</code>. Windows containers cannot mount directories on a
-     * different drive, and mount point cannot be across drives. For example, you can
-     * mount <code>C:\my\path:C:\my\path</code> and <code>D:\:D:\</code>, but not
+     * <p>This parameter is specified when you are using bind mount host volumes. The
+     * contents of the <code>host</code> parameter determine whether your bind mount
+     * host volume persists on the host container instance and where it is stored. If
+     * the <code>host</code> parameter is empty, then the Docker daemon assigns a host
+     * path for your data volume. However, the data is not guaranteed to persist after
+     * the containers associated with it stop running.</p> <p>Windows containers can
+     * mount whole directories on the same drive as <code>$env:ProgramData</code>.
+     * Windows containers cannot mount directories on a different drive, and mount
+     * point cannot be across drives. For example, you can mount
+     * <code>C:\my\path:C:\my\path</code> and <code>D:\:D:\</code>, but not
      * <code>D:\my\path:C:\my\path</code> or <code>D:\:C:\my\path</code>.</p>
      */
     inline void SetHost(HostVolumeProperties&& value) { m_hostHasBeenSet = true; m_host = std::move(value); }
 
     /**
-     * <p>This parameter is specified when you are using bind mount host volumes. Bind
-     * mount host volumes are supported when you are using either the EC2 or Fargate
-     * launch types. The contents of the <code>host</code> parameter determine whether
-     * your bind mount host volume persists on the host container instance and where it
-     * is stored. If the <code>host</code> parameter is empty, then the Docker daemon
-     * assigns a host path for your data volume. However, the data is not guaranteed to
-     * persist after the containers associated with it stop running.</p> <p>Windows
-     * containers can mount whole directories on the same drive as
-     * <code>$env:ProgramData</code>. Windows containers cannot mount directories on a
-     * different drive, and mount point cannot be across drives. For example, you can
-     * mount <code>C:\my\path:C:\my\path</code> and <code>D:\:D:\</code>, but not
+     * <p>This parameter is specified when you are using bind mount host volumes. The
+     * contents of the <code>host</code> parameter determine whether your bind mount
+     * host volume persists on the host container instance and where it is stored. If
+     * the <code>host</code> parameter is empty, then the Docker daemon assigns a host
+     * path for your data volume. However, the data is not guaranteed to persist after
+     * the containers associated with it stop running.</p> <p>Windows containers can
+     * mount whole directories on the same drive as <code>$env:ProgramData</code>.
+     * Windows containers cannot mount directories on a different drive, and mount
+     * point cannot be across drives. For example, you can mount
+     * <code>C:\my\path:C:\my\path</code> and <code>D:\:D:\</code>, but not
      * <code>D:\my\path:C:\my\path</code> or <code>D:\:C:\my\path</code>.</p>
      */
     inline Volume& WithHost(const HostVolumeProperties& value) { SetHost(value); return *this;}
 
     /**
-     * <p>This parameter is specified when you are using bind mount host volumes. Bind
-     * mount host volumes are supported when you are using either the EC2 or Fargate
-     * launch types. The contents of the <code>host</code> parameter determine whether
-     * your bind mount host volume persists on the host container instance and where it
-     * is stored. If the <code>host</code> parameter is empty, then the Docker daemon
-     * assigns a host path for your data volume. However, the data is not guaranteed to
-     * persist after the containers associated with it stop running.</p> <p>Windows
-     * containers can mount whole directories on the same drive as
-     * <code>$env:ProgramData</code>. Windows containers cannot mount directories on a
-     * different drive, and mount point cannot be across drives. For example, you can
-     * mount <code>C:\my\path:C:\my\path</code> and <code>D:\:D:\</code>, but not
+     * <p>This parameter is specified when you are using bind mount host volumes. The
+     * contents of the <code>host</code> parameter determine whether your bind mount
+     * host volume persists on the host container instance and where it is stored. If
+     * the <code>host</code> parameter is empty, then the Docker daemon assigns a host
+     * path for your data volume. However, the data is not guaranteed to persist after
+     * the containers associated with it stop running.</p> <p>Windows containers can
+     * mount whole directories on the same drive as <code>$env:ProgramData</code>.
+     * Windows containers cannot mount directories on a different drive, and mount
+     * point cannot be across drives. For example, you can mount
+     * <code>C:\my\path:C:\my\path</code> and <code>D:\:D:\</code>, but not
      * <code>D:\my\path:C:\my\path</code> or <code>D:\:C:\my\path</code>.</p>
      */
     inline Volume& WithHost(HostVolumeProperties&& value) { SetHost(std::move(value)); return *this;}
@@ -268,79 +264,37 @@ namespace Model
 
     /**
      * <p>This parameter is specified when you are using an Amazon Elastic File System
-     * (Amazon EFS) file storage. Amazon EFS file systems are only supported when you
-     * are using the EC2 launch type.</p> <important> <p>
-     * <code>EFSVolumeConfiguration</code> remains in preview and is a Beta Service as
-     * defined by and subject to the Beta Service Participation Service Terms located
-     * at <a
-     * href="https://aws.amazon.com/service-terms">https://aws.amazon.com/service-terms</a>
-     * ("Beta Terms"). These Beta Terms apply to your participation in this preview of
-     * <code>EFSVolumeConfiguration</code>.</p> </important>
+     * file system for task storage.</p>
      */
     inline const EFSVolumeConfiguration& GetEfsVolumeConfiguration() const{ return m_efsVolumeConfiguration; }
 
     /**
      * <p>This parameter is specified when you are using an Amazon Elastic File System
-     * (Amazon EFS) file storage. Amazon EFS file systems are only supported when you
-     * are using the EC2 launch type.</p> <important> <p>
-     * <code>EFSVolumeConfiguration</code> remains in preview and is a Beta Service as
-     * defined by and subject to the Beta Service Participation Service Terms located
-     * at <a
-     * href="https://aws.amazon.com/service-terms">https://aws.amazon.com/service-terms</a>
-     * ("Beta Terms"). These Beta Terms apply to your participation in this preview of
-     * <code>EFSVolumeConfiguration</code>.</p> </important>
+     * file system for task storage.</p>
      */
     inline bool EfsVolumeConfigurationHasBeenSet() const { return m_efsVolumeConfigurationHasBeenSet; }
 
     /**
      * <p>This parameter is specified when you are using an Amazon Elastic File System
-     * (Amazon EFS) file storage. Amazon EFS file systems are only supported when you
-     * are using the EC2 launch type.</p> <important> <p>
-     * <code>EFSVolumeConfiguration</code> remains in preview and is a Beta Service as
-     * defined by and subject to the Beta Service Participation Service Terms located
-     * at <a
-     * href="https://aws.amazon.com/service-terms">https://aws.amazon.com/service-terms</a>
-     * ("Beta Terms"). These Beta Terms apply to your participation in this preview of
-     * <code>EFSVolumeConfiguration</code>.</p> </important>
+     * file system for task storage.</p>
      */
     inline void SetEfsVolumeConfiguration(const EFSVolumeConfiguration& value) { m_efsVolumeConfigurationHasBeenSet = true; m_efsVolumeConfiguration = value; }
 
     /**
      * <p>This parameter is specified when you are using an Amazon Elastic File System
-     * (Amazon EFS) file storage. Amazon EFS file systems are only supported when you
-     * are using the EC2 launch type.</p> <important> <p>
-     * <code>EFSVolumeConfiguration</code> remains in preview and is a Beta Service as
-     * defined by and subject to the Beta Service Participation Service Terms located
-     * at <a
-     * href="https://aws.amazon.com/service-terms">https://aws.amazon.com/service-terms</a>
-     * ("Beta Terms"). These Beta Terms apply to your participation in this preview of
-     * <code>EFSVolumeConfiguration</code>.</p> </important>
+     * file system for task storage.</p>
      */
     inline void SetEfsVolumeConfiguration(EFSVolumeConfiguration&& value) { m_efsVolumeConfigurationHasBeenSet = true; m_efsVolumeConfiguration = std::move(value); }
 
     /**
      * <p>This parameter is specified when you are using an Amazon Elastic File System
-     * (Amazon EFS) file storage. Amazon EFS file systems are only supported when you
-     * are using the EC2 launch type.</p> <important> <p>
-     * <code>EFSVolumeConfiguration</code> remains in preview and is a Beta Service as
-     * defined by and subject to the Beta Service Participation Service Terms located
-     * at <a
-     * href="https://aws.amazon.com/service-terms">https://aws.amazon.com/service-terms</a>
-     * ("Beta Terms"). These Beta Terms apply to your participation in this preview of
-     * <code>EFSVolumeConfiguration</code>.</p> </important>
+     * file system for task storage.</p>
      */
     inline Volume& WithEfsVolumeConfiguration(const EFSVolumeConfiguration& value) { SetEfsVolumeConfiguration(value); return *this;}
 
     /**
      * <p>This parameter is specified when you are using an Amazon Elastic File System
-     * (Amazon EFS) file storage. Amazon EFS file systems are only supported when you
-     * are using the EC2 launch type.</p> <important> <p>
-     * <code>EFSVolumeConfiguration</code> remains in preview and is a Beta Service as
-     * defined by and subject to the Beta Service Participation Service Terms located
-     * at <a
-     * href="https://aws.amazon.com/service-terms">https://aws.amazon.com/service-terms</a>
-     * ("Beta Terms"). These Beta Terms apply to your participation in this preview of
-     * <code>EFSVolumeConfiguration</code>.</p> </important>
+     * file system for task storage.</p>
      */
     inline Volume& WithEfsVolumeConfiguration(EFSVolumeConfiguration&& value) { SetEfsVolumeConfiguration(std::move(value)); return *this;}
 

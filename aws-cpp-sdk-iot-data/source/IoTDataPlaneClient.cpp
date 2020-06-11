@@ -32,6 +32,7 @@
 #include <aws/iot-data/IoTDataPlaneErrorMarshaller.h>
 #include <aws/iot-data/model/DeleteThingShadowRequest.h>
 #include <aws/iot-data/model/GetThingShadowRequest.h>
+#include <aws/iot-data/model/ListNamedShadowsForThingRequest.h>
 #include <aws/iot-data/model/PublishRequest.h>
 #include <aws/iot-data/model/UpdateThingShadowRequest.h>
 
@@ -189,6 +190,47 @@ void IoTDataPlaneClient::GetThingShadowAsync(const GetThingShadowRequest& reques
 void IoTDataPlaneClient::GetThingShadowAsyncHelper(const GetThingShadowRequest& request, const GetThingShadowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetThingShadow(request), context);
+}
+
+ListNamedShadowsForThingOutcome IoTDataPlaneClient::ListNamedShadowsForThing(const ListNamedShadowsForThingRequest& request) const
+{
+  if (!request.ThingNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListNamedShadowsForThing", "Required field: ThingName, is not set");
+    return ListNamedShadowsForThingOutcome(Aws::Client::AWSError<IoTDataPlaneErrors>(IoTDataPlaneErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ThingName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/api/things/shadow/ListNamedShadowsForThing/";
+  ss << request.GetThingName();
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ListNamedShadowsForThingOutcome(ListNamedShadowsForThingResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListNamedShadowsForThingOutcome(outcome.GetError());
+  }
+}
+
+ListNamedShadowsForThingOutcomeCallable IoTDataPlaneClient::ListNamedShadowsForThingCallable(const ListNamedShadowsForThingRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListNamedShadowsForThingOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListNamedShadowsForThing(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTDataPlaneClient::ListNamedShadowsForThingAsync(const ListNamedShadowsForThingRequest& request, const ListNamedShadowsForThingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListNamedShadowsForThingAsyncHelper( request, handler, context ); } );
+}
+
+void IoTDataPlaneClient::ListNamedShadowsForThingAsyncHelper(const ListNamedShadowsForThingRequest& request, const ListNamedShadowsForThingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListNamedShadowsForThing(request), context);
 }
 
 PublishOutcome IoTDataPlaneClient::Publish(const PublishRequest& request) const

@@ -23,6 +23,7 @@
 #include <aws/lex-models/model/CodeHook.h>
 #include <aws/lex-models/model/FulfillmentActivity.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/lex-models/model/KendraConfiguration.h>
 #include <aws/lex-models/model/Slot.h>
 #include <utility>
 
@@ -546,6 +547,37 @@ namespace Model
      */
     inline CreateIntentVersionResult& WithChecksum(const char* value) { SetChecksum(value); return *this;}
 
+
+    /**
+     * <p>Configuration information, if any, for connectin an Amazon Kendra index with
+     * the <code>AMAZON.KendraSearchIntent</code> intent.</p>
+     */
+    inline const KendraConfiguration& GetKendraConfiguration() const{ return m_kendraConfiguration; }
+
+    /**
+     * <p>Configuration information, if any, for connectin an Amazon Kendra index with
+     * the <code>AMAZON.KendraSearchIntent</code> intent.</p>
+     */
+    inline void SetKendraConfiguration(const KendraConfiguration& value) { m_kendraConfiguration = value; }
+
+    /**
+     * <p>Configuration information, if any, for connectin an Amazon Kendra index with
+     * the <code>AMAZON.KendraSearchIntent</code> intent.</p>
+     */
+    inline void SetKendraConfiguration(KendraConfiguration&& value) { m_kendraConfiguration = std::move(value); }
+
+    /**
+     * <p>Configuration information, if any, for connectin an Amazon Kendra index with
+     * the <code>AMAZON.KendraSearchIntent</code> intent.</p>
+     */
+    inline CreateIntentVersionResult& WithKendraConfiguration(const KendraConfiguration& value) { SetKendraConfiguration(value); return *this;}
+
+    /**
+     * <p>Configuration information, if any, for connectin an Amazon Kendra index with
+     * the <code>AMAZON.KendraSearchIntent</code> intent.</p>
+     */
+    inline CreateIntentVersionResult& WithKendraConfiguration(KendraConfiguration&& value) { SetKendraConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -577,6 +609,8 @@ namespace Model
     Aws::String m_version;
 
     Aws::String m_checksum;
+
+    KendraConfiguration m_kendraConfiguration;
   };
 
 } // namespace Model

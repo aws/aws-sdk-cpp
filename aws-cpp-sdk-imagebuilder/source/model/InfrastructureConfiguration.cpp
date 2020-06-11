@@ -43,6 +43,7 @@ InfrastructureConfiguration::InfrastructureConfiguration() :
     m_snsTopicArnHasBeenSet(false),
     m_dateCreatedHasBeenSet(false),
     m_dateUpdatedHasBeenSet(false),
+    m_resourceTagsHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
@@ -62,6 +63,7 @@ InfrastructureConfiguration::InfrastructureConfiguration(JsonView jsonValue) :
     m_snsTopicArnHasBeenSet(false),
     m_dateCreatedHasBeenSet(false),
     m_dateUpdatedHasBeenSet(false),
+    m_resourceTagsHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
   *this = jsonValue;
@@ -166,6 +168,16 @@ InfrastructureConfiguration& InfrastructureConfiguration::operator =(JsonView js
     m_dateUpdatedHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("resourceTags"))
+  {
+    Aws::Map<Aws::String, JsonView> resourceTagsJsonMap = jsonValue.GetObject("resourceTags").GetAllObjects();
+    for(auto& resourceTagsItem : resourceTagsJsonMap)
+    {
+      m_resourceTags[resourceTagsItem.first] = resourceTagsItem.second.AsString();
+    }
+    m_resourceTagsHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -268,6 +280,17 @@ JsonValue InfrastructureConfiguration::Jsonize() const
   if(m_dateUpdatedHasBeenSet)
   {
    payload.WithString("dateUpdated", m_dateUpdated);
+
+  }
+
+  if(m_resourceTagsHasBeenSet)
+  {
+   JsonValue resourceTagsJsonMap;
+   for(auto& resourceTagsItem : m_resourceTags)
+   {
+     resourceTagsJsonMap.WithString(resourceTagsItem.first, resourceTagsItem.second);
+   }
+   payload.WithObject("resourceTags", std::move(resourceTagsJsonMap));
 
   }
 

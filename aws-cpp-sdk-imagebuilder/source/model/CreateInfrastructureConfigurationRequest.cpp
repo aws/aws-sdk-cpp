@@ -34,6 +34,7 @@ CreateInfrastructureConfigurationRequest::CreateInfrastructureConfigurationReque
     m_terminateInstanceOnFailure(false),
     m_terminateInstanceOnFailureHasBeenSet(false),
     m_snsTopicArnHasBeenSet(false),
+    m_resourceTagsHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_clientToken(Aws::Utils::UUID::RandomUUID()),
     m_clientTokenHasBeenSet(true)
@@ -111,6 +112,17 @@ Aws::String CreateInfrastructureConfigurationRequest::SerializePayload() const
   if(m_snsTopicArnHasBeenSet)
   {
    payload.WithString("snsTopicArn", m_snsTopicArn);
+
+  }
+
+  if(m_resourceTagsHasBeenSet)
+  {
+   JsonValue resourceTagsJsonMap;
+   for(auto& resourceTagsItem : m_resourceTags)
+   {
+     resourceTagsJsonMap.WithString(resourceTagsItem.first, resourceTagsItem.second);
+   }
+   payload.WithObject("resourceTags", std::move(resourceTagsJsonMap));
 
   }
 

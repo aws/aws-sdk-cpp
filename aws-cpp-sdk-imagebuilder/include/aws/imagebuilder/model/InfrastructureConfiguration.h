@@ -576,6 +576,72 @@ namespace Model
 
 
     /**
+     * <p>The tags attached to the resource created by Image Builder.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetResourceTags() const{ return m_resourceTags; }
+
+    /**
+     * <p>The tags attached to the resource created by Image Builder.</p>
+     */
+    inline bool ResourceTagsHasBeenSet() const { return m_resourceTagsHasBeenSet; }
+
+    /**
+     * <p>The tags attached to the resource created by Image Builder.</p>
+     */
+    inline void SetResourceTags(const Aws::Map<Aws::String, Aws::String>& value) { m_resourceTagsHasBeenSet = true; m_resourceTags = value; }
+
+    /**
+     * <p>The tags attached to the resource created by Image Builder.</p>
+     */
+    inline void SetResourceTags(Aws::Map<Aws::String, Aws::String>&& value) { m_resourceTagsHasBeenSet = true; m_resourceTags = std::move(value); }
+
+    /**
+     * <p>The tags attached to the resource created by Image Builder.</p>
+     */
+    inline InfrastructureConfiguration& WithResourceTags(const Aws::Map<Aws::String, Aws::String>& value) { SetResourceTags(value); return *this;}
+
+    /**
+     * <p>The tags attached to the resource created by Image Builder.</p>
+     */
+    inline InfrastructureConfiguration& WithResourceTags(Aws::Map<Aws::String, Aws::String>&& value) { SetResourceTags(std::move(value)); return *this;}
+
+    /**
+     * <p>The tags attached to the resource created by Image Builder.</p>
+     */
+    inline InfrastructureConfiguration& AddResourceTags(const Aws::String& key, const Aws::String& value) { m_resourceTagsHasBeenSet = true; m_resourceTags.emplace(key, value); return *this; }
+
+    /**
+     * <p>The tags attached to the resource created by Image Builder.</p>
+     */
+    inline InfrastructureConfiguration& AddResourceTags(Aws::String&& key, const Aws::String& value) { m_resourceTagsHasBeenSet = true; m_resourceTags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The tags attached to the resource created by Image Builder.</p>
+     */
+    inline InfrastructureConfiguration& AddResourceTags(const Aws::String& key, Aws::String&& value) { m_resourceTagsHasBeenSet = true; m_resourceTags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The tags attached to the resource created by Image Builder.</p>
+     */
+    inline InfrastructureConfiguration& AddResourceTags(Aws::String&& key, Aws::String&& value) { m_resourceTagsHasBeenSet = true; m_resourceTags.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>The tags attached to the resource created by Image Builder.</p>
+     */
+    inline InfrastructureConfiguration& AddResourceTags(const char* key, Aws::String&& value) { m_resourceTagsHasBeenSet = true; m_resourceTags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The tags attached to the resource created by Image Builder.</p>
+     */
+    inline InfrastructureConfiguration& AddResourceTags(Aws::String&& key, const char* value) { m_resourceTagsHasBeenSet = true; m_resourceTags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The tags attached to the resource created by Image Builder.</p>
+     */
+    inline InfrastructureConfiguration& AddResourceTags(const char* key, const char* value) { m_resourceTagsHasBeenSet = true; m_resourceTags.emplace(key, value); return *this; }
+
+
+    /**
      * <p>The tags of the infrastructure configuration.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
@@ -680,6 +746,9 @@ namespace Model
 
     Aws::String m_dateUpdated;
     bool m_dateUpdatedHasBeenSet;
+
+    Aws::Map<Aws::String, Aws::String> m_resourceTags;
+    bool m_resourceTagsHasBeenSet;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet;

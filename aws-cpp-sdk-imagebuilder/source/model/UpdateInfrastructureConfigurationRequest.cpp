@@ -35,7 +35,8 @@ UpdateInfrastructureConfigurationRequest::UpdateInfrastructureConfigurationReque
     m_terminateInstanceOnFailureHasBeenSet(false),
     m_snsTopicArnHasBeenSet(false),
     m_clientToken(Aws::Utils::UUID::RandomUUID()),
-    m_clientTokenHasBeenSet(true)
+    m_clientTokenHasBeenSet(true),
+    m_resourceTagsHasBeenSet(false)
 {
 }
 
@@ -116,6 +117,17 @@ Aws::String UpdateInfrastructureConfigurationRequest::SerializePayload() const
   if(m_clientTokenHasBeenSet)
   {
    payload.WithString("clientToken", m_clientToken);
+
+  }
+
+  if(m_resourceTagsHasBeenSet)
+  {
+   JsonValue resourceTagsJsonMap;
+   for(auto& resourceTagsItem : m_resourceTags)
+   {
+     resourceTagsJsonMap.WithString(resourceTagsItem.first, resourceTagsItem.second);
+   }
+   payload.WithObject("resourceTags", std::move(resourceTagsJsonMap));
 
   }
 

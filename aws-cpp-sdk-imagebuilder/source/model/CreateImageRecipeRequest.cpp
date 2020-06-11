@@ -30,6 +30,7 @@ CreateImageRecipeRequest::CreateImageRecipeRequest() :
     m_parentImageHasBeenSet(false),
     m_blockDeviceMappingsHasBeenSet(false),
     m_tagsHasBeenSet(false),
+    m_workingDirectoryHasBeenSet(false),
     m_clientToken(Aws::Utils::UUID::RandomUUID()),
     m_clientTokenHasBeenSet(true)
 {
@@ -93,6 +94,12 @@ Aws::String CreateImageRecipeRequest::SerializePayload() const
      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
    }
    payload.WithObject("tags", std::move(tagsJsonMap));
+
+  }
+
+  if(m_workingDirectoryHasBeenSet)
+  {
+   payload.WithString("workingDirectory", m_workingDirectory);
 
   }
 

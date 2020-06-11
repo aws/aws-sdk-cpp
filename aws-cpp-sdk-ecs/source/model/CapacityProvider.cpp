@@ -34,6 +34,9 @@ CapacityProvider::CapacityProvider() :
     m_status(CapacityProviderStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_autoScalingGroupProviderHasBeenSet(false),
+    m_updateStatus(CapacityProviderUpdateStatus::NOT_SET),
+    m_updateStatusHasBeenSet(false),
+    m_updateStatusReasonHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
@@ -44,6 +47,9 @@ CapacityProvider::CapacityProvider(JsonView jsonValue) :
     m_status(CapacityProviderStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_autoScalingGroupProviderHasBeenSet(false),
+    m_updateStatus(CapacityProviderUpdateStatus::NOT_SET),
+    m_updateStatusHasBeenSet(false),
+    m_updateStatusReasonHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
   *this = jsonValue;
@@ -77,6 +83,20 @@ CapacityProvider& CapacityProvider::operator =(JsonView jsonValue)
     m_autoScalingGroupProvider = jsonValue.GetObject("autoScalingGroupProvider");
 
     m_autoScalingGroupProviderHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("updateStatus"))
+  {
+    m_updateStatus = CapacityProviderUpdateStatusMapper::GetCapacityProviderUpdateStatusForName(jsonValue.GetString("updateStatus"));
+
+    m_updateStatusHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("updateStatusReason"))
+  {
+    m_updateStatusReason = jsonValue.GetString("updateStatusReason");
+
+    m_updateStatusReasonHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("tags"))
@@ -116,6 +136,17 @@ JsonValue CapacityProvider::Jsonize() const
   if(m_autoScalingGroupProviderHasBeenSet)
   {
    payload.WithObject("autoScalingGroupProvider", m_autoScalingGroupProvider.Jsonize());
+
+  }
+
+  if(m_updateStatusHasBeenSet)
+  {
+   payload.WithString("updateStatus", CapacityProviderUpdateStatusMapper::GetNameForCapacityProviderUpdateStatus(m_updateStatus));
+  }
+
+  if(m_updateStatusReasonHasBeenSet)
+  {
+   payload.WithString("updateStatusReason", m_updateStatusReason);
 
   }
 

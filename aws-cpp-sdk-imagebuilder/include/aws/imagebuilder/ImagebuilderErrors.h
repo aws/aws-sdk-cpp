@@ -67,7 +67,8 @@ enum class ImagebuilderErrors
   RESOURCE_ALREADY_EXISTS,
   RESOURCE_DEPENDENCY,
   RESOURCE_IN_USE,
-  SERVICE
+  SERVICE,
+  SERVICE_QUOTA_EXCEEDED
 };
 namespace ImagebuilderErrorMapper
 {

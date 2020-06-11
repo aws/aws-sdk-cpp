@@ -134,6 +134,12 @@ CreateIntentVersionResult& CreateIntentVersionResult::operator =(const Aws::Amaz
 
   }
 
+  if(jsonValue.ValueExists("kendraConfiguration"))
+  {
+    m_kendraConfiguration = jsonValue.GetObject("kendraConfiguration");
+
+  }
+
 
 
   return *this;

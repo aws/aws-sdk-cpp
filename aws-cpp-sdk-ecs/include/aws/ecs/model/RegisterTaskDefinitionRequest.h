@@ -202,50 +202,90 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the task execution role that the Amazon ECS
-     * container agent and the Docker daemon can assume.</p>
+     * <p>The Amazon Resource Name (ARN) of the task execution role that grants the
+     * Amazon ECS container agent permission to make AWS API calls on your behalf. The
+     * task execution IAM role is required depending on the requirements of your task.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_execution_IAM_role.html">Amazon
+     * ECS task execution IAM role</a> in the <i>Amazon Elastic Container Service
+     * Developer Guide</i>.</p>
      */
     inline const Aws::String& GetExecutionRoleArn() const{ return m_executionRoleArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the task execution role that the Amazon ECS
-     * container agent and the Docker daemon can assume.</p>
+     * <p>The Amazon Resource Name (ARN) of the task execution role that grants the
+     * Amazon ECS container agent permission to make AWS API calls on your behalf. The
+     * task execution IAM role is required depending on the requirements of your task.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_execution_IAM_role.html">Amazon
+     * ECS task execution IAM role</a> in the <i>Amazon Elastic Container Service
+     * Developer Guide</i>.</p>
      */
     inline bool ExecutionRoleArnHasBeenSet() const { return m_executionRoleArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the task execution role that the Amazon ECS
-     * container agent and the Docker daemon can assume.</p>
+     * <p>The Amazon Resource Name (ARN) of the task execution role that grants the
+     * Amazon ECS container agent permission to make AWS API calls on your behalf. The
+     * task execution IAM role is required depending on the requirements of your task.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_execution_IAM_role.html">Amazon
+     * ECS task execution IAM role</a> in the <i>Amazon Elastic Container Service
+     * Developer Guide</i>.</p>
      */
     inline void SetExecutionRoleArn(const Aws::String& value) { m_executionRoleArnHasBeenSet = true; m_executionRoleArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the task execution role that the Amazon ECS
-     * container agent and the Docker daemon can assume.</p>
+     * <p>The Amazon Resource Name (ARN) of the task execution role that grants the
+     * Amazon ECS container agent permission to make AWS API calls on your behalf. The
+     * task execution IAM role is required depending on the requirements of your task.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_execution_IAM_role.html">Amazon
+     * ECS task execution IAM role</a> in the <i>Amazon Elastic Container Service
+     * Developer Guide</i>.</p>
      */
     inline void SetExecutionRoleArn(Aws::String&& value) { m_executionRoleArnHasBeenSet = true; m_executionRoleArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the task execution role that the Amazon ECS
-     * container agent and the Docker daemon can assume.</p>
+     * <p>The Amazon Resource Name (ARN) of the task execution role that grants the
+     * Amazon ECS container agent permission to make AWS API calls on your behalf. The
+     * task execution IAM role is required depending on the requirements of your task.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_execution_IAM_role.html">Amazon
+     * ECS task execution IAM role</a> in the <i>Amazon Elastic Container Service
+     * Developer Guide</i>.</p>
      */
     inline void SetExecutionRoleArn(const char* value) { m_executionRoleArnHasBeenSet = true; m_executionRoleArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the task execution role that the Amazon ECS
-     * container agent and the Docker daemon can assume.</p>
+     * <p>The Amazon Resource Name (ARN) of the task execution role that grants the
+     * Amazon ECS container agent permission to make AWS API calls on your behalf. The
+     * task execution IAM role is required depending on the requirements of your task.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_execution_IAM_role.html">Amazon
+     * ECS task execution IAM role</a> in the <i>Amazon Elastic Container Service
+     * Developer Guide</i>.</p>
      */
     inline RegisterTaskDefinitionRequest& WithExecutionRoleArn(const Aws::String& value) { SetExecutionRoleArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the task execution role that the Amazon ECS
-     * container agent and the Docker daemon can assume.</p>
+     * <p>The Amazon Resource Name (ARN) of the task execution role that grants the
+     * Amazon ECS container agent permission to make AWS API calls on your behalf. The
+     * task execution IAM role is required depending on the requirements of your task.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_execution_IAM_role.html">Amazon
+     * ECS task execution IAM role</a> in the <i>Amazon Elastic Container Service
+     * Developer Guide</i>.</p>
      */
     inline RegisterTaskDefinitionRequest& WithExecutionRoleArn(Aws::String&& value) { SetExecutionRoleArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the task execution role that the Amazon ECS
-     * container agent and the Docker daemon can assume.</p>
+     * <p>The Amazon Resource Name (ARN) of the task execution role that grants the
+     * Amazon ECS container agent permission to make AWS API calls on your behalf. The
+     * task execution IAM role is required depending on the requirements of your task.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_execution_IAM_role.html">Amazon
+     * ECS task execution IAM role</a> in the <i>Amazon Elastic Container Service
+     * Developer Guide</i>.</p>
      */
     inline RegisterTaskDefinitionRequest& WithExecutionRoleArn(const char* value) { SetExecutionRoleArn(value); return *this;}
 

@@ -134,6 +134,12 @@ GetIntentResult& GetIntentResult::operator =(const Aws::AmazonWebServiceResult<J
 
   }
 
+  if(jsonValue.ValueExists("kendraConfiguration"))
+  {
+    m_kendraConfiguration = jsonValue.GetObject("kendraConfiguration");
+
+  }
+
 
 
   return *this;

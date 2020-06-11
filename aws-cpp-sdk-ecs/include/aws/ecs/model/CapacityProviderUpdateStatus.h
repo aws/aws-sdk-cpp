@@ -23,19 +23,20 @@ namespace ECS
 {
 namespace Model
 {
-  enum class CapacityProviderStatus
+  enum class CapacityProviderUpdateStatus
   {
     NOT_SET,
-    ACTIVE,
-    INACTIVE
+    DELETE_IN_PROGRESS,
+    DELETE_COMPLETE,
+    DELETE_FAILED
   };
 
-namespace CapacityProviderStatusMapper
+namespace CapacityProviderUpdateStatusMapper
 {
-AWS_ECS_API CapacityProviderStatus GetCapacityProviderStatusForName(const Aws::String& name);
+AWS_ECS_API CapacityProviderUpdateStatus GetCapacityProviderUpdateStatusForName(const Aws::String& name);
 
-AWS_ECS_API Aws::String GetNameForCapacityProviderStatus(CapacityProviderStatus value);
-} // namespace CapacityProviderStatusMapper
+AWS_ECS_API Aws::String GetNameForCapacityProviderUpdateStatus(CapacityProviderUpdateStatus value);
+} // namespace CapacityProviderUpdateStatusMapper
 } // namespace Model
 } // namespace ECS
 } // namespace Aws

@@ -13,7 +13,7 @@
 * permissions and limitations under the License.
 */
 
-#include <aws/ecs/model/CapacityProviderStatus.h>
+#include <aws/ecs/model/CapacityProviderUpdateStatus.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
@@ -27,42 +27,49 @@ namespace Aws
   {
     namespace Model
     {
-      namespace CapacityProviderStatusMapper
+      namespace CapacityProviderUpdateStatusMapper
       {
 
-        static const int ACTIVE_HASH = HashingUtils::HashString("ACTIVE");
-        static const int INACTIVE_HASH = HashingUtils::HashString("INACTIVE");
+        static const int DELETE_IN_PROGRESS_HASH = HashingUtils::HashString("DELETE_IN_PROGRESS");
+        static const int DELETE_COMPLETE_HASH = HashingUtils::HashString("DELETE_COMPLETE");
+        static const int DELETE_FAILED_HASH = HashingUtils::HashString("DELETE_FAILED");
 
 
-        CapacityProviderStatus GetCapacityProviderStatusForName(const Aws::String& name)
+        CapacityProviderUpdateStatus GetCapacityProviderUpdateStatusForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == ACTIVE_HASH)
+          if (hashCode == DELETE_IN_PROGRESS_HASH)
           {
-            return CapacityProviderStatus::ACTIVE;
+            return CapacityProviderUpdateStatus::DELETE_IN_PROGRESS;
           }
-          else if (hashCode == INACTIVE_HASH)
+          else if (hashCode == DELETE_COMPLETE_HASH)
           {
-            return CapacityProviderStatus::INACTIVE;
+            return CapacityProviderUpdateStatus::DELETE_COMPLETE;
+          }
+          else if (hashCode == DELETE_FAILED_HASH)
+          {
+            return CapacityProviderUpdateStatus::DELETE_FAILED;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
             overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<CapacityProviderStatus>(hashCode);
+            return static_cast<CapacityProviderUpdateStatus>(hashCode);
           }
 
-          return CapacityProviderStatus::NOT_SET;
+          return CapacityProviderUpdateStatus::NOT_SET;
         }
 
-        Aws::String GetNameForCapacityProviderStatus(CapacityProviderStatus enumValue)
+        Aws::String GetNameForCapacityProviderUpdateStatus(CapacityProviderUpdateStatus enumValue)
         {
           switch(enumValue)
           {
-          case CapacityProviderStatus::ACTIVE:
-            return "ACTIVE";
-          case CapacityProviderStatus::INACTIVE:
-            return "INACTIVE";
+          case CapacityProviderUpdateStatus::DELETE_IN_PROGRESS:
+            return "DELETE_IN_PROGRESS";
+          case CapacityProviderUpdateStatus::DELETE_COMPLETE:
+            return "DELETE_COMPLETE";
+          case CapacityProviderUpdateStatus::DELETE_FAILED:
+            return "DELETE_FAILED";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)
@@ -74,7 +81,7 @@ namespace Aws
           }
         }
 
-      } // namespace CapacityProviderStatusMapper
+      } // namespace CapacityProviderUpdateStatusMapper
     } // namespace Model
   } // namespace ECS
 } // namespace Aws

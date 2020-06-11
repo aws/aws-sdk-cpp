@@ -36,6 +36,7 @@
 #include <aws/ecs/model/CreateTaskSetRequest.h>
 #include <aws/ecs/model/DeleteAccountSettingRequest.h>
 #include <aws/ecs/model/DeleteAttributesRequest.h>
+#include <aws/ecs/model/DeleteCapacityProviderRequest.h>
 #include <aws/ecs/model/DeleteClusterRequest.h>
 #include <aws/ecs/model/DeleteServiceRequest.h>
 #include <aws/ecs/model/DeleteTaskSetRequest.h>
@@ -359,6 +360,41 @@ void ECSClient::DeleteAttributesAsync(const DeleteAttributesRequest& request, co
 void ECSClient::DeleteAttributesAsyncHelper(const DeleteAttributesRequest& request, const DeleteAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteAttributes(request), context);
+}
+
+DeleteCapacityProviderOutcome ECSClient::DeleteCapacityProvider(const DeleteCapacityProviderRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DeleteCapacityProviderOutcome(DeleteCapacityProviderResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DeleteCapacityProviderOutcome(outcome.GetError());
+  }
+}
+
+DeleteCapacityProviderOutcomeCallable ECSClient::DeleteCapacityProviderCallable(const DeleteCapacityProviderRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteCapacityProviderOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteCapacityProvider(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ECSClient::DeleteCapacityProviderAsync(const DeleteCapacityProviderRequest& request, const DeleteCapacityProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteCapacityProviderAsyncHelper( request, handler, context ); } );
+}
+
+void ECSClient::DeleteCapacityProviderAsyncHelper(const DeleteCapacityProviderRequest& request, const DeleteCapacityProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteCapacityProvider(request), context);
 }
 
 DeleteClusterOutcome ECSClient::DeleteCluster(const DeleteClusterRequest& request) const

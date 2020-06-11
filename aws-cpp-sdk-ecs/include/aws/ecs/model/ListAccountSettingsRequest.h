@@ -46,32 +46,32 @@ namespace Model
 
 
     /**
-     * <p>The resource name you want to list the account settings for.</p>
+     * <p>The name of the account setting you want to list the settings for.</p>
      */
     inline const SettingName& GetName() const{ return m_name; }
 
     /**
-     * <p>The resource name you want to list the account settings for.</p>
+     * <p>The name of the account setting you want to list the settings for.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>The resource name you want to list the account settings for.</p>
+     * <p>The name of the account setting you want to list the settings for.</p>
      */
     inline void SetName(const SettingName& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The resource name you want to list the account settings for.</p>
+     * <p>The name of the account setting you want to list the settings for.</p>
      */
     inline void SetName(SettingName&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>The resource name you want to list the account settings for.</p>
+     * <p>The name of the account setting you want to list the settings for.</p>
      */
     inline ListAccountSettingsRequest& WithName(const SettingName& value) { SetName(value); return *this;}
 
     /**
-     * <p>The resource name you want to list the account settings for.</p>
+     * <p>The name of the account setting you want to list the settings for.</p>
      */
     inline ListAccountSettingsRequest& WithName(SettingName&& value) { SetName(std::move(value)); return *this;}
 

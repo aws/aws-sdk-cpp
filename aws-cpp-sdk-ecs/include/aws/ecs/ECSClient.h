@@ -27,6 +27,7 @@
 #include <aws/ecs/model/CreateTaskSetResult.h>
 #include <aws/ecs/model/DeleteAccountSettingResult.h>
 #include <aws/ecs/model/DeleteAttributesResult.h>
+#include <aws/ecs/model/DeleteCapacityProviderResult.h>
 #include <aws/ecs/model/DeleteClusterResult.h>
 #include <aws/ecs/model/DeleteServiceResult.h>
 #include <aws/ecs/model/DeleteTaskSetResult.h>
@@ -114,6 +115,7 @@ namespace Model
         class CreateTaskSetRequest;
         class DeleteAccountSettingRequest;
         class DeleteAttributesRequest;
+        class DeleteCapacityProviderRequest;
         class DeleteClusterRequest;
         class DeleteServiceRequest;
         class DeleteTaskSetRequest;
@@ -163,6 +165,7 @@ namespace Model
         typedef Aws::Utils::Outcome<CreateTaskSetResult, Aws::Client::AWSError<ECSErrors>> CreateTaskSetOutcome;
         typedef Aws::Utils::Outcome<DeleteAccountSettingResult, Aws::Client::AWSError<ECSErrors>> DeleteAccountSettingOutcome;
         typedef Aws::Utils::Outcome<DeleteAttributesResult, Aws::Client::AWSError<ECSErrors>> DeleteAttributesOutcome;
+        typedef Aws::Utils::Outcome<DeleteCapacityProviderResult, Aws::Client::AWSError<ECSErrors>> DeleteCapacityProviderOutcome;
         typedef Aws::Utils::Outcome<DeleteClusterResult, Aws::Client::AWSError<ECSErrors>> DeleteClusterOutcome;
         typedef Aws::Utils::Outcome<DeleteServiceResult, Aws::Client::AWSError<ECSErrors>> DeleteServiceOutcome;
         typedef Aws::Utils::Outcome<DeleteTaskSetResult, Aws::Client::AWSError<ECSErrors>> DeleteTaskSetOutcome;
@@ -212,6 +215,7 @@ namespace Model
         typedef std::future<CreateTaskSetOutcome> CreateTaskSetOutcomeCallable;
         typedef std::future<DeleteAccountSettingOutcome> DeleteAccountSettingOutcomeCallable;
         typedef std::future<DeleteAttributesOutcome> DeleteAttributesOutcomeCallable;
+        typedef std::future<DeleteCapacityProviderOutcome> DeleteCapacityProviderOutcomeCallable;
         typedef std::future<DeleteClusterOutcome> DeleteClusterOutcomeCallable;
         typedef std::future<DeleteServiceOutcome> DeleteServiceOutcomeCallable;
         typedef std::future<DeleteTaskSetOutcome> DeleteTaskSetOutcomeCallable;
@@ -264,6 +268,7 @@ namespace Model
     typedef std::function<void(const ECSClient*, const Model::CreateTaskSetRequest&, const Model::CreateTaskSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateTaskSetResponseReceivedHandler;
     typedef std::function<void(const ECSClient*, const Model::DeleteAccountSettingRequest&, const Model::DeleteAccountSettingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAccountSettingResponseReceivedHandler;
     typedef std::function<void(const ECSClient*, const Model::DeleteAttributesRequest&, const Model::DeleteAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAttributesResponseReceivedHandler;
+    typedef std::function<void(const ECSClient*, const Model::DeleteCapacityProviderRequest&, const Model::DeleteCapacityProviderOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteCapacityProviderResponseReceivedHandler;
     typedef std::function<void(const ECSClient*, const Model::DeleteClusterRequest&, const Model::DeleteClusterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteClusterResponseReceivedHandler;
     typedef std::function<void(const ECSClient*, const Model::DeleteServiceRequest&, const Model::DeleteServiceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteServiceResponseReceivedHandler;
     typedef std::function<void(const ECSClient*, const Model::DeleteTaskSetRequest&, const Model::DeleteTaskSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteTaskSetResponseReceivedHandler;
@@ -852,6 +857,73 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteAttributesAsync(const Model::DeleteAttributesRequest& request, const DeleteAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes the specified capacity provider.</p> <note> <p>The
+         * <code>FARGATE</code> and <code>FARGATE_SPOT</code> capacity providers are
+         * reserved and cannot be deleted. You can disassociate them from a cluster using
+         * either the <a>PutClusterCapacityProviders</a> API or by deleting the
+         * cluster.</p> </note> <p>Prior to a capacity provider being deleted, the capacity
+         * provider must be removed from the capacity provider strategy from all services.
+         * The <a>UpdateService</a> API can be used to remove a capacity provider from a
+         * service's capacity provider strategy. When updating a service, the
+         * <code>forceNewDeployment</code> option can be used to ensure that any tasks
+         * using the Amazon EC2 instance capacity provided by the capacity provider are
+         * transitioned to use the capacity from the remaining capacity providers. Only
+         * capacity providers that are not associated with a cluster can be deleted. To
+         * remove a capacity provider from a cluster, you can either use
+         * <a>PutClusterCapacityProviders</a> or delete the cluster.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteCapacityProvider">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteCapacityProviderOutcome DeleteCapacityProvider(const Model::DeleteCapacityProviderRequest& request) const;
+
+        /**
+         * <p>Deletes the specified capacity provider.</p> <note> <p>The
+         * <code>FARGATE</code> and <code>FARGATE_SPOT</code> capacity providers are
+         * reserved and cannot be deleted. You can disassociate them from a cluster using
+         * either the <a>PutClusterCapacityProviders</a> API or by deleting the
+         * cluster.</p> </note> <p>Prior to a capacity provider being deleted, the capacity
+         * provider must be removed from the capacity provider strategy from all services.
+         * The <a>UpdateService</a> API can be used to remove a capacity provider from a
+         * service's capacity provider strategy. When updating a service, the
+         * <code>forceNewDeployment</code> option can be used to ensure that any tasks
+         * using the Amazon EC2 instance capacity provided by the capacity provider are
+         * transitioned to use the capacity from the remaining capacity providers. Only
+         * capacity providers that are not associated with a cluster can be deleted. To
+         * remove a capacity provider from a cluster, you can either use
+         * <a>PutClusterCapacityProviders</a> or delete the cluster.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteCapacityProvider">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteCapacityProviderOutcomeCallable DeleteCapacityProviderCallable(const Model::DeleteCapacityProviderRequest& request) const;
+
+        /**
+         * <p>Deletes the specified capacity provider.</p> <note> <p>The
+         * <code>FARGATE</code> and <code>FARGATE_SPOT</code> capacity providers are
+         * reserved and cannot be deleted. You can disassociate them from a cluster using
+         * either the <a>PutClusterCapacityProviders</a> API or by deleting the
+         * cluster.</p> </note> <p>Prior to a capacity provider being deleted, the capacity
+         * provider must be removed from the capacity provider strategy from all services.
+         * The <a>UpdateService</a> API can be used to remove a capacity provider from a
+         * service's capacity provider strategy. When updating a service, the
+         * <code>forceNewDeployment</code> option can be used to ensure that any tasks
+         * using the Amazon EC2 instance capacity provided by the capacity provider are
+         * transitioned to use the capacity from the remaining capacity providers. Only
+         * capacity providers that are not associated with a cluster can be deleted. To
+         * remove a capacity provider from a cluster, you can either use
+         * <a>PutClusterCapacityProviders</a> or delete the cluster.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteCapacityProvider">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteCapacityProviderAsync(const Model::DeleteCapacityProviderRequest& request, const DeleteCapacityProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified cluster. The cluster will transition to the
@@ -3008,6 +3080,7 @@ namespace Model
         void CreateTaskSetAsyncHelper(const Model::CreateTaskSetRequest& request, const CreateTaskSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteAccountSettingAsyncHelper(const Model::DeleteAccountSettingRequest& request, const DeleteAccountSettingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteAttributesAsyncHelper(const Model::DeleteAttributesRequest& request, const DeleteAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteCapacityProviderAsyncHelper(const Model::DeleteCapacityProviderRequest& request, const DeleteCapacityProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteClusterAsyncHelper(const Model::DeleteClusterRequest& request, const DeleteClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteServiceAsyncHelper(const Model::DeleteServiceRequest& request, const DeleteServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteTaskSetAsyncHelper(const Model::DeleteTaskSetRequest& request, const DeleteTaskSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

@@ -21,6 +21,10 @@
 
 namespace Aws
 {
+namespace Http
+{
+    class URI;
+} //namespace Http
 namespace IoTDataPlane
 {
 namespace Model
@@ -43,6 +47,8 @@ namespace Model
     inline virtual const char* GetServiceRequestName() const override { return "GetThingShadow"; }
 
     Aws::String SerializePayload() const override;
+
+    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
     /**
@@ -85,10 +91,54 @@ namespace Model
      */
     inline GetThingShadowRequest& WithThingName(const char* value) { SetThingName(value); return *this;}
 
+
+    /**
+     * <p>The name of the shadow.</p>
+     */
+    inline const Aws::String& GetShadowName() const{ return m_shadowName; }
+
+    /**
+     * <p>The name of the shadow.</p>
+     */
+    inline bool ShadowNameHasBeenSet() const { return m_shadowNameHasBeenSet; }
+
+    /**
+     * <p>The name of the shadow.</p>
+     */
+    inline void SetShadowName(const Aws::String& value) { m_shadowNameHasBeenSet = true; m_shadowName = value; }
+
+    /**
+     * <p>The name of the shadow.</p>
+     */
+    inline void SetShadowName(Aws::String&& value) { m_shadowNameHasBeenSet = true; m_shadowName = std::move(value); }
+
+    /**
+     * <p>The name of the shadow.</p>
+     */
+    inline void SetShadowName(const char* value) { m_shadowNameHasBeenSet = true; m_shadowName.assign(value); }
+
+    /**
+     * <p>The name of the shadow.</p>
+     */
+    inline GetThingShadowRequest& WithShadowName(const Aws::String& value) { SetShadowName(value); return *this;}
+
+    /**
+     * <p>The name of the shadow.</p>
+     */
+    inline GetThingShadowRequest& WithShadowName(Aws::String&& value) { SetShadowName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the shadow.</p>
+     */
+    inline GetThingShadowRequest& WithShadowName(const char* value) { SetShadowName(value); return *this;}
+
   private:
 
     Aws::String m_thingName;
     bool m_thingNameHasBeenSet;
+
+    Aws::String m_shadowName;
+    bool m_shadowNameHasBeenSet;
   };
 
 } // namespace Model

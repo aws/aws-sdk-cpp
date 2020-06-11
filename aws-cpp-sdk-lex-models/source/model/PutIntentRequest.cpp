@@ -36,7 +36,8 @@ PutIntentRequest::PutIntentRequest() :
     m_parentIntentSignatureHasBeenSet(false),
     m_checksumHasBeenSet(false),
     m_createVersion(false),
-    m_createVersionHasBeenSet(false)
+    m_createVersionHasBeenSet(false),
+    m_kendraConfigurationHasBeenSet(false)
 {
 }
 
@@ -123,6 +124,12 @@ Aws::String PutIntentRequest::SerializePayload() const
   if(m_createVersionHasBeenSet)
   {
    payload.WithBool("createVersion", m_createVersion);
+
+  }
+
+  if(m_kendraConfigurationHasBeenSet)
+  {
+   payload.WithObject("kendraConfiguration", m_kendraConfiguration.Jsonize());
 
   }
 
