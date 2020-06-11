@@ -310,16 +310,16 @@ TEST_F(EnvironmentModifyingTest, TestProvidersNumberInCredentialsProvidersChain)
     Aws::Environment::UnSetEnv("AWS_EC2_METADATA_DISABLED");
 
     DefaultAWSCredentialsProviderChain providersChainWith4ProvidersEC2;
-    ASSERT_EQ(4u, providersChainWith4ProvidersEC2.GetProviders().size()); //With EC2 instance metadata, without ECS task role.
+    ASSERT_EQ(5u, providersChainWith4ProvidersEC2.GetProviders().size()); //With EC2 instance metadata, without ECS task role.
 
     Aws::Environment::SetEnv("AWS_CONTAINER_CREDENTIALS_RELATIVE_URI", "TestVar", 1);
     DefaultAWSCredentialsProviderChain providersChainWith4ProvidersECS;
-    ASSERT_EQ(4u, providersChainWith4ProvidersECS.GetProviders().size()); //With ECS task role, without ec2
+    ASSERT_EQ(5u, providersChainWith4ProvidersECS.GetProviders().size()); //With ECS task role, without ec2
 
     Aws::Environment::SetEnv("AWS_EC2_METADATA_DISABLED", "TruE", 1);
     Aws::Environment::UnSetEnv("AWS_CONTAINER_CREDENTIALS_RELATIVE_URI"); //Without ECS task role, without ec2
     DefaultAWSCredentialsProviderChain providersChainWith3Providers;
-    ASSERT_EQ(3u, providersChainWith3Providers.GetProviders().size());
+    ASSERT_EQ(4u, providersChainWith3Providers.GetProviders().size());
 }
 
 
