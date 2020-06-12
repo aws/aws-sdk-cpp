@@ -234,7 +234,7 @@ namespace Model
      * from, or is in the process of detaching from a gateway. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/managing-volumes.html#attach-detach-volume">Moving
-     * Your Volumes to a Different Gateway</a>.</p>
+     * your volumes to a different gateway</a>.</p>
      */
     inline const Aws::String& GetVolumeAttachmentStatus() const{ return m_volumeAttachmentStatus; }
 
@@ -243,7 +243,7 @@ namespace Model
      * from, or is in the process of detaching from a gateway. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/managing-volumes.html#attach-detach-volume">Moving
-     * Your Volumes to a Different Gateway</a>.</p>
+     * your volumes to a different gateway</a>.</p>
      */
     inline bool VolumeAttachmentStatusHasBeenSet() const { return m_volumeAttachmentStatusHasBeenSet; }
 
@@ -252,7 +252,7 @@ namespace Model
      * from, or is in the process of detaching from a gateway. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/managing-volumes.html#attach-detach-volume">Moving
-     * Your Volumes to a Different Gateway</a>.</p>
+     * your volumes to a different gateway</a>.</p>
      */
     inline void SetVolumeAttachmentStatus(const Aws::String& value) { m_volumeAttachmentStatusHasBeenSet = true; m_volumeAttachmentStatus = value; }
 
@@ -261,7 +261,7 @@ namespace Model
      * from, or is in the process of detaching from a gateway. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/managing-volumes.html#attach-detach-volume">Moving
-     * Your Volumes to a Different Gateway</a>.</p>
+     * your volumes to a different gateway</a>.</p>
      */
     inline void SetVolumeAttachmentStatus(Aws::String&& value) { m_volumeAttachmentStatusHasBeenSet = true; m_volumeAttachmentStatus = std::move(value); }
 
@@ -270,7 +270,7 @@ namespace Model
      * from, or is in the process of detaching from a gateway. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/managing-volumes.html#attach-detach-volume">Moving
-     * Your Volumes to a Different Gateway</a>.</p>
+     * your volumes to a different gateway</a>.</p>
      */
     inline void SetVolumeAttachmentStatus(const char* value) { m_volumeAttachmentStatusHasBeenSet = true; m_volumeAttachmentStatus.assign(value); }
 
@@ -279,7 +279,7 @@ namespace Model
      * from, or is in the process of detaching from a gateway. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/managing-volumes.html#attach-detach-volume">Moving
-     * Your Volumes to a Different Gateway</a>.</p>
+     * your volumes to a different gateway</a>.</p>
      */
     inline StorediSCSIVolume& WithVolumeAttachmentStatus(const Aws::String& value) { SetVolumeAttachmentStatus(value); return *this;}
 
@@ -288,7 +288,7 @@ namespace Model
      * from, or is in the process of detaching from a gateway. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/managing-volumes.html#attach-detach-volume">Moving
-     * Your Volumes to a Different Gateway</a>.</p>
+     * your volumes to a different gateway</a>.</p>
      */
     inline StorediSCSIVolume& WithVolumeAttachmentStatus(Aws::String&& value) { SetVolumeAttachmentStatus(std::move(value)); return *this;}
 
@@ -297,7 +297,7 @@ namespace Model
      * from, or is in the process of detaching from a gateway. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/managing-volumes.html#attach-detach-volume">Moving
-     * Your Volumes to a Different Gateway</a>.</p>
+     * your volumes to a different gateway</a>.</p>
      */
     inline StorediSCSIVolume& WithVolumeAttachmentStatus(const char* value) { SetVolumeAttachmentStatus(value); return *this;}
 
@@ -456,25 +456,29 @@ namespace Model
 
     /**
      * <p>Indicates if when the stored volume was created, existing data on the
-     * underlying local disk was preserved.</p> <p> Valid Values: true, false</p>
+     * underlying local disk was preserved.</p> <p>Valid Values: <code>true</code> |
+     * <code>false</code> </p>
      */
     inline bool GetPreservedExistingData() const{ return m_preservedExistingData; }
 
     /**
      * <p>Indicates if when the stored volume was created, existing data on the
-     * underlying local disk was preserved.</p> <p> Valid Values: true, false</p>
+     * underlying local disk was preserved.</p> <p>Valid Values: <code>true</code> |
+     * <code>false</code> </p>
      */
     inline bool PreservedExistingDataHasBeenSet() const { return m_preservedExistingDataHasBeenSet; }
 
     /**
      * <p>Indicates if when the stored volume was created, existing data on the
-     * underlying local disk was preserved.</p> <p> Valid Values: true, false</p>
+     * underlying local disk was preserved.</p> <p>Valid Values: <code>true</code> |
+     * <code>false</code> </p>
      */
     inline void SetPreservedExistingData(bool value) { m_preservedExistingDataHasBeenSet = true; m_preservedExistingData = value; }
 
     /**
      * <p>Indicates if when the stored volume was created, existing data on the
-     * underlying local disk was preserved.</p> <p> Valid Values: true, false</p>
+     * underlying local disk was preserved.</p> <p>Valid Values: <code>true</code> |
+     * <code>false</code> </p>
      */
     inline StorediSCSIVolume& WithPreservedExistingData(bool value) { SetPreservedExistingData(value); return *this;}
 

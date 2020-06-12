@@ -92,7 +92,8 @@ namespace Model
      * <p>Set to <code>true</code> to forcibly remove the iSCSI connection of the
      * target volume and detach the volume. The default is <code>false</code>. If this
      * value is set to <code>false</code>, you must manually disconnect the iSCSI
-     * connection from the target volume.</p>
+     * connection from the target volume.</p> <p>Valid Values: <code>true</code> |
+     * <code>false</code> </p>
      */
     inline bool GetForceDetach() const{ return m_forceDetach; }
 
@@ -100,7 +101,8 @@ namespace Model
      * <p>Set to <code>true</code> to forcibly remove the iSCSI connection of the
      * target volume and detach the volume. The default is <code>false</code>. If this
      * value is set to <code>false</code>, you must manually disconnect the iSCSI
-     * connection from the target volume.</p>
+     * connection from the target volume.</p> <p>Valid Values: <code>true</code> |
+     * <code>false</code> </p>
      */
     inline bool ForceDetachHasBeenSet() const { return m_forceDetachHasBeenSet; }
 
@@ -108,7 +110,8 @@ namespace Model
      * <p>Set to <code>true</code> to forcibly remove the iSCSI connection of the
      * target volume and detach the volume. The default is <code>false</code>. If this
      * value is set to <code>false</code>, you must manually disconnect the iSCSI
-     * connection from the target volume.</p>
+     * connection from the target volume.</p> <p>Valid Values: <code>true</code> |
+     * <code>false</code> </p>
      */
     inline void SetForceDetach(bool value) { m_forceDetachHasBeenSet = true; m_forceDetach = value; }
 
@@ -116,7 +119,8 @@ namespace Model
      * <p>Set to <code>true</code> to forcibly remove the iSCSI connection of the
      * target volume and detach the volume. The default is <code>false</code>. If this
      * value is set to <code>false</code>, you must manually disconnect the iSCSI
-     * connection from the target volume.</p>
+     * connection from the target volume.</p> <p>Valid Values: <code>true</code> |
+     * <code>false</code> </p>
      */
     inline DetachVolumeRequest& WithForceDetach(bool value) { SetForceDetach(value); return *this;}
 

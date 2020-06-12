@@ -466,26 +466,26 @@ namespace Model
    * disaster recovery.</p> <p>Use the following links to get started using the
    * <i>AWS Storage Gateway Service API Reference</i>:</p> <ul> <li> <p> <a
    * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/AWSStorageGatewayAPI.html#AWSStorageGatewayHTTPRequestsHeaders">AWS
-   * Storage Gateway Required Request Headers</a>: Describes the required headers
+   * Storage Gateway required request headers</a>: Describes the required headers
    * that you must send with every POST request to AWS Storage Gateway.</p> </li>
    * <li> <p> <a
    * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/AWSStorageGatewayAPI.html#AWSStorageGatewaySigningRequests">Signing
-   * Requests</a>: AWS Storage Gateway requires that you authenticate every request
+   * requests</a>: AWS Storage Gateway requires that you authenticate every request
    * you send; this topic describes how sign such a request.</p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/AWSStorageGatewayAPI.html#APIErrorResponses">Error
-   * Responses</a>: Provides reference information about AWS Storage Gateway
+   * responses</a>: Provides reference information about AWS Storage Gateway
    * errors.</p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_Operations.html">Operations
    * in AWS Storage Gateway</a>: Contains detailed descriptions of all AWS Storage
    * Gateway operations, their request parameters, response elements, possible
    * errors, and examples of requests and responses.</p> </li> <li> <p> <a
-   * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#sg_region">AWS
-   * Storage Gateway Regions and Endpoints:</a> Provides a list of each AWS Region
-   * and the endpoints available for use with AWS Storage Gateway. </p> </li> </ul>
-   * <note> <p>AWS Storage Gateway resource IDs are in uppercase. When you use these
-   * resource IDs with the Amazon EC2 API, EC2 expects resource IDs in lowercase. You
-   * must change your resource ID to lowercase to use it with the EC2 API. For
-   * example, in Storage Gateway the ID for a volume might be
+   * href="https://docs.aws.amazon.com/general/latest/gr/sg.html">AWS Storage Gateway
+   * endpoints and quotas:</a> Provides a list of each AWS Region and the endpoints
+   * available for use with AWS Storage Gateway.</p> </li> </ul> <note> <p>AWS
+   * Storage Gateway resource IDs are in uppercase. When you use these resource IDs
+   * with the Amazon EC2 API, EC2 expects resource IDs in lowercase. You must change
+   * your resource ID to lowercase to use it with the EC2 API. For example, in
+   * Storage Gateway the ID for a volume might be
    * <code>vol-AA22BB012345DAF670</code>. When you use this ID with the EC2 API, you
    * must change it to <code>vol-aa22bb012345daf670</code>. Otherwise, the EC2 API
    * might not behave as expected.</p> </note> <important> <p>IDs for Storage Gateway
@@ -493,14 +493,14 @@ namespace Model
    * longer format. Starting in December 2016, all new volumes and snapshots will be
    * created with a 17-character string. Starting in April 2016, you will be able to
    * use these longer IDs so you can test your systems with the new format. For more
-   * information, see <a href="https://aws.amazon.com/ec2/faqs/#longer-ids">Longer
-   * EC2 and EBS Resource IDs</a>. </p> <p> For example, a volume Amazon Resource
-   * Name (ARN) with the longer volume ID format looks like the following:</p> <p>
+   * information, see <a href="http://aws.amazon.com/ec2/faqs/#longer-ids">Longer EC2
+   * and EBS resource IDs</a>.</p> <p>For example, a volume Amazon Resource Name
+   * (ARN) with the longer volume ID format looks like the following:</p> <p>
    * <code>arn:aws:storagegateway:us-west-2:111122223333:gateway/sgw-12A3456B/volume/vol-1122AABBCCDDEEFFG</code>.</p>
    * <p>A snapshot ID with the longer ID format looks like the following:
    * <code>snap-78e226633445566ee</code>.</p> <p>For more information, see <a
-   * href="https://forums.aws.amazon.com/ann.jspa?annID=3557">Announcement: Heads-up
-   * – Longer AWS Storage Gateway volume and snapshot IDs coming in 2016</a>.</p>
+   * href="http://forums.aws.amazon.com/ann.jspa?annID=3557">Announcement: Heads-up –
+   * Longer AWS Storage Gateway volume and snapshot IDs coming in 2016</a>.</p>
    * </important>
    */
   class AWS_STORAGEGATEWAY_API StorageGatewayClient : public Aws::Client::AWSJsonClient
@@ -537,7 +537,7 @@ namespace Model
          * process, you specify information such as the AWS Region that you want to use for
          * storing snapshots or tapes, the time zone for scheduled snapshots the gateway
          * snapshot schedule window, an activation key, and a name for your gateway. The
-         * activation process also associates your gateway with your account; for more
+         * activation process also associates your gateway with your account. For more
          * information, see <a>UpdateGatewayInformation</a>.</p> <note> <p>You must turn on
          * the gateway VM before you can activate your gateway.</p> </note><p><h3>See
          * Also:</h3>   <a
@@ -551,7 +551,7 @@ namespace Model
          * process, you specify information such as the AWS Region that you want to use for
          * storing snapshots or tapes, the time zone for scheduled snapshots the gateway
          * snapshot schedule window, an activation key, and a name for your gateway. The
-         * activation process also associates your gateway with your account; for more
+         * activation process also associates your gateway with your account. For more
          * information, see <a>UpdateGatewayInformation</a>.</p> <note> <p>You must turn on
          * the gateway VM before you can activate your gateway.</p> </note><p><h3>See
          * Also:</h3>   <a
@@ -567,7 +567,7 @@ namespace Model
          * process, you specify information such as the AWS Region that you want to use for
          * storing snapshots or tapes, the time zone for scheduled snapshots the gateway
          * snapshot schedule window, an activation key, and a name for your gateway. The
-         * activation process also associates your gateway with your account; for more
+         * activation process also associates your gateway with your account. For more
          * information, see <a>UpdateGatewayInformation</a>.</p> <note> <p>You must turn on
          * the gateway VM before you can activate your gateway.</p> </note><p><h3>See
          * Also:</h3>   <a
@@ -580,12 +580,13 @@ namespace Model
 
         /**
          * <p>Configures one or more gateway local disks as cache for a gateway. This
-         * operation is only supported in the cached volume, tape and file gateway type
+         * operation is only supported in the cached volume, tape, and file gateway type
          * (see <a
-         * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/StorageGatewayConcepts.html">Storage
-         * Gateway Concepts</a>).</p> <p>In the request, you specify the gateway Amazon
-         * Resource Name (ARN) to which you want to add cache, and one or more disk IDs
-         * that you want to configure as cache.</p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/StorageGatewayConcepts.html">How
+         * AWS Storage Gateway works (architecture)</a>.</p> <p>In the request, you specify
+         * the gateway Amazon Resource Name (ARN) to which you want to add cache, and one
+         * or more disk IDs that you want to configure as cache.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/AddCache">AWS
          * API Reference</a></p>
          */
@@ -593,12 +594,13 @@ namespace Model
 
         /**
          * <p>Configures one or more gateway local disks as cache for a gateway. This
-         * operation is only supported in the cached volume, tape and file gateway type
+         * operation is only supported in the cached volume, tape, and file gateway type
          * (see <a
-         * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/StorageGatewayConcepts.html">Storage
-         * Gateway Concepts</a>).</p> <p>In the request, you specify the gateway Amazon
-         * Resource Name (ARN) to which you want to add cache, and one or more disk IDs
-         * that you want to configure as cache.</p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/StorageGatewayConcepts.html">How
+         * AWS Storage Gateway works (architecture)</a>.</p> <p>In the request, you specify
+         * the gateway Amazon Resource Name (ARN) to which you want to add cache, and one
+         * or more disk IDs that you want to configure as cache.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/AddCache">AWS
          * API Reference</a></p>
          *
@@ -608,12 +610,13 @@ namespace Model
 
         /**
          * <p>Configures one or more gateway local disks as cache for a gateway. This
-         * operation is only supported in the cached volume, tape and file gateway type
+         * operation is only supported in the cached volume, tape, and file gateway type
          * (see <a
-         * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/StorageGatewayConcepts.html">Storage
-         * Gateway Concepts</a>).</p> <p>In the request, you specify the gateway Amazon
-         * Resource Name (ARN) to which you want to add cache, and one or more disk IDs
-         * that you want to configure as cache.</p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/StorageGatewayConcepts.html">How
+         * AWS Storage Gateway works (architecture)</a>.</p> <p>In the request, you specify
+         * the gateway Amazon Resource Name (ARN) to which you want to add cache, and one
+         * or more disk IDs that you want to configure as cache.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/AddCache">AWS
          * API Reference</a></p>
          *
@@ -761,8 +764,8 @@ namespace Model
          * archived in the S3 storage class that is associated with the pool. When you use
          * your backup application to eject the tape, the tape is archived directly into
          * the S3 storage class (S3 Glacier or S3 Glacier Deep Archive) that corresponds to
-         * the pool.</p> <p>Valid values: "GLACIER", "DEEP_ARCHIVE"</p><p><h3>See
-         * Also:</h3>   <a
+         * the pool.</p> <p>Valid Values: <code>GLACIER</code> | <code>DEEP_ARCHIVE</code>
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/AssignTapePool">AWS
          * API Reference</a></p>
          */
@@ -773,8 +776,8 @@ namespace Model
          * archived in the S3 storage class that is associated with the pool. When you use
          * your backup application to eject the tape, the tape is archived directly into
          * the S3 storage class (S3 Glacier or S3 Glacier Deep Archive) that corresponds to
-         * the pool.</p> <p>Valid values: "GLACIER", "DEEP_ARCHIVE"</p><p><h3>See
-         * Also:</h3>   <a
+         * the pool.</p> <p>Valid Values: <code>GLACIER</code> | <code>DEEP_ARCHIVE</code>
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/AssignTapePool">AWS
          * API Reference</a></p>
          *
@@ -787,8 +790,8 @@ namespace Model
          * archived in the S3 storage class that is associated with the pool. When you use
          * your backup application to eject the tape, the tape is archived directly into
          * the S3 storage class (S3 Glacier or S3 Glacier Deep Archive) that corresponds to
-         * the pool.</p> <p>Valid values: "GLACIER", "DEEP_ARCHIVE"</p><p><h3>See
-         * Also:</h3>   <a
+         * the pool.</p> <p>Valid Values: <code>GLACIER</code> | <code>DEEP_ARCHIVE</code>
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/AssignTapePool">AWS
          * API Reference</a></p>
          *
@@ -902,7 +905,7 @@ namespace Model
          * <p>Creates a cached volume on a specified cached volume gateway. This operation
          * is only supported in the cached volume gateway type.</p> <note> <p>Cache storage
          * must be allocated to the gateway before you can create a cached volume. Use the
-         * <a>AddCache</a> operation to add cache storage to a gateway. </p> </note> <p>In
+         * <a>AddCache</a> operation to add cache storage to a gateway.</p> </note> <p>In
          * the request, you must specify the gateway, size of the volume in bytes, the
          * iSCSI target name, an IP address on which to expose the target, and a unique
          * client token. In response, the gateway creates the volume and returns
@@ -922,7 +925,7 @@ namespace Model
          * <p>Creates a cached volume on a specified cached volume gateway. This operation
          * is only supported in the cached volume gateway type.</p> <note> <p>Cache storage
          * must be allocated to the gateway before you can create a cached volume. Use the
-         * <a>AddCache</a> operation to add cache storage to a gateway. </p> </note> <p>In
+         * <a>AddCache</a> operation to add cache storage to a gateway.</p> </note> <p>In
          * the request, you must specify the gateway, size of the volume in bytes, the
          * iSCSI target name, an IP address on which to expose the target, and a unique
          * client token. In response, the gateway creates the volume and returns
@@ -944,7 +947,7 @@ namespace Model
          * <p>Creates a cached volume on a specified cached volume gateway. This operation
          * is only supported in the cached volume gateway type.</p> <note> <p>Cache storage
          * must be allocated to the gateway before you can create a cached volume. Use the
-         * <a>AddCache</a> operation to add cache storage to a gateway. </p> </note> <p>In
+         * <a>AddCache</a> operation to add cache storage to a gateway.</p> </note> <p>In
          * the request, you must specify the gateway, size of the volume in bytes, the
          * iSCSI target name, an IP address on which to expose the target, and a unique
          * client token. In response, the gateway creates the volume and returns
@@ -970,11 +973,11 @@ namespace Model
          * gateway requires AWS Security Token Service (AWS STS) to be activated to enable
          * you to create a file share. Make sure AWS STS is activated in the AWS Region you
          * are creating your file gateway in. If AWS STS is not activated in the AWS
-         * Region, activate it. For information about how to activate AWS STS, see
-         * Activating and Deactivating AWS STS in an AWS Region in the AWS Identity and
-         * Access Management User Guide. </p> <p>File gateway does not support creating
-         * hard or symbolic links on a file share.</p> </important><p><h3>See Also:</h3>  
-         * <a
+         * Region, activate it. For information about how to activate AWS STS, see <a
+         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
+         * and deactivating AWS STS in an AWS Region</a> in the <i>AWS Identity and Access
+         * Management User Guide</i>.</p> <p>File gateway does not support creating hard or
+         * symbolic links on a file share.</p> </important><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CreateNFSFileShare">AWS
          * API Reference</a></p>
          */
@@ -988,11 +991,11 @@ namespace Model
          * gateway requires AWS Security Token Service (AWS STS) to be activated to enable
          * you to create a file share. Make sure AWS STS is activated in the AWS Region you
          * are creating your file gateway in. If AWS STS is not activated in the AWS
-         * Region, activate it. For information about how to activate AWS STS, see
-         * Activating and Deactivating AWS STS in an AWS Region in the AWS Identity and
-         * Access Management User Guide. </p> <p>File gateway does not support creating
-         * hard or symbolic links on a file share.</p> </important><p><h3>See Also:</h3>  
-         * <a
+         * Region, activate it. For information about how to activate AWS STS, see <a
+         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
+         * and deactivating AWS STS in an AWS Region</a> in the <i>AWS Identity and Access
+         * Management User Guide</i>.</p> <p>File gateway does not support creating hard or
+         * symbolic links on a file share.</p> </important><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CreateNFSFileShare">AWS
          * API Reference</a></p>
          *
@@ -1008,11 +1011,11 @@ namespace Model
          * gateway requires AWS Security Token Service (AWS STS) to be activated to enable
          * you to create a file share. Make sure AWS STS is activated in the AWS Region you
          * are creating your file gateway in. If AWS STS is not activated in the AWS
-         * Region, activate it. For information about how to activate AWS STS, see
-         * Activating and Deactivating AWS STS in an AWS Region in the AWS Identity and
-         * Access Management User Guide. </p> <p>File gateway does not support creating
-         * hard or symbolic links on a file share.</p> </important><p><h3>See Also:</h3>  
-         * <a
+         * Region, activate it. For information about how to activate AWS STS, see <a
+         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
+         * and deactivating AWS STS in an AWS Region</a> in the <i>AWS Identity and Access
+         * Management User Guide</i>.</p> <p>File gateway does not support creating hard or
+         * symbolic links on a file share.</p> </important><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CreateNFSFileShare">AWS
          * API Reference</a></p>
          *
@@ -1031,8 +1034,8 @@ namespace Model
          * this AWS Region, activate it. For information about how to activate AWS STS, see
          * <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
-         * and Deactivating AWS STS in an AWS Region</a> in the <i>AWS Identity and Access
-         * Management User Guide.</i> </p> <p>File gateways don't support creating hard or
+         * and deactivating AWS STS in an AWS Region</a> in the <i>AWS Identity and Access
+         * Management User Guide</i>.</p> <p>File gateways don't support creating hard or
          * symbolic links on a file share.</p> </important><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CreateSMBFileShare">AWS
          * API Reference</a></p>
@@ -1050,8 +1053,8 @@ namespace Model
          * this AWS Region, activate it. For information about how to activate AWS STS, see
          * <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
-         * and Deactivating AWS STS in an AWS Region</a> in the <i>AWS Identity and Access
-         * Management User Guide.</i> </p> <p>File gateways don't support creating hard or
+         * and deactivating AWS STS in an AWS Region</a> in the <i>AWS Identity and Access
+         * Management User Guide</i>.</p> <p>File gateways don't support creating hard or
          * symbolic links on a file share.</p> </important><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CreateSMBFileShare">AWS
          * API Reference</a></p>
@@ -1071,8 +1074,8 @@ namespace Model
          * this AWS Region, activate it. For information about how to activate AWS STS, see
          * <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
-         * and Deactivating AWS STS in an AWS Region</a> in the <i>AWS Identity and Access
-         * Management User Guide.</i> </p> <p>File gateways don't support creating hard or
+         * and deactivating AWS STS in an AWS Region</a> in the <i>AWS Identity and Access
+         * Management User Guide</i>.</p> <p>File gateways don't support creating hard or
          * symbolic links on a file share.</p> </important><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CreateSMBFileShare">AWS
          * API Reference</a></p>
@@ -1084,13 +1087,12 @@ namespace Model
         /**
          * <p>Initiates a snapshot of a volume.</p> <p>AWS Storage Gateway provides the
          * ability to back up point-in-time snapshots of your data to Amazon Simple Storage
-         * Service (Amazon S3) for durable off-site recovery, as well as import the data to
-         * an Amazon Elastic Block Store (EBS) volume in Amazon Elastic Compute Cloud
-         * (EC2). You can take snapshots of your gateway volume on a scheduled or ad hoc
-         * basis. This API enables you to take an ad hoc snapshot. For more information,
-         * see <a
+         * (Amazon S3) for durable off-site recovery, as well as import the data to an
+         * Amazon Elastic Block Store (EBS) volume in Amazon Elastic Compute Cloud (EC2).
+         * You can take snapshots of your gateway volume on a scheduled or ad hoc basis.
+         * This API enables you to take ad-hoc snapshot. For more information, see <a
          * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/managing-volumes.html#SchedulingSnapshot">Editing
-         * a Snapshot Schedule</a>.</p> <p>In the CreateSnapshot request you identify the
+         * a snapshot schedule</a>.</p> <p>In the CreateSnapshot request you identify the
          * volume by providing its Amazon Resource Name (ARN). You must also provide
          * description for the snapshot. When AWS Storage Gateway takes the snapshot of
          * specified volume, the snapshot and description appears in the AWS Storage
@@ -1098,12 +1100,13 @@ namespace Model
          * can use this snapshot ID to check the snapshot progress or later use it when you
          * want to create a volume from a snapshot. This operation is only supported in
          * stored and cached volume gateway type.</p> <note> <p>To list or delete a
-         * snapshot, you must use the Amazon EC2 API. For more information, see
-         * DescribeSnapshots or DeleteSnapshot in the <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_Operations.html">EC2
-         * API reference</a>.</p> </note> <important> <p>Volume and snapshot IDs are
-         * changing to a longer length ID format. For more information, see the important
-         * note on the <a
+         * snapshot, you must use the Amazon EC2 API. For more information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeSnapshots.html">DescribeSnapshots</a>
+         * or <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteSnapshot.html">DeleteSnapshot</a>
+         * in the <i>Amazon Elastic Compute Cloud API Reference</i>.</p> </note>
+         * <important> <p>Volume and snapshot IDs are changing to a longer length ID
+         * format. For more information, see the important note on the <a
          * href="https://docs.aws.amazon.com/storagegateway/latest/APIReference/Welcome.html">Welcome</a>
          * page.</p> </important><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CreateSnapshot">AWS
@@ -1114,13 +1117,12 @@ namespace Model
         /**
          * <p>Initiates a snapshot of a volume.</p> <p>AWS Storage Gateway provides the
          * ability to back up point-in-time snapshots of your data to Amazon Simple Storage
-         * Service (Amazon S3) for durable off-site recovery, as well as import the data to
-         * an Amazon Elastic Block Store (EBS) volume in Amazon Elastic Compute Cloud
-         * (EC2). You can take snapshots of your gateway volume on a scheduled or ad hoc
-         * basis. This API enables you to take an ad hoc snapshot. For more information,
-         * see <a
+         * (Amazon S3) for durable off-site recovery, as well as import the data to an
+         * Amazon Elastic Block Store (EBS) volume in Amazon Elastic Compute Cloud (EC2).
+         * You can take snapshots of your gateway volume on a scheduled or ad hoc basis.
+         * This API enables you to take ad-hoc snapshot. For more information, see <a
          * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/managing-volumes.html#SchedulingSnapshot">Editing
-         * a Snapshot Schedule</a>.</p> <p>In the CreateSnapshot request you identify the
+         * a snapshot schedule</a>.</p> <p>In the CreateSnapshot request you identify the
          * volume by providing its Amazon Resource Name (ARN). You must also provide
          * description for the snapshot. When AWS Storage Gateway takes the snapshot of
          * specified volume, the snapshot and description appears in the AWS Storage
@@ -1128,12 +1130,13 @@ namespace Model
          * can use this snapshot ID to check the snapshot progress or later use it when you
          * want to create a volume from a snapshot. This operation is only supported in
          * stored and cached volume gateway type.</p> <note> <p>To list or delete a
-         * snapshot, you must use the Amazon EC2 API. For more information, see
-         * DescribeSnapshots or DeleteSnapshot in the <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_Operations.html">EC2
-         * API reference</a>.</p> </note> <important> <p>Volume and snapshot IDs are
-         * changing to a longer length ID format. For more information, see the important
-         * note on the <a
+         * snapshot, you must use the Amazon EC2 API. For more information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeSnapshots.html">DescribeSnapshots</a>
+         * or <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteSnapshot.html">DeleteSnapshot</a>
+         * in the <i>Amazon Elastic Compute Cloud API Reference</i>.</p> </note>
+         * <important> <p>Volume and snapshot IDs are changing to a longer length ID
+         * format. For more information, see the important note on the <a
          * href="https://docs.aws.amazon.com/storagegateway/latest/APIReference/Welcome.html">Welcome</a>
          * page.</p> </important><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CreateSnapshot">AWS
@@ -1146,13 +1149,12 @@ namespace Model
         /**
          * <p>Initiates a snapshot of a volume.</p> <p>AWS Storage Gateway provides the
          * ability to back up point-in-time snapshots of your data to Amazon Simple Storage
-         * Service (Amazon S3) for durable off-site recovery, as well as import the data to
-         * an Amazon Elastic Block Store (EBS) volume in Amazon Elastic Compute Cloud
-         * (EC2). You can take snapshots of your gateway volume on a scheduled or ad hoc
-         * basis. This API enables you to take an ad hoc snapshot. For more information,
-         * see <a
+         * (Amazon S3) for durable off-site recovery, as well as import the data to an
+         * Amazon Elastic Block Store (EBS) volume in Amazon Elastic Compute Cloud (EC2).
+         * You can take snapshots of your gateway volume on a scheduled or ad hoc basis.
+         * This API enables you to take ad-hoc snapshot. For more information, see <a
          * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/managing-volumes.html#SchedulingSnapshot">Editing
-         * a Snapshot Schedule</a>.</p> <p>In the CreateSnapshot request you identify the
+         * a snapshot schedule</a>.</p> <p>In the CreateSnapshot request you identify the
          * volume by providing its Amazon Resource Name (ARN). You must also provide
          * description for the snapshot. When AWS Storage Gateway takes the snapshot of
          * specified volume, the snapshot and description appears in the AWS Storage
@@ -1160,12 +1162,13 @@ namespace Model
          * can use this snapshot ID to check the snapshot progress or later use it when you
          * want to create a volume from a snapshot. This operation is only supported in
          * stored and cached volume gateway type.</p> <note> <p>To list or delete a
-         * snapshot, you must use the Amazon EC2 API. For more information, see
-         * DescribeSnapshots or DeleteSnapshot in the <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_Operations.html">EC2
-         * API reference</a>.</p> </note> <important> <p>Volume and snapshot IDs are
-         * changing to a longer length ID format. For more information, see the important
-         * note on the <a
+         * snapshot, you must use the Amazon EC2 API. For more information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeSnapshots.html">DescribeSnapshots</a>
+         * or <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteSnapshot.html">DeleteSnapshot</a>
+         * in the <i>Amazon Elastic Compute Cloud API Reference</i>.</p> </note>
+         * <important> <p>Volume and snapshot IDs are changing to a longer length ID
+         * format. For more information, see the important note on the <a
          * href="https://docs.aws.amazon.com/storagegateway/latest/APIReference/Welcome.html">Welcome</a>
          * page.</p> </important><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CreateSnapshot">AWS
@@ -1188,8 +1191,12 @@ namespace Model
          * console. In response, the gateway returns you a snapshot ID. You can use this
          * snapshot ID to check the snapshot progress or later use it when you want to
          * create a volume from a snapshot.</p> <note> <p>To list or delete a snapshot, you
-         * must use the Amazon EC2 API. For more information, in <i>Amazon Elastic Compute
-         * Cloud API Reference</i>.</p> </note><p><h3>See Also:</h3>   <a
+         * must use the Amazon EC2 API. For more information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeSnapshots.html">DescribeSnapshots</a>
+         * or <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteSnapshot.html">DeleteSnapshot</a>
+         * in the <i>Amazon Elastic Compute Cloud API Reference</i>.</p> </note><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CreateSnapshotFromVolumeRecoveryPoint">AWS
          * API Reference</a></p>
          */
@@ -1208,8 +1215,12 @@ namespace Model
          * console. In response, the gateway returns you a snapshot ID. You can use this
          * snapshot ID to check the snapshot progress or later use it when you want to
          * create a volume from a snapshot.</p> <note> <p>To list or delete a snapshot, you
-         * must use the Amazon EC2 API. For more information, in <i>Amazon Elastic Compute
-         * Cloud API Reference</i>.</p> </note><p><h3>See Also:</h3>   <a
+         * must use the Amazon EC2 API. For more information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeSnapshots.html">DescribeSnapshots</a>
+         * or <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteSnapshot.html">DeleteSnapshot</a>
+         * in the <i>Amazon Elastic Compute Cloud API Reference</i>.</p> </note><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CreateSnapshotFromVolumeRecoveryPoint">AWS
          * API Reference</a></p>
          *
@@ -1230,8 +1241,12 @@ namespace Model
          * console. In response, the gateway returns you a snapshot ID. You can use this
          * snapshot ID to check the snapshot progress or later use it when you want to
          * create a volume from a snapshot.</p> <note> <p>To list or delete a snapshot, you
-         * must use the Amazon EC2 API. For more information, in <i>Amazon Elastic Compute
-         * Cloud API Reference</i>.</p> </note><p><h3>See Also:</h3>   <a
+         * must use the Amazon EC2 API. For more information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeSnapshots.html">DescribeSnapshots</a>
+         * or <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteSnapshot.html">DeleteSnapshot</a>
+         * in the <i>Amazon Elastic Compute Cloud API Reference</i>.</p> </note><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CreateSnapshotFromVolumeRecoveryPoint">AWS
          * API Reference</a></p>
          *
@@ -1293,10 +1308,10 @@ namespace Model
 
         /**
          * <p>Creates a virtual tape by using your own barcode. You write data to the
-         * virtual tape and then archive the tape. A barcode is unique and cannot be reused
-         * if it has already been used on a tape. This applies to barcodes used on deleted
-         * tapes. This operation is only supported in the tape gateway type.</p> <note>
-         * <p>Cache storage must be allocated to the gateway before you can create a
+         * virtual tape and then archive the tape. A barcode is unique and can not be
+         * reused if it has already been used on a tape. This applies to barcodes used on
+         * deleted tapes. This operation is only supported in the tape gateway type.</p>
+         * <note> <p>Cache storage must be allocated to the gateway before you can create a
          * virtual tape. Use the <a>AddCache</a> operation to add cache storage to a
          * gateway.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CreateTapeWithBarcode">AWS
@@ -1306,10 +1321,10 @@ namespace Model
 
         /**
          * <p>Creates a virtual tape by using your own barcode. You write data to the
-         * virtual tape and then archive the tape. A barcode is unique and cannot be reused
-         * if it has already been used on a tape. This applies to barcodes used on deleted
-         * tapes. This operation is only supported in the tape gateway type.</p> <note>
-         * <p>Cache storage must be allocated to the gateway before you can create a
+         * virtual tape and then archive the tape. A barcode is unique and can not be
+         * reused if it has already been used on a tape. This applies to barcodes used on
+         * deleted tapes. This operation is only supported in the tape gateway type.</p>
+         * <note> <p>Cache storage must be allocated to the gateway before you can create a
          * virtual tape. Use the <a>AddCache</a> operation to add cache storage to a
          * gateway.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CreateTapeWithBarcode">AWS
@@ -1321,10 +1336,10 @@ namespace Model
 
         /**
          * <p>Creates a virtual tape by using your own barcode. You write data to the
-         * virtual tape and then archive the tape. A barcode is unique and cannot be reused
-         * if it has already been used on a tape. This applies to barcodes used on deleted
-         * tapes. This operation is only supported in the tape gateway type.</p> <note>
-         * <p>Cache storage must be allocated to the gateway before you can create a
+         * virtual tape and then archive the tape. A barcode is unique and can not be
+         * reused if it has already been used on a tape. This applies to barcodes used on
+         * deleted tapes. This operation is only supported in the tape gateway type.</p>
+         * <note> <p>Cache storage must be allocated to the gateway before you can create a
          * virtual tape. Use the <a>AddCache</a> operation to add cache storage to a
          * gateway.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CreateTapeWithBarcode">AWS
@@ -1339,7 +1354,7 @@ namespace Model
          * then archive the tapes. This operation is only supported in the tape gateway
          * type.</p> <note> <p>Cache storage must be allocated to the gateway before you
          * can create virtual tapes. Use the <a>AddCache</a> operation to add cache storage
-         * to a gateway. </p> </note><p><h3>See Also:</h3>   <a
+         * to a gateway.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CreateTapes">AWS
          * API Reference</a></p>
          */
@@ -1350,7 +1365,7 @@ namespace Model
          * then archive the tapes. This operation is only supported in the tape gateway
          * type.</p> <note> <p>Cache storage must be allocated to the gateway before you
          * can create virtual tapes. Use the <a>AddCache</a> operation to add cache storage
-         * to a gateway. </p> </note><p><h3>See Also:</h3>   <a
+         * to a gateway.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CreateTapes">AWS
          * API Reference</a></p>
          *
@@ -1363,7 +1378,7 @@ namespace Model
          * then archive the tapes. This operation is only supported in the tape gateway
          * type.</p> <note> <p>Cache storage must be allocated to the gateway before you
          * can create virtual tapes. Use the <a>AddCache</a> operation to add cache storage
-         * to a gateway. </p> </note><p><h3>See Also:</h3>   <a
+         * to a gateway.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CreateTapes">AWS
          * API Reference</a></p>
          *
@@ -1374,7 +1389,7 @@ namespace Model
         /**
          * <p>Deletes the automatic tape creation policy of a gateway. If you delete this
          * policy, new virtual tapes must be created manually. Use the Amazon Resource Name
-         * (ARN) of the gateway in your request to remove the policy. </p><p><h3>See
+         * (ARN) of the gateway in your request to remove the policy.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DeleteAutomaticTapeCreationPolicy">AWS
          * API Reference</a></p>
@@ -1384,7 +1399,7 @@ namespace Model
         /**
          * <p>Deletes the automatic tape creation policy of a gateway. If you delete this
          * policy, new virtual tapes must be created manually. Use the Amazon Resource Name
-         * (ARN) of the gateway in your request to remove the policy. </p><p><h3>See
+         * (ARN) of the gateway in your request to remove the policy.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DeleteAutomaticTapeCreationPolicy">AWS
          * API Reference</a></p>
@@ -1396,7 +1411,7 @@ namespace Model
         /**
          * <p>Deletes the automatic tape creation policy of a gateway. If you delete this
          * policy, new virtual tapes must be created manually. Use the Amazon Resource Name
-         * (ARN) of the gateway in your request to remove the policy. </p><p><h3>See
+         * (ARN) of the gateway in your request to remove the policy.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DeleteAutomaticTapeCreationPolicy">AWS
          * API Reference</a></p>
@@ -1518,8 +1533,8 @@ namespace Model
          * by canceling your Amazon EC2 subscription.  If you prefer not to cancel your
          * Amazon EC2 subscription, you can delete your snapshots using the Amazon EC2
          * console. For more information, see the <a
-         * href="http://aws.amazon.com/storagegateway"> AWS Storage Gateway Detail
-         * Page</a>. </p> </important><p><h3>See Also:</h3>   <a
+         * href="http://aws.amazon.com/storagegateway">AWS Storage Gateway detail
+         * page</a>.</p> </important><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DeleteGateway">AWS
          * API Reference</a></p>
          */
@@ -1539,8 +1554,8 @@ namespace Model
          * by canceling your Amazon EC2 subscription.  If you prefer not to cancel your
          * Amazon EC2 subscription, you can delete your snapshots using the Amazon EC2
          * console. For more information, see the <a
-         * href="http://aws.amazon.com/storagegateway"> AWS Storage Gateway Detail
-         * Page</a>. </p> </important><p><h3>See Also:</h3>   <a
+         * href="http://aws.amazon.com/storagegateway">AWS Storage Gateway detail
+         * page</a>.</p> </important><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DeleteGateway">AWS
          * API Reference</a></p>
          *
@@ -1562,8 +1577,8 @@ namespace Model
          * by canceling your Amazon EC2 subscription.  If you prefer not to cancel your
          * Amazon EC2 subscription, you can delete your snapshots using the Amazon EC2
          * console. For more information, see the <a
-         * href="http://aws.amazon.com/storagegateway"> AWS Storage Gateway Detail
-         * Page</a>. </p> </important><p><h3>See Also:</h3>   <a
+         * href="http://aws.amazon.com/storagegateway">AWS Storage Gateway detail
+         * page</a>.</p> </important><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DeleteGateway">AWS
          * API Reference</a></p>
          *
@@ -1575,8 +1590,8 @@ namespace Model
          * <p>Deletes a snapshot of a volume.</p> <p>You can take snapshots of your gateway
          * volumes on a scheduled or ad hoc basis. This API action enables you to delete a
          * snapshot schedule for a volume. For more information, see <a
-         * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/WorkingWithSnapshots.html">Working
-         * with Snapshots</a>. In the <code>DeleteSnapshotSchedule</code> request, you
+         * href="https://docs.aws.amazon.com/storagegatewaylatest/userguide/backing-up-volumes.html">Backing
+         * up your volumes</a>. In the <code>DeleteSnapshotSchedule</code> request, you
          * identify the volume by providing its Amazon Resource Name (ARN). This operation
          * is only supported in stored and cached volume gateway types.</p> <note> <p>To
          * list or delete a snapshot, you must use the Amazon EC2 API. For more
@@ -1593,8 +1608,8 @@ namespace Model
          * <p>Deletes a snapshot of a volume.</p> <p>You can take snapshots of your gateway
          * volumes on a scheduled or ad hoc basis. This API action enables you to delete a
          * snapshot schedule for a volume. For more information, see <a
-         * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/WorkingWithSnapshots.html">Working
-         * with Snapshots</a>. In the <code>DeleteSnapshotSchedule</code> request, you
+         * href="https://docs.aws.amazon.com/storagegatewaylatest/userguide/backing-up-volumes.html">Backing
+         * up your volumes</a>. In the <code>DeleteSnapshotSchedule</code> request, you
          * identify the volume by providing its Amazon Resource Name (ARN). This operation
          * is only supported in stored and cached volume gateway types.</p> <note> <p>To
          * list or delete a snapshot, you must use the Amazon EC2 API. For more
@@ -1613,8 +1628,8 @@ namespace Model
          * <p>Deletes a snapshot of a volume.</p> <p>You can take snapshots of your gateway
          * volumes on a scheduled or ad hoc basis. This API action enables you to delete a
          * snapshot schedule for a volume. For more information, see <a
-         * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/WorkingWithSnapshots.html">Working
-         * with Snapshots</a>. In the <code>DeleteSnapshotSchedule</code> request, you
+         * href="https://docs.aws.amazon.com/storagegatewaylatest/userguide/backing-up-volumes.html">Backing
+         * up your volumes</a>. In the <code>DeleteSnapshotSchedule</code> request, you
          * identify the volume by providing its Amazon Resource Name (ARN). This operation
          * is only supported in stored and cached volume gateway types.</p> <note> <p>To
          * list or delete a snapshot, you must use the Amazon EC2 API. For more
@@ -1693,12 +1708,12 @@ namespace Model
          * <a>CreateCachediSCSIVolume</a> or <a>CreateStorediSCSIVolume</a> API. This
          * operation is only supported in the cached volume and stored volume types. For
          * stored volume gateways, the local disk that was configured as the storage volume
-         * is not deleted. You can reuse the local disk to create another storage volume.
-         * </p> <p>Before you delete a volume, make sure there are no iSCSI connections to
-         * the volume you are deleting. You should also make sure there is no snapshot in
-         * progress. You can use the Amazon Elastic Compute Cloud (Amazon EC2) API to query
-         * snapshots on the volume you are deleting and check the snapshot status. For more
-         * information, go to <a
+         * is not deleted. You can reuse the local disk to create another storage
+         * volume.</p> <p>Before you delete a volume, make sure there are no iSCSI
+         * connections to the volume you are deleting. You should also make sure there is
+         * no snapshot in progress. You can use the Amazon Elastic Compute Cloud (Amazon
+         * EC2) API to query snapshots on the volume you are deleting and check the
+         * snapshot status. For more information, go to <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeSnapshots.html">DescribeSnapshots</a>
          * in the <i>Amazon Elastic Compute Cloud API Reference</i>.</p> <p>In the request,
          * you must provide the Amazon Resource Name (ARN) of the storage volume you want
@@ -1713,12 +1728,12 @@ namespace Model
          * <a>CreateCachediSCSIVolume</a> or <a>CreateStorediSCSIVolume</a> API. This
          * operation is only supported in the cached volume and stored volume types. For
          * stored volume gateways, the local disk that was configured as the storage volume
-         * is not deleted. You can reuse the local disk to create another storage volume.
-         * </p> <p>Before you delete a volume, make sure there are no iSCSI connections to
-         * the volume you are deleting. You should also make sure there is no snapshot in
-         * progress. You can use the Amazon Elastic Compute Cloud (Amazon EC2) API to query
-         * snapshots on the volume you are deleting and check the snapshot status. For more
-         * information, go to <a
+         * is not deleted. You can reuse the local disk to create another storage
+         * volume.</p> <p>Before you delete a volume, make sure there are no iSCSI
+         * connections to the volume you are deleting. You should also make sure there is
+         * no snapshot in progress. You can use the Amazon Elastic Compute Cloud (Amazon
+         * EC2) API to query snapshots on the volume you are deleting and check the
+         * snapshot status. For more information, go to <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeSnapshots.html">DescribeSnapshots</a>
          * in the <i>Amazon Elastic Compute Cloud API Reference</i>.</p> <p>In the request,
          * you must provide the Amazon Resource Name (ARN) of the storage volume you want
@@ -1735,12 +1750,12 @@ namespace Model
          * <a>CreateCachediSCSIVolume</a> or <a>CreateStorediSCSIVolume</a> API. This
          * operation is only supported in the cached volume and stored volume types. For
          * stored volume gateways, the local disk that was configured as the storage volume
-         * is not deleted. You can reuse the local disk to create another storage volume.
-         * </p> <p>Before you delete a volume, make sure there are no iSCSI connections to
-         * the volume you are deleting. You should also make sure there is no snapshot in
-         * progress. You can use the Amazon Elastic Compute Cloud (Amazon EC2) API to query
-         * snapshots on the volume you are deleting and check the snapshot status. For more
-         * information, go to <a
+         * is not deleted. You can reuse the local disk to create another storage
+         * volume.</p> <p>Before you delete a volume, make sure there are no iSCSI
+         * connections to the volume you are deleting. You should also make sure there is
+         * no snapshot in progress. You can use the Amazon Elastic Compute Cloud (Amazon
+         * EC2) API to query snapshots on the volume you are deleting and check the
+         * snapshot status. For more information, go to <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeSnapshots.html">DescribeSnapshots</a>
          * in the <i>Amazon Elastic Compute Cloud API Reference</i>.</p> <p>In the request,
          * you must provide the Amazon Resource Name (ARN) of the storage volume you want
@@ -1789,7 +1804,7 @@ namespace Model
         /**
          * <p>Returns the bandwidth rate limits of a gateway. By default, these limits are
          * not set, which means no bandwidth rate limiting is in effect. This operation is
-         * supported for the stored volume, cached volume and tape gateway types.'</p>
+         * supported for the stored volume, cached volume and tape gateway types.</p>
          * <p>This operation only returns a value for a bandwidth rate limit only if the
          * limit is set. If no limits are set for the gateway, then this operation returns
          * only the gateway ARN in the response body. To specify which gateway to describe,
@@ -1803,7 +1818,7 @@ namespace Model
         /**
          * <p>Returns the bandwidth rate limits of a gateway. By default, these limits are
          * not set, which means no bandwidth rate limiting is in effect. This operation is
-         * supported for the stored volume, cached volume and tape gateway types.'</p>
+         * supported for the stored volume, cached volume and tape gateway types.</p>
          * <p>This operation only returns a value for a bandwidth rate limit only if the
          * limit is set. If no limits are set for the gateway, then this operation returns
          * only the gateway ARN in the response body. To specify which gateway to describe,
@@ -1819,7 +1834,7 @@ namespace Model
         /**
          * <p>Returns the bandwidth rate limits of a gateway. By default, these limits are
          * not set, which means no bandwidth rate limiting is in effect. This operation is
-         * supported for the stored volume, cached volume and tape gateway types.'</p>
+         * supported for the stored volume, cached volume and tape gateway types.</p>
          * <p>This operation only returns a value for a bandwidth rate limit only if the
          * limit is set. If no limits are set for the gateway, then this operation returns
          * only the gateway ARN in the response body. To specify which gateway to describe,
@@ -2131,9 +2146,9 @@ namespace Model
 
         /**
          * <p>Returns the description of the gateway volumes specified in the request. The
-         * list of gateway volumes in the request must be from one gateway. In the response
-         * AWS Storage Gateway returns volume information sorted by volume ARNs. This
-         * operation is only supported in stored volume gateway type.</p><p><h3>See
+         * list of gateway volumes in the request must be from one gateway. In the
+         * response, AWS Storage Gateway returns volume information sorted by volume ARNs.
+         * This operation is only supported in stored volume gateway type.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeStorediSCSIVolumes">AWS
          * API Reference</a></p>
@@ -2142,9 +2157,9 @@ namespace Model
 
         /**
          * <p>Returns the description of the gateway volumes specified in the request. The
-         * list of gateway volumes in the request must be from one gateway. In the response
-         * AWS Storage Gateway returns volume information sorted by volume ARNs. This
-         * operation is only supported in stored volume gateway type.</p><p><h3>See
+         * list of gateway volumes in the request must be from one gateway. In the
+         * response, AWS Storage Gateway returns volume information sorted by volume ARNs.
+         * This operation is only supported in stored volume gateway type.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeStorediSCSIVolumes">AWS
          * API Reference</a></p>
@@ -2155,9 +2170,9 @@ namespace Model
 
         /**
          * <p>Returns the description of the gateway volumes specified in the request. The
-         * list of gateway volumes in the request must be from one gateway. In the response
-         * AWS Storage Gateway returns volume information sorted by volume ARNs. This
-         * operation is only supported in stored volume gateway type.</p><p><h3>See
+         * list of gateway volumes in the request must be from one gateway. In the
+         * response, AWS Storage Gateway returns volume information sorted by volume ARNs.
+         * This operation is only supported in stored volume gateway type.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeStorediSCSIVolumes">AWS
          * API Reference</a></p>
@@ -2279,7 +2294,7 @@ namespace Model
 
         /**
          * <p>Returns information about the upload buffer of a gateway. This operation is
-         * supported for the stored volume, cached volume and tape gateway types.</p>
+         * supported for the stored volume, cached volume, and tape gateway types.</p>
          * <p>The response includes disk IDs that are configured as upload buffer space,
          * and it includes the amount of upload buffer space allocated and
          * used.</p><p><h3>See Also:</h3>   <a
@@ -2290,7 +2305,7 @@ namespace Model
 
         /**
          * <p>Returns information about the upload buffer of a gateway. This operation is
-         * supported for the stored volume, cached volume and tape gateway types.</p>
+         * supported for the stored volume, cached volume, and tape gateway types.</p>
          * <p>The response includes disk IDs that are configured as upload buffer space,
          * and it includes the amount of upload buffer space allocated and
          * used.</p><p><h3>See Also:</h3>   <a
@@ -2303,7 +2318,7 @@ namespace Model
 
         /**
          * <p>Returns information about the upload buffer of a gateway. This operation is
-         * supported for the stored volume, cached volume and tape gateway types.</p>
+         * supported for the stored volume, cached volume, and tape gateway types.</p>
          * <p>The response includes disk IDs that are configured as upload buffer space,
          * and it includes the amount of upload buffer space allocated and
          * used.</p><p><h3>See Also:</h3>   <a
@@ -2507,7 +2522,7 @@ namespace Model
 
         /**
          * <p>Lists the automatic tape creation policies for a gateway. If there are no
-         * automatic tape creation policies for the gateway, it returns an empty list. </p>
+         * automatic tape creation policies for the gateway, it returns an empty list.</p>
          * <p>This operation is only supported for tape gateways.</p><p><h3>See Also:</h3> 
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ListAutomaticTapeCreationPolicies">AWS
@@ -2517,7 +2532,7 @@ namespace Model
 
         /**
          * <p>Lists the automatic tape creation policies for a gateway. If there are no
-         * automatic tape creation policies for the gateway, it returns an empty list. </p>
+         * automatic tape creation policies for the gateway, it returns an empty list.</p>
          * <p>This operation is only supported for tape gateways.</p><p><h3>See Also:</h3> 
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ListAutomaticTapeCreationPolicies">AWS
@@ -2529,7 +2544,7 @@ namespace Model
 
         /**
          * <p>Lists the automatic tape creation policies for a gateway. If there are no
-         * automatic tape creation policies for the gateway, it returns an empty list. </p>
+         * automatic tape creation policies for the gateway, it returns an empty list.</p>
          * <p>This operation is only supported for tape gateways.</p><p><h3>See Also:</h3> 
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ListAutomaticTapeCreationPolicies">AWS
@@ -2887,10 +2902,10 @@ namespace Model
          * notification through an Amazon CloudWatch Event. You can configure CloudWatch
          * Events to send the notification through event targets such as Amazon SNS or AWS
          * Lambda function. This operation is only supported for file gateways.</p> <p>For
-         * more information, see Getting File Upload Notification in the Storage Gateway
-         * User Guide
-         * (https://docs.aws.amazon.com/storagegateway/latest/userguide/monitoring-file-gateway.html#get-upload-notification).
-         * </p><p><h3>See Also:</h3>   <a
+         * more information, see <a
+         * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/monitoring-file-gateway.html#get-upload-notification">Getting
+         * file upload notification</a> in the <i>AWS Storage Gateway User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/NotifyWhenUploaded">AWS
          * API Reference</a></p>
          */
@@ -2906,10 +2921,10 @@ namespace Model
          * notification through an Amazon CloudWatch Event. You can configure CloudWatch
          * Events to send the notification through event targets such as Amazon SNS or AWS
          * Lambda function. This operation is only supported for file gateways.</p> <p>For
-         * more information, see Getting File Upload Notification in the Storage Gateway
-         * User Guide
-         * (https://docs.aws.amazon.com/storagegateway/latest/userguide/monitoring-file-gateway.html#get-upload-notification).
-         * </p><p><h3>See Also:</h3>   <a
+         * more information, see <a
+         * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/monitoring-file-gateway.html#get-upload-notification">Getting
+         * file upload notification</a> in the <i>AWS Storage Gateway User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/NotifyWhenUploaded">AWS
          * API Reference</a></p>
          *
@@ -2927,10 +2942,10 @@ namespace Model
          * notification through an Amazon CloudWatch Event. You can configure CloudWatch
          * Events to send the notification through event targets such as Amazon SNS or AWS
          * Lambda function. This operation is only supported for file gateways.</p> <p>For
-         * more information, see Getting File Upload Notification in the Storage Gateway
-         * User Guide
-         * (https://docs.aws.amazon.com/storagegateway/latest/userguide/monitoring-file-gateway.html#get-upload-notification).
-         * </p><p><h3>See Also:</h3>   <a
+         * more information, see <a
+         * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/monitoring-file-gateway.html#get-upload-notification">Getting
+         * file upload notification</a> in the <i>AWS Storage Gateway User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/NotifyWhenUploaded">AWS
          * API Reference</a></p>
          *
@@ -2946,23 +2961,26 @@ namespace Model
          * through an Amazon CloudWatch event when your RefreshCache operation completes.
          * For more information, see <a
          * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/monitoring-file-gateway.html#get-notification">Getting
-         * Notified About File Operations</a>.</p> <p>When this API is called, it only
-         * initiates the refresh operation. When the API call completes and returns a
-         * success code, it doesn't necessarily mean that the file refresh has completed.
-         * You should use the refresh-complete notification to determine that the operation
-         * has completed before you check for new files on the gateway file share. You can
-         * subscribe to be notified through an CloudWatch event when your
-         * <code>RefreshCache</code> operation completes. </p> <p>Throttle limit: This API
-         * is asynchronous so the gateway will accept no more than two refreshes at any
-         * time. We recommend using the refresh-complete CloudWatch event notification
-         * before issuing additional requests. For more information, see <a
+         * notified about file operations</a> in the <i>AWS Storage Gateway User
+         * Guide</i>.</p> <p>When this API is called, it only initiates the refresh
+         * operation. When the API call completes and returns a success code, it doesn't
+         * necessarily mean that the file refresh has completed. You should use the
+         * refresh-complete notification to determine that the operation has completed
+         * before you check for new files on the gateway file share. You can subscribe to
+         * be notified through an CloudWatch event when your <code>RefreshCache</code>
+         * operation completes.</p> <p>Throttle limit: This API is asynchronous so the
+         * gateway will accept no more than two refreshes at any time. We recommend using
+         * the refresh-complete CloudWatch event notification before issuing additional
+         * requests. For more information, see <a
          * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/monitoring-file-gateway.html#get-notification">Getting
-         * Notified About File Operations</a>.</p> <p>If you invoke the RefreshCache API
-         * when two requests are already being processed, any new request will cause an
+         * notified about file operations</a> in the <i>AWS Storage Gateway User
+         * Guide</i>.</p> <p>If you invoke the RefreshCache API when two requests are
+         * already being processed, any new request will cause an
          * <code>InvalidGatewayRequestException</code> error because too many requests were
-         * sent to the server.</p> <p>For more information, see
-         * "https://docs.aws.amazon.com/storagegateway/latest/userguide/monitoring-file-gateway.html#get-notification".</p><p><h3>See
-         * Also:</h3>   <a
+         * sent to the server.</p> <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/monitoring-file-gateway.html#get-notification">Getting
+         * notified about file operations</a> in the <i>AWS Storage Gateway User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/RefreshCache">AWS
          * API Reference</a></p>
          */
@@ -2976,23 +2994,26 @@ namespace Model
          * through an Amazon CloudWatch event when your RefreshCache operation completes.
          * For more information, see <a
          * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/monitoring-file-gateway.html#get-notification">Getting
-         * Notified About File Operations</a>.</p> <p>When this API is called, it only
-         * initiates the refresh operation. When the API call completes and returns a
-         * success code, it doesn't necessarily mean that the file refresh has completed.
-         * You should use the refresh-complete notification to determine that the operation
-         * has completed before you check for new files on the gateway file share. You can
-         * subscribe to be notified through an CloudWatch event when your
-         * <code>RefreshCache</code> operation completes. </p> <p>Throttle limit: This API
-         * is asynchronous so the gateway will accept no more than two refreshes at any
-         * time. We recommend using the refresh-complete CloudWatch event notification
-         * before issuing additional requests. For more information, see <a
+         * notified about file operations</a> in the <i>AWS Storage Gateway User
+         * Guide</i>.</p> <p>When this API is called, it only initiates the refresh
+         * operation. When the API call completes and returns a success code, it doesn't
+         * necessarily mean that the file refresh has completed. You should use the
+         * refresh-complete notification to determine that the operation has completed
+         * before you check for new files on the gateway file share. You can subscribe to
+         * be notified through an CloudWatch event when your <code>RefreshCache</code>
+         * operation completes.</p> <p>Throttle limit: This API is asynchronous so the
+         * gateway will accept no more than two refreshes at any time. We recommend using
+         * the refresh-complete CloudWatch event notification before issuing additional
+         * requests. For more information, see <a
          * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/monitoring-file-gateway.html#get-notification">Getting
-         * Notified About File Operations</a>.</p> <p>If you invoke the RefreshCache API
-         * when two requests are already being processed, any new request will cause an
+         * notified about file operations</a> in the <i>AWS Storage Gateway User
+         * Guide</i>.</p> <p>If you invoke the RefreshCache API when two requests are
+         * already being processed, any new request will cause an
          * <code>InvalidGatewayRequestException</code> error because too many requests were
-         * sent to the server.</p> <p>For more information, see
-         * "https://docs.aws.amazon.com/storagegateway/latest/userguide/monitoring-file-gateway.html#get-notification".</p><p><h3>See
-         * Also:</h3>   <a
+         * sent to the server.</p> <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/monitoring-file-gateway.html#get-notification">Getting
+         * notified about file operations</a> in the <i>AWS Storage Gateway User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/RefreshCache">AWS
          * API Reference</a></p>
          *
@@ -3008,23 +3029,26 @@ namespace Model
          * through an Amazon CloudWatch event when your RefreshCache operation completes.
          * For more information, see <a
          * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/monitoring-file-gateway.html#get-notification">Getting
-         * Notified About File Operations</a>.</p> <p>When this API is called, it only
-         * initiates the refresh operation. When the API call completes and returns a
-         * success code, it doesn't necessarily mean that the file refresh has completed.
-         * You should use the refresh-complete notification to determine that the operation
-         * has completed before you check for new files on the gateway file share. You can
-         * subscribe to be notified through an CloudWatch event when your
-         * <code>RefreshCache</code> operation completes. </p> <p>Throttle limit: This API
-         * is asynchronous so the gateway will accept no more than two refreshes at any
-         * time. We recommend using the refresh-complete CloudWatch event notification
-         * before issuing additional requests. For more information, see <a
+         * notified about file operations</a> in the <i>AWS Storage Gateway User
+         * Guide</i>.</p> <p>When this API is called, it only initiates the refresh
+         * operation. When the API call completes and returns a success code, it doesn't
+         * necessarily mean that the file refresh has completed. You should use the
+         * refresh-complete notification to determine that the operation has completed
+         * before you check for new files on the gateway file share. You can subscribe to
+         * be notified through an CloudWatch event when your <code>RefreshCache</code>
+         * operation completes.</p> <p>Throttle limit: This API is asynchronous so the
+         * gateway will accept no more than two refreshes at any time. We recommend using
+         * the refresh-complete CloudWatch event notification before issuing additional
+         * requests. For more information, see <a
          * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/monitoring-file-gateway.html#get-notification">Getting
-         * Notified About File Operations</a>.</p> <p>If you invoke the RefreshCache API
-         * when two requests are already being processed, any new request will cause an
+         * notified about file operations</a> in the <i>AWS Storage Gateway User
+         * Guide</i>.</p> <p>If you invoke the RefreshCache API when two requests are
+         * already being processed, any new request will cause an
          * <code>InvalidGatewayRequestException</code> error because too many requests were
-         * sent to the server.</p> <p>For more information, see
-         * "https://docs.aws.amazon.com/storagegateway/latest/userguide/monitoring-file-gateway.html#get-notification".</p><p><h3>See
-         * Also:</h3>   <a
+         * sent to the server.</p> <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/monitoring-file-gateway.html#get-notification">Getting
+         * notified about file operations</a> in the <i>AWS Storage Gateway User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/RefreshCache">AWS
          * API Reference</a></p>
          *
@@ -3286,16 +3310,16 @@ namespace Model
          * the VM, it is recommended that you first shut down the gateway component in the
          * VM to avoid unpredictable conditions.</p> </note> <p>After the gateway is
          * shutdown, you cannot call any other API except <a>StartGateway</a>,
-         * <a>DescribeGatewayInformation</a> and <a>ListGateways</a>. For more information,
-         * see <a>ActivateGateway</a>. Your applications cannot read from or write to the
-         * gateway's storage volumes, and there are no snapshots taken.</p> <note> <p>When
-         * you make a shutdown request, you will get a <code>200 OK</code> success response
-         * immediately. However, it might take some time for the gateway to shut down. You
-         * can call the <a>DescribeGatewayInformation</a> API to check the status. For more
-         * information, see <a>ActivateGateway</a>.</p> </note> <p>If do not intend to use
-         * the gateway again, you must delete the gateway (using <a>DeleteGateway</a>) to
-         * no longer pay software charges associated with the gateway.</p><p><h3>See
-         * Also:</h3>   <a
+         * <a>DescribeGatewayInformation</a>, and <a>ListGateways</a>. For more
+         * information, see <a>ActivateGateway</a>. Your applications cannot read from or
+         * write to the gateway's storage volumes, and there are no snapshots taken.</p>
+         * <note> <p>When you make a shutdown request, you will get a <code>200 OK</code>
+         * success response immediately. However, it might take some time for the gateway
+         * to shut down. You can call the <a>DescribeGatewayInformation</a> API to check
+         * the status. For more information, see <a>ActivateGateway</a>.</p> </note> <p>If
+         * do not intend to use the gateway again, you must delete the gateway (using
+         * <a>DeleteGateway</a>) to no longer pay software charges associated with the
+         * gateway.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ShutdownGateway">AWS
          * API Reference</a></p>
          */
@@ -3309,16 +3333,16 @@ namespace Model
          * the VM, it is recommended that you first shut down the gateway component in the
          * VM to avoid unpredictable conditions.</p> </note> <p>After the gateway is
          * shutdown, you cannot call any other API except <a>StartGateway</a>,
-         * <a>DescribeGatewayInformation</a> and <a>ListGateways</a>. For more information,
-         * see <a>ActivateGateway</a>. Your applications cannot read from or write to the
-         * gateway's storage volumes, and there are no snapshots taken.</p> <note> <p>When
-         * you make a shutdown request, you will get a <code>200 OK</code> success response
-         * immediately. However, it might take some time for the gateway to shut down. You
-         * can call the <a>DescribeGatewayInformation</a> API to check the status. For more
-         * information, see <a>ActivateGateway</a>.</p> </note> <p>If do not intend to use
-         * the gateway again, you must delete the gateway (using <a>DeleteGateway</a>) to
-         * no longer pay software charges associated with the gateway.</p><p><h3>See
-         * Also:</h3>   <a
+         * <a>DescribeGatewayInformation</a>, and <a>ListGateways</a>. For more
+         * information, see <a>ActivateGateway</a>. Your applications cannot read from or
+         * write to the gateway's storage volumes, and there are no snapshots taken.</p>
+         * <note> <p>When you make a shutdown request, you will get a <code>200 OK</code>
+         * success response immediately. However, it might take some time for the gateway
+         * to shut down. You can call the <a>DescribeGatewayInformation</a> API to check
+         * the status. For more information, see <a>ActivateGateway</a>.</p> </note> <p>If
+         * do not intend to use the gateway again, you must delete the gateway (using
+         * <a>DeleteGateway</a>) to no longer pay software charges associated with the
+         * gateway.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ShutdownGateway">AWS
          * API Reference</a></p>
          *
@@ -3334,16 +3358,16 @@ namespace Model
          * the VM, it is recommended that you first shut down the gateway component in the
          * VM to avoid unpredictable conditions.</p> </note> <p>After the gateway is
          * shutdown, you cannot call any other API except <a>StartGateway</a>,
-         * <a>DescribeGatewayInformation</a> and <a>ListGateways</a>. For more information,
-         * see <a>ActivateGateway</a>. Your applications cannot read from or write to the
-         * gateway's storage volumes, and there are no snapshots taken.</p> <note> <p>When
-         * you make a shutdown request, you will get a <code>200 OK</code> success response
-         * immediately. However, it might take some time for the gateway to shut down. You
-         * can call the <a>DescribeGatewayInformation</a> API to check the status. For more
-         * information, see <a>ActivateGateway</a>.</p> </note> <p>If do not intend to use
-         * the gateway again, you must delete the gateway (using <a>DeleteGateway</a>) to
-         * no longer pay software charges associated with the gateway.</p><p><h3>See
-         * Also:</h3>   <a
+         * <a>DescribeGatewayInformation</a>, and <a>ListGateways</a>. For more
+         * information, see <a>ActivateGateway</a>. Your applications cannot read from or
+         * write to the gateway's storage volumes, and there are no snapshots taken.</p>
+         * <note> <p>When you make a shutdown request, you will get a <code>200 OK</code>
+         * success response immediately. However, it might take some time for the gateway
+         * to shut down. You can call the <a>DescribeGatewayInformation</a> API to check
+         * the status. For more information, see <a>ActivateGateway</a>.</p> </note> <p>If
+         * do not intend to use the gateway again, you must delete the gateway (using
+         * <a>DeleteGateway</a>) to no longer pay software charges associated with the
+         * gateway.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ShutdownGateway">AWS
          * API Reference</a></p>
          *
@@ -3356,7 +3380,7 @@ namespace Model
          * Availability monitoring in your host environment. This request only initiates
          * the test and that a successful response only indicates that the test was
          * started. It doesn't indicate that the test passed. For the status of the test,
-         * invoke the <code>DescribeAvailabilityMonitorTest</code> API. </p> <note>
+         * invoke the <code>DescribeAvailabilityMonitorTest</code> API.</p> <note>
          * <p>Starting this test will cause your gateway to go offline for a brief
          * period.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/StartAvailabilityMonitorTest">AWS
@@ -3369,7 +3393,7 @@ namespace Model
          * Availability monitoring in your host environment. This request only initiates
          * the test and that a successful response only indicates that the test was
          * started. It doesn't indicate that the test passed. For the status of the test,
-         * invoke the <code>DescribeAvailabilityMonitorTest</code> API. </p> <note>
+         * invoke the <code>DescribeAvailabilityMonitorTest</code> API.</p> <note>
          * <p>Starting this test will cause your gateway to go offline for a brief
          * period.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/StartAvailabilityMonitorTest">AWS
@@ -3384,7 +3408,7 @@ namespace Model
          * Availability monitoring in your host environment. This request only initiates
          * the test and that a successful response only indicates that the test was
          * started. It doesn't indicate that the test passed. For the status of the test,
-         * invoke the <code>DescribeAvailabilityMonitorTest</code> API. </p> <note>
+         * invoke the <code>DescribeAvailabilityMonitorTest</code> API.</p> <note>
          * <p>Starting this test will cause your gateway to go offline for a brief
          * period.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/StartAvailabilityMonitorTest">AWS
@@ -3487,8 +3511,8 @@ namespace Model
          * <p>Updates the bandwidth rate limits of a gateway. You can update both the
          * upload and download bandwidth rate limit or specify only one of the two. If you
          * don't set a bandwidth rate limit, the existing rate limit remains. This
-         * operation is supported for the stored volume, cached volume and tape gateway
-         * types.'</p> <p>By default, a gateway's bandwidth rate limits are not set. If you
+         * operation is supported for the stored volume, cached volume, and tape gateway
+         * types.</p> <p>By default, a gateway's bandwidth rate limits are not set. If you
          * don't set any limit, the gateway does not have any limitations on its bandwidth
          * usage and could potentially use the maximum available bandwidth.</p> <p>To
          * specify which gateway to update, use the Amazon Resource Name (ARN) of the
@@ -3502,8 +3526,8 @@ namespace Model
          * <p>Updates the bandwidth rate limits of a gateway. You can update both the
          * upload and download bandwidth rate limit or specify only one of the two. If you
          * don't set a bandwidth rate limit, the existing rate limit remains. This
-         * operation is supported for the stored volume, cached volume and tape gateway
-         * types.'</p> <p>By default, a gateway's bandwidth rate limits are not set. If you
+         * operation is supported for the stored volume, cached volume, and tape gateway
+         * types.</p> <p>By default, a gateway's bandwidth rate limits are not set. If you
          * don't set any limit, the gateway does not have any limitations on its bandwidth
          * usage and could potentially use the maximum available bandwidth.</p> <p>To
          * specify which gateway to update, use the Amazon Resource Name (ARN) of the
@@ -3519,8 +3543,8 @@ namespace Model
          * <p>Updates the bandwidth rate limits of a gateway. You can update both the
          * upload and download bandwidth rate limit or specify only one of the two. If you
          * don't set a bandwidth rate limit, the existing rate limit remains. This
-         * operation is supported for the stored volume, cached volume and tape gateway
-         * types.'</p> <p>By default, a gateway's bandwidth rate limits are not set. If you
+         * operation is supported for the stored volume, cached volume, and tape gateway
+         * types.</p> <p>By default, a gateway's bandwidth rate limits are not set. If you
          * don't set any limit, the gateway does not have any limitations on its bandwidth
          * usage and could potentially use the maximum available bandwidth.</p> <p>To
          * specify which gateway to update, use the Amazon Resource Name (ARN) of the
@@ -3626,9 +3650,9 @@ namespace Model
          * your iSCSI Initiators' timeouts. For more information about increasing iSCSI
          * Initiator timeouts for Windows and Linux, see <a
          * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/ConfiguringiSCSIClientInitiatorWindowsClient.html#CustomizeWindowsiSCSISettings">Customizing
-         * Your Windows iSCSI Settings</a> and <a
+         * your Windows iSCSI settings</a> and <a
          * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/ConfiguringiSCSIClientInitiatorRedHatClient.html#CustomizeLinuxiSCSISettings">Customizing
-         * Your Linux iSCSI Settings</a>, respectively.</p> </important><p><h3>See
+         * your Linux iSCSI settings</a>, respectively.</p> </important><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateGatewaySoftwareNow">AWS
          * API Reference</a></p>
@@ -3646,9 +3670,9 @@ namespace Model
          * your iSCSI Initiators' timeouts. For more information about increasing iSCSI
          * Initiator timeouts for Windows and Linux, see <a
          * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/ConfiguringiSCSIClientInitiatorWindowsClient.html#CustomizeWindowsiSCSISettings">Customizing
-         * Your Windows iSCSI Settings</a> and <a
+         * your Windows iSCSI settings</a> and <a
          * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/ConfiguringiSCSIClientInitiatorRedHatClient.html#CustomizeLinuxiSCSISettings">Customizing
-         * Your Linux iSCSI Settings</a>, respectively.</p> </important><p><h3>See
+         * your Linux iSCSI settings</a>, respectively.</p> </important><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateGatewaySoftwareNow">AWS
          * API Reference</a></p>
@@ -3668,9 +3692,9 @@ namespace Model
          * your iSCSI Initiators' timeouts. For more information about increasing iSCSI
          * Initiator timeouts for Windows and Linux, see <a
          * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/ConfiguringiSCSIClientInitiatorWindowsClient.html#CustomizeWindowsiSCSISettings">Customizing
-         * Your Windows iSCSI Settings</a> and <a
+         * your Windows iSCSI settings</a> and <a
          * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/ConfiguringiSCSIClientInitiatorRedHatClient.html#CustomizeLinuxiSCSISettings">Customizing
-         * Your Linux iSCSI Settings</a>, respectively.</p> </important><p><h3>See
+         * your Linux iSCSI settings</a>, respectively.</p> </important><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateGatewaySoftwareNow">AWS
          * API Reference</a></p>
@@ -3772,8 +3796,8 @@ namespace Model
          * this AWS Region, activate it. For information about how to activate AWS STS, see
          * <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
-         * and Deactivating AWS STS in an AWS Region</a> in the <i>AWS Identity and Access
-         * Management User Guide.</i> </p> <p>File gateways don't support creating hard or
+         * and deactivating AWS STS in an AWS Region</a> in the <i>AWS Identity and Access
+         * Management User Guide</i>.</p> <p>File gateways don't support creating hard or
          * symbolic links on a file share.</p> </important><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateSMBFileShare">AWS
          * API Reference</a></p>
@@ -3790,8 +3814,8 @@ namespace Model
          * this AWS Region, activate it. For information about how to activate AWS STS, see
          * <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
-         * and Deactivating AWS STS in an AWS Region</a> in the <i>AWS Identity and Access
-         * Management User Guide.</i> </p> <p>File gateways don't support creating hard or
+         * and deactivating AWS STS in an AWS Region</a> in the <i>AWS Identity and Access
+         * Management User Guide</i>.</p> <p>File gateways don't support creating hard or
          * symbolic links on a file share.</p> </important><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateSMBFileShare">AWS
          * API Reference</a></p>
@@ -3810,8 +3834,8 @@ namespace Model
          * this AWS Region, activate it. For information about how to activate AWS STS, see
          * <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
-         * and Deactivating AWS STS in an AWS Region</a> in the <i>AWS Identity and Access
-         * Management User Guide.</i> </p> <p>File gateways don't support creating hard or
+         * and deactivating AWS STS in an AWS Region</a> in the <i>AWS Identity and Access
+         * Management User Guide</i>.</p> <p>File gateways don't support creating hard or
          * symbolic links on a file share.</p> </important><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateSMBFileShare">AWS
          * API Reference</a></p>

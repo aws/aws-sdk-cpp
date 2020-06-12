@@ -99,334 +99,382 @@ namespace Model
 
 
     /**
-     * <p>True to use Amazon S3 server-side encryption with your own AWS KMS key, or
-     * false to use a key managed by Amazon S3. Optional.</p>
+     * <p>Set to <code>true</code> to use Amazon S3 server-side encryption with your
+     * own AWS KMS key, or <code>false</code> to use a key managed by Amazon S3.
+     * Optional.</p> <p>Valid Values: <code>true</code> | <code>false</code> </p>
      */
     inline bool GetKMSEncrypted() const{ return m_kMSEncrypted; }
 
     /**
-     * <p>True to use Amazon S3 server-side encryption with your own AWS KMS key, or
-     * false to use a key managed by Amazon S3. Optional.</p>
+     * <p>Set to <code>true</code> to use Amazon S3 server-side encryption with your
+     * own AWS KMS key, or <code>false</code> to use a key managed by Amazon S3.
+     * Optional.</p> <p>Valid Values: <code>true</code> | <code>false</code> </p>
      */
     inline bool KMSEncryptedHasBeenSet() const { return m_kMSEncryptedHasBeenSet; }
 
     /**
-     * <p>True to use Amazon S3 server-side encryption with your own AWS KMS key, or
-     * false to use a key managed by Amazon S3. Optional.</p>
+     * <p>Set to <code>true</code> to use Amazon S3 server-side encryption with your
+     * own AWS KMS key, or <code>false</code> to use a key managed by Amazon S3.
+     * Optional.</p> <p>Valid Values: <code>true</code> | <code>false</code> </p>
      */
     inline void SetKMSEncrypted(bool value) { m_kMSEncryptedHasBeenSet = true; m_kMSEncrypted = value; }
 
     /**
-     * <p>True to use Amazon S3 server-side encryption with your own AWS KMS key, or
-     * false to use a key managed by Amazon S3. Optional.</p>
+     * <p>Set to <code>true</code> to use Amazon S3 server-side encryption with your
+     * own AWS KMS key, or <code>false</code> to use a key managed by Amazon S3.
+     * Optional.</p> <p>Valid Values: <code>true</code> | <code>false</code> </p>
      */
     inline UpdateSMBFileShareRequest& WithKMSEncrypted(bool value) { SetKMSEncrypted(value); return *this;}
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS KMS key used for Amazon S3
-     * server-side encryption. This value can only be set when KMSEncrypted is true.
-     * Optional.</p>
+     * <p>The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used
+     * for Amazon S3 server-side encryption. Storage Gateway does not support
+     * asymmetric CMKs. This value can only be set when <code>KMSEncrypted</code> is
+     * <code>true</code>. Optional.</p>
      */
     inline const Aws::String& GetKMSKey() const{ return m_kMSKey; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS KMS key used for Amazon S3
-     * server-side encryption. This value can only be set when KMSEncrypted is true.
-     * Optional.</p>
+     * <p>The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used
+     * for Amazon S3 server-side encryption. Storage Gateway does not support
+     * asymmetric CMKs. This value can only be set when <code>KMSEncrypted</code> is
+     * <code>true</code>. Optional.</p>
      */
     inline bool KMSKeyHasBeenSet() const { return m_kMSKeyHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS KMS key used for Amazon S3
-     * server-side encryption. This value can only be set when KMSEncrypted is true.
-     * Optional.</p>
+     * <p>The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used
+     * for Amazon S3 server-side encryption. Storage Gateway does not support
+     * asymmetric CMKs. This value can only be set when <code>KMSEncrypted</code> is
+     * <code>true</code>. Optional.</p>
      */
     inline void SetKMSKey(const Aws::String& value) { m_kMSKeyHasBeenSet = true; m_kMSKey = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS KMS key used for Amazon S3
-     * server-side encryption. This value can only be set when KMSEncrypted is true.
-     * Optional.</p>
+     * <p>The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used
+     * for Amazon S3 server-side encryption. Storage Gateway does not support
+     * asymmetric CMKs. This value can only be set when <code>KMSEncrypted</code> is
+     * <code>true</code>. Optional.</p>
      */
     inline void SetKMSKey(Aws::String&& value) { m_kMSKeyHasBeenSet = true; m_kMSKey = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS KMS key used for Amazon S3
-     * server-side encryption. This value can only be set when KMSEncrypted is true.
-     * Optional.</p>
+     * <p>The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used
+     * for Amazon S3 server-side encryption. Storage Gateway does not support
+     * asymmetric CMKs. This value can only be set when <code>KMSEncrypted</code> is
+     * <code>true</code>. Optional.</p>
      */
     inline void SetKMSKey(const char* value) { m_kMSKeyHasBeenSet = true; m_kMSKey.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS KMS key used for Amazon S3
-     * server-side encryption. This value can only be set when KMSEncrypted is true.
-     * Optional.</p>
+     * <p>The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used
+     * for Amazon S3 server-side encryption. Storage Gateway does not support
+     * asymmetric CMKs. This value can only be set when <code>KMSEncrypted</code> is
+     * <code>true</code>. Optional.</p>
      */
     inline UpdateSMBFileShareRequest& WithKMSKey(const Aws::String& value) { SetKMSKey(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS KMS key used for Amazon S3
-     * server-side encryption. This value can only be set when KMSEncrypted is true.
-     * Optional.</p>
+     * <p>The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used
+     * for Amazon S3 server-side encryption. Storage Gateway does not support
+     * asymmetric CMKs. This value can only be set when <code>KMSEncrypted</code> is
+     * <code>true</code>. Optional.</p>
      */
     inline UpdateSMBFileShareRequest& WithKMSKey(Aws::String&& value) { SetKMSKey(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS KMS key used for Amazon S3
-     * server-side encryption. This value can only be set when KMSEncrypted is true.
-     * Optional.</p>
+     * <p>The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used
+     * for Amazon S3 server-side encryption. Storage Gateway does not support
+     * asymmetric CMKs. This value can only be set when <code>KMSEncrypted</code> is
+     * <code>true</code>. Optional.</p>
      */
     inline UpdateSMBFileShareRequest& WithKMSKey(const char* value) { SetKMSKey(value); return *this;}
 
 
     /**
      * <p>The default storage class for objects put into an Amazon S3 bucket by the
-     * file gateway. Possible values are <code>S3_STANDARD</code>,
-     * <code>S3_STANDARD_IA</code>, or <code>S3_ONEZONE_IA</code>. If this field is not
-     * populated, the default value <code>S3_STANDARD</code> is used. Optional.</p>
+     * file gateway. The default value is <code>S3_INTELLIGENT_TIERING</code>.
+     * Optional.</p> <p>Valid Values: <code>S3_STANDARD</code> |
+     * <code>S3_INTELLIGENT_TIERING</code> | <code>S3_STANDARD_IA</code> |
+     * <code>S3_ONEZONE_IA</code> </p>
      */
     inline const Aws::String& GetDefaultStorageClass() const{ return m_defaultStorageClass; }
 
     /**
      * <p>The default storage class for objects put into an Amazon S3 bucket by the
-     * file gateway. Possible values are <code>S3_STANDARD</code>,
-     * <code>S3_STANDARD_IA</code>, or <code>S3_ONEZONE_IA</code>. If this field is not
-     * populated, the default value <code>S3_STANDARD</code> is used. Optional.</p>
+     * file gateway. The default value is <code>S3_INTELLIGENT_TIERING</code>.
+     * Optional.</p> <p>Valid Values: <code>S3_STANDARD</code> |
+     * <code>S3_INTELLIGENT_TIERING</code> | <code>S3_STANDARD_IA</code> |
+     * <code>S3_ONEZONE_IA</code> </p>
      */
     inline bool DefaultStorageClassHasBeenSet() const { return m_defaultStorageClassHasBeenSet; }
 
     /**
      * <p>The default storage class for objects put into an Amazon S3 bucket by the
-     * file gateway. Possible values are <code>S3_STANDARD</code>,
-     * <code>S3_STANDARD_IA</code>, or <code>S3_ONEZONE_IA</code>. If this field is not
-     * populated, the default value <code>S3_STANDARD</code> is used. Optional.</p>
+     * file gateway. The default value is <code>S3_INTELLIGENT_TIERING</code>.
+     * Optional.</p> <p>Valid Values: <code>S3_STANDARD</code> |
+     * <code>S3_INTELLIGENT_TIERING</code> | <code>S3_STANDARD_IA</code> |
+     * <code>S3_ONEZONE_IA</code> </p>
      */
     inline void SetDefaultStorageClass(const Aws::String& value) { m_defaultStorageClassHasBeenSet = true; m_defaultStorageClass = value; }
 
     /**
      * <p>The default storage class for objects put into an Amazon S3 bucket by the
-     * file gateway. Possible values are <code>S3_STANDARD</code>,
-     * <code>S3_STANDARD_IA</code>, or <code>S3_ONEZONE_IA</code>. If this field is not
-     * populated, the default value <code>S3_STANDARD</code> is used. Optional.</p>
+     * file gateway. The default value is <code>S3_INTELLIGENT_TIERING</code>.
+     * Optional.</p> <p>Valid Values: <code>S3_STANDARD</code> |
+     * <code>S3_INTELLIGENT_TIERING</code> | <code>S3_STANDARD_IA</code> |
+     * <code>S3_ONEZONE_IA</code> </p>
      */
     inline void SetDefaultStorageClass(Aws::String&& value) { m_defaultStorageClassHasBeenSet = true; m_defaultStorageClass = std::move(value); }
 
     /**
      * <p>The default storage class for objects put into an Amazon S3 bucket by the
-     * file gateway. Possible values are <code>S3_STANDARD</code>,
-     * <code>S3_STANDARD_IA</code>, or <code>S3_ONEZONE_IA</code>. If this field is not
-     * populated, the default value <code>S3_STANDARD</code> is used. Optional.</p>
+     * file gateway. The default value is <code>S3_INTELLIGENT_TIERING</code>.
+     * Optional.</p> <p>Valid Values: <code>S3_STANDARD</code> |
+     * <code>S3_INTELLIGENT_TIERING</code> | <code>S3_STANDARD_IA</code> |
+     * <code>S3_ONEZONE_IA</code> </p>
      */
     inline void SetDefaultStorageClass(const char* value) { m_defaultStorageClassHasBeenSet = true; m_defaultStorageClass.assign(value); }
 
     /**
      * <p>The default storage class for objects put into an Amazon S3 bucket by the
-     * file gateway. Possible values are <code>S3_STANDARD</code>,
-     * <code>S3_STANDARD_IA</code>, or <code>S3_ONEZONE_IA</code>. If this field is not
-     * populated, the default value <code>S3_STANDARD</code> is used. Optional.</p>
+     * file gateway. The default value is <code>S3_INTELLIGENT_TIERING</code>.
+     * Optional.</p> <p>Valid Values: <code>S3_STANDARD</code> |
+     * <code>S3_INTELLIGENT_TIERING</code> | <code>S3_STANDARD_IA</code> |
+     * <code>S3_ONEZONE_IA</code> </p>
      */
     inline UpdateSMBFileShareRequest& WithDefaultStorageClass(const Aws::String& value) { SetDefaultStorageClass(value); return *this;}
 
     /**
      * <p>The default storage class for objects put into an Amazon S3 bucket by the
-     * file gateway. Possible values are <code>S3_STANDARD</code>,
-     * <code>S3_STANDARD_IA</code>, or <code>S3_ONEZONE_IA</code>. If this field is not
-     * populated, the default value <code>S3_STANDARD</code> is used. Optional.</p>
+     * file gateway. The default value is <code>S3_INTELLIGENT_TIERING</code>.
+     * Optional.</p> <p>Valid Values: <code>S3_STANDARD</code> |
+     * <code>S3_INTELLIGENT_TIERING</code> | <code>S3_STANDARD_IA</code> |
+     * <code>S3_ONEZONE_IA</code> </p>
      */
     inline UpdateSMBFileShareRequest& WithDefaultStorageClass(Aws::String&& value) { SetDefaultStorageClass(std::move(value)); return *this;}
 
     /**
      * <p>The default storage class for objects put into an Amazon S3 bucket by the
-     * file gateway. Possible values are <code>S3_STANDARD</code>,
-     * <code>S3_STANDARD_IA</code>, or <code>S3_ONEZONE_IA</code>. If this field is not
-     * populated, the default value <code>S3_STANDARD</code> is used. Optional.</p>
+     * file gateway. The default value is <code>S3_INTELLIGENT_TIERING</code>.
+     * Optional.</p> <p>Valid Values: <code>S3_STANDARD</code> |
+     * <code>S3_INTELLIGENT_TIERING</code> | <code>S3_STANDARD_IA</code> |
+     * <code>S3_ONEZONE_IA</code> </p>
      */
     inline UpdateSMBFileShareRequest& WithDefaultStorageClass(const char* value) { SetDefaultStorageClass(value); return *this;}
 
 
     /**
-     * <p>A value that sets the access control list permission for objects in the S3
-     * bucket that a file gateway puts objects into. The default value is
-     * "private".</p>
+     * <p>A value that sets the access control list (ACL) permission for objects in the
+     * S3 bucket that a file gateway puts objects into. The default value is
+     * <code>private</code>.</p>
      */
     inline const ObjectACL& GetObjectACL() const{ return m_objectACL; }
 
     /**
-     * <p>A value that sets the access control list permission for objects in the S3
-     * bucket that a file gateway puts objects into. The default value is
-     * "private".</p>
+     * <p>A value that sets the access control list (ACL) permission for objects in the
+     * S3 bucket that a file gateway puts objects into. The default value is
+     * <code>private</code>.</p>
      */
     inline bool ObjectACLHasBeenSet() const { return m_objectACLHasBeenSet; }
 
     /**
-     * <p>A value that sets the access control list permission for objects in the S3
-     * bucket that a file gateway puts objects into. The default value is
-     * "private".</p>
+     * <p>A value that sets the access control list (ACL) permission for objects in the
+     * S3 bucket that a file gateway puts objects into. The default value is
+     * <code>private</code>.</p>
      */
     inline void SetObjectACL(const ObjectACL& value) { m_objectACLHasBeenSet = true; m_objectACL = value; }
 
     /**
-     * <p>A value that sets the access control list permission for objects in the S3
-     * bucket that a file gateway puts objects into. The default value is
-     * "private".</p>
+     * <p>A value that sets the access control list (ACL) permission for objects in the
+     * S3 bucket that a file gateway puts objects into. The default value is
+     * <code>private</code>.</p>
      */
     inline void SetObjectACL(ObjectACL&& value) { m_objectACLHasBeenSet = true; m_objectACL = std::move(value); }
 
     /**
-     * <p>A value that sets the access control list permission for objects in the S3
-     * bucket that a file gateway puts objects into. The default value is
-     * "private".</p>
+     * <p>A value that sets the access control list (ACL) permission for objects in the
+     * S3 bucket that a file gateway puts objects into. The default value is
+     * <code>private</code>.</p>
      */
     inline UpdateSMBFileShareRequest& WithObjectACL(const ObjectACL& value) { SetObjectACL(value); return *this;}
 
     /**
-     * <p>A value that sets the access control list permission for objects in the S3
-     * bucket that a file gateway puts objects into. The default value is
-     * "private".</p>
+     * <p>A value that sets the access control list (ACL) permission for objects in the
+     * S3 bucket that a file gateway puts objects into. The default value is
+     * <code>private</code>.</p>
      */
     inline UpdateSMBFileShareRequest& WithObjectACL(ObjectACL&& value) { SetObjectACL(std::move(value)); return *this;}
 
 
     /**
-     * <p>A value that sets the write status of a file share. This value is true if the
-     * write status is read-only, and otherwise false.</p>
+     * <p>A value that sets the write status of a file share. Set this value to
+     * <code>true</code> to set write status to read-only, otherwise set to
+     * <code>false</code>.</p> <p>Valid Values: <code>true</code> | <code>false</code>
+     * </p>
      */
     inline bool GetReadOnly() const{ return m_readOnly; }
 
     /**
-     * <p>A value that sets the write status of a file share. This value is true if the
-     * write status is read-only, and otherwise false.</p>
+     * <p>A value that sets the write status of a file share. Set this value to
+     * <code>true</code> to set write status to read-only, otherwise set to
+     * <code>false</code>.</p> <p>Valid Values: <code>true</code> | <code>false</code>
+     * </p>
      */
     inline bool ReadOnlyHasBeenSet() const { return m_readOnlyHasBeenSet; }
 
     /**
-     * <p>A value that sets the write status of a file share. This value is true if the
-     * write status is read-only, and otherwise false.</p>
+     * <p>A value that sets the write status of a file share. Set this value to
+     * <code>true</code> to set write status to read-only, otherwise set to
+     * <code>false</code>.</p> <p>Valid Values: <code>true</code> | <code>false</code>
+     * </p>
      */
     inline void SetReadOnly(bool value) { m_readOnlyHasBeenSet = true; m_readOnly = value; }
 
     /**
-     * <p>A value that sets the write status of a file share. This value is true if the
-     * write status is read-only, and otherwise false.</p>
+     * <p>A value that sets the write status of a file share. Set this value to
+     * <code>true</code> to set write status to read-only, otherwise set to
+     * <code>false</code>.</p> <p>Valid Values: <code>true</code> | <code>false</code>
+     * </p>
      */
     inline UpdateSMBFileShareRequest& WithReadOnly(bool value) { SetReadOnly(value); return *this;}
 
 
     /**
      * <p>A value that enables guessing of the MIME type for uploaded objects based on
-     * file extensions. Set this value to true to enable MIME type guessing, and
-     * otherwise to false. The default value is true.</p>
+     * file extensions. Set this value to <code>true</code> to enable MIME type
+     * guessing, otherwise set to <code>false</code>. The default value is
+     * <code>true</code>.</p> <p>Valid Values: <code>true</code> | <code>false</code>
+     * </p>
      */
     inline bool GetGuessMIMETypeEnabled() const{ return m_guessMIMETypeEnabled; }
 
     /**
      * <p>A value that enables guessing of the MIME type for uploaded objects based on
-     * file extensions. Set this value to true to enable MIME type guessing, and
-     * otherwise to false. The default value is true.</p>
+     * file extensions. Set this value to <code>true</code> to enable MIME type
+     * guessing, otherwise set to <code>false</code>. The default value is
+     * <code>true</code>.</p> <p>Valid Values: <code>true</code> | <code>false</code>
+     * </p>
      */
     inline bool GuessMIMETypeEnabledHasBeenSet() const { return m_guessMIMETypeEnabledHasBeenSet; }
 
     /**
      * <p>A value that enables guessing of the MIME type for uploaded objects based on
-     * file extensions. Set this value to true to enable MIME type guessing, and
-     * otherwise to false. The default value is true.</p>
+     * file extensions. Set this value to <code>true</code> to enable MIME type
+     * guessing, otherwise set to <code>false</code>. The default value is
+     * <code>true</code>.</p> <p>Valid Values: <code>true</code> | <code>false</code>
+     * </p>
      */
     inline void SetGuessMIMETypeEnabled(bool value) { m_guessMIMETypeEnabledHasBeenSet = true; m_guessMIMETypeEnabled = value; }
 
     /**
      * <p>A value that enables guessing of the MIME type for uploaded objects based on
-     * file extensions. Set this value to true to enable MIME type guessing, and
-     * otherwise to false. The default value is true.</p>
+     * file extensions. Set this value to <code>true</code> to enable MIME type
+     * guessing, otherwise set to <code>false</code>. The default value is
+     * <code>true</code>.</p> <p>Valid Values: <code>true</code> | <code>false</code>
+     * </p>
      */
     inline UpdateSMBFileShareRequest& WithGuessMIMETypeEnabled(bool value) { SetGuessMIMETypeEnabled(value); return *this;}
 
 
     /**
      * <p>A value that sets who pays the cost of the request and the cost associated
-     * with data download from the S3 bucket. If this value is set to true, the
-     * requester pays the costs. Otherwise the S3 bucket owner pays. However, the S3
-     * bucket owner always pays the cost of storing data.</p> <note> <p>
-     * <code>RequesterPays</code> is a configuration for the S3 bucket that backs the
-     * file share, so make sure that the configuration on the file share is the same as
-     * the S3 bucket configuration.</p> </note>
+     * with data download from the S3 bucket. If this value is set to
+     * <code>true</code>, the requester pays the costs; otherwise, the S3 bucket owner
+     * pays. However, the S3 bucket owner always pays the cost of storing data.</p>
+     * <note> <p> <code>RequesterPays</code> is a configuration for the S3 bucket that
+     * backs the file share, so make sure that the configuration on the file share is
+     * the same as the S3 bucket configuration.</p> </note> <p>Valid Values:
+     * <code>true</code> | <code>false</code> </p>
      */
     inline bool GetRequesterPays() const{ return m_requesterPays; }
 
     /**
      * <p>A value that sets who pays the cost of the request and the cost associated
-     * with data download from the S3 bucket. If this value is set to true, the
-     * requester pays the costs. Otherwise the S3 bucket owner pays. However, the S3
-     * bucket owner always pays the cost of storing data.</p> <note> <p>
-     * <code>RequesterPays</code> is a configuration for the S3 bucket that backs the
-     * file share, so make sure that the configuration on the file share is the same as
-     * the S3 bucket configuration.</p> </note>
+     * with data download from the S3 bucket. If this value is set to
+     * <code>true</code>, the requester pays the costs; otherwise, the S3 bucket owner
+     * pays. However, the S3 bucket owner always pays the cost of storing data.</p>
+     * <note> <p> <code>RequesterPays</code> is a configuration for the S3 bucket that
+     * backs the file share, so make sure that the configuration on the file share is
+     * the same as the S3 bucket configuration.</p> </note> <p>Valid Values:
+     * <code>true</code> | <code>false</code> </p>
      */
     inline bool RequesterPaysHasBeenSet() const { return m_requesterPaysHasBeenSet; }
 
     /**
      * <p>A value that sets who pays the cost of the request and the cost associated
-     * with data download from the S3 bucket. If this value is set to true, the
-     * requester pays the costs. Otherwise the S3 bucket owner pays. However, the S3
-     * bucket owner always pays the cost of storing data.</p> <note> <p>
-     * <code>RequesterPays</code> is a configuration for the S3 bucket that backs the
-     * file share, so make sure that the configuration on the file share is the same as
-     * the S3 bucket configuration.</p> </note>
+     * with data download from the S3 bucket. If this value is set to
+     * <code>true</code>, the requester pays the costs; otherwise, the S3 bucket owner
+     * pays. However, the S3 bucket owner always pays the cost of storing data.</p>
+     * <note> <p> <code>RequesterPays</code> is a configuration for the S3 bucket that
+     * backs the file share, so make sure that the configuration on the file share is
+     * the same as the S3 bucket configuration.</p> </note> <p>Valid Values:
+     * <code>true</code> | <code>false</code> </p>
      */
     inline void SetRequesterPays(bool value) { m_requesterPaysHasBeenSet = true; m_requesterPays = value; }
 
     /**
      * <p>A value that sets who pays the cost of the request and the cost associated
-     * with data download from the S3 bucket. If this value is set to true, the
-     * requester pays the costs. Otherwise the S3 bucket owner pays. However, the S3
-     * bucket owner always pays the cost of storing data.</p> <note> <p>
-     * <code>RequesterPays</code> is a configuration for the S3 bucket that backs the
-     * file share, so make sure that the configuration on the file share is the same as
-     * the S3 bucket configuration.</p> </note>
+     * with data download from the S3 bucket. If this value is set to
+     * <code>true</code>, the requester pays the costs; otherwise, the S3 bucket owner
+     * pays. However, the S3 bucket owner always pays the cost of storing data.</p>
+     * <note> <p> <code>RequesterPays</code> is a configuration for the S3 bucket that
+     * backs the file share, so make sure that the configuration on the file share is
+     * the same as the S3 bucket configuration.</p> </note> <p>Valid Values:
+     * <code>true</code> | <code>false</code> </p>
      */
     inline UpdateSMBFileShareRequest& WithRequesterPays(bool value) { SetRequesterPays(value); return *this;}
 
 
     /**
-     * <p>Set this value to "true to enable ACL (access control list) on the SMB file
-     * share. Set it to "false" to map file and directory permissions to the POSIX
-     * permissions.</p> <p>For more information, see
-     * https://docs.aws.amazon.com/storagegateway/latest/userguide/smb-acl.htmlin the
-     * Storage Gateway User Guide.</p>
+     * <p>Set this value to <code>true</code> to enable access control list (ACL) on
+     * the SMB file share. Set it to <code>false</code> to map file and directory
+     * permissions to the POSIX permissions.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/smb-acl.html">Using
+     * Microsoft Windows ACLs to control access to an SMB file share</a> in the <i>AWS
+     * Storage Gateway User Guide</i>.</p> <p>Valid Values: <code>true</code> |
+     * <code>false</code> </p>
      */
     inline bool GetSMBACLEnabled() const{ return m_sMBACLEnabled; }
 
     /**
-     * <p>Set this value to "true to enable ACL (access control list) on the SMB file
-     * share. Set it to "false" to map file and directory permissions to the POSIX
-     * permissions.</p> <p>For more information, see
-     * https://docs.aws.amazon.com/storagegateway/latest/userguide/smb-acl.htmlin the
-     * Storage Gateway User Guide.</p>
+     * <p>Set this value to <code>true</code> to enable access control list (ACL) on
+     * the SMB file share. Set it to <code>false</code> to map file and directory
+     * permissions to the POSIX permissions.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/smb-acl.html">Using
+     * Microsoft Windows ACLs to control access to an SMB file share</a> in the <i>AWS
+     * Storage Gateway User Guide</i>.</p> <p>Valid Values: <code>true</code> |
+     * <code>false</code> </p>
      */
     inline bool SMBACLEnabledHasBeenSet() const { return m_sMBACLEnabledHasBeenSet; }
 
     /**
-     * <p>Set this value to "true to enable ACL (access control list) on the SMB file
-     * share. Set it to "false" to map file and directory permissions to the POSIX
-     * permissions.</p> <p>For more information, see
-     * https://docs.aws.amazon.com/storagegateway/latest/userguide/smb-acl.htmlin the
-     * Storage Gateway User Guide.</p>
+     * <p>Set this value to <code>true</code> to enable access control list (ACL) on
+     * the SMB file share. Set it to <code>false</code> to map file and directory
+     * permissions to the POSIX permissions.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/smb-acl.html">Using
+     * Microsoft Windows ACLs to control access to an SMB file share</a> in the <i>AWS
+     * Storage Gateway User Guide</i>.</p> <p>Valid Values: <code>true</code> |
+     * <code>false</code> </p>
      */
     inline void SetSMBACLEnabled(bool value) { m_sMBACLEnabledHasBeenSet = true; m_sMBACLEnabled = value; }
 
     /**
-     * <p>Set this value to "true to enable ACL (access control list) on the SMB file
-     * share. Set it to "false" to map file and directory permissions to the POSIX
-     * permissions.</p> <p>For more information, see
-     * https://docs.aws.amazon.com/storagegateway/latest/userguide/smb-acl.htmlin the
-     * Storage Gateway User Guide.</p>
+     * <p>Set this value to <code>true</code> to enable access control list (ACL) on
+     * the SMB file share. Set it to <code>false</code> to map file and directory
+     * permissions to the POSIX permissions.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/smb-acl.html">Using
+     * Microsoft Windows ACLs to control access to an SMB file share</a> in the <i>AWS
+     * Storage Gateway User Guide</i>.</p> <p>Valid Values: <code>true</code> |
+     * <code>false</code> </p>
      */
     inline UpdateSMBFileShareRequest& WithSMBACLEnabled(bool value) { SetSMBACLEnabled(value); return *this;}
 
 
     /**
      * <p>A list of users in the Active Directory that have administrator rights to the
-     * file share. A group must be prefixed with the @ character. For example
+     * file share. A group must be prefixed with the @ character. For example,
      * <code>@group1</code>. Can only be set if Authentication is set to
      * <code>ActiveDirectory</code>.</p>
      */
@@ -434,7 +482,7 @@ namespace Model
 
     /**
      * <p>A list of users in the Active Directory that have administrator rights to the
-     * file share. A group must be prefixed with the @ character. For example
+     * file share. A group must be prefixed with the @ character. For example,
      * <code>@group1</code>. Can only be set if Authentication is set to
      * <code>ActiveDirectory</code>.</p>
      */
@@ -442,7 +490,7 @@ namespace Model
 
     /**
      * <p>A list of users in the Active Directory that have administrator rights to the
-     * file share. A group must be prefixed with the @ character. For example
+     * file share. A group must be prefixed with the @ character. For example,
      * <code>@group1</code>. Can only be set if Authentication is set to
      * <code>ActiveDirectory</code>.</p>
      */
@@ -450,7 +498,7 @@ namespace Model
 
     /**
      * <p>A list of users in the Active Directory that have administrator rights to the
-     * file share. A group must be prefixed with the @ character. For example
+     * file share. A group must be prefixed with the @ character. For example,
      * <code>@group1</code>. Can only be set if Authentication is set to
      * <code>ActiveDirectory</code>.</p>
      */
@@ -458,7 +506,7 @@ namespace Model
 
     /**
      * <p>A list of users in the Active Directory that have administrator rights to the
-     * file share. A group must be prefixed with the @ character. For example
+     * file share. A group must be prefixed with the @ character. For example,
      * <code>@group1</code>. Can only be set if Authentication is set to
      * <code>ActiveDirectory</code>.</p>
      */
@@ -466,7 +514,7 @@ namespace Model
 
     /**
      * <p>A list of users in the Active Directory that have administrator rights to the
-     * file share. A group must be prefixed with the @ character. For example
+     * file share. A group must be prefixed with the @ character. For example,
      * <code>@group1</code>. Can only be set if Authentication is set to
      * <code>ActiveDirectory</code>.</p>
      */
@@ -474,7 +522,7 @@ namespace Model
 
     /**
      * <p>A list of users in the Active Directory that have administrator rights to the
-     * file share. A group must be prefixed with the @ character. For example
+     * file share. A group must be prefixed with the @ character. For example,
      * <code>@group1</code>. Can only be set if Authentication is set to
      * <code>ActiveDirectory</code>.</p>
      */
@@ -482,7 +530,7 @@ namespace Model
 
     /**
      * <p>A list of users in the Active Directory that have administrator rights to the
-     * file share. A group must be prefixed with the @ character. For example
+     * file share. A group must be prefixed with the @ character. For example,
      * <code>@group1</code>. Can only be set if Authentication is set to
      * <code>ActiveDirectory</code>.</p>
      */
@@ -490,7 +538,7 @@ namespace Model
 
     /**
      * <p>A list of users in the Active Directory that have administrator rights to the
-     * file share. A group must be prefixed with the @ character. For example
+     * file share. A group must be prefixed with the @ character. For example,
      * <code>@group1</code>. Can only be set if Authentication is set to
      * <code>ActiveDirectory</code>.</p>
      */
@@ -499,7 +547,7 @@ namespace Model
 
     /**
      * <p>A list of users or groups in the Active Directory that are allowed to access
-     * the file share. A group must be prefixed with the @ character. For example
+     * the file share. A group must be prefixed with the @ character. For example,
      * <code>@group1</code>. Can only be set if Authentication is set to
      * <code>ActiveDirectory</code>.</p>
      */
@@ -507,7 +555,7 @@ namespace Model
 
     /**
      * <p>A list of users or groups in the Active Directory that are allowed to access
-     * the file share. A group must be prefixed with the @ character. For example
+     * the file share. A group must be prefixed with the @ character. For example,
      * <code>@group1</code>. Can only be set if Authentication is set to
      * <code>ActiveDirectory</code>.</p>
      */
@@ -515,7 +563,7 @@ namespace Model
 
     /**
      * <p>A list of users or groups in the Active Directory that are allowed to access
-     * the file share. A group must be prefixed with the @ character. For example
+     * the file share. A group must be prefixed with the @ character. For example,
      * <code>@group1</code>. Can only be set if Authentication is set to
      * <code>ActiveDirectory</code>.</p>
      */
@@ -523,7 +571,7 @@ namespace Model
 
     /**
      * <p>A list of users or groups in the Active Directory that are allowed to access
-     * the file share. A group must be prefixed with the @ character. For example
+     * the file share. A group must be prefixed with the @ character. For example,
      * <code>@group1</code>. Can only be set if Authentication is set to
      * <code>ActiveDirectory</code>.</p>
      */
@@ -531,7 +579,7 @@ namespace Model
 
     /**
      * <p>A list of users or groups in the Active Directory that are allowed to access
-     * the file share. A group must be prefixed with the @ character. For example
+     * the file share. A group must be prefixed with the @ character. For example,
      * <code>@group1</code>. Can only be set if Authentication is set to
      * <code>ActiveDirectory</code>.</p>
      */
@@ -539,7 +587,7 @@ namespace Model
 
     /**
      * <p>A list of users or groups in the Active Directory that are allowed to access
-     * the file share. A group must be prefixed with the @ character. For example
+     * the file share. A group must be prefixed with the @ character. For example,
      * <code>@group1</code>. Can only be set if Authentication is set to
      * <code>ActiveDirectory</code>.</p>
      */
@@ -547,7 +595,7 @@ namespace Model
 
     /**
      * <p>A list of users or groups in the Active Directory that are allowed to access
-     * the file share. A group must be prefixed with the @ character. For example
+     * the file share. A group must be prefixed with the @ character. For example,
      * <code>@group1</code>. Can only be set if Authentication is set to
      * <code>ActiveDirectory</code>.</p>
      */
@@ -555,7 +603,7 @@ namespace Model
 
     /**
      * <p>A list of users or groups in the Active Directory that are allowed to access
-     * the file share. A group must be prefixed with the @ character. For example
+     * the file share. A group must be prefixed with the @ character. For example,
      * <code>@group1</code>. Can only be set if Authentication is set to
      * <code>ActiveDirectory</code>.</p>
      */
@@ -563,7 +611,7 @@ namespace Model
 
     /**
      * <p>A list of users or groups in the Active Directory that are allowed to access
-     * the file share. A group must be prefixed with the @ character. For example
+     * the file share. A group must be prefixed with the @ character. For example,
      * <code>@group1</code>. Can only be set if Authentication is set to
      * <code>ActiveDirectory</code>.</p>
      */

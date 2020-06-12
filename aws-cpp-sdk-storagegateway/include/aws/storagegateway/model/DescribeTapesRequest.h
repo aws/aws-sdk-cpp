@@ -148,56 +148,56 @@ namespace Model
 
     /**
      * <p>A marker value, obtained in a previous call to <code>DescribeTapes</code>.
-     * This marker indicates which page of results to retrieve. </p> <p>If not
+     * This marker indicates which page of results to retrieve.</p> <p>If not
      * specified, the first page of results is retrieved.</p>
      */
     inline const Aws::String& GetMarker() const{ return m_marker; }
 
     /**
      * <p>A marker value, obtained in a previous call to <code>DescribeTapes</code>.
-     * This marker indicates which page of results to retrieve. </p> <p>If not
+     * This marker indicates which page of results to retrieve.</p> <p>If not
      * specified, the first page of results is retrieved.</p>
      */
     inline bool MarkerHasBeenSet() const { return m_markerHasBeenSet; }
 
     /**
      * <p>A marker value, obtained in a previous call to <code>DescribeTapes</code>.
-     * This marker indicates which page of results to retrieve. </p> <p>If not
+     * This marker indicates which page of results to retrieve.</p> <p>If not
      * specified, the first page of results is retrieved.</p>
      */
     inline void SetMarker(const Aws::String& value) { m_markerHasBeenSet = true; m_marker = value; }
 
     /**
      * <p>A marker value, obtained in a previous call to <code>DescribeTapes</code>.
-     * This marker indicates which page of results to retrieve. </p> <p>If not
+     * This marker indicates which page of results to retrieve.</p> <p>If not
      * specified, the first page of results is retrieved.</p>
      */
     inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = std::move(value); }
 
     /**
      * <p>A marker value, obtained in a previous call to <code>DescribeTapes</code>.
-     * This marker indicates which page of results to retrieve. </p> <p>If not
+     * This marker indicates which page of results to retrieve.</p> <p>If not
      * specified, the first page of results is retrieved.</p>
      */
     inline void SetMarker(const char* value) { m_markerHasBeenSet = true; m_marker.assign(value); }
 
     /**
      * <p>A marker value, obtained in a previous call to <code>DescribeTapes</code>.
-     * This marker indicates which page of results to retrieve. </p> <p>If not
+     * This marker indicates which page of results to retrieve.</p> <p>If not
      * specified, the first page of results is retrieved.</p>
      */
     inline DescribeTapesRequest& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
 
     /**
      * <p>A marker value, obtained in a previous call to <code>DescribeTapes</code>.
-     * This marker indicates which page of results to retrieve. </p> <p>If not
+     * This marker indicates which page of results to retrieve.</p> <p>If not
      * specified, the first page of results is retrieved.</p>
      */
     inline DescribeTapesRequest& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
 
     /**
      * <p>A marker value, obtained in a previous call to <code>DescribeTapes</code>.
-     * This marker indicates which page of results to retrieve. </p> <p>If not
+     * This marker indicates which page of results to retrieve.</p> <p>If not
      * specified, the first page of results is retrieved.</p>
      */
     inline DescribeTapesRequest& WithMarker(const char* value) { SetMarker(value); return *this;}

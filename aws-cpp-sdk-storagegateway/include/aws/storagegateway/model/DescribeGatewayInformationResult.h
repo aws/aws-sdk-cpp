@@ -541,43 +541,43 @@ namespace Model
 
     /**
      * <p>The configuration settings for the virtual private cloud (VPC) endpoint for
-     * your gateway. </p>
+     * your gateway.</p>
      */
     inline const Aws::String& GetVPCEndpoint() const{ return m_vPCEndpoint; }
 
     /**
      * <p>The configuration settings for the virtual private cloud (VPC) endpoint for
-     * your gateway. </p>
+     * your gateway.</p>
      */
     inline void SetVPCEndpoint(const Aws::String& value) { m_vPCEndpoint = value; }
 
     /**
      * <p>The configuration settings for the virtual private cloud (VPC) endpoint for
-     * your gateway. </p>
+     * your gateway.</p>
      */
     inline void SetVPCEndpoint(Aws::String&& value) { m_vPCEndpoint = std::move(value); }
 
     /**
      * <p>The configuration settings for the virtual private cloud (VPC) endpoint for
-     * your gateway. </p>
+     * your gateway.</p>
      */
     inline void SetVPCEndpoint(const char* value) { m_vPCEndpoint.assign(value); }
 
     /**
      * <p>The configuration settings for the virtual private cloud (VPC) endpoint for
-     * your gateway. </p>
+     * your gateway.</p>
      */
     inline DescribeGatewayInformationResult& WithVPCEndpoint(const Aws::String& value) { SetVPCEndpoint(value); return *this;}
 
     /**
      * <p>The configuration settings for the virtual private cloud (VPC) endpoint for
-     * your gateway. </p>
+     * your gateway.</p>
      */
     inline DescribeGatewayInformationResult& WithVPCEndpoint(Aws::String&& value) { SetVPCEndpoint(std::move(value)); return *this;}
 
     /**
      * <p>The configuration settings for the virtual private cloud (VPC) endpoint for
-     * your gateway. </p>
+     * your gateway.</p>
      */
     inline DescribeGatewayInformationResult& WithVPCEndpoint(const char* value) { SetVPCEndpoint(value); return *this;}
 
@@ -650,6 +650,49 @@ namespace Model
      */
     inline DescribeGatewayInformationResult& WithHostEnvironment(HostEnvironment&& value) { SetHostEnvironment(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The type of endpoint for your gateway.</p> <p>Valid Values:
+     * <code>STANDARD</code> | <code>FIPS</code> </p>
+     */
+    inline const Aws::String& GetEndpointType() const{ return m_endpointType; }
+
+    /**
+     * <p>The type of endpoint for your gateway.</p> <p>Valid Values:
+     * <code>STANDARD</code> | <code>FIPS</code> </p>
+     */
+    inline void SetEndpointType(const Aws::String& value) { m_endpointType = value; }
+
+    /**
+     * <p>The type of endpoint for your gateway.</p> <p>Valid Values:
+     * <code>STANDARD</code> | <code>FIPS</code> </p>
+     */
+    inline void SetEndpointType(Aws::String&& value) { m_endpointType = std::move(value); }
+
+    /**
+     * <p>The type of endpoint for your gateway.</p> <p>Valid Values:
+     * <code>STANDARD</code> | <code>FIPS</code> </p>
+     */
+    inline void SetEndpointType(const char* value) { m_endpointType.assign(value); }
+
+    /**
+     * <p>The type of endpoint for your gateway.</p> <p>Valid Values:
+     * <code>STANDARD</code> | <code>FIPS</code> </p>
+     */
+    inline DescribeGatewayInformationResult& WithEndpointType(const Aws::String& value) { SetEndpointType(value); return *this;}
+
+    /**
+     * <p>The type of endpoint for your gateway.</p> <p>Valid Values:
+     * <code>STANDARD</code> | <code>FIPS</code> </p>
+     */
+    inline DescribeGatewayInformationResult& WithEndpointType(Aws::String&& value) { SetEndpointType(std::move(value)); return *this;}
+
+    /**
+     * <p>The type of endpoint for your gateway.</p> <p>Valid Values:
+     * <code>STANDARD</code> | <code>FIPS</code> </p>
+     */
+    inline DescribeGatewayInformationResult& WithEndpointType(const char* value) { SetEndpointType(value); return *this;}
+
   private:
 
     Aws::String m_gatewayARN;
@@ -681,6 +724,8 @@ namespace Model
     Aws::String m_cloudWatchLogGroupARN;
 
     HostEnvironment m_hostEnvironment;
+
+    Aws::String m_endpointType;
   };
 
 } // namespace Model

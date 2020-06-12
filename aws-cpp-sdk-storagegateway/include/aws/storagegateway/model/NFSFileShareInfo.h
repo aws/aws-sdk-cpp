@@ -173,26 +173,30 @@ namespace Model
 
 
     /**
-     * <p>True to use Amazon S3 server-side encryption with your own AWS KMS key, or
-     * false to use a key managed by Amazon S3. Optional. </p>
+     * <p>Set to <code>true</code> to use Amazon S3 server-side encryption with your
+     * own AWS KMS key, or <code>false</code> to use a key managed by Amazon S3.
+     * Optional.</p> <p>Valid Values: <code>true</code> | <code>false</code> </p>
      */
     inline bool GetKMSEncrypted() const{ return m_kMSEncrypted; }
 
     /**
-     * <p>True to use Amazon S3 server-side encryption with your own AWS KMS key, or
-     * false to use a key managed by Amazon S3. Optional. </p>
+     * <p>Set to <code>true</code> to use Amazon S3 server-side encryption with your
+     * own AWS KMS key, or <code>false</code> to use a key managed by Amazon S3.
+     * Optional.</p> <p>Valid Values: <code>true</code> | <code>false</code> </p>
      */
     inline bool KMSEncryptedHasBeenSet() const { return m_kMSEncryptedHasBeenSet; }
 
     /**
-     * <p>True to use Amazon S3 server-side encryption with your own AWS KMS key, or
-     * false to use a key managed by Amazon S3. Optional. </p>
+     * <p>Set to <code>true</code> to use Amazon S3 server-side encryption with your
+     * own AWS KMS key, or <code>false</code> to use a key managed by Amazon S3.
+     * Optional.</p> <p>Valid Values: <code>true</code> | <code>false</code> </p>
      */
     inline void SetKMSEncrypted(bool value) { m_kMSEncryptedHasBeenSet = true; m_kMSEncrypted = value; }
 
     /**
-     * <p>True to use Amazon S3 server-side encryption with your own AWS KMS key, or
-     * false to use a key managed by Amazon S3. Optional. </p>
+     * <p>Set to <code>true</code> to use Amazon S3 server-side encryption with your
+     * own AWS KMS key, or <code>false</code> to use a key managed by Amazon S3.
+     * Optional.</p> <p>Valid Values: <code>true</code> | <code>false</code> </p>
      */
     inline NFSFileShareInfo& WithKMSEncrypted(bool value) { SetKMSEncrypted(value); return *this;}
 
@@ -299,65 +303,73 @@ namespace Model
 
     /**
      * <p>The default storage class for objects put into an Amazon S3 bucket by the
-     * file gateway. Possible values are <code>S3_STANDARD</code>,
-     * <code>S3_STANDARD_IA</code>, or <code>S3_ONEZONE_IA</code>. If this field is not
-     * populated, the default value <code>S3_STANDARD</code> is used. Optional.</p>
+     * file gateway. The default value is <code>S3_INTELLIGENT_TIERING</code>.
+     * Optional.</p> <p>Valid Values: <code>S3_STANDARD</code> |
+     * <code>S3_INTELLIGENT_TIERING</code> | <code>S3_STANDARD_IA</code> |
+     * <code>S3_ONEZONE_IA</code> </p>
      */
     inline const Aws::String& GetDefaultStorageClass() const{ return m_defaultStorageClass; }
 
     /**
      * <p>The default storage class for objects put into an Amazon S3 bucket by the
-     * file gateway. Possible values are <code>S3_STANDARD</code>,
-     * <code>S3_STANDARD_IA</code>, or <code>S3_ONEZONE_IA</code>. If this field is not
-     * populated, the default value <code>S3_STANDARD</code> is used. Optional.</p>
+     * file gateway. The default value is <code>S3_INTELLIGENT_TIERING</code>.
+     * Optional.</p> <p>Valid Values: <code>S3_STANDARD</code> |
+     * <code>S3_INTELLIGENT_TIERING</code> | <code>S3_STANDARD_IA</code> |
+     * <code>S3_ONEZONE_IA</code> </p>
      */
     inline bool DefaultStorageClassHasBeenSet() const { return m_defaultStorageClassHasBeenSet; }
 
     /**
      * <p>The default storage class for objects put into an Amazon S3 bucket by the
-     * file gateway. Possible values are <code>S3_STANDARD</code>,
-     * <code>S3_STANDARD_IA</code>, or <code>S3_ONEZONE_IA</code>. If this field is not
-     * populated, the default value <code>S3_STANDARD</code> is used. Optional.</p>
+     * file gateway. The default value is <code>S3_INTELLIGENT_TIERING</code>.
+     * Optional.</p> <p>Valid Values: <code>S3_STANDARD</code> |
+     * <code>S3_INTELLIGENT_TIERING</code> | <code>S3_STANDARD_IA</code> |
+     * <code>S3_ONEZONE_IA</code> </p>
      */
     inline void SetDefaultStorageClass(const Aws::String& value) { m_defaultStorageClassHasBeenSet = true; m_defaultStorageClass = value; }
 
     /**
      * <p>The default storage class for objects put into an Amazon S3 bucket by the
-     * file gateway. Possible values are <code>S3_STANDARD</code>,
-     * <code>S3_STANDARD_IA</code>, or <code>S3_ONEZONE_IA</code>. If this field is not
-     * populated, the default value <code>S3_STANDARD</code> is used. Optional.</p>
+     * file gateway. The default value is <code>S3_INTELLIGENT_TIERING</code>.
+     * Optional.</p> <p>Valid Values: <code>S3_STANDARD</code> |
+     * <code>S3_INTELLIGENT_TIERING</code> | <code>S3_STANDARD_IA</code> |
+     * <code>S3_ONEZONE_IA</code> </p>
      */
     inline void SetDefaultStorageClass(Aws::String&& value) { m_defaultStorageClassHasBeenSet = true; m_defaultStorageClass = std::move(value); }
 
     /**
      * <p>The default storage class for objects put into an Amazon S3 bucket by the
-     * file gateway. Possible values are <code>S3_STANDARD</code>,
-     * <code>S3_STANDARD_IA</code>, or <code>S3_ONEZONE_IA</code>. If this field is not
-     * populated, the default value <code>S3_STANDARD</code> is used. Optional.</p>
+     * file gateway. The default value is <code>S3_INTELLIGENT_TIERING</code>.
+     * Optional.</p> <p>Valid Values: <code>S3_STANDARD</code> |
+     * <code>S3_INTELLIGENT_TIERING</code> | <code>S3_STANDARD_IA</code> |
+     * <code>S3_ONEZONE_IA</code> </p>
      */
     inline void SetDefaultStorageClass(const char* value) { m_defaultStorageClassHasBeenSet = true; m_defaultStorageClass.assign(value); }
 
     /**
      * <p>The default storage class for objects put into an Amazon S3 bucket by the
-     * file gateway. Possible values are <code>S3_STANDARD</code>,
-     * <code>S3_STANDARD_IA</code>, or <code>S3_ONEZONE_IA</code>. If this field is not
-     * populated, the default value <code>S3_STANDARD</code> is used. Optional.</p>
+     * file gateway. The default value is <code>S3_INTELLIGENT_TIERING</code>.
+     * Optional.</p> <p>Valid Values: <code>S3_STANDARD</code> |
+     * <code>S3_INTELLIGENT_TIERING</code> | <code>S3_STANDARD_IA</code> |
+     * <code>S3_ONEZONE_IA</code> </p>
      */
     inline NFSFileShareInfo& WithDefaultStorageClass(const Aws::String& value) { SetDefaultStorageClass(value); return *this;}
 
     /**
      * <p>The default storage class for objects put into an Amazon S3 bucket by the
-     * file gateway. Possible values are <code>S3_STANDARD</code>,
-     * <code>S3_STANDARD_IA</code>, or <code>S3_ONEZONE_IA</code>. If this field is not
-     * populated, the default value <code>S3_STANDARD</code> is used. Optional.</p>
+     * file gateway. The default value is <code>S3_INTELLIGENT_TIERING</code>.
+     * Optional.</p> <p>Valid Values: <code>S3_STANDARD</code> |
+     * <code>S3_INTELLIGENT_TIERING</code> | <code>S3_STANDARD_IA</code> |
+     * <code>S3_ONEZONE_IA</code> </p>
      */
     inline NFSFileShareInfo& WithDefaultStorageClass(Aws::String&& value) { SetDefaultStorageClass(std::move(value)); return *this;}
 
     /**
      * <p>The default storage class for objects put into an Amazon S3 bucket by the
-     * file gateway. Possible values are <code>S3_STANDARD</code>,
-     * <code>S3_STANDARD_IA</code>, or <code>S3_ONEZONE_IA</code>. If this field is not
-     * populated, the default value <code>S3_STANDARD</code> is used. Optional.</p>
+     * file gateway. The default value is <code>S3_INTELLIGENT_TIERING</code>.
+     * Optional.</p> <p>Valid Values: <code>S3_STANDARD</code> |
+     * <code>S3_INTELLIGENT_TIERING</code> | <code>S3_STANDARD_IA</code> |
+     * <code>S3_ONEZONE_IA</code> </p>
      */
     inline NFSFileShareInfo& WithDefaultStorageClass(const char* value) { SetDefaultStorageClass(value); return *this;}
 
@@ -435,100 +447,120 @@ namespace Model
 
 
     /**
-     * <p>A value that sets the write status of a file share. This value is true if the
-     * write status is read-only, and otherwise false.</p>
+     * <p>A value that sets the write status of a file share. Set this value to
+     * <code>true</code> to set the write status to read-only, otherwise set to
+     * <code>false</code>.</p> <p>Valid Values: <code>true</code> | <code>false</code>
+     * </p>
      */
     inline bool GetReadOnly() const{ return m_readOnly; }
 
     /**
-     * <p>A value that sets the write status of a file share. This value is true if the
-     * write status is read-only, and otherwise false.</p>
+     * <p>A value that sets the write status of a file share. Set this value to
+     * <code>true</code> to set the write status to read-only, otherwise set to
+     * <code>false</code>.</p> <p>Valid Values: <code>true</code> | <code>false</code>
+     * </p>
      */
     inline bool ReadOnlyHasBeenSet() const { return m_readOnlyHasBeenSet; }
 
     /**
-     * <p>A value that sets the write status of a file share. This value is true if the
-     * write status is read-only, and otherwise false.</p>
+     * <p>A value that sets the write status of a file share. Set this value to
+     * <code>true</code> to set the write status to read-only, otherwise set to
+     * <code>false</code>.</p> <p>Valid Values: <code>true</code> | <code>false</code>
+     * </p>
      */
     inline void SetReadOnly(bool value) { m_readOnlyHasBeenSet = true; m_readOnly = value; }
 
     /**
-     * <p>A value that sets the write status of a file share. This value is true if the
-     * write status is read-only, and otherwise false.</p>
+     * <p>A value that sets the write status of a file share. Set this value to
+     * <code>true</code> to set the write status to read-only, otherwise set to
+     * <code>false</code>.</p> <p>Valid Values: <code>true</code> | <code>false</code>
+     * </p>
      */
     inline NFSFileShareInfo& WithReadOnly(bool value) { SetReadOnly(value); return *this;}
 
 
     /**
      * <p>A value that enables guessing of the MIME type for uploaded objects based on
-     * file extensions. Set this value to true to enable MIME type guessing, and
-     * otherwise to false. The default value is true.</p>
+     * file extensions. Set this value to <code>true</code> to enable MIME type
+     * guessing, otherwise set to <code>false</code>. The default value is
+     * <code>true</code>.</p> <p>Valid Values: <code>true</code> | <code>false</code>
+     * </p>
      */
     inline bool GetGuessMIMETypeEnabled() const{ return m_guessMIMETypeEnabled; }
 
     /**
      * <p>A value that enables guessing of the MIME type for uploaded objects based on
-     * file extensions. Set this value to true to enable MIME type guessing, and
-     * otherwise to false. The default value is true.</p>
+     * file extensions. Set this value to <code>true</code> to enable MIME type
+     * guessing, otherwise set to <code>false</code>. The default value is
+     * <code>true</code>.</p> <p>Valid Values: <code>true</code> | <code>false</code>
+     * </p>
      */
     inline bool GuessMIMETypeEnabledHasBeenSet() const { return m_guessMIMETypeEnabledHasBeenSet; }
 
     /**
      * <p>A value that enables guessing of the MIME type for uploaded objects based on
-     * file extensions. Set this value to true to enable MIME type guessing, and
-     * otherwise to false. The default value is true.</p>
+     * file extensions. Set this value to <code>true</code> to enable MIME type
+     * guessing, otherwise set to <code>false</code>. The default value is
+     * <code>true</code>.</p> <p>Valid Values: <code>true</code> | <code>false</code>
+     * </p>
      */
     inline void SetGuessMIMETypeEnabled(bool value) { m_guessMIMETypeEnabledHasBeenSet = true; m_guessMIMETypeEnabled = value; }
 
     /**
      * <p>A value that enables guessing of the MIME type for uploaded objects based on
-     * file extensions. Set this value to true to enable MIME type guessing, and
-     * otherwise to false. The default value is true.</p>
+     * file extensions. Set this value to <code>true</code> to enable MIME type
+     * guessing, otherwise set to <code>false</code>. The default value is
+     * <code>true</code>.</p> <p>Valid Values: <code>true</code> | <code>false</code>
+     * </p>
      */
     inline NFSFileShareInfo& WithGuessMIMETypeEnabled(bool value) { SetGuessMIMETypeEnabled(value); return *this;}
 
 
     /**
      * <p>A value that sets who pays the cost of the request and the cost associated
-     * with data download from the S3 bucket. If this value is set to true, the
-     * requester pays the costs. Otherwise the S3 bucket owner pays. However, the S3
-     * bucket owner always pays the cost of storing data.</p> <note> <p>
-     * <code>RequesterPays</code> is a configuration for the S3 bucket that backs the
-     * file share, so make sure that the configuration on the file share is the same as
-     * the S3 bucket configuration.</p> </note>
+     * with data download from the S3 bucket. If this value is set to
+     * <code>true</code>, the requester pays the costs; otherwise, the S3 bucket owner
+     * pays. However, the S3 bucket owner always pays the cost of storing data.</p>
+     * <note> <p> <code>RequesterPays</code> is a configuration for the S3 bucket that
+     * backs the file share, so make sure that the configuration on the file share is
+     * the same as the S3 bucket configuration.</p> </note> <p>Valid Values:
+     * <code>true</code> | <code>false</code> </p>
      */
     inline bool GetRequesterPays() const{ return m_requesterPays; }
 
     /**
      * <p>A value that sets who pays the cost of the request and the cost associated
-     * with data download from the S3 bucket. If this value is set to true, the
-     * requester pays the costs. Otherwise the S3 bucket owner pays. However, the S3
-     * bucket owner always pays the cost of storing data.</p> <note> <p>
-     * <code>RequesterPays</code> is a configuration for the S3 bucket that backs the
-     * file share, so make sure that the configuration on the file share is the same as
-     * the S3 bucket configuration.</p> </note>
+     * with data download from the S3 bucket. If this value is set to
+     * <code>true</code>, the requester pays the costs; otherwise, the S3 bucket owner
+     * pays. However, the S3 bucket owner always pays the cost of storing data.</p>
+     * <note> <p> <code>RequesterPays</code> is a configuration for the S3 bucket that
+     * backs the file share, so make sure that the configuration on the file share is
+     * the same as the S3 bucket configuration.</p> </note> <p>Valid Values:
+     * <code>true</code> | <code>false</code> </p>
      */
     inline bool RequesterPaysHasBeenSet() const { return m_requesterPaysHasBeenSet; }
 
     /**
      * <p>A value that sets who pays the cost of the request and the cost associated
-     * with data download from the S3 bucket. If this value is set to true, the
-     * requester pays the costs. Otherwise the S3 bucket owner pays. However, the S3
-     * bucket owner always pays the cost of storing data.</p> <note> <p>
-     * <code>RequesterPays</code> is a configuration for the S3 bucket that backs the
-     * file share, so make sure that the configuration on the file share is the same as
-     * the S3 bucket configuration.</p> </note>
+     * with data download from the S3 bucket. If this value is set to
+     * <code>true</code>, the requester pays the costs; otherwise, the S3 bucket owner
+     * pays. However, the S3 bucket owner always pays the cost of storing data.</p>
+     * <note> <p> <code>RequesterPays</code> is a configuration for the S3 bucket that
+     * backs the file share, so make sure that the configuration on the file share is
+     * the same as the S3 bucket configuration.</p> </note> <p>Valid Values:
+     * <code>true</code> | <code>false</code> </p>
      */
     inline void SetRequesterPays(bool value) { m_requesterPaysHasBeenSet = true; m_requesterPays = value; }
 
     /**
      * <p>A value that sets who pays the cost of the request and the cost associated
-     * with data download from the S3 bucket. If this value is set to true, the
-     * requester pays the costs. Otherwise the S3 bucket owner pays. However, the S3
-     * bucket owner always pays the cost of storing data.</p> <note> <p>
-     * <code>RequesterPays</code> is a configuration for the S3 bucket that backs the
-     * file share, so make sure that the configuration on the file share is the same as
-     * the S3 bucket configuration.</p> </note>
+     * with data download from the S3 bucket. If this value is set to
+     * <code>true</code>, the requester pays the costs; otherwise, the S3 bucket owner
+     * pays. However, the S3 bucket owner always pays the cost of storing data.</p>
+     * <note> <p> <code>RequesterPays</code> is a configuration for the S3 bucket that
+     * backs the file share, so make sure that the configuration on the file share is
+     * the same as the S3 bucket configuration.</p> </note> <p>Valid Values:
+     * <code>true</code> | <code>false</code> </p>
      */
     inline NFSFileShareInfo& WithRequesterPays(bool value) { SetRequesterPays(value); return *this;}
 

@@ -53,7 +53,7 @@ namespace Model
      * <p>An array of virtual tape objects in the virtual tape shelf (VTS). The
      * description includes of the Amazon Resource Name (ARN) of the virtual tapes. The
      * information returned includes the Amazon Resource Names (ARNs) of the tapes,
-     * size of the tapes, status of the tapes, progress of the description and tape
+     * size of the tapes, status of the tapes, progress of the description, and tape
      * barcode.</p>
      */
     inline const Aws::Vector<TapeArchive>& GetTapeArchives() const{ return m_tapeArchives; }
@@ -62,7 +62,7 @@ namespace Model
      * <p>An array of virtual tape objects in the virtual tape shelf (VTS). The
      * description includes of the Amazon Resource Name (ARN) of the virtual tapes. The
      * information returned includes the Amazon Resource Names (ARNs) of the tapes,
-     * size of the tapes, status of the tapes, progress of the description and tape
+     * size of the tapes, status of the tapes, progress of the description, and tape
      * barcode.</p>
      */
     inline void SetTapeArchives(const Aws::Vector<TapeArchive>& value) { m_tapeArchives = value; }
@@ -71,7 +71,7 @@ namespace Model
      * <p>An array of virtual tape objects in the virtual tape shelf (VTS). The
      * description includes of the Amazon Resource Name (ARN) of the virtual tapes. The
      * information returned includes the Amazon Resource Names (ARNs) of the tapes,
-     * size of the tapes, status of the tapes, progress of the description and tape
+     * size of the tapes, status of the tapes, progress of the description, and tape
      * barcode.</p>
      */
     inline void SetTapeArchives(Aws::Vector<TapeArchive>&& value) { m_tapeArchives = std::move(value); }
@@ -80,7 +80,7 @@ namespace Model
      * <p>An array of virtual tape objects in the virtual tape shelf (VTS). The
      * description includes of the Amazon Resource Name (ARN) of the virtual tapes. The
      * information returned includes the Amazon Resource Names (ARNs) of the tapes,
-     * size of the tapes, status of the tapes, progress of the description and tape
+     * size of the tapes, status of the tapes, progress of the description, and tape
      * barcode.</p>
      */
     inline DescribeTapeArchivesResult& WithTapeArchives(const Aws::Vector<TapeArchive>& value) { SetTapeArchives(value); return *this;}
@@ -89,7 +89,7 @@ namespace Model
      * <p>An array of virtual tape objects in the virtual tape shelf (VTS). The
      * description includes of the Amazon Resource Name (ARN) of the virtual tapes. The
      * information returned includes the Amazon Resource Names (ARNs) of the tapes,
-     * size of the tapes, status of the tapes, progress of the description and tape
+     * size of the tapes, status of the tapes, progress of the description, and tape
      * barcode.</p>
      */
     inline DescribeTapeArchivesResult& WithTapeArchives(Aws::Vector<TapeArchive>&& value) { SetTapeArchives(std::move(value)); return *this;}
@@ -98,7 +98,7 @@ namespace Model
      * <p>An array of virtual tape objects in the virtual tape shelf (VTS). The
      * description includes of the Amazon Resource Name (ARN) of the virtual tapes. The
      * information returned includes the Amazon Resource Names (ARNs) of the tapes,
-     * size of the tapes, status of the tapes, progress of the description and tape
+     * size of the tapes, status of the tapes, progress of the description, and tape
      * barcode.</p>
      */
     inline DescribeTapeArchivesResult& AddTapeArchives(const TapeArchive& value) { m_tapeArchives.push_back(value); return *this; }
@@ -107,7 +107,7 @@ namespace Model
      * <p>An array of virtual tape objects in the virtual tape shelf (VTS). The
      * description includes of the Amazon Resource Name (ARN) of the virtual tapes. The
      * information returned includes the Amazon Resource Names (ARNs) of the tapes,
-     * size of the tapes, status of the tapes, progress of the description and tape
+     * size of the tapes, status of the tapes, progress of the description, and tape
      * barcode.</p>
      */
     inline DescribeTapeArchivesResult& AddTapeArchives(TapeArchive&& value) { m_tapeArchives.push_back(std::move(value)); return *this; }

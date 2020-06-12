@@ -29,12 +29,20 @@ namespace Model
 {
 
 DynamoDBTarget::DynamoDBTarget() : 
-    m_pathHasBeenSet(false)
+    m_pathHasBeenSet(false),
+    m_scanAll(false),
+    m_scanAllHasBeenSet(false),
+    m_scanRate(0.0),
+    m_scanRateHasBeenSet(false)
 {
 }
 
 DynamoDBTarget::DynamoDBTarget(JsonView jsonValue) : 
-    m_pathHasBeenSet(false)
+    m_pathHasBeenSet(false),
+    m_scanAll(false),
+    m_scanAllHasBeenSet(false),
+    m_scanRate(0.0),
+    m_scanRateHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -48,6 +56,20 @@ DynamoDBTarget& DynamoDBTarget::operator =(JsonView jsonValue)
     m_pathHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("scanAll"))
+  {
+    m_scanAll = jsonValue.GetBool("scanAll");
+
+    m_scanAllHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("scanRate"))
+  {
+    m_scanRate = jsonValue.GetDouble("scanRate");
+
+    m_scanRateHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -58,6 +80,18 @@ JsonValue DynamoDBTarget::Jsonize() const
   if(m_pathHasBeenSet)
   {
    payload.WithString("Path", m_path);
+
+  }
+
+  if(m_scanAllHasBeenSet)
+  {
+   payload.WithBool("scanAll", m_scanAll);
+
+  }
+
+  if(m_scanRateHasBeenSet)
+  {
+   payload.WithDouble("scanRate", m_scanRate);
 
   }
 

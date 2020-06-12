@@ -49,37 +49,37 @@ namespace Model
 
 
     /**
-     * <p>An array containing a description for each requested file share. </p>
+     * <p>An array containing a description for each requested file share.</p>
      */
     inline const Aws::Vector<NFSFileShareInfo>& GetNFSFileShareInfoList() const{ return m_nFSFileShareInfoList; }
 
     /**
-     * <p>An array containing a description for each requested file share. </p>
+     * <p>An array containing a description for each requested file share.</p>
      */
     inline void SetNFSFileShareInfoList(const Aws::Vector<NFSFileShareInfo>& value) { m_nFSFileShareInfoList = value; }
 
     /**
-     * <p>An array containing a description for each requested file share. </p>
+     * <p>An array containing a description for each requested file share.</p>
      */
     inline void SetNFSFileShareInfoList(Aws::Vector<NFSFileShareInfo>&& value) { m_nFSFileShareInfoList = std::move(value); }
 
     /**
-     * <p>An array containing a description for each requested file share. </p>
+     * <p>An array containing a description for each requested file share.</p>
      */
     inline DescribeNFSFileSharesResult& WithNFSFileShareInfoList(const Aws::Vector<NFSFileShareInfo>& value) { SetNFSFileShareInfoList(value); return *this;}
 
     /**
-     * <p>An array containing a description for each requested file share. </p>
+     * <p>An array containing a description for each requested file share.</p>
      */
     inline DescribeNFSFileSharesResult& WithNFSFileShareInfoList(Aws::Vector<NFSFileShareInfo>&& value) { SetNFSFileShareInfoList(std::move(value)); return *this;}
 
     /**
-     * <p>An array containing a description for each requested file share. </p>
+     * <p>An array containing a description for each requested file share.</p>
      */
     inline DescribeNFSFileSharesResult& AddNFSFileShareInfoList(const NFSFileShareInfo& value) { m_nFSFileShareInfoList.push_back(value); return *this; }
 
     /**
-     * <p>An array containing a description for each requested file share. </p>
+     * <p>An array containing a description for each requested file share.</p>
      */
     inline DescribeNFSFileSharesResult& AddNFSFileShareInfoList(NFSFileShareInfo&& value) { m_nFSFileShareInfoList.push_back(std::move(value)); return *this; }
 

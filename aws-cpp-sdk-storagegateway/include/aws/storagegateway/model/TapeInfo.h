@@ -245,7 +245,8 @@ namespace Model
      * in this pool is archived in the S3 storage class that is associated with the
      * pool. When you use your backup application to eject the tape, the tape is
      * archived directly into the storage class (S3 Glacier or S3 Glacier Deep Archive)
-     * that corresponds to the pool.</p> <p>Valid values: "GLACIER", "DEEP_ARCHIVE"</p>
+     * that corresponds to the pool.</p> <p>Valid Values: <code>GLACIER</code> |
+     * <code>DEEP_ARCHIVE</code> </p>
      */
     inline const Aws::String& GetPoolId() const{ return m_poolId; }
 
@@ -254,7 +255,8 @@ namespace Model
      * in this pool is archived in the S3 storage class that is associated with the
      * pool. When you use your backup application to eject the tape, the tape is
      * archived directly into the storage class (S3 Glacier or S3 Glacier Deep Archive)
-     * that corresponds to the pool.</p> <p>Valid values: "GLACIER", "DEEP_ARCHIVE"</p>
+     * that corresponds to the pool.</p> <p>Valid Values: <code>GLACIER</code> |
+     * <code>DEEP_ARCHIVE</code> </p>
      */
     inline bool PoolIdHasBeenSet() const { return m_poolIdHasBeenSet; }
 
@@ -263,7 +265,8 @@ namespace Model
      * in this pool is archived in the S3 storage class that is associated with the
      * pool. When you use your backup application to eject the tape, the tape is
      * archived directly into the storage class (S3 Glacier or S3 Glacier Deep Archive)
-     * that corresponds to the pool.</p> <p>Valid values: "GLACIER", "DEEP_ARCHIVE"</p>
+     * that corresponds to the pool.</p> <p>Valid Values: <code>GLACIER</code> |
+     * <code>DEEP_ARCHIVE</code> </p>
      */
     inline void SetPoolId(const Aws::String& value) { m_poolIdHasBeenSet = true; m_poolId = value; }
 
@@ -272,7 +275,8 @@ namespace Model
      * in this pool is archived in the S3 storage class that is associated with the
      * pool. When you use your backup application to eject the tape, the tape is
      * archived directly into the storage class (S3 Glacier or S3 Glacier Deep Archive)
-     * that corresponds to the pool.</p> <p>Valid values: "GLACIER", "DEEP_ARCHIVE"</p>
+     * that corresponds to the pool.</p> <p>Valid Values: <code>GLACIER</code> |
+     * <code>DEEP_ARCHIVE</code> </p>
      */
     inline void SetPoolId(Aws::String&& value) { m_poolIdHasBeenSet = true; m_poolId = std::move(value); }
 
@@ -281,7 +285,8 @@ namespace Model
      * in this pool is archived in the S3 storage class that is associated with the
      * pool. When you use your backup application to eject the tape, the tape is
      * archived directly into the storage class (S3 Glacier or S3 Glacier Deep Archive)
-     * that corresponds to the pool.</p> <p>Valid values: "GLACIER", "DEEP_ARCHIVE"</p>
+     * that corresponds to the pool.</p> <p>Valid Values: <code>GLACIER</code> |
+     * <code>DEEP_ARCHIVE</code> </p>
      */
     inline void SetPoolId(const char* value) { m_poolIdHasBeenSet = true; m_poolId.assign(value); }
 
@@ -290,7 +295,8 @@ namespace Model
      * in this pool is archived in the S3 storage class that is associated with the
      * pool. When you use your backup application to eject the tape, the tape is
      * archived directly into the storage class (S3 Glacier or S3 Glacier Deep Archive)
-     * that corresponds to the pool.</p> <p>Valid values: "GLACIER", "DEEP_ARCHIVE"</p>
+     * that corresponds to the pool.</p> <p>Valid Values: <code>GLACIER</code> |
+     * <code>DEEP_ARCHIVE</code> </p>
      */
     inline TapeInfo& WithPoolId(const Aws::String& value) { SetPoolId(value); return *this;}
 
@@ -299,7 +305,8 @@ namespace Model
      * in this pool is archived in the S3 storage class that is associated with the
      * pool. When you use your backup application to eject the tape, the tape is
      * archived directly into the storage class (S3 Glacier or S3 Glacier Deep Archive)
-     * that corresponds to the pool.</p> <p>Valid values: "GLACIER", "DEEP_ARCHIVE"</p>
+     * that corresponds to the pool.</p> <p>Valid Values: <code>GLACIER</code> |
+     * <code>DEEP_ARCHIVE</code> </p>
      */
     inline TapeInfo& WithPoolId(Aws::String&& value) { SetPoolId(std::move(value)); return *this;}
 
@@ -308,7 +315,8 @@ namespace Model
      * in this pool is archived in the S3 storage class that is associated with the
      * pool. When you use your backup application to eject the tape, the tape is
      * archived directly into the storage class (S3 Glacier or S3 Glacier Deep Archive)
-     * that corresponds to the pool.</p> <p>Valid values: "GLACIER", "DEEP_ARCHIVE"</p>
+     * that corresponds to the pool.</p> <p>Valid Values: <code>GLACIER</code> |
+     * <code>DEEP_ARCHIVE</code> </p>
      */
     inline TapeInfo& WithPoolId(const char* value) { SetPoolId(value); return *this;}
 

@@ -1080,88 +1080,130 @@ namespace Model
 
 
     /**
-     * <p>A list of request parameters whose values are to be cached.</p>
+     * <p>Specifies a group of related cached parameters. By default, API Gateway uses
+     * the resource ID as the <code>cacheNamespace</code>. You can specify the same
+     * <code>cacheNamespace</code> across resources to return the same cached data for
+     * requests to different resources.</p>
      */
     inline const Aws::String& GetCacheNamespace() const{ return m_cacheNamespace; }
 
     /**
-     * <p>A list of request parameters whose values are to be cached.</p>
+     * <p>Specifies a group of related cached parameters. By default, API Gateway uses
+     * the resource ID as the <code>cacheNamespace</code>. You can specify the same
+     * <code>cacheNamespace</code> across resources to return the same cached data for
+     * requests to different resources.</p>
      */
     inline bool CacheNamespaceHasBeenSet() const { return m_cacheNamespaceHasBeenSet; }
 
     /**
-     * <p>A list of request parameters whose values are to be cached.</p>
+     * <p>Specifies a group of related cached parameters. By default, API Gateway uses
+     * the resource ID as the <code>cacheNamespace</code>. You can specify the same
+     * <code>cacheNamespace</code> across resources to return the same cached data for
+     * requests to different resources.</p>
      */
     inline void SetCacheNamespace(const Aws::String& value) { m_cacheNamespaceHasBeenSet = true; m_cacheNamespace = value; }
 
     /**
-     * <p>A list of request parameters whose values are to be cached.</p>
+     * <p>Specifies a group of related cached parameters. By default, API Gateway uses
+     * the resource ID as the <code>cacheNamespace</code>. You can specify the same
+     * <code>cacheNamespace</code> across resources to return the same cached data for
+     * requests to different resources.</p>
      */
     inline void SetCacheNamespace(Aws::String&& value) { m_cacheNamespaceHasBeenSet = true; m_cacheNamespace = std::move(value); }
 
     /**
-     * <p>A list of request parameters whose values are to be cached.</p>
+     * <p>Specifies a group of related cached parameters. By default, API Gateway uses
+     * the resource ID as the <code>cacheNamespace</code>. You can specify the same
+     * <code>cacheNamespace</code> across resources to return the same cached data for
+     * requests to different resources.</p>
      */
     inline void SetCacheNamespace(const char* value) { m_cacheNamespaceHasBeenSet = true; m_cacheNamespace.assign(value); }
 
     /**
-     * <p>A list of request parameters whose values are to be cached.</p>
+     * <p>Specifies a group of related cached parameters. By default, API Gateway uses
+     * the resource ID as the <code>cacheNamespace</code>. You can specify the same
+     * <code>cacheNamespace</code> across resources to return the same cached data for
+     * requests to different resources.</p>
      */
     inline PutIntegrationRequest& WithCacheNamespace(const Aws::String& value) { SetCacheNamespace(value); return *this;}
 
     /**
-     * <p>A list of request parameters whose values are to be cached.</p>
+     * <p>Specifies a group of related cached parameters. By default, API Gateway uses
+     * the resource ID as the <code>cacheNamespace</code>. You can specify the same
+     * <code>cacheNamespace</code> across resources to return the same cached data for
+     * requests to different resources.</p>
      */
     inline PutIntegrationRequest& WithCacheNamespace(Aws::String&& value) { SetCacheNamespace(std::move(value)); return *this;}
 
     /**
-     * <p>A list of request parameters whose values are to be cached.</p>
+     * <p>Specifies a group of related cached parameters. By default, API Gateway uses
+     * the resource ID as the <code>cacheNamespace</code>. You can specify the same
+     * <code>cacheNamespace</code> across resources to return the same cached data for
+     * requests to different resources.</p>
      */
     inline PutIntegrationRequest& WithCacheNamespace(const char* value) { SetCacheNamespace(value); return *this;}
 
 
     /**
-     * <p>An API-specific tag group of related cached parameters.</p>
+     * <p>A list of request parameters whose values API Gateway caches. To be valid
+     * values for <code>cacheKeyParameters</code>, these parameters must also be
+     * specified for <a>Method</a> <code>requestParameters</code>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetCacheKeyParameters() const{ return m_cacheKeyParameters; }
 
     /**
-     * <p>An API-specific tag group of related cached parameters.</p>
+     * <p>A list of request parameters whose values API Gateway caches. To be valid
+     * values for <code>cacheKeyParameters</code>, these parameters must also be
+     * specified for <a>Method</a> <code>requestParameters</code>.</p>
      */
     inline bool CacheKeyParametersHasBeenSet() const { return m_cacheKeyParametersHasBeenSet; }
 
     /**
-     * <p>An API-specific tag group of related cached parameters.</p>
+     * <p>A list of request parameters whose values API Gateway caches. To be valid
+     * values for <code>cacheKeyParameters</code>, these parameters must also be
+     * specified for <a>Method</a> <code>requestParameters</code>.</p>
      */
     inline void SetCacheKeyParameters(const Aws::Vector<Aws::String>& value) { m_cacheKeyParametersHasBeenSet = true; m_cacheKeyParameters = value; }
 
     /**
-     * <p>An API-specific tag group of related cached parameters.</p>
+     * <p>A list of request parameters whose values API Gateway caches. To be valid
+     * values for <code>cacheKeyParameters</code>, these parameters must also be
+     * specified for <a>Method</a> <code>requestParameters</code>.</p>
      */
     inline void SetCacheKeyParameters(Aws::Vector<Aws::String>&& value) { m_cacheKeyParametersHasBeenSet = true; m_cacheKeyParameters = std::move(value); }
 
     /**
-     * <p>An API-specific tag group of related cached parameters.</p>
+     * <p>A list of request parameters whose values API Gateway caches. To be valid
+     * values for <code>cacheKeyParameters</code>, these parameters must also be
+     * specified for <a>Method</a> <code>requestParameters</code>.</p>
      */
     inline PutIntegrationRequest& WithCacheKeyParameters(const Aws::Vector<Aws::String>& value) { SetCacheKeyParameters(value); return *this;}
 
     /**
-     * <p>An API-specific tag group of related cached parameters.</p>
+     * <p>A list of request parameters whose values API Gateway caches. To be valid
+     * values for <code>cacheKeyParameters</code>, these parameters must also be
+     * specified for <a>Method</a> <code>requestParameters</code>.</p>
      */
     inline PutIntegrationRequest& WithCacheKeyParameters(Aws::Vector<Aws::String>&& value) { SetCacheKeyParameters(std::move(value)); return *this;}
 
     /**
-     * <p>An API-specific tag group of related cached parameters.</p>
+     * <p>A list of request parameters whose values API Gateway caches. To be valid
+     * values for <code>cacheKeyParameters</code>, these parameters must also be
+     * specified for <a>Method</a> <code>requestParameters</code>.</p>
      */
     inline PutIntegrationRequest& AddCacheKeyParameters(const Aws::String& value) { m_cacheKeyParametersHasBeenSet = true; m_cacheKeyParameters.push_back(value); return *this; }
 
     /**
-     * <p>An API-specific tag group of related cached parameters.</p>
+     * <p>A list of request parameters whose values API Gateway caches. To be valid
+     * values for <code>cacheKeyParameters</code>, these parameters must also be
+     * specified for <a>Method</a> <code>requestParameters</code>.</p>
      */
     inline PutIntegrationRequest& AddCacheKeyParameters(Aws::String&& value) { m_cacheKeyParametersHasBeenSet = true; m_cacheKeyParameters.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>An API-specific tag group of related cached parameters.</p>
+     * <p>A list of request parameters whose values API Gateway caches. To be valid
+     * values for <code>cacheKeyParameters</code>, these parameters must also be
+     * specified for <a>Method</a> <code>requestParameters</code>.</p>
      */
     inline PutIntegrationRequest& AddCacheKeyParameters(const char* value) { m_cacheKeyParametersHasBeenSet = true; m_cacheKeyParameters.push_back(value); return *this; }
 

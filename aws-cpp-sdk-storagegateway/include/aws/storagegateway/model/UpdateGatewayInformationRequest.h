@@ -137,73 +137,73 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that you
-     * want to use to monitor and log events in the gateway. </p> <p>For more
+     * want to use to monitor and log events in the gateway.</p> <p>For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/WhatIsCloudWatchLogs.html">What
-     * Is Amazon CloudWatch Logs?</a>.</p>
+     * is Amazon CloudWatch logs?</a>.</p>
      */
     inline const Aws::String& GetCloudWatchLogGroupARN() const{ return m_cloudWatchLogGroupARN; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that you
-     * want to use to monitor and log events in the gateway. </p> <p>For more
+     * want to use to monitor and log events in the gateway.</p> <p>For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/WhatIsCloudWatchLogs.html">What
-     * Is Amazon CloudWatch Logs?</a>.</p>
+     * is Amazon CloudWatch logs?</a>.</p>
      */
     inline bool CloudWatchLogGroupARNHasBeenSet() const { return m_cloudWatchLogGroupARNHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that you
-     * want to use to monitor and log events in the gateway. </p> <p>For more
+     * want to use to monitor and log events in the gateway.</p> <p>For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/WhatIsCloudWatchLogs.html">What
-     * Is Amazon CloudWatch Logs?</a>.</p>
+     * is Amazon CloudWatch logs?</a>.</p>
      */
     inline void SetCloudWatchLogGroupARN(const Aws::String& value) { m_cloudWatchLogGroupARNHasBeenSet = true; m_cloudWatchLogGroupARN = value; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that you
-     * want to use to monitor and log events in the gateway. </p> <p>For more
+     * want to use to monitor and log events in the gateway.</p> <p>For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/WhatIsCloudWatchLogs.html">What
-     * Is Amazon CloudWatch Logs?</a>.</p>
+     * is Amazon CloudWatch logs?</a>.</p>
      */
     inline void SetCloudWatchLogGroupARN(Aws::String&& value) { m_cloudWatchLogGroupARNHasBeenSet = true; m_cloudWatchLogGroupARN = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that you
-     * want to use to monitor and log events in the gateway. </p> <p>For more
+     * want to use to monitor and log events in the gateway.</p> <p>For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/WhatIsCloudWatchLogs.html">What
-     * Is Amazon CloudWatch Logs?</a>.</p>
+     * is Amazon CloudWatch logs?</a>.</p>
      */
     inline void SetCloudWatchLogGroupARN(const char* value) { m_cloudWatchLogGroupARNHasBeenSet = true; m_cloudWatchLogGroupARN.assign(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that you
-     * want to use to monitor and log events in the gateway. </p> <p>For more
+     * want to use to monitor and log events in the gateway.</p> <p>For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/WhatIsCloudWatchLogs.html">What
-     * Is Amazon CloudWatch Logs?</a>.</p>
+     * is Amazon CloudWatch logs?</a>.</p>
      */
     inline UpdateGatewayInformationRequest& WithCloudWatchLogGroupARN(const Aws::String& value) { SetCloudWatchLogGroupARN(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that you
-     * want to use to monitor and log events in the gateway. </p> <p>For more
+     * want to use to monitor and log events in the gateway.</p> <p>For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/WhatIsCloudWatchLogs.html">What
-     * Is Amazon CloudWatch Logs?</a>.</p>
+     * is Amazon CloudWatch logs?</a>.</p>
      */
     inline UpdateGatewayInformationRequest& WithCloudWatchLogGroupARN(Aws::String&& value) { SetCloudWatchLogGroupARN(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that you
-     * want to use to monitor and log events in the gateway. </p> <p>For more
+     * want to use to monitor and log events in the gateway.</p> <p>For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/WhatIsCloudWatchLogs.html">What
-     * Is Amazon CloudWatch Logs?</a>.</p>
+     * is Amazon CloudWatch logs?</a>.</p>
      */
     inline UpdateGatewayInformationRequest& WithCloudWatchLogGroupARN(const char* value) { SetCloudWatchLogGroupARN(value); return *this;}
 

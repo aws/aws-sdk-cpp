@@ -237,7 +237,7 @@ namespace Model
     /**
      * <p>The network interface of the gateway on which to expose the iSCSI target.
      * Only IPv4 addresses are accepted. Use <a>DescribeGatewayInformation</a> to get a
-     * list of the network interfaces available on a gateway.</p> <p> Valid Values: A
+     * list of the network interfaces available on a gateway.</p> <p>Valid Values: A
      * valid IP address.</p>
      */
     inline const Aws::String& GetNetworkInterfaceId() const{ return m_networkInterfaceId; }
@@ -245,7 +245,7 @@ namespace Model
     /**
      * <p>The network interface of the gateway on which to expose the iSCSI target.
      * Only IPv4 addresses are accepted. Use <a>DescribeGatewayInformation</a> to get a
-     * list of the network interfaces available on a gateway.</p> <p> Valid Values: A
+     * list of the network interfaces available on a gateway.</p> <p>Valid Values: A
      * valid IP address.</p>
      */
     inline bool NetworkInterfaceIdHasBeenSet() const { return m_networkInterfaceIdHasBeenSet; }
@@ -253,7 +253,7 @@ namespace Model
     /**
      * <p>The network interface of the gateway on which to expose the iSCSI target.
      * Only IPv4 addresses are accepted. Use <a>DescribeGatewayInformation</a> to get a
-     * list of the network interfaces available on a gateway.</p> <p> Valid Values: A
+     * list of the network interfaces available on a gateway.</p> <p>Valid Values: A
      * valid IP address.</p>
      */
     inline void SetNetworkInterfaceId(const Aws::String& value) { m_networkInterfaceIdHasBeenSet = true; m_networkInterfaceId = value; }
@@ -261,7 +261,7 @@ namespace Model
     /**
      * <p>The network interface of the gateway on which to expose the iSCSI target.
      * Only IPv4 addresses are accepted. Use <a>DescribeGatewayInformation</a> to get a
-     * list of the network interfaces available on a gateway.</p> <p> Valid Values: A
+     * list of the network interfaces available on a gateway.</p> <p>Valid Values: A
      * valid IP address.</p>
      */
     inline void SetNetworkInterfaceId(Aws::String&& value) { m_networkInterfaceIdHasBeenSet = true; m_networkInterfaceId = std::move(value); }
@@ -269,7 +269,7 @@ namespace Model
     /**
      * <p>The network interface of the gateway on which to expose the iSCSI target.
      * Only IPv4 addresses are accepted. Use <a>DescribeGatewayInformation</a> to get a
-     * list of the network interfaces available on a gateway.</p> <p> Valid Values: A
+     * list of the network interfaces available on a gateway.</p> <p>Valid Values: A
      * valid IP address.</p>
      */
     inline void SetNetworkInterfaceId(const char* value) { m_networkInterfaceIdHasBeenSet = true; m_networkInterfaceId.assign(value); }
@@ -277,7 +277,7 @@ namespace Model
     /**
      * <p>The network interface of the gateway on which to expose the iSCSI target.
      * Only IPv4 addresses are accepted. Use <a>DescribeGatewayInformation</a> to get a
-     * list of the network interfaces available on a gateway.</p> <p> Valid Values: A
+     * list of the network interfaces available on a gateway.</p> <p>Valid Values: A
      * valid IP address.</p>
      */
     inline AttachVolumeRequest& WithNetworkInterfaceId(const Aws::String& value) { SetNetworkInterfaceId(value); return *this;}
@@ -285,7 +285,7 @@ namespace Model
     /**
      * <p>The network interface of the gateway on which to expose the iSCSI target.
      * Only IPv4 addresses are accepted. Use <a>DescribeGatewayInformation</a> to get a
-     * list of the network interfaces available on a gateway.</p> <p> Valid Values: A
+     * list of the network interfaces available on a gateway.</p> <p>Valid Values: A
      * valid IP address.</p>
      */
     inline AttachVolumeRequest& WithNetworkInterfaceId(Aws::String&& value) { SetNetworkInterfaceId(std::move(value)); return *this;}
@@ -293,7 +293,7 @@ namespace Model
     /**
      * <p>The network interface of the gateway on which to expose the iSCSI target.
      * Only IPv4 addresses are accepted. Use <a>DescribeGatewayInformation</a> to get a
-     * list of the network interfaces available on a gateway.</p> <p> Valid Values: A
+     * list of the network interfaces available on a gateway.</p> <p>Valid Values: A
      * valid IP address.</p>
      */
     inline AttachVolumeRequest& WithNetworkInterfaceId(const char* value) { SetNetworkInterfaceId(value); return *this;}

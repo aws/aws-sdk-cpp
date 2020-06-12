@@ -48,37 +48,37 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the newly created file share. </p>
+     * <p>The Amazon Resource Name (ARN) of the newly created file share.</p>
      */
     inline const Aws::String& GetFileShareARN() const{ return m_fileShareARN; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the newly created file share. </p>
+     * <p>The Amazon Resource Name (ARN) of the newly created file share.</p>
      */
     inline void SetFileShareARN(const Aws::String& value) { m_fileShareARN = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the newly created file share. </p>
+     * <p>The Amazon Resource Name (ARN) of the newly created file share.</p>
      */
     inline void SetFileShareARN(Aws::String&& value) { m_fileShareARN = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the newly created file share. </p>
+     * <p>The Amazon Resource Name (ARN) of the newly created file share.</p>
      */
     inline void SetFileShareARN(const char* value) { m_fileShareARN.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the newly created file share. </p>
+     * <p>The Amazon Resource Name (ARN) of the newly created file share.</p>
      */
     inline CreateNFSFileShareResult& WithFileShareARN(const Aws::String& value) { SetFileShareARN(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the newly created file share. </p>
+     * <p>The Amazon Resource Name (ARN) of the newly created file share.</p>
      */
     inline CreateNFSFileShareResult& WithFileShareARN(Aws::String&& value) { SetFileShareARN(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the newly created file share. </p>
+     * <p>The Amazon Resource Name (ARN) of the newly created file share.</p>
      */
     inline CreateNFSFileShareResult& WithFileShareARN(const char* value) { SetFileShareARN(value); return *this;}
 

@@ -233,7 +233,7 @@ namespace Model
      * <p>A value that indicates whether a storage volume is attached to or detached
      * from a gateway. For more information, see <a
      * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/managing-volumes.html#attach-detach-volume">Moving
-     * Your Volumes to a Different Gateway</a>.</p>
+     * your volumes to a different gateway</a>.</p>
      */
     inline const Aws::String& GetVolumeAttachmentStatus() const{ return m_volumeAttachmentStatus; }
 
@@ -241,7 +241,7 @@ namespace Model
      * <p>A value that indicates whether a storage volume is attached to or detached
      * from a gateway. For more information, see <a
      * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/managing-volumes.html#attach-detach-volume">Moving
-     * Your Volumes to a Different Gateway</a>.</p>
+     * your volumes to a different gateway</a>.</p>
      */
     inline bool VolumeAttachmentStatusHasBeenSet() const { return m_volumeAttachmentStatusHasBeenSet; }
 
@@ -249,7 +249,7 @@ namespace Model
      * <p>A value that indicates whether a storage volume is attached to or detached
      * from a gateway. For more information, see <a
      * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/managing-volumes.html#attach-detach-volume">Moving
-     * Your Volumes to a Different Gateway</a>.</p>
+     * your volumes to a different gateway</a>.</p>
      */
     inline void SetVolumeAttachmentStatus(const Aws::String& value) { m_volumeAttachmentStatusHasBeenSet = true; m_volumeAttachmentStatus = value; }
 
@@ -257,7 +257,7 @@ namespace Model
      * <p>A value that indicates whether a storage volume is attached to or detached
      * from a gateway. For more information, see <a
      * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/managing-volumes.html#attach-detach-volume">Moving
-     * Your Volumes to a Different Gateway</a>.</p>
+     * your volumes to a different gateway</a>.</p>
      */
     inline void SetVolumeAttachmentStatus(Aws::String&& value) { m_volumeAttachmentStatusHasBeenSet = true; m_volumeAttachmentStatus = std::move(value); }
 
@@ -265,7 +265,7 @@ namespace Model
      * <p>A value that indicates whether a storage volume is attached to or detached
      * from a gateway. For more information, see <a
      * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/managing-volumes.html#attach-detach-volume">Moving
-     * Your Volumes to a Different Gateway</a>.</p>
+     * your volumes to a different gateway</a>.</p>
      */
     inline void SetVolumeAttachmentStatus(const char* value) { m_volumeAttachmentStatusHasBeenSet = true; m_volumeAttachmentStatus.assign(value); }
 
@@ -273,7 +273,7 @@ namespace Model
      * <p>A value that indicates whether a storage volume is attached to or detached
      * from a gateway. For more information, see <a
      * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/managing-volumes.html#attach-detach-volume">Moving
-     * Your Volumes to a Different Gateway</a>.</p>
+     * your volumes to a different gateway</a>.</p>
      */
     inline CachediSCSIVolume& WithVolumeAttachmentStatus(const Aws::String& value) { SetVolumeAttachmentStatus(value); return *this;}
 
@@ -281,7 +281,7 @@ namespace Model
      * <p>A value that indicates whether a storage volume is attached to or detached
      * from a gateway. For more information, see <a
      * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/managing-volumes.html#attach-detach-volume">Moving
-     * Your Volumes to a Different Gateway</a>.</p>
+     * your volumes to a different gateway</a>.</p>
      */
     inline CachediSCSIVolume& WithVolumeAttachmentStatus(Aws::String&& value) { SetVolumeAttachmentStatus(std::move(value)); return *this;}
 
@@ -289,7 +289,7 @@ namespace Model
      * <p>A value that indicates whether a storage volume is attached to or detached
      * from a gateway. For more information, see <a
      * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/managing-volumes.html#attach-detach-volume">Moving
-     * Your Volumes to a Different Gateway</a>.</p>
+     * your volumes to a different gateway</a>.</p>
      */
     inline CachediSCSIVolume& WithVolumeAttachmentStatus(const char* value) { SetVolumeAttachmentStatus(value); return *this;}
 

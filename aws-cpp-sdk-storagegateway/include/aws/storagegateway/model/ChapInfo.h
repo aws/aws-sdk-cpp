@@ -50,49 +50,49 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the volume.</p> <p> Valid Values: 50 to 500
+     * <p>The Amazon Resource Name (ARN) of the volume.</p> <p>Valid Values: 50 to 500
      * lowercase letters, numbers, periods (.), and hyphens (-).</p>
      */
     inline const Aws::String& GetTargetARN() const{ return m_targetARN; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the volume.</p> <p> Valid Values: 50 to 500
+     * <p>The Amazon Resource Name (ARN) of the volume.</p> <p>Valid Values: 50 to 500
      * lowercase letters, numbers, periods (.), and hyphens (-).</p>
      */
     inline bool TargetARNHasBeenSet() const { return m_targetARNHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the volume.</p> <p> Valid Values: 50 to 500
+     * <p>The Amazon Resource Name (ARN) of the volume.</p> <p>Valid Values: 50 to 500
      * lowercase letters, numbers, periods (.), and hyphens (-).</p>
      */
     inline void SetTargetARN(const Aws::String& value) { m_targetARNHasBeenSet = true; m_targetARN = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the volume.</p> <p> Valid Values: 50 to 500
+     * <p>The Amazon Resource Name (ARN) of the volume.</p> <p>Valid Values: 50 to 500
      * lowercase letters, numbers, periods (.), and hyphens (-).</p>
      */
     inline void SetTargetARN(Aws::String&& value) { m_targetARNHasBeenSet = true; m_targetARN = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the volume.</p> <p> Valid Values: 50 to 500
+     * <p>The Amazon Resource Name (ARN) of the volume.</p> <p>Valid Values: 50 to 500
      * lowercase letters, numbers, periods (.), and hyphens (-).</p>
      */
     inline void SetTargetARN(const char* value) { m_targetARNHasBeenSet = true; m_targetARN.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the volume.</p> <p> Valid Values: 50 to 500
+     * <p>The Amazon Resource Name (ARN) of the volume.</p> <p>Valid Values: 50 to 500
      * lowercase letters, numbers, periods (.), and hyphens (-).</p>
      */
     inline ChapInfo& WithTargetARN(const Aws::String& value) { SetTargetARN(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the volume.</p> <p> Valid Values: 50 to 500
+     * <p>The Amazon Resource Name (ARN) of the volume.</p> <p>Valid Values: 50 to 500
      * lowercase letters, numbers, periods (.), and hyphens (-).</p>
      */
     inline ChapInfo& WithTargetARN(Aws::String&& value) { SetTargetARN(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the volume.</p> <p> Valid Values: 50 to 500
+     * <p>The Amazon Resource Name (ARN) of the volume.</p> <p>Valid Values: 50 to 500
      * lowercase letters, numbers, periods (.), and hyphens (-).</p>
      */
     inline ChapInfo& WithTargetARN(const char* value) { SetTargetARN(value); return *this;}

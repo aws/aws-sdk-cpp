@@ -92,63 +92,72 @@ namespace Model
 
     /**
      * <p>A list of glob patterns used to exclude from the crawl. For more information,
-     * see <a href="http://docs.aws.amazon.com/glue/latest/dg/add-crawler.html">Catalog
+     * see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/add-crawler.html">Catalog
      * Tables with a Crawler</a>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetExclusions() const{ return m_exclusions; }
 
     /**
      * <p>A list of glob patterns used to exclude from the crawl. For more information,
-     * see <a href="http://docs.aws.amazon.com/glue/latest/dg/add-crawler.html">Catalog
+     * see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/add-crawler.html">Catalog
      * Tables with a Crawler</a>.</p>
      */
     inline bool ExclusionsHasBeenSet() const { return m_exclusionsHasBeenSet; }
 
     /**
      * <p>A list of glob patterns used to exclude from the crawl. For more information,
-     * see <a href="http://docs.aws.amazon.com/glue/latest/dg/add-crawler.html">Catalog
+     * see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/add-crawler.html">Catalog
      * Tables with a Crawler</a>.</p>
      */
     inline void SetExclusions(const Aws::Vector<Aws::String>& value) { m_exclusionsHasBeenSet = true; m_exclusions = value; }
 
     /**
      * <p>A list of glob patterns used to exclude from the crawl. For more information,
-     * see <a href="http://docs.aws.amazon.com/glue/latest/dg/add-crawler.html">Catalog
+     * see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/add-crawler.html">Catalog
      * Tables with a Crawler</a>.</p>
      */
     inline void SetExclusions(Aws::Vector<Aws::String>&& value) { m_exclusionsHasBeenSet = true; m_exclusions = std::move(value); }
 
     /**
      * <p>A list of glob patterns used to exclude from the crawl. For more information,
-     * see <a href="http://docs.aws.amazon.com/glue/latest/dg/add-crawler.html">Catalog
+     * see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/add-crawler.html">Catalog
      * Tables with a Crawler</a>.</p>
      */
     inline S3Target& WithExclusions(const Aws::Vector<Aws::String>& value) { SetExclusions(value); return *this;}
 
     /**
      * <p>A list of glob patterns used to exclude from the crawl. For more information,
-     * see <a href="http://docs.aws.amazon.com/glue/latest/dg/add-crawler.html">Catalog
+     * see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/add-crawler.html">Catalog
      * Tables with a Crawler</a>.</p>
      */
     inline S3Target& WithExclusions(Aws::Vector<Aws::String>&& value) { SetExclusions(std::move(value)); return *this;}
 
     /**
      * <p>A list of glob patterns used to exclude from the crawl. For more information,
-     * see <a href="http://docs.aws.amazon.com/glue/latest/dg/add-crawler.html">Catalog
+     * see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/add-crawler.html">Catalog
      * Tables with a Crawler</a>.</p>
      */
     inline S3Target& AddExclusions(const Aws::String& value) { m_exclusionsHasBeenSet = true; m_exclusions.push_back(value); return *this; }
 
     /**
      * <p>A list of glob patterns used to exclude from the crawl. For more information,
-     * see <a href="http://docs.aws.amazon.com/glue/latest/dg/add-crawler.html">Catalog
+     * see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/add-crawler.html">Catalog
      * Tables with a Crawler</a>.</p>
      */
     inline S3Target& AddExclusions(Aws::String&& value) { m_exclusionsHasBeenSet = true; m_exclusions.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of glob patterns used to exclude from the crawl. For more information,
-     * see <a href="http://docs.aws.amazon.com/glue/latest/dg/add-crawler.html">Catalog
+     * see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/add-crawler.html">Catalog
      * Tables with a Crawler</a>.</p>
      */
     inline S3Target& AddExclusions(const char* value) { m_exclusionsHasBeenSet = true; m_exclusions.push_back(value); return *this; }

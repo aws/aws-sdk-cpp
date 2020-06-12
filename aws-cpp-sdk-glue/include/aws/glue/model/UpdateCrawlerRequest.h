@@ -259,74 +259,66 @@ namespace Model
 
 
     /**
-     * <p>A <code>cron</code> expression used to specify the schedule. For more
-     * information, see <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based
+     * <p>A <code>cron</code> expression used to specify the schedule (see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based
      * Schedules for Jobs and Crawlers</a>. For example, to run something every day at
-     * 12:15 UTC, specify <code>cron(15 12 * * ? *)</code>.</p>
+     * 12:15 UTC, you would specify: <code>cron(15 12 * * ? *)</code>.</p>
      */
     inline const Aws::String& GetSchedule() const{ return m_schedule; }
 
     /**
-     * <p>A <code>cron</code> expression used to specify the schedule. For more
-     * information, see <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based
+     * <p>A <code>cron</code> expression used to specify the schedule (see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based
      * Schedules for Jobs and Crawlers</a>. For example, to run something every day at
-     * 12:15 UTC, specify <code>cron(15 12 * * ? *)</code>.</p>
+     * 12:15 UTC, you would specify: <code>cron(15 12 * * ? *)</code>.</p>
      */
     inline bool ScheduleHasBeenSet() const { return m_scheduleHasBeenSet; }
 
     /**
-     * <p>A <code>cron</code> expression used to specify the schedule. For more
-     * information, see <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based
+     * <p>A <code>cron</code> expression used to specify the schedule (see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based
      * Schedules for Jobs and Crawlers</a>. For example, to run something every day at
-     * 12:15 UTC, specify <code>cron(15 12 * * ? *)</code>.</p>
+     * 12:15 UTC, you would specify: <code>cron(15 12 * * ? *)</code>.</p>
      */
     inline void SetSchedule(const Aws::String& value) { m_scheduleHasBeenSet = true; m_schedule = value; }
 
     /**
-     * <p>A <code>cron</code> expression used to specify the schedule. For more
-     * information, see <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based
+     * <p>A <code>cron</code> expression used to specify the schedule (see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based
      * Schedules for Jobs and Crawlers</a>. For example, to run something every day at
-     * 12:15 UTC, specify <code>cron(15 12 * * ? *)</code>.</p>
+     * 12:15 UTC, you would specify: <code>cron(15 12 * * ? *)</code>.</p>
      */
     inline void SetSchedule(Aws::String&& value) { m_scheduleHasBeenSet = true; m_schedule = std::move(value); }
 
     /**
-     * <p>A <code>cron</code> expression used to specify the schedule. For more
-     * information, see <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based
+     * <p>A <code>cron</code> expression used to specify the schedule (see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based
      * Schedules for Jobs and Crawlers</a>. For example, to run something every day at
-     * 12:15 UTC, specify <code>cron(15 12 * * ? *)</code>.</p>
+     * 12:15 UTC, you would specify: <code>cron(15 12 * * ? *)</code>.</p>
      */
     inline void SetSchedule(const char* value) { m_scheduleHasBeenSet = true; m_schedule.assign(value); }
 
     /**
-     * <p>A <code>cron</code> expression used to specify the schedule. For more
-     * information, see <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based
+     * <p>A <code>cron</code> expression used to specify the schedule (see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based
      * Schedules for Jobs and Crawlers</a>. For example, to run something every day at
-     * 12:15 UTC, specify <code>cron(15 12 * * ? *)</code>.</p>
+     * 12:15 UTC, you would specify: <code>cron(15 12 * * ? *)</code>.</p>
      */
     inline UpdateCrawlerRequest& WithSchedule(const Aws::String& value) { SetSchedule(value); return *this;}
 
     /**
-     * <p>A <code>cron</code> expression used to specify the schedule. For more
-     * information, see <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based
+     * <p>A <code>cron</code> expression used to specify the schedule (see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based
      * Schedules for Jobs and Crawlers</a>. For example, to run something every day at
-     * 12:15 UTC, specify <code>cron(15 12 * * ? *)</code>.</p>
+     * 12:15 UTC, you would specify: <code>cron(15 12 * * ? *)</code>.</p>
      */
     inline UpdateCrawlerRequest& WithSchedule(Aws::String&& value) { SetSchedule(std::move(value)); return *this;}
 
     /**
-     * <p>A <code>cron</code> expression used to specify the schedule. For more
-     * information, see <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based
+     * <p>A <code>cron</code> expression used to specify the schedule (see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based
      * Schedules for Jobs and Crawlers</a>. For example, to run something every day at
-     * 12:15 UTC, specify <code>cron(15 12 * * ? *)</code>.</p>
+     * 12:15 UTC, you would specify: <code>cron(15 12 * * ? *)</code>.</p>
      */
     inline UpdateCrawlerRequest& WithSchedule(const char* value) { SetSchedule(value); return *this;}
 
@@ -468,65 +460,65 @@ namespace Model
 
 
     /**
-     * <p>The crawler configuration information. This versioned JSON string allows
-     * users to specify aspects of a crawler's behavior. For more information, see <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Configuring
+     * <p>Crawler configuration information. This versioned JSON string allows users to
+     * specify aspects of a crawler's behavior. For more information, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Configuring
      * a Crawler</a>.</p>
      */
     inline const Aws::String& GetConfiguration() const{ return m_configuration; }
 
     /**
-     * <p>The crawler configuration information. This versioned JSON string allows
-     * users to specify aspects of a crawler's behavior. For more information, see <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Configuring
+     * <p>Crawler configuration information. This versioned JSON string allows users to
+     * specify aspects of a crawler's behavior. For more information, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Configuring
      * a Crawler</a>.</p>
      */
     inline bool ConfigurationHasBeenSet() const { return m_configurationHasBeenSet; }
 
     /**
-     * <p>The crawler configuration information. This versioned JSON string allows
-     * users to specify aspects of a crawler's behavior. For more information, see <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Configuring
+     * <p>Crawler configuration information. This versioned JSON string allows users to
+     * specify aspects of a crawler's behavior. For more information, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Configuring
      * a Crawler</a>.</p>
      */
     inline void SetConfiguration(const Aws::String& value) { m_configurationHasBeenSet = true; m_configuration = value; }
 
     /**
-     * <p>The crawler configuration information. This versioned JSON string allows
-     * users to specify aspects of a crawler's behavior. For more information, see <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Configuring
+     * <p>Crawler configuration information. This versioned JSON string allows users to
+     * specify aspects of a crawler's behavior. For more information, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Configuring
      * a Crawler</a>.</p>
      */
     inline void SetConfiguration(Aws::String&& value) { m_configurationHasBeenSet = true; m_configuration = std::move(value); }
 
     /**
-     * <p>The crawler configuration information. This versioned JSON string allows
-     * users to specify aspects of a crawler's behavior. For more information, see <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Configuring
+     * <p>Crawler configuration information. This versioned JSON string allows users to
+     * specify aspects of a crawler's behavior. For more information, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Configuring
      * a Crawler</a>.</p>
      */
     inline void SetConfiguration(const char* value) { m_configurationHasBeenSet = true; m_configuration.assign(value); }
 
     /**
-     * <p>The crawler configuration information. This versioned JSON string allows
-     * users to specify aspects of a crawler's behavior. For more information, see <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Configuring
+     * <p>Crawler configuration information. This versioned JSON string allows users to
+     * specify aspects of a crawler's behavior. For more information, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Configuring
      * a Crawler</a>.</p>
      */
     inline UpdateCrawlerRequest& WithConfiguration(const Aws::String& value) { SetConfiguration(value); return *this;}
 
     /**
-     * <p>The crawler configuration information. This versioned JSON string allows
-     * users to specify aspects of a crawler's behavior. For more information, see <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Configuring
+     * <p>Crawler configuration information. This versioned JSON string allows users to
+     * specify aspects of a crawler's behavior. For more information, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Configuring
      * a Crawler</a>.</p>
      */
     inline UpdateCrawlerRequest& WithConfiguration(Aws::String&& value) { SetConfiguration(std::move(value)); return *this;}
 
     /**
-     * <p>The crawler configuration information. This versioned JSON string allows
-     * users to specify aspects of a crawler's behavior. For more information, see <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Configuring
+     * <p>Crawler configuration information. This versioned JSON string allows users to
+     * specify aspects of a crawler's behavior. For more information, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Configuring
      * a Crawler</a>.</p>
      */
     inline UpdateCrawlerRequest& WithConfiguration(const char* value) { SetConfiguration(value); return *this;}

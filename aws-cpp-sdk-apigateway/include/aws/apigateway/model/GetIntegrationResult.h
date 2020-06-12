@@ -1126,51 +1126,58 @@ namespace Model
 
 
     /**
-     * <p>An API-specific tag group of related cached parameters. To be valid values
-     * for <code>cacheKeyParameters</code>, these parameters must also be specified for
-     * <a>Method</a> <code>requestParameters</code>.</p>
+     * <p>Specifies a group of related cached parameters. By default, API Gateway uses
+     * the resource ID as the <code>cacheNamespace</code>. You can specify the same
+     * <code>cacheNamespace</code> across resources to return the same cached data for
+     * requests to different resources.</p>
      */
     inline const Aws::String& GetCacheNamespace() const{ return m_cacheNamespace; }
 
     /**
-     * <p>An API-specific tag group of related cached parameters. To be valid values
-     * for <code>cacheKeyParameters</code>, these parameters must also be specified for
-     * <a>Method</a> <code>requestParameters</code>.</p>
+     * <p>Specifies a group of related cached parameters. By default, API Gateway uses
+     * the resource ID as the <code>cacheNamespace</code>. You can specify the same
+     * <code>cacheNamespace</code> across resources to return the same cached data for
+     * requests to different resources.</p>
      */
     inline void SetCacheNamespace(const Aws::String& value) { m_cacheNamespace = value; }
 
     /**
-     * <p>An API-specific tag group of related cached parameters. To be valid values
-     * for <code>cacheKeyParameters</code>, these parameters must also be specified for
-     * <a>Method</a> <code>requestParameters</code>.</p>
+     * <p>Specifies a group of related cached parameters. By default, API Gateway uses
+     * the resource ID as the <code>cacheNamespace</code>. You can specify the same
+     * <code>cacheNamespace</code> across resources to return the same cached data for
+     * requests to different resources.</p>
      */
     inline void SetCacheNamespace(Aws::String&& value) { m_cacheNamespace = std::move(value); }
 
     /**
-     * <p>An API-specific tag group of related cached parameters. To be valid values
-     * for <code>cacheKeyParameters</code>, these parameters must also be specified for
-     * <a>Method</a> <code>requestParameters</code>.</p>
+     * <p>Specifies a group of related cached parameters. By default, API Gateway uses
+     * the resource ID as the <code>cacheNamespace</code>. You can specify the same
+     * <code>cacheNamespace</code> across resources to return the same cached data for
+     * requests to different resources.</p>
      */
     inline void SetCacheNamespace(const char* value) { m_cacheNamespace.assign(value); }
 
     /**
-     * <p>An API-specific tag group of related cached parameters. To be valid values
-     * for <code>cacheKeyParameters</code>, these parameters must also be specified for
-     * <a>Method</a> <code>requestParameters</code>.</p>
+     * <p>Specifies a group of related cached parameters. By default, API Gateway uses
+     * the resource ID as the <code>cacheNamespace</code>. You can specify the same
+     * <code>cacheNamespace</code> across resources to return the same cached data for
+     * requests to different resources.</p>
      */
     inline GetIntegrationResult& WithCacheNamespace(const Aws::String& value) { SetCacheNamespace(value); return *this;}
 
     /**
-     * <p>An API-specific tag group of related cached parameters. To be valid values
-     * for <code>cacheKeyParameters</code>, these parameters must also be specified for
-     * <a>Method</a> <code>requestParameters</code>.</p>
+     * <p>Specifies a group of related cached parameters. By default, API Gateway uses
+     * the resource ID as the <code>cacheNamespace</code>. You can specify the same
+     * <code>cacheNamespace</code> across resources to return the same cached data for
+     * requests to different resources.</p>
      */
     inline GetIntegrationResult& WithCacheNamespace(Aws::String&& value) { SetCacheNamespace(std::move(value)); return *this;}
 
     /**
-     * <p>An API-specific tag group of related cached parameters. To be valid values
-     * for <code>cacheKeyParameters</code>, these parameters must also be specified for
-     * <a>Method</a> <code>requestParameters</code>.</p>
+     * <p>Specifies a group of related cached parameters. By default, API Gateway uses
+     * the resource ID as the <code>cacheNamespace</code>. You can specify the same
+     * <code>cacheNamespace</code> across resources to return the same cached data for
+     * requests to different resources.</p>
      */
     inline GetIntegrationResult& WithCacheNamespace(const char* value) { SetCacheNamespace(value); return *this;}
 

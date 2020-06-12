@@ -49,37 +49,37 @@ namespace Model
 
 
     /**
-     * <p>An array containing a description for each requested file share. </p>
+     * <p>An array containing a description for each requested file share.</p>
      */
     inline const Aws::Vector<SMBFileShareInfo>& GetSMBFileShareInfoList() const{ return m_sMBFileShareInfoList; }
 
     /**
-     * <p>An array containing a description for each requested file share. </p>
+     * <p>An array containing a description for each requested file share.</p>
      */
     inline void SetSMBFileShareInfoList(const Aws::Vector<SMBFileShareInfo>& value) { m_sMBFileShareInfoList = value; }
 
     /**
-     * <p>An array containing a description for each requested file share. </p>
+     * <p>An array containing a description for each requested file share.</p>
      */
     inline void SetSMBFileShareInfoList(Aws::Vector<SMBFileShareInfo>&& value) { m_sMBFileShareInfoList = std::move(value); }
 
     /**
-     * <p>An array containing a description for each requested file share. </p>
+     * <p>An array containing a description for each requested file share.</p>
      */
     inline DescribeSMBFileSharesResult& WithSMBFileShareInfoList(const Aws::Vector<SMBFileShareInfo>& value) { SetSMBFileShareInfoList(value); return *this;}
 
     /**
-     * <p>An array containing a description for each requested file share. </p>
+     * <p>An array containing a description for each requested file share.</p>
      */
     inline DescribeSMBFileSharesResult& WithSMBFileShareInfoList(Aws::Vector<SMBFileShareInfo>&& value) { SetSMBFileShareInfoList(std::move(value)); return *this;}
 
     /**
-     * <p>An array containing a description for each requested file share. </p>
+     * <p>An array containing a description for each requested file share.</p>
      */
     inline DescribeSMBFileSharesResult& AddSMBFileShareInfoList(const SMBFileShareInfo& value) { m_sMBFileShareInfoList.push_back(value); return *this; }
 
     /**
-     * <p>An array containing a description for each requested file share. </p>
+     * <p>An array containing a description for each requested file share.</p>
      */
     inline DescribeSMBFileSharesResult& AddSMBFileShareInfoList(SMBFileShareInfo&& value) { m_sMBFileShareInfoList.push_back(std::move(value)); return *this; }
 

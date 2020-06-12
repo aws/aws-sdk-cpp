@@ -144,24 +144,21 @@ namespace Model
     /**
      * <p>The day of the month component of the maintenance start time represented as
      * an ordinal number from 1 to 28, where 1 represents the first day of the month
-     * and 28 represents the last day of the month.</p> <note> <p>This value is only
-     * available for tape and volume gateways.</p> </note>
+     * and 28 represents the last day of the month.</p>
      */
     inline int GetDayOfMonth() const{ return m_dayOfMonth; }
 
     /**
      * <p>The day of the month component of the maintenance start time represented as
      * an ordinal number from 1 to 28, where 1 represents the first day of the month
-     * and 28 represents the last day of the month.</p> <note> <p>This value is only
-     * available for tape and volume gateways.</p> </note>
+     * and 28 represents the last day of the month.</p>
      */
     inline void SetDayOfMonth(int value) { m_dayOfMonth = value; }
 
     /**
      * <p>The day of the month component of the maintenance start time represented as
      * an ordinal number from 1 to 28, where 1 represents the first day of the month
-     * and 28 represents the last day of the month.</p> <note> <p>This value is only
-     * available for tape and volume gateways.</p> </note>
+     * and 28 represents the last day of the month.</p>
      */
     inline DescribeMaintenanceStartTimeResult& WithDayOfMonth(int value) { SetDayOfMonth(value); return *this;}
 

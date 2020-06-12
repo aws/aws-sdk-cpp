@@ -136,6 +136,12 @@ DescribeGatewayInformationResult& DescribeGatewayInformationResult::operator =(c
 
   }
 
+  if(jsonValue.ValueExists("EndpointType"))
+  {
+    m_endpointType = jsonValue.GetString("EndpointType");
+
+  }
+
 
 
   return *this;

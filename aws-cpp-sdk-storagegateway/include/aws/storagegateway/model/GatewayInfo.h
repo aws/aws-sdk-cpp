@@ -195,42 +195,50 @@ namespace Model
 
 
     /**
-     * <p>The state of the gateway.</p> <p>Valid Values: DISABLED or ACTIVE</p>
+     * <p>The state of the gateway.</p> <p>Valid Values: <code>DISABLED</code> |
+     * <code>ACTIVE</code> </p>
      */
     inline const Aws::String& GetGatewayOperationalState() const{ return m_gatewayOperationalState; }
 
     /**
-     * <p>The state of the gateway.</p> <p>Valid Values: DISABLED or ACTIVE</p>
+     * <p>The state of the gateway.</p> <p>Valid Values: <code>DISABLED</code> |
+     * <code>ACTIVE</code> </p>
      */
     inline bool GatewayOperationalStateHasBeenSet() const { return m_gatewayOperationalStateHasBeenSet; }
 
     /**
-     * <p>The state of the gateway.</p> <p>Valid Values: DISABLED or ACTIVE</p>
+     * <p>The state of the gateway.</p> <p>Valid Values: <code>DISABLED</code> |
+     * <code>ACTIVE</code> </p>
      */
     inline void SetGatewayOperationalState(const Aws::String& value) { m_gatewayOperationalStateHasBeenSet = true; m_gatewayOperationalState = value; }
 
     /**
-     * <p>The state of the gateway.</p> <p>Valid Values: DISABLED or ACTIVE</p>
+     * <p>The state of the gateway.</p> <p>Valid Values: <code>DISABLED</code> |
+     * <code>ACTIVE</code> </p>
      */
     inline void SetGatewayOperationalState(Aws::String&& value) { m_gatewayOperationalStateHasBeenSet = true; m_gatewayOperationalState = std::move(value); }
 
     /**
-     * <p>The state of the gateway.</p> <p>Valid Values: DISABLED or ACTIVE</p>
+     * <p>The state of the gateway.</p> <p>Valid Values: <code>DISABLED</code> |
+     * <code>ACTIVE</code> </p>
      */
     inline void SetGatewayOperationalState(const char* value) { m_gatewayOperationalStateHasBeenSet = true; m_gatewayOperationalState.assign(value); }
 
     /**
-     * <p>The state of the gateway.</p> <p>Valid Values: DISABLED or ACTIVE</p>
+     * <p>The state of the gateway.</p> <p>Valid Values: <code>DISABLED</code> |
+     * <code>ACTIVE</code> </p>
      */
     inline GatewayInfo& WithGatewayOperationalState(const Aws::String& value) { SetGatewayOperationalState(value); return *this;}
 
     /**
-     * <p>The state of the gateway.</p> <p>Valid Values: DISABLED or ACTIVE</p>
+     * <p>The state of the gateway.</p> <p>Valid Values: <code>DISABLED</code> |
+     * <code>ACTIVE</code> </p>
      */
     inline GatewayInfo& WithGatewayOperationalState(Aws::String&& value) { SetGatewayOperationalState(std::move(value)); return *this;}
 
     /**
-     * <p>The state of the gateway.</p> <p>Valid Values: DISABLED or ACTIVE</p>
+     * <p>The state of the gateway.</p> <p>Valid Values: <code>DISABLED</code> |
+     * <code>ACTIVE</code> </p>
      */
     inline GatewayInfo& WithGatewayOperationalState(const char* value) { SetGatewayOperationalState(value); return *this;}
 
