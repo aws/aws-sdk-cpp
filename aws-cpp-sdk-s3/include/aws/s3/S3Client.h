@@ -9416,11 +9416,13 @@ namespace Aws
         virtual bool MultipartUploadSupported() const;
 
         void OverrideEndpoint(const Aws::String& endpoint);
+
+        ComputeEndpointOutcome ComputeEndpointString() const;
+        
     private:
         void init(const Client::ClientConfiguration& clientConfiguration);
         void LoadS3SpecificConfig(const Aws::String& profile);
         ComputeEndpointOutcome ComputeEndpointString(const Aws::String& bucket) const;
-        ComputeEndpointOutcome ComputeEndpointString() const;
 
         void AbortMultipartUploadAsyncHelper(const Model::AbortMultipartUploadRequest& request, const AbortMultipartUploadResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CompleteMultipartUploadAsyncHelper(const Model::CompleteMultipartUploadRequest& request, const CompleteMultipartUploadResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
