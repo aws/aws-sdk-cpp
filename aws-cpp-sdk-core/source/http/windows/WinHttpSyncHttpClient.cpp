@@ -95,7 +95,7 @@ WinHttpSyncHttpClient::WinHttpSyncHttpClient(const ClientConfiguration& config) 
     }
 
     Aws::WString openString = StringUtils::ToWString(config.userAgent.c_str());
-
+    // WinhttpOpen will create a session handle
     SetOpenHandle(WinHttpOpen(openString.c_str(), winhttpFlags, proxyString.c_str(), nullptr, 0));
 
     if (!WinHttpSetTimeouts(GetOpenHandle(), config.connectTimeoutMs, config.connectTimeoutMs, -1, config.requestTimeoutMs))
@@ -111,17 +111,6 @@ WinHttpSyncHttpClient::WinHttpSyncHttpClient(const ClientConfiguration& config) 
         if (!WinHttpSetOption(GetOpenHandle(), WINHTTP_OPTION_SECURE_PROTOCOLS, &flags, sizeof(flags)))
         {
             AWS_LOGSTREAM_FATAL(GetLogTag(), "Failed setting secure crypto protocols with error code: " << GetLastError());
-        }
-    }
-
-    // WinHTTP doesn't have the option to turn off keep-alive, so we will only set the value if keep-alive is turned on.
-    // see https://docs.microsoft.com/en-us/windows/desktop/winhttp/option-flags for more information on default values.
-    if (config.enableTcpKeepAlive)
-    {
-        DWORD keepAliveIntervalMs = config.tcpKeepAliveIntervalMs;
-        if (!WinHttpSetOption(GetOpenHandle(), WINHTTP_OPTION_WEB_SOCKET_KEEPALIVE_INTERVAL, &keepAliveIntervalMs, sizeof(keepAliveIntervalMs)))
-        {
-            AWS_LOGSTREAM_WARN(GetLogTag(), "Failed setting TCP keep-alive interval with error code: " << GetLastError());
         }
     }
 
@@ -155,6 +144,7 @@ void* WinHttpSyncHttpClient::OpenRequest(const Aws::Http::HttpRequest& request, 
 
     Aws::WString wss = StringUtils::ToWString(ss.str().c_str());
 
+    // WinHttpOpenRequest uses a connection handle to create a request handle
     HINTERNET hHttpRequest = WinHttpOpenRequest(connection, StringUtils::ToWString(HttpMethodMapper::GetNameForHttpMethod(request.GetMethod())).c_str(),
         wss.c_str(), nullptr, nullptr, accept, requestFlags);
 
@@ -172,6 +162,17 @@ void* WinHttpSyncHttpClient::OpenRequest(const Aws::Http::HttpRequest& request, 
         DWORD flags = SECURITY_FLAG_IGNORE_UNKNOWN_CA | SECURITY_FLAG_IGNORE_CERT_CN_INVALID;
         if (!WinHttpSetOption(hHttpRequest, WINHTTP_OPTION_SECURITY_FLAGS, &flags, sizeof(flags)))
             AWS_LOGSTREAM_FATAL(GetLogTag(), "Failed to turn ssl cert ca verification off.");
+    }
+
+    // WinHTTP doesn't have the option to turn off keep-alive, so we will only set the value if keep-alive is turned on.
+    // see https://docs.microsoft.com/en-us/windows/desktop/winhttp/option-flags for more information on default values.
+    if (GetConnectionPoolManager()->GetEnableTcpKeepAlive())
+    {
+        DWORD keepAliveIntervalMs = GetConnectionPoolManager()->GetTcpKeepAliveInterval();
+        if (!WinHttpSetOption(hHttpRequest, WINHTTP_OPTION_WEB_SOCKET_KEEPALIVE_INTERVAL, &keepAliveIntervalMs, sizeof(keepAliveIntervalMs)))
+        {
+            AWS_LOGSTREAM_WARN(GetLogTag(), "Failed setting TCP keep-alive interval with error code: " << GetLastError());
+        }
     }
 
     //DISABLE_FEATURE settings need to be made after OpenRequest but before SendRequest

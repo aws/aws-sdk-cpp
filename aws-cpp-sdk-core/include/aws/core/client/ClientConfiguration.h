@@ -99,7 +99,7 @@ namespace Aws
             bool enableTcpKeepAlive;
             /**
              * Interval to send a keep-alive packet over the connection. Default 30 seconds. Minimum 15 seconds.
-             * WinHTTP & libcurl support this option.
+             * WinHTTP & libcurl support this option. Note that for Curl, this value will be rounded to an integer with second granularity.
              * No-op for WinINet and IXMLHTTPRequest2 client.
              */
             unsigned long tcpKeepAliveIntervalMs;
@@ -240,5 +240,3 @@ namespace Aws
 
     } // namespace Client
 } // namespace Aws
-
-

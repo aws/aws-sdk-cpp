@@ -28,6 +28,7 @@ namespace Aws
     namespace Http
     {
 
+        class WinHttpSyncHttpClient;
         /**
         * Connection pool manager for windows apis
         * maintains open connections for a given hostname and port.
@@ -67,6 +68,7 @@ namespace Aws
              * Gives an opportunity of implementations to make their api calls to cleanup a handle.
              */
             virtual void DoCloseHandle(void* handle) const = 0;
+
         protected:
             /**
              * Container for the connection pool. Allows tracking of number of connections per endpoint and also their handles.
@@ -100,6 +102,7 @@ namespace Aws
              * Gets the interval to send a keep-alive packet for this connection pool.
              */
             unsigned long GetTcpKeepAliveInterval() const { return m_tcpKeepAliveIntervalMs; }
+       
             /**
              * Cleans up all open resources.
              */
@@ -125,6 +128,8 @@ namespace Aws
             bool m_enableTcpKeepAlive;
             unsigned long m_tcpKeepAliveIntervalMs;
             std::mutex m_containerLock;
+
+            friend class WinHttpSyncHttpClient;
         };
 
     } // namespace Http
