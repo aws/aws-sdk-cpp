@@ -58,7 +58,9 @@ enum class AppConfigErrors
 
   BAD_REQUEST= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   CONFLICT,
-  INTERNAL_SERVER
+  INTERNAL_SERVER,
+  PAYLOAD_TOO_LARGE,
+  SERVICE_QUOTA_EXCEEDED
 };
 namespace AppConfigErrorMapper
 {

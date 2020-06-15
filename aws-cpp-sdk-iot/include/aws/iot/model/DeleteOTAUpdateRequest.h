@@ -49,42 +49,42 @@ namespace Model
 
 
     /**
-     * <p>The OTA update ID to delete.</p>
+     * <p>The ID of the OTA update to delete.</p>
      */
     inline const Aws::String& GetOtaUpdateId() const{ return m_otaUpdateId; }
 
     /**
-     * <p>The OTA update ID to delete.</p>
+     * <p>The ID of the OTA update to delete.</p>
      */
     inline bool OtaUpdateIdHasBeenSet() const { return m_otaUpdateIdHasBeenSet; }
 
     /**
-     * <p>The OTA update ID to delete.</p>
+     * <p>The ID of the OTA update to delete.</p>
      */
     inline void SetOtaUpdateId(const Aws::String& value) { m_otaUpdateIdHasBeenSet = true; m_otaUpdateId = value; }
 
     /**
-     * <p>The OTA update ID to delete.</p>
+     * <p>The ID of the OTA update to delete.</p>
      */
     inline void SetOtaUpdateId(Aws::String&& value) { m_otaUpdateIdHasBeenSet = true; m_otaUpdateId = std::move(value); }
 
     /**
-     * <p>The OTA update ID to delete.</p>
+     * <p>The ID of the OTA update to delete.</p>
      */
     inline void SetOtaUpdateId(const char* value) { m_otaUpdateIdHasBeenSet = true; m_otaUpdateId.assign(value); }
 
     /**
-     * <p>The OTA update ID to delete.</p>
+     * <p>The ID of the OTA update to delete.</p>
      */
     inline DeleteOTAUpdateRequest& WithOtaUpdateId(const Aws::String& value) { SetOtaUpdateId(value); return *this;}
 
     /**
-     * <p>The OTA update ID to delete.</p>
+     * <p>The ID of the OTA update to delete.</p>
      */
     inline DeleteOTAUpdateRequest& WithOtaUpdateId(Aws::String&& value) { SetOtaUpdateId(std::move(value)); return *this;}
 
     /**
-     * <p>The OTA update ID to delete.</p>
+     * <p>The ID of the OTA update to delete.</p>
      */
     inline DeleteOTAUpdateRequest& WithOtaUpdateId(const char* value) { SetOtaUpdateId(value); return *this;}
 
@@ -116,25 +116,25 @@ namespace Model
 
     /**
      * <p>Specifies if the AWS Job associated with the OTA update should be deleted
-     * with the OTA update is deleted.</p>
+     * when the OTA update is deleted.</p>
      */
     inline bool GetForceDeleteAWSJob() const{ return m_forceDeleteAWSJob; }
 
     /**
      * <p>Specifies if the AWS Job associated with the OTA update should be deleted
-     * with the OTA update is deleted.</p>
+     * when the OTA update is deleted.</p>
      */
     inline bool ForceDeleteAWSJobHasBeenSet() const { return m_forceDeleteAWSJobHasBeenSet; }
 
     /**
      * <p>Specifies if the AWS Job associated with the OTA update should be deleted
-     * with the OTA update is deleted.</p>
+     * when the OTA update is deleted.</p>
      */
     inline void SetForceDeleteAWSJob(bool value) { m_forceDeleteAWSJobHasBeenSet = true; m_forceDeleteAWSJob = value; }
 
     /**
      * <p>Specifies if the AWS Job associated with the OTA update should be deleted
-     * with the OTA update is deleted.</p>
+     * when the OTA update is deleted.</p>
      */
     inline DeleteOTAUpdateRequest& WithForceDeleteAWSJob(bool value) { SetForceDeleteAWSJob(value); return *this;}
 

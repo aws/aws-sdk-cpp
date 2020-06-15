@@ -130,42 +130,42 @@ namespace Model
 
 
     /**
-     * <p>The profile ARN for the room.</p>
+     * <p>The profile ARN for the room. This is required.</p>
      */
     inline const Aws::String& GetProfileArn() const{ return m_profileArn; }
 
     /**
-     * <p>The profile ARN for the room.</p>
+     * <p>The profile ARN for the room. This is required.</p>
      */
     inline bool ProfileArnHasBeenSet() const { return m_profileArnHasBeenSet; }
 
     /**
-     * <p>The profile ARN for the room.</p>
+     * <p>The profile ARN for the room. This is required.</p>
      */
     inline void SetProfileArn(const Aws::String& value) { m_profileArnHasBeenSet = true; m_profileArn = value; }
 
     /**
-     * <p>The profile ARN for the room.</p>
+     * <p>The profile ARN for the room. This is required.</p>
      */
     inline void SetProfileArn(Aws::String&& value) { m_profileArnHasBeenSet = true; m_profileArn = std::move(value); }
 
     /**
-     * <p>The profile ARN for the room.</p>
+     * <p>The profile ARN for the room. This is required.</p>
      */
     inline void SetProfileArn(const char* value) { m_profileArnHasBeenSet = true; m_profileArn.assign(value); }
 
     /**
-     * <p>The profile ARN for the room.</p>
+     * <p>The profile ARN for the room. This is required.</p>
      */
     inline CreateRoomRequest& WithProfileArn(const Aws::String& value) { SetProfileArn(value); return *this;}
 
     /**
-     * <p>The profile ARN for the room.</p>
+     * <p>The profile ARN for the room. This is required.</p>
      */
     inline CreateRoomRequest& WithProfileArn(Aws::String&& value) { SetProfileArn(std::move(value)); return *this;}
 
     /**
-     * <p>The profile ARN for the room.</p>
+     * <p>The profile ARN for the room. This is required.</p>
      */
     inline CreateRoomRequest& WithProfileArn(const char* value) { SetProfileArn(value); return *this;}
 

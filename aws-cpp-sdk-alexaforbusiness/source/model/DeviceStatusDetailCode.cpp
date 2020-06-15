@@ -45,6 +45,8 @@ namespace Aws
         static const int NETWORK_PROFILE_NOT_FOUND_HASH = HashingUtils::HashString("NETWORK_PROFILE_NOT_FOUND");
         static const int INVALID_PASSWORD_STATE_HASH = HashingUtils::HashString("INVALID_PASSWORD_STATE");
         static const int PASSWORD_NOT_FOUND_HASH = HashingUtils::HashString("PASSWORD_NOT_FOUND");
+        static const int PASSWORD_MANAGER_ACCESS_DENIED_HASH = HashingUtils::HashString("PASSWORD_MANAGER_ACCESS_DENIED");
+        static const int CERTIFICATE_AUTHORITY_ACCESS_DENIED_HASH = HashingUtils::HashString("CERTIFICATE_AUTHORITY_ACCESS_DENIED");
 
 
         DeviceStatusDetailCode GetDeviceStatusDetailCodeForName(const Aws::String& name)
@@ -110,6 +112,14 @@ namespace Aws
           {
             return DeviceStatusDetailCode::PASSWORD_NOT_FOUND;
           }
+          else if (hashCode == PASSWORD_MANAGER_ACCESS_DENIED_HASH)
+          {
+            return DeviceStatusDetailCode::PASSWORD_MANAGER_ACCESS_DENIED;
+          }
+          else if (hashCode == CERTIFICATE_AUTHORITY_ACCESS_DENIED_HASH)
+          {
+            return DeviceStatusDetailCode::CERTIFICATE_AUTHORITY_ACCESS_DENIED;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -154,6 +164,10 @@ namespace Aws
             return "INVALID_PASSWORD_STATE";
           case DeviceStatusDetailCode::PASSWORD_NOT_FOUND:
             return "PASSWORD_NOT_FOUND";
+          case DeviceStatusDetailCode::PASSWORD_MANAGER_ACCESS_DENIED:
+            return "PASSWORD_MANAGER_ACCESS_DENIED";
+          case DeviceStatusDetailCode::CERTIFICATE_AUTHORITY_ACCESS_DENIED:
+            return "CERTIFICATE_AUTHORITY_ACCESS_DENIED";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

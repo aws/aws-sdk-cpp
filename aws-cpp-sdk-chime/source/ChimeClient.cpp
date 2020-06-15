@@ -45,6 +45,7 @@
 #include <aws/chime/model/CreateAttendeeRequest.h>
 #include <aws/chime/model/CreateBotRequest.h>
 #include <aws/chime/model/CreateMeetingRequest.h>
+#include <aws/chime/model/CreateMeetingWithAttendeesRequest.h>
 #include <aws/chime/model/CreatePhoneNumberOrderRequest.h>
 #include <aws/chime/model/CreateProxySessionRequest.h>
 #include <aws/chime/model/CreateRoomRequest.h>
@@ -846,6 +847,43 @@ void ChimeClient::CreateMeetingAsync(const CreateMeetingRequest& request, const 
 void ChimeClient::CreateMeetingAsyncHelper(const CreateMeetingRequest& request, const CreateMeetingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, CreateMeeting(request), context);
+}
+
+CreateMeetingWithAttendeesOutcome ChimeClient::CreateMeetingWithAttendees(const CreateMeetingWithAttendeesRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/meetings";
+  uri.SetPath(uri.GetPath() + ss.str());
+  ss.str("?operation=create-attendees");
+  uri.SetQueryString(ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return CreateMeetingWithAttendeesOutcome(CreateMeetingWithAttendeesResult(outcome.GetResult()));
+  }
+  else
+  {
+    return CreateMeetingWithAttendeesOutcome(outcome.GetError());
+  }
+}
+
+CreateMeetingWithAttendeesOutcomeCallable ChimeClient::CreateMeetingWithAttendeesCallable(const CreateMeetingWithAttendeesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateMeetingWithAttendeesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateMeetingWithAttendees(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ChimeClient::CreateMeetingWithAttendeesAsync(const CreateMeetingWithAttendeesRequest& request, const CreateMeetingWithAttendeesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateMeetingWithAttendeesAsyncHelper( request, handler, context ); } );
+}
+
+void ChimeClient::CreateMeetingWithAttendeesAsyncHelper(const CreateMeetingWithAttendeesRequest& request, const CreateMeetingWithAttendeesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateMeetingWithAttendees(request), context);
 }
 
 CreatePhoneNumberOrderOutcome ChimeClient::CreatePhoneNumberOrder(const CreatePhoneNumberOrderRequest& request) const

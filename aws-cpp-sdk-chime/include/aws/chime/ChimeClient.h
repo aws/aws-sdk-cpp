@@ -36,6 +36,7 @@
 #include <aws/chime/model/CreateAttendeeResult.h>
 #include <aws/chime/model/CreateBotResult.h>
 #include <aws/chime/model/CreateMeetingResult.h>
+#include <aws/chime/model/CreateMeetingWithAttendeesResult.h>
 #include <aws/chime/model/CreatePhoneNumberOrderResult.h>
 #include <aws/chime/model/CreateProxySessionResult.h>
 #include <aws/chime/model/CreateRoomResult.h>
@@ -167,6 +168,7 @@ namespace Model
         class CreateAttendeeRequest;
         class CreateBotRequest;
         class CreateMeetingRequest;
+        class CreateMeetingWithAttendeesRequest;
         class CreatePhoneNumberOrderRequest;
         class CreateProxySessionRequest;
         class CreateRoomRequest;
@@ -281,6 +283,7 @@ namespace Model
         typedef Aws::Utils::Outcome<CreateAttendeeResult, Aws::Client::AWSError<ChimeErrors>> CreateAttendeeOutcome;
         typedef Aws::Utils::Outcome<CreateBotResult, Aws::Client::AWSError<ChimeErrors>> CreateBotOutcome;
         typedef Aws::Utils::Outcome<CreateMeetingResult, Aws::Client::AWSError<ChimeErrors>> CreateMeetingOutcome;
+        typedef Aws::Utils::Outcome<CreateMeetingWithAttendeesResult, Aws::Client::AWSError<ChimeErrors>> CreateMeetingWithAttendeesOutcome;
         typedef Aws::Utils::Outcome<CreatePhoneNumberOrderResult, Aws::Client::AWSError<ChimeErrors>> CreatePhoneNumberOrderOutcome;
         typedef Aws::Utils::Outcome<CreateProxySessionResult, Aws::Client::AWSError<ChimeErrors>> CreateProxySessionOutcome;
         typedef Aws::Utils::Outcome<CreateRoomResult, Aws::Client::AWSError<ChimeErrors>> CreateRoomOutcome;
@@ -397,6 +400,7 @@ namespace Model
         typedef std::future<CreateAttendeeOutcome> CreateAttendeeOutcomeCallable;
         typedef std::future<CreateBotOutcome> CreateBotOutcomeCallable;
         typedef std::future<CreateMeetingOutcome> CreateMeetingOutcomeCallable;
+        typedef std::future<CreateMeetingWithAttendeesOutcome> CreateMeetingWithAttendeesOutcomeCallable;
         typedef std::future<CreatePhoneNumberOrderOutcome> CreatePhoneNumberOrderOutcomeCallable;
         typedef std::future<CreateProxySessionOutcome> CreateProxySessionOutcomeCallable;
         typedef std::future<CreateRoomOutcome> CreateRoomOutcomeCallable;
@@ -516,6 +520,7 @@ namespace Model
     typedef std::function<void(const ChimeClient*, const Model::CreateAttendeeRequest&, const Model::CreateAttendeeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateAttendeeResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::CreateBotRequest&, const Model::CreateBotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateBotResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::CreateMeetingRequest&, const Model::CreateMeetingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateMeetingResponseReceivedHandler;
+    typedef std::function<void(const ChimeClient*, const Model::CreateMeetingWithAttendeesRequest&, const Model::CreateMeetingWithAttendeesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateMeetingWithAttendeesResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::CreatePhoneNumberOrderRequest&, const Model::CreatePhoneNumberOrderOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreatePhoneNumberOrderResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::CreateProxySessionRequest&, const Model::CreateProxySessionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateProxySessionResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::CreateRoomRequest&, const Model::CreateRoomOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateRoomResponseReceivedHandler;
@@ -1204,7 +1209,10 @@ namespace Model
 
         /**
          * <p>Creates a new Amazon Chime SDK meeting in the specified media Region with no
-         * initial attendees. For more information about the Amazon Chime SDK, see <a
+         * initial attendees. For more information about specifying media Regions, see <a
+         * href="https://docs.aws.amazon.com/chime/latest/dg/chime-sdk-meetings-regions.html">Amazon
+         * Chime SDK Media Regions</a> in the <i>Amazon Chime Developer Guide</i>. For more
+         * information about the Amazon Chime SDK, see <a
          * href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the
          * Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
@@ -1215,7 +1223,10 @@ namespace Model
 
         /**
          * <p>Creates a new Amazon Chime SDK meeting in the specified media Region with no
-         * initial attendees. For more information about the Amazon Chime SDK, see <a
+         * initial attendees. For more information about specifying media Regions, see <a
+         * href="https://docs.aws.amazon.com/chime/latest/dg/chime-sdk-meetings-regions.html">Amazon
+         * Chime SDK Media Regions</a> in the <i>Amazon Chime Developer Guide</i>. For more
+         * information about the Amazon Chime SDK, see <a
          * href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the
          * Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
@@ -1228,7 +1239,10 @@ namespace Model
 
         /**
          * <p>Creates a new Amazon Chime SDK meeting in the specified media Region with no
-         * initial attendees. For more information about the Amazon Chime SDK, see <a
+         * initial attendees. For more information about specifying media Regions, see <a
+         * href="https://docs.aws.amazon.com/chime/latest/dg/chime-sdk-meetings-regions.html">Amazon
+         * Chime SDK Media Regions</a> in the <i>Amazon Chime Developer Guide</i>. For more
+         * information about the Amazon Chime SDK, see <a
          * href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the
          * Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
@@ -1238,6 +1252,52 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateMeetingAsync(const Model::CreateMeetingRequest& request, const CreateMeetingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Creates a new Amazon Chime SDK meeting in the specified media Region, with
+         * attendees. For more information about specifying media Regions, see <a
+         * href="https://docs.aws.amazon.com/chime/latest/dg/chime-sdk-meetings-regions.html">Amazon
+         * Chime SDK Media Regions</a> in the <i>Amazon Chime Developer Guide</i>. For more
+         * information about the Amazon Chime SDK, see <a
+         * href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the
+         * Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateMeetingWithAttendees">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateMeetingWithAttendeesOutcome CreateMeetingWithAttendees(const Model::CreateMeetingWithAttendeesRequest& request) const;
+
+        /**
+         * <p>Creates a new Amazon Chime SDK meeting in the specified media Region, with
+         * attendees. For more information about specifying media Regions, see <a
+         * href="https://docs.aws.amazon.com/chime/latest/dg/chime-sdk-meetings-regions.html">Amazon
+         * Chime SDK Media Regions</a> in the <i>Amazon Chime Developer Guide</i>. For more
+         * information about the Amazon Chime SDK, see <a
+         * href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the
+         * Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateMeetingWithAttendees">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateMeetingWithAttendeesOutcomeCallable CreateMeetingWithAttendeesCallable(const Model::CreateMeetingWithAttendeesRequest& request) const;
+
+        /**
+         * <p>Creates a new Amazon Chime SDK meeting in the specified media Region, with
+         * attendees. For more information about specifying media Regions, see <a
+         * href="https://docs.aws.amazon.com/chime/latest/dg/chime-sdk-meetings-regions.html">Amazon
+         * Chime SDK Media Regions</a> in the <i>Amazon Chime Developer Guide</i>. For more
+         * information about the Amazon Chime SDK, see <a
+         * href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the
+         * Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateMeetingWithAttendees">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateMeetingWithAttendeesAsync(const Model::CreateMeetingWithAttendeesRequest& request, const CreateMeetingWithAttendeesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates an order for phone numbers to be provisioned. Choose from Amazon
@@ -4356,6 +4416,7 @@ namespace Model
         void CreateAttendeeAsyncHelper(const Model::CreateAttendeeRequest& request, const CreateAttendeeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateBotAsyncHelper(const Model::CreateBotRequest& request, const CreateBotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateMeetingAsyncHelper(const Model::CreateMeetingRequest& request, const CreateMeetingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateMeetingWithAttendeesAsyncHelper(const Model::CreateMeetingWithAttendeesRequest& request, const CreateMeetingWithAttendeesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreatePhoneNumberOrderAsyncHelper(const Model::CreatePhoneNumberOrderRequest& request, const CreatePhoneNumberOrderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateProxySessionAsyncHelper(const Model::CreateProxySessionRequest& request, const CreateProxySessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateRoomAsyncHelper(const Model::CreateRoomRequest& request, const CreateRoomResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

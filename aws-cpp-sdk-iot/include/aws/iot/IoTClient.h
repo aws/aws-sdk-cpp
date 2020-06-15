@@ -5906,7 +5906,10 @@ namespace Model
         virtual void RemoveThingFromBillingGroupAsync(const Model::RemoveThingFromBillingGroupRequest& request, const RemoveThingFromBillingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Remove the specified thing from the specified group.</p><p><h3>See Also:</h3>
+         * <p>Remove the specified thing from the specified group.</p> <p>You must specify
+         * either a <code>thingGroupArn</code> or a <code>thingGroupName</code> to identify
+         * the thing group and either a <code>thingArn</code> or a <code>thingName</code>
+         * to identify the thing to remove from the thing group. </p><p><h3>See Also:</h3> 
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/RemoveThingFromThingGroup">AWS
          * API Reference</a></p>
@@ -5914,7 +5917,10 @@ namespace Model
         virtual Model::RemoveThingFromThingGroupOutcome RemoveThingFromThingGroup(const Model::RemoveThingFromThingGroupRequest& request) const;
 
         /**
-         * <p>Remove the specified thing from the specified group.</p><p><h3>See Also:</h3>
+         * <p>Remove the specified thing from the specified group.</p> <p>You must specify
+         * either a <code>thingGroupArn</code> or a <code>thingGroupName</code> to identify
+         * the thing group and either a <code>thingArn</code> or a <code>thingName</code>
+         * to identify the thing to remove from the thing group. </p><p><h3>See Also:</h3> 
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/RemoveThingFromThingGroup">AWS
          * API Reference</a></p>
@@ -5924,7 +5930,10 @@ namespace Model
         virtual Model::RemoveThingFromThingGroupOutcomeCallable RemoveThingFromThingGroupCallable(const Model::RemoveThingFromThingGroupRequest& request) const;
 
         /**
-         * <p>Remove the specified thing from the specified group.</p><p><h3>See Also:</h3>
+         * <p>Remove the specified thing from the specified group.</p> <p>You must specify
+         * either a <code>thingGroupArn</code> or a <code>thingGroupName</code> to identify
+         * the thing group and either a <code>thingArn</code> or a <code>thingName</code>
+         * to identify the thing to remove from the thing group. </p><p><h3>See Also:</h3> 
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/RemoveThingFromThingGroup">AWS
          * API Reference</a></p>

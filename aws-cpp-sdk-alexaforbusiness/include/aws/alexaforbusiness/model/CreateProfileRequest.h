@@ -21,6 +21,8 @@
 #include <aws/alexaforbusiness/model/TemperatureUnit.h>
 #include <aws/alexaforbusiness/model/WakeWord.h>
 #include <aws/alexaforbusiness/model/CreateMeetingRoomConfiguration.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/alexaforbusiness/model/Tag.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
 
@@ -448,6 +450,47 @@ namespace Model
      */
     inline CreateProfileRequest& WithMeetingRoomConfiguration(CreateMeetingRoomConfiguration&& value) { SetMeetingRoomConfiguration(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The tags for the profile.</p>
+     */
+    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>The tags for the profile.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>The tags for the profile.</p>
+     */
+    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>The tags for the profile.</p>
+     */
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>The tags for the profile.</p>
+     */
+    inline CreateProfileRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>The tags for the profile.</p>
+     */
+    inline CreateProfileRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>The tags for the profile.</p>
+     */
+    inline CreateProfileRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+
+    /**
+     * <p>The tags for the profile.</p>
+     */
+    inline CreateProfileRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_profileName;
@@ -485,6 +528,9 @@ namespace Model
 
     CreateMeetingRoomConfiguration m_meetingRoomConfiguration;
     bool m_meetingRoomConfigurationHasBeenSet;
+
+    Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet;
   };
 
 } // namespace Model

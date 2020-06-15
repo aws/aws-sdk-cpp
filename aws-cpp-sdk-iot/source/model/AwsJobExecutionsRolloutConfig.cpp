@@ -30,13 +30,15 @@ namespace Model
 
 AwsJobExecutionsRolloutConfig::AwsJobExecutionsRolloutConfig() : 
     m_maximumPerMinute(0),
-    m_maximumPerMinuteHasBeenSet(false)
+    m_maximumPerMinuteHasBeenSet(false),
+    m_exponentialRateHasBeenSet(false)
 {
 }
 
 AwsJobExecutionsRolloutConfig::AwsJobExecutionsRolloutConfig(JsonView jsonValue) : 
     m_maximumPerMinute(0),
-    m_maximumPerMinuteHasBeenSet(false)
+    m_maximumPerMinuteHasBeenSet(false),
+    m_exponentialRateHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -50,6 +52,13 @@ AwsJobExecutionsRolloutConfig& AwsJobExecutionsRolloutConfig::operator =(JsonVie
     m_maximumPerMinuteHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("exponentialRate"))
+  {
+    m_exponentialRate = jsonValue.GetObject("exponentialRate");
+
+    m_exponentialRateHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -60,6 +69,12 @@ JsonValue AwsJobExecutionsRolloutConfig::Jsonize() const
   if(m_maximumPerMinuteHasBeenSet)
   {
    payload.WithInteger("maximumPerMinute", m_maximumPerMinute);
+
+  }
+
+  if(m_exponentialRateHasBeenSet)
+  {
+   payload.WithObject("exponentialRate", m_exponentialRate.Jsonize());
 
   }
 

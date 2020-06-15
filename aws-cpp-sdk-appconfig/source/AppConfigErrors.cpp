@@ -29,7 +29,9 @@ namespace AppConfigErrorMapper
 {
 
 static const int CONFLICT_HASH = HashingUtils::HashString("ConflictException");
+static const int SERVICE_QUOTA_EXCEEDED_HASH = HashingUtils::HashString("ServiceQuotaExceededException");
 static const int INTERNAL_SERVER_HASH = HashingUtils::HashString("InternalServerException");
+static const int PAYLOAD_TOO_LARGE_HASH = HashingUtils::HashString("PayloadTooLargeException");
 static const int BAD_REQUEST_HASH = HashingUtils::HashString("BadRequestException");
 
 
@@ -41,9 +43,17 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(AppConfigErrors::CONFLICT), false);
   }
+  else if (hashCode == SERVICE_QUOTA_EXCEEDED_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(AppConfigErrors::SERVICE_QUOTA_EXCEEDED), false);
+  }
   else if (hashCode == INTERNAL_SERVER_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(AppConfigErrors::INTERNAL_SERVER), false);
+  }
+  else if (hashCode == PAYLOAD_TOO_LARGE_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(AppConfigErrors::PAYLOAD_TOO_LARGE), false);
   }
   else if (hashCode == BAD_REQUEST_HASH)
   {

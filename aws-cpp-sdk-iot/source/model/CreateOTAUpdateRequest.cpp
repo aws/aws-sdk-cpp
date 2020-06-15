@@ -31,6 +31,8 @@ CreateOTAUpdateRequest::CreateOTAUpdateRequest() :
     m_targetSelectionHasBeenSet(false),
     m_awsJobExecutionsRolloutConfigHasBeenSet(false),
     m_awsJobPresignedUrlConfigHasBeenSet(false),
+    m_awsJobAbortConfigHasBeenSet(false),
+    m_awsJobTimeoutConfigHasBeenSet(false),
     m_filesHasBeenSet(false),
     m_roleArnHasBeenSet(false),
     m_additionalParametersHasBeenSet(false),
@@ -84,6 +86,18 @@ Aws::String CreateOTAUpdateRequest::SerializePayload() const
   if(m_awsJobPresignedUrlConfigHasBeenSet)
   {
    payload.WithObject("awsJobPresignedUrlConfig", m_awsJobPresignedUrlConfig.Jsonize());
+
+  }
+
+  if(m_awsJobAbortConfigHasBeenSet)
+  {
+   payload.WithObject("awsJobAbortConfig", m_awsJobAbortConfig.Jsonize());
+
+  }
+
+  if(m_awsJobTimeoutConfigHasBeenSet)
+  {
+   payload.WithObject("awsJobTimeoutConfig", m_awsJobTimeoutConfig.Jsonize());
 
   }
 

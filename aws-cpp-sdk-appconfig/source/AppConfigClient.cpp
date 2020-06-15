@@ -34,21 +34,25 @@
 #include <aws/appconfig/model/CreateConfigurationProfileRequest.h>
 #include <aws/appconfig/model/CreateDeploymentStrategyRequest.h>
 #include <aws/appconfig/model/CreateEnvironmentRequest.h>
+#include <aws/appconfig/model/CreateHostedConfigurationVersionRequest.h>
 #include <aws/appconfig/model/DeleteApplicationRequest.h>
 #include <aws/appconfig/model/DeleteConfigurationProfileRequest.h>
 #include <aws/appconfig/model/DeleteDeploymentStrategyRequest.h>
 #include <aws/appconfig/model/DeleteEnvironmentRequest.h>
+#include <aws/appconfig/model/DeleteHostedConfigurationVersionRequest.h>
 #include <aws/appconfig/model/GetApplicationRequest.h>
 #include <aws/appconfig/model/GetConfigurationRequest.h>
 #include <aws/appconfig/model/GetConfigurationProfileRequest.h>
 #include <aws/appconfig/model/GetDeploymentRequest.h>
 #include <aws/appconfig/model/GetDeploymentStrategyRequest.h>
 #include <aws/appconfig/model/GetEnvironmentRequest.h>
+#include <aws/appconfig/model/GetHostedConfigurationVersionRequest.h>
 #include <aws/appconfig/model/ListApplicationsRequest.h>
 #include <aws/appconfig/model/ListConfigurationProfilesRequest.h>
 #include <aws/appconfig/model/ListDeploymentStrategiesRequest.h>
 #include <aws/appconfig/model/ListDeploymentsRequest.h>
 #include <aws/appconfig/model/ListEnvironmentsRequest.h>
+#include <aws/appconfig/model/ListHostedConfigurationVersionsRequest.h>
 #include <aws/appconfig/model/ListTagsForResourceRequest.h>
 #include <aws/appconfig/model/StartDeploymentRequest.h>
 #include <aws/appconfig/model/StopDeploymentRequest.h>
@@ -286,6 +290,55 @@ void AppConfigClient::CreateEnvironmentAsyncHelper(const CreateEnvironmentReques
   handler(this, request, CreateEnvironment(request), context);
 }
 
+CreateHostedConfigurationVersionOutcome AppConfigClient::CreateHostedConfigurationVersion(const CreateHostedConfigurationVersionRequest& request) const
+{
+  if (!request.ApplicationIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateHostedConfigurationVersion", "Required field: ApplicationId, is not set");
+    return CreateHostedConfigurationVersionOutcome(Aws::Client::AWSError<AppConfigErrors>(AppConfigErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApplicationId]", false));
+  }
+  if (!request.ConfigurationProfileIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateHostedConfigurationVersion", "Required field: ConfigurationProfileId, is not set");
+    return CreateHostedConfigurationVersionOutcome(Aws::Client::AWSError<AppConfigErrors>(AppConfigErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ConfigurationProfileId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/applications/";
+  ss << request.GetApplicationId();
+  ss << "/configurationprofiles/";
+  ss << request.GetConfigurationProfileId();
+  ss << "/hostedconfigurationversions";
+  uri.SetPath(uri.GetPath() + ss.str());
+  StreamOutcome outcome = MakeRequestWithUnparsedResponse(uri, request, Aws::Http::HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return CreateHostedConfigurationVersionOutcome(CreateHostedConfigurationVersionResult(outcome.GetResultWithOwnership()));
+  }
+  else
+  {
+    return CreateHostedConfigurationVersionOutcome(outcome.GetError());
+  }
+}
+
+CreateHostedConfigurationVersionOutcomeCallable AppConfigClient::CreateHostedConfigurationVersionCallable(const CreateHostedConfigurationVersionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateHostedConfigurationVersionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateHostedConfigurationVersion(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AppConfigClient::CreateHostedConfigurationVersionAsync(const CreateHostedConfigurationVersionRequest& request, const CreateHostedConfigurationVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateHostedConfigurationVersionAsyncHelper( request, handler, context ); } );
+}
+
+void AppConfigClient::CreateHostedConfigurationVersionAsyncHelper(const CreateHostedConfigurationVersionRequest& request, const CreateHostedConfigurationVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateHostedConfigurationVersion(request), context);
+}
+
 DeleteApplicationOutcome AppConfigClient::DeleteApplication(const DeleteApplicationRequest& request) const
 {
   if (!request.ApplicationIdHasBeenSet())
@@ -462,6 +515,61 @@ void AppConfigClient::DeleteEnvironmentAsync(const DeleteEnvironmentRequest& req
 void AppConfigClient::DeleteEnvironmentAsyncHelper(const DeleteEnvironmentRequest& request, const DeleteEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteEnvironment(request), context);
+}
+
+DeleteHostedConfigurationVersionOutcome AppConfigClient::DeleteHostedConfigurationVersion(const DeleteHostedConfigurationVersionRequest& request) const
+{
+  if (!request.ApplicationIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteHostedConfigurationVersion", "Required field: ApplicationId, is not set");
+    return DeleteHostedConfigurationVersionOutcome(Aws::Client::AWSError<AppConfigErrors>(AppConfigErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApplicationId]", false));
+  }
+  if (!request.ConfigurationProfileIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteHostedConfigurationVersion", "Required field: ConfigurationProfileId, is not set");
+    return DeleteHostedConfigurationVersionOutcome(Aws::Client::AWSError<AppConfigErrors>(AppConfigErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ConfigurationProfileId]", false));
+  }
+  if (!request.VersionNumberHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteHostedConfigurationVersion", "Required field: VersionNumber, is not set");
+    return DeleteHostedConfigurationVersionOutcome(Aws::Client::AWSError<AppConfigErrors>(AppConfigErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VersionNumber]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/applications/";
+  ss << request.GetApplicationId();
+  ss << "/configurationprofiles/";
+  ss << request.GetConfigurationProfileId();
+  ss << "/hostedconfigurationversions/";
+  ss << request.GetVersionNumber();
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DeleteHostedConfigurationVersionOutcome(NoResult());
+  }
+  else
+  {
+    return DeleteHostedConfigurationVersionOutcome(outcome.GetError());
+  }
+}
+
+DeleteHostedConfigurationVersionOutcomeCallable AppConfigClient::DeleteHostedConfigurationVersionCallable(const DeleteHostedConfigurationVersionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteHostedConfigurationVersionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteHostedConfigurationVersion(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AppConfigClient::DeleteHostedConfigurationVersionAsync(const DeleteHostedConfigurationVersionRequest& request, const DeleteHostedConfigurationVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteHostedConfigurationVersionAsyncHelper( request, handler, context ); } );
+}
+
+void AppConfigClient::DeleteHostedConfigurationVersionAsyncHelper(const DeleteHostedConfigurationVersionRequest& request, const DeleteHostedConfigurationVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteHostedConfigurationVersion(request), context);
 }
 
 GetApplicationOutcome AppConfigClient::GetApplication(const GetApplicationRequest& request) const
@@ -757,6 +865,61 @@ void AppConfigClient::GetEnvironmentAsyncHelper(const GetEnvironmentRequest& req
   handler(this, request, GetEnvironment(request), context);
 }
 
+GetHostedConfigurationVersionOutcome AppConfigClient::GetHostedConfigurationVersion(const GetHostedConfigurationVersionRequest& request) const
+{
+  if (!request.ApplicationIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetHostedConfigurationVersion", "Required field: ApplicationId, is not set");
+    return GetHostedConfigurationVersionOutcome(Aws::Client::AWSError<AppConfigErrors>(AppConfigErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApplicationId]", false));
+  }
+  if (!request.ConfigurationProfileIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetHostedConfigurationVersion", "Required field: ConfigurationProfileId, is not set");
+    return GetHostedConfigurationVersionOutcome(Aws::Client::AWSError<AppConfigErrors>(AppConfigErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ConfigurationProfileId]", false));
+  }
+  if (!request.VersionNumberHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetHostedConfigurationVersion", "Required field: VersionNumber, is not set");
+    return GetHostedConfigurationVersionOutcome(Aws::Client::AWSError<AppConfigErrors>(AppConfigErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VersionNumber]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/applications/";
+  ss << request.GetApplicationId();
+  ss << "/configurationprofiles/";
+  ss << request.GetConfigurationProfileId();
+  ss << "/hostedconfigurationversions/";
+  ss << request.GetVersionNumber();
+  uri.SetPath(uri.GetPath() + ss.str());
+  StreamOutcome outcome = MakeRequestWithUnparsedResponse(uri, request, Aws::Http::HttpMethod::HTTP_GET);
+  if(outcome.IsSuccess())
+  {
+    return GetHostedConfigurationVersionOutcome(GetHostedConfigurationVersionResult(outcome.GetResultWithOwnership()));
+  }
+  else
+  {
+    return GetHostedConfigurationVersionOutcome(outcome.GetError());
+  }
+}
+
+GetHostedConfigurationVersionOutcomeCallable AppConfigClient::GetHostedConfigurationVersionCallable(const GetHostedConfigurationVersionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetHostedConfigurationVersionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetHostedConfigurationVersion(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AppConfigClient::GetHostedConfigurationVersionAsync(const GetHostedConfigurationVersionRequest& request, const GetHostedConfigurationVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetHostedConfigurationVersionAsyncHelper( request, handler, context ); } );
+}
+
+void AppConfigClient::GetHostedConfigurationVersionAsyncHelper(const GetHostedConfigurationVersionRequest& request, const GetHostedConfigurationVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetHostedConfigurationVersion(request), context);
+}
+
 ListApplicationsOutcome AppConfigClient::ListApplications(const ListApplicationsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -958,6 +1121,55 @@ void AppConfigClient::ListEnvironmentsAsync(const ListEnvironmentsRequest& reque
 void AppConfigClient::ListEnvironmentsAsyncHelper(const ListEnvironmentsRequest& request, const ListEnvironmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListEnvironments(request), context);
+}
+
+ListHostedConfigurationVersionsOutcome AppConfigClient::ListHostedConfigurationVersions(const ListHostedConfigurationVersionsRequest& request) const
+{
+  if (!request.ApplicationIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListHostedConfigurationVersions", "Required field: ApplicationId, is not set");
+    return ListHostedConfigurationVersionsOutcome(Aws::Client::AWSError<AppConfigErrors>(AppConfigErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApplicationId]", false));
+  }
+  if (!request.ConfigurationProfileIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListHostedConfigurationVersions", "Required field: ConfigurationProfileId, is not set");
+    return ListHostedConfigurationVersionsOutcome(Aws::Client::AWSError<AppConfigErrors>(AppConfigErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ConfigurationProfileId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/applications/";
+  ss << request.GetApplicationId();
+  ss << "/configurationprofiles/";
+  ss << request.GetConfigurationProfileId();
+  ss << "/hostedconfigurationversions";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ListHostedConfigurationVersionsOutcome(ListHostedConfigurationVersionsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListHostedConfigurationVersionsOutcome(outcome.GetError());
+  }
+}
+
+ListHostedConfigurationVersionsOutcomeCallable AppConfigClient::ListHostedConfigurationVersionsCallable(const ListHostedConfigurationVersionsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListHostedConfigurationVersionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListHostedConfigurationVersions(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AppConfigClient::ListHostedConfigurationVersionsAsync(const ListHostedConfigurationVersionsRequest& request, const ListHostedConfigurationVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListHostedConfigurationVersionsAsyncHelper( request, handler, context ); } );
+}
+
+void AppConfigClient::ListHostedConfigurationVersionsAsyncHelper(const ListHostedConfigurationVersionsRequest& request, const ListHostedConfigurationVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListHostedConfigurationVersions(request), context);
 }
 
 ListTagsForResourceOutcome AppConfigClient::ListTagsForResource(const ListTagsForResourceRequest& request) const

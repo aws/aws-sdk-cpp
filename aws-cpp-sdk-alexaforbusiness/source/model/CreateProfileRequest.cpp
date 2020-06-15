@@ -41,7 +41,8 @@ CreateProfileRequest::CreateProfileRequest() :
     m_maxVolumeLimitHasBeenSet(false),
     m_pSTNEnabled(false),
     m_pSTNEnabledHasBeenSet(false),
-    m_meetingRoomConfigurationHasBeenSet(false)
+    m_meetingRoomConfigurationHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -115,6 +116,17 @@ Aws::String CreateProfileRequest::SerializePayload() const
   if(m_meetingRoomConfigurationHasBeenSet)
   {
    payload.WithObject("MeetingRoomConfiguration", m_meetingRoomConfiguration.Jsonize());
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   Array<JsonValue> tagsJsonList(m_tags.size());
+   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+   {
+     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+   }
+   payload.WithArray("Tags", std::move(tagsJsonList));
 
   }
 
