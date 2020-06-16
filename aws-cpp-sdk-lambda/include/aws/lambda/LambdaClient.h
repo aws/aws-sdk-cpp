@@ -1922,7 +1922,7 @@ namespace Model
          * exists for a function, version, or alias, this operation overwrites it. If you
          * exclude any settings, they are removed. To set one option without affecting
          * existing settings for other options, use
-         * <a>PutFunctionEventInvokeConfig</a>.</p> <p>By default, Lambda retries an
+         * <a>UpdateFunctionEventInvokeConfig</a>.</p> <p>By default, Lambda retries an
          * asynchronous invocation twice if the function returns an error. It retains
          * events in a queue for up to six hours. When an event fails all processing
          * attempts or stays in the asynchronous invocation queue for too long, Lambda
@@ -1946,7 +1946,7 @@ namespace Model
          * exists for a function, version, or alias, this operation overwrites it. If you
          * exclude any settings, they are removed. To set one option without affecting
          * existing settings for other options, use
-         * <a>PutFunctionEventInvokeConfig</a>.</p> <p>By default, Lambda retries an
+         * <a>UpdateFunctionEventInvokeConfig</a>.</p> <p>By default, Lambda retries an
          * asynchronous invocation twice if the function returns an error. It retains
          * events in a queue for up to six hours. When an event fails all processing
          * attempts or stays in the asynchronous invocation queue for too long, Lambda
@@ -1972,7 +1972,7 @@ namespace Model
          * exists for a function, version, or alias, this operation overwrites it. If you
          * exclude any settings, they are removed. To set one option without affecting
          * existing settings for other options, use
-         * <a>PutFunctionEventInvokeConfig</a>.</p> <p>By default, Lambda retries an
+         * <a>UpdateFunctionEventInvokeConfig</a>.</p> <p>By default, Lambda retries an
          * asynchronous invocation twice if the function returns an error. It retains
          * events in a queue for up to six hours. When an event fails all processing
          * attempts or stays in the asynchronous invocation queue for too long, Lambda

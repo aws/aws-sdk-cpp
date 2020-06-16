@@ -466,10 +466,12 @@ namespace Model
         virtual void ExportJournalToS3Async(const Model::ExportJournalToS3Request& request, const ExportJournalToS3ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns a journal block object at a specified address in a ledger. Also
-         * returns a proof of the specified block for verification if
-         * <code>DigestTipAddress</code> is provided.</p> <p>If the specified ledger
-         * doesn't exist or is in <code>DELETING</code> status, then throws
+         * <p>Returns a block object at a specified address in a journal. Also returns a
+         * proof of the specified block for verification if <code>DigestTipAddress</code>
+         * is provided.</p> <p>For information about the data contents in a block, see <a
+         * href="https://docs.aws.amazon.com/qldb/latest/developerguide/journal-contents.html">Journal
+         * contents</a> in the <i>Amazon QLDB Developer Guide</i>.</p> <p>If the specified
+         * ledger doesn't exist or is in <code>DELETING</code> status, then throws
          * <code>ResourceNotFoundException</code>.</p> <p>If the specified ledger is in
          * <code>CREATING</code> status, then throws
          * <code>ResourcePreconditionNotMetException</code>.</p> <p>If no block exists with
@@ -481,10 +483,12 @@ namespace Model
         virtual Model::GetBlockOutcome GetBlock(const Model::GetBlockRequest& request) const;
 
         /**
-         * <p>Returns a journal block object at a specified address in a ledger. Also
-         * returns a proof of the specified block for verification if
-         * <code>DigestTipAddress</code> is provided.</p> <p>If the specified ledger
-         * doesn't exist or is in <code>DELETING</code> status, then throws
+         * <p>Returns a block object at a specified address in a journal. Also returns a
+         * proof of the specified block for verification if <code>DigestTipAddress</code>
+         * is provided.</p> <p>For information about the data contents in a block, see <a
+         * href="https://docs.aws.amazon.com/qldb/latest/developerguide/journal-contents.html">Journal
+         * contents</a> in the <i>Amazon QLDB Developer Guide</i>.</p> <p>If the specified
+         * ledger doesn't exist or is in <code>DELETING</code> status, then throws
          * <code>ResourceNotFoundException</code>.</p> <p>If the specified ledger is in
          * <code>CREATING</code> status, then throws
          * <code>ResourcePreconditionNotMetException</code>.</p> <p>If no block exists with
@@ -498,10 +502,12 @@ namespace Model
         virtual Model::GetBlockOutcomeCallable GetBlockCallable(const Model::GetBlockRequest& request) const;
 
         /**
-         * <p>Returns a journal block object at a specified address in a ledger. Also
-         * returns a proof of the specified block for verification if
-         * <code>DigestTipAddress</code> is provided.</p> <p>If the specified ledger
-         * doesn't exist or is in <code>DELETING</code> status, then throws
+         * <p>Returns a block object at a specified address in a journal. Also returns a
+         * proof of the specified block for verification if <code>DigestTipAddress</code>
+         * is provided.</p> <p>For information about the data contents in a block, see <a
+         * href="https://docs.aws.amazon.com/qldb/latest/developerguide/journal-contents.html">Journal
+         * contents</a> in the <i>Amazon QLDB Developer Guide</i>.</p> <p>If the specified
+         * ledger doesn't exist or is in <code>DELETING</code> status, then throws
          * <code>ResourceNotFoundException</code>.</p> <p>If the specified ledger is in
          * <code>CREATING</code> status, then throws
          * <code>ResourcePreconditionNotMetException</code>.</p> <p>If no block exists with
@@ -777,20 +783,20 @@ namespace Model
         virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a stream for a given Amazon QLDB ledger that delivers the journal
-         * data to a specified Amazon Kinesis Data Streams resource. The stream captures
-         * every document revision that is committed to your journal and sends it to the
-         * Kinesis data stream.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a journal stream for a given Amazon QLDB ledger. The stream captures
+         * every document revision that is committed to the ledger's journal and delivers
+         * the data to a specified Amazon Kinesis Data Streams resource.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/StreamJournalToKinesis">AWS
          * API Reference</a></p>
          */
         virtual Model::StreamJournalToKinesisOutcome StreamJournalToKinesis(const Model::StreamJournalToKinesisRequest& request) const;
 
         /**
-         * <p>Creates a stream for a given Amazon QLDB ledger that delivers the journal
-         * data to a specified Amazon Kinesis Data Streams resource. The stream captures
-         * every document revision that is committed to your journal and sends it to the
-         * Kinesis data stream.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a journal stream for a given Amazon QLDB ledger. The stream captures
+         * every document revision that is committed to the ledger's journal and delivers
+         * the data to a specified Amazon Kinesis Data Streams resource.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/StreamJournalToKinesis">AWS
          * API Reference</a></p>
          *
@@ -799,10 +805,10 @@ namespace Model
         virtual Model::StreamJournalToKinesisOutcomeCallable StreamJournalToKinesisCallable(const Model::StreamJournalToKinesisRequest& request) const;
 
         /**
-         * <p>Creates a stream for a given Amazon QLDB ledger that delivers the journal
-         * data to a specified Amazon Kinesis Data Streams resource. The stream captures
-         * every document revision that is committed to your journal and sends it to the
-         * Kinesis data stream.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a journal stream for a given Amazon QLDB ledger. The stream captures
+         * every document revision that is committed to the ledger's journal and delivers
+         * the data to a specified Amazon Kinesis Data Streams resource.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/StreamJournalToKinesis">AWS
          * API Reference</a></p>
          *

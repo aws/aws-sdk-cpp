@@ -62,7 +62,8 @@ FunctionConfiguration::FunctionConfiguration() :
     m_lastUpdateStatusHasBeenSet(false),
     m_lastUpdateStatusReasonHasBeenSet(false),
     m_lastUpdateStatusReasonCode(LastUpdateStatusReasonCode::NOT_SET),
-    m_lastUpdateStatusReasonCodeHasBeenSet(false)
+    m_lastUpdateStatusReasonCodeHasBeenSet(false),
+    m_fileSystemConfigsHasBeenSet(false)
 {
 }
 
@@ -100,7 +101,8 @@ FunctionConfiguration::FunctionConfiguration(JsonView jsonValue) :
     m_lastUpdateStatusHasBeenSet(false),
     m_lastUpdateStatusReasonHasBeenSet(false),
     m_lastUpdateStatusReasonCode(LastUpdateStatusReasonCode::NOT_SET),
-    m_lastUpdateStatusReasonCodeHasBeenSet(false)
+    m_lastUpdateStatusReasonCodeHasBeenSet(false),
+    m_fileSystemConfigsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -292,6 +294,16 @@ FunctionConfiguration& FunctionConfiguration::operator =(JsonView jsonValue)
     m_lastUpdateStatusReasonCodeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("FileSystemConfigs"))
+  {
+    Array<JsonView> fileSystemConfigsJsonList = jsonValue.GetArray("FileSystemConfigs");
+    for(unsigned fileSystemConfigsIndex = 0; fileSystemConfigsIndex < fileSystemConfigsJsonList.GetLength(); ++fileSystemConfigsIndex)
+    {
+      m_fileSystemConfigs.push_back(fileSystemConfigsJsonList[fileSystemConfigsIndex].AsObject());
+    }
+    m_fileSystemConfigsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -453,6 +465,17 @@ JsonValue FunctionConfiguration::Jsonize() const
   if(m_lastUpdateStatusReasonCodeHasBeenSet)
   {
    payload.WithString("LastUpdateStatusReasonCode", LastUpdateStatusReasonCodeMapper::GetNameForLastUpdateStatusReasonCode(m_lastUpdateStatusReasonCode));
+  }
+
+  if(m_fileSystemConfigsHasBeenSet)
+  {
+   Array<JsonValue> fileSystemConfigsJsonList(m_fileSystemConfigs.size());
+   for(unsigned fileSystemConfigsIndex = 0; fileSystemConfigsIndex < fileSystemConfigsJsonList.GetLength(); ++fileSystemConfigsIndex)
+   {
+     fileSystemConfigsJsonList[fileSystemConfigsIndex].AsObject(m_fileSystemConfigs[fileSystemConfigsIndex].Jsonize());
+   }
+   payload.WithArray("FileSystemConfigs", std::move(fileSystemConfigsJsonList));
+
   }
 
   return payload;

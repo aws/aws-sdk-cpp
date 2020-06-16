@@ -42,7 +42,8 @@ CreateFunctionRequest::CreateFunctionRequest() :
     m_kMSKeyArnHasBeenSet(false),
     m_tracingConfigHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_layersHasBeenSet(false)
+    m_layersHasBeenSet(false),
+    m_fileSystemConfigsHasBeenSet(false)
 {
 }
 
@@ -152,6 +153,17 @@ Aws::String CreateFunctionRequest::SerializePayload() const
      layersJsonList[layersIndex].AsString(m_layers[layersIndex]);
    }
    payload.WithArray("Layers", std::move(layersJsonList));
+
+  }
+
+  if(m_fileSystemConfigsHasBeenSet)
+  {
+   Array<JsonValue> fileSystemConfigsJsonList(m_fileSystemConfigs.size());
+   for(unsigned fileSystemConfigsIndex = 0; fileSystemConfigsIndex < fileSystemConfigsJsonList.GetLength(); ++fileSystemConfigsIndex)
+   {
+     fileSystemConfigsJsonList[fileSystemConfigsIndex].AsObject(m_fileSystemConfigs[fileSystemConfigsIndex].Jsonize());
+   }
+   payload.WithArray("FileSystemConfigs", std::move(fileSystemConfigsJsonList));
 
   }
 

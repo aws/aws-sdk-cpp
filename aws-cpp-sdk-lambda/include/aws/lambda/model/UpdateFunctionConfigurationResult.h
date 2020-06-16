@@ -27,6 +27,7 @@
 #include <aws/lambda/model/LastUpdateStatus.h>
 #include <aws/lambda/model/LastUpdateStatusReasonCode.h>
 #include <aws/lambda/model/Layer.h>
+#include <aws/lambda/model/FileSystemConfig.h>
 #include <utility>
 
 namespace Aws
@@ -896,6 +897,42 @@ namespace Model
      */
     inline UpdateFunctionConfigurationResult& WithLastUpdateStatusReasonCode(LastUpdateStatusReasonCode&& value) { SetLastUpdateStatusReasonCode(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Connection settings for an Amazon EFS file system.</p>
+     */
+    inline const Aws::Vector<FileSystemConfig>& GetFileSystemConfigs() const{ return m_fileSystemConfigs; }
+
+    /**
+     * <p>Connection settings for an Amazon EFS file system.</p>
+     */
+    inline void SetFileSystemConfigs(const Aws::Vector<FileSystemConfig>& value) { m_fileSystemConfigs = value; }
+
+    /**
+     * <p>Connection settings for an Amazon EFS file system.</p>
+     */
+    inline void SetFileSystemConfigs(Aws::Vector<FileSystemConfig>&& value) { m_fileSystemConfigs = std::move(value); }
+
+    /**
+     * <p>Connection settings for an Amazon EFS file system.</p>
+     */
+    inline UpdateFunctionConfigurationResult& WithFileSystemConfigs(const Aws::Vector<FileSystemConfig>& value) { SetFileSystemConfigs(value); return *this;}
+
+    /**
+     * <p>Connection settings for an Amazon EFS file system.</p>
+     */
+    inline UpdateFunctionConfigurationResult& WithFileSystemConfigs(Aws::Vector<FileSystemConfig>&& value) { SetFileSystemConfigs(std::move(value)); return *this;}
+
+    /**
+     * <p>Connection settings for an Amazon EFS file system.</p>
+     */
+    inline UpdateFunctionConfigurationResult& AddFileSystemConfigs(const FileSystemConfig& value) { m_fileSystemConfigs.push_back(value); return *this; }
+
+    /**
+     * <p>Connection settings for an Amazon EFS file system.</p>
+     */
+    inline UpdateFunctionConfigurationResult& AddFileSystemConfigs(FileSystemConfig&& value) { m_fileSystemConfigs.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_functionName;
@@ -949,6 +986,8 @@ namespace Model
     Aws::String m_lastUpdateStatusReason;
 
     LastUpdateStatusReasonCode m_lastUpdateStatusReasonCode;
+
+    Aws::Vector<FileSystemConfig> m_fileSystemConfigs;
   };
 
 } // namespace Model

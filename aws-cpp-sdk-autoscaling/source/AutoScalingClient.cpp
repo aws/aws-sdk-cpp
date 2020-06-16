@@ -35,6 +35,7 @@
 #include <aws/autoscaling/model/AttachLoadBalancersRequest.h>
 #include <aws/autoscaling/model/BatchDeleteScheduledActionRequest.h>
 #include <aws/autoscaling/model/BatchPutScheduledUpdateGroupActionRequest.h>
+#include <aws/autoscaling/model/CancelInstanceRefreshRequest.h>
 #include <aws/autoscaling/model/CompleteLifecycleActionRequest.h>
 #include <aws/autoscaling/model/CreateAutoScalingGroupRequest.h>
 #include <aws/autoscaling/model/CreateLaunchConfigurationRequest.h>
@@ -51,6 +52,7 @@
 #include <aws/autoscaling/model/DescribeAutoScalingGroupsRequest.h>
 #include <aws/autoscaling/model/DescribeAutoScalingInstancesRequest.h>
 #include <aws/autoscaling/model/DescribeAutoScalingNotificationTypesRequest.h>
+#include <aws/autoscaling/model/DescribeInstanceRefreshesRequest.h>
 #include <aws/autoscaling/model/DescribeLaunchConfigurationsRequest.h>
 #include <aws/autoscaling/model/DescribeLifecycleHookTypesRequest.h>
 #include <aws/autoscaling/model/DescribeLifecycleHooksRequest.h>
@@ -81,6 +83,7 @@
 #include <aws/autoscaling/model/SetDesiredCapacityRequest.h>
 #include <aws/autoscaling/model/SetInstanceHealthRequest.h>
 #include <aws/autoscaling/model/SetInstanceProtectionRequest.h>
+#include <aws/autoscaling/model/StartInstanceRefreshRequest.h>
 #include <aws/autoscaling/model/SuspendProcessesRequest.h>
 #include <aws/autoscaling/model/TerminateInstanceInAutoScalingGroupRequest.h>
 #include <aws/autoscaling/model/UpdateAutoScalingGroupRequest.h>
@@ -341,6 +344,41 @@ void AutoScalingClient::BatchPutScheduledUpdateGroupActionAsync(const BatchPutSc
 void AutoScalingClient::BatchPutScheduledUpdateGroupActionAsyncHelper(const BatchPutScheduledUpdateGroupActionRequest& request, const BatchPutScheduledUpdateGroupActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, BatchPutScheduledUpdateGroupAction(request), context);
+}
+
+CancelInstanceRefreshOutcome AutoScalingClient::CancelInstanceRefresh(const CancelInstanceRefreshRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return CancelInstanceRefreshOutcome(CancelInstanceRefreshResult(outcome.GetResult()));
+  }
+  else
+  {
+    return CancelInstanceRefreshOutcome(outcome.GetError());
+  }
+}
+
+CancelInstanceRefreshOutcomeCallable AutoScalingClient::CancelInstanceRefreshCallable(const CancelInstanceRefreshRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CancelInstanceRefreshOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CancelInstanceRefresh(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AutoScalingClient::CancelInstanceRefreshAsync(const CancelInstanceRefreshRequest& request, const CancelInstanceRefreshResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CancelInstanceRefreshAsyncHelper( request, handler, context ); } );
+}
+
+void AutoScalingClient::CancelInstanceRefreshAsyncHelper(const CancelInstanceRefreshRequest& request, const CancelInstanceRefreshResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CancelInstanceRefresh(request), context);
 }
 
 CompleteLifecycleActionOutcome AutoScalingClient::CompleteLifecycleAction(const CompleteLifecycleActionRequest& request) const
@@ -901,6 +939,41 @@ void AutoScalingClient::DescribeAutoScalingNotificationTypesAsync(const Describe
 void AutoScalingClient::DescribeAutoScalingNotificationTypesAsyncHelper(const DescribeAutoScalingNotificationTypesRequest& request, const DescribeAutoScalingNotificationTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribeAutoScalingNotificationTypes(request), context);
+}
+
+DescribeInstanceRefreshesOutcome AutoScalingClient::DescribeInstanceRefreshes(const DescribeInstanceRefreshesRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DescribeInstanceRefreshesOutcome(DescribeInstanceRefreshesResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeInstanceRefreshesOutcome(outcome.GetError());
+  }
+}
+
+DescribeInstanceRefreshesOutcomeCallable AutoScalingClient::DescribeInstanceRefreshesCallable(const DescribeInstanceRefreshesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeInstanceRefreshesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeInstanceRefreshes(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AutoScalingClient::DescribeInstanceRefreshesAsync(const DescribeInstanceRefreshesRequest& request, const DescribeInstanceRefreshesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeInstanceRefreshesAsyncHelper( request, handler, context ); } );
+}
+
+void AutoScalingClient::DescribeInstanceRefreshesAsyncHelper(const DescribeInstanceRefreshesRequest& request, const DescribeInstanceRefreshesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeInstanceRefreshes(request), context);
 }
 
 DescribeLaunchConfigurationsOutcome AutoScalingClient::DescribeLaunchConfigurations(const DescribeLaunchConfigurationsRequest& request) const
@@ -1951,6 +2024,41 @@ void AutoScalingClient::SetInstanceProtectionAsync(const SetInstanceProtectionRe
 void AutoScalingClient::SetInstanceProtectionAsyncHelper(const SetInstanceProtectionRequest& request, const SetInstanceProtectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, SetInstanceProtection(request), context);
+}
+
+StartInstanceRefreshOutcome AutoScalingClient::StartInstanceRefresh(const StartInstanceRefreshRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return StartInstanceRefreshOutcome(StartInstanceRefreshResult(outcome.GetResult()));
+  }
+  else
+  {
+    return StartInstanceRefreshOutcome(outcome.GetError());
+  }
+}
+
+StartInstanceRefreshOutcomeCallable AutoScalingClient::StartInstanceRefreshCallable(const StartInstanceRefreshRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< StartInstanceRefreshOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartInstanceRefresh(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AutoScalingClient::StartInstanceRefreshAsync(const StartInstanceRefreshRequest& request, const StartInstanceRefreshResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->StartInstanceRefreshAsyncHelper( request, handler, context ); } );
+}
+
+void AutoScalingClient::StartInstanceRefreshAsyncHelper(const StartInstanceRefreshRequest& request, const StartInstanceRefreshResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, StartInstanceRefresh(request), context);
 }
 
 SuspendProcessesOutcome AutoScalingClient::SuspendProcesses(const SuspendProcessesRequest& request) const

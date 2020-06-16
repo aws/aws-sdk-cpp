@@ -25,6 +25,7 @@
 #include <aws/lambda/model/TracingConfig.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/lambda/model/FileSystemConfig.h>
 #include <utility>
 
 namespace Aws
@@ -856,6 +857,47 @@ namespace Model
      */
     inline CreateFunctionRequest& AddLayers(const char* value) { m_layersHasBeenSet = true; m_layers.push_back(value); return *this; }
 
+
+    /**
+     * <p>Connection settings for an Amazon EFS file system.</p>
+     */
+    inline const Aws::Vector<FileSystemConfig>& GetFileSystemConfigs() const{ return m_fileSystemConfigs; }
+
+    /**
+     * <p>Connection settings for an Amazon EFS file system.</p>
+     */
+    inline bool FileSystemConfigsHasBeenSet() const { return m_fileSystemConfigsHasBeenSet; }
+
+    /**
+     * <p>Connection settings for an Amazon EFS file system.</p>
+     */
+    inline void SetFileSystemConfigs(const Aws::Vector<FileSystemConfig>& value) { m_fileSystemConfigsHasBeenSet = true; m_fileSystemConfigs = value; }
+
+    /**
+     * <p>Connection settings for an Amazon EFS file system.</p>
+     */
+    inline void SetFileSystemConfigs(Aws::Vector<FileSystemConfig>&& value) { m_fileSystemConfigsHasBeenSet = true; m_fileSystemConfigs = std::move(value); }
+
+    /**
+     * <p>Connection settings for an Amazon EFS file system.</p>
+     */
+    inline CreateFunctionRequest& WithFileSystemConfigs(const Aws::Vector<FileSystemConfig>& value) { SetFileSystemConfigs(value); return *this;}
+
+    /**
+     * <p>Connection settings for an Amazon EFS file system.</p>
+     */
+    inline CreateFunctionRequest& WithFileSystemConfigs(Aws::Vector<FileSystemConfig>&& value) { SetFileSystemConfigs(std::move(value)); return *this;}
+
+    /**
+     * <p>Connection settings for an Amazon EFS file system.</p>
+     */
+    inline CreateFunctionRequest& AddFileSystemConfigs(const FileSystemConfig& value) { m_fileSystemConfigsHasBeenSet = true; m_fileSystemConfigs.push_back(value); return *this; }
+
+    /**
+     * <p>Connection settings for an Amazon EFS file system.</p>
+     */
+    inline CreateFunctionRequest& AddFileSystemConfigs(FileSystemConfig&& value) { m_fileSystemConfigsHasBeenSet = true; m_fileSystemConfigs.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_functionName;
@@ -905,6 +947,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_layers;
     bool m_layersHasBeenSet;
+
+    Aws::Vector<FileSystemConfig> m_fileSystemConfigs;
+    bool m_fileSystemConfigsHasBeenSet;
   };
 
 } // namespace Model

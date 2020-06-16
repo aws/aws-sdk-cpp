@@ -213,6 +213,15 @@ GetFunctionConfigurationResult& GetFunctionConfigurationResult::operator =(const
 
   }
 
+  if(jsonValue.ValueExists("FileSystemConfigs"))
+  {
+    Array<JsonView> fileSystemConfigsJsonList = jsonValue.GetArray("FileSystemConfigs");
+    for(unsigned fileSystemConfigsIndex = 0; fileSystemConfigsIndex < fileSystemConfigsJsonList.GetLength(); ++fileSystemConfigsIndex)
+    {
+      m_fileSystemConfigs.push_back(fileSystemConfigsJsonList[fileSystemConfigsIndex].AsObject());
+    }
+  }
+
 
 
   return *this;

@@ -34,7 +34,7 @@ namespace Model
 {
 
   /**
-   * <p>A structure that can contain an Amazon Ion value in multiple encoding
+   * <p>A structure that can contain a value in multiple encoding
    * formats.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/ValueHolder">AWS
    * API Reference</a></p>

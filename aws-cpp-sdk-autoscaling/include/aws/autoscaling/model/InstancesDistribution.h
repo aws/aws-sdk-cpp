@@ -34,7 +34,7 @@ namespace Model
 {
 
   /**
-   * <p>Describes an instances distribution for an Auto Scaling group with
+   * <p>Describes an instances distribution for an Auto Scaling group with a
    * <a>MixedInstancesPolicy</a>.</p> <p>The instances distribution specifies the
    * distribution of On-Demand Instances and Spot Instances, the maximum price to pay
    * for Spot Instances, and how the Auto Scaling group allocates instance types to

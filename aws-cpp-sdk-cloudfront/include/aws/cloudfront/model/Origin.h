@@ -67,56 +67,56 @@ namespace Model
     /**
      * <p>A unique identifier for the origin. This value must be unique within the
      * distribution.</p> <p>Use this value to specify the <code>TargetOriginId</code>
-     * in a <a>CacheBehavior</a> or <a>DefaultCacheBehavior</a>.</p>
+     * in a <code>CacheBehavior</code> or <code>DefaultCacheBehavior</code>.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
 
     /**
      * <p>A unique identifier for the origin. This value must be unique within the
      * distribution.</p> <p>Use this value to specify the <code>TargetOriginId</code>
-     * in a <a>CacheBehavior</a> or <a>DefaultCacheBehavior</a>.</p>
+     * in a <code>CacheBehavior</code> or <code>DefaultCacheBehavior</code>.</p>
      */
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
 
     /**
      * <p>A unique identifier for the origin. This value must be unique within the
      * distribution.</p> <p>Use this value to specify the <code>TargetOriginId</code>
-     * in a <a>CacheBehavior</a> or <a>DefaultCacheBehavior</a>.</p>
+     * in a <code>CacheBehavior</code> or <code>DefaultCacheBehavior</code>.</p>
      */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
      * <p>A unique identifier for the origin. This value must be unique within the
      * distribution.</p> <p>Use this value to specify the <code>TargetOriginId</code>
-     * in a <a>CacheBehavior</a> or <a>DefaultCacheBehavior</a>.</p>
+     * in a <code>CacheBehavior</code> or <code>DefaultCacheBehavior</code>.</p>
      */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
      * <p>A unique identifier for the origin. This value must be unique within the
      * distribution.</p> <p>Use this value to specify the <code>TargetOriginId</code>
-     * in a <a>CacheBehavior</a> or <a>DefaultCacheBehavior</a>.</p>
+     * in a <code>CacheBehavior</code> or <code>DefaultCacheBehavior</code>.</p>
      */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
     /**
      * <p>A unique identifier for the origin. This value must be unique within the
      * distribution.</p> <p>Use this value to specify the <code>TargetOriginId</code>
-     * in a <a>CacheBehavior</a> or <a>DefaultCacheBehavior</a>.</p>
+     * in a <code>CacheBehavior</code> or <code>DefaultCacheBehavior</code>.</p>
      */
     inline Origin& WithId(const Aws::String& value) { SetId(value); return *this;}
 
     /**
      * <p>A unique identifier for the origin. This value must be unique within the
      * distribution.</p> <p>Use this value to specify the <code>TargetOriginId</code>
-     * in a <a>CacheBehavior</a> or <a>DefaultCacheBehavior</a>.</p>
+     * in a <code>CacheBehavior</code> or <code>DefaultCacheBehavior</code>.</p>
      */
     inline Origin& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
      * <p>A unique identifier for the origin. This value must be unique within the
      * distribution.</p> <p>Use this value to specify the <code>TargetOriginId</code>
-     * in a <a>CacheBehavior</a> or <a>DefaultCacheBehavior</a>.</p>
+     * in a <code>CacheBehavior</code> or <code>DefaultCacheBehavior</code>.</p>
      */
     inline Origin& WithId(const char* value) { SetId(value); return *this;}
 
@@ -405,7 +405,12 @@ namespace Model
     /**
      * <p>The number of times that CloudFront attempts to connect to the origin. The
      * minimum number is 1, the maximum is 3, and the default (if you don’t specify
-     * otherwise) is 3.</p> <p>For more information, see <a
+     * otherwise) is 3.</p> <p>For a custom origin (including an Amazon S3 bucket
+     * that’s configured with static website hosting), this value also specifies the
+     * number of times that CloudFront attempts to get a response from the origin, in
+     * the case of an <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesOriginResponseTimeout">Origin
+     * Response Timeout</a>.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#origin-connection-attempts">Origin
      * Connection Attempts</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
      */
@@ -414,7 +419,12 @@ namespace Model
     /**
      * <p>The number of times that CloudFront attempts to connect to the origin. The
      * minimum number is 1, the maximum is 3, and the default (if you don’t specify
-     * otherwise) is 3.</p> <p>For more information, see <a
+     * otherwise) is 3.</p> <p>For a custom origin (including an Amazon S3 bucket
+     * that’s configured with static website hosting), this value also specifies the
+     * number of times that CloudFront attempts to get a response from the origin, in
+     * the case of an <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesOriginResponseTimeout">Origin
+     * Response Timeout</a>.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#origin-connection-attempts">Origin
      * Connection Attempts</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
      */
@@ -423,7 +433,12 @@ namespace Model
     /**
      * <p>The number of times that CloudFront attempts to connect to the origin. The
      * minimum number is 1, the maximum is 3, and the default (if you don’t specify
-     * otherwise) is 3.</p> <p>For more information, see <a
+     * otherwise) is 3.</p> <p>For a custom origin (including an Amazon S3 bucket
+     * that’s configured with static website hosting), this value also specifies the
+     * number of times that CloudFront attempts to get a response from the origin, in
+     * the case of an <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesOriginResponseTimeout">Origin
+     * Response Timeout</a>.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#origin-connection-attempts">Origin
      * Connection Attempts</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
      */
@@ -432,7 +447,12 @@ namespace Model
     /**
      * <p>The number of times that CloudFront attempts to connect to the origin. The
      * minimum number is 1, the maximum is 3, and the default (if you don’t specify
-     * otherwise) is 3.</p> <p>For more information, see <a
+     * otherwise) is 3.</p> <p>For a custom origin (including an Amazon S3 bucket
+     * that’s configured with static website hosting), this value also specifies the
+     * number of times that CloudFront attempts to get a response from the origin, in
+     * the case of an <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesOriginResponseTimeout">Origin
+     * Response Timeout</a>.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#origin-connection-attempts">Origin
      * Connection Attempts</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
      */

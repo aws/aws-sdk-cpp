@@ -26,6 +26,7 @@
 #include <aws/autoscaling/model/AttachLoadBalancersResult.h>
 #include <aws/autoscaling/model/BatchDeleteScheduledActionResult.h>
 #include <aws/autoscaling/model/BatchPutScheduledUpdateGroupActionResult.h>
+#include <aws/autoscaling/model/CancelInstanceRefreshResult.h>
 #include <aws/autoscaling/model/CompleteLifecycleActionResult.h>
 #include <aws/autoscaling/model/DeleteLifecycleHookResult.h>
 #include <aws/autoscaling/model/DescribeAccountLimitsResult.h>
@@ -33,6 +34,7 @@
 #include <aws/autoscaling/model/DescribeAutoScalingGroupsResult.h>
 #include <aws/autoscaling/model/DescribeAutoScalingInstancesResult.h>
 #include <aws/autoscaling/model/DescribeAutoScalingNotificationTypesResult.h>
+#include <aws/autoscaling/model/DescribeInstanceRefreshesResult.h>
 #include <aws/autoscaling/model/DescribeLaunchConfigurationsResult.h>
 #include <aws/autoscaling/model/DescribeLifecycleHookTypesResult.h>
 #include <aws/autoscaling/model/DescribeLifecycleHooksResult.h>
@@ -55,6 +57,7 @@
 #include <aws/autoscaling/model/PutScalingPolicyResult.h>
 #include <aws/autoscaling/model/RecordLifecycleActionHeartbeatResult.h>
 #include <aws/autoscaling/model/SetInstanceProtectionResult.h>
+#include <aws/autoscaling/model/StartInstanceRefreshResult.h>
 #include <aws/autoscaling/model/TerminateInstanceInAutoScalingGroupResult.h>
 #include <aws/core/NoResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
@@ -107,6 +110,7 @@ namespace Model
         class AttachLoadBalancersRequest;
         class BatchDeleteScheduledActionRequest;
         class BatchPutScheduledUpdateGroupActionRequest;
+        class CancelInstanceRefreshRequest;
         class CompleteLifecycleActionRequest;
         class CreateAutoScalingGroupRequest;
         class CreateLaunchConfigurationRequest;
@@ -123,6 +127,7 @@ namespace Model
         class DescribeAutoScalingGroupsRequest;
         class DescribeAutoScalingInstancesRequest;
         class DescribeAutoScalingNotificationTypesRequest;
+        class DescribeInstanceRefreshesRequest;
         class DescribeLaunchConfigurationsRequest;
         class DescribeLifecycleHookTypesRequest;
         class DescribeLifecycleHooksRequest;
@@ -153,6 +158,7 @@ namespace Model
         class SetDesiredCapacityRequest;
         class SetInstanceHealthRequest;
         class SetInstanceProtectionRequest;
+        class StartInstanceRefreshRequest;
         class SuspendProcessesRequest;
         class TerminateInstanceInAutoScalingGroupRequest;
         class UpdateAutoScalingGroupRequest;
@@ -162,6 +168,7 @@ namespace Model
         typedef Aws::Utils::Outcome<AttachLoadBalancersResult, Aws::Client::AWSError<AutoScalingErrors>> AttachLoadBalancersOutcome;
         typedef Aws::Utils::Outcome<BatchDeleteScheduledActionResult, Aws::Client::AWSError<AutoScalingErrors>> BatchDeleteScheduledActionOutcome;
         typedef Aws::Utils::Outcome<BatchPutScheduledUpdateGroupActionResult, Aws::Client::AWSError<AutoScalingErrors>> BatchPutScheduledUpdateGroupActionOutcome;
+        typedef Aws::Utils::Outcome<CancelInstanceRefreshResult, Aws::Client::AWSError<AutoScalingErrors>> CancelInstanceRefreshOutcome;
         typedef Aws::Utils::Outcome<CompleteLifecycleActionResult, Aws::Client::AWSError<AutoScalingErrors>> CompleteLifecycleActionOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<AutoScalingErrors>> CreateAutoScalingGroupOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<AutoScalingErrors>> CreateLaunchConfigurationOutcome;
@@ -178,6 +185,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribeAutoScalingGroupsResult, Aws::Client::AWSError<AutoScalingErrors>> DescribeAutoScalingGroupsOutcome;
         typedef Aws::Utils::Outcome<DescribeAutoScalingInstancesResult, Aws::Client::AWSError<AutoScalingErrors>> DescribeAutoScalingInstancesOutcome;
         typedef Aws::Utils::Outcome<DescribeAutoScalingNotificationTypesResult, Aws::Client::AWSError<AutoScalingErrors>> DescribeAutoScalingNotificationTypesOutcome;
+        typedef Aws::Utils::Outcome<DescribeInstanceRefreshesResult, Aws::Client::AWSError<AutoScalingErrors>> DescribeInstanceRefreshesOutcome;
         typedef Aws::Utils::Outcome<DescribeLaunchConfigurationsResult, Aws::Client::AWSError<AutoScalingErrors>> DescribeLaunchConfigurationsOutcome;
         typedef Aws::Utils::Outcome<DescribeLifecycleHookTypesResult, Aws::Client::AWSError<AutoScalingErrors>> DescribeLifecycleHookTypesOutcome;
         typedef Aws::Utils::Outcome<DescribeLifecycleHooksResult, Aws::Client::AWSError<AutoScalingErrors>> DescribeLifecycleHooksOutcome;
@@ -208,6 +216,7 @@ namespace Model
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<AutoScalingErrors>> SetDesiredCapacityOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<AutoScalingErrors>> SetInstanceHealthOutcome;
         typedef Aws::Utils::Outcome<SetInstanceProtectionResult, Aws::Client::AWSError<AutoScalingErrors>> SetInstanceProtectionOutcome;
+        typedef Aws::Utils::Outcome<StartInstanceRefreshResult, Aws::Client::AWSError<AutoScalingErrors>> StartInstanceRefreshOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<AutoScalingErrors>> SuspendProcessesOutcome;
         typedef Aws::Utils::Outcome<TerminateInstanceInAutoScalingGroupResult, Aws::Client::AWSError<AutoScalingErrors>> TerminateInstanceInAutoScalingGroupOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<AutoScalingErrors>> UpdateAutoScalingGroupOutcome;
@@ -217,6 +226,7 @@ namespace Model
         typedef std::future<AttachLoadBalancersOutcome> AttachLoadBalancersOutcomeCallable;
         typedef std::future<BatchDeleteScheduledActionOutcome> BatchDeleteScheduledActionOutcomeCallable;
         typedef std::future<BatchPutScheduledUpdateGroupActionOutcome> BatchPutScheduledUpdateGroupActionOutcomeCallable;
+        typedef std::future<CancelInstanceRefreshOutcome> CancelInstanceRefreshOutcomeCallable;
         typedef std::future<CompleteLifecycleActionOutcome> CompleteLifecycleActionOutcomeCallable;
         typedef std::future<CreateAutoScalingGroupOutcome> CreateAutoScalingGroupOutcomeCallable;
         typedef std::future<CreateLaunchConfigurationOutcome> CreateLaunchConfigurationOutcomeCallable;
@@ -233,6 +243,7 @@ namespace Model
         typedef std::future<DescribeAutoScalingGroupsOutcome> DescribeAutoScalingGroupsOutcomeCallable;
         typedef std::future<DescribeAutoScalingInstancesOutcome> DescribeAutoScalingInstancesOutcomeCallable;
         typedef std::future<DescribeAutoScalingNotificationTypesOutcome> DescribeAutoScalingNotificationTypesOutcomeCallable;
+        typedef std::future<DescribeInstanceRefreshesOutcome> DescribeInstanceRefreshesOutcomeCallable;
         typedef std::future<DescribeLaunchConfigurationsOutcome> DescribeLaunchConfigurationsOutcomeCallable;
         typedef std::future<DescribeLifecycleHookTypesOutcome> DescribeLifecycleHookTypesOutcomeCallable;
         typedef std::future<DescribeLifecycleHooksOutcome> DescribeLifecycleHooksOutcomeCallable;
@@ -263,6 +274,7 @@ namespace Model
         typedef std::future<SetDesiredCapacityOutcome> SetDesiredCapacityOutcomeCallable;
         typedef std::future<SetInstanceHealthOutcome> SetInstanceHealthOutcomeCallable;
         typedef std::future<SetInstanceProtectionOutcome> SetInstanceProtectionOutcomeCallable;
+        typedef std::future<StartInstanceRefreshOutcome> StartInstanceRefreshOutcomeCallable;
         typedef std::future<SuspendProcessesOutcome> SuspendProcessesOutcomeCallable;
         typedef std::future<TerminateInstanceInAutoScalingGroupOutcome> TerminateInstanceInAutoScalingGroupOutcomeCallable;
         typedef std::future<UpdateAutoScalingGroupOutcome> UpdateAutoScalingGroupOutcomeCallable;
@@ -275,6 +287,7 @@ namespace Model
     typedef std::function<void(const AutoScalingClient*, const Model::AttachLoadBalancersRequest&, const Model::AttachLoadBalancersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AttachLoadBalancersResponseReceivedHandler;
     typedef std::function<void(const AutoScalingClient*, const Model::BatchDeleteScheduledActionRequest&, const Model::BatchDeleteScheduledActionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchDeleteScheduledActionResponseReceivedHandler;
     typedef std::function<void(const AutoScalingClient*, const Model::BatchPutScheduledUpdateGroupActionRequest&, const Model::BatchPutScheduledUpdateGroupActionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchPutScheduledUpdateGroupActionResponseReceivedHandler;
+    typedef std::function<void(const AutoScalingClient*, const Model::CancelInstanceRefreshRequest&, const Model::CancelInstanceRefreshOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CancelInstanceRefreshResponseReceivedHandler;
     typedef std::function<void(const AutoScalingClient*, const Model::CompleteLifecycleActionRequest&, const Model::CompleteLifecycleActionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CompleteLifecycleActionResponseReceivedHandler;
     typedef std::function<void(const AutoScalingClient*, const Model::CreateAutoScalingGroupRequest&, const Model::CreateAutoScalingGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateAutoScalingGroupResponseReceivedHandler;
     typedef std::function<void(const AutoScalingClient*, const Model::CreateLaunchConfigurationRequest&, const Model::CreateLaunchConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateLaunchConfigurationResponseReceivedHandler;
@@ -291,6 +304,7 @@ namespace Model
     typedef std::function<void(const AutoScalingClient*, const Model::DescribeAutoScalingGroupsRequest&, const Model::DescribeAutoScalingGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAutoScalingGroupsResponseReceivedHandler;
     typedef std::function<void(const AutoScalingClient*, const Model::DescribeAutoScalingInstancesRequest&, const Model::DescribeAutoScalingInstancesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAutoScalingInstancesResponseReceivedHandler;
     typedef std::function<void(const AutoScalingClient*, const Model::DescribeAutoScalingNotificationTypesRequest&, const Model::DescribeAutoScalingNotificationTypesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAutoScalingNotificationTypesResponseReceivedHandler;
+    typedef std::function<void(const AutoScalingClient*, const Model::DescribeInstanceRefreshesRequest&, const Model::DescribeInstanceRefreshesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeInstanceRefreshesResponseReceivedHandler;
     typedef std::function<void(const AutoScalingClient*, const Model::DescribeLaunchConfigurationsRequest&, const Model::DescribeLaunchConfigurationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeLaunchConfigurationsResponseReceivedHandler;
     typedef std::function<void(const AutoScalingClient*, const Model::DescribeLifecycleHookTypesRequest&, const Model::DescribeLifecycleHookTypesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeLifecycleHookTypesResponseReceivedHandler;
     typedef std::function<void(const AutoScalingClient*, const Model::DescribeLifecycleHooksRequest&, const Model::DescribeLifecycleHooksOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeLifecycleHooksResponseReceivedHandler;
@@ -321,6 +335,7 @@ namespace Model
     typedef std::function<void(const AutoScalingClient*, const Model::SetDesiredCapacityRequest&, const Model::SetDesiredCapacityOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SetDesiredCapacityResponseReceivedHandler;
     typedef std::function<void(const AutoScalingClient*, const Model::SetInstanceHealthRequest&, const Model::SetInstanceHealthOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SetInstanceHealthResponseReceivedHandler;
     typedef std::function<void(const AutoScalingClient*, const Model::SetInstanceProtectionRequest&, const Model::SetInstanceProtectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SetInstanceProtectionResponseReceivedHandler;
+    typedef std::function<void(const AutoScalingClient*, const Model::StartInstanceRefreshRequest&, const Model::StartInstanceRefreshOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartInstanceRefreshResponseReceivedHandler;
     typedef std::function<void(const AutoScalingClient*, const Model::SuspendProcessesRequest&, const Model::SuspendProcessesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SuspendProcessesResponseReceivedHandler;
     typedef std::function<void(const AutoScalingClient*, const Model::TerminateInstanceInAutoScalingGroupRequest&, const Model::TerminateInstanceInAutoScalingGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TerminateInstanceInAutoScalingGroupResponseReceivedHandler;
     typedef std::function<void(const AutoScalingClient*, const Model::UpdateAutoScalingGroupRequest&, const Model::UpdateAutoScalingGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateAutoScalingGroupResponseReceivedHandler;
@@ -593,6 +608,46 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void BatchPutScheduledUpdateGroupActionAsync(const Model::BatchPutScheduledUpdateGroupActionRequest& request, const BatchPutScheduledUpdateGroupActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Cancels an instance refresh operation in progress. Cancellation does not roll
+         * back any replacements that have already been completed, but it prevents new
+         * replacements from being started. </p> <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-refresh.html">Replacing
+         * Auto Scaling Instances Based on an Instance Refresh</a>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/CancelInstanceRefresh">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CancelInstanceRefreshOutcome CancelInstanceRefresh(const Model::CancelInstanceRefreshRequest& request) const;
+
+        /**
+         * <p>Cancels an instance refresh operation in progress. Cancellation does not roll
+         * back any replacements that have already been completed, but it prevents new
+         * replacements from being started. </p> <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-refresh.html">Replacing
+         * Auto Scaling Instances Based on an Instance Refresh</a>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/CancelInstanceRefresh">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CancelInstanceRefreshOutcomeCallable CancelInstanceRefreshCallable(const Model::CancelInstanceRefreshRequest& request) const;
+
+        /**
+         * <p>Cancels an instance refresh operation in progress. Cancellation does not roll
+         * back any replacements that have already been completed, but it prevents new
+         * replacements from being started. </p> <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-refresh.html">Replacing
+         * Auto Scaling Instances Based on an Instance Refresh</a>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/CancelInstanceRefresh">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CancelInstanceRefreshAsync(const Model::CancelInstanceRefreshRequest& request, const CancelInstanceRefreshResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Completes the lifecycle action for the specified token or instance with the
@@ -1227,6 +1282,67 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeAutoScalingNotificationTypesAsync(const Model::DescribeAutoScalingNotificationTypesRequest& request, const DescribeAutoScalingNotificationTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Describes one or more instance refreshes.</p> <p>You can determine the status
+         * of a request by looking at the <code>Status</code> parameter. The following are
+         * the possible statuses: </p> <ul> <li> <p> <code>Pending</code> - The request was
+         * created, but the operation has not started.</p> </li> <li> <p>
+         * <code>InProgress</code> - The operation is in progress.</p> </li> <li> <p>
+         * <code>Successful</code> - The operation completed successfully.</p> </li> <li>
+         * <p> <code>Failed</code> - The operation failed to complete. You can troubleshoot
+         * using the status reason and the scaling activities. </p> </li> <li> <p>
+         * <code>Cancelling</code> - An ongoing operation is being cancelled. Cancellation
+         * does not roll back any replacements that have already been completed, but it
+         * prevents new replacements from being started. </p> </li> <li> <p>
+         * <code>Cancelled</code> - The operation is cancelled. </p> </li> </ul><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeInstanceRefreshes">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeInstanceRefreshesOutcome DescribeInstanceRefreshes(const Model::DescribeInstanceRefreshesRequest& request) const;
+
+        /**
+         * <p>Describes one or more instance refreshes.</p> <p>You can determine the status
+         * of a request by looking at the <code>Status</code> parameter. The following are
+         * the possible statuses: </p> <ul> <li> <p> <code>Pending</code> - The request was
+         * created, but the operation has not started.</p> </li> <li> <p>
+         * <code>InProgress</code> - The operation is in progress.</p> </li> <li> <p>
+         * <code>Successful</code> - The operation completed successfully.</p> </li> <li>
+         * <p> <code>Failed</code> - The operation failed to complete. You can troubleshoot
+         * using the status reason and the scaling activities. </p> </li> <li> <p>
+         * <code>Cancelling</code> - An ongoing operation is being cancelled. Cancellation
+         * does not roll back any replacements that have already been completed, but it
+         * prevents new replacements from being started. </p> </li> <li> <p>
+         * <code>Cancelled</code> - The operation is cancelled. </p> </li> </ul><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeInstanceRefreshes">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeInstanceRefreshesOutcomeCallable DescribeInstanceRefreshesCallable(const Model::DescribeInstanceRefreshesRequest& request) const;
+
+        /**
+         * <p>Describes one or more instance refreshes.</p> <p>You can determine the status
+         * of a request by looking at the <code>Status</code> parameter. The following are
+         * the possible statuses: </p> <ul> <li> <p> <code>Pending</code> - The request was
+         * created, but the operation has not started.</p> </li> <li> <p>
+         * <code>InProgress</code> - The operation is in progress.</p> </li> <li> <p>
+         * <code>Successful</code> - The operation completed successfully.</p> </li> <li>
+         * <p> <code>Failed</code> - The operation failed to complete. You can troubleshoot
+         * using the status reason and the scaling activities. </p> </li> <li> <p>
+         * <code>Cancelling</code> - An ongoing operation is being cancelled. Cancellation
+         * does not roll back any replacements that have already been completed, but it
+         * prevents new replacements from being started. </p> </li> <li> <p>
+         * <code>Cancelled</code> - The operation is cancelled. </p> </li> </ul><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeInstanceRefreshes">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeInstanceRefreshesAsync(const Model::DescribeInstanceRefreshesRequest& request, const DescribeInstanceRefreshesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes one or more launch configurations.</p><p><h3>See Also:</h3>   <a
@@ -2432,6 +2548,61 @@ namespace Model
         virtual void SetInstanceProtectionAsync(const Model::SetInstanceProtectionRequest& request, const SetInstanceProtectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Starts a new instance refresh operation, which triggers a rolling replacement
+         * of all previously launched instances in the Auto Scaling group with a new group
+         * of instances.</p> <p>If successful, this call creates a new instance refresh
+         * request with a unique ID that you can use to track its progress. To query its
+         * status, call the <a>DescribeInstanceRefreshes</a> API. To describe the instance
+         * refreshes that have already run, call the <a>DescribeInstanceRefreshes</a> API.
+         * To cancel an active instance refresh operation, use the
+         * <a>CancelInstanceRefresh</a> API.</p> <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-refresh.html">Replacing
+         * Auto Scaling Instances Based on an Instance Refresh</a>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/StartInstanceRefresh">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartInstanceRefreshOutcome StartInstanceRefresh(const Model::StartInstanceRefreshRequest& request) const;
+
+        /**
+         * <p>Starts a new instance refresh operation, which triggers a rolling replacement
+         * of all previously launched instances in the Auto Scaling group with a new group
+         * of instances.</p> <p>If successful, this call creates a new instance refresh
+         * request with a unique ID that you can use to track its progress. To query its
+         * status, call the <a>DescribeInstanceRefreshes</a> API. To describe the instance
+         * refreshes that have already run, call the <a>DescribeInstanceRefreshes</a> API.
+         * To cancel an active instance refresh operation, use the
+         * <a>CancelInstanceRefresh</a> API.</p> <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-refresh.html">Replacing
+         * Auto Scaling Instances Based on an Instance Refresh</a>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/StartInstanceRefresh">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::StartInstanceRefreshOutcomeCallable StartInstanceRefreshCallable(const Model::StartInstanceRefreshRequest& request) const;
+
+        /**
+         * <p>Starts a new instance refresh operation, which triggers a rolling replacement
+         * of all previously launched instances in the Auto Scaling group with a new group
+         * of instances.</p> <p>If successful, this call creates a new instance refresh
+         * request with a unique ID that you can use to track its progress. To query its
+         * status, call the <a>DescribeInstanceRefreshes</a> API. To describe the instance
+         * refreshes that have already run, call the <a>DescribeInstanceRefreshes</a> API.
+         * To cancel an active instance refresh operation, use the
+         * <a>CancelInstanceRefresh</a> API.</p> <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-refresh.html">Replacing
+         * Auto Scaling Instances Based on an Instance Refresh</a>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/StartInstanceRefresh">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void StartInstanceRefreshAsync(const Model::StartInstanceRefreshRequest& request, const StartInstanceRefreshResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Suspends the specified automatic scaling processes, or all processes, for the
          * specified Auto Scaling group.</p> <p>If you suspend either the
          * <code>Launch</code> or <code>Terminate</code> process types, it can prevent
@@ -2674,6 +2845,7 @@ namespace Model
         void AttachLoadBalancersAsyncHelper(const Model::AttachLoadBalancersRequest& request, const AttachLoadBalancersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void BatchDeleteScheduledActionAsyncHelper(const Model::BatchDeleteScheduledActionRequest& request, const BatchDeleteScheduledActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void BatchPutScheduledUpdateGroupActionAsyncHelper(const Model::BatchPutScheduledUpdateGroupActionRequest& request, const BatchPutScheduledUpdateGroupActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CancelInstanceRefreshAsyncHelper(const Model::CancelInstanceRefreshRequest& request, const CancelInstanceRefreshResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CompleteLifecycleActionAsyncHelper(const Model::CompleteLifecycleActionRequest& request, const CompleteLifecycleActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateAutoScalingGroupAsyncHelper(const Model::CreateAutoScalingGroupRequest& request, const CreateAutoScalingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateLaunchConfigurationAsyncHelper(const Model::CreateLaunchConfigurationRequest& request, const CreateLaunchConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -2690,6 +2862,7 @@ namespace Model
         void DescribeAutoScalingGroupsAsyncHelper(const Model::DescribeAutoScalingGroupsRequest& request, const DescribeAutoScalingGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeAutoScalingInstancesAsyncHelper(const Model::DescribeAutoScalingInstancesRequest& request, const DescribeAutoScalingInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeAutoScalingNotificationTypesAsyncHelper(const Model::DescribeAutoScalingNotificationTypesRequest& request, const DescribeAutoScalingNotificationTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeInstanceRefreshesAsyncHelper(const Model::DescribeInstanceRefreshesRequest& request, const DescribeInstanceRefreshesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeLaunchConfigurationsAsyncHelper(const Model::DescribeLaunchConfigurationsRequest& request, const DescribeLaunchConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeLifecycleHookTypesAsyncHelper(const Model::DescribeLifecycleHookTypesRequest& request, const DescribeLifecycleHookTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeLifecycleHooksAsyncHelper(const Model::DescribeLifecycleHooksRequest& request, const DescribeLifecycleHooksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -2720,6 +2893,7 @@ namespace Model
         void SetDesiredCapacityAsyncHelper(const Model::SetDesiredCapacityRequest& request, const SetDesiredCapacityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SetInstanceHealthAsyncHelper(const Model::SetInstanceHealthRequest& request, const SetInstanceHealthResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SetInstanceProtectionAsyncHelper(const Model::SetInstanceProtectionRequest& request, const SetInstanceProtectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void StartInstanceRefreshAsyncHelper(const Model::StartInstanceRefreshRequest& request, const StartInstanceRefreshResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SuspendProcessesAsyncHelper(const Model::SuspendProcessesRequest& request, const SuspendProcessesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void TerminateInstanceInAutoScalingGroupAsyncHelper(const Model::TerminateInstanceInAutoScalingGroupRequest& request, const TerminateInstanceInAutoScalingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateAutoScalingGroupAsyncHelper(const Model::UpdateAutoScalingGroupRequest& request, const UpdateAutoScalingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

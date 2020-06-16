@@ -56,7 +56,9 @@ enum class AutoScalingErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  ALREADY_EXISTS_FAULT= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  ACTIVE_INSTANCE_REFRESH_NOT_FOUND_FAULT= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  ALREADY_EXISTS_FAULT,
+  INSTANCE_REFRESH_IN_PROGRESS_FAULT,
   INVALID_NEXT_TOKEN,
   LIMIT_EXCEEDED_FAULT,
   RESOURCE_CONTENTION_FAULT,

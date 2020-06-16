@@ -28,6 +28,7 @@ namespace Lambda
 namespace LambdaErrorMapper
 {
 
+static const int E_F_S_MOUNT_CONNECTIVITY_HASH = HashingUtils::HashString("EFSMountConnectivityException");
 static const int RESOURCE_NOT_READY_HASH = HashingUtils::HashString("ResourceNotReadyException");
 static const int PROVISIONED_CONCURRENCY_CONFIG_NOT_FOUND_HASH = HashingUtils::HashString("ProvisionedConcurrencyConfigNotFoundException");
 static const int K_M_S_INVALID_STATE_HASH = HashingUtils::HashString("KMSInvalidStateException");
@@ -39,12 +40,15 @@ static const int SUBNET_I_P_ADDRESS_LIMIT_REACHED_HASH = HashingUtils::HashStrin
 static const int INVALID_REQUEST_CONTENT_HASH = HashingUtils::HashString("InvalidRequestContentException");
 static const int E_C2_ACCESS_DENIED_HASH = HashingUtils::HashString("EC2AccessDeniedException");
 static const int REQUEST_TOO_LARGE_HASH = HashingUtils::HashString("RequestTooLargeException");
+static const int E_F_S_I_O_HASH = HashingUtils::HashString("EFSIOException");
 static const int INVALID_SECURITY_GROUP_I_D_HASH = HashingUtils::HashString("InvalidSecurityGroupIDException");
 static const int INVALID_SUBNET_I_D_HASH = HashingUtils::HashString("InvalidSubnetIDException");
+static const int E_F_S_MOUNT_TIMEOUT_HASH = HashingUtils::HashString("EFSMountTimeoutException");
 static const int INVALID_RUNTIME_HASH = HashingUtils::HashString("InvalidRuntimeException");
 static const int E_C2_UNEXPECTED_HASH = HashingUtils::HashString("EC2UnexpectedException");
 static const int INVALID_ZIP_FILE_HASH = HashingUtils::HashString("InvalidZipFileException");
 static const int UNSUPPORTED_MEDIA_TYPE_HASH = HashingUtils::HashString("UnsupportedMediaTypeException");
+static const int E_F_S_MOUNT_FAILURE_HASH = HashingUtils::HashString("EFSMountFailureException");
 static const int K_M_S_DISABLED_HASH = HashingUtils::HashString("KMSDisabledException");
 static const int K_M_S_ACCESS_DENIED_HASH = HashingUtils::HashString("KMSAccessDeniedException");
 static const int E_C2_THROTTLED_HASH = HashingUtils::HashString("EC2ThrottledException");
@@ -59,7 +63,11 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == RESOURCE_NOT_READY_HASH)
+  if (hashCode == E_F_S_MOUNT_CONNECTIVITY_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::E_F_S_MOUNT_CONNECTIVITY), false);
+  }
+  else if (hashCode == RESOURCE_NOT_READY_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::RESOURCE_NOT_READY), false);
   }
@@ -103,6 +111,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::REQUEST_TOO_LARGE), false);
   }
+  else if (hashCode == E_F_S_I_O_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::E_F_S_I_O), false);
+  }
   else if (hashCode == INVALID_SECURITY_GROUP_I_D_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::INVALID_SECURITY_GROUP_I_D), false);
@@ -110,6 +122,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == INVALID_SUBNET_I_D_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::INVALID_SUBNET_I_D), false);
+  }
+  else if (hashCode == E_F_S_MOUNT_TIMEOUT_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::E_F_S_MOUNT_TIMEOUT), false);
   }
   else if (hashCode == INVALID_RUNTIME_HASH)
   {
@@ -126,6 +142,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == UNSUPPORTED_MEDIA_TYPE_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::UNSUPPORTED_MEDIA_TYPE), false);
+  }
+  else if (hashCode == E_F_S_MOUNT_FAILURE_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::E_F_S_MOUNT_FAILURE), false);
   }
   else if (hashCode == K_M_S_DISABLED_HASH)
   {

@@ -58,8 +58,8 @@ namespace Model
      * <code>AddToLoadBalancer</code> </p> </li> <li> <p>
      * <code>AlarmNotification</code> </p> </li> <li> <p> <code>AZRebalance</code> </p>
      * </li> <li> <p> <code>HealthCheck</code> </p> </li> <li> <p>
-     * <code>ReplaceUnhealthy</code> </p> </li> <li> <p> <code>ScheduledActions</code>
-     * </p> </li> </ul>
+     * <code>InstanceRefresh</code> </p> </li> <li> <p> <code>ReplaceUnhealthy</code>
+     * </p> </li> <li> <p> <code>ScheduledActions</code> </p> </li> </ul>
      */
     inline const Aws::String& GetProcessName() const{ return m_processName; }
 
@@ -69,8 +69,8 @@ namespace Model
      * <code>AddToLoadBalancer</code> </p> </li> <li> <p>
      * <code>AlarmNotification</code> </p> </li> <li> <p> <code>AZRebalance</code> </p>
      * </li> <li> <p> <code>HealthCheck</code> </p> </li> <li> <p>
-     * <code>ReplaceUnhealthy</code> </p> </li> <li> <p> <code>ScheduledActions</code>
-     * </p> </li> </ul>
+     * <code>InstanceRefresh</code> </p> </li> <li> <p> <code>ReplaceUnhealthy</code>
+     * </p> </li> <li> <p> <code>ScheduledActions</code> </p> </li> </ul>
      */
     inline bool ProcessNameHasBeenSet() const { return m_processNameHasBeenSet; }
 
@@ -80,8 +80,8 @@ namespace Model
      * <code>AddToLoadBalancer</code> </p> </li> <li> <p>
      * <code>AlarmNotification</code> </p> </li> <li> <p> <code>AZRebalance</code> </p>
      * </li> <li> <p> <code>HealthCheck</code> </p> </li> <li> <p>
-     * <code>ReplaceUnhealthy</code> </p> </li> <li> <p> <code>ScheduledActions</code>
-     * </p> </li> </ul>
+     * <code>InstanceRefresh</code> </p> </li> <li> <p> <code>ReplaceUnhealthy</code>
+     * </p> </li> <li> <p> <code>ScheduledActions</code> </p> </li> </ul>
      */
     inline void SetProcessName(const Aws::String& value) { m_processNameHasBeenSet = true; m_processName = value; }
 
@@ -91,8 +91,8 @@ namespace Model
      * <code>AddToLoadBalancer</code> </p> </li> <li> <p>
      * <code>AlarmNotification</code> </p> </li> <li> <p> <code>AZRebalance</code> </p>
      * </li> <li> <p> <code>HealthCheck</code> </p> </li> <li> <p>
-     * <code>ReplaceUnhealthy</code> </p> </li> <li> <p> <code>ScheduledActions</code>
-     * </p> </li> </ul>
+     * <code>InstanceRefresh</code> </p> </li> <li> <p> <code>ReplaceUnhealthy</code>
+     * </p> </li> <li> <p> <code>ScheduledActions</code> </p> </li> </ul>
      */
     inline void SetProcessName(Aws::String&& value) { m_processNameHasBeenSet = true; m_processName = std::move(value); }
 
@@ -102,8 +102,8 @@ namespace Model
      * <code>AddToLoadBalancer</code> </p> </li> <li> <p>
      * <code>AlarmNotification</code> </p> </li> <li> <p> <code>AZRebalance</code> </p>
      * </li> <li> <p> <code>HealthCheck</code> </p> </li> <li> <p>
-     * <code>ReplaceUnhealthy</code> </p> </li> <li> <p> <code>ScheduledActions</code>
-     * </p> </li> </ul>
+     * <code>InstanceRefresh</code> </p> </li> <li> <p> <code>ReplaceUnhealthy</code>
+     * </p> </li> <li> <p> <code>ScheduledActions</code> </p> </li> </ul>
      */
     inline void SetProcessName(const char* value) { m_processNameHasBeenSet = true; m_processName.assign(value); }
 
@@ -113,8 +113,8 @@ namespace Model
      * <code>AddToLoadBalancer</code> </p> </li> <li> <p>
      * <code>AlarmNotification</code> </p> </li> <li> <p> <code>AZRebalance</code> </p>
      * </li> <li> <p> <code>HealthCheck</code> </p> </li> <li> <p>
-     * <code>ReplaceUnhealthy</code> </p> </li> <li> <p> <code>ScheduledActions</code>
-     * </p> </li> </ul>
+     * <code>InstanceRefresh</code> </p> </li> <li> <p> <code>ReplaceUnhealthy</code>
+     * </p> </li> <li> <p> <code>ScheduledActions</code> </p> </li> </ul>
      */
     inline ProcessType& WithProcessName(const Aws::String& value) { SetProcessName(value); return *this;}
 
@@ -124,8 +124,8 @@ namespace Model
      * <code>AddToLoadBalancer</code> </p> </li> <li> <p>
      * <code>AlarmNotification</code> </p> </li> <li> <p> <code>AZRebalance</code> </p>
      * </li> <li> <p> <code>HealthCheck</code> </p> </li> <li> <p>
-     * <code>ReplaceUnhealthy</code> </p> </li> <li> <p> <code>ScheduledActions</code>
-     * </p> </li> </ul>
+     * <code>InstanceRefresh</code> </p> </li> <li> <p> <code>ReplaceUnhealthy</code>
+     * </p> </li> <li> <p> <code>ScheduledActions</code> </p> </li> </ul>
      */
     inline ProcessType& WithProcessName(Aws::String&& value) { SetProcessName(std::move(value)); return *this;}
 
@@ -135,8 +135,8 @@ namespace Model
      * <code>AddToLoadBalancer</code> </p> </li> <li> <p>
      * <code>AlarmNotification</code> </p> </li> <li> <p> <code>AZRebalance</code> </p>
      * </li> <li> <p> <code>HealthCheck</code> </p> </li> <li> <p>
-     * <code>ReplaceUnhealthy</code> </p> </li> <li> <p> <code>ScheduledActions</code>
-     * </p> </li> </ul>
+     * <code>InstanceRefresh</code> </p> </li> <li> <p> <code>ReplaceUnhealthy</code>
+     * </p> </li> <li> <p> <code>ScheduledActions</code> </p> </li> </ul>
      */
     inline ProcessType& WithProcessName(const char* value) { SetProcessName(value); return *this;}
 
