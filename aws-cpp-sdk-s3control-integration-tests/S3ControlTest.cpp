@@ -224,56 +224,6 @@ namespace
         }
     };
 
-    TEST_F(S3ControlTest, TestPublicAccessBlockOperations)
-    {
-        GetPublicAccessBlockRequest getPublicAccessBlockRequest;
-        getPublicAccessBlockRequest.SetAccountId(m_accountId);
-        auto getPublicAccessBlockOutcome = m_client.GetPublicAccessBlock(getPublicAccessBlockRequest);
-        ASSERT_FALSE(getPublicAccessBlockOutcome.IsSuccess());
-        ASSERT_EQ(S3ControlErrors::NO_SUCH_PUBLIC_ACCESS_BLOCK_CONFIGURATION, getPublicAccessBlockOutcome.GetError().GetErrorType());
-
-        PutPublicAccessBlockRequest putPublicAccessBlockRequest;
-        PublicAccessBlockConfiguration publicAccessBlockConfiguration;
-        publicAccessBlockConfiguration.SetBlockPublicPolicy(true);
-        putPublicAccessBlockRequest.SetPublicAccessBlockConfiguration(publicAccessBlockConfiguration);
-        putPublicAccessBlockRequest.SetAccountId(m_accountId);
-        auto putPublicAccessBlockOutcome = m_client.PutPublicAccessBlock(putPublicAccessBlockRequest);
-        ASSERT_TRUE(putPublicAccessBlockOutcome.IsSuccess());
-
-        DeletePublicAccessBlockRequest deletePublicAccessBlockRequest;
-        deletePublicAccessBlockRequest.SetAccountId(m_accountId);
-        auto deletePublicAccessBlockOutcome = m_client.DeletePublicAccessBlock(deletePublicAccessBlockRequest);
-        ASSERT_TRUE(deletePublicAccessBlockOutcome.IsSuccess());
-    }
-
-    TEST_F(S3ControlTest, TestDualStackEndpoint)
-    {
-        ClientConfiguration config;
-        config.region = Aws::Region::US_EAST_1;
-        config.scheme = Scheme::HTTPS;
-        config.useDualStack = true;
-        S3ControlClient s3ControlClient(config);
-
-        GetPublicAccessBlockRequest getPublicAccessBlockRequest;
-        getPublicAccessBlockRequest.SetAccountId(m_accountId);
-        auto getPublicAccessBlockOutcome = s3ControlClient.GetPublicAccessBlock(getPublicAccessBlockRequest);
-        ASSERT_FALSE(getPublicAccessBlockOutcome.IsSuccess());
-        ASSERT_EQ(S3ControlErrors::NO_SUCH_PUBLIC_ACCESS_BLOCK_CONFIGURATION, getPublicAccessBlockOutcome.GetError().GetErrorType());
-
-        PutPublicAccessBlockRequest putPublicAccessBlockRequest;
-        PublicAccessBlockConfiguration publicAccessBlockConfiguration;
-        publicAccessBlockConfiguration.SetIgnorePublicAcls(true);
-        putPublicAccessBlockRequest.SetPublicAccessBlockConfiguration(publicAccessBlockConfiguration);
-        putPublicAccessBlockRequest.SetAccountId(m_accountId);
-        auto putPublicAccessBlockOutcome = s3ControlClient.PutPublicAccessBlock(putPublicAccessBlockRequest);
-        ASSERT_TRUE(putPublicAccessBlockOutcome.IsSuccess());
-
-        DeletePublicAccessBlockRequest deletePublicAccessBlockRequest;
-        deletePublicAccessBlockRequest.SetAccountId(m_accountId);
-        auto deletePublicAccessBlockOutcome = s3ControlClient.DeletePublicAccessBlock(deletePublicAccessBlockRequest);
-        ASSERT_TRUE(deletePublicAccessBlockOutcome.IsSuccess());
-    }
-
     TEST_F(S3ControlTest, TestInvalidAccountId)
     {
         PutPublicAccessBlockRequest putPublicAccessBlockRequest;
@@ -285,7 +235,7 @@ namespace
         auto putPublicAccessBlockOutcome = m_client.PutPublicAccessBlock(putPublicAccessBlockRequest);
         ASSERT_FALSE(putPublicAccessBlockOutcome.IsSuccess());
 
-        // The account id shoud be a valid DNS label. Otherwise we will not make the request.
+        // The account id should be a valid DNS label. Otherwise we will not make the request.
         putPublicAccessBlockRequest.SetAccountId("invalid.account.id");
 
         putPublicAccessBlockOutcome = m_client.PutPublicAccessBlock(putPublicAccessBlockRequest);
@@ -306,6 +256,13 @@ namespace
         headBucketRequest.SetBucket(accessPointArn);
         auto headBucketOutcome = m_s3Client.HeadBucket(headBucketRequest);
         ASSERT_TRUE(headBucketOutcome.IsSuccess());
+
+        GetAccessPointRequest getAccessPointRequest;
+        getAccessPointRequest.SetAccountId(m_accountId);
+        getAccessPointRequest.SetName(accessPoint);
+        auto getAccessPointOutcome = m_client.GetAccessPoint(getAccessPointRequest);
+        ASSERT_TRUE(getAccessPointOutcome.IsSuccess());
+        ASSERT_EQ(accessPoint, getAccessPointOutcome.GetResult().GetName());
 
         // Invalid service name
         ss.str("");
@@ -392,9 +349,14 @@ namespace
         config.region = Aws::Region::US_WEST_2;
         config.useDualStack = true;
         S3::S3Client s3ClientInUsWest2UsingDualStack(config);
+        S3ControlClient clientInUsWest2UsingDualStack(config);
         headBucketRequest.SetBucket(accessPointArn);
         headBucketOutcome = s3ClientInUsWest2UsingDualStack.HeadBucket(headBucketRequest);
         ASSERT_TRUE(headBucketOutcome.IsSuccess());
+
+        getAccessPointOutcome = clientInUsWest2UsingDualStack.GetAccessPoint(getAccessPointRequest);
+        ASSERT_TRUE(getAccessPointOutcome.IsSuccess());
+        ASSERT_EQ(accessPoint, getAccessPointOutcome.GetResult().GetName());
 
         config.region = Aws::Region::US_EAST_1;
         config.useDualStack = false;
