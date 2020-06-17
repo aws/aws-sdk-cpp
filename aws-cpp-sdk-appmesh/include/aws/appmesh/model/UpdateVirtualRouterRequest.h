@@ -165,7 +165,7 @@ request. Up to 36 letters, numbers, hyphens, and underscores are
                the ID of the account that shared the mesh
      * with your account. For more information about mesh sharing, see <a
      * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working
-     * with Shared Meshes</a>.</p>
+     * with shared meshes</a>.</p>
      */
     inline const Aws::String& GetMeshOwner() const{ return m_meshOwner; }
 
@@ -175,7 +175,7 @@ request. Up to 36 letters, numbers, hyphens, and underscores are
                the ID of the account that shared the mesh
      * with your account. For more information about mesh sharing, see <a
      * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working
-     * with Shared Meshes</a>.</p>
+     * with shared meshes</a>.</p>
      */
     inline bool MeshOwnerHasBeenSet() const { return m_meshOwnerHasBeenSet; }
 
@@ -185,7 +185,7 @@ request. Up to 36 letters, numbers, hyphens, and underscores are
                the ID of the account that shared the mesh
      * with your account. For more information about mesh sharing, see <a
      * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working
-     * with Shared Meshes</a>.</p>
+     * with shared meshes</a>.</p>
      */
     inline void SetMeshOwner(const Aws::String& value) { m_meshOwnerHasBeenSet = true; m_meshOwner = value; }
 
@@ -195,7 +195,7 @@ request. Up to 36 letters, numbers, hyphens, and underscores are
                the ID of the account that shared the mesh
      * with your account. For more information about mesh sharing, see <a
      * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working
-     * with Shared Meshes</a>.</p>
+     * with shared meshes</a>.</p>
      */
     inline void SetMeshOwner(Aws::String&& value) { m_meshOwnerHasBeenSet = true; m_meshOwner = std::move(value); }
 
@@ -205,7 +205,7 @@ request. Up to 36 letters, numbers, hyphens, and underscores are
                the ID of the account that shared the mesh
      * with your account. For more information about mesh sharing, see <a
      * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working
-     * with Shared Meshes</a>.</p>
+     * with shared meshes</a>.</p>
      */
     inline void SetMeshOwner(const char* value) { m_meshOwnerHasBeenSet = true; m_meshOwner.assign(value); }
 
@@ -215,7 +215,7 @@ request. Up to 36 letters, numbers, hyphens, and underscores are
                the ID of the account that shared the mesh
      * with your account. For more information about mesh sharing, see <a
      * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working
-     * with Shared Meshes</a>.</p>
+     * with shared meshes</a>.</p>
      */
     inline UpdateVirtualRouterRequest& WithMeshOwner(const Aws::String& value) { SetMeshOwner(value); return *this;}
 
@@ -225,7 +225,7 @@ request. Up to 36 letters, numbers, hyphens, and underscores are
                the ID of the account that shared the mesh
      * with your account. For more information about mesh sharing, see <a
      * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working
-     * with Shared Meshes</a>.</p>
+     * with shared meshes</a>.</p>
      */
     inline UpdateVirtualRouterRequest& WithMeshOwner(Aws::String&& value) { SetMeshOwner(std::move(value)); return *this;}
 
@@ -235,7 +235,7 @@ request. Up to 36 letters, numbers, hyphens, and underscores are
                the ID of the account that shared the mesh
      * with your account. For more information about mesh sharing, see <a
      * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working
-     * with Shared Meshes</a>.</p>
+     * with shared meshes</a>.</p>
      */
     inline UpdateVirtualRouterRequest& WithMeshOwner(const char* value) { SetMeshOwner(value); return *this;}
 

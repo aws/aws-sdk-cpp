@@ -31,14 +31,16 @@ namespace Model
 GrpcRoute::GrpcRoute() : 
     m_actionHasBeenSet(false),
     m_matchHasBeenSet(false),
-    m_retryPolicyHasBeenSet(false)
+    m_retryPolicyHasBeenSet(false),
+    m_timeoutHasBeenSet(false)
 {
 }
 
 GrpcRoute::GrpcRoute(JsonView jsonValue) : 
     m_actionHasBeenSet(false),
     m_matchHasBeenSet(false),
-    m_retryPolicyHasBeenSet(false)
+    m_retryPolicyHasBeenSet(false),
+    m_timeoutHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -66,6 +68,13 @@ GrpcRoute& GrpcRoute::operator =(JsonView jsonValue)
     m_retryPolicyHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("timeout"))
+  {
+    m_timeout = jsonValue.GetObject("timeout");
+
+    m_timeoutHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -88,6 +97,12 @@ JsonValue GrpcRoute::Jsonize() const
   if(m_retryPolicyHasBeenSet)
   {
    payload.WithObject("retryPolicy", m_retryPolicy.Jsonize());
+
+  }
+
+  if(m_timeoutHasBeenSet)
+  {
+   payload.WithObject("timeout", m_timeout.Jsonize());
 
   }
 

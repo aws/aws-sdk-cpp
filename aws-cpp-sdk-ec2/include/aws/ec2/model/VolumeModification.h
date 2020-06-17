@@ -247,22 +247,22 @@ namespace Model
 
 
     /**
-     * <p>The original size of the volume.</p>
+     * <p>The original size of the volume, in GiB.</p>
      */
     inline int GetOriginalSize() const{ return m_originalSize; }
 
     /**
-     * <p>The original size of the volume.</p>
+     * <p>The original size of the volume, in GiB.</p>
      */
     inline bool OriginalSizeHasBeenSet() const { return m_originalSizeHasBeenSet; }
 
     /**
-     * <p>The original size of the volume.</p>
+     * <p>The original size of the volume, in GiB.</p>
      */
     inline void SetOriginalSize(int value) { m_originalSizeHasBeenSet = true; m_originalSize = value; }
 
     /**
-     * <p>The original size of the volume.</p>
+     * <p>The original size of the volume, in GiB.</p>
      */
     inline VolumeModification& WithOriginalSize(int value) { SetOriginalSize(value); return *this;}
 

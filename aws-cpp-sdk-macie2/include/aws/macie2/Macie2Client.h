@@ -323,7 +323,14 @@ namespace Model
     typedef std::function<void(const Macie2Client*, const Model::UpdateOrganizationConfigurationRequest&, const Model::UpdateOrganizationConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateOrganizationConfigurationResponseReceivedHandler;
 
   /**
-   * <p>Amazon Macie</p>
+   * <p>Amazon Macie is a fully managed data security and data privacy service that
+   * uses machine learning and pattern matching to discover and protect your
+   * sensitive data in AWS. Macie automates the discovery of sensitive data, such as
+   * PII and intellectual property, to provide you with insight into the data that
+   * your organization stores in AWS. Macie also provides an inventory of your Amazon
+   * S3 buckets, which it continually monitors for you. If Macie detects sensitive
+   * data or potential data access issues, it generates detailed findings for you to
+   * review and act upon as necessary.</p>
    */
   class AWS_MACIE2_API Macie2Client : public Aws::Client::AWSJsonClient
   {
@@ -993,7 +1000,7 @@ namespace Model
         virtual void GetBucketStatisticsAsync(const Model::GetBucketStatisticsRequest& request, const GetBucketStatisticsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves the configuration settings for exporting data classification
+         * <p>Retrieves the configuration settings for storing data classification
          * results.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetClassificationExportConfiguration">AWS
          * API Reference</a></p>
@@ -1001,7 +1008,7 @@ namespace Model
         virtual Model::GetClassificationExportConfigurationOutcome GetClassificationExportConfiguration(const Model::GetClassificationExportConfigurationRequest& request) const;
 
         /**
-         * <p>Retrieves the configuration settings for exporting data classification
+         * <p>Retrieves the configuration settings for storing data classification
          * results.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetClassificationExportConfiguration">AWS
          * API Reference</a></p>
@@ -1011,7 +1018,7 @@ namespace Model
         virtual Model::GetClassificationExportConfigurationOutcomeCallable GetClassificationExportConfigurationCallable(const Model::GetClassificationExportConfigurationRequest& request) const;
 
         /**
-         * <p>Retrieves the configuration settings for exporting data classification
+         * <p>Retrieves the configuration settings for storing data classification
          * results.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetClassificationExportConfiguration">AWS
          * API Reference</a></p>
@@ -1531,16 +1538,16 @@ namespace Model
         virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates or updates the configuration settings for exporting data
-         * classification results.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates or updates the configuration settings for storing data classification
+         * results.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/PutClassificationExportConfiguration">AWS
          * API Reference</a></p>
          */
         virtual Model::PutClassificationExportConfigurationOutcome PutClassificationExportConfiguration(const Model::PutClassificationExportConfigurationRequest& request) const;
 
         /**
-         * <p>Creates or updates the configuration settings for exporting data
-         * classification results.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates or updates the configuration settings for storing data classification
+         * results.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/PutClassificationExportConfiguration">AWS
          * API Reference</a></p>
          *
@@ -1549,8 +1556,8 @@ namespace Model
         virtual Model::PutClassificationExportConfigurationOutcomeCallable PutClassificationExportConfigurationCallable(const Model::PutClassificationExportConfigurationRequest& request) const;
 
         /**
-         * <p>Creates or updates the configuration settings for exporting data
-         * classification results.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates or updates the configuration settings for storing data classification
+         * results.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/PutClassificationExportConfiguration">AWS
          * API Reference</a></p>
          *

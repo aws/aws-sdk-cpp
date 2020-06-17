@@ -18,6 +18,7 @@
 #include <aws/appmesh/model/HttpRouteAction.h>
 #include <aws/appmesh/model/HttpRouteMatch.h>
 #include <aws/appmesh/model/HttpRetryPolicy.h>
+#include <aws/appmesh/model/HttpTimeout.h>
 #include <utility>
 
 namespace Aws
@@ -142,6 +143,25 @@ namespace Model
      */
     inline HttpRoute& WithRetryPolicy(HttpRetryPolicy&& value) { SetRetryPolicy(std::move(value)); return *this;}
 
+
+    
+    inline const HttpTimeout& GetTimeout() const{ return m_timeout; }
+
+    
+    inline bool TimeoutHasBeenSet() const { return m_timeoutHasBeenSet; }
+
+    
+    inline void SetTimeout(const HttpTimeout& value) { m_timeoutHasBeenSet = true; m_timeout = value; }
+
+    
+    inline void SetTimeout(HttpTimeout&& value) { m_timeoutHasBeenSet = true; m_timeout = std::move(value); }
+
+    
+    inline HttpRoute& WithTimeout(const HttpTimeout& value) { SetTimeout(value); return *this;}
+
+    
+    inline HttpRoute& WithTimeout(HttpTimeout&& value) { SetTimeout(std::move(value)); return *this;}
+
   private:
 
     HttpRouteAction m_action;
@@ -152,6 +172,9 @@ namespace Model
 
     HttpRetryPolicy m_retryPolicy;
     bool m_retryPolicyHasBeenSet;
+
+    HttpTimeout m_timeout;
+    bool m_timeoutHasBeenSet;
   };
 
 } // namespace Model

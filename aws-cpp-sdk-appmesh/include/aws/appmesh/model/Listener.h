@@ -17,6 +17,7 @@
 #include <aws/appmesh/AppMesh_EXPORTS.h>
 #include <aws/appmesh/model/HealthCheckPolicy.h>
 #include <aws/appmesh/model/PortMapping.h>
+#include <aws/appmesh/model/ListenerTimeout.h>
 #include <aws/appmesh/model/ListenerTls.h>
 #include <utility>
 
@@ -112,6 +113,25 @@ namespace Model
     inline Listener& WithPortMapping(PortMapping&& value) { SetPortMapping(std::move(value)); return *this;}
 
 
+    
+    inline const ListenerTimeout& GetTimeout() const{ return m_timeout; }
+
+    
+    inline bool TimeoutHasBeenSet() const { return m_timeoutHasBeenSet; }
+
+    
+    inline void SetTimeout(const ListenerTimeout& value) { m_timeoutHasBeenSet = true; m_timeout = value; }
+
+    
+    inline void SetTimeout(ListenerTimeout&& value) { m_timeoutHasBeenSet = true; m_timeout = std::move(value); }
+
+    
+    inline Listener& WithTimeout(const ListenerTimeout& value) { SetTimeout(value); return *this;}
+
+    
+    inline Listener& WithTimeout(ListenerTimeout&& value) { SetTimeout(std::move(value)); return *this;}
+
+
     /**
      * <p>A reference to an object that represents the Transport Layer Security (TLS)
      * properties for a listener.</p>
@@ -155,6 +175,9 @@ namespace Model
 
     PortMapping m_portMapping;
     bool m_portMappingHasBeenSet;
+
+    ListenerTimeout m_timeout;
+    bool m_timeoutHasBeenSet;
 
     ListenerTls m_tls;
     bool m_tlsHasBeenSet;

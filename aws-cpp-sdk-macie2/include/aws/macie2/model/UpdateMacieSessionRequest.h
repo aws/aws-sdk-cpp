@@ -44,38 +44,44 @@ namespace Model
 
 
     /**
-     * Specifies how often to publish findings for the account. This includes adding
-     * findings to AWS Security Hub and exporting finding events to Amazon CloudWatch.
+     * Specifies how often to publish updates to policy findings for the account. This
+     * includes publishing updates to AWS Security Hub and Amazon EventBridge (formerly
+     * called Amazon CloudWatch Events).
      */
     inline const FindingPublishingFrequency& GetFindingPublishingFrequency() const{ return m_findingPublishingFrequency; }
 
     /**
-     * Specifies how often to publish findings for the account. This includes adding
-     * findings to AWS Security Hub and exporting finding events to Amazon CloudWatch.
+     * Specifies how often to publish updates to policy findings for the account. This
+     * includes publishing updates to AWS Security Hub and Amazon EventBridge (formerly
+     * called Amazon CloudWatch Events).
      */
     inline bool FindingPublishingFrequencyHasBeenSet() const { return m_findingPublishingFrequencyHasBeenSet; }
 
     /**
-     * Specifies how often to publish findings for the account. This includes adding
-     * findings to AWS Security Hub and exporting finding events to Amazon CloudWatch.
+     * Specifies how often to publish updates to policy findings for the account. This
+     * includes publishing updates to AWS Security Hub and Amazon EventBridge (formerly
+     * called Amazon CloudWatch Events).
      */
     inline void SetFindingPublishingFrequency(const FindingPublishingFrequency& value) { m_findingPublishingFrequencyHasBeenSet = true; m_findingPublishingFrequency = value; }
 
     /**
-     * Specifies how often to publish findings for the account. This includes adding
-     * findings to AWS Security Hub and exporting finding events to Amazon CloudWatch.
+     * Specifies how often to publish updates to policy findings for the account. This
+     * includes publishing updates to AWS Security Hub and Amazon EventBridge (formerly
+     * called Amazon CloudWatch Events).
      */
     inline void SetFindingPublishingFrequency(FindingPublishingFrequency&& value) { m_findingPublishingFrequencyHasBeenSet = true; m_findingPublishingFrequency = std::move(value); }
 
     /**
-     * Specifies how often to publish findings for the account. This includes adding
-     * findings to AWS Security Hub and exporting finding events to Amazon CloudWatch.
+     * Specifies how often to publish updates to policy findings for the account. This
+     * includes publishing updates to AWS Security Hub and Amazon EventBridge (formerly
+     * called Amazon CloudWatch Events).
      */
     inline UpdateMacieSessionRequest& WithFindingPublishingFrequency(const FindingPublishingFrequency& value) { SetFindingPublishingFrequency(value); return *this;}
 
     /**
-     * Specifies how often to publish findings for the account. This includes adding
-     * findings to AWS Security Hub and exporting finding events to Amazon CloudWatch.
+     * Specifies how often to publish updates to policy findings for the account. This
+     * includes publishing updates to AWS Security Hub and Amazon EventBridge (formerly
+     * called Amazon CloudWatch Events).
      */
     inline UpdateMacieSessionRequest& WithFindingPublishingFrequency(FindingPublishingFrequency&& value) { SetFindingPublishingFrequency(std::move(value)); return *this;}
 

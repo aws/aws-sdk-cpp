@@ -18,6 +18,7 @@
 #include <aws/appmesh/model/GrpcRouteAction.h>
 #include <aws/appmesh/model/GrpcRouteMatch.h>
 #include <aws/appmesh/model/GrpcRetryPolicy.h>
+#include <aws/appmesh/model/GrpcTimeout.h>
 #include <utility>
 
 namespace Aws
@@ -141,6 +142,25 @@ namespace Model
      */
     inline GrpcRoute& WithRetryPolicy(GrpcRetryPolicy&& value) { SetRetryPolicy(std::move(value)); return *this;}
 
+
+    
+    inline const GrpcTimeout& GetTimeout() const{ return m_timeout; }
+
+    
+    inline bool TimeoutHasBeenSet() const { return m_timeoutHasBeenSet; }
+
+    
+    inline void SetTimeout(const GrpcTimeout& value) { m_timeoutHasBeenSet = true; m_timeout = value; }
+
+    
+    inline void SetTimeout(GrpcTimeout&& value) { m_timeoutHasBeenSet = true; m_timeout = std::move(value); }
+
+    
+    inline GrpcRoute& WithTimeout(const GrpcTimeout& value) { SetTimeout(value); return *this;}
+
+    
+    inline GrpcRoute& WithTimeout(GrpcTimeout&& value) { SetTimeout(std::move(value)); return *this;}
+
   private:
 
     GrpcRouteAction m_action;
@@ -151,6 +171,9 @@ namespace Model
 
     GrpcRetryPolicy m_retryPolicy;
     bool m_retryPolicyHasBeenSet;
+
+    GrpcTimeout m_timeout;
+    bool m_timeoutHasBeenSet;
   };
 
 } // namespace Model

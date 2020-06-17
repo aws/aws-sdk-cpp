@@ -34,7 +34,7 @@ namespace Model
 {
 
   /**
-   * <p>Specifies an S3 bucket to export data classification results to, and the
+   * <p>Specifies an S3 bucket to store data classification results in, and the
    * encryption settings to use when storing results in that bucket.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/S3Destination">AWS
@@ -50,50 +50,42 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the bucket. This must be the ARN of an
-     * existing bucket.</p>
+     * <p>The name of the bucket.</p>
      */
     inline const Aws::String& GetBucketName() const{ return m_bucketName; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the bucket. This must be the ARN of an
-     * existing bucket.</p>
+     * <p>The name of the bucket.</p>
      */
     inline bool BucketNameHasBeenSet() const { return m_bucketNameHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the bucket. This must be the ARN of an
-     * existing bucket.</p>
+     * <p>The name of the bucket.</p>
      */
     inline void SetBucketName(const Aws::String& value) { m_bucketNameHasBeenSet = true; m_bucketName = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the bucket. This must be the ARN of an
-     * existing bucket.</p>
+     * <p>The name of the bucket.</p>
      */
     inline void SetBucketName(Aws::String&& value) { m_bucketNameHasBeenSet = true; m_bucketName = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the bucket. This must be the ARN of an
-     * existing bucket.</p>
+     * <p>The name of the bucket.</p>
      */
     inline void SetBucketName(const char* value) { m_bucketNameHasBeenSet = true; m_bucketName.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the bucket. This must be the ARN of an
-     * existing bucket.</p>
+     * <p>The name of the bucket.</p>
      */
     inline S3Destination& WithBucketName(const Aws::String& value) { SetBucketName(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the bucket. This must be the ARN of an
-     * existing bucket.</p>
+     * <p>The name of the bucket.</p>
      */
     inline S3Destination& WithBucketName(Aws::String&& value) { SetBucketName(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the bucket. This must be the ARN of an
-     * existing bucket.</p>
+     * <p>The name of the bucket.</p>
      */
     inline S3Destination& WithBucketName(const char* value) { SetBucketName(value); return *this;}
 
@@ -148,66 +140,58 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Key Management Service master key
-     * to use for encryption of the exported results. This must be the ARN of an
-     * existing KMS key. In addition, the key must be in the same AWS Region as the
-     * bucket.</p>
+     * <p>The Amazon Resource Name (ARN) of the AWS Key Management Service customer
+     * master key (CMK) to use for encryption of the results. This must be the ARN of
+     * an existing CMK that's in the same AWS Region as the bucket.</p>
      */
     inline const Aws::String& GetKmsKeyArn() const{ return m_kmsKeyArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Key Management Service master key
-     * to use for encryption of the exported results. This must be the ARN of an
-     * existing KMS key. In addition, the key must be in the same AWS Region as the
-     * bucket.</p>
+     * <p>The Amazon Resource Name (ARN) of the AWS Key Management Service customer
+     * master key (CMK) to use for encryption of the results. This must be the ARN of
+     * an existing CMK that's in the same AWS Region as the bucket.</p>
      */
     inline bool KmsKeyArnHasBeenSet() const { return m_kmsKeyArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Key Management Service master key
-     * to use for encryption of the exported results. This must be the ARN of an
-     * existing KMS key. In addition, the key must be in the same AWS Region as the
-     * bucket.</p>
+     * <p>The Amazon Resource Name (ARN) of the AWS Key Management Service customer
+     * master key (CMK) to use for encryption of the results. This must be the ARN of
+     * an existing CMK that's in the same AWS Region as the bucket.</p>
      */
     inline void SetKmsKeyArn(const Aws::String& value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Key Management Service master key
-     * to use for encryption of the exported results. This must be the ARN of an
-     * existing KMS key. In addition, the key must be in the same AWS Region as the
-     * bucket.</p>
+     * <p>The Amazon Resource Name (ARN) of the AWS Key Management Service customer
+     * master key (CMK) to use for encryption of the results. This must be the ARN of
+     * an existing CMK that's in the same AWS Region as the bucket.</p>
      */
     inline void SetKmsKeyArn(Aws::String&& value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Key Management Service master key
-     * to use for encryption of the exported results. This must be the ARN of an
-     * existing KMS key. In addition, the key must be in the same AWS Region as the
-     * bucket.</p>
+     * <p>The Amazon Resource Name (ARN) of the AWS Key Management Service customer
+     * master key (CMK) to use for encryption of the results. This must be the ARN of
+     * an existing CMK that's in the same AWS Region as the bucket.</p>
      */
     inline void SetKmsKeyArn(const char* value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Key Management Service master key
-     * to use for encryption of the exported results. This must be the ARN of an
-     * existing KMS key. In addition, the key must be in the same AWS Region as the
-     * bucket.</p>
+     * <p>The Amazon Resource Name (ARN) of the AWS Key Management Service customer
+     * master key (CMK) to use for encryption of the results. This must be the ARN of
+     * an existing CMK that's in the same AWS Region as the bucket.</p>
      */
     inline S3Destination& WithKmsKeyArn(const Aws::String& value) { SetKmsKeyArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Key Management Service master key
-     * to use for encryption of the exported results. This must be the ARN of an
-     * existing KMS key. In addition, the key must be in the same AWS Region as the
-     * bucket.</p>
+     * <p>The Amazon Resource Name (ARN) of the AWS Key Management Service customer
+     * master key (CMK) to use for encryption of the results. This must be the ARN of
+     * an existing CMK that's in the same AWS Region as the bucket.</p>
      */
     inline S3Destination& WithKmsKeyArn(Aws::String&& value) { SetKmsKeyArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Key Management Service master key
-     * to use for encryption of the exported results. This must be the ARN of an
-     * existing KMS key. In addition, the key must be in the same AWS Region as the
-     * bucket.</p>
+     * <p>The Amazon Resource Name (ARN) of the AWS Key Management Service customer
+     * master key (CMK) to use for encryption of the results. This must be the ARN of
+     * an existing CMK that's in the same AWS Region as the bucket.</p>
      */
     inline S3Destination& WithKmsKeyArn(const char* value) { SetKmsKeyArn(value); return *this;}
 

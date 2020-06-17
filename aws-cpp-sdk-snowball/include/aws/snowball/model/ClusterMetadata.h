@@ -328,56 +328,44 @@ namespace Model
 
 
     /**
-     * <p>The type of AWS Snowball device to use for this cluster. Currently, the only
-     * supported device type for cluster jobs is <code>EDGE</code>.</p> <p>For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/snowball/latest/developer-guide/device-differences.html">Snowball
-     * Edge Device Options</a> in the Snowball Edge Developer Guide.</p>
+     * <p>The type of AWS Snowball device to use for this cluster. </p> <note> <p>For
+     * cluster jobs, AWS Snowball currently supports only the <code>EDGE</code> device
+     * type.</p> </note>
      */
     inline const SnowballType& GetSnowballType() const{ return m_snowballType; }
 
     /**
-     * <p>The type of AWS Snowball device to use for this cluster. Currently, the only
-     * supported device type for cluster jobs is <code>EDGE</code>.</p> <p>For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/snowball/latest/developer-guide/device-differences.html">Snowball
-     * Edge Device Options</a> in the Snowball Edge Developer Guide.</p>
+     * <p>The type of AWS Snowball device to use for this cluster. </p> <note> <p>For
+     * cluster jobs, AWS Snowball currently supports only the <code>EDGE</code> device
+     * type.</p> </note>
      */
     inline bool SnowballTypeHasBeenSet() const { return m_snowballTypeHasBeenSet; }
 
     /**
-     * <p>The type of AWS Snowball device to use for this cluster. Currently, the only
-     * supported device type for cluster jobs is <code>EDGE</code>.</p> <p>For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/snowball/latest/developer-guide/device-differences.html">Snowball
-     * Edge Device Options</a> in the Snowball Edge Developer Guide.</p>
+     * <p>The type of AWS Snowball device to use for this cluster. </p> <note> <p>For
+     * cluster jobs, AWS Snowball currently supports only the <code>EDGE</code> device
+     * type.</p> </note>
      */
     inline void SetSnowballType(const SnowballType& value) { m_snowballTypeHasBeenSet = true; m_snowballType = value; }
 
     /**
-     * <p>The type of AWS Snowball device to use for this cluster. Currently, the only
-     * supported device type for cluster jobs is <code>EDGE</code>.</p> <p>For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/snowball/latest/developer-guide/device-differences.html">Snowball
-     * Edge Device Options</a> in the Snowball Edge Developer Guide.</p>
+     * <p>The type of AWS Snowball device to use for this cluster. </p> <note> <p>For
+     * cluster jobs, AWS Snowball currently supports only the <code>EDGE</code> device
+     * type.</p> </note>
      */
     inline void SetSnowballType(SnowballType&& value) { m_snowballTypeHasBeenSet = true; m_snowballType = std::move(value); }
 
     /**
-     * <p>The type of AWS Snowball device to use for this cluster. Currently, the only
-     * supported device type for cluster jobs is <code>EDGE</code>.</p> <p>For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/snowball/latest/developer-guide/device-differences.html">Snowball
-     * Edge Device Options</a> in the Snowball Edge Developer Guide.</p>
+     * <p>The type of AWS Snowball device to use for this cluster. </p> <note> <p>For
+     * cluster jobs, AWS Snowball currently supports only the <code>EDGE</code> device
+     * type.</p> </note>
      */
     inline ClusterMetadata& WithSnowballType(const SnowballType& value) { SetSnowballType(value); return *this;}
 
     /**
-     * <p>The type of AWS Snowball device to use for this cluster. Currently, the only
-     * supported device type for cluster jobs is <code>EDGE</code>.</p> <p>For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/snowball/latest/developer-guide/device-differences.html">Snowball
-     * Edge Device Options</a> in the Snowball Edge Developer Guide.</p>
+     * <p>The type of AWS Snowball device to use for this cluster. </p> <note> <p>For
+     * cluster jobs, AWS Snowball currently supports only the <code>EDGE</code> device
+     * type.</p> </note>
      */
     inline ClusterMetadata& WithSnowballType(SnowballType&& value) { SetSnowballType(std::move(value)); return *this;}
 

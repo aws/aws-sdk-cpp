@@ -81,32 +81,32 @@ namespace Model
 
 
     /**
-     * <p>The entity who performed the action that produced the finding.</p>
+     * <p>The entity that performed the action that produced the finding.</p>
      */
     inline const FindingActor& GetActor() const{ return m_actor; }
 
     /**
-     * <p>The entity who performed the action that produced the finding.</p>
+     * <p>The entity that performed the action that produced the finding.</p>
      */
     inline bool ActorHasBeenSet() const { return m_actorHasBeenSet; }
 
     /**
-     * <p>The entity who performed the action that produced the finding.</p>
+     * <p>The entity that performed the action that produced the finding.</p>
      */
     inline void SetActor(const FindingActor& value) { m_actorHasBeenSet = true; m_actor = value; }
 
     /**
-     * <p>The entity who performed the action that produced the finding.</p>
+     * <p>The entity that performed the action that produced the finding.</p>
      */
     inline void SetActor(FindingActor&& value) { m_actorHasBeenSet = true; m_actor = std::move(value); }
 
     /**
-     * <p>The entity who performed the action that produced the finding.</p>
+     * <p>The entity that performed the action that produced the finding.</p>
      */
     inline PolicyDetails& WithActor(const FindingActor& value) { SetActor(value); return *this;}
 
     /**
-     * <p>The entity who performed the action that produced the finding.</p>
+     * <p>The entity that performed the action that produced the finding.</p>
      */
     inline PolicyDetails& WithActor(FindingActor&& value) { SetActor(std::move(value)); return *this;}
 

@@ -77,37 +77,37 @@ namespace Model
 
 
     /**
-     * <p>The frequency with which Amazon Macie publishes findings for the account.
-     * This includes adding findings to AWS Security Hub and exporting finding events
-     * to Amazon CloudWatch.</p>
+     * <p>The frequency with which Amazon Macie publishes updates to policy findings
+     * for the account. This includes publishing updates to AWS Security Hub and Amazon
+     * EventBridge (formerly called Amazon CloudWatch Events).</p>
      */
     inline const FindingPublishingFrequency& GetFindingPublishingFrequency() const{ return m_findingPublishingFrequency; }
 
     /**
-     * <p>The frequency with which Amazon Macie publishes findings for the account.
-     * This includes adding findings to AWS Security Hub and exporting finding events
-     * to Amazon CloudWatch.</p>
+     * <p>The frequency with which Amazon Macie publishes updates to policy findings
+     * for the account. This includes publishing updates to AWS Security Hub and Amazon
+     * EventBridge (formerly called Amazon CloudWatch Events).</p>
      */
     inline void SetFindingPublishingFrequency(const FindingPublishingFrequency& value) { m_findingPublishingFrequency = value; }
 
     /**
-     * <p>The frequency with which Amazon Macie publishes findings for the account.
-     * This includes adding findings to AWS Security Hub and exporting finding events
-     * to Amazon CloudWatch.</p>
+     * <p>The frequency with which Amazon Macie publishes updates to policy findings
+     * for the account. This includes publishing updates to AWS Security Hub and Amazon
+     * EventBridge (formerly called Amazon CloudWatch Events).</p>
      */
     inline void SetFindingPublishingFrequency(FindingPublishingFrequency&& value) { m_findingPublishingFrequency = std::move(value); }
 
     /**
-     * <p>The frequency with which Amazon Macie publishes findings for the account.
-     * This includes adding findings to AWS Security Hub and exporting finding events
-     * to Amazon CloudWatch.</p>
+     * <p>The frequency with which Amazon Macie publishes updates to policy findings
+     * for the account. This includes publishing updates to AWS Security Hub and Amazon
+     * EventBridge (formerly called Amazon CloudWatch Events).</p>
      */
     inline GetMacieSessionResult& WithFindingPublishingFrequency(const FindingPublishingFrequency& value) { SetFindingPublishingFrequency(value); return *this;}
 
     /**
-     * <p>The frequency with which Amazon Macie publishes findings for the account.
-     * This includes adding findings to AWS Security Hub and exporting finding events
-     * to Amazon CloudWatch.</p>
+     * <p>The frequency with which Amazon Macie publishes updates to policy findings
+     * for the account. This includes publishing updates to AWS Security Hub and Amazon
+     * EventBridge (formerly called Amazon CloudWatch Events).</p>
      */
     inline GetMacieSessionResult& WithFindingPublishingFrequency(FindingPublishingFrequency&& value) { SetFindingPublishingFrequency(std::move(value)); return *this;}
 

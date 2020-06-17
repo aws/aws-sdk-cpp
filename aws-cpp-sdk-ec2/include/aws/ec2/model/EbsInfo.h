@@ -19,6 +19,7 @@
 #include <aws/ec2/model/EbsOptimizedSupport.h>
 #include <aws/ec2/model/EbsEncryptionSupport.h>
 #include <aws/ec2/model/EbsOptimizedInfo.h>
+#include <aws/ec2/model/EbsNvmeSupport.h>
 #include <utility>
 
 namespace Aws
@@ -168,6 +169,37 @@ namespace Model
      */
     inline EbsInfo& WithEbsOptimizedInfo(EbsOptimizedInfo&& value) { SetEbsOptimizedInfo(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Indicates whether non-volatile memory express (NVMe) is supported.</p>
+     */
+    inline const EbsNvmeSupport& GetNvmeSupport() const{ return m_nvmeSupport; }
+
+    /**
+     * <p>Indicates whether non-volatile memory express (NVMe) is supported.</p>
+     */
+    inline bool NvmeSupportHasBeenSet() const { return m_nvmeSupportHasBeenSet; }
+
+    /**
+     * <p>Indicates whether non-volatile memory express (NVMe) is supported.</p>
+     */
+    inline void SetNvmeSupport(const EbsNvmeSupport& value) { m_nvmeSupportHasBeenSet = true; m_nvmeSupport = value; }
+
+    /**
+     * <p>Indicates whether non-volatile memory express (NVMe) is supported.</p>
+     */
+    inline void SetNvmeSupport(EbsNvmeSupport&& value) { m_nvmeSupportHasBeenSet = true; m_nvmeSupport = std::move(value); }
+
+    /**
+     * <p>Indicates whether non-volatile memory express (NVMe) is supported.</p>
+     */
+    inline EbsInfo& WithNvmeSupport(const EbsNvmeSupport& value) { SetNvmeSupport(value); return *this;}
+
+    /**
+     * <p>Indicates whether non-volatile memory express (NVMe) is supported.</p>
+     */
+    inline EbsInfo& WithNvmeSupport(EbsNvmeSupport&& value) { SetNvmeSupport(std::move(value)); return *this;}
+
   private:
 
     EbsOptimizedSupport m_ebsOptimizedSupport;
@@ -178,6 +210,9 @@ namespace Model
 
     EbsOptimizedInfo m_ebsOptimizedInfo;
     bool m_ebsOptimizedInfoHasBeenSet;
+
+    EbsNvmeSupport m_nvmeSupport;
+    bool m_nvmeSupportHasBeenSet;
   };
 
 } // namespace Model

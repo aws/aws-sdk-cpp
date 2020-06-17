@@ -50,7 +50,8 @@ JobMetadata::JobMetadata() :
     m_jobLogInfoHasBeenSet(false),
     m_clusterIdHasBeenSet(false),
     m_forwardingAddressIdHasBeenSet(false),
-    m_taxDocumentsHasBeenSet(false)
+    m_taxDocumentsHasBeenSet(false),
+    m_deviceConfigurationHasBeenSet(false)
 {
 }
 
@@ -76,7 +77,8 @@ JobMetadata::JobMetadata(JsonView jsonValue) :
     m_jobLogInfoHasBeenSet(false),
     m_clusterIdHasBeenSet(false),
     m_forwardingAddressIdHasBeenSet(false),
-    m_taxDocumentsHasBeenSet(false)
+    m_taxDocumentsHasBeenSet(false),
+    m_deviceConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -209,6 +211,13 @@ JobMetadata& JobMetadata::operator =(JsonView jsonValue)
     m_taxDocumentsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("DeviceConfiguration"))
+  {
+    m_deviceConfiguration = jsonValue.GetObject("DeviceConfiguration");
+
+    m_deviceConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -316,6 +325,12 @@ JsonValue JobMetadata::Jsonize() const
   if(m_taxDocumentsHasBeenSet)
   {
    payload.WithObject("TaxDocuments", m_taxDocuments.Jsonize());
+
+  }
+
+  if(m_deviceConfigurationHasBeenSet)
+  {
+   payload.WithObject("DeviceConfiguration", m_deviceConfiguration.Jsonize());
 
   }
 

@@ -36,7 +36,7 @@ namespace Model
 {
 
   /**
-   * <p>Provides information about an entity who performed an action that produced a
+   * <p>Provides information about an entity that performed an action that produced a
    * policy finding for a resource.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/FindingActor">AWS
    * API Reference</a></p>
@@ -131,37 +131,37 @@ namespace Model
 
 
     /**
-     * <p>The name and type of entity who performed the action on the affected
+     * <p>The name and type of entity that performed the action on the affected
      * resource.</p>
      */
     inline const UserIdentity& GetUserIdentity() const{ return m_userIdentity; }
 
     /**
-     * <p>The name and type of entity who performed the action on the affected
+     * <p>The name and type of entity that performed the action on the affected
      * resource.</p>
      */
     inline bool UserIdentityHasBeenSet() const { return m_userIdentityHasBeenSet; }
 
     /**
-     * <p>The name and type of entity who performed the action on the affected
+     * <p>The name and type of entity that performed the action on the affected
      * resource.</p>
      */
     inline void SetUserIdentity(const UserIdentity& value) { m_userIdentityHasBeenSet = true; m_userIdentity = value; }
 
     /**
-     * <p>The name and type of entity who performed the action on the affected
+     * <p>The name and type of entity that performed the action on the affected
      * resource.</p>
      */
     inline void SetUserIdentity(UserIdentity&& value) { m_userIdentityHasBeenSet = true; m_userIdentity = std::move(value); }
 
     /**
-     * <p>The name and type of entity who performed the action on the affected
+     * <p>The name and type of entity that performed the action on the affected
      * resource.</p>
      */
     inline FindingActor& WithUserIdentity(const UserIdentity& value) { SetUserIdentity(value); return *this;}
 
     /**
-     * <p>The name and type of entity who performed the action on the affected
+     * <p>The name and type of entity that performed the action on the affected
      * resource.</p>
      */
     inline FindingActor& WithUserIdentity(UserIdentity&& value) { SetUserIdentity(std::move(value)); return *this;}

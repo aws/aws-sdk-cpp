@@ -43,32 +43,32 @@ namespace Model
 
 
     /**
-     * <p>The location that data classification results are exported to, and the
-     * encryption settings that are used when storing results in that location.</p>
+     * <p>The location where data classification results are stored, and the encryption
+     * settings that are used when storing results in that location.</p>
      */
     inline const ClassificationExportConfiguration& GetConfiguration() const{ return m_configuration; }
 
     /**
-     * <p>The location that data classification results are exported to, and the
-     * encryption settings that are used when storing results in that location.</p>
+     * <p>The location where data classification results are stored, and the encryption
+     * settings that are used when storing results in that location.</p>
      */
     inline void SetConfiguration(const ClassificationExportConfiguration& value) { m_configuration = value; }
 
     /**
-     * <p>The location that data classification results are exported to, and the
-     * encryption settings that are used when storing results in that location.</p>
+     * <p>The location where data classification results are stored, and the encryption
+     * settings that are used when storing results in that location.</p>
      */
     inline void SetConfiguration(ClassificationExportConfiguration&& value) { m_configuration = std::move(value); }
 
     /**
-     * <p>The location that data classification results are exported to, and the
-     * encryption settings that are used when storing results in that location.</p>
+     * <p>The location where data classification results are stored, and the encryption
+     * settings that are used when storing results in that location.</p>
      */
     inline GetClassificationExportConfigurationResult& WithConfiguration(const ClassificationExportConfiguration& value) { SetConfiguration(value); return *this;}
 
     /**
-     * <p>The location that data classification results are exported to, and the
-     * encryption settings that are used when storing results in that location.</p>
+     * <p>The location where data classification results are stored, and the encryption
+     * settings that are used when storing results in that location.</p>
      */
     inline GetClassificationExportConfigurationResult& WithConfiguration(ClassificationExportConfiguration&& value) { SetConfiguration(std::move(value)); return *this;}
 

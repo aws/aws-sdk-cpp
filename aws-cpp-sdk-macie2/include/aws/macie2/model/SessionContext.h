@@ -35,7 +35,7 @@ namespace Model
 {
 
   /**
-   * <p>Provides information about a session that was created for an entity who
+   * <p>Provides information about a session that was created for an entity that
    * performed an action by using temporary security credentials.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/SessionContext">AWS

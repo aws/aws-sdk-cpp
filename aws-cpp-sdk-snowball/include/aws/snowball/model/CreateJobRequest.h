@@ -24,6 +24,7 @@
 #include <aws/snowball/model/Notification.h>
 #include <aws/snowball/model/SnowballType.h>
 #include <aws/snowball/model/TaxDocuments.h>
+#include <aws/snowball/model/DeviceConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -604,54 +605,66 @@ namespace Model
 
 
     /**
-     * <p>The type of AWS Snowball device to use for this job. Currently, the only
-     * supported device type for cluster jobs is <code>EDGE</code>.</p> <p>For more
-     * information, see <a
+     * <p>The type of AWS Snowball device to use for this job. </p> <note> <p>For
+     * cluster jobs, AWS Snowball currently supports only the <code>EDGE</code> device
+     * type.</p> </note> <p>The type of AWS Snowball device to use for this job.
+     * Currently, the only supported device type for cluster jobs is
+     * <code>EDGE</code>.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/snowball/latest/developer-guide/device-differences.html">Snowball
      * Edge Device Options</a> in the Snowball Edge Developer Guide.</p>
      */
     inline const SnowballType& GetSnowballType() const{ return m_snowballType; }
 
     /**
-     * <p>The type of AWS Snowball device to use for this job. Currently, the only
-     * supported device type for cluster jobs is <code>EDGE</code>.</p> <p>For more
-     * information, see <a
+     * <p>The type of AWS Snowball device to use for this job. </p> <note> <p>For
+     * cluster jobs, AWS Snowball currently supports only the <code>EDGE</code> device
+     * type.</p> </note> <p>The type of AWS Snowball device to use for this job.
+     * Currently, the only supported device type for cluster jobs is
+     * <code>EDGE</code>.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/snowball/latest/developer-guide/device-differences.html">Snowball
      * Edge Device Options</a> in the Snowball Edge Developer Guide.</p>
      */
     inline bool SnowballTypeHasBeenSet() const { return m_snowballTypeHasBeenSet; }
 
     /**
-     * <p>The type of AWS Snowball device to use for this job. Currently, the only
-     * supported device type for cluster jobs is <code>EDGE</code>.</p> <p>For more
-     * information, see <a
+     * <p>The type of AWS Snowball device to use for this job. </p> <note> <p>For
+     * cluster jobs, AWS Snowball currently supports only the <code>EDGE</code> device
+     * type.</p> </note> <p>The type of AWS Snowball device to use for this job.
+     * Currently, the only supported device type for cluster jobs is
+     * <code>EDGE</code>.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/snowball/latest/developer-guide/device-differences.html">Snowball
      * Edge Device Options</a> in the Snowball Edge Developer Guide.</p>
      */
     inline void SetSnowballType(const SnowballType& value) { m_snowballTypeHasBeenSet = true; m_snowballType = value; }
 
     /**
-     * <p>The type of AWS Snowball device to use for this job. Currently, the only
-     * supported device type for cluster jobs is <code>EDGE</code>.</p> <p>For more
-     * information, see <a
+     * <p>The type of AWS Snowball device to use for this job. </p> <note> <p>For
+     * cluster jobs, AWS Snowball currently supports only the <code>EDGE</code> device
+     * type.</p> </note> <p>The type of AWS Snowball device to use for this job.
+     * Currently, the only supported device type for cluster jobs is
+     * <code>EDGE</code>.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/snowball/latest/developer-guide/device-differences.html">Snowball
      * Edge Device Options</a> in the Snowball Edge Developer Guide.</p>
      */
     inline void SetSnowballType(SnowballType&& value) { m_snowballTypeHasBeenSet = true; m_snowballType = std::move(value); }
 
     /**
-     * <p>The type of AWS Snowball device to use for this job. Currently, the only
-     * supported device type for cluster jobs is <code>EDGE</code>.</p> <p>For more
-     * information, see <a
+     * <p>The type of AWS Snowball device to use for this job. </p> <note> <p>For
+     * cluster jobs, AWS Snowball currently supports only the <code>EDGE</code> device
+     * type.</p> </note> <p>The type of AWS Snowball device to use for this job.
+     * Currently, the only supported device type for cluster jobs is
+     * <code>EDGE</code>.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/snowball/latest/developer-guide/device-differences.html">Snowball
      * Edge Device Options</a> in the Snowball Edge Developer Guide.</p>
      */
     inline CreateJobRequest& WithSnowballType(const SnowballType& value) { SetSnowballType(value); return *this;}
 
     /**
-     * <p>The type of AWS Snowball device to use for this job. Currently, the only
-     * supported device type for cluster jobs is <code>EDGE</code>.</p> <p>For more
-     * information, see <a
+     * <p>The type of AWS Snowball device to use for this job. </p> <note> <p>For
+     * cluster jobs, AWS Snowball currently supports only the <code>EDGE</code> device
+     * type.</p> </note> <p>The type of AWS Snowball device to use for this job.
+     * Currently, the only supported device type for cluster jobs is
+     * <code>EDGE</code>.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/snowball/latest/developer-guide/device-differences.html">Snowball
      * Edge Device Options</a> in the Snowball Edge Developer Guide.</p>
      */
@@ -737,6 +750,37 @@ namespace Model
      */
     inline CreateJobRequest& WithTaxDocuments(TaxDocuments&& value) { SetTaxDocuments(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Defines the device configuration for an AWS Snowcone job.</p>
+     */
+    inline const DeviceConfiguration& GetDeviceConfiguration() const{ return m_deviceConfiguration; }
+
+    /**
+     * <p>Defines the device configuration for an AWS Snowcone job.</p>
+     */
+    inline bool DeviceConfigurationHasBeenSet() const { return m_deviceConfigurationHasBeenSet; }
+
+    /**
+     * <p>Defines the device configuration for an AWS Snowcone job.</p>
+     */
+    inline void SetDeviceConfiguration(const DeviceConfiguration& value) { m_deviceConfigurationHasBeenSet = true; m_deviceConfiguration = value; }
+
+    /**
+     * <p>Defines the device configuration for an AWS Snowcone job.</p>
+     */
+    inline void SetDeviceConfiguration(DeviceConfiguration&& value) { m_deviceConfigurationHasBeenSet = true; m_deviceConfiguration = std::move(value); }
+
+    /**
+     * <p>Defines the device configuration for an AWS Snowcone job.</p>
+     */
+    inline CreateJobRequest& WithDeviceConfiguration(const DeviceConfiguration& value) { SetDeviceConfiguration(value); return *this;}
+
+    /**
+     * <p>Defines the device configuration for an AWS Snowcone job.</p>
+     */
+    inline CreateJobRequest& WithDeviceConfiguration(DeviceConfiguration&& value) { SetDeviceConfiguration(std::move(value)); return *this;}
+
   private:
 
     JobType m_jobType;
@@ -777,6 +821,9 @@ namespace Model
 
     TaxDocuments m_taxDocuments;
     bool m_taxDocumentsHasBeenSet;
+
+    DeviceConfiguration m_deviceConfiguration;
+    bool m_deviceConfigurationHasBeenSet;
   };
 
 } // namespace Model

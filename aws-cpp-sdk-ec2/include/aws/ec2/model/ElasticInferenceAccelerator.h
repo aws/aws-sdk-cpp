@@ -51,56 +51,64 @@ namespace Model
 
     /**
      * <p> The type of elastic inference accelerator. The possible values are
-     * <code>eia1.medium</code>, <code>eia1.large</code>, and <code>eia1.xlarge</code>.
+     * <code>eia1.medium</code>, <code>eia1.large</code>, <code>eia1.xlarge</code>,
+     * <code>eia2.medium</code>, <code>eia2.large</code>, and <code>eia2.xlarge</code>.
      * </p>
      */
     inline const Aws::String& GetType() const{ return m_type; }
 
     /**
      * <p> The type of elastic inference accelerator. The possible values are
-     * <code>eia1.medium</code>, <code>eia1.large</code>, and <code>eia1.xlarge</code>.
+     * <code>eia1.medium</code>, <code>eia1.large</code>, <code>eia1.xlarge</code>,
+     * <code>eia2.medium</code>, <code>eia2.large</code>, and <code>eia2.xlarge</code>.
      * </p>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
      * <p> The type of elastic inference accelerator. The possible values are
-     * <code>eia1.medium</code>, <code>eia1.large</code>, and <code>eia1.xlarge</code>.
+     * <code>eia1.medium</code>, <code>eia1.large</code>, <code>eia1.xlarge</code>,
+     * <code>eia2.medium</code>, <code>eia2.large</code>, and <code>eia2.xlarge</code>.
      * </p>
      */
     inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
      * <p> The type of elastic inference accelerator. The possible values are
-     * <code>eia1.medium</code>, <code>eia1.large</code>, and <code>eia1.xlarge</code>.
+     * <code>eia1.medium</code>, <code>eia1.large</code>, <code>eia1.xlarge</code>,
+     * <code>eia2.medium</code>, <code>eia2.large</code>, and <code>eia2.xlarge</code>.
      * </p>
      */
     inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
      * <p> The type of elastic inference accelerator. The possible values are
-     * <code>eia1.medium</code>, <code>eia1.large</code>, and <code>eia1.xlarge</code>.
+     * <code>eia1.medium</code>, <code>eia1.large</code>, <code>eia1.xlarge</code>,
+     * <code>eia2.medium</code>, <code>eia2.large</code>, and <code>eia2.xlarge</code>.
      * </p>
      */
     inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
 
     /**
      * <p> The type of elastic inference accelerator. The possible values are
-     * <code>eia1.medium</code>, <code>eia1.large</code>, and <code>eia1.xlarge</code>.
+     * <code>eia1.medium</code>, <code>eia1.large</code>, <code>eia1.xlarge</code>,
+     * <code>eia2.medium</code>, <code>eia2.large</code>, and <code>eia2.xlarge</code>.
      * </p>
      */
     inline ElasticInferenceAccelerator& WithType(const Aws::String& value) { SetType(value); return *this;}
 
     /**
      * <p> The type of elastic inference accelerator. The possible values are
-     * <code>eia1.medium</code>, <code>eia1.large</code>, and <code>eia1.xlarge</code>.
+     * <code>eia1.medium</code>, <code>eia1.large</code>, <code>eia1.xlarge</code>,
+     * <code>eia2.medium</code>, <code>eia2.large</code>, and <code>eia2.xlarge</code>.
      * </p>
      */
     inline ElasticInferenceAccelerator& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
 
     /**
      * <p> The type of elastic inference accelerator. The possible values are
-     * <code>eia1.medium</code>, <code>eia1.large</code>, and <code>eia1.xlarge</code>.
+     * <code>eia1.medium</code>, <code>eia1.large</code>, <code>eia1.xlarge</code>,
+     * <code>eia2.medium</code>, <code>eia2.large</code>, and <code>eia2.xlarge</code>.
      * </p>
      */
     inline ElasticInferenceAccelerator& WithType(const char* value) { SetType(value); return *this;}

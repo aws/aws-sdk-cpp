@@ -35,7 +35,9 @@ EbsInfo::EbsInfo() :
     m_ebsOptimizedSupportHasBeenSet(false),
     m_encryptionSupport(EbsEncryptionSupport::NOT_SET),
     m_encryptionSupportHasBeenSet(false),
-    m_ebsOptimizedInfoHasBeenSet(false)
+    m_ebsOptimizedInfoHasBeenSet(false),
+    m_nvmeSupport(EbsNvmeSupport::NOT_SET),
+    m_nvmeSupportHasBeenSet(false)
 {
 }
 
@@ -44,7 +46,9 @@ EbsInfo::EbsInfo(const XmlNode& xmlNode) :
     m_ebsOptimizedSupportHasBeenSet(false),
     m_encryptionSupport(EbsEncryptionSupport::NOT_SET),
     m_encryptionSupportHasBeenSet(false),
-    m_ebsOptimizedInfoHasBeenSet(false)
+    m_ebsOptimizedInfoHasBeenSet(false),
+    m_nvmeSupport(EbsNvmeSupport::NOT_SET),
+    m_nvmeSupportHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -73,6 +77,12 @@ EbsInfo& EbsInfo::operator =(const XmlNode& xmlNode)
       m_ebsOptimizedInfo = ebsOptimizedInfoNode;
       m_ebsOptimizedInfoHasBeenSet = true;
     }
+    XmlNode nvmeSupportNode = resultNode.FirstChild("nvmeSupport");
+    if(!nvmeSupportNode.IsNull())
+    {
+      m_nvmeSupport = EbsNvmeSupportMapper::GetEbsNvmeSupportForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(nvmeSupportNode.GetText()).c_str()).c_str());
+      m_nvmeSupportHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -97,6 +107,11 @@ void EbsInfo::OutputToStream(Aws::OStream& oStream, const char* location, unsign
       m_ebsOptimizedInfo.OutputToStream(oStream, ebsOptimizedInfoLocationAndMemberSs.str().c_str());
   }
 
+  if(m_nvmeSupportHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".NvmeSupport=" << EbsNvmeSupportMapper::GetNameForEbsNvmeSupport(m_nvmeSupport) << "&";
+  }
+
 }
 
 void EbsInfo::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -114,6 +129,10 @@ void EbsInfo::OutputToStream(Aws::OStream& oStream, const char* location) const
       Aws::String ebsOptimizedInfoLocationAndMember(location);
       ebsOptimizedInfoLocationAndMember += ".EbsOptimizedInfo";
       m_ebsOptimizedInfo.OutputToStream(oStream, ebsOptimizedInfoLocationAndMember.c_str());
+  }
+  if(m_nvmeSupportHasBeenSet)
+  {
+      oStream << location << ".NvmeSupport=" << EbsNvmeSupportMapper::GetNameForEbsNvmeSupport(m_nvmeSupport) << "&";
   }
 }
 

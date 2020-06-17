@@ -47,34 +47,22 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
-    /**
-     * <p>The tax documents required in AWS Regions in India.</p>
-     */
+    
     inline const INDTaxDocuments& GetIND() const{ return m_iND; }
 
-    /**
-     * <p>The tax documents required in AWS Regions in India.</p>
-     */
+    
     inline bool INDHasBeenSet() const { return m_iNDHasBeenSet; }
 
-    /**
-     * <p>The tax documents required in AWS Regions in India.</p>
-     */
+    
     inline void SetIND(const INDTaxDocuments& value) { m_iNDHasBeenSet = true; m_iND = value; }
 
-    /**
-     * <p>The tax documents required in AWS Regions in India.</p>
-     */
+    
     inline void SetIND(INDTaxDocuments&& value) { m_iNDHasBeenSet = true; m_iND = std::move(value); }
 
-    /**
-     * <p>The tax documents required in AWS Regions in India.</p>
-     */
+    
     inline TaxDocuments& WithIND(const INDTaxDocuments& value) { SetIND(value); return *this;}
 
-    /**
-     * <p>The tax documents required in AWS Regions in India.</p>
-     */
+    
     inline TaxDocuments& WithIND(INDTaxDocuments&& value) { SetIND(std::move(value)); return *this;}
 
   private:

@@ -16,6 +16,7 @@
 #pragma once
 #include <aws/appmesh/AppMesh_EXPORTS.h>
 #include <aws/appmesh/model/TcpRouteAction.h>
+#include <aws/appmesh/model/TcpTimeout.h>
 #include <utility>
 
 namespace Aws
@@ -77,10 +78,32 @@ namespace Model
      */
     inline TcpRoute& WithAction(TcpRouteAction&& value) { SetAction(std::move(value)); return *this;}
 
+
+    
+    inline const TcpTimeout& GetTimeout() const{ return m_timeout; }
+
+    
+    inline bool TimeoutHasBeenSet() const { return m_timeoutHasBeenSet; }
+
+    
+    inline void SetTimeout(const TcpTimeout& value) { m_timeoutHasBeenSet = true; m_timeout = value; }
+
+    
+    inline void SetTimeout(TcpTimeout&& value) { m_timeoutHasBeenSet = true; m_timeout = std::move(value); }
+
+    
+    inline TcpRoute& WithTimeout(const TcpTimeout& value) { SetTimeout(value); return *this;}
+
+    
+    inline TcpRoute& WithTimeout(TcpTimeout&& value) { SetTimeout(std::move(value)); return *this;}
+
   private:
 
     TcpRouteAction m_action;
     bool m_actionHasBeenSet;
+
+    TcpTimeout m_timeout;
+    bool m_timeoutHasBeenSet;
   };
 
 } // namespace Model

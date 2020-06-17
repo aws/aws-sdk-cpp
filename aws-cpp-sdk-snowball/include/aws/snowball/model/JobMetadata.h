@@ -27,6 +27,7 @@
 #include <aws/snowball/model/DataTransfer.h>
 #include <aws/snowball/model/JobLogs.h>
 #include <aws/snowball/model/TaxDocuments.h>
+#include <aws/snowball/model/DeviceConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -842,6 +843,25 @@ namespace Model
      */
     inline JobMetadata& WithTaxDocuments(TaxDocuments&& value) { SetTaxDocuments(std::move(value)); return *this;}
 
+
+    
+    inline const DeviceConfiguration& GetDeviceConfiguration() const{ return m_deviceConfiguration; }
+
+    
+    inline bool DeviceConfigurationHasBeenSet() const { return m_deviceConfigurationHasBeenSet; }
+
+    
+    inline void SetDeviceConfiguration(const DeviceConfiguration& value) { m_deviceConfigurationHasBeenSet = true; m_deviceConfiguration = value; }
+
+    
+    inline void SetDeviceConfiguration(DeviceConfiguration&& value) { m_deviceConfigurationHasBeenSet = true; m_deviceConfiguration = std::move(value); }
+
+    
+    inline JobMetadata& WithDeviceConfiguration(const DeviceConfiguration& value) { SetDeviceConfiguration(value); return *this;}
+
+    
+    inline JobMetadata& WithDeviceConfiguration(DeviceConfiguration&& value) { SetDeviceConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_jobId;
@@ -897,6 +917,9 @@ namespace Model
 
     TaxDocuments m_taxDocuments;
     bool m_taxDocumentsHasBeenSet;
+
+    DeviceConfiguration m_deviceConfiguration;
+    bool m_deviceConfigurationHasBeenSet;
   };
 
 } // namespace Model

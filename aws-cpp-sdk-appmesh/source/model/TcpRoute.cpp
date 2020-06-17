@@ -29,12 +29,14 @@ namespace Model
 {
 
 TcpRoute::TcpRoute() : 
-    m_actionHasBeenSet(false)
+    m_actionHasBeenSet(false),
+    m_timeoutHasBeenSet(false)
 {
 }
 
 TcpRoute::TcpRoute(JsonView jsonValue) : 
-    m_actionHasBeenSet(false)
+    m_actionHasBeenSet(false),
+    m_timeoutHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -48,6 +50,13 @@ TcpRoute& TcpRoute::operator =(JsonView jsonValue)
     m_actionHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("timeout"))
+  {
+    m_timeout = jsonValue.GetObject("timeout");
+
+    m_timeoutHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -58,6 +67,12 @@ JsonValue TcpRoute::Jsonize() const
   if(m_actionHasBeenSet)
   {
    payload.WithObject("action", m_action.Jsonize());
+
+  }
+
+  if(m_timeoutHasBeenSet)
+  {
+   payload.WithObject("timeout", m_timeout.Jsonize());
 
   }
 

@@ -318,7 +318,7 @@ namespace Model
      * regex pattern and the character sequences specified by the keywords array. Macie
      * includes or excludes a result based on the proximity of a keyword to text that
      * matches the regex pattern. The distance can be 1 - 300 characters. The default
-     * value is 300.</p>
+     * value is 50.</p>
      */
     inline int GetMaximumMatchDistance() const{ return m_maximumMatchDistance; }
 
@@ -327,7 +327,7 @@ namespace Model
      * regex pattern and the character sequences specified by the keywords array. Macie
      * includes or excludes a result based on the proximity of a keyword to text that
      * matches the regex pattern. The distance can be 1 - 300 characters. The default
-     * value is 300.</p>
+     * value is 50.</p>
      */
     inline bool MaximumMatchDistanceHasBeenSet() const { return m_maximumMatchDistanceHasBeenSet; }
 
@@ -336,7 +336,7 @@ namespace Model
      * regex pattern and the character sequences specified by the keywords array. Macie
      * includes or excludes a result based on the proximity of a keyword to text that
      * matches the regex pattern. The distance can be 1 - 300 characters. The default
-     * value is 300.</p>
+     * value is 50.</p>
      */
     inline void SetMaximumMatchDistance(int value) { m_maximumMatchDistanceHasBeenSet = true; m_maximumMatchDistance = value; }
 
@@ -345,7 +345,7 @@ namespace Model
      * regex pattern and the character sequences specified by the keywords array. Macie
      * includes or excludes a result based on the proximity of a keyword to text that
      * matches the regex pattern. The distance can be 1 - 300 characters. The default
-     * value is 300.</p>
+     * value is 50.</p>
      */
     inline CreateCustomDataIdentifierRequest& WithMaximumMatchDistance(int value) { SetMaximumMatchDistance(value); return *this;}
 

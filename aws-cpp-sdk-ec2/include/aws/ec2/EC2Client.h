@@ -11468,9 +11468,9 @@ namespace Model
          * users are returned. You can specify AWS account IDs (if you own the snapshots),
          * <code>self</code> for snapshots for which you own or have explicit permissions,
          * or <code>all</code> for public snapshots.</p> <p>If you are describing a long
-         * list of snapshots, you can paginate the output to make the list more manageable.
-         * The <code>MaxResults</code> parameter sets the maximum number of results
-         * returned in a single page. If the list of results exceeds your
+         * list of snapshots, we recommend that you paginate the output to make the list
+         * more manageable. The <code>MaxResults</code> parameter sets the maximum number
+         * of results returned in a single page. If the list of results exceeds your
          * <code>MaxResults</code> value, then that number of results is returned along
          * with a <code>NextToken</code> value that can be passed to a subsequent
          * <code>DescribeSnapshots</code> request to retrieve the remaining results.</p>
@@ -11512,9 +11512,9 @@ namespace Model
          * users are returned. You can specify AWS account IDs (if you own the snapshots),
          * <code>self</code> for snapshots for which you own or have explicit permissions,
          * or <code>all</code> for public snapshots.</p> <p>If you are describing a long
-         * list of snapshots, you can paginate the output to make the list more manageable.
-         * The <code>MaxResults</code> parameter sets the maximum number of results
-         * returned in a single page. If the list of results exceeds your
+         * list of snapshots, we recommend that you paginate the output to make the list
+         * more manageable. The <code>MaxResults</code> parameter sets the maximum number
+         * of results returned in a single page. If the list of results exceeds your
          * <code>MaxResults</code> value, then that number of results is returned along
          * with a <code>NextToken</code> value that can be passed to a subsequent
          * <code>DescribeSnapshots</code> request to retrieve the remaining results.</p>
@@ -11558,9 +11558,9 @@ namespace Model
          * users are returned. You can specify AWS account IDs (if you own the snapshots),
          * <code>self</code> for snapshots for which you own or have explicit permissions,
          * or <code>all</code> for public snapshots.</p> <p>If you are describing a long
-         * list of snapshots, you can paginate the output to make the list more manageable.
-         * The <code>MaxResults</code> parameter sets the maximum number of results
-         * returned in a single page. If the list of results exceeds your
+         * list of snapshots, we recommend that you paginate the output to make the list
+         * more manageable. The <code>MaxResults</code> parameter sets the maximum number
+         * of results returned in a single page. If the list of results exceeds your
          * <code>MaxResults</code> value, then that number of results is returned along
          * with a <code>NextToken</code> value that can be passed to a subsequent
          * <code>DescribeSnapshots</code> request to retrieve the remaining results.</p>
@@ -12358,13 +12358,13 @@ namespace Model
 
         /**
          * <p>Describes the specified EBS volumes or all of your EBS volumes.</p> <p>If you
-         * are describing a long list of volumes, you can paginate the output to make the
-         * list more manageable. The <code>MaxResults</code> parameter sets the maximum
-         * number of results returned in a single page. If the list of results exceeds your
-         * <code>MaxResults</code> value, then that number of results is returned along
-         * with a <code>NextToken</code> value that can be passed to a subsequent
-         * <code>DescribeVolumes</code> request to retrieve the remaining results.</p>
-         * <p>For more information about EBS volumes, see <a
+         * are describing a long list of volumes, we recommend that you paginate the output
+         * to make the list more manageable. The <code>MaxResults</code> parameter sets the
+         * maximum number of results returned in a single page. If the list of results
+         * exceeds your <code>MaxResults</code> value, then that number of results is
+         * returned along with a <code>NextToken</code> value that can be passed to a
+         * subsequent <code>DescribeVolumes</code> request to retrieve the remaining
+         * results.</p> <p>For more information about EBS volumes, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumes.html">Amazon
          * EBS Volumes</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -12375,13 +12375,13 @@ namespace Model
 
         /**
          * <p>Describes the specified EBS volumes or all of your EBS volumes.</p> <p>If you
-         * are describing a long list of volumes, you can paginate the output to make the
-         * list more manageable. The <code>MaxResults</code> parameter sets the maximum
-         * number of results returned in a single page. If the list of results exceeds your
-         * <code>MaxResults</code> value, then that number of results is returned along
-         * with a <code>NextToken</code> value that can be passed to a subsequent
-         * <code>DescribeVolumes</code> request to retrieve the remaining results.</p>
-         * <p>For more information about EBS volumes, see <a
+         * are describing a long list of volumes, we recommend that you paginate the output
+         * to make the list more manageable. The <code>MaxResults</code> parameter sets the
+         * maximum number of results returned in a single page. If the list of results
+         * exceeds your <code>MaxResults</code> value, then that number of results is
+         * returned along with a <code>NextToken</code> value that can be passed to a
+         * subsequent <code>DescribeVolumes</code> request to retrieve the remaining
+         * results.</p> <p>For more information about EBS volumes, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumes.html">Amazon
          * EBS Volumes</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -12394,13 +12394,13 @@ namespace Model
 
         /**
          * <p>Describes the specified EBS volumes or all of your EBS volumes.</p> <p>If you
-         * are describing a long list of volumes, you can paginate the output to make the
-         * list more manageable. The <code>MaxResults</code> parameter sets the maximum
-         * number of results returned in a single page. If the list of results exceeds your
-         * <code>MaxResults</code> value, then that number of results is returned along
-         * with a <code>NextToken</code> value that can be passed to a subsequent
-         * <code>DescribeVolumes</code> request to retrieve the remaining results.</p>
-         * <p>For more information about EBS volumes, see <a
+         * are describing a long list of volumes, we recommend that you paginate the output
+         * to make the list more manageable. The <code>MaxResults</code> parameter sets the
+         * maximum number of results returned in a single page. If the list of results
+         * exceeds your <code>MaxResults</code> value, then that number of results is
+         * returned along with a <code>NextToken</code> value that can be passed to a
+         * subsequent <code>DescribeVolumes</code> request to retrieve the remaining
+         * results.</p> <p>For more information about EBS volumes, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumes.html">Amazon
          * EBS Volumes</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -12412,20 +12412,16 @@ namespace Model
         virtual void DescribeVolumesAsync(const Model::DescribeVolumesRequest& request, const DescribeVolumesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Reports the current modification status of EBS volumes.</p>
-         * <p>Current-generation EBS volumes support modification of attributes including
-         * type, size, and (for <code>io1</code> volumes) IOPS provisioning while either
-         * attached to or detached from an instance. Following an action from the API or
-         * the console to modify a volume, the status of the modification may be
-         * <code>modifying</code>, <code>optimizing</code>, <code>completed</code>, or
-         * <code>failed</code>. If a volume has never been modified, then certain elements
-         * of the returned <code>VolumeModification</code> objects are null. </p> <p> You
-         * can also use CloudWatch Events to check the status of a modification to an EBS
-         * volume. For information about CloudWatch Events, see the <a
+         * <p>Describes the most recent volume modification request for the specified EBS
+         * volumes.</p> <p>If a volume has never been modified, some information in the
+         * output will be null. If a volume has been modified more than once, the output
+         * includes only the most recent modification request.</p> <p>You can also use
+         * CloudWatch Events to check the status of a modification to an EBS volume. For
+         * information about CloudWatch Events, see the <a
          * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/">Amazon
          * CloudWatch Events User Guide</a>. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-expand-volume.html#monitoring_mods">Monitoring
-         * Volume Modifications"</a> in the <i>Amazon Elastic Compute Cloud User
+         * Volume Modifications</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVolumesModifications">AWS
          * API Reference</a></p>
@@ -12433,20 +12429,16 @@ namespace Model
         virtual Model::DescribeVolumesModificationsOutcome DescribeVolumesModifications(const Model::DescribeVolumesModificationsRequest& request) const;
 
         /**
-         * <p>Reports the current modification status of EBS volumes.</p>
-         * <p>Current-generation EBS volumes support modification of attributes including
-         * type, size, and (for <code>io1</code> volumes) IOPS provisioning while either
-         * attached to or detached from an instance. Following an action from the API or
-         * the console to modify a volume, the status of the modification may be
-         * <code>modifying</code>, <code>optimizing</code>, <code>completed</code>, or
-         * <code>failed</code>. If a volume has never been modified, then certain elements
-         * of the returned <code>VolumeModification</code> objects are null. </p> <p> You
-         * can also use CloudWatch Events to check the status of a modification to an EBS
-         * volume. For information about CloudWatch Events, see the <a
+         * <p>Describes the most recent volume modification request for the specified EBS
+         * volumes.</p> <p>If a volume has never been modified, some information in the
+         * output will be null. If a volume has been modified more than once, the output
+         * includes only the most recent modification request.</p> <p>You can also use
+         * CloudWatch Events to check the status of a modification to an EBS volume. For
+         * information about CloudWatch Events, see the <a
          * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/">Amazon
          * CloudWatch Events User Guide</a>. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-expand-volume.html#monitoring_mods">Monitoring
-         * Volume Modifications"</a> in the <i>Amazon Elastic Compute Cloud User
+         * Volume Modifications</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVolumesModifications">AWS
          * API Reference</a></p>
@@ -12456,20 +12448,16 @@ namespace Model
         virtual Model::DescribeVolumesModificationsOutcomeCallable DescribeVolumesModificationsCallable(const Model::DescribeVolumesModificationsRequest& request) const;
 
         /**
-         * <p>Reports the current modification status of EBS volumes.</p>
-         * <p>Current-generation EBS volumes support modification of attributes including
-         * type, size, and (for <code>io1</code> volumes) IOPS provisioning while either
-         * attached to or detached from an instance. Following an action from the API or
-         * the console to modify a volume, the status of the modification may be
-         * <code>modifying</code>, <code>optimizing</code>, <code>completed</code>, or
-         * <code>failed</code>. If a volume has never been modified, then certain elements
-         * of the returned <code>VolumeModification</code> objects are null. </p> <p> You
-         * can also use CloudWatch Events to check the status of a modification to an EBS
-         * volume. For information about CloudWatch Events, see the <a
+         * <p>Describes the most recent volume modification request for the specified EBS
+         * volumes.</p> <p>If a volume has never been modified, some information in the
+         * output will be null. If a volume has been modified more than once, the output
+         * includes only the most recent modification request.</p> <p>You can also use
+         * CloudWatch Events to check the status of a modification to an EBS volume. For
+         * information about CloudWatch Events, see the <a
          * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/">Amazon
          * CloudWatch Events User Guide</a>. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-expand-volume.html#monitoring_mods">Monitoring
-         * Volume Modifications"</a> in the <i>Amazon Elastic Compute Cloud User
+         * Volume Modifications</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVolumesModifications">AWS
          * API Reference</a></p>

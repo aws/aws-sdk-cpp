@@ -179,7 +179,7 @@ namespace Model
                the ID of the account that shared the mesh
      * with your account. For more information about mesh sharing, see <a
      * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working
-     * with Shared Meshes</a>.</p>
+     * with shared meshes</a>.</p>
      */
     inline const Aws::String& GetMeshOwner() const{ return m_meshOwner; }
 
@@ -189,7 +189,7 @@ namespace Model
                the ID of the account that shared the mesh
      * with your account. For more information about mesh sharing, see <a
      * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working
-     * with Shared Meshes</a>.</p>
+     * with shared meshes</a>.</p>
      */
     inline bool MeshOwnerHasBeenSet() const { return m_meshOwnerHasBeenSet; }
 
@@ -199,7 +199,7 @@ namespace Model
                the ID of the account that shared the mesh
      * with your account. For more information about mesh sharing, see <a
      * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working
-     * with Shared Meshes</a>.</p>
+     * with shared meshes</a>.</p>
      */
     inline void SetMeshOwner(const Aws::String& value) { m_meshOwnerHasBeenSet = true; m_meshOwner = value; }
 
@@ -209,7 +209,7 @@ namespace Model
                the ID of the account that shared the mesh
      * with your account. For more information about mesh sharing, see <a
      * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working
-     * with Shared Meshes</a>.</p>
+     * with shared meshes</a>.</p>
      */
     inline void SetMeshOwner(Aws::String&& value) { m_meshOwnerHasBeenSet = true; m_meshOwner = std::move(value); }
 
@@ -219,7 +219,7 @@ namespace Model
                the ID of the account that shared the mesh
      * with your account. For more information about mesh sharing, see <a
      * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working
-     * with Shared Meshes</a>.</p>
+     * with shared meshes</a>.</p>
      */
     inline void SetMeshOwner(const char* value) { m_meshOwnerHasBeenSet = true; m_meshOwner.assign(value); }
 
@@ -229,7 +229,7 @@ namespace Model
                the ID of the account that shared the mesh
      * with your account. For more information about mesh sharing, see <a
      * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working
-     * with Shared Meshes</a>.</p>
+     * with shared meshes</a>.</p>
      */
     inline ListVirtualNodesRequest& WithMeshOwner(const Aws::String& value) { SetMeshOwner(value); return *this;}
 
@@ -239,7 +239,7 @@ namespace Model
                the ID of the account that shared the mesh
      * with your account. For more information about mesh sharing, see <a
      * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working
-     * with Shared Meshes</a>.</p>
+     * with shared meshes</a>.</p>
      */
     inline ListVirtualNodesRequest& WithMeshOwner(Aws::String&& value) { SetMeshOwner(std::move(value)); return *this;}
 
@@ -249,7 +249,7 @@ namespace Model
                the ID of the account that shared the mesh
      * with your account. For more information about mesh sharing, see <a
      * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working
-     * with Shared Meshes</a>.</p>
+     * with shared meshes</a>.</p>
      */
     inline ListVirtualNodesRequest& WithMeshOwner(const char* value) { SetMeshOwner(value); return *this;}
 
