@@ -54,9 +54,9 @@
 #include <aws/testing/TestingEnvironment.h>
 #include <fstream>
 
-#ifdef _WIN32
+#ifdef _MSC_VER
 #pragma warning(disable: 4127)
-#endif //_WIN32
+#endif //_MSC_VER
 
 #include <aws/core/http/standard/StandardHttpRequest.h>
 
