@@ -20,6 +20,7 @@
 #include <aws/mediaconvert/model/DolbyVision.h>
 #include <aws/mediaconvert/model/ImageInserter.h>
 #include <aws/mediaconvert/model/NoiseReducer.h>
+#include <aws/mediaconvert/model/PartnerWatermarking.h>
 #include <aws/mediaconvert/model/TimecodeBurnin.h>
 #include <utility>
 
@@ -252,6 +253,49 @@ namespace Model
 
 
     /**
+     * If you work with a third party video watermarking partner, use the group of
+     * settings that correspond with your watermarking partner to include watermarks in
+     * your output.
+     */
+    inline const PartnerWatermarking& GetPartnerWatermarking() const{ return m_partnerWatermarking; }
+
+    /**
+     * If you work with a third party video watermarking partner, use the group of
+     * settings that correspond with your watermarking partner to include watermarks in
+     * your output.
+     */
+    inline bool PartnerWatermarkingHasBeenSet() const { return m_partnerWatermarkingHasBeenSet; }
+
+    /**
+     * If you work with a third party video watermarking partner, use the group of
+     * settings that correspond with your watermarking partner to include watermarks in
+     * your output.
+     */
+    inline void SetPartnerWatermarking(const PartnerWatermarking& value) { m_partnerWatermarkingHasBeenSet = true; m_partnerWatermarking = value; }
+
+    /**
+     * If you work with a third party video watermarking partner, use the group of
+     * settings that correspond with your watermarking partner to include watermarks in
+     * your output.
+     */
+    inline void SetPartnerWatermarking(PartnerWatermarking&& value) { m_partnerWatermarkingHasBeenSet = true; m_partnerWatermarking = std::move(value); }
+
+    /**
+     * If you work with a third party video watermarking partner, use the group of
+     * settings that correspond with your watermarking partner to include watermarks in
+     * your output.
+     */
+    inline VideoPreprocessor& WithPartnerWatermarking(const PartnerWatermarking& value) { SetPartnerWatermarking(value); return *this;}
+
+    /**
+     * If you work with a third party video watermarking partner, use the group of
+     * settings that correspond with your watermarking partner to include watermarks in
+     * your output.
+     */
+    inline VideoPreprocessor& WithPartnerWatermarking(PartnerWatermarking&& value) { SetPartnerWatermarking(std::move(value)); return *this;}
+
+
+    /**
      * Timecode burn-in (TimecodeBurnIn)--Burns the output timecode and specified
      * prefix into the output.
      */
@@ -303,6 +347,9 @@ namespace Model
 
     NoiseReducer m_noiseReducer;
     bool m_noiseReducerHasBeenSet;
+
+    PartnerWatermarking m_partnerWatermarking;
+    bool m_partnerWatermarkingHasBeenSet;
 
     TimecodeBurnin m_timecodeBurnin;
     bool m_timecodeBurninHasBeenSet;

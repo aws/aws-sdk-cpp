@@ -1579,29 +1579,37 @@ namespace Model
 
     /**
      * <p>The target backtrack window, in seconds. To disable backtracking, set this
-     * value to 0.</p> <p>Default: 0</p> <p>Constraints:</p> <ul> <li> <p>If specified,
-     * this value must be set to a number from 0 to 259,200 (72 hours).</p> </li> </ul>
+     * value to 0.</p> <note> <p>Currently, Backtrack is only supported for Aurora
+     * MySQL DB clusters.</p> </note> <p>Default: 0</p> <p>Constraints:</p> <ul> <li>
+     * <p>If specified, this value must be set to a number from 0 to 259,200 (72
+     * hours).</p> </li> </ul>
      */
     inline long long GetBacktrackWindow() const{ return m_backtrackWindow; }
 
     /**
      * <p>The target backtrack window, in seconds. To disable backtracking, set this
-     * value to 0.</p> <p>Default: 0</p> <p>Constraints:</p> <ul> <li> <p>If specified,
-     * this value must be set to a number from 0 to 259,200 (72 hours).</p> </li> </ul>
+     * value to 0.</p> <note> <p>Currently, Backtrack is only supported for Aurora
+     * MySQL DB clusters.</p> </note> <p>Default: 0</p> <p>Constraints:</p> <ul> <li>
+     * <p>If specified, this value must be set to a number from 0 to 259,200 (72
+     * hours).</p> </li> </ul>
      */
     inline bool BacktrackWindowHasBeenSet() const { return m_backtrackWindowHasBeenSet; }
 
     /**
      * <p>The target backtrack window, in seconds. To disable backtracking, set this
-     * value to 0.</p> <p>Default: 0</p> <p>Constraints:</p> <ul> <li> <p>If specified,
-     * this value must be set to a number from 0 to 259,200 (72 hours).</p> </li> </ul>
+     * value to 0.</p> <note> <p>Currently, Backtrack is only supported for Aurora
+     * MySQL DB clusters.</p> </note> <p>Default: 0</p> <p>Constraints:</p> <ul> <li>
+     * <p>If specified, this value must be set to a number from 0 to 259,200 (72
+     * hours).</p> </li> </ul>
      */
     inline void SetBacktrackWindow(long long value) { m_backtrackWindowHasBeenSet = true; m_backtrackWindow = value; }
 
     /**
      * <p>The target backtrack window, in seconds. To disable backtracking, set this
-     * value to 0.</p> <p>Default: 0</p> <p>Constraints:</p> <ul> <li> <p>If specified,
-     * this value must be set to a number from 0 to 259,200 (72 hours).</p> </li> </ul>
+     * value to 0.</p> <note> <p>Currently, Backtrack is only supported for Aurora
+     * MySQL DB clusters.</p> </note> <p>Default: 0</p> <p>Constraints:</p> <ul> <li>
+     * <p>If specified, this value must be set to a number from 0 to 259,200 (72
+     * hours).</p> </li> </ul>
      */
     inline RestoreDBClusterFromS3Request& WithBacktrackWindow(long long value) { SetBacktrackWindow(value); return *this;}
 

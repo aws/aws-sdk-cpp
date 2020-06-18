@@ -30,6 +30,8 @@ UpdateMaintenanceWindowRequest::UpdateMaintenanceWindowRequest() :
     m_endDateHasBeenSet(false),
     m_scheduleHasBeenSet(false),
     m_scheduleTimezoneHasBeenSet(false),
+    m_scheduleOffset(0),
+    m_scheduleOffsetHasBeenSet(false),
     m_duration(0),
     m_durationHasBeenSet(false),
     m_cutoff(0),
@@ -86,6 +88,12 @@ Aws::String UpdateMaintenanceWindowRequest::SerializePayload() const
   if(m_scheduleTimezoneHasBeenSet)
   {
    payload.WithString("ScheduleTimezone", m_scheduleTimezone);
+
+  }
+
+  if(m_scheduleOffsetHasBeenSet)
+  {
+   payload.WithInteger("ScheduleOffset", m_scheduleOffset);
 
   }
 

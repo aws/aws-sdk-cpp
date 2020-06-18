@@ -432,32 +432,38 @@ namespace Model
 
 
     /**
-     * When set to INTERPOLATE, produces smoother motion during frame rate conversion.
+     * Optional. Specify how the transcoder performs framerate conversion. The default
+     * behavior is to use duplicate drop conversion.
      */
     inline const H265FramerateConversionAlgorithm& GetFramerateConversionAlgorithm() const{ return m_framerateConversionAlgorithm; }
 
     /**
-     * When set to INTERPOLATE, produces smoother motion during frame rate conversion.
+     * Optional. Specify how the transcoder performs framerate conversion. The default
+     * behavior is to use duplicate drop conversion.
      */
     inline bool FramerateConversionAlgorithmHasBeenSet() const { return m_framerateConversionAlgorithmHasBeenSet; }
 
     /**
-     * When set to INTERPOLATE, produces smoother motion during frame rate conversion.
+     * Optional. Specify how the transcoder performs framerate conversion. The default
+     * behavior is to use duplicate drop conversion.
      */
     inline void SetFramerateConversionAlgorithm(const H265FramerateConversionAlgorithm& value) { m_framerateConversionAlgorithmHasBeenSet = true; m_framerateConversionAlgorithm = value; }
 
     /**
-     * When set to INTERPOLATE, produces smoother motion during frame rate conversion.
+     * Optional. Specify how the transcoder performs framerate conversion. The default
+     * behavior is to use duplicate drop conversion.
      */
     inline void SetFramerateConversionAlgorithm(H265FramerateConversionAlgorithm&& value) { m_framerateConversionAlgorithmHasBeenSet = true; m_framerateConversionAlgorithm = std::move(value); }
 
     /**
-     * When set to INTERPOLATE, produces smoother motion during frame rate conversion.
+     * Optional. Specify how the transcoder performs framerate conversion. The default
+     * behavior is to use duplicate drop conversion.
      */
     inline H265Settings& WithFramerateConversionAlgorithm(const H265FramerateConversionAlgorithm& value) { SetFramerateConversionAlgorithm(value); return *this;}
 
     /**
-     * When set to INTERPOLATE, produces smoother motion during frame rate conversion.
+     * Optional. Specify how the transcoder performs framerate conversion. The default
+     * behavior is to use duplicate drop conversion.
      */
     inline H265Settings& WithFramerateConversionAlgorithm(H265FramerateConversionAlgorithm&& value) { SetFramerateConversionAlgorithm(std::move(value)); return *this;}
 
@@ -884,102 +890,148 @@ namespace Model
     /**
      * Optional. Specify how the service determines the pixel aspect ratio (PAR) for
      * this output. The default behavior, Follow source (INITIALIZE_FROM_SOURCE), uses
-     * the PAR from your input video for your output. To use a different PAR, choose
-     * (SPECIFIED). In the console, SPECIFIED corresponds to any value other than
-     * Follow source. When you choose SPECIFIED for this setting, you must also specify
-     * values for the parNumerator and parDenominator settings.
+     * the PAR from your input video for your output. To specify a different PAR in the
+     * console, choose any value other than Follow source. To specify a different PAR
+     * by editing the JSON job specification, choose SPECIFIED. When you choose
+     * SPECIFIED for this setting, you must also specify values for the parNumerator
+     * and parDenominator settings.
      */
     inline const H265ParControl& GetParControl() const{ return m_parControl; }
 
     /**
      * Optional. Specify how the service determines the pixel aspect ratio (PAR) for
      * this output. The default behavior, Follow source (INITIALIZE_FROM_SOURCE), uses
-     * the PAR from your input video for your output. To use a different PAR, choose
-     * (SPECIFIED). In the console, SPECIFIED corresponds to any value other than
-     * Follow source. When you choose SPECIFIED for this setting, you must also specify
-     * values for the parNumerator and parDenominator settings.
+     * the PAR from your input video for your output. To specify a different PAR in the
+     * console, choose any value other than Follow source. To specify a different PAR
+     * by editing the JSON job specification, choose SPECIFIED. When you choose
+     * SPECIFIED for this setting, you must also specify values for the parNumerator
+     * and parDenominator settings.
      */
     inline bool ParControlHasBeenSet() const { return m_parControlHasBeenSet; }
 
     /**
      * Optional. Specify how the service determines the pixel aspect ratio (PAR) for
      * this output. The default behavior, Follow source (INITIALIZE_FROM_SOURCE), uses
-     * the PAR from your input video for your output. To use a different PAR, choose
-     * (SPECIFIED). In the console, SPECIFIED corresponds to any value other than
-     * Follow source. When you choose SPECIFIED for this setting, you must also specify
-     * values for the parNumerator and parDenominator settings.
+     * the PAR from your input video for your output. To specify a different PAR in the
+     * console, choose any value other than Follow source. To specify a different PAR
+     * by editing the JSON job specification, choose SPECIFIED. When you choose
+     * SPECIFIED for this setting, you must also specify values for the parNumerator
+     * and parDenominator settings.
      */
     inline void SetParControl(const H265ParControl& value) { m_parControlHasBeenSet = true; m_parControl = value; }
 
     /**
      * Optional. Specify how the service determines the pixel aspect ratio (PAR) for
      * this output. The default behavior, Follow source (INITIALIZE_FROM_SOURCE), uses
-     * the PAR from your input video for your output. To use a different PAR, choose
-     * (SPECIFIED). In the console, SPECIFIED corresponds to any value other than
-     * Follow source. When you choose SPECIFIED for this setting, you must also specify
-     * values for the parNumerator and parDenominator settings.
+     * the PAR from your input video for your output. To specify a different PAR in the
+     * console, choose any value other than Follow source. To specify a different PAR
+     * by editing the JSON job specification, choose SPECIFIED. When you choose
+     * SPECIFIED for this setting, you must also specify values for the parNumerator
+     * and parDenominator settings.
      */
     inline void SetParControl(H265ParControl&& value) { m_parControlHasBeenSet = true; m_parControl = std::move(value); }
 
     /**
      * Optional. Specify how the service determines the pixel aspect ratio (PAR) for
      * this output. The default behavior, Follow source (INITIALIZE_FROM_SOURCE), uses
-     * the PAR from your input video for your output. To use a different PAR, choose
-     * (SPECIFIED). In the console, SPECIFIED corresponds to any value other than
-     * Follow source. When you choose SPECIFIED for this setting, you must also specify
-     * values for the parNumerator and parDenominator settings.
+     * the PAR from your input video for your output. To specify a different PAR in the
+     * console, choose any value other than Follow source. To specify a different PAR
+     * by editing the JSON job specification, choose SPECIFIED. When you choose
+     * SPECIFIED for this setting, you must also specify values for the parNumerator
+     * and parDenominator settings.
      */
     inline H265Settings& WithParControl(const H265ParControl& value) { SetParControl(value); return *this;}
 
     /**
      * Optional. Specify how the service determines the pixel aspect ratio (PAR) for
      * this output. The default behavior, Follow source (INITIALIZE_FROM_SOURCE), uses
-     * the PAR from your input video for your output. To use a different PAR, choose
-     * (SPECIFIED). In the console, SPECIFIED corresponds to any value other than
-     * Follow source. When you choose SPECIFIED for this setting, you must also specify
-     * values for the parNumerator and parDenominator settings.
+     * the PAR from your input video for your output. To specify a different PAR in the
+     * console, choose any value other than Follow source. To specify a different PAR
+     * by editing the JSON job specification, choose SPECIFIED. When you choose
+     * SPECIFIED for this setting, you must also specify values for the parNumerator
+     * and parDenominator settings.
      */
     inline H265Settings& WithParControl(H265ParControl&& value) { SetParControl(std::move(value)); return *this;}
 
 
     /**
-     * Pixel Aspect Ratio denominator.
+     * Required when you set Pixel aspect ratio (parControl) to SPECIFIED. On the
+     * console, this corresponds to any value other than Follow source. When you
+     * specify an output pixel aspect ratio (PAR) that is different from your input
+     * video PAR, provide your output PAR as a ratio. For example, for D1/DV NTSC
+     * widescreen, you would specify the ratio 40:33. In this example, the value for
+     * parDenominator is 33.
      */
     inline int GetParDenominator() const{ return m_parDenominator; }
 
     /**
-     * Pixel Aspect Ratio denominator.
+     * Required when you set Pixel aspect ratio (parControl) to SPECIFIED. On the
+     * console, this corresponds to any value other than Follow source. When you
+     * specify an output pixel aspect ratio (PAR) that is different from your input
+     * video PAR, provide your output PAR as a ratio. For example, for D1/DV NTSC
+     * widescreen, you would specify the ratio 40:33. In this example, the value for
+     * parDenominator is 33.
      */
     inline bool ParDenominatorHasBeenSet() const { return m_parDenominatorHasBeenSet; }
 
     /**
-     * Pixel Aspect Ratio denominator.
+     * Required when you set Pixel aspect ratio (parControl) to SPECIFIED. On the
+     * console, this corresponds to any value other than Follow source. When you
+     * specify an output pixel aspect ratio (PAR) that is different from your input
+     * video PAR, provide your output PAR as a ratio. For example, for D1/DV NTSC
+     * widescreen, you would specify the ratio 40:33. In this example, the value for
+     * parDenominator is 33.
      */
     inline void SetParDenominator(int value) { m_parDenominatorHasBeenSet = true; m_parDenominator = value; }
 
     /**
-     * Pixel Aspect Ratio denominator.
+     * Required when you set Pixel aspect ratio (parControl) to SPECIFIED. On the
+     * console, this corresponds to any value other than Follow source. When you
+     * specify an output pixel aspect ratio (PAR) that is different from your input
+     * video PAR, provide your output PAR as a ratio. For example, for D1/DV NTSC
+     * widescreen, you would specify the ratio 40:33. In this example, the value for
+     * parDenominator is 33.
      */
     inline H265Settings& WithParDenominator(int value) { SetParDenominator(value); return *this;}
 
 
     /**
-     * Pixel Aspect Ratio numerator.
+     * Required when you set Pixel aspect ratio (parControl) to SPECIFIED. On the
+     * console, this corresponds to any value other than Follow source. When you
+     * specify an output pixel aspect ratio (PAR) that is different from your input
+     * video PAR, provide your output PAR as a ratio. For example, for D1/DV NTSC
+     * widescreen, you would specify the ratio 40:33. In this example, the value for
+     * parNumerator is 40.
      */
     inline int GetParNumerator() const{ return m_parNumerator; }
 
     /**
-     * Pixel Aspect Ratio numerator.
+     * Required when you set Pixel aspect ratio (parControl) to SPECIFIED. On the
+     * console, this corresponds to any value other than Follow source. When you
+     * specify an output pixel aspect ratio (PAR) that is different from your input
+     * video PAR, provide your output PAR as a ratio. For example, for D1/DV NTSC
+     * widescreen, you would specify the ratio 40:33. In this example, the value for
+     * parNumerator is 40.
      */
     inline bool ParNumeratorHasBeenSet() const { return m_parNumeratorHasBeenSet; }
 
     /**
-     * Pixel Aspect Ratio numerator.
+     * Required when you set Pixel aspect ratio (parControl) to SPECIFIED. On the
+     * console, this corresponds to any value other than Follow source. When you
+     * specify an output pixel aspect ratio (PAR) that is different from your input
+     * video PAR, provide your output PAR as a ratio. For example, for D1/DV NTSC
+     * widescreen, you would specify the ratio 40:33. In this example, the value for
+     * parNumerator is 40.
      */
     inline void SetParNumerator(int value) { m_parNumeratorHasBeenSet = true; m_parNumerator = value; }
 
     /**
-     * Pixel Aspect Ratio numerator.
+     * Required when you set Pixel aspect ratio (parControl) to SPECIFIED. On the
+     * console, this corresponds to any value other than Follow source. When you
+     * specify an output pixel aspect ratio (PAR) that is different from your input
+     * video PAR, provide your output PAR as a ratio. For example, for D1/DV NTSC
+     * widescreen, you would specify the ratio 40:33. In this example, the value for
+     * parNumerator is 40.
      */
     inline H265Settings& WithParNumerator(int value) { SetParNumerator(value); return *this;}
 

@@ -34,6 +34,7 @@ VideoPreprocessor::VideoPreprocessor() :
     m_dolbyVisionHasBeenSet(false),
     m_imageInserterHasBeenSet(false),
     m_noiseReducerHasBeenSet(false),
+    m_partnerWatermarkingHasBeenSet(false),
     m_timecodeBurninHasBeenSet(false)
 {
 }
@@ -44,6 +45,7 @@ VideoPreprocessor::VideoPreprocessor(JsonView jsonValue) :
     m_dolbyVisionHasBeenSet(false),
     m_imageInserterHasBeenSet(false),
     m_noiseReducerHasBeenSet(false),
+    m_partnerWatermarkingHasBeenSet(false),
     m_timecodeBurninHasBeenSet(false)
 {
   *this = jsonValue;
@@ -84,6 +86,13 @@ VideoPreprocessor& VideoPreprocessor::operator =(JsonView jsonValue)
     m_noiseReducer = jsonValue.GetObject("noiseReducer");
 
     m_noiseReducerHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("partnerWatermarking"))
+  {
+    m_partnerWatermarking = jsonValue.GetObject("partnerWatermarking");
+
+    m_partnerWatermarkingHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("timecodeBurnin"))
@@ -127,6 +136,12 @@ JsonValue VideoPreprocessor::Jsonize() const
   if(m_noiseReducerHasBeenSet)
   {
    payload.WithObject("noiseReducer", m_noiseReducer.Jsonize());
+
+  }
+
+  if(m_partnerWatermarkingHasBeenSet)
+  {
+   payload.WithObject("partnerWatermarking", m_partnerWatermarking.Jsonize());
 
   }
 

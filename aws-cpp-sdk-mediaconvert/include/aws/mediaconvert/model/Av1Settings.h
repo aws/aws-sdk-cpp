@@ -182,32 +182,38 @@ namespace Model
 
 
     /**
-     * When set to INTERPOLATE, produces smoother motion during frame rate conversion.
+     * Optional. Specify how the transcoder performs framerate conversion. The default
+     * behavior is to use duplicate drop conversion.
      */
     inline const Av1FramerateConversionAlgorithm& GetFramerateConversionAlgorithm() const{ return m_framerateConversionAlgorithm; }
 
     /**
-     * When set to INTERPOLATE, produces smoother motion during frame rate conversion.
+     * Optional. Specify how the transcoder performs framerate conversion. The default
+     * behavior is to use duplicate drop conversion.
      */
     inline bool FramerateConversionAlgorithmHasBeenSet() const { return m_framerateConversionAlgorithmHasBeenSet; }
 
     /**
-     * When set to INTERPOLATE, produces smoother motion during frame rate conversion.
+     * Optional. Specify how the transcoder performs framerate conversion. The default
+     * behavior is to use duplicate drop conversion.
      */
     inline void SetFramerateConversionAlgorithm(const Av1FramerateConversionAlgorithm& value) { m_framerateConversionAlgorithmHasBeenSet = true; m_framerateConversionAlgorithm = value; }
 
     /**
-     * When set to INTERPOLATE, produces smoother motion during frame rate conversion.
+     * Optional. Specify how the transcoder performs framerate conversion. The default
+     * behavior is to use duplicate drop conversion.
      */
     inline void SetFramerateConversionAlgorithm(Av1FramerateConversionAlgorithm&& value) { m_framerateConversionAlgorithmHasBeenSet = true; m_framerateConversionAlgorithm = std::move(value); }
 
     /**
-     * When set to INTERPOLATE, produces smoother motion during frame rate conversion.
+     * Optional. Specify how the transcoder performs framerate conversion. The default
+     * behavior is to use duplicate drop conversion.
      */
     inline Av1Settings& WithFramerateConversionAlgorithm(const Av1FramerateConversionAlgorithm& value) { SetFramerateConversionAlgorithm(value); return *this;}
 
     /**
-     * When set to INTERPOLATE, produces smoother motion during frame rate conversion.
+     * Optional. Specify how the transcoder performs framerate conversion. The default
+     * behavior is to use duplicate drop conversion.
      */
     inline Av1Settings& WithFramerateConversionAlgorithm(Av1FramerateConversionAlgorithm&& value) { SetFramerateConversionAlgorithm(std::move(value)); return *this;}
 

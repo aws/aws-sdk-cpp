@@ -34,7 +34,9 @@ GlobalClusterMember::GlobalClusterMember() :
     m_dBClusterArnHasBeenSet(false),
     m_readersHasBeenSet(false),
     m_isWriter(false),
-    m_isWriterHasBeenSet(false)
+    m_isWriterHasBeenSet(false),
+    m_globalWriteForwardingStatus(WriteForwardingStatus::NOT_SET),
+    m_globalWriteForwardingStatusHasBeenSet(false)
 {
 }
 
@@ -42,7 +44,9 @@ GlobalClusterMember::GlobalClusterMember(const XmlNode& xmlNode) :
     m_dBClusterArnHasBeenSet(false),
     m_readersHasBeenSet(false),
     m_isWriter(false),
-    m_isWriterHasBeenSet(false)
+    m_isWriterHasBeenSet(false),
+    m_globalWriteForwardingStatus(WriteForwardingStatus::NOT_SET),
+    m_globalWriteForwardingStatusHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -77,6 +81,12 @@ GlobalClusterMember& GlobalClusterMember::operator =(const XmlNode& xmlNode)
       m_isWriter = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(isWriterNode.GetText()).c_str()).c_str());
       m_isWriterHasBeenSet = true;
     }
+    XmlNode globalWriteForwardingStatusNode = resultNode.FirstChild("GlobalWriteForwardingStatus");
+    if(!globalWriteForwardingStatusNode.IsNull())
+    {
+      m_globalWriteForwardingStatus = WriteForwardingStatusMapper::GetWriteForwardingStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(globalWriteForwardingStatusNode.GetText()).c_str()).c_str());
+      m_globalWriteForwardingStatusHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -103,6 +113,11 @@ void GlobalClusterMember::OutputToStream(Aws::OStream& oStream, const char* loca
       oStream << location << index << locationValue << ".IsWriter=" << std::boolalpha << m_isWriter << "&";
   }
 
+  if(m_globalWriteForwardingStatusHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".GlobalWriteForwardingStatus=" << WriteForwardingStatusMapper::GetNameForWriteForwardingStatus(m_globalWriteForwardingStatus) << "&";
+  }
+
 }
 
 void GlobalClusterMember::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -122,6 +137,10 @@ void GlobalClusterMember::OutputToStream(Aws::OStream& oStream, const char* loca
   if(m_isWriterHasBeenSet)
   {
       oStream << location << ".IsWriter=" << std::boolalpha << m_isWriter << "&";
+  }
+  if(m_globalWriteForwardingStatusHasBeenSet)
+  {
+      oStream << location << ".GlobalWriteForwardingStatus=" << WriteForwardingStatusMapper::GetNameForWriteForwardingStatus(m_globalWriteForwardingStatus) << "&";
   }
 }
 

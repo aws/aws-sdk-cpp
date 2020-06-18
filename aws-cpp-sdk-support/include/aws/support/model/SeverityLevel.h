@@ -37,8 +37,9 @@ namespace Model
    * <p>A code and name pair that represents the severity level of a support case.
    * The available values depend on the support plan for the account. For more
    * information, see <a
-   * href="https://docs.aws.amazon.com/awssupport/latest/user/getting-started.html#choosing-severity">Choosing
-   * a Severity</a>.</p><p><h3>See Also:</h3>   <a
+   * href="https://docs.aws.amazon.com/awssupport/latest/user/case-management.html#choosing-severity">Choosing
+   * a severity</a> in the <i>AWS Support User Guide</i>.</p><p><h3>See Also:</h3>  
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/SeverityLevel">AWS
    * API Reference</a></p>
    */
@@ -119,8 +120,8 @@ namespace Model
      * impaired</p> </li> <li> <p> <code>urgent</code>: Production system down</p>
      * </li> <li> <p> <code>critical</code>: Business-critical system down</p> </li>
      * </ul> </note> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/awssupport/latest/user/getting-started.html#choosing-severity">Choosing
-     * a Severity</a> </p>
+     * href="https://docs.aws.amazon.com/awssupport/latest/user/case-management.html#choosing-severity">Choosing
+     * a severity</a> in the <i>AWS Support User Guide</i>.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
@@ -135,8 +136,8 @@ namespace Model
      * impaired</p> </li> <li> <p> <code>urgent</code>: Production system down</p>
      * </li> <li> <p> <code>critical</code>: Business-critical system down</p> </li>
      * </ul> </note> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/awssupport/latest/user/getting-started.html#choosing-severity">Choosing
-     * a Severity</a> </p>
+     * href="https://docs.aws.amazon.com/awssupport/latest/user/case-management.html#choosing-severity">Choosing
+     * a severity</a> in the <i>AWS Support User Guide</i>.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
@@ -151,8 +152,8 @@ namespace Model
      * impaired</p> </li> <li> <p> <code>urgent</code>: Production system down</p>
      * </li> <li> <p> <code>critical</code>: Business-critical system down</p> </li>
      * </ul> </note> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/awssupport/latest/user/getting-started.html#choosing-severity">Choosing
-     * a Severity</a> </p>
+     * href="https://docs.aws.amazon.com/awssupport/latest/user/case-management.html#choosing-severity">Choosing
+     * a severity</a> in the <i>AWS Support User Guide</i>.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
@@ -167,8 +168,8 @@ namespace Model
      * impaired</p> </li> <li> <p> <code>urgent</code>: Production system down</p>
      * </li> <li> <p> <code>critical</code>: Business-critical system down</p> </li>
      * </ul> </note> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/awssupport/latest/user/getting-started.html#choosing-severity">Choosing
-     * a Severity</a> </p>
+     * href="https://docs.aws.amazon.com/awssupport/latest/user/case-management.html#choosing-severity">Choosing
+     * a severity</a> in the <i>AWS Support User Guide</i>.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
@@ -183,8 +184,8 @@ namespace Model
      * impaired</p> </li> <li> <p> <code>urgent</code>: Production system down</p>
      * </li> <li> <p> <code>critical</code>: Business-critical system down</p> </li>
      * </ul> </note> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/awssupport/latest/user/getting-started.html#choosing-severity">Choosing
-     * a Severity</a> </p>
+     * href="https://docs.aws.amazon.com/awssupport/latest/user/case-management.html#choosing-severity">Choosing
+     * a severity</a> in the <i>AWS Support User Guide</i>.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
@@ -199,8 +200,8 @@ namespace Model
      * impaired</p> </li> <li> <p> <code>urgent</code>: Production system down</p>
      * </li> <li> <p> <code>critical</code>: Business-critical system down</p> </li>
      * </ul> </note> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/awssupport/latest/user/getting-started.html#choosing-severity">Choosing
-     * a Severity</a> </p>
+     * href="https://docs.aws.amazon.com/awssupport/latest/user/case-management.html#choosing-severity">Choosing
+     * a severity</a> in the <i>AWS Support User Guide</i>.</p>
      */
     inline SeverityLevel& WithName(const Aws::String& value) { SetName(value); return *this;}
 
@@ -215,8 +216,8 @@ namespace Model
      * impaired</p> </li> <li> <p> <code>urgent</code>: Production system down</p>
      * </li> <li> <p> <code>critical</code>: Business-critical system down</p> </li>
      * </ul> </note> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/awssupport/latest/user/getting-started.html#choosing-severity">Choosing
-     * a Severity</a> </p>
+     * href="https://docs.aws.amazon.com/awssupport/latest/user/case-management.html#choosing-severity">Choosing
+     * a severity</a> in the <i>AWS Support User Guide</i>.</p>
      */
     inline SeverityLevel& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
@@ -231,8 +232,8 @@ namespace Model
      * impaired</p> </li> <li> <p> <code>urgent</code>: Production system down</p>
      * </li> <li> <p> <code>critical</code>: Business-critical system down</p> </li>
      * </ul> </note> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/awssupport/latest/user/getting-started.html#choosing-severity">Choosing
-     * a Severity</a> </p>
+     * href="https://docs.aws.amazon.com/awssupport/latest/user/case-management.html#choosing-severity">Choosing
+     * a severity</a> in the <i>AWS Support User Guide</i>.</p>
      */
     inline SeverityLevel& WithName(const char* value) { SetName(value); return *this;}
 

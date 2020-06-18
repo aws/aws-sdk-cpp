@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/rds/model/WriteForwardingStatus.h>
 #include <utility>
 
 namespace Aws
@@ -175,6 +176,43 @@ namespace Model
      */
     inline GlobalClusterMember& WithIsWriter(bool value) { SetIsWriter(value); return *this;}
 
+
+    /**
+     * <p>Specifies whether a secondary cluster in an Aurora global database has write
+     * forwarding enabled, not enabled, or is in the process of enabling it.</p>
+     */
+    inline const WriteForwardingStatus& GetGlobalWriteForwardingStatus() const{ return m_globalWriteForwardingStatus; }
+
+    /**
+     * <p>Specifies whether a secondary cluster in an Aurora global database has write
+     * forwarding enabled, not enabled, or is in the process of enabling it.</p>
+     */
+    inline bool GlobalWriteForwardingStatusHasBeenSet() const { return m_globalWriteForwardingStatusHasBeenSet; }
+
+    /**
+     * <p>Specifies whether a secondary cluster in an Aurora global database has write
+     * forwarding enabled, not enabled, or is in the process of enabling it.</p>
+     */
+    inline void SetGlobalWriteForwardingStatus(const WriteForwardingStatus& value) { m_globalWriteForwardingStatusHasBeenSet = true; m_globalWriteForwardingStatus = value; }
+
+    /**
+     * <p>Specifies whether a secondary cluster in an Aurora global database has write
+     * forwarding enabled, not enabled, or is in the process of enabling it.</p>
+     */
+    inline void SetGlobalWriteForwardingStatus(WriteForwardingStatus&& value) { m_globalWriteForwardingStatusHasBeenSet = true; m_globalWriteForwardingStatus = std::move(value); }
+
+    /**
+     * <p>Specifies whether a secondary cluster in an Aurora global database has write
+     * forwarding enabled, not enabled, or is in the process of enabling it.</p>
+     */
+    inline GlobalClusterMember& WithGlobalWriteForwardingStatus(const WriteForwardingStatus& value) { SetGlobalWriteForwardingStatus(value); return *this;}
+
+    /**
+     * <p>Specifies whether a secondary cluster in an Aurora global database has write
+     * forwarding enabled, not enabled, or is in the process of enabling it.</p>
+     */
+    inline GlobalClusterMember& WithGlobalWriteForwardingStatus(WriteForwardingStatus&& value) { SetGlobalWriteForwardingStatus(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_dBClusterArn;
@@ -185,6 +223,9 @@ namespace Model
 
     bool m_isWriter;
     bool m_isWriterHasBeenSet;
+
+    WriteForwardingStatus m_globalWriteForwardingStatus;
+    bool m_globalWriteForwardingStatusHasBeenSet;
   };
 
 } // namespace Model

@@ -1786,33 +1786,37 @@ namespace Model
 
     /**
      * <p>The target backtrack window, in seconds. To disable backtracking, set this
-     * value to 0. </p> <p>Default: 0</p> <p>Constraints:</p> <ul> <li> <p>If
-     * specified, this value must be set to a number from 0 to 259,200 (72 hours).</p>
-     * </li> </ul>
+     * value to 0. </p> <note> <p>Currently, Backtrack is only supported for Aurora
+     * MySQL DB clusters.</p> </note> <p>Default: 0</p> <p>Constraints:</p> <ul> <li>
+     * <p>If specified, this value must be set to a number from 0 to 259,200 (72
+     * hours).</p> </li> </ul>
      */
     inline long long GetBacktrackWindow() const{ return m_backtrackWindow; }
 
     /**
      * <p>The target backtrack window, in seconds. To disable backtracking, set this
-     * value to 0. </p> <p>Default: 0</p> <p>Constraints:</p> <ul> <li> <p>If
-     * specified, this value must be set to a number from 0 to 259,200 (72 hours).</p>
-     * </li> </ul>
+     * value to 0. </p> <note> <p>Currently, Backtrack is only supported for Aurora
+     * MySQL DB clusters.</p> </note> <p>Default: 0</p> <p>Constraints:</p> <ul> <li>
+     * <p>If specified, this value must be set to a number from 0 to 259,200 (72
+     * hours).</p> </li> </ul>
      */
     inline bool BacktrackWindowHasBeenSet() const { return m_backtrackWindowHasBeenSet; }
 
     /**
      * <p>The target backtrack window, in seconds. To disable backtracking, set this
-     * value to 0. </p> <p>Default: 0</p> <p>Constraints:</p> <ul> <li> <p>If
-     * specified, this value must be set to a number from 0 to 259,200 (72 hours).</p>
-     * </li> </ul>
+     * value to 0. </p> <note> <p>Currently, Backtrack is only supported for Aurora
+     * MySQL DB clusters.</p> </note> <p>Default: 0</p> <p>Constraints:</p> <ul> <li>
+     * <p>If specified, this value must be set to a number from 0 to 259,200 (72
+     * hours).</p> </li> </ul>
      */
     inline void SetBacktrackWindow(long long value) { m_backtrackWindowHasBeenSet = true; m_backtrackWindow = value; }
 
     /**
      * <p>The target backtrack window, in seconds. To disable backtracking, set this
-     * value to 0. </p> <p>Default: 0</p> <p>Constraints:</p> <ul> <li> <p>If
-     * specified, this value must be set to a number from 0 to 259,200 (72 hours).</p>
-     * </li> </ul>
+     * value to 0. </p> <note> <p>Currently, Backtrack is only supported for Aurora
+     * MySQL DB clusters.</p> </note> <p>Default: 0</p> <p>Constraints:</p> <ul> <li>
+     * <p>If specified, this value must be set to a number from 0 to 259,200 (72
+     * hours).</p> </li> </ul>
      */
     inline CreateDBClusterRequest& WithBacktrackWindow(long long value) { SetBacktrackWindow(value); return *this;}
 
@@ -2383,6 +2387,43 @@ namespace Model
      */
     inline CreateDBClusterRequest& WithDomainIAMRoleName(const char* value) { SetDomainIAMRoleName(value); return *this;}
 
+
+    /**
+     * <p>A value that indicates whether to enable write operations to be forwarded
+     * from this cluster to the primary cluster in an Aurora global database. The
+     * resulting changes are replicated back to this cluster. This parameter only
+     * applies to DB clusters that are secondary clusters in an Aurora global database.
+     * By default, Aurora disallows write operations for secondary clusters.</p>
+     */
+    inline bool GetEnableGlobalWriteForwarding() const{ return m_enableGlobalWriteForwarding; }
+
+    /**
+     * <p>A value that indicates whether to enable write operations to be forwarded
+     * from this cluster to the primary cluster in an Aurora global database. The
+     * resulting changes are replicated back to this cluster. This parameter only
+     * applies to DB clusters that are secondary clusters in an Aurora global database.
+     * By default, Aurora disallows write operations for secondary clusters.</p>
+     */
+    inline bool EnableGlobalWriteForwardingHasBeenSet() const { return m_enableGlobalWriteForwardingHasBeenSet; }
+
+    /**
+     * <p>A value that indicates whether to enable write operations to be forwarded
+     * from this cluster to the primary cluster in an Aurora global database. The
+     * resulting changes are replicated back to this cluster. This parameter only
+     * applies to DB clusters that are secondary clusters in an Aurora global database.
+     * By default, Aurora disallows write operations for secondary clusters.</p>
+     */
+    inline void SetEnableGlobalWriteForwarding(bool value) { m_enableGlobalWriteForwardingHasBeenSet = true; m_enableGlobalWriteForwarding = value; }
+
+    /**
+     * <p>A value that indicates whether to enable write operations to be forwarded
+     * from this cluster to the primary cluster in an Aurora global database. The
+     * resulting changes are replicated back to this cluster. This parameter only
+     * applies to DB clusters that are secondary clusters in an Aurora global database.
+     * By default, Aurora disallows write operations for secondary clusters.</p>
+     */
+    inline CreateDBClusterRequest& WithEnableGlobalWriteForwarding(bool value) { SetEnableGlobalWriteForwarding(value); return *this;}
+
   private:
 
     Aws::Vector<Aws::String> m_availabilityZones;
@@ -2480,6 +2521,9 @@ namespace Model
 
     Aws::String m_domainIAMRoleName;
     bool m_domainIAMRoleNameHasBeenSet;
+
+    bool m_enableGlobalWriteForwarding;
+    bool m_enableGlobalWriteForwardingHasBeenSet;
   };
 
 } // namespace Model

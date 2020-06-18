@@ -925,24 +925,36 @@ namespace Model
         virtual void CreateActivationAsync(const Model::CreateActivationRequest& request, const CreateActivationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Associates the specified Systems Manager document with the specified
-         * instances or targets.</p> <p>When you associate a document with one or more
-         * instances, SSM Agent running on the instance processes the document and
-         * configures the instance as specified. If you associate a document with an
-         * instance that already has an associated document, the system returns the
-         * <code>AssociationAlreadyExists</code> exception.</p><p><h3>See Also:</h3>   <a
+         * <p>A State Manager association defines the state that you want to maintain on
+         * your instances. For example, an association can specify that anti-virus software
+         * must be installed and running on your instances, or that certain ports must be
+         * closed. For static targets, the association specifies a schedule for when the
+         * configuration is reapplied. For dynamic targets, such as an AWS Resource Group
+         * or an AWS Autoscaling Group, State Manager applies the configuration when new
+         * instances are added to the group. The association also specifies actions to take
+         * when applying the configuration. For example, an association for anti-virus
+         * software might run once a day. If the software is not installed, then State
+         * Manager installs it. If the software is installed, but the service is not
+         * running, then the association might instruct State Manager to start the service.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateAssociation">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateAssociationOutcome CreateAssociation(const Model::CreateAssociationRequest& request) const;
 
         /**
-         * <p>Associates the specified Systems Manager document with the specified
-         * instances or targets.</p> <p>When you associate a document with one or more
-         * instances, SSM Agent running on the instance processes the document and
-         * configures the instance as specified. If you associate a document with an
-         * instance that already has an associated document, the system returns the
-         * <code>AssociationAlreadyExists</code> exception.</p><p><h3>See Also:</h3>   <a
+         * <p>A State Manager association defines the state that you want to maintain on
+         * your instances. For example, an association can specify that anti-virus software
+         * must be installed and running on your instances, or that certain ports must be
+         * closed. For static targets, the association specifies a schedule for when the
+         * configuration is reapplied. For dynamic targets, such as an AWS Resource Group
+         * or an AWS Autoscaling Group, State Manager applies the configuration when new
+         * instances are added to the group. The association also specifies actions to take
+         * when applying the configuration. For example, an association for anti-virus
+         * software might run once a day. If the software is not installed, then State
+         * Manager installs it. If the software is installed, but the service is not
+         * running, then the association might instruct State Manager to start the service.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateAssociation">AWS
          * API Reference</a></p>
          *
@@ -951,12 +963,18 @@ namespace Model
         virtual Model::CreateAssociationOutcomeCallable CreateAssociationCallable(const Model::CreateAssociationRequest& request) const;
 
         /**
-         * <p>Associates the specified Systems Manager document with the specified
-         * instances or targets.</p> <p>When you associate a document with one or more
-         * instances, SSM Agent running on the instance processes the document and
-         * configures the instance as specified. If you associate a document with an
-         * instance that already has an associated document, the system returns the
-         * <code>AssociationAlreadyExists</code> exception.</p><p><h3>See Also:</h3>   <a
+         * <p>A State Manager association defines the state that you want to maintain on
+         * your instances. For example, an association can specify that anti-virus software
+         * must be installed and running on your instances, or that certain ports must be
+         * closed. For static targets, the association specifies a schedule for when the
+         * configuration is reapplied. For dynamic targets, such as an AWS Resource Group
+         * or an AWS Autoscaling Group, State Manager applies the configuration when new
+         * instances are added to the group. The association also specifies actions to take
+         * when applying the configuration. For example, an association for anti-virus
+         * software might run once a day. If the software is not installed, then State
+         * Manager installs it. If the software is installed, but the service is not
+         * running, then the association might instruct State Manager to start the service.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateAssociation">AWS
          * API Reference</a></p>
          *

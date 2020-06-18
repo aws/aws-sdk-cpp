@@ -233,86 +233,74 @@ namespace Model
 
 
     /**
-     * Use Captions selectors (CaptionSelectors) to specify the captions data from the
-     * input that you will use in your outputs. You can use multiple captions selectors
-     * per input.
+     * Use captions selectors to specify the captions data from your input that you use
+     * in your outputs. You can use up to 20 captions selectors per input.
      */
     inline const Aws::Map<Aws::String, CaptionSelector>& GetCaptionSelectors() const{ return m_captionSelectors; }
 
     /**
-     * Use Captions selectors (CaptionSelectors) to specify the captions data from the
-     * input that you will use in your outputs. You can use multiple captions selectors
-     * per input.
+     * Use captions selectors to specify the captions data from your input that you use
+     * in your outputs. You can use up to 20 captions selectors per input.
      */
     inline bool CaptionSelectorsHasBeenSet() const { return m_captionSelectorsHasBeenSet; }
 
     /**
-     * Use Captions selectors (CaptionSelectors) to specify the captions data from the
-     * input that you will use in your outputs. You can use multiple captions selectors
-     * per input.
+     * Use captions selectors to specify the captions data from your input that you use
+     * in your outputs. You can use up to 20 captions selectors per input.
      */
     inline void SetCaptionSelectors(const Aws::Map<Aws::String, CaptionSelector>& value) { m_captionSelectorsHasBeenSet = true; m_captionSelectors = value; }
 
     /**
-     * Use Captions selectors (CaptionSelectors) to specify the captions data from the
-     * input that you will use in your outputs. You can use multiple captions selectors
-     * per input.
+     * Use captions selectors to specify the captions data from your input that you use
+     * in your outputs. You can use up to 20 captions selectors per input.
      */
     inline void SetCaptionSelectors(Aws::Map<Aws::String, CaptionSelector>&& value) { m_captionSelectorsHasBeenSet = true; m_captionSelectors = std::move(value); }
 
     /**
-     * Use Captions selectors (CaptionSelectors) to specify the captions data from the
-     * input that you will use in your outputs. You can use multiple captions selectors
-     * per input.
+     * Use captions selectors to specify the captions data from your input that you use
+     * in your outputs. You can use up to 20 captions selectors per input.
      */
     inline Input& WithCaptionSelectors(const Aws::Map<Aws::String, CaptionSelector>& value) { SetCaptionSelectors(value); return *this;}
 
     /**
-     * Use Captions selectors (CaptionSelectors) to specify the captions data from the
-     * input that you will use in your outputs. You can use multiple captions selectors
-     * per input.
+     * Use captions selectors to specify the captions data from your input that you use
+     * in your outputs. You can use up to 20 captions selectors per input.
      */
     inline Input& WithCaptionSelectors(Aws::Map<Aws::String, CaptionSelector>&& value) { SetCaptionSelectors(std::move(value)); return *this;}
 
     /**
-     * Use Captions selectors (CaptionSelectors) to specify the captions data from the
-     * input that you will use in your outputs. You can use multiple captions selectors
-     * per input.
+     * Use captions selectors to specify the captions data from your input that you use
+     * in your outputs. You can use up to 20 captions selectors per input.
      */
     inline Input& AddCaptionSelectors(const Aws::String& key, const CaptionSelector& value) { m_captionSelectorsHasBeenSet = true; m_captionSelectors.emplace(key, value); return *this; }
 
     /**
-     * Use Captions selectors (CaptionSelectors) to specify the captions data from the
-     * input that you will use in your outputs. You can use multiple captions selectors
-     * per input.
+     * Use captions selectors to specify the captions data from your input that you use
+     * in your outputs. You can use up to 20 captions selectors per input.
      */
     inline Input& AddCaptionSelectors(Aws::String&& key, const CaptionSelector& value) { m_captionSelectorsHasBeenSet = true; m_captionSelectors.emplace(std::move(key), value); return *this; }
 
     /**
-     * Use Captions selectors (CaptionSelectors) to specify the captions data from the
-     * input that you will use in your outputs. You can use multiple captions selectors
-     * per input.
+     * Use captions selectors to specify the captions data from your input that you use
+     * in your outputs. You can use up to 20 captions selectors per input.
      */
     inline Input& AddCaptionSelectors(const Aws::String& key, CaptionSelector&& value) { m_captionSelectorsHasBeenSet = true; m_captionSelectors.emplace(key, std::move(value)); return *this; }
 
     /**
-     * Use Captions selectors (CaptionSelectors) to specify the captions data from the
-     * input that you will use in your outputs. You can use multiple captions selectors
-     * per input.
+     * Use captions selectors to specify the captions data from your input that you use
+     * in your outputs. You can use up to 20 captions selectors per input.
      */
     inline Input& AddCaptionSelectors(Aws::String&& key, CaptionSelector&& value) { m_captionSelectorsHasBeenSet = true; m_captionSelectors.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * Use Captions selectors (CaptionSelectors) to specify the captions data from the
-     * input that you will use in your outputs. You can use multiple captions selectors
-     * per input.
+     * Use captions selectors to specify the captions data from your input that you use
+     * in your outputs. You can use up to 20 captions selectors per input.
      */
     inline Input& AddCaptionSelectors(const char* key, CaptionSelector&& value) { m_captionSelectorsHasBeenSet = true; m_captionSelectors.emplace(key, std::move(value)); return *this; }
 
     /**
-     * Use Captions selectors (CaptionSelectors) to specify the captions data from the
-     * input that you will use in your outputs. You can use multiple captions selectors
-     * per input.
+     * Use captions selectors to specify the captions data from your input that you use
+     * in your outputs. You can use up to 20 captions selectors per input.
      */
     inline Input& AddCaptionSelectors(const char* key, const CaptionSelector& value) { m_captionSelectorsHasBeenSet = true; m_captionSelectors.emplace(key, value); return *this; }
 

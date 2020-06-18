@@ -60,7 +60,9 @@ CreateDBClusterRequest::CreateDBClusterRequest() :
     m_copyTagsToSnapshot(false),
     m_copyTagsToSnapshotHasBeenSet(false),
     m_domainHasBeenSet(false),
-    m_domainIAMRoleNameHasBeenSet(false)
+    m_domainIAMRoleNameHasBeenSet(false),
+    m_enableGlobalWriteForwarding(false),
+    m_enableGlobalWriteForwardingHasBeenSet(false)
 {
 }
 
@@ -249,6 +251,11 @@ Aws::String CreateDBClusterRequest::SerializePayload() const
   if(m_domainIAMRoleNameHasBeenSet)
   {
     ss << "DomainIAMRoleName=" << StringUtils::URLEncode(m_domainIAMRoleName.c_str()) << "&";
+  }
+
+  if(m_enableGlobalWriteForwardingHasBeenSet)
+  {
+    ss << "EnableGlobalWriteForwarding=" << std::boolalpha << m_enableGlobalWriteForwarding << "&";
   }
 
   ss << "Version=2014-10-31";

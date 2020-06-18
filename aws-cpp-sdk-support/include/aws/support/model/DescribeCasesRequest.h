@@ -240,26 +240,30 @@ namespace Model
 
 
     /**
-     * <p>Specifies whether resolved support cases should be included in the
-     * <a>DescribeCases</a> results. The default is <i>false</i>.</p>
+     * <p>Specifies whether to include resolved support cases in the
+     * <code>DescribeCases</code> response. By default, resolved cases aren't
+     * included.</p>
      */
     inline bool GetIncludeResolvedCases() const{ return m_includeResolvedCases; }
 
     /**
-     * <p>Specifies whether resolved support cases should be included in the
-     * <a>DescribeCases</a> results. The default is <i>false</i>.</p>
+     * <p>Specifies whether to include resolved support cases in the
+     * <code>DescribeCases</code> response. By default, resolved cases aren't
+     * included.</p>
      */
     inline bool IncludeResolvedCasesHasBeenSet() const { return m_includeResolvedCasesHasBeenSet; }
 
     /**
-     * <p>Specifies whether resolved support cases should be included in the
-     * <a>DescribeCases</a> results. The default is <i>false</i>.</p>
+     * <p>Specifies whether to include resolved support cases in the
+     * <code>DescribeCases</code> response. By default, resolved cases aren't
+     * included.</p>
      */
     inline void SetIncludeResolvedCases(bool value) { m_includeResolvedCasesHasBeenSet = true; m_includeResolvedCases = value; }
 
     /**
-     * <p>Specifies whether resolved support cases should be included in the
-     * <a>DescribeCases</a> results. The default is <i>false</i>.</p>
+     * <p>Specifies whether to include resolved support cases in the
+     * <code>DescribeCases</code> response. By default, resolved cases aren't
+     * included.</p>
      */
     inline DescribeCasesRequest& WithIncludeResolvedCases(bool value) { SetIncludeResolvedCases(value); return *this;}
 
@@ -384,26 +388,26 @@ namespace Model
 
 
     /**
-     * <p>Specifies whether communications should be included in the
-     * <a>DescribeCases</a> results. The default is <i>true</i>.</p>
+     * <p>Specifies whether to include communications in the <code>DescribeCases</code>
+     * response. By default, communications are incuded.</p>
      */
     inline bool GetIncludeCommunications() const{ return m_includeCommunications; }
 
     /**
-     * <p>Specifies whether communications should be included in the
-     * <a>DescribeCases</a> results. The default is <i>true</i>.</p>
+     * <p>Specifies whether to include communications in the <code>DescribeCases</code>
+     * response. By default, communications are incuded.</p>
      */
     inline bool IncludeCommunicationsHasBeenSet() const { return m_includeCommunicationsHasBeenSet; }
 
     /**
-     * <p>Specifies whether communications should be included in the
-     * <a>DescribeCases</a> results. The default is <i>true</i>.</p>
+     * <p>Specifies whether to include communications in the <code>DescribeCases</code>
+     * response. By default, communications are incuded.</p>
      */
     inline void SetIncludeCommunications(bool value) { m_includeCommunicationsHasBeenSet = true; m_includeCommunications = value; }
 
     /**
-     * <p>Specifies whether communications should be included in the
-     * <a>DescribeCases</a> results. The default is <i>true</i>.</p>
+     * <p>Specifies whether to include communications in the <code>DescribeCases</code>
+     * response. By default, communications are incuded.</p>
      */
     inline DescribeCasesRequest& WithIncludeCommunications(bool value) { SetIncludeCommunications(value); return *this;}
 

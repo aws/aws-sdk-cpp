@@ -27,6 +27,7 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 GetMaintenanceWindowResult::GetMaintenanceWindowResult() : 
+    m_scheduleOffset(0),
     m_duration(0),
     m_cutoff(0),
     m_allowUnassociatedTargets(false),
@@ -35,6 +36,7 @@ GetMaintenanceWindowResult::GetMaintenanceWindowResult() :
 }
 
 GetMaintenanceWindowResult::GetMaintenanceWindowResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
+    m_scheduleOffset(0),
     m_duration(0),
     m_cutoff(0),
     m_allowUnassociatedTargets(false),
@@ -85,6 +87,12 @@ GetMaintenanceWindowResult& GetMaintenanceWindowResult::operator =(const Aws::Am
   if(jsonValue.ValueExists("ScheduleTimezone"))
   {
     m_scheduleTimezone = jsonValue.GetString("ScheduleTimezone");
+
+  }
+
+  if(jsonValue.ValueExists("ScheduleOffset"))
+  {
+    m_scheduleOffset = jsonValue.GetInteger("ScheduleOffset");
 
   }
 

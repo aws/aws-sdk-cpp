@@ -97,7 +97,11 @@ DBCluster::DBCluster() :
     m_copyTagsToSnapshotHasBeenSet(false),
     m_crossAccountClone(false),
     m_crossAccountCloneHasBeenSet(false),
-    m_domainMembershipsHasBeenSet(false)
+    m_domainMembershipsHasBeenSet(false),
+    m_globalWriteForwardingStatus(WriteForwardingStatus::NOT_SET),
+    m_globalWriteForwardingStatusHasBeenSet(false),
+    m_globalWriteForwardingRequested(false),
+    m_globalWriteForwardingRequestedHasBeenSet(false)
 {
 }
 
@@ -168,7 +172,11 @@ DBCluster::DBCluster(const XmlNode& xmlNode) :
     m_copyTagsToSnapshotHasBeenSet(false),
     m_crossAccountClone(false),
     m_crossAccountCloneHasBeenSet(false),
-    m_domainMembershipsHasBeenSet(false)
+    m_domainMembershipsHasBeenSet(false),
+    m_globalWriteForwardingStatus(WriteForwardingStatus::NOT_SET),
+    m_globalWriteForwardingStatusHasBeenSet(false),
+    m_globalWriteForwardingRequested(false),
+    m_globalWriteForwardingRequestedHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -545,6 +553,18 @@ DBCluster& DBCluster::operator =(const XmlNode& xmlNode)
 
       m_domainMembershipsHasBeenSet = true;
     }
+    XmlNode globalWriteForwardingStatusNode = resultNode.FirstChild("GlobalWriteForwardingStatus");
+    if(!globalWriteForwardingStatusNode.IsNull())
+    {
+      m_globalWriteForwardingStatus = WriteForwardingStatusMapper::GetWriteForwardingStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(globalWriteForwardingStatusNode.GetText()).c_str()).c_str());
+      m_globalWriteForwardingStatusHasBeenSet = true;
+    }
+    XmlNode globalWriteForwardingRequestedNode = resultNode.FirstChild("GlobalWriteForwardingRequested");
+    if(!globalWriteForwardingRequestedNode.IsNull())
+    {
+      m_globalWriteForwardingRequested = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(globalWriteForwardingRequestedNode.GetText()).c_str()).c_str());
+      m_globalWriteForwardingRequestedHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -860,6 +880,16 @@ void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location, unsi
       }
   }
 
+  if(m_globalWriteForwardingStatusHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".GlobalWriteForwardingStatus=" << WriteForwardingStatusMapper::GetNameForWriteForwardingStatus(m_globalWriteForwardingStatus) << "&";
+  }
+
+  if(m_globalWriteForwardingRequestedHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".GlobalWriteForwardingRequested=" << std::boolalpha << m_globalWriteForwardingRequested << "&";
+  }
+
 }
 
 void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -1119,6 +1149,14 @@ void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location) cons
         domainMembershipsSs << location <<  ".DomainMembership." << domainMembershipsIdx++;
         item.OutputToStream(oStream, domainMembershipsSs.str().c_str());
       }
+  }
+  if(m_globalWriteForwardingStatusHasBeenSet)
+  {
+      oStream << location << ".GlobalWriteForwardingStatus=" << WriteForwardingStatusMapper::GetNameForWriteForwardingStatus(m_globalWriteForwardingStatus) << "&";
+  }
+  if(m_globalWriteForwardingRequestedHasBeenSet)
+  {
+      oStream << location << ".GlobalWriteForwardingRequested=" << std::boolalpha << m_globalWriteForwardingRequested << "&";
   }
 }
 

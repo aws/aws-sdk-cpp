@@ -52,7 +52,9 @@ ModifyDBClusterRequest::ModifyDBClusterRequest() :
     m_enableHttpEndpoint(false),
     m_enableHttpEndpointHasBeenSet(false),
     m_copyTagsToSnapshot(false),
-    m_copyTagsToSnapshotHasBeenSet(false)
+    m_copyTagsToSnapshotHasBeenSet(false),
+    m_enableGlobalWriteForwarding(false),
+    m_enableGlobalWriteForwardingHasBeenSet(false)
 {
 }
 
@@ -179,6 +181,11 @@ Aws::String ModifyDBClusterRequest::SerializePayload() const
   if(m_copyTagsToSnapshotHasBeenSet)
   {
     ss << "CopyTagsToSnapshot=" << std::boolalpha << m_copyTagsToSnapshot << "&";
+  }
+
+  if(m_enableGlobalWriteForwardingHasBeenSet)
+  {
+    ss << "EnableGlobalWriteForwarding=" << std::boolalpha << m_enableGlobalWriteForwarding << "&";
   }
 
   ss << "Version=2014-10-31";

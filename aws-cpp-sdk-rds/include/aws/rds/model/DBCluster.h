@@ -22,6 +22,7 @@
 #include <aws/rds/model/ScalingConfigurationInfo.h>
 #include <aws/rds/model/ActivityStreamMode.h>
 #include <aws/rds/model/ActivityStreamStatus.h>
+#include <aws/rds/model/WriteForwardingStatus.h>
 #include <aws/rds/model/DBClusterOptionGroupStatus.h>
 #include <aws/rds/model/DBClusterMember.h>
 #include <aws/rds/model/VpcSecurityGroupMembership.h>
@@ -2331,6 +2332,80 @@ namespace Model
      */
     inline DBCluster& AddDomainMemberships(DomainMembership&& value) { m_domainMembershipsHasBeenSet = true; m_domainMemberships.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>Specifies whether a secondary cluster in an Aurora global database has write
+     * forwarding enabled, not enabled, or is in the process of enabling it.</p>
+     */
+    inline const WriteForwardingStatus& GetGlobalWriteForwardingStatus() const{ return m_globalWriteForwardingStatus; }
+
+    /**
+     * <p>Specifies whether a secondary cluster in an Aurora global database has write
+     * forwarding enabled, not enabled, or is in the process of enabling it.</p>
+     */
+    inline bool GlobalWriteForwardingStatusHasBeenSet() const { return m_globalWriteForwardingStatusHasBeenSet; }
+
+    /**
+     * <p>Specifies whether a secondary cluster in an Aurora global database has write
+     * forwarding enabled, not enabled, or is in the process of enabling it.</p>
+     */
+    inline void SetGlobalWriteForwardingStatus(const WriteForwardingStatus& value) { m_globalWriteForwardingStatusHasBeenSet = true; m_globalWriteForwardingStatus = value; }
+
+    /**
+     * <p>Specifies whether a secondary cluster in an Aurora global database has write
+     * forwarding enabled, not enabled, or is in the process of enabling it.</p>
+     */
+    inline void SetGlobalWriteForwardingStatus(WriteForwardingStatus&& value) { m_globalWriteForwardingStatusHasBeenSet = true; m_globalWriteForwardingStatus = std::move(value); }
+
+    /**
+     * <p>Specifies whether a secondary cluster in an Aurora global database has write
+     * forwarding enabled, not enabled, or is in the process of enabling it.</p>
+     */
+    inline DBCluster& WithGlobalWriteForwardingStatus(const WriteForwardingStatus& value) { SetGlobalWriteForwardingStatus(value); return *this;}
+
+    /**
+     * <p>Specifies whether a secondary cluster in an Aurora global database has write
+     * forwarding enabled, not enabled, or is in the process of enabling it.</p>
+     */
+    inline DBCluster& WithGlobalWriteForwardingStatus(WriteForwardingStatus&& value) { SetGlobalWriteForwardingStatus(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Specifies whether you have requested to enable write forwarding for a
+     * secondary cluster in an Aurora global database. Because write forwarding takes
+     * time to enable, check the value of <code>GlobalWriteForwardingStatus</code> to
+     * confirm that the request has completed before using the write forwarding feature
+     * for this cluster.</p>
+     */
+    inline bool GetGlobalWriteForwardingRequested() const{ return m_globalWriteForwardingRequested; }
+
+    /**
+     * <p>Specifies whether you have requested to enable write forwarding for a
+     * secondary cluster in an Aurora global database. Because write forwarding takes
+     * time to enable, check the value of <code>GlobalWriteForwardingStatus</code> to
+     * confirm that the request has completed before using the write forwarding feature
+     * for this cluster.</p>
+     */
+    inline bool GlobalWriteForwardingRequestedHasBeenSet() const { return m_globalWriteForwardingRequestedHasBeenSet; }
+
+    /**
+     * <p>Specifies whether you have requested to enable write forwarding for a
+     * secondary cluster in an Aurora global database. Because write forwarding takes
+     * time to enable, check the value of <code>GlobalWriteForwardingStatus</code> to
+     * confirm that the request has completed before using the write forwarding feature
+     * for this cluster.</p>
+     */
+    inline void SetGlobalWriteForwardingRequested(bool value) { m_globalWriteForwardingRequestedHasBeenSet = true; m_globalWriteForwardingRequested = value; }
+
+    /**
+     * <p>Specifies whether you have requested to enable write forwarding for a
+     * secondary cluster in an Aurora global database. Because write forwarding takes
+     * time to enable, check the value of <code>GlobalWriteForwardingStatus</code> to
+     * confirm that the request has completed before using the write forwarding feature
+     * for this cluster.</p>
+     */
+    inline DBCluster& WithGlobalWriteForwardingRequested(bool value) { SetGlobalWriteForwardingRequested(value); return *this;}
+
   private:
 
     int m_allocatedStorage;
@@ -2488,6 +2563,12 @@ namespace Model
 
     Aws::Vector<DomainMembership> m_domainMemberships;
     bool m_domainMembershipsHasBeenSet;
+
+    WriteForwardingStatus m_globalWriteForwardingStatus;
+    bool m_globalWriteForwardingStatusHasBeenSet;
+
+    bool m_globalWriteForwardingRequested;
+    bool m_globalWriteForwardingRequestedHasBeenSet;
   };
 
 } // namespace Model

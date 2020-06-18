@@ -62,6 +62,7 @@
 #include <aws/route53/model/ListHealthChecksResult.h>
 #include <aws/route53/model/ListHostedZonesResult.h>
 #include <aws/route53/model/ListHostedZonesByNameResult.h>
+#include <aws/route53/model/ListHostedZonesByVPCResult.h>
 #include <aws/route53/model/ListQueryLoggingConfigsResult.h>
 #include <aws/route53/model/ListResourceRecordSetsResult.h>
 #include <aws/route53/model/ListReusableDelegationSetsResult.h>
@@ -163,6 +164,7 @@ namespace Model
         class ListHealthChecksRequest;
         class ListHostedZonesRequest;
         class ListHostedZonesByNameRequest;
+        class ListHostedZonesByVPCRequest;
         class ListQueryLoggingConfigsRequest;
         class ListResourceRecordSetsRequest;
         class ListReusableDelegationSetsRequest;
@@ -220,6 +222,7 @@ namespace Model
         typedef Aws::Utils::Outcome<ListHealthChecksResult, Aws::Client::AWSError<Route53Errors>> ListHealthChecksOutcome;
         typedef Aws::Utils::Outcome<ListHostedZonesResult, Aws::Client::AWSError<Route53Errors>> ListHostedZonesOutcome;
         typedef Aws::Utils::Outcome<ListHostedZonesByNameResult, Aws::Client::AWSError<Route53Errors>> ListHostedZonesByNameOutcome;
+        typedef Aws::Utils::Outcome<ListHostedZonesByVPCResult, Aws::Client::AWSError<Route53Errors>> ListHostedZonesByVPCOutcome;
         typedef Aws::Utils::Outcome<ListQueryLoggingConfigsResult, Aws::Client::AWSError<Route53Errors>> ListQueryLoggingConfigsOutcome;
         typedef Aws::Utils::Outcome<ListResourceRecordSetsResult, Aws::Client::AWSError<Route53Errors>> ListResourceRecordSetsOutcome;
         typedef Aws::Utils::Outcome<ListReusableDelegationSetsResult, Aws::Client::AWSError<Route53Errors>> ListReusableDelegationSetsOutcome;
@@ -277,6 +280,7 @@ namespace Model
         typedef std::future<ListHealthChecksOutcome> ListHealthChecksOutcomeCallable;
         typedef std::future<ListHostedZonesOutcome> ListHostedZonesOutcomeCallable;
         typedef std::future<ListHostedZonesByNameOutcome> ListHostedZonesByNameOutcomeCallable;
+        typedef std::future<ListHostedZonesByVPCOutcome> ListHostedZonesByVPCOutcomeCallable;
         typedef std::future<ListQueryLoggingConfigsOutcome> ListQueryLoggingConfigsOutcomeCallable;
         typedef std::future<ListResourceRecordSetsOutcome> ListResourceRecordSetsOutcomeCallable;
         typedef std::future<ListReusableDelegationSetsOutcome> ListReusableDelegationSetsOutcomeCallable;
@@ -337,6 +341,7 @@ namespace Model
     typedef std::function<void(const Route53Client*, const Model::ListHealthChecksRequest&, const Model::ListHealthChecksOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListHealthChecksResponseReceivedHandler;
     typedef std::function<void(const Route53Client*, const Model::ListHostedZonesRequest&, const Model::ListHostedZonesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListHostedZonesResponseReceivedHandler;
     typedef std::function<void(const Route53Client*, const Model::ListHostedZonesByNameRequest&, const Model::ListHostedZonesByNameOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListHostedZonesByNameResponseReceivedHandler;
+    typedef std::function<void(const Route53Client*, const Model::ListHostedZonesByVPCRequest&, const Model::ListHostedZonesByVPCOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListHostedZonesByVPCResponseReceivedHandler;
     typedef std::function<void(const Route53Client*, const Model::ListQueryLoggingConfigsRequest&, const Model::ListQueryLoggingConfigsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListQueryLoggingConfigsResponseReceivedHandler;
     typedef std::function<void(const Route53Client*, const Model::ListResourceRecordSetsRequest&, const Model::ListResourceRecordSetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListResourceRecordSetsResponseReceivedHandler;
     typedef std::function<void(const Route53Client*, const Model::ListReusableDelegationSetsRequest&, const Model::ListReusableDelegationSetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListReusableDelegationSetsResponseReceivedHandler;
@@ -1825,26 +1830,48 @@ namespace Model
         virtual void DeleteVPCAssociationAuthorizationAsync(const Model::DeleteVPCAssociationAuthorizationRequest& request, const DeleteVPCAssociationAuthorizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Disassociates a VPC from a Amazon Route 53 private hosted zone. Note the
-         * following:</p> <ul> <li> <p>You can't disassociate the last VPC from a private
-         * hosted zone.</p> </li> <li> <p>You can't convert a private hosted zone into a
-         * public hosted zone.</p> </li> <li> <p>You can submit a
-         * <code>DisassociateVPCFromHostedZone</code> request using either the account that
-         * created the hosted zone or the account that created the VPC.</p> </li>
-         * </ul><p><h3>See Also:</h3>   <a
+         * <p>Disassociates an Amazon Virtual Private Cloud (Amazon VPC) from an Amazon
+         * Route 53 private hosted zone. Note the following:</p> <ul> <li> <p>You can't
+         * disassociate the last Amazon VPC from a private hosted zone.</p> </li> <li>
+         * <p>You can't convert a private hosted zone into a public hosted zone.</p> </li>
+         * <li> <p>You can submit a <code>DisassociateVPCFromHostedZone</code> request
+         * using either the account that created the hosted zone or the account that
+         * created the Amazon VPC.</p> </li> <li> <p>Some services, such as AWS Cloud Map
+         * and Amazon Elastic File System (Amazon EFS) automatically create hosted zones
+         * and associate VPCs with the hosted zones. A service can create a hosted zone
+         * using your account or using its own account. You can disassociate a VPC from a
+         * hosted zone only if the service created the hosted zone using your account.</p>
+         * <p>When you run <a
+         * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListHostedZonesByVPC.html">DisassociateVPCFromHostedZone</a>,
+         * if the hosted zone has a value for <code>OwningAccount</code>, you can use
+         * <code>DisassociateVPCFromHostedZone</code>. If the hosted zone has a value for
+         * <code>OwningService</code>, you can't use
+         * <code>DisassociateVPCFromHostedZone</code>.</p> </li> </ul><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DisassociateVPCFromHostedZone">AWS
          * API Reference</a></p>
          */
         virtual Model::DisassociateVPCFromHostedZoneOutcome DisassociateVPCFromHostedZone(const Model::DisassociateVPCFromHostedZoneRequest& request) const;
 
         /**
-         * <p>Disassociates a VPC from a Amazon Route 53 private hosted zone. Note the
-         * following:</p> <ul> <li> <p>You can't disassociate the last VPC from a private
-         * hosted zone.</p> </li> <li> <p>You can't convert a private hosted zone into a
-         * public hosted zone.</p> </li> <li> <p>You can submit a
-         * <code>DisassociateVPCFromHostedZone</code> request using either the account that
-         * created the hosted zone or the account that created the VPC.</p> </li>
-         * </ul><p><h3>See Also:</h3>   <a
+         * <p>Disassociates an Amazon Virtual Private Cloud (Amazon VPC) from an Amazon
+         * Route 53 private hosted zone. Note the following:</p> <ul> <li> <p>You can't
+         * disassociate the last Amazon VPC from a private hosted zone.</p> </li> <li>
+         * <p>You can't convert a private hosted zone into a public hosted zone.</p> </li>
+         * <li> <p>You can submit a <code>DisassociateVPCFromHostedZone</code> request
+         * using either the account that created the hosted zone or the account that
+         * created the Amazon VPC.</p> </li> <li> <p>Some services, such as AWS Cloud Map
+         * and Amazon Elastic File System (Amazon EFS) automatically create hosted zones
+         * and associate VPCs with the hosted zones. A service can create a hosted zone
+         * using your account or using its own account. You can disassociate a VPC from a
+         * hosted zone only if the service created the hosted zone using your account.</p>
+         * <p>When you run <a
+         * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListHostedZonesByVPC.html">DisassociateVPCFromHostedZone</a>,
+         * if the hosted zone has a value for <code>OwningAccount</code>, you can use
+         * <code>DisassociateVPCFromHostedZone</code>. If the hosted zone has a value for
+         * <code>OwningService</code>, you can't use
+         * <code>DisassociateVPCFromHostedZone</code>.</p> </li> </ul><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DisassociateVPCFromHostedZone">AWS
          * API Reference</a></p>
          *
@@ -1853,13 +1880,24 @@ namespace Model
         virtual Model::DisassociateVPCFromHostedZoneOutcomeCallable DisassociateVPCFromHostedZoneCallable(const Model::DisassociateVPCFromHostedZoneRequest& request) const;
 
         /**
-         * <p>Disassociates a VPC from a Amazon Route 53 private hosted zone. Note the
-         * following:</p> <ul> <li> <p>You can't disassociate the last VPC from a private
-         * hosted zone.</p> </li> <li> <p>You can't convert a private hosted zone into a
-         * public hosted zone.</p> </li> <li> <p>You can submit a
-         * <code>DisassociateVPCFromHostedZone</code> request using either the account that
-         * created the hosted zone or the account that created the VPC.</p> </li>
-         * </ul><p><h3>See Also:</h3>   <a
+         * <p>Disassociates an Amazon Virtual Private Cloud (Amazon VPC) from an Amazon
+         * Route 53 private hosted zone. Note the following:</p> <ul> <li> <p>You can't
+         * disassociate the last Amazon VPC from a private hosted zone.</p> </li> <li>
+         * <p>You can't convert a private hosted zone into a public hosted zone.</p> </li>
+         * <li> <p>You can submit a <code>DisassociateVPCFromHostedZone</code> request
+         * using either the account that created the hosted zone or the account that
+         * created the Amazon VPC.</p> </li> <li> <p>Some services, such as AWS Cloud Map
+         * and Amazon Elastic File System (Amazon EFS) automatically create hosted zones
+         * and associate VPCs with the hosted zones. A service can create a hosted zone
+         * using your account or using its own account. You can disassociate a VPC from a
+         * hosted zone only if the service created the hosted zone using your account.</p>
+         * <p>When you run <a
+         * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListHostedZonesByVPC.html">DisassociateVPCFromHostedZone</a>,
+         * if the hosted zone has a value for <code>OwningAccount</code>, you can use
+         * <code>DisassociateVPCFromHostedZone</code>. If the hosted zone has a value for
+         * <code>OwningService</code>, you can't use
+         * <code>DisassociateVPCFromHostedZone</code>.</p> </li> </ul><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DisassociateVPCFromHostedZone">AWS
          * API Reference</a></p>
          *
@@ -2735,6 +2773,61 @@ namespace Model
         virtual void ListHostedZonesByNameAsync(const Model::ListHostedZonesByNameRequest& request, const ListHostedZonesByNameResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Lists all the private hosted zones that a specified VPC is associated with,
+         * regardless of which AWS account or AWS service owns the hosted zones. The
+         * <code>HostedZoneOwner</code> structure in the response contains one of the
+         * following values:</p> <ul> <li> <p>An <code>OwningAccount</code> element, which
+         * contains the account number of either the current AWS account or another AWS
+         * account. Some services, such as AWS Cloud Map, create hosted zones using the
+         * current account. </p> </li> <li> <p>An <code>OwningService</code> element, which
+         * identifies the AWS service that created and owns the hosted zone. For example,
+         * if a hosted zone was created by Amazon Elastic File System (Amazon EFS), the
+         * value of <code>Owner</code> is <code>efs.amazonaws.com</code>. </p> </li>
+         * </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListHostedZonesByVPC">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListHostedZonesByVPCOutcome ListHostedZonesByVPC(const Model::ListHostedZonesByVPCRequest& request) const;
+
+        /**
+         * <p>Lists all the private hosted zones that a specified VPC is associated with,
+         * regardless of which AWS account or AWS service owns the hosted zones. The
+         * <code>HostedZoneOwner</code> structure in the response contains one of the
+         * following values:</p> <ul> <li> <p>An <code>OwningAccount</code> element, which
+         * contains the account number of either the current AWS account or another AWS
+         * account. Some services, such as AWS Cloud Map, create hosted zones using the
+         * current account. </p> </li> <li> <p>An <code>OwningService</code> element, which
+         * identifies the AWS service that created and owns the hosted zone. For example,
+         * if a hosted zone was created by Amazon Elastic File System (Amazon EFS), the
+         * value of <code>Owner</code> is <code>efs.amazonaws.com</code>. </p> </li>
+         * </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListHostedZonesByVPC">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListHostedZonesByVPCOutcomeCallable ListHostedZonesByVPCCallable(const Model::ListHostedZonesByVPCRequest& request) const;
+
+        /**
+         * <p>Lists all the private hosted zones that a specified VPC is associated with,
+         * regardless of which AWS account or AWS service owns the hosted zones. The
+         * <code>HostedZoneOwner</code> structure in the response contains one of the
+         * following values:</p> <ul> <li> <p>An <code>OwningAccount</code> element, which
+         * contains the account number of either the current AWS account or another AWS
+         * account. Some services, such as AWS Cloud Map, create hosted zones using the
+         * current account. </p> </li> <li> <p>An <code>OwningService</code> element, which
+         * identifies the AWS service that created and owns the hosted zone. For example,
+         * if a hosted zone was created by Amazon Elastic File System (Amazon EFS), the
+         * value of <code>Owner</code> is <code>efs.amazonaws.com</code>. </p> </li>
+         * </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListHostedZonesByVPC">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListHostedZonesByVPCAsync(const Model::ListHostedZonesByVPCRequest& request, const ListHostedZonesByVPCResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Lists the configurations for DNS query logging that are associated with the
          * current AWS account or the configuration that is associated with a specified
          * hosted zone.</p> <p>For more information about DNS query logs, see <a
@@ -3514,6 +3607,7 @@ namespace Model
         void ListHealthChecksAsyncHelper(const Model::ListHealthChecksRequest& request, const ListHealthChecksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListHostedZonesAsyncHelper(const Model::ListHostedZonesRequest& request, const ListHostedZonesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListHostedZonesByNameAsyncHelper(const Model::ListHostedZonesByNameRequest& request, const ListHostedZonesByNameResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListHostedZonesByVPCAsyncHelper(const Model::ListHostedZonesByVPCRequest& request, const ListHostedZonesByVPCResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListQueryLoggingConfigsAsyncHelper(const Model::ListQueryLoggingConfigsRequest& request, const ListQueryLoggingConfigsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListResourceRecordSetsAsyncHelper(const Model::ListResourceRecordSetsRequest& request, const ListResourceRecordSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListReusableDelegationSetsAsyncHelper(const Model::ListReusableDelegationSetsRequest& request, const ListReusableDelegationSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

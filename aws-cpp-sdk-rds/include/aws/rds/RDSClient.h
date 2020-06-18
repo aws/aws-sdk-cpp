@@ -1024,7 +1024,7 @@ namespace Aws
          * cluster.</p> <p>For more information on backtracking, see <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraMySQL.Managing.Backtrack.html">
          * Backtracking an Aurora DB Cluster</a> in the <i>Amazon Aurora User Guide.</i>
-         * </p> <note> <p>This action only applies to Aurora DB clusters.</p>
+         * </p> <note> <p>This action only applies to Aurora MySQL DB clusters.</p>
          * </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/BacktrackDBCluster">AWS
          * API Reference</a></p>
@@ -1036,7 +1036,7 @@ namespace Aws
          * cluster.</p> <p>For more information on backtracking, see <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraMySQL.Managing.Backtrack.html">
          * Backtracking an Aurora DB Cluster</a> in the <i>Amazon Aurora User Guide.</i>
-         * </p> <note> <p>This action only applies to Aurora DB clusters.</p>
+         * </p> <note> <p>This action only applies to Aurora MySQL DB clusters.</p>
          * </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/BacktrackDBCluster">AWS
          * API Reference</a></p>
@@ -1050,7 +1050,7 @@ namespace Aws
          * cluster.</p> <p>For more information on backtracking, see <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraMySQL.Managing.Backtrack.html">
          * Backtracking an Aurora DB Cluster</a> in the <i>Amazon Aurora User Guide.</i>
-         * </p> <note> <p>This action only applies to Aurora DB clusters.</p>
+         * </p> <note> <p>This action only applies to Aurora MySQL DB clusters.</p>
          * </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/BacktrackDBCluster">AWS
          * API Reference</a></p>
@@ -2045,30 +2045,30 @@ namespace Aws
         virtual void CreateEventSubscriptionAsync(const Model::CreateEventSubscriptionRequest& request, const CreateEventSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> </p> <p> Creates an Aurora global database spread across multiple regions.
-         * The global database contains a single primary cluster with read-write
-         * capability, and a read-only secondary cluster that receives data from the
-         * primary cluster through high-speed replication performed by the Aurora storage
-         * subsystem. </p> <p> You can create a global database that is initially empty,
-         * and then add a primary cluster and a secondary cluster to it. Or you can specify
-         * an existing Aurora cluster during the create operation, and this cluster becomes
-         * the primary cluster of the global database. </p> <note> <p>This action only
-         * applies to Aurora DB clusters.</p> </note><p><h3>See Also:</h3>   <a
+         * <p> Creates an Aurora global database spread across multiple regions. The global
+         * database contains a single primary cluster with read-write capability, and a
+         * read-only secondary cluster that receives data from the primary cluster through
+         * high-speed replication performed by the Aurora storage subsystem. </p> <p> You
+         * can create a global database that is initially empty, and then add a primary
+         * cluster and a secondary cluster to it. Or you can specify an existing Aurora
+         * cluster during the create operation, and this cluster becomes the primary
+         * cluster of the global database. </p> <note> <p>This action only applies to
+         * Aurora DB clusters.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateGlobalCluster">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateGlobalClusterOutcome CreateGlobalCluster(const Model::CreateGlobalClusterRequest& request) const;
 
         /**
-         * <p> </p> <p> Creates an Aurora global database spread across multiple regions.
-         * The global database contains a single primary cluster with read-write
-         * capability, and a read-only secondary cluster that receives data from the
-         * primary cluster through high-speed replication performed by the Aurora storage
-         * subsystem. </p> <p> You can create a global database that is initially empty,
-         * and then add a primary cluster and a secondary cluster to it. Or you can specify
-         * an existing Aurora cluster during the create operation, and this cluster becomes
-         * the primary cluster of the global database. </p> <note> <p>This action only
-         * applies to Aurora DB clusters.</p> </note><p><h3>See Also:</h3>   <a
+         * <p> Creates an Aurora global database spread across multiple regions. The global
+         * database contains a single primary cluster with read-write capability, and a
+         * read-only secondary cluster that receives data from the primary cluster through
+         * high-speed replication performed by the Aurora storage subsystem. </p> <p> You
+         * can create a global database that is initially empty, and then add a primary
+         * cluster and a secondary cluster to it. Or you can specify an existing Aurora
+         * cluster during the create operation, and this cluster becomes the primary
+         * cluster of the global database. </p> <note> <p>This action only applies to
+         * Aurora DB clusters.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateGlobalCluster">AWS
          * API Reference</a></p>
          *
@@ -2077,15 +2077,15 @@ namespace Aws
         virtual Model::CreateGlobalClusterOutcomeCallable CreateGlobalClusterCallable(const Model::CreateGlobalClusterRequest& request) const;
 
         /**
-         * <p> </p> <p> Creates an Aurora global database spread across multiple regions.
-         * The global database contains a single primary cluster with read-write
-         * capability, and a read-only secondary cluster that receives data from the
-         * primary cluster through high-speed replication performed by the Aurora storage
-         * subsystem. </p> <p> You can create a global database that is initially empty,
-         * and then add a primary cluster and a secondary cluster to it. Or you can specify
-         * an existing Aurora cluster during the create operation, and this cluster becomes
-         * the primary cluster of the global database. </p> <note> <p>This action only
-         * applies to Aurora DB clusters.</p> </note><p><h3>See Also:</h3>   <a
+         * <p> Creates an Aurora global database spread across multiple regions. The global
+         * database contains a single primary cluster with read-write capability, and a
+         * read-only secondary cluster that receives data from the primary cluster through
+         * high-speed replication performed by the Aurora storage subsystem. </p> <p> You
+         * can create a global database that is initially empty, and then add a primary
+         * cluster and a secondary cluster to it. Or you can specify an existing Aurora
+         * cluster during the create operation, and this cluster becomes the primary
+         * cluster of the global database. </p> <note> <p>This action only applies to
+         * Aurora DB clusters.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateGlobalCluster">AWS
          * API Reference</a></p>
          *
@@ -2842,7 +2842,7 @@ namespace Aws
          * information on Amazon Aurora, see <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
          * What Is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> </p> <note>
-         * <p>This action only applies to Aurora DB clusters.</p> </note><p><h3>See
+         * <p>This action only applies to Aurora MySQL DB clusters.</p> </note><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBClusterBacktracks">AWS
          * API Reference</a></p>
@@ -2854,7 +2854,7 @@ namespace Aws
          * information on Amazon Aurora, see <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
          * What Is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> </p> <note>
-         * <p>This action only applies to Aurora DB clusters.</p> </note><p><h3>See
+         * <p>This action only applies to Aurora MySQL DB clusters.</p> </note><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBClusterBacktracks">AWS
          * API Reference</a></p>
@@ -2868,7 +2868,7 @@ namespace Aws
          * information on Amazon Aurora, see <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
          * What Is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> </p> <note>
-         * <p>This action only applies to Aurora DB clusters.</p> </note><p><h3>See
+         * <p>This action only applies to Aurora MySQL DB clusters.</p> </note><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBClusterBacktracks">AWS
          * API Reference</a></p>
@@ -4570,16 +4570,17 @@ namespace Aws
          * a list of IDs of the AWS accounts that are authorized to restore the manual DB
          * cluster snapshot. Use the value <code>all</code> to make the manual DB cluster
          * snapshot public, which means that it can be copied or restored by all AWS
-         * accounts. Do not add the <code>all</code> value for any manual DB cluster
-         * snapshots that contain private information that you don't want available to all
-         * AWS accounts. If a manual DB cluster snapshot is encrypted, it can be shared,
-         * but only by specifying a list of authorized AWS account IDs for the
-         * <code>ValuesToAdd</code> parameter. You can't use <code>all</code> as a value
-         * for that parameter in this case.</p> <p>To view which AWS accounts have access
-         * to copy or restore a manual DB cluster snapshot, or whether a manual DB cluster
-         * snapshot public or private, use the
-         * <code>DescribeDBClusterSnapshotAttributes</code> API action.</p> <note> <p>This
-         * action only applies to Aurora DB clusters.</p> </note><p><h3>See Also:</h3>   <a
+         * accounts.</p> <note> <p>Don't add the <code>all</code> value for any manual DB
+         * cluster snapshots that contain private information that you don't want available
+         * to all AWS accounts.</p> </note> <p>If a manual DB cluster snapshot is
+         * encrypted, it can be shared, but only by specifying a list of authorized AWS
+         * account IDs for the <code>ValuesToAdd</code> parameter. You can't use
+         * <code>all</code> as a value for that parameter in this case.</p> <p>To view
+         * which AWS accounts have access to copy or restore a manual DB cluster snapshot,
+         * or whether a manual DB cluster snapshot is public or private, use the
+         * <a>DescribeDBClusterSnapshotAttributes</a> API action. The accounts are returned
+         * as values for the <code>restore</code> attribute.</p> <note> <p>This action only
+         * applies to Aurora DB clusters.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBClusterSnapshotAttribute">AWS
          * API Reference</a></p>
          */
@@ -4593,16 +4594,17 @@ namespace Aws
          * a list of IDs of the AWS accounts that are authorized to restore the manual DB
          * cluster snapshot. Use the value <code>all</code> to make the manual DB cluster
          * snapshot public, which means that it can be copied or restored by all AWS
-         * accounts. Do not add the <code>all</code> value for any manual DB cluster
-         * snapshots that contain private information that you don't want available to all
-         * AWS accounts. If a manual DB cluster snapshot is encrypted, it can be shared,
-         * but only by specifying a list of authorized AWS account IDs for the
-         * <code>ValuesToAdd</code> parameter. You can't use <code>all</code> as a value
-         * for that parameter in this case.</p> <p>To view which AWS accounts have access
-         * to copy or restore a manual DB cluster snapshot, or whether a manual DB cluster
-         * snapshot public or private, use the
-         * <code>DescribeDBClusterSnapshotAttributes</code> API action.</p> <note> <p>This
-         * action only applies to Aurora DB clusters.</p> </note><p><h3>See Also:</h3>   <a
+         * accounts.</p> <note> <p>Don't add the <code>all</code> value for any manual DB
+         * cluster snapshots that contain private information that you don't want available
+         * to all AWS accounts.</p> </note> <p>If a manual DB cluster snapshot is
+         * encrypted, it can be shared, but only by specifying a list of authorized AWS
+         * account IDs for the <code>ValuesToAdd</code> parameter. You can't use
+         * <code>all</code> as a value for that parameter in this case.</p> <p>To view
+         * which AWS accounts have access to copy or restore a manual DB cluster snapshot,
+         * or whether a manual DB cluster snapshot is public or private, use the
+         * <a>DescribeDBClusterSnapshotAttributes</a> API action. The accounts are returned
+         * as values for the <code>restore</code> attribute.</p> <note> <p>This action only
+         * applies to Aurora DB clusters.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBClusterSnapshotAttribute">AWS
          * API Reference</a></p>
          *
@@ -4618,16 +4620,17 @@ namespace Aws
          * a list of IDs of the AWS accounts that are authorized to restore the manual DB
          * cluster snapshot. Use the value <code>all</code> to make the manual DB cluster
          * snapshot public, which means that it can be copied or restored by all AWS
-         * accounts. Do not add the <code>all</code> value for any manual DB cluster
-         * snapshots that contain private information that you don't want available to all
-         * AWS accounts. If a manual DB cluster snapshot is encrypted, it can be shared,
-         * but only by specifying a list of authorized AWS account IDs for the
-         * <code>ValuesToAdd</code> parameter. You can't use <code>all</code> as a value
-         * for that parameter in this case.</p> <p>To view which AWS accounts have access
-         * to copy or restore a manual DB cluster snapshot, or whether a manual DB cluster
-         * snapshot public or private, use the
-         * <code>DescribeDBClusterSnapshotAttributes</code> API action.</p> <note> <p>This
-         * action only applies to Aurora DB clusters.</p> </note><p><h3>See Also:</h3>   <a
+         * accounts.</p> <note> <p>Don't add the <code>all</code> value for any manual DB
+         * cluster snapshots that contain private information that you don't want available
+         * to all AWS accounts.</p> </note> <p>If a manual DB cluster snapshot is
+         * encrypted, it can be shared, but only by specifying a list of authorized AWS
+         * account IDs for the <code>ValuesToAdd</code> parameter. You can't use
+         * <code>all</code> as a value for that parameter in this case.</p> <p>To view
+         * which AWS accounts have access to copy or restore a manual DB cluster snapshot,
+         * or whether a manual DB cluster snapshot is public or private, use the
+         * <a>DescribeDBClusterSnapshotAttributes</a> API action. The accounts are returned
+         * as values for the <code>restore</code> attribute.</p> <note> <p>This action only
+         * applies to Aurora DB clusters.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBClusterSnapshotAttribute">AWS
          * API Reference</a></p>
          *
@@ -4851,15 +4854,16 @@ namespace Aws
          * the <code>ValuesToAdd</code> parameter to add a list of IDs of the AWS accounts
          * that are authorized to restore the manual DB snapshot. Uses the value
          * <code>all</code> to make the manual DB snapshot public, which means it can be
-         * copied or restored by all AWS accounts. Do not add the <code>all</code> value
-         * for any manual DB snapshots that contain private information that you don't want
-         * available to all AWS accounts. If the manual DB snapshot is encrypted, it can be
-         * shared, but only by specifying a list of authorized AWS account IDs for the
-         * <code>ValuesToAdd</code> parameter. You can't use <code>all</code> as a value
-         * for that parameter in this case.</p> <p>To view which AWS accounts have access
-         * to copy or restore a manual DB snapshot, or whether a manual DB snapshot public
-         * or private, use the <code>DescribeDBSnapshotAttributes</code> API
-         * action.</p><p><h3>See Also:</h3>   <a
+         * copied or restored by all AWS accounts.</p> <note> <p>Don't add the
+         * <code>all</code> value for any manual DB snapshots that contain private
+         * information that you don't want available to all AWS accounts.</p> </note> <p>If
+         * the manual DB snapshot is encrypted, it can be shared, but only by specifying a
+         * list of authorized AWS account IDs for the <code>ValuesToAdd</code> parameter.
+         * You can't use <code>all</code> as a value for that parameter in this case.</p>
+         * <p>To view which AWS accounts have access to copy or restore a manual DB
+         * snapshot, or whether a manual DB snapshot public or private, use the
+         * <a>DescribeDBSnapshotAttributes</a> API action. The accounts are returned as
+         * values for the <code>restore</code> attribute.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBSnapshotAttribute">AWS
          * API Reference</a></p>
          */
@@ -4872,15 +4876,16 @@ namespace Aws
          * the <code>ValuesToAdd</code> parameter to add a list of IDs of the AWS accounts
          * that are authorized to restore the manual DB snapshot. Uses the value
          * <code>all</code> to make the manual DB snapshot public, which means it can be
-         * copied or restored by all AWS accounts. Do not add the <code>all</code> value
-         * for any manual DB snapshots that contain private information that you don't want
-         * available to all AWS accounts. If the manual DB snapshot is encrypted, it can be
-         * shared, but only by specifying a list of authorized AWS account IDs for the
-         * <code>ValuesToAdd</code> parameter. You can't use <code>all</code> as a value
-         * for that parameter in this case.</p> <p>To view which AWS accounts have access
-         * to copy or restore a manual DB snapshot, or whether a manual DB snapshot public
-         * or private, use the <code>DescribeDBSnapshotAttributes</code> API
-         * action.</p><p><h3>See Also:</h3>   <a
+         * copied or restored by all AWS accounts.</p> <note> <p>Don't add the
+         * <code>all</code> value for any manual DB snapshots that contain private
+         * information that you don't want available to all AWS accounts.</p> </note> <p>If
+         * the manual DB snapshot is encrypted, it can be shared, but only by specifying a
+         * list of authorized AWS account IDs for the <code>ValuesToAdd</code> parameter.
+         * You can't use <code>all</code> as a value for that parameter in this case.</p>
+         * <p>To view which AWS accounts have access to copy or restore a manual DB
+         * snapshot, or whether a manual DB snapshot public or private, use the
+         * <a>DescribeDBSnapshotAttributes</a> API action. The accounts are returned as
+         * values for the <code>restore</code> attribute.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBSnapshotAttribute">AWS
          * API Reference</a></p>
          *
@@ -4895,15 +4900,16 @@ namespace Aws
          * the <code>ValuesToAdd</code> parameter to add a list of IDs of the AWS accounts
          * that are authorized to restore the manual DB snapshot. Uses the value
          * <code>all</code> to make the manual DB snapshot public, which means it can be
-         * copied or restored by all AWS accounts. Do not add the <code>all</code> value
-         * for any manual DB snapshots that contain private information that you don't want
-         * available to all AWS accounts. If the manual DB snapshot is encrypted, it can be
-         * shared, but only by specifying a list of authorized AWS account IDs for the
-         * <code>ValuesToAdd</code> parameter. You can't use <code>all</code> as a value
-         * for that parameter in this case.</p> <p>To view which AWS accounts have access
-         * to copy or restore a manual DB snapshot, or whether a manual DB snapshot public
-         * or private, use the <code>DescribeDBSnapshotAttributes</code> API
-         * action.</p><p><h3>See Also:</h3>   <a
+         * copied or restored by all AWS accounts.</p> <note> <p>Don't add the
+         * <code>all</code> value for any manual DB snapshots that contain private
+         * information that you don't want available to all AWS accounts.</p> </note> <p>If
+         * the manual DB snapshot is encrypted, it can be shared, but only by specifying a
+         * list of authorized AWS account IDs for the <code>ValuesToAdd</code> parameter.
+         * You can't use <code>all</code> as a value for that parameter in this case.</p>
+         * <p>To view which AWS accounts have access to copy or restore a manual DB
+         * snapshot, or whether a manual DB snapshot public or private, use the
+         * <a>DescribeDBSnapshotAttributes</a> API action. The accounts are returned as
+         * values for the <code>restore</code> attribute.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBSnapshotAttribute">AWS
          * API Reference</a></p>
          *

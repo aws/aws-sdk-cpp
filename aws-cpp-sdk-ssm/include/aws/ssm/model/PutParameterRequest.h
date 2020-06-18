@@ -364,62 +364,80 @@ namespace Model
 
 
     /**
-     * <p>The type of parameter that you want to add to the system.</p> <p>Items in a
+     * <p>The type of parameter that you want to add to the system.</p> <note> <p>
+     * <code>SecureString</code> is not currently supported for AWS CloudFormation
+     * templates or in the China Regions.</p> </note> <p>Items in a
      * <code>StringList</code> must be separated by a comma (,). You can't use other
      * punctuation or special character to escape items in the list. If you have a
      * parameter value that requires a comma, then use the <code>String</code> data
-     * type.</p> <note> <p> <code>SecureString</code> is not currently supported for
-     * AWS CloudFormation templates or in the China Regions.</p> </note>
+     * type.</p> <important> <p>Specifying a parameter type is not required when
+     * updating a parameter. You must specify a parameter type when creating a
+     * parameter.</p> </important>
      */
     inline const ParameterType& GetType() const{ return m_type; }
 
     /**
-     * <p>The type of parameter that you want to add to the system.</p> <p>Items in a
+     * <p>The type of parameter that you want to add to the system.</p> <note> <p>
+     * <code>SecureString</code> is not currently supported for AWS CloudFormation
+     * templates or in the China Regions.</p> </note> <p>Items in a
      * <code>StringList</code> must be separated by a comma (,). You can't use other
      * punctuation or special character to escape items in the list. If you have a
      * parameter value that requires a comma, then use the <code>String</code> data
-     * type.</p> <note> <p> <code>SecureString</code> is not currently supported for
-     * AWS CloudFormation templates or in the China Regions.</p> </note>
+     * type.</p> <important> <p>Specifying a parameter type is not required when
+     * updating a parameter. You must specify a parameter type when creating a
+     * parameter.</p> </important>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
-     * <p>The type of parameter that you want to add to the system.</p> <p>Items in a
+     * <p>The type of parameter that you want to add to the system.</p> <note> <p>
+     * <code>SecureString</code> is not currently supported for AWS CloudFormation
+     * templates or in the China Regions.</p> </note> <p>Items in a
      * <code>StringList</code> must be separated by a comma (,). You can't use other
      * punctuation or special character to escape items in the list. If you have a
      * parameter value that requires a comma, then use the <code>String</code> data
-     * type.</p> <note> <p> <code>SecureString</code> is not currently supported for
-     * AWS CloudFormation templates or in the China Regions.</p> </note>
+     * type.</p> <important> <p>Specifying a parameter type is not required when
+     * updating a parameter. You must specify a parameter type when creating a
+     * parameter.</p> </important>
      */
     inline void SetType(const ParameterType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>The type of parameter that you want to add to the system.</p> <p>Items in a
+     * <p>The type of parameter that you want to add to the system.</p> <note> <p>
+     * <code>SecureString</code> is not currently supported for AWS CloudFormation
+     * templates or in the China Regions.</p> </note> <p>Items in a
      * <code>StringList</code> must be separated by a comma (,). You can't use other
      * punctuation or special character to escape items in the list. If you have a
      * parameter value that requires a comma, then use the <code>String</code> data
-     * type.</p> <note> <p> <code>SecureString</code> is not currently supported for
-     * AWS CloudFormation templates or in the China Regions.</p> </note>
+     * type.</p> <important> <p>Specifying a parameter type is not required when
+     * updating a parameter. You must specify a parameter type when creating a
+     * parameter.</p> </important>
      */
     inline void SetType(ParameterType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p>The type of parameter that you want to add to the system.</p> <p>Items in a
+     * <p>The type of parameter that you want to add to the system.</p> <note> <p>
+     * <code>SecureString</code> is not currently supported for AWS CloudFormation
+     * templates or in the China Regions.</p> </note> <p>Items in a
      * <code>StringList</code> must be separated by a comma (,). You can't use other
      * punctuation or special character to escape items in the list. If you have a
      * parameter value that requires a comma, then use the <code>String</code> data
-     * type.</p> <note> <p> <code>SecureString</code> is not currently supported for
-     * AWS CloudFormation templates or in the China Regions.</p> </note>
+     * type.</p> <important> <p>Specifying a parameter type is not required when
+     * updating a parameter. You must specify a parameter type when creating a
+     * parameter.</p> </important>
      */
     inline PutParameterRequest& WithType(const ParameterType& value) { SetType(value); return *this;}
 
     /**
-     * <p>The type of parameter that you want to add to the system.</p> <p>Items in a
+     * <p>The type of parameter that you want to add to the system.</p> <note> <p>
+     * <code>SecureString</code> is not currently supported for AWS CloudFormation
+     * templates or in the China Regions.</p> </note> <p>Items in a
      * <code>StringList</code> must be separated by a comma (,). You can't use other
      * punctuation or special character to escape items in the list. If you have a
      * parameter value that requires a comma, then use the <code>String</code> data
-     * type.</p> <note> <p> <code>SecureString</code> is not currently supported for
-     * AWS CloudFormation templates or in the China Regions.</p> </note>
+     * type.</p> <important> <p>Specifying a parameter type is not required when
+     * updating a parameter. You must specify a parameter type when creating a
+     * parameter.</p> </important>
      */
     inline PutParameterRequest& WithType(ParameterType&& value) { SetType(std::move(value)); return *this;}
 

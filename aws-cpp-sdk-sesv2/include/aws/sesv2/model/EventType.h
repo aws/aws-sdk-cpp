@@ -33,7 +33,8 @@ namespace Model
     DELIVERY,
     OPEN,
     CLICK,
-    RENDERING_FAILURE
+    RENDERING_FAILURE,
+    DELIVERY_DELAY
   };
 
 namespace EventTypeMapper

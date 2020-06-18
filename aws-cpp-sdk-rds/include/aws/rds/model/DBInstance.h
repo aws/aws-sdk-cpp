@@ -1413,34 +1413,54 @@ namespace Model
 
 
     /**
-     * <p>Specifies the accessibility options for the DB instance. A value of true
-     * specifies an Internet-facing instance with a publicly resolvable DNS name, which
-     * resolves to a public IP address. A value of false specifies an internal instance
-     * with a DNS name that resolves to a private IP address.</p>
+     * <p>Specifies the accessibility options for the DB instance.</p> <p>When the DB
+     * instance is publicly accessible, its DNS endpoint resolves to the private IP
+     * address from within the DB instance's VPC, and to the public IP address from
+     * outside of the DB instance's VPC. Access to the DB instance is ultimately
+     * controlled by the security group it uses, and that public access is not
+     * permitted if the security group assigned to the DB instance doesn't permit
+     * it.</p> <p>When the DB instance isn't publicly accessible, it is an internal DB
+     * instance with a DNS name that resolves to a private IP address.</p> <p>For more
+     * information, see <a>CreateDBInstance</a>.</p>
      */
     inline bool GetPubliclyAccessible() const{ return m_publiclyAccessible; }
 
     /**
-     * <p>Specifies the accessibility options for the DB instance. A value of true
-     * specifies an Internet-facing instance with a publicly resolvable DNS name, which
-     * resolves to a public IP address. A value of false specifies an internal instance
-     * with a DNS name that resolves to a private IP address.</p>
+     * <p>Specifies the accessibility options for the DB instance.</p> <p>When the DB
+     * instance is publicly accessible, its DNS endpoint resolves to the private IP
+     * address from within the DB instance's VPC, and to the public IP address from
+     * outside of the DB instance's VPC. Access to the DB instance is ultimately
+     * controlled by the security group it uses, and that public access is not
+     * permitted if the security group assigned to the DB instance doesn't permit
+     * it.</p> <p>When the DB instance isn't publicly accessible, it is an internal DB
+     * instance with a DNS name that resolves to a private IP address.</p> <p>For more
+     * information, see <a>CreateDBInstance</a>.</p>
      */
     inline bool PubliclyAccessibleHasBeenSet() const { return m_publiclyAccessibleHasBeenSet; }
 
     /**
-     * <p>Specifies the accessibility options for the DB instance. A value of true
-     * specifies an Internet-facing instance with a publicly resolvable DNS name, which
-     * resolves to a public IP address. A value of false specifies an internal instance
-     * with a DNS name that resolves to a private IP address.</p>
+     * <p>Specifies the accessibility options for the DB instance.</p> <p>When the DB
+     * instance is publicly accessible, its DNS endpoint resolves to the private IP
+     * address from within the DB instance's VPC, and to the public IP address from
+     * outside of the DB instance's VPC. Access to the DB instance is ultimately
+     * controlled by the security group it uses, and that public access is not
+     * permitted if the security group assigned to the DB instance doesn't permit
+     * it.</p> <p>When the DB instance isn't publicly accessible, it is an internal DB
+     * instance with a DNS name that resolves to a private IP address.</p> <p>For more
+     * information, see <a>CreateDBInstance</a>.</p>
      */
     inline void SetPubliclyAccessible(bool value) { m_publiclyAccessibleHasBeenSet = true; m_publiclyAccessible = value; }
 
     /**
-     * <p>Specifies the accessibility options for the DB instance. A value of true
-     * specifies an Internet-facing instance with a publicly resolvable DNS name, which
-     * resolves to a public IP address. A value of false specifies an internal instance
-     * with a DNS name that resolves to a private IP address.</p>
+     * <p>Specifies the accessibility options for the DB instance.</p> <p>When the DB
+     * instance is publicly accessible, its DNS endpoint resolves to the private IP
+     * address from within the DB instance's VPC, and to the public IP address from
+     * outside of the DB instance's VPC. Access to the DB instance is ultimately
+     * controlled by the security group it uses, and that public access is not
+     * permitted if the security group assigned to the DB instance doesn't permit
+     * it.</p> <p>When the DB instance isn't publicly accessible, it is an internal DB
+     * instance with a DNS name that resolves to a private IP address.</p> <p>For more
+     * information, see <a>CreateDBInstance</a>.</p>
      */
     inline DBInstance& WithPubliclyAccessible(bool value) { SetPubliclyAccessible(value); return *this;}
 

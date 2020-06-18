@@ -336,6 +336,31 @@ namespace Model
 
 
     /**
+     * <p>The number of days to wait to run a maintenance window after the scheduled
+     * CRON expression date and time.</p>
+     */
+    inline int GetScheduleOffset() const{ return m_scheduleOffset; }
+
+    /**
+     * <p>The number of days to wait to run a maintenance window after the scheduled
+     * CRON expression date and time.</p>
+     */
+    inline bool ScheduleOffsetHasBeenSet() const { return m_scheduleOffsetHasBeenSet; }
+
+    /**
+     * <p>The number of days to wait to run a maintenance window after the scheduled
+     * CRON expression date and time.</p>
+     */
+    inline void SetScheduleOffset(int value) { m_scheduleOffsetHasBeenSet = true; m_scheduleOffset = value; }
+
+    /**
+     * <p>The number of days to wait to run a maintenance window after the scheduled
+     * CRON expression date and time.</p>
+     */
+    inline MaintenanceWindowIdentity& WithScheduleOffset(int value) { SetScheduleOffset(value); return *this;}
+
+
+    /**
      * <p>The date and time, in ISO-8601 Extended format, for when the maintenance
      * window is scheduled to become inactive.</p>
      */
@@ -506,6 +531,9 @@ namespace Model
 
     Aws::String m_scheduleTimezone;
     bool m_scheduleTimezoneHasBeenSet;
+
+    int m_scheduleOffset;
+    bool m_scheduleOffsetHasBeenSet;
 
     Aws::String m_endDate;
     bool m_endDateHasBeenSet;

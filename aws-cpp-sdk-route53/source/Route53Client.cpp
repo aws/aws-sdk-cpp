@@ -70,6 +70,7 @@
 #include <aws/route53/model/ListHealthChecksRequest.h>
 #include <aws/route53/model/ListHostedZonesRequest.h>
 #include <aws/route53/model/ListHostedZonesByNameRequest.h>
+#include <aws/route53/model/ListHostedZonesByVPCRequest.h>
 #include <aws/route53/model/ListQueryLoggingConfigsRequest.h>
 #include <aws/route53/model/ListResourceRecordSetsRequest.h>
 #include <aws/route53/model/ListReusableDelegationSetsRequest.h>
@@ -1750,6 +1751,51 @@ void Route53Client::ListHostedZonesByNameAsync(const ListHostedZonesByNameReques
 void Route53Client::ListHostedZonesByNameAsyncHelper(const ListHostedZonesByNameRequest& request, const ListHostedZonesByNameResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListHostedZonesByName(request), context);
+}
+
+ListHostedZonesByVPCOutcome Route53Client::ListHostedZonesByVPC(const ListHostedZonesByVPCRequest& request) const
+{
+  if (!request.VPCIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListHostedZonesByVPC", "Required field: VPCId, is not set");
+    return ListHostedZonesByVPCOutcome(Aws::Client::AWSError<Route53Errors>(Route53Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VPCId]", false));
+  }
+  if (!request.VPCRegionHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListHostedZonesByVPC", "Required field: VPCRegion, is not set");
+    return ListHostedZonesByVPCOutcome(Aws::Client::AWSError<Route53Errors>(Route53Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VPCRegion]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/2013-04-01/hostedzonesbyvpc";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET);
+  if(outcome.IsSuccess())
+  {
+    return ListHostedZonesByVPCOutcome(ListHostedZonesByVPCResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListHostedZonesByVPCOutcome(outcome.GetError());
+  }
+}
+
+ListHostedZonesByVPCOutcomeCallable Route53Client::ListHostedZonesByVPCCallable(const ListHostedZonesByVPCRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListHostedZonesByVPCOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListHostedZonesByVPC(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void Route53Client::ListHostedZonesByVPCAsync(const ListHostedZonesByVPCRequest& request, const ListHostedZonesByVPCResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListHostedZonesByVPCAsyncHelper( request, handler, context ); } );
+}
+
+void Route53Client::ListHostedZonesByVPCAsyncHelper(const ListHostedZonesByVPCRequest& request, const ListHostedZonesByVPCResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListHostedZonesByVPC(request), context);
 }
 
 ListQueryLoggingConfigsOutcome Route53Client::ListQueryLoggingConfigs(const ListQueryLoggingConfigsRequest& request) const

@@ -40,6 +40,8 @@ MaintenanceWindowIdentity::MaintenanceWindowIdentity() :
     m_cutoffHasBeenSet(false),
     m_scheduleHasBeenSet(false),
     m_scheduleTimezoneHasBeenSet(false),
+    m_scheduleOffset(0),
+    m_scheduleOffsetHasBeenSet(false),
     m_endDateHasBeenSet(false),
     m_startDateHasBeenSet(false),
     m_nextExecutionTimeHasBeenSet(false)
@@ -58,6 +60,8 @@ MaintenanceWindowIdentity::MaintenanceWindowIdentity(JsonView jsonValue) :
     m_cutoffHasBeenSet(false),
     m_scheduleHasBeenSet(false),
     m_scheduleTimezoneHasBeenSet(false),
+    m_scheduleOffset(0),
+    m_scheduleOffsetHasBeenSet(false),
     m_endDateHasBeenSet(false),
     m_startDateHasBeenSet(false),
     m_nextExecutionTimeHasBeenSet(false)
@@ -121,6 +125,13 @@ MaintenanceWindowIdentity& MaintenanceWindowIdentity::operator =(JsonView jsonVa
     m_scheduleTimezone = jsonValue.GetString("ScheduleTimezone");
 
     m_scheduleTimezoneHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ScheduleOffset"))
+  {
+    m_scheduleOffset = jsonValue.GetInteger("ScheduleOffset");
+
+    m_scheduleOffsetHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("EndDate"))
@@ -196,6 +207,12 @@ JsonValue MaintenanceWindowIdentity::Jsonize() const
   if(m_scheduleTimezoneHasBeenSet)
   {
    payload.WithString("ScheduleTimezone", m_scheduleTimezone);
+
+  }
+
+  if(m_scheduleOffsetHasBeenSet)
+  {
+   payload.WithInteger("ScheduleOffset", m_scheduleOffset);
 
   }
 
