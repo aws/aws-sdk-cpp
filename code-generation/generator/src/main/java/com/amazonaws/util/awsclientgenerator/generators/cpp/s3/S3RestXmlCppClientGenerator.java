@@ -39,16 +39,6 @@ public class S3RestXmlCppClientGenerator  extends RestXmlCppClientGenerator {
     private static Set<String> bucketLocationConstraints = new HashSet<>();
 
     static {
-        opsThatNeedMd5.add("DeleteObjects");
-        opsThatNeedMd5.add("PutBucketCors");
-        opsThatNeedMd5.add("PutBucketLifecycle");
-        opsThatNeedMd5.add("PutBucketLifecycleConfiguration");
-        opsThatNeedMd5.add("PutBucketPolicy");
-        opsThatNeedMd5.add("PutBucketTagging");
-        opsThatNeedMd5.add("PutObjectLegalHold");
-        opsThatNeedMd5.add("PutObjectLockConfiguration");
-        opsThatNeedMd5.add("PutObjectRetention");
-
         opsThatDoNotSupportVirtualAddressing.add("CreateBucket");
         opsThatDoNotSupportVirtualAddressing.add("ListBuckets");
 
@@ -85,12 +75,6 @@ public class S3RestXmlCppClientGenerator  extends RestXmlCppClientGenerator {
 
         // Add ID2 and RequestId to GetObjectResult
         hackGetObjectOutputResponse(serviceModel);
-
-        //if an operation should precompute md5, make sure it is added here.
-        serviceModel.getOperations().values().stream()
-                .filter(operationEntry ->
-                        opsThatNeedMd5.contains(operationEntry.getName()))
-                .forEach(operationEntry -> operationEntry.getRequest().getShape().setComputeContentMd5(true));
 
         //size and content length should ALWAYS be 64 bit integers, if they aren't set them as that now.
         serviceModel.getShapes().entrySet().stream().filter(shapeEntry -> shapeEntry.getKey().toLowerCase().equals("contentlength") || shapeEntry.getKey().toLowerCase().equals("size"))

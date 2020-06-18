@@ -51,6 +51,8 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+    inline bool ShouldComputeContentMd5() const override { return true; }
+
 
     /**
      * <p>The bucket name.</p>

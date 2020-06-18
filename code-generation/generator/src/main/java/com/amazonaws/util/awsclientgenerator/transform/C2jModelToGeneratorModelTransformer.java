@@ -419,6 +419,10 @@ public class C2jModelToGeneratorModelTransformer {
                 requestShape.setSignerName("Aws::Auth::NULL_SIGNER");
             }
 
+            if(c2jOperation.isHttpChecksumRequired()) {
+                requestShape.setComputeContentMd5(true);
+            }
+
             ShapeMember requestMember = new ShapeMember();
             requestMember.setShape(requestShape);
             requestMember.setDocumentation(formatDocumentation(c2jOperation.getInput().getDocumentation(), 3));

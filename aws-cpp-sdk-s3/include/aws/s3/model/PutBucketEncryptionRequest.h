@@ -49,6 +49,8 @@ namespace Model
 
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
+    inline bool ShouldComputeContentMd5() const override { return true; }
+
 
     /**
      * <p>Specifies default encryption for a bucket using server-side encryption with

@@ -31,6 +31,7 @@ public class C2jOperation {
     private List<C2jError> errors;
     private String documentation;
     private boolean deprecated;
+    private boolean httpChecksumRequired;
     // For HostPrefixInjection
     private C2jEndpoint endpoint; // endpoint trait
 

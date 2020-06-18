@@ -49,6 +49,8 @@ namespace Model
 
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
+    inline bool ShouldComputeContentMd5() const override { return true; }
+
 
     /**
      * <p>The bucket name containing the object. </p> <p>When using this API with an
