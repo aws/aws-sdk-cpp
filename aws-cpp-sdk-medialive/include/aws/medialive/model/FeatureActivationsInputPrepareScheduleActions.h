@@ -14,32 +14,28 @@
 */
 
 #pragma once
-#include <aws/ec2/EC2_EXPORTS.h>
+#include <aws/medialive/MediaLive_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 namespace Aws
 {
-namespace EC2
+namespace MediaLive
 {
 namespace Model
 {
-  enum class VolumeType
+  enum class FeatureActivationsInputPrepareScheduleActions
   {
     NOT_SET,
-    standard,
-    io1,
-    io2,
-    gp2,
-    sc1,
-    st1
+    DISABLED,
+    ENABLED
   };
 
-namespace VolumeTypeMapper
+namespace FeatureActivationsInputPrepareScheduleActionsMapper
 {
-AWS_EC2_API VolumeType GetVolumeTypeForName(const Aws::String& name);
+AWS_MEDIALIVE_API FeatureActivationsInputPrepareScheduleActions GetFeatureActivationsInputPrepareScheduleActionsForName(const Aws::String& name);
 
-AWS_EC2_API Aws::String GetNameForVolumeType(VolumeType value);
-} // namespace VolumeTypeMapper
+AWS_MEDIALIVE_API Aws::String GetNameForFeatureActivationsInputPrepareScheduleActions(FeatureActivationsInputPrepareScheduleActions value);
+} // namespace FeatureActivationsInputPrepareScheduleActionsMapper
 } // namespace Model
-} // namespace EC2
+} // namespace MediaLive
 } // namespace Aws

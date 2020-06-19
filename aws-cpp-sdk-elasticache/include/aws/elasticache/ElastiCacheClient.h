@@ -1973,7 +1973,7 @@ namespace Model
 
         /**
          * <p>Used to failover the primary region to a selected secondary region. The
-         * selected secondary region will be come primary, and all other clusters will
+         * selected secondary region will become primary, and all other clusters will
          * become secondary.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/FailoverGlobalReplicationGroup">AWS
          * API Reference</a></p>
@@ -1982,7 +1982,7 @@ namespace Model
 
         /**
          * <p>Used to failover the primary region to a selected secondary region. The
-         * selected secondary region will be come primary, and all other clusters will
+         * selected secondary region will become primary, and all other clusters will
          * become secondary.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/FailoverGlobalReplicationGroup">AWS
          * API Reference</a></p>
@@ -1993,7 +1993,7 @@ namespace Model
 
         /**
          * <p>Used to failover the primary region to a selected secondary region. The
-         * selected secondary region will be come primary, and all other clusters will
+         * selected secondary region will become primary, and all other clusters will
          * become secondary.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/FailoverGlobalReplicationGroup">AWS
          * API Reference</a></p>

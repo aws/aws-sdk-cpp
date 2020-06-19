@@ -309,16 +309,36 @@ namespace Model
     inline ModifyReplicationGroupRequest& WithAutomaticFailoverEnabled(bool value) { SetAutomaticFailoverEnabled(value); return *this;}
 
 
-    
+    /**
+     * <p>A flag indicating if you have Multi-AZ enabled to enhance fault tolerance.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/AutoFailover.html">Minimizing
+     * Downtime: Multi-AZ</a>.</p>
+     */
     inline bool GetMultiAZEnabled() const{ return m_multiAZEnabled; }
 
-    
+    /**
+     * <p>A flag indicating if you have Multi-AZ enabled to enhance fault tolerance.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/AutoFailover.html">Minimizing
+     * Downtime: Multi-AZ</a>.</p>
+     */
     inline bool MultiAZEnabledHasBeenSet() const { return m_multiAZEnabledHasBeenSet; }
 
-    
+    /**
+     * <p>A flag indicating if you have Multi-AZ enabled to enhance fault tolerance.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/AutoFailover.html">Minimizing
+     * Downtime: Multi-AZ</a>.</p>
+     */
     inline void SetMultiAZEnabled(bool value) { m_multiAZEnabledHasBeenSet = true; m_multiAZEnabled = value; }
 
-    
+    /**
+     * <p>A flag indicating if you have Multi-AZ enabled to enhance fault tolerance.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/AutoFailover.html">Minimizing
+     * Downtime: Multi-AZ</a>.</p>
+     */
     inline ModifyReplicationGroupRequest& WithMultiAZEnabled(bool value) { SetMultiAZEnabled(value); return *this;}
 
 

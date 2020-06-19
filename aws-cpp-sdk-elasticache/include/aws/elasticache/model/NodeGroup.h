@@ -129,49 +129,49 @@ namespace Model
 
     /**
      * <p>The current state of this replication group - <code>creating</code>,
-     * <code>available</code>, etc.</p>
+     * <code>available</code>, <code>modifying</code>, <code>deleting</code>.</p>
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
 
     /**
      * <p>The current state of this replication group - <code>creating</code>,
-     * <code>available</code>, etc.</p>
+     * <code>available</code>, <code>modifying</code>, <code>deleting</code>.</p>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
      * <p>The current state of this replication group - <code>creating</code>,
-     * <code>available</code>, etc.</p>
+     * <code>available</code>, <code>modifying</code>, <code>deleting</code>.</p>
      */
     inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
      * <p>The current state of this replication group - <code>creating</code>,
-     * <code>available</code>, etc.</p>
+     * <code>available</code>, <code>modifying</code>, <code>deleting</code>.</p>
      */
     inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
      * <p>The current state of this replication group - <code>creating</code>,
-     * <code>available</code>, etc.</p>
+     * <code>available</code>, <code>modifying</code>, <code>deleting</code>.</p>
      */
     inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
 
     /**
      * <p>The current state of this replication group - <code>creating</code>,
-     * <code>available</code>, etc.</p>
+     * <code>available</code>, <code>modifying</code>, <code>deleting</code>.</p>
      */
     inline NodeGroup& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
 
     /**
      * <p>The current state of this replication group - <code>creating</code>,
-     * <code>available</code>, etc.</p>
+     * <code>available</code>, <code>modifying</code>, <code>deleting</code>.</p>
      */
     inline NodeGroup& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
 
     /**
      * <p>The current state of this replication group - <code>creating</code>,
-     * <code>available</code>, etc.</p>
+     * <code>available</code>, <code>modifying</code>, <code>deleting</code>.</p>
      */
     inline NodeGroup& WithStatus(const char* value) { SetStatus(value); return *this;}
 

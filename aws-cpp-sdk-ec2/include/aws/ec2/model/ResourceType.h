@@ -31,6 +31,7 @@ namespace Model
     dedicated_host,
     dhcp_options,
     elastic_ip,
+    elastic_gpu,
     fleet,
     fpga_image,
     host_reservation,

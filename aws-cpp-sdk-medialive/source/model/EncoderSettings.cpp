@@ -34,6 +34,7 @@ EncoderSettings::EncoderSettings() :
     m_availConfigurationHasBeenSet(false),
     m_blackoutSlateHasBeenSet(false),
     m_captionDescriptionsHasBeenSet(false),
+    m_featureActivationsHasBeenSet(false),
     m_globalConfigurationHasBeenSet(false),
     m_nielsenConfigurationHasBeenSet(false),
     m_outputGroupsHasBeenSet(false),
@@ -48,6 +49,7 @@ EncoderSettings::EncoderSettings(JsonView jsonValue) :
     m_availConfigurationHasBeenSet(false),
     m_blackoutSlateHasBeenSet(false),
     m_captionDescriptionsHasBeenSet(false),
+    m_featureActivationsHasBeenSet(false),
     m_globalConfigurationHasBeenSet(false),
     m_nielsenConfigurationHasBeenSet(false),
     m_outputGroupsHasBeenSet(false),
@@ -98,6 +100,13 @@ EncoderSettings& EncoderSettings::operator =(JsonView jsonValue)
       m_captionDescriptions.push_back(captionDescriptionsJsonList[captionDescriptionsIndex].AsObject());
     }
     m_captionDescriptionsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("featureActivations"))
+  {
+    m_featureActivations = jsonValue.GetObject("featureActivations");
+
+    m_featureActivationsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("globalConfiguration"))
@@ -185,6 +194,12 @@ JsonValue EncoderSettings::Jsonize() const
      captionDescriptionsJsonList[captionDescriptionsIndex].AsObject(m_captionDescriptions[captionDescriptionsIndex].Jsonize());
    }
    payload.WithArray("captionDescriptions", std::move(captionDescriptionsJsonList));
+
+  }
+
+  if(m_featureActivationsHasBeenSet)
+  {
+   payload.WithObject("featureActivations", m_featureActivations.Jsonize());
 
   }
 

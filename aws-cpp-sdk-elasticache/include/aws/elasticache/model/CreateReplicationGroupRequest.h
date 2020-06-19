@@ -283,74 +283,90 @@ namespace Model
 
     /**
      * <p>Specifies whether a read-only replica is automatically promoted to read/write
-     * primary if the existing primary fails.</p> <p>If <code>true</code>, Multi-AZ is
-     * enabled for this replication group. If <code>false</code>, Multi-AZ is disabled
-     * for this replication group.</p> <p> <code>AutomaticFailoverEnabled</code> must
-     * be enabled for Redis (cluster mode enabled) replication groups.</p> <p>Default:
-     * false</p> <p>Amazon ElastiCache for Redis does not support Multi-AZ with
-     * automatic failover on:</p> <ul> <li> <p>Redis versions earlier than 2.8.6.</p>
-     * </li> <li> <p>Redis (cluster mode disabled): T1 node types.</p> </li> <li>
-     * <p>Redis (cluster mode enabled): T1 node types.</p> </li> </ul>
+     * primary if the existing primary fails.</p> <p>
+     * <code>AutomaticFailoverEnabled</code> must be enabled for Redis (cluster mode
+     * enabled) replication groups.</p> <p>Default: false</p> <p>Amazon ElastiCache for
+     * Redis does not support Multi-AZ with automatic failover on:</p> <ul> <li>
+     * <p>Redis versions earlier than 2.8.6.</p> </li> <li> <p>Redis (cluster mode
+     * disabled): T1 node types.</p> </li> <li> <p>Redis (cluster mode enabled): T1
+     * node types.</p> </li> </ul>
      */
     inline bool GetAutomaticFailoverEnabled() const{ return m_automaticFailoverEnabled; }
 
     /**
      * <p>Specifies whether a read-only replica is automatically promoted to read/write
-     * primary if the existing primary fails.</p> <p>If <code>true</code>, Multi-AZ is
-     * enabled for this replication group. If <code>false</code>, Multi-AZ is disabled
-     * for this replication group.</p> <p> <code>AutomaticFailoverEnabled</code> must
-     * be enabled for Redis (cluster mode enabled) replication groups.</p> <p>Default:
-     * false</p> <p>Amazon ElastiCache for Redis does not support Multi-AZ with
-     * automatic failover on:</p> <ul> <li> <p>Redis versions earlier than 2.8.6.</p>
-     * </li> <li> <p>Redis (cluster mode disabled): T1 node types.</p> </li> <li>
-     * <p>Redis (cluster mode enabled): T1 node types.</p> </li> </ul>
+     * primary if the existing primary fails.</p> <p>
+     * <code>AutomaticFailoverEnabled</code> must be enabled for Redis (cluster mode
+     * enabled) replication groups.</p> <p>Default: false</p> <p>Amazon ElastiCache for
+     * Redis does not support Multi-AZ with automatic failover on:</p> <ul> <li>
+     * <p>Redis versions earlier than 2.8.6.</p> </li> <li> <p>Redis (cluster mode
+     * disabled): T1 node types.</p> </li> <li> <p>Redis (cluster mode enabled): T1
+     * node types.</p> </li> </ul>
      */
     inline bool AutomaticFailoverEnabledHasBeenSet() const { return m_automaticFailoverEnabledHasBeenSet; }
 
     /**
      * <p>Specifies whether a read-only replica is automatically promoted to read/write
-     * primary if the existing primary fails.</p> <p>If <code>true</code>, Multi-AZ is
-     * enabled for this replication group. If <code>false</code>, Multi-AZ is disabled
-     * for this replication group.</p> <p> <code>AutomaticFailoverEnabled</code> must
-     * be enabled for Redis (cluster mode enabled) replication groups.</p> <p>Default:
-     * false</p> <p>Amazon ElastiCache for Redis does not support Multi-AZ with
-     * automatic failover on:</p> <ul> <li> <p>Redis versions earlier than 2.8.6.</p>
-     * </li> <li> <p>Redis (cluster mode disabled): T1 node types.</p> </li> <li>
-     * <p>Redis (cluster mode enabled): T1 node types.</p> </li> </ul>
+     * primary if the existing primary fails.</p> <p>
+     * <code>AutomaticFailoverEnabled</code> must be enabled for Redis (cluster mode
+     * enabled) replication groups.</p> <p>Default: false</p> <p>Amazon ElastiCache for
+     * Redis does not support Multi-AZ with automatic failover on:</p> <ul> <li>
+     * <p>Redis versions earlier than 2.8.6.</p> </li> <li> <p>Redis (cluster mode
+     * disabled): T1 node types.</p> </li> <li> <p>Redis (cluster mode enabled): T1
+     * node types.</p> </li> </ul>
      */
     inline void SetAutomaticFailoverEnabled(bool value) { m_automaticFailoverEnabledHasBeenSet = true; m_automaticFailoverEnabled = value; }
 
     /**
      * <p>Specifies whether a read-only replica is automatically promoted to read/write
-     * primary if the existing primary fails.</p> <p>If <code>true</code>, Multi-AZ is
-     * enabled for this replication group. If <code>false</code>, Multi-AZ is disabled
-     * for this replication group.</p> <p> <code>AutomaticFailoverEnabled</code> must
-     * be enabled for Redis (cluster mode enabled) replication groups.</p> <p>Default:
-     * false</p> <p>Amazon ElastiCache for Redis does not support Multi-AZ with
-     * automatic failover on:</p> <ul> <li> <p>Redis versions earlier than 2.8.6.</p>
-     * </li> <li> <p>Redis (cluster mode disabled): T1 node types.</p> </li> <li>
-     * <p>Redis (cluster mode enabled): T1 node types.</p> </li> </ul>
+     * primary if the existing primary fails.</p> <p>
+     * <code>AutomaticFailoverEnabled</code> must be enabled for Redis (cluster mode
+     * enabled) replication groups.</p> <p>Default: false</p> <p>Amazon ElastiCache for
+     * Redis does not support Multi-AZ with automatic failover on:</p> <ul> <li>
+     * <p>Redis versions earlier than 2.8.6.</p> </li> <li> <p>Redis (cluster mode
+     * disabled): T1 node types.</p> </li> <li> <p>Redis (cluster mode enabled): T1
+     * node types.</p> </li> </ul>
      */
     inline CreateReplicationGroupRequest& WithAutomaticFailoverEnabled(bool value) { SetAutomaticFailoverEnabled(value); return *this;}
 
 
-    
+    /**
+     * <p>A flag indicating if you have Multi-AZ enabled to enhance fault tolerance.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/AutoFailover.html">Minimizing
+     * Downtime: Multi-AZ</a>.</p>
+     */
     inline bool GetMultiAZEnabled() const{ return m_multiAZEnabled; }
 
-    
+    /**
+     * <p>A flag indicating if you have Multi-AZ enabled to enhance fault tolerance.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/AutoFailover.html">Minimizing
+     * Downtime: Multi-AZ</a>.</p>
+     */
     inline bool MultiAZEnabledHasBeenSet() const { return m_multiAZEnabledHasBeenSet; }
 
-    
+    /**
+     * <p>A flag indicating if you have Multi-AZ enabled to enhance fault tolerance.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/AutoFailover.html">Minimizing
+     * Downtime: Multi-AZ</a>.</p>
+     */
     inline void SetMultiAZEnabled(bool value) { m_multiAZEnabledHasBeenSet = true; m_multiAZEnabled = value; }
 
-    
+    /**
+     * <p>A flag indicating if you have Multi-AZ enabled to enhance fault tolerance.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/AutoFailover.html">Minimizing
+     * Downtime: Multi-AZ</a>.</p>
+     */
     inline CreateReplicationGroupRequest& WithMultiAZEnabled(bool value) { SetMultiAZEnabled(value); return *this;}
 
 
     /**
-     * <p>The number of nodes in the cluster.</p> <p>This parameter is not used if
-     * there is more than one node group (shard). You should use
-     * <code>ReplicasPerNodeGroup</code> instead.</p> <p>If
+     * <p>The number of clusters this replication group initially has.</p> <p>This
+     * parameter is not used if there is more than one node group (shard). You should
+     * use <code>ReplicasPerNodeGroup</code> instead.</p> <p>If
      * <code>AutomaticFailoverEnabled</code> is <code>true</code>, the value of this
      * parameter must be at least 2. If <code>AutomaticFailoverEnabled</code> is
      * <code>false</code> you can omit this parameter (it will default to 1), or you
@@ -360,9 +376,9 @@ namespace Model
     inline int GetNumCacheClusters() const{ return m_numCacheClusters; }
 
     /**
-     * <p>The number of nodes in the cluster.</p> <p>This parameter is not used if
-     * there is more than one node group (shard). You should use
-     * <code>ReplicasPerNodeGroup</code> instead.</p> <p>If
+     * <p>The number of clusters this replication group initially has.</p> <p>This
+     * parameter is not used if there is more than one node group (shard). You should
+     * use <code>ReplicasPerNodeGroup</code> instead.</p> <p>If
      * <code>AutomaticFailoverEnabled</code> is <code>true</code>, the value of this
      * parameter must be at least 2. If <code>AutomaticFailoverEnabled</code> is
      * <code>false</code> you can omit this parameter (it will default to 1), or you
@@ -372,9 +388,9 @@ namespace Model
     inline bool NumCacheClustersHasBeenSet() const { return m_numCacheClustersHasBeenSet; }
 
     /**
-     * <p>The number of nodes in the cluster.</p> <p>This parameter is not used if
-     * there is more than one node group (shard). You should use
-     * <code>ReplicasPerNodeGroup</code> instead.</p> <p>If
+     * <p>The number of clusters this replication group initially has.</p> <p>This
+     * parameter is not used if there is more than one node group (shard). You should
+     * use <code>ReplicasPerNodeGroup</code> instead.</p> <p>If
      * <code>AutomaticFailoverEnabled</code> is <code>true</code>, the value of this
      * parameter must be at least 2. If <code>AutomaticFailoverEnabled</code> is
      * <code>false</code> you can omit this parameter (it will default to 1), or you
@@ -384,9 +400,9 @@ namespace Model
     inline void SetNumCacheClusters(int value) { m_numCacheClustersHasBeenSet = true; m_numCacheClusters = value; }
 
     /**
-     * <p>The number of nodes in the cluster.</p> <p>This parameter is not used if
-     * there is more than one node group (shard). You should use
-     * <code>ReplicasPerNodeGroup</code> instead.</p> <p>If
+     * <p>The number of clusters this replication group initially has.</p> <p>This
+     * parameter is not used if there is more than one node group (shard). You should
+     * use <code>ReplicasPerNodeGroup</code> instead.</p> <p>If
      * <code>AutomaticFailoverEnabled</code> is <code>true</code>, the value of this
      * parameter must be at least 2. If <code>AutomaticFailoverEnabled</code> is
      * <code>false</code> you can omit this parameter (it will default to 1), or you

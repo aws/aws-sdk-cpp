@@ -280,8 +280,8 @@ namespace Model
 
     /**
      * <p>The EC2 Availability Zone in which the cluster is created.</p> <p>All nodes
-     * belonging to this Memcached cluster are placed in the preferred Availability
-     * Zone. If you want to create your nodes across multiple Availability Zones, use
+     * belonging to this cluster are placed in the preferred Availability Zone. If you
+     * want to create your nodes across multiple Availability Zones, use
      * <code>PreferredAvailabilityZones</code>.</p> <p>Default: System chosen
      * Availability Zone.</p>
      */
@@ -289,8 +289,8 @@ namespace Model
 
     /**
      * <p>The EC2 Availability Zone in which the cluster is created.</p> <p>All nodes
-     * belonging to this Memcached cluster are placed in the preferred Availability
-     * Zone. If you want to create your nodes across multiple Availability Zones, use
+     * belonging to this cluster are placed in the preferred Availability Zone. If you
+     * want to create your nodes across multiple Availability Zones, use
      * <code>PreferredAvailabilityZones</code>.</p> <p>Default: System chosen
      * Availability Zone.</p>
      */
@@ -298,8 +298,8 @@ namespace Model
 
     /**
      * <p>The EC2 Availability Zone in which the cluster is created.</p> <p>All nodes
-     * belonging to this Memcached cluster are placed in the preferred Availability
-     * Zone. If you want to create your nodes across multiple Availability Zones, use
+     * belonging to this cluster are placed in the preferred Availability Zone. If you
+     * want to create your nodes across multiple Availability Zones, use
      * <code>PreferredAvailabilityZones</code>.</p> <p>Default: System chosen
      * Availability Zone.</p>
      */
@@ -307,8 +307,8 @@ namespace Model
 
     /**
      * <p>The EC2 Availability Zone in which the cluster is created.</p> <p>All nodes
-     * belonging to this Memcached cluster are placed in the preferred Availability
-     * Zone. If you want to create your nodes across multiple Availability Zones, use
+     * belonging to this cluster are placed in the preferred Availability Zone. If you
+     * want to create your nodes across multiple Availability Zones, use
      * <code>PreferredAvailabilityZones</code>.</p> <p>Default: System chosen
      * Availability Zone.</p>
      */
@@ -316,8 +316,8 @@ namespace Model
 
     /**
      * <p>The EC2 Availability Zone in which the cluster is created.</p> <p>All nodes
-     * belonging to this Memcached cluster are placed in the preferred Availability
-     * Zone. If you want to create your nodes across multiple Availability Zones, use
+     * belonging to this cluster are placed in the preferred Availability Zone. If you
+     * want to create your nodes across multiple Availability Zones, use
      * <code>PreferredAvailabilityZones</code>.</p> <p>Default: System chosen
      * Availability Zone.</p>
      */
@@ -325,8 +325,8 @@ namespace Model
 
     /**
      * <p>The EC2 Availability Zone in which the cluster is created.</p> <p>All nodes
-     * belonging to this Memcached cluster are placed in the preferred Availability
-     * Zone. If you want to create your nodes across multiple Availability Zones, use
+     * belonging to this cluster are placed in the preferred Availability Zone. If you
+     * want to create your nodes across multiple Availability Zones, use
      * <code>PreferredAvailabilityZones</code>.</p> <p>Default: System chosen
      * Availability Zone.</p>
      */
@@ -334,8 +334,8 @@ namespace Model
 
     /**
      * <p>The EC2 Availability Zone in which the cluster is created.</p> <p>All nodes
-     * belonging to this Memcached cluster are placed in the preferred Availability
-     * Zone. If you want to create your nodes across multiple Availability Zones, use
+     * belonging to this cluster are placed in the preferred Availability Zone. If you
+     * want to create your nodes across multiple Availability Zones, use
      * <code>PreferredAvailabilityZones</code>.</p> <p>Default: System chosen
      * Availability Zone.</p>
      */
@@ -343,8 +343,8 @@ namespace Model
 
     /**
      * <p>The EC2 Availability Zone in which the cluster is created.</p> <p>All nodes
-     * belonging to this Memcached cluster are placed in the preferred Availability
-     * Zone. If you want to create your nodes across multiple Availability Zones, use
+     * belonging to this cluster are placed in the preferred Availability Zone. If you
+     * want to create your nodes across multiple Availability Zones, use
      * <code>PreferredAvailabilityZones</code>.</p> <p>Default: System chosen
      * Availability Zone.</p>
      */

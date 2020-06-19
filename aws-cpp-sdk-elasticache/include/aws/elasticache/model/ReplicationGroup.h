@@ -495,22 +495,52 @@ namespace Model
     inline ReplicationGroup& WithAutomaticFailover(AutomaticFailoverStatus&& value) { SetAutomaticFailover(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p>A flag indicating if you have Multi-AZ enabled to enhance fault tolerance.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/AutoFailover.html">Minimizing
+     * Downtime: Multi-AZ</a> </p>
+     */
     inline const MultiAZStatus& GetMultiAZ() const{ return m_multiAZ; }
 
-    
+    /**
+     * <p>A flag indicating if you have Multi-AZ enabled to enhance fault tolerance.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/AutoFailover.html">Minimizing
+     * Downtime: Multi-AZ</a> </p>
+     */
     inline bool MultiAZHasBeenSet() const { return m_multiAZHasBeenSet; }
 
-    
+    /**
+     * <p>A flag indicating if you have Multi-AZ enabled to enhance fault tolerance.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/AutoFailover.html">Minimizing
+     * Downtime: Multi-AZ</a> </p>
+     */
     inline void SetMultiAZ(const MultiAZStatus& value) { m_multiAZHasBeenSet = true; m_multiAZ = value; }
 
-    
+    /**
+     * <p>A flag indicating if you have Multi-AZ enabled to enhance fault tolerance.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/AutoFailover.html">Minimizing
+     * Downtime: Multi-AZ</a> </p>
+     */
     inline void SetMultiAZ(MultiAZStatus&& value) { m_multiAZHasBeenSet = true; m_multiAZ = std::move(value); }
 
-    
+    /**
+     * <p>A flag indicating if you have Multi-AZ enabled to enhance fault tolerance.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/AutoFailover.html">Minimizing
+     * Downtime: Multi-AZ</a> </p>
+     */
     inline ReplicationGroup& WithMultiAZ(const MultiAZStatus& value) { SetMultiAZ(value); return *this;}
 
-    
+    /**
+     * <p>A flag indicating if you have Multi-AZ enabled to enhance fault tolerance.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/AutoFailover.html">Minimizing
+     * Downtime: Multi-AZ</a> </p>
+     */
     inline ReplicationGroup& WithMultiAZ(MultiAZStatus&& value) { SetMultiAZ(std::move(value)); return *this;}
 
 

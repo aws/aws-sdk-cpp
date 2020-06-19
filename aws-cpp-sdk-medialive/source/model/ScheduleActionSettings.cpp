@@ -31,6 +31,7 @@ namespace Model
 ScheduleActionSettings::ScheduleActionSettings() : 
     m_hlsId3SegmentTaggingSettingsHasBeenSet(false),
     m_hlsTimedMetadataSettingsHasBeenSet(false),
+    m_inputPrepareSettingsHasBeenSet(false),
     m_inputSwitchSettingsHasBeenSet(false),
     m_pauseStateSettingsHasBeenSet(false),
     m_scte35ReturnToNetworkSettingsHasBeenSet(false),
@@ -44,6 +45,7 @@ ScheduleActionSettings::ScheduleActionSettings() :
 ScheduleActionSettings::ScheduleActionSettings(JsonView jsonValue) : 
     m_hlsId3SegmentTaggingSettingsHasBeenSet(false),
     m_hlsTimedMetadataSettingsHasBeenSet(false),
+    m_inputPrepareSettingsHasBeenSet(false),
     m_inputSwitchSettingsHasBeenSet(false),
     m_pauseStateSettingsHasBeenSet(false),
     m_scte35ReturnToNetworkSettingsHasBeenSet(false),
@@ -69,6 +71,13 @@ ScheduleActionSettings& ScheduleActionSettings::operator =(JsonView jsonValue)
     m_hlsTimedMetadataSettings = jsonValue.GetObject("hlsTimedMetadataSettings");
 
     m_hlsTimedMetadataSettingsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("inputPrepareSettings"))
+  {
+    m_inputPrepareSettings = jsonValue.GetObject("inputPrepareSettings");
+
+    m_inputPrepareSettingsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("inputSwitchSettings"))
@@ -136,6 +145,12 @@ JsonValue ScheduleActionSettings::Jsonize() const
   if(m_hlsTimedMetadataSettingsHasBeenSet)
   {
    payload.WithObject("hlsTimedMetadataSettings", m_hlsTimedMetadataSettings.Jsonize());
+
+  }
+
+  if(m_inputPrepareSettingsHasBeenSet)
+  {
+   payload.WithObject("inputPrepareSettings", m_inputPrepareSettings.Jsonize());
 
   }
 

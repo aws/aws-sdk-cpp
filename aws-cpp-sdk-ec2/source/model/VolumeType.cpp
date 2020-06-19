@@ -32,6 +32,7 @@ namespace Aws
 
         static const int standard_HASH = HashingUtils::HashString("standard");
         static const int io1_HASH = HashingUtils::HashString("io1");
+        static const int io2_HASH = HashingUtils::HashString("io2");
         static const int gp2_HASH = HashingUtils::HashString("gp2");
         static const int sc1_HASH = HashingUtils::HashString("sc1");
         static const int st1_HASH = HashingUtils::HashString("st1");
@@ -47,6 +48,10 @@ namespace Aws
           else if (hashCode == io1_HASH)
           {
             return VolumeType::io1;
+          }
+          else if (hashCode == io2_HASH)
+          {
+            return VolumeType::io2;
           }
           else if (hashCode == gp2_HASH)
           {
@@ -78,6 +83,8 @@ namespace Aws
             return "standard";
           case VolumeType::io1:
             return "io1";
+          case VolumeType::io2:
+            return "io2";
           case VolumeType::gp2:
             return "gp2";
           case VolumeType::sc1:

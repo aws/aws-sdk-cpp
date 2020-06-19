@@ -35,6 +35,7 @@ namespace Aws
         static const int dedicated_host_HASH = HashingUtils::HashString("dedicated-host");
         static const int dhcp_options_HASH = HashingUtils::HashString("dhcp-options");
         static const int elastic_ip_HASH = HashingUtils::HashString("elastic-ip");
+        static const int elastic_gpu_HASH = HashingUtils::HashString("elastic-gpu");
         static const int fleet_HASH = HashingUtils::HashString("fleet");
         static const int fpga_image_HASH = HashingUtils::HashString("fpga-image");
         static const int host_reservation_HASH = HashingUtils::HashString("host-reservation");
@@ -91,6 +92,10 @@ namespace Aws
           else if (hashCode == elastic_ip_HASH)
           {
             return ResourceType::elastic_ip;
+          }
+          else if (hashCode == elastic_gpu_HASH)
+          {
+            return ResourceType::elastic_gpu;
           }
           else if (hashCode == fleet_HASH)
           {
@@ -244,6 +249,8 @@ namespace Aws
             return "dhcp-options";
           case ResourceType::elastic_ip:
             return "elastic-ip";
+          case ResourceType::elastic_gpu:
+            return "elastic-gpu";
           case ResourceType::fleet:
             return "fleet";
           case ResourceType::fpga_image:
