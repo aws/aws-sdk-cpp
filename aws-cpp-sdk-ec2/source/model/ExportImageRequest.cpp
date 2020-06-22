@@ -30,7 +30,8 @@ ExportImageRequest::ExportImageRequest() :
     m_dryRunHasBeenSet(false),
     m_imageIdHasBeenSet(false),
     m_s3ExportLocationHasBeenSet(false),
-    m_roleNameHasBeenSet(false)
+    m_roleNameHasBeenSet(false),
+    m_tagSpecificationsHasBeenSet(false)
 {
 }
 
@@ -71,6 +72,16 @@ Aws::String ExportImageRequest::SerializePayload() const
   if(m_roleNameHasBeenSet)
   {
     ss << "RoleName=" << StringUtils::URLEncode(m_roleName.c_str()) << "&";
+  }
+
+  if(m_tagSpecificationsHasBeenSet)
+  {
+    unsigned tagSpecificationsCount = 1;
+    for(auto& item : m_tagSpecifications)
+    {
+      item.OutputToStream(ss, "TagSpecification.", tagSpecificationsCount, "");
+      tagSpecificationsCount++;
+    }
   }
 
   ss << "Version=2016-11-15";

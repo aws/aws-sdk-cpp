@@ -21,7 +21,10 @@ using namespace Aws::SQS::Model;
 using namespace Aws::Utils;
 
 ListQueuesRequest::ListQueuesRequest() : 
-    m_queueNamePrefixHasBeenSet(false)
+    m_queueNamePrefixHasBeenSet(false),
+    m_nextTokenHasBeenSet(false),
+    m_maxResults(0),
+    m_maxResultsHasBeenSet(false)
 {
 }
 
@@ -32,6 +35,16 @@ Aws::String ListQueuesRequest::SerializePayload() const
   if(m_queueNamePrefixHasBeenSet)
   {
     ss << "QueueNamePrefix=" << StringUtils::URLEncode(m_queueNamePrefix.c_str()) << "&";
+  }
+
+  if(m_nextTokenHasBeenSet)
+  {
+    ss << "NextToken=" << StringUtils::URLEncode(m_nextToken.c_str()) << "&";
+  }
+
+  if(m_maxResultsHasBeenSet)
+  {
+    ss << "MaxResults=" << m_maxResults << "&";
   }
 
   ss << "Version=2012-11-05";

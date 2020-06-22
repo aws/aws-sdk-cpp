@@ -102,208 +102,208 @@ namespace Model
 
     /**
      * <p>A list of attributes that need to be returned along with each message. These
-     * attributes include:</p> <ul> <li> <p> <code>All</code> - Returns all values.</p>
-     * </li> <li> <p> <code>ApproximateFirstReceiveTimestamp</code> - Returns the time
+     * attributes include:</p> <ul> <li> <p> <code>All</code> – Returns all values.</p>
+     * </li> <li> <p> <code>ApproximateFirstReceiveTimestamp</code> – Returns the time
      * the message was first received from the queue (<a
      * href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a> in
-     * milliseconds).</p> </li> <li> <p> <code>ApproximateReceiveCount</code> - Returns
-     * the number of times a message has been received from the queue but not
-     * deleted.</p> </li> <li> <p> <code>AWSTraceHeader</code> - Returns the AWS X-Ray
+     * milliseconds).</p> </li> <li> <p> <code>ApproximateReceiveCount</code> – Returns
+     * the number of times a message has been received across all queues but not
+     * deleted.</p> </li> <li> <p> <code>AWSTraceHeader</code> – Returns the AWS X-Ray
      * trace header string. </p> </li> <li> <p> <code>SenderId</code> </p> <ul> <li>
      * <p>For an IAM user, returns the IAM user ID, for example
      * <code>ABCDEFGHI1JKLMNOPQ23R</code>.</p> </li> <li> <p>For an IAM role, returns
      * the IAM role ID, for example <code>ABCDE1F2GH3I4JK5LMNOP:i-a123b456</code>.</p>
-     * </li> </ul> </li> <li> <p> <code>SentTimestamp</code> - Returns the time the
+     * </li> </ul> </li> <li> <p> <code>SentTimestamp</code> – Returns the time the
      * message was sent to the queue (<a
      * href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a> in
-     * milliseconds).</p> </li> <li> <p> <code>MessageDeduplicationId</code> - Returns
+     * milliseconds).</p> </li> <li> <p> <code>MessageDeduplicationId</code> – Returns
      * the value provided by the producer that calls the <code> <a>SendMessage</a>
-     * </code> action.</p> </li> <li> <p> <code>MessageGroupId</code> - Returns the
+     * </code> action.</p> </li> <li> <p> <code>MessageGroupId</code> – Returns the
      * value provided by the producer that calls the <code> <a>SendMessage</a> </code>
      * action. Messages with the same <code>MessageGroupId</code> are returned in
-     * sequence.</p> </li> <li> <p> <code>SequenceNumber</code> - Returns the value
+     * sequence.</p> </li> <li> <p> <code>SequenceNumber</code> – Returns the value
      * provided by Amazon SQS.</p> </li> </ul>
      */
     inline const Aws::Vector<QueueAttributeName>& GetAttributeNames() const{ return m_attributeNames; }
 
     /**
      * <p>A list of attributes that need to be returned along with each message. These
-     * attributes include:</p> <ul> <li> <p> <code>All</code> - Returns all values.</p>
-     * </li> <li> <p> <code>ApproximateFirstReceiveTimestamp</code> - Returns the time
+     * attributes include:</p> <ul> <li> <p> <code>All</code> – Returns all values.</p>
+     * </li> <li> <p> <code>ApproximateFirstReceiveTimestamp</code> – Returns the time
      * the message was first received from the queue (<a
      * href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a> in
-     * milliseconds).</p> </li> <li> <p> <code>ApproximateReceiveCount</code> - Returns
-     * the number of times a message has been received from the queue but not
-     * deleted.</p> </li> <li> <p> <code>AWSTraceHeader</code> - Returns the AWS X-Ray
+     * milliseconds).</p> </li> <li> <p> <code>ApproximateReceiveCount</code> – Returns
+     * the number of times a message has been received across all queues but not
+     * deleted.</p> </li> <li> <p> <code>AWSTraceHeader</code> – Returns the AWS X-Ray
      * trace header string. </p> </li> <li> <p> <code>SenderId</code> </p> <ul> <li>
      * <p>For an IAM user, returns the IAM user ID, for example
      * <code>ABCDEFGHI1JKLMNOPQ23R</code>.</p> </li> <li> <p>For an IAM role, returns
      * the IAM role ID, for example <code>ABCDE1F2GH3I4JK5LMNOP:i-a123b456</code>.</p>
-     * </li> </ul> </li> <li> <p> <code>SentTimestamp</code> - Returns the time the
+     * </li> </ul> </li> <li> <p> <code>SentTimestamp</code> – Returns the time the
      * message was sent to the queue (<a
      * href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a> in
-     * milliseconds).</p> </li> <li> <p> <code>MessageDeduplicationId</code> - Returns
+     * milliseconds).</p> </li> <li> <p> <code>MessageDeduplicationId</code> – Returns
      * the value provided by the producer that calls the <code> <a>SendMessage</a>
-     * </code> action.</p> </li> <li> <p> <code>MessageGroupId</code> - Returns the
+     * </code> action.</p> </li> <li> <p> <code>MessageGroupId</code> – Returns the
      * value provided by the producer that calls the <code> <a>SendMessage</a> </code>
      * action. Messages with the same <code>MessageGroupId</code> are returned in
-     * sequence.</p> </li> <li> <p> <code>SequenceNumber</code> - Returns the value
+     * sequence.</p> </li> <li> <p> <code>SequenceNumber</code> – Returns the value
      * provided by Amazon SQS.</p> </li> </ul>
      */
     inline bool AttributeNamesHasBeenSet() const { return m_attributeNamesHasBeenSet; }
 
     /**
      * <p>A list of attributes that need to be returned along with each message. These
-     * attributes include:</p> <ul> <li> <p> <code>All</code> - Returns all values.</p>
-     * </li> <li> <p> <code>ApproximateFirstReceiveTimestamp</code> - Returns the time
+     * attributes include:</p> <ul> <li> <p> <code>All</code> – Returns all values.</p>
+     * </li> <li> <p> <code>ApproximateFirstReceiveTimestamp</code> – Returns the time
      * the message was first received from the queue (<a
      * href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a> in
-     * milliseconds).</p> </li> <li> <p> <code>ApproximateReceiveCount</code> - Returns
-     * the number of times a message has been received from the queue but not
-     * deleted.</p> </li> <li> <p> <code>AWSTraceHeader</code> - Returns the AWS X-Ray
+     * milliseconds).</p> </li> <li> <p> <code>ApproximateReceiveCount</code> – Returns
+     * the number of times a message has been received across all queues but not
+     * deleted.</p> </li> <li> <p> <code>AWSTraceHeader</code> – Returns the AWS X-Ray
      * trace header string. </p> </li> <li> <p> <code>SenderId</code> </p> <ul> <li>
      * <p>For an IAM user, returns the IAM user ID, for example
      * <code>ABCDEFGHI1JKLMNOPQ23R</code>.</p> </li> <li> <p>For an IAM role, returns
      * the IAM role ID, for example <code>ABCDE1F2GH3I4JK5LMNOP:i-a123b456</code>.</p>
-     * </li> </ul> </li> <li> <p> <code>SentTimestamp</code> - Returns the time the
+     * </li> </ul> </li> <li> <p> <code>SentTimestamp</code> – Returns the time the
      * message was sent to the queue (<a
      * href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a> in
-     * milliseconds).</p> </li> <li> <p> <code>MessageDeduplicationId</code> - Returns
+     * milliseconds).</p> </li> <li> <p> <code>MessageDeduplicationId</code> – Returns
      * the value provided by the producer that calls the <code> <a>SendMessage</a>
-     * </code> action.</p> </li> <li> <p> <code>MessageGroupId</code> - Returns the
+     * </code> action.</p> </li> <li> <p> <code>MessageGroupId</code> – Returns the
      * value provided by the producer that calls the <code> <a>SendMessage</a> </code>
      * action. Messages with the same <code>MessageGroupId</code> are returned in
-     * sequence.</p> </li> <li> <p> <code>SequenceNumber</code> - Returns the value
+     * sequence.</p> </li> <li> <p> <code>SequenceNumber</code> – Returns the value
      * provided by Amazon SQS.</p> </li> </ul>
      */
     inline void SetAttributeNames(const Aws::Vector<QueueAttributeName>& value) { m_attributeNamesHasBeenSet = true; m_attributeNames = value; }
 
     /**
      * <p>A list of attributes that need to be returned along with each message. These
-     * attributes include:</p> <ul> <li> <p> <code>All</code> - Returns all values.</p>
-     * </li> <li> <p> <code>ApproximateFirstReceiveTimestamp</code> - Returns the time
+     * attributes include:</p> <ul> <li> <p> <code>All</code> – Returns all values.</p>
+     * </li> <li> <p> <code>ApproximateFirstReceiveTimestamp</code> – Returns the time
      * the message was first received from the queue (<a
      * href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a> in
-     * milliseconds).</p> </li> <li> <p> <code>ApproximateReceiveCount</code> - Returns
-     * the number of times a message has been received from the queue but not
-     * deleted.</p> </li> <li> <p> <code>AWSTraceHeader</code> - Returns the AWS X-Ray
+     * milliseconds).</p> </li> <li> <p> <code>ApproximateReceiveCount</code> – Returns
+     * the number of times a message has been received across all queues but not
+     * deleted.</p> </li> <li> <p> <code>AWSTraceHeader</code> – Returns the AWS X-Ray
      * trace header string. </p> </li> <li> <p> <code>SenderId</code> </p> <ul> <li>
      * <p>For an IAM user, returns the IAM user ID, for example
      * <code>ABCDEFGHI1JKLMNOPQ23R</code>.</p> </li> <li> <p>For an IAM role, returns
      * the IAM role ID, for example <code>ABCDE1F2GH3I4JK5LMNOP:i-a123b456</code>.</p>
-     * </li> </ul> </li> <li> <p> <code>SentTimestamp</code> - Returns the time the
+     * </li> </ul> </li> <li> <p> <code>SentTimestamp</code> – Returns the time the
      * message was sent to the queue (<a
      * href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a> in
-     * milliseconds).</p> </li> <li> <p> <code>MessageDeduplicationId</code> - Returns
+     * milliseconds).</p> </li> <li> <p> <code>MessageDeduplicationId</code> – Returns
      * the value provided by the producer that calls the <code> <a>SendMessage</a>
-     * </code> action.</p> </li> <li> <p> <code>MessageGroupId</code> - Returns the
+     * </code> action.</p> </li> <li> <p> <code>MessageGroupId</code> – Returns the
      * value provided by the producer that calls the <code> <a>SendMessage</a> </code>
      * action. Messages with the same <code>MessageGroupId</code> are returned in
-     * sequence.</p> </li> <li> <p> <code>SequenceNumber</code> - Returns the value
+     * sequence.</p> </li> <li> <p> <code>SequenceNumber</code> – Returns the value
      * provided by Amazon SQS.</p> </li> </ul>
      */
     inline void SetAttributeNames(Aws::Vector<QueueAttributeName>&& value) { m_attributeNamesHasBeenSet = true; m_attributeNames = std::move(value); }
 
     /**
      * <p>A list of attributes that need to be returned along with each message. These
-     * attributes include:</p> <ul> <li> <p> <code>All</code> - Returns all values.</p>
-     * </li> <li> <p> <code>ApproximateFirstReceiveTimestamp</code> - Returns the time
+     * attributes include:</p> <ul> <li> <p> <code>All</code> – Returns all values.</p>
+     * </li> <li> <p> <code>ApproximateFirstReceiveTimestamp</code> – Returns the time
      * the message was first received from the queue (<a
      * href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a> in
-     * milliseconds).</p> </li> <li> <p> <code>ApproximateReceiveCount</code> - Returns
-     * the number of times a message has been received from the queue but not
-     * deleted.</p> </li> <li> <p> <code>AWSTraceHeader</code> - Returns the AWS X-Ray
+     * milliseconds).</p> </li> <li> <p> <code>ApproximateReceiveCount</code> – Returns
+     * the number of times a message has been received across all queues but not
+     * deleted.</p> </li> <li> <p> <code>AWSTraceHeader</code> – Returns the AWS X-Ray
      * trace header string. </p> </li> <li> <p> <code>SenderId</code> </p> <ul> <li>
      * <p>For an IAM user, returns the IAM user ID, for example
      * <code>ABCDEFGHI1JKLMNOPQ23R</code>.</p> </li> <li> <p>For an IAM role, returns
      * the IAM role ID, for example <code>ABCDE1F2GH3I4JK5LMNOP:i-a123b456</code>.</p>
-     * </li> </ul> </li> <li> <p> <code>SentTimestamp</code> - Returns the time the
+     * </li> </ul> </li> <li> <p> <code>SentTimestamp</code> – Returns the time the
      * message was sent to the queue (<a
      * href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a> in
-     * milliseconds).</p> </li> <li> <p> <code>MessageDeduplicationId</code> - Returns
+     * milliseconds).</p> </li> <li> <p> <code>MessageDeduplicationId</code> – Returns
      * the value provided by the producer that calls the <code> <a>SendMessage</a>
-     * </code> action.</p> </li> <li> <p> <code>MessageGroupId</code> - Returns the
+     * </code> action.</p> </li> <li> <p> <code>MessageGroupId</code> – Returns the
      * value provided by the producer that calls the <code> <a>SendMessage</a> </code>
      * action. Messages with the same <code>MessageGroupId</code> are returned in
-     * sequence.</p> </li> <li> <p> <code>SequenceNumber</code> - Returns the value
+     * sequence.</p> </li> <li> <p> <code>SequenceNumber</code> – Returns the value
      * provided by Amazon SQS.</p> </li> </ul>
      */
     inline ReceiveMessageRequest& WithAttributeNames(const Aws::Vector<QueueAttributeName>& value) { SetAttributeNames(value); return *this;}
 
     /**
      * <p>A list of attributes that need to be returned along with each message. These
-     * attributes include:</p> <ul> <li> <p> <code>All</code> - Returns all values.</p>
-     * </li> <li> <p> <code>ApproximateFirstReceiveTimestamp</code> - Returns the time
+     * attributes include:</p> <ul> <li> <p> <code>All</code> – Returns all values.</p>
+     * </li> <li> <p> <code>ApproximateFirstReceiveTimestamp</code> – Returns the time
      * the message was first received from the queue (<a
      * href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a> in
-     * milliseconds).</p> </li> <li> <p> <code>ApproximateReceiveCount</code> - Returns
-     * the number of times a message has been received from the queue but not
-     * deleted.</p> </li> <li> <p> <code>AWSTraceHeader</code> - Returns the AWS X-Ray
+     * milliseconds).</p> </li> <li> <p> <code>ApproximateReceiveCount</code> – Returns
+     * the number of times a message has been received across all queues but not
+     * deleted.</p> </li> <li> <p> <code>AWSTraceHeader</code> – Returns the AWS X-Ray
      * trace header string. </p> </li> <li> <p> <code>SenderId</code> </p> <ul> <li>
      * <p>For an IAM user, returns the IAM user ID, for example
      * <code>ABCDEFGHI1JKLMNOPQ23R</code>.</p> </li> <li> <p>For an IAM role, returns
      * the IAM role ID, for example <code>ABCDE1F2GH3I4JK5LMNOP:i-a123b456</code>.</p>
-     * </li> </ul> </li> <li> <p> <code>SentTimestamp</code> - Returns the time the
+     * </li> </ul> </li> <li> <p> <code>SentTimestamp</code> – Returns the time the
      * message was sent to the queue (<a
      * href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a> in
-     * milliseconds).</p> </li> <li> <p> <code>MessageDeduplicationId</code> - Returns
+     * milliseconds).</p> </li> <li> <p> <code>MessageDeduplicationId</code> – Returns
      * the value provided by the producer that calls the <code> <a>SendMessage</a>
-     * </code> action.</p> </li> <li> <p> <code>MessageGroupId</code> - Returns the
+     * </code> action.</p> </li> <li> <p> <code>MessageGroupId</code> – Returns the
      * value provided by the producer that calls the <code> <a>SendMessage</a> </code>
      * action. Messages with the same <code>MessageGroupId</code> are returned in
-     * sequence.</p> </li> <li> <p> <code>SequenceNumber</code> - Returns the value
+     * sequence.</p> </li> <li> <p> <code>SequenceNumber</code> – Returns the value
      * provided by Amazon SQS.</p> </li> </ul>
      */
     inline ReceiveMessageRequest& WithAttributeNames(Aws::Vector<QueueAttributeName>&& value) { SetAttributeNames(std::move(value)); return *this;}
 
     /**
      * <p>A list of attributes that need to be returned along with each message. These
-     * attributes include:</p> <ul> <li> <p> <code>All</code> - Returns all values.</p>
-     * </li> <li> <p> <code>ApproximateFirstReceiveTimestamp</code> - Returns the time
+     * attributes include:</p> <ul> <li> <p> <code>All</code> – Returns all values.</p>
+     * </li> <li> <p> <code>ApproximateFirstReceiveTimestamp</code> – Returns the time
      * the message was first received from the queue (<a
      * href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a> in
-     * milliseconds).</p> </li> <li> <p> <code>ApproximateReceiveCount</code> - Returns
-     * the number of times a message has been received from the queue but not
-     * deleted.</p> </li> <li> <p> <code>AWSTraceHeader</code> - Returns the AWS X-Ray
+     * milliseconds).</p> </li> <li> <p> <code>ApproximateReceiveCount</code> – Returns
+     * the number of times a message has been received across all queues but not
+     * deleted.</p> </li> <li> <p> <code>AWSTraceHeader</code> – Returns the AWS X-Ray
      * trace header string. </p> </li> <li> <p> <code>SenderId</code> </p> <ul> <li>
      * <p>For an IAM user, returns the IAM user ID, for example
      * <code>ABCDEFGHI1JKLMNOPQ23R</code>.</p> </li> <li> <p>For an IAM role, returns
      * the IAM role ID, for example <code>ABCDE1F2GH3I4JK5LMNOP:i-a123b456</code>.</p>
-     * </li> </ul> </li> <li> <p> <code>SentTimestamp</code> - Returns the time the
+     * </li> </ul> </li> <li> <p> <code>SentTimestamp</code> – Returns the time the
      * message was sent to the queue (<a
      * href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a> in
-     * milliseconds).</p> </li> <li> <p> <code>MessageDeduplicationId</code> - Returns
+     * milliseconds).</p> </li> <li> <p> <code>MessageDeduplicationId</code> – Returns
      * the value provided by the producer that calls the <code> <a>SendMessage</a>
-     * </code> action.</p> </li> <li> <p> <code>MessageGroupId</code> - Returns the
+     * </code> action.</p> </li> <li> <p> <code>MessageGroupId</code> – Returns the
      * value provided by the producer that calls the <code> <a>SendMessage</a> </code>
      * action. Messages with the same <code>MessageGroupId</code> are returned in
-     * sequence.</p> </li> <li> <p> <code>SequenceNumber</code> - Returns the value
+     * sequence.</p> </li> <li> <p> <code>SequenceNumber</code> – Returns the value
      * provided by Amazon SQS.</p> </li> </ul>
      */
     inline ReceiveMessageRequest& AddAttributeNames(const QueueAttributeName& value) { m_attributeNamesHasBeenSet = true; m_attributeNames.push_back(value); return *this; }
 
     /**
      * <p>A list of attributes that need to be returned along with each message. These
-     * attributes include:</p> <ul> <li> <p> <code>All</code> - Returns all values.</p>
-     * </li> <li> <p> <code>ApproximateFirstReceiveTimestamp</code> - Returns the time
+     * attributes include:</p> <ul> <li> <p> <code>All</code> – Returns all values.</p>
+     * </li> <li> <p> <code>ApproximateFirstReceiveTimestamp</code> – Returns the time
      * the message was first received from the queue (<a
      * href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a> in
-     * milliseconds).</p> </li> <li> <p> <code>ApproximateReceiveCount</code> - Returns
-     * the number of times a message has been received from the queue but not
-     * deleted.</p> </li> <li> <p> <code>AWSTraceHeader</code> - Returns the AWS X-Ray
+     * milliseconds).</p> </li> <li> <p> <code>ApproximateReceiveCount</code> – Returns
+     * the number of times a message has been received across all queues but not
+     * deleted.</p> </li> <li> <p> <code>AWSTraceHeader</code> – Returns the AWS X-Ray
      * trace header string. </p> </li> <li> <p> <code>SenderId</code> </p> <ul> <li>
      * <p>For an IAM user, returns the IAM user ID, for example
      * <code>ABCDEFGHI1JKLMNOPQ23R</code>.</p> </li> <li> <p>For an IAM role, returns
      * the IAM role ID, for example <code>ABCDE1F2GH3I4JK5LMNOP:i-a123b456</code>.</p>
-     * </li> </ul> </li> <li> <p> <code>SentTimestamp</code> - Returns the time the
+     * </li> </ul> </li> <li> <p> <code>SentTimestamp</code> – Returns the time the
      * message was sent to the queue (<a
      * href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a> in
-     * milliseconds).</p> </li> <li> <p> <code>MessageDeduplicationId</code> - Returns
+     * milliseconds).</p> </li> <li> <p> <code>MessageDeduplicationId</code> – Returns
      * the value provided by the producer that calls the <code> <a>SendMessage</a>
-     * </code> action.</p> </li> <li> <p> <code>MessageGroupId</code> - Returns the
+     * </code> action.</p> </li> <li> <p> <code>MessageGroupId</code> – Returns the
      * value provided by the producer that calls the <code> <a>SendMessage</a> </code>
      * action. Messages with the same <code>MessageGroupId</code> are returned in
-     * sequence.</p> </li> <li> <p> <code>SequenceNumber</code> - Returns the value
+     * sequence.</p> </li> <li> <p> <code>SequenceNumber</code> – Returns the value
      * provided by Amazon SQS.</p> </li> </ul>
      */
     inline ReceiveMessageRequest& AddAttributeNames(QueueAttributeName&& value) { m_attributeNamesHasBeenSet = true; m_attributeNames.push_back(std::move(value)); return *this; }
@@ -535,6 +535,14 @@ namespace Model
      * the queue before returning. If a message is available, the call returns sooner
      * than <code>WaitTimeSeconds</code>. If no messages are available and the wait
      * time expires, the call returns successfully with an empty list of messages.</p>
+     * <important> <p>To avoid HTTP errors, ensure that the HTTP response timeout for
+     * <code>ReceiveMessage</code> requests is longer than the
+     * <code>WaitTimeSeconds</code> parameter. For example, with the Java SDK, you can
+     * set HTTP transport settings using the <a
+     * href="https://sdk.amazonaws.com/java/api/latest/software/amazon/awssdk/http/nio/netty/NettyNioAsyncHttpClient.html">
+     * NettyNioAsyncHttpClient</a> for asynchronous clients, or the <a
+     * href="https://sdk.amazonaws.com/java/api/latest/software/amazon/awssdk/http/apache/ApacheHttpClient.html">
+     * ApacheHttpClient</a> for synchronous clients. </p> </important>
      */
     inline int GetWaitTimeSeconds() const{ return m_waitTimeSeconds; }
 
@@ -543,6 +551,14 @@ namespace Model
      * the queue before returning. If a message is available, the call returns sooner
      * than <code>WaitTimeSeconds</code>. If no messages are available and the wait
      * time expires, the call returns successfully with an empty list of messages.</p>
+     * <important> <p>To avoid HTTP errors, ensure that the HTTP response timeout for
+     * <code>ReceiveMessage</code> requests is longer than the
+     * <code>WaitTimeSeconds</code> parameter. For example, with the Java SDK, you can
+     * set HTTP transport settings using the <a
+     * href="https://sdk.amazonaws.com/java/api/latest/software/amazon/awssdk/http/nio/netty/NettyNioAsyncHttpClient.html">
+     * NettyNioAsyncHttpClient</a> for asynchronous clients, or the <a
+     * href="https://sdk.amazonaws.com/java/api/latest/software/amazon/awssdk/http/apache/ApacheHttpClient.html">
+     * ApacheHttpClient</a> for synchronous clients. </p> </important>
      */
     inline bool WaitTimeSecondsHasBeenSet() const { return m_waitTimeSecondsHasBeenSet; }
 
@@ -551,6 +567,14 @@ namespace Model
      * the queue before returning. If a message is available, the call returns sooner
      * than <code>WaitTimeSeconds</code>. If no messages are available and the wait
      * time expires, the call returns successfully with an empty list of messages.</p>
+     * <important> <p>To avoid HTTP errors, ensure that the HTTP response timeout for
+     * <code>ReceiveMessage</code> requests is longer than the
+     * <code>WaitTimeSeconds</code> parameter. For example, with the Java SDK, you can
+     * set HTTP transport settings using the <a
+     * href="https://sdk.amazonaws.com/java/api/latest/software/amazon/awssdk/http/nio/netty/NettyNioAsyncHttpClient.html">
+     * NettyNioAsyncHttpClient</a> for asynchronous clients, or the <a
+     * href="https://sdk.amazonaws.com/java/api/latest/software/amazon/awssdk/http/apache/ApacheHttpClient.html">
+     * ApacheHttpClient</a> for synchronous clients. </p> </important>
      */
     inline void SetWaitTimeSeconds(int value) { m_waitTimeSecondsHasBeenSet = true; m_waitTimeSeconds = value; }
 
@@ -559,6 +583,14 @@ namespace Model
      * the queue before returning. If a message is available, the call returns sooner
      * than <code>WaitTimeSeconds</code>. If no messages are available and the wait
      * time expires, the call returns successfully with an empty list of messages.</p>
+     * <important> <p>To avoid HTTP errors, ensure that the HTTP response timeout for
+     * <code>ReceiveMessage</code> requests is longer than the
+     * <code>WaitTimeSeconds</code> parameter. For example, with the Java SDK, you can
+     * set HTTP transport settings using the <a
+     * href="https://sdk.amazonaws.com/java/api/latest/software/amazon/awssdk/http/nio/netty/NettyNioAsyncHttpClient.html">
+     * NettyNioAsyncHttpClient</a> for asynchronous clients, or the <a
+     * href="https://sdk.amazonaws.com/java/api/latest/software/amazon/awssdk/http/apache/ApacheHttpClient.html">
+     * ApacheHttpClient</a> for synchronous clients. </p> </important>
      */
     inline ReceiveMessageRequest& WithWaitTimeSeconds(int value) { SetWaitTimeSeconds(value); return *this;}
 
@@ -567,17 +599,17 @@ namespace Model
      * <p>This parameter applies only to FIFO (first-in-first-out) queues.</p> <p>The
      * token used for deduplication of <code>ReceiveMessage</code> calls. If a
      * networking issue occurs after a <code>ReceiveMessage</code> action, and instead
-     * of a response you receive a generic error, you can retry the same action with an
-     * identical <code>ReceiveRequestAttemptId</code> to retrieve the same set of
-     * messages, even if their visibility timeout has not yet expired.</p> <ul> <li>
-     * <p>You can use <code>ReceiveRequestAttemptId</code> only for 5 minutes after a
-     * <code>ReceiveMessage</code> action.</p> </li> <li> <p>When you set
+     * of a response you receive a generic error, it is possible to retry the same
+     * action with an identical <code>ReceiveRequestAttemptId</code> to retrieve the
+     * same set of messages, even if their visibility timeout has not yet expired.</p>
+     * <ul> <li> <p>You can use <code>ReceiveRequestAttemptId</code> only for 5 minutes
+     * after a <code>ReceiveMessage</code> action.</p> </li> <li> <p>When you set
      * <code>FifoQueue</code>, a caller of the <code>ReceiveMessage</code> action can
      * provide a <code>ReceiveRequestAttemptId</code> explicitly.</p> </li> <li> <p>If
      * a caller of the <code>ReceiveMessage</code> action doesn't provide a
      * <code>ReceiveRequestAttemptId</code>, Amazon SQS generates a
-     * <code>ReceiveRequestAttemptId</code>.</p> </li> <li> <p>You can retry the
-     * <code>ReceiveMessage</code> action with the same
+     * <code>ReceiveRequestAttemptId</code>.</p> </li> <li> <p>It is possible to retry
+     * the <code>ReceiveMessage</code> action with the same
      * <code>ReceiveRequestAttemptId</code> if none of the messages have been modified
      * (deleted or had their visibility changes).</p> </li> <li> <p>During a visibility
      * timeout, subsequent calls with the same <code>ReceiveRequestAttemptId</code>
@@ -602,7 +634,7 @@ namespace Model
      * <code>ReceiveMessage</code> can't track the
      * <code>ReceiveRequestAttemptId</code>, no retries work until the original
      * visibility timeout expires. As a result, delays might occur but the messages in
-     * the queue remain in a strict order.</p> </li> </ul> <p>The length of
+     * the queue remain in a strict order.</p> </li> </ul> <p>The maximum length of
      * <code>ReceiveRequestAttemptId</code> is 128 characters.
      * <code>ReceiveRequestAttemptId</code> can contain alphanumeric characters
      * (<code>a-z</code>, <code>A-Z</code>, <code>0-9</code>) and punctuation
@@ -618,17 +650,17 @@ namespace Model
      * <p>This parameter applies only to FIFO (first-in-first-out) queues.</p> <p>The
      * token used for deduplication of <code>ReceiveMessage</code> calls. If a
      * networking issue occurs after a <code>ReceiveMessage</code> action, and instead
-     * of a response you receive a generic error, you can retry the same action with an
-     * identical <code>ReceiveRequestAttemptId</code> to retrieve the same set of
-     * messages, even if their visibility timeout has not yet expired.</p> <ul> <li>
-     * <p>You can use <code>ReceiveRequestAttemptId</code> only for 5 minutes after a
-     * <code>ReceiveMessage</code> action.</p> </li> <li> <p>When you set
+     * of a response you receive a generic error, it is possible to retry the same
+     * action with an identical <code>ReceiveRequestAttemptId</code> to retrieve the
+     * same set of messages, even if their visibility timeout has not yet expired.</p>
+     * <ul> <li> <p>You can use <code>ReceiveRequestAttemptId</code> only for 5 minutes
+     * after a <code>ReceiveMessage</code> action.</p> </li> <li> <p>When you set
      * <code>FifoQueue</code>, a caller of the <code>ReceiveMessage</code> action can
      * provide a <code>ReceiveRequestAttemptId</code> explicitly.</p> </li> <li> <p>If
      * a caller of the <code>ReceiveMessage</code> action doesn't provide a
      * <code>ReceiveRequestAttemptId</code>, Amazon SQS generates a
-     * <code>ReceiveRequestAttemptId</code>.</p> </li> <li> <p>You can retry the
-     * <code>ReceiveMessage</code> action with the same
+     * <code>ReceiveRequestAttemptId</code>.</p> </li> <li> <p>It is possible to retry
+     * the <code>ReceiveMessage</code> action with the same
      * <code>ReceiveRequestAttemptId</code> if none of the messages have been modified
      * (deleted or had their visibility changes).</p> </li> <li> <p>During a visibility
      * timeout, subsequent calls with the same <code>ReceiveRequestAttemptId</code>
@@ -653,7 +685,7 @@ namespace Model
      * <code>ReceiveMessage</code> can't track the
      * <code>ReceiveRequestAttemptId</code>, no retries work until the original
      * visibility timeout expires. As a result, delays might occur but the messages in
-     * the queue remain in a strict order.</p> </li> </ul> <p>The length of
+     * the queue remain in a strict order.</p> </li> </ul> <p>The maximum length of
      * <code>ReceiveRequestAttemptId</code> is 128 characters.
      * <code>ReceiveRequestAttemptId</code> can contain alphanumeric characters
      * (<code>a-z</code>, <code>A-Z</code>, <code>0-9</code>) and punctuation
@@ -669,17 +701,17 @@ namespace Model
      * <p>This parameter applies only to FIFO (first-in-first-out) queues.</p> <p>The
      * token used for deduplication of <code>ReceiveMessage</code> calls. If a
      * networking issue occurs after a <code>ReceiveMessage</code> action, and instead
-     * of a response you receive a generic error, you can retry the same action with an
-     * identical <code>ReceiveRequestAttemptId</code> to retrieve the same set of
-     * messages, even if their visibility timeout has not yet expired.</p> <ul> <li>
-     * <p>You can use <code>ReceiveRequestAttemptId</code> only for 5 minutes after a
-     * <code>ReceiveMessage</code> action.</p> </li> <li> <p>When you set
+     * of a response you receive a generic error, it is possible to retry the same
+     * action with an identical <code>ReceiveRequestAttemptId</code> to retrieve the
+     * same set of messages, even if their visibility timeout has not yet expired.</p>
+     * <ul> <li> <p>You can use <code>ReceiveRequestAttemptId</code> only for 5 minutes
+     * after a <code>ReceiveMessage</code> action.</p> </li> <li> <p>When you set
      * <code>FifoQueue</code>, a caller of the <code>ReceiveMessage</code> action can
      * provide a <code>ReceiveRequestAttemptId</code> explicitly.</p> </li> <li> <p>If
      * a caller of the <code>ReceiveMessage</code> action doesn't provide a
      * <code>ReceiveRequestAttemptId</code>, Amazon SQS generates a
-     * <code>ReceiveRequestAttemptId</code>.</p> </li> <li> <p>You can retry the
-     * <code>ReceiveMessage</code> action with the same
+     * <code>ReceiveRequestAttemptId</code>.</p> </li> <li> <p>It is possible to retry
+     * the <code>ReceiveMessage</code> action with the same
      * <code>ReceiveRequestAttemptId</code> if none of the messages have been modified
      * (deleted or had their visibility changes).</p> </li> <li> <p>During a visibility
      * timeout, subsequent calls with the same <code>ReceiveRequestAttemptId</code>
@@ -704,7 +736,7 @@ namespace Model
      * <code>ReceiveMessage</code> can't track the
      * <code>ReceiveRequestAttemptId</code>, no retries work until the original
      * visibility timeout expires. As a result, delays might occur but the messages in
-     * the queue remain in a strict order.</p> </li> </ul> <p>The length of
+     * the queue remain in a strict order.</p> </li> </ul> <p>The maximum length of
      * <code>ReceiveRequestAttemptId</code> is 128 characters.
      * <code>ReceiveRequestAttemptId</code> can contain alphanumeric characters
      * (<code>a-z</code>, <code>A-Z</code>, <code>0-9</code>) and punctuation
@@ -720,17 +752,17 @@ namespace Model
      * <p>This parameter applies only to FIFO (first-in-first-out) queues.</p> <p>The
      * token used for deduplication of <code>ReceiveMessage</code> calls. If a
      * networking issue occurs after a <code>ReceiveMessage</code> action, and instead
-     * of a response you receive a generic error, you can retry the same action with an
-     * identical <code>ReceiveRequestAttemptId</code> to retrieve the same set of
-     * messages, even if their visibility timeout has not yet expired.</p> <ul> <li>
-     * <p>You can use <code>ReceiveRequestAttemptId</code> only for 5 minutes after a
-     * <code>ReceiveMessage</code> action.</p> </li> <li> <p>When you set
+     * of a response you receive a generic error, it is possible to retry the same
+     * action with an identical <code>ReceiveRequestAttemptId</code> to retrieve the
+     * same set of messages, even if their visibility timeout has not yet expired.</p>
+     * <ul> <li> <p>You can use <code>ReceiveRequestAttemptId</code> only for 5 minutes
+     * after a <code>ReceiveMessage</code> action.</p> </li> <li> <p>When you set
      * <code>FifoQueue</code>, a caller of the <code>ReceiveMessage</code> action can
      * provide a <code>ReceiveRequestAttemptId</code> explicitly.</p> </li> <li> <p>If
      * a caller of the <code>ReceiveMessage</code> action doesn't provide a
      * <code>ReceiveRequestAttemptId</code>, Amazon SQS generates a
-     * <code>ReceiveRequestAttemptId</code>.</p> </li> <li> <p>You can retry the
-     * <code>ReceiveMessage</code> action with the same
+     * <code>ReceiveRequestAttemptId</code>.</p> </li> <li> <p>It is possible to retry
+     * the <code>ReceiveMessage</code> action with the same
      * <code>ReceiveRequestAttemptId</code> if none of the messages have been modified
      * (deleted or had their visibility changes).</p> </li> <li> <p>During a visibility
      * timeout, subsequent calls with the same <code>ReceiveRequestAttemptId</code>
@@ -755,7 +787,7 @@ namespace Model
      * <code>ReceiveMessage</code> can't track the
      * <code>ReceiveRequestAttemptId</code>, no retries work until the original
      * visibility timeout expires. As a result, delays might occur but the messages in
-     * the queue remain in a strict order.</p> </li> </ul> <p>The length of
+     * the queue remain in a strict order.</p> </li> </ul> <p>The maximum length of
      * <code>ReceiveRequestAttemptId</code> is 128 characters.
      * <code>ReceiveRequestAttemptId</code> can contain alphanumeric characters
      * (<code>a-z</code>, <code>A-Z</code>, <code>0-9</code>) and punctuation
@@ -771,17 +803,17 @@ namespace Model
      * <p>This parameter applies only to FIFO (first-in-first-out) queues.</p> <p>The
      * token used for deduplication of <code>ReceiveMessage</code> calls. If a
      * networking issue occurs after a <code>ReceiveMessage</code> action, and instead
-     * of a response you receive a generic error, you can retry the same action with an
-     * identical <code>ReceiveRequestAttemptId</code> to retrieve the same set of
-     * messages, even if their visibility timeout has not yet expired.</p> <ul> <li>
-     * <p>You can use <code>ReceiveRequestAttemptId</code> only for 5 minutes after a
-     * <code>ReceiveMessage</code> action.</p> </li> <li> <p>When you set
+     * of a response you receive a generic error, it is possible to retry the same
+     * action with an identical <code>ReceiveRequestAttemptId</code> to retrieve the
+     * same set of messages, even if their visibility timeout has not yet expired.</p>
+     * <ul> <li> <p>You can use <code>ReceiveRequestAttemptId</code> only for 5 minutes
+     * after a <code>ReceiveMessage</code> action.</p> </li> <li> <p>When you set
      * <code>FifoQueue</code>, a caller of the <code>ReceiveMessage</code> action can
      * provide a <code>ReceiveRequestAttemptId</code> explicitly.</p> </li> <li> <p>If
      * a caller of the <code>ReceiveMessage</code> action doesn't provide a
      * <code>ReceiveRequestAttemptId</code>, Amazon SQS generates a
-     * <code>ReceiveRequestAttemptId</code>.</p> </li> <li> <p>You can retry the
-     * <code>ReceiveMessage</code> action with the same
+     * <code>ReceiveRequestAttemptId</code>.</p> </li> <li> <p>It is possible to retry
+     * the <code>ReceiveMessage</code> action with the same
      * <code>ReceiveRequestAttemptId</code> if none of the messages have been modified
      * (deleted or had their visibility changes).</p> </li> <li> <p>During a visibility
      * timeout, subsequent calls with the same <code>ReceiveRequestAttemptId</code>
@@ -806,7 +838,7 @@ namespace Model
      * <code>ReceiveMessage</code> can't track the
      * <code>ReceiveRequestAttemptId</code>, no retries work until the original
      * visibility timeout expires. As a result, delays might occur but the messages in
-     * the queue remain in a strict order.</p> </li> </ul> <p>The length of
+     * the queue remain in a strict order.</p> </li> </ul> <p>The maximum length of
      * <code>ReceiveRequestAttemptId</code> is 128 characters.
      * <code>ReceiveRequestAttemptId</code> can contain alphanumeric characters
      * (<code>a-z</code>, <code>A-Z</code>, <code>0-9</code>) and punctuation
@@ -822,17 +854,17 @@ namespace Model
      * <p>This parameter applies only to FIFO (first-in-first-out) queues.</p> <p>The
      * token used for deduplication of <code>ReceiveMessage</code> calls. If a
      * networking issue occurs after a <code>ReceiveMessage</code> action, and instead
-     * of a response you receive a generic error, you can retry the same action with an
-     * identical <code>ReceiveRequestAttemptId</code> to retrieve the same set of
-     * messages, even if their visibility timeout has not yet expired.</p> <ul> <li>
-     * <p>You can use <code>ReceiveRequestAttemptId</code> only for 5 minutes after a
-     * <code>ReceiveMessage</code> action.</p> </li> <li> <p>When you set
+     * of a response you receive a generic error, it is possible to retry the same
+     * action with an identical <code>ReceiveRequestAttemptId</code> to retrieve the
+     * same set of messages, even if their visibility timeout has not yet expired.</p>
+     * <ul> <li> <p>You can use <code>ReceiveRequestAttemptId</code> only for 5 minutes
+     * after a <code>ReceiveMessage</code> action.</p> </li> <li> <p>When you set
      * <code>FifoQueue</code>, a caller of the <code>ReceiveMessage</code> action can
      * provide a <code>ReceiveRequestAttemptId</code> explicitly.</p> </li> <li> <p>If
      * a caller of the <code>ReceiveMessage</code> action doesn't provide a
      * <code>ReceiveRequestAttemptId</code>, Amazon SQS generates a
-     * <code>ReceiveRequestAttemptId</code>.</p> </li> <li> <p>You can retry the
-     * <code>ReceiveMessage</code> action with the same
+     * <code>ReceiveRequestAttemptId</code>.</p> </li> <li> <p>It is possible to retry
+     * the <code>ReceiveMessage</code> action with the same
      * <code>ReceiveRequestAttemptId</code> if none of the messages have been modified
      * (deleted or had their visibility changes).</p> </li> <li> <p>During a visibility
      * timeout, subsequent calls with the same <code>ReceiveRequestAttemptId</code>
@@ -857,7 +889,7 @@ namespace Model
      * <code>ReceiveMessage</code> can't track the
      * <code>ReceiveRequestAttemptId</code>, no retries work until the original
      * visibility timeout expires. As a result, delays might occur but the messages in
-     * the queue remain in a strict order.</p> </li> </ul> <p>The length of
+     * the queue remain in a strict order.</p> </li> </ul> <p>The maximum length of
      * <code>ReceiveRequestAttemptId</code> is 128 characters.
      * <code>ReceiveRequestAttemptId</code> can contain alphanumeric characters
      * (<code>a-z</code>, <code>A-Z</code>, <code>0-9</code>) and punctuation
@@ -873,17 +905,17 @@ namespace Model
      * <p>This parameter applies only to FIFO (first-in-first-out) queues.</p> <p>The
      * token used for deduplication of <code>ReceiveMessage</code> calls. If a
      * networking issue occurs after a <code>ReceiveMessage</code> action, and instead
-     * of a response you receive a generic error, you can retry the same action with an
-     * identical <code>ReceiveRequestAttemptId</code> to retrieve the same set of
-     * messages, even if their visibility timeout has not yet expired.</p> <ul> <li>
-     * <p>You can use <code>ReceiveRequestAttemptId</code> only for 5 minutes after a
-     * <code>ReceiveMessage</code> action.</p> </li> <li> <p>When you set
+     * of a response you receive a generic error, it is possible to retry the same
+     * action with an identical <code>ReceiveRequestAttemptId</code> to retrieve the
+     * same set of messages, even if their visibility timeout has not yet expired.</p>
+     * <ul> <li> <p>You can use <code>ReceiveRequestAttemptId</code> only for 5 minutes
+     * after a <code>ReceiveMessage</code> action.</p> </li> <li> <p>When you set
      * <code>FifoQueue</code>, a caller of the <code>ReceiveMessage</code> action can
      * provide a <code>ReceiveRequestAttemptId</code> explicitly.</p> </li> <li> <p>If
      * a caller of the <code>ReceiveMessage</code> action doesn't provide a
      * <code>ReceiveRequestAttemptId</code>, Amazon SQS generates a
-     * <code>ReceiveRequestAttemptId</code>.</p> </li> <li> <p>You can retry the
-     * <code>ReceiveMessage</code> action with the same
+     * <code>ReceiveRequestAttemptId</code>.</p> </li> <li> <p>It is possible to retry
+     * the <code>ReceiveMessage</code> action with the same
      * <code>ReceiveRequestAttemptId</code> if none of the messages have been modified
      * (deleted or had their visibility changes).</p> </li> <li> <p>During a visibility
      * timeout, subsequent calls with the same <code>ReceiveRequestAttemptId</code>
@@ -908,7 +940,7 @@ namespace Model
      * <code>ReceiveMessage</code> can't track the
      * <code>ReceiveRequestAttemptId</code>, no retries work until the original
      * visibility timeout expires. As a result, delays might occur but the messages in
-     * the queue remain in a strict order.</p> </li> </ul> <p>The length of
+     * the queue remain in a strict order.</p> </li> </ul> <p>The maximum length of
      * <code>ReceiveRequestAttemptId</code> is 128 characters.
      * <code>ReceiveRequestAttemptId</code> can contain alphanumeric characters
      * (<code>a-z</code>, <code>A-Z</code>, <code>0-9</code>) and punctuation
@@ -924,17 +956,17 @@ namespace Model
      * <p>This parameter applies only to FIFO (first-in-first-out) queues.</p> <p>The
      * token used for deduplication of <code>ReceiveMessage</code> calls. If a
      * networking issue occurs after a <code>ReceiveMessage</code> action, and instead
-     * of a response you receive a generic error, you can retry the same action with an
-     * identical <code>ReceiveRequestAttemptId</code> to retrieve the same set of
-     * messages, even if their visibility timeout has not yet expired.</p> <ul> <li>
-     * <p>You can use <code>ReceiveRequestAttemptId</code> only for 5 minutes after a
-     * <code>ReceiveMessage</code> action.</p> </li> <li> <p>When you set
+     * of a response you receive a generic error, it is possible to retry the same
+     * action with an identical <code>ReceiveRequestAttemptId</code> to retrieve the
+     * same set of messages, even if their visibility timeout has not yet expired.</p>
+     * <ul> <li> <p>You can use <code>ReceiveRequestAttemptId</code> only for 5 minutes
+     * after a <code>ReceiveMessage</code> action.</p> </li> <li> <p>When you set
      * <code>FifoQueue</code>, a caller of the <code>ReceiveMessage</code> action can
      * provide a <code>ReceiveRequestAttemptId</code> explicitly.</p> </li> <li> <p>If
      * a caller of the <code>ReceiveMessage</code> action doesn't provide a
      * <code>ReceiveRequestAttemptId</code>, Amazon SQS generates a
-     * <code>ReceiveRequestAttemptId</code>.</p> </li> <li> <p>You can retry the
-     * <code>ReceiveMessage</code> action with the same
+     * <code>ReceiveRequestAttemptId</code>.</p> </li> <li> <p>It is possible to retry
+     * the <code>ReceiveMessage</code> action with the same
      * <code>ReceiveRequestAttemptId</code> if none of the messages have been modified
      * (deleted or had their visibility changes).</p> </li> <li> <p>During a visibility
      * timeout, subsequent calls with the same <code>ReceiveRequestAttemptId</code>
@@ -959,7 +991,7 @@ namespace Model
      * <code>ReceiveMessage</code> can't track the
      * <code>ReceiveRequestAttemptId</code>, no retries work until the original
      * visibility timeout expires. As a result, delays might occur but the messages in
-     * the queue remain in a strict order.</p> </li> </ul> <p>The length of
+     * the queue remain in a strict order.</p> </li> </ul> <p>The maximum length of
      * <code>ReceiveRequestAttemptId</code> is 128 characters.
      * <code>ReceiveRequestAttemptId</code> can contain alphanumeric characters
      * (<code>a-z</code>, <code>A-Z</code>, <code>0-9</code>) and punctuation

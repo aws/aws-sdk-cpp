@@ -51,42 +51,42 @@ namespace Model
 
 
     /**
-     * <p>The destination S3 bucket.</p>
+     * <p>The destination Amazon S3 bucket.</p>
      */
     inline const Aws::String& GetS3Bucket() const{ return m_s3Bucket; }
 
     /**
-     * <p>The destination S3 bucket.</p>
+     * <p>The destination Amazon S3 bucket.</p>
      */
     inline bool S3BucketHasBeenSet() const { return m_s3BucketHasBeenSet; }
 
     /**
-     * <p>The destination S3 bucket.</p>
+     * <p>The destination Amazon S3 bucket.</p>
      */
     inline void SetS3Bucket(const Aws::String& value) { m_s3BucketHasBeenSet = true; m_s3Bucket = value; }
 
     /**
-     * <p>The destination S3 bucket.</p>
+     * <p>The destination Amazon S3 bucket.</p>
      */
     inline void SetS3Bucket(Aws::String&& value) { m_s3BucketHasBeenSet = true; m_s3Bucket = std::move(value); }
 
     /**
-     * <p>The destination S3 bucket.</p>
+     * <p>The destination Amazon S3 bucket.</p>
      */
     inline void SetS3Bucket(const char* value) { m_s3BucketHasBeenSet = true; m_s3Bucket.assign(value); }
 
     /**
-     * <p>The destination S3 bucket.</p>
+     * <p>The destination Amazon S3 bucket.</p>
      */
     inline ExportTaskS3Location& WithS3Bucket(const Aws::String& value) { SetS3Bucket(value); return *this;}
 
     /**
-     * <p>The destination S3 bucket.</p>
+     * <p>The destination Amazon S3 bucket.</p>
      */
     inline ExportTaskS3Location& WithS3Bucket(Aws::String&& value) { SetS3Bucket(std::move(value)); return *this;}
 
     /**
-     * <p>The destination S3 bucket.</p>
+     * <p>The destination Amazon S3 bucket.</p>
      */
     inline ExportTaskS3Location& WithS3Bucket(const char* value) { SetS3Bucket(value); return *this;}
 

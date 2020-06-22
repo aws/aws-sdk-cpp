@@ -28,7 +28,6 @@ namespace Model
     NOT_SET,
     standard,
     io1,
-    io2,
     gp2,
     sc1,
     st1

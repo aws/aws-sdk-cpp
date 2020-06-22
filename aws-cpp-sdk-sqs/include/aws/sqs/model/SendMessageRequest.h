@@ -366,9 +366,9 @@ namespace Model
      * of a <code>Name</code>, <code>Type</code>, and <code>Value</code>.</p>
      * <important> <ul> <li> <p>Currently, the only supported message system attribute
      * is <code>AWSTraceHeader</code>. Its type must be <code>String</code> and its
-     * value must be a correctly formatted AWS X-Ray trace string.</p> </li> <li>
-     * <p>The size of a message system attribute doesn't count towards the total size
-     * of a message.</p> </li> </ul> </important>
+     * value must be a correctly formatted AWS X-Ray trace header string.</p> </li>
+     * <li> <p>The size of a message system attribute doesn't count towards the total
+     * size of a message.</p> </li> </ul> </important>
      */
     inline const Aws::Map<MessageSystemAttributeNameForSends, MessageSystemAttributeValue>& GetMessageSystemAttributes() const{ return m_messageSystemAttributes; }
 
@@ -377,9 +377,9 @@ namespace Model
      * of a <code>Name</code>, <code>Type</code>, and <code>Value</code>.</p>
      * <important> <ul> <li> <p>Currently, the only supported message system attribute
      * is <code>AWSTraceHeader</code>. Its type must be <code>String</code> and its
-     * value must be a correctly formatted AWS X-Ray trace string.</p> </li> <li>
-     * <p>The size of a message system attribute doesn't count towards the total size
-     * of a message.</p> </li> </ul> </important>
+     * value must be a correctly formatted AWS X-Ray trace header string.</p> </li>
+     * <li> <p>The size of a message system attribute doesn't count towards the total
+     * size of a message.</p> </li> </ul> </important>
      */
     inline bool MessageSystemAttributesHasBeenSet() const { return m_messageSystemAttributesHasBeenSet; }
 
@@ -388,9 +388,9 @@ namespace Model
      * of a <code>Name</code>, <code>Type</code>, and <code>Value</code>.</p>
      * <important> <ul> <li> <p>Currently, the only supported message system attribute
      * is <code>AWSTraceHeader</code>. Its type must be <code>String</code> and its
-     * value must be a correctly formatted AWS X-Ray trace string.</p> </li> <li>
-     * <p>The size of a message system attribute doesn't count towards the total size
-     * of a message.</p> </li> </ul> </important>
+     * value must be a correctly formatted AWS X-Ray trace header string.</p> </li>
+     * <li> <p>The size of a message system attribute doesn't count towards the total
+     * size of a message.</p> </li> </ul> </important>
      */
     inline void SetMessageSystemAttributes(const Aws::Map<MessageSystemAttributeNameForSends, MessageSystemAttributeValue>& value) { m_messageSystemAttributesHasBeenSet = true; m_messageSystemAttributes = value; }
 
@@ -399,9 +399,9 @@ namespace Model
      * of a <code>Name</code>, <code>Type</code>, and <code>Value</code>.</p>
      * <important> <ul> <li> <p>Currently, the only supported message system attribute
      * is <code>AWSTraceHeader</code>. Its type must be <code>String</code> and its
-     * value must be a correctly formatted AWS X-Ray trace string.</p> </li> <li>
-     * <p>The size of a message system attribute doesn't count towards the total size
-     * of a message.</p> </li> </ul> </important>
+     * value must be a correctly formatted AWS X-Ray trace header string.</p> </li>
+     * <li> <p>The size of a message system attribute doesn't count towards the total
+     * size of a message.</p> </li> </ul> </important>
      */
     inline void SetMessageSystemAttributes(Aws::Map<MessageSystemAttributeNameForSends, MessageSystemAttributeValue>&& value) { m_messageSystemAttributesHasBeenSet = true; m_messageSystemAttributes = std::move(value); }
 
@@ -410,9 +410,9 @@ namespace Model
      * of a <code>Name</code>, <code>Type</code>, and <code>Value</code>.</p>
      * <important> <ul> <li> <p>Currently, the only supported message system attribute
      * is <code>AWSTraceHeader</code>. Its type must be <code>String</code> and its
-     * value must be a correctly formatted AWS X-Ray trace string.</p> </li> <li>
-     * <p>The size of a message system attribute doesn't count towards the total size
-     * of a message.</p> </li> </ul> </important>
+     * value must be a correctly formatted AWS X-Ray trace header string.</p> </li>
+     * <li> <p>The size of a message system attribute doesn't count towards the total
+     * size of a message.</p> </li> </ul> </important>
      */
     inline SendMessageRequest& WithMessageSystemAttributes(const Aws::Map<MessageSystemAttributeNameForSends, MessageSystemAttributeValue>& value) { SetMessageSystemAttributes(value); return *this;}
 
@@ -421,9 +421,9 @@ namespace Model
      * of a <code>Name</code>, <code>Type</code>, and <code>Value</code>.</p>
      * <important> <ul> <li> <p>Currently, the only supported message system attribute
      * is <code>AWSTraceHeader</code>. Its type must be <code>String</code> and its
-     * value must be a correctly formatted AWS X-Ray trace string.</p> </li> <li>
-     * <p>The size of a message system attribute doesn't count towards the total size
-     * of a message.</p> </li> </ul> </important>
+     * value must be a correctly formatted AWS X-Ray trace header string.</p> </li>
+     * <li> <p>The size of a message system attribute doesn't count towards the total
+     * size of a message.</p> </li> </ul> </important>
      */
     inline SendMessageRequest& WithMessageSystemAttributes(Aws::Map<MessageSystemAttributeNameForSends, MessageSystemAttributeValue>&& value) { SetMessageSystemAttributes(std::move(value)); return *this;}
 
@@ -432,9 +432,9 @@ namespace Model
      * of a <code>Name</code>, <code>Type</code>, and <code>Value</code>.</p>
      * <important> <ul> <li> <p>Currently, the only supported message system attribute
      * is <code>AWSTraceHeader</code>. Its type must be <code>String</code> and its
-     * value must be a correctly formatted AWS X-Ray trace string.</p> </li> <li>
-     * <p>The size of a message system attribute doesn't count towards the total size
-     * of a message.</p> </li> </ul> </important>
+     * value must be a correctly formatted AWS X-Ray trace header string.</p> </li>
+     * <li> <p>The size of a message system attribute doesn't count towards the total
+     * size of a message.</p> </li> </ul> </important>
      */
     inline SendMessageRequest& AddMessageSystemAttributes(const MessageSystemAttributeNameForSends& key, const MessageSystemAttributeValue& value) { m_messageSystemAttributesHasBeenSet = true; m_messageSystemAttributes.emplace(key, value); return *this; }
 
@@ -443,9 +443,9 @@ namespace Model
      * of a <code>Name</code>, <code>Type</code>, and <code>Value</code>.</p>
      * <important> <ul> <li> <p>Currently, the only supported message system attribute
      * is <code>AWSTraceHeader</code>. Its type must be <code>String</code> and its
-     * value must be a correctly formatted AWS X-Ray trace string.</p> </li> <li>
-     * <p>The size of a message system attribute doesn't count towards the total size
-     * of a message.</p> </li> </ul> </important>
+     * value must be a correctly formatted AWS X-Ray trace header string.</p> </li>
+     * <li> <p>The size of a message system attribute doesn't count towards the total
+     * size of a message.</p> </li> </ul> </important>
      */
     inline SendMessageRequest& AddMessageSystemAttributes(MessageSystemAttributeNameForSends&& key, const MessageSystemAttributeValue& value) { m_messageSystemAttributesHasBeenSet = true; m_messageSystemAttributes.emplace(std::move(key), value); return *this; }
 
@@ -454,9 +454,9 @@ namespace Model
      * of a <code>Name</code>, <code>Type</code>, and <code>Value</code>.</p>
      * <important> <ul> <li> <p>Currently, the only supported message system attribute
      * is <code>AWSTraceHeader</code>. Its type must be <code>String</code> and its
-     * value must be a correctly formatted AWS X-Ray trace string.</p> </li> <li>
-     * <p>The size of a message system attribute doesn't count towards the total size
-     * of a message.</p> </li> </ul> </important>
+     * value must be a correctly formatted AWS X-Ray trace header string.</p> </li>
+     * <li> <p>The size of a message system attribute doesn't count towards the total
+     * size of a message.</p> </li> </ul> </important>
      */
     inline SendMessageRequest& AddMessageSystemAttributes(const MessageSystemAttributeNameForSends& key, MessageSystemAttributeValue&& value) { m_messageSystemAttributesHasBeenSet = true; m_messageSystemAttributes.emplace(key, std::move(value)); return *this; }
 
@@ -465,9 +465,9 @@ namespace Model
      * of a <code>Name</code>, <code>Type</code>, and <code>Value</code>.</p>
      * <important> <ul> <li> <p>Currently, the only supported message system attribute
      * is <code>AWSTraceHeader</code>. Its type must be <code>String</code> and its
-     * value must be a correctly formatted AWS X-Ray trace string.</p> </li> <li>
-     * <p>The size of a message system attribute doesn't count towards the total size
-     * of a message.</p> </li> </ul> </important>
+     * value must be a correctly formatted AWS X-Ray trace header string.</p> </li>
+     * <li> <p>The size of a message system attribute doesn't count towards the total
+     * size of a message.</p> </li> </ul> </important>
      */
     inline SendMessageRequest& AddMessageSystemAttributes(MessageSystemAttributeNameForSends&& key, MessageSystemAttributeValue&& value) { m_messageSystemAttributesHasBeenSet = true; m_messageSystemAttributes.emplace(std::move(key), std::move(value)); return *this; }
 
@@ -506,11 +506,11 @@ namespace Model
      * <code>MessageDeduplicationId</code> after the deduplication interval, Amazon SQS
      * can't detect duplicate messages.</p> <p>Amazon SQS continues to keep track of
      * the message deduplication ID even after the message is received and deleted.</p>
-     * </note> <p>The length of <code>MessageDeduplicationId</code> is 128 characters.
-     * <code>MessageDeduplicationId</code> can contain alphanumeric characters
-     * (<code>a-z</code>, <code>A-Z</code>, <code>0-9</code>) and punctuation
-     * (<code>!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~</code>).</p> <p>For best
-     * practices of using <code>MessageDeduplicationId</code>, see <a
+     * </note> <p>The maximum length of <code>MessageDeduplicationId</code> is 128
+     * characters. <code>MessageDeduplicationId</code> can contain alphanumeric
+     * characters (<code>a-z</code>, <code>A-Z</code>, <code>0-9</code>) and
+     * punctuation (<code>!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~</code>).</p>
+     * <p>For best practices of using <code>MessageDeduplicationId</code>, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagededuplicationid-property.html">Using
      * the MessageDeduplicationId Property</a> in the <i>Amazon Simple Queue Service
      * Developer Guide</i>.</p>
@@ -551,11 +551,11 @@ namespace Model
      * <code>MessageDeduplicationId</code> after the deduplication interval, Amazon SQS
      * can't detect duplicate messages.</p> <p>Amazon SQS continues to keep track of
      * the message deduplication ID even after the message is received and deleted.</p>
-     * </note> <p>The length of <code>MessageDeduplicationId</code> is 128 characters.
-     * <code>MessageDeduplicationId</code> can contain alphanumeric characters
-     * (<code>a-z</code>, <code>A-Z</code>, <code>0-9</code>) and punctuation
-     * (<code>!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~</code>).</p> <p>For best
-     * practices of using <code>MessageDeduplicationId</code>, see <a
+     * </note> <p>The maximum length of <code>MessageDeduplicationId</code> is 128
+     * characters. <code>MessageDeduplicationId</code> can contain alphanumeric
+     * characters (<code>a-z</code>, <code>A-Z</code>, <code>0-9</code>) and
+     * punctuation (<code>!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~</code>).</p>
+     * <p>For best practices of using <code>MessageDeduplicationId</code>, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagededuplicationid-property.html">Using
      * the MessageDeduplicationId Property</a> in the <i>Amazon Simple Queue Service
      * Developer Guide</i>.</p>
@@ -596,11 +596,11 @@ namespace Model
      * <code>MessageDeduplicationId</code> after the deduplication interval, Amazon SQS
      * can't detect duplicate messages.</p> <p>Amazon SQS continues to keep track of
      * the message deduplication ID even after the message is received and deleted.</p>
-     * </note> <p>The length of <code>MessageDeduplicationId</code> is 128 characters.
-     * <code>MessageDeduplicationId</code> can contain alphanumeric characters
-     * (<code>a-z</code>, <code>A-Z</code>, <code>0-9</code>) and punctuation
-     * (<code>!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~</code>).</p> <p>For best
-     * practices of using <code>MessageDeduplicationId</code>, see <a
+     * </note> <p>The maximum length of <code>MessageDeduplicationId</code> is 128
+     * characters. <code>MessageDeduplicationId</code> can contain alphanumeric
+     * characters (<code>a-z</code>, <code>A-Z</code>, <code>0-9</code>) and
+     * punctuation (<code>!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~</code>).</p>
+     * <p>For best practices of using <code>MessageDeduplicationId</code>, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagededuplicationid-property.html">Using
      * the MessageDeduplicationId Property</a> in the <i>Amazon Simple Queue Service
      * Developer Guide</i>.</p>
@@ -641,11 +641,11 @@ namespace Model
      * <code>MessageDeduplicationId</code> after the deduplication interval, Amazon SQS
      * can't detect duplicate messages.</p> <p>Amazon SQS continues to keep track of
      * the message deduplication ID even after the message is received and deleted.</p>
-     * </note> <p>The length of <code>MessageDeduplicationId</code> is 128 characters.
-     * <code>MessageDeduplicationId</code> can contain alphanumeric characters
-     * (<code>a-z</code>, <code>A-Z</code>, <code>0-9</code>) and punctuation
-     * (<code>!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~</code>).</p> <p>For best
-     * practices of using <code>MessageDeduplicationId</code>, see <a
+     * </note> <p>The maximum length of <code>MessageDeduplicationId</code> is 128
+     * characters. <code>MessageDeduplicationId</code> can contain alphanumeric
+     * characters (<code>a-z</code>, <code>A-Z</code>, <code>0-9</code>) and
+     * punctuation (<code>!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~</code>).</p>
+     * <p>For best practices of using <code>MessageDeduplicationId</code>, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagededuplicationid-property.html">Using
      * the MessageDeduplicationId Property</a> in the <i>Amazon Simple Queue Service
      * Developer Guide</i>.</p>
@@ -686,11 +686,11 @@ namespace Model
      * <code>MessageDeduplicationId</code> after the deduplication interval, Amazon SQS
      * can't detect duplicate messages.</p> <p>Amazon SQS continues to keep track of
      * the message deduplication ID even after the message is received and deleted.</p>
-     * </note> <p>The length of <code>MessageDeduplicationId</code> is 128 characters.
-     * <code>MessageDeduplicationId</code> can contain alphanumeric characters
-     * (<code>a-z</code>, <code>A-Z</code>, <code>0-9</code>) and punctuation
-     * (<code>!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~</code>).</p> <p>For best
-     * practices of using <code>MessageDeduplicationId</code>, see <a
+     * </note> <p>The maximum length of <code>MessageDeduplicationId</code> is 128
+     * characters. <code>MessageDeduplicationId</code> can contain alphanumeric
+     * characters (<code>a-z</code>, <code>A-Z</code>, <code>0-9</code>) and
+     * punctuation (<code>!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~</code>).</p>
+     * <p>For best practices of using <code>MessageDeduplicationId</code>, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagededuplicationid-property.html">Using
      * the MessageDeduplicationId Property</a> in the <i>Amazon Simple Queue Service
      * Developer Guide</i>.</p>
@@ -731,11 +731,11 @@ namespace Model
      * <code>MessageDeduplicationId</code> after the deduplication interval, Amazon SQS
      * can't detect duplicate messages.</p> <p>Amazon SQS continues to keep track of
      * the message deduplication ID even after the message is received and deleted.</p>
-     * </note> <p>The length of <code>MessageDeduplicationId</code> is 128 characters.
-     * <code>MessageDeduplicationId</code> can contain alphanumeric characters
-     * (<code>a-z</code>, <code>A-Z</code>, <code>0-9</code>) and punctuation
-     * (<code>!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~</code>).</p> <p>For best
-     * practices of using <code>MessageDeduplicationId</code>, see <a
+     * </note> <p>The maximum length of <code>MessageDeduplicationId</code> is 128
+     * characters. <code>MessageDeduplicationId</code> can contain alphanumeric
+     * characters (<code>a-z</code>, <code>A-Z</code>, <code>0-9</code>) and
+     * punctuation (<code>!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~</code>).</p>
+     * <p>For best practices of using <code>MessageDeduplicationId</code>, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagededuplicationid-property.html">Using
      * the MessageDeduplicationId Property</a> in the <i>Amazon Simple Queue Service
      * Developer Guide</i>.</p>
@@ -776,11 +776,11 @@ namespace Model
      * <code>MessageDeduplicationId</code> after the deduplication interval, Amazon SQS
      * can't detect duplicate messages.</p> <p>Amazon SQS continues to keep track of
      * the message deduplication ID even after the message is received and deleted.</p>
-     * </note> <p>The length of <code>MessageDeduplicationId</code> is 128 characters.
-     * <code>MessageDeduplicationId</code> can contain alphanumeric characters
-     * (<code>a-z</code>, <code>A-Z</code>, <code>0-9</code>) and punctuation
-     * (<code>!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~</code>).</p> <p>For best
-     * practices of using <code>MessageDeduplicationId</code>, see <a
+     * </note> <p>The maximum length of <code>MessageDeduplicationId</code> is 128
+     * characters. <code>MessageDeduplicationId</code> can contain alphanumeric
+     * characters (<code>a-z</code>, <code>A-Z</code>, <code>0-9</code>) and
+     * punctuation (<code>!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~</code>).</p>
+     * <p>For best practices of using <code>MessageDeduplicationId</code>, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagededuplicationid-property.html">Using
      * the MessageDeduplicationId Property</a> in the <i>Amazon Simple Queue Service
      * Developer Guide</i>.</p>
@@ -821,11 +821,11 @@ namespace Model
      * <code>MessageDeduplicationId</code> after the deduplication interval, Amazon SQS
      * can't detect duplicate messages.</p> <p>Amazon SQS continues to keep track of
      * the message deduplication ID even after the message is received and deleted.</p>
-     * </note> <p>The length of <code>MessageDeduplicationId</code> is 128 characters.
-     * <code>MessageDeduplicationId</code> can contain alphanumeric characters
-     * (<code>a-z</code>, <code>A-Z</code>, <code>0-9</code>) and punctuation
-     * (<code>!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~</code>).</p> <p>For best
-     * practices of using <code>MessageDeduplicationId</code>, see <a
+     * </note> <p>The maximum length of <code>MessageDeduplicationId</code> is 128
+     * characters. <code>MessageDeduplicationId</code> can contain alphanumeric
+     * characters (<code>a-z</code>, <code>A-Z</code>, <code>0-9</code>) and
+     * punctuation (<code>!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~</code>).</p>
+     * <p>For best practices of using <code>MessageDeduplicationId</code>, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagededuplicationid-property.html">Using
      * the MessageDeduplicationId Property</a> in the <i>Amazon Simple Queue Service
      * Developer Guide</i>.</p>

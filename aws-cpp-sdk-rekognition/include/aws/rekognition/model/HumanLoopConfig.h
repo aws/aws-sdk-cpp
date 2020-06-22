@@ -100,42 +100,66 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the flow definition.</p>
+     * <p>The Amazon Resource Name (ARN) of the flow definition. You can create a flow
+     * definition by using the Amazon Sagemaker <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateFlowDefinition.html">CreateFlowDefinition</a>
+     * Operation. </p>
      */
     inline const Aws::String& GetFlowDefinitionArn() const{ return m_flowDefinitionArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the flow definition.</p>
+     * <p>The Amazon Resource Name (ARN) of the flow definition. You can create a flow
+     * definition by using the Amazon Sagemaker <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateFlowDefinition.html">CreateFlowDefinition</a>
+     * Operation. </p>
      */
     inline bool FlowDefinitionArnHasBeenSet() const { return m_flowDefinitionArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the flow definition.</p>
+     * <p>The Amazon Resource Name (ARN) of the flow definition. You can create a flow
+     * definition by using the Amazon Sagemaker <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateFlowDefinition.html">CreateFlowDefinition</a>
+     * Operation. </p>
      */
     inline void SetFlowDefinitionArn(const Aws::String& value) { m_flowDefinitionArnHasBeenSet = true; m_flowDefinitionArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the flow definition.</p>
+     * <p>The Amazon Resource Name (ARN) of the flow definition. You can create a flow
+     * definition by using the Amazon Sagemaker <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateFlowDefinition.html">CreateFlowDefinition</a>
+     * Operation. </p>
      */
     inline void SetFlowDefinitionArn(Aws::String&& value) { m_flowDefinitionArnHasBeenSet = true; m_flowDefinitionArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the flow definition.</p>
+     * <p>The Amazon Resource Name (ARN) of the flow definition. You can create a flow
+     * definition by using the Amazon Sagemaker <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateFlowDefinition.html">CreateFlowDefinition</a>
+     * Operation. </p>
      */
     inline void SetFlowDefinitionArn(const char* value) { m_flowDefinitionArnHasBeenSet = true; m_flowDefinitionArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the flow definition.</p>
+     * <p>The Amazon Resource Name (ARN) of the flow definition. You can create a flow
+     * definition by using the Amazon Sagemaker <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateFlowDefinition.html">CreateFlowDefinition</a>
+     * Operation. </p>
      */
     inline HumanLoopConfig& WithFlowDefinitionArn(const Aws::String& value) { SetFlowDefinitionArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the flow definition.</p>
+     * <p>The Amazon Resource Name (ARN) of the flow definition. You can create a flow
+     * definition by using the Amazon Sagemaker <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateFlowDefinition.html">CreateFlowDefinition</a>
+     * Operation. </p>
      */
     inline HumanLoopConfig& WithFlowDefinitionArn(Aws::String&& value) { SetFlowDefinitionArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the flow definition.</p>
+     * <p>The Amazon Resource Name (ARN) of the flow definition. You can create a flow
+     * definition by using the Amazon Sagemaker <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateFlowDefinition.html">CreateFlowDefinition</a>
+     * Operation. </p>
      */
     inline HumanLoopConfig& WithFlowDefinitionArn(const char* value) { SetFlowDefinitionArn(value); return *this;}
 

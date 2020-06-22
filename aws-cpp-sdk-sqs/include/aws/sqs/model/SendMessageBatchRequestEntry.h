@@ -57,7 +57,7 @@ namespace Model
     /**
      * <p>An identifier for a message in this batch used to communicate the result.</p>
      * <note> <p>The <code>Id</code>s of a batch request need to be unique within a
-     * request</p> <p>This identifier can have up to 80 characters. The following
+     * request.</p> <p>This identifier can have up to 80 characters. The following
      * characters are accepted: alphanumeric characters, hyphens(-), and underscores
      * (_).</p> </note>
      */
@@ -66,7 +66,7 @@ namespace Model
     /**
      * <p>An identifier for a message in this batch used to communicate the result.</p>
      * <note> <p>The <code>Id</code>s of a batch request need to be unique within a
-     * request</p> <p>This identifier can have up to 80 characters. The following
+     * request.</p> <p>This identifier can have up to 80 characters. The following
      * characters are accepted: alphanumeric characters, hyphens(-), and underscores
      * (_).</p> </note>
      */
@@ -75,7 +75,7 @@ namespace Model
     /**
      * <p>An identifier for a message in this batch used to communicate the result.</p>
      * <note> <p>The <code>Id</code>s of a batch request need to be unique within a
-     * request</p> <p>This identifier can have up to 80 characters. The following
+     * request.</p> <p>This identifier can have up to 80 characters. The following
      * characters are accepted: alphanumeric characters, hyphens(-), and underscores
      * (_).</p> </note>
      */
@@ -84,7 +84,7 @@ namespace Model
     /**
      * <p>An identifier for a message in this batch used to communicate the result.</p>
      * <note> <p>The <code>Id</code>s of a batch request need to be unique within a
-     * request</p> <p>This identifier can have up to 80 characters. The following
+     * request.</p> <p>This identifier can have up to 80 characters. The following
      * characters are accepted: alphanumeric characters, hyphens(-), and underscores
      * (_).</p> </note>
      */
@@ -93,7 +93,7 @@ namespace Model
     /**
      * <p>An identifier for a message in this batch used to communicate the result.</p>
      * <note> <p>The <code>Id</code>s of a batch request need to be unique within a
-     * request</p> <p>This identifier can have up to 80 characters. The following
+     * request.</p> <p>This identifier can have up to 80 characters. The following
      * characters are accepted: alphanumeric characters, hyphens(-), and underscores
      * (_).</p> </note>
      */
@@ -102,7 +102,7 @@ namespace Model
     /**
      * <p>An identifier for a message in this batch used to communicate the result.</p>
      * <note> <p>The <code>Id</code>s of a batch request need to be unique within a
-     * request</p> <p>This identifier can have up to 80 characters. The following
+     * request.</p> <p>This identifier can have up to 80 characters. The following
      * characters are accepted: alphanumeric characters, hyphens(-), and underscores
      * (_).</p> </note>
      */
@@ -111,7 +111,7 @@ namespace Model
     /**
      * <p>An identifier for a message in this batch used to communicate the result.</p>
      * <note> <p>The <code>Id</code>s of a batch request need to be unique within a
-     * request</p> <p>This identifier can have up to 80 characters. The following
+     * request.</p> <p>This identifier can have up to 80 characters. The following
      * characters are accepted: alphanumeric characters, hyphens(-), and underscores
      * (_).</p> </note>
      */
@@ -120,7 +120,7 @@ namespace Model
     /**
      * <p>An identifier for a message in this batch used to communicate the result.</p>
      * <note> <p>The <code>Id</code>s of a batch request need to be unique within a
-     * request</p> <p>This identifier can have up to 80 characters. The following
+     * request.</p> <p>This identifier can have up to 80 characters. The following
      * characters are accepted: alphanumeric characters, hyphens(-), and underscores
      * (_).</p> </note>
      */
@@ -327,9 +327,9 @@ namespace Model
      * of a <code>Name</code>, <code>Type</code>, and <code>Value</code>.</p>
      * <important> <ul> <li> <p>Currently, the only supported message system attribute
      * is <code>AWSTraceHeader</code>. Its type must be <code>String</code> and its
-     * value must be a correctly formatted AWS X-Ray trace string.</p> </li> <li>
-     * <p>The size of a message system attribute doesn't count towards the total size
-     * of a message.</p> </li> </ul> </important>
+     * value must be a correctly formatted AWS X-Ray trace header string.</p> </li>
+     * <li> <p>The size of a message system attribute doesn't count towards the total
+     * size of a message.</p> </li> </ul> </important>
      */
     inline const Aws::Map<MessageSystemAttributeNameForSends, MessageSystemAttributeValue>& GetMessageSystemAttributes() const{ return m_messageSystemAttributes; }
 
@@ -338,9 +338,9 @@ namespace Model
      * of a <code>Name</code>, <code>Type</code>, and <code>Value</code>.</p>
      * <important> <ul> <li> <p>Currently, the only supported message system attribute
      * is <code>AWSTraceHeader</code>. Its type must be <code>String</code> and its
-     * value must be a correctly formatted AWS X-Ray trace string.</p> </li> <li>
-     * <p>The size of a message system attribute doesn't count towards the total size
-     * of a message.</p> </li> </ul> </important>
+     * value must be a correctly formatted AWS X-Ray trace header string.</p> </li>
+     * <li> <p>The size of a message system attribute doesn't count towards the total
+     * size of a message.</p> </li> </ul> </important>
      */
     inline bool MessageSystemAttributesHasBeenSet() const { return m_messageSystemAttributesHasBeenSet; }
 
@@ -349,9 +349,9 @@ namespace Model
      * of a <code>Name</code>, <code>Type</code>, and <code>Value</code>.</p>
      * <important> <ul> <li> <p>Currently, the only supported message system attribute
      * is <code>AWSTraceHeader</code>. Its type must be <code>String</code> and its
-     * value must be a correctly formatted AWS X-Ray trace string.</p> </li> <li>
-     * <p>The size of a message system attribute doesn't count towards the total size
-     * of a message.</p> </li> </ul> </important>
+     * value must be a correctly formatted AWS X-Ray trace header string.</p> </li>
+     * <li> <p>The size of a message system attribute doesn't count towards the total
+     * size of a message.</p> </li> </ul> </important>
      */
     inline void SetMessageSystemAttributes(const Aws::Map<MessageSystemAttributeNameForSends, MessageSystemAttributeValue>& value) { m_messageSystemAttributesHasBeenSet = true; m_messageSystemAttributes = value; }
 
@@ -360,9 +360,9 @@ namespace Model
      * of a <code>Name</code>, <code>Type</code>, and <code>Value</code>.</p>
      * <important> <ul> <li> <p>Currently, the only supported message system attribute
      * is <code>AWSTraceHeader</code>. Its type must be <code>String</code> and its
-     * value must be a correctly formatted AWS X-Ray trace string.</p> </li> <li>
-     * <p>The size of a message system attribute doesn't count towards the total size
-     * of a message.</p> </li> </ul> </important>
+     * value must be a correctly formatted AWS X-Ray trace header string.</p> </li>
+     * <li> <p>The size of a message system attribute doesn't count towards the total
+     * size of a message.</p> </li> </ul> </important>
      */
     inline void SetMessageSystemAttributes(Aws::Map<MessageSystemAttributeNameForSends, MessageSystemAttributeValue>&& value) { m_messageSystemAttributesHasBeenSet = true; m_messageSystemAttributes = std::move(value); }
 
@@ -371,9 +371,9 @@ namespace Model
      * of a <code>Name</code>, <code>Type</code>, and <code>Value</code>.</p>
      * <important> <ul> <li> <p>Currently, the only supported message system attribute
      * is <code>AWSTraceHeader</code>. Its type must be <code>String</code> and its
-     * value must be a correctly formatted AWS X-Ray trace string.</p> </li> <li>
-     * <p>The size of a message system attribute doesn't count towards the total size
-     * of a message.</p> </li> </ul> </important>
+     * value must be a correctly formatted AWS X-Ray trace header string.</p> </li>
+     * <li> <p>The size of a message system attribute doesn't count towards the total
+     * size of a message.</p> </li> </ul> </important>
      */
     inline SendMessageBatchRequestEntry& WithMessageSystemAttributes(const Aws::Map<MessageSystemAttributeNameForSends, MessageSystemAttributeValue>& value) { SetMessageSystemAttributes(value); return *this;}
 
@@ -382,9 +382,9 @@ namespace Model
      * of a <code>Name</code>, <code>Type</code>, and <code>Value</code>.</p>
      * <important> <ul> <li> <p>Currently, the only supported message system attribute
      * is <code>AWSTraceHeader</code>. Its type must be <code>String</code> and its
-     * value must be a correctly formatted AWS X-Ray trace string.</p> </li> <li>
-     * <p>The size of a message system attribute doesn't count towards the total size
-     * of a message.</p> </li> </ul> </important>
+     * value must be a correctly formatted AWS X-Ray trace header string.</p> </li>
+     * <li> <p>The size of a message system attribute doesn't count towards the total
+     * size of a message.</p> </li> </ul> </important>
      */
     inline SendMessageBatchRequestEntry& WithMessageSystemAttributes(Aws::Map<MessageSystemAttributeNameForSends, MessageSystemAttributeValue>&& value) { SetMessageSystemAttributes(std::move(value)); return *this;}
 
@@ -393,9 +393,9 @@ namespace Model
      * of a <code>Name</code>, <code>Type</code>, and <code>Value</code>.</p>
      * <important> <ul> <li> <p>Currently, the only supported message system attribute
      * is <code>AWSTraceHeader</code>. Its type must be <code>String</code> and its
-     * value must be a correctly formatted AWS X-Ray trace string.</p> </li> <li>
-     * <p>The size of a message system attribute doesn't count towards the total size
-     * of a message.</p> </li> </ul> </important>
+     * value must be a correctly formatted AWS X-Ray trace header string.</p> </li>
+     * <li> <p>The size of a message system attribute doesn't count towards the total
+     * size of a message.</p> </li> </ul> </important>
      */
     inline SendMessageBatchRequestEntry& AddMessageSystemAttributes(const MessageSystemAttributeNameForSends& key, const MessageSystemAttributeValue& value) { m_messageSystemAttributesHasBeenSet = true; m_messageSystemAttributes.emplace(key, value); return *this; }
 
@@ -404,9 +404,9 @@ namespace Model
      * of a <code>Name</code>, <code>Type</code>, and <code>Value</code>.</p>
      * <important> <ul> <li> <p>Currently, the only supported message system attribute
      * is <code>AWSTraceHeader</code>. Its type must be <code>String</code> and its
-     * value must be a correctly formatted AWS X-Ray trace string.</p> </li> <li>
-     * <p>The size of a message system attribute doesn't count towards the total size
-     * of a message.</p> </li> </ul> </important>
+     * value must be a correctly formatted AWS X-Ray trace header string.</p> </li>
+     * <li> <p>The size of a message system attribute doesn't count towards the total
+     * size of a message.</p> </li> </ul> </important>
      */
     inline SendMessageBatchRequestEntry& AddMessageSystemAttributes(MessageSystemAttributeNameForSends&& key, const MessageSystemAttributeValue& value) { m_messageSystemAttributesHasBeenSet = true; m_messageSystemAttributes.emplace(std::move(key), value); return *this; }
 
@@ -415,9 +415,9 @@ namespace Model
      * of a <code>Name</code>, <code>Type</code>, and <code>Value</code>.</p>
      * <important> <ul> <li> <p>Currently, the only supported message system attribute
      * is <code>AWSTraceHeader</code>. Its type must be <code>String</code> and its
-     * value must be a correctly formatted AWS X-Ray trace string.</p> </li> <li>
-     * <p>The size of a message system attribute doesn't count towards the total size
-     * of a message.</p> </li> </ul> </important>
+     * value must be a correctly formatted AWS X-Ray trace header string.</p> </li>
+     * <li> <p>The size of a message system attribute doesn't count towards the total
+     * size of a message.</p> </li> </ul> </important>
      */
     inline SendMessageBatchRequestEntry& AddMessageSystemAttributes(const MessageSystemAttributeNameForSends& key, MessageSystemAttributeValue&& value) { m_messageSystemAttributesHasBeenSet = true; m_messageSystemAttributes.emplace(key, std::move(value)); return *this; }
 
@@ -426,9 +426,9 @@ namespace Model
      * of a <code>Name</code>, <code>Type</code>, and <code>Value</code>.</p>
      * <important> <ul> <li> <p>Currently, the only supported message system attribute
      * is <code>AWSTraceHeader</code>. Its type must be <code>String</code> and its
-     * value must be a correctly formatted AWS X-Ray trace string.</p> </li> <li>
-     * <p>The size of a message system attribute doesn't count towards the total size
-     * of a message.</p> </li> </ul> </important>
+     * value must be a correctly formatted AWS X-Ray trace header string.</p> </li>
+     * <li> <p>The size of a message system attribute doesn't count towards the total
+     * size of a message.</p> </li> </ul> </important>
      */
     inline SendMessageBatchRequestEntry& AddMessageSystemAttributes(MessageSystemAttributeNameForSends&& key, MessageSystemAttributeValue&& value) { m_messageSystemAttributesHasBeenSet = true; m_messageSystemAttributes.emplace(std::move(key), std::move(value)); return *this; }
 

@@ -156,40 +156,73 @@ namespace Model
 
 
     /**
-     * <p> The upper boundary of on-demand EC2 units. It is measured through VCPU cores
+     * <p> The upper boundary of On-Demand EC2 units. It is measured through VCPU cores
      * or instances for instance groups and measured through units for instance fleets.
-     * The on-demand units are not allowed to scale beyond this boundary. The limit
-     * only applies to the core and task nodes. The master node cannot be scaled after
-     * initial configuration. </p>
+     * The On-Demand units are not allowed to scale beyond this boundary. The parameter
+     * is used to split capacity allocation between On-Demand and Spot instances. </p>
      */
     inline int GetMaximumOnDemandCapacityUnits() const{ return m_maximumOnDemandCapacityUnits; }
 
     /**
-     * <p> The upper boundary of on-demand EC2 units. It is measured through VCPU cores
+     * <p> The upper boundary of On-Demand EC2 units. It is measured through VCPU cores
      * or instances for instance groups and measured through units for instance fleets.
-     * The on-demand units are not allowed to scale beyond this boundary. The limit
-     * only applies to the core and task nodes. The master node cannot be scaled after
-     * initial configuration. </p>
+     * The On-Demand units are not allowed to scale beyond this boundary. The parameter
+     * is used to split capacity allocation between On-Demand and Spot instances. </p>
      */
     inline bool MaximumOnDemandCapacityUnitsHasBeenSet() const { return m_maximumOnDemandCapacityUnitsHasBeenSet; }
 
     /**
-     * <p> The upper boundary of on-demand EC2 units. It is measured through VCPU cores
+     * <p> The upper boundary of On-Demand EC2 units. It is measured through VCPU cores
      * or instances for instance groups and measured through units for instance fleets.
-     * The on-demand units are not allowed to scale beyond this boundary. The limit
-     * only applies to the core and task nodes. The master node cannot be scaled after
-     * initial configuration. </p>
+     * The On-Demand units are not allowed to scale beyond this boundary. The parameter
+     * is used to split capacity allocation between On-Demand and Spot instances. </p>
      */
     inline void SetMaximumOnDemandCapacityUnits(int value) { m_maximumOnDemandCapacityUnitsHasBeenSet = true; m_maximumOnDemandCapacityUnits = value; }
 
     /**
-     * <p> The upper boundary of on-demand EC2 units. It is measured through VCPU cores
+     * <p> The upper boundary of On-Demand EC2 units. It is measured through VCPU cores
      * or instances for instance groups and measured through units for instance fleets.
-     * The on-demand units are not allowed to scale beyond this boundary. The limit
-     * only applies to the core and task nodes. The master node cannot be scaled after
-     * initial configuration. </p>
+     * The On-Demand units are not allowed to scale beyond this boundary. The parameter
+     * is used to split capacity allocation between On-Demand and Spot instances. </p>
      */
     inline ComputeLimits& WithMaximumOnDemandCapacityUnits(int value) { SetMaximumOnDemandCapacityUnits(value); return *this;}
+
+
+    /**
+     * <p> The upper boundary of EC2 units for core node type in a cluster. It is
+     * measured through VCPU cores or instances for instance groups and measured
+     * through units for instance fleets. The core units are not allowed to scale
+     * beyond this boundary. The parameter is used to split capacity allocation between
+     * core and task nodes. </p>
+     */
+    inline int GetMaximumCoreCapacityUnits() const{ return m_maximumCoreCapacityUnits; }
+
+    /**
+     * <p> The upper boundary of EC2 units for core node type in a cluster. It is
+     * measured through VCPU cores or instances for instance groups and measured
+     * through units for instance fleets. The core units are not allowed to scale
+     * beyond this boundary. The parameter is used to split capacity allocation between
+     * core and task nodes. </p>
+     */
+    inline bool MaximumCoreCapacityUnitsHasBeenSet() const { return m_maximumCoreCapacityUnitsHasBeenSet; }
+
+    /**
+     * <p> The upper boundary of EC2 units for core node type in a cluster. It is
+     * measured through VCPU cores or instances for instance groups and measured
+     * through units for instance fleets. The core units are not allowed to scale
+     * beyond this boundary. The parameter is used to split capacity allocation between
+     * core and task nodes. </p>
+     */
+    inline void SetMaximumCoreCapacityUnits(int value) { m_maximumCoreCapacityUnitsHasBeenSet = true; m_maximumCoreCapacityUnits = value; }
+
+    /**
+     * <p> The upper boundary of EC2 units for core node type in a cluster. It is
+     * measured through VCPU cores or instances for instance groups and measured
+     * through units for instance fleets. The core units are not allowed to scale
+     * beyond this boundary. The parameter is used to split capacity allocation between
+     * core and task nodes. </p>
+     */
+    inline ComputeLimits& WithMaximumCoreCapacityUnits(int value) { SetMaximumCoreCapacityUnits(value); return *this;}
 
   private:
 
@@ -204,6 +237,9 @@ namespace Model
 
     int m_maximumOnDemandCapacityUnits;
     bool m_maximumOnDemandCapacityUnitsHasBeenSet;
+
+    int m_maximumCoreCapacityUnits;
+    bool m_maximumCoreCapacityUnitsHasBeenSet;
   };
 
 } // namespace Model

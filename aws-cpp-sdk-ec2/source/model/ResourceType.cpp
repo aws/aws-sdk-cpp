@@ -36,14 +36,19 @@ namespace Aws
         static const int dhcp_options_HASH = HashingUtils::HashString("dhcp-options");
         static const int elastic_ip_HASH = HashingUtils::HashString("elastic-ip");
         static const int elastic_gpu_HASH = HashingUtils::HashString("elastic-gpu");
+        static const int export_image_task_HASH = HashingUtils::HashString("export-image-task");
+        static const int export_instance_task_HASH = HashingUtils::HashString("export-instance-task");
         static const int fleet_HASH = HashingUtils::HashString("fleet");
         static const int fpga_image_HASH = HashingUtils::HashString("fpga-image");
         static const int host_reservation_HASH = HashingUtils::HashString("host-reservation");
         static const int image_HASH = HashingUtils::HashString("image");
+        static const int import_image_task_HASH = HashingUtils::HashString("import-image-task");
+        static const int import_snapshot_task_HASH = HashingUtils::HashString("import-snapshot-task");
         static const int instance_HASH = HashingUtils::HashString("instance");
         static const int internet_gateway_HASH = HashingUtils::HashString("internet-gateway");
         static const int key_pair_HASH = HashingUtils::HashString("key-pair");
         static const int launch_template_HASH = HashingUtils::HashString("launch-template");
+        static const int local_gateway_route_table_vpc_association_HASH = HashingUtils::HashString("local-gateway-route-table-vpc-association");
         static const int natgateway_HASH = HashingUtils::HashString("natgateway");
         static const int network_acl_HASH = HashingUtils::HashString("network-acl");
         static const int network_interface_HASH = HashingUtils::HashString("network-interface");
@@ -97,6 +102,14 @@ namespace Aws
           {
             return ResourceType::elastic_gpu;
           }
+          else if (hashCode == export_image_task_HASH)
+          {
+            return ResourceType::export_image_task;
+          }
+          else if (hashCode == export_instance_task_HASH)
+          {
+            return ResourceType::export_instance_task;
+          }
           else if (hashCode == fleet_HASH)
           {
             return ResourceType::fleet;
@@ -113,6 +126,14 @@ namespace Aws
           {
             return ResourceType::image;
           }
+          else if (hashCode == import_image_task_HASH)
+          {
+            return ResourceType::import_image_task;
+          }
+          else if (hashCode == import_snapshot_task_HASH)
+          {
+            return ResourceType::import_snapshot_task;
+          }
           else if (hashCode == instance_HASH)
           {
             return ResourceType::instance;
@@ -128,6 +149,10 @@ namespace Aws
           else if (hashCode == launch_template_HASH)
           {
             return ResourceType::launch_template;
+          }
+          else if (hashCode == local_gateway_route_table_vpc_association_HASH)
+          {
+            return ResourceType::local_gateway_route_table_vpc_association;
           }
           else if (hashCode == natgateway_HASH)
           {
@@ -251,6 +276,10 @@ namespace Aws
             return "elastic-ip";
           case ResourceType::elastic_gpu:
             return "elastic-gpu";
+          case ResourceType::export_image_task:
+            return "export-image-task";
+          case ResourceType::export_instance_task:
+            return "export-instance-task";
           case ResourceType::fleet:
             return "fleet";
           case ResourceType::fpga_image:
@@ -259,6 +288,10 @@ namespace Aws
             return "host-reservation";
           case ResourceType::image:
             return "image";
+          case ResourceType::import_image_task:
+            return "import-image-task";
+          case ResourceType::import_snapshot_task:
+            return "import-snapshot-task";
           case ResourceType::instance:
             return "instance";
           case ResourceType::internet_gateway:
@@ -267,6 +300,8 @@ namespace Aws
             return "key-pair";
           case ResourceType::launch_template:
             return "launch-template";
+          case ResourceType::local_gateway_route_table_vpc_association:
+            return "local-gateway-route-table-vpc-association";
           case ResourceType::natgateway:
             return "natgateway";
           case ResourceType::network_acl:

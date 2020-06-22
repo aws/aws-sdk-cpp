@@ -47,6 +47,7 @@
 #include <aws/rekognition/model/GetFaceSearchResult.h>
 #include <aws/rekognition/model/GetLabelDetectionResult.h>
 #include <aws/rekognition/model/GetPersonTrackingResult.h>
+#include <aws/rekognition/model/GetSegmentDetectionResult.h>
 #include <aws/rekognition/model/GetTextDetectionResult.h>
 #include <aws/rekognition/model/IndexFacesResult.h>
 #include <aws/rekognition/model/ListCollectionsResult.h>
@@ -62,6 +63,7 @@
 #include <aws/rekognition/model/StartLabelDetectionResult.h>
 #include <aws/rekognition/model/StartPersonTrackingResult.h>
 #include <aws/rekognition/model/StartProjectVersionResult.h>
+#include <aws/rekognition/model/StartSegmentDetectionResult.h>
 #include <aws/rekognition/model/StartStreamProcessorResult.h>
 #include <aws/rekognition/model/StartTextDetectionResult.h>
 #include <aws/rekognition/model/StopProjectVersionResult.h>
@@ -131,6 +133,7 @@ namespace Model
         class GetFaceSearchRequest;
         class GetLabelDetectionRequest;
         class GetPersonTrackingRequest;
+        class GetSegmentDetectionRequest;
         class GetTextDetectionRequest;
         class IndexFacesRequest;
         class ListCollectionsRequest;
@@ -146,6 +149,7 @@ namespace Model
         class StartLabelDetectionRequest;
         class StartPersonTrackingRequest;
         class StartProjectVersionRequest;
+        class StartSegmentDetectionRequest;
         class StartStreamProcessorRequest;
         class StartTextDetectionRequest;
         class StopProjectVersionRequest;
@@ -177,6 +181,7 @@ namespace Model
         typedef Aws::Utils::Outcome<GetFaceSearchResult, Aws::Client::AWSError<RekognitionErrors>> GetFaceSearchOutcome;
         typedef Aws::Utils::Outcome<GetLabelDetectionResult, Aws::Client::AWSError<RekognitionErrors>> GetLabelDetectionOutcome;
         typedef Aws::Utils::Outcome<GetPersonTrackingResult, Aws::Client::AWSError<RekognitionErrors>> GetPersonTrackingOutcome;
+        typedef Aws::Utils::Outcome<GetSegmentDetectionResult, Aws::Client::AWSError<RekognitionErrors>> GetSegmentDetectionOutcome;
         typedef Aws::Utils::Outcome<GetTextDetectionResult, Aws::Client::AWSError<RekognitionErrors>> GetTextDetectionOutcome;
         typedef Aws::Utils::Outcome<IndexFacesResult, Aws::Client::AWSError<RekognitionErrors>> IndexFacesOutcome;
         typedef Aws::Utils::Outcome<ListCollectionsResult, Aws::Client::AWSError<RekognitionErrors>> ListCollectionsOutcome;
@@ -192,6 +197,7 @@ namespace Model
         typedef Aws::Utils::Outcome<StartLabelDetectionResult, Aws::Client::AWSError<RekognitionErrors>> StartLabelDetectionOutcome;
         typedef Aws::Utils::Outcome<StartPersonTrackingResult, Aws::Client::AWSError<RekognitionErrors>> StartPersonTrackingOutcome;
         typedef Aws::Utils::Outcome<StartProjectVersionResult, Aws::Client::AWSError<RekognitionErrors>> StartProjectVersionOutcome;
+        typedef Aws::Utils::Outcome<StartSegmentDetectionResult, Aws::Client::AWSError<RekognitionErrors>> StartSegmentDetectionOutcome;
         typedef Aws::Utils::Outcome<StartStreamProcessorResult, Aws::Client::AWSError<RekognitionErrors>> StartStreamProcessorOutcome;
         typedef Aws::Utils::Outcome<StartTextDetectionResult, Aws::Client::AWSError<RekognitionErrors>> StartTextDetectionOutcome;
         typedef Aws::Utils::Outcome<StopProjectVersionResult, Aws::Client::AWSError<RekognitionErrors>> StopProjectVersionOutcome;
@@ -223,6 +229,7 @@ namespace Model
         typedef std::future<GetFaceSearchOutcome> GetFaceSearchOutcomeCallable;
         typedef std::future<GetLabelDetectionOutcome> GetLabelDetectionOutcomeCallable;
         typedef std::future<GetPersonTrackingOutcome> GetPersonTrackingOutcomeCallable;
+        typedef std::future<GetSegmentDetectionOutcome> GetSegmentDetectionOutcomeCallable;
         typedef std::future<GetTextDetectionOutcome> GetTextDetectionOutcomeCallable;
         typedef std::future<IndexFacesOutcome> IndexFacesOutcomeCallable;
         typedef std::future<ListCollectionsOutcome> ListCollectionsOutcomeCallable;
@@ -238,6 +245,7 @@ namespace Model
         typedef std::future<StartLabelDetectionOutcome> StartLabelDetectionOutcomeCallable;
         typedef std::future<StartPersonTrackingOutcome> StartPersonTrackingOutcomeCallable;
         typedef std::future<StartProjectVersionOutcome> StartProjectVersionOutcomeCallable;
+        typedef std::future<StartSegmentDetectionOutcome> StartSegmentDetectionOutcomeCallable;
         typedef std::future<StartStreamProcessorOutcome> StartStreamProcessorOutcomeCallable;
         typedef std::future<StartTextDetectionOutcome> StartTextDetectionOutcomeCallable;
         typedef std::future<StopProjectVersionOutcome> StopProjectVersionOutcomeCallable;
@@ -272,6 +280,7 @@ namespace Model
     typedef std::function<void(const RekognitionClient*, const Model::GetFaceSearchRequest&, const Model::GetFaceSearchOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetFaceSearchResponseReceivedHandler;
     typedef std::function<void(const RekognitionClient*, const Model::GetLabelDetectionRequest&, const Model::GetLabelDetectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetLabelDetectionResponseReceivedHandler;
     typedef std::function<void(const RekognitionClient*, const Model::GetPersonTrackingRequest&, const Model::GetPersonTrackingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetPersonTrackingResponseReceivedHandler;
+    typedef std::function<void(const RekognitionClient*, const Model::GetSegmentDetectionRequest&, const Model::GetSegmentDetectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSegmentDetectionResponseReceivedHandler;
     typedef std::function<void(const RekognitionClient*, const Model::GetTextDetectionRequest&, const Model::GetTextDetectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetTextDetectionResponseReceivedHandler;
     typedef std::function<void(const RekognitionClient*, const Model::IndexFacesRequest&, const Model::IndexFacesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > IndexFacesResponseReceivedHandler;
     typedef std::function<void(const RekognitionClient*, const Model::ListCollectionsRequest&, const Model::ListCollectionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListCollectionsResponseReceivedHandler;
@@ -287,6 +296,7 @@ namespace Model
     typedef std::function<void(const RekognitionClient*, const Model::StartLabelDetectionRequest&, const Model::StartLabelDetectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartLabelDetectionResponseReceivedHandler;
     typedef std::function<void(const RekognitionClient*, const Model::StartPersonTrackingRequest&, const Model::StartPersonTrackingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartPersonTrackingResponseReceivedHandler;
     typedef std::function<void(const RekognitionClient*, const Model::StartProjectVersionRequest&, const Model::StartProjectVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartProjectVersionResponseReceivedHandler;
+    typedef std::function<void(const RekognitionClient*, const Model::StartSegmentDetectionRequest&, const Model::StartSegmentDetectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartSegmentDetectionResponseReceivedHandler;
     typedef std::function<void(const RekognitionClient*, const Model::StartStreamProcessorRequest&, const Model::StartStreamProcessorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartStreamProcessorResponseReceivedHandler;
     typedef std::function<void(const RekognitionClient*, const Model::StartTextDetectionRequest&, const Model::StartTextDetectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartTextDetectionResponseReceivedHandler;
     typedef std::function<void(const RekognitionClient*, const Model::StopProjectVersionRequest&, const Model::StopProjectVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopProjectVersionResponseReceivedHandler;
@@ -747,10 +757,10 @@ namespace Model
 
         /**
          * <p>Deletes an Amazon Rekognition Custom Labels project. To delete a project you
-         * must first delete all versions of the model associated with the project. To
-         * delete a version of a model, see <a>DeleteProjectVersion</a>.</p> <p>This
-         * operation requires permissions to perform the
-         * <code>rekognition:DeleteProject</code> action. </p><p><h3>See Also:</h3>   <a
+         * must first delete all models associated with the project. To delete a model, see
+         * <a>DeleteProjectVersion</a>.</p> <p>This operation requires permissions to
+         * perform the <code>rekognition:DeleteProject</code> action. </p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DeleteProject">AWS
          * API Reference</a></p>
          */
@@ -758,10 +768,10 @@ namespace Model
 
         /**
          * <p>Deletes an Amazon Rekognition Custom Labels project. To delete a project you
-         * must first delete all versions of the model associated with the project. To
-         * delete a version of a model, see <a>DeleteProjectVersion</a>.</p> <p>This
-         * operation requires permissions to perform the
-         * <code>rekognition:DeleteProject</code> action. </p><p><h3>See Also:</h3>   <a
+         * must first delete all models associated with the project. To delete a model, see
+         * <a>DeleteProjectVersion</a>.</p> <p>This operation requires permissions to
+         * perform the <code>rekognition:DeleteProject</code> action. </p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DeleteProject">AWS
          * API Reference</a></p>
          *
@@ -771,10 +781,10 @@ namespace Model
 
         /**
          * <p>Deletes an Amazon Rekognition Custom Labels project. To delete a project you
-         * must first delete all versions of the model associated with the project. To
-         * delete a version of a model, see <a>DeleteProjectVersion</a>.</p> <p>This
-         * operation requires permissions to perform the
-         * <code>rekognition:DeleteProject</code> action. </p><p><h3>See Also:</h3>   <a
+         * must first delete all models associated with the project. To delete a model, see
+         * <a>DeleteProjectVersion</a>.</p> <p>This operation requires permissions to
+         * perform the <code>rekognition:DeleteProject</code> action. </p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DeleteProject">AWS
          * API Reference</a></p>
          *
@@ -783,11 +793,12 @@ namespace Model
         virtual void DeleteProjectAsync(const Model::DeleteProjectRequest& request, const DeleteProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes a version of a model. </p> <p>You must first stop the model before
-         * you can delete it. To check if a model is running, use the <code>Status</code>
-         * field returned from <a>DescribeProjectVersions</a>. To stop a running model call
-         * <a>StopProjectVersion</a>. </p> <p>This operation requires permissions to
-         * perform the <code>rekognition:DeleteProjectVersion</code> action. </p><p><h3>See
+         * <p>Deletes an Amazon Rekognition Custom Labels model. </p> <p>You can't delete a
+         * model if it is running or if it is training. To check the status of a model, use
+         * the <code>Status</code> field returned from <a>DescribeProjectVersions</a>. To
+         * stop a running model call <a>StopProjectVersion</a>. If the model is training,
+         * wait until it finishes.</p> <p>This operation requires permissions to perform
+         * the <code>rekognition:DeleteProjectVersion</code> action. </p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DeleteProjectVersion">AWS
          * API Reference</a></p>
@@ -795,11 +806,12 @@ namespace Model
         virtual Model::DeleteProjectVersionOutcome DeleteProjectVersion(const Model::DeleteProjectVersionRequest& request) const;
 
         /**
-         * <p>Deletes a version of a model. </p> <p>You must first stop the model before
-         * you can delete it. To check if a model is running, use the <code>Status</code>
-         * field returned from <a>DescribeProjectVersions</a>. To stop a running model call
-         * <a>StopProjectVersion</a>. </p> <p>This operation requires permissions to
-         * perform the <code>rekognition:DeleteProjectVersion</code> action. </p><p><h3>See
+         * <p>Deletes an Amazon Rekognition Custom Labels model. </p> <p>You can't delete a
+         * model if it is running or if it is training. To check the status of a model, use
+         * the <code>Status</code> field returned from <a>DescribeProjectVersions</a>. To
+         * stop a running model call <a>StopProjectVersion</a>. If the model is training,
+         * wait until it finishes.</p> <p>This operation requires permissions to perform
+         * the <code>rekognition:DeleteProjectVersion</code> action. </p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DeleteProjectVersion">AWS
          * API Reference</a></p>
@@ -809,11 +821,12 @@ namespace Model
         virtual Model::DeleteProjectVersionOutcomeCallable DeleteProjectVersionCallable(const Model::DeleteProjectVersionRequest& request) const;
 
         /**
-         * <p>Deletes a version of a model. </p> <p>You must first stop the model before
-         * you can delete it. To check if a model is running, use the <code>Status</code>
-         * field returned from <a>DescribeProjectVersions</a>. To stop a running model call
-         * <a>StopProjectVersion</a>. </p> <p>This operation requires permissions to
-         * perform the <code>rekognition:DeleteProjectVersion</code> action. </p><p><h3>See
+         * <p>Deletes an Amazon Rekognition Custom Labels model. </p> <p>You can't delete a
+         * model if it is running or if it is training. To check the status of a model, use
+         * the <code>Status</code> field returned from <a>DescribeProjectVersions</a>. To
+         * stop a running model call <a>StopProjectVersion</a>. If the model is training,
+         * wait until it finishes.</p> <p>This operation requires permissions to perform
+         * the <code>rekognition:DeleteProjectVersion</code> action. </p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DeleteProjectVersion">AWS
          * API Reference</a></p>
@@ -2163,6 +2176,118 @@ namespace Model
         virtual void GetPersonTrackingAsync(const Model::GetPersonTrackingRequest& request, const GetPersonTrackingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Gets the segment detection results of a Amazon Rekognition Video analysis
+         * started by <a>StartSegmentDetection</a>.</p> <p>Segment detection with Amazon
+         * Rekognition Video is an asynchronous operation. You start segment detection by
+         * calling <a>StartSegmentDetection</a> which returns a job identifier
+         * (<code>JobId</code>). When the segment detection operation finishes, Amazon
+         * Rekognition publishes a completion status to the Amazon Simple Notification
+         * Service topic registered in the initial call to
+         * <code>StartSegmentDetection</code>. To get the results of the segment detection
+         * operation, first check that the status value published to the Amazon SNS topic
+         * is <code>SUCCEEDED</code>. if so, call <code>GetSegmentDetection</code> and pass
+         * the job identifier (<code>JobId</code>) from the initial call of
+         * <code>StartSegmentDetection</code>.</p> <p> <code>GetSegmentDetection</code>
+         * returns detected segments in an array (<code>Segments</code>) of
+         * <a>SegmentDetection</a> objects. <code>Segments</code> is sorted by the segment
+         * types specified in the <code>SegmentTypes</code> input parameter of
+         * <code>StartSegmentDetection</code>. Each element of the array includes the
+         * detected segment, the precentage confidence in the acuracy of the detected
+         * segment, the type of the segment, and the frame in which the segment was
+         * detected.</p> <p>Use <code>SelectedSegmentTypes</code> to find out the type of
+         * segment detection requested in the call to
+         * <code>StartSegmentDetection</code>.</p> <p>Use the <code>MaxResults</code>
+         * parameter to limit the number of segment detections returned. If there are more
+         * results than specified in <code>MaxResults</code>, the value of
+         * <code>NextToken</code> in the operation response contains a pagination token for
+         * getting the next set of results. To get the next page of results, call
+         * <code>GetSegmentDetection</code> and populate the <code>NextToken</code> request
+         * parameter with the token value returned from the previous call to
+         * <code>GetSegmentDetection</code>.</p> <p>For more information, see Detecting
+         * Video Segments in Stored Video in the Amazon Rekognition Developer
+         * Guide.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/GetSegmentDetection">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetSegmentDetectionOutcome GetSegmentDetection(const Model::GetSegmentDetectionRequest& request) const;
+
+        /**
+         * <p>Gets the segment detection results of a Amazon Rekognition Video analysis
+         * started by <a>StartSegmentDetection</a>.</p> <p>Segment detection with Amazon
+         * Rekognition Video is an asynchronous operation. You start segment detection by
+         * calling <a>StartSegmentDetection</a> which returns a job identifier
+         * (<code>JobId</code>). When the segment detection operation finishes, Amazon
+         * Rekognition publishes a completion status to the Amazon Simple Notification
+         * Service topic registered in the initial call to
+         * <code>StartSegmentDetection</code>. To get the results of the segment detection
+         * operation, first check that the status value published to the Amazon SNS topic
+         * is <code>SUCCEEDED</code>. if so, call <code>GetSegmentDetection</code> and pass
+         * the job identifier (<code>JobId</code>) from the initial call of
+         * <code>StartSegmentDetection</code>.</p> <p> <code>GetSegmentDetection</code>
+         * returns detected segments in an array (<code>Segments</code>) of
+         * <a>SegmentDetection</a> objects. <code>Segments</code> is sorted by the segment
+         * types specified in the <code>SegmentTypes</code> input parameter of
+         * <code>StartSegmentDetection</code>. Each element of the array includes the
+         * detected segment, the precentage confidence in the acuracy of the detected
+         * segment, the type of the segment, and the frame in which the segment was
+         * detected.</p> <p>Use <code>SelectedSegmentTypes</code> to find out the type of
+         * segment detection requested in the call to
+         * <code>StartSegmentDetection</code>.</p> <p>Use the <code>MaxResults</code>
+         * parameter to limit the number of segment detections returned. If there are more
+         * results than specified in <code>MaxResults</code>, the value of
+         * <code>NextToken</code> in the operation response contains a pagination token for
+         * getting the next set of results. To get the next page of results, call
+         * <code>GetSegmentDetection</code> and populate the <code>NextToken</code> request
+         * parameter with the token value returned from the previous call to
+         * <code>GetSegmentDetection</code>.</p> <p>For more information, see Detecting
+         * Video Segments in Stored Video in the Amazon Rekognition Developer
+         * Guide.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/GetSegmentDetection">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetSegmentDetectionOutcomeCallable GetSegmentDetectionCallable(const Model::GetSegmentDetectionRequest& request) const;
+
+        /**
+         * <p>Gets the segment detection results of a Amazon Rekognition Video analysis
+         * started by <a>StartSegmentDetection</a>.</p> <p>Segment detection with Amazon
+         * Rekognition Video is an asynchronous operation. You start segment detection by
+         * calling <a>StartSegmentDetection</a> which returns a job identifier
+         * (<code>JobId</code>). When the segment detection operation finishes, Amazon
+         * Rekognition publishes a completion status to the Amazon Simple Notification
+         * Service topic registered in the initial call to
+         * <code>StartSegmentDetection</code>. To get the results of the segment detection
+         * operation, first check that the status value published to the Amazon SNS topic
+         * is <code>SUCCEEDED</code>. if so, call <code>GetSegmentDetection</code> and pass
+         * the job identifier (<code>JobId</code>) from the initial call of
+         * <code>StartSegmentDetection</code>.</p> <p> <code>GetSegmentDetection</code>
+         * returns detected segments in an array (<code>Segments</code>) of
+         * <a>SegmentDetection</a> objects. <code>Segments</code> is sorted by the segment
+         * types specified in the <code>SegmentTypes</code> input parameter of
+         * <code>StartSegmentDetection</code>. Each element of the array includes the
+         * detected segment, the precentage confidence in the acuracy of the detected
+         * segment, the type of the segment, and the frame in which the segment was
+         * detected.</p> <p>Use <code>SelectedSegmentTypes</code> to find out the type of
+         * segment detection requested in the call to
+         * <code>StartSegmentDetection</code>.</p> <p>Use the <code>MaxResults</code>
+         * parameter to limit the number of segment detections returned. If there are more
+         * results than specified in <code>MaxResults</code>, the value of
+         * <code>NextToken</code> in the operation response contains a pagination token for
+         * getting the next set of results. To get the next page of results, call
+         * <code>GetSegmentDetection</code> and populate the <code>NextToken</code> request
+         * parameter with the token value returned from the previous call to
+         * <code>GetSegmentDetection</code>.</p> <p>For more information, see Detecting
+         * Video Segments in Stored Video in the Amazon Rekognition Developer
+         * Guide.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/GetSegmentDetection">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetSegmentDetectionAsync(const Model::GetSegmentDetectionRequest& request, const GetSegmentDetectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Gets the text detection results of a Amazon Rekognition Video analysis
          * started by <a>StartTextDetection</a>.</p> <p>Text detection with Amazon
          * Rekognition Video is an asynchronous operation. You start text detection by
@@ -2276,7 +2401,7 @@ namespace Model
          * ID. You can also get the model version from the value of
          * <code>FaceModelVersion</code> in the response from <code>IndexFaces</code> </p>
          * <p>For more information, see Model Versioning in the Amazon Rekognition
-         * Developer Guide.</p> <p>If you provide the optional <code>ExternalImageID</code>
+         * Developer Guide.</p> <p>If you provide the optional <code>ExternalImageId</code>
          * for the input image you provided, Amazon Rekognition associates this ID with all
          * faces that it detects. When you call the <a>ListFaces</a> operation, the
          * response returns the external ID. You can use this external image ID to create a
@@ -2347,7 +2472,7 @@ namespace Model
          * ID. You can also get the model version from the value of
          * <code>FaceModelVersion</code> in the response from <code>IndexFaces</code> </p>
          * <p>For more information, see Model Versioning in the Amazon Rekognition
-         * Developer Guide.</p> <p>If you provide the optional <code>ExternalImageID</code>
+         * Developer Guide.</p> <p>If you provide the optional <code>ExternalImageId</code>
          * for the input image you provided, Amazon Rekognition associates this ID with all
          * faces that it detects. When you call the <a>ListFaces</a> operation, the
          * response returns the external ID. You can use this external image ID to create a
@@ -2420,7 +2545,7 @@ namespace Model
          * ID. You can also get the model version from the value of
          * <code>FaceModelVersion</code> in the response from <code>IndexFaces</code> </p>
          * <p>For more information, see Model Versioning in the Amazon Rekognition
-         * Developer Guide.</p> <p>If you provide the optional <code>ExternalImageID</code>
+         * Developer Guide.</p> <p>If you provide the optional <code>ExternalImageId</code>
          * for the input image you provided, Amazon Rekognition associates this ID with all
          * faces that it detects. When you call the <a>ListFaces</a> operation, the
          * response returns the external ID. You can use this external image ID to create a
@@ -3288,6 +3413,85 @@ namespace Model
         virtual void StartProjectVersionAsync(const Model::StartProjectVersionRequest& request, const StartProjectVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Starts asynchronous detection of segment detection in a stored video.</p>
+         * <p>Amazon Rekognition Video can detect segments in a video stored in an Amazon
+         * S3 bucket. Use <a>Video</a> to specify the bucket name and the filename of the
+         * video. <code>StartSegmentDetection</code> returns a job identifier
+         * (<code>JobId</code>) which you use to get the results of the operation. When
+         * segment detection is finished, Amazon Rekognition Video publishes a completion
+         * status to the Amazon Simple Notification Service topic that you specify in
+         * <code>NotificationChannel</code>.</p> <p>You can use the <code>Filters</code>
+         * (<a>StartSegmentDetectionFilters</a>) input parameter to specify the minimum
+         * detection confidence returned in the response. Within <code>Filters</code>, use
+         * <code>ShotFilter</code> (<a>StartShotDetectionFilter</a>) to filter detected
+         * shots. Use <code>TechnicalCueFilter</code>
+         * (<a>StartTechnicalCueDetectionFilter</a>) to filter technical cues. </p> <p>To
+         * get the results of the segment detection operation, first check that the status
+         * value published to the Amazon SNS topic is <code>SUCCEEDED</code>. if so, call
+         * <a>GetSegmentDetection</a> and pass the job identifier (<code>JobId</code>) from
+         * the initial call to <code>StartSegmentDetection</code>. </p> <p>For more
+         * information, see Detecting Video Segments in Stored Video in the Amazon
+         * Rekognition Developer Guide.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/StartSegmentDetection">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartSegmentDetectionOutcome StartSegmentDetection(const Model::StartSegmentDetectionRequest& request) const;
+
+        /**
+         * <p>Starts asynchronous detection of segment detection in a stored video.</p>
+         * <p>Amazon Rekognition Video can detect segments in a video stored in an Amazon
+         * S3 bucket. Use <a>Video</a> to specify the bucket name and the filename of the
+         * video. <code>StartSegmentDetection</code> returns a job identifier
+         * (<code>JobId</code>) which you use to get the results of the operation. When
+         * segment detection is finished, Amazon Rekognition Video publishes a completion
+         * status to the Amazon Simple Notification Service topic that you specify in
+         * <code>NotificationChannel</code>.</p> <p>You can use the <code>Filters</code>
+         * (<a>StartSegmentDetectionFilters</a>) input parameter to specify the minimum
+         * detection confidence returned in the response. Within <code>Filters</code>, use
+         * <code>ShotFilter</code> (<a>StartShotDetectionFilter</a>) to filter detected
+         * shots. Use <code>TechnicalCueFilter</code>
+         * (<a>StartTechnicalCueDetectionFilter</a>) to filter technical cues. </p> <p>To
+         * get the results of the segment detection operation, first check that the status
+         * value published to the Amazon SNS topic is <code>SUCCEEDED</code>. if so, call
+         * <a>GetSegmentDetection</a> and pass the job identifier (<code>JobId</code>) from
+         * the initial call to <code>StartSegmentDetection</code>. </p> <p>For more
+         * information, see Detecting Video Segments in Stored Video in the Amazon
+         * Rekognition Developer Guide.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/StartSegmentDetection">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::StartSegmentDetectionOutcomeCallable StartSegmentDetectionCallable(const Model::StartSegmentDetectionRequest& request) const;
+
+        /**
+         * <p>Starts asynchronous detection of segment detection in a stored video.</p>
+         * <p>Amazon Rekognition Video can detect segments in a video stored in an Amazon
+         * S3 bucket. Use <a>Video</a> to specify the bucket name and the filename of the
+         * video. <code>StartSegmentDetection</code> returns a job identifier
+         * (<code>JobId</code>) which you use to get the results of the operation. When
+         * segment detection is finished, Amazon Rekognition Video publishes a completion
+         * status to the Amazon Simple Notification Service topic that you specify in
+         * <code>NotificationChannel</code>.</p> <p>You can use the <code>Filters</code>
+         * (<a>StartSegmentDetectionFilters</a>) input parameter to specify the minimum
+         * detection confidence returned in the response. Within <code>Filters</code>, use
+         * <code>ShotFilter</code> (<a>StartShotDetectionFilter</a>) to filter detected
+         * shots. Use <code>TechnicalCueFilter</code>
+         * (<a>StartTechnicalCueDetectionFilter</a>) to filter technical cues. </p> <p>To
+         * get the results of the segment detection operation, first check that the status
+         * value published to the Amazon SNS topic is <code>SUCCEEDED</code>. if so, call
+         * <a>GetSegmentDetection</a> and pass the job identifier (<code>JobId</code>) from
+         * the initial call to <code>StartSegmentDetection</code>. </p> <p>For more
+         * information, see Detecting Video Segments in Stored Video in the Amazon
+         * Rekognition Developer Guide.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/StartSegmentDetection">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void StartSegmentDetectionAsync(const Model::StartSegmentDetectionRequest& request, const StartSegmentDetectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Starts processing a stream processor. You create a stream processor by
          * calling <a>CreateStreamProcessor</a>. To tell <code>StartStreamProcessor</code>
          * which stream processor to start, use the value of the <code>Name</code> field
@@ -3471,6 +3675,7 @@ namespace Model
         void GetFaceSearchAsyncHelper(const Model::GetFaceSearchRequest& request, const GetFaceSearchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetLabelDetectionAsyncHelper(const Model::GetLabelDetectionRequest& request, const GetLabelDetectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetPersonTrackingAsyncHelper(const Model::GetPersonTrackingRequest& request, const GetPersonTrackingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetSegmentDetectionAsyncHelper(const Model::GetSegmentDetectionRequest& request, const GetSegmentDetectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetTextDetectionAsyncHelper(const Model::GetTextDetectionRequest& request, const GetTextDetectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void IndexFacesAsyncHelper(const Model::IndexFacesRequest& request, const IndexFacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListCollectionsAsyncHelper(const Model::ListCollectionsRequest& request, const ListCollectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -3486,6 +3691,7 @@ namespace Model
         void StartLabelDetectionAsyncHelper(const Model::StartLabelDetectionRequest& request, const StartLabelDetectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartPersonTrackingAsyncHelper(const Model::StartPersonTrackingRequest& request, const StartPersonTrackingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartProjectVersionAsyncHelper(const Model::StartProjectVersionRequest& request, const StartProjectVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void StartSegmentDetectionAsyncHelper(const Model::StartSegmentDetectionRequest& request, const StartSegmentDetectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartStreamProcessorAsyncHelper(const Model::StartStreamProcessorRequest& request, const StartStreamProcessorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartTextDetectionAsyncHelper(const Model::StartTextDetectionRequest& request, const StartTextDetectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StopProjectVersionAsyncHelper(const Model::StopProjectVersionRequest& request, const StopProjectVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

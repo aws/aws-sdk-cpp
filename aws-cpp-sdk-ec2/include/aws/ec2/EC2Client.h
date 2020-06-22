@@ -4609,9 +4609,9 @@ namespace Model
         virtual void CreateImageAsync(const Model::CreateImageRequest& request, const CreateImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Exports a running or stopped instance to an S3 bucket.</p> <p>For information
-         * about the supported operating systems, image formats, and known limitations for
-         * the types of instances you can export, see <a
+         * <p>Exports a running or stopped instance to an Amazon S3 bucket.</p> <p>For
+         * information about the supported operating systems, image formats, and known
+         * limitations for the types of instances you can export, see <a
          * href="https://docs.aws.amazon.com/vm-import/latest/userguide/vmexport.html">Exporting
          * an Instance as a VM Using VM Import/Export</a> in the <i>VM Import/Export User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -4621,9 +4621,9 @@ namespace Model
         virtual Model::CreateInstanceExportTaskOutcome CreateInstanceExportTask(const Model::CreateInstanceExportTaskRequest& request) const;
 
         /**
-         * <p>Exports a running or stopped instance to an S3 bucket.</p> <p>For information
-         * about the supported operating systems, image formats, and known limitations for
-         * the types of instances you can export, see <a
+         * <p>Exports a running or stopped instance to an Amazon S3 bucket.</p> <p>For
+         * information about the supported operating systems, image formats, and known
+         * limitations for the types of instances you can export, see <a
          * href="https://docs.aws.amazon.com/vm-import/latest/userguide/vmexport.html">Exporting
          * an Instance as a VM Using VM Import/Export</a> in the <i>VM Import/Export User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -4635,9 +4635,9 @@ namespace Model
         virtual Model::CreateInstanceExportTaskOutcomeCallable CreateInstanceExportTaskCallable(const Model::CreateInstanceExportTaskRequest& request) const;
 
         /**
-         * <p>Exports a running or stopped instance to an S3 bucket.</p> <p>For information
-         * about the supported operating systems, image formats, and known limitations for
-         * the types of instances you can export, see <a
+         * <p>Exports a running or stopped instance to an Amazon S3 bucket.</p> <p>For
+         * information about the supported operating systems, image formats, and known
+         * limitations for the types of instances you can export, see <a
          * href="https://docs.aws.amazon.com/vm-import/latest/userguide/vmexport.html">Exporting
          * an Instance as a VM Using VM Import/Export</a> in the <i>VM Import/Export User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -9161,7 +9161,7 @@ namespace Model
         virtual void DescribeElasticGpusAsync(const Model::DescribeElasticGpusRequest& request, const DescribeElasticGpusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes the specified export image tasks or all your export image
+         * <p>Describes the specified export image tasks or all of your export image
          * tasks.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeExportImageTasks">AWS
          * API Reference</a></p>
@@ -9169,7 +9169,7 @@ namespace Model
         virtual Model::DescribeExportImageTasksOutcome DescribeExportImageTasks(const Model::DescribeExportImageTasksRequest& request) const;
 
         /**
-         * <p>Describes the specified export image tasks or all your export image
+         * <p>Describes the specified export image tasks or all of your export image
          * tasks.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeExportImageTasks">AWS
          * API Reference</a></p>
@@ -9179,7 +9179,7 @@ namespace Model
         virtual Model::DescribeExportImageTasksOutcomeCallable DescribeExportImageTasksCallable(const Model::DescribeExportImageTasksRequest& request) const;
 
         /**
-         * <p>Describes the specified export image tasks or all your export image
+         * <p>Describes the specified export image tasks or all of your export image
          * tasks.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeExportImageTasks">AWS
          * API Reference</a></p>
@@ -9189,7 +9189,7 @@ namespace Model
         virtual void DescribeExportImageTasksAsync(const Model::DescribeExportImageTasksRequest& request, const DescribeExportImageTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes the specified export instance tasks or all your export instance
+         * <p>Describes the specified export instance tasks or all of your export instance
          * tasks.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeExportTasks">AWS
          * API Reference</a></p>
@@ -9197,7 +9197,7 @@ namespace Model
         virtual Model::DescribeExportTasksOutcome DescribeExportTasks(const Model::DescribeExportTasksRequest& request) const;
 
         /**
-         * <p>Describes the specified export instance tasks or all your export instance
+         * <p>Describes the specified export instance tasks or all of your export instance
          * tasks.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeExportTasks">AWS
          * API Reference</a></p>
@@ -9207,7 +9207,7 @@ namespace Model
         virtual Model::DescribeExportTasksOutcomeCallable DescribeExportTasksCallable(const Model::DescribeExportTasksRequest& request) const;
 
         /**
-         * <p>Describes the specified export instance tasks or all your export instance
+         * <p>Describes the specified export instance tasks or all of your export instance
          * tasks.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeExportTasks">AWS
          * API Reference</a></p>

@@ -17,7 +17,9 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/SnapshotTaskDetail.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/ResponseMetadata.h>
+#include <aws/ec2/model/Tag.h>
 #include <utility>
 
 namespace Aws
@@ -142,6 +144,42 @@ namespace Model
     inline ImportSnapshotResponse& WithSnapshotTaskDetail(SnapshotTaskDetail&& value) { SetSnapshotTaskDetail(std::move(value)); return *this;}
 
 
+    /**
+     * <p>Any tags assigned to the snapshot being imported.</p>
+     */
+    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>Any tags assigned to the snapshot being imported.</p>
+     */
+    inline void SetTags(const Aws::Vector<Tag>& value) { m_tags = value; }
+
+    /**
+     * <p>Any tags assigned to the snapshot being imported.</p>
+     */
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tags = std::move(value); }
+
+    /**
+     * <p>Any tags assigned to the snapshot being imported.</p>
+     */
+    inline ImportSnapshotResponse& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>Any tags assigned to the snapshot being imported.</p>
+     */
+    inline ImportSnapshotResponse& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>Any tags assigned to the snapshot being imported.</p>
+     */
+    inline ImportSnapshotResponse& AddTags(const Tag& value) { m_tags.push_back(value); return *this; }
+
+    /**
+     * <p>Any tags assigned to the snapshot being imported.</p>
+     */
+    inline ImportSnapshotResponse& AddTags(Tag&& value) { m_tags.push_back(std::move(value)); return *this; }
+
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -164,6 +202,8 @@ namespace Model
     Aws::String m_importTaskId;
 
     SnapshotTaskDetail m_snapshotTaskDetail;
+
+    Aws::Vector<Tag> m_tags;
 
     ResponseMetadata m_responseMetadata;
   };

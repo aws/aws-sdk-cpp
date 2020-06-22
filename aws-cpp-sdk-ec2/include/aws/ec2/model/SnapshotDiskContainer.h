@@ -191,32 +191,32 @@ namespace Model
 
 
     /**
-     * <p>The S3 bucket for the disk image.</p>
+     * <p>The Amazon S3 bucket for the disk image.</p>
      */
     inline const UserBucket& GetUserBucket() const{ return m_userBucket; }
 
     /**
-     * <p>The S3 bucket for the disk image.</p>
+     * <p>The Amazon S3 bucket for the disk image.</p>
      */
     inline bool UserBucketHasBeenSet() const { return m_userBucketHasBeenSet; }
 
     /**
-     * <p>The S3 bucket for the disk image.</p>
+     * <p>The Amazon S3 bucket for the disk image.</p>
      */
     inline void SetUserBucket(const UserBucket& value) { m_userBucketHasBeenSet = true; m_userBucket = value; }
 
     /**
-     * <p>The S3 bucket for the disk image.</p>
+     * <p>The Amazon S3 bucket for the disk image.</p>
      */
     inline void SetUserBucket(UserBucket&& value) { m_userBucketHasBeenSet = true; m_userBucket = std::move(value); }
 
     /**
-     * <p>The S3 bucket for the disk image.</p>
+     * <p>The Amazon S3 bucket for the disk image.</p>
      */
     inline SnapshotDiskContainer& WithUserBucket(const UserBucket& value) { SetUserBucket(value); return *this;}
 
     /**
-     * <p>The S3 bucket for the disk image.</p>
+     * <p>The Amazon S3 bucket for the disk image.</p>
      */
     inline SnapshotDiskContainer& WithUserBucket(UserBucket&& value) { SetUserBucket(std::move(value)); return *this;}
 

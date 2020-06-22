@@ -35,7 +35,8 @@ ImportImageRequest::ImportImageRequest() :
     m_licenseTypeHasBeenSet(false),
     m_platformHasBeenSet(false),
     m_roleNameHasBeenSet(false),
-    m_licenseSpecificationsHasBeenSet(false)
+    m_licenseSpecificationsHasBeenSet(false),
+    m_tagSpecificationsHasBeenSet(false)
 {
 }
 
@@ -115,6 +116,16 @@ Aws::String ImportImageRequest::SerializePayload() const
     {
       item.OutputToStream(ss, "LicenseSpecifications.", licenseSpecificationsCount, "");
       licenseSpecificationsCount++;
+    }
+  }
+
+  if(m_tagSpecificationsHasBeenSet)
+  {
+    unsigned tagSpecificationsCount = 1;
+    for(auto& item : m_tagSpecifications)
+    {
+      item.OutputToStream(ss, "TagSpecification.", tagSpecificationsCount, "");
+      tagSpecificationsCount++;
     }
   }
 

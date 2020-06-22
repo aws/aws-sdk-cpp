@@ -45,56 +45,56 @@ namespace Model
 
 
     /**
-     * <p>Job identifier for the label detection operation for which you want results
+     * <p>Job identifier for the text detection operation for which you want results
      * returned. You get the job identifer from an initial call to
      * <code>StartTextDetection</code>.</p>
      */
     inline const Aws::String& GetJobId() const{ return m_jobId; }
 
     /**
-     * <p>Job identifier for the label detection operation for which you want results
+     * <p>Job identifier for the text detection operation for which you want results
      * returned. You get the job identifer from an initial call to
      * <code>StartTextDetection</code>.</p>
      */
     inline bool JobIdHasBeenSet() const { return m_jobIdHasBeenSet; }
 
     /**
-     * <p>Job identifier for the label detection operation for which you want results
+     * <p>Job identifier for the text detection operation for which you want results
      * returned. You get the job identifer from an initial call to
      * <code>StartTextDetection</code>.</p>
      */
     inline void SetJobId(const Aws::String& value) { m_jobIdHasBeenSet = true; m_jobId = value; }
 
     /**
-     * <p>Job identifier for the label detection operation for which you want results
+     * <p>Job identifier for the text detection operation for which you want results
      * returned. You get the job identifer from an initial call to
      * <code>StartTextDetection</code>.</p>
      */
     inline void SetJobId(Aws::String&& value) { m_jobIdHasBeenSet = true; m_jobId = std::move(value); }
 
     /**
-     * <p>Job identifier for the label detection operation for which you want results
+     * <p>Job identifier for the text detection operation for which you want results
      * returned. You get the job identifer from an initial call to
      * <code>StartTextDetection</code>.</p>
      */
     inline void SetJobId(const char* value) { m_jobIdHasBeenSet = true; m_jobId.assign(value); }
 
     /**
-     * <p>Job identifier for the label detection operation for which you want results
+     * <p>Job identifier for the text detection operation for which you want results
      * returned. You get the job identifer from an initial call to
      * <code>StartTextDetection</code>.</p>
      */
     inline GetTextDetectionRequest& WithJobId(const Aws::String& value) { SetJobId(value); return *this;}
 
     /**
-     * <p>Job identifier for the label detection operation for which you want results
+     * <p>Job identifier for the text detection operation for which you want results
      * returned. You get the job identifer from an initial call to
      * <code>StartTextDetection</code>.</p>
      */
     inline GetTextDetectionRequest& WithJobId(Aws::String&& value) { SetJobId(std::move(value)); return *this;}
 
     /**
-     * <p>Job identifier for the label detection operation for which you want results
+     * <p>Job identifier for the text detection operation for which you want results
      * returned. You get the job identifer from an initial call to
      * <code>StartTextDetection</code>.</p>
      */

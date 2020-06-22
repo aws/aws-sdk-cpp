@@ -56,6 +56,7 @@
 #include <aws/rekognition/model/GetFaceSearchRequest.h>
 #include <aws/rekognition/model/GetLabelDetectionRequest.h>
 #include <aws/rekognition/model/GetPersonTrackingRequest.h>
+#include <aws/rekognition/model/GetSegmentDetectionRequest.h>
 #include <aws/rekognition/model/GetTextDetectionRequest.h>
 #include <aws/rekognition/model/IndexFacesRequest.h>
 #include <aws/rekognition/model/ListCollectionsRequest.h>
@@ -71,6 +72,7 @@
 #include <aws/rekognition/model/StartLabelDetectionRequest.h>
 #include <aws/rekognition/model/StartPersonTrackingRequest.h>
 #include <aws/rekognition/model/StartProjectVersionRequest.h>
+#include <aws/rekognition/model/StartSegmentDetectionRequest.h>
 #include <aws/rekognition/model/StartStreamProcessorRequest.h>
 #include <aws/rekognition/model/StartTextDetectionRequest.h>
 #include <aws/rekognition/model/StopProjectVersionRequest.h>
@@ -1058,6 +1060,41 @@ void RekognitionClient::GetPersonTrackingAsyncHelper(const GetPersonTrackingRequ
   handler(this, request, GetPersonTracking(request), context);
 }
 
+GetSegmentDetectionOutcome RekognitionClient::GetSegmentDetection(const GetSegmentDetectionRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return GetSegmentDetectionOutcome(GetSegmentDetectionResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetSegmentDetectionOutcome(outcome.GetError());
+  }
+}
+
+GetSegmentDetectionOutcomeCallable RekognitionClient::GetSegmentDetectionCallable(const GetSegmentDetectionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetSegmentDetectionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetSegmentDetection(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void RekognitionClient::GetSegmentDetectionAsync(const GetSegmentDetectionRequest& request, const GetSegmentDetectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetSegmentDetectionAsyncHelper( request, handler, context ); } );
+}
+
+void RekognitionClient::GetSegmentDetectionAsyncHelper(const GetSegmentDetectionRequest& request, const GetSegmentDetectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetSegmentDetection(request), context);
+}
+
 GetTextDetectionOutcome RekognitionClient::GetTextDetection(const GetTextDetectionRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -1581,6 +1618,41 @@ void RekognitionClient::StartProjectVersionAsync(const StartProjectVersionReques
 void RekognitionClient::StartProjectVersionAsyncHelper(const StartProjectVersionRequest& request, const StartProjectVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, StartProjectVersion(request), context);
+}
+
+StartSegmentDetectionOutcome RekognitionClient::StartSegmentDetection(const StartSegmentDetectionRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return StartSegmentDetectionOutcome(StartSegmentDetectionResult(outcome.GetResult()));
+  }
+  else
+  {
+    return StartSegmentDetectionOutcome(outcome.GetError());
+  }
+}
+
+StartSegmentDetectionOutcomeCallable RekognitionClient::StartSegmentDetectionCallable(const StartSegmentDetectionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< StartSegmentDetectionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartSegmentDetection(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void RekognitionClient::StartSegmentDetectionAsync(const StartSegmentDetectionRequest& request, const StartSegmentDetectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->StartSegmentDetectionAsyncHelper( request, handler, context ); } );
+}
+
+void RekognitionClient::StartSegmentDetectionAsyncHelper(const StartSegmentDetectionRequest& request, const StartSegmentDetectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, StartSegmentDetection(request), context);
 }
 
 StartStreamProcessorOutcome RekognitionClient::StartStreamProcessor(const StartStreamProcessorRequest& request) const

@@ -248,9 +248,9 @@ namespace Model
          * </note> <p>Some actions take lists of parameters. These lists are specified
          * using the <code>param.n</code> notation. Values of <code>n</code> are integers
          * starting from 1. For example, a parameter list with two elements looks like
-         * this:</p> <p> <code>&amp;Attribute.1=first</code> </p> <p>
-         * <code>&amp;Attribute.2=second</code> </p> <note> <p>Cross-account permissions
-         * don't apply to this action. For more information, see <a
+         * this:</p> <p> <code>&amp;AttributeName.1=first</code> </p> <p>
+         * <code>&amp;AttributeName.2=second</code> </p> <note> <p>Cross-account
+         * permissions don't apply to this action. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
          * Cross-Account Permissions to a Role and a User Name</a> in the <i>Amazon Simple
          * Queue Service Developer Guide</i>.</p> </note><p><h3>See Also:</h3>   <a
@@ -281,9 +281,9 @@ namespace Model
          * </note> <p>Some actions take lists of parameters. These lists are specified
          * using the <code>param.n</code> notation. Values of <code>n</code> are integers
          * starting from 1. For example, a parameter list with two elements looks like
-         * this:</p> <p> <code>&amp;Attribute.1=first</code> </p> <p>
-         * <code>&amp;Attribute.2=second</code> </p> <note> <p>Cross-account permissions
-         * don't apply to this action. For more information, see <a
+         * this:</p> <p> <code>&amp;AttributeName.1=first</code> </p> <p>
+         * <code>&amp;AttributeName.2=second</code> </p> <note> <p>Cross-account
+         * permissions don't apply to this action. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
          * Cross-Account Permissions to a Role and a User Name</a> in the <i>Amazon Simple
          * Queue Service Developer Guide</i>.</p> </note><p><h3>See Also:</h3>   <a
@@ -316,9 +316,9 @@ namespace Model
          * </note> <p>Some actions take lists of parameters. These lists are specified
          * using the <code>param.n</code> notation. Values of <code>n</code> are integers
          * starting from 1. For example, a parameter list with two elements looks like
-         * this:</p> <p> <code>&amp;Attribute.1=first</code> </p> <p>
-         * <code>&amp;Attribute.2=second</code> </p> <note> <p>Cross-account permissions
-         * don't apply to this action. For more information, see <a
+         * this:</p> <p> <code>&amp;AttributeName.1=first</code> </p> <p>
+         * <code>&amp;AttributeName.2=second</code> </p> <note> <p>Cross-account
+         * permissions don't apply to this action. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
          * Cross-Account Permissions to a Role and a User Name</a> in the <i>Amazon Simple
          * Queue Service Developer Guide</i>.</p> </note><p><h3>See Also:</h3>   <a
@@ -486,8 +486,8 @@ namespace Model
          * parameters. These lists are specified using the <code>param.n</code> notation.
          * Values of <code>n</code> are integers starting from 1. For example, a parameter
          * list with two elements looks like this:</p> <p>
-         * <code>&amp;Attribute.1=first</code> </p> <p>
-         * <code>&amp;Attribute.2=second</code> </p><p><h3>See Also:</h3>   <a
+         * <code>&amp;AttributeName.1=first</code> </p> <p>
+         * <code>&amp;AttributeName.2=second</code> </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ChangeMessageVisibilityBatch">AWS
          * API Reference</a></p>
          */
@@ -505,8 +505,8 @@ namespace Model
          * parameters. These lists are specified using the <code>param.n</code> notation.
          * Values of <code>n</code> are integers starting from 1. For example, a parameter
          * list with two elements looks like this:</p> <p>
-         * <code>&amp;Attribute.1=first</code> </p> <p>
-         * <code>&amp;Attribute.2=second</code> </p><p><h3>See Also:</h3>   <a
+         * <code>&amp;AttributeName.1=first</code> </p> <p>
+         * <code>&amp;AttributeName.2=second</code> </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ChangeMessageVisibilityBatch">AWS
          * API Reference</a></p>
          *
@@ -526,8 +526,8 @@ namespace Model
          * parameters. These lists are specified using the <code>param.n</code> notation.
          * Values of <code>n</code> are integers starting from 1. For example, a parameter
          * list with two elements looks like this:</p> <p>
-         * <code>&amp;Attribute.1=first</code> </p> <p>
-         * <code>&amp;Attribute.2=second</code> </p><p><h3>See Also:</h3>   <a
+         * <code>&amp;AttributeName.1=first</code> </p> <p>
+         * <code>&amp;AttributeName.2=second</code> </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ChangeMessageVisibilityBatch">AWS
          * API Reference</a></p>
          *
@@ -537,12 +537,12 @@ namespace Model
 
         /**
          * <p>Creates a new standard or FIFO queue. You can pass one or more attributes in
-         * the request. Keep the following caveats in mind:</p> <ul> <li> <p>If you don't
-         * specify the <code>FifoQueue</code> attribute, Amazon SQS creates a standard
-         * queue.</p> <note> <p>You can't change the queue type after you create it and you
-         * can't convert an existing standard queue into a FIFO queue. You must either
-         * create a new FIFO queue for your application or delete your existing standard
-         * queue and recreate it as a FIFO queue. For more information, see <a
+         * the request. Keep the following in mind:</p> <ul> <li> <p>If you don't specify
+         * the <code>FifoQueue</code> attribute, Amazon SQS creates a standard queue.</p>
+         * <note> <p>You can't change the queue type after you create it and you can't
+         * convert an existing standard queue into a FIFO queue. You must either create a
+         * new FIFO queue for your application or delete your existing standard queue and
+         * recreate it as a FIFO queue. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-moving">Moving
          * From a Standard Queue to a FIFO Queue</a> in the <i>Amazon Simple Queue Service
          * Developer Guide</i>. </p> </note> </li> <li> <p>If you don't provide a value for
@@ -551,20 +551,22 @@ namespace Model
          * creating a queue with the same name.</p> </li> </ul> <p>To successfully create a
          * new queue, you must provide a queue name that adheres to the <a
          * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/limits-queues.html">limits
-         * related to queues</a> and is unique within the scope of your queues.</p> <p>To
-         * get the queue URL, use the <code> <a>GetQueueUrl</a> </code> action. <code>
-         * <a>GetQueueUrl</a> </code> requires only the <code>QueueName</code> parameter.
-         * be aware of existing queue names:</p> <ul> <li> <p>If you provide the name of an
-         * existing queue along with the exact names and values of all the queue's
-         * attributes, <code>CreateQueue</code> returns the queue URL for the existing
-         * queue.</p> </li> <li> <p>If the queue name, attribute names, or attribute values
-         * don't match an existing queue, <code>CreateQueue</code> returns an error.</p>
-         * </li> </ul> <p>Some actions take lists of parameters. These lists are specified
-         * using the <code>param.n</code> notation. Values of <code>n</code> are integers
-         * starting from 1. For example, a parameter list with two elements looks like
-         * this:</p> <p> <code>&amp;Attribute.1=first</code> </p> <p>
-         * <code>&amp;Attribute.2=second</code> </p> <note> <p>Cross-account permissions
-         * don't apply to this action. For more information, see <a
+         * related to queues</a> and is unique within the scope of your queues.</p> <note>
+         * <p>After you create a queue, you must wait at least one second after the queue
+         * is created to be able to use the queue.</p> </note> <p>To get the queue URL, use
+         * the <code> <a>GetQueueUrl</a> </code> action. <code> <a>GetQueueUrl</a> </code>
+         * requires only the <code>QueueName</code> parameter. be aware of existing queue
+         * names:</p> <ul> <li> <p>If you provide the name of an existing queue along with
+         * the exact names and values of all the queue's attributes,
+         * <code>CreateQueue</code> returns the queue URL for the existing queue.</p> </li>
+         * <li> <p>If the queue name, attribute names, or attribute values don't match an
+         * existing queue, <code>CreateQueue</code> returns an error.</p> </li> </ul>
+         * <p>Some actions take lists of parameters. These lists are specified using the
+         * <code>param.n</code> notation. Values of <code>n</code> are integers starting
+         * from 1. For example, a parameter list with two elements looks like this:</p> <p>
+         * <code>&amp;AttributeName.1=first</code> </p> <p>
+         * <code>&amp;AttributeName.2=second</code> </p> <note> <p>Cross-account
+         * permissions don't apply to this action. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
          * Cross-Account Permissions to a Role and a User Name</a> in the <i>Amazon Simple
          * Queue Service Developer Guide</i>.</p> </note><p><h3>See Also:</h3>   <a
@@ -575,12 +577,12 @@ namespace Model
 
         /**
          * <p>Creates a new standard or FIFO queue. You can pass one or more attributes in
-         * the request. Keep the following caveats in mind:</p> <ul> <li> <p>If you don't
-         * specify the <code>FifoQueue</code> attribute, Amazon SQS creates a standard
-         * queue.</p> <note> <p>You can't change the queue type after you create it and you
-         * can't convert an existing standard queue into a FIFO queue. You must either
-         * create a new FIFO queue for your application or delete your existing standard
-         * queue and recreate it as a FIFO queue. For more information, see <a
+         * the request. Keep the following in mind:</p> <ul> <li> <p>If you don't specify
+         * the <code>FifoQueue</code> attribute, Amazon SQS creates a standard queue.</p>
+         * <note> <p>You can't change the queue type after you create it and you can't
+         * convert an existing standard queue into a FIFO queue. You must either create a
+         * new FIFO queue for your application or delete your existing standard queue and
+         * recreate it as a FIFO queue. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-moving">Moving
          * From a Standard Queue to a FIFO Queue</a> in the <i>Amazon Simple Queue Service
          * Developer Guide</i>. </p> </note> </li> <li> <p>If you don't provide a value for
@@ -589,20 +591,22 @@ namespace Model
          * creating a queue with the same name.</p> </li> </ul> <p>To successfully create a
          * new queue, you must provide a queue name that adheres to the <a
          * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/limits-queues.html">limits
-         * related to queues</a> and is unique within the scope of your queues.</p> <p>To
-         * get the queue URL, use the <code> <a>GetQueueUrl</a> </code> action. <code>
-         * <a>GetQueueUrl</a> </code> requires only the <code>QueueName</code> parameter.
-         * be aware of existing queue names:</p> <ul> <li> <p>If you provide the name of an
-         * existing queue along with the exact names and values of all the queue's
-         * attributes, <code>CreateQueue</code> returns the queue URL for the existing
-         * queue.</p> </li> <li> <p>If the queue name, attribute names, or attribute values
-         * don't match an existing queue, <code>CreateQueue</code> returns an error.</p>
-         * </li> </ul> <p>Some actions take lists of parameters. These lists are specified
-         * using the <code>param.n</code> notation. Values of <code>n</code> are integers
-         * starting from 1. For example, a parameter list with two elements looks like
-         * this:</p> <p> <code>&amp;Attribute.1=first</code> </p> <p>
-         * <code>&amp;Attribute.2=second</code> </p> <note> <p>Cross-account permissions
-         * don't apply to this action. For more information, see <a
+         * related to queues</a> and is unique within the scope of your queues.</p> <note>
+         * <p>After you create a queue, you must wait at least one second after the queue
+         * is created to be able to use the queue.</p> </note> <p>To get the queue URL, use
+         * the <code> <a>GetQueueUrl</a> </code> action. <code> <a>GetQueueUrl</a> </code>
+         * requires only the <code>QueueName</code> parameter. be aware of existing queue
+         * names:</p> <ul> <li> <p>If you provide the name of an existing queue along with
+         * the exact names and values of all the queue's attributes,
+         * <code>CreateQueue</code> returns the queue URL for the existing queue.</p> </li>
+         * <li> <p>If the queue name, attribute names, or attribute values don't match an
+         * existing queue, <code>CreateQueue</code> returns an error.</p> </li> </ul>
+         * <p>Some actions take lists of parameters. These lists are specified using the
+         * <code>param.n</code> notation. Values of <code>n</code> are integers starting
+         * from 1. For example, a parameter list with two elements looks like this:</p> <p>
+         * <code>&amp;AttributeName.1=first</code> </p> <p>
+         * <code>&amp;AttributeName.2=second</code> </p> <note> <p>Cross-account
+         * permissions don't apply to this action. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
          * Cross-Account Permissions to a Role and a User Name</a> in the <i>Amazon Simple
          * Queue Service Developer Guide</i>.</p> </note><p><h3>See Also:</h3>   <a
@@ -615,12 +619,12 @@ namespace Model
 
         /**
          * <p>Creates a new standard or FIFO queue. You can pass one or more attributes in
-         * the request. Keep the following caveats in mind:</p> <ul> <li> <p>If you don't
-         * specify the <code>FifoQueue</code> attribute, Amazon SQS creates a standard
-         * queue.</p> <note> <p>You can't change the queue type after you create it and you
-         * can't convert an existing standard queue into a FIFO queue. You must either
-         * create a new FIFO queue for your application or delete your existing standard
-         * queue and recreate it as a FIFO queue. For more information, see <a
+         * the request. Keep the following in mind:</p> <ul> <li> <p>If you don't specify
+         * the <code>FifoQueue</code> attribute, Amazon SQS creates a standard queue.</p>
+         * <note> <p>You can't change the queue type after you create it and you can't
+         * convert an existing standard queue into a FIFO queue. You must either create a
+         * new FIFO queue for your application or delete your existing standard queue and
+         * recreate it as a FIFO queue. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-moving">Moving
          * From a Standard Queue to a FIFO Queue</a> in the <i>Amazon Simple Queue Service
          * Developer Guide</i>. </p> </note> </li> <li> <p>If you don't provide a value for
@@ -629,20 +633,22 @@ namespace Model
          * creating a queue with the same name.</p> </li> </ul> <p>To successfully create a
          * new queue, you must provide a queue name that adheres to the <a
          * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/limits-queues.html">limits
-         * related to queues</a> and is unique within the scope of your queues.</p> <p>To
-         * get the queue URL, use the <code> <a>GetQueueUrl</a> </code> action. <code>
-         * <a>GetQueueUrl</a> </code> requires only the <code>QueueName</code> parameter.
-         * be aware of existing queue names:</p> <ul> <li> <p>If you provide the name of an
-         * existing queue along with the exact names and values of all the queue's
-         * attributes, <code>CreateQueue</code> returns the queue URL for the existing
-         * queue.</p> </li> <li> <p>If the queue name, attribute names, or attribute values
-         * don't match an existing queue, <code>CreateQueue</code> returns an error.</p>
-         * </li> </ul> <p>Some actions take lists of parameters. These lists are specified
-         * using the <code>param.n</code> notation. Values of <code>n</code> are integers
-         * starting from 1. For example, a parameter list with two elements looks like
-         * this:</p> <p> <code>&amp;Attribute.1=first</code> </p> <p>
-         * <code>&amp;Attribute.2=second</code> </p> <note> <p>Cross-account permissions
-         * don't apply to this action. For more information, see <a
+         * related to queues</a> and is unique within the scope of your queues.</p> <note>
+         * <p>After you create a queue, you must wait at least one second after the queue
+         * is created to be able to use the queue.</p> </note> <p>To get the queue URL, use
+         * the <code> <a>GetQueueUrl</a> </code> action. <code> <a>GetQueueUrl</a> </code>
+         * requires only the <code>QueueName</code> parameter. be aware of existing queue
+         * names:</p> <ul> <li> <p>If you provide the name of an existing queue along with
+         * the exact names and values of all the queue's attributes,
+         * <code>CreateQueue</code> returns the queue URL for the existing queue.</p> </li>
+         * <li> <p>If the queue name, attribute names, or attribute values don't match an
+         * existing queue, <code>CreateQueue</code> returns an error.</p> </li> </ul>
+         * <p>Some actions take lists of parameters. These lists are specified using the
+         * <code>param.n</code> notation. Values of <code>n</code> are integers starting
+         * from 1. For example, a parameter list with two elements looks like this:</p> <p>
+         * <code>&amp;AttributeName.1=first</code> </p> <p>
+         * <code>&amp;AttributeName.2=second</code> </p> <note> <p>Cross-account
+         * permissions don't apply to this action. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
          * Cross-Account Permissions to a Role and a User Name</a> in the <i>Amazon Simple
          * Queue Service Developer Guide</i>.</p> </note><p><h3>See Also:</h3>   <a
@@ -741,8 +747,8 @@ namespace Model
          * <code>200</code>.</p> </important> <p>Some actions take lists of parameters.
          * These lists are specified using the <code>param.n</code> notation. Values of
          * <code>n</code> are integers starting from 1. For example, a parameter list with
-         * two elements looks like this:</p> <p> <code>&amp;Attribute.1=first</code> </p>
-         * <p> <code>&amp;Attribute.2=second</code> </p><p><h3>See Also:</h3>   <a
+         * two elements looks like this:</p> <p> <code>&amp;AttributeName.1=first</code>
+         * </p> <p> <code>&amp;AttributeName.2=second</code> </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/DeleteMessageBatch">AWS
          * API Reference</a></p>
          */
@@ -757,8 +763,8 @@ namespace Model
          * <code>200</code>.</p> </important> <p>Some actions take lists of parameters.
          * These lists are specified using the <code>param.n</code> notation. Values of
          * <code>n</code> are integers starting from 1. For example, a parameter list with
-         * two elements looks like this:</p> <p> <code>&amp;Attribute.1=first</code> </p>
-         * <p> <code>&amp;Attribute.2=second</code> </p><p><h3>See Also:</h3>   <a
+         * two elements looks like this:</p> <p> <code>&amp;AttributeName.1=first</code>
+         * </p> <p> <code>&amp;AttributeName.2=second</code> </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/DeleteMessageBatch">AWS
          * API Reference</a></p>
          *
@@ -775,8 +781,8 @@ namespace Model
          * <code>200</code>.</p> </important> <p>Some actions take lists of parameters.
          * These lists are specified using the <code>param.n</code> notation. Values of
          * <code>n</code> are integers starting from 1. For example, a parameter list with
-         * two elements looks like this:</p> <p> <code>&amp;Attribute.1=first</code> </p>
-         * <p> <code>&amp;Attribute.2=second</code> </p><p><h3>See Also:</h3>   <a
+         * two elements looks like this:</p> <p> <code>&amp;AttributeName.1=first</code>
+         * </p> <p> <code>&amp;AttributeName.2=second</code> </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/DeleteMessageBatch">AWS
          * API Reference</a></p>
          *
@@ -786,8 +792,7 @@ namespace Model
 
         /**
          * <p>Deletes the queue specified by the <code>QueueUrl</code>, regardless of the
-         * queue's contents. If the specified queue doesn't exist, Amazon SQS returns a
-         * successful response.</p> <important> <p>Be careful with the
+         * queue's contents.</p> <important> <p>Be careful with the
          * <code>DeleteQueue</code> action: When you delete a queue, any messages in the
          * queue are no longer available. </p> </important> <p>When you delete a queue, the
          * deletion process takes up to 60 seconds. Requests you send involving that queue
@@ -807,8 +812,7 @@ namespace Model
 
         /**
          * <p>Deletes the queue specified by the <code>QueueUrl</code>, regardless of the
-         * queue's contents. If the specified queue doesn't exist, Amazon SQS returns a
-         * successful response.</p> <important> <p>Be careful with the
+         * queue's contents.</p> <important> <p>Be careful with the
          * <code>DeleteQueue</code> action: When you delete a queue, any messages in the
          * queue are no longer available. </p> </important> <p>When you delete a queue, the
          * deletion process takes up to 60 seconds. Requests you send involving that queue
@@ -830,8 +834,7 @@ namespace Model
 
         /**
          * <p>Deletes the queue specified by the <code>QueueUrl</code>, regardless of the
-         * queue's contents. If the specified queue doesn't exist, Amazon SQS returns a
-         * successful response.</p> <important> <p>Be careful with the
+         * queue's contents.</p> <important> <p>Be careful with the
          * <code>DeleteQueue</code> action: When you delete a queue, any messages in the
          * queue are no longer available. </p> </important> <p>When you delete a queue, the
          * deletion process takes up to 60 seconds. Requests you send involving that queue
@@ -856,11 +859,7 @@ namespace Model
          * queue is <a
          * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO</a>,
          * you can check whether <code>QueueName</code> ends with the <code>.fifo</code>
-         * suffix.</p> </note> <p>Some actions take lists of parameters. These lists are
-         * specified using the <code>param.n</code> notation. Values of <code>n</code> are
-         * integers starting from 1. For example, a parameter list with two elements looks
-         * like this:</p> <p> <code>&amp;Attribute.1=first</code> </p> <p>
-         * <code>&amp;Attribute.2=second</code> </p><p><h3>See Also:</h3>   <a
+         * suffix.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/GetQueueAttributes">AWS
          * API Reference</a></p>
          */
@@ -871,11 +870,7 @@ namespace Model
          * queue is <a
          * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO</a>,
          * you can check whether <code>QueueName</code> ends with the <code>.fifo</code>
-         * suffix.</p> </note> <p>Some actions take lists of parameters. These lists are
-         * specified using the <code>param.n</code> notation. Values of <code>n</code> are
-         * integers starting from 1. For example, a parameter list with two elements looks
-         * like this:</p> <p> <code>&amp;Attribute.1=first</code> </p> <p>
-         * <code>&amp;Attribute.2=second</code> </p><p><h3>See Also:</h3>   <a
+         * suffix.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/GetQueueAttributes">AWS
          * API Reference</a></p>
          *
@@ -888,11 +883,7 @@ namespace Model
          * queue is <a
          * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO</a>,
          * you can check whether <code>QueueName</code> ends with the <code>.fifo</code>
-         * suffix.</p> </note> <p>Some actions take lists of parameters. These lists are
-         * specified using the <code>param.n</code> notation. Values of <code>n</code> are
-         * integers starting from 1. For example, a parameter list with two elements looks
-         * like this:</p> <p> <code>&amp;Attribute.1=first</code> </p> <p>
-         * <code>&amp;Attribute.2=second</code> </p><p><h3>See Also:</h3>   <a
+         * suffix.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/GetQueueAttributes">AWS
          * API Reference</a></p>
          *
@@ -1383,8 +1374,8 @@ namespace Model
          * value for the queue.</p> <p>Some actions take lists of parameters. These lists
          * are specified using the <code>param.n</code> notation. Values of <code>n</code>
          * are integers starting from 1. For example, a parameter list with two elements
-         * looks like this:</p> <p> <code>&amp;Attribute.1=first</code> </p> <p>
-         * <code>&amp;Attribute.2=second</code> </p><p><h3>See Also:</h3>   <a
+         * looks like this:</p> <p> <code>&amp;AttributeName.1=first</code> </p> <p>
+         * <code>&amp;AttributeName.2=second</code> </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/SendMessageBatch">AWS
          * API Reference</a></p>
          */
@@ -1412,8 +1403,8 @@ namespace Model
          * value for the queue.</p> <p>Some actions take lists of parameters. These lists
          * are specified using the <code>param.n</code> notation. Values of <code>n</code>
          * are integers starting from 1. For example, a parameter list with two elements
-         * looks like this:</p> <p> <code>&amp;Attribute.1=first</code> </p> <p>
-         * <code>&amp;Attribute.2=second</code> </p><p><h3>See Also:</h3>   <a
+         * looks like this:</p> <p> <code>&amp;AttributeName.1=first</code> </p> <p>
+         * <code>&amp;AttributeName.2=second</code> </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/SendMessageBatch">AWS
          * API Reference</a></p>
          *
@@ -1443,8 +1434,8 @@ namespace Model
          * value for the queue.</p> <p>Some actions take lists of parameters. These lists
          * are specified using the <code>param.n</code> notation. Values of <code>n</code>
          * are integers starting from 1. For example, a parameter list with two elements
-         * looks like this:</p> <p> <code>&amp;Attribute.1=first</code> </p> <p>
-         * <code>&amp;Attribute.2=second</code> </p><p><h3>See Also:</h3>   <a
+         * looks like this:</p> <p> <code>&amp;AttributeName.1=first</code> </p> <p>
+         * <code>&amp;AttributeName.2=second</code> </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/SendMessageBatch">AWS
          * API Reference</a></p>
          *

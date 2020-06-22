@@ -92,22 +92,26 @@ namespace Model
 
 
     /**
-     * <p>Specifies whether the error happened due to the producer.</p>
+     * <p>Specifies whether the error happened due to the caller of the batch API
+     * action.</p>
      */
     inline bool GetSenderFault() const{ return m_senderFault; }
 
     /**
-     * <p>Specifies whether the error happened due to the producer.</p>
+     * <p>Specifies whether the error happened due to the caller of the batch API
+     * action.</p>
      */
     inline bool SenderFaultHasBeenSet() const { return m_senderFaultHasBeenSet; }
 
     /**
-     * <p>Specifies whether the error happened due to the producer.</p>
+     * <p>Specifies whether the error happened due to the caller of the batch API
+     * action.</p>
      */
     inline void SetSenderFault(bool value) { m_senderFaultHasBeenSet = true; m_senderFault = value; }
 
     /**
-     * <p>Specifies whether the error happened due to the producer.</p>
+     * <p>Specifies whether the error happened due to the caller of the batch API
+     * action.</p>
      */
     inline BatchResultErrorEntry& WithSenderFault(bool value) { SetSenderFault(value); return *this;}
 

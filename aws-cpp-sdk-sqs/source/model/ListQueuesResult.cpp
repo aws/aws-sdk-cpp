@@ -59,6 +59,11 @@ ListQueuesResult& ListQueuesResult::operator =(const Aws::AmazonWebServiceResult
       }
 
     }
+    XmlNode nextTokenNode = resultNode.FirstChild("NextToken");
+    if(!nextTokenNode.IsNull())
+    {
+      m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
+    }
   }
 
   if (!rootNode.IsNull()) {

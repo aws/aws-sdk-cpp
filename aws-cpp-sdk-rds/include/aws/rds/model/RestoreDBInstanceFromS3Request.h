@@ -1881,50 +1881,58 @@ namespace Model
 
 
     /**
-     * <p>The engine version of your source database. </p> <p>Valid Values:
-     * <code>5.6</code> </p>
+     * <p>The version of the database that the backup files were created from.</p>
+     * <p>MySQL versions 5.6 and 5.7 are supported. </p> <p>Example:
+     * <code>5.6.40</code> </p>
      */
     inline const Aws::String& GetSourceEngineVersion() const{ return m_sourceEngineVersion; }
 
     /**
-     * <p>The engine version of your source database. </p> <p>Valid Values:
-     * <code>5.6</code> </p>
+     * <p>The version of the database that the backup files were created from.</p>
+     * <p>MySQL versions 5.6 and 5.7 are supported. </p> <p>Example:
+     * <code>5.6.40</code> </p>
      */
     inline bool SourceEngineVersionHasBeenSet() const { return m_sourceEngineVersionHasBeenSet; }
 
     /**
-     * <p>The engine version of your source database. </p> <p>Valid Values:
-     * <code>5.6</code> </p>
+     * <p>The version of the database that the backup files were created from.</p>
+     * <p>MySQL versions 5.6 and 5.7 are supported. </p> <p>Example:
+     * <code>5.6.40</code> </p>
      */
     inline void SetSourceEngineVersion(const Aws::String& value) { m_sourceEngineVersionHasBeenSet = true; m_sourceEngineVersion = value; }
 
     /**
-     * <p>The engine version of your source database. </p> <p>Valid Values:
-     * <code>5.6</code> </p>
+     * <p>The version of the database that the backup files were created from.</p>
+     * <p>MySQL versions 5.6 and 5.7 are supported. </p> <p>Example:
+     * <code>5.6.40</code> </p>
      */
     inline void SetSourceEngineVersion(Aws::String&& value) { m_sourceEngineVersionHasBeenSet = true; m_sourceEngineVersion = std::move(value); }
 
     /**
-     * <p>The engine version of your source database. </p> <p>Valid Values:
-     * <code>5.6</code> </p>
+     * <p>The version of the database that the backup files were created from.</p>
+     * <p>MySQL versions 5.6 and 5.7 are supported. </p> <p>Example:
+     * <code>5.6.40</code> </p>
      */
     inline void SetSourceEngineVersion(const char* value) { m_sourceEngineVersionHasBeenSet = true; m_sourceEngineVersion.assign(value); }
 
     /**
-     * <p>The engine version of your source database. </p> <p>Valid Values:
-     * <code>5.6</code> </p>
+     * <p>The version of the database that the backup files were created from.</p>
+     * <p>MySQL versions 5.6 and 5.7 are supported. </p> <p>Example:
+     * <code>5.6.40</code> </p>
      */
     inline RestoreDBInstanceFromS3Request& WithSourceEngineVersion(const Aws::String& value) { SetSourceEngineVersion(value); return *this;}
 
     /**
-     * <p>The engine version of your source database. </p> <p>Valid Values:
-     * <code>5.6</code> </p>
+     * <p>The version of the database that the backup files were created from.</p>
+     * <p>MySQL versions 5.6 and 5.7 are supported. </p> <p>Example:
+     * <code>5.6.40</code> </p>
      */
     inline RestoreDBInstanceFromS3Request& WithSourceEngineVersion(Aws::String&& value) { SetSourceEngineVersion(std::move(value)); return *this;}
 
     /**
-     * <p>The engine version of your source database. </p> <p>Valid Values:
-     * <code>5.6</code> </p>
+     * <p>The version of the database that the backup files were created from.</p>
+     * <p>MySQL versions 5.6 and 5.7 are supported. </p> <p>Example:
+     * <code>5.6.40</code> </p>
      */
     inline RestoreDBInstanceFromS3Request& WithSourceEngineVersion(const char* value) { SetSourceEngineVersion(value); return *this;}
 

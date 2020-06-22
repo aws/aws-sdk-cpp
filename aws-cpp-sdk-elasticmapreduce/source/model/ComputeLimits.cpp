@@ -36,7 +36,9 @@ ComputeLimits::ComputeLimits() :
     m_maximumCapacityUnits(0),
     m_maximumCapacityUnitsHasBeenSet(false),
     m_maximumOnDemandCapacityUnits(0),
-    m_maximumOnDemandCapacityUnitsHasBeenSet(false)
+    m_maximumOnDemandCapacityUnitsHasBeenSet(false),
+    m_maximumCoreCapacityUnits(0),
+    m_maximumCoreCapacityUnitsHasBeenSet(false)
 {
 }
 
@@ -48,7 +50,9 @@ ComputeLimits::ComputeLimits(JsonView jsonValue) :
     m_maximumCapacityUnits(0),
     m_maximumCapacityUnitsHasBeenSet(false),
     m_maximumOnDemandCapacityUnits(0),
-    m_maximumOnDemandCapacityUnitsHasBeenSet(false)
+    m_maximumOnDemandCapacityUnitsHasBeenSet(false),
+    m_maximumCoreCapacityUnits(0),
+    m_maximumCoreCapacityUnitsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -83,6 +87,13 @@ ComputeLimits& ComputeLimits::operator =(JsonView jsonValue)
     m_maximumOnDemandCapacityUnitsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("MaximumCoreCapacityUnits"))
+  {
+    m_maximumCoreCapacityUnits = jsonValue.GetInteger("MaximumCoreCapacityUnits");
+
+    m_maximumCoreCapacityUnitsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -110,6 +121,12 @@ JsonValue ComputeLimits::Jsonize() const
   if(m_maximumOnDemandCapacityUnitsHasBeenSet)
   {
    payload.WithInteger("MaximumOnDemandCapacityUnits", m_maximumOnDemandCapacityUnits);
+
+  }
+
+  if(m_maximumCoreCapacityUnitsHasBeenSet)
+  {
+   payload.WithInteger("MaximumCoreCapacityUnits", m_maximumCoreCapacityUnits);
 
   }
 

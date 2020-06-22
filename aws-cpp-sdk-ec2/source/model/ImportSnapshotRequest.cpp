@@ -30,7 +30,8 @@ ImportSnapshotRequest::ImportSnapshotRequest() :
     m_encrypted(false),
     m_encryptedHasBeenSet(false),
     m_kmsKeyIdHasBeenSet(false),
-    m_roleNameHasBeenSet(false)
+    m_roleNameHasBeenSet(false),
+    m_tagSpecificationsHasBeenSet(false)
 {
 }
 
@@ -76,6 +77,16 @@ Aws::String ImportSnapshotRequest::SerializePayload() const
   if(m_roleNameHasBeenSet)
   {
     ss << "RoleName=" << StringUtils::URLEncode(m_roleName.c_str()) << "&";
+  }
+
+  if(m_tagSpecificationsHasBeenSet)
+  {
+    unsigned tagSpecificationsCount = 1;
+    for(auto& item : m_tagSpecifications)
+    {
+      item.OutputToStream(ss, "TagSpecification.", tagSpecificationsCount, "");
+      tagSpecificationsCount++;
+    }
   }
 
   ss << "Version=2016-11-15";

@@ -25,7 +25,8 @@ CreateInstanceExportTaskRequest::CreateInstanceExportTaskRequest() :
     m_exportToS3TaskHasBeenSet(false),
     m_instanceIdHasBeenSet(false),
     m_targetEnvironment(ExportEnvironment::NOT_SET),
-    m_targetEnvironmentHasBeenSet(false)
+    m_targetEnvironmentHasBeenSet(false),
+    m_tagSpecificationsHasBeenSet(false)
 {
 }
 
@@ -51,6 +52,16 @@ Aws::String CreateInstanceExportTaskRequest::SerializePayload() const
   if(m_targetEnvironmentHasBeenSet)
   {
     ss << "TargetEnvironment=" << ExportEnvironmentMapper::GetNameForExportEnvironment(m_targetEnvironment) << "&";
+  }
+
+  if(m_tagSpecificationsHasBeenSet)
+  {
+    unsigned tagSpecificationsCount = 1;
+    for(auto& item : m_tagSpecifications)
+    {
+      item.OutputToStream(ss, "TagSpecification.", tagSpecificationsCount, "");
+      tagSpecificationsCount++;
+    }
   }
 
   ss << "Version=2016-11-15";

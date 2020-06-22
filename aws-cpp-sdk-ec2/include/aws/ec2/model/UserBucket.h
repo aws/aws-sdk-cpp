@@ -34,9 +34,9 @@ namespace Model
 {
 
   /**
-   * <p>Describes the S3 bucket for the disk image.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/UserBucket">AWS API
-   * Reference</a></p>
+   * <p>Describes the Amazon S3 bucket for the disk image.</p><p><h3>See Also:</h3>  
+   * <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/UserBucket">AWS
+   * API Reference</a></p>
    */
   class AWS_EC2_API UserBucket
   {
@@ -50,42 +50,42 @@ namespace Model
 
 
     /**
-     * <p>The name of the S3 bucket where the disk image is located.</p>
+     * <p>The name of the Amazon S3 bucket where the disk image is located.</p>
      */
     inline const Aws::String& GetS3Bucket() const{ return m_s3Bucket; }
 
     /**
-     * <p>The name of the S3 bucket where the disk image is located.</p>
+     * <p>The name of the Amazon S3 bucket where the disk image is located.</p>
      */
     inline bool S3BucketHasBeenSet() const { return m_s3BucketHasBeenSet; }
 
     /**
-     * <p>The name of the S3 bucket where the disk image is located.</p>
+     * <p>The name of the Amazon S3 bucket where the disk image is located.</p>
      */
     inline void SetS3Bucket(const Aws::String& value) { m_s3BucketHasBeenSet = true; m_s3Bucket = value; }
 
     /**
-     * <p>The name of the S3 bucket where the disk image is located.</p>
+     * <p>The name of the Amazon S3 bucket where the disk image is located.</p>
      */
     inline void SetS3Bucket(Aws::String&& value) { m_s3BucketHasBeenSet = true; m_s3Bucket = std::move(value); }
 
     /**
-     * <p>The name of the S3 bucket where the disk image is located.</p>
+     * <p>The name of the Amazon S3 bucket where the disk image is located.</p>
      */
     inline void SetS3Bucket(const char* value) { m_s3BucketHasBeenSet = true; m_s3Bucket.assign(value); }
 
     /**
-     * <p>The name of the S3 bucket where the disk image is located.</p>
+     * <p>The name of the Amazon S3 bucket where the disk image is located.</p>
      */
     inline UserBucket& WithS3Bucket(const Aws::String& value) { SetS3Bucket(value); return *this;}
 
     /**
-     * <p>The name of the S3 bucket where the disk image is located.</p>
+     * <p>The name of the Amazon S3 bucket where the disk image is located.</p>
      */
     inline UserBucket& WithS3Bucket(Aws::String&& value) { SetS3Bucket(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the S3 bucket where the disk image is located.</p>
+     * <p>The name of the Amazon S3 bucket where the disk image is located.</p>
      */
     inline UserBucket& WithS3Bucket(const char* value) { SetS3Bucket(value); return *this;}
 

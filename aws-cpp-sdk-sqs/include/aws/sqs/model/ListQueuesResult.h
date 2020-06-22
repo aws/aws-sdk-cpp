@@ -16,8 +16,8 @@
 #pragma once
 #include <aws/sqs/SQS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/sqs/model/ResponseMetadata.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/sqs/model/ResponseMetadata.h>
 #include <utility>
 
 namespace Aws
@@ -50,44 +50,88 @@ namespace Model
 
 
     /**
-     * <p>A list of queue URLs, up to 1,000 entries.</p>
+     * <p>A list of queue URLs, up to 1,000 entries, or the value of MaxResults that
+     * you sent in the request.</p>
      */
     inline const Aws::Vector<Aws::String>& GetQueueUrls() const{ return m_queueUrls; }
 
     /**
-     * <p>A list of queue URLs, up to 1,000 entries.</p>
+     * <p>A list of queue URLs, up to 1,000 entries, or the value of MaxResults that
+     * you sent in the request.</p>
      */
     inline void SetQueueUrls(const Aws::Vector<Aws::String>& value) { m_queueUrls = value; }
 
     /**
-     * <p>A list of queue URLs, up to 1,000 entries.</p>
+     * <p>A list of queue URLs, up to 1,000 entries, or the value of MaxResults that
+     * you sent in the request.</p>
      */
     inline void SetQueueUrls(Aws::Vector<Aws::String>&& value) { m_queueUrls = std::move(value); }
 
     /**
-     * <p>A list of queue URLs, up to 1,000 entries.</p>
+     * <p>A list of queue URLs, up to 1,000 entries, or the value of MaxResults that
+     * you sent in the request.</p>
      */
     inline ListQueuesResult& WithQueueUrls(const Aws::Vector<Aws::String>& value) { SetQueueUrls(value); return *this;}
 
     /**
-     * <p>A list of queue URLs, up to 1,000 entries.</p>
+     * <p>A list of queue URLs, up to 1,000 entries, or the value of MaxResults that
+     * you sent in the request.</p>
      */
     inline ListQueuesResult& WithQueueUrls(Aws::Vector<Aws::String>&& value) { SetQueueUrls(std::move(value)); return *this;}
 
     /**
-     * <p>A list of queue URLs, up to 1,000 entries.</p>
+     * <p>A list of queue URLs, up to 1,000 entries, or the value of MaxResults that
+     * you sent in the request.</p>
      */
     inline ListQueuesResult& AddQueueUrls(const Aws::String& value) { m_queueUrls.push_back(value); return *this; }
 
     /**
-     * <p>A list of queue URLs, up to 1,000 entries.</p>
+     * <p>A list of queue URLs, up to 1,000 entries, or the value of MaxResults that
+     * you sent in the request.</p>
      */
     inline ListQueuesResult& AddQueueUrls(Aws::String&& value) { m_queueUrls.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>A list of queue URLs, up to 1,000 entries.</p>
+     * <p>A list of queue URLs, up to 1,000 entries, or the value of MaxResults that
+     * you sent in the request.</p>
      */
     inline ListQueuesResult& AddQueueUrls(const char* value) { m_queueUrls.push_back(value); return *this; }
+
+
+    /**
+     * <p>Pagination token to include in the next request.</p>
+     */
+    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>Pagination token to include in the next request.</p>
+     */
+    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
+
+    /**
+     * <p>Pagination token to include in the next request.</p>
+     */
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
+
+    /**
+     * <p>Pagination token to include in the next request.</p>
+     */
+    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
+
+    /**
+     * <p>Pagination token to include in the next request.</p>
+     */
+    inline ListQueuesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
+
+    /**
+     * <p>Pagination token to include in the next request.</p>
+     */
+    inline ListQueuesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
+
+    /**
+     * <p>Pagination token to include in the next request.</p>
+     */
+    inline ListQueuesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
 
     
@@ -108,6 +152,8 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_queueUrls;
+
+    Aws::String m_nextToken;
 
     ResponseMetadata m_responseMetadata;
   };

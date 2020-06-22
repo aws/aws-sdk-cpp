@@ -18,7 +18,9 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/DiskImageFormat.h>
 #include <aws/ec2/model/ExportTaskS3Location.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/ResponseMetadata.h>
+#include <aws/ec2/model/Tag.h>
 #include <utility>
 
 namespace Aws
@@ -181,43 +183,43 @@ namespace Model
 
     /**
      * <p>The name of the role that grants VM Import/Export permission to export images
-     * to your S3 bucket.</p>
+     * to your Amazon S3 bucket.</p>
      */
     inline const Aws::String& GetRoleName() const{ return m_roleName; }
 
     /**
      * <p>The name of the role that grants VM Import/Export permission to export images
-     * to your S3 bucket.</p>
+     * to your Amazon S3 bucket.</p>
      */
     inline void SetRoleName(const Aws::String& value) { m_roleName = value; }
 
     /**
      * <p>The name of the role that grants VM Import/Export permission to export images
-     * to your S3 bucket.</p>
+     * to your Amazon S3 bucket.</p>
      */
     inline void SetRoleName(Aws::String&& value) { m_roleName = std::move(value); }
 
     /**
      * <p>The name of the role that grants VM Import/Export permission to export images
-     * to your S3 bucket.</p>
+     * to your Amazon S3 bucket.</p>
      */
     inline void SetRoleName(const char* value) { m_roleName.assign(value); }
 
     /**
      * <p>The name of the role that grants VM Import/Export permission to export images
-     * to your S3 bucket.</p>
+     * to your Amazon S3 bucket.</p>
      */
     inline ExportImageResponse& WithRoleName(const Aws::String& value) { SetRoleName(value); return *this;}
 
     /**
      * <p>The name of the role that grants VM Import/Export permission to export images
-     * to your S3 bucket.</p>
+     * to your Amazon S3 bucket.</p>
      */
     inline ExportImageResponse& WithRoleName(Aws::String&& value) { SetRoleName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the role that grants VM Import/Export permission to export images
-     * to your S3 bucket.</p>
+     * to your Amazon S3 bucket.</p>
      */
     inline ExportImageResponse& WithRoleName(const char* value) { SetRoleName(value); return *this;}
 
@@ -259,27 +261,27 @@ namespace Model
 
 
     /**
-     * <p>Information about the destination S3 bucket.</p>
+     * <p>Information about the destination Amazon S3 bucket.</p>
      */
     inline const ExportTaskS3Location& GetS3ExportLocation() const{ return m_s3ExportLocation; }
 
     /**
-     * <p>Information about the destination S3 bucket.</p>
+     * <p>Information about the destination Amazon S3 bucket.</p>
      */
     inline void SetS3ExportLocation(const ExportTaskS3Location& value) { m_s3ExportLocation = value; }
 
     /**
-     * <p>Information about the destination S3 bucket.</p>
+     * <p>Information about the destination Amazon S3 bucket.</p>
      */
     inline void SetS3ExportLocation(ExportTaskS3Location&& value) { m_s3ExportLocation = std::move(value); }
 
     /**
-     * <p>Information about the destination S3 bucket.</p>
+     * <p>Information about the destination Amazon S3 bucket.</p>
      */
     inline ExportImageResponse& WithS3ExportLocation(const ExportTaskS3Location& value) { SetS3ExportLocation(value); return *this;}
 
     /**
-     * <p>Information about the destination S3 bucket.</p>
+     * <p>Information about the destination Amazon S3 bucket.</p>
      */
     inline ExportImageResponse& WithS3ExportLocation(ExportTaskS3Location&& value) { SetS3ExportLocation(std::move(value)); return *this;}
 
@@ -370,6 +372,42 @@ namespace Model
     inline ExportImageResponse& WithStatusMessage(const char* value) { SetStatusMessage(value); return *this;}
 
 
+    /**
+     * <p>Any tags assigned to the image being exported.</p>
+     */
+    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>Any tags assigned to the image being exported.</p>
+     */
+    inline void SetTags(const Aws::Vector<Tag>& value) { m_tags = value; }
+
+    /**
+     * <p>Any tags assigned to the image being exported.</p>
+     */
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tags = std::move(value); }
+
+    /**
+     * <p>Any tags assigned to the image being exported.</p>
+     */
+    inline ExportImageResponse& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>Any tags assigned to the image being exported.</p>
+     */
+    inline ExportImageResponse& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>Any tags assigned to the image being exported.</p>
+     */
+    inline ExportImageResponse& AddTags(const Tag& value) { m_tags.push_back(value); return *this; }
+
+    /**
+     * <p>Any tags assigned to the image being exported.</p>
+     */
+    inline ExportImageResponse& AddTags(Tag&& value) { m_tags.push_back(std::move(value)); return *this; }
+
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -404,6 +442,8 @@ namespace Model
     Aws::String m_status;
 
     Aws::String m_statusMessage;
+
+    Aws::Vector<Tag> m_tags;
 
     ResponseMetadata m_responseMetadata;
   };

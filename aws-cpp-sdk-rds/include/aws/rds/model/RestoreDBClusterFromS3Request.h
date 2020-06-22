@@ -224,8 +224,8 @@ namespace Model
 
     /**
      * <p>The name of the DB cluster to create from the source data in the Amazon S3
-     * bucket. This parameter is isn't case-sensitive.</p> <p>Constraints:</p> <ul>
-     * <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li> <li>
+     * bucket. This parameter isn't case-sensitive.</p> <p>Constraints:</p> <ul> <li>
+     * <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li> <li>
      * <p>First character must be a letter.</p> </li> <li> <p>Can't end with a hyphen
      * or contain two consecutive hyphens.</p> </li> </ul> <p>Example:
      * <code>my-cluster1</code> </p>
@@ -234,8 +234,8 @@ namespace Model
 
     /**
      * <p>The name of the DB cluster to create from the source data in the Amazon S3
-     * bucket. This parameter is isn't case-sensitive.</p> <p>Constraints:</p> <ul>
-     * <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li> <li>
+     * bucket. This parameter isn't case-sensitive.</p> <p>Constraints:</p> <ul> <li>
+     * <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li> <li>
      * <p>First character must be a letter.</p> </li> <li> <p>Can't end with a hyphen
      * or contain two consecutive hyphens.</p> </li> </ul> <p>Example:
      * <code>my-cluster1</code> </p>
@@ -244,8 +244,8 @@ namespace Model
 
     /**
      * <p>The name of the DB cluster to create from the source data in the Amazon S3
-     * bucket. This parameter is isn't case-sensitive.</p> <p>Constraints:</p> <ul>
-     * <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li> <li>
+     * bucket. This parameter isn't case-sensitive.</p> <p>Constraints:</p> <ul> <li>
+     * <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li> <li>
      * <p>First character must be a letter.</p> </li> <li> <p>Can't end with a hyphen
      * or contain two consecutive hyphens.</p> </li> </ul> <p>Example:
      * <code>my-cluster1</code> </p>
@@ -254,8 +254,8 @@ namespace Model
 
     /**
      * <p>The name of the DB cluster to create from the source data in the Amazon S3
-     * bucket. This parameter is isn't case-sensitive.</p> <p>Constraints:</p> <ul>
-     * <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li> <li>
+     * bucket. This parameter isn't case-sensitive.</p> <p>Constraints:</p> <ul> <li>
+     * <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li> <li>
      * <p>First character must be a letter.</p> </li> <li> <p>Can't end with a hyphen
      * or contain two consecutive hyphens.</p> </li> </ul> <p>Example:
      * <code>my-cluster1</code> </p>
@@ -264,8 +264,8 @@ namespace Model
 
     /**
      * <p>The name of the DB cluster to create from the source data in the Amazon S3
-     * bucket. This parameter is isn't case-sensitive.</p> <p>Constraints:</p> <ul>
-     * <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li> <li>
+     * bucket. This parameter isn't case-sensitive.</p> <p>Constraints:</p> <ul> <li>
+     * <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li> <li>
      * <p>First character must be a letter.</p> </li> <li> <p>Can't end with a hyphen
      * or contain two consecutive hyphens.</p> </li> </ul> <p>Example:
      * <code>my-cluster1</code> </p>
@@ -274,8 +274,8 @@ namespace Model
 
     /**
      * <p>The name of the DB cluster to create from the source data in the Amazon S3
-     * bucket. This parameter is isn't case-sensitive.</p> <p>Constraints:</p> <ul>
-     * <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li> <li>
+     * bucket. This parameter isn't case-sensitive.</p> <p>Constraints:</p> <ul> <li>
+     * <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li> <li>
      * <p>First character must be a letter.</p> </li> <li> <p>Can't end with a hyphen
      * or contain two consecutive hyphens.</p> </li> </ul> <p>Example:
      * <code>my-cluster1</code> </p>
@@ -284,8 +284,8 @@ namespace Model
 
     /**
      * <p>The name of the DB cluster to create from the source data in the Amazon S3
-     * bucket. This parameter is isn't case-sensitive.</p> <p>Constraints:</p> <ul>
-     * <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li> <li>
+     * bucket. This parameter isn't case-sensitive.</p> <p>Constraints:</p> <ul> <li>
+     * <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li> <li>
      * <p>First character must be a letter.</p> </li> <li> <p>Can't end with a hyphen
      * or contain two consecutive hyphens.</p> </li> </ul> <p>Example:
      * <code>my-cluster1</code> </p>
@@ -294,8 +294,8 @@ namespace Model
 
     /**
      * <p>The name of the DB cluster to create from the source data in the Amazon S3
-     * bucket. This parameter is isn't case-sensitive.</p> <p>Constraints:</p> <ul>
-     * <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li> <li>
+     * bucket. This parameter isn't case-sensitive.</p> <p>Constraints:</p> <ul> <li>
+     * <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li> <li>
      * <p>First character must be a letter.</p> </li> <li> <p>Can't end with a hyphen
      * or contain two consecutive hyphens.</p> </li> </ul> <p>Example:
      * <code>my-cluster1</code> </p>
@@ -1351,57 +1351,57 @@ namespace Model
 
     /**
      * <p>The version of the database that the backup files were created from.</p>
-     * <p>MySQL version 5.5 and 5.6 are supported. </p> <p>Example: <code>5.6.22</code>
-     * </p>
+     * <p>MySQL versions 5.5, 5.6, and 5.7 are supported. </p> <p>Example:
+     * <code>5.6.40</code> </p>
      */
     inline const Aws::String& GetSourceEngineVersion() const{ return m_sourceEngineVersion; }
 
     /**
      * <p>The version of the database that the backup files were created from.</p>
-     * <p>MySQL version 5.5 and 5.6 are supported. </p> <p>Example: <code>5.6.22</code>
-     * </p>
+     * <p>MySQL versions 5.5, 5.6, and 5.7 are supported. </p> <p>Example:
+     * <code>5.6.40</code> </p>
      */
     inline bool SourceEngineVersionHasBeenSet() const { return m_sourceEngineVersionHasBeenSet; }
 
     /**
      * <p>The version of the database that the backup files were created from.</p>
-     * <p>MySQL version 5.5 and 5.6 are supported. </p> <p>Example: <code>5.6.22</code>
-     * </p>
+     * <p>MySQL versions 5.5, 5.6, and 5.7 are supported. </p> <p>Example:
+     * <code>5.6.40</code> </p>
      */
     inline void SetSourceEngineVersion(const Aws::String& value) { m_sourceEngineVersionHasBeenSet = true; m_sourceEngineVersion = value; }
 
     /**
      * <p>The version of the database that the backup files were created from.</p>
-     * <p>MySQL version 5.5 and 5.6 are supported. </p> <p>Example: <code>5.6.22</code>
-     * </p>
+     * <p>MySQL versions 5.5, 5.6, and 5.7 are supported. </p> <p>Example:
+     * <code>5.6.40</code> </p>
      */
     inline void SetSourceEngineVersion(Aws::String&& value) { m_sourceEngineVersionHasBeenSet = true; m_sourceEngineVersion = std::move(value); }
 
     /**
      * <p>The version of the database that the backup files were created from.</p>
-     * <p>MySQL version 5.5 and 5.6 are supported. </p> <p>Example: <code>5.6.22</code>
-     * </p>
+     * <p>MySQL versions 5.5, 5.6, and 5.7 are supported. </p> <p>Example:
+     * <code>5.6.40</code> </p>
      */
     inline void SetSourceEngineVersion(const char* value) { m_sourceEngineVersionHasBeenSet = true; m_sourceEngineVersion.assign(value); }
 
     /**
      * <p>The version of the database that the backup files were created from.</p>
-     * <p>MySQL version 5.5 and 5.6 are supported. </p> <p>Example: <code>5.6.22</code>
-     * </p>
+     * <p>MySQL versions 5.5, 5.6, and 5.7 are supported. </p> <p>Example:
+     * <code>5.6.40</code> </p>
      */
     inline RestoreDBClusterFromS3Request& WithSourceEngineVersion(const Aws::String& value) { SetSourceEngineVersion(value); return *this;}
 
     /**
      * <p>The version of the database that the backup files were created from.</p>
-     * <p>MySQL version 5.5 and 5.6 are supported. </p> <p>Example: <code>5.6.22</code>
-     * </p>
+     * <p>MySQL versions 5.5, 5.6, and 5.7 are supported. </p> <p>Example:
+     * <code>5.6.40</code> </p>
      */
     inline RestoreDBClusterFromS3Request& WithSourceEngineVersion(Aws::String&& value) { SetSourceEngineVersion(std::move(value)); return *this;}
 
     /**
      * <p>The version of the database that the backup files were created from.</p>
-     * <p>MySQL version 5.5 and 5.6 are supported. </p> <p>Example: <code>5.6.22</code>
-     * </p>
+     * <p>MySQL versions 5.5, 5.6, and 5.7 are supported. </p> <p>Example:
+     * <code>5.6.40</code> </p>
      */
     inline RestoreDBClusterFromS3Request& WithSourceEngineVersion(const char* value) { SetSourceEngineVersion(value); return *this;}
 
