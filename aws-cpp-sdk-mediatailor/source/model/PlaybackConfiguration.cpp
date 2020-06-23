@@ -31,6 +31,7 @@ namespace Model
 PlaybackConfiguration::PlaybackConfiguration() : 
     m_adDecisionServerUrlHasBeenSet(false),
     m_availSuppressionHasBeenSet(false),
+    m_bumperHasBeenSet(false),
     m_cdnConfigurationHasBeenSet(false),
     m_dashConfigurationHasBeenSet(false),
     m_hlsConfigurationHasBeenSet(false),
@@ -50,6 +51,7 @@ PlaybackConfiguration::PlaybackConfiguration() :
 PlaybackConfiguration::PlaybackConfiguration(JsonView jsonValue) : 
     m_adDecisionServerUrlHasBeenSet(false),
     m_availSuppressionHasBeenSet(false),
+    m_bumperHasBeenSet(false),
     m_cdnConfigurationHasBeenSet(false),
     m_dashConfigurationHasBeenSet(false),
     m_hlsConfigurationHasBeenSet(false),
@@ -81,6 +83,13 @@ PlaybackConfiguration& PlaybackConfiguration::operator =(JsonView jsonValue)
     m_availSuppression = jsonValue.GetObject("AvailSuppression");
 
     m_availSuppressionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Bumper"))
+  {
+    m_bumper = jsonValue.GetObject("Bumper");
+
+    m_bumperHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("CdnConfiguration"))
@@ -186,6 +195,12 @@ JsonValue PlaybackConfiguration::Jsonize() const
   if(m_availSuppressionHasBeenSet)
   {
    payload.WithObject("AvailSuppression", m_availSuppression.Jsonize());
+
+  }
+
+  if(m_bumperHasBeenSet)
+  {
+   payload.WithObject("Bumper", m_bumper.Jsonize());
 
   }
 

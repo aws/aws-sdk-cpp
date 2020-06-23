@@ -17,6 +17,7 @@
 #include <aws/mediatailor/MediaTailor_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/mediatailor/model/AvailSuppression.h>
+#include <aws/mediatailor/model/Bumper.h>
 #include <aws/mediatailor/model/CdnConfiguration.h>
 #include <aws/mediatailor/model/DashConfiguration.h>
 #include <aws/mediatailor/model/HlsConfiguration.h>
@@ -141,6 +142,37 @@ namespace Model
      * off ad personalization in a long manifest, or if a viewer joins mid-break.</p>
      */
     inline GetPlaybackConfigurationResult& WithAvailSuppression(AvailSuppression&& value) { SetAvailSuppression(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The configuration for bumpers. Bumpers are short audio or video clips that
+     * play at the start or before the end of an ad break. </p>
+     */
+    inline const Bumper& GetBumper() const{ return m_bumper; }
+
+    /**
+     * <p>The configuration for bumpers. Bumpers are short audio or video clips that
+     * play at the start or before the end of an ad break. </p>
+     */
+    inline void SetBumper(const Bumper& value) { m_bumper = value; }
+
+    /**
+     * <p>The configuration for bumpers. Bumpers are short audio or video clips that
+     * play at the start or before the end of an ad break. </p>
+     */
+    inline void SetBumper(Bumper&& value) { m_bumper = std::move(value); }
+
+    /**
+     * <p>The configuration for bumpers. Bumpers are short audio or video clips that
+     * play at the start or before the end of an ad break. </p>
+     */
+    inline GetPlaybackConfigurationResult& WithBumper(const Bumper& value) { SetBumper(value); return *this;}
+
+    /**
+     * <p>The configuration for bumpers. Bumpers are short audio or video clips that
+     * play at the start or before the end of an ad break. </p>
+     */
+    inline GetPlaybackConfigurationResult& WithBumper(Bumper&& value) { SetBumper(std::move(value)); return *this;}
 
 
     /**
@@ -665,6 +697,8 @@ namespace Model
     Aws::String m_adDecisionServerUrl;
 
     AvailSuppression m_availSuppression;
+
+    Bumper m_bumper;
 
     CdnConfiguration m_cdnConfiguration;
 

@@ -52,6 +52,12 @@ GetPlaybackConfigurationResult& GetPlaybackConfigurationResult::operator =(const
 
   }
 
+  if(jsonValue.ValueExists("Bumper"))
+  {
+    m_bumper = jsonValue.GetObject("Bumper");
+
+  }
+
   if(jsonValue.ValueExists("CdnConfiguration"))
   {
     m_cdnConfiguration = jsonValue.GetObject("CdnConfiguration");
