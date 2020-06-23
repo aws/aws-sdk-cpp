@@ -72,7 +72,7 @@
         <dependency>
             <groupId>com.google.guava</groupId>
             <artifactId>guava</artifactId>
-            <version>17.0-rc2</version>
+            <version>24.1.1-jre</version>
         </dependency>
         <dependency>
             <groupId>com.google.code.gson</groupId>
