@@ -124,7 +124,7 @@ namespace Model
      * qualified ARN</b>: This option allows you to specify the fully qualified Amazon
      * Resource Name (ARN) of the IAM user or role. </p> </li> </ul> <p>For more
      * information about IAM ARNs, wildcards, and formats, see <a
-     * href="https://docs.aws.amazon.com/iam/latest/UserGuide/reference_identifiers.html">IAM
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
      * Identifiers</a> in the <i>IAM User Guide</i>.</p> </note>
      */
     inline const Aws::String& GetApprovalRuleTemplateContent() const{ return m_approvalRuleTemplateContent; }
@@ -152,7 +152,7 @@ namespace Model
      * qualified ARN</b>: This option allows you to specify the fully qualified Amazon
      * Resource Name (ARN) of the IAM user or role. </p> </li> </ul> <p>For more
      * information about IAM ARNs, wildcards, and formats, see <a
-     * href="https://docs.aws.amazon.com/iam/latest/UserGuide/reference_identifiers.html">IAM
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
      * Identifiers</a> in the <i>IAM User Guide</i>.</p> </note>
      */
     inline bool ApprovalRuleTemplateContentHasBeenSet() const { return m_approvalRuleTemplateContentHasBeenSet; }
@@ -180,7 +180,7 @@ namespace Model
      * qualified ARN</b>: This option allows you to specify the fully qualified Amazon
      * Resource Name (ARN) of the IAM user or role. </p> </li> </ul> <p>For more
      * information about IAM ARNs, wildcards, and formats, see <a
-     * href="https://docs.aws.amazon.com/iam/latest/UserGuide/reference_identifiers.html">IAM
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
      * Identifiers</a> in the <i>IAM User Guide</i>.</p> </note>
      */
     inline void SetApprovalRuleTemplateContent(const Aws::String& value) { m_approvalRuleTemplateContentHasBeenSet = true; m_approvalRuleTemplateContent = value; }
@@ -208,7 +208,7 @@ namespace Model
      * qualified ARN</b>: This option allows you to specify the fully qualified Amazon
      * Resource Name (ARN) of the IAM user or role. </p> </li> </ul> <p>For more
      * information about IAM ARNs, wildcards, and formats, see <a
-     * href="https://docs.aws.amazon.com/iam/latest/UserGuide/reference_identifiers.html">IAM
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
      * Identifiers</a> in the <i>IAM User Guide</i>.</p> </note>
      */
     inline void SetApprovalRuleTemplateContent(Aws::String&& value) { m_approvalRuleTemplateContentHasBeenSet = true; m_approvalRuleTemplateContent = std::move(value); }
@@ -236,7 +236,7 @@ namespace Model
      * qualified ARN</b>: This option allows you to specify the fully qualified Amazon
      * Resource Name (ARN) of the IAM user or role. </p> </li> </ul> <p>For more
      * information about IAM ARNs, wildcards, and formats, see <a
-     * href="https://docs.aws.amazon.com/iam/latest/UserGuide/reference_identifiers.html">IAM
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
      * Identifiers</a> in the <i>IAM User Guide</i>.</p> </note>
      */
     inline void SetApprovalRuleTemplateContent(const char* value) { m_approvalRuleTemplateContentHasBeenSet = true; m_approvalRuleTemplateContent.assign(value); }
@@ -264,7 +264,7 @@ namespace Model
      * qualified ARN</b>: This option allows you to specify the fully qualified Amazon
      * Resource Name (ARN) of the IAM user or role. </p> </li> </ul> <p>For more
      * information about IAM ARNs, wildcards, and formats, see <a
-     * href="https://docs.aws.amazon.com/iam/latest/UserGuide/reference_identifiers.html">IAM
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
      * Identifiers</a> in the <i>IAM User Guide</i>.</p> </note>
      */
     inline CreateApprovalRuleTemplateRequest& WithApprovalRuleTemplateContent(const Aws::String& value) { SetApprovalRuleTemplateContent(value); return *this;}
@@ -292,7 +292,7 @@ namespace Model
      * qualified ARN</b>: This option allows you to specify the fully qualified Amazon
      * Resource Name (ARN) of the IAM user or role. </p> </li> </ul> <p>For more
      * information about IAM ARNs, wildcards, and formats, see <a
-     * href="https://docs.aws.amazon.com/iam/latest/UserGuide/reference_identifiers.html">IAM
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
      * Identifiers</a> in the <i>IAM User Guide</i>.</p> </note>
      */
     inline CreateApprovalRuleTemplateRequest& WithApprovalRuleTemplateContent(Aws::String&& value) { SetApprovalRuleTemplateContent(std::move(value)); return *this;}
@@ -320,7 +320,7 @@ namespace Model
      * qualified ARN</b>: This option allows you to specify the fully qualified Amazon
      * Resource Name (ARN) of the IAM user or role. </p> </li> </ul> <p>For more
      * information about IAM ARNs, wildcards, and formats, see <a
-     * href="https://docs.aws.amazon.com/iam/latest/UserGuide/reference_identifiers.html">IAM
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
      * Identifiers</a> in the <i>IAM User Guide</i>.</p> </note>
      */
     inline CreateApprovalRuleTemplateRequest& WithApprovalRuleTemplateContent(const char* value) { SetApprovalRuleTemplateContent(value); return *this;}

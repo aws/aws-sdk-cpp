@@ -44,6 +44,8 @@ App::App() :
     m_defaultDomainHasBeenSet(false),
     m_enableBranchAutoBuild(false),
     m_enableBranchAutoBuildHasBeenSet(false),
+    m_enableBranchAutoDeletion(false),
+    m_enableBranchAutoDeletionHasBeenSet(false),
     m_enableBasicAuth(false),
     m_enableBasicAuthHasBeenSet(false),
     m_basicAuthCredentialsHasBeenSet(false),
@@ -73,6 +75,8 @@ App::App(JsonView jsonValue) :
     m_defaultDomainHasBeenSet(false),
     m_enableBranchAutoBuild(false),
     m_enableBranchAutoBuildHasBeenSet(false),
+    m_enableBranchAutoDeletion(false),
+    m_enableBranchAutoDeletionHasBeenSet(false),
     m_enableBasicAuth(false),
     m_enableBasicAuthHasBeenSet(false),
     m_basicAuthCredentialsHasBeenSet(false),
@@ -184,6 +188,13 @@ App& App::operator =(JsonView jsonValue)
     m_enableBranchAutoBuild = jsonValue.GetBool("enableBranchAutoBuild");
 
     m_enableBranchAutoBuildHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("enableBranchAutoDeletion"))
+  {
+    m_enableBranchAutoDeletion = jsonValue.GetBool("enableBranchAutoDeletion");
+
+    m_enableBranchAutoDeletionHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("enableBasicAuth"))
@@ -337,6 +348,12 @@ JsonValue App::Jsonize() const
   if(m_enableBranchAutoBuildHasBeenSet)
   {
    payload.WithBool("enableBranchAutoBuild", m_enableBranchAutoBuild);
+
+  }
+
+  if(m_enableBranchAutoDeletionHasBeenSet)
+  {
+   payload.WithBool("enableBranchAutoDeletion", m_enableBranchAutoDeletion);
 
   }
 

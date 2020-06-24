@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/fsx/model/FileSystemLifecycle.h>
 #include <aws/fsx/model/DeleteFileSystemWindowsResponse.h>
+#include <aws/fsx/model/DeleteFileSystemLustreResponse.h>
 #include <utility>
 
 namespace Aws
@@ -132,6 +133,22 @@ namespace Model
     
     inline DeleteFileSystemResult& WithWindowsResponse(DeleteFileSystemWindowsResponse&& value) { SetWindowsResponse(std::move(value)); return *this;}
 
+
+    
+    inline const DeleteFileSystemLustreResponse& GetLustreResponse() const{ return m_lustreResponse; }
+
+    
+    inline void SetLustreResponse(const DeleteFileSystemLustreResponse& value) { m_lustreResponse = value; }
+
+    
+    inline void SetLustreResponse(DeleteFileSystemLustreResponse&& value) { m_lustreResponse = std::move(value); }
+
+    
+    inline DeleteFileSystemResult& WithLustreResponse(const DeleteFileSystemLustreResponse& value) { SetLustreResponse(value); return *this;}
+
+    
+    inline DeleteFileSystemResult& WithLustreResponse(DeleteFileSystemLustreResponse&& value) { SetLustreResponse(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_fileSystemId;
@@ -139,6 +156,8 @@ namespace Model
     FileSystemLifecycle m_lifecycle;
 
     DeleteFileSystemWindowsResponse m_windowsResponse;
+
+    DeleteFileSystemLustreResponse m_lustreResponse;
   };
 
 } // namespace Model

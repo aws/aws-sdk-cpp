@@ -111,32 +111,74 @@ namespace Model
 
 
     /**
-     * <p>The policy type that you want to disable in this root.</p>
+     * <p>The policy type that you want to disable in this root. You can specify one of
+     * the following values:</p> <ul> <li> <p> <a
+     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">BACKUP_POLICY</a>
+     * </p> </li> <li> <p> <a
+     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">SERVICE_CONTROL_POLICY</a>
+     * </p> </li> <li> <p> <a
+     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">TAG_POLICY</a>
+     * </p> </li> </ul>
      */
     inline const PolicyType& GetPolicyType() const{ return m_policyType; }
 
     /**
-     * <p>The policy type that you want to disable in this root.</p>
+     * <p>The policy type that you want to disable in this root. You can specify one of
+     * the following values:</p> <ul> <li> <p> <a
+     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">BACKUP_POLICY</a>
+     * </p> </li> <li> <p> <a
+     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">SERVICE_CONTROL_POLICY</a>
+     * </p> </li> <li> <p> <a
+     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">TAG_POLICY</a>
+     * </p> </li> </ul>
      */
     inline bool PolicyTypeHasBeenSet() const { return m_policyTypeHasBeenSet; }
 
     /**
-     * <p>The policy type that you want to disable in this root.</p>
+     * <p>The policy type that you want to disable in this root. You can specify one of
+     * the following values:</p> <ul> <li> <p> <a
+     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">BACKUP_POLICY</a>
+     * </p> </li> <li> <p> <a
+     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">SERVICE_CONTROL_POLICY</a>
+     * </p> </li> <li> <p> <a
+     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">TAG_POLICY</a>
+     * </p> </li> </ul>
      */
     inline void SetPolicyType(const PolicyType& value) { m_policyTypeHasBeenSet = true; m_policyType = value; }
 
     /**
-     * <p>The policy type that you want to disable in this root.</p>
+     * <p>The policy type that you want to disable in this root. You can specify one of
+     * the following values:</p> <ul> <li> <p> <a
+     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">BACKUP_POLICY</a>
+     * </p> </li> <li> <p> <a
+     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">SERVICE_CONTROL_POLICY</a>
+     * </p> </li> <li> <p> <a
+     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">TAG_POLICY</a>
+     * </p> </li> </ul>
      */
     inline void SetPolicyType(PolicyType&& value) { m_policyTypeHasBeenSet = true; m_policyType = std::move(value); }
 
     /**
-     * <p>The policy type that you want to disable in this root.</p>
+     * <p>The policy type that you want to disable in this root. You can specify one of
+     * the following values:</p> <ul> <li> <p> <a
+     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">BACKUP_POLICY</a>
+     * </p> </li> <li> <p> <a
+     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">SERVICE_CONTROL_POLICY</a>
+     * </p> </li> <li> <p> <a
+     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">TAG_POLICY</a>
+     * </p> </li> </ul>
      */
     inline DisablePolicyTypeRequest& WithPolicyType(const PolicyType& value) { SetPolicyType(value); return *this;}
 
     /**
-     * <p>The policy type that you want to disable in this root.</p>
+     * <p>The policy type that you want to disable in this root. You can specify one of
+     * the following values:</p> <ul> <li> <p> <a
+     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">BACKUP_POLICY</a>
+     * </p> </li> <li> <p> <a
+     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">SERVICE_CONTROL_POLICY</a>
+     * </p> </li> <li> <p> <a
+     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">TAG_POLICY</a>
+     * </p> </li> </ul>
      */
     inline DisablePolicyTypeRequest& WithPolicyType(PolicyType&& value) { SetPolicyType(std::move(value)); return *this;}
 

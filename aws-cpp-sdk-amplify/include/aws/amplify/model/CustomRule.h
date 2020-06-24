@@ -34,7 +34,7 @@ namespace Model
 {
 
   /**
-   * <p> Custom rewrite / redirect rule. </p><p><h3>See Also:</h3>   <a
+   * <p> Describes a custom rewrite or redirect rule. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/CustomRule">AWS
    * API Reference</a></p>
    */
@@ -171,42 +171,50 @@ namespace Model
 
 
     /**
-     * <p> The condition for a URL rewrite or redirect rule, e.g. country code. </p>
+     * <p> The condition for a URL rewrite or redirect rule, such as a country code.
+     * </p>
      */
     inline const Aws::String& GetCondition() const{ return m_condition; }
 
     /**
-     * <p> The condition for a URL rewrite or redirect rule, e.g. country code. </p>
+     * <p> The condition for a URL rewrite or redirect rule, such as a country code.
+     * </p>
      */
     inline bool ConditionHasBeenSet() const { return m_conditionHasBeenSet; }
 
     /**
-     * <p> The condition for a URL rewrite or redirect rule, e.g. country code. </p>
+     * <p> The condition for a URL rewrite or redirect rule, such as a country code.
+     * </p>
      */
     inline void SetCondition(const Aws::String& value) { m_conditionHasBeenSet = true; m_condition = value; }
 
     /**
-     * <p> The condition for a URL rewrite or redirect rule, e.g. country code. </p>
+     * <p> The condition for a URL rewrite or redirect rule, such as a country code.
+     * </p>
      */
     inline void SetCondition(Aws::String&& value) { m_conditionHasBeenSet = true; m_condition = std::move(value); }
 
     /**
-     * <p> The condition for a URL rewrite or redirect rule, e.g. country code. </p>
+     * <p> The condition for a URL rewrite or redirect rule, such as a country code.
+     * </p>
      */
     inline void SetCondition(const char* value) { m_conditionHasBeenSet = true; m_condition.assign(value); }
 
     /**
-     * <p> The condition for a URL rewrite or redirect rule, e.g. country code. </p>
+     * <p> The condition for a URL rewrite or redirect rule, such as a country code.
+     * </p>
      */
     inline CustomRule& WithCondition(const Aws::String& value) { SetCondition(value); return *this;}
 
     /**
-     * <p> The condition for a URL rewrite or redirect rule, e.g. country code. </p>
+     * <p> The condition for a URL rewrite or redirect rule, such as a country code.
+     * </p>
      */
     inline CustomRule& WithCondition(Aws::String&& value) { SetCondition(std::move(value)); return *this;}
 
     /**
-     * <p> The condition for a URL rewrite or redirect rule, e.g. country code. </p>
+     * <p> The condition for a URL rewrite or redirect rule, such as a country code.
+     * </p>
      */
     inline CustomRule& WithCondition(const char* value) { SetCondition(value); return *this;}
 

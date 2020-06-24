@@ -46,58 +46,37 @@ namespace Model
 
 
     /**
-     * <p>The instance refreshes for the specified group.</p> <p>For more information,
-     * see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-refresh.html">Replacing
-     * Auto Scaling Instances Based on an Instance Refresh</a>.</p>
+     * <p>The instance refreshes for the specified group.</p>
      */
     inline const Aws::Vector<InstanceRefresh>& GetInstanceRefreshes() const{ return m_instanceRefreshes; }
 
     /**
-     * <p>The instance refreshes for the specified group.</p> <p>For more information,
-     * see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-refresh.html">Replacing
-     * Auto Scaling Instances Based on an Instance Refresh</a>.</p>
+     * <p>The instance refreshes for the specified group.</p>
      */
     inline void SetInstanceRefreshes(const Aws::Vector<InstanceRefresh>& value) { m_instanceRefreshes = value; }
 
     /**
-     * <p>The instance refreshes for the specified group.</p> <p>For more information,
-     * see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-refresh.html">Replacing
-     * Auto Scaling Instances Based on an Instance Refresh</a>.</p>
+     * <p>The instance refreshes for the specified group.</p>
      */
     inline void SetInstanceRefreshes(Aws::Vector<InstanceRefresh>&& value) { m_instanceRefreshes = std::move(value); }
 
     /**
-     * <p>The instance refreshes for the specified group.</p> <p>For more information,
-     * see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-refresh.html">Replacing
-     * Auto Scaling Instances Based on an Instance Refresh</a>.</p>
+     * <p>The instance refreshes for the specified group.</p>
      */
     inline DescribeInstanceRefreshesResult& WithInstanceRefreshes(const Aws::Vector<InstanceRefresh>& value) { SetInstanceRefreshes(value); return *this;}
 
     /**
-     * <p>The instance refreshes for the specified group.</p> <p>For more information,
-     * see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-refresh.html">Replacing
-     * Auto Scaling Instances Based on an Instance Refresh</a>.</p>
+     * <p>The instance refreshes for the specified group.</p>
      */
     inline DescribeInstanceRefreshesResult& WithInstanceRefreshes(Aws::Vector<InstanceRefresh>&& value) { SetInstanceRefreshes(std::move(value)); return *this;}
 
     /**
-     * <p>The instance refreshes for the specified group.</p> <p>For more information,
-     * see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-refresh.html">Replacing
-     * Auto Scaling Instances Based on an Instance Refresh</a>.</p>
+     * <p>The instance refreshes for the specified group.</p>
      */
     inline DescribeInstanceRefreshesResult& AddInstanceRefreshes(const InstanceRefresh& value) { m_instanceRefreshes.push_back(value); return *this; }
 
     /**
-     * <p>The instance refreshes for the specified group.</p> <p>For more information,
-     * see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-refresh.html">Replacing
-     * Auto Scaling Instances Based on an Instance Refresh</a>.</p>
+     * <p>The instance refreshes for the specified group.</p>
      */
     inline DescribeInstanceRefreshesResult& AddInstanceRefreshes(InstanceRefresh&& value) { m_instanceRefreshes.push_back(std::move(value)); return *this; }
 

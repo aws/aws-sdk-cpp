@@ -44,6 +44,12 @@ DescribeBackupJobResult::DescribeBackupJobResult(const Aws::AmazonWebServiceResu
 DescribeBackupJobResult& DescribeBackupJobResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
+  if(jsonValue.ValueExists("AccountId"))
+  {
+    m_accountId = jsonValue.GetString("AccountId");
+
+  }
+
   if(jsonValue.ValueExists("BackupJobId"))
   {
     m_backupJobId = jsonValue.GetString("BackupJobId");

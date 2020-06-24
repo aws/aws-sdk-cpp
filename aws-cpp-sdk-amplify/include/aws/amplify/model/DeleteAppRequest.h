@@ -27,7 +27,7 @@ namespace Model
 {
 
   /**
-   * <p> Request structure for an Amplify App delete request. </p><p><h3>See
+   * <p> Describes the request structure for the delete app request. </p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/DeleteAppRequest">AWS
    * API Reference</a></p>
@@ -47,42 +47,42 @@ namespace Model
 
 
     /**
-     * <p> Unique Id for an Amplify App. </p>
+     * <p> The unique ID for an Amplify app. </p>
      */
     inline const Aws::String& GetAppId() const{ return m_appId; }
 
     /**
-     * <p> Unique Id for an Amplify App. </p>
+     * <p> The unique ID for an Amplify app. </p>
      */
     inline bool AppIdHasBeenSet() const { return m_appIdHasBeenSet; }
 
     /**
-     * <p> Unique Id for an Amplify App. </p>
+     * <p> The unique ID for an Amplify app. </p>
      */
     inline void SetAppId(const Aws::String& value) { m_appIdHasBeenSet = true; m_appId = value; }
 
     /**
-     * <p> Unique Id for an Amplify App. </p>
+     * <p> The unique ID for an Amplify app. </p>
      */
     inline void SetAppId(Aws::String&& value) { m_appIdHasBeenSet = true; m_appId = std::move(value); }
 
     /**
-     * <p> Unique Id for an Amplify App. </p>
+     * <p> The unique ID for an Amplify app. </p>
      */
     inline void SetAppId(const char* value) { m_appIdHasBeenSet = true; m_appId.assign(value); }
 
     /**
-     * <p> Unique Id for an Amplify App. </p>
+     * <p> The unique ID for an Amplify app. </p>
      */
     inline DeleteAppRequest& WithAppId(const Aws::String& value) { SetAppId(value); return *this;}
 
     /**
-     * <p> Unique Id for an Amplify App. </p>
+     * <p> The unique ID for an Amplify app. </p>
      */
     inline DeleteAppRequest& WithAppId(Aws::String&& value) { SetAppId(std::move(value)); return *this;}
 
     /**
-     * <p> Unique Id for an Amplify App. </p>
+     * <p> The unique ID for an Amplify app. </p>
      */
     inline DeleteAppRequest& WithAppId(const char* value) { SetAppId(value); return *this;}
 

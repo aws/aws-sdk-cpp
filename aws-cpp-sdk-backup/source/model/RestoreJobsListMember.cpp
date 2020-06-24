@@ -29,6 +29,7 @@ namespace Model
 {
 
 RestoreJobsListMember::RestoreJobsListMember() : 
+    m_accountIdHasBeenSet(false),
     m_restoreJobIdHasBeenSet(false),
     m_recoveryPointArnHasBeenSet(false),
     m_creationDateHasBeenSet(false),
@@ -42,11 +43,13 @@ RestoreJobsListMember::RestoreJobsListMember() :
     m_iamRoleArnHasBeenSet(false),
     m_expectedCompletionTimeMinutes(0),
     m_expectedCompletionTimeMinutesHasBeenSet(false),
-    m_createdResourceArnHasBeenSet(false)
+    m_createdResourceArnHasBeenSet(false),
+    m_resourceTypeHasBeenSet(false)
 {
 }
 
 RestoreJobsListMember::RestoreJobsListMember(JsonView jsonValue) : 
+    m_accountIdHasBeenSet(false),
     m_restoreJobIdHasBeenSet(false),
     m_recoveryPointArnHasBeenSet(false),
     m_creationDateHasBeenSet(false),
@@ -60,13 +63,21 @@ RestoreJobsListMember::RestoreJobsListMember(JsonView jsonValue) :
     m_iamRoleArnHasBeenSet(false),
     m_expectedCompletionTimeMinutes(0),
     m_expectedCompletionTimeMinutesHasBeenSet(false),
-    m_createdResourceArnHasBeenSet(false)
+    m_createdResourceArnHasBeenSet(false),
+    m_resourceTypeHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 RestoreJobsListMember& RestoreJobsListMember::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("AccountId"))
+  {
+    m_accountId = jsonValue.GetString("AccountId");
+
+    m_accountIdHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("RestoreJobId"))
   {
     m_restoreJobId = jsonValue.GetString("RestoreJobId");
@@ -144,12 +155,25 @@ RestoreJobsListMember& RestoreJobsListMember::operator =(JsonView jsonValue)
     m_createdResourceArnHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ResourceType"))
+  {
+    m_resourceType = jsonValue.GetString("ResourceType");
+
+    m_resourceTypeHasBeenSet = true;
+  }
+
   return *this;
 }
 
 JsonValue RestoreJobsListMember::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_accountIdHasBeenSet)
+  {
+   payload.WithString("AccountId", m_accountId);
+
+  }
 
   if(m_restoreJobIdHasBeenSet)
   {
@@ -211,6 +235,12 @@ JsonValue RestoreJobsListMember::Jsonize() const
   if(m_createdResourceArnHasBeenSet)
   {
    payload.WithString("CreatedResourceArn", m_createdResourceArn);
+
+  }
+
+  if(m_resourceTypeHasBeenSet)
+  {
+   payload.WithString("ResourceType", m_resourceType);
 
   }
 

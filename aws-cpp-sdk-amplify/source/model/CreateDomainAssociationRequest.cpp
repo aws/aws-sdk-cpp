@@ -27,7 +27,9 @@ CreateDomainAssociationRequest::CreateDomainAssociationRequest() :
     m_domainNameHasBeenSet(false),
     m_enableAutoSubDomain(false),
     m_enableAutoSubDomainHasBeenSet(false),
-    m_subDomainSettingsHasBeenSet(false)
+    m_subDomainSettingsHasBeenSet(false),
+    m_autoSubDomainCreationPatternsHasBeenSet(false),
+    m_autoSubDomainIAMRoleHasBeenSet(false)
 {
 }
 
@@ -55,6 +57,23 @@ Aws::String CreateDomainAssociationRequest::SerializePayload() const
      subDomainSettingsJsonList[subDomainSettingsIndex].AsObject(m_subDomainSettings[subDomainSettingsIndex].Jsonize());
    }
    payload.WithArray("subDomainSettings", std::move(subDomainSettingsJsonList));
+
+  }
+
+  if(m_autoSubDomainCreationPatternsHasBeenSet)
+  {
+   Array<JsonValue> autoSubDomainCreationPatternsJsonList(m_autoSubDomainCreationPatterns.size());
+   for(unsigned autoSubDomainCreationPatternsIndex = 0; autoSubDomainCreationPatternsIndex < autoSubDomainCreationPatternsJsonList.GetLength(); ++autoSubDomainCreationPatternsIndex)
+   {
+     autoSubDomainCreationPatternsJsonList[autoSubDomainCreationPatternsIndex].AsString(m_autoSubDomainCreationPatterns[autoSubDomainCreationPatternsIndex]);
+   }
+   payload.WithArray("autoSubDomainCreationPatterns", std::move(autoSubDomainCreationPatternsJsonList));
+
+  }
+
+  if(m_autoSubDomainIAMRoleHasBeenSet)
+  {
+   payload.WithString("autoSubDomainIAMRole", m_autoSubDomainIAMRole);
 
   }
 

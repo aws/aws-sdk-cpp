@@ -32,6 +32,7 @@ namespace Aws
 
         static const int file_system_id_HASH = HashingUtils::HashString("file-system-id");
         static const int backup_type_HASH = HashingUtils::HashString("backup-type");
+        static const int file_system_type_HASH = HashingUtils::HashString("file-system-type");
 
 
         FilterName GetFilterNameForName(const Aws::String& name)
@@ -44,6 +45,10 @@ namespace Aws
           else if (hashCode == backup_type_HASH)
           {
             return FilterName::backup_type;
+          }
+          else if (hashCode == file_system_type_HASH)
+          {
+            return FilterName::file_system_type;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -63,6 +68,8 @@ namespace Aws
             return "file-system-id";
           case FilterName::backup_type:
             return "backup-type";
+          case FilterName::file_system_type:
+            return "file-system-type";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

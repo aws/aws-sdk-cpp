@@ -34,7 +34,9 @@ SpotProvisioningSpecification::SpotProvisioningSpecification() :
     m_timeoutAction(SpotProvisioningTimeoutAction::NOT_SET),
     m_timeoutActionHasBeenSet(false),
     m_blockDurationMinutes(0),
-    m_blockDurationMinutesHasBeenSet(false)
+    m_blockDurationMinutesHasBeenSet(false),
+    m_allocationStrategy(SpotProvisioningAllocationStrategy::NOT_SET),
+    m_allocationStrategyHasBeenSet(false)
 {
 }
 
@@ -44,7 +46,9 @@ SpotProvisioningSpecification::SpotProvisioningSpecification(JsonView jsonValue)
     m_timeoutAction(SpotProvisioningTimeoutAction::NOT_SET),
     m_timeoutActionHasBeenSet(false),
     m_blockDurationMinutes(0),
-    m_blockDurationMinutesHasBeenSet(false)
+    m_blockDurationMinutesHasBeenSet(false),
+    m_allocationStrategy(SpotProvisioningAllocationStrategy::NOT_SET),
+    m_allocationStrategyHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -72,6 +76,13 @@ SpotProvisioningSpecification& SpotProvisioningSpecification::operator =(JsonVie
     m_blockDurationMinutesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("AllocationStrategy"))
+  {
+    m_allocationStrategy = SpotProvisioningAllocationStrategyMapper::GetSpotProvisioningAllocationStrategyForName(jsonValue.GetString("AllocationStrategy"));
+
+    m_allocationStrategyHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -94,6 +105,11 @@ JsonValue SpotProvisioningSpecification::Jsonize() const
   {
    payload.WithInteger("BlockDurationMinutes", m_blockDurationMinutes);
 
+  }
+
+  if(m_allocationStrategyHasBeenSet)
+  {
+   payload.WithString("AllocationStrategy", SpotProvisioningAllocationStrategyMapper::GetNameForSpotProvisioningAllocationStrategy(m_allocationStrategy));
   }
 
   return payload;

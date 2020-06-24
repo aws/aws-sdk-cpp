@@ -29,6 +29,7 @@ namespace Model
 {
 
 CopyJob::CopyJob() : 
+    m_accountIdHasBeenSet(false),
     m_copyJobIdHasBeenSet(false),
     m_sourceBackupVaultArnHasBeenSet(false),
     m_sourceRecoveryPointArnHasBeenSet(false),
@@ -49,6 +50,7 @@ CopyJob::CopyJob() :
 }
 
 CopyJob::CopyJob(JsonView jsonValue) : 
+    m_accountIdHasBeenSet(false),
     m_copyJobIdHasBeenSet(false),
     m_sourceBackupVaultArnHasBeenSet(false),
     m_sourceRecoveryPointArnHasBeenSet(false),
@@ -71,6 +73,13 @@ CopyJob::CopyJob(JsonView jsonValue) :
 
 CopyJob& CopyJob::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("AccountId"))
+  {
+    m_accountId = jsonValue.GetString("AccountId");
+
+    m_accountIdHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("CopyJobId"))
   {
     m_copyJobId = jsonValue.GetString("CopyJobId");
@@ -175,6 +184,12 @@ CopyJob& CopyJob::operator =(JsonView jsonValue)
 JsonValue CopyJob::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_accountIdHasBeenSet)
+  {
+   payload.WithString("AccountId", m_accountId);
+
+  }
 
   if(m_copyJobIdHasBeenSet)
   {

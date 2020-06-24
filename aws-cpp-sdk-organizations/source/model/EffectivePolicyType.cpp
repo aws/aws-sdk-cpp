@@ -31,6 +31,7 @@ namespace Aws
       {
 
         static const int TAG_POLICY_HASH = HashingUtils::HashString("TAG_POLICY");
+        static const int BACKUP_POLICY_HASH = HashingUtils::HashString("BACKUP_POLICY");
 
 
         EffectivePolicyType GetEffectivePolicyTypeForName(const Aws::String& name)
@@ -39,6 +40,10 @@ namespace Aws
           if (hashCode == TAG_POLICY_HASH)
           {
             return EffectivePolicyType::TAG_POLICY;
+          }
+          else if (hashCode == BACKUP_POLICY_HASH)
+          {
+            return EffectivePolicyType::BACKUP_POLICY;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -56,6 +61,8 @@ namespace Aws
           {
           case EffectivePolicyType::TAG_POLICY:
             return "TAG_POLICY";
+          case EffectivePolicyType::BACKUP_POLICY:
+            return "BACKUP_POLICY";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -32,6 +32,8 @@ UpdateAppRequest::UpdateAppRequest() :
     m_environmentVariablesHasBeenSet(false),
     m_enableBranchAutoBuild(false),
     m_enableBranchAutoBuildHasBeenSet(false),
+    m_enableBranchAutoDeletion(false),
+    m_enableBranchAutoDeletionHasBeenSet(false),
     m_enableBasicAuth(false),
     m_enableBasicAuthHasBeenSet(false),
     m_basicAuthCredentialsHasBeenSet(false),
@@ -88,6 +90,12 @@ Aws::String UpdateAppRequest::SerializePayload() const
   if(m_enableBranchAutoBuildHasBeenSet)
   {
    payload.WithBool("enableBranchAutoBuild", m_enableBranchAutoBuild);
+
+  }
+
+  if(m_enableBranchAutoDeletionHasBeenSet)
+  {
+   payload.WithBool("enableBranchAutoDeletion", m_enableBranchAutoDeletion);
 
   }
 

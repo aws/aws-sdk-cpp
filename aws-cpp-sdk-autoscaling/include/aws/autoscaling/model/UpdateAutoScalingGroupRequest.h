@@ -384,45 +384,45 @@ namespace Model
 
     /**
      * <p>The amount of time, in seconds, after a scaling activity completes before
-     * another scaling activity can start. The default value is <code>300</code>. This
-     * cooldown period is not used when a scaling-specific cooldown is specified.</p>
-     * <p>Cooldown periods are not supported for target tracking scaling policies, step
-     * scaling policies, or scheduled scaling. For more information, see <a
+     * another scaling activity can start. The default value is <code>300</code>.</p>
+     * <p>This setting applies when using simple scaling policies, but not when using
+     * other scaling policies or scheduled scaling. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling
-     * Cooldowns</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+     * Cooldowns for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User
+     * Guide</i>.</p>
      */
     inline int GetDefaultCooldown() const{ return m_defaultCooldown; }
 
     /**
      * <p>The amount of time, in seconds, after a scaling activity completes before
-     * another scaling activity can start. The default value is <code>300</code>. This
-     * cooldown period is not used when a scaling-specific cooldown is specified.</p>
-     * <p>Cooldown periods are not supported for target tracking scaling policies, step
-     * scaling policies, or scheduled scaling. For more information, see <a
+     * another scaling activity can start. The default value is <code>300</code>.</p>
+     * <p>This setting applies when using simple scaling policies, but not when using
+     * other scaling policies or scheduled scaling. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling
-     * Cooldowns</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+     * Cooldowns for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User
+     * Guide</i>.</p>
      */
     inline bool DefaultCooldownHasBeenSet() const { return m_defaultCooldownHasBeenSet; }
 
     /**
      * <p>The amount of time, in seconds, after a scaling activity completes before
-     * another scaling activity can start. The default value is <code>300</code>. This
-     * cooldown period is not used when a scaling-specific cooldown is specified.</p>
-     * <p>Cooldown periods are not supported for target tracking scaling policies, step
-     * scaling policies, or scheduled scaling. For more information, see <a
+     * another scaling activity can start. The default value is <code>300</code>.</p>
+     * <p>This setting applies when using simple scaling policies, but not when using
+     * other scaling policies or scheduled scaling. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling
-     * Cooldowns</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+     * Cooldowns for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User
+     * Guide</i>.</p>
      */
     inline void SetDefaultCooldown(int value) { m_defaultCooldownHasBeenSet = true; m_defaultCooldown = value; }
 
     /**
      * <p>The amount of time, in seconds, after a scaling activity completes before
-     * another scaling activity can start. The default value is <code>300</code>. This
-     * cooldown period is not used when a scaling-specific cooldown is specified.</p>
-     * <p>Cooldown periods are not supported for target tracking scaling policies, step
-     * scaling policies, or scheduled scaling. For more information, see <a
+     * another scaling activity can start. The default value is <code>300</code>.</p>
+     * <p>This setting applies when using simple scaling policies, but not when using
+     * other scaling policies or scheduled scaling. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling
-     * Cooldowns</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+     * Cooldowns for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User
+     * Guide</i>.</p>
      */
     inline UpdateAutoScalingGroupRequest& WithDefaultCooldown(int value) { SetDefaultCooldown(value); return *this;}
 
@@ -544,8 +544,7 @@ namespace Model
      * default value is <code>0</code>.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html#health-check-grace-period">Health
      * Check Grace Period</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-     * <p>Conditional: This parameter is required if you are adding an <code>ELB</code>
-     * health check.</p>
+     * <p>Required if you are adding an <code>ELB</code> health check.</p>
      */
     inline int GetHealthCheckGracePeriod() const{ return m_healthCheckGracePeriod; }
 
@@ -555,8 +554,7 @@ namespace Model
      * default value is <code>0</code>.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html#health-check-grace-period">Health
      * Check Grace Period</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-     * <p>Conditional: This parameter is required if you are adding an <code>ELB</code>
-     * health check.</p>
+     * <p>Required if you are adding an <code>ELB</code> health check.</p>
      */
     inline bool HealthCheckGracePeriodHasBeenSet() const { return m_healthCheckGracePeriodHasBeenSet; }
 
@@ -566,8 +564,7 @@ namespace Model
      * default value is <code>0</code>.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html#health-check-grace-period">Health
      * Check Grace Period</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-     * <p>Conditional: This parameter is required if you are adding an <code>ELB</code>
-     * health check.</p>
+     * <p>Required if you are adding an <code>ELB</code> health check.</p>
      */
     inline void SetHealthCheckGracePeriod(int value) { m_healthCheckGracePeriodHasBeenSet = true; m_healthCheckGracePeriod = value; }
 
@@ -577,8 +574,7 @@ namespace Model
      * default value is <code>0</code>.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html#health-check-grace-period">Health
      * Check Grace Period</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-     * <p>Conditional: This parameter is required if you are adding an <code>ELB</code>
-     * health check.</p>
+     * <p>Required if you are adding an <code>ELB</code> health check.</p>
      */
     inline UpdateAutoScalingGroupRequest& WithHealthCheckGracePeriod(int value) { SetHealthCheckGracePeriod(value); return *this;}
 

@@ -35,7 +35,8 @@ ListBackupJobsRequest::ListBackupJobsRequest() :
     m_byBackupVaultNameHasBeenSet(false),
     m_byCreatedBeforeHasBeenSet(false),
     m_byCreatedAfterHasBeenSet(false),
-    m_byResourceTypeHasBeenSet(false)
+    m_byResourceTypeHasBeenSet(false),
+    m_byAccountIdHasBeenSet(false)
 {
 }
 
@@ -100,6 +101,13 @@ void ListBackupJobsRequest::AddQueryStringParameters(URI& uri) const
     {
       ss << m_byResourceType;
       uri.AddQueryStringParameter("resourceType", ss.str());
+      ss.str("");
+    }
+
+    if(m_byAccountIdHasBeenSet)
+    {
+      ss << m_byAccountId;
+      uri.AddQueryStringParameter("accountId", ss.str());
       ss.str("");
     }
 

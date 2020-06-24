@@ -35,7 +35,7 @@ namespace Amplify
 namespace Model
 {
   /**
-   * <p> Result structure for the generate access logs request. </p><p><h3>See
+   * <p> The result structure for the generate access logs request. </p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/GenerateAccessLogsResult">AWS
    * API Reference</a></p>
@@ -49,37 +49,37 @@ namespace Model
 
 
     /**
-     * <p> Pre-signed URL for the requested access logs. </p>
+     * <p> The pre-signed URL for the requested access logs. </p>
      */
     inline const Aws::String& GetLogUrl() const{ return m_logUrl; }
 
     /**
-     * <p> Pre-signed URL for the requested access logs. </p>
+     * <p> The pre-signed URL for the requested access logs. </p>
      */
     inline void SetLogUrl(const Aws::String& value) { m_logUrl = value; }
 
     /**
-     * <p> Pre-signed URL for the requested access logs. </p>
+     * <p> The pre-signed URL for the requested access logs. </p>
      */
     inline void SetLogUrl(Aws::String&& value) { m_logUrl = std::move(value); }
 
     /**
-     * <p> Pre-signed URL for the requested access logs. </p>
+     * <p> The pre-signed URL for the requested access logs. </p>
      */
     inline void SetLogUrl(const char* value) { m_logUrl.assign(value); }
 
     /**
-     * <p> Pre-signed URL for the requested access logs. </p>
+     * <p> The pre-signed URL for the requested access logs. </p>
      */
     inline GenerateAccessLogsResult& WithLogUrl(const Aws::String& value) { SetLogUrl(value); return *this;}
 
     /**
-     * <p> Pre-signed URL for the requested access logs. </p>
+     * <p> The pre-signed URL for the requested access logs. </p>
      */
     inline GenerateAccessLogsResult& WithLogUrl(Aws::String&& value) { SetLogUrl(std::move(value)); return *this;}
 
     /**
-     * <p> Pre-signed URL for the requested access logs. </p>
+     * <p> The pre-signed URL for the requested access logs. </p>
      */
     inline GenerateAccessLogsResult& WithLogUrl(const char* value) { SetLogUrl(value); return *this;}
 

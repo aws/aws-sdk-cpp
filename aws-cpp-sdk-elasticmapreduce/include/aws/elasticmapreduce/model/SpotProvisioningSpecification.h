@@ -16,6 +16,7 @@
 #pragma once
 #include <aws/elasticmapreduce/EMR_EXPORTS.h>
 #include <aws/elasticmapreduce/model/SpotProvisioningTimeoutAction.h>
+#include <aws/elasticmapreduce/model/SpotProvisioningAllocationStrategy.h>
 #include <utility>
 
 namespace Aws
@@ -35,9 +36,11 @@ namespace Model
 
   /**
    * <p>The launch specification for Spot instances in the instance fleet, which
-   * determines the defined duration and provisioning timeout behavior.</p> <note>
-   * <p>The instance fleet configuration is available only in Amazon EMR versions
-   * 4.8.0 and later, excluding 5.0.x versions.</p> </note><p><h3>See Also:</h3>   <a
+   * determines the defined duration, provisioning timeout behavior, and allocation
+   * strategy.</p> <note> <p>The instance fleet configuration is available only in
+   * Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions. Spot instance
+   * allocation strategy is available in Amazon EMR version 5.12.1 and later.</p>
+   * </note><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/SpotProvisioningSpecification">AWS
    * API Reference</a></p>
    */
@@ -194,6 +197,55 @@ namespace Model
      */
     inline SpotProvisioningSpecification& WithBlockDurationMinutes(int value) { SetBlockDurationMinutes(value); return *this;}
 
+
+    /**
+     * <p> Specifies the strategy to use in launching Spot instance fleets. Currently,
+     * the only option is capacity-optimized (the default), which launches instances
+     * from Spot instance pools with optimal capacity for the number of instances that
+     * are launching. </p>
+     */
+    inline const SpotProvisioningAllocationStrategy& GetAllocationStrategy() const{ return m_allocationStrategy; }
+
+    /**
+     * <p> Specifies the strategy to use in launching Spot instance fleets. Currently,
+     * the only option is capacity-optimized (the default), which launches instances
+     * from Spot instance pools with optimal capacity for the number of instances that
+     * are launching. </p>
+     */
+    inline bool AllocationStrategyHasBeenSet() const { return m_allocationStrategyHasBeenSet; }
+
+    /**
+     * <p> Specifies the strategy to use in launching Spot instance fleets. Currently,
+     * the only option is capacity-optimized (the default), which launches instances
+     * from Spot instance pools with optimal capacity for the number of instances that
+     * are launching. </p>
+     */
+    inline void SetAllocationStrategy(const SpotProvisioningAllocationStrategy& value) { m_allocationStrategyHasBeenSet = true; m_allocationStrategy = value; }
+
+    /**
+     * <p> Specifies the strategy to use in launching Spot instance fleets. Currently,
+     * the only option is capacity-optimized (the default), which launches instances
+     * from Spot instance pools with optimal capacity for the number of instances that
+     * are launching. </p>
+     */
+    inline void SetAllocationStrategy(SpotProvisioningAllocationStrategy&& value) { m_allocationStrategyHasBeenSet = true; m_allocationStrategy = std::move(value); }
+
+    /**
+     * <p> Specifies the strategy to use in launching Spot instance fleets. Currently,
+     * the only option is capacity-optimized (the default), which launches instances
+     * from Spot instance pools with optimal capacity for the number of instances that
+     * are launching. </p>
+     */
+    inline SpotProvisioningSpecification& WithAllocationStrategy(const SpotProvisioningAllocationStrategy& value) { SetAllocationStrategy(value); return *this;}
+
+    /**
+     * <p> Specifies the strategy to use in launching Spot instance fleets. Currently,
+     * the only option is capacity-optimized (the default), which launches instances
+     * from Spot instance pools with optimal capacity for the number of instances that
+     * are launching. </p>
+     */
+    inline SpotProvisioningSpecification& WithAllocationStrategy(SpotProvisioningAllocationStrategy&& value) { SetAllocationStrategy(std::move(value)); return *this;}
+
   private:
 
     int m_timeoutDurationMinutes;
@@ -204,6 +256,9 @@ namespace Model
 
     int m_blockDurationMinutes;
     bool m_blockDurationMinutesHasBeenSet;
+
+    SpotProvisioningAllocationStrategy m_allocationStrategy;
+    bool m_allocationStrategyHasBeenSet;
   };
 
 } // namespace Model

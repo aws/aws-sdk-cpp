@@ -46,90 +46,58 @@ namespace Model
 
 
     /**
-     * <p>The policy content to add to the new policy. For example, if you create a <a
-     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">service
-     * control policy</a> (SCP), this string must be JSON text that specifies the
-     * permissions that admins in attached accounts can delegate to their users,
-     * groups, and roles. For more information about the SCP syntax, see <a
-     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_scp-syntax.html">Service
-     * Control Policy Syntax</a> in the <i>AWS Organizations User Guide.</i> </p>
+     * <p>The policy text content to add to the new policy. The text that you supply
+     * must adhere to the rules of the policy type you specify in the <code>Type</code>
+     * parameter.</p>
      */
     inline const Aws::String& GetContent() const{ return m_content; }
 
     /**
-     * <p>The policy content to add to the new policy. For example, if you create a <a
-     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">service
-     * control policy</a> (SCP), this string must be JSON text that specifies the
-     * permissions that admins in attached accounts can delegate to their users,
-     * groups, and roles. For more information about the SCP syntax, see <a
-     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_scp-syntax.html">Service
-     * Control Policy Syntax</a> in the <i>AWS Organizations User Guide.</i> </p>
+     * <p>The policy text content to add to the new policy. The text that you supply
+     * must adhere to the rules of the policy type you specify in the <code>Type</code>
+     * parameter.</p>
      */
     inline bool ContentHasBeenSet() const { return m_contentHasBeenSet; }
 
     /**
-     * <p>The policy content to add to the new policy. For example, if you create a <a
-     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">service
-     * control policy</a> (SCP), this string must be JSON text that specifies the
-     * permissions that admins in attached accounts can delegate to their users,
-     * groups, and roles. For more information about the SCP syntax, see <a
-     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_scp-syntax.html">Service
-     * Control Policy Syntax</a> in the <i>AWS Organizations User Guide.</i> </p>
+     * <p>The policy text content to add to the new policy. The text that you supply
+     * must adhere to the rules of the policy type you specify in the <code>Type</code>
+     * parameter.</p>
      */
     inline void SetContent(const Aws::String& value) { m_contentHasBeenSet = true; m_content = value; }
 
     /**
-     * <p>The policy content to add to the new policy. For example, if you create a <a
-     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">service
-     * control policy</a> (SCP), this string must be JSON text that specifies the
-     * permissions that admins in attached accounts can delegate to their users,
-     * groups, and roles. For more information about the SCP syntax, see <a
-     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_scp-syntax.html">Service
-     * Control Policy Syntax</a> in the <i>AWS Organizations User Guide.</i> </p>
+     * <p>The policy text content to add to the new policy. The text that you supply
+     * must adhere to the rules of the policy type you specify in the <code>Type</code>
+     * parameter.</p>
      */
     inline void SetContent(Aws::String&& value) { m_contentHasBeenSet = true; m_content = std::move(value); }
 
     /**
-     * <p>The policy content to add to the new policy. For example, if you create a <a
-     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">service
-     * control policy</a> (SCP), this string must be JSON text that specifies the
-     * permissions that admins in attached accounts can delegate to their users,
-     * groups, and roles. For more information about the SCP syntax, see <a
-     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_scp-syntax.html">Service
-     * Control Policy Syntax</a> in the <i>AWS Organizations User Guide.</i> </p>
+     * <p>The policy text content to add to the new policy. The text that you supply
+     * must adhere to the rules of the policy type you specify in the <code>Type</code>
+     * parameter.</p>
      */
     inline void SetContent(const char* value) { m_contentHasBeenSet = true; m_content.assign(value); }
 
     /**
-     * <p>The policy content to add to the new policy. For example, if you create a <a
-     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">service
-     * control policy</a> (SCP), this string must be JSON text that specifies the
-     * permissions that admins in attached accounts can delegate to their users,
-     * groups, and roles. For more information about the SCP syntax, see <a
-     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_scp-syntax.html">Service
-     * Control Policy Syntax</a> in the <i>AWS Organizations User Guide.</i> </p>
+     * <p>The policy text content to add to the new policy. The text that you supply
+     * must adhere to the rules of the policy type you specify in the <code>Type</code>
+     * parameter.</p>
      */
     inline CreatePolicyRequest& WithContent(const Aws::String& value) { SetContent(value); return *this;}
 
     /**
-     * <p>The policy content to add to the new policy. For example, if you create a <a
-     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">service
-     * control policy</a> (SCP), this string must be JSON text that specifies the
-     * permissions that admins in attached accounts can delegate to their users,
-     * groups, and roles. For more information about the SCP syntax, see <a
-     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_scp-syntax.html">Service
-     * Control Policy Syntax</a> in the <i>AWS Organizations User Guide.</i> </p>
+     * <p>The policy text content to add to the new policy. The text that you supply
+     * must adhere to the rules of the policy type you specify in the <code>Type</code>
+     * parameter.</p>
      */
     inline CreatePolicyRequest& WithContent(Aws::String&& value) { SetContent(std::move(value)); return *this;}
 
     /**
-     * <p>The policy content to add to the new policy. For example, if you create a <a
-     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">service
-     * control policy</a> (SCP), this string must be JSON text that specifies the
-     * permissions that admins in attached accounts can delegate to their users,
-     * groups, and roles. For more information about the SCP syntax, see <a
-     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_scp-syntax.html">Service
-     * Control Policy Syntax</a> in the <i>AWS Organizations User Guide.</i> </p>
+     * <p>The policy text content to add to the new policy. The text that you supply
+     * must adhere to the rules of the policy type you specify in the <code>Type</code>
+     * parameter.</p>
      */
     inline CreatePolicyRequest& WithContent(const char* value) { SetContent(value); return *this;}
 
@@ -241,44 +209,74 @@ namespace Model
 
 
     /**
-     * <p>The type of policy to create.</p> <note> <p>In the current release, the only
-     * type of policy that you can create is a service control policy (SCP).</p>
-     * </note>
+     * <p>The type of policy to create. You can specify one of the following
+     * values:</p> <ul> <li> <p> <a
+     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">BACKUP_POLICY</a>
+     * </p> </li> <li> <p> <a
+     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">SERVICE_CONTROL_POLICY</a>
+     * </p> </li> <li> <p> <a
+     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">TAG_POLICY</a>
+     * </p> </li> </ul>
      */
     inline const PolicyType& GetType() const{ return m_type; }
 
     /**
-     * <p>The type of policy to create.</p> <note> <p>In the current release, the only
-     * type of policy that you can create is a service control policy (SCP).</p>
-     * </note>
+     * <p>The type of policy to create. You can specify one of the following
+     * values:</p> <ul> <li> <p> <a
+     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">BACKUP_POLICY</a>
+     * </p> </li> <li> <p> <a
+     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">SERVICE_CONTROL_POLICY</a>
+     * </p> </li> <li> <p> <a
+     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">TAG_POLICY</a>
+     * </p> </li> </ul>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
-     * <p>The type of policy to create.</p> <note> <p>In the current release, the only
-     * type of policy that you can create is a service control policy (SCP).</p>
-     * </note>
+     * <p>The type of policy to create. You can specify one of the following
+     * values:</p> <ul> <li> <p> <a
+     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">BACKUP_POLICY</a>
+     * </p> </li> <li> <p> <a
+     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">SERVICE_CONTROL_POLICY</a>
+     * </p> </li> <li> <p> <a
+     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">TAG_POLICY</a>
+     * </p> </li> </ul>
      */
     inline void SetType(const PolicyType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>The type of policy to create.</p> <note> <p>In the current release, the only
-     * type of policy that you can create is a service control policy (SCP).</p>
-     * </note>
+     * <p>The type of policy to create. You can specify one of the following
+     * values:</p> <ul> <li> <p> <a
+     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">BACKUP_POLICY</a>
+     * </p> </li> <li> <p> <a
+     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">SERVICE_CONTROL_POLICY</a>
+     * </p> </li> <li> <p> <a
+     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">TAG_POLICY</a>
+     * </p> </li> </ul>
      */
     inline void SetType(PolicyType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p>The type of policy to create.</p> <note> <p>In the current release, the only
-     * type of policy that you can create is a service control policy (SCP).</p>
-     * </note>
+     * <p>The type of policy to create. You can specify one of the following
+     * values:</p> <ul> <li> <p> <a
+     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">BACKUP_POLICY</a>
+     * </p> </li> <li> <p> <a
+     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">SERVICE_CONTROL_POLICY</a>
+     * </p> </li> <li> <p> <a
+     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">TAG_POLICY</a>
+     * </p> </li> </ul>
      */
     inline CreatePolicyRequest& WithType(const PolicyType& value) { SetType(value); return *this;}
 
     /**
-     * <p>The type of policy to create.</p> <note> <p>In the current release, the only
-     * type of policy that you can create is a service control policy (SCP).</p>
-     * </note>
+     * <p>The type of policy to create. You can specify one of the following
+     * values:</p> <ul> <li> <p> <a
+     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">BACKUP_POLICY</a>
+     * </p> </li> <li> <p> <a
+     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">SERVICE_CONTROL_POLICY</a>
+     * </p> </li> <li> <p> <a
+     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">TAG_POLICY</a>
+     * </p> </li> </ul>
      */
     inline CreatePolicyRequest& WithType(PolicyType&& value) { SetType(std::move(value)); return *this;}
 

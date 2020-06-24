@@ -53,42 +53,42 @@ namespace Model
 
 
     /**
-     * <p>The display name of a backup plan.</p>
+     * <p>The optional display name of a backup plan.</p>
      */
     inline const Aws::String& GetBackupPlanName() const{ return m_backupPlanName; }
 
     /**
-     * <p>The display name of a backup plan.</p>
+     * <p>The optional display name of a backup plan.</p>
      */
     inline bool BackupPlanNameHasBeenSet() const { return m_backupPlanNameHasBeenSet; }
 
     /**
-     * <p>The display name of a backup plan.</p>
+     * <p>The optional display name of a backup plan.</p>
      */
     inline void SetBackupPlanName(const Aws::String& value) { m_backupPlanNameHasBeenSet = true; m_backupPlanName = value; }
 
     /**
-     * <p>The display name of a backup plan.</p>
+     * <p>The optional display name of a backup plan.</p>
      */
     inline void SetBackupPlanName(Aws::String&& value) { m_backupPlanNameHasBeenSet = true; m_backupPlanName = std::move(value); }
 
     /**
-     * <p>The display name of a backup plan.</p>
+     * <p>The optional display name of a backup plan.</p>
      */
     inline void SetBackupPlanName(const char* value) { m_backupPlanNameHasBeenSet = true; m_backupPlanName.assign(value); }
 
     /**
-     * <p>The display name of a backup plan.</p>
+     * <p>The optional display name of a backup plan.</p>
      */
     inline BackupPlanInput& WithBackupPlanName(const Aws::String& value) { SetBackupPlanName(value); return *this;}
 
     /**
-     * <p>The display name of a backup plan.</p>
+     * <p>The optional display name of a backup plan.</p>
      */
     inline BackupPlanInput& WithBackupPlanName(Aws::String&& value) { SetBackupPlanName(std::move(value)); return *this;}
 
     /**
-     * <p>The display name of a backup plan.</p>
+     * <p>The optional display name of a backup plan.</p>
      */
     inline BackupPlanInput& WithBackupPlanName(const char* value) { SetBackupPlanName(value); return *this;}
 

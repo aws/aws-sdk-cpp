@@ -58,6 +58,12 @@ DeleteFileSystemResult& DeleteFileSystemResult::operator =(const Aws::AmazonWebS
 
   }
 
+  if(jsonValue.ValueExists("LustreResponse"))
+  {
+    m_lustreResponse = jsonValue.GetObject("LustreResponse");
+
+  }
+
 
 
   return *this;

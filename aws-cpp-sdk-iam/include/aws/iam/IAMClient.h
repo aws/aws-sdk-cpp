@@ -798,9 +798,12 @@ namespace Model
 
         /**
          * <p>Adds the specified IAM role to the specified instance profile. An instance
-         * profile can contain only one role, and this limit cannot be increased. You can
-         * remove the existing role and then add a different role to an instance profile.
-         * You must then wait for the change to appear across all of AWS because of <a
+         * profile can contain only one role. (The number and size of IAM resources in an
+         * AWS account are limited. For more information, see <a
+         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html">IAM
+         * and STS Quotas</a> in the <i>IAM User Guide</i>.) You can remove the existing
+         * role and then add a different role to an instance profile. You must then wait
+         * for the change to appear across all of AWS because of <a
          * href="https://en.wikipedia.org/wiki/Eventual_consistency">eventual
          * consistency</a>. To force the change, you must <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DisassociateIamInstanceProfile.html">disassociate
@@ -821,9 +824,12 @@ namespace Model
 
         /**
          * <p>Adds the specified IAM role to the specified instance profile. An instance
-         * profile can contain only one role, and this limit cannot be increased. You can
-         * remove the existing role and then add a different role to an instance profile.
-         * You must then wait for the change to appear across all of AWS because of <a
+         * profile can contain only one role. (The number and size of IAM resources in an
+         * AWS account are limited. For more information, see <a
+         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html">IAM
+         * and STS Quotas</a> in the <i>IAM User Guide</i>.) You can remove the existing
+         * role and then add a different role to an instance profile. You must then wait
+         * for the change to appear across all of AWS because of <a
          * href="https://en.wikipedia.org/wiki/Eventual_consistency">eventual
          * consistency</a>. To force the change, you must <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DisassociateIamInstanceProfile.html">disassociate
@@ -846,9 +852,12 @@ namespace Model
 
         /**
          * <p>Adds the specified IAM role to the specified instance profile. An instance
-         * profile can contain only one role, and this limit cannot be increased. You can
-         * remove the existing role and then add a different role to an instance profile.
-         * You must then wait for the change to appear across all of AWS because of <a
+         * profile can contain only one role. (The number and size of IAM resources in an
+         * AWS account are limited. For more information, see <a
+         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html">IAM
+         * and STS Quotas</a> in the <i>IAM User Guide</i>.) You can remove the existing
+         * role and then add a different role to an instance profile. You must then wait
+         * for the change to appear across all of AWS because of <a
          * href="https://en.wikipedia.org/wiki/Eventual_consistency">eventual
          * consistency</a>. To force the change, you must <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DisassociateIamInstanceProfile.html">disassociate
@@ -1082,10 +1091,10 @@ namespace Model
          * based on the AWS access key ID signing the request. This operation works for
          * access keys under the AWS account. Consequently, you can use this operation to
          * manage AWS account root user credentials. This is true even if the AWS account
-         * has no associated users.</p> <p> For information about limits on the number of
-         * keys you can create, see <a
-         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
-         * on IAM Entities</a> in the <i>IAM User Guide</i>.</p> <important> <p>To ensure
+         * has no associated users.</p> <p>The number and size of IAM resources in an AWS
+         * account are limited. For more information, see <a
+         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html">IAM
+         * and STS Quotas</a> in the <i>IAM User Guide</i>.</p> <important> <p>To ensure
          * the security of your AWS account, the secret access key is accessible only
          * during key and user creation. You must save the key (for example, in a text
          * file) if you want to be able to access it again. If a secret key is lost, you
@@ -1103,10 +1112,10 @@ namespace Model
          * based on the AWS access key ID signing the request. This operation works for
          * access keys under the AWS account. Consequently, you can use this operation to
          * manage AWS account root user credentials. This is true even if the AWS account
-         * has no associated users.</p> <p> For information about limits on the number of
-         * keys you can create, see <a
-         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
-         * on IAM Entities</a> in the <i>IAM User Guide</i>.</p> <important> <p>To ensure
+         * has no associated users.</p> <p>The number and size of IAM resources in an AWS
+         * account are limited. For more information, see <a
+         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html">IAM
+         * and STS Quotas</a> in the <i>IAM User Guide</i>.</p> <important> <p>To ensure
          * the security of your AWS account, the secret access key is accessible only
          * during key and user creation. You must save the key (for example, in a text
          * file) if you want to be able to access it again. If a secret key is lost, you
@@ -1126,10 +1135,10 @@ namespace Model
          * based on the AWS access key ID signing the request. This operation works for
          * access keys under the AWS account. Consequently, you can use this operation to
          * manage AWS account root user credentials. This is true even if the AWS account
-         * has no associated users.</p> <p> For information about limits on the number of
-         * keys you can create, see <a
-         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
-         * on IAM Entities</a> in the <i>IAM User Guide</i>.</p> <important> <p>To ensure
+         * has no associated users.</p> <p>The number and size of IAM resources in an AWS
+         * account are limited. For more information, see <a
+         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html">IAM
+         * and STS Quotas</a> in the <i>IAM User Guide</i>.</p> <important> <p>To ensure
          * the security of your AWS account, the secret access key is accessible only
          * during key and user creation. You must save the key (for example, in a text
          * file) if you want to be able to access it again. If a secret key is lost, you
@@ -1180,20 +1189,20 @@ namespace Model
         virtual void CreateAccountAliasAsync(const Model::CreateAccountAliasRequest& request, const CreateAccountAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a new group.</p> <p> For information about the number of groups you
-         * can create, see <a
-         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
-         * on IAM Entities</a> in the <i>IAM User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a new group.</p> <p>The number and size of IAM resources in an AWS
+         * account are limited. For more information, see <a
+         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html">IAM
+         * and STS Quotas</a> in the <i>IAM User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateGroup">AWS API
          * Reference</a></p>
          */
         virtual Model::CreateGroupOutcome CreateGroup(const Model::CreateGroupRequest& request) const;
 
         /**
-         * <p>Creates a new group.</p> <p> For information about the number of groups you
-         * can create, see <a
-         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
-         * on IAM Entities</a> in the <i>IAM User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a new group.</p> <p>The number and size of IAM resources in an AWS
+         * account are limited. For more information, see <a
+         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html">IAM
+         * and STS Quotas</a> in the <i>IAM User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateGroup">AWS API
          * Reference</a></p>
          *
@@ -1202,10 +1211,10 @@ namespace Model
         virtual Model::CreateGroupOutcomeCallable CreateGroupCallable(const Model::CreateGroupRequest& request) const;
 
         /**
-         * <p>Creates a new group.</p> <p> For information about the number of groups you
-         * can create, see <a
-         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
-         * on IAM Entities</a> in the <i>IAM User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a new group.</p> <p>The number and size of IAM resources in an AWS
+         * account are limited. For more information, see <a
+         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html">IAM
+         * and STS Quotas</a> in the <i>IAM User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateGroup">AWS API
          * Reference</a></p>
          *
@@ -1217,10 +1226,10 @@ namespace Model
          * <p> Creates a new instance profile. For information about instance profiles, go
          * to <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html">About
-         * Instance Profiles</a>.</p> <p> For information about the number of instance
-         * profiles you can create, see <a
-         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
-         * on IAM Entities</a> in the <i>IAM User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * Instance Profiles</a>.</p> <p>The number and size of IAM resources in an AWS
+         * account are limited. For more information, see <a
+         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html">IAM
+         * and STS Quotas</a> in the <i>IAM User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateInstanceProfile">AWS
          * API Reference</a></p>
          */
@@ -1230,10 +1239,10 @@ namespace Model
          * <p> Creates a new instance profile. For information about instance profiles, go
          * to <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html">About
-         * Instance Profiles</a>.</p> <p> For information about the number of instance
-         * profiles you can create, see <a
-         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
-         * on IAM Entities</a> in the <i>IAM User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * Instance Profiles</a>.</p> <p>The number and size of IAM resources in an AWS
+         * account are limited. For more information, see <a
+         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html">IAM
+         * and STS Quotas</a> in the <i>IAM User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateInstanceProfile">AWS
          * API Reference</a></p>
          *
@@ -1245,10 +1254,10 @@ namespace Model
          * <p> Creates a new instance profile. For information about instance profiles, go
          * to <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html">About
-         * Instance Profiles</a>.</p> <p> For information about the number of instance
-         * profiles you can create, see <a
-         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
-         * on IAM Entities</a> in the <i>IAM User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * Instance Profiles</a>.</p> <p>The number and size of IAM resources in an AWS
+         * account are limited. For more information, see <a
+         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html">IAM
+         * and STS Quotas</a> in the <i>IAM User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateInstanceProfile">AWS
          * API Reference</a></p>
          *
@@ -1471,10 +1480,10 @@ namespace Model
          * <p>Creates a new role for your AWS account. For more information about roles, go
          * to <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html">IAM
-         * Roles</a>. For information about limitations on role names and the number of
-         * roles you can create, go to <a
-         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
-         * on IAM Entities</a> in the <i>IAM User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * Roles</a>. The number and size of IAM resources in an AWS account are limited.
+         * For more information, see <a
+         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html">IAM
+         * and STS Quotas</a> in the <i>IAM User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateRole">AWS API
          * Reference</a></p>
          */
@@ -1484,10 +1493,10 @@ namespace Model
          * <p>Creates a new role for your AWS account. For more information about roles, go
          * to <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html">IAM
-         * Roles</a>. For information about limitations on role names and the number of
-         * roles you can create, go to <a
-         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
-         * on IAM Entities</a> in the <i>IAM User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * Roles</a>. The number and size of IAM resources in an AWS account are limited.
+         * For more information, see <a
+         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html">IAM
+         * and STS Quotas</a> in the <i>IAM User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateRole">AWS API
          * Reference</a></p>
          *
@@ -1499,10 +1508,10 @@ namespace Model
          * <p>Creates a new role for your AWS account. For more information about roles, go
          * to <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html">IAM
-         * Roles</a>. For information about limitations on role names and the number of
-         * roles you can create, go to <a
-         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
-         * on IAM Entities</a> in the <i>IAM User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * Roles</a>. The number and size of IAM resources in an AWS account are limited.
+         * For more information, see <a
+         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html">IAM
+         * and STS Quotas</a> in the <i>IAM User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateRole">AWS API
          * Reference</a></p>
          *
@@ -1697,20 +1706,20 @@ namespace Model
         virtual void CreateServiceSpecificCredentialAsync(const Model::CreateServiceSpecificCredentialRequest& request, const CreateServiceSpecificCredentialResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a new IAM user for your AWS account.</p> <p> For information about
-         * limitations on the number of IAM users you can create, see <a
-         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
-         * on IAM Entities</a> in the <i>IAM User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a new IAM user for your AWS account.</p> <p>The number and size of
+         * IAM resources in an AWS account are limited. For more information, see <a
+         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html">IAM
+         * and STS Quotas</a> in the <i>IAM User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateUser">AWS API
          * Reference</a></p>
          */
         virtual Model::CreateUserOutcome CreateUser(const Model::CreateUserRequest& request) const;
 
         /**
-         * <p>Creates a new IAM user for your AWS account.</p> <p> For information about
-         * limitations on the number of IAM users you can create, see <a
-         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
-         * on IAM Entities</a> in the <i>IAM User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a new IAM user for your AWS account.</p> <p>The number and size of
+         * IAM resources in an AWS account are limited. For more information, see <a
+         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html">IAM
+         * and STS Quotas</a> in the <i>IAM User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateUser">AWS API
          * Reference</a></p>
          *
@@ -1719,10 +1728,10 @@ namespace Model
         virtual Model::CreateUserOutcomeCallable CreateUserCallable(const Model::CreateUserRequest& request) const;
 
         /**
-         * <p>Creates a new IAM user for your AWS account.</p> <p> For information about
-         * limitations on the number of IAM users you can create, see <a
-         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
-         * on IAM Entities</a> in the <i>IAM User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a new IAM user for your AWS account.</p> <p>The number and size of
+         * IAM resources in an AWS account are limited. For more information, see <a
+         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html">IAM
+         * and STS Quotas</a> in the <i>IAM User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateUser">AWS API
          * Reference</a></p>
          *
@@ -1736,10 +1745,11 @@ namespace Model
          * For more information about creating and working with virtual MFA devices, go to
          * <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_VirtualMFA.html">Using
-         * a Virtual MFA Device</a> in the <i>IAM User Guide</i>.</p> <p>For information
-         * about limits on the number of MFA devices you can create, see <a
-         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
-         * on Entities</a> in the <i>IAM User Guide</i>.</p> <important> <p>The seed
+         * a Virtual MFA Device</a> in the <i>IAM User Guide</i>.</p> <p>The number and
+         * size of IAM resources in an AWS account are limited. For more information, see
+         * <a
+         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html">IAM
+         * and STS Quotas</a> in the <i>IAM User Guide</i>.</p> <important> <p>The seed
          * information contained in the QR code and the Base32 string should be treated
          * like any other secret access information. In other words, protect the seed
          * information as you would your AWS access keys or your passwords. After you
@@ -1757,10 +1767,11 @@ namespace Model
          * For more information about creating and working with virtual MFA devices, go to
          * <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_VirtualMFA.html">Using
-         * a Virtual MFA Device</a> in the <i>IAM User Guide</i>.</p> <p>For information
-         * about limits on the number of MFA devices you can create, see <a
-         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
-         * on Entities</a> in the <i>IAM User Guide</i>.</p> <important> <p>The seed
+         * a Virtual MFA Device</a> in the <i>IAM User Guide</i>.</p> <p>The number and
+         * size of IAM resources in an AWS account are limited. For more information, see
+         * <a
+         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html">IAM
+         * and STS Quotas</a> in the <i>IAM User Guide</i>.</p> <important> <p>The seed
          * information contained in the QR code and the Base32 string should be treated
          * like any other secret access information. In other words, protect the seed
          * information as you would your AWS access keys or your passwords. After you
@@ -1780,10 +1791,11 @@ namespace Model
          * For more information about creating and working with virtual MFA devices, go to
          * <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_VirtualMFA.html">Using
-         * a Virtual MFA Device</a> in the <i>IAM User Guide</i>.</p> <p>For information
-         * about limits on the number of MFA devices you can create, see <a
-         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
-         * on Entities</a> in the <i>IAM User Guide</i>.</p> <important> <p>The seed
+         * a Virtual MFA Device</a> in the <i>IAM User Guide</i>.</p> <p>The number and
+         * size of IAM resources in an AWS account are limited. For more information, see
+         * <a
+         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html">IAM
+         * and STS Quotas</a> in the <i>IAM User Guide</i>.</p> <important> <p>The seed
          * information contained in the QR code and the Base32 string should be treated
          * like any other secret access information. In other words, protect the seed
          * information as you would your AWS access keys or your passwords. After you
@@ -3663,9 +3675,10 @@ namespace Model
 
         /**
          * <p>Retrieves information about IAM entity usage and IAM quotas in the AWS
-         * account.</p> <p> For information about limitations on IAM entities, see <a
-         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
-         * on IAM Entities</a> in the <i>IAM User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * account.</p> <p>The number and size of IAM resources in an AWS account are
+         * limited. For more information, see <a
+         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html">IAM
+         * and STS Quotas</a> in the <i>IAM User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetAccountSummary">AWS
          * API Reference</a></p>
          */
@@ -3673,9 +3686,10 @@ namespace Model
 
         /**
          * <p>Retrieves information about IAM entity usage and IAM quotas in the AWS
-         * account.</p> <p> For information about limitations on IAM entities, see <a
-         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
-         * on IAM Entities</a> in the <i>IAM User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * account.</p> <p>The number and size of IAM resources in an AWS account are
+         * limited. For more information, see <a
+         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html">IAM
+         * and STS Quotas</a> in the <i>IAM User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetAccountSummary">AWS
          * API Reference</a></p>
          *
@@ -3685,9 +3699,10 @@ namespace Model
 
         /**
          * <p>Retrieves information about IAM entity usage and IAM quotas in the AWS
-         * account.</p> <p> For information about limitations on IAM entities, see <a
-         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
-         * on IAM Entities</a> in the <i>IAM User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * account.</p> <p>The number and size of IAM resources in an AWS account are
+         * limited. For more information, see <a
+         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html">IAM
+         * and STS Quotas</a> in the <i>IAM User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetAccountSummary">AWS
          * API Reference</a></p>
          *

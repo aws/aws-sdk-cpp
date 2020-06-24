@@ -37,7 +37,9 @@ Comment::Comment() :
     m_authorArnHasBeenSet(false),
     m_deleted(false),
     m_deletedHasBeenSet(false),
-    m_clientRequestTokenHasBeenSet(false)
+    m_clientRequestTokenHasBeenSet(false),
+    m_callerReactionsHasBeenSet(false),
+    m_reactionCountsHasBeenSet(false)
 {
 }
 
@@ -50,7 +52,9 @@ Comment::Comment(JsonView jsonValue) :
     m_authorArnHasBeenSet(false),
     m_deleted(false),
     m_deletedHasBeenSet(false),
-    m_clientRequestTokenHasBeenSet(false)
+    m_clientRequestTokenHasBeenSet(false),
+    m_callerReactionsHasBeenSet(false),
+    m_reactionCountsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -113,6 +117,26 @@ Comment& Comment::operator =(JsonView jsonValue)
     m_clientRequestTokenHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("callerReactions"))
+  {
+    Array<JsonView> callerReactionsJsonList = jsonValue.GetArray("callerReactions");
+    for(unsigned callerReactionsIndex = 0; callerReactionsIndex < callerReactionsJsonList.GetLength(); ++callerReactionsIndex)
+    {
+      m_callerReactions.push_back(callerReactionsJsonList[callerReactionsIndex].AsString());
+    }
+    m_callerReactionsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("reactionCounts"))
+  {
+    Aws::Map<Aws::String, JsonView> reactionCountsJsonMap = jsonValue.GetObject("reactionCounts").GetAllObjects();
+    for(auto& reactionCountsItem : reactionCountsJsonMap)
+    {
+      m_reactionCounts[reactionCountsItem.first] = reactionCountsItem.second.AsInteger();
+    }
+    m_reactionCountsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -163,6 +187,28 @@ JsonValue Comment::Jsonize() const
   if(m_clientRequestTokenHasBeenSet)
   {
    payload.WithString("clientRequestToken", m_clientRequestToken);
+
+  }
+
+  if(m_callerReactionsHasBeenSet)
+  {
+   Array<JsonValue> callerReactionsJsonList(m_callerReactions.size());
+   for(unsigned callerReactionsIndex = 0; callerReactionsIndex < callerReactionsJsonList.GetLength(); ++callerReactionsIndex)
+   {
+     callerReactionsJsonList[callerReactionsIndex].AsString(m_callerReactions[callerReactionsIndex]);
+   }
+   payload.WithArray("callerReactions", std::move(callerReactionsJsonList));
+
+  }
+
+  if(m_reactionCountsHasBeenSet)
+  {
+   JsonValue reactionCountsJsonMap;
+   for(auto& reactionCountsItem : m_reactionCounts)
+   {
+     reactionCountsJsonMap.WithInteger(reactionCountsItem.first, reactionCountsItem.second);
+   }
+   payload.WithObject("reactionCounts", std::move(reactionCountsJsonMap));
 
   }
 

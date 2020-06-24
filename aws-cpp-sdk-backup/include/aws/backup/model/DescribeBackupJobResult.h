@@ -46,6 +46,42 @@ namespace Model
 
 
     /**
+     * <p>Returns the account ID that owns the backup job.</p>
+     */
+    inline const Aws::String& GetAccountId() const{ return m_accountId; }
+
+    /**
+     * <p>Returns the account ID that owns the backup job.</p>
+     */
+    inline void SetAccountId(const Aws::String& value) { m_accountId = value; }
+
+    /**
+     * <p>Returns the account ID that owns the backup job.</p>
+     */
+    inline void SetAccountId(Aws::String&& value) { m_accountId = std::move(value); }
+
+    /**
+     * <p>Returns the account ID that owns the backup job.</p>
+     */
+    inline void SetAccountId(const char* value) { m_accountId.assign(value); }
+
+    /**
+     * <p>Returns the account ID that owns the backup job.</p>
+     */
+    inline DescribeBackupJobResult& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
+
+    /**
+     * <p>Returns the account ID that owns the backup job.</p>
+     */
+    inline DescribeBackupJobResult& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
+
+    /**
+     * <p>Returns the account ID that owns the backup job.</p>
+     */
+    inline DescribeBackupJobResult& WithAccountId(const char* value) { SetAccountId(value); return *this;}
+
+
+    /**
      * <p>Uniquely identifies a request to AWS Backup to back up a resource.</p>
      */
     inline const Aws::String& GetBackupJobId() const{ return m_backupJobId; }
@@ -318,7 +354,7 @@ namespace Model
     /**
      * <p>The date and time that a job to create a backup job is completed, in Unix
      * format and Coordinated Universal Time (UTC). The value of
-     * <code>CreationDate</code> is accurate to milliseconds. For example, the value
+     * <code>CompletionDate</code> is accurate to milliseconds. For example, the value
      * 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
      */
     inline const Aws::Utils::DateTime& GetCompletionDate() const{ return m_completionDate; }
@@ -326,7 +362,7 @@ namespace Model
     /**
      * <p>The date and time that a job to create a backup job is completed, in Unix
      * format and Coordinated Universal Time (UTC). The value of
-     * <code>CreationDate</code> is accurate to milliseconds. For example, the value
+     * <code>CompletionDate</code> is accurate to milliseconds. For example, the value
      * 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
      */
     inline void SetCompletionDate(const Aws::Utils::DateTime& value) { m_completionDate = value; }
@@ -334,7 +370,7 @@ namespace Model
     /**
      * <p>The date and time that a job to create a backup job is completed, in Unix
      * format and Coordinated Universal Time (UTC). The value of
-     * <code>CreationDate</code> is accurate to milliseconds. For example, the value
+     * <code>CompletionDate</code> is accurate to milliseconds. For example, the value
      * 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
      */
     inline void SetCompletionDate(Aws::Utils::DateTime&& value) { m_completionDate = std::move(value); }
@@ -342,7 +378,7 @@ namespace Model
     /**
      * <p>The date and time that a job to create a backup job is completed, in Unix
      * format and Coordinated Universal Time (UTC). The value of
-     * <code>CreationDate</code> is accurate to milliseconds. For example, the value
+     * <code>CompletionDate</code> is accurate to milliseconds. For example, the value
      * 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
      */
     inline DescribeBackupJobResult& WithCompletionDate(const Aws::Utils::DateTime& value) { SetCompletionDate(value); return *this;}
@@ -350,7 +386,7 @@ namespace Model
     /**
      * <p>The date and time that a job to create a backup job is completed, in Unix
      * format and Coordinated Universal Time (UTC). The value of
-     * <code>CreationDate</code> is accurate to milliseconds. For example, the value
+     * <code>CompletionDate</code> is accurate to milliseconds. For example, the value
      * 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
      */
     inline DescribeBackupJobResult& WithCompletionDate(Aws::Utils::DateTime&& value) { SetCompletionDate(std::move(value)); return *this;}
@@ -739,6 +775,8 @@ namespace Model
     inline DescribeBackupJobResult& WithStartBy(Aws::Utils::DateTime&& value) { SetStartBy(std::move(value)); return *this;}
 
   private:
+
+    Aws::String m_accountId;
 
     Aws::String m_backupJobId;
 

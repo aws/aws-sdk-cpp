@@ -390,13 +390,14 @@ namespace Model
 
 
     /**
-     * <p>(Optional) Choose <code>SCRATCH_1</code> and <code>SCRATCH_2</code>
-     * deployment types when you need temporary storage and shorter-term processing of
-     * data. The <code>SCRATCH_2</code> deployment type provides in-transit encryption
-     * of data and higher burst throughput capacity than <code>SCRATCH_1</code>.</p>
-     * <p>Choose <code>PERSISTENT_1</code> deployment type for longer-term storage and
-     * workloads and encryption of data in transit. To learn more about deployment
-     * types, see <a
+     * <p> Choose <code>SCRATCH_1</code> and <code>SCRATCH_2</code> deployment types
+     * when you need temporary storage and shorter-term processing of data. The
+     * <code>SCRATCH_2</code> deployment type provides in-transit encryption of data
+     * and higher burst throughput capacity than <code>SCRATCH_1</code>.</p> <note>
+     * <p>This option can only be set for for PERSISTENT_1 deployments types.</p>
+     * </note> <p>Choose <code>PERSISTENT_1</code> deployment type for longer-term
+     * storage and workloads and encryption of data in transit. To learn more about
+     * deployment types, see <a
      * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/lustre-deployment-types.html">
      * FSx for Lustre Deployment Options</a>.</p> <p>Encryption of data in-transit is
      * automatically enabled when you access a <code>SCRATCH_2</code> or
@@ -412,13 +413,14 @@ namespace Model
     inline const LustreDeploymentType& GetDeploymentType() const{ return m_deploymentType; }
 
     /**
-     * <p>(Optional) Choose <code>SCRATCH_1</code> and <code>SCRATCH_2</code>
-     * deployment types when you need temporary storage and shorter-term processing of
-     * data. The <code>SCRATCH_2</code> deployment type provides in-transit encryption
-     * of data and higher burst throughput capacity than <code>SCRATCH_1</code>.</p>
-     * <p>Choose <code>PERSISTENT_1</code> deployment type for longer-term storage and
-     * workloads and encryption of data in transit. To learn more about deployment
-     * types, see <a
+     * <p> Choose <code>SCRATCH_1</code> and <code>SCRATCH_2</code> deployment types
+     * when you need temporary storage and shorter-term processing of data. The
+     * <code>SCRATCH_2</code> deployment type provides in-transit encryption of data
+     * and higher burst throughput capacity than <code>SCRATCH_1</code>.</p> <note>
+     * <p>This option can only be set for for PERSISTENT_1 deployments types.</p>
+     * </note> <p>Choose <code>PERSISTENT_1</code> deployment type for longer-term
+     * storage and workloads and encryption of data in transit. To learn more about
+     * deployment types, see <a
      * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/lustre-deployment-types.html">
      * FSx for Lustre Deployment Options</a>.</p> <p>Encryption of data in-transit is
      * automatically enabled when you access a <code>SCRATCH_2</code> or
@@ -434,13 +436,14 @@ namespace Model
     inline bool DeploymentTypeHasBeenSet() const { return m_deploymentTypeHasBeenSet; }
 
     /**
-     * <p>(Optional) Choose <code>SCRATCH_1</code> and <code>SCRATCH_2</code>
-     * deployment types when you need temporary storage and shorter-term processing of
-     * data. The <code>SCRATCH_2</code> deployment type provides in-transit encryption
-     * of data and higher burst throughput capacity than <code>SCRATCH_1</code>.</p>
-     * <p>Choose <code>PERSISTENT_1</code> deployment type for longer-term storage and
-     * workloads and encryption of data in transit. To learn more about deployment
-     * types, see <a
+     * <p> Choose <code>SCRATCH_1</code> and <code>SCRATCH_2</code> deployment types
+     * when you need temporary storage and shorter-term processing of data. The
+     * <code>SCRATCH_2</code> deployment type provides in-transit encryption of data
+     * and higher burst throughput capacity than <code>SCRATCH_1</code>.</p> <note>
+     * <p>This option can only be set for for PERSISTENT_1 deployments types.</p>
+     * </note> <p>Choose <code>PERSISTENT_1</code> deployment type for longer-term
+     * storage and workloads and encryption of data in transit. To learn more about
+     * deployment types, see <a
      * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/lustre-deployment-types.html">
      * FSx for Lustre Deployment Options</a>.</p> <p>Encryption of data in-transit is
      * automatically enabled when you access a <code>SCRATCH_2</code> or
@@ -456,13 +459,14 @@ namespace Model
     inline void SetDeploymentType(const LustreDeploymentType& value) { m_deploymentTypeHasBeenSet = true; m_deploymentType = value; }
 
     /**
-     * <p>(Optional) Choose <code>SCRATCH_1</code> and <code>SCRATCH_2</code>
-     * deployment types when you need temporary storage and shorter-term processing of
-     * data. The <code>SCRATCH_2</code> deployment type provides in-transit encryption
-     * of data and higher burst throughput capacity than <code>SCRATCH_1</code>.</p>
-     * <p>Choose <code>PERSISTENT_1</code> deployment type for longer-term storage and
-     * workloads and encryption of data in transit. To learn more about deployment
-     * types, see <a
+     * <p> Choose <code>SCRATCH_1</code> and <code>SCRATCH_2</code> deployment types
+     * when you need temporary storage and shorter-term processing of data. The
+     * <code>SCRATCH_2</code> deployment type provides in-transit encryption of data
+     * and higher burst throughput capacity than <code>SCRATCH_1</code>.</p> <note>
+     * <p>This option can only be set for for PERSISTENT_1 deployments types.</p>
+     * </note> <p>Choose <code>PERSISTENT_1</code> deployment type for longer-term
+     * storage and workloads and encryption of data in transit. To learn more about
+     * deployment types, see <a
      * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/lustre-deployment-types.html">
      * FSx for Lustre Deployment Options</a>.</p> <p>Encryption of data in-transit is
      * automatically enabled when you access a <code>SCRATCH_2</code> or
@@ -478,13 +482,14 @@ namespace Model
     inline void SetDeploymentType(LustreDeploymentType&& value) { m_deploymentTypeHasBeenSet = true; m_deploymentType = std::move(value); }
 
     /**
-     * <p>(Optional) Choose <code>SCRATCH_1</code> and <code>SCRATCH_2</code>
-     * deployment types when you need temporary storage and shorter-term processing of
-     * data. The <code>SCRATCH_2</code> deployment type provides in-transit encryption
-     * of data and higher burst throughput capacity than <code>SCRATCH_1</code>.</p>
-     * <p>Choose <code>PERSISTENT_1</code> deployment type for longer-term storage and
-     * workloads and encryption of data in transit. To learn more about deployment
-     * types, see <a
+     * <p> Choose <code>SCRATCH_1</code> and <code>SCRATCH_2</code> deployment types
+     * when you need temporary storage and shorter-term processing of data. The
+     * <code>SCRATCH_2</code> deployment type provides in-transit encryption of data
+     * and higher burst throughput capacity than <code>SCRATCH_1</code>.</p> <note>
+     * <p>This option can only be set for for PERSISTENT_1 deployments types.</p>
+     * </note> <p>Choose <code>PERSISTENT_1</code> deployment type for longer-term
+     * storage and workloads and encryption of data in transit. To learn more about
+     * deployment types, see <a
      * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/lustre-deployment-types.html">
      * FSx for Lustre Deployment Options</a>.</p> <p>Encryption of data in-transit is
      * automatically enabled when you access a <code>SCRATCH_2</code> or
@@ -500,13 +505,14 @@ namespace Model
     inline CreateFileSystemLustreConfiguration& WithDeploymentType(const LustreDeploymentType& value) { SetDeploymentType(value); return *this;}
 
     /**
-     * <p>(Optional) Choose <code>SCRATCH_1</code> and <code>SCRATCH_2</code>
-     * deployment types when you need temporary storage and shorter-term processing of
-     * data. The <code>SCRATCH_2</code> deployment type provides in-transit encryption
-     * of data and higher burst throughput capacity than <code>SCRATCH_1</code>.</p>
-     * <p>Choose <code>PERSISTENT_1</code> deployment type for longer-term storage and
-     * workloads and encryption of data in transit. To learn more about deployment
-     * types, see <a
+     * <p> Choose <code>SCRATCH_1</code> and <code>SCRATCH_2</code> deployment types
+     * when you need temporary storage and shorter-term processing of data. The
+     * <code>SCRATCH_2</code> deployment type provides in-transit encryption of data
+     * and higher burst throughput capacity than <code>SCRATCH_1</code>.</p> <note>
+     * <p>This option can only be set for for PERSISTENT_1 deployments types.</p>
+     * </note> <p>Choose <code>PERSISTENT_1</code> deployment type for longer-term
+     * storage and workloads and encryption of data in transit. To learn more about
+     * deployment types, see <a
      * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/lustre-deployment-types.html">
      * FSx for Lustre Deployment Options</a>.</p> <p>Encryption of data in-transit is
      * automatically enabled when you access a <code>SCRATCH_2</code> or
@@ -566,6 +572,89 @@ namespace Model
      */
     inline CreateFileSystemLustreConfiguration& WithPerUnitStorageThroughput(int value) { SetPerUnitStorageThroughput(value); return *this;}
 
+
+    
+    inline const Aws::String& GetDailyAutomaticBackupStartTime() const{ return m_dailyAutomaticBackupStartTime; }
+
+    
+    inline bool DailyAutomaticBackupStartTimeHasBeenSet() const { return m_dailyAutomaticBackupStartTimeHasBeenSet; }
+
+    
+    inline void SetDailyAutomaticBackupStartTime(const Aws::String& value) { m_dailyAutomaticBackupStartTimeHasBeenSet = true; m_dailyAutomaticBackupStartTime = value; }
+
+    
+    inline void SetDailyAutomaticBackupStartTime(Aws::String&& value) { m_dailyAutomaticBackupStartTimeHasBeenSet = true; m_dailyAutomaticBackupStartTime = std::move(value); }
+
+    
+    inline void SetDailyAutomaticBackupStartTime(const char* value) { m_dailyAutomaticBackupStartTimeHasBeenSet = true; m_dailyAutomaticBackupStartTime.assign(value); }
+
+    
+    inline CreateFileSystemLustreConfiguration& WithDailyAutomaticBackupStartTime(const Aws::String& value) { SetDailyAutomaticBackupStartTime(value); return *this;}
+
+    
+    inline CreateFileSystemLustreConfiguration& WithDailyAutomaticBackupStartTime(Aws::String&& value) { SetDailyAutomaticBackupStartTime(std::move(value)); return *this;}
+
+    
+    inline CreateFileSystemLustreConfiguration& WithDailyAutomaticBackupStartTime(const char* value) { SetDailyAutomaticBackupStartTime(value); return *this;}
+
+
+    
+    inline int GetAutomaticBackupRetentionDays() const{ return m_automaticBackupRetentionDays; }
+
+    
+    inline bool AutomaticBackupRetentionDaysHasBeenSet() const { return m_automaticBackupRetentionDaysHasBeenSet; }
+
+    
+    inline void SetAutomaticBackupRetentionDays(int value) { m_automaticBackupRetentionDaysHasBeenSet = true; m_automaticBackupRetentionDays = value; }
+
+    
+    inline CreateFileSystemLustreConfiguration& WithAutomaticBackupRetentionDays(int value) { SetAutomaticBackupRetentionDays(value); return *this;}
+
+
+    /**
+     * <p>A boolean flag indicating whether tags for the file system should be copied
+     * to backups. This value defaults to false. If it's set to true, all tags for the
+     * file system are copied to all automatic and user-initiated backups where the
+     * user doesn't specify tags. If this value is true, and you specify one or more
+     * tags, only the specified tags are copied to backups. If you specify one or more
+     * tags when creating a user-initiated backup, no tags are copied from the file
+     * system, regardless of this value.</p>
+     */
+    inline bool GetCopyTagsToBackups() const{ return m_copyTagsToBackups; }
+
+    /**
+     * <p>A boolean flag indicating whether tags for the file system should be copied
+     * to backups. This value defaults to false. If it's set to true, all tags for the
+     * file system are copied to all automatic and user-initiated backups where the
+     * user doesn't specify tags. If this value is true, and you specify one or more
+     * tags, only the specified tags are copied to backups. If you specify one or more
+     * tags when creating a user-initiated backup, no tags are copied from the file
+     * system, regardless of this value.</p>
+     */
+    inline bool CopyTagsToBackupsHasBeenSet() const { return m_copyTagsToBackupsHasBeenSet; }
+
+    /**
+     * <p>A boolean flag indicating whether tags for the file system should be copied
+     * to backups. This value defaults to false. If it's set to true, all tags for the
+     * file system are copied to all automatic and user-initiated backups where the
+     * user doesn't specify tags. If this value is true, and you specify one or more
+     * tags, only the specified tags are copied to backups. If you specify one or more
+     * tags when creating a user-initiated backup, no tags are copied from the file
+     * system, regardless of this value.</p>
+     */
+    inline void SetCopyTagsToBackups(bool value) { m_copyTagsToBackupsHasBeenSet = true; m_copyTagsToBackups = value; }
+
+    /**
+     * <p>A boolean flag indicating whether tags for the file system should be copied
+     * to backups. This value defaults to false. If it's set to true, all tags for the
+     * file system are copied to all automatic and user-initiated backups where the
+     * user doesn't specify tags. If this value is true, and you specify one or more
+     * tags, only the specified tags are copied to backups. If you specify one or more
+     * tags when creating a user-initiated backup, no tags are copied from the file
+     * system, regardless of this value.</p>
+     */
+    inline CreateFileSystemLustreConfiguration& WithCopyTagsToBackups(bool value) { SetCopyTagsToBackups(value); return *this;}
+
   private:
 
     Aws::String m_weeklyMaintenanceStartTime;
@@ -585,6 +674,15 @@ namespace Model
 
     int m_perUnitStorageThroughput;
     bool m_perUnitStorageThroughputHasBeenSet;
+
+    Aws::String m_dailyAutomaticBackupStartTime;
+    bool m_dailyAutomaticBackupStartTimeHasBeenSet;
+
+    int m_automaticBackupRetentionDays;
+    bool m_automaticBackupRetentionDaysHasBeenSet;
+
+    bool m_copyTagsToBackups;
+    bool m_copyTagsToBackupsHasBeenSet;
   };
 
 } // namespace Model

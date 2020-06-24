@@ -94,7 +94,7 @@ namespace Model
      * <code>Rolling</code>.</p> <p>A rolling update is an update that is applied to
      * all instances in an Auto Scaling group until all instances have been updated. A
      * rolling update can fail due to failed health checks or if instances are on
-     * standby or are protected from scale-in. If the rolling update process fails, any
+     * standby or are protected from scale in. If the rolling update process fails, any
      * instances that were already replaced are not rolled back to their previous
      * configuration. </p>
      */
@@ -105,7 +105,7 @@ namespace Model
      * <code>Rolling</code>.</p> <p>A rolling update is an update that is applied to
      * all instances in an Auto Scaling group until all instances have been updated. A
      * rolling update can fail due to failed health checks or if instances are on
-     * standby or are protected from scale-in. If the rolling update process fails, any
+     * standby or are protected from scale in. If the rolling update process fails, any
      * instances that were already replaced are not rolled back to their previous
      * configuration. </p>
      */
@@ -116,7 +116,7 @@ namespace Model
      * <code>Rolling</code>.</p> <p>A rolling update is an update that is applied to
      * all instances in an Auto Scaling group until all instances have been updated. A
      * rolling update can fail due to failed health checks or if instances are on
-     * standby or are protected from scale-in. If the rolling update process fails, any
+     * standby or are protected from scale in. If the rolling update process fails, any
      * instances that were already replaced are not rolled back to their previous
      * configuration. </p>
      */
@@ -127,7 +127,7 @@ namespace Model
      * <code>Rolling</code>.</p> <p>A rolling update is an update that is applied to
      * all instances in an Auto Scaling group until all instances have been updated. A
      * rolling update can fail due to failed health checks or if instances are on
-     * standby or are protected from scale-in. If the rolling update process fails, any
+     * standby or are protected from scale in. If the rolling update process fails, any
      * instances that were already replaced are not rolled back to their previous
      * configuration. </p>
      */
@@ -138,7 +138,7 @@ namespace Model
      * <code>Rolling</code>.</p> <p>A rolling update is an update that is applied to
      * all instances in an Auto Scaling group until all instances have been updated. A
      * rolling update can fail due to failed health checks or if instances are on
-     * standby or are protected from scale-in. If the rolling update process fails, any
+     * standby or are protected from scale in. If the rolling update process fails, any
      * instances that were already replaced are not rolled back to their previous
      * configuration. </p>
      */
@@ -149,7 +149,7 @@ namespace Model
      * <code>Rolling</code>.</p> <p>A rolling update is an update that is applied to
      * all instances in an Auto Scaling group until all instances have been updated. A
      * rolling update can fail due to failed health checks or if instances are on
-     * standby or are protected from scale-in. If the rolling update process fails, any
+     * standby or are protected from scale in. If the rolling update process fails, any
      * instances that were already replaced are not rolled back to their previous
      * configuration. </p>
      */
@@ -157,32 +157,74 @@ namespace Model
 
 
     /**
-     * <p>Set of preferences associated with the instance refresh request.</p>
+     * <p>Set of preferences associated with the instance refresh request.</p> <p>If
+     * not provided, the default values are used. For
+     * <code>MinHealthyPercentage</code>, the default value is <code>90</code>. For
+     * <code>InstanceWarmup</code>, the default is to use the value specified for the
+     * health check grace period for the Auto Scaling group.</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_RefreshPreferences.html">RefreshPreferences</a>
+     * in the <i>Amazon EC2 Auto Scaling API Reference</i>.</p>
      */
     inline const RefreshPreferences& GetPreferences() const{ return m_preferences; }
 
     /**
-     * <p>Set of preferences associated with the instance refresh request.</p>
+     * <p>Set of preferences associated with the instance refresh request.</p> <p>If
+     * not provided, the default values are used. For
+     * <code>MinHealthyPercentage</code>, the default value is <code>90</code>. For
+     * <code>InstanceWarmup</code>, the default is to use the value specified for the
+     * health check grace period for the Auto Scaling group.</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_RefreshPreferences.html">RefreshPreferences</a>
+     * in the <i>Amazon EC2 Auto Scaling API Reference</i>.</p>
      */
     inline bool PreferencesHasBeenSet() const { return m_preferencesHasBeenSet; }
 
     /**
-     * <p>Set of preferences associated with the instance refresh request.</p>
+     * <p>Set of preferences associated with the instance refresh request.</p> <p>If
+     * not provided, the default values are used. For
+     * <code>MinHealthyPercentage</code>, the default value is <code>90</code>. For
+     * <code>InstanceWarmup</code>, the default is to use the value specified for the
+     * health check grace period for the Auto Scaling group.</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_RefreshPreferences.html">RefreshPreferences</a>
+     * in the <i>Amazon EC2 Auto Scaling API Reference</i>.</p>
      */
     inline void SetPreferences(const RefreshPreferences& value) { m_preferencesHasBeenSet = true; m_preferences = value; }
 
     /**
-     * <p>Set of preferences associated with the instance refresh request.</p>
+     * <p>Set of preferences associated with the instance refresh request.</p> <p>If
+     * not provided, the default values are used. For
+     * <code>MinHealthyPercentage</code>, the default value is <code>90</code>. For
+     * <code>InstanceWarmup</code>, the default is to use the value specified for the
+     * health check grace period for the Auto Scaling group.</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_RefreshPreferences.html">RefreshPreferences</a>
+     * in the <i>Amazon EC2 Auto Scaling API Reference</i>.</p>
      */
     inline void SetPreferences(RefreshPreferences&& value) { m_preferencesHasBeenSet = true; m_preferences = std::move(value); }
 
     /**
-     * <p>Set of preferences associated with the instance refresh request.</p>
+     * <p>Set of preferences associated with the instance refresh request.</p> <p>If
+     * not provided, the default values are used. For
+     * <code>MinHealthyPercentage</code>, the default value is <code>90</code>. For
+     * <code>InstanceWarmup</code>, the default is to use the value specified for the
+     * health check grace period for the Auto Scaling group.</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_RefreshPreferences.html">RefreshPreferences</a>
+     * in the <i>Amazon EC2 Auto Scaling API Reference</i>.</p>
      */
     inline StartInstanceRefreshRequest& WithPreferences(const RefreshPreferences& value) { SetPreferences(value); return *this;}
 
     /**
-     * <p>Set of preferences associated with the instance refresh request.</p>
+     * <p>Set of preferences associated with the instance refresh request.</p> <p>If
+     * not provided, the default values are used. For
+     * <code>MinHealthyPercentage</code>, the default value is <code>90</code>. For
+     * <code>InstanceWarmup</code>, the default is to use the value specified for the
+     * health check grace period for the Auto Scaling group.</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_RefreshPreferences.html">RefreshPreferences</a>
+     * in the <i>Amazon EC2 Auto Scaling API Reference</i>.</p>
      */
     inline StartInstanceRefreshRequest& WithPreferences(RefreshPreferences&& value) { SetPreferences(std::move(value)); return *this;}
 

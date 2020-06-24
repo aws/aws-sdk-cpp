@@ -26,7 +26,8 @@ DeleteFileSystemRequest::DeleteFileSystemRequest() :
     m_fileSystemIdHasBeenSet(false),
     m_clientRequestToken(Aws::Utils::UUID::RandomUUID()),
     m_clientRequestTokenHasBeenSet(true),
-    m_windowsConfigurationHasBeenSet(false)
+    m_windowsConfigurationHasBeenSet(false),
+    m_lustreConfigurationHasBeenSet(false)
 {
 }
 
@@ -49,6 +50,12 @@ Aws::String DeleteFileSystemRequest::SerializePayload() const
   if(m_windowsConfigurationHasBeenSet)
   {
    payload.WithObject("WindowsConfiguration", m_windowsConfiguration.Jsonize());
+
+  }
+
+  if(m_lustreConfigurationHasBeenSet)
+  {
+   payload.WithObject("LustreConfiguration", m_lustreConfiguration.Jsonize());
 
   }
 

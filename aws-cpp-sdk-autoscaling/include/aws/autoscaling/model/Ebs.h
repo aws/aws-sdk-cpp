@@ -51,66 +51,66 @@ namespace Model
 
 
     /**
-     * <p>The snapshot ID of the volume to use.</p> <p>Conditional: This parameter is
+     * <p>The snapshot ID of the volume to use.</p> <p> <code>SnapshotId</code> is
      * optional if you specify a volume size. If you specify both
-     * <code>SnapshotId</code> and <code>VolumeSize</code>, <code>VolumeSize</code>
-     * must be equal or greater than the size of the snapshot.</p>
+     * <code>SnapshotId</code> and <code>VolumeSize</code>, the volume size must be
+     * equal or greater than the size of the snapshot.</p>
      */
     inline const Aws::String& GetSnapshotId() const{ return m_snapshotId; }
 
     /**
-     * <p>The snapshot ID of the volume to use.</p> <p>Conditional: This parameter is
+     * <p>The snapshot ID of the volume to use.</p> <p> <code>SnapshotId</code> is
      * optional if you specify a volume size. If you specify both
-     * <code>SnapshotId</code> and <code>VolumeSize</code>, <code>VolumeSize</code>
-     * must be equal or greater than the size of the snapshot.</p>
+     * <code>SnapshotId</code> and <code>VolumeSize</code>, the volume size must be
+     * equal or greater than the size of the snapshot.</p>
      */
     inline bool SnapshotIdHasBeenSet() const { return m_snapshotIdHasBeenSet; }
 
     /**
-     * <p>The snapshot ID of the volume to use.</p> <p>Conditional: This parameter is
+     * <p>The snapshot ID of the volume to use.</p> <p> <code>SnapshotId</code> is
      * optional if you specify a volume size. If you specify both
-     * <code>SnapshotId</code> and <code>VolumeSize</code>, <code>VolumeSize</code>
-     * must be equal or greater than the size of the snapshot.</p>
+     * <code>SnapshotId</code> and <code>VolumeSize</code>, the volume size must be
+     * equal or greater than the size of the snapshot.</p>
      */
     inline void SetSnapshotId(const Aws::String& value) { m_snapshotIdHasBeenSet = true; m_snapshotId = value; }
 
     /**
-     * <p>The snapshot ID of the volume to use.</p> <p>Conditional: This parameter is
+     * <p>The snapshot ID of the volume to use.</p> <p> <code>SnapshotId</code> is
      * optional if you specify a volume size. If you specify both
-     * <code>SnapshotId</code> and <code>VolumeSize</code>, <code>VolumeSize</code>
-     * must be equal or greater than the size of the snapshot.</p>
+     * <code>SnapshotId</code> and <code>VolumeSize</code>, the volume size must be
+     * equal or greater than the size of the snapshot.</p>
      */
     inline void SetSnapshotId(Aws::String&& value) { m_snapshotIdHasBeenSet = true; m_snapshotId = std::move(value); }
 
     /**
-     * <p>The snapshot ID of the volume to use.</p> <p>Conditional: This parameter is
+     * <p>The snapshot ID of the volume to use.</p> <p> <code>SnapshotId</code> is
      * optional if you specify a volume size. If you specify both
-     * <code>SnapshotId</code> and <code>VolumeSize</code>, <code>VolumeSize</code>
-     * must be equal or greater than the size of the snapshot.</p>
+     * <code>SnapshotId</code> and <code>VolumeSize</code>, the volume size must be
+     * equal or greater than the size of the snapshot.</p>
      */
     inline void SetSnapshotId(const char* value) { m_snapshotIdHasBeenSet = true; m_snapshotId.assign(value); }
 
     /**
-     * <p>The snapshot ID of the volume to use.</p> <p>Conditional: This parameter is
+     * <p>The snapshot ID of the volume to use.</p> <p> <code>SnapshotId</code> is
      * optional if you specify a volume size. If you specify both
-     * <code>SnapshotId</code> and <code>VolumeSize</code>, <code>VolumeSize</code>
-     * must be equal or greater than the size of the snapshot.</p>
+     * <code>SnapshotId</code> and <code>VolumeSize</code>, the volume size must be
+     * equal or greater than the size of the snapshot.</p>
      */
     inline Ebs& WithSnapshotId(const Aws::String& value) { SetSnapshotId(value); return *this;}
 
     /**
-     * <p>The snapshot ID of the volume to use.</p> <p>Conditional: This parameter is
+     * <p>The snapshot ID of the volume to use.</p> <p> <code>SnapshotId</code> is
      * optional if you specify a volume size. If you specify both
-     * <code>SnapshotId</code> and <code>VolumeSize</code>, <code>VolumeSize</code>
-     * must be equal or greater than the size of the snapshot.</p>
+     * <code>SnapshotId</code> and <code>VolumeSize</code>, the volume size must be
+     * equal or greater than the size of the snapshot.</p>
      */
     inline Ebs& WithSnapshotId(Aws::String&& value) { SetSnapshotId(std::move(value)); return *this;}
 
     /**
-     * <p>The snapshot ID of the volume to use.</p> <p>Conditional: This parameter is
+     * <p>The snapshot ID of the volume to use.</p> <p> <code>SnapshotId</code> is
      * optional if you specify a volume size. If you specify both
-     * <code>SnapshotId</code> and <code>VolumeSize</code>, <code>VolumeSize</code>
-     * must be equal or greater than the size of the snapshot.</p>
+     * <code>SnapshotId</code> and <code>VolumeSize</code>, the volume size must be
+     * equal or greater than the size of the snapshot.</p>
      */
     inline Ebs& WithSnapshotId(const char* value) { SetSnapshotId(value); return *this;}
 
@@ -122,7 +122,8 @@ namespace Model
      * you specify a snapshot, the volume size must be equal to or larger than the
      * snapshot size.</p> <p>Default: If you create a volume from a snapshot and you
      * don't specify a volume size, the default is the snapshot size.</p> <note> <p>At
-     * least one of VolumeSize or SnapshotId is required.</p> </note>
+     * least one of <code>VolumeSize</code> or <code>SnapshotId</code> is required.</p>
+     * </note>
      */
     inline int GetVolumeSize() const{ return m_volumeSize; }
 
@@ -133,7 +134,8 @@ namespace Model
      * you specify a snapshot, the volume size must be equal to or larger than the
      * snapshot size.</p> <p>Default: If you create a volume from a snapshot and you
      * don't specify a volume size, the default is the snapshot size.</p> <note> <p>At
-     * least one of VolumeSize or SnapshotId is required.</p> </note>
+     * least one of <code>VolumeSize</code> or <code>SnapshotId</code> is required.</p>
+     * </note>
      */
     inline bool VolumeSizeHasBeenSet() const { return m_volumeSizeHasBeenSet; }
 
@@ -144,7 +146,8 @@ namespace Model
      * you specify a snapshot, the volume size must be equal to or larger than the
      * snapshot size.</p> <p>Default: If you create a volume from a snapshot and you
      * don't specify a volume size, the default is the snapshot size.</p> <note> <p>At
-     * least one of VolumeSize or SnapshotId is required.</p> </note>
+     * least one of <code>VolumeSize</code> or <code>SnapshotId</code> is required.</p>
+     * </note>
      */
     inline void SetVolumeSize(int value) { m_volumeSizeHasBeenSet = true; m_volumeSize = value; }
 
@@ -155,7 +158,8 @@ namespace Model
      * you specify a snapshot, the volume size must be equal to or larger than the
      * snapshot size.</p> <p>Default: If you create a volume from a snapshot and you
      * don't specify a volume size, the default is the snapshot size.</p> <note> <p>At
-     * least one of VolumeSize or SnapshotId is required.</p> </note>
+     * least one of <code>VolumeSize</code> or <code>SnapshotId</code> is required.</p>
+     * </note>
      */
     inline Ebs& WithVolumeSize(int value) { SetVolumeSize(value); return *this;}
 
@@ -288,9 +292,9 @@ namespace Model
      * see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
      * EBS Volume Types</a> in the <i>Amazon EC2 User Guide for Linux
-     * Instances</i>.</p> <p>Conditional: This parameter is required when the volume
-     * type is <code>io1</code>. (Not used with <code>standard</code>,
-     * <code>gp2</code>, <code>st1</code>, or <code>sc1</code> volumes.) </p>
+     * Instances</i>.</p> <p>Required when the volume type is <code>io1</code>. (Not
+     * used with <code>standard</code>, <code>gp2</code>, <code>st1</code>, or
+     * <code>sc1</code> volumes.) </p>
      */
     inline int GetIops() const{ return m_iops; }
 
@@ -300,9 +304,9 @@ namespace Model
      * see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
      * EBS Volume Types</a> in the <i>Amazon EC2 User Guide for Linux
-     * Instances</i>.</p> <p>Conditional: This parameter is required when the volume
-     * type is <code>io1</code>. (Not used with <code>standard</code>,
-     * <code>gp2</code>, <code>st1</code>, or <code>sc1</code> volumes.) </p>
+     * Instances</i>.</p> <p>Required when the volume type is <code>io1</code>. (Not
+     * used with <code>standard</code>, <code>gp2</code>, <code>st1</code>, or
+     * <code>sc1</code> volumes.) </p>
      */
     inline bool IopsHasBeenSet() const { return m_iopsHasBeenSet; }
 
@@ -312,9 +316,9 @@ namespace Model
      * see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
      * EBS Volume Types</a> in the <i>Amazon EC2 User Guide for Linux
-     * Instances</i>.</p> <p>Conditional: This parameter is required when the volume
-     * type is <code>io1</code>. (Not used with <code>standard</code>,
-     * <code>gp2</code>, <code>st1</code>, or <code>sc1</code> volumes.) </p>
+     * Instances</i>.</p> <p>Required when the volume type is <code>io1</code>. (Not
+     * used with <code>standard</code>, <code>gp2</code>, <code>st1</code>, or
+     * <code>sc1</code> volumes.) </p>
      */
     inline void SetIops(int value) { m_iopsHasBeenSet = true; m_iops = value; }
 
@@ -324,9 +328,9 @@ namespace Model
      * see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
      * EBS Volume Types</a> in the <i>Amazon EC2 User Guide for Linux
-     * Instances</i>.</p> <p>Conditional: This parameter is required when the volume
-     * type is <code>io1</code>. (Not used with <code>standard</code>,
-     * <code>gp2</code>, <code>st1</code>, or <code>sc1</code> volumes.) </p>
+     * Instances</i>.</p> <p>Required when the volume type is <code>io1</code>. (Not
+     * used with <code>standard</code>, <code>gp2</code>, <code>st1</code>, or
+     * <code>sc1</code> volumes.) </p>
      */
     inline Ebs& WithIops(int value) { SetIops(value); return *this;}
 

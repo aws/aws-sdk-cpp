@@ -35,7 +35,8 @@ ListCopyJobsRequest::ListCopyJobsRequest() :
     m_byCreatedBeforeHasBeenSet(false),
     m_byCreatedAfterHasBeenSet(false),
     m_byResourceTypeHasBeenSet(false),
-    m_byDestinationVaultArnHasBeenSet(false)
+    m_byDestinationVaultArnHasBeenSet(false),
+    m_byAccountIdHasBeenSet(false)
 {
 }
 
@@ -100,6 +101,13 @@ void ListCopyJobsRequest::AddQueryStringParameters(URI& uri) const
     {
       ss << m_byDestinationVaultArn;
       uri.AddQueryStringParameter("destinationVaultArn", ss.str());
+      ss.str("");
+    }
+
+    if(m_byAccountIdHasBeenSet)
+    {
+      ss << m_byAccountId;
+      uri.AddQueryStringParameter("accountId", ss.str());
       ss.str("");
     }
 

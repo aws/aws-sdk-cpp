@@ -32,6 +32,7 @@ namespace Aws
 
         static const int SERVICE_CONTROL_POLICY_HASH = HashingUtils::HashString("SERVICE_CONTROL_POLICY");
         static const int TAG_POLICY_HASH = HashingUtils::HashString("TAG_POLICY");
+        static const int BACKUP_POLICY_HASH = HashingUtils::HashString("BACKUP_POLICY");
 
 
         PolicyType GetPolicyTypeForName(const Aws::String& name)
@@ -44,6 +45,10 @@ namespace Aws
           else if (hashCode == TAG_POLICY_HASH)
           {
             return PolicyType::TAG_POLICY;
+          }
+          else if (hashCode == BACKUP_POLICY_HASH)
+          {
+            return PolicyType::BACKUP_POLICY;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -63,6 +68,8 @@ namespace Aws
             return "SERVICE_CONTROL_POLICY";
           case PolicyType::TAG_POLICY:
             return "TAG_POLICY";
+          case PolicyType::BACKUP_POLICY:
+            return "BACKUP_POLICY";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

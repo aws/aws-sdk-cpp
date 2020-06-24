@@ -35,7 +35,7 @@ namespace Amplify
 namespace Model
 {
   /**
-   * <p> Result structure for run job request. </p><p><h3>See Also:</h3>   <a
+   * <p> The result structure for the run job request. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/StartJobResult">AWS
    * API Reference</a></p>
    */
@@ -48,27 +48,27 @@ namespace Model
 
 
     /**
-     * <p> Summary for the Job. </p>
+     * <p> The summary for the job. </p>
      */
     inline const JobSummary& GetJobSummary() const{ return m_jobSummary; }
 
     /**
-     * <p> Summary for the Job. </p>
+     * <p> The summary for the job. </p>
      */
     inline void SetJobSummary(const JobSummary& value) { m_jobSummary = value; }
 
     /**
-     * <p> Summary for the Job. </p>
+     * <p> The summary for the job. </p>
      */
     inline void SetJobSummary(JobSummary&& value) { m_jobSummary = std::move(value); }
 
     /**
-     * <p> Summary for the Job. </p>
+     * <p> The summary for the job. </p>
      */
     inline StartJobResult& WithJobSummary(const JobSummary& value) { SetJobSummary(value); return *this;}
 
     /**
-     * <p> Summary for the Job. </p>
+     * <p> The summary for the job. </p>
      */
     inline StartJobResult& WithJobSummary(JobSummary&& value) { SetJobSummary(std::move(value)); return *this;}
 

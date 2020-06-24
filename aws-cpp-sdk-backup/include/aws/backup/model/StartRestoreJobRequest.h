@@ -526,81 +526,89 @@ namespace Model
 
     /**
      * <p>Starts a job to restore a recovery point for one of the following
-     * resources:</p> <ul> <li> <p> <code>EBS</code> for Amazon Elastic Block Store</p>
-     * </li> <li> <p> <code>Storage Gateway</code> for AWS Storage Gateway</p> </li>
-     * <li> <p> <code>RDS</code> for Amazon Relational Database Service</p> </li> <li>
-     * <p> <code>DDB</code> for Amazon DynamoDB</p> </li> <li> <p> <code>EFS</code> for
-     * Amazon Elastic File System</p> </li> </ul>
+     * resources:</p> <ul> <li> <p> <code>DynamoDB</code> for Amazon DynamoDB</p> </li>
+     * <li> <p> <code>EBS</code> for Amazon Elastic Block Store</p> </li> <li> <p>
+     * <code>EC2</code> for Amazon Elastic Compute Cloud</p> </li> <li> <p>
+     * <code>EFS</code> for Amazon Elastic File System</p> </li> <li> <p>
+     * <code>RDS</code> for Amazon Relational Database Service</p> </li> <li> <p>
+     * <code>Storage Gateway</code> for AWS Storage Gateway</p> </li> </ul>
      */
     inline const Aws::String& GetResourceType() const{ return m_resourceType; }
 
     /**
      * <p>Starts a job to restore a recovery point for one of the following
-     * resources:</p> <ul> <li> <p> <code>EBS</code> for Amazon Elastic Block Store</p>
-     * </li> <li> <p> <code>Storage Gateway</code> for AWS Storage Gateway</p> </li>
-     * <li> <p> <code>RDS</code> for Amazon Relational Database Service</p> </li> <li>
-     * <p> <code>DDB</code> for Amazon DynamoDB</p> </li> <li> <p> <code>EFS</code> for
-     * Amazon Elastic File System</p> </li> </ul>
+     * resources:</p> <ul> <li> <p> <code>DynamoDB</code> for Amazon DynamoDB</p> </li>
+     * <li> <p> <code>EBS</code> for Amazon Elastic Block Store</p> </li> <li> <p>
+     * <code>EC2</code> for Amazon Elastic Compute Cloud</p> </li> <li> <p>
+     * <code>EFS</code> for Amazon Elastic File System</p> </li> <li> <p>
+     * <code>RDS</code> for Amazon Relational Database Service</p> </li> <li> <p>
+     * <code>Storage Gateway</code> for AWS Storage Gateway</p> </li> </ul>
      */
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
 
     /**
      * <p>Starts a job to restore a recovery point for one of the following
-     * resources:</p> <ul> <li> <p> <code>EBS</code> for Amazon Elastic Block Store</p>
-     * </li> <li> <p> <code>Storage Gateway</code> for AWS Storage Gateway</p> </li>
-     * <li> <p> <code>RDS</code> for Amazon Relational Database Service</p> </li> <li>
-     * <p> <code>DDB</code> for Amazon DynamoDB</p> </li> <li> <p> <code>EFS</code> for
-     * Amazon Elastic File System</p> </li> </ul>
+     * resources:</p> <ul> <li> <p> <code>DynamoDB</code> for Amazon DynamoDB</p> </li>
+     * <li> <p> <code>EBS</code> for Amazon Elastic Block Store</p> </li> <li> <p>
+     * <code>EC2</code> for Amazon Elastic Compute Cloud</p> </li> <li> <p>
+     * <code>EFS</code> for Amazon Elastic File System</p> </li> <li> <p>
+     * <code>RDS</code> for Amazon Relational Database Service</p> </li> <li> <p>
+     * <code>Storage Gateway</code> for AWS Storage Gateway</p> </li> </ul>
      */
     inline void SetResourceType(const Aws::String& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
 
     /**
      * <p>Starts a job to restore a recovery point for one of the following
-     * resources:</p> <ul> <li> <p> <code>EBS</code> for Amazon Elastic Block Store</p>
-     * </li> <li> <p> <code>Storage Gateway</code> for AWS Storage Gateway</p> </li>
-     * <li> <p> <code>RDS</code> for Amazon Relational Database Service</p> </li> <li>
-     * <p> <code>DDB</code> for Amazon DynamoDB</p> </li> <li> <p> <code>EFS</code> for
-     * Amazon Elastic File System</p> </li> </ul>
+     * resources:</p> <ul> <li> <p> <code>DynamoDB</code> for Amazon DynamoDB</p> </li>
+     * <li> <p> <code>EBS</code> for Amazon Elastic Block Store</p> </li> <li> <p>
+     * <code>EC2</code> for Amazon Elastic Compute Cloud</p> </li> <li> <p>
+     * <code>EFS</code> for Amazon Elastic File System</p> </li> <li> <p>
+     * <code>RDS</code> for Amazon Relational Database Service</p> </li> <li> <p>
+     * <code>Storage Gateway</code> for AWS Storage Gateway</p> </li> </ul>
      */
     inline void SetResourceType(Aws::String&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
 
     /**
      * <p>Starts a job to restore a recovery point for one of the following
-     * resources:</p> <ul> <li> <p> <code>EBS</code> for Amazon Elastic Block Store</p>
-     * </li> <li> <p> <code>Storage Gateway</code> for AWS Storage Gateway</p> </li>
-     * <li> <p> <code>RDS</code> for Amazon Relational Database Service</p> </li> <li>
-     * <p> <code>DDB</code> for Amazon DynamoDB</p> </li> <li> <p> <code>EFS</code> for
-     * Amazon Elastic File System</p> </li> </ul>
+     * resources:</p> <ul> <li> <p> <code>DynamoDB</code> for Amazon DynamoDB</p> </li>
+     * <li> <p> <code>EBS</code> for Amazon Elastic Block Store</p> </li> <li> <p>
+     * <code>EC2</code> for Amazon Elastic Compute Cloud</p> </li> <li> <p>
+     * <code>EFS</code> for Amazon Elastic File System</p> </li> <li> <p>
+     * <code>RDS</code> for Amazon Relational Database Service</p> </li> <li> <p>
+     * <code>Storage Gateway</code> for AWS Storage Gateway</p> </li> </ul>
      */
     inline void SetResourceType(const char* value) { m_resourceTypeHasBeenSet = true; m_resourceType.assign(value); }
 
     /**
      * <p>Starts a job to restore a recovery point for one of the following
-     * resources:</p> <ul> <li> <p> <code>EBS</code> for Amazon Elastic Block Store</p>
-     * </li> <li> <p> <code>Storage Gateway</code> for AWS Storage Gateway</p> </li>
-     * <li> <p> <code>RDS</code> for Amazon Relational Database Service</p> </li> <li>
-     * <p> <code>DDB</code> for Amazon DynamoDB</p> </li> <li> <p> <code>EFS</code> for
-     * Amazon Elastic File System</p> </li> </ul>
+     * resources:</p> <ul> <li> <p> <code>DynamoDB</code> for Amazon DynamoDB</p> </li>
+     * <li> <p> <code>EBS</code> for Amazon Elastic Block Store</p> </li> <li> <p>
+     * <code>EC2</code> for Amazon Elastic Compute Cloud</p> </li> <li> <p>
+     * <code>EFS</code> for Amazon Elastic File System</p> </li> <li> <p>
+     * <code>RDS</code> for Amazon Relational Database Service</p> </li> <li> <p>
+     * <code>Storage Gateway</code> for AWS Storage Gateway</p> </li> </ul>
      */
     inline StartRestoreJobRequest& WithResourceType(const Aws::String& value) { SetResourceType(value); return *this;}
 
     /**
      * <p>Starts a job to restore a recovery point for one of the following
-     * resources:</p> <ul> <li> <p> <code>EBS</code> for Amazon Elastic Block Store</p>
-     * </li> <li> <p> <code>Storage Gateway</code> for AWS Storage Gateway</p> </li>
-     * <li> <p> <code>RDS</code> for Amazon Relational Database Service</p> </li> <li>
-     * <p> <code>DDB</code> for Amazon DynamoDB</p> </li> <li> <p> <code>EFS</code> for
-     * Amazon Elastic File System</p> </li> </ul>
+     * resources:</p> <ul> <li> <p> <code>DynamoDB</code> for Amazon DynamoDB</p> </li>
+     * <li> <p> <code>EBS</code> for Amazon Elastic Block Store</p> </li> <li> <p>
+     * <code>EC2</code> for Amazon Elastic Compute Cloud</p> </li> <li> <p>
+     * <code>EFS</code> for Amazon Elastic File System</p> </li> <li> <p>
+     * <code>RDS</code> for Amazon Relational Database Service</p> </li> <li> <p>
+     * <code>Storage Gateway</code> for AWS Storage Gateway</p> </li> </ul>
      */
     inline StartRestoreJobRequest& WithResourceType(Aws::String&& value) { SetResourceType(std::move(value)); return *this;}
 
     /**
      * <p>Starts a job to restore a recovery point for one of the following
-     * resources:</p> <ul> <li> <p> <code>EBS</code> for Amazon Elastic Block Store</p>
-     * </li> <li> <p> <code>Storage Gateway</code> for AWS Storage Gateway</p> </li>
-     * <li> <p> <code>RDS</code> for Amazon Relational Database Service</p> </li> <li>
-     * <p> <code>DDB</code> for Amazon DynamoDB</p> </li> <li> <p> <code>EFS</code> for
-     * Amazon Elastic File System</p> </li> </ul>
+     * resources:</p> <ul> <li> <p> <code>DynamoDB</code> for Amazon DynamoDB</p> </li>
+     * <li> <p> <code>EBS</code> for Amazon Elastic Block Store</p> </li> <li> <p>
+     * <code>EC2</code> for Amazon Elastic Compute Cloud</p> </li> <li> <p>
+     * <code>EFS</code> for Amazon Elastic File System</p> </li> <li> <p>
+     * <code>RDS</code> for Amazon Relational Database Service</p> </li> <li> <p>
+     * <code>Storage Gateway</code> for AWS Storage Gateway</p> </li> </ul>
      */
     inline StartRestoreJobRequest& WithResourceType(const char* value) { SetResourceType(value); return *this;}
 

@@ -35,7 +35,8 @@ namespace Amplify
 namespace Model
 {
   /**
-   * <p> Result structure for the get webhook request. </p><p><h3>See Also:</h3>   <a
+   * <p> The result structure for the get webhook request. </p><p><h3>See Also:</h3> 
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/GetWebhookResult">AWS
    * API Reference</a></p>
    */
@@ -48,27 +49,27 @@ namespace Model
 
 
     /**
-     * <p> Webhook structure. </p>
+     * <p> Describes the structure of a webhook. </p>
      */
     inline const Webhook& GetWebhook() const{ return m_webhook; }
 
     /**
-     * <p> Webhook structure. </p>
+     * <p> Describes the structure of a webhook. </p>
      */
     inline void SetWebhook(const Webhook& value) { m_webhook = value; }
 
     /**
-     * <p> Webhook structure. </p>
+     * <p> Describes the structure of a webhook. </p>
      */
     inline void SetWebhook(Webhook&& value) { m_webhook = std::move(value); }
 
     /**
-     * <p> Webhook structure. </p>
+     * <p> Describes the structure of a webhook. </p>
      */
     inline GetWebhookResult& WithWebhook(const Webhook& value) { SetWebhook(value); return *this;}
 
     /**
-     * <p> Webhook structure. </p>
+     * <p> Describes the structure of a webhook. </p>
      */
     inline GetWebhookResult& WithWebhook(Webhook&& value) { SetWebhook(std::move(value)); return *this;}
 

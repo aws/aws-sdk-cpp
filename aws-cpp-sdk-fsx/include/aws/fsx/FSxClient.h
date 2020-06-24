@@ -214,11 +214,15 @@ namespace Model
         virtual void CancelDataRepositoryTaskAsync(const Model::CancelDataRepositoryTaskRequest& request, const CancelDataRepositoryTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a backup of an existing Amazon FSx for Windows File Server file
-         * system. Creating regular backups for your file system is a best practice that
-         * complements the replication that Amazon FSx for Windows File Server performs for
-         * your file system. It also enables you to restore from user modification of
-         * data.</p> <p>If a backup with the specified client request token exists, and the
+         * <p>Creates a backup of an existing Amazon FSx file system. Creating regular
+         * backups for your file system is a best practice, enabling you to restore a file
+         * system from a backup if an issue arises with the original file system.</p>
+         * <p>For Amazon FSx for Lustre file systems, you can create a backup only for file
+         * systems with the following configuration:</p> <ul> <li> <p>a Persistent
+         * deployment type</p> </li> <li> <p>is <i>not</i> linked to an Amazon S3 data
+         * respository.</p> </li> </ul> <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/lustre-backups.html">https://docs.aws.amazon.com/fsx/latest/LustreGuide/lustre-backups.html</a>.</p>
+         * <p>If a backup with the specified client request token exists, and the
          * parameters match, this operation returns the description of the existing backup.
          * If a backup specified client request token exists, and the parameters don't
          * match, this operation returns <code>IncompatibleParameterError</code>. If a
@@ -232,21 +236,25 @@ namespace Model
          * makes it unclear whether a backup was created. If you use the same client
          * request token and the initial call created a backup, the operation returns a
          * successful result because all the parameters are the same.</p> <p>The
-         * <code>CreateFileSystem</code> operation returns while the backup's lifecycle
-         * state is still <code>CREATING</code>. You can check the file system creation
-         * status by calling the <a>DescribeBackups</a> operation, which returns the backup
-         * state along with other information.</p> <note> <p/> </note><p><h3>See Also:</h3>
-         * <a href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CreateBackup">AWS
+         * <code>CreateBackup</code> operation returns while the backup's lifecycle state
+         * is still <code>CREATING</code>. You can check the backup creation status by
+         * calling the <a>DescribeBackups</a> operation, which returns the backup state
+         * along with other information.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CreateBackup">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateBackupOutcome CreateBackup(const Model::CreateBackupRequest& request) const;
 
         /**
-         * <p>Creates a backup of an existing Amazon FSx for Windows File Server file
-         * system. Creating regular backups for your file system is a best practice that
-         * complements the replication that Amazon FSx for Windows File Server performs for
-         * your file system. It also enables you to restore from user modification of
-         * data.</p> <p>If a backup with the specified client request token exists, and the
+         * <p>Creates a backup of an existing Amazon FSx file system. Creating regular
+         * backups for your file system is a best practice, enabling you to restore a file
+         * system from a backup if an issue arises with the original file system.</p>
+         * <p>For Amazon FSx for Lustre file systems, you can create a backup only for file
+         * systems with the following configuration:</p> <ul> <li> <p>a Persistent
+         * deployment type</p> </li> <li> <p>is <i>not</i> linked to an Amazon S3 data
+         * respository.</p> </li> </ul> <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/lustre-backups.html">https://docs.aws.amazon.com/fsx/latest/LustreGuide/lustre-backups.html</a>.</p>
+         * <p>If a backup with the specified client request token exists, and the
          * parameters match, this operation returns the description of the existing backup.
          * If a backup specified client request token exists, and the parameters don't
          * match, this operation returns <code>IncompatibleParameterError</code>. If a
@@ -260,11 +268,11 @@ namespace Model
          * makes it unclear whether a backup was created. If you use the same client
          * request token and the initial call created a backup, the operation returns a
          * successful result because all the parameters are the same.</p> <p>The
-         * <code>CreateFileSystem</code> operation returns while the backup's lifecycle
-         * state is still <code>CREATING</code>. You can check the file system creation
-         * status by calling the <a>DescribeBackups</a> operation, which returns the backup
-         * state along with other information.</p> <note> <p/> </note><p><h3>See Also:</h3>
-         * <a href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CreateBackup">AWS
+         * <code>CreateBackup</code> operation returns while the backup's lifecycle state
+         * is still <code>CREATING</code>. You can check the backup creation status by
+         * calling the <a>DescribeBackups</a> operation, which returns the backup state
+         * along with other information.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CreateBackup">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -272,11 +280,15 @@ namespace Model
         virtual Model::CreateBackupOutcomeCallable CreateBackupCallable(const Model::CreateBackupRequest& request) const;
 
         /**
-         * <p>Creates a backup of an existing Amazon FSx for Windows File Server file
-         * system. Creating regular backups for your file system is a best practice that
-         * complements the replication that Amazon FSx for Windows File Server performs for
-         * your file system. It also enables you to restore from user modification of
-         * data.</p> <p>If a backup with the specified client request token exists, and the
+         * <p>Creates a backup of an existing Amazon FSx file system. Creating regular
+         * backups for your file system is a best practice, enabling you to restore a file
+         * system from a backup if an issue arises with the original file system.</p>
+         * <p>For Amazon FSx for Lustre file systems, you can create a backup only for file
+         * systems with the following configuration:</p> <ul> <li> <p>a Persistent
+         * deployment type</p> </li> <li> <p>is <i>not</i> linked to an Amazon S3 data
+         * respository.</p> </li> </ul> <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/lustre-backups.html">https://docs.aws.amazon.com/fsx/latest/LustreGuide/lustre-backups.html</a>.</p>
+         * <p>If a backup with the specified client request token exists, and the
          * parameters match, this operation returns the description of the existing backup.
          * If a backup specified client request token exists, and the parameters don't
          * match, this operation returns <code>IncompatibleParameterError</code>. If a
@@ -290,11 +302,11 @@ namespace Model
          * makes it unclear whether a backup was created. If you use the same client
          * request token and the initial call created a backup, the operation returns a
          * successful result because all the parameters are the same.</p> <p>The
-         * <code>CreateFileSystem</code> operation returns while the backup's lifecycle
-         * state is still <code>CREATING</code>. You can check the file system creation
-         * status by calling the <a>DescribeBackups</a> operation, which returns the backup
-         * state along with other information.</p> <note> <p/> </note><p><h3>See Also:</h3>
-         * <a href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CreateBackup">AWS
+         * <code>CreateBackup</code> operation returns while the backup's lifecycle state
+         * is still <code>CREATING</code>. You can check the backup creation status by
+         * calling the <a>DescribeBackups</a> operation, which returns the backup state
+         * along with other information.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CreateBackup">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -457,26 +469,25 @@ namespace Model
         virtual void CreateFileSystemAsync(const Model::CreateFileSystemRequest& request, const CreateFileSystemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a new Amazon FSx file system from an existing Amazon FSx for Windows
-         * File Server backup.</p> <p>If a file system with the specified client request
-         * token exists and the parameters match, this operation returns the description of
-         * the file system. If a client request token specified by the file system exists
-         * and the parameters don't match, this call returns
-         * <code>IncompatibleParameterError</code>. If a file system with the specified
-         * client request token doesn't exist, this operation does the following:</p> <ul>
-         * <li> <p>Creates a new Amazon FSx file system from backup with an assigned ID,
-         * and an initial lifecycle state of <code>CREATING</code>.</p> </li> <li>
-         * <p>Returns the description of the file system.</p> </li> </ul> <p>Parameters
-         * like Active Directory, default share name, automatic backup, and backup settings
-         * default to the parameters of the file system that was backed up, unless
-         * overridden. You can explicitly supply other settings.</p> <p>By using the
-         * idempotent operation, you can retry a <code>CreateFileSystemFromBackup</code>
-         * call without the risk of creating an extra file system. This approach can be
-         * useful when an initial call fails in a way that makes it unclear whether a file
-         * system was created. Examples are if a transport level timeout occurred, or your
-         * connection was reset. If you use the same client request token and the initial
-         * call created a file system, the client receives success as long as the
-         * parameters are the same.</p> <note> <p>The
+         * <p>Creates a new Amazon FSx file system from an existing Amazon FSx backup.</p>
+         * <p>If a file system with the specified client request token exists and the
+         * parameters match, this operation returns the description of the file system. If
+         * a client request token specified by the file system exists and the parameters
+         * don't match, this call returns <code>IncompatibleParameterError</code>. If a
+         * file system with the specified client request token doesn't exist, this
+         * operation does the following:</p> <ul> <li> <p>Creates a new Amazon FSx file
+         * system from backup with an assigned ID, and an initial lifecycle state of
+         * <code>CREATING</code>.</p> </li> <li> <p>Returns the description of the file
+         * system.</p> </li> </ul> <p>Parameters like Active Directory, default share name,
+         * automatic backup, and backup settings default to the parameters of the file
+         * system that was backed up, unless overridden. You can explicitly supply other
+         * settings.</p> <p>By using the idempotent operation, you can retry a
+         * <code>CreateFileSystemFromBackup</code> call without the risk of creating an
+         * extra file system. This approach can be useful when an initial call fails in a
+         * way that makes it unclear whether a file system was created. Examples are if a
+         * transport level timeout occurred, or your connection was reset. If you use the
+         * same client request token and the initial call created a file system, the client
+         * receives success as long as the parameters are the same.</p> <note> <p>The
          * <code>CreateFileSystemFromBackup</code> call returns while the file system's
          * lifecycle state is still <code>CREATING</code>. You can check the file-system
          * creation status by calling the <a>DescribeFileSystems</a> operation, which
@@ -488,26 +499,25 @@ namespace Model
         virtual Model::CreateFileSystemFromBackupOutcome CreateFileSystemFromBackup(const Model::CreateFileSystemFromBackupRequest& request) const;
 
         /**
-         * <p>Creates a new Amazon FSx file system from an existing Amazon FSx for Windows
-         * File Server backup.</p> <p>If a file system with the specified client request
-         * token exists and the parameters match, this operation returns the description of
-         * the file system. If a client request token specified by the file system exists
-         * and the parameters don't match, this call returns
-         * <code>IncompatibleParameterError</code>. If a file system with the specified
-         * client request token doesn't exist, this operation does the following:</p> <ul>
-         * <li> <p>Creates a new Amazon FSx file system from backup with an assigned ID,
-         * and an initial lifecycle state of <code>CREATING</code>.</p> </li> <li>
-         * <p>Returns the description of the file system.</p> </li> </ul> <p>Parameters
-         * like Active Directory, default share name, automatic backup, and backup settings
-         * default to the parameters of the file system that was backed up, unless
-         * overridden. You can explicitly supply other settings.</p> <p>By using the
-         * idempotent operation, you can retry a <code>CreateFileSystemFromBackup</code>
-         * call without the risk of creating an extra file system. This approach can be
-         * useful when an initial call fails in a way that makes it unclear whether a file
-         * system was created. Examples are if a transport level timeout occurred, or your
-         * connection was reset. If you use the same client request token and the initial
-         * call created a file system, the client receives success as long as the
-         * parameters are the same.</p> <note> <p>The
+         * <p>Creates a new Amazon FSx file system from an existing Amazon FSx backup.</p>
+         * <p>If a file system with the specified client request token exists and the
+         * parameters match, this operation returns the description of the file system. If
+         * a client request token specified by the file system exists and the parameters
+         * don't match, this call returns <code>IncompatibleParameterError</code>. If a
+         * file system with the specified client request token doesn't exist, this
+         * operation does the following:</p> <ul> <li> <p>Creates a new Amazon FSx file
+         * system from backup with an assigned ID, and an initial lifecycle state of
+         * <code>CREATING</code>.</p> </li> <li> <p>Returns the description of the file
+         * system.</p> </li> </ul> <p>Parameters like Active Directory, default share name,
+         * automatic backup, and backup settings default to the parameters of the file
+         * system that was backed up, unless overridden. You can explicitly supply other
+         * settings.</p> <p>By using the idempotent operation, you can retry a
+         * <code>CreateFileSystemFromBackup</code> call without the risk of creating an
+         * extra file system. This approach can be useful when an initial call fails in a
+         * way that makes it unclear whether a file system was created. Examples are if a
+         * transport level timeout occurred, or your connection was reset. If you use the
+         * same client request token and the initial call created a file system, the client
+         * receives success as long as the parameters are the same.</p> <note> <p>The
          * <code>CreateFileSystemFromBackup</code> call returns while the file system's
          * lifecycle state is still <code>CREATING</code>. You can check the file-system
          * creation status by calling the <a>DescribeFileSystems</a> operation, which
@@ -521,26 +531,25 @@ namespace Model
         virtual Model::CreateFileSystemFromBackupOutcomeCallable CreateFileSystemFromBackupCallable(const Model::CreateFileSystemFromBackupRequest& request) const;
 
         /**
-         * <p>Creates a new Amazon FSx file system from an existing Amazon FSx for Windows
-         * File Server backup.</p> <p>If a file system with the specified client request
-         * token exists and the parameters match, this operation returns the description of
-         * the file system. If a client request token specified by the file system exists
-         * and the parameters don't match, this call returns
-         * <code>IncompatibleParameterError</code>. If a file system with the specified
-         * client request token doesn't exist, this operation does the following:</p> <ul>
-         * <li> <p>Creates a new Amazon FSx file system from backup with an assigned ID,
-         * and an initial lifecycle state of <code>CREATING</code>.</p> </li> <li>
-         * <p>Returns the description of the file system.</p> </li> </ul> <p>Parameters
-         * like Active Directory, default share name, automatic backup, and backup settings
-         * default to the parameters of the file system that was backed up, unless
-         * overridden. You can explicitly supply other settings.</p> <p>By using the
-         * idempotent operation, you can retry a <code>CreateFileSystemFromBackup</code>
-         * call without the risk of creating an extra file system. This approach can be
-         * useful when an initial call fails in a way that makes it unclear whether a file
-         * system was created. Examples are if a transport level timeout occurred, or your
-         * connection was reset. If you use the same client request token and the initial
-         * call created a file system, the client receives success as long as the
-         * parameters are the same.</p> <note> <p>The
+         * <p>Creates a new Amazon FSx file system from an existing Amazon FSx backup.</p>
+         * <p>If a file system with the specified client request token exists and the
+         * parameters match, this operation returns the description of the file system. If
+         * a client request token specified by the file system exists and the parameters
+         * don't match, this call returns <code>IncompatibleParameterError</code>. If a
+         * file system with the specified client request token doesn't exist, this
+         * operation does the following:</p> <ul> <li> <p>Creates a new Amazon FSx file
+         * system from backup with an assigned ID, and an initial lifecycle state of
+         * <code>CREATING</code>.</p> </li> <li> <p>Returns the description of the file
+         * system.</p> </li> </ul> <p>Parameters like Active Directory, default share name,
+         * automatic backup, and backup settings default to the parameters of the file
+         * system that was backed up, unless overridden. You can explicitly supply other
+         * settings.</p> <p>By using the idempotent operation, you can retry a
+         * <code>CreateFileSystemFromBackup</code> call without the risk of creating an
+         * extra file system. This approach can be useful when an initial call fails in a
+         * way that makes it unclear whether a file system was created. Examples are if a
+         * transport level timeout occurred, or your connection was reset. If you use the
+         * same client request token and the initial call created a file system, the client
+         * receives success as long as the parameters are the same.</p> <note> <p>The
          * <code>CreateFileSystemFromBackup</code> call returns while the file system's
          * lifecycle state is still <code>CREATING</code>. You can check the file-system
          * creation status by calling the <a>DescribeFileSystems</a> operation, which
@@ -554,8 +563,8 @@ namespace Model
         virtual void CreateFileSystemFromBackupAsync(const Model::CreateFileSystemFromBackupRequest& request, const CreateFileSystemFromBackupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes an Amazon FSx for Windows File Server backup, deleting its contents.
-         * After deletion, the backup no longer exists, and its data is gone.</p> <p>The
+         * <p>Deletes an Amazon FSx backup, deleting its contents. After deletion, the
+         * backup no longer exists, and its data is gone.</p> <p>The
          * <code>DeleteBackup</code> call returns instantly. The backup will not show up in
          * later <code>DescribeBackups</code> calls.</p> <important> <p>The data in a
          * deleted backup is also deleted and can't be recovered by any means.</p>
@@ -566,8 +575,8 @@ namespace Model
         virtual Model::DeleteBackupOutcome DeleteBackup(const Model::DeleteBackupRequest& request) const;
 
         /**
-         * <p>Deletes an Amazon FSx for Windows File Server backup, deleting its contents.
-         * After deletion, the backup no longer exists, and its data is gone.</p> <p>The
+         * <p>Deletes an Amazon FSx backup, deleting its contents. After deletion, the
+         * backup no longer exists, and its data is gone.</p> <p>The
          * <code>DeleteBackup</code> call returns instantly. The backup will not show up in
          * later <code>DescribeBackups</code> calls.</p> <important> <p>The data in a
          * deleted backup is also deleted and can't be recovered by any means.</p>
@@ -580,8 +589,8 @@ namespace Model
         virtual Model::DeleteBackupOutcomeCallable DeleteBackupCallable(const Model::DeleteBackupRequest& request) const;
 
         /**
-         * <p>Deletes an Amazon FSx for Windows File Server backup, deleting its contents.
-         * After deletion, the backup no longer exists, and its data is gone.</p> <p>The
+         * <p>Deletes an Amazon FSx backup, deleting its contents. After deletion, the
+         * backup no longer exists, and its data is gone.</p> <p>The
          * <code>DeleteBackup</code> call returns instantly. The backup will not show up in
          * later <code>DescribeBackups</code> calls.</p> <important> <p>The data in a
          * deleted backup is also deleted and can't be recovered by any means.</p>
@@ -661,14 +670,14 @@ namespace Model
         virtual void DeleteFileSystemAsync(const Model::DeleteFileSystemRequest& request, const DeleteFileSystemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns the description of specific Amazon FSx for Windows File Server
-         * backups, if a <code>BackupIds</code> value is provided for that backup.
-         * Otherwise, it returns all backups owned by your AWS account in the AWS Region of
-         * the endpoint that you're calling.</p> <p>When retrieving all backups, you can
-         * optionally specify the <code>MaxResults</code> parameter to limit the number of
-         * backups in a response. If more backups remain, Amazon FSx returns a
-         * <code>NextToken</code> value in the response. In this case, send a later request
-         * with the <code>NextToken</code> request parameter set to the value of
+         * <p>Returns the description of specific Amazon FSx backups, if a
+         * <code>BackupIds</code> value is provided for that backup. Otherwise, it returns
+         * all backups owned by your AWS account in the AWS Region of the endpoint that
+         * you're calling.</p> <p>When retrieving all backups, you can optionally specify
+         * the <code>MaxResults</code> parameter to limit the number of backups in a
+         * response. If more backups remain, Amazon FSx returns a <code>NextToken</code>
+         * value in the response. In this case, send a later request with the
+         * <code>NextToken</code> request parameter set to the value of
          * <code>NextToken</code> from the last response.</p> <p>This action is used in an
          * iterative process to retrieve a list of your backups.
          * <code>DescribeBackups</code> is called first without a
@@ -688,14 +697,14 @@ namespace Model
         virtual Model::DescribeBackupsOutcome DescribeBackups(const Model::DescribeBackupsRequest& request) const;
 
         /**
-         * <p>Returns the description of specific Amazon FSx for Windows File Server
-         * backups, if a <code>BackupIds</code> value is provided for that backup.
-         * Otherwise, it returns all backups owned by your AWS account in the AWS Region of
-         * the endpoint that you're calling.</p> <p>When retrieving all backups, you can
-         * optionally specify the <code>MaxResults</code> parameter to limit the number of
-         * backups in a response. If more backups remain, Amazon FSx returns a
-         * <code>NextToken</code> value in the response. In this case, send a later request
-         * with the <code>NextToken</code> request parameter set to the value of
+         * <p>Returns the description of specific Amazon FSx backups, if a
+         * <code>BackupIds</code> value is provided for that backup. Otherwise, it returns
+         * all backups owned by your AWS account in the AWS Region of the endpoint that
+         * you're calling.</p> <p>When retrieving all backups, you can optionally specify
+         * the <code>MaxResults</code> parameter to limit the number of backups in a
+         * response. If more backups remain, Amazon FSx returns a <code>NextToken</code>
+         * value in the response. In this case, send a later request with the
+         * <code>NextToken</code> request parameter set to the value of
          * <code>NextToken</code> from the last response.</p> <p>This action is used in an
          * iterative process to retrieve a list of your backups.
          * <code>DescribeBackups</code> is called first without a
@@ -717,14 +726,14 @@ namespace Model
         virtual Model::DescribeBackupsOutcomeCallable DescribeBackupsCallable(const Model::DescribeBackupsRequest& request) const;
 
         /**
-         * <p>Returns the description of specific Amazon FSx for Windows File Server
-         * backups, if a <code>BackupIds</code> value is provided for that backup.
-         * Otherwise, it returns all backups owned by your AWS account in the AWS Region of
-         * the endpoint that you're calling.</p> <p>When retrieving all backups, you can
-         * optionally specify the <code>MaxResults</code> parameter to limit the number of
-         * backups in a response. If more backups remain, Amazon FSx returns a
-         * <code>NextToken</code> value in the response. In this case, send a later request
-         * with the <code>NextToken</code> request parameter set to the value of
+         * <p>Returns the description of specific Amazon FSx backups, if a
+         * <code>BackupIds</code> value is provided for that backup. Otherwise, it returns
+         * all backups owned by your AWS account in the AWS Region of the endpoint that
+         * you're calling.</p> <p>When retrieving all backups, you can optionally specify
+         * the <code>MaxResults</code> parameter to limit the number of backups in a
+         * response. If more backups remain, Amazon FSx returns a <code>NextToken</code>
+         * value in the response. In this case, send a later request with the
+         * <code>NextToken</code> request parameter set to the value of
          * <code>NextToken</code> from the last response.</p> <p>This action is used in an
          * iterative process to retrieve a list of your backups.
          * <code>DescribeBackups</code> is called first without a

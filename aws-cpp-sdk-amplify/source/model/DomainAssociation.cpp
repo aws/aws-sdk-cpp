@@ -33,6 +33,8 @@ DomainAssociation::DomainAssociation() :
     m_domainNameHasBeenSet(false),
     m_enableAutoSubDomain(false),
     m_enableAutoSubDomainHasBeenSet(false),
+    m_autoSubDomainCreationPatternsHasBeenSet(false),
+    m_autoSubDomainIAMRoleHasBeenSet(false),
     m_domainStatus(DomainStatus::NOT_SET),
     m_domainStatusHasBeenSet(false),
     m_statusReasonHasBeenSet(false),
@@ -46,6 +48,8 @@ DomainAssociation::DomainAssociation(JsonView jsonValue) :
     m_domainNameHasBeenSet(false),
     m_enableAutoSubDomain(false),
     m_enableAutoSubDomainHasBeenSet(false),
+    m_autoSubDomainCreationPatternsHasBeenSet(false),
+    m_autoSubDomainIAMRoleHasBeenSet(false),
     m_domainStatus(DomainStatus::NOT_SET),
     m_domainStatusHasBeenSet(false),
     m_statusReasonHasBeenSet(false),
@@ -76,6 +80,23 @@ DomainAssociation& DomainAssociation::operator =(JsonView jsonValue)
     m_enableAutoSubDomain = jsonValue.GetBool("enableAutoSubDomain");
 
     m_enableAutoSubDomainHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("autoSubDomainCreationPatterns"))
+  {
+    Array<JsonView> autoSubDomainCreationPatternsJsonList = jsonValue.GetArray("autoSubDomainCreationPatterns");
+    for(unsigned autoSubDomainCreationPatternsIndex = 0; autoSubDomainCreationPatternsIndex < autoSubDomainCreationPatternsJsonList.GetLength(); ++autoSubDomainCreationPatternsIndex)
+    {
+      m_autoSubDomainCreationPatterns.push_back(autoSubDomainCreationPatternsJsonList[autoSubDomainCreationPatternsIndex].AsString());
+    }
+    m_autoSubDomainCreationPatternsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("autoSubDomainIAMRole"))
+  {
+    m_autoSubDomainIAMRole = jsonValue.GetString("autoSubDomainIAMRole");
+
+    m_autoSubDomainIAMRoleHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("domainStatus"))
@@ -131,6 +152,23 @@ JsonValue DomainAssociation::Jsonize() const
   if(m_enableAutoSubDomainHasBeenSet)
   {
    payload.WithBool("enableAutoSubDomain", m_enableAutoSubDomain);
+
+  }
+
+  if(m_autoSubDomainCreationPatternsHasBeenSet)
+  {
+   Array<JsonValue> autoSubDomainCreationPatternsJsonList(m_autoSubDomainCreationPatterns.size());
+   for(unsigned autoSubDomainCreationPatternsIndex = 0; autoSubDomainCreationPatternsIndex < autoSubDomainCreationPatternsJsonList.GetLength(); ++autoSubDomainCreationPatternsIndex)
+   {
+     autoSubDomainCreationPatternsJsonList[autoSubDomainCreationPatternsIndex].AsString(m_autoSubDomainCreationPatterns[autoSubDomainCreationPatternsIndex]);
+   }
+   payload.WithArray("autoSubDomainCreationPatterns", std::move(autoSubDomainCreationPatternsJsonList));
+
+  }
+
+  if(m_autoSubDomainIAMRoleHasBeenSet)
+  {
+   payload.WithString("autoSubDomainIAMRole", m_autoSubDomainIAMRole);
 
   }
 

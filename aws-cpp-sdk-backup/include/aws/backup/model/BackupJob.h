@@ -51,6 +51,47 @@ namespace Model
 
 
     /**
+     * <p>The account ID that owns the backup job.</p>
+     */
+    inline const Aws::String& GetAccountId() const{ return m_accountId; }
+
+    /**
+     * <p>The account ID that owns the backup job.</p>
+     */
+    inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
+
+    /**
+     * <p>The account ID that owns the backup job.</p>
+     */
+    inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
+
+    /**
+     * <p>The account ID that owns the backup job.</p>
+     */
+    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
+
+    /**
+     * <p>The account ID that owns the backup job.</p>
+     */
+    inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
+
+    /**
+     * <p>The account ID that owns the backup job.</p>
+     */
+    inline BackupJob& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
+
+    /**
+     * <p>The account ID that owns the backup job.</p>
+     */
+    inline BackupJob& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
+
+    /**
+     * <p>The account ID that owns the backup job.</p>
+     */
+    inline BackupJob& WithAccountId(const char* value) { SetAccountId(value); return *this;}
+
+
+    /**
      * <p>Uniquely identifies a request to AWS Backup to back up a resource.</p>
      */
     inline const Aws::String& GetBackupJobId() const{ return m_backupJobId; }
@@ -861,6 +902,9 @@ namespace Model
     inline BackupJob& WithBytesTransferred(long long value) { SetBytesTransferred(value); return *this;}
 
   private:
+
+    Aws::String m_accountId;
+    bool m_accountIdHasBeenSet;
 
     Aws::String m_backupJobId;
     bool m_backupJobIdHasBeenSet;

@@ -799,24 +799,24 @@ namespace Model
         virtual void DescribeRecoveryPointAsync(const Model::DescribeRecoveryPointRequest& request, const DescribeRecoveryPointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns the current service opt-in settings for the region. If the service
-         * has a value set to true, AWS Backup will attempt to protect that service's
-         * resources in this region, when included in an on-demand backup or scheduled
-         * backup plan. If the value is set to false for a service, AWS Backup will not
-         * attempt to protect that service's resources in this region.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Returns the current service opt-in settings for the Region. If the service
+         * has a value set to <code>true</code>, AWS Backup attempts to protect that
+         * service's resources in this Region, when included in an on-demand backup or
+         * scheduled backup plan. If the value is set to <code>false</code> for a service,
+         * AWS Backup does not attempt to protect that service's resources in this
+         * Region.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/DescribeRegionSettings">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeRegionSettingsOutcome DescribeRegionSettings(const Model::DescribeRegionSettingsRequest& request) const;
 
         /**
-         * <p>Returns the current service opt-in settings for the region. If the service
-         * has a value set to true, AWS Backup will attempt to protect that service's
-         * resources in this region, when included in an on-demand backup or scheduled
-         * backup plan. If the value is set to false for a service, AWS Backup will not
-         * attempt to protect that service's resources in this region.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Returns the current service opt-in settings for the Region. If the service
+         * has a value set to <code>true</code>, AWS Backup attempts to protect that
+         * service's resources in this Region, when included in an on-demand backup or
+         * scheduled backup plan. If the value is set to <code>false</code> for a service,
+         * AWS Backup does not attempt to protect that service's resources in this
+         * Region.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/DescribeRegionSettings">AWS
          * API Reference</a></p>
          *
@@ -825,12 +825,12 @@ namespace Model
         virtual Model::DescribeRegionSettingsOutcomeCallable DescribeRegionSettingsCallable(const Model::DescribeRegionSettingsRequest& request) const;
 
         /**
-         * <p>Returns the current service opt-in settings for the region. If the service
-         * has a value set to true, AWS Backup will attempt to protect that service's
-         * resources in this region, when included in an on-demand backup or scheduled
-         * backup plan. If the value is set to false for a service, AWS Backup will not
-         * attempt to protect that service's resources in this region.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Returns the current service opt-in settings for the Region. If the service
+         * has a value set to <code>true</code>, AWS Backup attempts to protect that
+         * service's resources in this Region, when included in an on-demand backup or
+         * scheduled backup plan. If the value is set to <code>false</code> for a service,
+         * AWS Backup does not attempt to protect that service's resources in this
+         * Region.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/DescribeRegionSettings">AWS
          * API Reference</a></p>
          *
@@ -1779,24 +1779,24 @@ namespace Model
         virtual void UpdateRecoveryPointLifecycleAsync(const Model::UpdateRecoveryPointLifecycleRequest& request, const UpdateRecoveryPointLifecycleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates the current service opt-in settings for the region. If the service
-         * has a value set to true, AWS Backup will attempt to protect that service's
-         * resources in this region, when included in an on-demand backup or scheduled
-         * backup plan. If the value is set to false for a service, AWS Backup will not
-         * attempt to protect that service's resources in this region.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Updates the current service opt-in settings for the Region. If the service
+         * has a value set to <code>true</code>, AWS Backup attempts to protect that
+         * service's resources in this Region, when included in an on-demand backup or
+         * scheduled backup plan. If the value is set to <code>false</code> for a service,
+         * AWS Backup does not attempt to protect that service's resources in this
+         * Region.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/UpdateRegionSettings">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateRegionSettingsOutcome UpdateRegionSettings(const Model::UpdateRegionSettingsRequest& request) const;
 
         /**
-         * <p>Updates the current service opt-in settings for the region. If the service
-         * has a value set to true, AWS Backup will attempt to protect that service's
-         * resources in this region, when included in an on-demand backup or scheduled
-         * backup plan. If the value is set to false for a service, AWS Backup will not
-         * attempt to protect that service's resources in this region.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Updates the current service opt-in settings for the Region. If the service
+         * has a value set to <code>true</code>, AWS Backup attempts to protect that
+         * service's resources in this Region, when included in an on-demand backup or
+         * scheduled backup plan. If the value is set to <code>false</code> for a service,
+         * AWS Backup does not attempt to protect that service's resources in this
+         * Region.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/UpdateRegionSettings">AWS
          * API Reference</a></p>
          *
@@ -1805,12 +1805,12 @@ namespace Model
         virtual Model::UpdateRegionSettingsOutcomeCallable UpdateRegionSettingsCallable(const Model::UpdateRegionSettingsRequest& request) const;
 
         /**
-         * <p>Updates the current service opt-in settings for the region. If the service
-         * has a value set to true, AWS Backup will attempt to protect that service's
-         * resources in this region, when included in an on-demand backup or scheduled
-         * backup plan. If the value is set to false for a service, AWS Backup will not
-         * attempt to protect that service's resources in this region.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Updates the current service opt-in settings for the Region. If the service
+         * has a value set to <code>true</code>, AWS Backup attempts to protect that
+         * service's resources in this Region, when included in an on-demand backup or
+         * scheduled backup plan. If the value is set to <code>false</code> for a service,
+         * AWS Backup does not attempt to protect that service's resources in this
+         * Region.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/UpdateRegionSettings">AWS
          * API Reference</a></p>
          *

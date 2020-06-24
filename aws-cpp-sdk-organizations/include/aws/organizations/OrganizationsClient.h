@@ -437,36 +437,16 @@ namespace Model
 
         /**
          * <p>Attaches a policy to a root, an organizational unit (OU), or an individual
-         * account. How the policy affects accounts depends on the type of policy:</p> <ul>
-         * <li> <p> <b>Service control policy (SCP)</b> - An SCP specifies what permissions
-         * can be delegated to users in affected member accounts. The scope of influence
-         * for a policy depends on what you attach the policy to:</p> <ul> <li> <p>If you
-         * attach an SCP to a root, it affects all accounts in the organization.</p> </li>
-         * <li> <p>If you attach an SCP to an OU, it affects all accounts in that OU and in
-         * any child OUs.</p> </li> <li> <p>If you attach the policy directly to an
-         * account, it affects only that account.</p> </li> </ul> <p>SCPs are JSON policies
-         * that specify the maximum permissions for an organization or organizational unit
-         * (OU). You can attach one SCP to a higher level root or OU, and a different SCP
-         * to a child OU or to an account. The child policy can further restrict only the
-         * permissions that pass through the parent filter and are available to the child.
-         * An SCP that is attached to a child can't grant a permission that the parent
-         * hasn't already granted. For example, imagine that the parent SCP allows
-         * permissions A, B, C, D, and E. The child SCP allows C, D, E, F, and G. The
-         * result is that the accounts affected by the child SCP are allowed to use only C,
-         * D, and E. They can't use A or B because the child OU filtered them out. They
-         * also can't use F and G because the parent OU filtered them out. They can't be
-         * granted back by the child SCP; child SCPs can only filter the permissions they
-         * receive from the parent SCP.</p> <p>AWS Organizations attaches a default SCP
-         * named <code>"FullAWSAccess</code> to every root, OU, and account. This default
-         * SCP allows all services and actions, enabling any new child OU or account to
-         * inherit the permissions of the parent root or OU. If you detach the default
-         * policy, you must replace it with a policy that specifies the permissions that
-         * you want to allow in that OU or account.</p> <p>For more information about how
-         * AWS Organizations policies permissions work, see <a
-         * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">Using
-         * Service Control Policies</a> in the <i>AWS Organizations User Guide.</i> </p>
-         * </li> </ul> <p>This operation can be called only from the organization's master
-         * account.</p><p><h3>See Also:</h3>   <a
+         * account. How the policy affects accounts depends on the type of policy. Refer to
+         * the <i>AWS Organizations User Guide</i> for information about each policy
+         * type:</p> <ul> <li> <p> <a
+         * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">BACKUP_POLICY</a>
+         * </p> </li> <li> <p> <a
+         * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">SERVICE_CONTROL_POLICY</a>
+         * </p> </li> <li> <p> <a
+         * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">TAG_POLICY</a>
+         * </p> </li> </ul> <p>This operation can be called only from the organization's
+         * master account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/AttachPolicy">AWS
          * API Reference</a></p>
          */
@@ -474,36 +454,16 @@ namespace Model
 
         /**
          * <p>Attaches a policy to a root, an organizational unit (OU), or an individual
-         * account. How the policy affects accounts depends on the type of policy:</p> <ul>
-         * <li> <p> <b>Service control policy (SCP)</b> - An SCP specifies what permissions
-         * can be delegated to users in affected member accounts. The scope of influence
-         * for a policy depends on what you attach the policy to:</p> <ul> <li> <p>If you
-         * attach an SCP to a root, it affects all accounts in the organization.</p> </li>
-         * <li> <p>If you attach an SCP to an OU, it affects all accounts in that OU and in
-         * any child OUs.</p> </li> <li> <p>If you attach the policy directly to an
-         * account, it affects only that account.</p> </li> </ul> <p>SCPs are JSON policies
-         * that specify the maximum permissions for an organization or organizational unit
-         * (OU). You can attach one SCP to a higher level root or OU, and a different SCP
-         * to a child OU or to an account. The child policy can further restrict only the
-         * permissions that pass through the parent filter and are available to the child.
-         * An SCP that is attached to a child can't grant a permission that the parent
-         * hasn't already granted. For example, imagine that the parent SCP allows
-         * permissions A, B, C, D, and E. The child SCP allows C, D, E, F, and G. The
-         * result is that the accounts affected by the child SCP are allowed to use only C,
-         * D, and E. They can't use A or B because the child OU filtered them out. They
-         * also can't use F and G because the parent OU filtered them out. They can't be
-         * granted back by the child SCP; child SCPs can only filter the permissions they
-         * receive from the parent SCP.</p> <p>AWS Organizations attaches a default SCP
-         * named <code>"FullAWSAccess</code> to every root, OU, and account. This default
-         * SCP allows all services and actions, enabling any new child OU or account to
-         * inherit the permissions of the parent root or OU. If you detach the default
-         * policy, you must replace it with a policy that specifies the permissions that
-         * you want to allow in that OU or account.</p> <p>For more information about how
-         * AWS Organizations policies permissions work, see <a
-         * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">Using
-         * Service Control Policies</a> in the <i>AWS Organizations User Guide.</i> </p>
-         * </li> </ul> <p>This operation can be called only from the organization's master
-         * account.</p><p><h3>See Also:</h3>   <a
+         * account. How the policy affects accounts depends on the type of policy. Refer to
+         * the <i>AWS Organizations User Guide</i> for information about each policy
+         * type:</p> <ul> <li> <p> <a
+         * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">BACKUP_POLICY</a>
+         * </p> </li> <li> <p> <a
+         * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">SERVICE_CONTROL_POLICY</a>
+         * </p> </li> <li> <p> <a
+         * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">TAG_POLICY</a>
+         * </p> </li> </ul> <p>This operation can be called only from the organization's
+         * master account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/AttachPolicy">AWS
          * API Reference</a></p>
          *
@@ -513,36 +473,16 @@ namespace Model
 
         /**
          * <p>Attaches a policy to a root, an organizational unit (OU), or an individual
-         * account. How the policy affects accounts depends on the type of policy:</p> <ul>
-         * <li> <p> <b>Service control policy (SCP)</b> - An SCP specifies what permissions
-         * can be delegated to users in affected member accounts. The scope of influence
-         * for a policy depends on what you attach the policy to:</p> <ul> <li> <p>If you
-         * attach an SCP to a root, it affects all accounts in the organization.</p> </li>
-         * <li> <p>If you attach an SCP to an OU, it affects all accounts in that OU and in
-         * any child OUs.</p> </li> <li> <p>If you attach the policy directly to an
-         * account, it affects only that account.</p> </li> </ul> <p>SCPs are JSON policies
-         * that specify the maximum permissions for an organization or organizational unit
-         * (OU). You can attach one SCP to a higher level root or OU, and a different SCP
-         * to a child OU or to an account. The child policy can further restrict only the
-         * permissions that pass through the parent filter and are available to the child.
-         * An SCP that is attached to a child can't grant a permission that the parent
-         * hasn't already granted. For example, imagine that the parent SCP allows
-         * permissions A, B, C, D, and E. The child SCP allows C, D, E, F, and G. The
-         * result is that the accounts affected by the child SCP are allowed to use only C,
-         * D, and E. They can't use A or B because the child OU filtered them out. They
-         * also can't use F and G because the parent OU filtered them out. They can't be
-         * granted back by the child SCP; child SCPs can only filter the permissions they
-         * receive from the parent SCP.</p> <p>AWS Organizations attaches a default SCP
-         * named <code>"FullAWSAccess</code> to every root, OU, and account. This default
-         * SCP allows all services and actions, enabling any new child OU or account to
-         * inherit the permissions of the parent root or OU. If you detach the default
-         * policy, you must replace it with a policy that specifies the permissions that
-         * you want to allow in that OU or account.</p> <p>For more information about how
-         * AWS Organizations policies permissions work, see <a
-         * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">Using
-         * Service Control Policies</a> in the <i>AWS Organizations User Guide.</i> </p>
-         * </li> </ul> <p>This operation can be called only from the organization's master
-         * account.</p><p><h3>See Also:</h3>   <a
+         * account. How the policy affects accounts depends on the type of policy. Refer to
+         * the <i>AWS Organizations User Guide</i> for information about each policy
+         * type:</p> <ul> <li> <p> <a
+         * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">BACKUP_POLICY</a>
+         * </p> </li> <li> <p> <a
+         * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">SERVICE_CONTROL_POLICY</a>
+         * </p> </li> <li> <p> <a
+         * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">TAG_POLICY</a>
+         * </p> </li> </ul> <p>This operation can be called only from the organization's
+         * master account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/AttachPolicy">AWS
          * API Reference</a></p>
          *
@@ -858,11 +798,11 @@ namespace Model
          * an AWS Account in Your Organization</a> in the <i>AWS Organizations User
          * Guide.</i> </p> <important> <ul> <li> <p>When you create an account in an
          * organization using the AWS Organizations console, API, or CLI commands, the
-         * information required for the account to operate as a standalone account, such as
-         * a payment method and signing the end user license agreement (EULA) is <i>not</i>
-         * automatically collected. If you must remove an account from your organization
-         * later, you can do so only after you provide the missing information. Follow the
-         * steps at <a
+         * information required for the account to operate as a standalone account is
+         * <i>not</i> automatically collected. This includes a payment method and signing
+         * the end user license agreement (EULA). If you must remove an account from your
+         * organization later, you can do so only after you provide the missing
+         * information. Follow the steps at <a
          * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">
          * To leave an organization as a member account</a> in the <i>AWS Organizations
          * User Guide.</i> </p> </li> <li> <p>If you get an exception that indicates that
@@ -952,11 +892,11 @@ namespace Model
          * an AWS Account in Your Organization</a> in the <i>AWS Organizations User
          * Guide.</i> </p> <important> <ul> <li> <p>When you create an account in an
          * organization using the AWS Organizations console, API, or CLI commands, the
-         * information required for the account to operate as a standalone account, such as
-         * a payment method and signing the end user license agreement (EULA) is <i>not</i>
-         * automatically collected. If you must remove an account from your organization
-         * later, you can do so only after you provide the missing information. Follow the
-         * steps at <a
+         * information required for the account to operate as a standalone account is
+         * <i>not</i> automatically collected. This includes a payment method and signing
+         * the end user license agreement (EULA). If you must remove an account from your
+         * organization later, you can do so only after you provide the missing
+         * information. Follow the steps at <a
          * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">
          * To leave an organization as a member account</a> in the <i>AWS Organizations
          * User Guide.</i> </p> </li> <li> <p>If you get an exception that indicates that
@@ -1048,11 +988,11 @@ namespace Model
          * an AWS Account in Your Organization</a> in the <i>AWS Organizations User
          * Guide.</i> </p> <important> <ul> <li> <p>When you create an account in an
          * organization using the AWS Organizations console, API, or CLI commands, the
-         * information required for the account to operate as a standalone account, such as
-         * a payment method and signing the end user license agreement (EULA) is <i>not</i>
-         * automatically collected. If you must remove an account from your organization
-         * later, you can do so only after you provide the missing information. Follow the
-         * steps at <a
+         * information required for the account to operate as a standalone account is
+         * <i>not</i> automatically collected. This includes a payment method and signing
+         * the end user license agreement (EULA). If you must remove an account from your
+         * organization later, you can do so only after you provide the missing
+         * information. Follow the steps at <a
          * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">
          * To leave an organization as a member account</a> in the <i>AWS Organizations
          * User Guide.</i> </p> </li> <li> <p>If you get an exception that indicates that
@@ -1496,11 +1436,12 @@ namespace Model
         virtual void DescribeCreateAccountStatusAsync(const Model::DescribeCreateAccountStatusRequest& request, const DescribeCreateAccountStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns the contents of the effective tag policy for the account. The
-         * effective tag policy is the aggregation of any tag policies the account
-         * inherits, plus any policy directly that is attached to the account. </p> <p>This
-         * action returns information on tag policies only.</p> <p>For more information on
-         * policy inheritance, see <a
+         * <p>Returns the contents of the effective policy for specified policy type and
+         * account. The effective policy is the aggregation of any policies of the
+         * specified type that the account inherits, plus any policy of that type that is
+         * directly attached to the account. </p> <p>This operation applies only to policy
+         * types <i>other</i> than service control policies (SCPs).</p> <p>For more
+         * information about policy inheritance, see <a
          * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies-inheritance.html">How
          * Policy Inheritance Works</a> in the <i>AWS Organizations User Guide</i>.</p>
          * <p>This operation can be called only from the organization's master account or
@@ -1512,11 +1453,12 @@ namespace Model
         virtual Model::DescribeEffectivePolicyOutcome DescribeEffectivePolicy(const Model::DescribeEffectivePolicyRequest& request) const;
 
         /**
-         * <p>Returns the contents of the effective tag policy for the account. The
-         * effective tag policy is the aggregation of any tag policies the account
-         * inherits, plus any policy directly that is attached to the account. </p> <p>This
-         * action returns information on tag policies only.</p> <p>For more information on
-         * policy inheritance, see <a
+         * <p>Returns the contents of the effective policy for specified policy type and
+         * account. The effective policy is the aggregation of any policies of the
+         * specified type that the account inherits, plus any policy of that type that is
+         * directly attached to the account. </p> <p>This operation applies only to policy
+         * types <i>other</i> than service control policies (SCPs).</p> <p>For more
+         * information about policy inheritance, see <a
          * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies-inheritance.html">How
          * Policy Inheritance Works</a> in the <i>AWS Organizations User Guide</i>.</p>
          * <p>This operation can be called only from the organization's master account or
@@ -1530,11 +1472,12 @@ namespace Model
         virtual Model::DescribeEffectivePolicyOutcomeCallable DescribeEffectivePolicyCallable(const Model::DescribeEffectivePolicyRequest& request) const;
 
         /**
-         * <p>Returns the contents of the effective tag policy for the account. The
-         * effective tag policy is the aggregation of any tag policies the account
-         * inherits, plus any policy directly that is attached to the account. </p> <p>This
-         * action returns information on tag policies only.</p> <p>For more information on
-         * policy inheritance, see <a
+         * <p>Returns the contents of the effective policy for specified policy type and
+         * account. The effective policy is the aggregation of any policies of the
+         * specified type that the account inherits, plus any policy of that type that is
+         * directly attached to the account. </p> <p>This operation applies only to policy
+         * types <i>other</i> than service control policies (SCPs).</p> <p>For more
+         * information about policy inheritance, see <a
          * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies-inheritance.html">How
          * Policy Inheritance Works</a> in the <i>AWS Organizations User Guide</i>.</p>
          * <p>This operation can be called only from the organization's master account or
@@ -1696,20 +1639,21 @@ namespace Model
 
         /**
          * <p>Detaches a policy from a target root, organizational unit (OU), or account.
-         * If the policy being detached is a service control policy (SCP), the changes to
-         * permissions for IAM users and roles in affected accounts are immediate.</p> <p>
-         * <b>Note:</b> Every root, OU, and account must have at least one SCP attached. If
-         * you want to replace the default <code>FullAWSAccess</code> policy with one that
-         * limits the permissions that can be delegated, you must attach the replacement
-         * policy before you can remove the default one. This is the authorization strategy
-         * of an "<a
-         * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_about-scps.html#orgs_policies_whitelist">allow
+         * </p> <important> <p>If the policy being detached is a service control policy
+         * (SCP), the changes to permissions for AWS Identity and Access Management (IAM)
+         * users and roles in affected accounts are immediate.</p> </important> <p>Every
+         * root, OU, and account must have at least one SCP attached. If you want to
+         * replace the default <code>FullAWSAccess</code> policy with an SCP that limits
+         * the permissions that can be delegated, you must attach the replacement SCP
+         * before you can remove the default SCP. This is the authorization strategy of an
+         * "<a
+         * href="https://docs.aws.amazon.com/organizations/latest/userguide/SCP_strategies.html#orgs_policies_allowlist">allow
          * list</a>". If you instead attach a second SCP and leave the
          * <code>FullAWSAccess</code> SCP still attached, and specify <code>"Effect":
          * "Deny"</code> in the second SCP to override the <code>"Effect": "Allow"</code>
          * in the <code>FullAWSAccess</code> policy (or any other attached SCP), you're
          * using the authorization strategy of a "<a
-         * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_about-scps.html#orgs_policies_blacklist">deny
+         * href="https://docs.aws.amazon.com/organizations/latest/userguide/SCP_strategies.html#orgs_policies_denylist">deny
          * list</a>".</p> <p>This operation can be called only from the organization's
          * master account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DetachPolicy">AWS
@@ -1719,20 +1663,21 @@ namespace Model
 
         /**
          * <p>Detaches a policy from a target root, organizational unit (OU), or account.
-         * If the policy being detached is a service control policy (SCP), the changes to
-         * permissions for IAM users and roles in affected accounts are immediate.</p> <p>
-         * <b>Note:</b> Every root, OU, and account must have at least one SCP attached. If
-         * you want to replace the default <code>FullAWSAccess</code> policy with one that
-         * limits the permissions that can be delegated, you must attach the replacement
-         * policy before you can remove the default one. This is the authorization strategy
-         * of an "<a
-         * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_about-scps.html#orgs_policies_whitelist">allow
+         * </p> <important> <p>If the policy being detached is a service control policy
+         * (SCP), the changes to permissions for AWS Identity and Access Management (IAM)
+         * users and roles in affected accounts are immediate.</p> </important> <p>Every
+         * root, OU, and account must have at least one SCP attached. If you want to
+         * replace the default <code>FullAWSAccess</code> policy with an SCP that limits
+         * the permissions that can be delegated, you must attach the replacement SCP
+         * before you can remove the default SCP. This is the authorization strategy of an
+         * "<a
+         * href="https://docs.aws.amazon.com/organizations/latest/userguide/SCP_strategies.html#orgs_policies_allowlist">allow
          * list</a>". If you instead attach a second SCP and leave the
          * <code>FullAWSAccess</code> SCP still attached, and specify <code>"Effect":
          * "Deny"</code> in the second SCP to override the <code>"Effect": "Allow"</code>
          * in the <code>FullAWSAccess</code> policy (or any other attached SCP), you're
          * using the authorization strategy of a "<a
-         * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_about-scps.html#orgs_policies_blacklist">deny
+         * href="https://docs.aws.amazon.com/organizations/latest/userguide/SCP_strategies.html#orgs_policies_denylist">deny
          * list</a>".</p> <p>This operation can be called only from the organization's
          * master account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DetachPolicy">AWS
@@ -1744,20 +1689,21 @@ namespace Model
 
         /**
          * <p>Detaches a policy from a target root, organizational unit (OU), or account.
-         * If the policy being detached is a service control policy (SCP), the changes to
-         * permissions for IAM users and roles in affected accounts are immediate.</p> <p>
-         * <b>Note:</b> Every root, OU, and account must have at least one SCP attached. If
-         * you want to replace the default <code>FullAWSAccess</code> policy with one that
-         * limits the permissions that can be delegated, you must attach the replacement
-         * policy before you can remove the default one. This is the authorization strategy
-         * of an "<a
-         * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_about-scps.html#orgs_policies_whitelist">allow
+         * </p> <important> <p>If the policy being detached is a service control policy
+         * (SCP), the changes to permissions for AWS Identity and Access Management (IAM)
+         * users and roles in affected accounts are immediate.</p> </important> <p>Every
+         * root, OU, and account must have at least one SCP attached. If you want to
+         * replace the default <code>FullAWSAccess</code> policy with an SCP that limits
+         * the permissions that can be delegated, you must attach the replacement SCP
+         * before you can remove the default SCP. This is the authorization strategy of an
+         * "<a
+         * href="https://docs.aws.amazon.com/organizations/latest/userguide/SCP_strategies.html#orgs_policies_allowlist">allow
          * list</a>". If you instead attach a second SCP and leave the
          * <code>FullAWSAccess</code> SCP still attached, and specify <code>"Effect":
          * "Deny"</code> in the second SCP to override the <code>"Effect": "Allow"</code>
          * in the <code>FullAWSAccess</code> policy (or any other attached SCP), you're
          * using the authorization strategy of a "<a
-         * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_about-scps.html#orgs_policies_blacklist">deny
+         * href="https://docs.aws.amazon.com/organizations/latest/userguide/SCP_strategies.html#orgs_policies_denylist">deny
          * list</a>".</p> <p>This operation can be called only from the organization's
          * master account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DetachPolicy">AWS
@@ -1865,14 +1811,14 @@ namespace Model
         virtual void DisableAWSServiceAccessAsync(const Model::DisableAWSServiceAccessRequest& request, const DisableAWSServiceAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Disables an organizational control policy type in a root. A policy of a
-         * certain type can be attached to entities in a root only if that type is enabled
-         * in the root. After you perform this operation, you no longer can attach policies
-         * of the specified type to that root or to any organizational unit (OU) or account
-         * in that root. You can undo this by using the <a>EnablePolicyType</a>
-         * operation.</p> <p>This is an asynchronous request that AWS performs in the
-         * background. If you disable a policy for a root, it still appears enabled for the
-         * organization if <a
+         * <p>Disables an organizational policy type in a root. A policy of a certain type
+         * can be attached to entities in a root only if that type is enabled in the root.
+         * After you perform this operation, you no longer can attach policies of the
+         * specified type to that root or to any organizational unit (OU) or account in
+         * that root. You can undo this by using the <a>EnablePolicyType</a> operation.</p>
+         * <p>This is an asynchronous request that AWS performs in the background. If you
+         * disable a policy type for a root, it still appears enabled for the organization
+         * if <a
          * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html">all
          * features</a> are enabled for the organization. AWS recommends that you first use
          * <a>ListRoots</a> to see the status of policy types for a specified root, and
@@ -1886,14 +1832,14 @@ namespace Model
         virtual Model::DisablePolicyTypeOutcome DisablePolicyType(const Model::DisablePolicyTypeRequest& request) const;
 
         /**
-         * <p>Disables an organizational control policy type in a root. A policy of a
-         * certain type can be attached to entities in a root only if that type is enabled
-         * in the root. After you perform this operation, you no longer can attach policies
-         * of the specified type to that root or to any organizational unit (OU) or account
-         * in that root. You can undo this by using the <a>EnablePolicyType</a>
-         * operation.</p> <p>This is an asynchronous request that AWS performs in the
-         * background. If you disable a policy for a root, it still appears enabled for the
-         * organization if <a
+         * <p>Disables an organizational policy type in a root. A policy of a certain type
+         * can be attached to entities in a root only if that type is enabled in the root.
+         * After you perform this operation, you no longer can attach policies of the
+         * specified type to that root or to any organizational unit (OU) or account in
+         * that root. You can undo this by using the <a>EnablePolicyType</a> operation.</p>
+         * <p>This is an asynchronous request that AWS performs in the background. If you
+         * disable a policy type for a root, it still appears enabled for the organization
+         * if <a
          * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html">all
          * features</a> are enabled for the organization. AWS recommends that you first use
          * <a>ListRoots</a> to see the status of policy types for a specified root, and
@@ -1909,14 +1855,14 @@ namespace Model
         virtual Model::DisablePolicyTypeOutcomeCallable DisablePolicyTypeCallable(const Model::DisablePolicyTypeRequest& request) const;
 
         /**
-         * <p>Disables an organizational control policy type in a root. A policy of a
-         * certain type can be attached to entities in a root only if that type is enabled
-         * in the root. After you perform this operation, you no longer can attach policies
-         * of the specified type to that root or to any organizational unit (OU) or account
-         * in that root. You can undo this by using the <a>EnablePolicyType</a>
-         * operation.</p> <p>This is an asynchronous request that AWS performs in the
-         * background. If you disable a policy for a root, it still appears enabled for the
-         * organization if <a
+         * <p>Disables an organizational policy type in a root. A policy of a certain type
+         * can be attached to entities in a root only if that type is enabled in the root.
+         * After you perform this operation, you no longer can attach policies of the
+         * specified type to that root or to any organizational unit (OU) or account in
+         * that root. You can undo this by using the <a>EnablePolicyType</a> operation.</p>
+         * <p>This is an asynchronous request that AWS performs in the background. If you
+         * disable a policy type for a root, it still appears enabled for the organization
+         * if <a
          * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html">all
          * features</a> are enabled for the organization. AWS recommends that you first use
          * <a>ListRoots</a> to see the status of policy types for a specified root, and

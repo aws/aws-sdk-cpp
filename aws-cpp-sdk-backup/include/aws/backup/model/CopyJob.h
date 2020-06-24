@@ -51,6 +51,47 @@ namespace Model
 
 
     /**
+     * <p>The account ID that owns the copy job.</p>
+     */
+    inline const Aws::String& GetAccountId() const{ return m_accountId; }
+
+    /**
+     * <p>The account ID that owns the copy job.</p>
+     */
+    inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
+
+    /**
+     * <p>The account ID that owns the copy job.</p>
+     */
+    inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
+
+    /**
+     * <p>The account ID that owns the copy job.</p>
+     */
+    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
+
+    /**
+     * <p>The account ID that owns the copy job.</p>
+     */
+    inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
+
+    /**
+     * <p>The account ID that owns the copy job.</p>
+     */
+    inline CopyJob& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
+
+    /**
+     * <p>The account ID that owns the copy job.</p>
+     */
+    inline CopyJob& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
+
+    /**
+     * <p>The account ID that owns the copy job.</p>
+     */
+    inline CopyJob& WithAccountId(const char* value) { SetAccountId(value); return *this;}
+
+
+    /**
      * <p>Uniquely identifies a copy job.</p>
      */
     inline const Aws::String& GetCopyJobId() const{ return m_copyJobId; }
@@ -362,98 +403,98 @@ namespace Model
 
     /**
      * <p>The date and time a copy job is created, in Unix format and Coordinated
-     * Universal Time (UTC). The value of CreationDate is accurate to milliseconds. For
-     * example, the value 1516925490.087 represents Friday, January 26, 2018
-     * 12:11:30.087 AM. </p>
+     * Universal Time (UTC). The value of <code>CreationDate</code> is accurate to
+     * milliseconds. For example, the value 1516925490.087 represents Friday, January
+     * 26, 2018 12:11:30.087 AM.</p>
      */
     inline const Aws::Utils::DateTime& GetCreationDate() const{ return m_creationDate; }
 
     /**
      * <p>The date and time a copy job is created, in Unix format and Coordinated
-     * Universal Time (UTC). The value of CreationDate is accurate to milliseconds. For
-     * example, the value 1516925490.087 represents Friday, January 26, 2018
-     * 12:11:30.087 AM. </p>
+     * Universal Time (UTC). The value of <code>CreationDate</code> is accurate to
+     * milliseconds. For example, the value 1516925490.087 represents Friday, January
+     * 26, 2018 12:11:30.087 AM.</p>
      */
     inline bool CreationDateHasBeenSet() const { return m_creationDateHasBeenSet; }
 
     /**
      * <p>The date and time a copy job is created, in Unix format and Coordinated
-     * Universal Time (UTC). The value of CreationDate is accurate to milliseconds. For
-     * example, the value 1516925490.087 represents Friday, January 26, 2018
-     * 12:11:30.087 AM. </p>
+     * Universal Time (UTC). The value of <code>CreationDate</code> is accurate to
+     * milliseconds. For example, the value 1516925490.087 represents Friday, January
+     * 26, 2018 12:11:30.087 AM.</p>
      */
     inline void SetCreationDate(const Aws::Utils::DateTime& value) { m_creationDateHasBeenSet = true; m_creationDate = value; }
 
     /**
      * <p>The date and time a copy job is created, in Unix format and Coordinated
-     * Universal Time (UTC). The value of CreationDate is accurate to milliseconds. For
-     * example, the value 1516925490.087 represents Friday, January 26, 2018
-     * 12:11:30.087 AM. </p>
+     * Universal Time (UTC). The value of <code>CreationDate</code> is accurate to
+     * milliseconds. For example, the value 1516925490.087 represents Friday, January
+     * 26, 2018 12:11:30.087 AM.</p>
      */
     inline void SetCreationDate(Aws::Utils::DateTime&& value) { m_creationDateHasBeenSet = true; m_creationDate = std::move(value); }
 
     /**
      * <p>The date and time a copy job is created, in Unix format and Coordinated
-     * Universal Time (UTC). The value of CreationDate is accurate to milliseconds. For
-     * example, the value 1516925490.087 represents Friday, January 26, 2018
-     * 12:11:30.087 AM. </p>
+     * Universal Time (UTC). The value of <code>CreationDate</code> is accurate to
+     * milliseconds. For example, the value 1516925490.087 represents Friday, January
+     * 26, 2018 12:11:30.087 AM.</p>
      */
     inline CopyJob& WithCreationDate(const Aws::Utils::DateTime& value) { SetCreationDate(value); return *this;}
 
     /**
      * <p>The date and time a copy job is created, in Unix format and Coordinated
-     * Universal Time (UTC). The value of CreationDate is accurate to milliseconds. For
-     * example, the value 1516925490.087 represents Friday, January 26, 2018
-     * 12:11:30.087 AM. </p>
+     * Universal Time (UTC). The value of <code>CreationDate</code> is accurate to
+     * milliseconds. For example, the value 1516925490.087 represents Friday, January
+     * 26, 2018 12:11:30.087 AM.</p>
      */
     inline CopyJob& WithCreationDate(Aws::Utils::DateTime&& value) { SetCreationDate(std::move(value)); return *this;}
 
 
     /**
      * <p>The date and time a copy job is completed, in Unix format and Coordinated
-     * Universal Time (UTC). The value of CompletionDate is accurate to milliseconds.
-     * For example, the value 1516925490.087 represents Friday, January 26, 2018
-     * 12:11:30.087 AM. </p>
+     * Universal Time (UTC). The value of <code>CompletionDate</code> is accurate to
+     * milliseconds. For example, the value 1516925490.087 represents Friday, January
+     * 26, 2018 12:11:30.087 AM.</p>
      */
     inline const Aws::Utils::DateTime& GetCompletionDate() const{ return m_completionDate; }
 
     /**
      * <p>The date and time a copy job is completed, in Unix format and Coordinated
-     * Universal Time (UTC). The value of CompletionDate is accurate to milliseconds.
-     * For example, the value 1516925490.087 represents Friday, January 26, 2018
-     * 12:11:30.087 AM. </p>
+     * Universal Time (UTC). The value of <code>CompletionDate</code> is accurate to
+     * milliseconds. For example, the value 1516925490.087 represents Friday, January
+     * 26, 2018 12:11:30.087 AM.</p>
      */
     inline bool CompletionDateHasBeenSet() const { return m_completionDateHasBeenSet; }
 
     /**
      * <p>The date and time a copy job is completed, in Unix format and Coordinated
-     * Universal Time (UTC). The value of CompletionDate is accurate to milliseconds.
-     * For example, the value 1516925490.087 represents Friday, January 26, 2018
-     * 12:11:30.087 AM. </p>
+     * Universal Time (UTC). The value of <code>CompletionDate</code> is accurate to
+     * milliseconds. For example, the value 1516925490.087 represents Friday, January
+     * 26, 2018 12:11:30.087 AM.</p>
      */
     inline void SetCompletionDate(const Aws::Utils::DateTime& value) { m_completionDateHasBeenSet = true; m_completionDate = value; }
 
     /**
      * <p>The date and time a copy job is completed, in Unix format and Coordinated
-     * Universal Time (UTC). The value of CompletionDate is accurate to milliseconds.
-     * For example, the value 1516925490.087 represents Friday, January 26, 2018
-     * 12:11:30.087 AM. </p>
+     * Universal Time (UTC). The value of <code>CompletionDate</code> is accurate to
+     * milliseconds. For example, the value 1516925490.087 represents Friday, January
+     * 26, 2018 12:11:30.087 AM.</p>
      */
     inline void SetCompletionDate(Aws::Utils::DateTime&& value) { m_completionDateHasBeenSet = true; m_completionDate = std::move(value); }
 
     /**
      * <p>The date and time a copy job is completed, in Unix format and Coordinated
-     * Universal Time (UTC). The value of CompletionDate is accurate to milliseconds.
-     * For example, the value 1516925490.087 represents Friday, January 26, 2018
-     * 12:11:30.087 AM. </p>
+     * Universal Time (UTC). The value of <code>CompletionDate</code> is accurate to
+     * milliseconds. For example, the value 1516925490.087 represents Friday, January
+     * 26, 2018 12:11:30.087 AM.</p>
      */
     inline CopyJob& WithCompletionDate(const Aws::Utils::DateTime& value) { SetCompletionDate(value); return *this;}
 
     /**
      * <p>The date and time a copy job is completed, in Unix format and Coordinated
-     * Universal Time (UTC). The value of CompletionDate is accurate to milliseconds.
-     * For example, the value 1516925490.087 represents Friday, January 26, 2018
-     * 12:11:30.087 AM. </p>
+     * Universal Time (UTC). The value of <code>CompletionDate</code> is accurate to
+     * milliseconds. For example, the value 1516925490.087 represents Friday, January
+     * 26, 2018 12:11:30.087 AM.</p>
      */
     inline CopyJob& WithCompletionDate(Aws::Utils::DateTime&& value) { SetCompletionDate(std::move(value)); return *this;}
 
@@ -676,6 +717,9 @@ namespace Model
     inline CopyJob& WithResourceType(const char* value) { SetResourceType(value); return *this;}
 
   private:
+
+    Aws::String m_accountId;
+    bool m_accountIdHasBeenSet;
 
     Aws::String m_copyJobId;
     bool m_copyJobIdHasBeenSet;

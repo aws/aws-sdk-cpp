@@ -29,6 +29,7 @@ namespace Model
 {
 
 BackupJob::BackupJob() : 
+    m_accountIdHasBeenSet(false),
     m_backupJobIdHasBeenSet(false),
     m_backupVaultNameHasBeenSet(false),
     m_backupVaultArnHasBeenSet(false),
@@ -53,6 +54,7 @@ BackupJob::BackupJob() :
 }
 
 BackupJob::BackupJob(JsonView jsonValue) : 
+    m_accountIdHasBeenSet(false),
     m_backupJobIdHasBeenSet(false),
     m_backupVaultNameHasBeenSet(false),
     m_backupVaultArnHasBeenSet(false),
@@ -79,6 +81,13 @@ BackupJob::BackupJob(JsonView jsonValue) :
 
 BackupJob& BackupJob::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("AccountId"))
+  {
+    m_accountId = jsonValue.GetString("AccountId");
+
+    m_accountIdHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("BackupJobId"))
   {
     m_backupJobId = jsonValue.GetString("BackupJobId");
@@ -204,6 +213,12 @@ BackupJob& BackupJob::operator =(JsonView jsonValue)
 JsonValue BackupJob::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_accountIdHasBeenSet)
+  {
+   payload.WithString("AccountId", m_accountId);
+
+  }
 
   if(m_backupJobIdHasBeenSet)
   {

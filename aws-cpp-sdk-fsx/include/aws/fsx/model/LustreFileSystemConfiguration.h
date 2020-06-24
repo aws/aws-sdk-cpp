@@ -127,32 +127,92 @@ namespace Model
 
 
     /**
-     * <p>The deployment type of the FSX for Lustre file system.</p>
+     * <p>The deployment type of the FSX for Lustre file system. <i>Scratch deployment
+     * type</i> is designed for temporary storage and shorter-term processing of
+     * data.</p> <p> <code>SCRATCH_1</code> and <code>SCRATCH_2</code> deployment types
+     * are best suited for when you need temporary storage and shorter-term processing
+     * of data. The <code>SCRATCH_2</code> deployment type provides in-transit
+     * encryption of data and higher burst throughput capacity than
+     * <code>SCRATCH_1</code>.</p> <p>The <code>PERSISTENT_1</code> deployment type is
+     * used for longer-term storage and workloads and encryption of data in transit. To
+     * learn more about deployment types, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/lustre-deployment-types.html">
+     * FSx for Lustre Deployment Options</a>. (Default = <code>SCRATCH_1</code>)</p>
      */
     inline const LustreDeploymentType& GetDeploymentType() const{ return m_deploymentType; }
 
     /**
-     * <p>The deployment type of the FSX for Lustre file system.</p>
+     * <p>The deployment type of the FSX for Lustre file system. <i>Scratch deployment
+     * type</i> is designed for temporary storage and shorter-term processing of
+     * data.</p> <p> <code>SCRATCH_1</code> and <code>SCRATCH_2</code> deployment types
+     * are best suited for when you need temporary storage and shorter-term processing
+     * of data. The <code>SCRATCH_2</code> deployment type provides in-transit
+     * encryption of data and higher burst throughput capacity than
+     * <code>SCRATCH_1</code>.</p> <p>The <code>PERSISTENT_1</code> deployment type is
+     * used for longer-term storage and workloads and encryption of data in transit. To
+     * learn more about deployment types, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/lustre-deployment-types.html">
+     * FSx for Lustre Deployment Options</a>. (Default = <code>SCRATCH_1</code>)</p>
      */
     inline bool DeploymentTypeHasBeenSet() const { return m_deploymentTypeHasBeenSet; }
 
     /**
-     * <p>The deployment type of the FSX for Lustre file system.</p>
+     * <p>The deployment type of the FSX for Lustre file system. <i>Scratch deployment
+     * type</i> is designed for temporary storage and shorter-term processing of
+     * data.</p> <p> <code>SCRATCH_1</code> and <code>SCRATCH_2</code> deployment types
+     * are best suited for when you need temporary storage and shorter-term processing
+     * of data. The <code>SCRATCH_2</code> deployment type provides in-transit
+     * encryption of data and higher burst throughput capacity than
+     * <code>SCRATCH_1</code>.</p> <p>The <code>PERSISTENT_1</code> deployment type is
+     * used for longer-term storage and workloads and encryption of data in transit. To
+     * learn more about deployment types, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/lustre-deployment-types.html">
+     * FSx for Lustre Deployment Options</a>. (Default = <code>SCRATCH_1</code>)</p>
      */
     inline void SetDeploymentType(const LustreDeploymentType& value) { m_deploymentTypeHasBeenSet = true; m_deploymentType = value; }
 
     /**
-     * <p>The deployment type of the FSX for Lustre file system.</p>
+     * <p>The deployment type of the FSX for Lustre file system. <i>Scratch deployment
+     * type</i> is designed for temporary storage and shorter-term processing of
+     * data.</p> <p> <code>SCRATCH_1</code> and <code>SCRATCH_2</code> deployment types
+     * are best suited for when you need temporary storage and shorter-term processing
+     * of data. The <code>SCRATCH_2</code> deployment type provides in-transit
+     * encryption of data and higher burst throughput capacity than
+     * <code>SCRATCH_1</code>.</p> <p>The <code>PERSISTENT_1</code> deployment type is
+     * used for longer-term storage and workloads and encryption of data in transit. To
+     * learn more about deployment types, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/lustre-deployment-types.html">
+     * FSx for Lustre Deployment Options</a>. (Default = <code>SCRATCH_1</code>)</p>
      */
     inline void SetDeploymentType(LustreDeploymentType&& value) { m_deploymentTypeHasBeenSet = true; m_deploymentType = std::move(value); }
 
     /**
-     * <p>The deployment type of the FSX for Lustre file system.</p>
+     * <p>The deployment type of the FSX for Lustre file system. <i>Scratch deployment
+     * type</i> is designed for temporary storage and shorter-term processing of
+     * data.</p> <p> <code>SCRATCH_1</code> and <code>SCRATCH_2</code> deployment types
+     * are best suited for when you need temporary storage and shorter-term processing
+     * of data. The <code>SCRATCH_2</code> deployment type provides in-transit
+     * encryption of data and higher burst throughput capacity than
+     * <code>SCRATCH_1</code>.</p> <p>The <code>PERSISTENT_1</code> deployment type is
+     * used for longer-term storage and workloads and encryption of data in transit. To
+     * learn more about deployment types, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/lustre-deployment-types.html">
+     * FSx for Lustre Deployment Options</a>. (Default = <code>SCRATCH_1</code>)</p>
      */
     inline LustreFileSystemConfiguration& WithDeploymentType(const LustreDeploymentType& value) { SetDeploymentType(value); return *this;}
 
     /**
-     * <p>The deployment type of the FSX for Lustre file system.</p>
+     * <p>The deployment type of the FSX for Lustre file system. <i>Scratch deployment
+     * type</i> is designed for temporary storage and shorter-term processing of
+     * data.</p> <p> <code>SCRATCH_1</code> and <code>SCRATCH_2</code> deployment types
+     * are best suited for when you need temporary storage and shorter-term processing
+     * of data. The <code>SCRATCH_2</code> deployment type provides in-transit
+     * encryption of data and higher burst throughput capacity than
+     * <code>SCRATCH_1</code>.</p> <p>The <code>PERSISTENT_1</code> deployment type is
+     * used for longer-term storage and workloads and encryption of data in transit. To
+     * learn more about deployment types, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/lustre-deployment-types.html">
+     * FSx for Lustre Deployment Options</a>. (Default = <code>SCRATCH_1</code>)</p>
      */
     inline LustreFileSystemConfiguration& WithDeploymentType(LustreDeploymentType&& value) { SetDeploymentType(std::move(value)); return *this;}
 
@@ -266,6 +326,89 @@ namespace Model
      */
     inline LustreFileSystemConfiguration& WithMountName(const char* value) { SetMountName(value); return *this;}
 
+
+    
+    inline const Aws::String& GetDailyAutomaticBackupStartTime() const{ return m_dailyAutomaticBackupStartTime; }
+
+    
+    inline bool DailyAutomaticBackupStartTimeHasBeenSet() const { return m_dailyAutomaticBackupStartTimeHasBeenSet; }
+
+    
+    inline void SetDailyAutomaticBackupStartTime(const Aws::String& value) { m_dailyAutomaticBackupStartTimeHasBeenSet = true; m_dailyAutomaticBackupStartTime = value; }
+
+    
+    inline void SetDailyAutomaticBackupStartTime(Aws::String&& value) { m_dailyAutomaticBackupStartTimeHasBeenSet = true; m_dailyAutomaticBackupStartTime = std::move(value); }
+
+    
+    inline void SetDailyAutomaticBackupStartTime(const char* value) { m_dailyAutomaticBackupStartTimeHasBeenSet = true; m_dailyAutomaticBackupStartTime.assign(value); }
+
+    
+    inline LustreFileSystemConfiguration& WithDailyAutomaticBackupStartTime(const Aws::String& value) { SetDailyAutomaticBackupStartTime(value); return *this;}
+
+    
+    inline LustreFileSystemConfiguration& WithDailyAutomaticBackupStartTime(Aws::String&& value) { SetDailyAutomaticBackupStartTime(std::move(value)); return *this;}
+
+    
+    inline LustreFileSystemConfiguration& WithDailyAutomaticBackupStartTime(const char* value) { SetDailyAutomaticBackupStartTime(value); return *this;}
+
+
+    
+    inline int GetAutomaticBackupRetentionDays() const{ return m_automaticBackupRetentionDays; }
+
+    
+    inline bool AutomaticBackupRetentionDaysHasBeenSet() const { return m_automaticBackupRetentionDaysHasBeenSet; }
+
+    
+    inline void SetAutomaticBackupRetentionDays(int value) { m_automaticBackupRetentionDaysHasBeenSet = true; m_automaticBackupRetentionDays = value; }
+
+    
+    inline LustreFileSystemConfiguration& WithAutomaticBackupRetentionDays(int value) { SetAutomaticBackupRetentionDays(value); return *this;}
+
+
+    /**
+     * <p>A boolean flag indicating whether tags on the file system should be copied to
+     * backups. If it's set to true, all tags on the file system are copied to all
+     * automatic backups and any user-initiated backups where the user doesn't specify
+     * any tags. If this value is true, and you specify one or more tags, only the
+     * specified tags are copied to backups. If you specify one or more tags when
+     * creating a user-initiated backup, no tags are copied from the file system,
+     * regardless of this value. (Default = false)</p>
+     */
+    inline bool GetCopyTagsToBackups() const{ return m_copyTagsToBackups; }
+
+    /**
+     * <p>A boolean flag indicating whether tags on the file system should be copied to
+     * backups. If it's set to true, all tags on the file system are copied to all
+     * automatic backups and any user-initiated backups where the user doesn't specify
+     * any tags. If this value is true, and you specify one or more tags, only the
+     * specified tags are copied to backups. If you specify one or more tags when
+     * creating a user-initiated backup, no tags are copied from the file system,
+     * regardless of this value. (Default = false)</p>
+     */
+    inline bool CopyTagsToBackupsHasBeenSet() const { return m_copyTagsToBackupsHasBeenSet; }
+
+    /**
+     * <p>A boolean flag indicating whether tags on the file system should be copied to
+     * backups. If it's set to true, all tags on the file system are copied to all
+     * automatic backups and any user-initiated backups where the user doesn't specify
+     * any tags. If this value is true, and you specify one or more tags, only the
+     * specified tags are copied to backups. If you specify one or more tags when
+     * creating a user-initiated backup, no tags are copied from the file system,
+     * regardless of this value. (Default = false)</p>
+     */
+    inline void SetCopyTagsToBackups(bool value) { m_copyTagsToBackupsHasBeenSet = true; m_copyTagsToBackups = value; }
+
+    /**
+     * <p>A boolean flag indicating whether tags on the file system should be copied to
+     * backups. If it's set to true, all tags on the file system are copied to all
+     * automatic backups and any user-initiated backups where the user doesn't specify
+     * any tags. If this value is true, and you specify one or more tags, only the
+     * specified tags are copied to backups. If you specify one or more tags when
+     * creating a user-initiated backup, no tags are copied from the file system,
+     * regardless of this value. (Default = false)</p>
+     */
+    inline LustreFileSystemConfiguration& WithCopyTagsToBackups(bool value) { SetCopyTagsToBackups(value); return *this;}
+
   private:
 
     Aws::String m_weeklyMaintenanceStartTime;
@@ -282,6 +425,15 @@ namespace Model
 
     Aws::String m_mountName;
     bool m_mountNameHasBeenSet;
+
+    Aws::String m_dailyAutomaticBackupStartTime;
+    bool m_dailyAutomaticBackupStartTimeHasBeenSet;
+
+    int m_automaticBackupRetentionDays;
+    bool m_automaticBackupRetentionDaysHasBeenSet;
+
+    bool m_copyTagsToBackups;
+    bool m_copyTagsToBackupsHasBeenSet;
   };
 
 } // namespace Model

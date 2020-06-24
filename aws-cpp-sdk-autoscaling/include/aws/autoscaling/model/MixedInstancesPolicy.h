@@ -45,7 +45,7 @@ namespace Model
    * instances policy for a new Auto Scaling group, or you can create it for an
    * existing group by updating the group to specify
    * <code>MixedInstancesPolicy</code> as the top-level parameter instead of a launch
-   * configuration or template. For more information, see
+   * configuration or launch template. For more information, see
    * <a>CreateAutoScalingGroup</a> and <a>UpdateAutoScalingGroup</a>.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/MixedInstancesPolicy">AWS
@@ -63,38 +63,38 @@ namespace Model
 
 
     /**
-     * <p>The launch template and instance types (overrides).</p> <p>This parameter
-     * must be specified when creating a mixed instances policy.</p>
+     * <p>The launch template and instance types (overrides).</p> <p>Required when
+     * creating a mixed instances policy.</p>
      */
     inline const LaunchTemplate& GetLaunchTemplate() const{ return m_launchTemplate; }
 
     /**
-     * <p>The launch template and instance types (overrides).</p> <p>This parameter
-     * must be specified when creating a mixed instances policy.</p>
+     * <p>The launch template and instance types (overrides).</p> <p>Required when
+     * creating a mixed instances policy.</p>
      */
     inline bool LaunchTemplateHasBeenSet() const { return m_launchTemplateHasBeenSet; }
 
     /**
-     * <p>The launch template and instance types (overrides).</p> <p>This parameter
-     * must be specified when creating a mixed instances policy.</p>
+     * <p>The launch template and instance types (overrides).</p> <p>Required when
+     * creating a mixed instances policy.</p>
      */
     inline void SetLaunchTemplate(const LaunchTemplate& value) { m_launchTemplateHasBeenSet = true; m_launchTemplate = value; }
 
     /**
-     * <p>The launch template and instance types (overrides).</p> <p>This parameter
-     * must be specified when creating a mixed instances policy.</p>
+     * <p>The launch template and instance types (overrides).</p> <p>Required when
+     * creating a mixed instances policy.</p>
      */
     inline void SetLaunchTemplate(LaunchTemplate&& value) { m_launchTemplateHasBeenSet = true; m_launchTemplate = std::move(value); }
 
     /**
-     * <p>The launch template and instance types (overrides).</p> <p>This parameter
-     * must be specified when creating a mixed instances policy.</p>
+     * <p>The launch template and instance types (overrides).</p> <p>Required when
+     * creating a mixed instances policy.</p>
      */
     inline MixedInstancesPolicy& WithLaunchTemplate(const LaunchTemplate& value) { SetLaunchTemplate(value); return *this;}
 
     /**
-     * <p>The launch template and instance types (overrides).</p> <p>This parameter
-     * must be specified when creating a mixed instances policy.</p>
+     * <p>The launch template and instance types (overrides).</p> <p>Required when
+     * creating a mixed instances policy.</p>
      */
     inline MixedInstancesPolicy& WithLaunchTemplate(LaunchTemplate&& value) { SetLaunchTemplate(std::move(value)); return *this;}
 

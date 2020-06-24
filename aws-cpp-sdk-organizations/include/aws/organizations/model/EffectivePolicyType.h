@@ -26,7 +26,8 @@ namespace Model
   enum class EffectivePolicyType
   {
     NOT_SET,
-    TAG_POLICY
+    TAG_POLICY,
+    BACKUP_POLICY
   };
 
 namespace EffectivePolicyTypeMapper

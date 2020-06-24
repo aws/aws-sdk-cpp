@@ -36,7 +36,7 @@ namespace Model
 {
 
   /**
-   * <p> Structure for an execution job for an Amplify App. </p><p><h3>See Also:</h3>
+   * <p> Describes an execution job for an Amplify app. </p><p><h3>See Also:</h3>  
    * <a href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/Job">AWS API
    * Reference</a></p>
    */
@@ -50,73 +50,73 @@ namespace Model
 
 
     /**
-     * <p> Summary for an execution job for an Amplify App. </p>
+     * <p> Describes the summary for an execution job for an Amplify app. </p>
      */
     inline const JobSummary& GetSummary() const{ return m_summary; }
 
     /**
-     * <p> Summary for an execution job for an Amplify App. </p>
+     * <p> Describes the summary for an execution job for an Amplify app. </p>
      */
     inline bool SummaryHasBeenSet() const { return m_summaryHasBeenSet; }
 
     /**
-     * <p> Summary for an execution job for an Amplify App. </p>
+     * <p> Describes the summary for an execution job for an Amplify app. </p>
      */
     inline void SetSummary(const JobSummary& value) { m_summaryHasBeenSet = true; m_summary = value; }
 
     /**
-     * <p> Summary for an execution job for an Amplify App. </p>
+     * <p> Describes the summary for an execution job for an Amplify app. </p>
      */
     inline void SetSummary(JobSummary&& value) { m_summaryHasBeenSet = true; m_summary = std::move(value); }
 
     /**
-     * <p> Summary for an execution job for an Amplify App. </p>
+     * <p> Describes the summary for an execution job for an Amplify app. </p>
      */
     inline Job& WithSummary(const JobSummary& value) { SetSummary(value); return *this;}
 
     /**
-     * <p> Summary for an execution job for an Amplify App. </p>
+     * <p> Describes the summary for an execution job for an Amplify app. </p>
      */
     inline Job& WithSummary(JobSummary&& value) { SetSummary(std::move(value)); return *this;}
 
 
     /**
-     * <p> Execution steps for an execution job, for an Amplify App. </p>
+     * <p> The execution steps for an execution job, for an Amplify app. </p>
      */
     inline const Aws::Vector<Step>& GetSteps() const{ return m_steps; }
 
     /**
-     * <p> Execution steps for an execution job, for an Amplify App. </p>
+     * <p> The execution steps for an execution job, for an Amplify app. </p>
      */
     inline bool StepsHasBeenSet() const { return m_stepsHasBeenSet; }
 
     /**
-     * <p> Execution steps for an execution job, for an Amplify App. </p>
+     * <p> The execution steps for an execution job, for an Amplify app. </p>
      */
     inline void SetSteps(const Aws::Vector<Step>& value) { m_stepsHasBeenSet = true; m_steps = value; }
 
     /**
-     * <p> Execution steps for an execution job, for an Amplify App. </p>
+     * <p> The execution steps for an execution job, for an Amplify app. </p>
      */
     inline void SetSteps(Aws::Vector<Step>&& value) { m_stepsHasBeenSet = true; m_steps = std::move(value); }
 
     /**
-     * <p> Execution steps for an execution job, for an Amplify App. </p>
+     * <p> The execution steps for an execution job, for an Amplify app. </p>
      */
     inline Job& WithSteps(const Aws::Vector<Step>& value) { SetSteps(value); return *this;}
 
     /**
-     * <p> Execution steps for an execution job, for an Amplify App. </p>
+     * <p> The execution steps for an execution job, for an Amplify app. </p>
      */
     inline Job& WithSteps(Aws::Vector<Step>&& value) { SetSteps(std::move(value)); return *this;}
 
     /**
-     * <p> Execution steps for an execution job, for an Amplify App. </p>
+     * <p> The execution steps for an execution job, for an Amplify app. </p>
      */
     inline Job& AddSteps(const Step& value) { m_stepsHasBeenSet = true; m_steps.push_back(value); return *this; }
 
     /**
-     * <p> Execution steps for an execution job, for an Amplify App. </p>
+     * <p> The execution steps for an execution job, for an Amplify app. </p>
      */
     inline Job& AddSteps(Step&& value) { m_stepsHasBeenSet = true; m_steps.push_back(std::move(value)); return *this; }
 

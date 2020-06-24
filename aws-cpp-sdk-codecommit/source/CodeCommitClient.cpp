@@ -57,6 +57,7 @@
 #include <aws/codecommit/model/GetBlobRequest.h>
 #include <aws/codecommit/model/GetBranchRequest.h>
 #include <aws/codecommit/model/GetCommentRequest.h>
+#include <aws/codecommit/model/GetCommentReactionsRequest.h>
 #include <aws/codecommit/model/GetCommentsForComparedCommitRequest.h>
 #include <aws/codecommit/model/GetCommentsForPullRequestRequest.h>
 #include <aws/codecommit/model/GetCommitRequest.h>
@@ -88,6 +89,7 @@
 #include <aws/codecommit/model/PostCommentForComparedCommitRequest.h>
 #include <aws/codecommit/model/PostCommentForPullRequestRequest.h>
 #include <aws/codecommit/model/PostCommentReplyRequest.h>
+#include <aws/codecommit/model/PutCommentReactionRequest.h>
 #include <aws/codecommit/model/PutFileRequest.h>
 #include <aws/codecommit/model/PutRepositoryTriggersRequest.h>
 #include <aws/codecommit/model/TagResourceRequest.h>
@@ -1121,6 +1123,41 @@ void CodeCommitClient::GetCommentAsync(const GetCommentRequest& request, const G
 void CodeCommitClient::GetCommentAsyncHelper(const GetCommentRequest& request, const GetCommentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetComment(request), context);
+}
+
+GetCommentReactionsOutcome CodeCommitClient::GetCommentReactions(const GetCommentReactionsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return GetCommentReactionsOutcome(GetCommentReactionsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetCommentReactionsOutcome(outcome.GetError());
+  }
+}
+
+GetCommentReactionsOutcomeCallable CodeCommitClient::GetCommentReactionsCallable(const GetCommentReactionsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetCommentReactionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetCommentReactions(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CodeCommitClient::GetCommentReactionsAsync(const GetCommentReactionsRequest& request, const GetCommentReactionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetCommentReactionsAsyncHelper( request, handler, context ); } );
+}
+
+void CodeCommitClient::GetCommentReactionsAsyncHelper(const GetCommentReactionsRequest& request, const GetCommentReactionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetCommentReactions(request), context);
 }
 
 GetCommentsForComparedCommitOutcome CodeCommitClient::GetCommentsForComparedCommit(const GetCommentsForComparedCommitRequest& request) const
@@ -2206,6 +2243,41 @@ void CodeCommitClient::PostCommentReplyAsync(const PostCommentReplyRequest& requ
 void CodeCommitClient::PostCommentReplyAsyncHelper(const PostCommentReplyRequest& request, const PostCommentReplyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, PostCommentReply(request), context);
+}
+
+PutCommentReactionOutcome CodeCommitClient::PutCommentReaction(const PutCommentReactionRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return PutCommentReactionOutcome(NoResult());
+  }
+  else
+  {
+    return PutCommentReactionOutcome(outcome.GetError());
+  }
+}
+
+PutCommentReactionOutcomeCallable CodeCommitClient::PutCommentReactionCallable(const PutCommentReactionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< PutCommentReactionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutCommentReaction(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CodeCommitClient::PutCommentReactionAsync(const PutCommentReactionRequest& request, const PutCommentReactionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->PutCommentReactionAsyncHelper( request, handler, context ); } );
+}
+
+void CodeCommitClient::PutCommentReactionAsyncHelper(const PutCommentReactionRequest& request, const PutCommentReactionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, PutCommentReaction(request), context);
 }
 
 PutFileOutcome CodeCommitClient::PutFile(const PutFileRequest& request) const

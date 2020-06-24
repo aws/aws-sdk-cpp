@@ -50,6 +50,47 @@ namespace Model
 
 
     /**
+     * <p>The account ID that owns the restore job.</p>
+     */
+    inline const Aws::String& GetAccountId() const{ return m_accountId; }
+
+    /**
+     * <p>The account ID that owns the restore job.</p>
+     */
+    inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
+
+    /**
+     * <p>The account ID that owns the restore job.</p>
+     */
+    inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
+
+    /**
+     * <p>The account ID that owns the restore job.</p>
+     */
+    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
+
+    /**
+     * <p>The account ID that owns the restore job.</p>
+     */
+    inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
+
+    /**
+     * <p>The account ID that owns the restore job.</p>
+     */
+    inline RestoreJobsListMember& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
+
+    /**
+     * <p>The account ID that owns the restore job.</p>
+     */
+    inline RestoreJobsListMember& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
+
+    /**
+     * <p>The account ID that owns the restore job.</p>
+     */
+    inline RestoreJobsListMember& WithAccountId(const char* value) { SetAccountId(value); return *this;}
+
+
+    /**
      * <p>Uniquely identifies the job that restores a recovery point.</p>
      */
     inline const Aws::String& GetRestoreJobId() const{ return m_restoreJobId; }
@@ -515,7 +556,67 @@ namespace Model
      */
     inline RestoreJobsListMember& WithCreatedResourceArn(const char* value) { SetCreatedResourceArn(value); return *this;}
 
+
+    /**
+     * <p>The resource type of the listed restore jobs; for example, an Amazon Elastic
+     * Block Store (Amazon EBS) volume or an Amazon Relational Database Service (Amazon
+     * RDS) database.</p>
+     */
+    inline const Aws::String& GetResourceType() const{ return m_resourceType; }
+
+    /**
+     * <p>The resource type of the listed restore jobs; for example, an Amazon Elastic
+     * Block Store (Amazon EBS) volume or an Amazon Relational Database Service (Amazon
+     * RDS) database.</p>
+     */
+    inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
+
+    /**
+     * <p>The resource type of the listed restore jobs; for example, an Amazon Elastic
+     * Block Store (Amazon EBS) volume or an Amazon Relational Database Service (Amazon
+     * RDS) database.</p>
+     */
+    inline void SetResourceType(const Aws::String& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
+
+    /**
+     * <p>The resource type of the listed restore jobs; for example, an Amazon Elastic
+     * Block Store (Amazon EBS) volume or an Amazon Relational Database Service (Amazon
+     * RDS) database.</p>
+     */
+    inline void SetResourceType(Aws::String&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
+
+    /**
+     * <p>The resource type of the listed restore jobs; for example, an Amazon Elastic
+     * Block Store (Amazon EBS) volume or an Amazon Relational Database Service (Amazon
+     * RDS) database.</p>
+     */
+    inline void SetResourceType(const char* value) { m_resourceTypeHasBeenSet = true; m_resourceType.assign(value); }
+
+    /**
+     * <p>The resource type of the listed restore jobs; for example, an Amazon Elastic
+     * Block Store (Amazon EBS) volume or an Amazon Relational Database Service (Amazon
+     * RDS) database.</p>
+     */
+    inline RestoreJobsListMember& WithResourceType(const Aws::String& value) { SetResourceType(value); return *this;}
+
+    /**
+     * <p>The resource type of the listed restore jobs; for example, an Amazon Elastic
+     * Block Store (Amazon EBS) volume or an Amazon Relational Database Service (Amazon
+     * RDS) database.</p>
+     */
+    inline RestoreJobsListMember& WithResourceType(Aws::String&& value) { SetResourceType(std::move(value)); return *this;}
+
+    /**
+     * <p>The resource type of the listed restore jobs; for example, an Amazon Elastic
+     * Block Store (Amazon EBS) volume or an Amazon Relational Database Service (Amazon
+     * RDS) database.</p>
+     */
+    inline RestoreJobsListMember& WithResourceType(const char* value) { SetResourceType(value); return *this;}
+
   private:
+
+    Aws::String m_accountId;
+    bool m_accountIdHasBeenSet;
 
     Aws::String m_restoreJobId;
     bool m_restoreJobIdHasBeenSet;
@@ -549,6 +650,9 @@ namespace Model
 
     Aws::String m_createdResourceArn;
     bool m_createdResourceArnHasBeenSet;
+
+    Aws::String m_resourceType;
+    bool m_resourceTypeHasBeenSet;
   };
 
 } // namespace Model

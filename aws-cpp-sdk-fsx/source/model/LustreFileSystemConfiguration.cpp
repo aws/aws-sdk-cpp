@@ -35,7 +35,12 @@ LustreFileSystemConfiguration::LustreFileSystemConfiguration() :
     m_deploymentTypeHasBeenSet(false),
     m_perUnitStorageThroughput(0),
     m_perUnitStorageThroughputHasBeenSet(false),
-    m_mountNameHasBeenSet(false)
+    m_mountNameHasBeenSet(false),
+    m_dailyAutomaticBackupStartTimeHasBeenSet(false),
+    m_automaticBackupRetentionDays(0),
+    m_automaticBackupRetentionDaysHasBeenSet(false),
+    m_copyTagsToBackups(false),
+    m_copyTagsToBackupsHasBeenSet(false)
 {
 }
 
@@ -46,7 +51,12 @@ LustreFileSystemConfiguration::LustreFileSystemConfiguration(JsonView jsonValue)
     m_deploymentTypeHasBeenSet(false),
     m_perUnitStorageThroughput(0),
     m_perUnitStorageThroughputHasBeenSet(false),
-    m_mountNameHasBeenSet(false)
+    m_mountNameHasBeenSet(false),
+    m_dailyAutomaticBackupStartTimeHasBeenSet(false),
+    m_automaticBackupRetentionDays(0),
+    m_automaticBackupRetentionDaysHasBeenSet(false),
+    m_copyTagsToBackups(false),
+    m_copyTagsToBackupsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -88,6 +98,27 @@ LustreFileSystemConfiguration& LustreFileSystemConfiguration::operator =(JsonVie
     m_mountNameHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("DailyAutomaticBackupStartTime"))
+  {
+    m_dailyAutomaticBackupStartTime = jsonValue.GetString("DailyAutomaticBackupStartTime");
+
+    m_dailyAutomaticBackupStartTimeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AutomaticBackupRetentionDays"))
+  {
+    m_automaticBackupRetentionDays = jsonValue.GetInteger("AutomaticBackupRetentionDays");
+
+    m_automaticBackupRetentionDaysHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("CopyTagsToBackups"))
+  {
+    m_copyTagsToBackups = jsonValue.GetBool("CopyTagsToBackups");
+
+    m_copyTagsToBackupsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -121,6 +152,24 @@ JsonValue LustreFileSystemConfiguration::Jsonize() const
   if(m_mountNameHasBeenSet)
   {
    payload.WithString("MountName", m_mountName);
+
+  }
+
+  if(m_dailyAutomaticBackupStartTimeHasBeenSet)
+  {
+   payload.WithString("DailyAutomaticBackupStartTime", m_dailyAutomaticBackupStartTime);
+
+  }
+
+  if(m_automaticBackupRetentionDaysHasBeenSet)
+  {
+   payload.WithInteger("AutomaticBackupRetentionDays", m_automaticBackupRetentionDays);
+
+  }
+
+  if(m_copyTagsToBackupsHasBeenSet)
+  {
+   payload.WithBool("CopyTagsToBackups", m_copyTagsToBackups);
 
   }
 

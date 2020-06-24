@@ -44,6 +44,12 @@ DescribeRestoreJobResult::DescribeRestoreJobResult(const Aws::AmazonWebServiceRe
 DescribeRestoreJobResult& DescribeRestoreJobResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
+  if(jsonValue.ValueExists("AccountId"))
+  {
+    m_accountId = jsonValue.GetString("AccountId");
+
+  }
+
   if(jsonValue.ValueExists("RestoreJobId"))
   {
     m_restoreJobId = jsonValue.GetString("RestoreJobId");
@@ -107,6 +113,12 @@ DescribeRestoreJobResult& DescribeRestoreJobResult::operator =(const Aws::Amazon
   if(jsonValue.ValueExists("CreatedResourceArn"))
   {
     m_createdResourceArn = jsonValue.GetString("CreatedResourceArn");
+
+  }
+
+  if(jsonValue.ValueExists("ResourceType"))
+  {
+    m_resourceType = jsonValue.GetString("ResourceType");
 
   }
 

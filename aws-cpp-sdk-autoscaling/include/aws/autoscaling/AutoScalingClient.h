@@ -723,7 +723,7 @@ namespace Model
         virtual void CompleteLifecycleActionAsync(const Model::CompleteLifecycleActionRequest& request, const CompleteLifecycleActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates an Auto Scaling group with the specified name and attributes.</p>
+         * <p>Creates an Auto Scaling group with the specified name and attributes. </p>
          * <p>If you exceed your maximum limit of Auto Scaling groups, the call fails. To
          * query this limit, call the <a>DescribeAccountLimits</a> API. For information
          * about updating this limit, see <a
@@ -745,7 +745,7 @@ namespace Model
         virtual Model::CreateAutoScalingGroupOutcome CreateAutoScalingGroup(const Model::CreateAutoScalingGroupRequest& request) const;
 
         /**
-         * <p>Creates an Auto Scaling group with the specified name and attributes.</p>
+         * <p>Creates an Auto Scaling group with the specified name and attributes. </p>
          * <p>If you exceed your maximum limit of Auto Scaling groups, the call fails. To
          * query this limit, call the <a>DescribeAccountLimits</a> API. For information
          * about updating this limit, see <a
@@ -769,7 +769,7 @@ namespace Model
         virtual Model::CreateAutoScalingGroupOutcomeCallable CreateAutoScalingGroupCallable(const Model::CreateAutoScalingGroupRequest& request) const;
 
         /**
-         * <p>Creates an Auto Scaling group with the specified name and attributes.</p>
+         * <p>Creates an Auto Scaling group with the specified name and attributes. </p>
          * <p>If you exceed your maximum limit of Auto Scaling groups, the call fails. To
          * query this limit, call the <a>DescribeAccountLimits</a> API. For information
          * about updating this limit, see <a
@@ -1295,7 +1295,10 @@ namespace Model
          * <code>Cancelling</code> - An ongoing operation is being cancelled. Cancellation
          * does not roll back any replacements that have already been completed, but it
          * prevents new replacements from being started. </p> </li> <li> <p>
-         * <code>Cancelled</code> - The operation is cancelled. </p> </li> </ul><p><h3>See
+         * <code>Cancelled</code> - The operation is cancelled. </p> </li> </ul> <p>For
+         * more information, see <a
+         * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-refresh.html">Replacing
+         * Auto Scaling Instances Based on an Instance Refresh</a>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeInstanceRefreshes">AWS
          * API Reference</a></p>
@@ -1314,7 +1317,10 @@ namespace Model
          * <code>Cancelling</code> - An ongoing operation is being cancelled. Cancellation
          * does not roll back any replacements that have already been completed, but it
          * prevents new replacements from being started. </p> </li> <li> <p>
-         * <code>Cancelled</code> - The operation is cancelled. </p> </li> </ul><p><h3>See
+         * <code>Cancelled</code> - The operation is cancelled. </p> </li> </ul> <p>For
+         * more information, see <a
+         * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-refresh.html">Replacing
+         * Auto Scaling Instances Based on an Instance Refresh</a>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeInstanceRefreshes">AWS
          * API Reference</a></p>
@@ -1335,7 +1341,10 @@ namespace Model
          * <code>Cancelling</code> - An ongoing operation is being cancelled. Cancellation
          * does not roll back any replacements that have already been completed, but it
          * prevents new replacements from being started. </p> </li> <li> <p>
-         * <code>Cancelled</code> - The operation is cancelled. </p> </li> </ul><p><h3>See
+         * <code>Cancelled</code> - The operation is cancelled. </p> </li> </ul> <p>For
+         * more information, see <a
+         * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-refresh.html">Replacing
+         * Auto Scaling Instances Based on an Instance Refresh</a>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeInstanceRefreshes">AWS
          * API Reference</a></p>
@@ -2554,8 +2563,8 @@ namespace Model
          * request with a unique ID that you can use to track its progress. To query its
          * status, call the <a>DescribeInstanceRefreshes</a> API. To describe the instance
          * refreshes that have already run, call the <a>DescribeInstanceRefreshes</a> API.
-         * To cancel an active instance refresh operation, use the
-         * <a>CancelInstanceRefresh</a> API.</p> <p>For more information, see <a
+         * To cancel an instance refresh operation in progress, use the
+         * <a>CancelInstanceRefresh</a> API. </p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-refresh.html">Replacing
          * Auto Scaling Instances Based on an Instance Refresh</a>.</p><p><h3>See
          * Also:</h3>   <a
@@ -2571,8 +2580,8 @@ namespace Model
          * request with a unique ID that you can use to track its progress. To query its
          * status, call the <a>DescribeInstanceRefreshes</a> API. To describe the instance
          * refreshes that have already run, call the <a>DescribeInstanceRefreshes</a> API.
-         * To cancel an active instance refresh operation, use the
-         * <a>CancelInstanceRefresh</a> API.</p> <p>For more information, see <a
+         * To cancel an instance refresh operation in progress, use the
+         * <a>CancelInstanceRefresh</a> API. </p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-refresh.html">Replacing
          * Auto Scaling Instances Based on an Instance Refresh</a>.</p><p><h3>See
          * Also:</h3>   <a
@@ -2590,8 +2599,8 @@ namespace Model
          * request with a unique ID that you can use to track its progress. To query its
          * status, call the <a>DescribeInstanceRefreshes</a> API. To describe the instance
          * refreshes that have already run, call the <a>DescribeInstanceRefreshes</a> API.
-         * To cancel an active instance refresh operation, use the
-         * <a>CancelInstanceRefresh</a> API.</p> <p>For more information, see <a
+         * To cancel an instance refresh operation in progress, use the
+         * <a>CancelInstanceRefresh</a> API. </p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-refresh.html">Replacing
          * Auto Scaling Instances Based on an Instance Refresh</a>.</p><p><h3>See
          * Also:</h3>   <a

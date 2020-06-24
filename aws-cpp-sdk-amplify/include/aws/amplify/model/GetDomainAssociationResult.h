@@ -35,7 +35,7 @@ namespace Amplify
 namespace Model
 {
   /**
-   * <p> Result structure for the get Domain Association request. </p><p><h3>See
+   * <p> The result structure for the get domain association request. </p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/GetDomainAssociationResult">AWS
    * API Reference</a></p>
@@ -49,27 +49,32 @@ namespace Model
 
 
     /**
-     * <p> Domain Association structure. </p>
+     * <p> Describes the structure of a domain association, which associates a custom
+     * domain with an Amplify app. </p>
      */
     inline const DomainAssociation& GetDomainAssociation() const{ return m_domainAssociation; }
 
     /**
-     * <p> Domain Association structure. </p>
+     * <p> Describes the structure of a domain association, which associates a custom
+     * domain with an Amplify app. </p>
      */
     inline void SetDomainAssociation(const DomainAssociation& value) { m_domainAssociation = value; }
 
     /**
-     * <p> Domain Association structure. </p>
+     * <p> Describes the structure of a domain association, which associates a custom
+     * domain with an Amplify app. </p>
      */
     inline void SetDomainAssociation(DomainAssociation&& value) { m_domainAssociation = std::move(value); }
 
     /**
-     * <p> Domain Association structure. </p>
+     * <p> Describes the structure of a domain association, which associates a custom
+     * domain with an Amplify app. </p>
      */
     inline GetDomainAssociationResult& WithDomainAssociation(const DomainAssociation& value) { SetDomainAssociation(value); return *this;}
 
     /**
-     * <p> Domain Association structure. </p>
+     * <p> Describes the structure of a domain association, which associates a custom
+     * domain with an Amplify app. </p>
      */
     inline GetDomainAssociationResult& WithDomainAssociation(DomainAssociation&& value) { SetDomainAssociation(std::move(value)); return *this;}
 

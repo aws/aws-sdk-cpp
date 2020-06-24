@@ -35,8 +35,8 @@ namespace Amplify
 namespace Model
 {
   /**
-   * <p> Result structure for create backend environment. </p><p><h3>See Also:</h3>  
-   * <a
+   * <p> The result structure for the create backend environment request.
+   * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/CreateBackendEnvironmentResult">AWS
    * API Reference</a></p>
    */
@@ -49,27 +49,27 @@ namespace Model
 
 
     /**
-     * <p> Backend environment structure for an amplify App. </p>
+     * <p> Describes the backend environment for an Amplify app. </p>
      */
     inline const BackendEnvironment& GetBackendEnvironment() const{ return m_backendEnvironment; }
 
     /**
-     * <p> Backend environment structure for an amplify App. </p>
+     * <p> Describes the backend environment for an Amplify app. </p>
      */
     inline void SetBackendEnvironment(const BackendEnvironment& value) { m_backendEnvironment = value; }
 
     /**
-     * <p> Backend environment structure for an amplify App. </p>
+     * <p> Describes the backend environment for an Amplify app. </p>
      */
     inline void SetBackendEnvironment(BackendEnvironment&& value) { m_backendEnvironment = std::move(value); }
 
     /**
-     * <p> Backend environment structure for an amplify App. </p>
+     * <p> Describes the backend environment for an Amplify app. </p>
      */
     inline CreateBackendEnvironmentResult& WithBackendEnvironment(const BackendEnvironment& value) { SetBackendEnvironment(value); return *this;}
 
     /**
-     * <p> Backend environment structure for an amplify App. </p>
+     * <p> Describes the backend environment for an Amplify app. </p>
      */
     inline CreateBackendEnvironmentResult& WithBackendEnvironment(BackendEnvironment&& value) { SetBackendEnvironment(std::move(value)); return *this;}
 

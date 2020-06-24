@@ -29,12 +29,14 @@ namespace Model
 {
 
 InstanceFleetProvisioningSpecifications::InstanceFleetProvisioningSpecifications() : 
-    m_spotSpecificationHasBeenSet(false)
+    m_spotSpecificationHasBeenSet(false),
+    m_onDemandSpecificationHasBeenSet(false)
 {
 }
 
 InstanceFleetProvisioningSpecifications::InstanceFleetProvisioningSpecifications(JsonView jsonValue) : 
-    m_spotSpecificationHasBeenSet(false)
+    m_spotSpecificationHasBeenSet(false),
+    m_onDemandSpecificationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -48,6 +50,13 @@ InstanceFleetProvisioningSpecifications& InstanceFleetProvisioningSpecifications
     m_spotSpecificationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("OnDemandSpecification"))
+  {
+    m_onDemandSpecification = jsonValue.GetObject("OnDemandSpecification");
+
+    m_onDemandSpecificationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -58,6 +67,12 @@ JsonValue InstanceFleetProvisioningSpecifications::Jsonize() const
   if(m_spotSpecificationHasBeenSet)
   {
    payload.WithObject("SpotSpecification", m_spotSpecification.Jsonize());
+
+  }
+
+  if(m_onDemandSpecificationHasBeenSet)
+  {
+   payload.WithObject("OnDemandSpecification", m_onDemandSpecification.Jsonize());
 
   }
 

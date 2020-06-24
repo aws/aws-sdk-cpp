@@ -36,20 +36,19 @@ ListBackendEnvironmentsRequest::ListBackendEnvironmentsRequest() :
 
 Aws::String ListBackendEnvironmentsRequest::SerializePayload() const
 {
-  JsonValue payload;
-
-  if(m_environmentNameHasBeenSet)
-  {
-   payload.WithString("environmentName", m_environmentName);
-
-  }
-
-  return payload.View().WriteReadable();
+  return {};
 }
 
 void ListBackendEnvironmentsRequest::AddQueryStringParameters(URI& uri) const
 {
     Aws::StringStream ss;
+    if(m_environmentNameHasBeenSet)
+    {
+      ss << m_environmentName;
+      uri.AddQueryStringParameter("environmentName", ss.str());
+      ss.str("");
+    }
+
     if(m_nextTokenHasBeenSet)
     {
       ss << m_nextToken;

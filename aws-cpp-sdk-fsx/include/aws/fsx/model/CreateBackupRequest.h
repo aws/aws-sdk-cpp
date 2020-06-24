@@ -93,107 +93,131 @@ namespace Model
 
 
     /**
-     * <p>(Optional) A string of up to 64 ASCII characters that Amazon FSx uses to
-     * ensure idempotent creation. This string is automatically filled on your behalf
-     * when you use the AWS Command Line Interface (AWS CLI) or an AWS SDK.</p>
+     * <p>A string of up to 64 ASCII characters that Amazon FSx uses to ensure
+     * idempotent creation. This string is automatically filled on your behalf when you
+     * use the AWS Command Line Interface (AWS CLI) or an AWS SDK.</p>
      */
     inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
 
     /**
-     * <p>(Optional) A string of up to 64 ASCII characters that Amazon FSx uses to
-     * ensure idempotent creation. This string is automatically filled on your behalf
-     * when you use the AWS Command Line Interface (AWS CLI) or an AWS SDK.</p>
+     * <p>A string of up to 64 ASCII characters that Amazon FSx uses to ensure
+     * idempotent creation. This string is automatically filled on your behalf when you
+     * use the AWS Command Line Interface (AWS CLI) or an AWS SDK.</p>
      */
     inline bool ClientRequestTokenHasBeenSet() const { return m_clientRequestTokenHasBeenSet; }
 
     /**
-     * <p>(Optional) A string of up to 64 ASCII characters that Amazon FSx uses to
-     * ensure idempotent creation. This string is automatically filled on your behalf
-     * when you use the AWS Command Line Interface (AWS CLI) or an AWS SDK.</p>
+     * <p>A string of up to 64 ASCII characters that Amazon FSx uses to ensure
+     * idempotent creation. This string is automatically filled on your behalf when you
+     * use the AWS Command Line Interface (AWS CLI) or an AWS SDK.</p>
      */
     inline void SetClientRequestToken(const Aws::String& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = value; }
 
     /**
-     * <p>(Optional) A string of up to 64 ASCII characters that Amazon FSx uses to
-     * ensure idempotent creation. This string is automatically filled on your behalf
-     * when you use the AWS Command Line Interface (AWS CLI) or an AWS SDK.</p>
+     * <p>A string of up to 64 ASCII characters that Amazon FSx uses to ensure
+     * idempotent creation. This string is automatically filled on your behalf when you
+     * use the AWS Command Line Interface (AWS CLI) or an AWS SDK.</p>
      */
     inline void SetClientRequestToken(Aws::String&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::move(value); }
 
     /**
-     * <p>(Optional) A string of up to 64 ASCII characters that Amazon FSx uses to
-     * ensure idempotent creation. This string is automatically filled on your behalf
-     * when you use the AWS Command Line Interface (AWS CLI) or an AWS SDK.</p>
+     * <p>A string of up to 64 ASCII characters that Amazon FSx uses to ensure
+     * idempotent creation. This string is automatically filled on your behalf when you
+     * use the AWS Command Line Interface (AWS CLI) or an AWS SDK.</p>
      */
     inline void SetClientRequestToken(const char* value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken.assign(value); }
 
     /**
-     * <p>(Optional) A string of up to 64 ASCII characters that Amazon FSx uses to
-     * ensure idempotent creation. This string is automatically filled on your behalf
-     * when you use the AWS Command Line Interface (AWS CLI) or an AWS SDK.</p>
+     * <p>A string of up to 64 ASCII characters that Amazon FSx uses to ensure
+     * idempotent creation. This string is automatically filled on your behalf when you
+     * use the AWS Command Line Interface (AWS CLI) or an AWS SDK.</p>
      */
     inline CreateBackupRequest& WithClientRequestToken(const Aws::String& value) { SetClientRequestToken(value); return *this;}
 
     /**
-     * <p>(Optional) A string of up to 64 ASCII characters that Amazon FSx uses to
-     * ensure idempotent creation. This string is automatically filled on your behalf
-     * when you use the AWS Command Line Interface (AWS CLI) or an AWS SDK.</p>
+     * <p>A string of up to 64 ASCII characters that Amazon FSx uses to ensure
+     * idempotent creation. This string is automatically filled on your behalf when you
+     * use the AWS Command Line Interface (AWS CLI) or an AWS SDK.</p>
      */
     inline CreateBackupRequest& WithClientRequestToken(Aws::String&& value) { SetClientRequestToken(std::move(value)); return *this;}
 
     /**
-     * <p>(Optional) A string of up to 64 ASCII characters that Amazon FSx uses to
-     * ensure idempotent creation. This string is automatically filled on your behalf
-     * when you use the AWS Command Line Interface (AWS CLI) or an AWS SDK.</p>
+     * <p>A string of up to 64 ASCII characters that Amazon FSx uses to ensure
+     * idempotent creation. This string is automatically filled on your behalf when you
+     * use the AWS Command Line Interface (AWS CLI) or an AWS SDK.</p>
      */
     inline CreateBackupRequest& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
 
 
     /**
      * <p>The tags to apply to the backup at backup creation. The key value of the
-     * <code>Name</code> tag appears in the console as the backup name.</p>
+     * <code>Name</code> tag appears in the console as the backup name. If you have set
+     * <code>CopyTagsToBackups</code> to true, and you specify one or more tags using
+     * the <code>CreateBackup</code> action, no existing tags on the file system are
+     * copied from the file system to the backup.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
      * <p>The tags to apply to the backup at backup creation. The key value of the
-     * <code>Name</code> tag appears in the console as the backup name.</p>
+     * <code>Name</code> tag appears in the console as the backup name. If you have set
+     * <code>CopyTagsToBackups</code> to true, and you specify one or more tags using
+     * the <code>CreateBackup</code> action, no existing tags on the file system are
+     * copied from the file system to the backup.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>The tags to apply to the backup at backup creation. The key value of the
-     * <code>Name</code> tag appears in the console as the backup name.</p>
+     * <code>Name</code> tag appears in the console as the backup name. If you have set
+     * <code>CopyTagsToBackups</code> to true, and you specify one or more tags using
+     * the <code>CreateBackup</code> action, no existing tags on the file system are
+     * copied from the file system to the backup.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
      * <p>The tags to apply to the backup at backup creation. The key value of the
-     * <code>Name</code> tag appears in the console as the backup name.</p>
+     * <code>Name</code> tag appears in the console as the backup name. If you have set
+     * <code>CopyTagsToBackups</code> to true, and you specify one or more tags using
+     * the <code>CreateBackup</code> action, no existing tags on the file system are
+     * copied from the file system to the backup.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
      * <p>The tags to apply to the backup at backup creation. The key value of the
-     * <code>Name</code> tag appears in the console as the backup name.</p>
+     * <code>Name</code> tag appears in the console as the backup name. If you have set
+     * <code>CopyTagsToBackups</code> to true, and you specify one or more tags using
+     * the <code>CreateBackup</code> action, no existing tags on the file system are
+     * copied from the file system to the backup.</p>
      */
     inline CreateBackupRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
      * <p>The tags to apply to the backup at backup creation. The key value of the
-     * <code>Name</code> tag appears in the console as the backup name.</p>
+     * <code>Name</code> tag appears in the console as the backup name. If you have set
+     * <code>CopyTagsToBackups</code> to true, and you specify one or more tags using
+     * the <code>CreateBackup</code> action, no existing tags on the file system are
+     * copied from the file system to the backup.</p>
      */
     inline CreateBackupRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
      * <p>The tags to apply to the backup at backup creation. The key value of the
-     * <code>Name</code> tag appears in the console as the backup name.</p>
+     * <code>Name</code> tag appears in the console as the backup name. If you have set
+     * <code>CopyTagsToBackups</code> to true, and you specify one or more tags using
+     * the <code>CreateBackup</code> action, no existing tags on the file system are
+     * copied from the file system to the backup.</p>
      */
     inline CreateBackupRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     /**
      * <p>The tags to apply to the backup at backup creation. The key value of the
-     * <code>Name</code> tag appears in the console as the backup name.</p>
+     * <code>Name</code> tag appears in the console as the backup name. If you have set
+     * <code>CopyTagsToBackups</code> to true, and you specify one or more tags using
+     * the <code>CreateBackup</code> action, no existing tags on the file system are
+     * copied from the file system to the backup.</p>
      */
     inline CreateBackupRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 

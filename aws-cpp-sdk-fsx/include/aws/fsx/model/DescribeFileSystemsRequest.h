@@ -50,148 +50,135 @@ namespace Model
 
 
     /**
-     * <p>(Optional) IDs of the file systems whose descriptions you want to retrieve
-     * (String).</p>
+     * <p>IDs of the file systems whose descriptions you want to retrieve (String).</p>
      */
     inline const Aws::Vector<Aws::String>& GetFileSystemIds() const{ return m_fileSystemIds; }
 
     /**
-     * <p>(Optional) IDs of the file systems whose descriptions you want to retrieve
-     * (String).</p>
+     * <p>IDs of the file systems whose descriptions you want to retrieve (String).</p>
      */
     inline bool FileSystemIdsHasBeenSet() const { return m_fileSystemIdsHasBeenSet; }
 
     /**
-     * <p>(Optional) IDs of the file systems whose descriptions you want to retrieve
-     * (String).</p>
+     * <p>IDs of the file systems whose descriptions you want to retrieve (String).</p>
      */
     inline void SetFileSystemIds(const Aws::Vector<Aws::String>& value) { m_fileSystemIdsHasBeenSet = true; m_fileSystemIds = value; }
 
     /**
-     * <p>(Optional) IDs of the file systems whose descriptions you want to retrieve
-     * (String).</p>
+     * <p>IDs of the file systems whose descriptions you want to retrieve (String).</p>
      */
     inline void SetFileSystemIds(Aws::Vector<Aws::String>&& value) { m_fileSystemIdsHasBeenSet = true; m_fileSystemIds = std::move(value); }
 
     /**
-     * <p>(Optional) IDs of the file systems whose descriptions you want to retrieve
-     * (String).</p>
+     * <p>IDs of the file systems whose descriptions you want to retrieve (String).</p>
      */
     inline DescribeFileSystemsRequest& WithFileSystemIds(const Aws::Vector<Aws::String>& value) { SetFileSystemIds(value); return *this;}
 
     /**
-     * <p>(Optional) IDs of the file systems whose descriptions you want to retrieve
-     * (String).</p>
+     * <p>IDs of the file systems whose descriptions you want to retrieve (String).</p>
      */
     inline DescribeFileSystemsRequest& WithFileSystemIds(Aws::Vector<Aws::String>&& value) { SetFileSystemIds(std::move(value)); return *this;}
 
     /**
-     * <p>(Optional) IDs of the file systems whose descriptions you want to retrieve
-     * (String).</p>
+     * <p>IDs of the file systems whose descriptions you want to retrieve (String).</p>
      */
     inline DescribeFileSystemsRequest& AddFileSystemIds(const Aws::String& value) { m_fileSystemIdsHasBeenSet = true; m_fileSystemIds.push_back(value); return *this; }
 
     /**
-     * <p>(Optional) IDs of the file systems whose descriptions you want to retrieve
-     * (String).</p>
+     * <p>IDs of the file systems whose descriptions you want to retrieve (String).</p>
      */
     inline DescribeFileSystemsRequest& AddFileSystemIds(Aws::String&& value) { m_fileSystemIdsHasBeenSet = true; m_fileSystemIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>(Optional) IDs of the file systems whose descriptions you want to retrieve
-     * (String).</p>
+     * <p>IDs of the file systems whose descriptions you want to retrieve (String).</p>
      */
     inline DescribeFileSystemsRequest& AddFileSystemIds(const char* value) { m_fileSystemIdsHasBeenSet = true; m_fileSystemIds.push_back(value); return *this; }
 
 
     /**
-     * <p>(Optional) Maximum number of file systems to return in the response
-     * (integer). This parameter value must be greater than 0. The number of items that
-     * Amazon FSx returns is the minimum of the <code>MaxResults</code> parameter
-     * specified in the request and the service's internal maximum number of items per
-     * page.</p>
+     * <p>Maximum number of file systems to return in the response (integer). This
+     * parameter value must be greater than 0. The number of items that Amazon FSx
+     * returns is the minimum of the <code>MaxResults</code> parameter specified in the
+     * request and the service's internal maximum number of items per page.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p>(Optional) Maximum number of file systems to return in the response
-     * (integer). This parameter value must be greater than 0. The number of items that
-     * Amazon FSx returns is the minimum of the <code>MaxResults</code> parameter
-     * specified in the request and the service's internal maximum number of items per
-     * page.</p>
+     * <p>Maximum number of file systems to return in the response (integer). This
+     * parameter value must be greater than 0. The number of items that Amazon FSx
+     * returns is the minimum of the <code>MaxResults</code> parameter specified in the
+     * request and the service's internal maximum number of items per page.</p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
-     * <p>(Optional) Maximum number of file systems to return in the response
-     * (integer). This parameter value must be greater than 0. The number of items that
-     * Amazon FSx returns is the minimum of the <code>MaxResults</code> parameter
-     * specified in the request and the service's internal maximum number of items per
-     * page.</p>
+     * <p>Maximum number of file systems to return in the response (integer). This
+     * parameter value must be greater than 0. The number of items that Amazon FSx
+     * returns is the minimum of the <code>MaxResults</code> parameter specified in the
+     * request and the service's internal maximum number of items per page.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p>(Optional) Maximum number of file systems to return in the response
-     * (integer). This parameter value must be greater than 0. The number of items that
-     * Amazon FSx returns is the minimum of the <code>MaxResults</code> parameter
-     * specified in the request and the service's internal maximum number of items per
-     * page.</p>
+     * <p>Maximum number of file systems to return in the response (integer). This
+     * parameter value must be greater than 0. The number of items that Amazon FSx
+     * returns is the minimum of the <code>MaxResults</code> parameter specified in the
+     * request and the service's internal maximum number of items per page.</p>
      */
     inline DescribeFileSystemsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
 
     /**
-     * <p>(Optional) Opaque pagination token returned from a previous
+     * <p>Opaque pagination token returned from a previous
      * <code>DescribeFileSystems</code> operation (String). If a token present, the
      * action continues the list from where the returning call left off.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>(Optional) Opaque pagination token returned from a previous
+     * <p>Opaque pagination token returned from a previous
      * <code>DescribeFileSystems</code> operation (String). If a token present, the
      * action continues the list from where the returning call left off.</p>
      */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
-     * <p>(Optional) Opaque pagination token returned from a previous
+     * <p>Opaque pagination token returned from a previous
      * <code>DescribeFileSystems</code> operation (String). If a token present, the
      * action continues the list from where the returning call left off.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
-     * <p>(Optional) Opaque pagination token returned from a previous
+     * <p>Opaque pagination token returned from a previous
      * <code>DescribeFileSystems</code> operation (String). If a token present, the
      * action continues the list from where the returning call left off.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
-     * <p>(Optional) Opaque pagination token returned from a previous
+     * <p>Opaque pagination token returned from a previous
      * <code>DescribeFileSystems</code> operation (String). If a token present, the
      * action continues the list from where the returning call left off.</p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
-     * <p>(Optional) Opaque pagination token returned from a previous
+     * <p>Opaque pagination token returned from a previous
      * <code>DescribeFileSystems</code> operation (String). If a token present, the
      * action continues the list from where the returning call left off.</p>
      */
     inline DescribeFileSystemsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>(Optional) Opaque pagination token returned from a previous
+     * <p>Opaque pagination token returned from a previous
      * <code>DescribeFileSystems</code> operation (String). If a token present, the
      * action continues the list from where the returning call left off.</p>
      */
     inline DescribeFileSystemsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>(Optional) Opaque pagination token returned from a previous
+     * <p>Opaque pagination token returned from a previous
      * <code>DescribeFileSystems</code> operation (String). If a token present, the
      * action continues the list from where the returning call left off.</p>
      */

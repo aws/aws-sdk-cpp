@@ -306,26 +306,22 @@ namespace Model
 
 
     /**
-     * <p>The amount of time, in seconds, after a scaling activity completes before
-     * another scaling activity can start.</p>
+     * <p>The duration of the default cooldown period, in seconds.</p>
      */
     inline int GetDefaultCooldown() const{ return m_defaultCooldown; }
 
     /**
-     * <p>The amount of time, in seconds, after a scaling activity completes before
-     * another scaling activity can start.</p>
+     * <p>The duration of the default cooldown period, in seconds.</p>
      */
     inline bool DefaultCooldownHasBeenSet() const { return m_defaultCooldownHasBeenSet; }
 
     /**
-     * <p>The amount of time, in seconds, after a scaling activity completes before
-     * another scaling activity can start.</p>
+     * <p>The duration of the default cooldown period, in seconds.</p>
      */
     inline void SetDefaultCooldown(int value) { m_defaultCooldownHasBeenSet = true; m_defaultCooldown = value; }
 
     /**
-     * <p>The amount of time, in seconds, after a scaling activity completes before
-     * another scaling activity can start.</p>
+     * <p>The duration of the default cooldown period, in seconds.</p>
      */
     inline AutoScalingGroup& WithDefaultCooldown(int value) { SetDefaultCooldown(value); return *this;}
 

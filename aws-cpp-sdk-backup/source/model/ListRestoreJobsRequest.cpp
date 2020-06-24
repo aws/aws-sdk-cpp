@@ -28,7 +28,12 @@ using namespace Aws::Http;
 ListRestoreJobsRequest::ListRestoreJobsRequest() : 
     m_nextTokenHasBeenSet(false),
     m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
+    m_maxResultsHasBeenSet(false),
+    m_byAccountIdHasBeenSet(false),
+    m_byCreatedBeforeHasBeenSet(false),
+    m_byCreatedAfterHasBeenSet(false),
+    m_byStatus(RestoreJobStatus::NOT_SET),
+    m_byStatusHasBeenSet(false)
 {
 }
 
@@ -51,6 +56,34 @@ void ListRestoreJobsRequest::AddQueryStringParameters(URI& uri) const
     {
       ss << m_maxResults;
       uri.AddQueryStringParameter("maxResults", ss.str());
+      ss.str("");
+    }
+
+    if(m_byAccountIdHasBeenSet)
+    {
+      ss << m_byAccountId;
+      uri.AddQueryStringParameter("accountId", ss.str());
+      ss.str("");
+    }
+
+    if(m_byCreatedBeforeHasBeenSet)
+    {
+      ss << m_byCreatedBefore.ToGmtString(DateFormat::RFC822);
+      uri.AddQueryStringParameter("createdBefore", ss.str());
+      ss.str("");
+    }
+
+    if(m_byCreatedAfterHasBeenSet)
+    {
+      ss << m_byCreatedAfter.ToGmtString(DateFormat::RFC822);
+      uri.AddQueryStringParameter("createdAfter", ss.str());
+      ss.str("");
+    }
+
+    if(m_byStatusHasBeenSet)
+    {
+      ss << RestoreJobStatusMapper::GetNameForRestoreJobStatus(m_byStatus);
+      uri.AddQueryStringParameter("status", ss.str());
       ss.str("");
     }
 

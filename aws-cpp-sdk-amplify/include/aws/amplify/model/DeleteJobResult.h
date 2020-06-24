@@ -35,7 +35,8 @@ namespace Amplify
 namespace Model
 {
   /**
-   * <p> Result structure for the delete job request. </p><p><h3>See Also:</h3>   <a
+   * <p> The result structure for the delete job request. </p><p><h3>See Also:</h3>  
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/DeleteJobResult">AWS
    * API Reference</a></p>
    */

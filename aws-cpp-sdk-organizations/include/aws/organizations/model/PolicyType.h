@@ -27,7 +27,8 @@ namespace Model
   {
     NOT_SET,
     SERVICE_CONTROL_POLICY,
-    TAG_POLICY
+    TAG_POLICY,
+    BACKUP_POLICY
   };
 
 namespace PolicyTypeMapper

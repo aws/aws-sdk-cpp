@@ -134,7 +134,8 @@ namespace Model
      * the policy type is <code>StepScaling</code> or
      * <code>TargetTrackingScaling</code>.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling
-     * Cooldowns</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+     * Cooldowns for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User
+     * Guide</i>.</p>
      */
     inline bool GetHonorCooldown() const{ return m_honorCooldown; }
 
@@ -144,7 +145,8 @@ namespace Model
      * the policy type is <code>StepScaling</code> or
      * <code>TargetTrackingScaling</code>.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling
-     * Cooldowns</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+     * Cooldowns for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User
+     * Guide</i>.</p>
      */
     inline bool HonorCooldownHasBeenSet() const { return m_honorCooldownHasBeenSet; }
 
@@ -154,7 +156,8 @@ namespace Model
      * the policy type is <code>StepScaling</code> or
      * <code>TargetTrackingScaling</code>.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling
-     * Cooldowns</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+     * Cooldowns for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User
+     * Guide</i>.</p>
      */
     inline void SetHonorCooldown(bool value) { m_honorCooldownHasBeenSet = true; m_honorCooldown = value; }
 
@@ -164,7 +167,8 @@ namespace Model
      * the policy type is <code>StepScaling</code> or
      * <code>TargetTrackingScaling</code>.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling
-     * Cooldowns</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+     * Cooldowns for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User
+     * Guide</i>.</p>
      */
     inline ExecutePolicyRequest& WithHonorCooldown(bool value) { SetHonorCooldown(value); return *this;}
 
@@ -176,8 +180,8 @@ namespace Model
      * use a step adjustment with a lower bound of 0 and an upper bound of 10, you can
      * set the metric value to 59.</p> <p>If you specify a metric value that doesn't
      * correspond to a step adjustment for the policy, the call returns an error.</p>
-     * <p>Conditional: This parameter is required if the policy type is
-     * <code>StepScaling</code> and not supported otherwise.</p>
+     * <p>Required if the policy type is <code>StepScaling</code> and not supported
+     * otherwise.</p>
      */
     inline double GetMetricValue() const{ return m_metricValue; }
 
@@ -188,8 +192,8 @@ namespace Model
      * use a step adjustment with a lower bound of 0 and an upper bound of 10, you can
      * set the metric value to 59.</p> <p>If you specify a metric value that doesn't
      * correspond to a step adjustment for the policy, the call returns an error.</p>
-     * <p>Conditional: This parameter is required if the policy type is
-     * <code>StepScaling</code> and not supported otherwise.</p>
+     * <p>Required if the policy type is <code>StepScaling</code> and not supported
+     * otherwise.</p>
      */
     inline bool MetricValueHasBeenSet() const { return m_metricValueHasBeenSet; }
 
@@ -200,8 +204,8 @@ namespace Model
      * use a step adjustment with a lower bound of 0 and an upper bound of 10, you can
      * set the metric value to 59.</p> <p>If you specify a metric value that doesn't
      * correspond to a step adjustment for the policy, the call returns an error.</p>
-     * <p>Conditional: This parameter is required if the policy type is
-     * <code>StepScaling</code> and not supported otherwise.</p>
+     * <p>Required if the policy type is <code>StepScaling</code> and not supported
+     * otherwise.</p>
      */
     inline void SetMetricValue(double value) { m_metricValueHasBeenSet = true; m_metricValue = value; }
 
@@ -212,37 +216,33 @@ namespace Model
      * use a step adjustment with a lower bound of 0 and an upper bound of 10, you can
      * set the metric value to 59.</p> <p>If you specify a metric value that doesn't
      * correspond to a step adjustment for the policy, the call returns an error.</p>
-     * <p>Conditional: This parameter is required if the policy type is
-     * <code>StepScaling</code> and not supported otherwise.</p>
+     * <p>Required if the policy type is <code>StepScaling</code> and not supported
+     * otherwise.</p>
      */
     inline ExecutePolicyRequest& WithMetricValue(double value) { SetMetricValue(value); return *this;}
 
 
     /**
-     * <p>The breach threshold for the alarm.</p> <p>Conditional: This parameter is
-     * required if the policy type is <code>StepScaling</code> and not supported
-     * otherwise.</p>
+     * <p>The breach threshold for the alarm.</p> <p>Required if the policy type is
+     * <code>StepScaling</code> and not supported otherwise.</p>
      */
     inline double GetBreachThreshold() const{ return m_breachThreshold; }
 
     /**
-     * <p>The breach threshold for the alarm.</p> <p>Conditional: This parameter is
-     * required if the policy type is <code>StepScaling</code> and not supported
-     * otherwise.</p>
+     * <p>The breach threshold for the alarm.</p> <p>Required if the policy type is
+     * <code>StepScaling</code> and not supported otherwise.</p>
      */
     inline bool BreachThresholdHasBeenSet() const { return m_breachThresholdHasBeenSet; }
 
     /**
-     * <p>The breach threshold for the alarm.</p> <p>Conditional: This parameter is
-     * required if the policy type is <code>StepScaling</code> and not supported
-     * otherwise.</p>
+     * <p>The breach threshold for the alarm.</p> <p>Required if the policy type is
+     * <code>StepScaling</code> and not supported otherwise.</p>
      */
     inline void SetBreachThreshold(double value) { m_breachThresholdHasBeenSet = true; m_breachThreshold = value; }
 
     /**
-     * <p>The breach threshold for the alarm.</p> <p>Conditional: This parameter is
-     * required if the policy type is <code>StepScaling</code> and not supported
-     * otherwise.</p>
+     * <p>The breach threshold for the alarm.</p> <p>Required if the policy type is
+     * <code>StepScaling</code> and not supported otherwise.</p>
      */
     inline ExecutePolicyRequest& WithBreachThreshold(double value) { SetBreachThreshold(value); return *this;}
 

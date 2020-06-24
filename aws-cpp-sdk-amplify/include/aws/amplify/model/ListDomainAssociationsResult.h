@@ -37,7 +37,7 @@ namespace Amplify
 namespace Model
 {
   /**
-   * <p> Result structure for the list Domain Association request. </p><p><h3>See
+   * <p> The result structure for the list domain association request. </p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/ListDomainAssociationsResult">AWS
    * API Reference</a></p>
@@ -51,80 +51,80 @@ namespace Model
 
 
     /**
-     * <p> List of Domain Associations. </p>
+     * <p> A list of domain associations. </p>
      */
     inline const Aws::Vector<DomainAssociation>& GetDomainAssociations() const{ return m_domainAssociations; }
 
     /**
-     * <p> List of Domain Associations. </p>
+     * <p> A list of domain associations. </p>
      */
     inline void SetDomainAssociations(const Aws::Vector<DomainAssociation>& value) { m_domainAssociations = value; }
 
     /**
-     * <p> List of Domain Associations. </p>
+     * <p> A list of domain associations. </p>
      */
     inline void SetDomainAssociations(Aws::Vector<DomainAssociation>&& value) { m_domainAssociations = std::move(value); }
 
     /**
-     * <p> List of Domain Associations. </p>
+     * <p> A list of domain associations. </p>
      */
     inline ListDomainAssociationsResult& WithDomainAssociations(const Aws::Vector<DomainAssociation>& value) { SetDomainAssociations(value); return *this;}
 
     /**
-     * <p> List of Domain Associations. </p>
+     * <p> A list of domain associations. </p>
      */
     inline ListDomainAssociationsResult& WithDomainAssociations(Aws::Vector<DomainAssociation>&& value) { SetDomainAssociations(std::move(value)); return *this;}
 
     /**
-     * <p> List of Domain Associations. </p>
+     * <p> A list of domain associations. </p>
      */
     inline ListDomainAssociationsResult& AddDomainAssociations(const DomainAssociation& value) { m_domainAssociations.push_back(value); return *this; }
 
     /**
-     * <p> List of Domain Associations. </p>
+     * <p> A list of domain associations. </p>
      */
     inline ListDomainAssociationsResult& AddDomainAssociations(DomainAssociation&& value) { m_domainAssociations.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p> Pagination token. If non-null pagination token is returned in a result, then
-     * pass its value in another request to fetch more entries. </p>
+     * <p> A pagination token. If non-null, a pagination token is returned in a result.
+     * Pass its value in another request to retrieve more entries. </p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p> Pagination token. If non-null pagination token is returned in a result, then
-     * pass its value in another request to fetch more entries. </p>
+     * <p> A pagination token. If non-null, a pagination token is returned in a result.
+     * Pass its value in another request to retrieve more entries. </p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
     /**
-     * <p> Pagination token. If non-null pagination token is returned in a result, then
-     * pass its value in another request to fetch more entries. </p>
+     * <p> A pagination token. If non-null, a pagination token is returned in a result.
+     * Pass its value in another request to retrieve more entries. </p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
-     * <p> Pagination token. If non-null pagination token is returned in a result, then
-     * pass its value in another request to fetch more entries. </p>
+     * <p> A pagination token. If non-null, a pagination token is returned in a result.
+     * Pass its value in another request to retrieve more entries. </p>
      */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
     /**
-     * <p> Pagination token. If non-null pagination token is returned in a result, then
-     * pass its value in another request to fetch more entries. </p>
+     * <p> A pagination token. If non-null, a pagination token is returned in a result.
+     * Pass its value in another request to retrieve more entries. </p>
      */
     inline ListDomainAssociationsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p> Pagination token. If non-null pagination token is returned in a result, then
-     * pass its value in another request to fetch more entries. </p>
+     * <p> A pagination token. If non-null, a pagination token is returned in a result.
+     * Pass its value in another request to retrieve more entries. </p>
      */
     inline ListDomainAssociationsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p> Pagination token. If non-null pagination token is returned in a result, then
-     * pass its value in another request to fetch more entries. </p>
+     * <p> A pagination token. If non-null, a pagination token is returned in a result.
+     * Pass its value in another request to retrieve more entries. </p>
      */
     inline ListDomainAssociationsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

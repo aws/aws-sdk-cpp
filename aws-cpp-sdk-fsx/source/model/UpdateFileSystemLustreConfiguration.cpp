@@ -29,12 +29,18 @@ namespace Model
 {
 
 UpdateFileSystemLustreConfiguration::UpdateFileSystemLustreConfiguration() : 
-    m_weeklyMaintenanceStartTimeHasBeenSet(false)
+    m_weeklyMaintenanceStartTimeHasBeenSet(false),
+    m_dailyAutomaticBackupStartTimeHasBeenSet(false),
+    m_automaticBackupRetentionDays(0),
+    m_automaticBackupRetentionDaysHasBeenSet(false)
 {
 }
 
 UpdateFileSystemLustreConfiguration::UpdateFileSystemLustreConfiguration(JsonView jsonValue) : 
-    m_weeklyMaintenanceStartTimeHasBeenSet(false)
+    m_weeklyMaintenanceStartTimeHasBeenSet(false),
+    m_dailyAutomaticBackupStartTimeHasBeenSet(false),
+    m_automaticBackupRetentionDays(0),
+    m_automaticBackupRetentionDaysHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -48,6 +54,20 @@ UpdateFileSystemLustreConfiguration& UpdateFileSystemLustreConfiguration::operat
     m_weeklyMaintenanceStartTimeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("DailyAutomaticBackupStartTime"))
+  {
+    m_dailyAutomaticBackupStartTime = jsonValue.GetString("DailyAutomaticBackupStartTime");
+
+    m_dailyAutomaticBackupStartTimeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AutomaticBackupRetentionDays"))
+  {
+    m_automaticBackupRetentionDays = jsonValue.GetInteger("AutomaticBackupRetentionDays");
+
+    m_automaticBackupRetentionDaysHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -58,6 +78,18 @@ JsonValue UpdateFileSystemLustreConfiguration::Jsonize() const
   if(m_weeklyMaintenanceStartTimeHasBeenSet)
   {
    payload.WithString("WeeklyMaintenanceStartTime", m_weeklyMaintenanceStartTime);
+
+  }
+
+  if(m_dailyAutomaticBackupStartTimeHasBeenSet)
+  {
+   payload.WithString("DailyAutomaticBackupStartTime", m_dailyAutomaticBackupStartTime);
+
+  }
+
+  if(m_automaticBackupRetentionDaysHasBeenSet)
+  {
+   payload.WithInteger("AutomaticBackupRetentionDays", m_automaticBackupRetentionDays);
 
   }
 
