@@ -5120,7 +5120,7 @@ namespace Model
          * not share the same hardware with instances in another partition.</p> <p>For more
          * information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
-         * Groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p><p><h3>See
+         * groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreatePlacementGroup">AWS
          * API Reference</a></p>
@@ -5138,7 +5138,7 @@ namespace Model
          * not share the same hardware with instances in another partition.</p> <p>For more
          * information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
-         * Groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p><p><h3>See
+         * groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreatePlacementGroup">AWS
          * API Reference</a></p>
@@ -5158,7 +5158,7 @@ namespace Model
          * not share the same hardware with instances in another partition.</p> <p>For more
          * information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
-         * Groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p><p><h3>See
+         * groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreatePlacementGroup">AWS
          * API Reference</a></p>
@@ -7334,7 +7334,7 @@ namespace Model
          * the placement group before you can delete the placement group. For more
          * information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
-         * Groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p><p><h3>See
+         * groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeletePlacementGroup">AWS
          * API Reference</a></p>
@@ -7346,7 +7346,7 @@ namespace Model
          * the placement group before you can delete the placement group. For more
          * information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
-         * Groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p><p><h3>See
+         * groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeletePlacementGroup">AWS
          * API Reference</a></p>
@@ -7360,7 +7360,7 @@ namespace Model
          * the placement group before you can delete the placement group. For more
          * information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
-         * Groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p><p><h3>See
+         * groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeletePlacementGroup">AWS
          * API Reference</a></p>
@@ -9955,7 +9955,7 @@ namespace Model
          * fails. If you specify only instance IDs in an unaffected zone, the call works
          * normally.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
-         * Performance Instances</a> in the <i>Amazon Elastic Compute Cloud User
+         * performance instances</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceCreditSpecifications">AWS
          * API Reference</a></p>
@@ -9981,7 +9981,7 @@ namespace Model
          * fails. If you specify only instance IDs in an unaffected zone, the call works
          * normally.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
-         * Performance Instances</a> in the <i>Amazon Elastic Compute Cloud User
+         * performance instances</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceCreditSpecifications">AWS
          * API Reference</a></p>
@@ -10009,7 +10009,7 @@ namespace Model
          * fails. If you specify only instance IDs in an unaffected zone, the call works
          * normally.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
-         * Performance Instances</a> in the <i>Amazon Elastic Compute Cloud User
+         * performance instances</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceCreditSpecifications">AWS
          * API Reference</a></p>
@@ -10054,20 +10054,20 @@ namespace Model
          * performs status checks on running EC2 instances to identify hardware and
          * software issues. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-system-instance-status-check.html">Status
-         * Checks for Your Instances</a> and <a
+         * checks for your instances</a> and <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstances.html">Troubleshooting
-         * Instances with Failed Status Checks</a> in the <i>Amazon Elastic Compute Cloud
+         * instances with failed status checks</a> in the <i>Amazon Elastic Compute Cloud
          * User Guide</i>.</p> </li> <li> <p> <b>Scheduled events</b> - Amazon EC2 can
          * schedule events (such as reboot, stop, or terminate) for your instances related
          * to hardware issues, software updates, or system maintenance. For more
          * information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-instances-status-check_sched.html">Scheduled
-         * Events for Your Instances</a> in the <i>Amazon Elastic Compute Cloud User
+         * events for your instances</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p> </li> <li> <p> <b>Instance state</b> - You can manage your
          * instances from the moment you launch them through their termination. For more
          * information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html">Instance
-         * Lifecycle</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> </li>
+         * lifecycle</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> </li>
          * </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceStatus">AWS
          * API Reference</a></p>
@@ -10082,20 +10082,20 @@ namespace Model
          * performs status checks on running EC2 instances to identify hardware and
          * software issues. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-system-instance-status-check.html">Status
-         * Checks for Your Instances</a> and <a
+         * checks for your instances</a> and <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstances.html">Troubleshooting
-         * Instances with Failed Status Checks</a> in the <i>Amazon Elastic Compute Cloud
+         * instances with failed status checks</a> in the <i>Amazon Elastic Compute Cloud
          * User Guide</i>.</p> </li> <li> <p> <b>Scheduled events</b> - Amazon EC2 can
          * schedule events (such as reboot, stop, or terminate) for your instances related
          * to hardware issues, software updates, or system maintenance. For more
          * information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-instances-status-check_sched.html">Scheduled
-         * Events for Your Instances</a> in the <i>Amazon Elastic Compute Cloud User
+         * events for your instances</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p> </li> <li> <p> <b>Instance state</b> - You can manage your
          * instances from the moment you launch them through their termination. For more
          * information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html">Instance
-         * Lifecycle</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> </li>
+         * lifecycle</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> </li>
          * </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceStatus">AWS
          * API Reference</a></p>
@@ -10112,20 +10112,20 @@ namespace Model
          * performs status checks on running EC2 instances to identify hardware and
          * software issues. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-system-instance-status-check.html">Status
-         * Checks for Your Instances</a> and <a
+         * checks for your instances</a> and <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstances.html">Troubleshooting
-         * Instances with Failed Status Checks</a> in the <i>Amazon Elastic Compute Cloud
+         * instances with failed status checks</a> in the <i>Amazon Elastic Compute Cloud
          * User Guide</i>.</p> </li> <li> <p> <b>Scheduled events</b> - Amazon EC2 can
          * schedule events (such as reboot, stop, or terminate) for your instances related
          * to hardware issues, software updates, or system maintenance. For more
          * information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-instances-status-check_sched.html">Scheduled
-         * Events for Your Instances</a> in the <i>Amazon Elastic Compute Cloud User
+         * events for your instances</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p> </li> <li> <p> <b>Instance state</b> - You can manage your
          * instances from the moment you launch them through their termination. For more
          * information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html">Instance
-         * Lifecycle</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> </li>
+         * lifecycle</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> </li>
          * </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceStatus">AWS
          * API Reference</a></p>
@@ -10767,7 +10767,7 @@ namespace Model
          * <p>Describes the specified placement groups or all of your placement groups. For
          * more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
-         * Groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p><p><h3>See
+         * groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribePlacementGroups">AWS
          * API Reference</a></p>
@@ -10778,7 +10778,7 @@ namespace Model
          * <p>Describes the specified placement groups or all of your placement groups. For
          * more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
-         * Groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p><p><h3>See
+         * groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribePlacementGroups">AWS
          * API Reference</a></p>
@@ -10791,7 +10791,7 @@ namespace Model
          * <p>Describes the specified placement groups or all of your placement groups. For
          * more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
-         * Groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p><p><h3>See
+         * groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribePlacementGroups">AWS
          * API Reference</a></p>
@@ -14183,7 +14183,7 @@ namespace Model
          * <p>Describes the default credit option for CPU usage of a burstable performance
          * instance family.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
-         * Performance Instances</a> in the <i>Amazon Elastic Compute Cloud User
+         * performance instances</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetDefaultCreditSpecification">AWS
          * API Reference</a></p>
@@ -14194,7 +14194,7 @@ namespace Model
          * <p>Describes the default credit option for CPU usage of a burstable performance
          * instance family.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
-         * Performance Instances</a> in the <i>Amazon Elastic Compute Cloud User
+         * performance instances</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetDefaultCreditSpecification">AWS
          * API Reference</a></p>
@@ -14207,7 +14207,7 @@ namespace Model
          * <p>Describes the default credit option for CPU usage of a burstable performance
          * instance family.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
-         * Performance Instances</a> in the <i>Amazon Elastic Compute Cloud User
+         * performance instances</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetDefaultCreditSpecification">AWS
          * API Reference</a></p>
@@ -14939,7 +14939,7 @@ namespace Model
          * <code>DefaultCreditSpecification</code> for updates.</p> <p>For more
          * information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
-         * Performance Instances</a> in the <i>Amazon Elastic Compute Cloud User
+         * performance instances</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyDefaultCreditSpecification">AWS
          * API Reference</a></p>
@@ -14960,7 +14960,7 @@ namespace Model
          * <code>DefaultCreditSpecification</code> for updates.</p> <p>For more
          * information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
-         * Performance Instances</a> in the <i>Amazon Elastic Compute Cloud User
+         * performance instances</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyDefaultCreditSpecification">AWS
          * API Reference</a></p>
@@ -14983,7 +14983,7 @@ namespace Model
          * <code>DefaultCreditSpecification</code> for updates.</p> <p>For more
          * information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
-         * Performance Instances</a> in the <i>Amazon Elastic Compute Cloud User
+         * performance instances</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyDefaultCreditSpecification">AWS
          * API Reference</a></p>
@@ -15492,7 +15492,7 @@ namespace Model
          * <a>ModifyNetworkInterfaceAttribute</a> action.</p> <p>To modify some attributes,
          * the instance must be stopped. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_ChangingAttributesWhileInstanceStopped.html">Modifying
-         * Attributes of a Stopped Instance</a> in the <i>Amazon Elastic Compute Cloud User
+         * attributes of a stopped instance</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstanceAttribute">AWS
          * API Reference</a></p>
@@ -15509,7 +15509,7 @@ namespace Model
          * <a>ModifyNetworkInterfaceAttribute</a> action.</p> <p>To modify some attributes,
          * the instance must be stopped. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_ChangingAttributesWhileInstanceStopped.html">Modifying
-         * Attributes of a Stopped Instance</a> in the <i>Amazon Elastic Compute Cloud User
+         * attributes of a stopped instance</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstanceAttribute">AWS
          * API Reference</a></p>
@@ -15528,7 +15528,7 @@ namespace Model
          * <a>ModifyNetworkInterfaceAttribute</a> action.</p> <p>To modify some attributes,
          * the instance must be stopped. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_ChangingAttributesWhileInstanceStopped.html">Modifying
-         * Attributes of a Stopped Instance</a> in the <i>Amazon Elastic Compute Cloud User
+         * attributes of a stopped instance</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstanceAttribute">AWS
          * API Reference</a></p>
@@ -15576,7 +15576,7 @@ namespace Model
          * performance instance. The credit options are <code>standard</code> and
          * <code>unlimited</code>.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
-         * Performance Instances</a> in the <i>Amazon Elastic Compute Cloud User
+         * performance instances</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstanceCreditSpecification">AWS
          * API Reference</a></p>
@@ -15588,7 +15588,7 @@ namespace Model
          * performance instance. The credit options are <code>standard</code> and
          * <code>unlimited</code>.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
-         * Performance Instances</a> in the <i>Amazon Elastic Compute Cloud User
+         * performance instances</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstanceCreditSpecification">AWS
          * API Reference</a></p>
@@ -15602,7 +15602,7 @@ namespace Model
          * performance instance. The credit options are <code>standard</code> and
          * <code>unlimited</code>.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
-         * Performance Instances</a> in the <i>Amazon Elastic Compute Cloud User
+         * performance instances</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstanceCreditSpecification">AWS
          * API Reference</a></p>
@@ -15648,7 +15648,7 @@ namespace Model
          * from “pending” to “applied” in subsequent describe-instances API calls. For more
          * information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance
-         * Metadata and User Data</a>.</p><p><h3>See Also:</h3>   <a
+         * metadata and user data</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstanceMetadataOptions">AWS
          * API Reference</a></p>
          */
@@ -15663,7 +15663,7 @@ namespace Model
          * from “pending” to “applied” in subsequent describe-instances API calls. For more
          * information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance
-         * Metadata and User Data</a>.</p><p><h3>See Also:</h3>   <a
+         * metadata and user data</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstanceMetadataOptions">AWS
          * API Reference</a></p>
          *
@@ -15680,7 +15680,7 @@ namespace Model
          * from “pending” to “applied” in subsequent describe-instances API calls. For more
          * information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance
-         * Metadata and User Data</a>.</p><p><h3>See Also:</h3>   <a
+         * metadata and user data</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstanceMetadataOptions">AWS
          * API Reference</a></p>
          *
@@ -16855,7 +16855,7 @@ namespace Model
          * <p>Enables detailed monitoring for a running instance. Otherwise, basic
          * monitoring is enabled. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-cloudwatch.html">Monitoring
-         * Your Instances and Volumes</a> in the <i>Amazon Elastic Compute Cloud User
+         * your instances and volumes</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p> <p>To disable detailed monitoring, see .</p><p><h3>See Also:</h3>
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/MonitorInstances">AWS
@@ -16867,7 +16867,7 @@ namespace Model
          * <p>Enables detailed monitoring for a running instance. Otherwise, basic
          * monitoring is enabled. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-cloudwatch.html">Monitoring
-         * Your Instances and Volumes</a> in the <i>Amazon Elastic Compute Cloud User
+         * your instances and volumes</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p> <p>To disable detailed monitoring, see .</p><p><h3>See Also:</h3>
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/MonitorInstances">AWS
@@ -16881,7 +16881,7 @@ namespace Model
          * <p>Enables detailed monitoring for a running instance. Otherwise, basic
          * monitoring is enabled. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-cloudwatch.html">Monitoring
-         * Your Instances and Volumes</a> in the <i>Amazon Elastic Compute Cloud User
+         * your instances and volumes</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p> <p>To disable detailed monitoring, see .</p><p><h3>See Also:</h3>
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/MonitorInstances">AWS
@@ -17153,7 +17153,7 @@ namespace Model
          * down within four minutes, Amazon EC2 performs a hard reboot.</p> <p>For more
          * information about troubleshooting, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-console.html">Getting
-         * Console Output and Rebooting Instances</a> in the <i>Amazon Elastic Compute
+         * console output and rebooting instances</a> in the <i>Amazon Elastic Compute
          * Cloud User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RebootInstances">AWS
          * API Reference</a></p>
@@ -17168,7 +17168,7 @@ namespace Model
          * down within four minutes, Amazon EC2 performs a hard reboot.</p> <p>For more
          * information about troubleshooting, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-console.html">Getting
-         * Console Output and Rebooting Instances</a> in the <i>Amazon Elastic Compute
+         * console output and rebooting instances</a> in the <i>Amazon Elastic Compute
          * Cloud User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RebootInstances">AWS
          * API Reference</a></p>
@@ -17185,7 +17185,7 @@ namespace Model
          * down within four minutes, Amazon EC2 performs a hard reboot.</p> <p>For more
          * information about troubleshooting, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-console.html">Getting
-         * Console Output and Rebooting Instances</a> in the <i>Amazon Elastic Compute
+         * console output and rebooting instances</a> in the <i>Amazon Elastic Compute
          * Cloud User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RebootInstances">AWS
          * API Reference</a></p>
@@ -18506,16 +18506,16 @@ namespace Model
          * into a VPC. If you do not have a default VPC, or if you do not specify a subnet
          * ID, the request fails. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-vpc.html#vpc-only-instance-types">Instance
-         * Types Available Only in a VPC</a>.</p> </li> <li> <p>[EC2-VPC] All instances
+         * types available only in a VPC</a>.</p> </li> <li> <p>[EC2-VPC] All instances
          * have a network interface with a primary private IPv4 address. If you don't
          * specify this address, we choose one from the IPv4 range of your subnet.</p>
          * </li> <li> <p>Not all instance types support IPv6 addresses. For more
          * information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
-         * Types</a>.</p> </li> <li> <p>If you don't specify a security group ID, we use
+         * types</a>.</p> </li> <li> <p>If you don't specify a security group ID, we use
          * the default security group. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html">Security
-         * Groups</a>.</p> </li> <li> <p>If any of the AMIs have a product code attached
+         * groups</a>.</p> </li> <li> <p>If any of the AMIs have a product code attached
          * for which the user has not subscribed, the request fails.</p> </li> </ul> <p>You
          * can create a <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html">launch
@@ -18530,17 +18530,17 @@ namespace Model
          * during launch, after launch, or both. For more information, see
          * <a>CreateTags</a> and <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging
-         * Your Amazon EC2 Resources</a>.</p> <p>Linux instances have access to the public
+         * your Amazon EC2 resources</a>.</p> <p>Linux instances have access to the public
          * key of the key pair at boot. You can use this key to provide secure access to
          * the instance. Amazon EC2 public images use this feature to provide secure access
          * without passwords. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Key
-         * Pairs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>For
+         * pairs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>For
          * troubleshooting, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_InstanceStraightToTerminated.html">What
-         * To Do If An Instance Immediately Terminates</a>, and <a
+         * to do if an instance immediately terminates</a>, and <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesConnecting.html">Troubleshooting
-         * Connecting to Your Instance</a> in the <i>Amazon Elastic Compute Cloud User
+         * connecting to your instance</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RunInstances">AWS
          * API Reference</a></p>
@@ -18558,16 +18558,16 @@ namespace Model
          * into a VPC. If you do not have a default VPC, or if you do not specify a subnet
          * ID, the request fails. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-vpc.html#vpc-only-instance-types">Instance
-         * Types Available Only in a VPC</a>.</p> </li> <li> <p>[EC2-VPC] All instances
+         * types available only in a VPC</a>.</p> </li> <li> <p>[EC2-VPC] All instances
          * have a network interface with a primary private IPv4 address. If you don't
          * specify this address, we choose one from the IPv4 range of your subnet.</p>
          * </li> <li> <p>Not all instance types support IPv6 addresses. For more
          * information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
-         * Types</a>.</p> </li> <li> <p>If you don't specify a security group ID, we use
+         * types</a>.</p> </li> <li> <p>If you don't specify a security group ID, we use
          * the default security group. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html">Security
-         * Groups</a>.</p> </li> <li> <p>If any of the AMIs have a product code attached
+         * groups</a>.</p> </li> <li> <p>If any of the AMIs have a product code attached
          * for which the user has not subscribed, the request fails.</p> </li> </ul> <p>You
          * can create a <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html">launch
@@ -18582,17 +18582,17 @@ namespace Model
          * during launch, after launch, or both. For more information, see
          * <a>CreateTags</a> and <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging
-         * Your Amazon EC2 Resources</a>.</p> <p>Linux instances have access to the public
+         * your Amazon EC2 resources</a>.</p> <p>Linux instances have access to the public
          * key of the key pair at boot. You can use this key to provide secure access to
          * the instance. Amazon EC2 public images use this feature to provide secure access
          * without passwords. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Key
-         * Pairs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>For
+         * pairs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>For
          * troubleshooting, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_InstanceStraightToTerminated.html">What
-         * To Do If An Instance Immediately Terminates</a>, and <a
+         * to do if an instance immediately terminates</a>, and <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesConnecting.html">Troubleshooting
-         * Connecting to Your Instance</a> in the <i>Amazon Elastic Compute Cloud User
+         * connecting to your instance</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RunInstances">AWS
          * API Reference</a></p>
@@ -18612,16 +18612,16 @@ namespace Model
          * into a VPC. If you do not have a default VPC, or if you do not specify a subnet
          * ID, the request fails. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-vpc.html#vpc-only-instance-types">Instance
-         * Types Available Only in a VPC</a>.</p> </li> <li> <p>[EC2-VPC] All instances
+         * types available only in a VPC</a>.</p> </li> <li> <p>[EC2-VPC] All instances
          * have a network interface with a primary private IPv4 address. If you don't
          * specify this address, we choose one from the IPv4 range of your subnet.</p>
          * </li> <li> <p>Not all instance types support IPv6 addresses. For more
          * information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
-         * Types</a>.</p> </li> <li> <p>If you don't specify a security group ID, we use
+         * types</a>.</p> </li> <li> <p>If you don't specify a security group ID, we use
          * the default security group. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html">Security
-         * Groups</a>.</p> </li> <li> <p>If any of the AMIs have a product code attached
+         * groups</a>.</p> </li> <li> <p>If any of the AMIs have a product code attached
          * for which the user has not subscribed, the request fails.</p> </li> </ul> <p>You
          * can create a <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html">launch
@@ -18636,17 +18636,17 @@ namespace Model
          * during launch, after launch, or both. For more information, see
          * <a>CreateTags</a> and <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging
-         * Your Amazon EC2 Resources</a>.</p> <p>Linux instances have access to the public
+         * your Amazon EC2 resources</a>.</p> <p>Linux instances have access to the public
          * key of the key pair at boot. You can use this key to provide secure access to
          * the instance. Amazon EC2 public images use this feature to provide secure access
          * without passwords. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Key
-         * Pairs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>For
+         * pairs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>For
          * troubleshooting, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_InstanceStraightToTerminated.html">What
-         * To Do If An Instance Immediately Terminates</a>, and <a
+         * to do if an instance immediately terminates</a>, and <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesConnecting.html">Troubleshooting
-         * Connecting to Your Instance</a> in the <i>Amazon Elastic Compute Cloud User
+         * connecting to your instance</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RunInstances">AWS
          * API Reference</a></p>
@@ -18805,7 +18805,7 @@ namespace Model
          * configuring your operating system to generate a crash dump when a kernel panic
          * or stop error occurs, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/diagnostic-interrupt.html">Send
-         * a Diagnostic Interrupt</a> (Linux instances) or <a
+         * a diagnostic interrupt</a> (Linux instances) or <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/diagnostic-interrupt.html">Send
          * a Diagnostic Interrupt</a> (Windows instances).</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/SendDiagnosticInterrupt">AWS
@@ -18827,7 +18827,7 @@ namespace Model
          * configuring your operating system to generate a crash dump when a kernel panic
          * or stop error occurs, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/diagnostic-interrupt.html">Send
-         * a Diagnostic Interrupt</a> (Linux instances) or <a
+         * a diagnostic interrupt</a> (Linux instances) or <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/diagnostic-interrupt.html">Send
          * a Diagnostic Interrupt</a> (Windows instances).</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/SendDiagnosticInterrupt">AWS
@@ -18851,7 +18851,7 @@ namespace Model
          * configuring your operating system to generate a crash dump when a kernel panic
          * or stop error occurs, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/diagnostic-interrupt.html">Send
-         * a Diagnostic Interrupt</a> (Linux instances) or <a
+         * a diagnostic interrupt</a> (Linux instances) or <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/diagnostic-interrupt.html">Send
          * a Diagnostic Interrupt</a> (Windows instances).</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/SendDiagnosticInterrupt">AWS
@@ -18879,7 +18879,7 @@ namespace Model
          * <p>Performing this operation on an instance that uses an instance store as its
          * root device returns an error.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html">Stopping
-         * Instances</a> in the <i>Amazon Elastic Compute Cloud User
+         * instances</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/StartInstances">AWS
          * API Reference</a></p>
@@ -18904,7 +18904,7 @@ namespace Model
          * <p>Performing this operation on an instance that uses an instance store as its
          * root device returns an error.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html">Stopping
-         * Instances</a> in the <i>Amazon Elastic Compute Cloud User
+         * instances</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/StartInstances">AWS
          * API Reference</a></p>
@@ -18931,7 +18931,7 @@ namespace Model
          * <p>Performing this operation on an instance that uses an instance store as its
          * root device returns an error.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html">Stopping
-         * Instances</a> in the <i>Amazon Elastic Compute Cloud User
+         * instances</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/StartInstances">AWS
          * API Reference</a></p>
@@ -18994,7 +18994,7 @@ namespace Model
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html#hibernating-prerequisites">hibernation
          * prerequisites</a>. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate
-         * Your Instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+         * your instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
          * <p>We don't charge usage for a stopped instance, or data transfer fees; however,
          * your root partition Amazon EBS volume remains and continues to persist your
          * data, and you are charged for Amazon EBS volume usage. Every time you start your
@@ -19008,7 +19008,7 @@ namespace Model
          * Instances, but you can specify that Amazon EC2 should hibernate Spot Instances
          * when they are interrupted. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-interruptions.html#hibernate-spot-instances">Hibernating
-         * Interrupted Spot Instances</a> in the <i>Amazon Elastic Compute Cloud User
+         * interrupted Spot Instances</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p> <p>When you stop or hibernate an instance, we shut it down. You
          * can restart your instance at any time. Before stopping or hibernating an
          * instance, make sure it is in a state from which it can be restarted. Stopping an
@@ -19022,13 +19022,13 @@ namespace Model
          * information about the differences between rebooting, stopping, hibernating, and
          * terminating instances, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html">Instance
-         * Lifecycle</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>When
+         * lifecycle</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>When
          * you stop an instance, we attempt to shut it down forcibly after a short while.
          * If your instance appears stuck in the stopping state after a period of time,
          * there may be an issue with the underlying host computer. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesStopping.html">Troubleshooting
-         * Stopping Your Instance</a> in the <i>Amazon Elastic Compute Cloud User
+         * stopping your instance</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/StopInstances">AWS
          * API Reference</a></p>
@@ -19043,7 +19043,7 @@ namespace Model
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html#hibernating-prerequisites">hibernation
          * prerequisites</a>. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate
-         * Your Instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+         * your instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
          * <p>We don't charge usage for a stopped instance, or data transfer fees; however,
          * your root partition Amazon EBS volume remains and continues to persist your
          * data, and you are charged for Amazon EBS volume usage. Every time you start your
@@ -19057,7 +19057,7 @@ namespace Model
          * Instances, but you can specify that Amazon EC2 should hibernate Spot Instances
          * when they are interrupted. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-interruptions.html#hibernate-spot-instances">Hibernating
-         * Interrupted Spot Instances</a> in the <i>Amazon Elastic Compute Cloud User
+         * interrupted Spot Instances</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p> <p>When you stop or hibernate an instance, we shut it down. You
          * can restart your instance at any time. Before stopping or hibernating an
          * instance, make sure it is in a state from which it can be restarted. Stopping an
@@ -19071,13 +19071,13 @@ namespace Model
          * information about the differences between rebooting, stopping, hibernating, and
          * terminating instances, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html">Instance
-         * Lifecycle</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>When
+         * lifecycle</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>When
          * you stop an instance, we attempt to shut it down forcibly after a short while.
          * If your instance appears stuck in the stopping state after a period of time,
          * there may be an issue with the underlying host computer. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesStopping.html">Troubleshooting
-         * Stopping Your Instance</a> in the <i>Amazon Elastic Compute Cloud User
+         * stopping your instance</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/StopInstances">AWS
          * API Reference</a></p>
@@ -19094,7 +19094,7 @@ namespace Model
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html#hibernating-prerequisites">hibernation
          * prerequisites</a>. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate
-         * Your Instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+         * your instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
          * <p>We don't charge usage for a stopped instance, or data transfer fees; however,
          * your root partition Amazon EBS volume remains and continues to persist your
          * data, and you are charged for Amazon EBS volume usage. Every time you start your
@@ -19108,7 +19108,7 @@ namespace Model
          * Instances, but you can specify that Amazon EC2 should hibernate Spot Instances
          * when they are interrupted. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-interruptions.html#hibernate-spot-instances">Hibernating
-         * Interrupted Spot Instances</a> in the <i>Amazon Elastic Compute Cloud User
+         * interrupted Spot Instances</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p> <p>When you stop or hibernate an instance, we shut it down. You
          * can restart your instance at any time. Before stopping or hibernating an
          * instance, make sure it is in a state from which it can be restarted. Stopping an
@@ -19122,13 +19122,13 @@ namespace Model
          * information about the differences between rebooting, stopping, hibernating, and
          * terminating instances, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html">Instance
-         * Lifecycle</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>When
+         * lifecycle</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>When
          * you stop an instance, we attempt to shut it down forcibly after a short while.
          * If your instance appears stuck in the stopping state after a period of time,
          * there may be an issue with the underlying host computer. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesStopping.html">Troubleshooting
-         * Stopping Your Instance</a> in the <i>Amazon Elastic Compute Cloud User
+         * stopping your instance</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/StopInstances">AWS
          * API Reference</a></p>
@@ -19185,10 +19185,10 @@ namespace Model
          * <code>true</code> are automatically deleted. For more information about the
          * differences between stopping and terminating instances, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html">Instance
-         * Lifecycle</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>For
+         * lifecycle</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>For
          * more information about troubleshooting, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesShuttingDown.html">Troubleshooting
-         * Terminating Your Instance</a> in the <i>Amazon Elastic Compute Cloud User
+         * terminating your instance</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/TerminateInstances">AWS
          * API Reference</a></p>
@@ -19212,10 +19212,10 @@ namespace Model
          * <code>true</code> are automatically deleted. For more information about the
          * differences between stopping and terminating instances, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html">Instance
-         * Lifecycle</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>For
+         * lifecycle</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>For
          * more information about troubleshooting, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesShuttingDown.html">Troubleshooting
-         * Terminating Your Instance</a> in the <i>Amazon Elastic Compute Cloud User
+         * terminating your instance</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/TerminateInstances">AWS
          * API Reference</a></p>
@@ -19241,10 +19241,10 @@ namespace Model
          * <code>true</code> are automatically deleted. For more information about the
          * differences between stopping and terminating instances, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html">Instance
-         * Lifecycle</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>For
+         * lifecycle</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>For
          * more information about troubleshooting, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesShuttingDown.html">Troubleshooting
-         * Terminating Your Instance</a> in the <i>Amazon Elastic Compute Cloud User
+         * terminating your instance</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/TerminateInstances">AWS
          * API Reference</a></p>
@@ -19313,7 +19313,7 @@ namespace Model
          * <p>Disables detailed monitoring for a running instance. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-cloudwatch.html">Monitoring
-         * Your Instances and Volumes</a> in the <i>Amazon Elastic Compute Cloud User
+         * your instances and volumes</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/UnmonitorInstances">AWS
          * API Reference</a></p>
@@ -19324,7 +19324,7 @@ namespace Model
          * <p>Disables detailed monitoring for a running instance. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-cloudwatch.html">Monitoring
-         * Your Instances and Volumes</a> in the <i>Amazon Elastic Compute Cloud User
+         * your instances and volumes</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/UnmonitorInstances">AWS
          * API Reference</a></p>
@@ -19337,7 +19337,7 @@ namespace Model
          * <p>Disables detailed monitoring for a running instance. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-cloudwatch.html">Monitoring
-         * Your Instances and Volumes</a> in the <i>Amazon Elastic Compute Cloud User
+         * your instances and volumes</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/UnmonitorInstances">AWS
          * API Reference</a></p>

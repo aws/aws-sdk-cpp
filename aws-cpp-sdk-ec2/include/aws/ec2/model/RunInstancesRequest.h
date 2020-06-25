@@ -160,7 +160,7 @@ namespace Model
     /**
      * <p>The instance type. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
-     * Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>Default:
+     * types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>Default:
      * <code>m1.small</code> </p>
      */
     inline const InstanceType& GetInstanceType() const{ return m_instanceType; }
@@ -168,7 +168,7 @@ namespace Model
     /**
      * <p>The instance type. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
-     * Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>Default:
+     * types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>Default:
      * <code>m1.small</code> </p>
      */
     inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
@@ -176,7 +176,7 @@ namespace Model
     /**
      * <p>The instance type. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
-     * Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>Default:
+     * types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>Default:
      * <code>m1.small</code> </p>
      */
     inline void SetInstanceType(const InstanceType& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
@@ -184,7 +184,7 @@ namespace Model
     /**
      * <p>The instance type. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
-     * Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>Default:
+     * types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>Default:
      * <code>m1.small</code> </p>
      */
     inline void SetInstanceType(InstanceType&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
@@ -192,7 +192,7 @@ namespace Model
     /**
      * <p>The instance type. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
-     * Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>Default:
+     * types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>Default:
      * <code>m1.small</code> </p>
      */
     inline RunInstancesRequest& WithInstanceType(const InstanceType& value) { SetInstanceType(value); return *this;}
@@ -200,7 +200,7 @@ namespace Model
     /**
      * <p>The instance type. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
-     * Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>Default:
+     * types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>Default:
      * <code>m1.small</code> </p>
      */
     inline RunInstancesRequest& WithInstanceType(InstanceType&& value) { SetInstanceType(std::move(value)); return *this;}
@@ -949,7 +949,7 @@ namespace Model
     /**
      * <p>The user data to make available to the instance. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Running
-     * Commands on Your Linux Instance at Launch</a> (Linux) and <a
+     * commands on your Linux instance at launch</a> (Linux) and <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html#instancedata-add-user-data">Adding
      * User Data</a> (Windows). If you are using a command line tool, base64-encoding
      * is performed for you, and you can load the text from a file. Otherwise, you must
@@ -960,7 +960,7 @@ namespace Model
     /**
      * <p>The user data to make available to the instance. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Running
-     * Commands on Your Linux Instance at Launch</a> (Linux) and <a
+     * commands on your Linux instance at launch</a> (Linux) and <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html#instancedata-add-user-data">Adding
      * User Data</a> (Windows). If you are using a command line tool, base64-encoding
      * is performed for you, and you can load the text from a file. Otherwise, you must
@@ -971,7 +971,7 @@ namespace Model
     /**
      * <p>The user data to make available to the instance. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Running
-     * Commands on Your Linux Instance at Launch</a> (Linux) and <a
+     * commands on your Linux instance at launch</a> (Linux) and <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html#instancedata-add-user-data">Adding
      * User Data</a> (Windows). If you are using a command line tool, base64-encoding
      * is performed for you, and you can load the text from a file. Otherwise, you must
@@ -982,7 +982,7 @@ namespace Model
     /**
      * <p>The user data to make available to the instance. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Running
-     * Commands on Your Linux Instance at Launch</a> (Linux) and <a
+     * commands on your Linux instance at launch</a> (Linux) and <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html#instancedata-add-user-data">Adding
      * User Data</a> (Windows). If you are using a command line tool, base64-encoding
      * is performed for you, and you can load the text from a file. Otherwise, you must
@@ -993,7 +993,7 @@ namespace Model
     /**
      * <p>The user data to make available to the instance. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Running
-     * Commands on Your Linux Instance at Launch</a> (Linux) and <a
+     * commands on your Linux instance at launch</a> (Linux) and <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html#instancedata-add-user-data">Adding
      * User Data</a> (Windows). If you are using a command line tool, base64-encoding
      * is performed for you, and you can load the text from a file. Otherwise, you must
@@ -1004,7 +1004,7 @@ namespace Model
     /**
      * <p>The user data to make available to the instance. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Running
-     * Commands on Your Linux Instance at Launch</a> (Linux) and <a
+     * commands on your Linux instance at launch</a> (Linux) and <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html#instancedata-add-user-data">Adding
      * User Data</a> (Windows). If you are using a command line tool, base64-encoding
      * is performed for you, and you can load the text from a file. Otherwise, you must
@@ -1015,7 +1015,7 @@ namespace Model
     /**
      * <p>The user data to make available to the instance. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Running
-     * Commands on Your Linux Instance at Launch</a> (Linux) and <a
+     * commands on your Linux instance at launch</a> (Linux) and <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html#instancedata-add-user-data">Adding
      * User Data</a> (Windows). If you are using a command line tool, base64-encoding
      * is performed for you, and you can load the text from a file. Otherwise, you must
@@ -1026,7 +1026,7 @@ namespace Model
     /**
      * <p>The user data to make available to the instance. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Running
-     * Commands on Your Linux Instance at Launch</a> (Linux) and <a
+     * commands on your Linux instance at launch</a> (Linux) and <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html#instancedata-add-user-data">Adding
      * User Data</a> (Windows). If you are using a command line tool, base64-encoding
      * is performed for you, and you can load the text from a file. Otherwise, you must
@@ -1812,7 +1812,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyInstanceCreditSpecification.html">
      * ModifyInstanceCreditSpecification</a>. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
-     * Performance Instances</a> in the <i>Amazon Elastic Compute Cloud User
+     * performance instances</a> in the <i>Amazon Elastic Compute Cloud User
      * Guide</i>.</p> <p>Default: <code>standard</code> (T2 instances) or
      * <code>unlimited</code> (T3/T3a instances)</p>
      */
@@ -1825,7 +1825,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyInstanceCreditSpecification.html">
      * ModifyInstanceCreditSpecification</a>. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
-     * Performance Instances</a> in the <i>Amazon Elastic Compute Cloud User
+     * performance instances</a> in the <i>Amazon Elastic Compute Cloud User
      * Guide</i>.</p> <p>Default: <code>standard</code> (T2 instances) or
      * <code>unlimited</code> (T3/T3a instances)</p>
      */
@@ -1838,7 +1838,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyInstanceCreditSpecification.html">
      * ModifyInstanceCreditSpecification</a>. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
-     * Performance Instances</a> in the <i>Amazon Elastic Compute Cloud User
+     * performance instances</a> in the <i>Amazon Elastic Compute Cloud User
      * Guide</i>.</p> <p>Default: <code>standard</code> (T2 instances) or
      * <code>unlimited</code> (T3/T3a instances)</p>
      */
@@ -1851,7 +1851,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyInstanceCreditSpecification.html">
      * ModifyInstanceCreditSpecification</a>. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
-     * Performance Instances</a> in the <i>Amazon Elastic Compute Cloud User
+     * performance instances</a> in the <i>Amazon Elastic Compute Cloud User
      * Guide</i>.</p> <p>Default: <code>standard</code> (T2 instances) or
      * <code>unlimited</code> (T3/T3a instances)</p>
      */
@@ -1864,7 +1864,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyInstanceCreditSpecification.html">
      * ModifyInstanceCreditSpecification</a>. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
-     * Performance Instances</a> in the <i>Amazon Elastic Compute Cloud User
+     * performance instances</a> in the <i>Amazon Elastic Compute Cloud User
      * Guide</i>.</p> <p>Default: <code>standard</code> (T2 instances) or
      * <code>unlimited</code> (T3/T3a instances)</p>
      */
@@ -1877,7 +1877,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyInstanceCreditSpecification.html">
      * ModifyInstanceCreditSpecification</a>. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
-     * Performance Instances</a> in the <i>Amazon Elastic Compute Cloud User
+     * performance instances</a> in the <i>Amazon Elastic Compute Cloud User
      * Guide</i>.</p> <p>Default: <code>standard</code> (T2 instances) or
      * <code>unlimited</code> (T3/T3a instances)</p>
      */
@@ -1887,42 +1887,42 @@ namespace Model
     /**
      * <p>The CPU options for the instance. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-optimize-cpu.html">Optimizing
-     * CPU Options</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * CPU options</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      */
     inline const CpuOptionsRequest& GetCpuOptions() const{ return m_cpuOptions; }
 
     /**
      * <p>The CPU options for the instance. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-optimize-cpu.html">Optimizing
-     * CPU Options</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * CPU options</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      */
     inline bool CpuOptionsHasBeenSet() const { return m_cpuOptionsHasBeenSet; }
 
     /**
      * <p>The CPU options for the instance. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-optimize-cpu.html">Optimizing
-     * CPU Options</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * CPU options</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      */
     inline void SetCpuOptions(const CpuOptionsRequest& value) { m_cpuOptionsHasBeenSet = true; m_cpuOptions = value; }
 
     /**
      * <p>The CPU options for the instance. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-optimize-cpu.html">Optimizing
-     * CPU Options</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * CPU options</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      */
     inline void SetCpuOptions(CpuOptionsRequest&& value) { m_cpuOptionsHasBeenSet = true; m_cpuOptions = std::move(value); }
 
     /**
      * <p>The CPU options for the instance. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-optimize-cpu.html">Optimizing
-     * CPU Options</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * CPU options</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      */
     inline RunInstancesRequest& WithCpuOptions(const CpuOptionsRequest& value) { SetCpuOptions(value); return *this;}
 
     /**
      * <p>The CPU options for the instance. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-optimize-cpu.html">Optimizing
-     * CPU Options</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * CPU options</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      */
     inline RunInstancesRequest& WithCpuOptions(CpuOptionsRequest&& value) { SetCpuOptions(std::move(value)); return *this;}
 
@@ -1980,7 +1980,7 @@ namespace Model
      * <p>Indicates whether an instance is enabled for hibernation. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate
-     * Your Instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * your instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      */
     inline const HibernationOptionsRequest& GetHibernationOptions() const{ return m_hibernationOptions; }
 
@@ -1988,7 +1988,7 @@ namespace Model
      * <p>Indicates whether an instance is enabled for hibernation. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate
-     * Your Instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * your instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      */
     inline bool HibernationOptionsHasBeenSet() const { return m_hibernationOptionsHasBeenSet; }
 
@@ -1996,7 +1996,7 @@ namespace Model
      * <p>Indicates whether an instance is enabled for hibernation. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate
-     * Your Instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * your instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      */
     inline void SetHibernationOptions(const HibernationOptionsRequest& value) { m_hibernationOptionsHasBeenSet = true; m_hibernationOptions = value; }
 
@@ -2004,7 +2004,7 @@ namespace Model
      * <p>Indicates whether an instance is enabled for hibernation. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate
-     * Your Instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * your instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      */
     inline void SetHibernationOptions(HibernationOptionsRequest&& value) { m_hibernationOptionsHasBeenSet = true; m_hibernationOptions = std::move(value); }
 
@@ -2012,7 +2012,7 @@ namespace Model
      * <p>Indicates whether an instance is enabled for hibernation. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate
-     * Your Instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * your instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      */
     inline RunInstancesRequest& WithHibernationOptions(const HibernationOptionsRequest& value) { SetHibernationOptions(value); return *this;}
 
@@ -2020,7 +2020,7 @@ namespace Model
      * <p>Indicates whether an instance is enabled for hibernation. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate
-     * Your Instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * your instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      */
     inline RunInstancesRequest& WithHibernationOptions(HibernationOptionsRequest&& value) { SetHibernationOptions(std::move(value)); return *this;}
 
@@ -2069,42 +2069,42 @@ namespace Model
     /**
      * <p>The metadata options for the instance. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance
-     * Metadata and User Data</a>.</p>
+     * metadata and user data</a>.</p>
      */
     inline const InstanceMetadataOptionsRequest& GetMetadataOptions() const{ return m_metadataOptions; }
 
     /**
      * <p>The metadata options for the instance. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance
-     * Metadata and User Data</a>.</p>
+     * metadata and user data</a>.</p>
      */
     inline bool MetadataOptionsHasBeenSet() const { return m_metadataOptionsHasBeenSet; }
 
     /**
      * <p>The metadata options for the instance. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance
-     * Metadata and User Data</a>.</p>
+     * metadata and user data</a>.</p>
      */
     inline void SetMetadataOptions(const InstanceMetadataOptionsRequest& value) { m_metadataOptionsHasBeenSet = true; m_metadataOptions = value; }
 
     /**
      * <p>The metadata options for the instance. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance
-     * Metadata and User Data</a>.</p>
+     * metadata and user data</a>.</p>
      */
     inline void SetMetadataOptions(InstanceMetadataOptionsRequest&& value) { m_metadataOptionsHasBeenSet = true; m_metadataOptions = std::move(value); }
 
     /**
      * <p>The metadata options for the instance. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance
-     * Metadata and User Data</a>.</p>
+     * metadata and user data</a>.</p>
      */
     inline RunInstancesRequest& WithMetadataOptions(const InstanceMetadataOptionsRequest& value) { SetMetadataOptions(value); return *this;}
 
     /**
      * <p>The metadata options for the instance. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance
-     * Metadata and User Data</a>.</p>
+     * metadata and user data</a>.</p>
      */
     inline RunInstancesRequest& WithMetadataOptions(InstanceMetadataOptionsRequest&& value) { SetMetadataOptions(std::move(value)); return *this;}
 

@@ -49,6 +49,8 @@
 #include <aws/glue/model/CreateUserDefinedFunctionResult.h>
 #include <aws/glue/model/CreateWorkflowResult.h>
 #include <aws/glue/model/DeleteClassifierResult.h>
+#include <aws/glue/model/DeleteColumnStatisticsForPartitionResult.h>
+#include <aws/glue/model/DeleteColumnStatisticsForTableResult.h>
 #include <aws/glue/model/DeleteConnectionResult.h>
 #include <aws/glue/model/DeleteCrawlerResult.h>
 #include <aws/glue/model/DeleteDatabaseResult.h>
@@ -66,6 +68,8 @@
 #include <aws/glue/model/GetCatalogImportStatusResult.h>
 #include <aws/glue/model/GetClassifierResult.h>
 #include <aws/glue/model/GetClassifiersResult.h>
+#include <aws/glue/model/GetColumnStatisticsForPartitionResult.h>
+#include <aws/glue/model/GetColumnStatisticsForTableResult.h>
 #include <aws/glue/model/GetConnectionResult.h>
 #include <aws/glue/model/GetConnectionsResult.h>
 #include <aws/glue/model/GetCrawlerResult.h>
@@ -134,6 +138,8 @@
 #include <aws/glue/model/TagResourceResult.h>
 #include <aws/glue/model/UntagResourceResult.h>
 #include <aws/glue/model/UpdateClassifierResult.h>
+#include <aws/glue/model/UpdateColumnStatisticsForPartitionResult.h>
+#include <aws/glue/model/UpdateColumnStatisticsForTableResult.h>
 #include <aws/glue/model/UpdateConnectionResult.h>
 #include <aws/glue/model/UpdateCrawlerResult.h>
 #include <aws/glue/model/UpdateCrawlerScheduleResult.h>
@@ -213,6 +219,8 @@ namespace Model
         class CreateUserDefinedFunctionRequest;
         class CreateWorkflowRequest;
         class DeleteClassifierRequest;
+        class DeleteColumnStatisticsForPartitionRequest;
+        class DeleteColumnStatisticsForTableRequest;
         class DeleteConnectionRequest;
         class DeleteCrawlerRequest;
         class DeleteDatabaseRequest;
@@ -230,6 +238,8 @@ namespace Model
         class GetCatalogImportStatusRequest;
         class GetClassifierRequest;
         class GetClassifiersRequest;
+        class GetColumnStatisticsForPartitionRequest;
+        class GetColumnStatisticsForTableRequest;
         class GetConnectionRequest;
         class GetConnectionsRequest;
         class GetCrawlerRequest;
@@ -298,6 +308,8 @@ namespace Model
         class TagResourceRequest;
         class UntagResourceRequest;
         class UpdateClassifierRequest;
+        class UpdateColumnStatisticsForPartitionRequest;
+        class UpdateColumnStatisticsForTableRequest;
         class UpdateConnectionRequest;
         class UpdateCrawlerRequest;
         class UpdateCrawlerScheduleRequest;
@@ -339,6 +351,8 @@ namespace Model
         typedef Aws::Utils::Outcome<CreateUserDefinedFunctionResult, Aws::Client::AWSError<GlueErrors>> CreateUserDefinedFunctionOutcome;
         typedef Aws::Utils::Outcome<CreateWorkflowResult, Aws::Client::AWSError<GlueErrors>> CreateWorkflowOutcome;
         typedef Aws::Utils::Outcome<DeleteClassifierResult, Aws::Client::AWSError<GlueErrors>> DeleteClassifierOutcome;
+        typedef Aws::Utils::Outcome<DeleteColumnStatisticsForPartitionResult, Aws::Client::AWSError<GlueErrors>> DeleteColumnStatisticsForPartitionOutcome;
+        typedef Aws::Utils::Outcome<DeleteColumnStatisticsForTableResult, Aws::Client::AWSError<GlueErrors>> DeleteColumnStatisticsForTableOutcome;
         typedef Aws::Utils::Outcome<DeleteConnectionResult, Aws::Client::AWSError<GlueErrors>> DeleteConnectionOutcome;
         typedef Aws::Utils::Outcome<DeleteCrawlerResult, Aws::Client::AWSError<GlueErrors>> DeleteCrawlerOutcome;
         typedef Aws::Utils::Outcome<DeleteDatabaseResult, Aws::Client::AWSError<GlueErrors>> DeleteDatabaseOutcome;
@@ -356,6 +370,8 @@ namespace Model
         typedef Aws::Utils::Outcome<GetCatalogImportStatusResult, Aws::Client::AWSError<GlueErrors>> GetCatalogImportStatusOutcome;
         typedef Aws::Utils::Outcome<GetClassifierResult, Aws::Client::AWSError<GlueErrors>> GetClassifierOutcome;
         typedef Aws::Utils::Outcome<GetClassifiersResult, Aws::Client::AWSError<GlueErrors>> GetClassifiersOutcome;
+        typedef Aws::Utils::Outcome<GetColumnStatisticsForPartitionResult, Aws::Client::AWSError<GlueErrors>> GetColumnStatisticsForPartitionOutcome;
+        typedef Aws::Utils::Outcome<GetColumnStatisticsForTableResult, Aws::Client::AWSError<GlueErrors>> GetColumnStatisticsForTableOutcome;
         typedef Aws::Utils::Outcome<GetConnectionResult, Aws::Client::AWSError<GlueErrors>> GetConnectionOutcome;
         typedef Aws::Utils::Outcome<GetConnectionsResult, Aws::Client::AWSError<GlueErrors>> GetConnectionsOutcome;
         typedef Aws::Utils::Outcome<GetCrawlerResult, Aws::Client::AWSError<GlueErrors>> GetCrawlerOutcome;
@@ -424,6 +440,8 @@ namespace Model
         typedef Aws::Utils::Outcome<TagResourceResult, Aws::Client::AWSError<GlueErrors>> TagResourceOutcome;
         typedef Aws::Utils::Outcome<UntagResourceResult, Aws::Client::AWSError<GlueErrors>> UntagResourceOutcome;
         typedef Aws::Utils::Outcome<UpdateClassifierResult, Aws::Client::AWSError<GlueErrors>> UpdateClassifierOutcome;
+        typedef Aws::Utils::Outcome<UpdateColumnStatisticsForPartitionResult, Aws::Client::AWSError<GlueErrors>> UpdateColumnStatisticsForPartitionOutcome;
+        typedef Aws::Utils::Outcome<UpdateColumnStatisticsForTableResult, Aws::Client::AWSError<GlueErrors>> UpdateColumnStatisticsForTableOutcome;
         typedef Aws::Utils::Outcome<UpdateConnectionResult, Aws::Client::AWSError<GlueErrors>> UpdateConnectionOutcome;
         typedef Aws::Utils::Outcome<UpdateCrawlerResult, Aws::Client::AWSError<GlueErrors>> UpdateCrawlerOutcome;
         typedef Aws::Utils::Outcome<UpdateCrawlerScheduleResult, Aws::Client::AWSError<GlueErrors>> UpdateCrawlerScheduleOutcome;
@@ -465,6 +483,8 @@ namespace Model
         typedef std::future<CreateUserDefinedFunctionOutcome> CreateUserDefinedFunctionOutcomeCallable;
         typedef std::future<CreateWorkflowOutcome> CreateWorkflowOutcomeCallable;
         typedef std::future<DeleteClassifierOutcome> DeleteClassifierOutcomeCallable;
+        typedef std::future<DeleteColumnStatisticsForPartitionOutcome> DeleteColumnStatisticsForPartitionOutcomeCallable;
+        typedef std::future<DeleteColumnStatisticsForTableOutcome> DeleteColumnStatisticsForTableOutcomeCallable;
         typedef std::future<DeleteConnectionOutcome> DeleteConnectionOutcomeCallable;
         typedef std::future<DeleteCrawlerOutcome> DeleteCrawlerOutcomeCallable;
         typedef std::future<DeleteDatabaseOutcome> DeleteDatabaseOutcomeCallable;
@@ -482,6 +502,8 @@ namespace Model
         typedef std::future<GetCatalogImportStatusOutcome> GetCatalogImportStatusOutcomeCallable;
         typedef std::future<GetClassifierOutcome> GetClassifierOutcomeCallable;
         typedef std::future<GetClassifiersOutcome> GetClassifiersOutcomeCallable;
+        typedef std::future<GetColumnStatisticsForPartitionOutcome> GetColumnStatisticsForPartitionOutcomeCallable;
+        typedef std::future<GetColumnStatisticsForTableOutcome> GetColumnStatisticsForTableOutcomeCallable;
         typedef std::future<GetConnectionOutcome> GetConnectionOutcomeCallable;
         typedef std::future<GetConnectionsOutcome> GetConnectionsOutcomeCallable;
         typedef std::future<GetCrawlerOutcome> GetCrawlerOutcomeCallable;
@@ -550,6 +572,8 @@ namespace Model
         typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
         typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
         typedef std::future<UpdateClassifierOutcome> UpdateClassifierOutcomeCallable;
+        typedef std::future<UpdateColumnStatisticsForPartitionOutcome> UpdateColumnStatisticsForPartitionOutcomeCallable;
+        typedef std::future<UpdateColumnStatisticsForTableOutcome> UpdateColumnStatisticsForTableOutcomeCallable;
         typedef std::future<UpdateConnectionOutcome> UpdateConnectionOutcomeCallable;
         typedef std::future<UpdateCrawlerOutcome> UpdateCrawlerOutcomeCallable;
         typedef std::future<UpdateCrawlerScheduleOutcome> UpdateCrawlerScheduleOutcomeCallable;
@@ -594,6 +618,8 @@ namespace Model
     typedef std::function<void(const GlueClient*, const Model::CreateUserDefinedFunctionRequest&, const Model::CreateUserDefinedFunctionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateUserDefinedFunctionResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::CreateWorkflowRequest&, const Model::CreateWorkflowOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateWorkflowResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::DeleteClassifierRequest&, const Model::DeleteClassifierOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteClassifierResponseReceivedHandler;
+    typedef std::function<void(const GlueClient*, const Model::DeleteColumnStatisticsForPartitionRequest&, const Model::DeleteColumnStatisticsForPartitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteColumnStatisticsForPartitionResponseReceivedHandler;
+    typedef std::function<void(const GlueClient*, const Model::DeleteColumnStatisticsForTableRequest&, const Model::DeleteColumnStatisticsForTableOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteColumnStatisticsForTableResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::DeleteConnectionRequest&, const Model::DeleteConnectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteConnectionResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::DeleteCrawlerRequest&, const Model::DeleteCrawlerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteCrawlerResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::DeleteDatabaseRequest&, const Model::DeleteDatabaseOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDatabaseResponseReceivedHandler;
@@ -611,6 +637,8 @@ namespace Model
     typedef std::function<void(const GlueClient*, const Model::GetCatalogImportStatusRequest&, const Model::GetCatalogImportStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCatalogImportStatusResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::GetClassifierRequest&, const Model::GetClassifierOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetClassifierResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::GetClassifiersRequest&, const Model::GetClassifiersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetClassifiersResponseReceivedHandler;
+    typedef std::function<void(const GlueClient*, const Model::GetColumnStatisticsForPartitionRequest&, const Model::GetColumnStatisticsForPartitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetColumnStatisticsForPartitionResponseReceivedHandler;
+    typedef std::function<void(const GlueClient*, const Model::GetColumnStatisticsForTableRequest&, const Model::GetColumnStatisticsForTableOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetColumnStatisticsForTableResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::GetConnectionRequest&, const Model::GetConnectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetConnectionResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::GetConnectionsRequest&, const Model::GetConnectionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetConnectionsResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::GetCrawlerRequest&, const Model::GetCrawlerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCrawlerResponseReceivedHandler;
@@ -679,6 +707,8 @@ namespace Model
     typedef std::function<void(const GlueClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::UpdateClassifierRequest&, const Model::UpdateClassifierOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateClassifierResponseReceivedHandler;
+    typedef std::function<void(const GlueClient*, const Model::UpdateColumnStatisticsForPartitionRequest&, const Model::UpdateColumnStatisticsForPartitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateColumnStatisticsForPartitionResponseReceivedHandler;
+    typedef std::function<void(const GlueClient*, const Model::UpdateColumnStatisticsForTableRequest&, const Model::UpdateColumnStatisticsForTableOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateColumnStatisticsForTableResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::UpdateConnectionRequest&, const Model::UpdateConnectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateConnectionResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::UpdateCrawlerRequest&, const Model::UpdateCrawlerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateCrawlerResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::UpdateCrawlerScheduleRequest&, const Model::UpdateCrawlerScheduleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateCrawlerScheduleResponseReceivedHandler;
@@ -1621,6 +1651,59 @@ namespace Model
         virtual void DeleteClassifierAsync(const Model::DeleteClassifierRequest& request, const DeleteClassifierResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Delete the partition column statistics of a column.</p><p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteColumnStatisticsForPartition">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteColumnStatisticsForPartitionOutcome DeleteColumnStatisticsForPartition(const Model::DeleteColumnStatisticsForPartitionRequest& request) const;
+
+        /**
+         * <p>Delete the partition column statistics of a column.</p><p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteColumnStatisticsForPartition">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteColumnStatisticsForPartitionOutcomeCallable DeleteColumnStatisticsForPartitionCallable(const Model::DeleteColumnStatisticsForPartitionRequest& request) const;
+
+        /**
+         * <p>Delete the partition column statistics of a column.</p><p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteColumnStatisticsForPartition">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteColumnStatisticsForPartitionAsync(const Model::DeleteColumnStatisticsForPartitionRequest& request, const DeleteColumnStatisticsForPartitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Retrieves table statistics of columns.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteColumnStatisticsForTable">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteColumnStatisticsForTableOutcome DeleteColumnStatisticsForTable(const Model::DeleteColumnStatisticsForTableRequest& request) const;
+
+        /**
+         * <p>Retrieves table statistics of columns.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteColumnStatisticsForTable">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteColumnStatisticsForTableOutcomeCallable DeleteColumnStatisticsForTableCallable(const Model::DeleteColumnStatisticsForTableRequest& request) const;
+
+        /**
+         * <p>Retrieves table statistics of columns.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteColumnStatisticsForTable">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteColumnStatisticsForTableAsync(const Model::DeleteColumnStatisticsForTableRequest& request, const DeleteColumnStatisticsForTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Deletes a connection from the Data Catalog.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteConnection">AWS
          * API Reference</a></p>
@@ -2131,6 +2214,56 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetClassifiersAsync(const Model::GetClassifiersRequest& request, const GetClassifiersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Retrieves partition statistics of columns.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetColumnStatisticsForPartition">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetColumnStatisticsForPartitionOutcome GetColumnStatisticsForPartition(const Model::GetColumnStatisticsForPartitionRequest& request) const;
+
+        /**
+         * <p>Retrieves partition statistics of columns.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetColumnStatisticsForPartition">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetColumnStatisticsForPartitionOutcomeCallable GetColumnStatisticsForPartitionCallable(const Model::GetColumnStatisticsForPartitionRequest& request) const;
+
+        /**
+         * <p>Retrieves partition statistics of columns.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetColumnStatisticsForPartition">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetColumnStatisticsForPartitionAsync(const Model::GetColumnStatisticsForPartitionRequest& request, const GetColumnStatisticsForPartitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Retrieves table statistics of columns.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetColumnStatisticsForTable">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetColumnStatisticsForTableOutcome GetColumnStatisticsForTable(const Model::GetColumnStatisticsForTableRequest& request) const;
+
+        /**
+         * <p>Retrieves table statistics of columns.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetColumnStatisticsForTable">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetColumnStatisticsForTableOutcomeCallable GetColumnStatisticsForTableCallable(const Model::GetColumnStatisticsForTableRequest& request) const;
+
+        /**
+         * <p>Retrieves table statistics of columns.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetColumnStatisticsForTable">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetColumnStatisticsForTableAsync(const Model::GetColumnStatisticsForTableRequest& request, const GetColumnStatisticsForTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves a connection definition from the Data Catalog.</p><p><h3>See
@@ -4310,6 +4443,59 @@ namespace Model
         virtual void UpdateClassifierAsync(const Model::UpdateClassifierRequest& request, const UpdateClassifierResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Creates or updates partition statistics of columns.</p><p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateColumnStatisticsForPartition">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateColumnStatisticsForPartitionOutcome UpdateColumnStatisticsForPartition(const Model::UpdateColumnStatisticsForPartitionRequest& request) const;
+
+        /**
+         * <p>Creates or updates partition statistics of columns.</p><p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateColumnStatisticsForPartition">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateColumnStatisticsForPartitionOutcomeCallable UpdateColumnStatisticsForPartitionCallable(const Model::UpdateColumnStatisticsForPartitionRequest& request) const;
+
+        /**
+         * <p>Creates or updates partition statistics of columns.</p><p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateColumnStatisticsForPartition">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateColumnStatisticsForPartitionAsync(const Model::UpdateColumnStatisticsForPartitionRequest& request, const UpdateColumnStatisticsForPartitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Creates or updates table statistics of columns.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateColumnStatisticsForTable">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateColumnStatisticsForTableOutcome UpdateColumnStatisticsForTable(const Model::UpdateColumnStatisticsForTableRequest& request) const;
+
+        /**
+         * <p>Creates or updates table statistics of columns.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateColumnStatisticsForTable">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateColumnStatisticsForTableOutcomeCallable UpdateColumnStatisticsForTableCallable(const Model::UpdateColumnStatisticsForTableRequest& request) const;
+
+        /**
+         * <p>Creates or updates table statistics of columns.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateColumnStatisticsForTable">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateColumnStatisticsForTableAsync(const Model::UpdateColumnStatisticsForTableRequest& request, const UpdateColumnStatisticsForTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Updates a connection definition in the Data Catalog.</p><p><h3>See Also:</h3>
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateConnection">AWS
@@ -4671,6 +4857,8 @@ namespace Model
         void CreateUserDefinedFunctionAsyncHelper(const Model::CreateUserDefinedFunctionRequest& request, const CreateUserDefinedFunctionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateWorkflowAsyncHelper(const Model::CreateWorkflowRequest& request, const CreateWorkflowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteClassifierAsyncHelper(const Model::DeleteClassifierRequest& request, const DeleteClassifierResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteColumnStatisticsForPartitionAsyncHelper(const Model::DeleteColumnStatisticsForPartitionRequest& request, const DeleteColumnStatisticsForPartitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteColumnStatisticsForTableAsyncHelper(const Model::DeleteColumnStatisticsForTableRequest& request, const DeleteColumnStatisticsForTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteConnectionAsyncHelper(const Model::DeleteConnectionRequest& request, const DeleteConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteCrawlerAsyncHelper(const Model::DeleteCrawlerRequest& request, const DeleteCrawlerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteDatabaseAsyncHelper(const Model::DeleteDatabaseRequest& request, const DeleteDatabaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -4688,6 +4876,8 @@ namespace Model
         void GetCatalogImportStatusAsyncHelper(const Model::GetCatalogImportStatusRequest& request, const GetCatalogImportStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetClassifierAsyncHelper(const Model::GetClassifierRequest& request, const GetClassifierResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetClassifiersAsyncHelper(const Model::GetClassifiersRequest& request, const GetClassifiersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetColumnStatisticsForPartitionAsyncHelper(const Model::GetColumnStatisticsForPartitionRequest& request, const GetColumnStatisticsForPartitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetColumnStatisticsForTableAsyncHelper(const Model::GetColumnStatisticsForTableRequest& request, const GetColumnStatisticsForTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetConnectionAsyncHelper(const Model::GetConnectionRequest& request, const GetConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetConnectionsAsyncHelper(const Model::GetConnectionsRequest& request, const GetConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetCrawlerAsyncHelper(const Model::GetCrawlerRequest& request, const GetCrawlerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -4756,6 +4946,8 @@ namespace Model
         void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateClassifierAsyncHelper(const Model::UpdateClassifierRequest& request, const UpdateClassifierResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateColumnStatisticsForPartitionAsyncHelper(const Model::UpdateColumnStatisticsForPartitionRequest& request, const UpdateColumnStatisticsForPartitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateColumnStatisticsForTableAsyncHelper(const Model::UpdateColumnStatisticsForTableRequest& request, const UpdateColumnStatisticsForTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateConnectionAsyncHelper(const Model::UpdateConnectionRequest& request, const UpdateConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateCrawlerAsyncHelper(const Model::UpdateCrawlerRequest& request, const UpdateCrawlerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateCrawlerScheduleAsyncHelper(const Model::UpdateCrawlerScheduleRequest& request, const UpdateCrawlerScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

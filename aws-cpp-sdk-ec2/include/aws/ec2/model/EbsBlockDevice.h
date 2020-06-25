@@ -54,7 +54,7 @@ namespace Model
      * <p>Indicates whether the EBS volume is deleted on instance termination. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/terminating-instances.html#preserving-volumes-on-termination">Preserving
-     * Amazon EBS Volumes on Instance Termination</a> in the Amazon Elastic Compute
+     * Amazon EBS volumes on instance termination</a> in the Amazon Elastic Compute
      * Cloud User Guide.</p>
      */
     inline bool GetDeleteOnTermination() const{ return m_deleteOnTermination; }
@@ -63,7 +63,7 @@ namespace Model
      * <p>Indicates whether the EBS volume is deleted on instance termination. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/terminating-instances.html#preserving-volumes-on-termination">Preserving
-     * Amazon EBS Volumes on Instance Termination</a> in the Amazon Elastic Compute
+     * Amazon EBS volumes on instance termination</a> in the Amazon Elastic Compute
      * Cloud User Guide.</p>
      */
     inline bool DeleteOnTerminationHasBeenSet() const { return m_deleteOnTerminationHasBeenSet; }
@@ -72,7 +72,7 @@ namespace Model
      * <p>Indicates whether the EBS volume is deleted on instance termination. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/terminating-instances.html#preserving-volumes-on-termination">Preserving
-     * Amazon EBS Volumes on Instance Termination</a> in the Amazon Elastic Compute
+     * Amazon EBS volumes on instance termination</a> in the Amazon Elastic Compute
      * Cloud User Guide.</p>
      */
     inline void SetDeleteOnTermination(bool value) { m_deleteOnTerminationHasBeenSet = true; m_deleteOnTermination = value; }
@@ -81,7 +81,7 @@ namespace Model
      * <p>Indicates whether the EBS volume is deleted on instance termination. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/terminating-instances.html#preserving-volumes-on-termination">Preserving
-     * Amazon EBS Volumes on Instance Termination</a> in the Amazon Elastic Compute
+     * Amazon EBS volumes on instance termination</a> in the Amazon Elastic Compute
      * Cloud User Guide.</p>
      */
     inline EbsBlockDevice& WithDeleteOnTermination(bool value) { SetDeleteOnTermination(value); return *this;}
@@ -94,7 +94,7 @@ namespace Model
      * baseline performance of the volume and the rate at which the volume accumulates
      * I/O credits for bursting. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
-     * EBS Volume Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * EBS volume types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      * <p>Constraints: Range is 100-16,000 IOPS for <code>gp2</code> volumes and 100 to
      * 64,000IOPS for <code>io1</code> volumes in most Regions. Maximum
      * <code>io1</code> IOPS of 64,000 is guaranteed only on <a
@@ -116,7 +116,7 @@ namespace Model
      * baseline performance of the volume and the rate at which the volume accumulates
      * I/O credits for bursting. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
-     * EBS Volume Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * EBS volume types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      * <p>Constraints: Range is 100-16,000 IOPS for <code>gp2</code> volumes and 100 to
      * 64,000IOPS for <code>io1</code> volumes in most Regions. Maximum
      * <code>io1</code> IOPS of 64,000 is guaranteed only on <a
@@ -138,7 +138,7 @@ namespace Model
      * baseline performance of the volume and the rate at which the volume accumulates
      * I/O credits for bursting. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
-     * EBS Volume Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * EBS volume types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      * <p>Constraints: Range is 100-16,000 IOPS for <code>gp2</code> volumes and 100 to
      * 64,000IOPS for <code>io1</code> volumes in most Regions. Maximum
      * <code>io1</code> IOPS of 64,000 is guaranteed only on <a
@@ -160,7 +160,7 @@ namespace Model
      * baseline performance of the volume and the rate at which the volume accumulates
      * I/O credits for bursting. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
-     * EBS Volume Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * EBS volume types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      * <p>Constraints: Range is 100-16,000 IOPS for <code>gp2</code> volumes and 100 to
      * 64,000IOPS for <code>io1</code> volumes in most Regions. Maximum
      * <code>io1</code> IOPS of 64,000 is guaranteed only on <a
@@ -420,7 +420,7 @@ namespace Model
      * <p>Encrypted volumes can only be attached to instances that support Amazon EBS
      * encryption. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#EBSEncryption_supported_instances">Supported
-     * Instance Types</a>.</p> <p>This parameter is not returned by .</p>
+     * instance types</a>.</p> <p>This parameter is not returned by .</p>
      */
     inline bool GetEncrypted() const{ return m_encrypted; }
 
@@ -436,7 +436,7 @@ namespace Model
      * <p>Encrypted volumes can only be attached to instances that support Amazon EBS
      * encryption. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#EBSEncryption_supported_instances">Supported
-     * Instance Types</a>.</p> <p>This parameter is not returned by .</p>
+     * instance types</a>.</p> <p>This parameter is not returned by .</p>
      */
     inline bool EncryptedHasBeenSet() const { return m_encryptedHasBeenSet; }
 
@@ -452,7 +452,7 @@ namespace Model
      * <p>Encrypted volumes can only be attached to instances that support Amazon EBS
      * encryption. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#EBSEncryption_supported_instances">Supported
-     * Instance Types</a>.</p> <p>This parameter is not returned by .</p>
+     * instance types</a>.</p> <p>This parameter is not returned by .</p>
      */
     inline void SetEncrypted(bool value) { m_encryptedHasBeenSet = true; m_encrypted = value; }
 
@@ -468,7 +468,7 @@ namespace Model
      * <p>Encrypted volumes can only be attached to instances that support Amazon EBS
      * encryption. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#EBSEncryption_supported_instances">Supported
-     * Instance Types</a>.</p> <p>This parameter is not returned by .</p>
+     * instance types</a>.</p> <p>This parameter is not returned by .</p>
      */
     inline EbsBlockDevice& WithEncrypted(bool value) { SetEncrypted(value); return *this;}
 

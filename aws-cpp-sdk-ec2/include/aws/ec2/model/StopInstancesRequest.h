@@ -98,7 +98,7 @@ namespace Model
      * launch. If the instance cannot hibernate successfully, a normal shutdown occurs.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate
-     * Your Instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>
+     * your instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>
      * Default: <code>false</code> </p>
      */
     inline bool GetHibernate() const{ return m_hibernate; }
@@ -108,7 +108,7 @@ namespace Model
      * launch. If the instance cannot hibernate successfully, a normal shutdown occurs.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate
-     * Your Instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>
+     * your instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>
      * Default: <code>false</code> </p>
      */
     inline bool HibernateHasBeenSet() const { return m_hibernateHasBeenSet; }
@@ -118,7 +118,7 @@ namespace Model
      * launch. If the instance cannot hibernate successfully, a normal shutdown occurs.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate
-     * Your Instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>
+     * your instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>
      * Default: <code>false</code> </p>
      */
     inline void SetHibernate(bool value) { m_hibernateHasBeenSet = true; m_hibernate = value; }
@@ -128,7 +128,7 @@ namespace Model
      * launch. If the instance cannot hibernate successfully, a normal shutdown occurs.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate
-     * Your Instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>
+     * your instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>
      * Default: <code>false</code> </p>
      */
     inline StopInstancesRequest& WithHibernate(bool value) { SetHibernate(value); return *this;}

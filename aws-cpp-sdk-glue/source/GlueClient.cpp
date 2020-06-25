@@ -58,6 +58,8 @@
 #include <aws/glue/model/CreateUserDefinedFunctionRequest.h>
 #include <aws/glue/model/CreateWorkflowRequest.h>
 #include <aws/glue/model/DeleteClassifierRequest.h>
+#include <aws/glue/model/DeleteColumnStatisticsForPartitionRequest.h>
+#include <aws/glue/model/DeleteColumnStatisticsForTableRequest.h>
 #include <aws/glue/model/DeleteConnectionRequest.h>
 #include <aws/glue/model/DeleteCrawlerRequest.h>
 #include <aws/glue/model/DeleteDatabaseRequest.h>
@@ -75,6 +77,8 @@
 #include <aws/glue/model/GetCatalogImportStatusRequest.h>
 #include <aws/glue/model/GetClassifierRequest.h>
 #include <aws/glue/model/GetClassifiersRequest.h>
+#include <aws/glue/model/GetColumnStatisticsForPartitionRequest.h>
+#include <aws/glue/model/GetColumnStatisticsForTableRequest.h>
 #include <aws/glue/model/GetConnectionRequest.h>
 #include <aws/glue/model/GetConnectionsRequest.h>
 #include <aws/glue/model/GetCrawlerRequest.h>
@@ -143,6 +147,8 @@
 #include <aws/glue/model/TagResourceRequest.h>
 #include <aws/glue/model/UntagResourceRequest.h>
 #include <aws/glue/model/UpdateClassifierRequest.h>
+#include <aws/glue/model/UpdateColumnStatisticsForPartitionRequest.h>
+#include <aws/glue/model/UpdateColumnStatisticsForTableRequest.h>
 #include <aws/glue/model/UpdateConnectionRequest.h>
 #include <aws/glue/model/UpdateCrawlerRequest.h>
 #include <aws/glue/model/UpdateCrawlerScheduleRequest.h>
@@ -1208,6 +1214,76 @@ void GlueClient::DeleteClassifierAsyncHelper(const DeleteClassifierRequest& requ
   handler(this, request, DeleteClassifier(request), context);
 }
 
+DeleteColumnStatisticsForPartitionOutcome GlueClient::DeleteColumnStatisticsForPartition(const DeleteColumnStatisticsForPartitionRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DeleteColumnStatisticsForPartitionOutcome(DeleteColumnStatisticsForPartitionResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DeleteColumnStatisticsForPartitionOutcome(outcome.GetError());
+  }
+}
+
+DeleteColumnStatisticsForPartitionOutcomeCallable GlueClient::DeleteColumnStatisticsForPartitionCallable(const DeleteColumnStatisticsForPartitionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteColumnStatisticsForPartitionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteColumnStatisticsForPartition(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GlueClient::DeleteColumnStatisticsForPartitionAsync(const DeleteColumnStatisticsForPartitionRequest& request, const DeleteColumnStatisticsForPartitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteColumnStatisticsForPartitionAsyncHelper( request, handler, context ); } );
+}
+
+void GlueClient::DeleteColumnStatisticsForPartitionAsyncHelper(const DeleteColumnStatisticsForPartitionRequest& request, const DeleteColumnStatisticsForPartitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteColumnStatisticsForPartition(request), context);
+}
+
+DeleteColumnStatisticsForTableOutcome GlueClient::DeleteColumnStatisticsForTable(const DeleteColumnStatisticsForTableRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DeleteColumnStatisticsForTableOutcome(DeleteColumnStatisticsForTableResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DeleteColumnStatisticsForTableOutcome(outcome.GetError());
+  }
+}
+
+DeleteColumnStatisticsForTableOutcomeCallable GlueClient::DeleteColumnStatisticsForTableCallable(const DeleteColumnStatisticsForTableRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteColumnStatisticsForTableOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteColumnStatisticsForTable(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GlueClient::DeleteColumnStatisticsForTableAsync(const DeleteColumnStatisticsForTableRequest& request, const DeleteColumnStatisticsForTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteColumnStatisticsForTableAsyncHelper( request, handler, context ); } );
+}
+
+void GlueClient::DeleteColumnStatisticsForTableAsyncHelper(const DeleteColumnStatisticsForTableRequest& request, const DeleteColumnStatisticsForTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteColumnStatisticsForTable(request), context);
+}
+
 DeleteConnectionOutcome GlueClient::DeleteConnection(const DeleteConnectionRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -1801,6 +1877,76 @@ void GlueClient::GetClassifiersAsync(const GetClassifiersRequest& request, const
 void GlueClient::GetClassifiersAsyncHelper(const GetClassifiersRequest& request, const GetClassifiersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetClassifiers(request), context);
+}
+
+GetColumnStatisticsForPartitionOutcome GlueClient::GetColumnStatisticsForPartition(const GetColumnStatisticsForPartitionRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return GetColumnStatisticsForPartitionOutcome(GetColumnStatisticsForPartitionResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetColumnStatisticsForPartitionOutcome(outcome.GetError());
+  }
+}
+
+GetColumnStatisticsForPartitionOutcomeCallable GlueClient::GetColumnStatisticsForPartitionCallable(const GetColumnStatisticsForPartitionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetColumnStatisticsForPartitionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetColumnStatisticsForPartition(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GlueClient::GetColumnStatisticsForPartitionAsync(const GetColumnStatisticsForPartitionRequest& request, const GetColumnStatisticsForPartitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetColumnStatisticsForPartitionAsyncHelper( request, handler, context ); } );
+}
+
+void GlueClient::GetColumnStatisticsForPartitionAsyncHelper(const GetColumnStatisticsForPartitionRequest& request, const GetColumnStatisticsForPartitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetColumnStatisticsForPartition(request), context);
+}
+
+GetColumnStatisticsForTableOutcome GlueClient::GetColumnStatisticsForTable(const GetColumnStatisticsForTableRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return GetColumnStatisticsForTableOutcome(GetColumnStatisticsForTableResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetColumnStatisticsForTableOutcome(outcome.GetError());
+  }
+}
+
+GetColumnStatisticsForTableOutcomeCallable GlueClient::GetColumnStatisticsForTableCallable(const GetColumnStatisticsForTableRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetColumnStatisticsForTableOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetColumnStatisticsForTable(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GlueClient::GetColumnStatisticsForTableAsync(const GetColumnStatisticsForTableRequest& request, const GetColumnStatisticsForTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetColumnStatisticsForTableAsyncHelper( request, handler, context ); } );
+}
+
+void GlueClient::GetColumnStatisticsForTableAsyncHelper(const GetColumnStatisticsForTableRequest& request, const GetColumnStatisticsForTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetColumnStatisticsForTable(request), context);
 }
 
 GetConnectionOutcome GlueClient::GetConnection(const GetConnectionRequest& request) const
@@ -4181,6 +4327,76 @@ void GlueClient::UpdateClassifierAsync(const UpdateClassifierRequest& request, c
 void GlueClient::UpdateClassifierAsyncHelper(const UpdateClassifierRequest& request, const UpdateClassifierResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateClassifier(request), context);
+}
+
+UpdateColumnStatisticsForPartitionOutcome GlueClient::UpdateColumnStatisticsForPartition(const UpdateColumnStatisticsForPartitionRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return UpdateColumnStatisticsForPartitionOutcome(UpdateColumnStatisticsForPartitionResult(outcome.GetResult()));
+  }
+  else
+  {
+    return UpdateColumnStatisticsForPartitionOutcome(outcome.GetError());
+  }
+}
+
+UpdateColumnStatisticsForPartitionOutcomeCallable GlueClient::UpdateColumnStatisticsForPartitionCallable(const UpdateColumnStatisticsForPartitionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateColumnStatisticsForPartitionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateColumnStatisticsForPartition(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GlueClient::UpdateColumnStatisticsForPartitionAsync(const UpdateColumnStatisticsForPartitionRequest& request, const UpdateColumnStatisticsForPartitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateColumnStatisticsForPartitionAsyncHelper( request, handler, context ); } );
+}
+
+void GlueClient::UpdateColumnStatisticsForPartitionAsyncHelper(const UpdateColumnStatisticsForPartitionRequest& request, const UpdateColumnStatisticsForPartitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateColumnStatisticsForPartition(request), context);
+}
+
+UpdateColumnStatisticsForTableOutcome GlueClient::UpdateColumnStatisticsForTable(const UpdateColumnStatisticsForTableRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return UpdateColumnStatisticsForTableOutcome(UpdateColumnStatisticsForTableResult(outcome.GetResult()));
+  }
+  else
+  {
+    return UpdateColumnStatisticsForTableOutcome(outcome.GetError());
+  }
+}
+
+UpdateColumnStatisticsForTableOutcomeCallable GlueClient::UpdateColumnStatisticsForTableCallable(const UpdateColumnStatisticsForTableRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateColumnStatisticsForTableOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateColumnStatisticsForTable(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GlueClient::UpdateColumnStatisticsForTableAsync(const UpdateColumnStatisticsForTableRequest& request, const UpdateColumnStatisticsForTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateColumnStatisticsForTableAsyncHelper( request, handler, context ); } );
+}
+
+void GlueClient::UpdateColumnStatisticsForTableAsyncHelper(const UpdateColumnStatisticsForTableRequest& request, const UpdateColumnStatisticsForTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateColumnStatisticsForTable(request), context);
 }
 
 UpdateConnectionOutcome GlueClient::UpdateConnection(const UpdateConnectionRequest& request) const

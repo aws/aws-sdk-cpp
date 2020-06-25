@@ -26,7 +26,8 @@ PurchaseHostReservationRequest::PurchaseHostReservationRequest() :
     m_currencyCodeHasBeenSet(false),
     m_hostIdSetHasBeenSet(false),
     m_limitPriceHasBeenSet(false),
-    m_offeringIdHasBeenSet(false)
+    m_offeringIdHasBeenSet(false),
+    m_tagSpecificationsHasBeenSet(false)
 {
 }
 
@@ -63,6 +64,16 @@ Aws::String PurchaseHostReservationRequest::SerializePayload() const
   if(m_offeringIdHasBeenSet)
   {
     ss << "OfferingId=" << StringUtils::URLEncode(m_offeringId.c_str()) << "&";
+  }
+
+  if(m_tagSpecificationsHasBeenSet)
+  {
+    unsigned tagSpecificationsCount = 1;
+    for(auto& item : m_tagSpecifications)
+    {
+      item.OutputToStream(ss, "TagSpecification.", tagSpecificationsCount, "");
+      tagSpecificationsCount++;
+    }
   }
 
   ss << "Version=2016-11-15";

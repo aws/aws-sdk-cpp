@@ -1,0 +1,116 @@
+﻿/*
+* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+*
+* Licensed under the Apache License, Version 2.0 (the "License").
+* You may not use this file except in compliance with the License.
+* A copy of the License is located at
+*
+*  http://aws.amazon.com/apache2.0
+*
+* or in the "license" file accompanying this file. This file is distributed
+* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+* express or implied. See the License for the specific language governing
+* permissions and limitations under the License.
+*/
+
+#pragma once
+#include <aws/glue/Glue_EXPORTS.h>
+#include <aws/core/utils/Array.h>
+#include <utility>
+
+namespace Aws
+{
+namespace Utils
+{
+namespace Json
+{
+  class JsonValue;
+  class JsonView;
+} // namespace Json
+} // namespace Utils
+namespace Glue
+{
+namespace Model
+{
+
+  /**
+   * <p>Contains a numeric value in decimal format.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DecimalNumber">AWS
+   * API Reference</a></p>
+   */
+  class AWS_GLUE_API DecimalNumber
+  {
+  public:
+    DecimalNumber();
+    DecimalNumber(Aws::Utils::Json::JsonView jsonValue);
+    DecimalNumber& operator=(Aws::Utils::Json::JsonView jsonValue);
+    Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * <p>The unscaled numeric value.</p>
+     */
+    inline const Aws::Utils::ByteBuffer& GetUnscaledValue() const{ return m_unscaledValue; }
+
+    /**
+     * <p>The unscaled numeric value.</p>
+     */
+    inline bool UnscaledValueHasBeenSet() const { return m_unscaledValueHasBeenSet; }
+
+    /**
+     * <p>The unscaled numeric value.</p>
+     */
+    inline void SetUnscaledValue(const Aws::Utils::ByteBuffer& value) { m_unscaledValueHasBeenSet = true; m_unscaledValue = value; }
+
+    /**
+     * <p>The unscaled numeric value.</p>
+     */
+    inline void SetUnscaledValue(Aws::Utils::ByteBuffer&& value) { m_unscaledValueHasBeenSet = true; m_unscaledValue = std::move(value); }
+
+    /**
+     * <p>The unscaled numeric value.</p>
+     */
+    inline DecimalNumber& WithUnscaledValue(const Aws::Utils::ByteBuffer& value) { SetUnscaledValue(value); return *this;}
+
+    /**
+     * <p>The unscaled numeric value.</p>
+     */
+    inline DecimalNumber& WithUnscaledValue(Aws::Utils::ByteBuffer&& value) { SetUnscaledValue(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The scale that determines where the decimal point falls in the unscaled
+     * value.</p>
+     */
+    inline int GetScale() const{ return m_scale; }
+
+    /**
+     * <p>The scale that determines where the decimal point falls in the unscaled
+     * value.</p>
+     */
+    inline bool ScaleHasBeenSet() const { return m_scaleHasBeenSet; }
+
+    /**
+     * <p>The scale that determines where the decimal point falls in the unscaled
+     * value.</p>
+     */
+    inline void SetScale(int value) { m_scaleHasBeenSet = true; m_scale = value; }
+
+    /**
+     * <p>The scale that determines where the decimal point falls in the unscaled
+     * value.</p>
+     */
+    inline DecimalNumber& WithScale(int value) { SetScale(value); return *this;}
+
+  private:
+
+    Aws::Utils::ByteBuffer m_unscaledValue;
+    bool m_unscaledValueHasBeenSet;
+
+    int m_scale;
+    bool m_scaleHasBeenSet;
+  };
+
+} // namespace Model
+} // namespace Glue
+} // namespace Aws
