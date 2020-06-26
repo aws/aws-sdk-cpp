@@ -27,7 +27,9 @@
         // EC2
         "IMDS",
         // Cognito
-        "cognito"
+        "cognito",
+        // License
+        "SPDX"
     ],
     "ignoreWords": [
         // variables defined in ConcurrentStreamBuf
