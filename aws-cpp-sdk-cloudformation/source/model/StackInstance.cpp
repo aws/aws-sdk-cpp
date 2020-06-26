@@ -38,6 +38,7 @@ StackInstance::StackInstance() :
     m_parameterOverridesHasBeenSet(false),
     m_status(StackInstanceStatus::NOT_SET),
     m_statusHasBeenSet(false),
+    m_stackInstanceStatusHasBeenSet(false),
     m_statusReasonHasBeenSet(false),
     m_organizationalUnitIdHasBeenSet(false),
     m_driftStatus(StackDriftStatus::NOT_SET),
@@ -54,6 +55,7 @@ StackInstance::StackInstance(const XmlNode& xmlNode) :
     m_parameterOverridesHasBeenSet(false),
     m_status(StackInstanceStatus::NOT_SET),
     m_statusHasBeenSet(false),
+    m_stackInstanceStatusHasBeenSet(false),
     m_statusReasonHasBeenSet(false),
     m_organizationalUnitIdHasBeenSet(false),
     m_driftStatus(StackDriftStatus::NOT_SET),
@@ -110,6 +112,12 @@ StackInstance& StackInstance::operator =(const XmlNode& xmlNode)
     {
       m_status = StackInstanceStatusMapper::GetStackInstanceStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()).c_str());
       m_statusHasBeenSet = true;
+    }
+    XmlNode stackInstanceStatusNode = resultNode.FirstChild("StackInstanceStatus");
+    if(!stackInstanceStatusNode.IsNull())
+    {
+      m_stackInstanceStatus = stackInstanceStatusNode;
+      m_stackInstanceStatusHasBeenSet = true;
     }
     XmlNode statusReasonNode = resultNode.FirstChild("StatusReason");
     if(!statusReasonNode.IsNull())
@@ -178,6 +186,13 @@ void StackInstance::OutputToStream(Aws::OStream& oStream, const char* location, 
       oStream << location << index << locationValue << ".Status=" << StackInstanceStatusMapper::GetNameForStackInstanceStatus(m_status) << "&";
   }
 
+  if(m_stackInstanceStatusHasBeenSet)
+  {
+      Aws::StringStream stackInstanceStatusLocationAndMemberSs;
+      stackInstanceStatusLocationAndMemberSs << location << index << locationValue << ".StackInstanceStatus";
+      m_stackInstanceStatus.OutputToStream(oStream, stackInstanceStatusLocationAndMemberSs.str().c_str());
+  }
+
   if(m_statusReasonHasBeenSet)
   {
       oStream << location << index << locationValue << ".StatusReason=" << StringUtils::URLEncode(m_statusReason.c_str()) << "&";
@@ -231,6 +246,12 @@ void StackInstance::OutputToStream(Aws::OStream& oStream, const char* location) 
   if(m_statusHasBeenSet)
   {
       oStream << location << ".Status=" << StackInstanceStatusMapper::GetNameForStackInstanceStatus(m_status) << "&";
+  }
+  if(m_stackInstanceStatusHasBeenSet)
+  {
+      Aws::String stackInstanceStatusLocationAndMember(location);
+      stackInstanceStatusLocationAndMember += ".StackInstanceStatus";
+      m_stackInstanceStatus.OutputToStream(oStream, stackInstanceStatusLocationAndMember.c_str());
   }
   if(m_statusReasonHasBeenSet)
   {

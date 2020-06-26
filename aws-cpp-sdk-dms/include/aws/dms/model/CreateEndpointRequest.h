@@ -162,8 +162,8 @@ namespace Model
      * <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>,
      * <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>,
      * <code>"mongodb"</code>, <code>"kinesis"</code>, <code>"kafka"</code>,
-     * <code>"elasticsearch"</code>, <code>"documentdb"</code>, and
-     * <code>"sqlserver"</code>.</p>
+     * <code>"elasticsearch"</code>, <code>"documentdb"</code>,
+     * <code>"sqlserver"</code>, and <code>"neptune"</code>.</p>
      */
     inline const Aws::String& GetEngineName() const{ return m_engineName; }
 
@@ -175,8 +175,8 @@ namespace Model
      * <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>,
      * <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>,
      * <code>"mongodb"</code>, <code>"kinesis"</code>, <code>"kafka"</code>,
-     * <code>"elasticsearch"</code>, <code>"documentdb"</code>, and
-     * <code>"sqlserver"</code>.</p>
+     * <code>"elasticsearch"</code>, <code>"documentdb"</code>,
+     * <code>"sqlserver"</code>, and <code>"neptune"</code>.</p>
      */
     inline bool EngineNameHasBeenSet() const { return m_engineNameHasBeenSet; }
 
@@ -188,8 +188,8 @@ namespace Model
      * <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>,
      * <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>,
      * <code>"mongodb"</code>, <code>"kinesis"</code>, <code>"kafka"</code>,
-     * <code>"elasticsearch"</code>, <code>"documentdb"</code>, and
-     * <code>"sqlserver"</code>.</p>
+     * <code>"elasticsearch"</code>, <code>"documentdb"</code>,
+     * <code>"sqlserver"</code>, and <code>"neptune"</code>.</p>
      */
     inline void SetEngineName(const Aws::String& value) { m_engineNameHasBeenSet = true; m_engineName = value; }
 
@@ -201,8 +201,8 @@ namespace Model
      * <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>,
      * <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>,
      * <code>"mongodb"</code>, <code>"kinesis"</code>, <code>"kafka"</code>,
-     * <code>"elasticsearch"</code>, <code>"documentdb"</code>, and
-     * <code>"sqlserver"</code>.</p>
+     * <code>"elasticsearch"</code>, <code>"documentdb"</code>,
+     * <code>"sqlserver"</code>, and <code>"neptune"</code>.</p>
      */
     inline void SetEngineName(Aws::String&& value) { m_engineNameHasBeenSet = true; m_engineName = std::move(value); }
 
@@ -214,8 +214,8 @@ namespace Model
      * <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>,
      * <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>,
      * <code>"mongodb"</code>, <code>"kinesis"</code>, <code>"kafka"</code>,
-     * <code>"elasticsearch"</code>, <code>"documentdb"</code>, and
-     * <code>"sqlserver"</code>.</p>
+     * <code>"elasticsearch"</code>, <code>"documentdb"</code>,
+     * <code>"sqlserver"</code>, and <code>"neptune"</code>.</p>
      */
     inline void SetEngineName(const char* value) { m_engineNameHasBeenSet = true; m_engineName.assign(value); }
 
@@ -227,8 +227,8 @@ namespace Model
      * <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>,
      * <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>,
      * <code>"mongodb"</code>, <code>"kinesis"</code>, <code>"kafka"</code>,
-     * <code>"elasticsearch"</code>, <code>"documentdb"</code>, and
-     * <code>"sqlserver"</code>.</p>
+     * <code>"elasticsearch"</code>, <code>"documentdb"</code>,
+     * <code>"sqlserver"</code>, and <code>"neptune"</code>.</p>
      */
     inline CreateEndpointRequest& WithEngineName(const Aws::String& value) { SetEngineName(value); return *this;}
 
@@ -240,8 +240,8 @@ namespace Model
      * <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>,
      * <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>,
      * <code>"mongodb"</code>, <code>"kinesis"</code>, <code>"kafka"</code>,
-     * <code>"elasticsearch"</code>, <code>"documentdb"</code>, and
-     * <code>"sqlserver"</code>.</p>
+     * <code>"elasticsearch"</code>, <code>"documentdb"</code>,
+     * <code>"sqlserver"</code>, and <code>"neptune"</code>.</p>
      */
     inline CreateEndpointRequest& WithEngineName(Aws::String&& value) { SetEngineName(std::move(value)); return *this;}
 
@@ -253,8 +253,8 @@ namespace Model
      * <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>,
      * <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>,
      * <code>"mongodb"</code>, <code>"kinesis"</code>, <code>"kafka"</code>,
-     * <code>"elasticsearch"</code>, <code>"documentdb"</code>, and
-     * <code>"sqlserver"</code>.</p>
+     * <code>"elasticsearch"</code>, <code>"documentdb"</code>,
+     * <code>"sqlserver"</code>, and <code>"neptune"</code>.</p>
      */
     inline CreateEndpointRequest& WithEngineName(const char* value) { SetEngineName(value); return *this;}
 
@@ -1096,7 +1096,7 @@ namespace Model
      * Streams. For more information about the available settings, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html">Using
      * Amazon Kinesis Data Streams as a Target for AWS Database Migration Service</a>
-     * in the <i>AWS Database Migration User Guide.</i> </p>
+     * in the <i>AWS Database Migration Service User Guide.</i> </p>
      */
     inline const KinesisSettings& GetKinesisSettings() const{ return m_kinesisSettings; }
 
@@ -1105,7 +1105,7 @@ namespace Model
      * Streams. For more information about the available settings, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html">Using
      * Amazon Kinesis Data Streams as a Target for AWS Database Migration Service</a>
-     * in the <i>AWS Database Migration User Guide.</i> </p>
+     * in the <i>AWS Database Migration Service User Guide.</i> </p>
      */
     inline bool KinesisSettingsHasBeenSet() const { return m_kinesisSettingsHasBeenSet; }
 
@@ -1114,7 +1114,7 @@ namespace Model
      * Streams. For more information about the available settings, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html">Using
      * Amazon Kinesis Data Streams as a Target for AWS Database Migration Service</a>
-     * in the <i>AWS Database Migration User Guide.</i> </p>
+     * in the <i>AWS Database Migration Service User Guide.</i> </p>
      */
     inline void SetKinesisSettings(const KinesisSettings& value) { m_kinesisSettingsHasBeenSet = true; m_kinesisSettings = value; }
 
@@ -1123,7 +1123,7 @@ namespace Model
      * Streams. For more information about the available settings, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html">Using
      * Amazon Kinesis Data Streams as a Target for AWS Database Migration Service</a>
-     * in the <i>AWS Database Migration User Guide.</i> </p>
+     * in the <i>AWS Database Migration Service User Guide.</i> </p>
      */
     inline void SetKinesisSettings(KinesisSettings&& value) { m_kinesisSettingsHasBeenSet = true; m_kinesisSettings = std::move(value); }
 
@@ -1132,7 +1132,7 @@ namespace Model
      * Streams. For more information about the available settings, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html">Using
      * Amazon Kinesis Data Streams as a Target for AWS Database Migration Service</a>
-     * in the <i>AWS Database Migration User Guide.</i> </p>
+     * in the <i>AWS Database Migration Service User Guide.</i> </p>
      */
     inline CreateEndpointRequest& WithKinesisSettings(const KinesisSettings& value) { SetKinesisSettings(value); return *this;}
 
@@ -1141,7 +1141,7 @@ namespace Model
      * Streams. For more information about the available settings, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html">Using
      * Amazon Kinesis Data Streams as a Target for AWS Database Migration Service</a>
-     * in the <i>AWS Database Migration User Guide.</i> </p>
+     * in the <i>AWS Database Migration Service User Guide.</i> </p>
      */
     inline CreateEndpointRequest& WithKinesisSettings(KinesisSettings&& value) { SetKinesisSettings(std::move(value)); return *this;}
 
@@ -1151,7 +1151,7 @@ namespace Model
      * information about the available settings, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kafka.html">Using
      * Apache Kafka as a Target for AWS Database Migration Service</a> in the <i>AWS
-     * Database Migration User Guide.</i> </p>
+     * Database Migration Service User Guide.</i> </p>
      */
     inline const KafkaSettings& GetKafkaSettings() const{ return m_kafkaSettings; }
 
@@ -1160,7 +1160,7 @@ namespace Model
      * information about the available settings, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kafka.html">Using
      * Apache Kafka as a Target for AWS Database Migration Service</a> in the <i>AWS
-     * Database Migration User Guide.</i> </p>
+     * Database Migration Service User Guide.</i> </p>
      */
     inline bool KafkaSettingsHasBeenSet() const { return m_kafkaSettingsHasBeenSet; }
 
@@ -1169,7 +1169,7 @@ namespace Model
      * information about the available settings, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kafka.html">Using
      * Apache Kafka as a Target for AWS Database Migration Service</a> in the <i>AWS
-     * Database Migration User Guide.</i> </p>
+     * Database Migration Service User Guide.</i> </p>
      */
     inline void SetKafkaSettings(const KafkaSettings& value) { m_kafkaSettingsHasBeenSet = true; m_kafkaSettings = value; }
 
@@ -1178,7 +1178,7 @@ namespace Model
      * information about the available settings, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kafka.html">Using
      * Apache Kafka as a Target for AWS Database Migration Service</a> in the <i>AWS
-     * Database Migration User Guide.</i> </p>
+     * Database Migration Service User Guide.</i> </p>
      */
     inline void SetKafkaSettings(KafkaSettings&& value) { m_kafkaSettingsHasBeenSet = true; m_kafkaSettings = std::move(value); }
 
@@ -1187,7 +1187,7 @@ namespace Model
      * information about the available settings, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kafka.html">Using
      * Apache Kafka as a Target for AWS Database Migration Service</a> in the <i>AWS
-     * Database Migration User Guide.</i> </p>
+     * Database Migration Service User Guide.</i> </p>
      */
     inline CreateEndpointRequest& WithKafkaSettings(const KafkaSettings& value) { SetKafkaSettings(value); return *this;}
 
@@ -1196,7 +1196,7 @@ namespace Model
      * information about the available settings, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kafka.html">Using
      * Apache Kafka as a Target for AWS Database Migration Service</a> in the <i>AWS
-     * Database Migration User Guide.</i> </p>
+     * Database Migration Service User Guide.</i> </p>
      */
     inline CreateEndpointRequest& WithKafkaSettings(KafkaSettings&& value) { SetKafkaSettings(std::move(value)); return *this;}
 
@@ -1206,7 +1206,7 @@ namespace Model
      * information about the available settings, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Elasticsearch.html#CHAP_Target.Elasticsearch.Configuration">Extra
      * Connection Attributes When Using Elasticsearch as a Target for AWS DMS</a> in
-     * the <i>AWS Database Migration User Guide.</i> </p>
+     * the <i>AWS Database Migration Service User Guide</i>.</p>
      */
     inline const ElasticsearchSettings& GetElasticsearchSettings() const{ return m_elasticsearchSettings; }
 
@@ -1215,7 +1215,7 @@ namespace Model
      * information about the available settings, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Elasticsearch.html#CHAP_Target.Elasticsearch.Configuration">Extra
      * Connection Attributes When Using Elasticsearch as a Target for AWS DMS</a> in
-     * the <i>AWS Database Migration User Guide.</i> </p>
+     * the <i>AWS Database Migration Service User Guide</i>.</p>
      */
     inline bool ElasticsearchSettingsHasBeenSet() const { return m_elasticsearchSettingsHasBeenSet; }
 
@@ -1224,7 +1224,7 @@ namespace Model
      * information about the available settings, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Elasticsearch.html#CHAP_Target.Elasticsearch.Configuration">Extra
      * Connection Attributes When Using Elasticsearch as a Target for AWS DMS</a> in
-     * the <i>AWS Database Migration User Guide.</i> </p>
+     * the <i>AWS Database Migration Service User Guide</i>.</p>
      */
     inline void SetElasticsearchSettings(const ElasticsearchSettings& value) { m_elasticsearchSettingsHasBeenSet = true; m_elasticsearchSettings = value; }
 
@@ -1233,7 +1233,7 @@ namespace Model
      * information about the available settings, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Elasticsearch.html#CHAP_Target.Elasticsearch.Configuration">Extra
      * Connection Attributes When Using Elasticsearch as a Target for AWS DMS</a> in
-     * the <i>AWS Database Migration User Guide.</i> </p>
+     * the <i>AWS Database Migration Service User Guide</i>.</p>
      */
     inline void SetElasticsearchSettings(ElasticsearchSettings&& value) { m_elasticsearchSettingsHasBeenSet = true; m_elasticsearchSettings = std::move(value); }
 
@@ -1242,7 +1242,7 @@ namespace Model
      * information about the available settings, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Elasticsearch.html#CHAP_Target.Elasticsearch.Configuration">Extra
      * Connection Attributes When Using Elasticsearch as a Target for AWS DMS</a> in
-     * the <i>AWS Database Migration User Guide.</i> </p>
+     * the <i>AWS Database Migration Service User Guide</i>.</p>
      */
     inline CreateEndpointRequest& WithElasticsearchSettings(const ElasticsearchSettings& value) { SetElasticsearchSettings(value); return *this;}
 
@@ -1251,7 +1251,7 @@ namespace Model
      * information about the available settings, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Elasticsearch.html#CHAP_Target.Elasticsearch.Configuration">Extra
      * Connection Attributes When Using Elasticsearch as a Target for AWS DMS</a> in
-     * the <i>AWS Database Migration User Guide.</i> </p>
+     * the <i>AWS Database Migration Service User Guide</i>.</p>
      */
     inline CreateEndpointRequest& WithElasticsearchSettings(ElasticsearchSettings&& value) { SetElasticsearchSettings(std::move(value)); return *this;}
 
@@ -1259,48 +1259,54 @@ namespace Model
     /**
      * <p>Settings in JSON format for the target Amazon Neptune endpoint. For more
      * information about the available settings, see <a
-     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Neptune.html#CHAP_Target.Neptune.EndpointSettings">https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Neptune.html#CHAP_Target.Neptune.EndpointSettings</a>
-     * in the <i>AWS Database Migration Service User Guide.</i> </p>
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Neptune.html#CHAP_Target.Neptune.EndpointSettings">Specifying
+     * Endpoint Settings for Amazon Neptune as a Target</a> in the <i>AWS Database
+     * Migration Service User Guide.</i> </p>
      */
     inline const NeptuneSettings& GetNeptuneSettings() const{ return m_neptuneSettings; }
 
     /**
      * <p>Settings in JSON format for the target Amazon Neptune endpoint. For more
      * information about the available settings, see <a
-     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Neptune.html#CHAP_Target.Neptune.EndpointSettings">https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Neptune.html#CHAP_Target.Neptune.EndpointSettings</a>
-     * in the <i>AWS Database Migration Service User Guide.</i> </p>
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Neptune.html#CHAP_Target.Neptune.EndpointSettings">Specifying
+     * Endpoint Settings for Amazon Neptune as a Target</a> in the <i>AWS Database
+     * Migration Service User Guide.</i> </p>
      */
     inline bool NeptuneSettingsHasBeenSet() const { return m_neptuneSettingsHasBeenSet; }
 
     /**
      * <p>Settings in JSON format for the target Amazon Neptune endpoint. For more
      * information about the available settings, see <a
-     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Neptune.html#CHAP_Target.Neptune.EndpointSettings">https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Neptune.html#CHAP_Target.Neptune.EndpointSettings</a>
-     * in the <i>AWS Database Migration Service User Guide.</i> </p>
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Neptune.html#CHAP_Target.Neptune.EndpointSettings">Specifying
+     * Endpoint Settings for Amazon Neptune as a Target</a> in the <i>AWS Database
+     * Migration Service User Guide.</i> </p>
      */
     inline void SetNeptuneSettings(const NeptuneSettings& value) { m_neptuneSettingsHasBeenSet = true; m_neptuneSettings = value; }
 
     /**
      * <p>Settings in JSON format for the target Amazon Neptune endpoint. For more
      * information about the available settings, see <a
-     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Neptune.html#CHAP_Target.Neptune.EndpointSettings">https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Neptune.html#CHAP_Target.Neptune.EndpointSettings</a>
-     * in the <i>AWS Database Migration Service User Guide.</i> </p>
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Neptune.html#CHAP_Target.Neptune.EndpointSettings">Specifying
+     * Endpoint Settings for Amazon Neptune as a Target</a> in the <i>AWS Database
+     * Migration Service User Guide.</i> </p>
      */
     inline void SetNeptuneSettings(NeptuneSettings&& value) { m_neptuneSettingsHasBeenSet = true; m_neptuneSettings = std::move(value); }
 
     /**
      * <p>Settings in JSON format for the target Amazon Neptune endpoint. For more
      * information about the available settings, see <a
-     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Neptune.html#CHAP_Target.Neptune.EndpointSettings">https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Neptune.html#CHAP_Target.Neptune.EndpointSettings</a>
-     * in the <i>AWS Database Migration Service User Guide.</i> </p>
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Neptune.html#CHAP_Target.Neptune.EndpointSettings">Specifying
+     * Endpoint Settings for Amazon Neptune as a Target</a> in the <i>AWS Database
+     * Migration Service User Guide.</i> </p>
      */
     inline CreateEndpointRequest& WithNeptuneSettings(const NeptuneSettings& value) { SetNeptuneSettings(value); return *this;}
 
     /**
      * <p>Settings in JSON format for the target Amazon Neptune endpoint. For more
      * information about the available settings, see <a
-     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Neptune.html#CHAP_Target.Neptune.EndpointSettings">https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Neptune.html#CHAP_Target.Neptune.EndpointSettings</a>
-     * in the <i>AWS Database Migration Service User Guide.</i> </p>
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Neptune.html#CHAP_Target.Neptune.EndpointSettings">Specifying
+     * Endpoint Settings for Amazon Neptune as a Target</a> in the <i>AWS Database
+     * Migration Service User Guide.</i> </p>
      */
     inline CreateEndpointRequest& WithNeptuneSettings(NeptuneSettings&& value) { SetNeptuneSettings(std::move(value)); return *this;}
 

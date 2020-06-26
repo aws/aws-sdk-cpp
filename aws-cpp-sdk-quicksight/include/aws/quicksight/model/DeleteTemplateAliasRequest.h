@@ -125,66 +125,66 @@ namespace Model
 
 
     /**
-     * <p>The name for the template alias. If you name a specific alias, you delete the
-     * version that the alias points to. You can specify the latest version of the
-     * template by providing the keyword <code>$LATEST</code> in the
-     * <code>AliasName</code> parameter. </p>
+     * <p>The name for the template alias. To delete a specific alias, you delete the
+     * version that the alias points to. You can specify the alias name, or specify the
+     * latest version of the template by providing the keyword <code>$LATEST</code> in
+     * the <code>AliasName</code> parameter. </p>
      */
     inline const Aws::String& GetAliasName() const{ return m_aliasName; }
 
     /**
-     * <p>The name for the template alias. If you name a specific alias, you delete the
-     * version that the alias points to. You can specify the latest version of the
-     * template by providing the keyword <code>$LATEST</code> in the
-     * <code>AliasName</code> parameter. </p>
+     * <p>The name for the template alias. To delete a specific alias, you delete the
+     * version that the alias points to. You can specify the alias name, or specify the
+     * latest version of the template by providing the keyword <code>$LATEST</code> in
+     * the <code>AliasName</code> parameter. </p>
      */
     inline bool AliasNameHasBeenSet() const { return m_aliasNameHasBeenSet; }
 
     /**
-     * <p>The name for the template alias. If you name a specific alias, you delete the
-     * version that the alias points to. You can specify the latest version of the
-     * template by providing the keyword <code>$LATEST</code> in the
-     * <code>AliasName</code> parameter. </p>
+     * <p>The name for the template alias. To delete a specific alias, you delete the
+     * version that the alias points to. You can specify the alias name, or specify the
+     * latest version of the template by providing the keyword <code>$LATEST</code> in
+     * the <code>AliasName</code> parameter. </p>
      */
     inline void SetAliasName(const Aws::String& value) { m_aliasNameHasBeenSet = true; m_aliasName = value; }
 
     /**
-     * <p>The name for the template alias. If you name a specific alias, you delete the
-     * version that the alias points to. You can specify the latest version of the
-     * template by providing the keyword <code>$LATEST</code> in the
-     * <code>AliasName</code> parameter. </p>
+     * <p>The name for the template alias. To delete a specific alias, you delete the
+     * version that the alias points to. You can specify the alias name, or specify the
+     * latest version of the template by providing the keyword <code>$LATEST</code> in
+     * the <code>AliasName</code> parameter. </p>
      */
     inline void SetAliasName(Aws::String&& value) { m_aliasNameHasBeenSet = true; m_aliasName = std::move(value); }
 
     /**
-     * <p>The name for the template alias. If you name a specific alias, you delete the
-     * version that the alias points to. You can specify the latest version of the
-     * template by providing the keyword <code>$LATEST</code> in the
-     * <code>AliasName</code> parameter. </p>
+     * <p>The name for the template alias. To delete a specific alias, you delete the
+     * version that the alias points to. You can specify the alias name, or specify the
+     * latest version of the template by providing the keyword <code>$LATEST</code> in
+     * the <code>AliasName</code> parameter. </p>
      */
     inline void SetAliasName(const char* value) { m_aliasNameHasBeenSet = true; m_aliasName.assign(value); }
 
     /**
-     * <p>The name for the template alias. If you name a specific alias, you delete the
-     * version that the alias points to. You can specify the latest version of the
-     * template by providing the keyword <code>$LATEST</code> in the
-     * <code>AliasName</code> parameter. </p>
+     * <p>The name for the template alias. To delete a specific alias, you delete the
+     * version that the alias points to. You can specify the alias name, or specify the
+     * latest version of the template by providing the keyword <code>$LATEST</code> in
+     * the <code>AliasName</code> parameter. </p>
      */
     inline DeleteTemplateAliasRequest& WithAliasName(const Aws::String& value) { SetAliasName(value); return *this;}
 
     /**
-     * <p>The name for the template alias. If you name a specific alias, you delete the
-     * version that the alias points to. You can specify the latest version of the
-     * template by providing the keyword <code>$LATEST</code> in the
-     * <code>AliasName</code> parameter. </p>
+     * <p>The name for the template alias. To delete a specific alias, you delete the
+     * version that the alias points to. You can specify the alias name, or specify the
+     * latest version of the template by providing the keyword <code>$LATEST</code> in
+     * the <code>AliasName</code> parameter. </p>
      */
     inline DeleteTemplateAliasRequest& WithAliasName(Aws::String&& value) { SetAliasName(std::move(value)); return *this;}
 
     /**
-     * <p>The name for the template alias. If you name a specific alias, you delete the
-     * version that the alias points to. You can specify the latest version of the
-     * template by providing the keyword <code>$LATEST</code> in the
-     * <code>AliasName</code> parameter. </p>
+     * <p>The name for the template alias. To delete a specific alias, you delete the
+     * version that the alias points to. You can specify the alias name, or specify the
+     * latest version of the template by providing the keyword <code>$LATEST</code> in
+     * the <code>AliasName</code> parameter. </p>
      */
     inline DeleteTemplateAliasRequest& WithAliasName(const char* value) { SetAliasName(value); return *this;}
 

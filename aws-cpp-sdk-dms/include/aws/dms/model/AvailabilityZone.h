@@ -34,7 +34,7 @@ namespace Model
 {
 
   /**
-   * <p>The name of the Availability Zone for use during database
+   * <p>The name of an Availability Zone for use during database
    * migration.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/AvailabilityZone">AWS
    * API Reference</a></p>

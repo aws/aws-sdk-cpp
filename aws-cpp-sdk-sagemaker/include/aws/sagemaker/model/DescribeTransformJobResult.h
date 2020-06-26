@@ -17,6 +17,7 @@
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/sagemaker/model/TransformJobStatus.h>
+#include <aws/sagemaker/model/ModelClientConfig.h>
 #include <aws/sagemaker/model/BatchStrategy.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/sagemaker/model/TransformInput.h>
@@ -271,6 +272,37 @@ namespace Model
      * launched in a transform job. The default value is 1.</p>
      */
     inline DescribeTransformJobResult& WithMaxConcurrentTransforms(int value) { SetMaxConcurrentTransforms(value); return *this;}
+
+
+    /**
+     * <p>The timeout and maximum number of retries for processing a transform job
+     * invocation.</p>
+     */
+    inline const ModelClientConfig& GetModelClientConfig() const{ return m_modelClientConfig; }
+
+    /**
+     * <p>The timeout and maximum number of retries for processing a transform job
+     * invocation.</p>
+     */
+    inline void SetModelClientConfig(const ModelClientConfig& value) { m_modelClientConfig = value; }
+
+    /**
+     * <p>The timeout and maximum number of retries for processing a transform job
+     * invocation.</p>
+     */
+    inline void SetModelClientConfig(ModelClientConfig&& value) { m_modelClientConfig = std::move(value); }
+
+    /**
+     * <p>The timeout and maximum number of retries for processing a transform job
+     * invocation.</p>
+     */
+    inline DescribeTransformJobResult& WithModelClientConfig(const ModelClientConfig& value) { SetModelClientConfig(value); return *this;}
+
+    /**
+     * <p>The timeout and maximum number of retries for processing a transform job
+     * invocation.</p>
+     */
+    inline DescribeTransformJobResult& WithModelClientConfig(ModelClientConfig&& value) { SetModelClientConfig(std::move(value)); return *this;}
 
 
     /**
@@ -643,37 +675,37 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>The Amazon Resource Name (ARN) of the AutoML transform job.</p>
      */
     inline const Aws::String& GetAutoMLJobArn() const{ return m_autoMLJobArn; }
 
     /**
-     * <p/>
+     * <p>The Amazon Resource Name (ARN) of the AutoML transform job.</p>
      */
     inline void SetAutoMLJobArn(const Aws::String& value) { m_autoMLJobArn = value; }
 
     /**
-     * <p/>
+     * <p>The Amazon Resource Name (ARN) of the AutoML transform job.</p>
      */
     inline void SetAutoMLJobArn(Aws::String&& value) { m_autoMLJobArn = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The Amazon Resource Name (ARN) of the AutoML transform job.</p>
      */
     inline void SetAutoMLJobArn(const char* value) { m_autoMLJobArn.assign(value); }
 
     /**
-     * <p/>
+     * <p>The Amazon Resource Name (ARN) of the AutoML transform job.</p>
      */
     inline DescribeTransformJobResult& WithAutoMLJobArn(const Aws::String& value) { SetAutoMLJobArn(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The Amazon Resource Name (ARN) of the AutoML transform job.</p>
      */
     inline DescribeTransformJobResult& WithAutoMLJobArn(Aws::String&& value) { SetAutoMLJobArn(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>The Amazon Resource Name (ARN) of the AutoML transform job.</p>
      */
     inline DescribeTransformJobResult& WithAutoMLJobArn(const char* value) { SetAutoMLJobArn(value); return *this;}
 
@@ -722,6 +754,8 @@ namespace Model
     Aws::String m_modelName;
 
     int m_maxConcurrentTransforms;
+
+    ModelClientConfig m_modelClientConfig;
 
     int m_maxPayloadInMB;
 

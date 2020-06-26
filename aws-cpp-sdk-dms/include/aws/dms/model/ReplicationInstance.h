@@ -55,171 +55,267 @@ namespace Model
 
     /**
      * <p>The replication instance identifier. This parameter is stored as a lowercase
-     * string.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63
-     * alphanumeric characters or hyphens.</p> </li> <li> <p>First character must be a
-     * letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
-     * hyphens.</p> </li> </ul> <p>Example: <code>myrepinstance</code> </p>
+     * string.</p> <p>Constraints:</p> <ul> <li> <p>Must contain 1-63 alphanumeric
+     * characters or hyphens.</p> </li> <li> <p>First character must be a letter.</p>
+     * </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p>
+     * </li> </ul> <p>Example: <code>myrepinstance</code> </p>
      */
     inline const Aws::String& GetReplicationInstanceIdentifier() const{ return m_replicationInstanceIdentifier; }
 
     /**
      * <p>The replication instance identifier. This parameter is stored as a lowercase
-     * string.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63
-     * alphanumeric characters or hyphens.</p> </li> <li> <p>First character must be a
-     * letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
-     * hyphens.</p> </li> </ul> <p>Example: <code>myrepinstance</code> </p>
+     * string.</p> <p>Constraints:</p> <ul> <li> <p>Must contain 1-63 alphanumeric
+     * characters or hyphens.</p> </li> <li> <p>First character must be a letter.</p>
+     * </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p>
+     * </li> </ul> <p>Example: <code>myrepinstance</code> </p>
      */
     inline bool ReplicationInstanceIdentifierHasBeenSet() const { return m_replicationInstanceIdentifierHasBeenSet; }
 
     /**
      * <p>The replication instance identifier. This parameter is stored as a lowercase
-     * string.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63
-     * alphanumeric characters or hyphens.</p> </li> <li> <p>First character must be a
-     * letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
-     * hyphens.</p> </li> </ul> <p>Example: <code>myrepinstance</code> </p>
+     * string.</p> <p>Constraints:</p> <ul> <li> <p>Must contain 1-63 alphanumeric
+     * characters or hyphens.</p> </li> <li> <p>First character must be a letter.</p>
+     * </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p>
+     * </li> </ul> <p>Example: <code>myrepinstance</code> </p>
      */
     inline void SetReplicationInstanceIdentifier(const Aws::String& value) { m_replicationInstanceIdentifierHasBeenSet = true; m_replicationInstanceIdentifier = value; }
 
     /**
      * <p>The replication instance identifier. This parameter is stored as a lowercase
-     * string.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63
-     * alphanumeric characters or hyphens.</p> </li> <li> <p>First character must be a
-     * letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
-     * hyphens.</p> </li> </ul> <p>Example: <code>myrepinstance</code> </p>
+     * string.</p> <p>Constraints:</p> <ul> <li> <p>Must contain 1-63 alphanumeric
+     * characters or hyphens.</p> </li> <li> <p>First character must be a letter.</p>
+     * </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p>
+     * </li> </ul> <p>Example: <code>myrepinstance</code> </p>
      */
     inline void SetReplicationInstanceIdentifier(Aws::String&& value) { m_replicationInstanceIdentifierHasBeenSet = true; m_replicationInstanceIdentifier = std::move(value); }
 
     /**
      * <p>The replication instance identifier. This parameter is stored as a lowercase
-     * string.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63
-     * alphanumeric characters or hyphens.</p> </li> <li> <p>First character must be a
-     * letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
-     * hyphens.</p> </li> </ul> <p>Example: <code>myrepinstance</code> </p>
+     * string.</p> <p>Constraints:</p> <ul> <li> <p>Must contain 1-63 alphanumeric
+     * characters or hyphens.</p> </li> <li> <p>First character must be a letter.</p>
+     * </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p>
+     * </li> </ul> <p>Example: <code>myrepinstance</code> </p>
      */
     inline void SetReplicationInstanceIdentifier(const char* value) { m_replicationInstanceIdentifierHasBeenSet = true; m_replicationInstanceIdentifier.assign(value); }
 
     /**
      * <p>The replication instance identifier. This parameter is stored as a lowercase
-     * string.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63
-     * alphanumeric characters or hyphens.</p> </li> <li> <p>First character must be a
-     * letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
-     * hyphens.</p> </li> </ul> <p>Example: <code>myrepinstance</code> </p>
+     * string.</p> <p>Constraints:</p> <ul> <li> <p>Must contain 1-63 alphanumeric
+     * characters or hyphens.</p> </li> <li> <p>First character must be a letter.</p>
+     * </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p>
+     * </li> </ul> <p>Example: <code>myrepinstance</code> </p>
      */
     inline ReplicationInstance& WithReplicationInstanceIdentifier(const Aws::String& value) { SetReplicationInstanceIdentifier(value); return *this;}
 
     /**
      * <p>The replication instance identifier. This parameter is stored as a lowercase
-     * string.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63
-     * alphanumeric characters or hyphens.</p> </li> <li> <p>First character must be a
-     * letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
-     * hyphens.</p> </li> </ul> <p>Example: <code>myrepinstance</code> </p>
+     * string.</p> <p>Constraints:</p> <ul> <li> <p>Must contain 1-63 alphanumeric
+     * characters or hyphens.</p> </li> <li> <p>First character must be a letter.</p>
+     * </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p>
+     * </li> </ul> <p>Example: <code>myrepinstance</code> </p>
      */
     inline ReplicationInstance& WithReplicationInstanceIdentifier(Aws::String&& value) { SetReplicationInstanceIdentifier(std::move(value)); return *this;}
 
     /**
      * <p>The replication instance identifier. This parameter is stored as a lowercase
-     * string.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63
-     * alphanumeric characters or hyphens.</p> </li> <li> <p>First character must be a
-     * letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
-     * hyphens.</p> </li> </ul> <p>Example: <code>myrepinstance</code> </p>
+     * string.</p> <p>Constraints:</p> <ul> <li> <p>Must contain 1-63 alphanumeric
+     * characters or hyphens.</p> </li> <li> <p>First character must be a letter.</p>
+     * </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p>
+     * </li> </ul> <p>Example: <code>myrepinstance</code> </p>
      */
     inline ReplicationInstance& WithReplicationInstanceIdentifier(const char* value) { SetReplicationInstanceIdentifier(value); return *this;}
 
 
     /**
-     * <p>The compute and memory capacity of the replication instance.</p> <p> Valid
-     * Values: <code>dms.t2.micro | dms.t2.small | dms.t2.medium | dms.t2.large |
-     * dms.c4.large | dms.c4.xlarge | dms.c4.2xlarge | dms.c4.4xlarge </code> </p>
+     * <p>The compute and memory capacity of the replication instance as defined for
+     * the specified replication instance class.</p> <p>For more information on the
+     * settings and capacities for the available replication instance classes, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth">
+     * Selecting the right AWS DMS replication instance for your migration</a>. </p>
      */
     inline const Aws::String& GetReplicationInstanceClass() const{ return m_replicationInstanceClass; }
 
     /**
-     * <p>The compute and memory capacity of the replication instance.</p> <p> Valid
-     * Values: <code>dms.t2.micro | dms.t2.small | dms.t2.medium | dms.t2.large |
-     * dms.c4.large | dms.c4.xlarge | dms.c4.2xlarge | dms.c4.4xlarge </code> </p>
+     * <p>The compute and memory capacity of the replication instance as defined for
+     * the specified replication instance class.</p> <p>For more information on the
+     * settings and capacities for the available replication instance classes, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth">
+     * Selecting the right AWS DMS replication instance for your migration</a>. </p>
      */
     inline bool ReplicationInstanceClassHasBeenSet() const { return m_replicationInstanceClassHasBeenSet; }
 
     /**
-     * <p>The compute and memory capacity of the replication instance.</p> <p> Valid
-     * Values: <code>dms.t2.micro | dms.t2.small | dms.t2.medium | dms.t2.large |
-     * dms.c4.large | dms.c4.xlarge | dms.c4.2xlarge | dms.c4.4xlarge </code> </p>
+     * <p>The compute and memory capacity of the replication instance as defined for
+     * the specified replication instance class.</p> <p>For more information on the
+     * settings and capacities for the available replication instance classes, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth">
+     * Selecting the right AWS DMS replication instance for your migration</a>. </p>
      */
     inline void SetReplicationInstanceClass(const Aws::String& value) { m_replicationInstanceClassHasBeenSet = true; m_replicationInstanceClass = value; }
 
     /**
-     * <p>The compute and memory capacity of the replication instance.</p> <p> Valid
-     * Values: <code>dms.t2.micro | dms.t2.small | dms.t2.medium | dms.t2.large |
-     * dms.c4.large | dms.c4.xlarge | dms.c4.2xlarge | dms.c4.4xlarge </code> </p>
+     * <p>The compute and memory capacity of the replication instance as defined for
+     * the specified replication instance class.</p> <p>For more information on the
+     * settings and capacities for the available replication instance classes, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth">
+     * Selecting the right AWS DMS replication instance for your migration</a>. </p>
      */
     inline void SetReplicationInstanceClass(Aws::String&& value) { m_replicationInstanceClassHasBeenSet = true; m_replicationInstanceClass = std::move(value); }
 
     /**
-     * <p>The compute and memory capacity of the replication instance.</p> <p> Valid
-     * Values: <code>dms.t2.micro | dms.t2.small | dms.t2.medium | dms.t2.large |
-     * dms.c4.large | dms.c4.xlarge | dms.c4.2xlarge | dms.c4.4xlarge </code> </p>
+     * <p>The compute and memory capacity of the replication instance as defined for
+     * the specified replication instance class.</p> <p>For more information on the
+     * settings and capacities for the available replication instance classes, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth">
+     * Selecting the right AWS DMS replication instance for your migration</a>. </p>
      */
     inline void SetReplicationInstanceClass(const char* value) { m_replicationInstanceClassHasBeenSet = true; m_replicationInstanceClass.assign(value); }
 
     /**
-     * <p>The compute and memory capacity of the replication instance.</p> <p> Valid
-     * Values: <code>dms.t2.micro | dms.t2.small | dms.t2.medium | dms.t2.large |
-     * dms.c4.large | dms.c4.xlarge | dms.c4.2xlarge | dms.c4.4xlarge </code> </p>
+     * <p>The compute and memory capacity of the replication instance as defined for
+     * the specified replication instance class.</p> <p>For more information on the
+     * settings and capacities for the available replication instance classes, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth">
+     * Selecting the right AWS DMS replication instance for your migration</a>. </p>
      */
     inline ReplicationInstance& WithReplicationInstanceClass(const Aws::String& value) { SetReplicationInstanceClass(value); return *this;}
 
     /**
-     * <p>The compute and memory capacity of the replication instance.</p> <p> Valid
-     * Values: <code>dms.t2.micro | dms.t2.small | dms.t2.medium | dms.t2.large |
-     * dms.c4.large | dms.c4.xlarge | dms.c4.2xlarge | dms.c4.4xlarge </code> </p>
+     * <p>The compute and memory capacity of the replication instance as defined for
+     * the specified replication instance class.</p> <p>For more information on the
+     * settings and capacities for the available replication instance classes, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth">
+     * Selecting the right AWS DMS replication instance for your migration</a>. </p>
      */
     inline ReplicationInstance& WithReplicationInstanceClass(Aws::String&& value) { SetReplicationInstanceClass(std::move(value)); return *this;}
 
     /**
-     * <p>The compute and memory capacity of the replication instance.</p> <p> Valid
-     * Values: <code>dms.t2.micro | dms.t2.small | dms.t2.medium | dms.t2.large |
-     * dms.c4.large | dms.c4.xlarge | dms.c4.2xlarge | dms.c4.4xlarge </code> </p>
+     * <p>The compute and memory capacity of the replication instance as defined for
+     * the specified replication instance class.</p> <p>For more information on the
+     * settings and capacities for the available replication instance classes, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth">
+     * Selecting the right AWS DMS replication instance for your migration</a>. </p>
      */
     inline ReplicationInstance& WithReplicationInstanceClass(const char* value) { SetReplicationInstanceClass(value); return *this;}
 
 
     /**
-     * <p>The status of the replication instance.</p>
+     * <p>The status of the replication instance. The possible return values
+     * include:</p> <ul> <li> <p> <code>"available"</code> </p> </li> <li> <p>
+     * <code>"creating"</code> </p> </li> <li> <p> <code>"deleted"</code> </p> </li>
+     * <li> <p> <code>"deleting"</code> </p> </li> <li> <p> <code>"failed"</code> </p>
+     * </li> <li> <p> <code>"modifying"</code> </p> </li> <li> <p>
+     * <code>"upgrading"</code> </p> </li> <li> <p> <code>"rebooting"</code> </p> </li>
+     * <li> <p> <code>"resetting-master-credentials"</code> </p> </li> <li> <p>
+     * <code>"storage-full"</code> </p> </li> <li> <p>
+     * <code>"incompatible-credentials"</code> </p> </li> <li> <p>
+     * <code>"incompatible-network"</code> </p> </li> <li> <p>
+     * <code>"maintenance"</code> </p> </li> </ul>
      */
     inline const Aws::String& GetReplicationInstanceStatus() const{ return m_replicationInstanceStatus; }
 
     /**
-     * <p>The status of the replication instance.</p>
+     * <p>The status of the replication instance. The possible return values
+     * include:</p> <ul> <li> <p> <code>"available"</code> </p> </li> <li> <p>
+     * <code>"creating"</code> </p> </li> <li> <p> <code>"deleted"</code> </p> </li>
+     * <li> <p> <code>"deleting"</code> </p> </li> <li> <p> <code>"failed"</code> </p>
+     * </li> <li> <p> <code>"modifying"</code> </p> </li> <li> <p>
+     * <code>"upgrading"</code> </p> </li> <li> <p> <code>"rebooting"</code> </p> </li>
+     * <li> <p> <code>"resetting-master-credentials"</code> </p> </li> <li> <p>
+     * <code>"storage-full"</code> </p> </li> <li> <p>
+     * <code>"incompatible-credentials"</code> </p> </li> <li> <p>
+     * <code>"incompatible-network"</code> </p> </li> <li> <p>
+     * <code>"maintenance"</code> </p> </li> </ul>
      */
     inline bool ReplicationInstanceStatusHasBeenSet() const { return m_replicationInstanceStatusHasBeenSet; }
 
     /**
-     * <p>The status of the replication instance.</p>
+     * <p>The status of the replication instance. The possible return values
+     * include:</p> <ul> <li> <p> <code>"available"</code> </p> </li> <li> <p>
+     * <code>"creating"</code> </p> </li> <li> <p> <code>"deleted"</code> </p> </li>
+     * <li> <p> <code>"deleting"</code> </p> </li> <li> <p> <code>"failed"</code> </p>
+     * </li> <li> <p> <code>"modifying"</code> </p> </li> <li> <p>
+     * <code>"upgrading"</code> </p> </li> <li> <p> <code>"rebooting"</code> </p> </li>
+     * <li> <p> <code>"resetting-master-credentials"</code> </p> </li> <li> <p>
+     * <code>"storage-full"</code> </p> </li> <li> <p>
+     * <code>"incompatible-credentials"</code> </p> </li> <li> <p>
+     * <code>"incompatible-network"</code> </p> </li> <li> <p>
+     * <code>"maintenance"</code> </p> </li> </ul>
      */
     inline void SetReplicationInstanceStatus(const Aws::String& value) { m_replicationInstanceStatusHasBeenSet = true; m_replicationInstanceStatus = value; }
 
     /**
-     * <p>The status of the replication instance.</p>
+     * <p>The status of the replication instance. The possible return values
+     * include:</p> <ul> <li> <p> <code>"available"</code> </p> </li> <li> <p>
+     * <code>"creating"</code> </p> </li> <li> <p> <code>"deleted"</code> </p> </li>
+     * <li> <p> <code>"deleting"</code> </p> </li> <li> <p> <code>"failed"</code> </p>
+     * </li> <li> <p> <code>"modifying"</code> </p> </li> <li> <p>
+     * <code>"upgrading"</code> </p> </li> <li> <p> <code>"rebooting"</code> </p> </li>
+     * <li> <p> <code>"resetting-master-credentials"</code> </p> </li> <li> <p>
+     * <code>"storage-full"</code> </p> </li> <li> <p>
+     * <code>"incompatible-credentials"</code> </p> </li> <li> <p>
+     * <code>"incompatible-network"</code> </p> </li> <li> <p>
+     * <code>"maintenance"</code> </p> </li> </ul>
      */
     inline void SetReplicationInstanceStatus(Aws::String&& value) { m_replicationInstanceStatusHasBeenSet = true; m_replicationInstanceStatus = std::move(value); }
 
     /**
-     * <p>The status of the replication instance.</p>
+     * <p>The status of the replication instance. The possible return values
+     * include:</p> <ul> <li> <p> <code>"available"</code> </p> </li> <li> <p>
+     * <code>"creating"</code> </p> </li> <li> <p> <code>"deleted"</code> </p> </li>
+     * <li> <p> <code>"deleting"</code> </p> </li> <li> <p> <code>"failed"</code> </p>
+     * </li> <li> <p> <code>"modifying"</code> </p> </li> <li> <p>
+     * <code>"upgrading"</code> </p> </li> <li> <p> <code>"rebooting"</code> </p> </li>
+     * <li> <p> <code>"resetting-master-credentials"</code> </p> </li> <li> <p>
+     * <code>"storage-full"</code> </p> </li> <li> <p>
+     * <code>"incompatible-credentials"</code> </p> </li> <li> <p>
+     * <code>"incompatible-network"</code> </p> </li> <li> <p>
+     * <code>"maintenance"</code> </p> </li> </ul>
      */
     inline void SetReplicationInstanceStatus(const char* value) { m_replicationInstanceStatusHasBeenSet = true; m_replicationInstanceStatus.assign(value); }
 
     /**
-     * <p>The status of the replication instance.</p>
+     * <p>The status of the replication instance. The possible return values
+     * include:</p> <ul> <li> <p> <code>"available"</code> </p> </li> <li> <p>
+     * <code>"creating"</code> </p> </li> <li> <p> <code>"deleted"</code> </p> </li>
+     * <li> <p> <code>"deleting"</code> </p> </li> <li> <p> <code>"failed"</code> </p>
+     * </li> <li> <p> <code>"modifying"</code> </p> </li> <li> <p>
+     * <code>"upgrading"</code> </p> </li> <li> <p> <code>"rebooting"</code> </p> </li>
+     * <li> <p> <code>"resetting-master-credentials"</code> </p> </li> <li> <p>
+     * <code>"storage-full"</code> </p> </li> <li> <p>
+     * <code>"incompatible-credentials"</code> </p> </li> <li> <p>
+     * <code>"incompatible-network"</code> </p> </li> <li> <p>
+     * <code>"maintenance"</code> </p> </li> </ul>
      */
     inline ReplicationInstance& WithReplicationInstanceStatus(const Aws::String& value) { SetReplicationInstanceStatus(value); return *this;}
 
     /**
-     * <p>The status of the replication instance.</p>
+     * <p>The status of the replication instance. The possible return values
+     * include:</p> <ul> <li> <p> <code>"available"</code> </p> </li> <li> <p>
+     * <code>"creating"</code> </p> </li> <li> <p> <code>"deleted"</code> </p> </li>
+     * <li> <p> <code>"deleting"</code> </p> </li> <li> <p> <code>"failed"</code> </p>
+     * </li> <li> <p> <code>"modifying"</code> </p> </li> <li> <p>
+     * <code>"upgrading"</code> </p> </li> <li> <p> <code>"rebooting"</code> </p> </li>
+     * <li> <p> <code>"resetting-master-credentials"</code> </p> </li> <li> <p>
+     * <code>"storage-full"</code> </p> </li> <li> <p>
+     * <code>"incompatible-credentials"</code> </p> </li> <li> <p>
+     * <code>"incompatible-network"</code> </p> </li> <li> <p>
+     * <code>"maintenance"</code> </p> </li> </ul>
      */
     inline ReplicationInstance& WithReplicationInstanceStatus(Aws::String&& value) { SetReplicationInstanceStatus(std::move(value)); return *this;}
 
     /**
-     * <p>The status of the replication instance.</p>
+     * <p>The status of the replication instance. The possible return values
+     * include:</p> <ul> <li> <p> <code>"available"</code> </p> </li> <li> <p>
+     * <code>"creating"</code> </p> </li> <li> <p> <code>"deleted"</code> </p> </li>
+     * <li> <p> <code>"deleting"</code> </p> </li> <li> <p> <code>"failed"</code> </p>
+     * </li> <li> <p> <code>"modifying"</code> </p> </li> <li> <p>
+     * <code>"upgrading"</code> </p> </li> <li> <p> <code>"rebooting"</code> </p> </li>
+     * <li> <p> <code>"resetting-master-credentials"</code> </p> </li> <li> <p>
+     * <code>"storage-full"</code> </p> </li> <li> <p>
+     * <code>"incompatible-credentials"</code> </p> </li> <li> <p>
+     * <code>"incompatible-network"</code> </p> </li> <li> <p>
+     * <code>"maintenance"</code> </p> </li> </ul>
      */
     inline ReplicationInstance& WithReplicationInstanceStatus(const char* value) { SetReplicationInstanceStatus(value); return *this;}
 
@@ -886,42 +982,50 @@ namespace Model
 
 
     /**
-     * <p>The DNS name servers for the replication instance.</p>
+     * <p>The DNS name servers supported for the replication instance to access your
+     * on-premise source or target database.</p>
      */
     inline const Aws::String& GetDnsNameServers() const{ return m_dnsNameServers; }
 
     /**
-     * <p>The DNS name servers for the replication instance.</p>
+     * <p>The DNS name servers supported for the replication instance to access your
+     * on-premise source or target database.</p>
      */
     inline bool DnsNameServersHasBeenSet() const { return m_dnsNameServersHasBeenSet; }
 
     /**
-     * <p>The DNS name servers for the replication instance.</p>
+     * <p>The DNS name servers supported for the replication instance to access your
+     * on-premise source or target database.</p>
      */
     inline void SetDnsNameServers(const Aws::String& value) { m_dnsNameServersHasBeenSet = true; m_dnsNameServers = value; }
 
     /**
-     * <p>The DNS name servers for the replication instance.</p>
+     * <p>The DNS name servers supported for the replication instance to access your
+     * on-premise source or target database.</p>
      */
     inline void SetDnsNameServers(Aws::String&& value) { m_dnsNameServersHasBeenSet = true; m_dnsNameServers = std::move(value); }
 
     /**
-     * <p>The DNS name servers for the replication instance.</p>
+     * <p>The DNS name servers supported for the replication instance to access your
+     * on-premise source or target database.</p>
      */
     inline void SetDnsNameServers(const char* value) { m_dnsNameServersHasBeenSet = true; m_dnsNameServers.assign(value); }
 
     /**
-     * <p>The DNS name servers for the replication instance.</p>
+     * <p>The DNS name servers supported for the replication instance to access your
+     * on-premise source or target database.</p>
      */
     inline ReplicationInstance& WithDnsNameServers(const Aws::String& value) { SetDnsNameServers(value); return *this;}
 
     /**
-     * <p>The DNS name servers for the replication instance.</p>
+     * <p>The DNS name servers supported for the replication instance to access your
+     * on-premise source or target database.</p>
      */
     inline ReplicationInstance& WithDnsNameServers(Aws::String&& value) { SetDnsNameServers(std::move(value)); return *this;}
 
     /**
-     * <p>The DNS name servers for the replication instance.</p>
+     * <p>The DNS name servers supported for the replication instance to access your
+     * on-premise source or target database.</p>
      */
     inline ReplicationInstance& WithDnsNameServers(const char* value) { SetDnsNameServers(value); return *this;}
 

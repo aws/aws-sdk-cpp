@@ -463,13 +463,14 @@ namespace Model
 
         /**
          * <p>Creates a dashboard from a template. To first create a template, see the
-         * CreateTemplate API operation.</p> <p>A dashboard is an entity in QuickSight that
-         * identifies QuickSight reports, created from analyses. You can share QuickSight
-         * dashboards. With the right permissions, you can create scheduled email reports
-         * from them. The <code>CreateDashboard</code>, <code>DescribeDashboard</code>, and
-         * <code>ListDashboardsByUser</code> API operations act on the dashboard entity. If
-         * you have the correct permissions, you can create a dashboard from a template
-         * that exists in a different AWS account.</p><p><h3>See Also:</h3>   <a
+         * <a>CreateTemplate</a> API operation.</p> <p>A dashboard is an entity in
+         * QuickSight that identifies QuickSight reports, created from analyses. You can
+         * share QuickSight dashboards. With the right permissions, you can create
+         * scheduled email reports from them. The <code>CreateDashboard</code>,
+         * <code>DescribeDashboard</code>, and <code>ListDashboardsByUser</code> API
+         * operations act on the dashboard entity. If you have the correct permissions, you
+         * can create a dashboard from a template that exists in a different AWS
+         * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateDashboard">AWS
          * API Reference</a></p>
          */
@@ -477,13 +478,14 @@ namespace Model
 
         /**
          * <p>Creates a dashboard from a template. To first create a template, see the
-         * CreateTemplate API operation.</p> <p>A dashboard is an entity in QuickSight that
-         * identifies QuickSight reports, created from analyses. You can share QuickSight
-         * dashboards. With the right permissions, you can create scheduled email reports
-         * from them. The <code>CreateDashboard</code>, <code>DescribeDashboard</code>, and
-         * <code>ListDashboardsByUser</code> API operations act on the dashboard entity. If
-         * you have the correct permissions, you can create a dashboard from a template
-         * that exists in a different AWS account.</p><p><h3>See Also:</h3>   <a
+         * <a>CreateTemplate</a> API operation.</p> <p>A dashboard is an entity in
+         * QuickSight that identifies QuickSight reports, created from analyses. You can
+         * share QuickSight dashboards. With the right permissions, you can create
+         * scheduled email reports from them. The <code>CreateDashboard</code>,
+         * <code>DescribeDashboard</code>, and <code>ListDashboardsByUser</code> API
+         * operations act on the dashboard entity. If you have the correct permissions, you
+         * can create a dashboard from a template that exists in a different AWS
+         * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateDashboard">AWS
          * API Reference</a></p>
          *
@@ -493,13 +495,14 @@ namespace Model
 
         /**
          * <p>Creates a dashboard from a template. To first create a template, see the
-         * CreateTemplate API operation.</p> <p>A dashboard is an entity in QuickSight that
-         * identifies QuickSight reports, created from analyses. You can share QuickSight
-         * dashboards. With the right permissions, you can create scheduled email reports
-         * from them. The <code>CreateDashboard</code>, <code>DescribeDashboard</code>, and
-         * <code>ListDashboardsByUser</code> API operations act on the dashboard entity. If
-         * you have the correct permissions, you can create a dashboard from a template
-         * that exists in a different AWS account.</p><p><h3>See Also:</h3>   <a
+         * <a>CreateTemplate</a> API operation.</p> <p>A dashboard is an entity in
+         * QuickSight that identifies QuickSight reports, created from analyses. You can
+         * share QuickSight dashboards. With the right permissions, you can create
+         * scheduled email reports from them. The <code>CreateDashboard</code>,
+         * <code>DescribeDashboard</code>, and <code>ListDashboardsByUser</code> API
+         * operations act on the dashboard entity. If you have the correct permissions, you
+         * can create a dashboard from a template that exists in a different AWS
+         * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateDashboard">AWS
          * API Reference</a></p>
          *
@@ -1385,32 +1388,42 @@ namespace Model
         virtual void DescribeUserAsync(const Model::DescribeUserRequest& request, const DescribeUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Generates a server-side embeddable URL and authorization code. For this
-         * process to work properly, first configure the dashboards and user permissions.
-         * For more information, see <a
+         * <p>Generates a URL and authorization code that you can embed in your web server
+         * code. Before you use this command, make sure that you have configured the
+         * dashboards and permissions. </p> <p>Currently, you can use
+         * <code>GetDashboardEmbedURL</code> only from the server, not from the user's
+         * browser. The following rules apply to the combination of URL and authorization
+         * code:</p> <ul> <li> <p>They must be used together.</p> </li> <li> <p>They can be
+         * used one time only.</p> </li> <li> <p>They are valid for 5 minutes after you run
+         * this command.</p> </li> <li> <p>The resulting user session is valid for 10
+         * hours.</p> </li> </ul> <p> For more information, see <a
          * href="https://docs.aws.amazon.com/quicksight/latest/user/embedding-dashboards.html">Embedding
          * Amazon QuickSight Dashboards</a> in the <i>Amazon QuickSight User Guide</i> or
          * <a
          * href="https://docs.aws.amazon.com/quicksight/latest/APIReference/qs-dev-embedded-dashboards.html">Embedding
          * Amazon QuickSight Dashboards</a> in the <i>Amazon QuickSight API
-         * Reference</i>.</p> <p>Currently, you can use <code>GetDashboardEmbedURL</code>
-         * only from the server, not from the user’s browser.</p><p><h3>See Also:</h3>   <a
+         * Reference</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/GetDashboardEmbedUrl">AWS
          * API Reference</a></p>
          */
         virtual Model::GetDashboardEmbedUrlOutcome GetDashboardEmbedUrl(const Model::GetDashboardEmbedUrlRequest& request) const;
 
         /**
-         * <p>Generates a server-side embeddable URL and authorization code. For this
-         * process to work properly, first configure the dashboards and user permissions.
-         * For more information, see <a
+         * <p>Generates a URL and authorization code that you can embed in your web server
+         * code. Before you use this command, make sure that you have configured the
+         * dashboards and permissions. </p> <p>Currently, you can use
+         * <code>GetDashboardEmbedURL</code> only from the server, not from the user's
+         * browser. The following rules apply to the combination of URL and authorization
+         * code:</p> <ul> <li> <p>They must be used together.</p> </li> <li> <p>They can be
+         * used one time only.</p> </li> <li> <p>They are valid for 5 minutes after you run
+         * this command.</p> </li> <li> <p>The resulting user session is valid for 10
+         * hours.</p> </li> </ul> <p> For more information, see <a
          * href="https://docs.aws.amazon.com/quicksight/latest/user/embedding-dashboards.html">Embedding
          * Amazon QuickSight Dashboards</a> in the <i>Amazon QuickSight User Guide</i> or
          * <a
          * href="https://docs.aws.amazon.com/quicksight/latest/APIReference/qs-dev-embedded-dashboards.html">Embedding
          * Amazon QuickSight Dashboards</a> in the <i>Amazon QuickSight API
-         * Reference</i>.</p> <p>Currently, you can use <code>GetDashboardEmbedURL</code>
-         * only from the server, not from the user’s browser.</p><p><h3>See Also:</h3>   <a
+         * Reference</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/GetDashboardEmbedUrl">AWS
          * API Reference</a></p>
          *
@@ -1419,16 +1432,21 @@ namespace Model
         virtual Model::GetDashboardEmbedUrlOutcomeCallable GetDashboardEmbedUrlCallable(const Model::GetDashboardEmbedUrlRequest& request) const;
 
         /**
-         * <p>Generates a server-side embeddable URL and authorization code. For this
-         * process to work properly, first configure the dashboards and user permissions.
-         * For more information, see <a
+         * <p>Generates a URL and authorization code that you can embed in your web server
+         * code. Before you use this command, make sure that you have configured the
+         * dashboards and permissions. </p> <p>Currently, you can use
+         * <code>GetDashboardEmbedURL</code> only from the server, not from the user's
+         * browser. The following rules apply to the combination of URL and authorization
+         * code:</p> <ul> <li> <p>They must be used together.</p> </li> <li> <p>They can be
+         * used one time only.</p> </li> <li> <p>They are valid for 5 minutes after you run
+         * this command.</p> </li> <li> <p>The resulting user session is valid for 10
+         * hours.</p> </li> </ul> <p> For more information, see <a
          * href="https://docs.aws.amazon.com/quicksight/latest/user/embedding-dashboards.html">Embedding
          * Amazon QuickSight Dashboards</a> in the <i>Amazon QuickSight User Guide</i> or
          * <a
          * href="https://docs.aws.amazon.com/quicksight/latest/APIReference/qs-dev-embedded-dashboards.html">Embedding
          * Amazon QuickSight Dashboards</a> in the <i>Amazon QuickSight API
-         * Reference</i>.</p> <p>Currently, you can use <code>GetDashboardEmbedURL</code>
-         * only from the server, not from the user’s browser.</p><p><h3>See Also:</h3>   <a
+         * Reference</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/GetDashboardEmbedUrl">AWS
          * API Reference</a></p>
          *

@@ -30,13 +30,15 @@ namespace Model
 
 CredentialPair::CredentialPair() : 
     m_usernameHasBeenSet(false),
-    m_passwordHasBeenSet(false)
+    m_passwordHasBeenSet(false),
+    m_alternateDataSourceParametersHasBeenSet(false)
 {
 }
 
 CredentialPair::CredentialPair(JsonView jsonValue) : 
     m_usernameHasBeenSet(false),
-    m_passwordHasBeenSet(false)
+    m_passwordHasBeenSet(false),
+    m_alternateDataSourceParametersHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -57,6 +59,16 @@ CredentialPair& CredentialPair::operator =(JsonView jsonValue)
     m_passwordHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("AlternateDataSourceParameters"))
+  {
+    Array<JsonView> alternateDataSourceParametersJsonList = jsonValue.GetArray("AlternateDataSourceParameters");
+    for(unsigned alternateDataSourceParametersIndex = 0; alternateDataSourceParametersIndex < alternateDataSourceParametersJsonList.GetLength(); ++alternateDataSourceParametersIndex)
+    {
+      m_alternateDataSourceParameters.push_back(alternateDataSourceParametersJsonList[alternateDataSourceParametersIndex].AsObject());
+    }
+    m_alternateDataSourceParametersHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -73,6 +85,17 @@ JsonValue CredentialPair::Jsonize() const
   if(m_passwordHasBeenSet)
   {
    payload.WithString("Password", m_password);
+
+  }
+
+  if(m_alternateDataSourceParametersHasBeenSet)
+  {
+   Array<JsonValue> alternateDataSourceParametersJsonList(m_alternateDataSourceParameters.size());
+   for(unsigned alternateDataSourceParametersIndex = 0; alternateDataSourceParametersIndex < alternateDataSourceParametersJsonList.GetLength(); ++alternateDataSourceParametersIndex)
+   {
+     alternateDataSourceParametersJsonList[alternateDataSourceParametersIndex].AsObject(m_alternateDataSourceParameters[alternateDataSourceParametersIndex].Jsonize());
+   }
+   payload.WithArray("AlternateDataSourceParameters", std::move(alternateDataSourceParametersJsonList));
 
   }
 

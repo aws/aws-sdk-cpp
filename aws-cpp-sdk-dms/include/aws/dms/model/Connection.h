@@ -132,42 +132,66 @@ namespace Model
 
 
     /**
-     * <p>The connection status.</p>
+     * <p>The connection status. This parameter can return one of the following
+     * values:</p> <ul> <li> <p> <code>"successful"</code> </p> </li> <li> <p>
+     * <code>"testing"</code> </p> </li> <li> <p> <code>"failed"</code> </p> </li> <li>
+     * <p> <code>"deleting"</code> </p> </li> </ul>
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
 
     /**
-     * <p>The connection status.</p>
+     * <p>The connection status. This parameter can return one of the following
+     * values:</p> <ul> <li> <p> <code>"successful"</code> </p> </li> <li> <p>
+     * <code>"testing"</code> </p> </li> <li> <p> <code>"failed"</code> </p> </li> <li>
+     * <p> <code>"deleting"</code> </p> </li> </ul>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
-     * <p>The connection status.</p>
+     * <p>The connection status. This parameter can return one of the following
+     * values:</p> <ul> <li> <p> <code>"successful"</code> </p> </li> <li> <p>
+     * <code>"testing"</code> </p> </li> <li> <p> <code>"failed"</code> </p> </li> <li>
+     * <p> <code>"deleting"</code> </p> </li> </ul>
      */
     inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>The connection status.</p>
+     * <p>The connection status. This parameter can return one of the following
+     * values:</p> <ul> <li> <p> <code>"successful"</code> </p> </li> <li> <p>
+     * <code>"testing"</code> </p> </li> <li> <p> <code>"failed"</code> </p> </li> <li>
+     * <p> <code>"deleting"</code> </p> </li> </ul>
      */
     inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * <p>The connection status.</p>
+     * <p>The connection status. This parameter can return one of the following
+     * values:</p> <ul> <li> <p> <code>"successful"</code> </p> </li> <li> <p>
+     * <code>"testing"</code> </p> </li> <li> <p> <code>"failed"</code> </p> </li> <li>
+     * <p> <code>"deleting"</code> </p> </li> </ul>
      */
     inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
 
     /**
-     * <p>The connection status.</p>
+     * <p>The connection status. This parameter can return one of the following
+     * values:</p> <ul> <li> <p> <code>"successful"</code> </p> </li> <li> <p>
+     * <code>"testing"</code> </p> </li> <li> <p> <code>"failed"</code> </p> </li> <li>
+     * <p> <code>"deleting"</code> </p> </li> </ul>
      */
     inline Connection& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The connection status.</p>
+     * <p>The connection status. This parameter can return one of the following
+     * values:</p> <ul> <li> <p> <code>"successful"</code> </p> </li> <li> <p>
+     * <code>"testing"</code> </p> </li> <li> <p> <code>"failed"</code> </p> </li> <li>
+     * <p> <code>"deleting"</code> </p> </li> </ul>
      */
     inline Connection& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
 
     /**
-     * <p>The connection status.</p>
+     * <p>The connection status. This parameter can return one of the following
+     * values:</p> <ul> <li> <p> <code>"successful"</code> </p> </li> <li> <p>
+     * <code>"testing"</code> </p> </li> <li> <p> <code>"failed"</code> </p> </li> <li>
+     * <p> <code>"deleting"</code> </p> </li> </ul>
      */
     inline Connection& WithStatus(const char* value) { SetStatus(value); return *this;}
 

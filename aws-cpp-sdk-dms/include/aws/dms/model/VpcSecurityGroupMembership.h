@@ -34,8 +34,9 @@ namespace Model
 {
 
   /**
-   * <p>Describes status of a security group associated with the virtual private
-   * cloud hosting your replication and DB instances.</p><p><h3>See Also:</h3>   <a
+   * <p>Describes the status of a security group associated with the virtual private
+   * cloud (VPC) hosting your replication and DB instances.</p><p><h3>See Also:</h3> 
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/VpcSecurityGroupMembership">AWS
    * API Reference</a></p>
    */
@@ -49,42 +50,42 @@ namespace Model
 
 
     /**
-     * <p>The VPC security group Id.</p>
+     * <p>The VPC security group ID.</p>
      */
     inline const Aws::String& GetVpcSecurityGroupId() const{ return m_vpcSecurityGroupId; }
 
     /**
-     * <p>The VPC security group Id.</p>
+     * <p>The VPC security group ID.</p>
      */
     inline bool VpcSecurityGroupIdHasBeenSet() const { return m_vpcSecurityGroupIdHasBeenSet; }
 
     /**
-     * <p>The VPC security group Id.</p>
+     * <p>The VPC security group ID.</p>
      */
     inline void SetVpcSecurityGroupId(const Aws::String& value) { m_vpcSecurityGroupIdHasBeenSet = true; m_vpcSecurityGroupId = value; }
 
     /**
-     * <p>The VPC security group Id.</p>
+     * <p>The VPC security group ID.</p>
      */
     inline void SetVpcSecurityGroupId(Aws::String&& value) { m_vpcSecurityGroupIdHasBeenSet = true; m_vpcSecurityGroupId = std::move(value); }
 
     /**
-     * <p>The VPC security group Id.</p>
+     * <p>The VPC security group ID.</p>
      */
     inline void SetVpcSecurityGroupId(const char* value) { m_vpcSecurityGroupIdHasBeenSet = true; m_vpcSecurityGroupId.assign(value); }
 
     /**
-     * <p>The VPC security group Id.</p>
+     * <p>The VPC security group ID.</p>
      */
     inline VpcSecurityGroupMembership& WithVpcSecurityGroupId(const Aws::String& value) { SetVpcSecurityGroupId(value); return *this;}
 
     /**
-     * <p>The VPC security group Id.</p>
+     * <p>The VPC security group ID.</p>
      */
     inline VpcSecurityGroupMembership& WithVpcSecurityGroupId(Aws::String&& value) { SetVpcSecurityGroupId(std::move(value)); return *this;}
 
     /**
-     * <p>The VPC security group Id.</p>
+     * <p>The VPC security group ID.</p>
      */
     inline VpcSecurityGroupMembership& WithVpcSecurityGroupId(const char* value) { SetVpcSecurityGroupId(value); return *this;}
 

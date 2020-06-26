@@ -262,42 +262,42 @@ namespace Model
 
 
     /**
-     * <p>The time the RDS event notification subscription was created.</p>
+     * <p>The time the AWS DMS event notification subscription was created.</p>
      */
     inline const Aws::String& GetSubscriptionCreationTime() const{ return m_subscriptionCreationTime; }
 
     /**
-     * <p>The time the RDS event notification subscription was created.</p>
+     * <p>The time the AWS DMS event notification subscription was created.</p>
      */
     inline bool SubscriptionCreationTimeHasBeenSet() const { return m_subscriptionCreationTimeHasBeenSet; }
 
     /**
-     * <p>The time the RDS event notification subscription was created.</p>
+     * <p>The time the AWS DMS event notification subscription was created.</p>
      */
     inline void SetSubscriptionCreationTime(const Aws::String& value) { m_subscriptionCreationTimeHasBeenSet = true; m_subscriptionCreationTime = value; }
 
     /**
-     * <p>The time the RDS event notification subscription was created.</p>
+     * <p>The time the AWS DMS event notification subscription was created.</p>
      */
     inline void SetSubscriptionCreationTime(Aws::String&& value) { m_subscriptionCreationTimeHasBeenSet = true; m_subscriptionCreationTime = std::move(value); }
 
     /**
-     * <p>The time the RDS event notification subscription was created.</p>
+     * <p>The time the AWS DMS event notification subscription was created.</p>
      */
     inline void SetSubscriptionCreationTime(const char* value) { m_subscriptionCreationTimeHasBeenSet = true; m_subscriptionCreationTime.assign(value); }
 
     /**
-     * <p>The time the RDS event notification subscription was created.</p>
+     * <p>The time the AWS DMS event notification subscription was created.</p>
      */
     inline EventSubscription& WithSubscriptionCreationTime(const Aws::String& value) { SetSubscriptionCreationTime(value); return *this;}
 
     /**
-     * <p>The time the RDS event notification subscription was created.</p>
+     * <p>The time the AWS DMS event notification subscription was created.</p>
      */
     inline EventSubscription& WithSubscriptionCreationTime(Aws::String&& value) { SetSubscriptionCreationTime(std::move(value)); return *this;}
 
     /**
-     * <p>The time the RDS event notification subscription was created.</p>
+     * <p>The time the AWS DMS event notification subscription was created.</p>
      */
     inline EventSubscription& WithSubscriptionCreationTime(const char* value) { SetSubscriptionCreationTime(value); return *this;}
 

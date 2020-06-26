@@ -131,37 +131,37 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the resource.</p>
+     * <p>The Amazon Resource Name (ARN) of the template you want to delete.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the resource.</p>
+     * <p>The Amazon Resource Name (ARN) of the template you want to delete.</p>
      */
     inline void SetArn(const Aws::String& value) { m_arn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the resource.</p>
+     * <p>The Amazon Resource Name (ARN) of the template you want to delete.</p>
      */
     inline void SetArn(Aws::String&& value) { m_arn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the resource.</p>
+     * <p>The Amazon Resource Name (ARN) of the template you want to delete.</p>
      */
     inline void SetArn(const char* value) { m_arn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the resource.</p>
+     * <p>The Amazon Resource Name (ARN) of the template you want to delete.</p>
      */
     inline DeleteTemplateAliasResult& WithArn(const Aws::String& value) { SetArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the resource.</p>
+     * <p>The Amazon Resource Name (ARN) of the template you want to delete.</p>
      */
     inline DeleteTemplateAliasResult& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the resource.</p>
+     * <p>The Amazon Resource Name (ARN) of the template you want to delete.</p>
      */
     inline DeleteTemplateAliasResult& WithArn(const char* value) { SetArn(value); return *this;}
 

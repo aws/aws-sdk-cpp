@@ -1985,7 +1985,8 @@ namespace Model
         /**
          * <p>Returns summary information about stack instances that are associated with
          * the specified stack set. You can filter for stack instances that are associated
-         * with a specific AWS account name or Region.</p><p><h3>See Also:</h3>   <a
+         * with a specific AWS account name or Region, or that have a specific
+         * status.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListStackInstances">AWS
          * API Reference</a></p>
          */
@@ -1994,7 +1995,8 @@ namespace Model
         /**
          * <p>Returns summary information about stack instances that are associated with
          * the specified stack set. You can filter for stack instances that are associated
-         * with a specific AWS account name or Region.</p><p><h3>See Also:</h3>   <a
+         * with a specific AWS account name or Region, or that have a specific
+         * status.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListStackInstances">AWS
          * API Reference</a></p>
          *
@@ -2005,7 +2007,8 @@ namespace Model
         /**
          * <p>Returns summary information about stack instances that are associated with
          * the specified stack set. You can filter for stack instances that are associated
-         * with a specific AWS account name or Region.</p><p><h3>See Also:</h3>   <a
+         * with a specific AWS account name or Region, or that have a specific
+         * status.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListStackInstances">AWS
          * API Reference</a></p>
          *

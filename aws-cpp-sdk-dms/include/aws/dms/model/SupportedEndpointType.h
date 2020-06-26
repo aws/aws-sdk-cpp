@@ -58,8 +58,8 @@ namespace Model
      * <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>,
      * <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>,
      * <code>"mongodb"</code>, <code>"kinesis"</code>, <code>"kafka"</code>,
-     * <code>"elasticsearch"</code>, <code>"documentdb"</code>, and
-     * <code>"sqlserver"</code>.</p>
+     * <code>"elasticsearch"</code>, <code>"documentdb"</code>,
+     * <code>"sqlserver"</code>, and <code>"neptune"</code>.</p>
      */
     inline const Aws::String& GetEngineName() const{ return m_engineName; }
 
@@ -70,8 +70,8 @@ namespace Model
      * <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>,
      * <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>,
      * <code>"mongodb"</code>, <code>"kinesis"</code>, <code>"kafka"</code>,
-     * <code>"elasticsearch"</code>, <code>"documentdb"</code>, and
-     * <code>"sqlserver"</code>.</p>
+     * <code>"elasticsearch"</code>, <code>"documentdb"</code>,
+     * <code>"sqlserver"</code>, and <code>"neptune"</code>.</p>
      */
     inline bool EngineNameHasBeenSet() const { return m_engineNameHasBeenSet; }
 
@@ -82,8 +82,8 @@ namespace Model
      * <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>,
      * <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>,
      * <code>"mongodb"</code>, <code>"kinesis"</code>, <code>"kafka"</code>,
-     * <code>"elasticsearch"</code>, <code>"documentdb"</code>, and
-     * <code>"sqlserver"</code>.</p>
+     * <code>"elasticsearch"</code>, <code>"documentdb"</code>,
+     * <code>"sqlserver"</code>, and <code>"neptune"</code>.</p>
      */
     inline void SetEngineName(const Aws::String& value) { m_engineNameHasBeenSet = true; m_engineName = value; }
 
@@ -94,8 +94,8 @@ namespace Model
      * <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>,
      * <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>,
      * <code>"mongodb"</code>, <code>"kinesis"</code>, <code>"kafka"</code>,
-     * <code>"elasticsearch"</code>, <code>"documentdb"</code>, and
-     * <code>"sqlserver"</code>.</p>
+     * <code>"elasticsearch"</code>, <code>"documentdb"</code>,
+     * <code>"sqlserver"</code>, and <code>"neptune"</code>.</p>
      */
     inline void SetEngineName(Aws::String&& value) { m_engineNameHasBeenSet = true; m_engineName = std::move(value); }
 
@@ -106,8 +106,8 @@ namespace Model
      * <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>,
      * <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>,
      * <code>"mongodb"</code>, <code>"kinesis"</code>, <code>"kafka"</code>,
-     * <code>"elasticsearch"</code>, <code>"documentdb"</code>, and
-     * <code>"sqlserver"</code>.</p>
+     * <code>"elasticsearch"</code>, <code>"documentdb"</code>,
+     * <code>"sqlserver"</code>, and <code>"neptune"</code>.</p>
      */
     inline void SetEngineName(const char* value) { m_engineNameHasBeenSet = true; m_engineName.assign(value); }
 
@@ -118,8 +118,8 @@ namespace Model
      * <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>,
      * <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>,
      * <code>"mongodb"</code>, <code>"kinesis"</code>, <code>"kafka"</code>,
-     * <code>"elasticsearch"</code>, <code>"documentdb"</code>, and
-     * <code>"sqlserver"</code>.</p>
+     * <code>"elasticsearch"</code>, <code>"documentdb"</code>,
+     * <code>"sqlserver"</code>, and <code>"neptune"</code>.</p>
      */
     inline SupportedEndpointType& WithEngineName(const Aws::String& value) { SetEngineName(value); return *this;}
 
@@ -130,8 +130,8 @@ namespace Model
      * <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>,
      * <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>,
      * <code>"mongodb"</code>, <code>"kinesis"</code>, <code>"kafka"</code>,
-     * <code>"elasticsearch"</code>, <code>"documentdb"</code>, and
-     * <code>"sqlserver"</code>.</p>
+     * <code>"elasticsearch"</code>, <code>"documentdb"</code>,
+     * <code>"sqlserver"</code>, and <code>"neptune"</code>.</p>
      */
     inline SupportedEndpointType& WithEngineName(Aws::String&& value) { SetEngineName(std::move(value)); return *this;}
 
@@ -142,8 +142,8 @@ namespace Model
      * <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>,
      * <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>,
      * <code>"mongodb"</code>, <code>"kinesis"</code>, <code>"kafka"</code>,
-     * <code>"elasticsearch"</code>, <code>"documentdb"</code>, and
-     * <code>"sqlserver"</code>.</p>
+     * <code>"elasticsearch"</code>, <code>"documentdb"</code>,
+     * <code>"sqlserver"</code>, and <code>"neptune"</code>.</p>
      */
     inline SupportedEndpointType& WithEngineName(const char* value) { SetEngineName(value); return *this;}
 

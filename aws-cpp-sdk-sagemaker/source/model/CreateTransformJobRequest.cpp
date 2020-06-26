@@ -27,6 +27,7 @@ CreateTransformJobRequest::CreateTransformJobRequest() :
     m_modelNameHasBeenSet(false),
     m_maxConcurrentTransforms(0),
     m_maxConcurrentTransformsHasBeenSet(false),
+    m_modelClientConfigHasBeenSet(false),
     m_maxPayloadInMB(0),
     m_maxPayloadInMBHasBeenSet(false),
     m_batchStrategy(BatchStrategy::NOT_SET),
@@ -60,6 +61,12 @@ Aws::String CreateTransformJobRequest::SerializePayload() const
   if(m_maxConcurrentTransformsHasBeenSet)
   {
    payload.WithInteger("MaxConcurrentTransforms", m_maxConcurrentTransforms);
+
+  }
+
+  if(m_modelClientConfigHasBeenSet)
+  {
+   payload.WithObject("ModelClientConfig", m_modelClientConfig.Jsonize());
 
   }
 

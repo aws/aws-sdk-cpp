@@ -95,7 +95,7 @@ namespace Model
 
     /**
      * <p>The filters to apply to the search. Currently, you can search only by user
-     * name. For example, <code>"Filters": [ { "Name": "QUICKSIGHT_USER", "Operator":
+     * name, for example, <code>"Filters": [ { "Name": "QUICKSIGHT_USER", "Operator":
      * "StringEquals", "Value": "arn:aws:quicksight:us-east-1:1:user/default/UserName1"
      * } ]</code> </p>
      */
@@ -103,7 +103,7 @@ namespace Model
 
     /**
      * <p>The filters to apply to the search. Currently, you can search only by user
-     * name. For example, <code>"Filters": [ { "Name": "QUICKSIGHT_USER", "Operator":
+     * name, for example, <code>"Filters": [ { "Name": "QUICKSIGHT_USER", "Operator":
      * "StringEquals", "Value": "arn:aws:quicksight:us-east-1:1:user/default/UserName1"
      * } ]</code> </p>
      */
@@ -111,7 +111,7 @@ namespace Model
 
     /**
      * <p>The filters to apply to the search. Currently, you can search only by user
-     * name. For example, <code>"Filters": [ { "Name": "QUICKSIGHT_USER", "Operator":
+     * name, for example, <code>"Filters": [ { "Name": "QUICKSIGHT_USER", "Operator":
      * "StringEquals", "Value": "arn:aws:quicksight:us-east-1:1:user/default/UserName1"
      * } ]</code> </p>
      */
@@ -119,7 +119,7 @@ namespace Model
 
     /**
      * <p>The filters to apply to the search. Currently, you can search only by user
-     * name. For example, <code>"Filters": [ { "Name": "QUICKSIGHT_USER", "Operator":
+     * name, for example, <code>"Filters": [ { "Name": "QUICKSIGHT_USER", "Operator":
      * "StringEquals", "Value": "arn:aws:quicksight:us-east-1:1:user/default/UserName1"
      * } ]</code> </p>
      */
@@ -127,7 +127,7 @@ namespace Model
 
     /**
      * <p>The filters to apply to the search. Currently, you can search only by user
-     * name. For example, <code>"Filters": [ { "Name": "QUICKSIGHT_USER", "Operator":
+     * name, for example, <code>"Filters": [ { "Name": "QUICKSIGHT_USER", "Operator":
      * "StringEquals", "Value": "arn:aws:quicksight:us-east-1:1:user/default/UserName1"
      * } ]</code> </p>
      */
@@ -135,7 +135,7 @@ namespace Model
 
     /**
      * <p>The filters to apply to the search. Currently, you can search only by user
-     * name. For example, <code>"Filters": [ { "Name": "QUICKSIGHT_USER", "Operator":
+     * name, for example, <code>"Filters": [ { "Name": "QUICKSIGHT_USER", "Operator":
      * "StringEquals", "Value": "arn:aws:quicksight:us-east-1:1:user/default/UserName1"
      * } ]</code> </p>
      */
@@ -143,7 +143,7 @@ namespace Model
 
     /**
      * <p>The filters to apply to the search. Currently, you can search only by user
-     * name. For example, <code>"Filters": [ { "Name": "QUICKSIGHT_USER", "Operator":
+     * name, for example, <code>"Filters": [ { "Name": "QUICKSIGHT_USER", "Operator":
      * "StringEquals", "Value": "arn:aws:quicksight:us-east-1:1:user/default/UserName1"
      * } ]</code> </p>
      */
@@ -151,7 +151,7 @@ namespace Model
 
     /**
      * <p>The filters to apply to the search. Currently, you can search only by user
-     * name. For example, <code>"Filters": [ { "Name": "QUICKSIGHT_USER", "Operator":
+     * name, for example, <code>"Filters": [ { "Name": "QUICKSIGHT_USER", "Operator":
      * "StringEquals", "Value": "arn:aws:quicksight:us-east-1:1:user/default/UserName1"
      * } ]</code> </p>
      */

@@ -29,12 +29,14 @@ namespace Model
 {
 
 DataSourceCredentials::DataSourceCredentials() : 
-    m_credentialPairHasBeenSet(false)
+    m_credentialPairHasBeenSet(false),
+    m_copySourceArnHasBeenSet(false)
 {
 }
 
 DataSourceCredentials::DataSourceCredentials(JsonView jsonValue) : 
-    m_credentialPairHasBeenSet(false)
+    m_credentialPairHasBeenSet(false),
+    m_copySourceArnHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -48,6 +50,13 @@ DataSourceCredentials& DataSourceCredentials::operator =(JsonView jsonValue)
     m_credentialPairHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("CopySourceArn"))
+  {
+    m_copySourceArn = jsonValue.GetString("CopySourceArn");
+
+    m_copySourceArnHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -58,6 +67,12 @@ JsonValue DataSourceCredentials::Jsonize() const
   if(m_credentialPairHasBeenSet)
   {
    payload.WithObject("CredentialPair", m_credentialPair.Jsonize());
+
+  }
+
+  if(m_copySourceArnHasBeenSet)
+  {
+   payload.WithString("CopySourceArn", m_copySourceArn);
 
   }
 

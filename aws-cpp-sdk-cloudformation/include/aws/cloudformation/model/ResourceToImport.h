@@ -53,49 +53,65 @@ namespace Model
 
     /**
      * <p>The type of resource to import into your stack, such as
-     * <code>AWS::S3::Bucket</code>. </p>
+     * <code>AWS::S3::Bucket</code>. For a list of supported resource types, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resource-import-supported-resources.html">Resources
+     * that support import operations</a> in the AWS CloudFormation User Guide.</p>
      */
     inline const Aws::String& GetResourceType() const{ return m_resourceType; }
 
     /**
      * <p>The type of resource to import into your stack, such as
-     * <code>AWS::S3::Bucket</code>. </p>
+     * <code>AWS::S3::Bucket</code>. For a list of supported resource types, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resource-import-supported-resources.html">Resources
+     * that support import operations</a> in the AWS CloudFormation User Guide.</p>
      */
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
 
     /**
      * <p>The type of resource to import into your stack, such as
-     * <code>AWS::S3::Bucket</code>. </p>
+     * <code>AWS::S3::Bucket</code>. For a list of supported resource types, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resource-import-supported-resources.html">Resources
+     * that support import operations</a> in the AWS CloudFormation User Guide.</p>
      */
     inline void SetResourceType(const Aws::String& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
 
     /**
      * <p>The type of resource to import into your stack, such as
-     * <code>AWS::S3::Bucket</code>. </p>
+     * <code>AWS::S3::Bucket</code>. For a list of supported resource types, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resource-import-supported-resources.html">Resources
+     * that support import operations</a> in the AWS CloudFormation User Guide.</p>
      */
     inline void SetResourceType(Aws::String&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
 
     /**
      * <p>The type of resource to import into your stack, such as
-     * <code>AWS::S3::Bucket</code>. </p>
+     * <code>AWS::S3::Bucket</code>. For a list of supported resource types, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resource-import-supported-resources.html">Resources
+     * that support import operations</a> in the AWS CloudFormation User Guide.</p>
      */
     inline void SetResourceType(const char* value) { m_resourceTypeHasBeenSet = true; m_resourceType.assign(value); }
 
     /**
      * <p>The type of resource to import into your stack, such as
-     * <code>AWS::S3::Bucket</code>. </p>
+     * <code>AWS::S3::Bucket</code>. For a list of supported resource types, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resource-import-supported-resources.html">Resources
+     * that support import operations</a> in the AWS CloudFormation User Guide.</p>
      */
     inline ResourceToImport& WithResourceType(const Aws::String& value) { SetResourceType(value); return *this;}
 
     /**
      * <p>The type of resource to import into your stack, such as
-     * <code>AWS::S3::Bucket</code>. </p>
+     * <code>AWS::S3::Bucket</code>. For a list of supported resource types, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resource-import-supported-resources.html">Resources
+     * that support import operations</a> in the AWS CloudFormation User Guide.</p>
      */
     inline ResourceToImport& WithResourceType(Aws::String&& value) { SetResourceType(std::move(value)); return *this;}
 
     /**
      * <p>The type of resource to import into your stack, such as
-     * <code>AWS::S3::Bucket</code>. </p>
+     * <code>AWS::S3::Bucket</code>. For a list of supported resource types, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resource-import-supported-resources.html">Resources
+     * that support import operations</a> in the AWS CloudFormation User Guide.</p>
      */
     inline ResourceToImport& WithResourceType(const char* value) { SetResourceType(value); return *this;}
 

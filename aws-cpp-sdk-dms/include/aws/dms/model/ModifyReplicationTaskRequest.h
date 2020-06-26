@@ -92,65 +92,65 @@ namespace Model
 
     /**
      * <p>The replication task identifier.</p> <p>Constraints:</p> <ul> <li> <p>Must
-     * contain from 1 to 255 alphanumeric characters or hyphens.</p> </li> <li>
-     * <p>First character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen
-     * or contain two consecutive hyphens.</p> </li> </ul>
+     * contain 1-255 alphanumeric characters or hyphens.</p> </li> <li> <p>First
+     * character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or
+     * contain two consecutive hyphens.</p> </li> </ul>
      */
     inline const Aws::String& GetReplicationTaskIdentifier() const{ return m_replicationTaskIdentifier; }
 
     /**
      * <p>The replication task identifier.</p> <p>Constraints:</p> <ul> <li> <p>Must
-     * contain from 1 to 255 alphanumeric characters or hyphens.</p> </li> <li>
-     * <p>First character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen
-     * or contain two consecutive hyphens.</p> </li> </ul>
+     * contain 1-255 alphanumeric characters or hyphens.</p> </li> <li> <p>First
+     * character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or
+     * contain two consecutive hyphens.</p> </li> </ul>
      */
     inline bool ReplicationTaskIdentifierHasBeenSet() const { return m_replicationTaskIdentifierHasBeenSet; }
 
     /**
      * <p>The replication task identifier.</p> <p>Constraints:</p> <ul> <li> <p>Must
-     * contain from 1 to 255 alphanumeric characters or hyphens.</p> </li> <li>
-     * <p>First character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen
-     * or contain two consecutive hyphens.</p> </li> </ul>
+     * contain 1-255 alphanumeric characters or hyphens.</p> </li> <li> <p>First
+     * character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or
+     * contain two consecutive hyphens.</p> </li> </ul>
      */
     inline void SetReplicationTaskIdentifier(const Aws::String& value) { m_replicationTaskIdentifierHasBeenSet = true; m_replicationTaskIdentifier = value; }
 
     /**
      * <p>The replication task identifier.</p> <p>Constraints:</p> <ul> <li> <p>Must
-     * contain from 1 to 255 alphanumeric characters or hyphens.</p> </li> <li>
-     * <p>First character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen
-     * or contain two consecutive hyphens.</p> </li> </ul>
+     * contain 1-255 alphanumeric characters or hyphens.</p> </li> <li> <p>First
+     * character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or
+     * contain two consecutive hyphens.</p> </li> </ul>
      */
     inline void SetReplicationTaskIdentifier(Aws::String&& value) { m_replicationTaskIdentifierHasBeenSet = true; m_replicationTaskIdentifier = std::move(value); }
 
     /**
      * <p>The replication task identifier.</p> <p>Constraints:</p> <ul> <li> <p>Must
-     * contain from 1 to 255 alphanumeric characters or hyphens.</p> </li> <li>
-     * <p>First character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen
-     * or contain two consecutive hyphens.</p> </li> </ul>
+     * contain 1-255 alphanumeric characters or hyphens.</p> </li> <li> <p>First
+     * character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or
+     * contain two consecutive hyphens.</p> </li> </ul>
      */
     inline void SetReplicationTaskIdentifier(const char* value) { m_replicationTaskIdentifierHasBeenSet = true; m_replicationTaskIdentifier.assign(value); }
 
     /**
      * <p>The replication task identifier.</p> <p>Constraints:</p> <ul> <li> <p>Must
-     * contain from 1 to 255 alphanumeric characters or hyphens.</p> </li> <li>
-     * <p>First character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen
-     * or contain two consecutive hyphens.</p> </li> </ul>
+     * contain 1-255 alphanumeric characters or hyphens.</p> </li> <li> <p>First
+     * character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or
+     * contain two consecutive hyphens.</p> </li> </ul>
      */
     inline ModifyReplicationTaskRequest& WithReplicationTaskIdentifier(const Aws::String& value) { SetReplicationTaskIdentifier(value); return *this;}
 
     /**
      * <p>The replication task identifier.</p> <p>Constraints:</p> <ul> <li> <p>Must
-     * contain from 1 to 255 alphanumeric characters or hyphens.</p> </li> <li>
-     * <p>First character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen
-     * or contain two consecutive hyphens.</p> </li> </ul>
+     * contain 1-255 alphanumeric characters or hyphens.</p> </li> <li> <p>First
+     * character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or
+     * contain two consecutive hyphens.</p> </li> </ul>
      */
     inline ModifyReplicationTaskRequest& WithReplicationTaskIdentifier(Aws::String&& value) { SetReplicationTaskIdentifier(std::move(value)); return *this;}
 
     /**
      * <p>The replication task identifier.</p> <p>Constraints:</p> <ul> <li> <p>Must
-     * contain from 1 to 255 alphanumeric characters or hyphens.</p> </li> <li>
-     * <p>First character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen
-     * or contain two consecutive hyphens.</p> </li> </ul>
+     * contain 1-255 alphanumeric characters or hyphens.</p> </li> <li> <p>First
+     * character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or
+     * contain two consecutive hyphens.</p> </li> </ul>
      */
     inline ModifyReplicationTaskRequest& WithReplicationTaskIdentifier(const char* value) { SetReplicationTaskIdentifier(value); return *this;}
 
@@ -585,8 +585,8 @@ namespace Model
      * <p>Supplemental information that the task requires to migrate the data for
      * certain source and target endpoints. For more information, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying
-     * Supplemental Data for Task Settings</a> in the <i>AWS Database Migration User
-     * Guide.</i> </p>
+     * Supplemental Data for Task Settings</a> in the <i>AWS Database Migration Service
+     * User Guide.</i> </p>
      */
     inline const Aws::String& GetTaskData() const{ return m_taskData; }
 
@@ -594,8 +594,8 @@ namespace Model
      * <p>Supplemental information that the task requires to migrate the data for
      * certain source and target endpoints. For more information, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying
-     * Supplemental Data for Task Settings</a> in the <i>AWS Database Migration User
-     * Guide.</i> </p>
+     * Supplemental Data for Task Settings</a> in the <i>AWS Database Migration Service
+     * User Guide.</i> </p>
      */
     inline bool TaskDataHasBeenSet() const { return m_taskDataHasBeenSet; }
 
@@ -603,8 +603,8 @@ namespace Model
      * <p>Supplemental information that the task requires to migrate the data for
      * certain source and target endpoints. For more information, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying
-     * Supplemental Data for Task Settings</a> in the <i>AWS Database Migration User
-     * Guide.</i> </p>
+     * Supplemental Data for Task Settings</a> in the <i>AWS Database Migration Service
+     * User Guide.</i> </p>
      */
     inline void SetTaskData(const Aws::String& value) { m_taskDataHasBeenSet = true; m_taskData = value; }
 
@@ -612,8 +612,8 @@ namespace Model
      * <p>Supplemental information that the task requires to migrate the data for
      * certain source and target endpoints. For more information, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying
-     * Supplemental Data for Task Settings</a> in the <i>AWS Database Migration User
-     * Guide.</i> </p>
+     * Supplemental Data for Task Settings</a> in the <i>AWS Database Migration Service
+     * User Guide.</i> </p>
      */
     inline void SetTaskData(Aws::String&& value) { m_taskDataHasBeenSet = true; m_taskData = std::move(value); }
 
@@ -621,8 +621,8 @@ namespace Model
      * <p>Supplemental information that the task requires to migrate the data for
      * certain source and target endpoints. For more information, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying
-     * Supplemental Data for Task Settings</a> in the <i>AWS Database Migration User
-     * Guide.</i> </p>
+     * Supplemental Data for Task Settings</a> in the <i>AWS Database Migration Service
+     * User Guide.</i> </p>
      */
     inline void SetTaskData(const char* value) { m_taskDataHasBeenSet = true; m_taskData.assign(value); }
 
@@ -630,8 +630,8 @@ namespace Model
      * <p>Supplemental information that the task requires to migrate the data for
      * certain source and target endpoints. For more information, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying
-     * Supplemental Data for Task Settings</a> in the <i>AWS Database Migration User
-     * Guide.</i> </p>
+     * Supplemental Data for Task Settings</a> in the <i>AWS Database Migration Service
+     * User Guide.</i> </p>
      */
     inline ModifyReplicationTaskRequest& WithTaskData(const Aws::String& value) { SetTaskData(value); return *this;}
 
@@ -639,8 +639,8 @@ namespace Model
      * <p>Supplemental information that the task requires to migrate the data for
      * certain source and target endpoints. For more information, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying
-     * Supplemental Data for Task Settings</a> in the <i>AWS Database Migration User
-     * Guide.</i> </p>
+     * Supplemental Data for Task Settings</a> in the <i>AWS Database Migration Service
+     * User Guide.</i> </p>
      */
     inline ModifyReplicationTaskRequest& WithTaskData(Aws::String&& value) { SetTaskData(std::move(value)); return *this;}
 
@@ -648,8 +648,8 @@ namespace Model
      * <p>Supplemental information that the task requires to migrate the data for
      * certain source and target endpoints. For more information, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying
-     * Supplemental Data for Task Settings</a> in the <i>AWS Database Migration User
-     * Guide.</i> </p>
+     * Supplemental Data for Task Settings</a> in the <i>AWS Database Migration Service
+     * User Guide.</i> </p>
      */
     inline ModifyReplicationTaskRequest& WithTaskData(const char* value) { SetTaskData(value); return *this;}
 

@@ -163,8 +163,8 @@ namespace Model
      * <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>,
      * <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>,
      * <code>"mongodb"</code>, <code>"kinesis"</code>, <code>"kafka"</code>,
-     * <code>"elasticsearch"</code>, <code>"documentdb"</code>, and
-     * <code>"sqlserver"</code>.</p>
+     * <code>"elasticsearch"</code>, <code>"documentdb"</code>,
+     * <code>"sqlserver"</code>, and <code>"neptune"</code>.</p>
      */
     inline const Aws::String& GetEngineName() const{ return m_engineName; }
 
@@ -175,8 +175,8 @@ namespace Model
      * <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>,
      * <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>,
      * <code>"mongodb"</code>, <code>"kinesis"</code>, <code>"kafka"</code>,
-     * <code>"elasticsearch"</code>, <code>"documentdb"</code>, and
-     * <code>"sqlserver"</code>.</p>
+     * <code>"elasticsearch"</code>, <code>"documentdb"</code>,
+     * <code>"sqlserver"</code>, and <code>"neptune"</code>.</p>
      */
     inline bool EngineNameHasBeenSet() const { return m_engineNameHasBeenSet; }
 
@@ -187,8 +187,8 @@ namespace Model
      * <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>,
      * <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>,
      * <code>"mongodb"</code>, <code>"kinesis"</code>, <code>"kafka"</code>,
-     * <code>"elasticsearch"</code>, <code>"documentdb"</code>, and
-     * <code>"sqlserver"</code>.</p>
+     * <code>"elasticsearch"</code>, <code>"documentdb"</code>,
+     * <code>"sqlserver"</code>, and <code>"neptune"</code>.</p>
      */
     inline void SetEngineName(const Aws::String& value) { m_engineNameHasBeenSet = true; m_engineName = value; }
 
@@ -199,8 +199,8 @@ namespace Model
      * <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>,
      * <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>,
      * <code>"mongodb"</code>, <code>"kinesis"</code>, <code>"kafka"</code>,
-     * <code>"elasticsearch"</code>, <code>"documentdb"</code>, and
-     * <code>"sqlserver"</code>.</p>
+     * <code>"elasticsearch"</code>, <code>"documentdb"</code>,
+     * <code>"sqlserver"</code>, and <code>"neptune"</code>.</p>
      */
     inline void SetEngineName(Aws::String&& value) { m_engineNameHasBeenSet = true; m_engineName = std::move(value); }
 
@@ -211,8 +211,8 @@ namespace Model
      * <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>,
      * <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>,
      * <code>"mongodb"</code>, <code>"kinesis"</code>, <code>"kafka"</code>,
-     * <code>"elasticsearch"</code>, <code>"documentdb"</code>, and
-     * <code>"sqlserver"</code>.</p>
+     * <code>"elasticsearch"</code>, <code>"documentdb"</code>,
+     * <code>"sqlserver"</code>, and <code>"neptune"</code>.</p>
      */
     inline void SetEngineName(const char* value) { m_engineNameHasBeenSet = true; m_engineName.assign(value); }
 
@@ -223,8 +223,8 @@ namespace Model
      * <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>,
      * <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>,
      * <code>"mongodb"</code>, <code>"kinesis"</code>, <code>"kafka"</code>,
-     * <code>"elasticsearch"</code>, <code>"documentdb"</code>, and
-     * <code>"sqlserver"</code>.</p>
+     * <code>"elasticsearch"</code>, <code>"documentdb"</code>,
+     * <code>"sqlserver"</code>, and <code>"neptune"</code>.</p>
      */
     inline Endpoint& WithEngineName(const Aws::String& value) { SetEngineName(value); return *this;}
 
@@ -235,8 +235,8 @@ namespace Model
      * <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>,
      * <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>,
      * <code>"mongodb"</code>, <code>"kinesis"</code>, <code>"kafka"</code>,
-     * <code>"elasticsearch"</code>, <code>"documentdb"</code>, and
-     * <code>"sqlserver"</code>.</p>
+     * <code>"elasticsearch"</code>, <code>"documentdb"</code>,
+     * <code>"sqlserver"</code>, and <code>"neptune"</code>.</p>
      */
     inline Endpoint& WithEngineName(Aws::String&& value) { SetEngineName(std::move(value)); return *this;}
 
@@ -247,8 +247,8 @@ namespace Model
      * <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>,
      * <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>,
      * <code>"mongodb"</code>, <code>"kinesis"</code>, <code>"kafka"</code>,
-     * <code>"elasticsearch"</code>, <code>"documentdb"</code>, and
-     * <code>"sqlserver"</code>.</p>
+     * <code>"elasticsearch"</code>, <code>"documentdb"</code>,
+     * <code>"sqlserver"</code>, and <code>"neptune"</code>.</p>
      */
     inline Endpoint& WithEngineName(const char* value) { SetEngineName(value); return *this;}
 
@@ -1201,38 +1201,38 @@ namespace Model
 
 
     /**
-     * <p>The settings for the MongoDB source endpoint. For more information, see the
-     * <code>NeptuneSettings</code> structure.</p>
+     * <p>The settings for the Amazon Neptune target endpoint. For more information,
+     * see the <code>NeptuneSettings</code> structure.</p>
      */
     inline const NeptuneSettings& GetNeptuneSettings() const{ return m_neptuneSettings; }
 
     /**
-     * <p>The settings for the MongoDB source endpoint. For more information, see the
-     * <code>NeptuneSettings</code> structure.</p>
+     * <p>The settings for the Amazon Neptune target endpoint. For more information,
+     * see the <code>NeptuneSettings</code> structure.</p>
      */
     inline bool NeptuneSettingsHasBeenSet() const { return m_neptuneSettingsHasBeenSet; }
 
     /**
-     * <p>The settings for the MongoDB source endpoint. For more information, see the
-     * <code>NeptuneSettings</code> structure.</p>
+     * <p>The settings for the Amazon Neptune target endpoint. For more information,
+     * see the <code>NeptuneSettings</code> structure.</p>
      */
     inline void SetNeptuneSettings(const NeptuneSettings& value) { m_neptuneSettingsHasBeenSet = true; m_neptuneSettings = value; }
 
     /**
-     * <p>The settings for the MongoDB source endpoint. For more information, see the
-     * <code>NeptuneSettings</code> structure.</p>
+     * <p>The settings for the Amazon Neptune target endpoint. For more information,
+     * see the <code>NeptuneSettings</code> structure.</p>
      */
     inline void SetNeptuneSettings(NeptuneSettings&& value) { m_neptuneSettingsHasBeenSet = true; m_neptuneSettings = std::move(value); }
 
     /**
-     * <p>The settings for the MongoDB source endpoint. For more information, see the
-     * <code>NeptuneSettings</code> structure.</p>
+     * <p>The settings for the Amazon Neptune target endpoint. For more information,
+     * see the <code>NeptuneSettings</code> structure.</p>
      */
     inline Endpoint& WithNeptuneSettings(const NeptuneSettings& value) { SetNeptuneSettings(value); return *this;}
 
     /**
-     * <p>The settings for the MongoDB source endpoint. For more information, see the
-     * <code>NeptuneSettings</code> structure.</p>
+     * <p>The settings for the Amazon Neptune target endpoint. For more information,
+     * see the <code>NeptuneSettings</code> structure.</p>
      */
     inline Endpoint& WithNeptuneSettings(NeptuneSettings&& value) { SetNeptuneSettings(std::move(value)); return *this;}
 

@@ -134,38 +134,98 @@ namespace Model
 
 
     /**
-     * <p>The source QuickSight entity from which this template is being updated. You
-     * can currently update templates from an Analysis or another template.</p>
+     * <p>The entity that you are using as a source when you update the template. In
+     * <code>SourceEntity</code>, you specify the type of object you're using as
+     * source: <code>SourceTemplate</code> for a template or
+     * <code>SourceAnalysis</code> for an analysis. Both of these require an Amazon
+     * Resource Name (ARN). For <code>SourceTemplate</code>, specify the ARN of the
+     * source template. For <code>SourceAnalysis</code>, specify the ARN of the source
+     * analysis. The <code>SourceTemplate</code> ARN can contain any AWS Account and
+     * any QuickSight-supported AWS Region. </p> <p>Use the
+     * <code>DataSetReferences</code> entity within <code>SourceTemplate</code> or
+     * <code>SourceAnalysis</code> to list the replacement datasets for the
+     * placeholders listed in the original. The schema in each dataset must match its
+     * placeholder. </p>
      */
     inline const TemplateSourceEntity& GetSourceEntity() const{ return m_sourceEntity; }
 
     /**
-     * <p>The source QuickSight entity from which this template is being updated. You
-     * can currently update templates from an Analysis or another template.</p>
+     * <p>The entity that you are using as a source when you update the template. In
+     * <code>SourceEntity</code>, you specify the type of object you're using as
+     * source: <code>SourceTemplate</code> for a template or
+     * <code>SourceAnalysis</code> for an analysis. Both of these require an Amazon
+     * Resource Name (ARN). For <code>SourceTemplate</code>, specify the ARN of the
+     * source template. For <code>SourceAnalysis</code>, specify the ARN of the source
+     * analysis. The <code>SourceTemplate</code> ARN can contain any AWS Account and
+     * any QuickSight-supported AWS Region. </p> <p>Use the
+     * <code>DataSetReferences</code> entity within <code>SourceTemplate</code> or
+     * <code>SourceAnalysis</code> to list the replacement datasets for the
+     * placeholders listed in the original. The schema in each dataset must match its
+     * placeholder. </p>
      */
     inline bool SourceEntityHasBeenSet() const { return m_sourceEntityHasBeenSet; }
 
     /**
-     * <p>The source QuickSight entity from which this template is being updated. You
-     * can currently update templates from an Analysis or another template.</p>
+     * <p>The entity that you are using as a source when you update the template. In
+     * <code>SourceEntity</code>, you specify the type of object you're using as
+     * source: <code>SourceTemplate</code> for a template or
+     * <code>SourceAnalysis</code> for an analysis. Both of these require an Amazon
+     * Resource Name (ARN). For <code>SourceTemplate</code>, specify the ARN of the
+     * source template. For <code>SourceAnalysis</code>, specify the ARN of the source
+     * analysis. The <code>SourceTemplate</code> ARN can contain any AWS Account and
+     * any QuickSight-supported AWS Region. </p> <p>Use the
+     * <code>DataSetReferences</code> entity within <code>SourceTemplate</code> or
+     * <code>SourceAnalysis</code> to list the replacement datasets for the
+     * placeholders listed in the original. The schema in each dataset must match its
+     * placeholder. </p>
      */
     inline void SetSourceEntity(const TemplateSourceEntity& value) { m_sourceEntityHasBeenSet = true; m_sourceEntity = value; }
 
     /**
-     * <p>The source QuickSight entity from which this template is being updated. You
-     * can currently update templates from an Analysis or another template.</p>
+     * <p>The entity that you are using as a source when you update the template. In
+     * <code>SourceEntity</code>, you specify the type of object you're using as
+     * source: <code>SourceTemplate</code> for a template or
+     * <code>SourceAnalysis</code> for an analysis. Both of these require an Amazon
+     * Resource Name (ARN). For <code>SourceTemplate</code>, specify the ARN of the
+     * source template. For <code>SourceAnalysis</code>, specify the ARN of the source
+     * analysis. The <code>SourceTemplate</code> ARN can contain any AWS Account and
+     * any QuickSight-supported AWS Region. </p> <p>Use the
+     * <code>DataSetReferences</code> entity within <code>SourceTemplate</code> or
+     * <code>SourceAnalysis</code> to list the replacement datasets for the
+     * placeholders listed in the original. The schema in each dataset must match its
+     * placeholder. </p>
      */
     inline void SetSourceEntity(TemplateSourceEntity&& value) { m_sourceEntityHasBeenSet = true; m_sourceEntity = std::move(value); }
 
     /**
-     * <p>The source QuickSight entity from which this template is being updated. You
-     * can currently update templates from an Analysis or another template.</p>
+     * <p>The entity that you are using as a source when you update the template. In
+     * <code>SourceEntity</code>, you specify the type of object you're using as
+     * source: <code>SourceTemplate</code> for a template or
+     * <code>SourceAnalysis</code> for an analysis. Both of these require an Amazon
+     * Resource Name (ARN). For <code>SourceTemplate</code>, specify the ARN of the
+     * source template. For <code>SourceAnalysis</code>, specify the ARN of the source
+     * analysis. The <code>SourceTemplate</code> ARN can contain any AWS Account and
+     * any QuickSight-supported AWS Region. </p> <p>Use the
+     * <code>DataSetReferences</code> entity within <code>SourceTemplate</code> or
+     * <code>SourceAnalysis</code> to list the replacement datasets for the
+     * placeholders listed in the original. The schema in each dataset must match its
+     * placeholder. </p>
      */
     inline UpdateTemplateRequest& WithSourceEntity(const TemplateSourceEntity& value) { SetSourceEntity(value); return *this;}
 
     /**
-     * <p>The source QuickSight entity from which this template is being updated. You
-     * can currently update templates from an Analysis or another template.</p>
+     * <p>The entity that you are using as a source when you update the template. In
+     * <code>SourceEntity</code>, you specify the type of object you're using as
+     * source: <code>SourceTemplate</code> for a template or
+     * <code>SourceAnalysis</code> for an analysis. Both of these require an Amazon
+     * Resource Name (ARN). For <code>SourceTemplate</code>, specify the ARN of the
+     * source template. For <code>SourceAnalysis</code>, specify the ARN of the source
+     * analysis. The <code>SourceTemplate</code> ARN can contain any AWS Account and
+     * any QuickSight-supported AWS Region. </p> <p>Use the
+     * <code>DataSetReferences</code> entity within <code>SourceTemplate</code> or
+     * <code>SourceAnalysis</code> to list the replacement datasets for the
+     * placeholders listed in the original. The schema in each dataset must match its
+     * placeholder. </p>
      */
     inline UpdateTemplateRequest& WithSourceEntity(TemplateSourceEntity&& value) { SetSourceEntity(std::move(value)); return *this;}
 

@@ -16,6 +16,7 @@
 #pragma once
 #include <aws/quicksight/QuickSight_EXPORTS.h>
 #include <aws/quicksight/model/CredentialPair.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -34,7 +35,9 @@ namespace Model
 {
 
   /**
-   * <p>Data source credentials.</p><p><h3>See Also:</h3>   <a
+   * <p>Data source credentials. This is a variant type structure. For this structure
+   * to be valid, only one of the attributes can be non-null.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DataSourceCredentials">AWS
    * API Reference</a></p>
    */
@@ -48,39 +51,107 @@ namespace Model
 
 
     /**
-     * <p>Credential pair.</p>
+     * <p>Credential pair. For more information, see <a>CredentialPair</a>.</p>
      */
     inline const CredentialPair& GetCredentialPair() const{ return m_credentialPair; }
 
     /**
-     * <p>Credential pair.</p>
+     * <p>Credential pair. For more information, see <a>CredentialPair</a>.</p>
      */
     inline bool CredentialPairHasBeenSet() const { return m_credentialPairHasBeenSet; }
 
     /**
-     * <p>Credential pair.</p>
+     * <p>Credential pair. For more information, see <a>CredentialPair</a>.</p>
      */
     inline void SetCredentialPair(const CredentialPair& value) { m_credentialPairHasBeenSet = true; m_credentialPair = value; }
 
     /**
-     * <p>Credential pair.</p>
+     * <p>Credential pair. For more information, see <a>CredentialPair</a>.</p>
      */
     inline void SetCredentialPair(CredentialPair&& value) { m_credentialPairHasBeenSet = true; m_credentialPair = std::move(value); }
 
     /**
-     * <p>Credential pair.</p>
+     * <p>Credential pair. For more information, see <a>CredentialPair</a>.</p>
      */
     inline DataSourceCredentials& WithCredentialPair(const CredentialPair& value) { SetCredentialPair(value); return *this;}
 
     /**
-     * <p>Credential pair.</p>
+     * <p>Credential pair. For more information, see <a>CredentialPair</a>.</p>
      */
     inline DataSourceCredentials& WithCredentialPair(CredentialPair&& value) { SetCredentialPair(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of a data source that has the credential pair
+     * that you want to use. When <code>CopySourceArn</code> is not null, the
+     * credential pair from the data source in the ARN is used as the credentials for
+     * the <code>DataSourceCredentials</code> structure.</p>
+     */
+    inline const Aws::String& GetCopySourceArn() const{ return m_copySourceArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of a data source that has the credential pair
+     * that you want to use. When <code>CopySourceArn</code> is not null, the
+     * credential pair from the data source in the ARN is used as the credentials for
+     * the <code>DataSourceCredentials</code> structure.</p>
+     */
+    inline bool CopySourceArnHasBeenSet() const { return m_copySourceArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of a data source that has the credential pair
+     * that you want to use. When <code>CopySourceArn</code> is not null, the
+     * credential pair from the data source in the ARN is used as the credentials for
+     * the <code>DataSourceCredentials</code> structure.</p>
+     */
+    inline void SetCopySourceArn(const Aws::String& value) { m_copySourceArnHasBeenSet = true; m_copySourceArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of a data source that has the credential pair
+     * that you want to use. When <code>CopySourceArn</code> is not null, the
+     * credential pair from the data source in the ARN is used as the credentials for
+     * the <code>DataSourceCredentials</code> structure.</p>
+     */
+    inline void SetCopySourceArn(Aws::String&& value) { m_copySourceArnHasBeenSet = true; m_copySourceArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of a data source that has the credential pair
+     * that you want to use. When <code>CopySourceArn</code> is not null, the
+     * credential pair from the data source in the ARN is used as the credentials for
+     * the <code>DataSourceCredentials</code> structure.</p>
+     */
+    inline void SetCopySourceArn(const char* value) { m_copySourceArnHasBeenSet = true; m_copySourceArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of a data source that has the credential pair
+     * that you want to use. When <code>CopySourceArn</code> is not null, the
+     * credential pair from the data source in the ARN is used as the credentials for
+     * the <code>DataSourceCredentials</code> structure.</p>
+     */
+    inline DataSourceCredentials& WithCopySourceArn(const Aws::String& value) { SetCopySourceArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of a data source that has the credential pair
+     * that you want to use. When <code>CopySourceArn</code> is not null, the
+     * credential pair from the data source in the ARN is used as the credentials for
+     * the <code>DataSourceCredentials</code> structure.</p>
+     */
+    inline DataSourceCredentials& WithCopySourceArn(Aws::String&& value) { SetCopySourceArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of a data source that has the credential pair
+     * that you want to use. When <code>CopySourceArn</code> is not null, the
+     * credential pair from the data source in the ARN is used as the credentials for
+     * the <code>DataSourceCredentials</code> structure.</p>
+     */
+    inline DataSourceCredentials& WithCopySourceArn(const char* value) { SetCopySourceArn(value); return *this;}
 
   private:
 
     CredentialPair m_credentialPair;
     bool m_credentialPairHasBeenSet;
+
+    Aws::String m_copySourceArn;
+    bool m_copySourceArnHasBeenSet;
   };
 
 } // namespace Model

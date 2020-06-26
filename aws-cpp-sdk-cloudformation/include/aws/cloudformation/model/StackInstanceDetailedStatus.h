@@ -14,34 +14,32 @@
 */
 
 #pragma once
-#include <aws/quicksight/QuickSight_EXPORTS.h>
+#include <aws/cloudformation/CloudFormation_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 namespace Aws
 {
-namespace QuickSight
+namespace CloudFormation
 {
 namespace Model
 {
-  enum class DataSourceErrorInfoType
+  enum class StackInstanceDetailedStatus
   {
     NOT_SET,
-    ACCESS_DENIED,
-    COPY_SOURCE_NOT_FOUND,
-    TIMEOUT,
-    ENGINE_VERSION_NOT_SUPPORTED,
-    UNKNOWN_HOST,
-    GENERIC_SQL_FAILURE,
-    CONFLICT,
-    UNKNOWN
+    PENDING,
+    RUNNING,
+    SUCCEEDED,
+    FAILED,
+    CANCELLED,
+    INOPERABLE
   };
 
-namespace DataSourceErrorInfoTypeMapper
+namespace StackInstanceDetailedStatusMapper
 {
-AWS_QUICKSIGHT_API DataSourceErrorInfoType GetDataSourceErrorInfoTypeForName(const Aws::String& name);
+AWS_CLOUDFORMATION_API StackInstanceDetailedStatus GetStackInstanceDetailedStatusForName(const Aws::String& name);
 
-AWS_QUICKSIGHT_API Aws::String GetNameForDataSourceErrorInfoType(DataSourceErrorInfoType value);
-} // namespace DataSourceErrorInfoTypeMapper
+AWS_CLOUDFORMATION_API Aws::String GetNameForStackInstanceDetailedStatus(StackInstanceDetailedStatus value);
+} // namespace StackInstanceDetailedStatusMapper
 } // namespace Model
-} // namespace QuickSight
+} // namespace CloudFormation
 } // namespace Aws

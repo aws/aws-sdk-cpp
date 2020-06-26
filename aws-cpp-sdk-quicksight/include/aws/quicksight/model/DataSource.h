@@ -20,6 +20,7 @@
 #include <aws/quicksight/model/ResourceStatus.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/quicksight/model/DataSourceParameters.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/quicksight/model/VpcConnectionProperties.h>
 #include <aws/quicksight/model/SslProperties.h>
 #include <aws/quicksight/model/DataSourceErrorInfo.h>
@@ -359,6 +360,119 @@ namespace Model
 
 
     /**
+     * <p>A set of alternate data source parameters that you want to share for the
+     * credentials stored with this data source. The credentials are applied in tandem
+     * with the data source parameters when you copy a data source by using a create or
+     * update request. The API compares the <code>DataSourceParameters</code> structure
+     * that's in the request with the structures in the
+     * <code>AlternateDataSourceParameters</code> allowlist. If the structures are an
+     * exact match, the request is allowed to use the credentials from this existing
+     * data source. If the <code>AlternateDataSourceParameters</code> list is null, the
+     * <code>Credentials</code> originally used with this
+     * <code>DataSourceParameters</code> are automatically allowed.</p>
+     */
+    inline const Aws::Vector<DataSourceParameters>& GetAlternateDataSourceParameters() const{ return m_alternateDataSourceParameters; }
+
+    /**
+     * <p>A set of alternate data source parameters that you want to share for the
+     * credentials stored with this data source. The credentials are applied in tandem
+     * with the data source parameters when you copy a data source by using a create or
+     * update request. The API compares the <code>DataSourceParameters</code> structure
+     * that's in the request with the structures in the
+     * <code>AlternateDataSourceParameters</code> allowlist. If the structures are an
+     * exact match, the request is allowed to use the credentials from this existing
+     * data source. If the <code>AlternateDataSourceParameters</code> list is null, the
+     * <code>Credentials</code> originally used with this
+     * <code>DataSourceParameters</code> are automatically allowed.</p>
+     */
+    inline bool AlternateDataSourceParametersHasBeenSet() const { return m_alternateDataSourceParametersHasBeenSet; }
+
+    /**
+     * <p>A set of alternate data source parameters that you want to share for the
+     * credentials stored with this data source. The credentials are applied in tandem
+     * with the data source parameters when you copy a data source by using a create or
+     * update request. The API compares the <code>DataSourceParameters</code> structure
+     * that's in the request with the structures in the
+     * <code>AlternateDataSourceParameters</code> allowlist. If the structures are an
+     * exact match, the request is allowed to use the credentials from this existing
+     * data source. If the <code>AlternateDataSourceParameters</code> list is null, the
+     * <code>Credentials</code> originally used with this
+     * <code>DataSourceParameters</code> are automatically allowed.</p>
+     */
+    inline void SetAlternateDataSourceParameters(const Aws::Vector<DataSourceParameters>& value) { m_alternateDataSourceParametersHasBeenSet = true; m_alternateDataSourceParameters = value; }
+
+    /**
+     * <p>A set of alternate data source parameters that you want to share for the
+     * credentials stored with this data source. The credentials are applied in tandem
+     * with the data source parameters when you copy a data source by using a create or
+     * update request. The API compares the <code>DataSourceParameters</code> structure
+     * that's in the request with the structures in the
+     * <code>AlternateDataSourceParameters</code> allowlist. If the structures are an
+     * exact match, the request is allowed to use the credentials from this existing
+     * data source. If the <code>AlternateDataSourceParameters</code> list is null, the
+     * <code>Credentials</code> originally used with this
+     * <code>DataSourceParameters</code> are automatically allowed.</p>
+     */
+    inline void SetAlternateDataSourceParameters(Aws::Vector<DataSourceParameters>&& value) { m_alternateDataSourceParametersHasBeenSet = true; m_alternateDataSourceParameters = std::move(value); }
+
+    /**
+     * <p>A set of alternate data source parameters that you want to share for the
+     * credentials stored with this data source. The credentials are applied in tandem
+     * with the data source parameters when you copy a data source by using a create or
+     * update request. The API compares the <code>DataSourceParameters</code> structure
+     * that's in the request with the structures in the
+     * <code>AlternateDataSourceParameters</code> allowlist. If the structures are an
+     * exact match, the request is allowed to use the credentials from this existing
+     * data source. If the <code>AlternateDataSourceParameters</code> list is null, the
+     * <code>Credentials</code> originally used with this
+     * <code>DataSourceParameters</code> are automatically allowed.</p>
+     */
+    inline DataSource& WithAlternateDataSourceParameters(const Aws::Vector<DataSourceParameters>& value) { SetAlternateDataSourceParameters(value); return *this;}
+
+    /**
+     * <p>A set of alternate data source parameters that you want to share for the
+     * credentials stored with this data source. The credentials are applied in tandem
+     * with the data source parameters when you copy a data source by using a create or
+     * update request. The API compares the <code>DataSourceParameters</code> structure
+     * that's in the request with the structures in the
+     * <code>AlternateDataSourceParameters</code> allowlist. If the structures are an
+     * exact match, the request is allowed to use the credentials from this existing
+     * data source. If the <code>AlternateDataSourceParameters</code> list is null, the
+     * <code>Credentials</code> originally used with this
+     * <code>DataSourceParameters</code> are automatically allowed.</p>
+     */
+    inline DataSource& WithAlternateDataSourceParameters(Aws::Vector<DataSourceParameters>&& value) { SetAlternateDataSourceParameters(std::move(value)); return *this;}
+
+    /**
+     * <p>A set of alternate data source parameters that you want to share for the
+     * credentials stored with this data source. The credentials are applied in tandem
+     * with the data source parameters when you copy a data source by using a create or
+     * update request. The API compares the <code>DataSourceParameters</code> structure
+     * that's in the request with the structures in the
+     * <code>AlternateDataSourceParameters</code> allowlist. If the structures are an
+     * exact match, the request is allowed to use the credentials from this existing
+     * data source. If the <code>AlternateDataSourceParameters</code> list is null, the
+     * <code>Credentials</code> originally used with this
+     * <code>DataSourceParameters</code> are automatically allowed.</p>
+     */
+    inline DataSource& AddAlternateDataSourceParameters(const DataSourceParameters& value) { m_alternateDataSourceParametersHasBeenSet = true; m_alternateDataSourceParameters.push_back(value); return *this; }
+
+    /**
+     * <p>A set of alternate data source parameters that you want to share for the
+     * credentials stored with this data source. The credentials are applied in tandem
+     * with the data source parameters when you copy a data source by using a create or
+     * update request. The API compares the <code>DataSourceParameters</code> structure
+     * that's in the request with the structures in the
+     * <code>AlternateDataSourceParameters</code> allowlist. If the structures are an
+     * exact match, the request is allowed to use the credentials from this existing
+     * data source. If the <code>AlternateDataSourceParameters</code> list is null, the
+     * <code>Credentials</code> originally used with this
+     * <code>DataSourceParameters</code> are automatically allowed.</p>
+     */
+    inline DataSource& AddAlternateDataSourceParameters(DataSourceParameters&& value) { m_alternateDataSourceParametersHasBeenSet = true; m_alternateDataSourceParameters.push_back(std::move(value)); return *this; }
+
+
+    /**
      * <p>The VPC connection information. You need to use this parameter only when you
      * want QuickSight to use a VPC connection when connecting to your underlying
      * source.</p>
@@ -499,6 +613,9 @@ namespace Model
 
     DataSourceParameters m_dataSourceParameters;
     bool m_dataSourceParametersHasBeenSet;
+
+    Aws::Vector<DataSourceParameters> m_alternateDataSourceParameters;
+    bool m_alternateDataSourceParametersHasBeenSet;
 
     VpcConnectionProperties m_vpcConnectionProperties;
     bool m_vpcConnectionPropertiesHasBeenSet;

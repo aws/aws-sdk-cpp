@@ -53,73 +53,65 @@ namespace Model
 
     /**
      * <p>The user-assigned replication task identifier or name.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 255 alphanumeric
-     * characters or hyphens.</p> </li> <li> <p>First character must be a letter.</p>
-     * </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p>
-     * </li> </ul>
+     * <p>Constraints:</p> <ul> <li> <p>Must contain 1-255 alphanumeric characters or
+     * hyphens.</p> </li> <li> <p>First character must be a letter.</p> </li> <li>
+     * <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li> </ul>
      */
     inline const Aws::String& GetReplicationTaskIdentifier() const{ return m_replicationTaskIdentifier; }
 
     /**
      * <p>The user-assigned replication task identifier or name.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 255 alphanumeric
-     * characters or hyphens.</p> </li> <li> <p>First character must be a letter.</p>
-     * </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p>
-     * </li> </ul>
+     * <p>Constraints:</p> <ul> <li> <p>Must contain 1-255 alphanumeric characters or
+     * hyphens.</p> </li> <li> <p>First character must be a letter.</p> </li> <li>
+     * <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li> </ul>
      */
     inline bool ReplicationTaskIdentifierHasBeenSet() const { return m_replicationTaskIdentifierHasBeenSet; }
 
     /**
      * <p>The user-assigned replication task identifier or name.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 255 alphanumeric
-     * characters or hyphens.</p> </li> <li> <p>First character must be a letter.</p>
-     * </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p>
-     * </li> </ul>
+     * <p>Constraints:</p> <ul> <li> <p>Must contain 1-255 alphanumeric characters or
+     * hyphens.</p> </li> <li> <p>First character must be a letter.</p> </li> <li>
+     * <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li> </ul>
      */
     inline void SetReplicationTaskIdentifier(const Aws::String& value) { m_replicationTaskIdentifierHasBeenSet = true; m_replicationTaskIdentifier = value; }
 
     /**
      * <p>The user-assigned replication task identifier or name.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 255 alphanumeric
-     * characters or hyphens.</p> </li> <li> <p>First character must be a letter.</p>
-     * </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p>
-     * </li> </ul>
+     * <p>Constraints:</p> <ul> <li> <p>Must contain 1-255 alphanumeric characters or
+     * hyphens.</p> </li> <li> <p>First character must be a letter.</p> </li> <li>
+     * <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li> </ul>
      */
     inline void SetReplicationTaskIdentifier(Aws::String&& value) { m_replicationTaskIdentifierHasBeenSet = true; m_replicationTaskIdentifier = std::move(value); }
 
     /**
      * <p>The user-assigned replication task identifier or name.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 255 alphanumeric
-     * characters or hyphens.</p> </li> <li> <p>First character must be a letter.</p>
-     * </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p>
-     * </li> </ul>
+     * <p>Constraints:</p> <ul> <li> <p>Must contain 1-255 alphanumeric characters or
+     * hyphens.</p> </li> <li> <p>First character must be a letter.</p> </li> <li>
+     * <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li> </ul>
      */
     inline void SetReplicationTaskIdentifier(const char* value) { m_replicationTaskIdentifierHasBeenSet = true; m_replicationTaskIdentifier.assign(value); }
 
     /**
      * <p>The user-assigned replication task identifier or name.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 255 alphanumeric
-     * characters or hyphens.</p> </li> <li> <p>First character must be a letter.</p>
-     * </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p>
-     * </li> </ul>
+     * <p>Constraints:</p> <ul> <li> <p>Must contain 1-255 alphanumeric characters or
+     * hyphens.</p> </li> <li> <p>First character must be a letter.</p> </li> <li>
+     * <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li> </ul>
      */
     inline ReplicationTask& WithReplicationTaskIdentifier(const Aws::String& value) { SetReplicationTaskIdentifier(value); return *this;}
 
     /**
      * <p>The user-assigned replication task identifier or name.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 255 alphanumeric
-     * characters or hyphens.</p> </li> <li> <p>First character must be a letter.</p>
-     * </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p>
-     * </li> </ul>
+     * <p>Constraints:</p> <ul> <li> <p>Must contain 1-255 alphanumeric characters or
+     * hyphens.</p> </li> <li> <p>First character must be a letter.</p> </li> <li>
+     * <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li> </ul>
      */
     inline ReplicationTask& WithReplicationTaskIdentifier(Aws::String&& value) { SetReplicationTaskIdentifier(std::move(value)); return *this;}
 
     /**
      * <p>The user-assigned replication task identifier or name.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 255 alphanumeric
-     * characters or hyphens.</p> </li> <li> <p>First character must be a letter.</p>
-     * </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p>
-     * </li> </ul>
+     * <p>Constraints:</p> <ul> <li> <p>Must contain 1-255 alphanumeric characters or
+     * hyphens.</p> </li> <li> <p>First character must be a letter.</p> </li> <li>
+     * <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li> </ul>
      */
     inline ReplicationTask& WithReplicationTaskIdentifier(const char* value) { SetReplicationTaskIdentifier(value); return *this;}
 
@@ -459,42 +451,106 @@ namespace Model
 
 
     /**
-     * <p>The reason the replication task was stopped.</p>
+     * <p>The reason the replication task was stopped. This response parameter can
+     * return one of the following values:</p> <ul> <li> <p>
+     * <code>"STOP_REASON_FULL_LOAD_COMPLETED"</code> – Full-load migration
+     * completed.</p> </li> <li> <p> <code>"STOP_REASON_CACHED_CHANGES_APPLIED"</code>
+     * – Change data capture (CDC) load completed.</p> </li> <li> <p>
+     * <code>"STOP_REASON_CACHED_CHANGES_NOT_APPLIED"</code> – In a full-load and CDC
+     * migration, the full-load stopped as specified before starting the CDC
+     * migration.</p> </li> <li> <p> <code>"STOP_REASON_SERVER_TIME"</code> – The
+     * migration stopped at the specified server time.</p> </li> </ul>
      */
     inline const Aws::String& GetStopReason() const{ return m_stopReason; }
 
     /**
-     * <p>The reason the replication task was stopped.</p>
+     * <p>The reason the replication task was stopped. This response parameter can
+     * return one of the following values:</p> <ul> <li> <p>
+     * <code>"STOP_REASON_FULL_LOAD_COMPLETED"</code> – Full-load migration
+     * completed.</p> </li> <li> <p> <code>"STOP_REASON_CACHED_CHANGES_APPLIED"</code>
+     * – Change data capture (CDC) load completed.</p> </li> <li> <p>
+     * <code>"STOP_REASON_CACHED_CHANGES_NOT_APPLIED"</code> – In a full-load and CDC
+     * migration, the full-load stopped as specified before starting the CDC
+     * migration.</p> </li> <li> <p> <code>"STOP_REASON_SERVER_TIME"</code> – The
+     * migration stopped at the specified server time.</p> </li> </ul>
      */
     inline bool StopReasonHasBeenSet() const { return m_stopReasonHasBeenSet; }
 
     /**
-     * <p>The reason the replication task was stopped.</p>
+     * <p>The reason the replication task was stopped. This response parameter can
+     * return one of the following values:</p> <ul> <li> <p>
+     * <code>"STOP_REASON_FULL_LOAD_COMPLETED"</code> – Full-load migration
+     * completed.</p> </li> <li> <p> <code>"STOP_REASON_CACHED_CHANGES_APPLIED"</code>
+     * – Change data capture (CDC) load completed.</p> </li> <li> <p>
+     * <code>"STOP_REASON_CACHED_CHANGES_NOT_APPLIED"</code> – In a full-load and CDC
+     * migration, the full-load stopped as specified before starting the CDC
+     * migration.</p> </li> <li> <p> <code>"STOP_REASON_SERVER_TIME"</code> – The
+     * migration stopped at the specified server time.</p> </li> </ul>
      */
     inline void SetStopReason(const Aws::String& value) { m_stopReasonHasBeenSet = true; m_stopReason = value; }
 
     /**
-     * <p>The reason the replication task was stopped.</p>
+     * <p>The reason the replication task was stopped. This response parameter can
+     * return one of the following values:</p> <ul> <li> <p>
+     * <code>"STOP_REASON_FULL_LOAD_COMPLETED"</code> – Full-load migration
+     * completed.</p> </li> <li> <p> <code>"STOP_REASON_CACHED_CHANGES_APPLIED"</code>
+     * – Change data capture (CDC) load completed.</p> </li> <li> <p>
+     * <code>"STOP_REASON_CACHED_CHANGES_NOT_APPLIED"</code> – In a full-load and CDC
+     * migration, the full-load stopped as specified before starting the CDC
+     * migration.</p> </li> <li> <p> <code>"STOP_REASON_SERVER_TIME"</code> – The
+     * migration stopped at the specified server time.</p> </li> </ul>
      */
     inline void SetStopReason(Aws::String&& value) { m_stopReasonHasBeenSet = true; m_stopReason = std::move(value); }
 
     /**
-     * <p>The reason the replication task was stopped.</p>
+     * <p>The reason the replication task was stopped. This response parameter can
+     * return one of the following values:</p> <ul> <li> <p>
+     * <code>"STOP_REASON_FULL_LOAD_COMPLETED"</code> – Full-load migration
+     * completed.</p> </li> <li> <p> <code>"STOP_REASON_CACHED_CHANGES_APPLIED"</code>
+     * – Change data capture (CDC) load completed.</p> </li> <li> <p>
+     * <code>"STOP_REASON_CACHED_CHANGES_NOT_APPLIED"</code> – In a full-load and CDC
+     * migration, the full-load stopped as specified before starting the CDC
+     * migration.</p> </li> <li> <p> <code>"STOP_REASON_SERVER_TIME"</code> – The
+     * migration stopped at the specified server time.</p> </li> </ul>
      */
     inline void SetStopReason(const char* value) { m_stopReasonHasBeenSet = true; m_stopReason.assign(value); }
 
     /**
-     * <p>The reason the replication task was stopped.</p>
+     * <p>The reason the replication task was stopped. This response parameter can
+     * return one of the following values:</p> <ul> <li> <p>
+     * <code>"STOP_REASON_FULL_LOAD_COMPLETED"</code> – Full-load migration
+     * completed.</p> </li> <li> <p> <code>"STOP_REASON_CACHED_CHANGES_APPLIED"</code>
+     * – Change data capture (CDC) load completed.</p> </li> <li> <p>
+     * <code>"STOP_REASON_CACHED_CHANGES_NOT_APPLIED"</code> – In a full-load and CDC
+     * migration, the full-load stopped as specified before starting the CDC
+     * migration.</p> </li> <li> <p> <code>"STOP_REASON_SERVER_TIME"</code> – The
+     * migration stopped at the specified server time.</p> </li> </ul>
      */
     inline ReplicationTask& WithStopReason(const Aws::String& value) { SetStopReason(value); return *this;}
 
     /**
-     * <p>The reason the replication task was stopped.</p>
+     * <p>The reason the replication task was stopped. This response parameter can
+     * return one of the following values:</p> <ul> <li> <p>
+     * <code>"STOP_REASON_FULL_LOAD_COMPLETED"</code> – Full-load migration
+     * completed.</p> </li> <li> <p> <code>"STOP_REASON_CACHED_CHANGES_APPLIED"</code>
+     * – Change data capture (CDC) load completed.</p> </li> <li> <p>
+     * <code>"STOP_REASON_CACHED_CHANGES_NOT_APPLIED"</code> – In a full-load and CDC
+     * migration, the full-load stopped as specified before starting the CDC
+     * migration.</p> </li> <li> <p> <code>"STOP_REASON_SERVER_TIME"</code> – The
+     * migration stopped at the specified server time.</p> </li> </ul>
      */
     inline ReplicationTask& WithStopReason(Aws::String&& value) { SetStopReason(std::move(value)); return *this;}
 
     /**
-     * <p>The reason the replication task was stopped.</p>
+     * <p>The reason the replication task was stopped. This response parameter can
+     * return one of the following values:</p> <ul> <li> <p>
+     * <code>"STOP_REASON_FULL_LOAD_COMPLETED"</code> – Full-load migration
+     * completed.</p> </li> <li> <p> <code>"STOP_REASON_CACHED_CHANGES_APPLIED"</code>
+     * – Change data capture (CDC) load completed.</p> </li> <li> <p>
+     * <code>"STOP_REASON_CACHED_CHANGES_NOT_APPLIED"</code> – In a full-load and CDC
+     * migration, the full-load stopped as specified before starting the CDC
+     * migration.</p> </li> <li> <p> <code>"STOP_REASON_SERVER_TIME"</code> – The
+     * migration stopped at the specified server time.</p> </li> </ul>
      */
     inline ReplicationTask& WithStopReason(const char* value) { SetStopReason(value); return *this;}
 
@@ -862,8 +918,8 @@ namespace Model
      * <p>Supplemental information that the task requires to migrate the data for
      * certain source and target endpoints. For more information, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying
-     * Supplemental Data for Task Settings</a> in the <i>AWS Database Migration User
-     * Guide.</i> </p>
+     * Supplemental Data for Task Settings</a> in the <i>AWS Database Migration Service
+     * User Guide.</i> </p>
      */
     inline const Aws::String& GetTaskData() const{ return m_taskData; }
 
@@ -871,8 +927,8 @@ namespace Model
      * <p>Supplemental information that the task requires to migrate the data for
      * certain source and target endpoints. For more information, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying
-     * Supplemental Data for Task Settings</a> in the <i>AWS Database Migration User
-     * Guide.</i> </p>
+     * Supplemental Data for Task Settings</a> in the <i>AWS Database Migration Service
+     * User Guide.</i> </p>
      */
     inline bool TaskDataHasBeenSet() const { return m_taskDataHasBeenSet; }
 
@@ -880,8 +936,8 @@ namespace Model
      * <p>Supplemental information that the task requires to migrate the data for
      * certain source and target endpoints. For more information, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying
-     * Supplemental Data for Task Settings</a> in the <i>AWS Database Migration User
-     * Guide.</i> </p>
+     * Supplemental Data for Task Settings</a> in the <i>AWS Database Migration Service
+     * User Guide.</i> </p>
      */
     inline void SetTaskData(const Aws::String& value) { m_taskDataHasBeenSet = true; m_taskData = value; }
 
@@ -889,8 +945,8 @@ namespace Model
      * <p>Supplemental information that the task requires to migrate the data for
      * certain source and target endpoints. For more information, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying
-     * Supplemental Data for Task Settings</a> in the <i>AWS Database Migration User
-     * Guide.</i> </p>
+     * Supplemental Data for Task Settings</a> in the <i>AWS Database Migration Service
+     * User Guide.</i> </p>
      */
     inline void SetTaskData(Aws::String&& value) { m_taskDataHasBeenSet = true; m_taskData = std::move(value); }
 
@@ -898,8 +954,8 @@ namespace Model
      * <p>Supplemental information that the task requires to migrate the data for
      * certain source and target endpoints. For more information, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying
-     * Supplemental Data for Task Settings</a> in the <i>AWS Database Migration User
-     * Guide.</i> </p>
+     * Supplemental Data for Task Settings</a> in the <i>AWS Database Migration Service
+     * User Guide.</i> </p>
      */
     inline void SetTaskData(const char* value) { m_taskDataHasBeenSet = true; m_taskData.assign(value); }
 
@@ -907,8 +963,8 @@ namespace Model
      * <p>Supplemental information that the task requires to migrate the data for
      * certain source and target endpoints. For more information, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying
-     * Supplemental Data for Task Settings</a> in the <i>AWS Database Migration User
-     * Guide.</i> </p>
+     * Supplemental Data for Task Settings</a> in the <i>AWS Database Migration Service
+     * User Guide.</i> </p>
      */
     inline ReplicationTask& WithTaskData(const Aws::String& value) { SetTaskData(value); return *this;}
 
@@ -916,8 +972,8 @@ namespace Model
      * <p>Supplemental information that the task requires to migrate the data for
      * certain source and target endpoints. For more information, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying
-     * Supplemental Data for Task Settings</a> in the <i>AWS Database Migration User
-     * Guide.</i> </p>
+     * Supplemental Data for Task Settings</a> in the <i>AWS Database Migration Service
+     * User Guide.</i> </p>
      */
     inline ReplicationTask& WithTaskData(Aws::String&& value) { SetTaskData(std::move(value)); return *this;}
 
@@ -925,8 +981,8 @@ namespace Model
      * <p>Supplemental information that the task requires to migrate the data for
      * certain source and target endpoints. For more information, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying
-     * Supplemental Data for Task Settings</a> in the <i>AWS Database Migration User
-     * Guide.</i> </p>
+     * Supplemental Data for Task Settings</a> in the <i>AWS Database Migration Service
+     * User Guide.</i> </p>
      */
     inline ReplicationTask& WithTaskData(const char* value) { SetTaskData(value); return *this;}
 

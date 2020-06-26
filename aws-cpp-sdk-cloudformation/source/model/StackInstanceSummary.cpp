@@ -38,6 +38,7 @@ StackInstanceSummary::StackInstanceSummary() :
     m_status(StackInstanceStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_statusReasonHasBeenSet(false),
+    m_stackInstanceStatusHasBeenSet(false),
     m_organizationalUnitIdHasBeenSet(false),
     m_driftStatus(StackDriftStatus::NOT_SET),
     m_driftStatusHasBeenSet(false),
@@ -53,6 +54,7 @@ StackInstanceSummary::StackInstanceSummary(const XmlNode& xmlNode) :
     m_status(StackInstanceStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_statusReasonHasBeenSet(false),
+    m_stackInstanceStatusHasBeenSet(false),
     m_organizationalUnitIdHasBeenSet(false),
     m_driftStatus(StackDriftStatus::NOT_SET),
     m_driftStatusHasBeenSet(false),
@@ -102,6 +104,12 @@ StackInstanceSummary& StackInstanceSummary::operator =(const XmlNode& xmlNode)
     {
       m_statusReason = Aws::Utils::Xml::DecodeEscapedXmlText(statusReasonNode.GetText());
       m_statusReasonHasBeenSet = true;
+    }
+    XmlNode stackInstanceStatusNode = resultNode.FirstChild("StackInstanceStatus");
+    if(!stackInstanceStatusNode.IsNull())
+    {
+      m_stackInstanceStatus = stackInstanceStatusNode;
+      m_stackInstanceStatusHasBeenSet = true;
     }
     XmlNode organizationalUnitIdNode = resultNode.FirstChild("OrganizationalUnitId");
     if(!organizationalUnitIdNode.IsNull())
@@ -158,6 +166,13 @@ void StackInstanceSummary::OutputToStream(Aws::OStream& oStream, const char* loc
       oStream << location << index << locationValue << ".StatusReason=" << StringUtils::URLEncode(m_statusReason.c_str()) << "&";
   }
 
+  if(m_stackInstanceStatusHasBeenSet)
+  {
+      Aws::StringStream stackInstanceStatusLocationAndMemberSs;
+      stackInstanceStatusLocationAndMemberSs << location << index << locationValue << ".StackInstanceStatus";
+      m_stackInstanceStatus.OutputToStream(oStream, stackInstanceStatusLocationAndMemberSs.str().c_str());
+  }
+
   if(m_organizationalUnitIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".OrganizationalUnitId=" << StringUtils::URLEncode(m_organizationalUnitId.c_str()) << "&";
@@ -200,6 +215,12 @@ void StackInstanceSummary::OutputToStream(Aws::OStream& oStream, const char* loc
   if(m_statusReasonHasBeenSet)
   {
       oStream << location << ".StatusReason=" << StringUtils::URLEncode(m_statusReason.c_str()) << "&";
+  }
+  if(m_stackInstanceStatusHasBeenSet)
+  {
+      Aws::String stackInstanceStatusLocationAndMember(location);
+      stackInstanceStatusLocationAndMember += ".StackInstanceStatus";
+      m_stackInstanceStatus.OutputToStream(oStream, stackInstanceStatusLocationAndMember.c_str());
   }
   if(m_organizationalUnitIdHasBeenSet)
   {

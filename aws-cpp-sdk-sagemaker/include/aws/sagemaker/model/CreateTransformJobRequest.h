@@ -17,6 +17,7 @@
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/sagemaker/SageMakerRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/sagemaker/model/ModelClientConfig.h>
 #include <aws/sagemaker/model/BatchStrategy.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/sagemaker/model/TransformInput.h>
@@ -210,6 +211,43 @@ namespace Model
      * value for <code>MaxConcurrentTransforms</code>.</p>
      */
     inline CreateTransformJobRequest& WithMaxConcurrentTransforms(int value) { SetMaxConcurrentTransforms(value); return *this;}
+
+
+    /**
+     * <p>Configures the timeout and maximum number of retries for processing a
+     * transform job invocation.</p>
+     */
+    inline const ModelClientConfig& GetModelClientConfig() const{ return m_modelClientConfig; }
+
+    /**
+     * <p>Configures the timeout and maximum number of retries for processing a
+     * transform job invocation.</p>
+     */
+    inline bool ModelClientConfigHasBeenSet() const { return m_modelClientConfigHasBeenSet; }
+
+    /**
+     * <p>Configures the timeout and maximum number of retries for processing a
+     * transform job invocation.</p>
+     */
+    inline void SetModelClientConfig(const ModelClientConfig& value) { m_modelClientConfigHasBeenSet = true; m_modelClientConfig = value; }
+
+    /**
+     * <p>Configures the timeout and maximum number of retries for processing a
+     * transform job invocation.</p>
+     */
+    inline void SetModelClientConfig(ModelClientConfig&& value) { m_modelClientConfigHasBeenSet = true; m_modelClientConfig = std::move(value); }
+
+    /**
+     * <p>Configures the timeout and maximum number of retries for processing a
+     * transform job invocation.</p>
+     */
+    inline CreateTransformJobRequest& WithModelClientConfig(const ModelClientConfig& value) { SetModelClientConfig(value); return *this;}
+
+    /**
+     * <p>Configures the timeout and maximum number of retries for processing a
+     * transform job invocation.</p>
+     */
+    inline CreateTransformJobRequest& WithModelClientConfig(ModelClientConfig&& value) { SetModelClientConfig(std::move(value)); return *this;}
 
 
     /**
@@ -704,6 +742,9 @@ namespace Model
 
     int m_maxConcurrentTransforms;
     bool m_maxConcurrentTransformsHasBeenSet;
+
+    ModelClientConfig m_modelClientConfig;
+    bool m_modelClientConfigHasBeenSet;
 
     int m_maxPayloadInMB;
     bool m_maxPayloadInMBHasBeenSet;

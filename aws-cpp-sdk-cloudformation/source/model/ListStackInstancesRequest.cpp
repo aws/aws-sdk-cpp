@@ -25,6 +25,7 @@ ListStackInstancesRequest::ListStackInstancesRequest() :
     m_nextTokenHasBeenSet(false),
     m_maxResults(0),
     m_maxResultsHasBeenSet(false),
+    m_filtersHasBeenSet(false),
     m_stackInstanceAccountHasBeenSet(false),
     m_stackInstanceRegionHasBeenSet(false)
 {
@@ -47,6 +48,16 @@ Aws::String ListStackInstancesRequest::SerializePayload() const
   if(m_maxResultsHasBeenSet)
   {
     ss << "MaxResults=" << m_maxResults << "&";
+  }
+
+  if(m_filtersHasBeenSet)
+  {
+    unsigned filtersCount = 1;
+    for(auto& item : m_filters)
+    {
+      item.OutputToStream(ss, "Filters.member.", filtersCount, "");
+      filtersCount++;
+    }
   }
 
   if(m_stackInstanceAccountHasBeenSet)

@@ -19,6 +19,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/cloudformation/model/StackInstanceStatus.h>
+#include <aws/cloudformation/model/StackInstanceComprehensiveStatus.h>
 #include <aws/cloudformation/model/StackDriftStatus.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/cloudformation/model/Parameter.h>
@@ -405,6 +406,37 @@ namespace Model
 
 
     /**
+     * <p>The detailed status of the stack instance.</p>
+     */
+    inline const StackInstanceComprehensiveStatus& GetStackInstanceStatus() const{ return m_stackInstanceStatus; }
+
+    /**
+     * <p>The detailed status of the stack instance.</p>
+     */
+    inline bool StackInstanceStatusHasBeenSet() const { return m_stackInstanceStatusHasBeenSet; }
+
+    /**
+     * <p>The detailed status of the stack instance.</p>
+     */
+    inline void SetStackInstanceStatus(const StackInstanceComprehensiveStatus& value) { m_stackInstanceStatusHasBeenSet = true; m_stackInstanceStatus = value; }
+
+    /**
+     * <p>The detailed status of the stack instance.</p>
+     */
+    inline void SetStackInstanceStatus(StackInstanceComprehensiveStatus&& value) { m_stackInstanceStatusHasBeenSet = true; m_stackInstanceStatus = std::move(value); }
+
+    /**
+     * <p>The detailed status of the stack instance.</p>
+     */
+    inline StackInstance& WithStackInstanceStatus(const StackInstanceComprehensiveStatus& value) { SetStackInstanceStatus(value); return *this;}
+
+    /**
+     * <p>The detailed status of the stack instance.</p>
+     */
+    inline StackInstance& WithStackInstanceStatus(StackInstanceComprehensiveStatus&& value) { SetStackInstanceStatus(std::move(value)); return *this;}
+
+
+    /**
      * <p>The explanation for the specific status code that is assigned to this stack
      * instance.</p>
      */
@@ -662,6 +694,9 @@ namespace Model
 
     StackInstanceStatus m_status;
     bool m_statusHasBeenSet;
+
+    StackInstanceComprehensiveStatus m_stackInstanceStatus;
+    bool m_stackInstanceStatusHasBeenSet;
 
     Aws::String m_statusReason;
     bool m_statusReasonHasBeenSet;

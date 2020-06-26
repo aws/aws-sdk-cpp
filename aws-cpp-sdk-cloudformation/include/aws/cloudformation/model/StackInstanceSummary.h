@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/cloudformation/model/StackInstanceStatus.h>
+#include <aws/cloudformation/model/StackInstanceComprehensiveStatus.h>
 #include <aws/cloudformation/model/StackDriftStatus.h>
 #include <aws/core/utils/DateTime.h>
 #include <utility>
@@ -398,6 +399,37 @@ namespace Model
 
 
     /**
+     * <p>The detailed status of the stack instance.</p>
+     */
+    inline const StackInstanceComprehensiveStatus& GetStackInstanceStatus() const{ return m_stackInstanceStatus; }
+
+    /**
+     * <p>The detailed status of the stack instance.</p>
+     */
+    inline bool StackInstanceStatusHasBeenSet() const { return m_stackInstanceStatusHasBeenSet; }
+
+    /**
+     * <p>The detailed status of the stack instance.</p>
+     */
+    inline void SetStackInstanceStatus(const StackInstanceComprehensiveStatus& value) { m_stackInstanceStatusHasBeenSet = true; m_stackInstanceStatus = value; }
+
+    /**
+     * <p>The detailed status of the stack instance.</p>
+     */
+    inline void SetStackInstanceStatus(StackInstanceComprehensiveStatus&& value) { m_stackInstanceStatusHasBeenSet = true; m_stackInstanceStatus = std::move(value); }
+
+    /**
+     * <p>The detailed status of the stack instance.</p>
+     */
+    inline StackInstanceSummary& WithStackInstanceStatus(const StackInstanceComprehensiveStatus& value) { SetStackInstanceStatus(value); return *this;}
+
+    /**
+     * <p>The detailed status of the stack instance.</p>
+     */
+    inline StackInstanceSummary& WithStackInstanceStatus(StackInstanceComprehensiveStatus&& value) { SetStackInstanceStatus(std::move(value)); return *this;}
+
+
+    /**
      * <p>[<code>Service-managed</code> permissions] The organization root ID or
      * organizational unit (OU) IDs that you specified for <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">DeploymentTargets</a>.</p>
@@ -606,6 +638,9 @@ namespace Model
 
     Aws::String m_statusReason;
     bool m_statusReasonHasBeenSet;
+
+    StackInstanceComprehensiveStatus m_stackInstanceStatus;
+    bool m_stackInstanceStatusHasBeenSet;
 
     Aws::String m_organizationalUnitId;
     bool m_organizationalUnitIdHasBeenSet;

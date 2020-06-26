@@ -2519,7 +2519,7 @@ InitiateAuthOutcome CognitoIdentityProviderClient::InitiateAuth(const InitiateAu
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::NULL_SIGNER);
   if(outcome.IsSuccess())
   {
     return InitiateAuthOutcome(InitiateAuthResult(outcome.GetResult()));
@@ -2939,7 +2939,7 @@ RespondToAuthChallengeOutcome CognitoIdentityProviderClient::RespondToAuthChalle
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::NULL_SIGNER);
   if(outcome.IsSuccess())
   {
     return RespondToAuthChallengeOutcome(RespondToAuthChallengeResult(outcome.GetResult()));

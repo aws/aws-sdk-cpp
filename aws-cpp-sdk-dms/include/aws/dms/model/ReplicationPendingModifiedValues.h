@@ -51,58 +51,74 @@ namespace Model
 
 
     /**
-     * <p>The compute and memory capacity of the replication instance.</p> <p> Valid
-     * Values: <code>dms.t2.micro | dms.t2.small | dms.t2.medium | dms.t2.large |
-     * dms.c4.large | dms.c4.xlarge | dms.c4.2xlarge | dms.c4.4xlarge </code> </p>
+     * <p>The compute and memory capacity of the replication instance as defined for
+     * the specified replication instance class.</p> <p>For more information on the
+     * settings and capacities for the available replication instance classes, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth">
+     * Selecting the right AWS DMS replication instance for your migration</a>. </p>
      */
     inline const Aws::String& GetReplicationInstanceClass() const{ return m_replicationInstanceClass; }
 
     /**
-     * <p>The compute and memory capacity of the replication instance.</p> <p> Valid
-     * Values: <code>dms.t2.micro | dms.t2.small | dms.t2.medium | dms.t2.large |
-     * dms.c4.large | dms.c4.xlarge | dms.c4.2xlarge | dms.c4.4xlarge </code> </p>
+     * <p>The compute and memory capacity of the replication instance as defined for
+     * the specified replication instance class.</p> <p>For more information on the
+     * settings and capacities for the available replication instance classes, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth">
+     * Selecting the right AWS DMS replication instance for your migration</a>. </p>
      */
     inline bool ReplicationInstanceClassHasBeenSet() const { return m_replicationInstanceClassHasBeenSet; }
 
     /**
-     * <p>The compute and memory capacity of the replication instance.</p> <p> Valid
-     * Values: <code>dms.t2.micro | dms.t2.small | dms.t2.medium | dms.t2.large |
-     * dms.c4.large | dms.c4.xlarge | dms.c4.2xlarge | dms.c4.4xlarge </code> </p>
+     * <p>The compute and memory capacity of the replication instance as defined for
+     * the specified replication instance class.</p> <p>For more information on the
+     * settings and capacities for the available replication instance classes, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth">
+     * Selecting the right AWS DMS replication instance for your migration</a>. </p>
      */
     inline void SetReplicationInstanceClass(const Aws::String& value) { m_replicationInstanceClassHasBeenSet = true; m_replicationInstanceClass = value; }
 
     /**
-     * <p>The compute and memory capacity of the replication instance.</p> <p> Valid
-     * Values: <code>dms.t2.micro | dms.t2.small | dms.t2.medium | dms.t2.large |
-     * dms.c4.large | dms.c4.xlarge | dms.c4.2xlarge | dms.c4.4xlarge </code> </p>
+     * <p>The compute and memory capacity of the replication instance as defined for
+     * the specified replication instance class.</p> <p>For more information on the
+     * settings and capacities for the available replication instance classes, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth">
+     * Selecting the right AWS DMS replication instance for your migration</a>. </p>
      */
     inline void SetReplicationInstanceClass(Aws::String&& value) { m_replicationInstanceClassHasBeenSet = true; m_replicationInstanceClass = std::move(value); }
 
     /**
-     * <p>The compute and memory capacity of the replication instance.</p> <p> Valid
-     * Values: <code>dms.t2.micro | dms.t2.small | dms.t2.medium | dms.t2.large |
-     * dms.c4.large | dms.c4.xlarge | dms.c4.2xlarge | dms.c4.4xlarge </code> </p>
+     * <p>The compute and memory capacity of the replication instance as defined for
+     * the specified replication instance class.</p> <p>For more information on the
+     * settings and capacities for the available replication instance classes, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth">
+     * Selecting the right AWS DMS replication instance for your migration</a>. </p>
      */
     inline void SetReplicationInstanceClass(const char* value) { m_replicationInstanceClassHasBeenSet = true; m_replicationInstanceClass.assign(value); }
 
     /**
-     * <p>The compute and memory capacity of the replication instance.</p> <p> Valid
-     * Values: <code>dms.t2.micro | dms.t2.small | dms.t2.medium | dms.t2.large |
-     * dms.c4.large | dms.c4.xlarge | dms.c4.2xlarge | dms.c4.4xlarge </code> </p>
+     * <p>The compute and memory capacity of the replication instance as defined for
+     * the specified replication instance class.</p> <p>For more information on the
+     * settings and capacities for the available replication instance classes, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth">
+     * Selecting the right AWS DMS replication instance for your migration</a>. </p>
      */
     inline ReplicationPendingModifiedValues& WithReplicationInstanceClass(const Aws::String& value) { SetReplicationInstanceClass(value); return *this;}
 
     /**
-     * <p>The compute and memory capacity of the replication instance.</p> <p> Valid
-     * Values: <code>dms.t2.micro | dms.t2.small | dms.t2.medium | dms.t2.large |
-     * dms.c4.large | dms.c4.xlarge | dms.c4.2xlarge | dms.c4.4xlarge </code> </p>
+     * <p>The compute and memory capacity of the replication instance as defined for
+     * the specified replication instance class.</p> <p>For more information on the
+     * settings and capacities for the available replication instance classes, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth">
+     * Selecting the right AWS DMS replication instance for your migration</a>. </p>
      */
     inline ReplicationPendingModifiedValues& WithReplicationInstanceClass(Aws::String&& value) { SetReplicationInstanceClass(std::move(value)); return *this;}
 
     /**
-     * <p>The compute and memory capacity of the replication instance.</p> <p> Valid
-     * Values: <code>dms.t2.micro | dms.t2.small | dms.t2.medium | dms.t2.large |
-     * dms.c4.large | dms.c4.xlarge | dms.c4.2xlarge | dms.c4.4xlarge </code> </p>
+     * <p>The compute and memory capacity of the replication instance as defined for
+     * the specified replication instance class.</p> <p>For more information on the
+     * settings and capacities for the available replication instance classes, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth">
+     * Selecting the right AWS DMS replication instance for your migration</a>. </p>
      */
     inline ReplicationPendingModifiedValues& WithReplicationInstanceClass(const char* value) { SetReplicationInstanceClass(value); return *this;}
 

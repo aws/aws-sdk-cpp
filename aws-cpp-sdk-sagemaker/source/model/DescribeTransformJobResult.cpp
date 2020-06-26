@@ -82,6 +82,12 @@ DescribeTransformJobResult& DescribeTransformJobResult::operator =(const Aws::Am
 
   }
 
+  if(jsonValue.ValueExists("ModelClientConfig"))
+  {
+    m_modelClientConfig = jsonValue.GetObject("ModelClientConfig");
+
+  }
+
   if(jsonValue.ValueExists("MaxPayloadInMB"))
   {
     m_maxPayloadInMB = jsonValue.GetInteger("MaxPayloadInMB");

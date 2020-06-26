@@ -246,290 +246,320 @@ namespace Model
 
     /**
      * <p> The authentication type you use to access the MongoDB source endpoint.</p>
-     * <p>Valid values: NO, PASSWORD </p> <p>When NO is selected, user name and
-     * password parameters are not used and can be empty. </p>
+     * <p>When when set to <code>"no"</code>, user name and password parameters are not
+     * used and can be empty. </p>
      */
     inline const AuthTypeValue& GetAuthType() const{ return m_authType; }
 
     /**
      * <p> The authentication type you use to access the MongoDB source endpoint.</p>
-     * <p>Valid values: NO, PASSWORD </p> <p>When NO is selected, user name and
-     * password parameters are not used and can be empty. </p>
+     * <p>When when set to <code>"no"</code>, user name and password parameters are not
+     * used and can be empty. </p>
      */
     inline bool AuthTypeHasBeenSet() const { return m_authTypeHasBeenSet; }
 
     /**
      * <p> The authentication type you use to access the MongoDB source endpoint.</p>
-     * <p>Valid values: NO, PASSWORD </p> <p>When NO is selected, user name and
-     * password parameters are not used and can be empty. </p>
+     * <p>When when set to <code>"no"</code>, user name and password parameters are not
+     * used and can be empty. </p>
      */
     inline void SetAuthType(const AuthTypeValue& value) { m_authTypeHasBeenSet = true; m_authType = value; }
 
     /**
      * <p> The authentication type you use to access the MongoDB source endpoint.</p>
-     * <p>Valid values: NO, PASSWORD </p> <p>When NO is selected, user name and
-     * password parameters are not used and can be empty. </p>
+     * <p>When when set to <code>"no"</code>, user name and password parameters are not
+     * used and can be empty. </p>
      */
     inline void SetAuthType(AuthTypeValue&& value) { m_authTypeHasBeenSet = true; m_authType = std::move(value); }
 
     /**
      * <p> The authentication type you use to access the MongoDB source endpoint.</p>
-     * <p>Valid values: NO, PASSWORD </p> <p>When NO is selected, user name and
-     * password parameters are not used and can be empty. </p>
+     * <p>When when set to <code>"no"</code>, user name and password parameters are not
+     * used and can be empty. </p>
      */
     inline MongoDbSettings& WithAuthType(const AuthTypeValue& value) { SetAuthType(value); return *this;}
 
     /**
      * <p> The authentication type you use to access the MongoDB source endpoint.</p>
-     * <p>Valid values: NO, PASSWORD </p> <p>When NO is selected, user name and
-     * password parameters are not used and can be empty. </p>
+     * <p>When when set to <code>"no"</code>, user name and password parameters are not
+     * used and can be empty. </p>
      */
     inline MongoDbSettings& WithAuthType(AuthTypeValue&& value) { SetAuthType(std::move(value)); return *this;}
 
 
     /**
      * <p> The authentication mechanism you use to access the MongoDB source
-     * endpoint.</p> <p>Valid values: DEFAULT, MONGODB_CR, SCRAM_SHA_1 </p> <p>DEFAULT
-     * – For MongoDB version 2.x, use MONGODB_CR. For MongoDB version 3.x, use
-     * SCRAM_SHA_1. This setting isn't used when authType=No.</p>
+     * endpoint.</p> <p>For the default value, in MongoDB version 2.x,
+     * <code>"default"</code> is <code>"mongodb_cr"</code>. For MongoDB version 3.x or
+     * later, <code>"default"</code> is <code>"scram_sha_1"</code>. This setting isn't
+     * used when <code>AuthType</code> is set to <code>"no"</code>.</p>
      */
     inline const AuthMechanismValue& GetAuthMechanism() const{ return m_authMechanism; }
 
     /**
      * <p> The authentication mechanism you use to access the MongoDB source
-     * endpoint.</p> <p>Valid values: DEFAULT, MONGODB_CR, SCRAM_SHA_1 </p> <p>DEFAULT
-     * – For MongoDB version 2.x, use MONGODB_CR. For MongoDB version 3.x, use
-     * SCRAM_SHA_1. This setting isn't used when authType=No.</p>
+     * endpoint.</p> <p>For the default value, in MongoDB version 2.x,
+     * <code>"default"</code> is <code>"mongodb_cr"</code>. For MongoDB version 3.x or
+     * later, <code>"default"</code> is <code>"scram_sha_1"</code>. This setting isn't
+     * used when <code>AuthType</code> is set to <code>"no"</code>.</p>
      */
     inline bool AuthMechanismHasBeenSet() const { return m_authMechanismHasBeenSet; }
 
     /**
      * <p> The authentication mechanism you use to access the MongoDB source
-     * endpoint.</p> <p>Valid values: DEFAULT, MONGODB_CR, SCRAM_SHA_1 </p> <p>DEFAULT
-     * – For MongoDB version 2.x, use MONGODB_CR. For MongoDB version 3.x, use
-     * SCRAM_SHA_1. This setting isn't used when authType=No.</p>
+     * endpoint.</p> <p>For the default value, in MongoDB version 2.x,
+     * <code>"default"</code> is <code>"mongodb_cr"</code>. For MongoDB version 3.x or
+     * later, <code>"default"</code> is <code>"scram_sha_1"</code>. This setting isn't
+     * used when <code>AuthType</code> is set to <code>"no"</code>.</p>
      */
     inline void SetAuthMechanism(const AuthMechanismValue& value) { m_authMechanismHasBeenSet = true; m_authMechanism = value; }
 
     /**
      * <p> The authentication mechanism you use to access the MongoDB source
-     * endpoint.</p> <p>Valid values: DEFAULT, MONGODB_CR, SCRAM_SHA_1 </p> <p>DEFAULT
-     * – For MongoDB version 2.x, use MONGODB_CR. For MongoDB version 3.x, use
-     * SCRAM_SHA_1. This setting isn't used when authType=No.</p>
+     * endpoint.</p> <p>For the default value, in MongoDB version 2.x,
+     * <code>"default"</code> is <code>"mongodb_cr"</code>. For MongoDB version 3.x or
+     * later, <code>"default"</code> is <code>"scram_sha_1"</code>. This setting isn't
+     * used when <code>AuthType</code> is set to <code>"no"</code>.</p>
      */
     inline void SetAuthMechanism(AuthMechanismValue&& value) { m_authMechanismHasBeenSet = true; m_authMechanism = std::move(value); }
 
     /**
      * <p> The authentication mechanism you use to access the MongoDB source
-     * endpoint.</p> <p>Valid values: DEFAULT, MONGODB_CR, SCRAM_SHA_1 </p> <p>DEFAULT
-     * – For MongoDB version 2.x, use MONGODB_CR. For MongoDB version 3.x, use
-     * SCRAM_SHA_1. This setting isn't used when authType=No.</p>
+     * endpoint.</p> <p>For the default value, in MongoDB version 2.x,
+     * <code>"default"</code> is <code>"mongodb_cr"</code>. For MongoDB version 3.x or
+     * later, <code>"default"</code> is <code>"scram_sha_1"</code>. This setting isn't
+     * used when <code>AuthType</code> is set to <code>"no"</code>.</p>
      */
     inline MongoDbSettings& WithAuthMechanism(const AuthMechanismValue& value) { SetAuthMechanism(value); return *this;}
 
     /**
      * <p> The authentication mechanism you use to access the MongoDB source
-     * endpoint.</p> <p>Valid values: DEFAULT, MONGODB_CR, SCRAM_SHA_1 </p> <p>DEFAULT
-     * – For MongoDB version 2.x, use MONGODB_CR. For MongoDB version 3.x, use
-     * SCRAM_SHA_1. This setting isn't used when authType=No.</p>
+     * endpoint.</p> <p>For the default value, in MongoDB version 2.x,
+     * <code>"default"</code> is <code>"mongodb_cr"</code>. For MongoDB version 3.x or
+     * later, <code>"default"</code> is <code>"scram_sha_1"</code>. This setting isn't
+     * used when <code>AuthType</code> is set to <code>"no"</code>.</p>
      */
     inline MongoDbSettings& WithAuthMechanism(AuthMechanismValue&& value) { SetAuthMechanism(std::move(value)); return *this;}
 
 
     /**
-     * <p> Specifies either document or table mode. </p> <p>Valid values: NONE, ONE</p>
-     * <p>Default value is NONE. Specify NONE to use document mode. Specify ONE to use
-     * table mode.</p>
+     * <p> Specifies either document or table mode. </p> <p>Default value is
+     * <code>"none"</code>. Specify <code>"none"</code> to use document mode. Specify
+     * <code>"one"</code> to use table mode.</p>
      */
     inline const NestingLevelValue& GetNestingLevel() const{ return m_nestingLevel; }
 
     /**
-     * <p> Specifies either document or table mode. </p> <p>Valid values: NONE, ONE</p>
-     * <p>Default value is NONE. Specify NONE to use document mode. Specify ONE to use
-     * table mode.</p>
+     * <p> Specifies either document or table mode. </p> <p>Default value is
+     * <code>"none"</code>. Specify <code>"none"</code> to use document mode. Specify
+     * <code>"one"</code> to use table mode.</p>
      */
     inline bool NestingLevelHasBeenSet() const { return m_nestingLevelHasBeenSet; }
 
     /**
-     * <p> Specifies either document or table mode. </p> <p>Valid values: NONE, ONE</p>
-     * <p>Default value is NONE. Specify NONE to use document mode. Specify ONE to use
-     * table mode.</p>
+     * <p> Specifies either document or table mode. </p> <p>Default value is
+     * <code>"none"</code>. Specify <code>"none"</code> to use document mode. Specify
+     * <code>"one"</code> to use table mode.</p>
      */
     inline void SetNestingLevel(const NestingLevelValue& value) { m_nestingLevelHasBeenSet = true; m_nestingLevel = value; }
 
     /**
-     * <p> Specifies either document or table mode. </p> <p>Valid values: NONE, ONE</p>
-     * <p>Default value is NONE. Specify NONE to use document mode. Specify ONE to use
-     * table mode.</p>
+     * <p> Specifies either document or table mode. </p> <p>Default value is
+     * <code>"none"</code>. Specify <code>"none"</code> to use document mode. Specify
+     * <code>"one"</code> to use table mode.</p>
      */
     inline void SetNestingLevel(NestingLevelValue&& value) { m_nestingLevelHasBeenSet = true; m_nestingLevel = std::move(value); }
 
     /**
-     * <p> Specifies either document or table mode. </p> <p>Valid values: NONE, ONE</p>
-     * <p>Default value is NONE. Specify NONE to use document mode. Specify ONE to use
-     * table mode.</p>
+     * <p> Specifies either document or table mode. </p> <p>Default value is
+     * <code>"none"</code>. Specify <code>"none"</code> to use document mode. Specify
+     * <code>"one"</code> to use table mode.</p>
      */
     inline MongoDbSettings& WithNestingLevel(const NestingLevelValue& value) { SetNestingLevel(value); return *this;}
 
     /**
-     * <p> Specifies either document or table mode. </p> <p>Valid values: NONE, ONE</p>
-     * <p>Default value is NONE. Specify NONE to use document mode. Specify ONE to use
-     * table mode.</p>
+     * <p> Specifies either document or table mode. </p> <p>Default value is
+     * <code>"none"</code>. Specify <code>"none"</code> to use document mode. Specify
+     * <code>"one"</code> to use table mode.</p>
      */
     inline MongoDbSettings& WithNestingLevel(NestingLevelValue&& value) { SetNestingLevel(std::move(value)); return *this;}
 
 
     /**
      * <p> Specifies the document ID. Use this setting when <code>NestingLevel</code>
-     * is set to NONE. </p> <p>Default value is false. </p>
+     * is set to <code>"none"</code>. </p> <p>Default value is <code>"false"</code>.
+     * </p>
      */
     inline const Aws::String& GetExtractDocId() const{ return m_extractDocId; }
 
     /**
      * <p> Specifies the document ID. Use this setting when <code>NestingLevel</code>
-     * is set to NONE. </p> <p>Default value is false. </p>
+     * is set to <code>"none"</code>. </p> <p>Default value is <code>"false"</code>.
+     * </p>
      */
     inline bool ExtractDocIdHasBeenSet() const { return m_extractDocIdHasBeenSet; }
 
     /**
      * <p> Specifies the document ID. Use this setting when <code>NestingLevel</code>
-     * is set to NONE. </p> <p>Default value is false. </p>
+     * is set to <code>"none"</code>. </p> <p>Default value is <code>"false"</code>.
+     * </p>
      */
     inline void SetExtractDocId(const Aws::String& value) { m_extractDocIdHasBeenSet = true; m_extractDocId = value; }
 
     /**
      * <p> Specifies the document ID. Use this setting when <code>NestingLevel</code>
-     * is set to NONE. </p> <p>Default value is false. </p>
+     * is set to <code>"none"</code>. </p> <p>Default value is <code>"false"</code>.
+     * </p>
      */
     inline void SetExtractDocId(Aws::String&& value) { m_extractDocIdHasBeenSet = true; m_extractDocId = std::move(value); }
 
     /**
      * <p> Specifies the document ID. Use this setting when <code>NestingLevel</code>
-     * is set to NONE. </p> <p>Default value is false. </p>
+     * is set to <code>"none"</code>. </p> <p>Default value is <code>"false"</code>.
+     * </p>
      */
     inline void SetExtractDocId(const char* value) { m_extractDocIdHasBeenSet = true; m_extractDocId.assign(value); }
 
     /**
      * <p> Specifies the document ID. Use this setting when <code>NestingLevel</code>
-     * is set to NONE. </p> <p>Default value is false. </p>
+     * is set to <code>"none"</code>. </p> <p>Default value is <code>"false"</code>.
+     * </p>
      */
     inline MongoDbSettings& WithExtractDocId(const Aws::String& value) { SetExtractDocId(value); return *this;}
 
     /**
      * <p> Specifies the document ID. Use this setting when <code>NestingLevel</code>
-     * is set to NONE. </p> <p>Default value is false. </p>
+     * is set to <code>"none"</code>. </p> <p>Default value is <code>"false"</code>.
+     * </p>
      */
     inline MongoDbSettings& WithExtractDocId(Aws::String&& value) { SetExtractDocId(std::move(value)); return *this;}
 
     /**
      * <p> Specifies the document ID. Use this setting when <code>NestingLevel</code>
-     * is set to NONE. </p> <p>Default value is false. </p>
+     * is set to <code>"none"</code>. </p> <p>Default value is <code>"false"</code>.
+     * </p>
      */
     inline MongoDbSettings& WithExtractDocId(const char* value) { SetExtractDocId(value); return *this;}
 
 
     /**
      * <p> Indicates the number of documents to preview to determine the document
-     * organization. Use this setting when <code>NestingLevel</code> is set to ONE.
-     * </p> <p>Must be a positive value greater than 0. Default value is 1000.</p>
+     * organization. Use this setting when <code>NestingLevel</code> is set to
+     * <code>"one"</code>. </p> <p>Must be a positive value greater than
+     * <code>0</code>. Default value is <code>1000</code>.</p>
      */
     inline const Aws::String& GetDocsToInvestigate() const{ return m_docsToInvestigate; }
 
     /**
      * <p> Indicates the number of documents to preview to determine the document
-     * organization. Use this setting when <code>NestingLevel</code> is set to ONE.
-     * </p> <p>Must be a positive value greater than 0. Default value is 1000.</p>
+     * organization. Use this setting when <code>NestingLevel</code> is set to
+     * <code>"one"</code>. </p> <p>Must be a positive value greater than
+     * <code>0</code>. Default value is <code>1000</code>.</p>
      */
     inline bool DocsToInvestigateHasBeenSet() const { return m_docsToInvestigateHasBeenSet; }
 
     /**
      * <p> Indicates the number of documents to preview to determine the document
-     * organization. Use this setting when <code>NestingLevel</code> is set to ONE.
-     * </p> <p>Must be a positive value greater than 0. Default value is 1000.</p>
+     * organization. Use this setting when <code>NestingLevel</code> is set to
+     * <code>"one"</code>. </p> <p>Must be a positive value greater than
+     * <code>0</code>. Default value is <code>1000</code>.</p>
      */
     inline void SetDocsToInvestigate(const Aws::String& value) { m_docsToInvestigateHasBeenSet = true; m_docsToInvestigate = value; }
 
     /**
      * <p> Indicates the number of documents to preview to determine the document
-     * organization. Use this setting when <code>NestingLevel</code> is set to ONE.
-     * </p> <p>Must be a positive value greater than 0. Default value is 1000.</p>
+     * organization. Use this setting when <code>NestingLevel</code> is set to
+     * <code>"one"</code>. </p> <p>Must be a positive value greater than
+     * <code>0</code>. Default value is <code>1000</code>.</p>
      */
     inline void SetDocsToInvestigate(Aws::String&& value) { m_docsToInvestigateHasBeenSet = true; m_docsToInvestigate = std::move(value); }
 
     /**
      * <p> Indicates the number of documents to preview to determine the document
-     * organization. Use this setting when <code>NestingLevel</code> is set to ONE.
-     * </p> <p>Must be a positive value greater than 0. Default value is 1000.</p>
+     * organization. Use this setting when <code>NestingLevel</code> is set to
+     * <code>"one"</code>. </p> <p>Must be a positive value greater than
+     * <code>0</code>. Default value is <code>1000</code>.</p>
      */
     inline void SetDocsToInvestigate(const char* value) { m_docsToInvestigateHasBeenSet = true; m_docsToInvestigate.assign(value); }
 
     /**
      * <p> Indicates the number of documents to preview to determine the document
-     * organization. Use this setting when <code>NestingLevel</code> is set to ONE.
-     * </p> <p>Must be a positive value greater than 0. Default value is 1000.</p>
+     * organization. Use this setting when <code>NestingLevel</code> is set to
+     * <code>"one"</code>. </p> <p>Must be a positive value greater than
+     * <code>0</code>. Default value is <code>1000</code>.</p>
      */
     inline MongoDbSettings& WithDocsToInvestigate(const Aws::String& value) { SetDocsToInvestigate(value); return *this;}
 
     /**
      * <p> Indicates the number of documents to preview to determine the document
-     * organization. Use this setting when <code>NestingLevel</code> is set to ONE.
-     * </p> <p>Must be a positive value greater than 0. Default value is 1000.</p>
+     * organization. Use this setting when <code>NestingLevel</code> is set to
+     * <code>"one"</code>. </p> <p>Must be a positive value greater than
+     * <code>0</code>. Default value is <code>1000</code>.</p>
      */
     inline MongoDbSettings& WithDocsToInvestigate(Aws::String&& value) { SetDocsToInvestigate(std::move(value)); return *this;}
 
     /**
      * <p> Indicates the number of documents to preview to determine the document
-     * organization. Use this setting when <code>NestingLevel</code> is set to ONE.
-     * </p> <p>Must be a positive value greater than 0. Default value is 1000.</p>
+     * organization. Use this setting when <code>NestingLevel</code> is set to
+     * <code>"one"</code>. </p> <p>Must be a positive value greater than
+     * <code>0</code>. Default value is <code>1000</code>.</p>
      */
     inline MongoDbSettings& WithDocsToInvestigate(const char* value) { SetDocsToInvestigate(value); return *this;}
 
 
     /**
      * <p> The MongoDB database name. This setting isn't used when
-     * <code>authType=NO</code>. </p> <p>The default is admin.</p>
+     * <code>AuthType</code> is set to <code>"no"</code>. </p> <p>The default is
+     * <code>"admin"</code>.</p>
      */
     inline const Aws::String& GetAuthSource() const{ return m_authSource; }
 
     /**
      * <p> The MongoDB database name. This setting isn't used when
-     * <code>authType=NO</code>. </p> <p>The default is admin.</p>
+     * <code>AuthType</code> is set to <code>"no"</code>. </p> <p>The default is
+     * <code>"admin"</code>.</p>
      */
     inline bool AuthSourceHasBeenSet() const { return m_authSourceHasBeenSet; }
 
     /**
      * <p> The MongoDB database name. This setting isn't used when
-     * <code>authType=NO</code>. </p> <p>The default is admin.</p>
+     * <code>AuthType</code> is set to <code>"no"</code>. </p> <p>The default is
+     * <code>"admin"</code>.</p>
      */
     inline void SetAuthSource(const Aws::String& value) { m_authSourceHasBeenSet = true; m_authSource = value; }
 
     /**
      * <p> The MongoDB database name. This setting isn't used when
-     * <code>authType=NO</code>. </p> <p>The default is admin.</p>
+     * <code>AuthType</code> is set to <code>"no"</code>. </p> <p>The default is
+     * <code>"admin"</code>.</p>
      */
     inline void SetAuthSource(Aws::String&& value) { m_authSourceHasBeenSet = true; m_authSource = std::move(value); }
 
     /**
      * <p> The MongoDB database name. This setting isn't used when
-     * <code>authType=NO</code>. </p> <p>The default is admin.</p>
+     * <code>AuthType</code> is set to <code>"no"</code>. </p> <p>The default is
+     * <code>"admin"</code>.</p>
      */
     inline void SetAuthSource(const char* value) { m_authSourceHasBeenSet = true; m_authSource.assign(value); }
 
     /**
      * <p> The MongoDB database name. This setting isn't used when
-     * <code>authType=NO</code>. </p> <p>The default is admin.</p>
+     * <code>AuthType</code> is set to <code>"no"</code>. </p> <p>The default is
+     * <code>"admin"</code>.</p>
      */
     inline MongoDbSettings& WithAuthSource(const Aws::String& value) { SetAuthSource(value); return *this;}
 
     /**
      * <p> The MongoDB database name. This setting isn't used when
-     * <code>authType=NO</code>. </p> <p>The default is admin.</p>
+     * <code>AuthType</code> is set to <code>"no"</code>. </p> <p>The default is
+     * <code>"admin"</code>.</p>
      */
     inline MongoDbSettings& WithAuthSource(Aws::String&& value) { SetAuthSource(std::move(value)); return *this;}
 
     /**
      * <p> The MongoDB database name. This setting isn't used when
-     * <code>authType=NO</code>. </p> <p>The default is admin.</p>
+     * <code>AuthType</code> is set to <code>"no"</code>. </p> <p>The default is
+     * <code>"admin"</code>.</p>
      */
     inline MongoDbSettings& WithAuthSource(const char* value) { SetAuthSource(value); return *this;}
 

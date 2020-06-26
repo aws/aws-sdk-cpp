@@ -221,37 +221,37 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>The Amazon Resource Name (ARN) of an AutoML job.</p>
      */
     inline const Aws::String& GetAutoMLJobArn() const{ return m_autoMLJobArn; }
 
     /**
-     * <p/>
+     * <p>The Amazon Resource Name (ARN) of an AutoML job.</p>
      */
     inline void SetAutoMLJobArn(const Aws::String& value) { m_autoMLJobArn = value; }
 
     /**
-     * <p/>
+     * <p>The Amazon Resource Name (ARN) of an AutoML job.</p>
      */
     inline void SetAutoMLJobArn(Aws::String&& value) { m_autoMLJobArn = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The Amazon Resource Name (ARN) of an AutoML job.</p>
      */
     inline void SetAutoMLJobArn(const char* value) { m_autoMLJobArn.assign(value); }
 
     /**
-     * <p/>
+     * <p>The Amazon Resource Name (ARN) of an AutoML job.</p>
      */
     inline DescribeTrainingJobResult& WithAutoMLJobArn(const Aws::String& value) { SetAutoMLJobArn(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The Amazon Resource Name (ARN) of an AutoML job.</p>
      */
     inline DescribeTrainingJobResult& WithAutoMLJobArn(Aws::String&& value) { SetAutoMLJobArn(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>The Amazon Resource Name (ARN) of an AutoML job.</p>
      */
     inline DescribeTrainingJobResult& WithAutoMLJobArn(const char* value) { SetAutoMLJobArn(value); return *this;}
 

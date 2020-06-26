@@ -1,0 +1,186 @@
+﻿/*
+* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+*
+* Licensed under the Apache License, Version 2.0 (the "License").
+* You may not use this file except in compliance with the License.
+* A copy of the License is located at
+*
+*  http://aws.amazon.com/apache2.0
+*
+* or in the "license" file accompanying this file. This file is distributed
+* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+* express or implied. See the License for the specific language governing
+* permissions and limitations under the License.
+*/
+
+#pragma once
+#include <aws/cloudformation/CloudFormation_EXPORTS.h>
+#include <aws/core/utils/memory/stl/AWSStreamFwd.h>
+#include <aws/cloudformation/model/StackInstanceDetailedStatus.h>
+#include <utility>
+
+namespace Aws
+{
+namespace Utils
+{
+namespace Xml
+{
+  class XmlNode;
+} // namespace Xml
+} // namespace Utils
+namespace CloudFormation
+{
+namespace Model
+{
+
+  /**
+   * <p>The detailed status of the stack instance.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/StackInstanceComprehensiveStatus">AWS
+   * API Reference</a></p>
+   */
+  class AWS_CLOUDFORMATION_API StackInstanceComprehensiveStatus
+  {
+  public:
+    StackInstanceComprehensiveStatus();
+    StackInstanceComprehensiveStatus(const Aws::Utils::Xml::XmlNode& xmlNode);
+    StackInstanceComprehensiveStatus& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+
+    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+
+
+    /**
+     * <ul> <li> <p> <code>CANCELLED</code>: The operation in the specified account and
+     * Region has been cancelled. This is either because a user has stopped the stack
+     * set operation, or because the failure tolerance of the stack set operation has
+     * been exceeded.</p> </li> <li> <p> <code>FAILED</code>: The operation in the
+     * specified account and Region failed. If the stack set operation fails in enough
+     * accounts within a Region, the failure tolerance for the stack set operation as a
+     * whole might be exceeded.</p> </li> <li> <p> <code>INOPERABLE</code>: A
+     * <code>DeleteStackInstances</code> operation has failed and left the stack in an
+     * unstable state. Stacks in this state are excluded from further
+     * <code>UpdateStackSet</code> operations. You might need to perform a
+     * <code>DeleteStackInstances</code> operation, with <code>RetainStacks</code> set
+     * to <code>true</code>, to delete the stack instance, and then delete the stack
+     * manually.</p> </li> <li> <p> <code>PENDING</code>: The operation in the
+     * specified account and Region has yet to start.</p> </li> <li> <p>
+     * <code>RUNNING</code>: The operation in the specified account and Region is
+     * currently in progress.</p> </li> <li> <p> <code>SUCCEEDED</code>: The operation
+     * in the specified account and Region completed successfully.</p> </li> </ul>
+     */
+    inline const StackInstanceDetailedStatus& GetDetailedStatus() const{ return m_detailedStatus; }
+
+    /**
+     * <ul> <li> <p> <code>CANCELLED</code>: The operation in the specified account and
+     * Region has been cancelled. This is either because a user has stopped the stack
+     * set operation, or because the failure tolerance of the stack set operation has
+     * been exceeded.</p> </li> <li> <p> <code>FAILED</code>: The operation in the
+     * specified account and Region failed. If the stack set operation fails in enough
+     * accounts within a Region, the failure tolerance for the stack set operation as a
+     * whole might be exceeded.</p> </li> <li> <p> <code>INOPERABLE</code>: A
+     * <code>DeleteStackInstances</code> operation has failed and left the stack in an
+     * unstable state. Stacks in this state are excluded from further
+     * <code>UpdateStackSet</code> operations. You might need to perform a
+     * <code>DeleteStackInstances</code> operation, with <code>RetainStacks</code> set
+     * to <code>true</code>, to delete the stack instance, and then delete the stack
+     * manually.</p> </li> <li> <p> <code>PENDING</code>: The operation in the
+     * specified account and Region has yet to start.</p> </li> <li> <p>
+     * <code>RUNNING</code>: The operation in the specified account and Region is
+     * currently in progress.</p> </li> <li> <p> <code>SUCCEEDED</code>: The operation
+     * in the specified account and Region completed successfully.</p> </li> </ul>
+     */
+    inline bool DetailedStatusHasBeenSet() const { return m_detailedStatusHasBeenSet; }
+
+    /**
+     * <ul> <li> <p> <code>CANCELLED</code>: The operation in the specified account and
+     * Region has been cancelled. This is either because a user has stopped the stack
+     * set operation, or because the failure tolerance of the stack set operation has
+     * been exceeded.</p> </li> <li> <p> <code>FAILED</code>: The operation in the
+     * specified account and Region failed. If the stack set operation fails in enough
+     * accounts within a Region, the failure tolerance for the stack set operation as a
+     * whole might be exceeded.</p> </li> <li> <p> <code>INOPERABLE</code>: A
+     * <code>DeleteStackInstances</code> operation has failed and left the stack in an
+     * unstable state. Stacks in this state are excluded from further
+     * <code>UpdateStackSet</code> operations. You might need to perform a
+     * <code>DeleteStackInstances</code> operation, with <code>RetainStacks</code> set
+     * to <code>true</code>, to delete the stack instance, and then delete the stack
+     * manually.</p> </li> <li> <p> <code>PENDING</code>: The operation in the
+     * specified account and Region has yet to start.</p> </li> <li> <p>
+     * <code>RUNNING</code>: The operation in the specified account and Region is
+     * currently in progress.</p> </li> <li> <p> <code>SUCCEEDED</code>: The operation
+     * in the specified account and Region completed successfully.</p> </li> </ul>
+     */
+    inline void SetDetailedStatus(const StackInstanceDetailedStatus& value) { m_detailedStatusHasBeenSet = true; m_detailedStatus = value; }
+
+    /**
+     * <ul> <li> <p> <code>CANCELLED</code>: The operation in the specified account and
+     * Region has been cancelled. This is either because a user has stopped the stack
+     * set operation, or because the failure tolerance of the stack set operation has
+     * been exceeded.</p> </li> <li> <p> <code>FAILED</code>: The operation in the
+     * specified account and Region failed. If the stack set operation fails in enough
+     * accounts within a Region, the failure tolerance for the stack set operation as a
+     * whole might be exceeded.</p> </li> <li> <p> <code>INOPERABLE</code>: A
+     * <code>DeleteStackInstances</code> operation has failed and left the stack in an
+     * unstable state. Stacks in this state are excluded from further
+     * <code>UpdateStackSet</code> operations. You might need to perform a
+     * <code>DeleteStackInstances</code> operation, with <code>RetainStacks</code> set
+     * to <code>true</code>, to delete the stack instance, and then delete the stack
+     * manually.</p> </li> <li> <p> <code>PENDING</code>: The operation in the
+     * specified account and Region has yet to start.</p> </li> <li> <p>
+     * <code>RUNNING</code>: The operation in the specified account and Region is
+     * currently in progress.</p> </li> <li> <p> <code>SUCCEEDED</code>: The operation
+     * in the specified account and Region completed successfully.</p> </li> </ul>
+     */
+    inline void SetDetailedStatus(StackInstanceDetailedStatus&& value) { m_detailedStatusHasBeenSet = true; m_detailedStatus = std::move(value); }
+
+    /**
+     * <ul> <li> <p> <code>CANCELLED</code>: The operation in the specified account and
+     * Region has been cancelled. This is either because a user has stopped the stack
+     * set operation, or because the failure tolerance of the stack set operation has
+     * been exceeded.</p> </li> <li> <p> <code>FAILED</code>: The operation in the
+     * specified account and Region failed. If the stack set operation fails in enough
+     * accounts within a Region, the failure tolerance for the stack set operation as a
+     * whole might be exceeded.</p> </li> <li> <p> <code>INOPERABLE</code>: A
+     * <code>DeleteStackInstances</code> operation has failed and left the stack in an
+     * unstable state. Stacks in this state are excluded from further
+     * <code>UpdateStackSet</code> operations. You might need to perform a
+     * <code>DeleteStackInstances</code> operation, with <code>RetainStacks</code> set
+     * to <code>true</code>, to delete the stack instance, and then delete the stack
+     * manually.</p> </li> <li> <p> <code>PENDING</code>: The operation in the
+     * specified account and Region has yet to start.</p> </li> <li> <p>
+     * <code>RUNNING</code>: The operation in the specified account and Region is
+     * currently in progress.</p> </li> <li> <p> <code>SUCCEEDED</code>: The operation
+     * in the specified account and Region completed successfully.</p> </li> </ul>
+     */
+    inline StackInstanceComprehensiveStatus& WithDetailedStatus(const StackInstanceDetailedStatus& value) { SetDetailedStatus(value); return *this;}
+
+    /**
+     * <ul> <li> <p> <code>CANCELLED</code>: The operation in the specified account and
+     * Region has been cancelled. This is either because a user has stopped the stack
+     * set operation, or because the failure tolerance of the stack set operation has
+     * been exceeded.</p> </li> <li> <p> <code>FAILED</code>: The operation in the
+     * specified account and Region failed. If the stack set operation fails in enough
+     * accounts within a Region, the failure tolerance for the stack set operation as a
+     * whole might be exceeded.</p> </li> <li> <p> <code>INOPERABLE</code>: A
+     * <code>DeleteStackInstances</code> operation has failed and left the stack in an
+     * unstable state. Stacks in this state are excluded from further
+     * <code>UpdateStackSet</code> operations. You might need to perform a
+     * <code>DeleteStackInstances</code> operation, with <code>RetainStacks</code> set
+     * to <code>true</code>, to delete the stack instance, and then delete the stack
+     * manually.</p> </li> <li> <p> <code>PENDING</code>: The operation in the
+     * specified account and Region has yet to start.</p> </li> <li> <p>
+     * <code>RUNNING</code>: The operation in the specified account and Region is
+     * currently in progress.</p> </li> <li> <p> <code>SUCCEEDED</code>: The operation
+     * in the specified account and Region completed successfully.</p> </li> </ul>
+     */
+    inline StackInstanceComprehensiveStatus& WithDetailedStatus(StackInstanceDetailedStatus&& value) { SetDetailedStatus(std::move(value)); return *this;}
+
+  private:
+
+    StackInstanceDetailedStatus m_detailedStatus;
+    bool m_detailedStatusHasBeenSet;
+  };
+
+} // namespace Model
+} // namespace CloudFormation
+} // namespace Aws
