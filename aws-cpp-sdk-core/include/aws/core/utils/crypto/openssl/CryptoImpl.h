@@ -180,10 +180,11 @@ namespace Aws
 
                 EVP_CIPHER_CTX* m_encryptor_ctx;
                 EVP_CIPHER_CTX* m_decryptor_ctx;
-
             private:
                 void Init();
                 void Cleanup();
+                /* openssl has bug finalize decryption of an empty string */
+                bool m_emptyPlaintext;
             };
 
             /**
@@ -276,23 +277,30 @@ namespace Aws
             {
             public:
                 /**
-                 * Create AES in GCM mode off of a 256 bit key. Auto Generates a 16 byte secure random IV.
+                 * Create AES in GCM mode off of a 256 bit key. Auto Generates a 12 byte secure random IV.
                  */
                 AES_GCM_Cipher_OpenSSL(const CryptoBuffer& key);
 
                 /**
-                 * Create AES in GCM mode off of a 256 bit key, a 16 byte secure random IV, and an optional 16 byte Tag. If you are using this
-                 * cipher to decrypt an encrypted payload, you must set the tag here.
-                 */
-                AES_GCM_Cipher_OpenSSL(CryptoBuffer&& key, CryptoBuffer&& initializationVector,
-                                       CryptoBuffer&& tag = CryptoBuffer(0));
+                * Create AES in GCM mode off of a 256 bit key and AAD. Auto Generates a 12 byte IV in the format
+                */
+                AES_GCM_Cipher_OpenSSL(const CryptoBuffer& key, const CryptoBuffer* aad);
 
                 /**
-                 * Create AES in GCM mode off of a 256 bit key, a 16 byte secure random IV, and an optional 16 byte Tag. If you are using this
-                 * cipher to decrypt an encrypted payload, you must set the tag here.
+                 * Create AES in GCM mode off of a 256 bit key, a 12 byte secure random IV, and an optional 16 byte Tag and additional authentication data (AAD).
+                 * Note that tag could be acquired from encrypt mode and should only be set for decrypt mode.
+                 * If you are using this cipher to decrypt an encrypted payload, you must set the tag here.
+                 */
+                AES_GCM_Cipher_OpenSSL(CryptoBuffer&& key, CryptoBuffer&& initializationVector,
+                                       CryptoBuffer&& tag = CryptoBuffer(0), CryptoBuffer&& aad = CryptoBuffer(0));
+
+                /**
+                 * Create AES in GCM mode off of a 256 bit key, a 12 byte secure random IV, and an optional 16 byte Tag and additional authentication data (AAD).
+                 * Note that tag could be acquired from encrypt mode and should only be set for decrypt mode.
+                 * If you are using this cipher to decrypt an encrypted payload, you must set the tag here.
                  */
                 AES_GCM_Cipher_OpenSSL(const CryptoBuffer& key, const CryptoBuffer& initializationVector,
-                                       const CryptoBuffer& tag = CryptoBuffer(0));
+                                       const CryptoBuffer& tag = CryptoBuffer(0), const CryptoBuffer& aad = CryptoBuffer(0));
 
                 AES_GCM_Cipher_OpenSSL(const AES_GCM_Cipher_OpenSSL& other) = delete;
 
@@ -318,7 +326,7 @@ namespace Aws
 
             private:
                 void InitCipher();
-
+                CryptoBuffer m_aad;
                 static size_t BlockSizeBytes;
                 static size_t IVLengthBytes;
                 static size_t KeyLengthBits;

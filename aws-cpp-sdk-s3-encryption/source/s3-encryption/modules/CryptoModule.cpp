@@ -24,6 +24,7 @@ using namespace Aws::S3::Model;
 using namespace Aws::Utils;
 using namespace Aws::Utils::Crypto;
 using namespace Aws::Client;
+using namespace Aws::Utils::Crypto::ContentCryptoSchemeMapper;
 
 namespace Aws
 {
@@ -48,7 +49,6 @@ namespace Aws
             {
                 PutObjectRequest copyRequest(request);
                 PopulateCryptoContentMaterial();
-                InitEncryptionCipher();
                 SetContentLength(copyRequest);
                 auto encryptOutcome = m_encryptionMaterials->EncryptCEK(m_contentCryptoMaterial);
                 if (!encryptOutcome.IsSuccess())
@@ -56,6 +56,8 @@ namespace Aws
                     return S3EncryptionPutObjectOutcome(BuildS3EncryptionError(encryptOutcome.GetError()));
                 }
                 
+                InitEncryptionCipher();
+
                 if (m_cryptoConfig.GetStorageMethod() == StorageMethod::INSTRUCTION_FILE)
                 {
                     Handlers::InstructionFileHandler handler;
@@ -218,6 +220,8 @@ namespace Aws
                 m_contentCryptoMaterial.SetContentEncryptionKey(SymmetricCipher::GenerateKey());
                 m_contentCryptoMaterial.SetCryptoTagLength(0u);
                 m_contentCryptoMaterial.SetContentCryptoScheme(ContentCryptoScheme::CBC);
+                auto aad_raw = GetNameForContentCryptoScheme(ContentCryptoScheme::CBC);
+                m_contentCryptoMaterial.SetGCMAAD(CryptoBuffer((const unsigned char*)aad_raw.c_str(), aad_raw.size()));
             }
 
             void CryptoModuleEO::InitEncryptionCipher()
@@ -273,6 +277,8 @@ namespace Aws
                 m_contentCryptoMaterial.SetContentEncryptionKey(SymmetricCipher::GenerateKey());
                 m_contentCryptoMaterial.SetCryptoTagLength(TAG_SIZE_BYTES * BITS_IN_BYTE);
                 m_contentCryptoMaterial.SetContentCryptoScheme(ContentCryptoScheme::GCM);
+                auto aad_raw = GetNameForContentCryptoScheme(ContentCryptoScheme::GCM);
+                m_contentCryptoMaterial.SetGCMAAD(CryptoBuffer((const unsigned char*)aad_raw.c_str(), aad_raw.size()));
             }
 
             void CryptoModuleAE::InitEncryptionCipher()
@@ -283,16 +289,9 @@ namespace Aws
 
             void CryptoModuleAE::InitDecryptionCipher(int64_t rangeStart, int64_t rangeEnd, const Aws::Utils::CryptoBuffer& tag)
             {
-                bool forceCtr;
-#ifdef ENABLE_COMMONCRYPTO_ENCRYPTION
-                forceCtr = true;
-#else
-                forceCtr = false;
-#endif
-
-                if (rangeStart > 0 || rangeEnd > 0 || forceCtr)
+                (void)GCM_IV_SIZE; // get ride of unused variable warning
+                if (rangeStart > 0 || rangeEnd > 0)
                 {
-                    AWS_UNREFERENCED_PARAM(GCM_IV_SIZE);
                     //See http://csrc.nist.gov/publications/nistpubs/800-38D/SP-800-38D.pdf for decrypting a GCM message using CTR mode.
                     assert(m_contentCryptoMaterial.GetIV().GetLength() == GCM_IV_SIZE);
                     CryptoBuffer counter(4);
@@ -381,9 +380,6 @@ namespace Aws
                 return newRange;
             }
 
-
-
-
             CryptoModuleStrictAE::CryptoModuleStrictAE(const std::shared_ptr<EncryptionMaterials>& encryptionMaterials, const CryptoConfiguration & cryptoConfig) :
                 CryptoModule(encryptionMaterials, cryptoConfig)
             {
@@ -404,6 +400,8 @@ namespace Aws
                 m_contentCryptoMaterial.SetContentEncryptionKey(SymmetricCipher::GenerateKey());
                 m_contentCryptoMaterial.SetCryptoTagLength(TAG_SIZE_BYTES * BITS_IN_BYTE);
                 m_contentCryptoMaterial.SetContentCryptoScheme(ContentCryptoScheme::GCM);
+                auto aad_raw = GetNameForContentCryptoScheme(ContentCryptoScheme::GCM);
+                m_contentCryptoMaterial.SetGCMAAD(CryptoBuffer((const unsigned char*)aad_raw.c_str(), aad_raw.size()));
             }
 
             void CryptoModuleStrictAE::InitEncryptionCipher()

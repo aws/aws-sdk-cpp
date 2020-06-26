@@ -29,6 +29,8 @@ namespace Aws
         static const char* const IV_HEADER = "x-amz-iv";
         static const char* const MATERIALS_DESCRIPTION_HEADER = "x-amz-matdesc";
         static const char* const CONTENT_CRYPTO_SCHEME_HEADER = "x-amz-cek-alg";
+        static const char* const CEK_IV_HEADER = "x-amz-cek-iv";
+        static const char* const CEK_CRYPTO_AES_GCM_TAG_HEADER = "x-amz-cek-aes-gcm-tag"; // AES/GCM wrapper for CEK
         static const char* const CRYPTO_TAG_LENGTH_HEADER = "x-amz-tag-len";
         static const char* const KEY_WRAP_ALGORITHM = "x-amz-wrap-alg";
         static const char* const INSTRUCTION_FILE_HEADER = "x-amz-crypto-instr-file";

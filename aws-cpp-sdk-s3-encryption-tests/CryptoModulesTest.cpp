@@ -13,6 +13,7 @@
 * permissions and limitations under the License.
 */
 
+#define AWS_DISABLE_DEPRECATION
 #ifndef NO_SYMMETRIC_ENCRYPTION
 
 #include <aws/external/gtest.h>
@@ -41,6 +42,7 @@
 #include <aws/s3/model/DeleteObjectRequest.h>
 
 #include <aws/kms/KMSClient.h>
+#include <aws/kms/model/GenerateDataKeyRequest.h>
 #include <aws/kms/model/EncryptRequest.h>
 #include <aws/kms/model/DecryptRequest.h>
 
@@ -53,7 +55,6 @@ namespace
     static const char* const TEST_CMK_ID = "ARN:SOME_COMBINATION_OF_LETTERS_AND_NUMBERS";
     static size_t const CBC_IV_SIZE_BYTES = 16u;
 
-#ifndef ENABLE_COMMONCRYPTO_ENCRYPTION
 #if !defined(NDEBUG) && defined(GTEST_HAS_DEATH_TEST)
     static const char* const BYTES_SPECIFIER = "bytes=0-10";
     static const char* const ASSERTION_FAILED = "Assertion .*";
@@ -61,8 +62,8 @@ namespace
     static const char* const GET_RANGE_SPECIFIER = "bytes=20-40";
     static const char* const GET_RANGE_OUTPUT = "ge for encryption and";
     static size_t const GCM_TAG_LENGTH = 128u;
+    static size_t const CEK_GCM_TAG_BYTES = 16u;
     static size_t const GCM_IV_SIZE_BYTES = 12u;
-#endif
 
     using namespace Aws::Auth;
     using namespace Aws::Client;
@@ -88,19 +89,26 @@ namespace
     {
     public:
         MockKMSClient(ClientConfiguration clientConfiguration = ClientConfiguration()) :
-            KMSClient(Aws::Auth::AWSCredentials("", ""), clientConfiguration), m_encryptCalledCount(0), m_decryptCalledCount(0),
-            m_encryptedKey(Aws::Utils::Crypto::SymmetricCipher::GenerateKey()), m_decryptedKey(nullptr)
+            KMSClient(Aws::Auth::AWSCredentials("", ""), clientConfiguration), m_encryptCalledCount(0), m_genDataKeyCalledCount(0), m_decryptCalledCount(0),
+            m_encryptedKey(Aws::Utils::Crypto::SymmetricCipher::GenerateKey()), m_decryptedKey(Aws::Utils::Crypto::SymmetricCipher::GenerateKey())
         {
         }
 
         EncryptOutcome Encrypt(const EncryptRequest& request) const override
         {
             Aws::Utils::CryptoBuffer buffer(request.GetPlaintext().GetUnderlyingData(), request.GetPlaintext().GetLength());
-            m_decryptedKey = Aws::MakeShared<Aws::Utils::CryptoBuffer>(ALLOCATION_TAG, buffer);
+            m_decryptedKey = buffer;
 
             m_encryptCalledCount++;
             return PopulateSuccessfulEncryptOutcome();
         }
+
+        GenerateDataKeyOutcome GenerateDataKey(const GenerateDataKeyRequest&) const override
+        {
+            m_genDataKeyCalledCount++;
+            return PopulateSuccessfulGenDataKeyOutcome();
+        }
+        
         DecryptOutcome Decrypt(const DecryptRequest&) const override
         {
             m_decryptCalledCount++;
@@ -108,9 +116,10 @@ namespace
         }
 
         mutable size_t m_encryptCalledCount;
+        mutable size_t m_genDataKeyCalledCount;
         mutable size_t m_decryptCalledCount;
-        Aws::Utils::ByteBuffer m_encryptedKey;
-        mutable std::shared_ptr<Aws::Utils::CryptoBuffer> m_decryptedKey;
+        Aws::Utils::CryptoBuffer m_encryptedKey;
+        mutable Aws::Utils::CryptoBuffer m_decryptedKey;
 
     private:
         EncryptOutcome PopulateSuccessfulEncryptOutcome() const
@@ -121,18 +130,27 @@ namespace
             return result;
         }
 
+        GenerateDataKeyOutcome PopulateSuccessfulGenDataKeyOutcome() const
+        {
+            GenerateDataKeyOutcome outcome;
+            GenerateDataKeyResult result(outcome.GetResult());
+            result.SetPlaintext(m_decryptedKey);
+            result.SetCiphertextBlob(m_encryptedKey);
+            return result;
+        }
+
         DecryptOutcome PopulateSuccessfulDecryptOutcome() const
         {
             DecryptOutcome outcome;
             DecryptResult result(outcome.GetResult());
-            result.SetPlaintext(*m_decryptedKey);
+            result.SetPlaintext(m_decryptedKey);
             return result;
         }
     };
 
     /*
     * This is a class that represents a S3 Client which is used to mimic the put/get operations of a actual s3 client.
-    * During a put object, the body of the request is stored as well as the metadata of the requet. This data is then
+    * During a put object, the body of the request is stored as well as the metadata of the request. This data is then
     * populated into a get object result when a get operation is called. If a get request has a range specifying the
     * last 16 bytes of data, we know this is the crypto tag stored at the end of the body for GCM encryption, and we
     * return this. If the range is everything but the last 16 bytes then we only return that part of the body to the
@@ -246,6 +264,15 @@ namespace
             ASSERT_TRUE(metadataMap[KEY_WRAP_ALGORITHM].size() > 0u);
             ASSERT_TRUE(metadataMap[MATERIALS_DESCRIPTION_HEADER].size() > 0u);
         }
+
+        static void MetadataFilledWithGCMAAD(Aws::Map<Aws::String, Aws::String> metadataMap)
+        {
+            MetadataFilled(metadataMap);
+            auto metadataEnd = metadataMap.end();
+            ASSERT_TRUE(metadataMap.find(CEK_IV_HEADER) != metadataEnd && metadataMap.find(CEK_CRYPTO_AES_GCM_TAG_HEADER) != metadataEnd);
+            ASSERT_TRUE(metadataMap[CEK_IV_HEADER].size() > 0u);
+            ASSERT_TRUE(metadataMap[CEK_CRYPTO_AES_GCM_TAG_HEADER].size() > 0u);
+        }
     };
 
     TEST_F(CryptoModulesTest, EncryptionOnlyOperationsTestWithSimpleEncryptionMaterials)
@@ -313,7 +340,6 @@ namespace
         ASSERT_EQ(s3Client.m_putObjectCalled, 1u);
     }
 
-#ifndef ENABLE_COMMONCRYPTO_ENCRYPTION
     TEST_F(CryptoModulesTest, AuthenticatedEncryptionOperationsTestWithSimpleEncryptionMaterials)
     {
         Aws::Utils::CryptoBuffer masterKey = Aws::Utils::Crypto::SymmetricCipher::GenerateKey();
@@ -444,7 +470,289 @@ namespace
         ASSERT_EQ(s3Client.m_getObjectCalled, 2u);
         ASSERT_EQ(s3Client.m_putObjectCalled, 1u);
     }
-#endif
+
+    TEST_F(CryptoModulesTest, EncryptionOnlyOperationsTestWithSimpleEncryptionMaterialsWithGCMAAD)
+    {
+        Aws::Utils::CryptoBuffer masterKey = Aws::Utils::Crypto::SymmetricCipher::GenerateKey();
+        SimpleEncryptionMaterialsWithGCMAAD materials(masterKey);
+        CryptoConfiguration cryptoConfig(StorageMethod::METADATA, CryptoMode::ENCRYPTION_ONLY);
+
+        MockS3Client s3Client;
+
+        CryptoModuleFactory factory;
+        auto module = factory.FetchCryptoModule(Aws::MakeShared<SimpleEncryptionMaterialsWithGCMAAD>(ALLOCATION_TAG, materials), cryptoConfig);
+
+        PutObjectRequest putRequest;
+        putRequest.SetBucket(BUCKET_TEST_NAME);
+        std::shared_ptr<Aws::IOStream> objectStream = Aws::MakeShared<Aws::StringStream>(ALLOCATION_TAG);
+        *objectStream << BODY_STREAM_TEST;
+        objectStream->flush();
+        putRequest.SetBody(objectStream);
+        putRequest.SetKey(KEY_TEST_NAME);
+        auto putObjectFunction = [&s3Client](Aws::S3::Model::PutObjectRequest putRequest) -> Aws::S3::Model::PutObjectOutcome { return s3Client.PutObject(putRequest); };
+        auto putOutcome = module->PutObjectSecurely(putRequest, putObjectFunction);
+        ASSERT_TRUE(putOutcome.IsSuccess());
+
+        auto metadata = s3Client.GetMetadata();
+        MetadataFilledWithGCMAAD(metadata);
+
+        size_t cryptoTagLength = static_cast<size_t>(Aws::Utils::StringUtils::ConvertToInt64(metadata[CRYPTO_TAG_LENGTH_HEADER].c_str()));
+        ASSERT_EQ(cryptoTagLength, 0u);
+
+        Aws::Utils::CryptoBuffer ivBuffer = Aws::Utils::HashingUtils::Base64Decode(metadata[IV_HEADER]);
+        ASSERT_EQ(ivBuffer.GetLength(), CBC_IV_SIZE_BYTES);
+
+        ContentCryptoScheme scheme = ContentCryptoSchemeMapper::GetContentCryptoSchemeForName(metadata[CONTENT_CRYPTO_SCHEME_HEADER]);
+        ASSERT_EQ(scheme, ContentCryptoScheme::CBC);
+
+        KeyWrapAlgorithm keyWrapAlgorithm = KeyWrapAlgorithmMapper::GetKeyWrapAlgorithmForName(metadata[KEY_WRAP_ALGORITHM]);
+        ASSERT_EQ(keyWrapAlgorithm, KeyWrapAlgorithm::AES_GCM);
+
+        Aws::Utils::CryptoBuffer cekIVBuffer = Aws::Utils::HashingUtils::Base64Decode(metadata[CEK_IV_HEADER]);
+        ASSERT_EQ(cekIVBuffer.GetLength(), GCM_IV_SIZE_BYTES);
+
+        Aws::Utils::CryptoBuffer cektagBuffer = Aws::Utils::HashingUtils::Base64Decode(metadata[CEK_CRYPTO_AES_GCM_TAG_HEADER]);
+        ASSERT_EQ(cektagBuffer.GetLength(), CEK_GCM_TAG_BYTES);
+
+        ASSERT_TRUE(s3Client.GetRequestContentLength() > strlen(BODY_STREAM_TEST));
+
+        auto decryptionModule = factory.FetchCryptoModule(Aws::MakeShared<SimpleEncryptionMaterialsWithGCMAAD>(ALLOCATION_TAG, materials), cryptoConfig);
+        GetObjectRequest getRequest;
+        getRequest.SetBucket(BUCKET_TEST_NAME);
+        getRequest.SetKey(KEY_TEST_NAME);
+
+        HeadObjectRequest headObject;
+        headObject.WithBucket(BUCKET_TEST_NAME);
+        headObject.WithKey(KEY_TEST_NAME);
+        HeadObjectOutcome headOutcome = s3Client.HeadObject(headObject);
+
+        Aws::S3Encryption::Handlers::MetadataHandler handler;
+        ContentCryptoMaterial contentCryptoMaterial = handler.ReadContentCryptoMaterial(headOutcome.GetResult());
+
+        auto getObjectFunction = [&s3Client](Aws::S3::Model::GetObjectRequest getRequest) -> Aws::S3::Model::GetObjectOutcome { return s3Client.GetObject(getRequest); };
+        auto getOutcome = decryptionModule->GetObjectSecurely(getRequest, headOutcome.GetResult(), contentCryptoMaterial, getObjectFunction);
+        ASSERT_TRUE(getOutcome.IsSuccess());
+        Aws::OStream& ostream = getOutcome.GetResult().GetBody();
+        Aws::OStringStream ss;
+        ss << ostream.rdbuf();
+
+        ASSERT_STREQ(BODY_STREAM_TEST, ss.str().c_str());
+        ASSERT_EQ(s3Client.GetMetadata(), getOutcome.GetResult().GetMetadata());
+        ASSERT_EQ(s3Client.m_getObjectCalled, 1u);
+        ASSERT_EQ(s3Client.m_putObjectCalled, 1u);
+    }
+
+    TEST_F(CryptoModulesTest, AuthenticatedEncryptionOperationsTestWithSimpleEncryptionMaterialsWithGCMAAD)
+    {
+        Aws::Utils::CryptoBuffer masterKey = Aws::Utils::Crypto::SymmetricCipher::GenerateKey();
+        SimpleEncryptionMaterialsWithGCMAAD materials(masterKey);
+        CryptoConfiguration cryptoConfig(StorageMethod::METADATA, CryptoMode::AUTHENTICATED_ENCRYPTION);
+
+        MockS3Client s3Client;
+
+        CryptoModuleFactory factory;
+        auto module = factory.FetchCryptoModule(Aws::MakeShared<SimpleEncryptionMaterialsWithGCMAAD>(ALLOCATION_TAG, materials), cryptoConfig);
+
+        PutObjectRequest putRequest;
+        putRequest.SetBucket(BUCKET_TEST_NAME);
+        std::shared_ptr<Aws::IOStream> objectStream = Aws::MakeShared<Aws::StringStream>(ALLOCATION_TAG);
+        *objectStream << BODY_STREAM_TEST;
+        objectStream->flush();
+        putRequest.SetBody(objectStream);
+        putRequest.SetKey(KEY_TEST_NAME);
+        auto putObjectFunction = [&s3Client](Aws::S3::Model::PutObjectRequest putRequest) -> Aws::S3::Model::PutObjectOutcome { return s3Client.PutObject(putRequest); };
+        auto putOutcome = module->PutObjectSecurely(putRequest, putObjectFunction);
+        ASSERT_TRUE(putOutcome.IsSuccess());
+
+        auto metadata = s3Client.GetMetadata();
+        MetadataFilled(metadata);
+
+        size_t cryptoTagLength = static_cast<size_t>(Aws::Utils::StringUtils::ConvertToInt64(metadata[CRYPTO_TAG_LENGTH_HEADER].c_str()));
+        ASSERT_EQ(cryptoTagLength, GCM_TAG_LENGTH);
+
+        Aws::Utils::CryptoBuffer ivBuffer = Aws::Utils::HashingUtils::Base64Decode(metadata[IV_HEADER]);
+        ASSERT_EQ(ivBuffer.GetLength(), GCM_IV_SIZE_BYTES);
+
+        ContentCryptoScheme scheme = ContentCryptoSchemeMapper::GetContentCryptoSchemeForName(metadata[CONTENT_CRYPTO_SCHEME_HEADER]);
+        ASSERT_EQ(scheme, ContentCryptoScheme::GCM);
+
+        KeyWrapAlgorithm keyWrapAlgorithm = KeyWrapAlgorithmMapper::GetKeyWrapAlgorithmForName(metadata[KEY_WRAP_ALGORITHM]);
+        ASSERT_EQ(keyWrapAlgorithm, KeyWrapAlgorithm::AES_GCM);
+
+        Aws::Utils::CryptoBuffer cekIVBuffer = Aws::Utils::HashingUtils::Base64Decode(metadata[CEK_IV_HEADER]);
+        ASSERT_EQ(cekIVBuffer.GetLength(), GCM_IV_SIZE_BYTES);
+
+        Aws::Utils::CryptoBuffer cektagBuffer = Aws::Utils::HashingUtils::Base64Decode(metadata[CEK_CRYPTO_AES_GCM_TAG_HEADER]);
+        ASSERT_EQ(cektagBuffer.GetLength(), CEK_GCM_TAG_BYTES);
+
+        ASSERT_TRUE(s3Client.GetRequestContentLength() > strlen(BODY_STREAM_TEST));
+
+        auto decryptionModule = factory.FetchCryptoModule(Aws::MakeShared<SimpleEncryptionMaterialsWithGCMAAD>(ALLOCATION_TAG, materials), cryptoConfig);
+        GetObjectRequest getRequest;
+        getRequest.SetBucket(BUCKET_TEST_NAME);
+        getRequest.SetKey(KEY_TEST_NAME);
+
+        HeadObjectRequest headObject;
+        headObject.WithBucket(BUCKET_TEST_NAME);
+        headObject.WithKey(KEY_TEST_NAME);
+        HeadObjectOutcome headOutcome = s3Client.HeadObject(headObject);
+
+        Aws::S3Encryption::Handlers::MetadataHandler handler;
+        ContentCryptoMaterial contentCryptoMaterial = handler.ReadContentCryptoMaterial(headOutcome.GetResult());
+
+        auto getObjectFunction = [&s3Client](Aws::S3::Model::GetObjectRequest getRequest) -> Aws::S3::Model::GetObjectOutcome { return s3Client.GetObject(getRequest); };
+        auto getOutcome = decryptionModule->GetObjectSecurely(getRequest, headOutcome.GetResult(), contentCryptoMaterial, getObjectFunction);
+        ASSERT_TRUE(getOutcome.IsSuccess());
+        Aws::OStream& ostream = getOutcome.GetResult().GetBody();
+        Aws::OStringStream ss;
+        ss << ostream.rdbuf();
+
+        ASSERT_STREQ(BODY_STREAM_TEST, ss.str().c_str());
+        ASSERT_EQ(getOutcome.GetResult().GetMetadata(), s3Client.GetMetadata());
+        ASSERT_EQ(s3Client.m_getObjectCalled, 2u);
+        ASSERT_EQ(s3Client.m_putObjectCalled, 1u);
+    }
+
+
+    TEST_F(CryptoModulesTest, StrictAuthenticatedEncryptionOperationsTestWithSimpleEncryptionMaterialsWithGCMAAD)
+    {
+        Aws::Utils::CryptoBuffer masterKey = Aws::Utils::Crypto::SymmetricCipher::GenerateKey();
+        SimpleEncryptionMaterialsWithGCMAAD materials(masterKey);
+        CryptoConfiguration cryptoConfig(StorageMethod::METADATA, CryptoMode::STRICT_AUTHENTICATED_ENCRYPTION);
+
+        MockS3Client s3Client;
+
+        CryptoModuleFactory factory;
+        auto module = factory.FetchCryptoModule(Aws::MakeShared<SimpleEncryptionMaterialsWithGCMAAD>(ALLOCATION_TAG, materials), cryptoConfig);
+
+        PutObjectRequest putRequest;
+        putRequest.SetBucket(BUCKET_TEST_NAME);
+        std::shared_ptr<Aws::IOStream> objectStream = Aws::MakeShared<Aws::StringStream>(ALLOCATION_TAG);
+        *objectStream << BODY_STREAM_TEST;
+        objectStream->flush();
+        putRequest.SetBody(objectStream);
+        putRequest.SetKey(KEY_TEST_NAME);
+        auto putObjectFunction = [&s3Client](Aws::S3::Model::PutObjectRequest putRequest) -> Aws::S3::Model::PutObjectOutcome { return s3Client.PutObject(putRequest); };
+        auto putOutcome = module->PutObjectSecurely(putRequest, putObjectFunction);
+        ASSERT_TRUE(putOutcome.IsSuccess());
+
+        auto metadata = s3Client.GetMetadata();
+        MetadataFilled(metadata);
+
+        size_t cryptoTagLength = static_cast<size_t>(Aws::Utils::StringUtils::ConvertToInt64(metadata[CRYPTO_TAG_LENGTH_HEADER].c_str()));
+        ASSERT_EQ(cryptoTagLength, GCM_TAG_LENGTH);
+
+        Aws::Utils::CryptoBuffer ivBuffer = Aws::Utils::HashingUtils::Base64Decode(metadata[IV_HEADER]);
+        ASSERT_EQ(ivBuffer.GetLength(), GCM_IV_SIZE_BYTES);
+
+        ContentCryptoScheme scheme = ContentCryptoSchemeMapper::GetContentCryptoSchemeForName(metadata[CONTENT_CRYPTO_SCHEME_HEADER]);
+        ASSERT_EQ(scheme, ContentCryptoScheme::GCM);
+
+        KeyWrapAlgorithm keyWrapAlgorithm = KeyWrapAlgorithmMapper::GetKeyWrapAlgorithmForName(metadata[KEY_WRAP_ALGORITHM]);
+        ASSERT_EQ(keyWrapAlgorithm, KeyWrapAlgorithm::AES_GCM);
+
+        Aws::Utils::CryptoBuffer cekIVBuffer = Aws::Utils::HashingUtils::Base64Decode(metadata[CEK_IV_HEADER]);
+        ASSERT_EQ(cekIVBuffer.GetLength(), GCM_IV_SIZE_BYTES);
+
+        Aws::Utils::CryptoBuffer cektagBuffer = Aws::Utils::HashingUtils::Base64Decode(metadata[CEK_CRYPTO_AES_GCM_TAG_HEADER]);
+        ASSERT_EQ(cektagBuffer.GetLength(), CEK_GCM_TAG_BYTES);
+
+        ASSERT_TRUE(s3Client.GetRequestContentLength() > strlen(BODY_STREAM_TEST));
+
+        auto decryptionModule = factory.FetchCryptoModule(Aws::MakeShared<SimpleEncryptionMaterialsWithGCMAAD>(ALLOCATION_TAG, materials), cryptoConfig);
+        GetObjectRequest getRequest;
+        getRequest.SetBucket(BUCKET_TEST_NAME);
+        getRequest.SetKey(KEY_TEST_NAME);
+
+        HeadObjectRequest headObject;
+        headObject.WithBucket(BUCKET_TEST_NAME);
+        headObject.WithKey(KEY_TEST_NAME);
+        HeadObjectOutcome headOutcome = s3Client.HeadObject(headObject);
+
+        Aws::S3Encryption::Handlers::MetadataHandler handler;
+        ContentCryptoMaterial contentCryptoMaterial = handler.ReadContentCryptoMaterial(headOutcome.GetResult());
+
+        auto getObjectFunction = [&s3Client](Aws::S3::Model::GetObjectRequest getRequest) -> Aws::S3::Model::GetObjectOutcome { return s3Client.GetObject(getRequest); };
+        auto getOutcome = decryptionModule->GetObjectSecurely(getRequest, headOutcome.GetResult(), contentCryptoMaterial, getObjectFunction);
+        ASSERT_TRUE(getOutcome.IsSuccess());
+        Aws::OStream& ostream = getOutcome.GetResult().GetBody();
+        Aws::OStringStream ss;
+        ss << ostream.rdbuf();
+
+        ASSERT_STREQ(ss.str().c_str(), BODY_STREAM_TEST);
+        ASSERT_EQ(getOutcome.GetResult().GetMetadata(), s3Client.GetMetadata());
+        ASSERT_EQ(s3Client.m_getObjectCalled, 2u);
+        ASSERT_EQ(s3Client.m_putObjectCalled, 1u);
+    }
+
+    TEST_F(CryptoModulesTest, EncryptionOnlyOperationsTestWithKMSWithContextEncryptionMaterials)
+    {
+        auto kmsClient = Aws::MakeShared<MockKMSClient>(ALLOCATION_TAG, ClientConfiguration());
+        KMSWithContextEncryptionMaterials materials(TEST_CMK_ID, kmsClient);
+        CryptoConfiguration cryptoConfig(StorageMethod::METADATA, CryptoMode::ENCRYPTION_ONLY);
+
+        MockS3Client s3Client;
+
+        CryptoModuleFactory factory;
+        auto module = factory.FetchCryptoModule(Aws::MakeShared<KMSWithContextEncryptionMaterials>(ALLOCATION_TAG, materials), cryptoConfig);
+
+        PutObjectRequest putRequest;
+        putRequest.SetBucket(BUCKET_TEST_NAME);
+        std::shared_ptr<Aws::IOStream> objectStream = Aws::MakeShared<Aws::StringStream>(ALLOCATION_TAG);
+        *objectStream << BODY_STREAM_TEST;
+        objectStream->flush();
+        putRequest.SetBody(objectStream);
+        putRequest.SetKey(KEY_TEST_NAME);
+        auto putObjectFunction = [&s3Client](Aws::S3::Model::PutObjectRequest putRequest) -> Aws::S3::Model::PutObjectOutcome { return s3Client.PutObject(putRequest); };
+        auto putOutcome = module->PutObjectSecurely(putRequest, putObjectFunction);
+        ASSERT_TRUE(putOutcome.IsSuccess());
+
+        auto metadata = s3Client.GetMetadata();
+        MetadataFilled(metadata);
+
+        size_t cryptoTagLength = static_cast<size_t>(Aws::Utils::StringUtils::ConvertToInt64(metadata[CRYPTO_TAG_LENGTH_HEADER].c_str()));
+        ASSERT_EQ(cryptoTagLength, 0u);
+
+        Aws::Utils::CryptoBuffer ivBuffer = Aws::Utils::HashingUtils::Base64Decode(metadata[IV_HEADER]);
+        ASSERT_EQ(ivBuffer.GetLength(), CBC_IV_SIZE_BYTES);
+
+        ContentCryptoScheme scheme = ContentCryptoSchemeMapper::GetContentCryptoSchemeForName(metadata[CONTENT_CRYPTO_SCHEME_HEADER]);
+        ASSERT_EQ(scheme, ContentCryptoScheme::CBC);
+
+        KeyWrapAlgorithm keyWrapAlgorithm = KeyWrapAlgorithmMapper::GetKeyWrapAlgorithmForName(metadata[KEY_WRAP_ALGORITHM]);
+        ASSERT_EQ(keyWrapAlgorithm, KeyWrapAlgorithm::KMS_CONTEXT);
+
+        ASSERT_TRUE(s3Client.GetRequestContentLength() > strlen(BODY_STREAM_TEST));
+
+        auto decryptionModule = factory.FetchCryptoModule(Aws::MakeShared<KMSWithContextEncryptionMaterials>(ALLOCATION_TAG, materials), cryptoConfig);
+        GetObjectRequest getRequest;
+        getRequest.SetBucket(BUCKET_TEST_NAME);
+        getRequest.SetKey(KEY_TEST_NAME);
+
+        HeadObjectRequest headObject;
+        headObject.WithBucket(BUCKET_TEST_NAME);
+        headObject.WithKey(KEY_TEST_NAME);
+        HeadObjectOutcome headOutcome = s3Client.HeadObject(headObject);
+
+        Aws::S3Encryption::Handlers::MetadataHandler handler;
+        ContentCryptoMaterial contentCryptoMaterial = handler.ReadContentCryptoMaterial(headOutcome.GetResult());
+        ASSERT_EQ(contentCryptoMaterial.GetEncryptedContentEncryptionKey(), kmsClient->m_encryptedKey);
+
+        auto getObjectFunction = [&s3Client](Aws::S3::Model::GetObjectRequest getRequest) -> Aws::S3::Model::GetObjectOutcome { return s3Client.GetObject(getRequest); };
+        auto getOutcome = decryptionModule->GetObjectSecurely(getRequest, headOutcome.GetResult(), contentCryptoMaterial, getObjectFunction);
+        ASSERT_TRUE(getOutcome.IsSuccess());
+        Aws::OStream& ostream = getOutcome.GetResult().GetBody();
+        Aws::OStringStream ss;
+        ss << ostream.rdbuf();
+
+        ASSERT_STREQ(ss.str().c_str(), BODY_STREAM_TEST);
+        ASSERT_EQ(getOutcome.GetResult().GetMetadata(), s3Client.GetMetadata());
+        ASSERT_EQ(s3Client.m_getObjectCalled, 1u);
+        ASSERT_EQ(s3Client.m_putObjectCalled, 1u);
+        ASSERT_EQ(kmsClient->m_genDataKeyCalledCount, 1u);
+        ASSERT_EQ(kmsClient->m_encryptCalledCount, 0u);
+        ASSERT_EQ(kmsClient->m_decryptCalledCount, 1u);
+    }
 
     TEST_F(CryptoModulesTest, EncryptionOnlyOperationsTestWithKMSEncryptionMaterials)
     {
@@ -497,6 +805,7 @@ namespace
 
         Aws::S3Encryption::Handlers::MetadataHandler handler;
         ContentCryptoMaterial contentCryptoMaterial = handler.ReadContentCryptoMaterial(headOutcome.GetResult());
+        ASSERT_EQ(contentCryptoMaterial.GetEncryptedContentEncryptionKey(), kmsClient->m_encryptedKey);
 
         auto getObjectFunction = [&s3Client](Aws::S3::Model::GetObjectRequest getRequest) -> Aws::S3::Model::GetObjectOutcome { return s3Client.GetObject(getRequest); };
         auto getOutcome = decryptionModule->GetObjectSecurely(getRequest, headOutcome.GetResult(), contentCryptoMaterial, getObjectFunction);
@@ -509,12 +818,12 @@ namespace
         ASSERT_EQ(getOutcome.GetResult().GetMetadata(), s3Client.GetMetadata());
         ASSERT_EQ(s3Client.m_getObjectCalled, 1u);
         ASSERT_EQ(s3Client.m_putObjectCalled, 1u);
+        ASSERT_EQ(kmsClient->m_genDataKeyCalledCount, 0u);
         ASSERT_EQ(kmsClient->m_encryptCalledCount, 1u);
         ASSERT_EQ(kmsClient->m_decryptCalledCount, 1u);
     }
 
 
-#ifndef ENABLE_COMMONCRYPTO_ENCRYPTION
     TEST_F(CryptoModulesTest, AuthenticatedEncryptionOperationsTestWithKMSEncryptionMaterials)
     {
         auto kmsClient = Aws::MakeShared<MockKMSClient>(ALLOCATION_TAG, ClientConfiguration());
@@ -578,7 +887,75 @@ namespace
         ASSERT_EQ(getOutcome.GetResult().GetMetadata(), s3Client.GetMetadata());
         ASSERT_EQ(s3Client.m_getObjectCalled, 2u);
         ASSERT_EQ(s3Client.m_putObjectCalled, 1u);
+        ASSERT_EQ(kmsClient->m_genDataKeyCalledCount, 0u);
         ASSERT_EQ(kmsClient->m_encryptCalledCount, 1u);
+        ASSERT_EQ(kmsClient->m_decryptCalledCount, 1u);
+    }
+
+    TEST_F(CryptoModulesTest, AuthenticatedEncryptionOperationsTestWithKMSWithContextEncryptionMaterials)
+    {
+        auto kmsClient = Aws::MakeShared<MockKMSClient>(ALLOCATION_TAG, ClientConfiguration());
+        KMSWithContextEncryptionMaterials materials(TEST_CMK_ID, kmsClient);
+        CryptoConfiguration cryptoConfig(StorageMethod::METADATA, CryptoMode::AUTHENTICATED_ENCRYPTION);
+
+        MockS3Client s3Client;
+
+        CryptoModuleFactory factory;
+        auto module = factory.FetchCryptoModule(Aws::MakeShared<KMSWithContextEncryptionMaterials>(ALLOCATION_TAG, materials), cryptoConfig);
+
+        PutObjectRequest putRequest;
+        putRequest.SetBucket(BUCKET_TEST_NAME);
+        std::shared_ptr<Aws::IOStream> objectStream = Aws::MakeShared<Aws::StringStream>(ALLOCATION_TAG);
+        *objectStream << BODY_STREAM_TEST;
+        objectStream->flush();
+        putRequest.SetBody(objectStream);
+        putRequest.SetKey(KEY_TEST_NAME);
+        auto putObjectFunction = [&s3Client](Aws::S3::Model::PutObjectRequest putRequest) -> Aws::S3::Model::PutObjectOutcome { return s3Client.PutObject(putRequest); };
+        auto putOutcome = module->PutObjectSecurely(putRequest, putObjectFunction);
+        ASSERT_TRUE(putOutcome.IsSuccess());
+
+        auto metadata = s3Client.GetMetadata();
+        MetadataFilled(metadata);
+
+        size_t cryptoTagLength = static_cast<size_t>(Aws::Utils::StringUtils::ConvertToInt64(metadata[CRYPTO_TAG_LENGTH_HEADER].c_str()));
+        ASSERT_EQ(cryptoTagLength, GCM_TAG_LENGTH);
+
+        Aws::Utils::CryptoBuffer ivBuffer = Aws::Utils::HashingUtils::Base64Decode(metadata[IV_HEADER]);
+        ASSERT_EQ(ivBuffer.GetLength(), GCM_IV_SIZE_BYTES);
+
+        ContentCryptoScheme scheme = ContentCryptoSchemeMapper::GetContentCryptoSchemeForName(metadata[CONTENT_CRYPTO_SCHEME_HEADER]);
+        ASSERT_EQ(scheme, ContentCryptoScheme::GCM);
+
+        KeyWrapAlgorithm keyWrapAlgorithm = KeyWrapAlgorithmMapper::GetKeyWrapAlgorithmForName(metadata[KEY_WRAP_ALGORITHM]);
+        ASSERT_EQ(keyWrapAlgorithm, KeyWrapAlgorithm::KMS_CONTEXT);
+
+        ASSERT_TRUE(s3Client.GetRequestContentLength() > strlen(BODY_STREAM_TEST));
+
+        auto decryptionModule = factory.FetchCryptoModule(Aws::MakeShared<KMSWithContextEncryptionMaterials>(ALLOCATION_TAG, materials), cryptoConfig);
+        GetObjectRequest getRequest;
+        getRequest.SetBucket(BUCKET_TEST_NAME);
+        getRequest.SetKey(KEY_TEST_NAME);
+
+        HeadObjectRequest headObject;
+        headObject.WithBucket(BUCKET_TEST_NAME);
+        headObject.WithKey(KEY_TEST_NAME);
+        HeadObjectOutcome headOutcome = s3Client.HeadObject(headObject);
+
+        Aws::S3Encryption::Handlers::MetadataHandler handler;
+        ContentCryptoMaterial contentCryptoMaterial = handler.ReadContentCryptoMaterial(headOutcome.GetResult());
+
+        auto getObjectFunction = [&s3Client](Aws::S3::Model::GetObjectRequest getRequest) -> Aws::S3::Model::GetObjectOutcome { return s3Client.GetObject(getRequest); };
+        auto getOutcome = decryptionModule->GetObjectSecurely(getRequest, headOutcome.GetResult(), contentCryptoMaterial, getObjectFunction);
+        ASSERT_TRUE(getOutcome.IsSuccess());
+        Aws::OStream& ostream = getOutcome.GetResult().GetBody();
+        Aws::OStringStream ss;
+        ss << ostream.rdbuf();
+
+        ASSERT_STREQ(ss.str().c_str(), BODY_STREAM_TEST);
+        ASSERT_EQ(getOutcome.GetResult().GetMetadata(), s3Client.GetMetadata());
+        ASSERT_EQ(s3Client.m_getObjectCalled, 2u);
+        ASSERT_EQ(s3Client.m_putObjectCalled, 1u);
+        ASSERT_EQ(kmsClient->m_genDataKeyCalledCount, 1u);
         ASSERT_EQ(kmsClient->m_decryptCalledCount, 1u);
     }
 
@@ -650,16 +1027,16 @@ namespace
     }
 
 
-    TEST_F(CryptoModulesTest, StrictAuthenticatedEncryptionOperationsTestWithKMSEncryptionMaterials)
+    TEST_F(CryptoModulesTest, StrictAuthenticatedEncryptionOperationsTestWithKMSWithContextEncryptionMaterials)
     {
         auto kmsClient = Aws::MakeShared<MockKMSClient>(ALLOCATION_TAG, ClientConfiguration());
-        KMSEncryptionMaterials materials(TEST_CMK_ID, kmsClient);
+        KMSWithContextEncryptionMaterials materials(TEST_CMK_ID, kmsClient);
         CryptoConfiguration cryptoConfig(StorageMethod::METADATA, CryptoMode::STRICT_AUTHENTICATED_ENCRYPTION);
 
         MockS3Client s3Client;
 
         CryptoModuleFactory factory;
-        auto module = factory.FetchCryptoModule(Aws::MakeShared<KMSEncryptionMaterials>(ALLOCATION_TAG, materials), cryptoConfig);
+        auto module = factory.FetchCryptoModule(Aws::MakeShared<KMSWithContextEncryptionMaterials>(ALLOCATION_TAG, materials), cryptoConfig);
         PutObjectRequest putRequest;
         putRequest.SetBucket(BUCKET_TEST_NAME);
         std::shared_ptr<Aws::IOStream> objectStream = Aws::MakeShared<Aws::StringStream>(ALLOCATION_TAG);
@@ -684,11 +1061,11 @@ namespace
         ASSERT_EQ(scheme, ContentCryptoScheme::GCM);
 
         KeyWrapAlgorithm keyWrapAlgorithm = KeyWrapAlgorithmMapper::GetKeyWrapAlgorithmForName(metadata[KEY_WRAP_ALGORITHM]);
-        ASSERT_EQ(keyWrapAlgorithm, KeyWrapAlgorithm::KMS);
+        ASSERT_EQ(keyWrapAlgorithm, KeyWrapAlgorithm::KMS_CONTEXT);
 
         ASSERT_TRUE(s3Client.GetRequestContentLength() > strlen(BODY_STREAM_TEST));
 
-        auto decryptionModule = factory.FetchCryptoModule(Aws::MakeShared<KMSEncryptionMaterials>(ALLOCATION_TAG, materials), cryptoConfig);
+        auto decryptionModule = factory.FetchCryptoModule(Aws::MakeShared<KMSWithContextEncryptionMaterials>(ALLOCATION_TAG, materials), cryptoConfig);
         GetObjectRequest getRequest;
         getRequest.SetBucket(BUCKET_TEST_NAME);
         getRequest.SetKey(KEY_TEST_NAME);
@@ -712,7 +1089,7 @@ namespace
         ASSERT_EQ(getOutcome.GetResult().GetMetadata(), s3Client.GetMetadata());
         ASSERT_EQ(s3Client.m_getObjectCalled, 2u);
         ASSERT_EQ(s3Client.m_putObjectCalled, 1u);
-        ASSERT_EQ(kmsClient->m_encryptCalledCount, 1u);
+        ASSERT_EQ(kmsClient->m_genDataKeyCalledCount, 1u);
         ASSERT_EQ(kmsClient->m_decryptCalledCount, 1u);
     }
 
@@ -832,7 +1209,6 @@ namespace
         ASSERT_DEATH({ decryptionModule->GetObjectSecurely(getRequest, headOutcome.GetResult(), contentCryptoMaterial, getObjectFunction); }, ASSERTION_FAILED);
     }
 #endif // !defined(NDEBUG) && defined(GTEST_HAS_DEATH_TEST)
-#endif
 
     TEST_F(CryptoModulesTest, RangeParserSuccess)
     {

@@ -103,7 +103,7 @@ namespace Aws
                 virtual void PopulateCryptoContentMaterial() = 0;
 
                 /*
-                * This function is used to get the crypto tag appended to the end of the body. It creates a seperate get request to obtain the tag.
+                * This function is used to get the crypto tag appended to the end of the body. It creates a separate get request to obtain the tag.
                 */
                 virtual Aws::Utils::CryptoBuffer GetTag(const Aws::S3::Model::GetObjectRequest& request, const std::function < Aws::S3::Model::GetObjectOutcome(const Aws::S3::Model::GetObjectRequest&) >& getObjectFunction) = 0;
 

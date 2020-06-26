@@ -96,7 +96,9 @@
 
 // Due to MSVC can't recognize base class deprecated function in derived class.
 // We need AWS_DISABLE_DEPRECATION to make AWS_DEPRECATED useless only on MSVC
-#if defined(AWS_DISABLE_DEPRECATION) && defined(_MSC_VER)
+// Update: When deprecating a function/components, we won't remove the existing tests
+// immediately, so we need AWS_DISABLE_DEPRECATION as well.
+#if defined(AWS_DISABLE_DEPRECATION)
     #define AWS_DEPRECATED(msg)
 #elif defined (__cplusplus) && __cplusplus > 201103L // standard attributes are available since C++14
     #define AWS_DEPRECATED(msg) [[deprecated(msg)]]
@@ -109,4 +111,3 @@
         #define AWS_DEPRECATED(msg)
     #endif
 #endif
-

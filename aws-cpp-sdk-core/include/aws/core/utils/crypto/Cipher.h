@@ -194,11 +194,18 @@ namespace Aws
                 /**
                  * Factory method. Returns cipher implementation. See the SymmetricCipher class for more details.
                  */
-                virtual std::shared_ptr<SymmetricCipher> CreateImplementation(const CryptoBuffer& key, const CryptoBuffer& iv, const CryptoBuffer& tag = CryptoBuffer(0)) const = 0;
+                virtual std::shared_ptr<SymmetricCipher> CreateImplementation(const CryptoBuffer& key, const CryptoBuffer*) const 
+                {
+                    return CreateImplementation(key);
+                }
                 /**
                  * Factory method. Returns cipher implementation. See the SymmetricCipher class for more details.
                  */
-                virtual std::shared_ptr<SymmetricCipher> CreateImplementation(CryptoBuffer&& key, CryptoBuffer&& iv, CryptoBuffer&& tag = CryptoBuffer(0)) const = 0;
+                virtual std::shared_ptr<SymmetricCipher> CreateImplementation(const CryptoBuffer& key, const CryptoBuffer& iv, const CryptoBuffer& tag = CryptoBuffer(0), const CryptoBuffer& aad = CryptoBuffer(0)) const = 0;
+                /**
+                 * Factory method. Returns cipher implementation. See the SymmetricCipher class for more details.
+                 */
+                virtual std::shared_ptr<SymmetricCipher> CreateImplementation(CryptoBuffer&& key, CryptoBuffer&& iv, CryptoBuffer&& tag = CryptoBuffer(0), CryptoBuffer&& aad = CryptoBuffer(0)) const = 0;
 
                 /**
                  * Only called once per factory, your chance to make static library calls for setup.

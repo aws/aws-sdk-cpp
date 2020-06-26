@@ -69,7 +69,7 @@ namespace Aws
             };
 
             /*
-            * This class is repsonsible for creating or returning an existing encryption only crypto module.
+            * This class is responsible for creating or returning an existing encryption only crypto module.
             * This module will be created with the encryption materials, crypto configuration, and AWS credentials
             * provider.
             */
@@ -91,8 +91,8 @@ namespace Aws
             };
 
             /*
-            * This class is repsonsible for creating or returning an existing authenticated encryption crypto module.
-            * This module will be created with the encryption materials, crypto configuration, and AWS credntials
+            * This class is responsible for creating or returning an existing authenticated encryption crypto module.
+            * This module will be created with the encryption materials, crypto configuration, and AWS credentials
             * provider.
             */
             class AWS_S3ENCRYPTION_API CryptoModuleFactoryAE : public CryptoModuleAbstractFactory
@@ -113,8 +113,8 @@ namespace Aws
             };
 
             /*
-            * This class is repsonsible for creating or returning an existing strict authenticated encryption crypto module.
-            * This module will be created with the encryption materials, crypto configuration, and AWS credntials
+            * This class is responsible for creating or returning an existing strict authenticated encryption crypto module.
+            * This module will be created with the encryption materials, crypto configuration, and AWS credentials
             * provider.
             */
             class AWS_S3ENCRYPTION_API CryptoModuleFactoryStrictAE : public CryptoModuleAbstractFactory

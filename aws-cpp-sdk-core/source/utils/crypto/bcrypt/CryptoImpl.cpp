@@ -391,6 +391,7 @@ namespace Aws
             void BCryptSymmetricCipher::Init()
             {
                 m_workingIv = m_initializationVector;
+                m_encryptDecryptCalled = false;
             }
 
             BCRYPT_KEY_HANDLE BCryptSymmetricCipher::ImportKeyBlob(BCRYPT_ALG_HANDLE algHandle, CryptoBuffer& key)
@@ -450,7 +451,7 @@ namespace Aws
                     return CryptoBuffer();
                 }
 
-                if (unEncryptedData.GetLength() == 0)
+                if (unEncryptedData.GetLength() == 0 && m_encryptDecryptCalled)
                 {
                     return CryptoBuffer();
                 }
@@ -473,7 +474,7 @@ namespace Aws
                 //iv was set on the key itself, so we don't need to pass it here.
                 NTSTATUS status = BCryptEncrypt(m_keyHandle, unEncryptedData.GetUnderlyingData(), (ULONG)unEncryptedData.GetLength(),
                     m_authInfoPtr, iv, ivSize, encryptedText.GetUnderlyingData(), (ULONG)encryptedText.GetLength(), &lengthWritten, m_flags);
-
+                m_encryptDecryptCalled = true;
                 if (!NT_SUCCESS(status))
                 {
                     m_failure = true;
@@ -502,7 +503,7 @@ namespace Aws
                     return CryptoBuffer();
                 }
 
-                if (encryptedData.GetLength() == 0)
+                if (encryptedData.GetLength() == 0 && m_encryptDecryptCalled)
                 {
                     return CryptoBuffer();
                 }
@@ -523,7 +524,7 @@ namespace Aws
                 //iv was set on the key itself, so we don't need to pass it here.
                 NTSTATUS status = BCryptDecrypt(m_keyHandle, encryptedData.GetUnderlyingData(), (ULONG)encryptedData.GetLength(),
                     m_authInfoPtr, iv, ivSize, decryptedText.GetUnderlyingData(), (ULONG)decryptedText.GetLength(), &lengthWritten, m_flags);
-
+                m_encryptDecryptCalled = true;
                 if (!NT_SUCCESS(status))
                 {
                     m_failure = true;
@@ -926,8 +927,17 @@ namespace Aws
                 InitKey();
             }
 
-            AES_GCM_Cipher_BCrypt::AES_GCM_Cipher_BCrypt(CryptoBuffer&& key, CryptoBuffer&& initializationVector, CryptoBuffer&& tag) :
-                    BCryptSymmetricCipher(std::move(key), std::move(initializationVector), std::move(tag)), m_macBuffer(TagLengthBytes)
+            AES_GCM_Cipher_BCrypt::AES_GCM_Cipher_BCrypt(const CryptoBuffer& key, const CryptoBuffer* aad) :
+                    BCryptSymmetricCipher(key, NonceSizeBytes), m_macBuffer(TagLengthBytes), m_aad(*aad)
+            {
+                m_tag = CryptoBuffer(TagLengthBytes);
+                InitCipher();
+                InitKey();
+            }
+
+            AES_GCM_Cipher_BCrypt::AES_GCM_Cipher_BCrypt(CryptoBuffer&& key, CryptoBuffer&& initializationVector,
+                CryptoBuffer&& tag, CryptoBuffer&& aad) :
+                    BCryptSymmetricCipher(std::move(key), std::move(initializationVector), std::move(tag)), m_macBuffer(TagLengthBytes), m_aad(std::move(aad))
             {
                 if (m_tag.GetLength() == 0)
                 {
@@ -937,8 +947,9 @@ namespace Aws
                 InitKey();
             }
 
-            AES_GCM_Cipher_BCrypt::AES_GCM_Cipher_BCrypt(const CryptoBuffer& key, const CryptoBuffer& initializationVector, const CryptoBuffer& tag) :
-                    BCryptSymmetricCipher(key, initializationVector, tag), m_macBuffer(TagLengthBytes)
+            AES_GCM_Cipher_BCrypt::AES_GCM_Cipher_BCrypt(const CryptoBuffer& key, const CryptoBuffer& initializationVector,
+                const CryptoBuffer& tag, const CryptoBuffer& aad) :
+                    BCryptSymmetricCipher(key, initializationVector, tag), m_macBuffer(TagLengthBytes), m_aad(aad)
             {
                 if (m_tag.GetLength() == 0)
                 {
@@ -989,6 +1000,7 @@ namespace Aws
 
                     m_finalBuffer = CryptoBuffer(workingBuffer.GetUnderlyingData() + workingBuffer.GetLength() - (TagLengthBytes +  offset), TagLengthBytes + offset);
                     workingBuffer = CryptoBuffer(workingBuffer.GetUnderlyingData(), workingBuffer.GetLength() - (TagLengthBytes + offset));
+                    m_encryptDecryptCalled = true;
                     return BCryptSymmetricCipher::EncryptBuffer(workingBuffer);
                 }
                 else
@@ -1026,6 +1038,7 @@ namespace Aws
                     auto offset = workingBuffer.GetLength() % TagLengthBytes;
                     m_finalBuffer = CryptoBuffer(workingBuffer.GetUnderlyingData() + workingBuffer.GetLength() - (TagLengthBytes + offset), TagLengthBytes + offset);
                     workingBuffer = CryptoBuffer(workingBuffer.GetUnderlyingData(), workingBuffer.GetLength() - (TagLengthBytes + offset));
+                    m_encryptDecryptCalled = true;
                     return BCryptSymmetricCipher::DecryptBuffer(workingBuffer);
                 }
                 else
@@ -1080,6 +1093,13 @@ namespace Aws
                 m_authInfo.pbMacContext = m_macBuffer.GetUnderlyingData();
                 m_authInfo.cbMacContext = static_cast<ULONG>(m_macBuffer.GetLength());
                 m_authInfo.cbData = 0;
+
+                if (m_aad.GetLength() > 0)
+                {
+                    m_authInfo.pbAuthData = m_aad.GetUnderlyingData();
+                    m_authInfo.cbAuthData = static_cast<ULONG>(m_aad.GetLength());
+                }
+
                 m_authInfo.dwFlags = BCRYPT_AUTH_MODE_CHAIN_CALLS_FLAG;
 
                 m_authInfoPtr = &m_authInfo;

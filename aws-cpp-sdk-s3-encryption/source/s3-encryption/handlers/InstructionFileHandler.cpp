@@ -47,6 +47,8 @@ namespace Aws
                 contentCryptoMap[CONTENT_CRYPTO_SCHEME_HEADER] = GetNameForContentCryptoScheme(contentCryptoMaterial.GetContentCryptoScheme());
                 contentCryptoMap[KEY_WRAP_ALGORITHM] = GetNameForKeyWrapAlgorithm(contentCryptoMaterial.GetKeyWrapAlgorithm());
                 contentCryptoMap[CRYPTO_TAG_LENGTH_HEADER] = StringUtils::to_string(contentCryptoMaterial.GetCryptoTagLength());
+                contentCryptoMap[CEK_CRYPTO_AES_GCM_TAG_HEADER] = HashingUtils::Base64Encode(contentCryptoMaterial.GetCEKGCMTag());
+                contentCryptoMap[CEK_IV_HEADER] = HashingUtils::Base64Encode(contentCryptoMaterial.GetCekIV());
 
                 Aws::String jsonCryptoMap = SerializeMap(contentCryptoMap);
                 std::shared_ptr<Aws::StringStream> streamPtr = Aws::MakeShared<Aws::StringStream>(ALLOCATION_TAG, jsonCryptoMap);
@@ -65,4 +67,3 @@ namespace Aws
         }//namespace Handlers
     }//namespace S3Encryption
 }//namespace Aws
-

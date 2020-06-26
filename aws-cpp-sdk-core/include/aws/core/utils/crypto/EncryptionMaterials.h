@@ -30,7 +30,8 @@ namespace Aws
             enum class CryptoErrors
             {
                 ENCRYPT_CONTENT_ENCRYPTION_KEY_FAILED,
-                DECRYPT_CONTENT_ENCRYPTION_KEY_FAILED
+                DECRYPT_CONTENT_ENCRYPTION_KEY_FAILED,
+                GENERATE_CONTENT_ENCRYPTION_KEY_FAILED
             };
 
             typedef Outcome<Aws::NoResult, Aws::Client::AWSError<CryptoErrors>> CryptoOutcome;

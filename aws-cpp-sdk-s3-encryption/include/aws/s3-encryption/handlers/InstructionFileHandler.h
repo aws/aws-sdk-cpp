@@ -30,7 +30,7 @@ namespace Aws
             {
             public:
                 /*
-                Write ContentCryptoMaterial data to an instruction file object which is passed as an arguement for this function.
+                Write ContentCryptoMaterial data to an instruction file object which is passed as an argument for this function.
                 */
                 void PopulateRequest(Aws::S3::Model::PutObjectRequest& request, const Aws::Utils::Crypto::ContentCryptoMaterial& contentCryptoMaterial) override;
 

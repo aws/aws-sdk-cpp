@@ -12,6 +12,7 @@
 * express or implied. See the License for the specific language governing
 * permissions and limitations under the License.
 */
+#define AWS_DISABLE_DEPRECATION
 
 #ifndef NO_SYMMETRIC_ENCRYPTION
 
@@ -24,6 +25,8 @@
 #include <aws/s3-encryption/materials/SimpleEncryptionMaterials.h>
 #include <aws/s3-encryption/materials/KMSEncryptionMaterials.h>
 #include <aws/kms/KMSClient.h>
+#include <aws/kms/model/GenerateDataKeyRequest.h>
+#include <aws/kms/model/DecryptRequest.h>
 #include <aws/core/auth/AWSCredentialsProvider.h>
 #include <aws/core/utils/Outcome.h>
 #include <aws/core/client/ClientConfiguration.h>
@@ -38,20 +41,26 @@ using namespace Aws::KMS::Model;
 
 static const char* AllocationTag = "EncryptionMaterialsTest";
 static Aws::String TEST_CMK_ID = "ARN:SOME_COMBINATION_OF_LETTERS_AND_NUMBERS";
+static const char* GCM_AAD = "AES/GCM/NoPadding";
+static size_t GCM_AAD_LENGTH = 17;
 
 //mock KMS client to handle encrypt and decrypt calls
 class MockKMSClient : public KMSClient
 {
 public:
     MockKMSClient(ClientConfiguration clientConfiguration = ClientConfiguration()) :
-        KMSClient(Aws::Auth::AWSCredentials("", ""), clientConfiguration), m_encryptCalledCount(0), m_decryptCalledCount(0)
+        KMSClient(Aws::Auth::AWSCredentials("", ""), clientConfiguration), m_genDataKeyCalledCount(0), m_decryptCalledCount(0)
     {
     }
 
-    EncryptOutcome Encrypt(const EncryptRequest&) const override
+    GenerateDataKeyOutcome GenerateDataKey(const GenerateDataKeyRequest& request) const override
     {
-        m_encryptCalledCount++;
-        return PopulateSuccessfulEncryptOutcome();
+        if (m_customerMasterKeyID != request.GetKeyId())
+        {
+            return GenerateDataKeyOutcome(AWSError<KMSErrors>(KMSErrors::INCORRECT_KEY, "GenerateContentEncryptionKeyFailed", "Failed to generate content encryption key(CEK)", false/*not retryable*/));
+        }
+        m_genDataKeyCalledCount++;
+        return PopulateSuccessfulGenDataKeyOutcome();
     }
     DecryptOutcome Decrypt(const DecryptRequest&) const override
     {
@@ -66,18 +75,19 @@ public:
         m_decryptedKey = decryptedKey;
     }
 
-    //member varibles need to be mutable since Encrypt and Decrypt are const functions
-    mutable size_t m_encryptCalledCount;
+    //member variables need to be mutable since Encrypt and Decrypt are const functions
+    mutable size_t m_genDataKeyCalledCount;
     mutable size_t m_decryptCalledCount;
     Aws::String m_customerMasterKeyID;
     CryptoBuffer m_encryptedKey;
     CryptoBuffer m_decryptedKey;
 
 private:
-    EncryptOutcome PopulateSuccessfulEncryptOutcome() const
+    GenerateDataKeyOutcome PopulateSuccessfulGenDataKeyOutcome() const
     {
-        EncryptOutcome outcome;
-        EncryptResult result(outcome.GetResult());
+        GenerateDataKeyOutcome outcome;
+        GenerateDataKeyResult result(outcome.GetResult());
+        result.SetPlaintext(m_decryptedKey);
         result.SetCiphertextBlob(m_encryptedKey);
         result.SetKeyId(m_customerMasterKeyID);
         return result;
@@ -102,50 +112,61 @@ namespace
 {
     //No current functions.
     class SimpleEncryptionMaterialsTest : public ::testing::Test {};
-    class KMSEncryptionMaterialsTest : public ::testing::Test {};
+    class SimpleEncryptionMaterialsWithGCMAADTest : public ::testing::Test {};
+    class KMSWithContextEncryptionMaterialsTest : public ::testing::Test {};
 
     //This is a simple encryption materials encrypt test using a generated symmetric master key with the same encryption materials.
-    TEST_F(SimpleEncryptionMaterialsTest, EncryptDecryptSuccessTest)
+    TEST_F(SimpleEncryptionMaterialsWithGCMAADTest, EncryptDecryptSuccessTest)
     {
         auto masterKey = SymmetricCipher::GenerateKey();
         auto cek = SymmetricCipher::GenerateKey();
 
-        SimpleEncryptionMaterials encryptionMaterials(masterKey);
+        SimpleEncryptionMaterialsWithGCMAAD encryptionMaterials(masterKey);
         //Crypto Scheme is arbituary at this point, can be CTR, CBC, or GCM
-        ContentCryptoMaterial contentCryptoMaterial(cek, ContentCryptoScheme::CTR);
+        ContentCryptoMaterial contentCryptoMaterial(cek, ContentCryptoScheme::GCM);
         auto contentEncryptionKey = contentCryptoMaterial.GetContentEncryptionKey();
+
+        CryptoBuffer aad((const unsigned char*)GCM_AAD, GCM_AAD_LENGTH);
+        contentCryptoMaterial.SetGCMAAD(aad);
 
         encryptionMaterials.EncryptCEK(contentCryptoMaterial);
 
         auto encryptedContentEncryptionKey = contentCryptoMaterial.GetEncryptedContentEncryptionKey();
 
         //test against key wrap cipher
-        auto cipher = CreateAES_KeyWrapImplementation(masterKey);
+        auto cipher = CreateAES_GCMImplementation(masterKey, contentCryptoMaterial.GetCekIV(), CryptoBuffer(), aad);
         auto encryptBuffer = cipher->EncryptBuffer(cek);
         auto finalizeEncryptBuffer = cipher->FinalizeEncryption();
-        ASSERT_EQ(finalizeEncryptBuffer, encryptedContentEncryptionKey);
+        CryptoBuffer encrypted({&encryptBuffer, &finalizeEncryptBuffer});
+        ASSERT_EQ(encrypted, encryptedContentEncryptionKey);
 
         //creating a new content crypto material since this is how encryption and decryption will be implemented
         ContentCryptoMaterial encryptedContentCryptoMaterial;
         encryptedContentCryptoMaterial.SetEncryptedContentEncryptionKey(encryptedContentEncryptionKey);
-        encryptedContentCryptoMaterial.SetKeyWrapAlgorithm(KeyWrapAlgorithm::AES_KEY_WRAP);
+        encryptedContentCryptoMaterial.SetKeyWrapAlgorithm(KeyWrapAlgorithm::AES_GCM);
+        encryptedContentCryptoMaterial.SetGCMAAD(aad);
+        encryptedContentCryptoMaterial.SetCekIV(contentCryptoMaterial.GetCekIV());
+        encryptedContentCryptoMaterial.SetCEKGCMTag(contentCryptoMaterial.GetCEKGCMTag());
 
         ASSERT_NE(contentEncryptionKey, encryptedContentEncryptionKey);
 
         encryptionMaterials.DecryptCEK(encryptedContentCryptoMaterial);
         auto decryptedContentEncryptionKey = encryptedContentCryptoMaterial.GetContentEncryptionKey();
 
-        cipher = CreateAES_KeyWrapImplementation(masterKey);
-        auto decryptBuffer = cipher->DecryptBuffer(finalizeEncryptBuffer);
+        cipher = CreateAES_GCMImplementation(masterKey, encryptedContentCryptoMaterial.GetCekIV(), 
+            encryptedContentCryptoMaterial.GetCEKGCMTag(), encryptedContentCryptoMaterial.GetGCMAAD());
+        auto decryptBuffer = cipher->DecryptBuffer(encrypted);
         auto finalizeDecryptBuffer = cipher->FinalizeDecryption();
-        ASSERT_EQ(finalizeDecryptBuffer, decryptedContentEncryptionKey);
+        CryptoBuffer decrypted({&decryptBuffer, &finalizeDecryptBuffer});
+
+        ASSERT_EQ(decrypted, decryptedContentEncryptionKey);
 
         ASSERT_EQ(contentEncryptionKey.GetLength(), decryptedContentEncryptionKey.GetLength());
         //Test for success by comparing decrypted key to original key
         ASSERT_EQ(decryptedContentEncryptionKey, contentEncryptionKey);
     }
 
-    //This tests Simple Encryption Materials by attempting to encrypt and decrypt with seperate
+    //This tests Simple Encryption Materials by attempting to encrypt and decrypt with separate
     //    materials which have the same master key. 
     TEST_F(SimpleEncryptionMaterialsTest, EncryptDecrypyWithDifferentMaterialsSuccess)
     {
@@ -235,7 +256,7 @@ namespace
 
     //This test simple encryption materials by setting the key wrap algorithm to KMS to see if 
     //  it will not decrypt the encrypted content encryption key.
-    TEST_F(SimpleEncryptionMaterialsTest, EncryptDecryptWithWrongKeyWrapAlgorithm)
+    TEST_F(SimpleEncryptionMaterialsWithGCMAADTest, EncryptDecryptWithWrongKeyWrapAlgorithm)
     {
         auto masterKey = SymmetricCipher::GenerateKey();
         auto cek = SymmetricCipher::GenerateKey();
@@ -258,7 +279,7 @@ namespace
         //creating a new content crypto material since this is how encryption and decryption will be implemented
         ContentCryptoMaterial encryptedContentCryptoMaterial;
         encryptedContentCryptoMaterial.SetEncryptedContentEncryptionKey(encryptedContentEncryptionKey);
-        encryptedContentCryptoMaterial.SetKeyWrapAlgorithm(KeyWrapAlgorithm::KMS);
+        encryptedContentCryptoMaterial.SetKeyWrapAlgorithm(KeyWrapAlgorithm::KMS_CONTEXT);
 
         ASSERT_NE(contentEncryptionKey, encryptedContentEncryptionKey);
 
@@ -271,13 +292,13 @@ namespace
 
     //This tests KMS Encryption Materials Encrypt CEK by using a KMS Client with an invalid customer
     //  master key which will cause an error and the content encryption key will not be encrypted.
-    TEST_F(KMSEncryptionMaterialsTest, TestEncryptCEKInvalidCmkID)
+    TEST_F(KMSWithContextEncryptionMaterialsTest, TestEncryptCEKInvalidCmkID)
     {
         Aws::String testCmkID = "someRandomCustomerMasterKeyID";
         auto myClient = Aws::MakeShared<MockKMSClient>(AllocationTag, ClientConfiguration());
-        KMSEncryptionMaterials encryptionMaterials(testCmkID, myClient);
+        KMSWithContextEncryptionMaterials encryptionMaterials(testCmkID, myClient);
 
-        ContentCryptoMaterial contentCryptoMaterial(ContentCryptoScheme::CBC);
+        ContentCryptoMaterial contentCryptoMaterial(ContentCryptoScheme::GCM);
         auto contentEncryptionKey = contentCryptoMaterial.GetContentEncryptionKey();
 
         encryptionMaterials.EncryptCEK(contentCryptoMaterial);
@@ -291,44 +312,43 @@ namespace
 
     //This tests KMS Encryption Materials Encrypt CEK by using a mock KMS Client to count encrypt and decrypt calls.
     // This also test for a successful outcome for encrypt and decrypt calls.
-    TEST_F(KMSEncryptionMaterialsTest, TestMockEncryptDecryptCEK)
+    TEST_F(KMSWithContextEncryptionMaterialsTest, TestMockEncryptDecryptCEK)
     {
         auto myClient = Aws::MakeShared<MockKMSClient>(AllocationTag, ClientConfiguration());
         InitMockKMSClient(myClient);
 
-        KMSEncryptionMaterials encryptionMaterials(TEST_CMK_ID, myClient);
+        KMSWithContextEncryptionMaterials encryptionMaterials(TEST_CMK_ID, myClient);
 
-        ContentCryptoMaterial contentCryptoMaterial(ContentCryptoScheme::CBC);
+        ContentCryptoMaterial contentCryptoMaterial(ContentCryptoScheme::GCM);
         auto contentEncryptionKey = contentCryptoMaterial.GetContentEncryptionKey();
         encryptionMaterials.EncryptCEK(contentCryptoMaterial);
         auto encryptedContentKey = contentCryptoMaterial.GetEncryptedContentEncryptionKey();
         ASSERT_NE(contentEncryptionKey, encryptedContentKey);
 
         //Use separate crypto material for decryption but add fields to test
-        ContentCryptoMaterial encryptedContentCryptoMaterial;
+        ContentCryptoMaterial encryptedContentCryptoMaterial(ContentCryptoScheme::GCM);
         encryptedContentCryptoMaterial.SetMaterialsDescription(contentCryptoMaterial.GetMaterialsDescription());
-        encryptedContentCryptoMaterial.SetKeyWrapAlgorithm(KeyWrapAlgorithm::KMS);
+        encryptedContentCryptoMaterial.SetKeyWrapAlgorithm(KeyWrapAlgorithm::KMS_CONTEXT);
         encryptedContentCryptoMaterial.SetEncryptedContentEncryptionKey(encryptedContentKey);
 
         encryptionMaterials.DecryptCEK(encryptedContentCryptoMaterial);
         auto decryptedContentKey = contentCryptoMaterial.GetContentEncryptionKey();
         ASSERT_NE(encryptedContentKey, decryptedContentKey);
 
-        ASSERT_EQ(myClient->m_encryptCalledCount, 1u);
+        ASSERT_EQ(myClient->m_genDataKeyCalledCount, 1u);
         ASSERT_EQ(myClient->m_decryptCalledCount, 1u);
         ASSERT_NE(contentEncryptionKey, encryptedContentKey);
         ASSERT_NE(encryptedContentKey, decryptedContentKey);
     }
 
     //This tests KMS Encryption Materials Decrypt CEK by using a mock KMS Client with an invalid customer master key.
-    TEST_F(KMSEncryptionMaterialsTest, TestInvalidKeyWrapAlgorithmDecryptCEK)
+    TEST_F(KMSWithContextEncryptionMaterialsTest, TestInvalidKeyWrapAlgorithmDecryptCEK)
     {
         auto myClient = Aws::MakeShared<MockKMSClient>(AllocationTag, ClientConfiguration());
-        KMSEncryptionMaterials encryptionMaterials(TEST_CMK_ID, myClient);
+        KMSWithContextEncryptionMaterials encryptionMaterials(TEST_CMK_ID, myClient);
 
         ContentCryptoMaterial contentCryptoMaterial;
         contentCryptoMaterial.SetKeyWrapAlgorithm(KeyWrapAlgorithm::AES_KEY_WRAP);
-        contentCryptoMaterial.AddMaterialsDescription(cmkID_Identifier, TEST_CMK_ID);
         //randomly generate an encrypted content encryption key
         contentCryptoMaterial.SetEncryptedContentEncryptionKey(SymmetricCipher::GenerateKey());
         auto encryptedContentEncryptionKey = contentCryptoMaterial.GetEncryptedContentEncryptionKey();
@@ -342,19 +362,19 @@ namespace
         ASSERT_EQ(encryptedContentEncryptionKey, contentCryptoMaterial.GetEncryptedContentEncryptionKey());
         //Decrypt returns early, so counter not incremented
         ASSERT_EQ(myClient->m_decryptCalledCount, 0u);
-        ASSERT_EQ(myClient->m_encryptCalledCount, 0u);
+        ASSERT_EQ(myClient->m_genDataKeyCalledCount, 0u);
     }
 
     //This tests KMS Encryption Materials Decrypt CEK by using a mock KMS Client with an invalid materials description.
-    TEST_F(KMSEncryptionMaterialsTest, TestInvalidMaterialsDescriptionDecryptCEK)
+    TEST_F(KMSWithContextEncryptionMaterialsTest, TestInvalidMaterialsDescriptionDecryptCEK)
     {
         auto myClient = Aws::MakeShared<MockKMSClient>(AllocationTag, ClientConfiguration());
-        KMSEncryptionMaterials encryptionMaterials(TEST_CMK_ID, myClient);
+        KMSWithContextEncryptionMaterials encryptionMaterials(TEST_CMK_ID, myClient);
 
         ContentCryptoMaterial contentCryptoMaterial;
-        contentCryptoMaterial.SetKeyWrapAlgorithm(KeyWrapAlgorithm::KMS);
-        //Add a blank materials description
-        contentCryptoMaterial.AddMaterialsDescription(cmkID_Identifier, "");
+        contentCryptoMaterial.SetKeyWrapAlgorithm(KeyWrapAlgorithm::KMS_CONTEXT);
+        contentCryptoMaterial.SetContentCryptoScheme(ContentCryptoScheme::GCM);
+        contentCryptoMaterial.AddMaterialsDescription(kmsEncryptionContextKey, "");
         //randomly generate an encrypted content encryption key
         contentCryptoMaterial.SetEncryptedContentEncryptionKey(SymmetricCipher::GenerateKey());
         auto encryptedContentEncryptionKey = contentCryptoMaterial.GetEncryptedContentEncryptionKey();
@@ -368,19 +388,19 @@ namespace
         ASSERT_EQ(encryptedContentEncryptionKey, contentCryptoMaterial.GetEncryptedContentEncryptionKey());
         //Decrypt returns early, so counter not incremented
         ASSERT_EQ(myClient->m_decryptCalledCount, 0u);
-        ASSERT_EQ(myClient->m_encryptCalledCount, 0u);
+        ASSERT_EQ(myClient->m_genDataKeyCalledCount, 0u);
     }
 
     //This tests KMS Encryption Materials Decrypt CEK by using a mock KMS Client with a missing encrypted key.
-    TEST_F(KMSEncryptionMaterialsTest, TestMissingEncryptedContentKeyDecryptCEK)
+    TEST_F(KMSWithContextEncryptionMaterialsTest, TestMissingEncryptedContentKeyDecryptCEK)
     {
         auto myClient = Aws::MakeShared<MockKMSClient>(AllocationTag, ClientConfiguration());
-        KMSEncryptionMaterials encryptionMaterials(TEST_CMK_ID, myClient);
+        KMSWithContextEncryptionMaterials encryptionMaterials(TEST_CMK_ID, myClient);
 
         ContentCryptoMaterial contentCryptoMaterial;
         //Have a crypto material with no encrypted key
-        contentCryptoMaterial.SetKeyWrapAlgorithm(KeyWrapAlgorithm::KMS);
-        contentCryptoMaterial.AddMaterialsDescription(cmkID_Identifier, TEST_CMK_ID);
+        contentCryptoMaterial.SetKeyWrapAlgorithm(KeyWrapAlgorithm::KMS_CONTEXT);
+        contentCryptoMaterial.SetContentCryptoScheme(ContentCryptoScheme::GCM);
         auto encryptedContentEncryptionKey = contentCryptoMaterial.GetEncryptedContentEncryptionKey();
 
         encryptionMaterials.DecryptCEK(contentCryptoMaterial);
@@ -391,7 +411,7 @@ namespace
         ASSERT_EQ(encryptedContentEncryptionKey, contentCryptoMaterial.GetEncryptedContentEncryptionKey());
         //Decrypt returns early, so counter not incremented
         ASSERT_EQ(myClient->m_decryptCalledCount, 0u);
-        ASSERT_EQ(myClient->m_encryptCalledCount, 0u);
+        ASSERT_EQ(myClient->m_genDataKeyCalledCount, 0u);
     }
 }
 

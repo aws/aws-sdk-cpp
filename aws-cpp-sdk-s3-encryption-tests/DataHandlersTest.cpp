@@ -32,6 +32,8 @@
 #include <aws/s3/model/PutObjectResult.h>
 
 static const char* const INSTRUCTION_HEADER_VALUE = "default instruction file header";
+static const char* GCM_AAD = "AES/GCM/NoPadding";
+static size_t GCM_AAD_LENGTH = 17;
 static size_t CRYPTO_TAG_LENGTH = 16;
 static size_t IV_SIZE = 12;
 
@@ -98,9 +100,12 @@ namespace
         {
             contentCryptoMaterial.SetEncryptedContentEncryptionKey(SymmetricCipher::GenerateKey());
             contentCryptoMaterial.SetIV(SymmetricCipher::GenerateIV(IV_SIZE));
+            contentCryptoMaterial.SetCekIV(SymmetricCipher::GenerateIV(IV_SIZE));
+            contentCryptoMaterial.SetGCMAAD(CryptoBuffer((const unsigned char*)GCM_AAD, GCM_AAD_LENGTH));
+            contentCryptoMaterial.SetCEKGCMTag(SymmetricCipher::GenerateIV(CRYPTO_TAG_LENGTH));
             contentCryptoMaterial.SetContentCryptoScheme(ContentCryptoScheme::GCM);
             contentCryptoMaterial.SetCryptoTagLength(CRYPTO_TAG_LENGTH);
-            contentCryptoMaterial.SetKeyWrapAlgorithm(KeyWrapAlgorithm::AES_KEY_WRAP);
+            contentCryptoMaterial.SetKeyWrapAlgorithm(KeyWrapAlgorithm::AES_GCM);
             Aws::Map<Aws::String, Aws::String> testMap;
             testMap[TEST_KEY] = TEST_VALUE;
             contentCryptoMaterial.SetMaterialsDescription(testMap);
@@ -113,7 +118,9 @@ namespace
             metadata[IV_HEADER] = HashingUtils::Base64Encode(SymmetricCipher::GenerateIV(IV_SIZE));
             metadata[CONTENT_CRYPTO_SCHEME_HEADER] = ContentCryptoSchemeMapper::GetNameForContentCryptoScheme(ContentCryptoScheme::GCM);
             metadata[CRYPTO_TAG_LENGTH_HEADER] = StringUtils::to_string(CRYPTO_TAG_LENGTH);
-            metadata[KEY_WRAP_ALGORITHM] = KeyWrapAlgorithmMapper::GetNameForKeyWrapAlgorithm(KeyWrapAlgorithm::AES_KEY_WRAP);
+            metadata[KEY_WRAP_ALGORITHM] = KeyWrapAlgorithmMapper::GetNameForKeyWrapAlgorithm(KeyWrapAlgorithm::AES_GCM);
+            metadata[CEK_IV_HEADER] = HashingUtils::Base64Encode(SymmetricCipher::GenerateIV(IV_SIZE));
+            metadata[CEK_CRYPTO_AES_GCM_TAG_HEADER] = HashingUtils::Base64Encode(SymmetricCipher::GenerateIV(CRYPTO_TAG_LENGTH));
             metadata[MATERIALS_DESCRIPTION_HEADER] = "";
             result.SetMetadata(metadata);
         }
@@ -134,6 +141,12 @@ namespace
 
         ASSERT_NE(metadata.find(IV_HEADER), metadata.end());
         ASSERT_EQ(HashingUtils::Base64Decode(metadata[IV_HEADER]), contentCryptoMaterial.GetIV());
+
+        ASSERT_NE(metadata.find(CEK_IV_HEADER), metadata.end());
+        ASSERT_EQ(HashingUtils::Base64Decode(metadata[CEK_IV_HEADER]), contentCryptoMaterial.GetCekIV());
+
+        ASSERT_NE(metadata.find(CEK_CRYPTO_AES_GCM_TAG_HEADER), metadata.end());
+        ASSERT_EQ(HashingUtils::Base64Decode(metadata[CEK_CRYPTO_AES_GCM_TAG_HEADER]), contentCryptoMaterial.GetCEKGCMTag());
 
         ASSERT_NE(metadata.find(CONTENT_CRYPTO_SCHEME_HEADER), metadata.end());
         ASSERT_STREQ(metadata[CONTENT_CRYPTO_SCHEME_HEADER].c_str(), ContentCryptoSchemeMapper::GetNameForContentCryptoScheme(contentCryptoMaterial.GetContentCryptoScheme()).c_str());
@@ -156,9 +169,12 @@ namespace
         ASSERT_EQ(contentCryptoMaterial.GetCryptoTagLength(), readContentCryptoMaterial.GetCryptoTagLength());
         ASSERT_EQ(contentCryptoMaterial.GetKeyWrapAlgorithm(), readContentCryptoMaterial.GetKeyWrapAlgorithm());
         ASSERT_EQ(contentCryptoMaterial.GetMaterialsDescription(), readContentCryptoMaterial.GetMaterialsDescription());
+        ASSERT_EQ(contentCryptoMaterial.GetCekIV(), readContentCryptoMaterial.GetCekIV());
+        ASSERT_EQ(contentCryptoMaterial.GetCEKGCMTag(), readContentCryptoMaterial.GetCEKGCMTag());
+        ASSERT_EQ(contentCryptoMaterial.GetGCMAAD(), readContentCryptoMaterial.GetGCMAAD());
     }
 
-    //This tests the read metadata functionaliy of the handler without a mock client.
+    //This tests the read metadata functionality of the handler without a mock client.
     TEST_F(HandlerTest, ReadMetadataTest)
     {
         GetObjectResult result;
@@ -171,23 +187,29 @@ namespace
         ASSERT_NE(metadata.find(CONTENT_KEY_HEADER), metadata.end());
         ASSERT_EQ(HashingUtils::Base64Decode(metadata[CONTENT_KEY_HEADER]), readContentCryptoMaterial.GetEncryptedContentEncryptionKey());
 
-        ASSERT_NE(metadata.find(CONTENT_KEY_HEADER), metadata.end());
+        ASSERT_NE(metadata.find(IV_HEADER), metadata.end());
         ASSERT_EQ(HashingUtils::Base64Decode(metadata[IV_HEADER]), readContentCryptoMaterial.GetIV());
 
-        ASSERT_NE(metadata.find(CONTENT_KEY_HEADER), metadata.end());
+        ASSERT_NE(metadata.find(CONTENT_CRYPTO_SCHEME_HEADER), metadata.end());
         ASSERT_STREQ(metadata[CONTENT_CRYPTO_SCHEME_HEADER].c_str(), ContentCryptoSchemeMapper::GetNameForContentCryptoScheme(readContentCryptoMaterial.GetContentCryptoScheme()).c_str());
 
-        ASSERT_NE(metadata.find(CONTENT_KEY_HEADER), metadata.end());
+        ASSERT_NE(metadata.find(CRYPTO_TAG_LENGTH_HEADER), metadata.end());
         ASSERT_STREQ(metadata[CRYPTO_TAG_LENGTH_HEADER].c_str(), StringUtils::to_string(readContentCryptoMaterial.GetCryptoTagLength()).c_str());
 
-        ASSERT_NE(metadata.find(CONTENT_KEY_HEADER), metadata.end());
+        ASSERT_NE(metadata.find(KEY_WRAP_ALGORITHM), metadata.end());
         ASSERT_STREQ(metadata[KEY_WRAP_ALGORITHM].c_str(), KeyWrapAlgorithmMapper::GetNameForKeyWrapAlgorithm(readContentCryptoMaterial.GetKeyWrapAlgorithm()).c_str());
 
-        ASSERT_NE(metadata.find(CONTENT_KEY_HEADER), metadata.end());
+        ASSERT_NE(metadata.find(MATERIALS_DESCRIPTION_HEADER), metadata.end());
         ASSERT_EQ(handler.DeserializeMap(metadata[MATERIALS_DESCRIPTION_HEADER]), readContentCryptoMaterial.GetMaterialsDescription());
+
+        ASSERT_NE(metadata.find(CEK_IV_HEADER), metadata.end());
+        ASSERT_EQ(HashingUtils::Base64Decode(metadata[CEK_IV_HEADER]), readContentCryptoMaterial.GetCekIV());
+
+        ASSERT_NE(metadata.find(CEK_CRYPTO_AES_GCM_TAG_HEADER), metadata.end());
+        ASSERT_EQ(HashingUtils::Base64Decode(metadata[CEK_CRYPTO_AES_GCM_TAG_HEADER]), readContentCryptoMaterial.GetCEKGCMTag());
     }
 
-    //This tests the write metadata functionaliy of the handler without a mock client.
+    //This tests the write metadata functionality of the handler without a mock client.
     TEST_F(HandlerTest, WriteMetadataTest)
     {
         PutObjectRequest request;
@@ -215,6 +237,12 @@ namespace
 
         ASSERT_NE(metadata.find(MATERIALS_DESCRIPTION_HEADER), metadata.end());
         ASSERT_STREQ(metadata[MATERIALS_DESCRIPTION_HEADER].c_str(), handler.SerializeMap(contentCryptoMaterial.GetMaterialsDescription()).c_str());
+
+        ASSERT_NE(metadata.find(CEK_IV_HEADER), metadata.end());
+        ASSERT_EQ(HashingUtils::Base64Decode(metadata[CEK_IV_HEADER]), contentCryptoMaterial.GetCekIV());
+
+        ASSERT_NE(metadata.find(CEK_CRYPTO_AES_GCM_TAG_HEADER), metadata.end());
+        ASSERT_EQ(HashingUtils::Base64Decode(metadata[CEK_CRYPTO_AES_GCM_TAG_HEADER]), contentCryptoMaterial.GetCEKGCMTag());
     }
 
     //This test the metadata read/write functionality using a mock S3 Client which stores the metadata on a put object request and 
@@ -253,11 +281,15 @@ namespace
         ASSERT_EQ(contentCryptoMaterial.GetCryptoTagLength(), readContentCryptoMaterial.GetCryptoTagLength());
         ASSERT_EQ(contentCryptoMaterial.GetKeyWrapAlgorithm(), readContentCryptoMaterial.GetKeyWrapAlgorithm());
         ASSERT_EQ(contentCryptoMaterial.GetMaterialsDescription(), readContentCryptoMaterial.GetMaterialsDescription());
+        ASSERT_EQ(contentCryptoMaterial.GetCekIV(), readContentCryptoMaterial.GetCekIV());
+        ASSERT_EQ(contentCryptoMaterial.GetCEKGCMTag(), readContentCryptoMaterial.GetCEKGCMTag());
+        ASSERT_EQ(contentCryptoMaterial.GetGCMAAD(), readContentCryptoMaterial.GetGCMAAD());
+
         ASSERT_EQ(myClient->m_getObjectCalled, 1u);
         ASSERT_EQ(myClient->m_putObjectCalled, 1u);
     }
 
-    //This tests the instruciton file functionality of writing content crypto material to an instruction file object. 
+    //This tests the instruction file functionality of writing content crypto material to an instruction file object. 
     TEST_F(HandlerTest, WriteInstructionFileTest)
     {
         PutObjectRequest request;
@@ -288,6 +320,12 @@ namespace
 
         ASSERT_NE(cryptoContentMap.find(MATERIALS_DESCRIPTION_HEADER), cryptoContentMap.end());
         ASSERT_STREQ(cryptoContentMap[MATERIALS_DESCRIPTION_HEADER].c_str(), handler.SerializeMap(contentCryptoMaterial.GetMaterialsDescription()).c_str());
+
+        ASSERT_NE(cryptoContentMap.find(CEK_IV_HEADER), cryptoContentMap.end());
+        ASSERT_EQ(HashingUtils::Base64Decode(cryptoContentMap[CEK_IV_HEADER]), contentCryptoMaterial.GetCekIV());
+
+        ASSERT_NE(cryptoContentMap.find(CEK_CRYPTO_AES_GCM_TAG_HEADER), cryptoContentMap.end());
+        ASSERT_EQ(HashingUtils::Base64Decode(cryptoContentMap[CEK_CRYPTO_AES_GCM_TAG_HEADER]), contentCryptoMaterial.GetCEKGCMTag());
     }
 
     //This tests the instruction file read/write functionality by using a mock S3 client.
@@ -329,6 +367,9 @@ namespace
         ASSERT_EQ(contentCryptoMaterial.GetCryptoTagLength(), readContentCryptoMaterial.GetCryptoTagLength());
         ASSERT_EQ(contentCryptoMaterial.GetKeyWrapAlgorithm(), readContentCryptoMaterial.GetKeyWrapAlgorithm());
         ASSERT_EQ(contentCryptoMaterial.GetMaterialsDescription(), readContentCryptoMaterial.GetMaterialsDescription());
+        ASSERT_EQ(contentCryptoMaterial.GetCekIV(), readContentCryptoMaterial.GetCekIV());
+        ASSERT_EQ(contentCryptoMaterial.GetCEKGCMTag(), readContentCryptoMaterial.GetCEKGCMTag());
+        ASSERT_EQ(contentCryptoMaterial.GetGCMAAD(), readContentCryptoMaterial.GetGCMAAD());
         ASSERT_EQ(myClient->m_getObjectCalled, 1u);
         ASSERT_EQ(myClient->m_putObjectCalled, 1u);
     }

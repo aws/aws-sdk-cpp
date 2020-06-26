@@ -18,6 +18,7 @@
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/utils/StringUtils.h>
 
+using namespace Aws::Utils;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils::Crypto;
 
@@ -67,6 +68,8 @@ namespace Aws
                 auto schemeIterator = metadata.find(CONTENT_CRYPTO_SCHEME_HEADER);
                 auto keyWrapIterator = metadata.find(KEY_WRAP_ALGORITHM);
                 auto cryptoTagIterator = metadata.find(CRYPTO_TAG_LENGTH_HEADER);
+                auto cekAESGCMTagIterator = metadata.find(CEK_CRYPTO_AES_GCM_TAG_HEADER);
+                auto cekIVIterator = metadata.find(CEK_IV_HEADER);
 
                 if (keyIterator == metadata.end() || ivIterator == metadata.end() ||
                     materialsDescriptionIterator == metadata.end() || schemeIterator == metadata.end() ||
@@ -84,6 +87,15 @@ namespace Aws
                 Aws::String schemeAsString = schemeIterator->second;
                 contentCryptoMaterial.SetContentCryptoScheme(ContentCryptoSchemeMapper::GetContentCryptoSchemeForName(schemeAsString));
 
+                // value of x-amz-cek-alg is used as AES/GCM AAD info for CEK encryption/decryption
+                contentCryptoMaterial.SetGCMAAD(CryptoBuffer((const unsigned char*)schemeAsString.c_str(), schemeAsString.size()));
+
+                // value of x-amz-cek-iv is used as AES/GCM IV info for CEK encryption/decryption
+                if (cekIVIterator != metadata.end())
+                {
+                    contentCryptoMaterial.SetCekIV(Aws::Utils::HashingUtils::Base64Decode(cekIVIterator->second));
+                }
+
                 Aws::String keyWrapAlgorithmAsString = keyWrapIterator->second;
                 contentCryptoMaterial.SetKeyWrapAlgorithm(KeyWrapAlgorithmMapper::GetKeyWrapAlgorithmForName(keyWrapAlgorithmAsString));
                 if (cryptoTagIterator != metadata.end())
@@ -94,6 +106,17 @@ namespace Aws
                 {
                     contentCryptoMaterial.SetCryptoTagLength(0u);
                 }
+
+                // needed when the CEK is encrypted using AES-GCM
+                if (cekAESGCMTagIterator != metadata.end())
+                {
+                    contentCryptoMaterial.SetCEKGCMTag(Aws::Utils::HashingUtils::Base64Decode(cekAESGCMTagIterator->second));
+                }
+                else
+                {
+                    contentCryptoMaterial.SetCEKGCMTag(CryptoBuffer());                    
+                }
+
                 return contentCryptoMaterial;
             }
 

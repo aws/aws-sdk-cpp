@@ -173,10 +173,57 @@ namespace Aws
                     m_contentCryptoScheme = contentCryptoScheme;
                 }
 
+                /**
+                * Sets the underlying AAD for GCM if needed.
+                */
+                inline void SetGCMAAD(const Aws::Utils::CryptoBuffer& aad)
+                {
+                    m_gcmAAD = aad;
+                }
+                /**
+                * Gets the underlying aad for GCM if needed.
+                */
+                inline const Aws::Utils::CryptoBuffer& GetGCMAAD() const
+                {
+                    return m_gcmAAD;
+                }
+
+                /**
+                * Sets the underlying tag for decrypting CEK if it's GCM encrypted.
+                */
+                inline void SetCEKGCMTag(const Aws::Utils::CryptoBuffer& tag)
+                {
+                    m_cekGCMTag = tag;
+                }
+                /**
+                * Gets the underlying aad for GCM if needed.
+                */
+                inline const Aws::Utils::CryptoBuffer& GetCEKGCMTag() const
+                {
+                    return m_cekGCMTag;
+                }
+
+                /**
+                * Sets the underlying initialization vector for CEK if it's GCM encrypted.
+                */
+                inline void SetCekIV(const Aws::Utils::CryptoBuffer& iv)
+                {
+                    m_cekIV = iv;
+                }
+                /**
+                * Gets the underlying CEK initialization vector.
+                */
+                inline const Aws::Utils::CryptoBuffer& GetCekIV() const
+                {
+                    return m_cekIV;
+                }
             private:
                 Aws::Utils::CryptoBuffer m_contentEncryptionKey;
                 Aws::Utils::CryptoBuffer m_encryptedContentEncryptionKey;
                 Aws::Utils::CryptoBuffer m_iv;
+                Aws::Utils::CryptoBuffer m_cekIV;
+                Aws::Utils::CryptoBuffer m_gcmAAD;
+                Aws::Utils::CryptoBuffer m_cekGCMTag;
                 size_t m_cryptoTagLength;
                 Aws::Map<Aws::String, Aws::String> m_materialsDescription;
                 KeyWrapAlgorithm m_keyWrapAlgorithm;

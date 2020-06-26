@@ -270,4 +270,3 @@ namespace Aws
      */
     AWS_CORE_API void ShutdownAPI(const SDKOptions& options);
 }
-

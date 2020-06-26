@@ -30,38 +30,49 @@ namespace Aws
         {
             static const char* const ALLOCATION_TAG = "SimpleEncryptionMaterials";
 
-            SimpleEncryptionMaterials::SimpleEncryptionMaterials(const Aws::Utils::CryptoBuffer & symmetricKey) :
+            SimpleEncryptionMaterialsBase::SimpleEncryptionMaterialsBase(const Aws::Utils::CryptoBuffer& symmetricKey) :
                 m_symmetricMasterKey(symmetricKey)
             {
             }
 
-            CryptoOutcome SimpleEncryptionMaterials::EncryptCEK(ContentCryptoMaterial & contentCryptoMaterial)
+            std::shared_ptr<SymmetricCipher> SimpleEncryptionMaterialsBase::CreateCipher(ContentCryptoMaterial&, bool) const 
             {
-                auto cipher = CreateAES_KeyWrapImplementation(m_symmetricMasterKey);
+                return CreateAES_KeyWrapImplementation(m_symmetricMasterKey);
+            }
+
+            KeyWrapAlgorithm SimpleEncryptionMaterialsBase::GetKeyWrapAlgorithm() const
+            {
+                return KeyWrapAlgorithm::AES_KEY_WRAP;
+            }
+
+            CryptoOutcome SimpleEncryptionMaterialsBase::EncryptCEK(ContentCryptoMaterial& contentCryptoMaterial)
+            {
+                auto cipher = CreateCipher(contentCryptoMaterial, true/*encrypt*/);
                 if (cipher == nullptr)
                 {
                     AWS_LOGSTREAM_ERROR(ALLOCATION_TAG, "The cipher was not initialized correctly during encryption.");
                     return CryptoOutcome(AWSError<CryptoErrors>(CryptoErrors::ENCRYPT_CONTENT_ENCRYPTION_KEY_FAILED, "EncryptContentEncryptionKeyFailed", "Failed to encrypt content encryption key(CEK)", false/*not retryable*/));
                 }
-                contentCryptoMaterial.SetKeyWrapAlgorithm(KeyWrapAlgorithm::AES_KEY_WRAP);
+                contentCryptoMaterial.SetKeyWrapAlgorithm(GetKeyWrapAlgorithm());
                 const CryptoBuffer& contentEncryptionKey = contentCryptoMaterial.GetContentEncryptionKey();
                 CryptoBuffer&& encryptResult = cipher->EncryptBuffer(contentEncryptionKey);
                 CryptoBuffer&& encryptFinalizeResult = cipher->FinalizeEncryption();
                 contentCryptoMaterial.SetEncryptedContentEncryptionKey(CryptoBuffer({ &encryptResult, &encryptFinalizeResult }));
+                contentCryptoMaterial.SetCEKGCMTag(cipher->GetTag());
                 return CryptoOutcome(Aws::NoResult());
             }
 
-            CryptoOutcome SimpleEncryptionMaterials::DecryptCEK(ContentCryptoMaterial & contentCryptoMaterial)
+            CryptoOutcome SimpleEncryptionMaterialsBase::DecryptCEK(ContentCryptoMaterial& contentCryptoMaterial)
             {
                 auto errorOutcome = CryptoOutcome(AWSError<CryptoErrors>(CryptoErrors::DECRYPT_CONTENT_ENCRYPTION_KEY_FAILED, "DecryptContentEncryptionKeyFailed", "Failed to decrypt content encryption key(CEK)", false/*not retryable*/));
 
-                if (contentCryptoMaterial.GetKeyWrapAlgorithm() != KeyWrapAlgorithm::AES_KEY_WRAP)
+                if (contentCryptoMaterial.GetKeyWrapAlgorithm() != GetKeyWrapAlgorithm())
                 {
-                    AWS_LOGSTREAM_ERROR(ALLOCATION_TAG, "The KeyWrapAlgorithm is not AES_Key_Wrap during decryption, therefore the"
+                    AWS_LOGSTREAM_ERROR(ALLOCATION_TAG, "The KeyWrapAlgorithm set in contentCryptoMaterial is not mached to the concrete key wrap algorithem during decryption, therefore the"
                         << " current encryption materials can not decrypt the content encryption key.");
                     return errorOutcome;
                 }
-                auto cipher = CreateAES_KeyWrapImplementation(m_symmetricMasterKey);
+                auto cipher = CreateCipher(contentCryptoMaterial, false/*decrypt*/);
                 if (cipher == nullptr)
                 {
                     AWS_LOGSTREAM_ERROR(ALLOCATION_TAG, "The cipher was not initialized correctly during decryption.");
@@ -78,6 +89,25 @@ namespace Aws
                     return errorOutcome;
                 }
                 return CryptoOutcome(Aws::NoResult());
+            }
+
+            std::shared_ptr<SymmetricCipher> SimpleEncryptionMaterialsWithGCMAAD::CreateCipher(ContentCryptoMaterial& contentCryptoMaterial, bool encrypt) const 
+            {
+                if (encrypt)
+                {
+                    auto cipher = CreateAES_GCMImplementation(m_symmetricMasterKey, &(contentCryptoMaterial.GetGCMAAD()));
+                    contentCryptoMaterial.SetCekIV(cipher->GetIV());
+                    return cipher;
+                }
+                else
+                {
+                    return CreateAES_GCMImplementation(m_symmetricMasterKey, contentCryptoMaterial.GetCekIV(), contentCryptoMaterial.GetCEKGCMTag(), contentCryptoMaterial.GetGCMAAD());
+                }
+            }
+
+            KeyWrapAlgorithm SimpleEncryptionMaterialsWithGCMAAD::GetKeyWrapAlgorithm() const
+            {
+                return KeyWrapAlgorithm::AES_GCM;
             }
 
         } //namespace Materials

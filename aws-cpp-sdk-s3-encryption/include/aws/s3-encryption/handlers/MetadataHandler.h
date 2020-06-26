@@ -41,7 +41,7 @@ namespace Aws
                 Aws::Utils::Crypto::ContentCryptoMaterial ReadContentCryptoMaterial(Aws::S3::Model::GetObjectResult& result) override;
 
                 /*
-                * Read the metadata of a HeadObeject result and store into a ContentCryptoMaterialObject.
+                * Read the metadata of a HeadObject result and store into a ContentCryptoMaterialObject.
                 */
                 Aws::Utils::Crypto::ContentCryptoMaterial ReadContentCryptoMaterial(const Aws::S3::Model::HeadObjectResult& result);
             };

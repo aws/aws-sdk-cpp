@@ -16,6 +16,9 @@
 #include <aws/core/utils/crypto/EncryptionMaterials.h>
 #include <aws/s3-encryption/s3Encryption_EXPORTS.h>
 
+#if defined(_MSC_VER) && (_MSC_VER <= 1900 )
+#pragma warning (disable : 4996)
+#endif
 namespace Aws
 {
     namespace S3Encryption
@@ -27,13 +30,13 @@ namespace Aws
             * content encryption keys. This class will use a user provided symmetric
             * master key to encrypt/decrypt keys with AES Key Wrap.
             */
-            class AWS_S3ENCRYPTION_API SimpleEncryptionMaterials : public Aws::Utils::Crypto::EncryptionMaterials
+            class AWS_S3ENCRYPTION_API SimpleEncryptionMaterialsBase : public Aws::Utils::Crypto::EncryptionMaterials
             {
             public:
                 /*
                 Initialize with symmetric key.
                 */
-                SimpleEncryptionMaterials(const Aws::Utils::CryptoBuffer& symmetricKey);
+                SimpleEncryptionMaterialsBase(const Aws::Utils::CryptoBuffer& symmetricKey);
 
                 /*
                 * This will encrypt the cek within the Content Crypto material and KeyWrapAlgorithm within the Content Crypto Material.
@@ -47,9 +50,33 @@ namespace Aws
                 */
                 Aws::Utils::Crypto::CryptoOutcome DecryptCEK(Aws::Utils::Crypto::ContentCryptoMaterial& contentCryptoMaterial) override;
 
-            private:
+            protected:
+                virtual std::shared_ptr<Aws::Utils::Crypto::SymmetricCipher> CreateCipher(Aws::Utils::Crypto::ContentCryptoMaterial&, bool) const;
+
+                virtual Aws::Utils::Crypto::KeyWrapAlgorithm GetKeyWrapAlgorithm() const;
+
                 Aws::Utils::CryptoBuffer m_symmetricMasterKey;
             };
+
+            class AWS_DEPRECATED("This class has been deprecated due to security reason") AWS_S3ENCRYPTION_API SimpleEncryptionMaterials : public SimpleEncryptionMaterialsBase
+            {
+            public:
+                SimpleEncryptionMaterials(const Aws::Utils::CryptoBuffer& symmetricKey) 
+                    : SimpleEncryptionMaterialsBase(symmetricKey) {}
+            };
+
+            class AWS_S3ENCRYPTION_API SimpleEncryptionMaterialsWithGCMAAD : public SimpleEncryptionMaterialsBase
+            {
+            public:
+                SimpleEncryptionMaterialsWithGCMAAD(const Aws::Utils::CryptoBuffer& symmetricKey) 
+                    : SimpleEncryptionMaterialsBase(symmetricKey) {}
+                    
+            protected:
+                std::shared_ptr<Aws::Utils::Crypto::SymmetricCipher> CreateCipher(Aws::Utils::Crypto::ContentCryptoMaterial& contentCryptoMaterial, bool encrypt) const override;
+
+                Aws::Utils::Crypto::KeyWrapAlgorithm GetKeyWrapAlgorithm() const override;
+            };
+
         }//namespace Materials
     }//namespace S3Encryption
 }//namespace Aws

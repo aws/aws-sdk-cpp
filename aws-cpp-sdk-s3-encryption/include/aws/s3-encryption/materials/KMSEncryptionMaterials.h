@@ -19,6 +19,9 @@
 #include <aws/kms/KMSClient.h>
 #include <aws/s3-encryption/s3Encryption_EXPORTS.h>
 
+#if defined(_MSC_VER) && (_MSC_VER <= 1900 )
+#pragma warning (disable : 4996)
+#endif
 namespace Aws
 {
     namespace S3Encryption
@@ -27,6 +30,7 @@ namespace Aws
         {
             //identifier for materials description
             extern AWS_S3ENCRYPTION_API const char* cmkID_Identifier;
+            extern AWS_S3ENCRYPTION_API const char* kmsEncryptionContextKey;
 
             /*
             * KMS Encryption Materials is responsible for handling the encryption/decryption of
@@ -35,19 +39,19 @@ namespace Aws
             * own KMS Client, or a Client Configuration where it will create a KMS Client
             * with that configuration.
             */
-            class AWS_S3ENCRYPTION_API KMSEncryptionMaterials : public Aws::Utils::Crypto::EncryptionMaterials
+            class AWS_S3ENCRYPTION_API KMSEncryptionMaterialsBase : public Aws::Utils::Crypto::EncryptionMaterials
             {
             public:
                 /*
                 Initialize with customer master key ID and client configuration. If no configuration is supplied, then use the default.
                 Client configuration will be used to setup KMS Client.
                 */
-                KMSEncryptionMaterials(const Aws::String& customerMasterKeyID, const Aws::Client::ClientConfiguration& clientConfig = Aws::Client::ClientConfiguration());
+                KMSEncryptionMaterialsBase(const Aws::String& customerMasterKeyID, const Aws::Client::ClientConfiguration& clientConfig = Aws::Client::ClientConfiguration());
 
                 /*
                 Initialize with customer master key ID and KMS Client.
                 */
-                KMSEncryptionMaterials(const Aws::String& customerMasterKeyID, const std::shared_ptr<Aws::KMS::KMSClient>& kmsClient);
+                KMSEncryptionMaterialsBase(const Aws::String& customerMasterKeyID, const std::shared_ptr<Aws::KMS::KMSClient>& kmsClient);
 
                 /*
                 * This will encrypt the cek by calling to KMS. This will occur in place.
@@ -65,9 +69,36 @@ namespace Aws
                 */
                 Aws::Utils::Crypto::CryptoOutcome DecryptCEK(Aws::Utils::Crypto::ContentCryptoMaterial& contentCryptoMaterial) override;
 
-            private:
+            protected:
+                virtual bool ValidateDecryptCEKMaterials(const Aws::Utils::Crypto::ContentCryptoMaterial& contentCryptoMaterial) const;
+
                 Aws::String m_customerMasterKeyID;
                 std::shared_ptr<Aws::KMS::KMSClient> m_kmsClient;
+            };
+
+            class AWS_DEPRECATED("This class has been deprecated due to security reason") AWS_S3ENCRYPTION_API KMSEncryptionMaterials : public KMSEncryptionMaterialsBase
+            {
+            public:
+                KMSEncryptionMaterials(const Aws::String& customerMasterKeyID, const Aws::Client::ClientConfiguration& clientConfig = Aws::Client::ClientConfiguration())
+                    : KMSEncryptionMaterialsBase(customerMasterKeyID, clientConfig) {}
+
+                KMSEncryptionMaterials(const Aws::String& customerMasterKeyID, const std::shared_ptr<Aws::KMS::KMSClient>& kmsClient)
+                    : KMSEncryptionMaterialsBase(customerMasterKeyID, kmsClient) {}
+            };
+
+
+            class AWS_S3ENCRYPTION_API KMSWithContextEncryptionMaterials : public KMSEncryptionMaterialsBase
+            {
+            public:
+                KMSWithContextEncryptionMaterials(const Aws::String& customerMasterKeyID, const Aws::Client::ClientConfiguration& clientConfig = Aws::Client::ClientConfiguration())
+                    : KMSEncryptionMaterialsBase(customerMasterKeyID, clientConfig) {}
+
+                KMSWithContextEncryptionMaterials(const Aws::String& customerMasterKeyID, const std::shared_ptr<Aws::KMS::KMSClient>& kmsClient)
+                    : KMSEncryptionMaterialsBase(customerMasterKeyID, kmsClient) {}
+
+                Aws::Utils::Crypto::CryptoOutcome EncryptCEK(Aws::Utils::Crypto::ContentCryptoMaterial& contentCryptoMaterial) override;
+            protected:
+                virtual bool ValidateDecryptCEKMaterials(const Aws::Utils::Crypto::ContentCryptoMaterial& contentCryptoMaterial) const override;
             };
         }//namespace Materials
     }//namespace S3Encryption

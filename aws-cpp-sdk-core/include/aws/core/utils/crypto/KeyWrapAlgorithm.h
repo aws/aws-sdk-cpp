@@ -24,8 +24,10 @@ namespace Aws
         {
             enum class KeyWrapAlgorithm
             {
-                KMS,
-                AES_KEY_WRAP,
+                KMS, // Deprecated
+                KMS_CONTEXT,
+                AES_KEY_WRAP, // Deprecated
+                AES_GCM,
                 NONE
             };
 

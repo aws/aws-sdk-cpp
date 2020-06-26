@@ -48,6 +48,9 @@ namespace Aws
 
                 KeyWrapAlgorithm keyWrapAlgorithm = contentCryptoMaterial.GetKeyWrapAlgorithm();
                 request.AddMetadata(KEY_WRAP_ALGORITHM, GetNameForKeyWrapAlgorithm(keyWrapAlgorithm));
+
+                request.AddMetadata(CEK_CRYPTO_AES_GCM_TAG_HEADER, HashingUtils::Base64Encode(contentCryptoMaterial.GetCEKGCMTag()));
+                request.AddMetadata(CEK_IV_HEADER, HashingUtils::Base64Encode(contentCryptoMaterial.GetCekIV()));
             }
 
             ContentCryptoMaterial MetadataHandler::ReadContentCryptoMaterial(Aws::S3::Model::GetObjectResult& result)

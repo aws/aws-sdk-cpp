@@ -20,6 +20,14 @@
 #include <aws/core/utils/crypto/SecureRandom.h>
 #include <aws/core/utils/crypto/Cipher.h>
 
+#if defined(__MAC_OS_X_VERSION_MAX_ALLOWED)
+#if defined(__MAC_10_13) && (__MAC_OS_X_VERSION_MAX_ALLOWED >= __MAC_10_13)
+#define MAC_13_AVAILABLE  1
+#elif defined(__MAC_10_14_4) && (__MAC_OS_X_VERSION_MAX_ALLOWED >= __MAC_10_14_4)
+#define MAC_14_4_AVAILABLE  1
+#endif
+#endif
+
 struct _CCCryptor;
 
 namespace Aws
@@ -256,6 +264,61 @@ namespace Aws
 
                 static size_t BlockSizeBytes;
                 static size_t KeyLengthBits;
+            };
+
+            /**
+             * CommonCrypto implementation for AES in GCM mode
+             */
+            class AES_GCM_Cipher_CommonCrypto : public CommonCryptoCipher
+            {
+            public:
+                /**
+                 * Create AES in GCM mode off of a 256 bit key. Auto Generates a 12 bytes IV.
+                 */
+                AES_GCM_Cipher_CommonCrypto(const CryptoBuffer& key);
+
+                /**
+                * Create AES in GCM mode off of a 256 bit key and AAD. Auto Generates a 12 byte IV in the format
+                */
+                AES_GCM_Cipher_CommonCrypto(const CryptoBuffer& key, const CryptoBuffer* aad);
+
+                /**
+                 * Create AES in GCM mode off of a 256 bit key and 12 byte IV, tag and additional authentication data (AAD),
+                 * Note that tag could be acquired from encrypt mode and should only and must be set for decrypt mode.
+                 */
+                AES_GCM_Cipher_CommonCrypto(CryptoBuffer&& key, CryptoBuffer&& initializationVector,
+                    CryptoBuffer&& tag = CryptoBuffer(0), CryptoBuffer&& aad = CryptoBuffer(0));
+
+                /**
+                 * Create AES in GCM mode off of a 256 bit key and 12 byte IV, tag and additional authentication data (AAD)
+                 * Note that tag could be acquired from encrypt mode and should only and must be set for decrypt mode.
+                 */
+                AES_GCM_Cipher_CommonCrypto(const CryptoBuffer& key, const CryptoBuffer& initializationVector,
+                    const CryptoBuffer& tag = CryptoBuffer(), const CryptoBuffer& aad = CryptoBuffer());
+
+                AES_GCM_Cipher_CommonCrypto(const AES_GCM_Cipher_CommonCrypto& other) = delete;
+
+                AES_GCM_Cipher_CommonCrypto& operator=(const AES_GCM_Cipher_CommonCrypto& other) = delete;
+
+                AES_GCM_Cipher_CommonCrypto(AES_GCM_Cipher_CommonCrypto&& toMove) = default;
+
+                CryptoBuffer FinalizeEncryption() override;
+                CryptoBuffer FinalizeDecryption() override;
+
+                void Reset() override;
+
+            protected:
+                size_t GetBlockSizeBytes() const override;
+
+                size_t GetKeyLengthBits() const override;
+
+            private:
+                void InitCipher();
+                CryptoBuffer m_aad;
+                static size_t BlockSizeBytes;
+                static size_t KeyLengthBits;
+                static size_t TagLengthBytes;
+                static size_t IVLengthBytes;
             };
 
             /**

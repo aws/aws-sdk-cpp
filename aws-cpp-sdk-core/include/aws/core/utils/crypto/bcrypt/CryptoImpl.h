@@ -243,7 +243,10 @@ namespace Aws
                 PBCRYPT_AUTHENTICATED_CIPHER_MODE_INFO m_authInfoPtr;
 
                 static BCRYPT_KEY_HANDLE ImportKeyBlob(BCRYPT_ALG_HANDLE handle, CryptoBuffer& key);
-
+                /**
+                 * We need to call BCryptEncrypt or BCryptEncrypt at least once. (corner case for empty string)
+                 */
+                bool m_encryptDecryptCalled;
             private:
                 void Init();
                 void Cleanup();
@@ -357,19 +360,28 @@ namespace Aws
             {
             public:
                 /**
-                * Create AES in GCM mode off of a 256 bit key. Auto Generates a 16 byte IV in the format
+                * Create AES in GCM mode off of a 256 bit key. Auto Generates a 12 byte IV in the format
                 */
                 AES_GCM_Cipher_BCrypt(const CryptoBuffer& key);
 
                 /**
-                * Create AES in GCM mode off of a 256 bit key, 16 byte IV, and tag
+                * Create AES in GCM mode off of a 256 bit key and AAD. Auto Generates a 12 byte IV in the format
                 */
-                AES_GCM_Cipher_BCrypt(CryptoBuffer&& key, CryptoBuffer&& initializationVector, CryptoBuffer&& tag = std::move(CryptoBuffer()));
+                AES_GCM_Cipher_BCrypt(const CryptoBuffer& key, const CryptoBuffer* aad);
 
                 /**
-                * Create AES in GCM mode off of a 256 bit key, 16 byte IV, and tag
+                * Create AES in GCM mode off of a 256 bit key, 12 byte IV, tag, as well additional authentication data (AAD).
+                * Note that tag could be acquired from encrypt mode and should only and must be set for decrypt mode.
                 */
-                AES_GCM_Cipher_BCrypt(const CryptoBuffer& key, const CryptoBuffer& initializationVector, const CryptoBuffer& tag = CryptoBuffer());
+                AES_GCM_Cipher_BCrypt(CryptoBuffer&& key, CryptoBuffer&& initializationVector, 
+                    CryptoBuffer&& tag = CryptoBuffer(0), CryptoBuffer&& aad = CryptoBuffer(0));
+
+                /**
+                * Create AES in GCM mode off of a 256 bit key, 12 byte IV, tag, as well additional authentication data (AAD)
+                * Note that tag could be acquired from encrypt mode and should only and must be set for decrypt mode.
+                */
+                AES_GCM_Cipher_BCrypt(const CryptoBuffer& key, const CryptoBuffer& initializationVector, 
+                    const CryptoBuffer& tag = CryptoBuffer(0), const CryptoBuffer& aad = CryptoBuffer(0));
 
                 AES_GCM_Cipher_BCrypt(const AES_GCM_Cipher_BCrypt&) = delete;
 
@@ -401,6 +413,7 @@ namespace Aws
 
                 CryptoBuffer m_macBuffer;
                 CryptoBuffer m_finalBuffer;
+                CryptoBuffer m_aad;
                 BCRYPT_AUTHENTICATED_CIPHER_MODE_INFO m_authInfo;
             };
 
@@ -445,4 +458,3 @@ namespace Aws
         } // namespace Crypto
     } // namespace Utils
 } // namespace Aws
-

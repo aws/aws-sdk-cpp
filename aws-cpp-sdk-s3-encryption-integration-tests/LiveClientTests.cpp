@@ -44,10 +44,8 @@ static const char* ENCRYPTED_BUCKET_TEST_NAME = "awsnativesdks3encotest";
 static const char* ALLOCATION_TAG = "LiveClientTest";
 static const char TEST_STRING[] = "This is a test string. It is meant to test AES CBC, AES CTR, and AES GCM modes of operation with the Aws S3 Encryption Client";
 
-#ifndef ENABLE_COMMONCRYPTO_ENCRYPTION
 static const char* RANGE_GET_STR = "bytes=38-75";
 static const char RANGE_GET_TEST_STRING[] = "test AES CBC, AES CTR, and AES GCM mod";
-#endif
 
 class LiveClientTest : public ::testing::Test
 {
@@ -99,7 +97,7 @@ TEST_F(LiveClientTest, TestEOMode)
     configuration.SetStorageMethod(StorageMethod::METADATA);
 
     auto key = SymmetricCipher::GenerateKey();
-    auto simpleEncryptionMaterials = Aws::MakeShared<Materials::SimpleEncryptionMaterials>(ALLOCATION_TAG, key);
+    auto simpleEncryptionMaterials = Aws::MakeShared<Materials::SimpleEncryptionMaterialsWithGCMAAD>(ALLOCATION_TAG, key);
 
     static const char* objectKey = "TestEOKey";
 
@@ -132,12 +130,21 @@ TEST_F(LiveClientTest, TestEOMode)
     auto metadata = getObjectResult.GetResult().GetMetadata();
     auto ivStr = metadata["x-amz-iv"];
     auto cekStr = metadata["x-amz-key-v2"];
+    auto cekTag = metadata["x-amz-cek-aes-gcm-tag"];
+    auto cekIV = metadata["x-amz-cek-iv"];
+    auto aad = metadata["x-amz-cek-alg"];
     EXPECT_FALSE(ivStr.empty());
     EXPECT_FALSE(cekStr.empty());
+    EXPECT_FALSE(cekTag.empty());
+    EXPECT_FALSE(cekIV.empty());
+    EXPECT_FALSE(aad.empty());
 
     ContentCryptoMaterial cryptoMaterial(ContentCryptoScheme::CBC);
     cryptoMaterial.SetEncryptedContentEncryptionKey(HashingUtils::Base64Decode(cekStr));
-    cryptoMaterial.SetKeyWrapAlgorithm(KeyWrapAlgorithm::AES_KEY_WRAP);
+    cryptoMaterial.SetKeyWrapAlgorithm(KeyWrapAlgorithm::AES_GCM);
+    cryptoMaterial.SetCekIV(HashingUtils::Base64Decode(cekIV));
+    cryptoMaterial.SetCEKGCMTag(HashingUtils::Base64Decode(cekTag));
+    cryptoMaterial.SetGCMAAD(CryptoBuffer((const unsigned char*)aad.c_str(), aad.size()));
     simpleEncryptionMaterials->DecryptCEK(cryptoMaterial);
 
     auto cbcCipher = CreateAES_CBCImplementation(cryptoMaterial.GetContentEncryptionKey(), HashingUtils::Base64Decode(ivStr));
@@ -167,8 +174,6 @@ TEST_F(LiveClientTest, TestEOMode)
     EXPECT_TRUE(deleteResult.IsSuccess());
 }
 
-#ifndef ENABLE_COMMONCRYPTO_ENCRYPTION
-
 TEST_F(LiveClientTest, TestAEMode)
 {
     CryptoConfiguration configuration;
@@ -176,7 +181,7 @@ TEST_F(LiveClientTest, TestAEMode)
     configuration.SetStorageMethod(StorageMethod::METADATA);
 
     auto key = SymmetricCipher::GenerateKey();
-    auto simpleEncryptionMaterials = Aws::MakeShared<Materials::SimpleEncryptionMaterials>(ALLOCATION_TAG, key);
+    auto simpleEncryptionMaterials = Aws::MakeShared<Materials::SimpleEncryptionMaterialsWithGCMAAD>(ALLOCATION_TAG, key);
 
     static const char* objectKey = "TestAEKey";
 
@@ -210,14 +215,23 @@ TEST_F(LiveClientTest, TestAEMode)
     auto ivStr = metadata["x-amz-iv"];
     auto cekStr = metadata["x-amz-key-v2"];
     auto tagLenStr = metadata["x-amz-tag-len"];
+    auto cekTag = metadata["x-amz-cek-aes-gcm-tag"];
+    auto cekIV = metadata["x-amz-cek-iv"];
+    auto aad = metadata["x-amz-cek-alg"];
     EXPECT_FALSE(ivStr.empty());
     EXPECT_FALSE(cekStr.empty());
     EXPECT_FALSE(tagLenStr.empty());
     EXPECT_STREQ("128", tagLenStr.c_str());
+    EXPECT_FALSE(cekTag.empty());
+    EXPECT_FALSE(cekIV.empty());
+    EXPECT_FALSE(aad.empty());
 
     ContentCryptoMaterial cryptoMaterial(ContentCryptoScheme::GCM);
     cryptoMaterial.SetEncryptedContentEncryptionKey(HashingUtils::Base64Decode(cekStr));
-    cryptoMaterial.SetKeyWrapAlgorithm(KeyWrapAlgorithm::AES_KEY_WRAP);
+    cryptoMaterial.SetKeyWrapAlgorithm(KeyWrapAlgorithm::AES_GCM);
+    cryptoMaterial.SetCekIV(HashingUtils::Base64Decode(cekIV));
+    cryptoMaterial.SetCEKGCMTag(HashingUtils::Base64Decode(cekTag));
+    cryptoMaterial.SetGCMAAD(CryptoBuffer((const unsigned char*)aad.c_str(), aad.size()));
     cryptoMaterial.SetCryptoTagLength(static_cast<size_t>(StringUtils::ConvertToInt64(tagLenStr.c_str())));
     simpleEncryptionMaterials->DecryptCEK(cryptoMaterial);
 
@@ -257,7 +271,7 @@ TEST_F(LiveClientTest, TestAEModeRangeGet)
     configuration.SetStorageMethod(StorageMethod::METADATA);
 
     auto key = SymmetricCipher::GenerateKey();
-    auto simpleEncryptionMaterials = Aws::MakeShared<Materials::SimpleEncryptionMaterials>(ALLOCATION_TAG, key);
+    auto simpleEncryptionMaterials = Aws::MakeShared<Materials::SimpleEncryptionMaterialsWithGCMAAD>(ALLOCATION_TAG, key);
 
     static const char* objectKey = "TestAERangeGetKey";
 
@@ -291,14 +305,23 @@ TEST_F(LiveClientTest, TestAEModeRangeGet)
     auto ivStr = metadata["x-amz-iv"];
     auto cekStr = metadata["x-amz-key-v2"];
     auto tagLenStr = metadata["x-amz-tag-len"];
+    auto cekTag = metadata["x-amz-cek-aes-gcm-tag"];
+    auto cekIV = metadata["x-amz-cek-iv"];
+    auto aad = metadata["x-amz-cek-alg"];
     EXPECT_FALSE(ivStr.empty());
     EXPECT_FALSE(cekStr.empty());
     EXPECT_FALSE(tagLenStr.empty());
     EXPECT_STREQ("128", tagLenStr.c_str());
+    EXPECT_FALSE(cekTag.empty());
+    EXPECT_FALSE(cekIV.empty());
+    EXPECT_FALSE(aad.empty());
 
     ContentCryptoMaterial cryptoMaterial(ContentCryptoScheme::GCM);
     cryptoMaterial.SetEncryptedContentEncryptionKey(HashingUtils::Base64Decode(cekStr));
-    cryptoMaterial.SetKeyWrapAlgorithm(KeyWrapAlgorithm::AES_KEY_WRAP);
+    cryptoMaterial.SetKeyWrapAlgorithm(KeyWrapAlgorithm::AES_GCM);
+    cryptoMaterial.SetCekIV(HashingUtils::Base64Decode(cekIV));
+    cryptoMaterial.SetCEKGCMTag(HashingUtils::Base64Decode(cekTag));
+    cryptoMaterial.SetGCMAAD(CryptoBuffer((const unsigned char*)aad.c_str(), aad.size()));
     cryptoMaterial.SetCryptoTagLength(static_cast<size_t>(StringUtils::ConvertToInt64(tagLenStr.c_str())));
     simpleEncryptionMaterials->DecryptCEK(cryptoMaterial);
 
@@ -331,11 +354,10 @@ TEST_F(LiveClientTest, TestAEModeRangeGet)
     auto deleteResult = StandardClient->DeleteObject(deleteObject);
     EXPECT_TRUE(deleteResult.IsSuccess());
 }
-#endif
 
 TEST_F(LiveClientTest, TestS3EncryptionError)
 {
-    auto kmsMaterials = Aws::MakeShared<Aws::S3Encryption::Materials::KMSEncryptionMaterials>("s3Encryption", "badKey");
+    auto kmsMaterials = Aws::MakeShared<Aws::S3Encryption::Materials::KMSWithContextEncryptionMaterials>("s3Encryption", "badKey");
     Aws::S3Encryption::CryptoConfiguration cryptoConfiguration(Aws::S3Encryption::StorageMethod::METADATA, Aws::S3Encryption::CryptoMode::ENCRYPTION_ONLY);
     auto credentials = Aws::MakeShared<Aws::Auth::DefaultAWSCredentialsProviderChain>("s3Encryption");
     Aws::S3Encryption::S3EncryptionClient encryptionClient(kmsMaterials, cryptoConfiguration, credentials);
@@ -353,7 +375,7 @@ TEST_F(LiveClientTest, TestS3EncryptionError)
     ASSERT_FALSE(putObjectOutcome.IsSuccess());
     ASSERT_TRUE(putObjectOutcome.GetError().GetErrorType().IsCryptoError());
     ASSERT_FALSE(putObjectOutcome.GetError().GetErrorType().IsS3Error());
-    ASSERT_EQ(CryptoErrors::ENCRYPT_CONTENT_ENCRYPTION_KEY_FAILED, putObjectOutcome.GetError().GetErrorType().cryptoError);
+    ASSERT_EQ(CryptoErrors::GENERATE_CONTENT_ENCRYPTION_KEY_FAILED, putObjectOutcome.GetError().GetErrorType().cryptoError);
 
     Model::GetObjectRequest getObjectRequest;
     getObjectRequest.WithBucket("badBucket").WithKey("badKey");

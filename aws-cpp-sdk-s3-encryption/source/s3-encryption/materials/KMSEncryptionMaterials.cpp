@@ -1,5 +1,7 @@
 #include <aws/s3-encryption/materials/KMSEncryptionMaterials.h>
 #include <aws/kms/KMSClient.h>
+#include <aws/kms/model/GenerateDataKeyRequest.h>
+#include <aws/kms/model/GenerateDataKeyResult.h>
 #include <aws/kms/model/EncryptRequest.h>
 #include <aws/kms/model/EncryptResult.h>
 #include <aws/kms/model/DecryptRequest.h>
@@ -24,18 +26,19 @@ namespace Aws
         {
             static const char* const ALLOCATION_TAG = "KMSEncryptionMaterials";
             const char* cmkID_Identifier = "kms_cmk_id";
+            const char* kmsEncryptionContextKey = "aws:x-amz-cek-alg";
 
-            KMSEncryptionMaterials::KMSEncryptionMaterials(const String& customerMasterKeyID, const ClientConfiguration& clientConfig) :
+            KMSEncryptionMaterialsBase::KMSEncryptionMaterialsBase(const String& customerMasterKeyID, const ClientConfiguration& clientConfig) :
                 m_customerMasterKeyID(customerMasterKeyID), m_kmsClient(Aws::MakeShared<KMSClient>(ALLOCATION_TAG, clientConfig))
             {
             }
 
-            KMSEncryptionMaterials::KMSEncryptionMaterials(const String & customerMasterKeyID, const std::shared_ptr<KMSClient>& kmsClient) :
+            KMSEncryptionMaterialsBase::KMSEncryptionMaterialsBase(const String & customerMasterKeyID, const std::shared_ptr<KMSClient>& kmsClient) :
                 m_customerMasterKeyID(customerMasterKeyID), m_kmsClient(kmsClient)
             {
             }
 
-            CryptoOutcome KMSEncryptionMaterials::EncryptCEK(ContentCryptoMaterial & contentCryptoMaterial)
+            CryptoOutcome KMSEncryptionMaterialsBase::EncryptCEK(ContentCryptoMaterial & contentCryptoMaterial)
             {
                 EncryptRequest request;
                 request.SetKeyId(m_customerMasterKeyID);
@@ -56,24 +59,15 @@ namespace Aws
 
                 EncryptResult result = outcome.GetResult();
                 contentCryptoMaterial.SetKeyWrapAlgorithm(KeyWrapAlgorithm::KMS);
-                contentCryptoMaterial.AddMaterialsDescription(cmkID_Identifier, m_customerMasterKeyID);
                 contentCryptoMaterial.SetEncryptedContentEncryptionKey(result.GetCiphertextBlob());
                 return CryptoOutcome(Aws::NoResult());
             }
 
-            CryptoOutcome KMSEncryptionMaterials::DecryptCEK(ContentCryptoMaterial & contentCryptoMaterial)
+            CryptoOutcome KMSEncryptionMaterialsBase::DecryptCEK(ContentCryptoMaterial &contentCryptoMaterial)
             {
                 auto errorOutcome = CryptoOutcome(AWSError<CryptoErrors>(CryptoErrors::DECRYPT_CONTENT_ENCRYPTION_KEY_FAILED, "DecryptContentEncryptionKeyFailed", "Failed to decrypt content encryption key(CEK)", false/*not retryable*/));
-                if (contentCryptoMaterial.GetKeyWrapAlgorithm() != KeyWrapAlgorithm::KMS)
-                {
-                    AWS_LOGSTREAM_ERROR(ALLOCATION_TAG, "The KeyWrapAlgorithm is not KMS during decryption, therefore the"
-                        << " current encryption materials can not decrypt the content encryption key.");
-                    //return without changing the encrypted content encryption key
-                    return errorOutcome;
-                }
-                auto materialDescription = contentCryptoMaterial.GetMaterialsDescription();
-                auto iterator = materialDescription.find(cmkID_Identifier);
-                if (iterator != materialDescription.end() && iterator->second != m_customerMasterKeyID)
+
+                if (!ValidateDecryptCEKMaterials(contentCryptoMaterial)) 
                 {
                     AWS_LOGSTREAM_ERROR(ALLOCATION_TAG, "Materials Description does not match encryption context.");
                     return errorOutcome;
@@ -108,6 +102,54 @@ namespace Aws
                 return CryptoOutcome(Aws::NoResult());
             }
 
+            bool KMSEncryptionMaterialsBase::ValidateDecryptCEKMaterials(const ContentCryptoMaterial& contentCryptoMaterial) const
+            {
+                if (contentCryptoMaterial.GetKeyWrapAlgorithm() != KeyWrapAlgorithm::KMS)
+                {
+                    return false;
+                }
+                auto materials = contentCryptoMaterial.GetMaterialsDescription();
+                auto iterator = materials.find(cmkID_Identifier);
+                return (iterator == materials.end() || iterator->second == m_customerMasterKeyID);
+            }
+
+            CryptoOutcome KMSWithContextEncryptionMaterials::EncryptCEK(ContentCryptoMaterial& contentCryptoMaterial)
+            {
+                GenerateDataKeyRequest request;
+                request.SetKeyId(m_customerMasterKeyID);
+
+                // Should be "AES/GCM/NoPadding" by default
+                Aws::String cekAlg = ContentCryptoSchemeMapper::GetNameForContentCryptoScheme(contentCryptoMaterial.GetContentCryptoScheme());
+                contentCryptoMaterial.AddMaterialsDescription(kmsEncryptionContextKey, cekAlg);
+                request.SetEncryptionContext(contentCryptoMaterial.GetMaterialsDescription());
+                request.SetKeySpec(DataKeySpec::AES_256);
+                GenerateDataKeyOutcome outcome = m_kmsClient->GenerateDataKey(request);
+                if (!outcome.IsSuccess())
+                {
+                    AWS_LOGSTREAM_ERROR(ALLOCATION_TAG, "Failed to call KMS GenerateDataKey API with error: "
+                        << outcome.GetError().GetExceptionName() << " : " << outcome.GetError().GetMessage());
+                    //return without changing the encrypted content encryption key
+                    return CryptoOutcome(AWSError<CryptoErrors>(CryptoErrors::GENERATE_CONTENT_ENCRYPTION_KEY_FAILED, "GenerateContentEncryptionKeyFailed", "Failed to generate content encryption key(CEK)", false/*not retryable*/));
+                }
+
+                GenerateDataKeyResult result = outcome.GetResult();
+                contentCryptoMaterial.SetKeyWrapAlgorithm(KeyWrapAlgorithm::KMS_CONTEXT);
+                contentCryptoMaterial.SetContentEncryptionKey(result.GetPlaintext());
+                contentCryptoMaterial.SetEncryptedContentEncryptionKey(result.GetCiphertextBlob());
+                return CryptoOutcome(Aws::NoResult());
+            }
+
+            bool KMSWithContextEncryptionMaterials::ValidateDecryptCEKMaterials(const ContentCryptoMaterial& contentCryptoMaterial) const
+            {
+                if (contentCryptoMaterial.GetKeyWrapAlgorithm() != KeyWrapAlgorithm::KMS_CONTEXT)
+                {
+                    return false;
+                }
+                Aws::String cekAlg = ContentCryptoSchemeMapper::GetNameForContentCryptoScheme(contentCryptoMaterial.GetContentCryptoScheme());
+                auto materials = contentCryptoMaterial.GetMaterialsDescription();
+                auto iterator = materials.find(kmsEncryptionContextKey);
+                return  (iterator != materials.end() && iterator->second == cekAlg);
+            }
         }//namespace Materials
     }//namespace S3Encryption
 }//namespace Aws
