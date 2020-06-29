@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
@@ -48,49 +38,65 @@ namespace Model
 
     /**
      * <p>The IPv4 CIDR address block used for the destination match. Routing decisions
-     * are based on the most specific match.</p>
+     * are based on the most specific match. We modify the specified CIDR block to its
+     * canonical form; for example, if you specify <code>100.68.0.18/18</code>, we
+     * modify it to <code>100.68.0.0/18</code>.</p>
      */
     inline const Aws::String& GetDestinationCidrBlock() const{ return m_destinationCidrBlock; }
 
     /**
      * <p>The IPv4 CIDR address block used for the destination match. Routing decisions
-     * are based on the most specific match.</p>
+     * are based on the most specific match. We modify the specified CIDR block to its
+     * canonical form; for example, if you specify <code>100.68.0.18/18</code>, we
+     * modify it to <code>100.68.0.0/18</code>.</p>
      */
     inline bool DestinationCidrBlockHasBeenSet() const { return m_destinationCidrBlockHasBeenSet; }
 
     /**
      * <p>The IPv4 CIDR address block used for the destination match. Routing decisions
-     * are based on the most specific match.</p>
+     * are based on the most specific match. We modify the specified CIDR block to its
+     * canonical form; for example, if you specify <code>100.68.0.18/18</code>, we
+     * modify it to <code>100.68.0.0/18</code>.</p>
      */
     inline void SetDestinationCidrBlock(const Aws::String& value) { m_destinationCidrBlockHasBeenSet = true; m_destinationCidrBlock = value; }
 
     /**
      * <p>The IPv4 CIDR address block used for the destination match. Routing decisions
-     * are based on the most specific match.</p>
+     * are based on the most specific match. We modify the specified CIDR block to its
+     * canonical form; for example, if you specify <code>100.68.0.18/18</code>, we
+     * modify it to <code>100.68.0.0/18</code>.</p>
      */
     inline void SetDestinationCidrBlock(Aws::String&& value) { m_destinationCidrBlockHasBeenSet = true; m_destinationCidrBlock = std::move(value); }
 
     /**
      * <p>The IPv4 CIDR address block used for the destination match. Routing decisions
-     * are based on the most specific match.</p>
+     * are based on the most specific match. We modify the specified CIDR block to its
+     * canonical form; for example, if you specify <code>100.68.0.18/18</code>, we
+     * modify it to <code>100.68.0.0/18</code>.</p>
      */
     inline void SetDestinationCidrBlock(const char* value) { m_destinationCidrBlockHasBeenSet = true; m_destinationCidrBlock.assign(value); }
 
     /**
      * <p>The IPv4 CIDR address block used for the destination match. Routing decisions
-     * are based on the most specific match.</p>
+     * are based on the most specific match. We modify the specified CIDR block to its
+     * canonical form; for example, if you specify <code>100.68.0.18/18</code>, we
+     * modify it to <code>100.68.0.0/18</code>.</p>
      */
     inline CreateRouteRequest& WithDestinationCidrBlock(const Aws::String& value) { SetDestinationCidrBlock(value); return *this;}
 
     /**
      * <p>The IPv4 CIDR address block used for the destination match. Routing decisions
-     * are based on the most specific match.</p>
+     * are based on the most specific match. We modify the specified CIDR block to its
+     * canonical form; for example, if you specify <code>100.68.0.18/18</code>, we
+     * modify it to <code>100.68.0.0/18</code>.</p>
      */
     inline CreateRouteRequest& WithDestinationCidrBlock(Aws::String&& value) { SetDestinationCidrBlock(std::move(value)); return *this;}
 
     /**
      * <p>The IPv4 CIDR address block used for the destination match. Routing decisions
-     * are based on the most specific match.</p>
+     * are based on the most specific match. We modify the specified CIDR block to its
+     * canonical form; for example, if you specify <code>100.68.0.18/18</code>, we
+     * modify it to <code>100.68.0.0/18</code>.</p>
      */
     inline CreateRouteRequest& WithDestinationCidrBlock(const char* value) { SetDestinationCidrBlock(value); return *this;}
 
@@ -142,6 +148,47 @@ namespace Model
      * based on the most specific match.</p>
      */
     inline CreateRouteRequest& WithDestinationIpv6CidrBlock(const char* value) { SetDestinationIpv6CidrBlock(value); return *this;}
+
+
+    /**
+     * <p>The ID of a prefix list used for the destination match.</p>
+     */
+    inline const Aws::String& GetDestinationPrefixListId() const{ return m_destinationPrefixListId; }
+
+    /**
+     * <p>The ID of a prefix list used for the destination match.</p>
+     */
+    inline bool DestinationPrefixListIdHasBeenSet() const { return m_destinationPrefixListIdHasBeenSet; }
+
+    /**
+     * <p>The ID of a prefix list used for the destination match.</p>
+     */
+    inline void SetDestinationPrefixListId(const Aws::String& value) { m_destinationPrefixListIdHasBeenSet = true; m_destinationPrefixListId = value; }
+
+    /**
+     * <p>The ID of a prefix list used for the destination match.</p>
+     */
+    inline void SetDestinationPrefixListId(Aws::String&& value) { m_destinationPrefixListIdHasBeenSet = true; m_destinationPrefixListId = std::move(value); }
+
+    /**
+     * <p>The ID of a prefix list used for the destination match.</p>
+     */
+    inline void SetDestinationPrefixListId(const char* value) { m_destinationPrefixListIdHasBeenSet = true; m_destinationPrefixListId.assign(value); }
+
+    /**
+     * <p>The ID of a prefix list used for the destination match.</p>
+     */
+    inline CreateRouteRequest& WithDestinationPrefixListId(const Aws::String& value) { SetDestinationPrefixListId(value); return *this;}
+
+    /**
+     * <p>The ID of a prefix list used for the destination match.</p>
+     */
+    inline CreateRouteRequest& WithDestinationPrefixListId(Aws::String&& value) { SetDestinationPrefixListId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of a prefix list used for the destination match.</p>
+     */
+    inline CreateRouteRequest& WithDestinationPrefixListId(const char* value) { SetDestinationPrefixListId(value); return *this;}
 
 
     /**
@@ -568,6 +615,9 @@ namespace Model
 
     Aws::String m_destinationIpv6CidrBlock;
     bool m_destinationIpv6CidrBlockHasBeenSet;
+
+    Aws::String m_destinationPrefixListId;
+    bool m_destinationPrefixListIdHasBeenSet;
 
     bool m_dryRun;
     bool m_dryRunHasBeenSet;

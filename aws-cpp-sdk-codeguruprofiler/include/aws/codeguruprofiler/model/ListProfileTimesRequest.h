@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/codeguruprofiler/CodeGuruProfiler_EXPORTS.h>
@@ -258,32 +248,56 @@ namespace Model
 
 
     /**
-     * <p>The aggregation period.</p>
+     * <p> The aggregation period. This specifies the period during which an
+     * aggregation profile collects posted agent profiles for a profiling group. There
+     * are 3 valid values. </p> <ul> <li> <p> <code>P1D</code> — 1 day </p> </li> <li>
+     * <p> <code>PT1H</code> — 1 hour </p> </li> <li> <p> <code>PT5M</code> — 5 minutes
+     * </p> </li> </ul>
      */
     inline const AggregationPeriod& GetPeriod() const{ return m_period; }
 
     /**
-     * <p>The aggregation period.</p>
+     * <p> The aggregation period. This specifies the period during which an
+     * aggregation profile collects posted agent profiles for a profiling group. There
+     * are 3 valid values. </p> <ul> <li> <p> <code>P1D</code> — 1 day </p> </li> <li>
+     * <p> <code>PT1H</code> — 1 hour </p> </li> <li> <p> <code>PT5M</code> — 5 minutes
+     * </p> </li> </ul>
      */
     inline bool PeriodHasBeenSet() const { return m_periodHasBeenSet; }
 
     /**
-     * <p>The aggregation period.</p>
+     * <p> The aggregation period. This specifies the period during which an
+     * aggregation profile collects posted agent profiles for a profiling group. There
+     * are 3 valid values. </p> <ul> <li> <p> <code>P1D</code> — 1 day </p> </li> <li>
+     * <p> <code>PT1H</code> — 1 hour </p> </li> <li> <p> <code>PT5M</code> — 5 minutes
+     * </p> </li> </ul>
      */
     inline void SetPeriod(const AggregationPeriod& value) { m_periodHasBeenSet = true; m_period = value; }
 
     /**
-     * <p>The aggregation period.</p>
+     * <p> The aggregation period. This specifies the period during which an
+     * aggregation profile collects posted agent profiles for a profiling group. There
+     * are 3 valid values. </p> <ul> <li> <p> <code>P1D</code> — 1 day </p> </li> <li>
+     * <p> <code>PT1H</code> — 1 hour </p> </li> <li> <p> <code>PT5M</code> — 5 minutes
+     * </p> </li> </ul>
      */
     inline void SetPeriod(AggregationPeriod&& value) { m_periodHasBeenSet = true; m_period = std::move(value); }
 
     /**
-     * <p>The aggregation period.</p>
+     * <p> The aggregation period. This specifies the period during which an
+     * aggregation profile collects posted agent profiles for a profiling group. There
+     * are 3 valid values. </p> <ul> <li> <p> <code>P1D</code> — 1 day </p> </li> <li>
+     * <p> <code>PT1H</code> — 1 hour </p> </li> <li> <p> <code>PT5M</code> — 5 minutes
+     * </p> </li> </ul>
      */
     inline ListProfileTimesRequest& WithPeriod(const AggregationPeriod& value) { SetPeriod(value); return *this;}
 
     /**
-     * <p>The aggregation period.</p>
+     * <p> The aggregation period. This specifies the period during which an
+     * aggregation profile collects posted agent profiles for a profiling group. There
+     * are 3 valid values. </p> <ul> <li> <p> <code>P1D</code> — 1 day </p> </li> <li>
+     * <p> <code>PT1H</code> — 1 hour </p> </li> <li> <p> <code>PT5M</code> — 5 minutes
+     * </p> </li> </ul>
      */
     inline ListProfileTimesRequest& WithPeriod(AggregationPeriod&& value) { SetPeriod(std::move(value)); return *this;}
 

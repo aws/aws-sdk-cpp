@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/core/utils/Outcome.h>
 #include <aws/core/auth/AWSAuthSigner.h>
@@ -31,9 +21,13 @@
 #include <aws/codestar-connections/CodeStarconnectionsEndpoint.h>
 #include <aws/codestar-connections/CodeStarconnectionsErrorMarshaller.h>
 #include <aws/codestar-connections/model/CreateConnectionRequest.h>
+#include <aws/codestar-connections/model/CreateHostRequest.h>
 #include <aws/codestar-connections/model/DeleteConnectionRequest.h>
+#include <aws/codestar-connections/model/DeleteHostRequest.h>
 #include <aws/codestar-connections/model/GetConnectionRequest.h>
+#include <aws/codestar-connections/model/GetHostRequest.h>
 #include <aws/codestar-connections/model/ListConnectionsRequest.h>
+#include <aws/codestar-connections/model/ListHostsRequest.h>
 #include <aws/codestar-connections/model/ListTagsForResourceRequest.h>
 #include <aws/codestar-connections/model/TagResourceRequest.h>
 #include <aws/codestar-connections/model/UntagResourceRequest.h>
@@ -145,6 +139,41 @@ void CodeStarconnectionsClient::CreateConnectionAsyncHelper(const CreateConnecti
   handler(this, request, CreateConnection(request), context);
 }
 
+CreateHostOutcome CodeStarconnectionsClient::CreateHost(const CreateHostRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return CreateHostOutcome(CreateHostResult(outcome.GetResult()));
+  }
+  else
+  {
+    return CreateHostOutcome(outcome.GetError());
+  }
+}
+
+CreateHostOutcomeCallable CodeStarconnectionsClient::CreateHostCallable(const CreateHostRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateHostOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateHost(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CodeStarconnectionsClient::CreateHostAsync(const CreateHostRequest& request, const CreateHostResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateHostAsyncHelper( request, handler, context ); } );
+}
+
+void CodeStarconnectionsClient::CreateHostAsyncHelper(const CreateHostRequest& request, const CreateHostResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateHost(request), context);
+}
+
 DeleteConnectionOutcome CodeStarconnectionsClient::DeleteConnection(const DeleteConnectionRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -178,6 +207,41 @@ void CodeStarconnectionsClient::DeleteConnectionAsync(const DeleteConnectionRequ
 void CodeStarconnectionsClient::DeleteConnectionAsyncHelper(const DeleteConnectionRequest& request, const DeleteConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteConnection(request), context);
+}
+
+DeleteHostOutcome CodeStarconnectionsClient::DeleteHost(const DeleteHostRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DeleteHostOutcome(DeleteHostResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DeleteHostOutcome(outcome.GetError());
+  }
+}
+
+DeleteHostOutcomeCallable CodeStarconnectionsClient::DeleteHostCallable(const DeleteHostRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteHostOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteHost(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CodeStarconnectionsClient::DeleteHostAsync(const DeleteHostRequest& request, const DeleteHostResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteHostAsyncHelper( request, handler, context ); } );
+}
+
+void CodeStarconnectionsClient::DeleteHostAsyncHelper(const DeleteHostRequest& request, const DeleteHostResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteHost(request), context);
 }
 
 GetConnectionOutcome CodeStarconnectionsClient::GetConnection(const GetConnectionRequest& request) const
@@ -215,6 +279,41 @@ void CodeStarconnectionsClient::GetConnectionAsyncHelper(const GetConnectionRequ
   handler(this, request, GetConnection(request), context);
 }
 
+GetHostOutcome CodeStarconnectionsClient::GetHost(const GetHostRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return GetHostOutcome(GetHostResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetHostOutcome(outcome.GetError());
+  }
+}
+
+GetHostOutcomeCallable CodeStarconnectionsClient::GetHostCallable(const GetHostRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetHostOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetHost(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CodeStarconnectionsClient::GetHostAsync(const GetHostRequest& request, const GetHostResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetHostAsyncHelper( request, handler, context ); } );
+}
+
+void CodeStarconnectionsClient::GetHostAsyncHelper(const GetHostRequest& request, const GetHostResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetHost(request), context);
+}
+
 ListConnectionsOutcome CodeStarconnectionsClient::ListConnections(const ListConnectionsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -248,6 +347,41 @@ void CodeStarconnectionsClient::ListConnectionsAsync(const ListConnectionsReques
 void CodeStarconnectionsClient::ListConnectionsAsyncHelper(const ListConnectionsRequest& request, const ListConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListConnections(request), context);
+}
+
+ListHostsOutcome CodeStarconnectionsClient::ListHosts(const ListHostsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ListHostsOutcome(ListHostsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListHostsOutcome(outcome.GetError());
+  }
+}
+
+ListHostsOutcomeCallable CodeStarconnectionsClient::ListHostsCallable(const ListHostsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListHostsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListHosts(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CodeStarconnectionsClient::ListHostsAsync(const ListHostsRequest& request, const ListHostsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListHostsAsyncHelper( request, handler, context ); } );
+}
+
+void CodeStarconnectionsClient::ListHostsAsyncHelper(const ListHostsRequest& request, const ListHostsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListHosts(request), context);
 }
 
 ListTagsForResourceOutcome CodeStarconnectionsClient::ListTagsForResource(const ListTagsForResourceRequest& request) const

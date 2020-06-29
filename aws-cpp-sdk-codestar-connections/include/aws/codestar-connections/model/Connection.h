@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/codestar-connections/CodeStarconnections_EXPORTS.h>
@@ -36,11 +26,11 @@ namespace Model
 {
 
   /**
-   * <p>The AWS::CodeStarConnections::Connection resource can be used to connect
-   * external source providers with services like AWS CodePipeline.</p> <p>Note: A
-   * connection created through CloudFormation is in `PENDING` status by default. You
-   * can make its status `AVAILABLE` by editing the connection in the CodePipeline
-   * console.</p><p><h3>See Also:</h3>   <a
+   * <p>A resource that is used to connect third-party source providers with services
+   * like AWS CodePipeline.</p> <p>Note: A connection created through CloudFormation,
+   * the CLI, or the SDK is in `PENDING` status by default. You can make its status
+   * `AVAILABLE` by updating the connection in the console.</p><p><h3>See Also:</h3> 
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/Connection">AWS
    * API Reference</a></p>
    */
@@ -161,37 +151,37 @@ namespace Model
 
     /**
      * <p>The name of the external provider where your third-party code repository is
-     * configured. Currently, the valid provider type is Bitbucket.</p>
+     * configured. The valid provider type is Bitbucket.</p>
      */
     inline const ProviderType& GetProviderType() const{ return m_providerType; }
 
     /**
      * <p>The name of the external provider where your third-party code repository is
-     * configured. Currently, the valid provider type is Bitbucket.</p>
+     * configured. The valid provider type is Bitbucket.</p>
      */
     inline bool ProviderTypeHasBeenSet() const { return m_providerTypeHasBeenSet; }
 
     /**
      * <p>The name of the external provider where your third-party code repository is
-     * configured. Currently, the valid provider type is Bitbucket.</p>
+     * configured. The valid provider type is Bitbucket.</p>
      */
     inline void SetProviderType(const ProviderType& value) { m_providerTypeHasBeenSet = true; m_providerType = value; }
 
     /**
      * <p>The name of the external provider where your third-party code repository is
-     * configured. Currently, the valid provider type is Bitbucket.</p>
+     * configured. The valid provider type is Bitbucket.</p>
      */
     inline void SetProviderType(ProviderType&& value) { m_providerTypeHasBeenSet = true; m_providerType = std::move(value); }
 
     /**
      * <p>The name of the external provider where your third-party code repository is
-     * configured. Currently, the valid provider type is Bitbucket.</p>
+     * configured. The valid provider type is Bitbucket.</p>
      */
     inline Connection& WithProviderType(const ProviderType& value) { SetProviderType(value); return *this;}
 
     /**
      * <p>The name of the external provider where your third-party code repository is
-     * configured. Currently, the valid provider type is Bitbucket.</p>
+     * configured. The valid provider type is Bitbucket.</p>
      */
     inline Connection& WithProviderType(ProviderType&& value) { SetProviderType(std::move(value)); return *this;}
 
@@ -283,6 +273,55 @@ namespace Model
      */
     inline Connection& WithConnectionStatus(ConnectionStatus&& value) { SetConnectionStatus(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the host associated with the
+     * connection.</p>
+     */
+    inline const Aws::String& GetHostArn() const{ return m_hostArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the host associated with the
+     * connection.</p>
+     */
+    inline bool HostArnHasBeenSet() const { return m_hostArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the host associated with the
+     * connection.</p>
+     */
+    inline void SetHostArn(const Aws::String& value) { m_hostArnHasBeenSet = true; m_hostArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the host associated with the
+     * connection.</p>
+     */
+    inline void SetHostArn(Aws::String&& value) { m_hostArnHasBeenSet = true; m_hostArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the host associated with the
+     * connection.</p>
+     */
+    inline void SetHostArn(const char* value) { m_hostArnHasBeenSet = true; m_hostArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the host associated with the
+     * connection.</p>
+     */
+    inline Connection& WithHostArn(const Aws::String& value) { SetHostArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the host associated with the
+     * connection.</p>
+     */
+    inline Connection& WithHostArn(Aws::String&& value) { SetHostArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the host associated with the
+     * connection.</p>
+     */
+    inline Connection& WithHostArn(const char* value) { SetHostArn(value); return *this;}
+
   private:
 
     Aws::String m_connectionName;
@@ -299,6 +338,9 @@ namespace Model
 
     ConnectionStatus m_connectionStatus;
     bool m_connectionStatusHasBeenSet;
+
+    Aws::String m_hostArn;
+    bool m_hostArnHasBeenSet;
   };
 
 } // namespace Model

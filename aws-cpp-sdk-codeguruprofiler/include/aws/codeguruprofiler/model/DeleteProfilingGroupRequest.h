@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/codeguruprofiler/CodeGuruProfiler_EXPORTS.h>
@@ -47,42 +37,42 @@ namespace Model
 
 
     /**
-     * <p>The profiling group name to delete.</p>
+     * <p>The name of the profiling group to delete.</p>
      */
     inline const Aws::String& GetProfilingGroupName() const{ return m_profilingGroupName; }
 
     /**
-     * <p>The profiling group name to delete.</p>
+     * <p>The name of the profiling group to delete.</p>
      */
     inline bool ProfilingGroupNameHasBeenSet() const { return m_profilingGroupNameHasBeenSet; }
 
     /**
-     * <p>The profiling group name to delete.</p>
+     * <p>The name of the profiling group to delete.</p>
      */
     inline void SetProfilingGroupName(const Aws::String& value) { m_profilingGroupNameHasBeenSet = true; m_profilingGroupName = value; }
 
     /**
-     * <p>The profiling group name to delete.</p>
+     * <p>The name of the profiling group to delete.</p>
      */
     inline void SetProfilingGroupName(Aws::String&& value) { m_profilingGroupNameHasBeenSet = true; m_profilingGroupName = std::move(value); }
 
     /**
-     * <p>The profiling group name to delete.</p>
+     * <p>The name of the profiling group to delete.</p>
      */
     inline void SetProfilingGroupName(const char* value) { m_profilingGroupNameHasBeenSet = true; m_profilingGroupName.assign(value); }
 
     /**
-     * <p>The profiling group name to delete.</p>
+     * <p>The name of the profiling group to delete.</p>
      */
     inline DeleteProfilingGroupRequest& WithProfilingGroupName(const Aws::String& value) { SetProfilingGroupName(value); return *this;}
 
     /**
-     * <p>The profiling group name to delete.</p>
+     * <p>The name of the profiling group to delete.</p>
      */
     inline DeleteProfilingGroupRequest& WithProfilingGroupName(Aws::String&& value) { SetProfilingGroupName(std::move(value)); return *this;}
 
     /**
-     * <p>The profiling group name to delete.</p>
+     * <p>The name of the profiling group to delete.</p>
      */
     inline DeleteProfilingGroupRequest& WithProfilingGroupName(const char* value) { SetProfilingGroupName(value); return *this;}
 

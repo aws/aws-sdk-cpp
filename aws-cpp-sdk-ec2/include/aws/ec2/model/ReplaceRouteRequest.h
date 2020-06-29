@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
@@ -142,6 +132,47 @@ namespace Model
      * you provide must match the CIDR of an existing route in the table.</p>
      */
     inline ReplaceRouteRequest& WithDestinationIpv6CidrBlock(const char* value) { SetDestinationIpv6CidrBlock(value); return *this;}
+
+
+    /**
+     * <p>The ID of the prefix list for the route.</p>
+     */
+    inline const Aws::String& GetDestinationPrefixListId() const{ return m_destinationPrefixListId; }
+
+    /**
+     * <p>The ID of the prefix list for the route.</p>
+     */
+    inline bool DestinationPrefixListIdHasBeenSet() const { return m_destinationPrefixListIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the prefix list for the route.</p>
+     */
+    inline void SetDestinationPrefixListId(const Aws::String& value) { m_destinationPrefixListIdHasBeenSet = true; m_destinationPrefixListId = value; }
+
+    /**
+     * <p>The ID of the prefix list for the route.</p>
+     */
+    inline void SetDestinationPrefixListId(Aws::String&& value) { m_destinationPrefixListIdHasBeenSet = true; m_destinationPrefixListId = std::move(value); }
+
+    /**
+     * <p>The ID of the prefix list for the route.</p>
+     */
+    inline void SetDestinationPrefixListId(const char* value) { m_destinationPrefixListIdHasBeenSet = true; m_destinationPrefixListId.assign(value); }
+
+    /**
+     * <p>The ID of the prefix list for the route.</p>
+     */
+    inline ReplaceRouteRequest& WithDestinationPrefixListId(const Aws::String& value) { SetDestinationPrefixListId(value); return *this;}
+
+    /**
+     * <p>The ID of the prefix list for the route.</p>
+     */
+    inline ReplaceRouteRequest& WithDestinationPrefixListId(Aws::String&& value) { SetDestinationPrefixListId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the prefix list for the route.</p>
+     */
+    inline ReplaceRouteRequest& WithDestinationPrefixListId(const char* value) { SetDestinationPrefixListId(value); return *this;}
 
 
     /**
@@ -577,6 +608,9 @@ namespace Model
 
     Aws::String m_destinationIpv6CidrBlock;
     bool m_destinationIpv6CidrBlockHasBeenSet;
+
+    Aws::String m_destinationPrefixListId;
+    bool m_destinationPrefixListIdHasBeenSet;
 
     bool m_dryRun;
     bool m_dryRunHasBeenSet;

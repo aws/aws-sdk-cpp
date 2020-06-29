@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/autoscaling/AutoScaling_EXPORTS.h>
@@ -51,66 +41,50 @@ namespace Model
 
 
     /**
-     * <p>The snapshot ID of the volume to use.</p> <p> <code>SnapshotId</code> is
-     * optional if you specify a volume size. If you specify both
-     * <code>SnapshotId</code> and <code>VolumeSize</code>, the volume size must be
-     * equal or greater than the size of the snapshot.</p>
+     * <p>The snapshot ID of the volume to use.</p> <p>You must specify either a
+     * <code>VolumeSize</code> or a <code>SnapshotId</code>.</p>
      */
     inline const Aws::String& GetSnapshotId() const{ return m_snapshotId; }
 
     /**
-     * <p>The snapshot ID of the volume to use.</p> <p> <code>SnapshotId</code> is
-     * optional if you specify a volume size. If you specify both
-     * <code>SnapshotId</code> and <code>VolumeSize</code>, the volume size must be
-     * equal or greater than the size of the snapshot.</p>
+     * <p>The snapshot ID of the volume to use.</p> <p>You must specify either a
+     * <code>VolumeSize</code> or a <code>SnapshotId</code>.</p>
      */
     inline bool SnapshotIdHasBeenSet() const { return m_snapshotIdHasBeenSet; }
 
     /**
-     * <p>The snapshot ID of the volume to use.</p> <p> <code>SnapshotId</code> is
-     * optional if you specify a volume size. If you specify both
-     * <code>SnapshotId</code> and <code>VolumeSize</code>, the volume size must be
-     * equal or greater than the size of the snapshot.</p>
+     * <p>The snapshot ID of the volume to use.</p> <p>You must specify either a
+     * <code>VolumeSize</code> or a <code>SnapshotId</code>.</p>
      */
     inline void SetSnapshotId(const Aws::String& value) { m_snapshotIdHasBeenSet = true; m_snapshotId = value; }
 
     /**
-     * <p>The snapshot ID of the volume to use.</p> <p> <code>SnapshotId</code> is
-     * optional if you specify a volume size. If you specify both
-     * <code>SnapshotId</code> and <code>VolumeSize</code>, the volume size must be
-     * equal or greater than the size of the snapshot.</p>
+     * <p>The snapshot ID of the volume to use.</p> <p>You must specify either a
+     * <code>VolumeSize</code> or a <code>SnapshotId</code>.</p>
      */
     inline void SetSnapshotId(Aws::String&& value) { m_snapshotIdHasBeenSet = true; m_snapshotId = std::move(value); }
 
     /**
-     * <p>The snapshot ID of the volume to use.</p> <p> <code>SnapshotId</code> is
-     * optional if you specify a volume size. If you specify both
-     * <code>SnapshotId</code> and <code>VolumeSize</code>, the volume size must be
-     * equal or greater than the size of the snapshot.</p>
+     * <p>The snapshot ID of the volume to use.</p> <p>You must specify either a
+     * <code>VolumeSize</code> or a <code>SnapshotId</code>.</p>
      */
     inline void SetSnapshotId(const char* value) { m_snapshotIdHasBeenSet = true; m_snapshotId.assign(value); }
 
     /**
-     * <p>The snapshot ID of the volume to use.</p> <p> <code>SnapshotId</code> is
-     * optional if you specify a volume size. If you specify both
-     * <code>SnapshotId</code> and <code>VolumeSize</code>, the volume size must be
-     * equal or greater than the size of the snapshot.</p>
+     * <p>The snapshot ID of the volume to use.</p> <p>You must specify either a
+     * <code>VolumeSize</code> or a <code>SnapshotId</code>.</p>
      */
     inline Ebs& WithSnapshotId(const Aws::String& value) { SetSnapshotId(value); return *this;}
 
     /**
-     * <p>The snapshot ID of the volume to use.</p> <p> <code>SnapshotId</code> is
-     * optional if you specify a volume size. If you specify both
-     * <code>SnapshotId</code> and <code>VolumeSize</code>, the volume size must be
-     * equal or greater than the size of the snapshot.</p>
+     * <p>The snapshot ID of the volume to use.</p> <p>You must specify either a
+     * <code>VolumeSize</code> or a <code>SnapshotId</code>.</p>
      */
     inline Ebs& WithSnapshotId(Aws::String&& value) { SetSnapshotId(std::move(value)); return *this;}
 
     /**
-     * <p>The snapshot ID of the volume to use.</p> <p> <code>SnapshotId</code> is
-     * optional if you specify a volume size. If you specify both
-     * <code>SnapshotId</code> and <code>VolumeSize</code>, the volume size must be
-     * equal or greater than the size of the snapshot.</p>
+     * <p>The snapshot ID of the volume to use.</p> <p>You must specify either a
+     * <code>VolumeSize</code> or a <code>SnapshotId</code>.</p>
      */
     inline Ebs& WithSnapshotId(const char* value) { SetSnapshotId(value); return *this;}
 
@@ -121,9 +95,10 @@ namespace Model
      * <code>gp2</code>, and 500-16,384 for <code>st1</code> and <code>sc1</code>. If
      * you specify a snapshot, the volume size must be equal to or larger than the
      * snapshot size.</p> <p>Default: If you create a volume from a snapshot and you
-     * don't specify a volume size, the default is the snapshot size.</p> <note> <p>At
-     * least one of <code>VolumeSize</code> or <code>SnapshotId</code> is required.</p>
-     * </note>
+     * don't specify a volume size, the default is the snapshot size.</p> <p>You must
+     * specify either a <code>VolumeSize</code> or a <code>SnapshotId</code>. If you
+     * specify both <code>SnapshotId</code> and <code>VolumeSize</code>, the volume
+     * size must be equal or greater than the size of the snapshot.</p>
      */
     inline int GetVolumeSize() const{ return m_volumeSize; }
 
@@ -133,9 +108,10 @@ namespace Model
      * <code>gp2</code>, and 500-16,384 for <code>st1</code> and <code>sc1</code>. If
      * you specify a snapshot, the volume size must be equal to or larger than the
      * snapshot size.</p> <p>Default: If you create a volume from a snapshot and you
-     * don't specify a volume size, the default is the snapshot size.</p> <note> <p>At
-     * least one of <code>VolumeSize</code> or <code>SnapshotId</code> is required.</p>
-     * </note>
+     * don't specify a volume size, the default is the snapshot size.</p> <p>You must
+     * specify either a <code>VolumeSize</code> or a <code>SnapshotId</code>. If you
+     * specify both <code>SnapshotId</code> and <code>VolumeSize</code>, the volume
+     * size must be equal or greater than the size of the snapshot.</p>
      */
     inline bool VolumeSizeHasBeenSet() const { return m_volumeSizeHasBeenSet; }
 
@@ -145,9 +121,10 @@ namespace Model
      * <code>gp2</code>, and 500-16,384 for <code>st1</code> and <code>sc1</code>. If
      * you specify a snapshot, the volume size must be equal to or larger than the
      * snapshot size.</p> <p>Default: If you create a volume from a snapshot and you
-     * don't specify a volume size, the default is the snapshot size.</p> <note> <p>At
-     * least one of <code>VolumeSize</code> or <code>SnapshotId</code> is required.</p>
-     * </note>
+     * don't specify a volume size, the default is the snapshot size.</p> <p>You must
+     * specify either a <code>VolumeSize</code> or a <code>SnapshotId</code>. If you
+     * specify both <code>SnapshotId</code> and <code>VolumeSize</code>, the volume
+     * size must be equal or greater than the size of the snapshot.</p>
      */
     inline void SetVolumeSize(int value) { m_volumeSizeHasBeenSet = true; m_volumeSize = value; }
 
@@ -157,9 +134,10 @@ namespace Model
      * <code>gp2</code>, and 500-16,384 for <code>st1</code> and <code>sc1</code>. If
      * you specify a snapshot, the volume size must be equal to or larger than the
      * snapshot size.</p> <p>Default: If you create a volume from a snapshot and you
-     * don't specify a volume size, the default is the snapshot size.</p> <note> <p>At
-     * least one of <code>VolumeSize</code> or <code>SnapshotId</code> is required.</p>
-     * </note>
+     * don't specify a volume size, the default is the snapshot size.</p> <p>You must
+     * specify either a <code>VolumeSize</code> or a <code>SnapshotId</code>. If you
+     * specify both <code>SnapshotId</code> and <code>VolumeSize</code>, the volume
+     * size must be equal or greater than the size of the snapshot.</p>
      */
     inline Ebs& WithVolumeSize(int value) { SetVolumeSize(value); return *this;}
 

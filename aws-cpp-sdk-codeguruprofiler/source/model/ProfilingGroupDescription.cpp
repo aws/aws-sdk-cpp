@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/codeguruprofiler/model/ProfilingGroupDescription.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -31,6 +21,8 @@ namespace Model
 ProfilingGroupDescription::ProfilingGroupDescription() : 
     m_agentOrchestrationConfigHasBeenSet(false),
     m_arnHasBeenSet(false),
+    m_computePlatform(ComputePlatform::NOT_SET),
+    m_computePlatformHasBeenSet(false),
     m_createdAtHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_profilingStatusHasBeenSet(false),
@@ -41,6 +33,8 @@ ProfilingGroupDescription::ProfilingGroupDescription() :
 ProfilingGroupDescription::ProfilingGroupDescription(JsonView jsonValue) : 
     m_agentOrchestrationConfigHasBeenSet(false),
     m_arnHasBeenSet(false),
+    m_computePlatform(ComputePlatform::NOT_SET),
+    m_computePlatformHasBeenSet(false),
     m_createdAtHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_profilingStatusHasBeenSet(false),
@@ -63,6 +57,13 @@ ProfilingGroupDescription& ProfilingGroupDescription::operator =(JsonView jsonVa
     m_arn = jsonValue.GetString("arn");
 
     m_arnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("computePlatform"))
+  {
+    m_computePlatform = ComputePlatformMapper::GetComputePlatformForName(jsonValue.GetString("computePlatform"));
+
+    m_computePlatformHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("createdAt"))
@@ -110,6 +111,11 @@ JsonValue ProfilingGroupDescription::Jsonize() const
   {
    payload.WithString("arn", m_arn);
 
+  }
+
+  if(m_computePlatformHasBeenSet)
+  {
+   payload.WithString("computePlatform", ComputePlatformMapper::GetNameForComputePlatform(m_computePlatform));
   }
 
   if(m_createdAtHasBeenSet)

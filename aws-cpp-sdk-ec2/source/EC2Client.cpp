@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #include <aws/core/utils/Outcome.h>
 #include <aws/core/auth/AWSAuthSigner.h>
@@ -90,6 +80,7 @@
 #include <aws/ec2/model/CreateLaunchTemplateVersionRequest.h>
 #include <aws/ec2/model/CreateLocalGatewayRouteRequest.h>
 #include <aws/ec2/model/CreateLocalGatewayRouteTableVpcAssociationRequest.h>
+#include <aws/ec2/model/CreateManagedPrefixListRequest.h>
 #include <aws/ec2/model/CreateNatGatewayRequest.h>
 #include <aws/ec2/model/CreateNetworkAclRequest.h>
 #include <aws/ec2/model/CreateNetworkAclEntryRequest.h>
@@ -138,6 +129,7 @@
 #include <aws/ec2/model/DeleteLaunchTemplateVersionsRequest.h>
 #include <aws/ec2/model/DeleteLocalGatewayRouteRequest.h>
 #include <aws/ec2/model/DeleteLocalGatewayRouteTableVpcAssociationRequest.h>
+#include <aws/ec2/model/DeleteManagedPrefixListRequest.h>
 #include <aws/ec2/model/DeleteNatGatewayRequest.h>
 #include <aws/ec2/model/DeleteNetworkAclRequest.h>
 #include <aws/ec2/model/DeleteNetworkAclEntryRequest.h>
@@ -232,6 +224,7 @@
 #include <aws/ec2/model/DescribeLocalGatewayVirtualInterfaceGroupsRequest.h>
 #include <aws/ec2/model/DescribeLocalGatewayVirtualInterfacesRequest.h>
 #include <aws/ec2/model/DescribeLocalGatewaysRequest.h>
+#include <aws/ec2/model/DescribeManagedPrefixListsRequest.h>
 #include <aws/ec2/model/DescribeMovingAddressesRequest.h>
 #include <aws/ec2/model/DescribeNatGatewaysRequest.h>
 #include <aws/ec2/model/DescribeNetworkAclsRequest.h>
@@ -329,6 +322,8 @@
 #include <aws/ec2/model/GetEbsEncryptionByDefaultRequest.h>
 #include <aws/ec2/model/GetHostReservationPurchasePreviewRequest.h>
 #include <aws/ec2/model/GetLaunchTemplateDataRequest.h>
+#include <aws/ec2/model/GetManagedPrefixListAssociationsRequest.h>
+#include <aws/ec2/model/GetManagedPrefixListEntriesRequest.h>
 #include <aws/ec2/model/GetPasswordDataRequest.h>
 #include <aws/ec2/model/GetReservedInstancesExchangeQuoteRequest.h>
 #include <aws/ec2/model/GetTransitGatewayAttachmentPropagationsRequest.h>
@@ -359,6 +354,7 @@
 #include <aws/ec2/model/ModifyInstanceMetadataOptionsRequest.h>
 #include <aws/ec2/model/ModifyInstancePlacementRequest.h>
 #include <aws/ec2/model/ModifyLaunchTemplateRequest.h>
+#include <aws/ec2/model/ModifyManagedPrefixListRequest.h>
 #include <aws/ec2/model/ModifyNetworkInterfaceAttributeRequest.h>
 #include <aws/ec2/model/ModifyReservedInstancesRequest.h>
 #include <aws/ec2/model/ModifySnapshotAttributeRequest.h>
@@ -413,6 +409,7 @@
 #include <aws/ec2/model/ResetNetworkInterfaceAttributeRequest.h>
 #include <aws/ec2/model/ResetSnapshotAttributeRequest.h>
 #include <aws/ec2/model/RestoreAddressToClassicRequest.h>
+#include <aws/ec2/model/RestoreManagedPrefixListVersionRequest.h>
 #include <aws/ec2/model/RevokeClientVpnIngressRequest.h>
 #include <aws/ec2/model/RevokeSecurityGroupEgressRequest.h>
 #include <aws/ec2/model/RevokeSecurityGroupIngressRequest.h>
@@ -2607,6 +2604,41 @@ void EC2Client::CreateLocalGatewayRouteTableVpcAssociationAsyncHelper(const Crea
   handler(this, request, CreateLocalGatewayRouteTableVpcAssociation(request), context);
 }
 
+CreateManagedPrefixListOutcome EC2Client::CreateManagedPrefixList(const CreateManagedPrefixListRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return CreateManagedPrefixListOutcome(CreateManagedPrefixListResponse(outcome.GetResult()));
+  }
+  else
+  {
+    return CreateManagedPrefixListOutcome(outcome.GetError());
+  }
+}
+
+CreateManagedPrefixListOutcomeCallable EC2Client::CreateManagedPrefixListCallable(const CreateManagedPrefixListRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateManagedPrefixListOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateManagedPrefixList(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EC2Client::CreateManagedPrefixListAsync(const CreateManagedPrefixListRequest& request, const CreateManagedPrefixListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateManagedPrefixListAsyncHelper( request, handler, context ); } );
+}
+
+void EC2Client::CreateManagedPrefixListAsyncHelper(const CreateManagedPrefixListRequest& request, const CreateManagedPrefixListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateManagedPrefixList(request), context);
+}
+
 CreateNatGatewayOutcome EC2Client::CreateNatGateway(const CreateNatGatewayRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -4285,6 +4317,41 @@ void EC2Client::DeleteLocalGatewayRouteTableVpcAssociationAsync(const DeleteLoca
 void EC2Client::DeleteLocalGatewayRouteTableVpcAssociationAsyncHelper(const DeleteLocalGatewayRouteTableVpcAssociationRequest& request, const DeleteLocalGatewayRouteTableVpcAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteLocalGatewayRouteTableVpcAssociation(request), context);
+}
+
+DeleteManagedPrefixListOutcome EC2Client::DeleteManagedPrefixList(const DeleteManagedPrefixListRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DeleteManagedPrefixListOutcome(DeleteManagedPrefixListResponse(outcome.GetResult()));
+  }
+  else
+  {
+    return DeleteManagedPrefixListOutcome(outcome.GetError());
+  }
+}
+
+DeleteManagedPrefixListOutcomeCallable EC2Client::DeleteManagedPrefixListCallable(const DeleteManagedPrefixListRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteManagedPrefixListOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteManagedPrefixList(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EC2Client::DeleteManagedPrefixListAsync(const DeleteManagedPrefixListRequest& request, const DeleteManagedPrefixListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteManagedPrefixListAsyncHelper( request, handler, context ); } );
+}
+
+void EC2Client::DeleteManagedPrefixListAsyncHelper(const DeleteManagedPrefixListRequest& request, const DeleteManagedPrefixListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteManagedPrefixList(request), context);
 }
 
 DeleteNatGatewayOutcome EC2Client::DeleteNatGateway(const DeleteNatGatewayRequest& request) const
@@ -7575,6 +7642,41 @@ void EC2Client::DescribeLocalGatewaysAsync(const DescribeLocalGatewaysRequest& r
 void EC2Client::DescribeLocalGatewaysAsyncHelper(const DescribeLocalGatewaysRequest& request, const DescribeLocalGatewaysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribeLocalGateways(request), context);
+}
+
+DescribeManagedPrefixListsOutcome EC2Client::DescribeManagedPrefixLists(const DescribeManagedPrefixListsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DescribeManagedPrefixListsOutcome(DescribeManagedPrefixListsResponse(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeManagedPrefixListsOutcome(outcome.GetError());
+  }
+}
+
+DescribeManagedPrefixListsOutcomeCallable EC2Client::DescribeManagedPrefixListsCallable(const DescribeManagedPrefixListsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeManagedPrefixListsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeManagedPrefixLists(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EC2Client::DescribeManagedPrefixListsAsync(const DescribeManagedPrefixListsRequest& request, const DescribeManagedPrefixListsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeManagedPrefixListsAsyncHelper( request, handler, context ); } );
+}
+
+void EC2Client::DescribeManagedPrefixListsAsyncHelper(const DescribeManagedPrefixListsRequest& request, const DescribeManagedPrefixListsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeManagedPrefixLists(request), context);
 }
 
 DescribeMovingAddressesOutcome EC2Client::DescribeMovingAddresses(const DescribeMovingAddressesRequest& request) const
@@ -10972,6 +11074,76 @@ void EC2Client::GetLaunchTemplateDataAsyncHelper(const GetLaunchTemplateDataRequ
   handler(this, request, GetLaunchTemplateData(request), context);
 }
 
+GetManagedPrefixListAssociationsOutcome EC2Client::GetManagedPrefixListAssociations(const GetManagedPrefixListAssociationsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return GetManagedPrefixListAssociationsOutcome(GetManagedPrefixListAssociationsResponse(outcome.GetResult()));
+  }
+  else
+  {
+    return GetManagedPrefixListAssociationsOutcome(outcome.GetError());
+  }
+}
+
+GetManagedPrefixListAssociationsOutcomeCallable EC2Client::GetManagedPrefixListAssociationsCallable(const GetManagedPrefixListAssociationsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetManagedPrefixListAssociationsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetManagedPrefixListAssociations(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EC2Client::GetManagedPrefixListAssociationsAsync(const GetManagedPrefixListAssociationsRequest& request, const GetManagedPrefixListAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetManagedPrefixListAssociationsAsyncHelper( request, handler, context ); } );
+}
+
+void EC2Client::GetManagedPrefixListAssociationsAsyncHelper(const GetManagedPrefixListAssociationsRequest& request, const GetManagedPrefixListAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetManagedPrefixListAssociations(request), context);
+}
+
+GetManagedPrefixListEntriesOutcome EC2Client::GetManagedPrefixListEntries(const GetManagedPrefixListEntriesRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return GetManagedPrefixListEntriesOutcome(GetManagedPrefixListEntriesResponse(outcome.GetResult()));
+  }
+  else
+  {
+    return GetManagedPrefixListEntriesOutcome(outcome.GetError());
+  }
+}
+
+GetManagedPrefixListEntriesOutcomeCallable EC2Client::GetManagedPrefixListEntriesCallable(const GetManagedPrefixListEntriesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetManagedPrefixListEntriesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetManagedPrefixListEntries(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EC2Client::GetManagedPrefixListEntriesAsync(const GetManagedPrefixListEntriesRequest& request, const GetManagedPrefixListEntriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetManagedPrefixListEntriesAsyncHelper( request, handler, context ); } );
+}
+
+void EC2Client::GetManagedPrefixListEntriesAsyncHelper(const GetManagedPrefixListEntriesRequest& request, const GetManagedPrefixListEntriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetManagedPrefixListEntries(request), context);
+}
+
 GetPasswordDataOutcome EC2Client::GetPasswordData(const GetPasswordDataRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -12020,6 +12192,41 @@ void EC2Client::ModifyLaunchTemplateAsync(const ModifyLaunchTemplateRequest& req
 void EC2Client::ModifyLaunchTemplateAsyncHelper(const ModifyLaunchTemplateRequest& request, const ModifyLaunchTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ModifyLaunchTemplate(request), context);
+}
+
+ModifyManagedPrefixListOutcome EC2Client::ModifyManagedPrefixList(const ModifyManagedPrefixListRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return ModifyManagedPrefixListOutcome(ModifyManagedPrefixListResponse(outcome.GetResult()));
+  }
+  else
+  {
+    return ModifyManagedPrefixListOutcome(outcome.GetError());
+  }
+}
+
+ModifyManagedPrefixListOutcomeCallable EC2Client::ModifyManagedPrefixListCallable(const ModifyManagedPrefixListRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ModifyManagedPrefixListOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ModifyManagedPrefixList(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EC2Client::ModifyManagedPrefixListAsync(const ModifyManagedPrefixListRequest& request, const ModifyManagedPrefixListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ModifyManagedPrefixListAsyncHelper( request, handler, context ); } );
+}
+
+void EC2Client::ModifyManagedPrefixListAsyncHelper(const ModifyManagedPrefixListRequest& request, const ModifyManagedPrefixListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ModifyManagedPrefixList(request), context);
 }
 
 ModifyNetworkInterfaceAttributeOutcome EC2Client::ModifyNetworkInterfaceAttribute(const ModifyNetworkInterfaceAttributeRequest& request) const
@@ -13910,6 +14117,41 @@ void EC2Client::RestoreAddressToClassicAsync(const RestoreAddressToClassicReques
 void EC2Client::RestoreAddressToClassicAsyncHelper(const RestoreAddressToClassicRequest& request, const RestoreAddressToClassicResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, RestoreAddressToClassic(request), context);
+}
+
+RestoreManagedPrefixListVersionOutcome EC2Client::RestoreManagedPrefixListVersion(const RestoreManagedPrefixListVersionRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return RestoreManagedPrefixListVersionOutcome(RestoreManagedPrefixListVersionResponse(outcome.GetResult()));
+  }
+  else
+  {
+    return RestoreManagedPrefixListVersionOutcome(outcome.GetError());
+  }
+}
+
+RestoreManagedPrefixListVersionOutcomeCallable EC2Client::RestoreManagedPrefixListVersionCallable(const RestoreManagedPrefixListVersionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< RestoreManagedPrefixListVersionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RestoreManagedPrefixListVersion(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EC2Client::RestoreManagedPrefixListVersionAsync(const RestoreManagedPrefixListVersionRequest& request, const RestoreManagedPrefixListVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->RestoreManagedPrefixListVersionAsyncHelper( request, handler, context ); } );
+}
+
+void EC2Client::RestoreManagedPrefixListVersionAsyncHelper(const RestoreManagedPrefixListVersionRequest& request, const RestoreManagedPrefixListVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, RestoreManagedPrefixListVersion(request), context);
 }
 
 RevokeClientVpnIngressOutcome EC2Client::RevokeClientVpnIngress(const RevokeClientVpnIngressRequest& request) const

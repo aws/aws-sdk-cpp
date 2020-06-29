@@ -1,17 +1,7 @@
-﻿/*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License").
-* You may not use this file except in compliance with the License.
-* A copy of the License is located at
-*
-*  http://aws.amazon.com/apache2.0
-*
-* or in the "license" file accompanying this file. This file is distributed
-* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-* express or implied. See the License for the specific language governing
-* permissions and limitations under the License.
-*/
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
@@ -76,6 +66,7 @@
 #include <aws/ec2/model/CreateLaunchTemplateVersionResponse.h>
 #include <aws/ec2/model/CreateLocalGatewayRouteResponse.h>
 #include <aws/ec2/model/CreateLocalGatewayRouteTableVpcAssociationResponse.h>
+#include <aws/ec2/model/CreateManagedPrefixListResponse.h>
 #include <aws/ec2/model/CreateNatGatewayResponse.h>
 #include <aws/ec2/model/CreateNetworkAclResponse.h>
 #include <aws/ec2/model/CreateNetworkInterfaceResponse.h>
@@ -117,6 +108,7 @@
 #include <aws/ec2/model/DeleteLaunchTemplateVersionsResponse.h>
 #include <aws/ec2/model/DeleteLocalGatewayRouteResponse.h>
 #include <aws/ec2/model/DeleteLocalGatewayRouteTableVpcAssociationResponse.h>
+#include <aws/ec2/model/DeleteManagedPrefixListResponse.h>
 #include <aws/ec2/model/DeleteNatGatewayResponse.h>
 #include <aws/ec2/model/DeleteNetworkInterfacePermissionResponse.h>
 #include <aws/ec2/model/DeleteQueuedReservedInstancesResponse.h>
@@ -194,6 +186,7 @@
 #include <aws/ec2/model/DescribeLocalGatewayVirtualInterfaceGroupsResponse.h>
 #include <aws/ec2/model/DescribeLocalGatewayVirtualInterfacesResponse.h>
 #include <aws/ec2/model/DescribeLocalGatewaysResponse.h>
+#include <aws/ec2/model/DescribeManagedPrefixListsResponse.h>
 #include <aws/ec2/model/DescribeMovingAddressesResponse.h>
 #include <aws/ec2/model/DescribeNatGatewaysResponse.h>
 #include <aws/ec2/model/DescribeNetworkAclsResponse.h>
@@ -283,6 +276,8 @@
 #include <aws/ec2/model/GetEbsEncryptionByDefaultResponse.h>
 #include <aws/ec2/model/GetHostReservationPurchasePreviewResponse.h>
 #include <aws/ec2/model/GetLaunchTemplateDataResponse.h>
+#include <aws/ec2/model/GetManagedPrefixListAssociationsResponse.h>
+#include <aws/ec2/model/GetManagedPrefixListEntriesResponse.h>
 #include <aws/ec2/model/GetPasswordDataResponse.h>
 #include <aws/ec2/model/GetReservedInstancesExchangeQuoteResponse.h>
 #include <aws/ec2/model/GetTransitGatewayAttachmentPropagationsResponse.h>
@@ -309,6 +304,7 @@
 #include <aws/ec2/model/ModifyInstanceMetadataOptionsResponse.h>
 #include <aws/ec2/model/ModifyInstancePlacementResponse.h>
 #include <aws/ec2/model/ModifyLaunchTemplateResponse.h>
+#include <aws/ec2/model/ModifyManagedPrefixListResponse.h>
 #include <aws/ec2/model/ModifyReservedInstancesResponse.h>
 #include <aws/ec2/model/ModifySpotFleetRequestResponse.h>
 #include <aws/ec2/model/ModifyTrafficMirrorFilterNetworkServicesResponse.h>
@@ -349,6 +345,7 @@
 #include <aws/ec2/model/ResetEbsDefaultKmsKeyIdResponse.h>
 #include <aws/ec2/model/ResetFpgaImageAttributeResponse.h>
 #include <aws/ec2/model/RestoreAddressToClassicResponse.h>
+#include <aws/ec2/model/RestoreManagedPrefixListVersionResponse.h>
 #include <aws/ec2/model/RevokeClientVpnIngressResponse.h>
 #include <aws/ec2/model/RunInstancesResponse.h>
 #include <aws/ec2/model/RunScheduledInstancesResponse.h>
@@ -471,6 +468,7 @@ namespace Model
         class CreateLaunchTemplateVersionRequest;
         class CreateLocalGatewayRouteRequest;
         class CreateLocalGatewayRouteTableVpcAssociationRequest;
+        class CreateManagedPrefixListRequest;
         class CreateNatGatewayRequest;
         class CreateNetworkAclRequest;
         class CreateNetworkAclEntryRequest;
@@ -519,6 +517,7 @@ namespace Model
         class DeleteLaunchTemplateVersionsRequest;
         class DeleteLocalGatewayRouteRequest;
         class DeleteLocalGatewayRouteTableVpcAssociationRequest;
+        class DeleteManagedPrefixListRequest;
         class DeleteNatGatewayRequest;
         class DeleteNetworkAclRequest;
         class DeleteNetworkAclEntryRequest;
@@ -613,6 +612,7 @@ namespace Model
         class DescribeLocalGatewayVirtualInterfaceGroupsRequest;
         class DescribeLocalGatewayVirtualInterfacesRequest;
         class DescribeLocalGatewaysRequest;
+        class DescribeManagedPrefixListsRequest;
         class DescribeMovingAddressesRequest;
         class DescribeNatGatewaysRequest;
         class DescribeNetworkAclsRequest;
@@ -710,6 +710,8 @@ namespace Model
         class GetEbsEncryptionByDefaultRequest;
         class GetHostReservationPurchasePreviewRequest;
         class GetLaunchTemplateDataRequest;
+        class GetManagedPrefixListAssociationsRequest;
+        class GetManagedPrefixListEntriesRequest;
         class GetPasswordDataRequest;
         class GetReservedInstancesExchangeQuoteRequest;
         class GetTransitGatewayAttachmentPropagationsRequest;
@@ -740,6 +742,7 @@ namespace Model
         class ModifyInstanceMetadataOptionsRequest;
         class ModifyInstancePlacementRequest;
         class ModifyLaunchTemplateRequest;
+        class ModifyManagedPrefixListRequest;
         class ModifyNetworkInterfaceAttributeRequest;
         class ModifyReservedInstancesRequest;
         class ModifySnapshotAttributeRequest;
@@ -794,6 +797,7 @@ namespace Model
         class ResetNetworkInterfaceAttributeRequest;
         class ResetSnapshotAttributeRequest;
         class RestoreAddressToClassicRequest;
+        class RestoreManagedPrefixListVersionRequest;
         class RevokeClientVpnIngressRequest;
         class RevokeSecurityGroupEgressRequest;
         class RevokeSecurityGroupIngressRequest;
@@ -875,6 +879,7 @@ namespace Model
         typedef Aws::Utils::Outcome<CreateLaunchTemplateVersionResponse, Aws::Client::AWSError<EC2Errors>> CreateLaunchTemplateVersionOutcome;
         typedef Aws::Utils::Outcome<CreateLocalGatewayRouteResponse, Aws::Client::AWSError<EC2Errors>> CreateLocalGatewayRouteOutcome;
         typedef Aws::Utils::Outcome<CreateLocalGatewayRouteTableVpcAssociationResponse, Aws::Client::AWSError<EC2Errors>> CreateLocalGatewayRouteTableVpcAssociationOutcome;
+        typedef Aws::Utils::Outcome<CreateManagedPrefixListResponse, Aws::Client::AWSError<EC2Errors>> CreateManagedPrefixListOutcome;
         typedef Aws::Utils::Outcome<CreateNatGatewayResponse, Aws::Client::AWSError<EC2Errors>> CreateNatGatewayOutcome;
         typedef Aws::Utils::Outcome<CreateNetworkAclResponse, Aws::Client::AWSError<EC2Errors>> CreateNetworkAclOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<EC2Errors>> CreateNetworkAclEntryOutcome;
@@ -923,6 +928,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DeleteLaunchTemplateVersionsResponse, Aws::Client::AWSError<EC2Errors>> DeleteLaunchTemplateVersionsOutcome;
         typedef Aws::Utils::Outcome<DeleteLocalGatewayRouteResponse, Aws::Client::AWSError<EC2Errors>> DeleteLocalGatewayRouteOutcome;
         typedef Aws::Utils::Outcome<DeleteLocalGatewayRouteTableVpcAssociationResponse, Aws::Client::AWSError<EC2Errors>> DeleteLocalGatewayRouteTableVpcAssociationOutcome;
+        typedef Aws::Utils::Outcome<DeleteManagedPrefixListResponse, Aws::Client::AWSError<EC2Errors>> DeleteManagedPrefixListOutcome;
         typedef Aws::Utils::Outcome<DeleteNatGatewayResponse, Aws::Client::AWSError<EC2Errors>> DeleteNatGatewayOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<EC2Errors>> DeleteNetworkAclOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<EC2Errors>> DeleteNetworkAclEntryOutcome;
@@ -1017,6 +1023,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribeLocalGatewayVirtualInterfaceGroupsResponse, Aws::Client::AWSError<EC2Errors>> DescribeLocalGatewayVirtualInterfaceGroupsOutcome;
         typedef Aws::Utils::Outcome<DescribeLocalGatewayVirtualInterfacesResponse, Aws::Client::AWSError<EC2Errors>> DescribeLocalGatewayVirtualInterfacesOutcome;
         typedef Aws::Utils::Outcome<DescribeLocalGatewaysResponse, Aws::Client::AWSError<EC2Errors>> DescribeLocalGatewaysOutcome;
+        typedef Aws::Utils::Outcome<DescribeManagedPrefixListsResponse, Aws::Client::AWSError<EC2Errors>> DescribeManagedPrefixListsOutcome;
         typedef Aws::Utils::Outcome<DescribeMovingAddressesResponse, Aws::Client::AWSError<EC2Errors>> DescribeMovingAddressesOutcome;
         typedef Aws::Utils::Outcome<DescribeNatGatewaysResponse, Aws::Client::AWSError<EC2Errors>> DescribeNatGatewaysOutcome;
         typedef Aws::Utils::Outcome<DescribeNetworkAclsResponse, Aws::Client::AWSError<EC2Errors>> DescribeNetworkAclsOutcome;
@@ -1114,6 +1121,8 @@ namespace Model
         typedef Aws::Utils::Outcome<GetEbsEncryptionByDefaultResponse, Aws::Client::AWSError<EC2Errors>> GetEbsEncryptionByDefaultOutcome;
         typedef Aws::Utils::Outcome<GetHostReservationPurchasePreviewResponse, Aws::Client::AWSError<EC2Errors>> GetHostReservationPurchasePreviewOutcome;
         typedef Aws::Utils::Outcome<GetLaunchTemplateDataResponse, Aws::Client::AWSError<EC2Errors>> GetLaunchTemplateDataOutcome;
+        typedef Aws::Utils::Outcome<GetManagedPrefixListAssociationsResponse, Aws::Client::AWSError<EC2Errors>> GetManagedPrefixListAssociationsOutcome;
+        typedef Aws::Utils::Outcome<GetManagedPrefixListEntriesResponse, Aws::Client::AWSError<EC2Errors>> GetManagedPrefixListEntriesOutcome;
         typedef Aws::Utils::Outcome<GetPasswordDataResponse, Aws::Client::AWSError<EC2Errors>> GetPasswordDataOutcome;
         typedef Aws::Utils::Outcome<GetReservedInstancesExchangeQuoteResponse, Aws::Client::AWSError<EC2Errors>> GetReservedInstancesExchangeQuoteOutcome;
         typedef Aws::Utils::Outcome<GetTransitGatewayAttachmentPropagationsResponse, Aws::Client::AWSError<EC2Errors>> GetTransitGatewayAttachmentPropagationsOutcome;
@@ -1144,6 +1153,7 @@ namespace Model
         typedef Aws::Utils::Outcome<ModifyInstanceMetadataOptionsResponse, Aws::Client::AWSError<EC2Errors>> ModifyInstanceMetadataOptionsOutcome;
         typedef Aws::Utils::Outcome<ModifyInstancePlacementResponse, Aws::Client::AWSError<EC2Errors>> ModifyInstancePlacementOutcome;
         typedef Aws::Utils::Outcome<ModifyLaunchTemplateResponse, Aws::Client::AWSError<EC2Errors>> ModifyLaunchTemplateOutcome;
+        typedef Aws::Utils::Outcome<ModifyManagedPrefixListResponse, Aws::Client::AWSError<EC2Errors>> ModifyManagedPrefixListOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<EC2Errors>> ModifyNetworkInterfaceAttributeOutcome;
         typedef Aws::Utils::Outcome<ModifyReservedInstancesResponse, Aws::Client::AWSError<EC2Errors>> ModifyReservedInstancesOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<EC2Errors>> ModifySnapshotAttributeOutcome;
@@ -1198,6 +1208,7 @@ namespace Model
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<EC2Errors>> ResetNetworkInterfaceAttributeOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<EC2Errors>> ResetSnapshotAttributeOutcome;
         typedef Aws::Utils::Outcome<RestoreAddressToClassicResponse, Aws::Client::AWSError<EC2Errors>> RestoreAddressToClassicOutcome;
+        typedef Aws::Utils::Outcome<RestoreManagedPrefixListVersionResponse, Aws::Client::AWSError<EC2Errors>> RestoreManagedPrefixListVersionOutcome;
         typedef Aws::Utils::Outcome<RevokeClientVpnIngressResponse, Aws::Client::AWSError<EC2Errors>> RevokeClientVpnIngressOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<EC2Errors>> RevokeSecurityGroupEgressOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<EC2Errors>> RevokeSecurityGroupIngressOutcome;
@@ -1279,6 +1290,7 @@ namespace Model
         typedef std::future<CreateLaunchTemplateVersionOutcome> CreateLaunchTemplateVersionOutcomeCallable;
         typedef std::future<CreateLocalGatewayRouteOutcome> CreateLocalGatewayRouteOutcomeCallable;
         typedef std::future<CreateLocalGatewayRouteTableVpcAssociationOutcome> CreateLocalGatewayRouteTableVpcAssociationOutcomeCallable;
+        typedef std::future<CreateManagedPrefixListOutcome> CreateManagedPrefixListOutcomeCallable;
         typedef std::future<CreateNatGatewayOutcome> CreateNatGatewayOutcomeCallable;
         typedef std::future<CreateNetworkAclOutcome> CreateNetworkAclOutcomeCallable;
         typedef std::future<CreateNetworkAclEntryOutcome> CreateNetworkAclEntryOutcomeCallable;
@@ -1327,6 +1339,7 @@ namespace Model
         typedef std::future<DeleteLaunchTemplateVersionsOutcome> DeleteLaunchTemplateVersionsOutcomeCallable;
         typedef std::future<DeleteLocalGatewayRouteOutcome> DeleteLocalGatewayRouteOutcomeCallable;
         typedef std::future<DeleteLocalGatewayRouteTableVpcAssociationOutcome> DeleteLocalGatewayRouteTableVpcAssociationOutcomeCallable;
+        typedef std::future<DeleteManagedPrefixListOutcome> DeleteManagedPrefixListOutcomeCallable;
         typedef std::future<DeleteNatGatewayOutcome> DeleteNatGatewayOutcomeCallable;
         typedef std::future<DeleteNetworkAclOutcome> DeleteNetworkAclOutcomeCallable;
         typedef std::future<DeleteNetworkAclEntryOutcome> DeleteNetworkAclEntryOutcomeCallable;
@@ -1421,6 +1434,7 @@ namespace Model
         typedef std::future<DescribeLocalGatewayVirtualInterfaceGroupsOutcome> DescribeLocalGatewayVirtualInterfaceGroupsOutcomeCallable;
         typedef std::future<DescribeLocalGatewayVirtualInterfacesOutcome> DescribeLocalGatewayVirtualInterfacesOutcomeCallable;
         typedef std::future<DescribeLocalGatewaysOutcome> DescribeLocalGatewaysOutcomeCallable;
+        typedef std::future<DescribeManagedPrefixListsOutcome> DescribeManagedPrefixListsOutcomeCallable;
         typedef std::future<DescribeMovingAddressesOutcome> DescribeMovingAddressesOutcomeCallable;
         typedef std::future<DescribeNatGatewaysOutcome> DescribeNatGatewaysOutcomeCallable;
         typedef std::future<DescribeNetworkAclsOutcome> DescribeNetworkAclsOutcomeCallable;
@@ -1518,6 +1532,8 @@ namespace Model
         typedef std::future<GetEbsEncryptionByDefaultOutcome> GetEbsEncryptionByDefaultOutcomeCallable;
         typedef std::future<GetHostReservationPurchasePreviewOutcome> GetHostReservationPurchasePreviewOutcomeCallable;
         typedef std::future<GetLaunchTemplateDataOutcome> GetLaunchTemplateDataOutcomeCallable;
+        typedef std::future<GetManagedPrefixListAssociationsOutcome> GetManagedPrefixListAssociationsOutcomeCallable;
+        typedef std::future<GetManagedPrefixListEntriesOutcome> GetManagedPrefixListEntriesOutcomeCallable;
         typedef std::future<GetPasswordDataOutcome> GetPasswordDataOutcomeCallable;
         typedef std::future<GetReservedInstancesExchangeQuoteOutcome> GetReservedInstancesExchangeQuoteOutcomeCallable;
         typedef std::future<GetTransitGatewayAttachmentPropagationsOutcome> GetTransitGatewayAttachmentPropagationsOutcomeCallable;
@@ -1548,6 +1564,7 @@ namespace Model
         typedef std::future<ModifyInstanceMetadataOptionsOutcome> ModifyInstanceMetadataOptionsOutcomeCallable;
         typedef std::future<ModifyInstancePlacementOutcome> ModifyInstancePlacementOutcomeCallable;
         typedef std::future<ModifyLaunchTemplateOutcome> ModifyLaunchTemplateOutcomeCallable;
+        typedef std::future<ModifyManagedPrefixListOutcome> ModifyManagedPrefixListOutcomeCallable;
         typedef std::future<ModifyNetworkInterfaceAttributeOutcome> ModifyNetworkInterfaceAttributeOutcomeCallable;
         typedef std::future<ModifyReservedInstancesOutcome> ModifyReservedInstancesOutcomeCallable;
         typedef std::future<ModifySnapshotAttributeOutcome> ModifySnapshotAttributeOutcomeCallable;
@@ -1602,6 +1619,7 @@ namespace Model
         typedef std::future<ResetNetworkInterfaceAttributeOutcome> ResetNetworkInterfaceAttributeOutcomeCallable;
         typedef std::future<ResetSnapshotAttributeOutcome> ResetSnapshotAttributeOutcomeCallable;
         typedef std::future<RestoreAddressToClassicOutcome> RestoreAddressToClassicOutcomeCallable;
+        typedef std::future<RestoreManagedPrefixListVersionOutcome> RestoreManagedPrefixListVersionOutcomeCallable;
         typedef std::future<RevokeClientVpnIngressOutcome> RevokeClientVpnIngressOutcomeCallable;
         typedef std::future<RevokeSecurityGroupEgressOutcome> RevokeSecurityGroupEgressOutcomeCallable;
         typedef std::future<RevokeSecurityGroupIngressOutcome> RevokeSecurityGroupIngressOutcomeCallable;
@@ -1686,6 +1704,7 @@ namespace Model
     typedef std::function<void(const EC2Client*, const Model::CreateLaunchTemplateVersionRequest&, const Model::CreateLaunchTemplateVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateLaunchTemplateVersionResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::CreateLocalGatewayRouteRequest&, const Model::CreateLocalGatewayRouteOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateLocalGatewayRouteResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::CreateLocalGatewayRouteTableVpcAssociationRequest&, const Model::CreateLocalGatewayRouteTableVpcAssociationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateLocalGatewayRouteTableVpcAssociationResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::CreateManagedPrefixListRequest&, const Model::CreateManagedPrefixListOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateManagedPrefixListResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::CreateNatGatewayRequest&, const Model::CreateNatGatewayOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateNatGatewayResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::CreateNetworkAclRequest&, const Model::CreateNetworkAclOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateNetworkAclResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::CreateNetworkAclEntryRequest&, const Model::CreateNetworkAclEntryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateNetworkAclEntryResponseReceivedHandler;
@@ -1734,6 +1753,7 @@ namespace Model
     typedef std::function<void(const EC2Client*, const Model::DeleteLaunchTemplateVersionsRequest&, const Model::DeleteLaunchTemplateVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteLaunchTemplateVersionsResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DeleteLocalGatewayRouteRequest&, const Model::DeleteLocalGatewayRouteOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteLocalGatewayRouteResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DeleteLocalGatewayRouteTableVpcAssociationRequest&, const Model::DeleteLocalGatewayRouteTableVpcAssociationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteLocalGatewayRouteTableVpcAssociationResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::DeleteManagedPrefixListRequest&, const Model::DeleteManagedPrefixListOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteManagedPrefixListResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DeleteNatGatewayRequest&, const Model::DeleteNatGatewayOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteNatGatewayResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DeleteNetworkAclRequest&, const Model::DeleteNetworkAclOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteNetworkAclResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DeleteNetworkAclEntryRequest&, const Model::DeleteNetworkAclEntryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteNetworkAclEntryResponseReceivedHandler;
@@ -1828,6 +1848,7 @@ namespace Model
     typedef std::function<void(const EC2Client*, const Model::DescribeLocalGatewayVirtualInterfaceGroupsRequest&, const Model::DescribeLocalGatewayVirtualInterfaceGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeLocalGatewayVirtualInterfaceGroupsResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeLocalGatewayVirtualInterfacesRequest&, const Model::DescribeLocalGatewayVirtualInterfacesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeLocalGatewayVirtualInterfacesResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeLocalGatewaysRequest&, const Model::DescribeLocalGatewaysOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeLocalGatewaysResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::DescribeManagedPrefixListsRequest&, const Model::DescribeManagedPrefixListsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeManagedPrefixListsResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeMovingAddressesRequest&, const Model::DescribeMovingAddressesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeMovingAddressesResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeNatGatewaysRequest&, const Model::DescribeNatGatewaysOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeNatGatewaysResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeNetworkAclsRequest&, const Model::DescribeNetworkAclsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeNetworkAclsResponseReceivedHandler;
@@ -1925,6 +1946,8 @@ namespace Model
     typedef std::function<void(const EC2Client*, const Model::GetEbsEncryptionByDefaultRequest&, const Model::GetEbsEncryptionByDefaultOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetEbsEncryptionByDefaultResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::GetHostReservationPurchasePreviewRequest&, const Model::GetHostReservationPurchasePreviewOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetHostReservationPurchasePreviewResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::GetLaunchTemplateDataRequest&, const Model::GetLaunchTemplateDataOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetLaunchTemplateDataResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::GetManagedPrefixListAssociationsRequest&, const Model::GetManagedPrefixListAssociationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetManagedPrefixListAssociationsResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::GetManagedPrefixListEntriesRequest&, const Model::GetManagedPrefixListEntriesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetManagedPrefixListEntriesResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::GetPasswordDataRequest&, const Model::GetPasswordDataOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetPasswordDataResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::GetReservedInstancesExchangeQuoteRequest&, const Model::GetReservedInstancesExchangeQuoteOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetReservedInstancesExchangeQuoteResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::GetTransitGatewayAttachmentPropagationsRequest&, const Model::GetTransitGatewayAttachmentPropagationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetTransitGatewayAttachmentPropagationsResponseReceivedHandler;
@@ -1955,6 +1978,7 @@ namespace Model
     typedef std::function<void(const EC2Client*, const Model::ModifyInstanceMetadataOptionsRequest&, const Model::ModifyInstanceMetadataOptionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyInstanceMetadataOptionsResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ModifyInstancePlacementRequest&, const Model::ModifyInstancePlacementOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyInstancePlacementResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ModifyLaunchTemplateRequest&, const Model::ModifyLaunchTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyLaunchTemplateResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::ModifyManagedPrefixListRequest&, const Model::ModifyManagedPrefixListOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyManagedPrefixListResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ModifyNetworkInterfaceAttributeRequest&, const Model::ModifyNetworkInterfaceAttributeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyNetworkInterfaceAttributeResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ModifyReservedInstancesRequest&, const Model::ModifyReservedInstancesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyReservedInstancesResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ModifySnapshotAttributeRequest&, const Model::ModifySnapshotAttributeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifySnapshotAttributeResponseReceivedHandler;
@@ -2009,6 +2033,7 @@ namespace Model
     typedef std::function<void(const EC2Client*, const Model::ResetNetworkInterfaceAttributeRequest&, const Model::ResetNetworkInterfaceAttributeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ResetNetworkInterfaceAttributeResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ResetSnapshotAttributeRequest&, const Model::ResetSnapshotAttributeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ResetSnapshotAttributeResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::RestoreAddressToClassicRequest&, const Model::RestoreAddressToClassicOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RestoreAddressToClassicResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::RestoreManagedPrefixListVersionRequest&, const Model::RestoreManagedPrefixListVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RestoreManagedPrefixListVersionResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::RevokeClientVpnIngressRequest&, const Model::RevokeClientVpnIngressOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RevokeClientVpnIngressResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::RevokeSecurityGroupEgressRequest&, const Model::RevokeSecurityGroupEgressOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RevokeSecurityGroupEgressResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::RevokeSecurityGroupIngressRequest&, const Model::RevokeSecurityGroupIngressOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RevokeSecurityGroupIngressResponseReceivedHandler;
@@ -4886,6 +4911,43 @@ namespace Model
         virtual void CreateLocalGatewayRouteTableVpcAssociationAsync(const Model::CreateLocalGatewayRouteTableVpcAssociationRequest& request, const CreateLocalGatewayRouteTableVpcAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Creates a managed prefix list. You can specify one or more entries for the
+         * prefix list. Each entry consists of a CIDR block and an optional
+         * description.</p> <p>You must specify the maximum number of entries for the
+         * prefix list. The maximum number of entries cannot be changed
+         * later.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateManagedPrefixList">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateManagedPrefixListOutcome CreateManagedPrefixList(const Model::CreateManagedPrefixListRequest& request) const;
+
+        /**
+         * <p>Creates a managed prefix list. You can specify one or more entries for the
+         * prefix list. Each entry consists of a CIDR block and an optional
+         * description.</p> <p>You must specify the maximum number of entries for the
+         * prefix list. The maximum number of entries cannot be changed
+         * later.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateManagedPrefixList">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateManagedPrefixListOutcomeCallable CreateManagedPrefixListCallable(const Model::CreateManagedPrefixListRequest& request) const;
+
+        /**
+         * <p>Creates a managed prefix list. You can specify one or more entries for the
+         * prefix list. Each entry consists of a CIDR block and an optional
+         * description.</p> <p>You must specify the maximum number of entries for the
+         * prefix list. The maximum number of entries cannot be changed
+         * later.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateManagedPrefixList">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateManagedPrefixListAsync(const Model::CreateManagedPrefixListRequest& request, const CreateManagedPrefixListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Creates a NAT gateway in the specified public subnet. This action creates a
          * network interface in the specified subnet with a private IP address from the IP
          * address range of the subnet. Internet-bound traffic from a private subnet can be
@@ -5637,24 +5699,20 @@ namespace Model
         virtual void CreateSpotDatafeedSubscriptionAsync(const Model::CreateSpotDatafeedSubscriptionRequest& request, const CreateSpotDatafeedSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a subnet in an existing VPC.</p> <p>When you create each subnet, you
-         * provide the VPC ID and IPv4 CIDR block for the subnet. After you create a
-         * subnet, you can't change its CIDR block. The size of the subnet's IPv4 CIDR
-         * block can be the same as a VPC's IPv4 CIDR block, or a subset of a VPC's IPv4
-         * CIDR block. If you create more than one subnet in a VPC, the subnets' CIDR
-         * blocks must not overlap. The smallest IPv4 subnet (and VPC) you can create uses
-         * a /28 netmask (16 IPv4 addresses), and the largest uses a /16 netmask (65,536
-         * IPv4 addresses).</p> <p>If you've associated an IPv6 CIDR block with your VPC,
-         * you can create a subnet with an IPv6 CIDR block that uses a /64 prefix length.
-         * </p> <important> <p>AWS reserves both the first four and the last IPv4 address
-         * in each subnet's CIDR block. They're not available for use.</p> </important>
-         * <p>If you add more than one subnet to a VPC, they're set up in a star topology
-         * with a logical router in the middle.</p> <p>If you launch an instance in a VPC
-         * using an Amazon EBS-backed AMI, the IP address doesn't change if you stop and
-         * restart the instance (unlike a similar instance launched outside a VPC, which
-         * gets a new IP address when restarted). It's therefore possible to have a subnet
-         * with no running instances (they're all stopped), but no remaining IP addresses
-         * available.</p> <p>For more information about subnets, see <a
+         * <p>Creates a subnet in a specified VPC.</p> <p>You must specify an IPv4 CIDR
+         * block for the subnet. After you create a subnet, you can't change its CIDR
+         * block. The allowed block size is between a /16 netmask (65,536 IP addresses) and
+         * /28 netmask (16 IP addresses). The CIDR block must not overlap with the CIDR
+         * block of an existing subnet in the VPC.</p> <p>If you've associated an IPv6 CIDR
+         * block with your VPC, you can create a subnet with an IPv6 CIDR block that uses a
+         * /64 prefix length. </p> <important> <p>AWS reserves both the first four and the
+         * last IPv4 address in each subnet's CIDR block. They're not available for
+         * use.</p> </important> <p>If you add more than one subnet to a VPC, they're set
+         * up in a star topology with a logical router in the middle.</p> <p>When you stop
+         * an instance in a subnet, it retains its private IPv4 address. It's therefore
+         * possible to have a subnet with no running instances (they're all stopped), but
+         * no remaining IP addresses available.</p> <p>For more information about subnets,
+         * see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">Your
          * VPC and Subnets</a> in the <i>Amazon Virtual Private Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -5664,24 +5722,20 @@ namespace Model
         virtual Model::CreateSubnetOutcome CreateSubnet(const Model::CreateSubnetRequest& request) const;
 
         /**
-         * <p>Creates a subnet in an existing VPC.</p> <p>When you create each subnet, you
-         * provide the VPC ID and IPv4 CIDR block for the subnet. After you create a
-         * subnet, you can't change its CIDR block. The size of the subnet's IPv4 CIDR
-         * block can be the same as a VPC's IPv4 CIDR block, or a subset of a VPC's IPv4
-         * CIDR block. If you create more than one subnet in a VPC, the subnets' CIDR
-         * blocks must not overlap. The smallest IPv4 subnet (and VPC) you can create uses
-         * a /28 netmask (16 IPv4 addresses), and the largest uses a /16 netmask (65,536
-         * IPv4 addresses).</p> <p>If you've associated an IPv6 CIDR block with your VPC,
-         * you can create a subnet with an IPv6 CIDR block that uses a /64 prefix length.
-         * </p> <important> <p>AWS reserves both the first four and the last IPv4 address
-         * in each subnet's CIDR block. They're not available for use.</p> </important>
-         * <p>If you add more than one subnet to a VPC, they're set up in a star topology
-         * with a logical router in the middle.</p> <p>If you launch an instance in a VPC
-         * using an Amazon EBS-backed AMI, the IP address doesn't change if you stop and
-         * restart the instance (unlike a similar instance launched outside a VPC, which
-         * gets a new IP address when restarted). It's therefore possible to have a subnet
-         * with no running instances (they're all stopped), but no remaining IP addresses
-         * available.</p> <p>For more information about subnets, see <a
+         * <p>Creates a subnet in a specified VPC.</p> <p>You must specify an IPv4 CIDR
+         * block for the subnet. After you create a subnet, you can't change its CIDR
+         * block. The allowed block size is between a /16 netmask (65,536 IP addresses) and
+         * /28 netmask (16 IP addresses). The CIDR block must not overlap with the CIDR
+         * block of an existing subnet in the VPC.</p> <p>If you've associated an IPv6 CIDR
+         * block with your VPC, you can create a subnet with an IPv6 CIDR block that uses a
+         * /64 prefix length. </p> <important> <p>AWS reserves both the first four and the
+         * last IPv4 address in each subnet's CIDR block. They're not available for
+         * use.</p> </important> <p>If you add more than one subnet to a VPC, they're set
+         * up in a star topology with a logical router in the middle.</p> <p>When you stop
+         * an instance in a subnet, it retains its private IPv4 address. It's therefore
+         * possible to have a subnet with no running instances (they're all stopped), but
+         * no remaining IP addresses available.</p> <p>For more information about subnets,
+         * see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">Your
          * VPC and Subnets</a> in the <i>Amazon Virtual Private Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -5693,24 +5747,20 @@ namespace Model
         virtual Model::CreateSubnetOutcomeCallable CreateSubnetCallable(const Model::CreateSubnetRequest& request) const;
 
         /**
-         * <p>Creates a subnet in an existing VPC.</p> <p>When you create each subnet, you
-         * provide the VPC ID and IPv4 CIDR block for the subnet. After you create a
-         * subnet, you can't change its CIDR block. The size of the subnet's IPv4 CIDR
-         * block can be the same as a VPC's IPv4 CIDR block, or a subset of a VPC's IPv4
-         * CIDR block. If you create more than one subnet in a VPC, the subnets' CIDR
-         * blocks must not overlap. The smallest IPv4 subnet (and VPC) you can create uses
-         * a /28 netmask (16 IPv4 addresses), and the largest uses a /16 netmask (65,536
-         * IPv4 addresses).</p> <p>If you've associated an IPv6 CIDR block with your VPC,
-         * you can create a subnet with an IPv6 CIDR block that uses a /64 prefix length.
-         * </p> <important> <p>AWS reserves both the first four and the last IPv4 address
-         * in each subnet's CIDR block. They're not available for use.</p> </important>
-         * <p>If you add more than one subnet to a VPC, they're set up in a star topology
-         * with a logical router in the middle.</p> <p>If you launch an instance in a VPC
-         * using an Amazon EBS-backed AMI, the IP address doesn't change if you stop and
-         * restart the instance (unlike a similar instance launched outside a VPC, which
-         * gets a new IP address when restarted). It's therefore possible to have a subnet
-         * with no running instances (they're all stopped), but no remaining IP addresses
-         * available.</p> <p>For more information about subnets, see <a
+         * <p>Creates a subnet in a specified VPC.</p> <p>You must specify an IPv4 CIDR
+         * block for the subnet. After you create a subnet, you can't change its CIDR
+         * block. The allowed block size is between a /16 netmask (65,536 IP addresses) and
+         * /28 netmask (16 IP addresses). The CIDR block must not overlap with the CIDR
+         * block of an existing subnet in the VPC.</p> <p>If you've associated an IPv6 CIDR
+         * block with your VPC, you can create a subnet with an IPv6 CIDR block that uses a
+         * /64 prefix length. </p> <important> <p>AWS reserves both the first four and the
+         * last IPv4 address in each subnet's CIDR block. They're not available for
+         * use.</p> </important> <p>If you add more than one subnet to a VPC, they're set
+         * up in a star topology with a logical router in the middle.</p> <p>When you stop
+         * an instance in a subnet, it retains its private IPv4 address. It's therefore
+         * possible to have a subnet with no running instances (they're all stopped), but
+         * no remaining IP addresses available.</p> <p>For more information about subnets,
+         * see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">Your
          * VPC and Subnets</a> in the <i>Amazon Virtual Private Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -7173,6 +7223,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteLocalGatewayRouteTableVpcAssociationAsync(const Model::DeleteLocalGatewayRouteTableVpcAssociationRequest& request, const DeleteLocalGatewayRouteTableVpcAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes the specified managed prefix list. You must first remove all
+         * references to the prefix list in your resources.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteManagedPrefixList">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteManagedPrefixListOutcome DeleteManagedPrefixList(const Model::DeleteManagedPrefixListRequest& request) const;
+
+        /**
+         * <p>Deletes the specified managed prefix list. You must first remove all
+         * references to the prefix list in your resources.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteManagedPrefixList">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteManagedPrefixListOutcomeCallable DeleteManagedPrefixListCallable(const Model::DeleteManagedPrefixListRequest& request) const;
+
+        /**
+         * <p>Deletes the specified managed prefix list. You must first remove all
+         * references to the prefix list in your resources.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteManagedPrefixList">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteManagedPrefixListAsync(const Model::DeleteManagedPrefixListRequest& request, const DeleteManagedPrefixListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified NAT gateway. Deleting a NAT gateway disassociates its
@@ -10587,6 +10665,37 @@ namespace Model
         virtual void DescribeLocalGatewaysAsync(const Model::DescribeLocalGatewaysRequest& request, const DescribeLocalGatewaysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Describes your managed prefix lists and any AWS-managed prefix lists.</p>
+         * <p>To view the entries for your prefix list, use
+         * <a>GetManagedPrefixListEntries</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeManagedPrefixLists">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeManagedPrefixListsOutcome DescribeManagedPrefixLists(const Model::DescribeManagedPrefixListsRequest& request) const;
+
+        /**
+         * <p>Describes your managed prefix lists and any AWS-managed prefix lists.</p>
+         * <p>To view the entries for your prefix list, use
+         * <a>GetManagedPrefixListEntries</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeManagedPrefixLists">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeManagedPrefixListsOutcomeCallable DescribeManagedPrefixListsCallable(const Model::DescribeManagedPrefixListsRequest& request) const;
+
+        /**
+         * <p>Describes your managed prefix lists and any AWS-managed prefix lists.</p>
+         * <p>To view the entries for your prefix list, use
+         * <a>GetManagedPrefixListEntries</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeManagedPrefixLists">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeManagedPrefixListsAsync(const Model::DescribeManagedPrefixListsRequest& request, const DescribeManagedPrefixListsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Describes your Elastic IP addresses that are being moved to the EC2-VPC
          * platform, or that are being restored to the EC2-Classic platform. This request
          * does not return information about any other Elastic IP addresses in your
@@ -10803,10 +10912,8 @@ namespace Model
         /**
          * <p>Describes available AWS services in a prefix list format, which includes the
          * prefix list name and prefix list ID of the service and the IP address range for
-         * the service. A prefix list ID is required for creating an outbound security
-         * group rule that allows traffic from a VPC to access an AWS service through a
-         * gateway VPC endpoint. Currently, the services that support this action are
-         * Amazon S3 and Amazon DynamoDB.</p><p><h3>See Also:</h3>   <a
+         * the service.</p> <p>We recommend that you use <a>DescribeManagedPrefixLists</a>
+         * instead.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribePrefixLists">AWS
          * API Reference</a></p>
          */
@@ -10815,10 +10922,8 @@ namespace Model
         /**
          * <p>Describes available AWS services in a prefix list format, which includes the
          * prefix list name and prefix list ID of the service and the IP address range for
-         * the service. A prefix list ID is required for creating an outbound security
-         * group rule that allows traffic from a VPC to access an AWS service through a
-         * gateway VPC endpoint. Currently, the services that support this action are
-         * Amazon S3 and Amazon DynamoDB.</p><p><h3>See Also:</h3>   <a
+         * the service.</p> <p>We recommend that you use <a>DescribeManagedPrefixLists</a>
+         * instead.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribePrefixLists">AWS
          * API Reference</a></p>
          *
@@ -10829,10 +10934,8 @@ namespace Model
         /**
          * <p>Describes available AWS services in a prefix list format, which includes the
          * prefix list name and prefix list ID of the service and the IP address range for
-         * the service. A prefix list ID is required for creating an outbound security
-         * group rule that allows traffic from a VPC to access an AWS service through a
-         * gateway VPC endpoint. Currently, the services that support this action are
-         * Amazon S3 and Amazon DynamoDB.</p><p><h3>See Also:</h3>   <a
+         * the service.</p> <p>We recommend that you use <a>DescribeManagedPrefixLists</a>
+         * instead.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribePrefixLists">AWS
          * API Reference</a></p>
          *
@@ -14362,6 +14465,62 @@ namespace Model
         virtual void GetLaunchTemplateDataAsync(const Model::GetLaunchTemplateDataRequest& request, const GetLaunchTemplateDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Gets information about the resources that are associated with the specified
+         * managed prefix list.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetManagedPrefixListAssociations">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetManagedPrefixListAssociationsOutcome GetManagedPrefixListAssociations(const Model::GetManagedPrefixListAssociationsRequest& request) const;
+
+        /**
+         * <p>Gets information about the resources that are associated with the specified
+         * managed prefix list.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetManagedPrefixListAssociations">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetManagedPrefixListAssociationsOutcomeCallable GetManagedPrefixListAssociationsCallable(const Model::GetManagedPrefixListAssociationsRequest& request) const;
+
+        /**
+         * <p>Gets information about the resources that are associated with the specified
+         * managed prefix list.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetManagedPrefixListAssociations">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetManagedPrefixListAssociationsAsync(const Model::GetManagedPrefixListAssociationsRequest& request, const GetManagedPrefixListAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Gets information about the entries for a specified managed prefix
+         * list.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetManagedPrefixListEntries">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetManagedPrefixListEntriesOutcome GetManagedPrefixListEntries(const Model::GetManagedPrefixListEntriesRequest& request) const;
+
+        /**
+         * <p>Gets information about the entries for a specified managed prefix
+         * list.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetManagedPrefixListEntries">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetManagedPrefixListEntriesOutcomeCallable GetManagedPrefixListEntriesCallable(const Model::GetManagedPrefixListEntriesRequest& request) const;
+
+        /**
+         * <p>Gets information about the entries for a specified managed prefix
+         * list.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetManagedPrefixListEntries">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetManagedPrefixListEntriesAsync(const Model::GetManagedPrefixListEntriesRequest& request, const GetManagedPrefixListEntriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Retrieves the encrypted administrator password for a running Windows
          * instance.</p> <p>The Windows password is generated at boot by the
          * <code>EC2Config</code> service or <code>EC2Launch</code> scripts (Windows Server
@@ -15794,6 +15953,43 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ModifyLaunchTemplateAsync(const Model::ModifyLaunchTemplateRequest& request, const ModifyLaunchTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Modifies the specified managed prefix list.</p> <p>Adding or removing entries
+         * in a prefix list creates a new version of the prefix list. Changing the name of
+         * the prefix list does not affect the version.</p> <p>If you specify a current
+         * version number that does not match the true current version number, the request
+         * fails.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyManagedPrefixList">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ModifyManagedPrefixListOutcome ModifyManagedPrefixList(const Model::ModifyManagedPrefixListRequest& request) const;
+
+        /**
+         * <p>Modifies the specified managed prefix list.</p> <p>Adding or removing entries
+         * in a prefix list creates a new version of the prefix list. Changing the name of
+         * the prefix list does not affect the version.</p> <p>If you specify a current
+         * version number that does not match the true current version number, the request
+         * fails.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyManagedPrefixList">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ModifyManagedPrefixListOutcomeCallable ModifyManagedPrefixListCallable(const Model::ModifyManagedPrefixListRequest& request) const;
+
+        /**
+         * <p>Modifies the specified managed prefix list.</p> <p>Adding or removing entries
+         * in a prefix list creates a new version of the prefix list. Changing the name of
+         * the prefix list does not affect the version.</p> <p>If you specify a current
+         * version number that does not match the true current version number, the request
+         * fails.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyManagedPrefixList">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ModifyManagedPrefixListAsync(const Model::ModifyManagedPrefixListRequest& request, const ModifyManagedPrefixListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Modifies the specified network interface attribute. You can specify only one
@@ -18355,6 +18551,34 @@ namespace Model
         virtual void RestoreAddressToClassicAsync(const Model::RestoreAddressToClassicRequest& request, const RestoreAddressToClassicResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Restores the entries from a previous version of a managed prefix list to a
+         * new version of the prefix list.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RestoreManagedPrefixListVersion">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::RestoreManagedPrefixListVersionOutcome RestoreManagedPrefixListVersion(const Model::RestoreManagedPrefixListVersionRequest& request) const;
+
+        /**
+         * <p>Restores the entries from a previous version of a managed prefix list to a
+         * new version of the prefix list.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RestoreManagedPrefixListVersion">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::RestoreManagedPrefixListVersionOutcomeCallable RestoreManagedPrefixListVersionCallable(const Model::RestoreManagedPrefixListVersionRequest& request) const;
+
+        /**
+         * <p>Restores the entries from a previous version of a managed prefix list to a
+         * new version of the prefix list.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RestoreManagedPrefixListVersion">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void RestoreManagedPrefixListVersionAsync(const Model::RestoreManagedPrefixListVersionRequest& request, const RestoreManagedPrefixListVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Removes an ingress authorization rule from a Client VPN endpoint.
          * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RevokeClientVpnIngress">AWS
@@ -19524,6 +19748,7 @@ namespace Model
         void CreateLaunchTemplateVersionAsyncHelper(const Model::CreateLaunchTemplateVersionRequest& request, const CreateLaunchTemplateVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateLocalGatewayRouteAsyncHelper(const Model::CreateLocalGatewayRouteRequest& request, const CreateLocalGatewayRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateLocalGatewayRouteTableVpcAssociationAsyncHelper(const Model::CreateLocalGatewayRouteTableVpcAssociationRequest& request, const CreateLocalGatewayRouteTableVpcAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateManagedPrefixListAsyncHelper(const Model::CreateManagedPrefixListRequest& request, const CreateManagedPrefixListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateNatGatewayAsyncHelper(const Model::CreateNatGatewayRequest& request, const CreateNatGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateNetworkAclAsyncHelper(const Model::CreateNetworkAclRequest& request, const CreateNetworkAclResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateNetworkAclEntryAsyncHelper(const Model::CreateNetworkAclEntryRequest& request, const CreateNetworkAclEntryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -19572,6 +19797,7 @@ namespace Model
         void DeleteLaunchTemplateVersionsAsyncHelper(const Model::DeleteLaunchTemplateVersionsRequest& request, const DeleteLaunchTemplateVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteLocalGatewayRouteAsyncHelper(const Model::DeleteLocalGatewayRouteRequest& request, const DeleteLocalGatewayRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteLocalGatewayRouteTableVpcAssociationAsyncHelper(const Model::DeleteLocalGatewayRouteTableVpcAssociationRequest& request, const DeleteLocalGatewayRouteTableVpcAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteManagedPrefixListAsyncHelper(const Model::DeleteManagedPrefixListRequest& request, const DeleteManagedPrefixListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteNatGatewayAsyncHelper(const Model::DeleteNatGatewayRequest& request, const DeleteNatGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteNetworkAclAsyncHelper(const Model::DeleteNetworkAclRequest& request, const DeleteNetworkAclResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteNetworkAclEntryAsyncHelper(const Model::DeleteNetworkAclEntryRequest& request, const DeleteNetworkAclEntryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -19666,6 +19892,7 @@ namespace Model
         void DescribeLocalGatewayVirtualInterfaceGroupsAsyncHelper(const Model::DescribeLocalGatewayVirtualInterfaceGroupsRequest& request, const DescribeLocalGatewayVirtualInterfaceGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeLocalGatewayVirtualInterfacesAsyncHelper(const Model::DescribeLocalGatewayVirtualInterfacesRequest& request, const DescribeLocalGatewayVirtualInterfacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeLocalGatewaysAsyncHelper(const Model::DescribeLocalGatewaysRequest& request, const DescribeLocalGatewaysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeManagedPrefixListsAsyncHelper(const Model::DescribeManagedPrefixListsRequest& request, const DescribeManagedPrefixListsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeMovingAddressesAsyncHelper(const Model::DescribeMovingAddressesRequest& request, const DescribeMovingAddressesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeNatGatewaysAsyncHelper(const Model::DescribeNatGatewaysRequest& request, const DescribeNatGatewaysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeNetworkAclsAsyncHelper(const Model::DescribeNetworkAclsRequest& request, const DescribeNetworkAclsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -19763,6 +19990,8 @@ namespace Model
         void GetEbsEncryptionByDefaultAsyncHelper(const Model::GetEbsEncryptionByDefaultRequest& request, const GetEbsEncryptionByDefaultResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetHostReservationPurchasePreviewAsyncHelper(const Model::GetHostReservationPurchasePreviewRequest& request, const GetHostReservationPurchasePreviewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetLaunchTemplateDataAsyncHelper(const Model::GetLaunchTemplateDataRequest& request, const GetLaunchTemplateDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetManagedPrefixListAssociationsAsyncHelper(const Model::GetManagedPrefixListAssociationsRequest& request, const GetManagedPrefixListAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetManagedPrefixListEntriesAsyncHelper(const Model::GetManagedPrefixListEntriesRequest& request, const GetManagedPrefixListEntriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetPasswordDataAsyncHelper(const Model::GetPasswordDataRequest& request, const GetPasswordDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetReservedInstancesExchangeQuoteAsyncHelper(const Model::GetReservedInstancesExchangeQuoteRequest& request, const GetReservedInstancesExchangeQuoteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetTransitGatewayAttachmentPropagationsAsyncHelper(const Model::GetTransitGatewayAttachmentPropagationsRequest& request, const GetTransitGatewayAttachmentPropagationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -19793,6 +20022,7 @@ namespace Model
         void ModifyInstanceMetadataOptionsAsyncHelper(const Model::ModifyInstanceMetadataOptionsRequest& request, const ModifyInstanceMetadataOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifyInstancePlacementAsyncHelper(const Model::ModifyInstancePlacementRequest& request, const ModifyInstancePlacementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifyLaunchTemplateAsyncHelper(const Model::ModifyLaunchTemplateRequest& request, const ModifyLaunchTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ModifyManagedPrefixListAsyncHelper(const Model::ModifyManagedPrefixListRequest& request, const ModifyManagedPrefixListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifyNetworkInterfaceAttributeAsyncHelper(const Model::ModifyNetworkInterfaceAttributeRequest& request, const ModifyNetworkInterfaceAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifyReservedInstancesAsyncHelper(const Model::ModifyReservedInstancesRequest& request, const ModifyReservedInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifySnapshotAttributeAsyncHelper(const Model::ModifySnapshotAttributeRequest& request, const ModifySnapshotAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -19847,6 +20077,7 @@ namespace Model
         void ResetNetworkInterfaceAttributeAsyncHelper(const Model::ResetNetworkInterfaceAttributeRequest& request, const ResetNetworkInterfaceAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ResetSnapshotAttributeAsyncHelper(const Model::ResetSnapshotAttributeRequest& request, const ResetSnapshotAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RestoreAddressToClassicAsyncHelper(const Model::RestoreAddressToClassicRequest& request, const RestoreAddressToClassicResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void RestoreManagedPrefixListVersionAsyncHelper(const Model::RestoreManagedPrefixListVersionRequest& request, const RestoreManagedPrefixListVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RevokeClientVpnIngressAsyncHelper(const Model::RevokeClientVpnIngressRequest& request, const RevokeClientVpnIngressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RevokeSecurityGroupEgressAsyncHelper(const Model::RevokeSecurityGroupEgressRequest& request, const RevokeSecurityGroupEgressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RevokeSecurityGroupIngressAsyncHelper(const Model::RevokeSecurityGroupIngressRequest& request, const RevokeSecurityGroupIngressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
