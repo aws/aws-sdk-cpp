@@ -22,6 +22,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/fsx/model/FileSystem.h>
+#include <aws/fsx/model/AdministrativeAction.h>
 #include <aws/fsx/model/ActiveDirectoryBackupAttributes.h>
 #include <aws/fsx/model/Tag.h>
 #include <utility>

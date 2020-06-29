@@ -16,6 +16,7 @@
 #pragma once
 #include <aws/fsx/FSx_EXPORTS.h>
 #include <aws/fsx/model/FileSystem.h>
+#include <aws/fsx/model/AdministrativeAction.h>
 #include <utility>
 
 namespace Aws

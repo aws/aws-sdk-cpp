@@ -214,6 +214,10 @@ public class CppViewHelper {
                 if(!next.isListMemberAndMutuallyReferencedWith(shape)) {
                     headers.add(formatModelIncludeName(projectName, next));
                 }
+                if(next.getMembers() != null) {
+                    // If shapeA.isListMemberAndMutuallyReferencedWith(shapeB) == true, then includes shapeA everywhere includes shapeB in the header files.
+                    next.getMembers().values().stream().map(ShapeMember::getShape).filter(memberShape -> memberShape.isList() && memberShape.getListMember().getShape().isListMemberAndMutuallyReferencedWith(next) && memberShape.getListMember().getShape().getName() != shape.getName()).forEach(listMemberShape -> headers.add(formatModelIncludeName(projectName, listMemberShape.getListMember().getShape())));
+                }
                 includeUtilityHeader = true;
             }
         }
