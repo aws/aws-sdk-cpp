@@ -22,7 +22,7 @@ namespace Aws
         {
             void MetadataHandler::PopulateRequest(Aws::S3::Model::PutObjectRequest& request, const ContentCryptoMaterial& contentCryptoMaterial)
             {
-                Aws::String encodedCEK = HashingUtils::Base64Encode(contentCryptoMaterial.GetEncryptedContentEncryptionKey());
+                Aws::String encodedCEK = HashingUtils::Base64Encode(contentCryptoMaterial.GetFinalCEK());
                 request.AddMetadata(CONTENT_KEY_HEADER, encodedCEK);
 
                 Aws::String encodedIV = HashingUtils::Base64Encode(contentCryptoMaterial.GetIV());
@@ -38,9 +38,6 @@ namespace Aws
 
                 KeyWrapAlgorithm keyWrapAlgorithm = contentCryptoMaterial.GetKeyWrapAlgorithm();
                 request.AddMetadata(KEY_WRAP_ALGORITHM, GetNameForKeyWrapAlgorithm(keyWrapAlgorithm));
-
-                request.AddMetadata(CEK_CRYPTO_AES_GCM_TAG_HEADER, HashingUtils::Base64Encode(contentCryptoMaterial.GetCEKGCMTag()));
-                request.AddMetadata(CEK_IV_HEADER, HashingUtils::Base64Encode(contentCryptoMaterial.GetCekIV()));
             }
 
             ContentCryptoMaterial MetadataHandler::ReadContentCryptoMaterial(Aws::S3::Model::GetObjectResult& result)

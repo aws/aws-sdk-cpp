@@ -60,6 +60,7 @@ namespace Aws
                 EncryptResult result = outcome.GetResult();
                 contentCryptoMaterial.SetKeyWrapAlgorithm(KeyWrapAlgorithm::KMS);
                 contentCryptoMaterial.SetEncryptedContentEncryptionKey(result.GetCiphertextBlob());
+                contentCryptoMaterial.SetFinalCEK(result.GetCiphertextBlob());
                 return CryptoOutcome(Aws::NoResult());
             }
 
@@ -136,6 +137,7 @@ namespace Aws
                 contentCryptoMaterial.SetKeyWrapAlgorithm(KeyWrapAlgorithm::KMS_CONTEXT);
                 contentCryptoMaterial.SetContentEncryptionKey(result.GetPlaintext());
                 contentCryptoMaterial.SetEncryptedContentEncryptionKey(result.GetCiphertextBlob());
+                contentCryptoMaterial.SetFinalCEK(result.GetCiphertextBlob());
                 return CryptoOutcome(Aws::NoResult());
             }
 

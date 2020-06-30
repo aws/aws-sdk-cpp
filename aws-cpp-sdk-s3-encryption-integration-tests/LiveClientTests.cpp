@@ -120,20 +120,14 @@ TEST_F(LiveClientTest, TestEOMode)
     auto metadata = getObjectResult.GetResult().GetMetadata();
     auto ivStr = metadata["x-amz-iv"];
     auto cekStr = metadata["x-amz-key-v2"];
-    auto cekTag = metadata["x-amz-cek-aes-gcm-tag"];
-    auto cekIV = metadata["x-amz-cek-iv"];
     auto aad = metadata["x-amz-cek-alg"];
     EXPECT_FALSE(ivStr.empty());
     EXPECT_FALSE(cekStr.empty());
-    EXPECT_FALSE(cekTag.empty());
-    EXPECT_FALSE(cekIV.empty());
     EXPECT_FALSE(aad.empty());
 
     ContentCryptoMaterial cryptoMaterial(ContentCryptoScheme::CBC);
-    cryptoMaterial.SetEncryptedContentEncryptionKey(HashingUtils::Base64Decode(cekStr));
+    cryptoMaterial.SetFinalCEK(HashingUtils::Base64Decode(cekStr));
     cryptoMaterial.SetKeyWrapAlgorithm(KeyWrapAlgorithm::AES_GCM);
-    cryptoMaterial.SetCekIV(HashingUtils::Base64Decode(cekIV));
-    cryptoMaterial.SetCEKGCMTag(HashingUtils::Base64Decode(cekTag));
     cryptoMaterial.SetGCMAAD(CryptoBuffer((const unsigned char*)aad.c_str(), aad.size()));
     simpleEncryptionMaterials->DecryptCEK(cryptoMaterial);
 
@@ -205,22 +199,16 @@ TEST_F(LiveClientTest, TestAEMode)
     auto ivStr = metadata["x-amz-iv"];
     auto cekStr = metadata["x-amz-key-v2"];
     auto tagLenStr = metadata["x-amz-tag-len"];
-    auto cekTag = metadata["x-amz-cek-aes-gcm-tag"];
-    auto cekIV = metadata["x-amz-cek-iv"];
     auto aad = metadata["x-amz-cek-alg"];
     EXPECT_FALSE(ivStr.empty());
     EXPECT_FALSE(cekStr.empty());
     EXPECT_FALSE(tagLenStr.empty());
     EXPECT_STREQ("128", tagLenStr.c_str());
-    EXPECT_FALSE(cekTag.empty());
-    EXPECT_FALSE(cekIV.empty());
     EXPECT_FALSE(aad.empty());
 
     ContentCryptoMaterial cryptoMaterial(ContentCryptoScheme::GCM);
-    cryptoMaterial.SetEncryptedContentEncryptionKey(HashingUtils::Base64Decode(cekStr));
+    cryptoMaterial.SetFinalCEK(HashingUtils::Base64Decode(cekStr));
     cryptoMaterial.SetKeyWrapAlgorithm(KeyWrapAlgorithm::AES_GCM);
-    cryptoMaterial.SetCekIV(HashingUtils::Base64Decode(cekIV));
-    cryptoMaterial.SetCEKGCMTag(HashingUtils::Base64Decode(cekTag));
     cryptoMaterial.SetGCMAAD(CryptoBuffer((const unsigned char*)aad.c_str(), aad.size()));
     cryptoMaterial.SetCryptoTagLength(static_cast<size_t>(StringUtils::ConvertToInt64(tagLenStr.c_str())));
     simpleEncryptionMaterials->DecryptCEK(cryptoMaterial);
@@ -295,22 +283,16 @@ TEST_F(LiveClientTest, TestAEModeRangeGet)
     auto ivStr = metadata["x-amz-iv"];
     auto cekStr = metadata["x-amz-key-v2"];
     auto tagLenStr = metadata["x-amz-tag-len"];
-    auto cekTag = metadata["x-amz-cek-aes-gcm-tag"];
-    auto cekIV = metadata["x-amz-cek-iv"];
     auto aad = metadata["x-amz-cek-alg"];
     EXPECT_FALSE(ivStr.empty());
     EXPECT_FALSE(cekStr.empty());
     EXPECT_FALSE(tagLenStr.empty());
     EXPECT_STREQ("128", tagLenStr.c_str());
-    EXPECT_FALSE(cekTag.empty());
-    EXPECT_FALSE(cekIV.empty());
     EXPECT_FALSE(aad.empty());
 
     ContentCryptoMaterial cryptoMaterial(ContentCryptoScheme::GCM);
-    cryptoMaterial.SetEncryptedContentEncryptionKey(HashingUtils::Base64Decode(cekStr));
+    cryptoMaterial.SetFinalCEK(HashingUtils::Base64Decode(cekStr));
     cryptoMaterial.SetKeyWrapAlgorithm(KeyWrapAlgorithm::AES_GCM);
-    cryptoMaterial.SetCekIV(HashingUtils::Base64Decode(cekIV));
-    cryptoMaterial.SetCEKGCMTag(HashingUtils::Base64Decode(cekTag));
     cryptoMaterial.SetGCMAAD(CryptoBuffer((const unsigned char*)aad.c_str(), aad.size()));
     cryptoMaterial.SetCryptoTagLength(static_cast<size_t>(StringUtils::ConvertToInt64(tagLenStr.c_str())));
     simpleEncryptionMaterials->DecryptCEK(cryptoMaterial);

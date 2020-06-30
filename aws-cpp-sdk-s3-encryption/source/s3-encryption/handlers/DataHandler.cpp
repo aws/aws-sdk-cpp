@@ -58,8 +58,6 @@ namespace Aws
                 auto schemeIterator = metadata.find(CONTENT_CRYPTO_SCHEME_HEADER);
                 auto keyWrapIterator = metadata.find(KEY_WRAP_ALGORITHM);
                 auto cryptoTagIterator = metadata.find(CRYPTO_TAG_LENGTH_HEADER);
-                auto cekAESGCMTagIterator = metadata.find(CEK_CRYPTO_AES_GCM_TAG_HEADER);
-                auto cekIVIterator = metadata.find(CEK_IV_HEADER);
 
                 if (keyIterator == metadata.end() || ivIterator == metadata.end() ||
                     materialsDescriptionIterator == metadata.end() || schemeIterator == metadata.end() ||
@@ -70,7 +68,24 @@ namespace Aws
                 }
 
                 ContentCryptoMaterial contentCryptoMaterial;
-                contentCryptoMaterial.SetEncryptedContentEncryptionKey(Aws::Utils::HashingUtils::Base64Decode(keyIterator->second));
+                Aws::String keyWrapAlgorithmAsString = keyWrapIterator->second;
+                contentCryptoMaterial.SetKeyWrapAlgorithm(KeyWrapAlgorithmMapper::GetKeyWrapAlgorithmForName(keyWrapAlgorithmAsString));
+
+                // if the key wrap algorithm is AES_GCM, we need to split 12 bytes IV and 16 bytes tag out of it.
+                CryptoBuffer finalCEK = Aws::Utils::HashingUtils::Base64Decode(keyIterator->second);
+                contentCryptoMaterial.SetFinalCEK(finalCEK);
+                if (contentCryptoMaterial.GetKeyWrapAlgorithm() == KeyWrapAlgorithm::AES_GCM)
+                {
+                    contentCryptoMaterial.SetCekIV(CryptoBuffer(finalCEK.GetUnderlyingData(), AES_GCM_IV_BYTES));
+                    contentCryptoMaterial.SetEncryptedContentEncryptionKey(CryptoBuffer(finalCEK.GetUnderlyingData() + AES_GCM_IV_BYTES, AES_GCM_KEY_BYTES));
+                    contentCryptoMaterial.SetCEKGCMTag(CryptoBuffer(finalCEK.GetUnderlyingData() + AES_GCM_IV_BYTES + AES_GCM_KEY_BYTES, AES_GCM_TAG_BYTES));
+                }
+                else
+                {
+                    contentCryptoMaterial.SetEncryptedContentEncryptionKey(finalCEK);
+                    contentCryptoMaterial.SetCEKGCMTag(CryptoBuffer());
+                }
+                
                 contentCryptoMaterial.SetIV(Aws::Utils::HashingUtils::Base64Decode(ivIterator->second));
                 contentCryptoMaterial.SetMaterialsDescription(DeserializeMap(materialsDescriptionIterator->second));
 
@@ -80,14 +95,6 @@ namespace Aws
                 // value of x-amz-cek-alg is used as AES/GCM AAD info for CEK encryption/decryption
                 contentCryptoMaterial.SetGCMAAD(CryptoBuffer((const unsigned char*)schemeAsString.c_str(), schemeAsString.size()));
 
-                // value of x-amz-cek-iv is used as AES/GCM IV info for CEK encryption/decryption
-                if (cekIVIterator != metadata.end())
-                {
-                    contentCryptoMaterial.SetCekIV(Aws::Utils::HashingUtils::Base64Decode(cekIVIterator->second));
-                }
-
-                Aws::String keyWrapAlgorithmAsString = keyWrapIterator->second;
-                contentCryptoMaterial.SetKeyWrapAlgorithm(KeyWrapAlgorithmMapper::GetKeyWrapAlgorithmForName(keyWrapAlgorithmAsString));
                 if (cryptoTagIterator != metadata.end())
                 {
                     contentCryptoMaterial.SetCryptoTagLength(static_cast<size_t>(Aws::Utils::StringUtils::ConvertToInt64(cryptoTagIterator->second.c_str())));
@@ -95,16 +102,6 @@ namespace Aws
                 else
                 {
                     contentCryptoMaterial.SetCryptoTagLength(0u);
-                }
-
-                // needed when the CEK is encrypted using AES-GCM
-                if (cekAESGCMTagIterator != metadata.end())
-                {
-                    contentCryptoMaterial.SetCEKGCMTag(Aws::Utils::HashingUtils::Base64Decode(cekAESGCMTagIterator->second));
-                }
-                else
-                {
-                    contentCryptoMaterial.SetCEKGCMTag(CryptoBuffer());                    
                 }
 
                 return contentCryptoMaterial;

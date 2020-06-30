@@ -52,7 +52,6 @@ namespace
     static const char* const GET_RANGE_SPECIFIER = "bytes=20-40";
     static const char* const GET_RANGE_OUTPUT = "ge for encryption and";
     static size_t const GCM_TAG_LENGTH = 128u;
-    static size_t const CEK_GCM_TAG_BYTES = 16u;
     static size_t const GCM_IV_SIZE_BYTES = 12u;
 
     using namespace Aws::Auth;
@@ -253,15 +252,6 @@ namespace
             ASSERT_TRUE(metadataMap[CONTENT_CRYPTO_SCHEME_HEADER].size() > 0u);
             ASSERT_TRUE(metadataMap[KEY_WRAP_ALGORITHM].size() > 0u);
             ASSERT_TRUE(metadataMap[MATERIALS_DESCRIPTION_HEADER].size() > 0u);
-        }
-
-        static void MetadataFilledWithGCMAAD(Aws::Map<Aws::String, Aws::String> metadataMap)
-        {
-            MetadataFilled(metadataMap);
-            auto metadataEnd = metadataMap.end();
-            ASSERT_TRUE(metadataMap.find(CEK_IV_HEADER) != metadataEnd && metadataMap.find(CEK_CRYPTO_AES_GCM_TAG_HEADER) != metadataEnd);
-            ASSERT_TRUE(metadataMap[CEK_IV_HEADER].size() > 0u);
-            ASSERT_TRUE(metadataMap[CEK_CRYPTO_AES_GCM_TAG_HEADER].size() > 0u);
         }
     };
 
@@ -484,7 +474,7 @@ namespace
         ASSERT_TRUE(putOutcome.IsSuccess());
 
         auto metadata = s3Client.GetMetadata();
-        MetadataFilledWithGCMAAD(metadata);
+        MetadataFilled(metadata);
 
         size_t cryptoTagLength = static_cast<size_t>(Aws::Utils::StringUtils::ConvertToInt64(metadata[CRYPTO_TAG_LENGTH_HEADER].c_str()));
         ASSERT_EQ(cryptoTagLength, 0u);
@@ -497,12 +487,6 @@ namespace
 
         KeyWrapAlgorithm keyWrapAlgorithm = KeyWrapAlgorithmMapper::GetKeyWrapAlgorithmForName(metadata[KEY_WRAP_ALGORITHM]);
         ASSERT_EQ(keyWrapAlgorithm, KeyWrapAlgorithm::AES_GCM);
-
-        Aws::Utils::CryptoBuffer cekIVBuffer = Aws::Utils::HashingUtils::Base64Decode(metadata[CEK_IV_HEADER]);
-        ASSERT_EQ(cekIVBuffer.GetLength(), GCM_IV_SIZE_BYTES);
-
-        Aws::Utils::CryptoBuffer cektagBuffer = Aws::Utils::HashingUtils::Base64Decode(metadata[CEK_CRYPTO_AES_GCM_TAG_HEADER]);
-        ASSERT_EQ(cektagBuffer.GetLength(), CEK_GCM_TAG_BYTES);
 
         ASSERT_TRUE(s3Client.GetRequestContentLength() > strlen(BODY_STREAM_TEST));
 
@@ -569,12 +553,6 @@ namespace
         KeyWrapAlgorithm keyWrapAlgorithm = KeyWrapAlgorithmMapper::GetKeyWrapAlgorithmForName(metadata[KEY_WRAP_ALGORITHM]);
         ASSERT_EQ(keyWrapAlgorithm, KeyWrapAlgorithm::AES_GCM);
 
-        Aws::Utils::CryptoBuffer cekIVBuffer = Aws::Utils::HashingUtils::Base64Decode(metadata[CEK_IV_HEADER]);
-        ASSERT_EQ(cekIVBuffer.GetLength(), GCM_IV_SIZE_BYTES);
-
-        Aws::Utils::CryptoBuffer cektagBuffer = Aws::Utils::HashingUtils::Base64Decode(metadata[CEK_CRYPTO_AES_GCM_TAG_HEADER]);
-        ASSERT_EQ(cektagBuffer.GetLength(), CEK_GCM_TAG_BYTES);
-
         ASSERT_TRUE(s3Client.GetRequestContentLength() > strlen(BODY_STREAM_TEST));
 
         auto decryptionModule = factory.FetchCryptoModule(Aws::MakeShared<SimpleEncryptionMaterialsWithGCMAAD>(ALLOCATION_TAG, materials), cryptoConfig);
@@ -640,12 +618,6 @@ namespace
 
         KeyWrapAlgorithm keyWrapAlgorithm = KeyWrapAlgorithmMapper::GetKeyWrapAlgorithmForName(metadata[KEY_WRAP_ALGORITHM]);
         ASSERT_EQ(keyWrapAlgorithm, KeyWrapAlgorithm::AES_GCM);
-
-        Aws::Utils::CryptoBuffer cekIVBuffer = Aws::Utils::HashingUtils::Base64Decode(metadata[CEK_IV_HEADER]);
-        ASSERT_EQ(cekIVBuffer.GetLength(), GCM_IV_SIZE_BYTES);
-
-        Aws::Utils::CryptoBuffer cektagBuffer = Aws::Utils::HashingUtils::Base64Decode(metadata[CEK_CRYPTO_AES_GCM_TAG_HEADER]);
-        ASSERT_EQ(cektagBuffer.GetLength(), CEK_GCM_TAG_BYTES);
 
         ASSERT_TRUE(s3Client.GetRequestContentLength() > strlen(BODY_STREAM_TEST));
 

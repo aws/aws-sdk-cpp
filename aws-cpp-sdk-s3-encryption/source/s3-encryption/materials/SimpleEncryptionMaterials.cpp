@@ -3,6 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 #include <aws/s3-encryption/materials/SimpleEncryptionMaterials.h>
+#include <aws/s3-encryption/handlers/DataHandler.h>
 #include <aws/core/utils/crypto/Factories.h>
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/client/AWSError.h>
@@ -49,6 +50,19 @@ namespace Aws
                 CryptoBuffer&& encryptFinalizeResult = cipher->FinalizeEncryption();
                 contentCryptoMaterial.SetEncryptedContentEncryptionKey(CryptoBuffer({ &encryptResult, &encryptFinalizeResult }));
                 contentCryptoMaterial.SetCEKGCMTag(cipher->GetTag());
+
+                if (contentCryptoMaterial.GetKeyWrapAlgorithm() == KeyWrapAlgorithm::AES_GCM)
+                {
+                    CryptoBuffer iv = contentCryptoMaterial.GetCekIV();
+                    CryptoBuffer key = contentCryptoMaterial.GetEncryptedContentEncryptionKey();
+                    CryptoBuffer tag = contentCryptoMaterial.GetCEKGCMTag();
+                    contentCryptoMaterial.SetFinalCEK(CryptoBuffer({ &iv, &key, &tag }));
+                }
+                else
+                {
+                    contentCryptoMaterial.SetFinalCEK(contentCryptoMaterial.GetEncryptedContentEncryptionKey());
+                }
+
                 return CryptoOutcome(Aws::NoResult());
             }
 
@@ -62,6 +76,22 @@ namespace Aws
                         << " current encryption materials can not decrypt the content encryption key.");
                     return errorOutcome;
                 }
+
+                if (contentCryptoMaterial.GetFinalCEK().GetLength())
+                {
+                    if (contentCryptoMaterial.GetKeyWrapAlgorithm() == KeyWrapAlgorithm::AES_GCM)
+                    {
+                        const auto& finalCEK = contentCryptoMaterial.GetFinalCEK();
+                        contentCryptoMaterial.SetCekIV(CryptoBuffer(finalCEK.GetUnderlyingData(), AES_GCM_IV_BYTES));
+                        contentCryptoMaterial.SetEncryptedContentEncryptionKey(CryptoBuffer(finalCEK.GetUnderlyingData() + AES_GCM_IV_BYTES, AES_GCM_KEY_BYTES));
+                        contentCryptoMaterial.SetCEKGCMTag(CryptoBuffer(finalCEK.GetUnderlyingData() + AES_GCM_IV_BYTES + AES_GCM_KEY_BYTES, AES_GCM_TAG_BYTES));
+                    }
+                    else
+                    {
+                        contentCryptoMaterial.SetEncryptedContentEncryptionKey(contentCryptoMaterial.GetFinalCEK());
+                    }
+                }
+                
                 auto cipher = CreateCipher(contentCryptoMaterial, false/*decrypt*/);
                 if (cipher == nullptr)
                 {

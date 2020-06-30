@@ -179,6 +179,7 @@ namespace
         //creating a new content crypto material since this is how encryption and decryption will be implemented
         ContentCryptoMaterial encryptedContentCryptoMaterial;
         encryptedContentCryptoMaterial.SetEncryptedContentEncryptionKey(encryptedContentEncryptionKey);
+        encryptedContentCryptoMaterial.SetFinalCEK(encryptedContentEncryptionKey);
         encryptedContentCryptoMaterial.SetKeyWrapAlgorithm(KeyWrapAlgorithm::AES_KEY_WRAP);
 
         ASSERT_NE(contentEncryptionKey, encryptedContentEncryptionKey);

@@ -207,9 +207,29 @@ namespace Aws
                 {
                     return m_cekIV;
                 }
+
+                /**
+                 * Sets the underlying final CEK
+                 */
+                inline void SetFinalCEK(const Aws::Utils::CryptoBuffer& finalCEK)
+                {
+                    m_finalCEK = finalCEK;
+                }
+                /**
+                * Gets the underlying final CEK.
+                */
+                inline const Aws::Utils::CryptoBuffer& GetFinalCEK() const
+                {
+                    return m_finalCEK;
+                }
+
             private:
                 Aws::Utils::CryptoBuffer m_contentEncryptionKey;
                 Aws::Utils::CryptoBuffer m_encryptedContentEncryptionKey;
+                /* if using AES_GCM key wrap algorithm, then final CEK is iv + encrypted_key + tag
+                 * otherwise it's the same as m_encryptedContentEncryptionKey
+                 */
+                Aws::Utils::CryptoBuffer m_finalCEK;
                 Aws::Utils::CryptoBuffer m_iv;
                 Aws::Utils::CryptoBuffer m_cekIV;
                 Aws::Utils::CryptoBuffer m_gcmAAD;
