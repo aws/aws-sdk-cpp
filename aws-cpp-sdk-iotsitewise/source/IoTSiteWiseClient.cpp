@@ -90,7 +90,7 @@ static const char* ALLOCATION_TAG = "IoTSiteWiseClient";
 IoTSiteWiseClient::IoTSiteWiseClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-        SERVICE_NAME, clientConfiguration.region),
+        SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<IoTSiteWiseErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -100,7 +100,7 @@ IoTSiteWiseClient::IoTSiteWiseClient(const Client::ClientConfiguration& clientCo
 IoTSiteWiseClient::IoTSiteWiseClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-         SERVICE_NAME, clientConfiguration.region),
+         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<IoTSiteWiseErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -111,7 +111,7 @@ IoTSiteWiseClient::IoTSiteWiseClient(const std::shared_ptr<AWSCredentialsProvide
   const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider,
-         SERVICE_NAME, clientConfiguration.region),
+         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<IoTSiteWiseErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -178,15 +178,7 @@ AssociateAssetsOutcome IoTSiteWiseClient::AssociateAssets(const AssociateAssetsR
   ss << request.GetAssetId();
   ss << "/associate";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return AssociateAssetsOutcome(NoResult());
-  }
-  else
-  {
-    return AssociateAssetsOutcome(outcome.GetError());
-  }
+  return AssociateAssetsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 AssociateAssetsOutcomeCallable IoTSiteWiseClient::AssociateAssetsCallable(const AssociateAssetsRequest& request) const
@@ -229,15 +221,7 @@ BatchAssociateProjectAssetsOutcome IoTSiteWiseClient::BatchAssociateProjectAsset
   ss << request.GetProjectId();
   ss << "/assets/associate";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return BatchAssociateProjectAssetsOutcome(BatchAssociateProjectAssetsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return BatchAssociateProjectAssetsOutcome(outcome.GetError());
-  }
+  return BatchAssociateProjectAssetsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 BatchAssociateProjectAssetsOutcomeCallable IoTSiteWiseClient::BatchAssociateProjectAssetsCallable(const BatchAssociateProjectAssetsRequest& request) const
@@ -280,15 +264,7 @@ BatchDisassociateProjectAssetsOutcome IoTSiteWiseClient::BatchDisassociateProjec
   ss << request.GetProjectId();
   ss << "/assets/disassociate";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return BatchDisassociateProjectAssetsOutcome(BatchDisassociateProjectAssetsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return BatchDisassociateProjectAssetsOutcome(outcome.GetError());
-  }
+  return BatchDisassociateProjectAssetsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 BatchDisassociateProjectAssetsOutcomeCallable IoTSiteWiseClient::BatchDisassociateProjectAssetsCallable(const BatchDisassociateProjectAssetsRequest& request) const
@@ -324,15 +300,7 @@ BatchPutAssetPropertyValueOutcome IoTSiteWiseClient::BatchPutAssetPropertyValue(
   Aws::StringStream ss;
   ss << "/properties";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return BatchPutAssetPropertyValueOutcome(BatchPutAssetPropertyValueResult(outcome.GetResult()));
-  }
-  else
-  {
-    return BatchPutAssetPropertyValueOutcome(outcome.GetError());
-  }
+  return BatchPutAssetPropertyValueOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 BatchPutAssetPropertyValueOutcomeCallable IoTSiteWiseClient::BatchPutAssetPropertyValueCallable(const BatchPutAssetPropertyValueRequest& request) const
@@ -368,15 +336,7 @@ CreateAccessPolicyOutcome IoTSiteWiseClient::CreateAccessPolicy(const CreateAcce
   Aws::StringStream ss;
   ss << "/access-policies";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateAccessPolicyOutcome(CreateAccessPolicyResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateAccessPolicyOutcome(outcome.GetError());
-  }
+  return CreateAccessPolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateAccessPolicyOutcomeCallable IoTSiteWiseClient::CreateAccessPolicyCallable(const CreateAccessPolicyRequest& request) const
@@ -412,15 +372,7 @@ CreateAssetOutcome IoTSiteWiseClient::CreateAsset(const CreateAssetRequest& requ
   Aws::StringStream ss;
   ss << "/assets";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateAssetOutcome(CreateAssetResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateAssetOutcome(outcome.GetError());
-  }
+  return CreateAssetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateAssetOutcomeCallable IoTSiteWiseClient::CreateAssetCallable(const CreateAssetRequest& request) const
@@ -456,15 +408,7 @@ CreateAssetModelOutcome IoTSiteWiseClient::CreateAssetModel(const CreateAssetMod
   Aws::StringStream ss;
   ss << "/asset-models";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateAssetModelOutcome(CreateAssetModelResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateAssetModelOutcome(outcome.GetError());
-  }
+  return CreateAssetModelOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateAssetModelOutcomeCallable IoTSiteWiseClient::CreateAssetModelCallable(const CreateAssetModelRequest& request) const
@@ -500,15 +444,7 @@ CreateDashboardOutcome IoTSiteWiseClient::CreateDashboard(const CreateDashboardR
   Aws::StringStream ss;
   ss << "/dashboards";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateDashboardOutcome(CreateDashboardResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateDashboardOutcome(outcome.GetError());
-  }
+  return CreateDashboardOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateDashboardOutcomeCallable IoTSiteWiseClient::CreateDashboardCallable(const CreateDashboardRequest& request) const
@@ -544,15 +480,7 @@ CreateGatewayOutcome IoTSiteWiseClient::CreateGateway(const CreateGatewayRequest
   Aws::StringStream ss;
   ss << "/20200301/gateways";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateGatewayOutcome(CreateGatewayResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateGatewayOutcome(outcome.GetError());
-  }
+  return CreateGatewayOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateGatewayOutcomeCallable IoTSiteWiseClient::CreateGatewayCallable(const CreateGatewayRequest& request) const
@@ -588,15 +516,7 @@ CreatePortalOutcome IoTSiteWiseClient::CreatePortal(const CreatePortalRequest& r
   Aws::StringStream ss;
   ss << "/portals";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreatePortalOutcome(CreatePortalResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreatePortalOutcome(outcome.GetError());
-  }
+  return CreatePortalOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreatePortalOutcomeCallable IoTSiteWiseClient::CreatePortalCallable(const CreatePortalRequest& request) const
@@ -632,15 +552,7 @@ CreateProjectOutcome IoTSiteWiseClient::CreateProject(const CreateProjectRequest
   Aws::StringStream ss;
   ss << "/projects";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateProjectOutcome(CreateProjectResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateProjectOutcome(outcome.GetError());
-  }
+  return CreateProjectOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateProjectOutcomeCallable IoTSiteWiseClient::CreateProjectCallable(const CreateProjectRequest& request) const
@@ -682,15 +594,7 @@ DeleteAccessPolicyOutcome IoTSiteWiseClient::DeleteAccessPolicy(const DeleteAcce
   ss << "/access-policies/";
   ss << request.GetAccessPolicyId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteAccessPolicyOutcome(DeleteAccessPolicyResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteAccessPolicyOutcome(outcome.GetError());
-  }
+  return DeleteAccessPolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteAccessPolicyOutcomeCallable IoTSiteWiseClient::DeleteAccessPolicyCallable(const DeleteAccessPolicyRequest& request) const
@@ -732,15 +636,7 @@ DeleteAssetOutcome IoTSiteWiseClient::DeleteAsset(const DeleteAssetRequest& requ
   ss << "/assets/";
   ss << request.GetAssetId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteAssetOutcome(DeleteAssetResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteAssetOutcome(outcome.GetError());
-  }
+  return DeleteAssetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteAssetOutcomeCallable IoTSiteWiseClient::DeleteAssetCallable(const DeleteAssetRequest& request) const
@@ -782,15 +678,7 @@ DeleteAssetModelOutcome IoTSiteWiseClient::DeleteAssetModel(const DeleteAssetMod
   ss << "/asset-models/";
   ss << request.GetAssetModelId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteAssetModelOutcome(DeleteAssetModelResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteAssetModelOutcome(outcome.GetError());
-  }
+  return DeleteAssetModelOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteAssetModelOutcomeCallable IoTSiteWiseClient::DeleteAssetModelCallable(const DeleteAssetModelRequest& request) const
@@ -832,15 +720,7 @@ DeleteDashboardOutcome IoTSiteWiseClient::DeleteDashboard(const DeleteDashboardR
   ss << "/dashboards/";
   ss << request.GetDashboardId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteDashboardOutcome(DeleteDashboardResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteDashboardOutcome(outcome.GetError());
-  }
+  return DeleteDashboardOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteDashboardOutcomeCallable IoTSiteWiseClient::DeleteDashboardCallable(const DeleteDashboardRequest& request) const
@@ -882,15 +762,7 @@ DeleteGatewayOutcome IoTSiteWiseClient::DeleteGateway(const DeleteGatewayRequest
   ss << "/20200301/gateways/";
   ss << request.GetGatewayId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteGatewayOutcome(NoResult());
-  }
-  else
-  {
-    return DeleteGatewayOutcome(outcome.GetError());
-  }
+  return DeleteGatewayOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteGatewayOutcomeCallable IoTSiteWiseClient::DeleteGatewayCallable(const DeleteGatewayRequest& request) const
@@ -932,15 +804,7 @@ DeletePortalOutcome IoTSiteWiseClient::DeletePortal(const DeletePortalRequest& r
   ss << "/portals/";
   ss << request.GetPortalId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeletePortalOutcome(DeletePortalResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeletePortalOutcome(outcome.GetError());
-  }
+  return DeletePortalOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeletePortalOutcomeCallable IoTSiteWiseClient::DeletePortalCallable(const DeletePortalRequest& request) const
@@ -982,15 +846,7 @@ DeleteProjectOutcome IoTSiteWiseClient::DeleteProject(const DeleteProjectRequest
   ss << "/projects/";
   ss << request.GetProjectId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteProjectOutcome(DeleteProjectResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteProjectOutcome(outcome.GetError());
-  }
+  return DeleteProjectOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteProjectOutcomeCallable IoTSiteWiseClient::DeleteProjectCallable(const DeleteProjectRequest& request) const
@@ -1032,15 +888,7 @@ DescribeAccessPolicyOutcome IoTSiteWiseClient::DescribeAccessPolicy(const Descri
   ss << "/access-policies/";
   ss << request.GetAccessPolicyId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeAccessPolicyOutcome(DescribeAccessPolicyResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeAccessPolicyOutcome(outcome.GetError());
-  }
+  return DescribeAccessPolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeAccessPolicyOutcomeCallable IoTSiteWiseClient::DescribeAccessPolicyCallable(const DescribeAccessPolicyRequest& request) const
@@ -1082,15 +930,7 @@ DescribeAssetOutcome IoTSiteWiseClient::DescribeAsset(const DescribeAssetRequest
   ss << "/assets/";
   ss << request.GetAssetId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeAssetOutcome(DescribeAssetResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeAssetOutcome(outcome.GetError());
-  }
+  return DescribeAssetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeAssetOutcomeCallable IoTSiteWiseClient::DescribeAssetCallable(const DescribeAssetRequest& request) const
@@ -1132,15 +972,7 @@ DescribeAssetModelOutcome IoTSiteWiseClient::DescribeAssetModel(const DescribeAs
   ss << "/asset-models/";
   ss << request.GetAssetModelId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeAssetModelOutcome(DescribeAssetModelResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeAssetModelOutcome(outcome.GetError());
-  }
+  return DescribeAssetModelOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeAssetModelOutcomeCallable IoTSiteWiseClient::DescribeAssetModelCallable(const DescribeAssetModelRequest& request) const
@@ -1189,15 +1021,7 @@ DescribeAssetPropertyOutcome IoTSiteWiseClient::DescribeAssetProperty(const Desc
   ss << "/properties/";
   ss << request.GetPropertyId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeAssetPropertyOutcome(DescribeAssetPropertyResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeAssetPropertyOutcome(outcome.GetError());
-  }
+  return DescribeAssetPropertyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeAssetPropertyOutcomeCallable IoTSiteWiseClient::DescribeAssetPropertyCallable(const DescribeAssetPropertyRequest& request) const
@@ -1239,15 +1063,7 @@ DescribeDashboardOutcome IoTSiteWiseClient::DescribeDashboard(const DescribeDash
   ss << "/dashboards/";
   ss << request.GetDashboardId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeDashboardOutcome(DescribeDashboardResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeDashboardOutcome(outcome.GetError());
-  }
+  return DescribeDashboardOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeDashboardOutcomeCallable IoTSiteWiseClient::DescribeDashboardCallable(const DescribeDashboardRequest& request) const
@@ -1289,15 +1105,7 @@ DescribeGatewayOutcome IoTSiteWiseClient::DescribeGateway(const DescribeGatewayR
   ss << "/20200301/gateways/";
   ss << request.GetGatewayId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeGatewayOutcome(DescribeGatewayResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeGatewayOutcome(outcome.GetError());
-  }
+  return DescribeGatewayOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeGatewayOutcomeCallable IoTSiteWiseClient::DescribeGatewayCallable(const DescribeGatewayRequest& request) const
@@ -1346,15 +1154,7 @@ DescribeGatewayCapabilityConfigurationOutcome IoTSiteWiseClient::DescribeGateway
   ss << "/capability/";
   ss << request.GetCapabilityNamespace();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeGatewayCapabilityConfigurationOutcome(DescribeGatewayCapabilityConfigurationResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeGatewayCapabilityConfigurationOutcome(outcome.GetError());
-  }
+  return DescribeGatewayCapabilityConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeGatewayCapabilityConfigurationOutcomeCallable IoTSiteWiseClient::DescribeGatewayCapabilityConfigurationCallable(const DescribeGatewayCapabilityConfigurationRequest& request) const
@@ -1390,15 +1190,7 @@ DescribeLoggingOptionsOutcome IoTSiteWiseClient::DescribeLoggingOptions(const De
   Aws::StringStream ss;
   ss << "/logging";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeLoggingOptionsOutcome(DescribeLoggingOptionsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeLoggingOptionsOutcome(outcome.GetError());
-  }
+  return DescribeLoggingOptionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeLoggingOptionsOutcomeCallable IoTSiteWiseClient::DescribeLoggingOptionsCallable(const DescribeLoggingOptionsRequest& request) const
@@ -1440,15 +1232,7 @@ DescribePortalOutcome IoTSiteWiseClient::DescribePortal(const DescribePortalRequ
   ss << "/portals/";
   ss << request.GetPortalId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribePortalOutcome(DescribePortalResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribePortalOutcome(outcome.GetError());
-  }
+  return DescribePortalOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribePortalOutcomeCallable IoTSiteWiseClient::DescribePortalCallable(const DescribePortalRequest& request) const
@@ -1490,15 +1274,7 @@ DescribeProjectOutcome IoTSiteWiseClient::DescribeProject(const DescribeProjectR
   ss << "/projects/";
   ss << request.GetProjectId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeProjectOutcome(DescribeProjectResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeProjectOutcome(outcome.GetError());
-  }
+  return DescribeProjectOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeProjectOutcomeCallable IoTSiteWiseClient::DescribeProjectCallable(const DescribeProjectRequest& request) const
@@ -1541,15 +1317,7 @@ DisassociateAssetsOutcome IoTSiteWiseClient::DisassociateAssets(const Disassocia
   ss << request.GetAssetId();
   ss << "/disassociate";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DisassociateAssetsOutcome(NoResult());
-  }
-  else
-  {
-    return DisassociateAssetsOutcome(outcome.GetError());
-  }
+  return DisassociateAssetsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DisassociateAssetsOutcomeCallable IoTSiteWiseClient::DisassociateAssetsCallable(const DisassociateAssetsRequest& request) const
@@ -1605,15 +1373,7 @@ GetAssetPropertyAggregatesOutcome IoTSiteWiseClient::GetAssetPropertyAggregates(
   Aws::StringStream ss;
   ss << "/properties/aggregates";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetAssetPropertyAggregatesOutcome(GetAssetPropertyAggregatesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetAssetPropertyAggregatesOutcome(outcome.GetError());
-  }
+  return GetAssetPropertyAggregatesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetAssetPropertyAggregatesOutcomeCallable IoTSiteWiseClient::GetAssetPropertyAggregatesCallable(const GetAssetPropertyAggregatesRequest& request) const
@@ -1649,15 +1409,7 @@ GetAssetPropertyValueOutcome IoTSiteWiseClient::GetAssetPropertyValue(const GetA
   Aws::StringStream ss;
   ss << "/properties/latest";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetAssetPropertyValueOutcome(GetAssetPropertyValueResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetAssetPropertyValueOutcome(outcome.GetError());
-  }
+  return GetAssetPropertyValueOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetAssetPropertyValueOutcomeCallable IoTSiteWiseClient::GetAssetPropertyValueCallable(const GetAssetPropertyValueRequest& request) const
@@ -1703,15 +1455,7 @@ GetAssetPropertyValueHistoryOutcome IoTSiteWiseClient::GetAssetPropertyValueHist
   Aws::StringStream ss;
   ss << "/properties/history";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetAssetPropertyValueHistoryOutcome(GetAssetPropertyValueHistoryResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetAssetPropertyValueHistoryOutcome(outcome.GetError());
-  }
+  return GetAssetPropertyValueHistoryOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetAssetPropertyValueHistoryOutcomeCallable IoTSiteWiseClient::GetAssetPropertyValueHistoryCallable(const GetAssetPropertyValueHistoryRequest& request) const
@@ -1747,15 +1491,7 @@ ListAccessPoliciesOutcome IoTSiteWiseClient::ListAccessPolicies(const ListAccess
   Aws::StringStream ss;
   ss << "/access-policies";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListAccessPoliciesOutcome(ListAccessPoliciesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListAccessPoliciesOutcome(outcome.GetError());
-  }
+  return ListAccessPoliciesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListAccessPoliciesOutcomeCallable IoTSiteWiseClient::ListAccessPoliciesCallable(const ListAccessPoliciesRequest& request) const
@@ -1791,15 +1527,7 @@ ListAssetModelsOutcome IoTSiteWiseClient::ListAssetModels(const ListAssetModelsR
   Aws::StringStream ss;
   ss << "/asset-models";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListAssetModelsOutcome(ListAssetModelsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListAssetModelsOutcome(outcome.GetError());
-  }
+  return ListAssetModelsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListAssetModelsOutcomeCallable IoTSiteWiseClient::ListAssetModelsCallable(const ListAssetModelsRequest& request) const
@@ -1835,15 +1563,7 @@ ListAssetsOutcome IoTSiteWiseClient::ListAssets(const ListAssetsRequest& request
   Aws::StringStream ss;
   ss << "/assets";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListAssetsOutcome(ListAssetsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListAssetsOutcome(outcome.GetError());
-  }
+  return ListAssetsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListAssetsOutcomeCallable IoTSiteWiseClient::ListAssetsCallable(const ListAssetsRequest& request) const
@@ -1891,15 +1611,7 @@ ListAssociatedAssetsOutcome IoTSiteWiseClient::ListAssociatedAssets(const ListAs
   ss << request.GetAssetId();
   ss << "/hierarchies";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListAssociatedAssetsOutcome(ListAssociatedAssetsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListAssociatedAssetsOutcome(outcome.GetError());
-  }
+  return ListAssociatedAssetsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListAssociatedAssetsOutcomeCallable IoTSiteWiseClient::ListAssociatedAssetsCallable(const ListAssociatedAssetsRequest& request) const
@@ -1940,15 +1652,7 @@ ListDashboardsOutcome IoTSiteWiseClient::ListDashboards(const ListDashboardsRequ
   Aws::StringStream ss;
   ss << "/dashboards";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListDashboardsOutcome(ListDashboardsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListDashboardsOutcome(outcome.GetError());
-  }
+  return ListDashboardsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListDashboardsOutcomeCallable IoTSiteWiseClient::ListDashboardsCallable(const ListDashboardsRequest& request) const
@@ -1984,15 +1688,7 @@ ListGatewaysOutcome IoTSiteWiseClient::ListGateways(const ListGatewaysRequest& r
   Aws::StringStream ss;
   ss << "/20200301/gateways";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListGatewaysOutcome(ListGatewaysResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListGatewaysOutcome(outcome.GetError());
-  }
+  return ListGatewaysOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListGatewaysOutcomeCallable IoTSiteWiseClient::ListGatewaysCallable(const ListGatewaysRequest& request) const
@@ -2028,15 +1724,7 @@ ListPortalsOutcome IoTSiteWiseClient::ListPortals(const ListPortalsRequest& requ
   Aws::StringStream ss;
   ss << "/portals";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListPortalsOutcome(ListPortalsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListPortalsOutcome(outcome.GetError());
-  }
+  return ListPortalsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListPortalsOutcomeCallable IoTSiteWiseClient::ListPortalsCallable(const ListPortalsRequest& request) const
@@ -2079,15 +1767,7 @@ ListProjectAssetsOutcome IoTSiteWiseClient::ListProjectAssets(const ListProjectA
   ss << request.GetProjectId();
   ss << "/assets";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListProjectAssetsOutcome(ListProjectAssetsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListProjectAssetsOutcome(outcome.GetError());
-  }
+  return ListProjectAssetsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListProjectAssetsOutcomeCallable IoTSiteWiseClient::ListProjectAssetsCallable(const ListProjectAssetsRequest& request) const
@@ -2128,15 +1808,7 @@ ListProjectsOutcome IoTSiteWiseClient::ListProjects(const ListProjectsRequest& r
   Aws::StringStream ss;
   ss << "/projects";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListProjectsOutcome(ListProjectsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListProjectsOutcome(outcome.GetError());
-  }
+  return ListProjectsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListProjectsOutcomeCallable IoTSiteWiseClient::ListProjectsCallable(const ListProjectsRequest& request) const
@@ -2168,15 +1840,7 @@ ListTagsForResourceOutcome IoTSiteWiseClient::ListTagsForResource(const ListTags
   Aws::StringStream ss;
   ss << "/tags";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListTagsForResourceOutcome(ListTagsForResourceResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListTagsForResourceOutcome(outcome.GetError());
-  }
+  return ListTagsForResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListTagsForResourceOutcomeCallable IoTSiteWiseClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
@@ -2212,15 +1876,7 @@ PutLoggingOptionsOutcome IoTSiteWiseClient::PutLoggingOptions(const PutLoggingOp
   Aws::StringStream ss;
   ss << "/logging";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return PutLoggingOptionsOutcome(PutLoggingOptionsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return PutLoggingOptionsOutcome(outcome.GetError());
-  }
+  return PutLoggingOptionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 PutLoggingOptionsOutcomeCallable IoTSiteWiseClient::PutLoggingOptionsCallable(const PutLoggingOptionsRequest& request) const
@@ -2252,15 +1908,7 @@ TagResourceOutcome IoTSiteWiseClient::TagResource(const TagResourceRequest& requ
   Aws::StringStream ss;
   ss << "/tags";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return TagResourceOutcome(TagResourceResult(outcome.GetResult()));
-  }
-  else
-  {
-    return TagResourceOutcome(outcome.GetError());
-  }
+  return TagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 TagResourceOutcomeCallable IoTSiteWiseClient::TagResourceCallable(const TagResourceRequest& request) const
@@ -2297,15 +1945,7 @@ UntagResourceOutcome IoTSiteWiseClient::UntagResource(const UntagResourceRequest
   Aws::StringStream ss;
   ss << "/tags";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UntagResourceOutcome(UntagResourceResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UntagResourceOutcome(outcome.GetError());
-  }
+  return UntagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 UntagResourceOutcomeCallable IoTSiteWiseClient::UntagResourceCallable(const UntagResourceRequest& request) const
@@ -2347,15 +1987,7 @@ UpdateAccessPolicyOutcome IoTSiteWiseClient::UpdateAccessPolicy(const UpdateAcce
   ss << "/access-policies/";
   ss << request.GetAccessPolicyId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateAccessPolicyOutcome(UpdateAccessPolicyResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateAccessPolicyOutcome(outcome.GetError());
-  }
+  return UpdateAccessPolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateAccessPolicyOutcomeCallable IoTSiteWiseClient::UpdateAccessPolicyCallable(const UpdateAccessPolicyRequest& request) const
@@ -2397,15 +2029,7 @@ UpdateAssetOutcome IoTSiteWiseClient::UpdateAsset(const UpdateAssetRequest& requ
   ss << "/assets/";
   ss << request.GetAssetId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateAssetOutcome(UpdateAssetResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateAssetOutcome(outcome.GetError());
-  }
+  return UpdateAssetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateAssetOutcomeCallable IoTSiteWiseClient::UpdateAssetCallable(const UpdateAssetRequest& request) const
@@ -2447,15 +2071,7 @@ UpdateAssetModelOutcome IoTSiteWiseClient::UpdateAssetModel(const UpdateAssetMod
   ss << "/asset-models/";
   ss << request.GetAssetModelId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateAssetModelOutcome(UpdateAssetModelResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateAssetModelOutcome(outcome.GetError());
-  }
+  return UpdateAssetModelOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateAssetModelOutcomeCallable IoTSiteWiseClient::UpdateAssetModelCallable(const UpdateAssetModelRequest& request) const
@@ -2504,15 +2120,7 @@ UpdateAssetPropertyOutcome IoTSiteWiseClient::UpdateAssetProperty(const UpdateAs
   ss << "/properties/";
   ss << request.GetPropertyId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateAssetPropertyOutcome(NoResult());
-  }
-  else
-  {
-    return UpdateAssetPropertyOutcome(outcome.GetError());
-  }
+  return UpdateAssetPropertyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateAssetPropertyOutcomeCallable IoTSiteWiseClient::UpdateAssetPropertyCallable(const UpdateAssetPropertyRequest& request) const
@@ -2554,15 +2162,7 @@ UpdateDashboardOutcome IoTSiteWiseClient::UpdateDashboard(const UpdateDashboardR
   ss << "/dashboards/";
   ss << request.GetDashboardId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateDashboardOutcome(UpdateDashboardResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateDashboardOutcome(outcome.GetError());
-  }
+  return UpdateDashboardOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateDashboardOutcomeCallable IoTSiteWiseClient::UpdateDashboardCallable(const UpdateDashboardRequest& request) const
@@ -2604,15 +2204,7 @@ UpdateGatewayOutcome IoTSiteWiseClient::UpdateGateway(const UpdateGatewayRequest
   ss << "/20200301/gateways/";
   ss << request.GetGatewayId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateGatewayOutcome(NoResult());
-  }
-  else
-  {
-    return UpdateGatewayOutcome(outcome.GetError());
-  }
+  return UpdateGatewayOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateGatewayOutcomeCallable IoTSiteWiseClient::UpdateGatewayCallable(const UpdateGatewayRequest& request) const
@@ -2655,15 +2247,7 @@ UpdateGatewayCapabilityConfigurationOutcome IoTSiteWiseClient::UpdateGatewayCapa
   ss << request.GetGatewayId();
   ss << "/capability";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateGatewayCapabilityConfigurationOutcome(UpdateGatewayCapabilityConfigurationResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateGatewayCapabilityConfigurationOutcome(outcome.GetError());
-  }
+  return UpdateGatewayCapabilityConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateGatewayCapabilityConfigurationOutcomeCallable IoTSiteWiseClient::UpdateGatewayCapabilityConfigurationCallable(const UpdateGatewayCapabilityConfigurationRequest& request) const
@@ -2705,15 +2289,7 @@ UpdatePortalOutcome IoTSiteWiseClient::UpdatePortal(const UpdatePortalRequest& r
   ss << "/portals/";
   ss << request.GetPortalId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdatePortalOutcome(UpdatePortalResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdatePortalOutcome(outcome.GetError());
-  }
+  return UpdatePortalOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdatePortalOutcomeCallable IoTSiteWiseClient::UpdatePortalCallable(const UpdatePortalRequest& request) const
@@ -2755,15 +2331,7 @@ UpdateProjectOutcome IoTSiteWiseClient::UpdateProject(const UpdateProjectRequest
   ss << "/projects/";
   ss << request.GetProjectId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateProjectOutcome(UpdateProjectResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateProjectOutcome(outcome.GetError());
-  }
+  return UpdateProjectOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateProjectOutcomeCallable IoTSiteWiseClient::UpdateProjectCallable(const UpdateProjectRequest& request) const

@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/pi/PI_EXPORTS.h>
 
@@ -42,7 +43,7 @@ enum class PIErrors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -50,6 +51,20 @@ enum class PIErrors
   INVALID_ARGUMENT,
   NOT_AUTHORIZED
 };
+
+class AWS_PI_API PIError : public Aws::Client::AWSError<PIErrors>
+{
+public:
+  PIError() {}
+  PIError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<PIErrors>(rhs) {}
+  PIError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<PIErrors>(rhs) {}
+  PIError(const Aws::Client::AWSError<PIErrors>& rhs) : Aws::Client::AWSError<PIErrors>(rhs) {}
+  PIError(Aws::Client::AWSError<PIErrors>&& rhs) : Aws::Client::AWSError<PIErrors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace PIErrorMapper
 {
   AWS_PI_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

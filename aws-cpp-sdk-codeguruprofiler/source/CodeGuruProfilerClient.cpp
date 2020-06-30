@@ -56,7 +56,7 @@ static const char* ALLOCATION_TAG = "CodeGuruProfilerClient";
 CodeGuruProfilerClient::CodeGuruProfilerClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-        SERVICE_NAME, clientConfiguration.region),
+        SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<CodeGuruProfilerErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -66,7 +66,7 @@ CodeGuruProfilerClient::CodeGuruProfilerClient(const Client::ClientConfiguration
 CodeGuruProfilerClient::CodeGuruProfilerClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-         SERVICE_NAME, clientConfiguration.region),
+         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<CodeGuruProfilerErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -77,7 +77,7 @@ CodeGuruProfilerClient::CodeGuruProfilerClient(const std::shared_ptr<AWSCredenti
   const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider,
-         SERVICE_NAME, clientConfiguration.region),
+         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<CodeGuruProfilerErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -126,15 +126,7 @@ AddNotificationChannelsOutcome CodeGuruProfilerClient::AddNotificationChannels(c
   ss << request.GetProfilingGroupName();
   ss << "/notificationConfiguration";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return AddNotificationChannelsOutcome(AddNotificationChannelsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return AddNotificationChannelsOutcome(outcome.GetError());
-  }
+  return AddNotificationChannelsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 AddNotificationChannelsOutcomeCallable CodeGuruProfilerClient::AddNotificationChannelsCallable(const AddNotificationChannelsRequest& request) const
@@ -168,15 +160,7 @@ BatchGetFrameMetricDataOutcome CodeGuruProfilerClient::BatchGetFrameMetricData(c
   ss << request.GetProfilingGroupName();
   ss << "/frames/-/metrics";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return BatchGetFrameMetricDataOutcome(BatchGetFrameMetricDataResult(outcome.GetResult()));
-  }
-  else
-  {
-    return BatchGetFrameMetricDataOutcome(outcome.GetError());
-  }
+  return BatchGetFrameMetricDataOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 BatchGetFrameMetricDataOutcomeCallable CodeGuruProfilerClient::BatchGetFrameMetricDataCallable(const BatchGetFrameMetricDataRequest& request) const
@@ -210,15 +194,7 @@ ConfigureAgentOutcome CodeGuruProfilerClient::ConfigureAgent(const ConfigureAgen
   ss << request.GetProfilingGroupName();
   ss << "/configureAgent";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ConfigureAgentOutcome(ConfigureAgentResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ConfigureAgentOutcome(outcome.GetError());
-  }
+  return ConfigureAgentOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ConfigureAgentOutcomeCallable CodeGuruProfilerClient::ConfigureAgentCallable(const ConfigureAgentRequest& request) const
@@ -250,15 +226,7 @@ CreateProfilingGroupOutcome CodeGuruProfilerClient::CreateProfilingGroup(const C
   Aws::StringStream ss;
   ss << "/profilingGroups";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateProfilingGroupOutcome(CreateProfilingGroupResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateProfilingGroupOutcome(outcome.GetError());
-  }
+  return CreateProfilingGroupOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateProfilingGroupOutcomeCallable CodeGuruProfilerClient::CreateProfilingGroupCallable(const CreateProfilingGroupRequest& request) const
@@ -291,15 +259,7 @@ DeleteProfilingGroupOutcome CodeGuruProfilerClient::DeleteProfilingGroup(const D
   ss << "/profilingGroups/";
   ss << request.GetProfilingGroupName();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteProfilingGroupOutcome(DeleteProfilingGroupResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteProfilingGroupOutcome(outcome.GetError());
-  }
+  return DeleteProfilingGroupOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteProfilingGroupOutcomeCallable CodeGuruProfilerClient::DeleteProfilingGroupCallable(const DeleteProfilingGroupRequest& request) const
@@ -332,15 +292,7 @@ DescribeProfilingGroupOutcome CodeGuruProfilerClient::DescribeProfilingGroup(con
   ss << "/profilingGroups/";
   ss << request.GetProfilingGroupName();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeProfilingGroupOutcome(DescribeProfilingGroupResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeProfilingGroupOutcome(outcome.GetError());
-  }
+  return DescribeProfilingGroupOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeProfilingGroupOutcomeCallable CodeGuruProfilerClient::DescribeProfilingGroupCallable(const DescribeProfilingGroupRequest& request) const
@@ -367,15 +319,7 @@ GetFindingsReportAccountSummaryOutcome CodeGuruProfilerClient::GetFindingsReport
   Aws::StringStream ss;
   ss << "/internal/findingsReports";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetFindingsReportAccountSummaryOutcome(GetFindingsReportAccountSummaryResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetFindingsReportAccountSummaryOutcome(outcome.GetError());
-  }
+  return GetFindingsReportAccountSummaryOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetFindingsReportAccountSummaryOutcomeCallable CodeGuruProfilerClient::GetFindingsReportAccountSummaryCallable(const GetFindingsReportAccountSummaryRequest& request) const
@@ -409,15 +353,7 @@ GetNotificationConfigurationOutcome CodeGuruProfilerClient::GetNotificationConfi
   ss << request.GetProfilingGroupName();
   ss << "/notificationConfiguration";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetNotificationConfigurationOutcome(GetNotificationConfigurationResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetNotificationConfigurationOutcome(outcome.GetError());
-  }
+  return GetNotificationConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetNotificationConfigurationOutcomeCallable CodeGuruProfilerClient::GetNotificationConfigurationCallable(const GetNotificationConfigurationRequest& request) const
@@ -451,15 +387,7 @@ GetPolicyOutcome CodeGuruProfilerClient::GetPolicy(const GetPolicyRequest& reque
   ss << request.GetProfilingGroupName();
   ss << "/policy";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetPolicyOutcome(GetPolicyResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetPolicyOutcome(outcome.GetError());
-  }
+  return GetPolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetPolicyOutcomeCallable CodeGuruProfilerClient::GetPolicyCallable(const GetPolicyRequest& request) const
@@ -493,15 +421,7 @@ GetProfileOutcome CodeGuruProfilerClient::GetProfile(const GetProfileRequest& re
   ss << request.GetProfilingGroupName();
   ss << "/profile";
   uri.SetPath(uri.GetPath() + ss.str());
-  StreamOutcome outcome = MakeRequestWithUnparsedResponse(uri, request, Aws::Http::HttpMethod::HTTP_GET);
-  if(outcome.IsSuccess())
-  {
-    return GetProfileOutcome(GetProfileResult(outcome.GetResultWithOwnership()));
-  }
-  else
-  {
-    return GetProfileOutcome(outcome.GetError());
-  }
+  return GetProfileOutcome(MakeRequestWithUnparsedResponse(uri, request, Aws::Http::HttpMethod::HTTP_GET));
 }
 
 GetProfileOutcomeCallable CodeGuruProfilerClient::GetProfileCallable(const GetProfileRequest& request) const
@@ -545,15 +465,7 @@ GetRecommendationsOutcome CodeGuruProfilerClient::GetRecommendations(const GetRe
   ss << request.GetProfilingGroupName();
   ss << "/recommendations";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetRecommendationsOutcome(GetRecommendationsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetRecommendationsOutcome(outcome.GetError());
-  }
+  return GetRecommendationsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetRecommendationsOutcomeCallable CodeGuruProfilerClient::GetRecommendationsCallable(const GetRecommendationsRequest& request) const
@@ -597,15 +509,7 @@ ListFindingsReportsOutcome CodeGuruProfilerClient::ListFindingsReports(const Lis
   ss << request.GetProfilingGroupName();
   ss << "/findingsReports";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListFindingsReportsOutcome(ListFindingsReportsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListFindingsReportsOutcome(outcome.GetError());
-  }
+  return ListFindingsReportsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListFindingsReportsOutcomeCallable CodeGuruProfilerClient::ListFindingsReportsCallable(const ListFindingsReportsRequest& request) const
@@ -654,15 +558,7 @@ ListProfileTimesOutcome CodeGuruProfilerClient::ListProfileTimes(const ListProfi
   ss << request.GetProfilingGroupName();
   ss << "/profileTimes";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListProfileTimesOutcome(ListProfileTimesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListProfileTimesOutcome(outcome.GetError());
-  }
+  return ListProfileTimesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListProfileTimesOutcomeCallable CodeGuruProfilerClient::ListProfileTimesCallable(const ListProfileTimesRequest& request) const
@@ -689,15 +585,7 @@ ListProfilingGroupsOutcome CodeGuruProfilerClient::ListProfilingGroups(const Lis
   Aws::StringStream ss;
   ss << "/profilingGroups";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListProfilingGroupsOutcome(ListProfilingGroupsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListProfilingGroupsOutcome(outcome.GetError());
-  }
+  return ListProfilingGroupsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListProfilingGroupsOutcomeCallable CodeGuruProfilerClient::ListProfilingGroupsCallable(const ListProfilingGroupsRequest& request) const
@@ -731,15 +619,7 @@ PostAgentProfileOutcome CodeGuruProfilerClient::PostAgentProfile(const PostAgent
   ss << request.GetProfilingGroupName();
   ss << "/agentProfile";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return PostAgentProfileOutcome(PostAgentProfileResult(outcome.GetResult()));
-  }
-  else
-  {
-    return PostAgentProfileOutcome(outcome.GetError());
-  }
+  return PostAgentProfileOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 PostAgentProfileOutcomeCallable CodeGuruProfilerClient::PostAgentProfileCallable(const PostAgentProfileRequest& request) const
@@ -779,15 +659,7 @@ PutPermissionOutcome CodeGuruProfilerClient::PutPermission(const PutPermissionRe
   ss << "/policy/";
   ss << ActionGroupMapper::GetNameForActionGroup(request.GetActionGroup());
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return PutPermissionOutcome(PutPermissionResult(outcome.GetResult()));
-  }
-  else
-  {
-    return PutPermissionOutcome(outcome.GetError());
-  }
+  return PutPermissionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 PutPermissionOutcomeCallable CodeGuruProfilerClient::PutPermissionCallable(const PutPermissionRequest& request) const
@@ -827,15 +699,7 @@ RemoveNotificationChannelOutcome CodeGuruProfilerClient::RemoveNotificationChann
   ss << "/notificationConfiguration/";
   ss << request.GetChannelId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return RemoveNotificationChannelOutcome(RemoveNotificationChannelResult(outcome.GetResult()));
-  }
-  else
-  {
-    return RemoveNotificationChannelOutcome(outcome.GetError());
-  }
+  return RemoveNotificationChannelOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 RemoveNotificationChannelOutcomeCallable CodeGuruProfilerClient::RemoveNotificationChannelCallable(const RemoveNotificationChannelRequest& request) const
@@ -880,15 +744,7 @@ RemovePermissionOutcome CodeGuruProfilerClient::RemovePermission(const RemovePer
   ss << "/policy/";
   ss << ActionGroupMapper::GetNameForActionGroup(request.GetActionGroup());
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return RemovePermissionOutcome(RemovePermissionResult(outcome.GetResult()));
-  }
-  else
-  {
-    return RemovePermissionOutcome(outcome.GetError());
-  }
+  return RemovePermissionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 RemovePermissionOutcomeCallable CodeGuruProfilerClient::RemovePermissionCallable(const RemovePermissionRequest& request) const
@@ -929,15 +785,7 @@ SubmitFeedbackOutcome CodeGuruProfilerClient::SubmitFeedback(const SubmitFeedbac
   ss << request.GetAnomalyInstanceId();
   ss << "/feedback";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return SubmitFeedbackOutcome(SubmitFeedbackResult(outcome.GetResult()));
-  }
-  else
-  {
-    return SubmitFeedbackOutcome(outcome.GetError());
-  }
+  return SubmitFeedbackOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 SubmitFeedbackOutcomeCallable CodeGuruProfilerClient::SubmitFeedbackCallable(const SubmitFeedbackRequest& request) const
@@ -970,15 +818,7 @@ UpdateProfilingGroupOutcome CodeGuruProfilerClient::UpdateProfilingGroup(const U
   ss << "/profilingGroups/";
   ss << request.GetProfilingGroupName();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateProfilingGroupOutcome(UpdateProfilingGroupResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateProfilingGroupOutcome(outcome.GetError());
-  }
+  return UpdateProfilingGroupOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateProfilingGroupOutcomeCallable CodeGuruProfilerClient::UpdateProfilingGroupCallable(const UpdateProfilingGroupRequest& request) const

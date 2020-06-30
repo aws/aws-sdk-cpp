@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/kafka/Kafka_EXPORTS.h>
 
@@ -42,7 +43,7 @@ enum class KafkaErrors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -54,6 +55,20 @@ enum class KafkaErrors
   TOO_MANY_REQUESTS,
   UNAUTHORIZED
 };
+
+class AWS_KAFKA_API KafkaError : public Aws::Client::AWSError<KafkaErrors>
+{
+public:
+  KafkaError() {}
+  KafkaError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<KafkaErrors>(rhs) {}
+  KafkaError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<KafkaErrors>(rhs) {}
+  KafkaError(const Aws::Client::AWSError<KafkaErrors>& rhs) : Aws::Client::AWSError<KafkaErrors>(rhs) {}
+  KafkaError(Aws::Client::AWSError<KafkaErrors>&& rhs) : Aws::Client::AWSError<KafkaErrors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace KafkaErrorMapper
 {
   AWS_KAFKA_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

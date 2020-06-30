@@ -58,7 +58,7 @@ static const char* ALLOCATION_TAG = "DataExchangeClient";
 DataExchangeClient::DataExchangeClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-        SERVICE_NAME, clientConfiguration.region),
+        SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<DataExchangeErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -68,7 +68,7 @@ DataExchangeClient::DataExchangeClient(const Client::ClientConfiguration& client
 DataExchangeClient::DataExchangeClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-         SERVICE_NAME, clientConfiguration.region),
+         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<DataExchangeErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -79,7 +79,7 @@ DataExchangeClient::DataExchangeClient(const std::shared_ptr<AWSCredentialsProvi
   const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider,
-         SERVICE_NAME, clientConfiguration.region),
+         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<DataExchangeErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -127,15 +127,7 @@ CancelJobOutcome DataExchangeClient::CancelJob(const CancelJobRequest& request) 
   ss << "/v1/jobs/";
   ss << request.GetJobId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CancelJobOutcome(NoResult());
-  }
-  else
-  {
-    return CancelJobOutcome(outcome.GetError());
-  }
+  return CancelJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 CancelJobOutcomeCallable DataExchangeClient::CancelJobCallable(const CancelJobRequest& request) const
@@ -162,15 +154,7 @@ CreateDataSetOutcome DataExchangeClient::CreateDataSet(const CreateDataSetReques
   Aws::StringStream ss;
   ss << "/v1/data-sets";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateDataSetOutcome(CreateDataSetResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateDataSetOutcome(outcome.GetError());
-  }
+  return CreateDataSetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateDataSetOutcomeCallable DataExchangeClient::CreateDataSetCallable(const CreateDataSetRequest& request) const
@@ -197,15 +181,7 @@ CreateJobOutcome DataExchangeClient::CreateJob(const CreateJobRequest& request) 
   Aws::StringStream ss;
   ss << "/v1/jobs";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateJobOutcome(CreateJobResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateJobOutcome(outcome.GetError());
-  }
+  return CreateJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateJobOutcomeCallable DataExchangeClient::CreateJobCallable(const CreateJobRequest& request) const
@@ -239,15 +215,7 @@ CreateRevisionOutcome DataExchangeClient::CreateRevision(const CreateRevisionReq
   ss << request.GetDataSetId();
   ss << "/revisions";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateRevisionOutcome(CreateRevisionResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateRevisionOutcome(outcome.GetError());
-  }
+  return CreateRevisionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateRevisionOutcomeCallable DataExchangeClient::CreateRevisionCallable(const CreateRevisionRequest& request) const
@@ -294,15 +262,7 @@ DeleteAssetOutcome DataExchangeClient::DeleteAsset(const DeleteAssetRequest& req
   ss << "/assets/";
   ss << request.GetAssetId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteAssetOutcome(NoResult());
-  }
-  else
-  {
-    return DeleteAssetOutcome(outcome.GetError());
-  }
+  return DeleteAssetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteAssetOutcomeCallable DataExchangeClient::DeleteAssetCallable(const DeleteAssetRequest& request) const
@@ -335,15 +295,7 @@ DeleteDataSetOutcome DataExchangeClient::DeleteDataSet(const DeleteDataSetReques
   ss << "/v1/data-sets/";
   ss << request.GetDataSetId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteDataSetOutcome(NoResult());
-  }
-  else
-  {
-    return DeleteDataSetOutcome(outcome.GetError());
-  }
+  return DeleteDataSetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteDataSetOutcomeCallable DataExchangeClient::DeleteDataSetCallable(const DeleteDataSetRequest& request) const
@@ -383,15 +335,7 @@ DeleteRevisionOutcome DataExchangeClient::DeleteRevision(const DeleteRevisionReq
   ss << "/revisions/";
   ss << request.GetRevisionId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteRevisionOutcome(NoResult());
-  }
-  else
-  {
-    return DeleteRevisionOutcome(outcome.GetError());
-  }
+  return DeleteRevisionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteRevisionOutcomeCallable DataExchangeClient::DeleteRevisionCallable(const DeleteRevisionRequest& request) const
@@ -438,15 +382,7 @@ GetAssetOutcome DataExchangeClient::GetAsset(const GetAssetRequest& request) con
   ss << "/assets/";
   ss << request.GetAssetId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetAssetOutcome(GetAssetResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetAssetOutcome(outcome.GetError());
-  }
+  return GetAssetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetAssetOutcomeCallable DataExchangeClient::GetAssetCallable(const GetAssetRequest& request) const
@@ -479,15 +415,7 @@ GetDataSetOutcome DataExchangeClient::GetDataSet(const GetDataSetRequest& reques
   ss << "/v1/data-sets/";
   ss << request.GetDataSetId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetDataSetOutcome(GetDataSetResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetDataSetOutcome(outcome.GetError());
-  }
+  return GetDataSetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetDataSetOutcomeCallable DataExchangeClient::GetDataSetCallable(const GetDataSetRequest& request) const
@@ -520,15 +448,7 @@ GetJobOutcome DataExchangeClient::GetJob(const GetJobRequest& request) const
   ss << "/v1/jobs/";
   ss << request.GetJobId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetJobOutcome(GetJobResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetJobOutcome(outcome.GetError());
-  }
+  return GetJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetJobOutcomeCallable DataExchangeClient::GetJobCallable(const GetJobRequest& request) const
@@ -568,15 +488,7 @@ GetRevisionOutcome DataExchangeClient::GetRevision(const GetRevisionRequest& req
   ss << "/revisions/";
   ss << request.GetRevisionId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetRevisionOutcome(GetRevisionResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetRevisionOutcome(outcome.GetError());
-  }
+  return GetRevisionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetRevisionOutcomeCallable DataExchangeClient::GetRevisionCallable(const GetRevisionRequest& request) const
@@ -610,15 +522,7 @@ ListDataSetRevisionsOutcome DataExchangeClient::ListDataSetRevisions(const ListD
   ss << request.GetDataSetId();
   ss << "/revisions";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListDataSetRevisionsOutcome(ListDataSetRevisionsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListDataSetRevisionsOutcome(outcome.GetError());
-  }
+  return ListDataSetRevisionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListDataSetRevisionsOutcomeCallable DataExchangeClient::ListDataSetRevisionsCallable(const ListDataSetRevisionsRequest& request) const
@@ -645,15 +549,7 @@ ListDataSetsOutcome DataExchangeClient::ListDataSets(const ListDataSetsRequest& 
   Aws::StringStream ss;
   ss << "/v1/data-sets";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListDataSetsOutcome(ListDataSetsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListDataSetsOutcome(outcome.GetError());
-  }
+  return ListDataSetsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListDataSetsOutcomeCallable DataExchangeClient::ListDataSetsCallable(const ListDataSetsRequest& request) const
@@ -680,15 +576,7 @@ ListJobsOutcome DataExchangeClient::ListJobs(const ListJobsRequest& request) con
   Aws::StringStream ss;
   ss << "/v1/jobs";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListJobsOutcome(ListJobsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListJobsOutcome(outcome.GetError());
-  }
+  return ListJobsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListJobsOutcomeCallable DataExchangeClient::ListJobsCallable(const ListJobsRequest& request) const
@@ -729,15 +617,7 @@ ListRevisionAssetsOutcome DataExchangeClient::ListRevisionAssets(const ListRevis
   ss << request.GetRevisionId();
   ss << "/assets";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListRevisionAssetsOutcome(ListRevisionAssetsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListRevisionAssetsOutcome(outcome.GetError());
-  }
+  return ListRevisionAssetsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListRevisionAssetsOutcomeCallable DataExchangeClient::ListRevisionAssetsCallable(const ListRevisionAssetsRequest& request) const
@@ -770,15 +650,7 @@ ListTagsForResourceOutcome DataExchangeClient::ListTagsForResource(const ListTag
   ss << "/tags/";
   ss << request.GetResourceArn();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListTagsForResourceOutcome(ListTagsForResourceResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListTagsForResourceOutcome(outcome.GetError());
-  }
+  return ListTagsForResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListTagsForResourceOutcomeCallable DataExchangeClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
@@ -811,15 +683,7 @@ StartJobOutcome DataExchangeClient::StartJob(const StartJobRequest& request) con
   ss << "/v1/jobs/";
   ss << request.GetJobId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return StartJobOutcome(StartJobResult(outcome.GetResult()));
-  }
-  else
-  {
-    return StartJobOutcome(outcome.GetError());
-  }
+  return StartJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
 }
 
 StartJobOutcomeCallable DataExchangeClient::StartJobCallable(const StartJobRequest& request) const
@@ -852,15 +716,7 @@ TagResourceOutcome DataExchangeClient::TagResource(const TagResourceRequest& req
   ss << "/tags/";
   ss << request.GetResourceArn();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return TagResourceOutcome(NoResult());
-  }
-  else
-  {
-    return TagResourceOutcome(outcome.GetError());
-  }
+  return TagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 TagResourceOutcomeCallable DataExchangeClient::TagResourceCallable(const TagResourceRequest& request) const
@@ -898,15 +754,7 @@ UntagResourceOutcome DataExchangeClient::UntagResource(const UntagResourceReques
   ss << "/tags/";
   ss << request.GetResourceArn();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UntagResourceOutcome(NoResult());
-  }
-  else
-  {
-    return UntagResourceOutcome(outcome.GetError());
-  }
+  return UntagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 UntagResourceOutcomeCallable DataExchangeClient::UntagResourceCallable(const UntagResourceRequest& request) const
@@ -953,15 +801,7 @@ UpdateAssetOutcome DataExchangeClient::UpdateAsset(const UpdateAssetRequest& req
   ss << "/assets/";
   ss << request.GetAssetId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateAssetOutcome(UpdateAssetResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateAssetOutcome(outcome.GetError());
-  }
+  return UpdateAssetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateAssetOutcomeCallable DataExchangeClient::UpdateAssetCallable(const UpdateAssetRequest& request) const
@@ -994,15 +834,7 @@ UpdateDataSetOutcome DataExchangeClient::UpdateDataSet(const UpdateDataSetReques
   ss << "/v1/data-sets/";
   ss << request.GetDataSetId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateDataSetOutcome(UpdateDataSetResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateDataSetOutcome(outcome.GetError());
-  }
+  return UpdateDataSetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateDataSetOutcomeCallable DataExchangeClient::UpdateDataSetCallable(const UpdateDataSetRequest& request) const
@@ -1042,15 +874,7 @@ UpdateRevisionOutcome DataExchangeClient::UpdateRevision(const UpdateRevisionReq
   ss << "/revisions/";
   ss << request.GetRevisionId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateRevisionOutcome(UpdateRevisionResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateRevisionOutcome(outcome.GetError());
-  }
+  return UpdateRevisionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateRevisionOutcomeCallable DataExchangeClient::UpdateRevisionCallable(const UpdateRevisionRequest& request) const

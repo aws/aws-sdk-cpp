@@ -41,7 +41,7 @@ static const char* ALLOCATION_TAG = "KinesisVideoArchivedMediaClient";
 KinesisVideoArchivedMediaClient::KinesisVideoArchivedMediaClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-        SERVICE_NAME, clientConfiguration.region),
+        SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<KinesisVideoArchivedMediaErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -51,7 +51,7 @@ KinesisVideoArchivedMediaClient::KinesisVideoArchivedMediaClient(const Client::C
 KinesisVideoArchivedMediaClient::KinesisVideoArchivedMediaClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-         SERVICE_NAME, clientConfiguration.region),
+         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<KinesisVideoArchivedMediaErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -62,7 +62,7 @@ KinesisVideoArchivedMediaClient::KinesisVideoArchivedMediaClient(const std::shar
   const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider,
-         SERVICE_NAME, clientConfiguration.region),
+         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<KinesisVideoArchivedMediaErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -104,15 +104,7 @@ GetClipOutcome KinesisVideoArchivedMediaClient::GetClip(const GetClipRequest& re
   Aws::StringStream ss;
   ss << "/getClip";
   uri.SetPath(uri.GetPath() + ss.str());
-  StreamOutcome outcome = MakeRequestWithUnparsedResponse(uri, request, Aws::Http::HttpMethod::HTTP_POST);
-  if(outcome.IsSuccess())
-  {
-    return GetClipOutcome(GetClipResult(outcome.GetResultWithOwnership()));
-  }
-  else
-  {
-    return GetClipOutcome(outcome.GetError());
-  }
+  return GetClipOutcome(MakeRequestWithUnparsedResponse(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
 GetClipOutcomeCallable KinesisVideoArchivedMediaClient::GetClipCallable(const GetClipRequest& request) const
@@ -139,15 +131,7 @@ GetDASHStreamingSessionURLOutcome KinesisVideoArchivedMediaClient::GetDASHStream
   Aws::StringStream ss;
   ss << "/getDASHStreamingSessionURL";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetDASHStreamingSessionURLOutcome(GetDASHStreamingSessionURLResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetDASHStreamingSessionURLOutcome(outcome.GetError());
-  }
+  return GetDASHStreamingSessionURLOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetDASHStreamingSessionURLOutcomeCallable KinesisVideoArchivedMediaClient::GetDASHStreamingSessionURLCallable(const GetDASHStreamingSessionURLRequest& request) const
@@ -174,15 +158,7 @@ GetHLSStreamingSessionURLOutcome KinesisVideoArchivedMediaClient::GetHLSStreamin
   Aws::StringStream ss;
   ss << "/getHLSStreamingSessionURL";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetHLSStreamingSessionURLOutcome(GetHLSStreamingSessionURLResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetHLSStreamingSessionURLOutcome(outcome.GetError());
-  }
+  return GetHLSStreamingSessionURLOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetHLSStreamingSessionURLOutcomeCallable KinesisVideoArchivedMediaClient::GetHLSStreamingSessionURLCallable(const GetHLSStreamingSessionURLRequest& request) const
@@ -209,15 +185,7 @@ GetMediaForFragmentListOutcome KinesisVideoArchivedMediaClient::GetMediaForFragm
   Aws::StringStream ss;
   ss << "/getMediaForFragmentList";
   uri.SetPath(uri.GetPath() + ss.str());
-  StreamOutcome outcome = MakeRequestWithUnparsedResponse(uri, request, Aws::Http::HttpMethod::HTTP_POST);
-  if(outcome.IsSuccess())
-  {
-    return GetMediaForFragmentListOutcome(GetMediaForFragmentListResult(outcome.GetResultWithOwnership()));
-  }
-  else
-  {
-    return GetMediaForFragmentListOutcome(outcome.GetError());
-  }
+  return GetMediaForFragmentListOutcome(MakeRequestWithUnparsedResponse(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
 GetMediaForFragmentListOutcomeCallable KinesisVideoArchivedMediaClient::GetMediaForFragmentListCallable(const GetMediaForFragmentListRequest& request) const
@@ -244,15 +212,7 @@ ListFragmentsOutcome KinesisVideoArchivedMediaClient::ListFragments(const ListFr
   Aws::StringStream ss;
   ss << "/listFragments";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListFragmentsOutcome(ListFragmentsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListFragmentsOutcome(outcome.GetError());
-  }
+  return ListFragmentsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListFragmentsOutcomeCallable KinesisVideoArchivedMediaClient::ListFragmentsCallable(const ListFragmentsRequest& request) const

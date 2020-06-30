@@ -8,8 +8,8 @@
 #include <aws/sms/SMSErrors.h>
 
 using namespace Aws::Client;
-using namespace Aws::SMS;
 using namespace Aws::Utils;
+using namespace Aws::SMS;
 
 namespace Aws
 {

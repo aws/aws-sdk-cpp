@@ -8,8 +8,8 @@
 #include <aws/macie2/Macie2Errors.h>
 
 using namespace Aws::Client;
-using namespace Aws::Macie2;
 using namespace Aws::Utils;
+using namespace Aws::Macie2;
 
 namespace Aws
 {

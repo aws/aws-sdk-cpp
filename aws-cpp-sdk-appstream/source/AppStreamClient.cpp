@@ -83,7 +83,7 @@ static const char* ALLOCATION_TAG = "AppStreamClient";
 AppStreamClient::AppStreamClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-        SERVICE_NAME, clientConfiguration.region),
+        SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<AppStreamErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -93,7 +93,7 @@ AppStreamClient::AppStreamClient(const Client::ClientConfiguration& clientConfig
 AppStreamClient::AppStreamClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-         SERVICE_NAME, clientConfiguration.region),
+         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<AppStreamErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -104,7 +104,7 @@ AppStreamClient::AppStreamClient(const std::shared_ptr<AWSCredentialsProvider>& 
   const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider,
-         SERVICE_NAME, clientConfiguration.region),
+         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<AppStreamErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -146,15 +146,7 @@ AssociateFleetOutcome AppStreamClient::AssociateFleet(const AssociateFleetReques
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return AssociateFleetOutcome(AssociateFleetResult(outcome.GetResult()));
-  }
-  else
-  {
-    return AssociateFleetOutcome(outcome.GetError());
-  }
+  return AssociateFleetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 AssociateFleetOutcomeCallable AppStreamClient::AssociateFleetCallable(const AssociateFleetRequest& request) const
@@ -181,15 +173,7 @@ BatchAssociateUserStackOutcome AppStreamClient::BatchAssociateUserStack(const Ba
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return BatchAssociateUserStackOutcome(BatchAssociateUserStackResult(outcome.GetResult()));
-  }
-  else
-  {
-    return BatchAssociateUserStackOutcome(outcome.GetError());
-  }
+  return BatchAssociateUserStackOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 BatchAssociateUserStackOutcomeCallable AppStreamClient::BatchAssociateUserStackCallable(const BatchAssociateUserStackRequest& request) const
@@ -216,15 +200,7 @@ BatchDisassociateUserStackOutcome AppStreamClient::BatchDisassociateUserStack(co
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return BatchDisassociateUserStackOutcome(BatchDisassociateUserStackResult(outcome.GetResult()));
-  }
-  else
-  {
-    return BatchDisassociateUserStackOutcome(outcome.GetError());
-  }
+  return BatchDisassociateUserStackOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 BatchDisassociateUserStackOutcomeCallable AppStreamClient::BatchDisassociateUserStackCallable(const BatchDisassociateUserStackRequest& request) const
@@ -251,15 +227,7 @@ CopyImageOutcome AppStreamClient::CopyImage(const CopyImageRequest& request) con
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CopyImageOutcome(CopyImageResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CopyImageOutcome(outcome.GetError());
-  }
+  return CopyImageOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CopyImageOutcomeCallable AppStreamClient::CopyImageCallable(const CopyImageRequest& request) const
@@ -286,15 +254,7 @@ CreateDirectoryConfigOutcome AppStreamClient::CreateDirectoryConfig(const Create
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateDirectoryConfigOutcome(CreateDirectoryConfigResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateDirectoryConfigOutcome(outcome.GetError());
-  }
+  return CreateDirectoryConfigOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateDirectoryConfigOutcomeCallable AppStreamClient::CreateDirectoryConfigCallable(const CreateDirectoryConfigRequest& request) const
@@ -321,15 +281,7 @@ CreateFleetOutcome AppStreamClient::CreateFleet(const CreateFleetRequest& reques
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateFleetOutcome(CreateFleetResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateFleetOutcome(outcome.GetError());
-  }
+  return CreateFleetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateFleetOutcomeCallable AppStreamClient::CreateFleetCallable(const CreateFleetRequest& request) const
@@ -356,15 +308,7 @@ CreateImageBuilderOutcome AppStreamClient::CreateImageBuilder(const CreateImageB
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateImageBuilderOutcome(CreateImageBuilderResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateImageBuilderOutcome(outcome.GetError());
-  }
+  return CreateImageBuilderOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateImageBuilderOutcomeCallable AppStreamClient::CreateImageBuilderCallable(const CreateImageBuilderRequest& request) const
@@ -391,15 +335,7 @@ CreateImageBuilderStreamingURLOutcome AppStreamClient::CreateImageBuilderStreami
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateImageBuilderStreamingURLOutcome(CreateImageBuilderStreamingURLResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateImageBuilderStreamingURLOutcome(outcome.GetError());
-  }
+  return CreateImageBuilderStreamingURLOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateImageBuilderStreamingURLOutcomeCallable AppStreamClient::CreateImageBuilderStreamingURLCallable(const CreateImageBuilderStreamingURLRequest& request) const
@@ -426,15 +362,7 @@ CreateStackOutcome AppStreamClient::CreateStack(const CreateStackRequest& reques
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateStackOutcome(CreateStackResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateStackOutcome(outcome.GetError());
-  }
+  return CreateStackOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateStackOutcomeCallable AppStreamClient::CreateStackCallable(const CreateStackRequest& request) const
@@ -461,15 +389,7 @@ CreateStreamingURLOutcome AppStreamClient::CreateStreamingURL(const CreateStream
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateStreamingURLOutcome(CreateStreamingURLResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateStreamingURLOutcome(outcome.GetError());
-  }
+  return CreateStreamingURLOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateStreamingURLOutcomeCallable AppStreamClient::CreateStreamingURLCallable(const CreateStreamingURLRequest& request) const
@@ -496,15 +416,7 @@ CreateUsageReportSubscriptionOutcome AppStreamClient::CreateUsageReportSubscript
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateUsageReportSubscriptionOutcome(CreateUsageReportSubscriptionResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateUsageReportSubscriptionOutcome(outcome.GetError());
-  }
+  return CreateUsageReportSubscriptionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateUsageReportSubscriptionOutcomeCallable AppStreamClient::CreateUsageReportSubscriptionCallable(const CreateUsageReportSubscriptionRequest& request) const
@@ -531,15 +443,7 @@ CreateUserOutcome AppStreamClient::CreateUser(const CreateUserRequest& request) 
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateUserOutcome(CreateUserResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateUserOutcome(outcome.GetError());
-  }
+  return CreateUserOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateUserOutcomeCallable AppStreamClient::CreateUserCallable(const CreateUserRequest& request) const
@@ -566,15 +470,7 @@ DeleteDirectoryConfigOutcome AppStreamClient::DeleteDirectoryConfig(const Delete
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteDirectoryConfigOutcome(DeleteDirectoryConfigResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteDirectoryConfigOutcome(outcome.GetError());
-  }
+  return DeleteDirectoryConfigOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteDirectoryConfigOutcomeCallable AppStreamClient::DeleteDirectoryConfigCallable(const DeleteDirectoryConfigRequest& request) const
@@ -601,15 +497,7 @@ DeleteFleetOutcome AppStreamClient::DeleteFleet(const DeleteFleetRequest& reques
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteFleetOutcome(DeleteFleetResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteFleetOutcome(outcome.GetError());
-  }
+  return DeleteFleetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteFleetOutcomeCallable AppStreamClient::DeleteFleetCallable(const DeleteFleetRequest& request) const
@@ -636,15 +524,7 @@ DeleteImageOutcome AppStreamClient::DeleteImage(const DeleteImageRequest& reques
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteImageOutcome(DeleteImageResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteImageOutcome(outcome.GetError());
-  }
+  return DeleteImageOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteImageOutcomeCallable AppStreamClient::DeleteImageCallable(const DeleteImageRequest& request) const
@@ -671,15 +551,7 @@ DeleteImageBuilderOutcome AppStreamClient::DeleteImageBuilder(const DeleteImageB
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteImageBuilderOutcome(DeleteImageBuilderResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteImageBuilderOutcome(outcome.GetError());
-  }
+  return DeleteImageBuilderOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteImageBuilderOutcomeCallable AppStreamClient::DeleteImageBuilderCallable(const DeleteImageBuilderRequest& request) const
@@ -706,15 +578,7 @@ DeleteImagePermissionsOutcome AppStreamClient::DeleteImagePermissions(const Dele
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteImagePermissionsOutcome(DeleteImagePermissionsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteImagePermissionsOutcome(outcome.GetError());
-  }
+  return DeleteImagePermissionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteImagePermissionsOutcomeCallable AppStreamClient::DeleteImagePermissionsCallable(const DeleteImagePermissionsRequest& request) const
@@ -741,15 +605,7 @@ DeleteStackOutcome AppStreamClient::DeleteStack(const DeleteStackRequest& reques
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteStackOutcome(DeleteStackResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteStackOutcome(outcome.GetError());
-  }
+  return DeleteStackOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteStackOutcomeCallable AppStreamClient::DeleteStackCallable(const DeleteStackRequest& request) const
@@ -776,15 +632,7 @@ DeleteUsageReportSubscriptionOutcome AppStreamClient::DeleteUsageReportSubscript
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteUsageReportSubscriptionOutcome(DeleteUsageReportSubscriptionResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteUsageReportSubscriptionOutcome(outcome.GetError());
-  }
+  return DeleteUsageReportSubscriptionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteUsageReportSubscriptionOutcomeCallable AppStreamClient::DeleteUsageReportSubscriptionCallable(const DeleteUsageReportSubscriptionRequest& request) const
@@ -811,15 +659,7 @@ DeleteUserOutcome AppStreamClient::DeleteUser(const DeleteUserRequest& request) 
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteUserOutcome(DeleteUserResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteUserOutcome(outcome.GetError());
-  }
+  return DeleteUserOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteUserOutcomeCallable AppStreamClient::DeleteUserCallable(const DeleteUserRequest& request) const
@@ -846,15 +686,7 @@ DescribeDirectoryConfigsOutcome AppStreamClient::DescribeDirectoryConfigs(const 
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeDirectoryConfigsOutcome(DescribeDirectoryConfigsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeDirectoryConfigsOutcome(outcome.GetError());
-  }
+  return DescribeDirectoryConfigsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeDirectoryConfigsOutcomeCallable AppStreamClient::DescribeDirectoryConfigsCallable(const DescribeDirectoryConfigsRequest& request) const
@@ -881,15 +713,7 @@ DescribeFleetsOutcome AppStreamClient::DescribeFleets(const DescribeFleetsReques
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeFleetsOutcome(DescribeFleetsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeFleetsOutcome(outcome.GetError());
-  }
+  return DescribeFleetsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeFleetsOutcomeCallable AppStreamClient::DescribeFleetsCallable(const DescribeFleetsRequest& request) const
@@ -916,15 +740,7 @@ DescribeImageBuildersOutcome AppStreamClient::DescribeImageBuilders(const Descri
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeImageBuildersOutcome(DescribeImageBuildersResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeImageBuildersOutcome(outcome.GetError());
-  }
+  return DescribeImageBuildersOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeImageBuildersOutcomeCallable AppStreamClient::DescribeImageBuildersCallable(const DescribeImageBuildersRequest& request) const
@@ -951,15 +767,7 @@ DescribeImagePermissionsOutcome AppStreamClient::DescribeImagePermissions(const 
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeImagePermissionsOutcome(DescribeImagePermissionsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeImagePermissionsOutcome(outcome.GetError());
-  }
+  return DescribeImagePermissionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeImagePermissionsOutcomeCallable AppStreamClient::DescribeImagePermissionsCallable(const DescribeImagePermissionsRequest& request) const
@@ -986,15 +794,7 @@ DescribeImagesOutcome AppStreamClient::DescribeImages(const DescribeImagesReques
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeImagesOutcome(DescribeImagesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeImagesOutcome(outcome.GetError());
-  }
+  return DescribeImagesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeImagesOutcomeCallable AppStreamClient::DescribeImagesCallable(const DescribeImagesRequest& request) const
@@ -1021,15 +821,7 @@ DescribeSessionsOutcome AppStreamClient::DescribeSessions(const DescribeSessions
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeSessionsOutcome(DescribeSessionsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeSessionsOutcome(outcome.GetError());
-  }
+  return DescribeSessionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeSessionsOutcomeCallable AppStreamClient::DescribeSessionsCallable(const DescribeSessionsRequest& request) const
@@ -1056,15 +848,7 @@ DescribeStacksOutcome AppStreamClient::DescribeStacks(const DescribeStacksReques
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeStacksOutcome(DescribeStacksResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeStacksOutcome(outcome.GetError());
-  }
+  return DescribeStacksOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeStacksOutcomeCallable AppStreamClient::DescribeStacksCallable(const DescribeStacksRequest& request) const
@@ -1091,15 +875,7 @@ DescribeUsageReportSubscriptionsOutcome AppStreamClient::DescribeUsageReportSubs
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeUsageReportSubscriptionsOutcome(DescribeUsageReportSubscriptionsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeUsageReportSubscriptionsOutcome(outcome.GetError());
-  }
+  return DescribeUsageReportSubscriptionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeUsageReportSubscriptionsOutcomeCallable AppStreamClient::DescribeUsageReportSubscriptionsCallable(const DescribeUsageReportSubscriptionsRequest& request) const
@@ -1126,15 +902,7 @@ DescribeUserStackAssociationsOutcome AppStreamClient::DescribeUserStackAssociati
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeUserStackAssociationsOutcome(DescribeUserStackAssociationsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeUserStackAssociationsOutcome(outcome.GetError());
-  }
+  return DescribeUserStackAssociationsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeUserStackAssociationsOutcomeCallable AppStreamClient::DescribeUserStackAssociationsCallable(const DescribeUserStackAssociationsRequest& request) const
@@ -1161,15 +929,7 @@ DescribeUsersOutcome AppStreamClient::DescribeUsers(const DescribeUsersRequest& 
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeUsersOutcome(DescribeUsersResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeUsersOutcome(outcome.GetError());
-  }
+  return DescribeUsersOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeUsersOutcomeCallable AppStreamClient::DescribeUsersCallable(const DescribeUsersRequest& request) const
@@ -1196,15 +956,7 @@ DisableUserOutcome AppStreamClient::DisableUser(const DisableUserRequest& reques
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DisableUserOutcome(DisableUserResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DisableUserOutcome(outcome.GetError());
-  }
+  return DisableUserOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DisableUserOutcomeCallable AppStreamClient::DisableUserCallable(const DisableUserRequest& request) const
@@ -1231,15 +983,7 @@ DisassociateFleetOutcome AppStreamClient::DisassociateFleet(const DisassociateFl
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DisassociateFleetOutcome(DisassociateFleetResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DisassociateFleetOutcome(outcome.GetError());
-  }
+  return DisassociateFleetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DisassociateFleetOutcomeCallable AppStreamClient::DisassociateFleetCallable(const DisassociateFleetRequest& request) const
@@ -1266,15 +1010,7 @@ EnableUserOutcome AppStreamClient::EnableUser(const EnableUserRequest& request) 
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return EnableUserOutcome(EnableUserResult(outcome.GetResult()));
-  }
-  else
-  {
-    return EnableUserOutcome(outcome.GetError());
-  }
+  return EnableUserOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 EnableUserOutcomeCallable AppStreamClient::EnableUserCallable(const EnableUserRequest& request) const
@@ -1301,15 +1037,7 @@ ExpireSessionOutcome AppStreamClient::ExpireSession(const ExpireSessionRequest& 
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ExpireSessionOutcome(ExpireSessionResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ExpireSessionOutcome(outcome.GetError());
-  }
+  return ExpireSessionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ExpireSessionOutcomeCallable AppStreamClient::ExpireSessionCallable(const ExpireSessionRequest& request) const
@@ -1336,15 +1064,7 @@ ListAssociatedFleetsOutcome AppStreamClient::ListAssociatedFleets(const ListAsso
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListAssociatedFleetsOutcome(ListAssociatedFleetsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListAssociatedFleetsOutcome(outcome.GetError());
-  }
+  return ListAssociatedFleetsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListAssociatedFleetsOutcomeCallable AppStreamClient::ListAssociatedFleetsCallable(const ListAssociatedFleetsRequest& request) const
@@ -1371,15 +1091,7 @@ ListAssociatedStacksOutcome AppStreamClient::ListAssociatedStacks(const ListAsso
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListAssociatedStacksOutcome(ListAssociatedStacksResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListAssociatedStacksOutcome(outcome.GetError());
-  }
+  return ListAssociatedStacksOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListAssociatedStacksOutcomeCallable AppStreamClient::ListAssociatedStacksCallable(const ListAssociatedStacksRequest& request) const
@@ -1406,15 +1118,7 @@ ListTagsForResourceOutcome AppStreamClient::ListTagsForResource(const ListTagsFo
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListTagsForResourceOutcome(ListTagsForResourceResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListTagsForResourceOutcome(outcome.GetError());
-  }
+  return ListTagsForResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListTagsForResourceOutcomeCallable AppStreamClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
@@ -1441,15 +1145,7 @@ StartFleetOutcome AppStreamClient::StartFleet(const StartFleetRequest& request) 
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return StartFleetOutcome(StartFleetResult(outcome.GetResult()));
-  }
-  else
-  {
-    return StartFleetOutcome(outcome.GetError());
-  }
+  return StartFleetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 StartFleetOutcomeCallable AppStreamClient::StartFleetCallable(const StartFleetRequest& request) const
@@ -1476,15 +1172,7 @@ StartImageBuilderOutcome AppStreamClient::StartImageBuilder(const StartImageBuil
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return StartImageBuilderOutcome(StartImageBuilderResult(outcome.GetResult()));
-  }
-  else
-  {
-    return StartImageBuilderOutcome(outcome.GetError());
-  }
+  return StartImageBuilderOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 StartImageBuilderOutcomeCallable AppStreamClient::StartImageBuilderCallable(const StartImageBuilderRequest& request) const
@@ -1511,15 +1199,7 @@ StopFleetOutcome AppStreamClient::StopFleet(const StopFleetRequest& request) con
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return StopFleetOutcome(StopFleetResult(outcome.GetResult()));
-  }
-  else
-  {
-    return StopFleetOutcome(outcome.GetError());
-  }
+  return StopFleetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 StopFleetOutcomeCallable AppStreamClient::StopFleetCallable(const StopFleetRequest& request) const
@@ -1546,15 +1226,7 @@ StopImageBuilderOutcome AppStreamClient::StopImageBuilder(const StopImageBuilder
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return StopImageBuilderOutcome(StopImageBuilderResult(outcome.GetResult()));
-  }
-  else
-  {
-    return StopImageBuilderOutcome(outcome.GetError());
-  }
+  return StopImageBuilderOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 StopImageBuilderOutcomeCallable AppStreamClient::StopImageBuilderCallable(const StopImageBuilderRequest& request) const
@@ -1581,15 +1253,7 @@ TagResourceOutcome AppStreamClient::TagResource(const TagResourceRequest& reques
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return TagResourceOutcome(TagResourceResult(outcome.GetResult()));
-  }
-  else
-  {
-    return TagResourceOutcome(outcome.GetError());
-  }
+  return TagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 TagResourceOutcomeCallable AppStreamClient::TagResourceCallable(const TagResourceRequest& request) const
@@ -1616,15 +1280,7 @@ UntagResourceOutcome AppStreamClient::UntagResource(const UntagResourceRequest& 
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UntagResourceOutcome(UntagResourceResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UntagResourceOutcome(outcome.GetError());
-  }
+  return UntagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UntagResourceOutcomeCallable AppStreamClient::UntagResourceCallable(const UntagResourceRequest& request) const
@@ -1651,15 +1307,7 @@ UpdateDirectoryConfigOutcome AppStreamClient::UpdateDirectoryConfig(const Update
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateDirectoryConfigOutcome(UpdateDirectoryConfigResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateDirectoryConfigOutcome(outcome.GetError());
-  }
+  return UpdateDirectoryConfigOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateDirectoryConfigOutcomeCallable AppStreamClient::UpdateDirectoryConfigCallable(const UpdateDirectoryConfigRequest& request) const
@@ -1686,15 +1334,7 @@ UpdateFleetOutcome AppStreamClient::UpdateFleet(const UpdateFleetRequest& reques
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateFleetOutcome(UpdateFleetResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateFleetOutcome(outcome.GetError());
-  }
+  return UpdateFleetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateFleetOutcomeCallable AppStreamClient::UpdateFleetCallable(const UpdateFleetRequest& request) const
@@ -1721,15 +1361,7 @@ UpdateImagePermissionsOutcome AppStreamClient::UpdateImagePermissions(const Upda
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateImagePermissionsOutcome(UpdateImagePermissionsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateImagePermissionsOutcome(outcome.GetError());
-  }
+  return UpdateImagePermissionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateImagePermissionsOutcomeCallable AppStreamClient::UpdateImagePermissionsCallable(const UpdateImagePermissionsRequest& request) const
@@ -1756,15 +1388,7 @@ UpdateStackOutcome AppStreamClient::UpdateStack(const UpdateStackRequest& reques
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateStackOutcome(UpdateStackResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateStackOutcome(outcome.GetError());
-  }
+  return UpdateStackOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateStackOutcomeCallable AppStreamClient::UpdateStackCallable(const UpdateStackRequest& request) const

@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/mq/MQ_EXPORTS.h>
 
@@ -42,7 +43,7 @@ enum class MQErrors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -53,6 +54,20 @@ enum class MQErrors
   NOT_FOUND,
   UNAUTHORIZED
 };
+
+class AWS_MQ_API MQError : public Aws::Client::AWSError<MQErrors>
+{
+public:
+  MQError() {}
+  MQError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<MQErrors>(rhs) {}
+  MQError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<MQErrors>(rhs) {}
+  MQError(const Aws::Client::AWSError<MQErrors>& rhs) : Aws::Client::AWSError<MQErrors>(rhs) {}
+  MQError(Aws::Client::AWSError<MQErrors>&& rhs) : Aws::Client::AWSError<MQErrors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace MQErrorMapper
 {
   AWS_MQ_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

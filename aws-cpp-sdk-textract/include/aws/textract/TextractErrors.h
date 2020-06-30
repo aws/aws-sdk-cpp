@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/textract/Textract_EXPORTS.h>
 
@@ -42,7 +43,7 @@ enum class TextractErrors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -57,6 +58,20 @@ enum class TextractErrors
   PROVISIONED_THROUGHPUT_EXCEEDED,
   UNSUPPORTED_DOCUMENT
 };
+
+class AWS_TEXTRACT_API TextractError : public Aws::Client::AWSError<TextractErrors>
+{
+public:
+  TextractError() {}
+  TextractError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<TextractErrors>(rhs) {}
+  TextractError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<TextractErrors>(rhs) {}
+  TextractError(const Aws::Client::AWSError<TextractErrors>& rhs) : Aws::Client::AWSError<TextractErrors>(rhs) {}
+  TextractError(Aws::Client::AWSError<TextractErrors>&& rhs) : Aws::Client::AWSError<TextractErrors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace TextractErrorMapper
 {
   AWS_TEXTRACT_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

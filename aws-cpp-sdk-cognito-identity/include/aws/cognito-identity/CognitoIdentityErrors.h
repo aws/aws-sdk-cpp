@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/cognito-identity/CognitoIdentity_EXPORTS.h>
 
@@ -42,7 +43,7 @@ enum class CognitoIdentityErrors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -57,6 +58,20 @@ enum class CognitoIdentityErrors
   RESOURCE_CONFLICT,
   TOO_MANY_REQUESTS
 };
+
+class AWS_COGNITOIDENTITY_API CognitoIdentityError : public Aws::Client::AWSError<CognitoIdentityErrors>
+{
+public:
+  CognitoIdentityError() {}
+  CognitoIdentityError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<CognitoIdentityErrors>(rhs) {}
+  CognitoIdentityError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<CognitoIdentityErrors>(rhs) {}
+  CognitoIdentityError(const Aws::Client::AWSError<CognitoIdentityErrors>& rhs) : Aws::Client::AWSError<CognitoIdentityErrors>(rhs) {}
+  CognitoIdentityError(Aws::Client::AWSError<CognitoIdentityErrors>&& rhs) : Aws::Client::AWSError<CognitoIdentityErrors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace CognitoIdentityErrorMapper
 {
   AWS_COGNITOIDENTITY_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/managedblockchain/ManagedBlockchain_EXPORTS.h>
 
@@ -42,7 +43,7 @@ enum class ManagedBlockchainErrors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -53,6 +54,20 @@ enum class ManagedBlockchainErrors
   RESOURCE_LIMIT_EXCEEDED,
   RESOURCE_NOT_READY
 };
+
+class AWS_MANAGEDBLOCKCHAIN_API ManagedBlockchainError : public Aws::Client::AWSError<ManagedBlockchainErrors>
+{
+public:
+  ManagedBlockchainError() {}
+  ManagedBlockchainError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<ManagedBlockchainErrors>(rhs) {}
+  ManagedBlockchainError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<ManagedBlockchainErrors>(rhs) {}
+  ManagedBlockchainError(const Aws::Client::AWSError<ManagedBlockchainErrors>& rhs) : Aws::Client::AWSError<ManagedBlockchainErrors>(rhs) {}
+  ManagedBlockchainError(Aws::Client::AWSError<ManagedBlockchainErrors>&& rhs) : Aws::Client::AWSError<ManagedBlockchainErrors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace ManagedBlockchainErrorMapper
 {
   AWS_MANAGEDBLOCKCHAIN_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

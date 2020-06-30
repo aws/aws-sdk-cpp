@@ -136,7 +136,7 @@ static const char* ALLOCATION_TAG = "CognitoIdentityProviderClient";
 CognitoIdentityProviderClient::CognitoIdentityProviderClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-        SERVICE_NAME, clientConfiguration.region),
+        SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<CognitoIdentityProviderErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -146,7 +146,7 @@ CognitoIdentityProviderClient::CognitoIdentityProviderClient(const Client::Clien
 CognitoIdentityProviderClient::CognitoIdentityProviderClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-         SERVICE_NAME, clientConfiguration.region),
+         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<CognitoIdentityProviderErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -157,7 +157,7 @@ CognitoIdentityProviderClient::CognitoIdentityProviderClient(const std::shared_p
   const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider,
-         SERVICE_NAME, clientConfiguration.region),
+         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<CognitoIdentityProviderErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -199,15 +199,7 @@ AddCustomAttributesOutcome CognitoIdentityProviderClient::AddCustomAttributes(co
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return AddCustomAttributesOutcome(AddCustomAttributesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return AddCustomAttributesOutcome(outcome.GetError());
-  }
+  return AddCustomAttributesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 AddCustomAttributesOutcomeCallable CognitoIdentityProviderClient::AddCustomAttributesCallable(const AddCustomAttributesRequest& request) const
@@ -234,15 +226,7 @@ AdminAddUserToGroupOutcome CognitoIdentityProviderClient::AdminAddUserToGroup(co
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return AdminAddUserToGroupOutcome(NoResult());
-  }
-  else
-  {
-    return AdminAddUserToGroupOutcome(outcome.GetError());
-  }
+  return AdminAddUserToGroupOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 AdminAddUserToGroupOutcomeCallable CognitoIdentityProviderClient::AdminAddUserToGroupCallable(const AdminAddUserToGroupRequest& request) const
@@ -269,15 +253,7 @@ AdminConfirmSignUpOutcome CognitoIdentityProviderClient::AdminConfirmSignUp(cons
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return AdminConfirmSignUpOutcome(AdminConfirmSignUpResult(outcome.GetResult()));
-  }
-  else
-  {
-    return AdminConfirmSignUpOutcome(outcome.GetError());
-  }
+  return AdminConfirmSignUpOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 AdminConfirmSignUpOutcomeCallable CognitoIdentityProviderClient::AdminConfirmSignUpCallable(const AdminConfirmSignUpRequest& request) const
@@ -304,15 +280,7 @@ AdminCreateUserOutcome CognitoIdentityProviderClient::AdminCreateUser(const Admi
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return AdminCreateUserOutcome(AdminCreateUserResult(outcome.GetResult()));
-  }
-  else
-  {
-    return AdminCreateUserOutcome(outcome.GetError());
-  }
+  return AdminCreateUserOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 AdminCreateUserOutcomeCallable CognitoIdentityProviderClient::AdminCreateUserCallable(const AdminCreateUserRequest& request) const
@@ -339,15 +307,7 @@ AdminDeleteUserOutcome CognitoIdentityProviderClient::AdminDeleteUser(const Admi
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return AdminDeleteUserOutcome(NoResult());
-  }
-  else
-  {
-    return AdminDeleteUserOutcome(outcome.GetError());
-  }
+  return AdminDeleteUserOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 AdminDeleteUserOutcomeCallable CognitoIdentityProviderClient::AdminDeleteUserCallable(const AdminDeleteUserRequest& request) const
@@ -374,15 +334,7 @@ AdminDeleteUserAttributesOutcome CognitoIdentityProviderClient::AdminDeleteUserA
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return AdminDeleteUserAttributesOutcome(AdminDeleteUserAttributesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return AdminDeleteUserAttributesOutcome(outcome.GetError());
-  }
+  return AdminDeleteUserAttributesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 AdminDeleteUserAttributesOutcomeCallable CognitoIdentityProviderClient::AdminDeleteUserAttributesCallable(const AdminDeleteUserAttributesRequest& request) const
@@ -409,15 +361,7 @@ AdminDisableProviderForUserOutcome CognitoIdentityProviderClient::AdminDisablePr
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return AdminDisableProviderForUserOutcome(AdminDisableProviderForUserResult(outcome.GetResult()));
-  }
-  else
-  {
-    return AdminDisableProviderForUserOutcome(outcome.GetError());
-  }
+  return AdminDisableProviderForUserOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 AdminDisableProviderForUserOutcomeCallable CognitoIdentityProviderClient::AdminDisableProviderForUserCallable(const AdminDisableProviderForUserRequest& request) const
@@ -444,15 +388,7 @@ AdminDisableUserOutcome CognitoIdentityProviderClient::AdminDisableUser(const Ad
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return AdminDisableUserOutcome(AdminDisableUserResult(outcome.GetResult()));
-  }
-  else
-  {
-    return AdminDisableUserOutcome(outcome.GetError());
-  }
+  return AdminDisableUserOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 AdminDisableUserOutcomeCallable CognitoIdentityProviderClient::AdminDisableUserCallable(const AdminDisableUserRequest& request) const
@@ -479,15 +415,7 @@ AdminEnableUserOutcome CognitoIdentityProviderClient::AdminEnableUser(const Admi
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return AdminEnableUserOutcome(AdminEnableUserResult(outcome.GetResult()));
-  }
-  else
-  {
-    return AdminEnableUserOutcome(outcome.GetError());
-  }
+  return AdminEnableUserOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 AdminEnableUserOutcomeCallable CognitoIdentityProviderClient::AdminEnableUserCallable(const AdminEnableUserRequest& request) const
@@ -514,15 +442,7 @@ AdminForgetDeviceOutcome CognitoIdentityProviderClient::AdminForgetDevice(const 
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return AdminForgetDeviceOutcome(NoResult());
-  }
-  else
-  {
-    return AdminForgetDeviceOutcome(outcome.GetError());
-  }
+  return AdminForgetDeviceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 AdminForgetDeviceOutcomeCallable CognitoIdentityProviderClient::AdminForgetDeviceCallable(const AdminForgetDeviceRequest& request) const
@@ -549,15 +469,7 @@ AdminGetDeviceOutcome CognitoIdentityProviderClient::AdminGetDevice(const AdminG
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return AdminGetDeviceOutcome(AdminGetDeviceResult(outcome.GetResult()));
-  }
-  else
-  {
-    return AdminGetDeviceOutcome(outcome.GetError());
-  }
+  return AdminGetDeviceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 AdminGetDeviceOutcomeCallable CognitoIdentityProviderClient::AdminGetDeviceCallable(const AdminGetDeviceRequest& request) const
@@ -584,15 +496,7 @@ AdminGetUserOutcome CognitoIdentityProviderClient::AdminGetUser(const AdminGetUs
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return AdminGetUserOutcome(AdminGetUserResult(outcome.GetResult()));
-  }
-  else
-  {
-    return AdminGetUserOutcome(outcome.GetError());
-  }
+  return AdminGetUserOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 AdminGetUserOutcomeCallable CognitoIdentityProviderClient::AdminGetUserCallable(const AdminGetUserRequest& request) const
@@ -619,15 +523,7 @@ AdminInitiateAuthOutcome CognitoIdentityProviderClient::AdminInitiateAuth(const 
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return AdminInitiateAuthOutcome(AdminInitiateAuthResult(outcome.GetResult()));
-  }
-  else
-  {
-    return AdminInitiateAuthOutcome(outcome.GetError());
-  }
+  return AdminInitiateAuthOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 AdminInitiateAuthOutcomeCallable CognitoIdentityProviderClient::AdminInitiateAuthCallable(const AdminInitiateAuthRequest& request) const
@@ -654,15 +550,7 @@ AdminLinkProviderForUserOutcome CognitoIdentityProviderClient::AdminLinkProvider
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return AdminLinkProviderForUserOutcome(AdminLinkProviderForUserResult(outcome.GetResult()));
-  }
-  else
-  {
-    return AdminLinkProviderForUserOutcome(outcome.GetError());
-  }
+  return AdminLinkProviderForUserOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 AdminLinkProviderForUserOutcomeCallable CognitoIdentityProviderClient::AdminLinkProviderForUserCallable(const AdminLinkProviderForUserRequest& request) const
@@ -689,15 +577,7 @@ AdminListDevicesOutcome CognitoIdentityProviderClient::AdminListDevices(const Ad
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return AdminListDevicesOutcome(AdminListDevicesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return AdminListDevicesOutcome(outcome.GetError());
-  }
+  return AdminListDevicesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 AdminListDevicesOutcomeCallable CognitoIdentityProviderClient::AdminListDevicesCallable(const AdminListDevicesRequest& request) const
@@ -724,15 +604,7 @@ AdminListGroupsForUserOutcome CognitoIdentityProviderClient::AdminListGroupsForU
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return AdminListGroupsForUserOutcome(AdminListGroupsForUserResult(outcome.GetResult()));
-  }
-  else
-  {
-    return AdminListGroupsForUserOutcome(outcome.GetError());
-  }
+  return AdminListGroupsForUserOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 AdminListGroupsForUserOutcomeCallable CognitoIdentityProviderClient::AdminListGroupsForUserCallable(const AdminListGroupsForUserRequest& request) const
@@ -759,15 +631,7 @@ AdminListUserAuthEventsOutcome CognitoIdentityProviderClient::AdminListUserAuthE
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return AdminListUserAuthEventsOutcome(AdminListUserAuthEventsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return AdminListUserAuthEventsOutcome(outcome.GetError());
-  }
+  return AdminListUserAuthEventsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 AdminListUserAuthEventsOutcomeCallable CognitoIdentityProviderClient::AdminListUserAuthEventsCallable(const AdminListUserAuthEventsRequest& request) const
@@ -794,15 +658,7 @@ AdminRemoveUserFromGroupOutcome CognitoIdentityProviderClient::AdminRemoveUserFr
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return AdminRemoveUserFromGroupOutcome(NoResult());
-  }
-  else
-  {
-    return AdminRemoveUserFromGroupOutcome(outcome.GetError());
-  }
+  return AdminRemoveUserFromGroupOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 AdminRemoveUserFromGroupOutcomeCallable CognitoIdentityProviderClient::AdminRemoveUserFromGroupCallable(const AdminRemoveUserFromGroupRequest& request) const
@@ -829,15 +685,7 @@ AdminResetUserPasswordOutcome CognitoIdentityProviderClient::AdminResetUserPassw
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return AdminResetUserPasswordOutcome(AdminResetUserPasswordResult(outcome.GetResult()));
-  }
-  else
-  {
-    return AdminResetUserPasswordOutcome(outcome.GetError());
-  }
+  return AdminResetUserPasswordOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 AdminResetUserPasswordOutcomeCallable CognitoIdentityProviderClient::AdminResetUserPasswordCallable(const AdminResetUserPasswordRequest& request) const
@@ -864,15 +712,7 @@ AdminRespondToAuthChallengeOutcome CognitoIdentityProviderClient::AdminRespondTo
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return AdminRespondToAuthChallengeOutcome(AdminRespondToAuthChallengeResult(outcome.GetResult()));
-  }
-  else
-  {
-    return AdminRespondToAuthChallengeOutcome(outcome.GetError());
-  }
+  return AdminRespondToAuthChallengeOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 AdminRespondToAuthChallengeOutcomeCallable CognitoIdentityProviderClient::AdminRespondToAuthChallengeCallable(const AdminRespondToAuthChallengeRequest& request) const
@@ -899,15 +739,7 @@ AdminSetUserMFAPreferenceOutcome CognitoIdentityProviderClient::AdminSetUserMFAP
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return AdminSetUserMFAPreferenceOutcome(AdminSetUserMFAPreferenceResult(outcome.GetResult()));
-  }
-  else
-  {
-    return AdminSetUserMFAPreferenceOutcome(outcome.GetError());
-  }
+  return AdminSetUserMFAPreferenceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 AdminSetUserMFAPreferenceOutcomeCallable CognitoIdentityProviderClient::AdminSetUserMFAPreferenceCallable(const AdminSetUserMFAPreferenceRequest& request) const
@@ -934,15 +766,7 @@ AdminSetUserPasswordOutcome CognitoIdentityProviderClient::AdminSetUserPassword(
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return AdminSetUserPasswordOutcome(AdminSetUserPasswordResult(outcome.GetResult()));
-  }
-  else
-  {
-    return AdminSetUserPasswordOutcome(outcome.GetError());
-  }
+  return AdminSetUserPasswordOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 AdminSetUserPasswordOutcomeCallable CognitoIdentityProviderClient::AdminSetUserPasswordCallable(const AdminSetUserPasswordRequest& request) const
@@ -969,15 +793,7 @@ AdminSetUserSettingsOutcome CognitoIdentityProviderClient::AdminSetUserSettings(
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return AdminSetUserSettingsOutcome(AdminSetUserSettingsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return AdminSetUserSettingsOutcome(outcome.GetError());
-  }
+  return AdminSetUserSettingsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 AdminSetUserSettingsOutcomeCallable CognitoIdentityProviderClient::AdminSetUserSettingsCallable(const AdminSetUserSettingsRequest& request) const
@@ -1004,15 +820,7 @@ AdminUpdateAuthEventFeedbackOutcome CognitoIdentityProviderClient::AdminUpdateAu
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return AdminUpdateAuthEventFeedbackOutcome(AdminUpdateAuthEventFeedbackResult(outcome.GetResult()));
-  }
-  else
-  {
-    return AdminUpdateAuthEventFeedbackOutcome(outcome.GetError());
-  }
+  return AdminUpdateAuthEventFeedbackOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 AdminUpdateAuthEventFeedbackOutcomeCallable CognitoIdentityProviderClient::AdminUpdateAuthEventFeedbackCallable(const AdminUpdateAuthEventFeedbackRequest& request) const
@@ -1039,15 +847,7 @@ AdminUpdateDeviceStatusOutcome CognitoIdentityProviderClient::AdminUpdateDeviceS
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return AdminUpdateDeviceStatusOutcome(AdminUpdateDeviceStatusResult(outcome.GetResult()));
-  }
-  else
-  {
-    return AdminUpdateDeviceStatusOutcome(outcome.GetError());
-  }
+  return AdminUpdateDeviceStatusOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 AdminUpdateDeviceStatusOutcomeCallable CognitoIdentityProviderClient::AdminUpdateDeviceStatusCallable(const AdminUpdateDeviceStatusRequest& request) const
@@ -1074,15 +874,7 @@ AdminUpdateUserAttributesOutcome CognitoIdentityProviderClient::AdminUpdateUserA
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return AdminUpdateUserAttributesOutcome(AdminUpdateUserAttributesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return AdminUpdateUserAttributesOutcome(outcome.GetError());
-  }
+  return AdminUpdateUserAttributesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 AdminUpdateUserAttributesOutcomeCallable CognitoIdentityProviderClient::AdminUpdateUserAttributesCallable(const AdminUpdateUserAttributesRequest& request) const
@@ -1109,15 +901,7 @@ AdminUserGlobalSignOutOutcome CognitoIdentityProviderClient::AdminUserGlobalSign
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return AdminUserGlobalSignOutOutcome(AdminUserGlobalSignOutResult(outcome.GetResult()));
-  }
-  else
-  {
-    return AdminUserGlobalSignOutOutcome(outcome.GetError());
-  }
+  return AdminUserGlobalSignOutOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 AdminUserGlobalSignOutOutcomeCallable CognitoIdentityProviderClient::AdminUserGlobalSignOutCallable(const AdminUserGlobalSignOutRequest& request) const
@@ -1144,15 +928,7 @@ AssociateSoftwareTokenOutcome CognitoIdentityProviderClient::AssociateSoftwareTo
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return AssociateSoftwareTokenOutcome(AssociateSoftwareTokenResult(outcome.GetResult()));
-  }
-  else
-  {
-    return AssociateSoftwareTokenOutcome(outcome.GetError());
-  }
+  return AssociateSoftwareTokenOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 AssociateSoftwareTokenOutcomeCallable CognitoIdentityProviderClient::AssociateSoftwareTokenCallable(const AssociateSoftwareTokenRequest& request) const
@@ -1179,15 +955,7 @@ ChangePasswordOutcome CognitoIdentityProviderClient::ChangePassword(const Change
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::NULL_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ChangePasswordOutcome(ChangePasswordResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ChangePasswordOutcome(outcome.GetError());
-  }
+  return ChangePasswordOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::NULL_SIGNER));
 }
 
 ChangePasswordOutcomeCallable CognitoIdentityProviderClient::ChangePasswordCallable(const ChangePasswordRequest& request) const
@@ -1214,15 +982,7 @@ ConfirmDeviceOutcome CognitoIdentityProviderClient::ConfirmDevice(const ConfirmD
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ConfirmDeviceOutcome(ConfirmDeviceResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ConfirmDeviceOutcome(outcome.GetError());
-  }
+  return ConfirmDeviceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ConfirmDeviceOutcomeCallable CognitoIdentityProviderClient::ConfirmDeviceCallable(const ConfirmDeviceRequest& request) const
@@ -1249,15 +1009,7 @@ ConfirmForgotPasswordOutcome CognitoIdentityProviderClient::ConfirmForgotPasswor
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::NULL_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ConfirmForgotPasswordOutcome(ConfirmForgotPasswordResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ConfirmForgotPasswordOutcome(outcome.GetError());
-  }
+  return ConfirmForgotPasswordOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::NULL_SIGNER));
 }
 
 ConfirmForgotPasswordOutcomeCallable CognitoIdentityProviderClient::ConfirmForgotPasswordCallable(const ConfirmForgotPasswordRequest& request) const
@@ -1284,15 +1036,7 @@ ConfirmSignUpOutcome CognitoIdentityProviderClient::ConfirmSignUp(const ConfirmS
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::NULL_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ConfirmSignUpOutcome(ConfirmSignUpResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ConfirmSignUpOutcome(outcome.GetError());
-  }
+  return ConfirmSignUpOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::NULL_SIGNER));
 }
 
 ConfirmSignUpOutcomeCallable CognitoIdentityProviderClient::ConfirmSignUpCallable(const ConfirmSignUpRequest& request) const
@@ -1319,15 +1063,7 @@ CreateGroupOutcome CognitoIdentityProviderClient::CreateGroup(const CreateGroupR
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateGroupOutcome(CreateGroupResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateGroupOutcome(outcome.GetError());
-  }
+  return CreateGroupOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateGroupOutcomeCallable CognitoIdentityProviderClient::CreateGroupCallable(const CreateGroupRequest& request) const
@@ -1354,15 +1090,7 @@ CreateIdentityProviderOutcome CognitoIdentityProviderClient::CreateIdentityProvi
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateIdentityProviderOutcome(CreateIdentityProviderResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateIdentityProviderOutcome(outcome.GetError());
-  }
+  return CreateIdentityProviderOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateIdentityProviderOutcomeCallable CognitoIdentityProviderClient::CreateIdentityProviderCallable(const CreateIdentityProviderRequest& request) const
@@ -1389,15 +1117,7 @@ CreateResourceServerOutcome CognitoIdentityProviderClient::CreateResourceServer(
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateResourceServerOutcome(CreateResourceServerResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateResourceServerOutcome(outcome.GetError());
-  }
+  return CreateResourceServerOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateResourceServerOutcomeCallable CognitoIdentityProviderClient::CreateResourceServerCallable(const CreateResourceServerRequest& request) const
@@ -1424,15 +1144,7 @@ CreateUserImportJobOutcome CognitoIdentityProviderClient::CreateUserImportJob(co
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateUserImportJobOutcome(CreateUserImportJobResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateUserImportJobOutcome(outcome.GetError());
-  }
+  return CreateUserImportJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateUserImportJobOutcomeCallable CognitoIdentityProviderClient::CreateUserImportJobCallable(const CreateUserImportJobRequest& request) const
@@ -1459,15 +1171,7 @@ CreateUserPoolOutcome CognitoIdentityProviderClient::CreateUserPool(const Create
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateUserPoolOutcome(CreateUserPoolResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateUserPoolOutcome(outcome.GetError());
-  }
+  return CreateUserPoolOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateUserPoolOutcomeCallable CognitoIdentityProviderClient::CreateUserPoolCallable(const CreateUserPoolRequest& request) const
@@ -1494,15 +1198,7 @@ CreateUserPoolClientOutcome CognitoIdentityProviderClient::CreateUserPoolClient(
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateUserPoolClientOutcome(CreateUserPoolClientResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateUserPoolClientOutcome(outcome.GetError());
-  }
+  return CreateUserPoolClientOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateUserPoolClientOutcomeCallable CognitoIdentityProviderClient::CreateUserPoolClientCallable(const CreateUserPoolClientRequest& request) const
@@ -1529,15 +1225,7 @@ CreateUserPoolDomainOutcome CognitoIdentityProviderClient::CreateUserPoolDomain(
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateUserPoolDomainOutcome(CreateUserPoolDomainResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateUserPoolDomainOutcome(outcome.GetError());
-  }
+  return CreateUserPoolDomainOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateUserPoolDomainOutcomeCallable CognitoIdentityProviderClient::CreateUserPoolDomainCallable(const CreateUserPoolDomainRequest& request) const
@@ -1564,15 +1252,7 @@ DeleteGroupOutcome CognitoIdentityProviderClient::DeleteGroup(const DeleteGroupR
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteGroupOutcome(NoResult());
-  }
-  else
-  {
-    return DeleteGroupOutcome(outcome.GetError());
-  }
+  return DeleteGroupOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteGroupOutcomeCallable CognitoIdentityProviderClient::DeleteGroupCallable(const DeleteGroupRequest& request) const
@@ -1599,15 +1279,7 @@ DeleteIdentityProviderOutcome CognitoIdentityProviderClient::DeleteIdentityProvi
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteIdentityProviderOutcome(NoResult());
-  }
-  else
-  {
-    return DeleteIdentityProviderOutcome(outcome.GetError());
-  }
+  return DeleteIdentityProviderOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteIdentityProviderOutcomeCallable CognitoIdentityProviderClient::DeleteIdentityProviderCallable(const DeleteIdentityProviderRequest& request) const
@@ -1634,15 +1306,7 @@ DeleteResourceServerOutcome CognitoIdentityProviderClient::DeleteResourceServer(
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteResourceServerOutcome(NoResult());
-  }
-  else
-  {
-    return DeleteResourceServerOutcome(outcome.GetError());
-  }
+  return DeleteResourceServerOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteResourceServerOutcomeCallable CognitoIdentityProviderClient::DeleteResourceServerCallable(const DeleteResourceServerRequest& request) const
@@ -1669,15 +1333,7 @@ DeleteUserOutcome CognitoIdentityProviderClient::DeleteUser(const DeleteUserRequ
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::NULL_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteUserOutcome(NoResult());
-  }
-  else
-  {
-    return DeleteUserOutcome(outcome.GetError());
-  }
+  return DeleteUserOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::NULL_SIGNER));
 }
 
 DeleteUserOutcomeCallable CognitoIdentityProviderClient::DeleteUserCallable(const DeleteUserRequest& request) const
@@ -1704,15 +1360,7 @@ DeleteUserAttributesOutcome CognitoIdentityProviderClient::DeleteUserAttributes(
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::NULL_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteUserAttributesOutcome(DeleteUserAttributesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteUserAttributesOutcome(outcome.GetError());
-  }
+  return DeleteUserAttributesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::NULL_SIGNER));
 }
 
 DeleteUserAttributesOutcomeCallable CognitoIdentityProviderClient::DeleteUserAttributesCallable(const DeleteUserAttributesRequest& request) const
@@ -1739,15 +1387,7 @@ DeleteUserPoolOutcome CognitoIdentityProviderClient::DeleteUserPool(const Delete
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteUserPoolOutcome(NoResult());
-  }
-  else
-  {
-    return DeleteUserPoolOutcome(outcome.GetError());
-  }
+  return DeleteUserPoolOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteUserPoolOutcomeCallable CognitoIdentityProviderClient::DeleteUserPoolCallable(const DeleteUserPoolRequest& request) const
@@ -1774,15 +1414,7 @@ DeleteUserPoolClientOutcome CognitoIdentityProviderClient::DeleteUserPoolClient(
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteUserPoolClientOutcome(NoResult());
-  }
-  else
-  {
-    return DeleteUserPoolClientOutcome(outcome.GetError());
-  }
+  return DeleteUserPoolClientOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteUserPoolClientOutcomeCallable CognitoIdentityProviderClient::DeleteUserPoolClientCallable(const DeleteUserPoolClientRequest& request) const
@@ -1809,15 +1441,7 @@ DeleteUserPoolDomainOutcome CognitoIdentityProviderClient::DeleteUserPoolDomain(
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteUserPoolDomainOutcome(DeleteUserPoolDomainResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteUserPoolDomainOutcome(outcome.GetError());
-  }
+  return DeleteUserPoolDomainOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteUserPoolDomainOutcomeCallable CognitoIdentityProviderClient::DeleteUserPoolDomainCallable(const DeleteUserPoolDomainRequest& request) const
@@ -1844,15 +1468,7 @@ DescribeIdentityProviderOutcome CognitoIdentityProviderClient::DescribeIdentityP
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeIdentityProviderOutcome(DescribeIdentityProviderResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeIdentityProviderOutcome(outcome.GetError());
-  }
+  return DescribeIdentityProviderOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeIdentityProviderOutcomeCallable CognitoIdentityProviderClient::DescribeIdentityProviderCallable(const DescribeIdentityProviderRequest& request) const
@@ -1879,15 +1495,7 @@ DescribeResourceServerOutcome CognitoIdentityProviderClient::DescribeResourceSer
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeResourceServerOutcome(DescribeResourceServerResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeResourceServerOutcome(outcome.GetError());
-  }
+  return DescribeResourceServerOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeResourceServerOutcomeCallable CognitoIdentityProviderClient::DescribeResourceServerCallable(const DescribeResourceServerRequest& request) const
@@ -1914,15 +1522,7 @@ DescribeRiskConfigurationOutcome CognitoIdentityProviderClient::DescribeRiskConf
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeRiskConfigurationOutcome(DescribeRiskConfigurationResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeRiskConfigurationOutcome(outcome.GetError());
-  }
+  return DescribeRiskConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeRiskConfigurationOutcomeCallable CognitoIdentityProviderClient::DescribeRiskConfigurationCallable(const DescribeRiskConfigurationRequest& request) const
@@ -1949,15 +1549,7 @@ DescribeUserImportJobOutcome CognitoIdentityProviderClient::DescribeUserImportJo
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeUserImportJobOutcome(DescribeUserImportJobResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeUserImportJobOutcome(outcome.GetError());
-  }
+  return DescribeUserImportJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeUserImportJobOutcomeCallable CognitoIdentityProviderClient::DescribeUserImportJobCallable(const DescribeUserImportJobRequest& request) const
@@ -1984,15 +1576,7 @@ DescribeUserPoolOutcome CognitoIdentityProviderClient::DescribeUserPool(const De
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeUserPoolOutcome(DescribeUserPoolResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeUserPoolOutcome(outcome.GetError());
-  }
+  return DescribeUserPoolOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeUserPoolOutcomeCallable CognitoIdentityProviderClient::DescribeUserPoolCallable(const DescribeUserPoolRequest& request) const
@@ -2019,15 +1603,7 @@ DescribeUserPoolClientOutcome CognitoIdentityProviderClient::DescribeUserPoolCli
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeUserPoolClientOutcome(DescribeUserPoolClientResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeUserPoolClientOutcome(outcome.GetError());
-  }
+  return DescribeUserPoolClientOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeUserPoolClientOutcomeCallable CognitoIdentityProviderClient::DescribeUserPoolClientCallable(const DescribeUserPoolClientRequest& request) const
@@ -2054,15 +1630,7 @@ DescribeUserPoolDomainOutcome CognitoIdentityProviderClient::DescribeUserPoolDom
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeUserPoolDomainOutcome(DescribeUserPoolDomainResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeUserPoolDomainOutcome(outcome.GetError());
-  }
+  return DescribeUserPoolDomainOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeUserPoolDomainOutcomeCallable CognitoIdentityProviderClient::DescribeUserPoolDomainCallable(const DescribeUserPoolDomainRequest& request) const
@@ -2089,15 +1657,7 @@ ForgetDeviceOutcome CognitoIdentityProviderClient::ForgetDevice(const ForgetDevi
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ForgetDeviceOutcome(NoResult());
-  }
-  else
-  {
-    return ForgetDeviceOutcome(outcome.GetError());
-  }
+  return ForgetDeviceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ForgetDeviceOutcomeCallable CognitoIdentityProviderClient::ForgetDeviceCallable(const ForgetDeviceRequest& request) const
@@ -2124,15 +1684,7 @@ ForgotPasswordOutcome CognitoIdentityProviderClient::ForgotPassword(const Forgot
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::NULL_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ForgotPasswordOutcome(ForgotPasswordResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ForgotPasswordOutcome(outcome.GetError());
-  }
+  return ForgotPasswordOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::NULL_SIGNER));
 }
 
 ForgotPasswordOutcomeCallable CognitoIdentityProviderClient::ForgotPasswordCallable(const ForgotPasswordRequest& request) const
@@ -2159,15 +1711,7 @@ GetCSVHeaderOutcome CognitoIdentityProviderClient::GetCSVHeader(const GetCSVHead
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetCSVHeaderOutcome(GetCSVHeaderResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetCSVHeaderOutcome(outcome.GetError());
-  }
+  return GetCSVHeaderOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetCSVHeaderOutcomeCallable CognitoIdentityProviderClient::GetCSVHeaderCallable(const GetCSVHeaderRequest& request) const
@@ -2194,15 +1738,7 @@ GetDeviceOutcome CognitoIdentityProviderClient::GetDevice(const GetDeviceRequest
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetDeviceOutcome(GetDeviceResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetDeviceOutcome(outcome.GetError());
-  }
+  return GetDeviceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetDeviceOutcomeCallable CognitoIdentityProviderClient::GetDeviceCallable(const GetDeviceRequest& request) const
@@ -2229,15 +1765,7 @@ GetGroupOutcome CognitoIdentityProviderClient::GetGroup(const GetGroupRequest& r
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetGroupOutcome(GetGroupResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetGroupOutcome(outcome.GetError());
-  }
+  return GetGroupOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetGroupOutcomeCallable CognitoIdentityProviderClient::GetGroupCallable(const GetGroupRequest& request) const
@@ -2264,15 +1792,7 @@ GetIdentityProviderByIdentifierOutcome CognitoIdentityProviderClient::GetIdentit
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetIdentityProviderByIdentifierOutcome(GetIdentityProviderByIdentifierResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetIdentityProviderByIdentifierOutcome(outcome.GetError());
-  }
+  return GetIdentityProviderByIdentifierOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetIdentityProviderByIdentifierOutcomeCallable CognitoIdentityProviderClient::GetIdentityProviderByIdentifierCallable(const GetIdentityProviderByIdentifierRequest& request) const
@@ -2299,15 +1819,7 @@ GetSigningCertificateOutcome CognitoIdentityProviderClient::GetSigningCertificat
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetSigningCertificateOutcome(GetSigningCertificateResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetSigningCertificateOutcome(outcome.GetError());
-  }
+  return GetSigningCertificateOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetSigningCertificateOutcomeCallable CognitoIdentityProviderClient::GetSigningCertificateCallable(const GetSigningCertificateRequest& request) const
@@ -2334,15 +1846,7 @@ GetUICustomizationOutcome CognitoIdentityProviderClient::GetUICustomization(cons
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetUICustomizationOutcome(GetUICustomizationResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetUICustomizationOutcome(outcome.GetError());
-  }
+  return GetUICustomizationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetUICustomizationOutcomeCallable CognitoIdentityProviderClient::GetUICustomizationCallable(const GetUICustomizationRequest& request) const
@@ -2369,15 +1873,7 @@ GetUserOutcome CognitoIdentityProviderClient::GetUser(const GetUserRequest& requ
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::NULL_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetUserOutcome(GetUserResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetUserOutcome(outcome.GetError());
-  }
+  return GetUserOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::NULL_SIGNER));
 }
 
 GetUserOutcomeCallable CognitoIdentityProviderClient::GetUserCallable(const GetUserRequest& request) const
@@ -2404,15 +1900,7 @@ GetUserAttributeVerificationCodeOutcome CognitoIdentityProviderClient::GetUserAt
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::NULL_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetUserAttributeVerificationCodeOutcome(GetUserAttributeVerificationCodeResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetUserAttributeVerificationCodeOutcome(outcome.GetError());
-  }
+  return GetUserAttributeVerificationCodeOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::NULL_SIGNER));
 }
 
 GetUserAttributeVerificationCodeOutcomeCallable CognitoIdentityProviderClient::GetUserAttributeVerificationCodeCallable(const GetUserAttributeVerificationCodeRequest& request) const
@@ -2439,15 +1927,7 @@ GetUserPoolMfaConfigOutcome CognitoIdentityProviderClient::GetUserPoolMfaConfig(
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetUserPoolMfaConfigOutcome(GetUserPoolMfaConfigResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetUserPoolMfaConfigOutcome(outcome.GetError());
-  }
+  return GetUserPoolMfaConfigOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetUserPoolMfaConfigOutcomeCallable CognitoIdentityProviderClient::GetUserPoolMfaConfigCallable(const GetUserPoolMfaConfigRequest& request) const
@@ -2474,15 +1954,7 @@ GlobalSignOutOutcome CognitoIdentityProviderClient::GlobalSignOut(const GlobalSi
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GlobalSignOutOutcome(GlobalSignOutResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GlobalSignOutOutcome(outcome.GetError());
-  }
+  return GlobalSignOutOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GlobalSignOutOutcomeCallable CognitoIdentityProviderClient::GlobalSignOutCallable(const GlobalSignOutRequest& request) const
@@ -2509,15 +1981,7 @@ InitiateAuthOutcome CognitoIdentityProviderClient::InitiateAuth(const InitiateAu
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::NULL_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return InitiateAuthOutcome(InitiateAuthResult(outcome.GetResult()));
-  }
-  else
-  {
-    return InitiateAuthOutcome(outcome.GetError());
-  }
+  return InitiateAuthOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::NULL_SIGNER));
 }
 
 InitiateAuthOutcomeCallable CognitoIdentityProviderClient::InitiateAuthCallable(const InitiateAuthRequest& request) const
@@ -2544,15 +2008,7 @@ ListDevicesOutcome CognitoIdentityProviderClient::ListDevices(const ListDevicesR
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListDevicesOutcome(ListDevicesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListDevicesOutcome(outcome.GetError());
-  }
+  return ListDevicesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListDevicesOutcomeCallable CognitoIdentityProviderClient::ListDevicesCallable(const ListDevicesRequest& request) const
@@ -2579,15 +2035,7 @@ ListGroupsOutcome CognitoIdentityProviderClient::ListGroups(const ListGroupsRequ
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListGroupsOutcome(ListGroupsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListGroupsOutcome(outcome.GetError());
-  }
+  return ListGroupsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListGroupsOutcomeCallable CognitoIdentityProviderClient::ListGroupsCallable(const ListGroupsRequest& request) const
@@ -2614,15 +2062,7 @@ ListIdentityProvidersOutcome CognitoIdentityProviderClient::ListIdentityProvider
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListIdentityProvidersOutcome(ListIdentityProvidersResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListIdentityProvidersOutcome(outcome.GetError());
-  }
+  return ListIdentityProvidersOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListIdentityProvidersOutcomeCallable CognitoIdentityProviderClient::ListIdentityProvidersCallable(const ListIdentityProvidersRequest& request) const
@@ -2649,15 +2089,7 @@ ListResourceServersOutcome CognitoIdentityProviderClient::ListResourceServers(co
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListResourceServersOutcome(ListResourceServersResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListResourceServersOutcome(outcome.GetError());
-  }
+  return ListResourceServersOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListResourceServersOutcomeCallable CognitoIdentityProviderClient::ListResourceServersCallable(const ListResourceServersRequest& request) const
@@ -2684,15 +2116,7 @@ ListTagsForResourceOutcome CognitoIdentityProviderClient::ListTagsForResource(co
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListTagsForResourceOutcome(ListTagsForResourceResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListTagsForResourceOutcome(outcome.GetError());
-  }
+  return ListTagsForResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListTagsForResourceOutcomeCallable CognitoIdentityProviderClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
@@ -2719,15 +2143,7 @@ ListUserImportJobsOutcome CognitoIdentityProviderClient::ListUserImportJobs(cons
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListUserImportJobsOutcome(ListUserImportJobsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListUserImportJobsOutcome(outcome.GetError());
-  }
+  return ListUserImportJobsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListUserImportJobsOutcomeCallable CognitoIdentityProviderClient::ListUserImportJobsCallable(const ListUserImportJobsRequest& request) const
@@ -2754,15 +2170,7 @@ ListUserPoolClientsOutcome CognitoIdentityProviderClient::ListUserPoolClients(co
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListUserPoolClientsOutcome(ListUserPoolClientsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListUserPoolClientsOutcome(outcome.GetError());
-  }
+  return ListUserPoolClientsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListUserPoolClientsOutcomeCallable CognitoIdentityProviderClient::ListUserPoolClientsCallable(const ListUserPoolClientsRequest& request) const
@@ -2789,15 +2197,7 @@ ListUserPoolsOutcome CognitoIdentityProviderClient::ListUserPools(const ListUser
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListUserPoolsOutcome(ListUserPoolsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListUserPoolsOutcome(outcome.GetError());
-  }
+  return ListUserPoolsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListUserPoolsOutcomeCallable CognitoIdentityProviderClient::ListUserPoolsCallable(const ListUserPoolsRequest& request) const
@@ -2824,15 +2224,7 @@ ListUsersOutcome CognitoIdentityProviderClient::ListUsers(const ListUsersRequest
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListUsersOutcome(ListUsersResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListUsersOutcome(outcome.GetError());
-  }
+  return ListUsersOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListUsersOutcomeCallable CognitoIdentityProviderClient::ListUsersCallable(const ListUsersRequest& request) const
@@ -2859,15 +2251,7 @@ ListUsersInGroupOutcome CognitoIdentityProviderClient::ListUsersInGroup(const Li
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListUsersInGroupOutcome(ListUsersInGroupResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListUsersInGroupOutcome(outcome.GetError());
-  }
+  return ListUsersInGroupOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListUsersInGroupOutcomeCallable CognitoIdentityProviderClient::ListUsersInGroupCallable(const ListUsersInGroupRequest& request) const
@@ -2894,15 +2278,7 @@ ResendConfirmationCodeOutcome CognitoIdentityProviderClient::ResendConfirmationC
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::NULL_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ResendConfirmationCodeOutcome(ResendConfirmationCodeResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ResendConfirmationCodeOutcome(outcome.GetError());
-  }
+  return ResendConfirmationCodeOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::NULL_SIGNER));
 }
 
 ResendConfirmationCodeOutcomeCallable CognitoIdentityProviderClient::ResendConfirmationCodeCallable(const ResendConfirmationCodeRequest& request) const
@@ -2929,15 +2305,7 @@ RespondToAuthChallengeOutcome CognitoIdentityProviderClient::RespondToAuthChalle
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::NULL_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return RespondToAuthChallengeOutcome(RespondToAuthChallengeResult(outcome.GetResult()));
-  }
-  else
-  {
-    return RespondToAuthChallengeOutcome(outcome.GetError());
-  }
+  return RespondToAuthChallengeOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::NULL_SIGNER));
 }
 
 RespondToAuthChallengeOutcomeCallable CognitoIdentityProviderClient::RespondToAuthChallengeCallable(const RespondToAuthChallengeRequest& request) const
@@ -2964,15 +2332,7 @@ SetRiskConfigurationOutcome CognitoIdentityProviderClient::SetRiskConfiguration(
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return SetRiskConfigurationOutcome(SetRiskConfigurationResult(outcome.GetResult()));
-  }
-  else
-  {
-    return SetRiskConfigurationOutcome(outcome.GetError());
-  }
+  return SetRiskConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 SetRiskConfigurationOutcomeCallable CognitoIdentityProviderClient::SetRiskConfigurationCallable(const SetRiskConfigurationRequest& request) const
@@ -2999,15 +2359,7 @@ SetUICustomizationOutcome CognitoIdentityProviderClient::SetUICustomization(cons
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return SetUICustomizationOutcome(SetUICustomizationResult(outcome.GetResult()));
-  }
-  else
-  {
-    return SetUICustomizationOutcome(outcome.GetError());
-  }
+  return SetUICustomizationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 SetUICustomizationOutcomeCallable CognitoIdentityProviderClient::SetUICustomizationCallable(const SetUICustomizationRequest& request) const
@@ -3034,15 +2386,7 @@ SetUserMFAPreferenceOutcome CognitoIdentityProviderClient::SetUserMFAPreference(
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return SetUserMFAPreferenceOutcome(SetUserMFAPreferenceResult(outcome.GetResult()));
-  }
-  else
-  {
-    return SetUserMFAPreferenceOutcome(outcome.GetError());
-  }
+  return SetUserMFAPreferenceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 SetUserMFAPreferenceOutcomeCallable CognitoIdentityProviderClient::SetUserMFAPreferenceCallable(const SetUserMFAPreferenceRequest& request) const
@@ -3069,15 +2413,7 @@ SetUserPoolMfaConfigOutcome CognitoIdentityProviderClient::SetUserPoolMfaConfig(
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return SetUserPoolMfaConfigOutcome(SetUserPoolMfaConfigResult(outcome.GetResult()));
-  }
-  else
-  {
-    return SetUserPoolMfaConfigOutcome(outcome.GetError());
-  }
+  return SetUserPoolMfaConfigOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 SetUserPoolMfaConfigOutcomeCallable CognitoIdentityProviderClient::SetUserPoolMfaConfigCallable(const SetUserPoolMfaConfigRequest& request) const
@@ -3104,15 +2440,7 @@ SetUserSettingsOutcome CognitoIdentityProviderClient::SetUserSettings(const SetU
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::NULL_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return SetUserSettingsOutcome(SetUserSettingsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return SetUserSettingsOutcome(outcome.GetError());
-  }
+  return SetUserSettingsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::NULL_SIGNER));
 }
 
 SetUserSettingsOutcomeCallable CognitoIdentityProviderClient::SetUserSettingsCallable(const SetUserSettingsRequest& request) const
@@ -3139,15 +2467,7 @@ SignUpOutcome CognitoIdentityProviderClient::SignUp(const SignUpRequest& request
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::NULL_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return SignUpOutcome(SignUpResult(outcome.GetResult()));
-  }
-  else
-  {
-    return SignUpOutcome(outcome.GetError());
-  }
+  return SignUpOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::NULL_SIGNER));
 }
 
 SignUpOutcomeCallable CognitoIdentityProviderClient::SignUpCallable(const SignUpRequest& request) const
@@ -3174,15 +2494,7 @@ StartUserImportJobOutcome CognitoIdentityProviderClient::StartUserImportJob(cons
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return StartUserImportJobOutcome(StartUserImportJobResult(outcome.GetResult()));
-  }
-  else
-  {
-    return StartUserImportJobOutcome(outcome.GetError());
-  }
+  return StartUserImportJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 StartUserImportJobOutcomeCallable CognitoIdentityProviderClient::StartUserImportJobCallable(const StartUserImportJobRequest& request) const
@@ -3209,15 +2521,7 @@ StopUserImportJobOutcome CognitoIdentityProviderClient::StopUserImportJob(const 
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return StopUserImportJobOutcome(StopUserImportJobResult(outcome.GetResult()));
-  }
-  else
-  {
-    return StopUserImportJobOutcome(outcome.GetError());
-  }
+  return StopUserImportJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 StopUserImportJobOutcomeCallable CognitoIdentityProviderClient::StopUserImportJobCallable(const StopUserImportJobRequest& request) const
@@ -3244,15 +2548,7 @@ TagResourceOutcome CognitoIdentityProviderClient::TagResource(const TagResourceR
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return TagResourceOutcome(TagResourceResult(outcome.GetResult()));
-  }
-  else
-  {
-    return TagResourceOutcome(outcome.GetError());
-  }
+  return TagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 TagResourceOutcomeCallable CognitoIdentityProviderClient::TagResourceCallable(const TagResourceRequest& request) const
@@ -3279,15 +2575,7 @@ UntagResourceOutcome CognitoIdentityProviderClient::UntagResource(const UntagRes
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UntagResourceOutcome(UntagResourceResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UntagResourceOutcome(outcome.GetError());
-  }
+  return UntagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UntagResourceOutcomeCallable CognitoIdentityProviderClient::UntagResourceCallable(const UntagResourceRequest& request) const
@@ -3314,15 +2602,7 @@ UpdateAuthEventFeedbackOutcome CognitoIdentityProviderClient::UpdateAuthEventFee
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateAuthEventFeedbackOutcome(UpdateAuthEventFeedbackResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateAuthEventFeedbackOutcome(outcome.GetError());
-  }
+  return UpdateAuthEventFeedbackOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateAuthEventFeedbackOutcomeCallable CognitoIdentityProviderClient::UpdateAuthEventFeedbackCallable(const UpdateAuthEventFeedbackRequest& request) const
@@ -3349,15 +2629,7 @@ UpdateDeviceStatusOutcome CognitoIdentityProviderClient::UpdateDeviceStatus(cons
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateDeviceStatusOutcome(UpdateDeviceStatusResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateDeviceStatusOutcome(outcome.GetError());
-  }
+  return UpdateDeviceStatusOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateDeviceStatusOutcomeCallable CognitoIdentityProviderClient::UpdateDeviceStatusCallable(const UpdateDeviceStatusRequest& request) const
@@ -3384,15 +2656,7 @@ UpdateGroupOutcome CognitoIdentityProviderClient::UpdateGroup(const UpdateGroupR
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateGroupOutcome(UpdateGroupResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateGroupOutcome(outcome.GetError());
-  }
+  return UpdateGroupOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateGroupOutcomeCallable CognitoIdentityProviderClient::UpdateGroupCallable(const UpdateGroupRequest& request) const
@@ -3419,15 +2683,7 @@ UpdateIdentityProviderOutcome CognitoIdentityProviderClient::UpdateIdentityProvi
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateIdentityProviderOutcome(UpdateIdentityProviderResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateIdentityProviderOutcome(outcome.GetError());
-  }
+  return UpdateIdentityProviderOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateIdentityProviderOutcomeCallable CognitoIdentityProviderClient::UpdateIdentityProviderCallable(const UpdateIdentityProviderRequest& request) const
@@ -3454,15 +2710,7 @@ UpdateResourceServerOutcome CognitoIdentityProviderClient::UpdateResourceServer(
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateResourceServerOutcome(UpdateResourceServerResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateResourceServerOutcome(outcome.GetError());
-  }
+  return UpdateResourceServerOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateResourceServerOutcomeCallable CognitoIdentityProviderClient::UpdateResourceServerCallable(const UpdateResourceServerRequest& request) const
@@ -3489,15 +2737,7 @@ UpdateUserAttributesOutcome CognitoIdentityProviderClient::UpdateUserAttributes(
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::NULL_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateUserAttributesOutcome(UpdateUserAttributesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateUserAttributesOutcome(outcome.GetError());
-  }
+  return UpdateUserAttributesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::NULL_SIGNER));
 }
 
 UpdateUserAttributesOutcomeCallable CognitoIdentityProviderClient::UpdateUserAttributesCallable(const UpdateUserAttributesRequest& request) const
@@ -3524,15 +2764,7 @@ UpdateUserPoolOutcome CognitoIdentityProviderClient::UpdateUserPool(const Update
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateUserPoolOutcome(UpdateUserPoolResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateUserPoolOutcome(outcome.GetError());
-  }
+  return UpdateUserPoolOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateUserPoolOutcomeCallable CognitoIdentityProviderClient::UpdateUserPoolCallable(const UpdateUserPoolRequest& request) const
@@ -3559,15 +2791,7 @@ UpdateUserPoolClientOutcome CognitoIdentityProviderClient::UpdateUserPoolClient(
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateUserPoolClientOutcome(UpdateUserPoolClientResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateUserPoolClientOutcome(outcome.GetError());
-  }
+  return UpdateUserPoolClientOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateUserPoolClientOutcomeCallable CognitoIdentityProviderClient::UpdateUserPoolClientCallable(const UpdateUserPoolClientRequest& request) const
@@ -3594,15 +2818,7 @@ UpdateUserPoolDomainOutcome CognitoIdentityProviderClient::UpdateUserPoolDomain(
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateUserPoolDomainOutcome(UpdateUserPoolDomainResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateUserPoolDomainOutcome(outcome.GetError());
-  }
+  return UpdateUserPoolDomainOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateUserPoolDomainOutcomeCallable CognitoIdentityProviderClient::UpdateUserPoolDomainCallable(const UpdateUserPoolDomainRequest& request) const
@@ -3629,15 +2845,7 @@ VerifySoftwareTokenOutcome CognitoIdentityProviderClient::VerifySoftwareToken(co
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return VerifySoftwareTokenOutcome(VerifySoftwareTokenResult(outcome.GetResult()));
-  }
-  else
-  {
-    return VerifySoftwareTokenOutcome(outcome.GetError());
-  }
+  return VerifySoftwareTokenOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 VerifySoftwareTokenOutcomeCallable CognitoIdentityProviderClient::VerifySoftwareTokenCallable(const VerifySoftwareTokenRequest& request) const
@@ -3664,15 +2872,7 @@ VerifyUserAttributeOutcome CognitoIdentityProviderClient::VerifyUserAttribute(co
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::NULL_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return VerifyUserAttributeOutcome(VerifyUserAttributeResult(outcome.GetResult()));
-  }
-  else
-  {
-    return VerifyUserAttributeOutcome(outcome.GetError());
-  }
+  return VerifyUserAttributeOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::NULL_SIGNER));
 }
 
 VerifyUserAttributeOutcomeCallable CognitoIdentityProviderClient::VerifyUserAttributeCallable(const VerifyUserAttributeRequest& request) const

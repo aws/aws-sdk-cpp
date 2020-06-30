@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/acm/ACM_EXPORTS.h>
 
@@ -42,7 +43,7 @@ enum class ACMErrors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -58,6 +59,20 @@ enum class ACMErrors
   TAG_POLICY,
   TOO_MANY_TAGS
 };
+
+class AWS_ACM_API ACMError : public Aws::Client::AWSError<ACMErrors>
+{
+public:
+  ACMError() {}
+  ACMError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<ACMErrors>(rhs) {}
+  ACMError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<ACMErrors>(rhs) {}
+  ACMError(const Aws::Client::AWSError<ACMErrors>& rhs) : Aws::Client::AWSError<ACMErrors>(rhs) {}
+  ACMError(Aws::Client::AWSError<ACMErrors>&& rhs) : Aws::Client::AWSError<ACMErrors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace ACMErrorMapper
 {
   AWS_ACM_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

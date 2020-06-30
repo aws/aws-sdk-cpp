@@ -87,7 +87,7 @@ static const char* ALLOCATION_TAG = "Macie2Client";
 Macie2Client::Macie2Client(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-        SERVICE_NAME, clientConfiguration.region),
+        SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<Macie2ErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -97,7 +97,7 @@ Macie2Client::Macie2Client(const Client::ClientConfiguration& clientConfiguratio
 Macie2Client::Macie2Client(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-         SERVICE_NAME, clientConfiguration.region),
+         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<Macie2ErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -108,7 +108,7 @@ Macie2Client::Macie2Client(const std::shared_ptr<AWSCredentialsProvider>& creden
   const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider,
-         SERVICE_NAME, clientConfiguration.region),
+         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<Macie2ErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -150,15 +150,7 @@ AcceptInvitationOutcome Macie2Client::AcceptInvitation(const AcceptInvitationReq
   Aws::StringStream ss;
   ss << "/invitations/accept";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return AcceptInvitationOutcome(AcceptInvitationResult(outcome.GetResult()));
-  }
-  else
-  {
-    return AcceptInvitationOutcome(outcome.GetError());
-  }
+  return AcceptInvitationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 AcceptInvitationOutcomeCallable Macie2Client::AcceptInvitationCallable(const AcceptInvitationRequest& request) const
@@ -185,15 +177,7 @@ BatchGetCustomDataIdentifiersOutcome Macie2Client::BatchGetCustomDataIdentifiers
   Aws::StringStream ss;
   ss << "/custom-data-identifiers/get";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return BatchGetCustomDataIdentifiersOutcome(BatchGetCustomDataIdentifiersResult(outcome.GetResult()));
-  }
-  else
-  {
-    return BatchGetCustomDataIdentifiersOutcome(outcome.GetError());
-  }
+  return BatchGetCustomDataIdentifiersOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 BatchGetCustomDataIdentifiersOutcomeCallable Macie2Client::BatchGetCustomDataIdentifiersCallable(const BatchGetCustomDataIdentifiersRequest& request) const
@@ -220,15 +204,7 @@ CreateClassificationJobOutcome Macie2Client::CreateClassificationJob(const Creat
   Aws::StringStream ss;
   ss << "/jobs";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateClassificationJobOutcome(CreateClassificationJobResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateClassificationJobOutcome(outcome.GetError());
-  }
+  return CreateClassificationJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateClassificationJobOutcomeCallable Macie2Client::CreateClassificationJobCallable(const CreateClassificationJobRequest& request) const
@@ -255,15 +231,7 @@ CreateCustomDataIdentifierOutcome Macie2Client::CreateCustomDataIdentifier(const
   Aws::StringStream ss;
   ss << "/custom-data-identifiers";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateCustomDataIdentifierOutcome(CreateCustomDataIdentifierResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateCustomDataIdentifierOutcome(outcome.GetError());
-  }
+  return CreateCustomDataIdentifierOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateCustomDataIdentifierOutcomeCallable Macie2Client::CreateCustomDataIdentifierCallable(const CreateCustomDataIdentifierRequest& request) const
@@ -290,15 +258,7 @@ CreateFindingsFilterOutcome Macie2Client::CreateFindingsFilter(const CreateFindi
   Aws::StringStream ss;
   ss << "/findingsfilters";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateFindingsFilterOutcome(CreateFindingsFilterResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateFindingsFilterOutcome(outcome.GetError());
-  }
+  return CreateFindingsFilterOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateFindingsFilterOutcomeCallable Macie2Client::CreateFindingsFilterCallable(const CreateFindingsFilterRequest& request) const
@@ -325,15 +285,7 @@ CreateInvitationsOutcome Macie2Client::CreateInvitations(const CreateInvitations
   Aws::StringStream ss;
   ss << "/invitations";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateInvitationsOutcome(CreateInvitationsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateInvitationsOutcome(outcome.GetError());
-  }
+  return CreateInvitationsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateInvitationsOutcomeCallable Macie2Client::CreateInvitationsCallable(const CreateInvitationsRequest& request) const
@@ -360,15 +312,7 @@ CreateMemberOutcome Macie2Client::CreateMember(const CreateMemberRequest& reques
   Aws::StringStream ss;
   ss << "/members";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateMemberOutcome(CreateMemberResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateMemberOutcome(outcome.GetError());
-  }
+  return CreateMemberOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateMemberOutcomeCallable Macie2Client::CreateMemberCallable(const CreateMemberRequest& request) const
@@ -395,15 +339,7 @@ CreateSampleFindingsOutcome Macie2Client::CreateSampleFindings(const CreateSampl
   Aws::StringStream ss;
   ss << "/findings/sample";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateSampleFindingsOutcome(CreateSampleFindingsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateSampleFindingsOutcome(outcome.GetError());
-  }
+  return CreateSampleFindingsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateSampleFindingsOutcomeCallable Macie2Client::CreateSampleFindingsCallable(const CreateSampleFindingsRequest& request) const
@@ -430,15 +366,7 @@ DeclineInvitationsOutcome Macie2Client::DeclineInvitations(const DeclineInvitati
   Aws::StringStream ss;
   ss << "/invitations/decline";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeclineInvitationsOutcome(DeclineInvitationsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeclineInvitationsOutcome(outcome.GetError());
-  }
+  return DeclineInvitationsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeclineInvitationsOutcomeCallable Macie2Client::DeclineInvitationsCallable(const DeclineInvitationsRequest& request) const
@@ -471,15 +399,7 @@ DeleteCustomDataIdentifierOutcome Macie2Client::DeleteCustomDataIdentifier(const
   ss << "/custom-data-identifiers/";
   ss << request.GetId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteCustomDataIdentifierOutcome(DeleteCustomDataIdentifierResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteCustomDataIdentifierOutcome(outcome.GetError());
-  }
+  return DeleteCustomDataIdentifierOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteCustomDataIdentifierOutcomeCallable Macie2Client::DeleteCustomDataIdentifierCallable(const DeleteCustomDataIdentifierRequest& request) const
@@ -512,15 +432,7 @@ DeleteFindingsFilterOutcome Macie2Client::DeleteFindingsFilter(const DeleteFindi
   ss << "/findingsfilters/";
   ss << request.GetId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteFindingsFilterOutcome(DeleteFindingsFilterResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteFindingsFilterOutcome(outcome.GetError());
-  }
+  return DeleteFindingsFilterOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteFindingsFilterOutcomeCallable Macie2Client::DeleteFindingsFilterCallable(const DeleteFindingsFilterRequest& request) const
@@ -547,15 +459,7 @@ DeleteInvitationsOutcome Macie2Client::DeleteInvitations(const DeleteInvitations
   Aws::StringStream ss;
   ss << "/invitations/delete";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteInvitationsOutcome(DeleteInvitationsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteInvitationsOutcome(outcome.GetError());
-  }
+  return DeleteInvitationsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteInvitationsOutcomeCallable Macie2Client::DeleteInvitationsCallable(const DeleteInvitationsRequest& request) const
@@ -588,15 +492,7 @@ DeleteMemberOutcome Macie2Client::DeleteMember(const DeleteMemberRequest& reques
   ss << "/members/";
   ss << request.GetId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteMemberOutcome(DeleteMemberResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteMemberOutcome(outcome.GetError());
-  }
+  return DeleteMemberOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteMemberOutcomeCallable Macie2Client::DeleteMemberCallable(const DeleteMemberRequest& request) const
@@ -623,15 +519,7 @@ DescribeBucketsOutcome Macie2Client::DescribeBuckets(const DescribeBucketsReques
   Aws::StringStream ss;
   ss << "/datasources/s3";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeBucketsOutcome(DescribeBucketsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeBucketsOutcome(outcome.GetError());
-  }
+  return DescribeBucketsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeBucketsOutcomeCallable Macie2Client::DescribeBucketsCallable(const DescribeBucketsRequest& request) const
@@ -664,15 +552,7 @@ DescribeClassificationJobOutcome Macie2Client::DescribeClassificationJob(const D
   ss << "/jobs/";
   ss << request.GetJobId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeClassificationJobOutcome(DescribeClassificationJobResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeClassificationJobOutcome(outcome.GetError());
-  }
+  return DescribeClassificationJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeClassificationJobOutcomeCallable Macie2Client::DescribeClassificationJobCallable(const DescribeClassificationJobRequest& request) const
@@ -699,15 +579,7 @@ DescribeOrganizationConfigurationOutcome Macie2Client::DescribeOrganizationConfi
   Aws::StringStream ss;
   ss << "/admin/configuration";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeOrganizationConfigurationOutcome(DescribeOrganizationConfigurationResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeOrganizationConfigurationOutcome(outcome.GetError());
-  }
+  return DescribeOrganizationConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeOrganizationConfigurationOutcomeCallable Macie2Client::DescribeOrganizationConfigurationCallable(const DescribeOrganizationConfigurationRequest& request) const
@@ -734,15 +606,7 @@ DisableMacieOutcome Macie2Client::DisableMacie(const DisableMacieRequest& reques
   Aws::StringStream ss;
   ss << "/macie";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DisableMacieOutcome(DisableMacieResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DisableMacieOutcome(outcome.GetError());
-  }
+  return DisableMacieOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DisableMacieOutcomeCallable Macie2Client::DisableMacieCallable(const DisableMacieRequest& request) const
@@ -774,15 +638,7 @@ DisableOrganizationAdminAccountOutcome Macie2Client::DisableOrganizationAdminAcc
   Aws::StringStream ss;
   ss << "/admin";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DisableOrganizationAdminAccountOutcome(DisableOrganizationAdminAccountResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DisableOrganizationAdminAccountOutcome(outcome.GetError());
-  }
+  return DisableOrganizationAdminAccountOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DisableOrganizationAdminAccountOutcomeCallable Macie2Client::DisableOrganizationAdminAccountCallable(const DisableOrganizationAdminAccountRequest& request) const
@@ -809,15 +665,7 @@ DisassociateFromMasterAccountOutcome Macie2Client::DisassociateFromMasterAccount
   Aws::StringStream ss;
   ss << "/master/disassociate";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DisassociateFromMasterAccountOutcome(DisassociateFromMasterAccountResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DisassociateFromMasterAccountOutcome(outcome.GetError());
-  }
+  return DisassociateFromMasterAccountOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DisassociateFromMasterAccountOutcomeCallable Macie2Client::DisassociateFromMasterAccountCallable(const DisassociateFromMasterAccountRequest& request) const
@@ -850,15 +698,7 @@ DisassociateMemberOutcome Macie2Client::DisassociateMember(const DisassociateMem
   ss << "/members/disassociate/";
   ss << request.GetId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DisassociateMemberOutcome(DisassociateMemberResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DisassociateMemberOutcome(outcome.GetError());
-  }
+  return DisassociateMemberOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DisassociateMemberOutcomeCallable Macie2Client::DisassociateMemberCallable(const DisassociateMemberRequest& request) const
@@ -885,15 +725,7 @@ EnableMacieOutcome Macie2Client::EnableMacie(const EnableMacieRequest& request) 
   Aws::StringStream ss;
   ss << "/macie";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return EnableMacieOutcome(EnableMacieResult(outcome.GetResult()));
-  }
-  else
-  {
-    return EnableMacieOutcome(outcome.GetError());
-  }
+  return EnableMacieOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 EnableMacieOutcomeCallable Macie2Client::EnableMacieCallable(const EnableMacieRequest& request) const
@@ -920,15 +752,7 @@ EnableOrganizationAdminAccountOutcome Macie2Client::EnableOrganizationAdminAccou
   Aws::StringStream ss;
   ss << "/admin";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return EnableOrganizationAdminAccountOutcome(EnableOrganizationAdminAccountResult(outcome.GetResult()));
-  }
-  else
-  {
-    return EnableOrganizationAdminAccountOutcome(outcome.GetError());
-  }
+  return EnableOrganizationAdminAccountOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 EnableOrganizationAdminAccountOutcomeCallable Macie2Client::EnableOrganizationAdminAccountCallable(const EnableOrganizationAdminAccountRequest& request) const
@@ -955,15 +779,7 @@ GetBucketStatisticsOutcome Macie2Client::GetBucketStatistics(const GetBucketStat
   Aws::StringStream ss;
   ss << "/datasources/s3/statistics";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetBucketStatisticsOutcome(GetBucketStatisticsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetBucketStatisticsOutcome(outcome.GetError());
-  }
+  return GetBucketStatisticsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetBucketStatisticsOutcomeCallable Macie2Client::GetBucketStatisticsCallable(const GetBucketStatisticsRequest& request) const
@@ -990,15 +806,7 @@ GetClassificationExportConfigurationOutcome Macie2Client::GetClassificationExpor
   Aws::StringStream ss;
   ss << "/classification-export-configuration";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetClassificationExportConfigurationOutcome(GetClassificationExportConfigurationResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetClassificationExportConfigurationOutcome(outcome.GetError());
-  }
+  return GetClassificationExportConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetClassificationExportConfigurationOutcomeCallable Macie2Client::GetClassificationExportConfigurationCallable(const GetClassificationExportConfigurationRequest& request) const
@@ -1031,15 +839,7 @@ GetCustomDataIdentifierOutcome Macie2Client::GetCustomDataIdentifier(const GetCu
   ss << "/custom-data-identifiers/";
   ss << request.GetId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetCustomDataIdentifierOutcome(GetCustomDataIdentifierResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetCustomDataIdentifierOutcome(outcome.GetError());
-  }
+  return GetCustomDataIdentifierOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetCustomDataIdentifierOutcomeCallable Macie2Client::GetCustomDataIdentifierCallable(const GetCustomDataIdentifierRequest& request) const
@@ -1066,15 +866,7 @@ GetFindingStatisticsOutcome Macie2Client::GetFindingStatistics(const GetFindingS
   Aws::StringStream ss;
   ss << "/findings/statistics";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetFindingStatisticsOutcome(GetFindingStatisticsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetFindingStatisticsOutcome(outcome.GetError());
-  }
+  return GetFindingStatisticsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetFindingStatisticsOutcomeCallable Macie2Client::GetFindingStatisticsCallable(const GetFindingStatisticsRequest& request) const
@@ -1101,15 +893,7 @@ GetFindingsOutcome Macie2Client::GetFindings(const GetFindingsRequest& request) 
   Aws::StringStream ss;
   ss << "/findings/describe";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetFindingsOutcome(GetFindingsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetFindingsOutcome(outcome.GetError());
-  }
+  return GetFindingsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetFindingsOutcomeCallable Macie2Client::GetFindingsCallable(const GetFindingsRequest& request) const
@@ -1142,15 +926,7 @@ GetFindingsFilterOutcome Macie2Client::GetFindingsFilter(const GetFindingsFilter
   ss << "/findingsfilters/";
   ss << request.GetId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetFindingsFilterOutcome(GetFindingsFilterResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetFindingsFilterOutcome(outcome.GetError());
-  }
+  return GetFindingsFilterOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetFindingsFilterOutcomeCallable Macie2Client::GetFindingsFilterCallable(const GetFindingsFilterRequest& request) const
@@ -1177,15 +953,7 @@ GetInvitationsCountOutcome Macie2Client::GetInvitationsCount(const GetInvitation
   Aws::StringStream ss;
   ss << "/invitations/count";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetInvitationsCountOutcome(GetInvitationsCountResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetInvitationsCountOutcome(outcome.GetError());
-  }
+  return GetInvitationsCountOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetInvitationsCountOutcomeCallable Macie2Client::GetInvitationsCountCallable(const GetInvitationsCountRequest& request) const
@@ -1212,15 +980,7 @@ GetMacieSessionOutcome Macie2Client::GetMacieSession(const GetMacieSessionReques
   Aws::StringStream ss;
   ss << "/macie";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetMacieSessionOutcome(GetMacieSessionResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetMacieSessionOutcome(outcome.GetError());
-  }
+  return GetMacieSessionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetMacieSessionOutcomeCallable Macie2Client::GetMacieSessionCallable(const GetMacieSessionRequest& request) const
@@ -1247,15 +1007,7 @@ GetMasterAccountOutcome Macie2Client::GetMasterAccount(const GetMasterAccountReq
   Aws::StringStream ss;
   ss << "/master";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetMasterAccountOutcome(GetMasterAccountResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetMasterAccountOutcome(outcome.GetError());
-  }
+  return GetMasterAccountOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetMasterAccountOutcomeCallable Macie2Client::GetMasterAccountCallable(const GetMasterAccountRequest& request) const
@@ -1288,15 +1040,7 @@ GetMemberOutcome Macie2Client::GetMember(const GetMemberRequest& request) const
   ss << "/members/";
   ss << request.GetId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetMemberOutcome(GetMemberResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetMemberOutcome(outcome.GetError());
-  }
+  return GetMemberOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetMemberOutcomeCallable Macie2Client::GetMemberCallable(const GetMemberRequest& request) const
@@ -1323,15 +1067,7 @@ GetUsageStatisticsOutcome Macie2Client::GetUsageStatistics(const GetUsageStatist
   Aws::StringStream ss;
   ss << "/usage/statistics";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetUsageStatisticsOutcome(GetUsageStatisticsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetUsageStatisticsOutcome(outcome.GetError());
-  }
+  return GetUsageStatisticsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetUsageStatisticsOutcomeCallable Macie2Client::GetUsageStatisticsCallable(const GetUsageStatisticsRequest& request) const
@@ -1358,15 +1094,7 @@ GetUsageTotalsOutcome Macie2Client::GetUsageTotals(const GetUsageTotalsRequest& 
   Aws::StringStream ss;
   ss << "/usage";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetUsageTotalsOutcome(GetUsageTotalsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetUsageTotalsOutcome(outcome.GetError());
-  }
+  return GetUsageTotalsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetUsageTotalsOutcomeCallable Macie2Client::GetUsageTotalsCallable(const GetUsageTotalsRequest& request) const
@@ -1393,15 +1121,7 @@ ListClassificationJobsOutcome Macie2Client::ListClassificationJobs(const ListCla
   Aws::StringStream ss;
   ss << "/jobs/list";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListClassificationJobsOutcome(ListClassificationJobsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListClassificationJobsOutcome(outcome.GetError());
-  }
+  return ListClassificationJobsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListClassificationJobsOutcomeCallable Macie2Client::ListClassificationJobsCallable(const ListClassificationJobsRequest& request) const
@@ -1428,15 +1148,7 @@ ListCustomDataIdentifiersOutcome Macie2Client::ListCustomDataIdentifiers(const L
   Aws::StringStream ss;
   ss << "/custom-data-identifiers/list";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListCustomDataIdentifiersOutcome(ListCustomDataIdentifiersResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListCustomDataIdentifiersOutcome(outcome.GetError());
-  }
+  return ListCustomDataIdentifiersOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListCustomDataIdentifiersOutcomeCallable Macie2Client::ListCustomDataIdentifiersCallable(const ListCustomDataIdentifiersRequest& request) const
@@ -1463,15 +1175,7 @@ ListFindingsOutcome Macie2Client::ListFindings(const ListFindingsRequest& reques
   Aws::StringStream ss;
   ss << "/findings";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListFindingsOutcome(ListFindingsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListFindingsOutcome(outcome.GetError());
-  }
+  return ListFindingsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListFindingsOutcomeCallable Macie2Client::ListFindingsCallable(const ListFindingsRequest& request) const
@@ -1498,15 +1202,7 @@ ListFindingsFiltersOutcome Macie2Client::ListFindingsFilters(const ListFindingsF
   Aws::StringStream ss;
   ss << "/findingsfilters";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListFindingsFiltersOutcome(ListFindingsFiltersResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListFindingsFiltersOutcome(outcome.GetError());
-  }
+  return ListFindingsFiltersOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListFindingsFiltersOutcomeCallable Macie2Client::ListFindingsFiltersCallable(const ListFindingsFiltersRequest& request) const
@@ -1533,15 +1229,7 @@ ListInvitationsOutcome Macie2Client::ListInvitations(const ListInvitationsReques
   Aws::StringStream ss;
   ss << "/invitations";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListInvitationsOutcome(ListInvitationsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListInvitationsOutcome(outcome.GetError());
-  }
+  return ListInvitationsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListInvitationsOutcomeCallable Macie2Client::ListInvitationsCallable(const ListInvitationsRequest& request) const
@@ -1568,15 +1256,7 @@ ListMembersOutcome Macie2Client::ListMembers(const ListMembersRequest& request) 
   Aws::StringStream ss;
   ss << "/members";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListMembersOutcome(ListMembersResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListMembersOutcome(outcome.GetError());
-  }
+  return ListMembersOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListMembersOutcomeCallable Macie2Client::ListMembersCallable(const ListMembersRequest& request) const
@@ -1603,15 +1283,7 @@ ListOrganizationAdminAccountsOutcome Macie2Client::ListOrganizationAdminAccounts
   Aws::StringStream ss;
   ss << "/admin";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListOrganizationAdminAccountsOutcome(ListOrganizationAdminAccountsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListOrganizationAdminAccountsOutcome(outcome.GetError());
-  }
+  return ListOrganizationAdminAccountsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListOrganizationAdminAccountsOutcomeCallable Macie2Client::ListOrganizationAdminAccountsCallable(const ListOrganizationAdminAccountsRequest& request) const
@@ -1644,15 +1316,7 @@ ListTagsForResourceOutcome Macie2Client::ListTagsForResource(const ListTagsForRe
   ss << "/tags/";
   ss << request.GetResourceArn();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListTagsForResourceOutcome(ListTagsForResourceResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListTagsForResourceOutcome(outcome.GetError());
-  }
+  return ListTagsForResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListTagsForResourceOutcomeCallable Macie2Client::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
@@ -1679,15 +1343,7 @@ PutClassificationExportConfigurationOutcome Macie2Client::PutClassificationExpor
   Aws::StringStream ss;
   ss << "/classification-export-configuration";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return PutClassificationExportConfigurationOutcome(PutClassificationExportConfigurationResult(outcome.GetResult()));
-  }
-  else
-  {
-    return PutClassificationExportConfigurationOutcome(outcome.GetError());
-  }
+  return PutClassificationExportConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 PutClassificationExportConfigurationOutcomeCallable Macie2Client::PutClassificationExportConfigurationCallable(const PutClassificationExportConfigurationRequest& request) const
@@ -1720,15 +1376,7 @@ TagResourceOutcome Macie2Client::TagResource(const TagResourceRequest& request) 
   ss << "/tags/";
   ss << request.GetResourceArn();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return TagResourceOutcome(TagResourceResult(outcome.GetResult()));
-  }
-  else
-  {
-    return TagResourceOutcome(outcome.GetError());
-  }
+  return TagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 TagResourceOutcomeCallable Macie2Client::TagResourceCallable(const TagResourceRequest& request) const
@@ -1755,15 +1403,7 @@ TestCustomDataIdentifierOutcome Macie2Client::TestCustomDataIdentifier(const Tes
   Aws::StringStream ss;
   ss << "/custom-data-identifiers/test";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return TestCustomDataIdentifierOutcome(TestCustomDataIdentifierResult(outcome.GetResult()));
-  }
-  else
-  {
-    return TestCustomDataIdentifierOutcome(outcome.GetError());
-  }
+  return TestCustomDataIdentifierOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 TestCustomDataIdentifierOutcomeCallable Macie2Client::TestCustomDataIdentifierCallable(const TestCustomDataIdentifierRequest& request) const
@@ -1801,15 +1441,7 @@ UntagResourceOutcome Macie2Client::UntagResource(const UntagResourceRequest& req
   ss << "/tags/";
   ss << request.GetResourceArn();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UntagResourceOutcome(UntagResourceResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UntagResourceOutcome(outcome.GetError());
-  }
+  return UntagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 UntagResourceOutcomeCallable Macie2Client::UntagResourceCallable(const UntagResourceRequest& request) const
@@ -1842,15 +1474,7 @@ UpdateClassificationJobOutcome Macie2Client::UpdateClassificationJob(const Updat
   ss << "/jobs/";
   ss << request.GetJobId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateClassificationJobOutcome(UpdateClassificationJobResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateClassificationJobOutcome(outcome.GetError());
-  }
+  return UpdateClassificationJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateClassificationJobOutcomeCallable Macie2Client::UpdateClassificationJobCallable(const UpdateClassificationJobRequest& request) const
@@ -1883,15 +1507,7 @@ UpdateFindingsFilterOutcome Macie2Client::UpdateFindingsFilter(const UpdateFindi
   ss << "/findingsfilters/";
   ss << request.GetId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateFindingsFilterOutcome(UpdateFindingsFilterResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateFindingsFilterOutcome(outcome.GetError());
-  }
+  return UpdateFindingsFilterOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateFindingsFilterOutcomeCallable Macie2Client::UpdateFindingsFilterCallable(const UpdateFindingsFilterRequest& request) const
@@ -1918,15 +1534,7 @@ UpdateMacieSessionOutcome Macie2Client::UpdateMacieSession(const UpdateMacieSess
   Aws::StringStream ss;
   ss << "/macie";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateMacieSessionOutcome(UpdateMacieSessionResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateMacieSessionOutcome(outcome.GetError());
-  }
+  return UpdateMacieSessionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateMacieSessionOutcomeCallable Macie2Client::UpdateMacieSessionCallable(const UpdateMacieSessionRequest& request) const
@@ -1959,15 +1567,7 @@ UpdateMemberSessionOutcome Macie2Client::UpdateMemberSession(const UpdateMemberS
   ss << "/macie/members/";
   ss << request.GetId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateMemberSessionOutcome(UpdateMemberSessionResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateMemberSessionOutcome(outcome.GetError());
-  }
+  return UpdateMemberSessionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateMemberSessionOutcomeCallable Macie2Client::UpdateMemberSessionCallable(const UpdateMemberSessionRequest& request) const
@@ -1994,15 +1594,7 @@ UpdateOrganizationConfigurationOutcome Macie2Client::UpdateOrganizationConfigura
   Aws::StringStream ss;
   ss << "/admin/configuration";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateOrganizationConfigurationOutcome(UpdateOrganizationConfigurationResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateOrganizationConfigurationOutcome(outcome.GetError());
-  }
+  return UpdateOrganizationConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateOrganizationConfigurationOutcomeCallable Macie2Client::UpdateOrganizationConfigurationCallable(const UpdateOrganizationConfigurationRequest& request) const

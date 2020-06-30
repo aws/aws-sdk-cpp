@@ -6,18 +6,27 @@
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/ecr/ECRErrors.h>
+#include <aws/ecr/model/InvalidLayerPartException.h>
 
 using namespace Aws::Client;
-using namespace Aws::ECR;
 using namespace Aws::Utils;
+using namespace Aws::ECR;
+using namespace Aws::ECR::Model;
 
 namespace Aws
 {
 namespace ECR
 {
+template<> AWS_ECR_API InvalidLayerPartException ECRError::GetModeledError()
+{
+  assert(this->GetErrorType() == ECRErrors::INVALID_LAYER_PART);
+  return InvalidLayerPartException(this->GetJsonPayload().View());
+}
+
 namespace ECRErrorMapper
 {
 
+static const int IMAGE_DIGEST_DOES_NOT_MATCH_HASH = HashingUtils::HashString("ImageDigestDoesNotMatchException");
 static const int IMAGE_TAG_ALREADY_EXISTS_HASH = HashingUtils::HashString("ImageTagAlreadyExistsException");
 static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
 static const int LAYER_INACCESSIBLE_HASH = HashingUtils::HashString("LayerInaccessibleException");
@@ -50,7 +59,11 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == IMAGE_TAG_ALREADY_EXISTS_HASH)
+  if (hashCode == IMAGE_DIGEST_DOES_NOT_MATCH_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ECRErrors::IMAGE_DIGEST_DOES_NOT_MATCH), false);
+  }
+  else if (hashCode == IMAGE_TAG_ALREADY_EXISTS_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ECRErrors::IMAGE_TAG_ALREADY_EXISTS), false);
   }

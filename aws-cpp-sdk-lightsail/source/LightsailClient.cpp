@@ -149,7 +149,7 @@ static const char* ALLOCATION_TAG = "LightsailClient";
 LightsailClient::LightsailClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-        SERVICE_NAME, clientConfiguration.region),
+        SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<LightsailErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -159,7 +159,7 @@ LightsailClient::LightsailClient(const Client::ClientConfiguration& clientConfig
 LightsailClient::LightsailClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-         SERVICE_NAME, clientConfiguration.region),
+         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<LightsailErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -170,7 +170,7 @@ LightsailClient::LightsailClient(const std::shared_ptr<AWSCredentialsProvider>& 
   const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider,
-         SERVICE_NAME, clientConfiguration.region),
+         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<LightsailErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -212,15 +212,7 @@ AllocateStaticIpOutcome LightsailClient::AllocateStaticIp(const AllocateStaticIp
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return AllocateStaticIpOutcome(AllocateStaticIpResult(outcome.GetResult()));
-  }
-  else
-  {
-    return AllocateStaticIpOutcome(outcome.GetError());
-  }
+  return AllocateStaticIpOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 AllocateStaticIpOutcomeCallable LightsailClient::AllocateStaticIpCallable(const AllocateStaticIpRequest& request) const
@@ -247,15 +239,7 @@ AttachDiskOutcome LightsailClient::AttachDisk(const AttachDiskRequest& request) 
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return AttachDiskOutcome(AttachDiskResult(outcome.GetResult()));
-  }
-  else
-  {
-    return AttachDiskOutcome(outcome.GetError());
-  }
+  return AttachDiskOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 AttachDiskOutcomeCallable LightsailClient::AttachDiskCallable(const AttachDiskRequest& request) const
@@ -282,15 +266,7 @@ AttachInstancesToLoadBalancerOutcome LightsailClient::AttachInstancesToLoadBalan
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return AttachInstancesToLoadBalancerOutcome(AttachInstancesToLoadBalancerResult(outcome.GetResult()));
-  }
-  else
-  {
-    return AttachInstancesToLoadBalancerOutcome(outcome.GetError());
-  }
+  return AttachInstancesToLoadBalancerOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 AttachInstancesToLoadBalancerOutcomeCallable LightsailClient::AttachInstancesToLoadBalancerCallable(const AttachInstancesToLoadBalancerRequest& request) const
@@ -317,15 +293,7 @@ AttachLoadBalancerTlsCertificateOutcome LightsailClient::AttachLoadBalancerTlsCe
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return AttachLoadBalancerTlsCertificateOutcome(AttachLoadBalancerTlsCertificateResult(outcome.GetResult()));
-  }
-  else
-  {
-    return AttachLoadBalancerTlsCertificateOutcome(outcome.GetError());
-  }
+  return AttachLoadBalancerTlsCertificateOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 AttachLoadBalancerTlsCertificateOutcomeCallable LightsailClient::AttachLoadBalancerTlsCertificateCallable(const AttachLoadBalancerTlsCertificateRequest& request) const
@@ -352,15 +320,7 @@ AttachStaticIpOutcome LightsailClient::AttachStaticIp(const AttachStaticIpReques
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return AttachStaticIpOutcome(AttachStaticIpResult(outcome.GetResult()));
-  }
-  else
-  {
-    return AttachStaticIpOutcome(outcome.GetError());
-  }
+  return AttachStaticIpOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 AttachStaticIpOutcomeCallable LightsailClient::AttachStaticIpCallable(const AttachStaticIpRequest& request) const
@@ -387,15 +347,7 @@ CloseInstancePublicPortsOutcome LightsailClient::CloseInstancePublicPorts(const 
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CloseInstancePublicPortsOutcome(CloseInstancePublicPortsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CloseInstancePublicPortsOutcome(outcome.GetError());
-  }
+  return CloseInstancePublicPortsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CloseInstancePublicPortsOutcomeCallable LightsailClient::CloseInstancePublicPortsCallable(const CloseInstancePublicPortsRequest& request) const
@@ -422,15 +374,7 @@ CopySnapshotOutcome LightsailClient::CopySnapshot(const CopySnapshotRequest& req
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CopySnapshotOutcome(CopySnapshotResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CopySnapshotOutcome(outcome.GetError());
-  }
+  return CopySnapshotOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CopySnapshotOutcomeCallable LightsailClient::CopySnapshotCallable(const CopySnapshotRequest& request) const
@@ -457,15 +401,7 @@ CreateCloudFormationStackOutcome LightsailClient::CreateCloudFormationStack(cons
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateCloudFormationStackOutcome(CreateCloudFormationStackResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateCloudFormationStackOutcome(outcome.GetError());
-  }
+  return CreateCloudFormationStackOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateCloudFormationStackOutcomeCallable LightsailClient::CreateCloudFormationStackCallable(const CreateCloudFormationStackRequest& request) const
@@ -492,15 +428,7 @@ CreateContactMethodOutcome LightsailClient::CreateContactMethod(const CreateCont
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateContactMethodOutcome(CreateContactMethodResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateContactMethodOutcome(outcome.GetError());
-  }
+  return CreateContactMethodOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateContactMethodOutcomeCallable LightsailClient::CreateContactMethodCallable(const CreateContactMethodRequest& request) const
@@ -527,15 +455,7 @@ CreateDiskOutcome LightsailClient::CreateDisk(const CreateDiskRequest& request) 
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateDiskOutcome(CreateDiskResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateDiskOutcome(outcome.GetError());
-  }
+  return CreateDiskOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateDiskOutcomeCallable LightsailClient::CreateDiskCallable(const CreateDiskRequest& request) const
@@ -562,15 +482,7 @@ CreateDiskFromSnapshotOutcome LightsailClient::CreateDiskFromSnapshot(const Crea
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateDiskFromSnapshotOutcome(CreateDiskFromSnapshotResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateDiskFromSnapshotOutcome(outcome.GetError());
-  }
+  return CreateDiskFromSnapshotOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateDiskFromSnapshotOutcomeCallable LightsailClient::CreateDiskFromSnapshotCallable(const CreateDiskFromSnapshotRequest& request) const
@@ -597,15 +509,7 @@ CreateDiskSnapshotOutcome LightsailClient::CreateDiskSnapshot(const CreateDiskSn
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateDiskSnapshotOutcome(CreateDiskSnapshotResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateDiskSnapshotOutcome(outcome.GetError());
-  }
+  return CreateDiskSnapshotOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateDiskSnapshotOutcomeCallable LightsailClient::CreateDiskSnapshotCallable(const CreateDiskSnapshotRequest& request) const
@@ -632,15 +536,7 @@ CreateDomainOutcome LightsailClient::CreateDomain(const CreateDomainRequest& req
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateDomainOutcome(CreateDomainResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateDomainOutcome(outcome.GetError());
-  }
+  return CreateDomainOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateDomainOutcomeCallable LightsailClient::CreateDomainCallable(const CreateDomainRequest& request) const
@@ -667,15 +563,7 @@ CreateDomainEntryOutcome LightsailClient::CreateDomainEntry(const CreateDomainEn
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateDomainEntryOutcome(CreateDomainEntryResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateDomainEntryOutcome(outcome.GetError());
-  }
+  return CreateDomainEntryOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateDomainEntryOutcomeCallable LightsailClient::CreateDomainEntryCallable(const CreateDomainEntryRequest& request) const
@@ -702,15 +590,7 @@ CreateInstanceSnapshotOutcome LightsailClient::CreateInstanceSnapshot(const Crea
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateInstanceSnapshotOutcome(CreateInstanceSnapshotResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateInstanceSnapshotOutcome(outcome.GetError());
-  }
+  return CreateInstanceSnapshotOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateInstanceSnapshotOutcomeCallable LightsailClient::CreateInstanceSnapshotCallable(const CreateInstanceSnapshotRequest& request) const
@@ -737,15 +617,7 @@ CreateInstancesOutcome LightsailClient::CreateInstances(const CreateInstancesReq
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateInstancesOutcome(CreateInstancesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateInstancesOutcome(outcome.GetError());
-  }
+  return CreateInstancesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateInstancesOutcomeCallable LightsailClient::CreateInstancesCallable(const CreateInstancesRequest& request) const
@@ -772,15 +644,7 @@ CreateInstancesFromSnapshotOutcome LightsailClient::CreateInstancesFromSnapshot(
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateInstancesFromSnapshotOutcome(CreateInstancesFromSnapshotResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateInstancesFromSnapshotOutcome(outcome.GetError());
-  }
+  return CreateInstancesFromSnapshotOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateInstancesFromSnapshotOutcomeCallable LightsailClient::CreateInstancesFromSnapshotCallable(const CreateInstancesFromSnapshotRequest& request) const
@@ -807,15 +671,7 @@ CreateKeyPairOutcome LightsailClient::CreateKeyPair(const CreateKeyPairRequest& 
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateKeyPairOutcome(CreateKeyPairResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateKeyPairOutcome(outcome.GetError());
-  }
+  return CreateKeyPairOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateKeyPairOutcomeCallable LightsailClient::CreateKeyPairCallable(const CreateKeyPairRequest& request) const
@@ -842,15 +698,7 @@ CreateLoadBalancerOutcome LightsailClient::CreateLoadBalancer(const CreateLoadBa
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateLoadBalancerOutcome(CreateLoadBalancerResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateLoadBalancerOutcome(outcome.GetError());
-  }
+  return CreateLoadBalancerOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateLoadBalancerOutcomeCallable LightsailClient::CreateLoadBalancerCallable(const CreateLoadBalancerRequest& request) const
@@ -877,15 +725,7 @@ CreateLoadBalancerTlsCertificateOutcome LightsailClient::CreateLoadBalancerTlsCe
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateLoadBalancerTlsCertificateOutcome(CreateLoadBalancerTlsCertificateResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateLoadBalancerTlsCertificateOutcome(outcome.GetError());
-  }
+  return CreateLoadBalancerTlsCertificateOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateLoadBalancerTlsCertificateOutcomeCallable LightsailClient::CreateLoadBalancerTlsCertificateCallable(const CreateLoadBalancerTlsCertificateRequest& request) const
@@ -912,15 +752,7 @@ CreateRelationalDatabaseOutcome LightsailClient::CreateRelationalDatabase(const 
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateRelationalDatabaseOutcome(CreateRelationalDatabaseResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateRelationalDatabaseOutcome(outcome.GetError());
-  }
+  return CreateRelationalDatabaseOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateRelationalDatabaseOutcomeCallable LightsailClient::CreateRelationalDatabaseCallable(const CreateRelationalDatabaseRequest& request) const
@@ -947,15 +779,7 @@ CreateRelationalDatabaseFromSnapshotOutcome LightsailClient::CreateRelationalDat
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateRelationalDatabaseFromSnapshotOutcome(CreateRelationalDatabaseFromSnapshotResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateRelationalDatabaseFromSnapshotOutcome(outcome.GetError());
-  }
+  return CreateRelationalDatabaseFromSnapshotOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateRelationalDatabaseFromSnapshotOutcomeCallable LightsailClient::CreateRelationalDatabaseFromSnapshotCallable(const CreateRelationalDatabaseFromSnapshotRequest& request) const
@@ -982,15 +806,7 @@ CreateRelationalDatabaseSnapshotOutcome LightsailClient::CreateRelationalDatabas
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateRelationalDatabaseSnapshotOutcome(CreateRelationalDatabaseSnapshotResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateRelationalDatabaseSnapshotOutcome(outcome.GetError());
-  }
+  return CreateRelationalDatabaseSnapshotOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateRelationalDatabaseSnapshotOutcomeCallable LightsailClient::CreateRelationalDatabaseSnapshotCallable(const CreateRelationalDatabaseSnapshotRequest& request) const
@@ -1017,15 +833,7 @@ DeleteAlarmOutcome LightsailClient::DeleteAlarm(const DeleteAlarmRequest& reques
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteAlarmOutcome(DeleteAlarmResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteAlarmOutcome(outcome.GetError());
-  }
+  return DeleteAlarmOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteAlarmOutcomeCallable LightsailClient::DeleteAlarmCallable(const DeleteAlarmRequest& request) const
@@ -1052,15 +860,7 @@ DeleteAutoSnapshotOutcome LightsailClient::DeleteAutoSnapshot(const DeleteAutoSn
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteAutoSnapshotOutcome(DeleteAutoSnapshotResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteAutoSnapshotOutcome(outcome.GetError());
-  }
+  return DeleteAutoSnapshotOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteAutoSnapshotOutcomeCallable LightsailClient::DeleteAutoSnapshotCallable(const DeleteAutoSnapshotRequest& request) const
@@ -1087,15 +887,7 @@ DeleteContactMethodOutcome LightsailClient::DeleteContactMethod(const DeleteCont
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteContactMethodOutcome(DeleteContactMethodResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteContactMethodOutcome(outcome.GetError());
-  }
+  return DeleteContactMethodOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteContactMethodOutcomeCallable LightsailClient::DeleteContactMethodCallable(const DeleteContactMethodRequest& request) const
@@ -1122,15 +914,7 @@ DeleteDiskOutcome LightsailClient::DeleteDisk(const DeleteDiskRequest& request) 
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteDiskOutcome(DeleteDiskResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteDiskOutcome(outcome.GetError());
-  }
+  return DeleteDiskOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteDiskOutcomeCallable LightsailClient::DeleteDiskCallable(const DeleteDiskRequest& request) const
@@ -1157,15 +941,7 @@ DeleteDiskSnapshotOutcome LightsailClient::DeleteDiskSnapshot(const DeleteDiskSn
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteDiskSnapshotOutcome(DeleteDiskSnapshotResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteDiskSnapshotOutcome(outcome.GetError());
-  }
+  return DeleteDiskSnapshotOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteDiskSnapshotOutcomeCallable LightsailClient::DeleteDiskSnapshotCallable(const DeleteDiskSnapshotRequest& request) const
@@ -1192,15 +968,7 @@ DeleteDomainOutcome LightsailClient::DeleteDomain(const DeleteDomainRequest& req
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteDomainOutcome(DeleteDomainResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteDomainOutcome(outcome.GetError());
-  }
+  return DeleteDomainOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteDomainOutcomeCallable LightsailClient::DeleteDomainCallable(const DeleteDomainRequest& request) const
@@ -1227,15 +995,7 @@ DeleteDomainEntryOutcome LightsailClient::DeleteDomainEntry(const DeleteDomainEn
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteDomainEntryOutcome(DeleteDomainEntryResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteDomainEntryOutcome(outcome.GetError());
-  }
+  return DeleteDomainEntryOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteDomainEntryOutcomeCallable LightsailClient::DeleteDomainEntryCallable(const DeleteDomainEntryRequest& request) const
@@ -1262,15 +1022,7 @@ DeleteInstanceOutcome LightsailClient::DeleteInstance(const DeleteInstanceReques
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteInstanceOutcome(DeleteInstanceResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteInstanceOutcome(outcome.GetError());
-  }
+  return DeleteInstanceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteInstanceOutcomeCallable LightsailClient::DeleteInstanceCallable(const DeleteInstanceRequest& request) const
@@ -1297,15 +1049,7 @@ DeleteInstanceSnapshotOutcome LightsailClient::DeleteInstanceSnapshot(const Dele
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteInstanceSnapshotOutcome(DeleteInstanceSnapshotResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteInstanceSnapshotOutcome(outcome.GetError());
-  }
+  return DeleteInstanceSnapshotOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteInstanceSnapshotOutcomeCallable LightsailClient::DeleteInstanceSnapshotCallable(const DeleteInstanceSnapshotRequest& request) const
@@ -1332,15 +1076,7 @@ DeleteKeyPairOutcome LightsailClient::DeleteKeyPair(const DeleteKeyPairRequest& 
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteKeyPairOutcome(DeleteKeyPairResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteKeyPairOutcome(outcome.GetError());
-  }
+  return DeleteKeyPairOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteKeyPairOutcomeCallable LightsailClient::DeleteKeyPairCallable(const DeleteKeyPairRequest& request) const
@@ -1367,15 +1103,7 @@ DeleteKnownHostKeysOutcome LightsailClient::DeleteKnownHostKeys(const DeleteKnow
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteKnownHostKeysOutcome(DeleteKnownHostKeysResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteKnownHostKeysOutcome(outcome.GetError());
-  }
+  return DeleteKnownHostKeysOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteKnownHostKeysOutcomeCallable LightsailClient::DeleteKnownHostKeysCallable(const DeleteKnownHostKeysRequest& request) const
@@ -1402,15 +1130,7 @@ DeleteLoadBalancerOutcome LightsailClient::DeleteLoadBalancer(const DeleteLoadBa
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteLoadBalancerOutcome(DeleteLoadBalancerResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteLoadBalancerOutcome(outcome.GetError());
-  }
+  return DeleteLoadBalancerOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteLoadBalancerOutcomeCallable LightsailClient::DeleteLoadBalancerCallable(const DeleteLoadBalancerRequest& request) const
@@ -1437,15 +1157,7 @@ DeleteLoadBalancerTlsCertificateOutcome LightsailClient::DeleteLoadBalancerTlsCe
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteLoadBalancerTlsCertificateOutcome(DeleteLoadBalancerTlsCertificateResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteLoadBalancerTlsCertificateOutcome(outcome.GetError());
-  }
+  return DeleteLoadBalancerTlsCertificateOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteLoadBalancerTlsCertificateOutcomeCallable LightsailClient::DeleteLoadBalancerTlsCertificateCallable(const DeleteLoadBalancerTlsCertificateRequest& request) const
@@ -1472,15 +1184,7 @@ DeleteRelationalDatabaseOutcome LightsailClient::DeleteRelationalDatabase(const 
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteRelationalDatabaseOutcome(DeleteRelationalDatabaseResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteRelationalDatabaseOutcome(outcome.GetError());
-  }
+  return DeleteRelationalDatabaseOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteRelationalDatabaseOutcomeCallable LightsailClient::DeleteRelationalDatabaseCallable(const DeleteRelationalDatabaseRequest& request) const
@@ -1507,15 +1211,7 @@ DeleteRelationalDatabaseSnapshotOutcome LightsailClient::DeleteRelationalDatabas
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteRelationalDatabaseSnapshotOutcome(DeleteRelationalDatabaseSnapshotResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteRelationalDatabaseSnapshotOutcome(outcome.GetError());
-  }
+  return DeleteRelationalDatabaseSnapshotOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteRelationalDatabaseSnapshotOutcomeCallable LightsailClient::DeleteRelationalDatabaseSnapshotCallable(const DeleteRelationalDatabaseSnapshotRequest& request) const
@@ -1542,15 +1238,7 @@ DetachDiskOutcome LightsailClient::DetachDisk(const DetachDiskRequest& request) 
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DetachDiskOutcome(DetachDiskResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DetachDiskOutcome(outcome.GetError());
-  }
+  return DetachDiskOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DetachDiskOutcomeCallable LightsailClient::DetachDiskCallable(const DetachDiskRequest& request) const
@@ -1577,15 +1265,7 @@ DetachInstancesFromLoadBalancerOutcome LightsailClient::DetachInstancesFromLoadB
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DetachInstancesFromLoadBalancerOutcome(DetachInstancesFromLoadBalancerResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DetachInstancesFromLoadBalancerOutcome(outcome.GetError());
-  }
+  return DetachInstancesFromLoadBalancerOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DetachInstancesFromLoadBalancerOutcomeCallable LightsailClient::DetachInstancesFromLoadBalancerCallable(const DetachInstancesFromLoadBalancerRequest& request) const
@@ -1612,15 +1292,7 @@ DetachStaticIpOutcome LightsailClient::DetachStaticIp(const DetachStaticIpReques
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DetachStaticIpOutcome(DetachStaticIpResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DetachStaticIpOutcome(outcome.GetError());
-  }
+  return DetachStaticIpOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DetachStaticIpOutcomeCallable LightsailClient::DetachStaticIpCallable(const DetachStaticIpRequest& request) const
@@ -1647,15 +1319,7 @@ DisableAddOnOutcome LightsailClient::DisableAddOn(const DisableAddOnRequest& req
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DisableAddOnOutcome(DisableAddOnResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DisableAddOnOutcome(outcome.GetError());
-  }
+  return DisableAddOnOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DisableAddOnOutcomeCallable LightsailClient::DisableAddOnCallable(const DisableAddOnRequest& request) const
@@ -1682,15 +1346,7 @@ DownloadDefaultKeyPairOutcome LightsailClient::DownloadDefaultKeyPair(const Down
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DownloadDefaultKeyPairOutcome(DownloadDefaultKeyPairResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DownloadDefaultKeyPairOutcome(outcome.GetError());
-  }
+  return DownloadDefaultKeyPairOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DownloadDefaultKeyPairOutcomeCallable LightsailClient::DownloadDefaultKeyPairCallable(const DownloadDefaultKeyPairRequest& request) const
@@ -1717,15 +1373,7 @@ EnableAddOnOutcome LightsailClient::EnableAddOn(const EnableAddOnRequest& reques
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return EnableAddOnOutcome(EnableAddOnResult(outcome.GetResult()));
-  }
-  else
-  {
-    return EnableAddOnOutcome(outcome.GetError());
-  }
+  return EnableAddOnOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 EnableAddOnOutcomeCallable LightsailClient::EnableAddOnCallable(const EnableAddOnRequest& request) const
@@ -1752,15 +1400,7 @@ ExportSnapshotOutcome LightsailClient::ExportSnapshot(const ExportSnapshotReques
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ExportSnapshotOutcome(ExportSnapshotResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ExportSnapshotOutcome(outcome.GetError());
-  }
+  return ExportSnapshotOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ExportSnapshotOutcomeCallable LightsailClient::ExportSnapshotCallable(const ExportSnapshotRequest& request) const
@@ -1787,15 +1427,7 @@ GetActiveNamesOutcome LightsailClient::GetActiveNames(const GetActiveNamesReques
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetActiveNamesOutcome(GetActiveNamesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetActiveNamesOutcome(outcome.GetError());
-  }
+  return GetActiveNamesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetActiveNamesOutcomeCallable LightsailClient::GetActiveNamesCallable(const GetActiveNamesRequest& request) const
@@ -1822,15 +1454,7 @@ GetAlarmsOutcome LightsailClient::GetAlarms(const GetAlarmsRequest& request) con
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetAlarmsOutcome(GetAlarmsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetAlarmsOutcome(outcome.GetError());
-  }
+  return GetAlarmsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetAlarmsOutcomeCallable LightsailClient::GetAlarmsCallable(const GetAlarmsRequest& request) const
@@ -1857,15 +1481,7 @@ GetAutoSnapshotsOutcome LightsailClient::GetAutoSnapshots(const GetAutoSnapshots
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetAutoSnapshotsOutcome(GetAutoSnapshotsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetAutoSnapshotsOutcome(outcome.GetError());
-  }
+  return GetAutoSnapshotsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetAutoSnapshotsOutcomeCallable LightsailClient::GetAutoSnapshotsCallable(const GetAutoSnapshotsRequest& request) const
@@ -1892,15 +1508,7 @@ GetBlueprintsOutcome LightsailClient::GetBlueprints(const GetBlueprintsRequest& 
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetBlueprintsOutcome(GetBlueprintsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetBlueprintsOutcome(outcome.GetError());
-  }
+  return GetBlueprintsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetBlueprintsOutcomeCallable LightsailClient::GetBlueprintsCallable(const GetBlueprintsRequest& request) const
@@ -1927,15 +1535,7 @@ GetBundlesOutcome LightsailClient::GetBundles(const GetBundlesRequest& request) 
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetBundlesOutcome(GetBundlesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetBundlesOutcome(outcome.GetError());
-  }
+  return GetBundlesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetBundlesOutcomeCallable LightsailClient::GetBundlesCallable(const GetBundlesRequest& request) const
@@ -1962,15 +1562,7 @@ GetCloudFormationStackRecordsOutcome LightsailClient::GetCloudFormationStackReco
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetCloudFormationStackRecordsOutcome(GetCloudFormationStackRecordsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetCloudFormationStackRecordsOutcome(outcome.GetError());
-  }
+  return GetCloudFormationStackRecordsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetCloudFormationStackRecordsOutcomeCallable LightsailClient::GetCloudFormationStackRecordsCallable(const GetCloudFormationStackRecordsRequest& request) const
@@ -1997,15 +1589,7 @@ GetContactMethodsOutcome LightsailClient::GetContactMethods(const GetContactMeth
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetContactMethodsOutcome(GetContactMethodsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetContactMethodsOutcome(outcome.GetError());
-  }
+  return GetContactMethodsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetContactMethodsOutcomeCallable LightsailClient::GetContactMethodsCallable(const GetContactMethodsRequest& request) const
@@ -2032,15 +1616,7 @@ GetDiskOutcome LightsailClient::GetDisk(const GetDiskRequest& request) const
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetDiskOutcome(GetDiskResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetDiskOutcome(outcome.GetError());
-  }
+  return GetDiskOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetDiskOutcomeCallable LightsailClient::GetDiskCallable(const GetDiskRequest& request) const
@@ -2067,15 +1643,7 @@ GetDiskSnapshotOutcome LightsailClient::GetDiskSnapshot(const GetDiskSnapshotReq
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetDiskSnapshotOutcome(GetDiskSnapshotResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetDiskSnapshotOutcome(outcome.GetError());
-  }
+  return GetDiskSnapshotOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetDiskSnapshotOutcomeCallable LightsailClient::GetDiskSnapshotCallable(const GetDiskSnapshotRequest& request) const
@@ -2102,15 +1670,7 @@ GetDiskSnapshotsOutcome LightsailClient::GetDiskSnapshots(const GetDiskSnapshots
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetDiskSnapshotsOutcome(GetDiskSnapshotsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetDiskSnapshotsOutcome(outcome.GetError());
-  }
+  return GetDiskSnapshotsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetDiskSnapshotsOutcomeCallable LightsailClient::GetDiskSnapshotsCallable(const GetDiskSnapshotsRequest& request) const
@@ -2137,15 +1697,7 @@ GetDisksOutcome LightsailClient::GetDisks(const GetDisksRequest& request) const
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetDisksOutcome(GetDisksResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetDisksOutcome(outcome.GetError());
-  }
+  return GetDisksOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetDisksOutcomeCallable LightsailClient::GetDisksCallable(const GetDisksRequest& request) const
@@ -2172,15 +1724,7 @@ GetDomainOutcome LightsailClient::GetDomain(const GetDomainRequest& request) con
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetDomainOutcome(GetDomainResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetDomainOutcome(outcome.GetError());
-  }
+  return GetDomainOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetDomainOutcomeCallable LightsailClient::GetDomainCallable(const GetDomainRequest& request) const
@@ -2207,15 +1751,7 @@ GetDomainsOutcome LightsailClient::GetDomains(const GetDomainsRequest& request) 
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetDomainsOutcome(GetDomainsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetDomainsOutcome(outcome.GetError());
-  }
+  return GetDomainsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetDomainsOutcomeCallable LightsailClient::GetDomainsCallable(const GetDomainsRequest& request) const
@@ -2242,15 +1778,7 @@ GetExportSnapshotRecordsOutcome LightsailClient::GetExportSnapshotRecords(const 
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetExportSnapshotRecordsOutcome(GetExportSnapshotRecordsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetExportSnapshotRecordsOutcome(outcome.GetError());
-  }
+  return GetExportSnapshotRecordsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetExportSnapshotRecordsOutcomeCallable LightsailClient::GetExportSnapshotRecordsCallable(const GetExportSnapshotRecordsRequest& request) const
@@ -2277,15 +1805,7 @@ GetInstanceOutcome LightsailClient::GetInstance(const GetInstanceRequest& reques
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetInstanceOutcome(GetInstanceResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetInstanceOutcome(outcome.GetError());
-  }
+  return GetInstanceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetInstanceOutcomeCallable LightsailClient::GetInstanceCallable(const GetInstanceRequest& request) const
@@ -2312,15 +1832,7 @@ GetInstanceAccessDetailsOutcome LightsailClient::GetInstanceAccessDetails(const 
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetInstanceAccessDetailsOutcome(GetInstanceAccessDetailsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetInstanceAccessDetailsOutcome(outcome.GetError());
-  }
+  return GetInstanceAccessDetailsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetInstanceAccessDetailsOutcomeCallable LightsailClient::GetInstanceAccessDetailsCallable(const GetInstanceAccessDetailsRequest& request) const
@@ -2347,15 +1859,7 @@ GetInstanceMetricDataOutcome LightsailClient::GetInstanceMetricData(const GetIns
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetInstanceMetricDataOutcome(GetInstanceMetricDataResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetInstanceMetricDataOutcome(outcome.GetError());
-  }
+  return GetInstanceMetricDataOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetInstanceMetricDataOutcomeCallable LightsailClient::GetInstanceMetricDataCallable(const GetInstanceMetricDataRequest& request) const
@@ -2382,15 +1886,7 @@ GetInstancePortStatesOutcome LightsailClient::GetInstancePortStates(const GetIns
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetInstancePortStatesOutcome(GetInstancePortStatesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetInstancePortStatesOutcome(outcome.GetError());
-  }
+  return GetInstancePortStatesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetInstancePortStatesOutcomeCallable LightsailClient::GetInstancePortStatesCallable(const GetInstancePortStatesRequest& request) const
@@ -2417,15 +1913,7 @@ GetInstanceSnapshotOutcome LightsailClient::GetInstanceSnapshot(const GetInstanc
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetInstanceSnapshotOutcome(GetInstanceSnapshotResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetInstanceSnapshotOutcome(outcome.GetError());
-  }
+  return GetInstanceSnapshotOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetInstanceSnapshotOutcomeCallable LightsailClient::GetInstanceSnapshotCallable(const GetInstanceSnapshotRequest& request) const
@@ -2452,15 +1940,7 @@ GetInstanceSnapshotsOutcome LightsailClient::GetInstanceSnapshots(const GetInsta
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetInstanceSnapshotsOutcome(GetInstanceSnapshotsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetInstanceSnapshotsOutcome(outcome.GetError());
-  }
+  return GetInstanceSnapshotsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetInstanceSnapshotsOutcomeCallable LightsailClient::GetInstanceSnapshotsCallable(const GetInstanceSnapshotsRequest& request) const
@@ -2487,15 +1967,7 @@ GetInstanceStateOutcome LightsailClient::GetInstanceState(const GetInstanceState
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetInstanceStateOutcome(GetInstanceStateResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetInstanceStateOutcome(outcome.GetError());
-  }
+  return GetInstanceStateOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetInstanceStateOutcomeCallable LightsailClient::GetInstanceStateCallable(const GetInstanceStateRequest& request) const
@@ -2522,15 +1994,7 @@ GetInstancesOutcome LightsailClient::GetInstances(const GetInstancesRequest& req
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetInstancesOutcome(GetInstancesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetInstancesOutcome(outcome.GetError());
-  }
+  return GetInstancesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetInstancesOutcomeCallable LightsailClient::GetInstancesCallable(const GetInstancesRequest& request) const
@@ -2557,15 +2021,7 @@ GetKeyPairOutcome LightsailClient::GetKeyPair(const GetKeyPairRequest& request) 
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetKeyPairOutcome(GetKeyPairResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetKeyPairOutcome(outcome.GetError());
-  }
+  return GetKeyPairOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetKeyPairOutcomeCallable LightsailClient::GetKeyPairCallable(const GetKeyPairRequest& request) const
@@ -2592,15 +2048,7 @@ GetKeyPairsOutcome LightsailClient::GetKeyPairs(const GetKeyPairsRequest& reques
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetKeyPairsOutcome(GetKeyPairsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetKeyPairsOutcome(outcome.GetError());
-  }
+  return GetKeyPairsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetKeyPairsOutcomeCallable LightsailClient::GetKeyPairsCallable(const GetKeyPairsRequest& request) const
@@ -2627,15 +2075,7 @@ GetLoadBalancerOutcome LightsailClient::GetLoadBalancer(const GetLoadBalancerReq
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetLoadBalancerOutcome(GetLoadBalancerResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetLoadBalancerOutcome(outcome.GetError());
-  }
+  return GetLoadBalancerOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetLoadBalancerOutcomeCallable LightsailClient::GetLoadBalancerCallable(const GetLoadBalancerRequest& request) const
@@ -2662,15 +2102,7 @@ GetLoadBalancerMetricDataOutcome LightsailClient::GetLoadBalancerMetricData(cons
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetLoadBalancerMetricDataOutcome(GetLoadBalancerMetricDataResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetLoadBalancerMetricDataOutcome(outcome.GetError());
-  }
+  return GetLoadBalancerMetricDataOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetLoadBalancerMetricDataOutcomeCallable LightsailClient::GetLoadBalancerMetricDataCallable(const GetLoadBalancerMetricDataRequest& request) const
@@ -2697,15 +2129,7 @@ GetLoadBalancerTlsCertificatesOutcome LightsailClient::GetLoadBalancerTlsCertifi
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetLoadBalancerTlsCertificatesOutcome(GetLoadBalancerTlsCertificatesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetLoadBalancerTlsCertificatesOutcome(outcome.GetError());
-  }
+  return GetLoadBalancerTlsCertificatesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetLoadBalancerTlsCertificatesOutcomeCallable LightsailClient::GetLoadBalancerTlsCertificatesCallable(const GetLoadBalancerTlsCertificatesRequest& request) const
@@ -2732,15 +2156,7 @@ GetLoadBalancersOutcome LightsailClient::GetLoadBalancers(const GetLoadBalancers
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetLoadBalancersOutcome(GetLoadBalancersResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetLoadBalancersOutcome(outcome.GetError());
-  }
+  return GetLoadBalancersOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetLoadBalancersOutcomeCallable LightsailClient::GetLoadBalancersCallable(const GetLoadBalancersRequest& request) const
@@ -2767,15 +2183,7 @@ GetOperationOutcome LightsailClient::GetOperation(const GetOperationRequest& req
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetOperationOutcome(GetOperationResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetOperationOutcome(outcome.GetError());
-  }
+  return GetOperationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetOperationOutcomeCallable LightsailClient::GetOperationCallable(const GetOperationRequest& request) const
@@ -2802,15 +2210,7 @@ GetOperationsOutcome LightsailClient::GetOperations(const GetOperationsRequest& 
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetOperationsOutcome(GetOperationsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetOperationsOutcome(outcome.GetError());
-  }
+  return GetOperationsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetOperationsOutcomeCallable LightsailClient::GetOperationsCallable(const GetOperationsRequest& request) const
@@ -2837,15 +2237,7 @@ GetOperationsForResourceOutcome LightsailClient::GetOperationsForResource(const 
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetOperationsForResourceOutcome(GetOperationsForResourceResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetOperationsForResourceOutcome(outcome.GetError());
-  }
+  return GetOperationsForResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetOperationsForResourceOutcomeCallable LightsailClient::GetOperationsForResourceCallable(const GetOperationsForResourceRequest& request) const
@@ -2872,15 +2264,7 @@ GetRegionsOutcome LightsailClient::GetRegions(const GetRegionsRequest& request) 
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetRegionsOutcome(GetRegionsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetRegionsOutcome(outcome.GetError());
-  }
+  return GetRegionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetRegionsOutcomeCallable LightsailClient::GetRegionsCallable(const GetRegionsRequest& request) const
@@ -2907,15 +2291,7 @@ GetRelationalDatabaseOutcome LightsailClient::GetRelationalDatabase(const GetRel
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetRelationalDatabaseOutcome(GetRelationalDatabaseResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetRelationalDatabaseOutcome(outcome.GetError());
-  }
+  return GetRelationalDatabaseOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetRelationalDatabaseOutcomeCallable LightsailClient::GetRelationalDatabaseCallable(const GetRelationalDatabaseRequest& request) const
@@ -2942,15 +2318,7 @@ GetRelationalDatabaseBlueprintsOutcome LightsailClient::GetRelationalDatabaseBlu
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetRelationalDatabaseBlueprintsOutcome(GetRelationalDatabaseBlueprintsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetRelationalDatabaseBlueprintsOutcome(outcome.GetError());
-  }
+  return GetRelationalDatabaseBlueprintsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetRelationalDatabaseBlueprintsOutcomeCallable LightsailClient::GetRelationalDatabaseBlueprintsCallable(const GetRelationalDatabaseBlueprintsRequest& request) const
@@ -2977,15 +2345,7 @@ GetRelationalDatabaseBundlesOutcome LightsailClient::GetRelationalDatabaseBundle
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetRelationalDatabaseBundlesOutcome(GetRelationalDatabaseBundlesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetRelationalDatabaseBundlesOutcome(outcome.GetError());
-  }
+  return GetRelationalDatabaseBundlesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetRelationalDatabaseBundlesOutcomeCallable LightsailClient::GetRelationalDatabaseBundlesCallable(const GetRelationalDatabaseBundlesRequest& request) const
@@ -3012,15 +2372,7 @@ GetRelationalDatabaseEventsOutcome LightsailClient::GetRelationalDatabaseEvents(
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetRelationalDatabaseEventsOutcome(GetRelationalDatabaseEventsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetRelationalDatabaseEventsOutcome(outcome.GetError());
-  }
+  return GetRelationalDatabaseEventsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetRelationalDatabaseEventsOutcomeCallable LightsailClient::GetRelationalDatabaseEventsCallable(const GetRelationalDatabaseEventsRequest& request) const
@@ -3047,15 +2399,7 @@ GetRelationalDatabaseLogEventsOutcome LightsailClient::GetRelationalDatabaseLogE
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetRelationalDatabaseLogEventsOutcome(GetRelationalDatabaseLogEventsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetRelationalDatabaseLogEventsOutcome(outcome.GetError());
-  }
+  return GetRelationalDatabaseLogEventsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetRelationalDatabaseLogEventsOutcomeCallable LightsailClient::GetRelationalDatabaseLogEventsCallable(const GetRelationalDatabaseLogEventsRequest& request) const
@@ -3082,15 +2426,7 @@ GetRelationalDatabaseLogStreamsOutcome LightsailClient::GetRelationalDatabaseLog
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetRelationalDatabaseLogStreamsOutcome(GetRelationalDatabaseLogStreamsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetRelationalDatabaseLogStreamsOutcome(outcome.GetError());
-  }
+  return GetRelationalDatabaseLogStreamsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetRelationalDatabaseLogStreamsOutcomeCallable LightsailClient::GetRelationalDatabaseLogStreamsCallable(const GetRelationalDatabaseLogStreamsRequest& request) const
@@ -3117,15 +2453,7 @@ GetRelationalDatabaseMasterUserPasswordOutcome LightsailClient::GetRelationalDat
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetRelationalDatabaseMasterUserPasswordOutcome(GetRelationalDatabaseMasterUserPasswordResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetRelationalDatabaseMasterUserPasswordOutcome(outcome.GetError());
-  }
+  return GetRelationalDatabaseMasterUserPasswordOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetRelationalDatabaseMasterUserPasswordOutcomeCallable LightsailClient::GetRelationalDatabaseMasterUserPasswordCallable(const GetRelationalDatabaseMasterUserPasswordRequest& request) const
@@ -3152,15 +2480,7 @@ GetRelationalDatabaseMetricDataOutcome LightsailClient::GetRelationalDatabaseMet
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetRelationalDatabaseMetricDataOutcome(GetRelationalDatabaseMetricDataResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetRelationalDatabaseMetricDataOutcome(outcome.GetError());
-  }
+  return GetRelationalDatabaseMetricDataOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetRelationalDatabaseMetricDataOutcomeCallable LightsailClient::GetRelationalDatabaseMetricDataCallable(const GetRelationalDatabaseMetricDataRequest& request) const
@@ -3187,15 +2507,7 @@ GetRelationalDatabaseParametersOutcome LightsailClient::GetRelationalDatabasePar
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetRelationalDatabaseParametersOutcome(GetRelationalDatabaseParametersResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetRelationalDatabaseParametersOutcome(outcome.GetError());
-  }
+  return GetRelationalDatabaseParametersOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetRelationalDatabaseParametersOutcomeCallable LightsailClient::GetRelationalDatabaseParametersCallable(const GetRelationalDatabaseParametersRequest& request) const
@@ -3222,15 +2534,7 @@ GetRelationalDatabaseSnapshotOutcome LightsailClient::GetRelationalDatabaseSnaps
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetRelationalDatabaseSnapshotOutcome(GetRelationalDatabaseSnapshotResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetRelationalDatabaseSnapshotOutcome(outcome.GetError());
-  }
+  return GetRelationalDatabaseSnapshotOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetRelationalDatabaseSnapshotOutcomeCallable LightsailClient::GetRelationalDatabaseSnapshotCallable(const GetRelationalDatabaseSnapshotRequest& request) const
@@ -3257,15 +2561,7 @@ GetRelationalDatabaseSnapshotsOutcome LightsailClient::GetRelationalDatabaseSnap
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetRelationalDatabaseSnapshotsOutcome(GetRelationalDatabaseSnapshotsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetRelationalDatabaseSnapshotsOutcome(outcome.GetError());
-  }
+  return GetRelationalDatabaseSnapshotsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetRelationalDatabaseSnapshotsOutcomeCallable LightsailClient::GetRelationalDatabaseSnapshotsCallable(const GetRelationalDatabaseSnapshotsRequest& request) const
@@ -3292,15 +2588,7 @@ GetRelationalDatabasesOutcome LightsailClient::GetRelationalDatabases(const GetR
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetRelationalDatabasesOutcome(GetRelationalDatabasesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetRelationalDatabasesOutcome(outcome.GetError());
-  }
+  return GetRelationalDatabasesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetRelationalDatabasesOutcomeCallable LightsailClient::GetRelationalDatabasesCallable(const GetRelationalDatabasesRequest& request) const
@@ -3327,15 +2615,7 @@ GetStaticIpOutcome LightsailClient::GetStaticIp(const GetStaticIpRequest& reques
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetStaticIpOutcome(GetStaticIpResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetStaticIpOutcome(outcome.GetError());
-  }
+  return GetStaticIpOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetStaticIpOutcomeCallable LightsailClient::GetStaticIpCallable(const GetStaticIpRequest& request) const
@@ -3362,15 +2642,7 @@ GetStaticIpsOutcome LightsailClient::GetStaticIps(const GetStaticIpsRequest& req
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetStaticIpsOutcome(GetStaticIpsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetStaticIpsOutcome(outcome.GetError());
-  }
+  return GetStaticIpsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetStaticIpsOutcomeCallable LightsailClient::GetStaticIpsCallable(const GetStaticIpsRequest& request) const
@@ -3397,15 +2669,7 @@ ImportKeyPairOutcome LightsailClient::ImportKeyPair(const ImportKeyPairRequest& 
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ImportKeyPairOutcome(ImportKeyPairResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ImportKeyPairOutcome(outcome.GetError());
-  }
+  return ImportKeyPairOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ImportKeyPairOutcomeCallable LightsailClient::ImportKeyPairCallable(const ImportKeyPairRequest& request) const
@@ -3432,15 +2696,7 @@ IsVpcPeeredOutcome LightsailClient::IsVpcPeered(const IsVpcPeeredRequest& reques
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return IsVpcPeeredOutcome(IsVpcPeeredResult(outcome.GetResult()));
-  }
-  else
-  {
-    return IsVpcPeeredOutcome(outcome.GetError());
-  }
+  return IsVpcPeeredOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 IsVpcPeeredOutcomeCallable LightsailClient::IsVpcPeeredCallable(const IsVpcPeeredRequest& request) const
@@ -3467,15 +2723,7 @@ OpenInstancePublicPortsOutcome LightsailClient::OpenInstancePublicPorts(const Op
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return OpenInstancePublicPortsOutcome(OpenInstancePublicPortsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return OpenInstancePublicPortsOutcome(outcome.GetError());
-  }
+  return OpenInstancePublicPortsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 OpenInstancePublicPortsOutcomeCallable LightsailClient::OpenInstancePublicPortsCallable(const OpenInstancePublicPortsRequest& request) const
@@ -3502,15 +2750,7 @@ PeerVpcOutcome LightsailClient::PeerVpc(const PeerVpcRequest& request) const
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return PeerVpcOutcome(PeerVpcResult(outcome.GetResult()));
-  }
-  else
-  {
-    return PeerVpcOutcome(outcome.GetError());
-  }
+  return PeerVpcOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 PeerVpcOutcomeCallable LightsailClient::PeerVpcCallable(const PeerVpcRequest& request) const
@@ -3537,15 +2777,7 @@ PutAlarmOutcome LightsailClient::PutAlarm(const PutAlarmRequest& request) const
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return PutAlarmOutcome(PutAlarmResult(outcome.GetResult()));
-  }
-  else
-  {
-    return PutAlarmOutcome(outcome.GetError());
-  }
+  return PutAlarmOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 PutAlarmOutcomeCallable LightsailClient::PutAlarmCallable(const PutAlarmRequest& request) const
@@ -3572,15 +2804,7 @@ PutInstancePublicPortsOutcome LightsailClient::PutInstancePublicPorts(const PutI
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return PutInstancePublicPortsOutcome(PutInstancePublicPortsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return PutInstancePublicPortsOutcome(outcome.GetError());
-  }
+  return PutInstancePublicPortsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 PutInstancePublicPortsOutcomeCallable LightsailClient::PutInstancePublicPortsCallable(const PutInstancePublicPortsRequest& request) const
@@ -3607,15 +2831,7 @@ RebootInstanceOutcome LightsailClient::RebootInstance(const RebootInstanceReques
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return RebootInstanceOutcome(RebootInstanceResult(outcome.GetResult()));
-  }
-  else
-  {
-    return RebootInstanceOutcome(outcome.GetError());
-  }
+  return RebootInstanceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 RebootInstanceOutcomeCallable LightsailClient::RebootInstanceCallable(const RebootInstanceRequest& request) const
@@ -3642,15 +2858,7 @@ RebootRelationalDatabaseOutcome LightsailClient::RebootRelationalDatabase(const 
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return RebootRelationalDatabaseOutcome(RebootRelationalDatabaseResult(outcome.GetResult()));
-  }
-  else
-  {
-    return RebootRelationalDatabaseOutcome(outcome.GetError());
-  }
+  return RebootRelationalDatabaseOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 RebootRelationalDatabaseOutcomeCallable LightsailClient::RebootRelationalDatabaseCallable(const RebootRelationalDatabaseRequest& request) const
@@ -3677,15 +2885,7 @@ ReleaseStaticIpOutcome LightsailClient::ReleaseStaticIp(const ReleaseStaticIpReq
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ReleaseStaticIpOutcome(ReleaseStaticIpResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ReleaseStaticIpOutcome(outcome.GetError());
-  }
+  return ReleaseStaticIpOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ReleaseStaticIpOutcomeCallable LightsailClient::ReleaseStaticIpCallable(const ReleaseStaticIpRequest& request) const
@@ -3712,15 +2912,7 @@ SendContactMethodVerificationOutcome LightsailClient::SendContactMethodVerificat
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return SendContactMethodVerificationOutcome(SendContactMethodVerificationResult(outcome.GetResult()));
-  }
-  else
-  {
-    return SendContactMethodVerificationOutcome(outcome.GetError());
-  }
+  return SendContactMethodVerificationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 SendContactMethodVerificationOutcomeCallable LightsailClient::SendContactMethodVerificationCallable(const SendContactMethodVerificationRequest& request) const
@@ -3747,15 +2939,7 @@ StartInstanceOutcome LightsailClient::StartInstance(const StartInstanceRequest& 
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return StartInstanceOutcome(StartInstanceResult(outcome.GetResult()));
-  }
-  else
-  {
-    return StartInstanceOutcome(outcome.GetError());
-  }
+  return StartInstanceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 StartInstanceOutcomeCallable LightsailClient::StartInstanceCallable(const StartInstanceRequest& request) const
@@ -3782,15 +2966,7 @@ StartRelationalDatabaseOutcome LightsailClient::StartRelationalDatabase(const St
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return StartRelationalDatabaseOutcome(StartRelationalDatabaseResult(outcome.GetResult()));
-  }
-  else
-  {
-    return StartRelationalDatabaseOutcome(outcome.GetError());
-  }
+  return StartRelationalDatabaseOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 StartRelationalDatabaseOutcomeCallable LightsailClient::StartRelationalDatabaseCallable(const StartRelationalDatabaseRequest& request) const
@@ -3817,15 +2993,7 @@ StopInstanceOutcome LightsailClient::StopInstance(const StopInstanceRequest& req
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return StopInstanceOutcome(StopInstanceResult(outcome.GetResult()));
-  }
-  else
-  {
-    return StopInstanceOutcome(outcome.GetError());
-  }
+  return StopInstanceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 StopInstanceOutcomeCallable LightsailClient::StopInstanceCallable(const StopInstanceRequest& request) const
@@ -3852,15 +3020,7 @@ StopRelationalDatabaseOutcome LightsailClient::StopRelationalDatabase(const Stop
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return StopRelationalDatabaseOutcome(StopRelationalDatabaseResult(outcome.GetResult()));
-  }
-  else
-  {
-    return StopRelationalDatabaseOutcome(outcome.GetError());
-  }
+  return StopRelationalDatabaseOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 StopRelationalDatabaseOutcomeCallable LightsailClient::StopRelationalDatabaseCallable(const StopRelationalDatabaseRequest& request) const
@@ -3887,15 +3047,7 @@ TagResourceOutcome LightsailClient::TagResource(const TagResourceRequest& reques
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return TagResourceOutcome(TagResourceResult(outcome.GetResult()));
-  }
-  else
-  {
-    return TagResourceOutcome(outcome.GetError());
-  }
+  return TagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 TagResourceOutcomeCallable LightsailClient::TagResourceCallable(const TagResourceRequest& request) const
@@ -3922,15 +3074,7 @@ TestAlarmOutcome LightsailClient::TestAlarm(const TestAlarmRequest& request) con
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return TestAlarmOutcome(TestAlarmResult(outcome.GetResult()));
-  }
-  else
-  {
-    return TestAlarmOutcome(outcome.GetError());
-  }
+  return TestAlarmOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 TestAlarmOutcomeCallable LightsailClient::TestAlarmCallable(const TestAlarmRequest& request) const
@@ -3957,15 +3101,7 @@ UnpeerVpcOutcome LightsailClient::UnpeerVpc(const UnpeerVpcRequest& request) con
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UnpeerVpcOutcome(UnpeerVpcResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UnpeerVpcOutcome(outcome.GetError());
-  }
+  return UnpeerVpcOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UnpeerVpcOutcomeCallable LightsailClient::UnpeerVpcCallable(const UnpeerVpcRequest& request) const
@@ -3992,15 +3128,7 @@ UntagResourceOutcome LightsailClient::UntagResource(const UntagResourceRequest& 
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UntagResourceOutcome(UntagResourceResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UntagResourceOutcome(outcome.GetError());
-  }
+  return UntagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UntagResourceOutcomeCallable LightsailClient::UntagResourceCallable(const UntagResourceRequest& request) const
@@ -4027,15 +3155,7 @@ UpdateDomainEntryOutcome LightsailClient::UpdateDomainEntry(const UpdateDomainEn
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateDomainEntryOutcome(UpdateDomainEntryResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateDomainEntryOutcome(outcome.GetError());
-  }
+  return UpdateDomainEntryOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateDomainEntryOutcomeCallable LightsailClient::UpdateDomainEntryCallable(const UpdateDomainEntryRequest& request) const
@@ -4062,15 +3182,7 @@ UpdateLoadBalancerAttributeOutcome LightsailClient::UpdateLoadBalancerAttribute(
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateLoadBalancerAttributeOutcome(UpdateLoadBalancerAttributeResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateLoadBalancerAttributeOutcome(outcome.GetError());
-  }
+  return UpdateLoadBalancerAttributeOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateLoadBalancerAttributeOutcomeCallable LightsailClient::UpdateLoadBalancerAttributeCallable(const UpdateLoadBalancerAttributeRequest& request) const
@@ -4097,15 +3209,7 @@ UpdateRelationalDatabaseOutcome LightsailClient::UpdateRelationalDatabase(const 
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateRelationalDatabaseOutcome(UpdateRelationalDatabaseResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateRelationalDatabaseOutcome(outcome.GetError());
-  }
+  return UpdateRelationalDatabaseOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateRelationalDatabaseOutcomeCallable LightsailClient::UpdateRelationalDatabaseCallable(const UpdateRelationalDatabaseRequest& request) const
@@ -4132,15 +3236,7 @@ UpdateRelationalDatabaseParametersOutcome LightsailClient::UpdateRelationalDatab
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateRelationalDatabaseParametersOutcome(UpdateRelationalDatabaseParametersResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateRelationalDatabaseParametersOutcome(outcome.GetError());
-  }
+  return UpdateRelationalDatabaseParametersOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateRelationalDatabaseParametersOutcomeCallable LightsailClient::UpdateRelationalDatabaseParametersCallable(const UpdateRelationalDatabaseParametersRequest& request) const

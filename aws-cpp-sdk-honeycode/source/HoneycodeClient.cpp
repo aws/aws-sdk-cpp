@@ -38,7 +38,7 @@ static const char* ALLOCATION_TAG = "HoneycodeClient";
 HoneycodeClient::HoneycodeClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-        SERVICE_NAME, clientConfiguration.region),
+        SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<HoneycodeErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -48,7 +48,7 @@ HoneycodeClient::HoneycodeClient(const Client::ClientConfiguration& clientConfig
 HoneycodeClient::HoneycodeClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-         SERVICE_NAME, clientConfiguration.region),
+         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<HoneycodeErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -59,7 +59,7 @@ HoneycodeClient::HoneycodeClient(const std::shared_ptr<AWSCredentialsProvider>& 
   const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider,
-         SERVICE_NAME, clientConfiguration.region),
+         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<HoneycodeErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -101,15 +101,7 @@ GetScreenDataOutcome HoneycodeClient::GetScreenData(const GetScreenDataRequest& 
   Aws::StringStream ss;
   ss << "/screendata";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetScreenDataOutcome(GetScreenDataResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetScreenDataOutcome(outcome.GetError());
-  }
+  return GetScreenDataOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetScreenDataOutcomeCallable HoneycodeClient::GetScreenDataCallable(const GetScreenDataRequest& request) const
@@ -163,15 +155,7 @@ InvokeScreenAutomationOutcome HoneycodeClient::InvokeScreenAutomation(const Invo
   ss << "/automations/";
   ss << request.GetScreenAutomationId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return InvokeScreenAutomationOutcome(InvokeScreenAutomationResult(outcome.GetResult()));
-  }
-  else
-  {
-    return InvokeScreenAutomationOutcome(outcome.GetError());
-  }
+  return InvokeScreenAutomationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 InvokeScreenAutomationOutcomeCallable HoneycodeClient::InvokeScreenAutomationCallable(const InvokeScreenAutomationRequest& request) const

@@ -79,7 +79,7 @@ static const char* ALLOCATION_TAG = "WorkMailClient";
 WorkMailClient::WorkMailClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-        SERVICE_NAME, clientConfiguration.region),
+        SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<WorkMailErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -89,7 +89,7 @@ WorkMailClient::WorkMailClient(const Client::ClientConfiguration& clientConfigur
 WorkMailClient::WorkMailClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-         SERVICE_NAME, clientConfiguration.region),
+         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<WorkMailErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -100,7 +100,7 @@ WorkMailClient::WorkMailClient(const std::shared_ptr<AWSCredentialsProvider>& cr
   const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider,
-         SERVICE_NAME, clientConfiguration.region),
+         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<WorkMailErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -142,15 +142,7 @@ AssociateDelegateToResourceOutcome WorkMailClient::AssociateDelegateToResource(c
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return AssociateDelegateToResourceOutcome(AssociateDelegateToResourceResult(outcome.GetResult()));
-  }
-  else
-  {
-    return AssociateDelegateToResourceOutcome(outcome.GetError());
-  }
+  return AssociateDelegateToResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 AssociateDelegateToResourceOutcomeCallable WorkMailClient::AssociateDelegateToResourceCallable(const AssociateDelegateToResourceRequest& request) const
@@ -177,15 +169,7 @@ AssociateMemberToGroupOutcome WorkMailClient::AssociateMemberToGroup(const Assoc
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return AssociateMemberToGroupOutcome(AssociateMemberToGroupResult(outcome.GetResult()));
-  }
-  else
-  {
-    return AssociateMemberToGroupOutcome(outcome.GetError());
-  }
+  return AssociateMemberToGroupOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 AssociateMemberToGroupOutcomeCallable WorkMailClient::AssociateMemberToGroupCallable(const AssociateMemberToGroupRequest& request) const
@@ -212,15 +196,7 @@ CreateAliasOutcome WorkMailClient::CreateAlias(const CreateAliasRequest& request
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateAliasOutcome(CreateAliasResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateAliasOutcome(outcome.GetError());
-  }
+  return CreateAliasOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateAliasOutcomeCallable WorkMailClient::CreateAliasCallable(const CreateAliasRequest& request) const
@@ -247,15 +223,7 @@ CreateGroupOutcome WorkMailClient::CreateGroup(const CreateGroupRequest& request
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateGroupOutcome(CreateGroupResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateGroupOutcome(outcome.GetError());
-  }
+  return CreateGroupOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateGroupOutcomeCallable WorkMailClient::CreateGroupCallable(const CreateGroupRequest& request) const
@@ -282,15 +250,7 @@ CreateResourceOutcome WorkMailClient::CreateResource(const CreateResourceRequest
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateResourceOutcome(CreateResourceResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateResourceOutcome(outcome.GetError());
-  }
+  return CreateResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateResourceOutcomeCallable WorkMailClient::CreateResourceCallable(const CreateResourceRequest& request) const
@@ -317,15 +277,7 @@ CreateUserOutcome WorkMailClient::CreateUser(const CreateUserRequest& request) c
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateUserOutcome(CreateUserResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateUserOutcome(outcome.GetError());
-  }
+  return CreateUserOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateUserOutcomeCallable WorkMailClient::CreateUserCallable(const CreateUserRequest& request) const
@@ -352,15 +304,7 @@ DeleteAccessControlRuleOutcome WorkMailClient::DeleteAccessControlRule(const Del
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteAccessControlRuleOutcome(DeleteAccessControlRuleResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteAccessControlRuleOutcome(outcome.GetError());
-  }
+  return DeleteAccessControlRuleOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteAccessControlRuleOutcomeCallable WorkMailClient::DeleteAccessControlRuleCallable(const DeleteAccessControlRuleRequest& request) const
@@ -387,15 +331,7 @@ DeleteAliasOutcome WorkMailClient::DeleteAlias(const DeleteAliasRequest& request
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteAliasOutcome(DeleteAliasResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteAliasOutcome(outcome.GetError());
-  }
+  return DeleteAliasOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteAliasOutcomeCallable WorkMailClient::DeleteAliasCallable(const DeleteAliasRequest& request) const
@@ -422,15 +358,7 @@ DeleteGroupOutcome WorkMailClient::DeleteGroup(const DeleteGroupRequest& request
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteGroupOutcome(DeleteGroupResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteGroupOutcome(outcome.GetError());
-  }
+  return DeleteGroupOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteGroupOutcomeCallable WorkMailClient::DeleteGroupCallable(const DeleteGroupRequest& request) const
@@ -457,15 +385,7 @@ DeleteMailboxPermissionsOutcome WorkMailClient::DeleteMailboxPermissions(const D
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteMailboxPermissionsOutcome(DeleteMailboxPermissionsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteMailboxPermissionsOutcome(outcome.GetError());
-  }
+  return DeleteMailboxPermissionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteMailboxPermissionsOutcomeCallable WorkMailClient::DeleteMailboxPermissionsCallable(const DeleteMailboxPermissionsRequest& request) const
@@ -492,15 +412,7 @@ DeleteResourceOutcome WorkMailClient::DeleteResource(const DeleteResourceRequest
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteResourceOutcome(DeleteResourceResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteResourceOutcome(outcome.GetError());
-  }
+  return DeleteResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteResourceOutcomeCallable WorkMailClient::DeleteResourceCallable(const DeleteResourceRequest& request) const
@@ -527,15 +439,7 @@ DeleteRetentionPolicyOutcome WorkMailClient::DeleteRetentionPolicy(const DeleteR
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteRetentionPolicyOutcome(DeleteRetentionPolicyResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteRetentionPolicyOutcome(outcome.GetError());
-  }
+  return DeleteRetentionPolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteRetentionPolicyOutcomeCallable WorkMailClient::DeleteRetentionPolicyCallable(const DeleteRetentionPolicyRequest& request) const
@@ -562,15 +466,7 @@ DeleteUserOutcome WorkMailClient::DeleteUser(const DeleteUserRequest& request) c
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteUserOutcome(DeleteUserResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteUserOutcome(outcome.GetError());
-  }
+  return DeleteUserOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteUserOutcomeCallable WorkMailClient::DeleteUserCallable(const DeleteUserRequest& request) const
@@ -597,15 +493,7 @@ DeregisterFromWorkMailOutcome WorkMailClient::DeregisterFromWorkMail(const Dereg
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeregisterFromWorkMailOutcome(DeregisterFromWorkMailResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeregisterFromWorkMailOutcome(outcome.GetError());
-  }
+  return DeregisterFromWorkMailOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeregisterFromWorkMailOutcomeCallable WorkMailClient::DeregisterFromWorkMailCallable(const DeregisterFromWorkMailRequest& request) const
@@ -632,15 +520,7 @@ DescribeGroupOutcome WorkMailClient::DescribeGroup(const DescribeGroupRequest& r
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeGroupOutcome(DescribeGroupResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeGroupOutcome(outcome.GetError());
-  }
+  return DescribeGroupOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeGroupOutcomeCallable WorkMailClient::DescribeGroupCallable(const DescribeGroupRequest& request) const
@@ -667,15 +547,7 @@ DescribeOrganizationOutcome WorkMailClient::DescribeOrganization(const DescribeO
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeOrganizationOutcome(DescribeOrganizationResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeOrganizationOutcome(outcome.GetError());
-  }
+  return DescribeOrganizationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeOrganizationOutcomeCallable WorkMailClient::DescribeOrganizationCallable(const DescribeOrganizationRequest& request) const
@@ -702,15 +574,7 @@ DescribeResourceOutcome WorkMailClient::DescribeResource(const DescribeResourceR
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeResourceOutcome(DescribeResourceResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeResourceOutcome(outcome.GetError());
-  }
+  return DescribeResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeResourceOutcomeCallable WorkMailClient::DescribeResourceCallable(const DescribeResourceRequest& request) const
@@ -737,15 +601,7 @@ DescribeUserOutcome WorkMailClient::DescribeUser(const DescribeUserRequest& requ
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeUserOutcome(DescribeUserResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeUserOutcome(outcome.GetError());
-  }
+  return DescribeUserOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeUserOutcomeCallable WorkMailClient::DescribeUserCallable(const DescribeUserRequest& request) const
@@ -772,15 +628,7 @@ DisassociateDelegateFromResourceOutcome WorkMailClient::DisassociateDelegateFrom
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DisassociateDelegateFromResourceOutcome(DisassociateDelegateFromResourceResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DisassociateDelegateFromResourceOutcome(outcome.GetError());
-  }
+  return DisassociateDelegateFromResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DisassociateDelegateFromResourceOutcomeCallable WorkMailClient::DisassociateDelegateFromResourceCallable(const DisassociateDelegateFromResourceRequest& request) const
@@ -807,15 +655,7 @@ DisassociateMemberFromGroupOutcome WorkMailClient::DisassociateMemberFromGroup(c
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DisassociateMemberFromGroupOutcome(DisassociateMemberFromGroupResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DisassociateMemberFromGroupOutcome(outcome.GetError());
-  }
+  return DisassociateMemberFromGroupOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DisassociateMemberFromGroupOutcomeCallable WorkMailClient::DisassociateMemberFromGroupCallable(const DisassociateMemberFromGroupRequest& request) const
@@ -842,15 +682,7 @@ GetAccessControlEffectOutcome WorkMailClient::GetAccessControlEffect(const GetAc
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetAccessControlEffectOutcome(GetAccessControlEffectResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetAccessControlEffectOutcome(outcome.GetError());
-  }
+  return GetAccessControlEffectOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetAccessControlEffectOutcomeCallable WorkMailClient::GetAccessControlEffectCallable(const GetAccessControlEffectRequest& request) const
@@ -877,15 +709,7 @@ GetDefaultRetentionPolicyOutcome WorkMailClient::GetDefaultRetentionPolicy(const
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetDefaultRetentionPolicyOutcome(GetDefaultRetentionPolicyResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetDefaultRetentionPolicyOutcome(outcome.GetError());
-  }
+  return GetDefaultRetentionPolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetDefaultRetentionPolicyOutcomeCallable WorkMailClient::GetDefaultRetentionPolicyCallable(const GetDefaultRetentionPolicyRequest& request) const
@@ -912,15 +736,7 @@ GetMailboxDetailsOutcome WorkMailClient::GetMailboxDetails(const GetMailboxDetai
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetMailboxDetailsOutcome(GetMailboxDetailsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetMailboxDetailsOutcome(outcome.GetError());
-  }
+  return GetMailboxDetailsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetMailboxDetailsOutcomeCallable WorkMailClient::GetMailboxDetailsCallable(const GetMailboxDetailsRequest& request) const
@@ -947,15 +763,7 @@ ListAccessControlRulesOutcome WorkMailClient::ListAccessControlRules(const ListA
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListAccessControlRulesOutcome(ListAccessControlRulesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListAccessControlRulesOutcome(outcome.GetError());
-  }
+  return ListAccessControlRulesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListAccessControlRulesOutcomeCallable WorkMailClient::ListAccessControlRulesCallable(const ListAccessControlRulesRequest& request) const
@@ -982,15 +790,7 @@ ListAliasesOutcome WorkMailClient::ListAliases(const ListAliasesRequest& request
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListAliasesOutcome(ListAliasesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListAliasesOutcome(outcome.GetError());
-  }
+  return ListAliasesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListAliasesOutcomeCallable WorkMailClient::ListAliasesCallable(const ListAliasesRequest& request) const
@@ -1017,15 +817,7 @@ ListGroupMembersOutcome WorkMailClient::ListGroupMembers(const ListGroupMembersR
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListGroupMembersOutcome(ListGroupMembersResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListGroupMembersOutcome(outcome.GetError());
-  }
+  return ListGroupMembersOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListGroupMembersOutcomeCallable WorkMailClient::ListGroupMembersCallable(const ListGroupMembersRequest& request) const
@@ -1052,15 +844,7 @@ ListGroupsOutcome WorkMailClient::ListGroups(const ListGroupsRequest& request) c
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListGroupsOutcome(ListGroupsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListGroupsOutcome(outcome.GetError());
-  }
+  return ListGroupsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListGroupsOutcomeCallable WorkMailClient::ListGroupsCallable(const ListGroupsRequest& request) const
@@ -1087,15 +871,7 @@ ListMailboxPermissionsOutcome WorkMailClient::ListMailboxPermissions(const ListM
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListMailboxPermissionsOutcome(ListMailboxPermissionsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListMailboxPermissionsOutcome(outcome.GetError());
-  }
+  return ListMailboxPermissionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListMailboxPermissionsOutcomeCallable WorkMailClient::ListMailboxPermissionsCallable(const ListMailboxPermissionsRequest& request) const
@@ -1122,15 +898,7 @@ ListOrganizationsOutcome WorkMailClient::ListOrganizations(const ListOrganizatio
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListOrganizationsOutcome(ListOrganizationsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListOrganizationsOutcome(outcome.GetError());
-  }
+  return ListOrganizationsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListOrganizationsOutcomeCallable WorkMailClient::ListOrganizationsCallable(const ListOrganizationsRequest& request) const
@@ -1157,15 +925,7 @@ ListResourceDelegatesOutcome WorkMailClient::ListResourceDelegates(const ListRes
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListResourceDelegatesOutcome(ListResourceDelegatesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListResourceDelegatesOutcome(outcome.GetError());
-  }
+  return ListResourceDelegatesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListResourceDelegatesOutcomeCallable WorkMailClient::ListResourceDelegatesCallable(const ListResourceDelegatesRequest& request) const
@@ -1192,15 +952,7 @@ ListResourcesOutcome WorkMailClient::ListResources(const ListResourcesRequest& r
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListResourcesOutcome(ListResourcesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListResourcesOutcome(outcome.GetError());
-  }
+  return ListResourcesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListResourcesOutcomeCallable WorkMailClient::ListResourcesCallable(const ListResourcesRequest& request) const
@@ -1227,15 +979,7 @@ ListTagsForResourceOutcome WorkMailClient::ListTagsForResource(const ListTagsFor
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListTagsForResourceOutcome(ListTagsForResourceResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListTagsForResourceOutcome(outcome.GetError());
-  }
+  return ListTagsForResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListTagsForResourceOutcomeCallable WorkMailClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
@@ -1262,15 +1006,7 @@ ListUsersOutcome WorkMailClient::ListUsers(const ListUsersRequest& request) cons
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListUsersOutcome(ListUsersResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListUsersOutcome(outcome.GetError());
-  }
+  return ListUsersOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListUsersOutcomeCallable WorkMailClient::ListUsersCallable(const ListUsersRequest& request) const
@@ -1297,15 +1033,7 @@ PutAccessControlRuleOutcome WorkMailClient::PutAccessControlRule(const PutAccess
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return PutAccessControlRuleOutcome(PutAccessControlRuleResult(outcome.GetResult()));
-  }
-  else
-  {
-    return PutAccessControlRuleOutcome(outcome.GetError());
-  }
+  return PutAccessControlRuleOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 PutAccessControlRuleOutcomeCallable WorkMailClient::PutAccessControlRuleCallable(const PutAccessControlRuleRequest& request) const
@@ -1332,15 +1060,7 @@ PutMailboxPermissionsOutcome WorkMailClient::PutMailboxPermissions(const PutMail
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return PutMailboxPermissionsOutcome(PutMailboxPermissionsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return PutMailboxPermissionsOutcome(outcome.GetError());
-  }
+  return PutMailboxPermissionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 PutMailboxPermissionsOutcomeCallable WorkMailClient::PutMailboxPermissionsCallable(const PutMailboxPermissionsRequest& request) const
@@ -1367,15 +1087,7 @@ PutRetentionPolicyOutcome WorkMailClient::PutRetentionPolicy(const PutRetentionP
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return PutRetentionPolicyOutcome(PutRetentionPolicyResult(outcome.GetResult()));
-  }
-  else
-  {
-    return PutRetentionPolicyOutcome(outcome.GetError());
-  }
+  return PutRetentionPolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 PutRetentionPolicyOutcomeCallable WorkMailClient::PutRetentionPolicyCallable(const PutRetentionPolicyRequest& request) const
@@ -1402,15 +1114,7 @@ RegisterToWorkMailOutcome WorkMailClient::RegisterToWorkMail(const RegisterToWor
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return RegisterToWorkMailOutcome(RegisterToWorkMailResult(outcome.GetResult()));
-  }
-  else
-  {
-    return RegisterToWorkMailOutcome(outcome.GetError());
-  }
+  return RegisterToWorkMailOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 RegisterToWorkMailOutcomeCallable WorkMailClient::RegisterToWorkMailCallable(const RegisterToWorkMailRequest& request) const
@@ -1437,15 +1141,7 @@ ResetPasswordOutcome WorkMailClient::ResetPassword(const ResetPasswordRequest& r
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ResetPasswordOutcome(ResetPasswordResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ResetPasswordOutcome(outcome.GetError());
-  }
+  return ResetPasswordOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ResetPasswordOutcomeCallable WorkMailClient::ResetPasswordCallable(const ResetPasswordRequest& request) const
@@ -1472,15 +1168,7 @@ TagResourceOutcome WorkMailClient::TagResource(const TagResourceRequest& request
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return TagResourceOutcome(TagResourceResult(outcome.GetResult()));
-  }
-  else
-  {
-    return TagResourceOutcome(outcome.GetError());
-  }
+  return TagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 TagResourceOutcomeCallable WorkMailClient::TagResourceCallable(const TagResourceRequest& request) const
@@ -1507,15 +1195,7 @@ UntagResourceOutcome WorkMailClient::UntagResource(const UntagResourceRequest& r
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UntagResourceOutcome(UntagResourceResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UntagResourceOutcome(outcome.GetError());
-  }
+  return UntagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UntagResourceOutcomeCallable WorkMailClient::UntagResourceCallable(const UntagResourceRequest& request) const
@@ -1542,15 +1222,7 @@ UpdateMailboxQuotaOutcome WorkMailClient::UpdateMailboxQuota(const UpdateMailbox
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateMailboxQuotaOutcome(UpdateMailboxQuotaResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateMailboxQuotaOutcome(outcome.GetError());
-  }
+  return UpdateMailboxQuotaOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateMailboxQuotaOutcomeCallable WorkMailClient::UpdateMailboxQuotaCallable(const UpdateMailboxQuotaRequest& request) const
@@ -1577,15 +1249,7 @@ UpdatePrimaryEmailAddressOutcome WorkMailClient::UpdatePrimaryEmailAddress(const
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdatePrimaryEmailAddressOutcome(UpdatePrimaryEmailAddressResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdatePrimaryEmailAddressOutcome(outcome.GetError());
-  }
+  return UpdatePrimaryEmailAddressOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdatePrimaryEmailAddressOutcomeCallable WorkMailClient::UpdatePrimaryEmailAddressCallable(const UpdatePrimaryEmailAddressRequest& request) const
@@ -1612,15 +1276,7 @@ UpdateResourceOutcome WorkMailClient::UpdateResource(const UpdateResourceRequest
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateResourceOutcome(UpdateResourceResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateResourceOutcome(outcome.GetError());
-  }
+  return UpdateResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateResourceOutcomeCallable WorkMailClient::UpdateResourceCallable(const UpdateResourceRequest& request) const

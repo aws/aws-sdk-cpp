@@ -11,6 +11,7 @@ using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
 CreateInternetGatewayRequest::CreateInternetGatewayRequest() : 
+    m_tagSpecificationsHasBeenSet(false),
     m_dryRun(false),
     m_dryRunHasBeenSet(false)
 {
@@ -20,6 +21,16 @@ Aws::String CreateInternetGatewayRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=CreateInternetGateway&";
+  if(m_tagSpecificationsHasBeenSet)
+  {
+    unsigned tagSpecificationsCount = 1;
+    for(auto& item : m_tagSpecifications)
+    {
+      item.OutputToStream(ss, "TagSpecification.", tagSpecificationsCount, "");
+      tagSpecificationsCount++;
+    }
+  }
+
   if(m_dryRunHasBeenSet)
   {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";

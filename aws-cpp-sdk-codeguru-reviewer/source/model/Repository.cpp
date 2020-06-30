@@ -20,13 +20,15 @@ namespace Model
 
 Repository::Repository() : 
     m_codeCommitHasBeenSet(false),
-    m_bitbucketHasBeenSet(false)
+    m_bitbucketHasBeenSet(false),
+    m_gitHubEnterpriseServerHasBeenSet(false)
 {
 }
 
 Repository::Repository(JsonView jsonValue) : 
     m_codeCommitHasBeenSet(false),
-    m_bitbucketHasBeenSet(false)
+    m_bitbucketHasBeenSet(false),
+    m_gitHubEnterpriseServerHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -47,6 +49,13 @@ Repository& Repository::operator =(JsonView jsonValue)
     m_bitbucketHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("GitHubEnterpriseServer"))
+  {
+    m_gitHubEnterpriseServer = jsonValue.GetObject("GitHubEnterpriseServer");
+
+    m_gitHubEnterpriseServerHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -63,6 +72,12 @@ JsonValue Repository::Jsonize() const
   if(m_bitbucketHasBeenSet)
   {
    payload.WithObject("Bitbucket", m_bitbucket.Jsonize());
+
+  }
+
+  if(m_gitHubEnterpriseServerHasBeenSet)
+  {
+   payload.WithObject("GitHubEnterpriseServer", m_gitHubEnterpriseServer.Jsonize());
 
   }
 

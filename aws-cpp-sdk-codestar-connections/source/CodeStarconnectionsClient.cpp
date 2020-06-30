@@ -47,7 +47,7 @@ static const char* ALLOCATION_TAG = "CodeStarconnectionsClient";
 CodeStarconnectionsClient::CodeStarconnectionsClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-        SERVICE_NAME, clientConfiguration.region),
+        SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<CodeStarconnectionsErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -57,7 +57,7 @@ CodeStarconnectionsClient::CodeStarconnectionsClient(const Client::ClientConfigu
 CodeStarconnectionsClient::CodeStarconnectionsClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-         SERVICE_NAME, clientConfiguration.region),
+         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<CodeStarconnectionsErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -68,7 +68,7 @@ CodeStarconnectionsClient::CodeStarconnectionsClient(const std::shared_ptr<AWSCr
   const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider,
-         SERVICE_NAME, clientConfiguration.region),
+         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<CodeStarconnectionsErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -110,15 +110,7 @@ CreateConnectionOutcome CodeStarconnectionsClient::CreateConnection(const Create
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateConnectionOutcome(CreateConnectionResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateConnectionOutcome(outcome.GetError());
-  }
+  return CreateConnectionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateConnectionOutcomeCallable CodeStarconnectionsClient::CreateConnectionCallable(const CreateConnectionRequest& request) const
@@ -145,15 +137,7 @@ CreateHostOutcome CodeStarconnectionsClient::CreateHost(const CreateHostRequest&
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateHostOutcome(CreateHostResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateHostOutcome(outcome.GetError());
-  }
+  return CreateHostOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateHostOutcomeCallable CodeStarconnectionsClient::CreateHostCallable(const CreateHostRequest& request) const
@@ -180,15 +164,7 @@ DeleteConnectionOutcome CodeStarconnectionsClient::DeleteConnection(const Delete
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteConnectionOutcome(DeleteConnectionResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteConnectionOutcome(outcome.GetError());
-  }
+  return DeleteConnectionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteConnectionOutcomeCallable CodeStarconnectionsClient::DeleteConnectionCallable(const DeleteConnectionRequest& request) const
@@ -215,15 +191,7 @@ DeleteHostOutcome CodeStarconnectionsClient::DeleteHost(const DeleteHostRequest&
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteHostOutcome(DeleteHostResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteHostOutcome(outcome.GetError());
-  }
+  return DeleteHostOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteHostOutcomeCallable CodeStarconnectionsClient::DeleteHostCallable(const DeleteHostRequest& request) const
@@ -250,15 +218,7 @@ GetConnectionOutcome CodeStarconnectionsClient::GetConnection(const GetConnectio
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetConnectionOutcome(GetConnectionResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetConnectionOutcome(outcome.GetError());
-  }
+  return GetConnectionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetConnectionOutcomeCallable CodeStarconnectionsClient::GetConnectionCallable(const GetConnectionRequest& request) const
@@ -285,15 +245,7 @@ GetHostOutcome CodeStarconnectionsClient::GetHost(const GetHostRequest& request)
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetHostOutcome(GetHostResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetHostOutcome(outcome.GetError());
-  }
+  return GetHostOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetHostOutcomeCallable CodeStarconnectionsClient::GetHostCallable(const GetHostRequest& request) const
@@ -320,15 +272,7 @@ ListConnectionsOutcome CodeStarconnectionsClient::ListConnections(const ListConn
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListConnectionsOutcome(ListConnectionsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListConnectionsOutcome(outcome.GetError());
-  }
+  return ListConnectionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListConnectionsOutcomeCallable CodeStarconnectionsClient::ListConnectionsCallable(const ListConnectionsRequest& request) const
@@ -355,15 +299,7 @@ ListHostsOutcome CodeStarconnectionsClient::ListHosts(const ListHostsRequest& re
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListHostsOutcome(ListHostsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListHostsOutcome(outcome.GetError());
-  }
+  return ListHostsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListHostsOutcomeCallable CodeStarconnectionsClient::ListHostsCallable(const ListHostsRequest& request) const
@@ -390,15 +326,7 @@ ListTagsForResourceOutcome CodeStarconnectionsClient::ListTagsForResource(const 
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListTagsForResourceOutcome(ListTagsForResourceResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListTagsForResourceOutcome(outcome.GetError());
-  }
+  return ListTagsForResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListTagsForResourceOutcomeCallable CodeStarconnectionsClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
@@ -425,15 +353,7 @@ TagResourceOutcome CodeStarconnectionsClient::TagResource(const TagResourceReque
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return TagResourceOutcome(TagResourceResult(outcome.GetResult()));
-  }
-  else
-  {
-    return TagResourceOutcome(outcome.GetError());
-  }
+  return TagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 TagResourceOutcomeCallable CodeStarconnectionsClient::TagResourceCallable(const TagResourceRequest& request) const
@@ -460,15 +380,7 @@ UntagResourceOutcome CodeStarconnectionsClient::UntagResource(const UntagResourc
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UntagResourceOutcome(UntagResourceResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UntagResourceOutcome(outcome.GetError());
-  }
+  return UntagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UntagResourceOutcomeCallable CodeStarconnectionsClient::UntagResourceCallable(const UntagResourceRequest& request) const

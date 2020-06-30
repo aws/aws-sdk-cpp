@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/schemas/Schemas_EXPORTS.h>
 
@@ -42,7 +43,7 @@ enum class SchemasErrors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -56,6 +57,20 @@ enum class SchemasErrors
   TOO_MANY_REQUESTS,
   UNAUTHORIZED
 };
+
+class AWS_SCHEMAS_API SchemasError : public Aws::Client::AWSError<SchemasErrors>
+{
+public:
+  SchemasError() {}
+  SchemasError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<SchemasErrors>(rhs) {}
+  SchemasError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<SchemasErrors>(rhs) {}
+  SchemasError(const Aws::Client::AWSError<SchemasErrors>& rhs) : Aws::Client::AWSError<SchemasErrors>(rhs) {}
+  SchemasError(Aws::Client::AWSError<SchemasErrors>&& rhs) : Aws::Client::AWSError<SchemasErrors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace SchemasErrorMapper
 {
   AWS_SCHEMAS_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

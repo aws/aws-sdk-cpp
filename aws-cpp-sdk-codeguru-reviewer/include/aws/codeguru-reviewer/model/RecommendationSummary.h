@@ -154,29 +154,29 @@ namespace Model
 
     /**
      * <p> Last line where the recommendation is applicable in the source commit or
-     * source branch. For a single line comment the start line and end line values will
-     * be the same. </p>
+     * source branch. For a single line comment the start line and end line values are
+     * the same. </p>
      */
     inline int GetEndLine() const{ return m_endLine; }
 
     /**
      * <p> Last line where the recommendation is applicable in the source commit or
-     * source branch. For a single line comment the start line and end line values will
-     * be the same. </p>
+     * source branch. For a single line comment the start line and end line values are
+     * the same. </p>
      */
     inline bool EndLineHasBeenSet() const { return m_endLineHasBeenSet; }
 
     /**
      * <p> Last line where the recommendation is applicable in the source commit or
-     * source branch. For a single line comment the start line and end line values will
-     * be the same. </p>
+     * source branch. For a single line comment the start line and end line values are
+     * the same. </p>
      */
     inline void SetEndLine(int value) { m_endLineHasBeenSet = true; m_endLine = value; }
 
     /**
      * <p> Last line where the recommendation is applicable in the source commit or
-     * source branch. For a single line comment the start line and end line values will
-     * be the same. </p>
+     * source branch. For a single line comment the start line and end line values are
+     * the same. </p>
      */
     inline RecommendationSummary& WithEndLine(int value) { SetEndLine(value); return *this;}
 

@@ -73,17 +73,17 @@ namespace Model
         class TagResourceRequest;
         class UntagResourceRequest;
 
-        typedef Aws::Utils::Outcome<CreateConnectionResult, Aws::Client::AWSError<CodeStarconnectionsErrors>> CreateConnectionOutcome;
-        typedef Aws::Utils::Outcome<CreateHostResult, Aws::Client::AWSError<CodeStarconnectionsErrors>> CreateHostOutcome;
-        typedef Aws::Utils::Outcome<DeleteConnectionResult, Aws::Client::AWSError<CodeStarconnectionsErrors>> DeleteConnectionOutcome;
-        typedef Aws::Utils::Outcome<DeleteHostResult, Aws::Client::AWSError<CodeStarconnectionsErrors>> DeleteHostOutcome;
-        typedef Aws::Utils::Outcome<GetConnectionResult, Aws::Client::AWSError<CodeStarconnectionsErrors>> GetConnectionOutcome;
-        typedef Aws::Utils::Outcome<GetHostResult, Aws::Client::AWSError<CodeStarconnectionsErrors>> GetHostOutcome;
-        typedef Aws::Utils::Outcome<ListConnectionsResult, Aws::Client::AWSError<CodeStarconnectionsErrors>> ListConnectionsOutcome;
-        typedef Aws::Utils::Outcome<ListHostsResult, Aws::Client::AWSError<CodeStarconnectionsErrors>> ListHostsOutcome;
-        typedef Aws::Utils::Outcome<ListTagsForResourceResult, Aws::Client::AWSError<CodeStarconnectionsErrors>> ListTagsForResourceOutcome;
-        typedef Aws::Utils::Outcome<TagResourceResult, Aws::Client::AWSError<CodeStarconnectionsErrors>> TagResourceOutcome;
-        typedef Aws::Utils::Outcome<UntagResourceResult, Aws::Client::AWSError<CodeStarconnectionsErrors>> UntagResourceOutcome;
+        typedef Aws::Utils::Outcome<CreateConnectionResult, CodeStarconnectionsError> CreateConnectionOutcome;
+        typedef Aws::Utils::Outcome<CreateHostResult, CodeStarconnectionsError> CreateHostOutcome;
+        typedef Aws::Utils::Outcome<DeleteConnectionResult, CodeStarconnectionsError> DeleteConnectionOutcome;
+        typedef Aws::Utils::Outcome<DeleteHostResult, CodeStarconnectionsError> DeleteHostOutcome;
+        typedef Aws::Utils::Outcome<GetConnectionResult, CodeStarconnectionsError> GetConnectionOutcome;
+        typedef Aws::Utils::Outcome<GetHostResult, CodeStarconnectionsError> GetHostOutcome;
+        typedef Aws::Utils::Outcome<ListConnectionsResult, CodeStarconnectionsError> ListConnectionsOutcome;
+        typedef Aws::Utils::Outcome<ListHostsResult, CodeStarconnectionsError> ListHostsOutcome;
+        typedef Aws::Utils::Outcome<ListTagsForResourceResult, CodeStarconnectionsError> ListTagsForResourceOutcome;
+        typedef Aws::Utils::Outcome<TagResourceResult, CodeStarconnectionsError> TagResourceOutcome;
+        typedef Aws::Utils::Outcome<UntagResourceResult, CodeStarconnectionsError> UntagResourceOutcome;
 
         typedef std::future<CreateConnectionOutcome> CreateConnectionOutcomeCallable;
         typedef std::future<CreateHostOutcome> CreateHostOutcomeCallable;

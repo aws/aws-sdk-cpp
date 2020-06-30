@@ -82,7 +82,7 @@ static const char* ALLOCATION_TAG = "MediaLiveClient";
 MediaLiveClient::MediaLiveClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-        SERVICE_NAME, clientConfiguration.region),
+        SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<MediaLiveErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -92,7 +92,7 @@ MediaLiveClient::MediaLiveClient(const Client::ClientConfiguration& clientConfig
 MediaLiveClient::MediaLiveClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-         SERVICE_NAME, clientConfiguration.region),
+         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<MediaLiveErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -103,7 +103,7 @@ MediaLiveClient::MediaLiveClient(const std::shared_ptr<AWSCredentialsProvider>& 
   const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider,
-         SERVICE_NAME, clientConfiguration.region),
+         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<MediaLiveErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -152,15 +152,7 @@ BatchUpdateScheduleOutcome MediaLiveClient::BatchUpdateSchedule(const BatchUpdat
   ss << request.GetChannelId();
   ss << "/schedule";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return BatchUpdateScheduleOutcome(BatchUpdateScheduleResult(outcome.GetResult()));
-  }
-  else
-  {
-    return BatchUpdateScheduleOutcome(outcome.GetError());
-  }
+  return BatchUpdateScheduleOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 BatchUpdateScheduleOutcomeCallable MediaLiveClient::BatchUpdateScheduleCallable(const BatchUpdateScheduleRequest& request) const
@@ -187,15 +179,7 @@ CreateChannelOutcome MediaLiveClient::CreateChannel(const CreateChannelRequest& 
   Aws::StringStream ss;
   ss << "/prod/channels";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateChannelOutcome(CreateChannelResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateChannelOutcome(outcome.GetError());
-  }
+  return CreateChannelOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateChannelOutcomeCallable MediaLiveClient::CreateChannelCallable(const CreateChannelRequest& request) const
@@ -222,15 +206,7 @@ CreateInputOutcome MediaLiveClient::CreateInput(const CreateInputRequest& reques
   Aws::StringStream ss;
   ss << "/prod/inputs";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateInputOutcome(CreateInputResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateInputOutcome(outcome.GetError());
-  }
+  return CreateInputOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateInputOutcomeCallable MediaLiveClient::CreateInputCallable(const CreateInputRequest& request) const
@@ -257,15 +233,7 @@ CreateInputSecurityGroupOutcome MediaLiveClient::CreateInputSecurityGroup(const 
   Aws::StringStream ss;
   ss << "/prod/inputSecurityGroups";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateInputSecurityGroupOutcome(CreateInputSecurityGroupResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateInputSecurityGroupOutcome(outcome.GetError());
-  }
+  return CreateInputSecurityGroupOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateInputSecurityGroupOutcomeCallable MediaLiveClient::CreateInputSecurityGroupCallable(const CreateInputSecurityGroupRequest& request) const
@@ -292,15 +260,7 @@ CreateMultiplexOutcome MediaLiveClient::CreateMultiplex(const CreateMultiplexReq
   Aws::StringStream ss;
   ss << "/prod/multiplexes";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateMultiplexOutcome(CreateMultiplexResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateMultiplexOutcome(outcome.GetError());
-  }
+  return CreateMultiplexOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateMultiplexOutcomeCallable MediaLiveClient::CreateMultiplexCallable(const CreateMultiplexRequest& request) const
@@ -334,15 +294,7 @@ CreateMultiplexProgramOutcome MediaLiveClient::CreateMultiplexProgram(const Crea
   ss << request.GetMultiplexId();
   ss << "/programs";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateMultiplexProgramOutcome(CreateMultiplexProgramResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateMultiplexProgramOutcome(outcome.GetError());
-  }
+  return CreateMultiplexProgramOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateMultiplexProgramOutcomeCallable MediaLiveClient::CreateMultiplexProgramCallable(const CreateMultiplexProgramRequest& request) const
@@ -375,15 +327,7 @@ CreateTagsOutcome MediaLiveClient::CreateTags(const CreateTagsRequest& request) 
   ss << "/prod/tags/";
   ss << request.GetResourceArn();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateTagsOutcome(NoResult());
-  }
-  else
-  {
-    return CreateTagsOutcome(outcome.GetError());
-  }
+  return CreateTagsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateTagsOutcomeCallable MediaLiveClient::CreateTagsCallable(const CreateTagsRequest& request) const
@@ -416,15 +360,7 @@ DeleteChannelOutcome MediaLiveClient::DeleteChannel(const DeleteChannelRequest& 
   ss << "/prod/channels/";
   ss << request.GetChannelId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteChannelOutcome(DeleteChannelResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteChannelOutcome(outcome.GetError());
-  }
+  return DeleteChannelOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteChannelOutcomeCallable MediaLiveClient::DeleteChannelCallable(const DeleteChannelRequest& request) const
@@ -457,15 +393,7 @@ DeleteInputOutcome MediaLiveClient::DeleteInput(const DeleteInputRequest& reques
   ss << "/prod/inputs/";
   ss << request.GetInputId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteInputOutcome(DeleteInputResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteInputOutcome(outcome.GetError());
-  }
+  return DeleteInputOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteInputOutcomeCallable MediaLiveClient::DeleteInputCallable(const DeleteInputRequest& request) const
@@ -498,15 +426,7 @@ DeleteInputSecurityGroupOutcome MediaLiveClient::DeleteInputSecurityGroup(const 
   ss << "/prod/inputSecurityGroups/";
   ss << request.GetInputSecurityGroupId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteInputSecurityGroupOutcome(DeleteInputSecurityGroupResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteInputSecurityGroupOutcome(outcome.GetError());
-  }
+  return DeleteInputSecurityGroupOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteInputSecurityGroupOutcomeCallable MediaLiveClient::DeleteInputSecurityGroupCallable(const DeleteInputSecurityGroupRequest& request) const
@@ -539,15 +459,7 @@ DeleteMultiplexOutcome MediaLiveClient::DeleteMultiplex(const DeleteMultiplexReq
   ss << "/prod/multiplexes/";
   ss << request.GetMultiplexId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteMultiplexOutcome(DeleteMultiplexResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteMultiplexOutcome(outcome.GetError());
-  }
+  return DeleteMultiplexOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteMultiplexOutcomeCallable MediaLiveClient::DeleteMultiplexCallable(const DeleteMultiplexRequest& request) const
@@ -587,15 +499,7 @@ DeleteMultiplexProgramOutcome MediaLiveClient::DeleteMultiplexProgram(const Dele
   ss << "/programs/";
   ss << request.GetProgramName();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteMultiplexProgramOutcome(DeleteMultiplexProgramResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteMultiplexProgramOutcome(outcome.GetError());
-  }
+  return DeleteMultiplexProgramOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteMultiplexProgramOutcomeCallable MediaLiveClient::DeleteMultiplexProgramCallable(const DeleteMultiplexProgramRequest& request) const
@@ -628,15 +532,7 @@ DeleteReservationOutcome MediaLiveClient::DeleteReservation(const DeleteReservat
   ss << "/prod/reservations/";
   ss << request.GetReservationId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteReservationOutcome(DeleteReservationResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteReservationOutcome(outcome.GetError());
-  }
+  return DeleteReservationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteReservationOutcomeCallable MediaLiveClient::DeleteReservationCallable(const DeleteReservationRequest& request) const
@@ -670,15 +566,7 @@ DeleteScheduleOutcome MediaLiveClient::DeleteSchedule(const DeleteScheduleReques
   ss << request.GetChannelId();
   ss << "/schedule";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteScheduleOutcome(DeleteScheduleResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteScheduleOutcome(outcome.GetError());
-  }
+  return DeleteScheduleOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteScheduleOutcomeCallable MediaLiveClient::DeleteScheduleCallable(const DeleteScheduleRequest& request) const
@@ -716,15 +604,7 @@ DeleteTagsOutcome MediaLiveClient::DeleteTags(const DeleteTagsRequest& request) 
   ss << "/prod/tags/";
   ss << request.GetResourceArn();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteTagsOutcome(NoResult());
-  }
-  else
-  {
-    return DeleteTagsOutcome(outcome.GetError());
-  }
+  return DeleteTagsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteTagsOutcomeCallable MediaLiveClient::DeleteTagsCallable(const DeleteTagsRequest& request) const
@@ -757,15 +637,7 @@ DescribeChannelOutcome MediaLiveClient::DescribeChannel(const DescribeChannelReq
   ss << "/prod/channels/";
   ss << request.GetChannelId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeChannelOutcome(DescribeChannelResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeChannelOutcome(outcome.GetError());
-  }
+  return DescribeChannelOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeChannelOutcomeCallable MediaLiveClient::DescribeChannelCallable(const DescribeChannelRequest& request) const
@@ -798,15 +670,7 @@ DescribeInputOutcome MediaLiveClient::DescribeInput(const DescribeInputRequest& 
   ss << "/prod/inputs/";
   ss << request.GetInputId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeInputOutcome(DescribeInputResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeInputOutcome(outcome.GetError());
-  }
+  return DescribeInputOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeInputOutcomeCallable MediaLiveClient::DescribeInputCallable(const DescribeInputRequest& request) const
@@ -839,15 +703,7 @@ DescribeInputDeviceOutcome MediaLiveClient::DescribeInputDevice(const DescribeIn
   ss << "/prod/inputDevices/";
   ss << request.GetInputDeviceId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeInputDeviceOutcome(DescribeInputDeviceResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeInputDeviceOutcome(outcome.GetError());
-  }
+  return DescribeInputDeviceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeInputDeviceOutcomeCallable MediaLiveClient::DescribeInputDeviceCallable(const DescribeInputDeviceRequest& request) const
@@ -880,15 +736,7 @@ DescribeInputSecurityGroupOutcome MediaLiveClient::DescribeInputSecurityGroup(co
   ss << "/prod/inputSecurityGroups/";
   ss << request.GetInputSecurityGroupId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeInputSecurityGroupOutcome(DescribeInputSecurityGroupResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeInputSecurityGroupOutcome(outcome.GetError());
-  }
+  return DescribeInputSecurityGroupOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeInputSecurityGroupOutcomeCallable MediaLiveClient::DescribeInputSecurityGroupCallable(const DescribeInputSecurityGroupRequest& request) const
@@ -921,15 +769,7 @@ DescribeMultiplexOutcome MediaLiveClient::DescribeMultiplex(const DescribeMultip
   ss << "/prod/multiplexes/";
   ss << request.GetMultiplexId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeMultiplexOutcome(DescribeMultiplexResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeMultiplexOutcome(outcome.GetError());
-  }
+  return DescribeMultiplexOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeMultiplexOutcomeCallable MediaLiveClient::DescribeMultiplexCallable(const DescribeMultiplexRequest& request) const
@@ -969,15 +809,7 @@ DescribeMultiplexProgramOutcome MediaLiveClient::DescribeMultiplexProgram(const 
   ss << "/programs/";
   ss << request.GetProgramName();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeMultiplexProgramOutcome(DescribeMultiplexProgramResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeMultiplexProgramOutcome(outcome.GetError());
-  }
+  return DescribeMultiplexProgramOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeMultiplexProgramOutcomeCallable MediaLiveClient::DescribeMultiplexProgramCallable(const DescribeMultiplexProgramRequest& request) const
@@ -1010,15 +842,7 @@ DescribeOfferingOutcome MediaLiveClient::DescribeOffering(const DescribeOffering
   ss << "/prod/offerings/";
   ss << request.GetOfferingId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeOfferingOutcome(DescribeOfferingResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeOfferingOutcome(outcome.GetError());
-  }
+  return DescribeOfferingOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeOfferingOutcomeCallable MediaLiveClient::DescribeOfferingCallable(const DescribeOfferingRequest& request) const
@@ -1051,15 +875,7 @@ DescribeReservationOutcome MediaLiveClient::DescribeReservation(const DescribeRe
   ss << "/prod/reservations/";
   ss << request.GetReservationId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeReservationOutcome(DescribeReservationResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeReservationOutcome(outcome.GetError());
-  }
+  return DescribeReservationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeReservationOutcomeCallable MediaLiveClient::DescribeReservationCallable(const DescribeReservationRequest& request) const
@@ -1093,15 +909,7 @@ DescribeScheduleOutcome MediaLiveClient::DescribeSchedule(const DescribeSchedule
   ss << request.GetChannelId();
   ss << "/schedule";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeScheduleOutcome(DescribeScheduleResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeScheduleOutcome(outcome.GetError());
-  }
+  return DescribeScheduleOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeScheduleOutcomeCallable MediaLiveClient::DescribeScheduleCallable(const DescribeScheduleRequest& request) const
@@ -1128,15 +936,7 @@ ListChannelsOutcome MediaLiveClient::ListChannels(const ListChannelsRequest& req
   Aws::StringStream ss;
   ss << "/prod/channels";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListChannelsOutcome(ListChannelsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListChannelsOutcome(outcome.GetError());
-  }
+  return ListChannelsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListChannelsOutcomeCallable MediaLiveClient::ListChannelsCallable(const ListChannelsRequest& request) const
@@ -1163,15 +963,7 @@ ListInputDevicesOutcome MediaLiveClient::ListInputDevices(const ListInputDevices
   Aws::StringStream ss;
   ss << "/prod/inputDevices";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListInputDevicesOutcome(ListInputDevicesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListInputDevicesOutcome(outcome.GetError());
-  }
+  return ListInputDevicesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListInputDevicesOutcomeCallable MediaLiveClient::ListInputDevicesCallable(const ListInputDevicesRequest& request) const
@@ -1198,15 +990,7 @@ ListInputSecurityGroupsOutcome MediaLiveClient::ListInputSecurityGroups(const Li
   Aws::StringStream ss;
   ss << "/prod/inputSecurityGroups";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListInputSecurityGroupsOutcome(ListInputSecurityGroupsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListInputSecurityGroupsOutcome(outcome.GetError());
-  }
+  return ListInputSecurityGroupsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListInputSecurityGroupsOutcomeCallable MediaLiveClient::ListInputSecurityGroupsCallable(const ListInputSecurityGroupsRequest& request) const
@@ -1233,15 +1017,7 @@ ListInputsOutcome MediaLiveClient::ListInputs(const ListInputsRequest& request) 
   Aws::StringStream ss;
   ss << "/prod/inputs";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListInputsOutcome(ListInputsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListInputsOutcome(outcome.GetError());
-  }
+  return ListInputsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListInputsOutcomeCallable MediaLiveClient::ListInputsCallable(const ListInputsRequest& request) const
@@ -1275,15 +1051,7 @@ ListMultiplexProgramsOutcome MediaLiveClient::ListMultiplexPrograms(const ListMu
   ss << request.GetMultiplexId();
   ss << "/programs";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListMultiplexProgramsOutcome(ListMultiplexProgramsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListMultiplexProgramsOutcome(outcome.GetError());
-  }
+  return ListMultiplexProgramsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListMultiplexProgramsOutcomeCallable MediaLiveClient::ListMultiplexProgramsCallable(const ListMultiplexProgramsRequest& request) const
@@ -1310,15 +1078,7 @@ ListMultiplexesOutcome MediaLiveClient::ListMultiplexes(const ListMultiplexesReq
   Aws::StringStream ss;
   ss << "/prod/multiplexes";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListMultiplexesOutcome(ListMultiplexesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListMultiplexesOutcome(outcome.GetError());
-  }
+  return ListMultiplexesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListMultiplexesOutcomeCallable MediaLiveClient::ListMultiplexesCallable(const ListMultiplexesRequest& request) const
@@ -1345,15 +1105,7 @@ ListOfferingsOutcome MediaLiveClient::ListOfferings(const ListOfferingsRequest& 
   Aws::StringStream ss;
   ss << "/prod/offerings";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListOfferingsOutcome(ListOfferingsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListOfferingsOutcome(outcome.GetError());
-  }
+  return ListOfferingsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListOfferingsOutcomeCallable MediaLiveClient::ListOfferingsCallable(const ListOfferingsRequest& request) const
@@ -1380,15 +1132,7 @@ ListReservationsOutcome MediaLiveClient::ListReservations(const ListReservations
   Aws::StringStream ss;
   ss << "/prod/reservations";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListReservationsOutcome(ListReservationsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListReservationsOutcome(outcome.GetError());
-  }
+  return ListReservationsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListReservationsOutcomeCallable MediaLiveClient::ListReservationsCallable(const ListReservationsRequest& request) const
@@ -1421,15 +1165,7 @@ ListTagsForResourceOutcome MediaLiveClient::ListTagsForResource(const ListTagsFo
   ss << "/prod/tags/";
   ss << request.GetResourceArn();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListTagsForResourceOutcome(ListTagsForResourceResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListTagsForResourceOutcome(outcome.GetError());
-  }
+  return ListTagsForResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListTagsForResourceOutcomeCallable MediaLiveClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
@@ -1463,15 +1199,7 @@ PurchaseOfferingOutcome MediaLiveClient::PurchaseOffering(const PurchaseOffering
   ss << request.GetOfferingId();
   ss << "/purchase";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return PurchaseOfferingOutcome(PurchaseOfferingResult(outcome.GetResult()));
-  }
-  else
-  {
-    return PurchaseOfferingOutcome(outcome.GetError());
-  }
+  return PurchaseOfferingOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 PurchaseOfferingOutcomeCallable MediaLiveClient::PurchaseOfferingCallable(const PurchaseOfferingRequest& request) const
@@ -1505,15 +1233,7 @@ StartChannelOutcome MediaLiveClient::StartChannel(const StartChannelRequest& req
   ss << request.GetChannelId();
   ss << "/start";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return StartChannelOutcome(StartChannelResult(outcome.GetResult()));
-  }
-  else
-  {
-    return StartChannelOutcome(outcome.GetError());
-  }
+  return StartChannelOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 StartChannelOutcomeCallable MediaLiveClient::StartChannelCallable(const StartChannelRequest& request) const
@@ -1547,15 +1267,7 @@ StartMultiplexOutcome MediaLiveClient::StartMultiplex(const StartMultiplexReques
   ss << request.GetMultiplexId();
   ss << "/start";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return StartMultiplexOutcome(StartMultiplexResult(outcome.GetResult()));
-  }
-  else
-  {
-    return StartMultiplexOutcome(outcome.GetError());
-  }
+  return StartMultiplexOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 StartMultiplexOutcomeCallable MediaLiveClient::StartMultiplexCallable(const StartMultiplexRequest& request) const
@@ -1589,15 +1301,7 @@ StopChannelOutcome MediaLiveClient::StopChannel(const StopChannelRequest& reques
   ss << request.GetChannelId();
   ss << "/stop";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return StopChannelOutcome(StopChannelResult(outcome.GetResult()));
-  }
-  else
-  {
-    return StopChannelOutcome(outcome.GetError());
-  }
+  return StopChannelOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 StopChannelOutcomeCallable MediaLiveClient::StopChannelCallable(const StopChannelRequest& request) const
@@ -1631,15 +1335,7 @@ StopMultiplexOutcome MediaLiveClient::StopMultiplex(const StopMultiplexRequest& 
   ss << request.GetMultiplexId();
   ss << "/stop";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return StopMultiplexOutcome(StopMultiplexResult(outcome.GetResult()));
-  }
-  else
-  {
-    return StopMultiplexOutcome(outcome.GetError());
-  }
+  return StopMultiplexOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 StopMultiplexOutcomeCallable MediaLiveClient::StopMultiplexCallable(const StopMultiplexRequest& request) const
@@ -1672,15 +1368,7 @@ UpdateChannelOutcome MediaLiveClient::UpdateChannel(const UpdateChannelRequest& 
   ss << "/prod/channels/";
   ss << request.GetChannelId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateChannelOutcome(UpdateChannelResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateChannelOutcome(outcome.GetError());
-  }
+  return UpdateChannelOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateChannelOutcomeCallable MediaLiveClient::UpdateChannelCallable(const UpdateChannelRequest& request) const
@@ -1714,15 +1402,7 @@ UpdateChannelClassOutcome MediaLiveClient::UpdateChannelClass(const UpdateChanne
   ss << request.GetChannelId();
   ss << "/channelClass";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateChannelClassOutcome(UpdateChannelClassResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateChannelClassOutcome(outcome.GetError());
-  }
+  return UpdateChannelClassOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateChannelClassOutcomeCallable MediaLiveClient::UpdateChannelClassCallable(const UpdateChannelClassRequest& request) const
@@ -1755,15 +1435,7 @@ UpdateInputOutcome MediaLiveClient::UpdateInput(const UpdateInputRequest& reques
   ss << "/prod/inputs/";
   ss << request.GetInputId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateInputOutcome(UpdateInputResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateInputOutcome(outcome.GetError());
-  }
+  return UpdateInputOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateInputOutcomeCallable MediaLiveClient::UpdateInputCallable(const UpdateInputRequest& request) const
@@ -1796,15 +1468,7 @@ UpdateInputDeviceOutcome MediaLiveClient::UpdateInputDevice(const UpdateInputDev
   ss << "/prod/inputDevices/";
   ss << request.GetInputDeviceId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateInputDeviceOutcome(UpdateInputDeviceResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateInputDeviceOutcome(outcome.GetError());
-  }
+  return UpdateInputDeviceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateInputDeviceOutcomeCallable MediaLiveClient::UpdateInputDeviceCallable(const UpdateInputDeviceRequest& request) const
@@ -1837,15 +1501,7 @@ UpdateInputSecurityGroupOutcome MediaLiveClient::UpdateInputSecurityGroup(const 
   ss << "/prod/inputSecurityGroups/";
   ss << request.GetInputSecurityGroupId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateInputSecurityGroupOutcome(UpdateInputSecurityGroupResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateInputSecurityGroupOutcome(outcome.GetError());
-  }
+  return UpdateInputSecurityGroupOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateInputSecurityGroupOutcomeCallable MediaLiveClient::UpdateInputSecurityGroupCallable(const UpdateInputSecurityGroupRequest& request) const
@@ -1878,15 +1534,7 @@ UpdateMultiplexOutcome MediaLiveClient::UpdateMultiplex(const UpdateMultiplexReq
   ss << "/prod/multiplexes/";
   ss << request.GetMultiplexId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateMultiplexOutcome(UpdateMultiplexResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateMultiplexOutcome(outcome.GetError());
-  }
+  return UpdateMultiplexOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateMultiplexOutcomeCallable MediaLiveClient::UpdateMultiplexCallable(const UpdateMultiplexRequest& request) const
@@ -1926,15 +1574,7 @@ UpdateMultiplexProgramOutcome MediaLiveClient::UpdateMultiplexProgram(const Upda
   ss << "/programs/";
   ss << request.GetProgramName();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateMultiplexProgramOutcome(UpdateMultiplexProgramResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateMultiplexProgramOutcome(outcome.GetError());
-  }
+  return UpdateMultiplexProgramOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateMultiplexProgramOutcomeCallable MediaLiveClient::UpdateMultiplexProgramCallable(const UpdateMultiplexProgramRequest& request) const
@@ -1967,15 +1607,7 @@ UpdateReservationOutcome MediaLiveClient::UpdateReservation(const UpdateReservat
   ss << "/prod/reservations/";
   ss << request.GetReservationId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateReservationOutcome(UpdateReservationResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateReservationOutcome(outcome.GetError());
-  }
+  return UpdateReservationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateReservationOutcomeCallable MediaLiveClient::UpdateReservationCallable(const UpdateReservationRequest& request) const

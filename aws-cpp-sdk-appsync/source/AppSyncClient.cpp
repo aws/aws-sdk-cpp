@@ -77,7 +77,7 @@ static const char* ALLOCATION_TAG = "AppSyncClient";
 AppSyncClient::AppSyncClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-        SERVICE_NAME, clientConfiguration.region),
+        SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<AppSyncErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -87,7 +87,7 @@ AppSyncClient::AppSyncClient(const Client::ClientConfiguration& clientConfigurat
 AppSyncClient::AppSyncClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-         SERVICE_NAME, clientConfiguration.region),
+         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<AppSyncErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -98,7 +98,7 @@ AppSyncClient::AppSyncClient(const std::shared_ptr<AWSCredentialsProvider>& cred
   const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider,
-         SERVICE_NAME, clientConfiguration.region),
+         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<AppSyncErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -147,15 +147,7 @@ CreateApiCacheOutcome AppSyncClient::CreateApiCache(const CreateApiCacheRequest&
   ss << request.GetApiId();
   ss << "/ApiCaches";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateApiCacheOutcome(CreateApiCacheResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateApiCacheOutcome(outcome.GetError());
-  }
+  return CreateApiCacheOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateApiCacheOutcomeCallable AppSyncClient::CreateApiCacheCallable(const CreateApiCacheRequest& request) const
@@ -189,15 +181,7 @@ CreateApiKeyOutcome AppSyncClient::CreateApiKey(const CreateApiKeyRequest& reque
   ss << request.GetApiId();
   ss << "/apikeys";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateApiKeyOutcome(CreateApiKeyResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateApiKeyOutcome(outcome.GetError());
-  }
+  return CreateApiKeyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateApiKeyOutcomeCallable AppSyncClient::CreateApiKeyCallable(const CreateApiKeyRequest& request) const
@@ -231,15 +215,7 @@ CreateDataSourceOutcome AppSyncClient::CreateDataSource(const CreateDataSourceRe
   ss << request.GetApiId();
   ss << "/datasources";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateDataSourceOutcome(CreateDataSourceResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateDataSourceOutcome(outcome.GetError());
-  }
+  return CreateDataSourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateDataSourceOutcomeCallable AppSyncClient::CreateDataSourceCallable(const CreateDataSourceRequest& request) const
@@ -273,15 +249,7 @@ CreateFunctionOutcome AppSyncClient::CreateFunction(const CreateFunctionRequest&
   ss << request.GetApiId();
   ss << "/functions";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateFunctionOutcome(CreateFunctionResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateFunctionOutcome(outcome.GetError());
-  }
+  return CreateFunctionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateFunctionOutcomeCallable AppSyncClient::CreateFunctionCallable(const CreateFunctionRequest& request) const
@@ -308,15 +276,7 @@ CreateGraphqlApiOutcome AppSyncClient::CreateGraphqlApi(const CreateGraphqlApiRe
   Aws::StringStream ss;
   ss << "/v1/apis";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateGraphqlApiOutcome(CreateGraphqlApiResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateGraphqlApiOutcome(outcome.GetError());
-  }
+  return CreateGraphqlApiOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateGraphqlApiOutcomeCallable AppSyncClient::CreateGraphqlApiCallable(const CreateGraphqlApiRequest& request) const
@@ -357,15 +317,7 @@ CreateResolverOutcome AppSyncClient::CreateResolver(const CreateResolverRequest&
   ss << request.GetTypeName();
   ss << "/resolvers";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateResolverOutcome(CreateResolverResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateResolverOutcome(outcome.GetError());
-  }
+  return CreateResolverOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateResolverOutcomeCallable AppSyncClient::CreateResolverCallable(const CreateResolverRequest& request) const
@@ -399,15 +351,7 @@ CreateTypeOutcome AppSyncClient::CreateType(const CreateTypeRequest& request) co
   ss << request.GetApiId();
   ss << "/types";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateTypeOutcome(CreateTypeResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateTypeOutcome(outcome.GetError());
-  }
+  return CreateTypeOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateTypeOutcomeCallable AppSyncClient::CreateTypeCallable(const CreateTypeRequest& request) const
@@ -441,15 +385,7 @@ DeleteApiCacheOutcome AppSyncClient::DeleteApiCache(const DeleteApiCacheRequest&
   ss << request.GetApiId();
   ss << "/ApiCaches";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteApiCacheOutcome(DeleteApiCacheResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteApiCacheOutcome(outcome.GetError());
-  }
+  return DeleteApiCacheOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteApiCacheOutcomeCallable AppSyncClient::DeleteApiCacheCallable(const DeleteApiCacheRequest& request) const
@@ -489,15 +425,7 @@ DeleteApiKeyOutcome AppSyncClient::DeleteApiKey(const DeleteApiKeyRequest& reque
   ss << "/apikeys/";
   ss << request.GetId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteApiKeyOutcome(DeleteApiKeyResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteApiKeyOutcome(outcome.GetError());
-  }
+  return DeleteApiKeyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteApiKeyOutcomeCallable AppSyncClient::DeleteApiKeyCallable(const DeleteApiKeyRequest& request) const
@@ -537,15 +465,7 @@ DeleteDataSourceOutcome AppSyncClient::DeleteDataSource(const DeleteDataSourceRe
   ss << "/datasources/";
   ss << request.GetName();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteDataSourceOutcome(DeleteDataSourceResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteDataSourceOutcome(outcome.GetError());
-  }
+  return DeleteDataSourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteDataSourceOutcomeCallable AppSyncClient::DeleteDataSourceCallable(const DeleteDataSourceRequest& request) const
@@ -585,15 +505,7 @@ DeleteFunctionOutcome AppSyncClient::DeleteFunction(const DeleteFunctionRequest&
   ss << "/functions/";
   ss << request.GetFunctionId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteFunctionOutcome(DeleteFunctionResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteFunctionOutcome(outcome.GetError());
-  }
+  return DeleteFunctionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteFunctionOutcomeCallable AppSyncClient::DeleteFunctionCallable(const DeleteFunctionRequest& request) const
@@ -626,15 +538,7 @@ DeleteGraphqlApiOutcome AppSyncClient::DeleteGraphqlApi(const DeleteGraphqlApiRe
   ss << "/v1/apis/";
   ss << request.GetApiId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteGraphqlApiOutcome(DeleteGraphqlApiResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteGraphqlApiOutcome(outcome.GetError());
-  }
+  return DeleteGraphqlApiOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteGraphqlApiOutcomeCallable AppSyncClient::DeleteGraphqlApiCallable(const DeleteGraphqlApiRequest& request) const
@@ -681,15 +585,7 @@ DeleteResolverOutcome AppSyncClient::DeleteResolver(const DeleteResolverRequest&
   ss << "/resolvers/";
   ss << request.GetFieldName();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteResolverOutcome(DeleteResolverResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteResolverOutcome(outcome.GetError());
-  }
+  return DeleteResolverOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteResolverOutcomeCallable AppSyncClient::DeleteResolverCallable(const DeleteResolverRequest& request) const
@@ -729,15 +625,7 @@ DeleteTypeOutcome AppSyncClient::DeleteType(const DeleteTypeRequest& request) co
   ss << "/types/";
   ss << request.GetTypeName();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteTypeOutcome(DeleteTypeResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteTypeOutcome(outcome.GetError());
-  }
+  return DeleteTypeOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteTypeOutcomeCallable AppSyncClient::DeleteTypeCallable(const DeleteTypeRequest& request) const
@@ -771,15 +659,7 @@ FlushApiCacheOutcome AppSyncClient::FlushApiCache(const FlushApiCacheRequest& re
   ss << request.GetApiId();
   ss << "/FlushCache";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return FlushApiCacheOutcome(FlushApiCacheResult(outcome.GetResult()));
-  }
-  else
-  {
-    return FlushApiCacheOutcome(outcome.GetError());
-  }
+  return FlushApiCacheOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 FlushApiCacheOutcomeCallable AppSyncClient::FlushApiCacheCallable(const FlushApiCacheRequest& request) const
@@ -813,15 +693,7 @@ GetApiCacheOutcome AppSyncClient::GetApiCache(const GetApiCacheRequest& request)
   ss << request.GetApiId();
   ss << "/ApiCaches";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetApiCacheOutcome(GetApiCacheResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetApiCacheOutcome(outcome.GetError());
-  }
+  return GetApiCacheOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetApiCacheOutcomeCallable AppSyncClient::GetApiCacheCallable(const GetApiCacheRequest& request) const
@@ -861,15 +733,7 @@ GetDataSourceOutcome AppSyncClient::GetDataSource(const GetDataSourceRequest& re
   ss << "/datasources/";
   ss << request.GetName();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetDataSourceOutcome(GetDataSourceResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetDataSourceOutcome(outcome.GetError());
-  }
+  return GetDataSourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetDataSourceOutcomeCallable AppSyncClient::GetDataSourceCallable(const GetDataSourceRequest& request) const
@@ -909,15 +773,7 @@ GetFunctionOutcome AppSyncClient::GetFunction(const GetFunctionRequest& request)
   ss << "/functions/";
   ss << request.GetFunctionId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetFunctionOutcome(GetFunctionResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetFunctionOutcome(outcome.GetError());
-  }
+  return GetFunctionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetFunctionOutcomeCallable AppSyncClient::GetFunctionCallable(const GetFunctionRequest& request) const
@@ -950,15 +806,7 @@ GetGraphqlApiOutcome AppSyncClient::GetGraphqlApi(const GetGraphqlApiRequest& re
   ss << "/v1/apis/";
   ss << request.GetApiId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetGraphqlApiOutcome(GetGraphqlApiResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetGraphqlApiOutcome(outcome.GetError());
-  }
+  return GetGraphqlApiOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetGraphqlApiOutcomeCallable AppSyncClient::GetGraphqlApiCallable(const GetGraphqlApiRequest& request) const
@@ -997,15 +845,7 @@ GetIntrospectionSchemaOutcome AppSyncClient::GetIntrospectionSchema(const GetInt
   ss << request.GetApiId();
   ss << "/schema";
   uri.SetPath(uri.GetPath() + ss.str());
-  StreamOutcome outcome = MakeRequestWithUnparsedResponse(uri, request, Aws::Http::HttpMethod::HTTP_GET);
-  if(outcome.IsSuccess())
-  {
-    return GetIntrospectionSchemaOutcome(GetIntrospectionSchemaResult(outcome.GetResultWithOwnership()));
-  }
-  else
-  {
-    return GetIntrospectionSchemaOutcome(outcome.GetError());
-  }
+  return GetIntrospectionSchemaOutcome(MakeRequestWithUnparsedResponse(uri, request, Aws::Http::HttpMethod::HTTP_GET));
 }
 
 GetIntrospectionSchemaOutcomeCallable AppSyncClient::GetIntrospectionSchemaCallable(const GetIntrospectionSchemaRequest& request) const
@@ -1052,15 +892,7 @@ GetResolverOutcome AppSyncClient::GetResolver(const GetResolverRequest& request)
   ss << "/resolvers/";
   ss << request.GetFieldName();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetResolverOutcome(GetResolverResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetResolverOutcome(outcome.GetError());
-  }
+  return GetResolverOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetResolverOutcomeCallable AppSyncClient::GetResolverCallable(const GetResolverRequest& request) const
@@ -1094,15 +926,7 @@ GetSchemaCreationStatusOutcome AppSyncClient::GetSchemaCreationStatus(const GetS
   ss << request.GetApiId();
   ss << "/schemacreation";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetSchemaCreationStatusOutcome(GetSchemaCreationStatusResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetSchemaCreationStatusOutcome(outcome.GetError());
-  }
+  return GetSchemaCreationStatusOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetSchemaCreationStatusOutcomeCallable AppSyncClient::GetSchemaCreationStatusCallable(const GetSchemaCreationStatusRequest& request) const
@@ -1147,15 +971,7 @@ GetTypeOutcome AppSyncClient::GetType(const GetTypeRequest& request) const
   ss << "/types/";
   ss << request.GetTypeName();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetTypeOutcome(GetTypeResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetTypeOutcome(outcome.GetError());
-  }
+  return GetTypeOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetTypeOutcomeCallable AppSyncClient::GetTypeCallable(const GetTypeRequest& request) const
@@ -1189,15 +1005,7 @@ ListApiKeysOutcome AppSyncClient::ListApiKeys(const ListApiKeysRequest& request)
   ss << request.GetApiId();
   ss << "/apikeys";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListApiKeysOutcome(ListApiKeysResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListApiKeysOutcome(outcome.GetError());
-  }
+  return ListApiKeysOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListApiKeysOutcomeCallable AppSyncClient::ListApiKeysCallable(const ListApiKeysRequest& request) const
@@ -1231,15 +1039,7 @@ ListDataSourcesOutcome AppSyncClient::ListDataSources(const ListDataSourcesReque
   ss << request.GetApiId();
   ss << "/datasources";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListDataSourcesOutcome(ListDataSourcesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListDataSourcesOutcome(outcome.GetError());
-  }
+  return ListDataSourcesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListDataSourcesOutcomeCallable AppSyncClient::ListDataSourcesCallable(const ListDataSourcesRequest& request) const
@@ -1273,15 +1073,7 @@ ListFunctionsOutcome AppSyncClient::ListFunctions(const ListFunctionsRequest& re
   ss << request.GetApiId();
   ss << "/functions";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListFunctionsOutcome(ListFunctionsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListFunctionsOutcome(outcome.GetError());
-  }
+  return ListFunctionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListFunctionsOutcomeCallable AppSyncClient::ListFunctionsCallable(const ListFunctionsRequest& request) const
@@ -1308,15 +1100,7 @@ ListGraphqlApisOutcome AppSyncClient::ListGraphqlApis(const ListGraphqlApisReque
   Aws::StringStream ss;
   ss << "/v1/apis";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListGraphqlApisOutcome(ListGraphqlApisResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListGraphqlApisOutcome(outcome.GetError());
-  }
+  return ListGraphqlApisOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListGraphqlApisOutcomeCallable AppSyncClient::ListGraphqlApisCallable(const ListGraphqlApisRequest& request) const
@@ -1357,15 +1141,7 @@ ListResolversOutcome AppSyncClient::ListResolvers(const ListResolversRequest& re
   ss << request.GetTypeName();
   ss << "/resolvers";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListResolversOutcome(ListResolversResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListResolversOutcome(outcome.GetError());
-  }
+  return ListResolversOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListResolversOutcomeCallable AppSyncClient::ListResolversCallable(const ListResolversRequest& request) const
@@ -1406,15 +1182,7 @@ ListResolversByFunctionOutcome AppSyncClient::ListResolversByFunction(const List
   ss << request.GetFunctionId();
   ss << "/resolvers";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListResolversByFunctionOutcome(ListResolversByFunctionResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListResolversByFunctionOutcome(outcome.GetError());
-  }
+  return ListResolversByFunctionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListResolversByFunctionOutcomeCallable AppSyncClient::ListResolversByFunctionCallable(const ListResolversByFunctionRequest& request) const
@@ -1447,15 +1215,7 @@ ListTagsForResourceOutcome AppSyncClient::ListTagsForResource(const ListTagsForR
   ss << "/v1/tags/";
   ss << request.GetResourceArn();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListTagsForResourceOutcome(ListTagsForResourceResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListTagsForResourceOutcome(outcome.GetError());
-  }
+  return ListTagsForResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListTagsForResourceOutcomeCallable AppSyncClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
@@ -1494,15 +1254,7 @@ ListTypesOutcome AppSyncClient::ListTypes(const ListTypesRequest& request) const
   ss << request.GetApiId();
   ss << "/types";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListTypesOutcome(ListTypesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListTypesOutcome(outcome.GetError());
-  }
+  return ListTypesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListTypesOutcomeCallable AppSyncClient::ListTypesCallable(const ListTypesRequest& request) const
@@ -1536,15 +1288,7 @@ StartSchemaCreationOutcome AppSyncClient::StartSchemaCreation(const StartSchemaC
   ss << request.GetApiId();
   ss << "/schemacreation";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return StartSchemaCreationOutcome(StartSchemaCreationResult(outcome.GetResult()));
-  }
-  else
-  {
-    return StartSchemaCreationOutcome(outcome.GetError());
-  }
+  return StartSchemaCreationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 StartSchemaCreationOutcomeCallable AppSyncClient::StartSchemaCreationCallable(const StartSchemaCreationRequest& request) const
@@ -1577,15 +1321,7 @@ TagResourceOutcome AppSyncClient::TagResource(const TagResourceRequest& request)
   ss << "/v1/tags/";
   ss << request.GetResourceArn();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return TagResourceOutcome(TagResourceResult(outcome.GetResult()));
-  }
-  else
-  {
-    return TagResourceOutcome(outcome.GetError());
-  }
+  return TagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 TagResourceOutcomeCallable AppSyncClient::TagResourceCallable(const TagResourceRequest& request) const
@@ -1623,15 +1359,7 @@ UntagResourceOutcome AppSyncClient::UntagResource(const UntagResourceRequest& re
   ss << "/v1/tags/";
   ss << request.GetResourceArn();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UntagResourceOutcome(UntagResourceResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UntagResourceOutcome(outcome.GetError());
-  }
+  return UntagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 UntagResourceOutcomeCallable AppSyncClient::UntagResourceCallable(const UntagResourceRequest& request) const
@@ -1665,15 +1393,7 @@ UpdateApiCacheOutcome AppSyncClient::UpdateApiCache(const UpdateApiCacheRequest&
   ss << request.GetApiId();
   ss << "/ApiCaches/update";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateApiCacheOutcome(UpdateApiCacheResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateApiCacheOutcome(outcome.GetError());
-  }
+  return UpdateApiCacheOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateApiCacheOutcomeCallable AppSyncClient::UpdateApiCacheCallable(const UpdateApiCacheRequest& request) const
@@ -1713,15 +1433,7 @@ UpdateApiKeyOutcome AppSyncClient::UpdateApiKey(const UpdateApiKeyRequest& reque
   ss << "/apikeys/";
   ss << request.GetId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateApiKeyOutcome(UpdateApiKeyResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateApiKeyOutcome(outcome.GetError());
-  }
+  return UpdateApiKeyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateApiKeyOutcomeCallable AppSyncClient::UpdateApiKeyCallable(const UpdateApiKeyRequest& request) const
@@ -1761,15 +1473,7 @@ UpdateDataSourceOutcome AppSyncClient::UpdateDataSource(const UpdateDataSourceRe
   ss << "/datasources/";
   ss << request.GetName();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateDataSourceOutcome(UpdateDataSourceResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateDataSourceOutcome(outcome.GetError());
-  }
+  return UpdateDataSourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateDataSourceOutcomeCallable AppSyncClient::UpdateDataSourceCallable(const UpdateDataSourceRequest& request) const
@@ -1809,15 +1513,7 @@ UpdateFunctionOutcome AppSyncClient::UpdateFunction(const UpdateFunctionRequest&
   ss << "/functions/";
   ss << request.GetFunctionId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateFunctionOutcome(UpdateFunctionResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateFunctionOutcome(outcome.GetError());
-  }
+  return UpdateFunctionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateFunctionOutcomeCallable AppSyncClient::UpdateFunctionCallable(const UpdateFunctionRequest& request) const
@@ -1850,15 +1546,7 @@ UpdateGraphqlApiOutcome AppSyncClient::UpdateGraphqlApi(const UpdateGraphqlApiRe
   ss << "/v1/apis/";
   ss << request.GetApiId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateGraphqlApiOutcome(UpdateGraphqlApiResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateGraphqlApiOutcome(outcome.GetError());
-  }
+  return UpdateGraphqlApiOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateGraphqlApiOutcomeCallable AppSyncClient::UpdateGraphqlApiCallable(const UpdateGraphqlApiRequest& request) const
@@ -1905,15 +1593,7 @@ UpdateResolverOutcome AppSyncClient::UpdateResolver(const UpdateResolverRequest&
   ss << "/resolvers/";
   ss << request.GetFieldName();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateResolverOutcome(UpdateResolverResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateResolverOutcome(outcome.GetError());
-  }
+  return UpdateResolverOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateResolverOutcomeCallable AppSyncClient::UpdateResolverCallable(const UpdateResolverRequest& request) const
@@ -1953,15 +1633,7 @@ UpdateTypeOutcome AppSyncClient::UpdateType(const UpdateTypeRequest& request) co
   ss << "/types/";
   ss << request.GetTypeName();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateTypeOutcome(UpdateTypeResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateTypeOutcome(outcome.GetError());
-  }
+  return UpdateTypeOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateTypeOutcomeCallable AppSyncClient::UpdateTypeCallable(const UpdateTypeRequest& request) const

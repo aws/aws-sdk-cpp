@@ -12,6 +12,7 @@ using namespace Aws::Utils;
 
 CreateDhcpOptionsRequest::CreateDhcpOptionsRequest() : 
     m_dhcpConfigurationsHasBeenSet(false),
+    m_tagSpecificationsHasBeenSet(false),
     m_dryRun(false),
     m_dryRunHasBeenSet(false)
 {
@@ -28,6 +29,16 @@ Aws::String CreateDhcpOptionsRequest::SerializePayload() const
     {
       item.OutputToStream(ss, "DhcpConfiguration.", dhcpConfigurationsCount, "");
       dhcpConfigurationsCount++;
+    }
+  }
+
+  if(m_tagSpecificationsHasBeenSet)
+  {
+    unsigned tagSpecificationsCount = 1;
+    for(auto& item : m_tagSpecifications)
+    {
+      item.OutputToStream(ss, "TagSpecification.", tagSpecificationsCount, "");
+      tagSpecificationsCount++;
     }
   }
 

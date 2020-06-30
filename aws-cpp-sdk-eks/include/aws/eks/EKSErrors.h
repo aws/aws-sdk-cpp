@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/eks/EKS_EXPORTS.h>
 
@@ -42,7 +43,7 @@ enum class EKSErrors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -56,6 +57,20 @@ enum class EKSErrors
   SERVER,
   UNSUPPORTED_AVAILABILITY_ZONE
 };
+
+class AWS_EKS_API EKSError : public Aws::Client::AWSError<EKSErrors>
+{
+public:
+  EKSError() {}
+  EKSError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<EKSErrors>(rhs) {}
+  EKSError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<EKSErrors>(rhs) {}
+  EKSError(const Aws::Client::AWSError<EKSErrors>& rhs) : Aws::Client::AWSError<EKSErrors>(rhs) {}
+  EKSError(Aws::Client::AWSError<EKSErrors>&& rhs) : Aws::Client::AWSError<EKSErrors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace EKSErrorMapper
 {
   AWS_EKS_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

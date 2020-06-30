@@ -38,83 +38,83 @@ namespace Model
 
 
     /**
-     * <p> Source Commit SHA. </p>
+     * <p> The SHA of the source commit. </p>
      */
     inline const Aws::String& GetSourceCommit() const{ return m_sourceCommit; }
 
     /**
-     * <p> Source Commit SHA. </p>
+     * <p> The SHA of the source commit. </p>
      */
     inline bool SourceCommitHasBeenSet() const { return m_sourceCommitHasBeenSet; }
 
     /**
-     * <p> Source Commit SHA. </p>
+     * <p> The SHA of the source commit. </p>
      */
     inline void SetSourceCommit(const Aws::String& value) { m_sourceCommitHasBeenSet = true; m_sourceCommit = value; }
 
     /**
-     * <p> Source Commit SHA. </p>
+     * <p> The SHA of the source commit. </p>
      */
     inline void SetSourceCommit(Aws::String&& value) { m_sourceCommitHasBeenSet = true; m_sourceCommit = std::move(value); }
 
     /**
-     * <p> Source Commit SHA. </p>
+     * <p> The SHA of the source commit. </p>
      */
     inline void SetSourceCommit(const char* value) { m_sourceCommitHasBeenSet = true; m_sourceCommit.assign(value); }
 
     /**
-     * <p> Source Commit SHA. </p>
+     * <p> The SHA of the source commit. </p>
      */
     inline CommitDiffSourceCodeType& WithSourceCommit(const Aws::String& value) { SetSourceCommit(value); return *this;}
 
     /**
-     * <p> Source Commit SHA. </p>
+     * <p> The SHA of the source commit. </p>
      */
     inline CommitDiffSourceCodeType& WithSourceCommit(Aws::String&& value) { SetSourceCommit(std::move(value)); return *this;}
 
     /**
-     * <p> Source Commit SHA. </p>
+     * <p> The SHA of the source commit. </p>
      */
     inline CommitDiffSourceCodeType& WithSourceCommit(const char* value) { SetSourceCommit(value); return *this;}
 
 
     /**
-     * <p> Destination Commit SHA </p>
+     * <p> The SHA of the destination commit. </p>
      */
     inline const Aws::String& GetDestinationCommit() const{ return m_destinationCommit; }
 
     /**
-     * <p> Destination Commit SHA </p>
+     * <p> The SHA of the destination commit. </p>
      */
     inline bool DestinationCommitHasBeenSet() const { return m_destinationCommitHasBeenSet; }
 
     /**
-     * <p> Destination Commit SHA </p>
+     * <p> The SHA of the destination commit. </p>
      */
     inline void SetDestinationCommit(const Aws::String& value) { m_destinationCommitHasBeenSet = true; m_destinationCommit = value; }
 
     /**
-     * <p> Destination Commit SHA </p>
+     * <p> The SHA of the destination commit. </p>
      */
     inline void SetDestinationCommit(Aws::String&& value) { m_destinationCommitHasBeenSet = true; m_destinationCommit = std::move(value); }
 
     /**
-     * <p> Destination Commit SHA </p>
+     * <p> The SHA of the destination commit. </p>
      */
     inline void SetDestinationCommit(const char* value) { m_destinationCommitHasBeenSet = true; m_destinationCommit.assign(value); }
 
     /**
-     * <p> Destination Commit SHA </p>
+     * <p> The SHA of the destination commit. </p>
      */
     inline CommitDiffSourceCodeType& WithDestinationCommit(const Aws::String& value) { SetDestinationCommit(value); return *this;}
 
     /**
-     * <p> Destination Commit SHA </p>
+     * <p> The SHA of the destination commit. </p>
      */
     inline CommitDiffSourceCodeType& WithDestinationCommit(Aws::String&& value) { SetDestinationCommit(std::move(value)); return *this;}
 
     /**
-     * <p> Destination Commit SHA </p>
+     * <p> The SHA of the destination commit. </p>
      */
     inline CommitDiffSourceCodeType& WithDestinationCommit(const char* value) { SetDestinationCommit(value); return *this;}
 

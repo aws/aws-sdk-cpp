@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/ecr/ECR_EXPORTS.h>
 
@@ -42,12 +43,13 @@ enum class ECRErrors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
   EMPTY_UPLOAD= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   IMAGE_ALREADY_EXISTS,
+  IMAGE_DIGEST_DOES_NOT_MATCH,
   IMAGE_NOT_FOUND,
   IMAGE_TAG_ALREADY_EXISTS,
   INVALID_LAYER,
@@ -73,6 +75,20 @@ enum class ECRErrors
   UNSUPPORTED_IMAGE_TYPE,
   UPLOAD_NOT_FOUND
 };
+
+class AWS_ECR_API ECRError : public Aws::Client::AWSError<ECRErrors>
+{
+public:
+  ECRError() {}
+  ECRError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<ECRErrors>(rhs) {}
+  ECRError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<ECRErrors>(rhs) {}
+  ECRError(const Aws::Client::AWSError<ECRErrors>& rhs) : Aws::Client::AWSError<ECRErrors>(rhs) {}
+  ECRError(Aws::Client::AWSError<ECRErrors>&& rhs) : Aws::Client::AWSError<ECRErrors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace ECRErrorMapper
 {
   AWS_ECR_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

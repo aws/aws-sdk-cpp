@@ -67,7 +67,7 @@ static const char* ALLOCATION_TAG = "CodeArtifactClient";
 CodeArtifactClient::CodeArtifactClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-        SERVICE_NAME, clientConfiguration.region),
+        SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<CodeArtifactErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -77,7 +77,7 @@ CodeArtifactClient::CodeArtifactClient(const Client::ClientConfiguration& client
 CodeArtifactClient::CodeArtifactClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-         SERVICE_NAME, clientConfiguration.region),
+         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<CodeArtifactErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -88,7 +88,7 @@ CodeArtifactClient::CodeArtifactClient(const std::shared_ptr<AWSCredentialsProvi
   const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider,
-         SERVICE_NAME, clientConfiguration.region),
+         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<CodeArtifactErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -145,15 +145,7 @@ AssociateExternalConnectionOutcome CodeArtifactClient::AssociateExternalConnecti
   Aws::StringStream ss;
   ss << "/v1/repository/external-connection";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return AssociateExternalConnectionOutcome(AssociateExternalConnectionResult(outcome.GetResult()));
-  }
-  else
-  {
-    return AssociateExternalConnectionOutcome(outcome.GetError());
-  }
+  return AssociateExternalConnectionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 AssociateExternalConnectionOutcomeCallable CodeArtifactClient::AssociateExternalConnectionCallable(const AssociateExternalConnectionRequest& request) const
@@ -205,15 +197,7 @@ CopyPackageVersionsOutcome CodeArtifactClient::CopyPackageVersions(const CopyPac
   Aws::StringStream ss;
   ss << "/v1/package/versions/copy";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CopyPackageVersionsOutcome(CopyPackageVersionsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CopyPackageVersionsOutcome(outcome.GetError());
-  }
+  return CopyPackageVersionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CopyPackageVersionsOutcomeCallable CodeArtifactClient::CopyPackageVersionsCallable(const CopyPackageVersionsRequest& request) const
@@ -245,15 +229,7 @@ CreateDomainOutcome CodeArtifactClient::CreateDomain(const CreateDomainRequest& 
   Aws::StringStream ss;
   ss << "/v1/domain";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateDomainOutcome(CreateDomainResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateDomainOutcome(outcome.GetError());
-  }
+  return CreateDomainOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateDomainOutcomeCallable CodeArtifactClient::CreateDomainCallable(const CreateDomainRequest& request) const
@@ -290,15 +266,7 @@ CreateRepositoryOutcome CodeArtifactClient::CreateRepository(const CreateReposit
   Aws::StringStream ss;
   ss << "/v1/repository";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateRepositoryOutcome(CreateRepositoryResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateRepositoryOutcome(outcome.GetError());
-  }
+  return CreateRepositoryOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateRepositoryOutcomeCallable CodeArtifactClient::CreateRepositoryCallable(const CreateRepositoryRequest& request) const
@@ -330,15 +298,7 @@ DeleteDomainOutcome CodeArtifactClient::DeleteDomain(const DeleteDomainRequest& 
   Aws::StringStream ss;
   ss << "/v1/domain";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteDomainOutcome(DeleteDomainResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteDomainOutcome(outcome.GetError());
-  }
+  return DeleteDomainOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteDomainOutcomeCallable CodeArtifactClient::DeleteDomainCallable(const DeleteDomainRequest& request) const
@@ -370,15 +330,7 @@ DeleteDomainPermissionsPolicyOutcome CodeArtifactClient::DeleteDomainPermissions
   Aws::StringStream ss;
   ss << "/v1/domain/permissions/policy";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteDomainPermissionsPolicyOutcome(DeleteDomainPermissionsPolicyResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteDomainPermissionsPolicyOutcome(outcome.GetError());
-  }
+  return DeleteDomainPermissionsPolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteDomainPermissionsPolicyOutcomeCallable CodeArtifactClient::DeleteDomainPermissionsPolicyCallable(const DeleteDomainPermissionsPolicyRequest& request) const
@@ -425,15 +377,7 @@ DeletePackageVersionsOutcome CodeArtifactClient::DeletePackageVersions(const Del
   Aws::StringStream ss;
   ss << "/v1/package/versions/delete";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeletePackageVersionsOutcome(DeletePackageVersionsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeletePackageVersionsOutcome(outcome.GetError());
-  }
+  return DeletePackageVersionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeletePackageVersionsOutcomeCallable CodeArtifactClient::DeletePackageVersionsCallable(const DeletePackageVersionsRequest& request) const
@@ -470,15 +414,7 @@ DeleteRepositoryOutcome CodeArtifactClient::DeleteRepository(const DeleteReposit
   Aws::StringStream ss;
   ss << "/v1/repository";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteRepositoryOutcome(DeleteRepositoryResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteRepositoryOutcome(outcome.GetError());
-  }
+  return DeleteRepositoryOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteRepositoryOutcomeCallable CodeArtifactClient::DeleteRepositoryCallable(const DeleteRepositoryRequest& request) const
@@ -515,15 +451,7 @@ DeleteRepositoryPermissionsPolicyOutcome CodeArtifactClient::DeleteRepositoryPer
   Aws::StringStream ss;
   ss << "/v1/repository/permissions/policies";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteRepositoryPermissionsPolicyOutcome(DeleteRepositoryPermissionsPolicyResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteRepositoryPermissionsPolicyOutcome(outcome.GetError());
-  }
+  return DeleteRepositoryPermissionsPolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteRepositoryPermissionsPolicyOutcomeCallable CodeArtifactClient::DeleteRepositoryPermissionsPolicyCallable(const DeleteRepositoryPermissionsPolicyRequest& request) const
@@ -555,15 +483,7 @@ DescribeDomainOutcome CodeArtifactClient::DescribeDomain(const DescribeDomainReq
   Aws::StringStream ss;
   ss << "/v1/domain";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeDomainOutcome(DescribeDomainResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeDomainOutcome(outcome.GetError());
-  }
+  return DescribeDomainOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeDomainOutcomeCallable CodeArtifactClient::DescribeDomainCallable(const DescribeDomainRequest& request) const
@@ -615,15 +535,7 @@ DescribePackageVersionOutcome CodeArtifactClient::DescribePackageVersion(const D
   Aws::StringStream ss;
   ss << "/v1/package/version";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribePackageVersionOutcome(DescribePackageVersionResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribePackageVersionOutcome(outcome.GetError());
-  }
+  return DescribePackageVersionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribePackageVersionOutcomeCallable CodeArtifactClient::DescribePackageVersionCallable(const DescribePackageVersionRequest& request) const
@@ -660,15 +572,7 @@ DescribeRepositoryOutcome CodeArtifactClient::DescribeRepository(const DescribeR
   Aws::StringStream ss;
   ss << "/v1/repository";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeRepositoryOutcome(DescribeRepositoryResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeRepositoryOutcome(outcome.GetError());
-  }
+  return DescribeRepositoryOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeRepositoryOutcomeCallable CodeArtifactClient::DescribeRepositoryCallable(const DescribeRepositoryRequest& request) const
@@ -710,15 +614,7 @@ DisassociateExternalConnectionOutcome CodeArtifactClient::DisassociateExternalCo
   Aws::StringStream ss;
   ss << "/v1/repository/external-connection";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DisassociateExternalConnectionOutcome(DisassociateExternalConnectionResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DisassociateExternalConnectionOutcome(outcome.GetError());
-  }
+  return DisassociateExternalConnectionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DisassociateExternalConnectionOutcomeCallable CodeArtifactClient::DisassociateExternalConnectionCallable(const DisassociateExternalConnectionRequest& request) const
@@ -765,15 +661,7 @@ DisposePackageVersionsOutcome CodeArtifactClient::DisposePackageVersions(const D
   Aws::StringStream ss;
   ss << "/v1/package/versions/dispose";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DisposePackageVersionsOutcome(DisposePackageVersionsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DisposePackageVersionsOutcome(outcome.GetError());
-  }
+  return DisposePackageVersionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DisposePackageVersionsOutcomeCallable CodeArtifactClient::DisposePackageVersionsCallable(const DisposePackageVersionsRequest& request) const
@@ -805,15 +693,7 @@ GetAuthorizationTokenOutcome CodeArtifactClient::GetAuthorizationToken(const Get
   Aws::StringStream ss;
   ss << "/v1/authorization-token";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetAuthorizationTokenOutcome(GetAuthorizationTokenResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetAuthorizationTokenOutcome(outcome.GetError());
-  }
+  return GetAuthorizationTokenOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetAuthorizationTokenOutcomeCallable CodeArtifactClient::GetAuthorizationTokenCallable(const GetAuthorizationTokenRequest& request) const
@@ -845,15 +725,7 @@ GetDomainPermissionsPolicyOutcome CodeArtifactClient::GetDomainPermissionsPolicy
   Aws::StringStream ss;
   ss << "/v1/domain/permissions/policy";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetDomainPermissionsPolicyOutcome(GetDomainPermissionsPolicyResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetDomainPermissionsPolicyOutcome(outcome.GetError());
-  }
+  return GetDomainPermissionsPolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetDomainPermissionsPolicyOutcomeCallable CodeArtifactClient::GetDomainPermissionsPolicyCallable(const GetDomainPermissionsPolicyRequest& request) const
@@ -910,15 +782,7 @@ GetPackageVersionAssetOutcome CodeArtifactClient::GetPackageVersionAsset(const G
   Aws::StringStream ss;
   ss << "/v1/package/version/asset";
   uri.SetPath(uri.GetPath() + ss.str());
-  StreamOutcome outcome = MakeRequestWithUnparsedResponse(uri, request, Aws::Http::HttpMethod::HTTP_GET);
-  if(outcome.IsSuccess())
-  {
-    return GetPackageVersionAssetOutcome(GetPackageVersionAssetResult(outcome.GetResultWithOwnership()));
-  }
-  else
-  {
-    return GetPackageVersionAssetOutcome(outcome.GetError());
-  }
+  return GetPackageVersionAssetOutcome(MakeRequestWithUnparsedResponse(uri, request, Aws::Http::HttpMethod::HTTP_GET));
 }
 
 GetPackageVersionAssetOutcomeCallable CodeArtifactClient::GetPackageVersionAssetCallable(const GetPackageVersionAssetRequest& request) const
@@ -970,15 +834,7 @@ GetPackageVersionReadmeOutcome CodeArtifactClient::GetPackageVersionReadme(const
   Aws::StringStream ss;
   ss << "/v1/package/version/readme";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetPackageVersionReadmeOutcome(GetPackageVersionReadmeResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetPackageVersionReadmeOutcome(outcome.GetError());
-  }
+  return GetPackageVersionReadmeOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetPackageVersionReadmeOutcomeCallable CodeArtifactClient::GetPackageVersionReadmeCallable(const GetPackageVersionReadmeRequest& request) const
@@ -1020,15 +876,7 @@ GetRepositoryEndpointOutcome CodeArtifactClient::GetRepositoryEndpoint(const Get
   Aws::StringStream ss;
   ss << "/v1/repository/endpoint";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetRepositoryEndpointOutcome(GetRepositoryEndpointResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetRepositoryEndpointOutcome(outcome.GetError());
-  }
+  return GetRepositoryEndpointOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetRepositoryEndpointOutcomeCallable CodeArtifactClient::GetRepositoryEndpointCallable(const GetRepositoryEndpointRequest& request) const
@@ -1065,15 +913,7 @@ GetRepositoryPermissionsPolicyOutcome CodeArtifactClient::GetRepositoryPermissio
   Aws::StringStream ss;
   ss << "/v1/repository/permissions/policy";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetRepositoryPermissionsPolicyOutcome(GetRepositoryPermissionsPolicyResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetRepositoryPermissionsPolicyOutcome(outcome.GetError());
-  }
+  return GetRepositoryPermissionsPolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetRepositoryPermissionsPolicyOutcomeCallable CodeArtifactClient::GetRepositoryPermissionsPolicyCallable(const GetRepositoryPermissionsPolicyRequest& request) const
@@ -1100,15 +940,7 @@ ListDomainsOutcome CodeArtifactClient::ListDomains(const ListDomainsRequest& req
   Aws::StringStream ss;
   ss << "/v1/domains";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListDomainsOutcome(ListDomainsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListDomainsOutcome(outcome.GetError());
-  }
+  return ListDomainsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListDomainsOutcomeCallable CodeArtifactClient::ListDomainsCallable(const ListDomainsRequest& request) const
@@ -1160,15 +992,7 @@ ListPackageVersionAssetsOutcome CodeArtifactClient::ListPackageVersionAssets(con
   Aws::StringStream ss;
   ss << "/v1/package/version/assets";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListPackageVersionAssetsOutcome(ListPackageVersionAssetsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListPackageVersionAssetsOutcome(outcome.GetError());
-  }
+  return ListPackageVersionAssetsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListPackageVersionAssetsOutcomeCallable CodeArtifactClient::ListPackageVersionAssetsCallable(const ListPackageVersionAssetsRequest& request) const
@@ -1220,15 +1044,7 @@ ListPackageVersionDependenciesOutcome CodeArtifactClient::ListPackageVersionDepe
   Aws::StringStream ss;
   ss << "/v1/package/version/dependencies";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListPackageVersionDependenciesOutcome(ListPackageVersionDependenciesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListPackageVersionDependenciesOutcome(outcome.GetError());
-  }
+  return ListPackageVersionDependenciesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListPackageVersionDependenciesOutcomeCallable CodeArtifactClient::ListPackageVersionDependenciesCallable(const ListPackageVersionDependenciesRequest& request) const
@@ -1275,15 +1091,7 @@ ListPackageVersionsOutcome CodeArtifactClient::ListPackageVersions(const ListPac
   Aws::StringStream ss;
   ss << "/v1/package/versions";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListPackageVersionsOutcome(ListPackageVersionsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListPackageVersionsOutcome(outcome.GetError());
-  }
+  return ListPackageVersionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListPackageVersionsOutcomeCallable CodeArtifactClient::ListPackageVersionsCallable(const ListPackageVersionsRequest& request) const
@@ -1320,15 +1128,7 @@ ListPackagesOutcome CodeArtifactClient::ListPackages(const ListPackagesRequest& 
   Aws::StringStream ss;
   ss << "/v1/packages";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListPackagesOutcome(ListPackagesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListPackagesOutcome(outcome.GetError());
-  }
+  return ListPackagesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListPackagesOutcomeCallable CodeArtifactClient::ListPackagesCallable(const ListPackagesRequest& request) const
@@ -1355,15 +1155,7 @@ ListRepositoriesOutcome CodeArtifactClient::ListRepositories(const ListRepositor
   Aws::StringStream ss;
   ss << "/v1/repositories";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListRepositoriesOutcome(ListRepositoriesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListRepositoriesOutcome(outcome.GetError());
-  }
+  return ListRepositoriesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListRepositoriesOutcomeCallable CodeArtifactClient::ListRepositoriesCallable(const ListRepositoriesRequest& request) const
@@ -1395,15 +1187,7 @@ ListRepositoriesInDomainOutcome CodeArtifactClient::ListRepositoriesInDomain(con
   Aws::StringStream ss;
   ss << "/v1/domain/repositories";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListRepositoriesInDomainOutcome(ListRepositoriesInDomainResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListRepositoriesInDomainOutcome(outcome.GetError());
-  }
+  return ListRepositoriesInDomainOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListRepositoriesInDomainOutcomeCallable CodeArtifactClient::ListRepositoriesInDomainCallable(const ListRepositoriesInDomainRequest& request) const
@@ -1430,15 +1214,7 @@ PutDomainPermissionsPolicyOutcome CodeArtifactClient::PutDomainPermissionsPolicy
   Aws::StringStream ss;
   ss << "/v1/domain/permissions/policy";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return PutDomainPermissionsPolicyOutcome(PutDomainPermissionsPolicyResult(outcome.GetResult()));
-  }
-  else
-  {
-    return PutDomainPermissionsPolicyOutcome(outcome.GetError());
-  }
+  return PutDomainPermissionsPolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 PutDomainPermissionsPolicyOutcomeCallable CodeArtifactClient::PutDomainPermissionsPolicyCallable(const PutDomainPermissionsPolicyRequest& request) const
@@ -1475,15 +1251,7 @@ PutRepositoryPermissionsPolicyOutcome CodeArtifactClient::PutRepositoryPermissio
   Aws::StringStream ss;
   ss << "/v1/repository/permissions/policy";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return PutRepositoryPermissionsPolicyOutcome(PutRepositoryPermissionsPolicyResult(outcome.GetResult()));
-  }
-  else
-  {
-    return PutRepositoryPermissionsPolicyOutcome(outcome.GetError());
-  }
+  return PutRepositoryPermissionsPolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 PutRepositoryPermissionsPolicyOutcomeCallable CodeArtifactClient::PutRepositoryPermissionsPolicyCallable(const PutRepositoryPermissionsPolicyRequest& request) const
@@ -1530,15 +1298,7 @@ UpdatePackageVersionsStatusOutcome CodeArtifactClient::UpdatePackageVersionsStat
   Aws::StringStream ss;
   ss << "/v1/package/versions/update_status";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdatePackageVersionsStatusOutcome(UpdatePackageVersionsStatusResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdatePackageVersionsStatusOutcome(outcome.GetError());
-  }
+  return UpdatePackageVersionsStatusOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdatePackageVersionsStatusOutcomeCallable CodeArtifactClient::UpdatePackageVersionsStatusCallable(const UpdatePackageVersionsStatusRequest& request) const
@@ -1575,15 +1335,7 @@ UpdateRepositoryOutcome CodeArtifactClient::UpdateRepository(const UpdateReposit
   Aws::StringStream ss;
   ss << "/v1/repository";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateRepositoryOutcome(UpdateRepositoryResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateRepositoryOutcome(outcome.GetError());
-  }
+  return UpdateRepositoryOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateRepositoryOutcomeCallable CodeArtifactClient::UpdateRepositoryCallable(const UpdateRepositoryRequest& request) const

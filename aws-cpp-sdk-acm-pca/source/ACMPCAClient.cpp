@@ -56,7 +56,7 @@ static const char* ALLOCATION_TAG = "ACMPCAClient";
 ACMPCAClient::ACMPCAClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-        SERVICE_NAME, clientConfiguration.region),
+        SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<ACMPCAErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -66,7 +66,7 @@ ACMPCAClient::ACMPCAClient(const Client::ClientConfiguration& clientConfiguratio
 ACMPCAClient::ACMPCAClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-         SERVICE_NAME, clientConfiguration.region),
+         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<ACMPCAErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -77,7 +77,7 @@ ACMPCAClient::ACMPCAClient(const std::shared_ptr<AWSCredentialsProvider>& creden
   const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider,
-         SERVICE_NAME, clientConfiguration.region),
+         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<ACMPCAErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -119,15 +119,7 @@ CreateCertificateAuthorityOutcome ACMPCAClient::CreateCertificateAuthority(const
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateCertificateAuthorityOutcome(CreateCertificateAuthorityResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateCertificateAuthorityOutcome(outcome.GetError());
-  }
+  return CreateCertificateAuthorityOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateCertificateAuthorityOutcomeCallable ACMPCAClient::CreateCertificateAuthorityCallable(const CreateCertificateAuthorityRequest& request) const
@@ -154,15 +146,7 @@ CreateCertificateAuthorityAuditReportOutcome ACMPCAClient::CreateCertificateAuth
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateCertificateAuthorityAuditReportOutcome(CreateCertificateAuthorityAuditReportResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateCertificateAuthorityAuditReportOutcome(outcome.GetError());
-  }
+  return CreateCertificateAuthorityAuditReportOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateCertificateAuthorityAuditReportOutcomeCallable ACMPCAClient::CreateCertificateAuthorityAuditReportCallable(const CreateCertificateAuthorityAuditReportRequest& request) const
@@ -189,15 +173,7 @@ CreatePermissionOutcome ACMPCAClient::CreatePermission(const CreatePermissionReq
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreatePermissionOutcome(NoResult());
-  }
-  else
-  {
-    return CreatePermissionOutcome(outcome.GetError());
-  }
+  return CreatePermissionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreatePermissionOutcomeCallable ACMPCAClient::CreatePermissionCallable(const CreatePermissionRequest& request) const
@@ -224,15 +200,7 @@ DeleteCertificateAuthorityOutcome ACMPCAClient::DeleteCertificateAuthority(const
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteCertificateAuthorityOutcome(NoResult());
-  }
-  else
-  {
-    return DeleteCertificateAuthorityOutcome(outcome.GetError());
-  }
+  return DeleteCertificateAuthorityOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteCertificateAuthorityOutcomeCallable ACMPCAClient::DeleteCertificateAuthorityCallable(const DeleteCertificateAuthorityRequest& request) const
@@ -259,15 +227,7 @@ DeletePermissionOutcome ACMPCAClient::DeletePermission(const DeletePermissionReq
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeletePermissionOutcome(NoResult());
-  }
-  else
-  {
-    return DeletePermissionOutcome(outcome.GetError());
-  }
+  return DeletePermissionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeletePermissionOutcomeCallable ACMPCAClient::DeletePermissionCallable(const DeletePermissionRequest& request) const
@@ -294,15 +254,7 @@ DescribeCertificateAuthorityOutcome ACMPCAClient::DescribeCertificateAuthority(c
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeCertificateAuthorityOutcome(DescribeCertificateAuthorityResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeCertificateAuthorityOutcome(outcome.GetError());
-  }
+  return DescribeCertificateAuthorityOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeCertificateAuthorityOutcomeCallable ACMPCAClient::DescribeCertificateAuthorityCallable(const DescribeCertificateAuthorityRequest& request) const
@@ -329,15 +281,7 @@ DescribeCertificateAuthorityAuditReportOutcome ACMPCAClient::DescribeCertificate
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeCertificateAuthorityAuditReportOutcome(DescribeCertificateAuthorityAuditReportResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeCertificateAuthorityAuditReportOutcome(outcome.GetError());
-  }
+  return DescribeCertificateAuthorityAuditReportOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeCertificateAuthorityAuditReportOutcomeCallable ACMPCAClient::DescribeCertificateAuthorityAuditReportCallable(const DescribeCertificateAuthorityAuditReportRequest& request) const
@@ -364,15 +308,7 @@ GetCertificateOutcome ACMPCAClient::GetCertificate(const GetCertificateRequest& 
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetCertificateOutcome(GetCertificateResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetCertificateOutcome(outcome.GetError());
-  }
+  return GetCertificateOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetCertificateOutcomeCallable ACMPCAClient::GetCertificateCallable(const GetCertificateRequest& request) const
@@ -399,15 +335,7 @@ GetCertificateAuthorityCertificateOutcome ACMPCAClient::GetCertificateAuthorityC
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetCertificateAuthorityCertificateOutcome(GetCertificateAuthorityCertificateResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetCertificateAuthorityCertificateOutcome(outcome.GetError());
-  }
+  return GetCertificateAuthorityCertificateOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetCertificateAuthorityCertificateOutcomeCallable ACMPCAClient::GetCertificateAuthorityCertificateCallable(const GetCertificateAuthorityCertificateRequest& request) const
@@ -434,15 +362,7 @@ GetCertificateAuthorityCsrOutcome ACMPCAClient::GetCertificateAuthorityCsr(const
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetCertificateAuthorityCsrOutcome(GetCertificateAuthorityCsrResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetCertificateAuthorityCsrOutcome(outcome.GetError());
-  }
+  return GetCertificateAuthorityCsrOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetCertificateAuthorityCsrOutcomeCallable ACMPCAClient::GetCertificateAuthorityCsrCallable(const GetCertificateAuthorityCsrRequest& request) const
@@ -469,15 +389,7 @@ ImportCertificateAuthorityCertificateOutcome ACMPCAClient::ImportCertificateAuth
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ImportCertificateAuthorityCertificateOutcome(NoResult());
-  }
-  else
-  {
-    return ImportCertificateAuthorityCertificateOutcome(outcome.GetError());
-  }
+  return ImportCertificateAuthorityCertificateOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ImportCertificateAuthorityCertificateOutcomeCallable ACMPCAClient::ImportCertificateAuthorityCertificateCallable(const ImportCertificateAuthorityCertificateRequest& request) const
@@ -504,15 +416,7 @@ IssueCertificateOutcome ACMPCAClient::IssueCertificate(const IssueCertificateReq
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return IssueCertificateOutcome(IssueCertificateResult(outcome.GetResult()));
-  }
-  else
-  {
-    return IssueCertificateOutcome(outcome.GetError());
-  }
+  return IssueCertificateOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 IssueCertificateOutcomeCallable ACMPCAClient::IssueCertificateCallable(const IssueCertificateRequest& request) const
@@ -539,15 +443,7 @@ ListCertificateAuthoritiesOutcome ACMPCAClient::ListCertificateAuthorities(const
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListCertificateAuthoritiesOutcome(ListCertificateAuthoritiesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListCertificateAuthoritiesOutcome(outcome.GetError());
-  }
+  return ListCertificateAuthoritiesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListCertificateAuthoritiesOutcomeCallable ACMPCAClient::ListCertificateAuthoritiesCallable(const ListCertificateAuthoritiesRequest& request) const
@@ -574,15 +470,7 @@ ListPermissionsOutcome ACMPCAClient::ListPermissions(const ListPermissionsReques
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListPermissionsOutcome(ListPermissionsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListPermissionsOutcome(outcome.GetError());
-  }
+  return ListPermissionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListPermissionsOutcomeCallable ACMPCAClient::ListPermissionsCallable(const ListPermissionsRequest& request) const
@@ -609,15 +497,7 @@ ListTagsOutcome ACMPCAClient::ListTags(const ListTagsRequest& request) const
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListTagsOutcome(ListTagsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListTagsOutcome(outcome.GetError());
-  }
+  return ListTagsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListTagsOutcomeCallable ACMPCAClient::ListTagsCallable(const ListTagsRequest& request) const
@@ -644,15 +524,7 @@ RestoreCertificateAuthorityOutcome ACMPCAClient::RestoreCertificateAuthority(con
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return RestoreCertificateAuthorityOutcome(NoResult());
-  }
-  else
-  {
-    return RestoreCertificateAuthorityOutcome(outcome.GetError());
-  }
+  return RestoreCertificateAuthorityOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 RestoreCertificateAuthorityOutcomeCallable ACMPCAClient::RestoreCertificateAuthorityCallable(const RestoreCertificateAuthorityRequest& request) const
@@ -679,15 +551,7 @@ RevokeCertificateOutcome ACMPCAClient::RevokeCertificate(const RevokeCertificate
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return RevokeCertificateOutcome(NoResult());
-  }
-  else
-  {
-    return RevokeCertificateOutcome(outcome.GetError());
-  }
+  return RevokeCertificateOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 RevokeCertificateOutcomeCallable ACMPCAClient::RevokeCertificateCallable(const RevokeCertificateRequest& request) const
@@ -714,15 +578,7 @@ TagCertificateAuthorityOutcome ACMPCAClient::TagCertificateAuthority(const TagCe
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return TagCertificateAuthorityOutcome(NoResult());
-  }
-  else
-  {
-    return TagCertificateAuthorityOutcome(outcome.GetError());
-  }
+  return TagCertificateAuthorityOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 TagCertificateAuthorityOutcomeCallable ACMPCAClient::TagCertificateAuthorityCallable(const TagCertificateAuthorityRequest& request) const
@@ -749,15 +605,7 @@ UntagCertificateAuthorityOutcome ACMPCAClient::UntagCertificateAuthority(const U
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UntagCertificateAuthorityOutcome(NoResult());
-  }
-  else
-  {
-    return UntagCertificateAuthorityOutcome(outcome.GetError());
-  }
+  return UntagCertificateAuthorityOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UntagCertificateAuthorityOutcomeCallable ACMPCAClient::UntagCertificateAuthorityCallable(const UntagCertificateAuthorityRequest& request) const
@@ -784,15 +632,7 @@ UpdateCertificateAuthorityOutcome ACMPCAClient::UpdateCertificateAuthority(const
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateCertificateAuthorityOutcome(NoResult());
-  }
-  else
-  {
-    return UpdateCertificateAuthorityOutcome(outcome.GetError());
-  }
+  return UpdateCertificateAuthorityOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateCertificateAuthorityOutcomeCallable ACMPCAClient::UpdateCertificateAuthorityCallable(const UpdateCertificateAuthorityRequest& request) const

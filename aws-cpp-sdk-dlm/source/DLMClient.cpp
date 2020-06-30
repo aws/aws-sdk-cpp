@@ -44,7 +44,7 @@ static const char* ALLOCATION_TAG = "DLMClient";
 DLMClient::DLMClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-        SERVICE_NAME, clientConfiguration.region),
+        SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<DLMErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -54,7 +54,7 @@ DLMClient::DLMClient(const Client::ClientConfiguration& clientConfiguration) :
 DLMClient::DLMClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-         SERVICE_NAME, clientConfiguration.region),
+         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<DLMErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -65,7 +65,7 @@ DLMClient::DLMClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsP
   const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider,
-         SERVICE_NAME, clientConfiguration.region),
+         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<DLMErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -107,15 +107,7 @@ CreateLifecyclePolicyOutcome DLMClient::CreateLifecyclePolicy(const CreateLifecy
   Aws::StringStream ss;
   ss << "/policies";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateLifecyclePolicyOutcome(CreateLifecyclePolicyResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateLifecyclePolicyOutcome(outcome.GetError());
-  }
+  return CreateLifecyclePolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateLifecyclePolicyOutcomeCallable DLMClient::CreateLifecyclePolicyCallable(const CreateLifecyclePolicyRequest& request) const
@@ -149,15 +141,7 @@ DeleteLifecyclePolicyOutcome DLMClient::DeleteLifecyclePolicy(const DeleteLifecy
   ss << request.GetPolicyId();
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteLifecyclePolicyOutcome(DeleteLifecyclePolicyResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteLifecyclePolicyOutcome(outcome.GetError());
-  }
+  return DeleteLifecyclePolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteLifecyclePolicyOutcomeCallable DLMClient::DeleteLifecyclePolicyCallable(const DeleteLifecyclePolicyRequest& request) const
@@ -184,15 +168,7 @@ GetLifecyclePoliciesOutcome DLMClient::GetLifecyclePolicies(const GetLifecyclePo
   Aws::StringStream ss;
   ss << "/policies";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetLifecyclePoliciesOutcome(GetLifecyclePoliciesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetLifecyclePoliciesOutcome(outcome.GetError());
-  }
+  return GetLifecyclePoliciesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetLifecyclePoliciesOutcomeCallable DLMClient::GetLifecyclePoliciesCallable(const GetLifecyclePoliciesRequest& request) const
@@ -226,15 +202,7 @@ GetLifecyclePolicyOutcome DLMClient::GetLifecyclePolicy(const GetLifecyclePolicy
   ss << request.GetPolicyId();
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetLifecyclePolicyOutcome(GetLifecyclePolicyResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetLifecyclePolicyOutcome(outcome.GetError());
-  }
+  return GetLifecyclePolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetLifecyclePolicyOutcomeCallable DLMClient::GetLifecyclePolicyCallable(const GetLifecyclePolicyRequest& request) const
@@ -267,15 +235,7 @@ ListTagsForResourceOutcome DLMClient::ListTagsForResource(const ListTagsForResou
   ss << "/tags/";
   ss << request.GetResourceArn();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListTagsForResourceOutcome(ListTagsForResourceResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListTagsForResourceOutcome(outcome.GetError());
-  }
+  return ListTagsForResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListTagsForResourceOutcomeCallable DLMClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
@@ -308,15 +268,7 @@ TagResourceOutcome DLMClient::TagResource(const TagResourceRequest& request) con
   ss << "/tags/";
   ss << request.GetResourceArn();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return TagResourceOutcome(TagResourceResult(outcome.GetResult()));
-  }
-  else
-  {
-    return TagResourceOutcome(outcome.GetError());
-  }
+  return TagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 TagResourceOutcomeCallable DLMClient::TagResourceCallable(const TagResourceRequest& request) const
@@ -354,15 +306,7 @@ UntagResourceOutcome DLMClient::UntagResource(const UntagResourceRequest& reques
   ss << "/tags/";
   ss << request.GetResourceArn();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UntagResourceOutcome(UntagResourceResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UntagResourceOutcome(outcome.GetError());
-  }
+  return UntagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 UntagResourceOutcomeCallable DLMClient::UntagResourceCallable(const UntagResourceRequest& request) const
@@ -395,15 +339,7 @@ UpdateLifecyclePolicyOutcome DLMClient::UpdateLifecyclePolicy(const UpdateLifecy
   ss << "/policies/";
   ss << request.GetPolicyId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateLifecyclePolicyOutcome(UpdateLifecyclePolicyResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateLifecyclePolicyOutcome(outcome.GetError());
-  }
+  return UpdateLifecyclePolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateLifecyclePolicyOutcomeCallable DLMClient::UpdateLifecyclePolicyCallable(const UpdateLifecyclePolicyRequest& request) const

@@ -24,7 +24,8 @@ CreateNetworkInterfaceRequest::CreateNetworkInterfaceRequest() :
     m_secondaryPrivateIpAddressCountHasBeenSet(false),
     m_interfaceType(NetworkInterfaceCreationType::NOT_SET),
     m_interfaceTypeHasBeenSet(false),
-    m_subnetIdHasBeenSet(false)
+    m_subnetIdHasBeenSet(false),
+    m_tagSpecificationsHasBeenSet(false)
 {
 }
 
@@ -96,6 +97,16 @@ Aws::String CreateNetworkInterfaceRequest::SerializePayload() const
   if(m_subnetIdHasBeenSet)
   {
     ss << "SubnetId=" << StringUtils::URLEncode(m_subnetId.c_str()) << "&";
+  }
+
+  if(m_tagSpecificationsHasBeenSet)
+  {
+    unsigned tagSpecificationsCount = 1;
+    for(auto& item : m_tagSpecifications)
+    {
+      item.OutputToStream(ss, "TagSpecification.", tagSpecificationsCount, "");
+      tagSpecificationsCount++;
+    }
   }
 
   ss << "Version=2016-11-15";

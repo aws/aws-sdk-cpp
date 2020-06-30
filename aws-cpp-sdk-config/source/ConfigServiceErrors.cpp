@@ -8,8 +8,8 @@
 #include <aws/config/ConfigServiceErrors.h>
 
 using namespace Aws::Client;
-using namespace Aws::ConfigService;
 using namespace Aws::Utils;
+using namespace Aws::ConfigService;
 
 namespace Aws
 {

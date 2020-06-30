@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/personalize/Personalize_EXPORTS.h>
 
@@ -42,7 +43,7 @@ enum class PersonalizeErrors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -52,6 +53,20 @@ enum class PersonalizeErrors
   RESOURCE_ALREADY_EXISTS,
   RESOURCE_IN_USE
 };
+
+class AWS_PERSONALIZE_API PersonalizeError : public Aws::Client::AWSError<PersonalizeErrors>
+{
+public:
+  PersonalizeError() {}
+  PersonalizeError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<PersonalizeErrors>(rhs) {}
+  PersonalizeError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<PersonalizeErrors>(rhs) {}
+  PersonalizeError(const Aws::Client::AWSError<PersonalizeErrors>& rhs) : Aws::Client::AWSError<PersonalizeErrors>(rhs) {}
+  PersonalizeError(Aws::Client::AWSError<PersonalizeErrors>&& rhs) : Aws::Client::AWSError<PersonalizeErrors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace PersonalizeErrorMapper
 {
   AWS_PERSONALIZE_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

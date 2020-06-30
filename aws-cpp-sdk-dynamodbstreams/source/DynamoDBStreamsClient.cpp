@@ -40,7 +40,7 @@ static const char* ALLOCATION_TAG = "DynamoDBStreamsClient";
 DynamoDBStreamsClient::DynamoDBStreamsClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-        SERVICE_NAME, clientConfiguration.region),
+        SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<DynamoDBStreamsErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -50,7 +50,7 @@ DynamoDBStreamsClient::DynamoDBStreamsClient(const Client::ClientConfiguration& 
 DynamoDBStreamsClient::DynamoDBStreamsClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-         SERVICE_NAME, clientConfiguration.region),
+         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<DynamoDBStreamsErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -61,7 +61,7 @@ DynamoDBStreamsClient::DynamoDBStreamsClient(const std::shared_ptr<AWSCredential
   const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider,
-         SERVICE_NAME, clientConfiguration.region),
+         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<DynamoDBStreamsErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -103,15 +103,7 @@ DescribeStreamOutcome DynamoDBStreamsClient::DescribeStream(const DescribeStream
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeStreamOutcome(DescribeStreamResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeStreamOutcome(outcome.GetError());
-  }
+  return DescribeStreamOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeStreamOutcomeCallable DynamoDBStreamsClient::DescribeStreamCallable(const DescribeStreamRequest& request) const
@@ -138,15 +130,7 @@ GetRecordsOutcome DynamoDBStreamsClient::GetRecords(const GetRecordsRequest& req
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetRecordsOutcome(GetRecordsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetRecordsOutcome(outcome.GetError());
-  }
+  return GetRecordsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetRecordsOutcomeCallable DynamoDBStreamsClient::GetRecordsCallable(const GetRecordsRequest& request) const
@@ -173,15 +157,7 @@ GetShardIteratorOutcome DynamoDBStreamsClient::GetShardIterator(const GetShardIt
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetShardIteratorOutcome(GetShardIteratorResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetShardIteratorOutcome(outcome.GetError());
-  }
+  return GetShardIteratorOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetShardIteratorOutcomeCallable DynamoDBStreamsClient::GetShardIteratorCallable(const GetShardIteratorRequest& request) const
@@ -208,15 +184,7 @@ ListStreamsOutcome DynamoDBStreamsClient::ListStreams(const ListStreamsRequest& 
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListStreamsOutcome(ListStreamsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListStreamsOutcome(outcome.GetError());
-  }
+  return ListStreamsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListStreamsOutcomeCallable DynamoDBStreamsClient::ListStreamsCallable(const ListStreamsRequest& request) const

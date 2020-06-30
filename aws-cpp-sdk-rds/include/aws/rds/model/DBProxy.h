@@ -28,11 +28,9 @@ namespace Model
 {
 
   /**
-   * <note> <p>This is prerelease documentation for the RDS Database Proxy feature in
-   * preview release. It is subject to change.</p> </note> <p>The data structure
-   * representing a proxy managed by the RDS Proxy.</p> <p>This data type is used as
-   * a response element in the <code>DescribeDBProxies</code> action.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>The data structure representing a proxy managed by the RDS Proxy.</p> <p>This
+   * data type is used as a response element in the <code>DescribeDBProxies</code>
+   * action.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DBProxy">AWS API
    * Reference</a></p>
    */

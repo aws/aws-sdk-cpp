@@ -8,8 +8,8 @@
 #include <aws/honeycode/HoneycodeErrors.h>
 
 using namespace Aws::Client;
-using namespace Aws::Honeycode;
 using namespace Aws::Utils;
+using namespace Aws::Honeycode;
 
 namespace Aws
 {

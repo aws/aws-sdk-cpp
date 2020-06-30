@@ -55,8 +55,8 @@ namespace Model
         class GetScreenDataRequest;
         class InvokeScreenAutomationRequest;
 
-        typedef Aws::Utils::Outcome<GetScreenDataResult, Aws::Client::AWSError<HoneycodeErrors>> GetScreenDataOutcome;
-        typedef Aws::Utils::Outcome<InvokeScreenAutomationResult, Aws::Client::AWSError<HoneycodeErrors>> InvokeScreenAutomationOutcome;
+        typedef Aws::Utils::Outcome<GetScreenDataResult, HoneycodeError> GetScreenDataOutcome;
+        typedef Aws::Utils::Outcome<InvokeScreenAutomationResult, HoneycodeError> InvokeScreenAutomationOutcome;
 
         typedef std::future<GetScreenDataOutcome> GetScreenDataOutcomeCallable;
         typedef std::future<InvokeScreenAutomationOutcome> InvokeScreenAutomationOutcomeCallable;

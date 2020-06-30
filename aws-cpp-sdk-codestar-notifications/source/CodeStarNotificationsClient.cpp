@@ -49,7 +49,7 @@ static const char* ALLOCATION_TAG = "CodeStarNotificationsClient";
 CodeStarNotificationsClient::CodeStarNotificationsClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-        SERVICE_NAME, clientConfiguration.region),
+        SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<CodeStarNotificationsErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -59,7 +59,7 @@ CodeStarNotificationsClient::CodeStarNotificationsClient(const Client::ClientCon
 CodeStarNotificationsClient::CodeStarNotificationsClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-         SERVICE_NAME, clientConfiguration.region),
+         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<CodeStarNotificationsErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -70,7 +70,7 @@ CodeStarNotificationsClient::CodeStarNotificationsClient(const std::shared_ptr<A
   const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider,
-         SERVICE_NAME, clientConfiguration.region),
+         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<CodeStarNotificationsErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -112,15 +112,7 @@ CreateNotificationRuleOutcome CodeStarNotificationsClient::CreateNotificationRul
   Aws::StringStream ss;
   ss << "/createNotificationRule";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateNotificationRuleOutcome(CreateNotificationRuleResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateNotificationRuleOutcome(outcome.GetError());
-  }
+  return CreateNotificationRuleOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateNotificationRuleOutcomeCallable CodeStarNotificationsClient::CreateNotificationRuleCallable(const CreateNotificationRuleRequest& request) const
@@ -147,15 +139,7 @@ DeleteNotificationRuleOutcome CodeStarNotificationsClient::DeleteNotificationRul
   Aws::StringStream ss;
   ss << "/deleteNotificationRule";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteNotificationRuleOutcome(DeleteNotificationRuleResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteNotificationRuleOutcome(outcome.GetError());
-  }
+  return DeleteNotificationRuleOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteNotificationRuleOutcomeCallable CodeStarNotificationsClient::DeleteNotificationRuleCallable(const DeleteNotificationRuleRequest& request) const
@@ -182,15 +166,7 @@ DeleteTargetOutcome CodeStarNotificationsClient::DeleteTarget(const DeleteTarget
   Aws::StringStream ss;
   ss << "/deleteTarget";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteTargetOutcome(DeleteTargetResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteTargetOutcome(outcome.GetError());
-  }
+  return DeleteTargetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteTargetOutcomeCallable CodeStarNotificationsClient::DeleteTargetCallable(const DeleteTargetRequest& request) const
@@ -217,15 +193,7 @@ DescribeNotificationRuleOutcome CodeStarNotificationsClient::DescribeNotificatio
   Aws::StringStream ss;
   ss << "/describeNotificationRule";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeNotificationRuleOutcome(DescribeNotificationRuleResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeNotificationRuleOutcome(outcome.GetError());
-  }
+  return DescribeNotificationRuleOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeNotificationRuleOutcomeCallable CodeStarNotificationsClient::DescribeNotificationRuleCallable(const DescribeNotificationRuleRequest& request) const
@@ -252,15 +220,7 @@ ListEventTypesOutcome CodeStarNotificationsClient::ListEventTypes(const ListEven
   Aws::StringStream ss;
   ss << "/listEventTypes";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListEventTypesOutcome(ListEventTypesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListEventTypesOutcome(outcome.GetError());
-  }
+  return ListEventTypesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListEventTypesOutcomeCallable CodeStarNotificationsClient::ListEventTypesCallable(const ListEventTypesRequest& request) const
@@ -287,15 +247,7 @@ ListNotificationRulesOutcome CodeStarNotificationsClient::ListNotificationRules(
   Aws::StringStream ss;
   ss << "/listNotificationRules";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListNotificationRulesOutcome(ListNotificationRulesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListNotificationRulesOutcome(outcome.GetError());
-  }
+  return ListNotificationRulesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListNotificationRulesOutcomeCallable CodeStarNotificationsClient::ListNotificationRulesCallable(const ListNotificationRulesRequest& request) const
@@ -322,15 +274,7 @@ ListTagsForResourceOutcome CodeStarNotificationsClient::ListTagsForResource(cons
   Aws::StringStream ss;
   ss << "/listTagsForResource";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListTagsForResourceOutcome(ListTagsForResourceResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListTagsForResourceOutcome(outcome.GetError());
-  }
+  return ListTagsForResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListTagsForResourceOutcomeCallable CodeStarNotificationsClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
@@ -357,15 +301,7 @@ ListTargetsOutcome CodeStarNotificationsClient::ListTargets(const ListTargetsReq
   Aws::StringStream ss;
   ss << "/listTargets";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListTargetsOutcome(ListTargetsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListTargetsOutcome(outcome.GetError());
-  }
+  return ListTargetsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListTargetsOutcomeCallable CodeStarNotificationsClient::ListTargetsCallable(const ListTargetsRequest& request) const
@@ -392,15 +328,7 @@ SubscribeOutcome CodeStarNotificationsClient::Subscribe(const SubscribeRequest& 
   Aws::StringStream ss;
   ss << "/subscribe";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return SubscribeOutcome(SubscribeResult(outcome.GetResult()));
-  }
-  else
-  {
-    return SubscribeOutcome(outcome.GetError());
-  }
+  return SubscribeOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 SubscribeOutcomeCallable CodeStarNotificationsClient::SubscribeCallable(const SubscribeRequest& request) const
@@ -427,15 +355,7 @@ TagResourceOutcome CodeStarNotificationsClient::TagResource(const TagResourceReq
   Aws::StringStream ss;
   ss << "/tagResource";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return TagResourceOutcome(TagResourceResult(outcome.GetResult()));
-  }
-  else
-  {
-    return TagResourceOutcome(outcome.GetError());
-  }
+  return TagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 TagResourceOutcomeCallable CodeStarNotificationsClient::TagResourceCallable(const TagResourceRequest& request) const
@@ -462,15 +382,7 @@ UnsubscribeOutcome CodeStarNotificationsClient::Unsubscribe(const UnsubscribeReq
   Aws::StringStream ss;
   ss << "/unsubscribe";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UnsubscribeOutcome(UnsubscribeResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UnsubscribeOutcome(outcome.GetError());
-  }
+  return UnsubscribeOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UnsubscribeOutcomeCallable CodeStarNotificationsClient::UnsubscribeCallable(const UnsubscribeRequest& request) const
@@ -497,15 +409,7 @@ UntagResourceOutcome CodeStarNotificationsClient::UntagResource(const UntagResou
   Aws::StringStream ss;
   ss << "/untagResource";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UntagResourceOutcome(UntagResourceResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UntagResourceOutcome(outcome.GetError());
-  }
+  return UntagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UntagResourceOutcomeCallable CodeStarNotificationsClient::UntagResourceCallable(const UntagResourceRequest& request) const
@@ -532,15 +436,7 @@ UpdateNotificationRuleOutcome CodeStarNotificationsClient::UpdateNotificationRul
   Aws::StringStream ss;
   ss << "/updateNotificationRule";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateNotificationRuleOutcome(UpdateNotificationRuleResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateNotificationRuleOutcome(outcome.GetError());
-  }
+  return UpdateNotificationRuleOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateNotificationRuleOutcomeCallable CodeStarNotificationsClient::UpdateNotificationRuleCallable(const UpdateNotificationRuleRequest& request) const

@@ -20,7 +20,8 @@ CreateVpcRequest::CreateVpcRequest() :
     m_dryRunHasBeenSet(false),
     m_instanceTenancy(Tenancy::NOT_SET),
     m_instanceTenancyHasBeenSet(false),
-    m_ipv6CidrBlockNetworkBorderGroupHasBeenSet(false)
+    m_ipv6CidrBlockNetworkBorderGroupHasBeenSet(false),
+    m_tagSpecificationsHasBeenSet(false)
 {
 }
 
@@ -61,6 +62,16 @@ Aws::String CreateVpcRequest::SerializePayload() const
   if(m_ipv6CidrBlockNetworkBorderGroupHasBeenSet)
   {
     ss << "Ipv6CidrBlockNetworkBorderGroup=" << StringUtils::URLEncode(m_ipv6CidrBlockNetworkBorderGroup.c_str()) << "&";
+  }
+
+  if(m_tagSpecificationsHasBeenSet)
+  {
+    unsigned tagSpecificationsCount = 1;
+    for(auto& item : m_tagSpecifications)
+    {
+      item.OutputToStream(ss, "TagSpecification.", tagSpecificationsCount, "");
+      tagSpecificationsCount++;
+    }
   }
 
   ss << "Version=2016-11-15";

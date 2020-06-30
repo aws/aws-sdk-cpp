@@ -83,42 +83,146 @@ namespace Model
 
 
     /**
-     * <p>List of states to use as a filter.</p>
+     * <p>List of repository association states to use as a filter.</p> <p>The valid
+     * repository association states are:</p> <ul> <li> <p> <b>Associated</b>: The
+     * repository association is complete. </p> </li> <li> <p> <b>Associating</b>:
+     * CodeGuru Reviewer is: </p> <ul> <li> <p> Setting up pull request notifications.
+     * This is required for pull requests to trigger a CodeGuru Reviewer review. </p>
+     * <note> <p> If your repository <code>ProviderType</code> is <code>GitHub</code>
+     * or <code>Bitbucket</code>, CodeGuru Reviewer creates webhooks in your repository
+     * to trigger CodeGuru Reviewer reviews. If you delete these webhooks, reviews of
+     * code in your repository cannot be triggered. </p> </note> </li> <li> <p> Setting
+     * up source code access. This is required for CodeGuru Reviewer to securely clone
+     * code in your repository. </p> </li> </ul> </li> <li> <p> <b>Failed</b>: The
+     * repository failed to associate or disassociate. </p> </li> <li> <p>
+     * <b>Disassociating</b>: CodeGuru Reviewer is removing the repository's pull
+     * request notifications and source code access. </p> </li> </ul>
      */
     inline const Aws::Vector<RepositoryAssociationState>& GetStates() const{ return m_states; }
 
     /**
-     * <p>List of states to use as a filter.</p>
+     * <p>List of repository association states to use as a filter.</p> <p>The valid
+     * repository association states are:</p> <ul> <li> <p> <b>Associated</b>: The
+     * repository association is complete. </p> </li> <li> <p> <b>Associating</b>:
+     * CodeGuru Reviewer is: </p> <ul> <li> <p> Setting up pull request notifications.
+     * This is required for pull requests to trigger a CodeGuru Reviewer review. </p>
+     * <note> <p> If your repository <code>ProviderType</code> is <code>GitHub</code>
+     * or <code>Bitbucket</code>, CodeGuru Reviewer creates webhooks in your repository
+     * to trigger CodeGuru Reviewer reviews. If you delete these webhooks, reviews of
+     * code in your repository cannot be triggered. </p> </note> </li> <li> <p> Setting
+     * up source code access. This is required for CodeGuru Reviewer to securely clone
+     * code in your repository. </p> </li> </ul> </li> <li> <p> <b>Failed</b>: The
+     * repository failed to associate or disassociate. </p> </li> <li> <p>
+     * <b>Disassociating</b>: CodeGuru Reviewer is removing the repository's pull
+     * request notifications and source code access. </p> </li> </ul>
      */
     inline bool StatesHasBeenSet() const { return m_statesHasBeenSet; }
 
     /**
-     * <p>List of states to use as a filter.</p>
+     * <p>List of repository association states to use as a filter.</p> <p>The valid
+     * repository association states are:</p> <ul> <li> <p> <b>Associated</b>: The
+     * repository association is complete. </p> </li> <li> <p> <b>Associating</b>:
+     * CodeGuru Reviewer is: </p> <ul> <li> <p> Setting up pull request notifications.
+     * This is required for pull requests to trigger a CodeGuru Reviewer review. </p>
+     * <note> <p> If your repository <code>ProviderType</code> is <code>GitHub</code>
+     * or <code>Bitbucket</code>, CodeGuru Reviewer creates webhooks in your repository
+     * to trigger CodeGuru Reviewer reviews. If you delete these webhooks, reviews of
+     * code in your repository cannot be triggered. </p> </note> </li> <li> <p> Setting
+     * up source code access. This is required for CodeGuru Reviewer to securely clone
+     * code in your repository. </p> </li> </ul> </li> <li> <p> <b>Failed</b>: The
+     * repository failed to associate or disassociate. </p> </li> <li> <p>
+     * <b>Disassociating</b>: CodeGuru Reviewer is removing the repository's pull
+     * request notifications and source code access. </p> </li> </ul>
      */
     inline void SetStates(const Aws::Vector<RepositoryAssociationState>& value) { m_statesHasBeenSet = true; m_states = value; }
 
     /**
-     * <p>List of states to use as a filter.</p>
+     * <p>List of repository association states to use as a filter.</p> <p>The valid
+     * repository association states are:</p> <ul> <li> <p> <b>Associated</b>: The
+     * repository association is complete. </p> </li> <li> <p> <b>Associating</b>:
+     * CodeGuru Reviewer is: </p> <ul> <li> <p> Setting up pull request notifications.
+     * This is required for pull requests to trigger a CodeGuru Reviewer review. </p>
+     * <note> <p> If your repository <code>ProviderType</code> is <code>GitHub</code>
+     * or <code>Bitbucket</code>, CodeGuru Reviewer creates webhooks in your repository
+     * to trigger CodeGuru Reviewer reviews. If you delete these webhooks, reviews of
+     * code in your repository cannot be triggered. </p> </note> </li> <li> <p> Setting
+     * up source code access. This is required for CodeGuru Reviewer to securely clone
+     * code in your repository. </p> </li> </ul> </li> <li> <p> <b>Failed</b>: The
+     * repository failed to associate or disassociate. </p> </li> <li> <p>
+     * <b>Disassociating</b>: CodeGuru Reviewer is removing the repository's pull
+     * request notifications and source code access. </p> </li> </ul>
      */
     inline void SetStates(Aws::Vector<RepositoryAssociationState>&& value) { m_statesHasBeenSet = true; m_states = std::move(value); }
 
     /**
-     * <p>List of states to use as a filter.</p>
+     * <p>List of repository association states to use as a filter.</p> <p>The valid
+     * repository association states are:</p> <ul> <li> <p> <b>Associated</b>: The
+     * repository association is complete. </p> </li> <li> <p> <b>Associating</b>:
+     * CodeGuru Reviewer is: </p> <ul> <li> <p> Setting up pull request notifications.
+     * This is required for pull requests to trigger a CodeGuru Reviewer review. </p>
+     * <note> <p> If your repository <code>ProviderType</code> is <code>GitHub</code>
+     * or <code>Bitbucket</code>, CodeGuru Reviewer creates webhooks in your repository
+     * to trigger CodeGuru Reviewer reviews. If you delete these webhooks, reviews of
+     * code in your repository cannot be triggered. </p> </note> </li> <li> <p> Setting
+     * up source code access. This is required for CodeGuru Reviewer to securely clone
+     * code in your repository. </p> </li> </ul> </li> <li> <p> <b>Failed</b>: The
+     * repository failed to associate or disassociate. </p> </li> <li> <p>
+     * <b>Disassociating</b>: CodeGuru Reviewer is removing the repository's pull
+     * request notifications and source code access. </p> </li> </ul>
      */
     inline ListRepositoryAssociationsRequest& WithStates(const Aws::Vector<RepositoryAssociationState>& value) { SetStates(value); return *this;}
 
     /**
-     * <p>List of states to use as a filter.</p>
+     * <p>List of repository association states to use as a filter.</p> <p>The valid
+     * repository association states are:</p> <ul> <li> <p> <b>Associated</b>: The
+     * repository association is complete. </p> </li> <li> <p> <b>Associating</b>:
+     * CodeGuru Reviewer is: </p> <ul> <li> <p> Setting up pull request notifications.
+     * This is required for pull requests to trigger a CodeGuru Reviewer review. </p>
+     * <note> <p> If your repository <code>ProviderType</code> is <code>GitHub</code>
+     * or <code>Bitbucket</code>, CodeGuru Reviewer creates webhooks in your repository
+     * to trigger CodeGuru Reviewer reviews. If you delete these webhooks, reviews of
+     * code in your repository cannot be triggered. </p> </note> </li> <li> <p> Setting
+     * up source code access. This is required for CodeGuru Reviewer to securely clone
+     * code in your repository. </p> </li> </ul> </li> <li> <p> <b>Failed</b>: The
+     * repository failed to associate or disassociate. </p> </li> <li> <p>
+     * <b>Disassociating</b>: CodeGuru Reviewer is removing the repository's pull
+     * request notifications and source code access. </p> </li> </ul>
      */
     inline ListRepositoryAssociationsRequest& WithStates(Aws::Vector<RepositoryAssociationState>&& value) { SetStates(std::move(value)); return *this;}
 
     /**
-     * <p>List of states to use as a filter.</p>
+     * <p>List of repository association states to use as a filter.</p> <p>The valid
+     * repository association states are:</p> <ul> <li> <p> <b>Associated</b>: The
+     * repository association is complete. </p> </li> <li> <p> <b>Associating</b>:
+     * CodeGuru Reviewer is: </p> <ul> <li> <p> Setting up pull request notifications.
+     * This is required for pull requests to trigger a CodeGuru Reviewer review. </p>
+     * <note> <p> If your repository <code>ProviderType</code> is <code>GitHub</code>
+     * or <code>Bitbucket</code>, CodeGuru Reviewer creates webhooks in your repository
+     * to trigger CodeGuru Reviewer reviews. If you delete these webhooks, reviews of
+     * code in your repository cannot be triggered. </p> </note> </li> <li> <p> Setting
+     * up source code access. This is required for CodeGuru Reviewer to securely clone
+     * code in your repository. </p> </li> </ul> </li> <li> <p> <b>Failed</b>: The
+     * repository failed to associate or disassociate. </p> </li> <li> <p>
+     * <b>Disassociating</b>: CodeGuru Reviewer is removing the repository's pull
+     * request notifications and source code access. </p> </li> </ul>
      */
     inline ListRepositoryAssociationsRequest& AddStates(const RepositoryAssociationState& value) { m_statesHasBeenSet = true; m_states.push_back(value); return *this; }
 
     /**
-     * <p>List of states to use as a filter.</p>
+     * <p>List of repository association states to use as a filter.</p> <p>The valid
+     * repository association states are:</p> <ul> <li> <p> <b>Associated</b>: The
+     * repository association is complete. </p> </li> <li> <p> <b>Associating</b>:
+     * CodeGuru Reviewer is: </p> <ul> <li> <p> Setting up pull request notifications.
+     * This is required for pull requests to trigger a CodeGuru Reviewer review. </p>
+     * <note> <p> If your repository <code>ProviderType</code> is <code>GitHub</code>
+     * or <code>Bitbucket</code>, CodeGuru Reviewer creates webhooks in your repository
+     * to trigger CodeGuru Reviewer reviews. If you delete these webhooks, reviews of
+     * code in your repository cannot be triggered. </p> </note> </li> <li> <p> Setting
+     * up source code access. This is required for CodeGuru Reviewer to securely clone
+     * code in your repository. </p> </li> </ul> </li> <li> <p> <b>Failed</b>: The
+     * repository failed to associate or disassociate. </p> </li> <li> <p>
+     * <b>Disassociating</b>: CodeGuru Reviewer is removing the repository's pull
+     * request notifications and source code access. </p> </li> </ul>
      */
     inline ListRepositoryAssociationsRequest& AddStates(RepositoryAssociationState&& value) { m_statesHasBeenSet = true; m_states.push_back(std::move(value)); return *this; }
 
@@ -170,65 +274,74 @@ namespace Model
 
 
     /**
-     * <p>List of owners to use as a filter. For GitHub, this is name of the GitHub
-     * account that was used to associate the repository. For AWS CodeCommit, it is the
-     * name of the CodeCommit account that was used to associate the repository.</p>
+     * <p>List of owners to use as a filter. For AWS CodeCommit, it is the name of the
+     * CodeCommit account that was used to associate the repository. For other
+     * repository source providers, such as Bitbucket, this is name of the account that
+     * was used to associate the repository. </p>
      */
     inline const Aws::Vector<Aws::String>& GetOwners() const{ return m_owners; }
 
     /**
-     * <p>List of owners to use as a filter. For GitHub, this is name of the GitHub
-     * account that was used to associate the repository. For AWS CodeCommit, it is the
-     * name of the CodeCommit account that was used to associate the repository.</p>
+     * <p>List of owners to use as a filter. For AWS CodeCommit, it is the name of the
+     * CodeCommit account that was used to associate the repository. For other
+     * repository source providers, such as Bitbucket, this is name of the account that
+     * was used to associate the repository. </p>
      */
     inline bool OwnersHasBeenSet() const { return m_ownersHasBeenSet; }
 
     /**
-     * <p>List of owners to use as a filter. For GitHub, this is name of the GitHub
-     * account that was used to associate the repository. For AWS CodeCommit, it is the
-     * name of the CodeCommit account that was used to associate the repository.</p>
+     * <p>List of owners to use as a filter. For AWS CodeCommit, it is the name of the
+     * CodeCommit account that was used to associate the repository. For other
+     * repository source providers, such as Bitbucket, this is name of the account that
+     * was used to associate the repository. </p>
      */
     inline void SetOwners(const Aws::Vector<Aws::String>& value) { m_ownersHasBeenSet = true; m_owners = value; }
 
     /**
-     * <p>List of owners to use as a filter. For GitHub, this is name of the GitHub
-     * account that was used to associate the repository. For AWS CodeCommit, it is the
-     * name of the CodeCommit account that was used to associate the repository.</p>
+     * <p>List of owners to use as a filter. For AWS CodeCommit, it is the name of the
+     * CodeCommit account that was used to associate the repository. For other
+     * repository source providers, such as Bitbucket, this is name of the account that
+     * was used to associate the repository. </p>
      */
     inline void SetOwners(Aws::Vector<Aws::String>&& value) { m_ownersHasBeenSet = true; m_owners = std::move(value); }
 
     /**
-     * <p>List of owners to use as a filter. For GitHub, this is name of the GitHub
-     * account that was used to associate the repository. For AWS CodeCommit, it is the
-     * name of the CodeCommit account that was used to associate the repository.</p>
+     * <p>List of owners to use as a filter. For AWS CodeCommit, it is the name of the
+     * CodeCommit account that was used to associate the repository. For other
+     * repository source providers, such as Bitbucket, this is name of the account that
+     * was used to associate the repository. </p>
      */
     inline ListRepositoryAssociationsRequest& WithOwners(const Aws::Vector<Aws::String>& value) { SetOwners(value); return *this;}
 
     /**
-     * <p>List of owners to use as a filter. For GitHub, this is name of the GitHub
-     * account that was used to associate the repository. For AWS CodeCommit, it is the
-     * name of the CodeCommit account that was used to associate the repository.</p>
+     * <p>List of owners to use as a filter. For AWS CodeCommit, it is the name of the
+     * CodeCommit account that was used to associate the repository. For other
+     * repository source providers, such as Bitbucket, this is name of the account that
+     * was used to associate the repository. </p>
      */
     inline ListRepositoryAssociationsRequest& WithOwners(Aws::Vector<Aws::String>&& value) { SetOwners(std::move(value)); return *this;}
 
     /**
-     * <p>List of owners to use as a filter. For GitHub, this is name of the GitHub
-     * account that was used to associate the repository. For AWS CodeCommit, it is the
-     * name of the CodeCommit account that was used to associate the repository.</p>
+     * <p>List of owners to use as a filter. For AWS CodeCommit, it is the name of the
+     * CodeCommit account that was used to associate the repository. For other
+     * repository source providers, such as Bitbucket, this is name of the account that
+     * was used to associate the repository. </p>
      */
     inline ListRepositoryAssociationsRequest& AddOwners(const Aws::String& value) { m_ownersHasBeenSet = true; m_owners.push_back(value); return *this; }
 
     /**
-     * <p>List of owners to use as a filter. For GitHub, this is name of the GitHub
-     * account that was used to associate the repository. For AWS CodeCommit, it is the
-     * name of the CodeCommit account that was used to associate the repository.</p>
+     * <p>List of owners to use as a filter. For AWS CodeCommit, it is the name of the
+     * CodeCommit account that was used to associate the repository. For other
+     * repository source providers, such as Bitbucket, this is name of the account that
+     * was used to associate the repository. </p>
      */
     inline ListRepositoryAssociationsRequest& AddOwners(Aws::String&& value) { m_ownersHasBeenSet = true; m_owners.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>List of owners to use as a filter. For GitHub, this is name of the GitHub
-     * account that was used to associate the repository. For AWS CodeCommit, it is the
-     * name of the CodeCommit account that was used to associate the repository.</p>
+     * <p>List of owners to use as a filter. For AWS CodeCommit, it is the name of the
+     * CodeCommit account that was used to associate the repository. For other
+     * repository source providers, such as Bitbucket, this is name of the account that
+     * was used to associate the repository. </p>
      */
     inline ListRepositoryAssociationsRequest& AddOwners(const char* value) { m_ownersHasBeenSet = true; m_owners.push_back(value); return *this; }
 
@@ -240,9 +353,9 @@ namespace Model
      * <code>maxResults</code> results in a single page with a <code>nextToken</code>
      * response element. The remaining results of the initial request can be seen by
      * sending another <code>ListRepositoryAssociations</code> request with the
-     * returned <code>nextToken</code> value. This value can be between 1 and 25. If
+     * returned <code>nextToken</code> value. This value can be between 1 and 100. If
      * this parameter is not used, <code>ListRepositoryAssociations</code> returns up
-     * to 25 results and a <code>nextToken</code> value if applicable. </p>
+     * to 100 results and a <code>nextToken</code> value if applicable. </p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
@@ -253,9 +366,9 @@ namespace Model
      * <code>maxResults</code> results in a single page with a <code>nextToken</code>
      * response element. The remaining results of the initial request can be seen by
      * sending another <code>ListRepositoryAssociations</code> request with the
-     * returned <code>nextToken</code> value. This value can be between 1 and 25. If
+     * returned <code>nextToken</code> value. This value can be between 1 and 100. If
      * this parameter is not used, <code>ListRepositoryAssociations</code> returns up
-     * to 25 results and a <code>nextToken</code> value if applicable. </p>
+     * to 100 results and a <code>nextToken</code> value if applicable. </p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
@@ -266,9 +379,9 @@ namespace Model
      * <code>maxResults</code> results in a single page with a <code>nextToken</code>
      * response element. The remaining results of the initial request can be seen by
      * sending another <code>ListRepositoryAssociations</code> request with the
-     * returned <code>nextToken</code> value. This value can be between 1 and 25. If
+     * returned <code>nextToken</code> value. This value can be between 1 and 100. If
      * this parameter is not used, <code>ListRepositoryAssociations</code> returns up
-     * to 25 results and a <code>nextToken</code> value if applicable. </p>
+     * to 100 results and a <code>nextToken</code> value if applicable. </p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
@@ -279,9 +392,9 @@ namespace Model
      * <code>maxResults</code> results in a single page with a <code>nextToken</code>
      * response element. The remaining results of the initial request can be seen by
      * sending another <code>ListRepositoryAssociations</code> request with the
-     * returned <code>nextToken</code> value. This value can be between 1 and 25. If
+     * returned <code>nextToken</code> value. This value can be between 1 and 100. If
      * this parameter is not used, <code>ListRepositoryAssociations</code> returns up
-     * to 25 results and a <code>nextToken</code> value if applicable. </p>
+     * to 100 results and a <code>nextToken</code> value if applicable. </p>
      */
     inline ListRepositoryAssociationsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 

@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/chime/Chime_EXPORTS.h>
 
@@ -42,7 +43,7 @@ enum class ChimeErrors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -56,6 +57,20 @@ enum class ChimeErrors
   UNAUTHORIZED_CLIENT,
   UNPROCESSABLE_ENTITY
 };
+
+class AWS_CHIME_API ChimeError : public Aws::Client::AWSError<ChimeErrors>
+{
+public:
+  ChimeError() {}
+  ChimeError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<ChimeErrors>(rhs) {}
+  ChimeError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<ChimeErrors>(rhs) {}
+  ChimeError(const Aws::Client::AWSError<ChimeErrors>& rhs) : Aws::Client::AWSError<ChimeErrors>(rhs) {}
+  ChimeError(Aws::Client::AWSError<ChimeErrors>&& rhs) : Aws::Client::AWSError<ChimeErrors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace ChimeErrorMapper
 {
   AWS_CHIME_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

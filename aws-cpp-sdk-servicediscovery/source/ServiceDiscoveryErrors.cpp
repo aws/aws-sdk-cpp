@@ -6,15 +6,44 @@
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/servicediscovery/ServiceDiscoveryErrors.h>
+#include <aws/servicediscovery/model/NamespaceAlreadyExists.h>
+#include <aws/servicediscovery/model/DuplicateRequest.h>
+#include <aws/servicediscovery/model/ServiceAlreadyExists.h>
+#include <aws/servicediscovery/model/TooManyTagsException.h>
 
 using namespace Aws::Client;
-using namespace Aws::ServiceDiscovery;
 using namespace Aws::Utils;
+using namespace Aws::ServiceDiscovery;
+using namespace Aws::ServiceDiscovery::Model;
 
 namespace Aws
 {
 namespace ServiceDiscovery
 {
+template<> AWS_SERVICEDISCOVERY_API NamespaceAlreadyExists ServiceDiscoveryError::GetModeledError()
+{
+  assert(this->GetErrorType() == ServiceDiscoveryErrors::NAMESPACE_ALREADY_EXISTS);
+  return NamespaceAlreadyExists(this->GetJsonPayload().View());
+}
+
+template<> AWS_SERVICEDISCOVERY_API DuplicateRequest ServiceDiscoveryError::GetModeledError()
+{
+  assert(this->GetErrorType() == ServiceDiscoveryErrors::DUPLICATE_REQUEST);
+  return DuplicateRequest(this->GetJsonPayload().View());
+}
+
+template<> AWS_SERVICEDISCOVERY_API ServiceAlreadyExists ServiceDiscoveryError::GetModeledError()
+{
+  assert(this->GetErrorType() == ServiceDiscoveryErrors::SERVICE_ALREADY_EXISTS);
+  return ServiceAlreadyExists(this->GetJsonPayload().View());
+}
+
+template<> AWS_SERVICEDISCOVERY_API TooManyTagsException ServiceDiscoveryError::GetModeledError()
+{
+  assert(this->GetErrorType() == ServiceDiscoveryErrors::TOO_MANY_TAGS);
+  return TooManyTagsException(this->GetJsonPayload().View());
+}
+
 namespace ServiceDiscoveryErrorMapper
 {
 

@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/glacier/Glacier_EXPORTS.h>
 
@@ -42,7 +43,7 @@ enum class GlacierErrors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -51,6 +52,20 @@ enum class GlacierErrors
   MISSING_PARAMETER_VALUE,
   POLICY_ENFORCED
 };
+
+class AWS_GLACIER_API GlacierError : public Aws::Client::AWSError<GlacierErrors>
+{
+public:
+  GlacierError() {}
+  GlacierError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<GlacierErrors>(rhs) {}
+  GlacierError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<GlacierErrors>(rhs) {}
+  GlacierError(const Aws::Client::AWSError<GlacierErrors>& rhs) : Aws::Client::AWSError<GlacierErrors>(rhs) {}
+  GlacierError(Aws::Client::AWSError<GlacierErrors>&& rhs) : Aws::Client::AWSError<GlacierErrors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace GlacierErrorMapper
 {
   AWS_GLACIER_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/application-insights/ApplicationInsights_EXPORTS.h>
 
@@ -42,7 +43,7 @@ enum class ApplicationInsightsErrors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -52,6 +53,20 @@ enum class ApplicationInsightsErrors
   TAGS_ALREADY_EXIST,
   TOO_MANY_TAGS
 };
+
+class AWS_APPLICATIONINSIGHTS_API ApplicationInsightsError : public Aws::Client::AWSError<ApplicationInsightsErrors>
+{
+public:
+  ApplicationInsightsError() {}
+  ApplicationInsightsError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<ApplicationInsightsErrors>(rhs) {}
+  ApplicationInsightsError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<ApplicationInsightsErrors>(rhs) {}
+  ApplicationInsightsError(const Aws::Client::AWSError<ApplicationInsightsErrors>& rhs) : Aws::Client::AWSError<ApplicationInsightsErrors>(rhs) {}
+  ApplicationInsightsError(Aws::Client::AWSError<ApplicationInsightsErrors>&& rhs) : Aws::Client::AWSError<ApplicationInsightsErrors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace ApplicationInsightsErrorMapper
 {
   AWS_APPLICATIONINSIGHTS_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

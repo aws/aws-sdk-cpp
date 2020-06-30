@@ -26,10 +26,8 @@ namespace Model
 {
 
   /**
-   * <note> <p>This is prerelease documentation for the RDS Database Proxy feature in
-   * preview release. It is subject to change.</p> </note> <p>Specifies the details
-   * of authentication used by a proxy to log in as a specific database
-   * user.</p><p><h3>See Also:</h3>   <a
+   * <p>Specifies the details of authentication used by a proxy to log in as a
+   * specific database user.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/UserAuthConfig">AWS
    * API Reference</a></p>
    */

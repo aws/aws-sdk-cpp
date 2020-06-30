@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/dax/DAX_EXPORTS.h>
 
@@ -42,7 +43,7 @@ enum class DAXErrors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -71,6 +72,20 @@ enum class DAXErrors
   TAG_NOT_FOUND_FAULT,
   TAG_QUOTA_PER_RESOURCE_EXCEEDED
 };
+
+class AWS_DAX_API DAXError : public Aws::Client::AWSError<DAXErrors>
+{
+public:
+  DAXError() {}
+  DAXError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<DAXErrors>(rhs) {}
+  DAXError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<DAXErrors>(rhs) {}
+  DAXError(const Aws::Client::AWSError<DAXErrors>& rhs) : Aws::Client::AWSError<DAXErrors>(rhs) {}
+  DAXError(Aws::Client::AWSError<DAXErrors>&& rhs) : Aws::Client::AWSError<DAXErrors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace DAXErrorMapper
 {
   AWS_DAX_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

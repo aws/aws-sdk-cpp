@@ -73,7 +73,7 @@ static const char* ALLOCATION_TAG = "SWFClient";
 SWFClient::SWFClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-        SERVICE_NAME, clientConfiguration.region),
+        SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<SWFErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -83,7 +83,7 @@ SWFClient::SWFClient(const Client::ClientConfiguration& clientConfiguration) :
 SWFClient::SWFClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-         SERVICE_NAME, clientConfiguration.region),
+         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<SWFErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -94,7 +94,7 @@ SWFClient::SWFClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsP
   const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider,
-         SERVICE_NAME, clientConfiguration.region),
+         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<SWFErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -136,15 +136,7 @@ CountClosedWorkflowExecutionsOutcome SWFClient::CountClosedWorkflowExecutions(co
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CountClosedWorkflowExecutionsOutcome(CountClosedWorkflowExecutionsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CountClosedWorkflowExecutionsOutcome(outcome.GetError());
-  }
+  return CountClosedWorkflowExecutionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CountClosedWorkflowExecutionsOutcomeCallable SWFClient::CountClosedWorkflowExecutionsCallable(const CountClosedWorkflowExecutionsRequest& request) const
@@ -171,15 +163,7 @@ CountOpenWorkflowExecutionsOutcome SWFClient::CountOpenWorkflowExecutions(const 
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CountOpenWorkflowExecutionsOutcome(CountOpenWorkflowExecutionsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CountOpenWorkflowExecutionsOutcome(outcome.GetError());
-  }
+  return CountOpenWorkflowExecutionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CountOpenWorkflowExecutionsOutcomeCallable SWFClient::CountOpenWorkflowExecutionsCallable(const CountOpenWorkflowExecutionsRequest& request) const
@@ -206,15 +190,7 @@ CountPendingActivityTasksOutcome SWFClient::CountPendingActivityTasks(const Coun
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CountPendingActivityTasksOutcome(CountPendingActivityTasksResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CountPendingActivityTasksOutcome(outcome.GetError());
-  }
+  return CountPendingActivityTasksOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CountPendingActivityTasksOutcomeCallable SWFClient::CountPendingActivityTasksCallable(const CountPendingActivityTasksRequest& request) const
@@ -241,15 +217,7 @@ CountPendingDecisionTasksOutcome SWFClient::CountPendingDecisionTasks(const Coun
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CountPendingDecisionTasksOutcome(CountPendingDecisionTasksResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CountPendingDecisionTasksOutcome(outcome.GetError());
-  }
+  return CountPendingDecisionTasksOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CountPendingDecisionTasksOutcomeCallable SWFClient::CountPendingDecisionTasksCallable(const CountPendingDecisionTasksRequest& request) const
@@ -276,15 +244,7 @@ DeprecateActivityTypeOutcome SWFClient::DeprecateActivityType(const DeprecateAct
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeprecateActivityTypeOutcome(NoResult());
-  }
-  else
-  {
-    return DeprecateActivityTypeOutcome(outcome.GetError());
-  }
+  return DeprecateActivityTypeOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeprecateActivityTypeOutcomeCallable SWFClient::DeprecateActivityTypeCallable(const DeprecateActivityTypeRequest& request) const
@@ -311,15 +271,7 @@ DeprecateDomainOutcome SWFClient::DeprecateDomain(const DeprecateDomainRequest& 
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeprecateDomainOutcome(NoResult());
-  }
-  else
-  {
-    return DeprecateDomainOutcome(outcome.GetError());
-  }
+  return DeprecateDomainOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeprecateDomainOutcomeCallable SWFClient::DeprecateDomainCallable(const DeprecateDomainRequest& request) const
@@ -346,15 +298,7 @@ DeprecateWorkflowTypeOutcome SWFClient::DeprecateWorkflowType(const DeprecateWor
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeprecateWorkflowTypeOutcome(NoResult());
-  }
-  else
-  {
-    return DeprecateWorkflowTypeOutcome(outcome.GetError());
-  }
+  return DeprecateWorkflowTypeOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeprecateWorkflowTypeOutcomeCallable SWFClient::DeprecateWorkflowTypeCallable(const DeprecateWorkflowTypeRequest& request) const
@@ -381,15 +325,7 @@ DescribeActivityTypeOutcome SWFClient::DescribeActivityType(const DescribeActivi
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeActivityTypeOutcome(DescribeActivityTypeResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeActivityTypeOutcome(outcome.GetError());
-  }
+  return DescribeActivityTypeOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeActivityTypeOutcomeCallable SWFClient::DescribeActivityTypeCallable(const DescribeActivityTypeRequest& request) const
@@ -416,15 +352,7 @@ DescribeDomainOutcome SWFClient::DescribeDomain(const DescribeDomainRequest& req
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeDomainOutcome(DescribeDomainResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeDomainOutcome(outcome.GetError());
-  }
+  return DescribeDomainOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeDomainOutcomeCallable SWFClient::DescribeDomainCallable(const DescribeDomainRequest& request) const
@@ -451,15 +379,7 @@ DescribeWorkflowExecutionOutcome SWFClient::DescribeWorkflowExecution(const Desc
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeWorkflowExecutionOutcome(DescribeWorkflowExecutionResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeWorkflowExecutionOutcome(outcome.GetError());
-  }
+  return DescribeWorkflowExecutionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeWorkflowExecutionOutcomeCallable SWFClient::DescribeWorkflowExecutionCallable(const DescribeWorkflowExecutionRequest& request) const
@@ -486,15 +406,7 @@ DescribeWorkflowTypeOutcome SWFClient::DescribeWorkflowType(const DescribeWorkfl
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeWorkflowTypeOutcome(DescribeWorkflowTypeResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeWorkflowTypeOutcome(outcome.GetError());
-  }
+  return DescribeWorkflowTypeOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeWorkflowTypeOutcomeCallable SWFClient::DescribeWorkflowTypeCallable(const DescribeWorkflowTypeRequest& request) const
@@ -521,15 +433,7 @@ GetWorkflowExecutionHistoryOutcome SWFClient::GetWorkflowExecutionHistory(const 
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetWorkflowExecutionHistoryOutcome(GetWorkflowExecutionHistoryResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetWorkflowExecutionHistoryOutcome(outcome.GetError());
-  }
+  return GetWorkflowExecutionHistoryOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetWorkflowExecutionHistoryOutcomeCallable SWFClient::GetWorkflowExecutionHistoryCallable(const GetWorkflowExecutionHistoryRequest& request) const
@@ -556,15 +460,7 @@ ListActivityTypesOutcome SWFClient::ListActivityTypes(const ListActivityTypesReq
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListActivityTypesOutcome(ListActivityTypesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListActivityTypesOutcome(outcome.GetError());
-  }
+  return ListActivityTypesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListActivityTypesOutcomeCallable SWFClient::ListActivityTypesCallable(const ListActivityTypesRequest& request) const
@@ -591,15 +487,7 @@ ListClosedWorkflowExecutionsOutcome SWFClient::ListClosedWorkflowExecutions(cons
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListClosedWorkflowExecutionsOutcome(ListClosedWorkflowExecutionsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListClosedWorkflowExecutionsOutcome(outcome.GetError());
-  }
+  return ListClosedWorkflowExecutionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListClosedWorkflowExecutionsOutcomeCallable SWFClient::ListClosedWorkflowExecutionsCallable(const ListClosedWorkflowExecutionsRequest& request) const
@@ -626,15 +514,7 @@ ListDomainsOutcome SWFClient::ListDomains(const ListDomainsRequest& request) con
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListDomainsOutcome(ListDomainsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListDomainsOutcome(outcome.GetError());
-  }
+  return ListDomainsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListDomainsOutcomeCallable SWFClient::ListDomainsCallable(const ListDomainsRequest& request) const
@@ -661,15 +541,7 @@ ListOpenWorkflowExecutionsOutcome SWFClient::ListOpenWorkflowExecutions(const Li
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListOpenWorkflowExecutionsOutcome(ListOpenWorkflowExecutionsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListOpenWorkflowExecutionsOutcome(outcome.GetError());
-  }
+  return ListOpenWorkflowExecutionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListOpenWorkflowExecutionsOutcomeCallable SWFClient::ListOpenWorkflowExecutionsCallable(const ListOpenWorkflowExecutionsRequest& request) const
@@ -696,15 +568,7 @@ ListTagsForResourceOutcome SWFClient::ListTagsForResource(const ListTagsForResou
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListTagsForResourceOutcome(ListTagsForResourceResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListTagsForResourceOutcome(outcome.GetError());
-  }
+  return ListTagsForResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListTagsForResourceOutcomeCallable SWFClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
@@ -731,15 +595,7 @@ ListWorkflowTypesOutcome SWFClient::ListWorkflowTypes(const ListWorkflowTypesReq
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListWorkflowTypesOutcome(ListWorkflowTypesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListWorkflowTypesOutcome(outcome.GetError());
-  }
+  return ListWorkflowTypesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListWorkflowTypesOutcomeCallable SWFClient::ListWorkflowTypesCallable(const ListWorkflowTypesRequest& request) const
@@ -766,15 +622,7 @@ PollForActivityTaskOutcome SWFClient::PollForActivityTask(const PollForActivityT
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return PollForActivityTaskOutcome(PollForActivityTaskResult(outcome.GetResult()));
-  }
-  else
-  {
-    return PollForActivityTaskOutcome(outcome.GetError());
-  }
+  return PollForActivityTaskOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 PollForActivityTaskOutcomeCallable SWFClient::PollForActivityTaskCallable(const PollForActivityTaskRequest& request) const
@@ -801,15 +649,7 @@ PollForDecisionTaskOutcome SWFClient::PollForDecisionTask(const PollForDecisionT
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return PollForDecisionTaskOutcome(PollForDecisionTaskResult(outcome.GetResult()));
-  }
-  else
-  {
-    return PollForDecisionTaskOutcome(outcome.GetError());
-  }
+  return PollForDecisionTaskOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 PollForDecisionTaskOutcomeCallable SWFClient::PollForDecisionTaskCallable(const PollForDecisionTaskRequest& request) const
@@ -836,15 +676,7 @@ RecordActivityTaskHeartbeatOutcome SWFClient::RecordActivityTaskHeartbeat(const 
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return RecordActivityTaskHeartbeatOutcome(RecordActivityTaskHeartbeatResult(outcome.GetResult()));
-  }
-  else
-  {
-    return RecordActivityTaskHeartbeatOutcome(outcome.GetError());
-  }
+  return RecordActivityTaskHeartbeatOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 RecordActivityTaskHeartbeatOutcomeCallable SWFClient::RecordActivityTaskHeartbeatCallable(const RecordActivityTaskHeartbeatRequest& request) const
@@ -871,15 +703,7 @@ RegisterActivityTypeOutcome SWFClient::RegisterActivityType(const RegisterActivi
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return RegisterActivityTypeOutcome(NoResult());
-  }
-  else
-  {
-    return RegisterActivityTypeOutcome(outcome.GetError());
-  }
+  return RegisterActivityTypeOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 RegisterActivityTypeOutcomeCallable SWFClient::RegisterActivityTypeCallable(const RegisterActivityTypeRequest& request) const
@@ -906,15 +730,7 @@ RegisterDomainOutcome SWFClient::RegisterDomain(const RegisterDomainRequest& req
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return RegisterDomainOutcome(NoResult());
-  }
-  else
-  {
-    return RegisterDomainOutcome(outcome.GetError());
-  }
+  return RegisterDomainOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 RegisterDomainOutcomeCallable SWFClient::RegisterDomainCallable(const RegisterDomainRequest& request) const
@@ -941,15 +757,7 @@ RegisterWorkflowTypeOutcome SWFClient::RegisterWorkflowType(const RegisterWorkfl
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return RegisterWorkflowTypeOutcome(NoResult());
-  }
-  else
-  {
-    return RegisterWorkflowTypeOutcome(outcome.GetError());
-  }
+  return RegisterWorkflowTypeOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 RegisterWorkflowTypeOutcomeCallable SWFClient::RegisterWorkflowTypeCallable(const RegisterWorkflowTypeRequest& request) const
@@ -976,15 +784,7 @@ RequestCancelWorkflowExecutionOutcome SWFClient::RequestCancelWorkflowExecution(
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return RequestCancelWorkflowExecutionOutcome(NoResult());
-  }
-  else
-  {
-    return RequestCancelWorkflowExecutionOutcome(outcome.GetError());
-  }
+  return RequestCancelWorkflowExecutionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 RequestCancelWorkflowExecutionOutcomeCallable SWFClient::RequestCancelWorkflowExecutionCallable(const RequestCancelWorkflowExecutionRequest& request) const
@@ -1011,15 +811,7 @@ RespondActivityTaskCanceledOutcome SWFClient::RespondActivityTaskCanceled(const 
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return RespondActivityTaskCanceledOutcome(NoResult());
-  }
-  else
-  {
-    return RespondActivityTaskCanceledOutcome(outcome.GetError());
-  }
+  return RespondActivityTaskCanceledOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 RespondActivityTaskCanceledOutcomeCallable SWFClient::RespondActivityTaskCanceledCallable(const RespondActivityTaskCanceledRequest& request) const
@@ -1046,15 +838,7 @@ RespondActivityTaskCompletedOutcome SWFClient::RespondActivityTaskCompleted(cons
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return RespondActivityTaskCompletedOutcome(NoResult());
-  }
-  else
-  {
-    return RespondActivityTaskCompletedOutcome(outcome.GetError());
-  }
+  return RespondActivityTaskCompletedOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 RespondActivityTaskCompletedOutcomeCallable SWFClient::RespondActivityTaskCompletedCallable(const RespondActivityTaskCompletedRequest& request) const
@@ -1081,15 +865,7 @@ RespondActivityTaskFailedOutcome SWFClient::RespondActivityTaskFailed(const Resp
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return RespondActivityTaskFailedOutcome(NoResult());
-  }
-  else
-  {
-    return RespondActivityTaskFailedOutcome(outcome.GetError());
-  }
+  return RespondActivityTaskFailedOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 RespondActivityTaskFailedOutcomeCallable SWFClient::RespondActivityTaskFailedCallable(const RespondActivityTaskFailedRequest& request) const
@@ -1116,15 +892,7 @@ RespondDecisionTaskCompletedOutcome SWFClient::RespondDecisionTaskCompleted(cons
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return RespondDecisionTaskCompletedOutcome(NoResult());
-  }
-  else
-  {
-    return RespondDecisionTaskCompletedOutcome(outcome.GetError());
-  }
+  return RespondDecisionTaskCompletedOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 RespondDecisionTaskCompletedOutcomeCallable SWFClient::RespondDecisionTaskCompletedCallable(const RespondDecisionTaskCompletedRequest& request) const
@@ -1151,15 +919,7 @@ SignalWorkflowExecutionOutcome SWFClient::SignalWorkflowExecution(const SignalWo
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return SignalWorkflowExecutionOutcome(NoResult());
-  }
-  else
-  {
-    return SignalWorkflowExecutionOutcome(outcome.GetError());
-  }
+  return SignalWorkflowExecutionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 SignalWorkflowExecutionOutcomeCallable SWFClient::SignalWorkflowExecutionCallable(const SignalWorkflowExecutionRequest& request) const
@@ -1186,15 +946,7 @@ StartWorkflowExecutionOutcome SWFClient::StartWorkflowExecution(const StartWorkf
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return StartWorkflowExecutionOutcome(StartWorkflowExecutionResult(outcome.GetResult()));
-  }
-  else
-  {
-    return StartWorkflowExecutionOutcome(outcome.GetError());
-  }
+  return StartWorkflowExecutionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 StartWorkflowExecutionOutcomeCallable SWFClient::StartWorkflowExecutionCallable(const StartWorkflowExecutionRequest& request) const
@@ -1221,15 +973,7 @@ TagResourceOutcome SWFClient::TagResource(const TagResourceRequest& request) con
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return TagResourceOutcome(NoResult());
-  }
-  else
-  {
-    return TagResourceOutcome(outcome.GetError());
-  }
+  return TagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 TagResourceOutcomeCallable SWFClient::TagResourceCallable(const TagResourceRequest& request) const
@@ -1256,15 +1000,7 @@ TerminateWorkflowExecutionOutcome SWFClient::TerminateWorkflowExecution(const Te
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return TerminateWorkflowExecutionOutcome(NoResult());
-  }
-  else
-  {
-    return TerminateWorkflowExecutionOutcome(outcome.GetError());
-  }
+  return TerminateWorkflowExecutionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 TerminateWorkflowExecutionOutcomeCallable SWFClient::TerminateWorkflowExecutionCallable(const TerminateWorkflowExecutionRequest& request) const
@@ -1291,15 +1027,7 @@ UndeprecateActivityTypeOutcome SWFClient::UndeprecateActivityType(const Undeprec
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UndeprecateActivityTypeOutcome(NoResult());
-  }
-  else
-  {
-    return UndeprecateActivityTypeOutcome(outcome.GetError());
-  }
+  return UndeprecateActivityTypeOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UndeprecateActivityTypeOutcomeCallable SWFClient::UndeprecateActivityTypeCallable(const UndeprecateActivityTypeRequest& request) const
@@ -1326,15 +1054,7 @@ UndeprecateDomainOutcome SWFClient::UndeprecateDomain(const UndeprecateDomainReq
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UndeprecateDomainOutcome(NoResult());
-  }
-  else
-  {
-    return UndeprecateDomainOutcome(outcome.GetError());
-  }
+  return UndeprecateDomainOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UndeprecateDomainOutcomeCallable SWFClient::UndeprecateDomainCallable(const UndeprecateDomainRequest& request) const
@@ -1361,15 +1081,7 @@ UndeprecateWorkflowTypeOutcome SWFClient::UndeprecateWorkflowType(const Undeprec
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UndeprecateWorkflowTypeOutcome(NoResult());
-  }
-  else
-  {
-    return UndeprecateWorkflowTypeOutcome(outcome.GetError());
-  }
+  return UndeprecateWorkflowTypeOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UndeprecateWorkflowTypeOutcomeCallable SWFClient::UndeprecateWorkflowTypeCallable(const UndeprecateWorkflowTypeRequest& request) const
@@ -1396,15 +1108,7 @@ UntagResourceOutcome SWFClient::UntagResource(const UntagResourceRequest& reques
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UntagResourceOutcome(NoResult());
-  }
-  else
-  {
-    return UntagResourceOutcome(outcome.GetError());
-  }
+  return UntagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UntagResourceOutcomeCallable SWFClient::UntagResourceCallable(const UntagResourceRequest& request) const

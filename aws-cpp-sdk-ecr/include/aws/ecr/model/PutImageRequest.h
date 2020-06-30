@@ -278,6 +278,47 @@ namespace Model
      */
     inline PutImageRequest& WithImageTag(const char* value) { SetImageTag(value); return *this;}
 
+
+    /**
+     * <p>The image digest of the image manifest corresponding to the image.</p>
+     */
+    inline const Aws::String& GetImageDigest() const{ return m_imageDigest; }
+
+    /**
+     * <p>The image digest of the image manifest corresponding to the image.</p>
+     */
+    inline bool ImageDigestHasBeenSet() const { return m_imageDigestHasBeenSet; }
+
+    /**
+     * <p>The image digest of the image manifest corresponding to the image.</p>
+     */
+    inline void SetImageDigest(const Aws::String& value) { m_imageDigestHasBeenSet = true; m_imageDigest = value; }
+
+    /**
+     * <p>The image digest of the image manifest corresponding to the image.</p>
+     */
+    inline void SetImageDigest(Aws::String&& value) { m_imageDigestHasBeenSet = true; m_imageDigest = std::move(value); }
+
+    /**
+     * <p>The image digest of the image manifest corresponding to the image.</p>
+     */
+    inline void SetImageDigest(const char* value) { m_imageDigestHasBeenSet = true; m_imageDigest.assign(value); }
+
+    /**
+     * <p>The image digest of the image manifest corresponding to the image.</p>
+     */
+    inline PutImageRequest& WithImageDigest(const Aws::String& value) { SetImageDigest(value); return *this;}
+
+    /**
+     * <p>The image digest of the image manifest corresponding to the image.</p>
+     */
+    inline PutImageRequest& WithImageDigest(Aws::String&& value) { SetImageDigest(std::move(value)); return *this;}
+
+    /**
+     * <p>The image digest of the image manifest corresponding to the image.</p>
+     */
+    inline PutImageRequest& WithImageDigest(const char* value) { SetImageDigest(value); return *this;}
+
   private:
 
     Aws::String m_registryId;
@@ -294,6 +335,9 @@ namespace Model
 
     Aws::String m_imageTag;
     bool m_imageTagHasBeenSet;
+
+    Aws::String m_imageDigest;
+    bool m_imageDigestHasBeenSet;
   };
 
 } // namespace Model

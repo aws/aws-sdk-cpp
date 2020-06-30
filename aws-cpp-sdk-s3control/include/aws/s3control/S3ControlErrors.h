@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/s3control/S3Control_EXPORTS.h>
 
@@ -42,7 +43,7 @@ enum class S3ControlErrors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -57,6 +58,20 @@ enum class S3ControlErrors
   TOO_MANY_REQUESTS,
   TOO_MANY_TAGS
 };
+
+class AWS_S3CONTROL_API S3ControlError : public Aws::Client::AWSError<S3ControlErrors>
+{
+public:
+  S3ControlError() {}
+  S3ControlError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<S3ControlErrors>(rhs) {}
+  S3ControlError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<S3ControlErrors>(rhs) {}
+  S3ControlError(const Aws::Client::AWSError<S3ControlErrors>& rhs) : Aws::Client::AWSError<S3ControlErrors>(rhs) {}
+  S3ControlError(Aws::Client::AWSError<S3ControlErrors>&& rhs) : Aws::Client::AWSError<S3ControlErrors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace S3ControlErrorMapper
 {
   AWS_S3CONTROL_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

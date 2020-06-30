@@ -102,7 +102,7 @@ static const char* ALLOCATION_TAG = "CloudDirectoryClient";
 CloudDirectoryClient::CloudDirectoryClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-        SERVICE_NAME, clientConfiguration.region),
+        SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<CloudDirectoryErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -112,7 +112,7 @@ CloudDirectoryClient::CloudDirectoryClient(const Client::ClientConfiguration& cl
 CloudDirectoryClient::CloudDirectoryClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-         SERVICE_NAME, clientConfiguration.region),
+         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<CloudDirectoryErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -123,7 +123,7 @@ CloudDirectoryClient::CloudDirectoryClient(const std::shared_ptr<AWSCredentialsP
   const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider,
-         SERVICE_NAME, clientConfiguration.region),
+         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<CloudDirectoryErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -170,15 +170,7 @@ AddFacetToObjectOutcome CloudDirectoryClient::AddFacetToObject(const AddFacetToO
   Aws::StringStream ss;
   ss << "/amazonclouddirectory/2017-01-11/object/facets";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return AddFacetToObjectOutcome(AddFacetToObjectResult(outcome.GetResult()));
-  }
-  else
-  {
-    return AddFacetToObjectOutcome(outcome.GetError());
-  }
+  return AddFacetToObjectOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 AddFacetToObjectOutcomeCallable CloudDirectoryClient::AddFacetToObjectCallable(const AddFacetToObjectRequest& request) const
@@ -210,15 +202,7 @@ ApplySchemaOutcome CloudDirectoryClient::ApplySchema(const ApplySchemaRequest& r
   Aws::StringStream ss;
   ss << "/amazonclouddirectory/2017-01-11/schema/apply";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ApplySchemaOutcome(ApplySchemaResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ApplySchemaOutcome(outcome.GetError());
-  }
+  return ApplySchemaOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 ApplySchemaOutcomeCallable CloudDirectoryClient::ApplySchemaCallable(const ApplySchemaRequest& request) const
@@ -250,15 +234,7 @@ AttachObjectOutcome CloudDirectoryClient::AttachObject(const AttachObjectRequest
   Aws::StringStream ss;
   ss << "/amazonclouddirectory/2017-01-11/object/attach";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return AttachObjectOutcome(AttachObjectResult(outcome.GetResult()));
-  }
-  else
-  {
-    return AttachObjectOutcome(outcome.GetError());
-  }
+  return AttachObjectOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 AttachObjectOutcomeCallable CloudDirectoryClient::AttachObjectCallable(const AttachObjectRequest& request) const
@@ -290,15 +266,7 @@ AttachPolicyOutcome CloudDirectoryClient::AttachPolicy(const AttachPolicyRequest
   Aws::StringStream ss;
   ss << "/amazonclouddirectory/2017-01-11/policy/attach";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return AttachPolicyOutcome(AttachPolicyResult(outcome.GetResult()));
-  }
-  else
-  {
-    return AttachPolicyOutcome(outcome.GetError());
-  }
+  return AttachPolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 AttachPolicyOutcomeCallable CloudDirectoryClient::AttachPolicyCallable(const AttachPolicyRequest& request) const
@@ -330,15 +298,7 @@ AttachToIndexOutcome CloudDirectoryClient::AttachToIndex(const AttachToIndexRequ
   Aws::StringStream ss;
   ss << "/amazonclouddirectory/2017-01-11/index/attach";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return AttachToIndexOutcome(AttachToIndexResult(outcome.GetResult()));
-  }
-  else
-  {
-    return AttachToIndexOutcome(outcome.GetError());
-  }
+  return AttachToIndexOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 AttachToIndexOutcomeCallable CloudDirectoryClient::AttachToIndexCallable(const AttachToIndexRequest& request) const
@@ -370,15 +330,7 @@ AttachTypedLinkOutcome CloudDirectoryClient::AttachTypedLink(const AttachTypedLi
   Aws::StringStream ss;
   ss << "/amazonclouddirectory/2017-01-11/typedlink/attach";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return AttachTypedLinkOutcome(AttachTypedLinkResult(outcome.GetResult()));
-  }
-  else
-  {
-    return AttachTypedLinkOutcome(outcome.GetError());
-  }
+  return AttachTypedLinkOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 AttachTypedLinkOutcomeCallable CloudDirectoryClient::AttachTypedLinkCallable(const AttachTypedLinkRequest& request) const
@@ -410,15 +362,7 @@ BatchReadOutcome CloudDirectoryClient::BatchRead(const BatchReadRequest& request
   Aws::StringStream ss;
   ss << "/amazonclouddirectory/2017-01-11/batchread";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return BatchReadOutcome(BatchReadResult(outcome.GetResult()));
-  }
-  else
-  {
-    return BatchReadOutcome(outcome.GetError());
-  }
+  return BatchReadOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 BatchReadOutcomeCallable CloudDirectoryClient::BatchReadCallable(const BatchReadRequest& request) const
@@ -450,15 +394,7 @@ BatchWriteOutcome CloudDirectoryClient::BatchWrite(const BatchWriteRequest& requ
   Aws::StringStream ss;
   ss << "/amazonclouddirectory/2017-01-11/batchwrite";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return BatchWriteOutcome(BatchWriteResult(outcome.GetResult()));
-  }
-  else
-  {
-    return BatchWriteOutcome(outcome.GetError());
-  }
+  return BatchWriteOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 BatchWriteOutcomeCallable CloudDirectoryClient::BatchWriteCallable(const BatchWriteRequest& request) const
@@ -490,15 +426,7 @@ CreateDirectoryOutcome CloudDirectoryClient::CreateDirectory(const CreateDirecto
   Aws::StringStream ss;
   ss << "/amazonclouddirectory/2017-01-11/directory/create";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateDirectoryOutcome(CreateDirectoryResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateDirectoryOutcome(outcome.GetError());
-  }
+  return CreateDirectoryOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateDirectoryOutcomeCallable CloudDirectoryClient::CreateDirectoryCallable(const CreateDirectoryRequest& request) const
@@ -530,15 +458,7 @@ CreateFacetOutcome CloudDirectoryClient::CreateFacet(const CreateFacetRequest& r
   Aws::StringStream ss;
   ss << "/amazonclouddirectory/2017-01-11/facet/create";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateFacetOutcome(CreateFacetResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateFacetOutcome(outcome.GetError());
-  }
+  return CreateFacetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateFacetOutcomeCallable CloudDirectoryClient::CreateFacetCallable(const CreateFacetRequest& request) const
@@ -570,15 +490,7 @@ CreateIndexOutcome CloudDirectoryClient::CreateIndex(const CreateIndexRequest& r
   Aws::StringStream ss;
   ss << "/amazonclouddirectory/2017-01-11/index";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateIndexOutcome(CreateIndexResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateIndexOutcome(outcome.GetError());
-  }
+  return CreateIndexOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateIndexOutcomeCallable CloudDirectoryClient::CreateIndexCallable(const CreateIndexRequest& request) const
@@ -610,15 +522,7 @@ CreateObjectOutcome CloudDirectoryClient::CreateObject(const CreateObjectRequest
   Aws::StringStream ss;
   ss << "/amazonclouddirectory/2017-01-11/object";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateObjectOutcome(CreateObjectResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateObjectOutcome(outcome.GetError());
-  }
+  return CreateObjectOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateObjectOutcomeCallable CloudDirectoryClient::CreateObjectCallable(const CreateObjectRequest& request) const
@@ -645,15 +549,7 @@ CreateSchemaOutcome CloudDirectoryClient::CreateSchema(const CreateSchemaRequest
   Aws::StringStream ss;
   ss << "/amazonclouddirectory/2017-01-11/schema/create";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateSchemaOutcome(CreateSchemaResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateSchemaOutcome(outcome.GetError());
-  }
+  return CreateSchemaOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateSchemaOutcomeCallable CloudDirectoryClient::CreateSchemaCallable(const CreateSchemaRequest& request) const
@@ -685,15 +581,7 @@ CreateTypedLinkFacetOutcome CloudDirectoryClient::CreateTypedLinkFacet(const Cre
   Aws::StringStream ss;
   ss << "/amazonclouddirectory/2017-01-11/typedlink/facet/create";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateTypedLinkFacetOutcome(CreateTypedLinkFacetResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateTypedLinkFacetOutcome(outcome.GetError());
-  }
+  return CreateTypedLinkFacetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateTypedLinkFacetOutcomeCallable CloudDirectoryClient::CreateTypedLinkFacetCallable(const CreateTypedLinkFacetRequest& request) const
@@ -725,15 +613,7 @@ DeleteDirectoryOutcome CloudDirectoryClient::DeleteDirectory(const DeleteDirecto
   Aws::StringStream ss;
   ss << "/amazonclouddirectory/2017-01-11/directory";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteDirectoryOutcome(DeleteDirectoryResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteDirectoryOutcome(outcome.GetError());
-  }
+  return DeleteDirectoryOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteDirectoryOutcomeCallable CloudDirectoryClient::DeleteDirectoryCallable(const DeleteDirectoryRequest& request) const
@@ -765,15 +645,7 @@ DeleteFacetOutcome CloudDirectoryClient::DeleteFacet(const DeleteFacetRequest& r
   Aws::StringStream ss;
   ss << "/amazonclouddirectory/2017-01-11/facet/delete";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteFacetOutcome(DeleteFacetResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteFacetOutcome(outcome.GetError());
-  }
+  return DeleteFacetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteFacetOutcomeCallable CloudDirectoryClient::DeleteFacetCallable(const DeleteFacetRequest& request) const
@@ -805,15 +677,7 @@ DeleteObjectOutcome CloudDirectoryClient::DeleteObject(const DeleteObjectRequest
   Aws::StringStream ss;
   ss << "/amazonclouddirectory/2017-01-11/object/delete";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteObjectOutcome(DeleteObjectResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteObjectOutcome(outcome.GetError());
-  }
+  return DeleteObjectOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteObjectOutcomeCallable CloudDirectoryClient::DeleteObjectCallable(const DeleteObjectRequest& request) const
@@ -845,15 +709,7 @@ DeleteSchemaOutcome CloudDirectoryClient::DeleteSchema(const DeleteSchemaRequest
   Aws::StringStream ss;
   ss << "/amazonclouddirectory/2017-01-11/schema";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteSchemaOutcome(DeleteSchemaResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteSchemaOutcome(outcome.GetError());
-  }
+  return DeleteSchemaOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteSchemaOutcomeCallable CloudDirectoryClient::DeleteSchemaCallable(const DeleteSchemaRequest& request) const
@@ -885,15 +741,7 @@ DeleteTypedLinkFacetOutcome CloudDirectoryClient::DeleteTypedLinkFacet(const Del
   Aws::StringStream ss;
   ss << "/amazonclouddirectory/2017-01-11/typedlink/facet/delete";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteTypedLinkFacetOutcome(DeleteTypedLinkFacetResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteTypedLinkFacetOutcome(outcome.GetError());
-  }
+  return DeleteTypedLinkFacetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteTypedLinkFacetOutcomeCallable CloudDirectoryClient::DeleteTypedLinkFacetCallable(const DeleteTypedLinkFacetRequest& request) const
@@ -925,15 +773,7 @@ DetachFromIndexOutcome CloudDirectoryClient::DetachFromIndex(const DetachFromInd
   Aws::StringStream ss;
   ss << "/amazonclouddirectory/2017-01-11/index/detach";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DetachFromIndexOutcome(DetachFromIndexResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DetachFromIndexOutcome(outcome.GetError());
-  }
+  return DetachFromIndexOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 DetachFromIndexOutcomeCallable CloudDirectoryClient::DetachFromIndexCallable(const DetachFromIndexRequest& request) const
@@ -965,15 +805,7 @@ DetachObjectOutcome CloudDirectoryClient::DetachObject(const DetachObjectRequest
   Aws::StringStream ss;
   ss << "/amazonclouddirectory/2017-01-11/object/detach";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DetachObjectOutcome(DetachObjectResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DetachObjectOutcome(outcome.GetError());
-  }
+  return DetachObjectOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 DetachObjectOutcomeCallable CloudDirectoryClient::DetachObjectCallable(const DetachObjectRequest& request) const
@@ -1005,15 +837,7 @@ DetachPolicyOutcome CloudDirectoryClient::DetachPolicy(const DetachPolicyRequest
   Aws::StringStream ss;
   ss << "/amazonclouddirectory/2017-01-11/policy/detach";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DetachPolicyOutcome(DetachPolicyResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DetachPolicyOutcome(outcome.GetError());
-  }
+  return DetachPolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 DetachPolicyOutcomeCallable CloudDirectoryClient::DetachPolicyCallable(const DetachPolicyRequest& request) const
@@ -1045,15 +869,7 @@ DetachTypedLinkOutcome CloudDirectoryClient::DetachTypedLink(const DetachTypedLi
   Aws::StringStream ss;
   ss << "/amazonclouddirectory/2017-01-11/typedlink/detach";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DetachTypedLinkOutcome(NoResult());
-  }
-  else
-  {
-    return DetachTypedLinkOutcome(outcome.GetError());
-  }
+  return DetachTypedLinkOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 DetachTypedLinkOutcomeCallable CloudDirectoryClient::DetachTypedLinkCallable(const DetachTypedLinkRequest& request) const
@@ -1085,15 +901,7 @@ DisableDirectoryOutcome CloudDirectoryClient::DisableDirectory(const DisableDire
   Aws::StringStream ss;
   ss << "/amazonclouddirectory/2017-01-11/directory/disable";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DisableDirectoryOutcome(DisableDirectoryResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DisableDirectoryOutcome(outcome.GetError());
-  }
+  return DisableDirectoryOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 DisableDirectoryOutcomeCallable CloudDirectoryClient::DisableDirectoryCallable(const DisableDirectoryRequest& request) const
@@ -1125,15 +933,7 @@ EnableDirectoryOutcome CloudDirectoryClient::EnableDirectory(const EnableDirecto
   Aws::StringStream ss;
   ss << "/amazonclouddirectory/2017-01-11/directory/enable";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return EnableDirectoryOutcome(EnableDirectoryResult(outcome.GetResult()));
-  }
-  else
-  {
-    return EnableDirectoryOutcome(outcome.GetError());
-  }
+  return EnableDirectoryOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 EnableDirectoryOutcomeCallable CloudDirectoryClient::EnableDirectoryCallable(const EnableDirectoryRequest& request) const
@@ -1160,15 +960,7 @@ GetAppliedSchemaVersionOutcome CloudDirectoryClient::GetAppliedSchemaVersion(con
   Aws::StringStream ss;
   ss << "/amazonclouddirectory/2017-01-11/schema/getappliedschema";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetAppliedSchemaVersionOutcome(GetAppliedSchemaVersionResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetAppliedSchemaVersionOutcome(outcome.GetError());
-  }
+  return GetAppliedSchemaVersionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetAppliedSchemaVersionOutcomeCallable CloudDirectoryClient::GetAppliedSchemaVersionCallable(const GetAppliedSchemaVersionRequest& request) const
@@ -1200,15 +992,7 @@ GetDirectoryOutcome CloudDirectoryClient::GetDirectory(const GetDirectoryRequest
   Aws::StringStream ss;
   ss << "/amazonclouddirectory/2017-01-11/directory/get";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetDirectoryOutcome(GetDirectoryResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetDirectoryOutcome(outcome.GetError());
-  }
+  return GetDirectoryOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetDirectoryOutcomeCallable CloudDirectoryClient::GetDirectoryCallable(const GetDirectoryRequest& request) const
@@ -1240,15 +1024,7 @@ GetFacetOutcome CloudDirectoryClient::GetFacet(const GetFacetRequest& request) c
   Aws::StringStream ss;
   ss << "/amazonclouddirectory/2017-01-11/facet";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetFacetOutcome(GetFacetResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetFacetOutcome(outcome.GetError());
-  }
+  return GetFacetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetFacetOutcomeCallable CloudDirectoryClient::GetFacetCallable(const GetFacetRequest& request) const
@@ -1280,15 +1056,7 @@ GetLinkAttributesOutcome CloudDirectoryClient::GetLinkAttributes(const GetLinkAt
   Aws::StringStream ss;
   ss << "/amazonclouddirectory/2017-01-11/typedlink/attributes/get";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetLinkAttributesOutcome(GetLinkAttributesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetLinkAttributesOutcome(outcome.GetError());
-  }
+  return GetLinkAttributesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetLinkAttributesOutcomeCallable CloudDirectoryClient::GetLinkAttributesCallable(const GetLinkAttributesRequest& request) const
@@ -1320,15 +1088,7 @@ GetObjectAttributesOutcome CloudDirectoryClient::GetObjectAttributes(const GetOb
   Aws::StringStream ss;
   ss << "/amazonclouddirectory/2017-01-11/object/attributes/get";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetObjectAttributesOutcome(GetObjectAttributesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetObjectAttributesOutcome(outcome.GetError());
-  }
+  return GetObjectAttributesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetObjectAttributesOutcomeCallable CloudDirectoryClient::GetObjectAttributesCallable(const GetObjectAttributesRequest& request) const
@@ -1360,15 +1120,7 @@ GetObjectInformationOutcome CloudDirectoryClient::GetObjectInformation(const Get
   Aws::StringStream ss;
   ss << "/amazonclouddirectory/2017-01-11/object/information";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetObjectInformationOutcome(GetObjectInformationResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetObjectInformationOutcome(outcome.GetError());
-  }
+  return GetObjectInformationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetObjectInformationOutcomeCallable CloudDirectoryClient::GetObjectInformationCallable(const GetObjectInformationRequest& request) const
@@ -1400,15 +1152,7 @@ GetSchemaAsJsonOutcome CloudDirectoryClient::GetSchemaAsJson(const GetSchemaAsJs
   Aws::StringStream ss;
   ss << "/amazonclouddirectory/2017-01-11/schema/json";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetSchemaAsJsonOutcome(GetSchemaAsJsonResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetSchemaAsJsonOutcome(outcome.GetError());
-  }
+  return GetSchemaAsJsonOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetSchemaAsJsonOutcomeCallable CloudDirectoryClient::GetSchemaAsJsonCallable(const GetSchemaAsJsonRequest& request) const
@@ -1440,15 +1184,7 @@ GetTypedLinkFacetInformationOutcome CloudDirectoryClient::GetTypedLinkFacetInfor
   Aws::StringStream ss;
   ss << "/amazonclouddirectory/2017-01-11/typedlink/facet/get";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetTypedLinkFacetInformationOutcome(GetTypedLinkFacetInformationResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetTypedLinkFacetInformationOutcome(outcome.GetError());
-  }
+  return GetTypedLinkFacetInformationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetTypedLinkFacetInformationOutcomeCallable CloudDirectoryClient::GetTypedLinkFacetInformationCallable(const GetTypedLinkFacetInformationRequest& request) const
@@ -1475,15 +1211,7 @@ ListAppliedSchemaArnsOutcome CloudDirectoryClient::ListAppliedSchemaArns(const L
   Aws::StringStream ss;
   ss << "/amazonclouddirectory/2017-01-11/schema/applied";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListAppliedSchemaArnsOutcome(ListAppliedSchemaArnsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListAppliedSchemaArnsOutcome(outcome.GetError());
-  }
+  return ListAppliedSchemaArnsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListAppliedSchemaArnsOutcomeCallable CloudDirectoryClient::ListAppliedSchemaArnsCallable(const ListAppliedSchemaArnsRequest& request) const
@@ -1515,15 +1243,7 @@ ListAttachedIndicesOutcome CloudDirectoryClient::ListAttachedIndices(const ListA
   Aws::StringStream ss;
   ss << "/amazonclouddirectory/2017-01-11/object/indices";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListAttachedIndicesOutcome(ListAttachedIndicesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListAttachedIndicesOutcome(outcome.GetError());
-  }
+  return ListAttachedIndicesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListAttachedIndicesOutcomeCallable CloudDirectoryClient::ListAttachedIndicesCallable(const ListAttachedIndicesRequest& request) const
@@ -1550,15 +1270,7 @@ ListDevelopmentSchemaArnsOutcome CloudDirectoryClient::ListDevelopmentSchemaArns
   Aws::StringStream ss;
   ss << "/amazonclouddirectory/2017-01-11/schema/development";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListDevelopmentSchemaArnsOutcome(ListDevelopmentSchemaArnsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListDevelopmentSchemaArnsOutcome(outcome.GetError());
-  }
+  return ListDevelopmentSchemaArnsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListDevelopmentSchemaArnsOutcomeCallable CloudDirectoryClient::ListDevelopmentSchemaArnsCallable(const ListDevelopmentSchemaArnsRequest& request) const
@@ -1585,15 +1297,7 @@ ListDirectoriesOutcome CloudDirectoryClient::ListDirectories(const ListDirectori
   Aws::StringStream ss;
   ss << "/amazonclouddirectory/2017-01-11/directory/list";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListDirectoriesOutcome(ListDirectoriesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListDirectoriesOutcome(outcome.GetError());
-  }
+  return ListDirectoriesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListDirectoriesOutcomeCallable CloudDirectoryClient::ListDirectoriesCallable(const ListDirectoriesRequest& request) const
@@ -1625,15 +1329,7 @@ ListFacetAttributesOutcome CloudDirectoryClient::ListFacetAttributes(const ListF
   Aws::StringStream ss;
   ss << "/amazonclouddirectory/2017-01-11/facet/attributes";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListFacetAttributesOutcome(ListFacetAttributesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListFacetAttributesOutcome(outcome.GetError());
-  }
+  return ListFacetAttributesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListFacetAttributesOutcomeCallable CloudDirectoryClient::ListFacetAttributesCallable(const ListFacetAttributesRequest& request) const
@@ -1665,15 +1361,7 @@ ListFacetNamesOutcome CloudDirectoryClient::ListFacetNames(const ListFacetNamesR
   Aws::StringStream ss;
   ss << "/amazonclouddirectory/2017-01-11/facet/list";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListFacetNamesOutcome(ListFacetNamesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListFacetNamesOutcome(outcome.GetError());
-  }
+  return ListFacetNamesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListFacetNamesOutcomeCallable CloudDirectoryClient::ListFacetNamesCallable(const ListFacetNamesRequest& request) const
@@ -1705,15 +1393,7 @@ ListIncomingTypedLinksOutcome CloudDirectoryClient::ListIncomingTypedLinks(const
   Aws::StringStream ss;
   ss << "/amazonclouddirectory/2017-01-11/typedlink/incoming";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListIncomingTypedLinksOutcome(ListIncomingTypedLinksResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListIncomingTypedLinksOutcome(outcome.GetError());
-  }
+  return ListIncomingTypedLinksOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListIncomingTypedLinksOutcomeCallable CloudDirectoryClient::ListIncomingTypedLinksCallable(const ListIncomingTypedLinksRequest& request) const
@@ -1745,15 +1425,7 @@ ListIndexOutcome CloudDirectoryClient::ListIndex(const ListIndexRequest& request
   Aws::StringStream ss;
   ss << "/amazonclouddirectory/2017-01-11/index/targets";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListIndexOutcome(ListIndexResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListIndexOutcome(outcome.GetError());
-  }
+  return ListIndexOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListIndexOutcomeCallable CloudDirectoryClient::ListIndexCallable(const ListIndexRequest& request) const
@@ -1780,15 +1452,7 @@ ListManagedSchemaArnsOutcome CloudDirectoryClient::ListManagedSchemaArns(const L
   Aws::StringStream ss;
   ss << "/amazonclouddirectory/2017-01-11/schema/managed";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListManagedSchemaArnsOutcome(ListManagedSchemaArnsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListManagedSchemaArnsOutcome(outcome.GetError());
-  }
+  return ListManagedSchemaArnsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListManagedSchemaArnsOutcomeCallable CloudDirectoryClient::ListManagedSchemaArnsCallable(const ListManagedSchemaArnsRequest& request) const
@@ -1820,15 +1484,7 @@ ListObjectAttributesOutcome CloudDirectoryClient::ListObjectAttributes(const Lis
   Aws::StringStream ss;
   ss << "/amazonclouddirectory/2017-01-11/object/attributes";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListObjectAttributesOutcome(ListObjectAttributesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListObjectAttributesOutcome(outcome.GetError());
-  }
+  return ListObjectAttributesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListObjectAttributesOutcomeCallable CloudDirectoryClient::ListObjectAttributesCallable(const ListObjectAttributesRequest& request) const
@@ -1860,15 +1516,7 @@ ListObjectChildrenOutcome CloudDirectoryClient::ListObjectChildren(const ListObj
   Aws::StringStream ss;
   ss << "/amazonclouddirectory/2017-01-11/object/children";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListObjectChildrenOutcome(ListObjectChildrenResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListObjectChildrenOutcome(outcome.GetError());
-  }
+  return ListObjectChildrenOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListObjectChildrenOutcomeCallable CloudDirectoryClient::ListObjectChildrenCallable(const ListObjectChildrenRequest& request) const
@@ -1900,15 +1548,7 @@ ListObjectParentPathsOutcome CloudDirectoryClient::ListObjectParentPaths(const L
   Aws::StringStream ss;
   ss << "/amazonclouddirectory/2017-01-11/object/parentpaths";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListObjectParentPathsOutcome(ListObjectParentPathsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListObjectParentPathsOutcome(outcome.GetError());
-  }
+  return ListObjectParentPathsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListObjectParentPathsOutcomeCallable CloudDirectoryClient::ListObjectParentPathsCallable(const ListObjectParentPathsRequest& request) const
@@ -1940,15 +1580,7 @@ ListObjectParentsOutcome CloudDirectoryClient::ListObjectParents(const ListObjec
   Aws::StringStream ss;
   ss << "/amazonclouddirectory/2017-01-11/object/parent";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListObjectParentsOutcome(ListObjectParentsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListObjectParentsOutcome(outcome.GetError());
-  }
+  return ListObjectParentsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListObjectParentsOutcomeCallable CloudDirectoryClient::ListObjectParentsCallable(const ListObjectParentsRequest& request) const
@@ -1980,15 +1612,7 @@ ListObjectPoliciesOutcome CloudDirectoryClient::ListObjectPolicies(const ListObj
   Aws::StringStream ss;
   ss << "/amazonclouddirectory/2017-01-11/object/policy";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListObjectPoliciesOutcome(ListObjectPoliciesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListObjectPoliciesOutcome(outcome.GetError());
-  }
+  return ListObjectPoliciesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListObjectPoliciesOutcomeCallable CloudDirectoryClient::ListObjectPoliciesCallable(const ListObjectPoliciesRequest& request) const
@@ -2020,15 +1644,7 @@ ListOutgoingTypedLinksOutcome CloudDirectoryClient::ListOutgoingTypedLinks(const
   Aws::StringStream ss;
   ss << "/amazonclouddirectory/2017-01-11/typedlink/outgoing";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListOutgoingTypedLinksOutcome(ListOutgoingTypedLinksResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListOutgoingTypedLinksOutcome(outcome.GetError());
-  }
+  return ListOutgoingTypedLinksOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListOutgoingTypedLinksOutcomeCallable CloudDirectoryClient::ListOutgoingTypedLinksCallable(const ListOutgoingTypedLinksRequest& request) const
@@ -2060,15 +1676,7 @@ ListPolicyAttachmentsOutcome CloudDirectoryClient::ListPolicyAttachments(const L
   Aws::StringStream ss;
   ss << "/amazonclouddirectory/2017-01-11/policy/attachment";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListPolicyAttachmentsOutcome(ListPolicyAttachmentsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListPolicyAttachmentsOutcome(outcome.GetError());
-  }
+  return ListPolicyAttachmentsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListPolicyAttachmentsOutcomeCallable CloudDirectoryClient::ListPolicyAttachmentsCallable(const ListPolicyAttachmentsRequest& request) const
@@ -2095,15 +1703,7 @@ ListPublishedSchemaArnsOutcome CloudDirectoryClient::ListPublishedSchemaArns(con
   Aws::StringStream ss;
   ss << "/amazonclouddirectory/2017-01-11/schema/published";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListPublishedSchemaArnsOutcome(ListPublishedSchemaArnsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListPublishedSchemaArnsOutcome(outcome.GetError());
-  }
+  return ListPublishedSchemaArnsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListPublishedSchemaArnsOutcomeCallable CloudDirectoryClient::ListPublishedSchemaArnsCallable(const ListPublishedSchemaArnsRequest& request) const
@@ -2130,15 +1730,7 @@ ListTagsForResourceOutcome CloudDirectoryClient::ListTagsForResource(const ListT
   Aws::StringStream ss;
   ss << "/amazonclouddirectory/2017-01-11/tags";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListTagsForResourceOutcome(ListTagsForResourceResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListTagsForResourceOutcome(outcome.GetError());
-  }
+  return ListTagsForResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListTagsForResourceOutcomeCallable CloudDirectoryClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
@@ -2170,15 +1762,7 @@ ListTypedLinkFacetAttributesOutcome CloudDirectoryClient::ListTypedLinkFacetAttr
   Aws::StringStream ss;
   ss << "/amazonclouddirectory/2017-01-11/typedlink/facet/attributes";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListTypedLinkFacetAttributesOutcome(ListTypedLinkFacetAttributesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListTypedLinkFacetAttributesOutcome(outcome.GetError());
-  }
+  return ListTypedLinkFacetAttributesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListTypedLinkFacetAttributesOutcomeCallable CloudDirectoryClient::ListTypedLinkFacetAttributesCallable(const ListTypedLinkFacetAttributesRequest& request) const
@@ -2210,15 +1794,7 @@ ListTypedLinkFacetNamesOutcome CloudDirectoryClient::ListTypedLinkFacetNames(con
   Aws::StringStream ss;
   ss << "/amazonclouddirectory/2017-01-11/typedlink/facet/list";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListTypedLinkFacetNamesOutcome(ListTypedLinkFacetNamesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListTypedLinkFacetNamesOutcome(outcome.GetError());
-  }
+  return ListTypedLinkFacetNamesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListTypedLinkFacetNamesOutcomeCallable CloudDirectoryClient::ListTypedLinkFacetNamesCallable(const ListTypedLinkFacetNamesRequest& request) const
@@ -2250,15 +1826,7 @@ LookupPolicyOutcome CloudDirectoryClient::LookupPolicy(const LookupPolicyRequest
   Aws::StringStream ss;
   ss << "/amazonclouddirectory/2017-01-11/policy/lookup";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return LookupPolicyOutcome(LookupPolicyResult(outcome.GetResult()));
-  }
-  else
-  {
-    return LookupPolicyOutcome(outcome.GetError());
-  }
+  return LookupPolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 LookupPolicyOutcomeCallable CloudDirectoryClient::LookupPolicyCallable(const LookupPolicyRequest& request) const
@@ -2290,15 +1858,7 @@ PublishSchemaOutcome CloudDirectoryClient::PublishSchema(const PublishSchemaRequ
   Aws::StringStream ss;
   ss << "/amazonclouddirectory/2017-01-11/schema/publish";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return PublishSchemaOutcome(PublishSchemaResult(outcome.GetResult()));
-  }
-  else
-  {
-    return PublishSchemaOutcome(outcome.GetError());
-  }
+  return PublishSchemaOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 PublishSchemaOutcomeCallable CloudDirectoryClient::PublishSchemaCallable(const PublishSchemaRequest& request) const
@@ -2330,15 +1890,7 @@ PutSchemaFromJsonOutcome CloudDirectoryClient::PutSchemaFromJson(const PutSchema
   Aws::StringStream ss;
   ss << "/amazonclouddirectory/2017-01-11/schema/json";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return PutSchemaFromJsonOutcome(PutSchemaFromJsonResult(outcome.GetResult()));
-  }
-  else
-  {
-    return PutSchemaFromJsonOutcome(outcome.GetError());
-  }
+  return PutSchemaFromJsonOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 PutSchemaFromJsonOutcomeCallable CloudDirectoryClient::PutSchemaFromJsonCallable(const PutSchemaFromJsonRequest& request) const
@@ -2370,15 +1922,7 @@ RemoveFacetFromObjectOutcome CloudDirectoryClient::RemoveFacetFromObject(const R
   Aws::StringStream ss;
   ss << "/amazonclouddirectory/2017-01-11/object/facets/delete";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return RemoveFacetFromObjectOutcome(RemoveFacetFromObjectResult(outcome.GetResult()));
-  }
-  else
-  {
-    return RemoveFacetFromObjectOutcome(outcome.GetError());
-  }
+  return RemoveFacetFromObjectOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 RemoveFacetFromObjectOutcomeCallable CloudDirectoryClient::RemoveFacetFromObjectCallable(const RemoveFacetFromObjectRequest& request) const
@@ -2405,15 +1949,7 @@ TagResourceOutcome CloudDirectoryClient::TagResource(const TagResourceRequest& r
   Aws::StringStream ss;
   ss << "/amazonclouddirectory/2017-01-11/tags/add";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return TagResourceOutcome(TagResourceResult(outcome.GetResult()));
-  }
-  else
-  {
-    return TagResourceOutcome(outcome.GetError());
-  }
+  return TagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 TagResourceOutcomeCallable CloudDirectoryClient::TagResourceCallable(const TagResourceRequest& request) const
@@ -2440,15 +1976,7 @@ UntagResourceOutcome CloudDirectoryClient::UntagResource(const UntagResourceRequ
   Aws::StringStream ss;
   ss << "/amazonclouddirectory/2017-01-11/tags/remove";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UntagResourceOutcome(UntagResourceResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UntagResourceOutcome(outcome.GetError());
-  }
+  return UntagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 UntagResourceOutcomeCallable CloudDirectoryClient::UntagResourceCallable(const UntagResourceRequest& request) const
@@ -2480,15 +2008,7 @@ UpdateFacetOutcome CloudDirectoryClient::UpdateFacet(const UpdateFacetRequest& r
   Aws::StringStream ss;
   ss << "/amazonclouddirectory/2017-01-11/facet";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateFacetOutcome(UpdateFacetResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateFacetOutcome(outcome.GetError());
-  }
+  return UpdateFacetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateFacetOutcomeCallable CloudDirectoryClient::UpdateFacetCallable(const UpdateFacetRequest& request) const
@@ -2520,15 +2040,7 @@ UpdateLinkAttributesOutcome CloudDirectoryClient::UpdateLinkAttributes(const Upd
   Aws::StringStream ss;
   ss << "/amazonclouddirectory/2017-01-11/typedlink/attributes/update";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateLinkAttributesOutcome(UpdateLinkAttributesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateLinkAttributesOutcome(outcome.GetError());
-  }
+  return UpdateLinkAttributesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateLinkAttributesOutcomeCallable CloudDirectoryClient::UpdateLinkAttributesCallable(const UpdateLinkAttributesRequest& request) const
@@ -2560,15 +2072,7 @@ UpdateObjectAttributesOutcome CloudDirectoryClient::UpdateObjectAttributes(const
   Aws::StringStream ss;
   ss << "/amazonclouddirectory/2017-01-11/object/update";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateObjectAttributesOutcome(UpdateObjectAttributesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateObjectAttributesOutcome(outcome.GetError());
-  }
+  return UpdateObjectAttributesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateObjectAttributesOutcomeCallable CloudDirectoryClient::UpdateObjectAttributesCallable(const UpdateObjectAttributesRequest& request) const
@@ -2600,15 +2104,7 @@ UpdateSchemaOutcome CloudDirectoryClient::UpdateSchema(const UpdateSchemaRequest
   Aws::StringStream ss;
   ss << "/amazonclouddirectory/2017-01-11/schema/update";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateSchemaOutcome(UpdateSchemaResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateSchemaOutcome(outcome.GetError());
-  }
+  return UpdateSchemaOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateSchemaOutcomeCallable CloudDirectoryClient::UpdateSchemaCallable(const UpdateSchemaRequest& request) const
@@ -2640,15 +2136,7 @@ UpdateTypedLinkFacetOutcome CloudDirectoryClient::UpdateTypedLinkFacet(const Upd
   Aws::StringStream ss;
   ss << "/amazonclouddirectory/2017-01-11/typedlink/facet";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateTypedLinkFacetOutcome(UpdateTypedLinkFacetResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateTypedLinkFacetOutcome(outcome.GetError());
-  }
+  return UpdateTypedLinkFacetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateTypedLinkFacetOutcomeCallable CloudDirectoryClient::UpdateTypedLinkFacetCallable(const UpdateTypedLinkFacetRequest& request) const
@@ -2675,15 +2163,7 @@ UpgradeAppliedSchemaOutcome CloudDirectoryClient::UpgradeAppliedSchema(const Upg
   Aws::StringStream ss;
   ss << "/amazonclouddirectory/2017-01-11/schema/upgradeapplied";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpgradeAppliedSchemaOutcome(UpgradeAppliedSchemaResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpgradeAppliedSchemaOutcome(outcome.GetError());
-  }
+  return UpgradeAppliedSchemaOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpgradeAppliedSchemaOutcomeCallable CloudDirectoryClient::UpgradeAppliedSchemaCallable(const UpgradeAppliedSchemaRequest& request) const
@@ -2710,15 +2190,7 @@ UpgradePublishedSchemaOutcome CloudDirectoryClient::UpgradePublishedSchema(const
   Aws::StringStream ss;
   ss << "/amazonclouddirectory/2017-01-11/schema/upgradepublished";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpgradePublishedSchemaOutcome(UpgradePublishedSchemaResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpgradePublishedSchemaOutcome(outcome.GetError());
-  }
+  return UpgradePublishedSchemaOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpgradePublishedSchemaOutcomeCallable CloudDirectoryClient::UpgradePublishedSchemaCallable(const UpgradePublishedSchemaRequest& request) const

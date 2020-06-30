@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/sqs/SQS_EXPORTS.h>
 
@@ -42,7 +43,7 @@ enum class SQSErrors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -63,6 +64,20 @@ enum class SQSErrors
   TOO_MANY_ENTRIES_IN_BATCH_REQUEST,
   UNSUPPORTED_OPERATION
 };
+
+class AWS_SQS_API SQSError : public Aws::Client::AWSError<SQSErrors>
+{
+public:
+  SQSError() {}
+  SQSError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<SQSErrors>(rhs) {}
+  SQSError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<SQSErrors>(rhs) {}
+  SQSError(const Aws::Client::AWSError<SQSErrors>& rhs) : Aws::Client::AWSError<SQSErrors>(rhs) {}
+  SQSError(Aws::Client::AWSError<SQSErrors>&& rhs) : Aws::Client::AWSError<SQSErrors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace SQSErrorMapper
 {
   AWS_SQS_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

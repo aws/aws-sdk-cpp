@@ -17,7 +17,8 @@ PutImageRequest::PutImageRequest() :
     m_repositoryNameHasBeenSet(false),
     m_imageManifestHasBeenSet(false),
     m_imageManifestMediaTypeHasBeenSet(false),
-    m_imageTagHasBeenSet(false)
+    m_imageTagHasBeenSet(false),
+    m_imageDigestHasBeenSet(false)
 {
 }
 
@@ -52,6 +53,12 @@ Aws::String PutImageRequest::SerializePayload() const
   if(m_imageTagHasBeenSet)
   {
    payload.WithString("imageTag", m_imageTag);
+
+  }
+
+  if(m_imageDigestHasBeenSet)
+  {
+   payload.WithString("imageDigest", m_imageDigest);
 
   }
 

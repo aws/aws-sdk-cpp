@@ -8,8 +8,8 @@
 #include <aws/codecommit/CodeCommitErrors.h>
 
 using namespace Aws::Client;
-using namespace Aws::CodeCommit;
 using namespace Aws::Utils;
+using namespace Aws::CodeCommit;
 
 namespace Aws
 {

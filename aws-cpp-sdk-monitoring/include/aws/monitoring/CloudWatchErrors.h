@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/monitoring/CloudWatch_EXPORTS.h>
 
@@ -42,7 +43,7 @@ enum class CloudWatchErrors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -56,6 +57,20 @@ enum class CloudWatchErrors
   LIMIT_EXCEEDED_FAULT,
   MISSING_REQUIRED_PARAMETER
 };
+
+class AWS_CLOUDWATCH_API CloudWatchError : public Aws::Client::AWSError<CloudWatchErrors>
+{
+public:
+  CloudWatchError() {}
+  CloudWatchError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<CloudWatchErrors>(rhs) {}
+  CloudWatchError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<CloudWatchErrors>(rhs) {}
+  CloudWatchError(const Aws::Client::AWSError<CloudWatchErrors>& rhs) : Aws::Client::AWSError<CloudWatchErrors>(rhs) {}
+  CloudWatchError(Aws::Client::AWSError<CloudWatchErrors>&& rhs) : Aws::Client::AWSError<CloudWatchErrors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace CloudWatchErrorMapper
 {
   AWS_CLOUDWATCH_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

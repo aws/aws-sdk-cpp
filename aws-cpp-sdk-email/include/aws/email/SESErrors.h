@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/email/SES_EXPORTS.h>
 
@@ -42,7 +43,7 @@ enum class SESErrors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -81,6 +82,20 @@ enum class SESErrors
   TRACKING_OPTIONS_ALREADY_EXISTS,
   TRACKING_OPTIONS_DOES_NOT_EXIST
 };
+
+class AWS_SES_API SESError : public Aws::Client::AWSError<SESErrors>
+{
+public:
+  SESError() {}
+  SESError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<SESErrors>(rhs) {}
+  SESError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<SESErrors>(rhs) {}
+  SESError(const Aws::Client::AWSError<SESErrors>& rhs) : Aws::Client::AWSError<SESErrors>(rhs) {}
+  SESError(Aws::Client::AWSError<SESErrors>&& rhs) : Aws::Client::AWSError<SESErrors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace SESErrorMapper
 {
   AWS_SES_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

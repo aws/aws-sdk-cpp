@@ -60,7 +60,7 @@ static const char* ALLOCATION_TAG = "RAMClient";
 RAMClient::RAMClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-        SERVICE_NAME, clientConfiguration.region),
+        SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<RAMErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -70,7 +70,7 @@ RAMClient::RAMClient(const Client::ClientConfiguration& clientConfiguration) :
 RAMClient::RAMClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-         SERVICE_NAME, clientConfiguration.region),
+         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<RAMErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -81,7 +81,7 @@ RAMClient::RAMClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsP
   const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider,
-         SERVICE_NAME, clientConfiguration.region),
+         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<RAMErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -123,15 +123,7 @@ AcceptResourceShareInvitationOutcome RAMClient::AcceptResourceShareInvitation(co
   Aws::StringStream ss;
   ss << "/acceptresourceshareinvitation";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return AcceptResourceShareInvitationOutcome(AcceptResourceShareInvitationResult(outcome.GetResult()));
-  }
-  else
-  {
-    return AcceptResourceShareInvitationOutcome(outcome.GetError());
-  }
+  return AcceptResourceShareInvitationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 AcceptResourceShareInvitationOutcomeCallable RAMClient::AcceptResourceShareInvitationCallable(const AcceptResourceShareInvitationRequest& request) const
@@ -158,15 +150,7 @@ AssociateResourceShareOutcome RAMClient::AssociateResourceShare(const AssociateR
   Aws::StringStream ss;
   ss << "/associateresourceshare";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return AssociateResourceShareOutcome(AssociateResourceShareResult(outcome.GetResult()));
-  }
-  else
-  {
-    return AssociateResourceShareOutcome(outcome.GetError());
-  }
+  return AssociateResourceShareOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 AssociateResourceShareOutcomeCallable RAMClient::AssociateResourceShareCallable(const AssociateResourceShareRequest& request) const
@@ -193,15 +177,7 @@ AssociateResourceSharePermissionOutcome RAMClient::AssociateResourceSharePermiss
   Aws::StringStream ss;
   ss << "/associateresourcesharepermission";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return AssociateResourceSharePermissionOutcome(AssociateResourceSharePermissionResult(outcome.GetResult()));
-  }
-  else
-  {
-    return AssociateResourceSharePermissionOutcome(outcome.GetError());
-  }
+  return AssociateResourceSharePermissionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 AssociateResourceSharePermissionOutcomeCallable RAMClient::AssociateResourceSharePermissionCallable(const AssociateResourceSharePermissionRequest& request) const
@@ -228,15 +204,7 @@ CreateResourceShareOutcome RAMClient::CreateResourceShare(const CreateResourceSh
   Aws::StringStream ss;
   ss << "/createresourceshare";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateResourceShareOutcome(CreateResourceShareResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateResourceShareOutcome(outcome.GetError());
-  }
+  return CreateResourceShareOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateResourceShareOutcomeCallable RAMClient::CreateResourceShareCallable(const CreateResourceShareRequest& request) const
@@ -268,15 +236,7 @@ DeleteResourceShareOutcome RAMClient::DeleteResourceShare(const DeleteResourceSh
   Aws::StringStream ss;
   ss << "/deleteresourceshare";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteResourceShareOutcome(DeleteResourceShareResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteResourceShareOutcome(outcome.GetError());
-  }
+  return DeleteResourceShareOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteResourceShareOutcomeCallable RAMClient::DeleteResourceShareCallable(const DeleteResourceShareRequest& request) const
@@ -303,15 +263,7 @@ DisassociateResourceShareOutcome RAMClient::DisassociateResourceShare(const Disa
   Aws::StringStream ss;
   ss << "/disassociateresourceshare";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DisassociateResourceShareOutcome(DisassociateResourceShareResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DisassociateResourceShareOutcome(outcome.GetError());
-  }
+  return DisassociateResourceShareOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DisassociateResourceShareOutcomeCallable RAMClient::DisassociateResourceShareCallable(const DisassociateResourceShareRequest& request) const
@@ -338,15 +290,7 @@ DisassociateResourceSharePermissionOutcome RAMClient::DisassociateResourceShareP
   Aws::StringStream ss;
   ss << "/disassociateresourcesharepermission";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DisassociateResourceSharePermissionOutcome(DisassociateResourceSharePermissionResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DisassociateResourceSharePermissionOutcome(outcome.GetError());
-  }
+  return DisassociateResourceSharePermissionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DisassociateResourceSharePermissionOutcomeCallable RAMClient::DisassociateResourceSharePermissionCallable(const DisassociateResourceSharePermissionRequest& request) const
@@ -373,15 +317,7 @@ EnableSharingWithAwsOrganizationOutcome RAMClient::EnableSharingWithAwsOrganizat
   Aws::StringStream ss;
   ss << "/enablesharingwithawsorganization";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return EnableSharingWithAwsOrganizationOutcome(EnableSharingWithAwsOrganizationResult(outcome.GetResult()));
-  }
-  else
-  {
-    return EnableSharingWithAwsOrganizationOutcome(outcome.GetError());
-  }
+  return EnableSharingWithAwsOrganizationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 EnableSharingWithAwsOrganizationOutcomeCallable RAMClient::EnableSharingWithAwsOrganizationCallable(const EnableSharingWithAwsOrganizationRequest& request) const
@@ -408,15 +344,7 @@ GetPermissionOutcome RAMClient::GetPermission(const GetPermissionRequest& reques
   Aws::StringStream ss;
   ss << "/getpermission";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetPermissionOutcome(GetPermissionResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetPermissionOutcome(outcome.GetError());
-  }
+  return GetPermissionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetPermissionOutcomeCallable RAMClient::GetPermissionCallable(const GetPermissionRequest& request) const
@@ -443,15 +371,7 @@ GetResourcePoliciesOutcome RAMClient::GetResourcePolicies(const GetResourcePolic
   Aws::StringStream ss;
   ss << "/getresourcepolicies";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetResourcePoliciesOutcome(GetResourcePoliciesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetResourcePoliciesOutcome(outcome.GetError());
-  }
+  return GetResourcePoliciesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetResourcePoliciesOutcomeCallable RAMClient::GetResourcePoliciesCallable(const GetResourcePoliciesRequest& request) const
@@ -478,15 +398,7 @@ GetResourceShareAssociationsOutcome RAMClient::GetResourceShareAssociations(cons
   Aws::StringStream ss;
   ss << "/getresourceshareassociations";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetResourceShareAssociationsOutcome(GetResourceShareAssociationsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetResourceShareAssociationsOutcome(outcome.GetError());
-  }
+  return GetResourceShareAssociationsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetResourceShareAssociationsOutcomeCallable RAMClient::GetResourceShareAssociationsCallable(const GetResourceShareAssociationsRequest& request) const
@@ -513,15 +425,7 @@ GetResourceShareInvitationsOutcome RAMClient::GetResourceShareInvitations(const 
   Aws::StringStream ss;
   ss << "/getresourceshareinvitations";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetResourceShareInvitationsOutcome(GetResourceShareInvitationsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetResourceShareInvitationsOutcome(outcome.GetError());
-  }
+  return GetResourceShareInvitationsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetResourceShareInvitationsOutcomeCallable RAMClient::GetResourceShareInvitationsCallable(const GetResourceShareInvitationsRequest& request) const
@@ -548,15 +452,7 @@ GetResourceSharesOutcome RAMClient::GetResourceShares(const GetResourceSharesReq
   Aws::StringStream ss;
   ss << "/getresourceshares";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetResourceSharesOutcome(GetResourceSharesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetResourceSharesOutcome(outcome.GetError());
-  }
+  return GetResourceSharesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetResourceSharesOutcomeCallable RAMClient::GetResourceSharesCallable(const GetResourceSharesRequest& request) const
@@ -583,15 +479,7 @@ ListPendingInvitationResourcesOutcome RAMClient::ListPendingInvitationResources(
   Aws::StringStream ss;
   ss << "/listpendinginvitationresources";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListPendingInvitationResourcesOutcome(ListPendingInvitationResourcesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListPendingInvitationResourcesOutcome(outcome.GetError());
-  }
+  return ListPendingInvitationResourcesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListPendingInvitationResourcesOutcomeCallable RAMClient::ListPendingInvitationResourcesCallable(const ListPendingInvitationResourcesRequest& request) const
@@ -618,15 +506,7 @@ ListPermissionsOutcome RAMClient::ListPermissions(const ListPermissionsRequest& 
   Aws::StringStream ss;
   ss << "/listpermissions";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListPermissionsOutcome(ListPermissionsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListPermissionsOutcome(outcome.GetError());
-  }
+  return ListPermissionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListPermissionsOutcomeCallable RAMClient::ListPermissionsCallable(const ListPermissionsRequest& request) const
@@ -653,15 +533,7 @@ ListPrincipalsOutcome RAMClient::ListPrincipals(const ListPrincipalsRequest& req
   Aws::StringStream ss;
   ss << "/listprincipals";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListPrincipalsOutcome(ListPrincipalsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListPrincipalsOutcome(outcome.GetError());
-  }
+  return ListPrincipalsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListPrincipalsOutcomeCallable RAMClient::ListPrincipalsCallable(const ListPrincipalsRequest& request) const
@@ -688,15 +560,7 @@ ListResourceSharePermissionsOutcome RAMClient::ListResourceSharePermissions(cons
   Aws::StringStream ss;
   ss << "/listresourcesharepermissions";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListResourceSharePermissionsOutcome(ListResourceSharePermissionsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListResourceSharePermissionsOutcome(outcome.GetError());
-  }
+  return ListResourceSharePermissionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListResourceSharePermissionsOutcomeCallable RAMClient::ListResourceSharePermissionsCallable(const ListResourceSharePermissionsRequest& request) const
@@ -723,15 +587,7 @@ ListResourceTypesOutcome RAMClient::ListResourceTypes(const ListResourceTypesReq
   Aws::StringStream ss;
   ss << "/listresourcetypes";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListResourceTypesOutcome(ListResourceTypesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListResourceTypesOutcome(outcome.GetError());
-  }
+  return ListResourceTypesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListResourceTypesOutcomeCallable RAMClient::ListResourceTypesCallable(const ListResourceTypesRequest& request) const
@@ -758,15 +614,7 @@ ListResourcesOutcome RAMClient::ListResources(const ListResourcesRequest& reques
   Aws::StringStream ss;
   ss << "/listresources";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListResourcesOutcome(ListResourcesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListResourcesOutcome(outcome.GetError());
-  }
+  return ListResourcesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListResourcesOutcomeCallable RAMClient::ListResourcesCallable(const ListResourcesRequest& request) const
@@ -798,15 +646,7 @@ PromoteResourceShareCreatedFromPolicyOutcome RAMClient::PromoteResourceShareCrea
   Aws::StringStream ss;
   ss << "/promoteresourcesharecreatedfrompolicy";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return PromoteResourceShareCreatedFromPolicyOutcome(PromoteResourceShareCreatedFromPolicyResult(outcome.GetResult()));
-  }
-  else
-  {
-    return PromoteResourceShareCreatedFromPolicyOutcome(outcome.GetError());
-  }
+  return PromoteResourceShareCreatedFromPolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 PromoteResourceShareCreatedFromPolicyOutcomeCallable RAMClient::PromoteResourceShareCreatedFromPolicyCallable(const PromoteResourceShareCreatedFromPolicyRequest& request) const
@@ -833,15 +673,7 @@ RejectResourceShareInvitationOutcome RAMClient::RejectResourceShareInvitation(co
   Aws::StringStream ss;
   ss << "/rejectresourceshareinvitation";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return RejectResourceShareInvitationOutcome(RejectResourceShareInvitationResult(outcome.GetResult()));
-  }
-  else
-  {
-    return RejectResourceShareInvitationOutcome(outcome.GetError());
-  }
+  return RejectResourceShareInvitationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 RejectResourceShareInvitationOutcomeCallable RAMClient::RejectResourceShareInvitationCallable(const RejectResourceShareInvitationRequest& request) const
@@ -868,15 +700,7 @@ TagResourceOutcome RAMClient::TagResource(const TagResourceRequest& request) con
   Aws::StringStream ss;
   ss << "/tagresource";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return TagResourceOutcome(TagResourceResult(outcome.GetResult()));
-  }
-  else
-  {
-    return TagResourceOutcome(outcome.GetError());
-  }
+  return TagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 TagResourceOutcomeCallable RAMClient::TagResourceCallable(const TagResourceRequest& request) const
@@ -903,15 +727,7 @@ UntagResourceOutcome RAMClient::UntagResource(const UntagResourceRequest& reques
   Aws::StringStream ss;
   ss << "/untagresource";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UntagResourceOutcome(UntagResourceResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UntagResourceOutcome(outcome.GetError());
-  }
+  return UntagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UntagResourceOutcomeCallable RAMClient::UntagResourceCallable(const UntagResourceRequest& request) const
@@ -938,15 +754,7 @@ UpdateResourceShareOutcome RAMClient::UpdateResourceShare(const UpdateResourceSh
   Aws::StringStream ss;
   ss << "/updateresourceshare";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateResourceShareOutcome(UpdateResourceShareResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateResourceShareOutcome(outcome.GetError());
-  }
+  return UpdateResourceShareOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateResourceShareOutcomeCallable RAMClient::UpdateResourceShareCallable(const UpdateResourceShareRequest& request) const

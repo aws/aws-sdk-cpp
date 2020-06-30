@@ -46,7 +46,7 @@ static const char* ALLOCATION_TAG = "CodeGuruReviewerClient";
 CodeGuruReviewerClient::CodeGuruReviewerClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-        SERVICE_NAME, clientConfiguration.region),
+        SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<CodeGuruReviewerErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -56,7 +56,7 @@ CodeGuruReviewerClient::CodeGuruReviewerClient(const Client::ClientConfiguration
 CodeGuruReviewerClient::CodeGuruReviewerClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-         SERVICE_NAME, clientConfiguration.region),
+         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<CodeGuruReviewerErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -67,7 +67,7 @@ CodeGuruReviewerClient::CodeGuruReviewerClient(const std::shared_ptr<AWSCredenti
   const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider,
-         SERVICE_NAME, clientConfiguration.region),
+         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<CodeGuruReviewerErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -109,15 +109,7 @@ AssociateRepositoryOutcome CodeGuruReviewerClient::AssociateRepository(const Ass
   Aws::StringStream ss;
   ss << "/associations";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return AssociateRepositoryOutcome(AssociateRepositoryResult(outcome.GetResult()));
-  }
-  else
-  {
-    return AssociateRepositoryOutcome(outcome.GetError());
-  }
+  return AssociateRepositoryOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 AssociateRepositoryOutcomeCallable CodeGuruReviewerClient::AssociateRepositoryCallable(const AssociateRepositoryRequest& request) const
@@ -150,15 +142,7 @@ DescribeCodeReviewOutcome CodeGuruReviewerClient::DescribeCodeReview(const Descr
   ss << "/codereviews/";
   ss << request.GetCodeReviewArn();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeCodeReviewOutcome(DescribeCodeReviewResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeCodeReviewOutcome(outcome.GetError());
-  }
+  return DescribeCodeReviewOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeCodeReviewOutcomeCallable CodeGuruReviewerClient::DescribeCodeReviewCallable(const DescribeCodeReviewRequest& request) const
@@ -196,15 +180,7 @@ DescribeRecommendationFeedbackOutcome CodeGuruReviewerClient::DescribeRecommenda
   ss << "/feedback/";
   ss << request.GetCodeReviewArn();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeRecommendationFeedbackOutcome(DescribeRecommendationFeedbackResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeRecommendationFeedbackOutcome(outcome.GetError());
-  }
+  return DescribeRecommendationFeedbackOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeRecommendationFeedbackOutcomeCallable CodeGuruReviewerClient::DescribeRecommendationFeedbackCallable(const DescribeRecommendationFeedbackRequest& request) const
@@ -237,15 +213,7 @@ DescribeRepositoryAssociationOutcome CodeGuruReviewerClient::DescribeRepositoryA
   ss << "/associations/";
   ss << request.GetAssociationArn();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeRepositoryAssociationOutcome(DescribeRepositoryAssociationResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeRepositoryAssociationOutcome(outcome.GetError());
-  }
+  return DescribeRepositoryAssociationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeRepositoryAssociationOutcomeCallable CodeGuruReviewerClient::DescribeRepositoryAssociationCallable(const DescribeRepositoryAssociationRequest& request) const
@@ -278,15 +246,7 @@ DisassociateRepositoryOutcome CodeGuruReviewerClient::DisassociateRepository(con
   ss << "/associations/";
   ss << request.GetAssociationArn();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DisassociateRepositoryOutcome(DisassociateRepositoryResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DisassociateRepositoryOutcome(outcome.GetError());
-  }
+  return DisassociateRepositoryOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DisassociateRepositoryOutcomeCallable CodeGuruReviewerClient::DisassociateRepositoryCallable(const DisassociateRepositoryRequest& request) const
@@ -318,15 +278,7 @@ ListCodeReviewsOutcome CodeGuruReviewerClient::ListCodeReviews(const ListCodeRev
   Aws::StringStream ss;
   ss << "/codereviews";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListCodeReviewsOutcome(ListCodeReviewsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListCodeReviewsOutcome(outcome.GetError());
-  }
+  return ListCodeReviewsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListCodeReviewsOutcomeCallable CodeGuruReviewerClient::ListCodeReviewsCallable(const ListCodeReviewsRequest& request) const
@@ -360,15 +312,7 @@ ListRecommendationFeedbackOutcome CodeGuruReviewerClient::ListRecommendationFeed
   ss << request.GetCodeReviewArn();
   ss << "/RecommendationFeedback";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListRecommendationFeedbackOutcome(ListRecommendationFeedbackResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListRecommendationFeedbackOutcome(outcome.GetError());
-  }
+  return ListRecommendationFeedbackOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListRecommendationFeedbackOutcomeCallable CodeGuruReviewerClient::ListRecommendationFeedbackCallable(const ListRecommendationFeedbackRequest& request) const
@@ -402,15 +346,7 @@ ListRecommendationsOutcome CodeGuruReviewerClient::ListRecommendations(const Lis
   ss << request.GetCodeReviewArn();
   ss << "/Recommendations";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListRecommendationsOutcome(ListRecommendationsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListRecommendationsOutcome(outcome.GetError());
-  }
+  return ListRecommendationsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListRecommendationsOutcomeCallable CodeGuruReviewerClient::ListRecommendationsCallable(const ListRecommendationsRequest& request) const
@@ -437,15 +373,7 @@ ListRepositoryAssociationsOutcome CodeGuruReviewerClient::ListRepositoryAssociat
   Aws::StringStream ss;
   ss << "/associations";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListRepositoryAssociationsOutcome(ListRepositoryAssociationsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListRepositoryAssociationsOutcome(outcome.GetError());
-  }
+  return ListRepositoryAssociationsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListRepositoryAssociationsOutcomeCallable CodeGuruReviewerClient::ListRepositoryAssociationsCallable(const ListRepositoryAssociationsRequest& request) const
@@ -472,15 +400,7 @@ PutRecommendationFeedbackOutcome CodeGuruReviewerClient::PutRecommendationFeedba
   Aws::StringStream ss;
   ss << "/feedback";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return PutRecommendationFeedbackOutcome(PutRecommendationFeedbackResult(outcome.GetResult()));
-  }
-  else
-  {
-    return PutRecommendationFeedbackOutcome(outcome.GetError());
-  }
+  return PutRecommendationFeedbackOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 PutRecommendationFeedbackOutcomeCallable CodeGuruReviewerClient::PutRecommendationFeedbackCallable(const PutRecommendationFeedbackRequest& request) const

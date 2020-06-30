@@ -26,12 +26,11 @@ namespace Model
 {
 
   /**
-   * <note> <p>This is prerelease documentation for the RDS Database Proxy feature in
-   * preview release. It is subject to change.</p> </note> <p>Represents a set of RDS
-   * DB instances, Aurora DB clusters, or both that a proxy can connect to.
-   * Currently, each target group is associated with exactly one RDS DB instance or
-   * Aurora DB cluster.</p> <p>This data type is used as a response element in the
-   * <code>DescribeDBProxyTargetGroups</code> action.</p><p><h3>See Also:</h3>   <a
+   * <p>Represents a set of RDS DB instances, Aurora DB clusters, or both that a
+   * proxy can connect to. Currently, each target group is associated with exactly
+   * one RDS DB instance or Aurora DB cluster.</p> <p>This data type is used as a
+   * response element in the <code>DescribeDBProxyTargetGroups</code>
+   * action.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DBProxyTargetGroup">AWS
    * API Reference</a></p>
    */

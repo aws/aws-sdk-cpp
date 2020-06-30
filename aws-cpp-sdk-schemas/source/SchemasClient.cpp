@@ -66,7 +66,7 @@ static const char* ALLOCATION_TAG = "SchemasClient";
 SchemasClient::SchemasClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-        SERVICE_NAME, clientConfiguration.region),
+        SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<SchemasErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -76,7 +76,7 @@ SchemasClient::SchemasClient(const Client::ClientConfiguration& clientConfigurat
 SchemasClient::SchemasClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-         SERVICE_NAME, clientConfiguration.region),
+         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<SchemasErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -87,7 +87,7 @@ SchemasClient::SchemasClient(const std::shared_ptr<AWSCredentialsProvider>& cred
   const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider,
-         SERVICE_NAME, clientConfiguration.region),
+         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<SchemasErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -129,15 +129,7 @@ CreateDiscovererOutcome SchemasClient::CreateDiscoverer(const CreateDiscovererRe
   Aws::StringStream ss;
   ss << "/v1/discoverers";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateDiscovererOutcome(CreateDiscovererResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateDiscovererOutcome(outcome.GetError());
-  }
+  return CreateDiscovererOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateDiscovererOutcomeCallable SchemasClient::CreateDiscovererCallable(const CreateDiscovererRequest& request) const
@@ -170,15 +162,7 @@ CreateRegistryOutcome SchemasClient::CreateRegistry(const CreateRegistryRequest&
   ss << "/v1/registries/name/";
   ss << request.GetRegistryName();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateRegistryOutcome(CreateRegistryResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateRegistryOutcome(outcome.GetError());
-  }
+  return CreateRegistryOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateRegistryOutcomeCallable SchemasClient::CreateRegistryCallable(const CreateRegistryRequest& request) const
@@ -218,15 +202,7 @@ CreateSchemaOutcome SchemasClient::CreateSchema(const CreateSchemaRequest& reque
   ss << "/schemas/name/";
   ss << request.GetSchemaName();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateSchemaOutcome(CreateSchemaResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateSchemaOutcome(outcome.GetError());
-  }
+  return CreateSchemaOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateSchemaOutcomeCallable SchemasClient::CreateSchemaCallable(const CreateSchemaRequest& request) const
@@ -259,15 +235,7 @@ DeleteDiscovererOutcome SchemasClient::DeleteDiscoverer(const DeleteDiscovererRe
   ss << "/v1/discoverers/id/";
   ss << request.GetDiscovererId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteDiscovererOutcome(NoResult());
-  }
-  else
-  {
-    return DeleteDiscovererOutcome(outcome.GetError());
-  }
+  return DeleteDiscovererOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteDiscovererOutcomeCallable SchemasClient::DeleteDiscovererCallable(const DeleteDiscovererRequest& request) const
@@ -300,15 +268,7 @@ DeleteRegistryOutcome SchemasClient::DeleteRegistry(const DeleteRegistryRequest&
   ss << "/v1/registries/name/";
   ss << request.GetRegistryName();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteRegistryOutcome(NoResult());
-  }
-  else
-  {
-    return DeleteRegistryOutcome(outcome.GetError());
-  }
+  return DeleteRegistryOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteRegistryOutcomeCallable SchemasClient::DeleteRegistryCallable(const DeleteRegistryRequest& request) const
@@ -335,15 +295,7 @@ DeleteResourcePolicyOutcome SchemasClient::DeleteResourcePolicy(const DeleteReso
   Aws::StringStream ss;
   ss << "/v1/policy";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteResourcePolicyOutcome(NoResult());
-  }
-  else
-  {
-    return DeleteResourcePolicyOutcome(outcome.GetError());
-  }
+  return DeleteResourcePolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteResourcePolicyOutcomeCallable SchemasClient::DeleteResourcePolicyCallable(const DeleteResourcePolicyRequest& request) const
@@ -383,15 +335,7 @@ DeleteSchemaOutcome SchemasClient::DeleteSchema(const DeleteSchemaRequest& reque
   ss << "/schemas/name/";
   ss << request.GetSchemaName();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteSchemaOutcome(NoResult());
-  }
-  else
-  {
-    return DeleteSchemaOutcome(outcome.GetError());
-  }
+  return DeleteSchemaOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteSchemaOutcomeCallable SchemasClient::DeleteSchemaCallable(const DeleteSchemaRequest& request) const
@@ -438,15 +382,7 @@ DeleteSchemaVersionOutcome SchemasClient::DeleteSchemaVersion(const DeleteSchema
   ss << "/version/";
   ss << request.GetSchemaVersion();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteSchemaVersionOutcome(NoResult());
-  }
-  else
-  {
-    return DeleteSchemaVersionOutcome(outcome.GetError());
-  }
+  return DeleteSchemaVersionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteSchemaVersionOutcomeCallable SchemasClient::DeleteSchemaVersionCallable(const DeleteSchemaVersionRequest& request) const
@@ -493,15 +429,7 @@ DescribeCodeBindingOutcome SchemasClient::DescribeCodeBinding(const DescribeCode
   ss << "/language/";
   ss << request.GetLanguage();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeCodeBindingOutcome(DescribeCodeBindingResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeCodeBindingOutcome(outcome.GetError());
-  }
+  return DescribeCodeBindingOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeCodeBindingOutcomeCallable SchemasClient::DescribeCodeBindingCallable(const DescribeCodeBindingRequest& request) const
@@ -534,15 +462,7 @@ DescribeDiscovererOutcome SchemasClient::DescribeDiscoverer(const DescribeDiscov
   ss << "/v1/discoverers/id/";
   ss << request.GetDiscovererId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeDiscovererOutcome(DescribeDiscovererResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeDiscovererOutcome(outcome.GetError());
-  }
+  return DescribeDiscovererOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeDiscovererOutcomeCallable SchemasClient::DescribeDiscovererCallable(const DescribeDiscovererRequest& request) const
@@ -575,15 +495,7 @@ DescribeRegistryOutcome SchemasClient::DescribeRegistry(const DescribeRegistryRe
   ss << "/v1/registries/name/";
   ss << request.GetRegistryName();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeRegistryOutcome(DescribeRegistryResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeRegistryOutcome(outcome.GetError());
-  }
+  return DescribeRegistryOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeRegistryOutcomeCallable SchemasClient::DescribeRegistryCallable(const DescribeRegistryRequest& request) const
@@ -623,15 +535,7 @@ DescribeSchemaOutcome SchemasClient::DescribeSchema(const DescribeSchemaRequest&
   ss << "/schemas/name/";
   ss << request.GetSchemaName();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeSchemaOutcome(DescribeSchemaResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeSchemaOutcome(outcome.GetError());
-  }
+  return DescribeSchemaOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeSchemaOutcomeCallable SchemasClient::DescribeSchemaCallable(const DescribeSchemaRequest& request) const
@@ -679,15 +583,7 @@ GetCodeBindingSourceOutcome SchemasClient::GetCodeBindingSource(const GetCodeBin
   ss << request.GetLanguage();
   ss << "/source";
   uri.SetPath(uri.GetPath() + ss.str());
-  StreamOutcome outcome = MakeRequestWithUnparsedResponse(uri, request, Aws::Http::HttpMethod::HTTP_GET);
-  if(outcome.IsSuccess())
-  {
-    return GetCodeBindingSourceOutcome(GetCodeBindingSourceResult(outcome.GetResultWithOwnership()));
-  }
-  else
-  {
-    return GetCodeBindingSourceOutcome(outcome.GetError());
-  }
+  return GetCodeBindingSourceOutcome(MakeRequestWithUnparsedResponse(uri, request, Aws::Http::HttpMethod::HTTP_GET));
 }
 
 GetCodeBindingSourceOutcomeCallable SchemasClient::GetCodeBindingSourceCallable(const GetCodeBindingSourceRequest& request) const
@@ -714,15 +610,7 @@ GetDiscoveredSchemaOutcome SchemasClient::GetDiscoveredSchema(const GetDiscovere
   Aws::StringStream ss;
   ss << "/v1/discover";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetDiscoveredSchemaOutcome(GetDiscoveredSchemaResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetDiscoveredSchemaOutcome(outcome.GetError());
-  }
+  return GetDiscoveredSchemaOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetDiscoveredSchemaOutcomeCallable SchemasClient::GetDiscoveredSchemaCallable(const GetDiscoveredSchemaRequest& request) const
@@ -749,15 +637,7 @@ GetResourcePolicyOutcome SchemasClient::GetResourcePolicy(const GetResourcePolic
   Aws::StringStream ss;
   ss << "/v1/policy";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetResourcePolicyOutcome(GetResourcePolicyResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetResourcePolicyOutcome(outcome.GetError());
-  }
+  return GetResourcePolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetResourcePolicyOutcomeCallable SchemasClient::GetResourcePolicyCallable(const GetResourcePolicyRequest& request) const
@@ -784,15 +664,7 @@ ListDiscoverersOutcome SchemasClient::ListDiscoverers(const ListDiscoverersReque
   Aws::StringStream ss;
   ss << "/v1/discoverers";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListDiscoverersOutcome(ListDiscoverersResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListDiscoverersOutcome(outcome.GetError());
-  }
+  return ListDiscoverersOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListDiscoverersOutcomeCallable SchemasClient::ListDiscoverersCallable(const ListDiscoverersRequest& request) const
@@ -819,15 +691,7 @@ ListRegistriesOutcome SchemasClient::ListRegistries(const ListRegistriesRequest&
   Aws::StringStream ss;
   ss << "/v1/registries";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListRegistriesOutcome(ListRegistriesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListRegistriesOutcome(outcome.GetError());
-  }
+  return ListRegistriesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListRegistriesOutcomeCallable SchemasClient::ListRegistriesCallable(const ListRegistriesRequest& request) const
@@ -868,15 +732,7 @@ ListSchemaVersionsOutcome SchemasClient::ListSchemaVersions(const ListSchemaVers
   ss << request.GetSchemaName();
   ss << "/versions";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListSchemaVersionsOutcome(ListSchemaVersionsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListSchemaVersionsOutcome(outcome.GetError());
-  }
+  return ListSchemaVersionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListSchemaVersionsOutcomeCallable SchemasClient::ListSchemaVersionsCallable(const ListSchemaVersionsRequest& request) const
@@ -910,15 +766,7 @@ ListSchemasOutcome SchemasClient::ListSchemas(const ListSchemasRequest& request)
   ss << request.GetRegistryName();
   ss << "/schemas";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListSchemasOutcome(ListSchemasResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListSchemasOutcome(outcome.GetError());
-  }
+  return ListSchemasOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListSchemasOutcomeCallable SchemasClient::ListSchemasCallable(const ListSchemasRequest& request) const
@@ -951,15 +799,7 @@ ListTagsForResourceOutcome SchemasClient::ListTagsForResource(const ListTagsForR
   ss << "/tags/";
   ss << request.GetResourceArn();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListTagsForResourceOutcome(ListTagsForResourceResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListTagsForResourceOutcome(outcome.GetError());
-  }
+  return ListTagsForResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListTagsForResourceOutcomeCallable SchemasClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
@@ -1006,15 +846,7 @@ PutCodeBindingOutcome SchemasClient::PutCodeBinding(const PutCodeBindingRequest&
   ss << "/language/";
   ss << request.GetLanguage();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return PutCodeBindingOutcome(PutCodeBindingResult(outcome.GetResult()));
-  }
-  else
-  {
-    return PutCodeBindingOutcome(outcome.GetError());
-  }
+  return PutCodeBindingOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 PutCodeBindingOutcomeCallable SchemasClient::PutCodeBindingCallable(const PutCodeBindingRequest& request) const
@@ -1041,15 +873,7 @@ PutResourcePolicyOutcome SchemasClient::PutResourcePolicy(const PutResourcePolic
   Aws::StringStream ss;
   ss << "/v1/policy";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return PutResourcePolicyOutcome(PutResourcePolicyResult(outcome.GetResult()));
-  }
-  else
-  {
-    return PutResourcePolicyOutcome(outcome.GetError());
-  }
+  return PutResourcePolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 PutResourcePolicyOutcomeCallable SchemasClient::PutResourcePolicyCallable(const PutResourcePolicyRequest& request) const
@@ -1088,15 +912,7 @@ SearchSchemasOutcome SchemasClient::SearchSchemas(const SearchSchemasRequest& re
   ss << request.GetRegistryName();
   ss << "/schemas/search";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return SearchSchemasOutcome(SearchSchemasResult(outcome.GetResult()));
-  }
-  else
-  {
-    return SearchSchemasOutcome(outcome.GetError());
-  }
+  return SearchSchemasOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 SearchSchemasOutcomeCallable SchemasClient::SearchSchemasCallable(const SearchSchemasRequest& request) const
@@ -1130,15 +946,7 @@ StartDiscovererOutcome SchemasClient::StartDiscoverer(const StartDiscovererReque
   ss << request.GetDiscovererId();
   ss << "/start";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return StartDiscovererOutcome(StartDiscovererResult(outcome.GetResult()));
-  }
-  else
-  {
-    return StartDiscovererOutcome(outcome.GetError());
-  }
+  return StartDiscovererOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 StartDiscovererOutcomeCallable SchemasClient::StartDiscovererCallable(const StartDiscovererRequest& request) const
@@ -1172,15 +980,7 @@ StopDiscovererOutcome SchemasClient::StopDiscoverer(const StopDiscovererRequest&
   ss << request.GetDiscovererId();
   ss << "/stop";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return StopDiscovererOutcome(StopDiscovererResult(outcome.GetResult()));
-  }
-  else
-  {
-    return StopDiscovererOutcome(outcome.GetError());
-  }
+  return StopDiscovererOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 StopDiscovererOutcomeCallable SchemasClient::StopDiscovererCallable(const StopDiscovererRequest& request) const
@@ -1213,15 +1013,7 @@ TagResourceOutcome SchemasClient::TagResource(const TagResourceRequest& request)
   ss << "/tags/";
   ss << request.GetResourceArn();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return TagResourceOutcome(NoResult());
-  }
-  else
-  {
-    return TagResourceOutcome(outcome.GetError());
-  }
+  return TagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 TagResourceOutcomeCallable SchemasClient::TagResourceCallable(const TagResourceRequest& request) const
@@ -1259,15 +1051,7 @@ UntagResourceOutcome SchemasClient::UntagResource(const UntagResourceRequest& re
   ss << "/tags/";
   ss << request.GetResourceArn();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UntagResourceOutcome(NoResult());
-  }
-  else
-  {
-    return UntagResourceOutcome(outcome.GetError());
-  }
+  return UntagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 UntagResourceOutcomeCallable SchemasClient::UntagResourceCallable(const UntagResourceRequest& request) const
@@ -1300,15 +1084,7 @@ UpdateDiscovererOutcome SchemasClient::UpdateDiscoverer(const UpdateDiscovererRe
   ss << "/v1/discoverers/id/";
   ss << request.GetDiscovererId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateDiscovererOutcome(UpdateDiscovererResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateDiscovererOutcome(outcome.GetError());
-  }
+  return UpdateDiscovererOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateDiscovererOutcomeCallable SchemasClient::UpdateDiscovererCallable(const UpdateDiscovererRequest& request) const
@@ -1341,15 +1117,7 @@ UpdateRegistryOutcome SchemasClient::UpdateRegistry(const UpdateRegistryRequest&
   ss << "/v1/registries/name/";
   ss << request.GetRegistryName();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateRegistryOutcome(UpdateRegistryResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateRegistryOutcome(outcome.GetError());
-  }
+  return UpdateRegistryOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateRegistryOutcomeCallable SchemasClient::UpdateRegistryCallable(const UpdateRegistryRequest& request) const
@@ -1389,15 +1157,7 @@ UpdateSchemaOutcome SchemasClient::UpdateSchema(const UpdateSchemaRequest& reque
   ss << "/schemas/name/";
   ss << request.GetSchemaName();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateSchemaOutcome(UpdateSchemaResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateSchemaOutcome(outcome.GetError());
-  }
+  return UpdateSchemaOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateSchemaOutcomeCallable SchemasClient::UpdateSchemaCallable(const UpdateSchemaRequest& request) const

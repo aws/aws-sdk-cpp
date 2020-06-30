@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/connect/Connect_EXPORTS.h>
 
@@ -42,7 +43,7 @@ enum class ConnectErrors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -56,6 +57,20 @@ enum class ConnectErrors
   OUTBOUND_CONTACT_NOT_PERMITTED,
   USER_NOT_FOUND
 };
+
+class AWS_CONNECT_API ConnectError : public Aws::Client::AWSError<ConnectErrors>
+{
+public:
+  ConnectError() {}
+  ConnectError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<ConnectErrors>(rhs) {}
+  ConnectError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<ConnectErrors>(rhs) {}
+  ConnectError(const Aws::Client::AWSError<ConnectErrors>& rhs) : Aws::Client::AWSError<ConnectErrors>(rhs) {}
+  ConnectError(Aws::Client::AWSError<ConnectErrors>&& rhs) : Aws::Client::AWSError<ConnectErrors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace ConnectErrorMapper
 {
   AWS_CONNECT_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

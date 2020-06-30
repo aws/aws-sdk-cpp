@@ -58,7 +58,7 @@ static const char* ALLOCATION_TAG = "ShieldClient";
 ShieldClient::ShieldClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-        SERVICE_NAME, clientConfiguration.region),
+        SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<ShieldErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -68,7 +68,7 @@ ShieldClient::ShieldClient(const Client::ClientConfiguration& clientConfiguratio
 ShieldClient::ShieldClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-         SERVICE_NAME, clientConfiguration.region),
+         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<ShieldErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -79,7 +79,7 @@ ShieldClient::ShieldClient(const std::shared_ptr<AWSCredentialsProvider>& creden
   const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider,
-         SERVICE_NAME, clientConfiguration.region),
+         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<ShieldErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -121,15 +121,7 @@ AssociateDRTLogBucketOutcome ShieldClient::AssociateDRTLogBucket(const Associate
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return AssociateDRTLogBucketOutcome(AssociateDRTLogBucketResult(outcome.GetResult()));
-  }
-  else
-  {
-    return AssociateDRTLogBucketOutcome(outcome.GetError());
-  }
+  return AssociateDRTLogBucketOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 AssociateDRTLogBucketOutcomeCallable ShieldClient::AssociateDRTLogBucketCallable(const AssociateDRTLogBucketRequest& request) const
@@ -156,15 +148,7 @@ AssociateDRTRoleOutcome ShieldClient::AssociateDRTRole(const AssociateDRTRoleReq
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return AssociateDRTRoleOutcome(AssociateDRTRoleResult(outcome.GetResult()));
-  }
-  else
-  {
-    return AssociateDRTRoleOutcome(outcome.GetError());
-  }
+  return AssociateDRTRoleOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 AssociateDRTRoleOutcomeCallable ShieldClient::AssociateDRTRoleCallable(const AssociateDRTRoleRequest& request) const
@@ -191,15 +175,7 @@ AssociateHealthCheckOutcome ShieldClient::AssociateHealthCheck(const AssociateHe
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return AssociateHealthCheckOutcome(AssociateHealthCheckResult(outcome.GetResult()));
-  }
-  else
-  {
-    return AssociateHealthCheckOutcome(outcome.GetError());
-  }
+  return AssociateHealthCheckOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 AssociateHealthCheckOutcomeCallable ShieldClient::AssociateHealthCheckCallable(const AssociateHealthCheckRequest& request) const
@@ -226,15 +202,7 @@ AssociateProactiveEngagementDetailsOutcome ShieldClient::AssociateProactiveEngag
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return AssociateProactiveEngagementDetailsOutcome(AssociateProactiveEngagementDetailsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return AssociateProactiveEngagementDetailsOutcome(outcome.GetError());
-  }
+  return AssociateProactiveEngagementDetailsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 AssociateProactiveEngagementDetailsOutcomeCallable ShieldClient::AssociateProactiveEngagementDetailsCallable(const AssociateProactiveEngagementDetailsRequest& request) const
@@ -261,15 +229,7 @@ CreateProtectionOutcome ShieldClient::CreateProtection(const CreateProtectionReq
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateProtectionOutcome(CreateProtectionResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateProtectionOutcome(outcome.GetError());
-  }
+  return CreateProtectionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateProtectionOutcomeCallable ShieldClient::CreateProtectionCallable(const CreateProtectionRequest& request) const
@@ -296,15 +256,7 @@ CreateSubscriptionOutcome ShieldClient::CreateSubscription(const CreateSubscript
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateSubscriptionOutcome(CreateSubscriptionResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateSubscriptionOutcome(outcome.GetError());
-  }
+  return CreateSubscriptionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateSubscriptionOutcomeCallable ShieldClient::CreateSubscriptionCallable(const CreateSubscriptionRequest& request) const
@@ -331,15 +283,7 @@ DeleteProtectionOutcome ShieldClient::DeleteProtection(const DeleteProtectionReq
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteProtectionOutcome(DeleteProtectionResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteProtectionOutcome(outcome.GetError());
-  }
+  return DeleteProtectionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteProtectionOutcomeCallable ShieldClient::DeleteProtectionCallable(const DeleteProtectionRequest& request) const
@@ -366,15 +310,7 @@ DescribeAttackOutcome ShieldClient::DescribeAttack(const DescribeAttackRequest& 
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeAttackOutcome(DescribeAttackResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeAttackOutcome(outcome.GetError());
-  }
+  return DescribeAttackOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeAttackOutcomeCallable ShieldClient::DescribeAttackCallable(const DescribeAttackRequest& request) const
@@ -401,15 +337,7 @@ DescribeDRTAccessOutcome ShieldClient::DescribeDRTAccess(const DescribeDRTAccess
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeDRTAccessOutcome(DescribeDRTAccessResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeDRTAccessOutcome(outcome.GetError());
-  }
+  return DescribeDRTAccessOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeDRTAccessOutcomeCallable ShieldClient::DescribeDRTAccessCallable(const DescribeDRTAccessRequest& request) const
@@ -436,15 +364,7 @@ DescribeEmergencyContactSettingsOutcome ShieldClient::DescribeEmergencyContactSe
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeEmergencyContactSettingsOutcome(DescribeEmergencyContactSettingsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeEmergencyContactSettingsOutcome(outcome.GetError());
-  }
+  return DescribeEmergencyContactSettingsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeEmergencyContactSettingsOutcomeCallable ShieldClient::DescribeEmergencyContactSettingsCallable(const DescribeEmergencyContactSettingsRequest& request) const
@@ -471,15 +391,7 @@ DescribeProtectionOutcome ShieldClient::DescribeProtection(const DescribeProtect
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeProtectionOutcome(DescribeProtectionResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeProtectionOutcome(outcome.GetError());
-  }
+  return DescribeProtectionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeProtectionOutcomeCallable ShieldClient::DescribeProtectionCallable(const DescribeProtectionRequest& request) const
@@ -506,15 +418,7 @@ DescribeSubscriptionOutcome ShieldClient::DescribeSubscription(const DescribeSub
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeSubscriptionOutcome(DescribeSubscriptionResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeSubscriptionOutcome(outcome.GetError());
-  }
+  return DescribeSubscriptionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeSubscriptionOutcomeCallable ShieldClient::DescribeSubscriptionCallable(const DescribeSubscriptionRequest& request) const
@@ -541,15 +445,7 @@ DisableProactiveEngagementOutcome ShieldClient::DisableProactiveEngagement(const
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DisableProactiveEngagementOutcome(DisableProactiveEngagementResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DisableProactiveEngagementOutcome(outcome.GetError());
-  }
+  return DisableProactiveEngagementOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DisableProactiveEngagementOutcomeCallable ShieldClient::DisableProactiveEngagementCallable(const DisableProactiveEngagementRequest& request) const
@@ -576,15 +472,7 @@ DisassociateDRTLogBucketOutcome ShieldClient::DisassociateDRTLogBucket(const Dis
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DisassociateDRTLogBucketOutcome(DisassociateDRTLogBucketResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DisassociateDRTLogBucketOutcome(outcome.GetError());
-  }
+  return DisassociateDRTLogBucketOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DisassociateDRTLogBucketOutcomeCallable ShieldClient::DisassociateDRTLogBucketCallable(const DisassociateDRTLogBucketRequest& request) const
@@ -611,15 +499,7 @@ DisassociateDRTRoleOutcome ShieldClient::DisassociateDRTRole(const DisassociateD
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DisassociateDRTRoleOutcome(DisassociateDRTRoleResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DisassociateDRTRoleOutcome(outcome.GetError());
-  }
+  return DisassociateDRTRoleOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DisassociateDRTRoleOutcomeCallable ShieldClient::DisassociateDRTRoleCallable(const DisassociateDRTRoleRequest& request) const
@@ -646,15 +526,7 @@ DisassociateHealthCheckOutcome ShieldClient::DisassociateHealthCheck(const Disas
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DisassociateHealthCheckOutcome(DisassociateHealthCheckResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DisassociateHealthCheckOutcome(outcome.GetError());
-  }
+  return DisassociateHealthCheckOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DisassociateHealthCheckOutcomeCallable ShieldClient::DisassociateHealthCheckCallable(const DisassociateHealthCheckRequest& request) const
@@ -681,15 +553,7 @@ EnableProactiveEngagementOutcome ShieldClient::EnableProactiveEngagement(const E
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return EnableProactiveEngagementOutcome(EnableProactiveEngagementResult(outcome.GetResult()));
-  }
-  else
-  {
-    return EnableProactiveEngagementOutcome(outcome.GetError());
-  }
+  return EnableProactiveEngagementOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 EnableProactiveEngagementOutcomeCallable ShieldClient::EnableProactiveEngagementCallable(const EnableProactiveEngagementRequest& request) const
@@ -716,15 +580,7 @@ GetSubscriptionStateOutcome ShieldClient::GetSubscriptionState(const GetSubscrip
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetSubscriptionStateOutcome(GetSubscriptionStateResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetSubscriptionStateOutcome(outcome.GetError());
-  }
+  return GetSubscriptionStateOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetSubscriptionStateOutcomeCallable ShieldClient::GetSubscriptionStateCallable(const GetSubscriptionStateRequest& request) const
@@ -751,15 +607,7 @@ ListAttacksOutcome ShieldClient::ListAttacks(const ListAttacksRequest& request) 
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListAttacksOutcome(ListAttacksResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListAttacksOutcome(outcome.GetError());
-  }
+  return ListAttacksOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListAttacksOutcomeCallable ShieldClient::ListAttacksCallable(const ListAttacksRequest& request) const
@@ -786,15 +634,7 @@ ListProtectionsOutcome ShieldClient::ListProtections(const ListProtectionsReques
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListProtectionsOutcome(ListProtectionsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListProtectionsOutcome(outcome.GetError());
-  }
+  return ListProtectionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListProtectionsOutcomeCallable ShieldClient::ListProtectionsCallable(const ListProtectionsRequest& request) const
@@ -821,15 +661,7 @@ UpdateEmergencyContactSettingsOutcome ShieldClient::UpdateEmergencyContactSettin
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateEmergencyContactSettingsOutcome(UpdateEmergencyContactSettingsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateEmergencyContactSettingsOutcome(outcome.GetError());
-  }
+  return UpdateEmergencyContactSettingsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateEmergencyContactSettingsOutcomeCallable ShieldClient::UpdateEmergencyContactSettingsCallable(const UpdateEmergencyContactSettingsRequest& request) const
@@ -856,15 +688,7 @@ UpdateSubscriptionOutcome ShieldClient::UpdateSubscription(const UpdateSubscript
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateSubscriptionOutcome(UpdateSubscriptionResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateSubscriptionOutcome(outcome.GetError());
-  }
+  return UpdateSubscriptionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateSubscriptionOutcomeCallable ShieldClient::UpdateSubscriptionCallable(const UpdateSubscriptionRequest& request) const

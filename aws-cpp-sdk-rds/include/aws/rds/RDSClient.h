@@ -306,136 +306,136 @@ namespace Aws
         class StopDBClusterRequest;
         class StopDBInstanceRequest;
 
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<RDSErrors>> AddRoleToDBClusterOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<RDSErrors>> AddRoleToDBInstanceOutcome;
-        typedef Aws::Utils::Outcome<AddSourceIdentifierToSubscriptionResult, Aws::Client::AWSError<RDSErrors>> AddSourceIdentifierToSubscriptionOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<RDSErrors>> AddTagsToResourceOutcome;
-        typedef Aws::Utils::Outcome<ApplyPendingMaintenanceActionResult, Aws::Client::AWSError<RDSErrors>> ApplyPendingMaintenanceActionOutcome;
-        typedef Aws::Utils::Outcome<AuthorizeDBSecurityGroupIngressResult, Aws::Client::AWSError<RDSErrors>> AuthorizeDBSecurityGroupIngressOutcome;
-        typedef Aws::Utils::Outcome<BacktrackDBClusterResult, Aws::Client::AWSError<RDSErrors>> BacktrackDBClusterOutcome;
-        typedef Aws::Utils::Outcome<CancelExportTaskResult, Aws::Client::AWSError<RDSErrors>> CancelExportTaskOutcome;
-        typedef Aws::Utils::Outcome<CopyDBClusterParameterGroupResult, Aws::Client::AWSError<RDSErrors>> CopyDBClusterParameterGroupOutcome;
-        typedef Aws::Utils::Outcome<CopyDBClusterSnapshotResult, Aws::Client::AWSError<RDSErrors>> CopyDBClusterSnapshotOutcome;
-        typedef Aws::Utils::Outcome<CopyDBParameterGroupResult, Aws::Client::AWSError<RDSErrors>> CopyDBParameterGroupOutcome;
-        typedef Aws::Utils::Outcome<CopyDBSnapshotResult, Aws::Client::AWSError<RDSErrors>> CopyDBSnapshotOutcome;
-        typedef Aws::Utils::Outcome<CopyOptionGroupResult, Aws::Client::AWSError<RDSErrors>> CopyOptionGroupOutcome;
-        typedef Aws::Utils::Outcome<CreateCustomAvailabilityZoneResult, Aws::Client::AWSError<RDSErrors>> CreateCustomAvailabilityZoneOutcome;
-        typedef Aws::Utils::Outcome<CreateDBClusterResult, Aws::Client::AWSError<RDSErrors>> CreateDBClusterOutcome;
-        typedef Aws::Utils::Outcome<CreateDBClusterEndpointResult, Aws::Client::AWSError<RDSErrors>> CreateDBClusterEndpointOutcome;
-        typedef Aws::Utils::Outcome<CreateDBClusterParameterGroupResult, Aws::Client::AWSError<RDSErrors>> CreateDBClusterParameterGroupOutcome;
-        typedef Aws::Utils::Outcome<CreateDBClusterSnapshotResult, Aws::Client::AWSError<RDSErrors>> CreateDBClusterSnapshotOutcome;
-        typedef Aws::Utils::Outcome<CreateDBInstanceResult, Aws::Client::AWSError<RDSErrors>> CreateDBInstanceOutcome;
-        typedef Aws::Utils::Outcome<CreateDBInstanceReadReplicaResult, Aws::Client::AWSError<RDSErrors>> CreateDBInstanceReadReplicaOutcome;
-        typedef Aws::Utils::Outcome<CreateDBParameterGroupResult, Aws::Client::AWSError<RDSErrors>> CreateDBParameterGroupOutcome;
-        typedef Aws::Utils::Outcome<CreateDBProxyResult, Aws::Client::AWSError<RDSErrors>> CreateDBProxyOutcome;
-        typedef Aws::Utils::Outcome<CreateDBSecurityGroupResult, Aws::Client::AWSError<RDSErrors>> CreateDBSecurityGroupOutcome;
-        typedef Aws::Utils::Outcome<CreateDBSnapshotResult, Aws::Client::AWSError<RDSErrors>> CreateDBSnapshotOutcome;
-        typedef Aws::Utils::Outcome<CreateDBSubnetGroupResult, Aws::Client::AWSError<RDSErrors>> CreateDBSubnetGroupOutcome;
-        typedef Aws::Utils::Outcome<CreateEventSubscriptionResult, Aws::Client::AWSError<RDSErrors>> CreateEventSubscriptionOutcome;
-        typedef Aws::Utils::Outcome<CreateGlobalClusterResult, Aws::Client::AWSError<RDSErrors>> CreateGlobalClusterOutcome;
-        typedef Aws::Utils::Outcome<CreateOptionGroupResult, Aws::Client::AWSError<RDSErrors>> CreateOptionGroupOutcome;
-        typedef Aws::Utils::Outcome<DeleteCustomAvailabilityZoneResult, Aws::Client::AWSError<RDSErrors>> DeleteCustomAvailabilityZoneOutcome;
-        typedef Aws::Utils::Outcome<DeleteDBClusterResult, Aws::Client::AWSError<RDSErrors>> DeleteDBClusterOutcome;
-        typedef Aws::Utils::Outcome<DeleteDBClusterEndpointResult, Aws::Client::AWSError<RDSErrors>> DeleteDBClusterEndpointOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<RDSErrors>> DeleteDBClusterParameterGroupOutcome;
-        typedef Aws::Utils::Outcome<DeleteDBClusterSnapshotResult, Aws::Client::AWSError<RDSErrors>> DeleteDBClusterSnapshotOutcome;
-        typedef Aws::Utils::Outcome<DeleteDBInstanceResult, Aws::Client::AWSError<RDSErrors>> DeleteDBInstanceOutcome;
-        typedef Aws::Utils::Outcome<DeleteDBInstanceAutomatedBackupResult, Aws::Client::AWSError<RDSErrors>> DeleteDBInstanceAutomatedBackupOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<RDSErrors>> DeleteDBParameterGroupOutcome;
-        typedef Aws::Utils::Outcome<DeleteDBProxyResult, Aws::Client::AWSError<RDSErrors>> DeleteDBProxyOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<RDSErrors>> DeleteDBSecurityGroupOutcome;
-        typedef Aws::Utils::Outcome<DeleteDBSnapshotResult, Aws::Client::AWSError<RDSErrors>> DeleteDBSnapshotOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<RDSErrors>> DeleteDBSubnetGroupOutcome;
-        typedef Aws::Utils::Outcome<DeleteEventSubscriptionResult, Aws::Client::AWSError<RDSErrors>> DeleteEventSubscriptionOutcome;
-        typedef Aws::Utils::Outcome<DeleteGlobalClusterResult, Aws::Client::AWSError<RDSErrors>> DeleteGlobalClusterOutcome;
-        typedef Aws::Utils::Outcome<DeleteInstallationMediaResult, Aws::Client::AWSError<RDSErrors>> DeleteInstallationMediaOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<RDSErrors>> DeleteOptionGroupOutcome;
-        typedef Aws::Utils::Outcome<DeregisterDBProxyTargetsResult, Aws::Client::AWSError<RDSErrors>> DeregisterDBProxyTargetsOutcome;
-        typedef Aws::Utils::Outcome<DescribeAccountAttributesResult, Aws::Client::AWSError<RDSErrors>> DescribeAccountAttributesOutcome;
-        typedef Aws::Utils::Outcome<DescribeCertificatesResult, Aws::Client::AWSError<RDSErrors>> DescribeCertificatesOutcome;
-        typedef Aws::Utils::Outcome<DescribeCustomAvailabilityZonesResult, Aws::Client::AWSError<RDSErrors>> DescribeCustomAvailabilityZonesOutcome;
-        typedef Aws::Utils::Outcome<DescribeDBClusterBacktracksResult, Aws::Client::AWSError<RDSErrors>> DescribeDBClusterBacktracksOutcome;
-        typedef Aws::Utils::Outcome<DescribeDBClusterEndpointsResult, Aws::Client::AWSError<RDSErrors>> DescribeDBClusterEndpointsOutcome;
-        typedef Aws::Utils::Outcome<DescribeDBClusterParameterGroupsResult, Aws::Client::AWSError<RDSErrors>> DescribeDBClusterParameterGroupsOutcome;
-        typedef Aws::Utils::Outcome<DescribeDBClusterParametersResult, Aws::Client::AWSError<RDSErrors>> DescribeDBClusterParametersOutcome;
-        typedef Aws::Utils::Outcome<DescribeDBClusterSnapshotAttributesResult, Aws::Client::AWSError<RDSErrors>> DescribeDBClusterSnapshotAttributesOutcome;
-        typedef Aws::Utils::Outcome<DescribeDBClusterSnapshotsResult, Aws::Client::AWSError<RDSErrors>> DescribeDBClusterSnapshotsOutcome;
-        typedef Aws::Utils::Outcome<DescribeDBClustersResult, Aws::Client::AWSError<RDSErrors>> DescribeDBClustersOutcome;
-        typedef Aws::Utils::Outcome<DescribeDBEngineVersionsResult, Aws::Client::AWSError<RDSErrors>> DescribeDBEngineVersionsOutcome;
-        typedef Aws::Utils::Outcome<DescribeDBInstanceAutomatedBackupsResult, Aws::Client::AWSError<RDSErrors>> DescribeDBInstanceAutomatedBackupsOutcome;
-        typedef Aws::Utils::Outcome<DescribeDBInstancesResult, Aws::Client::AWSError<RDSErrors>> DescribeDBInstancesOutcome;
-        typedef Aws::Utils::Outcome<DescribeDBLogFilesResult, Aws::Client::AWSError<RDSErrors>> DescribeDBLogFilesOutcome;
-        typedef Aws::Utils::Outcome<DescribeDBParameterGroupsResult, Aws::Client::AWSError<RDSErrors>> DescribeDBParameterGroupsOutcome;
-        typedef Aws::Utils::Outcome<DescribeDBParametersResult, Aws::Client::AWSError<RDSErrors>> DescribeDBParametersOutcome;
-        typedef Aws::Utils::Outcome<DescribeDBProxiesResult, Aws::Client::AWSError<RDSErrors>> DescribeDBProxiesOutcome;
-        typedef Aws::Utils::Outcome<DescribeDBProxyTargetGroupsResult, Aws::Client::AWSError<RDSErrors>> DescribeDBProxyTargetGroupsOutcome;
-        typedef Aws::Utils::Outcome<DescribeDBProxyTargetsResult, Aws::Client::AWSError<RDSErrors>> DescribeDBProxyTargetsOutcome;
-        typedef Aws::Utils::Outcome<DescribeDBSecurityGroupsResult, Aws::Client::AWSError<RDSErrors>> DescribeDBSecurityGroupsOutcome;
-        typedef Aws::Utils::Outcome<DescribeDBSnapshotAttributesResult, Aws::Client::AWSError<RDSErrors>> DescribeDBSnapshotAttributesOutcome;
-        typedef Aws::Utils::Outcome<DescribeDBSnapshotsResult, Aws::Client::AWSError<RDSErrors>> DescribeDBSnapshotsOutcome;
-        typedef Aws::Utils::Outcome<DescribeDBSubnetGroupsResult, Aws::Client::AWSError<RDSErrors>> DescribeDBSubnetGroupsOutcome;
-        typedef Aws::Utils::Outcome<DescribeEngineDefaultClusterParametersResult, Aws::Client::AWSError<RDSErrors>> DescribeEngineDefaultClusterParametersOutcome;
-        typedef Aws::Utils::Outcome<DescribeEngineDefaultParametersResult, Aws::Client::AWSError<RDSErrors>> DescribeEngineDefaultParametersOutcome;
-        typedef Aws::Utils::Outcome<DescribeEventCategoriesResult, Aws::Client::AWSError<RDSErrors>> DescribeEventCategoriesOutcome;
-        typedef Aws::Utils::Outcome<DescribeEventSubscriptionsResult, Aws::Client::AWSError<RDSErrors>> DescribeEventSubscriptionsOutcome;
-        typedef Aws::Utils::Outcome<DescribeEventsResult, Aws::Client::AWSError<RDSErrors>> DescribeEventsOutcome;
-        typedef Aws::Utils::Outcome<DescribeExportTasksResult, Aws::Client::AWSError<RDSErrors>> DescribeExportTasksOutcome;
-        typedef Aws::Utils::Outcome<DescribeGlobalClustersResult, Aws::Client::AWSError<RDSErrors>> DescribeGlobalClustersOutcome;
-        typedef Aws::Utils::Outcome<DescribeInstallationMediaResult, Aws::Client::AWSError<RDSErrors>> DescribeInstallationMediaOutcome;
-        typedef Aws::Utils::Outcome<DescribeOptionGroupOptionsResult, Aws::Client::AWSError<RDSErrors>> DescribeOptionGroupOptionsOutcome;
-        typedef Aws::Utils::Outcome<DescribeOptionGroupsResult, Aws::Client::AWSError<RDSErrors>> DescribeOptionGroupsOutcome;
-        typedef Aws::Utils::Outcome<DescribeOrderableDBInstanceOptionsResult, Aws::Client::AWSError<RDSErrors>> DescribeOrderableDBInstanceOptionsOutcome;
-        typedef Aws::Utils::Outcome<DescribePendingMaintenanceActionsResult, Aws::Client::AWSError<RDSErrors>> DescribePendingMaintenanceActionsOutcome;
-        typedef Aws::Utils::Outcome<DescribeReservedDBInstancesResult, Aws::Client::AWSError<RDSErrors>> DescribeReservedDBInstancesOutcome;
-        typedef Aws::Utils::Outcome<DescribeReservedDBInstancesOfferingsResult, Aws::Client::AWSError<RDSErrors>> DescribeReservedDBInstancesOfferingsOutcome;
-        typedef Aws::Utils::Outcome<DescribeSourceRegionsResult, Aws::Client::AWSError<RDSErrors>> DescribeSourceRegionsOutcome;
-        typedef Aws::Utils::Outcome<DescribeValidDBInstanceModificationsResult, Aws::Client::AWSError<RDSErrors>> DescribeValidDBInstanceModificationsOutcome;
-        typedef Aws::Utils::Outcome<DownloadDBLogFilePortionResult, Aws::Client::AWSError<RDSErrors>> DownloadDBLogFilePortionOutcome;
-        typedef Aws::Utils::Outcome<FailoverDBClusterResult, Aws::Client::AWSError<RDSErrors>> FailoverDBClusterOutcome;
-        typedef Aws::Utils::Outcome<ImportInstallationMediaResult, Aws::Client::AWSError<RDSErrors>> ImportInstallationMediaOutcome;
-        typedef Aws::Utils::Outcome<ListTagsForResourceResult, Aws::Client::AWSError<RDSErrors>> ListTagsForResourceOutcome;
-        typedef Aws::Utils::Outcome<ModifyCertificatesResult, Aws::Client::AWSError<RDSErrors>> ModifyCertificatesOutcome;
-        typedef Aws::Utils::Outcome<ModifyCurrentDBClusterCapacityResult, Aws::Client::AWSError<RDSErrors>> ModifyCurrentDBClusterCapacityOutcome;
-        typedef Aws::Utils::Outcome<ModifyDBClusterResult, Aws::Client::AWSError<RDSErrors>> ModifyDBClusterOutcome;
-        typedef Aws::Utils::Outcome<ModifyDBClusterEndpointResult, Aws::Client::AWSError<RDSErrors>> ModifyDBClusterEndpointOutcome;
-        typedef Aws::Utils::Outcome<ModifyDBClusterParameterGroupResult, Aws::Client::AWSError<RDSErrors>> ModifyDBClusterParameterGroupOutcome;
-        typedef Aws::Utils::Outcome<ModifyDBClusterSnapshotAttributeResult, Aws::Client::AWSError<RDSErrors>> ModifyDBClusterSnapshotAttributeOutcome;
-        typedef Aws::Utils::Outcome<ModifyDBInstanceResult, Aws::Client::AWSError<RDSErrors>> ModifyDBInstanceOutcome;
-        typedef Aws::Utils::Outcome<ModifyDBParameterGroupResult, Aws::Client::AWSError<RDSErrors>> ModifyDBParameterGroupOutcome;
-        typedef Aws::Utils::Outcome<ModifyDBProxyResult, Aws::Client::AWSError<RDSErrors>> ModifyDBProxyOutcome;
-        typedef Aws::Utils::Outcome<ModifyDBProxyTargetGroupResult, Aws::Client::AWSError<RDSErrors>> ModifyDBProxyTargetGroupOutcome;
-        typedef Aws::Utils::Outcome<ModifyDBSnapshotResult, Aws::Client::AWSError<RDSErrors>> ModifyDBSnapshotOutcome;
-        typedef Aws::Utils::Outcome<ModifyDBSnapshotAttributeResult, Aws::Client::AWSError<RDSErrors>> ModifyDBSnapshotAttributeOutcome;
-        typedef Aws::Utils::Outcome<ModifyDBSubnetGroupResult, Aws::Client::AWSError<RDSErrors>> ModifyDBSubnetGroupOutcome;
-        typedef Aws::Utils::Outcome<ModifyEventSubscriptionResult, Aws::Client::AWSError<RDSErrors>> ModifyEventSubscriptionOutcome;
-        typedef Aws::Utils::Outcome<ModifyGlobalClusterResult, Aws::Client::AWSError<RDSErrors>> ModifyGlobalClusterOutcome;
-        typedef Aws::Utils::Outcome<ModifyOptionGroupResult, Aws::Client::AWSError<RDSErrors>> ModifyOptionGroupOutcome;
-        typedef Aws::Utils::Outcome<PromoteReadReplicaResult, Aws::Client::AWSError<RDSErrors>> PromoteReadReplicaOutcome;
-        typedef Aws::Utils::Outcome<PromoteReadReplicaDBClusterResult, Aws::Client::AWSError<RDSErrors>> PromoteReadReplicaDBClusterOutcome;
-        typedef Aws::Utils::Outcome<PurchaseReservedDBInstancesOfferingResult, Aws::Client::AWSError<RDSErrors>> PurchaseReservedDBInstancesOfferingOutcome;
-        typedef Aws::Utils::Outcome<RebootDBInstanceResult, Aws::Client::AWSError<RDSErrors>> RebootDBInstanceOutcome;
-        typedef Aws::Utils::Outcome<RegisterDBProxyTargetsResult, Aws::Client::AWSError<RDSErrors>> RegisterDBProxyTargetsOutcome;
-        typedef Aws::Utils::Outcome<RemoveFromGlobalClusterResult, Aws::Client::AWSError<RDSErrors>> RemoveFromGlobalClusterOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<RDSErrors>> RemoveRoleFromDBClusterOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<RDSErrors>> RemoveRoleFromDBInstanceOutcome;
-        typedef Aws::Utils::Outcome<RemoveSourceIdentifierFromSubscriptionResult, Aws::Client::AWSError<RDSErrors>> RemoveSourceIdentifierFromSubscriptionOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<RDSErrors>> RemoveTagsFromResourceOutcome;
-        typedef Aws::Utils::Outcome<ResetDBClusterParameterGroupResult, Aws::Client::AWSError<RDSErrors>> ResetDBClusterParameterGroupOutcome;
-        typedef Aws::Utils::Outcome<ResetDBParameterGroupResult, Aws::Client::AWSError<RDSErrors>> ResetDBParameterGroupOutcome;
-        typedef Aws::Utils::Outcome<RestoreDBClusterFromS3Result, Aws::Client::AWSError<RDSErrors>> RestoreDBClusterFromS3Outcome;
-        typedef Aws::Utils::Outcome<RestoreDBClusterFromSnapshotResult, Aws::Client::AWSError<RDSErrors>> RestoreDBClusterFromSnapshotOutcome;
-        typedef Aws::Utils::Outcome<RestoreDBClusterToPointInTimeResult, Aws::Client::AWSError<RDSErrors>> RestoreDBClusterToPointInTimeOutcome;
-        typedef Aws::Utils::Outcome<RestoreDBInstanceFromDBSnapshotResult, Aws::Client::AWSError<RDSErrors>> RestoreDBInstanceFromDBSnapshotOutcome;
-        typedef Aws::Utils::Outcome<RestoreDBInstanceFromS3Result, Aws::Client::AWSError<RDSErrors>> RestoreDBInstanceFromS3Outcome;
-        typedef Aws::Utils::Outcome<RestoreDBInstanceToPointInTimeResult, Aws::Client::AWSError<RDSErrors>> RestoreDBInstanceToPointInTimeOutcome;
-        typedef Aws::Utils::Outcome<RevokeDBSecurityGroupIngressResult, Aws::Client::AWSError<RDSErrors>> RevokeDBSecurityGroupIngressOutcome;
-        typedef Aws::Utils::Outcome<StartActivityStreamResult, Aws::Client::AWSError<RDSErrors>> StartActivityStreamOutcome;
-        typedef Aws::Utils::Outcome<StartDBClusterResult, Aws::Client::AWSError<RDSErrors>> StartDBClusterOutcome;
-        typedef Aws::Utils::Outcome<StartDBInstanceResult, Aws::Client::AWSError<RDSErrors>> StartDBInstanceOutcome;
-        typedef Aws::Utils::Outcome<StartExportTaskResult, Aws::Client::AWSError<RDSErrors>> StartExportTaskOutcome;
-        typedef Aws::Utils::Outcome<StopActivityStreamResult, Aws::Client::AWSError<RDSErrors>> StopActivityStreamOutcome;
-        typedef Aws::Utils::Outcome<StopDBClusterResult, Aws::Client::AWSError<RDSErrors>> StopDBClusterOutcome;
-        typedef Aws::Utils::Outcome<StopDBInstanceResult, Aws::Client::AWSError<RDSErrors>> StopDBInstanceOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, RDSError> AddRoleToDBClusterOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, RDSError> AddRoleToDBInstanceOutcome;
+        typedef Aws::Utils::Outcome<AddSourceIdentifierToSubscriptionResult, RDSError> AddSourceIdentifierToSubscriptionOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, RDSError> AddTagsToResourceOutcome;
+        typedef Aws::Utils::Outcome<ApplyPendingMaintenanceActionResult, RDSError> ApplyPendingMaintenanceActionOutcome;
+        typedef Aws::Utils::Outcome<AuthorizeDBSecurityGroupIngressResult, RDSError> AuthorizeDBSecurityGroupIngressOutcome;
+        typedef Aws::Utils::Outcome<BacktrackDBClusterResult, RDSError> BacktrackDBClusterOutcome;
+        typedef Aws::Utils::Outcome<CancelExportTaskResult, RDSError> CancelExportTaskOutcome;
+        typedef Aws::Utils::Outcome<CopyDBClusterParameterGroupResult, RDSError> CopyDBClusterParameterGroupOutcome;
+        typedef Aws::Utils::Outcome<CopyDBClusterSnapshotResult, RDSError> CopyDBClusterSnapshotOutcome;
+        typedef Aws::Utils::Outcome<CopyDBParameterGroupResult, RDSError> CopyDBParameterGroupOutcome;
+        typedef Aws::Utils::Outcome<CopyDBSnapshotResult, RDSError> CopyDBSnapshotOutcome;
+        typedef Aws::Utils::Outcome<CopyOptionGroupResult, RDSError> CopyOptionGroupOutcome;
+        typedef Aws::Utils::Outcome<CreateCustomAvailabilityZoneResult, RDSError> CreateCustomAvailabilityZoneOutcome;
+        typedef Aws::Utils::Outcome<CreateDBClusterResult, RDSError> CreateDBClusterOutcome;
+        typedef Aws::Utils::Outcome<CreateDBClusterEndpointResult, RDSError> CreateDBClusterEndpointOutcome;
+        typedef Aws::Utils::Outcome<CreateDBClusterParameterGroupResult, RDSError> CreateDBClusterParameterGroupOutcome;
+        typedef Aws::Utils::Outcome<CreateDBClusterSnapshotResult, RDSError> CreateDBClusterSnapshotOutcome;
+        typedef Aws::Utils::Outcome<CreateDBInstanceResult, RDSError> CreateDBInstanceOutcome;
+        typedef Aws::Utils::Outcome<CreateDBInstanceReadReplicaResult, RDSError> CreateDBInstanceReadReplicaOutcome;
+        typedef Aws::Utils::Outcome<CreateDBParameterGroupResult, RDSError> CreateDBParameterGroupOutcome;
+        typedef Aws::Utils::Outcome<CreateDBProxyResult, RDSError> CreateDBProxyOutcome;
+        typedef Aws::Utils::Outcome<CreateDBSecurityGroupResult, RDSError> CreateDBSecurityGroupOutcome;
+        typedef Aws::Utils::Outcome<CreateDBSnapshotResult, RDSError> CreateDBSnapshotOutcome;
+        typedef Aws::Utils::Outcome<CreateDBSubnetGroupResult, RDSError> CreateDBSubnetGroupOutcome;
+        typedef Aws::Utils::Outcome<CreateEventSubscriptionResult, RDSError> CreateEventSubscriptionOutcome;
+        typedef Aws::Utils::Outcome<CreateGlobalClusterResult, RDSError> CreateGlobalClusterOutcome;
+        typedef Aws::Utils::Outcome<CreateOptionGroupResult, RDSError> CreateOptionGroupOutcome;
+        typedef Aws::Utils::Outcome<DeleteCustomAvailabilityZoneResult, RDSError> DeleteCustomAvailabilityZoneOutcome;
+        typedef Aws::Utils::Outcome<DeleteDBClusterResult, RDSError> DeleteDBClusterOutcome;
+        typedef Aws::Utils::Outcome<DeleteDBClusterEndpointResult, RDSError> DeleteDBClusterEndpointOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, RDSError> DeleteDBClusterParameterGroupOutcome;
+        typedef Aws::Utils::Outcome<DeleteDBClusterSnapshotResult, RDSError> DeleteDBClusterSnapshotOutcome;
+        typedef Aws::Utils::Outcome<DeleteDBInstanceResult, RDSError> DeleteDBInstanceOutcome;
+        typedef Aws::Utils::Outcome<DeleteDBInstanceAutomatedBackupResult, RDSError> DeleteDBInstanceAutomatedBackupOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, RDSError> DeleteDBParameterGroupOutcome;
+        typedef Aws::Utils::Outcome<DeleteDBProxyResult, RDSError> DeleteDBProxyOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, RDSError> DeleteDBSecurityGroupOutcome;
+        typedef Aws::Utils::Outcome<DeleteDBSnapshotResult, RDSError> DeleteDBSnapshotOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, RDSError> DeleteDBSubnetGroupOutcome;
+        typedef Aws::Utils::Outcome<DeleteEventSubscriptionResult, RDSError> DeleteEventSubscriptionOutcome;
+        typedef Aws::Utils::Outcome<DeleteGlobalClusterResult, RDSError> DeleteGlobalClusterOutcome;
+        typedef Aws::Utils::Outcome<DeleteInstallationMediaResult, RDSError> DeleteInstallationMediaOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, RDSError> DeleteOptionGroupOutcome;
+        typedef Aws::Utils::Outcome<DeregisterDBProxyTargetsResult, RDSError> DeregisterDBProxyTargetsOutcome;
+        typedef Aws::Utils::Outcome<DescribeAccountAttributesResult, RDSError> DescribeAccountAttributesOutcome;
+        typedef Aws::Utils::Outcome<DescribeCertificatesResult, RDSError> DescribeCertificatesOutcome;
+        typedef Aws::Utils::Outcome<DescribeCustomAvailabilityZonesResult, RDSError> DescribeCustomAvailabilityZonesOutcome;
+        typedef Aws::Utils::Outcome<DescribeDBClusterBacktracksResult, RDSError> DescribeDBClusterBacktracksOutcome;
+        typedef Aws::Utils::Outcome<DescribeDBClusterEndpointsResult, RDSError> DescribeDBClusterEndpointsOutcome;
+        typedef Aws::Utils::Outcome<DescribeDBClusterParameterGroupsResult, RDSError> DescribeDBClusterParameterGroupsOutcome;
+        typedef Aws::Utils::Outcome<DescribeDBClusterParametersResult, RDSError> DescribeDBClusterParametersOutcome;
+        typedef Aws::Utils::Outcome<DescribeDBClusterSnapshotAttributesResult, RDSError> DescribeDBClusterSnapshotAttributesOutcome;
+        typedef Aws::Utils::Outcome<DescribeDBClusterSnapshotsResult, RDSError> DescribeDBClusterSnapshotsOutcome;
+        typedef Aws::Utils::Outcome<DescribeDBClustersResult, RDSError> DescribeDBClustersOutcome;
+        typedef Aws::Utils::Outcome<DescribeDBEngineVersionsResult, RDSError> DescribeDBEngineVersionsOutcome;
+        typedef Aws::Utils::Outcome<DescribeDBInstanceAutomatedBackupsResult, RDSError> DescribeDBInstanceAutomatedBackupsOutcome;
+        typedef Aws::Utils::Outcome<DescribeDBInstancesResult, RDSError> DescribeDBInstancesOutcome;
+        typedef Aws::Utils::Outcome<DescribeDBLogFilesResult, RDSError> DescribeDBLogFilesOutcome;
+        typedef Aws::Utils::Outcome<DescribeDBParameterGroupsResult, RDSError> DescribeDBParameterGroupsOutcome;
+        typedef Aws::Utils::Outcome<DescribeDBParametersResult, RDSError> DescribeDBParametersOutcome;
+        typedef Aws::Utils::Outcome<DescribeDBProxiesResult, RDSError> DescribeDBProxiesOutcome;
+        typedef Aws::Utils::Outcome<DescribeDBProxyTargetGroupsResult, RDSError> DescribeDBProxyTargetGroupsOutcome;
+        typedef Aws::Utils::Outcome<DescribeDBProxyTargetsResult, RDSError> DescribeDBProxyTargetsOutcome;
+        typedef Aws::Utils::Outcome<DescribeDBSecurityGroupsResult, RDSError> DescribeDBSecurityGroupsOutcome;
+        typedef Aws::Utils::Outcome<DescribeDBSnapshotAttributesResult, RDSError> DescribeDBSnapshotAttributesOutcome;
+        typedef Aws::Utils::Outcome<DescribeDBSnapshotsResult, RDSError> DescribeDBSnapshotsOutcome;
+        typedef Aws::Utils::Outcome<DescribeDBSubnetGroupsResult, RDSError> DescribeDBSubnetGroupsOutcome;
+        typedef Aws::Utils::Outcome<DescribeEngineDefaultClusterParametersResult, RDSError> DescribeEngineDefaultClusterParametersOutcome;
+        typedef Aws::Utils::Outcome<DescribeEngineDefaultParametersResult, RDSError> DescribeEngineDefaultParametersOutcome;
+        typedef Aws::Utils::Outcome<DescribeEventCategoriesResult, RDSError> DescribeEventCategoriesOutcome;
+        typedef Aws::Utils::Outcome<DescribeEventSubscriptionsResult, RDSError> DescribeEventSubscriptionsOutcome;
+        typedef Aws::Utils::Outcome<DescribeEventsResult, RDSError> DescribeEventsOutcome;
+        typedef Aws::Utils::Outcome<DescribeExportTasksResult, RDSError> DescribeExportTasksOutcome;
+        typedef Aws::Utils::Outcome<DescribeGlobalClustersResult, RDSError> DescribeGlobalClustersOutcome;
+        typedef Aws::Utils::Outcome<DescribeInstallationMediaResult, RDSError> DescribeInstallationMediaOutcome;
+        typedef Aws::Utils::Outcome<DescribeOptionGroupOptionsResult, RDSError> DescribeOptionGroupOptionsOutcome;
+        typedef Aws::Utils::Outcome<DescribeOptionGroupsResult, RDSError> DescribeOptionGroupsOutcome;
+        typedef Aws::Utils::Outcome<DescribeOrderableDBInstanceOptionsResult, RDSError> DescribeOrderableDBInstanceOptionsOutcome;
+        typedef Aws::Utils::Outcome<DescribePendingMaintenanceActionsResult, RDSError> DescribePendingMaintenanceActionsOutcome;
+        typedef Aws::Utils::Outcome<DescribeReservedDBInstancesResult, RDSError> DescribeReservedDBInstancesOutcome;
+        typedef Aws::Utils::Outcome<DescribeReservedDBInstancesOfferingsResult, RDSError> DescribeReservedDBInstancesOfferingsOutcome;
+        typedef Aws::Utils::Outcome<DescribeSourceRegionsResult, RDSError> DescribeSourceRegionsOutcome;
+        typedef Aws::Utils::Outcome<DescribeValidDBInstanceModificationsResult, RDSError> DescribeValidDBInstanceModificationsOutcome;
+        typedef Aws::Utils::Outcome<DownloadDBLogFilePortionResult, RDSError> DownloadDBLogFilePortionOutcome;
+        typedef Aws::Utils::Outcome<FailoverDBClusterResult, RDSError> FailoverDBClusterOutcome;
+        typedef Aws::Utils::Outcome<ImportInstallationMediaResult, RDSError> ImportInstallationMediaOutcome;
+        typedef Aws::Utils::Outcome<ListTagsForResourceResult, RDSError> ListTagsForResourceOutcome;
+        typedef Aws::Utils::Outcome<ModifyCertificatesResult, RDSError> ModifyCertificatesOutcome;
+        typedef Aws::Utils::Outcome<ModifyCurrentDBClusterCapacityResult, RDSError> ModifyCurrentDBClusterCapacityOutcome;
+        typedef Aws::Utils::Outcome<ModifyDBClusterResult, RDSError> ModifyDBClusterOutcome;
+        typedef Aws::Utils::Outcome<ModifyDBClusterEndpointResult, RDSError> ModifyDBClusterEndpointOutcome;
+        typedef Aws::Utils::Outcome<ModifyDBClusterParameterGroupResult, RDSError> ModifyDBClusterParameterGroupOutcome;
+        typedef Aws::Utils::Outcome<ModifyDBClusterSnapshotAttributeResult, RDSError> ModifyDBClusterSnapshotAttributeOutcome;
+        typedef Aws::Utils::Outcome<ModifyDBInstanceResult, RDSError> ModifyDBInstanceOutcome;
+        typedef Aws::Utils::Outcome<ModifyDBParameterGroupResult, RDSError> ModifyDBParameterGroupOutcome;
+        typedef Aws::Utils::Outcome<ModifyDBProxyResult, RDSError> ModifyDBProxyOutcome;
+        typedef Aws::Utils::Outcome<ModifyDBProxyTargetGroupResult, RDSError> ModifyDBProxyTargetGroupOutcome;
+        typedef Aws::Utils::Outcome<ModifyDBSnapshotResult, RDSError> ModifyDBSnapshotOutcome;
+        typedef Aws::Utils::Outcome<ModifyDBSnapshotAttributeResult, RDSError> ModifyDBSnapshotAttributeOutcome;
+        typedef Aws::Utils::Outcome<ModifyDBSubnetGroupResult, RDSError> ModifyDBSubnetGroupOutcome;
+        typedef Aws::Utils::Outcome<ModifyEventSubscriptionResult, RDSError> ModifyEventSubscriptionOutcome;
+        typedef Aws::Utils::Outcome<ModifyGlobalClusterResult, RDSError> ModifyGlobalClusterOutcome;
+        typedef Aws::Utils::Outcome<ModifyOptionGroupResult, RDSError> ModifyOptionGroupOutcome;
+        typedef Aws::Utils::Outcome<PromoteReadReplicaResult, RDSError> PromoteReadReplicaOutcome;
+        typedef Aws::Utils::Outcome<PromoteReadReplicaDBClusterResult, RDSError> PromoteReadReplicaDBClusterOutcome;
+        typedef Aws::Utils::Outcome<PurchaseReservedDBInstancesOfferingResult, RDSError> PurchaseReservedDBInstancesOfferingOutcome;
+        typedef Aws::Utils::Outcome<RebootDBInstanceResult, RDSError> RebootDBInstanceOutcome;
+        typedef Aws::Utils::Outcome<RegisterDBProxyTargetsResult, RDSError> RegisterDBProxyTargetsOutcome;
+        typedef Aws::Utils::Outcome<RemoveFromGlobalClusterResult, RDSError> RemoveFromGlobalClusterOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, RDSError> RemoveRoleFromDBClusterOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, RDSError> RemoveRoleFromDBInstanceOutcome;
+        typedef Aws::Utils::Outcome<RemoveSourceIdentifierFromSubscriptionResult, RDSError> RemoveSourceIdentifierFromSubscriptionOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, RDSError> RemoveTagsFromResourceOutcome;
+        typedef Aws::Utils::Outcome<ResetDBClusterParameterGroupResult, RDSError> ResetDBClusterParameterGroupOutcome;
+        typedef Aws::Utils::Outcome<ResetDBParameterGroupResult, RDSError> ResetDBParameterGroupOutcome;
+        typedef Aws::Utils::Outcome<RestoreDBClusterFromS3Result, RDSError> RestoreDBClusterFromS3Outcome;
+        typedef Aws::Utils::Outcome<RestoreDBClusterFromSnapshotResult, RDSError> RestoreDBClusterFromSnapshotOutcome;
+        typedef Aws::Utils::Outcome<RestoreDBClusterToPointInTimeResult, RDSError> RestoreDBClusterToPointInTimeOutcome;
+        typedef Aws::Utils::Outcome<RestoreDBInstanceFromDBSnapshotResult, RDSError> RestoreDBInstanceFromDBSnapshotOutcome;
+        typedef Aws::Utils::Outcome<RestoreDBInstanceFromS3Result, RDSError> RestoreDBInstanceFromS3Outcome;
+        typedef Aws::Utils::Outcome<RestoreDBInstanceToPointInTimeResult, RDSError> RestoreDBInstanceToPointInTimeOutcome;
+        typedef Aws::Utils::Outcome<RevokeDBSecurityGroupIngressResult, RDSError> RevokeDBSecurityGroupIngressOutcome;
+        typedef Aws::Utils::Outcome<StartActivityStreamResult, RDSError> StartActivityStreamOutcome;
+        typedef Aws::Utils::Outcome<StartDBClusterResult, RDSError> StartDBClusterOutcome;
+        typedef Aws::Utils::Outcome<StartDBInstanceResult, RDSError> StartDBInstanceOutcome;
+        typedef Aws::Utils::Outcome<StartExportTaskResult, RDSError> StartExportTaskOutcome;
+        typedef Aws::Utils::Outcome<StopActivityStreamResult, RDSError> StopActivityStreamOutcome;
+        typedef Aws::Utils::Outcome<StopDBClusterResult, RDSError> StopDBClusterOutcome;
+        typedef Aws::Utils::Outcome<StopDBInstanceResult, RDSError> StopDBInstanceOutcome;
 
         typedef std::future<AddRoleToDBClusterOutcome> AddRoleToDBClusterOutcomeCallable;
         typedef std::future<AddRoleToDBInstanceOutcome> AddRoleToDBInstanceOutcomeCallable;
@@ -1838,18 +1838,14 @@ namespace Aws
         virtual void CreateDBParameterGroupAsync(const Model::CreateDBParameterGroupRequest& request, const CreateDBParameterGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <note> <p>This is prerelease documentation for the RDS Database Proxy feature in
-         * preview release. It is subject to change.</p> </note> <p>Creates a new DB
-         * proxy.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a new DB proxy.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBProxy">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateDBProxyOutcome CreateDBProxy(const Model::CreateDBProxyRequest& request) const;
 
         /**
-         * <note> <p>This is prerelease documentation for the RDS Database Proxy feature in
-         * preview release. It is subject to change.</p> </note> <p>Creates a new DB
-         * proxy.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a new DB proxy.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBProxy">AWS
          * API Reference</a></p>
          *
@@ -1858,9 +1854,7 @@ namespace Aws
         virtual Model::CreateDBProxyOutcomeCallable CreateDBProxyCallable(const Model::CreateDBProxyRequest& request) const;
 
         /**
-         * <note> <p>This is prerelease documentation for the RDS Database Proxy feature in
-         * preview release. It is subject to change.</p> </note> <p>Creates a new DB
-         * proxy.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a new DB proxy.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBProxy">AWS
          * API Reference</a></p>
          *
@@ -2456,18 +2450,14 @@ namespace Aws
         virtual void DeleteDBParameterGroupAsync(const Model::DeleteDBParameterGroupRequest& request, const DeleteDBParameterGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <note> <p>This is prerelease documentation for the RDS Database Proxy feature in
-         * preview release. It is subject to change.</p> </note> <p>Deletes an existing
-         * proxy.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes an existing proxy.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBProxy">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteDBProxyOutcome DeleteDBProxy(const Model::DeleteDBProxyRequest& request) const;
 
         /**
-         * <note> <p>This is prerelease documentation for the RDS Database Proxy feature in
-         * preview release. It is subject to change.</p> </note> <p>Deletes an existing
-         * proxy.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes an existing proxy.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBProxy">AWS
          * API Reference</a></p>
          *
@@ -2476,9 +2466,7 @@ namespace Aws
         virtual Model::DeleteDBProxyOutcomeCallable DeleteDBProxyCallable(const Model::DeleteDBProxyRequest& request) const;
 
         /**
-         * <note> <p>This is prerelease documentation for the RDS Database Proxy feature in
-         * preview release. It is subject to change.</p> </note> <p>Deletes an existing
-         * proxy.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes an existing proxy.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBProxy">AWS
          * API Reference</a></p>
          *
@@ -2692,20 +2680,16 @@ namespace Aws
         virtual void DeleteOptionGroupAsync(const Model::DeleteOptionGroupRequest& request, const DeleteOptionGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <note> <p>This is prerelease documentation for the RDS Database Proxy feature in
-         * preview release. It is subject to change.</p> </note> <p>Remove the association
-         * between one or more <code>DBProxyTarget</code> data structures and a
-         * <code>DBProxyTargetGroup</code>.</p><p><h3>See Also:</h3>   <a
+         * <p>Remove the association between one or more <code>DBProxyTarget</code> data
+         * structures and a <code>DBProxyTargetGroup</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeregisterDBProxyTargets">AWS
          * API Reference</a></p>
          */
         virtual Model::DeregisterDBProxyTargetsOutcome DeregisterDBProxyTargets(const Model::DeregisterDBProxyTargetsRequest& request) const;
 
         /**
-         * <note> <p>This is prerelease documentation for the RDS Database Proxy feature in
-         * preview release. It is subject to change.</p> </note> <p>Remove the association
-         * between one or more <code>DBProxyTarget</code> data structures and a
-         * <code>DBProxyTargetGroup</code>.</p><p><h3>See Also:</h3>   <a
+         * <p>Remove the association between one or more <code>DBProxyTarget</code> data
+         * structures and a <code>DBProxyTargetGroup</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeregisterDBProxyTargets">AWS
          * API Reference</a></p>
          *
@@ -2714,10 +2698,8 @@ namespace Aws
         virtual Model::DeregisterDBProxyTargetsOutcomeCallable DeregisterDBProxyTargetsCallable(const Model::DeregisterDBProxyTargetsRequest& request) const;
 
         /**
-         * <note> <p>This is prerelease documentation for the RDS Database Proxy feature in
-         * preview release. It is subject to change.</p> </note> <p>Remove the association
-         * between one or more <code>DBProxyTarget</code> data structures and a
-         * <code>DBProxyTargetGroup</code>.</p><p><h3>See Also:</h3>   <a
+         * <p>Remove the association between one or more <code>DBProxyTarget</code> data
+         * structures and a <code>DBProxyTargetGroup</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeregisterDBProxyTargets">AWS
          * API Reference</a></p>
          *
@@ -3309,18 +3291,14 @@ namespace Aws
         virtual void DescribeDBParametersAsync(const Model::DescribeDBParametersRequest& request, const DescribeDBParametersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <note> <p>This is prerelease documentation for the RDS Database Proxy feature in
-         * preview release. It is subject to change.</p> </note> <p>Returns information
-         * about DB proxies.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns information about DB proxies.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBProxies">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeDBProxiesOutcome DescribeDBProxies(const Model::DescribeDBProxiesRequest& request) const;
 
         /**
-         * <note> <p>This is prerelease documentation for the RDS Database Proxy feature in
-         * preview release. It is subject to change.</p> </note> <p>Returns information
-         * about DB proxies.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns information about DB proxies.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBProxies">AWS
          * API Reference</a></p>
          *
@@ -3329,9 +3307,7 @@ namespace Aws
         virtual Model::DescribeDBProxiesOutcomeCallable DescribeDBProxiesCallable(const Model::DescribeDBProxiesRequest& request) const;
 
         /**
-         * <note> <p>This is prerelease documentation for the RDS Database Proxy feature in
-         * preview release. It is subject to change.</p> </note> <p>Returns information
-         * about DB proxies.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns information about DB proxies.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBProxies">AWS
          * API Reference</a></p>
          *
@@ -3340,20 +3316,16 @@ namespace Aws
         virtual void DescribeDBProxiesAsync(const Model::DescribeDBProxiesRequest& request, const DescribeDBProxiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <note> <p>This is prerelease documentation for the RDS Database Proxy feature in
-         * preview release. It is subject to change.</p> </note> <p>Returns information
-         * about DB proxy target groups, represented by <code>DBProxyTargetGroup</code>
-         * data structures.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns information about DB proxy target groups, represented by
+         * <code>DBProxyTargetGroup</code> data structures.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBProxyTargetGroups">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeDBProxyTargetGroupsOutcome DescribeDBProxyTargetGroups(const Model::DescribeDBProxyTargetGroupsRequest& request) const;
 
         /**
-         * <note> <p>This is prerelease documentation for the RDS Database Proxy feature in
-         * preview release. It is subject to change.</p> </note> <p>Returns information
-         * about DB proxy target groups, represented by <code>DBProxyTargetGroup</code>
-         * data structures.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns information about DB proxy target groups, represented by
+         * <code>DBProxyTargetGroup</code> data structures.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBProxyTargetGroups">AWS
          * API Reference</a></p>
          *
@@ -3362,10 +3334,8 @@ namespace Aws
         virtual Model::DescribeDBProxyTargetGroupsOutcomeCallable DescribeDBProxyTargetGroupsCallable(const Model::DescribeDBProxyTargetGroupsRequest& request) const;
 
         /**
-         * <note> <p>This is prerelease documentation for the RDS Database Proxy feature in
-         * preview release. It is subject to change.</p> </note> <p>Returns information
-         * about DB proxy target groups, represented by <code>DBProxyTargetGroup</code>
-         * data structures.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns information about DB proxy target groups, represented by
+         * <code>DBProxyTargetGroup</code> data structures.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBProxyTargetGroups">AWS
          * API Reference</a></p>
          *
@@ -3374,20 +3344,16 @@ namespace Aws
         virtual void DescribeDBProxyTargetGroupsAsync(const Model::DescribeDBProxyTargetGroupsRequest& request, const DescribeDBProxyTargetGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <note> <p>This is prerelease documentation for the RDS Database Proxy feature in
-         * preview release. It is subject to change.</p> </note> <p>Returns information
-         * about <code>DBProxyTarget</code> objects. This API supports
-         * pagination.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns information about <code>DBProxyTarget</code> objects. This API
+         * supports pagination.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBProxyTargets">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeDBProxyTargetsOutcome DescribeDBProxyTargets(const Model::DescribeDBProxyTargetsRequest& request) const;
 
         /**
-         * <note> <p>This is prerelease documentation for the RDS Database Proxy feature in
-         * preview release. It is subject to change.</p> </note> <p>Returns information
-         * about <code>DBProxyTarget</code> objects. This API supports
-         * pagination.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns information about <code>DBProxyTarget</code> objects. This API
+         * supports pagination.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBProxyTargets">AWS
          * API Reference</a></p>
          *
@@ -3396,10 +3362,8 @@ namespace Aws
         virtual Model::DescribeDBProxyTargetsOutcomeCallable DescribeDBProxyTargetsCallable(const Model::DescribeDBProxyTargetsRequest& request) const;
 
         /**
-         * <note> <p>This is prerelease documentation for the RDS Database Proxy feature in
-         * preview release. It is subject to change.</p> </note> <p>Returns information
-         * about <code>DBProxyTarget</code> objects. This API supports
-         * pagination.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns information about <code>DBProxyTarget</code> objects. This API
+         * supports pagination.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBProxyTargets">AWS
          * API Reference</a></p>
          *
@@ -4742,18 +4706,14 @@ namespace Aws
         virtual void ModifyDBParameterGroupAsync(const Model::ModifyDBParameterGroupRequest& request, const ModifyDBParameterGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <note> <p>This is prerelease documentation for the RDS Database Proxy feature in
-         * preview release. It is subject to change.</p> </note> <p>Changes the settings
-         * for an existing DB proxy.</p><p><h3>See Also:</h3>   <a
+         * <p>Changes the settings for an existing DB proxy.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBProxy">AWS
          * API Reference</a></p>
          */
         virtual Model::ModifyDBProxyOutcome ModifyDBProxy(const Model::ModifyDBProxyRequest& request) const;
 
         /**
-         * <note> <p>This is prerelease documentation for the RDS Database Proxy feature in
-         * preview release. It is subject to change.</p> </note> <p>Changes the settings
-         * for an existing DB proxy.</p><p><h3>See Also:</h3>   <a
+         * <p>Changes the settings for an existing DB proxy.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBProxy">AWS
          * API Reference</a></p>
          *
@@ -4762,9 +4722,7 @@ namespace Aws
         virtual Model::ModifyDBProxyOutcomeCallable ModifyDBProxyCallable(const Model::ModifyDBProxyRequest& request) const;
 
         /**
-         * <note> <p>This is prerelease documentation for the RDS Database Proxy feature in
-         * preview release. It is subject to change.</p> </note> <p>Changes the settings
-         * for an existing DB proxy.</p><p><h3>See Also:</h3>   <a
+         * <p>Changes the settings for an existing DB proxy.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBProxy">AWS
          * API Reference</a></p>
          *
@@ -4773,18 +4731,16 @@ namespace Aws
         virtual void ModifyDBProxyAsync(const Model::ModifyDBProxyRequest& request, const ModifyDBProxyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <note> <p>This is prerelease documentation for the RDS Database Proxy feature in
-         * preview release. It is subject to change.</p> </note> <p>Modifies the properties
-         * of a <code>DBProxyTargetGroup</code>.</p><p><h3>See Also:</h3>   <a
+         * <p>Modifies the properties of a <code>DBProxyTargetGroup</code>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBProxyTargetGroup">AWS
          * API Reference</a></p>
          */
         virtual Model::ModifyDBProxyTargetGroupOutcome ModifyDBProxyTargetGroup(const Model::ModifyDBProxyTargetGroupRequest& request) const;
 
         /**
-         * <note> <p>This is prerelease documentation for the RDS Database Proxy feature in
-         * preview release. It is subject to change.</p> </note> <p>Modifies the properties
-         * of a <code>DBProxyTargetGroup</code>.</p><p><h3>See Also:</h3>   <a
+         * <p>Modifies the properties of a <code>DBProxyTargetGroup</code>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBProxyTargetGroup">AWS
          * API Reference</a></p>
          *
@@ -4793,9 +4749,8 @@ namespace Aws
         virtual Model::ModifyDBProxyTargetGroupOutcomeCallable ModifyDBProxyTargetGroupCallable(const Model::ModifyDBProxyTargetGroupRequest& request) const;
 
         /**
-         * <note> <p>This is prerelease documentation for the RDS Database Proxy feature in
-         * preview release. It is subject to change.</p> </note> <p>Modifies the properties
-         * of a <code>DBProxyTargetGroup</code>.</p><p><h3>See Also:</h3>   <a
+         * <p>Modifies the properties of a <code>DBProxyTargetGroup</code>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBProxyTargetGroup">AWS
          * API Reference</a></p>
          *
@@ -5210,9 +5165,7 @@ namespace Aws
         virtual void RebootDBInstanceAsync(const Model::RebootDBInstanceRequest& request, const RebootDBInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <note> <p>This is prerelease documentation for the RDS Database Proxy feature in
-         * preview release. It is subject to change.</p> </note> <p>Associate one or more
-         * <code>DBProxyTarget</code> data structures with a
+         * <p>Associate one or more <code>DBProxyTarget</code> data structures with a
          * <code>DBProxyTargetGroup</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RegisterDBProxyTargets">AWS
          * API Reference</a></p>
@@ -5220,9 +5173,7 @@ namespace Aws
         virtual Model::RegisterDBProxyTargetsOutcome RegisterDBProxyTargets(const Model::RegisterDBProxyTargetsRequest& request) const;
 
         /**
-         * <note> <p>This is prerelease documentation for the RDS Database Proxy feature in
-         * preview release. It is subject to change.</p> </note> <p>Associate one or more
-         * <code>DBProxyTarget</code> data structures with a
+         * <p>Associate one or more <code>DBProxyTarget</code> data structures with a
          * <code>DBProxyTargetGroup</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RegisterDBProxyTargets">AWS
          * API Reference</a></p>
@@ -5232,9 +5183,7 @@ namespace Aws
         virtual Model::RegisterDBProxyTargetsOutcomeCallable RegisterDBProxyTargetsCallable(const Model::RegisterDBProxyTargetsRequest& request) const;
 
         /**
-         * <note> <p>This is prerelease documentation for the RDS Database Proxy feature in
-         * preview release. It is subject to change.</p> </note> <p>Associate one or more
-         * <code>DBProxyTarget</code> data structures with a
+         * <p>Associate one or more <code>DBProxyTarget</code> data structures with a
          * <code>DBProxyTargetGroup</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RegisterDBProxyTargets">AWS
          * API Reference</a></p>

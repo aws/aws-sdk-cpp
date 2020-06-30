@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/honeycode/Honeycode_EXPORTS.h>
 
@@ -42,7 +43,7 @@ enum class HoneycodeErrors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -50,6 +51,20 @@ enum class HoneycodeErrors
   AUTOMATION_EXECUTION_TIMEOUT,
   INTERNAL_SERVER
 };
+
+class AWS_HONEYCODE_API HoneycodeError : public Aws::Client::AWSError<HoneycodeErrors>
+{
+public:
+  HoneycodeError() {}
+  HoneycodeError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<HoneycodeErrors>(rhs) {}
+  HoneycodeError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<HoneycodeErrors>(rhs) {}
+  HoneycodeError(const Aws::Client::AWSError<HoneycodeErrors>& rhs) : Aws::Client::AWSError<HoneycodeErrors>(rhs) {}
+  HoneycodeError(Aws::Client::AWSError<HoneycodeErrors>&& rhs) : Aws::Client::AWSError<HoneycodeErrors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace HoneycodeErrorMapper
 {
   AWS_HONEYCODE_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

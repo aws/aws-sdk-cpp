@@ -32,7 +32,8 @@ namespace Model
     ACUITY,
     TEST_VALUE,
     TEST_UNITS,
-    DIRECTION
+    DIRECTION,
+    SYSTEM_ORGAN_SITE
   };
 
 namespace RelationshipTypeMapper

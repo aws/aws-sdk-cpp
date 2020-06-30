@@ -6,15 +6,30 @@
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/appconfig/AppConfigErrors.h>
+#include <aws/appconfig/model/ResourceNotFoundException.h>
+#include <aws/appconfig/model/PayloadTooLargeException.h>
 
 using namespace Aws::Client;
-using namespace Aws::AppConfig;
 using namespace Aws::Utils;
+using namespace Aws::AppConfig;
+using namespace Aws::AppConfig::Model;
 
 namespace Aws
 {
 namespace AppConfig
 {
+template<> AWS_APPCONFIG_API ResourceNotFoundException AppConfigError::GetModeledError()
+{
+  assert(this->GetErrorType() == AppConfigErrors::RESOURCE_NOT_FOUND);
+  return ResourceNotFoundException(this->GetJsonPayload().View());
+}
+
+template<> AWS_APPCONFIG_API PayloadTooLargeException AppConfigError::GetModeledError()
+{
+  assert(this->GetErrorType() == AppConfigErrors::PAYLOAD_TOO_LARGE);
+  return PayloadTooLargeException(this->GetJsonPayload().View());
+}
+
 namespace AppConfigErrorMapper
 {
 

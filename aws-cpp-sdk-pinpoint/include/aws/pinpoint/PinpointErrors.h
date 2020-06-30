@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/pinpoint/Pinpoint_EXPORTS.h>
 
@@ -42,7 +43,7 @@ enum class PinpointErrors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -54,6 +55,20 @@ enum class PinpointErrors
   PAYLOAD_TOO_LARGE,
   TOO_MANY_REQUESTS
 };
+
+class AWS_PINPOINT_API PinpointError : public Aws::Client::AWSError<PinpointErrors>
+{
+public:
+  PinpointError() {}
+  PinpointError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<PinpointErrors>(rhs) {}
+  PinpointError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<PinpointErrors>(rhs) {}
+  PinpointError(const Aws::Client::AWSError<PinpointErrors>& rhs) : Aws::Client::AWSError<PinpointErrors>(rhs) {}
+  PinpointError(Aws::Client::AWSError<PinpointErrors>&& rhs) : Aws::Client::AWSError<PinpointErrors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace PinpointErrorMapper
 {
   AWS_PINPOINT_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

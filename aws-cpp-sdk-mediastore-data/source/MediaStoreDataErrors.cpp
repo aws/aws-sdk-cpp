@@ -8,8 +8,8 @@
 #include <aws/mediastore-data/MediaStoreDataErrors.h>
 
 using namespace Aws::Client;
-using namespace Aws::MediaStoreData;
 using namespace Aws::Utils;
+using namespace Aws::MediaStoreData;
 
 namespace Aws
 {

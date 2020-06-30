@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/forecastquery/ForecastQueryService_EXPORTS.h>
 
@@ -42,7 +43,7 @@ enum class ForecastQueryServiceErrors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -51,6 +52,20 @@ enum class ForecastQueryServiceErrors
   LIMIT_EXCEEDED,
   RESOURCE_IN_USE
 };
+
+class AWS_FORECASTQUERYSERVICE_API ForecastQueryServiceError : public Aws::Client::AWSError<ForecastQueryServiceErrors>
+{
+public:
+  ForecastQueryServiceError() {}
+  ForecastQueryServiceError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<ForecastQueryServiceErrors>(rhs) {}
+  ForecastQueryServiceError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<ForecastQueryServiceErrors>(rhs) {}
+  ForecastQueryServiceError(const Aws::Client::AWSError<ForecastQueryServiceErrors>& rhs) : Aws::Client::AWSError<ForecastQueryServiceErrors>(rhs) {}
+  ForecastQueryServiceError(Aws::Client::AWSError<ForecastQueryServiceErrors>&& rhs) : Aws::Client::AWSError<ForecastQueryServiceErrors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace ForecastQueryServiceErrorMapper
 {
   AWS_FORECASTQUERYSERVICE_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

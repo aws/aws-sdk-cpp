@@ -35,37 +35,37 @@ namespace Model
 
 
     /**
-     * <p> Recommendation feedback summaries corresponding to the code reivew ARN. </p>
+     * <p> Recommendation feedback summaries corresponding to the code review ARN. </p>
      */
     inline const Aws::Vector<RecommendationFeedbackSummary>& GetRecommendationFeedbackSummaries() const{ return m_recommendationFeedbackSummaries; }
 
     /**
-     * <p> Recommendation feedback summaries corresponding to the code reivew ARN. </p>
+     * <p> Recommendation feedback summaries corresponding to the code review ARN. </p>
      */
     inline void SetRecommendationFeedbackSummaries(const Aws::Vector<RecommendationFeedbackSummary>& value) { m_recommendationFeedbackSummaries = value; }
 
     /**
-     * <p> Recommendation feedback summaries corresponding to the code reivew ARN. </p>
+     * <p> Recommendation feedback summaries corresponding to the code review ARN. </p>
      */
     inline void SetRecommendationFeedbackSummaries(Aws::Vector<RecommendationFeedbackSummary>&& value) { m_recommendationFeedbackSummaries = std::move(value); }
 
     /**
-     * <p> Recommendation feedback summaries corresponding to the code reivew ARN. </p>
+     * <p> Recommendation feedback summaries corresponding to the code review ARN. </p>
      */
     inline ListRecommendationFeedbackResult& WithRecommendationFeedbackSummaries(const Aws::Vector<RecommendationFeedbackSummary>& value) { SetRecommendationFeedbackSummaries(value); return *this;}
 
     /**
-     * <p> Recommendation feedback summaries corresponding to the code reivew ARN. </p>
+     * <p> Recommendation feedback summaries corresponding to the code review ARN. </p>
      */
     inline ListRecommendationFeedbackResult& WithRecommendationFeedbackSummaries(Aws::Vector<RecommendationFeedbackSummary>&& value) { SetRecommendationFeedbackSummaries(std::move(value)); return *this;}
 
     /**
-     * <p> Recommendation feedback summaries corresponding to the code reivew ARN. </p>
+     * <p> Recommendation feedback summaries corresponding to the code review ARN. </p>
      */
     inline ListRecommendationFeedbackResult& AddRecommendationFeedbackSummaries(const RecommendationFeedbackSummary& value) { m_recommendationFeedbackSummaries.push_back(value); return *this; }
 
     /**
-     * <p> Recommendation feedback summaries corresponding to the code reivew ARN. </p>
+     * <p> Recommendation feedback summaries corresponding to the code review ARN. </p>
      */
     inline ListRecommendationFeedbackResult& AddRecommendationFeedbackSummaries(RecommendationFeedbackSummary&& value) { m_recommendationFeedbackSummaries.push_back(std::move(value)); return *this; }
 

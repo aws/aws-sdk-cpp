@@ -65,7 +65,7 @@ static const char* ALLOCATION_TAG = "ConnectClient";
 ConnectClient::ConnectClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-        SERVICE_NAME, clientConfiguration.region),
+        SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<ConnectErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -75,7 +75,7 @@ ConnectClient::ConnectClient(const Client::ClientConfiguration& clientConfigurat
 ConnectClient::ConnectClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-         SERVICE_NAME, clientConfiguration.region),
+         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<ConnectErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -86,7 +86,7 @@ ConnectClient::ConnectClient(const std::shared_ptr<AWSCredentialsProvider>& cred
   const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider,
-         SERVICE_NAME, clientConfiguration.region),
+         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<ConnectErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -134,15 +134,7 @@ CreateUserOutcome ConnectClient::CreateUser(const CreateUserRequest& request) co
   ss << "/users/";
   ss << request.GetInstanceId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateUserOutcome(CreateUserResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateUserOutcome(outcome.GetError());
-  }
+  return CreateUserOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateUserOutcomeCallable ConnectClient::CreateUserCallable(const CreateUserRequest& request) const
@@ -182,15 +174,7 @@ DeleteUserOutcome ConnectClient::DeleteUser(const DeleteUserRequest& request) co
   ss << "/";
   ss << request.GetUserId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteUserOutcome(NoResult());
-  }
-  else
-  {
-    return DeleteUserOutcome(outcome.GetError());
-  }
+  return DeleteUserOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteUserOutcomeCallable ConnectClient::DeleteUserCallable(const DeleteUserRequest& request) const
@@ -230,15 +214,7 @@ DescribeUserOutcome ConnectClient::DescribeUser(const DescribeUserRequest& reque
   ss << "/";
   ss << request.GetUserId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeUserOutcome(DescribeUserResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeUserOutcome(outcome.GetError());
-  }
+  return DescribeUserOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeUserOutcomeCallable ConnectClient::DescribeUserCallable(const DescribeUserRequest& request) const
@@ -278,15 +254,7 @@ DescribeUserHierarchyGroupOutcome ConnectClient::DescribeUserHierarchyGroup(cons
   ss << "/";
   ss << request.GetHierarchyGroupId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeUserHierarchyGroupOutcome(DescribeUserHierarchyGroupResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeUserHierarchyGroupOutcome(outcome.GetError());
-  }
+  return DescribeUserHierarchyGroupOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeUserHierarchyGroupOutcomeCallable ConnectClient::DescribeUserHierarchyGroupCallable(const DescribeUserHierarchyGroupRequest& request) const
@@ -319,15 +287,7 @@ DescribeUserHierarchyStructureOutcome ConnectClient::DescribeUserHierarchyStruct
   ss << "/user-hierarchy-structure/";
   ss << request.GetInstanceId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeUserHierarchyStructureOutcome(DescribeUserHierarchyStructureResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeUserHierarchyStructureOutcome(outcome.GetError());
-  }
+  return DescribeUserHierarchyStructureOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeUserHierarchyStructureOutcomeCallable ConnectClient::DescribeUserHierarchyStructureCallable(const DescribeUserHierarchyStructureRequest& request) const
@@ -367,15 +327,7 @@ GetContactAttributesOutcome ConnectClient::GetContactAttributes(const GetContact
   ss << "/";
   ss << request.GetInitialContactId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetContactAttributesOutcome(GetContactAttributesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetContactAttributesOutcome(outcome.GetError());
-  }
+  return GetContactAttributesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetContactAttributesOutcomeCallable ConnectClient::GetContactAttributesCallable(const GetContactAttributesRequest& request) const
@@ -408,15 +360,7 @@ GetCurrentMetricDataOutcome ConnectClient::GetCurrentMetricData(const GetCurrent
   ss << "/metrics/current/";
   ss << request.GetInstanceId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetCurrentMetricDataOutcome(GetCurrentMetricDataResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetCurrentMetricDataOutcome(outcome.GetError());
-  }
+  return GetCurrentMetricDataOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetCurrentMetricDataOutcomeCallable ConnectClient::GetCurrentMetricDataCallable(const GetCurrentMetricDataRequest& request) const
@@ -449,15 +393,7 @@ GetFederationTokenOutcome ConnectClient::GetFederationToken(const GetFederationT
   ss << "/user/federate/";
   ss << request.GetInstanceId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetFederationTokenOutcome(GetFederationTokenResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetFederationTokenOutcome(outcome.GetError());
-  }
+  return GetFederationTokenOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetFederationTokenOutcomeCallable ConnectClient::GetFederationTokenCallable(const GetFederationTokenRequest& request) const
@@ -490,15 +426,7 @@ GetMetricDataOutcome ConnectClient::GetMetricData(const GetMetricDataRequest& re
   ss << "/metrics/historical/";
   ss << request.GetInstanceId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetMetricDataOutcome(GetMetricDataResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetMetricDataOutcome(outcome.GetError());
-  }
+  return GetMetricDataOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetMetricDataOutcomeCallable ConnectClient::GetMetricDataCallable(const GetMetricDataRequest& request) const
@@ -531,15 +459,7 @@ ListContactFlowsOutcome ConnectClient::ListContactFlows(const ListContactFlowsRe
   ss << "/contact-flows-summary/";
   ss << request.GetInstanceId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListContactFlowsOutcome(ListContactFlowsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListContactFlowsOutcome(outcome.GetError());
-  }
+  return ListContactFlowsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListContactFlowsOutcomeCallable ConnectClient::ListContactFlowsCallable(const ListContactFlowsRequest& request) const
@@ -572,15 +492,7 @@ ListHoursOfOperationsOutcome ConnectClient::ListHoursOfOperations(const ListHour
   ss << "/hours-of-operations-summary/";
   ss << request.GetInstanceId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListHoursOfOperationsOutcome(ListHoursOfOperationsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListHoursOfOperationsOutcome(outcome.GetError());
-  }
+  return ListHoursOfOperationsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListHoursOfOperationsOutcomeCallable ConnectClient::ListHoursOfOperationsCallable(const ListHoursOfOperationsRequest& request) const
@@ -613,15 +525,7 @@ ListPhoneNumbersOutcome ConnectClient::ListPhoneNumbers(const ListPhoneNumbersRe
   ss << "/phone-numbers-summary/";
   ss << request.GetInstanceId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListPhoneNumbersOutcome(ListPhoneNumbersResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListPhoneNumbersOutcome(outcome.GetError());
-  }
+  return ListPhoneNumbersOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListPhoneNumbersOutcomeCallable ConnectClient::ListPhoneNumbersCallable(const ListPhoneNumbersRequest& request) const
@@ -654,15 +558,7 @@ ListQueuesOutcome ConnectClient::ListQueues(const ListQueuesRequest& request) co
   ss << "/queues-summary/";
   ss << request.GetInstanceId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListQueuesOutcome(ListQueuesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListQueuesOutcome(outcome.GetError());
-  }
+  return ListQueuesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListQueuesOutcomeCallable ConnectClient::ListQueuesCallable(const ListQueuesRequest& request) const
@@ -695,15 +591,7 @@ ListRoutingProfilesOutcome ConnectClient::ListRoutingProfiles(const ListRoutingP
   ss << "/routing-profiles-summary/";
   ss << request.GetInstanceId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListRoutingProfilesOutcome(ListRoutingProfilesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListRoutingProfilesOutcome(outcome.GetError());
-  }
+  return ListRoutingProfilesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListRoutingProfilesOutcomeCallable ConnectClient::ListRoutingProfilesCallable(const ListRoutingProfilesRequest& request) const
@@ -736,15 +624,7 @@ ListSecurityProfilesOutcome ConnectClient::ListSecurityProfiles(const ListSecuri
   ss << "/security-profiles-summary/";
   ss << request.GetInstanceId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListSecurityProfilesOutcome(ListSecurityProfilesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListSecurityProfilesOutcome(outcome.GetError());
-  }
+  return ListSecurityProfilesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListSecurityProfilesOutcomeCallable ConnectClient::ListSecurityProfilesCallable(const ListSecurityProfilesRequest& request) const
@@ -777,15 +657,7 @@ ListTagsForResourceOutcome ConnectClient::ListTagsForResource(const ListTagsForR
   ss << "/tags/";
   ss << request.GetResourceArn();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListTagsForResourceOutcome(ListTagsForResourceResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListTagsForResourceOutcome(outcome.GetError());
-  }
+  return ListTagsForResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListTagsForResourceOutcomeCallable ConnectClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
@@ -818,15 +690,7 @@ ListUserHierarchyGroupsOutcome ConnectClient::ListUserHierarchyGroups(const List
   ss << "/user-hierarchy-groups-summary/";
   ss << request.GetInstanceId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListUserHierarchyGroupsOutcome(ListUserHierarchyGroupsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListUserHierarchyGroupsOutcome(outcome.GetError());
-  }
+  return ListUserHierarchyGroupsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListUserHierarchyGroupsOutcomeCallable ConnectClient::ListUserHierarchyGroupsCallable(const ListUserHierarchyGroupsRequest& request) const
@@ -859,15 +723,7 @@ ListUsersOutcome ConnectClient::ListUsers(const ListUsersRequest& request) const
   ss << "/users-summary/";
   ss << request.GetInstanceId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListUsersOutcome(ListUsersResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListUsersOutcome(outcome.GetError());
-  }
+  return ListUsersOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListUsersOutcomeCallable ConnectClient::ListUsersCallable(const ListUsersRequest& request) const
@@ -894,15 +750,7 @@ StartChatContactOutcome ConnectClient::StartChatContact(const StartChatContactRe
   Aws::StringStream ss;
   ss << "/contact/chat";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return StartChatContactOutcome(StartChatContactResult(outcome.GetResult()));
-  }
-  else
-  {
-    return StartChatContactOutcome(outcome.GetError());
-  }
+  return StartChatContactOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 StartChatContactOutcomeCallable ConnectClient::StartChatContactCallable(const StartChatContactRequest& request) const
@@ -929,15 +777,7 @@ StartOutboundVoiceContactOutcome ConnectClient::StartOutboundVoiceContact(const 
   Aws::StringStream ss;
   ss << "/contact/outbound-voice";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return StartOutboundVoiceContactOutcome(StartOutboundVoiceContactResult(outcome.GetResult()));
-  }
-  else
-  {
-    return StartOutboundVoiceContactOutcome(outcome.GetError());
-  }
+  return StartOutboundVoiceContactOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 StartOutboundVoiceContactOutcomeCallable ConnectClient::StartOutboundVoiceContactCallable(const StartOutboundVoiceContactRequest& request) const
@@ -964,15 +804,7 @@ StopContactOutcome ConnectClient::StopContact(const StopContactRequest& request)
   Aws::StringStream ss;
   ss << "/contact/stop";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return StopContactOutcome(StopContactResult(outcome.GetResult()));
-  }
-  else
-  {
-    return StopContactOutcome(outcome.GetError());
-  }
+  return StopContactOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 StopContactOutcomeCallable ConnectClient::StopContactCallable(const StopContactRequest& request) const
@@ -1005,15 +837,7 @@ TagResourceOutcome ConnectClient::TagResource(const TagResourceRequest& request)
   ss << "/tags/";
   ss << request.GetResourceArn();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return TagResourceOutcome(NoResult());
-  }
-  else
-  {
-    return TagResourceOutcome(outcome.GetError());
-  }
+  return TagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 TagResourceOutcomeCallable ConnectClient::TagResourceCallable(const TagResourceRequest& request) const
@@ -1051,15 +875,7 @@ UntagResourceOutcome ConnectClient::UntagResource(const UntagResourceRequest& re
   ss << "/tags/";
   ss << request.GetResourceArn();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UntagResourceOutcome(NoResult());
-  }
-  else
-  {
-    return UntagResourceOutcome(outcome.GetError());
-  }
+  return UntagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 UntagResourceOutcomeCallable ConnectClient::UntagResourceCallable(const UntagResourceRequest& request) const
@@ -1086,15 +902,7 @@ UpdateContactAttributesOutcome ConnectClient::UpdateContactAttributes(const Upda
   Aws::StringStream ss;
   ss << "/contact/attributes";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateContactAttributesOutcome(UpdateContactAttributesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateContactAttributesOutcome(outcome.GetError());
-  }
+  return UpdateContactAttributesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateContactAttributesOutcomeCallable ConnectClient::UpdateContactAttributesCallable(const UpdateContactAttributesRequest& request) const
@@ -1135,15 +943,7 @@ UpdateUserHierarchyOutcome ConnectClient::UpdateUserHierarchy(const UpdateUserHi
   ss << request.GetUserId();
   ss << "/hierarchy";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateUserHierarchyOutcome(NoResult());
-  }
-  else
-  {
-    return UpdateUserHierarchyOutcome(outcome.GetError());
-  }
+  return UpdateUserHierarchyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateUserHierarchyOutcomeCallable ConnectClient::UpdateUserHierarchyCallable(const UpdateUserHierarchyRequest& request) const
@@ -1184,15 +984,7 @@ UpdateUserIdentityInfoOutcome ConnectClient::UpdateUserIdentityInfo(const Update
   ss << request.GetUserId();
   ss << "/identity-info";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateUserIdentityInfoOutcome(NoResult());
-  }
-  else
-  {
-    return UpdateUserIdentityInfoOutcome(outcome.GetError());
-  }
+  return UpdateUserIdentityInfoOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateUserIdentityInfoOutcomeCallable ConnectClient::UpdateUserIdentityInfoCallable(const UpdateUserIdentityInfoRequest& request) const
@@ -1233,15 +1025,7 @@ UpdateUserPhoneConfigOutcome ConnectClient::UpdateUserPhoneConfig(const UpdateUs
   ss << request.GetUserId();
   ss << "/phone-config";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateUserPhoneConfigOutcome(NoResult());
-  }
-  else
-  {
-    return UpdateUserPhoneConfigOutcome(outcome.GetError());
-  }
+  return UpdateUserPhoneConfigOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateUserPhoneConfigOutcomeCallable ConnectClient::UpdateUserPhoneConfigCallable(const UpdateUserPhoneConfigRequest& request) const
@@ -1282,15 +1066,7 @@ UpdateUserRoutingProfileOutcome ConnectClient::UpdateUserRoutingProfile(const Up
   ss << request.GetUserId();
   ss << "/routing-profile";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateUserRoutingProfileOutcome(NoResult());
-  }
-  else
-  {
-    return UpdateUserRoutingProfileOutcome(outcome.GetError());
-  }
+  return UpdateUserRoutingProfileOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateUserRoutingProfileOutcomeCallable ConnectClient::UpdateUserRoutingProfileCallable(const UpdateUserRoutingProfileRequest& request) const
@@ -1331,15 +1107,7 @@ UpdateUserSecurityProfilesOutcome ConnectClient::UpdateUserSecurityProfiles(cons
   ss << request.GetUserId();
   ss << "/security-profiles";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateUserSecurityProfilesOutcome(NoResult());
-  }
-  else
-  {
-    return UpdateUserSecurityProfilesOutcome(outcome.GetError());
-  }
+  return UpdateUserSecurityProfilesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateUserSecurityProfilesOutcomeCallable ConnectClient::UpdateUserSecurityProfilesCallable(const UpdateUserSecurityProfilesRequest& request) const

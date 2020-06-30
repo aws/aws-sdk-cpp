@@ -56,7 +56,7 @@ static const char* ALLOCATION_TAG = "ComprehendMedicalClient";
 ComprehendMedicalClient::ComprehendMedicalClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-        SERVICE_NAME, clientConfiguration.region),
+        SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<ComprehendMedicalErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -66,7 +66,7 @@ ComprehendMedicalClient::ComprehendMedicalClient(const Client::ClientConfigurati
 ComprehendMedicalClient::ComprehendMedicalClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-         SERVICE_NAME, clientConfiguration.region),
+         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<ComprehendMedicalErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -77,7 +77,7 @@ ComprehendMedicalClient::ComprehendMedicalClient(const std::shared_ptr<AWSCreden
   const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider,
-         SERVICE_NAME, clientConfiguration.region),
+         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<ComprehendMedicalErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -119,15 +119,7 @@ DescribeEntitiesDetectionV2JobOutcome ComprehendMedicalClient::DescribeEntitiesD
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeEntitiesDetectionV2JobOutcome(DescribeEntitiesDetectionV2JobResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeEntitiesDetectionV2JobOutcome(outcome.GetError());
-  }
+  return DescribeEntitiesDetectionV2JobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeEntitiesDetectionV2JobOutcomeCallable ComprehendMedicalClient::DescribeEntitiesDetectionV2JobCallable(const DescribeEntitiesDetectionV2JobRequest& request) const
@@ -154,15 +146,7 @@ DescribeICD10CMInferenceJobOutcome ComprehendMedicalClient::DescribeICD10CMInfer
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeICD10CMInferenceJobOutcome(DescribeICD10CMInferenceJobResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeICD10CMInferenceJobOutcome(outcome.GetError());
-  }
+  return DescribeICD10CMInferenceJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeICD10CMInferenceJobOutcomeCallable ComprehendMedicalClient::DescribeICD10CMInferenceJobCallable(const DescribeICD10CMInferenceJobRequest& request) const
@@ -189,15 +173,7 @@ DescribePHIDetectionJobOutcome ComprehendMedicalClient::DescribePHIDetectionJob(
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribePHIDetectionJobOutcome(DescribePHIDetectionJobResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribePHIDetectionJobOutcome(outcome.GetError());
-  }
+  return DescribePHIDetectionJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribePHIDetectionJobOutcomeCallable ComprehendMedicalClient::DescribePHIDetectionJobCallable(const DescribePHIDetectionJobRequest& request) const
@@ -224,15 +200,7 @@ DescribeRxNormInferenceJobOutcome ComprehendMedicalClient::DescribeRxNormInferen
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeRxNormInferenceJobOutcome(DescribeRxNormInferenceJobResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeRxNormInferenceJobOutcome(outcome.GetError());
-  }
+  return DescribeRxNormInferenceJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeRxNormInferenceJobOutcomeCallable ComprehendMedicalClient::DescribeRxNormInferenceJobCallable(const DescribeRxNormInferenceJobRequest& request) const
@@ -259,15 +227,7 @@ DetectEntitiesV2Outcome ComprehendMedicalClient::DetectEntitiesV2(const DetectEn
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DetectEntitiesV2Outcome(DetectEntitiesV2Result(outcome.GetResult()));
-  }
-  else
-  {
-    return DetectEntitiesV2Outcome(outcome.GetError());
-  }
+  return DetectEntitiesV2Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DetectEntitiesV2OutcomeCallable ComprehendMedicalClient::DetectEntitiesV2Callable(const DetectEntitiesV2Request& request) const
@@ -294,15 +254,7 @@ DetectPHIOutcome ComprehendMedicalClient::DetectPHI(const DetectPHIRequest& requ
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DetectPHIOutcome(DetectPHIResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DetectPHIOutcome(outcome.GetError());
-  }
+  return DetectPHIOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DetectPHIOutcomeCallable ComprehendMedicalClient::DetectPHICallable(const DetectPHIRequest& request) const
@@ -329,15 +281,7 @@ InferICD10CMOutcome ComprehendMedicalClient::InferICD10CM(const InferICD10CMRequ
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return InferICD10CMOutcome(InferICD10CMResult(outcome.GetResult()));
-  }
-  else
-  {
-    return InferICD10CMOutcome(outcome.GetError());
-  }
+  return InferICD10CMOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 InferICD10CMOutcomeCallable ComprehendMedicalClient::InferICD10CMCallable(const InferICD10CMRequest& request) const
@@ -364,15 +308,7 @@ InferRxNormOutcome ComprehendMedicalClient::InferRxNorm(const InferRxNormRequest
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return InferRxNormOutcome(InferRxNormResult(outcome.GetResult()));
-  }
-  else
-  {
-    return InferRxNormOutcome(outcome.GetError());
-  }
+  return InferRxNormOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 InferRxNormOutcomeCallable ComprehendMedicalClient::InferRxNormCallable(const InferRxNormRequest& request) const
@@ -399,15 +335,7 @@ ListEntitiesDetectionV2JobsOutcome ComprehendMedicalClient::ListEntitiesDetectio
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListEntitiesDetectionV2JobsOutcome(ListEntitiesDetectionV2JobsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListEntitiesDetectionV2JobsOutcome(outcome.GetError());
-  }
+  return ListEntitiesDetectionV2JobsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListEntitiesDetectionV2JobsOutcomeCallable ComprehendMedicalClient::ListEntitiesDetectionV2JobsCallable(const ListEntitiesDetectionV2JobsRequest& request) const
@@ -434,15 +362,7 @@ ListICD10CMInferenceJobsOutcome ComprehendMedicalClient::ListICD10CMInferenceJob
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListICD10CMInferenceJobsOutcome(ListICD10CMInferenceJobsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListICD10CMInferenceJobsOutcome(outcome.GetError());
-  }
+  return ListICD10CMInferenceJobsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListICD10CMInferenceJobsOutcomeCallable ComprehendMedicalClient::ListICD10CMInferenceJobsCallable(const ListICD10CMInferenceJobsRequest& request) const
@@ -469,15 +389,7 @@ ListPHIDetectionJobsOutcome ComprehendMedicalClient::ListPHIDetectionJobs(const 
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListPHIDetectionJobsOutcome(ListPHIDetectionJobsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListPHIDetectionJobsOutcome(outcome.GetError());
-  }
+  return ListPHIDetectionJobsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListPHIDetectionJobsOutcomeCallable ComprehendMedicalClient::ListPHIDetectionJobsCallable(const ListPHIDetectionJobsRequest& request) const
@@ -504,15 +416,7 @@ ListRxNormInferenceJobsOutcome ComprehendMedicalClient::ListRxNormInferenceJobs(
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListRxNormInferenceJobsOutcome(ListRxNormInferenceJobsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListRxNormInferenceJobsOutcome(outcome.GetError());
-  }
+  return ListRxNormInferenceJobsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListRxNormInferenceJobsOutcomeCallable ComprehendMedicalClient::ListRxNormInferenceJobsCallable(const ListRxNormInferenceJobsRequest& request) const
@@ -539,15 +443,7 @@ StartEntitiesDetectionV2JobOutcome ComprehendMedicalClient::StartEntitiesDetecti
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return StartEntitiesDetectionV2JobOutcome(StartEntitiesDetectionV2JobResult(outcome.GetResult()));
-  }
-  else
-  {
-    return StartEntitiesDetectionV2JobOutcome(outcome.GetError());
-  }
+  return StartEntitiesDetectionV2JobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 StartEntitiesDetectionV2JobOutcomeCallable ComprehendMedicalClient::StartEntitiesDetectionV2JobCallable(const StartEntitiesDetectionV2JobRequest& request) const
@@ -574,15 +470,7 @@ StartICD10CMInferenceJobOutcome ComprehendMedicalClient::StartICD10CMInferenceJo
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return StartICD10CMInferenceJobOutcome(StartICD10CMInferenceJobResult(outcome.GetResult()));
-  }
-  else
-  {
-    return StartICD10CMInferenceJobOutcome(outcome.GetError());
-  }
+  return StartICD10CMInferenceJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 StartICD10CMInferenceJobOutcomeCallable ComprehendMedicalClient::StartICD10CMInferenceJobCallable(const StartICD10CMInferenceJobRequest& request) const
@@ -609,15 +497,7 @@ StartPHIDetectionJobOutcome ComprehendMedicalClient::StartPHIDetectionJob(const 
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return StartPHIDetectionJobOutcome(StartPHIDetectionJobResult(outcome.GetResult()));
-  }
-  else
-  {
-    return StartPHIDetectionJobOutcome(outcome.GetError());
-  }
+  return StartPHIDetectionJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 StartPHIDetectionJobOutcomeCallable ComprehendMedicalClient::StartPHIDetectionJobCallable(const StartPHIDetectionJobRequest& request) const
@@ -644,15 +524,7 @@ StartRxNormInferenceJobOutcome ComprehendMedicalClient::StartRxNormInferenceJob(
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return StartRxNormInferenceJobOutcome(StartRxNormInferenceJobResult(outcome.GetResult()));
-  }
-  else
-  {
-    return StartRxNormInferenceJobOutcome(outcome.GetError());
-  }
+  return StartRxNormInferenceJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 StartRxNormInferenceJobOutcomeCallable ComprehendMedicalClient::StartRxNormInferenceJobCallable(const StartRxNormInferenceJobRequest& request) const
@@ -679,15 +551,7 @@ StopEntitiesDetectionV2JobOutcome ComprehendMedicalClient::StopEntitiesDetection
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return StopEntitiesDetectionV2JobOutcome(StopEntitiesDetectionV2JobResult(outcome.GetResult()));
-  }
-  else
-  {
-    return StopEntitiesDetectionV2JobOutcome(outcome.GetError());
-  }
+  return StopEntitiesDetectionV2JobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 StopEntitiesDetectionV2JobOutcomeCallable ComprehendMedicalClient::StopEntitiesDetectionV2JobCallable(const StopEntitiesDetectionV2JobRequest& request) const
@@ -714,15 +578,7 @@ StopICD10CMInferenceJobOutcome ComprehendMedicalClient::StopICD10CMInferenceJob(
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return StopICD10CMInferenceJobOutcome(StopICD10CMInferenceJobResult(outcome.GetResult()));
-  }
-  else
-  {
-    return StopICD10CMInferenceJobOutcome(outcome.GetError());
-  }
+  return StopICD10CMInferenceJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 StopICD10CMInferenceJobOutcomeCallable ComprehendMedicalClient::StopICD10CMInferenceJobCallable(const StopICD10CMInferenceJobRequest& request) const
@@ -749,15 +605,7 @@ StopPHIDetectionJobOutcome ComprehendMedicalClient::StopPHIDetectionJob(const St
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return StopPHIDetectionJobOutcome(StopPHIDetectionJobResult(outcome.GetResult()));
-  }
-  else
-  {
-    return StopPHIDetectionJobOutcome(outcome.GetError());
-  }
+  return StopPHIDetectionJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 StopPHIDetectionJobOutcomeCallable ComprehendMedicalClient::StopPHIDetectionJobCallable(const StopPHIDetectionJobRequest& request) const
@@ -784,15 +632,7 @@ StopRxNormInferenceJobOutcome ComprehendMedicalClient::StopRxNormInferenceJob(co
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return StopRxNormInferenceJobOutcome(StopRxNormInferenceJobResult(outcome.GetResult()));
-  }
-  else
-  {
-    return StopRxNormInferenceJobOutcome(outcome.GetError());
-  }
+  return StopRxNormInferenceJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 StopRxNormInferenceJobOutcomeCallable ComprehendMedicalClient::StopRxNormInferenceJobCallable(const StopRxNormInferenceJobRequest& request) const

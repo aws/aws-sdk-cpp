@@ -11,6 +11,7 @@ using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
 CreateSubnetRequest::CreateSubnetRequest() : 
+    m_tagSpecificationsHasBeenSet(false),
     m_availabilityZoneHasBeenSet(false),
     m_availabilityZoneIdHasBeenSet(false),
     m_cidrBlockHasBeenSet(false),
@@ -26,6 +27,16 @@ Aws::String CreateSubnetRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=CreateSubnet&";
+  if(m_tagSpecificationsHasBeenSet)
+  {
+    unsigned tagSpecificationsCount = 1;
+    for(auto& item : m_tagSpecifications)
+    {
+      item.OutputToStream(ss, "TagSpecification.", tagSpecificationsCount, "");
+      tagSpecificationsCount++;
+    }
+  }
+
   if(m_availabilityZoneHasBeenSet)
   {
     ss << "AvailabilityZone=" << StringUtils::URLEncode(m_availabilityZone.c_str()) << "&";

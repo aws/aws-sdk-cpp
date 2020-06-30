@@ -26,9 +26,8 @@ namespace Model
 {
 
   /**
-   * <note> <p>This is prerelease documentation for the RDS Database Proxy feature in
-   * preview release. It is subject to change.</p> </note> <p>Information about the
-   * connection health of an RDS Proxy target.</p><p><h3>See Also:</h3>   <a
+   * <p>Information about the connection health of an RDS Proxy target.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/TargetHealth">AWS
    * API Reference</a></p>
    */
