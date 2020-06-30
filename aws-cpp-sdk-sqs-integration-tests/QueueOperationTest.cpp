@@ -85,6 +85,7 @@ protected:
     static ClientConfiguration GetConfig()
     {
         ClientConfiguration config("default");
+        config.region = Aws::Region::US_EAST_1;
 
 #if USE_PROXY_FOR_TESTS
         config.scheme = Scheme::HTTP;
@@ -148,7 +149,7 @@ protected:
     Aws::String GetAwsAccountId()
     {
         auto cognitoClient = Aws::MakeShared<Aws::CognitoIdentity::CognitoIdentityClient>(ALLOCATION_TAG, GetConfig());
-        auto iamClient = Aws::MakeShared<Aws::IAM::IAMClient>(ALLOCATION_TAG);
+        auto iamClient = Aws::MakeShared<Aws::IAM::IAMClient>(ALLOCATION_TAG, GetConfig());
         Aws::AccessManagement::AccessManagementClient accessManagementClient(iamClient, cognitoClient);
         return accessManagementClient.GetAccountId();
     }

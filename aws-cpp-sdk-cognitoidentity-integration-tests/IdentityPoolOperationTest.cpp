@@ -57,8 +57,10 @@ public:
 protected:
     void SetUp()
     {
+        Aws::Client::ClientConfiguration config;
+        config.region = Aws::Region::US_EAST_1;
         //TODO: move this over to profile config file.
-        client = Aws::MakeShared<CognitoIdentityClient>(ALLOCATION_TAG);
+        client = Aws::MakeShared<CognitoIdentityClient>(ALLOCATION_TAG, config);
         CleanupPreviousFailedTests();
     }
 
@@ -97,7 +99,7 @@ protected:
             ListIdentitiesRequest listIdentitiesRequest;
             listIdentitiesRequest.WithIdentityPoolId(identityPoolId).WithMaxResults(10);
             ListIdentitiesOutcome listIdentitiesOutcome = client->ListIdentities(listIdentitiesRequest);
-            
+
             if (listIdentitiesOutcome.IsSuccess())
             {
                 if (listIdentitiesOutcome.GetResult().GetIdentities().size() > 0)
@@ -246,12 +248,13 @@ TEST_F(IdentityPoolOperationTest, TestIdentityActions)
 
     GetIdRequest getIdRequest;
     getIdRequest.WithIdentityPoolId(identityPoolId);
-    
+
     ClientConfiguration clientConfig;
+    clientConfig.region = Aws::Region::US_EAST_1;
 
     auto iamClient = Aws::MakeShared<Aws::IAM::IAMClient>(ALLOCATION_TAG, clientConfig);
     Aws::AccessManagement::AccessManagementClient accessManagementClient(iamClient, client);
-    
+
     getIdRequest.WithAccountId(accessManagementClient.GetAccountId());
 
     GetIdOutcome getIdOutcome = client->GetId(getIdRequest);

@@ -48,7 +48,9 @@ public:
     {
         TimeStamp = DateTime::Now().CalculateLocalTimestampAsString("%Y%m%dt%H%M%Sz").c_str();
 
-        StandardClient = Aws::MakeShared<Aws::S3::S3Client>(ALLOCATION_TAG);
+        ClientConfiguration config;
+        config.region = Aws::Region::US_EAST_1;
+        StandardClient = Aws::MakeShared<Aws::S3::S3Client>(ALLOCATION_TAG, config);
         BucketName = ComputeUniqueBucketName(ENCRYPTED_BUCKET_TEST_NAME).c_str();
         Model::CreateBucketRequest createBucketRequest;
         createBucketRequest.WithBucket(BucketName.c_str())
@@ -86,12 +88,15 @@ TEST_F(LiveClientTest, TestEOMode)
     configuration.SetCryptoMode(CryptoMode::ENCRYPTION_ONLY);
     configuration.SetStorageMethod(StorageMethod::METADATA);
 
+    ClientConfiguration s3ClientConfig;
+    s3ClientConfig.region = Aws::Region::US_EAST_1;
+
     auto key = SymmetricCipher::GenerateKey();
     auto simpleEncryptionMaterials = Aws::MakeShared<Materials::SimpleEncryptionMaterialsWithGCMAAD>(ALLOCATION_TAG, key);
 
     static const char* objectKey = "TestEOKey";
 
-    S3EncryptionClient client(simpleEncryptionMaterials, configuration);
+    S3EncryptionClient client(simpleEncryptionMaterials, configuration, s3ClientConfig);
 
     Model::PutObjectRequest putObjectRequest;
     putObjectRequest.WithBucket(BucketName.c_str())
@@ -164,12 +169,15 @@ TEST_F(LiveClientTest, TestAEMode)
     configuration.SetCryptoMode(CryptoMode::AUTHENTICATED_ENCRYPTION);
     configuration.SetStorageMethod(StorageMethod::METADATA);
 
+    ClientConfiguration s3ClientConfig;
+    s3ClientConfig.region = Aws::Region::US_EAST_1;
+
     auto key = SymmetricCipher::GenerateKey();
     auto simpleEncryptionMaterials = Aws::MakeShared<Materials::SimpleEncryptionMaterialsWithGCMAAD>(ALLOCATION_TAG, key);
 
     static const char* objectKey = "TestAEKey";
 
-    S3EncryptionClient client(simpleEncryptionMaterials, configuration);
+    S3EncryptionClient client(simpleEncryptionMaterials, configuration, s3ClientConfig);
 
     Model::PutObjectRequest putObjectRequest;
     putObjectRequest.WithBucket(BucketName.c_str())
@@ -248,12 +256,15 @@ TEST_F(LiveClientTest, TestAEModeRangeGet)
     configuration.SetCryptoMode(CryptoMode::AUTHENTICATED_ENCRYPTION);
     configuration.SetStorageMethod(StorageMethod::METADATA);
 
+    ClientConfiguration s3ClientConfig;
+    s3ClientConfig.region = Aws::Region::US_EAST_1;
+
     auto key = SymmetricCipher::GenerateKey();
     auto simpleEncryptionMaterials = Aws::MakeShared<Materials::SimpleEncryptionMaterialsWithGCMAAD>(ALLOCATION_TAG, key);
 
     static const char* objectKey = "TestAERangeGetKey";
 
-    S3EncryptionClient client(simpleEncryptionMaterials, configuration);
+    S3EncryptionClient client(simpleEncryptionMaterials, configuration, s3ClientConfig);
 
     Model::PutObjectRequest putObjectRequest;
     putObjectRequest.WithBucket(BucketName.c_str())
@@ -329,10 +340,13 @@ TEST_F(LiveClientTest, TestAEModeRangeGet)
 
 TEST_F(LiveClientTest, TestS3EncryptionError)
 {
+    ClientConfiguration s3ClientConfig;
+    s3ClientConfig.region = Aws::Region::US_EAST_1;
+
     auto kmsMaterials = Aws::MakeShared<Aws::S3Encryption::Materials::KMSWithContextEncryptionMaterials>("s3Encryption", "badKey");
     Aws::S3Encryption::CryptoConfiguration cryptoConfiguration(Aws::S3Encryption::StorageMethod::METADATA, Aws::S3Encryption::CryptoMode::ENCRYPTION_ONLY);
     auto credentials = Aws::MakeShared<Aws::Auth::DefaultAWSCredentialsProviderChain>("s3Encryption");
-    Aws::S3Encryption::S3EncryptionClient encryptionClient(kmsMaterials, cryptoConfiguration, credentials);
+    Aws::S3Encryption::S3EncryptionClient encryptionClient(kmsMaterials, cryptoConfiguration, credentials, s3ClientConfig);
 
     Model::PutObjectRequest putObjectRequest;
     putObjectRequest.WithBucket("badBucket").WithKey("badKey");

@@ -110,6 +110,7 @@ protected:
 
         // Create a client
         ClientConfiguration config;
+        config.region = Aws::Region::US_EAST_1;
         config.scheme = Scheme::HTTPS;
         config.connectTimeoutMs = 30000;
         config.requestTimeoutMs = 30000;
@@ -123,6 +124,7 @@ protected:
         //Create our IAM Role, so that the Lambda tests have the right policies.
         m_role = Aws::MakeShared<Aws::IAM::Model::Role>(ALLOCATION_TAG);
         ClientConfiguration clientConfig;
+        clientConfig.region = Aws::Region::US_EAST_1;
         m_iamClient = Aws::MakeShared<Aws::IAM::IAMClient>(ALLOCATION_TAG, clientConfig);
         auto cognitoClient = Aws::MakeShared<CognitoIdentityClient>(ALLOCATION_TAG);
         m_accessManagementClient = Aws::MakeShared<Aws::AccessManagement::AccessManagementClient>(ALLOCATION_TAG, m_iamClient, cognitoClient);
