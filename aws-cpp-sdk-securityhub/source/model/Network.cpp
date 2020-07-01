@@ -22,6 +22,7 @@ Network::Network() :
     m_direction(NetworkDirection::NOT_SET),
     m_directionHasBeenSet(false),
     m_protocolHasBeenSet(false),
+    m_openPortRangeHasBeenSet(false),
     m_sourceIpV4HasBeenSet(false),
     m_sourceIpV6HasBeenSet(false),
     m_sourcePort(0),
@@ -40,6 +41,7 @@ Network::Network(JsonView jsonValue) :
     m_direction(NetworkDirection::NOT_SET),
     m_directionHasBeenSet(false),
     m_protocolHasBeenSet(false),
+    m_openPortRangeHasBeenSet(false),
     m_sourceIpV4HasBeenSet(false),
     m_sourceIpV6HasBeenSet(false),
     m_sourcePort(0),
@@ -69,6 +71,13 @@ Network& Network::operator =(JsonView jsonValue)
     m_protocol = jsonValue.GetString("Protocol");
 
     m_protocolHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("OpenPortRange"))
+  {
+    m_openPortRange = jsonValue.GetObject("OpenPortRange");
+
+    m_openPortRangeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("SourceIpV4"))
@@ -149,6 +158,12 @@ JsonValue Network::Jsonize() const
   if(m_protocolHasBeenSet)
   {
    payload.WithString("Protocol", m_protocol);
+
+  }
+
+  if(m_openPortRangeHasBeenSet)
+  {
+   payload.WithObject("OpenPortRange", m_openPortRange.Jsonize());
 
   }
 

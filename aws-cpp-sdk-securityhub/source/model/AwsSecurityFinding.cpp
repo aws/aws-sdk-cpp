@@ -42,6 +42,7 @@ AwsSecurityFinding::AwsSecurityFinding() :
     m_userDefinedFieldsHasBeenSet(false),
     m_malwareHasBeenSet(false),
     m_networkHasBeenSet(false),
+    m_networkPathHasBeenSet(false),
     m_processHasBeenSet(false),
     m_threatIntelIndicatorsHasBeenSet(false),
     m_resourcesHasBeenSet(false),
@@ -54,7 +55,8 @@ AwsSecurityFinding::AwsSecurityFinding() :
     m_recordState(RecordState::NOT_SET),
     m_recordStateHasBeenSet(false),
     m_relatedFindingsHasBeenSet(false),
-    m_noteHasBeenSet(false)
+    m_noteHasBeenSet(false),
+    m_vulnerabilitiesHasBeenSet(false)
 {
 }
 
@@ -82,6 +84,7 @@ AwsSecurityFinding::AwsSecurityFinding(JsonView jsonValue) :
     m_userDefinedFieldsHasBeenSet(false),
     m_malwareHasBeenSet(false),
     m_networkHasBeenSet(false),
+    m_networkPathHasBeenSet(false),
     m_processHasBeenSet(false),
     m_threatIntelIndicatorsHasBeenSet(false),
     m_resourcesHasBeenSet(false),
@@ -94,7 +97,8 @@ AwsSecurityFinding::AwsSecurityFinding(JsonView jsonValue) :
     m_recordState(RecordState::NOT_SET),
     m_recordStateHasBeenSet(false),
     m_relatedFindingsHasBeenSet(false),
-    m_noteHasBeenSet(false)
+    m_noteHasBeenSet(false),
+    m_vulnerabilitiesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -260,6 +264,16 @@ AwsSecurityFinding& AwsSecurityFinding::operator =(JsonView jsonValue)
     m_networkHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("NetworkPath"))
+  {
+    Array<JsonView> networkPathJsonList = jsonValue.GetArray("NetworkPath");
+    for(unsigned networkPathIndex = 0; networkPathIndex < networkPathJsonList.GetLength(); ++networkPathIndex)
+    {
+      m_networkPath.push_back(networkPathJsonList[networkPathIndex].AsObject());
+    }
+    m_networkPathHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("Process"))
   {
     m_process = jsonValue.GetObject("Process");
@@ -337,6 +351,16 @@ AwsSecurityFinding& AwsSecurityFinding::operator =(JsonView jsonValue)
     m_note = jsonValue.GetObject("Note");
 
     m_noteHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Vulnerabilities"))
+  {
+    Array<JsonView> vulnerabilitiesJsonList = jsonValue.GetArray("Vulnerabilities");
+    for(unsigned vulnerabilitiesIndex = 0; vulnerabilitiesIndex < vulnerabilitiesJsonList.GetLength(); ++vulnerabilitiesIndex)
+    {
+      m_vulnerabilities.push_back(vulnerabilitiesJsonList[vulnerabilitiesIndex].AsObject());
+    }
+    m_vulnerabilitiesHasBeenSet = true;
   }
 
   return *this;
@@ -492,6 +516,17 @@ JsonValue AwsSecurityFinding::Jsonize() const
 
   }
 
+  if(m_networkPathHasBeenSet)
+  {
+   Array<JsonValue> networkPathJsonList(m_networkPath.size());
+   for(unsigned networkPathIndex = 0; networkPathIndex < networkPathJsonList.GetLength(); ++networkPathIndex)
+   {
+     networkPathJsonList[networkPathIndex].AsObject(m_networkPath[networkPathIndex].Jsonize());
+   }
+   payload.WithArray("NetworkPath", std::move(networkPathJsonList));
+
+  }
+
   if(m_processHasBeenSet)
   {
    payload.WithObject("Process", m_process.Jsonize());
@@ -561,6 +596,17 @@ JsonValue AwsSecurityFinding::Jsonize() const
   if(m_noteHasBeenSet)
   {
    payload.WithObject("Note", m_note.Jsonize());
+
+  }
+
+  if(m_vulnerabilitiesHasBeenSet)
+  {
+   Array<JsonValue> vulnerabilitiesJsonList(m_vulnerabilities.size());
+   for(unsigned vulnerabilitiesIndex = 0; vulnerabilitiesIndex < vulnerabilitiesJsonList.GetLength(); ++vulnerabilitiesIndex)
+   {
+     vulnerabilitiesJsonList[vulnerabilitiesIndex].AsObject(m_vulnerabilities[vulnerabilitiesIndex].Jsonize());
+   }
+   payload.WithArray("Vulnerabilities", std::move(vulnerabilitiesJsonList));
 
   }
 

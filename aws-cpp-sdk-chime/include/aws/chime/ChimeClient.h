@@ -55,6 +55,7 @@
 #include <aws/chime/model/GetUserResult.h>
 #include <aws/chime/model/GetUserSettingsResult.h>
 #include <aws/chime/model/GetVoiceConnectorResult.h>
+#include <aws/chime/model/GetVoiceConnectorEmergencyCallingConfigurationResult.h>
 #include <aws/chime/model/GetVoiceConnectorGroupResult.h>
 #include <aws/chime/model/GetVoiceConnectorLoggingConfigurationResult.h>
 #include <aws/chime/model/GetVoiceConnectorOriginationResult.h>
@@ -82,6 +83,7 @@
 #include <aws/chime/model/LogoutUserResult.h>
 #include <aws/chime/model/PutEventsConfigurationResult.h>
 #include <aws/chime/model/PutRetentionSettingsResult.h>
+#include <aws/chime/model/PutVoiceConnectorEmergencyCallingConfigurationResult.h>
 #include <aws/chime/model/PutVoiceConnectorLoggingConfigurationResult.h>
 #include <aws/chime/model/PutVoiceConnectorOriginationResult.h>
 #include <aws/chime/model/PutVoiceConnectorProxyResult.h>
@@ -175,6 +177,7 @@ namespace Model
         class DeleteRoomRequest;
         class DeleteRoomMembershipRequest;
         class DeleteVoiceConnectorRequest;
+        class DeleteVoiceConnectorEmergencyCallingConfigurationRequest;
         class DeleteVoiceConnectorGroupRequest;
         class DeleteVoiceConnectorOriginationRequest;
         class DeleteVoiceConnectorProxyRequest;
@@ -199,6 +202,7 @@ namespace Model
         class GetUserRequest;
         class GetUserSettingsRequest;
         class GetVoiceConnectorRequest;
+        class GetVoiceConnectorEmergencyCallingConfigurationRequest;
         class GetVoiceConnectorGroupRequest;
         class GetVoiceConnectorLoggingConfigurationRequest;
         class GetVoiceConnectorOriginationRequest;
@@ -226,6 +230,7 @@ namespace Model
         class LogoutUserRequest;
         class PutEventsConfigurationRequest;
         class PutRetentionSettingsRequest;
+        class PutVoiceConnectorEmergencyCallingConfigurationRequest;
         class PutVoiceConnectorLoggingConfigurationRequest;
         class PutVoiceConnectorOriginationRequest;
         class PutVoiceConnectorProxyRequest;
@@ -290,6 +295,7 @@ namespace Model
         typedef Aws::Utils::Outcome<Aws::NoResult, ChimeError> DeleteRoomOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, ChimeError> DeleteRoomMembershipOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, ChimeError> DeleteVoiceConnectorOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, ChimeError> DeleteVoiceConnectorEmergencyCallingConfigurationOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, ChimeError> DeleteVoiceConnectorGroupOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, ChimeError> DeleteVoiceConnectorOriginationOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, ChimeError> DeleteVoiceConnectorProxyOutcome;
@@ -316,6 +322,7 @@ namespace Model
         typedef Aws::Utils::Outcome<GetUserResult, ChimeError> GetUserOutcome;
         typedef Aws::Utils::Outcome<GetUserSettingsResult, ChimeError> GetUserSettingsOutcome;
         typedef Aws::Utils::Outcome<GetVoiceConnectorResult, ChimeError> GetVoiceConnectorOutcome;
+        typedef Aws::Utils::Outcome<GetVoiceConnectorEmergencyCallingConfigurationResult, ChimeError> GetVoiceConnectorEmergencyCallingConfigurationOutcome;
         typedef Aws::Utils::Outcome<GetVoiceConnectorGroupResult, ChimeError> GetVoiceConnectorGroupOutcome;
         typedef Aws::Utils::Outcome<GetVoiceConnectorLoggingConfigurationResult, ChimeError> GetVoiceConnectorLoggingConfigurationOutcome;
         typedef Aws::Utils::Outcome<GetVoiceConnectorOriginationResult, ChimeError> GetVoiceConnectorOriginationOutcome;
@@ -343,6 +350,7 @@ namespace Model
         typedef Aws::Utils::Outcome<LogoutUserResult, ChimeError> LogoutUserOutcome;
         typedef Aws::Utils::Outcome<PutEventsConfigurationResult, ChimeError> PutEventsConfigurationOutcome;
         typedef Aws::Utils::Outcome<PutRetentionSettingsResult, ChimeError> PutRetentionSettingsOutcome;
+        typedef Aws::Utils::Outcome<PutVoiceConnectorEmergencyCallingConfigurationResult, ChimeError> PutVoiceConnectorEmergencyCallingConfigurationOutcome;
         typedef Aws::Utils::Outcome<PutVoiceConnectorLoggingConfigurationResult, ChimeError> PutVoiceConnectorLoggingConfigurationOutcome;
         typedef Aws::Utils::Outcome<PutVoiceConnectorOriginationResult, ChimeError> PutVoiceConnectorOriginationOutcome;
         typedef Aws::Utils::Outcome<PutVoiceConnectorProxyResult, ChimeError> PutVoiceConnectorProxyOutcome;
@@ -407,6 +415,7 @@ namespace Model
         typedef std::future<DeleteRoomOutcome> DeleteRoomOutcomeCallable;
         typedef std::future<DeleteRoomMembershipOutcome> DeleteRoomMembershipOutcomeCallable;
         typedef std::future<DeleteVoiceConnectorOutcome> DeleteVoiceConnectorOutcomeCallable;
+        typedef std::future<DeleteVoiceConnectorEmergencyCallingConfigurationOutcome> DeleteVoiceConnectorEmergencyCallingConfigurationOutcomeCallable;
         typedef std::future<DeleteVoiceConnectorGroupOutcome> DeleteVoiceConnectorGroupOutcomeCallable;
         typedef std::future<DeleteVoiceConnectorOriginationOutcome> DeleteVoiceConnectorOriginationOutcomeCallable;
         typedef std::future<DeleteVoiceConnectorProxyOutcome> DeleteVoiceConnectorProxyOutcomeCallable;
@@ -433,6 +442,7 @@ namespace Model
         typedef std::future<GetUserOutcome> GetUserOutcomeCallable;
         typedef std::future<GetUserSettingsOutcome> GetUserSettingsOutcomeCallable;
         typedef std::future<GetVoiceConnectorOutcome> GetVoiceConnectorOutcomeCallable;
+        typedef std::future<GetVoiceConnectorEmergencyCallingConfigurationOutcome> GetVoiceConnectorEmergencyCallingConfigurationOutcomeCallable;
         typedef std::future<GetVoiceConnectorGroupOutcome> GetVoiceConnectorGroupOutcomeCallable;
         typedef std::future<GetVoiceConnectorLoggingConfigurationOutcome> GetVoiceConnectorLoggingConfigurationOutcomeCallable;
         typedef std::future<GetVoiceConnectorOriginationOutcome> GetVoiceConnectorOriginationOutcomeCallable;
@@ -460,6 +470,7 @@ namespace Model
         typedef std::future<LogoutUserOutcome> LogoutUserOutcomeCallable;
         typedef std::future<PutEventsConfigurationOutcome> PutEventsConfigurationOutcomeCallable;
         typedef std::future<PutRetentionSettingsOutcome> PutRetentionSettingsOutcomeCallable;
+        typedef std::future<PutVoiceConnectorEmergencyCallingConfigurationOutcome> PutVoiceConnectorEmergencyCallingConfigurationOutcomeCallable;
         typedef std::future<PutVoiceConnectorLoggingConfigurationOutcome> PutVoiceConnectorLoggingConfigurationOutcomeCallable;
         typedef std::future<PutVoiceConnectorOriginationOutcome> PutVoiceConnectorOriginationOutcomeCallable;
         typedef std::future<PutVoiceConnectorProxyOutcome> PutVoiceConnectorProxyOutcomeCallable;
@@ -527,6 +538,7 @@ namespace Model
     typedef std::function<void(const ChimeClient*, const Model::DeleteRoomRequest&, const Model::DeleteRoomOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteRoomResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::DeleteRoomMembershipRequest&, const Model::DeleteRoomMembershipOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteRoomMembershipResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::DeleteVoiceConnectorRequest&, const Model::DeleteVoiceConnectorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteVoiceConnectorResponseReceivedHandler;
+    typedef std::function<void(const ChimeClient*, const Model::DeleteVoiceConnectorEmergencyCallingConfigurationRequest&, const Model::DeleteVoiceConnectorEmergencyCallingConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteVoiceConnectorEmergencyCallingConfigurationResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::DeleteVoiceConnectorGroupRequest&, const Model::DeleteVoiceConnectorGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteVoiceConnectorGroupResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::DeleteVoiceConnectorOriginationRequest&, const Model::DeleteVoiceConnectorOriginationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteVoiceConnectorOriginationResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::DeleteVoiceConnectorProxyRequest&, const Model::DeleteVoiceConnectorProxyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteVoiceConnectorProxyResponseReceivedHandler;
@@ -553,6 +565,7 @@ namespace Model
     typedef std::function<void(const ChimeClient*, const Model::GetUserRequest&, const Model::GetUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetUserResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::GetUserSettingsRequest&, const Model::GetUserSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetUserSettingsResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::GetVoiceConnectorRequest&, const Model::GetVoiceConnectorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetVoiceConnectorResponseReceivedHandler;
+    typedef std::function<void(const ChimeClient*, const Model::GetVoiceConnectorEmergencyCallingConfigurationRequest&, const Model::GetVoiceConnectorEmergencyCallingConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetVoiceConnectorEmergencyCallingConfigurationResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::GetVoiceConnectorGroupRequest&, const Model::GetVoiceConnectorGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetVoiceConnectorGroupResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::GetVoiceConnectorLoggingConfigurationRequest&, const Model::GetVoiceConnectorLoggingConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetVoiceConnectorLoggingConfigurationResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::GetVoiceConnectorOriginationRequest&, const Model::GetVoiceConnectorOriginationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetVoiceConnectorOriginationResponseReceivedHandler;
@@ -580,6 +593,7 @@ namespace Model
     typedef std::function<void(const ChimeClient*, const Model::LogoutUserRequest&, const Model::LogoutUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > LogoutUserResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::PutEventsConfigurationRequest&, const Model::PutEventsConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutEventsConfigurationResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::PutRetentionSettingsRequest&, const Model::PutRetentionSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutRetentionSettingsResponseReceivedHandler;
+    typedef std::function<void(const ChimeClient*, const Model::PutVoiceConnectorEmergencyCallingConfigurationRequest&, const Model::PutVoiceConnectorEmergencyCallingConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutVoiceConnectorEmergencyCallingConfigurationResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::PutVoiceConnectorLoggingConfigurationRequest&, const Model::PutVoiceConnectorLoggingConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutVoiceConnectorLoggingConfigurationResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::PutVoiceConnectorOriginationRequest&, const Model::PutVoiceConnectorOriginationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutVoiceConnectorOriginationResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::PutVoiceConnectorProxyRequest&, const Model::PutVoiceConnectorProxyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutVoiceConnectorProxyResponseReceivedHandler;
@@ -1837,6 +1851,34 @@ namespace Model
         virtual void DeleteVoiceConnectorAsync(const Model::DeleteVoiceConnectorRequest& request, const DeleteVoiceConnectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Deletes the emergency calling configuration details from the specified Amazon
+         * Chime Voice Connector.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteVoiceConnectorEmergencyCallingConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteVoiceConnectorEmergencyCallingConfigurationOutcome DeleteVoiceConnectorEmergencyCallingConfiguration(const Model::DeleteVoiceConnectorEmergencyCallingConfigurationRequest& request) const;
+
+        /**
+         * <p>Deletes the emergency calling configuration details from the specified Amazon
+         * Chime Voice Connector.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteVoiceConnectorEmergencyCallingConfiguration">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteVoiceConnectorEmergencyCallingConfigurationOutcomeCallable DeleteVoiceConnectorEmergencyCallingConfigurationCallable(const Model::DeleteVoiceConnectorEmergencyCallingConfigurationRequest& request) const;
+
+        /**
+         * <p>Deletes the emergency calling configuration details from the specified Amazon
+         * Chime Voice Connector.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteVoiceConnectorEmergencyCallingConfiguration">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteVoiceConnectorEmergencyCallingConfigurationAsync(const Model::DeleteVoiceConnectorEmergencyCallingConfigurationRequest& request, const DeleteVoiceConnectorEmergencyCallingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Deletes the specified Amazon Chime Voice Connector group. Any
          * <code>VoiceConnectorItems</code> and phone numbers associated with the group
          * must be removed before it can be deleted.</p><p><h3>See Also:</h3>   <a
@@ -1869,7 +1911,9 @@ namespace Model
 
         /**
          * <p>Deletes the origination settings for the specified Amazon Chime Voice
-         * Connector.</p><p><h3>See Also:</h3>   <a
+         * Connector.</p> <note> <p>If emergency calling is configured for the Amazon Chime
+         * Voice Connector, it must be deleted prior to deleting the origination
+         * settings.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteVoiceConnectorOrigination">AWS
          * API Reference</a></p>
          */
@@ -1877,7 +1921,9 @@ namespace Model
 
         /**
          * <p>Deletes the origination settings for the specified Amazon Chime Voice
-         * Connector.</p><p><h3>See Also:</h3>   <a
+         * Connector.</p> <note> <p>If emergency calling is configured for the Amazon Chime
+         * Voice Connector, it must be deleted prior to deleting the origination
+         * settings.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteVoiceConnectorOrigination">AWS
          * API Reference</a></p>
          *
@@ -1887,7 +1933,9 @@ namespace Model
 
         /**
          * <p>Deletes the origination settings for the specified Amazon Chime Voice
-         * Connector.</p><p><h3>See Also:</h3>   <a
+         * Connector.</p> <note> <p>If emergency calling is configured for the Amazon Chime
+         * Voice Connector, it must be deleted prior to deleting the origination
+         * settings.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteVoiceConnectorOrigination">AWS
          * API Reference</a></p>
          *
@@ -1953,7 +2001,9 @@ namespace Model
 
         /**
          * <p>Deletes the termination settings for the specified Amazon Chime Voice
-         * Connector.</p><p><h3>See Also:</h3>   <a
+         * Connector.</p> <note> <p>If emergency calling is configured for the Amazon Chime
+         * Voice Connector, it must be deleted prior to deleting the termination
+         * settings.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteVoiceConnectorTermination">AWS
          * API Reference</a></p>
          */
@@ -1961,7 +2011,9 @@ namespace Model
 
         /**
          * <p>Deletes the termination settings for the specified Amazon Chime Voice
-         * Connector.</p><p><h3>See Also:</h3>   <a
+         * Connector.</p> <note> <p>If emergency calling is configured for the Amazon Chime
+         * Voice Connector, it must be deleted prior to deleting the termination
+         * settings.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteVoiceConnectorTermination">AWS
          * API Reference</a></p>
          *
@@ -1971,7 +2023,9 @@ namespace Model
 
         /**
          * <p>Deletes the termination settings for the specified Amazon Chime Voice
-         * Connector.</p><p><h3>See Also:</h3>   <a
+         * Connector.</p> <note> <p>If emergency calling is configured for the Amazon Chime
+         * Voice Connector, it must be deleted prior to deleting the termination
+         * settings.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteVoiceConnectorTermination">AWS
          * API Reference</a></p>
          *
@@ -2618,6 +2672,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetVoiceConnectorAsync(const Model::GetVoiceConnectorRequest& request, const GetVoiceConnectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Gets the emergency calling configuration details for the specified Amazon
+         * Chime Voice Connector.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetVoiceConnectorEmergencyCallingConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetVoiceConnectorEmergencyCallingConfigurationOutcome GetVoiceConnectorEmergencyCallingConfiguration(const Model::GetVoiceConnectorEmergencyCallingConfigurationRequest& request) const;
+
+        /**
+         * <p>Gets the emergency calling configuration details for the specified Amazon
+         * Chime Voice Connector.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetVoiceConnectorEmergencyCallingConfiguration">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetVoiceConnectorEmergencyCallingConfigurationOutcomeCallable GetVoiceConnectorEmergencyCallingConfigurationCallable(const Model::GetVoiceConnectorEmergencyCallingConfigurationRequest& request) const;
+
+        /**
+         * <p>Gets the emergency calling configuration details for the specified Amazon
+         * Chime Voice Connector.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetVoiceConnectorEmergencyCallingConfiguration">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetVoiceConnectorEmergencyCallingConfigurationAsync(const Model::GetVoiceConnectorEmergencyCallingConfigurationRequest& request, const GetVoiceConnectorEmergencyCallingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves details for the specified Amazon Chime Voice Connector group, such
@@ -3463,6 +3545,43 @@ namespace Model
         virtual void PutRetentionSettingsAsync(const Model::PutRetentionSettingsRequest& request, const PutRetentionSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Puts emergency calling configuration details to the specified Amazon Chime
+         * Voice Connector, such as emergency phone numbers and calling countries.
+         * Origination and termination settings must be enabled for the Amazon Chime Voice
+         * Connector before emergency calling can be configured.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/PutVoiceConnectorEmergencyCallingConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutVoiceConnectorEmergencyCallingConfigurationOutcome PutVoiceConnectorEmergencyCallingConfiguration(const Model::PutVoiceConnectorEmergencyCallingConfigurationRequest& request) const;
+
+        /**
+         * <p>Puts emergency calling configuration details to the specified Amazon Chime
+         * Voice Connector, such as emergency phone numbers and calling countries.
+         * Origination and termination settings must be enabled for the Amazon Chime Voice
+         * Connector before emergency calling can be configured.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/PutVoiceConnectorEmergencyCallingConfiguration">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::PutVoiceConnectorEmergencyCallingConfigurationOutcomeCallable PutVoiceConnectorEmergencyCallingConfigurationCallable(const Model::PutVoiceConnectorEmergencyCallingConfigurationRequest& request) const;
+
+        /**
+         * <p>Puts emergency calling configuration details to the specified Amazon Chime
+         * Voice Connector, such as emergency phone numbers and calling countries.
+         * Origination and termination settings must be enabled for the Amazon Chime Voice
+         * Connector before emergency calling can be configured.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/PutVoiceConnectorEmergencyCallingConfiguration">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void PutVoiceConnectorEmergencyCallingConfigurationAsync(const Model::PutVoiceConnectorEmergencyCallingConfigurationRequest& request, const PutVoiceConnectorEmergencyCallingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Adds a logging configuration for the specified Amazon Chime Voice Connector.
          * The logging configuration specifies whether SIP message logs are enabled for
          * sending to Amazon CloudWatch Logs.</p><p><h3>See Also:</h3>   <a
@@ -3494,16 +3613,20 @@ namespace Model
         virtual void PutVoiceConnectorLoggingConfigurationAsync(const Model::PutVoiceConnectorLoggingConfigurationRequest& request, const PutVoiceConnectorLoggingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Adds origination settings for the specified Amazon Chime Voice
-         * Connector.</p><p><h3>See Also:</h3>   <a
+         * <p>Adds origination settings for the specified Amazon Chime Voice Connector.</p>
+         * <note> <p>If emergency calling is configured for the Amazon Chime Voice
+         * Connector, it must be deleted prior to turning off origination settings.</p>
+         * </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/PutVoiceConnectorOrigination">AWS
          * API Reference</a></p>
          */
         virtual Model::PutVoiceConnectorOriginationOutcome PutVoiceConnectorOrigination(const Model::PutVoiceConnectorOriginationRequest& request) const;
 
         /**
-         * <p>Adds origination settings for the specified Amazon Chime Voice
-         * Connector.</p><p><h3>See Also:</h3>   <a
+         * <p>Adds origination settings for the specified Amazon Chime Voice Connector.</p>
+         * <note> <p>If emergency calling is configured for the Amazon Chime Voice
+         * Connector, it must be deleted prior to turning off origination settings.</p>
+         * </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/PutVoiceConnectorOrigination">AWS
          * API Reference</a></p>
          *
@@ -3512,8 +3635,10 @@ namespace Model
         virtual Model::PutVoiceConnectorOriginationOutcomeCallable PutVoiceConnectorOriginationCallable(const Model::PutVoiceConnectorOriginationRequest& request) const;
 
         /**
-         * <p>Adds origination settings for the specified Amazon Chime Voice
-         * Connector.</p><p><h3>See Also:</h3>   <a
+         * <p>Adds origination settings for the specified Amazon Chime Voice Connector.</p>
+         * <note> <p>If emergency calling is configured for the Amazon Chime Voice
+         * Connector, it must be deleted prior to turning off origination settings.</p>
+         * </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/PutVoiceConnectorOrigination">AWS
          * API Reference</a></p>
          *
@@ -3584,16 +3709,20 @@ namespace Model
         virtual void PutVoiceConnectorStreamingConfigurationAsync(const Model::PutVoiceConnectorStreamingConfigurationRequest& request, const PutVoiceConnectorStreamingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Adds termination settings for the specified Amazon Chime Voice
-         * Connector.</p><p><h3>See Also:</h3>   <a
+         * <p>Adds termination settings for the specified Amazon Chime Voice Connector.</p>
+         * <note> <p>If emergency calling is configured for the Amazon Chime Voice
+         * Connector, it must be deleted prior to turning off termination settings.</p>
+         * </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/PutVoiceConnectorTermination">AWS
          * API Reference</a></p>
          */
         virtual Model::PutVoiceConnectorTerminationOutcome PutVoiceConnectorTermination(const Model::PutVoiceConnectorTerminationRequest& request) const;
 
         /**
-         * <p>Adds termination settings for the specified Amazon Chime Voice
-         * Connector.</p><p><h3>See Also:</h3>   <a
+         * <p>Adds termination settings for the specified Amazon Chime Voice Connector.</p>
+         * <note> <p>If emergency calling is configured for the Amazon Chime Voice
+         * Connector, it must be deleted prior to turning off termination settings.</p>
+         * </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/PutVoiceConnectorTermination">AWS
          * API Reference</a></p>
          *
@@ -3602,8 +3731,10 @@ namespace Model
         virtual Model::PutVoiceConnectorTerminationOutcomeCallable PutVoiceConnectorTerminationCallable(const Model::PutVoiceConnectorTerminationRequest& request) const;
 
         /**
-         * <p>Adds termination settings for the specified Amazon Chime Voice
-         * Connector.</p><p><h3>See Also:</h3>   <a
+         * <p>Adds termination settings for the specified Amazon Chime Voice Connector.</p>
+         * <note> <p>If emergency calling is configured for the Amazon Chime Voice
+         * Connector, it must be deleted prior to turning off termination settings.</p>
+         * </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/PutVoiceConnectorTermination">AWS
          * API Reference</a></p>
          *
@@ -4423,6 +4554,7 @@ namespace Model
         void DeleteRoomAsyncHelper(const Model::DeleteRoomRequest& request, const DeleteRoomResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteRoomMembershipAsyncHelper(const Model::DeleteRoomMembershipRequest& request, const DeleteRoomMembershipResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteVoiceConnectorAsyncHelper(const Model::DeleteVoiceConnectorRequest& request, const DeleteVoiceConnectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteVoiceConnectorEmergencyCallingConfigurationAsyncHelper(const Model::DeleteVoiceConnectorEmergencyCallingConfigurationRequest& request, const DeleteVoiceConnectorEmergencyCallingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteVoiceConnectorGroupAsyncHelper(const Model::DeleteVoiceConnectorGroupRequest& request, const DeleteVoiceConnectorGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteVoiceConnectorOriginationAsyncHelper(const Model::DeleteVoiceConnectorOriginationRequest& request, const DeleteVoiceConnectorOriginationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteVoiceConnectorProxyAsyncHelper(const Model::DeleteVoiceConnectorProxyRequest& request, const DeleteVoiceConnectorProxyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -4449,6 +4581,7 @@ namespace Model
         void GetUserAsyncHelper(const Model::GetUserRequest& request, const GetUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetUserSettingsAsyncHelper(const Model::GetUserSettingsRequest& request, const GetUserSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetVoiceConnectorAsyncHelper(const Model::GetVoiceConnectorRequest& request, const GetVoiceConnectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetVoiceConnectorEmergencyCallingConfigurationAsyncHelper(const Model::GetVoiceConnectorEmergencyCallingConfigurationRequest& request, const GetVoiceConnectorEmergencyCallingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetVoiceConnectorGroupAsyncHelper(const Model::GetVoiceConnectorGroupRequest& request, const GetVoiceConnectorGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetVoiceConnectorLoggingConfigurationAsyncHelper(const Model::GetVoiceConnectorLoggingConfigurationRequest& request, const GetVoiceConnectorLoggingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetVoiceConnectorOriginationAsyncHelper(const Model::GetVoiceConnectorOriginationRequest& request, const GetVoiceConnectorOriginationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -4476,6 +4609,7 @@ namespace Model
         void LogoutUserAsyncHelper(const Model::LogoutUserRequest& request, const LogoutUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutEventsConfigurationAsyncHelper(const Model::PutEventsConfigurationRequest& request, const PutEventsConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutRetentionSettingsAsyncHelper(const Model::PutRetentionSettingsRequest& request, const PutRetentionSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void PutVoiceConnectorEmergencyCallingConfigurationAsyncHelper(const Model::PutVoiceConnectorEmergencyCallingConfigurationRequest& request, const PutVoiceConnectorEmergencyCallingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutVoiceConnectorLoggingConfigurationAsyncHelper(const Model::PutVoiceConnectorLoggingConfigurationRequest& request, const PutVoiceConnectorLoggingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutVoiceConnectorOriginationAsyncHelper(const Model::PutVoiceConnectorOriginationRequest& request, const PutVoiceConnectorOriginationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutVoiceConnectorProxyAsyncHelper(const Model::PutVoiceConnectorProxyRequest& request, const PutVoiceConnectorProxyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

@@ -189,6 +189,47 @@ namespace Model
 
 
     /**
+     * <p> The KMS key identifier used to encrypt the distributed image. </p>
+     */
+    inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
+
+    /**
+     * <p> The KMS key identifier used to encrypt the distributed image. </p>
+     */
+    inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
+
+    /**
+     * <p> The KMS key identifier used to encrypt the distributed image. </p>
+     */
+    inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
+
+    /**
+     * <p> The KMS key identifier used to encrypt the distributed image. </p>
+     */
+    inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
+
+    /**
+     * <p> The KMS key identifier used to encrypt the distributed image. </p>
+     */
+    inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
+
+    /**
+     * <p> The KMS key identifier used to encrypt the distributed image. </p>
+     */
+    inline AmiDistributionConfiguration& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
+
+    /**
+     * <p> The KMS key identifier used to encrypt the distributed image. </p>
+     */
+    inline AmiDistributionConfiguration& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
+
+    /**
+     * <p> The KMS key identifier used to encrypt the distributed image. </p>
+     */
+    inline AmiDistributionConfiguration& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
+
+
+    /**
      * <p> Launch permissions can be used to configure which AWS accounts can use the
      * AMI to launch instances. </p>
      */
@@ -234,6 +275,9 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_amiTags;
     bool m_amiTagsHasBeenSet;
+
+    Aws::String m_kmsKeyId;
+    bool m_kmsKeyIdHasBeenSet;
 
     LaunchPermissionConfiguration m_launchPermission;
     bool m_launchPermissionHasBeenSet;

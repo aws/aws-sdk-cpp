@@ -19,11 +19,14 @@ namespace Model
 {
 
 ResourceDetails::ResourceDetails() : 
+    m_awsAutoScalingAutoScalingGroupHasBeenSet(false),
     m_awsCodeBuildProjectHasBeenSet(false),
     m_awsCloudFrontDistributionHasBeenSet(false),
     m_awsEc2InstanceHasBeenSet(false),
     m_awsEc2NetworkInterfaceHasBeenSet(false),
     m_awsEc2SecurityGroupHasBeenSet(false),
+    m_awsEc2VolumeHasBeenSet(false),
+    m_awsEc2VpcHasBeenSet(false),
     m_awsElbv2LoadBalancerHasBeenSet(false),
     m_awsElasticsearchDomainHasBeenSet(false),
     m_awsS3BucketHasBeenSet(false),
@@ -43,11 +46,14 @@ ResourceDetails::ResourceDetails() :
 }
 
 ResourceDetails::ResourceDetails(JsonView jsonValue) : 
+    m_awsAutoScalingAutoScalingGroupHasBeenSet(false),
     m_awsCodeBuildProjectHasBeenSet(false),
     m_awsCloudFrontDistributionHasBeenSet(false),
     m_awsEc2InstanceHasBeenSet(false),
     m_awsEc2NetworkInterfaceHasBeenSet(false),
     m_awsEc2SecurityGroupHasBeenSet(false),
+    m_awsEc2VolumeHasBeenSet(false),
+    m_awsEc2VpcHasBeenSet(false),
     m_awsElbv2LoadBalancerHasBeenSet(false),
     m_awsElasticsearchDomainHasBeenSet(false),
     m_awsS3BucketHasBeenSet(false),
@@ -69,6 +75,13 @@ ResourceDetails::ResourceDetails(JsonView jsonValue) :
 
 ResourceDetails& ResourceDetails::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("AwsAutoScalingAutoScalingGroup"))
+  {
+    m_awsAutoScalingAutoScalingGroup = jsonValue.GetObject("AwsAutoScalingAutoScalingGroup");
+
+    m_awsAutoScalingAutoScalingGroupHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("AwsCodeBuildProject"))
   {
     m_awsCodeBuildProject = jsonValue.GetObject("AwsCodeBuildProject");
@@ -102,6 +115,20 @@ ResourceDetails& ResourceDetails::operator =(JsonView jsonValue)
     m_awsEc2SecurityGroup = jsonValue.GetObject("AwsEc2SecurityGroup");
 
     m_awsEc2SecurityGroupHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AwsEc2Volume"))
+  {
+    m_awsEc2Volume = jsonValue.GetObject("AwsEc2Volume");
+
+    m_awsEc2VolumeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AwsEc2Vpc"))
+  {
+    m_awsEc2Vpc = jsonValue.GetObject("AwsEc2Vpc");
+
+    m_awsEc2VpcHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("AwsElbv2LoadBalancer"))
@@ -219,6 +246,12 @@ JsonValue ResourceDetails::Jsonize() const
 {
   JsonValue payload;
 
+  if(m_awsAutoScalingAutoScalingGroupHasBeenSet)
+  {
+   payload.WithObject("AwsAutoScalingAutoScalingGroup", m_awsAutoScalingAutoScalingGroup.Jsonize());
+
+  }
+
   if(m_awsCodeBuildProjectHasBeenSet)
   {
    payload.WithObject("AwsCodeBuildProject", m_awsCodeBuildProject.Jsonize());
@@ -246,6 +279,18 @@ JsonValue ResourceDetails::Jsonize() const
   if(m_awsEc2SecurityGroupHasBeenSet)
   {
    payload.WithObject("AwsEc2SecurityGroup", m_awsEc2SecurityGroup.Jsonize());
+
+  }
+
+  if(m_awsEc2VolumeHasBeenSet)
+  {
+   payload.WithObject("AwsEc2Volume", m_awsEc2Volume.Jsonize());
+
+  }
+
+  if(m_awsEc2VpcHasBeenSet)
+  {
+   payload.WithObject("AwsEc2Vpc", m_awsEc2Vpc.Jsonize());
 
   }
 

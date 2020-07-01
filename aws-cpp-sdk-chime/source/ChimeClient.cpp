@@ -52,6 +52,7 @@
 #include <aws/chime/model/DeleteRoomRequest.h>
 #include <aws/chime/model/DeleteRoomMembershipRequest.h>
 #include <aws/chime/model/DeleteVoiceConnectorRequest.h>
+#include <aws/chime/model/DeleteVoiceConnectorEmergencyCallingConfigurationRequest.h>
 #include <aws/chime/model/DeleteVoiceConnectorGroupRequest.h>
 #include <aws/chime/model/DeleteVoiceConnectorOriginationRequest.h>
 #include <aws/chime/model/DeleteVoiceConnectorProxyRequest.h>
@@ -76,6 +77,7 @@
 #include <aws/chime/model/GetUserRequest.h>
 #include <aws/chime/model/GetUserSettingsRequest.h>
 #include <aws/chime/model/GetVoiceConnectorRequest.h>
+#include <aws/chime/model/GetVoiceConnectorEmergencyCallingConfigurationRequest.h>
 #include <aws/chime/model/GetVoiceConnectorGroupRequest.h>
 #include <aws/chime/model/GetVoiceConnectorLoggingConfigurationRequest.h>
 #include <aws/chime/model/GetVoiceConnectorOriginationRequest.h>
@@ -103,6 +105,7 @@
 #include <aws/chime/model/LogoutUserRequest.h>
 #include <aws/chime/model/PutEventsConfigurationRequest.h>
 #include <aws/chime/model/PutRetentionSettingsRequest.h>
+#include <aws/chime/model/PutVoiceConnectorEmergencyCallingConfigurationRequest.h>
 #include <aws/chime/model/PutVoiceConnectorLoggingConfigurationRequest.h>
 #include <aws/chime/model/PutVoiceConnectorOriginationRequest.h>
 #include <aws/chime/model/PutVoiceConnectorProxyRequest.h>
@@ -1314,6 +1317,40 @@ void ChimeClient::DeleteVoiceConnectorAsyncHelper(const DeleteVoiceConnectorRequ
   handler(this, request, DeleteVoiceConnector(request), context);
 }
 
+DeleteVoiceConnectorEmergencyCallingConfigurationOutcome ChimeClient::DeleteVoiceConnectorEmergencyCallingConfiguration(const DeleteVoiceConnectorEmergencyCallingConfigurationRequest& request) const
+{
+  if (!request.VoiceConnectorIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteVoiceConnectorEmergencyCallingConfiguration", "Required field: VoiceConnectorId, is not set");
+    return DeleteVoiceConnectorEmergencyCallingConfigurationOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VoiceConnectorId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/voice-connectors/";
+  ss << request.GetVoiceConnectorId();
+  ss << "/emergency-calling-configuration";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DeleteVoiceConnectorEmergencyCallingConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteVoiceConnectorEmergencyCallingConfigurationOutcomeCallable ChimeClient::DeleteVoiceConnectorEmergencyCallingConfigurationCallable(const DeleteVoiceConnectorEmergencyCallingConfigurationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteVoiceConnectorEmergencyCallingConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteVoiceConnectorEmergencyCallingConfiguration(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ChimeClient::DeleteVoiceConnectorEmergencyCallingConfigurationAsync(const DeleteVoiceConnectorEmergencyCallingConfigurationRequest& request, const DeleteVoiceConnectorEmergencyCallingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteVoiceConnectorEmergencyCallingConfigurationAsyncHelper( request, handler, context ); } );
+}
+
+void ChimeClient::DeleteVoiceConnectorEmergencyCallingConfigurationAsyncHelper(const DeleteVoiceConnectorEmergencyCallingConfigurationRequest& request, const DeleteVoiceConnectorEmergencyCallingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteVoiceConnectorEmergencyCallingConfiguration(request), context);
+}
+
 DeleteVoiceConnectorGroupOutcome ChimeClient::DeleteVoiceConnectorGroup(const DeleteVoiceConnectorGroupRequest& request) const
 {
   if (!request.VoiceConnectorGroupIdHasBeenSet())
@@ -2231,6 +2268,40 @@ void ChimeClient::GetVoiceConnectorAsyncHelper(const GetVoiceConnectorRequest& r
   handler(this, request, GetVoiceConnector(request), context);
 }
 
+GetVoiceConnectorEmergencyCallingConfigurationOutcome ChimeClient::GetVoiceConnectorEmergencyCallingConfiguration(const GetVoiceConnectorEmergencyCallingConfigurationRequest& request) const
+{
+  if (!request.VoiceConnectorIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetVoiceConnectorEmergencyCallingConfiguration", "Required field: VoiceConnectorId, is not set");
+    return GetVoiceConnectorEmergencyCallingConfigurationOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VoiceConnectorId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/voice-connectors/";
+  ss << request.GetVoiceConnectorId();
+  ss << "/emergency-calling-configuration";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return GetVoiceConnectorEmergencyCallingConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetVoiceConnectorEmergencyCallingConfigurationOutcomeCallable ChimeClient::GetVoiceConnectorEmergencyCallingConfigurationCallable(const GetVoiceConnectorEmergencyCallingConfigurationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetVoiceConnectorEmergencyCallingConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetVoiceConnectorEmergencyCallingConfiguration(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ChimeClient::GetVoiceConnectorEmergencyCallingConfigurationAsync(const GetVoiceConnectorEmergencyCallingConfigurationRequest& request, const GetVoiceConnectorEmergencyCallingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetVoiceConnectorEmergencyCallingConfigurationAsyncHelper( request, handler, context ); } );
+}
+
+void ChimeClient::GetVoiceConnectorEmergencyCallingConfigurationAsyncHelper(const GetVoiceConnectorEmergencyCallingConfigurationRequest& request, const GetVoiceConnectorEmergencyCallingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetVoiceConnectorEmergencyCallingConfiguration(request), context);
+}
+
 GetVoiceConnectorGroupOutcome ChimeClient::GetVoiceConnectorGroup(const GetVoiceConnectorGroupRequest& request) const
 {
   if (!request.VoiceConnectorGroupIdHasBeenSet())
@@ -3133,6 +3204,40 @@ void ChimeClient::PutRetentionSettingsAsync(const PutRetentionSettingsRequest& r
 void ChimeClient::PutRetentionSettingsAsyncHelper(const PutRetentionSettingsRequest& request, const PutRetentionSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, PutRetentionSettings(request), context);
+}
+
+PutVoiceConnectorEmergencyCallingConfigurationOutcome ChimeClient::PutVoiceConnectorEmergencyCallingConfiguration(const PutVoiceConnectorEmergencyCallingConfigurationRequest& request) const
+{
+  if (!request.VoiceConnectorIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("PutVoiceConnectorEmergencyCallingConfiguration", "Required field: VoiceConnectorId, is not set");
+    return PutVoiceConnectorEmergencyCallingConfigurationOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VoiceConnectorId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/voice-connectors/";
+  ss << request.GetVoiceConnectorId();
+  ss << "/emergency-calling-configuration";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return PutVoiceConnectorEmergencyCallingConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+}
+
+PutVoiceConnectorEmergencyCallingConfigurationOutcomeCallable ChimeClient::PutVoiceConnectorEmergencyCallingConfigurationCallable(const PutVoiceConnectorEmergencyCallingConfigurationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< PutVoiceConnectorEmergencyCallingConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutVoiceConnectorEmergencyCallingConfiguration(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ChimeClient::PutVoiceConnectorEmergencyCallingConfigurationAsync(const PutVoiceConnectorEmergencyCallingConfigurationRequest& request, const PutVoiceConnectorEmergencyCallingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->PutVoiceConnectorEmergencyCallingConfigurationAsyncHelper( request, handler, context ); } );
+}
+
+void ChimeClient::PutVoiceConnectorEmergencyCallingConfigurationAsyncHelper(const PutVoiceConnectorEmergencyCallingConfigurationRequest& request, const PutVoiceConnectorEmergencyCallingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, PutVoiceConnectorEmergencyCallingConfiguration(request), context);
 }
 
 PutVoiceConnectorLoggingConfigurationOutcome ChimeClient::PutVoiceConnectorLoggingConfiguration(const PutVoiceConnectorLoggingConfigurationRequest& request) const

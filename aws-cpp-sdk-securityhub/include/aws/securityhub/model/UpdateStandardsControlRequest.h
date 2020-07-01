@@ -107,49 +107,49 @@ namespace Model
 
     /**
      * <p>A description of the reason why you are disabling a security standard
-     * control.</p>
+     * control. If you are disabling a control, then this is required.</p>
      */
     inline const Aws::String& GetDisabledReason() const{ return m_disabledReason; }
 
     /**
      * <p>A description of the reason why you are disabling a security standard
-     * control.</p>
+     * control. If you are disabling a control, then this is required.</p>
      */
     inline bool DisabledReasonHasBeenSet() const { return m_disabledReasonHasBeenSet; }
 
     /**
      * <p>A description of the reason why you are disabling a security standard
-     * control.</p>
+     * control. If you are disabling a control, then this is required.</p>
      */
     inline void SetDisabledReason(const Aws::String& value) { m_disabledReasonHasBeenSet = true; m_disabledReason = value; }
 
     /**
      * <p>A description of the reason why you are disabling a security standard
-     * control.</p>
+     * control. If you are disabling a control, then this is required.</p>
      */
     inline void SetDisabledReason(Aws::String&& value) { m_disabledReasonHasBeenSet = true; m_disabledReason = std::move(value); }
 
     /**
      * <p>A description of the reason why you are disabling a security standard
-     * control.</p>
+     * control. If you are disabling a control, then this is required.</p>
      */
     inline void SetDisabledReason(const char* value) { m_disabledReasonHasBeenSet = true; m_disabledReason.assign(value); }
 
     /**
      * <p>A description of the reason why you are disabling a security standard
-     * control.</p>
+     * control. If you are disabling a control, then this is required.</p>
      */
     inline UpdateStandardsControlRequest& WithDisabledReason(const Aws::String& value) { SetDisabledReason(value); return *this;}
 
     /**
      * <p>A description of the reason why you are disabling a security standard
-     * control.</p>
+     * control. If you are disabling a control, then this is required.</p>
      */
     inline UpdateStandardsControlRequest& WithDisabledReason(Aws::String&& value) { SetDisabledReason(std::move(value)); return *this;}
 
     /**
      * <p>A description of the reason why you are disabling a security standard
-     * control.</p>
+     * control. If you are disabling a control, then this is required.</p>
      */
     inline UpdateStandardsControlRequest& WithDisabledReason(const char* value) { SetDisabledReason(value); return *this;}
 

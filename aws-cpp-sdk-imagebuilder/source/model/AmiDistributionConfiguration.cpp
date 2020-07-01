@@ -22,6 +22,7 @@ AmiDistributionConfiguration::AmiDistributionConfiguration() :
     m_nameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_amiTagsHasBeenSet(false),
+    m_kmsKeyIdHasBeenSet(false),
     m_launchPermissionHasBeenSet(false)
 {
 }
@@ -30,6 +31,7 @@ AmiDistributionConfiguration::AmiDistributionConfiguration(JsonView jsonValue) :
     m_nameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_amiTagsHasBeenSet(false),
+    m_kmsKeyIdHasBeenSet(false),
     m_launchPermissionHasBeenSet(false)
 {
   *this = jsonValue;
@@ -59,6 +61,13 @@ AmiDistributionConfiguration& AmiDistributionConfiguration::operator =(JsonView 
       m_amiTags[amiTagsItem.first] = amiTagsItem.second.AsString();
     }
     m_amiTagsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("kmsKeyId"))
+  {
+    m_kmsKeyId = jsonValue.GetString("kmsKeyId");
+
+    m_kmsKeyIdHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("launchPermission"))
@@ -95,6 +104,12 @@ JsonValue AmiDistributionConfiguration::Jsonize() const
      amiTagsJsonMap.WithString(amiTagsItem.first, amiTagsItem.second);
    }
    payload.WithObject("amiTags", std::move(amiTagsJsonMap));
+
+  }
+
+  if(m_kmsKeyIdHasBeenSet)
+  {
+   payload.WithString("kmsKeyId", m_kmsKeyId);
 
   }
 

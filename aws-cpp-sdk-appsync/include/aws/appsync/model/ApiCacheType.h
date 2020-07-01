@@ -22,7 +22,15 @@ namespace Model
     R4_XLARGE,
     R4_2XLARGE,
     R4_4XLARGE,
-    R4_8XLARGE
+    R4_8XLARGE,
+    SMALL,
+    MEDIUM,
+    LARGE,
+    XLARGE,
+    LARGE_2X,
+    LARGE_4X,
+    LARGE_8X,
+    LARGE_12X
   };
 
 namespace ApiCacheTypeMapper

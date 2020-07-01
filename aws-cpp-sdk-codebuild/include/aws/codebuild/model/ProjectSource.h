@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/codebuild/model/GitSubmodulesConfig.h>
 #include <aws/codebuild/model/SourceAuth.h>
+#include <aws/codebuild/model/BuildStatusConfig.h>
 #include <utility>
 
 namespace Aws
@@ -48,11 +49,12 @@ namespace Model
      * code is in an AWS CodeCommit repository.</p> </li> <li> <p>
      * <code>CODEPIPELINE</code>: The source code settings are specified in the source
      * action of a pipeline in AWS CodePipeline.</p> </li> <li> <p>
-     * <code>GITHUB</code>: The source code is in a GitHub repository.</p> </li> <li>
-     * <p> <code>GITHUB_ENTERPRISE</code>: The source code is in a GitHub Enterprise
-     * repository.</p> </li> <li> <p> <code>NO_SOURCE</code>: The project does not have
-     * input source code.</p> </li> <li> <p> <code>S3</code>: The source code is in an
-     * Amazon Simple Storage Service (Amazon S3) input bucket.</p> </li> </ul>
+     * <code>GITHUB</code>: The source code is in a GitHub or GitHub Enterprise Cloud
+     * repository.</p> </li> <li> <p> <code>GITHUB_ENTERPRISE</code>: The source code
+     * is in a GitHub Enterprise Server repository.</p> </li> <li> <p>
+     * <code>NO_SOURCE</code>: The project does not have input source code.</p> </li>
+     * <li> <p> <code>S3</code>: The source code is in an Amazon Simple Storage Service
+     * (Amazon S3) input bucket.</p> </li> </ul>
      */
     inline const SourceType& GetType() const{ return m_type; }
 
@@ -63,11 +65,12 @@ namespace Model
      * code is in an AWS CodeCommit repository.</p> </li> <li> <p>
      * <code>CODEPIPELINE</code>: The source code settings are specified in the source
      * action of a pipeline in AWS CodePipeline.</p> </li> <li> <p>
-     * <code>GITHUB</code>: The source code is in a GitHub repository.</p> </li> <li>
-     * <p> <code>GITHUB_ENTERPRISE</code>: The source code is in a GitHub Enterprise
-     * repository.</p> </li> <li> <p> <code>NO_SOURCE</code>: The project does not have
-     * input source code.</p> </li> <li> <p> <code>S3</code>: The source code is in an
-     * Amazon Simple Storage Service (Amazon S3) input bucket.</p> </li> </ul>
+     * <code>GITHUB</code>: The source code is in a GitHub or GitHub Enterprise Cloud
+     * repository.</p> </li> <li> <p> <code>GITHUB_ENTERPRISE</code>: The source code
+     * is in a GitHub Enterprise Server repository.</p> </li> <li> <p>
+     * <code>NO_SOURCE</code>: The project does not have input source code.</p> </li>
+     * <li> <p> <code>S3</code>: The source code is in an Amazon Simple Storage Service
+     * (Amazon S3) input bucket.</p> </li> </ul>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
@@ -78,11 +81,12 @@ namespace Model
      * code is in an AWS CodeCommit repository.</p> </li> <li> <p>
      * <code>CODEPIPELINE</code>: The source code settings are specified in the source
      * action of a pipeline in AWS CodePipeline.</p> </li> <li> <p>
-     * <code>GITHUB</code>: The source code is in a GitHub repository.</p> </li> <li>
-     * <p> <code>GITHUB_ENTERPRISE</code>: The source code is in a GitHub Enterprise
-     * repository.</p> </li> <li> <p> <code>NO_SOURCE</code>: The project does not have
-     * input source code.</p> </li> <li> <p> <code>S3</code>: The source code is in an
-     * Amazon Simple Storage Service (Amazon S3) input bucket.</p> </li> </ul>
+     * <code>GITHUB</code>: The source code is in a GitHub or GitHub Enterprise Cloud
+     * repository.</p> </li> <li> <p> <code>GITHUB_ENTERPRISE</code>: The source code
+     * is in a GitHub Enterprise Server repository.</p> </li> <li> <p>
+     * <code>NO_SOURCE</code>: The project does not have input source code.</p> </li>
+     * <li> <p> <code>S3</code>: The source code is in an Amazon Simple Storage Service
+     * (Amazon S3) input bucket.</p> </li> </ul>
      */
     inline void SetType(const SourceType& value) { m_typeHasBeenSet = true; m_type = value; }
 
@@ -93,11 +97,12 @@ namespace Model
      * code is in an AWS CodeCommit repository.</p> </li> <li> <p>
      * <code>CODEPIPELINE</code>: The source code settings are specified in the source
      * action of a pipeline in AWS CodePipeline.</p> </li> <li> <p>
-     * <code>GITHUB</code>: The source code is in a GitHub repository.</p> </li> <li>
-     * <p> <code>GITHUB_ENTERPRISE</code>: The source code is in a GitHub Enterprise
-     * repository.</p> </li> <li> <p> <code>NO_SOURCE</code>: The project does not have
-     * input source code.</p> </li> <li> <p> <code>S3</code>: The source code is in an
-     * Amazon Simple Storage Service (Amazon S3) input bucket.</p> </li> </ul>
+     * <code>GITHUB</code>: The source code is in a GitHub or GitHub Enterprise Cloud
+     * repository.</p> </li> <li> <p> <code>GITHUB_ENTERPRISE</code>: The source code
+     * is in a GitHub Enterprise Server repository.</p> </li> <li> <p>
+     * <code>NO_SOURCE</code>: The project does not have input source code.</p> </li>
+     * <li> <p> <code>S3</code>: The source code is in an Amazon Simple Storage Service
+     * (Amazon S3) input bucket.</p> </li> </ul>
      */
     inline void SetType(SourceType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
@@ -108,11 +113,12 @@ namespace Model
      * code is in an AWS CodeCommit repository.</p> </li> <li> <p>
      * <code>CODEPIPELINE</code>: The source code settings are specified in the source
      * action of a pipeline in AWS CodePipeline.</p> </li> <li> <p>
-     * <code>GITHUB</code>: The source code is in a GitHub repository.</p> </li> <li>
-     * <p> <code>GITHUB_ENTERPRISE</code>: The source code is in a GitHub Enterprise
-     * repository.</p> </li> <li> <p> <code>NO_SOURCE</code>: The project does not have
-     * input source code.</p> </li> <li> <p> <code>S3</code>: The source code is in an
-     * Amazon Simple Storage Service (Amazon S3) input bucket.</p> </li> </ul>
+     * <code>GITHUB</code>: The source code is in a GitHub or GitHub Enterprise Cloud
+     * repository.</p> </li> <li> <p> <code>GITHUB_ENTERPRISE</code>: The source code
+     * is in a GitHub Enterprise Server repository.</p> </li> <li> <p>
+     * <code>NO_SOURCE</code>: The project does not have input source code.</p> </li>
+     * <li> <p> <code>S3</code>: The source code is in an Amazon Simple Storage Service
+     * (Amazon S3) input bucket.</p> </li> </ul>
      */
     inline ProjectSource& WithType(const SourceType& value) { SetType(value); return *this;}
 
@@ -123,11 +129,12 @@ namespace Model
      * code is in an AWS CodeCommit repository.</p> </li> <li> <p>
      * <code>CODEPIPELINE</code>: The source code settings are specified in the source
      * action of a pipeline in AWS CodePipeline.</p> </li> <li> <p>
-     * <code>GITHUB</code>: The source code is in a GitHub repository.</p> </li> <li>
-     * <p> <code>GITHUB_ENTERPRISE</code>: The source code is in a GitHub Enterprise
-     * repository.</p> </li> <li> <p> <code>NO_SOURCE</code>: The project does not have
-     * input source code.</p> </li> <li> <p> <code>S3</code>: The source code is in an
-     * Amazon Simple Storage Service (Amazon S3) input bucket.</p> </li> </ul>
+     * <code>GITHUB</code>: The source code is in a GitHub or GitHub Enterprise Cloud
+     * repository.</p> </li> <li> <p> <code>GITHUB_ENTERPRISE</code>: The source code
+     * is in a GitHub Enterprise Server repository.</p> </li> <li> <p>
+     * <code>NO_SOURCE</code>: The project does not have input source code.</p> </li>
+     * <li> <p> <code>S3</code>: The source code is in an Amazon Simple Storage Service
+     * (Amazon S3) input bucket.</p> </li> </ul>
      */
     inline ProjectSource& WithType(SourceType&& value) { SetType(std::move(value)); return *this;}
 
@@ -739,6 +746,55 @@ namespace Model
 
 
     /**
+     * <p>Contains information that defines how the build project reports the build
+     * status to the source provider. This option is only used when the source provider
+     * is <code>GITHUB</code>, <code>GITHUB_ENTERPRISE</code>, or
+     * <code>BITBUCKET</code>.</p>
+     */
+    inline const BuildStatusConfig& GetBuildStatusConfig() const{ return m_buildStatusConfig; }
+
+    /**
+     * <p>Contains information that defines how the build project reports the build
+     * status to the source provider. This option is only used when the source provider
+     * is <code>GITHUB</code>, <code>GITHUB_ENTERPRISE</code>, or
+     * <code>BITBUCKET</code>.</p>
+     */
+    inline bool BuildStatusConfigHasBeenSet() const { return m_buildStatusConfigHasBeenSet; }
+
+    /**
+     * <p>Contains information that defines how the build project reports the build
+     * status to the source provider. This option is only used when the source provider
+     * is <code>GITHUB</code>, <code>GITHUB_ENTERPRISE</code>, or
+     * <code>BITBUCKET</code>.</p>
+     */
+    inline void SetBuildStatusConfig(const BuildStatusConfig& value) { m_buildStatusConfigHasBeenSet = true; m_buildStatusConfig = value; }
+
+    /**
+     * <p>Contains information that defines how the build project reports the build
+     * status to the source provider. This option is only used when the source provider
+     * is <code>GITHUB</code>, <code>GITHUB_ENTERPRISE</code>, or
+     * <code>BITBUCKET</code>.</p>
+     */
+    inline void SetBuildStatusConfig(BuildStatusConfig&& value) { m_buildStatusConfigHasBeenSet = true; m_buildStatusConfig = std::move(value); }
+
+    /**
+     * <p>Contains information that defines how the build project reports the build
+     * status to the source provider. This option is only used when the source provider
+     * is <code>GITHUB</code>, <code>GITHUB_ENTERPRISE</code>, or
+     * <code>BITBUCKET</code>.</p>
+     */
+    inline ProjectSource& WithBuildStatusConfig(const BuildStatusConfig& value) { SetBuildStatusConfig(value); return *this;}
+
+    /**
+     * <p>Contains information that defines how the build project reports the build
+     * status to the source provider. This option is only used when the source provider
+     * is <code>GITHUB</code>, <code>GITHUB_ENTERPRISE</code>, or
+     * <code>BITBUCKET</code>.</p>
+     */
+    inline ProjectSource& WithBuildStatusConfig(BuildStatusConfig&& value) { SetBuildStatusConfig(std::move(value)); return *this;}
+
+
+    /**
      * <p>Enable this flag to ignore SSL warnings while connecting to the project
      * source code.</p>
      */
@@ -825,6 +881,9 @@ namespace Model
 
     bool m_reportBuildStatus;
     bool m_reportBuildStatusHasBeenSet;
+
+    BuildStatusConfig m_buildStatusConfig;
+    bool m_buildStatusConfigHasBeenSet;
 
     bool m_insecureSsl;
     bool m_insecureSslHasBeenSet;

@@ -7,6 +7,7 @@
 #include <aws/securityhub/SecurityHub_EXPORTS.h>
 #include <aws/securityhub/model/NetworkDirection.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/securityhub/model/PortRange.h>
 #include <utility>
 
 namespace Aws
@@ -109,6 +110,37 @@ namespace Model
      * <p>The protocol of network-related information about a finding.</p>
      */
     inline Network& WithProtocol(const char* value) { SetProtocol(value); return *this;}
+
+
+    /**
+     * <p>The range of open ports that is present on the network.</p>
+     */
+    inline const PortRange& GetOpenPortRange() const{ return m_openPortRange; }
+
+    /**
+     * <p>The range of open ports that is present on the network.</p>
+     */
+    inline bool OpenPortRangeHasBeenSet() const { return m_openPortRangeHasBeenSet; }
+
+    /**
+     * <p>The range of open ports that is present on the network.</p>
+     */
+    inline void SetOpenPortRange(const PortRange& value) { m_openPortRangeHasBeenSet = true; m_openPortRange = value; }
+
+    /**
+     * <p>The range of open ports that is present on the network.</p>
+     */
+    inline void SetOpenPortRange(PortRange&& value) { m_openPortRangeHasBeenSet = true; m_openPortRange = std::move(value); }
+
+    /**
+     * <p>The range of open ports that is present on the network.</p>
+     */
+    inline Network& WithOpenPortRange(const PortRange& value) { SetOpenPortRange(value); return *this;}
+
+    /**
+     * <p>The range of open ports that is present on the network.</p>
+     */
+    inline Network& WithOpenPortRange(PortRange&& value) { SetOpenPortRange(std::move(value)); return *this;}
 
 
     /**
@@ -470,6 +502,9 @@ namespace Model
 
     Aws::String m_protocol;
     bool m_protocolHasBeenSet;
+
+    PortRange m_openPortRange;
+    bool m_openPortRangeHasBeenSet;
 
     Aws::String m_sourceIpV4;
     bool m_sourceIpV4HasBeenSet;

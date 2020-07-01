@@ -5,11 +5,14 @@
 
 #pragma once
 #include <aws/securityhub/SecurityHub_EXPORTS.h>
+#include <aws/securityhub/model/AwsAutoScalingAutoScalingGroupDetails.h>
 #include <aws/securityhub/model/AwsCodeBuildProjectDetails.h>
 #include <aws/securityhub/model/AwsCloudFrontDistributionDetails.h>
 #include <aws/securityhub/model/AwsEc2InstanceDetails.h>
 #include <aws/securityhub/model/AwsEc2NetworkInterfaceDetails.h>
 #include <aws/securityhub/model/AwsEc2SecurityGroupDetails.h>
+#include <aws/securityhub/model/AwsEc2VolumeDetails.h>
+#include <aws/securityhub/model/AwsEc2VpcDetails.h>
 #include <aws/securityhub/model/AwsElbv2LoadBalancerDetails.h>
 #include <aws/securityhub/model/AwsElasticsearchDomainDetails.h>
 #include <aws/securityhub/model/AwsS3BucketDetails.h>
@@ -63,6 +66,37 @@ namespace Model
     ResourceDetails(Aws::Utils::Json::JsonView jsonValue);
     ResourceDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * <p>Details for an autoscaling group.</p>
+     */
+    inline const AwsAutoScalingAutoScalingGroupDetails& GetAwsAutoScalingAutoScalingGroup() const{ return m_awsAutoScalingAutoScalingGroup; }
+
+    /**
+     * <p>Details for an autoscaling group.</p>
+     */
+    inline bool AwsAutoScalingAutoScalingGroupHasBeenSet() const { return m_awsAutoScalingAutoScalingGroupHasBeenSet; }
+
+    /**
+     * <p>Details for an autoscaling group.</p>
+     */
+    inline void SetAwsAutoScalingAutoScalingGroup(const AwsAutoScalingAutoScalingGroupDetails& value) { m_awsAutoScalingAutoScalingGroupHasBeenSet = true; m_awsAutoScalingAutoScalingGroup = value; }
+
+    /**
+     * <p>Details for an autoscaling group.</p>
+     */
+    inline void SetAwsAutoScalingAutoScalingGroup(AwsAutoScalingAutoScalingGroupDetails&& value) { m_awsAutoScalingAutoScalingGroupHasBeenSet = true; m_awsAutoScalingAutoScalingGroup = std::move(value); }
+
+    /**
+     * <p>Details for an autoscaling group.</p>
+     */
+    inline ResourceDetails& WithAwsAutoScalingAutoScalingGroup(const AwsAutoScalingAutoScalingGroupDetails& value) { SetAwsAutoScalingAutoScalingGroup(value); return *this;}
+
+    /**
+     * <p>Details for an autoscaling group.</p>
+     */
+    inline ResourceDetails& WithAwsAutoScalingAutoScalingGroup(AwsAutoScalingAutoScalingGroupDetails&& value) { SetAwsAutoScalingAutoScalingGroup(std::move(value)); return *this;}
 
 
     /**
@@ -218,6 +252,68 @@ namespace Model
      * <p>Details for an EC2 security group.</p>
      */
     inline ResourceDetails& WithAwsEc2SecurityGroup(AwsEc2SecurityGroupDetails&& value) { SetAwsEc2SecurityGroup(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Details for an EC2 volume.</p>
+     */
+    inline const AwsEc2VolumeDetails& GetAwsEc2Volume() const{ return m_awsEc2Volume; }
+
+    /**
+     * <p>Details for an EC2 volume.</p>
+     */
+    inline bool AwsEc2VolumeHasBeenSet() const { return m_awsEc2VolumeHasBeenSet; }
+
+    /**
+     * <p>Details for an EC2 volume.</p>
+     */
+    inline void SetAwsEc2Volume(const AwsEc2VolumeDetails& value) { m_awsEc2VolumeHasBeenSet = true; m_awsEc2Volume = value; }
+
+    /**
+     * <p>Details for an EC2 volume.</p>
+     */
+    inline void SetAwsEc2Volume(AwsEc2VolumeDetails&& value) { m_awsEc2VolumeHasBeenSet = true; m_awsEc2Volume = std::move(value); }
+
+    /**
+     * <p>Details for an EC2 volume.</p>
+     */
+    inline ResourceDetails& WithAwsEc2Volume(const AwsEc2VolumeDetails& value) { SetAwsEc2Volume(value); return *this;}
+
+    /**
+     * <p>Details for an EC2 volume.</p>
+     */
+    inline ResourceDetails& WithAwsEc2Volume(AwsEc2VolumeDetails&& value) { SetAwsEc2Volume(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Details for an EC2 VPC.</p>
+     */
+    inline const AwsEc2VpcDetails& GetAwsEc2Vpc() const{ return m_awsEc2Vpc; }
+
+    /**
+     * <p>Details for an EC2 VPC.</p>
+     */
+    inline bool AwsEc2VpcHasBeenSet() const { return m_awsEc2VpcHasBeenSet; }
+
+    /**
+     * <p>Details for an EC2 VPC.</p>
+     */
+    inline void SetAwsEc2Vpc(const AwsEc2VpcDetails& value) { m_awsEc2VpcHasBeenSet = true; m_awsEc2Vpc = value; }
+
+    /**
+     * <p>Details for an EC2 VPC.</p>
+     */
+    inline void SetAwsEc2Vpc(AwsEc2VpcDetails&& value) { m_awsEc2VpcHasBeenSet = true; m_awsEc2Vpc = std::move(value); }
+
+    /**
+     * <p>Details for an EC2 VPC.</p>
+     */
+    inline ResourceDetails& WithAwsEc2Vpc(const AwsEc2VpcDetails& value) { SetAwsEc2Vpc(value); return *this;}
+
+    /**
+     * <p>Details for an EC2 VPC.</p>
+     */
+    inline ResourceDetails& WithAwsEc2Vpc(AwsEc2VpcDetails&& value) { SetAwsEc2Vpc(std::move(value)); return *this;}
 
 
     /**
@@ -812,6 +908,9 @@ namespace Model
 
   private:
 
+    AwsAutoScalingAutoScalingGroupDetails m_awsAutoScalingAutoScalingGroup;
+    bool m_awsAutoScalingAutoScalingGroupHasBeenSet;
+
     AwsCodeBuildProjectDetails m_awsCodeBuildProject;
     bool m_awsCodeBuildProjectHasBeenSet;
 
@@ -826,6 +925,12 @@ namespace Model
 
     AwsEc2SecurityGroupDetails m_awsEc2SecurityGroup;
     bool m_awsEc2SecurityGroupHasBeenSet;
+
+    AwsEc2VolumeDetails m_awsEc2Volume;
+    bool m_awsEc2VolumeHasBeenSet;
+
+    AwsEc2VpcDetails m_awsEc2Vpc;
+    bool m_awsEc2VpcHasBeenSet;
 
     AwsElbv2LoadBalancerDetails m_awsElbv2LoadBalancer;
     bool m_awsElbv2LoadBalancerHasBeenSet;

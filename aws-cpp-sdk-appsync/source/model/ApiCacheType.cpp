@@ -27,6 +27,14 @@ namespace Aws
         static const int R4_2XLARGE_HASH = HashingUtils::HashString("R4_2XLARGE");
         static const int R4_4XLARGE_HASH = HashingUtils::HashString("R4_4XLARGE");
         static const int R4_8XLARGE_HASH = HashingUtils::HashString("R4_8XLARGE");
+        static const int SMALL_HASH = HashingUtils::HashString("SMALL");
+        static const int MEDIUM_HASH = HashingUtils::HashString("MEDIUM");
+        static const int LARGE_HASH = HashingUtils::HashString("LARGE");
+        static const int XLARGE_HASH = HashingUtils::HashString("XLARGE");
+        static const int LARGE_2X_HASH = HashingUtils::HashString("LARGE_2X");
+        static const int LARGE_4X_HASH = HashingUtils::HashString("LARGE_4X");
+        static const int LARGE_8X_HASH = HashingUtils::HashString("LARGE_8X");
+        static const int LARGE_12X_HASH = HashingUtils::HashString("LARGE_12X");
 
 
         ApiCacheType GetApiCacheTypeForName(const Aws::String& name)
@@ -60,6 +68,38 @@ namespace Aws
           {
             return ApiCacheType::R4_8XLARGE;
           }
+          else if (hashCode == SMALL_HASH)
+          {
+            return ApiCacheType::SMALL;
+          }
+          else if (hashCode == MEDIUM_HASH)
+          {
+            return ApiCacheType::MEDIUM;
+          }
+          else if (hashCode == LARGE_HASH)
+          {
+            return ApiCacheType::LARGE;
+          }
+          else if (hashCode == XLARGE_HASH)
+          {
+            return ApiCacheType::XLARGE;
+          }
+          else if (hashCode == LARGE_2X_HASH)
+          {
+            return ApiCacheType::LARGE_2X;
+          }
+          else if (hashCode == LARGE_4X_HASH)
+          {
+            return ApiCacheType::LARGE_4X;
+          }
+          else if (hashCode == LARGE_8X_HASH)
+          {
+            return ApiCacheType::LARGE_8X;
+          }
+          else if (hashCode == LARGE_12X_HASH)
+          {
+            return ApiCacheType::LARGE_12X;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -88,6 +128,22 @@ namespace Aws
             return "R4_4XLARGE";
           case ApiCacheType::R4_8XLARGE:
             return "R4_8XLARGE";
+          case ApiCacheType::SMALL:
+            return "SMALL";
+          case ApiCacheType::MEDIUM:
+            return "MEDIUM";
+          case ApiCacheType::LARGE:
+            return "LARGE";
+          case ApiCacheType::XLARGE:
+            return "XLARGE";
+          case ApiCacheType::LARGE_2X:
+            return "LARGE_2X";
+          case ApiCacheType::LARGE_4X:
+            return "LARGE_4X";
+          case ApiCacheType::LARGE_8X:
+            return "LARGE_8X";
+          case ApiCacheType::LARGE_12X:
+            return "LARGE_12X";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

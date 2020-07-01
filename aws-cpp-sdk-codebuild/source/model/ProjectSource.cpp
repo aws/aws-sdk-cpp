@@ -29,6 +29,7 @@ ProjectSource::ProjectSource() :
     m_authHasBeenSet(false),
     m_reportBuildStatus(false),
     m_reportBuildStatusHasBeenSet(false),
+    m_buildStatusConfigHasBeenSet(false),
     m_insecureSsl(false),
     m_insecureSslHasBeenSet(false),
     m_sourceIdentifierHasBeenSet(false)
@@ -46,6 +47,7 @@ ProjectSource::ProjectSource(JsonView jsonValue) :
     m_authHasBeenSet(false),
     m_reportBuildStatus(false),
     m_reportBuildStatusHasBeenSet(false),
+    m_buildStatusConfigHasBeenSet(false),
     m_insecureSsl(false),
     m_insecureSslHasBeenSet(false),
     m_sourceIdentifierHasBeenSet(false)
@@ -102,6 +104,13 @@ ProjectSource& ProjectSource::operator =(JsonView jsonValue)
     m_reportBuildStatus = jsonValue.GetBool("reportBuildStatus");
 
     m_reportBuildStatusHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("buildStatusConfig"))
+  {
+    m_buildStatusConfig = jsonValue.GetObject("buildStatusConfig");
+
+    m_buildStatusConfigHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("insecureSsl"))
@@ -163,6 +172,12 @@ JsonValue ProjectSource::Jsonize() const
   if(m_reportBuildStatusHasBeenSet)
   {
    payload.WithBool("reportBuildStatus", m_reportBuildStatus);
+
+  }
+
+  if(m_buildStatusConfigHasBeenSet)
+  {
+   payload.WithObject("buildStatusConfig", m_buildStatusConfig.Jsonize());
 
   }
 

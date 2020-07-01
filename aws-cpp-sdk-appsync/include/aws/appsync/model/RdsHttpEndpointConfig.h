@@ -79,42 +79,42 @@ namespace Model
 
 
     /**
-     * <p>Amazon RDS cluster identifier.</p>
+     * <p>Amazon RDS cluster ARN.</p>
      */
     inline const Aws::String& GetDbClusterIdentifier() const{ return m_dbClusterIdentifier; }
 
     /**
-     * <p>Amazon RDS cluster identifier.</p>
+     * <p>Amazon RDS cluster ARN.</p>
      */
     inline bool DbClusterIdentifierHasBeenSet() const { return m_dbClusterIdentifierHasBeenSet; }
 
     /**
-     * <p>Amazon RDS cluster identifier.</p>
+     * <p>Amazon RDS cluster ARN.</p>
      */
     inline void SetDbClusterIdentifier(const Aws::String& value) { m_dbClusterIdentifierHasBeenSet = true; m_dbClusterIdentifier = value; }
 
     /**
-     * <p>Amazon RDS cluster identifier.</p>
+     * <p>Amazon RDS cluster ARN.</p>
      */
     inline void SetDbClusterIdentifier(Aws::String&& value) { m_dbClusterIdentifierHasBeenSet = true; m_dbClusterIdentifier = std::move(value); }
 
     /**
-     * <p>Amazon RDS cluster identifier.</p>
+     * <p>Amazon RDS cluster ARN.</p>
      */
     inline void SetDbClusterIdentifier(const char* value) { m_dbClusterIdentifierHasBeenSet = true; m_dbClusterIdentifier.assign(value); }
 
     /**
-     * <p>Amazon RDS cluster identifier.</p>
+     * <p>Amazon RDS cluster ARN.</p>
      */
     inline RdsHttpEndpointConfig& WithDbClusterIdentifier(const Aws::String& value) { SetDbClusterIdentifier(value); return *this;}
 
     /**
-     * <p>Amazon RDS cluster identifier.</p>
+     * <p>Amazon RDS cluster ARN.</p>
      */
     inline RdsHttpEndpointConfig& WithDbClusterIdentifier(Aws::String&& value) { SetDbClusterIdentifier(std::move(value)); return *this;}
 
     /**
-     * <p>Amazon RDS cluster identifier.</p>
+     * <p>Amazon RDS cluster ARN.</p>
      */
     inline RdsHttpEndpointConfig& WithDbClusterIdentifier(const char* value) { SetDbClusterIdentifier(value); return *this;}
 

@@ -12,6 +12,7 @@
 #include <aws/codebuild/model/SourceType.h>
 #include <aws/codebuild/model/SourceAuth.h>
 #include <aws/codebuild/model/GitSubmodulesConfig.h>
+#include <aws/codebuild/model/BuildStatusConfig.h>
 #include <aws/codebuild/model/EnvironmentType.h>
 #include <aws/codebuild/model/ComputeType.h>
 #include <aws/codebuild/model/ProjectCache.h>
@@ -878,6 +879,55 @@ namespace Model
 
 
     /**
+     * <p>Contains information that defines how the build project reports the build
+     * status to the source provider. This option is only used when the source provider
+     * is <code>GITHUB</code>, <code>GITHUB_ENTERPRISE</code>, or
+     * <code>BITBUCKET</code>.</p>
+     */
+    inline const BuildStatusConfig& GetBuildStatusConfigOverride() const{ return m_buildStatusConfigOverride; }
+
+    /**
+     * <p>Contains information that defines how the build project reports the build
+     * status to the source provider. This option is only used when the source provider
+     * is <code>GITHUB</code>, <code>GITHUB_ENTERPRISE</code>, or
+     * <code>BITBUCKET</code>.</p>
+     */
+    inline bool BuildStatusConfigOverrideHasBeenSet() const { return m_buildStatusConfigOverrideHasBeenSet; }
+
+    /**
+     * <p>Contains information that defines how the build project reports the build
+     * status to the source provider. This option is only used when the source provider
+     * is <code>GITHUB</code>, <code>GITHUB_ENTERPRISE</code>, or
+     * <code>BITBUCKET</code>.</p>
+     */
+    inline void SetBuildStatusConfigOverride(const BuildStatusConfig& value) { m_buildStatusConfigOverrideHasBeenSet = true; m_buildStatusConfigOverride = value; }
+
+    /**
+     * <p>Contains information that defines how the build project reports the build
+     * status to the source provider. This option is only used when the source provider
+     * is <code>GITHUB</code>, <code>GITHUB_ENTERPRISE</code>, or
+     * <code>BITBUCKET</code>.</p>
+     */
+    inline void SetBuildStatusConfigOverride(BuildStatusConfig&& value) { m_buildStatusConfigOverrideHasBeenSet = true; m_buildStatusConfigOverride = std::move(value); }
+
+    /**
+     * <p>Contains information that defines how the build project reports the build
+     * status to the source provider. This option is only used when the source provider
+     * is <code>GITHUB</code>, <code>GITHUB_ENTERPRISE</code>, or
+     * <code>BITBUCKET</code>.</p>
+     */
+    inline StartBuildRequest& WithBuildStatusConfigOverride(const BuildStatusConfig& value) { SetBuildStatusConfigOverride(value); return *this;}
+
+    /**
+     * <p>Contains information that defines how the build project reports the build
+     * status to the source provider. This option is only used when the source provider
+     * is <code>GITHUB</code>, <code>GITHUB_ENTERPRISE</code>, or
+     * <code>BITBUCKET</code>.</p>
+     */
+    inline StartBuildRequest& WithBuildStatusConfigOverride(BuildStatusConfig&& value) { SetBuildStatusConfigOverride(std::move(value)); return *this;}
+
+
+    /**
      * <p>A container type for this build that overrides the one specified in the build
      * project.</p>
      */
@@ -1302,7 +1352,7 @@ namespace Model
     /**
      * <p>A unique, case sensitive identifier you provide to ensure the idempotency of
      * the StartBuild request. The token is included in the StartBuild request and is
-     * valid for 12 hours. If you repeat the StartBuild request with the same token,
+     * valid for 5 minutes. If you repeat the StartBuild request with the same token,
      * but change a parameter, AWS CodeBuild returns a parameter mismatch error. </p>
      */
     inline const Aws::String& GetIdempotencyToken() const{ return m_idempotencyToken; }
@@ -1310,7 +1360,7 @@ namespace Model
     /**
      * <p>A unique, case sensitive identifier you provide to ensure the idempotency of
      * the StartBuild request. The token is included in the StartBuild request and is
-     * valid for 12 hours. If you repeat the StartBuild request with the same token,
+     * valid for 5 minutes. If you repeat the StartBuild request with the same token,
      * but change a parameter, AWS CodeBuild returns a parameter mismatch error. </p>
      */
     inline bool IdempotencyTokenHasBeenSet() const { return m_idempotencyTokenHasBeenSet; }
@@ -1318,7 +1368,7 @@ namespace Model
     /**
      * <p>A unique, case sensitive identifier you provide to ensure the idempotency of
      * the StartBuild request. The token is included in the StartBuild request and is
-     * valid for 12 hours. If you repeat the StartBuild request with the same token,
+     * valid for 5 minutes. If you repeat the StartBuild request with the same token,
      * but change a parameter, AWS CodeBuild returns a parameter mismatch error. </p>
      */
     inline void SetIdempotencyToken(const Aws::String& value) { m_idempotencyTokenHasBeenSet = true; m_idempotencyToken = value; }
@@ -1326,7 +1376,7 @@ namespace Model
     /**
      * <p>A unique, case sensitive identifier you provide to ensure the idempotency of
      * the StartBuild request. The token is included in the StartBuild request and is
-     * valid for 12 hours. If you repeat the StartBuild request with the same token,
+     * valid for 5 minutes. If you repeat the StartBuild request with the same token,
      * but change a parameter, AWS CodeBuild returns a parameter mismatch error. </p>
      */
     inline void SetIdempotencyToken(Aws::String&& value) { m_idempotencyTokenHasBeenSet = true; m_idempotencyToken = std::move(value); }
@@ -1334,7 +1384,7 @@ namespace Model
     /**
      * <p>A unique, case sensitive identifier you provide to ensure the idempotency of
      * the StartBuild request. The token is included in the StartBuild request and is
-     * valid for 12 hours. If you repeat the StartBuild request with the same token,
+     * valid for 5 minutes. If you repeat the StartBuild request with the same token,
      * but change a parameter, AWS CodeBuild returns a parameter mismatch error. </p>
      */
     inline void SetIdempotencyToken(const char* value) { m_idempotencyTokenHasBeenSet = true; m_idempotencyToken.assign(value); }
@@ -1342,7 +1392,7 @@ namespace Model
     /**
      * <p>A unique, case sensitive identifier you provide to ensure the idempotency of
      * the StartBuild request. The token is included in the StartBuild request and is
-     * valid for 12 hours. If you repeat the StartBuild request with the same token,
+     * valid for 5 minutes. If you repeat the StartBuild request with the same token,
      * but change a parameter, AWS CodeBuild returns a parameter mismatch error. </p>
      */
     inline StartBuildRequest& WithIdempotencyToken(const Aws::String& value) { SetIdempotencyToken(value); return *this;}
@@ -1350,7 +1400,7 @@ namespace Model
     /**
      * <p>A unique, case sensitive identifier you provide to ensure the idempotency of
      * the StartBuild request. The token is included in the StartBuild request and is
-     * valid for 12 hours. If you repeat the StartBuild request with the same token,
+     * valid for 5 minutes. If you repeat the StartBuild request with the same token,
      * but change a parameter, AWS CodeBuild returns a parameter mismatch error. </p>
      */
     inline StartBuildRequest& WithIdempotencyToken(Aws::String&& value) { SetIdempotencyToken(std::move(value)); return *this;}
@@ -1358,7 +1408,7 @@ namespace Model
     /**
      * <p>A unique, case sensitive identifier you provide to ensure the idempotency of
      * the StartBuild request. The token is included in the StartBuild request and is
-     * valid for 12 hours. If you repeat the StartBuild request with the same token,
+     * valid for 5 minutes. If you repeat the StartBuild request with the same token,
      * but change a parameter, AWS CodeBuild returns a parameter mismatch error. </p>
      */
     inline StartBuildRequest& WithIdempotencyToken(const char* value) { SetIdempotencyToken(value); return *this;}
@@ -1550,6 +1600,9 @@ namespace Model
 
     bool m_reportBuildStatusOverride;
     bool m_reportBuildStatusOverrideHasBeenSet;
+
+    BuildStatusConfig m_buildStatusConfigOverride;
+    bool m_buildStatusConfigOverrideHasBeenSet;
 
     EnvironmentType m_environmentTypeOverride;
     bool m_environmentTypeOverrideHasBeenSet;

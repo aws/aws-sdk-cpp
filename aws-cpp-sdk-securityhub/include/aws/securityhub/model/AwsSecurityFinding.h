@@ -19,9 +19,11 @@
 #include <aws/securityhub/model/RecordState.h>
 #include <aws/securityhub/model/Note.h>
 #include <aws/securityhub/model/Malware.h>
+#include <aws/securityhub/model/NetworkPathComponent.h>
 #include <aws/securityhub/model/ThreatIntelIndicator.h>
 #include <aws/securityhub/model/Resource.h>
 #include <aws/securityhub/model/RelatedFinding.h>
+#include <aws/securityhub/model/Vulnerability.h>
 #include <utility>
 
 namespace Aws
@@ -1096,6 +1098,55 @@ namespace Model
 
 
     /**
+     * <p>Provides information about a network path that is relevant to a finding. Each
+     * entry under <code>NetworkPath</code> represents a component of that path.</p>
+     */
+    inline const Aws::Vector<NetworkPathComponent>& GetNetworkPath() const{ return m_networkPath; }
+
+    /**
+     * <p>Provides information about a network path that is relevant to a finding. Each
+     * entry under <code>NetworkPath</code> represents a component of that path.</p>
+     */
+    inline bool NetworkPathHasBeenSet() const { return m_networkPathHasBeenSet; }
+
+    /**
+     * <p>Provides information about a network path that is relevant to a finding. Each
+     * entry under <code>NetworkPath</code> represents a component of that path.</p>
+     */
+    inline void SetNetworkPath(const Aws::Vector<NetworkPathComponent>& value) { m_networkPathHasBeenSet = true; m_networkPath = value; }
+
+    /**
+     * <p>Provides information about a network path that is relevant to a finding. Each
+     * entry under <code>NetworkPath</code> represents a component of that path.</p>
+     */
+    inline void SetNetworkPath(Aws::Vector<NetworkPathComponent>&& value) { m_networkPathHasBeenSet = true; m_networkPath = std::move(value); }
+
+    /**
+     * <p>Provides information about a network path that is relevant to a finding. Each
+     * entry under <code>NetworkPath</code> represents a component of that path.</p>
+     */
+    inline AwsSecurityFinding& WithNetworkPath(const Aws::Vector<NetworkPathComponent>& value) { SetNetworkPath(value); return *this;}
+
+    /**
+     * <p>Provides information about a network path that is relevant to a finding. Each
+     * entry under <code>NetworkPath</code> represents a component of that path.</p>
+     */
+    inline AwsSecurityFinding& WithNetworkPath(Aws::Vector<NetworkPathComponent>&& value) { SetNetworkPath(std::move(value)); return *this;}
+
+    /**
+     * <p>Provides information about a network path that is relevant to a finding. Each
+     * entry under <code>NetworkPath</code> represents a component of that path.</p>
+     */
+    inline AwsSecurityFinding& AddNetworkPath(const NetworkPathComponent& value) { m_networkPathHasBeenSet = true; m_networkPath.push_back(value); return *this; }
+
+    /**
+     * <p>Provides information about a network path that is relevant to a finding. Each
+     * entry under <code>NetworkPath</code> represents a component of that path.</p>
+     */
+    inline AwsSecurityFinding& AddNetworkPath(NetworkPathComponent&& value) { m_networkPathHasBeenSet = true; m_networkPath.push_back(std::move(value)); return *this; }
+
+
+    /**
      * <p>The details of process-related information about a finding.</p>
      */
     inline const ProcessDetails& GetProcess() const{ return m_process; }
@@ -1460,6 +1511,47 @@ namespace Model
      */
     inline AwsSecurityFinding& WithNote(Note&& value) { SetNote(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Provides a list of vulnerabilities associated with the findings.</p>
+     */
+    inline const Aws::Vector<Vulnerability>& GetVulnerabilities() const{ return m_vulnerabilities; }
+
+    /**
+     * <p>Provides a list of vulnerabilities associated with the findings.</p>
+     */
+    inline bool VulnerabilitiesHasBeenSet() const { return m_vulnerabilitiesHasBeenSet; }
+
+    /**
+     * <p>Provides a list of vulnerabilities associated with the findings.</p>
+     */
+    inline void SetVulnerabilities(const Aws::Vector<Vulnerability>& value) { m_vulnerabilitiesHasBeenSet = true; m_vulnerabilities = value; }
+
+    /**
+     * <p>Provides a list of vulnerabilities associated with the findings.</p>
+     */
+    inline void SetVulnerabilities(Aws::Vector<Vulnerability>&& value) { m_vulnerabilitiesHasBeenSet = true; m_vulnerabilities = std::move(value); }
+
+    /**
+     * <p>Provides a list of vulnerabilities associated with the findings.</p>
+     */
+    inline AwsSecurityFinding& WithVulnerabilities(const Aws::Vector<Vulnerability>& value) { SetVulnerabilities(value); return *this;}
+
+    /**
+     * <p>Provides a list of vulnerabilities associated with the findings.</p>
+     */
+    inline AwsSecurityFinding& WithVulnerabilities(Aws::Vector<Vulnerability>&& value) { SetVulnerabilities(std::move(value)); return *this;}
+
+    /**
+     * <p>Provides a list of vulnerabilities associated with the findings.</p>
+     */
+    inline AwsSecurityFinding& AddVulnerabilities(const Vulnerability& value) { m_vulnerabilitiesHasBeenSet = true; m_vulnerabilities.push_back(value); return *this; }
+
+    /**
+     * <p>Provides a list of vulnerabilities associated with the findings.</p>
+     */
+    inline AwsSecurityFinding& AddVulnerabilities(Vulnerability&& value) { m_vulnerabilitiesHasBeenSet = true; m_vulnerabilities.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_schemaVersion;
@@ -1525,6 +1617,9 @@ namespace Model
     Network m_network;
     bool m_networkHasBeenSet;
 
+    Aws::Vector<NetworkPathComponent> m_networkPath;
+    bool m_networkPathHasBeenSet;
+
     ProcessDetails m_process;
     bool m_processHasBeenSet;
 
@@ -1554,6 +1649,9 @@ namespace Model
 
     Note m_note;
     bool m_noteHasBeenSet;
+
+    Aws::Vector<Vulnerability> m_vulnerabilities;
+    bool m_vulnerabilitiesHasBeenSet;
   };
 
 } // namespace Model
