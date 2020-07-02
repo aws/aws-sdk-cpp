@@ -94,10 +94,10 @@ namespace Model
      * enabled) replication groups, this is the number of replica nodes in each of the
      * replication group's node groups.</p> <p>The minimum number of replicas in a
      * shard or replication group is:</p> <ul> <li> <p>Redis (cluster mode
-     * disabled)</p> <ul> <li> <p>If Multi-AZ with Automatic Failover is enabled: 1</p>
-     * </li> <li> <p>If Multi-AZ with Automatic Failover is not enabled: 0</p> </li>
-     * </ul> </li> <li> <p>Redis (cluster mode enabled): 0 (though you will not be able
-     * to failover to a replica if your primary node fails)</p> </li> </ul>
+     * disabled)</p> <ul> <li> <p>If Multi-AZ is enabled: 1</p> </li> <li> <p>If
+     * Multi-AZ is not enabled: 0</p> </li> </ul> </li> <li> <p>Redis (cluster mode
+     * enabled): 0 (though you will not be able to failover to a replica if your
+     * primary node fails)</p> </li> </ul>
      */
     inline int GetNewReplicaCount() const{ return m_newReplicaCount; }
 
@@ -108,10 +108,10 @@ namespace Model
      * enabled) replication groups, this is the number of replica nodes in each of the
      * replication group's node groups.</p> <p>The minimum number of replicas in a
      * shard or replication group is:</p> <ul> <li> <p>Redis (cluster mode
-     * disabled)</p> <ul> <li> <p>If Multi-AZ with Automatic Failover is enabled: 1</p>
-     * </li> <li> <p>If Multi-AZ with Automatic Failover is not enabled: 0</p> </li>
-     * </ul> </li> <li> <p>Redis (cluster mode enabled): 0 (though you will not be able
-     * to failover to a replica if your primary node fails)</p> </li> </ul>
+     * disabled)</p> <ul> <li> <p>If Multi-AZ is enabled: 1</p> </li> <li> <p>If
+     * Multi-AZ is not enabled: 0</p> </li> </ul> </li> <li> <p>Redis (cluster mode
+     * enabled): 0 (though you will not be able to failover to a replica if your
+     * primary node fails)</p> </li> </ul>
      */
     inline bool NewReplicaCountHasBeenSet() const { return m_newReplicaCountHasBeenSet; }
 
@@ -122,10 +122,10 @@ namespace Model
      * enabled) replication groups, this is the number of replica nodes in each of the
      * replication group's node groups.</p> <p>The minimum number of replicas in a
      * shard or replication group is:</p> <ul> <li> <p>Redis (cluster mode
-     * disabled)</p> <ul> <li> <p>If Multi-AZ with Automatic Failover is enabled: 1</p>
-     * </li> <li> <p>If Multi-AZ with Automatic Failover is not enabled: 0</p> </li>
-     * </ul> </li> <li> <p>Redis (cluster mode enabled): 0 (though you will not be able
-     * to failover to a replica if your primary node fails)</p> </li> </ul>
+     * disabled)</p> <ul> <li> <p>If Multi-AZ is enabled: 1</p> </li> <li> <p>If
+     * Multi-AZ is not enabled: 0</p> </li> </ul> </li> <li> <p>Redis (cluster mode
+     * enabled): 0 (though you will not be able to failover to a replica if your
+     * primary node fails)</p> </li> </ul>
      */
     inline void SetNewReplicaCount(int value) { m_newReplicaCountHasBeenSet = true; m_newReplicaCount = value; }
 
@@ -136,10 +136,10 @@ namespace Model
      * enabled) replication groups, this is the number of replica nodes in each of the
      * replication group's node groups.</p> <p>The minimum number of replicas in a
      * shard or replication group is:</p> <ul> <li> <p>Redis (cluster mode
-     * disabled)</p> <ul> <li> <p>If Multi-AZ with Automatic Failover is enabled: 1</p>
-     * </li> <li> <p>If Multi-AZ with Automatic Failover is not enabled: 0</p> </li>
-     * </ul> </li> <li> <p>Redis (cluster mode enabled): 0 (though you will not be able
-     * to failover to a replica if your primary node fails)</p> </li> </ul>
+     * disabled)</p> <ul> <li> <p>If Multi-AZ is enabled: 1</p> </li> <li> <p>If
+     * Multi-AZ is not enabled: 0</p> </li> </ul> </li> <li> <p>Redis (cluster mode
+     * enabled): 0 (though you will not be able to failover to a replica if your
+     * primary node fails)</p> </li> </ul>
      */
     inline DecreaseReplicaCountRequest& WithNewReplicaCount(int value) { SetNewReplicaCount(value); return *this;}
 

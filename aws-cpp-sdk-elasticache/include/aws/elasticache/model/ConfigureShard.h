@@ -120,9 +120,8 @@ namespace Model
      * operation. The maximum value for <code>NewReplicaCount</code> is 5. The minimum
      * value depends upon the type of Redis replication group you are working with.</p>
      * <p>The minimum number of replicas in a shard or replication group is:</p> <ul>
-     * <li> <p>Redis (cluster mode disabled)</p> <ul> <li> <p>If Multi-AZ with
-     * Automatic Failover is enabled: 1</p> </li> <li> <p>If Multi-AZ with Automatic
-     * Failover is not enable: 0</p> </li> </ul> </li> <li> <p>Redis (cluster mode
+     * <li> <p>Redis (cluster mode disabled)</p> <ul> <li> <p>If Multi-AZ: 1</p> </li>
+     * <li> <p>If Multi-AZ: 0</p> </li> </ul> </li> <li> <p>Redis (cluster mode
      * enabled): 0 (though you will not be able to failover to a replica if your
      * primary node fails)</p> </li> </ul>
      */
@@ -133,9 +132,8 @@ namespace Model
      * operation. The maximum value for <code>NewReplicaCount</code> is 5. The minimum
      * value depends upon the type of Redis replication group you are working with.</p>
      * <p>The minimum number of replicas in a shard or replication group is:</p> <ul>
-     * <li> <p>Redis (cluster mode disabled)</p> <ul> <li> <p>If Multi-AZ with
-     * Automatic Failover is enabled: 1</p> </li> <li> <p>If Multi-AZ with Automatic
-     * Failover is not enable: 0</p> </li> </ul> </li> <li> <p>Redis (cluster mode
+     * <li> <p>Redis (cluster mode disabled)</p> <ul> <li> <p>If Multi-AZ: 1</p> </li>
+     * <li> <p>If Multi-AZ: 0</p> </li> </ul> </li> <li> <p>Redis (cluster mode
      * enabled): 0 (though you will not be able to failover to a replica if your
      * primary node fails)</p> </li> </ul>
      */
@@ -146,9 +144,8 @@ namespace Model
      * operation. The maximum value for <code>NewReplicaCount</code> is 5. The minimum
      * value depends upon the type of Redis replication group you are working with.</p>
      * <p>The minimum number of replicas in a shard or replication group is:</p> <ul>
-     * <li> <p>Redis (cluster mode disabled)</p> <ul> <li> <p>If Multi-AZ with
-     * Automatic Failover is enabled: 1</p> </li> <li> <p>If Multi-AZ with Automatic
-     * Failover is not enable: 0</p> </li> </ul> </li> <li> <p>Redis (cluster mode
+     * <li> <p>Redis (cluster mode disabled)</p> <ul> <li> <p>If Multi-AZ: 1</p> </li>
+     * <li> <p>If Multi-AZ: 0</p> </li> </ul> </li> <li> <p>Redis (cluster mode
      * enabled): 0 (though you will not be able to failover to a replica if your
      * primary node fails)</p> </li> </ul>
      */
@@ -159,9 +156,8 @@ namespace Model
      * operation. The maximum value for <code>NewReplicaCount</code> is 5. The minimum
      * value depends upon the type of Redis replication group you are working with.</p>
      * <p>The minimum number of replicas in a shard or replication group is:</p> <ul>
-     * <li> <p>Redis (cluster mode disabled)</p> <ul> <li> <p>If Multi-AZ with
-     * Automatic Failover is enabled: 1</p> </li> <li> <p>If Multi-AZ with Automatic
-     * Failover is not enable: 0</p> </li> </ul> </li> <li> <p>Redis (cluster mode
+     * <li> <p>Redis (cluster mode disabled)</p> <ul> <li> <p>If Multi-AZ: 1</p> </li>
+     * <li> <p>If Multi-AZ: 0</p> </li> </ul> </li> <li> <p>Redis (cluster mode
      * enabled): 0 (though you will not be able to failover to a replica if your
      * primary node fails)</p> </li> </ul>
      */

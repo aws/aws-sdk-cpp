@@ -101,56 +101,38 @@ namespace Model
 
 
     /**
-     * <p>Indicates the status of Multi-AZ with automatic failover for this Redis
-     * replication group.</p> <p>Amazon ElastiCache for Redis does not support Multi-AZ
-     * with automatic failover on:</p> <ul> <li> <p>Redis versions earlier than
-     * 2.8.6.</p> </li> <li> <p>Redis (cluster mode disabled): T1 node types.</p> </li>
-     * <li> <p>Redis (cluster mode enabled): T1 node types.</p> </li> </ul>
+     * <p>Indicates the status of automatic failover for this Redis replication
+     * group.</p>
      */
     inline const PendingAutomaticFailoverStatus& GetAutomaticFailoverStatus() const{ return m_automaticFailoverStatus; }
 
     /**
-     * <p>Indicates the status of Multi-AZ with automatic failover for this Redis
-     * replication group.</p> <p>Amazon ElastiCache for Redis does not support Multi-AZ
-     * with automatic failover on:</p> <ul> <li> <p>Redis versions earlier than
-     * 2.8.6.</p> </li> <li> <p>Redis (cluster mode disabled): T1 node types.</p> </li>
-     * <li> <p>Redis (cluster mode enabled): T1 node types.</p> </li> </ul>
+     * <p>Indicates the status of automatic failover for this Redis replication
+     * group.</p>
      */
     inline bool AutomaticFailoverStatusHasBeenSet() const { return m_automaticFailoverStatusHasBeenSet; }
 
     /**
-     * <p>Indicates the status of Multi-AZ with automatic failover for this Redis
-     * replication group.</p> <p>Amazon ElastiCache for Redis does not support Multi-AZ
-     * with automatic failover on:</p> <ul> <li> <p>Redis versions earlier than
-     * 2.8.6.</p> </li> <li> <p>Redis (cluster mode disabled): T1 node types.</p> </li>
-     * <li> <p>Redis (cluster mode enabled): T1 node types.</p> </li> </ul>
+     * <p>Indicates the status of automatic failover for this Redis replication
+     * group.</p>
      */
     inline void SetAutomaticFailoverStatus(const PendingAutomaticFailoverStatus& value) { m_automaticFailoverStatusHasBeenSet = true; m_automaticFailoverStatus = value; }
 
     /**
-     * <p>Indicates the status of Multi-AZ with automatic failover for this Redis
-     * replication group.</p> <p>Amazon ElastiCache for Redis does not support Multi-AZ
-     * with automatic failover on:</p> <ul> <li> <p>Redis versions earlier than
-     * 2.8.6.</p> </li> <li> <p>Redis (cluster mode disabled): T1 node types.</p> </li>
-     * <li> <p>Redis (cluster mode enabled): T1 node types.</p> </li> </ul>
+     * <p>Indicates the status of automatic failover for this Redis replication
+     * group.</p>
      */
     inline void SetAutomaticFailoverStatus(PendingAutomaticFailoverStatus&& value) { m_automaticFailoverStatusHasBeenSet = true; m_automaticFailoverStatus = std::move(value); }
 
     /**
-     * <p>Indicates the status of Multi-AZ with automatic failover for this Redis
-     * replication group.</p> <p>Amazon ElastiCache for Redis does not support Multi-AZ
-     * with automatic failover on:</p> <ul> <li> <p>Redis versions earlier than
-     * 2.8.6.</p> </li> <li> <p>Redis (cluster mode disabled): T1 node types.</p> </li>
-     * <li> <p>Redis (cluster mode enabled): T1 node types.</p> </li> </ul>
+     * <p>Indicates the status of automatic failover for this Redis replication
+     * group.</p>
      */
     inline ReplicationGroupPendingModifiedValues& WithAutomaticFailoverStatus(const PendingAutomaticFailoverStatus& value) { SetAutomaticFailoverStatus(value); return *this;}
 
     /**
-     * <p>Indicates the status of Multi-AZ with automatic failover for this Redis
-     * replication group.</p> <p>Amazon ElastiCache for Redis does not support Multi-AZ
-     * with automatic failover on:</p> <ul> <li> <p>Redis versions earlier than
-     * 2.8.6.</p> </li> <li> <p>Redis (cluster mode disabled): T1 node types.</p> </li>
-     * <li> <p>Redis (cluster mode enabled): T1 node types.</p> </li> </ul>
+     * <p>Indicates the status of automatic failover for this Redis replication
+     * group.</p>
      */
     inline ReplicationGroupPendingModifiedValues& WithAutomaticFailoverStatus(PendingAutomaticFailoverStatus&& value) { SetAutomaticFailoverStatus(std::move(value)); return *this;}
 

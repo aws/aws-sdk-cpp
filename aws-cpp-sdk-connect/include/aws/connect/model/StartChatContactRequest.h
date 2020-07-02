@@ -78,42 +78,98 @@ namespace Model
 
 
     /**
-     * <p>The identifier of the contact flow for the chat.</p>
+     * <p>The identifier of the contact flow for the outbound call. To see the
+     * ContactFlowId in the Amazon Connect console user interface, on the navigation
+     * menu go to <b>Routing</b>, <b>Contact Flows</b>. Choose the contact flow. On the
+     * contact flow page, under the name of the contact flow, choose <b>Show additional
+     * flow information</b>. The ContactFlowId is the last part of the ARN, shown here
+     * in bold: </p>
+     * <p>arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/contact-flow/<b>846ec553-a005-41c0-8341-xxxxxxxxxxxx</b>
+     * </p>
      */
     inline const Aws::String& GetContactFlowId() const{ return m_contactFlowId; }
 
     /**
-     * <p>The identifier of the contact flow for the chat.</p>
+     * <p>The identifier of the contact flow for the outbound call. To see the
+     * ContactFlowId in the Amazon Connect console user interface, on the navigation
+     * menu go to <b>Routing</b>, <b>Contact Flows</b>. Choose the contact flow. On the
+     * contact flow page, under the name of the contact flow, choose <b>Show additional
+     * flow information</b>. The ContactFlowId is the last part of the ARN, shown here
+     * in bold: </p>
+     * <p>arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/contact-flow/<b>846ec553-a005-41c0-8341-xxxxxxxxxxxx</b>
+     * </p>
      */
     inline bool ContactFlowIdHasBeenSet() const { return m_contactFlowIdHasBeenSet; }
 
     /**
-     * <p>The identifier of the contact flow for the chat.</p>
+     * <p>The identifier of the contact flow for the outbound call. To see the
+     * ContactFlowId in the Amazon Connect console user interface, on the navigation
+     * menu go to <b>Routing</b>, <b>Contact Flows</b>. Choose the contact flow. On the
+     * contact flow page, under the name of the contact flow, choose <b>Show additional
+     * flow information</b>. The ContactFlowId is the last part of the ARN, shown here
+     * in bold: </p>
+     * <p>arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/contact-flow/<b>846ec553-a005-41c0-8341-xxxxxxxxxxxx</b>
+     * </p>
      */
     inline void SetContactFlowId(const Aws::String& value) { m_contactFlowIdHasBeenSet = true; m_contactFlowId = value; }
 
     /**
-     * <p>The identifier of the contact flow for the chat.</p>
+     * <p>The identifier of the contact flow for the outbound call. To see the
+     * ContactFlowId in the Amazon Connect console user interface, on the navigation
+     * menu go to <b>Routing</b>, <b>Contact Flows</b>. Choose the contact flow. On the
+     * contact flow page, under the name of the contact flow, choose <b>Show additional
+     * flow information</b>. The ContactFlowId is the last part of the ARN, shown here
+     * in bold: </p>
+     * <p>arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/contact-flow/<b>846ec553-a005-41c0-8341-xxxxxxxxxxxx</b>
+     * </p>
      */
     inline void SetContactFlowId(Aws::String&& value) { m_contactFlowIdHasBeenSet = true; m_contactFlowId = std::move(value); }
 
     /**
-     * <p>The identifier of the contact flow for the chat.</p>
+     * <p>The identifier of the contact flow for the outbound call. To see the
+     * ContactFlowId in the Amazon Connect console user interface, on the navigation
+     * menu go to <b>Routing</b>, <b>Contact Flows</b>. Choose the contact flow. On the
+     * contact flow page, under the name of the contact flow, choose <b>Show additional
+     * flow information</b>. The ContactFlowId is the last part of the ARN, shown here
+     * in bold: </p>
+     * <p>arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/contact-flow/<b>846ec553-a005-41c0-8341-xxxxxxxxxxxx</b>
+     * </p>
      */
     inline void SetContactFlowId(const char* value) { m_contactFlowIdHasBeenSet = true; m_contactFlowId.assign(value); }
 
     /**
-     * <p>The identifier of the contact flow for the chat.</p>
+     * <p>The identifier of the contact flow for the outbound call. To see the
+     * ContactFlowId in the Amazon Connect console user interface, on the navigation
+     * menu go to <b>Routing</b>, <b>Contact Flows</b>. Choose the contact flow. On the
+     * contact flow page, under the name of the contact flow, choose <b>Show additional
+     * flow information</b>. The ContactFlowId is the last part of the ARN, shown here
+     * in bold: </p>
+     * <p>arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/contact-flow/<b>846ec553-a005-41c0-8341-xxxxxxxxxxxx</b>
+     * </p>
      */
     inline StartChatContactRequest& WithContactFlowId(const Aws::String& value) { SetContactFlowId(value); return *this;}
 
     /**
-     * <p>The identifier of the contact flow for the chat.</p>
+     * <p>The identifier of the contact flow for the outbound call. To see the
+     * ContactFlowId in the Amazon Connect console user interface, on the navigation
+     * menu go to <b>Routing</b>, <b>Contact Flows</b>. Choose the contact flow. On the
+     * contact flow page, under the name of the contact flow, choose <b>Show additional
+     * flow information</b>. The ContactFlowId is the last part of the ARN, shown here
+     * in bold: </p>
+     * <p>arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/contact-flow/<b>846ec553-a005-41c0-8341-xxxxxxxxxxxx</b>
+     * </p>
      */
     inline StartChatContactRequest& WithContactFlowId(Aws::String&& value) { SetContactFlowId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the contact flow for the chat.</p>
+     * <p>The identifier of the contact flow for the outbound call. To see the
+     * ContactFlowId in the Amazon Connect console user interface, on the navigation
+     * menu go to <b>Routing</b>, <b>Contact Flows</b>. Choose the contact flow. On the
+     * contact flow page, under the name of the contact flow, choose <b>Show additional
+     * flow information</b>. The ContactFlowId is the last part of the ARN, shown here
+     * in bold: </p>
+     * <p>arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/contact-flow/<b>846ec553-a005-41c0-8341-xxxxxxxxxxxx</b>
+     * </p>
      */
     inline StartChatContactRequest& WithContactFlowId(const char* value) { SetContactFlowId(value); return *this;}
 

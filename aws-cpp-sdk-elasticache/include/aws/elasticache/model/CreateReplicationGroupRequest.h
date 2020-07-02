@@ -275,11 +275,7 @@ namespace Model
      * <p>Specifies whether a read-only replica is automatically promoted to read/write
      * primary if the existing primary fails.</p> <p>
      * <code>AutomaticFailoverEnabled</code> must be enabled for Redis (cluster mode
-     * enabled) replication groups.</p> <p>Default: false</p> <p>Amazon ElastiCache for
-     * Redis does not support Multi-AZ with automatic failover on:</p> <ul> <li>
-     * <p>Redis versions earlier than 2.8.6.</p> </li> <li> <p>Redis (cluster mode
-     * disabled): T1 node types.</p> </li> <li> <p>Redis (cluster mode enabled): T1
-     * node types.</p> </li> </ul>
+     * enabled) replication groups.</p> <p>Default: false</p>
      */
     inline bool GetAutomaticFailoverEnabled() const{ return m_automaticFailoverEnabled; }
 
@@ -287,11 +283,7 @@ namespace Model
      * <p>Specifies whether a read-only replica is automatically promoted to read/write
      * primary if the existing primary fails.</p> <p>
      * <code>AutomaticFailoverEnabled</code> must be enabled for Redis (cluster mode
-     * enabled) replication groups.</p> <p>Default: false</p> <p>Amazon ElastiCache for
-     * Redis does not support Multi-AZ with automatic failover on:</p> <ul> <li>
-     * <p>Redis versions earlier than 2.8.6.</p> </li> <li> <p>Redis (cluster mode
-     * disabled): T1 node types.</p> </li> <li> <p>Redis (cluster mode enabled): T1
-     * node types.</p> </li> </ul>
+     * enabled) replication groups.</p> <p>Default: false</p>
      */
     inline bool AutomaticFailoverEnabledHasBeenSet() const { return m_automaticFailoverEnabledHasBeenSet; }
 
@@ -299,11 +291,7 @@ namespace Model
      * <p>Specifies whether a read-only replica is automatically promoted to read/write
      * primary if the existing primary fails.</p> <p>
      * <code>AutomaticFailoverEnabled</code> must be enabled for Redis (cluster mode
-     * enabled) replication groups.</p> <p>Default: false</p> <p>Amazon ElastiCache for
-     * Redis does not support Multi-AZ with automatic failover on:</p> <ul> <li>
-     * <p>Redis versions earlier than 2.8.6.</p> </li> <li> <p>Redis (cluster mode
-     * disabled): T1 node types.</p> </li> <li> <p>Redis (cluster mode enabled): T1
-     * node types.</p> </li> </ul>
+     * enabled) replication groups.</p> <p>Default: false</p>
      */
     inline void SetAutomaticFailoverEnabled(bool value) { m_automaticFailoverEnabledHasBeenSet = true; m_automaticFailoverEnabled = value; }
 
@@ -311,11 +299,7 @@ namespace Model
      * <p>Specifies whether a read-only replica is automatically promoted to read/write
      * primary if the existing primary fails.</p> <p>
      * <code>AutomaticFailoverEnabled</code> must be enabled for Redis (cluster mode
-     * enabled) replication groups.</p> <p>Default: false</p> <p>Amazon ElastiCache for
-     * Redis does not support Multi-AZ with automatic failover on:</p> <ul> <li>
-     * <p>Redis versions earlier than 2.8.6.</p> </li> <li> <p>Redis (cluster mode
-     * disabled): T1 node types.</p> </li> <li> <p>Redis (cluster mode enabled): T1
-     * node types.</p> </li> </ul>
+     * enabled) replication groups.</p> <p>Default: false</p>
      */
     inline CreateReplicationGroupRequest& WithAutomaticFailoverEnabled(bool value) { SetAutomaticFailoverEnabled(value); return *this;}
 

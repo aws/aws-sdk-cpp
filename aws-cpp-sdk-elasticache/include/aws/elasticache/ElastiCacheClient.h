@@ -988,14 +988,13 @@ namespace Model
          * enabled) replication groups partition the data across node groups (shards).</p>
          * <p>When a Redis (cluster mode disabled) replication group has been successfully
          * created, you can add one or more read replicas to it, up to a total of 5 read
-         * replicas. You cannot alter a Redis (cluster mode enabled) replication group
-         * after it has been created. However, if you need to increase or decrease the
-         * number of node groups (console: shards), you can avail yourself of ElastiCache
-         * for Redis' enhanced backup and restore. For more information, see <a
-         * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups-restoring.html">Restoring
-         * From a Backup with Cluster Resizing</a> in the <i>ElastiCache User
-         * Guide</i>.</p> <note> <p>This operation is valid for Redis only.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * replicas. If you need to increase or decrease the number of node groups
+         * (console: shards), you can avail yourself of ElastiCache for Redis' scaling. For
+         * more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Scaling.html">Scaling
+         * ElastiCache for Redis Clusters</a> in the <i>ElastiCache User Guide</i>.</p>
+         * <note> <p>This operation is valid for Redis only.</p> </note><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CreateReplicationGroup">AWS
          * API Reference</a></p>
          */
@@ -1015,14 +1014,13 @@ namespace Model
          * enabled) replication groups partition the data across node groups (shards).</p>
          * <p>When a Redis (cluster mode disabled) replication group has been successfully
          * created, you can add one or more read replicas to it, up to a total of 5 read
-         * replicas. You cannot alter a Redis (cluster mode enabled) replication group
-         * after it has been created. However, if you need to increase or decrease the
-         * number of node groups (console: shards), you can avail yourself of ElastiCache
-         * for Redis' enhanced backup and restore. For more information, see <a
-         * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups-restoring.html">Restoring
-         * From a Backup with Cluster Resizing</a> in the <i>ElastiCache User
-         * Guide</i>.</p> <note> <p>This operation is valid for Redis only.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * replicas. If you need to increase or decrease the number of node groups
+         * (console: shards), you can avail yourself of ElastiCache for Redis' scaling. For
+         * more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Scaling.html">Scaling
+         * ElastiCache for Redis Clusters</a> in the <i>ElastiCache User Guide</i>.</p>
+         * <note> <p>This operation is valid for Redis only.</p> </note><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CreateReplicationGroup">AWS
          * API Reference</a></p>
          *
@@ -1044,14 +1042,13 @@ namespace Model
          * enabled) replication groups partition the data across node groups (shards).</p>
          * <p>When a Redis (cluster mode disabled) replication group has been successfully
          * created, you can add one or more read replicas to it, up to a total of 5 read
-         * replicas. You cannot alter a Redis (cluster mode enabled) replication group
-         * after it has been created. However, if you need to increase or decrease the
-         * number of node groups (console: shards), you can avail yourself of ElastiCache
-         * for Redis' enhanced backup and restore. For more information, see <a
-         * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups-restoring.html">Restoring
-         * From a Backup with Cluster Resizing</a> in the <i>ElastiCache User
-         * Guide</i>.</p> <note> <p>This operation is valid for Redis only.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * replicas. If you need to increase or decrease the number of node groups
+         * (console: shards), you can avail yourself of ElastiCache for Redis' scaling. For
+         * more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Scaling.html">Scaling
+         * ElastiCache for Redis Clusters</a> in the <i>ElastiCache User Guide</i>.</p>
+         * <note> <p>This operation is valid for Redis only.</p> </note><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CreateReplicationGroup">AWS
          * API Reference</a></p>
          *
@@ -2597,8 +2594,8 @@ namespace Model
          * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_DescribeEvents.html">DescribeEvents</a>
          * in the ElastiCache API Reference</p> </li> </ul> </li> </ul> <p>Also see, <a
          * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/AutoFailover.html#auto-failover-test">Testing
-         * Multi-AZ with Automatic Failover</a> in the <i>ElastiCache User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * Multi-AZ </a> in the <i>ElastiCache User Guide</i>.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/TestFailover">AWS
          * API Reference</a></p>
          */
@@ -2634,8 +2631,8 @@ namespace Model
          * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_DescribeEvents.html">DescribeEvents</a>
          * in the ElastiCache API Reference</p> </li> </ul> </li> </ul> <p>Also see, <a
          * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/AutoFailover.html#auto-failover-test">Testing
-         * Multi-AZ with Automatic Failover</a> in the <i>ElastiCache User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * Multi-AZ </a> in the <i>ElastiCache User Guide</i>.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/TestFailover">AWS
          * API Reference</a></p>
          *
@@ -2673,8 +2670,8 @@ namespace Model
          * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_DescribeEvents.html">DescribeEvents</a>
          * in the ElastiCache API Reference</p> </li> </ul> </li> </ul> <p>Also see, <a
          * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/AutoFailover.html#auto-failover-test">Testing
-         * Multi-AZ with Automatic Failover</a> in the <i>ElastiCache User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * Multi-AZ </a> in the <i>ElastiCache User Guide</i>.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/TestFailover">AWS
          * API Reference</a></p>
          *

@@ -1349,56 +1349,38 @@ namespace Model
 
 
     /**
-     * <p>Indicates the status of Multi-AZ with automatic failover for the source Redis
-     * replication group.</p> <p>Amazon ElastiCache for Redis does not support Multi-AZ
-     * with automatic failover on:</p> <ul> <li> <p>Redis versions earlier than
-     * 2.8.6.</p> </li> <li> <p>Redis (cluster mode disabled): T1 node types.</p> </li>
-     * <li> <p>Redis (cluster mode enabled): T1 node types.</p> </li> </ul>
+     * <p>Indicates the status of automatic failover for the source Redis replication
+     * group.</p>
      */
     inline const AutomaticFailoverStatus& GetAutomaticFailover() const{ return m_automaticFailover; }
 
     /**
-     * <p>Indicates the status of Multi-AZ with automatic failover for the source Redis
-     * replication group.</p> <p>Amazon ElastiCache for Redis does not support Multi-AZ
-     * with automatic failover on:</p> <ul> <li> <p>Redis versions earlier than
-     * 2.8.6.</p> </li> <li> <p>Redis (cluster mode disabled): T1 node types.</p> </li>
-     * <li> <p>Redis (cluster mode enabled): T1 node types.</p> </li> </ul>
+     * <p>Indicates the status of automatic failover for the source Redis replication
+     * group.</p>
      */
     inline bool AutomaticFailoverHasBeenSet() const { return m_automaticFailoverHasBeenSet; }
 
     /**
-     * <p>Indicates the status of Multi-AZ with automatic failover for the source Redis
-     * replication group.</p> <p>Amazon ElastiCache for Redis does not support Multi-AZ
-     * with automatic failover on:</p> <ul> <li> <p>Redis versions earlier than
-     * 2.8.6.</p> </li> <li> <p>Redis (cluster mode disabled): T1 node types.</p> </li>
-     * <li> <p>Redis (cluster mode enabled): T1 node types.</p> </li> </ul>
+     * <p>Indicates the status of automatic failover for the source Redis replication
+     * group.</p>
      */
     inline void SetAutomaticFailover(const AutomaticFailoverStatus& value) { m_automaticFailoverHasBeenSet = true; m_automaticFailover = value; }
 
     /**
-     * <p>Indicates the status of Multi-AZ with automatic failover for the source Redis
-     * replication group.</p> <p>Amazon ElastiCache for Redis does not support Multi-AZ
-     * with automatic failover on:</p> <ul> <li> <p>Redis versions earlier than
-     * 2.8.6.</p> </li> <li> <p>Redis (cluster mode disabled): T1 node types.</p> </li>
-     * <li> <p>Redis (cluster mode enabled): T1 node types.</p> </li> </ul>
+     * <p>Indicates the status of automatic failover for the source Redis replication
+     * group.</p>
      */
     inline void SetAutomaticFailover(AutomaticFailoverStatus&& value) { m_automaticFailoverHasBeenSet = true; m_automaticFailover = std::move(value); }
 
     /**
-     * <p>Indicates the status of Multi-AZ with automatic failover for the source Redis
-     * replication group.</p> <p>Amazon ElastiCache for Redis does not support Multi-AZ
-     * with automatic failover on:</p> <ul> <li> <p>Redis versions earlier than
-     * 2.8.6.</p> </li> <li> <p>Redis (cluster mode disabled): T1 node types.</p> </li>
-     * <li> <p>Redis (cluster mode enabled): T1 node types.</p> </li> </ul>
+     * <p>Indicates the status of automatic failover for the source Redis replication
+     * group.</p>
      */
     inline Snapshot& WithAutomaticFailover(const AutomaticFailoverStatus& value) { SetAutomaticFailover(value); return *this;}
 
     /**
-     * <p>Indicates the status of Multi-AZ with automatic failover for the source Redis
-     * replication group.</p> <p>Amazon ElastiCache for Redis does not support Multi-AZ
-     * with automatic failover on:</p> <ul> <li> <p>Redis versions earlier than
-     * 2.8.6.</p> </li> <li> <p>Redis (cluster mode disabled): T1 node types.</p> </li>
-     * <li> <p>Redis (cluster mode enabled): T1 node types.</p> </li> </ul>
+     * <p>Indicates the status of automatic failover for the source Redis replication
+     * group.</p>
      */
     inline Snapshot& WithAutomaticFailover(AutomaticFailoverStatus&& value) { SetAutomaticFailover(std::move(value)); return *this;}
 

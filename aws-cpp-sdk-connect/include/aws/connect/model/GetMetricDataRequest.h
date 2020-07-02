@@ -312,8 +312,11 @@ namespace Model
 
     /**
      * <p>The metrics to retrieve. Specify the name, unit, and statistic for each
-     * metric. The following historical metrics are available:</p> <dl>
-     * <dt>ABANDON_TIME</dt> <dd> <p>Unit: SECONDS</p> <p>Statistic: AVG</p> </dd>
+     * metric. The following historical metrics are available. For a description of
+     * each metric, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html">Historical
+     * Metrics Definitions</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+     * <dl> <dt>ABANDON_TIME</dt> <dd> <p>Unit: SECONDS</p> <p>Statistic: AVG</p> </dd>
      * <dt>AFTER_CONTACT_WORK_TIME</dt> <dd> <p>Unit: SECONDS</p> <p>Statistic: AVG</p>
      * </dd> <dt>API_CONTACTS_HANDLED</dt> <dd> <p>Unit: COUNT</p> <p>Statistic:
      * SUM</p> </dd> <dt>CALLBACK_CONTACTS_HANDLED</dt> <dd> <p>Unit: COUNT</p>
@@ -348,8 +351,11 @@ namespace Model
 
     /**
      * <p>The metrics to retrieve. Specify the name, unit, and statistic for each
-     * metric. The following historical metrics are available:</p> <dl>
-     * <dt>ABANDON_TIME</dt> <dd> <p>Unit: SECONDS</p> <p>Statistic: AVG</p> </dd>
+     * metric. The following historical metrics are available. For a description of
+     * each metric, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html">Historical
+     * Metrics Definitions</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+     * <dl> <dt>ABANDON_TIME</dt> <dd> <p>Unit: SECONDS</p> <p>Statistic: AVG</p> </dd>
      * <dt>AFTER_CONTACT_WORK_TIME</dt> <dd> <p>Unit: SECONDS</p> <p>Statistic: AVG</p>
      * </dd> <dt>API_CONTACTS_HANDLED</dt> <dd> <p>Unit: COUNT</p> <p>Statistic:
      * SUM</p> </dd> <dt>CALLBACK_CONTACTS_HANDLED</dt> <dd> <p>Unit: COUNT</p>
@@ -384,8 +390,11 @@ namespace Model
 
     /**
      * <p>The metrics to retrieve. Specify the name, unit, and statistic for each
-     * metric. The following historical metrics are available:</p> <dl>
-     * <dt>ABANDON_TIME</dt> <dd> <p>Unit: SECONDS</p> <p>Statistic: AVG</p> </dd>
+     * metric. The following historical metrics are available. For a description of
+     * each metric, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html">Historical
+     * Metrics Definitions</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+     * <dl> <dt>ABANDON_TIME</dt> <dd> <p>Unit: SECONDS</p> <p>Statistic: AVG</p> </dd>
      * <dt>AFTER_CONTACT_WORK_TIME</dt> <dd> <p>Unit: SECONDS</p> <p>Statistic: AVG</p>
      * </dd> <dt>API_CONTACTS_HANDLED</dt> <dd> <p>Unit: COUNT</p> <p>Statistic:
      * SUM</p> </dd> <dt>CALLBACK_CONTACTS_HANDLED</dt> <dd> <p>Unit: COUNT</p>
@@ -420,8 +429,11 @@ namespace Model
 
     /**
      * <p>The metrics to retrieve. Specify the name, unit, and statistic for each
-     * metric. The following historical metrics are available:</p> <dl>
-     * <dt>ABANDON_TIME</dt> <dd> <p>Unit: SECONDS</p> <p>Statistic: AVG</p> </dd>
+     * metric. The following historical metrics are available. For a description of
+     * each metric, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html">Historical
+     * Metrics Definitions</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+     * <dl> <dt>ABANDON_TIME</dt> <dd> <p>Unit: SECONDS</p> <p>Statistic: AVG</p> </dd>
      * <dt>AFTER_CONTACT_WORK_TIME</dt> <dd> <p>Unit: SECONDS</p> <p>Statistic: AVG</p>
      * </dd> <dt>API_CONTACTS_HANDLED</dt> <dd> <p>Unit: COUNT</p> <p>Statistic:
      * SUM</p> </dd> <dt>CALLBACK_CONTACTS_HANDLED</dt> <dd> <p>Unit: COUNT</p>
@@ -456,8 +468,11 @@ namespace Model
 
     /**
      * <p>The metrics to retrieve. Specify the name, unit, and statistic for each
-     * metric. The following historical metrics are available:</p> <dl>
-     * <dt>ABANDON_TIME</dt> <dd> <p>Unit: SECONDS</p> <p>Statistic: AVG</p> </dd>
+     * metric. The following historical metrics are available. For a description of
+     * each metric, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html">Historical
+     * Metrics Definitions</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+     * <dl> <dt>ABANDON_TIME</dt> <dd> <p>Unit: SECONDS</p> <p>Statistic: AVG</p> </dd>
      * <dt>AFTER_CONTACT_WORK_TIME</dt> <dd> <p>Unit: SECONDS</p> <p>Statistic: AVG</p>
      * </dd> <dt>API_CONTACTS_HANDLED</dt> <dd> <p>Unit: COUNT</p> <p>Statistic:
      * SUM</p> </dd> <dt>CALLBACK_CONTACTS_HANDLED</dt> <dd> <p>Unit: COUNT</p>
@@ -492,8 +507,11 @@ namespace Model
 
     /**
      * <p>The metrics to retrieve. Specify the name, unit, and statistic for each
-     * metric. The following historical metrics are available:</p> <dl>
-     * <dt>ABANDON_TIME</dt> <dd> <p>Unit: SECONDS</p> <p>Statistic: AVG</p> </dd>
+     * metric. The following historical metrics are available. For a description of
+     * each metric, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html">Historical
+     * Metrics Definitions</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+     * <dl> <dt>ABANDON_TIME</dt> <dd> <p>Unit: SECONDS</p> <p>Statistic: AVG</p> </dd>
      * <dt>AFTER_CONTACT_WORK_TIME</dt> <dd> <p>Unit: SECONDS</p> <p>Statistic: AVG</p>
      * </dd> <dt>API_CONTACTS_HANDLED</dt> <dd> <p>Unit: COUNT</p> <p>Statistic:
      * SUM</p> </dd> <dt>CALLBACK_CONTACTS_HANDLED</dt> <dd> <p>Unit: COUNT</p>
@@ -528,8 +546,11 @@ namespace Model
 
     /**
      * <p>The metrics to retrieve. Specify the name, unit, and statistic for each
-     * metric. The following historical metrics are available:</p> <dl>
-     * <dt>ABANDON_TIME</dt> <dd> <p>Unit: SECONDS</p> <p>Statistic: AVG</p> </dd>
+     * metric. The following historical metrics are available. For a description of
+     * each metric, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html">Historical
+     * Metrics Definitions</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+     * <dl> <dt>ABANDON_TIME</dt> <dd> <p>Unit: SECONDS</p> <p>Statistic: AVG</p> </dd>
      * <dt>AFTER_CONTACT_WORK_TIME</dt> <dd> <p>Unit: SECONDS</p> <p>Statistic: AVG</p>
      * </dd> <dt>API_CONTACTS_HANDLED</dt> <dd> <p>Unit: COUNT</p> <p>Statistic:
      * SUM</p> </dd> <dt>CALLBACK_CONTACTS_HANDLED</dt> <dd> <p>Unit: COUNT</p>
@@ -564,8 +585,11 @@ namespace Model
 
     /**
      * <p>The metrics to retrieve. Specify the name, unit, and statistic for each
-     * metric. The following historical metrics are available:</p> <dl>
-     * <dt>ABANDON_TIME</dt> <dd> <p>Unit: SECONDS</p> <p>Statistic: AVG</p> </dd>
+     * metric. The following historical metrics are available. For a description of
+     * each metric, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html">Historical
+     * Metrics Definitions</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+     * <dl> <dt>ABANDON_TIME</dt> <dd> <p>Unit: SECONDS</p> <p>Statistic: AVG</p> </dd>
      * <dt>AFTER_CONTACT_WORK_TIME</dt> <dd> <p>Unit: SECONDS</p> <p>Statistic: AVG</p>
      * </dd> <dt>API_CONTACTS_HANDLED</dt> <dd> <p>Unit: COUNT</p> <p>Statistic:
      * SUM</p> </dd> <dt>CALLBACK_CONTACTS_HANDLED</dt> <dd> <p>Unit: COUNT</p>
