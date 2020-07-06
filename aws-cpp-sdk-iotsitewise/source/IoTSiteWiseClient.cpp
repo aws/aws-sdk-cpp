@@ -1432,16 +1432,6 @@ void IoTSiteWiseClient::GetAssetPropertyValueAsyncHelper(const GetAssetPropertyV
 
 GetAssetPropertyValueHistoryOutcome IoTSiteWiseClient::GetAssetPropertyValueHistory(const GetAssetPropertyValueHistoryRequest& request) const
 {
-  if (!request.StartDateHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("GetAssetPropertyValueHistory", "Required field: StartDate, is not set");
-    return GetAssetPropertyValueHistoryOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [StartDate]", false));
-  }
-  if (!request.EndDateHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("GetAssetPropertyValueHistory", "Required field: EndDate, is not set");
-    return GetAssetPropertyValueHistoryOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [EndDate]", false));
-  }
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   if (m_enableHostPrefixInjection)
   {

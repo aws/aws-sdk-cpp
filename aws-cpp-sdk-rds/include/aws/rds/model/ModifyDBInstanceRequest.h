@@ -2099,7 +2099,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_SQLServerWinAuth.html">
      * Using Windows Authentication with an Amazon RDS DB Instance Running Microsoft
      * SQL Server</a> in the <i>Amazon RDS User Guide</i>.</p> <p>For Oracle DB
-     * instances, Amazon RDS can use Kerberos Authentication to authenticate users that
+     * instances, Amazon RDS can use Kerberos authentication to authenticate users that
      * connect to the DB instance. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-kerberos.html">
      * Using Kerberos Authentication with Amazon RDS for Oracle</a> in the <i>Amazon
@@ -2118,7 +2118,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_SQLServerWinAuth.html">
      * Using Windows Authentication with an Amazon RDS DB Instance Running Microsoft
      * SQL Server</a> in the <i>Amazon RDS User Guide</i>.</p> <p>For Oracle DB
-     * instances, Amazon RDS can use Kerberos Authentication to authenticate users that
+     * instances, Amazon RDS can use Kerberos authentication to authenticate users that
      * connect to the DB instance. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-kerberos.html">
      * Using Kerberos Authentication with Amazon RDS for Oracle</a> in the <i>Amazon
@@ -2137,7 +2137,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_SQLServerWinAuth.html">
      * Using Windows Authentication with an Amazon RDS DB Instance Running Microsoft
      * SQL Server</a> in the <i>Amazon RDS User Guide</i>.</p> <p>For Oracle DB
-     * instances, Amazon RDS can use Kerberos Authentication to authenticate users that
+     * instances, Amazon RDS can use Kerberos authentication to authenticate users that
      * connect to the DB instance. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-kerberos.html">
      * Using Kerberos Authentication with Amazon RDS for Oracle</a> in the <i>Amazon
@@ -2156,7 +2156,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_SQLServerWinAuth.html">
      * Using Windows Authentication with an Amazon RDS DB Instance Running Microsoft
      * SQL Server</a> in the <i>Amazon RDS User Guide</i>.</p> <p>For Oracle DB
-     * instances, Amazon RDS can use Kerberos Authentication to authenticate users that
+     * instances, Amazon RDS can use Kerberos authentication to authenticate users that
      * connect to the DB instance. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-kerberos.html">
      * Using Kerberos Authentication with Amazon RDS for Oracle</a> in the <i>Amazon
@@ -2175,7 +2175,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_SQLServerWinAuth.html">
      * Using Windows Authentication with an Amazon RDS DB Instance Running Microsoft
      * SQL Server</a> in the <i>Amazon RDS User Guide</i>.</p> <p>For Oracle DB
-     * instances, Amazon RDS can use Kerberos Authentication to authenticate users that
+     * instances, Amazon RDS can use Kerberos authentication to authenticate users that
      * connect to the DB instance. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-kerberos.html">
      * Using Kerberos Authentication with Amazon RDS for Oracle</a> in the <i>Amazon
@@ -2194,7 +2194,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_SQLServerWinAuth.html">
      * Using Windows Authentication with an Amazon RDS DB Instance Running Microsoft
      * SQL Server</a> in the <i>Amazon RDS User Guide</i>.</p> <p>For Oracle DB
-     * instances, Amazon RDS can use Kerberos Authentication to authenticate users that
+     * instances, Amazon RDS can use Kerberos authentication to authenticate users that
      * connect to the DB instance. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-kerberos.html">
      * Using Kerberos Authentication with Amazon RDS for Oracle</a> in the <i>Amazon
@@ -2213,7 +2213,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_SQLServerWinAuth.html">
      * Using Windows Authentication with an Amazon RDS DB Instance Running Microsoft
      * SQL Server</a> in the <i>Amazon RDS User Guide</i>.</p> <p>For Oracle DB
-     * instances, Amazon RDS can use Kerberos Authentication to authenticate users that
+     * instances, Amazon RDS can use Kerberos authentication to authenticate users that
      * connect to the DB instance. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-kerberos.html">
      * Using Kerberos Authentication with Amazon RDS for Oracle</a> in the <i>Amazon
@@ -2232,7 +2232,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_SQLServerWinAuth.html">
      * Using Windows Authentication with an Amazon RDS DB Instance Running Microsoft
      * SQL Server</a> in the <i>Amazon RDS User Guide</i>.</p> <p>For Oracle DB
-     * instances, Amazon RDS can use Kerberos Authentication to authenticate users that
+     * instances, Amazon RDS can use Kerberos authentication to authenticate users that
      * connect to the DB instance. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-kerberos.html">
      * Using Kerberos Authentication with Amazon RDS for Oracle</a> in the <i>Amazon

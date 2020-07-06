@@ -27,7 +27,8 @@ namespace Model
 {
 
   /**
-   * <p>An IAM policy assignment.</p><p><h3>See Also:</h3>   <a
+   * <p>An AWS Identity and Access Management (IAM) policy assignment.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/IAMPolicyAssignment">AWS
    * API Reference</a></p>
    */

@@ -162,44 +162,44 @@ namespace Model
 
 
     /**
-     * <p>A structure that contains the parameters of the dashboard. These are
-     * parameter overrides for a dashboard. A dashboard can have any type of
-     * parameters, and some parameters might accept multiple values. </p>
+     * <p>The parameters for the creation of the dashboard, which you want to use to
+     * override the default settings. A dashboard can have any type of parameters, and
+     * some parameters might accept multiple values. </p>
      */
     inline const Parameters& GetParameters() const{ return m_parameters; }
 
     /**
-     * <p>A structure that contains the parameters of the dashboard. These are
-     * parameter overrides for a dashboard. A dashboard can have any type of
-     * parameters, and some parameters might accept multiple values. </p>
+     * <p>The parameters for the creation of the dashboard, which you want to use to
+     * override the default settings. A dashboard can have any type of parameters, and
+     * some parameters might accept multiple values. </p>
      */
     inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
 
     /**
-     * <p>A structure that contains the parameters of the dashboard. These are
-     * parameter overrides for a dashboard. A dashboard can have any type of
-     * parameters, and some parameters might accept multiple values. </p>
+     * <p>The parameters for the creation of the dashboard, which you want to use to
+     * override the default settings. A dashboard can have any type of parameters, and
+     * some parameters might accept multiple values. </p>
      */
     inline void SetParameters(const Parameters& value) { m_parametersHasBeenSet = true; m_parameters = value; }
 
     /**
-     * <p>A structure that contains the parameters of the dashboard. These are
-     * parameter overrides for a dashboard. A dashboard can have any type of
-     * parameters, and some parameters might accept multiple values. </p>
+     * <p>The parameters for the creation of the dashboard, which you want to use to
+     * override the default settings. A dashboard can have any type of parameters, and
+     * some parameters might accept multiple values. </p>
      */
     inline void SetParameters(Parameters&& value) { m_parametersHasBeenSet = true; m_parameters = std::move(value); }
 
     /**
-     * <p>A structure that contains the parameters of the dashboard. These are
-     * parameter overrides for a dashboard. A dashboard can have any type of
-     * parameters, and some parameters might accept multiple values. </p>
+     * <p>The parameters for the creation of the dashboard, which you want to use to
+     * override the default settings. A dashboard can have any type of parameters, and
+     * some parameters might accept multiple values. </p>
      */
     inline CreateDashboardRequest& WithParameters(const Parameters& value) { SetParameters(value); return *this;}
 
     /**
-     * <p>A structure that contains the parameters of the dashboard. These are
-     * parameter overrides for a dashboard. A dashboard can have any type of
-     * parameters, and some parameters might accept multiple values. </p>
+     * <p>The parameters for the creation of the dashboard, which you want to use to
+     * override the default settings. A dashboard can have any type of parameters, and
+     * some parameters might accept multiple values. </p>
      */
     inline CreateDashboardRequest& WithParameters(Parameters&& value) { SetParameters(std::move(value)); return *this;}
 
@@ -453,7 +453,7 @@ namespace Model
      * <code>DISABLED</code>. This option is <code>ENABLED</code> by default. </p>
      * </li> <li> <p> <code>VisibilityState</code> for <code>SheetControlsOption</code>
      * - This visibility state can be either <code>COLLAPSED</code> or
-     * <code>EXPANDED</code>. This option is <code>COLLAPSED</code> by default.</p>
+     * <code>EXPANDED</code>. This option is <code>COLLAPSED</code> by default. </p>
      * </li> </ul>
      */
     inline const DashboardPublishOptions& GetDashboardPublishOptions() const{ return m_dashboardPublishOptions; }
@@ -471,7 +471,7 @@ namespace Model
      * <code>DISABLED</code>. This option is <code>ENABLED</code> by default. </p>
      * </li> <li> <p> <code>VisibilityState</code> for <code>SheetControlsOption</code>
      * - This visibility state can be either <code>COLLAPSED</code> or
-     * <code>EXPANDED</code>. This option is <code>COLLAPSED</code> by default.</p>
+     * <code>EXPANDED</code>. This option is <code>COLLAPSED</code> by default. </p>
      * </li> </ul>
      */
     inline bool DashboardPublishOptionsHasBeenSet() const { return m_dashboardPublishOptionsHasBeenSet; }
@@ -489,7 +489,7 @@ namespace Model
      * <code>DISABLED</code>. This option is <code>ENABLED</code> by default. </p>
      * </li> <li> <p> <code>VisibilityState</code> for <code>SheetControlsOption</code>
      * - This visibility state can be either <code>COLLAPSED</code> or
-     * <code>EXPANDED</code>. This option is <code>COLLAPSED</code> by default.</p>
+     * <code>EXPANDED</code>. This option is <code>COLLAPSED</code> by default. </p>
      * </li> </ul>
      */
     inline void SetDashboardPublishOptions(const DashboardPublishOptions& value) { m_dashboardPublishOptionsHasBeenSet = true; m_dashboardPublishOptions = value; }
@@ -507,7 +507,7 @@ namespace Model
      * <code>DISABLED</code>. This option is <code>ENABLED</code> by default. </p>
      * </li> <li> <p> <code>VisibilityState</code> for <code>SheetControlsOption</code>
      * - This visibility state can be either <code>COLLAPSED</code> or
-     * <code>EXPANDED</code>. This option is <code>COLLAPSED</code> by default.</p>
+     * <code>EXPANDED</code>. This option is <code>COLLAPSED</code> by default. </p>
      * </li> </ul>
      */
     inline void SetDashboardPublishOptions(DashboardPublishOptions&& value) { m_dashboardPublishOptionsHasBeenSet = true; m_dashboardPublishOptions = std::move(value); }
@@ -525,7 +525,7 @@ namespace Model
      * <code>DISABLED</code>. This option is <code>ENABLED</code> by default. </p>
      * </li> <li> <p> <code>VisibilityState</code> for <code>SheetControlsOption</code>
      * - This visibility state can be either <code>COLLAPSED</code> or
-     * <code>EXPANDED</code>. This option is <code>COLLAPSED</code> by default.</p>
+     * <code>EXPANDED</code>. This option is <code>COLLAPSED</code> by default. </p>
      * </li> </ul>
      */
     inline CreateDashboardRequest& WithDashboardPublishOptions(const DashboardPublishOptions& value) { SetDashboardPublishOptions(value); return *this;}
@@ -543,10 +543,75 @@ namespace Model
      * <code>DISABLED</code>. This option is <code>ENABLED</code> by default. </p>
      * </li> <li> <p> <code>VisibilityState</code> for <code>SheetControlsOption</code>
      * - This visibility state can be either <code>COLLAPSED</code> or
-     * <code>EXPANDED</code>. This option is <code>COLLAPSED</code> by default.</p>
+     * <code>EXPANDED</code>. This option is <code>COLLAPSED</code> by default. </p>
      * </li> </ul>
      */
     inline CreateDashboardRequest& WithDashboardPublishOptions(DashboardPublishOptions&& value) { SetDashboardPublishOptions(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the theme that is being used for this
+     * dashboard. If you add a value for this field, it overrides the value that is
+     * used in the source entity. The theme ARN must exist in the same AWS account
+     * where you create the dashboard.</p>
+     */
+    inline const Aws::String& GetThemeArn() const{ return m_themeArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the theme that is being used for this
+     * dashboard. If you add a value for this field, it overrides the value that is
+     * used in the source entity. The theme ARN must exist in the same AWS account
+     * where you create the dashboard.</p>
+     */
+    inline bool ThemeArnHasBeenSet() const { return m_themeArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the theme that is being used for this
+     * dashboard. If you add a value for this field, it overrides the value that is
+     * used in the source entity. The theme ARN must exist in the same AWS account
+     * where you create the dashboard.</p>
+     */
+    inline void SetThemeArn(const Aws::String& value) { m_themeArnHasBeenSet = true; m_themeArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the theme that is being used for this
+     * dashboard. If you add a value for this field, it overrides the value that is
+     * used in the source entity. The theme ARN must exist in the same AWS account
+     * where you create the dashboard.</p>
+     */
+    inline void SetThemeArn(Aws::String&& value) { m_themeArnHasBeenSet = true; m_themeArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the theme that is being used for this
+     * dashboard. If you add a value for this field, it overrides the value that is
+     * used in the source entity. The theme ARN must exist in the same AWS account
+     * where you create the dashboard.</p>
+     */
+    inline void SetThemeArn(const char* value) { m_themeArnHasBeenSet = true; m_themeArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the theme that is being used for this
+     * dashboard. If you add a value for this field, it overrides the value that is
+     * used in the source entity. The theme ARN must exist in the same AWS account
+     * where you create the dashboard.</p>
+     */
+    inline CreateDashboardRequest& WithThemeArn(const Aws::String& value) { SetThemeArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the theme that is being used for this
+     * dashboard. If you add a value for this field, it overrides the value that is
+     * used in the source entity. The theme ARN must exist in the same AWS account
+     * where you create the dashboard.</p>
+     */
+    inline CreateDashboardRequest& WithThemeArn(Aws::String&& value) { SetThemeArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the theme that is being used for this
+     * dashboard. If you add a value for this field, it overrides the value that is
+     * used in the source entity. The theme ARN must exist in the same AWS account
+     * where you create the dashboard.</p>
+     */
+    inline CreateDashboardRequest& WithThemeArn(const char* value) { SetThemeArn(value); return *this;}
 
   private:
 
@@ -576,6 +641,9 @@ namespace Model
 
     DashboardPublishOptions m_dashboardPublishOptions;
     bool m_dashboardPublishOptionsHasBeenSet;
+
+    Aws::String m_themeArn;
+    bool m_themeArnHasBeenSet;
   };
 
 } // namespace Model

@@ -266,42 +266,42 @@ namespace Model
     /**
      * <p>A structure that contains the parameters of the dashboard. These are
      * parameter overrides for a dashboard. A dashboard can have any type of
-     * parameters, and some parameters might accept multiple values. </p>
+     * parameters, and some parameters might accept multiple values.</p>
      */
     inline const Parameters& GetParameters() const{ return m_parameters; }
 
     /**
      * <p>A structure that contains the parameters of the dashboard. These are
      * parameter overrides for a dashboard. A dashboard can have any type of
-     * parameters, and some parameters might accept multiple values. </p>
+     * parameters, and some parameters might accept multiple values.</p>
      */
     inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
 
     /**
      * <p>A structure that contains the parameters of the dashboard. These are
      * parameter overrides for a dashboard. A dashboard can have any type of
-     * parameters, and some parameters might accept multiple values. </p>
+     * parameters, and some parameters might accept multiple values.</p>
      */
     inline void SetParameters(const Parameters& value) { m_parametersHasBeenSet = true; m_parameters = value; }
 
     /**
      * <p>A structure that contains the parameters of the dashboard. These are
      * parameter overrides for a dashboard. A dashboard can have any type of
-     * parameters, and some parameters might accept multiple values. </p>
+     * parameters, and some parameters might accept multiple values.</p>
      */
     inline void SetParameters(Parameters&& value) { m_parametersHasBeenSet = true; m_parameters = std::move(value); }
 
     /**
      * <p>A structure that contains the parameters of the dashboard. These are
      * parameter overrides for a dashboard. A dashboard can have any type of
-     * parameters, and some parameters might accept multiple values. </p>
+     * parameters, and some parameters might accept multiple values.</p>
      */
     inline UpdateDashboardRequest& WithParameters(const Parameters& value) { SetParameters(value); return *this;}
 
     /**
      * <p>A structure that contains the parameters of the dashboard. These are
      * parameter overrides for a dashboard. A dashboard can have any type of
-     * parameters, and some parameters might accept multiple values. </p>
+     * parameters, and some parameters might accept multiple values.</p>
      */
     inline UpdateDashboardRequest& WithParameters(Parameters&& value) { SetParameters(std::move(value)); return *this;}
 
@@ -455,6 +455,71 @@ namespace Model
      */
     inline UpdateDashboardRequest& WithDashboardPublishOptions(DashboardPublishOptions&& value) { SetDashboardPublishOptions(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the theme that is being used for this
+     * dashboard. If you add a value for this field, it overrides the value that was
+     * originally associated with the entity. The theme ARN must exist in the same AWS
+     * account where you create the dashboard.</p>
+     */
+    inline const Aws::String& GetThemeArn() const{ return m_themeArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the theme that is being used for this
+     * dashboard. If you add a value for this field, it overrides the value that was
+     * originally associated with the entity. The theme ARN must exist in the same AWS
+     * account where you create the dashboard.</p>
+     */
+    inline bool ThemeArnHasBeenSet() const { return m_themeArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the theme that is being used for this
+     * dashboard. If you add a value for this field, it overrides the value that was
+     * originally associated with the entity. The theme ARN must exist in the same AWS
+     * account where you create the dashboard.</p>
+     */
+    inline void SetThemeArn(const Aws::String& value) { m_themeArnHasBeenSet = true; m_themeArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the theme that is being used for this
+     * dashboard. If you add a value for this field, it overrides the value that was
+     * originally associated with the entity. The theme ARN must exist in the same AWS
+     * account where you create the dashboard.</p>
+     */
+    inline void SetThemeArn(Aws::String&& value) { m_themeArnHasBeenSet = true; m_themeArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the theme that is being used for this
+     * dashboard. If you add a value for this field, it overrides the value that was
+     * originally associated with the entity. The theme ARN must exist in the same AWS
+     * account where you create the dashboard.</p>
+     */
+    inline void SetThemeArn(const char* value) { m_themeArnHasBeenSet = true; m_themeArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the theme that is being used for this
+     * dashboard. If you add a value for this field, it overrides the value that was
+     * originally associated with the entity. The theme ARN must exist in the same AWS
+     * account where you create the dashboard.</p>
+     */
+    inline UpdateDashboardRequest& WithThemeArn(const Aws::String& value) { SetThemeArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the theme that is being used for this
+     * dashboard. If you add a value for this field, it overrides the value that was
+     * originally associated with the entity. The theme ARN must exist in the same AWS
+     * account where you create the dashboard.</p>
+     */
+    inline UpdateDashboardRequest& WithThemeArn(Aws::String&& value) { SetThemeArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the theme that is being used for this
+     * dashboard. If you add a value for this field, it overrides the value that was
+     * originally associated with the entity. The theme ARN must exist in the same AWS
+     * account where you create the dashboard.</p>
+     */
+    inline UpdateDashboardRequest& WithThemeArn(const char* value) { SetThemeArn(value); return *this;}
+
   private:
 
     Aws::String m_awsAccountId;
@@ -477,6 +542,9 @@ namespace Model
 
     DashboardPublishOptions m_dashboardPublishOptions;
     bool m_dashboardPublishOptionsHasBeenSet;
+
+    Aws::String m_themeArn;
+    bool m_themeArnHasBeenSet;
   };
 
 } // namespace Model

@@ -61,7 +61,9 @@ OrderableDBInstanceOption::OrderableDBInstanceOption() :
     m_supportsStorageAutoscaling(false),
     m_supportsStorageAutoscalingHasBeenSet(false),
     m_supportsKerberosAuthentication(false),
-    m_supportsKerberosAuthenticationHasBeenSet(false)
+    m_supportsKerberosAuthenticationHasBeenSet(false),
+    m_outpostCapable(false),
+    m_outpostCapableHasBeenSet(false)
 {
 }
 
@@ -106,7 +108,9 @@ OrderableDBInstanceOption::OrderableDBInstanceOption(const XmlNode& xmlNode) :
     m_supportsStorageAutoscaling(false),
     m_supportsStorageAutoscalingHasBeenSet(false),
     m_supportsKerberosAuthentication(false),
-    m_supportsKerberosAuthenticationHasBeenSet(false)
+    m_supportsKerberosAuthenticationHasBeenSet(false),
+    m_outpostCapable(false),
+    m_outpostCapableHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -285,6 +289,12 @@ OrderableDBInstanceOption& OrderableDBInstanceOption::operator =(const XmlNode& 
       m_supportsKerberosAuthentication = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(supportsKerberosAuthenticationNode.GetText()).c_str()).c_str());
       m_supportsKerberosAuthenticationHasBeenSet = true;
     }
+    XmlNode outpostCapableNode = resultNode.FirstChild("OutpostCapable");
+    if(!outpostCapableNode.IsNull())
+    {
+      m_outpostCapable = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(outpostCapableNode.GetText()).c_str()).c_str());
+      m_outpostCapableHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -433,6 +443,11 @@ void OrderableDBInstanceOption::OutputToStream(Aws::OStream& oStream, const char
       oStream << location << index << locationValue << ".SupportsKerberosAuthentication=" << std::boolalpha << m_supportsKerberosAuthentication << "&";
   }
 
+  if(m_outpostCapableHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".OutpostCapable=" << std::boolalpha << m_outpostCapable << "&";
+  }
+
 }
 
 void OrderableDBInstanceOption::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -552,6 +567,10 @@ void OrderableDBInstanceOption::OutputToStream(Aws::OStream& oStream, const char
   if(m_supportsKerberosAuthenticationHasBeenSet)
   {
       oStream << location << ".SupportsKerberosAuthentication=" << std::boolalpha << m_supportsKerberosAuthentication << "&";
+  }
+  if(m_outpostCapableHasBeenSet)
+  {
+      oStream << location << ".OutpostCapable=" << std::boolalpha << m_outpostCapable << "&";
   }
 }
 

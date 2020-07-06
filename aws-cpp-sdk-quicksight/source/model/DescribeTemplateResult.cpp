@@ -36,6 +36,12 @@ DescribeTemplateResult& DescribeTemplateResult::operator =(const Aws::AmazonWebS
 
   }
 
+  if(jsonValue.ValueExists("RequestId"))
+  {
+    m_requestId = jsonValue.GetString("RequestId");
+
+  }
+
 
 
   m_status = static_cast<int>(result.GetResponseCode());

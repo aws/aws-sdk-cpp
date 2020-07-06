@@ -21,6 +21,8 @@
 #include <aws/quicksight/model/CreateIngestionResult.h>
 #include <aws/quicksight/model/CreateTemplateResult.h>
 #include <aws/quicksight/model/CreateTemplateAliasResult.h>
+#include <aws/quicksight/model/CreateThemeResult.h>
+#include <aws/quicksight/model/CreateThemeAliasResult.h>
 #include <aws/quicksight/model/DeleteDashboardResult.h>
 #include <aws/quicksight/model/DeleteDataSetResult.h>
 #include <aws/quicksight/model/DeleteDataSourceResult.h>
@@ -29,6 +31,8 @@
 #include <aws/quicksight/model/DeleteIAMPolicyAssignmentResult.h>
 #include <aws/quicksight/model/DeleteTemplateResult.h>
 #include <aws/quicksight/model/DeleteTemplateAliasResult.h>
+#include <aws/quicksight/model/DeleteThemeResult.h>
+#include <aws/quicksight/model/DeleteThemeAliasResult.h>
 #include <aws/quicksight/model/DeleteUserResult.h>
 #include <aws/quicksight/model/DeleteUserByPrincipalIdResult.h>
 #include <aws/quicksight/model/DescribeDashboardResult.h>
@@ -43,6 +47,9 @@
 #include <aws/quicksight/model/DescribeTemplateResult.h>
 #include <aws/quicksight/model/DescribeTemplateAliasResult.h>
 #include <aws/quicksight/model/DescribeTemplatePermissionsResult.h>
+#include <aws/quicksight/model/DescribeThemeResult.h>
+#include <aws/quicksight/model/DescribeThemeAliasResult.h>
+#include <aws/quicksight/model/DescribeThemePermissionsResult.h>
 #include <aws/quicksight/model/DescribeUserResult.h>
 #include <aws/quicksight/model/GetDashboardEmbedUrlResult.h>
 #include <aws/quicksight/model/ListDashboardVersionsResult.h>
@@ -58,6 +65,9 @@
 #include <aws/quicksight/model/ListTemplateAliasesResult.h>
 #include <aws/quicksight/model/ListTemplateVersionsResult.h>
 #include <aws/quicksight/model/ListTemplatesResult.h>
+#include <aws/quicksight/model/ListThemeAliasesResult.h>
+#include <aws/quicksight/model/ListThemeVersionsResult.h>
+#include <aws/quicksight/model/ListThemesResult.h>
 #include <aws/quicksight/model/ListUserGroupsResult.h>
 #include <aws/quicksight/model/ListUsersResult.h>
 #include <aws/quicksight/model/RegisterUserResult.h>
@@ -76,6 +86,9 @@
 #include <aws/quicksight/model/UpdateTemplateResult.h>
 #include <aws/quicksight/model/UpdateTemplateAliasResult.h>
 #include <aws/quicksight/model/UpdateTemplatePermissionsResult.h>
+#include <aws/quicksight/model/UpdateThemeResult.h>
+#include <aws/quicksight/model/UpdateThemeAliasResult.h>
+#include <aws/quicksight/model/UpdateThemePermissionsResult.h>
 #include <aws/quicksight/model/UpdateUserResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
@@ -126,6 +139,8 @@ namespace Model
         class CreateIngestionRequest;
         class CreateTemplateRequest;
         class CreateTemplateAliasRequest;
+        class CreateThemeRequest;
+        class CreateThemeAliasRequest;
         class DeleteDashboardRequest;
         class DeleteDataSetRequest;
         class DeleteDataSourceRequest;
@@ -134,6 +149,8 @@ namespace Model
         class DeleteIAMPolicyAssignmentRequest;
         class DeleteTemplateRequest;
         class DeleteTemplateAliasRequest;
+        class DeleteThemeRequest;
+        class DeleteThemeAliasRequest;
         class DeleteUserRequest;
         class DeleteUserByPrincipalIdRequest;
         class DescribeDashboardRequest;
@@ -148,6 +165,9 @@ namespace Model
         class DescribeTemplateRequest;
         class DescribeTemplateAliasRequest;
         class DescribeTemplatePermissionsRequest;
+        class DescribeThemeRequest;
+        class DescribeThemeAliasRequest;
+        class DescribeThemePermissionsRequest;
         class DescribeUserRequest;
         class GetDashboardEmbedUrlRequest;
         class ListDashboardVersionsRequest;
@@ -163,6 +183,9 @@ namespace Model
         class ListTemplateAliasesRequest;
         class ListTemplateVersionsRequest;
         class ListTemplatesRequest;
+        class ListThemeAliasesRequest;
+        class ListThemeVersionsRequest;
+        class ListThemesRequest;
         class ListUserGroupsRequest;
         class ListUsersRequest;
         class RegisterUserRequest;
@@ -181,6 +204,9 @@ namespace Model
         class UpdateTemplateRequest;
         class UpdateTemplateAliasRequest;
         class UpdateTemplatePermissionsRequest;
+        class UpdateThemeRequest;
+        class UpdateThemeAliasRequest;
+        class UpdateThemePermissionsRequest;
         class UpdateUserRequest;
 
         typedef Aws::Utils::Outcome<CancelIngestionResult, QuickSightError> CancelIngestionOutcome;
@@ -193,6 +219,8 @@ namespace Model
         typedef Aws::Utils::Outcome<CreateIngestionResult, QuickSightError> CreateIngestionOutcome;
         typedef Aws::Utils::Outcome<CreateTemplateResult, QuickSightError> CreateTemplateOutcome;
         typedef Aws::Utils::Outcome<CreateTemplateAliasResult, QuickSightError> CreateTemplateAliasOutcome;
+        typedef Aws::Utils::Outcome<CreateThemeResult, QuickSightError> CreateThemeOutcome;
+        typedef Aws::Utils::Outcome<CreateThemeAliasResult, QuickSightError> CreateThemeAliasOutcome;
         typedef Aws::Utils::Outcome<DeleteDashboardResult, QuickSightError> DeleteDashboardOutcome;
         typedef Aws::Utils::Outcome<DeleteDataSetResult, QuickSightError> DeleteDataSetOutcome;
         typedef Aws::Utils::Outcome<DeleteDataSourceResult, QuickSightError> DeleteDataSourceOutcome;
@@ -201,6 +229,8 @@ namespace Model
         typedef Aws::Utils::Outcome<DeleteIAMPolicyAssignmentResult, QuickSightError> DeleteIAMPolicyAssignmentOutcome;
         typedef Aws::Utils::Outcome<DeleteTemplateResult, QuickSightError> DeleteTemplateOutcome;
         typedef Aws::Utils::Outcome<DeleteTemplateAliasResult, QuickSightError> DeleteTemplateAliasOutcome;
+        typedef Aws::Utils::Outcome<DeleteThemeResult, QuickSightError> DeleteThemeOutcome;
+        typedef Aws::Utils::Outcome<DeleteThemeAliasResult, QuickSightError> DeleteThemeAliasOutcome;
         typedef Aws::Utils::Outcome<DeleteUserResult, QuickSightError> DeleteUserOutcome;
         typedef Aws::Utils::Outcome<DeleteUserByPrincipalIdResult, QuickSightError> DeleteUserByPrincipalIdOutcome;
         typedef Aws::Utils::Outcome<DescribeDashboardResult, QuickSightError> DescribeDashboardOutcome;
@@ -215,6 +245,9 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribeTemplateResult, QuickSightError> DescribeTemplateOutcome;
         typedef Aws::Utils::Outcome<DescribeTemplateAliasResult, QuickSightError> DescribeTemplateAliasOutcome;
         typedef Aws::Utils::Outcome<DescribeTemplatePermissionsResult, QuickSightError> DescribeTemplatePermissionsOutcome;
+        typedef Aws::Utils::Outcome<DescribeThemeResult, QuickSightError> DescribeThemeOutcome;
+        typedef Aws::Utils::Outcome<DescribeThemeAliasResult, QuickSightError> DescribeThemeAliasOutcome;
+        typedef Aws::Utils::Outcome<DescribeThemePermissionsResult, QuickSightError> DescribeThemePermissionsOutcome;
         typedef Aws::Utils::Outcome<DescribeUserResult, QuickSightError> DescribeUserOutcome;
         typedef Aws::Utils::Outcome<GetDashboardEmbedUrlResult, QuickSightError> GetDashboardEmbedUrlOutcome;
         typedef Aws::Utils::Outcome<ListDashboardVersionsResult, QuickSightError> ListDashboardVersionsOutcome;
@@ -230,6 +263,9 @@ namespace Model
         typedef Aws::Utils::Outcome<ListTemplateAliasesResult, QuickSightError> ListTemplateAliasesOutcome;
         typedef Aws::Utils::Outcome<ListTemplateVersionsResult, QuickSightError> ListTemplateVersionsOutcome;
         typedef Aws::Utils::Outcome<ListTemplatesResult, QuickSightError> ListTemplatesOutcome;
+        typedef Aws::Utils::Outcome<ListThemeAliasesResult, QuickSightError> ListThemeAliasesOutcome;
+        typedef Aws::Utils::Outcome<ListThemeVersionsResult, QuickSightError> ListThemeVersionsOutcome;
+        typedef Aws::Utils::Outcome<ListThemesResult, QuickSightError> ListThemesOutcome;
         typedef Aws::Utils::Outcome<ListUserGroupsResult, QuickSightError> ListUserGroupsOutcome;
         typedef Aws::Utils::Outcome<ListUsersResult, QuickSightError> ListUsersOutcome;
         typedef Aws::Utils::Outcome<RegisterUserResult, QuickSightError> RegisterUserOutcome;
@@ -248,6 +284,9 @@ namespace Model
         typedef Aws::Utils::Outcome<UpdateTemplateResult, QuickSightError> UpdateTemplateOutcome;
         typedef Aws::Utils::Outcome<UpdateTemplateAliasResult, QuickSightError> UpdateTemplateAliasOutcome;
         typedef Aws::Utils::Outcome<UpdateTemplatePermissionsResult, QuickSightError> UpdateTemplatePermissionsOutcome;
+        typedef Aws::Utils::Outcome<UpdateThemeResult, QuickSightError> UpdateThemeOutcome;
+        typedef Aws::Utils::Outcome<UpdateThemeAliasResult, QuickSightError> UpdateThemeAliasOutcome;
+        typedef Aws::Utils::Outcome<UpdateThemePermissionsResult, QuickSightError> UpdateThemePermissionsOutcome;
         typedef Aws::Utils::Outcome<UpdateUserResult, QuickSightError> UpdateUserOutcome;
 
         typedef std::future<CancelIngestionOutcome> CancelIngestionOutcomeCallable;
@@ -260,6 +299,8 @@ namespace Model
         typedef std::future<CreateIngestionOutcome> CreateIngestionOutcomeCallable;
         typedef std::future<CreateTemplateOutcome> CreateTemplateOutcomeCallable;
         typedef std::future<CreateTemplateAliasOutcome> CreateTemplateAliasOutcomeCallable;
+        typedef std::future<CreateThemeOutcome> CreateThemeOutcomeCallable;
+        typedef std::future<CreateThemeAliasOutcome> CreateThemeAliasOutcomeCallable;
         typedef std::future<DeleteDashboardOutcome> DeleteDashboardOutcomeCallable;
         typedef std::future<DeleteDataSetOutcome> DeleteDataSetOutcomeCallable;
         typedef std::future<DeleteDataSourceOutcome> DeleteDataSourceOutcomeCallable;
@@ -268,6 +309,8 @@ namespace Model
         typedef std::future<DeleteIAMPolicyAssignmentOutcome> DeleteIAMPolicyAssignmentOutcomeCallable;
         typedef std::future<DeleteTemplateOutcome> DeleteTemplateOutcomeCallable;
         typedef std::future<DeleteTemplateAliasOutcome> DeleteTemplateAliasOutcomeCallable;
+        typedef std::future<DeleteThemeOutcome> DeleteThemeOutcomeCallable;
+        typedef std::future<DeleteThemeAliasOutcome> DeleteThemeAliasOutcomeCallable;
         typedef std::future<DeleteUserOutcome> DeleteUserOutcomeCallable;
         typedef std::future<DeleteUserByPrincipalIdOutcome> DeleteUserByPrincipalIdOutcomeCallable;
         typedef std::future<DescribeDashboardOutcome> DescribeDashboardOutcomeCallable;
@@ -282,6 +325,9 @@ namespace Model
         typedef std::future<DescribeTemplateOutcome> DescribeTemplateOutcomeCallable;
         typedef std::future<DescribeTemplateAliasOutcome> DescribeTemplateAliasOutcomeCallable;
         typedef std::future<DescribeTemplatePermissionsOutcome> DescribeTemplatePermissionsOutcomeCallable;
+        typedef std::future<DescribeThemeOutcome> DescribeThemeOutcomeCallable;
+        typedef std::future<DescribeThemeAliasOutcome> DescribeThemeAliasOutcomeCallable;
+        typedef std::future<DescribeThemePermissionsOutcome> DescribeThemePermissionsOutcomeCallable;
         typedef std::future<DescribeUserOutcome> DescribeUserOutcomeCallable;
         typedef std::future<GetDashboardEmbedUrlOutcome> GetDashboardEmbedUrlOutcomeCallable;
         typedef std::future<ListDashboardVersionsOutcome> ListDashboardVersionsOutcomeCallable;
@@ -297,6 +343,9 @@ namespace Model
         typedef std::future<ListTemplateAliasesOutcome> ListTemplateAliasesOutcomeCallable;
         typedef std::future<ListTemplateVersionsOutcome> ListTemplateVersionsOutcomeCallable;
         typedef std::future<ListTemplatesOutcome> ListTemplatesOutcomeCallable;
+        typedef std::future<ListThemeAliasesOutcome> ListThemeAliasesOutcomeCallable;
+        typedef std::future<ListThemeVersionsOutcome> ListThemeVersionsOutcomeCallable;
+        typedef std::future<ListThemesOutcome> ListThemesOutcomeCallable;
         typedef std::future<ListUserGroupsOutcome> ListUserGroupsOutcomeCallable;
         typedef std::future<ListUsersOutcome> ListUsersOutcomeCallable;
         typedef std::future<RegisterUserOutcome> RegisterUserOutcomeCallable;
@@ -315,6 +364,9 @@ namespace Model
         typedef std::future<UpdateTemplateOutcome> UpdateTemplateOutcomeCallable;
         typedef std::future<UpdateTemplateAliasOutcome> UpdateTemplateAliasOutcomeCallable;
         typedef std::future<UpdateTemplatePermissionsOutcome> UpdateTemplatePermissionsOutcomeCallable;
+        typedef std::future<UpdateThemeOutcome> UpdateThemeOutcomeCallable;
+        typedef std::future<UpdateThemeAliasOutcome> UpdateThemeAliasOutcomeCallable;
+        typedef std::future<UpdateThemePermissionsOutcome> UpdateThemePermissionsOutcomeCallable;
         typedef std::future<UpdateUserOutcome> UpdateUserOutcomeCallable;
 } // namespace Model
 
@@ -330,6 +382,8 @@ namespace Model
     typedef std::function<void(const QuickSightClient*, const Model::CreateIngestionRequest&, const Model::CreateIngestionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateIngestionResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::CreateTemplateRequest&, const Model::CreateTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateTemplateResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::CreateTemplateAliasRequest&, const Model::CreateTemplateAliasOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateTemplateAliasResponseReceivedHandler;
+    typedef std::function<void(const QuickSightClient*, const Model::CreateThemeRequest&, const Model::CreateThemeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateThemeResponseReceivedHandler;
+    typedef std::function<void(const QuickSightClient*, const Model::CreateThemeAliasRequest&, const Model::CreateThemeAliasOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateThemeAliasResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::DeleteDashboardRequest&, const Model::DeleteDashboardOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDashboardResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::DeleteDataSetRequest&, const Model::DeleteDataSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDataSetResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::DeleteDataSourceRequest&, const Model::DeleteDataSourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDataSourceResponseReceivedHandler;
@@ -338,6 +392,8 @@ namespace Model
     typedef std::function<void(const QuickSightClient*, const Model::DeleteIAMPolicyAssignmentRequest&, const Model::DeleteIAMPolicyAssignmentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteIAMPolicyAssignmentResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::DeleteTemplateRequest&, const Model::DeleteTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteTemplateResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::DeleteTemplateAliasRequest&, const Model::DeleteTemplateAliasOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteTemplateAliasResponseReceivedHandler;
+    typedef std::function<void(const QuickSightClient*, const Model::DeleteThemeRequest&, const Model::DeleteThemeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteThemeResponseReceivedHandler;
+    typedef std::function<void(const QuickSightClient*, const Model::DeleteThemeAliasRequest&, const Model::DeleteThemeAliasOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteThemeAliasResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::DeleteUserRequest&, const Model::DeleteUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteUserResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::DeleteUserByPrincipalIdRequest&, const Model::DeleteUserByPrincipalIdOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteUserByPrincipalIdResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::DescribeDashboardRequest&, const Model::DescribeDashboardOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDashboardResponseReceivedHandler;
@@ -352,6 +408,9 @@ namespace Model
     typedef std::function<void(const QuickSightClient*, const Model::DescribeTemplateRequest&, const Model::DescribeTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeTemplateResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::DescribeTemplateAliasRequest&, const Model::DescribeTemplateAliasOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeTemplateAliasResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::DescribeTemplatePermissionsRequest&, const Model::DescribeTemplatePermissionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeTemplatePermissionsResponseReceivedHandler;
+    typedef std::function<void(const QuickSightClient*, const Model::DescribeThemeRequest&, const Model::DescribeThemeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeThemeResponseReceivedHandler;
+    typedef std::function<void(const QuickSightClient*, const Model::DescribeThemeAliasRequest&, const Model::DescribeThemeAliasOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeThemeAliasResponseReceivedHandler;
+    typedef std::function<void(const QuickSightClient*, const Model::DescribeThemePermissionsRequest&, const Model::DescribeThemePermissionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeThemePermissionsResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::DescribeUserRequest&, const Model::DescribeUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeUserResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::GetDashboardEmbedUrlRequest&, const Model::GetDashboardEmbedUrlOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDashboardEmbedUrlResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::ListDashboardVersionsRequest&, const Model::ListDashboardVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDashboardVersionsResponseReceivedHandler;
@@ -367,6 +426,9 @@ namespace Model
     typedef std::function<void(const QuickSightClient*, const Model::ListTemplateAliasesRequest&, const Model::ListTemplateAliasesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTemplateAliasesResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::ListTemplateVersionsRequest&, const Model::ListTemplateVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTemplateVersionsResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::ListTemplatesRequest&, const Model::ListTemplatesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTemplatesResponseReceivedHandler;
+    typedef std::function<void(const QuickSightClient*, const Model::ListThemeAliasesRequest&, const Model::ListThemeAliasesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListThemeAliasesResponseReceivedHandler;
+    typedef std::function<void(const QuickSightClient*, const Model::ListThemeVersionsRequest&, const Model::ListThemeVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListThemeVersionsResponseReceivedHandler;
+    typedef std::function<void(const QuickSightClient*, const Model::ListThemesRequest&, const Model::ListThemesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListThemesResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::ListUserGroupsRequest&, const Model::ListUserGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListUserGroupsResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::ListUsersRequest&, const Model::ListUsersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListUsersResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::RegisterUserRequest&, const Model::RegisterUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RegisterUserResponseReceivedHandler;
@@ -385,6 +447,9 @@ namespace Model
     typedef std::function<void(const QuickSightClient*, const Model::UpdateTemplateRequest&, const Model::UpdateTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateTemplateResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::UpdateTemplateAliasRequest&, const Model::UpdateTemplateAliasOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateTemplateAliasResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::UpdateTemplatePermissionsRequest&, const Model::UpdateTemplatePermissionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateTemplatePermissionsResponseReceivedHandler;
+    typedef std::function<void(const QuickSightClient*, const Model::UpdateThemeRequest&, const Model::UpdateThemeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateThemeResponseReceivedHandler;
+    typedef std::function<void(const QuickSightClient*, const Model::UpdateThemeAliasRequest&, const Model::UpdateThemeAliasOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateThemeAliasResponseReceivedHandler;
+    typedef std::function<void(const QuickSightClient*, const Model::UpdateThemePermissionsRequest&, const Model::UpdateThemePermissionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateThemePermissionsResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::UpdateUserRequest&, const Model::UpdateUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateUserResponseReceivedHandler;
 
   /**
@@ -758,6 +823,71 @@ namespace Model
         virtual void CreateTemplateAliasAsync(const Model::CreateTemplateAliasRequest& request, const CreateTemplateAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Creates a theme.</p> <p>A <i>theme</i> is set of configuration options for
+         * color and layout. Themes apply to analyses and dashboards. For more information,
+         * see <a
+         * href="https://docs.aws.amazon.com/quicksight/latest/user/themes-in-quicksight.html">Using
+         * Themes in Amazon QuickSight</a> in the <i>Amazon QuickSight User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateTheme">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateThemeOutcome CreateTheme(const Model::CreateThemeRequest& request) const;
+
+        /**
+         * <p>Creates a theme.</p> <p>A <i>theme</i> is set of configuration options for
+         * color and layout. Themes apply to analyses and dashboards. For more information,
+         * see <a
+         * href="https://docs.aws.amazon.com/quicksight/latest/user/themes-in-quicksight.html">Using
+         * Themes in Amazon QuickSight</a> in the <i>Amazon QuickSight User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateTheme">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateThemeOutcomeCallable CreateThemeCallable(const Model::CreateThemeRequest& request) const;
+
+        /**
+         * <p>Creates a theme.</p> <p>A <i>theme</i> is set of configuration options for
+         * color and layout. Themes apply to analyses and dashboards. For more information,
+         * see <a
+         * href="https://docs.aws.amazon.com/quicksight/latest/user/themes-in-quicksight.html">Using
+         * Themes in Amazon QuickSight</a> in the <i>Amazon QuickSight User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateTheme">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateThemeAsync(const Model::CreateThemeRequest& request, const CreateThemeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Creates a theme alias for a theme.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateThemeAlias">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateThemeAliasOutcome CreateThemeAlias(const Model::CreateThemeAliasRequest& request) const;
+
+        /**
+         * <p>Creates a theme alias for a theme.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateThemeAlias">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateThemeAliasOutcomeCallable CreateThemeAliasCallable(const Model::CreateThemeAliasRequest& request) const;
+
+        /**
+         * <p>Creates a theme alias for a theme.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateThemeAlias">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateThemeAliasAsync(const Model::CreateThemeAliasRequest& request, const CreateThemeAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Deletes a dashboard.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteDashboard">AWS
          * API Reference</a></p>
@@ -968,6 +1098,62 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteTemplateAliasAsync(const Model::DeleteTemplateAliasRequest& request, const DeleteTemplateAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes a theme.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteTheme">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteThemeOutcome DeleteTheme(const Model::DeleteThemeRequest& request) const;
+
+        /**
+         * <p>Deletes a theme.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteTheme">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteThemeOutcomeCallable DeleteThemeCallable(const Model::DeleteThemeRequest& request) const;
+
+        /**
+         * <p>Deletes a theme.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteTheme">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteThemeAsync(const Model::DeleteThemeRequest& request, const DeleteThemeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes the version of the theme that the specified theme alias points to. If
+         * you provide a specific alias, you delete the version of the theme that the alias
+         * points to.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteThemeAlias">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteThemeAliasOutcome DeleteThemeAlias(const Model::DeleteThemeAliasRequest& request) const;
+
+        /**
+         * <p>Deletes the version of the theme that the specified theme alias points to. If
+         * you provide a specific alias, you delete the version of the theme that the alias
+         * points to.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteThemeAlias">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteThemeAliasOutcomeCallable DeleteThemeAliasCallable(const Model::DeleteThemeAliasRequest& request) const;
+
+        /**
+         * <p>Deletes the version of the theme that the specified theme alias points to. If
+         * you provide a specific alias, you delete the version of the theme that the alias
+         * points to.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteThemeAlias">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteThemeAliasAsync(const Model::DeleteThemeAliasRequest& request, const DeleteThemeAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the Amazon QuickSight user that is associated with the identity of
@@ -1348,6 +1534,84 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeTemplatePermissionsAsync(const Model::DescribeTemplatePermissionsRequest& request, const DescribeTemplatePermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Describes a theme.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeTheme">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeThemeOutcome DescribeTheme(const Model::DescribeThemeRequest& request) const;
+
+        /**
+         * <p>Describes a theme.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeTheme">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeThemeOutcomeCallable DescribeThemeCallable(const Model::DescribeThemeRequest& request) const;
+
+        /**
+         * <p>Describes a theme.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeTheme">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeThemeAsync(const Model::DescribeThemeRequest& request, const DescribeThemeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Describes the alias for a theme.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeThemeAlias">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeThemeAliasOutcome DescribeThemeAlias(const Model::DescribeThemeAliasRequest& request) const;
+
+        /**
+         * <p>Describes the alias for a theme.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeThemeAlias">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeThemeAliasOutcomeCallable DescribeThemeAliasCallable(const Model::DescribeThemeAliasRequest& request) const;
+
+        /**
+         * <p>Describes the alias for a theme.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeThemeAlias">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeThemeAliasAsync(const Model::DescribeThemeAliasRequest& request, const DescribeThemeAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Describes the read and write permissions for a theme.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeThemePermissions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeThemePermissionsOutcome DescribeThemePermissions(const Model::DescribeThemePermissionsRequest& request) const;
+
+        /**
+         * <p>Describes the read and write permissions for a theme.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeThemePermissions">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeThemePermissionsOutcomeCallable DescribeThemePermissionsCallable(const Model::DescribeThemePermissionsRequest& request) const;
+
+        /**
+         * <p>Describes the read and write permissions for a theme.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeThemePermissions">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeThemePermissionsAsync(const Model::DescribeThemePermissionsRequest& request, const DescribeThemePermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about a user, given the user name. </p><p><h3>See
@@ -1801,6 +2065,87 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListTemplatesAsync(const Model::ListTemplatesRequest& request, const ListTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Lists all the aliases of a theme.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListThemeAliases">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListThemeAliasesOutcome ListThemeAliases(const Model::ListThemeAliasesRequest& request) const;
+
+        /**
+         * <p>Lists all the aliases of a theme.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListThemeAliases">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListThemeAliasesOutcomeCallable ListThemeAliasesCallable(const Model::ListThemeAliasesRequest& request) const;
+
+        /**
+         * <p>Lists all the aliases of a theme.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListThemeAliases">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListThemeAliasesAsync(const Model::ListThemeAliasesRequest& request, const ListThemeAliasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Lists all the versions of the themes in the current AWS
+         * account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListThemeVersions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListThemeVersionsOutcome ListThemeVersions(const Model::ListThemeVersionsRequest& request) const;
+
+        /**
+         * <p>Lists all the versions of the themes in the current AWS
+         * account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListThemeVersions">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListThemeVersionsOutcomeCallable ListThemeVersionsCallable(const Model::ListThemeVersionsRequest& request) const;
+
+        /**
+         * <p>Lists all the versions of the themes in the current AWS
+         * account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListThemeVersions">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListThemeVersionsAsync(const Model::ListThemeVersionsRequest& request, const ListThemeVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Lists all the themes in the current AWS account.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListThemes">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListThemesOutcome ListThemes(const Model::ListThemesRequest& request) const;
+
+        /**
+         * <p>Lists all the themes in the current AWS account.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListThemes">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListThemesOutcomeCallable ListThemesCallable(const Model::ListThemesRequest& request) const;
+
+        /**
+         * <p>Lists all the themes in the current AWS account.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListThemes">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListThemesAsync(const Model::ListThemesRequest& request, const ListThemesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the Amazon QuickSight groups that an Amazon QuickSight user is a member
@@ -2331,6 +2676,144 @@ namespace Model
         virtual void UpdateTemplatePermissionsAsync(const Model::UpdateTemplatePermissionsRequest& request, const UpdateTemplatePermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Updates a theme.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateTheme">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateThemeOutcome UpdateTheme(const Model::UpdateThemeRequest& request) const;
+
+        /**
+         * <p>Updates a theme.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateTheme">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateThemeOutcomeCallable UpdateThemeCallable(const Model::UpdateThemeRequest& request) const;
+
+        /**
+         * <p>Updates a theme.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateTheme">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateThemeAsync(const Model::UpdateThemeRequest& request, const UpdateThemeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Updates an alias of a theme.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateThemeAlias">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateThemeAliasOutcome UpdateThemeAlias(const Model::UpdateThemeAliasRequest& request) const;
+
+        /**
+         * <p>Updates an alias of a theme.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateThemeAlias">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateThemeAliasOutcomeCallable UpdateThemeAliasCallable(const Model::UpdateThemeAliasRequest& request) const;
+
+        /**
+         * <p>Updates an alias of a theme.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateThemeAlias">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateThemeAliasAsync(const Model::UpdateThemeAliasRequest& request, const UpdateThemeAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Updates the resource permissions for a theme. Permissions apply to the action
+         * to grant or revoke permissions on, for example
+         * <code>"quicksight:DescribeTheme"</code>.</p> <p>Theme permissions apply in
+         * groupings. Valid groupings include the following for the three levels of
+         * permissions, which are user, owner, or no permissions: </p> <ul> <li>
+         * <p>User</p> <ul> <li> <p> <code>"quicksight:DescribeTheme"</code> </p> </li>
+         * <li> <p> <code>"quicksight:DescribeThemeAlias"</code> </p> </li> <li> <p>
+         * <code>"quicksight:ListThemeAliases"</code> </p> </li> <li> <p>
+         * <code>"quicksight:ListThemeVersions"</code> </p> </li> </ul> </li> <li>
+         * <p>Owner</p> <ul> <li> <p> <code>"quicksight:DescribeTheme"</code> </p> </li>
+         * <li> <p> <code>"quicksight:DescribeThemeAlias"</code> </p> </li> <li> <p>
+         * <code>"quicksight:ListThemeAliases"</code> </p> </li> <li> <p>
+         * <code>"quicksight:ListThemeVersions"</code> </p> </li> <li> <p>
+         * <code>"quicksight:DeleteTheme"</code> </p> </li> <li> <p>
+         * <code>"quicksight:UpdateTheme"</code> </p> </li> <li> <p>
+         * <code>"quicksight:CreateThemeAlias"</code> </p> </li> <li> <p>
+         * <code>"quicksight:DeleteThemeAlias"</code> </p> </li> <li> <p>
+         * <code>"quicksight:UpdateThemeAlias"</code> </p> </li> <li> <p>
+         * <code>"quicksight:UpdateThemePermissions"</code> </p> </li> <li> <p>
+         * <code>"quicksight:DescribeThemePermissions"</code> </p> </li> </ul> </li> <li>
+         * <p>To specify no permissions, omit the permissions list.</p> </li>
+         * </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateThemePermissions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateThemePermissionsOutcome UpdateThemePermissions(const Model::UpdateThemePermissionsRequest& request) const;
+
+        /**
+         * <p>Updates the resource permissions for a theme. Permissions apply to the action
+         * to grant or revoke permissions on, for example
+         * <code>"quicksight:DescribeTheme"</code>.</p> <p>Theme permissions apply in
+         * groupings. Valid groupings include the following for the three levels of
+         * permissions, which are user, owner, or no permissions: </p> <ul> <li>
+         * <p>User</p> <ul> <li> <p> <code>"quicksight:DescribeTheme"</code> </p> </li>
+         * <li> <p> <code>"quicksight:DescribeThemeAlias"</code> </p> </li> <li> <p>
+         * <code>"quicksight:ListThemeAliases"</code> </p> </li> <li> <p>
+         * <code>"quicksight:ListThemeVersions"</code> </p> </li> </ul> </li> <li>
+         * <p>Owner</p> <ul> <li> <p> <code>"quicksight:DescribeTheme"</code> </p> </li>
+         * <li> <p> <code>"quicksight:DescribeThemeAlias"</code> </p> </li> <li> <p>
+         * <code>"quicksight:ListThemeAliases"</code> </p> </li> <li> <p>
+         * <code>"quicksight:ListThemeVersions"</code> </p> </li> <li> <p>
+         * <code>"quicksight:DeleteTheme"</code> </p> </li> <li> <p>
+         * <code>"quicksight:UpdateTheme"</code> </p> </li> <li> <p>
+         * <code>"quicksight:CreateThemeAlias"</code> </p> </li> <li> <p>
+         * <code>"quicksight:DeleteThemeAlias"</code> </p> </li> <li> <p>
+         * <code>"quicksight:UpdateThemeAlias"</code> </p> </li> <li> <p>
+         * <code>"quicksight:UpdateThemePermissions"</code> </p> </li> <li> <p>
+         * <code>"quicksight:DescribeThemePermissions"</code> </p> </li> </ul> </li> <li>
+         * <p>To specify no permissions, omit the permissions list.</p> </li>
+         * </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateThemePermissions">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateThemePermissionsOutcomeCallable UpdateThemePermissionsCallable(const Model::UpdateThemePermissionsRequest& request) const;
+
+        /**
+         * <p>Updates the resource permissions for a theme. Permissions apply to the action
+         * to grant or revoke permissions on, for example
+         * <code>"quicksight:DescribeTheme"</code>.</p> <p>Theme permissions apply in
+         * groupings. Valid groupings include the following for the three levels of
+         * permissions, which are user, owner, or no permissions: </p> <ul> <li>
+         * <p>User</p> <ul> <li> <p> <code>"quicksight:DescribeTheme"</code> </p> </li>
+         * <li> <p> <code>"quicksight:DescribeThemeAlias"</code> </p> </li> <li> <p>
+         * <code>"quicksight:ListThemeAliases"</code> </p> </li> <li> <p>
+         * <code>"quicksight:ListThemeVersions"</code> </p> </li> </ul> </li> <li>
+         * <p>Owner</p> <ul> <li> <p> <code>"quicksight:DescribeTheme"</code> </p> </li>
+         * <li> <p> <code>"quicksight:DescribeThemeAlias"</code> </p> </li> <li> <p>
+         * <code>"quicksight:ListThemeAliases"</code> </p> </li> <li> <p>
+         * <code>"quicksight:ListThemeVersions"</code> </p> </li> <li> <p>
+         * <code>"quicksight:DeleteTheme"</code> </p> </li> <li> <p>
+         * <code>"quicksight:UpdateTheme"</code> </p> </li> <li> <p>
+         * <code>"quicksight:CreateThemeAlias"</code> </p> </li> <li> <p>
+         * <code>"quicksight:DeleteThemeAlias"</code> </p> </li> <li> <p>
+         * <code>"quicksight:UpdateThemeAlias"</code> </p> </li> <li> <p>
+         * <code>"quicksight:UpdateThemePermissions"</code> </p> </li> <li> <p>
+         * <code>"quicksight:DescribeThemePermissions"</code> </p> </li> </ul> </li> <li>
+         * <p>To specify no permissions, omit the permissions list.</p> </li>
+         * </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateThemePermissions">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateThemePermissionsAsync(const Model::UpdateThemePermissionsRequest& request, const UpdateThemePermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Updates an Amazon QuickSight user.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateUser">AWS
          * API Reference</a></p>
@@ -2369,6 +2852,8 @@ namespace Model
         void CreateIngestionAsyncHelper(const Model::CreateIngestionRequest& request, const CreateIngestionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateTemplateAsyncHelper(const Model::CreateTemplateRequest& request, const CreateTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateTemplateAliasAsyncHelper(const Model::CreateTemplateAliasRequest& request, const CreateTemplateAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateThemeAsyncHelper(const Model::CreateThemeRequest& request, const CreateThemeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateThemeAliasAsyncHelper(const Model::CreateThemeAliasRequest& request, const CreateThemeAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteDashboardAsyncHelper(const Model::DeleteDashboardRequest& request, const DeleteDashboardResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteDataSetAsyncHelper(const Model::DeleteDataSetRequest& request, const DeleteDataSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteDataSourceAsyncHelper(const Model::DeleteDataSourceRequest& request, const DeleteDataSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -2377,6 +2862,8 @@ namespace Model
         void DeleteIAMPolicyAssignmentAsyncHelper(const Model::DeleteIAMPolicyAssignmentRequest& request, const DeleteIAMPolicyAssignmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteTemplateAsyncHelper(const Model::DeleteTemplateRequest& request, const DeleteTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteTemplateAliasAsyncHelper(const Model::DeleteTemplateAliasRequest& request, const DeleteTemplateAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteThemeAsyncHelper(const Model::DeleteThemeRequest& request, const DeleteThemeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteThemeAliasAsyncHelper(const Model::DeleteThemeAliasRequest& request, const DeleteThemeAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteUserAsyncHelper(const Model::DeleteUserRequest& request, const DeleteUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteUserByPrincipalIdAsyncHelper(const Model::DeleteUserByPrincipalIdRequest& request, const DeleteUserByPrincipalIdResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeDashboardAsyncHelper(const Model::DescribeDashboardRequest& request, const DescribeDashboardResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -2391,6 +2878,9 @@ namespace Model
         void DescribeTemplateAsyncHelper(const Model::DescribeTemplateRequest& request, const DescribeTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeTemplateAliasAsyncHelper(const Model::DescribeTemplateAliasRequest& request, const DescribeTemplateAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeTemplatePermissionsAsyncHelper(const Model::DescribeTemplatePermissionsRequest& request, const DescribeTemplatePermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeThemeAsyncHelper(const Model::DescribeThemeRequest& request, const DescribeThemeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeThemeAliasAsyncHelper(const Model::DescribeThemeAliasRequest& request, const DescribeThemeAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeThemePermissionsAsyncHelper(const Model::DescribeThemePermissionsRequest& request, const DescribeThemePermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeUserAsyncHelper(const Model::DescribeUserRequest& request, const DescribeUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetDashboardEmbedUrlAsyncHelper(const Model::GetDashboardEmbedUrlRequest& request, const GetDashboardEmbedUrlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListDashboardVersionsAsyncHelper(const Model::ListDashboardVersionsRequest& request, const ListDashboardVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -2406,6 +2896,9 @@ namespace Model
         void ListTemplateAliasesAsyncHelper(const Model::ListTemplateAliasesRequest& request, const ListTemplateAliasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTemplateVersionsAsyncHelper(const Model::ListTemplateVersionsRequest& request, const ListTemplateVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTemplatesAsyncHelper(const Model::ListTemplatesRequest& request, const ListTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListThemeAliasesAsyncHelper(const Model::ListThemeAliasesRequest& request, const ListThemeAliasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListThemeVersionsAsyncHelper(const Model::ListThemeVersionsRequest& request, const ListThemeVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListThemesAsyncHelper(const Model::ListThemesRequest& request, const ListThemesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListUserGroupsAsyncHelper(const Model::ListUserGroupsRequest& request, const ListUserGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListUsersAsyncHelper(const Model::ListUsersRequest& request, const ListUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RegisterUserAsyncHelper(const Model::RegisterUserRequest& request, const RegisterUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -2424,6 +2917,9 @@ namespace Model
         void UpdateTemplateAsyncHelper(const Model::UpdateTemplateRequest& request, const UpdateTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateTemplateAliasAsyncHelper(const Model::UpdateTemplateAliasRequest& request, const UpdateTemplateAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateTemplatePermissionsAsyncHelper(const Model::UpdateTemplatePermissionsRequest& request, const UpdateTemplatePermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateThemeAsyncHelper(const Model::UpdateThemeRequest& request, const UpdateThemeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateThemeAliasAsyncHelper(const Model::UpdateThemeAliasRequest& request, const UpdateThemeAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateThemePermissionsAsyncHelper(const Model::UpdateThemePermissionsRequest& request, const UpdateThemePermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateUserAsyncHelper(const Model::UpdateUserRequest& request, const UpdateUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;

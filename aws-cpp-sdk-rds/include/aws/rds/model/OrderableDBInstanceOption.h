@@ -797,6 +797,39 @@ namespace Model
      */
     inline OrderableDBInstanceOption& WithSupportsKerberosAuthentication(bool value) { SetSupportsKerberosAuthentication(value); return *this;}
 
+
+    /**
+     * <p>Whether a DB instance supports RDS on Outposts.</p> <p>For more information
+     * about RDS on Outposts, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Amazon
+     * RDS on AWS Outposts</a> in the <i>Amazon RDS User Guide.</i> </p>
+     */
+    inline bool GetOutpostCapable() const{ return m_outpostCapable; }
+
+    /**
+     * <p>Whether a DB instance supports RDS on Outposts.</p> <p>For more information
+     * about RDS on Outposts, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Amazon
+     * RDS on AWS Outposts</a> in the <i>Amazon RDS User Guide.</i> </p>
+     */
+    inline bool OutpostCapableHasBeenSet() const { return m_outpostCapableHasBeenSet; }
+
+    /**
+     * <p>Whether a DB instance supports RDS on Outposts.</p> <p>For more information
+     * about RDS on Outposts, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Amazon
+     * RDS on AWS Outposts</a> in the <i>Amazon RDS User Guide.</i> </p>
+     */
+    inline void SetOutpostCapable(bool value) { m_outpostCapableHasBeenSet = true; m_outpostCapable = value; }
+
+    /**
+     * <p>Whether a DB instance supports RDS on Outposts.</p> <p>For more information
+     * about RDS on Outposts, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Amazon
+     * RDS on AWS Outposts</a> in the <i>Amazon RDS User Guide.</i> </p>
+     */
+    inline OrderableDBInstanceOption& WithOutpostCapable(bool value) { SetOutpostCapable(value); return *this;}
+
   private:
 
     Aws::String m_engine;
@@ -873,6 +906,9 @@ namespace Model
 
     bool m_supportsKerberosAuthentication;
     bool m_supportsKerberosAuthenticationHasBeenSet;
+
+    bool m_outpostCapable;
+    bool m_outpostCapableHasBeenSet;
   };
 
 } // namespace Model

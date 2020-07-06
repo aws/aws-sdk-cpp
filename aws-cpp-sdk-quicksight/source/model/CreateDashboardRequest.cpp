@@ -21,7 +21,8 @@ CreateDashboardRequest::CreateDashboardRequest() :
     m_sourceEntityHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_versionDescriptionHasBeenSet(false),
-    m_dashboardPublishOptionsHasBeenSet(false)
+    m_dashboardPublishOptionsHasBeenSet(false),
+    m_themeArnHasBeenSet(false)
 {
 }
 
@@ -78,6 +79,12 @@ Aws::String CreateDashboardRequest::SerializePayload() const
   if(m_dashboardPublishOptionsHasBeenSet)
   {
    payload.WithObject("DashboardPublishOptions", m_dashboardPublishOptions.Jsonize());
+
+  }
+
+  if(m_themeArnHasBeenSet)
+  {
+   payload.WithString("ThemeArn", m_themeArn);
 
   }
 

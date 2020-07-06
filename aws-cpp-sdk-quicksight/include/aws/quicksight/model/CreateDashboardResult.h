@@ -34,37 +34,37 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the dashboard.</p>
+     * <p>The ARN of the dashboard.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the dashboard.</p>
+     * <p>The ARN of the dashboard.</p>
      */
     inline void SetArn(const Aws::String& value) { m_arn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the dashboard.</p>
+     * <p>The ARN of the dashboard.</p>
      */
     inline void SetArn(Aws::String&& value) { m_arn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the dashboard.</p>
+     * <p>The ARN of the dashboard.</p>
      */
     inline void SetArn(const char* value) { m_arn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the dashboard.</p>
+     * <p>The ARN of the dashboard.</p>
      */
     inline CreateDashboardResult& WithArn(const Aws::String& value) { SetArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the dashboard.</p>
+     * <p>The ARN of the dashboard.</p>
      */
     inline CreateDashboardResult& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the dashboard.</p>
+     * <p>The ARN of the dashboard.</p>
      */
     inline CreateDashboardResult& WithArn(const char* value) { SetArn(value); return *this;}
 
