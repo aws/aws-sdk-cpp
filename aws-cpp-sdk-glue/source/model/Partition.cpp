@@ -26,7 +26,8 @@ Partition::Partition() :
     m_lastAccessTimeHasBeenSet(false),
     m_storageDescriptorHasBeenSet(false),
     m_parametersHasBeenSet(false),
-    m_lastAnalyzedTimeHasBeenSet(false)
+    m_lastAnalyzedTimeHasBeenSet(false),
+    m_catalogIdHasBeenSet(false)
 {
 }
 
@@ -38,7 +39,8 @@ Partition::Partition(JsonView jsonValue) :
     m_lastAccessTimeHasBeenSet(false),
     m_storageDescriptorHasBeenSet(false),
     m_parametersHasBeenSet(false),
-    m_lastAnalyzedTimeHasBeenSet(false)
+    m_lastAnalyzedTimeHasBeenSet(false),
+    m_catalogIdHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -107,6 +109,13 @@ Partition& Partition::operator =(JsonView jsonValue)
     m_lastAnalyzedTimeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("CatalogId"))
+  {
+    m_catalogId = jsonValue.GetString("CatalogId");
+
+    m_catalogIdHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -167,6 +176,12 @@ JsonValue Partition::Jsonize() const
   if(m_lastAnalyzedTimeHasBeenSet)
   {
    payload.WithDouble("LastAnalyzedTime", m_lastAnalyzedTime.SecondsWithMSPrecision());
+  }
+
+  if(m_catalogIdHasBeenSet)
+  {
+   payload.WithString("CatalogId", m_catalogId);
+
   }
 
   return payload;

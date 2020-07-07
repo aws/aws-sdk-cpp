@@ -19,11 +19,13 @@ namespace Model
 {
 
 DataLocationResource::DataLocationResource() : 
+    m_catalogIdHasBeenSet(false),
     m_resourceArnHasBeenSet(false)
 {
 }
 
 DataLocationResource::DataLocationResource(JsonView jsonValue) : 
+    m_catalogIdHasBeenSet(false),
     m_resourceArnHasBeenSet(false)
 {
   *this = jsonValue;
@@ -31,6 +33,13 @@ DataLocationResource::DataLocationResource(JsonView jsonValue) :
 
 DataLocationResource& DataLocationResource::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("CatalogId"))
+  {
+    m_catalogId = jsonValue.GetString("CatalogId");
+
+    m_catalogIdHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("ResourceArn"))
   {
     m_resourceArn = jsonValue.GetString("ResourceArn");
@@ -44,6 +53,12 @@ DataLocationResource& DataLocationResource::operator =(JsonView jsonValue)
 JsonValue DataLocationResource::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_catalogIdHasBeenSet)
+  {
+   payload.WithString("CatalogId", m_catalogId);
+
+  }
 
   if(m_resourceArnHasBeenSet)
   {

@@ -76,67 +76,83 @@ namespace Model
 
 
     /**
-     * <p>Designates a trusted caller, an IAM principal, by registering this caller
-     * with the Data Catalog. </p>
+     * <p>Designates an AWS Identity and Access Management (IAM) service-linked role by
+     * registering this role with the Data Catalog. A service-linked role is a unique
+     * type of IAM role that is linked directly to Lake Formation.</p> <p>For more
+     * information, see <a
+     * href="https://docs-aws.amazon.com/lake-formation/latest/dg/service-linked-roles.html">Using
+     * Service-Linked Roles for Lake Formation</a>.</p>
      */
     inline bool GetUseServiceLinkedRole() const{ return m_useServiceLinkedRole; }
 
     /**
-     * <p>Designates a trusted caller, an IAM principal, by registering this caller
-     * with the Data Catalog. </p>
+     * <p>Designates an AWS Identity and Access Management (IAM) service-linked role by
+     * registering this role with the Data Catalog. A service-linked role is a unique
+     * type of IAM role that is linked directly to Lake Formation.</p> <p>For more
+     * information, see <a
+     * href="https://docs-aws.amazon.com/lake-formation/latest/dg/service-linked-roles.html">Using
+     * Service-Linked Roles for Lake Formation</a>.</p>
      */
     inline bool UseServiceLinkedRoleHasBeenSet() const { return m_useServiceLinkedRoleHasBeenSet; }
 
     /**
-     * <p>Designates a trusted caller, an IAM principal, by registering this caller
-     * with the Data Catalog. </p>
+     * <p>Designates an AWS Identity and Access Management (IAM) service-linked role by
+     * registering this role with the Data Catalog. A service-linked role is a unique
+     * type of IAM role that is linked directly to Lake Formation.</p> <p>For more
+     * information, see <a
+     * href="https://docs-aws.amazon.com/lake-formation/latest/dg/service-linked-roles.html">Using
+     * Service-Linked Roles for Lake Formation</a>.</p>
      */
     inline void SetUseServiceLinkedRole(bool value) { m_useServiceLinkedRoleHasBeenSet = true; m_useServiceLinkedRole = value; }
 
     /**
-     * <p>Designates a trusted caller, an IAM principal, by registering this caller
-     * with the Data Catalog. </p>
+     * <p>Designates an AWS Identity and Access Management (IAM) service-linked role by
+     * registering this role with the Data Catalog. A service-linked role is a unique
+     * type of IAM role that is linked directly to Lake Formation.</p> <p>For more
+     * information, see <a
+     * href="https://docs-aws.amazon.com/lake-formation/latest/dg/service-linked-roles.html">Using
+     * Service-Linked Roles for Lake Formation</a>.</p>
      */
     inline RegisterResourceRequest& WithUseServiceLinkedRole(bool value) { SetUseServiceLinkedRole(value); return *this;}
 
 
     /**
-     * <p>The identifier for the role.</p>
+     * <p>The identifier for the role that registers the resource.</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
 
     /**
-     * <p>The identifier for the role.</p>
+     * <p>The identifier for the role that registers the resource.</p>
      */
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
 
     /**
-     * <p>The identifier for the role.</p>
+     * <p>The identifier for the role that registers the resource.</p>
      */
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
 
     /**
-     * <p>The identifier for the role.</p>
+     * <p>The identifier for the role that registers the resource.</p>
      */
     inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
 
     /**
-     * <p>The identifier for the role.</p>
+     * <p>The identifier for the role that registers the resource.</p>
      */
     inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
 
     /**
-     * <p>The identifier for the role.</p>
+     * <p>The identifier for the role that registers the resource.</p>
      */
     inline RegisterResourceRequest& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
 
     /**
-     * <p>The identifier for the role.</p>
+     * <p>The identifier for the role that registers the resource.</p>
      */
     inline RegisterResourceRequest& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier for the role.</p>
+     * <p>The identifier for the role that registers the resource.</p>
      */
     inline RegisterResourceRequest& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 

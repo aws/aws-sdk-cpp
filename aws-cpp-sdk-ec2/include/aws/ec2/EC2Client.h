@@ -14985,8 +14985,9 @@ namespace Model
         /**
          * <p>Enables or disables an Availability Zone group for your account.</p> <p>Use
          * <a
-         * href="https://docs.aws.amazon.com/AWSEC2ApiDocReef/build/server-root/AWSEC2/latest/APIReference/API_DescribeAvailabilityZones.html">describe-availability-zones</a>
-         * to view the value for <code>GroupName</code>.</p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeAvailabilityZones.html">
+         * DescribeAvailabilityZones</a> to view the value for
+         * <code>GroupName</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyAvailabilityZoneGroup">AWS
          * API Reference</a></p>
          */
@@ -14995,8 +14996,9 @@ namespace Model
         /**
          * <p>Enables or disables an Availability Zone group for your account.</p> <p>Use
          * <a
-         * href="https://docs.aws.amazon.com/AWSEC2ApiDocReef/build/server-root/AWSEC2/latest/APIReference/API_DescribeAvailabilityZones.html">describe-availability-zones</a>
-         * to view the value for <code>GroupName</code>.</p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeAvailabilityZones.html">
+         * DescribeAvailabilityZones</a> to view the value for
+         * <code>GroupName</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyAvailabilityZoneGroup">AWS
          * API Reference</a></p>
          *
@@ -15007,8 +15009,9 @@ namespace Model
         /**
          * <p>Enables or disables an Availability Zone group for your account.</p> <p>Use
          * <a
-         * href="https://docs.aws.amazon.com/AWSEC2ApiDocReef/build/server-root/AWSEC2/latest/APIReference/API_DescribeAvailabilityZones.html">describe-availability-zones</a>
-         * to view the value for <code>GroupName</code>.</p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeAvailabilityZones.html">
+         * DescribeAvailabilityZones</a> to view the value for
+         * <code>GroupName</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyAvailabilityZoneGroup">AWS
          * API Reference</a></p>
          *

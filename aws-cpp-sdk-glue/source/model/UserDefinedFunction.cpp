@@ -26,7 +26,8 @@ UserDefinedFunction::UserDefinedFunction() :
     m_ownerType(PrincipalType::NOT_SET),
     m_ownerTypeHasBeenSet(false),
     m_createTimeHasBeenSet(false),
-    m_resourceUrisHasBeenSet(false)
+    m_resourceUrisHasBeenSet(false),
+    m_catalogIdHasBeenSet(false)
 {
 }
 
@@ -38,7 +39,8 @@ UserDefinedFunction::UserDefinedFunction(JsonView jsonValue) :
     m_ownerType(PrincipalType::NOT_SET),
     m_ownerTypeHasBeenSet(false),
     m_createTimeHasBeenSet(false),
-    m_resourceUrisHasBeenSet(false)
+    m_resourceUrisHasBeenSet(false),
+    m_catalogIdHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -97,6 +99,13 @@ UserDefinedFunction& UserDefinedFunction::operator =(JsonView jsonValue)
     m_resourceUrisHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("CatalogId"))
+  {
+    m_catalogId = jsonValue.GetString("CatalogId");
+
+    m_catalogIdHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -146,6 +155,12 @@ JsonValue UserDefinedFunction::Jsonize() const
      resourceUrisJsonList[resourceUrisIndex].AsObject(m_resourceUris[resourceUrisIndex].Jsonize());
    }
    payload.WithArray("ResourceUris", std::move(resourceUrisJsonList));
+
+  }
+
+  if(m_catalogIdHasBeenSet)
+  {
+   payload.WithString("CatalogId", m_catalogId);
 
   }
 

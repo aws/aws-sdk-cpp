@@ -19,7 +19,9 @@ SearchTablesRequest::SearchTablesRequest() :
     m_searchTextHasBeenSet(false),
     m_sortCriteriaHasBeenSet(false),
     m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
+    m_maxResultsHasBeenSet(false),
+    m_resourceShareType(ResourceShareType::NOT_SET),
+    m_resourceShareTypeHasBeenSet(false)
 {
 }
 
@@ -71,6 +73,11 @@ Aws::String SearchTablesRequest::SerializePayload() const
   {
    payload.WithInteger("MaxResults", m_maxResults);
 
+  }
+
+  if(m_resourceShareTypeHasBeenSet)
+  {
+   payload.WithString("ResourceShareType", ResourceShareTypeMapper::GetNameForResourceShareType(m_resourceShareType));
   }
 
   return payload.View().WriteReadable();

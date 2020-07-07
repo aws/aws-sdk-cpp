@@ -14,9 +14,12 @@ using namespace Aws::Utils;
 
 PutResourcePolicyRequest::PutResourcePolicyRequest() : 
     m_policyInJsonHasBeenSet(false),
+    m_resourceArnHasBeenSet(false),
     m_policyHashConditionHasBeenSet(false),
     m_policyExistsCondition(ExistCondition::NOT_SET),
-    m_policyExistsConditionHasBeenSet(false)
+    m_policyExistsConditionHasBeenSet(false),
+    m_enableHybrid(EnableHybridValues::NOT_SET),
+    m_enableHybridHasBeenSet(false)
 {
 }
 
@@ -30,6 +33,12 @@ Aws::String PutResourcePolicyRequest::SerializePayload() const
 
   }
 
+  if(m_resourceArnHasBeenSet)
+  {
+   payload.WithString("ResourceArn", m_resourceArn);
+
+  }
+
   if(m_policyHashConditionHasBeenSet)
   {
    payload.WithString("PolicyHashCondition", m_policyHashCondition);
@@ -39,6 +48,11 @@ Aws::String PutResourcePolicyRequest::SerializePayload() const
   if(m_policyExistsConditionHasBeenSet)
   {
    payload.WithString("PolicyExistsCondition", ExistConditionMapper::GetNameForExistCondition(m_policyExistsCondition));
+  }
+
+  if(m_enableHybridHasBeenSet)
+  {
+   payload.WithString("EnableHybrid", EnableHybridValuesMapper::GetNameForEnableHybridValues(m_enableHybrid));
   }
 
   return payload.View().WriteReadable();

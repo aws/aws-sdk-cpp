@@ -19,6 +19,7 @@ namespace Model
 {
 
 TableWithColumnsResource::TableWithColumnsResource() : 
+    m_catalogIdHasBeenSet(false),
     m_databaseNameHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_columnNamesHasBeenSet(false),
@@ -27,6 +28,7 @@ TableWithColumnsResource::TableWithColumnsResource() :
 }
 
 TableWithColumnsResource::TableWithColumnsResource(JsonView jsonValue) : 
+    m_catalogIdHasBeenSet(false),
     m_databaseNameHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_columnNamesHasBeenSet(false),
@@ -37,6 +39,13 @@ TableWithColumnsResource::TableWithColumnsResource(JsonView jsonValue) :
 
 TableWithColumnsResource& TableWithColumnsResource::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("CatalogId"))
+  {
+    m_catalogId = jsonValue.GetString("CatalogId");
+
+    m_catalogIdHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("DatabaseName"))
   {
     m_databaseName = jsonValue.GetString("DatabaseName");
@@ -74,6 +83,12 @@ TableWithColumnsResource& TableWithColumnsResource::operator =(JsonView jsonValu
 JsonValue TableWithColumnsResource::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_catalogIdHasBeenSet)
+  {
+   payload.WithString("CatalogId", m_catalogId);
+
+  }
 
   if(m_databaseNameHasBeenSet)
   {

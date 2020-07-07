@@ -10,6 +10,7 @@
 #include <aws/storagegateway/model/NFSFileShareDefaults.h>
 #include <aws/storagegateway/model/ObjectACL.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/storagegateway/model/CacheAttributes.h>
 #include <aws/storagegateway/model/Tag.h>
 #include <utility>
 
@@ -314,42 +315,50 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the backed storage used for storing file data.</p>
+     * <p>The ARN of the backend storage used for storing file data. A prefix name can
+     * be added to the S3 bucket name. It must end with a "/".</p>
      */
     inline const Aws::String& GetLocationARN() const{ return m_locationARN; }
 
     /**
-     * <p>The ARN of the backed storage used for storing file data.</p>
+     * <p>The ARN of the backend storage used for storing file data. A prefix name can
+     * be added to the S3 bucket name. It must end with a "/".</p>
      */
     inline bool LocationARNHasBeenSet() const { return m_locationARNHasBeenSet; }
 
     /**
-     * <p>The ARN of the backed storage used for storing file data.</p>
+     * <p>The ARN of the backend storage used for storing file data. A prefix name can
+     * be added to the S3 bucket name. It must end with a "/".</p>
      */
     inline void SetLocationARN(const Aws::String& value) { m_locationARNHasBeenSet = true; m_locationARN = value; }
 
     /**
-     * <p>The ARN of the backed storage used for storing file data.</p>
+     * <p>The ARN of the backend storage used for storing file data. A prefix name can
+     * be added to the S3 bucket name. It must end with a "/".</p>
      */
     inline void SetLocationARN(Aws::String&& value) { m_locationARNHasBeenSet = true; m_locationARN = std::move(value); }
 
     /**
-     * <p>The ARN of the backed storage used for storing file data.</p>
+     * <p>The ARN of the backend storage used for storing file data. A prefix name can
+     * be added to the S3 bucket name. It must end with a "/".</p>
      */
     inline void SetLocationARN(const char* value) { m_locationARNHasBeenSet = true; m_locationARN.assign(value); }
 
     /**
-     * <p>The ARN of the backed storage used for storing file data.</p>
+     * <p>The ARN of the backend storage used for storing file data. A prefix name can
+     * be added to the S3 bucket name. It must end with a "/".</p>
      */
     inline CreateNFSFileShareRequest& WithLocationARN(const Aws::String& value) { SetLocationARN(value); return *this;}
 
     /**
-     * <p>The ARN of the backed storage used for storing file data.</p>
+     * <p>The ARN of the backend storage used for storing file data. A prefix name can
+     * be added to the S3 bucket name. It must end with a "/".</p>
      */
     inline CreateNFSFileShareRequest& WithLocationARN(Aws::String&& value) { SetLocationARN(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the backed storage used for storing file data.</p>
+     * <p>The ARN of the backend storage used for storing file data. A prefix name can
+     * be added to the S3 bucket name. It must end with a "/".</p>
      */
     inline CreateNFSFileShareRequest& WithLocationARN(const char* value) { SetLocationARN(value); return *this;}
 
@@ -789,6 +798,94 @@ namespace Model
      */
     inline CreateNFSFileShareRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The name of the file share. Optional.</p> <note> <p>
+     * <code>FileShareName</code> must be set if an S3 prefix name is set in
+     * <code>LocationARN</code>.</p> </note>
+     */
+    inline const Aws::String& GetFileShareName() const{ return m_fileShareName; }
+
+    /**
+     * <p>The name of the file share. Optional.</p> <note> <p>
+     * <code>FileShareName</code> must be set if an S3 prefix name is set in
+     * <code>LocationARN</code>.</p> </note>
+     */
+    inline bool FileShareNameHasBeenSet() const { return m_fileShareNameHasBeenSet; }
+
+    /**
+     * <p>The name of the file share. Optional.</p> <note> <p>
+     * <code>FileShareName</code> must be set if an S3 prefix name is set in
+     * <code>LocationARN</code>.</p> </note>
+     */
+    inline void SetFileShareName(const Aws::String& value) { m_fileShareNameHasBeenSet = true; m_fileShareName = value; }
+
+    /**
+     * <p>The name of the file share. Optional.</p> <note> <p>
+     * <code>FileShareName</code> must be set if an S3 prefix name is set in
+     * <code>LocationARN</code>.</p> </note>
+     */
+    inline void SetFileShareName(Aws::String&& value) { m_fileShareNameHasBeenSet = true; m_fileShareName = std::move(value); }
+
+    /**
+     * <p>The name of the file share. Optional.</p> <note> <p>
+     * <code>FileShareName</code> must be set if an S3 prefix name is set in
+     * <code>LocationARN</code>.</p> </note>
+     */
+    inline void SetFileShareName(const char* value) { m_fileShareNameHasBeenSet = true; m_fileShareName.assign(value); }
+
+    /**
+     * <p>The name of the file share. Optional.</p> <note> <p>
+     * <code>FileShareName</code> must be set if an S3 prefix name is set in
+     * <code>LocationARN</code>.</p> </note>
+     */
+    inline CreateNFSFileShareRequest& WithFileShareName(const Aws::String& value) { SetFileShareName(value); return *this;}
+
+    /**
+     * <p>The name of the file share. Optional.</p> <note> <p>
+     * <code>FileShareName</code> must be set if an S3 prefix name is set in
+     * <code>LocationARN</code>.</p> </note>
+     */
+    inline CreateNFSFileShareRequest& WithFileShareName(Aws::String&& value) { SetFileShareName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the file share. Optional.</p> <note> <p>
+     * <code>FileShareName</code> must be set if an S3 prefix name is set in
+     * <code>LocationARN</code>.</p> </note>
+     */
+    inline CreateNFSFileShareRequest& WithFileShareName(const char* value) { SetFileShareName(value); return *this;}
+
+
+    /**
+     * <p>Refresh cache information.</p>
+     */
+    inline const CacheAttributes& GetCacheAttributes() const{ return m_cacheAttributes; }
+
+    /**
+     * <p>Refresh cache information.</p>
+     */
+    inline bool CacheAttributesHasBeenSet() const { return m_cacheAttributesHasBeenSet; }
+
+    /**
+     * <p>Refresh cache information.</p>
+     */
+    inline void SetCacheAttributes(const CacheAttributes& value) { m_cacheAttributesHasBeenSet = true; m_cacheAttributes = value; }
+
+    /**
+     * <p>Refresh cache information.</p>
+     */
+    inline void SetCacheAttributes(CacheAttributes&& value) { m_cacheAttributesHasBeenSet = true; m_cacheAttributes = std::move(value); }
+
+    /**
+     * <p>Refresh cache information.</p>
+     */
+    inline CreateNFSFileShareRequest& WithCacheAttributes(const CacheAttributes& value) { SetCacheAttributes(value); return *this;}
+
+    /**
+     * <p>Refresh cache information.</p>
+     */
+    inline CreateNFSFileShareRequest& WithCacheAttributes(CacheAttributes&& value) { SetCacheAttributes(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_clientToken;
@@ -835,6 +932,12 @@ namespace Model
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
+
+    Aws::String m_fileShareName;
+    bool m_fileShareNameHasBeenSet;
+
+    CacheAttributes m_cacheAttributes;
+    bool m_cacheAttributesHasBeenSet;
   };
 
 } // namespace Model

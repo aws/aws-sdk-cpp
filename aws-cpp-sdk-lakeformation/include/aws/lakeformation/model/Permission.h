@@ -22,6 +22,7 @@ namespace Model
     DROP,
     DELETE_,
     INSERT,
+    DESCRIBE,
     CREATE_DATABASE,
     CREATE_TABLE,
     DATA_LOCATION_ACCESS

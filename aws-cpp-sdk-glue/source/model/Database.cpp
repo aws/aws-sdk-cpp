@@ -24,7 +24,9 @@ Database::Database() :
     m_locationUriHasBeenSet(false),
     m_parametersHasBeenSet(false),
     m_createTimeHasBeenSet(false),
-    m_createTableDefaultPermissionsHasBeenSet(false)
+    m_createTableDefaultPermissionsHasBeenSet(false),
+    m_targetDatabaseHasBeenSet(false),
+    m_catalogIdHasBeenSet(false)
 {
 }
 
@@ -34,7 +36,9 @@ Database::Database(JsonView jsonValue) :
     m_locationUriHasBeenSet(false),
     m_parametersHasBeenSet(false),
     m_createTimeHasBeenSet(false),
-    m_createTableDefaultPermissionsHasBeenSet(false)
+    m_createTableDefaultPermissionsHasBeenSet(false),
+    m_targetDatabaseHasBeenSet(false),
+    m_catalogIdHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -89,6 +93,20 @@ Database& Database::operator =(JsonView jsonValue)
     m_createTableDefaultPermissionsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("TargetDatabase"))
+  {
+    m_targetDatabase = jsonValue.GetObject("TargetDatabase");
+
+    m_targetDatabaseHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("CatalogId"))
+  {
+    m_catalogId = jsonValue.GetString("CatalogId");
+
+    m_catalogIdHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -138,6 +156,18 @@ JsonValue Database::Jsonize() const
      createTableDefaultPermissionsJsonList[createTableDefaultPermissionsIndex].AsObject(m_createTableDefaultPermissions[createTableDefaultPermissionsIndex].Jsonize());
    }
    payload.WithArray("CreateTableDefaultPermissions", std::move(createTableDefaultPermissionsJsonList));
+
+  }
+
+  if(m_targetDatabaseHasBeenSet)
+  {
+   payload.WithObject("TargetDatabase", m_targetDatabase.Jsonize());
+
+  }
+
+  if(m_catalogIdHasBeenSet)
+  {
+   payload.WithString("CatalogId", m_catalogId);
 
   }
 

@@ -33,27 +33,32 @@ namespace Model
 
 
     /**
-     * <p>A list of AWS Lake Formation principals. </p>
+     * <p>A structure representing a list of AWS Lake Formation principals designated
+     * as data lake administrators.</p>
      */
     inline const DataLakeSettings& GetDataLakeSettings() const{ return m_dataLakeSettings; }
 
     /**
-     * <p>A list of AWS Lake Formation principals. </p>
+     * <p>A structure representing a list of AWS Lake Formation principals designated
+     * as data lake administrators.</p>
      */
     inline void SetDataLakeSettings(const DataLakeSettings& value) { m_dataLakeSettings = value; }
 
     /**
-     * <p>A list of AWS Lake Formation principals. </p>
+     * <p>A structure representing a list of AWS Lake Formation principals designated
+     * as data lake administrators.</p>
      */
     inline void SetDataLakeSettings(DataLakeSettings&& value) { m_dataLakeSettings = std::move(value); }
 
     /**
-     * <p>A list of AWS Lake Formation principals. </p>
+     * <p>A structure representing a list of AWS Lake Formation principals designated
+     * as data lake administrators.</p>
      */
     inline GetDataLakeSettingsResult& WithDataLakeSettings(const DataLakeSettings& value) { SetDataLakeSettings(value); return *this;}
 
     /**
-     * <p>A list of AWS Lake Formation principals. </p>
+     * <p>A structure representing a list of AWS Lake Formation principals designated
+     * as data lake administrators.</p>
      */
     inline GetDataLakeSettingsResult& WithDataLakeSettings(DataLakeSettings&& value) { SetDataLakeSettings(std::move(value)); return *this;}
 

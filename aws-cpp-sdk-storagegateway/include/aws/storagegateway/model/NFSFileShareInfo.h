@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/storagegateway/model/ObjectACL.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/storagegateway/model/CacheAttributes.h>
 #include <aws/storagegateway/model/Tag.h>
 #include <utility>
 
@@ -619,6 +620,94 @@ namespace Model
      */
     inline NFSFileShareInfo& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The name of the file share. Optional.</p> <note> <p>
+     * <code>FileShareName</code> must be set if an S3 prefix name is set in
+     * <code>LocationARN</code>.</p> </note>
+     */
+    inline const Aws::String& GetFileShareName() const{ return m_fileShareName; }
+
+    /**
+     * <p>The name of the file share. Optional.</p> <note> <p>
+     * <code>FileShareName</code> must be set if an S3 prefix name is set in
+     * <code>LocationARN</code>.</p> </note>
+     */
+    inline bool FileShareNameHasBeenSet() const { return m_fileShareNameHasBeenSet; }
+
+    /**
+     * <p>The name of the file share. Optional.</p> <note> <p>
+     * <code>FileShareName</code> must be set if an S3 prefix name is set in
+     * <code>LocationARN</code>.</p> </note>
+     */
+    inline void SetFileShareName(const Aws::String& value) { m_fileShareNameHasBeenSet = true; m_fileShareName = value; }
+
+    /**
+     * <p>The name of the file share. Optional.</p> <note> <p>
+     * <code>FileShareName</code> must be set if an S3 prefix name is set in
+     * <code>LocationARN</code>.</p> </note>
+     */
+    inline void SetFileShareName(Aws::String&& value) { m_fileShareNameHasBeenSet = true; m_fileShareName = std::move(value); }
+
+    /**
+     * <p>The name of the file share. Optional.</p> <note> <p>
+     * <code>FileShareName</code> must be set if an S3 prefix name is set in
+     * <code>LocationARN</code>.</p> </note>
+     */
+    inline void SetFileShareName(const char* value) { m_fileShareNameHasBeenSet = true; m_fileShareName.assign(value); }
+
+    /**
+     * <p>The name of the file share. Optional.</p> <note> <p>
+     * <code>FileShareName</code> must be set if an S3 prefix name is set in
+     * <code>LocationARN</code>.</p> </note>
+     */
+    inline NFSFileShareInfo& WithFileShareName(const Aws::String& value) { SetFileShareName(value); return *this;}
+
+    /**
+     * <p>The name of the file share. Optional.</p> <note> <p>
+     * <code>FileShareName</code> must be set if an S3 prefix name is set in
+     * <code>LocationARN</code>.</p> </note>
+     */
+    inline NFSFileShareInfo& WithFileShareName(Aws::String&& value) { SetFileShareName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the file share. Optional.</p> <note> <p>
+     * <code>FileShareName</code> must be set if an S3 prefix name is set in
+     * <code>LocationARN</code>.</p> </note>
+     */
+    inline NFSFileShareInfo& WithFileShareName(const char* value) { SetFileShareName(value); return *this;}
+
+
+    /**
+     * <p>Refresh cache information.</p>
+     */
+    inline const CacheAttributes& GetCacheAttributes() const{ return m_cacheAttributes; }
+
+    /**
+     * <p>Refresh cache information.</p>
+     */
+    inline bool CacheAttributesHasBeenSet() const { return m_cacheAttributesHasBeenSet; }
+
+    /**
+     * <p>Refresh cache information.</p>
+     */
+    inline void SetCacheAttributes(const CacheAttributes& value) { m_cacheAttributesHasBeenSet = true; m_cacheAttributes = value; }
+
+    /**
+     * <p>Refresh cache information.</p>
+     */
+    inline void SetCacheAttributes(CacheAttributes&& value) { m_cacheAttributesHasBeenSet = true; m_cacheAttributes = std::move(value); }
+
+    /**
+     * <p>Refresh cache information.</p>
+     */
+    inline NFSFileShareInfo& WithCacheAttributes(const CacheAttributes& value) { SetCacheAttributes(value); return *this;}
+
+    /**
+     * <p>Refresh cache information.</p>
+     */
+    inline NFSFileShareInfo& WithCacheAttributes(CacheAttributes&& value) { SetCacheAttributes(std::move(value)); return *this;}
+
   private:
 
     NFSFileShareDefaults m_nFSFileShareDefaults;
@@ -674,6 +763,12 @@ namespace Model
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
+
+    Aws::String m_fileShareName;
+    bool m_fileShareNameHasBeenSet;
+
+    CacheAttributes m_cacheAttributes;
+    bool m_cacheAttributesHasBeenSet;
   };
 
 } // namespace Model

@@ -58,6 +58,12 @@ CreateFileSystemResult& CreateFileSystemResult::operator =(const Aws::AmazonWebS
 
   }
 
+  if(jsonValue.ValueExists("FileSystemArn"))
+  {
+    m_fileSystemArn = jsonValue.GetString("FileSystemArn");
+
+  }
+
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");

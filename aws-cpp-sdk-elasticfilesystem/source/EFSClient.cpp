@@ -28,6 +28,7 @@
 #include <aws/elasticfilesystem/model/DeleteFileSystemPolicyRequest.h>
 #include <aws/elasticfilesystem/model/DeleteMountTargetRequest.h>
 #include <aws/elasticfilesystem/model/DescribeAccessPointsRequest.h>
+#include <aws/elasticfilesystem/model/DescribeBackupPolicyRequest.h>
 #include <aws/elasticfilesystem/model/DescribeFileSystemPolicyRequest.h>
 #include <aws/elasticfilesystem/model/DescribeFileSystemsRequest.h>
 #include <aws/elasticfilesystem/model/DescribeLifecycleConfigurationRequest.h>
@@ -35,6 +36,7 @@
 #include <aws/elasticfilesystem/model/DescribeMountTargetsRequest.h>
 #include <aws/elasticfilesystem/model/ListTagsForResourceRequest.h>
 #include <aws/elasticfilesystem/model/ModifyMountTargetSecurityGroupsRequest.h>
+#include <aws/elasticfilesystem/model/PutBackupPolicyRequest.h>
 #include <aws/elasticfilesystem/model/PutFileSystemPolicyRequest.h>
 #include <aws/elasticfilesystem/model/PutLifecycleConfigurationRequest.h>
 #include <aws/elasticfilesystem/model/TagResourceRequest.h>
@@ -354,6 +356,40 @@ void EFSClient::DescribeAccessPointsAsyncHelper(const DescribeAccessPointsReques
   handler(this, request, DescribeAccessPoints(request), context);
 }
 
+DescribeBackupPolicyOutcome EFSClient::DescribeBackupPolicy(const DescribeBackupPolicyRequest& request) const
+{
+  if (!request.FileSystemIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeBackupPolicy", "Required field: FileSystemId, is not set");
+    return DescribeBackupPolicyOutcome(Aws::Client::AWSError<EFSErrors>(EFSErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FileSystemId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/2015-02-01/file-systems/";
+  ss << request.GetFileSystemId();
+  ss << "/backup-policy";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DescribeBackupPolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeBackupPolicyOutcomeCallable EFSClient::DescribeBackupPolicyCallable(const DescribeBackupPolicyRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeBackupPolicyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeBackupPolicy(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EFSClient::DescribeBackupPolicyAsync(const DescribeBackupPolicyRequest& request, const DescribeBackupPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeBackupPolicyAsyncHelper( request, handler, context ); } );
+}
+
+void EFSClient::DescribeBackupPolicyAsyncHelper(const DescribeBackupPolicyRequest& request, const DescribeBackupPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeBackupPolicy(request), context);
+}
+
 DescribeFileSystemPolicyOutcome EFSClient::DescribeFileSystemPolicy(const DescribeFileSystemPolicyRequest& request) const
 {
   if (!request.FileSystemIdHasBeenSet())
@@ -575,6 +611,40 @@ void EFSClient::ModifyMountTargetSecurityGroupsAsync(const ModifyMountTargetSecu
 void EFSClient::ModifyMountTargetSecurityGroupsAsyncHelper(const ModifyMountTargetSecurityGroupsRequest& request, const ModifyMountTargetSecurityGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ModifyMountTargetSecurityGroups(request), context);
+}
+
+PutBackupPolicyOutcome EFSClient::PutBackupPolicy(const PutBackupPolicyRequest& request) const
+{
+  if (!request.FileSystemIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("PutBackupPolicy", "Required field: FileSystemId, is not set");
+    return PutBackupPolicyOutcome(Aws::Client::AWSError<EFSErrors>(EFSErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FileSystemId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/2015-02-01/file-systems/";
+  ss << request.GetFileSystemId();
+  ss << "/backup-policy";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return PutBackupPolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+}
+
+PutBackupPolicyOutcomeCallable EFSClient::PutBackupPolicyCallable(const PutBackupPolicyRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< PutBackupPolicyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutBackupPolicy(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EFSClient::PutBackupPolicyAsync(const PutBackupPolicyRequest& request, const PutBackupPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->PutBackupPolicyAsyncHelper( request, handler, context ); } );
+}
+
+void EFSClient::PutBackupPolicyAsyncHelper(const PutBackupPolicyRequest& request, const PutBackupPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, PutBackupPolicy(request), context);
 }
 
 PutFileSystemPolicyOutcome EFSClient::PutFileSystemPolicy(const PutFileSystemPolicyRequest& request) const

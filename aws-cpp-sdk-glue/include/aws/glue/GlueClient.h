@@ -84,6 +84,7 @@
 #include <aws/glue/model/GetPartitionResult.h>
 #include <aws/glue/model/GetPartitionsResult.h>
 #include <aws/glue/model/GetPlanResult.h>
+#include <aws/glue/model/GetResourcePoliciesResult.h>
 #include <aws/glue/model/GetResourcePolicyResult.h>
 #include <aws/glue/model/GetSecurityConfigurationResult.h>
 #include <aws/glue/model/GetSecurityConfigurationsResult.h>
@@ -254,6 +255,7 @@ namespace Model
         class GetPartitionRequest;
         class GetPartitionsRequest;
         class GetPlanRequest;
+        class GetResourcePoliciesRequest;
         class GetResourcePolicyRequest;
         class GetSecurityConfigurationRequest;
         class GetSecurityConfigurationsRequest;
@@ -386,6 +388,7 @@ namespace Model
         typedef Aws::Utils::Outcome<GetPartitionResult, GlueError> GetPartitionOutcome;
         typedef Aws::Utils::Outcome<GetPartitionsResult, GlueError> GetPartitionsOutcome;
         typedef Aws::Utils::Outcome<GetPlanResult, GlueError> GetPlanOutcome;
+        typedef Aws::Utils::Outcome<GetResourcePoliciesResult, GlueError> GetResourcePoliciesOutcome;
         typedef Aws::Utils::Outcome<GetResourcePolicyResult, GlueError> GetResourcePolicyOutcome;
         typedef Aws::Utils::Outcome<GetSecurityConfigurationResult, GlueError> GetSecurityConfigurationOutcome;
         typedef Aws::Utils::Outcome<GetSecurityConfigurationsResult, GlueError> GetSecurityConfigurationsOutcome;
@@ -518,6 +521,7 @@ namespace Model
         typedef std::future<GetPartitionOutcome> GetPartitionOutcomeCallable;
         typedef std::future<GetPartitionsOutcome> GetPartitionsOutcomeCallable;
         typedef std::future<GetPlanOutcome> GetPlanOutcomeCallable;
+        typedef std::future<GetResourcePoliciesOutcome> GetResourcePoliciesOutcomeCallable;
         typedef std::future<GetResourcePolicyOutcome> GetResourcePolicyOutcomeCallable;
         typedef std::future<GetSecurityConfigurationOutcome> GetSecurityConfigurationOutcomeCallable;
         typedef std::future<GetSecurityConfigurationsOutcome> GetSecurityConfigurationsOutcomeCallable;
@@ -653,6 +657,7 @@ namespace Model
     typedef std::function<void(const GlueClient*, const Model::GetPartitionRequest&, const Model::GetPartitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetPartitionResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::GetPartitionsRequest&, const Model::GetPartitionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetPartitionsResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::GetPlanRequest&, const Model::GetPlanOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetPlanResponseReceivedHandler;
+    typedef std::function<void(const GlueClient*, const Model::GetResourcePoliciesRequest&, const Model::GetResourcePoliciesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetResourcePoliciesResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::GetResourcePolicyRequest&, const Model::GetResourcePolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetResourcePolicyResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::GetSecurityConfigurationRequest&, const Model::GetSecurityConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSecurityConfigurationResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::GetSecurityConfigurationsRequest&, const Model::GetSecurityConfigurationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSecurityConfigurationsResponseReceivedHandler;
@@ -2967,6 +2972,37 @@ namespace Model
         virtual void GetPlanAsync(const Model::GetPlanRequest& request, const GetPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Retrieves the security configurations for the resource policies set on
+         * individual resources, and also the account-level policy.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetResourcePolicies">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetResourcePoliciesOutcome GetResourcePolicies(const Model::GetResourcePoliciesRequest& request) const;
+
+        /**
+         * <p>Retrieves the security configurations for the resource policies set on
+         * individual resources, and also the account-level policy.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetResourcePolicies">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetResourcePoliciesOutcomeCallable GetResourcePoliciesCallable(const Model::GetResourcePoliciesRequest& request) const;
+
+        /**
+         * <p>Retrieves the security configurations for the resource policies set on
+         * individual resources, and also the account-level policy.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetResourcePolicies">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetResourcePoliciesAsync(const Model::GetResourcePoliciesRequest& request, const GetResourcePoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Retrieves a specified resource policy.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetResourcePolicy">AWS
          * API Reference</a></p>
@@ -4892,6 +4928,7 @@ namespace Model
         void GetPartitionAsyncHelper(const Model::GetPartitionRequest& request, const GetPartitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetPartitionsAsyncHelper(const Model::GetPartitionsRequest& request, const GetPartitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetPlanAsyncHelper(const Model::GetPlanRequest& request, const GetPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetResourcePoliciesAsyncHelper(const Model::GetResourcePoliciesRequest& request, const GetResourcePoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetResourcePolicyAsyncHelper(const Model::GetResourcePolicyRequest& request, const GetResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetSecurityConfigurationAsyncHelper(const Model::GetSecurityConfigurationRequest& request, const GetSecurityConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetSecurityConfigurationsAsyncHelper(const Model::GetSecurityConfigurationsRequest& request, const GetSecurityConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

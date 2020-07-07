@@ -9,6 +9,8 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/storagegateway/model/ObjectACL.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/storagegateway/model/CaseSensitivity.h>
+#include <aws/storagegateway/model/CacheAttributes.h>
 #include <utility>
 
 namespace Aws
@@ -463,220 +465,247 @@ namespace Model
 
 
     /**
-     * <p>A list of users in the Active Directory that have administrator rights to the
-     * file share. A group must be prefixed with the @ character. For example,
-     * <code>@group1</code>. Can only be set if Authentication is set to
-     * <code>ActiveDirectory</code>.</p>
+     * <p>A list of users or groups in the Active Directory that have administrator
+     * rights to the file share. A group must be prefixed with the @ character.
+     * Acceptable formats include: <code>DOMAIN\User1</code>, <code>user1</code>,
+     * <code>@group1</code>, and <code>@DOMAIN\group1</code>. Can only be set if
+     * Authentication is set to <code>ActiveDirectory</code>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAdminUserList() const{ return m_adminUserList; }
 
     /**
-     * <p>A list of users in the Active Directory that have administrator rights to the
-     * file share. A group must be prefixed with the @ character. For example,
-     * <code>@group1</code>. Can only be set if Authentication is set to
-     * <code>ActiveDirectory</code>.</p>
+     * <p>A list of users or groups in the Active Directory that have administrator
+     * rights to the file share. A group must be prefixed with the @ character.
+     * Acceptable formats include: <code>DOMAIN\User1</code>, <code>user1</code>,
+     * <code>@group1</code>, and <code>@DOMAIN\group1</code>. Can only be set if
+     * Authentication is set to <code>ActiveDirectory</code>.</p>
      */
     inline bool AdminUserListHasBeenSet() const { return m_adminUserListHasBeenSet; }
 
     /**
-     * <p>A list of users in the Active Directory that have administrator rights to the
-     * file share. A group must be prefixed with the @ character. For example,
-     * <code>@group1</code>. Can only be set if Authentication is set to
-     * <code>ActiveDirectory</code>.</p>
+     * <p>A list of users or groups in the Active Directory that have administrator
+     * rights to the file share. A group must be prefixed with the @ character.
+     * Acceptable formats include: <code>DOMAIN\User1</code>, <code>user1</code>,
+     * <code>@group1</code>, and <code>@DOMAIN\group1</code>. Can only be set if
+     * Authentication is set to <code>ActiveDirectory</code>.</p>
      */
     inline void SetAdminUserList(const Aws::Vector<Aws::String>& value) { m_adminUserListHasBeenSet = true; m_adminUserList = value; }
 
     /**
-     * <p>A list of users in the Active Directory that have administrator rights to the
-     * file share. A group must be prefixed with the @ character. For example,
-     * <code>@group1</code>. Can only be set if Authentication is set to
-     * <code>ActiveDirectory</code>.</p>
+     * <p>A list of users or groups in the Active Directory that have administrator
+     * rights to the file share. A group must be prefixed with the @ character.
+     * Acceptable formats include: <code>DOMAIN\User1</code>, <code>user1</code>,
+     * <code>@group1</code>, and <code>@DOMAIN\group1</code>. Can only be set if
+     * Authentication is set to <code>ActiveDirectory</code>.</p>
      */
     inline void SetAdminUserList(Aws::Vector<Aws::String>&& value) { m_adminUserListHasBeenSet = true; m_adminUserList = std::move(value); }
 
     /**
-     * <p>A list of users in the Active Directory that have administrator rights to the
-     * file share. A group must be prefixed with the @ character. For example,
-     * <code>@group1</code>. Can only be set if Authentication is set to
-     * <code>ActiveDirectory</code>.</p>
+     * <p>A list of users or groups in the Active Directory that have administrator
+     * rights to the file share. A group must be prefixed with the @ character.
+     * Acceptable formats include: <code>DOMAIN\User1</code>, <code>user1</code>,
+     * <code>@group1</code>, and <code>@DOMAIN\group1</code>. Can only be set if
+     * Authentication is set to <code>ActiveDirectory</code>.</p>
      */
     inline UpdateSMBFileShareRequest& WithAdminUserList(const Aws::Vector<Aws::String>& value) { SetAdminUserList(value); return *this;}
 
     /**
-     * <p>A list of users in the Active Directory that have administrator rights to the
-     * file share. A group must be prefixed with the @ character. For example,
-     * <code>@group1</code>. Can only be set if Authentication is set to
-     * <code>ActiveDirectory</code>.</p>
+     * <p>A list of users or groups in the Active Directory that have administrator
+     * rights to the file share. A group must be prefixed with the @ character.
+     * Acceptable formats include: <code>DOMAIN\User1</code>, <code>user1</code>,
+     * <code>@group1</code>, and <code>@DOMAIN\group1</code>. Can only be set if
+     * Authentication is set to <code>ActiveDirectory</code>.</p>
      */
     inline UpdateSMBFileShareRequest& WithAdminUserList(Aws::Vector<Aws::String>&& value) { SetAdminUserList(std::move(value)); return *this;}
 
     /**
-     * <p>A list of users in the Active Directory that have administrator rights to the
-     * file share. A group must be prefixed with the @ character. For example,
-     * <code>@group1</code>. Can only be set if Authentication is set to
-     * <code>ActiveDirectory</code>.</p>
+     * <p>A list of users or groups in the Active Directory that have administrator
+     * rights to the file share. A group must be prefixed with the @ character.
+     * Acceptable formats include: <code>DOMAIN\User1</code>, <code>user1</code>,
+     * <code>@group1</code>, and <code>@DOMAIN\group1</code>. Can only be set if
+     * Authentication is set to <code>ActiveDirectory</code>.</p>
      */
     inline UpdateSMBFileShareRequest& AddAdminUserList(const Aws::String& value) { m_adminUserListHasBeenSet = true; m_adminUserList.push_back(value); return *this; }
 
     /**
-     * <p>A list of users in the Active Directory that have administrator rights to the
-     * file share. A group must be prefixed with the @ character. For example,
-     * <code>@group1</code>. Can only be set if Authentication is set to
-     * <code>ActiveDirectory</code>.</p>
+     * <p>A list of users or groups in the Active Directory that have administrator
+     * rights to the file share. A group must be prefixed with the @ character.
+     * Acceptable formats include: <code>DOMAIN\User1</code>, <code>user1</code>,
+     * <code>@group1</code>, and <code>@DOMAIN\group1</code>. Can only be set if
+     * Authentication is set to <code>ActiveDirectory</code>.</p>
      */
     inline UpdateSMBFileShareRequest& AddAdminUserList(Aws::String&& value) { m_adminUserListHasBeenSet = true; m_adminUserList.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>A list of users in the Active Directory that have administrator rights to the
-     * file share. A group must be prefixed with the @ character. For example,
-     * <code>@group1</code>. Can only be set if Authentication is set to
-     * <code>ActiveDirectory</code>.</p>
+     * <p>A list of users or groups in the Active Directory that have administrator
+     * rights to the file share. A group must be prefixed with the @ character.
+     * Acceptable formats include: <code>DOMAIN\User1</code>, <code>user1</code>,
+     * <code>@group1</code>, and <code>@DOMAIN\group1</code>. Can only be set if
+     * Authentication is set to <code>ActiveDirectory</code>.</p>
      */
     inline UpdateSMBFileShareRequest& AddAdminUserList(const char* value) { m_adminUserListHasBeenSet = true; m_adminUserList.push_back(value); return *this; }
 
 
     /**
      * <p>A list of users or groups in the Active Directory that are allowed to access
-     * the file share. A group must be prefixed with the @ character. For example,
-     * <code>@group1</code>. Can only be set if Authentication is set to
-     * <code>ActiveDirectory</code>.</p>
+     * the file share. A group must be prefixed with the @ character. Acceptable
+     * formats include: <code>DOMAIN\User1</code>, <code>user1</code>,
+     * <code>@group1</code>, and <code>@DOMAIN\group1</code>. Can only be set if
+     * Authentication is set to <code>ActiveDirectory</code>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetValidUserList() const{ return m_validUserList; }
 
     /**
      * <p>A list of users or groups in the Active Directory that are allowed to access
-     * the file share. A group must be prefixed with the @ character. For example,
-     * <code>@group1</code>. Can only be set if Authentication is set to
-     * <code>ActiveDirectory</code>.</p>
+     * the file share. A group must be prefixed with the @ character. Acceptable
+     * formats include: <code>DOMAIN\User1</code>, <code>user1</code>,
+     * <code>@group1</code>, and <code>@DOMAIN\group1</code>. Can only be set if
+     * Authentication is set to <code>ActiveDirectory</code>.</p>
      */
     inline bool ValidUserListHasBeenSet() const { return m_validUserListHasBeenSet; }
 
     /**
      * <p>A list of users or groups in the Active Directory that are allowed to access
-     * the file share. A group must be prefixed with the @ character. For example,
-     * <code>@group1</code>. Can only be set if Authentication is set to
-     * <code>ActiveDirectory</code>.</p>
+     * the file share. A group must be prefixed with the @ character. Acceptable
+     * formats include: <code>DOMAIN\User1</code>, <code>user1</code>,
+     * <code>@group1</code>, and <code>@DOMAIN\group1</code>. Can only be set if
+     * Authentication is set to <code>ActiveDirectory</code>.</p>
      */
     inline void SetValidUserList(const Aws::Vector<Aws::String>& value) { m_validUserListHasBeenSet = true; m_validUserList = value; }
 
     /**
      * <p>A list of users or groups in the Active Directory that are allowed to access
-     * the file share. A group must be prefixed with the @ character. For example,
-     * <code>@group1</code>. Can only be set if Authentication is set to
-     * <code>ActiveDirectory</code>.</p>
+     * the file share. A group must be prefixed with the @ character. Acceptable
+     * formats include: <code>DOMAIN\User1</code>, <code>user1</code>,
+     * <code>@group1</code>, and <code>@DOMAIN\group1</code>. Can only be set if
+     * Authentication is set to <code>ActiveDirectory</code>.</p>
      */
     inline void SetValidUserList(Aws::Vector<Aws::String>&& value) { m_validUserListHasBeenSet = true; m_validUserList = std::move(value); }
 
     /**
      * <p>A list of users or groups in the Active Directory that are allowed to access
-     * the file share. A group must be prefixed with the @ character. For example,
-     * <code>@group1</code>. Can only be set if Authentication is set to
-     * <code>ActiveDirectory</code>.</p>
+     * the file share. A group must be prefixed with the @ character. Acceptable
+     * formats include: <code>DOMAIN\User1</code>, <code>user1</code>,
+     * <code>@group1</code>, and <code>@DOMAIN\group1</code>. Can only be set if
+     * Authentication is set to <code>ActiveDirectory</code>.</p>
      */
     inline UpdateSMBFileShareRequest& WithValidUserList(const Aws::Vector<Aws::String>& value) { SetValidUserList(value); return *this;}
 
     /**
      * <p>A list of users or groups in the Active Directory that are allowed to access
-     * the file share. A group must be prefixed with the @ character. For example,
-     * <code>@group1</code>. Can only be set if Authentication is set to
-     * <code>ActiveDirectory</code>.</p>
+     * the file share. A group must be prefixed with the @ character. Acceptable
+     * formats include: <code>DOMAIN\User1</code>, <code>user1</code>,
+     * <code>@group1</code>, and <code>@DOMAIN\group1</code>. Can only be set if
+     * Authentication is set to <code>ActiveDirectory</code>.</p>
      */
     inline UpdateSMBFileShareRequest& WithValidUserList(Aws::Vector<Aws::String>&& value) { SetValidUserList(std::move(value)); return *this;}
 
     /**
      * <p>A list of users or groups in the Active Directory that are allowed to access
-     * the file share. A group must be prefixed with the @ character. For example,
-     * <code>@group1</code>. Can only be set if Authentication is set to
-     * <code>ActiveDirectory</code>.</p>
+     * the file share. A group must be prefixed with the @ character. Acceptable
+     * formats include: <code>DOMAIN\User1</code>, <code>user1</code>,
+     * <code>@group1</code>, and <code>@DOMAIN\group1</code>. Can only be set if
+     * Authentication is set to <code>ActiveDirectory</code>.</p>
      */
     inline UpdateSMBFileShareRequest& AddValidUserList(const Aws::String& value) { m_validUserListHasBeenSet = true; m_validUserList.push_back(value); return *this; }
 
     /**
      * <p>A list of users or groups in the Active Directory that are allowed to access
-     * the file share. A group must be prefixed with the @ character. For example,
-     * <code>@group1</code>. Can only be set if Authentication is set to
-     * <code>ActiveDirectory</code>.</p>
+     * the file share. A group must be prefixed with the @ character. Acceptable
+     * formats include: <code>DOMAIN\User1</code>, <code>user1</code>,
+     * <code>@group1</code>, and <code>@DOMAIN\group1</code>. Can only be set if
+     * Authentication is set to <code>ActiveDirectory</code>.</p>
      */
     inline UpdateSMBFileShareRequest& AddValidUserList(Aws::String&& value) { m_validUserListHasBeenSet = true; m_validUserList.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of users or groups in the Active Directory that are allowed to access
-     * the file share. A group must be prefixed with the @ character. For example,
-     * <code>@group1</code>. Can only be set if Authentication is set to
-     * <code>ActiveDirectory</code>.</p>
+     * the file share. A group must be prefixed with the @ character. Acceptable
+     * formats include: <code>DOMAIN\User1</code>, <code>user1</code>,
+     * <code>@group1</code>, and <code>@DOMAIN\group1</code>. Can only be set if
+     * Authentication is set to <code>ActiveDirectory</code>.</p>
      */
     inline UpdateSMBFileShareRequest& AddValidUserList(const char* value) { m_validUserListHasBeenSet = true; m_validUserList.push_back(value); return *this; }
 
 
     /**
      * <p>A list of users or groups in the Active Directory that are not allowed to
-     * access the file share. A group must be prefixed with the @ character. For
-     * example <code>@group1</code>. Can only be set if Authentication is set to
-     * <code>ActiveDirectory</code>.</p>
+     * access the file share. A group must be prefixed with the @ character. Acceptable
+     * formats include: <code>DOMAIN\User1</code>, <code>user1</code>,
+     * <code>@group1</code>, and <code>@DOMAIN\group1</code>. Can only be set if
+     * Authentication is set to <code>ActiveDirectory</code>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetInvalidUserList() const{ return m_invalidUserList; }
 
     /**
      * <p>A list of users or groups in the Active Directory that are not allowed to
-     * access the file share. A group must be prefixed with the @ character. For
-     * example <code>@group1</code>. Can only be set if Authentication is set to
-     * <code>ActiveDirectory</code>.</p>
+     * access the file share. A group must be prefixed with the @ character. Acceptable
+     * formats include: <code>DOMAIN\User1</code>, <code>user1</code>,
+     * <code>@group1</code>, and <code>@DOMAIN\group1</code>. Can only be set if
+     * Authentication is set to <code>ActiveDirectory</code>.</p>
      */
     inline bool InvalidUserListHasBeenSet() const { return m_invalidUserListHasBeenSet; }
 
     /**
      * <p>A list of users or groups in the Active Directory that are not allowed to
-     * access the file share. A group must be prefixed with the @ character. For
-     * example <code>@group1</code>. Can only be set if Authentication is set to
-     * <code>ActiveDirectory</code>.</p>
+     * access the file share. A group must be prefixed with the @ character. Acceptable
+     * formats include: <code>DOMAIN\User1</code>, <code>user1</code>,
+     * <code>@group1</code>, and <code>@DOMAIN\group1</code>. Can only be set if
+     * Authentication is set to <code>ActiveDirectory</code>.</p>
      */
     inline void SetInvalidUserList(const Aws::Vector<Aws::String>& value) { m_invalidUserListHasBeenSet = true; m_invalidUserList = value; }
 
     /**
      * <p>A list of users or groups in the Active Directory that are not allowed to
-     * access the file share. A group must be prefixed with the @ character. For
-     * example <code>@group1</code>. Can only be set if Authentication is set to
-     * <code>ActiveDirectory</code>.</p>
+     * access the file share. A group must be prefixed with the @ character. Acceptable
+     * formats include: <code>DOMAIN\User1</code>, <code>user1</code>,
+     * <code>@group1</code>, and <code>@DOMAIN\group1</code>. Can only be set if
+     * Authentication is set to <code>ActiveDirectory</code>.</p>
      */
     inline void SetInvalidUserList(Aws::Vector<Aws::String>&& value) { m_invalidUserListHasBeenSet = true; m_invalidUserList = std::move(value); }
 
     /**
      * <p>A list of users or groups in the Active Directory that are not allowed to
-     * access the file share. A group must be prefixed with the @ character. For
-     * example <code>@group1</code>. Can only be set if Authentication is set to
-     * <code>ActiveDirectory</code>.</p>
+     * access the file share. A group must be prefixed with the @ character. Acceptable
+     * formats include: <code>DOMAIN\User1</code>, <code>user1</code>,
+     * <code>@group1</code>, and <code>@DOMAIN\group1</code>. Can only be set if
+     * Authentication is set to <code>ActiveDirectory</code>.</p>
      */
     inline UpdateSMBFileShareRequest& WithInvalidUserList(const Aws::Vector<Aws::String>& value) { SetInvalidUserList(value); return *this;}
 
     /**
      * <p>A list of users or groups in the Active Directory that are not allowed to
-     * access the file share. A group must be prefixed with the @ character. For
-     * example <code>@group1</code>. Can only be set if Authentication is set to
-     * <code>ActiveDirectory</code>.</p>
+     * access the file share. A group must be prefixed with the @ character. Acceptable
+     * formats include: <code>DOMAIN\User1</code>, <code>user1</code>,
+     * <code>@group1</code>, and <code>@DOMAIN\group1</code>. Can only be set if
+     * Authentication is set to <code>ActiveDirectory</code>.</p>
      */
     inline UpdateSMBFileShareRequest& WithInvalidUserList(Aws::Vector<Aws::String>&& value) { SetInvalidUserList(std::move(value)); return *this;}
 
     /**
      * <p>A list of users or groups in the Active Directory that are not allowed to
-     * access the file share. A group must be prefixed with the @ character. For
-     * example <code>@group1</code>. Can only be set if Authentication is set to
-     * <code>ActiveDirectory</code>.</p>
+     * access the file share. A group must be prefixed with the @ character. Acceptable
+     * formats include: <code>DOMAIN\User1</code>, <code>user1</code>,
+     * <code>@group1</code>, and <code>@DOMAIN\group1</code>. Can only be set if
+     * Authentication is set to <code>ActiveDirectory</code>.</p>
      */
     inline UpdateSMBFileShareRequest& AddInvalidUserList(const Aws::String& value) { m_invalidUserListHasBeenSet = true; m_invalidUserList.push_back(value); return *this; }
 
     /**
      * <p>A list of users or groups in the Active Directory that are not allowed to
-     * access the file share. A group must be prefixed with the @ character. For
-     * example <code>@group1</code>. Can only be set if Authentication is set to
-     * <code>ActiveDirectory</code>.</p>
+     * access the file share. A group must be prefixed with the @ character. Acceptable
+     * formats include: <code>DOMAIN\User1</code>, <code>user1</code>,
+     * <code>@group1</code>, and <code>@DOMAIN\group1</code>. Can only be set if
+     * Authentication is set to <code>ActiveDirectory</code>.</p>
      */
     inline UpdateSMBFileShareRequest& AddInvalidUserList(Aws::String&& value) { m_invalidUserListHasBeenSet = true; m_invalidUserList.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of users or groups in the Active Directory that are not allowed to
-     * access the file share. A group must be prefixed with the @ character. For
-     * example <code>@group1</code>. Can only be set if Authentication is set to
-     * <code>ActiveDirectory</code>.</p>
+     * access the file share. A group must be prefixed with the @ character. Acceptable
+     * formats include: <code>DOMAIN\User1</code>, <code>user1</code>,
+     * <code>@group1</code>, and <code>@DOMAIN\group1</code>. Can only be set if
+     * Authentication is set to <code>ActiveDirectory</code>.</p>
      */
     inline UpdateSMBFileShareRequest& AddInvalidUserList(const char* value) { m_invalidUserListHasBeenSet = true; m_invalidUserList.push_back(value); return *this; }
 
@@ -721,6 +750,143 @@ namespace Model
      */
     inline UpdateSMBFileShareRequest& WithAuditDestinationARN(const char* value) { SetAuditDestinationARN(value); return *this;}
 
+
+    /**
+     * <p>The case of an object name in an Amazon S3 bucket. For
+     * <code>ClientSpecified</code>, the client determines the case sensitivity. For
+     * <code>CaseSensitive</code>, the gateway determines the case sensitivity. The
+     * default value is <code>ClientSpecified</code>.</p>
+     */
+    inline const CaseSensitivity& GetCaseSensitivity() const{ return m_caseSensitivity; }
+
+    /**
+     * <p>The case of an object name in an Amazon S3 bucket. For
+     * <code>ClientSpecified</code>, the client determines the case sensitivity. For
+     * <code>CaseSensitive</code>, the gateway determines the case sensitivity. The
+     * default value is <code>ClientSpecified</code>.</p>
+     */
+    inline bool CaseSensitivityHasBeenSet() const { return m_caseSensitivityHasBeenSet; }
+
+    /**
+     * <p>The case of an object name in an Amazon S3 bucket. For
+     * <code>ClientSpecified</code>, the client determines the case sensitivity. For
+     * <code>CaseSensitive</code>, the gateway determines the case sensitivity. The
+     * default value is <code>ClientSpecified</code>.</p>
+     */
+    inline void SetCaseSensitivity(const CaseSensitivity& value) { m_caseSensitivityHasBeenSet = true; m_caseSensitivity = value; }
+
+    /**
+     * <p>The case of an object name in an Amazon S3 bucket. For
+     * <code>ClientSpecified</code>, the client determines the case sensitivity. For
+     * <code>CaseSensitive</code>, the gateway determines the case sensitivity. The
+     * default value is <code>ClientSpecified</code>.</p>
+     */
+    inline void SetCaseSensitivity(CaseSensitivity&& value) { m_caseSensitivityHasBeenSet = true; m_caseSensitivity = std::move(value); }
+
+    /**
+     * <p>The case of an object name in an Amazon S3 bucket. For
+     * <code>ClientSpecified</code>, the client determines the case sensitivity. For
+     * <code>CaseSensitive</code>, the gateway determines the case sensitivity. The
+     * default value is <code>ClientSpecified</code>.</p>
+     */
+    inline UpdateSMBFileShareRequest& WithCaseSensitivity(const CaseSensitivity& value) { SetCaseSensitivity(value); return *this;}
+
+    /**
+     * <p>The case of an object name in an Amazon S3 bucket. For
+     * <code>ClientSpecified</code>, the client determines the case sensitivity. For
+     * <code>CaseSensitive</code>, the gateway determines the case sensitivity. The
+     * default value is <code>ClientSpecified</code>.</p>
+     */
+    inline UpdateSMBFileShareRequest& WithCaseSensitivity(CaseSensitivity&& value) { SetCaseSensitivity(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The name of the file share. Optional.</p> <note> <p>
+     * <code>FileShareName</code> must be set if an S3 prefix name is set in
+     * <code>LocationARN</code>.</p> </note>
+     */
+    inline const Aws::String& GetFileShareName() const{ return m_fileShareName; }
+
+    /**
+     * <p>The name of the file share. Optional.</p> <note> <p>
+     * <code>FileShareName</code> must be set if an S3 prefix name is set in
+     * <code>LocationARN</code>.</p> </note>
+     */
+    inline bool FileShareNameHasBeenSet() const { return m_fileShareNameHasBeenSet; }
+
+    /**
+     * <p>The name of the file share. Optional.</p> <note> <p>
+     * <code>FileShareName</code> must be set if an S3 prefix name is set in
+     * <code>LocationARN</code>.</p> </note>
+     */
+    inline void SetFileShareName(const Aws::String& value) { m_fileShareNameHasBeenSet = true; m_fileShareName = value; }
+
+    /**
+     * <p>The name of the file share. Optional.</p> <note> <p>
+     * <code>FileShareName</code> must be set if an S3 prefix name is set in
+     * <code>LocationARN</code>.</p> </note>
+     */
+    inline void SetFileShareName(Aws::String&& value) { m_fileShareNameHasBeenSet = true; m_fileShareName = std::move(value); }
+
+    /**
+     * <p>The name of the file share. Optional.</p> <note> <p>
+     * <code>FileShareName</code> must be set if an S3 prefix name is set in
+     * <code>LocationARN</code>.</p> </note>
+     */
+    inline void SetFileShareName(const char* value) { m_fileShareNameHasBeenSet = true; m_fileShareName.assign(value); }
+
+    /**
+     * <p>The name of the file share. Optional.</p> <note> <p>
+     * <code>FileShareName</code> must be set if an S3 prefix name is set in
+     * <code>LocationARN</code>.</p> </note>
+     */
+    inline UpdateSMBFileShareRequest& WithFileShareName(const Aws::String& value) { SetFileShareName(value); return *this;}
+
+    /**
+     * <p>The name of the file share. Optional.</p> <note> <p>
+     * <code>FileShareName</code> must be set if an S3 prefix name is set in
+     * <code>LocationARN</code>.</p> </note>
+     */
+    inline UpdateSMBFileShareRequest& WithFileShareName(Aws::String&& value) { SetFileShareName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the file share. Optional.</p> <note> <p>
+     * <code>FileShareName</code> must be set if an S3 prefix name is set in
+     * <code>LocationARN</code>.</p> </note>
+     */
+    inline UpdateSMBFileShareRequest& WithFileShareName(const char* value) { SetFileShareName(value); return *this;}
+
+
+    /**
+     * <p>Refresh cache information.</p>
+     */
+    inline const CacheAttributes& GetCacheAttributes() const{ return m_cacheAttributes; }
+
+    /**
+     * <p>Refresh cache information.</p>
+     */
+    inline bool CacheAttributesHasBeenSet() const { return m_cacheAttributesHasBeenSet; }
+
+    /**
+     * <p>Refresh cache information.</p>
+     */
+    inline void SetCacheAttributes(const CacheAttributes& value) { m_cacheAttributesHasBeenSet = true; m_cacheAttributes = value; }
+
+    /**
+     * <p>Refresh cache information.</p>
+     */
+    inline void SetCacheAttributes(CacheAttributes&& value) { m_cacheAttributesHasBeenSet = true; m_cacheAttributes = std::move(value); }
+
+    /**
+     * <p>Refresh cache information.</p>
+     */
+    inline UpdateSMBFileShareRequest& WithCacheAttributes(const CacheAttributes& value) { SetCacheAttributes(value); return *this;}
+
+    /**
+     * <p>Refresh cache information.</p>
+     */
+    inline UpdateSMBFileShareRequest& WithCacheAttributes(CacheAttributes&& value) { SetCacheAttributes(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_fileShareARN;
@@ -761,6 +927,15 @@ namespace Model
 
     Aws::String m_auditDestinationARN;
     bool m_auditDestinationARNHasBeenSet;
+
+    CaseSensitivity m_caseSensitivity;
+    bool m_caseSensitivityHasBeenSet;
+
+    Aws::String m_fileShareName;
+    bool m_fileShareNameHasBeenSet;
+
+    CacheAttributes m_cacheAttributes;
+    bool m_cacheAttributesHasBeenSet;
   };
 
 } // namespace Model

@@ -28,7 +28,7 @@ namespace Model
 {
 
   /**
-   * <p>Describes an Availability Zone or Local Zone.</p><p><h3>See Also:</h3>   <a
+   * <p>Describes a Zone.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AvailabilityZone">AWS
    * API Reference</a></p>
    */
@@ -44,32 +44,32 @@ namespace Model
 
 
     /**
-     * <p>The state of the Availability Zone or Local Zone.</p>
+     * <p>The state of the Zone.</p>
      */
     inline const AvailabilityZoneState& GetState() const{ return m_state; }
 
     /**
-     * <p>The state of the Availability Zone or Local Zone.</p>
+     * <p>The state of the Zone.</p>
      */
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
 
     /**
-     * <p>The state of the Availability Zone or Local Zone.</p>
+     * <p>The state of the Zone.</p>
      */
     inline void SetState(const AvailabilityZoneState& value) { m_stateHasBeenSet = true; m_state = value; }
 
     /**
-     * <p>The state of the Availability Zone or Local Zone.</p>
+     * <p>The state of the Zone.</p>
      */
     inline void SetState(AvailabilityZoneState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
 
     /**
-     * <p>The state of the Availability Zone or Local Zone.</p>
+     * <p>The state of the Zone.</p>
      */
     inline AvailabilityZone& WithState(const AvailabilityZoneState& value) { SetState(value); return *this;}
 
     /**
-     * <p>The state of the Availability Zone or Local Zone.</p>
+     * <p>The state of the Zone.</p>
      */
     inline AvailabilityZone& WithState(AvailabilityZoneState&& value) { SetState(std::move(value)); return *this;}
 
@@ -124,42 +124,42 @@ namespace Model
 
 
     /**
-     * <p>Any messages about the Availability Zone or Local Zone.</p>
+     * <p>Any messages about the Zone.</p>
      */
     inline const Aws::Vector<AvailabilityZoneMessage>& GetMessages() const{ return m_messages; }
 
     /**
-     * <p>Any messages about the Availability Zone or Local Zone.</p>
+     * <p>Any messages about the Zone.</p>
      */
     inline bool MessagesHasBeenSet() const { return m_messagesHasBeenSet; }
 
     /**
-     * <p>Any messages about the Availability Zone or Local Zone.</p>
+     * <p>Any messages about the Zone.</p>
      */
     inline void SetMessages(const Aws::Vector<AvailabilityZoneMessage>& value) { m_messagesHasBeenSet = true; m_messages = value; }
 
     /**
-     * <p>Any messages about the Availability Zone or Local Zone.</p>
+     * <p>Any messages about the Zone.</p>
      */
     inline void SetMessages(Aws::Vector<AvailabilityZoneMessage>&& value) { m_messagesHasBeenSet = true; m_messages = std::move(value); }
 
     /**
-     * <p>Any messages about the Availability Zone or Local Zone.</p>
+     * <p>Any messages about the Zone.</p>
      */
     inline AvailabilityZone& WithMessages(const Aws::Vector<AvailabilityZoneMessage>& value) { SetMessages(value); return *this;}
 
     /**
-     * <p>Any messages about the Availability Zone or Local Zone.</p>
+     * <p>Any messages about the Zone.</p>
      */
     inline AvailabilityZone& WithMessages(Aws::Vector<AvailabilityZoneMessage>&& value) { SetMessages(std::move(value)); return *this;}
 
     /**
-     * <p>Any messages about the Availability Zone or Local Zone.</p>
+     * <p>Any messages about the Zone.</p>
      */
     inline AvailabilityZone& AddMessages(const AvailabilityZoneMessage& value) { m_messagesHasBeenSet = true; m_messages.push_back(value); return *this; }
 
     /**
-     * <p>Any messages about the Availability Zone or Local Zone.</p>
+     * <p>Any messages about the Zone.</p>
      */
     inline AvailabilityZone& AddMessages(AvailabilityZoneMessage&& value) { m_messagesHasBeenSet = true; m_messages.push_back(std::move(value)); return *this; }
 
@@ -206,83 +206,83 @@ namespace Model
 
 
     /**
-     * <p>The name of the Availability Zone or Local Zone.</p>
+     * <p>The name of the Zone.</p>
      */
     inline const Aws::String& GetZoneName() const{ return m_zoneName; }
 
     /**
-     * <p>The name of the Availability Zone or Local Zone.</p>
+     * <p>The name of the Zone.</p>
      */
     inline bool ZoneNameHasBeenSet() const { return m_zoneNameHasBeenSet; }
 
     /**
-     * <p>The name of the Availability Zone or Local Zone.</p>
+     * <p>The name of the Zone.</p>
      */
     inline void SetZoneName(const Aws::String& value) { m_zoneNameHasBeenSet = true; m_zoneName = value; }
 
     /**
-     * <p>The name of the Availability Zone or Local Zone.</p>
+     * <p>The name of the Zone.</p>
      */
     inline void SetZoneName(Aws::String&& value) { m_zoneNameHasBeenSet = true; m_zoneName = std::move(value); }
 
     /**
-     * <p>The name of the Availability Zone or Local Zone.</p>
+     * <p>The name of the Zone.</p>
      */
     inline void SetZoneName(const char* value) { m_zoneNameHasBeenSet = true; m_zoneName.assign(value); }
 
     /**
-     * <p>The name of the Availability Zone or Local Zone.</p>
+     * <p>The name of the Zone.</p>
      */
     inline AvailabilityZone& WithZoneName(const Aws::String& value) { SetZoneName(value); return *this;}
 
     /**
-     * <p>The name of the Availability Zone or Local Zone.</p>
+     * <p>The name of the Zone.</p>
      */
     inline AvailabilityZone& WithZoneName(Aws::String&& value) { SetZoneName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the Availability Zone or Local Zone.</p>
+     * <p>The name of the Zone.</p>
      */
     inline AvailabilityZone& WithZoneName(const char* value) { SetZoneName(value); return *this;}
 
 
     /**
-     * <p>The ID of the Availability Zone or Local Zone.</p>
+     * <p>The ID of the Zone.</p>
      */
     inline const Aws::String& GetZoneId() const{ return m_zoneId; }
 
     /**
-     * <p>The ID of the Availability Zone or Local Zone.</p>
+     * <p>The ID of the Zone.</p>
      */
     inline bool ZoneIdHasBeenSet() const { return m_zoneIdHasBeenSet; }
 
     /**
-     * <p>The ID of the Availability Zone or Local Zone.</p>
+     * <p>The ID of the Zone.</p>
      */
     inline void SetZoneId(const Aws::String& value) { m_zoneIdHasBeenSet = true; m_zoneId = value; }
 
     /**
-     * <p>The ID of the Availability Zone or Local Zone.</p>
+     * <p>The ID of the Zone.</p>
      */
     inline void SetZoneId(Aws::String&& value) { m_zoneIdHasBeenSet = true; m_zoneId = std::move(value); }
 
     /**
-     * <p>The ID of the Availability Zone or Local Zone.</p>
+     * <p>The ID of the Zone.</p>
      */
     inline void SetZoneId(const char* value) { m_zoneIdHasBeenSet = true; m_zoneId.assign(value); }
 
     /**
-     * <p>The ID of the Availability Zone or Local Zone.</p>
+     * <p>The ID of the Zone.</p>
      */
     inline AvailabilityZone& WithZoneId(const Aws::String& value) { SetZoneId(value); return *this;}
 
     /**
-     * <p>The ID of the Availability Zone or Local Zone.</p>
+     * <p>The ID of the Zone.</p>
      */
     inline AvailabilityZone& WithZoneId(Aws::String&& value) { SetZoneId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the Availability Zone or Local Zone.</p>
+     * <p>The ID of the Zone.</p>
      */
     inline AvailabilityZone& WithZoneId(const char* value) { SetZoneId(value); return *this;}
 
@@ -384,6 +384,153 @@ namespace Model
      */
     inline AvailabilityZone& WithNetworkBorderGroup(const char* value) { SetNetworkBorderGroup(value); return *this;}
 
+
+    /**
+     * <p>The type of zone. The valid values are <code>availability-zone</code> and
+     * <code>local-zone</code>.</p>
+     */
+    inline const Aws::String& GetZoneType() const{ return m_zoneType; }
+
+    /**
+     * <p>The type of zone. The valid values are <code>availability-zone</code> and
+     * <code>local-zone</code>.</p>
+     */
+    inline bool ZoneTypeHasBeenSet() const { return m_zoneTypeHasBeenSet; }
+
+    /**
+     * <p>The type of zone. The valid values are <code>availability-zone</code> and
+     * <code>local-zone</code>.</p>
+     */
+    inline void SetZoneType(const Aws::String& value) { m_zoneTypeHasBeenSet = true; m_zoneType = value; }
+
+    /**
+     * <p>The type of zone. The valid values are <code>availability-zone</code> and
+     * <code>local-zone</code>.</p>
+     */
+    inline void SetZoneType(Aws::String&& value) { m_zoneTypeHasBeenSet = true; m_zoneType = std::move(value); }
+
+    /**
+     * <p>The type of zone. The valid values are <code>availability-zone</code> and
+     * <code>local-zone</code>.</p>
+     */
+    inline void SetZoneType(const char* value) { m_zoneTypeHasBeenSet = true; m_zoneType.assign(value); }
+
+    /**
+     * <p>The type of zone. The valid values are <code>availability-zone</code> and
+     * <code>local-zone</code>.</p>
+     */
+    inline AvailabilityZone& WithZoneType(const Aws::String& value) { SetZoneType(value); return *this;}
+
+    /**
+     * <p>The type of zone. The valid values are <code>availability-zone</code> and
+     * <code>local-zone</code>.</p>
+     */
+    inline AvailabilityZone& WithZoneType(Aws::String&& value) { SetZoneType(std::move(value)); return *this;}
+
+    /**
+     * <p>The type of zone. The valid values are <code>availability-zone</code> and
+     * <code>local-zone</code>.</p>
+     */
+    inline AvailabilityZone& WithZoneType(const char* value) { SetZoneType(value); return *this;}
+
+
+    /**
+     * <p>The name of the zone that handles some of the Local Zone control plane
+     * operations, such as API calls.</p>
+     */
+    inline const Aws::String& GetParentZoneName() const{ return m_parentZoneName; }
+
+    /**
+     * <p>The name of the zone that handles some of the Local Zone control plane
+     * operations, such as API calls.</p>
+     */
+    inline bool ParentZoneNameHasBeenSet() const { return m_parentZoneNameHasBeenSet; }
+
+    /**
+     * <p>The name of the zone that handles some of the Local Zone control plane
+     * operations, such as API calls.</p>
+     */
+    inline void SetParentZoneName(const Aws::String& value) { m_parentZoneNameHasBeenSet = true; m_parentZoneName = value; }
+
+    /**
+     * <p>The name of the zone that handles some of the Local Zone control plane
+     * operations, such as API calls.</p>
+     */
+    inline void SetParentZoneName(Aws::String&& value) { m_parentZoneNameHasBeenSet = true; m_parentZoneName = std::move(value); }
+
+    /**
+     * <p>The name of the zone that handles some of the Local Zone control plane
+     * operations, such as API calls.</p>
+     */
+    inline void SetParentZoneName(const char* value) { m_parentZoneNameHasBeenSet = true; m_parentZoneName.assign(value); }
+
+    /**
+     * <p>The name of the zone that handles some of the Local Zone control plane
+     * operations, such as API calls.</p>
+     */
+    inline AvailabilityZone& WithParentZoneName(const Aws::String& value) { SetParentZoneName(value); return *this;}
+
+    /**
+     * <p>The name of the zone that handles some of the Local Zone control plane
+     * operations, such as API calls.</p>
+     */
+    inline AvailabilityZone& WithParentZoneName(Aws::String&& value) { SetParentZoneName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the zone that handles some of the Local Zone control plane
+     * operations, such as API calls.</p>
+     */
+    inline AvailabilityZone& WithParentZoneName(const char* value) { SetParentZoneName(value); return *this;}
+
+
+    /**
+     * <p>The ID of the zone that handles some of the Local Zone control plane
+     * operations, such as API calls.</p>
+     */
+    inline const Aws::String& GetParentZoneId() const{ return m_parentZoneId; }
+
+    /**
+     * <p>The ID of the zone that handles some of the Local Zone control plane
+     * operations, such as API calls.</p>
+     */
+    inline bool ParentZoneIdHasBeenSet() const { return m_parentZoneIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the zone that handles some of the Local Zone control plane
+     * operations, such as API calls.</p>
+     */
+    inline void SetParentZoneId(const Aws::String& value) { m_parentZoneIdHasBeenSet = true; m_parentZoneId = value; }
+
+    /**
+     * <p>The ID of the zone that handles some of the Local Zone control plane
+     * operations, such as API calls.</p>
+     */
+    inline void SetParentZoneId(Aws::String&& value) { m_parentZoneIdHasBeenSet = true; m_parentZoneId = std::move(value); }
+
+    /**
+     * <p>The ID of the zone that handles some of the Local Zone control plane
+     * operations, such as API calls.</p>
+     */
+    inline void SetParentZoneId(const char* value) { m_parentZoneIdHasBeenSet = true; m_parentZoneId.assign(value); }
+
+    /**
+     * <p>The ID of the zone that handles some of the Local Zone control plane
+     * operations, such as API calls.</p>
+     */
+    inline AvailabilityZone& WithParentZoneId(const Aws::String& value) { SetParentZoneId(value); return *this;}
+
+    /**
+     * <p>The ID of the zone that handles some of the Local Zone control plane
+     * operations, such as API calls.</p>
+     */
+    inline AvailabilityZone& WithParentZoneId(Aws::String&& value) { SetParentZoneId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the zone that handles some of the Local Zone control plane
+     * operations, such as API calls.</p>
+     */
+    inline AvailabilityZone& WithParentZoneId(const char* value) { SetParentZoneId(value); return *this;}
+
   private:
 
     AvailabilityZoneState m_state;
@@ -409,6 +556,15 @@ namespace Model
 
     Aws::String m_networkBorderGroup;
     bool m_networkBorderGroupHasBeenSet;
+
+    Aws::String m_zoneType;
+    bool m_zoneTypeHasBeenSet;
+
+    Aws::String m_parentZoneName;
+    bool m_parentZoneNameHasBeenSet;
+
+    Aws::String m_parentZoneId;
+    bool m_parentZoneIdHasBeenSet;
   };
 
 } // namespace Model

@@ -28,7 +28,8 @@ MountTargetDescription::MountTargetDescription() :
     m_ipAddressHasBeenSet(false),
     m_networkInterfaceIdHasBeenSet(false),
     m_availabilityZoneIdHasBeenSet(false),
-    m_availabilityZoneNameHasBeenSet(false)
+    m_availabilityZoneNameHasBeenSet(false),
+    m_vpcIdHasBeenSet(false)
 {
 }
 
@@ -42,7 +43,8 @@ MountTargetDescription::MountTargetDescription(JsonView jsonValue) :
     m_ipAddressHasBeenSet(false),
     m_networkInterfaceIdHasBeenSet(false),
     m_availabilityZoneIdHasBeenSet(false),
-    m_availabilityZoneNameHasBeenSet(false)
+    m_availabilityZoneNameHasBeenSet(false),
+    m_vpcIdHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -112,6 +114,13 @@ MountTargetDescription& MountTargetDescription::operator =(JsonView jsonValue)
     m_availabilityZoneNameHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("VpcId"))
+  {
+    m_vpcId = jsonValue.GetString("VpcId");
+
+    m_vpcIdHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -169,6 +178,12 @@ JsonValue MountTargetDescription::Jsonize() const
   if(m_availabilityZoneNameHasBeenSet)
   {
    payload.WithString("AvailabilityZoneName", m_availabilityZoneName);
+
+  }
+
+  if(m_vpcIdHasBeenSet)
+  {
+   payload.WithString("VpcId", m_vpcId);
 
   }
 

@@ -271,14 +271,16 @@ namespace Model
         virtual void DescribeResourceAsync(const Model::DescribeResourceRequest& request, const DescribeResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>The AWS Lake Formation principal.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves the list of the data lake administrators of a Lake
+         * Formation-managed data lake. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/GetDataLakeSettings">AWS
          * API Reference</a></p>
          */
         virtual Model::GetDataLakeSettingsOutcome GetDataLakeSettings(const Model::GetDataLakeSettingsRequest& request) const;
 
         /**
-         * <p>The AWS Lake Formation principal.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves the list of the data lake administrators of a Lake
+         * Formation-managed data lake. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/GetDataLakeSettings">AWS
          * API Reference</a></p>
          *
@@ -287,7 +289,8 @@ namespace Model
         virtual Model::GetDataLakeSettingsOutcomeCallable GetDataLakeSettingsCallable(const Model::GetDataLakeSettingsRequest& request) const;
 
         /**
-         * <p>The AWS Lake Formation principal.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves the list of the data lake administrators of a Lake
+         * Formation-managed data lake. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/GetDataLakeSettings">AWS
          * API Reference</a></p>
          *
@@ -296,16 +299,20 @@ namespace Model
         virtual void GetDataLakeSettingsAsync(const Model::GetDataLakeSettingsRequest& request, const GetDataLakeSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns the permissions for a specified table or database resource located at
-         * a path in Amazon S3.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns the Lake Formation permissions for a specified table or database
+         * resource located at a path in Amazon S3.
+         * <code>GetEffectivePermissionsForPath</code> will not return databases and tables
+         * if the catalog is encrypted.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/GetEffectivePermissionsForPath">AWS
          * API Reference</a></p>
          */
         virtual Model::GetEffectivePermissionsForPathOutcome GetEffectivePermissionsForPath(const Model::GetEffectivePermissionsForPathRequest& request) const;
 
         /**
-         * <p>Returns the permissions for a specified table or database resource located at
-         * a path in Amazon S3.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns the Lake Formation permissions for a specified table or database
+         * resource located at a path in Amazon S3.
+         * <code>GetEffectivePermissionsForPath</code> will not return databases and tables
+         * if the catalog is encrypted.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/GetEffectivePermissionsForPath">AWS
          * API Reference</a></p>
          *
@@ -314,8 +321,10 @@ namespace Model
         virtual Model::GetEffectivePermissionsForPathOutcomeCallable GetEffectivePermissionsForPathCallable(const Model::GetEffectivePermissionsForPathRequest& request) const;
 
         /**
-         * <p>Returns the permissions for a specified table or database resource located at
-         * a path in Amazon S3.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns the Lake Formation permissions for a specified table or database
+         * resource located at a path in Amazon S3.
+         * <code>GetEffectivePermissionsForPath</code> will not return databases and tables
+         * if the catalog is encrypted.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/GetEffectivePermissionsForPath">AWS
          * API Reference</a></p>
          *
@@ -327,7 +336,7 @@ namespace Model
          * <p>Grants permissions to the principal to access metadata in the Data Catalog
          * and data organized in underlying data storage such as Amazon S3.</p> <p>For
          * information about permissions, see <a
-         * href="https://docs-aws.amazon.com/michigan/latest/dg/security-data-access.html">Security
+         * href="https://docs-aws.amazon.com/lake-formation/latest/dg/security-data-access.html">Security
          * and Access Control to Metadata and Data</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/GrantPermissions">AWS
          * API Reference</a></p>
@@ -338,7 +347,7 @@ namespace Model
          * <p>Grants permissions to the principal to access metadata in the Data Catalog
          * and data organized in underlying data storage such as Amazon S3.</p> <p>For
          * information about permissions, see <a
-         * href="https://docs-aws.amazon.com/michigan/latest/dg/security-data-access.html">Security
+         * href="https://docs-aws.amazon.com/lake-formation/latest/dg/security-data-access.html">Security
          * and Access Control to Metadata and Data</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/GrantPermissions">AWS
          * API Reference</a></p>
@@ -351,7 +360,7 @@ namespace Model
          * <p>Grants permissions to the principal to access metadata in the Data Catalog
          * and data organized in underlying data storage such as Amazon S3.</p> <p>For
          * information about permissions, see <a
-         * href="https://docs-aws.amazon.com/michigan/latest/dg/security-data-access.html">Security
+         * href="https://docs-aws.amazon.com/lake-formation/latest/dg/security-data-access.html">Security
          * and Access Control to Metadata and Data</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/GrantPermissions">AWS
          * API Reference</a></p>
@@ -366,7 +375,7 @@ namespace Model
          * you are able to see only the principal permissions for ALTER.</p> <p>This
          * operation returns only those permissions that have been explicitly granted.</p>
          * <p>For information about permissions, see <a
-         * href="https://docs-aws.amazon.com/michigan/latest/dg/security-data-access.html">Security
+         * href="https://docs-aws.amazon.com/lake-formation/latest/dg/security-data-access.html">Security
          * and Access Control to Metadata and Data</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/ListPermissions">AWS
          * API Reference</a></p>
@@ -379,7 +388,7 @@ namespace Model
          * you are able to see only the principal permissions for ALTER.</p> <p>This
          * operation returns only those permissions that have been explicitly granted.</p>
          * <p>For information about permissions, see <a
-         * href="https://docs-aws.amazon.com/michigan/latest/dg/security-data-access.html">Security
+         * href="https://docs-aws.amazon.com/lake-formation/latest/dg/security-data-access.html">Security
          * and Access Control to Metadata and Data</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/ListPermissions">AWS
          * API Reference</a></p>
@@ -394,7 +403,7 @@ namespace Model
          * you are able to see only the principal permissions for ALTER.</p> <p>This
          * operation returns only those permissions that have been explicitly granted.</p>
          * <p>For information about permissions, see <a
-         * href="https://docs-aws.amazon.com/michigan/latest/dg/security-data-access.html">Security
+         * href="https://docs-aws.amazon.com/lake-formation/latest/dg/security-data-access.html">Security
          * and Access Control to Metadata and Data</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/ListPermissions">AWS
          * API Reference</a></p>
@@ -432,14 +441,28 @@ namespace Model
         virtual void ListResourcesAsync(const Model::ListResourcesRequest& request, const ListResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>The AWS Lake Formation principal.</p><p><h3>See Also:</h3>   <a
+         * <p>Sets the list of data lake administrators who have admin privileges on all
+         * resources managed by Lake Formation. For more information on admin privileges,
+         * see <a
+         * href="https://docs.aws.amazon.com/lake-formation/latest/dg/lake-formation-permissions.html">Granting
+         * Lake Formation Permissions</a>.</p> <p>This API replaces the current list of
+         * data lake admins with the new list being passed. To add an admin, fetch the
+         * current list and add the new admin to that list and pass that list in this
+         * API.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/PutDataLakeSettings">AWS
          * API Reference</a></p>
          */
         virtual Model::PutDataLakeSettingsOutcome PutDataLakeSettings(const Model::PutDataLakeSettingsRequest& request) const;
 
         /**
-         * <p>The AWS Lake Formation principal.</p><p><h3>See Also:</h3>   <a
+         * <p>Sets the list of data lake administrators who have admin privileges on all
+         * resources managed by Lake Formation. For more information on admin privileges,
+         * see <a
+         * href="https://docs.aws.amazon.com/lake-formation/latest/dg/lake-formation-permissions.html">Granting
+         * Lake Formation Permissions</a>.</p> <p>This API replaces the current list of
+         * data lake admins with the new list being passed. To add an admin, fetch the
+         * current list and add the new admin to that list and pass that list in this
+         * API.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/PutDataLakeSettings">AWS
          * API Reference</a></p>
          *
@@ -448,7 +471,14 @@ namespace Model
         virtual Model::PutDataLakeSettingsOutcomeCallable PutDataLakeSettingsCallable(const Model::PutDataLakeSettingsRequest& request) const;
 
         /**
-         * <p>The AWS Lake Formation principal.</p><p><h3>See Also:</h3>   <a
+         * <p>Sets the list of data lake administrators who have admin privileges on all
+         * resources managed by Lake Formation. For more information on admin privileges,
+         * see <a
+         * href="https://docs.aws.amazon.com/lake-formation/latest/dg/lake-formation-permissions.html">Granting
+         * Lake Formation Permissions</a>.</p> <p>This API replaces the current list of
+         * data lake admins with the new list being passed. To add an admin, fetch the
+         * current list and add the new admin to that list and pass that list in this
+         * API.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/PutDataLakeSettings">AWS
          * API Reference</a></p>
          *
@@ -464,8 +494,14 @@ namespace Model
          * the first Amazon S3 path, the service-linked role and a new inline policy are
          * created on your behalf. Lake Formation adds the first path to the inline policy
          * and attaches it to the service-linked role. When you register subsequent paths,
-         * Lake Formation adds the path to the existing policy.</p><p><h3>See Also:</h3>  
-         * <a
+         * Lake Formation adds the path to the existing policy.</p> <p>The following
+         * request registers a new location and gives AWS Lake Formation permission to use
+         * the service-linked role to access that location.</p> <p> <code>ResourceArn =
+         * arn:aws:s3:::my-bucket UseServiceLinkedRole = true</code> </p> <p>If
+         * <code>UseServiceLinkedRole</code> is not set to true, you must provide or set
+         * the <code>RoleArn</code>:</p> <p>
+         * <code>arn:aws:iam::12345:role/my-data-access-role</code> </p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/RegisterResource">AWS
          * API Reference</a></p>
          */
@@ -479,8 +515,14 @@ namespace Model
          * the first Amazon S3 path, the service-linked role and a new inline policy are
          * created on your behalf. Lake Formation adds the first path to the inline policy
          * and attaches it to the service-linked role. When you register subsequent paths,
-         * Lake Formation adds the path to the existing policy.</p><p><h3>See Also:</h3>  
-         * <a
+         * Lake Formation adds the path to the existing policy.</p> <p>The following
+         * request registers a new location and gives AWS Lake Formation permission to use
+         * the service-linked role to access that location.</p> <p> <code>ResourceArn =
+         * arn:aws:s3:::my-bucket UseServiceLinkedRole = true</code> </p> <p>If
+         * <code>UseServiceLinkedRole</code> is not set to true, you must provide or set
+         * the <code>RoleArn</code>:</p> <p>
+         * <code>arn:aws:iam::12345:role/my-data-access-role</code> </p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/RegisterResource">AWS
          * API Reference</a></p>
          *
@@ -496,8 +538,14 @@ namespace Model
          * the first Amazon S3 path, the service-linked role and a new inline policy are
          * created on your behalf. Lake Formation adds the first path to the inline policy
          * and attaches it to the service-linked role. When you register subsequent paths,
-         * Lake Formation adds the path to the existing policy.</p><p><h3>See Also:</h3>  
-         * <a
+         * Lake Formation adds the path to the existing policy.</p> <p>The following
+         * request registers a new location and gives AWS Lake Formation permission to use
+         * the service-linked role to access that location.</p> <p> <code>ResourceArn =
+         * arn:aws:s3:::my-bucket UseServiceLinkedRole = true</code> </p> <p>If
+         * <code>UseServiceLinkedRole</code> is not set to true, you must provide or set
+         * the <code>RoleArn</code>:</p> <p>
+         * <code>arn:aws:iam::12345:role/my-data-access-role</code> </p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/RegisterResource">AWS
          * API Reference</a></p>
          *

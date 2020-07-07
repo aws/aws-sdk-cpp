@@ -74,10 +74,54 @@ namespace Model
      */
     inline DeleteResourcePolicyRequest& WithPolicyHashCondition(const char* value) { SetPolicyHashCondition(value); return *this;}
 
+
+    /**
+     * <p>The ARN of the AWS Glue resource for the resource policy to be deleted.</p>
+     */
+    inline const Aws::String& GetResourceArn() const{ return m_resourceArn; }
+
+    /**
+     * <p>The ARN of the AWS Glue resource for the resource policy to be deleted.</p>
+     */
+    inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the AWS Glue resource for the resource policy to be deleted.</p>
+     */
+    inline void SetResourceArn(const Aws::String& value) { m_resourceArnHasBeenSet = true; m_resourceArn = value; }
+
+    /**
+     * <p>The ARN of the AWS Glue resource for the resource policy to be deleted.</p>
+     */
+    inline void SetResourceArn(Aws::String&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::move(value); }
+
+    /**
+     * <p>The ARN of the AWS Glue resource for the resource policy to be deleted.</p>
+     */
+    inline void SetResourceArn(const char* value) { m_resourceArnHasBeenSet = true; m_resourceArn.assign(value); }
+
+    /**
+     * <p>The ARN of the AWS Glue resource for the resource policy to be deleted.</p>
+     */
+    inline DeleteResourcePolicyRequest& WithResourceArn(const Aws::String& value) { SetResourceArn(value); return *this;}
+
+    /**
+     * <p>The ARN of the AWS Glue resource for the resource policy to be deleted.</p>
+     */
+    inline DeleteResourcePolicyRequest& WithResourceArn(Aws::String&& value) { SetResourceArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The ARN of the AWS Glue resource for the resource policy to be deleted.</p>
+     */
+    inline DeleteResourcePolicyRequest& WithResourceArn(const char* value) { SetResourceArn(value); return *this;}
+
   private:
 
     Aws::String m_policyHashCondition;
     bool m_policyHashConditionHasBeenSet;
+
+    Aws::String m_resourceArn;
+    bool m_resourceArnHasBeenSet;
   };
 
 } // namespace Model

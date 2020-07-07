@@ -20,7 +20,8 @@ namespace Model
     TLSv1,
     TLSv1_2016,
     TLSv1_1_2016,
-    TLSv1_2_2018
+    TLSv1_2_2018,
+    TLSv1_2_2019
   };
 
 namespace MinimumProtocolVersionMapper

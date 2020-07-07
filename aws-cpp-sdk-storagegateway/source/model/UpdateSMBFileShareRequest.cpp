@@ -31,7 +31,11 @@ UpdateSMBFileShareRequest::UpdateSMBFileShareRequest() :
     m_adminUserListHasBeenSet(false),
     m_validUserListHasBeenSet(false),
     m_invalidUserListHasBeenSet(false),
-    m_auditDestinationARNHasBeenSet(false)
+    m_auditDestinationARNHasBeenSet(false),
+    m_caseSensitivity(CaseSensitivity::NOT_SET),
+    m_caseSensitivityHasBeenSet(false),
+    m_fileShareNameHasBeenSet(false),
+    m_cacheAttributesHasBeenSet(false)
 {
 }
 
@@ -128,6 +132,23 @@ Aws::String UpdateSMBFileShareRequest::SerializePayload() const
   if(m_auditDestinationARNHasBeenSet)
   {
    payload.WithString("AuditDestinationARN", m_auditDestinationARN);
+
+  }
+
+  if(m_caseSensitivityHasBeenSet)
+  {
+   payload.WithString("CaseSensitivity", CaseSensitivityMapper::GetNameForCaseSensitivity(m_caseSensitivity));
+  }
+
+  if(m_fileShareNameHasBeenSet)
+  {
+   payload.WithString("FileShareName", m_fileShareName);
+
+  }
+
+  if(m_cacheAttributesHasBeenSet)
+  {
+   payload.WithObject("CacheAttributes", m_cacheAttributes.Jsonize());
 
   }
 

@@ -36,7 +36,11 @@ CreateSMBFileShareRequest::CreateSMBFileShareRequest() :
     m_invalidUserListHasBeenSet(false),
     m_auditDestinationARNHasBeenSet(false),
     m_authenticationHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_caseSensitivity(CaseSensitivity::NOT_SET),
+    m_caseSensitivityHasBeenSet(false),
+    m_tagsHasBeenSet(false),
+    m_fileShareNameHasBeenSet(false),
+    m_cacheAttributesHasBeenSet(false)
 {
 }
 
@@ -160,6 +164,11 @@ Aws::String CreateSMBFileShareRequest::SerializePayload() const
 
   }
 
+  if(m_caseSensitivityHasBeenSet)
+  {
+   payload.WithString("CaseSensitivity", CaseSensitivityMapper::GetNameForCaseSensitivity(m_caseSensitivity));
+  }
+
   if(m_tagsHasBeenSet)
   {
    Array<JsonValue> tagsJsonList(m_tags.size());
@@ -168,6 +177,18 @@ Aws::String CreateSMBFileShareRequest::SerializePayload() const
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
    }
    payload.WithArray("Tags", std::move(tagsJsonList));
+
+  }
+
+  if(m_fileShareNameHasBeenSet)
+  {
+   payload.WithString("FileShareName", m_fileShareName);
+
+  }
+
+  if(m_cacheAttributesHasBeenSet)
+  {
+   payload.WithObject("CacheAttributes", m_cacheAttributes.Jsonize());
 
   }
 

@@ -22,6 +22,7 @@ FileSystemDescription::FileSystemDescription() :
     m_ownerIdHasBeenSet(false),
     m_creationTokenHasBeenSet(false),
     m_fileSystemIdHasBeenSet(false),
+    m_fileSystemArnHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
     m_lifeCycleState(LifeCycleState::NOT_SET),
     m_lifeCycleStateHasBeenSet(false),
@@ -46,6 +47,7 @@ FileSystemDescription::FileSystemDescription(JsonView jsonValue) :
     m_ownerIdHasBeenSet(false),
     m_creationTokenHasBeenSet(false),
     m_fileSystemIdHasBeenSet(false),
+    m_fileSystemArnHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
     m_lifeCycleState(LifeCycleState::NOT_SET),
     m_lifeCycleStateHasBeenSet(false),
@@ -88,6 +90,13 @@ FileSystemDescription& FileSystemDescription::operator =(JsonView jsonValue)
     m_fileSystemId = jsonValue.GetString("FileSystemId");
 
     m_fileSystemIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("FileSystemArn"))
+  {
+    m_fileSystemArn = jsonValue.GetString("FileSystemArn");
+
+    m_fileSystemArnHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("CreationTime"))
@@ -192,6 +201,12 @@ JsonValue FileSystemDescription::Jsonize() const
   if(m_fileSystemIdHasBeenSet)
   {
    payload.WithString("FileSystemId", m_fileSystemId);
+
+  }
+
+  if(m_fileSystemArnHasBeenSet)
+  {
+   payload.WithString("FileSystemArn", m_fileSystemArn);
 
   }
 

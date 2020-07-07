@@ -370,6 +370,47 @@ namespace Model
      */
     inline Partition& WithLastAnalyzedTime(Aws::Utils::DateTime&& value) { SetLastAnalyzedTime(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The ID of the Data Catalog in which the partition resides.</p>
+     */
+    inline const Aws::String& GetCatalogId() const{ return m_catalogId; }
+
+    /**
+     * <p>The ID of the Data Catalog in which the partition resides.</p>
+     */
+    inline bool CatalogIdHasBeenSet() const { return m_catalogIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the Data Catalog in which the partition resides.</p>
+     */
+    inline void SetCatalogId(const Aws::String& value) { m_catalogIdHasBeenSet = true; m_catalogId = value; }
+
+    /**
+     * <p>The ID of the Data Catalog in which the partition resides.</p>
+     */
+    inline void SetCatalogId(Aws::String&& value) { m_catalogIdHasBeenSet = true; m_catalogId = std::move(value); }
+
+    /**
+     * <p>The ID of the Data Catalog in which the partition resides.</p>
+     */
+    inline void SetCatalogId(const char* value) { m_catalogIdHasBeenSet = true; m_catalogId.assign(value); }
+
+    /**
+     * <p>The ID of the Data Catalog in which the partition resides.</p>
+     */
+    inline Partition& WithCatalogId(const Aws::String& value) { SetCatalogId(value); return *this;}
+
+    /**
+     * <p>The ID of the Data Catalog in which the partition resides.</p>
+     */
+    inline Partition& WithCatalogId(Aws::String&& value) { SetCatalogId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the Data Catalog in which the partition resides.</p>
+     */
+    inline Partition& WithCatalogId(const char* value) { SetCatalogId(value); return *this;}
+
   private:
 
     Aws::Vector<Aws::String> m_values;
@@ -395,6 +436,9 @@ namespace Model
 
     Aws::Utils::DateTime m_lastAnalyzedTime;
     bool m_lastAnalyzedTimeHasBeenSet;
+
+    Aws::String m_catalogId;
+    bool m_catalogIdHasBeenSet;
   };
 
 } // namespace Model

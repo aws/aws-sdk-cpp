@@ -28,7 +28,9 @@ UpdateNFSFileShareRequest::UpdateNFSFileShareRequest() :
     m_guessMIMETypeEnabled(false),
     m_guessMIMETypeEnabledHasBeenSet(false),
     m_requesterPays(false),
-    m_requesterPaysHasBeenSet(false)
+    m_requesterPaysHasBeenSet(false),
+    m_fileShareNameHasBeenSet(false),
+    m_cacheAttributesHasBeenSet(false)
 {
 }
 
@@ -103,6 +105,18 @@ Aws::String UpdateNFSFileShareRequest::SerializePayload() const
   if(m_requesterPaysHasBeenSet)
   {
    payload.WithBool("RequesterPays", m_requesterPays);
+
+  }
+
+  if(m_fileShareNameHasBeenSet)
+  {
+   payload.WithString("FileShareName", m_fileShareName);
+
+  }
+
+  if(m_cacheAttributesHasBeenSet)
+  {
+   payload.WithObject("CacheAttributes", m_cacheAttributes.Jsonize());
 
   }
 

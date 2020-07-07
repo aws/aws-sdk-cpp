@@ -15,12 +15,14 @@
 #include <aws/elasticfilesystem/model/CreateFileSystemResult.h>
 #include <aws/elasticfilesystem/model/CreateMountTargetResult.h>
 #include <aws/elasticfilesystem/model/DescribeAccessPointsResult.h>
+#include <aws/elasticfilesystem/model/DescribeBackupPolicyResult.h>
 #include <aws/elasticfilesystem/model/DescribeFileSystemPolicyResult.h>
 #include <aws/elasticfilesystem/model/DescribeFileSystemsResult.h>
 #include <aws/elasticfilesystem/model/DescribeLifecycleConfigurationResult.h>
 #include <aws/elasticfilesystem/model/DescribeMountTargetSecurityGroupsResult.h>
 #include <aws/elasticfilesystem/model/DescribeMountTargetsResult.h>
 #include <aws/elasticfilesystem/model/ListTagsForResourceResult.h>
+#include <aws/elasticfilesystem/model/PutBackupPolicyResult.h>
 #include <aws/elasticfilesystem/model/PutFileSystemPolicyResult.h>
 #include <aws/elasticfilesystem/model/PutLifecycleConfigurationResult.h>
 #include <aws/elasticfilesystem/model/UpdateFileSystemResult.h>
@@ -72,6 +74,7 @@ namespace Model
         class DeleteFileSystemPolicyRequest;
         class DeleteMountTargetRequest;
         class DescribeAccessPointsRequest;
+        class DescribeBackupPolicyRequest;
         class DescribeFileSystemPolicyRequest;
         class DescribeFileSystemsRequest;
         class DescribeLifecycleConfigurationRequest;
@@ -79,6 +82,7 @@ namespace Model
         class DescribeMountTargetsRequest;
         class ListTagsForResourceRequest;
         class ModifyMountTargetSecurityGroupsRequest;
+        class PutBackupPolicyRequest;
         class PutFileSystemPolicyRequest;
         class PutLifecycleConfigurationRequest;
         class TagResourceRequest;
@@ -93,6 +97,7 @@ namespace Model
         typedef Aws::Utils::Outcome<Aws::NoResult, EFSError> DeleteFileSystemPolicyOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, EFSError> DeleteMountTargetOutcome;
         typedef Aws::Utils::Outcome<DescribeAccessPointsResult, EFSError> DescribeAccessPointsOutcome;
+        typedef Aws::Utils::Outcome<DescribeBackupPolicyResult, EFSError> DescribeBackupPolicyOutcome;
         typedef Aws::Utils::Outcome<DescribeFileSystemPolicyResult, EFSError> DescribeFileSystemPolicyOutcome;
         typedef Aws::Utils::Outcome<DescribeFileSystemsResult, EFSError> DescribeFileSystemsOutcome;
         typedef Aws::Utils::Outcome<DescribeLifecycleConfigurationResult, EFSError> DescribeLifecycleConfigurationOutcome;
@@ -100,6 +105,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribeMountTargetsResult, EFSError> DescribeMountTargetsOutcome;
         typedef Aws::Utils::Outcome<ListTagsForResourceResult, EFSError> ListTagsForResourceOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, EFSError> ModifyMountTargetSecurityGroupsOutcome;
+        typedef Aws::Utils::Outcome<PutBackupPolicyResult, EFSError> PutBackupPolicyOutcome;
         typedef Aws::Utils::Outcome<PutFileSystemPolicyResult, EFSError> PutFileSystemPolicyOutcome;
         typedef Aws::Utils::Outcome<PutLifecycleConfigurationResult, EFSError> PutLifecycleConfigurationOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, EFSError> TagResourceOutcome;
@@ -114,6 +120,7 @@ namespace Model
         typedef std::future<DeleteFileSystemPolicyOutcome> DeleteFileSystemPolicyOutcomeCallable;
         typedef std::future<DeleteMountTargetOutcome> DeleteMountTargetOutcomeCallable;
         typedef std::future<DescribeAccessPointsOutcome> DescribeAccessPointsOutcomeCallable;
+        typedef std::future<DescribeBackupPolicyOutcome> DescribeBackupPolicyOutcomeCallable;
         typedef std::future<DescribeFileSystemPolicyOutcome> DescribeFileSystemPolicyOutcomeCallable;
         typedef std::future<DescribeFileSystemsOutcome> DescribeFileSystemsOutcomeCallable;
         typedef std::future<DescribeLifecycleConfigurationOutcome> DescribeLifecycleConfigurationOutcomeCallable;
@@ -121,6 +128,7 @@ namespace Model
         typedef std::future<DescribeMountTargetsOutcome> DescribeMountTargetsOutcomeCallable;
         typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
         typedef std::future<ModifyMountTargetSecurityGroupsOutcome> ModifyMountTargetSecurityGroupsOutcomeCallable;
+        typedef std::future<PutBackupPolicyOutcome> PutBackupPolicyOutcomeCallable;
         typedef std::future<PutFileSystemPolicyOutcome> PutFileSystemPolicyOutcomeCallable;
         typedef std::future<PutLifecycleConfigurationOutcome> PutLifecycleConfigurationOutcomeCallable;
         typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
@@ -138,6 +146,7 @@ namespace Model
     typedef std::function<void(const EFSClient*, const Model::DeleteFileSystemPolicyRequest&, const Model::DeleteFileSystemPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteFileSystemPolicyResponseReceivedHandler;
     typedef std::function<void(const EFSClient*, const Model::DeleteMountTargetRequest&, const Model::DeleteMountTargetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteMountTargetResponseReceivedHandler;
     typedef std::function<void(const EFSClient*, const Model::DescribeAccessPointsRequest&, const Model::DescribeAccessPointsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAccessPointsResponseReceivedHandler;
+    typedef std::function<void(const EFSClient*, const Model::DescribeBackupPolicyRequest&, const Model::DescribeBackupPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeBackupPolicyResponseReceivedHandler;
     typedef std::function<void(const EFSClient*, const Model::DescribeFileSystemPolicyRequest&, const Model::DescribeFileSystemPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeFileSystemPolicyResponseReceivedHandler;
     typedef std::function<void(const EFSClient*, const Model::DescribeFileSystemsRequest&, const Model::DescribeFileSystemsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeFileSystemsResponseReceivedHandler;
     typedef std::function<void(const EFSClient*, const Model::DescribeLifecycleConfigurationRequest&, const Model::DescribeLifecycleConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeLifecycleConfigurationResponseReceivedHandler;
@@ -145,6 +154,7 @@ namespace Model
     typedef std::function<void(const EFSClient*, const Model::DescribeMountTargetsRequest&, const Model::DescribeMountTargetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeMountTargetsResponseReceivedHandler;
     typedef std::function<void(const EFSClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const EFSClient*, const Model::ModifyMountTargetSecurityGroupsRequest&, const Model::ModifyMountTargetSecurityGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyMountTargetSecurityGroupsResponseReceivedHandler;
+    typedef std::function<void(const EFSClient*, const Model::PutBackupPolicyRequest&, const Model::PutBackupPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutBackupPolicyResponseReceivedHandler;
     typedef std::function<void(const EFSClient*, const Model::PutFileSystemPolicyRequest&, const Model::PutFileSystemPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutFileSystemPolicyResponseReceivedHandler;
     typedef std::function<void(const EFSClient*, const Model::PutLifecycleConfigurationRequest&, const Model::PutLifecycleConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutLifecycleConfigurationResponseReceivedHandler;
     typedef std::function<void(const EFSClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
@@ -892,6 +902,34 @@ namespace Model
         virtual void DescribeAccessPointsAsync(const Model::DescribeAccessPointsRequest& request, const DescribeAccessPointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Returns the backup policy for the specified EFS file system.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DescribeBackupPolicy">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeBackupPolicyOutcome DescribeBackupPolicy(const Model::DescribeBackupPolicyRequest& request) const;
+
+        /**
+         * <p>Returns the backup policy for the specified EFS file system.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DescribeBackupPolicy">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeBackupPolicyOutcomeCallable DescribeBackupPolicyCallable(const Model::DescribeBackupPolicyRequest& request) const;
+
+        /**
+         * <p>Returns the backup policy for the specified EFS file system.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DescribeBackupPolicy">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeBackupPolicyAsync(const Model::DescribeBackupPolicyRequest& request, const DescribeBackupPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Returns the <code>FileSystemPolicy</code> for the specified EFS file
          * system.</p> <p>This operation requires permissions for the
          * <code>elasticfilesystem:DescribeFileSystemPolicy</code> action.</p><p><h3>See
@@ -1244,6 +1282,34 @@ namespace Model
         virtual void ModifyMountTargetSecurityGroupsAsync(const Model::ModifyMountTargetSecurityGroupsRequest& request, const ModifyMountTargetSecurityGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Updates the file system's backup policy. Use this action to start or stop
+         * automatic backups of the file system. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/PutBackupPolicy">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutBackupPolicyOutcome PutBackupPolicy(const Model::PutBackupPolicyRequest& request) const;
+
+        /**
+         * <p>Updates the file system's backup policy. Use this action to start or stop
+         * automatic backups of the file system. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/PutBackupPolicy">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::PutBackupPolicyOutcomeCallable PutBackupPolicyCallable(const Model::PutBackupPolicyRequest& request) const;
+
+        /**
+         * <p>Updates the file system's backup policy. Use this action to start or stop
+         * automatic backups of the file system. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/PutBackupPolicy">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void PutBackupPolicyAsync(const Model::PutBackupPolicyRequest& request, const PutBackupPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Applies an Amazon EFS <code>FileSystemPolicy</code> to an Amazon EFS file
          * system. A file system policy is an IAM resource-based policy and can contain
          * multiple policy statements. A file system always has exactly one file system
@@ -1494,6 +1560,7 @@ namespace Model
         void DeleteFileSystemPolicyAsyncHelper(const Model::DeleteFileSystemPolicyRequest& request, const DeleteFileSystemPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteMountTargetAsyncHelper(const Model::DeleteMountTargetRequest& request, const DeleteMountTargetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeAccessPointsAsyncHelper(const Model::DescribeAccessPointsRequest& request, const DescribeAccessPointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeBackupPolicyAsyncHelper(const Model::DescribeBackupPolicyRequest& request, const DescribeBackupPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeFileSystemPolicyAsyncHelper(const Model::DescribeFileSystemPolicyRequest& request, const DescribeFileSystemPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeFileSystemsAsyncHelper(const Model::DescribeFileSystemsRequest& request, const DescribeFileSystemsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeLifecycleConfigurationAsyncHelper(const Model::DescribeLifecycleConfigurationRequest& request, const DescribeLifecycleConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1501,6 +1568,7 @@ namespace Model
         void DescribeMountTargetsAsyncHelper(const Model::DescribeMountTargetsRequest& request, const DescribeMountTargetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifyMountTargetSecurityGroupsAsyncHelper(const Model::ModifyMountTargetSecurityGroupsRequest& request, const ModifyMountTargetSecurityGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void PutBackupPolicyAsyncHelper(const Model::PutBackupPolicyRequest& request, const PutBackupPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutFileSystemPolicyAsyncHelper(const Model::PutFileSystemPolicyRequest& request, const PutFileSystemPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutLifecycleConfigurationAsyncHelper(const Model::PutLifecycleConfigurationRequest& request, const PutLifecycleConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

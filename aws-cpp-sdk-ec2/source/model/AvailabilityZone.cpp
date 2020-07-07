@@ -30,7 +30,10 @@ AvailabilityZone::AvailabilityZone() :
     m_zoneNameHasBeenSet(false),
     m_zoneIdHasBeenSet(false),
     m_groupNameHasBeenSet(false),
-    m_networkBorderGroupHasBeenSet(false)
+    m_networkBorderGroupHasBeenSet(false),
+    m_zoneTypeHasBeenSet(false),
+    m_parentZoneNameHasBeenSet(false),
+    m_parentZoneIdHasBeenSet(false)
 {
 }
 
@@ -44,7 +47,10 @@ AvailabilityZone::AvailabilityZone(const XmlNode& xmlNode) :
     m_zoneNameHasBeenSet(false),
     m_zoneIdHasBeenSet(false),
     m_groupNameHasBeenSet(false),
-    m_networkBorderGroupHasBeenSet(false)
+    m_networkBorderGroupHasBeenSet(false),
+    m_zoneTypeHasBeenSet(false),
+    m_parentZoneNameHasBeenSet(false),
+    m_parentZoneIdHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -109,6 +115,24 @@ AvailabilityZone& AvailabilityZone::operator =(const XmlNode& xmlNode)
       m_networkBorderGroup = Aws::Utils::Xml::DecodeEscapedXmlText(networkBorderGroupNode.GetText());
       m_networkBorderGroupHasBeenSet = true;
     }
+    XmlNode zoneTypeNode = resultNode.FirstChild("zoneType");
+    if(!zoneTypeNode.IsNull())
+    {
+      m_zoneType = Aws::Utils::Xml::DecodeEscapedXmlText(zoneTypeNode.GetText());
+      m_zoneTypeHasBeenSet = true;
+    }
+    XmlNode parentZoneNameNode = resultNode.FirstChild("parentZoneName");
+    if(!parentZoneNameNode.IsNull())
+    {
+      m_parentZoneName = Aws::Utils::Xml::DecodeEscapedXmlText(parentZoneNameNode.GetText());
+      m_parentZoneNameHasBeenSet = true;
+    }
+    XmlNode parentZoneIdNode = resultNode.FirstChild("parentZoneId");
+    if(!parentZoneIdNode.IsNull())
+    {
+      m_parentZoneId = Aws::Utils::Xml::DecodeEscapedXmlText(parentZoneIdNode.GetText());
+      m_parentZoneIdHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -162,6 +186,21 @@ void AvailabilityZone::OutputToStream(Aws::OStream& oStream, const char* locatio
       oStream << location << index << locationValue << ".NetworkBorderGroup=" << StringUtils::URLEncode(m_networkBorderGroup.c_str()) << "&";
   }
 
+  if(m_zoneTypeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".ZoneType=" << StringUtils::URLEncode(m_zoneType.c_str()) << "&";
+  }
+
+  if(m_parentZoneNameHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".ParentZoneName=" << StringUtils::URLEncode(m_parentZoneName.c_str()) << "&";
+  }
+
+  if(m_parentZoneIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".ParentZoneId=" << StringUtils::URLEncode(m_parentZoneId.c_str()) << "&";
+  }
+
 }
 
 void AvailabilityZone::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -203,6 +242,18 @@ void AvailabilityZone::OutputToStream(Aws::OStream& oStream, const char* locatio
   if(m_networkBorderGroupHasBeenSet)
   {
       oStream << location << ".NetworkBorderGroup=" << StringUtils::URLEncode(m_networkBorderGroup.c_str()) << "&";
+  }
+  if(m_zoneTypeHasBeenSet)
+  {
+      oStream << location << ".ZoneType=" << StringUtils::URLEncode(m_zoneType.c_str()) << "&";
+  }
+  if(m_parentZoneNameHasBeenSet)
+  {
+      oStream << location << ".ParentZoneName=" << StringUtils::URLEncode(m_parentZoneName.c_str()) << "&";
+  }
+  if(m_parentZoneIdHasBeenSet)
+  {
+      oStream << location << ".ParentZoneId=" << StringUtils::URLEncode(m_parentZoneId.c_str()) << "&";
   }
 }
 

@@ -84,42 +84,42 @@ namespace Model
 
 
     /**
-     * <p>The name of the database where the function resides.</p>
+     * <p>The name of the catalog database that contains the function.</p>
      */
     inline const Aws::String& GetDatabaseName() const{ return m_databaseName; }
 
     /**
-     * <p>The name of the database where the function resides.</p>
+     * <p>The name of the catalog database that contains the function.</p>
      */
     inline bool DatabaseNameHasBeenSet() const { return m_databaseNameHasBeenSet; }
 
     /**
-     * <p>The name of the database where the function resides.</p>
+     * <p>The name of the catalog database that contains the function.</p>
      */
     inline void SetDatabaseName(const Aws::String& value) { m_databaseNameHasBeenSet = true; m_databaseName = value; }
 
     /**
-     * <p>The name of the database where the function resides.</p>
+     * <p>The name of the catalog database that contains the function.</p>
      */
     inline void SetDatabaseName(Aws::String&& value) { m_databaseNameHasBeenSet = true; m_databaseName = std::move(value); }
 
     /**
-     * <p>The name of the database where the function resides.</p>
+     * <p>The name of the catalog database that contains the function.</p>
      */
     inline void SetDatabaseName(const char* value) { m_databaseNameHasBeenSet = true; m_databaseName.assign(value); }
 
     /**
-     * <p>The name of the database where the function resides.</p>
+     * <p>The name of the catalog database that contains the function.</p>
      */
     inline UserDefinedFunction& WithDatabaseName(const Aws::String& value) { SetDatabaseName(value); return *this;}
 
     /**
-     * <p>The name of the database where the function resides.</p>
+     * <p>The name of the catalog database that contains the function.</p>
      */
     inline UserDefinedFunction& WithDatabaseName(Aws::String&& value) { SetDatabaseName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the database where the function resides.</p>
+     * <p>The name of the catalog database that contains the function.</p>
      */
     inline UserDefinedFunction& WithDatabaseName(const char* value) { SetDatabaseName(value); return *this;}
 
@@ -308,6 +308,47 @@ namespace Model
      */
     inline UserDefinedFunction& AddResourceUris(ResourceUri&& value) { m_resourceUrisHasBeenSet = true; m_resourceUris.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The ID of the Data Catalog in which the function resides.</p>
+     */
+    inline const Aws::String& GetCatalogId() const{ return m_catalogId; }
+
+    /**
+     * <p>The ID of the Data Catalog in which the function resides.</p>
+     */
+    inline bool CatalogIdHasBeenSet() const { return m_catalogIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the Data Catalog in which the function resides.</p>
+     */
+    inline void SetCatalogId(const Aws::String& value) { m_catalogIdHasBeenSet = true; m_catalogId = value; }
+
+    /**
+     * <p>The ID of the Data Catalog in which the function resides.</p>
+     */
+    inline void SetCatalogId(Aws::String&& value) { m_catalogIdHasBeenSet = true; m_catalogId = std::move(value); }
+
+    /**
+     * <p>The ID of the Data Catalog in which the function resides.</p>
+     */
+    inline void SetCatalogId(const char* value) { m_catalogIdHasBeenSet = true; m_catalogId.assign(value); }
+
+    /**
+     * <p>The ID of the Data Catalog in which the function resides.</p>
+     */
+    inline UserDefinedFunction& WithCatalogId(const Aws::String& value) { SetCatalogId(value); return *this;}
+
+    /**
+     * <p>The ID of the Data Catalog in which the function resides.</p>
+     */
+    inline UserDefinedFunction& WithCatalogId(Aws::String&& value) { SetCatalogId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the Data Catalog in which the function resides.</p>
+     */
+    inline UserDefinedFunction& WithCatalogId(const char* value) { SetCatalogId(value); return *this;}
+
   private:
 
     Aws::String m_functionName;
@@ -330,6 +371,9 @@ namespace Model
 
     Aws::Vector<ResourceUri> m_resourceUris;
     bool m_resourceUrisHasBeenSet;
+
+    Aws::String m_catalogId;
+    bool m_catalogIdHasBeenSet;
   };
 
 } // namespace Model

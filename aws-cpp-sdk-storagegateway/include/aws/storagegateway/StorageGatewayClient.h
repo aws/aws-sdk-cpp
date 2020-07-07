@@ -2945,7 +2945,7 @@ namespace Model
 
         /**
          * <p>Refreshes the cache for the specified file share. This operation finds
-         * objects in the Amazon S3 bucket that were added, removed or replaced since the
+         * objects in the Amazon S3 bucket that were added, removed, or replaced since the
          * gateway last listed the bucket's contents and cached the results. This operation
          * is only supported in the file gateway type. You can subscribe to be notified
          * through an Amazon CloudWatch event when your RefreshCache operation completes.
@@ -2978,7 +2978,7 @@ namespace Model
 
         /**
          * <p>Refreshes the cache for the specified file share. This operation finds
-         * objects in the Amazon S3 bucket that were added, removed or replaced since the
+         * objects in the Amazon S3 bucket that were added, removed, or replaced since the
          * gateway last listed the bucket's contents and cached the results. This operation
          * is only supported in the file gateway type. You can subscribe to be notified
          * through an Amazon CloudWatch event when your RefreshCache operation completes.
@@ -3013,7 +3013,7 @@ namespace Model
 
         /**
          * <p>Refreshes the cache for the specified file share. This operation finds
-         * objects in the Amazon S3 bucket that were added, removed or replaced since the
+         * objects in the Amazon S3 bucket that were added, removed, or replaced since the
          * gateway last listed the bucket's contents and cached the results. This operation
          * is only supported in the file gateway type. You can subscribe to be notified
          * through an Amazon CloudWatch event when your RefreshCache operation completes.

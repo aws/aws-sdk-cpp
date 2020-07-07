@@ -13,7 +13,8 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 DeleteResourcePolicyRequest::DeleteResourcePolicyRequest() : 
-    m_policyHashConditionHasBeenSet(false)
+    m_policyHashConditionHasBeenSet(false),
+    m_resourceArnHasBeenSet(false)
 {
 }
 
@@ -24,6 +25,12 @@ Aws::String DeleteResourcePolicyRequest::SerializePayload() const
   if(m_policyHashConditionHasBeenSet)
   {
    payload.WithString("PolicyHashCondition", m_policyHashCondition);
+
+  }
+
+  if(m_resourceArnHasBeenSet)
+  {
+   payload.WithString("ResourceArn", m_resourceArn);
 
   }
 

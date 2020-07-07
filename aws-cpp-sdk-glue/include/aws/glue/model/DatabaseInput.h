@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/glue/model/DatabaseIdentifier.h>
 #include <aws/glue/model/PrincipalPermissions.h>
 #include <utility>
 
@@ -291,6 +292,43 @@ namespace Model
      */
     inline DatabaseInput& AddCreateTableDefaultPermissions(PrincipalPermissions&& value) { m_createTableDefaultPermissionsHasBeenSet = true; m_createTableDefaultPermissions.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>A <code>DatabaseIdentifier</code> structure that describes a target database
+     * for resource linking.</p>
+     */
+    inline const DatabaseIdentifier& GetTargetDatabase() const{ return m_targetDatabase; }
+
+    /**
+     * <p>A <code>DatabaseIdentifier</code> structure that describes a target database
+     * for resource linking.</p>
+     */
+    inline bool TargetDatabaseHasBeenSet() const { return m_targetDatabaseHasBeenSet; }
+
+    /**
+     * <p>A <code>DatabaseIdentifier</code> structure that describes a target database
+     * for resource linking.</p>
+     */
+    inline void SetTargetDatabase(const DatabaseIdentifier& value) { m_targetDatabaseHasBeenSet = true; m_targetDatabase = value; }
+
+    /**
+     * <p>A <code>DatabaseIdentifier</code> structure that describes a target database
+     * for resource linking.</p>
+     */
+    inline void SetTargetDatabase(DatabaseIdentifier&& value) { m_targetDatabaseHasBeenSet = true; m_targetDatabase = std::move(value); }
+
+    /**
+     * <p>A <code>DatabaseIdentifier</code> structure that describes a target database
+     * for resource linking.</p>
+     */
+    inline DatabaseInput& WithTargetDatabase(const DatabaseIdentifier& value) { SetTargetDatabase(value); return *this;}
+
+    /**
+     * <p>A <code>DatabaseIdentifier</code> structure that describes a target database
+     * for resource linking.</p>
+     */
+    inline DatabaseInput& WithTargetDatabase(DatabaseIdentifier&& value) { SetTargetDatabase(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -307,6 +345,9 @@ namespace Model
 
     Aws::Vector<PrincipalPermissions> m_createTableDefaultPermissions;
     bool m_createTableDefaultPermissionsHasBeenSet;
+
+    DatabaseIdentifier m_targetDatabase;
+    bool m_targetDatabaseHasBeenSet;
   };
 
 } // namespace Model

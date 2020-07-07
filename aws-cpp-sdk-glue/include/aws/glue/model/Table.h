@@ -10,6 +10,7 @@
 #include <aws/glue/model/StorageDescriptor.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/glue/model/TableIdentifier.h>
 #include <aws/glue/model/Column.h>
 #include <utility>
 
@@ -750,6 +751,84 @@ namespace Model
      */
     inline Table& WithIsRegisteredWithLakeFormation(bool value) { SetIsRegisteredWithLakeFormation(value); return *this;}
 
+
+    /**
+     * <p>A <code>TableIdentifier</code> structure that describes a target table for
+     * resource linking.</p>
+     */
+    inline const TableIdentifier& GetTargetTable() const{ return m_targetTable; }
+
+    /**
+     * <p>A <code>TableIdentifier</code> structure that describes a target table for
+     * resource linking.</p>
+     */
+    inline bool TargetTableHasBeenSet() const { return m_targetTableHasBeenSet; }
+
+    /**
+     * <p>A <code>TableIdentifier</code> structure that describes a target table for
+     * resource linking.</p>
+     */
+    inline void SetTargetTable(const TableIdentifier& value) { m_targetTableHasBeenSet = true; m_targetTable = value; }
+
+    /**
+     * <p>A <code>TableIdentifier</code> structure that describes a target table for
+     * resource linking.</p>
+     */
+    inline void SetTargetTable(TableIdentifier&& value) { m_targetTableHasBeenSet = true; m_targetTable = std::move(value); }
+
+    /**
+     * <p>A <code>TableIdentifier</code> structure that describes a target table for
+     * resource linking.</p>
+     */
+    inline Table& WithTargetTable(const TableIdentifier& value) { SetTargetTable(value); return *this;}
+
+    /**
+     * <p>A <code>TableIdentifier</code> structure that describes a target table for
+     * resource linking.</p>
+     */
+    inline Table& WithTargetTable(TableIdentifier&& value) { SetTargetTable(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The ID of the Data Catalog in which the table resides.</p>
+     */
+    inline const Aws::String& GetCatalogId() const{ return m_catalogId; }
+
+    /**
+     * <p>The ID of the Data Catalog in which the table resides.</p>
+     */
+    inline bool CatalogIdHasBeenSet() const { return m_catalogIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the Data Catalog in which the table resides.</p>
+     */
+    inline void SetCatalogId(const Aws::String& value) { m_catalogIdHasBeenSet = true; m_catalogId = value; }
+
+    /**
+     * <p>The ID of the Data Catalog in which the table resides.</p>
+     */
+    inline void SetCatalogId(Aws::String&& value) { m_catalogIdHasBeenSet = true; m_catalogId = std::move(value); }
+
+    /**
+     * <p>The ID of the Data Catalog in which the table resides.</p>
+     */
+    inline void SetCatalogId(const char* value) { m_catalogIdHasBeenSet = true; m_catalogId.assign(value); }
+
+    /**
+     * <p>The ID of the Data Catalog in which the table resides.</p>
+     */
+    inline Table& WithCatalogId(const Aws::String& value) { SetCatalogId(value); return *this;}
+
+    /**
+     * <p>The ID of the Data Catalog in which the table resides.</p>
+     */
+    inline Table& WithCatalogId(Aws::String&& value) { SetCatalogId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the Data Catalog in which the table resides.</p>
+     */
+    inline Table& WithCatalogId(const char* value) { SetCatalogId(value); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -802,6 +881,12 @@ namespace Model
 
     bool m_isRegisteredWithLakeFormation;
     bool m_isRegisteredWithLakeFormationHasBeenSet;
+
+    TableIdentifier m_targetTable;
+    bool m_targetTableHasBeenSet;
+
+    Aws::String m_catalogId;
+    bool m_catalogIdHasBeenSet;
   };
 
 } // namespace Model

@@ -31,7 +31,8 @@ TableInput::TableInput() :
     m_viewOriginalTextHasBeenSet(false),
     m_viewExpandedTextHasBeenSet(false),
     m_tableTypeHasBeenSet(false),
-    m_parametersHasBeenSet(false)
+    m_parametersHasBeenSet(false),
+    m_targetTableHasBeenSet(false)
 {
 }
 
@@ -48,7 +49,8 @@ TableInput::TableInput(JsonView jsonValue) :
     m_viewOriginalTextHasBeenSet(false),
     m_viewExpandedTextHasBeenSet(false),
     m_tableTypeHasBeenSet(false),
-    m_parametersHasBeenSet(false)
+    m_parametersHasBeenSet(false),
+    m_targetTableHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -145,6 +147,13 @@ TableInput& TableInput::operator =(JsonView jsonValue)
     m_parametersHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("TargetTable"))
+  {
+    m_targetTable = jsonValue.GetObject("TargetTable");
+
+    m_targetTableHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -229,6 +238,12 @@ JsonValue TableInput::Jsonize() const
      parametersJsonMap.WithString(parametersItem.first, parametersItem.second);
    }
    payload.WithObject("Parameters", std::move(parametersJsonMap));
+
+  }
+
+  if(m_targetTableHasBeenSet)
+  {
+   payload.WithObject("TargetTable", m_targetTable.Jsonize());
 
   }
 

@@ -26,6 +26,7 @@ namespace Aws
         static const int DROP_HASH = HashingUtils::HashString("DROP");
         static const int DELETE__HASH = HashingUtils::HashString("DELETE");
         static const int INSERT_HASH = HashingUtils::HashString("INSERT");
+        static const int DESCRIBE_HASH = HashingUtils::HashString("DESCRIBE");
         static const int CREATE_DATABASE_HASH = HashingUtils::HashString("CREATE_DATABASE");
         static const int CREATE_TABLE_HASH = HashingUtils::HashString("CREATE_TABLE");
         static const int DATA_LOCATION_ACCESS_HASH = HashingUtils::HashString("DATA_LOCATION_ACCESS");
@@ -57,6 +58,10 @@ namespace Aws
           else if (hashCode == INSERT_HASH)
           {
             return Permission::INSERT;
+          }
+          else if (hashCode == DESCRIBE_HASH)
+          {
+            return Permission::DESCRIBE;
           }
           else if (hashCode == CREATE_DATABASE_HASH)
           {
@@ -96,6 +101,8 @@ namespace Aws
             return "DELETE";
           case Permission::INSERT:
             return "INSERT";
+          case Permission::DESCRIBE:
+            return "DESCRIBE";
           case Permission::CREATE_DATABASE:
             return "CREATE_DATABASE";
           case Permission::CREATE_TABLE:

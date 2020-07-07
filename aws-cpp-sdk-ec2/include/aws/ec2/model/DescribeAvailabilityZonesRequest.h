@@ -42,11 +42,10 @@ namespace Model
      * <p>The filters.</p> <ul> <li> <p> <code>group-name</code> - For Availability
      * Zones, use the Region name. For Local Zones, use the name of the group
      * associated with the Local Zone (for example, <code>us-west-2-lax-1</code>).</p>
-     * </li> <li> <p> <code>message</code> - The Availability Zone or Local Zone
-     * message.</p> </li> <li> <p> <code>opt-in-status</code> - The opt in status
-     * (<code>opted-in</code>, and <code>not-opted-in</code> |
-     * <code>opt-in-not-required</code>).</p> </li> <li> <p> <code>region-name</code> -
-     * The name of the Region for the Availability Zone or Local Zone (for example,
+     * </li> <li> <p> <code>message</code> - The Zone message.</p> </li> <li> <p>
+     * <code>opt-in-status</code> - The opt in status (<code>opted-in</code>, and
+     * <code>not-opted-in</code> | <code>opt-in-not-required</code>).</p> </li> <li>
+     * <p> <code>region-name</code> - The name of the Region for the Zone (for example,
      * <code>us-east-1</code>).</p> </li> <li> <p> <code>state</code> - The state of
      * the Availability Zone or Local Zone (<code>available</code> |
      * <code>information</code> | <code>impaired</code> |
@@ -63,11 +62,10 @@ namespace Model
      * <p>The filters.</p> <ul> <li> <p> <code>group-name</code> - For Availability
      * Zones, use the Region name. For Local Zones, use the name of the group
      * associated with the Local Zone (for example, <code>us-west-2-lax-1</code>).</p>
-     * </li> <li> <p> <code>message</code> - The Availability Zone or Local Zone
-     * message.</p> </li> <li> <p> <code>opt-in-status</code> - The opt in status
-     * (<code>opted-in</code>, and <code>not-opted-in</code> |
-     * <code>opt-in-not-required</code>).</p> </li> <li> <p> <code>region-name</code> -
-     * The name of the Region for the Availability Zone or Local Zone (for example,
+     * </li> <li> <p> <code>message</code> - The Zone message.</p> </li> <li> <p>
+     * <code>opt-in-status</code> - The opt in status (<code>opted-in</code>, and
+     * <code>not-opted-in</code> | <code>opt-in-not-required</code>).</p> </li> <li>
+     * <p> <code>region-name</code> - The name of the Region for the Zone (for example,
      * <code>us-east-1</code>).</p> </li> <li> <p> <code>state</code> - The state of
      * the Availability Zone or Local Zone (<code>available</code> |
      * <code>information</code> | <code>impaired</code> |
@@ -84,11 +82,10 @@ namespace Model
      * <p>The filters.</p> <ul> <li> <p> <code>group-name</code> - For Availability
      * Zones, use the Region name. For Local Zones, use the name of the group
      * associated with the Local Zone (for example, <code>us-west-2-lax-1</code>).</p>
-     * </li> <li> <p> <code>message</code> - The Availability Zone or Local Zone
-     * message.</p> </li> <li> <p> <code>opt-in-status</code> - The opt in status
-     * (<code>opted-in</code>, and <code>not-opted-in</code> |
-     * <code>opt-in-not-required</code>).</p> </li> <li> <p> <code>region-name</code> -
-     * The name of the Region for the Availability Zone or Local Zone (for example,
+     * </li> <li> <p> <code>message</code> - The Zone message.</p> </li> <li> <p>
+     * <code>opt-in-status</code> - The opt in status (<code>opted-in</code>, and
+     * <code>not-opted-in</code> | <code>opt-in-not-required</code>).</p> </li> <li>
+     * <p> <code>region-name</code> - The name of the Region for the Zone (for example,
      * <code>us-east-1</code>).</p> </li> <li> <p> <code>state</code> - The state of
      * the Availability Zone or Local Zone (<code>available</code> |
      * <code>information</code> | <code>impaired</code> |
@@ -105,11 +102,10 @@ namespace Model
      * <p>The filters.</p> <ul> <li> <p> <code>group-name</code> - For Availability
      * Zones, use the Region name. For Local Zones, use the name of the group
      * associated with the Local Zone (for example, <code>us-west-2-lax-1</code>).</p>
-     * </li> <li> <p> <code>message</code> - The Availability Zone or Local Zone
-     * message.</p> </li> <li> <p> <code>opt-in-status</code> - The opt in status
-     * (<code>opted-in</code>, and <code>not-opted-in</code> |
-     * <code>opt-in-not-required</code>).</p> </li> <li> <p> <code>region-name</code> -
-     * The name of the Region for the Availability Zone or Local Zone (for example,
+     * </li> <li> <p> <code>message</code> - The Zone message.</p> </li> <li> <p>
+     * <code>opt-in-status</code> - The opt in status (<code>opted-in</code>, and
+     * <code>not-opted-in</code> | <code>opt-in-not-required</code>).</p> </li> <li>
+     * <p> <code>region-name</code> - The name of the Region for the Zone (for example,
      * <code>us-east-1</code>).</p> </li> <li> <p> <code>state</code> - The state of
      * the Availability Zone or Local Zone (<code>available</code> |
      * <code>information</code> | <code>impaired</code> |
@@ -126,11 +122,10 @@ namespace Model
      * <p>The filters.</p> <ul> <li> <p> <code>group-name</code> - For Availability
      * Zones, use the Region name. For Local Zones, use the name of the group
      * associated with the Local Zone (for example, <code>us-west-2-lax-1</code>).</p>
-     * </li> <li> <p> <code>message</code> - The Availability Zone or Local Zone
-     * message.</p> </li> <li> <p> <code>opt-in-status</code> - The opt in status
-     * (<code>opted-in</code>, and <code>not-opted-in</code> |
-     * <code>opt-in-not-required</code>).</p> </li> <li> <p> <code>region-name</code> -
-     * The name of the Region for the Availability Zone or Local Zone (for example,
+     * </li> <li> <p> <code>message</code> - The Zone message.</p> </li> <li> <p>
+     * <code>opt-in-status</code> - The opt in status (<code>opted-in</code>, and
+     * <code>not-opted-in</code> | <code>opt-in-not-required</code>).</p> </li> <li>
+     * <p> <code>region-name</code> - The name of the Region for the Zone (for example,
      * <code>us-east-1</code>).</p> </li> <li> <p> <code>state</code> - The state of
      * the Availability Zone or Local Zone (<code>available</code> |
      * <code>information</code> | <code>impaired</code> |
@@ -147,11 +142,10 @@ namespace Model
      * <p>The filters.</p> <ul> <li> <p> <code>group-name</code> - For Availability
      * Zones, use the Region name. For Local Zones, use the name of the group
      * associated with the Local Zone (for example, <code>us-west-2-lax-1</code>).</p>
-     * </li> <li> <p> <code>message</code> - The Availability Zone or Local Zone
-     * message.</p> </li> <li> <p> <code>opt-in-status</code> - The opt in status
-     * (<code>opted-in</code>, and <code>not-opted-in</code> |
-     * <code>opt-in-not-required</code>).</p> </li> <li> <p> <code>region-name</code> -
-     * The name of the Region for the Availability Zone or Local Zone (for example,
+     * </li> <li> <p> <code>message</code> - The Zone message.</p> </li> <li> <p>
+     * <code>opt-in-status</code> - The opt in status (<code>opted-in</code>, and
+     * <code>not-opted-in</code> | <code>opt-in-not-required</code>).</p> </li> <li>
+     * <p> <code>region-name</code> - The name of the Region for the Zone (for example,
      * <code>us-east-1</code>).</p> </li> <li> <p> <code>state</code> - The state of
      * the Availability Zone or Local Zone (<code>available</code> |
      * <code>information</code> | <code>impaired</code> |
@@ -168,11 +162,10 @@ namespace Model
      * <p>The filters.</p> <ul> <li> <p> <code>group-name</code> - For Availability
      * Zones, use the Region name. For Local Zones, use the name of the group
      * associated with the Local Zone (for example, <code>us-west-2-lax-1</code>).</p>
-     * </li> <li> <p> <code>message</code> - The Availability Zone or Local Zone
-     * message.</p> </li> <li> <p> <code>opt-in-status</code> - The opt in status
-     * (<code>opted-in</code>, and <code>not-opted-in</code> |
-     * <code>opt-in-not-required</code>).</p> </li> <li> <p> <code>region-name</code> -
-     * The name of the Region for the Availability Zone or Local Zone (for example,
+     * </li> <li> <p> <code>message</code> - The Zone message.</p> </li> <li> <p>
+     * <code>opt-in-status</code> - The opt in status (<code>opted-in</code>, and
+     * <code>not-opted-in</code> | <code>opt-in-not-required</code>).</p> </li> <li>
+     * <p> <code>region-name</code> - The name of the Region for the Zone (for example,
      * <code>us-east-1</code>).</p> </li> <li> <p> <code>state</code> - The state of
      * the Availability Zone or Local Zone (<code>available</code> |
      * <code>information</code> | <code>impaired</code> |
@@ -189,11 +182,10 @@ namespace Model
      * <p>The filters.</p> <ul> <li> <p> <code>group-name</code> - For Availability
      * Zones, use the Region name. For Local Zones, use the name of the group
      * associated with the Local Zone (for example, <code>us-west-2-lax-1</code>).</p>
-     * </li> <li> <p> <code>message</code> - The Availability Zone or Local Zone
-     * message.</p> </li> <li> <p> <code>opt-in-status</code> - The opt in status
-     * (<code>opted-in</code>, and <code>not-opted-in</code> |
-     * <code>opt-in-not-required</code>).</p> </li> <li> <p> <code>region-name</code> -
-     * The name of the Region for the Availability Zone or Local Zone (for example,
+     * </li> <li> <p> <code>message</code> - The Zone message.</p> </li> <li> <p>
+     * <code>opt-in-status</code> - The opt in status (<code>opted-in</code>, and
+     * <code>not-opted-in</code> | <code>opt-in-not-required</code>).</p> </li> <li>
+     * <p> <code>region-name</code> - The name of the Region for the Zone (for example,
      * <code>us-east-1</code>).</p> </li> <li> <p> <code>state</code> - The state of
      * the Availability Zone or Local Zone (<code>available</code> |
      * <code>information</code> | <code>impaired</code> |
@@ -208,93 +200,93 @@ namespace Model
 
 
     /**
-     * <p>The names of the Availability Zones and Local Zones.</p>
+     * <p>The names of the Zones.</p>
      */
     inline const Aws::Vector<Aws::String>& GetZoneNames() const{ return m_zoneNames; }
 
     /**
-     * <p>The names of the Availability Zones and Local Zones.</p>
+     * <p>The names of the Zones.</p>
      */
     inline bool ZoneNamesHasBeenSet() const { return m_zoneNamesHasBeenSet; }
 
     /**
-     * <p>The names of the Availability Zones and Local Zones.</p>
+     * <p>The names of the Zones.</p>
      */
     inline void SetZoneNames(const Aws::Vector<Aws::String>& value) { m_zoneNamesHasBeenSet = true; m_zoneNames = value; }
 
     /**
-     * <p>The names of the Availability Zones and Local Zones.</p>
+     * <p>The names of the Zones.</p>
      */
     inline void SetZoneNames(Aws::Vector<Aws::String>&& value) { m_zoneNamesHasBeenSet = true; m_zoneNames = std::move(value); }
 
     /**
-     * <p>The names of the Availability Zones and Local Zones.</p>
+     * <p>The names of the Zones.</p>
      */
     inline DescribeAvailabilityZonesRequest& WithZoneNames(const Aws::Vector<Aws::String>& value) { SetZoneNames(value); return *this;}
 
     /**
-     * <p>The names of the Availability Zones and Local Zones.</p>
+     * <p>The names of the Zones.</p>
      */
     inline DescribeAvailabilityZonesRequest& WithZoneNames(Aws::Vector<Aws::String>&& value) { SetZoneNames(std::move(value)); return *this;}
 
     /**
-     * <p>The names of the Availability Zones and Local Zones.</p>
+     * <p>The names of the Zones.</p>
      */
     inline DescribeAvailabilityZonesRequest& AddZoneNames(const Aws::String& value) { m_zoneNamesHasBeenSet = true; m_zoneNames.push_back(value); return *this; }
 
     /**
-     * <p>The names of the Availability Zones and Local Zones.</p>
+     * <p>The names of the Zones.</p>
      */
     inline DescribeAvailabilityZonesRequest& AddZoneNames(Aws::String&& value) { m_zoneNamesHasBeenSet = true; m_zoneNames.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The names of the Availability Zones and Local Zones.</p>
+     * <p>The names of the Zones.</p>
      */
     inline DescribeAvailabilityZonesRequest& AddZoneNames(const char* value) { m_zoneNamesHasBeenSet = true; m_zoneNames.push_back(value); return *this; }
 
 
     /**
-     * <p>The IDs of the Availability Zones and Local Zones.</p>
+     * <p>The IDs of the Zones.</p>
      */
     inline const Aws::Vector<Aws::String>& GetZoneIds() const{ return m_zoneIds; }
 
     /**
-     * <p>The IDs of the Availability Zones and Local Zones.</p>
+     * <p>The IDs of the Zones.</p>
      */
     inline bool ZoneIdsHasBeenSet() const { return m_zoneIdsHasBeenSet; }
 
     /**
-     * <p>The IDs of the Availability Zones and Local Zones.</p>
+     * <p>The IDs of the Zones.</p>
      */
     inline void SetZoneIds(const Aws::Vector<Aws::String>& value) { m_zoneIdsHasBeenSet = true; m_zoneIds = value; }
 
     /**
-     * <p>The IDs of the Availability Zones and Local Zones.</p>
+     * <p>The IDs of the Zones.</p>
      */
     inline void SetZoneIds(Aws::Vector<Aws::String>&& value) { m_zoneIdsHasBeenSet = true; m_zoneIds = std::move(value); }
 
     /**
-     * <p>The IDs of the Availability Zones and Local Zones.</p>
+     * <p>The IDs of the Zones.</p>
      */
     inline DescribeAvailabilityZonesRequest& WithZoneIds(const Aws::Vector<Aws::String>& value) { SetZoneIds(value); return *this;}
 
     /**
-     * <p>The IDs of the Availability Zones and Local Zones.</p>
+     * <p>The IDs of the Zones.</p>
      */
     inline DescribeAvailabilityZonesRequest& WithZoneIds(Aws::Vector<Aws::String>&& value) { SetZoneIds(std::move(value)); return *this;}
 
     /**
-     * <p>The IDs of the Availability Zones and Local Zones.</p>
+     * <p>The IDs of the Zones.</p>
      */
     inline DescribeAvailabilityZonesRequest& AddZoneIds(const Aws::String& value) { m_zoneIdsHasBeenSet = true; m_zoneIds.push_back(value); return *this; }
 
     /**
-     * <p>The IDs of the Availability Zones and Local Zones.</p>
+     * <p>The IDs of the Zones.</p>
      */
     inline DescribeAvailabilityZonesRequest& AddZoneIds(Aws::String&& value) { m_zoneIdsHasBeenSet = true; m_zoneIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The IDs of the Availability Zones and Local Zones.</p>
+     * <p>The IDs of the Zones.</p>
      */
     inline DescribeAvailabilityZonesRequest& AddZoneIds(const char* value) { m_zoneIdsHasBeenSet = true; m_zoneIds.push_back(value); return *this; }
 

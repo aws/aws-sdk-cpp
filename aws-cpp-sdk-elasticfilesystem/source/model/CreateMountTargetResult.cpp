@@ -84,6 +84,12 @@ CreateMountTargetResult& CreateMountTargetResult::operator =(const Aws::AmazonWe
 
   }
 
+  if(jsonValue.ValueExists("VpcId"))
+  {
+    m_vpcId = jsonValue.GetString("VpcId");
+
+  }
+
 
 
   return *this;

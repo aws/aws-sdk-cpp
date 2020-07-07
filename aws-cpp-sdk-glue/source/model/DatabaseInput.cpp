@@ -23,7 +23,8 @@ DatabaseInput::DatabaseInput() :
     m_descriptionHasBeenSet(false),
     m_locationUriHasBeenSet(false),
     m_parametersHasBeenSet(false),
-    m_createTableDefaultPermissionsHasBeenSet(false)
+    m_createTableDefaultPermissionsHasBeenSet(false),
+    m_targetDatabaseHasBeenSet(false)
 {
 }
 
@@ -32,7 +33,8 @@ DatabaseInput::DatabaseInput(JsonView jsonValue) :
     m_descriptionHasBeenSet(false),
     m_locationUriHasBeenSet(false),
     m_parametersHasBeenSet(false),
-    m_createTableDefaultPermissionsHasBeenSet(false)
+    m_createTableDefaultPermissionsHasBeenSet(false),
+    m_targetDatabaseHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -80,6 +82,13 @@ DatabaseInput& DatabaseInput::operator =(JsonView jsonValue)
     m_createTableDefaultPermissionsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("TargetDatabase"))
+  {
+    m_targetDatabase = jsonValue.GetObject("TargetDatabase");
+
+    m_targetDatabaseHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -124,6 +133,12 @@ JsonValue DatabaseInput::Jsonize() const
      createTableDefaultPermissionsJsonList[createTableDefaultPermissionsIndex].AsObject(m_createTableDefaultPermissions[createTableDefaultPermissionsIndex].Jsonize());
    }
    payload.WithArray("CreateTableDefaultPermissions", std::move(createTableDefaultPermissionsJsonList));
+
+  }
+
+  if(m_targetDatabaseHasBeenSet)
+  {
+   payload.WithObject("TargetDatabase", m_targetDatabase.Jsonize());
 
   }
 

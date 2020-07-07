@@ -41,7 +41,9 @@ NFSFileShareInfo::NFSFileShareInfo() :
     m_guessMIMETypeEnabledHasBeenSet(false),
     m_requesterPays(false),
     m_requesterPaysHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_fileShareNameHasBeenSet(false),
+    m_cacheAttributesHasBeenSet(false)
 {
 }
 
@@ -68,7 +70,9 @@ NFSFileShareInfo::NFSFileShareInfo(JsonView jsonValue) :
     m_guessMIMETypeEnabledHasBeenSet(false),
     m_requesterPays(false),
     m_requesterPaysHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_fileShareNameHasBeenSet(false),
+    m_cacheAttributesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -207,6 +211,20 @@ NFSFileShareInfo& NFSFileShareInfo::operator =(JsonView jsonValue)
     m_tagsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("FileShareName"))
+  {
+    m_fileShareName = jsonValue.GetString("FileShareName");
+
+    m_fileShareNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("CacheAttributes"))
+  {
+    m_cacheAttributes = jsonValue.GetObject("CacheAttributes");
+
+    m_cacheAttributesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -328,6 +346,18 @@ JsonValue NFSFileShareInfo::Jsonize() const
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
    }
    payload.WithArray("Tags", std::move(tagsJsonList));
+
+  }
+
+  if(m_fileShareNameHasBeenSet)
+  {
+   payload.WithString("FileShareName", m_fileShareName);
+
+  }
+
+  if(m_cacheAttributesHasBeenSet)
+  {
+   payload.WithObject("CacheAttributes", m_cacheAttributes.Jsonize());
 
   }
 

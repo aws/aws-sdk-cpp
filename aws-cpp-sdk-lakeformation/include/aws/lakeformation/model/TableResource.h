@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/lakeformation/LakeFormation_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/lakeformation/model/TableWildcard.h>
 #include <utility>
 
 namespace Aws
@@ -37,6 +38,55 @@ namespace Model
     TableResource(Aws::Utils::Json::JsonView jsonValue);
     TableResource& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * <p>The identifier for the Data Catalog. By default, it is the account ID of the
+     * caller.</p>
+     */
+    inline const Aws::String& GetCatalogId() const{ return m_catalogId; }
+
+    /**
+     * <p>The identifier for the Data Catalog. By default, it is the account ID of the
+     * caller.</p>
+     */
+    inline bool CatalogIdHasBeenSet() const { return m_catalogIdHasBeenSet; }
+
+    /**
+     * <p>The identifier for the Data Catalog. By default, it is the account ID of the
+     * caller.</p>
+     */
+    inline void SetCatalogId(const Aws::String& value) { m_catalogIdHasBeenSet = true; m_catalogId = value; }
+
+    /**
+     * <p>The identifier for the Data Catalog. By default, it is the account ID of the
+     * caller.</p>
+     */
+    inline void SetCatalogId(Aws::String&& value) { m_catalogIdHasBeenSet = true; m_catalogId = std::move(value); }
+
+    /**
+     * <p>The identifier for the Data Catalog. By default, it is the account ID of the
+     * caller.</p>
+     */
+    inline void SetCatalogId(const char* value) { m_catalogIdHasBeenSet = true; m_catalogId.assign(value); }
+
+    /**
+     * <p>The identifier for the Data Catalog. By default, it is the account ID of the
+     * caller.</p>
+     */
+    inline TableResource& WithCatalogId(const Aws::String& value) { SetCatalogId(value); return *this;}
+
+    /**
+     * <p>The identifier for the Data Catalog. By default, it is the account ID of the
+     * caller.</p>
+     */
+    inline TableResource& WithCatalogId(Aws::String&& value) { SetCatalogId(std::move(value)); return *this;}
+
+    /**
+     * <p>The identifier for the Data Catalog. By default, it is the account ID of the
+     * caller.</p>
+     */
+    inline TableResource& WithCatalogId(const char* value) { SetCatalogId(value); return *this;}
 
 
     /**
@@ -136,13 +186,62 @@ namespace Model
      */
     inline TableResource& WithName(const char* value) { SetName(value); return *this;}
 
+
+    /**
+     * <p>A wildcard object representing every table under a database.</p> <p>At least
+     * one of <code>TableResource$Name</code> or
+     * <code>TableResource$TableWildcard</code> is required.</p>
+     */
+    inline const TableWildcard& GetTableWildcard() const{ return m_tableWildcard; }
+
+    /**
+     * <p>A wildcard object representing every table under a database.</p> <p>At least
+     * one of <code>TableResource$Name</code> or
+     * <code>TableResource$TableWildcard</code> is required.</p>
+     */
+    inline bool TableWildcardHasBeenSet() const { return m_tableWildcardHasBeenSet; }
+
+    /**
+     * <p>A wildcard object representing every table under a database.</p> <p>At least
+     * one of <code>TableResource$Name</code> or
+     * <code>TableResource$TableWildcard</code> is required.</p>
+     */
+    inline void SetTableWildcard(const TableWildcard& value) { m_tableWildcardHasBeenSet = true; m_tableWildcard = value; }
+
+    /**
+     * <p>A wildcard object representing every table under a database.</p> <p>At least
+     * one of <code>TableResource$Name</code> or
+     * <code>TableResource$TableWildcard</code> is required.</p>
+     */
+    inline void SetTableWildcard(TableWildcard&& value) { m_tableWildcardHasBeenSet = true; m_tableWildcard = std::move(value); }
+
+    /**
+     * <p>A wildcard object representing every table under a database.</p> <p>At least
+     * one of <code>TableResource$Name</code> or
+     * <code>TableResource$TableWildcard</code> is required.</p>
+     */
+    inline TableResource& WithTableWildcard(const TableWildcard& value) { SetTableWildcard(value); return *this;}
+
+    /**
+     * <p>A wildcard object representing every table under a database.</p> <p>At least
+     * one of <code>TableResource$Name</code> or
+     * <code>TableResource$TableWildcard</code> is required.</p>
+     */
+    inline TableResource& WithTableWildcard(TableWildcard&& value) { SetTableWildcard(std::move(value)); return *this;}
+
   private:
+
+    Aws::String m_catalogId;
+    bool m_catalogIdHasBeenSet;
 
     Aws::String m_databaseName;
     bool m_databaseNameHasBeenSet;
 
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
+    TableWildcard m_tableWildcard;
+    bool m_tableWildcardHasBeenSet;
   };
 
 } // namespace Model

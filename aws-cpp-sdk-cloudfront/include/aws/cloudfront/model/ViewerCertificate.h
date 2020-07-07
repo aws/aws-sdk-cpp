@@ -39,14 +39,13 @@ namespace Model
    * indication (SNI)</a> (recommended), or all viewers including those that don’t
    * support SNI.</p> <ul> <li> <p>To accept HTTPS connections from only viewers that
    * support SNI, set <code>SSLSupportMethod</code> to <code>sni-only</code>. This is
-   * recommended. Most browsers and clients released after 2010 support SNI. </p>
-   * </li> <li> <p>To accept HTTPS connections from all viewers, including those that
-   * don’t support SNI, set <code>SSLSupportMethod</code> to <code>vip</code>. This
-   * is not recommended, and results in additional monthly charges from CloudFront.
-   * </p> </li> </ul> </li> <li> <p>The minimum SSL/TLS protocol version that the
-   * distribution can use to communicate with viewers. To specify a minimum version,
-   * choose a value for <code>MinimumProtocolVersion</code>. For more information,
-   * see <a
+   * recommended. Most browsers and clients support SNI. </p> </li> <li> <p>To accept
+   * HTTPS connections from all viewers, including those that don’t support SNI, set
+   * <code>SSLSupportMethod</code> to <code>vip</code>. This is not recommended, and
+   * results in additional monthly charges from CloudFront. </p> </li> </ul> </li>
+   * <li> <p>The minimum SSL/TLS protocol version that the distribution can use to
+   * communicate with viewers. To specify a minimum version, choose a value for
+   * <code>MinimumProtocolVersion</code>. For more information, see <a
    * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValues-security-policy">Security
    * Policy</a> in the <i>Amazon CloudFront Developer Guide</i>.</p> </li> <li>
    * <p>The location of the SSL/TLS certificate, <a
@@ -321,13 +320,13 @@ namespace Model
      * from.</p> <ul> <li> <p> <code>sni-only</code> – The distribution accepts HTTPS
      * connections from only viewers that support <a
      * href="https://en.wikipedia.org/wiki/Server_Name_Indication">server name
-     * indication (SNI)</a>. This is recommended. Most browsers and clients released
-     * after 2010 support SNI.</p> </li> <li> <p> <code>vip</code> – The distribution
-     * accepts HTTPS connections from all viewers including those that don’t support
-     * SNI. This is not recommended, and results in additional monthly charges from
-     * CloudFront.</p> </li> </ul> <p>If the distribution uses the CloudFront domain
-     * name such as <code>d111111abcdef8.cloudfront.net</code>, don’t set a value for
-     * this field.</p>
+     * indication (SNI)</a>. This is recommended. Most browsers and clients support
+     * SNI.</p> </li> <li> <p> <code>vip</code> – The distribution accepts HTTPS
+     * connections from all viewers including those that don’t support SNI. This is not
+     * recommended, and results in additional monthly charges from CloudFront.</p>
+     * </li> </ul> <p>If the distribution uses the CloudFront domain name such as
+     * <code>d111111abcdef8.cloudfront.net</code>, don’t set a value for this
+     * field.</p>
      */
     inline const SSLSupportMethod& GetSSLSupportMethod() const{ return m_sSLSupportMethod; }
 
@@ -337,13 +336,13 @@ namespace Model
      * from.</p> <ul> <li> <p> <code>sni-only</code> – The distribution accepts HTTPS
      * connections from only viewers that support <a
      * href="https://en.wikipedia.org/wiki/Server_Name_Indication">server name
-     * indication (SNI)</a>. This is recommended. Most browsers and clients released
-     * after 2010 support SNI.</p> </li> <li> <p> <code>vip</code> – The distribution
-     * accepts HTTPS connections from all viewers including those that don’t support
-     * SNI. This is not recommended, and results in additional monthly charges from
-     * CloudFront.</p> </li> </ul> <p>If the distribution uses the CloudFront domain
-     * name such as <code>d111111abcdef8.cloudfront.net</code>, don’t set a value for
-     * this field.</p>
+     * indication (SNI)</a>. This is recommended. Most browsers and clients support
+     * SNI.</p> </li> <li> <p> <code>vip</code> – The distribution accepts HTTPS
+     * connections from all viewers including those that don’t support SNI. This is not
+     * recommended, and results in additional monthly charges from CloudFront.</p>
+     * </li> </ul> <p>If the distribution uses the CloudFront domain name such as
+     * <code>d111111abcdef8.cloudfront.net</code>, don’t set a value for this
+     * field.</p>
      */
     inline bool SSLSupportMethodHasBeenSet() const { return m_sSLSupportMethodHasBeenSet; }
 
@@ -353,13 +352,13 @@ namespace Model
      * from.</p> <ul> <li> <p> <code>sni-only</code> – The distribution accepts HTTPS
      * connections from only viewers that support <a
      * href="https://en.wikipedia.org/wiki/Server_Name_Indication">server name
-     * indication (SNI)</a>. This is recommended. Most browsers and clients released
-     * after 2010 support SNI.</p> </li> <li> <p> <code>vip</code> – The distribution
-     * accepts HTTPS connections from all viewers including those that don’t support
-     * SNI. This is not recommended, and results in additional monthly charges from
-     * CloudFront.</p> </li> </ul> <p>If the distribution uses the CloudFront domain
-     * name such as <code>d111111abcdef8.cloudfront.net</code>, don’t set a value for
-     * this field.</p>
+     * indication (SNI)</a>. This is recommended. Most browsers and clients support
+     * SNI.</p> </li> <li> <p> <code>vip</code> – The distribution accepts HTTPS
+     * connections from all viewers including those that don’t support SNI. This is not
+     * recommended, and results in additional monthly charges from CloudFront.</p>
+     * </li> </ul> <p>If the distribution uses the CloudFront domain name such as
+     * <code>d111111abcdef8.cloudfront.net</code>, don’t set a value for this
+     * field.</p>
      */
     inline void SetSSLSupportMethod(const SSLSupportMethod& value) { m_sSLSupportMethodHasBeenSet = true; m_sSLSupportMethod = value; }
 
@@ -369,13 +368,13 @@ namespace Model
      * from.</p> <ul> <li> <p> <code>sni-only</code> – The distribution accepts HTTPS
      * connections from only viewers that support <a
      * href="https://en.wikipedia.org/wiki/Server_Name_Indication">server name
-     * indication (SNI)</a>. This is recommended. Most browsers and clients released
-     * after 2010 support SNI.</p> </li> <li> <p> <code>vip</code> – The distribution
-     * accepts HTTPS connections from all viewers including those that don’t support
-     * SNI. This is not recommended, and results in additional monthly charges from
-     * CloudFront.</p> </li> </ul> <p>If the distribution uses the CloudFront domain
-     * name such as <code>d111111abcdef8.cloudfront.net</code>, don’t set a value for
-     * this field.</p>
+     * indication (SNI)</a>. This is recommended. Most browsers and clients support
+     * SNI.</p> </li> <li> <p> <code>vip</code> – The distribution accepts HTTPS
+     * connections from all viewers including those that don’t support SNI. This is not
+     * recommended, and results in additional monthly charges from CloudFront.</p>
+     * </li> </ul> <p>If the distribution uses the CloudFront domain name such as
+     * <code>d111111abcdef8.cloudfront.net</code>, don’t set a value for this
+     * field.</p>
      */
     inline void SetSSLSupportMethod(SSLSupportMethod&& value) { m_sSLSupportMethodHasBeenSet = true; m_sSLSupportMethod = std::move(value); }
 
@@ -385,13 +384,13 @@ namespace Model
      * from.</p> <ul> <li> <p> <code>sni-only</code> – The distribution accepts HTTPS
      * connections from only viewers that support <a
      * href="https://en.wikipedia.org/wiki/Server_Name_Indication">server name
-     * indication (SNI)</a>. This is recommended. Most browsers and clients released
-     * after 2010 support SNI.</p> </li> <li> <p> <code>vip</code> – The distribution
-     * accepts HTTPS connections from all viewers including those that don’t support
-     * SNI. This is not recommended, and results in additional monthly charges from
-     * CloudFront.</p> </li> </ul> <p>If the distribution uses the CloudFront domain
-     * name such as <code>d111111abcdef8.cloudfront.net</code>, don’t set a value for
-     * this field.</p>
+     * indication (SNI)</a>. This is recommended. Most browsers and clients support
+     * SNI.</p> </li> <li> <p> <code>vip</code> – The distribution accepts HTTPS
+     * connections from all viewers including those that don’t support SNI. This is not
+     * recommended, and results in additional monthly charges from CloudFront.</p>
+     * </li> </ul> <p>If the distribution uses the CloudFront domain name such as
+     * <code>d111111abcdef8.cloudfront.net</code>, don’t set a value for this
+     * field.</p>
      */
     inline ViewerCertificate& WithSSLSupportMethod(const SSLSupportMethod& value) { SetSSLSupportMethod(value); return *this;}
 
@@ -401,13 +400,13 @@ namespace Model
      * from.</p> <ul> <li> <p> <code>sni-only</code> – The distribution accepts HTTPS
      * connections from only viewers that support <a
      * href="https://en.wikipedia.org/wiki/Server_Name_Indication">server name
-     * indication (SNI)</a>. This is recommended. Most browsers and clients released
-     * after 2010 support SNI.</p> </li> <li> <p> <code>vip</code> – The distribution
-     * accepts HTTPS connections from all viewers including those that don’t support
-     * SNI. This is not recommended, and results in additional monthly charges from
-     * CloudFront.</p> </li> </ul> <p>If the distribution uses the CloudFront domain
-     * name such as <code>d111111abcdef8.cloudfront.net</code>, don’t set a value for
-     * this field.</p>
+     * indication (SNI)</a>. This is recommended. Most browsers and clients support
+     * SNI.</p> </li> <li> <p> <code>vip</code> – The distribution accepts HTTPS
+     * connections from all viewers including those that don’t support SNI. This is not
+     * recommended, and results in additional monthly charges from CloudFront.</p>
+     * </li> </ul> <p>If the distribution uses the CloudFront domain name such as
+     * <code>d111111abcdef8.cloudfront.net</code>, don’t set a value for this
+     * field.</p>
      */
     inline ViewerCertificate& WithSSLSupportMethod(SSLSupportMethod&& value) { SetSSLSupportMethod(std::move(value)); return *this;}
 
@@ -425,13 +424,11 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/secure-connections-supported-viewer-protocols-ciphers.html#secure-connections-supported-ciphers">Supported
      * Protocols and Ciphers Between Viewers and CloudFront</a> in the <i>Amazon
      * CloudFront Developer Guide</i>.</p> <note> <p>On the CloudFront console, this
-     * setting is called <b>Security Policy</b>.</p> </note> <p>We recommend that you
-     * specify <code>TLSv1.2_2018</code> unless your viewers are using browsers or
-     * devices that don’t support TLSv1.2.</p> <p>When you’re using SNI only (you set
-     * <code>SSLSupportMethod</code> to <code>sni-only</code>), you must specify
-     * <code>TLSv1</code> or higher. </p> <p>If the distribution uses the CloudFront
-     * domain name such as <code>d111111abcdef8.cloudfront.net</code> (you set
-     * <code>CloudFrontDefaultCertificate</code> to <code>true</code>), CloudFront
+     * setting is called <b>Security Policy</b>.</p> </note> <p>When you’re using SNI
+     * only (you set <code>SSLSupportMethod</code> to <code>sni-only</code>), you must
+     * specify <code>TLSv1</code> or higher. </p> <p>If the distribution uses the
+     * CloudFront domain name such as <code>d111111abcdef8.cloudfront.net</code> (you
+     * set <code>CloudFrontDefaultCertificate</code> to <code>true</code>), CloudFront
      * automatically sets the security policy to <code>TLSv1</code> regardless of the
      * value that you set here.</p>
      */
@@ -450,13 +447,11 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/secure-connections-supported-viewer-protocols-ciphers.html#secure-connections-supported-ciphers">Supported
      * Protocols and Ciphers Between Viewers and CloudFront</a> in the <i>Amazon
      * CloudFront Developer Guide</i>.</p> <note> <p>On the CloudFront console, this
-     * setting is called <b>Security Policy</b>.</p> </note> <p>We recommend that you
-     * specify <code>TLSv1.2_2018</code> unless your viewers are using browsers or
-     * devices that don’t support TLSv1.2.</p> <p>When you’re using SNI only (you set
-     * <code>SSLSupportMethod</code> to <code>sni-only</code>), you must specify
-     * <code>TLSv1</code> or higher. </p> <p>If the distribution uses the CloudFront
-     * domain name such as <code>d111111abcdef8.cloudfront.net</code> (you set
-     * <code>CloudFrontDefaultCertificate</code> to <code>true</code>), CloudFront
+     * setting is called <b>Security Policy</b>.</p> </note> <p>When you’re using SNI
+     * only (you set <code>SSLSupportMethod</code> to <code>sni-only</code>), you must
+     * specify <code>TLSv1</code> or higher. </p> <p>If the distribution uses the
+     * CloudFront domain name such as <code>d111111abcdef8.cloudfront.net</code> (you
+     * set <code>CloudFrontDefaultCertificate</code> to <code>true</code>), CloudFront
      * automatically sets the security policy to <code>TLSv1</code> regardless of the
      * value that you set here.</p>
      */
@@ -475,13 +470,11 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/secure-connections-supported-viewer-protocols-ciphers.html#secure-connections-supported-ciphers">Supported
      * Protocols and Ciphers Between Viewers and CloudFront</a> in the <i>Amazon
      * CloudFront Developer Guide</i>.</p> <note> <p>On the CloudFront console, this
-     * setting is called <b>Security Policy</b>.</p> </note> <p>We recommend that you
-     * specify <code>TLSv1.2_2018</code> unless your viewers are using browsers or
-     * devices that don’t support TLSv1.2.</p> <p>When you’re using SNI only (you set
-     * <code>SSLSupportMethod</code> to <code>sni-only</code>), you must specify
-     * <code>TLSv1</code> or higher. </p> <p>If the distribution uses the CloudFront
-     * domain name such as <code>d111111abcdef8.cloudfront.net</code> (you set
-     * <code>CloudFrontDefaultCertificate</code> to <code>true</code>), CloudFront
+     * setting is called <b>Security Policy</b>.</p> </note> <p>When you’re using SNI
+     * only (you set <code>SSLSupportMethod</code> to <code>sni-only</code>), you must
+     * specify <code>TLSv1</code> or higher. </p> <p>If the distribution uses the
+     * CloudFront domain name such as <code>d111111abcdef8.cloudfront.net</code> (you
+     * set <code>CloudFrontDefaultCertificate</code> to <code>true</code>), CloudFront
      * automatically sets the security policy to <code>TLSv1</code> regardless of the
      * value that you set here.</p>
      */
@@ -500,13 +493,11 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/secure-connections-supported-viewer-protocols-ciphers.html#secure-connections-supported-ciphers">Supported
      * Protocols and Ciphers Between Viewers and CloudFront</a> in the <i>Amazon
      * CloudFront Developer Guide</i>.</p> <note> <p>On the CloudFront console, this
-     * setting is called <b>Security Policy</b>.</p> </note> <p>We recommend that you
-     * specify <code>TLSv1.2_2018</code> unless your viewers are using browsers or
-     * devices that don’t support TLSv1.2.</p> <p>When you’re using SNI only (you set
-     * <code>SSLSupportMethod</code> to <code>sni-only</code>), you must specify
-     * <code>TLSv1</code> or higher. </p> <p>If the distribution uses the CloudFront
-     * domain name such as <code>d111111abcdef8.cloudfront.net</code> (you set
-     * <code>CloudFrontDefaultCertificate</code> to <code>true</code>), CloudFront
+     * setting is called <b>Security Policy</b>.</p> </note> <p>When you’re using SNI
+     * only (you set <code>SSLSupportMethod</code> to <code>sni-only</code>), you must
+     * specify <code>TLSv1</code> or higher. </p> <p>If the distribution uses the
+     * CloudFront domain name such as <code>d111111abcdef8.cloudfront.net</code> (you
+     * set <code>CloudFrontDefaultCertificate</code> to <code>true</code>), CloudFront
      * automatically sets the security policy to <code>TLSv1</code> regardless of the
      * value that you set here.</p>
      */
@@ -525,13 +516,11 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/secure-connections-supported-viewer-protocols-ciphers.html#secure-connections-supported-ciphers">Supported
      * Protocols and Ciphers Between Viewers and CloudFront</a> in the <i>Amazon
      * CloudFront Developer Guide</i>.</p> <note> <p>On the CloudFront console, this
-     * setting is called <b>Security Policy</b>.</p> </note> <p>We recommend that you
-     * specify <code>TLSv1.2_2018</code> unless your viewers are using browsers or
-     * devices that don’t support TLSv1.2.</p> <p>When you’re using SNI only (you set
-     * <code>SSLSupportMethod</code> to <code>sni-only</code>), you must specify
-     * <code>TLSv1</code> or higher. </p> <p>If the distribution uses the CloudFront
-     * domain name such as <code>d111111abcdef8.cloudfront.net</code> (you set
-     * <code>CloudFrontDefaultCertificate</code> to <code>true</code>), CloudFront
+     * setting is called <b>Security Policy</b>.</p> </note> <p>When you’re using SNI
+     * only (you set <code>SSLSupportMethod</code> to <code>sni-only</code>), you must
+     * specify <code>TLSv1</code> or higher. </p> <p>If the distribution uses the
+     * CloudFront domain name such as <code>d111111abcdef8.cloudfront.net</code> (you
+     * set <code>CloudFrontDefaultCertificate</code> to <code>true</code>), CloudFront
      * automatically sets the security policy to <code>TLSv1</code> regardless of the
      * value that you set here.</p>
      */
@@ -550,13 +539,11 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/secure-connections-supported-viewer-protocols-ciphers.html#secure-connections-supported-ciphers">Supported
      * Protocols and Ciphers Between Viewers and CloudFront</a> in the <i>Amazon
      * CloudFront Developer Guide</i>.</p> <note> <p>On the CloudFront console, this
-     * setting is called <b>Security Policy</b>.</p> </note> <p>We recommend that you
-     * specify <code>TLSv1.2_2018</code> unless your viewers are using browsers or
-     * devices that don’t support TLSv1.2.</p> <p>When you’re using SNI only (you set
-     * <code>SSLSupportMethod</code> to <code>sni-only</code>), you must specify
-     * <code>TLSv1</code> or higher. </p> <p>If the distribution uses the CloudFront
-     * domain name such as <code>d111111abcdef8.cloudfront.net</code> (you set
-     * <code>CloudFrontDefaultCertificate</code> to <code>true</code>), CloudFront
+     * setting is called <b>Security Policy</b>.</p> </note> <p>When you’re using SNI
+     * only (you set <code>SSLSupportMethod</code> to <code>sni-only</code>), you must
+     * specify <code>TLSv1</code> or higher. </p> <p>If the distribution uses the
+     * CloudFront domain name such as <code>d111111abcdef8.cloudfront.net</code> (you
+     * set <code>CloudFrontDefaultCertificate</code> to <code>true</code>), CloudFront
      * automatically sets the security policy to <code>TLSv1</code> regardless of the
      * value that you set here.</p>
      */

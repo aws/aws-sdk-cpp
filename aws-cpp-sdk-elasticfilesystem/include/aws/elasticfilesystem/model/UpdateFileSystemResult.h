@@ -160,6 +160,70 @@ namespace Model
 
 
     /**
+     * <p>The Amazon Resource Name (ARN) for the EFS file system, in the format
+     * <code>arn:aws:elasticfilesystem:<i>region</i>:<i>account-id</i>:file-system/<i>file-system-id</i>
+     * </code>. Example with sample data:
+     * <code>arn:aws:elasticfilesystem:us-west-2:1111333322228888:file-system/fs-01234567</code>
+     * </p>
+     */
+    inline const Aws::String& GetFileSystemArn() const{ return m_fileSystemArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the EFS file system, in the format
+     * <code>arn:aws:elasticfilesystem:<i>region</i>:<i>account-id</i>:file-system/<i>file-system-id</i>
+     * </code>. Example with sample data:
+     * <code>arn:aws:elasticfilesystem:us-west-2:1111333322228888:file-system/fs-01234567</code>
+     * </p>
+     */
+    inline void SetFileSystemArn(const Aws::String& value) { m_fileSystemArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the EFS file system, in the format
+     * <code>arn:aws:elasticfilesystem:<i>region</i>:<i>account-id</i>:file-system/<i>file-system-id</i>
+     * </code>. Example with sample data:
+     * <code>arn:aws:elasticfilesystem:us-west-2:1111333322228888:file-system/fs-01234567</code>
+     * </p>
+     */
+    inline void SetFileSystemArn(Aws::String&& value) { m_fileSystemArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the EFS file system, in the format
+     * <code>arn:aws:elasticfilesystem:<i>region</i>:<i>account-id</i>:file-system/<i>file-system-id</i>
+     * </code>. Example with sample data:
+     * <code>arn:aws:elasticfilesystem:us-west-2:1111333322228888:file-system/fs-01234567</code>
+     * </p>
+     */
+    inline void SetFileSystemArn(const char* value) { m_fileSystemArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the EFS file system, in the format
+     * <code>arn:aws:elasticfilesystem:<i>region</i>:<i>account-id</i>:file-system/<i>file-system-id</i>
+     * </code>. Example with sample data:
+     * <code>arn:aws:elasticfilesystem:us-west-2:1111333322228888:file-system/fs-01234567</code>
+     * </p>
+     */
+    inline UpdateFileSystemResult& WithFileSystemArn(const Aws::String& value) { SetFileSystemArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the EFS file system, in the format
+     * <code>arn:aws:elasticfilesystem:<i>region</i>:<i>account-id</i>:file-system/<i>file-system-id</i>
+     * </code>. Example with sample data:
+     * <code>arn:aws:elasticfilesystem:us-west-2:1111333322228888:file-system/fs-01234567</code>
+     * </p>
+     */
+    inline UpdateFileSystemResult& WithFileSystemArn(Aws::String&& value) { SetFileSystemArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the EFS file system, in the format
+     * <code>arn:aws:elasticfilesystem:<i>region</i>:<i>account-id</i>:file-system/<i>file-system-id</i>
+     * </code>. Example with sample data:
+     * <code>arn:aws:elasticfilesystem:us-west-2:1111333322228888:file-system/fs-01234567</code>
+     * </p>
+     */
+    inline UpdateFileSystemResult& WithFileSystemArn(const char* value) { SetFileSystemArn(value); return *this;}
+
+
+    /**
      * <p>The time that the file system was created, in seconds (since
      * 1970-01-01T00:00:00Z).</p>
      */
@@ -585,6 +649,8 @@ namespace Model
     Aws::String m_creationToken;
 
     Aws::String m_fileSystemId;
+
+    Aws::String m_fileSystemArn;
 
     Aws::Utils::DateTime m_creationTime;
 

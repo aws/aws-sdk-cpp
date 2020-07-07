@@ -12,13 +12,22 @@ using namespace Aws::Glue::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetResourcePolicyRequest::GetResourcePolicyRequest()
+GetResourcePolicyRequest::GetResourcePolicyRequest() : 
+    m_resourceArnHasBeenSet(false)
 {
 }
 
 Aws::String GetResourcePolicyRequest::SerializePayload() const
 {
-  return "{}";
+  JsonValue payload;
+
+  if(m_resourceArnHasBeenSet)
+  {
+   payload.WithString("ResourceArn", m_resourceArn);
+
+  }
+
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection GetResourcePolicyRequest::GetRequestSpecificHeaders() const

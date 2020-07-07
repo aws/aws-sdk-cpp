@@ -452,6 +452,55 @@ namespace Model
      */
     inline MountTargetDescription& WithAvailabilityZoneName(const char* value) { SetAvailabilityZoneName(value); return *this;}
 
+
+    /**
+     * <p>The Virtual Private Cloud (VPC) ID that the mount target is configured
+     * in.</p>
+     */
+    inline const Aws::String& GetVpcId() const{ return m_vpcId; }
+
+    /**
+     * <p>The Virtual Private Cloud (VPC) ID that the mount target is configured
+     * in.</p>
+     */
+    inline bool VpcIdHasBeenSet() const { return m_vpcIdHasBeenSet; }
+
+    /**
+     * <p>The Virtual Private Cloud (VPC) ID that the mount target is configured
+     * in.</p>
+     */
+    inline void SetVpcId(const Aws::String& value) { m_vpcIdHasBeenSet = true; m_vpcId = value; }
+
+    /**
+     * <p>The Virtual Private Cloud (VPC) ID that the mount target is configured
+     * in.</p>
+     */
+    inline void SetVpcId(Aws::String&& value) { m_vpcIdHasBeenSet = true; m_vpcId = std::move(value); }
+
+    /**
+     * <p>The Virtual Private Cloud (VPC) ID that the mount target is configured
+     * in.</p>
+     */
+    inline void SetVpcId(const char* value) { m_vpcIdHasBeenSet = true; m_vpcId.assign(value); }
+
+    /**
+     * <p>The Virtual Private Cloud (VPC) ID that the mount target is configured
+     * in.</p>
+     */
+    inline MountTargetDescription& WithVpcId(const Aws::String& value) { SetVpcId(value); return *this;}
+
+    /**
+     * <p>The Virtual Private Cloud (VPC) ID that the mount target is configured
+     * in.</p>
+     */
+    inline MountTargetDescription& WithVpcId(Aws::String&& value) { SetVpcId(std::move(value)); return *this;}
+
+    /**
+     * <p>The Virtual Private Cloud (VPC) ID that the mount target is configured
+     * in.</p>
+     */
+    inline MountTargetDescription& WithVpcId(const char* value) { SetVpcId(value); return *this;}
+
   private:
 
     Aws::String m_ownerId;
@@ -480,6 +529,9 @@ namespace Model
 
     Aws::String m_availabilityZoneName;
     bool m_availabilityZoneNameHasBeenSet;
+
+    Aws::String m_vpcId;
+    bool m_vpcIdHasBeenSet;
   };
 
 } // namespace Model

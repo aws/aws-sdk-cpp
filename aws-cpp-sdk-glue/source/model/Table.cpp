@@ -37,7 +37,9 @@ Table::Table() :
     m_parametersHasBeenSet(false),
     m_createdByHasBeenSet(false),
     m_isRegisteredWithLakeFormation(false),
-    m_isRegisteredWithLakeFormationHasBeenSet(false)
+    m_isRegisteredWithLakeFormationHasBeenSet(false),
+    m_targetTableHasBeenSet(false),
+    m_catalogIdHasBeenSet(false)
 {
 }
 
@@ -60,7 +62,9 @@ Table::Table(JsonView jsonValue) :
     m_parametersHasBeenSet(false),
     m_createdByHasBeenSet(false),
     m_isRegisteredWithLakeFormation(false),
-    m_isRegisteredWithLakeFormationHasBeenSet(false)
+    m_isRegisteredWithLakeFormationHasBeenSet(false),
+    m_targetTableHasBeenSet(false),
+    m_catalogIdHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -192,6 +196,20 @@ Table& Table::operator =(JsonView jsonValue)
     m_isRegisteredWithLakeFormationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("TargetTable"))
+  {
+    m_targetTable = jsonValue.GetObject("TargetTable");
+
+    m_targetTableHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("CatalogId"))
+  {
+    m_catalogId = jsonValue.GetString("CatalogId");
+
+    m_catalogIdHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -304,6 +322,18 @@ JsonValue Table::Jsonize() const
   if(m_isRegisteredWithLakeFormationHasBeenSet)
   {
    payload.WithBool("IsRegisteredWithLakeFormation", m_isRegisteredWithLakeFormation);
+
+  }
+
+  if(m_targetTableHasBeenSet)
+  {
+   payload.WithObject("TargetTable", m_targetTable.Jsonize());
+
+  }
+
+  if(m_catalogIdHasBeenSet)
+  {
+   payload.WithString("CatalogId", m_catalogId);
 
   }
 

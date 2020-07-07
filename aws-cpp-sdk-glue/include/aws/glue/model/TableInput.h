@@ -10,6 +10,7 @@
 #include <aws/glue/model/StorageDescriptor.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/glue/model/TableIdentifier.h>
 #include <aws/glue/model/Column.h>
 #include <utility>
 
@@ -578,6 +579,43 @@ namespace Model
      */
     inline TableInput& AddParameters(const char* key, const char* value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
 
+
+    /**
+     * <p>A <code>TableIdentifier</code> structure that describes a target table for
+     * resource linking.</p>
+     */
+    inline const TableIdentifier& GetTargetTable() const{ return m_targetTable; }
+
+    /**
+     * <p>A <code>TableIdentifier</code> structure that describes a target table for
+     * resource linking.</p>
+     */
+    inline bool TargetTableHasBeenSet() const { return m_targetTableHasBeenSet; }
+
+    /**
+     * <p>A <code>TableIdentifier</code> structure that describes a target table for
+     * resource linking.</p>
+     */
+    inline void SetTargetTable(const TableIdentifier& value) { m_targetTableHasBeenSet = true; m_targetTable = value; }
+
+    /**
+     * <p>A <code>TableIdentifier</code> structure that describes a target table for
+     * resource linking.</p>
+     */
+    inline void SetTargetTable(TableIdentifier&& value) { m_targetTableHasBeenSet = true; m_targetTable = std::move(value); }
+
+    /**
+     * <p>A <code>TableIdentifier</code> structure that describes a target table for
+     * resource linking.</p>
+     */
+    inline TableInput& WithTargetTable(const TableIdentifier& value) { SetTargetTable(value); return *this;}
+
+    /**
+     * <p>A <code>TableIdentifier</code> structure that describes a target table for
+     * resource linking.</p>
+     */
+    inline TableInput& WithTargetTable(TableIdentifier&& value) { SetTargetTable(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -615,6 +653,9 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_parameters;
     bool m_parametersHasBeenSet;
+
+    TableIdentifier m_targetTable;
+    bool m_targetTableHasBeenSet;
   };
 
 } // namespace Model

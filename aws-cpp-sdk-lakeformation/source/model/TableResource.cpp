@@ -19,20 +19,31 @@ namespace Model
 {
 
 TableResource::TableResource() : 
+    m_catalogIdHasBeenSet(false),
     m_databaseNameHasBeenSet(false),
-    m_nameHasBeenSet(false)
+    m_nameHasBeenSet(false),
+    m_tableWildcardHasBeenSet(false)
 {
 }
 
 TableResource::TableResource(JsonView jsonValue) : 
+    m_catalogIdHasBeenSet(false),
     m_databaseNameHasBeenSet(false),
-    m_nameHasBeenSet(false)
+    m_nameHasBeenSet(false),
+    m_tableWildcardHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 TableResource& TableResource::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("CatalogId"))
+  {
+    m_catalogId = jsonValue.GetString("CatalogId");
+
+    m_catalogIdHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("DatabaseName"))
   {
     m_databaseName = jsonValue.GetString("DatabaseName");
@@ -47,12 +58,25 @@ TableResource& TableResource::operator =(JsonView jsonValue)
     m_nameHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("TableWildcard"))
+  {
+    m_tableWildcard = jsonValue.GetObject("TableWildcard");
+
+    m_tableWildcardHasBeenSet = true;
+  }
+
   return *this;
 }
 
 JsonValue TableResource::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_catalogIdHasBeenSet)
+  {
+   payload.WithString("CatalogId", m_catalogId);
+
+  }
 
   if(m_databaseNameHasBeenSet)
   {
@@ -63,6 +87,12 @@ JsonValue TableResource::Jsonize() const
   if(m_nameHasBeenSet)
   {
    payload.WithString("Name", m_name);
+
+  }
+
+  if(m_tableWildcardHasBeenSet)
+  {
+   payload.WithObject("TableWildcard", m_tableWildcard.Jsonize());
 
   }
 

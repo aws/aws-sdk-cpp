@@ -45,7 +45,11 @@ SMBFileShareInfo::SMBFileShareInfo() :
     m_invalidUserListHasBeenSet(false),
     m_auditDestinationARNHasBeenSet(false),
     m_authenticationHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_caseSensitivity(CaseSensitivity::NOT_SET),
+    m_caseSensitivityHasBeenSet(false),
+    m_tagsHasBeenSet(false),
+    m_fileShareNameHasBeenSet(false),
+    m_cacheAttributesHasBeenSet(false)
 {
 }
 
@@ -76,7 +80,11 @@ SMBFileShareInfo::SMBFileShareInfo(JsonView jsonValue) :
     m_invalidUserListHasBeenSet(false),
     m_auditDestinationARNHasBeenSet(false),
     m_authenticationHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_caseSensitivity(CaseSensitivity::NOT_SET),
+    m_caseSensitivityHasBeenSet(false),
+    m_tagsHasBeenSet(false),
+    m_fileShareNameHasBeenSet(false),
+    m_cacheAttributesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -232,6 +240,13 @@ SMBFileShareInfo& SMBFileShareInfo::operator =(JsonView jsonValue)
     m_authenticationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("CaseSensitivity"))
+  {
+    m_caseSensitivity = CaseSensitivityMapper::GetCaseSensitivityForName(jsonValue.GetString("CaseSensitivity"));
+
+    m_caseSensitivityHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("Tags"))
   {
     Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
@@ -240,6 +255,20 @@ SMBFileShareInfo& SMBFileShareInfo::operator =(JsonView jsonValue)
       m_tags.push_back(tagsJsonList[tagsIndex].AsObject());
     }
     m_tagsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("FileShareName"))
+  {
+    m_fileShareName = jsonValue.GetString("FileShareName");
+
+    m_fileShareNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("CacheAttributes"))
+  {
+    m_cacheAttributes = jsonValue.GetObject("CacheAttributes");
+
+    m_cacheAttributesHasBeenSet = true;
   }
 
   return *this;
@@ -383,6 +412,11 @@ JsonValue SMBFileShareInfo::Jsonize() const
 
   }
 
+  if(m_caseSensitivityHasBeenSet)
+  {
+   payload.WithString("CaseSensitivity", CaseSensitivityMapper::GetNameForCaseSensitivity(m_caseSensitivity));
+  }
+
   if(m_tagsHasBeenSet)
   {
    Array<JsonValue> tagsJsonList(m_tags.size());
@@ -391,6 +425,18 @@ JsonValue SMBFileShareInfo::Jsonize() const
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
    }
    payload.WithArray("Tags", std::move(tagsJsonList));
+
+  }
+
+  if(m_fileShareNameHasBeenSet)
+  {
+   payload.WithString("FileShareName", m_fileShareName);
+
+  }
+
+  if(m_cacheAttributesHasBeenSet)
+  {
+   payload.WithObject("CacheAttributes", m_cacheAttributes.Jsonize());
 
   }
 

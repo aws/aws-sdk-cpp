@@ -24,7 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>The AWS Lake Formation principal.</p><p><h3>See Also:</h3>   <a
+   * <p>The AWS Lake Formation principal. Supported principals are IAM users or IAM
+   * roles.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/DataLakePrincipal">AWS
    * API Reference</a></p>
    */

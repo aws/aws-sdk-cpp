@@ -21,14 +21,16 @@ namespace Model
 DataLakeSettings::DataLakeSettings() : 
     m_dataLakeAdminsHasBeenSet(false),
     m_createDatabaseDefaultPermissionsHasBeenSet(false),
-    m_createTableDefaultPermissionsHasBeenSet(false)
+    m_createTableDefaultPermissionsHasBeenSet(false),
+    m_trustedResourceOwnersHasBeenSet(false)
 {
 }
 
 DataLakeSettings::DataLakeSettings(JsonView jsonValue) : 
     m_dataLakeAdminsHasBeenSet(false),
     m_createDatabaseDefaultPermissionsHasBeenSet(false),
-    m_createTableDefaultPermissionsHasBeenSet(false)
+    m_createTableDefaultPermissionsHasBeenSet(false),
+    m_trustedResourceOwnersHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -63,6 +65,16 @@ DataLakeSettings& DataLakeSettings::operator =(JsonView jsonValue)
       m_createTableDefaultPermissions.push_back(createTableDefaultPermissionsJsonList[createTableDefaultPermissionsIndex].AsObject());
     }
     m_createTableDefaultPermissionsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("TrustedResourceOwners"))
+  {
+    Array<JsonView> trustedResourceOwnersJsonList = jsonValue.GetArray("TrustedResourceOwners");
+    for(unsigned trustedResourceOwnersIndex = 0; trustedResourceOwnersIndex < trustedResourceOwnersJsonList.GetLength(); ++trustedResourceOwnersIndex)
+    {
+      m_trustedResourceOwners.push_back(trustedResourceOwnersJsonList[trustedResourceOwnersIndex].AsString());
+    }
+    m_trustedResourceOwnersHasBeenSet = true;
   }
 
   return *this;
@@ -102,6 +114,17 @@ JsonValue DataLakeSettings::Jsonize() const
      createTableDefaultPermissionsJsonList[createTableDefaultPermissionsIndex].AsObject(m_createTableDefaultPermissions[createTableDefaultPermissionsIndex].Jsonize());
    }
    payload.WithArray("CreateTableDefaultPermissions", std::move(createTableDefaultPermissionsJsonList));
+
+  }
+
+  if(m_trustedResourceOwnersHasBeenSet)
+  {
+   Array<JsonValue> trustedResourceOwnersJsonList(m_trustedResourceOwners.size());
+   for(unsigned trustedResourceOwnersIndex = 0; trustedResourceOwnersIndex < trustedResourceOwnersJsonList.GetLength(); ++trustedResourceOwnersIndex)
+   {
+     trustedResourceOwnersJsonList[trustedResourceOwnersIndex].AsString(m_trustedResourceOwners[trustedResourceOwnersIndex]);
+   }
+   payload.WithArray("TrustedResourceOwners", std::move(trustedResourceOwnersJsonList));
 
   }
 

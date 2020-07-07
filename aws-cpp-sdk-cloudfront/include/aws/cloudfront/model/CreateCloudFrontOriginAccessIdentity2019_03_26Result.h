@@ -66,51 +66,37 @@ namespace Model
 
 
     /**
-     * <p>The fully qualified URI of the new origin access identity just created. For
-     * example:
-     * <code>https://cloudfront.amazonaws.com/2010-11-01/origin-access-identity/cloudfront/E74FTE3AJFJ256A</code>.</p>
+     * <p>The fully qualified URI of the new origin access identity just created.</p>
      */
     inline const Aws::String& GetLocation() const{ return m_location; }
 
     /**
-     * <p>The fully qualified URI of the new origin access identity just created. For
-     * example:
-     * <code>https://cloudfront.amazonaws.com/2010-11-01/origin-access-identity/cloudfront/E74FTE3AJFJ256A</code>.</p>
+     * <p>The fully qualified URI of the new origin access identity just created.</p>
      */
     inline void SetLocation(const Aws::String& value) { m_location = value; }
 
     /**
-     * <p>The fully qualified URI of the new origin access identity just created. For
-     * example:
-     * <code>https://cloudfront.amazonaws.com/2010-11-01/origin-access-identity/cloudfront/E74FTE3AJFJ256A</code>.</p>
+     * <p>The fully qualified URI of the new origin access identity just created.</p>
      */
     inline void SetLocation(Aws::String&& value) { m_location = std::move(value); }
 
     /**
-     * <p>The fully qualified URI of the new origin access identity just created. For
-     * example:
-     * <code>https://cloudfront.amazonaws.com/2010-11-01/origin-access-identity/cloudfront/E74FTE3AJFJ256A</code>.</p>
+     * <p>The fully qualified URI of the new origin access identity just created.</p>
      */
     inline void SetLocation(const char* value) { m_location.assign(value); }
 
     /**
-     * <p>The fully qualified URI of the new origin access identity just created. For
-     * example:
-     * <code>https://cloudfront.amazonaws.com/2010-11-01/origin-access-identity/cloudfront/E74FTE3AJFJ256A</code>.</p>
+     * <p>The fully qualified URI of the new origin access identity just created.</p>
      */
     inline CreateCloudFrontOriginAccessIdentity2019_03_26Result& WithLocation(const Aws::String& value) { SetLocation(value); return *this;}
 
     /**
-     * <p>The fully qualified URI of the new origin access identity just created. For
-     * example:
-     * <code>https://cloudfront.amazonaws.com/2010-11-01/origin-access-identity/cloudfront/E74FTE3AJFJ256A</code>.</p>
+     * <p>The fully qualified URI of the new origin access identity just created.</p>
      */
     inline CreateCloudFrontOriginAccessIdentity2019_03_26Result& WithLocation(Aws::String&& value) { SetLocation(std::move(value)); return *this;}
 
     /**
-     * <p>The fully qualified URI of the new origin access identity just created. For
-     * example:
-     * <code>https://cloudfront.amazonaws.com/2010-11-01/origin-access-identity/cloudfront/E74FTE3AJFJ256A</code>.</p>
+     * <p>The fully qualified URI of the new origin access identity just created.</p>
      */
     inline CreateCloudFrontOriginAccessIdentity2019_03_26Result& WithLocation(const char* value) { SetLocation(value); return *this;}
 

@@ -11,6 +11,7 @@
 #include <aws/elasticfilesystem/model/AccessPointAlreadyExists.h>
 #include <aws/elasticfilesystem/model/NoFreeAddressesInSubnet.h>
 #include <aws/elasticfilesystem/model/DependencyTimeout.h>
+#include <aws/elasticfilesystem/model/ValidationException.h>
 #include <aws/elasticfilesystem/model/InternalServerError.h>
 #include <aws/elasticfilesystem/model/InsufficientThroughputCapacity.h>
 #include <aws/elasticfilesystem/model/MountTargetNotFound.h>
@@ -70,6 +71,12 @@ template<> AWS_EFS_API DependencyTimeout EFSError::GetModeledError()
 {
   assert(this->GetErrorType() == EFSErrors::DEPENDENCY_TIMEOUT);
   return DependencyTimeout(this->GetJsonPayload().View());
+}
+
+template<> AWS_EFS_API ValidationException EFSError::GetModeledError()
+{
+  assert(this->GetErrorType() == EFSErrors::VALIDATION);
+  return ValidationException(this->GetJsonPayload().View());
 }
 
 template<> AWS_EFS_API InternalServerError EFSError::GetModeledError()
