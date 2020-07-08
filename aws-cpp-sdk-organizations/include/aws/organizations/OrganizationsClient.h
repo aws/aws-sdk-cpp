@@ -430,6 +430,8 @@ namespace Model
          * account. How the policy affects accounts depends on the type of policy. Refer to
          * the <i>AWS Organizations User Guide</i> for information about each policy
          * type:</p> <ul> <li> <p> <a
+         * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">AISERVICES_OPT_OUT_POLICY</a>
+         * </p> </li> <li> <p> <a
          * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">BACKUP_POLICY</a>
          * </p> </li> <li> <p> <a
          * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">SERVICE_CONTROL_POLICY</a>
@@ -447,6 +449,8 @@ namespace Model
          * account. How the policy affects accounts depends on the type of policy. Refer to
          * the <i>AWS Organizations User Guide</i> for information about each policy
          * type:</p> <ul> <li> <p> <a
+         * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">AISERVICES_OPT_OUT_POLICY</a>
+         * </p> </li> <li> <p> <a
          * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">BACKUP_POLICY</a>
          * </p> </li> <li> <p> <a
          * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">SERVICE_CONTROL_POLICY</a>
@@ -466,6 +470,8 @@ namespace Model
          * account. How the policy affects accounts depends on the type of policy. Refer to
          * the <i>AWS Organizations User Guide</i> for information about each policy
          * type:</p> <ul> <li> <p> <a
+         * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">AISERVICES_OPT_OUT_POLICY</a>
+         * </p> </li> <li> <p> <a
          * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">BACKUP_POLICY</a>
          * </p> </li> <li> <p> <a
          * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">SERVICE_CONTROL_POLICY</a>

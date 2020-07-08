@@ -645,24 +645,26 @@ namespace Model
         virtual void GetReservationUtilizationAsync(const Model::GetReservationUtilizationRequest& request, const GetReservationUtilizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates recommendations that helps you save cost by identifying idle and
+         * <p>Creates recommendations that help you save cost by identifying idle and
          * underutilized Amazon EC2 instances.</p> <p>Recommendations are generated to
          * either downsize or terminate instances, along with providing savings detail and
          * metrics. For details on calculation and function, see <a
-         * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/ce-what-is.html">Optimizing
-         * Your Cost with Rightsizing Recommendations</a>.</p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/ce-rightsizing.html">Optimizing
+         * Your Cost with Rightsizing Recommendations</a> in the <i>AWS Billing and Cost
+         * Management User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetRightsizingRecommendation">AWS
          * API Reference</a></p>
          */
         virtual Model::GetRightsizingRecommendationOutcome GetRightsizingRecommendation(const Model::GetRightsizingRecommendationRequest& request) const;
 
         /**
-         * <p>Creates recommendations that helps you save cost by identifying idle and
+         * <p>Creates recommendations that help you save cost by identifying idle and
          * underutilized Amazon EC2 instances.</p> <p>Recommendations are generated to
          * either downsize or terminate instances, along with providing savings detail and
          * metrics. For details on calculation and function, see <a
-         * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/ce-what-is.html">Optimizing
-         * Your Cost with Rightsizing Recommendations</a>.</p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/ce-rightsizing.html">Optimizing
+         * Your Cost with Rightsizing Recommendations</a> in the <i>AWS Billing and Cost
+         * Management User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetRightsizingRecommendation">AWS
          * API Reference</a></p>
          *
@@ -671,12 +673,13 @@ namespace Model
         virtual Model::GetRightsizingRecommendationOutcomeCallable GetRightsizingRecommendationCallable(const Model::GetRightsizingRecommendationRequest& request) const;
 
         /**
-         * <p>Creates recommendations that helps you save cost by identifying idle and
+         * <p>Creates recommendations that help you save cost by identifying idle and
          * underutilized Amazon EC2 instances.</p> <p>Recommendations are generated to
          * either downsize or terminate instances, along with providing savings detail and
          * metrics. For details on calculation and function, see <a
-         * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/ce-what-is.html">Optimizing
-         * Your Cost with Rightsizing Recommendations</a>.</p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/ce-rightsizing.html">Optimizing
+         * Your Cost with Rightsizing Recommendations</a> in the <i>AWS Billing and Cost
+         * Management User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetRightsizingRecommendation">AWS
          * API Reference</a></p>
          *

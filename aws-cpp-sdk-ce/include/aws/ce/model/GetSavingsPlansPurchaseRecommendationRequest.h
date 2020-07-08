@@ -72,37 +72,37 @@ namespace Model
 
 
     /**
-     * <p>The savings plan recommendation term used to generated these
+     * <p>The savings plan recommendation term used to generate these
      * recommendations.</p>
      */
     inline const TermInYears& GetTermInYears() const{ return m_termInYears; }
 
     /**
-     * <p>The savings plan recommendation term used to generated these
+     * <p>The savings plan recommendation term used to generate these
      * recommendations.</p>
      */
     inline bool TermInYearsHasBeenSet() const { return m_termInYearsHasBeenSet; }
 
     /**
-     * <p>The savings plan recommendation term used to generated these
+     * <p>The savings plan recommendation term used to generate these
      * recommendations.</p>
      */
     inline void SetTermInYears(const TermInYears& value) { m_termInYearsHasBeenSet = true; m_termInYears = value; }
 
     /**
-     * <p>The savings plan recommendation term used to generated these
+     * <p>The savings plan recommendation term used to generate these
      * recommendations.</p>
      */
     inline void SetTermInYears(TermInYears&& value) { m_termInYearsHasBeenSet = true; m_termInYears = std::move(value); }
 
     /**
-     * <p>The savings plan recommendation term used to generated these
+     * <p>The savings plan recommendation term used to generate these
      * recommendations.</p>
      */
     inline GetSavingsPlansPurchaseRecommendationRequest& WithTermInYears(const TermInYears& value) { SetTermInYears(value); return *this;}
 
     /**
-     * <p>The savings plan recommendation term used to generated these
+     * <p>The savings plan recommendation term used to generate these
      * recommendations.</p>
      */
     inline GetSavingsPlansPurchaseRecommendationRequest& WithTermInYears(TermInYears&& value) { SetTermInYears(std::move(value)); return *this;}

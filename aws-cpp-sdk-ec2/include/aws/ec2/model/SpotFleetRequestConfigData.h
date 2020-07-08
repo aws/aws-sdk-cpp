@@ -362,7 +362,7 @@ namespace Model
      * role that grants the Spot Fleet the permission to request, launch, terminate,
      * and tag instances on your behalf. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-requests.html#spot-fleet-prerequisites">Spot
-     * Fleet Prerequisites</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
+     * Fleet prerequisites</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
      * Spot Fleet can terminate Spot Instances on your behalf when you cancel its Spot
      * Fleet request using <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CancelSpotFleetRequests">CancelSpotFleetRequests</a>
@@ -376,7 +376,7 @@ namespace Model
      * role that grants the Spot Fleet the permission to request, launch, terminate,
      * and tag instances on your behalf. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-requests.html#spot-fleet-prerequisites">Spot
-     * Fleet Prerequisites</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
+     * Fleet prerequisites</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
      * Spot Fleet can terminate Spot Instances on your behalf when you cancel its Spot
      * Fleet request using <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CancelSpotFleetRequests">CancelSpotFleetRequests</a>
@@ -390,7 +390,7 @@ namespace Model
      * role that grants the Spot Fleet the permission to request, launch, terminate,
      * and tag instances on your behalf. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-requests.html#spot-fleet-prerequisites">Spot
-     * Fleet Prerequisites</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
+     * Fleet prerequisites</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
      * Spot Fleet can terminate Spot Instances on your behalf when you cancel its Spot
      * Fleet request using <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CancelSpotFleetRequests">CancelSpotFleetRequests</a>
@@ -404,7 +404,7 @@ namespace Model
      * role that grants the Spot Fleet the permission to request, launch, terminate,
      * and tag instances on your behalf. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-requests.html#spot-fleet-prerequisites">Spot
-     * Fleet Prerequisites</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
+     * Fleet prerequisites</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
      * Spot Fleet can terminate Spot Instances on your behalf when you cancel its Spot
      * Fleet request using <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CancelSpotFleetRequests">CancelSpotFleetRequests</a>
@@ -418,7 +418,7 @@ namespace Model
      * role that grants the Spot Fleet the permission to request, launch, terminate,
      * and tag instances on your behalf. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-requests.html#spot-fleet-prerequisites">Spot
-     * Fleet Prerequisites</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
+     * Fleet prerequisites</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
      * Spot Fleet can terminate Spot Instances on your behalf when you cancel its Spot
      * Fleet request using <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CancelSpotFleetRequests">CancelSpotFleetRequests</a>
@@ -432,7 +432,7 @@ namespace Model
      * role that grants the Spot Fleet the permission to request, launch, terminate,
      * and tag instances on your behalf. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-requests.html#spot-fleet-prerequisites">Spot
-     * Fleet Prerequisites</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
+     * Fleet prerequisites</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
      * Spot Fleet can terminate Spot Instances on your behalf when you cancel its Spot
      * Fleet request using <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CancelSpotFleetRequests">CancelSpotFleetRequests</a>
@@ -446,7 +446,7 @@ namespace Model
      * role that grants the Spot Fleet the permission to request, launch, terminate,
      * and tag instances on your behalf. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-requests.html#spot-fleet-prerequisites">Spot
-     * Fleet Prerequisites</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
+     * Fleet prerequisites</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
      * Spot Fleet can terminate Spot Instances on your behalf when you cancel its Spot
      * Fleet request using <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CancelSpotFleetRequests">CancelSpotFleetRequests</a>
@@ -460,7 +460,7 @@ namespace Model
      * role that grants the Spot Fleet the permission to request, launch, terminate,
      * and tag instances on your behalf. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-requests.html#spot-fleet-prerequisites">Spot
-     * Fleet Prerequisites</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
+     * Fleet prerequisites</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
      * Spot Fleet can terminate Spot Instances on your behalf when you cancel its Spot
      * Fleet request using <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CancelSpotFleetRequests">CancelSpotFleetRequests</a>

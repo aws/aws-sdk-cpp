@@ -553,7 +553,7 @@ namespace Model
      * <p>The state of the Spot Instance request. Spot status information helps track
      * your Spot Instance requests. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html">Spot
-     * Status</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+     * status</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      */
     inline const SpotInstanceState& GetState() const{ return m_state; }
 
@@ -561,7 +561,7 @@ namespace Model
      * <p>The state of the Spot Instance request. Spot status information helps track
      * your Spot Instance requests. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html">Spot
-     * Status</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+     * status</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      */
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
 
@@ -569,7 +569,7 @@ namespace Model
      * <p>The state of the Spot Instance request. Spot status information helps track
      * your Spot Instance requests. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html">Spot
-     * Status</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+     * status</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      */
     inline void SetState(const SpotInstanceState& value) { m_stateHasBeenSet = true; m_state = value; }
 
@@ -577,7 +577,7 @@ namespace Model
      * <p>The state of the Spot Instance request. Spot status information helps track
      * your Spot Instance requests. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html">Spot
-     * Status</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+     * status</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      */
     inline void SetState(SpotInstanceState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
 
@@ -585,7 +585,7 @@ namespace Model
      * <p>The state of the Spot Instance request. Spot status information helps track
      * your Spot Instance requests. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html">Spot
-     * Status</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+     * status</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      */
     inline SpotInstanceRequest& WithState(const SpotInstanceState& value) { SetState(value); return *this;}
 
@@ -593,7 +593,7 @@ namespace Model
      * <p>The state of the Spot Instance request. Spot status information helps track
      * your Spot Instance requests. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html">Spot
-     * Status</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+     * status</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      */
     inline SpotInstanceRequest& WithState(SpotInstanceState&& value) { SetState(std::move(value)); return *this;}
 

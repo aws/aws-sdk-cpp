@@ -80,42 +80,42 @@ namespace Model
 
 
     /**
-     * <p> The time stamp for when Amazon Web Services made this recommendation.</p>
+     * <p> The timestamp for when Amazon Web Services made this recommendation.</p>
      */
     inline const Aws::String& GetGenerationTimestamp() const{ return m_generationTimestamp; }
 
     /**
-     * <p> The time stamp for when Amazon Web Services made this recommendation.</p>
+     * <p> The timestamp for when Amazon Web Services made this recommendation.</p>
      */
     inline bool GenerationTimestampHasBeenSet() const { return m_generationTimestampHasBeenSet; }
 
     /**
-     * <p> The time stamp for when Amazon Web Services made this recommendation.</p>
+     * <p> The timestamp for when Amazon Web Services made this recommendation.</p>
      */
     inline void SetGenerationTimestamp(const Aws::String& value) { m_generationTimestampHasBeenSet = true; m_generationTimestamp = value; }
 
     /**
-     * <p> The time stamp for when Amazon Web Services made this recommendation.</p>
+     * <p> The timestamp for when Amazon Web Services made this recommendation.</p>
      */
     inline void SetGenerationTimestamp(Aws::String&& value) { m_generationTimestampHasBeenSet = true; m_generationTimestamp = std::move(value); }
 
     /**
-     * <p> The time stamp for when Amazon Web Services made this recommendation.</p>
+     * <p> The timestamp for when Amazon Web Services made this recommendation.</p>
      */
     inline void SetGenerationTimestamp(const char* value) { m_generationTimestampHasBeenSet = true; m_generationTimestamp.assign(value); }
 
     /**
-     * <p> The time stamp for when Amazon Web Services made this recommendation.</p>
+     * <p> The timestamp for when Amazon Web Services made this recommendation.</p>
      */
     inline RightsizingRecommendationMetadata& WithGenerationTimestamp(const Aws::String& value) { SetGenerationTimestamp(value); return *this;}
 
     /**
-     * <p> The time stamp for when Amazon Web Services made this recommendation.</p>
+     * <p> The timestamp for when Amazon Web Services made this recommendation.</p>
      */
     inline RightsizingRecommendationMetadata& WithGenerationTimestamp(Aws::String&& value) { SetGenerationTimestamp(std::move(value)); return *this;}
 
     /**
-     * <p> The time stamp for when Amazon Web Services made this recommendation.</p>
+     * <p> The timestamp for when Amazon Web Services made this recommendation.</p>
      */
     inline RightsizingRecommendationMetadata& WithGenerationTimestamp(const char* value) { SetGenerationTimestamp(value); return *this;}
 

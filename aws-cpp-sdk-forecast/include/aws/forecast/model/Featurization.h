@@ -47,73 +47,89 @@ namespace Model
 
     /**
      * <p>The name of the schema attribute that specifies the data field to be
-     * featurized. Only the <code>target</code> field of the
-     * <code>TARGET_TIME_SERIES</code> dataset type is supported. For example, for the
-     * <code>RETAIL</code> domain, the target is <code>demand</code>, and for the
-     * <code>CUSTOM</code> domain, the target is <code>target_value</code>.</p>
+     * featurized. Amazon Forecast supports the target field of the
+     * <code>TARGET_TIME_SERIES</code> and the <code>RELATED_TIME_SERIES</code>
+     * datasets. For example, for the <code>RETAIL</code> domain, the target is
+     * <code>demand</code>, and for the <code>CUSTOM</code> domain, the target is
+     * <code>target_value</code>. For more information, see
+     * <a>howitworks-missing-values</a>.</p>
      */
     inline const Aws::String& GetAttributeName() const{ return m_attributeName; }
 
     /**
      * <p>The name of the schema attribute that specifies the data field to be
-     * featurized. Only the <code>target</code> field of the
-     * <code>TARGET_TIME_SERIES</code> dataset type is supported. For example, for the
-     * <code>RETAIL</code> domain, the target is <code>demand</code>, and for the
-     * <code>CUSTOM</code> domain, the target is <code>target_value</code>.</p>
+     * featurized. Amazon Forecast supports the target field of the
+     * <code>TARGET_TIME_SERIES</code> and the <code>RELATED_TIME_SERIES</code>
+     * datasets. For example, for the <code>RETAIL</code> domain, the target is
+     * <code>demand</code>, and for the <code>CUSTOM</code> domain, the target is
+     * <code>target_value</code>. For more information, see
+     * <a>howitworks-missing-values</a>.</p>
      */
     inline bool AttributeNameHasBeenSet() const { return m_attributeNameHasBeenSet; }
 
     /**
      * <p>The name of the schema attribute that specifies the data field to be
-     * featurized. Only the <code>target</code> field of the
-     * <code>TARGET_TIME_SERIES</code> dataset type is supported. For example, for the
-     * <code>RETAIL</code> domain, the target is <code>demand</code>, and for the
-     * <code>CUSTOM</code> domain, the target is <code>target_value</code>.</p>
+     * featurized. Amazon Forecast supports the target field of the
+     * <code>TARGET_TIME_SERIES</code> and the <code>RELATED_TIME_SERIES</code>
+     * datasets. For example, for the <code>RETAIL</code> domain, the target is
+     * <code>demand</code>, and for the <code>CUSTOM</code> domain, the target is
+     * <code>target_value</code>. For more information, see
+     * <a>howitworks-missing-values</a>.</p>
      */
     inline void SetAttributeName(const Aws::String& value) { m_attributeNameHasBeenSet = true; m_attributeName = value; }
 
     /**
      * <p>The name of the schema attribute that specifies the data field to be
-     * featurized. Only the <code>target</code> field of the
-     * <code>TARGET_TIME_SERIES</code> dataset type is supported. For example, for the
-     * <code>RETAIL</code> domain, the target is <code>demand</code>, and for the
-     * <code>CUSTOM</code> domain, the target is <code>target_value</code>.</p>
+     * featurized. Amazon Forecast supports the target field of the
+     * <code>TARGET_TIME_SERIES</code> and the <code>RELATED_TIME_SERIES</code>
+     * datasets. For example, for the <code>RETAIL</code> domain, the target is
+     * <code>demand</code>, and for the <code>CUSTOM</code> domain, the target is
+     * <code>target_value</code>. For more information, see
+     * <a>howitworks-missing-values</a>.</p>
      */
     inline void SetAttributeName(Aws::String&& value) { m_attributeNameHasBeenSet = true; m_attributeName = std::move(value); }
 
     /**
      * <p>The name of the schema attribute that specifies the data field to be
-     * featurized. Only the <code>target</code> field of the
-     * <code>TARGET_TIME_SERIES</code> dataset type is supported. For example, for the
-     * <code>RETAIL</code> domain, the target is <code>demand</code>, and for the
-     * <code>CUSTOM</code> domain, the target is <code>target_value</code>.</p>
+     * featurized. Amazon Forecast supports the target field of the
+     * <code>TARGET_TIME_SERIES</code> and the <code>RELATED_TIME_SERIES</code>
+     * datasets. For example, for the <code>RETAIL</code> domain, the target is
+     * <code>demand</code>, and for the <code>CUSTOM</code> domain, the target is
+     * <code>target_value</code>. For more information, see
+     * <a>howitworks-missing-values</a>.</p>
      */
     inline void SetAttributeName(const char* value) { m_attributeNameHasBeenSet = true; m_attributeName.assign(value); }
 
     /**
      * <p>The name of the schema attribute that specifies the data field to be
-     * featurized. Only the <code>target</code> field of the
-     * <code>TARGET_TIME_SERIES</code> dataset type is supported. For example, for the
-     * <code>RETAIL</code> domain, the target is <code>demand</code>, and for the
-     * <code>CUSTOM</code> domain, the target is <code>target_value</code>.</p>
+     * featurized. Amazon Forecast supports the target field of the
+     * <code>TARGET_TIME_SERIES</code> and the <code>RELATED_TIME_SERIES</code>
+     * datasets. For example, for the <code>RETAIL</code> domain, the target is
+     * <code>demand</code>, and for the <code>CUSTOM</code> domain, the target is
+     * <code>target_value</code>. For more information, see
+     * <a>howitworks-missing-values</a>.</p>
      */
     inline Featurization& WithAttributeName(const Aws::String& value) { SetAttributeName(value); return *this;}
 
     /**
      * <p>The name of the schema attribute that specifies the data field to be
-     * featurized. Only the <code>target</code> field of the
-     * <code>TARGET_TIME_SERIES</code> dataset type is supported. For example, for the
-     * <code>RETAIL</code> domain, the target is <code>demand</code>, and for the
-     * <code>CUSTOM</code> domain, the target is <code>target_value</code>.</p>
+     * featurized. Amazon Forecast supports the target field of the
+     * <code>TARGET_TIME_SERIES</code> and the <code>RELATED_TIME_SERIES</code>
+     * datasets. For example, for the <code>RETAIL</code> domain, the target is
+     * <code>demand</code>, and for the <code>CUSTOM</code> domain, the target is
+     * <code>target_value</code>. For more information, see
+     * <a>howitworks-missing-values</a>.</p>
      */
     inline Featurization& WithAttributeName(Aws::String&& value) { SetAttributeName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the schema attribute that specifies the data field to be
-     * featurized. Only the <code>target</code> field of the
-     * <code>TARGET_TIME_SERIES</code> dataset type is supported. For example, for the
-     * <code>RETAIL</code> domain, the target is <code>demand</code>, and for the
-     * <code>CUSTOM</code> domain, the target is <code>target_value</code>.</p>
+     * featurized. Amazon Forecast supports the target field of the
+     * <code>TARGET_TIME_SERIES</code> and the <code>RELATED_TIME_SERIES</code>
+     * datasets. For example, for the <code>RETAIL</code> domain, the target is
+     * <code>demand</code>, and for the <code>CUSTOM</code> domain, the target is
+     * <code>target_value</code>. For more information, see
+     * <a>howitworks-missing-values</a>.</p>
      */
     inline Featurization& WithAttributeName(const char* value) { SetAttributeName(value); return *this;}
 

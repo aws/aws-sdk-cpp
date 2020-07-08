@@ -55,6 +55,8 @@ namespace Model
      * (instance type, platform, Availability Zone).</p> </li> <li> <p>
      * <code>none</code> - The instance avoids running in a Capacity Reservation even
      * if one is available. The instance runs as an On-Demand Instance.</p> </li> </ul>
+     * <p>When <code>CapacityReservationPreference</code> is not specified, it defaults
+     * to <code>open</code>.</p>
      */
     inline const CapacityReservationPreference& GetCapacityReservationPreference() const{ return m_capacityReservationPreference; }
 
@@ -65,6 +67,8 @@ namespace Model
      * (instance type, platform, Availability Zone).</p> </li> <li> <p>
      * <code>none</code> - The instance avoids running in a Capacity Reservation even
      * if one is available. The instance runs as an On-Demand Instance.</p> </li> </ul>
+     * <p>When <code>CapacityReservationPreference</code> is not specified, it defaults
+     * to <code>open</code>.</p>
      */
     inline bool CapacityReservationPreferenceHasBeenSet() const { return m_capacityReservationPreferenceHasBeenSet; }
 
@@ -75,6 +79,8 @@ namespace Model
      * (instance type, platform, Availability Zone).</p> </li> <li> <p>
      * <code>none</code> - The instance avoids running in a Capacity Reservation even
      * if one is available. The instance runs as an On-Demand Instance.</p> </li> </ul>
+     * <p>When <code>CapacityReservationPreference</code> is not specified, it defaults
+     * to <code>open</code>.</p>
      */
     inline void SetCapacityReservationPreference(const CapacityReservationPreference& value) { m_capacityReservationPreferenceHasBeenSet = true; m_capacityReservationPreference = value; }
 
@@ -85,6 +91,8 @@ namespace Model
      * (instance type, platform, Availability Zone).</p> </li> <li> <p>
      * <code>none</code> - The instance avoids running in a Capacity Reservation even
      * if one is available. The instance runs as an On-Demand Instance.</p> </li> </ul>
+     * <p>When <code>CapacityReservationPreference</code> is not specified, it defaults
+     * to <code>open</code>.</p>
      */
     inline void SetCapacityReservationPreference(CapacityReservationPreference&& value) { m_capacityReservationPreferenceHasBeenSet = true; m_capacityReservationPreference = std::move(value); }
 
@@ -95,6 +103,8 @@ namespace Model
      * (instance type, platform, Availability Zone).</p> </li> <li> <p>
      * <code>none</code> - The instance avoids running in a Capacity Reservation even
      * if one is available. The instance runs as an On-Demand Instance.</p> </li> </ul>
+     * <p>When <code>CapacityReservationPreference</code> is not specified, it defaults
+     * to <code>open</code>.</p>
      */
     inline CapacityReservationSpecification& WithCapacityReservationPreference(const CapacityReservationPreference& value) { SetCapacityReservationPreference(value); return *this;}
 
@@ -105,6 +115,8 @@ namespace Model
      * (instance type, platform, Availability Zone).</p> </li> <li> <p>
      * <code>none</code> - The instance avoids running in a Capacity Reservation even
      * if one is available. The instance runs as an On-Demand Instance.</p> </li> </ul>
+     * <p>When <code>CapacityReservationPreference</code> is not specified, it defaults
+     * to <code>open</code>.</p>
      */
     inline CapacityReservationSpecification& WithCapacityReservationPreference(CapacityReservationPreference&& value) { SetCapacityReservationPreference(std::move(value)); return *this;}
 

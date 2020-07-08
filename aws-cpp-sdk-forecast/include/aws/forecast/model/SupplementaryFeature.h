@@ -29,7 +29,18 @@ namespace Model
    * holiday calendar. If you use the calendar, all data in the datasets should
    * belong to the same country as the calendar. For the holiday calendar data, see
    * the <a href="http://jollyday.sourceforge.net/data.html">Jollyday</a> web
-   * site.</p><p><h3>See Also:</h3>   <a
+   * site.</p> <p>India and Korea's holidays are not included in the Jollyday
+   * library, but both are supported by Amazon Forecast. Their holidays are:</p> <p>
+   * <b>"IN" - INDIA</b> </p> <ul> <li> <p> <code>JANUARY 26 - REPUBLIC DAY</code>
+   * </p> </li> <li> <p> <code>AUGUST 15 - INDEPENDENCE DAY</code> </p> </li> <li>
+   * <p> <code>OCTOBER 2 GANDHI'S BIRTHDAY</code> </p> </li> </ul> <p> <b>"KR" -
+   * KOREA</b> </p> <ul> <li> <p> <code>JANUARY 1 - NEW YEAR</code> </p> </li> <li>
+   * <p> <code>MARCH 1 - INDEPENDENCE MOVEMENT DAY</code> </p> </li> <li> <p>
+   * <code>MAY 5 - CHILDREN'S DAY</code> </p> </li> <li> <p> <code>JUNE 6 - MEMORIAL
+   * DAY</code> </p> </li> <li> <p> <code>AUGUST 15 - LIBERATION DAY</code> </p>
+   * </li> <li> <p> <code>OCTOBER 3 - NATIONAL FOUNDATION DAY</code> </p> </li> <li>
+   * <p> <code>OCTOBER 9 - HANGEUL DAY</code> </p> </li> <li> <p> <code>DECEMBER 25 -
+   * CHRISTMAS DAY</code> </p> </li> </ul><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/SupplementaryFeature">AWS
    * API Reference</a></p>
    */
@@ -84,66 +95,154 @@ namespace Model
 
 
     /**
-     * <p>One of the following 2 letter country codes:</p> <ul> <li> <p>"AU" -
-     * AUSTRALIA</p> </li> <li> <p>"DE" - GERMANY</p> </li> <li> <p>"JP" - JAPAN</p>
-     * </li> <li> <p>"US" - UNITED_STATES</p> </li> <li> <p>"UK" - UNITED_KINGDOM</p>
-     * </li> </ul>
+     * <p>One of the following 2 letter country codes:</p> <ul> <li> <p>"AR" -
+     * ARGENTINA</p> </li> <li> <p>"AT" - AUSTRIA</p> </li> <li> <p>"AU" -
+     * AUSTRALIA</p> </li> <li> <p>"BE" - BELGIUM</p> </li> <li> <p>"BR" - BRAZIL</p>
+     * </li> <li> <p>"CA" - CANADA</p> </li> <li> <p>"CN" - CHINA</p> </li> <li>
+     * <p>"CZ" - CZECH REPUBLIC</p> </li> <li> <p>"DK" - DENMARK</p> </li> <li> <p>"EC"
+     * - ECUADOR</p> </li> <li> <p>"FI" - FINLAND</p> </li> <li> <p>"FR" - FRANCE</p>
+     * </li> <li> <p>"DE" - GERMANY</p> </li> <li> <p>"HU" - HUNGARY</p> </li> <li>
+     * <p>"IE" - IRELAND</p> </li> <li> <p>"IN" - INDIA</p> </li> <li> <p>"IT" -
+     * ITALY</p> </li> <li> <p>"JP" - JAPAN</p> </li> <li> <p>"KR" - KOREA</p> </li>
+     * <li> <p>"LU" - LUXEMBOURG</p> </li> <li> <p>"MX" - MEXICO</p> </li> <li> <p>"NL"
+     * - NETHERLANDS</p> </li> <li> <p>"NO" - NORWAY</p> </li> <li> <p>"PL" -
+     * POLAND</p> </li> <li> <p>"PT" - PORTUGAL</p> </li> <li> <p>"RU" - RUSSIA</p>
+     * </li> <li> <p>"ZA" - SOUTH AFRICA</p> </li> <li> <p>"ES" - SPAIN</p> </li> <li>
+     * <p>"SE" - SWEDEN</p> </li> <li> <p>"CH" - SWITZERLAND</p> </li> <li> <p>"US" -
+     * UNITED STATES</p> </li> <li> <p>"UK" - UNITED KINGDOM</p> </li> </ul>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
 
     /**
-     * <p>One of the following 2 letter country codes:</p> <ul> <li> <p>"AU" -
-     * AUSTRALIA</p> </li> <li> <p>"DE" - GERMANY</p> </li> <li> <p>"JP" - JAPAN</p>
-     * </li> <li> <p>"US" - UNITED_STATES</p> </li> <li> <p>"UK" - UNITED_KINGDOM</p>
-     * </li> </ul>
+     * <p>One of the following 2 letter country codes:</p> <ul> <li> <p>"AR" -
+     * ARGENTINA</p> </li> <li> <p>"AT" - AUSTRIA</p> </li> <li> <p>"AU" -
+     * AUSTRALIA</p> </li> <li> <p>"BE" - BELGIUM</p> </li> <li> <p>"BR" - BRAZIL</p>
+     * </li> <li> <p>"CA" - CANADA</p> </li> <li> <p>"CN" - CHINA</p> </li> <li>
+     * <p>"CZ" - CZECH REPUBLIC</p> </li> <li> <p>"DK" - DENMARK</p> </li> <li> <p>"EC"
+     * - ECUADOR</p> </li> <li> <p>"FI" - FINLAND</p> </li> <li> <p>"FR" - FRANCE</p>
+     * </li> <li> <p>"DE" - GERMANY</p> </li> <li> <p>"HU" - HUNGARY</p> </li> <li>
+     * <p>"IE" - IRELAND</p> </li> <li> <p>"IN" - INDIA</p> </li> <li> <p>"IT" -
+     * ITALY</p> </li> <li> <p>"JP" - JAPAN</p> </li> <li> <p>"KR" - KOREA</p> </li>
+     * <li> <p>"LU" - LUXEMBOURG</p> </li> <li> <p>"MX" - MEXICO</p> </li> <li> <p>"NL"
+     * - NETHERLANDS</p> </li> <li> <p>"NO" - NORWAY</p> </li> <li> <p>"PL" -
+     * POLAND</p> </li> <li> <p>"PT" - PORTUGAL</p> </li> <li> <p>"RU" - RUSSIA</p>
+     * </li> <li> <p>"ZA" - SOUTH AFRICA</p> </li> <li> <p>"ES" - SPAIN</p> </li> <li>
+     * <p>"SE" - SWEDEN</p> </li> <li> <p>"CH" - SWITZERLAND</p> </li> <li> <p>"US" -
+     * UNITED STATES</p> </li> <li> <p>"UK" - UNITED KINGDOM</p> </li> </ul>
      */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
 
     /**
-     * <p>One of the following 2 letter country codes:</p> <ul> <li> <p>"AU" -
-     * AUSTRALIA</p> </li> <li> <p>"DE" - GERMANY</p> </li> <li> <p>"JP" - JAPAN</p>
-     * </li> <li> <p>"US" - UNITED_STATES</p> </li> <li> <p>"UK" - UNITED_KINGDOM</p>
-     * </li> </ul>
+     * <p>One of the following 2 letter country codes:</p> <ul> <li> <p>"AR" -
+     * ARGENTINA</p> </li> <li> <p>"AT" - AUSTRIA</p> </li> <li> <p>"AU" -
+     * AUSTRALIA</p> </li> <li> <p>"BE" - BELGIUM</p> </li> <li> <p>"BR" - BRAZIL</p>
+     * </li> <li> <p>"CA" - CANADA</p> </li> <li> <p>"CN" - CHINA</p> </li> <li>
+     * <p>"CZ" - CZECH REPUBLIC</p> </li> <li> <p>"DK" - DENMARK</p> </li> <li> <p>"EC"
+     * - ECUADOR</p> </li> <li> <p>"FI" - FINLAND</p> </li> <li> <p>"FR" - FRANCE</p>
+     * </li> <li> <p>"DE" - GERMANY</p> </li> <li> <p>"HU" - HUNGARY</p> </li> <li>
+     * <p>"IE" - IRELAND</p> </li> <li> <p>"IN" - INDIA</p> </li> <li> <p>"IT" -
+     * ITALY</p> </li> <li> <p>"JP" - JAPAN</p> </li> <li> <p>"KR" - KOREA</p> </li>
+     * <li> <p>"LU" - LUXEMBOURG</p> </li> <li> <p>"MX" - MEXICO</p> </li> <li> <p>"NL"
+     * - NETHERLANDS</p> </li> <li> <p>"NO" - NORWAY</p> </li> <li> <p>"PL" -
+     * POLAND</p> </li> <li> <p>"PT" - PORTUGAL</p> </li> <li> <p>"RU" - RUSSIA</p>
+     * </li> <li> <p>"ZA" - SOUTH AFRICA</p> </li> <li> <p>"ES" - SPAIN</p> </li> <li>
+     * <p>"SE" - SWEDEN</p> </li> <li> <p>"CH" - SWITZERLAND</p> </li> <li> <p>"US" -
+     * UNITED STATES</p> </li> <li> <p>"UK" - UNITED KINGDOM</p> </li> </ul>
      */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
 
     /**
-     * <p>One of the following 2 letter country codes:</p> <ul> <li> <p>"AU" -
-     * AUSTRALIA</p> </li> <li> <p>"DE" - GERMANY</p> </li> <li> <p>"JP" - JAPAN</p>
-     * </li> <li> <p>"US" - UNITED_STATES</p> </li> <li> <p>"UK" - UNITED_KINGDOM</p>
-     * </li> </ul>
+     * <p>One of the following 2 letter country codes:</p> <ul> <li> <p>"AR" -
+     * ARGENTINA</p> </li> <li> <p>"AT" - AUSTRIA</p> </li> <li> <p>"AU" -
+     * AUSTRALIA</p> </li> <li> <p>"BE" - BELGIUM</p> </li> <li> <p>"BR" - BRAZIL</p>
+     * </li> <li> <p>"CA" - CANADA</p> </li> <li> <p>"CN" - CHINA</p> </li> <li>
+     * <p>"CZ" - CZECH REPUBLIC</p> </li> <li> <p>"DK" - DENMARK</p> </li> <li> <p>"EC"
+     * - ECUADOR</p> </li> <li> <p>"FI" - FINLAND</p> </li> <li> <p>"FR" - FRANCE</p>
+     * </li> <li> <p>"DE" - GERMANY</p> </li> <li> <p>"HU" - HUNGARY</p> </li> <li>
+     * <p>"IE" - IRELAND</p> </li> <li> <p>"IN" - INDIA</p> </li> <li> <p>"IT" -
+     * ITALY</p> </li> <li> <p>"JP" - JAPAN</p> </li> <li> <p>"KR" - KOREA</p> </li>
+     * <li> <p>"LU" - LUXEMBOURG</p> </li> <li> <p>"MX" - MEXICO</p> </li> <li> <p>"NL"
+     * - NETHERLANDS</p> </li> <li> <p>"NO" - NORWAY</p> </li> <li> <p>"PL" -
+     * POLAND</p> </li> <li> <p>"PT" - PORTUGAL</p> </li> <li> <p>"RU" - RUSSIA</p>
+     * </li> <li> <p>"ZA" - SOUTH AFRICA</p> </li> <li> <p>"ES" - SPAIN</p> </li> <li>
+     * <p>"SE" - SWEDEN</p> </li> <li> <p>"CH" - SWITZERLAND</p> </li> <li> <p>"US" -
+     * UNITED STATES</p> </li> <li> <p>"UK" - UNITED KINGDOM</p> </li> </ul>
      */
     inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
 
     /**
-     * <p>One of the following 2 letter country codes:</p> <ul> <li> <p>"AU" -
-     * AUSTRALIA</p> </li> <li> <p>"DE" - GERMANY</p> </li> <li> <p>"JP" - JAPAN</p>
-     * </li> <li> <p>"US" - UNITED_STATES</p> </li> <li> <p>"UK" - UNITED_KINGDOM</p>
-     * </li> </ul>
+     * <p>One of the following 2 letter country codes:</p> <ul> <li> <p>"AR" -
+     * ARGENTINA</p> </li> <li> <p>"AT" - AUSTRIA</p> </li> <li> <p>"AU" -
+     * AUSTRALIA</p> </li> <li> <p>"BE" - BELGIUM</p> </li> <li> <p>"BR" - BRAZIL</p>
+     * </li> <li> <p>"CA" - CANADA</p> </li> <li> <p>"CN" - CHINA</p> </li> <li>
+     * <p>"CZ" - CZECH REPUBLIC</p> </li> <li> <p>"DK" - DENMARK</p> </li> <li> <p>"EC"
+     * - ECUADOR</p> </li> <li> <p>"FI" - FINLAND</p> </li> <li> <p>"FR" - FRANCE</p>
+     * </li> <li> <p>"DE" - GERMANY</p> </li> <li> <p>"HU" - HUNGARY</p> </li> <li>
+     * <p>"IE" - IRELAND</p> </li> <li> <p>"IN" - INDIA</p> </li> <li> <p>"IT" -
+     * ITALY</p> </li> <li> <p>"JP" - JAPAN</p> </li> <li> <p>"KR" - KOREA</p> </li>
+     * <li> <p>"LU" - LUXEMBOURG</p> </li> <li> <p>"MX" - MEXICO</p> </li> <li> <p>"NL"
+     * - NETHERLANDS</p> </li> <li> <p>"NO" - NORWAY</p> </li> <li> <p>"PL" -
+     * POLAND</p> </li> <li> <p>"PT" - PORTUGAL</p> </li> <li> <p>"RU" - RUSSIA</p>
+     * </li> <li> <p>"ZA" - SOUTH AFRICA</p> </li> <li> <p>"ES" - SPAIN</p> </li> <li>
+     * <p>"SE" - SWEDEN</p> </li> <li> <p>"CH" - SWITZERLAND</p> </li> <li> <p>"US" -
+     * UNITED STATES</p> </li> <li> <p>"UK" - UNITED KINGDOM</p> </li> </ul>
      */
     inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
 
     /**
-     * <p>One of the following 2 letter country codes:</p> <ul> <li> <p>"AU" -
-     * AUSTRALIA</p> </li> <li> <p>"DE" - GERMANY</p> </li> <li> <p>"JP" - JAPAN</p>
-     * </li> <li> <p>"US" - UNITED_STATES</p> </li> <li> <p>"UK" - UNITED_KINGDOM</p>
-     * </li> </ul>
+     * <p>One of the following 2 letter country codes:</p> <ul> <li> <p>"AR" -
+     * ARGENTINA</p> </li> <li> <p>"AT" - AUSTRIA</p> </li> <li> <p>"AU" -
+     * AUSTRALIA</p> </li> <li> <p>"BE" - BELGIUM</p> </li> <li> <p>"BR" - BRAZIL</p>
+     * </li> <li> <p>"CA" - CANADA</p> </li> <li> <p>"CN" - CHINA</p> </li> <li>
+     * <p>"CZ" - CZECH REPUBLIC</p> </li> <li> <p>"DK" - DENMARK</p> </li> <li> <p>"EC"
+     * - ECUADOR</p> </li> <li> <p>"FI" - FINLAND</p> </li> <li> <p>"FR" - FRANCE</p>
+     * </li> <li> <p>"DE" - GERMANY</p> </li> <li> <p>"HU" - HUNGARY</p> </li> <li>
+     * <p>"IE" - IRELAND</p> </li> <li> <p>"IN" - INDIA</p> </li> <li> <p>"IT" -
+     * ITALY</p> </li> <li> <p>"JP" - JAPAN</p> </li> <li> <p>"KR" - KOREA</p> </li>
+     * <li> <p>"LU" - LUXEMBOURG</p> </li> <li> <p>"MX" - MEXICO</p> </li> <li> <p>"NL"
+     * - NETHERLANDS</p> </li> <li> <p>"NO" - NORWAY</p> </li> <li> <p>"PL" -
+     * POLAND</p> </li> <li> <p>"PT" - PORTUGAL</p> </li> <li> <p>"RU" - RUSSIA</p>
+     * </li> <li> <p>"ZA" - SOUTH AFRICA</p> </li> <li> <p>"ES" - SPAIN</p> </li> <li>
+     * <p>"SE" - SWEDEN</p> </li> <li> <p>"CH" - SWITZERLAND</p> </li> <li> <p>"US" -
+     * UNITED STATES</p> </li> <li> <p>"UK" - UNITED KINGDOM</p> </li> </ul>
      */
     inline SupplementaryFeature& WithValue(const Aws::String& value) { SetValue(value); return *this;}
 
     /**
-     * <p>One of the following 2 letter country codes:</p> <ul> <li> <p>"AU" -
-     * AUSTRALIA</p> </li> <li> <p>"DE" - GERMANY</p> </li> <li> <p>"JP" - JAPAN</p>
-     * </li> <li> <p>"US" - UNITED_STATES</p> </li> <li> <p>"UK" - UNITED_KINGDOM</p>
-     * </li> </ul>
+     * <p>One of the following 2 letter country codes:</p> <ul> <li> <p>"AR" -
+     * ARGENTINA</p> </li> <li> <p>"AT" - AUSTRIA</p> </li> <li> <p>"AU" -
+     * AUSTRALIA</p> </li> <li> <p>"BE" - BELGIUM</p> </li> <li> <p>"BR" - BRAZIL</p>
+     * </li> <li> <p>"CA" - CANADA</p> </li> <li> <p>"CN" - CHINA</p> </li> <li>
+     * <p>"CZ" - CZECH REPUBLIC</p> </li> <li> <p>"DK" - DENMARK</p> </li> <li> <p>"EC"
+     * - ECUADOR</p> </li> <li> <p>"FI" - FINLAND</p> </li> <li> <p>"FR" - FRANCE</p>
+     * </li> <li> <p>"DE" - GERMANY</p> </li> <li> <p>"HU" - HUNGARY</p> </li> <li>
+     * <p>"IE" - IRELAND</p> </li> <li> <p>"IN" - INDIA</p> </li> <li> <p>"IT" -
+     * ITALY</p> </li> <li> <p>"JP" - JAPAN</p> </li> <li> <p>"KR" - KOREA</p> </li>
+     * <li> <p>"LU" - LUXEMBOURG</p> </li> <li> <p>"MX" - MEXICO</p> </li> <li> <p>"NL"
+     * - NETHERLANDS</p> </li> <li> <p>"NO" - NORWAY</p> </li> <li> <p>"PL" -
+     * POLAND</p> </li> <li> <p>"PT" - PORTUGAL</p> </li> <li> <p>"RU" - RUSSIA</p>
+     * </li> <li> <p>"ZA" - SOUTH AFRICA</p> </li> <li> <p>"ES" - SPAIN</p> </li> <li>
+     * <p>"SE" - SWEDEN</p> </li> <li> <p>"CH" - SWITZERLAND</p> </li> <li> <p>"US" -
+     * UNITED STATES</p> </li> <li> <p>"UK" - UNITED KINGDOM</p> </li> </ul>
      */
     inline SupplementaryFeature& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
 
     /**
-     * <p>One of the following 2 letter country codes:</p> <ul> <li> <p>"AU" -
-     * AUSTRALIA</p> </li> <li> <p>"DE" - GERMANY</p> </li> <li> <p>"JP" - JAPAN</p>
-     * </li> <li> <p>"US" - UNITED_STATES</p> </li> <li> <p>"UK" - UNITED_KINGDOM</p>
-     * </li> </ul>
+     * <p>One of the following 2 letter country codes:</p> <ul> <li> <p>"AR" -
+     * ARGENTINA</p> </li> <li> <p>"AT" - AUSTRIA</p> </li> <li> <p>"AU" -
+     * AUSTRALIA</p> </li> <li> <p>"BE" - BELGIUM</p> </li> <li> <p>"BR" - BRAZIL</p>
+     * </li> <li> <p>"CA" - CANADA</p> </li> <li> <p>"CN" - CHINA</p> </li> <li>
+     * <p>"CZ" - CZECH REPUBLIC</p> </li> <li> <p>"DK" - DENMARK</p> </li> <li> <p>"EC"
+     * - ECUADOR</p> </li> <li> <p>"FI" - FINLAND</p> </li> <li> <p>"FR" - FRANCE</p>
+     * </li> <li> <p>"DE" - GERMANY</p> </li> <li> <p>"HU" - HUNGARY</p> </li> <li>
+     * <p>"IE" - IRELAND</p> </li> <li> <p>"IN" - INDIA</p> </li> <li> <p>"IT" -
+     * ITALY</p> </li> <li> <p>"JP" - JAPAN</p> </li> <li> <p>"KR" - KOREA</p> </li>
+     * <li> <p>"LU" - LUXEMBOURG</p> </li> <li> <p>"MX" - MEXICO</p> </li> <li> <p>"NL"
+     * - NETHERLANDS</p> </li> <li> <p>"NO" - NORWAY</p> </li> <li> <p>"PL" -
+     * POLAND</p> </li> <li> <p>"PT" - PORTUGAL</p> </li> <li> <p>"RU" - RUSSIA</p>
+     * </li> <li> <p>"ZA" - SOUTH AFRICA</p> </li> <li> <p>"ES" - SPAIN</p> </li> <li>
+     * <p>"SE" - SWEDEN</p> </li> <li> <p>"CH" - SWITZERLAND</p> </li> <li> <p>"US" -
+     * UNITED STATES</p> </li> <li> <p>"UK" - UNITED KINGDOM</p> </li> </ul>
      */
     inline SupplementaryFeature& WithValue(const char* value) { SetValue(value); return *this;}
 

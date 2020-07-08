@@ -28,7 +28,7 @@ namespace Model
    * choose to view recommendations for instances within the same instance families
    * or across different instance families. You can also choose to view your
    * estimated savings associated with recommendations with consideration of existing
-   * Savings Plans or RI benefits, or niether. </p><p><h3>See Also:</h3>   <a
+   * Savings Plans or RI benefits, or neither. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/RightsizingRecommendationConfiguration">AWS
    * API Reference</a></p>
    */

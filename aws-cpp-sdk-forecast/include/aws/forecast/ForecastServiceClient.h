@@ -30,6 +30,9 @@
 #include <aws/forecast/model/ListForecastExportJobsResult.h>
 #include <aws/forecast/model/ListForecastsResult.h>
 #include <aws/forecast/model/ListPredictorsResult.h>
+#include <aws/forecast/model/ListTagsForResourceResult.h>
+#include <aws/forecast/model/TagResourceResult.h>
+#include <aws/forecast/model/UntagResourceResult.h>
 #include <aws/forecast/model/UpdateDatasetGroupResult.h>
 #include <aws/core/NoResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
@@ -96,6 +99,9 @@ namespace Model
         class ListForecastExportJobsRequest;
         class ListForecastsRequest;
         class ListPredictorsRequest;
+        class ListTagsForResourceRequest;
+        class TagResourceRequest;
+        class UntagResourceRequest;
         class UpdateDatasetGroupRequest;
 
         typedef Aws::Utils::Outcome<CreateDatasetResult, ForecastServiceError> CreateDatasetOutcome;
@@ -123,6 +129,9 @@ namespace Model
         typedef Aws::Utils::Outcome<ListForecastExportJobsResult, ForecastServiceError> ListForecastExportJobsOutcome;
         typedef Aws::Utils::Outcome<ListForecastsResult, ForecastServiceError> ListForecastsOutcome;
         typedef Aws::Utils::Outcome<ListPredictorsResult, ForecastServiceError> ListPredictorsOutcome;
+        typedef Aws::Utils::Outcome<ListTagsForResourceResult, ForecastServiceError> ListTagsForResourceOutcome;
+        typedef Aws::Utils::Outcome<TagResourceResult, ForecastServiceError> TagResourceOutcome;
+        typedef Aws::Utils::Outcome<UntagResourceResult, ForecastServiceError> UntagResourceOutcome;
         typedef Aws::Utils::Outcome<UpdateDatasetGroupResult, ForecastServiceError> UpdateDatasetGroupOutcome;
 
         typedef std::future<CreateDatasetOutcome> CreateDatasetOutcomeCallable;
@@ -150,6 +159,9 @@ namespace Model
         typedef std::future<ListForecastExportJobsOutcome> ListForecastExportJobsOutcomeCallable;
         typedef std::future<ListForecastsOutcome> ListForecastsOutcomeCallable;
         typedef std::future<ListPredictorsOutcome> ListPredictorsOutcomeCallable;
+        typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
+        typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
+        typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
         typedef std::future<UpdateDatasetGroupOutcome> UpdateDatasetGroupOutcomeCallable;
 } // namespace Model
 
@@ -180,6 +192,9 @@ namespace Model
     typedef std::function<void(const ForecastServiceClient*, const Model::ListForecastExportJobsRequest&, const Model::ListForecastExportJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListForecastExportJobsResponseReceivedHandler;
     typedef std::function<void(const ForecastServiceClient*, const Model::ListForecastsRequest&, const Model::ListForecastsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListForecastsResponseReceivedHandler;
     typedef std::function<void(const ForecastServiceClient*, const Model::ListPredictorsRequest&, const Model::ListPredictorsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPredictorsResponseReceivedHandler;
+    typedef std::function<void(const ForecastServiceClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
+    typedef std::function<void(const ForecastServiceClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
+    typedef std::function<void(const ForecastServiceClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const ForecastServiceClient*, const Model::UpdateDatasetGroupRequest&, const Model::UpdateDatasetGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDatasetGroupResponseReceivedHandler;
 
   /**
@@ -231,10 +246,10 @@ namespace Model
          * predictor. For more information, see <a>howitworks-datasets-groups</a>.</p>
          * <p>To get a list of all your datasets, use the <a>ListDatasets</a>
          * operation.</p> <p>For example Forecast datasets, see the <a
-         * href="https://github.com/aws-samples/amazon-forecast-samples/tree/master/data">Amazon
-         * Forecast Sample GitHub repository</a>.</p> <note> <p>The <code>Status</code> of
-         * a dataset must be <code>ACTIVE</code> before you can import training data. Use
-         * the <a>DescribeDataset</a> operation to get the status.</p> </note><p><h3>See
+         * href="https://github.com/aws-samples/amazon-forecast-samples">Amazon Forecast
+         * Sample GitHub repository</a>.</p> <note> <p>The <code>Status</code> of a dataset
+         * must be <code>ACTIVE</code> before you can import training data. Use the
+         * <a>DescribeDataset</a> operation to get the status.</p> </note><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/CreateDataset">AWS
          * API Reference</a></p>
@@ -258,10 +273,10 @@ namespace Model
          * predictor. For more information, see <a>howitworks-datasets-groups</a>.</p>
          * <p>To get a list of all your datasets, use the <a>ListDatasets</a>
          * operation.</p> <p>For example Forecast datasets, see the <a
-         * href="https://github.com/aws-samples/amazon-forecast-samples/tree/master/data">Amazon
-         * Forecast Sample GitHub repository</a>.</p> <note> <p>The <code>Status</code> of
-         * a dataset must be <code>ACTIVE</code> before you can import training data. Use
-         * the <a>DescribeDataset</a> operation to get the status.</p> </note><p><h3>See
+         * href="https://github.com/aws-samples/amazon-forecast-samples">Amazon Forecast
+         * Sample GitHub repository</a>.</p> <note> <p>The <code>Status</code> of a dataset
+         * must be <code>ACTIVE</code> before you can import training data. Use the
+         * <a>DescribeDataset</a> operation to get the status.</p> </note><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/CreateDataset">AWS
          * API Reference</a></p>
@@ -287,10 +302,10 @@ namespace Model
          * predictor. For more information, see <a>howitworks-datasets-groups</a>.</p>
          * <p>To get a list of all your datasets, use the <a>ListDatasets</a>
          * operation.</p> <p>For example Forecast datasets, see the <a
-         * href="https://github.com/aws-samples/amazon-forecast-samples/tree/master/data">Amazon
-         * Forecast Sample GitHub repository</a>.</p> <note> <p>The <code>Status</code> of
-         * a dataset must be <code>ACTIVE</code> before you can import training data. Use
-         * the <a>DescribeDataset</a> operation to get the status.</p> </note><p><h3>See
+         * href="https://github.com/aws-samples/amazon-forecast-samples">Amazon Forecast
+         * Sample GitHub repository</a>.</p> <note> <p>The <code>Status</code> of a dataset
+         * must be <code>ACTIVE</code> before you can import training data. Use the
+         * <a>DescribeDataset</a> operation to get the status.</p> </note><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/CreateDataset">AWS
          * API Reference</a></p>
@@ -357,13 +372,19 @@ namespace Model
          * bucket and the Amazon Resource Name (ARN) of the dataset that you want to import
          * the data to.</p> <p>You must specify a <a>DataSource</a> object that includes an
          * AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to
-         * access the data. For more information, see <a>aws-forecast-iam-roles</a>.</p>
-         * <p>The training data must be in CSV format. The delimiter must be a comma
-         * (,).</p> <p>You can specify the path to a specific CSV file, the S3 bucket, or
-         * to a folder in the S3 bucket. For the latter two cases, Amazon Forecast imports
-         * all files up to the limit of 10,000 files.</p> <p>To get a list of all your
-         * dataset import jobs, filtered by specified criteria, use the
-         * <a>ListDatasetImportJobs</a> operation.</p><p><h3>See Also:</h3>   <a
+         * access the data, as Amazon Forecast makes a copy of your data and processes it
+         * in an internal AWS system. For more information, see
+         * <a>aws-forecast-iam-roles</a>.</p> <p>The training data must be in CSV format.
+         * The delimiter must be a comma (,).</p> <p>You can specify the path to a specific
+         * CSV file, the S3 bucket, or to a folder in the S3 bucket. For the latter two
+         * cases, Amazon Forecast imports all files up to the limit of 10,000 files.</p>
+         * <p>Because dataset imports are not aggregated, your most recent dataset import
+         * is the one that is used when training a predictor or generating a forecast. Make
+         * sure that your most recent dataset import contains all of the data you want to
+         * model off of, and not just the new data collected since the previous import.</p>
+         * <p>To get a list of all your dataset import jobs, filtered by specified
+         * criteria, use the <a>ListDatasetImportJobs</a> operation.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/CreateDatasetImportJob">AWS
          * API Reference</a></p>
          */
@@ -375,13 +396,19 @@ namespace Model
          * bucket and the Amazon Resource Name (ARN) of the dataset that you want to import
          * the data to.</p> <p>You must specify a <a>DataSource</a> object that includes an
          * AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to
-         * access the data. For more information, see <a>aws-forecast-iam-roles</a>.</p>
-         * <p>The training data must be in CSV format. The delimiter must be a comma
-         * (,).</p> <p>You can specify the path to a specific CSV file, the S3 bucket, or
-         * to a folder in the S3 bucket. For the latter two cases, Amazon Forecast imports
-         * all files up to the limit of 10,000 files.</p> <p>To get a list of all your
-         * dataset import jobs, filtered by specified criteria, use the
-         * <a>ListDatasetImportJobs</a> operation.</p><p><h3>See Also:</h3>   <a
+         * access the data, as Amazon Forecast makes a copy of your data and processes it
+         * in an internal AWS system. For more information, see
+         * <a>aws-forecast-iam-roles</a>.</p> <p>The training data must be in CSV format.
+         * The delimiter must be a comma (,).</p> <p>You can specify the path to a specific
+         * CSV file, the S3 bucket, or to a folder in the S3 bucket. For the latter two
+         * cases, Amazon Forecast imports all files up to the limit of 10,000 files.</p>
+         * <p>Because dataset imports are not aggregated, your most recent dataset import
+         * is the one that is used when training a predictor or generating a forecast. Make
+         * sure that your most recent dataset import contains all of the data you want to
+         * model off of, and not just the new data collected since the previous import.</p>
+         * <p>To get a list of all your dataset import jobs, filtered by specified
+         * criteria, use the <a>ListDatasetImportJobs</a> operation.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/CreateDatasetImportJob">AWS
          * API Reference</a></p>
          *
@@ -395,13 +422,19 @@ namespace Model
          * bucket and the Amazon Resource Name (ARN) of the dataset that you want to import
          * the data to.</p> <p>You must specify a <a>DataSource</a> object that includes an
          * AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to
-         * access the data. For more information, see <a>aws-forecast-iam-roles</a>.</p>
-         * <p>The training data must be in CSV format. The delimiter must be a comma
-         * (,).</p> <p>You can specify the path to a specific CSV file, the S3 bucket, or
-         * to a folder in the S3 bucket. For the latter two cases, Amazon Forecast imports
-         * all files up to the limit of 10,000 files.</p> <p>To get a list of all your
-         * dataset import jobs, filtered by specified criteria, use the
-         * <a>ListDatasetImportJobs</a> operation.</p><p><h3>See Also:</h3>   <a
+         * access the data, as Amazon Forecast makes a copy of your data and processes it
+         * in an internal AWS system. For more information, see
+         * <a>aws-forecast-iam-roles</a>.</p> <p>The training data must be in CSV format.
+         * The delimiter must be a comma (,).</p> <p>You can specify the path to a specific
+         * CSV file, the S3 bucket, or to a folder in the S3 bucket. For the latter two
+         * cases, Amazon Forecast imports all files up to the limit of 10,000 files.</p>
+         * <p>Because dataset imports are not aggregated, your most recent dataset import
+         * is the one that is used when training a predictor or generating a forecast. Make
+         * sure that your most recent dataset import contains all of the data you want to
+         * model off of, and not just the new data collected since the previous import.</p>
+         * <p>To get a list of all your dataset import jobs, filtered by specified
+         * criteria, use the <a>ListDatasetImportJobs</a> operation.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/CreateDatasetImportJob">AWS
          * API Reference</a></p>
          *
@@ -416,13 +449,11 @@ namespace Model
          * export the complete forecast into your Amazon Simple Storage Service (Amazon S3)
          * bucket, use the <a>CreateForecastExportJob</a> operation.</p> <p>The range of
          * the forecast is determined by the <code>ForecastHorizon</code> value, which you
-         * specify in the <a>CreatePredictor</a> request, multiplied by the
-         * <code>DataFrequency</code> value, which you specify in the <a>CreateDataset</a>
-         * request. When you query a forecast, you can request a specific date range within
-         * the forecast.</p> <p>To get a list of all your forecasts, use the
-         * <a>ListForecasts</a> operation.</p> <note> <p>The forecasts generated by Amazon
-         * Forecast are in the same time zone as the dataset that was used to create the
-         * predictor.</p> </note> <p>For more information, see
+         * specify in the <a>CreatePredictor</a> request. When you query a forecast, you
+         * can request a specific date range within the forecast.</p> <p>To get a list of
+         * all your forecasts, use the <a>ListForecasts</a> operation.</p> <note> <p>The
+         * forecasts generated by Amazon Forecast are in the same time zone as the dataset
+         * that was used to create the predictor.</p> </note> <p>For more information, see
          * <a>howitworks-forecast</a>.</p> <note> <p>The <code>Status</code> of the
          * forecast must be <code>ACTIVE</code> before you can query or export the
          * forecast. Use the <a>DescribeForecast</a> operation to get the status.</p>
@@ -439,13 +470,11 @@ namespace Model
          * export the complete forecast into your Amazon Simple Storage Service (Amazon S3)
          * bucket, use the <a>CreateForecastExportJob</a> operation.</p> <p>The range of
          * the forecast is determined by the <code>ForecastHorizon</code> value, which you
-         * specify in the <a>CreatePredictor</a> request, multiplied by the
-         * <code>DataFrequency</code> value, which you specify in the <a>CreateDataset</a>
-         * request. When you query a forecast, you can request a specific date range within
-         * the forecast.</p> <p>To get a list of all your forecasts, use the
-         * <a>ListForecasts</a> operation.</p> <note> <p>The forecasts generated by Amazon
-         * Forecast are in the same time zone as the dataset that was used to create the
-         * predictor.</p> </note> <p>For more information, see
+         * specify in the <a>CreatePredictor</a> request. When you query a forecast, you
+         * can request a specific date range within the forecast.</p> <p>To get a list of
+         * all your forecasts, use the <a>ListForecasts</a> operation.</p> <note> <p>The
+         * forecasts generated by Amazon Forecast are in the same time zone as the dataset
+         * that was used to create the predictor.</p> </note> <p>For more information, see
          * <a>howitworks-forecast</a>.</p> <note> <p>The <code>Status</code> of the
          * forecast must be <code>ACTIVE</code> before you can query or export the
          * forecast. Use the <a>DescribeForecast</a> operation to get the status.</p>
@@ -464,13 +493,11 @@ namespace Model
          * export the complete forecast into your Amazon Simple Storage Service (Amazon S3)
          * bucket, use the <a>CreateForecastExportJob</a> operation.</p> <p>The range of
          * the forecast is determined by the <code>ForecastHorizon</code> value, which you
-         * specify in the <a>CreatePredictor</a> request, multiplied by the
-         * <code>DataFrequency</code> value, which you specify in the <a>CreateDataset</a>
-         * request. When you query a forecast, you can request a specific date range within
-         * the forecast.</p> <p>To get a list of all your forecasts, use the
-         * <a>ListForecasts</a> operation.</p> <note> <p>The forecasts generated by Amazon
-         * Forecast are in the same time zone as the dataset that was used to create the
-         * predictor.</p> </note> <p>For more information, see
+         * specify in the <a>CreatePredictor</a> request. When you query a forecast, you
+         * can request a specific date range within the forecast.</p> <p>To get a list of
+         * all your forecasts, use the <a>ListForecasts</a> operation.</p> <note> <p>The
+         * forecasts generated by Amazon Forecast are in the same time zone as the dataset
+         * that was used to create the predictor.</p> </note> <p>For more information, see
          * <a>howitworks-forecast</a>.</p> <note> <p>The <code>Status</code> of the
          * forecast must be <code>ACTIVE</code> before you can query or export the
          * forecast. Use the <a>DescribeForecast</a> operation to get the status.</p>
@@ -486,7 +513,7 @@ namespace Model
          * <p>Exports a forecast created by the <a>CreateForecast</a> operation to your
          * Amazon Simple Storage Service (Amazon S3) bucket. The forecast file name will
          * match the following conventions:</p>
-         * <p>&lt;ForecastExportJobName&gt;_&lt;ExportTimestamp&gt;_&lt;PageNumber&gt;</p>
+         * <p>&lt;ForecastExportJobName&gt;_&lt;ExportTimestamp&gt;_&lt;PartNumber&gt;</p>
          * <p>where the &lt;ExportTimestamp&gt; component is in Java SimpleDateFormat
          * (yyyy-MM-ddTHH-mm-ssZ).</p> <p>You must specify a <a>DataDestination</a> object
          * that includes an AWS Identity and Access Management (IAM) role that Amazon
@@ -507,7 +534,7 @@ namespace Model
          * <p>Exports a forecast created by the <a>CreateForecast</a> operation to your
          * Amazon Simple Storage Service (Amazon S3) bucket. The forecast file name will
          * match the following conventions:</p>
-         * <p>&lt;ForecastExportJobName&gt;_&lt;ExportTimestamp&gt;_&lt;PageNumber&gt;</p>
+         * <p>&lt;ForecastExportJobName&gt;_&lt;ExportTimestamp&gt;_&lt;PartNumber&gt;</p>
          * <p>where the &lt;ExportTimestamp&gt; component is in Java SimpleDateFormat
          * (yyyy-MM-ddTHH-mm-ssZ).</p> <p>You must specify a <a>DataDestination</a> object
          * that includes an AWS Identity and Access Management (IAM) role that Amazon
@@ -530,7 +557,7 @@ namespace Model
          * <p>Exports a forecast created by the <a>CreateForecast</a> operation to your
          * Amazon Simple Storage Service (Amazon S3) bucket. The forecast file name will
          * match the following conventions:</p>
-         * <p>&lt;ForecastExportJobName&gt;_&lt;ExportTimestamp&gt;_&lt;PageNumber&gt;</p>
+         * <p>&lt;ForecastExportJobName&gt;_&lt;ExportTimestamp&gt;_&lt;PartNumber&gt;</p>
          * <p>where the &lt;ExportTimestamp&gt; component is in Java SimpleDateFormat
          * (yyyy-MM-ddTHH-mm-ssZ).</p> <p>You must specify a <a>DataDestination</a> object
          * that includes an AWS Identity and Access Management (IAM) role that Amazon
@@ -674,7 +701,10 @@ namespace Model
          * <p>Deletes an Amazon Forecast dataset that was created using the
          * <a>CreateDataset</a> operation. You can only delete datasets that have a status
          * of <code>ACTIVE</code> or <code>CREATE_FAILED</code>. To get the status use the
-         * <a>DescribeDataset</a> operation.</p><p><h3>See Also:</h3>   <a
+         * <a>DescribeDataset</a> operation.</p> <note> <p>Forecast does not automatically
+         * update any dataset groups that contain the deleted dataset. In order to update
+         * the dataset group, use the operation, omitting the deleted dataset's ARN.</p>
+         * </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DeleteDataset">AWS
          * API Reference</a></p>
          */
@@ -684,7 +714,10 @@ namespace Model
          * <p>Deletes an Amazon Forecast dataset that was created using the
          * <a>CreateDataset</a> operation. You can only delete datasets that have a status
          * of <code>ACTIVE</code> or <code>CREATE_FAILED</code>. To get the status use the
-         * <a>DescribeDataset</a> operation.</p><p><h3>See Also:</h3>   <a
+         * <a>DescribeDataset</a> operation.</p> <note> <p>Forecast does not automatically
+         * update any dataset groups that contain the deleted dataset. In order to update
+         * the dataset group, use the operation, omitting the deleted dataset's ARN.</p>
+         * </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DeleteDataset">AWS
          * API Reference</a></p>
          *
@@ -696,7 +729,10 @@ namespace Model
          * <p>Deletes an Amazon Forecast dataset that was created using the
          * <a>CreateDataset</a> operation. You can only delete datasets that have a status
          * of <code>ACTIVE</code> or <code>CREATE_FAILED</code>. To get the status use the
-         * <a>DescribeDataset</a> operation.</p><p><h3>See Also:</h3>   <a
+         * <a>DescribeDataset</a> operation.</p> <note> <p>Forecast does not automatically
+         * update any dataset groups that contain the deleted dataset. In order to update
+         * the dataset group, use the operation, omitting the deleted dataset's ARN.</p>
+         * </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DeleteDataset">AWS
          * API Reference</a></p>
          *
@@ -1470,6 +1506,93 @@ namespace Model
         virtual void ListPredictorsAsync(const Model::ListPredictorsRequest& request, const ListPredictorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Lists the tags for an Amazon Forecast resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/ListTagsForResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
+
+        /**
+         * <p>Lists the tags for an Amazon Forecast resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/ListTagsForResource">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
+
+        /**
+         * <p>Lists the tags for an Amazon Forecast resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/ListTagsForResource">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Associates the specified tags to a resource with the specified
+         * <code>resourceArn</code>. If existing tags on a resource are not specified in
+         * the request parameters, they are not changed. When a resource is deleted, the
+         * tags associated with that resource are also deleted.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/TagResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
+
+        /**
+         * <p>Associates the specified tags to a resource with the specified
+         * <code>resourceArn</code>. If existing tags on a resource are not specified in
+         * the request parameters, they are not changed. When a resource is deleted, the
+         * tags associated with that resource are also deleted.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/TagResource">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
+
+        /**
+         * <p>Associates the specified tags to a resource with the specified
+         * <code>resourceArn</code>. If existing tags on a resource are not specified in
+         * the request parameters, they are not changed. When a resource is deleted, the
+         * tags associated with that resource are also deleted.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/TagResource">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes the specified tags from a resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/UntagResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
+
+        /**
+         * <p>Deletes the specified tags from a resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/UntagResource">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
+
+        /**
+         * <p>Deletes the specified tags from a resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/UntagResource">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Replaces the datasets in a dataset group with the specified datasets.</p>
          * <note> <p>The <code>Status</code> of the dataset group must be
          * <code>ACTIVE</code> before you can use the dataset group to create a predictor.
@@ -1535,6 +1658,9 @@ namespace Model
         void ListForecastExportJobsAsyncHelper(const Model::ListForecastExportJobsRequest& request, const ListForecastExportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListForecastsAsyncHelper(const Model::ListForecastsRequest& request, const ListForecastsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListPredictorsAsyncHelper(const Model::ListPredictorsRequest& request, const ListPredictorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateDatasetGroupAsyncHelper(const Model::UpdateDatasetGroupRequest& request, const UpdateDatasetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;

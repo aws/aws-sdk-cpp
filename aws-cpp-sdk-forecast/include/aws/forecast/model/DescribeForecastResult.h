@@ -107,42 +107,42 @@ namespace Model
 
 
     /**
-     * <p>The quantiles at which proababilistic forecasts were generated.</p>
+     * <p>The quantiles at which probabilistic forecasts were generated.</p>
      */
     inline const Aws::Vector<Aws::String>& GetForecastTypes() const{ return m_forecastTypes; }
 
     /**
-     * <p>The quantiles at which proababilistic forecasts were generated.</p>
+     * <p>The quantiles at which probabilistic forecasts were generated.</p>
      */
     inline void SetForecastTypes(const Aws::Vector<Aws::String>& value) { m_forecastTypes = value; }
 
     /**
-     * <p>The quantiles at which proababilistic forecasts were generated.</p>
+     * <p>The quantiles at which probabilistic forecasts were generated.</p>
      */
     inline void SetForecastTypes(Aws::Vector<Aws::String>&& value) { m_forecastTypes = std::move(value); }
 
     /**
-     * <p>The quantiles at which proababilistic forecasts were generated.</p>
+     * <p>The quantiles at which probabilistic forecasts were generated.</p>
      */
     inline DescribeForecastResult& WithForecastTypes(const Aws::Vector<Aws::String>& value) { SetForecastTypes(value); return *this;}
 
     /**
-     * <p>The quantiles at which proababilistic forecasts were generated.</p>
+     * <p>The quantiles at which probabilistic forecasts were generated.</p>
      */
     inline DescribeForecastResult& WithForecastTypes(Aws::Vector<Aws::String>&& value) { SetForecastTypes(std::move(value)); return *this;}
 
     /**
-     * <p>The quantiles at which proababilistic forecasts were generated.</p>
+     * <p>The quantiles at which probabilistic forecasts were generated.</p>
      */
     inline DescribeForecastResult& AddForecastTypes(const Aws::String& value) { m_forecastTypes.push_back(value); return *this; }
 
     /**
-     * <p>The quantiles at which proababilistic forecasts were generated.</p>
+     * <p>The quantiles at which probabilistic forecasts were generated.</p>
      */
     inline DescribeForecastResult& AddForecastTypes(Aws::String&& value) { m_forecastTypes.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The quantiles at which proababilistic forecasts were generated.</p>
+     * <p>The quantiles at which probabilistic forecasts were generated.</p>
      */
     inline DescribeForecastResult& AddForecastTypes(const char* value) { m_forecastTypes.push_back(value); return *this; }
 

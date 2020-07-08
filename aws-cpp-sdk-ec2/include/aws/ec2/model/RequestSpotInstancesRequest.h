@@ -10,7 +10,9 @@
 #include <aws/ec2/model/RequestSpotLaunchSpecification.h>
 #include <aws/ec2/model/SpotInstanceType.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/InstanceInterruptionBehavior.h>
+#include <aws/ec2/model/TagSpecification.h>
 #include <utility>
 
 namespace Aws
@@ -672,6 +674,87 @@ namespace Model
 
 
     /**
+     * <p>The key-value pair for tagging the Spot Instance request on creation. The
+     * value for <code>ResourceType</code> must be <code>spot-instances-request</code>,
+     * otherwise the Spot Instance request fails. To tag the Spot Instance request
+     * after it has been created, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.
+     * </p>
+     */
+    inline const Aws::Vector<TagSpecification>& GetTagSpecifications() const{ return m_tagSpecifications; }
+
+    /**
+     * <p>The key-value pair for tagging the Spot Instance request on creation. The
+     * value for <code>ResourceType</code> must be <code>spot-instances-request</code>,
+     * otherwise the Spot Instance request fails. To tag the Spot Instance request
+     * after it has been created, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.
+     * </p>
+     */
+    inline bool TagSpecificationsHasBeenSet() const { return m_tagSpecificationsHasBeenSet; }
+
+    /**
+     * <p>The key-value pair for tagging the Spot Instance request on creation. The
+     * value for <code>ResourceType</code> must be <code>spot-instances-request</code>,
+     * otherwise the Spot Instance request fails. To tag the Spot Instance request
+     * after it has been created, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.
+     * </p>
+     */
+    inline void SetTagSpecifications(const Aws::Vector<TagSpecification>& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = value; }
+
+    /**
+     * <p>The key-value pair for tagging the Spot Instance request on creation. The
+     * value for <code>ResourceType</code> must be <code>spot-instances-request</code>,
+     * otherwise the Spot Instance request fails. To tag the Spot Instance request
+     * after it has been created, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.
+     * </p>
+     */
+    inline void SetTagSpecifications(Aws::Vector<TagSpecification>&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = std::move(value); }
+
+    /**
+     * <p>The key-value pair for tagging the Spot Instance request on creation. The
+     * value for <code>ResourceType</code> must be <code>spot-instances-request</code>,
+     * otherwise the Spot Instance request fails. To tag the Spot Instance request
+     * after it has been created, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.
+     * </p>
+     */
+    inline RequestSpotInstancesRequest& WithTagSpecifications(const Aws::Vector<TagSpecification>& value) { SetTagSpecifications(value); return *this;}
+
+    /**
+     * <p>The key-value pair for tagging the Spot Instance request on creation. The
+     * value for <code>ResourceType</code> must be <code>spot-instances-request</code>,
+     * otherwise the Spot Instance request fails. To tag the Spot Instance request
+     * after it has been created, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.
+     * </p>
+     */
+    inline RequestSpotInstancesRequest& WithTagSpecifications(Aws::Vector<TagSpecification>&& value) { SetTagSpecifications(std::move(value)); return *this;}
+
+    /**
+     * <p>The key-value pair for tagging the Spot Instance request on creation. The
+     * value for <code>ResourceType</code> must be <code>spot-instances-request</code>,
+     * otherwise the Spot Instance request fails. To tag the Spot Instance request
+     * after it has been created, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.
+     * </p>
+     */
+    inline RequestSpotInstancesRequest& AddTagSpecifications(const TagSpecification& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(value); return *this; }
+
+    /**
+     * <p>The key-value pair for tagging the Spot Instance request on creation. The
+     * value for <code>ResourceType</code> must be <code>spot-instances-request</code>,
+     * otherwise the Spot Instance request fails. To tag the Spot Instance request
+     * after it has been created, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.
+     * </p>
+     */
+    inline RequestSpotInstancesRequest& AddTagSpecifications(TagSpecification&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(std::move(value)); return *this; }
+
+
+    /**
      * <p>The behavior when a Spot Instance is interrupted. The default is
      * <code>terminate</code>.</p>
      */
@@ -741,6 +824,9 @@ namespace Model
 
     Aws::Utils::DateTime m_validUntil;
     bool m_validUntilHasBeenSet;
+
+    Aws::Vector<TagSpecification> m_tagSpecifications;
+    bool m_tagSpecificationsHasBeenSet;
 
     InstanceInterruptionBehavior m_instanceInterruptionBehavior;
     bool m_instanceInterruptionBehaviorHasBeenSet;

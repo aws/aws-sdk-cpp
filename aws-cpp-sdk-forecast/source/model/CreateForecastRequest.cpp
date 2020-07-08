@@ -15,7 +15,8 @@ using namespace Aws::Utils;
 CreateForecastRequest::CreateForecastRequest() : 
     m_forecastNameHasBeenSet(false),
     m_predictorArnHasBeenSet(false),
-    m_forecastTypesHasBeenSet(false)
+    m_forecastTypesHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -43,6 +44,17 @@ Aws::String CreateForecastRequest::SerializePayload() const
      forecastTypesJsonList[forecastTypesIndex].AsString(m_forecastTypes[forecastTypesIndex]);
    }
    payload.WithArray("ForecastTypes", std::move(forecastTypesJsonList));
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   Array<JsonValue> tagsJsonList(m_tags.size());
+   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+   {
+     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+   }
+   payload.WithArray("Tags", std::move(tagsJsonList));
 
   }
 

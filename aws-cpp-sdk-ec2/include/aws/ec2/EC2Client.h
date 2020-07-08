@@ -5663,7 +5663,7 @@ namespace Model
          * usage logs. You can create one data feed per AWS account. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-data-feeds.html">Spot
-         * Instance Data Feed</a> in the <i>Amazon EC2 User Guide for Linux
+         * Instance data feed</a> in the <i>Amazon EC2 User Guide for Linux
          * Instances</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateSpotDatafeedSubscription">AWS
          * API Reference</a></p>
@@ -5675,7 +5675,7 @@ namespace Model
          * usage logs. You can create one data feed per AWS account. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-data-feeds.html">Spot
-         * Instance Data Feed</a> in the <i>Amazon EC2 User Guide for Linux
+         * Instance data feed</a> in the <i>Amazon EC2 User Guide for Linux
          * Instances</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateSpotDatafeedSubscription">AWS
          * API Reference</a></p>
@@ -5689,7 +5689,7 @@ namespace Model
          * usage logs. You can create one data feed per AWS account. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-data-feeds.html">Spot
-         * Instance Data Feed</a> in the <i>Amazon EC2 User Guide for Linux
+         * Instance data feed</a> in the <i>Amazon EC2 User Guide for Linux
          * Instances</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateSpotDatafeedSubscription">AWS
          * API Reference</a></p>
@@ -11683,7 +11683,7 @@ namespace Model
         /**
          * <p>Describes the data feed for Spot Instances. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-data-feeds.html">Spot
-         * Instance Data Feed</a> in the <i>Amazon EC2 User Guide for Linux
+         * Instance data feed</a> in the <i>Amazon EC2 User Guide for Linux
          * Instances</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSpotDatafeedSubscription">AWS
          * API Reference</a></p>
@@ -11693,7 +11693,7 @@ namespace Model
         /**
          * <p>Describes the data feed for Spot Instances. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-data-feeds.html">Spot
-         * Instance Data Feed</a> in the <i>Amazon EC2 User Guide for Linux
+         * Instance data feed</a> in the <i>Amazon EC2 User Guide for Linux
          * Instances</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSpotDatafeedSubscription">AWS
          * API Reference</a></p>
@@ -11705,7 +11705,7 @@ namespace Model
         /**
          * <p>Describes the data feed for Spot Instances. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-data-feeds.html">Spot
-         * Instance Data Feed</a> in the <i>Amazon EC2 User Guide for Linux
+         * Instance data feed</a> in the <i>Amazon EC2 User Guide for Linux
          * Instances</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSpotDatafeedSubscription">AWS
          * API Reference</a></p>
@@ -11883,7 +11883,7 @@ namespace Model
         /**
          * <p>Describes the Spot price history. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances-history.html">Spot
-         * Instance Pricing History</a> in the <i>Amazon EC2 User Guide for Linux
+         * Instance pricing history</a> in the <i>Amazon EC2 User Guide for Linux
          * Instances</i>.</p> <p>When you specify a start and end time, this operation
          * returns the prices of the instance types within the time range that you
          * specified and the time when the price changed. The price is valid within the
@@ -11897,7 +11897,7 @@ namespace Model
         /**
          * <p>Describes the Spot price history. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances-history.html">Spot
-         * Instance Pricing History</a> in the <i>Amazon EC2 User Guide for Linux
+         * Instance pricing history</a> in the <i>Amazon EC2 User Guide for Linux
          * Instances</i>.</p> <p>When you specify a start and end time, this operation
          * returns the prices of the instance types within the time range that you
          * specified and the time when the price changed. The price is valid within the
@@ -11913,7 +11913,7 @@ namespace Model
         /**
          * <p>Describes the Spot price history. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances-history.html">Spot
-         * Instance Pricing History</a> in the <i>Amazon EC2 User Guide for Linux
+         * Instance pricing history</a> in the <i>Amazon EC2 User Guide for Linux
          * Instances</i>.</p> <p>When you specify a start and end time, this operation
          * returns the prices of the instance types within the time range that you
          * specified and the time when the price changed. The price is valid within the
@@ -18194,7 +18194,7 @@ namespace Model
          * <code>instance</code> resource types are supported.</p> <p>For more information,
          * see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-requests.html">Spot
-         * Fleet Requests</a> in the <i>Amazon EC2 User Guide for Linux
+         * Fleet requests</a> in the <i>Amazon EC2 User Guide for Linux
          * Instances</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RequestSpotFleet">AWS
          * API Reference</a></p>
@@ -18220,7 +18220,7 @@ namespace Model
          * <code>instance</code> resource types are supported.</p> <p>For more information,
          * see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-requests.html">Spot
-         * Fleet Requests</a> in the <i>Amazon EC2 User Guide for Linux
+         * Fleet requests</a> in the <i>Amazon EC2 User Guide for Linux
          * Instances</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RequestSpotFleet">AWS
          * API Reference</a></p>
@@ -18248,7 +18248,7 @@ namespace Model
          * <code>instance</code> resource types are supported.</p> <p>For more information,
          * see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-requests.html">Spot
-         * Fleet Requests</a> in the <i>Amazon EC2 User Guide for Linux
+         * Fleet requests</a> in the <i>Amazon EC2 User Guide for Linux
          * Instances</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RequestSpotFleet">AWS
          * API Reference</a></p>
@@ -18260,7 +18260,7 @@ namespace Model
         /**
          * <p>Creates a Spot Instance request.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-requests.html">Spot
-         * Instance Requests</a> in the <i>Amazon EC2 User Guide for Linux
+         * Instance requests</a> in the <i>Amazon EC2 User Guide for Linux
          * Instances</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RequestSpotInstances">AWS
          * API Reference</a></p>
@@ -18270,7 +18270,7 @@ namespace Model
         /**
          * <p>Creates a Spot Instance request.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-requests.html">Spot
-         * Instance Requests</a> in the <i>Amazon EC2 User Guide for Linux
+         * Instance requests</a> in the <i>Amazon EC2 User Guide for Linux
          * Instances</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RequestSpotInstances">AWS
          * API Reference</a></p>
@@ -18282,7 +18282,7 @@ namespace Model
         /**
          * <p>Creates a Spot Instance request.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-requests.html">Spot
-         * Instance Requests</a> in the <i>Amazon EC2 User Guide for Linux
+         * Instance requests</a> in the <i>Amazon EC2 User Guide for Linux
          * Instances</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RequestSpotInstances">AWS
          * API Reference</a></p>

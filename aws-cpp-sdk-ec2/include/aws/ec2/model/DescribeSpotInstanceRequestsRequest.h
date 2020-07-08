@@ -100,7 +100,7 @@ namespace Model
      * can help you track your Amazon EC2 Spot Instance requests. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html">Spot
-     * Request Status</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+     * request status</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      * </li> <li> <p> <code>status-code</code> - The short code describing the most
      * recent evaluation of your Spot Instance request.</p> </li> <li> <p>
      * <code>status-message</code> - The message explaining the status of the Spot
@@ -177,7 +177,7 @@ namespace Model
      * can help you track your Amazon EC2 Spot Instance requests. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html">Spot
-     * Request Status</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+     * request status</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      * </li> <li> <p> <code>status-code</code> - The short code describing the most
      * recent evaluation of your Spot Instance request.</p> </li> <li> <p>
      * <code>status-message</code> - The message explaining the status of the Spot
@@ -254,7 +254,7 @@ namespace Model
      * can help you track your Amazon EC2 Spot Instance requests. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html">Spot
-     * Request Status</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+     * request status</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      * </li> <li> <p> <code>status-code</code> - The short code describing the most
      * recent evaluation of your Spot Instance request.</p> </li> <li> <p>
      * <code>status-message</code> - The message explaining the status of the Spot
@@ -331,7 +331,7 @@ namespace Model
      * can help you track your Amazon EC2 Spot Instance requests. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html">Spot
-     * Request Status</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+     * request status</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      * </li> <li> <p> <code>status-code</code> - The short code describing the most
      * recent evaluation of your Spot Instance request.</p> </li> <li> <p>
      * <code>status-message</code> - The message explaining the status of the Spot
@@ -408,7 +408,7 @@ namespace Model
      * can help you track your Amazon EC2 Spot Instance requests. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html">Spot
-     * Request Status</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+     * request status</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      * </li> <li> <p> <code>status-code</code> - The short code describing the most
      * recent evaluation of your Spot Instance request.</p> </li> <li> <p>
      * <code>status-message</code> - The message explaining the status of the Spot
@@ -485,7 +485,7 @@ namespace Model
      * can help you track your Amazon EC2 Spot Instance requests. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html">Spot
-     * Request Status</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+     * request status</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      * </li> <li> <p> <code>status-code</code> - The short code describing the most
      * recent evaluation of your Spot Instance request.</p> </li> <li> <p>
      * <code>status-message</code> - The message explaining the status of the Spot
@@ -562,7 +562,7 @@ namespace Model
      * can help you track your Amazon EC2 Spot Instance requests. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html">Spot
-     * Request Status</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+     * request status</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      * </li> <li> <p> <code>status-code</code> - The short code describing the most
      * recent evaluation of your Spot Instance request.</p> </li> <li> <p>
      * <code>status-message</code> - The message explaining the status of the Spot
@@ -639,7 +639,7 @@ namespace Model
      * can help you track your Amazon EC2 Spot Instance requests. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html">Spot
-     * Request Status</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+     * request status</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      * </li> <li> <p> <code>status-code</code> - The short code describing the most
      * recent evaluation of your Spot Instance request.</p> </li> <li> <p>
      * <code>status-message</code> - The message explaining the status of the Spot

@@ -178,49 +178,49 @@ namespace Model
 
     /**
      * <p> Savings percentage based on the recommended modifications, relative to the
-     * total On Demand costs associated with these instances.</p>
+     * total On-Demand costs associated with these instances.</p>
      */
     inline const Aws::String& GetSavingsPercentage() const{ return m_savingsPercentage; }
 
     /**
      * <p> Savings percentage based on the recommended modifications, relative to the
-     * total On Demand costs associated with these instances.</p>
+     * total On-Demand costs associated with these instances.</p>
      */
     inline bool SavingsPercentageHasBeenSet() const { return m_savingsPercentageHasBeenSet; }
 
     /**
      * <p> Savings percentage based on the recommended modifications, relative to the
-     * total On Demand costs associated with these instances.</p>
+     * total On-Demand costs associated with these instances.</p>
      */
     inline void SetSavingsPercentage(const Aws::String& value) { m_savingsPercentageHasBeenSet = true; m_savingsPercentage = value; }
 
     /**
      * <p> Savings percentage based on the recommended modifications, relative to the
-     * total On Demand costs associated with these instances.</p>
+     * total On-Demand costs associated with these instances.</p>
      */
     inline void SetSavingsPercentage(Aws::String&& value) { m_savingsPercentageHasBeenSet = true; m_savingsPercentage = std::move(value); }
 
     /**
      * <p> Savings percentage based on the recommended modifications, relative to the
-     * total On Demand costs associated with these instances.</p>
+     * total On-Demand costs associated with these instances.</p>
      */
     inline void SetSavingsPercentage(const char* value) { m_savingsPercentageHasBeenSet = true; m_savingsPercentage.assign(value); }
 
     /**
      * <p> Savings percentage based on the recommended modifications, relative to the
-     * total On Demand costs associated with these instances.</p>
+     * total On-Demand costs associated with these instances.</p>
      */
     inline RightsizingRecommendationSummary& WithSavingsPercentage(const Aws::String& value) { SetSavingsPercentage(value); return *this;}
 
     /**
      * <p> Savings percentage based on the recommended modifications, relative to the
-     * total On Demand costs associated with these instances.</p>
+     * total On-Demand costs associated with these instances.</p>
      */
     inline RightsizingRecommendationSummary& WithSavingsPercentage(Aws::String&& value) { SetSavingsPercentage(std::move(value)); return *this;}
 
     /**
      * <p> Savings percentage based on the recommended modifications, relative to the
-     * total On Demand costs associated with these instances.</p>
+     * total On-Demand costs associated with these instances.</p>
      */
     inline RightsizingRecommendationSummary& WithSavingsPercentage(const char* value) { SetSavingsPercentage(value); return *this;}
 

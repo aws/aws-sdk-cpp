@@ -15,7 +15,8 @@ using namespace Aws::Utils;
 CreateForecastExportJobRequest::CreateForecastExportJobRequest() : 
     m_forecastExportJobNameHasBeenSet(false),
     m_forecastArnHasBeenSet(false),
-    m_destinationHasBeenSet(false)
+    m_destinationHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -38,6 +39,17 @@ Aws::String CreateForecastExportJobRequest::SerializePayload() const
   if(m_destinationHasBeenSet)
   {
    payload.WithObject("Destination", m_destination.Jsonize());
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   Array<JsonValue> tagsJsonList(m_tags.size());
+   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+   {
+     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+   }
+   payload.WithArray("Tags", std::move(tagsJsonList));
 
   }
 

@@ -20,7 +20,8 @@ CreateDatasetRequest::CreateDatasetRequest() :
     m_datasetTypeHasBeenSet(false),
     m_dataFrequencyHasBeenSet(false),
     m_schemaHasBeenSet(false),
-    m_encryptionConfigHasBeenSet(false)
+    m_encryptionConfigHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -59,6 +60,17 @@ Aws::String CreateDatasetRequest::SerializePayload() const
   if(m_encryptionConfigHasBeenSet)
   {
    payload.WithObject("EncryptionConfig", m_encryptionConfig.Jsonize());
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   Array<JsonValue> tagsJsonList(m_tags.size());
+   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+   {
+     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+   }
+   payload.WithArray("Tags", std::move(tagsJsonList));
 
   }
 

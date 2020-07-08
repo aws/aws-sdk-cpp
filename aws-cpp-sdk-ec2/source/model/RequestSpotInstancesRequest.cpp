@@ -26,6 +26,7 @@ RequestSpotInstancesRequest::RequestSpotInstancesRequest() :
     m_typeHasBeenSet(false),
     m_validFromHasBeenSet(false),
     m_validUntilHasBeenSet(false),
+    m_tagSpecificationsHasBeenSet(false),
     m_instanceInterruptionBehavior(InstanceInterruptionBehavior::NOT_SET),
     m_instanceInterruptionBehaviorHasBeenSet(false)
 {
@@ -88,6 +89,16 @@ Aws::String RequestSpotInstancesRequest::SerializePayload() const
   if(m_validUntilHasBeenSet)
   {
     ss << "ValidUntil=" << StringUtils::URLEncode(m_validUntil.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+  }
+
+  if(m_tagSpecificationsHasBeenSet)
+  {
+    unsigned tagSpecificationsCount = 1;
+    for(auto& item : m_tagSpecifications)
+    {
+      item.OutputToStream(ss, "TagSpecification.", tagSpecificationsCount, "");
+      tagSpecificationsCount++;
+    }
   }
 
   if(m_instanceInterruptionBehaviorHasBeenSet)

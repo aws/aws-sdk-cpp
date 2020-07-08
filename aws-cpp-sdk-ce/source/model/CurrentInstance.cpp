@@ -20,6 +20,7 @@ namespace Model
 
 CurrentInstance::CurrentInstance() : 
     m_resourceIdHasBeenSet(false),
+    m_instanceNameHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_resourceDetailsHasBeenSet(false),
     m_resourceUtilizationHasBeenSet(false),
@@ -34,6 +35,7 @@ CurrentInstance::CurrentInstance() :
 
 CurrentInstance::CurrentInstance(JsonView jsonValue) : 
     m_resourceIdHasBeenSet(false),
+    m_instanceNameHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_resourceDetailsHasBeenSet(false),
     m_resourceUtilizationHasBeenSet(false),
@@ -54,6 +56,13 @@ CurrentInstance& CurrentInstance::operator =(JsonView jsonValue)
     m_resourceId = jsonValue.GetString("ResourceId");
 
     m_resourceIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("InstanceName"))
+  {
+    m_instanceName = jsonValue.GetString("InstanceName");
+
+    m_instanceNameHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Tags"))
@@ -132,6 +141,12 @@ JsonValue CurrentInstance::Jsonize() const
   if(m_resourceIdHasBeenSet)
   {
    payload.WithString("ResourceId", m_resourceId);
+
+  }
+
+  if(m_instanceNameHasBeenSet)
+  {
+   payload.WithString("InstanceName", m_instanceName);
 
   }
 

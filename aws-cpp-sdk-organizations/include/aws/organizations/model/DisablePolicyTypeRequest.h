@@ -103,6 +103,8 @@ namespace Model
     /**
      * <p>The policy type that you want to disable in this root. You can specify one of
      * the following values:</p> <ul> <li> <p> <a
+     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">AISERVICES_OPT_OUT_POLICY</a>
+     * </p> </li> <li> <p> <a
      * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">BACKUP_POLICY</a>
      * </p> </li> <li> <p> <a
      * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">SERVICE_CONTROL_POLICY</a>
@@ -115,6 +117,8 @@ namespace Model
     /**
      * <p>The policy type that you want to disable in this root. You can specify one of
      * the following values:</p> <ul> <li> <p> <a
+     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">AISERVICES_OPT_OUT_POLICY</a>
+     * </p> </li> <li> <p> <a
      * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">BACKUP_POLICY</a>
      * </p> </li> <li> <p> <a
      * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">SERVICE_CONTROL_POLICY</a>
@@ -127,6 +131,8 @@ namespace Model
     /**
      * <p>The policy type that you want to disable in this root. You can specify one of
      * the following values:</p> <ul> <li> <p> <a
+     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">AISERVICES_OPT_OUT_POLICY</a>
+     * </p> </li> <li> <p> <a
      * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">BACKUP_POLICY</a>
      * </p> </li> <li> <p> <a
      * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">SERVICE_CONTROL_POLICY</a>
@@ -139,6 +145,8 @@ namespace Model
     /**
      * <p>The policy type that you want to disable in this root. You can specify one of
      * the following values:</p> <ul> <li> <p> <a
+     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">AISERVICES_OPT_OUT_POLICY</a>
+     * </p> </li> <li> <p> <a
      * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">BACKUP_POLICY</a>
      * </p> </li> <li> <p> <a
      * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">SERVICE_CONTROL_POLICY</a>
@@ -151,6 +159,8 @@ namespace Model
     /**
      * <p>The policy type that you want to disable in this root. You can specify one of
      * the following values:</p> <ul> <li> <p> <a
+     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">AISERVICES_OPT_OUT_POLICY</a>
+     * </p> </li> <li> <p> <a
      * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">BACKUP_POLICY</a>
      * </p> </li> <li> <p> <a
      * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">SERVICE_CONTROL_POLICY</a>
@@ -163,6 +173,8 @@ namespace Model
     /**
      * <p>The policy type that you want to disable in this root. You can specify one of
      * the following values:</p> <ul> <li> <p> <a
+     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">AISERVICES_OPT_OUT_POLICY</a>
+     * </p> </li> <li> <p> <a
      * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">BACKUP_POLICY</a>
      * </p> </li> <li> <p> <a
      * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">SERVICE_CONTROL_POLICY</a>

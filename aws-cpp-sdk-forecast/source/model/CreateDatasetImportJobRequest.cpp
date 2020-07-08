@@ -16,7 +16,8 @@ CreateDatasetImportJobRequest::CreateDatasetImportJobRequest() :
     m_datasetImportJobNameHasBeenSet(false),
     m_datasetArnHasBeenSet(false),
     m_dataSourceHasBeenSet(false),
-    m_timestampFormatHasBeenSet(false)
+    m_timestampFormatHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -45,6 +46,17 @@ Aws::String CreateDatasetImportJobRequest::SerializePayload() const
   if(m_timestampFormatHasBeenSet)
   {
    payload.WithString("TimestampFormat", m_timestampFormat);
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   Array<JsonValue> tagsJsonList(m_tags.size());
+   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+   {
+     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+   }
+   payload.WithArray("Tags", std::move(tagsJsonList));
 
   }
 
