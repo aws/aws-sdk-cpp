@@ -71,6 +71,7 @@ if (AWSSDK_ROOT_DIR)
             )
 else()
     find_file(AWSSDK_CORE_HEADER_FILE Aws.h
+        "${AWSSDK_DEFAULT_ROOT_DIR}/${AWSSDK_INSTALL_INCLUDEDIR}/aws/core"
         "/usr/${AWSSDK_INSTALL_INCLUDEDIR}/aws/core"
         "/usr/local/${AWSSDK_INSTALL_INCLUDEDIR}/aws/core"
         "C:/Progra~1/AWSSDK/${AWSSDK_INSTALL_INCLUDEDIR}/aws/core"
@@ -78,7 +79,6 @@ else()
         "C:/Program Files/aws-cpp-sdk-all/${AWSSDK_INSTALL_INCLUDEDIR}/aws/core"
         "C:/Program Files (x86)/aws-cpp-sdk-all/${AWSSDK_INSTALL_INCLUDEDIR}/aws/core"
         "C:/AWSSDK/${AWSSDK_INSTALL_INCLUDEDIR}/aws/core"
-        "${AWSSDK_DEFAULT_ROOT_DIR}/${AWSSDK_INSTALL_INCLUDEDIR}/aws/core"
     )
 endif()
 
