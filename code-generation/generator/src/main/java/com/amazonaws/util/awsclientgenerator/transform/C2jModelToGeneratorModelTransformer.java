@@ -27,6 +27,15 @@ public class C2jModelToGeneratorModelTransformer {
     boolean hasEndpointDiscoveryTrait;
     String endpointOperationName;
 
+    public static final HashSet<String> UNSUPPORTEDHTMLTAGS = new HashSet<>();
+
+    static {
+        UNSUPPORTEDHTMLTAGS.add("<note>");
+        UNSUPPORTEDHTMLTAGS.add("</note>");
+        UNSUPPORTEDHTMLTAGS.add("<important>");
+        UNSUPPORTEDHTMLTAGS.add("</important>");
+    }
+
     public C2jModelToGeneratorModelTransformer(C2jServiceModel c2jServiceModel, boolean standalone) {
         this.c2jServiceModel = c2jServiceModel;
         this.standalone = standalone;
@@ -62,7 +71,11 @@ public class C2jModelToGeneratorModelTransformer {
                 tabString += " ";
             }
             String wrappedString = WordUtils.wrap(documentation, 80, "\n" + tabString + "* ", false);
-            return wrappedString.replace("/*", "/ *").replace("*/", "* /");
+            wrappedString = wrappedString.replace("/*", "/ *").replace("*/", "* /");
+            for (String s : UNSUPPORTEDHTMLTAGS) {
+                wrappedString = wrappedString.replace(s, "");
+            }
+            return wrappedString;
         }
         return null;
     }
