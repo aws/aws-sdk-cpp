@@ -352,7 +352,7 @@ namespace Model
      * needs.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing
      * User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer
-     * Guide</i>.</p> <note> <p>Take the following limitations into consideration when
+     * Guide</i>.</p>  <p>Take the following limitations into consideration when
      * you use the ClientMetadata parameter:</p> <ul> <li> <p>Amazon Cognito does not
      * store the ClientMetadata value. This data is available only to AWS Lambda
      * triggers that are assigned to a user pool to support custom workflows. If your
@@ -360,7 +360,7 @@ namespace Model
      * serves no purpose.</p> </li> <li> <p>Amazon Cognito does not validate the
      * ClientMetadata value.</p> </li> <li> <p>Amazon Cognito does not encrypt the the
      * ClientMetadata value, so don't use it to provide sensitive information.</p>
-     * </li> </ul> </note>
+     * </li> </ul> 
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetClientMetadata() const{ return m_clientMetadata; }
 
@@ -378,7 +378,7 @@ namespace Model
      * needs.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing
      * User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer
-     * Guide</i>.</p> <note> <p>Take the following limitations into consideration when
+     * Guide</i>.</p>  <p>Take the following limitations into consideration when
      * you use the ClientMetadata parameter:</p> <ul> <li> <p>Amazon Cognito does not
      * store the ClientMetadata value. This data is available only to AWS Lambda
      * triggers that are assigned to a user pool to support custom workflows. If your
@@ -386,7 +386,7 @@ namespace Model
      * serves no purpose.</p> </li> <li> <p>Amazon Cognito does not validate the
      * ClientMetadata value.</p> </li> <li> <p>Amazon Cognito does not encrypt the the
      * ClientMetadata value, so don't use it to provide sensitive information.</p>
-     * </li> </ul> </note>
+     * </li> </ul> 
      */
     inline bool ClientMetadataHasBeenSet() const { return m_clientMetadataHasBeenSet; }
 
@@ -404,7 +404,7 @@ namespace Model
      * needs.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing
      * User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer
-     * Guide</i>.</p> <note> <p>Take the following limitations into consideration when
+     * Guide</i>.</p>  <p>Take the following limitations into consideration when
      * you use the ClientMetadata parameter:</p> <ul> <li> <p>Amazon Cognito does not
      * store the ClientMetadata value. This data is available only to AWS Lambda
      * triggers that are assigned to a user pool to support custom workflows. If your
@@ -412,7 +412,7 @@ namespace Model
      * serves no purpose.</p> </li> <li> <p>Amazon Cognito does not validate the
      * ClientMetadata value.</p> </li> <li> <p>Amazon Cognito does not encrypt the the
      * ClientMetadata value, so don't use it to provide sensitive information.</p>
-     * </li> </ul> </note>
+     * </li> </ul> 
      */
     inline void SetClientMetadata(const Aws::Map<Aws::String, Aws::String>& value) { m_clientMetadataHasBeenSet = true; m_clientMetadata = value; }
 
@@ -430,7 +430,7 @@ namespace Model
      * needs.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing
      * User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer
-     * Guide</i>.</p> <note> <p>Take the following limitations into consideration when
+     * Guide</i>.</p>  <p>Take the following limitations into consideration when
      * you use the ClientMetadata parameter:</p> <ul> <li> <p>Amazon Cognito does not
      * store the ClientMetadata value. This data is available only to AWS Lambda
      * triggers that are assigned to a user pool to support custom workflows. If your
@@ -438,7 +438,7 @@ namespace Model
      * serves no purpose.</p> </li> <li> <p>Amazon Cognito does not validate the
      * ClientMetadata value.</p> </li> <li> <p>Amazon Cognito does not encrypt the the
      * ClientMetadata value, so don't use it to provide sensitive information.</p>
-     * </li> </ul> </note>
+     * </li> </ul> 
      */
     inline void SetClientMetadata(Aws::Map<Aws::String, Aws::String>&& value) { m_clientMetadataHasBeenSet = true; m_clientMetadata = std::move(value); }
 
@@ -456,7 +456,7 @@ namespace Model
      * needs.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing
      * User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer
-     * Guide</i>.</p> <note> <p>Take the following limitations into consideration when
+     * Guide</i>.</p>  <p>Take the following limitations into consideration when
      * you use the ClientMetadata parameter:</p> <ul> <li> <p>Amazon Cognito does not
      * store the ClientMetadata value. This data is available only to AWS Lambda
      * triggers that are assigned to a user pool to support custom workflows. If your
@@ -464,7 +464,7 @@ namespace Model
      * serves no purpose.</p> </li> <li> <p>Amazon Cognito does not validate the
      * ClientMetadata value.</p> </li> <li> <p>Amazon Cognito does not encrypt the the
      * ClientMetadata value, so don't use it to provide sensitive information.</p>
-     * </li> </ul> </note>
+     * </li> </ul> 
      */
     inline ConfirmSignUpRequest& WithClientMetadata(const Aws::Map<Aws::String, Aws::String>& value) { SetClientMetadata(value); return *this;}
 
@@ -482,7 +482,7 @@ namespace Model
      * needs.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing
      * User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer
-     * Guide</i>.</p> <note> <p>Take the following limitations into consideration when
+     * Guide</i>.</p>  <p>Take the following limitations into consideration when
      * you use the ClientMetadata parameter:</p> <ul> <li> <p>Amazon Cognito does not
      * store the ClientMetadata value. This data is available only to AWS Lambda
      * triggers that are assigned to a user pool to support custom workflows. If your
@@ -490,7 +490,7 @@ namespace Model
      * serves no purpose.</p> </li> <li> <p>Amazon Cognito does not validate the
      * ClientMetadata value.</p> </li> <li> <p>Amazon Cognito does not encrypt the the
      * ClientMetadata value, so don't use it to provide sensitive information.</p>
-     * </li> </ul> </note>
+     * </li> </ul> 
      */
     inline ConfirmSignUpRequest& WithClientMetadata(Aws::Map<Aws::String, Aws::String>&& value) { SetClientMetadata(std::move(value)); return *this;}
 
@@ -508,7 +508,7 @@ namespace Model
      * needs.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing
      * User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer
-     * Guide</i>.</p> <note> <p>Take the following limitations into consideration when
+     * Guide</i>.</p>  <p>Take the following limitations into consideration when
      * you use the ClientMetadata parameter:</p> <ul> <li> <p>Amazon Cognito does not
      * store the ClientMetadata value. This data is available only to AWS Lambda
      * triggers that are assigned to a user pool to support custom workflows. If your
@@ -516,7 +516,7 @@ namespace Model
      * serves no purpose.</p> </li> <li> <p>Amazon Cognito does not validate the
      * ClientMetadata value.</p> </li> <li> <p>Amazon Cognito does not encrypt the the
      * ClientMetadata value, so don't use it to provide sensitive information.</p>
-     * </li> </ul> </note>
+     * </li> </ul> 
      */
     inline ConfirmSignUpRequest& AddClientMetadata(const Aws::String& key, const Aws::String& value) { m_clientMetadataHasBeenSet = true; m_clientMetadata.emplace(key, value); return *this; }
 
@@ -534,7 +534,7 @@ namespace Model
      * needs.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing
      * User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer
-     * Guide</i>.</p> <note> <p>Take the following limitations into consideration when
+     * Guide</i>.</p>  <p>Take the following limitations into consideration when
      * you use the ClientMetadata parameter:</p> <ul> <li> <p>Amazon Cognito does not
      * store the ClientMetadata value. This data is available only to AWS Lambda
      * triggers that are assigned to a user pool to support custom workflows. If your
@@ -542,7 +542,7 @@ namespace Model
      * serves no purpose.</p> </li> <li> <p>Amazon Cognito does not validate the
      * ClientMetadata value.</p> </li> <li> <p>Amazon Cognito does not encrypt the the
      * ClientMetadata value, so don't use it to provide sensitive information.</p>
-     * </li> </ul> </note>
+     * </li> </ul> 
      */
     inline ConfirmSignUpRequest& AddClientMetadata(Aws::String&& key, const Aws::String& value) { m_clientMetadataHasBeenSet = true; m_clientMetadata.emplace(std::move(key), value); return *this; }
 
@@ -560,7 +560,7 @@ namespace Model
      * needs.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing
      * User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer
-     * Guide</i>.</p> <note> <p>Take the following limitations into consideration when
+     * Guide</i>.</p>  <p>Take the following limitations into consideration when
      * you use the ClientMetadata parameter:</p> <ul> <li> <p>Amazon Cognito does not
      * store the ClientMetadata value. This data is available only to AWS Lambda
      * triggers that are assigned to a user pool to support custom workflows. If your
@@ -568,7 +568,7 @@ namespace Model
      * serves no purpose.</p> </li> <li> <p>Amazon Cognito does not validate the
      * ClientMetadata value.</p> </li> <li> <p>Amazon Cognito does not encrypt the the
      * ClientMetadata value, so don't use it to provide sensitive information.</p>
-     * </li> </ul> </note>
+     * </li> </ul> 
      */
     inline ConfirmSignUpRequest& AddClientMetadata(const Aws::String& key, Aws::String&& value) { m_clientMetadataHasBeenSet = true; m_clientMetadata.emplace(key, std::move(value)); return *this; }
 
@@ -586,7 +586,7 @@ namespace Model
      * needs.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing
      * User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer
-     * Guide</i>.</p> <note> <p>Take the following limitations into consideration when
+     * Guide</i>.</p>  <p>Take the following limitations into consideration when
      * you use the ClientMetadata parameter:</p> <ul> <li> <p>Amazon Cognito does not
      * store the ClientMetadata value. This data is available only to AWS Lambda
      * triggers that are assigned to a user pool to support custom workflows. If your
@@ -594,7 +594,7 @@ namespace Model
      * serves no purpose.</p> </li> <li> <p>Amazon Cognito does not validate the
      * ClientMetadata value.</p> </li> <li> <p>Amazon Cognito does not encrypt the the
      * ClientMetadata value, so don't use it to provide sensitive information.</p>
-     * </li> </ul> </note>
+     * </li> </ul> 
      */
     inline ConfirmSignUpRequest& AddClientMetadata(Aws::String&& key, Aws::String&& value) { m_clientMetadataHasBeenSet = true; m_clientMetadata.emplace(std::move(key), std::move(value)); return *this; }
 
@@ -612,7 +612,7 @@ namespace Model
      * needs.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing
      * User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer
-     * Guide</i>.</p> <note> <p>Take the following limitations into consideration when
+     * Guide</i>.</p>  <p>Take the following limitations into consideration when
      * you use the ClientMetadata parameter:</p> <ul> <li> <p>Amazon Cognito does not
      * store the ClientMetadata value. This data is available only to AWS Lambda
      * triggers that are assigned to a user pool to support custom workflows. If your
@@ -620,7 +620,7 @@ namespace Model
      * serves no purpose.</p> </li> <li> <p>Amazon Cognito does not validate the
      * ClientMetadata value.</p> </li> <li> <p>Amazon Cognito does not encrypt the the
      * ClientMetadata value, so don't use it to provide sensitive information.</p>
-     * </li> </ul> </note>
+     * </li> </ul> 
      */
     inline ConfirmSignUpRequest& AddClientMetadata(const char* key, Aws::String&& value) { m_clientMetadataHasBeenSet = true; m_clientMetadata.emplace(key, std::move(value)); return *this; }
 
@@ -638,7 +638,7 @@ namespace Model
      * needs.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing
      * User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer
-     * Guide</i>.</p> <note> <p>Take the following limitations into consideration when
+     * Guide</i>.</p>  <p>Take the following limitations into consideration when
      * you use the ClientMetadata parameter:</p> <ul> <li> <p>Amazon Cognito does not
      * store the ClientMetadata value. This data is available only to AWS Lambda
      * triggers that are assigned to a user pool to support custom workflows. If your
@@ -646,7 +646,7 @@ namespace Model
      * serves no purpose.</p> </li> <li> <p>Amazon Cognito does not validate the
      * ClientMetadata value.</p> </li> <li> <p>Amazon Cognito does not encrypt the the
      * ClientMetadata value, so don't use it to provide sensitive information.</p>
-     * </li> </ul> </note>
+     * </li> </ul> 
      */
     inline ConfirmSignUpRequest& AddClientMetadata(Aws::String&& key, const char* value) { m_clientMetadataHasBeenSet = true; m_clientMetadata.emplace(std::move(key), value); return *this; }
 
@@ -664,7 +664,7 @@ namespace Model
      * needs.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing
      * User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer
-     * Guide</i>.</p> <note> <p>Take the following limitations into consideration when
+     * Guide</i>.</p>  <p>Take the following limitations into consideration when
      * you use the ClientMetadata parameter:</p> <ul> <li> <p>Amazon Cognito does not
      * store the ClientMetadata value. This data is available only to AWS Lambda
      * triggers that are assigned to a user pool to support custom workflows. If your
@@ -672,7 +672,7 @@ namespace Model
      * serves no purpose.</p> </li> <li> <p>Amazon Cognito does not validate the
      * ClientMetadata value.</p> </li> <li> <p>Amazon Cognito does not encrypt the the
      * ClientMetadata value, so don't use it to provide sensitive information.</p>
-     * </li> </ul> </note>
+     * </li> </ul> 
      */
     inline ConfirmSignUpRequest& AddClientMetadata(const char* key, const char* value) { m_clientMetadataHasBeenSet = true; m_clientMetadata.emplace(key, value); return *this; }
 

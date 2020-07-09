@@ -82,105 +82,105 @@ namespace Model
 
     /**
      * <p>A list of 1-50 "AttributeNameMapping" objects that map an existing attribute
-     * to a new attribute.</p> <note> <p>The existing attributes remain in the message,
+     * to a new attribute.</p>  <p>The existing attributes remain in the message,
      * so if you want to remove the originals, use "RemoveAttributeActivity".</p>
-     * </note>
+     * 
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetAttributes() const{ return m_attributes; }
 
     /**
      * <p>A list of 1-50 "AttributeNameMapping" objects that map an existing attribute
-     * to a new attribute.</p> <note> <p>The existing attributes remain in the message,
+     * to a new attribute.</p>  <p>The existing attributes remain in the message,
      * so if you want to remove the originals, use "RemoveAttributeActivity".</p>
-     * </note>
+     * 
      */
     inline bool AttributesHasBeenSet() const { return m_attributesHasBeenSet; }
 
     /**
      * <p>A list of 1-50 "AttributeNameMapping" objects that map an existing attribute
-     * to a new attribute.</p> <note> <p>The existing attributes remain in the message,
+     * to a new attribute.</p>  <p>The existing attributes remain in the message,
      * so if you want to remove the originals, use "RemoveAttributeActivity".</p>
-     * </note>
+     * 
      */
     inline void SetAttributes(const Aws::Map<Aws::String, Aws::String>& value) { m_attributesHasBeenSet = true; m_attributes = value; }
 
     /**
      * <p>A list of 1-50 "AttributeNameMapping" objects that map an existing attribute
-     * to a new attribute.</p> <note> <p>The existing attributes remain in the message,
+     * to a new attribute.</p>  <p>The existing attributes remain in the message,
      * so if you want to remove the originals, use "RemoveAttributeActivity".</p>
-     * </note>
+     * 
      */
     inline void SetAttributes(Aws::Map<Aws::String, Aws::String>&& value) { m_attributesHasBeenSet = true; m_attributes = std::move(value); }
 
     /**
      * <p>A list of 1-50 "AttributeNameMapping" objects that map an existing attribute
-     * to a new attribute.</p> <note> <p>The existing attributes remain in the message,
+     * to a new attribute.</p>  <p>The existing attributes remain in the message,
      * so if you want to remove the originals, use "RemoveAttributeActivity".</p>
-     * </note>
+     * 
      */
     inline AddAttributesActivity& WithAttributes(const Aws::Map<Aws::String, Aws::String>& value) { SetAttributes(value); return *this;}
 
     /**
      * <p>A list of 1-50 "AttributeNameMapping" objects that map an existing attribute
-     * to a new attribute.</p> <note> <p>The existing attributes remain in the message,
+     * to a new attribute.</p>  <p>The existing attributes remain in the message,
      * so if you want to remove the originals, use "RemoveAttributeActivity".</p>
-     * </note>
+     * 
      */
     inline AddAttributesActivity& WithAttributes(Aws::Map<Aws::String, Aws::String>&& value) { SetAttributes(std::move(value)); return *this;}
 
     /**
      * <p>A list of 1-50 "AttributeNameMapping" objects that map an existing attribute
-     * to a new attribute.</p> <note> <p>The existing attributes remain in the message,
+     * to a new attribute.</p>  <p>The existing attributes remain in the message,
      * so if you want to remove the originals, use "RemoveAttributeActivity".</p>
-     * </note>
+     * 
      */
     inline AddAttributesActivity& AddAttributes(const Aws::String& key, const Aws::String& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, value); return *this; }
 
     /**
      * <p>A list of 1-50 "AttributeNameMapping" objects that map an existing attribute
-     * to a new attribute.</p> <note> <p>The existing attributes remain in the message,
+     * to a new attribute.</p>  <p>The existing attributes remain in the message,
      * so if you want to remove the originals, use "RemoveAttributeActivity".</p>
-     * </note>
+     * 
      */
     inline AddAttributesActivity& AddAttributes(Aws::String&& key, const Aws::String& value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>A list of 1-50 "AttributeNameMapping" objects that map an existing attribute
-     * to a new attribute.</p> <note> <p>The existing attributes remain in the message,
+     * to a new attribute.</p>  <p>The existing attributes remain in the message,
      * so if you want to remove the originals, use "RemoveAttributeActivity".</p>
-     * </note>
+     * 
      */
     inline AddAttributesActivity& AddAttributes(const Aws::String& key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>A list of 1-50 "AttributeNameMapping" objects that map an existing attribute
-     * to a new attribute.</p> <note> <p>The existing attributes remain in the message,
+     * to a new attribute.</p>  <p>The existing attributes remain in the message,
      * so if you want to remove the originals, use "RemoveAttributeActivity".</p>
-     * </note>
+     * 
      */
     inline AddAttributesActivity& AddAttributes(Aws::String&& key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * <p>A list of 1-50 "AttributeNameMapping" objects that map an existing attribute
-     * to a new attribute.</p> <note> <p>The existing attributes remain in the message,
+     * to a new attribute.</p>  <p>The existing attributes remain in the message,
      * so if you want to remove the originals, use "RemoveAttributeActivity".</p>
-     * </note>
+     * 
      */
     inline AddAttributesActivity& AddAttributes(const char* key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>A list of 1-50 "AttributeNameMapping" objects that map an existing attribute
-     * to a new attribute.</p> <note> <p>The existing attributes remain in the message,
+     * to a new attribute.</p>  <p>The existing attributes remain in the message,
      * so if you want to remove the originals, use "RemoveAttributeActivity".</p>
-     * </note>
+     * 
      */
     inline AddAttributesActivity& AddAttributes(Aws::String&& key, const char* value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>A list of 1-50 "AttributeNameMapping" objects that map an existing attribute
-     * to a new attribute.</p> <note> <p>The existing attributes remain in the message,
+     * to a new attribute.</p>  <p>The existing attributes remain in the message,
      * so if you want to remove the originals, use "RemoveAttributeActivity".</p>
-     * </note>
+     * 
      */
     inline AddAttributesActivity& AddAttributes(const char* key, const char* value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, value); return *this; }
 

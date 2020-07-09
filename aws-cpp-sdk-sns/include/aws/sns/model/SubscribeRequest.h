@@ -204,9 +204,9 @@ namespace Model
 
     /**
      * <p>The endpoint that you want to receive notifications. Endpoints vary by
-     * protocol:</p> <ul> <li> <p>For the <code>http</code> protocol, the endpoint is
-     * an URL beginning with <code>http://</code> </p> </li> <li> <p>For the
-     * <code>https</code> protocol, the endpoint is a URL beginning with
+     * protocol:</p> <ul> <li> <p>For the <code>http</code> protocol, the (public)
+     * endpoint is a URL beginning with <code>http://</code> </p> </li> <li> <p>For the
+     * <code>https</code> protocol, the (public) endpoint is a URL beginning with
      * <code>https://</code> </p> </li> <li> <p>For the <code>email</code> protocol,
      * the endpoint is an email address</p> </li> <li> <p>For the
      * <code>email-json</code> protocol, the endpoint is an email address</p> </li>
@@ -221,9 +221,9 @@ namespace Model
 
     /**
      * <p>The endpoint that you want to receive notifications. Endpoints vary by
-     * protocol:</p> <ul> <li> <p>For the <code>http</code> protocol, the endpoint is
-     * an URL beginning with <code>http://</code> </p> </li> <li> <p>For the
-     * <code>https</code> protocol, the endpoint is a URL beginning with
+     * protocol:</p> <ul> <li> <p>For the <code>http</code> protocol, the (public)
+     * endpoint is a URL beginning with <code>http://</code> </p> </li> <li> <p>For the
+     * <code>https</code> protocol, the (public) endpoint is a URL beginning with
      * <code>https://</code> </p> </li> <li> <p>For the <code>email</code> protocol,
      * the endpoint is an email address</p> </li> <li> <p>For the
      * <code>email-json</code> protocol, the endpoint is an email address</p> </li>
@@ -238,9 +238,9 @@ namespace Model
 
     /**
      * <p>The endpoint that you want to receive notifications. Endpoints vary by
-     * protocol:</p> <ul> <li> <p>For the <code>http</code> protocol, the endpoint is
-     * an URL beginning with <code>http://</code> </p> </li> <li> <p>For the
-     * <code>https</code> protocol, the endpoint is a URL beginning with
+     * protocol:</p> <ul> <li> <p>For the <code>http</code> protocol, the (public)
+     * endpoint is a URL beginning with <code>http://</code> </p> </li> <li> <p>For the
+     * <code>https</code> protocol, the (public) endpoint is a URL beginning with
      * <code>https://</code> </p> </li> <li> <p>For the <code>email</code> protocol,
      * the endpoint is an email address</p> </li> <li> <p>For the
      * <code>email-json</code> protocol, the endpoint is an email address</p> </li>
@@ -255,9 +255,9 @@ namespace Model
 
     /**
      * <p>The endpoint that you want to receive notifications. Endpoints vary by
-     * protocol:</p> <ul> <li> <p>For the <code>http</code> protocol, the endpoint is
-     * an URL beginning with <code>http://</code> </p> </li> <li> <p>For the
-     * <code>https</code> protocol, the endpoint is a URL beginning with
+     * protocol:</p> <ul> <li> <p>For the <code>http</code> protocol, the (public)
+     * endpoint is a URL beginning with <code>http://</code> </p> </li> <li> <p>For the
+     * <code>https</code> protocol, the (public) endpoint is a URL beginning with
      * <code>https://</code> </p> </li> <li> <p>For the <code>email</code> protocol,
      * the endpoint is an email address</p> </li> <li> <p>For the
      * <code>email-json</code> protocol, the endpoint is an email address</p> </li>
@@ -272,9 +272,9 @@ namespace Model
 
     /**
      * <p>The endpoint that you want to receive notifications. Endpoints vary by
-     * protocol:</p> <ul> <li> <p>For the <code>http</code> protocol, the endpoint is
-     * an URL beginning with <code>http://</code> </p> </li> <li> <p>For the
-     * <code>https</code> protocol, the endpoint is a URL beginning with
+     * protocol:</p> <ul> <li> <p>For the <code>http</code> protocol, the (public)
+     * endpoint is a URL beginning with <code>http://</code> </p> </li> <li> <p>For the
+     * <code>https</code> protocol, the (public) endpoint is a URL beginning with
      * <code>https://</code> </p> </li> <li> <p>For the <code>email</code> protocol,
      * the endpoint is an email address</p> </li> <li> <p>For the
      * <code>email-json</code> protocol, the endpoint is an email address</p> </li>
@@ -289,9 +289,9 @@ namespace Model
 
     /**
      * <p>The endpoint that you want to receive notifications. Endpoints vary by
-     * protocol:</p> <ul> <li> <p>For the <code>http</code> protocol, the endpoint is
-     * an URL beginning with <code>http://</code> </p> </li> <li> <p>For the
-     * <code>https</code> protocol, the endpoint is a URL beginning with
+     * protocol:</p> <ul> <li> <p>For the <code>http</code> protocol, the (public)
+     * endpoint is a URL beginning with <code>http://</code> </p> </li> <li> <p>For the
+     * <code>https</code> protocol, the (public) endpoint is a URL beginning with
      * <code>https://</code> </p> </li> <li> <p>For the <code>email</code> protocol,
      * the endpoint is an email address</p> </li> <li> <p>For the
      * <code>email-json</code> protocol, the endpoint is an email address</p> </li>
@@ -306,9 +306,9 @@ namespace Model
 
     /**
      * <p>The endpoint that you want to receive notifications. Endpoints vary by
-     * protocol:</p> <ul> <li> <p>For the <code>http</code> protocol, the endpoint is
-     * an URL beginning with <code>http://</code> </p> </li> <li> <p>For the
-     * <code>https</code> protocol, the endpoint is a URL beginning with
+     * protocol:</p> <ul> <li> <p>For the <code>http</code> protocol, the (public)
+     * endpoint is a URL beginning with <code>http://</code> </p> </li> <li> <p>For the
+     * <code>https</code> protocol, the (public) endpoint is a URL beginning with
      * <code>https://</code> </p> </li> <li> <p>For the <code>email</code> protocol,
      * the endpoint is an email address</p> </li> <li> <p>For the
      * <code>email-json</code> protocol, the endpoint is an email address</p> </li>
@@ -323,9 +323,9 @@ namespace Model
 
     /**
      * <p>The endpoint that you want to receive notifications. Endpoints vary by
-     * protocol:</p> <ul> <li> <p>For the <code>http</code> protocol, the endpoint is
-     * an URL beginning with <code>http://</code> </p> </li> <li> <p>For the
-     * <code>https</code> protocol, the endpoint is a URL beginning with
+     * protocol:</p> <ul> <li> <p>For the <code>http</code> protocol, the (public)
+     * endpoint is a URL beginning with <code>http://</code> </p> </li> <li> <p>For the
+     * <code>https</code> protocol, the (public) endpoint is a URL beginning with
      * <code>https://</code> </p> </li> <li> <p>For the <code>email</code> protocol,
      * the endpoint is an email address</p> </li> <li> <p>For the
      * <code>email-json</code> protocol, the endpoint is an email address</p> </li>
@@ -616,60 +616,52 @@ namespace Model
     /**
      * <p>Sets whether the response from the <code>Subscribe</code> request includes
      * the subscription ARN, even if the subscription is not yet confirmed.</p> <ul>
-     * <li> <p>If you have the subscription ARN returned, the response includes the ARN
-     * in all cases, even if the subscription is not yet confirmed.</p> </li> <li>
-     * <p>If you don't have the subscription ARN returned, in addition to the ARN for
-     * confirmed subscriptions, the response also includes the <code>pending
-     * subscription</code> ARN value for subscriptions that aren't yet confirmed. A
-     * subscription becomes confirmed when the subscriber calls the
+     * <li> <p>If you set this parameter to <code>true</code>, the response includes
+     * the ARN in all cases, even if the subscription is not yet confirmed. In addition
+     * to the ARN for confirmed subscriptions, the response also includes the
+     * <code>pending subscription</code> ARN value for subscriptions that aren't yet
+     * confirmed. A subscription becomes confirmed when the subscriber calls the
      * <code>ConfirmSubscription</code> action with a confirmation token.</p> </li>
-     * </ul> <p>If you set this parameter to <code>true</code>, .</p> <p>The default
-     * value is <code>false</code>.</p>
+     * </ul> <p/> <p>The default value is <code>false</code>.</p>
      */
     inline bool GetReturnSubscriptionArn() const{ return m_returnSubscriptionArn; }
 
     /**
      * <p>Sets whether the response from the <code>Subscribe</code> request includes
      * the subscription ARN, even if the subscription is not yet confirmed.</p> <ul>
-     * <li> <p>If you have the subscription ARN returned, the response includes the ARN
-     * in all cases, even if the subscription is not yet confirmed.</p> </li> <li>
-     * <p>If you don't have the subscription ARN returned, in addition to the ARN for
-     * confirmed subscriptions, the response also includes the <code>pending
-     * subscription</code> ARN value for subscriptions that aren't yet confirmed. A
-     * subscription becomes confirmed when the subscriber calls the
+     * <li> <p>If you set this parameter to <code>true</code>, the response includes
+     * the ARN in all cases, even if the subscription is not yet confirmed. In addition
+     * to the ARN for confirmed subscriptions, the response also includes the
+     * <code>pending subscription</code> ARN value for subscriptions that aren't yet
+     * confirmed. A subscription becomes confirmed when the subscriber calls the
      * <code>ConfirmSubscription</code> action with a confirmation token.</p> </li>
-     * </ul> <p>If you set this parameter to <code>true</code>, .</p> <p>The default
-     * value is <code>false</code>.</p>
+     * </ul> <p/> <p>The default value is <code>false</code>.</p>
      */
     inline bool ReturnSubscriptionArnHasBeenSet() const { return m_returnSubscriptionArnHasBeenSet; }
 
     /**
      * <p>Sets whether the response from the <code>Subscribe</code> request includes
      * the subscription ARN, even if the subscription is not yet confirmed.</p> <ul>
-     * <li> <p>If you have the subscription ARN returned, the response includes the ARN
-     * in all cases, even if the subscription is not yet confirmed.</p> </li> <li>
-     * <p>If you don't have the subscription ARN returned, in addition to the ARN for
-     * confirmed subscriptions, the response also includes the <code>pending
-     * subscription</code> ARN value for subscriptions that aren't yet confirmed. A
-     * subscription becomes confirmed when the subscriber calls the
+     * <li> <p>If you set this parameter to <code>true</code>, the response includes
+     * the ARN in all cases, even if the subscription is not yet confirmed. In addition
+     * to the ARN for confirmed subscriptions, the response also includes the
+     * <code>pending subscription</code> ARN value for subscriptions that aren't yet
+     * confirmed. A subscription becomes confirmed when the subscriber calls the
      * <code>ConfirmSubscription</code> action with a confirmation token.</p> </li>
-     * </ul> <p>If you set this parameter to <code>true</code>, .</p> <p>The default
-     * value is <code>false</code>.</p>
+     * </ul> <p/> <p>The default value is <code>false</code>.</p>
      */
     inline void SetReturnSubscriptionArn(bool value) { m_returnSubscriptionArnHasBeenSet = true; m_returnSubscriptionArn = value; }
 
     /**
      * <p>Sets whether the response from the <code>Subscribe</code> request includes
      * the subscription ARN, even if the subscription is not yet confirmed.</p> <ul>
-     * <li> <p>If you have the subscription ARN returned, the response includes the ARN
-     * in all cases, even if the subscription is not yet confirmed.</p> </li> <li>
-     * <p>If you don't have the subscription ARN returned, in addition to the ARN for
-     * confirmed subscriptions, the response also includes the <code>pending
-     * subscription</code> ARN value for subscriptions that aren't yet confirmed. A
-     * subscription becomes confirmed when the subscriber calls the
+     * <li> <p>If you set this parameter to <code>true</code>, the response includes
+     * the ARN in all cases, even if the subscription is not yet confirmed. In addition
+     * to the ARN for confirmed subscriptions, the response also includes the
+     * <code>pending subscription</code> ARN value for subscriptions that aren't yet
+     * confirmed. A subscription becomes confirmed when the subscriber calls the
      * <code>ConfirmSubscription</code> action with a confirmation token.</p> </li>
-     * </ul> <p>If you set this parameter to <code>true</code>, .</p> <p>The default
-     * value is <code>false</code>.</p>
+     * </ul> <p/> <p>The default value is <code>false</code>.</p>
      */
     inline SubscribeRequest& WithReturnSubscriptionArn(bool value) { SetReturnSubscriptionArn(value); return *this;}
 

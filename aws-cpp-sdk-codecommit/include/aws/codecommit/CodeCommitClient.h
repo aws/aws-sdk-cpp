@@ -783,26 +783,26 @@ namespace Model
         virtual void BatchGetCommitsAsync(const Model::BatchGetCommitsRequest& request, const BatchGetCommitsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns information about one or more repositories.</p> <note> <p>The
+         * <p>Returns information about one or more repositories.</p>  <p>The
          * description field for a repository accepts all HTML characters and all valid
          * Unicode characters. Applications that do not HTML-encode the description and
          * display it in a webpage can expose users to potentially malicious code. Make
          * sure that you HTML-encode the description field in any application that uses
          * this API to display the repository description on a webpage.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/BatchGetRepositories">AWS
          * API Reference</a></p>
          */
         virtual Model::BatchGetRepositoriesOutcome BatchGetRepositories(const Model::BatchGetRepositoriesRequest& request) const;
 
         /**
-         * <p>Returns information about one or more repositories.</p> <note> <p>The
+         * <p>Returns information about one or more repositories.</p>  <p>The
          * description field for a repository accepts all HTML characters and all valid
          * Unicode characters. Applications that do not HTML-encode the description and
          * display it in a webpage can expose users to potentially malicious code. Make
          * sure that you HTML-encode the description field in any application that uses
          * this API to display the repository description on a webpage.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/BatchGetRepositories">AWS
          * API Reference</a></p>
          *
@@ -811,13 +811,13 @@ namespace Model
         virtual Model::BatchGetRepositoriesOutcomeCallable BatchGetRepositoriesCallable(const Model::BatchGetRepositoriesRequest& request) const;
 
         /**
-         * <p>Returns information about one or more repositories.</p> <note> <p>The
+         * <p>Returns information about one or more repositories.</p>  <p>The
          * description field for a repository accepts all HTML characters and all valid
          * Unicode characters. Applications that do not HTML-encode the description and
          * display it in a webpage can expose users to potentially malicious code. Make
          * sure that you HTML-encode the description field in any application that uses
          * this API to display the repository description on a webpage.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/BatchGetRepositories">AWS
          * API Reference</a></p>
          *
@@ -870,9 +870,9 @@ namespace Model
 
         /**
          * <p>Creates a branch in a repository and points the branch to a commit.</p>
-         * <note> <p>Calling the create branch operation does not set a repository's
+         *  <p>Calling the create branch operation does not set a repository's
          * default branch. To do this, call the update default branch operation.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/CreateBranch">AWS
          * API Reference</a></p>
          */
@@ -880,9 +880,9 @@ namespace Model
 
         /**
          * <p>Creates a branch in a repository and points the branch to a commit.</p>
-         * <note> <p>Calling the create branch operation does not set a repository's
+         *  <p>Calling the create branch operation does not set a repository's
          * default branch. To do this, call the update default branch operation.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/CreateBranch">AWS
          * API Reference</a></p>
          *
@@ -892,9 +892,9 @@ namespace Model
 
         /**
          * <p>Creates a branch in a repository and points the branch to a commit.</p>
-         * <note> <p>Calling the create branch operation does not set a repository's
+         *  <p>Calling the create branch operation does not set a repository's
          * default branch. To do this, call the update default branch operation.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/CreateBranch">AWS
          * API Reference</a></p>
          *
@@ -1012,10 +1012,10 @@ namespace Model
          * <p>Creates an unreferenced commit that represents the result of merging two
          * branches using a specified merge strategy. This can help you determine the
          * outcome of a potential merge. This API cannot be used with the fast-forward
-         * merge strategy because that strategy does not create a merge commit.</p> <note>
+         * merge strategy because that strategy does not create a merge commit.</p> 
          * <p>This unreferenced merge commit can only be accessed using the GetCommit API
          * or through git commands such as git fetch. To retrieve this commit, you must
-         * specify its commit ID or otherwise reference it.</p> </note><p><h3>See
+         * specify its commit ID or otherwise reference it.</p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/CreateUnreferencedMergeCommit">AWS
          * API Reference</a></p>
@@ -1026,10 +1026,10 @@ namespace Model
          * <p>Creates an unreferenced commit that represents the result of merging two
          * branches using a specified merge strategy. This can help you determine the
          * outcome of a potential merge. This API cannot be used with the fast-forward
-         * merge strategy because that strategy does not create a merge commit.</p> <note>
+         * merge strategy because that strategy does not create a merge commit.</p> 
          * <p>This unreferenced merge commit can only be accessed using the GetCommit API
          * or through git commands such as git fetch. To retrieve this commit, you must
-         * specify its commit ID or otherwise reference it.</p> </note><p><h3>See
+         * specify its commit ID or otherwise reference it.</p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/CreateUnreferencedMergeCommit">AWS
          * API Reference</a></p>
@@ -1042,10 +1042,10 @@ namespace Model
          * <p>Creates an unreferenced commit that represents the result of merging two
          * branches using a specified merge strategy. This can help you determine the
          * outcome of a potential merge. This API cannot be used with the fast-forward
-         * merge strategy because that strategy does not create a merge commit.</p> <note>
+         * merge strategy because that strategy does not create a merge commit.</p> 
          * <p>This unreferenced merge commit can only be accessed using the GetCommit API
          * or through git commands such as git fetch. To retrieve this commit, you must
-         * specify its commit ID or otherwise reference it.</p> </note><p><h3>See
+         * specify its commit ID or otherwise reference it.</p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/CreateUnreferencedMergeCommit">AWS
          * API Reference</a></p>
@@ -1214,9 +1214,9 @@ namespace Model
 
         /**
          * <p>Deletes a repository. If a specified repository was already deleted, a null
-         * repository ID is returned.</p> <important> <p>Deleting a repository also deletes
+         * repository ID is returned.</p>  <p>Deleting a repository also deletes
          * all associated objects and metadata. After a repository is deleted, all future
-         * push calls to the deleted repository fail.</p> </important><p><h3>See Also:</h3>
+         * push calls to the deleted repository fail.</p> <p><h3>See Also:</h3>
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/DeleteRepository">AWS
          * API Reference</a></p>
@@ -1225,9 +1225,9 @@ namespace Model
 
         /**
          * <p>Deletes a repository. If a specified repository was already deleted, a null
-         * repository ID is returned.</p> <important> <p>Deleting a repository also deletes
+         * repository ID is returned.</p>  <p>Deleting a repository also deletes
          * all associated objects and metadata. After a repository is deleted, all future
-         * push calls to the deleted repository fail.</p> </important><p><h3>See Also:</h3>
+         * push calls to the deleted repository fail.</p> <p><h3>See Also:</h3>
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/DeleteRepository">AWS
          * API Reference</a></p>
@@ -1238,9 +1238,9 @@ namespace Model
 
         /**
          * <p>Deletes a repository. If a specified repository was already deleted, a null
-         * repository ID is returned.</p> <important> <p>Deleting a repository also deletes
+         * repository ID is returned.</p>  <p>Deleting a repository also deletes
          * all associated objects and metadata. After a repository is deleted, all future
-         * push calls to the deleted repository fail.</p> </important><p><h3>See Also:</h3>
+         * push calls to the deleted repository fail.</p> <p><h3>See Also:</h3>
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/DeleteRepository">AWS
          * API Reference</a></p>
@@ -1462,9 +1462,9 @@ namespace Model
 
         /**
          * <p>Returns the content of a comment made on a change, file, or commit in a
-         * repository. </p> <note> <p>Reaction counts might include numbers from user
+         * repository. </p>  <p>Reaction counts might include numbers from user
          * identities who were deleted after the reaction was made. For a count of
-         * reactions from active identities, use GetCommentReactions.</p> </note><p><h3>See
+         * reactions from active identities, use GetCommentReactions.</p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetComment">AWS
          * API Reference</a></p>
@@ -1473,9 +1473,9 @@ namespace Model
 
         /**
          * <p>Returns the content of a comment made on a change, file, or commit in a
-         * repository. </p> <note> <p>Reaction counts might include numbers from user
+         * repository. </p>  <p>Reaction counts might include numbers from user
          * identities who were deleted after the reaction was made. For a count of
-         * reactions from active identities, use GetCommentReactions.</p> </note><p><h3>See
+         * reactions from active identities, use GetCommentReactions.</p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetComment">AWS
          * API Reference</a></p>
@@ -1486,9 +1486,9 @@ namespace Model
 
         /**
          * <p>Returns the content of a comment made on a change, file, or commit in a
-         * repository. </p> <note> <p>Reaction counts might include numbers from user
+         * repository. </p>  <p>Reaction counts might include numbers from user
          * identities who were deleted after the reaction was made. For a count of
-         * reactions from active identities, use GetCommentReactions.</p> </note><p><h3>See
+         * reactions from active identities, use GetCommentReactions.</p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetComment">AWS
          * API Reference</a></p>
@@ -1530,9 +1530,9 @@ namespace Model
 
         /**
          * <p>Returns information about comments made on the comparison between two
-         * commits.</p> <note> <p>Reaction counts might include numbers from user
+         * commits.</p>  <p>Reaction counts might include numbers from user
          * identities who were deleted after the reaction was made. For a count of
-         * reactions from active identities, use GetCommentReactions.</p> </note><p><h3>See
+         * reactions from active identities, use GetCommentReactions.</p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetCommentsForComparedCommit">AWS
          * API Reference</a></p>
@@ -1541,9 +1541,9 @@ namespace Model
 
         /**
          * <p>Returns information about comments made on the comparison between two
-         * commits.</p> <note> <p>Reaction counts might include numbers from user
+         * commits.</p>  <p>Reaction counts might include numbers from user
          * identities who were deleted after the reaction was made. For a count of
-         * reactions from active identities, use GetCommentReactions.</p> </note><p><h3>See
+         * reactions from active identities, use GetCommentReactions.</p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetCommentsForComparedCommit">AWS
          * API Reference</a></p>
@@ -1554,9 +1554,9 @@ namespace Model
 
         /**
          * <p>Returns information about comments made on the comparison between two
-         * commits.</p> <note> <p>Reaction counts might include numbers from user
+         * commits.</p>  <p>Reaction counts might include numbers from user
          * identities who were deleted after the reaction was made. For a count of
-         * reactions from active identities, use GetCommentReactions.</p> </note><p><h3>See
+         * reactions from active identities, use GetCommentReactions.</p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetCommentsForComparedCommit">AWS
          * API Reference</a></p>
@@ -1566,20 +1566,20 @@ namespace Model
         virtual void GetCommentsForComparedCommitAsync(const Model::GetCommentsForComparedCommitRequest& request, const GetCommentsForComparedCommitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns comments made on a pull request.</p> <note> <p>Reaction counts might
+         * <p>Returns comments made on a pull request.</p>  <p>Reaction counts might
          * include numbers from user identities who were deleted after the reaction was
          * made. For a count of reactions from active identities, use
-         * GetCommentReactions.</p> </note><p><h3>See Also:</h3>   <a
+         * GetCommentReactions.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetCommentsForPullRequest">AWS
          * API Reference</a></p>
          */
         virtual Model::GetCommentsForPullRequestOutcome GetCommentsForPullRequest(const Model::GetCommentsForPullRequestRequest& request) const;
 
         /**
-         * <p>Returns comments made on a pull request.</p> <note> <p>Reaction counts might
+         * <p>Returns comments made on a pull request.</p>  <p>Reaction counts might
          * include numbers from user identities who were deleted after the reaction was
          * made. For a count of reactions from active identities, use
-         * GetCommentReactions.</p> </note><p><h3>See Also:</h3>   <a
+         * GetCommentReactions.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetCommentsForPullRequest">AWS
          * API Reference</a></p>
          *
@@ -1588,10 +1588,10 @@ namespace Model
         virtual Model::GetCommentsForPullRequestOutcomeCallable GetCommentsForPullRequestCallable(const Model::GetCommentsForPullRequestRequest& request) const;
 
         /**
-         * <p>Returns comments made on a pull request.</p> <note> <p>Reaction counts might
+         * <p>Returns comments made on a pull request.</p>  <p>Reaction counts might
          * include numbers from user identities who were deleted after the reaction was
          * made. For a count of reactions from active identities, use
-         * GetCommentReactions.</p> </note><p><h3>See Also:</h3>   <a
+         * GetCommentReactions.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetCommentsForPullRequest">AWS
          * API Reference</a></p>
          *
@@ -1895,24 +1895,24 @@ namespace Model
         virtual void GetPullRequestOverrideStateAsync(const Model::GetPullRequestOverrideStateRequest& request, const GetPullRequestOverrideStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns information about a repository.</p> <note> <p>The description field
+         * <p>Returns information about a repository.</p>  <p>The description field
          * for a repository accepts all HTML characters and all valid Unicode characters.
          * Applications that do not HTML-encode the description and display it in a webpage
          * can expose users to potentially malicious code. Make sure that you HTML-encode
          * the description field in any application that uses this API to display the
-         * repository description on a webpage.</p> </note><p><h3>See Also:</h3>   <a
+         * repository description on a webpage.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetRepository">AWS
          * API Reference</a></p>
          */
         virtual Model::GetRepositoryOutcome GetRepository(const Model::GetRepositoryRequest& request) const;
 
         /**
-         * <p>Returns information about a repository.</p> <note> <p>The description field
+         * <p>Returns information about a repository.</p>  <p>The description field
          * for a repository accepts all HTML characters and all valid Unicode characters.
          * Applications that do not HTML-encode the description and display it in a webpage
          * can expose users to potentially malicious code. Make sure that you HTML-encode
          * the description field in any application that uses this API to display the
-         * repository description on a webpage.</p> </note><p><h3>See Also:</h3>   <a
+         * repository description on a webpage.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetRepository">AWS
          * API Reference</a></p>
          *
@@ -1921,12 +1921,12 @@ namespace Model
         virtual Model::GetRepositoryOutcomeCallable GetRepositoryCallable(const Model::GetRepositoryRequest& request) const;
 
         /**
-         * <p>Returns information about a repository.</p> <note> <p>The description field
+         * <p>Returns information about a repository.</p>  <p>The description field
          * for a repository accepts all HTML characters and all valid Unicode characters.
          * Applications that do not HTML-encode the description and display it in a webpage
          * can expose users to potentially malicious code. Make sure that you HTML-encode
          * the description field in any application that uses this API to display the
-         * repository description on a webpage.</p> </note><p><h3>See Also:</h3>   <a
+         * repository description on a webpage.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetRepository">AWS
          * API Reference</a></p>
          *
@@ -2783,9 +2783,9 @@ namespace Model
 
         /**
          * <p>Sets or changes the default branch name for the specified repository.</p>
-         * <note> <p>If you use this operation to change the default branch name to the
+         *  <p>If you use this operation to change the default branch name to the
          * current default branch name, a success message is returned even though the
-         * default branch did not change.</p> </note><p><h3>See Also:</h3>   <a
+         * default branch did not change.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/UpdateDefaultBranch">AWS
          * API Reference</a></p>
          */
@@ -2793,9 +2793,9 @@ namespace Model
 
         /**
          * <p>Sets or changes the default branch name for the specified repository.</p>
-         * <note> <p>If you use this operation to change the default branch name to the
+         *  <p>If you use this operation to change the default branch name to the
          * current default branch name, a success message is returned even though the
-         * default branch did not change.</p> </note><p><h3>See Also:</h3>   <a
+         * default branch did not change.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/UpdateDefaultBranch">AWS
          * API Reference</a></p>
          *
@@ -2805,9 +2805,9 @@ namespace Model
 
         /**
          * <p>Sets or changes the default branch name for the specified repository.</p>
-         * <note> <p>If you use this operation to change the default branch name to the
+         *  <p>If you use this operation to change the default branch name to the
          * current default branch name, a success message is returned even though the
-         * default branch did not change.</p> </note><p><h3>See Also:</h3>   <a
+         * default branch did not change.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/UpdateDefaultBranch">AWS
          * API Reference</a></p>
          *
@@ -2956,26 +2956,26 @@ namespace Model
         virtual void UpdatePullRequestTitleAsync(const Model::UpdatePullRequestTitleRequest& request, const UpdatePullRequestTitleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Sets or changes the comment or description for a repository.</p> <note>
+         * <p>Sets or changes the comment or description for a repository.</p> 
          * <p>The description field for a repository accepts all HTML characters and all
          * valid Unicode characters. Applications that do not HTML-encode the description
          * and display it in a webpage can expose users to potentially malicious code. Make
          * sure that you HTML-encode the description field in any application that uses
          * this API to display the repository description on a webpage.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/UpdateRepositoryDescription">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateRepositoryDescriptionOutcome UpdateRepositoryDescription(const Model::UpdateRepositoryDescriptionRequest& request) const;
 
         /**
-         * <p>Sets or changes the comment or description for a repository.</p> <note>
+         * <p>Sets or changes the comment or description for a repository.</p> 
          * <p>The description field for a repository accepts all HTML characters and all
          * valid Unicode characters. Applications that do not HTML-encode the description
          * and display it in a webpage can expose users to potentially malicious code. Make
          * sure that you HTML-encode the description field in any application that uses
          * this API to display the repository description on a webpage.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/UpdateRepositoryDescription">AWS
          * API Reference</a></p>
          *
@@ -2984,13 +2984,13 @@ namespace Model
         virtual Model::UpdateRepositoryDescriptionOutcomeCallable UpdateRepositoryDescriptionCallable(const Model::UpdateRepositoryDescriptionRequest& request) const;
 
         /**
-         * <p>Sets or changes the comment or description for a repository.</p> <note>
+         * <p>Sets or changes the comment or description for a repository.</p> 
          * <p>The description field for a repository accepts all HTML characters and all
          * valid Unicode characters. Applications that do not HTML-encode the description
          * and display it in a webpage can expose users to potentially malicious code. Make
          * sure that you HTML-encode the description field in any application that uses
          * this API to display the repository description on a webpage.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/UpdateRepositoryDescription">AWS
          * API Reference</a></p>
          *

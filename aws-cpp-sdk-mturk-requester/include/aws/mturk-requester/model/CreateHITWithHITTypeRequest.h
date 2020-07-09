@@ -313,10 +313,10 @@ namespace Model
      * the HIT already exists in the system from a previous call using the same
      * UniqueRequestToken, subsequent calls will return a
      * AWS.MechanicalTurk.HitAlreadyExists error with a message containing the HITId.
-     * </p> <note> <p> Note: It is your responsibility to ensure uniqueness of the
+     * </p>  <p> Note: It is your responsibility to ensure uniqueness of the
      * token. The unique token expires after 24 hours. Subsequent calls using the same
      * UniqueRequestToken made after the 24 hour limit could create duplicate HITs.
-     * </p> </note>
+     * </p> 
      */
     inline const Aws::String& GetUniqueRequestToken() const{ return m_uniqueRequestToken; }
 
@@ -327,10 +327,10 @@ namespace Model
      * the HIT already exists in the system from a previous call using the same
      * UniqueRequestToken, subsequent calls will return a
      * AWS.MechanicalTurk.HitAlreadyExists error with a message containing the HITId.
-     * </p> <note> <p> Note: It is your responsibility to ensure uniqueness of the
+     * </p>  <p> Note: It is your responsibility to ensure uniqueness of the
      * token. The unique token expires after 24 hours. Subsequent calls using the same
      * UniqueRequestToken made after the 24 hour limit could create duplicate HITs.
-     * </p> </note>
+     * </p> 
      */
     inline bool UniqueRequestTokenHasBeenSet() const { return m_uniqueRequestTokenHasBeenSet; }
 
@@ -341,10 +341,10 @@ namespace Model
      * the HIT already exists in the system from a previous call using the same
      * UniqueRequestToken, subsequent calls will return a
      * AWS.MechanicalTurk.HitAlreadyExists error with a message containing the HITId.
-     * </p> <note> <p> Note: It is your responsibility to ensure uniqueness of the
+     * </p>  <p> Note: It is your responsibility to ensure uniqueness of the
      * token. The unique token expires after 24 hours. Subsequent calls using the same
      * UniqueRequestToken made after the 24 hour limit could create duplicate HITs.
-     * </p> </note>
+     * </p> 
      */
     inline void SetUniqueRequestToken(const Aws::String& value) { m_uniqueRequestTokenHasBeenSet = true; m_uniqueRequestToken = value; }
 
@@ -355,10 +355,10 @@ namespace Model
      * the HIT already exists in the system from a previous call using the same
      * UniqueRequestToken, subsequent calls will return a
      * AWS.MechanicalTurk.HitAlreadyExists error with a message containing the HITId.
-     * </p> <note> <p> Note: It is your responsibility to ensure uniqueness of the
+     * </p>  <p> Note: It is your responsibility to ensure uniqueness of the
      * token. The unique token expires after 24 hours. Subsequent calls using the same
      * UniqueRequestToken made after the 24 hour limit could create duplicate HITs.
-     * </p> </note>
+     * </p> 
      */
     inline void SetUniqueRequestToken(Aws::String&& value) { m_uniqueRequestTokenHasBeenSet = true; m_uniqueRequestToken = std::move(value); }
 
@@ -369,10 +369,10 @@ namespace Model
      * the HIT already exists in the system from a previous call using the same
      * UniqueRequestToken, subsequent calls will return a
      * AWS.MechanicalTurk.HitAlreadyExists error with a message containing the HITId.
-     * </p> <note> <p> Note: It is your responsibility to ensure uniqueness of the
+     * </p>  <p> Note: It is your responsibility to ensure uniqueness of the
      * token. The unique token expires after 24 hours. Subsequent calls using the same
      * UniqueRequestToken made after the 24 hour limit could create duplicate HITs.
-     * </p> </note>
+     * </p> 
      */
     inline void SetUniqueRequestToken(const char* value) { m_uniqueRequestTokenHasBeenSet = true; m_uniqueRequestToken.assign(value); }
 
@@ -383,10 +383,10 @@ namespace Model
      * the HIT already exists in the system from a previous call using the same
      * UniqueRequestToken, subsequent calls will return a
      * AWS.MechanicalTurk.HitAlreadyExists error with a message containing the HITId.
-     * </p> <note> <p> Note: It is your responsibility to ensure uniqueness of the
+     * </p>  <p> Note: It is your responsibility to ensure uniqueness of the
      * token. The unique token expires after 24 hours. Subsequent calls using the same
      * UniqueRequestToken made after the 24 hour limit could create duplicate HITs.
-     * </p> </note>
+     * </p> 
      */
     inline CreateHITWithHITTypeRequest& WithUniqueRequestToken(const Aws::String& value) { SetUniqueRequestToken(value); return *this;}
 
@@ -397,10 +397,10 @@ namespace Model
      * the HIT already exists in the system from a previous call using the same
      * UniqueRequestToken, subsequent calls will return a
      * AWS.MechanicalTurk.HitAlreadyExists error with a message containing the HITId.
-     * </p> <note> <p> Note: It is your responsibility to ensure uniqueness of the
+     * </p>  <p> Note: It is your responsibility to ensure uniqueness of the
      * token. The unique token expires after 24 hours. Subsequent calls using the same
      * UniqueRequestToken made after the 24 hour limit could create duplicate HITs.
-     * </p> </note>
+     * </p> 
      */
     inline CreateHITWithHITTypeRequest& WithUniqueRequestToken(Aws::String&& value) { SetUniqueRequestToken(std::move(value)); return *this;}
 
@@ -411,10 +411,10 @@ namespace Model
      * the HIT already exists in the system from a previous call using the same
      * UniqueRequestToken, subsequent calls will return a
      * AWS.MechanicalTurk.HitAlreadyExists error with a message containing the HITId.
-     * </p> <note> <p> Note: It is your responsibility to ensure uniqueness of the
+     * </p>  <p> Note: It is your responsibility to ensure uniqueness of the
      * token. The unique token expires after 24 hours. Subsequent calls using the same
      * UniqueRequestToken made after the 24 hour limit could create duplicate HITs.
-     * </p> </note>
+     * </p> 
      */
     inline CreateHITWithHITTypeRequest& WithUniqueRequestToken(const char* value) { SetUniqueRequestToken(value); return *this;}
 

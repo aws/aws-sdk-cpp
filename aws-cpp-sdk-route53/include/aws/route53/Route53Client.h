@@ -383,10 +383,10 @@ namespace Model
 
 
         /**
-         * <p>Associates an Amazon VPC with a private hosted zone. </p> <note> <p>To
+         * <p>Associates an Amazon VPC with a private hosted zone. </p>  <p>To
          * perform the association, the VPC and the private hosted zone must already exist.
          * Also, you can't convert a public hosted zone into a private hosted zone.</p>
-         * </note> <p>If you want to associate a VPC that was created by one AWS account
+         *  <p>If you want to associate a VPC that was created by one AWS account
          * with a private hosted zone that was created by a different account, do one of
          * the following:</p> <ul> <li> <p>Use the AWS account that created the private
          * hosted zone to submit a <a
@@ -404,10 +404,10 @@ namespace Model
         virtual Model::AssociateVPCWithHostedZoneOutcome AssociateVPCWithHostedZone(const Model::AssociateVPCWithHostedZoneRequest& request) const;
 
         /**
-         * <p>Associates an Amazon VPC with a private hosted zone. </p> <note> <p>To
+         * <p>Associates an Amazon VPC with a private hosted zone. </p>  <p>To
          * perform the association, the VPC and the private hosted zone must already exist.
          * Also, you can't convert a public hosted zone into a private hosted zone.</p>
-         * </note> <p>If you want to associate a VPC that was created by one AWS account
+         *  <p>If you want to associate a VPC that was created by one AWS account
          * with a private hosted zone that was created by a different account, do one of
          * the following:</p> <ul> <li> <p>Use the AWS account that created the private
          * hosted zone to submit a <a
@@ -427,10 +427,10 @@ namespace Model
         virtual Model::AssociateVPCWithHostedZoneOutcomeCallable AssociateVPCWithHostedZoneCallable(const Model::AssociateVPCWithHostedZoneRequest& request) const;
 
         /**
-         * <p>Associates an Amazon VPC with a private hosted zone. </p> <note> <p>To
+         * <p>Associates an Amazon VPC with a private hosted zone. </p>  <p>To
          * perform the association, the VPC and the private hosted zone must already exist.
          * Also, you can't convert a public hosted zone into a private hosted zone.</p>
-         * </note> <p>If you want to associate a VPC that was created by one AWS account
+         *  <p>If you want to associate a VPC that was created by one AWS account
          * with a private hosted zone that was created by a different account, do one of
          * the following:</p> <ul> <li> <p>Use the AWS account that created the private
          * hosted zone to submit a <a
@@ -470,9 +470,9 @@ namespace Model
          * first resource record set and creates the second resource record set in a single
          * operation. If validation for either the <code>DELETE</code> or the
          * <code>CREATE</code> action fails, then the request is canceled, and the original
-         * <code>CNAME</code> record continues to exist.</p> <note> <p>If you try to delete
+         * <code>CNAME</code> record continues to exist.</p>  <p>If you try to delete
          * the same resource record set more than once in a single change batch, Route 53
-         * returns an <code>InvalidChangeBatch</code> error.</p> </note> <p> <b>Traffic
+         * returns an <code>InvalidChangeBatch</code> error.</p>  <p> <b>Traffic
          * Flow</b> </p> <p>To create resource record sets for complex routing
          * configurations, use either the traffic flow visual editor in the Route 53
          * console or the API actions for traffic policies and traffic policy instances.
@@ -537,9 +537,9 @@ namespace Model
          * first resource record set and creates the second resource record set in a single
          * operation. If validation for either the <code>DELETE</code> or the
          * <code>CREATE</code> action fails, then the request is canceled, and the original
-         * <code>CNAME</code> record continues to exist.</p> <note> <p>If you try to delete
+         * <code>CNAME</code> record continues to exist.</p>  <p>If you try to delete
          * the same resource record set more than once in a single change batch, Route 53
-         * returns an <code>InvalidChangeBatch</code> error.</p> </note> <p> <b>Traffic
+         * returns an <code>InvalidChangeBatch</code> error.</p>  <p> <b>Traffic
          * Flow</b> </p> <p>To create resource record sets for complex routing
          * configurations, use either the traffic flow visual editor in the Route 53
          * console or the API actions for traffic policies and traffic policy instances.
@@ -606,9 +606,9 @@ namespace Model
          * first resource record set and creates the second resource record set in a single
          * operation. If validation for either the <code>DELETE</code> or the
          * <code>CREATE</code> action fails, then the request is canceled, and the original
-         * <code>CNAME</code> record continues to exist.</p> <note> <p>If you try to delete
+         * <code>CNAME</code> record continues to exist.</p>  <p>If you try to delete
          * the same resource record set more than once in a single change batch, Route 53
-         * returns an <code>InvalidChangeBatch</code> error.</p> </note> <p> <b>Traffic
+         * returns an <code>InvalidChangeBatch</code> error.</p>  <p> <b>Traffic
          * Flow</b> </p> <p>To create resource record sets for complex routing
          * configurations, use either the traffic flow visual editor in the Route 53
          * console or the API actions for traffic policies and traffic policy instances.
@@ -794,10 +794,10 @@ namespace Model
          * domain, such as example.com, and its subdomains (apex.example.com,
          * acme.example.com). You create records in a private hosted zone to define how you
          * want to route traffic for a domain and its subdomains within one or more Amazon
-         * Virtual Private Clouds (Amazon VPCs). </p> <important> <p>You can't convert a
+         * Virtual Private Clouds (Amazon VPCs). </p>  <p>You can't convert a
          * public hosted zone to a private hosted zone or vice versa. Instead, you must
          * create a new hosted zone with the same name and create new resource record
-         * sets.</p> </important> <p>For more information about charges for hosted zones,
+         * sets.</p>  <p>For more information about charges for hosted zones,
          * see <a href="http://aws.amazon.com/route53/pricing/">Amazon Route 53
          * Pricing</a>.</p> <p>Note the following:</p> <ul> <li> <p>You can't create a
          * hosted zone for a top-level domain (TLD) such as .com.</p> </li> <li> <p>For
@@ -831,10 +831,10 @@ namespace Model
          * domain, such as example.com, and its subdomains (apex.example.com,
          * acme.example.com). You create records in a private hosted zone to define how you
          * want to route traffic for a domain and its subdomains within one or more Amazon
-         * Virtual Private Clouds (Amazon VPCs). </p> <important> <p>You can't convert a
+         * Virtual Private Clouds (Amazon VPCs). </p>  <p>You can't convert a
          * public hosted zone to a private hosted zone or vice versa. Instead, you must
          * create a new hosted zone with the same name and create new resource record
-         * sets.</p> </important> <p>For more information about charges for hosted zones,
+         * sets.</p>  <p>For more information about charges for hosted zones,
          * see <a href="http://aws.amazon.com/route53/pricing/">Amazon Route 53
          * Pricing</a>.</p> <p>Note the following:</p> <ul> <li> <p>You can't create a
          * hosted zone for a top-level domain (TLD) such as .com.</p> </li> <li> <p>For
@@ -870,10 +870,10 @@ namespace Model
          * domain, such as example.com, and its subdomains (apex.example.com,
          * acme.example.com). You create records in a private hosted zone to define how you
          * want to route traffic for a domain and its subdomains within one or more Amazon
-         * Virtual Private Clouds (Amazon VPCs). </p> <important> <p>You can't convert a
+         * Virtual Private Clouds (Amazon VPCs). </p>  <p>You can't convert a
          * public hosted zone to a private hosted zone or vice versa. Instead, you must
          * create a new hosted zone with the same name and create new resource record
-         * sets.</p> </important> <p>For more information about charges for hosted zones,
+         * sets.</p>  <p>For more information about charges for hosted zones,
          * see <a href="http://aws.amazon.com/route53/pricing/">Amazon Route 53
          * Pricing</a>.</p> <p>Note the following:</p> <ul> <li> <p>You can't create a
          * hosted zone for a top-level domain (TLD) such as .com.</p> </li> <li> <p>For
@@ -913,9 +913,9 @@ namespace Model
          * <p>DNS record type, such as A or AAAA</p> </li> <li> <p>DNS response code, such
          * as <code>NoError</code> or <code>ServFail</code> </p> </li> </ul> <dl> <dt>Log
          * Group and Resource Policy</dt> <dd> <p>Before you create a query logging
-         * configuration, perform the following operations.</p> <note> <p>If you create a
+         * configuration, perform the following operations.</p>  <p>If you create a
          * query logging configuration using the Route 53 console, Route 53 performs these
-         * operations automatically.</p> </note> <ol> <li> <p>Create a CloudWatch Logs log
+         * operations automatically.</p>  <ol> <li> <p>Create a CloudWatch Logs log
          * group, and make note of the ARN, which you specify when you create a query
          * logging configuration. Note the following:</p> <ul> <li> <p>You must create the
          * log group in the us-east-1 region.</p> </li> <li> <p>You must use the same AWS
@@ -935,9 +935,9 @@ namespace Model
          * groups that you created for query logging configurations, replace the hosted
          * zone name with <code>*</code>, for example:</p> <p>
          * <code>arn:aws:logs:us-east-1:123412341234:log-group:/aws/route53/ *</code> </p>
-         * <note> <p>You can't use the CloudWatch console to create or edit a resource
+         *  <p>You can't use the CloudWatch console to create or edit a resource
          * policy. You must use the CloudWatch API, one of the AWS SDKs, or the AWS
-         * CLI.</p> </note> </li> </ol> </dd> <dt>Log Streams and Edge Locations</dt> <dd>
+         * CLI.</p>  </li> </ol> </dd> <dt>Log Streams and Edge Locations</dt> <dd>
          * <p>When Route 53 finishes creating the configuration for DNS query logging, it
          * does the following:</p> <ul> <li> <p>Creates a log stream for an edge location
          * the first time that the edge location responds to DNS queries for the specified
@@ -989,9 +989,9 @@ namespace Model
          * <p>DNS record type, such as A or AAAA</p> </li> <li> <p>DNS response code, such
          * as <code>NoError</code> or <code>ServFail</code> </p> </li> </ul> <dl> <dt>Log
          * Group and Resource Policy</dt> <dd> <p>Before you create a query logging
-         * configuration, perform the following operations.</p> <note> <p>If you create a
+         * configuration, perform the following operations.</p>  <p>If you create a
          * query logging configuration using the Route 53 console, Route 53 performs these
-         * operations automatically.</p> </note> <ol> <li> <p>Create a CloudWatch Logs log
+         * operations automatically.</p>  <ol> <li> <p>Create a CloudWatch Logs log
          * group, and make note of the ARN, which you specify when you create a query
          * logging configuration. Note the following:</p> <ul> <li> <p>You must create the
          * log group in the us-east-1 region.</p> </li> <li> <p>You must use the same AWS
@@ -1011,9 +1011,9 @@ namespace Model
          * groups that you created for query logging configurations, replace the hosted
          * zone name with <code>*</code>, for example:</p> <p>
          * <code>arn:aws:logs:us-east-1:123412341234:log-group:/aws/route53/ *</code> </p>
-         * <note> <p>You can't use the CloudWatch console to create or edit a resource
+         *  <p>You can't use the CloudWatch console to create or edit a resource
          * policy. You must use the CloudWatch API, one of the AWS SDKs, or the AWS
-         * CLI.</p> </note> </li> </ol> </dd> <dt>Log Streams and Edge Locations</dt> <dd>
+         * CLI.</p>  </li> </ol> </dd> <dt>Log Streams and Edge Locations</dt> <dd>
          * <p>When Route 53 finishes creating the configuration for DNS query logging, it
          * does the following:</p> <ul> <li> <p>Creates a log stream for an edge location
          * the first time that the edge location responds to DNS queries for the specified
@@ -1067,9 +1067,9 @@ namespace Model
          * <p>DNS record type, such as A or AAAA</p> </li> <li> <p>DNS response code, such
          * as <code>NoError</code> or <code>ServFail</code> </p> </li> </ul> <dl> <dt>Log
          * Group and Resource Policy</dt> <dd> <p>Before you create a query logging
-         * configuration, perform the following operations.</p> <note> <p>If you create a
+         * configuration, perform the following operations.</p>  <p>If you create a
          * query logging configuration using the Route 53 console, Route 53 performs these
-         * operations automatically.</p> </note> <ol> <li> <p>Create a CloudWatch Logs log
+         * operations automatically.</p>  <ol> <li> <p>Create a CloudWatch Logs log
          * group, and make note of the ARN, which you specify when you create a query
          * logging configuration. Note the following:</p> <ul> <li> <p>You must create the
          * log group in the us-east-1 region.</p> </li> <li> <p>You must use the same AWS
@@ -1089,9 +1089,9 @@ namespace Model
          * groups that you created for query logging configurations, replace the hosted
          * zone name with <code>*</code>, for example:</p> <p>
          * <code>arn:aws:logs:us-east-1:123412341234:log-group:/aws/route53/ *</code> </p>
-         * <note> <p>You can't use the CloudWatch console to create or edit a resource
+         *  <p>You can't use the CloudWatch console to create or edit a resource
          * policy. You must use the CloudWatch API, one of the AWS SDKs, or the AWS
-         * CLI.</p> </note> </li> </ol> </dd> <dt>Log Streams and Edge Locations</dt> <dd>
+         * CLI.</p>  </li> </ol> </dd> <dt>Log Streams and Edge Locations</dt> <dd>
          * <p>When Route 53 finishes creating the configuration for DNS query logging, it
          * does the following:</p> <ul> <li> <p>Creates a log stream for an edge location
          * the first time that the edge location responds to DNS queries for the specified
@@ -1140,8 +1140,8 @@ namespace Model
          * multiple hosted zones that were created by the same AWS account. </p> <p>You can
          * also create a reusable delegation set that uses the four name servers that are
          * associated with an existing hosted zone. Specify the hosted zone ID in the
-         * <code>CreateReusableDelegationSet</code> request.</p> <note> <p>You can't
-         * associate a reusable delegation set with a private hosted zone.</p> </note>
+         * <code>CreateReusableDelegationSet</code> request.</p>  <p>You can't
+         * associate a reusable delegation set with a private hosted zone.</p> 
          * <p>For information about using a reusable delegation set to configure white
          * label name servers, see <a
          * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/white-label-name-servers.html">Configuring
@@ -1177,8 +1177,8 @@ namespace Model
          * multiple hosted zones that were created by the same AWS account. </p> <p>You can
          * also create a reusable delegation set that uses the four name servers that are
          * associated with an existing hosted zone. Specify the hosted zone ID in the
-         * <code>CreateReusableDelegationSet</code> request.</p> <note> <p>You can't
-         * associate a reusable delegation set with a private hosted zone.</p> </note>
+         * <code>CreateReusableDelegationSet</code> request.</p>  <p>You can't
+         * associate a reusable delegation set with a private hosted zone.</p> 
          * <p>For information about using a reusable delegation set to configure white
          * label name servers, see <a
          * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/white-label-name-servers.html">Configuring
@@ -1216,8 +1216,8 @@ namespace Model
          * multiple hosted zones that were created by the same AWS account. </p> <p>You can
          * also create a reusable delegation set that uses the four name servers that are
          * associated with an existing hosted zone. Specify the hosted zone ID in the
-         * <code>CreateReusableDelegationSet</code> request.</p> <note> <p>You can't
-         * associate a reusable delegation set with a private hosted zone.</p> </note>
+         * <code>CreateReusableDelegationSet</code> request.</p>  <p>You can't
+         * associate a reusable delegation set with a private hosted zone.</p> 
          * <p>For information about using a reusable delegation set to configure white
          * label name servers, see <a
          * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/white-label-name-servers.html">Configuring
@@ -1377,10 +1377,10 @@ namespace Model
          * <code>CreateVPCAssociationAuthorization</code> request, you must use the account
          * that created the hosted zone. After you authorize the association, use the
          * account that created the VPC to submit an
-         * <code>AssociateVPCWithHostedZone</code> request.</p> <note> <p>If you want to
+         * <code>AssociateVPCWithHostedZone</code> request.</p>  <p>If you want to
          * associate multiple VPCs that you created by using one account with a hosted zone
          * that you created by using a different account, you must submit one authorization
-         * request for each VPC.</p> </note><p><h3>See Also:</h3>   <a
+         * request for each VPC.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateVPCAssociationAuthorization">AWS
          * API Reference</a></p>
          */
@@ -1393,10 +1393,10 @@ namespace Model
          * <code>CreateVPCAssociationAuthorization</code> request, you must use the account
          * that created the hosted zone. After you authorize the association, use the
          * account that created the VPC to submit an
-         * <code>AssociateVPCWithHostedZone</code> request.</p> <note> <p>If you want to
+         * <code>AssociateVPCWithHostedZone</code> request.</p>  <p>If you want to
          * associate multiple VPCs that you created by using one account with a hosted zone
          * that you created by using a different account, you must submit one authorization
-         * request for each VPC.</p> </note><p><h3>See Also:</h3>   <a
+         * request for each VPC.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateVPCAssociationAuthorization">AWS
          * API Reference</a></p>
          *
@@ -1411,10 +1411,10 @@ namespace Model
          * <code>CreateVPCAssociationAuthorization</code> request, you must use the account
          * that created the hosted zone. After you authorize the association, use the
          * account that created the VPC to submit an
-         * <code>AssociateVPCWithHostedZone</code> request.</p> <note> <p>If you want to
+         * <code>AssociateVPCWithHostedZone</code> request.</p>  <p>If you want to
          * associate multiple VPCs that you created by using one account with a hosted zone
          * that you created by using a different account, you must submit one authorization
-         * request for each VPC.</p> </note><p><h3>See Also:</h3>   <a
+         * request for each VPC.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateVPCAssociationAuthorization">AWS
          * API Reference</a></p>
          *
@@ -1423,7 +1423,7 @@ namespace Model
         virtual void CreateVPCAssociationAuthorizationAsync(const Model::CreateVPCAssociationAuthorizationRequest& request, const CreateVPCAssociationAuthorizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes a health check.</p> <important> <p>Amazon Route 53 does not prevent
+         * <p>Deletes a health check.</p>  <p>Amazon Route 53 does not prevent
          * you from deleting a health check even if the health check is associated with one
          * or more resource record sets. If you delete a health check and you don't update
          * the associated resource record sets, the future status of the health check can't
@@ -1431,7 +1431,7 @@ namespace Model
          * your DNS failover configuration. For more information, see <a
          * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/health-checks-creating-deleting.html#health-checks-deleting.html">Replacing
          * and Deleting Health Checks</a> in the <i>Amazon Route 53 Developer
-         * Guide</i>.</p> </important> <p>If you're using AWS Cloud Map and you configured
+         * Guide</i>.</p>  <p>If you're using AWS Cloud Map and you configured
          * Cloud Map to create a Route 53 health check when you register an instance, you
          * can't use the Route 53 <code>DeleteHealthCheck</code> command to delete the
          * health check. The health check is deleted automatically when you deregister the
@@ -1443,7 +1443,7 @@ namespace Model
         virtual Model::DeleteHealthCheckOutcome DeleteHealthCheck(const Model::DeleteHealthCheckRequest& request) const;
 
         /**
-         * <p>Deletes a health check.</p> <important> <p>Amazon Route 53 does not prevent
+         * <p>Deletes a health check.</p>  <p>Amazon Route 53 does not prevent
          * you from deleting a health check even if the health check is associated with one
          * or more resource record sets. If you delete a health check and you don't update
          * the associated resource record sets, the future status of the health check can't
@@ -1451,7 +1451,7 @@ namespace Model
          * your DNS failover configuration. For more information, see <a
          * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/health-checks-creating-deleting.html#health-checks-deleting.html">Replacing
          * and Deleting Health Checks</a> in the <i>Amazon Route 53 Developer
-         * Guide</i>.</p> </important> <p>If you're using AWS Cloud Map and you configured
+         * Guide</i>.</p>  <p>If you're using AWS Cloud Map and you configured
          * Cloud Map to create a Route 53 health check when you register an instance, you
          * can't use the Route 53 <code>DeleteHealthCheck</code> command to delete the
          * health check. The health check is deleted automatically when you deregister the
@@ -1465,7 +1465,7 @@ namespace Model
         virtual Model::DeleteHealthCheckOutcomeCallable DeleteHealthCheckCallable(const Model::DeleteHealthCheckRequest& request) const;
 
         /**
-         * <p>Deletes a health check.</p> <important> <p>Amazon Route 53 does not prevent
+         * <p>Deletes a health check.</p>  <p>Amazon Route 53 does not prevent
          * you from deleting a health check even if the health check is associated with one
          * or more resource record sets. If you delete a health check and you don't update
          * the associated resource record sets, the future status of the health check can't
@@ -1473,7 +1473,7 @@ namespace Model
          * your DNS failover configuration. For more information, see <a
          * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/health-checks-creating-deleting.html#health-checks-deleting.html">Replacing
          * and Deleting Health Checks</a> in the <i>Amazon Route 53 Developer
-         * Guide</i>.</p> </important> <p>If you're using AWS Cloud Map and you configured
+         * Guide</i>.</p>  <p>If you're using AWS Cloud Map and you configured
          * Cloud Map to create a Route 53 health check when you register an instance, you
          * can't use the Route 53 <code>DeleteHealthCheck</code> command to delete the
          * health check. The health check is deleted automatically when you deregister the
@@ -1496,14 +1496,14 @@ namespace Model
          * another service.)</p> <p>If you want to keep your domain registration but you
          * want to stop routing internet traffic to your website or web application, we
          * recommend that you delete resource record sets in the hosted zone instead of
-         * deleting the hosted zone.</p> <important> <p>If you delete a hosted zone, you
+         * deleting the hosted zone.</p>  <p>If you delete a hosted zone, you
          * can't undelete it. You must create a new hosted zone and update the name servers
          * for your domain registration, which can require up to 48 hours to take effect.
          * (If you delegated responsibility for a subdomain to a hosted zone and you delete
          * the child hosted zone, you must update the name servers in the parent hosted
          * zone.) In addition, if you delete a hosted zone, someone could hijack the domain
          * and route traffic to their own resources using your domain name.</p>
-         * </important> <p>If you want to avoid the monthly charge for the hosted zone, you
+         *  <p>If you want to avoid the monthly charge for the hosted zone, you
          * can transfer DNS service for the domain to a free DNS service. When you transfer
          * DNS service, you have to update the name servers for the domain registration. If
          * the domain is registered with Route 53, see <a
@@ -1540,14 +1540,14 @@ namespace Model
          * another service.)</p> <p>If you want to keep your domain registration but you
          * want to stop routing internet traffic to your website or web application, we
          * recommend that you delete resource record sets in the hosted zone instead of
-         * deleting the hosted zone.</p> <important> <p>If you delete a hosted zone, you
+         * deleting the hosted zone.</p>  <p>If you delete a hosted zone, you
          * can't undelete it. You must create a new hosted zone and update the name servers
          * for your domain registration, which can require up to 48 hours to take effect.
          * (If you delegated responsibility for a subdomain to a hosted zone and you delete
          * the child hosted zone, you must update the name servers in the parent hosted
          * zone.) In addition, if you delete a hosted zone, someone could hijack the domain
          * and route traffic to their own resources using your domain name.</p>
-         * </important> <p>If you want to avoid the monthly charge for the hosted zone, you
+         *  <p>If you want to avoid the monthly charge for the hosted zone, you
          * can transfer DNS service for the domain to a free DNS service. When you transfer
          * DNS service, you have to update the name servers for the domain registration. If
          * the domain is registered with Route 53, see <a
@@ -1586,14 +1586,14 @@ namespace Model
          * another service.)</p> <p>If you want to keep your domain registration but you
          * want to stop routing internet traffic to your website or web application, we
          * recommend that you delete resource record sets in the hosted zone instead of
-         * deleting the hosted zone.</p> <important> <p>If you delete a hosted zone, you
+         * deleting the hosted zone.</p>  <p>If you delete a hosted zone, you
          * can't undelete it. You must create a new hosted zone and update the name servers
          * for your domain registration, which can require up to 48 hours to take effect.
          * (If you delegated responsibility for a subdomain to a hosted zone and you delete
          * the child hosted zone, you must update the name servers in the parent hosted
          * zone.) In addition, if you delete a hosted zone, someone could hijack the domain
          * and route traffic to their own resources using your domain name.</p>
-         * </important> <p>If you want to avoid the monthly charge for the hosted zone, you
+         *  <p>If you want to avoid the monthly charge for the hosted zone, you
          * can transfer DNS service for the domain to a free DNS service. When you transfer
          * DNS service, you have to update the name servers for the domain registration. If
          * the domain is registered with Route 53, see <a
@@ -1663,9 +1663,9 @@ namespace Model
         virtual void DeleteQueryLoggingConfigAsync(const Model::DeleteQueryLoggingConfigRequest& request, const DeleteQueryLoggingConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes a reusable delegation set.</p> <important> <p>You can delete a
+         * <p>Deletes a reusable delegation set.</p>  <p>You can delete a
          * reusable delegation set only if it isn't associated with any hosted zones.</p>
-         * </important> <p>To verify that the reusable delegation set is not associated
+         *  <p>To verify that the reusable delegation set is not associated
          * with any hosted zones, submit a <a
          * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetReusableDelegationSet.html">GetReusableDelegationSet</a>
          * request and specify the ID of the reusable delegation set that you want to
@@ -1676,9 +1676,9 @@ namespace Model
         virtual Model::DeleteReusableDelegationSetOutcome DeleteReusableDelegationSet(const Model::DeleteReusableDelegationSetRequest& request) const;
 
         /**
-         * <p>Deletes a reusable delegation set.</p> <important> <p>You can delete a
+         * <p>Deletes a reusable delegation set.</p>  <p>You can delete a
          * reusable delegation set only if it isn't associated with any hosted zones.</p>
-         * </important> <p>To verify that the reusable delegation set is not associated
+         *  <p>To verify that the reusable delegation set is not associated
          * with any hosted zones, submit a <a
          * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetReusableDelegationSet.html">GetReusableDelegationSet</a>
          * request and specify the ID of the reusable delegation set that you want to
@@ -1691,9 +1691,9 @@ namespace Model
         virtual Model::DeleteReusableDelegationSetOutcomeCallable DeleteReusableDelegationSetCallable(const Model::DeleteReusableDelegationSetRequest& request) const;
 
         /**
-         * <p>Deletes a reusable delegation set.</p> <important> <p>You can delete a
+         * <p>Deletes a reusable delegation set.</p>  <p>You can delete a
          * reusable delegation set only if it isn't associated with any hosted zones.</p>
-         * </important> <p>To verify that the reusable delegation set is not associated
+         *  <p>To verify that the reusable delegation set is not associated
          * with any hosted zones, submit a <a
          * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetReusableDelegationSet.html">GetReusableDelegationSet</a>
          * request and specify the ID of the reusable delegation set that you want to
@@ -1732,9 +1732,9 @@ namespace Model
 
         /**
          * <p>Deletes a traffic policy instance and all of the resource record sets that
-         * Amazon Route 53 created when you created the instance.</p> <note> <p>In the
+         * Amazon Route 53 created when you created the instance.</p>  <p>In the
          * Route 53 console, traffic policy instances are known as policy records.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteTrafficPolicyInstance">AWS
          * API Reference</a></p>
          */
@@ -1742,9 +1742,9 @@ namespace Model
 
         /**
          * <p>Deletes a traffic policy instance and all of the resource record sets that
-         * Amazon Route 53 created when you created the instance.</p> <note> <p>In the
+         * Amazon Route 53 created when you created the instance.</p>  <p>In the
          * Route 53 console, traffic policy instances are known as policy records.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteTrafficPolicyInstance">AWS
          * API Reference</a></p>
          *
@@ -1754,9 +1754,9 @@ namespace Model
 
         /**
          * <p>Deletes a traffic policy instance and all of the resource record sets that
-         * Amazon Route 53 created when you created the instance.</p> <note> <p>In the
+         * Amazon Route 53 created when you created the instance.</p>  <p>In the
          * Route 53 console, traffic policy instances are known as policy records.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteTrafficPolicyInstance">AWS
          * API Reference</a></p>
          *
@@ -1768,13 +1768,13 @@ namespace Model
          * <p>Removes authorization to submit an <code>AssociateVPCWithHostedZone</code>
          * request to associate a specified VPC with a hosted zone that was created by a
          * different account. You must use the account that created the hosted zone to
-         * submit a <code>DeleteVPCAssociationAuthorization</code> request.</p> <important>
+         * submit a <code>DeleteVPCAssociationAuthorization</code> request.</p> 
          * <p>Sending this request only prevents the AWS account that created the VPC from
          * associating the VPC with the Amazon Route 53 hosted zone in the future. If the
          * VPC is already associated with the hosted zone,
          * <code>DeleteVPCAssociationAuthorization</code> won't disassociate the VPC from
          * the hosted zone. If you want to delete an existing association, use
-         * <code>DisassociateVPCFromHostedZone</code>.</p> </important><p><h3>See
+         * <code>DisassociateVPCFromHostedZone</code>.</p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteVPCAssociationAuthorization">AWS
          * API Reference</a></p>
@@ -1785,13 +1785,13 @@ namespace Model
          * <p>Removes authorization to submit an <code>AssociateVPCWithHostedZone</code>
          * request to associate a specified VPC with a hosted zone that was created by a
          * different account. You must use the account that created the hosted zone to
-         * submit a <code>DeleteVPCAssociationAuthorization</code> request.</p> <important>
+         * submit a <code>DeleteVPCAssociationAuthorization</code> request.</p> 
          * <p>Sending this request only prevents the AWS account that created the VPC from
          * associating the VPC with the Amazon Route 53 hosted zone in the future. If the
          * VPC is already associated with the hosted zone,
          * <code>DeleteVPCAssociationAuthorization</code> won't disassociate the VPC from
          * the hosted zone. If you want to delete an existing association, use
-         * <code>DisassociateVPCFromHostedZone</code>.</p> </important><p><h3>See
+         * <code>DisassociateVPCFromHostedZone</code>.</p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteVPCAssociationAuthorization">AWS
          * API Reference</a></p>
@@ -1804,13 +1804,13 @@ namespace Model
          * <p>Removes authorization to submit an <code>AssociateVPCWithHostedZone</code>
          * request to associate a specified VPC with a hosted zone that was created by a
          * different account. You must use the account that created the hosted zone to
-         * submit a <code>DeleteVPCAssociationAuthorization</code> request.</p> <important>
+         * submit a <code>DeleteVPCAssociationAuthorization</code> request.</p> 
          * <p>Sending this request only prevents the AWS account that created the VPC from
          * associating the VPC with the Amazon Route 53 hosted zone in the future. If the
          * VPC is already associated with the hosted zone,
          * <code>DeleteVPCAssociationAuthorization</code> won't disassociate the VPC from
          * the hosted zone. If you want to delete an existing association, use
-         * <code>DisassociateVPCFromHostedZone</code>.</p> </important><p><h3>See
+         * <code>DisassociateVPCFromHostedZone</code>.</p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteVPCAssociationAuthorization">AWS
          * API Reference</a></p>
@@ -1902,11 +1902,11 @@ namespace Model
          * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html">Limits</a>
          * in the <i>Amazon Route 53 Developer Guide</i>. To request a higher limit, <a
          * href="https://console.aws.amazon.com/support/home#/case/create?issueType=service-limit-increase&amp;limitType=service-code-route53">open
-         * a case</a>.</p> <note> <p>You can also view account limits in AWS Trusted
+         * a case</a>.</p>  <p>You can also view account limits in AWS Trusted
          * Advisor. Sign in to the AWS Management Console and open the Trusted Advisor
          * console at <a
          * href="https://console.aws.amazon.com/trustedadvisor">https://console.aws.amazon.com/trustedadvisor/</a>.
-         * Then choose <b>Service limits</b> in the navigation pane.</p> </note><p><h3>See
+         * Then choose <b>Service limits</b> in the navigation pane.</p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetAccountLimit">AWS
          * API Reference</a></p>
@@ -1920,11 +1920,11 @@ namespace Model
          * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html">Limits</a>
          * in the <i>Amazon Route 53 Developer Guide</i>. To request a higher limit, <a
          * href="https://console.aws.amazon.com/support/home#/case/create?issueType=service-limit-increase&amp;limitType=service-code-route53">open
-         * a case</a>.</p> <note> <p>You can also view account limits in AWS Trusted
+         * a case</a>.</p>  <p>You can also view account limits in AWS Trusted
          * Advisor. Sign in to the AWS Management Console and open the Trusted Advisor
          * console at <a
          * href="https://console.aws.amazon.com/trustedadvisor">https://console.aws.amazon.com/trustedadvisor/</a>.
-         * Then choose <b>Service limits</b> in the navigation pane.</p> </note><p><h3>See
+         * Then choose <b>Service limits</b> in the navigation pane.</p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetAccountLimit">AWS
          * API Reference</a></p>
@@ -1940,11 +1940,11 @@ namespace Model
          * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html">Limits</a>
          * in the <i>Amazon Route 53 Developer Guide</i>. To request a higher limit, <a
          * href="https://console.aws.amazon.com/support/home#/case/create?issueType=service-limit-increase&amp;limitType=service-code-route53">open
-         * a case</a>.</p> <note> <p>You can also view account limits in AWS Trusted
+         * a case</a>.</p>  <p>You can also view account limits in AWS Trusted
          * Advisor. Sign in to the AWS Management Console and open the Trusted Advisor
          * console at <a
          * href="https://console.aws.amazon.com/trustedadvisor">https://console.aws.amazon.com/trustedadvisor/</a>.
-         * Then choose <b>Service limits</b> in the navigation pane.</p> </note><p><h3>See
+         * Then choose <b>Service limits</b> in the navigation pane.</p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetAccountLimit">AWS
          * API Reference</a></p>
@@ -1994,24 +1994,24 @@ namespace Model
         virtual void GetChangeAsync(const Model::GetChangeRequest& request, const GetChangeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <important> <p> <code>GetCheckerIpRanges</code> still works, but we recommend
+         *  <p> <code>GetCheckerIpRanges</code> still works, but we recommend
          * that you download ip-ranges.json, which includes IP address ranges for all AWS
          * services. For more information, see <a
          * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/route-53-ip-addresses.html">IP
          * Address Ranges of Amazon Route 53 Servers</a> in the <i>Amazon Route 53
-         * Developer Guide</i>.</p> </important><p><h3>See Also:</h3>   <a
+         * Developer Guide</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetCheckerIpRanges">AWS
          * API Reference</a></p>
          */
         virtual Model::GetCheckerIpRangesOutcome GetCheckerIpRanges(const Model::GetCheckerIpRangesRequest& request) const;
 
         /**
-         * <important> <p> <code>GetCheckerIpRanges</code> still works, but we recommend
+         *  <p> <code>GetCheckerIpRanges</code> still works, but we recommend
          * that you download ip-ranges.json, which includes IP address ranges for all AWS
          * services. For more information, see <a
          * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/route-53-ip-addresses.html">IP
          * Address Ranges of Amazon Route 53 Servers</a> in the <i>Amazon Route 53
-         * Developer Guide</i>.</p> </important><p><h3>See Also:</h3>   <a
+         * Developer Guide</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetCheckerIpRanges">AWS
          * API Reference</a></p>
          *
@@ -2020,12 +2020,12 @@ namespace Model
         virtual Model::GetCheckerIpRangesOutcomeCallable GetCheckerIpRangesCallable(const Model::GetCheckerIpRangesRequest& request) const;
 
         /**
-         * <important> <p> <code>GetCheckerIpRanges</code> still works, but we recommend
+         *  <p> <code>GetCheckerIpRanges</code> still works, but we recommend
          * that you download ip-ranges.json, which includes IP address ranges for all AWS
          * services. For more information, see <a
          * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/route-53-ip-addresses.html">IP
          * Address Ranges of Amazon Route 53 Servers</a> in the <i>Amazon Route 53
-         * Developer Guide</i>.</p> </important><p><h3>See Also:</h3>   <a
+         * Developer Guide</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetCheckerIpRanges">AWS
          * API Reference</a></p>
          *
@@ -2439,26 +2439,26 @@ namespace Model
         virtual void GetTrafficPolicyAsync(const Model::GetTrafficPolicyRequest& request, const GetTrafficPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets information about a specified traffic policy instance.</p> <note>
+         * <p>Gets information about a specified traffic policy instance.</p> 
          * <p>After you submit a <code>CreateTrafficPolicyInstance</code> or an
          * <code>UpdateTrafficPolicyInstance</code> request, there's a brief delay while
          * Amazon Route 53 creates the resource record sets that are specified in the
          * traffic policy definition. For more information, see the <code>State</code>
-         * response element.</p> </note> <note> <p>In the Route 53 console, traffic policy
-         * instances are known as policy records.</p> </note><p><h3>See Also:</h3>   <a
+         * response element.</p>   <p>In the Route 53 console, traffic policy
+         * instances are known as policy records.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetTrafficPolicyInstance">AWS
          * API Reference</a></p>
          */
         virtual Model::GetTrafficPolicyInstanceOutcome GetTrafficPolicyInstance(const Model::GetTrafficPolicyInstanceRequest& request) const;
 
         /**
-         * <p>Gets information about a specified traffic policy instance.</p> <note>
+         * <p>Gets information about a specified traffic policy instance.</p> 
          * <p>After you submit a <code>CreateTrafficPolicyInstance</code> or an
          * <code>UpdateTrafficPolicyInstance</code> request, there's a brief delay while
          * Amazon Route 53 creates the resource record sets that are specified in the
          * traffic policy definition. For more information, see the <code>State</code>
-         * response element.</p> </note> <note> <p>In the Route 53 console, traffic policy
-         * instances are known as policy records.</p> </note><p><h3>See Also:</h3>   <a
+         * response element.</p>   <p>In the Route 53 console, traffic policy
+         * instances are known as policy records.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetTrafficPolicyInstance">AWS
          * API Reference</a></p>
          *
@@ -2467,13 +2467,13 @@ namespace Model
         virtual Model::GetTrafficPolicyInstanceOutcomeCallable GetTrafficPolicyInstanceCallable(const Model::GetTrafficPolicyInstanceRequest& request) const;
 
         /**
-         * <p>Gets information about a specified traffic policy instance.</p> <note>
+         * <p>Gets information about a specified traffic policy instance.</p> 
          * <p>After you submit a <code>CreateTrafficPolicyInstance</code> or an
          * <code>UpdateTrafficPolicyInstance</code> request, there's a brief delay while
          * Amazon Route 53 creates the resource record sets that are specified in the
          * traffic policy definition. For more information, see the <code>State</code>
-         * response element.</p> </note> <note> <p>In the Route 53 console, traffic policy
-         * instances are known as policy records.</p> </note><p><h3>See Also:</h3>   <a
+         * response element.</p>   <p>In the Route 53 console, traffic policy
+         * instances are known as policy records.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetTrafficPolicyInstance">AWS
          * API Reference</a></p>
          *
@@ -3140,11 +3140,11 @@ namespace Model
 
         /**
          * <p>Gets information about the traffic policy instances that you created by using
-         * the current AWS account.</p> <note> <p>After you submit an
+         * the current AWS account.</p>  <p>After you submit an
          * <code>UpdateTrafficPolicyInstance</code> request, there's a brief delay while
          * Amazon Route 53 creates the resource record sets that are specified in the
          * traffic policy definition. For more information, see the <code>State</code>
-         * response element.</p> </note> <p>Route 53 returns a maximum of 100 items in each
+         * response element.</p>  <p>Route 53 returns a maximum of 100 items in each
          * response. If you have a lot of traffic policy instances, you can use the
          * <code>MaxItems</code> parameter to list them in groups of up to
          * 100.</p><p><h3>See Also:</h3>   <a
@@ -3155,11 +3155,11 @@ namespace Model
 
         /**
          * <p>Gets information about the traffic policy instances that you created by using
-         * the current AWS account.</p> <note> <p>After you submit an
+         * the current AWS account.</p>  <p>After you submit an
          * <code>UpdateTrafficPolicyInstance</code> request, there's a brief delay while
          * Amazon Route 53 creates the resource record sets that are specified in the
          * traffic policy definition. For more information, see the <code>State</code>
-         * response element.</p> </note> <p>Route 53 returns a maximum of 100 items in each
+         * response element.</p>  <p>Route 53 returns a maximum of 100 items in each
          * response. If you have a lot of traffic policy instances, you can use the
          * <code>MaxItems</code> parameter to list them in groups of up to
          * 100.</p><p><h3>See Also:</h3>   <a
@@ -3172,11 +3172,11 @@ namespace Model
 
         /**
          * <p>Gets information about the traffic policy instances that you created by using
-         * the current AWS account.</p> <note> <p>After you submit an
+         * the current AWS account.</p>  <p>After you submit an
          * <code>UpdateTrafficPolicyInstance</code> request, there's a brief delay while
          * Amazon Route 53 creates the resource record sets that are specified in the
          * traffic policy definition. For more information, see the <code>State</code>
-         * response element.</p> </note> <p>Route 53 returns a maximum of 100 items in each
+         * response element.</p>  <p>Route 53 returns a maximum of 100 items in each
          * response. If you have a lot of traffic policy instances, you can use the
          * <code>MaxItems</code> parameter to list them in groups of up to
          * 100.</p><p><h3>See Also:</h3>   <a
@@ -3189,12 +3189,12 @@ namespace Model
 
         /**
          * <p>Gets information about the traffic policy instances that you created in a
-         * specified hosted zone.</p> <note> <p>After you submit a
+         * specified hosted zone.</p>  <p>After you submit a
          * <code>CreateTrafficPolicyInstance</code> or an
          * <code>UpdateTrafficPolicyInstance</code> request, there's a brief delay while
          * Amazon Route 53 creates the resource record sets that are specified in the
          * traffic policy definition. For more information, see the <code>State</code>
-         * response element.</p> </note> <p>Route 53 returns a maximum of 100 items in each
+         * response element.</p>  <p>Route 53 returns a maximum of 100 items in each
          * response. If you have a lot of traffic policy instances, you can use the
          * <code>MaxItems</code> parameter to list them in groups of up to
          * 100.</p><p><h3>See Also:</h3>   <a
@@ -3205,12 +3205,12 @@ namespace Model
 
         /**
          * <p>Gets information about the traffic policy instances that you created in a
-         * specified hosted zone.</p> <note> <p>After you submit a
+         * specified hosted zone.</p>  <p>After you submit a
          * <code>CreateTrafficPolicyInstance</code> or an
          * <code>UpdateTrafficPolicyInstance</code> request, there's a brief delay while
          * Amazon Route 53 creates the resource record sets that are specified in the
          * traffic policy definition. For more information, see the <code>State</code>
-         * response element.</p> </note> <p>Route 53 returns a maximum of 100 items in each
+         * response element.</p>  <p>Route 53 returns a maximum of 100 items in each
          * response. If you have a lot of traffic policy instances, you can use the
          * <code>MaxItems</code> parameter to list them in groups of up to
          * 100.</p><p><h3>See Also:</h3>   <a
@@ -3223,12 +3223,12 @@ namespace Model
 
         /**
          * <p>Gets information about the traffic policy instances that you created in a
-         * specified hosted zone.</p> <note> <p>After you submit a
+         * specified hosted zone.</p>  <p>After you submit a
          * <code>CreateTrafficPolicyInstance</code> or an
          * <code>UpdateTrafficPolicyInstance</code> request, there's a brief delay while
          * Amazon Route 53 creates the resource record sets that are specified in the
          * traffic policy definition. For more information, see the <code>State</code>
-         * response element.</p> </note> <p>Route 53 returns a maximum of 100 items in each
+         * response element.</p>  <p>Route 53 returns a maximum of 100 items in each
          * response. If you have a lot of traffic policy instances, you can use the
          * <code>MaxItems</code> parameter to list them in groups of up to
          * 100.</p><p><h3>See Also:</h3>   <a
@@ -3241,12 +3241,12 @@ namespace Model
 
         /**
          * <p>Gets information about the traffic policy instances that you created by using
-         * a specify traffic policy version.</p> <note> <p>After you submit a
+         * a specify traffic policy version.</p>  <p>After you submit a
          * <code>CreateTrafficPolicyInstance</code> or an
          * <code>UpdateTrafficPolicyInstance</code> request, there's a brief delay while
          * Amazon Route 53 creates the resource record sets that are specified in the
          * traffic policy definition. For more information, see the <code>State</code>
-         * response element.</p> </note> <p>Route 53 returns a maximum of 100 items in each
+         * response element.</p>  <p>Route 53 returns a maximum of 100 items in each
          * response. If you have a lot of traffic policy instances, you can use the
          * <code>MaxItems</code> parameter to list them in groups of up to
          * 100.</p><p><h3>See Also:</h3>   <a
@@ -3257,12 +3257,12 @@ namespace Model
 
         /**
          * <p>Gets information about the traffic policy instances that you created by using
-         * a specify traffic policy version.</p> <note> <p>After you submit a
+         * a specify traffic policy version.</p>  <p>After you submit a
          * <code>CreateTrafficPolicyInstance</code> or an
          * <code>UpdateTrafficPolicyInstance</code> request, there's a brief delay while
          * Amazon Route 53 creates the resource record sets that are specified in the
          * traffic policy definition. For more information, see the <code>State</code>
-         * response element.</p> </note> <p>Route 53 returns a maximum of 100 items in each
+         * response element.</p>  <p>Route 53 returns a maximum of 100 items in each
          * response. If you have a lot of traffic policy instances, you can use the
          * <code>MaxItems</code> parameter to list them in groups of up to
          * 100.</p><p><h3>See Also:</h3>   <a
@@ -3275,12 +3275,12 @@ namespace Model
 
         /**
          * <p>Gets information about the traffic policy instances that you created by using
-         * a specify traffic policy version.</p> <note> <p>After you submit a
+         * a specify traffic policy version.</p>  <p>After you submit a
          * <code>CreateTrafficPolicyInstance</code> or an
          * <code>UpdateTrafficPolicyInstance</code> request, there's a brief delay while
          * Amazon Route 53 creates the resource record sets that are specified in the
          * traffic policy definition. For more information, see the <code>State</code>
-         * response element.</p> </note> <p>Route 53 returns a maximum of 100 items in each
+         * response element.</p>  <p>Route 53 returns a maximum of 100 items in each
          * response. If you have a lot of traffic policy instances, you can use the
          * <code>MaxItems</code> parameter to list them in groups of up to
          * 100.</p><p><h3>See Also:</h3>   <a

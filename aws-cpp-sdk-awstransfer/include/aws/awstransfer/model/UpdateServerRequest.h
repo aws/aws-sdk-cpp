@@ -57,9 +57,9 @@ namespace Model
      * RSA (RSA_4096)</p> </li> <li> <p>Elliptic Prime Curve 256 bit
      * (EC_prime256v1)</p> </li> <li> <p>Elliptic Prime Curve 384 bit
      * (EC_secp384r1)</p> </li> <li> <p>Elliptic Prime Curve 521 bit (EC_secp521r1)</p>
-     * </li> </ul> <note> <p>The certificate must be a valid SSL/TLS X.509 version 3
+     * </li> </ul>  <p>The certificate must be a valid SSL/TLS X.509 version 3
      * certificate with FQDN or IP address specified and information about the
-     * issuer.</p> </note>
+     * issuer.</p> 
      */
     inline const Aws::String& GetCertificate() const{ return m_certificate; }
 
@@ -81,9 +81,9 @@ namespace Model
      * RSA (RSA_4096)</p> </li> <li> <p>Elliptic Prime Curve 256 bit
      * (EC_prime256v1)</p> </li> <li> <p>Elliptic Prime Curve 384 bit
      * (EC_secp384r1)</p> </li> <li> <p>Elliptic Prime Curve 521 bit (EC_secp521r1)</p>
-     * </li> </ul> <note> <p>The certificate must be a valid SSL/TLS X.509 version 3
+     * </li> </ul>  <p>The certificate must be a valid SSL/TLS X.509 version 3
      * certificate with FQDN or IP address specified and information about the
-     * issuer.</p> </note>
+     * issuer.</p> 
      */
     inline bool CertificateHasBeenSet() const { return m_certificateHasBeenSet; }
 
@@ -105,9 +105,9 @@ namespace Model
      * RSA (RSA_4096)</p> </li> <li> <p>Elliptic Prime Curve 256 bit
      * (EC_prime256v1)</p> </li> <li> <p>Elliptic Prime Curve 384 bit
      * (EC_secp384r1)</p> </li> <li> <p>Elliptic Prime Curve 521 bit (EC_secp521r1)</p>
-     * </li> </ul> <note> <p>The certificate must be a valid SSL/TLS X.509 version 3
+     * </li> </ul>  <p>The certificate must be a valid SSL/TLS X.509 version 3
      * certificate with FQDN or IP address specified and information about the
-     * issuer.</p> </note>
+     * issuer.</p> 
      */
     inline void SetCertificate(const Aws::String& value) { m_certificateHasBeenSet = true; m_certificate = value; }
 
@@ -129,9 +129,9 @@ namespace Model
      * RSA (RSA_4096)</p> </li> <li> <p>Elliptic Prime Curve 256 bit
      * (EC_prime256v1)</p> </li> <li> <p>Elliptic Prime Curve 384 bit
      * (EC_secp384r1)</p> </li> <li> <p>Elliptic Prime Curve 521 bit (EC_secp521r1)</p>
-     * </li> </ul> <note> <p>The certificate must be a valid SSL/TLS X.509 version 3
+     * </li> </ul>  <p>The certificate must be a valid SSL/TLS X.509 version 3
      * certificate with FQDN or IP address specified and information about the
-     * issuer.</p> </note>
+     * issuer.</p> 
      */
     inline void SetCertificate(Aws::String&& value) { m_certificateHasBeenSet = true; m_certificate = std::move(value); }
 
@@ -153,9 +153,9 @@ namespace Model
      * RSA (RSA_4096)</p> </li> <li> <p>Elliptic Prime Curve 256 bit
      * (EC_prime256v1)</p> </li> <li> <p>Elliptic Prime Curve 384 bit
      * (EC_secp384r1)</p> </li> <li> <p>Elliptic Prime Curve 521 bit (EC_secp521r1)</p>
-     * </li> </ul> <note> <p>The certificate must be a valid SSL/TLS X.509 version 3
+     * </li> </ul>  <p>The certificate must be a valid SSL/TLS X.509 version 3
      * certificate with FQDN or IP address specified and information about the
-     * issuer.</p> </note>
+     * issuer.</p> 
      */
     inline void SetCertificate(const char* value) { m_certificateHasBeenSet = true; m_certificate.assign(value); }
 
@@ -177,9 +177,9 @@ namespace Model
      * RSA (RSA_4096)</p> </li> <li> <p>Elliptic Prime Curve 256 bit
      * (EC_prime256v1)</p> </li> <li> <p>Elliptic Prime Curve 384 bit
      * (EC_secp384r1)</p> </li> <li> <p>Elliptic Prime Curve 521 bit (EC_secp521r1)</p>
-     * </li> </ul> <note> <p>The certificate must be a valid SSL/TLS X.509 version 3
+     * </li> </ul>  <p>The certificate must be a valid SSL/TLS X.509 version 3
      * certificate with FQDN or IP address specified and information about the
-     * issuer.</p> </note>
+     * issuer.</p> 
      */
     inline UpdateServerRequest& WithCertificate(const Aws::String& value) { SetCertificate(value); return *this;}
 
@@ -201,9 +201,9 @@ namespace Model
      * RSA (RSA_4096)</p> </li> <li> <p>Elliptic Prime Curve 256 bit
      * (EC_prime256v1)</p> </li> <li> <p>Elliptic Prime Curve 384 bit
      * (EC_secp384r1)</p> </li> <li> <p>Elliptic Prime Curve 521 bit (EC_secp521r1)</p>
-     * </li> </ul> <note> <p>The certificate must be a valid SSL/TLS X.509 version 3
+     * </li> </ul>  <p>The certificate must be a valid SSL/TLS X.509 version 3
      * certificate with FQDN or IP address specified and information about the
-     * issuer.</p> </note>
+     * issuer.</p> 
      */
     inline UpdateServerRequest& WithCertificate(Aws::String&& value) { SetCertificate(std::move(value)); return *this;}
 
@@ -225,9 +225,9 @@ namespace Model
      * RSA (RSA_4096)</p> </li> <li> <p>Elliptic Prime Curve 256 bit
      * (EC_prime256v1)</p> </li> <li> <p>Elliptic Prime Curve 384 bit
      * (EC_secp384r1)</p> </li> <li> <p>Elliptic Prime Curve 521 bit (EC_secp521r1)</p>
-     * </li> </ul> <note> <p>The certificate must be a valid SSL/TLS X.509 version 3
+     * </li> </ul>  <p>The certificate must be a valid SSL/TLS X.509 version 3
      * certificate with FQDN or IP address specified and information about the
-     * issuer.</p> </note>
+     * issuer.</p> 
      */
     inline UpdateServerRequest& WithCertificate(const char* value) { SetCertificate(value); return *this;}
 
@@ -291,12 +291,12 @@ namespace Model
      * <p>The type of endpoint that you want your file transfer protocol-enabled server
      * to connect to. You can choose to connect to the public internet or a VPC
      * endpoint. With a VPC endpoint, you can restrict access to your server and
-     * resources only within your VPC.</p> <note> <p>It is recommended that you use
+     * resources only within your VPC.</p>  <p>It is recommended that you use
      * <code>VPC</code> as the <code>EndpointType</code>. With this endpoint type, you
      * have the option to directly associate up to three Elastic IPv4 addresses (BYO IP
      * included) with your server's endpoint and use VPC security groups to restrict
      * traffic by the client's public IP address. This is not possible with
-     * <code>EndpointType</code> set to <code>VPC_ENDPOINT</code>.</p> </note>
+     * <code>EndpointType</code> set to <code>VPC_ENDPOINT</code>.</p> 
      */
     inline const EndpointType& GetEndpointType() const{ return m_endpointType; }
 
@@ -304,12 +304,12 @@ namespace Model
      * <p>The type of endpoint that you want your file transfer protocol-enabled server
      * to connect to. You can choose to connect to the public internet or a VPC
      * endpoint. With a VPC endpoint, you can restrict access to your server and
-     * resources only within your VPC.</p> <note> <p>It is recommended that you use
+     * resources only within your VPC.</p>  <p>It is recommended that you use
      * <code>VPC</code> as the <code>EndpointType</code>. With this endpoint type, you
      * have the option to directly associate up to three Elastic IPv4 addresses (BYO IP
      * included) with your server's endpoint and use VPC security groups to restrict
      * traffic by the client's public IP address. This is not possible with
-     * <code>EndpointType</code> set to <code>VPC_ENDPOINT</code>.</p> </note>
+     * <code>EndpointType</code> set to <code>VPC_ENDPOINT</code>.</p> 
      */
     inline bool EndpointTypeHasBeenSet() const { return m_endpointTypeHasBeenSet; }
 
@@ -317,12 +317,12 @@ namespace Model
      * <p>The type of endpoint that you want your file transfer protocol-enabled server
      * to connect to. You can choose to connect to the public internet or a VPC
      * endpoint. With a VPC endpoint, you can restrict access to your server and
-     * resources only within your VPC.</p> <note> <p>It is recommended that you use
+     * resources only within your VPC.</p>  <p>It is recommended that you use
      * <code>VPC</code> as the <code>EndpointType</code>. With this endpoint type, you
      * have the option to directly associate up to three Elastic IPv4 addresses (BYO IP
      * included) with your server's endpoint and use VPC security groups to restrict
      * traffic by the client's public IP address. This is not possible with
-     * <code>EndpointType</code> set to <code>VPC_ENDPOINT</code>.</p> </note>
+     * <code>EndpointType</code> set to <code>VPC_ENDPOINT</code>.</p> 
      */
     inline void SetEndpointType(const EndpointType& value) { m_endpointTypeHasBeenSet = true; m_endpointType = value; }
 
@@ -330,12 +330,12 @@ namespace Model
      * <p>The type of endpoint that you want your file transfer protocol-enabled server
      * to connect to. You can choose to connect to the public internet or a VPC
      * endpoint. With a VPC endpoint, you can restrict access to your server and
-     * resources only within your VPC.</p> <note> <p>It is recommended that you use
+     * resources only within your VPC.</p>  <p>It is recommended that you use
      * <code>VPC</code> as the <code>EndpointType</code>. With this endpoint type, you
      * have the option to directly associate up to three Elastic IPv4 addresses (BYO IP
      * included) with your server's endpoint and use VPC security groups to restrict
      * traffic by the client's public IP address. This is not possible with
-     * <code>EndpointType</code> set to <code>VPC_ENDPOINT</code>.</p> </note>
+     * <code>EndpointType</code> set to <code>VPC_ENDPOINT</code>.</p> 
      */
     inline void SetEndpointType(EndpointType&& value) { m_endpointTypeHasBeenSet = true; m_endpointType = std::move(value); }
 
@@ -343,12 +343,12 @@ namespace Model
      * <p>The type of endpoint that you want your file transfer protocol-enabled server
      * to connect to. You can choose to connect to the public internet or a VPC
      * endpoint. With a VPC endpoint, you can restrict access to your server and
-     * resources only within your VPC.</p> <note> <p>It is recommended that you use
+     * resources only within your VPC.</p>  <p>It is recommended that you use
      * <code>VPC</code> as the <code>EndpointType</code>. With this endpoint type, you
      * have the option to directly associate up to three Elastic IPv4 addresses (BYO IP
      * included) with your server's endpoint and use VPC security groups to restrict
      * traffic by the client's public IP address. This is not possible with
-     * <code>EndpointType</code> set to <code>VPC_ENDPOINT</code>.</p> </note>
+     * <code>EndpointType</code> set to <code>VPC_ENDPOINT</code>.</p> 
      */
     inline UpdateServerRequest& WithEndpointType(const EndpointType& value) { SetEndpointType(value); return *this;}
 
@@ -356,22 +356,22 @@ namespace Model
      * <p>The type of endpoint that you want your file transfer protocol-enabled server
      * to connect to. You can choose to connect to the public internet or a VPC
      * endpoint. With a VPC endpoint, you can restrict access to your server and
-     * resources only within your VPC.</p> <note> <p>It is recommended that you use
+     * resources only within your VPC.</p>  <p>It is recommended that you use
      * <code>VPC</code> as the <code>EndpointType</code>. With this endpoint type, you
      * have the option to directly associate up to three Elastic IPv4 addresses (BYO IP
      * included) with your server's endpoint and use VPC security groups to restrict
      * traffic by the client's public IP address. This is not possible with
-     * <code>EndpointType</code> set to <code>VPC_ENDPOINT</code>.</p> </note>
+     * <code>EndpointType</code> set to <code>VPC_ENDPOINT</code>.</p> 
      */
     inline UpdateServerRequest& WithEndpointType(EndpointType&& value) { SetEndpointType(std::move(value)); return *this;}
 
 
     /**
      * <p>The RSA private key as generated by <code>ssh-keygen -N "" -m PEM -f
-     * my-new-server-key</code>.</p> <important> <p>If you aren't planning to migrate
+     * my-new-server-key</code>.</p>  <p>If you aren't planning to migrate
      * existing users from an existing file transfer protocol-enabled server to a new
      * server, don't update the host key. Accidentally changing a server's host key can
-     * be disruptive.</p> </important> <p>For more information, see <a
+     * be disruptive.</p>  <p>For more information, see <a
      * href="https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key">Change
      * the host key for your SFTP-enabled server</a> in the <i>AWS Transfer Family User
      * Guide</i>.</p>
@@ -380,10 +380,10 @@ namespace Model
 
     /**
      * <p>The RSA private key as generated by <code>ssh-keygen -N "" -m PEM -f
-     * my-new-server-key</code>.</p> <important> <p>If you aren't planning to migrate
+     * my-new-server-key</code>.</p>  <p>If you aren't planning to migrate
      * existing users from an existing file transfer protocol-enabled server to a new
      * server, don't update the host key. Accidentally changing a server's host key can
-     * be disruptive.</p> </important> <p>For more information, see <a
+     * be disruptive.</p>  <p>For more information, see <a
      * href="https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key">Change
      * the host key for your SFTP-enabled server</a> in the <i>AWS Transfer Family User
      * Guide</i>.</p>
@@ -392,10 +392,10 @@ namespace Model
 
     /**
      * <p>The RSA private key as generated by <code>ssh-keygen -N "" -m PEM -f
-     * my-new-server-key</code>.</p> <important> <p>If you aren't planning to migrate
+     * my-new-server-key</code>.</p>  <p>If you aren't planning to migrate
      * existing users from an existing file transfer protocol-enabled server to a new
      * server, don't update the host key. Accidentally changing a server's host key can
-     * be disruptive.</p> </important> <p>For more information, see <a
+     * be disruptive.</p>  <p>For more information, see <a
      * href="https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key">Change
      * the host key for your SFTP-enabled server</a> in the <i>AWS Transfer Family User
      * Guide</i>.</p>
@@ -404,10 +404,10 @@ namespace Model
 
     /**
      * <p>The RSA private key as generated by <code>ssh-keygen -N "" -m PEM -f
-     * my-new-server-key</code>.</p> <important> <p>If you aren't planning to migrate
+     * my-new-server-key</code>.</p>  <p>If you aren't planning to migrate
      * existing users from an existing file transfer protocol-enabled server to a new
      * server, don't update the host key. Accidentally changing a server's host key can
-     * be disruptive.</p> </important> <p>For more information, see <a
+     * be disruptive.</p>  <p>For more information, see <a
      * href="https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key">Change
      * the host key for your SFTP-enabled server</a> in the <i>AWS Transfer Family User
      * Guide</i>.</p>
@@ -416,10 +416,10 @@ namespace Model
 
     /**
      * <p>The RSA private key as generated by <code>ssh-keygen -N "" -m PEM -f
-     * my-new-server-key</code>.</p> <important> <p>If you aren't planning to migrate
+     * my-new-server-key</code>.</p>  <p>If you aren't planning to migrate
      * existing users from an existing file transfer protocol-enabled server to a new
      * server, don't update the host key. Accidentally changing a server's host key can
-     * be disruptive.</p> </important> <p>For more information, see <a
+     * be disruptive.</p>  <p>For more information, see <a
      * href="https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key">Change
      * the host key for your SFTP-enabled server</a> in the <i>AWS Transfer Family User
      * Guide</i>.</p>
@@ -428,10 +428,10 @@ namespace Model
 
     /**
      * <p>The RSA private key as generated by <code>ssh-keygen -N "" -m PEM -f
-     * my-new-server-key</code>.</p> <important> <p>If you aren't planning to migrate
+     * my-new-server-key</code>.</p>  <p>If you aren't planning to migrate
      * existing users from an existing file transfer protocol-enabled server to a new
      * server, don't update the host key. Accidentally changing a server's host key can
-     * be disruptive.</p> </important> <p>For more information, see <a
+     * be disruptive.</p>  <p>For more information, see <a
      * href="https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key">Change
      * the host key for your SFTP-enabled server</a> in the <i>AWS Transfer Family User
      * Guide</i>.</p>
@@ -440,10 +440,10 @@ namespace Model
 
     /**
      * <p>The RSA private key as generated by <code>ssh-keygen -N "" -m PEM -f
-     * my-new-server-key</code>.</p> <important> <p>If you aren't planning to migrate
+     * my-new-server-key</code>.</p>  <p>If you aren't planning to migrate
      * existing users from an existing file transfer protocol-enabled server to a new
      * server, don't update the host key. Accidentally changing a server's host key can
-     * be disruptive.</p> </important> <p>For more information, see <a
+     * be disruptive.</p>  <p>For more information, see <a
      * href="https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key">Change
      * the host key for your SFTP-enabled server</a> in the <i>AWS Transfer Family User
      * Guide</i>.</p>
@@ -452,10 +452,10 @@ namespace Model
 
     /**
      * <p>The RSA private key as generated by <code>ssh-keygen -N "" -m PEM -f
-     * my-new-server-key</code>.</p> <important> <p>If you aren't planning to migrate
+     * my-new-server-key</code>.</p>  <p>If you aren't planning to migrate
      * existing users from an existing file transfer protocol-enabled server to a new
      * server, don't update the host key. Accidentally changing a server's host key can
-     * be disruptive.</p> </important> <p>For more information, see <a
+     * be disruptive.</p>  <p>For more information, see <a
      * href="https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key">Change
      * the host key for your SFTP-enabled server</a> in the <i>AWS Transfer Family User
      * Guide</i>.</p>
@@ -555,7 +555,7 @@ namespace Model
      * protocols are:</p> <ul> <li> <p>Secure Shell (SSH) File Transfer Protocol
      * (SFTP): File transfer over SSH</p> </li> <li> <p>File Transfer Protocol Secure
      * (FTPS): File transfer with TLS encryption</p> </li> <li> <p>File Transfer
-     * Protocol (FTP): Unencrypted file transfer</p> </li> </ul> <note> <p>If you
+     * Protocol (FTP): Unencrypted file transfer</p> </li> </ul>  <p>If you
      * select <code>FTPS</code>, you must choose a certificate stored in AWS
      * Certificate Manager (ACM) which will be used to identify your server when
      * clients connect to it over FTPS.</p> <p>If <code>Protocol</code> includes either
@@ -566,7 +566,7 @@ namespace Model
      * associated.</p> <p>If <code>Protocol</code> is set only to <code>SFTP</code>,
      * the <code>EndpointType</code> can be set to <code>PUBLIC</code> and the
      * <code>IdentityProviderType</code> can be set to
-     * <code>SERVICE_MANAGED</code>.</p> </note>
+     * <code>SERVICE_MANAGED</code>.</p> 
      */
     inline const Aws::Vector<Protocol>& GetProtocols() const{ return m_protocols; }
 
@@ -576,7 +576,7 @@ namespace Model
      * protocols are:</p> <ul> <li> <p>Secure Shell (SSH) File Transfer Protocol
      * (SFTP): File transfer over SSH</p> </li> <li> <p>File Transfer Protocol Secure
      * (FTPS): File transfer with TLS encryption</p> </li> <li> <p>File Transfer
-     * Protocol (FTP): Unencrypted file transfer</p> </li> </ul> <note> <p>If you
+     * Protocol (FTP): Unencrypted file transfer</p> </li> </ul>  <p>If you
      * select <code>FTPS</code>, you must choose a certificate stored in AWS
      * Certificate Manager (ACM) which will be used to identify your server when
      * clients connect to it over FTPS.</p> <p>If <code>Protocol</code> includes either
@@ -587,7 +587,7 @@ namespace Model
      * associated.</p> <p>If <code>Protocol</code> is set only to <code>SFTP</code>,
      * the <code>EndpointType</code> can be set to <code>PUBLIC</code> and the
      * <code>IdentityProviderType</code> can be set to
-     * <code>SERVICE_MANAGED</code>.</p> </note>
+     * <code>SERVICE_MANAGED</code>.</p> 
      */
     inline bool ProtocolsHasBeenSet() const { return m_protocolsHasBeenSet; }
 
@@ -597,7 +597,7 @@ namespace Model
      * protocols are:</p> <ul> <li> <p>Secure Shell (SSH) File Transfer Protocol
      * (SFTP): File transfer over SSH</p> </li> <li> <p>File Transfer Protocol Secure
      * (FTPS): File transfer with TLS encryption</p> </li> <li> <p>File Transfer
-     * Protocol (FTP): Unencrypted file transfer</p> </li> </ul> <note> <p>If you
+     * Protocol (FTP): Unencrypted file transfer</p> </li> </ul>  <p>If you
      * select <code>FTPS</code>, you must choose a certificate stored in AWS
      * Certificate Manager (ACM) which will be used to identify your server when
      * clients connect to it over FTPS.</p> <p>If <code>Protocol</code> includes either
@@ -608,7 +608,7 @@ namespace Model
      * associated.</p> <p>If <code>Protocol</code> is set only to <code>SFTP</code>,
      * the <code>EndpointType</code> can be set to <code>PUBLIC</code> and the
      * <code>IdentityProviderType</code> can be set to
-     * <code>SERVICE_MANAGED</code>.</p> </note>
+     * <code>SERVICE_MANAGED</code>.</p> 
      */
     inline void SetProtocols(const Aws::Vector<Protocol>& value) { m_protocolsHasBeenSet = true; m_protocols = value; }
 
@@ -618,7 +618,7 @@ namespace Model
      * protocols are:</p> <ul> <li> <p>Secure Shell (SSH) File Transfer Protocol
      * (SFTP): File transfer over SSH</p> </li> <li> <p>File Transfer Protocol Secure
      * (FTPS): File transfer with TLS encryption</p> </li> <li> <p>File Transfer
-     * Protocol (FTP): Unencrypted file transfer</p> </li> </ul> <note> <p>If you
+     * Protocol (FTP): Unencrypted file transfer</p> </li> </ul>  <p>If you
      * select <code>FTPS</code>, you must choose a certificate stored in AWS
      * Certificate Manager (ACM) which will be used to identify your server when
      * clients connect to it over FTPS.</p> <p>If <code>Protocol</code> includes either
@@ -629,7 +629,7 @@ namespace Model
      * associated.</p> <p>If <code>Protocol</code> is set only to <code>SFTP</code>,
      * the <code>EndpointType</code> can be set to <code>PUBLIC</code> and the
      * <code>IdentityProviderType</code> can be set to
-     * <code>SERVICE_MANAGED</code>.</p> </note>
+     * <code>SERVICE_MANAGED</code>.</p> 
      */
     inline void SetProtocols(Aws::Vector<Protocol>&& value) { m_protocolsHasBeenSet = true; m_protocols = std::move(value); }
 
@@ -639,7 +639,7 @@ namespace Model
      * protocols are:</p> <ul> <li> <p>Secure Shell (SSH) File Transfer Protocol
      * (SFTP): File transfer over SSH</p> </li> <li> <p>File Transfer Protocol Secure
      * (FTPS): File transfer with TLS encryption</p> </li> <li> <p>File Transfer
-     * Protocol (FTP): Unencrypted file transfer</p> </li> </ul> <note> <p>If you
+     * Protocol (FTP): Unencrypted file transfer</p> </li> </ul>  <p>If you
      * select <code>FTPS</code>, you must choose a certificate stored in AWS
      * Certificate Manager (ACM) which will be used to identify your server when
      * clients connect to it over FTPS.</p> <p>If <code>Protocol</code> includes either
@@ -650,7 +650,7 @@ namespace Model
      * associated.</p> <p>If <code>Protocol</code> is set only to <code>SFTP</code>,
      * the <code>EndpointType</code> can be set to <code>PUBLIC</code> and the
      * <code>IdentityProviderType</code> can be set to
-     * <code>SERVICE_MANAGED</code>.</p> </note>
+     * <code>SERVICE_MANAGED</code>.</p> 
      */
     inline UpdateServerRequest& WithProtocols(const Aws::Vector<Protocol>& value) { SetProtocols(value); return *this;}
 
@@ -660,7 +660,7 @@ namespace Model
      * protocols are:</p> <ul> <li> <p>Secure Shell (SSH) File Transfer Protocol
      * (SFTP): File transfer over SSH</p> </li> <li> <p>File Transfer Protocol Secure
      * (FTPS): File transfer with TLS encryption</p> </li> <li> <p>File Transfer
-     * Protocol (FTP): Unencrypted file transfer</p> </li> </ul> <note> <p>If you
+     * Protocol (FTP): Unencrypted file transfer</p> </li> </ul>  <p>If you
      * select <code>FTPS</code>, you must choose a certificate stored in AWS
      * Certificate Manager (ACM) which will be used to identify your server when
      * clients connect to it over FTPS.</p> <p>If <code>Protocol</code> includes either
@@ -671,7 +671,7 @@ namespace Model
      * associated.</p> <p>If <code>Protocol</code> is set only to <code>SFTP</code>,
      * the <code>EndpointType</code> can be set to <code>PUBLIC</code> and the
      * <code>IdentityProviderType</code> can be set to
-     * <code>SERVICE_MANAGED</code>.</p> </note>
+     * <code>SERVICE_MANAGED</code>.</p> 
      */
     inline UpdateServerRequest& WithProtocols(Aws::Vector<Protocol>&& value) { SetProtocols(std::move(value)); return *this;}
 
@@ -681,7 +681,7 @@ namespace Model
      * protocols are:</p> <ul> <li> <p>Secure Shell (SSH) File Transfer Protocol
      * (SFTP): File transfer over SSH</p> </li> <li> <p>File Transfer Protocol Secure
      * (FTPS): File transfer with TLS encryption</p> </li> <li> <p>File Transfer
-     * Protocol (FTP): Unencrypted file transfer</p> </li> </ul> <note> <p>If you
+     * Protocol (FTP): Unencrypted file transfer</p> </li> </ul>  <p>If you
      * select <code>FTPS</code>, you must choose a certificate stored in AWS
      * Certificate Manager (ACM) which will be used to identify your server when
      * clients connect to it over FTPS.</p> <p>If <code>Protocol</code> includes either
@@ -692,7 +692,7 @@ namespace Model
      * associated.</p> <p>If <code>Protocol</code> is set only to <code>SFTP</code>,
      * the <code>EndpointType</code> can be set to <code>PUBLIC</code> and the
      * <code>IdentityProviderType</code> can be set to
-     * <code>SERVICE_MANAGED</code>.</p> </note>
+     * <code>SERVICE_MANAGED</code>.</p> 
      */
     inline UpdateServerRequest& AddProtocols(const Protocol& value) { m_protocolsHasBeenSet = true; m_protocols.push_back(value); return *this; }
 
@@ -702,7 +702,7 @@ namespace Model
      * protocols are:</p> <ul> <li> <p>Secure Shell (SSH) File Transfer Protocol
      * (SFTP): File transfer over SSH</p> </li> <li> <p>File Transfer Protocol Secure
      * (FTPS): File transfer with TLS encryption</p> </li> <li> <p>File Transfer
-     * Protocol (FTP): Unencrypted file transfer</p> </li> </ul> <note> <p>If you
+     * Protocol (FTP): Unencrypted file transfer</p> </li> </ul>  <p>If you
      * select <code>FTPS</code>, you must choose a certificate stored in AWS
      * Certificate Manager (ACM) which will be used to identify your server when
      * clients connect to it over FTPS.</p> <p>If <code>Protocol</code> includes either
@@ -713,7 +713,7 @@ namespace Model
      * associated.</p> <p>If <code>Protocol</code> is set only to <code>SFTP</code>,
      * the <code>EndpointType</code> can be set to <code>PUBLIC</code> and the
      * <code>IdentityProviderType</code> can be set to
-     * <code>SERVICE_MANAGED</code>.</p> </note>
+     * <code>SERVICE_MANAGED</code>.</p> 
      */
     inline UpdateServerRequest& AddProtocols(Protocol&& value) { m_protocolsHasBeenSet = true; m_protocols.push_back(std::move(value)); return *this; }
 

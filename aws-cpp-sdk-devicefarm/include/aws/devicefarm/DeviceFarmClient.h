@@ -889,8 +889,8 @@ namespace Model
 
         /**
          * <p> Deletes a Selenium testing project and all content generated under it. </p>
-         * <important> <p>You cannot undo this operation.</p> </important> <note> <p>You
-         * cannot delete a project if it has active sessions.</p> </note><p><h3>See
+         *  <p>You cannot undo this operation.</p>   <p>You
+         * cannot delete a project if it has active sessions.</p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/DeleteTestGridProject">AWS
          * API Reference</a></p>
@@ -899,8 +899,8 @@ namespace Model
 
         /**
          * <p> Deletes a Selenium testing project and all content generated under it. </p>
-         * <important> <p>You cannot undo this operation.</p> </important> <note> <p>You
-         * cannot delete a project if it has active sessions.</p> </note><p><h3>See
+         *  <p>You cannot undo this operation.</p>   <p>You
+         * cannot delete a project if it has active sessions.</p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/DeleteTestGridProject">AWS
          * API Reference</a></p>
@@ -911,8 +911,8 @@ namespace Model
 
         /**
          * <p> Deletes a Selenium testing project and all content generated under it. </p>
-         * <important> <p>You cannot undo this operation.</p> </important> <note> <p>You
-         * cannot delete a project if it has active sessions.</p> </note><p><h3>See
+         *  <p>You cannot undo this operation.</p>   <p>You
+         * cannot delete a project if it has active sessions.</p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/DeleteTestGridProject">AWS
          * API Reference</a></p>

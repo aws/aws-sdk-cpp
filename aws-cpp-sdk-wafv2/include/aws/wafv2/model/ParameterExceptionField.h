@@ -53,7 +53,12 @@ namespace Model
     TAGS,
     TAG_KEYS,
     METRIC_NAME,
-    FIREWALL_MANAGER_STATEMENT
+    FIREWALL_MANAGER_STATEMENT,
+    FALLBACK_BEHAVIOR,
+    POSITION,
+    FORWARDED_IP_CONFIG,
+    IP_SET_FORWARDED_IP_CONFIG,
+    HEADER_NAME
   };
 
 namespace ParameterExceptionFieldMapper

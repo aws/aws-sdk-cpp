@@ -1606,12 +1606,12 @@ namespace Model
          * <p>Gets information about the specified request operation.</p> <p>Use this
          * operation after calling a request operation (for example,
          * <a>ProvisionProduct</a>, <a>TerminateProvisionedProduct</a>, or
-         * <a>UpdateProvisionedProduct</a>). </p> <note> <p>If a provisioned product was
+         * <a>UpdateProvisionedProduct</a>). </p>  <p>If a provisioned product was
          * transferred to a new owner using <a>UpdateProvisionedProductProperties</a>, the
          * new owner will be able to describe all past records for that product. The
          * previous owner will no longer be able to describe the records, but will be able
          * to use <a>ListRecordHistory</a> to see the product's history from when he was
-         * the owner.</p> </note><p><h3>See Also:</h3>   <a
+         * the owner.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeRecord">AWS
          * API Reference</a></p>
          */
@@ -1621,12 +1621,12 @@ namespace Model
          * <p>Gets information about the specified request operation.</p> <p>Use this
          * operation after calling a request operation (for example,
          * <a>ProvisionProduct</a>, <a>TerminateProvisionedProduct</a>, or
-         * <a>UpdateProvisionedProduct</a>). </p> <note> <p>If a provisioned product was
+         * <a>UpdateProvisionedProduct</a>). </p>  <p>If a provisioned product was
          * transferred to a new owner using <a>UpdateProvisionedProductProperties</a>, the
          * new owner will be able to describe all past records for that product. The
          * previous owner will no longer be able to describe the records, but will be able
          * to use <a>ListRecordHistory</a> to see the product's history from when he was
-         * the owner.</p> </note><p><h3>See Also:</h3>   <a
+         * the owner.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeRecord">AWS
          * API Reference</a></p>
          *
@@ -1638,12 +1638,12 @@ namespace Model
          * <p>Gets information about the specified request operation.</p> <p>Use this
          * operation after calling a request operation (for example,
          * <a>ProvisionProduct</a>, <a>TerminateProvisionedProduct</a>, or
-         * <a>UpdateProvisionedProduct</a>). </p> <note> <p>If a provisioned product was
+         * <a>UpdateProvisionedProduct</a>). </p>  <p>If a provisioned product was
          * transferred to a new owner using <a>UpdateProvisionedProductProperties</a>, the
          * new owner will be able to describe all past records for that product. The
          * previous owner will no longer be able to describe the records, but will be able
          * to use <a>ListRecordHistory</a> to see the product's history from when he was
-         * the owner.</p> </note><p><h3>See Also:</h3>   <a
+         * the owner.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeRecord">AWS
          * API Reference</a></p>
          *

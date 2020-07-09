@@ -451,9 +451,9 @@ namespace Model
         /**
          * <p>Allows network ingress to a cache security group. Applications using
          * ElastiCache must be running on Amazon EC2, and Amazon EC2 security groups are
-         * used as the authorization mechanism.</p> <note> <p>You cannot authorize ingress
+         * used as the authorization mechanism.</p>  <p>You cannot authorize ingress
          * from an Amazon EC2 security group in one region to an ElastiCache cluster in
-         * another region.</p> </note><p><h3>See Also:</h3>   <a
+         * another region.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/AuthorizeCacheSecurityGroupIngress">AWS
          * API Reference</a></p>
          */
@@ -462,9 +462,9 @@ namespace Model
         /**
          * <p>Allows network ingress to a cache security group. Applications using
          * ElastiCache must be running on Amazon EC2, and Amazon EC2 security groups are
-         * used as the authorization mechanism.</p> <note> <p>You cannot authorize ingress
+         * used as the authorization mechanism.</p>  <p>You cannot authorize ingress
          * from an Amazon EC2 security group in one region to an ElastiCache cluster in
-         * another region.</p> </note><p><h3>See Also:</h3>   <a
+         * another region.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/AuthorizeCacheSecurityGroupIngress">AWS
          * API Reference</a></p>
          *
@@ -475,9 +475,9 @@ namespace Model
         /**
          * <p>Allows network ingress to a cache security group. Applications using
          * ElastiCache must be running on Amazon EC2, and Amazon EC2 security groups are
-         * used as the authorization mechanism.</p> <note> <p>You cannot authorize ingress
+         * used as the authorization mechanism.</p>  <p>You cannot authorize ingress
          * from an Amazon EC2 security group in one region to an ElastiCache cluster in
-         * another region.</p> </note><p><h3>See Also:</h3>   <a
+         * another region.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/AuthorizeCacheSecurityGroupIngress">AWS
          * API Reference</a></p>
          *
@@ -579,8 +579,8 @@ namespace Model
         virtual void CompleteMigrationAsync(const Model::CompleteMigrationRequest& request, const CompleteMigrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Makes a copy of an existing snapshot.</p> <note> <p>This operation is valid
-         * for Redis only.</p> </note> <important> <p>Users or groups that have permissions
+         * <p>Makes a copy of an existing snapshot.</p>  <p>This operation is valid
+         * for Redis only.</p>   <p>Users or groups that have permissions
          * to use the <code>CopySnapshot</code> operation can create their own Amazon S3
          * buckets and copy snapshots to it. To control access to your snapshots, use an
          * IAM policy to control who has the ability to use the <code>CopySnapshot</code>
@@ -589,7 +589,7 @@ namespace Model
          * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups-exporting.html">Exporting
          * Snapshots</a> and <a
          * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/IAM.html">Authentication
-         * &amp; Access Control</a>.</p> </important> <p>You could receive the following
+         * &amp; Access Control</a>.</p>  <p>You could receive the following
          * error messages.</p> <p class="title"> <b>Error Messages</b> </p> <ul> <li> <p>
          * <b>Error Message:</b> The S3 bucket %s is outside of the region.</p> <p>
          * <b>Solution:</b> Create an Amazon S3 bucket in the same region as your snapshot.
@@ -636,8 +636,8 @@ namespace Model
         virtual Model::CopySnapshotOutcome CopySnapshot(const Model::CopySnapshotRequest& request) const;
 
         /**
-         * <p>Makes a copy of an existing snapshot.</p> <note> <p>This operation is valid
-         * for Redis only.</p> </note> <important> <p>Users or groups that have permissions
+         * <p>Makes a copy of an existing snapshot.</p>  <p>This operation is valid
+         * for Redis only.</p>   <p>Users or groups that have permissions
          * to use the <code>CopySnapshot</code> operation can create their own Amazon S3
          * buckets and copy snapshots to it. To control access to your snapshots, use an
          * IAM policy to control who has the ability to use the <code>CopySnapshot</code>
@@ -646,7 +646,7 @@ namespace Model
          * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups-exporting.html">Exporting
          * Snapshots</a> and <a
          * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/IAM.html">Authentication
-         * &amp; Access Control</a>.</p> </important> <p>You could receive the following
+         * &amp; Access Control</a>.</p>  <p>You could receive the following
          * error messages.</p> <p class="title"> <b>Error Messages</b> </p> <ul> <li> <p>
          * <b>Error Message:</b> The S3 bucket %s is outside of the region.</p> <p>
          * <b>Solution:</b> Create an Amazon S3 bucket in the same region as your snapshot.
@@ -695,8 +695,8 @@ namespace Model
         virtual Model::CopySnapshotOutcomeCallable CopySnapshotCallable(const Model::CopySnapshotRequest& request) const;
 
         /**
-         * <p>Makes a copy of an existing snapshot.</p> <note> <p>This operation is valid
-         * for Redis only.</p> </note> <important> <p>Users or groups that have permissions
+         * <p>Makes a copy of an existing snapshot.</p>  <p>This operation is valid
+         * for Redis only.</p>   <p>Users or groups that have permissions
          * to use the <code>CopySnapshot</code> operation can create their own Amazon S3
          * buckets and copy snapshots to it. To control access to your snapshots, use an
          * IAM policy to control who has the ability to use the <code>CopySnapshot</code>
@@ -705,7 +705,7 @@ namespace Model
          * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups-exporting.html">Exporting
          * Snapshots</a> and <a
          * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/IAM.html">Authentication
-         * &amp; Access Control</a>.</p> </important> <p>You could receive the following
+         * &amp; Access Control</a>.</p>  <p>You could receive the following
          * error messages.</p> <p class="title"> <b>Error Messages</b> </p> <ul> <li> <p>
          * <b>Error Message:</b> The S3 bucket %s is outside of the region.</p> <p>
          * <b>Solution:</b> Create an Amazon S3 bucket in the same region as your snapshot.
@@ -993,7 +993,7 @@ namespace Model
          * more information, see <a
          * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Scaling.html">Scaling
          * ElastiCache for Redis Clusters</a> in the <i>ElastiCache User Guide</i>.</p>
-         * <note> <p>This operation is valid for Redis only.</p> </note><p><h3>See
+         *  <p>This operation is valid for Redis only.</p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CreateReplicationGroup">AWS
          * API Reference</a></p>
@@ -1019,7 +1019,7 @@ namespace Model
          * more information, see <a
          * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Scaling.html">Scaling
          * ElastiCache for Redis Clusters</a> in the <i>ElastiCache User Guide</i>.</p>
-         * <note> <p>This operation is valid for Redis only.</p> </note><p><h3>See
+         *  <p>This operation is valid for Redis only.</p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CreateReplicationGroup">AWS
          * API Reference</a></p>
@@ -1047,7 +1047,7 @@ namespace Model
          * more information, see <a
          * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Scaling.html">Scaling
          * ElastiCache for Redis Clusters</a> in the <i>ElastiCache User Guide</i>.</p>
-         * <note> <p>This operation is valid for Redis only.</p> </note><p><h3>See
+         *  <p>This operation is valid for Redis only.</p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CreateReplicationGroup">AWS
          * API Reference</a></p>
@@ -1058,8 +1058,8 @@ namespace Model
 
         /**
          * <p>Creates a copy of an entire cluster or replication group at a specific moment
-         * in time.</p> <note> <p>This operation is valid for Redis only.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * in time.</p>  <p>This operation is valid for Redis only.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CreateSnapshot">AWS
          * API Reference</a></p>
          */
@@ -1067,8 +1067,8 @@ namespace Model
 
         /**
          * <p>Creates a copy of an entire cluster or replication group at a specific moment
-         * in time.</p> <note> <p>This operation is valid for Redis only.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * in time.</p>  <p>This operation is valid for Redis only.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CreateSnapshot">AWS
          * API Reference</a></p>
          *
@@ -1078,8 +1078,8 @@ namespace Model
 
         /**
          * <p>Creates a copy of an entire cluster or replication group at a specific moment
-         * in time.</p> <note> <p>This operation is valid for Redis only.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * in time.</p>  <p>This operation is valid for Redis only.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CreateSnapshot">AWS
          * API Reference</a></p>
          *
@@ -1233,8 +1233,8 @@ namespace Model
         virtual void DeleteCacheParameterGroupAsync(const Model::DeleteCacheParameterGroupRequest& request, const DeleteCacheParameterGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes a cache security group.</p> <note> <p>You cannot delete a cache
-         * security group if it is associated with any clusters.</p> </note><p><h3>See
+         * <p>Deletes a cache security group.</p>  <p>You cannot delete a cache
+         * security group if it is associated with any clusters.</p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DeleteCacheSecurityGroup">AWS
          * API Reference</a></p>
@@ -1242,8 +1242,8 @@ namespace Model
         virtual Model::DeleteCacheSecurityGroupOutcome DeleteCacheSecurityGroup(const Model::DeleteCacheSecurityGroupRequest& request) const;
 
         /**
-         * <p>Deletes a cache security group.</p> <note> <p>You cannot delete a cache
-         * security group if it is associated with any clusters.</p> </note><p><h3>See
+         * <p>Deletes a cache security group.</p>  <p>You cannot delete a cache
+         * security group if it is associated with any clusters.</p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DeleteCacheSecurityGroup">AWS
          * API Reference</a></p>
@@ -1253,8 +1253,8 @@ namespace Model
         virtual Model::DeleteCacheSecurityGroupOutcomeCallable DeleteCacheSecurityGroupCallable(const Model::DeleteCacheSecurityGroupRequest& request) const;
 
         /**
-         * <p>Deletes a cache security group.</p> <note> <p>You cannot delete a cache
-         * security group if it is associated with any clusters.</p> </note><p><h3>See
+         * <p>Deletes a cache security group.</p>  <p>You cannot delete a cache
+         * security group if it is associated with any clusters.</p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DeleteCacheSecurityGroup">AWS
          * API Reference</a></p>
@@ -1264,8 +1264,8 @@ namespace Model
         virtual void DeleteCacheSecurityGroupAsync(const Model::DeleteCacheSecurityGroupRequest& request, const DeleteCacheSecurityGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes a cache subnet group.</p> <note> <p>You cannot delete a cache subnet
-         * group if it is associated with any clusters.</p> </note><p><h3>See Also:</h3>  
+         * <p>Deletes a cache subnet group.</p>  <p>You cannot delete a cache subnet
+         * group if it is associated with any clusters.</p> <p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DeleteCacheSubnetGroup">AWS
          * API Reference</a></p>
@@ -1273,8 +1273,8 @@ namespace Model
         virtual Model::DeleteCacheSubnetGroupOutcome DeleteCacheSubnetGroup(const Model::DeleteCacheSubnetGroupRequest& request) const;
 
         /**
-         * <p>Deletes a cache subnet group.</p> <note> <p>You cannot delete a cache subnet
-         * group if it is associated with any clusters.</p> </note><p><h3>See Also:</h3>  
+         * <p>Deletes a cache subnet group.</p>  <p>You cannot delete a cache subnet
+         * group if it is associated with any clusters.</p> <p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DeleteCacheSubnetGroup">AWS
          * API Reference</a></p>
@@ -1284,8 +1284,8 @@ namespace Model
         virtual Model::DeleteCacheSubnetGroupOutcomeCallable DeleteCacheSubnetGroupCallable(const Model::DeleteCacheSubnetGroupRequest& request) const;
 
         /**
-         * <p>Deletes a cache subnet group.</p> <note> <p>You cannot delete a cache subnet
-         * group if it is associated with any clusters.</p> </note><p><h3>See Also:</h3>  
+         * <p>Deletes a cache subnet group.</p>  <p>You cannot delete a cache subnet
+         * group if it is associated with any clusters.</p> <p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DeleteCacheSubnetGroup">AWS
          * API Reference</a></p>
@@ -1356,8 +1356,8 @@ namespace Model
          * delete only the read replicas, while retaining the primary by setting
          * <code>RetainPrimaryCluster=true</code>.</p> <p>When you receive a successful
          * response from this operation, Amazon ElastiCache immediately begins deleting the
-         * selected resources; you cannot cancel or revert this operation.</p> <note>
-         * <p>This operation is valid for Redis only.</p> </note><p><h3>See Also:</h3>   <a
+         * selected resources; you cannot cancel or revert this operation.</p> 
+         * <p>This operation is valid for Redis only.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DeleteReplicationGroup">AWS
          * API Reference</a></p>
          */
@@ -1370,8 +1370,8 @@ namespace Model
          * delete only the read replicas, while retaining the primary by setting
          * <code>RetainPrimaryCluster=true</code>.</p> <p>When you receive a successful
          * response from this operation, Amazon ElastiCache immediately begins deleting the
-         * selected resources; you cannot cancel or revert this operation.</p> <note>
-         * <p>This operation is valid for Redis only.</p> </note><p><h3>See Also:</h3>   <a
+         * selected resources; you cannot cancel or revert this operation.</p> 
+         * <p>This operation is valid for Redis only.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DeleteReplicationGroup">AWS
          * API Reference</a></p>
          *
@@ -1386,8 +1386,8 @@ namespace Model
          * delete only the read replicas, while retaining the primary by setting
          * <code>RetainPrimaryCluster=true</code>.</p> <p>When you receive a successful
          * response from this operation, Amazon ElastiCache immediately begins deleting the
-         * selected resources; you cannot cancel or revert this operation.</p> <note>
-         * <p>This operation is valid for Redis only.</p> </note><p><h3>See Also:</h3>   <a
+         * selected resources; you cannot cancel or revert this operation.</p> 
+         * <p>This operation is valid for Redis only.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DeleteReplicationGroup">AWS
          * API Reference</a></p>
          *
@@ -1398,8 +1398,8 @@ namespace Model
         /**
          * <p>Deletes an existing snapshot. When you receive a successful response from
          * this operation, ElastiCache immediately begins deleting the snapshot; you cannot
-         * cancel or revert this operation.</p> <note> <p>This operation is valid for Redis
-         * only.</p> </note><p><h3>See Also:</h3>   <a
+         * cancel or revert this operation.</p>  <p>This operation is valid for Redis
+         * only.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DeleteSnapshot">AWS
          * API Reference</a></p>
          */
@@ -1408,8 +1408,8 @@ namespace Model
         /**
          * <p>Deletes an existing snapshot. When you receive a successful response from
          * this operation, ElastiCache immediately begins deleting the snapshot; you cannot
-         * cancel or revert this operation.</p> <note> <p>This operation is valid for Redis
-         * only.</p> </note><p><h3>See Also:</h3>   <a
+         * cancel or revert this operation.</p>  <p>This operation is valid for Redis
+         * only.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DeleteSnapshot">AWS
          * API Reference</a></p>
          *
@@ -1420,8 +1420,8 @@ namespace Model
         /**
          * <p>Deletes an existing snapshot. When you receive a successful response from
          * this operation, ElastiCache immediately begins deleting the snapshot; you cannot
-         * cancel or revert this operation.</p> <note> <p>This operation is valid for Redis
-         * only.</p> </note><p><h3>See Also:</h3>   <a
+         * cancel or revert this operation.</p>  <p>This operation is valid for Redis
+         * only.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DeleteSnapshot">AWS
          * API Reference</a></p>
          *
@@ -1753,8 +1753,8 @@ namespace Model
         /**
          * <p>Returns information about a particular replication group. If no identifier is
          * specified, <code>DescribeReplicationGroups</code> returns information about all
-         * replication groups.</p> <note> <p>This operation is valid for Redis only.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * replication groups.</p>  <p>This operation is valid for Redis only.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeReplicationGroups">AWS
          * API Reference</a></p>
          */
@@ -1763,8 +1763,8 @@ namespace Model
         /**
          * <p>Returns information about a particular replication group. If no identifier is
          * specified, <code>DescribeReplicationGroups</code> returns information about all
-         * replication groups.</p> <note> <p>This operation is valid for Redis only.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * replication groups.</p>  <p>This operation is valid for Redis only.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeReplicationGroups">AWS
          * API Reference</a></p>
          *
@@ -1775,8 +1775,8 @@ namespace Model
         /**
          * <p>Returns information about a particular replication group. If no identifier is
          * specified, <code>DescribeReplicationGroups</code> returns information about all
-         * replication groups.</p> <note> <p>This operation is valid for Redis only.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * replication groups.</p>  <p>This operation is valid for Redis only.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeReplicationGroups">AWS
          * API Reference</a></p>
          *
@@ -1866,8 +1866,8 @@ namespace Model
          * <p>Returns information about cluster or replication group snapshots. By default,
          * <code>DescribeSnapshots</code> lists all of your snapshots; it can optionally
          * describe a single snapshot, or just the snapshots associated with a particular
-         * cache cluster.</p> <note> <p>This operation is valid for Redis only.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * cache cluster.</p>  <p>This operation is valid for Redis only.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeSnapshots">AWS
          * API Reference</a></p>
          */
@@ -1877,8 +1877,8 @@ namespace Model
          * <p>Returns information about cluster or replication group snapshots. By default,
          * <code>DescribeSnapshots</code> lists all of your snapshots; it can optionally
          * describe a single snapshot, or just the snapshots associated with a particular
-         * cache cluster.</p> <note> <p>This operation is valid for Redis only.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * cache cluster.</p>  <p>This operation is valid for Redis only.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeSnapshots">AWS
          * API Reference</a></p>
          *
@@ -1890,8 +1890,8 @@ namespace Model
          * <p>Returns information about cluster or replication group snapshots. By default,
          * <code>DescribeSnapshots</code> lists all of your snapshots; it can optionally
          * describe a single snapshot, or just the snapshots associated with a particular
-         * cache cluster.</p> <note> <p>This operation is valid for Redis only.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * cache cluster.</p>  <p>This operation is valid for Redis only.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeSnapshots">AWS
          * API Reference</a></p>
          *
@@ -2258,8 +2258,8 @@ namespace Model
          * for Amazon ElastiCache for Redis (cluster mode enabled)</a> in the ElastiCache
          * User Guide</p> </li> <li> <p> <a
          * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_ModifyReplicationGroupShardConfiguration.html">ModifyReplicationGroupShardConfiguration</a>
-         * in the ElastiCache API Reference</p> </li> </ul> <note> <p>This operation is
-         * valid for Redis only.</p> </note><p><h3>See Also:</h3>   <a
+         * in the ElastiCache API Reference</p> </li> </ul>  <p>This operation is
+         * valid for Redis only.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ModifyReplicationGroup">AWS
          * API Reference</a></p>
          */
@@ -2271,8 +2271,8 @@ namespace Model
          * for Amazon ElastiCache for Redis (cluster mode enabled)</a> in the ElastiCache
          * User Guide</p> </li> <li> <p> <a
          * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_ModifyReplicationGroupShardConfiguration.html">ModifyReplicationGroupShardConfiguration</a>
-         * in the ElastiCache API Reference</p> </li> </ul> <note> <p>This operation is
-         * valid for Redis only.</p> </note><p><h3>See Also:</h3>   <a
+         * in the ElastiCache API Reference</p> </li> </ul>  <p>This operation is
+         * valid for Redis only.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ModifyReplicationGroup">AWS
          * API Reference</a></p>
          *
@@ -2286,8 +2286,8 @@ namespace Model
          * for Amazon ElastiCache for Redis (cluster mode enabled)</a> in the ElastiCache
          * User Guide</p> </li> <li> <p> <a
          * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_ModifyReplicationGroupShardConfiguration.html">ModifyReplicationGroupShardConfiguration</a>
-         * in the ElastiCache API Reference</p> </li> </ul> <note> <p>This operation is
-         * valid for Redis only.</p> </note><p><h3>See Also:</h3>   <a
+         * in the ElastiCache API Reference</p> </li> </ul>  <p>This operation is
+         * valid for Redis only.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ModifyReplicationGroup">AWS
          * API Reference</a></p>
          *

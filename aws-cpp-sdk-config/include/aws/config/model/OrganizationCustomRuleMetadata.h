@@ -291,60 +291,60 @@ namespace Model
     /**
      * <p>The maximum frequency with which AWS Config runs evaluations for a rule. Your
      * custom rule is triggered when AWS Config delivers the configuration snapshot.
-     * For more information, see <a>ConfigSnapshotDeliveryProperties</a>.</p> <note>
+     * For more information, see <a>ConfigSnapshotDeliveryProperties</a>.</p> 
      * <p>By default, rules with a periodic trigger are evaluated every 24 hours. To
      * change the frequency, specify a valid value for the
-     * <code>MaximumExecutionFrequency</code> parameter.</p> </note>
+     * <code>MaximumExecutionFrequency</code> parameter.</p> 
      */
     inline const MaximumExecutionFrequency& GetMaximumExecutionFrequency() const{ return m_maximumExecutionFrequency; }
 
     /**
      * <p>The maximum frequency with which AWS Config runs evaluations for a rule. Your
      * custom rule is triggered when AWS Config delivers the configuration snapshot.
-     * For more information, see <a>ConfigSnapshotDeliveryProperties</a>.</p> <note>
+     * For more information, see <a>ConfigSnapshotDeliveryProperties</a>.</p> 
      * <p>By default, rules with a periodic trigger are evaluated every 24 hours. To
      * change the frequency, specify a valid value for the
-     * <code>MaximumExecutionFrequency</code> parameter.</p> </note>
+     * <code>MaximumExecutionFrequency</code> parameter.</p> 
      */
     inline bool MaximumExecutionFrequencyHasBeenSet() const { return m_maximumExecutionFrequencyHasBeenSet; }
 
     /**
      * <p>The maximum frequency with which AWS Config runs evaluations for a rule. Your
      * custom rule is triggered when AWS Config delivers the configuration snapshot.
-     * For more information, see <a>ConfigSnapshotDeliveryProperties</a>.</p> <note>
+     * For more information, see <a>ConfigSnapshotDeliveryProperties</a>.</p> 
      * <p>By default, rules with a periodic trigger are evaluated every 24 hours. To
      * change the frequency, specify a valid value for the
-     * <code>MaximumExecutionFrequency</code> parameter.</p> </note>
+     * <code>MaximumExecutionFrequency</code> parameter.</p> 
      */
     inline void SetMaximumExecutionFrequency(const MaximumExecutionFrequency& value) { m_maximumExecutionFrequencyHasBeenSet = true; m_maximumExecutionFrequency = value; }
 
     /**
      * <p>The maximum frequency with which AWS Config runs evaluations for a rule. Your
      * custom rule is triggered when AWS Config delivers the configuration snapshot.
-     * For more information, see <a>ConfigSnapshotDeliveryProperties</a>.</p> <note>
+     * For more information, see <a>ConfigSnapshotDeliveryProperties</a>.</p> 
      * <p>By default, rules with a periodic trigger are evaluated every 24 hours. To
      * change the frequency, specify a valid value for the
-     * <code>MaximumExecutionFrequency</code> parameter.</p> </note>
+     * <code>MaximumExecutionFrequency</code> parameter.</p> 
      */
     inline void SetMaximumExecutionFrequency(MaximumExecutionFrequency&& value) { m_maximumExecutionFrequencyHasBeenSet = true; m_maximumExecutionFrequency = std::move(value); }
 
     /**
      * <p>The maximum frequency with which AWS Config runs evaluations for a rule. Your
      * custom rule is triggered when AWS Config delivers the configuration snapshot.
-     * For more information, see <a>ConfigSnapshotDeliveryProperties</a>.</p> <note>
+     * For more information, see <a>ConfigSnapshotDeliveryProperties</a>.</p> 
      * <p>By default, rules with a periodic trigger are evaluated every 24 hours. To
      * change the frequency, specify a valid value for the
-     * <code>MaximumExecutionFrequency</code> parameter.</p> </note>
+     * <code>MaximumExecutionFrequency</code> parameter.</p> 
      */
     inline OrganizationCustomRuleMetadata& WithMaximumExecutionFrequency(const MaximumExecutionFrequency& value) { SetMaximumExecutionFrequency(value); return *this;}
 
     /**
      * <p>The maximum frequency with which AWS Config runs evaluations for a rule. Your
      * custom rule is triggered when AWS Config delivers the configuration snapshot.
-     * For more information, see <a>ConfigSnapshotDeliveryProperties</a>.</p> <note>
+     * For more information, see <a>ConfigSnapshotDeliveryProperties</a>.</p> 
      * <p>By default, rules with a periodic trigger are evaluated every 24 hours. To
      * change the frequency, specify a valid value for the
-     * <code>MaximumExecutionFrequency</code> parameter.</p> </note>
+     * <code>MaximumExecutionFrequency</code> parameter.</p> 
      */
     inline OrganizationCustomRuleMetadata& WithMaximumExecutionFrequency(MaximumExecutionFrequency&& value) { SetMaximumExecutionFrequency(std::move(value)); return *this;}
 

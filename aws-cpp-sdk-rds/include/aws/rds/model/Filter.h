@@ -28,8 +28,8 @@ namespace Model
    * <p>A filter name and value pair that is used to return a more specific list of
    * results from a describe operation. Filters can be used to match a set of
    * resources by specific criteria, such as IDs. The filters supported by a describe
-   * operation are documented with the describe operation.</p> <note> <p>Currently,
-   * wildcards are not supported in filters.</p> </note> <p>The following actions can
+   * operation are documented with the describe operation.</p>  <p>Currently,
+   * wildcards are not supported in filters.</p>  <p>The following actions can
    * be filtered:</p> <ul> <li> <p> <code>DescribeDBClusterBacktracks</code> </p>
    * </li> <li> <p> <code>DescribeDBClusterEndpoints</code> </p> </li> <li> <p>
    * <code>DescribeDBClusters</code> </p> </li> <li> <p>

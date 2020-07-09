@@ -101,7 +101,7 @@ namespace Model
 
     /**
      * <p>The name of the severity level that corresponds to the severity level
-     * code.</p> <note> <p>The values returned by the API differ from the values that
+     * code.</p>  <p>The values returned by the API differ from the values that
      * are displayed in the AWS Support Center. For example, for the code "low", the
      * API name is "Low", but the name in the Support Center is "General guidance".
      * These are the Support Center code/name mappings:</p> <ul> <li> <p>
@@ -109,7 +109,7 @@ namespace Model
      * System impaired</p> </li> <li> <p> <code>high</code>: Production system
      * impaired</p> </li> <li> <p> <code>urgent</code>: Production system down</p>
      * </li> <li> <p> <code>critical</code>: Business-critical system down</p> </li>
-     * </ul> </note> <p>For more information, see <a
+     * </ul>  <p>For more information, see <a
      * href="https://docs.aws.amazon.com/awssupport/latest/user/case-management.html#choosing-severity">Choosing
      * a severity</a> in the <i>AWS Support User Guide</i>.</p>
      */
@@ -117,7 +117,7 @@ namespace Model
 
     /**
      * <p>The name of the severity level that corresponds to the severity level
-     * code.</p> <note> <p>The values returned by the API differ from the values that
+     * code.</p>  <p>The values returned by the API differ from the values that
      * are displayed in the AWS Support Center. For example, for the code "low", the
      * API name is "Low", but the name in the Support Center is "General guidance".
      * These are the Support Center code/name mappings:</p> <ul> <li> <p>
@@ -125,7 +125,7 @@ namespace Model
      * System impaired</p> </li> <li> <p> <code>high</code>: Production system
      * impaired</p> </li> <li> <p> <code>urgent</code>: Production system down</p>
      * </li> <li> <p> <code>critical</code>: Business-critical system down</p> </li>
-     * </ul> </note> <p>For more information, see <a
+     * </ul>  <p>For more information, see <a
      * href="https://docs.aws.amazon.com/awssupport/latest/user/case-management.html#choosing-severity">Choosing
      * a severity</a> in the <i>AWS Support User Guide</i>.</p>
      */
@@ -133,7 +133,7 @@ namespace Model
 
     /**
      * <p>The name of the severity level that corresponds to the severity level
-     * code.</p> <note> <p>The values returned by the API differ from the values that
+     * code.</p>  <p>The values returned by the API differ from the values that
      * are displayed in the AWS Support Center. For example, for the code "low", the
      * API name is "Low", but the name in the Support Center is "General guidance".
      * These are the Support Center code/name mappings:</p> <ul> <li> <p>
@@ -141,7 +141,7 @@ namespace Model
      * System impaired</p> </li> <li> <p> <code>high</code>: Production system
      * impaired</p> </li> <li> <p> <code>urgent</code>: Production system down</p>
      * </li> <li> <p> <code>critical</code>: Business-critical system down</p> </li>
-     * </ul> </note> <p>For more information, see <a
+     * </ul>  <p>For more information, see <a
      * href="https://docs.aws.amazon.com/awssupport/latest/user/case-management.html#choosing-severity">Choosing
      * a severity</a> in the <i>AWS Support User Guide</i>.</p>
      */
@@ -149,7 +149,7 @@ namespace Model
 
     /**
      * <p>The name of the severity level that corresponds to the severity level
-     * code.</p> <note> <p>The values returned by the API differ from the values that
+     * code.</p>  <p>The values returned by the API differ from the values that
      * are displayed in the AWS Support Center. For example, for the code "low", the
      * API name is "Low", but the name in the Support Center is "General guidance".
      * These are the Support Center code/name mappings:</p> <ul> <li> <p>
@@ -157,7 +157,7 @@ namespace Model
      * System impaired</p> </li> <li> <p> <code>high</code>: Production system
      * impaired</p> </li> <li> <p> <code>urgent</code>: Production system down</p>
      * </li> <li> <p> <code>critical</code>: Business-critical system down</p> </li>
-     * </ul> </note> <p>For more information, see <a
+     * </ul>  <p>For more information, see <a
      * href="https://docs.aws.amazon.com/awssupport/latest/user/case-management.html#choosing-severity">Choosing
      * a severity</a> in the <i>AWS Support User Guide</i>.</p>
      */
@@ -165,7 +165,7 @@ namespace Model
 
     /**
      * <p>The name of the severity level that corresponds to the severity level
-     * code.</p> <note> <p>The values returned by the API differ from the values that
+     * code.</p>  <p>The values returned by the API differ from the values that
      * are displayed in the AWS Support Center. For example, for the code "low", the
      * API name is "Low", but the name in the Support Center is "General guidance".
      * These are the Support Center code/name mappings:</p> <ul> <li> <p>
@@ -173,7 +173,7 @@ namespace Model
      * System impaired</p> </li> <li> <p> <code>high</code>: Production system
      * impaired</p> </li> <li> <p> <code>urgent</code>: Production system down</p>
      * </li> <li> <p> <code>critical</code>: Business-critical system down</p> </li>
-     * </ul> </note> <p>For more information, see <a
+     * </ul>  <p>For more information, see <a
      * href="https://docs.aws.amazon.com/awssupport/latest/user/case-management.html#choosing-severity">Choosing
      * a severity</a> in the <i>AWS Support User Guide</i>.</p>
      */
@@ -181,7 +181,7 @@ namespace Model
 
     /**
      * <p>The name of the severity level that corresponds to the severity level
-     * code.</p> <note> <p>The values returned by the API differ from the values that
+     * code.</p>  <p>The values returned by the API differ from the values that
      * are displayed in the AWS Support Center. For example, for the code "low", the
      * API name is "Low", but the name in the Support Center is "General guidance".
      * These are the Support Center code/name mappings:</p> <ul> <li> <p>
@@ -189,7 +189,7 @@ namespace Model
      * System impaired</p> </li> <li> <p> <code>high</code>: Production system
      * impaired</p> </li> <li> <p> <code>urgent</code>: Production system down</p>
      * </li> <li> <p> <code>critical</code>: Business-critical system down</p> </li>
-     * </ul> </note> <p>For more information, see <a
+     * </ul>  <p>For more information, see <a
      * href="https://docs.aws.amazon.com/awssupport/latest/user/case-management.html#choosing-severity">Choosing
      * a severity</a> in the <i>AWS Support User Guide</i>.</p>
      */
@@ -197,7 +197,7 @@ namespace Model
 
     /**
      * <p>The name of the severity level that corresponds to the severity level
-     * code.</p> <note> <p>The values returned by the API differ from the values that
+     * code.</p>  <p>The values returned by the API differ from the values that
      * are displayed in the AWS Support Center. For example, for the code "low", the
      * API name is "Low", but the name in the Support Center is "General guidance".
      * These are the Support Center code/name mappings:</p> <ul> <li> <p>
@@ -205,7 +205,7 @@ namespace Model
      * System impaired</p> </li> <li> <p> <code>high</code>: Production system
      * impaired</p> </li> <li> <p> <code>urgent</code>: Production system down</p>
      * </li> <li> <p> <code>critical</code>: Business-critical system down</p> </li>
-     * </ul> </note> <p>For more information, see <a
+     * </ul>  <p>For more information, see <a
      * href="https://docs.aws.amazon.com/awssupport/latest/user/case-management.html#choosing-severity">Choosing
      * a severity</a> in the <i>AWS Support User Guide</i>.</p>
      */
@@ -213,7 +213,7 @@ namespace Model
 
     /**
      * <p>The name of the severity level that corresponds to the severity level
-     * code.</p> <note> <p>The values returned by the API differ from the values that
+     * code.</p>  <p>The values returned by the API differ from the values that
      * are displayed in the AWS Support Center. For example, for the code "low", the
      * API name is "Low", but the name in the Support Center is "General guidance".
      * These are the Support Center code/name mappings:</p> <ul> <li> <p>
@@ -221,7 +221,7 @@ namespace Model
      * System impaired</p> </li> <li> <p> <code>high</code>: Production system
      * impaired</p> </li> <li> <p> <code>urgent</code>: Production system down</p>
      * </li> <li> <p> <code>critical</code>: Business-critical system down</p> </li>
-     * </ul> </note> <p>For more information, see <a
+     * </ul>  <p>For more information, see <a
      * href="https://docs.aws.amazon.com/awssupport/latest/user/case-management.html#choosing-severity">Choosing
      * a severity</a> in the <i>AWS Support User Guide</i>.</p>
      */

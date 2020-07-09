@@ -111,10 +111,10 @@ namespace Model
          * within 60 seconds. The model itself can have a maximum processing time of 60
          * seconds before responding to the /invocations. If your model is going to take
          * 50-60 seconds of processing time, the SDK socket timeout should be set to be 70
-         * seconds.</p> <note> <p>Endpoints are scoped to an individual account, and are
+         * seconds.</p>  <p>Endpoints are scoped to an individual account, and are
          * not public. The URL does not contain the account ID, but Amazon SageMaker
          * determines the account ID from the authentication token that is supplied by the
-         * caller.</p> </note><p><h3>See Also:</h3>   <a
+         * caller.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/runtime.sagemaker-2017-05-13/InvokeEndpoint">AWS
          * API Reference</a></p>
          */
@@ -137,10 +137,10 @@ namespace Model
          * within 60 seconds. The model itself can have a maximum processing time of 60
          * seconds before responding to the /invocations. If your model is going to take
          * 50-60 seconds of processing time, the SDK socket timeout should be set to be 70
-         * seconds.</p> <note> <p>Endpoints are scoped to an individual account, and are
+         * seconds.</p>  <p>Endpoints are scoped to an individual account, and are
          * not public. The URL does not contain the account ID, but Amazon SageMaker
          * determines the account ID from the authentication token that is supplied by the
-         * caller.</p> </note><p><h3>See Also:</h3>   <a
+         * caller.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/runtime.sagemaker-2017-05-13/InvokeEndpoint">AWS
          * API Reference</a></p>
          *
@@ -165,10 +165,10 @@ namespace Model
          * within 60 seconds. The model itself can have a maximum processing time of 60
          * seconds before responding to the /invocations. If your model is going to take
          * 50-60 seconds of processing time, the SDK socket timeout should be set to be 70
-         * seconds.</p> <note> <p>Endpoints are scoped to an individual account, and are
+         * seconds.</p>  <p>Endpoints are scoped to an individual account, and are
          * not public. The URL does not contain the account ID, but Amazon SageMaker
          * determines the account ID from the authentication token that is supplied by the
-         * caller.</p> </note><p><h3>See Also:</h3>   <a
+         * caller.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/runtime.sagemaker-2017-05-13/InvokeEndpoint">AWS
          * API Reference</a></p>
          *

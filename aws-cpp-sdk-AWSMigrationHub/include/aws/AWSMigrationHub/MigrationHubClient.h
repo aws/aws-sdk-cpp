@@ -799,7 +799,7 @@ namespace Model
          * <p>Provides identifying details of the resource being migrated so that it can be
          * associated in the Application Discovery Service repository. This association
          * occurs asynchronously after <code>PutResourceAttributes</code> returns.</p>
-         * <important> <ul> <li> <p>Keep in mind that subsequent calls to
+         *  <ul> <li> <p>Keep in mind that subsequent calls to
          * PutResourceAttributes will override previously stored attributes. For example,
          * if it is first called with a MAC address, but later, it is desired to <i>add</i>
          * an IP address, it will then be required to call it with <i>both</i> the IP and
@@ -807,10 +807,10 @@ namespace Model
          * instructions regarding the special use case of the <a
          * href="https://docs.aws.amazon.com/migrationhub/latest/ug/API_PutResourceAttributes.html#migrationhub-PutResourceAttributes-request-ResourceAttributeList">
          * <code>ResourceAttributeList</code> </a> parameter when specifying any "VM"
-         * related value.</p> </li> </ul> </important> <note> <p>Because this is an
+         * related value.</p> </li> </ul>   <p>Because this is an
          * asynchronous call, it will always return 200, whether an association occurs or
          * not. To confirm if an association was found based on the provided details, call
-         * <code>ListDiscoveredResources</code>.</p> </note><p><h3>See Also:</h3>   <a
+         * <code>ListDiscoveredResources</code>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/PutResourceAttributes">AWS
          * API Reference</a></p>
          */
@@ -820,7 +820,7 @@ namespace Model
          * <p>Provides identifying details of the resource being migrated so that it can be
          * associated in the Application Discovery Service repository. This association
          * occurs asynchronously after <code>PutResourceAttributes</code> returns.</p>
-         * <important> <ul> <li> <p>Keep in mind that subsequent calls to
+         *  <ul> <li> <p>Keep in mind that subsequent calls to
          * PutResourceAttributes will override previously stored attributes. For example,
          * if it is first called with a MAC address, but later, it is desired to <i>add</i>
          * an IP address, it will then be required to call it with <i>both</i> the IP and
@@ -828,10 +828,10 @@ namespace Model
          * instructions regarding the special use case of the <a
          * href="https://docs.aws.amazon.com/migrationhub/latest/ug/API_PutResourceAttributes.html#migrationhub-PutResourceAttributes-request-ResourceAttributeList">
          * <code>ResourceAttributeList</code> </a> parameter when specifying any "VM"
-         * related value.</p> </li> </ul> </important> <note> <p>Because this is an
+         * related value.</p> </li> </ul>   <p>Because this is an
          * asynchronous call, it will always return 200, whether an association occurs or
          * not. To confirm if an association was found based on the provided details, call
-         * <code>ListDiscoveredResources</code>.</p> </note><p><h3>See Also:</h3>   <a
+         * <code>ListDiscoveredResources</code>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/PutResourceAttributes">AWS
          * API Reference</a></p>
          *
@@ -843,7 +843,7 @@ namespace Model
          * <p>Provides identifying details of the resource being migrated so that it can be
          * associated in the Application Discovery Service repository. This association
          * occurs asynchronously after <code>PutResourceAttributes</code> returns.</p>
-         * <important> <ul> <li> <p>Keep in mind that subsequent calls to
+         *  <ul> <li> <p>Keep in mind that subsequent calls to
          * PutResourceAttributes will override previously stored attributes. For example,
          * if it is first called with a MAC address, but later, it is desired to <i>add</i>
          * an IP address, it will then be required to call it with <i>both</i> the IP and
@@ -851,10 +851,10 @@ namespace Model
          * instructions regarding the special use case of the <a
          * href="https://docs.aws.amazon.com/migrationhub/latest/ug/API_PutResourceAttributes.html#migrationhub-PutResourceAttributes-request-ResourceAttributeList">
          * <code>ResourceAttributeList</code> </a> parameter when specifying any "VM"
-         * related value.</p> </li> </ul> </important> <note> <p>Because this is an
+         * related value.</p> </li> </ul>   <p>Because this is an
          * asynchronous call, it will always return 200, whether an association occurs or
          * not. To confirm if an association was found based on the provided details, call
-         * <code>ListDiscoveredResources</code>.</p> </note><p><h3>See Also:</h3>   <a
+         * <code>ListDiscoveredResources</code>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/PutResourceAttributes">AWS
          * API Reference</a></p>
          *

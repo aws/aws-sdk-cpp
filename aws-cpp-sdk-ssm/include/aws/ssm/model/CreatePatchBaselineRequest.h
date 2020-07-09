@@ -668,9 +668,9 @@ namespace Model
      * severity level of patches it specifies and the operating system family it
      * applies to. In this case, you could specify the following key name/value
      * pairs:</p> <ul> <li> <p> <code>Key=PatchSeverity,Value=Critical</code> </p>
-     * </li> <li> <p> <code>Key=OS,Value=Windows</code> </p> </li> </ul> <note> <p>To
+     * </li> <li> <p> <code>Key=OS,Value=Windows</code> </p> </li> </ul>  <p>To
      * add tags to an existing patch baseline, use the <a>AddTagsToResource</a>
-     * action.</p> </note>
+     * action.</p> 
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
@@ -681,9 +681,9 @@ namespace Model
      * severity level of patches it specifies and the operating system family it
      * applies to. In this case, you could specify the following key name/value
      * pairs:</p> <ul> <li> <p> <code>Key=PatchSeverity,Value=Critical</code> </p>
-     * </li> <li> <p> <code>Key=OS,Value=Windows</code> </p> </li> </ul> <note> <p>To
+     * </li> <li> <p> <code>Key=OS,Value=Windows</code> </p> </li> </ul>  <p>To
      * add tags to an existing patch baseline, use the <a>AddTagsToResource</a>
-     * action.</p> </note>
+     * action.</p> 
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
@@ -694,9 +694,9 @@ namespace Model
      * severity level of patches it specifies and the operating system family it
      * applies to. In this case, you could specify the following key name/value
      * pairs:</p> <ul> <li> <p> <code>Key=PatchSeverity,Value=Critical</code> </p>
-     * </li> <li> <p> <code>Key=OS,Value=Windows</code> </p> </li> </ul> <note> <p>To
+     * </li> <li> <p> <code>Key=OS,Value=Windows</code> </p> </li> </ul>  <p>To
      * add tags to an existing patch baseline, use the <a>AddTagsToResource</a>
-     * action.</p> </note>
+     * action.</p> 
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
@@ -707,9 +707,9 @@ namespace Model
      * severity level of patches it specifies and the operating system family it
      * applies to. In this case, you could specify the following key name/value
      * pairs:</p> <ul> <li> <p> <code>Key=PatchSeverity,Value=Critical</code> </p>
-     * </li> <li> <p> <code>Key=OS,Value=Windows</code> </p> </li> </ul> <note> <p>To
+     * </li> <li> <p> <code>Key=OS,Value=Windows</code> </p> </li> </ul>  <p>To
      * add tags to an existing patch baseline, use the <a>AddTagsToResource</a>
-     * action.</p> </note>
+     * action.</p> 
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
@@ -720,9 +720,9 @@ namespace Model
      * severity level of patches it specifies and the operating system family it
      * applies to. In this case, you could specify the following key name/value
      * pairs:</p> <ul> <li> <p> <code>Key=PatchSeverity,Value=Critical</code> </p>
-     * </li> <li> <p> <code>Key=OS,Value=Windows</code> </p> </li> </ul> <note> <p>To
+     * </li> <li> <p> <code>Key=OS,Value=Windows</code> </p> </li> </ul>  <p>To
      * add tags to an existing patch baseline, use the <a>AddTagsToResource</a>
-     * action.</p> </note>
+     * action.</p> 
      */
     inline CreatePatchBaselineRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
@@ -733,9 +733,9 @@ namespace Model
      * severity level of patches it specifies and the operating system family it
      * applies to. In this case, you could specify the following key name/value
      * pairs:</p> <ul> <li> <p> <code>Key=PatchSeverity,Value=Critical</code> </p>
-     * </li> <li> <p> <code>Key=OS,Value=Windows</code> </p> </li> </ul> <note> <p>To
+     * </li> <li> <p> <code>Key=OS,Value=Windows</code> </p> </li> </ul>  <p>To
      * add tags to an existing patch baseline, use the <a>AddTagsToResource</a>
-     * action.</p> </note>
+     * action.</p> 
      */
     inline CreatePatchBaselineRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
@@ -746,9 +746,9 @@ namespace Model
      * severity level of patches it specifies and the operating system family it
      * applies to. In this case, you could specify the following key name/value
      * pairs:</p> <ul> <li> <p> <code>Key=PatchSeverity,Value=Critical</code> </p>
-     * </li> <li> <p> <code>Key=OS,Value=Windows</code> </p> </li> </ul> <note> <p>To
+     * </li> <li> <p> <code>Key=OS,Value=Windows</code> </p> </li> </ul>  <p>To
      * add tags to an existing patch baseline, use the <a>AddTagsToResource</a>
-     * action.</p> </note>
+     * action.</p> 
      */
     inline CreatePatchBaselineRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
@@ -759,9 +759,9 @@ namespace Model
      * severity level of patches it specifies and the operating system family it
      * applies to. In this case, you could specify the following key name/value
      * pairs:</p> <ul> <li> <p> <code>Key=PatchSeverity,Value=Critical</code> </p>
-     * </li> <li> <p> <code>Key=OS,Value=Windows</code> </p> </li> </ul> <note> <p>To
+     * </li> <li> <p> <code>Key=OS,Value=Windows</code> </p> </li> </ul>  <p>To
      * add tags to an existing patch baseline, use the <a>AddTagsToResource</a>
-     * action.</p> </note>
+     * action.</p> 
      */
     inline CreatePatchBaselineRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 

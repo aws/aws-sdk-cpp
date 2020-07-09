@@ -26,7 +26,7 @@ namespace Model
 
   /**
    * <p>One or more filters. Use a filter to return a more specific list of
-   * results.</p> <important> <p>The <code>ParameterStringFilter</code> object is
+   * results.</p>  <p>The <code>ParameterStringFilter</code> object is
    * used by the <a>DescribeParameters</a> and <a>GetParametersByPath</a> API
    * actions. However, not all of the pattern values listed for <code>Key</code> can
    * be used with both actions.</p> <p>For <code>DescribeActions</code>, all of the
@@ -37,7 +37,7 @@ namespace Model
    * parameter filter constructions, see <a
    * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-search.html">Searching
    * for Systems Manager parameters</a> in the <i>AWS Systems Manager User
-   * Guide</i>.</p> </important><p><h3>See Also:</h3>   <a
+   * Guide</i>.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ParameterStringFilter">AWS
    * API Reference</a></p>
    */

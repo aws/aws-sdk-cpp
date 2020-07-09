@@ -84,57 +84,57 @@ namespace Model
 
     /**
      * <p>The message explaining what resources are in a different region from the
-     * pipeline.</p> <note> <p>AWS KMS keys must be in the same region as the
-     * pipeline.</p> </note>
+     * pipeline.</p>  <p>AWS KMS keys must be in the same region as the
+     * pipeline.</p> 
      */
     inline const Aws::String& GetMessage() const{ return m_message; }
 
     /**
      * <p>The message explaining what resources are in a different region from the
-     * pipeline.</p> <note> <p>AWS KMS keys must be in the same region as the
-     * pipeline.</p> </note>
+     * pipeline.</p>  <p>AWS KMS keys must be in the same region as the
+     * pipeline.</p> 
      */
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
 
     /**
      * <p>The message explaining what resources are in a different region from the
-     * pipeline.</p> <note> <p>AWS KMS keys must be in the same region as the
-     * pipeline.</p> </note>
+     * pipeline.</p>  <p>AWS KMS keys must be in the same region as the
+     * pipeline.</p> 
      */
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
 
     /**
      * <p>The message explaining what resources are in a different region from the
-     * pipeline.</p> <note> <p>AWS KMS keys must be in the same region as the
-     * pipeline.</p> </note>
+     * pipeline.</p>  <p>AWS KMS keys must be in the same region as the
+     * pipeline.</p> 
      */
     inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
 
     /**
      * <p>The message explaining what resources are in a different region from the
-     * pipeline.</p> <note> <p>AWS KMS keys must be in the same region as the
-     * pipeline.</p> </note>
+     * pipeline.</p>  <p>AWS KMS keys must be in the same region as the
+     * pipeline.</p> 
      */
     inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
 
     /**
      * <p>The message explaining what resources are in a different region from the
-     * pipeline.</p> <note> <p>AWS KMS keys must be in the same region as the
-     * pipeline.</p> </note>
+     * pipeline.</p>  <p>AWS KMS keys must be in the same region as the
+     * pipeline.</p> 
      */
     inline Warning& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
 
     /**
      * <p>The message explaining what resources are in a different region from the
-     * pipeline.</p> <note> <p>AWS KMS keys must be in the same region as the
-     * pipeline.</p> </note>
+     * pipeline.</p>  <p>AWS KMS keys must be in the same region as the
+     * pipeline.</p> 
      */
     inline Warning& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
 
     /**
      * <p>The message explaining what resources are in a different region from the
-     * pipeline.</p> <note> <p>AWS KMS keys must be in the same region as the
-     * pipeline.</p> </note>
+     * pipeline.</p>  <p>AWS KMS keys must be in the same region as the
+     * pipeline.</p> 
      */
     inline Warning& WithMessage(const char* value) { SetMessage(value); return *this;}
 

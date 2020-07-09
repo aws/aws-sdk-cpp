@@ -892,22 +892,22 @@ namespace Model
         virtual void GetTypeAsync(const Model::GetTypeRequest& request, const GetTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists the API keys for a given API.</p> <note> <p>API keys are deleted
+         * <p>Lists the API keys for a given API.</p>  <p>API keys are deleted
          * automatically sometime after they expire. However, they may still be included in
          * the response until they have actually been deleted. You can safely call
          * <code>DeleteApiKey</code> to manually delete a key before it's automatically
-         * deleted.</p> </note><p><h3>See Also:</h3>   <a
+         * deleted.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/ListApiKeys">AWS
          * API Reference</a></p>
          */
         virtual Model::ListApiKeysOutcome ListApiKeys(const Model::ListApiKeysRequest& request) const;
 
         /**
-         * <p>Lists the API keys for a given API.</p> <note> <p>API keys are deleted
+         * <p>Lists the API keys for a given API.</p>  <p>API keys are deleted
          * automatically sometime after they expire. However, they may still be included in
          * the response until they have actually been deleted. You can safely call
          * <code>DeleteApiKey</code> to manually delete a key before it's automatically
-         * deleted.</p> </note><p><h3>See Also:</h3>   <a
+         * deleted.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/ListApiKeys">AWS
          * API Reference</a></p>
          *
@@ -916,11 +916,11 @@ namespace Model
         virtual Model::ListApiKeysOutcomeCallable ListApiKeysCallable(const Model::ListApiKeysRequest& request) const;
 
         /**
-         * <p>Lists the API keys for a given API.</p> <note> <p>API keys are deleted
+         * <p>Lists the API keys for a given API.</p>  <p>API keys are deleted
          * automatically sometime after they expire. However, they may still be included in
          * the response until they have actually been deleted. You can safely call
          * <code>DeleteApiKey</code> to manually delete a key before it's automatically
-         * deleted.</p> </note><p><h3>See Also:</h3>   <a
+         * deleted.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/ListApiKeys">AWS
          * API Reference</a></p>
          *

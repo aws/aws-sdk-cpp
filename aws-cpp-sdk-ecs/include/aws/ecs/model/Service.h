@@ -1185,8 +1185,8 @@ namespace Model
      * each active container instance that meets all of the task placement constraints
      * that you specify in your cluster. The service scheduler also evaluates the task
      * placement constraints for running tasks and will stop tasks that do not meet the
-     * placement constraints.</p> <note> <p>Fargate tasks do not support the
-     * <code>DAEMON</code> scheduling strategy.</p> </note> </li> </ul>
+     * placement constraints.</p>  <p>Fargate tasks do not support the
+     * <code>DAEMON</code> scheduling strategy.</p>  </li> </ul>
      */
     inline const SchedulingStrategy& GetSchedulingStrategy() const{ return m_schedulingStrategy; }
 
@@ -1202,8 +1202,8 @@ namespace Model
      * each active container instance that meets all of the task placement constraints
      * that you specify in your cluster. The service scheduler also evaluates the task
      * placement constraints for running tasks and will stop tasks that do not meet the
-     * placement constraints.</p> <note> <p>Fargate tasks do not support the
-     * <code>DAEMON</code> scheduling strategy.</p> </note> </li> </ul>
+     * placement constraints.</p>  <p>Fargate tasks do not support the
+     * <code>DAEMON</code> scheduling strategy.</p>  </li> </ul>
      */
     inline bool SchedulingStrategyHasBeenSet() const { return m_schedulingStrategyHasBeenSet; }
 
@@ -1219,8 +1219,8 @@ namespace Model
      * each active container instance that meets all of the task placement constraints
      * that you specify in your cluster. The service scheduler also evaluates the task
      * placement constraints for running tasks and will stop tasks that do not meet the
-     * placement constraints.</p> <note> <p>Fargate tasks do not support the
-     * <code>DAEMON</code> scheduling strategy.</p> </note> </li> </ul>
+     * placement constraints.</p>  <p>Fargate tasks do not support the
+     * <code>DAEMON</code> scheduling strategy.</p>  </li> </ul>
      */
     inline void SetSchedulingStrategy(const SchedulingStrategy& value) { m_schedulingStrategyHasBeenSet = true; m_schedulingStrategy = value; }
 
@@ -1236,8 +1236,8 @@ namespace Model
      * each active container instance that meets all of the task placement constraints
      * that you specify in your cluster. The service scheduler also evaluates the task
      * placement constraints for running tasks and will stop tasks that do not meet the
-     * placement constraints.</p> <note> <p>Fargate tasks do not support the
-     * <code>DAEMON</code> scheduling strategy.</p> </note> </li> </ul>
+     * placement constraints.</p>  <p>Fargate tasks do not support the
+     * <code>DAEMON</code> scheduling strategy.</p>  </li> </ul>
      */
     inline void SetSchedulingStrategy(SchedulingStrategy&& value) { m_schedulingStrategyHasBeenSet = true; m_schedulingStrategy = std::move(value); }
 
@@ -1253,8 +1253,8 @@ namespace Model
      * each active container instance that meets all of the task placement constraints
      * that you specify in your cluster. The service scheduler also evaluates the task
      * placement constraints for running tasks and will stop tasks that do not meet the
-     * placement constraints.</p> <note> <p>Fargate tasks do not support the
-     * <code>DAEMON</code> scheduling strategy.</p> </note> </li> </ul>
+     * placement constraints.</p>  <p>Fargate tasks do not support the
+     * <code>DAEMON</code> scheduling strategy.</p>  </li> </ul>
      */
     inline Service& WithSchedulingStrategy(const SchedulingStrategy& value) { SetSchedulingStrategy(value); return *this;}
 
@@ -1270,8 +1270,8 @@ namespace Model
      * each active container instance that meets all of the task placement constraints
      * that you specify in your cluster. The service scheduler also evaluates the task
      * placement constraints for running tasks and will stop tasks that do not meet the
-     * placement constraints.</p> <note> <p>Fargate tasks do not support the
-     * <code>DAEMON</code> scheduling strategy.</p> </note> </li> </ul>
+     * placement constraints.</p>  <p>Fargate tasks do not support the
+     * <code>DAEMON</code> scheduling strategy.</p>  </li> </ul>
      */
     inline Service& WithSchedulingStrategy(SchedulingStrategy&& value) { SetSchedulingStrategy(std::move(value)); return *this;}
 

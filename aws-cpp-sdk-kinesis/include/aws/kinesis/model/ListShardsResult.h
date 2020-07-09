@@ -100,11 +100,11 @@ namespace Model
      * subsequent call to <code>ListShards</code> to list the next set of shards. For
      * more information about the use of this pagination token when calling the
      * <code>ListShards</code> operation, see <a>ListShardsInput$NextToken</a>.</p>
-     * <important> <p>Tokens expire after 300 seconds. When you obtain a value for
+     *  <p>Tokens expire after 300 seconds. When you obtain a value for
      * <code>NextToken</code> in the response to a call to <code>ListShards</code>, you
      * have 300 seconds to use that value. If you specify an expired token in a call to
      * <code>ListShards</code>, you get <code>ExpiredNextTokenException</code>.</p>
-     * </important>
+     * 
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
@@ -117,11 +117,11 @@ namespace Model
      * subsequent call to <code>ListShards</code> to list the next set of shards. For
      * more information about the use of this pagination token when calling the
      * <code>ListShards</code> operation, see <a>ListShardsInput$NextToken</a>.</p>
-     * <important> <p>Tokens expire after 300 seconds. When you obtain a value for
+     *  <p>Tokens expire after 300 seconds. When you obtain a value for
      * <code>NextToken</code> in the response to a call to <code>ListShards</code>, you
      * have 300 seconds to use that value. If you specify an expired token in a call to
      * <code>ListShards</code>, you get <code>ExpiredNextTokenException</code>.</p>
-     * </important>
+     * 
      */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
@@ -134,11 +134,11 @@ namespace Model
      * subsequent call to <code>ListShards</code> to list the next set of shards. For
      * more information about the use of this pagination token when calling the
      * <code>ListShards</code> operation, see <a>ListShardsInput$NextToken</a>.</p>
-     * <important> <p>Tokens expire after 300 seconds. When you obtain a value for
+     *  <p>Tokens expire after 300 seconds. When you obtain a value for
      * <code>NextToken</code> in the response to a call to <code>ListShards</code>, you
      * have 300 seconds to use that value. If you specify an expired token in a call to
      * <code>ListShards</code>, you get <code>ExpiredNextTokenException</code>.</p>
-     * </important>
+     * 
      */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
@@ -151,11 +151,11 @@ namespace Model
      * subsequent call to <code>ListShards</code> to list the next set of shards. For
      * more information about the use of this pagination token when calling the
      * <code>ListShards</code> operation, see <a>ListShardsInput$NextToken</a>.</p>
-     * <important> <p>Tokens expire after 300 seconds. When you obtain a value for
+     *  <p>Tokens expire after 300 seconds. When you obtain a value for
      * <code>NextToken</code> in the response to a call to <code>ListShards</code>, you
      * have 300 seconds to use that value. If you specify an expired token in a call to
      * <code>ListShards</code>, you get <code>ExpiredNextTokenException</code>.</p>
-     * </important>
+     * 
      */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
@@ -168,11 +168,11 @@ namespace Model
      * subsequent call to <code>ListShards</code> to list the next set of shards. For
      * more information about the use of this pagination token when calling the
      * <code>ListShards</code> operation, see <a>ListShardsInput$NextToken</a>.</p>
-     * <important> <p>Tokens expire after 300 seconds. When you obtain a value for
+     *  <p>Tokens expire after 300 seconds. When you obtain a value for
      * <code>NextToken</code> in the response to a call to <code>ListShards</code>, you
      * have 300 seconds to use that value. If you specify an expired token in a call to
      * <code>ListShards</code>, you get <code>ExpiredNextTokenException</code>.</p>
-     * </important>
+     * 
      */
     inline ListShardsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
@@ -185,11 +185,11 @@ namespace Model
      * subsequent call to <code>ListShards</code> to list the next set of shards. For
      * more information about the use of this pagination token when calling the
      * <code>ListShards</code> operation, see <a>ListShardsInput$NextToken</a>.</p>
-     * <important> <p>Tokens expire after 300 seconds. When you obtain a value for
+     *  <p>Tokens expire after 300 seconds. When you obtain a value for
      * <code>NextToken</code> in the response to a call to <code>ListShards</code>, you
      * have 300 seconds to use that value. If you specify an expired token in a call to
      * <code>ListShards</code>, you get <code>ExpiredNextTokenException</code>.</p>
-     * </important>
+     * 
      */
     inline ListShardsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
@@ -202,11 +202,11 @@ namespace Model
      * subsequent call to <code>ListShards</code> to list the next set of shards. For
      * more information about the use of this pagination token when calling the
      * <code>ListShards</code> operation, see <a>ListShardsInput$NextToken</a>.</p>
-     * <important> <p>Tokens expire after 300 seconds. When you obtain a value for
+     *  <p>Tokens expire after 300 seconds. When you obtain a value for
      * <code>NextToken</code> in the response to a call to <code>ListShards</code>, you
      * have 300 seconds to use that value. If you specify an expired token in a call to
      * <code>ListShards</code>, you get <code>ExpiredNextTokenException</code>.</p>
-     * </important>
+     * 
      */
     inline ListShardsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

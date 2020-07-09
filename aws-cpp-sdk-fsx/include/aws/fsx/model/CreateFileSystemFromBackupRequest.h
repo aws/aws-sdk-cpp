@@ -422,12 +422,12 @@ namespace Model
      * Windows deployment types.</p> </li> <li> <p>Set to <code>HDD</code> to use hard
      * disk drive storage. Supported on <code>SINGLE_AZ_2</code> and
      * <code>MULTI_AZ_1</code> Windows file system deployment types. </p> </li> </ul>
-     * <p> Default value is <code>SSD</code>. </p> <note> <p>HDD and SSD storage types
+     * <p> Default value is <code>SSD</code>. </p>  <p>HDD and SSD storage types
      * have different minimum storage capacity requirements. A restored file system's
      * storage capacity is tied to the file system that was backed up. You can create a
      * file system that uses HDD storage from a backup of a file system that used SSD
      * storage only if the original SSD file system had a storage capacity of at least
-     * 2000 GiB. </p> </note>
+     * 2000 GiB. </p> 
      */
     inline const StorageType& GetStorageType() const{ return m_storageType; }
 
@@ -438,12 +438,12 @@ namespace Model
      * Windows deployment types.</p> </li> <li> <p>Set to <code>HDD</code> to use hard
      * disk drive storage. Supported on <code>SINGLE_AZ_2</code> and
      * <code>MULTI_AZ_1</code> Windows file system deployment types. </p> </li> </ul>
-     * <p> Default value is <code>SSD</code>. </p> <note> <p>HDD and SSD storage types
+     * <p> Default value is <code>SSD</code>. </p>  <p>HDD and SSD storage types
      * have different minimum storage capacity requirements. A restored file system's
      * storage capacity is tied to the file system that was backed up. You can create a
      * file system that uses HDD storage from a backup of a file system that used SSD
      * storage only if the original SSD file system had a storage capacity of at least
-     * 2000 GiB. </p> </note>
+     * 2000 GiB. </p> 
      */
     inline bool StorageTypeHasBeenSet() const { return m_storageTypeHasBeenSet; }
 
@@ -454,12 +454,12 @@ namespace Model
      * Windows deployment types.</p> </li> <li> <p>Set to <code>HDD</code> to use hard
      * disk drive storage. Supported on <code>SINGLE_AZ_2</code> and
      * <code>MULTI_AZ_1</code> Windows file system deployment types. </p> </li> </ul>
-     * <p> Default value is <code>SSD</code>. </p> <note> <p>HDD and SSD storage types
+     * <p> Default value is <code>SSD</code>. </p>  <p>HDD and SSD storage types
      * have different minimum storage capacity requirements. A restored file system's
      * storage capacity is tied to the file system that was backed up. You can create a
      * file system that uses HDD storage from a backup of a file system that used SSD
      * storage only if the original SSD file system had a storage capacity of at least
-     * 2000 GiB. </p> </note>
+     * 2000 GiB. </p> 
      */
     inline void SetStorageType(const StorageType& value) { m_storageTypeHasBeenSet = true; m_storageType = value; }
 
@@ -470,12 +470,12 @@ namespace Model
      * Windows deployment types.</p> </li> <li> <p>Set to <code>HDD</code> to use hard
      * disk drive storage. Supported on <code>SINGLE_AZ_2</code> and
      * <code>MULTI_AZ_1</code> Windows file system deployment types. </p> </li> </ul>
-     * <p> Default value is <code>SSD</code>. </p> <note> <p>HDD and SSD storage types
+     * <p> Default value is <code>SSD</code>. </p>  <p>HDD and SSD storage types
      * have different minimum storage capacity requirements. A restored file system's
      * storage capacity is tied to the file system that was backed up. You can create a
      * file system that uses HDD storage from a backup of a file system that used SSD
      * storage only if the original SSD file system had a storage capacity of at least
-     * 2000 GiB. </p> </note>
+     * 2000 GiB. </p> 
      */
     inline void SetStorageType(StorageType&& value) { m_storageTypeHasBeenSet = true; m_storageType = std::move(value); }
 
@@ -486,12 +486,12 @@ namespace Model
      * Windows deployment types.</p> </li> <li> <p>Set to <code>HDD</code> to use hard
      * disk drive storage. Supported on <code>SINGLE_AZ_2</code> and
      * <code>MULTI_AZ_1</code> Windows file system deployment types. </p> </li> </ul>
-     * <p> Default value is <code>SSD</code>. </p> <note> <p>HDD and SSD storage types
+     * <p> Default value is <code>SSD</code>. </p>  <p>HDD and SSD storage types
      * have different minimum storage capacity requirements. A restored file system's
      * storage capacity is tied to the file system that was backed up. You can create a
      * file system that uses HDD storage from a backup of a file system that used SSD
      * storage only if the original SSD file system had a storage capacity of at least
-     * 2000 GiB. </p> </note>
+     * 2000 GiB. </p> 
      */
     inline CreateFileSystemFromBackupRequest& WithStorageType(const StorageType& value) { SetStorageType(value); return *this;}
 
@@ -502,12 +502,12 @@ namespace Model
      * Windows deployment types.</p> </li> <li> <p>Set to <code>HDD</code> to use hard
      * disk drive storage. Supported on <code>SINGLE_AZ_2</code> and
      * <code>MULTI_AZ_1</code> Windows file system deployment types. </p> </li> </ul>
-     * <p> Default value is <code>SSD</code>. </p> <note> <p>HDD and SSD storage types
+     * <p> Default value is <code>SSD</code>. </p>  <p>HDD and SSD storage types
      * have different minimum storage capacity requirements. A restored file system's
      * storage capacity is tied to the file system that was backed up. You can create a
      * file system that uses HDD storage from a backup of a file system that used SSD
      * storage only if the original SSD file system had a storage capacity of at least
-     * 2000 GiB. </p> </note>
+     * 2000 GiB. </p> 
      */
     inline CreateFileSystemFromBackupRequest& WithStorageType(StorageType&& value) { SetStorageType(std::move(value)); return *this;}
 

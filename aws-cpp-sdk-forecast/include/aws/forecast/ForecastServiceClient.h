@@ -247,9 +247,9 @@ namespace Model
          * <p>To get a list of all your datasets, use the <a>ListDatasets</a>
          * operation.</p> <p>For example Forecast datasets, see the <a
          * href="https://github.com/aws-samples/amazon-forecast-samples">Amazon Forecast
-         * Sample GitHub repository</a>.</p> <note> <p>The <code>Status</code> of a dataset
+         * Sample GitHub repository</a>.</p>  <p>The <code>Status</code> of a dataset
          * must be <code>ACTIVE</code> before you can import training data. Use the
-         * <a>DescribeDataset</a> operation to get the status.</p> </note><p><h3>See
+         * <a>DescribeDataset</a> operation to get the status.</p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/CreateDataset">AWS
          * API Reference</a></p>
@@ -274,9 +274,9 @@ namespace Model
          * <p>To get a list of all your datasets, use the <a>ListDatasets</a>
          * operation.</p> <p>For example Forecast datasets, see the <a
          * href="https://github.com/aws-samples/amazon-forecast-samples">Amazon Forecast
-         * Sample GitHub repository</a>.</p> <note> <p>The <code>Status</code> of a dataset
+         * Sample GitHub repository</a>.</p>  <p>The <code>Status</code> of a dataset
          * must be <code>ACTIVE</code> before you can import training data. Use the
-         * <a>DescribeDataset</a> operation to get the status.</p> </note><p><h3>See
+         * <a>DescribeDataset</a> operation to get the status.</p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/CreateDataset">AWS
          * API Reference</a></p>
@@ -303,9 +303,9 @@ namespace Model
          * <p>To get a list of all your datasets, use the <a>ListDatasets</a>
          * operation.</p> <p>For example Forecast datasets, see the <a
          * href="https://github.com/aws-samples/amazon-forecast-samples">Amazon Forecast
-         * Sample GitHub repository</a>.</p> <note> <p>The <code>Status</code> of a dataset
+         * Sample GitHub repository</a>.</p>  <p>The <code>Status</code> of a dataset
          * must be <code>ACTIVE</code> before you can import training data. Use the
-         * <a>DescribeDataset</a> operation to get the status.</p> </note><p><h3>See
+         * <a>DescribeDataset</a> operation to get the status.</p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/CreateDataset">AWS
          * API Reference</a></p>
@@ -321,10 +321,10 @@ namespace Model
          * dataset group and adding datasets, you use the dataset group when you create a
          * predictor. For more information, see <a>howitworks-datasets-groups</a>.</p>
          * <p>To get a list of all your datasets groups, use the <a>ListDatasetGroups</a>
-         * operation.</p> <note> <p>The <code>Status</code> of a dataset group must be
+         * operation.</p>  <p>The <code>Status</code> of a dataset group must be
          * <code>ACTIVE</code> before you can create use the dataset group to create a
          * predictor. To get the status, use the <a>DescribeDatasetGroup</a> operation.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/CreateDatasetGroup">AWS
          * API Reference</a></p>
          */
@@ -337,10 +337,10 @@ namespace Model
          * dataset group and adding datasets, you use the dataset group when you create a
          * predictor. For more information, see <a>howitworks-datasets-groups</a>.</p>
          * <p>To get a list of all your datasets groups, use the <a>ListDatasetGroups</a>
-         * operation.</p> <note> <p>The <code>Status</code> of a dataset group must be
+         * operation.</p>  <p>The <code>Status</code> of a dataset group must be
          * <code>ACTIVE</code> before you can create use the dataset group to create a
          * predictor. To get the status, use the <a>DescribeDatasetGroup</a> operation.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/CreateDatasetGroup">AWS
          * API Reference</a></p>
          *
@@ -355,10 +355,10 @@ namespace Model
          * dataset group and adding datasets, you use the dataset group when you create a
          * predictor. For more information, see <a>howitworks-datasets-groups</a>.</p>
          * <p>To get a list of all your datasets groups, use the <a>ListDatasetGroups</a>
-         * operation.</p> <note> <p>The <code>Status</code> of a dataset group must be
+         * operation.</p>  <p>The <code>Status</code> of a dataset group must be
          * <code>ACTIVE</code> before you can create use the dataset group to create a
          * predictor. To get the status, use the <a>DescribeDatasetGroup</a> operation.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/CreateDatasetGroup">AWS
          * API Reference</a></p>
          *
@@ -451,13 +451,13 @@ namespace Model
          * the forecast is determined by the <code>ForecastHorizon</code> value, which you
          * specify in the <a>CreatePredictor</a> request. When you query a forecast, you
          * can request a specific date range within the forecast.</p> <p>To get a list of
-         * all your forecasts, use the <a>ListForecasts</a> operation.</p> <note> <p>The
+         * all your forecasts, use the <a>ListForecasts</a> operation.</p>  <p>The
          * forecasts generated by Amazon Forecast are in the same time zone as the dataset
-         * that was used to create the predictor.</p> </note> <p>For more information, see
-         * <a>howitworks-forecast</a>.</p> <note> <p>The <code>Status</code> of the
+         * that was used to create the predictor.</p>  <p>For more information, see
+         * <a>howitworks-forecast</a>.</p>  <p>The <code>Status</code> of the
          * forecast must be <code>ACTIVE</code> before you can query or export the
          * forecast. Use the <a>DescribeForecast</a> operation to get the status.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/CreateForecast">AWS
          * API Reference</a></p>
          */
@@ -472,13 +472,13 @@ namespace Model
          * the forecast is determined by the <code>ForecastHorizon</code> value, which you
          * specify in the <a>CreatePredictor</a> request. When you query a forecast, you
          * can request a specific date range within the forecast.</p> <p>To get a list of
-         * all your forecasts, use the <a>ListForecasts</a> operation.</p> <note> <p>The
+         * all your forecasts, use the <a>ListForecasts</a> operation.</p>  <p>The
          * forecasts generated by Amazon Forecast are in the same time zone as the dataset
-         * that was used to create the predictor.</p> </note> <p>For more information, see
-         * <a>howitworks-forecast</a>.</p> <note> <p>The <code>Status</code> of the
+         * that was used to create the predictor.</p>  <p>For more information, see
+         * <a>howitworks-forecast</a>.</p>  <p>The <code>Status</code> of the
          * forecast must be <code>ACTIVE</code> before you can query or export the
          * forecast. Use the <a>DescribeForecast</a> operation to get the status.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/CreateForecast">AWS
          * API Reference</a></p>
          *
@@ -495,13 +495,13 @@ namespace Model
          * the forecast is determined by the <code>ForecastHorizon</code> value, which you
          * specify in the <a>CreatePredictor</a> request. When you query a forecast, you
          * can request a specific date range within the forecast.</p> <p>To get a list of
-         * all your forecasts, use the <a>ListForecasts</a> operation.</p> <note> <p>The
+         * all your forecasts, use the <a>ListForecasts</a> operation.</p>  <p>The
          * forecasts generated by Amazon Forecast are in the same time zone as the dataset
-         * that was used to create the predictor.</p> </note> <p>For more information, see
-         * <a>howitworks-forecast</a>.</p> <note> <p>The <code>Status</code> of the
+         * that was used to create the predictor.</p>  <p>For more information, see
+         * <a>howitworks-forecast</a>.</p>  <p>The <code>Status</code> of the
          * forecast must be <code>ACTIVE</code> before you can query or export the
          * forecast. Use the <a>DescribeForecast</a> operation to get the status.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/CreateForecast">AWS
          * API Reference</a></p>
          *
@@ -520,10 +520,10 @@ namespace Model
          * Forecast can assume to access the Amazon S3 bucket. For more information, see
          * <a>aws-forecast-iam-roles</a>.</p> <p>For more information, see
          * <a>howitworks-forecast</a>.</p> <p>To get a list of all your forecast export
-         * jobs, use the <a>ListForecastExportJobs</a> operation.</p> <note> <p>The
+         * jobs, use the <a>ListForecastExportJobs</a> operation.</p>  <p>The
          * <code>Status</code> of the forecast export job must be <code>ACTIVE</code>
          * before you can access the forecast in your Amazon S3 bucket. To get the status,
-         * use the <a>DescribeForecastExportJob</a> operation.</p> </note><p><h3>See
+         * use the <a>DescribeForecastExportJob</a> operation.</p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/CreateForecastExportJob">AWS
          * API Reference</a></p>
@@ -541,10 +541,10 @@ namespace Model
          * Forecast can assume to access the Amazon S3 bucket. For more information, see
          * <a>aws-forecast-iam-roles</a>.</p> <p>For more information, see
          * <a>howitworks-forecast</a>.</p> <p>To get a list of all your forecast export
-         * jobs, use the <a>ListForecastExportJobs</a> operation.</p> <note> <p>The
+         * jobs, use the <a>ListForecastExportJobs</a> operation.</p>  <p>The
          * <code>Status</code> of the forecast export job must be <code>ACTIVE</code>
          * before you can access the forecast in your Amazon S3 bucket. To get the status,
-         * use the <a>DescribeForecastExportJob</a> operation.</p> </note><p><h3>See
+         * use the <a>DescribeForecastExportJob</a> operation.</p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/CreateForecastExportJob">AWS
          * API Reference</a></p>
@@ -564,10 +564,10 @@ namespace Model
          * Forecast can assume to access the Amazon S3 bucket. For more information, see
          * <a>aws-forecast-iam-roles</a>.</p> <p>For more information, see
          * <a>howitworks-forecast</a>.</p> <p>To get a list of all your forecast export
-         * jobs, use the <a>ListForecastExportJobs</a> operation.</p> <note> <p>The
+         * jobs, use the <a>ListForecastExportJobs</a> operation.</p>  <p>The
          * <code>Status</code> of the forecast export job must be <code>ACTIVE</code>
          * before you can access the forecast in your Amazon S3 bucket. To get the status,
-         * use the <a>DescribeForecastExportJob</a> operation.</p> </note><p><h3>See
+         * use the <a>DescribeForecastExportJob</a> operation.</p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/CreateForecastExportJob">AWS
          * API Reference</a></p>
@@ -605,11 +605,11 @@ namespace Model
          * <code>AlgorithmArn</code> </p> </li> <li> <p> <code>HPOConfig</code> </p> </li>
          * <li> <p> <code>PerformHPO</code> </p> </li> <li> <p>
          * <code>TrainingParameters</code> </p> </li> </ul> <p>To get a list of all of your
-         * predictors, use the <a>ListPredictors</a> operation.</p> <note> <p>Before you
+         * predictors, use the <a>ListPredictors</a> operation.</p>  <p>Before you
          * can use the predictor to create a forecast, the <code>Status</code> of the
          * predictor must be <code>ACTIVE</code>, signifying that training has completed.
          * To get the status, use the <a>DescribePredictor</a> operation.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/CreatePredictor">AWS
          * API Reference</a></p>
          */
@@ -644,11 +644,11 @@ namespace Model
          * <code>AlgorithmArn</code> </p> </li> <li> <p> <code>HPOConfig</code> </p> </li>
          * <li> <p> <code>PerformHPO</code> </p> </li> <li> <p>
          * <code>TrainingParameters</code> </p> </li> </ul> <p>To get a list of all of your
-         * predictors, use the <a>ListPredictors</a> operation.</p> <note> <p>Before you
+         * predictors, use the <a>ListPredictors</a> operation.</p>  <p>Before you
          * can use the predictor to create a forecast, the <code>Status</code> of the
          * predictor must be <code>ACTIVE</code>, signifying that training has completed.
          * To get the status, use the <a>DescribePredictor</a> operation.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/CreatePredictor">AWS
          * API Reference</a></p>
          *
@@ -685,11 +685,11 @@ namespace Model
          * <code>AlgorithmArn</code> </p> </li> <li> <p> <code>HPOConfig</code> </p> </li>
          * <li> <p> <code>PerformHPO</code> </p> </li> <li> <p>
          * <code>TrainingParameters</code> </p> </li> </ul> <p>To get a list of all of your
-         * predictors, use the <a>ListPredictors</a> operation.</p> <note> <p>Before you
+         * predictors, use the <a>ListPredictors</a> operation.</p>  <p>Before you
          * can use the predictor to create a forecast, the <code>Status</code> of the
          * predictor must be <code>ACTIVE</code>, signifying that training has completed.
          * To get the status, use the <a>DescribePredictor</a> operation.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/CreatePredictor">AWS
          * API Reference</a></p>
          *
@@ -701,10 +701,10 @@ namespace Model
          * <p>Deletes an Amazon Forecast dataset that was created using the
          * <a>CreateDataset</a> operation. You can only delete datasets that have a status
          * of <code>ACTIVE</code> or <code>CREATE_FAILED</code>. To get the status use the
-         * <a>DescribeDataset</a> operation.</p> <note> <p>Forecast does not automatically
+         * <a>DescribeDataset</a> operation.</p>  <p>Forecast does not automatically
          * update any dataset groups that contain the deleted dataset. In order to update
          * the dataset group, use the operation, omitting the deleted dataset's ARN.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DeleteDataset">AWS
          * API Reference</a></p>
          */
@@ -714,10 +714,10 @@ namespace Model
          * <p>Deletes an Amazon Forecast dataset that was created using the
          * <a>CreateDataset</a> operation. You can only delete datasets that have a status
          * of <code>ACTIVE</code> or <code>CREATE_FAILED</code>. To get the status use the
-         * <a>DescribeDataset</a> operation.</p> <note> <p>Forecast does not automatically
+         * <a>DescribeDataset</a> operation.</p>  <p>Forecast does not automatically
          * update any dataset groups that contain the deleted dataset. In order to update
          * the dataset group, use the operation, omitting the deleted dataset's ARN.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DeleteDataset">AWS
          * API Reference</a></p>
          *
@@ -729,10 +729,10 @@ namespace Model
          * <p>Deletes an Amazon Forecast dataset that was created using the
          * <a>CreateDataset</a> operation. You can only delete datasets that have a status
          * of <code>ACTIVE</code> or <code>CREATE_FAILED</code>. To get the status use the
-         * <a>DescribeDataset</a> operation.</p> <note> <p>Forecast does not automatically
+         * <a>DescribeDataset</a> operation.</p>  <p>Forecast does not automatically
          * update any dataset groups that contain the deleted dataset. In order to update
          * the dataset group, use the operation, omitting the deleted dataset's ARN.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DeleteDataset">AWS
          * API Reference</a></p>
          *
@@ -1215,10 +1215,10 @@ namespace Model
          * you want all items to contribute, specify <code>zero</code>. If you want only
          * those items that have complete data in the range being evaluated to contribute,
          * specify <code>nan</code>. For more information, see
-         * <a>FeaturizationMethod</a>.</p> <note> <p>Before you can get accuracy metrics,
+         * <a>FeaturizationMethod</a>.</p>  <p>Before you can get accuracy metrics,
          * the <code>Status</code> of the predictor must be <code>ACTIVE</code>, signifying
          * that training has completed. To get the status, use the <a>DescribePredictor</a>
-         * operation.</p> </note><p><h3>See Also:</h3>   <a
+         * operation.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/GetAccuracyMetrics">AWS
          * API Reference</a></p>
          */
@@ -1238,10 +1238,10 @@ namespace Model
          * you want all items to contribute, specify <code>zero</code>. If you want only
          * those items that have complete data in the range being evaluated to contribute,
          * specify <code>nan</code>. For more information, see
-         * <a>FeaturizationMethod</a>.</p> <note> <p>Before you can get accuracy metrics,
+         * <a>FeaturizationMethod</a>.</p>  <p>Before you can get accuracy metrics,
          * the <code>Status</code> of the predictor must be <code>ACTIVE</code>, signifying
          * that training has completed. To get the status, use the <a>DescribePredictor</a>
-         * operation.</p> </note><p><h3>See Also:</h3>   <a
+         * operation.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/GetAccuracyMetrics">AWS
          * API Reference</a></p>
          *
@@ -1263,10 +1263,10 @@ namespace Model
          * you want all items to contribute, specify <code>zero</code>. If you want only
          * those items that have complete data in the range being evaluated to contribute,
          * specify <code>nan</code>. For more information, see
-         * <a>FeaturizationMethod</a>.</p> <note> <p>Before you can get accuracy metrics,
+         * <a>FeaturizationMethod</a>.</p>  <p>Before you can get accuracy metrics,
          * the <code>Status</code> of the predictor must be <code>ACTIVE</code>, signifying
          * that training has completed. To get the status, use the <a>DescribePredictor</a>
-         * operation.</p> </note><p><h3>See Also:</h3>   <a
+         * operation.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/GetAccuracyMetrics">AWS
          * API Reference</a></p>
          *
@@ -1594,10 +1594,10 @@ namespace Model
 
         /**
          * <p>Replaces the datasets in a dataset group with the specified datasets.</p>
-         * <note> <p>The <code>Status</code> of the dataset group must be
+         *  <p>The <code>Status</code> of the dataset group must be
          * <code>ACTIVE</code> before you can use the dataset group to create a predictor.
          * Use the <a>DescribeDatasetGroup</a> operation to get the status.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/UpdateDatasetGroup">AWS
          * API Reference</a></p>
          */
@@ -1605,10 +1605,10 @@ namespace Model
 
         /**
          * <p>Replaces the datasets in a dataset group with the specified datasets.</p>
-         * <note> <p>The <code>Status</code> of the dataset group must be
+         *  <p>The <code>Status</code> of the dataset group must be
          * <code>ACTIVE</code> before you can use the dataset group to create a predictor.
          * Use the <a>DescribeDatasetGroup</a> operation to get the status.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/UpdateDatasetGroup">AWS
          * API Reference</a></p>
          *
@@ -1618,10 +1618,10 @@ namespace Model
 
         /**
          * <p>Replaces the datasets in a dataset group with the specified datasets.</p>
-         * <note> <p>The <code>Status</code> of the dataset group must be
+         *  <p>The <code>Status</code> of the dataset group must be
          * <code>ACTIVE</code> before you can use the dataset group to create a predictor.
          * Use the <a>DescribeDatasetGroup</a> operation to get the status.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/UpdateDatasetGroup">AWS
          * API Reference</a></p>
          *

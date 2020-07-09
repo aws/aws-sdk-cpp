@@ -133,22 +133,34 @@ namespace Model
     inline GrpcRoute& WithRetryPolicy(GrpcRetryPolicy&& value) { SetRetryPolicy(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p>An object that represents types of timeouts. </p>
+     */
     inline const GrpcTimeout& GetTimeout() const{ return m_timeout; }
 
-    
+    /**
+     * <p>An object that represents types of timeouts. </p>
+     */
     inline bool TimeoutHasBeenSet() const { return m_timeoutHasBeenSet; }
 
-    
+    /**
+     * <p>An object that represents types of timeouts. </p>
+     */
     inline void SetTimeout(const GrpcTimeout& value) { m_timeoutHasBeenSet = true; m_timeout = value; }
 
-    
+    /**
+     * <p>An object that represents types of timeouts. </p>
+     */
     inline void SetTimeout(GrpcTimeout&& value) { m_timeoutHasBeenSet = true; m_timeout = std::move(value); }
 
-    
+    /**
+     * <p>An object that represents types of timeouts. </p>
+     */
     inline GrpcRoute& WithTimeout(const GrpcTimeout& value) { SetTimeout(value); return *this;}
 
-    
+    /**
+     * <p>An object that represents types of timeouts. </p>
+     */
     inline GrpcRoute& WithTimeout(GrpcTimeout&& value) { SetTimeout(std::move(value)); return *this;}
 
   private:

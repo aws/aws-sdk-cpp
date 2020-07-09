@@ -1137,13 +1137,13 @@ namespace Model
         /**
          * <p>Lists the shards in a stream and provides information about each shard. This
          * operation has a limit of 100 transactions per second per data stream.</p>
-         * <important> <p>This API is a new operation that is used by the Amazon Kinesis
+         *  <p>This API is a new operation that is used by the Amazon Kinesis
          * Client Library (KCL). If you have a fine-grained IAM policy that only allows
          * specific operations, you must update your policy to allow calls to this API. For
          * more information, see <a
          * href="https://docs.aws.amazon.com/streams/latest/dev/controlling-access.html">Controlling
          * Access to Amazon Kinesis Data Streams Resources Using IAM</a>.</p>
-         * </important><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/ListShards">AWS
          * API Reference</a></p>
          */
@@ -1152,13 +1152,13 @@ namespace Model
         /**
          * <p>Lists the shards in a stream and provides information about each shard. This
          * operation has a limit of 100 transactions per second per data stream.</p>
-         * <important> <p>This API is a new operation that is used by the Amazon Kinesis
+         *  <p>This API is a new operation that is used by the Amazon Kinesis
          * Client Library (KCL). If you have a fine-grained IAM policy that only allows
          * specific operations, you must update your policy to allow calls to this API. For
          * more information, see <a
          * href="https://docs.aws.amazon.com/streams/latest/dev/controlling-access.html">Controlling
          * Access to Amazon Kinesis Data Streams Resources Using IAM</a>.</p>
-         * </important><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/ListShards">AWS
          * API Reference</a></p>
          *
@@ -1169,13 +1169,13 @@ namespace Model
         /**
          * <p>Lists the shards in a stream and provides information about each shard. This
          * operation has a limit of 100 transactions per second per data stream.</p>
-         * <important> <p>This API is a new operation that is used by the Amazon Kinesis
+         *  <p>This API is a new operation that is used by the Amazon Kinesis
          * Client Library (KCL). If you have a fine-grained IAM policy that only allows
          * specific operations, you must update your policy to allow calls to this API. For
          * more information, see <a
          * href="https://docs.aws.amazon.com/streams/latest/dev/controlling-access.html">Controlling
          * Access to Amazon Kinesis Data Streams Resources Using IAM</a>.</p>
-         * </important><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/ListShards">AWS
          * API Reference</a></p>
          *

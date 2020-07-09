@@ -166,7 +166,7 @@ namespace Model
 
 
     /**
-     * <p>The updated content for the approval rule.</p> <note> <p>When you update the
+     * <p>The updated content for the approval rule.</p>  <p>When you update the
      * content of the approval rule, you can specify approvers in an approval pool in
      * one of two ways:</p> <ul> <li> <p> <b>CodeCommitApprovers</b>: This option only
      * requires an AWS account and a resource. It can be used for both IAM users and
@@ -186,12 +186,12 @@ namespace Model
      * Resource Name (ARN) of the IAM user or role. </p> </li> </ul> <p>For more
      * information about IAM ARNs, wildcards, and formats, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
-     * Identifiers</a> in the <i>IAM User Guide</i>.</p> </note>
+     * Identifiers</a> in the <i>IAM User Guide</i>.</p> 
      */
     inline const Aws::String& GetNewRuleContent() const{ return m_newRuleContent; }
 
     /**
-     * <p>The updated content for the approval rule.</p> <note> <p>When you update the
+     * <p>The updated content for the approval rule.</p>  <p>When you update the
      * content of the approval rule, you can specify approvers in an approval pool in
      * one of two ways:</p> <ul> <li> <p> <b>CodeCommitApprovers</b>: This option only
      * requires an AWS account and a resource. It can be used for both IAM users and
@@ -211,12 +211,12 @@ namespace Model
      * Resource Name (ARN) of the IAM user or role. </p> </li> </ul> <p>For more
      * information about IAM ARNs, wildcards, and formats, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
-     * Identifiers</a> in the <i>IAM User Guide</i>.</p> </note>
+     * Identifiers</a> in the <i>IAM User Guide</i>.</p> 
      */
     inline bool NewRuleContentHasBeenSet() const { return m_newRuleContentHasBeenSet; }
 
     /**
-     * <p>The updated content for the approval rule.</p> <note> <p>When you update the
+     * <p>The updated content for the approval rule.</p>  <p>When you update the
      * content of the approval rule, you can specify approvers in an approval pool in
      * one of two ways:</p> <ul> <li> <p> <b>CodeCommitApprovers</b>: This option only
      * requires an AWS account and a resource. It can be used for both IAM users and
@@ -236,12 +236,12 @@ namespace Model
      * Resource Name (ARN) of the IAM user or role. </p> </li> </ul> <p>For more
      * information about IAM ARNs, wildcards, and formats, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
-     * Identifiers</a> in the <i>IAM User Guide</i>.</p> </note>
+     * Identifiers</a> in the <i>IAM User Guide</i>.</p> 
      */
     inline void SetNewRuleContent(const Aws::String& value) { m_newRuleContentHasBeenSet = true; m_newRuleContent = value; }
 
     /**
-     * <p>The updated content for the approval rule.</p> <note> <p>When you update the
+     * <p>The updated content for the approval rule.</p>  <p>When you update the
      * content of the approval rule, you can specify approvers in an approval pool in
      * one of two ways:</p> <ul> <li> <p> <b>CodeCommitApprovers</b>: This option only
      * requires an AWS account and a resource. It can be used for both IAM users and
@@ -261,12 +261,12 @@ namespace Model
      * Resource Name (ARN) of the IAM user or role. </p> </li> </ul> <p>For more
      * information about IAM ARNs, wildcards, and formats, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
-     * Identifiers</a> in the <i>IAM User Guide</i>.</p> </note>
+     * Identifiers</a> in the <i>IAM User Guide</i>.</p> 
      */
     inline void SetNewRuleContent(Aws::String&& value) { m_newRuleContentHasBeenSet = true; m_newRuleContent = std::move(value); }
 
     /**
-     * <p>The updated content for the approval rule.</p> <note> <p>When you update the
+     * <p>The updated content for the approval rule.</p>  <p>When you update the
      * content of the approval rule, you can specify approvers in an approval pool in
      * one of two ways:</p> <ul> <li> <p> <b>CodeCommitApprovers</b>: This option only
      * requires an AWS account and a resource. It can be used for both IAM users and
@@ -286,12 +286,12 @@ namespace Model
      * Resource Name (ARN) of the IAM user or role. </p> </li> </ul> <p>For more
      * information about IAM ARNs, wildcards, and formats, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
-     * Identifiers</a> in the <i>IAM User Guide</i>.</p> </note>
+     * Identifiers</a> in the <i>IAM User Guide</i>.</p> 
      */
     inline void SetNewRuleContent(const char* value) { m_newRuleContentHasBeenSet = true; m_newRuleContent.assign(value); }
 
     /**
-     * <p>The updated content for the approval rule.</p> <note> <p>When you update the
+     * <p>The updated content for the approval rule.</p>  <p>When you update the
      * content of the approval rule, you can specify approvers in an approval pool in
      * one of two ways:</p> <ul> <li> <p> <b>CodeCommitApprovers</b>: This option only
      * requires an AWS account and a resource. It can be used for both IAM users and
@@ -311,12 +311,12 @@ namespace Model
      * Resource Name (ARN) of the IAM user or role. </p> </li> </ul> <p>For more
      * information about IAM ARNs, wildcards, and formats, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
-     * Identifiers</a> in the <i>IAM User Guide</i>.</p> </note>
+     * Identifiers</a> in the <i>IAM User Guide</i>.</p> 
      */
     inline UpdatePullRequestApprovalRuleContentRequest& WithNewRuleContent(const Aws::String& value) { SetNewRuleContent(value); return *this;}
 
     /**
-     * <p>The updated content for the approval rule.</p> <note> <p>When you update the
+     * <p>The updated content for the approval rule.</p>  <p>When you update the
      * content of the approval rule, you can specify approvers in an approval pool in
      * one of two ways:</p> <ul> <li> <p> <b>CodeCommitApprovers</b>: This option only
      * requires an AWS account and a resource. It can be used for both IAM users and
@@ -336,12 +336,12 @@ namespace Model
      * Resource Name (ARN) of the IAM user or role. </p> </li> </ul> <p>For more
      * information about IAM ARNs, wildcards, and formats, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
-     * Identifiers</a> in the <i>IAM User Guide</i>.</p> </note>
+     * Identifiers</a> in the <i>IAM User Guide</i>.</p> 
      */
     inline UpdatePullRequestApprovalRuleContentRequest& WithNewRuleContent(Aws::String&& value) { SetNewRuleContent(std::move(value)); return *this;}
 
     /**
-     * <p>The updated content for the approval rule.</p> <note> <p>When you update the
+     * <p>The updated content for the approval rule.</p>  <p>When you update the
      * content of the approval rule, you can specify approvers in an approval pool in
      * one of two ways:</p> <ul> <li> <p> <b>CodeCommitApprovers</b>: This option only
      * requires an AWS account and a resource. It can be used for both IAM users and
@@ -361,7 +361,7 @@ namespace Model
      * Resource Name (ARN) of the IAM user or role. </p> </li> </ul> <p>For more
      * information about IAM ARNs, wildcards, and formats, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
-     * Identifiers</a> in the <i>IAM User Guide</i>.</p> </note>
+     * Identifiers</a> in the <i>IAM User Guide</i>.</p> 
      */
     inline UpdatePullRequestApprovalRuleContentRequest& WithNewRuleContent(const char* value) { SetNewRuleContent(value); return *this;}
 

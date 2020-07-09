@@ -301,8 +301,8 @@ namespace Model
      * <p>Downloads the specified range bytes of an object. For more information about
      * the HTTP Range header, see <a
      * href="">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35</a>.</p>
-     * <note> <p>Amazon S3 doesn't support retrieving multiple ranges of data per
-     * <code>GET</code> request.</p> </note>
+     *  <p>Amazon S3 doesn't support retrieving multiple ranges of data per
+     * <code>GET</code> request.</p> 
      */
     inline const Aws::String& GetRange() const{ return m_range; }
 
@@ -310,8 +310,8 @@ namespace Model
      * <p>Downloads the specified range bytes of an object. For more information about
      * the HTTP Range header, see <a
      * href="">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35</a>.</p>
-     * <note> <p>Amazon S3 doesn't support retrieving multiple ranges of data per
-     * <code>GET</code> request.</p> </note>
+     *  <p>Amazon S3 doesn't support retrieving multiple ranges of data per
+     * <code>GET</code> request.</p> 
      */
     inline bool RangeHasBeenSet() const { return m_rangeHasBeenSet; }
 
@@ -319,8 +319,8 @@ namespace Model
      * <p>Downloads the specified range bytes of an object. For more information about
      * the HTTP Range header, see <a
      * href="">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35</a>.</p>
-     * <note> <p>Amazon S3 doesn't support retrieving multiple ranges of data per
-     * <code>GET</code> request.</p> </note>
+     *  <p>Amazon S3 doesn't support retrieving multiple ranges of data per
+     * <code>GET</code> request.</p> 
      */
     inline void SetRange(const Aws::String& value) { m_rangeHasBeenSet = true; m_range = value; }
 
@@ -328,8 +328,8 @@ namespace Model
      * <p>Downloads the specified range bytes of an object. For more information about
      * the HTTP Range header, see <a
      * href="">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35</a>.</p>
-     * <note> <p>Amazon S3 doesn't support retrieving multiple ranges of data per
-     * <code>GET</code> request.</p> </note>
+     *  <p>Amazon S3 doesn't support retrieving multiple ranges of data per
+     * <code>GET</code> request.</p> 
      */
     inline void SetRange(Aws::String&& value) { m_rangeHasBeenSet = true; m_range = std::move(value); }
 
@@ -337,8 +337,8 @@ namespace Model
      * <p>Downloads the specified range bytes of an object. For more information about
      * the HTTP Range header, see <a
      * href="">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35</a>.</p>
-     * <note> <p>Amazon S3 doesn't support retrieving multiple ranges of data per
-     * <code>GET</code> request.</p> </note>
+     *  <p>Amazon S3 doesn't support retrieving multiple ranges of data per
+     * <code>GET</code> request.</p> 
      */
     inline void SetRange(const char* value) { m_rangeHasBeenSet = true; m_range.assign(value); }
 
@@ -346,8 +346,8 @@ namespace Model
      * <p>Downloads the specified range bytes of an object. For more information about
      * the HTTP Range header, see <a
      * href="">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35</a>.</p>
-     * <note> <p>Amazon S3 doesn't support retrieving multiple ranges of data per
-     * <code>GET</code> request.</p> </note>
+     *  <p>Amazon S3 doesn't support retrieving multiple ranges of data per
+     * <code>GET</code> request.</p> 
      */
     inline HeadObjectRequest& WithRange(const Aws::String& value) { SetRange(value); return *this;}
 
@@ -355,8 +355,8 @@ namespace Model
      * <p>Downloads the specified range bytes of an object. For more information about
      * the HTTP Range header, see <a
      * href="">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35</a>.</p>
-     * <note> <p>Amazon S3 doesn't support retrieving multiple ranges of data per
-     * <code>GET</code> request.</p> </note>
+     *  <p>Amazon S3 doesn't support retrieving multiple ranges of data per
+     * <code>GET</code> request.</p> 
      */
     inline HeadObjectRequest& WithRange(Aws::String&& value) { SetRange(std::move(value)); return *this;}
 
@@ -364,8 +364,8 @@ namespace Model
      * <p>Downloads the specified range bytes of an object. For more information about
      * the HTTP Range header, see <a
      * href="">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35</a>.</p>
-     * <note> <p>Amazon S3 doesn't support retrieving multiple ranges of data per
-     * <code>GET</code> request.</p> </note>
+     *  <p>Amazon S3 doesn't support retrieving multiple ranges of data per
+     * <code>GET</code> request.</p> 
      */
     inline HeadObjectRequest& WithRange(const char* value) { SetRange(value); return *this;}
 

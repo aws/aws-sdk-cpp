@@ -115,7 +115,7 @@ namespace Model
 
 
     /**
-     * <p>Specifies whether to force a detachment.</p> <note> <ul> <li> <p>Use the
+     * <p>Specifies whether to force a detachment.</p>  <ul> <li> <p>Use the
      * <code>Force</code> parameter only as a last resort to detach a network interface
      * from a failed instance. </p> </li> <li> <p>If you use the <code>Force</code>
      * parameter to detach a network interface, you might not be able to attach a
@@ -126,12 +126,12 @@ namespace Model
      * metadata</a> might not get updated. This means that the attributes associated
      * with the detached network interface might still be visible. The instance
      * metadata will get updated when you stop and start the instance.</p> </li> </ul>
-     * </note>
+     * 
      */
     inline bool GetForce() const{ return m_force; }
 
     /**
-     * <p>Specifies whether to force a detachment.</p> <note> <ul> <li> <p>Use the
+     * <p>Specifies whether to force a detachment.</p>  <ul> <li> <p>Use the
      * <code>Force</code> parameter only as a last resort to detach a network interface
      * from a failed instance. </p> </li> <li> <p>If you use the <code>Force</code>
      * parameter to detach a network interface, you might not be able to attach a
@@ -142,12 +142,12 @@ namespace Model
      * metadata</a> might not get updated. This means that the attributes associated
      * with the detached network interface might still be visible. The instance
      * metadata will get updated when you stop and start the instance.</p> </li> </ul>
-     * </note>
+     * 
      */
     inline bool ForceHasBeenSet() const { return m_forceHasBeenSet; }
 
     /**
-     * <p>Specifies whether to force a detachment.</p> <note> <ul> <li> <p>Use the
+     * <p>Specifies whether to force a detachment.</p>  <ul> <li> <p>Use the
      * <code>Force</code> parameter only as a last resort to detach a network interface
      * from a failed instance. </p> </li> <li> <p>If you use the <code>Force</code>
      * parameter to detach a network interface, you might not be able to attach a
@@ -158,12 +158,12 @@ namespace Model
      * metadata</a> might not get updated. This means that the attributes associated
      * with the detached network interface might still be visible. The instance
      * metadata will get updated when you stop and start the instance.</p> </li> </ul>
-     * </note>
+     * 
      */
     inline void SetForce(bool value) { m_forceHasBeenSet = true; m_force = value; }
 
     /**
-     * <p>Specifies whether to force a detachment.</p> <note> <ul> <li> <p>Use the
+     * <p>Specifies whether to force a detachment.</p>  <ul> <li> <p>Use the
      * <code>Force</code> parameter only as a last resort to detach a network interface
      * from a failed instance. </p> </li> <li> <p>If you use the <code>Force</code>
      * parameter to detach a network interface, you might not be able to attach a
@@ -174,7 +174,7 @@ namespace Model
      * metadata</a> might not get updated. This means that the attributes associated
      * with the detached network interface might still be visible. The instance
      * metadata will get updated when you stop and start the instance.</p> </li> </ul>
-     * </note>
+     * 
      */
     inline DetachNetworkInterfaceRequest& WithForce(bool value) { SetForce(value); return *this;}
 

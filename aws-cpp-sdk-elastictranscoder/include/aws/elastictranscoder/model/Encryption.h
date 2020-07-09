@@ -58,10 +58,10 @@ namespace Model
      * process.</p> </li> </ul> <p>For all three AES options, you must provide the
      * following settings, which must be base64-encoded:</p> <ul> <li> <p> <b>Key</b>
      * </p> </li> <li> <p> <b>Key MD5</b> </p> </li> <li> <p> <b>Initialization
-     * Vector</b> </p> </li> </ul> <important> <p>For the AES modes, your private
+     * Vector</b> </p> </li> </ul>  <p>For the AES modes, your private
      * encryption keys and your unencrypted data are never stored by AWS; therefore, it
      * is important that you safely manage your encryption keys. If you lose them, you
-     * won't be able to unencrypt your data.</p> </important>
+     * won't be able to unencrypt your data.</p> 
      */
     inline const Aws::String& GetMode() const{ return m_mode; }
 
@@ -82,10 +82,10 @@ namespace Model
      * process.</p> </li> </ul> <p>For all three AES options, you must provide the
      * following settings, which must be base64-encoded:</p> <ul> <li> <p> <b>Key</b>
      * </p> </li> <li> <p> <b>Key MD5</b> </p> </li> <li> <p> <b>Initialization
-     * Vector</b> </p> </li> </ul> <important> <p>For the AES modes, your private
+     * Vector</b> </p> </li> </ul>  <p>For the AES modes, your private
      * encryption keys and your unencrypted data are never stored by AWS; therefore, it
      * is important that you safely manage your encryption keys. If you lose them, you
-     * won't be able to unencrypt your data.</p> </important>
+     * won't be able to unencrypt your data.</p> 
      */
     inline bool ModeHasBeenSet() const { return m_modeHasBeenSet; }
 
@@ -106,10 +106,10 @@ namespace Model
      * process.</p> </li> </ul> <p>For all three AES options, you must provide the
      * following settings, which must be base64-encoded:</p> <ul> <li> <p> <b>Key</b>
      * </p> </li> <li> <p> <b>Key MD5</b> </p> </li> <li> <p> <b>Initialization
-     * Vector</b> </p> </li> </ul> <important> <p>For the AES modes, your private
+     * Vector</b> </p> </li> </ul>  <p>For the AES modes, your private
      * encryption keys and your unencrypted data are never stored by AWS; therefore, it
      * is important that you safely manage your encryption keys. If you lose them, you
-     * won't be able to unencrypt your data.</p> </important>
+     * won't be able to unencrypt your data.</p> 
      */
     inline void SetMode(const Aws::String& value) { m_modeHasBeenSet = true; m_mode = value; }
 
@@ -130,10 +130,10 @@ namespace Model
      * process.</p> </li> </ul> <p>For all three AES options, you must provide the
      * following settings, which must be base64-encoded:</p> <ul> <li> <p> <b>Key</b>
      * </p> </li> <li> <p> <b>Key MD5</b> </p> </li> <li> <p> <b>Initialization
-     * Vector</b> </p> </li> </ul> <important> <p>For the AES modes, your private
+     * Vector</b> </p> </li> </ul>  <p>For the AES modes, your private
      * encryption keys and your unencrypted data are never stored by AWS; therefore, it
      * is important that you safely manage your encryption keys. If you lose them, you
-     * won't be able to unencrypt your data.</p> </important>
+     * won't be able to unencrypt your data.</p> 
      */
     inline void SetMode(Aws::String&& value) { m_modeHasBeenSet = true; m_mode = std::move(value); }
 
@@ -154,10 +154,10 @@ namespace Model
      * process.</p> </li> </ul> <p>For all three AES options, you must provide the
      * following settings, which must be base64-encoded:</p> <ul> <li> <p> <b>Key</b>
      * </p> </li> <li> <p> <b>Key MD5</b> </p> </li> <li> <p> <b>Initialization
-     * Vector</b> </p> </li> </ul> <important> <p>For the AES modes, your private
+     * Vector</b> </p> </li> </ul>  <p>For the AES modes, your private
      * encryption keys and your unencrypted data are never stored by AWS; therefore, it
      * is important that you safely manage your encryption keys. If you lose them, you
-     * won't be able to unencrypt your data.</p> </important>
+     * won't be able to unencrypt your data.</p> 
      */
     inline void SetMode(const char* value) { m_modeHasBeenSet = true; m_mode.assign(value); }
 
@@ -178,10 +178,10 @@ namespace Model
      * process.</p> </li> </ul> <p>For all three AES options, you must provide the
      * following settings, which must be base64-encoded:</p> <ul> <li> <p> <b>Key</b>
      * </p> </li> <li> <p> <b>Key MD5</b> </p> </li> <li> <p> <b>Initialization
-     * Vector</b> </p> </li> </ul> <important> <p>For the AES modes, your private
+     * Vector</b> </p> </li> </ul>  <p>For the AES modes, your private
      * encryption keys and your unencrypted data are never stored by AWS; therefore, it
      * is important that you safely manage your encryption keys. If you lose them, you
-     * won't be able to unencrypt your data.</p> </important>
+     * won't be able to unencrypt your data.</p> 
      */
     inline Encryption& WithMode(const Aws::String& value) { SetMode(value); return *this;}
 
@@ -202,10 +202,10 @@ namespace Model
      * process.</p> </li> </ul> <p>For all three AES options, you must provide the
      * following settings, which must be base64-encoded:</p> <ul> <li> <p> <b>Key</b>
      * </p> </li> <li> <p> <b>Key MD5</b> </p> </li> <li> <p> <b>Initialization
-     * Vector</b> </p> </li> </ul> <important> <p>For the AES modes, your private
+     * Vector</b> </p> </li> </ul>  <p>For the AES modes, your private
      * encryption keys and your unencrypted data are never stored by AWS; therefore, it
      * is important that you safely manage your encryption keys. If you lose them, you
-     * won't be able to unencrypt your data.</p> </important>
+     * won't be able to unencrypt your data.</p> 
      */
     inline Encryption& WithMode(Aws::String&& value) { SetMode(std::move(value)); return *this;}
 
@@ -226,10 +226,10 @@ namespace Model
      * process.</p> </li> </ul> <p>For all three AES options, you must provide the
      * following settings, which must be base64-encoded:</p> <ul> <li> <p> <b>Key</b>
      * </p> </li> <li> <p> <b>Key MD5</b> </p> </li> <li> <p> <b>Initialization
-     * Vector</b> </p> </li> </ul> <important> <p>For the AES modes, your private
+     * Vector</b> </p> </li> </ul>  <p>For the AES modes, your private
      * encryption keys and your unencrypted data are never stored by AWS; therefore, it
      * is important that you safely manage your encryption keys. If you lose them, you
-     * won't be able to unencrypt your data.</p> </important>
+     * won't be able to unencrypt your data.</p> 
      */
     inline Encryption& WithMode(const char* value) { SetMode(value); return *this;}
 

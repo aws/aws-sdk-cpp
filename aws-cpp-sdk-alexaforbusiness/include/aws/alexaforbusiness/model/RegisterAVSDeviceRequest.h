@@ -278,6 +278,47 @@ namespace Model
      */
     inline RegisterAVSDeviceRequest& WithAmazonId(const char* value) { SetAmazonId(value); return *this;}
 
+
+    /**
+     * <p>The ARN of the room with which to associate your AVS device.</p>
+     */
+    inline const Aws::String& GetRoomArn() const{ return m_roomArn; }
+
+    /**
+     * <p>The ARN of the room with which to associate your AVS device.</p>
+     */
+    inline bool RoomArnHasBeenSet() const { return m_roomArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the room with which to associate your AVS device.</p>
+     */
+    inline void SetRoomArn(const Aws::String& value) { m_roomArnHasBeenSet = true; m_roomArn = value; }
+
+    /**
+     * <p>The ARN of the room with which to associate your AVS device.</p>
+     */
+    inline void SetRoomArn(Aws::String&& value) { m_roomArnHasBeenSet = true; m_roomArn = std::move(value); }
+
+    /**
+     * <p>The ARN of the room with which to associate your AVS device.</p>
+     */
+    inline void SetRoomArn(const char* value) { m_roomArnHasBeenSet = true; m_roomArn.assign(value); }
+
+    /**
+     * <p>The ARN of the room with which to associate your AVS device.</p>
+     */
+    inline RegisterAVSDeviceRequest& WithRoomArn(const Aws::String& value) { SetRoomArn(value); return *this;}
+
+    /**
+     * <p>The ARN of the room with which to associate your AVS device.</p>
+     */
+    inline RegisterAVSDeviceRequest& WithRoomArn(Aws::String&& value) { SetRoomArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The ARN of the room with which to associate your AVS device.</p>
+     */
+    inline RegisterAVSDeviceRequest& WithRoomArn(const char* value) { SetRoomArn(value); return *this;}
+
   private:
 
     Aws::String m_clientId;
@@ -294,6 +335,9 @@ namespace Model
 
     Aws::String m_amazonId;
     bool m_amazonIdHasBeenSet;
+
+    Aws::String m_roomArn;
+    bool m_roomArnHasBeenSet;
   };
 
 } // namespace Model

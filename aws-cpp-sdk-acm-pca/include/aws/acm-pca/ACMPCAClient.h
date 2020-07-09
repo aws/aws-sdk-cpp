@@ -157,11 +157,11 @@ namespace Model
    * request parameters and the XML response. Alternatively, you can use one of the
    * AWS SDKs to access an API that's tailored to the programming language or
    * platform that you're using. For more information, see <a
-   * href="https://aws.amazon.com/tools/#SDKs">AWS SDKs</a>.</p> <note> <p>Each ACM
+   * href="https://aws.amazon.com/tools/#SDKs">AWS SDKs</a>.</p>  <p>Each ACM
    * Private CA API action has a throttling limit which determines the number of
    * times the action can be called per second. For more information, see <a
    * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaLimits.html#PcaLimits-api">API
-   * Rate Limits in ACM Private CA</a> in the ACM Private CA user guide.</p> </note>
+   * Rate Limits in ACM Private CA</a> in the ACM Private CA user guide.</p> 
    */
   class AWS_ACMPCA_API ACMPCAClient : public Aws::Client::AWSJsonClient
   {
@@ -333,9 +333,9 @@ namespace Model
         /**
          * <p>Deletes a private certificate authority (CA). You must provide the Amazon
          * Resource Name (ARN) of the private CA that you want to delete. You can find the
-         * ARN by calling the <a>ListCertificateAuthorities</a> action. </p> <note>
+         * ARN by calling the <a>ListCertificateAuthorities</a> action. </p> 
          * <p>Deleting a CA will invalidate other CAs and certificates below it in your CA
-         * hierarchy.</p> </note> <p>Before you can delete a CA that you have created and
+         * hierarchy.</p>  <p>Before you can delete a CA that you have created and
          * activated, you must disable it. To do this, call the
          * <a>UpdateCertificateAuthority</a> action and set the
          * <b>CertificateAuthorityStatus</b> parameter to <code>DISABLED</code>. </p>
@@ -361,9 +361,9 @@ namespace Model
         /**
          * <p>Deletes a private certificate authority (CA). You must provide the Amazon
          * Resource Name (ARN) of the private CA that you want to delete. You can find the
-         * ARN by calling the <a>ListCertificateAuthorities</a> action. </p> <note>
+         * ARN by calling the <a>ListCertificateAuthorities</a> action. </p> 
          * <p>Deleting a CA will invalidate other CAs and certificates below it in your CA
-         * hierarchy.</p> </note> <p>Before you can delete a CA that you have created and
+         * hierarchy.</p>  <p>Before you can delete a CA that you have created and
          * activated, you must disable it. To do this, call the
          * <a>UpdateCertificateAuthority</a> action and set the
          * <b>CertificateAuthorityStatus</b> parameter to <code>DISABLED</code>. </p>
@@ -391,9 +391,9 @@ namespace Model
         /**
          * <p>Deletes a private certificate authority (CA). You must provide the Amazon
          * Resource Name (ARN) of the private CA that you want to delete. You can find the
-         * ARN by calling the <a>ListCertificateAuthorities</a> action. </p> <note>
+         * ARN by calling the <a>ListCertificateAuthorities</a> action. </p> 
          * <p>Deleting a CA will invalidate other CAs and certificates below it in your CA
-         * hierarchy.</p> </note> <p>Before you can delete a CA that you have created and
+         * hierarchy.</p>  <p>Before you can delete a CA that you have created and
          * activated, you must disable it. To do this, call the
          * <a>UpdateCertificateAuthority</a> action and set the
          * <b>CertificateAuthorityStatus</b> parameter to <code>DISABLED</code>. </p>
@@ -771,9 +771,9 @@ namespace Model
          * <p>Uses your private certificate authority (CA) to issue a client certificate.
          * This action returns the Amazon Resource Name (ARN) of the certificate. You can
          * retrieve the certificate by calling the <a>GetCertificate</a> action and
-         * specifying the ARN. </p> <note> <p>You cannot use the ACM
+         * specifying the ARN. </p>  <p>You cannot use the ACM
          * <b>ListCertificateAuthorities</b> action to retrieve the ARNs of the
-         * certificates that you issue by using ACM Private CA.</p> </note><p><h3>See
+         * certificates that you issue by using ACM Private CA.</p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/IssueCertificate">AWS
          * API Reference</a></p>
@@ -784,9 +784,9 @@ namespace Model
          * <p>Uses your private certificate authority (CA) to issue a client certificate.
          * This action returns the Amazon Resource Name (ARN) of the certificate. You can
          * retrieve the certificate by calling the <a>GetCertificate</a> action and
-         * specifying the ARN. </p> <note> <p>You cannot use the ACM
+         * specifying the ARN. </p>  <p>You cannot use the ACM
          * <b>ListCertificateAuthorities</b> action to retrieve the ARNs of the
-         * certificates that you issue by using ACM Private CA.</p> </note><p><h3>See
+         * certificates that you issue by using ACM Private CA.</p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/IssueCertificate">AWS
          * API Reference</a></p>
@@ -799,9 +799,9 @@ namespace Model
          * <p>Uses your private certificate authority (CA) to issue a client certificate.
          * This action returns the Amazon Resource Name (ARN) of the certificate. You can
          * retrieve the certificate by calling the <a>GetCertificate</a> action and
-         * specifying the ARN. </p> <note> <p>You cannot use the ACM
+         * specifying the ARN. </p>  <p>You cannot use the ACM
          * <b>ListCertificateAuthorities</b> action to retrieve the ARNs of the
-         * certificates that you issue by using ACM Private CA.</p> </note><p><h3>See
+         * certificates that you issue by using ACM Private CA.</p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/IssueCertificate">AWS
          * API Reference</a></p>
@@ -983,8 +983,8 @@ namespace Model
          * Private CA writes the CRL to an S3 bucket that you specify. For more information
          * about revocation, see the <a>CrlConfiguration</a> structure. ACM Private CA also
          * writes revocation information to the audit report. For more information, see
-         * <a>CreateCertificateAuthorityAuditReport</a>. </p> <note> <p>You cannot revoke a
-         * root CA self-signed certificate.</p> </note><p><h3>See Also:</h3>   <a
+         * <a>CreateCertificateAuthorityAuditReport</a>. </p>  <p>You cannot revoke a
+         * root CA self-signed certificate.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/RevokeCertificate">AWS
          * API Reference</a></p>
          */
@@ -997,8 +997,8 @@ namespace Model
          * Private CA writes the CRL to an S3 bucket that you specify. For more information
          * about revocation, see the <a>CrlConfiguration</a> structure. ACM Private CA also
          * writes revocation information to the audit report. For more information, see
-         * <a>CreateCertificateAuthorityAuditReport</a>. </p> <note> <p>You cannot revoke a
-         * root CA self-signed certificate.</p> </note><p><h3>See Also:</h3>   <a
+         * <a>CreateCertificateAuthorityAuditReport</a>. </p>  <p>You cannot revoke a
+         * root CA self-signed certificate.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/RevokeCertificate">AWS
          * API Reference</a></p>
          *
@@ -1013,8 +1013,8 @@ namespace Model
          * Private CA writes the CRL to an S3 bucket that you specify. For more information
          * about revocation, see the <a>CrlConfiguration</a> structure. ACM Private CA also
          * writes revocation information to the audit report. For more information, see
-         * <a>CreateCertificateAuthorityAuditReport</a>. </p> <note> <p>You cannot revoke a
-         * root CA self-signed certificate.</p> </note><p><h3>See Also:</h3>   <a
+         * <a>CreateCertificateAuthorityAuditReport</a>. </p>  <p>You cannot revoke a
+         * root CA self-signed certificate.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/RevokeCertificate">AWS
          * API Reference</a></p>
          *

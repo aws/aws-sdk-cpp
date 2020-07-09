@@ -367,12 +367,12 @@ namespace Model
 
     /**
      * <p>A flag to indicate whether to bypass the key policy lockout safety check.</p>
-     * <important> <p>Setting this value to true increases the risk that the CMK
+     *  <p>Setting this value to true increases the risk that the CMK
      * becomes unmanageable. Do not set this value to true indiscriminately.</p> <p>For
      * more information, refer to the scenario in the <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam">Default
      * Key Policy</a> section in the <i>AWS Key Management Service Developer
-     * Guide</i>.</p> </important> <p>Use this parameter only when you intend to
+     * Guide</i>.</p>  <p>Use this parameter only when you intend to
      * prevent the principal that is making the request from making a subsequent
      * <code>PutKeyPolicy</code> request on the CMK.</p> <p>The default value is
      * false.</p>
@@ -381,12 +381,12 @@ namespace Model
 
     /**
      * <p>A flag to indicate whether to bypass the key policy lockout safety check.</p>
-     * <important> <p>Setting this value to true increases the risk that the CMK
+     *  <p>Setting this value to true increases the risk that the CMK
      * becomes unmanageable. Do not set this value to true indiscriminately.</p> <p>For
      * more information, refer to the scenario in the <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam">Default
      * Key Policy</a> section in the <i>AWS Key Management Service Developer
-     * Guide</i>.</p> </important> <p>Use this parameter only when you intend to
+     * Guide</i>.</p>  <p>Use this parameter only when you intend to
      * prevent the principal that is making the request from making a subsequent
      * <code>PutKeyPolicy</code> request on the CMK.</p> <p>The default value is
      * false.</p>
@@ -395,12 +395,12 @@ namespace Model
 
     /**
      * <p>A flag to indicate whether to bypass the key policy lockout safety check.</p>
-     * <important> <p>Setting this value to true increases the risk that the CMK
+     *  <p>Setting this value to true increases the risk that the CMK
      * becomes unmanageable. Do not set this value to true indiscriminately.</p> <p>For
      * more information, refer to the scenario in the <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam">Default
      * Key Policy</a> section in the <i>AWS Key Management Service Developer
-     * Guide</i>.</p> </important> <p>Use this parameter only when you intend to
+     * Guide</i>.</p>  <p>Use this parameter only when you intend to
      * prevent the principal that is making the request from making a subsequent
      * <code>PutKeyPolicy</code> request on the CMK.</p> <p>The default value is
      * false.</p>
@@ -409,12 +409,12 @@ namespace Model
 
     /**
      * <p>A flag to indicate whether to bypass the key policy lockout safety check.</p>
-     * <important> <p>Setting this value to true increases the risk that the CMK
+     *  <p>Setting this value to true increases the risk that the CMK
      * becomes unmanageable. Do not set this value to true indiscriminately.</p> <p>For
      * more information, refer to the scenario in the <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam">Default
      * Key Policy</a> section in the <i>AWS Key Management Service Developer
-     * Guide</i>.</p> </important> <p>Use this parameter only when you intend to
+     * Guide</i>.</p>  <p>Use this parameter only when you intend to
      * prevent the principal that is making the request from making a subsequent
      * <code>PutKeyPolicy</code> request on the CMK.</p> <p>The default value is
      * false.</p>

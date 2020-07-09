@@ -467,7 +467,7 @@ namespace Model
          * alias (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). To
          * define an asset property's alias, see <a
          * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetProperty.html">UpdateAssetProperty</a>.</p>
-         * </li> </ul> <important> <p>With respect to Unix epoch time, AWS IoT SiteWise
+         * </li> </ul>  <p>With respect to Unix epoch time, AWS IoT SiteWise
          * accepts only TQVs that have a timestamp of no more than 15 minutes in the past
          * and no more than 5 minutes in the future. AWS IoT SiteWise rejects timestamps
          * outside of the inclusive range of [-15, +5] minutes and returns a
@@ -475,7 +475,7 @@ namespace Model
          * AWS IoT SiteWise overwrites TQVs with duplicate timestamps unless the newer TQV
          * has a different quality. For example, if you store a TQV <code>{T1, GOOD,
          * V1}</code>, then storing <code>{T1, GOOD, V2}</code> replaces the existing
-         * TQV.</p> </important><p><h3>See Also:</h3>   <a
+         * TQV.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/BatchPutAssetPropertyValue">AWS
          * API Reference</a></p>
          */
@@ -492,7 +492,7 @@ namespace Model
          * alias (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). To
          * define an asset property's alias, see <a
          * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetProperty.html">UpdateAssetProperty</a>.</p>
-         * </li> </ul> <important> <p>With respect to Unix epoch time, AWS IoT SiteWise
+         * </li> </ul>  <p>With respect to Unix epoch time, AWS IoT SiteWise
          * accepts only TQVs that have a timestamp of no more than 15 minutes in the past
          * and no more than 5 minutes in the future. AWS IoT SiteWise rejects timestamps
          * outside of the inclusive range of [-15, +5] minutes and returns a
@@ -500,7 +500,7 @@ namespace Model
          * AWS IoT SiteWise overwrites TQVs with duplicate timestamps unless the newer TQV
          * has a different quality. For example, if you store a TQV <code>{T1, GOOD,
          * V1}</code>, then storing <code>{T1, GOOD, V2}</code> replaces the existing
-         * TQV.</p> </important><p><h3>See Also:</h3>   <a
+         * TQV.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/BatchPutAssetPropertyValue">AWS
          * API Reference</a></p>
          *
@@ -519,7 +519,7 @@ namespace Model
          * alias (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). To
          * define an asset property's alias, see <a
          * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetProperty.html">UpdateAssetProperty</a>.</p>
-         * </li> </ul> <important> <p>With respect to Unix epoch time, AWS IoT SiteWise
+         * </li> </ul>  <p>With respect to Unix epoch time, AWS IoT SiteWise
          * accepts only TQVs that have a timestamp of no more than 15 minutes in the past
          * and no more than 5 minutes in the future. AWS IoT SiteWise rejects timestamps
          * outside of the inclusive range of [-15, +5] minutes and returns a
@@ -527,7 +527,7 @@ namespace Model
          * AWS IoT SiteWise overwrites TQVs with duplicate timestamps unless the newer TQV
          * has a different quality. For example, if you store a TQV <code>{T1, GOOD,
          * V1}</code>, then storing <code>{T1, GOOD, V2}</code> replaces the existing
-         * TQV.</p> </important><p><h3>See Also:</h3>   <a
+         * TQV.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/BatchPutAssetPropertyValue">AWS
          * API Reference</a></p>
          *
@@ -720,12 +720,12 @@ namespace Model
          * AWS IoT SiteWise Monitor uses AWS SSO to manage user permissions. For more
          * information, see <a
          * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-get-started.html#mon-gs-sso">Enabling
-         * AWS SSO</a> in the <i>AWS IoT SiteWise User Guide</i>.</p> <note> <p>Before you
+         * AWS SSO</a> in the <i>AWS IoT SiteWise User Guide</i>.</p>  <p>Before you
          * can sign in to a new portal, you must add at least one AWS SSO user or group to
          * that portal. For more information, see <a
          * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/administer-portals.html#portal-change-admins">Adding
          * or Removing Portal Administrators</a> in the <i>AWS IoT SiteWise User
-         * Guide</i>.</p> </note><p><h3>See Also:</h3>   <a
+         * Guide</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/CreatePortal">AWS
          * API Reference</a></p>
          */
@@ -737,12 +737,12 @@ namespace Model
          * AWS IoT SiteWise Monitor uses AWS SSO to manage user permissions. For more
          * information, see <a
          * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-get-started.html#mon-gs-sso">Enabling
-         * AWS SSO</a> in the <i>AWS IoT SiteWise User Guide</i>.</p> <note> <p>Before you
+         * AWS SSO</a> in the <i>AWS IoT SiteWise User Guide</i>.</p>  <p>Before you
          * can sign in to a new portal, you must add at least one AWS SSO user or group to
          * that portal. For more information, see <a
          * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/administer-portals.html#portal-change-admins">Adding
          * or Removing Portal Administrators</a> in the <i>AWS IoT SiteWise User
-         * Guide</i>.</p> </note><p><h3>See Also:</h3>   <a
+         * Guide</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/CreatePortal">AWS
          * API Reference</a></p>
          *
@@ -756,12 +756,12 @@ namespace Model
          * AWS IoT SiteWise Monitor uses AWS SSO to manage user permissions. For more
          * information, see <a
          * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-get-started.html#mon-gs-sso">Enabling
-         * AWS SSO</a> in the <i>AWS IoT SiteWise User Guide</i>.</p> <note> <p>Before you
+         * AWS SSO</a> in the <i>AWS IoT SiteWise User Guide</i>.</p>  <p>Before you
          * can sign in to a new portal, you must add at least one AWS SSO user or group to
          * that portal. For more information, see <a
          * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/administer-portals.html#portal-change-admins">Adding
          * or Removing Portal Administrators</a> in the <i>AWS IoT SiteWise User
-         * Guide</i>.</p> </note><p><h3>See Also:</h3>   <a
+         * Guide</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/CreatePortal">AWS
          * API Reference</a></p>
          *
@@ -831,11 +831,11 @@ namespace Model
         /**
          * <p>Deletes an asset. This action can't be undone. For more information, see <a
          * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/delete-assets-and-models.html">Deleting
-         * Assets and Models</a> in the <i>AWS IoT SiteWise User Guide</i>. </p> <note>
+         * Assets and Models</a> in the <i>AWS IoT SiteWise User Guide</i>. </p> 
          * <p>You can't delete an asset that's associated to another asset. For more
          * information, see <a
          * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DisassociateAssets.html">DisassociateAssets</a>.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DeleteAsset">AWS
          * API Reference</a></p>
          */
@@ -844,11 +844,11 @@ namespace Model
         /**
          * <p>Deletes an asset. This action can't be undone. For more information, see <a
          * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/delete-assets-and-models.html">Deleting
-         * Assets and Models</a> in the <i>AWS IoT SiteWise User Guide</i>. </p> <note>
+         * Assets and Models</a> in the <i>AWS IoT SiteWise User Guide</i>. </p> 
          * <p>You can't delete an asset that's associated to another asset. For more
          * information, see <a
          * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DisassociateAssets.html">DisassociateAssets</a>.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DeleteAsset">AWS
          * API Reference</a></p>
          *
@@ -859,11 +859,11 @@ namespace Model
         /**
          * <p>Deletes an asset. This action can't be undone. For more information, see <a
          * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/delete-assets-and-models.html">Deleting
-         * Assets and Models</a> in the <i>AWS IoT SiteWise User Guide</i>. </p> <note>
+         * Assets and Models</a> in the <i>AWS IoT SiteWise User Guide</i>. </p> 
          * <p>You can't delete an asset that's associated to another asset. For more
          * information, see <a
          * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DisassociateAssets.html">DisassociateAssets</a>.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DeleteAsset">AWS
          * API Reference</a></p>
          *
@@ -1954,7 +1954,7 @@ namespace Model
          * model. Each asset created from the model inherits the updated asset model's
          * property and hierarchy definitions. For more information, see <a
          * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/update-assets-and-models.html">Updating
-         * Assets and Models</a> in the <i>AWS IoT SiteWise User Guide</i>.</p> <important>
+         * Assets and Models</a> in the <i>AWS IoT SiteWise User Guide</i>.</p> 
          * <p>This operation overwrites the existing model with the provided model. To
          * avoid deleting your asset model's properties or hierarchies, you must include
          * their IDs and definitions in the updated asset model payload. For more
@@ -1964,7 +1964,7 @@ namespace Model
          * expression, AWS IoT SiteWise deletes all previous data for that property. If you
          * remove a hierarchy definition from an asset model, AWS IoT SiteWise
          * disassociates every asset associated with that hierarchy. You can't change the
-         * type or data type of an existing property.</p> </important><p><h3>See Also:</h3>
+         * type or data type of an existing property.</p> <p><h3>See Also:</h3>
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/UpdateAssetModel">AWS
          * API Reference</a></p>
@@ -1976,7 +1976,7 @@ namespace Model
          * model. Each asset created from the model inherits the updated asset model's
          * property and hierarchy definitions. For more information, see <a
          * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/update-assets-and-models.html">Updating
-         * Assets and Models</a> in the <i>AWS IoT SiteWise User Guide</i>.</p> <important>
+         * Assets and Models</a> in the <i>AWS IoT SiteWise User Guide</i>.</p> 
          * <p>This operation overwrites the existing model with the provided model. To
          * avoid deleting your asset model's properties or hierarchies, you must include
          * their IDs and definitions in the updated asset model payload. For more
@@ -1986,7 +1986,7 @@ namespace Model
          * expression, AWS IoT SiteWise deletes all previous data for that property. If you
          * remove a hierarchy definition from an asset model, AWS IoT SiteWise
          * disassociates every asset associated with that hierarchy. You can't change the
-         * type or data type of an existing property.</p> </important><p><h3>See Also:</h3>
+         * type or data type of an existing property.</p> <p><h3>See Also:</h3>
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/UpdateAssetModel">AWS
          * API Reference</a></p>
@@ -2000,7 +2000,7 @@ namespace Model
          * model. Each asset created from the model inherits the updated asset model's
          * property and hierarchy definitions. For more information, see <a
          * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/update-assets-and-models.html">Updating
-         * Assets and Models</a> in the <i>AWS IoT SiteWise User Guide</i>.</p> <important>
+         * Assets and Models</a> in the <i>AWS IoT SiteWise User Guide</i>.</p> 
          * <p>This operation overwrites the existing model with the provided model. To
          * avoid deleting your asset model's properties or hierarchies, you must include
          * their IDs and definitions in the updated asset model payload. For more
@@ -2010,7 +2010,7 @@ namespace Model
          * expression, AWS IoT SiteWise deletes all previous data for that property. If you
          * remove a hierarchy definition from an asset model, AWS IoT SiteWise
          * disassociates every asset associated with that hierarchy. You can't change the
-         * type or data type of an existing property.</p> </important><p><h3>See Also:</h3>
+         * type or data type of an existing property.</p> <p><h3>See Also:</h3>
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/UpdateAssetModel">AWS
          * API Reference</a></p>
@@ -2020,26 +2020,26 @@ namespace Model
         virtual void UpdateAssetModelAsync(const Model::UpdateAssetModelRequest& request, const UpdateAssetModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates an asset property's alias and notification state.</p> <important>
+         * <p>Updates an asset property's alias and notification state.</p> 
          * <p>This operation overwrites the property's existing alias and notification
          * state. To keep your existing property's alias or notification state, you must
          * include the existing values in the UpdateAssetProperty request. For more
          * information, see <a
          * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeAssetProperty.html">DescribeAssetProperty</a>.</p>
-         * </important><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/UpdateAssetProperty">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateAssetPropertyOutcome UpdateAssetProperty(const Model::UpdateAssetPropertyRequest& request) const;
 
         /**
-         * <p>Updates an asset property's alias and notification state.</p> <important>
+         * <p>Updates an asset property's alias and notification state.</p> 
          * <p>This operation overwrites the property's existing alias and notification
          * state. To keep your existing property's alias or notification state, you must
          * include the existing values in the UpdateAssetProperty request. For more
          * information, see <a
          * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeAssetProperty.html">DescribeAssetProperty</a>.</p>
-         * </important><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/UpdateAssetProperty">AWS
          * API Reference</a></p>
          *
@@ -2048,13 +2048,13 @@ namespace Model
         virtual Model::UpdateAssetPropertyOutcomeCallable UpdateAssetPropertyCallable(const Model::UpdateAssetPropertyRequest& request) const;
 
         /**
-         * <p>Updates an asset property's alias and notification state.</p> <important>
+         * <p>Updates an asset property's alias and notification state.</p> 
          * <p>This operation overwrites the property's existing alias and notification
          * state. To keep your existing property's alias or notification state, you must
          * include the existing values in the UpdateAssetProperty request. For more
          * information, see <a
          * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeAssetProperty.html">DescribeAssetProperty</a>.</p>
-         * </important><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/UpdateAssetProperty">AWS
          * API Reference</a></p>
          *

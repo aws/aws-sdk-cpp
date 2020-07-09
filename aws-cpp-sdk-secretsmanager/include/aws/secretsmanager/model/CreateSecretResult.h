@@ -34,78 +34,78 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the secret that you just created.</p>
-     * <note> <p>Secrets Manager automatically adds several random characters to the
+     *  <p>Secrets Manager automatically adds several random characters to the
      * name at the end of the ARN when you initially create a secret. This affects only
      * the ARN and not the actual friendly name. This ensures that if you create a new
      * secret with the same name as an old secret that you previously deleted, then
      * users with access to the old secret <i>don't</i> automatically get access to the
-     * new secret because the ARNs are different.</p> </note>
+     * new secret because the ARNs are different.</p> 
      */
     inline const Aws::String& GetARN() const{ return m_aRN; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the secret that you just created.</p>
-     * <note> <p>Secrets Manager automatically adds several random characters to the
+     *  <p>Secrets Manager automatically adds several random characters to the
      * name at the end of the ARN when you initially create a secret. This affects only
      * the ARN and not the actual friendly name. This ensures that if you create a new
      * secret with the same name as an old secret that you previously deleted, then
      * users with access to the old secret <i>don't</i> automatically get access to the
-     * new secret because the ARNs are different.</p> </note>
+     * new secret because the ARNs are different.</p> 
      */
     inline void SetARN(const Aws::String& value) { m_aRN = value; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the secret that you just created.</p>
-     * <note> <p>Secrets Manager automatically adds several random characters to the
+     *  <p>Secrets Manager automatically adds several random characters to the
      * name at the end of the ARN when you initially create a secret. This affects only
      * the ARN and not the actual friendly name. This ensures that if you create a new
      * secret with the same name as an old secret that you previously deleted, then
      * users with access to the old secret <i>don't</i> automatically get access to the
-     * new secret because the ARNs are different.</p> </note>
+     * new secret because the ARNs are different.</p> 
      */
     inline void SetARN(Aws::String&& value) { m_aRN = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the secret that you just created.</p>
-     * <note> <p>Secrets Manager automatically adds several random characters to the
+     *  <p>Secrets Manager automatically adds several random characters to the
      * name at the end of the ARN when you initially create a secret. This affects only
      * the ARN and not the actual friendly name. This ensures that if you create a new
      * secret with the same name as an old secret that you previously deleted, then
      * users with access to the old secret <i>don't</i> automatically get access to the
-     * new secret because the ARNs are different.</p> </note>
+     * new secret because the ARNs are different.</p> 
      */
     inline void SetARN(const char* value) { m_aRN.assign(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the secret that you just created.</p>
-     * <note> <p>Secrets Manager automatically adds several random characters to the
+     *  <p>Secrets Manager automatically adds several random characters to the
      * name at the end of the ARN when you initially create a secret. This affects only
      * the ARN and not the actual friendly name. This ensures that if you create a new
      * secret with the same name as an old secret that you previously deleted, then
      * users with access to the old secret <i>don't</i> automatically get access to the
-     * new secret because the ARNs are different.</p> </note>
+     * new secret because the ARNs are different.</p> 
      */
     inline CreateSecretResult& WithARN(const Aws::String& value) { SetARN(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the secret that you just created.</p>
-     * <note> <p>Secrets Manager automatically adds several random characters to the
+     *  <p>Secrets Manager automatically adds several random characters to the
      * name at the end of the ARN when you initially create a secret. This affects only
      * the ARN and not the actual friendly name. This ensures that if you create a new
      * secret with the same name as an old secret that you previously deleted, then
      * users with access to the old secret <i>don't</i> automatically get access to the
-     * new secret because the ARNs are different.</p> </note>
+     * new secret because the ARNs are different.</p> 
      */
     inline CreateSecretResult& WithARN(Aws::String&& value) { SetARN(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the secret that you just created.</p>
-     * <note> <p>Secrets Manager automatically adds several random characters to the
+     *  <p>Secrets Manager automatically adds several random characters to the
      * name at the end of the ARN when you initially create a secret. This affects only
      * the ARN and not the actual friendly name. This ensures that if you create a new
      * secret with the same name as an old secret that you previously deleted, then
      * users with access to the old secret <i>don't</i> automatically get access to the
-     * new secret because the ARNs are different.</p> </note>
+     * new secret because the ARNs are different.</p> 
      */
     inline CreateSecretResult& WithARN(const char* value) { SetARN(value); return *this;}
 
@@ -147,44 +147,44 @@ namespace Model
 
 
     /**
-     * <p>The unique identifier that's associated with the version of the secret you
-     * just created.</p>
+     * <p>The unique identifier associated with the version of the secret you just
+     * created.</p>
      */
     inline const Aws::String& GetVersionId() const{ return m_versionId; }
 
     /**
-     * <p>The unique identifier that's associated with the version of the secret you
-     * just created.</p>
+     * <p>The unique identifier associated with the version of the secret you just
+     * created.</p>
      */
     inline void SetVersionId(const Aws::String& value) { m_versionId = value; }
 
     /**
-     * <p>The unique identifier that's associated with the version of the secret you
-     * just created.</p>
+     * <p>The unique identifier associated with the version of the secret you just
+     * created.</p>
      */
     inline void SetVersionId(Aws::String&& value) { m_versionId = std::move(value); }
 
     /**
-     * <p>The unique identifier that's associated with the version of the secret you
-     * just created.</p>
+     * <p>The unique identifier associated with the version of the secret you just
+     * created.</p>
      */
     inline void SetVersionId(const char* value) { m_versionId.assign(value); }
 
     /**
-     * <p>The unique identifier that's associated with the version of the secret you
-     * just created.</p>
+     * <p>The unique identifier associated with the version of the secret you just
+     * created.</p>
      */
     inline CreateSecretResult& WithVersionId(const Aws::String& value) { SetVersionId(value); return *this;}
 
     /**
-     * <p>The unique identifier that's associated with the version of the secret you
-     * just created.</p>
+     * <p>The unique identifier associated with the version of the secret you just
+     * created.</p>
      */
     inline CreateSecretResult& WithVersionId(Aws::String&& value) { SetVersionId(std::move(value)); return *this;}
 
     /**
-     * <p>The unique identifier that's associated with the version of the secret you
-     * just created.</p>
+     * <p>The unique identifier associated with the version of the secret you just
+     * created.</p>
      */
     inline CreateSecretResult& WithVersionId(const char* value) { SetVersionId(value); return *this;}
 

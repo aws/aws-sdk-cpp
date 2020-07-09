@@ -50,8 +50,8 @@ namespace Model
      * <code>PULL_REQUEST_MERGED</code>. The <code>EVENT</code> patterns are specified
      * as a comma-separated string. For example, <code>PUSH, PULL_REQUEST_CREATED,
      * PULL_REQUEST_UPDATED</code> filters all push, pull request created, and pull
-     * request updated events. </p> <note> <p> The <code>PULL_REQUEST_REOPENED</code>
-     * works with GitHub and GitHub Enterprise only. </p> </note> </dd> <dt>
+     * request updated events. </p>  <p> The <code>PULL_REQUEST_REOPENED</code>
+     * works with GitHub and GitHub Enterprise only. </p>  </dd> <dt>
      * ACTOR_ACCOUNT_ID </dt> <dd> <p> A webhook event triggers a build when a GitHub,
      * GitHub Enterprise, or Bitbucket account ID matches the regular expression
      * <code>pattern</code>. </p> </dd> <dt> HEAD_REF </dt> <dd> <p> A webhook event
@@ -62,16 +62,16 @@ namespace Model
      * Bitbucket pull request events. </p> </dd> <dt> BASE_REF </dt> <dd> <p> A webhook
      * event triggers a build when the base reference matches the regular expression
      * <code>pattern</code>. For example, <code>refs/heads/branch-name</code>. </p>
-     * <note> <p> Works with pull request events only. </p> </note> </dd> <dt>
+     *  <p> Works with pull request events only. </p>  </dd> <dt>
      * FILE_PATH </dt> <dd> <p> A webhook triggers a build when the path of a changed
-     * file matches the regular expression <code>pattern</code>. </p> <note> <p> Works
+     * file matches the regular expression <code>pattern</code>. </p>  <p> Works
      * with GitHub and Bitbucket events push and pull requests events. Also works with
      * GitHub Enterprise push events, but does not work with GitHub Enterprise pull
-     * request events. </p> </note> </dd> <dt>COMMIT_MESSAGE</dt> <dd> <p>A webhook
+     * request events. </p>  </dd> <dt>COMMIT_MESSAGE</dt> <dd> <p>A webhook
      * triggers a build when the head commit message matches the regular expression
-     * <code>pattern</code>.</p> <note> <p> Works with GitHub and Bitbucket events push
+     * <code>pattern</code>.</p>  <p> Works with GitHub and Bitbucket events push
      * and pull requests events. Also works with GitHub Enterprise push events, but
-     * does not work with GitHub Enterprise pull request events. </p> </note> </dd>
+     * does not work with GitHub Enterprise pull request events. </p>  </dd>
      * </dl>
      */
     inline const WebhookFilterType& GetType() const{ return m_type; }
@@ -87,8 +87,8 @@ namespace Model
      * <code>PULL_REQUEST_MERGED</code>. The <code>EVENT</code> patterns are specified
      * as a comma-separated string. For example, <code>PUSH, PULL_REQUEST_CREATED,
      * PULL_REQUEST_UPDATED</code> filters all push, pull request created, and pull
-     * request updated events. </p> <note> <p> The <code>PULL_REQUEST_REOPENED</code>
-     * works with GitHub and GitHub Enterprise only. </p> </note> </dd> <dt>
+     * request updated events. </p>  <p> The <code>PULL_REQUEST_REOPENED</code>
+     * works with GitHub and GitHub Enterprise only. </p>  </dd> <dt>
      * ACTOR_ACCOUNT_ID </dt> <dd> <p> A webhook event triggers a build when a GitHub,
      * GitHub Enterprise, or Bitbucket account ID matches the regular expression
      * <code>pattern</code>. </p> </dd> <dt> HEAD_REF </dt> <dd> <p> A webhook event
@@ -99,16 +99,16 @@ namespace Model
      * Bitbucket pull request events. </p> </dd> <dt> BASE_REF </dt> <dd> <p> A webhook
      * event triggers a build when the base reference matches the regular expression
      * <code>pattern</code>. For example, <code>refs/heads/branch-name</code>. </p>
-     * <note> <p> Works with pull request events only. </p> </note> </dd> <dt>
+     *  <p> Works with pull request events only. </p>  </dd> <dt>
      * FILE_PATH </dt> <dd> <p> A webhook triggers a build when the path of a changed
-     * file matches the regular expression <code>pattern</code>. </p> <note> <p> Works
+     * file matches the regular expression <code>pattern</code>. </p>  <p> Works
      * with GitHub and Bitbucket events push and pull requests events. Also works with
      * GitHub Enterprise push events, but does not work with GitHub Enterprise pull
-     * request events. </p> </note> </dd> <dt>COMMIT_MESSAGE</dt> <dd> <p>A webhook
+     * request events. </p>  </dd> <dt>COMMIT_MESSAGE</dt> <dd> <p>A webhook
      * triggers a build when the head commit message matches the regular expression
-     * <code>pattern</code>.</p> <note> <p> Works with GitHub and Bitbucket events push
+     * <code>pattern</code>.</p>  <p> Works with GitHub and Bitbucket events push
      * and pull requests events. Also works with GitHub Enterprise push events, but
-     * does not work with GitHub Enterprise pull request events. </p> </note> </dd>
+     * does not work with GitHub Enterprise pull request events. </p>  </dd>
      * </dl>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
@@ -124,8 +124,8 @@ namespace Model
      * <code>PULL_REQUEST_MERGED</code>. The <code>EVENT</code> patterns are specified
      * as a comma-separated string. For example, <code>PUSH, PULL_REQUEST_CREATED,
      * PULL_REQUEST_UPDATED</code> filters all push, pull request created, and pull
-     * request updated events. </p> <note> <p> The <code>PULL_REQUEST_REOPENED</code>
-     * works with GitHub and GitHub Enterprise only. </p> </note> </dd> <dt>
+     * request updated events. </p>  <p> The <code>PULL_REQUEST_REOPENED</code>
+     * works with GitHub and GitHub Enterprise only. </p>  </dd> <dt>
      * ACTOR_ACCOUNT_ID </dt> <dd> <p> A webhook event triggers a build when a GitHub,
      * GitHub Enterprise, or Bitbucket account ID matches the regular expression
      * <code>pattern</code>. </p> </dd> <dt> HEAD_REF </dt> <dd> <p> A webhook event
@@ -136,16 +136,16 @@ namespace Model
      * Bitbucket pull request events. </p> </dd> <dt> BASE_REF </dt> <dd> <p> A webhook
      * event triggers a build when the base reference matches the regular expression
      * <code>pattern</code>. For example, <code>refs/heads/branch-name</code>. </p>
-     * <note> <p> Works with pull request events only. </p> </note> </dd> <dt>
+     *  <p> Works with pull request events only. </p>  </dd> <dt>
      * FILE_PATH </dt> <dd> <p> A webhook triggers a build when the path of a changed
-     * file matches the regular expression <code>pattern</code>. </p> <note> <p> Works
+     * file matches the regular expression <code>pattern</code>. </p>  <p> Works
      * with GitHub and Bitbucket events push and pull requests events. Also works with
      * GitHub Enterprise push events, but does not work with GitHub Enterprise pull
-     * request events. </p> </note> </dd> <dt>COMMIT_MESSAGE</dt> <dd> <p>A webhook
+     * request events. </p>  </dd> <dt>COMMIT_MESSAGE</dt> <dd> <p>A webhook
      * triggers a build when the head commit message matches the regular expression
-     * <code>pattern</code>.</p> <note> <p> Works with GitHub and Bitbucket events push
+     * <code>pattern</code>.</p>  <p> Works with GitHub and Bitbucket events push
      * and pull requests events. Also works with GitHub Enterprise push events, but
-     * does not work with GitHub Enterprise pull request events. </p> </note> </dd>
+     * does not work with GitHub Enterprise pull request events. </p>  </dd>
      * </dl>
      */
     inline void SetType(const WebhookFilterType& value) { m_typeHasBeenSet = true; m_type = value; }
@@ -161,8 +161,8 @@ namespace Model
      * <code>PULL_REQUEST_MERGED</code>. The <code>EVENT</code> patterns are specified
      * as a comma-separated string. For example, <code>PUSH, PULL_REQUEST_CREATED,
      * PULL_REQUEST_UPDATED</code> filters all push, pull request created, and pull
-     * request updated events. </p> <note> <p> The <code>PULL_REQUEST_REOPENED</code>
-     * works with GitHub and GitHub Enterprise only. </p> </note> </dd> <dt>
+     * request updated events. </p>  <p> The <code>PULL_REQUEST_REOPENED</code>
+     * works with GitHub and GitHub Enterprise only. </p>  </dd> <dt>
      * ACTOR_ACCOUNT_ID </dt> <dd> <p> A webhook event triggers a build when a GitHub,
      * GitHub Enterprise, or Bitbucket account ID matches the regular expression
      * <code>pattern</code>. </p> </dd> <dt> HEAD_REF </dt> <dd> <p> A webhook event
@@ -173,16 +173,16 @@ namespace Model
      * Bitbucket pull request events. </p> </dd> <dt> BASE_REF </dt> <dd> <p> A webhook
      * event triggers a build when the base reference matches the regular expression
      * <code>pattern</code>. For example, <code>refs/heads/branch-name</code>. </p>
-     * <note> <p> Works with pull request events only. </p> </note> </dd> <dt>
+     *  <p> Works with pull request events only. </p>  </dd> <dt>
      * FILE_PATH </dt> <dd> <p> A webhook triggers a build when the path of a changed
-     * file matches the regular expression <code>pattern</code>. </p> <note> <p> Works
+     * file matches the regular expression <code>pattern</code>. </p>  <p> Works
      * with GitHub and Bitbucket events push and pull requests events. Also works with
      * GitHub Enterprise push events, but does not work with GitHub Enterprise pull
-     * request events. </p> </note> </dd> <dt>COMMIT_MESSAGE</dt> <dd> <p>A webhook
+     * request events. </p>  </dd> <dt>COMMIT_MESSAGE</dt> <dd> <p>A webhook
      * triggers a build when the head commit message matches the regular expression
-     * <code>pattern</code>.</p> <note> <p> Works with GitHub and Bitbucket events push
+     * <code>pattern</code>.</p>  <p> Works with GitHub and Bitbucket events push
      * and pull requests events. Also works with GitHub Enterprise push events, but
-     * does not work with GitHub Enterprise pull request events. </p> </note> </dd>
+     * does not work with GitHub Enterprise pull request events. </p>  </dd>
      * </dl>
      */
     inline void SetType(WebhookFilterType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
@@ -198,8 +198,8 @@ namespace Model
      * <code>PULL_REQUEST_MERGED</code>. The <code>EVENT</code> patterns are specified
      * as a comma-separated string. For example, <code>PUSH, PULL_REQUEST_CREATED,
      * PULL_REQUEST_UPDATED</code> filters all push, pull request created, and pull
-     * request updated events. </p> <note> <p> The <code>PULL_REQUEST_REOPENED</code>
-     * works with GitHub and GitHub Enterprise only. </p> </note> </dd> <dt>
+     * request updated events. </p>  <p> The <code>PULL_REQUEST_REOPENED</code>
+     * works with GitHub and GitHub Enterprise only. </p>  </dd> <dt>
      * ACTOR_ACCOUNT_ID </dt> <dd> <p> A webhook event triggers a build when a GitHub,
      * GitHub Enterprise, or Bitbucket account ID matches the regular expression
      * <code>pattern</code>. </p> </dd> <dt> HEAD_REF </dt> <dd> <p> A webhook event
@@ -210,16 +210,16 @@ namespace Model
      * Bitbucket pull request events. </p> </dd> <dt> BASE_REF </dt> <dd> <p> A webhook
      * event triggers a build when the base reference matches the regular expression
      * <code>pattern</code>. For example, <code>refs/heads/branch-name</code>. </p>
-     * <note> <p> Works with pull request events only. </p> </note> </dd> <dt>
+     *  <p> Works with pull request events only. </p>  </dd> <dt>
      * FILE_PATH </dt> <dd> <p> A webhook triggers a build when the path of a changed
-     * file matches the regular expression <code>pattern</code>. </p> <note> <p> Works
+     * file matches the regular expression <code>pattern</code>. </p>  <p> Works
      * with GitHub and Bitbucket events push and pull requests events. Also works with
      * GitHub Enterprise push events, but does not work with GitHub Enterprise pull
-     * request events. </p> </note> </dd> <dt>COMMIT_MESSAGE</dt> <dd> <p>A webhook
+     * request events. </p>  </dd> <dt>COMMIT_MESSAGE</dt> <dd> <p>A webhook
      * triggers a build when the head commit message matches the regular expression
-     * <code>pattern</code>.</p> <note> <p> Works with GitHub and Bitbucket events push
+     * <code>pattern</code>.</p>  <p> Works with GitHub and Bitbucket events push
      * and pull requests events. Also works with GitHub Enterprise push events, but
-     * does not work with GitHub Enterprise pull request events. </p> </note> </dd>
+     * does not work with GitHub Enterprise pull request events. </p>  </dd>
      * </dl>
      */
     inline WebhookFilter& WithType(const WebhookFilterType& value) { SetType(value); return *this;}
@@ -235,8 +235,8 @@ namespace Model
      * <code>PULL_REQUEST_MERGED</code>. The <code>EVENT</code> patterns are specified
      * as a comma-separated string. For example, <code>PUSH, PULL_REQUEST_CREATED,
      * PULL_REQUEST_UPDATED</code> filters all push, pull request created, and pull
-     * request updated events. </p> <note> <p> The <code>PULL_REQUEST_REOPENED</code>
-     * works with GitHub and GitHub Enterprise only. </p> </note> </dd> <dt>
+     * request updated events. </p>  <p> The <code>PULL_REQUEST_REOPENED</code>
+     * works with GitHub and GitHub Enterprise only. </p>  </dd> <dt>
      * ACTOR_ACCOUNT_ID </dt> <dd> <p> A webhook event triggers a build when a GitHub,
      * GitHub Enterprise, or Bitbucket account ID matches the regular expression
      * <code>pattern</code>. </p> </dd> <dt> HEAD_REF </dt> <dd> <p> A webhook event
@@ -247,16 +247,16 @@ namespace Model
      * Bitbucket pull request events. </p> </dd> <dt> BASE_REF </dt> <dd> <p> A webhook
      * event triggers a build when the base reference matches the regular expression
      * <code>pattern</code>. For example, <code>refs/heads/branch-name</code>. </p>
-     * <note> <p> Works with pull request events only. </p> </note> </dd> <dt>
+     *  <p> Works with pull request events only. </p>  </dd> <dt>
      * FILE_PATH </dt> <dd> <p> A webhook triggers a build when the path of a changed
-     * file matches the regular expression <code>pattern</code>. </p> <note> <p> Works
+     * file matches the regular expression <code>pattern</code>. </p>  <p> Works
      * with GitHub and Bitbucket events push and pull requests events. Also works with
      * GitHub Enterprise push events, but does not work with GitHub Enterprise pull
-     * request events. </p> </note> </dd> <dt>COMMIT_MESSAGE</dt> <dd> <p>A webhook
+     * request events. </p>  </dd> <dt>COMMIT_MESSAGE</dt> <dd> <p>A webhook
      * triggers a build when the head commit message matches the regular expression
-     * <code>pattern</code>.</p> <note> <p> Works with GitHub and Bitbucket events push
+     * <code>pattern</code>.</p>  <p> Works with GitHub and Bitbucket events push
      * and pull requests events. Also works with GitHub Enterprise push events, but
-     * does not work with GitHub Enterprise pull request events. </p> </note> </dd>
+     * does not work with GitHub Enterprise pull request events. </p>  </dd>
      * </dl>
      */
     inline WebhookFilter& WithType(WebhookFilterType&& value) { SetType(std::move(value)); return *this;}

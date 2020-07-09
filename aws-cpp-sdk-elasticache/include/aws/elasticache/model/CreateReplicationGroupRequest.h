@@ -391,11 +391,11 @@ namespace Model
      * are created. The order of the Availability Zones in the list is the order in
      * which clusters are allocated. The primary cluster is created in the first AZ in
      * the list.</p> <p>This parameter is not used if there is more than one node group
-     * (shard). You should use <code>NodeGroupConfiguration</code> instead.</p> <note>
+     * (shard). You should use <code>NodeGroupConfiguration</code> instead.</p> 
      * <p>If you are creating your replication group in an Amazon VPC (recommended),
      * you can only locate clusters in Availability Zones associated with the subnets
      * in the selected subnet group.</p> <p>The number of Availability Zones listed
-     * must equal the value of <code>NumCacheClusters</code>.</p> </note> <p>Default:
+     * must equal the value of <code>NumCacheClusters</code>.</p>  <p>Default:
      * system chosen Availability Zones.</p>
      */
     inline const Aws::Vector<Aws::String>& GetPreferredCacheClusterAZs() const{ return m_preferredCacheClusterAZs; }
@@ -405,11 +405,11 @@ namespace Model
      * are created. The order of the Availability Zones in the list is the order in
      * which clusters are allocated. The primary cluster is created in the first AZ in
      * the list.</p> <p>This parameter is not used if there is more than one node group
-     * (shard). You should use <code>NodeGroupConfiguration</code> instead.</p> <note>
+     * (shard). You should use <code>NodeGroupConfiguration</code> instead.</p> 
      * <p>If you are creating your replication group in an Amazon VPC (recommended),
      * you can only locate clusters in Availability Zones associated with the subnets
      * in the selected subnet group.</p> <p>The number of Availability Zones listed
-     * must equal the value of <code>NumCacheClusters</code>.</p> </note> <p>Default:
+     * must equal the value of <code>NumCacheClusters</code>.</p>  <p>Default:
      * system chosen Availability Zones.</p>
      */
     inline bool PreferredCacheClusterAZsHasBeenSet() const { return m_preferredCacheClusterAZsHasBeenSet; }
@@ -419,11 +419,11 @@ namespace Model
      * are created. The order of the Availability Zones in the list is the order in
      * which clusters are allocated. The primary cluster is created in the first AZ in
      * the list.</p> <p>This parameter is not used if there is more than one node group
-     * (shard). You should use <code>NodeGroupConfiguration</code> instead.</p> <note>
+     * (shard). You should use <code>NodeGroupConfiguration</code> instead.</p> 
      * <p>If you are creating your replication group in an Amazon VPC (recommended),
      * you can only locate clusters in Availability Zones associated with the subnets
      * in the selected subnet group.</p> <p>The number of Availability Zones listed
-     * must equal the value of <code>NumCacheClusters</code>.</p> </note> <p>Default:
+     * must equal the value of <code>NumCacheClusters</code>.</p>  <p>Default:
      * system chosen Availability Zones.</p>
      */
     inline void SetPreferredCacheClusterAZs(const Aws::Vector<Aws::String>& value) { m_preferredCacheClusterAZsHasBeenSet = true; m_preferredCacheClusterAZs = value; }
@@ -433,11 +433,11 @@ namespace Model
      * are created. The order of the Availability Zones in the list is the order in
      * which clusters are allocated. The primary cluster is created in the first AZ in
      * the list.</p> <p>This parameter is not used if there is more than one node group
-     * (shard). You should use <code>NodeGroupConfiguration</code> instead.</p> <note>
+     * (shard). You should use <code>NodeGroupConfiguration</code> instead.</p> 
      * <p>If you are creating your replication group in an Amazon VPC (recommended),
      * you can only locate clusters in Availability Zones associated with the subnets
      * in the selected subnet group.</p> <p>The number of Availability Zones listed
-     * must equal the value of <code>NumCacheClusters</code>.</p> </note> <p>Default:
+     * must equal the value of <code>NumCacheClusters</code>.</p>  <p>Default:
      * system chosen Availability Zones.</p>
      */
     inline void SetPreferredCacheClusterAZs(Aws::Vector<Aws::String>&& value) { m_preferredCacheClusterAZsHasBeenSet = true; m_preferredCacheClusterAZs = std::move(value); }
@@ -447,11 +447,11 @@ namespace Model
      * are created. The order of the Availability Zones in the list is the order in
      * which clusters are allocated. The primary cluster is created in the first AZ in
      * the list.</p> <p>This parameter is not used if there is more than one node group
-     * (shard). You should use <code>NodeGroupConfiguration</code> instead.</p> <note>
+     * (shard). You should use <code>NodeGroupConfiguration</code> instead.</p> 
      * <p>If you are creating your replication group in an Amazon VPC (recommended),
      * you can only locate clusters in Availability Zones associated with the subnets
      * in the selected subnet group.</p> <p>The number of Availability Zones listed
-     * must equal the value of <code>NumCacheClusters</code>.</p> </note> <p>Default:
+     * must equal the value of <code>NumCacheClusters</code>.</p>  <p>Default:
      * system chosen Availability Zones.</p>
      */
     inline CreateReplicationGroupRequest& WithPreferredCacheClusterAZs(const Aws::Vector<Aws::String>& value) { SetPreferredCacheClusterAZs(value); return *this;}
@@ -461,11 +461,11 @@ namespace Model
      * are created. The order of the Availability Zones in the list is the order in
      * which clusters are allocated. The primary cluster is created in the first AZ in
      * the list.</p> <p>This parameter is not used if there is more than one node group
-     * (shard). You should use <code>NodeGroupConfiguration</code> instead.</p> <note>
+     * (shard). You should use <code>NodeGroupConfiguration</code> instead.</p> 
      * <p>If you are creating your replication group in an Amazon VPC (recommended),
      * you can only locate clusters in Availability Zones associated with the subnets
      * in the selected subnet group.</p> <p>The number of Availability Zones listed
-     * must equal the value of <code>NumCacheClusters</code>.</p> </note> <p>Default:
+     * must equal the value of <code>NumCacheClusters</code>.</p>  <p>Default:
      * system chosen Availability Zones.</p>
      */
     inline CreateReplicationGroupRequest& WithPreferredCacheClusterAZs(Aws::Vector<Aws::String>&& value) { SetPreferredCacheClusterAZs(std::move(value)); return *this;}
@@ -475,11 +475,11 @@ namespace Model
      * are created. The order of the Availability Zones in the list is the order in
      * which clusters are allocated. The primary cluster is created in the first AZ in
      * the list.</p> <p>This parameter is not used if there is more than one node group
-     * (shard). You should use <code>NodeGroupConfiguration</code> instead.</p> <note>
+     * (shard). You should use <code>NodeGroupConfiguration</code> instead.</p> 
      * <p>If you are creating your replication group in an Amazon VPC (recommended),
      * you can only locate clusters in Availability Zones associated with the subnets
      * in the selected subnet group.</p> <p>The number of Availability Zones listed
-     * must equal the value of <code>NumCacheClusters</code>.</p> </note> <p>Default:
+     * must equal the value of <code>NumCacheClusters</code>.</p>  <p>Default:
      * system chosen Availability Zones.</p>
      */
     inline CreateReplicationGroupRequest& AddPreferredCacheClusterAZs(const Aws::String& value) { m_preferredCacheClusterAZsHasBeenSet = true; m_preferredCacheClusterAZs.push_back(value); return *this; }
@@ -489,11 +489,11 @@ namespace Model
      * are created. The order of the Availability Zones in the list is the order in
      * which clusters are allocated. The primary cluster is created in the first AZ in
      * the list.</p> <p>This parameter is not used if there is more than one node group
-     * (shard). You should use <code>NodeGroupConfiguration</code> instead.</p> <note>
+     * (shard). You should use <code>NodeGroupConfiguration</code> instead.</p> 
      * <p>If you are creating your replication group in an Amazon VPC (recommended),
      * you can only locate clusters in Availability Zones associated with the subnets
      * in the selected subnet group.</p> <p>The number of Availability Zones listed
-     * must equal the value of <code>NumCacheClusters</code>.</p> </note> <p>Default:
+     * must equal the value of <code>NumCacheClusters</code>.</p>  <p>Default:
      * system chosen Availability Zones.</p>
      */
     inline CreateReplicationGroupRequest& AddPreferredCacheClusterAZs(Aws::String&& value) { m_preferredCacheClusterAZsHasBeenSet = true; m_preferredCacheClusterAZs.push_back(std::move(value)); return *this; }
@@ -503,11 +503,11 @@ namespace Model
      * are created. The order of the Availability Zones in the list is the order in
      * which clusters are allocated. The primary cluster is created in the first AZ in
      * the list.</p> <p>This parameter is not used if there is more than one node group
-     * (shard). You should use <code>NodeGroupConfiguration</code> instead.</p> <note>
+     * (shard). You should use <code>NodeGroupConfiguration</code> instead.</p> 
      * <p>If you are creating your replication group in an Amazon VPC (recommended),
      * you can only locate clusters in Availability Zones associated with the subnets
      * in the selected subnet group.</p> <p>The number of Availability Zones listed
-     * must equal the value of <code>NumCacheClusters</code>.</p> </note> <p>Default:
+     * must equal the value of <code>NumCacheClusters</code>.</p>  <p>Default:
      * system chosen Availability Zones.</p>
      */
     inline CreateReplicationGroupRequest& AddPreferredCacheClusterAZs(const char* value) { m_preferredCacheClusterAZsHasBeenSet = true; m_preferredCacheClusterAZs.push_back(value); return *this; }
@@ -1214,10 +1214,10 @@ namespace Model
     /**
      * <p>The name of the parameter group to associate with this replication group. If
      * this argument is omitted, the default cache parameter group for the specified
-     * engine is used.</p> <note> <p>If you are restoring to an engine version that is
+     * engine is used.</p>  <p>If you are restoring to an engine version that is
      * different than the original, you must specify the default version of that
      * version. For example, <code>CacheParameterGroupName=default.redis4.0</code>.</p>
-     * </note> <p>If you are running Redis version 3.2.4 or later, only one node group
+     *  <p>If you are running Redis version 3.2.4 or later, only one node group
      * (shard), and want to use a default parameter group, we recommend that you
      * specify the parameter group by name. </p> <ul> <li> <p>To create a Redis
      * (cluster mode disabled) replication group, use
@@ -1231,10 +1231,10 @@ namespace Model
     /**
      * <p>The name of the parameter group to associate with this replication group. If
      * this argument is omitted, the default cache parameter group for the specified
-     * engine is used.</p> <note> <p>If you are restoring to an engine version that is
+     * engine is used.</p>  <p>If you are restoring to an engine version that is
      * different than the original, you must specify the default version of that
      * version. For example, <code>CacheParameterGroupName=default.redis4.0</code>.</p>
-     * </note> <p>If you are running Redis version 3.2.4 or later, only one node group
+     *  <p>If you are running Redis version 3.2.4 or later, only one node group
      * (shard), and want to use a default parameter group, we recommend that you
      * specify the parameter group by name. </p> <ul> <li> <p>To create a Redis
      * (cluster mode disabled) replication group, use
@@ -1248,10 +1248,10 @@ namespace Model
     /**
      * <p>The name of the parameter group to associate with this replication group. If
      * this argument is omitted, the default cache parameter group for the specified
-     * engine is used.</p> <note> <p>If you are restoring to an engine version that is
+     * engine is used.</p>  <p>If you are restoring to an engine version that is
      * different than the original, you must specify the default version of that
      * version. For example, <code>CacheParameterGroupName=default.redis4.0</code>.</p>
-     * </note> <p>If you are running Redis version 3.2.4 or later, only one node group
+     *  <p>If you are running Redis version 3.2.4 or later, only one node group
      * (shard), and want to use a default parameter group, we recommend that you
      * specify the parameter group by name. </p> <ul> <li> <p>To create a Redis
      * (cluster mode disabled) replication group, use
@@ -1265,10 +1265,10 @@ namespace Model
     /**
      * <p>The name of the parameter group to associate with this replication group. If
      * this argument is omitted, the default cache parameter group for the specified
-     * engine is used.</p> <note> <p>If you are restoring to an engine version that is
+     * engine is used.</p>  <p>If you are restoring to an engine version that is
      * different than the original, you must specify the default version of that
      * version. For example, <code>CacheParameterGroupName=default.redis4.0</code>.</p>
-     * </note> <p>If you are running Redis version 3.2.4 or later, only one node group
+     *  <p>If you are running Redis version 3.2.4 or later, only one node group
      * (shard), and want to use a default parameter group, we recommend that you
      * specify the parameter group by name. </p> <ul> <li> <p>To create a Redis
      * (cluster mode disabled) replication group, use
@@ -1282,10 +1282,10 @@ namespace Model
     /**
      * <p>The name of the parameter group to associate with this replication group. If
      * this argument is omitted, the default cache parameter group for the specified
-     * engine is used.</p> <note> <p>If you are restoring to an engine version that is
+     * engine is used.</p>  <p>If you are restoring to an engine version that is
      * different than the original, you must specify the default version of that
      * version. For example, <code>CacheParameterGroupName=default.redis4.0</code>.</p>
-     * </note> <p>If you are running Redis version 3.2.4 or later, only one node group
+     *  <p>If you are running Redis version 3.2.4 or later, only one node group
      * (shard), and want to use a default parameter group, we recommend that you
      * specify the parameter group by name. </p> <ul> <li> <p>To create a Redis
      * (cluster mode disabled) replication group, use
@@ -1299,10 +1299,10 @@ namespace Model
     /**
      * <p>The name of the parameter group to associate with this replication group. If
      * this argument is omitted, the default cache parameter group for the specified
-     * engine is used.</p> <note> <p>If you are restoring to an engine version that is
+     * engine is used.</p>  <p>If you are restoring to an engine version that is
      * different than the original, you must specify the default version of that
      * version. For example, <code>CacheParameterGroupName=default.redis4.0</code>.</p>
-     * </note> <p>If you are running Redis version 3.2.4 or later, only one node group
+     *  <p>If you are running Redis version 3.2.4 or later, only one node group
      * (shard), and want to use a default parameter group, we recommend that you
      * specify the parameter group by name. </p> <ul> <li> <p>To create a Redis
      * (cluster mode disabled) replication group, use
@@ -1316,10 +1316,10 @@ namespace Model
     /**
      * <p>The name of the parameter group to associate with this replication group. If
      * this argument is omitted, the default cache parameter group for the specified
-     * engine is used.</p> <note> <p>If you are restoring to an engine version that is
+     * engine is used.</p>  <p>If you are restoring to an engine version that is
      * different than the original, you must specify the default version of that
      * version. For example, <code>CacheParameterGroupName=default.redis4.0</code>.</p>
-     * </note> <p>If you are running Redis version 3.2.4 or later, only one node group
+     *  <p>If you are running Redis version 3.2.4 or later, only one node group
      * (shard), and want to use a default parameter group, we recommend that you
      * specify the parameter group by name. </p> <ul> <li> <p>To create a Redis
      * (cluster mode disabled) replication group, use
@@ -1333,10 +1333,10 @@ namespace Model
     /**
      * <p>The name of the parameter group to associate with this replication group. If
      * this argument is omitted, the default cache parameter group for the specified
-     * engine is used.</p> <note> <p>If you are restoring to an engine version that is
+     * engine is used.</p>  <p>If you are restoring to an engine version that is
      * different than the original, you must specify the default version of that
      * version. For example, <code>CacheParameterGroupName=default.redis4.0</code>.</p>
-     * </note> <p>If you are running Redis version 3.2.4 or later, only one node group
+     *  <p>If you are running Redis version 3.2.4 or later, only one node group
      * (shard), and want to use a default parameter group, we recommend that you
      * specify the parameter group by name. </p> <ul> <li> <p>To create a Redis
      * (cluster mode disabled) replication group, use
@@ -1350,81 +1350,81 @@ namespace Model
 
     /**
      * <p>The name of the cache subnet group to be used for the replication group.</p>
-     * <important> <p>If you're going to launch your cluster in an Amazon VPC, you need
+     *  <p>If you're going to launch your cluster in an Amazon VPC, you need
      * to create a subnet group before you start creating a cluster. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SubnetGroups.html">Subnets
-     * and Subnet Groups</a>.</p> </important>
+     * and Subnet Groups</a>.</p> 
      */
     inline const Aws::String& GetCacheSubnetGroupName() const{ return m_cacheSubnetGroupName; }
 
     /**
      * <p>The name of the cache subnet group to be used for the replication group.</p>
-     * <important> <p>If you're going to launch your cluster in an Amazon VPC, you need
+     *  <p>If you're going to launch your cluster in an Amazon VPC, you need
      * to create a subnet group before you start creating a cluster. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SubnetGroups.html">Subnets
-     * and Subnet Groups</a>.</p> </important>
+     * and Subnet Groups</a>.</p> 
      */
     inline bool CacheSubnetGroupNameHasBeenSet() const { return m_cacheSubnetGroupNameHasBeenSet; }
 
     /**
      * <p>The name of the cache subnet group to be used for the replication group.</p>
-     * <important> <p>If you're going to launch your cluster in an Amazon VPC, you need
+     *  <p>If you're going to launch your cluster in an Amazon VPC, you need
      * to create a subnet group before you start creating a cluster. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SubnetGroups.html">Subnets
-     * and Subnet Groups</a>.</p> </important>
+     * and Subnet Groups</a>.</p> 
      */
     inline void SetCacheSubnetGroupName(const Aws::String& value) { m_cacheSubnetGroupNameHasBeenSet = true; m_cacheSubnetGroupName = value; }
 
     /**
      * <p>The name of the cache subnet group to be used for the replication group.</p>
-     * <important> <p>If you're going to launch your cluster in an Amazon VPC, you need
+     *  <p>If you're going to launch your cluster in an Amazon VPC, you need
      * to create a subnet group before you start creating a cluster. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SubnetGroups.html">Subnets
-     * and Subnet Groups</a>.</p> </important>
+     * and Subnet Groups</a>.</p> 
      */
     inline void SetCacheSubnetGroupName(Aws::String&& value) { m_cacheSubnetGroupNameHasBeenSet = true; m_cacheSubnetGroupName = std::move(value); }
 
     /**
      * <p>The name of the cache subnet group to be used for the replication group.</p>
-     * <important> <p>If you're going to launch your cluster in an Amazon VPC, you need
+     *  <p>If you're going to launch your cluster in an Amazon VPC, you need
      * to create a subnet group before you start creating a cluster. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SubnetGroups.html">Subnets
-     * and Subnet Groups</a>.</p> </important>
+     * and Subnet Groups</a>.</p> 
      */
     inline void SetCacheSubnetGroupName(const char* value) { m_cacheSubnetGroupNameHasBeenSet = true; m_cacheSubnetGroupName.assign(value); }
 
     /**
      * <p>The name of the cache subnet group to be used for the replication group.</p>
-     * <important> <p>If you're going to launch your cluster in an Amazon VPC, you need
+     *  <p>If you're going to launch your cluster in an Amazon VPC, you need
      * to create a subnet group before you start creating a cluster. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SubnetGroups.html">Subnets
-     * and Subnet Groups</a>.</p> </important>
+     * and Subnet Groups</a>.</p> 
      */
     inline CreateReplicationGroupRequest& WithCacheSubnetGroupName(const Aws::String& value) { SetCacheSubnetGroupName(value); return *this;}
 
     /**
      * <p>The name of the cache subnet group to be used for the replication group.</p>
-     * <important> <p>If you're going to launch your cluster in an Amazon VPC, you need
+     *  <p>If you're going to launch your cluster in an Amazon VPC, you need
      * to create a subnet group before you start creating a cluster. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SubnetGroups.html">Subnets
-     * and Subnet Groups</a>.</p> </important>
+     * and Subnet Groups</a>.</p> 
      */
     inline CreateReplicationGroupRequest& WithCacheSubnetGroupName(Aws::String&& value) { SetCacheSubnetGroupName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the cache subnet group to be used for the replication group.</p>
-     * <important> <p>If you're going to launch your cluster in an Amazon VPC, you need
+     *  <p>If you're going to launch your cluster in an Amazon VPC, you need
      * to create a subnet group before you start creating a cluster. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SubnetGroups.html">Subnets
-     * and Subnet Groups</a>.</p> </important>
+     * and Subnet Groups</a>.</p> 
      */
     inline CreateReplicationGroupRequest& WithCacheSubnetGroupName(const char* value) { SetCacheSubnetGroupName(value); return *this;}
 
@@ -1943,57 +1943,57 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service
-     * (SNS) topic to which notifications are sent.</p> <note> <p>The Amazon SNS topic
-     * owner must be the same as the cluster owner.</p> </note>
+     * (SNS) topic to which notifications are sent.</p>  <p>The Amazon SNS topic
+     * owner must be the same as the cluster owner.</p> 
      */
     inline const Aws::String& GetNotificationTopicArn() const{ return m_notificationTopicArn; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service
-     * (SNS) topic to which notifications are sent.</p> <note> <p>The Amazon SNS topic
-     * owner must be the same as the cluster owner.</p> </note>
+     * (SNS) topic to which notifications are sent.</p>  <p>The Amazon SNS topic
+     * owner must be the same as the cluster owner.</p> 
      */
     inline bool NotificationTopicArnHasBeenSet() const { return m_notificationTopicArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service
-     * (SNS) topic to which notifications are sent.</p> <note> <p>The Amazon SNS topic
-     * owner must be the same as the cluster owner.</p> </note>
+     * (SNS) topic to which notifications are sent.</p>  <p>The Amazon SNS topic
+     * owner must be the same as the cluster owner.</p> 
      */
     inline void SetNotificationTopicArn(const Aws::String& value) { m_notificationTopicArnHasBeenSet = true; m_notificationTopicArn = value; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service
-     * (SNS) topic to which notifications are sent.</p> <note> <p>The Amazon SNS topic
-     * owner must be the same as the cluster owner.</p> </note>
+     * (SNS) topic to which notifications are sent.</p>  <p>The Amazon SNS topic
+     * owner must be the same as the cluster owner.</p> 
      */
     inline void SetNotificationTopicArn(Aws::String&& value) { m_notificationTopicArnHasBeenSet = true; m_notificationTopicArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service
-     * (SNS) topic to which notifications are sent.</p> <note> <p>The Amazon SNS topic
-     * owner must be the same as the cluster owner.</p> </note>
+     * (SNS) topic to which notifications are sent.</p>  <p>The Amazon SNS topic
+     * owner must be the same as the cluster owner.</p> 
      */
     inline void SetNotificationTopicArn(const char* value) { m_notificationTopicArnHasBeenSet = true; m_notificationTopicArn.assign(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service
-     * (SNS) topic to which notifications are sent.</p> <note> <p>The Amazon SNS topic
-     * owner must be the same as the cluster owner.</p> </note>
+     * (SNS) topic to which notifications are sent.</p>  <p>The Amazon SNS topic
+     * owner must be the same as the cluster owner.</p> 
      */
     inline CreateReplicationGroupRequest& WithNotificationTopicArn(const Aws::String& value) { SetNotificationTopicArn(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service
-     * (SNS) topic to which notifications are sent.</p> <note> <p>The Amazon SNS topic
-     * owner must be the same as the cluster owner.</p> </note>
+     * (SNS) topic to which notifications are sent.</p>  <p>The Amazon SNS topic
+     * owner must be the same as the cluster owner.</p> 
      */
     inline CreateReplicationGroupRequest& WithNotificationTopicArn(Aws::String&& value) { SetNotificationTopicArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service
-     * (SNS) topic to which notifications are sent.</p> <note> <p>The Amazon SNS topic
-     * owner must be the same as the cluster owner.</p> </note>
+     * (SNS) topic to which notifications are sent.</p>  <p>The Amazon SNS topic
+     * owner must be the same as the cluster owner.</p> 
      */
     inline CreateReplicationGroupRequest& WithNotificationTopicArn(const char* value) { SetNotificationTopicArn(value); return *this;}
 
@@ -2121,9 +2121,9 @@ namespace Model
      * <p> <b>Reserved parameter.</b> The password used to access a password protected
      * server.</p> <p> <code>AuthToken</code> can be specified only on replication
      * groups where <code>TransitEncryptionEnabled</code> is <code>true</code>.</p>
-     * <important> <p>For HIPAA compliance, you must specify
+     *  <p>For HIPAA compliance, you must specify
      * <code>TransitEncryptionEnabled</code> as <code>true</code>, an
-     * <code>AuthToken</code>, and a <code>CacheSubnetGroup</code>.</p> </important>
+     * <code>AuthToken</code>, and a <code>CacheSubnetGroup</code>.</p> 
      * <p>Password constraints:</p> <ul> <li> <p>Must be only printable ASCII
      * characters.</p> </li> <li> <p>Must be at least 16 characters and no more than
      * 128 characters in length.</p> </li> <li> <p>The only permitted printable special
@@ -2138,9 +2138,9 @@ namespace Model
      * <p> <b>Reserved parameter.</b> The password used to access a password protected
      * server.</p> <p> <code>AuthToken</code> can be specified only on replication
      * groups where <code>TransitEncryptionEnabled</code> is <code>true</code>.</p>
-     * <important> <p>For HIPAA compliance, you must specify
+     *  <p>For HIPAA compliance, you must specify
      * <code>TransitEncryptionEnabled</code> as <code>true</code>, an
-     * <code>AuthToken</code>, and a <code>CacheSubnetGroup</code>.</p> </important>
+     * <code>AuthToken</code>, and a <code>CacheSubnetGroup</code>.</p> 
      * <p>Password constraints:</p> <ul> <li> <p>Must be only printable ASCII
      * characters.</p> </li> <li> <p>Must be at least 16 characters and no more than
      * 128 characters in length.</p> </li> <li> <p>The only permitted printable special
@@ -2155,9 +2155,9 @@ namespace Model
      * <p> <b>Reserved parameter.</b> The password used to access a password protected
      * server.</p> <p> <code>AuthToken</code> can be specified only on replication
      * groups where <code>TransitEncryptionEnabled</code> is <code>true</code>.</p>
-     * <important> <p>For HIPAA compliance, you must specify
+     *  <p>For HIPAA compliance, you must specify
      * <code>TransitEncryptionEnabled</code> as <code>true</code>, an
-     * <code>AuthToken</code>, and a <code>CacheSubnetGroup</code>.</p> </important>
+     * <code>AuthToken</code>, and a <code>CacheSubnetGroup</code>.</p> 
      * <p>Password constraints:</p> <ul> <li> <p>Must be only printable ASCII
      * characters.</p> </li> <li> <p>Must be at least 16 characters and no more than
      * 128 characters in length.</p> </li> <li> <p>The only permitted printable special
@@ -2172,9 +2172,9 @@ namespace Model
      * <p> <b>Reserved parameter.</b> The password used to access a password protected
      * server.</p> <p> <code>AuthToken</code> can be specified only on replication
      * groups where <code>TransitEncryptionEnabled</code> is <code>true</code>.</p>
-     * <important> <p>For HIPAA compliance, you must specify
+     *  <p>For HIPAA compliance, you must specify
      * <code>TransitEncryptionEnabled</code> as <code>true</code>, an
-     * <code>AuthToken</code>, and a <code>CacheSubnetGroup</code>.</p> </important>
+     * <code>AuthToken</code>, and a <code>CacheSubnetGroup</code>.</p> 
      * <p>Password constraints:</p> <ul> <li> <p>Must be only printable ASCII
      * characters.</p> </li> <li> <p>Must be at least 16 characters and no more than
      * 128 characters in length.</p> </li> <li> <p>The only permitted printable special
@@ -2189,9 +2189,9 @@ namespace Model
      * <p> <b>Reserved parameter.</b> The password used to access a password protected
      * server.</p> <p> <code>AuthToken</code> can be specified only on replication
      * groups where <code>TransitEncryptionEnabled</code> is <code>true</code>.</p>
-     * <important> <p>For HIPAA compliance, you must specify
+     *  <p>For HIPAA compliance, you must specify
      * <code>TransitEncryptionEnabled</code> as <code>true</code>, an
-     * <code>AuthToken</code>, and a <code>CacheSubnetGroup</code>.</p> </important>
+     * <code>AuthToken</code>, and a <code>CacheSubnetGroup</code>.</p> 
      * <p>Password constraints:</p> <ul> <li> <p>Must be only printable ASCII
      * characters.</p> </li> <li> <p>Must be at least 16 characters and no more than
      * 128 characters in length.</p> </li> <li> <p>The only permitted printable special
@@ -2206,9 +2206,9 @@ namespace Model
      * <p> <b>Reserved parameter.</b> The password used to access a password protected
      * server.</p> <p> <code>AuthToken</code> can be specified only on replication
      * groups where <code>TransitEncryptionEnabled</code> is <code>true</code>.</p>
-     * <important> <p>For HIPAA compliance, you must specify
+     *  <p>For HIPAA compliance, you must specify
      * <code>TransitEncryptionEnabled</code> as <code>true</code>, an
-     * <code>AuthToken</code>, and a <code>CacheSubnetGroup</code>.</p> </important>
+     * <code>AuthToken</code>, and a <code>CacheSubnetGroup</code>.</p> 
      * <p>Password constraints:</p> <ul> <li> <p>Must be only printable ASCII
      * characters.</p> </li> <li> <p>Must be at least 16 characters and no more than
      * 128 characters in length.</p> </li> <li> <p>The only permitted printable special
@@ -2223,9 +2223,9 @@ namespace Model
      * <p> <b>Reserved parameter.</b> The password used to access a password protected
      * server.</p> <p> <code>AuthToken</code> can be specified only on replication
      * groups where <code>TransitEncryptionEnabled</code> is <code>true</code>.</p>
-     * <important> <p>For HIPAA compliance, you must specify
+     *  <p>For HIPAA compliance, you must specify
      * <code>TransitEncryptionEnabled</code> as <code>true</code>, an
-     * <code>AuthToken</code>, and a <code>CacheSubnetGroup</code>.</p> </important>
+     * <code>AuthToken</code>, and a <code>CacheSubnetGroup</code>.</p> 
      * <p>Password constraints:</p> <ul> <li> <p>Must be only printable ASCII
      * characters.</p> </li> <li> <p>Must be at least 16 characters and no more than
      * 128 characters in length.</p> </li> <li> <p>The only permitted printable special
@@ -2240,9 +2240,9 @@ namespace Model
      * <p> <b>Reserved parameter.</b> The password used to access a password protected
      * server.</p> <p> <code>AuthToken</code> can be specified only on replication
      * groups where <code>TransitEncryptionEnabled</code> is <code>true</code>.</p>
-     * <important> <p>For HIPAA compliance, you must specify
+     *  <p>For HIPAA compliance, you must specify
      * <code>TransitEncryptionEnabled</code> as <code>true</code>, an
-     * <code>AuthToken</code>, and a <code>CacheSubnetGroup</code>.</p> </important>
+     * <code>AuthToken</code>, and a <code>CacheSubnetGroup</code>.</p> 
      * <p>Password constraints:</p> <ul> <li> <p>Must be only printable ASCII
      * characters.</p> </li> <li> <p>Must be at least 16 characters and no more than
      * 128 characters in length.</p> </li> <li> <p>The only permitted printable special
@@ -2266,9 +2266,9 @@ namespace Model
      * specify a value for <code>CacheSubnetGroup</code>.</p> <p> <b>Required:</b> Only
      * available when creating a replication group in an Amazon VPC using redis version
      * <code>3.2.6</code>, <code>4.x</code> or later.</p> <p>Default:
-     * <code>false</code> </p> <important> <p>For HIPAA compliance, you must specify
+     * <code>false</code> </p>  <p>For HIPAA compliance, you must specify
      * <code>TransitEncryptionEnabled</code> as <code>true</code>, an
-     * <code>AuthToken</code>, and a <code>CacheSubnetGroup</code>.</p> </important>
+     * <code>AuthToken</code>, and a <code>CacheSubnetGroup</code>.</p> 
      */
     inline bool GetTransitEncryptionEnabled() const{ return m_transitEncryptionEnabled; }
 
@@ -2284,9 +2284,9 @@ namespace Model
      * specify a value for <code>CacheSubnetGroup</code>.</p> <p> <b>Required:</b> Only
      * available when creating a replication group in an Amazon VPC using redis version
      * <code>3.2.6</code>, <code>4.x</code> or later.</p> <p>Default:
-     * <code>false</code> </p> <important> <p>For HIPAA compliance, you must specify
+     * <code>false</code> </p>  <p>For HIPAA compliance, you must specify
      * <code>TransitEncryptionEnabled</code> as <code>true</code>, an
-     * <code>AuthToken</code>, and a <code>CacheSubnetGroup</code>.</p> </important>
+     * <code>AuthToken</code>, and a <code>CacheSubnetGroup</code>.</p> 
      */
     inline bool TransitEncryptionEnabledHasBeenSet() const { return m_transitEncryptionEnabledHasBeenSet; }
 
@@ -2302,9 +2302,9 @@ namespace Model
      * specify a value for <code>CacheSubnetGroup</code>.</p> <p> <b>Required:</b> Only
      * available when creating a replication group in an Amazon VPC using redis version
      * <code>3.2.6</code>, <code>4.x</code> or later.</p> <p>Default:
-     * <code>false</code> </p> <important> <p>For HIPAA compliance, you must specify
+     * <code>false</code> </p>  <p>For HIPAA compliance, you must specify
      * <code>TransitEncryptionEnabled</code> as <code>true</code>, an
-     * <code>AuthToken</code>, and a <code>CacheSubnetGroup</code>.</p> </important>
+     * <code>AuthToken</code>, and a <code>CacheSubnetGroup</code>.</p> 
      */
     inline void SetTransitEncryptionEnabled(bool value) { m_transitEncryptionEnabledHasBeenSet = true; m_transitEncryptionEnabled = value; }
 
@@ -2320,9 +2320,9 @@ namespace Model
      * specify a value for <code>CacheSubnetGroup</code>.</p> <p> <b>Required:</b> Only
      * available when creating a replication group in an Amazon VPC using redis version
      * <code>3.2.6</code>, <code>4.x</code> or later.</p> <p>Default:
-     * <code>false</code> </p> <important> <p>For HIPAA compliance, you must specify
+     * <code>false</code> </p>  <p>For HIPAA compliance, you must specify
      * <code>TransitEncryptionEnabled</code> as <code>true</code>, an
-     * <code>AuthToken</code>, and a <code>CacheSubnetGroup</code>.</p> </important>
+     * <code>AuthToken</code>, and a <code>CacheSubnetGroup</code>.</p> 
      */
     inline CreateReplicationGroupRequest& WithTransitEncryptionEnabled(bool value) { SetTransitEncryptionEnabled(value); return *this;}
 

@@ -498,9 +498,9 @@ namespace Model
      * <p>A list of all of the currently assigned <code>VersionStage</code> staging
      * labels and the <code>VersionId</code> that each is attached to. Staging labels
      * are used to keep track of the different versions during the rotation
-     * process.</p> <note> <p>A version that does not have any staging labels attached
+     * process.</p>  <p>A version that does not have any staging labels attached
      * is considered deprecated and subject to deletion. Such versions are not included
-     * in this list.</p> </note>
+     * in this list.</p> 
      */
     inline const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& GetVersionIdsToStages() const{ return m_versionIdsToStages; }
 
@@ -508,9 +508,9 @@ namespace Model
      * <p>A list of all of the currently assigned <code>VersionStage</code> staging
      * labels and the <code>VersionId</code> that each is attached to. Staging labels
      * are used to keep track of the different versions during the rotation
-     * process.</p> <note> <p>A version that does not have any staging labels attached
+     * process.</p>  <p>A version that does not have any staging labels attached
      * is considered deprecated and subject to deletion. Such versions are not included
-     * in this list.</p> </note>
+     * in this list.</p> 
      */
     inline void SetVersionIdsToStages(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { m_versionIdsToStages = value; }
 
@@ -518,9 +518,9 @@ namespace Model
      * <p>A list of all of the currently assigned <code>VersionStage</code> staging
      * labels and the <code>VersionId</code> that each is attached to. Staging labels
      * are used to keep track of the different versions during the rotation
-     * process.</p> <note> <p>A version that does not have any staging labels attached
+     * process.</p>  <p>A version that does not have any staging labels attached
      * is considered deprecated and subject to deletion. Such versions are not included
-     * in this list.</p> </note>
+     * in this list.</p> 
      */
     inline void SetVersionIdsToStages(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { m_versionIdsToStages = std::move(value); }
 
@@ -528,9 +528,9 @@ namespace Model
      * <p>A list of all of the currently assigned <code>VersionStage</code> staging
      * labels and the <code>VersionId</code> that each is attached to. Staging labels
      * are used to keep track of the different versions during the rotation
-     * process.</p> <note> <p>A version that does not have any staging labels attached
+     * process.</p>  <p>A version that does not have any staging labels attached
      * is considered deprecated and subject to deletion. Such versions are not included
-     * in this list.</p> </note>
+     * in this list.</p> 
      */
     inline DescribeSecretResult& WithVersionIdsToStages(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { SetVersionIdsToStages(value); return *this;}
 
@@ -538,9 +538,9 @@ namespace Model
      * <p>A list of all of the currently assigned <code>VersionStage</code> staging
      * labels and the <code>VersionId</code> that each is attached to. Staging labels
      * are used to keep track of the different versions during the rotation
-     * process.</p> <note> <p>A version that does not have any staging labels attached
+     * process.</p>  <p>A version that does not have any staging labels attached
      * is considered deprecated and subject to deletion. Such versions are not included
-     * in this list.</p> </note>
+     * in this list.</p> 
      */
     inline DescribeSecretResult& WithVersionIdsToStages(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { SetVersionIdsToStages(std::move(value)); return *this;}
 
@@ -548,9 +548,9 @@ namespace Model
      * <p>A list of all of the currently assigned <code>VersionStage</code> staging
      * labels and the <code>VersionId</code> that each is attached to. Staging labels
      * are used to keep track of the different versions during the rotation
-     * process.</p> <note> <p>A version that does not have any staging labels attached
+     * process.</p>  <p>A version that does not have any staging labels attached
      * is considered deprecated and subject to deletion. Such versions are not included
-     * in this list.</p> </note>
+     * in this list.</p> 
      */
     inline DescribeSecretResult& AddVersionIdsToStages(const Aws::String& key, const Aws::Vector<Aws::String>& value) { m_versionIdsToStages.emplace(key, value); return *this; }
 
@@ -558,9 +558,9 @@ namespace Model
      * <p>A list of all of the currently assigned <code>VersionStage</code> staging
      * labels and the <code>VersionId</code> that each is attached to. Staging labels
      * are used to keep track of the different versions during the rotation
-     * process.</p> <note> <p>A version that does not have any staging labels attached
+     * process.</p>  <p>A version that does not have any staging labels attached
      * is considered deprecated and subject to deletion. Such versions are not included
-     * in this list.</p> </note>
+     * in this list.</p> 
      */
     inline DescribeSecretResult& AddVersionIdsToStages(Aws::String&& key, const Aws::Vector<Aws::String>& value) { m_versionIdsToStages.emplace(std::move(key), value); return *this; }
 
@@ -568,9 +568,9 @@ namespace Model
      * <p>A list of all of the currently assigned <code>VersionStage</code> staging
      * labels and the <code>VersionId</code> that each is attached to. Staging labels
      * are used to keep track of the different versions during the rotation
-     * process.</p> <note> <p>A version that does not have any staging labels attached
+     * process.</p>  <p>A version that does not have any staging labels attached
      * is considered deprecated and subject to deletion. Such versions are not included
-     * in this list.</p> </note>
+     * in this list.</p> 
      */
     inline DescribeSecretResult& AddVersionIdsToStages(const Aws::String& key, Aws::Vector<Aws::String>&& value) { m_versionIdsToStages.emplace(key, std::move(value)); return *this; }
 
@@ -578,9 +578,9 @@ namespace Model
      * <p>A list of all of the currently assigned <code>VersionStage</code> staging
      * labels and the <code>VersionId</code> that each is attached to. Staging labels
      * are used to keep track of the different versions during the rotation
-     * process.</p> <note> <p>A version that does not have any staging labels attached
+     * process.</p>  <p>A version that does not have any staging labels attached
      * is considered deprecated and subject to deletion. Such versions are not included
-     * in this list.</p> </note>
+     * in this list.</p> 
      */
     inline DescribeSecretResult& AddVersionIdsToStages(Aws::String&& key, Aws::Vector<Aws::String>&& value) { m_versionIdsToStages.emplace(std::move(key), std::move(value)); return *this; }
 
@@ -588,9 +588,9 @@ namespace Model
      * <p>A list of all of the currently assigned <code>VersionStage</code> staging
      * labels and the <code>VersionId</code> that each is attached to. Staging labels
      * are used to keep track of the different versions during the rotation
-     * process.</p> <note> <p>A version that does not have any staging labels attached
+     * process.</p>  <p>A version that does not have any staging labels attached
      * is considered deprecated and subject to deletion. Such versions are not included
-     * in this list.</p> </note>
+     * in this list.</p> 
      */
     inline DescribeSecretResult& AddVersionIdsToStages(const char* key, Aws::Vector<Aws::String>&& value) { m_versionIdsToStages.emplace(key, std::move(value)); return *this; }
 
@@ -598,9 +598,9 @@ namespace Model
      * <p>A list of all of the currently assigned <code>VersionStage</code> staging
      * labels and the <code>VersionId</code> that each is attached to. Staging labels
      * are used to keep track of the different versions during the rotation
-     * process.</p> <note> <p>A version that does not have any staging labels attached
+     * process.</p>  <p>A version that does not have any staging labels attached
      * is considered deprecated and subject to deletion. Such versions are not included
-     * in this list.</p> </note>
+     * in this list.</p> 
      */
     inline DescribeSecretResult& AddVersionIdsToStages(const char* key, const Aws::Vector<Aws::String>& value) { m_versionIdsToStages.emplace(key, value); return *this; }
 
@@ -640,6 +640,32 @@ namespace Model
      */
     inline DescribeSecretResult& WithOwningService(const char* value) { SetOwningService(value); return *this;}
 
+
+    /**
+     * <p>The date that the secret was created.</p>
+     */
+    inline const Aws::Utils::DateTime& GetCreatedDate() const{ return m_createdDate; }
+
+    /**
+     * <p>The date that the secret was created.</p>
+     */
+    inline void SetCreatedDate(const Aws::Utils::DateTime& value) { m_createdDate = value; }
+
+    /**
+     * <p>The date that the secret was created.</p>
+     */
+    inline void SetCreatedDate(Aws::Utils::DateTime&& value) { m_createdDate = std::move(value); }
+
+    /**
+     * <p>The date that the secret was created.</p>
+     */
+    inline DescribeSecretResult& WithCreatedDate(const Aws::Utils::DateTime& value) { SetCreatedDate(value); return *this;}
+
+    /**
+     * <p>The date that the secret was created.</p>
+     */
+    inline DescribeSecretResult& WithCreatedDate(Aws::Utils::DateTime&& value) { SetCreatedDate(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_aRN;
@@ -669,6 +695,8 @@ namespace Model
     Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_versionIdsToStages;
 
     Aws::String m_owningService;
+
+    Aws::Utils::DateTime m_createdDate;
   };
 
 } // namespace Model

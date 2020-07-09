@@ -252,8 +252,8 @@ namespace Model
 
         /**
          * <p>Deletes a placement. To delete a placement, it must not have any devices
-         * associated with it.</p> <note> <p>When you delete a placement, all associated
-         * data becomes irretrievable.</p> </note><p><h3>See Also:</h3>   <a
+         * associated with it.</p>  <p>When you delete a placement, all associated
+         * data becomes irretrievable.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot1click-projects-2018-05-14/DeletePlacement">AWS
          * API Reference</a></p>
          */
@@ -261,8 +261,8 @@ namespace Model
 
         /**
          * <p>Deletes a placement. To delete a placement, it must not have any devices
-         * associated with it.</p> <note> <p>When you delete a placement, all associated
-         * data becomes irretrievable.</p> </note><p><h3>See Also:</h3>   <a
+         * associated with it.</p>  <p>When you delete a placement, all associated
+         * data becomes irretrievable.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot1click-projects-2018-05-14/DeletePlacement">AWS
          * API Reference</a></p>
          *
@@ -272,8 +272,8 @@ namespace Model
 
         /**
          * <p>Deletes a placement. To delete a placement, it must not have any devices
-         * associated with it.</p> <note> <p>When you delete a placement, all associated
-         * data becomes irretrievable.</p> </note><p><h3>See Also:</h3>   <a
+         * associated with it.</p>  <p>When you delete a placement, all associated
+         * data becomes irretrievable.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot1click-projects-2018-05-14/DeletePlacement">AWS
          * API Reference</a></p>
          *
@@ -283,8 +283,8 @@ namespace Model
 
         /**
          * <p>Deletes a project. To delete a project, it must not have any placements
-         * associated with it.</p> <note> <p>When you delete a project, all associated data
-         * becomes irretrievable.</p> </note><p><h3>See Also:</h3>   <a
+         * associated with it.</p>  <p>When you delete a project, all associated data
+         * becomes irretrievable.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot1click-projects-2018-05-14/DeleteProject">AWS
          * API Reference</a></p>
          */
@@ -292,8 +292,8 @@ namespace Model
 
         /**
          * <p>Deletes a project. To delete a project, it must not have any placements
-         * associated with it.</p> <note> <p>When you delete a project, all associated data
-         * becomes irretrievable.</p> </note><p><h3>See Also:</h3>   <a
+         * associated with it.</p>  <p>When you delete a project, all associated data
+         * becomes irretrievable.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot1click-projects-2018-05-14/DeleteProject">AWS
          * API Reference</a></p>
          *
@@ -303,8 +303,8 @@ namespace Model
 
         /**
          * <p>Deletes a project. To delete a project, it must not have any placements
-         * associated with it.</p> <note> <p>When you delete a project, all associated data
-         * becomes irretrievable.</p> </note><p><h3>See Also:</h3>   <a
+         * associated with it.</p>  <p>When you delete a project, all associated data
+         * becomes irretrievable.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot1click-projects-2018-05-14/DeleteProject">AWS
          * API Reference</a></p>
          *

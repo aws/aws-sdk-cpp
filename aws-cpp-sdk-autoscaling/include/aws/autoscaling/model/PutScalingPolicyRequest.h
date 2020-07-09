@@ -304,9 +304,9 @@ namespace Model
      * see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html#as-scaling-adjustment">Scaling
      * Adjustment Types</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-     * <note> <p>Some Auto Scaling groups use instance weights. In this case, set the
+     *  <p>Some Auto Scaling groups use instance weights. In this case, set the
      * <code>MinAdjustmentMagnitude</code> to a value that is at least as large as your
-     * largest instance weight.</p> </note>
+     * largest instance weight.</p> 
      */
     inline int GetMinAdjustmentMagnitude() const{ return m_minAdjustmentMagnitude; }
 
@@ -322,9 +322,9 @@ namespace Model
      * see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html#as-scaling-adjustment">Scaling
      * Adjustment Types</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-     * <note> <p>Some Auto Scaling groups use instance weights. In this case, set the
+     *  <p>Some Auto Scaling groups use instance weights. In this case, set the
      * <code>MinAdjustmentMagnitude</code> to a value that is at least as large as your
-     * largest instance weight.</p> </note>
+     * largest instance weight.</p> 
      */
     inline bool MinAdjustmentMagnitudeHasBeenSet() const { return m_minAdjustmentMagnitudeHasBeenSet; }
 
@@ -340,9 +340,9 @@ namespace Model
      * see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html#as-scaling-adjustment">Scaling
      * Adjustment Types</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-     * <note> <p>Some Auto Scaling groups use instance weights. In this case, set the
+     *  <p>Some Auto Scaling groups use instance weights. In this case, set the
      * <code>MinAdjustmentMagnitude</code> to a value that is at least as large as your
-     * largest instance weight.</p> </note>
+     * largest instance weight.</p> 
      */
     inline void SetMinAdjustmentMagnitude(int value) { m_minAdjustmentMagnitudeHasBeenSet = true; m_minAdjustmentMagnitude = value; }
 
@@ -358,9 +358,9 @@ namespace Model
      * see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html#as-scaling-adjustment">Scaling
      * Adjustment Types</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-     * <note> <p>Some Auto Scaling groups use instance weights. In this case, set the
+     *  <p>Some Auto Scaling groups use instance weights. In this case, set the
      * <code>MinAdjustmentMagnitude</code> to a value that is at least as large as your
-     * largest instance weight.</p> </note>
+     * largest instance weight.</p> 
      */
     inline PutScalingPolicyRequest& WithMinAdjustmentMagnitude(int value) { SetMinAdjustmentMagnitude(value); return *this;}
 

@@ -355,10 +355,10 @@ namespace Model
          * to request a refund, delete the instance using the <a>DeleteHsm</a> operation,
          * go to the <a href="https://console.aws.amazon.com/support/home">AWS Support
          * Center</a>, create a new case, and select <b>Account and Billing
-         * Support</b>.</p> <important> <p>It can take up to 20 minutes to create and
+         * Support</b>.</p>  <p>It can take up to 20 minutes to create and
          * provision an HSM. You can monitor the status of the HSM with the
          * <a>DescribeHsm</a> operation. The HSM is ready to be initialized when the status
-         * changes to <code>RUNNING</code>.</p> </important><p><h3>See Also:</h3>   <a
+         * changes to <code>RUNNING</code>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/CreateHsm">AWS
          * API Reference</a></p>
          */
@@ -383,10 +383,10 @@ namespace Model
          * to request a refund, delete the instance using the <a>DeleteHsm</a> operation,
          * go to the <a href="https://console.aws.amazon.com/support/home">AWS Support
          * Center</a>, create a new case, and select <b>Account and Billing
-         * Support</b>.</p> <important> <p>It can take up to 20 minutes to create and
+         * Support</b>.</p>  <p>It can take up to 20 minutes to create and
          * provision an HSM. You can monitor the status of the HSM with the
          * <a>DescribeHsm</a> operation. The HSM is ready to be initialized when the status
-         * changes to <code>RUNNING</code>.</p> </important><p><h3>See Also:</h3>   <a
+         * changes to <code>RUNNING</code>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/CreateHsm">AWS
          * API Reference</a></p>
          *
@@ -413,10 +413,10 @@ namespace Model
          * to request a refund, delete the instance using the <a>DeleteHsm</a> operation,
          * go to the <a href="https://console.aws.amazon.com/support/home">AWS Support
          * Center</a>, create a new case, and select <b>Account and Billing
-         * Support</b>.</p> <important> <p>It can take up to 20 minutes to create and
+         * Support</b>.</p>  <p>It can take up to 20 minutes to create and
          * provision an HSM. You can monitor the status of the HSM with the
          * <a>DescribeHsm</a> operation. The HSM is ready to be initialized when the status
-         * changes to <code>RUNNING</code>.</p> </important><p><h3>See Also:</h3>   <a
+         * changes to <code>RUNNING</code>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/CreateHsm">AWS
          * API Reference</a></p>
          *
@@ -1363,12 +1363,12 @@ namespace Model
          * href="http://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS CloudHSM User
          * Guide</a>, and the <a
          * href="http://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS CloudHSM API
-         * Reference</a>.</p> <p>Modifies an HSM.</p> <important> <p>This operation can
+         * Reference</a>.</p> <p>Modifies an HSM.</p>  <p>This operation can
          * result in the HSM being offline for up to 15 minutes while the AWS CloudHSM
          * service is reconfigured. If you are modifying a production HSM, you should
          * ensure that your AWS CloudHSM service is configured for high availability, and
          * consider executing this operation during a maintenance window.</p>
-         * </important><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ModifyHsm">AWS
          * API Reference</a></p>
          */
@@ -1387,12 +1387,12 @@ namespace Model
          * href="http://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS CloudHSM User
          * Guide</a>, and the <a
          * href="http://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS CloudHSM API
-         * Reference</a>.</p> <p>Modifies an HSM.</p> <important> <p>This operation can
+         * Reference</a>.</p> <p>Modifies an HSM.</p>  <p>This operation can
          * result in the HSM being offline for up to 15 minutes while the AWS CloudHSM
          * service is reconfigured. If you are modifying a production HSM, you should
          * ensure that your AWS CloudHSM service is configured for high availability, and
          * consider executing this operation during a maintenance window.</p>
-         * </important><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ModifyHsm">AWS
          * API Reference</a></p>
          *
@@ -1413,12 +1413,12 @@ namespace Model
          * href="http://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS CloudHSM User
          * Guide</a>, and the <a
          * href="http://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS CloudHSM API
-         * Reference</a>.</p> <p>Modifies an HSM.</p> <important> <p>This operation can
+         * Reference</a>.</p> <p>Modifies an HSM.</p>  <p>This operation can
          * result in the HSM being offline for up to 15 minutes while the AWS CloudHSM
          * service is reconfigured. If you are modifying a production HSM, you should
          * ensure that your AWS CloudHSM service is configured for high availability, and
          * consider executing this operation during a maintenance window.</p>
-         * </important><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ModifyHsm">AWS
          * API Reference</a></p>
          *

@@ -199,9 +199,9 @@ namespace Model
      * <p>The environment variables to send to the container. You can add new
      * environment variables, which are added to the container at launch, or you can
      * override the existing environment variables from the Docker image or the job
-     * definition.</p> <note> <p>Environment variables must not start with
+     * definition.</p>  <p>Environment variables must not start with
      * <code>AWS_BATCH</code>; this naming convention is reserved for variables that
-     * are set by the AWS Batch service.</p> </note>
+     * are set by the AWS Batch service.</p> 
      */
     inline const Aws::Vector<KeyValuePair>& GetEnvironment() const{ return m_environment; }
 
@@ -209,9 +209,9 @@ namespace Model
      * <p>The environment variables to send to the container. You can add new
      * environment variables, which are added to the container at launch, or you can
      * override the existing environment variables from the Docker image or the job
-     * definition.</p> <note> <p>Environment variables must not start with
+     * definition.</p>  <p>Environment variables must not start with
      * <code>AWS_BATCH</code>; this naming convention is reserved for variables that
-     * are set by the AWS Batch service.</p> </note>
+     * are set by the AWS Batch service.</p> 
      */
     inline bool EnvironmentHasBeenSet() const { return m_environmentHasBeenSet; }
 
@@ -219,9 +219,9 @@ namespace Model
      * <p>The environment variables to send to the container. You can add new
      * environment variables, which are added to the container at launch, or you can
      * override the existing environment variables from the Docker image or the job
-     * definition.</p> <note> <p>Environment variables must not start with
+     * definition.</p>  <p>Environment variables must not start with
      * <code>AWS_BATCH</code>; this naming convention is reserved for variables that
-     * are set by the AWS Batch service.</p> </note>
+     * are set by the AWS Batch service.</p> 
      */
     inline void SetEnvironment(const Aws::Vector<KeyValuePair>& value) { m_environmentHasBeenSet = true; m_environment = value; }
 
@@ -229,9 +229,9 @@ namespace Model
      * <p>The environment variables to send to the container. You can add new
      * environment variables, which are added to the container at launch, or you can
      * override the existing environment variables from the Docker image or the job
-     * definition.</p> <note> <p>Environment variables must not start with
+     * definition.</p>  <p>Environment variables must not start with
      * <code>AWS_BATCH</code>; this naming convention is reserved for variables that
-     * are set by the AWS Batch service.</p> </note>
+     * are set by the AWS Batch service.</p> 
      */
     inline void SetEnvironment(Aws::Vector<KeyValuePair>&& value) { m_environmentHasBeenSet = true; m_environment = std::move(value); }
 
@@ -239,9 +239,9 @@ namespace Model
      * <p>The environment variables to send to the container. You can add new
      * environment variables, which are added to the container at launch, or you can
      * override the existing environment variables from the Docker image or the job
-     * definition.</p> <note> <p>Environment variables must not start with
+     * definition.</p>  <p>Environment variables must not start with
      * <code>AWS_BATCH</code>; this naming convention is reserved for variables that
-     * are set by the AWS Batch service.</p> </note>
+     * are set by the AWS Batch service.</p> 
      */
     inline ContainerOverrides& WithEnvironment(const Aws::Vector<KeyValuePair>& value) { SetEnvironment(value); return *this;}
 
@@ -249,9 +249,9 @@ namespace Model
      * <p>The environment variables to send to the container. You can add new
      * environment variables, which are added to the container at launch, or you can
      * override the existing environment variables from the Docker image or the job
-     * definition.</p> <note> <p>Environment variables must not start with
+     * definition.</p>  <p>Environment variables must not start with
      * <code>AWS_BATCH</code>; this naming convention is reserved for variables that
-     * are set by the AWS Batch service.</p> </note>
+     * are set by the AWS Batch service.</p> 
      */
     inline ContainerOverrides& WithEnvironment(Aws::Vector<KeyValuePair>&& value) { SetEnvironment(std::move(value)); return *this;}
 
@@ -259,9 +259,9 @@ namespace Model
      * <p>The environment variables to send to the container. You can add new
      * environment variables, which are added to the container at launch, or you can
      * override the existing environment variables from the Docker image or the job
-     * definition.</p> <note> <p>Environment variables must not start with
+     * definition.</p>  <p>Environment variables must not start with
      * <code>AWS_BATCH</code>; this naming convention is reserved for variables that
-     * are set by the AWS Batch service.</p> </note>
+     * are set by the AWS Batch service.</p> 
      */
     inline ContainerOverrides& AddEnvironment(const KeyValuePair& value) { m_environmentHasBeenSet = true; m_environment.push_back(value); return *this; }
 
@@ -269,9 +269,9 @@ namespace Model
      * <p>The environment variables to send to the container. You can add new
      * environment variables, which are added to the container at launch, or you can
      * override the existing environment variables from the Docker image or the job
-     * definition.</p> <note> <p>Environment variables must not start with
+     * definition.</p>  <p>Environment variables must not start with
      * <code>AWS_BATCH</code>; this naming convention is reserved for variables that
-     * are set by the AWS Batch service.</p> </note>
+     * are set by the AWS Batch service.</p> 
      */
     inline ContainerOverrides& AddEnvironment(KeyValuePair&& value) { m_environmentHasBeenSet = true; m_environment.push_back(std::move(value)); return *this; }
 

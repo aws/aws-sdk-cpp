@@ -118,98 +118,98 @@ namespace Model
 
     /**
      * <p>If specified, only executions of the type specified in the filter are
-     * returned.</p> <note> <p> <code>executionFilter</code>, <code>typeFilter</code>
+     * returned.</p>  <p> <code>executionFilter</code>, <code>typeFilter</code>
      * and <code>tagFilter</code> are mutually exclusive. You can specify at most one
-     * of these in a request.</p> </note>
+     * of these in a request.</p> 
      */
     inline const WorkflowTypeFilter& GetTypeFilter() const{ return m_typeFilter; }
 
     /**
      * <p>If specified, only executions of the type specified in the filter are
-     * returned.</p> <note> <p> <code>executionFilter</code>, <code>typeFilter</code>
+     * returned.</p>  <p> <code>executionFilter</code>, <code>typeFilter</code>
      * and <code>tagFilter</code> are mutually exclusive. You can specify at most one
-     * of these in a request.</p> </note>
+     * of these in a request.</p> 
      */
     inline bool TypeFilterHasBeenSet() const { return m_typeFilterHasBeenSet; }
 
     /**
      * <p>If specified, only executions of the type specified in the filter are
-     * returned.</p> <note> <p> <code>executionFilter</code>, <code>typeFilter</code>
+     * returned.</p>  <p> <code>executionFilter</code>, <code>typeFilter</code>
      * and <code>tagFilter</code> are mutually exclusive. You can specify at most one
-     * of these in a request.</p> </note>
+     * of these in a request.</p> 
      */
     inline void SetTypeFilter(const WorkflowTypeFilter& value) { m_typeFilterHasBeenSet = true; m_typeFilter = value; }
 
     /**
      * <p>If specified, only executions of the type specified in the filter are
-     * returned.</p> <note> <p> <code>executionFilter</code>, <code>typeFilter</code>
+     * returned.</p>  <p> <code>executionFilter</code>, <code>typeFilter</code>
      * and <code>tagFilter</code> are mutually exclusive. You can specify at most one
-     * of these in a request.</p> </note>
+     * of these in a request.</p> 
      */
     inline void SetTypeFilter(WorkflowTypeFilter&& value) { m_typeFilterHasBeenSet = true; m_typeFilter = std::move(value); }
 
     /**
      * <p>If specified, only executions of the type specified in the filter are
-     * returned.</p> <note> <p> <code>executionFilter</code>, <code>typeFilter</code>
+     * returned.</p>  <p> <code>executionFilter</code>, <code>typeFilter</code>
      * and <code>tagFilter</code> are mutually exclusive. You can specify at most one
-     * of these in a request.</p> </note>
+     * of these in a request.</p> 
      */
     inline ListOpenWorkflowExecutionsRequest& WithTypeFilter(const WorkflowTypeFilter& value) { SetTypeFilter(value); return *this;}
 
     /**
      * <p>If specified, only executions of the type specified in the filter are
-     * returned.</p> <note> <p> <code>executionFilter</code>, <code>typeFilter</code>
+     * returned.</p>  <p> <code>executionFilter</code>, <code>typeFilter</code>
      * and <code>tagFilter</code> are mutually exclusive. You can specify at most one
-     * of these in a request.</p> </note>
+     * of these in a request.</p> 
      */
     inline ListOpenWorkflowExecutionsRequest& WithTypeFilter(WorkflowTypeFilter&& value) { SetTypeFilter(std::move(value)); return *this;}
 
 
     /**
      * <p>If specified, only executions that have the matching tag are listed.</p>
-     * <note> <p> <code>executionFilter</code>, <code>typeFilter</code> and
+     *  <p> <code>executionFilter</code>, <code>typeFilter</code> and
      * <code>tagFilter</code> are mutually exclusive. You can specify at most one of
-     * these in a request.</p> </note>
+     * these in a request.</p> 
      */
     inline const TagFilter& GetTagFilter() const{ return m_tagFilter; }
 
     /**
      * <p>If specified, only executions that have the matching tag are listed.</p>
-     * <note> <p> <code>executionFilter</code>, <code>typeFilter</code> and
+     *  <p> <code>executionFilter</code>, <code>typeFilter</code> and
      * <code>tagFilter</code> are mutually exclusive. You can specify at most one of
-     * these in a request.</p> </note>
+     * these in a request.</p> 
      */
     inline bool TagFilterHasBeenSet() const { return m_tagFilterHasBeenSet; }
 
     /**
      * <p>If specified, only executions that have the matching tag are listed.</p>
-     * <note> <p> <code>executionFilter</code>, <code>typeFilter</code> and
+     *  <p> <code>executionFilter</code>, <code>typeFilter</code> and
      * <code>tagFilter</code> are mutually exclusive. You can specify at most one of
-     * these in a request.</p> </note>
+     * these in a request.</p> 
      */
     inline void SetTagFilter(const TagFilter& value) { m_tagFilterHasBeenSet = true; m_tagFilter = value; }
 
     /**
      * <p>If specified, only executions that have the matching tag are listed.</p>
-     * <note> <p> <code>executionFilter</code>, <code>typeFilter</code> and
+     *  <p> <code>executionFilter</code>, <code>typeFilter</code> and
      * <code>tagFilter</code> are mutually exclusive. You can specify at most one of
-     * these in a request.</p> </note>
+     * these in a request.</p> 
      */
     inline void SetTagFilter(TagFilter&& value) { m_tagFilterHasBeenSet = true; m_tagFilter = std::move(value); }
 
     /**
      * <p>If specified, only executions that have the matching tag are listed.</p>
-     * <note> <p> <code>executionFilter</code>, <code>typeFilter</code> and
+     *  <p> <code>executionFilter</code>, <code>typeFilter</code> and
      * <code>tagFilter</code> are mutually exclusive. You can specify at most one of
-     * these in a request.</p> </note>
+     * these in a request.</p> 
      */
     inline ListOpenWorkflowExecutionsRequest& WithTagFilter(const TagFilter& value) { SetTagFilter(value); return *this;}
 
     /**
      * <p>If specified, only executions that have the matching tag are listed.</p>
-     * <note> <p> <code>executionFilter</code>, <code>typeFilter</code> and
+     *  <p> <code>executionFilter</code>, <code>typeFilter</code> and
      * <code>tagFilter</code> are mutually exclusive. You can specify at most one of
-     * these in a request.</p> </note>
+     * these in a request.</p> 
      */
     inline ListOpenWorkflowExecutionsRequest& WithTagFilter(TagFilter&& value) { SetTagFilter(std::move(value)); return *this;}
 
@@ -367,49 +367,49 @@ namespace Model
 
     /**
      * <p>If specified, only workflow executions matching the workflow ID specified in
-     * the filter are returned.</p> <note> <p> <code>executionFilter</code>,
+     * the filter are returned.</p>  <p> <code>executionFilter</code>,
      * <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You
-     * can specify at most one of these in a request.</p> </note>
+     * can specify at most one of these in a request.</p> 
      */
     inline const WorkflowExecutionFilter& GetExecutionFilter() const{ return m_executionFilter; }
 
     /**
      * <p>If specified, only workflow executions matching the workflow ID specified in
-     * the filter are returned.</p> <note> <p> <code>executionFilter</code>,
+     * the filter are returned.</p>  <p> <code>executionFilter</code>,
      * <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You
-     * can specify at most one of these in a request.</p> </note>
+     * can specify at most one of these in a request.</p> 
      */
     inline bool ExecutionFilterHasBeenSet() const { return m_executionFilterHasBeenSet; }
 
     /**
      * <p>If specified, only workflow executions matching the workflow ID specified in
-     * the filter are returned.</p> <note> <p> <code>executionFilter</code>,
+     * the filter are returned.</p>  <p> <code>executionFilter</code>,
      * <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You
-     * can specify at most one of these in a request.</p> </note>
+     * can specify at most one of these in a request.</p> 
      */
     inline void SetExecutionFilter(const WorkflowExecutionFilter& value) { m_executionFilterHasBeenSet = true; m_executionFilter = value; }
 
     /**
      * <p>If specified, only workflow executions matching the workflow ID specified in
-     * the filter are returned.</p> <note> <p> <code>executionFilter</code>,
+     * the filter are returned.</p>  <p> <code>executionFilter</code>,
      * <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You
-     * can specify at most one of these in a request.</p> </note>
+     * can specify at most one of these in a request.</p> 
      */
     inline void SetExecutionFilter(WorkflowExecutionFilter&& value) { m_executionFilterHasBeenSet = true; m_executionFilter = std::move(value); }
 
     /**
      * <p>If specified, only workflow executions matching the workflow ID specified in
-     * the filter are returned.</p> <note> <p> <code>executionFilter</code>,
+     * the filter are returned.</p>  <p> <code>executionFilter</code>,
      * <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You
-     * can specify at most one of these in a request.</p> </note>
+     * can specify at most one of these in a request.</p> 
      */
     inline ListOpenWorkflowExecutionsRequest& WithExecutionFilter(const WorkflowExecutionFilter& value) { SetExecutionFilter(value); return *this;}
 
     /**
      * <p>If specified, only workflow executions matching the workflow ID specified in
-     * the filter are returned.</p> <note> <p> <code>executionFilter</code>,
+     * the filter are returned.</p>  <p> <code>executionFilter</code>,
      * <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You
-     * can specify at most one of these in a request.</p> </note>
+     * can specify at most one of these in a request.</p> 
      */
     inline ListOpenWorkflowExecutionsRequest& WithExecutionFilter(WorkflowExecutionFilter&& value) { SetExecutionFilter(std::move(value)); return *this;}
 

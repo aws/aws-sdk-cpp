@@ -91,16 +91,16 @@ namespace Model
 
 
     /**
-     * <p>A list of attributes for which to retrieve information.</p> <note> <p>In the
+     * <p>A list of attributes for which to retrieve information.</p>  <p>In the
      * future, new attributes might be added. If you write code that calls this action,
      * we recommend that you structure your code so that it can handle new attributes
-     * gracefully.</p> </note> <p>The following attributes are supported:</p>
-     * <important> <p>The <code>ApproximateNumberOfMessagesDelayed</code>,
+     * gracefully.</p>  <p>The following attributes are supported:</p>
+     *  <p>The <code>ApproximateNumberOfMessagesDelayed</code>,
      * <code>ApproximateNumberOfMessagesNotVisible</code>, and
      * <code>ApproximateNumberOfMessagesVisible</code> metrics may not achieve
      * consistency until at least 1 minute after the producers stop sending messages.
      * This period is required for the queue metadata to reach eventual consistency.
-     * </p> </important> <ul> <li> <p> <code>All</code> – Returns all values. </p>
+     * </p>  <ul> <li> <p> <code>All</code> – Returns all values. </p>
      * </li> <li> <p> <code>ApproximateNumberOfMessages</code> – Returns the
      * approximate number of messages available for retrieval from the queue.</p> </li>
      * <li> <p> <code>ApproximateNumberOfMessagesDelayed</code> – Returns the
@@ -161,10 +161,10 @@ namespace Model
      * Returns whether the queue is FIFO. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-understanding-logic">FIFO
      * Queue Logic</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.</p>
-     * <note> <p>To determine whether a queue is <a
+     *  <p>To determine whether a queue is <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO</a>,
      * you can check whether <code>QueueName</code> ends with the <code>.fifo</code>
-     * suffix.</p> </note> </li> <li> <p> <code>ContentBasedDeduplication</code> –
+     * suffix.</p>  </li> <li> <p> <code>ContentBasedDeduplication</code> –
      * Returns whether content-based deduplication is enabled for the queue. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing">Exactly-Once
@@ -174,16 +174,16 @@ namespace Model
     inline const Aws::Vector<QueueAttributeName>& GetAttributeNames() const{ return m_attributeNames; }
 
     /**
-     * <p>A list of attributes for which to retrieve information.</p> <note> <p>In the
+     * <p>A list of attributes for which to retrieve information.</p>  <p>In the
      * future, new attributes might be added. If you write code that calls this action,
      * we recommend that you structure your code so that it can handle new attributes
-     * gracefully.</p> </note> <p>The following attributes are supported:</p>
-     * <important> <p>The <code>ApproximateNumberOfMessagesDelayed</code>,
+     * gracefully.</p>  <p>The following attributes are supported:</p>
+     *  <p>The <code>ApproximateNumberOfMessagesDelayed</code>,
      * <code>ApproximateNumberOfMessagesNotVisible</code>, and
      * <code>ApproximateNumberOfMessagesVisible</code> metrics may not achieve
      * consistency until at least 1 minute after the producers stop sending messages.
      * This period is required for the queue metadata to reach eventual consistency.
-     * </p> </important> <ul> <li> <p> <code>All</code> – Returns all values. </p>
+     * </p>  <ul> <li> <p> <code>All</code> – Returns all values. </p>
      * </li> <li> <p> <code>ApproximateNumberOfMessages</code> – Returns the
      * approximate number of messages available for retrieval from the queue.</p> </li>
      * <li> <p> <code>ApproximateNumberOfMessagesDelayed</code> – Returns the
@@ -244,10 +244,10 @@ namespace Model
      * Returns whether the queue is FIFO. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-understanding-logic">FIFO
      * Queue Logic</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.</p>
-     * <note> <p>To determine whether a queue is <a
+     *  <p>To determine whether a queue is <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO</a>,
      * you can check whether <code>QueueName</code> ends with the <code>.fifo</code>
-     * suffix.</p> </note> </li> <li> <p> <code>ContentBasedDeduplication</code> –
+     * suffix.</p>  </li> <li> <p> <code>ContentBasedDeduplication</code> –
      * Returns whether content-based deduplication is enabled for the queue. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing">Exactly-Once
@@ -257,16 +257,16 @@ namespace Model
     inline bool AttributeNamesHasBeenSet() const { return m_attributeNamesHasBeenSet; }
 
     /**
-     * <p>A list of attributes for which to retrieve information.</p> <note> <p>In the
+     * <p>A list of attributes for which to retrieve information.</p>  <p>In the
      * future, new attributes might be added. If you write code that calls this action,
      * we recommend that you structure your code so that it can handle new attributes
-     * gracefully.</p> </note> <p>The following attributes are supported:</p>
-     * <important> <p>The <code>ApproximateNumberOfMessagesDelayed</code>,
+     * gracefully.</p>  <p>The following attributes are supported:</p>
+     *  <p>The <code>ApproximateNumberOfMessagesDelayed</code>,
      * <code>ApproximateNumberOfMessagesNotVisible</code>, and
      * <code>ApproximateNumberOfMessagesVisible</code> metrics may not achieve
      * consistency until at least 1 minute after the producers stop sending messages.
      * This period is required for the queue metadata to reach eventual consistency.
-     * </p> </important> <ul> <li> <p> <code>All</code> – Returns all values. </p>
+     * </p>  <ul> <li> <p> <code>All</code> – Returns all values. </p>
      * </li> <li> <p> <code>ApproximateNumberOfMessages</code> – Returns the
      * approximate number of messages available for retrieval from the queue.</p> </li>
      * <li> <p> <code>ApproximateNumberOfMessagesDelayed</code> – Returns the
@@ -327,10 +327,10 @@ namespace Model
      * Returns whether the queue is FIFO. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-understanding-logic">FIFO
      * Queue Logic</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.</p>
-     * <note> <p>To determine whether a queue is <a
+     *  <p>To determine whether a queue is <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO</a>,
      * you can check whether <code>QueueName</code> ends with the <code>.fifo</code>
-     * suffix.</p> </note> </li> <li> <p> <code>ContentBasedDeduplication</code> –
+     * suffix.</p>  </li> <li> <p> <code>ContentBasedDeduplication</code> –
      * Returns whether content-based deduplication is enabled for the queue. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing">Exactly-Once
@@ -340,16 +340,16 @@ namespace Model
     inline void SetAttributeNames(const Aws::Vector<QueueAttributeName>& value) { m_attributeNamesHasBeenSet = true; m_attributeNames = value; }
 
     /**
-     * <p>A list of attributes for which to retrieve information.</p> <note> <p>In the
+     * <p>A list of attributes for which to retrieve information.</p>  <p>In the
      * future, new attributes might be added. If you write code that calls this action,
      * we recommend that you structure your code so that it can handle new attributes
-     * gracefully.</p> </note> <p>The following attributes are supported:</p>
-     * <important> <p>The <code>ApproximateNumberOfMessagesDelayed</code>,
+     * gracefully.</p>  <p>The following attributes are supported:</p>
+     *  <p>The <code>ApproximateNumberOfMessagesDelayed</code>,
      * <code>ApproximateNumberOfMessagesNotVisible</code>, and
      * <code>ApproximateNumberOfMessagesVisible</code> metrics may not achieve
      * consistency until at least 1 minute after the producers stop sending messages.
      * This period is required for the queue metadata to reach eventual consistency.
-     * </p> </important> <ul> <li> <p> <code>All</code> – Returns all values. </p>
+     * </p>  <ul> <li> <p> <code>All</code> – Returns all values. </p>
      * </li> <li> <p> <code>ApproximateNumberOfMessages</code> – Returns the
      * approximate number of messages available for retrieval from the queue.</p> </li>
      * <li> <p> <code>ApproximateNumberOfMessagesDelayed</code> – Returns the
@@ -410,10 +410,10 @@ namespace Model
      * Returns whether the queue is FIFO. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-understanding-logic">FIFO
      * Queue Logic</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.</p>
-     * <note> <p>To determine whether a queue is <a
+     *  <p>To determine whether a queue is <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO</a>,
      * you can check whether <code>QueueName</code> ends with the <code>.fifo</code>
-     * suffix.</p> </note> </li> <li> <p> <code>ContentBasedDeduplication</code> –
+     * suffix.</p>  </li> <li> <p> <code>ContentBasedDeduplication</code> –
      * Returns whether content-based deduplication is enabled for the queue. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing">Exactly-Once
@@ -423,16 +423,16 @@ namespace Model
     inline void SetAttributeNames(Aws::Vector<QueueAttributeName>&& value) { m_attributeNamesHasBeenSet = true; m_attributeNames = std::move(value); }
 
     /**
-     * <p>A list of attributes for which to retrieve information.</p> <note> <p>In the
+     * <p>A list of attributes for which to retrieve information.</p>  <p>In the
      * future, new attributes might be added. If you write code that calls this action,
      * we recommend that you structure your code so that it can handle new attributes
-     * gracefully.</p> </note> <p>The following attributes are supported:</p>
-     * <important> <p>The <code>ApproximateNumberOfMessagesDelayed</code>,
+     * gracefully.</p>  <p>The following attributes are supported:</p>
+     *  <p>The <code>ApproximateNumberOfMessagesDelayed</code>,
      * <code>ApproximateNumberOfMessagesNotVisible</code>, and
      * <code>ApproximateNumberOfMessagesVisible</code> metrics may not achieve
      * consistency until at least 1 minute after the producers stop sending messages.
      * This period is required for the queue metadata to reach eventual consistency.
-     * </p> </important> <ul> <li> <p> <code>All</code> – Returns all values. </p>
+     * </p>  <ul> <li> <p> <code>All</code> – Returns all values. </p>
      * </li> <li> <p> <code>ApproximateNumberOfMessages</code> – Returns the
      * approximate number of messages available for retrieval from the queue.</p> </li>
      * <li> <p> <code>ApproximateNumberOfMessagesDelayed</code> – Returns the
@@ -493,10 +493,10 @@ namespace Model
      * Returns whether the queue is FIFO. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-understanding-logic">FIFO
      * Queue Logic</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.</p>
-     * <note> <p>To determine whether a queue is <a
+     *  <p>To determine whether a queue is <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO</a>,
      * you can check whether <code>QueueName</code> ends with the <code>.fifo</code>
-     * suffix.</p> </note> </li> <li> <p> <code>ContentBasedDeduplication</code> –
+     * suffix.</p>  </li> <li> <p> <code>ContentBasedDeduplication</code> –
      * Returns whether content-based deduplication is enabled for the queue. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing">Exactly-Once
@@ -506,16 +506,16 @@ namespace Model
     inline GetQueueAttributesRequest& WithAttributeNames(const Aws::Vector<QueueAttributeName>& value) { SetAttributeNames(value); return *this;}
 
     /**
-     * <p>A list of attributes for which to retrieve information.</p> <note> <p>In the
+     * <p>A list of attributes for which to retrieve information.</p>  <p>In the
      * future, new attributes might be added. If you write code that calls this action,
      * we recommend that you structure your code so that it can handle new attributes
-     * gracefully.</p> </note> <p>The following attributes are supported:</p>
-     * <important> <p>The <code>ApproximateNumberOfMessagesDelayed</code>,
+     * gracefully.</p>  <p>The following attributes are supported:</p>
+     *  <p>The <code>ApproximateNumberOfMessagesDelayed</code>,
      * <code>ApproximateNumberOfMessagesNotVisible</code>, and
      * <code>ApproximateNumberOfMessagesVisible</code> metrics may not achieve
      * consistency until at least 1 minute after the producers stop sending messages.
      * This period is required for the queue metadata to reach eventual consistency.
-     * </p> </important> <ul> <li> <p> <code>All</code> – Returns all values. </p>
+     * </p>  <ul> <li> <p> <code>All</code> – Returns all values. </p>
      * </li> <li> <p> <code>ApproximateNumberOfMessages</code> – Returns the
      * approximate number of messages available for retrieval from the queue.</p> </li>
      * <li> <p> <code>ApproximateNumberOfMessagesDelayed</code> – Returns the
@@ -576,10 +576,10 @@ namespace Model
      * Returns whether the queue is FIFO. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-understanding-logic">FIFO
      * Queue Logic</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.</p>
-     * <note> <p>To determine whether a queue is <a
+     *  <p>To determine whether a queue is <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO</a>,
      * you can check whether <code>QueueName</code> ends with the <code>.fifo</code>
-     * suffix.</p> </note> </li> <li> <p> <code>ContentBasedDeduplication</code> –
+     * suffix.</p>  </li> <li> <p> <code>ContentBasedDeduplication</code> –
      * Returns whether content-based deduplication is enabled for the queue. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing">Exactly-Once
@@ -589,16 +589,16 @@ namespace Model
     inline GetQueueAttributesRequest& WithAttributeNames(Aws::Vector<QueueAttributeName>&& value) { SetAttributeNames(std::move(value)); return *this;}
 
     /**
-     * <p>A list of attributes for which to retrieve information.</p> <note> <p>In the
+     * <p>A list of attributes for which to retrieve information.</p>  <p>In the
      * future, new attributes might be added. If you write code that calls this action,
      * we recommend that you structure your code so that it can handle new attributes
-     * gracefully.</p> </note> <p>The following attributes are supported:</p>
-     * <important> <p>The <code>ApproximateNumberOfMessagesDelayed</code>,
+     * gracefully.</p>  <p>The following attributes are supported:</p>
+     *  <p>The <code>ApproximateNumberOfMessagesDelayed</code>,
      * <code>ApproximateNumberOfMessagesNotVisible</code>, and
      * <code>ApproximateNumberOfMessagesVisible</code> metrics may not achieve
      * consistency until at least 1 minute after the producers stop sending messages.
      * This period is required for the queue metadata to reach eventual consistency.
-     * </p> </important> <ul> <li> <p> <code>All</code> – Returns all values. </p>
+     * </p>  <ul> <li> <p> <code>All</code> – Returns all values. </p>
      * </li> <li> <p> <code>ApproximateNumberOfMessages</code> – Returns the
      * approximate number of messages available for retrieval from the queue.</p> </li>
      * <li> <p> <code>ApproximateNumberOfMessagesDelayed</code> – Returns the
@@ -659,10 +659,10 @@ namespace Model
      * Returns whether the queue is FIFO. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-understanding-logic">FIFO
      * Queue Logic</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.</p>
-     * <note> <p>To determine whether a queue is <a
+     *  <p>To determine whether a queue is <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO</a>,
      * you can check whether <code>QueueName</code> ends with the <code>.fifo</code>
-     * suffix.</p> </note> </li> <li> <p> <code>ContentBasedDeduplication</code> –
+     * suffix.</p>  </li> <li> <p> <code>ContentBasedDeduplication</code> –
      * Returns whether content-based deduplication is enabled for the queue. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing">Exactly-Once
@@ -672,16 +672,16 @@ namespace Model
     inline GetQueueAttributesRequest& AddAttributeNames(const QueueAttributeName& value) { m_attributeNamesHasBeenSet = true; m_attributeNames.push_back(value); return *this; }
 
     /**
-     * <p>A list of attributes for which to retrieve information.</p> <note> <p>In the
+     * <p>A list of attributes for which to retrieve information.</p>  <p>In the
      * future, new attributes might be added. If you write code that calls this action,
      * we recommend that you structure your code so that it can handle new attributes
-     * gracefully.</p> </note> <p>The following attributes are supported:</p>
-     * <important> <p>The <code>ApproximateNumberOfMessagesDelayed</code>,
+     * gracefully.</p>  <p>The following attributes are supported:</p>
+     *  <p>The <code>ApproximateNumberOfMessagesDelayed</code>,
      * <code>ApproximateNumberOfMessagesNotVisible</code>, and
      * <code>ApproximateNumberOfMessagesVisible</code> metrics may not achieve
      * consistency until at least 1 minute after the producers stop sending messages.
      * This period is required for the queue metadata to reach eventual consistency.
-     * </p> </important> <ul> <li> <p> <code>All</code> – Returns all values. </p>
+     * </p>  <ul> <li> <p> <code>All</code> – Returns all values. </p>
      * </li> <li> <p> <code>ApproximateNumberOfMessages</code> – Returns the
      * approximate number of messages available for retrieval from the queue.</p> </li>
      * <li> <p> <code>ApproximateNumberOfMessagesDelayed</code> – Returns the
@@ -742,10 +742,10 @@ namespace Model
      * Returns whether the queue is FIFO. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-understanding-logic">FIFO
      * Queue Logic</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.</p>
-     * <note> <p>To determine whether a queue is <a
+     *  <p>To determine whether a queue is <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO</a>,
      * you can check whether <code>QueueName</code> ends with the <code>.fifo</code>
-     * suffix.</p> </note> </li> <li> <p> <code>ContentBasedDeduplication</code> –
+     * suffix.</p>  </li> <li> <p> <code>ContentBasedDeduplication</code> –
      * Returns whether content-based deduplication is enabled for the queue. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing">Exactly-Once

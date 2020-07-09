@@ -128,7 +128,7 @@ namespace Model
 
     /**
      * <p>The Lambda trigger configuration information for the new user pool.</p>
-     * <note> <p>In a push model, event sources (such as Amazon S3 and custom
+     *  <p>In a push model, event sources (such as Amazon S3 and custom
      * applications) need permission to invoke a function. So you will need to make an
      * extra call to add permission for these event sources to invoke your Lambda
      * function.</p> <p/> <p>For more information on using the Lambda API to add
@@ -136,13 +136,13 @@ namespace Model
      * href="https://docs.aws.amazon.com/lambda/latest/dg/API_AddPermission.html">
      * AddPermission </a>. </p> <p>For adding permission using the AWS CLI, see <a
      * href="https://docs.aws.amazon.com/cli/latest/reference/lambda/add-permission.html">
-     * add-permission </a>.</p> </note>
+     * add-permission </a>.</p> 
      */
     inline const LambdaConfigType& GetLambdaConfig() const{ return m_lambdaConfig; }
 
     /**
      * <p>The Lambda trigger configuration information for the new user pool.</p>
-     * <note> <p>In a push model, event sources (such as Amazon S3 and custom
+     *  <p>In a push model, event sources (such as Amazon S3 and custom
      * applications) need permission to invoke a function. So you will need to make an
      * extra call to add permission for these event sources to invoke your Lambda
      * function.</p> <p/> <p>For more information on using the Lambda API to add
@@ -150,13 +150,13 @@ namespace Model
      * href="https://docs.aws.amazon.com/lambda/latest/dg/API_AddPermission.html">
      * AddPermission </a>. </p> <p>For adding permission using the AWS CLI, see <a
      * href="https://docs.aws.amazon.com/cli/latest/reference/lambda/add-permission.html">
-     * add-permission </a>.</p> </note>
+     * add-permission </a>.</p> 
      */
     inline bool LambdaConfigHasBeenSet() const { return m_lambdaConfigHasBeenSet; }
 
     /**
      * <p>The Lambda trigger configuration information for the new user pool.</p>
-     * <note> <p>In a push model, event sources (such as Amazon S3 and custom
+     *  <p>In a push model, event sources (such as Amazon S3 and custom
      * applications) need permission to invoke a function. So you will need to make an
      * extra call to add permission for these event sources to invoke your Lambda
      * function.</p> <p/> <p>For more information on using the Lambda API to add
@@ -164,13 +164,13 @@ namespace Model
      * href="https://docs.aws.amazon.com/lambda/latest/dg/API_AddPermission.html">
      * AddPermission </a>. </p> <p>For adding permission using the AWS CLI, see <a
      * href="https://docs.aws.amazon.com/cli/latest/reference/lambda/add-permission.html">
-     * add-permission </a>.</p> </note>
+     * add-permission </a>.</p> 
      */
     inline void SetLambdaConfig(const LambdaConfigType& value) { m_lambdaConfigHasBeenSet = true; m_lambdaConfig = value; }
 
     /**
      * <p>The Lambda trigger configuration information for the new user pool.</p>
-     * <note> <p>In a push model, event sources (such as Amazon S3 and custom
+     *  <p>In a push model, event sources (such as Amazon S3 and custom
      * applications) need permission to invoke a function. So you will need to make an
      * extra call to add permission for these event sources to invoke your Lambda
      * function.</p> <p/> <p>For more information on using the Lambda API to add
@@ -178,13 +178,13 @@ namespace Model
      * href="https://docs.aws.amazon.com/lambda/latest/dg/API_AddPermission.html">
      * AddPermission </a>. </p> <p>For adding permission using the AWS CLI, see <a
      * href="https://docs.aws.amazon.com/cli/latest/reference/lambda/add-permission.html">
-     * add-permission </a>.</p> </note>
+     * add-permission </a>.</p> 
      */
     inline void SetLambdaConfig(LambdaConfigType&& value) { m_lambdaConfigHasBeenSet = true; m_lambdaConfig = std::move(value); }
 
     /**
      * <p>The Lambda trigger configuration information for the new user pool.</p>
-     * <note> <p>In a push model, event sources (such as Amazon S3 and custom
+     *  <p>In a push model, event sources (such as Amazon S3 and custom
      * applications) need permission to invoke a function. So you will need to make an
      * extra call to add permission for these event sources to invoke your Lambda
      * function.</p> <p/> <p>For more information on using the Lambda API to add
@@ -192,13 +192,13 @@ namespace Model
      * href="https://docs.aws.amazon.com/lambda/latest/dg/API_AddPermission.html">
      * AddPermission </a>. </p> <p>For adding permission using the AWS CLI, see <a
      * href="https://docs.aws.amazon.com/cli/latest/reference/lambda/add-permission.html">
-     * add-permission </a>.</p> </note>
+     * add-permission </a>.</p> 
      */
     inline CreateUserPoolRequest& WithLambdaConfig(const LambdaConfigType& value) { SetLambdaConfig(value); return *this;}
 
     /**
      * <p>The Lambda trigger configuration information for the new user pool.</p>
-     * <note> <p>In a push model, event sources (such as Amazon S3 and custom
+     *  <p>In a push model, event sources (such as Amazon S3 and custom
      * applications) need permission to invoke a function. So you will need to make an
      * extra call to add permission for these event sources to invoke your Lambda
      * function.</p> <p/> <p>For more information on using the Lambda API to add
@@ -206,7 +206,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/lambda/latest/dg/API_AddPermission.html">
      * AddPermission </a>. </p> <p>For adding permission using the AWS CLI, see <a
      * href="https://docs.aws.amazon.com/cli/latest/reference/lambda/add-permission.html">
-     * add-permission </a>.</p> </note>
+     * add-permission </a>.</p> 
      */
     inline CreateUserPoolRequest& WithLambdaConfig(LambdaConfigType&& value) { SetLambdaConfig(std::move(value)); return *this;}
 
@@ -948,10 +948,10 @@ namespace Model
      * With this setting, SMS does not qualify for a valid password recovery mechanism
      * if the user also has SMS MFA enabled. In the absence of this setting, Cognito
      * uses the legacy behavior to determine the recovery method where SMS is preferred
-     * over email.</p> <note> <p>Starting February 1, 2020, the value of
+     * over email.</p>  <p>Starting February 1, 2020, the value of
      * <code>AccountRecoverySetting</code> will default to <code>verified_email</code>
      * first and <code>verified_phone_number</code> as the second option for newly
-     * created user pools if no value is provided.</p> </note>
+     * created user pools if no value is provided.</p> 
      */
     inline const AccountRecoverySettingType& GetAccountRecoverySetting() const{ return m_accountRecoverySetting; }
 
@@ -962,10 +962,10 @@ namespace Model
      * With this setting, SMS does not qualify for a valid password recovery mechanism
      * if the user also has SMS MFA enabled. In the absence of this setting, Cognito
      * uses the legacy behavior to determine the recovery method where SMS is preferred
-     * over email.</p> <note> <p>Starting February 1, 2020, the value of
+     * over email.</p>  <p>Starting February 1, 2020, the value of
      * <code>AccountRecoverySetting</code> will default to <code>verified_email</code>
      * first and <code>verified_phone_number</code> as the second option for newly
-     * created user pools if no value is provided.</p> </note>
+     * created user pools if no value is provided.</p> 
      */
     inline bool AccountRecoverySettingHasBeenSet() const { return m_accountRecoverySettingHasBeenSet; }
 
@@ -976,10 +976,10 @@ namespace Model
      * With this setting, SMS does not qualify for a valid password recovery mechanism
      * if the user also has SMS MFA enabled. In the absence of this setting, Cognito
      * uses the legacy behavior to determine the recovery method where SMS is preferred
-     * over email.</p> <note> <p>Starting February 1, 2020, the value of
+     * over email.</p>  <p>Starting February 1, 2020, the value of
      * <code>AccountRecoverySetting</code> will default to <code>verified_email</code>
      * first and <code>verified_phone_number</code> as the second option for newly
-     * created user pools if no value is provided.</p> </note>
+     * created user pools if no value is provided.</p> 
      */
     inline void SetAccountRecoverySetting(const AccountRecoverySettingType& value) { m_accountRecoverySettingHasBeenSet = true; m_accountRecoverySetting = value; }
 
@@ -990,10 +990,10 @@ namespace Model
      * With this setting, SMS does not qualify for a valid password recovery mechanism
      * if the user also has SMS MFA enabled. In the absence of this setting, Cognito
      * uses the legacy behavior to determine the recovery method where SMS is preferred
-     * over email.</p> <note> <p>Starting February 1, 2020, the value of
+     * over email.</p>  <p>Starting February 1, 2020, the value of
      * <code>AccountRecoverySetting</code> will default to <code>verified_email</code>
      * first and <code>verified_phone_number</code> as the second option for newly
-     * created user pools if no value is provided.</p> </note>
+     * created user pools if no value is provided.</p> 
      */
     inline void SetAccountRecoverySetting(AccountRecoverySettingType&& value) { m_accountRecoverySettingHasBeenSet = true; m_accountRecoverySetting = std::move(value); }
 
@@ -1004,10 +1004,10 @@ namespace Model
      * With this setting, SMS does not qualify for a valid password recovery mechanism
      * if the user also has SMS MFA enabled. In the absence of this setting, Cognito
      * uses the legacy behavior to determine the recovery method where SMS is preferred
-     * over email.</p> <note> <p>Starting February 1, 2020, the value of
+     * over email.</p>  <p>Starting February 1, 2020, the value of
      * <code>AccountRecoverySetting</code> will default to <code>verified_email</code>
      * first and <code>verified_phone_number</code> as the second option for newly
-     * created user pools if no value is provided.</p> </note>
+     * created user pools if no value is provided.</p> 
      */
     inline CreateUserPoolRequest& WithAccountRecoverySetting(const AccountRecoverySettingType& value) { SetAccountRecoverySetting(value); return *this;}
 
@@ -1018,10 +1018,10 @@ namespace Model
      * With this setting, SMS does not qualify for a valid password recovery mechanism
      * if the user also has SMS MFA enabled. In the absence of this setting, Cognito
      * uses the legacy behavior to determine the recovery method where SMS is preferred
-     * over email.</p> <note> <p>Starting February 1, 2020, the value of
+     * over email.</p>  <p>Starting February 1, 2020, the value of
      * <code>AccountRecoverySetting</code> will default to <code>verified_email</code>
      * first and <code>verified_phone_number</code> as the second option for newly
-     * created user pools if no value is provided.</p> </note>
+     * created user pools if no value is provided.</p> 
      */
     inline CreateUserPoolRequest& WithAccountRecoverySetting(AccountRecoverySettingType&& value) { SetAccountRecoverySetting(std::move(value)); return *this;}
 

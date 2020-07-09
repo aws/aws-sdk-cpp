@@ -60,11 +60,11 @@ namespace Model
      * deliver log files to the designated bucket. For more information see the topic
      * <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html">Error
-     * Responses</a> in the Amazon S3 API Reference. </p> <note> <p>This error occurs
+     * Responses</a> in the Amazon S3 API Reference. </p>  <p>This error occurs
      * only when there is a problem with the destination S3 bucket and will not occur
      * for timeouts. To resolve the issue, create a new bucket and call
      * <code>UpdateTrail</code> to specify the new bucket, or fix the existing objects
-     * so that CloudTrail can again write to the bucket.</p> </note>
+     * so that CloudTrail can again write to the bucket.</p> 
      */
     inline const Aws::String& GetLatestDeliveryError() const{ return m_latestDeliveryError; }
 
@@ -73,11 +73,11 @@ namespace Model
      * deliver log files to the designated bucket. For more information see the topic
      * <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html">Error
-     * Responses</a> in the Amazon S3 API Reference. </p> <note> <p>This error occurs
+     * Responses</a> in the Amazon S3 API Reference. </p>  <p>This error occurs
      * only when there is a problem with the destination S3 bucket and will not occur
      * for timeouts. To resolve the issue, create a new bucket and call
      * <code>UpdateTrail</code> to specify the new bucket, or fix the existing objects
-     * so that CloudTrail can again write to the bucket.</p> </note>
+     * so that CloudTrail can again write to the bucket.</p> 
      */
     inline void SetLatestDeliveryError(const Aws::String& value) { m_latestDeliveryError = value; }
 
@@ -86,11 +86,11 @@ namespace Model
      * deliver log files to the designated bucket. For more information see the topic
      * <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html">Error
-     * Responses</a> in the Amazon S3 API Reference. </p> <note> <p>This error occurs
+     * Responses</a> in the Amazon S3 API Reference. </p>  <p>This error occurs
      * only when there is a problem with the destination S3 bucket and will not occur
      * for timeouts. To resolve the issue, create a new bucket and call
      * <code>UpdateTrail</code> to specify the new bucket, or fix the existing objects
-     * so that CloudTrail can again write to the bucket.</p> </note>
+     * so that CloudTrail can again write to the bucket.</p> 
      */
     inline void SetLatestDeliveryError(Aws::String&& value) { m_latestDeliveryError = std::move(value); }
 
@@ -99,11 +99,11 @@ namespace Model
      * deliver log files to the designated bucket. For more information see the topic
      * <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html">Error
-     * Responses</a> in the Amazon S3 API Reference. </p> <note> <p>This error occurs
+     * Responses</a> in the Amazon S3 API Reference. </p>  <p>This error occurs
      * only when there is a problem with the destination S3 bucket and will not occur
      * for timeouts. To resolve the issue, create a new bucket and call
      * <code>UpdateTrail</code> to specify the new bucket, or fix the existing objects
-     * so that CloudTrail can again write to the bucket.</p> </note>
+     * so that CloudTrail can again write to the bucket.</p> 
      */
     inline void SetLatestDeliveryError(const char* value) { m_latestDeliveryError.assign(value); }
 
@@ -112,11 +112,11 @@ namespace Model
      * deliver log files to the designated bucket. For more information see the topic
      * <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html">Error
-     * Responses</a> in the Amazon S3 API Reference. </p> <note> <p>This error occurs
+     * Responses</a> in the Amazon S3 API Reference. </p>  <p>This error occurs
      * only when there is a problem with the destination S3 bucket and will not occur
      * for timeouts. To resolve the issue, create a new bucket and call
      * <code>UpdateTrail</code> to specify the new bucket, or fix the existing objects
-     * so that CloudTrail can again write to the bucket.</p> </note>
+     * so that CloudTrail can again write to the bucket.</p> 
      */
     inline GetTrailStatusResult& WithLatestDeliveryError(const Aws::String& value) { SetLatestDeliveryError(value); return *this;}
 
@@ -125,11 +125,11 @@ namespace Model
      * deliver log files to the designated bucket. For more information see the topic
      * <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html">Error
-     * Responses</a> in the Amazon S3 API Reference. </p> <note> <p>This error occurs
+     * Responses</a> in the Amazon S3 API Reference. </p>  <p>This error occurs
      * only when there is a problem with the destination S3 bucket and will not occur
      * for timeouts. To resolve the issue, create a new bucket and call
      * <code>UpdateTrail</code> to specify the new bucket, or fix the existing objects
-     * so that CloudTrail can again write to the bucket.</p> </note>
+     * so that CloudTrail can again write to the bucket.</p> 
      */
     inline GetTrailStatusResult& WithLatestDeliveryError(Aws::String&& value) { SetLatestDeliveryError(std::move(value)); return *this;}
 
@@ -138,11 +138,11 @@ namespace Model
      * deliver log files to the designated bucket. For more information see the topic
      * <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html">Error
-     * Responses</a> in the Amazon S3 API Reference. </p> <note> <p>This error occurs
+     * Responses</a> in the Amazon S3 API Reference. </p>  <p>This error occurs
      * only when there is a problem with the destination S3 bucket and will not occur
      * for timeouts. To resolve the issue, create a new bucket and call
      * <code>UpdateTrail</code> to specify the new bucket, or fix the existing objects
-     * so that CloudTrail can again write to the bucket.</p> </note>
+     * so that CloudTrail can again write to the bucket.</p> 
      */
     inline GetTrailStatusResult& WithLatestDeliveryError(const char* value) { SetLatestDeliveryError(value); return *this;}
 
@@ -438,11 +438,11 @@ namespace Model
      * deliver a digest file to the designated bucket. For more information see the
      * topic <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html">Error
-     * Responses</a> in the Amazon S3 API Reference. </p> <note> <p>This error occurs
+     * Responses</a> in the Amazon S3 API Reference. </p>  <p>This error occurs
      * only when there is a problem with the destination S3 bucket and will not occur
      * for timeouts. To resolve the issue, create a new bucket and call
      * <code>UpdateTrail</code> to specify the new bucket, or fix the existing objects
-     * so that CloudTrail can again write to the bucket.</p> </note>
+     * so that CloudTrail can again write to the bucket.</p> 
      */
     inline const Aws::String& GetLatestDigestDeliveryError() const{ return m_latestDigestDeliveryError; }
 
@@ -451,11 +451,11 @@ namespace Model
      * deliver a digest file to the designated bucket. For more information see the
      * topic <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html">Error
-     * Responses</a> in the Amazon S3 API Reference. </p> <note> <p>This error occurs
+     * Responses</a> in the Amazon S3 API Reference. </p>  <p>This error occurs
      * only when there is a problem with the destination S3 bucket and will not occur
      * for timeouts. To resolve the issue, create a new bucket and call
      * <code>UpdateTrail</code> to specify the new bucket, or fix the existing objects
-     * so that CloudTrail can again write to the bucket.</p> </note>
+     * so that CloudTrail can again write to the bucket.</p> 
      */
     inline void SetLatestDigestDeliveryError(const Aws::String& value) { m_latestDigestDeliveryError = value; }
 
@@ -464,11 +464,11 @@ namespace Model
      * deliver a digest file to the designated bucket. For more information see the
      * topic <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html">Error
-     * Responses</a> in the Amazon S3 API Reference. </p> <note> <p>This error occurs
+     * Responses</a> in the Amazon S3 API Reference. </p>  <p>This error occurs
      * only when there is a problem with the destination S3 bucket and will not occur
      * for timeouts. To resolve the issue, create a new bucket and call
      * <code>UpdateTrail</code> to specify the new bucket, or fix the existing objects
-     * so that CloudTrail can again write to the bucket.</p> </note>
+     * so that CloudTrail can again write to the bucket.</p> 
      */
     inline void SetLatestDigestDeliveryError(Aws::String&& value) { m_latestDigestDeliveryError = std::move(value); }
 
@@ -477,11 +477,11 @@ namespace Model
      * deliver a digest file to the designated bucket. For more information see the
      * topic <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html">Error
-     * Responses</a> in the Amazon S3 API Reference. </p> <note> <p>This error occurs
+     * Responses</a> in the Amazon S3 API Reference. </p>  <p>This error occurs
      * only when there is a problem with the destination S3 bucket and will not occur
      * for timeouts. To resolve the issue, create a new bucket and call
      * <code>UpdateTrail</code> to specify the new bucket, or fix the existing objects
-     * so that CloudTrail can again write to the bucket.</p> </note>
+     * so that CloudTrail can again write to the bucket.</p> 
      */
     inline void SetLatestDigestDeliveryError(const char* value) { m_latestDigestDeliveryError.assign(value); }
 
@@ -490,11 +490,11 @@ namespace Model
      * deliver a digest file to the designated bucket. For more information see the
      * topic <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html">Error
-     * Responses</a> in the Amazon S3 API Reference. </p> <note> <p>This error occurs
+     * Responses</a> in the Amazon S3 API Reference. </p>  <p>This error occurs
      * only when there is a problem with the destination S3 bucket and will not occur
      * for timeouts. To resolve the issue, create a new bucket and call
      * <code>UpdateTrail</code> to specify the new bucket, or fix the existing objects
-     * so that CloudTrail can again write to the bucket.</p> </note>
+     * so that CloudTrail can again write to the bucket.</p> 
      */
     inline GetTrailStatusResult& WithLatestDigestDeliveryError(const Aws::String& value) { SetLatestDigestDeliveryError(value); return *this;}
 
@@ -503,11 +503,11 @@ namespace Model
      * deliver a digest file to the designated bucket. For more information see the
      * topic <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html">Error
-     * Responses</a> in the Amazon S3 API Reference. </p> <note> <p>This error occurs
+     * Responses</a> in the Amazon S3 API Reference. </p>  <p>This error occurs
      * only when there is a problem with the destination S3 bucket and will not occur
      * for timeouts. To resolve the issue, create a new bucket and call
      * <code>UpdateTrail</code> to specify the new bucket, or fix the existing objects
-     * so that CloudTrail can again write to the bucket.</p> </note>
+     * so that CloudTrail can again write to the bucket.</p> 
      */
     inline GetTrailStatusResult& WithLatestDigestDeliveryError(Aws::String&& value) { SetLatestDigestDeliveryError(std::move(value)); return *this;}
 
@@ -516,11 +516,11 @@ namespace Model
      * deliver a digest file to the designated bucket. For more information see the
      * topic <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html">Error
-     * Responses</a> in the Amazon S3 API Reference. </p> <note> <p>This error occurs
+     * Responses</a> in the Amazon S3 API Reference. </p>  <p>This error occurs
      * only when there is a problem with the destination S3 bucket and will not occur
      * for timeouts. To resolve the issue, create a new bucket and call
      * <code>UpdateTrail</code> to specify the new bucket, or fix the existing objects
-     * so that CloudTrail can again write to the bucket.</p> </note>
+     * so that CloudTrail can again write to the bucket.</p> 
      */
     inline GetTrailStatusResult& WithLatestDigestDeliveryError(const char* value) { SetLatestDigestDeliveryError(value); return *this;}
 

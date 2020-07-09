@@ -323,9 +323,9 @@ namespace Model
 
         /**
          * <p>Deletes the user belonging to a file transfer protocol-enabled server you
-         * specify.</p> <p>No response returns from this operation.</p> <note> <p>When you
+         * specify.</p> <p>No response returns from this operation.</p>  <p>When you
          * delete a user from a server, the user's information is lost.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DeleteUser">AWS
          * API Reference</a></p>
          */
@@ -333,9 +333,9 @@ namespace Model
 
         /**
          * <p>Deletes the user belonging to a file transfer protocol-enabled server you
-         * specify.</p> <p>No response returns from this operation.</p> <note> <p>When you
+         * specify.</p> <p>No response returns from this operation.</p>  <p>When you
          * delete a user from a server, the user's information is lost.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DeleteUser">AWS
          * API Reference</a></p>
          *
@@ -345,9 +345,9 @@ namespace Model
 
         /**
          * <p>Deletes the user belonging to a file transfer protocol-enabled server you
-         * specify.</p> <p>No response returns from this operation.</p> <note> <p>When you
+         * specify.</p> <p>No response returns from this operation.</p>  <p>When you
          * delete a user from a server, the user's information is lost.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DeleteUser">AWS
          * API Reference</a></p>
          *

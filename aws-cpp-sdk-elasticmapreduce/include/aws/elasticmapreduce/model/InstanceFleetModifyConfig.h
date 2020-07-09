@@ -25,8 +25,8 @@ namespace Model
 
   /**
    * <p>Configuration parameters for an instance fleet modification request.</p>
-   * <note> <p>The instance fleet configuration is available only in Amazon EMR
-   * versions 4.8.0 and later, excluding 5.0.x versions.</p> </note><p><h3>See
+   *  <p>The instance fleet configuration is available only in Amazon EMR
+   * versions 4.8.0 and later, excluding 5.0.x versions.</p> <p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/InstanceFleetModifyConfig">AWS
    * API Reference</a></p>

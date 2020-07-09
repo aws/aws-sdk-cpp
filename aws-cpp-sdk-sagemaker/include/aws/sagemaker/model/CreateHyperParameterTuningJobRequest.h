@@ -282,9 +282,9 @@ namespace Model
      * job that performs the best in the new tuning job is compared to the best
      * training jobs from the parent tuning jobs. From these, the training job that
      * performs the best as measured by the objective metric is returned as the overall
-     * best training job.</p> <note> <p>All training jobs launched by parent
+     * best training job.</p>  <p>All training jobs launched by parent
      * hyperparameter tuning jobs and the new hyperparameter tuning jobs count against
-     * the limit of training jobs for the tuning job.</p> </note>
+     * the limit of training jobs for the tuning job.</p> 
      */
     inline const HyperParameterTuningJobWarmStartConfig& GetWarmStartConfig() const{ return m_warmStartConfig; }
 
@@ -299,9 +299,9 @@ namespace Model
      * job that performs the best in the new tuning job is compared to the best
      * training jobs from the parent tuning jobs. From these, the training job that
      * performs the best as measured by the objective metric is returned as the overall
-     * best training job.</p> <note> <p>All training jobs launched by parent
+     * best training job.</p>  <p>All training jobs launched by parent
      * hyperparameter tuning jobs and the new hyperparameter tuning jobs count against
-     * the limit of training jobs for the tuning job.</p> </note>
+     * the limit of training jobs for the tuning job.</p> 
      */
     inline bool WarmStartConfigHasBeenSet() const { return m_warmStartConfigHasBeenSet; }
 
@@ -316,9 +316,9 @@ namespace Model
      * job that performs the best in the new tuning job is compared to the best
      * training jobs from the parent tuning jobs. From these, the training job that
      * performs the best as measured by the objective metric is returned as the overall
-     * best training job.</p> <note> <p>All training jobs launched by parent
+     * best training job.</p>  <p>All training jobs launched by parent
      * hyperparameter tuning jobs and the new hyperparameter tuning jobs count against
-     * the limit of training jobs for the tuning job.</p> </note>
+     * the limit of training jobs for the tuning job.</p> 
      */
     inline void SetWarmStartConfig(const HyperParameterTuningJobWarmStartConfig& value) { m_warmStartConfigHasBeenSet = true; m_warmStartConfig = value; }
 
@@ -333,9 +333,9 @@ namespace Model
      * job that performs the best in the new tuning job is compared to the best
      * training jobs from the parent tuning jobs. From these, the training job that
      * performs the best as measured by the objective metric is returned as the overall
-     * best training job.</p> <note> <p>All training jobs launched by parent
+     * best training job.</p>  <p>All training jobs launched by parent
      * hyperparameter tuning jobs and the new hyperparameter tuning jobs count against
-     * the limit of training jobs for the tuning job.</p> </note>
+     * the limit of training jobs for the tuning job.</p> 
      */
     inline void SetWarmStartConfig(HyperParameterTuningJobWarmStartConfig&& value) { m_warmStartConfigHasBeenSet = true; m_warmStartConfig = std::move(value); }
 
@@ -350,9 +350,9 @@ namespace Model
      * job that performs the best in the new tuning job is compared to the best
      * training jobs from the parent tuning jobs. From these, the training job that
      * performs the best as measured by the objective metric is returned as the overall
-     * best training job.</p> <note> <p>All training jobs launched by parent
+     * best training job.</p>  <p>All training jobs launched by parent
      * hyperparameter tuning jobs and the new hyperparameter tuning jobs count against
-     * the limit of training jobs for the tuning job.</p> </note>
+     * the limit of training jobs for the tuning job.</p> 
      */
     inline CreateHyperParameterTuningJobRequest& WithWarmStartConfig(const HyperParameterTuningJobWarmStartConfig& value) { SetWarmStartConfig(value); return *this;}
 
@@ -367,9 +367,9 @@ namespace Model
      * job that performs the best in the new tuning job is compared to the best
      * training jobs from the parent tuning jobs. From these, the training job that
      * performs the best as measured by the objective metric is returned as the overall
-     * best training job.</p> <note> <p>All training jobs launched by parent
+     * best training job.</p>  <p>All training jobs launched by parent
      * hyperparameter tuning jobs and the new hyperparameter tuning jobs count against
-     * the limit of training jobs for the tuning job.</p> </note>
+     * the limit of training jobs for the tuning job.</p> 
      */
     inline CreateHyperParameterTuningJobRequest& WithWarmStartConfig(HyperParameterTuningJobWarmStartConfig&& value) { SetWarmStartConfig(std::move(value)); return *this;}
 

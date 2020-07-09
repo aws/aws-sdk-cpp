@@ -31,8 +31,8 @@ namespace Model
    * action. You can also customize the <a
    * href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_Payload.html">payload</a>.
    * A separate column of the DynamoDB table receives one attribute-value pair in the
-   * payload that you specify.</p> <important> <p>The <code>type</code> value for
-   * <code>Payload</code> must be <code>JSON</code>.</p> </important> <p>You can use
+   * payload that you specify.</p>  <p>The <code>type</code> value for
+   * <code>Payload</code> must be <code>JSON</code>.</p>  <p>You can use
    * expressions for parameters that are strings. For more information, see <a
    * href="https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-expressions.html">Expressions</a>
    * in the <i>AWS IoT Events Developer Guide</i>.</p><p><h3>See Also:</h3>   <a

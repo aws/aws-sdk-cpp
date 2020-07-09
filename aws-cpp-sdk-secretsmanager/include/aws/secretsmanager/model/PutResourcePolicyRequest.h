@@ -36,7 +36,7 @@ namespace Model
 
     /**
      * <p>Specifies the secret that you want to attach the resource-based policy to.
-     * You can specify either the ARN or the friendly name of the secret.</p> <note>
+     * You can specify either the ARN or the friendly name of the secret.</p> 
      * <p>If you specify an ARN, we generally recommend that you specify a complete
      * ARN. You can specify a partial ARN too—for example, if you don’t include the
      * final hyphen and six random characters that Secrets Manager adds at the end of
@@ -46,14 +46,18 @@ namespace Model
      * and six characters to the ARN) and you try to use that as a partial ARN, then
      * those characters cause Secrets Manager to assume that you’re specifying a
      * complete ARN. This confusion can cause unexpected results. To avoid this
-     * situation, we recommend that you don’t create secret names that end with a
-     * hyphen followed by six characters.</p> </note>
+     * situation, we recommend that you don’t create secret names ending with a hyphen
+     * followed by six characters.</p> <p>If you specify an incomplete ARN without the
+     * random suffix, and instead provide the 'friendly name', you <i>must</i> not
+     * include the random suffix. If you do include the random suffix added by Secrets
+     * Manager, you receive either a <i>ResourceNotFoundException</i> or an
+     * <i>AccessDeniedException</i> error, depending on your permissions.</p> 
      */
     inline const Aws::String& GetSecretId() const{ return m_secretId; }
 
     /**
      * <p>Specifies the secret that you want to attach the resource-based policy to.
-     * You can specify either the ARN or the friendly name of the secret.</p> <note>
+     * You can specify either the ARN or the friendly name of the secret.</p> 
      * <p>If you specify an ARN, we generally recommend that you specify a complete
      * ARN. You can specify a partial ARN too—for example, if you don’t include the
      * final hyphen and six random characters that Secrets Manager adds at the end of
@@ -63,14 +67,18 @@ namespace Model
      * and six characters to the ARN) and you try to use that as a partial ARN, then
      * those characters cause Secrets Manager to assume that you’re specifying a
      * complete ARN. This confusion can cause unexpected results. To avoid this
-     * situation, we recommend that you don’t create secret names that end with a
-     * hyphen followed by six characters.</p> </note>
+     * situation, we recommend that you don’t create secret names ending with a hyphen
+     * followed by six characters.</p> <p>If you specify an incomplete ARN without the
+     * random suffix, and instead provide the 'friendly name', you <i>must</i> not
+     * include the random suffix. If you do include the random suffix added by Secrets
+     * Manager, you receive either a <i>ResourceNotFoundException</i> or an
+     * <i>AccessDeniedException</i> error, depending on your permissions.</p> 
      */
     inline bool SecretIdHasBeenSet() const { return m_secretIdHasBeenSet; }
 
     /**
      * <p>Specifies the secret that you want to attach the resource-based policy to.
-     * You can specify either the ARN or the friendly name of the secret.</p> <note>
+     * You can specify either the ARN or the friendly name of the secret.</p> 
      * <p>If you specify an ARN, we generally recommend that you specify a complete
      * ARN. You can specify a partial ARN too—for example, if you don’t include the
      * final hyphen and six random characters that Secrets Manager adds at the end of
@@ -80,14 +88,18 @@ namespace Model
      * and six characters to the ARN) and you try to use that as a partial ARN, then
      * those characters cause Secrets Manager to assume that you’re specifying a
      * complete ARN. This confusion can cause unexpected results. To avoid this
-     * situation, we recommend that you don’t create secret names that end with a
-     * hyphen followed by six characters.</p> </note>
+     * situation, we recommend that you don’t create secret names ending with a hyphen
+     * followed by six characters.</p> <p>If you specify an incomplete ARN without the
+     * random suffix, and instead provide the 'friendly name', you <i>must</i> not
+     * include the random suffix. If you do include the random suffix added by Secrets
+     * Manager, you receive either a <i>ResourceNotFoundException</i> or an
+     * <i>AccessDeniedException</i> error, depending on your permissions.</p> 
      */
     inline void SetSecretId(const Aws::String& value) { m_secretIdHasBeenSet = true; m_secretId = value; }
 
     /**
      * <p>Specifies the secret that you want to attach the resource-based policy to.
-     * You can specify either the ARN or the friendly name of the secret.</p> <note>
+     * You can specify either the ARN or the friendly name of the secret.</p> 
      * <p>If you specify an ARN, we generally recommend that you specify a complete
      * ARN. You can specify a partial ARN too—for example, if you don’t include the
      * final hyphen and six random characters that Secrets Manager adds at the end of
@@ -97,14 +109,18 @@ namespace Model
      * and six characters to the ARN) and you try to use that as a partial ARN, then
      * those characters cause Secrets Manager to assume that you’re specifying a
      * complete ARN. This confusion can cause unexpected results. To avoid this
-     * situation, we recommend that you don’t create secret names that end with a
-     * hyphen followed by six characters.</p> </note>
+     * situation, we recommend that you don’t create secret names ending with a hyphen
+     * followed by six characters.</p> <p>If you specify an incomplete ARN without the
+     * random suffix, and instead provide the 'friendly name', you <i>must</i> not
+     * include the random suffix. If you do include the random suffix added by Secrets
+     * Manager, you receive either a <i>ResourceNotFoundException</i> or an
+     * <i>AccessDeniedException</i> error, depending on your permissions.</p> 
      */
     inline void SetSecretId(Aws::String&& value) { m_secretIdHasBeenSet = true; m_secretId = std::move(value); }
 
     /**
      * <p>Specifies the secret that you want to attach the resource-based policy to.
-     * You can specify either the ARN or the friendly name of the secret.</p> <note>
+     * You can specify either the ARN or the friendly name of the secret.</p> 
      * <p>If you specify an ARN, we generally recommend that you specify a complete
      * ARN. You can specify a partial ARN too—for example, if you don’t include the
      * final hyphen and six random characters that Secrets Manager adds at the end of
@@ -114,14 +130,18 @@ namespace Model
      * and six characters to the ARN) and you try to use that as a partial ARN, then
      * those characters cause Secrets Manager to assume that you’re specifying a
      * complete ARN. This confusion can cause unexpected results. To avoid this
-     * situation, we recommend that you don’t create secret names that end with a
-     * hyphen followed by six characters.</p> </note>
+     * situation, we recommend that you don’t create secret names ending with a hyphen
+     * followed by six characters.</p> <p>If you specify an incomplete ARN without the
+     * random suffix, and instead provide the 'friendly name', you <i>must</i> not
+     * include the random suffix. If you do include the random suffix added by Secrets
+     * Manager, you receive either a <i>ResourceNotFoundException</i> or an
+     * <i>AccessDeniedException</i> error, depending on your permissions.</p> 
      */
     inline void SetSecretId(const char* value) { m_secretIdHasBeenSet = true; m_secretId.assign(value); }
 
     /**
      * <p>Specifies the secret that you want to attach the resource-based policy to.
-     * You can specify either the ARN or the friendly name of the secret.</p> <note>
+     * You can specify either the ARN or the friendly name of the secret.</p> 
      * <p>If you specify an ARN, we generally recommend that you specify a complete
      * ARN. You can specify a partial ARN too—for example, if you don’t include the
      * final hyphen and six random characters that Secrets Manager adds at the end of
@@ -131,14 +151,18 @@ namespace Model
      * and six characters to the ARN) and you try to use that as a partial ARN, then
      * those characters cause Secrets Manager to assume that you’re specifying a
      * complete ARN. This confusion can cause unexpected results. To avoid this
-     * situation, we recommend that you don’t create secret names that end with a
-     * hyphen followed by six characters.</p> </note>
+     * situation, we recommend that you don’t create secret names ending with a hyphen
+     * followed by six characters.</p> <p>If you specify an incomplete ARN without the
+     * random suffix, and instead provide the 'friendly name', you <i>must</i> not
+     * include the random suffix. If you do include the random suffix added by Secrets
+     * Manager, you receive either a <i>ResourceNotFoundException</i> or an
+     * <i>AccessDeniedException</i> error, depending on your permissions.</p> 
      */
     inline PutResourcePolicyRequest& WithSecretId(const Aws::String& value) { SetSecretId(value); return *this;}
 
     /**
      * <p>Specifies the secret that you want to attach the resource-based policy to.
-     * You can specify either the ARN or the friendly name of the secret.</p> <note>
+     * You can specify either the ARN or the friendly name of the secret.</p> 
      * <p>If you specify an ARN, we generally recommend that you specify a complete
      * ARN. You can specify a partial ARN too—for example, if you don’t include the
      * final hyphen and six random characters that Secrets Manager adds at the end of
@@ -148,14 +172,18 @@ namespace Model
      * and six characters to the ARN) and you try to use that as a partial ARN, then
      * those characters cause Secrets Manager to assume that you’re specifying a
      * complete ARN. This confusion can cause unexpected results. To avoid this
-     * situation, we recommend that you don’t create secret names that end with a
-     * hyphen followed by six characters.</p> </note>
+     * situation, we recommend that you don’t create secret names ending with a hyphen
+     * followed by six characters.</p> <p>If you specify an incomplete ARN without the
+     * random suffix, and instead provide the 'friendly name', you <i>must</i> not
+     * include the random suffix. If you do include the random suffix added by Secrets
+     * Manager, you receive either a <i>ResourceNotFoundException</i> or an
+     * <i>AccessDeniedException</i> error, depending on your permissions.</p> 
      */
     inline PutResourcePolicyRequest& WithSecretId(Aws::String&& value) { SetSecretId(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the secret that you want to attach the resource-based policy to.
-     * You can specify either the ARN or the friendly name of the secret.</p> <note>
+     * You can specify either the ARN or the friendly name of the secret.</p> 
      * <p>If you specify an ARN, we generally recommend that you specify a complete
      * ARN. You can specify a partial ARN too—for example, if you don’t include the
      * final hyphen and six random characters that Secrets Manager adds at the end of
@@ -165,8 +193,12 @@ namespace Model
      * and six characters to the ARN) and you try to use that as a partial ARN, then
      * those characters cause Secrets Manager to assume that you’re specifying a
      * complete ARN. This confusion can cause unexpected results. To avoid this
-     * situation, we recommend that you don’t create secret names that end with a
-     * hyphen followed by six characters.</p> </note>
+     * situation, we recommend that you don’t create secret names ending with a hyphen
+     * followed by six characters.</p> <p>If you specify an incomplete ARN without the
+     * random suffix, and instead provide the 'friendly name', you <i>must</i> not
+     * include the random suffix. If you do include the random suffix added by Secrets
+     * Manager, you receive either a <i>ResourceNotFoundException</i> or an
+     * <i>AccessDeniedException</i> error, depending on your permissions.</p> 
      */
     inline PutResourcePolicyRequest& WithSecretId(const char* value) { SetSecretId(value); return *this;}
 
@@ -251,6 +283,31 @@ namespace Model
      */
     inline PutResourcePolicyRequest& WithResourcePolicy(const char* value) { SetResourcePolicy(value); return *this;}
 
+
+    /**
+     * <p>Makes an optional API call to Zelkova to validate the Resource Policy to
+     * prevent broad access to your secret.</p>
+     */
+    inline bool GetBlockPublicPolicy() const{ return m_blockPublicPolicy; }
+
+    /**
+     * <p>Makes an optional API call to Zelkova to validate the Resource Policy to
+     * prevent broad access to your secret.</p>
+     */
+    inline bool BlockPublicPolicyHasBeenSet() const { return m_blockPublicPolicyHasBeenSet; }
+
+    /**
+     * <p>Makes an optional API call to Zelkova to validate the Resource Policy to
+     * prevent broad access to your secret.</p>
+     */
+    inline void SetBlockPublicPolicy(bool value) { m_blockPublicPolicyHasBeenSet = true; m_blockPublicPolicy = value; }
+
+    /**
+     * <p>Makes an optional API call to Zelkova to validate the Resource Policy to
+     * prevent broad access to your secret.</p>
+     */
+    inline PutResourcePolicyRequest& WithBlockPublicPolicy(bool value) { SetBlockPublicPolicy(value); return *this;}
+
   private:
 
     Aws::String m_secretId;
@@ -258,6 +315,9 @@ namespace Model
 
     Aws::String m_resourcePolicy;
     bool m_resourcePolicyHasBeenSet;
+
+    bool m_blockPublicPolicy;
+    bool m_blockPublicPolicyHasBeenSet;
   };
 
 } // namespace Model

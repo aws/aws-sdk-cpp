@@ -203,8 +203,8 @@ namespace Model
      * <code>arn:aws:kms:us-west-2:444455556666:alias/projectKey1</code>.</p> </li>
      * </ul> <p>If <code>KmsKeyId</code> is specified, the
      * <a>CreateFileSystemRequest$Encrypted</a> parameter must be set to true.</p>
-     * <important> <p>EFS accepts only symmetric CMKs. You cannot use asymmetric CMKs
-     * with EFS file systems.</p> </important>
+     *  <p>EFS accepts only symmetric CMKs. You cannot use asymmetric CMKs
+     * with EFS file systems.</p> 
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
@@ -223,8 +223,8 @@ namespace Model
      * <code>arn:aws:kms:us-west-2:444455556666:alias/projectKey1</code>.</p> </li>
      * </ul> <p>If <code>KmsKeyId</code> is specified, the
      * <a>CreateFileSystemRequest$Encrypted</a> parameter must be set to true.</p>
-     * <important> <p>EFS accepts only symmetric CMKs. You cannot use asymmetric CMKs
-     * with EFS file systems.</p> </important>
+     *  <p>EFS accepts only symmetric CMKs. You cannot use asymmetric CMKs
+     * with EFS file systems.</p> 
      */
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
@@ -243,8 +243,8 @@ namespace Model
      * <code>arn:aws:kms:us-west-2:444455556666:alias/projectKey1</code>.</p> </li>
      * </ul> <p>If <code>KmsKeyId</code> is specified, the
      * <a>CreateFileSystemRequest$Encrypted</a> parameter must be set to true.</p>
-     * <important> <p>EFS accepts only symmetric CMKs. You cannot use asymmetric CMKs
-     * with EFS file systems.</p> </important>
+     *  <p>EFS accepts only symmetric CMKs. You cannot use asymmetric CMKs
+     * with EFS file systems.</p> 
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
@@ -263,8 +263,8 @@ namespace Model
      * <code>arn:aws:kms:us-west-2:444455556666:alias/projectKey1</code>.</p> </li>
      * </ul> <p>If <code>KmsKeyId</code> is specified, the
      * <a>CreateFileSystemRequest$Encrypted</a> parameter must be set to true.</p>
-     * <important> <p>EFS accepts only symmetric CMKs. You cannot use asymmetric CMKs
-     * with EFS file systems.</p> </important>
+     *  <p>EFS accepts only symmetric CMKs. You cannot use asymmetric CMKs
+     * with EFS file systems.</p> 
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
@@ -283,8 +283,8 @@ namespace Model
      * <code>arn:aws:kms:us-west-2:444455556666:alias/projectKey1</code>.</p> </li>
      * </ul> <p>If <code>KmsKeyId</code> is specified, the
      * <a>CreateFileSystemRequest$Encrypted</a> parameter must be set to true.</p>
-     * <important> <p>EFS accepts only symmetric CMKs. You cannot use asymmetric CMKs
-     * with EFS file systems.</p> </important>
+     *  <p>EFS accepts only symmetric CMKs. You cannot use asymmetric CMKs
+     * with EFS file systems.</p> 
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
@@ -303,8 +303,8 @@ namespace Model
      * <code>arn:aws:kms:us-west-2:444455556666:alias/projectKey1</code>.</p> </li>
      * </ul> <p>If <code>KmsKeyId</code> is specified, the
      * <a>CreateFileSystemRequest$Encrypted</a> parameter must be set to true.</p>
-     * <important> <p>EFS accepts only symmetric CMKs. You cannot use asymmetric CMKs
-     * with EFS file systems.</p> </important>
+     *  <p>EFS accepts only symmetric CMKs. You cannot use asymmetric CMKs
+     * with EFS file systems.</p> 
      */
     inline CreateFileSystemRequest& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
@@ -323,8 +323,8 @@ namespace Model
      * <code>arn:aws:kms:us-west-2:444455556666:alias/projectKey1</code>.</p> </li>
      * </ul> <p>If <code>KmsKeyId</code> is specified, the
      * <a>CreateFileSystemRequest$Encrypted</a> parameter must be set to true.</p>
-     * <important> <p>EFS accepts only symmetric CMKs. You cannot use asymmetric CMKs
-     * with EFS file systems.</p> </important>
+     *  <p>EFS accepts only symmetric CMKs. You cannot use asymmetric CMKs
+     * with EFS file systems.</p> 
      */
     inline CreateFileSystemRequest& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
@@ -343,8 +343,8 @@ namespace Model
      * <code>arn:aws:kms:us-west-2:444455556666:alias/projectKey1</code>.</p> </li>
      * </ul> <p>If <code>KmsKeyId</code> is specified, the
      * <a>CreateFileSystemRequest$Encrypted</a> parameter must be set to true.</p>
-     * <important> <p>EFS accepts only symmetric CMKs. You cannot use asymmetric CMKs
-     * with EFS file systems.</p> </important>
+     *  <p>EFS accepts only symmetric CMKs. You cannot use asymmetric CMKs
+     * with EFS file systems.</p> 
      */
     inline CreateFileSystemRequest& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 

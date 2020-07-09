@@ -670,7 +670,7 @@ namespace Model
          * <a>ModifyDBCluster</a>. When you associate a new DB cluster parameter group with
          * a running DB cluster, you need to reboot the DB instances in the DB cluster
          * without failover for the new DB cluster parameter group and associated settings
-         * to take effect.</p> <important> <p>After you create a DB cluster parameter
+         * to take effect.</p>  <p>After you create a DB cluster parameter
          * group, you should wait at least 5 minutes before creating your first DB cluster
          * that uses that DB cluster parameter group as the default parameter group. This
          * allows Amazon Neptune to fully complete the create action before the DB cluster
@@ -681,7 +681,7 @@ namespace Model
          * Groups</i> option of the <a href="https://console.aws.amazon.com/rds/">Amazon
          * Neptune console</a> or the <a>DescribeDBClusterParameters</a> command to verify
          * that your DB cluster parameter group has been created or modified.</p>
-         * </important><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/CreateDBClusterParameterGroup">AWS
          * API Reference</a></p>
          */
@@ -698,7 +698,7 @@ namespace Model
          * <a>ModifyDBCluster</a>. When you associate a new DB cluster parameter group with
          * a running DB cluster, you need to reboot the DB instances in the DB cluster
          * without failover for the new DB cluster parameter group and associated settings
-         * to take effect.</p> <important> <p>After you create a DB cluster parameter
+         * to take effect.</p>  <p>After you create a DB cluster parameter
          * group, you should wait at least 5 minutes before creating your first DB cluster
          * that uses that DB cluster parameter group as the default parameter group. This
          * allows Amazon Neptune to fully complete the create action before the DB cluster
@@ -709,7 +709,7 @@ namespace Model
          * Groups</i> option of the <a href="https://console.aws.amazon.com/rds/">Amazon
          * Neptune console</a> or the <a>DescribeDBClusterParameters</a> command to verify
          * that your DB cluster parameter group has been created or modified.</p>
-         * </important><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/CreateDBClusterParameterGroup">AWS
          * API Reference</a></p>
          *
@@ -728,7 +728,7 @@ namespace Model
          * <a>ModifyDBCluster</a>. When you associate a new DB cluster parameter group with
          * a running DB cluster, you need to reboot the DB instances in the DB cluster
          * without failover for the new DB cluster parameter group and associated settings
-         * to take effect.</p> <important> <p>After you create a DB cluster parameter
+         * to take effect.</p>  <p>After you create a DB cluster parameter
          * group, you should wait at least 5 minutes before creating your first DB cluster
          * that uses that DB cluster parameter group as the default parameter group. This
          * allows Amazon Neptune to fully complete the create action before the DB cluster
@@ -739,7 +739,7 @@ namespace Model
          * Groups</i> option of the <a href="https://console.aws.amazon.com/rds/">Amazon
          * Neptune console</a> or the <a>DescribeDBClusterParameters</a> command to verify
          * that your DB cluster parameter group has been created or modified.</p>
-         * </important><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/CreateDBClusterParameterGroup">AWS
          * API Reference</a></p>
          *
@@ -806,7 +806,7 @@ namespace Model
          * using <i>ModifyDBInstance</i>. When you associate a new DB parameter group with
          * a running DB instance, you need to reboot the DB instance without failover for
          * the new DB parameter group and associated settings to take effect.</p>
-         * <important> <p>After you create a DB parameter group, you should wait at least 5
+         *  <p>After you create a DB parameter group, you should wait at least 5
          * minutes before creating your first DB instance that uses that DB parameter group
          * as the default parameter group. This allows Amazon Neptune to fully complete the
          * create action before the parameter group is used as the default for a new DB
@@ -815,7 +815,7 @@ namespace Model
          * the default database defined by the <code>character_set_database</code>
          * parameter. You can use the <i>Parameter Groups</i> option of the Amazon Neptune
          * console or the <i>DescribeDBParameters</i> command to verify that your DB
-         * parameter group has been created or modified.</p> </important><p><h3>See
+         * parameter group has been created or modified.</p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/CreateDBParameterGroup">AWS
          * API Reference</a></p>
@@ -831,7 +831,7 @@ namespace Model
          * using <i>ModifyDBInstance</i>. When you associate a new DB parameter group with
          * a running DB instance, you need to reboot the DB instance without failover for
          * the new DB parameter group and associated settings to take effect.</p>
-         * <important> <p>After you create a DB parameter group, you should wait at least 5
+         *  <p>After you create a DB parameter group, you should wait at least 5
          * minutes before creating your first DB instance that uses that DB parameter group
          * as the default parameter group. This allows Amazon Neptune to fully complete the
          * create action before the parameter group is used as the default for a new DB
@@ -840,7 +840,7 @@ namespace Model
          * the default database defined by the <code>character_set_database</code>
          * parameter. You can use the <i>Parameter Groups</i> option of the Amazon Neptune
          * console or the <i>DescribeDBParameters</i> command to verify that your DB
-         * parameter group has been created or modified.</p> </important><p><h3>See
+         * parameter group has been created or modified.</p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/CreateDBParameterGroup">AWS
          * API Reference</a></p>
@@ -858,7 +858,7 @@ namespace Model
          * using <i>ModifyDBInstance</i>. When you associate a new DB parameter group with
          * a running DB instance, you need to reboot the DB instance without failover for
          * the new DB parameter group and associated settings to take effect.</p>
-         * <important> <p>After you create a DB parameter group, you should wait at least 5
+         *  <p>After you create a DB parameter group, you should wait at least 5
          * minutes before creating your first DB instance that uses that DB parameter group
          * as the default parameter group. This allows Amazon Neptune to fully complete the
          * create action before the parameter group is used as the default for a new DB
@@ -867,7 +867,7 @@ namespace Model
          * the default database defined by the <code>character_set_database</code>
          * parameter. You can use the <i>Parameter Groups</i> option of the Amazon Neptune
          * console or the <i>DescribeDBParameters</i> command to verify that your DB
-         * parameter group has been created or modified.</p> </important><p><h3>See
+         * parameter group has been created or modified.</p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/CreateDBParameterGroup">AWS
          * API Reference</a></p>
@@ -1050,8 +1050,8 @@ namespace Model
 
         /**
          * <p>Deletes a DB cluster snapshot. If the snapshot is being copied, the copy
-         * operation is terminated.</p> <note> <p>The DB cluster snapshot must be in the
-         * <code>available</code> state to be deleted.</p> </note><p><h3>See Also:</h3>  
+         * operation is terminated.</p>  <p>The DB cluster snapshot must be in the
+         * <code>available</code> state to be deleted.</p> <p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DeleteDBClusterSnapshot">AWS
          * API Reference</a></p>
@@ -1060,8 +1060,8 @@ namespace Model
 
         /**
          * <p>Deletes a DB cluster snapshot. If the snapshot is being copied, the copy
-         * operation is terminated.</p> <note> <p>The DB cluster snapshot must be in the
-         * <code>available</code> state to be deleted.</p> </note><p><h3>See Also:</h3>  
+         * operation is terminated.</p>  <p>The DB cluster snapshot must be in the
+         * <code>available</code> state to be deleted.</p> <p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DeleteDBClusterSnapshot">AWS
          * API Reference</a></p>
@@ -1072,8 +1072,8 @@ namespace Model
 
         /**
          * <p>Deletes a DB cluster snapshot. If the snapshot is being copied, the copy
-         * operation is terminated.</p> <note> <p>The DB cluster snapshot must be in the
-         * <code>available</code> state to be deleted.</p> </note><p><h3>See Also:</h3>  
+         * operation is terminated.</p>  <p>The DB cluster snapshot must be in the
+         * <code>available</code> state to be deleted.</p> <p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DeleteDBClusterSnapshot">AWS
          * API Reference</a></p>
@@ -1175,8 +1175,8 @@ namespace Model
         virtual void DeleteDBParameterGroupAsync(const Model::DeleteDBParameterGroupRequest& request, const DeleteDBParameterGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes a DB subnet group.</p> <note> <p>The specified database subnet group
-         * must not be associated with any DB instances.</p> </note><p><h3>See Also:</h3>  
+         * <p>Deletes a DB subnet group.</p>  <p>The specified database subnet group
+         * must not be associated with any DB instances.</p> <p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DeleteDBSubnetGroup">AWS
          * API Reference</a></p>
@@ -1184,8 +1184,8 @@ namespace Model
         virtual Model::DeleteDBSubnetGroupOutcome DeleteDBSubnetGroup(const Model::DeleteDBSubnetGroupRequest& request) const;
 
         /**
-         * <p>Deletes a DB subnet group.</p> <note> <p>The specified database subnet group
-         * must not be associated with any DB instances.</p> </note><p><h3>See Also:</h3>  
+         * <p>Deletes a DB subnet group.</p>  <p>The specified database subnet group
+         * must not be associated with any DB instances.</p> <p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DeleteDBSubnetGroup">AWS
          * API Reference</a></p>
@@ -1195,8 +1195,8 @@ namespace Model
         virtual Model::DeleteDBSubnetGroupOutcomeCallable DeleteDBSubnetGroupCallable(const Model::DeleteDBSubnetGroupRequest& request) const;
 
         /**
-         * <p>Deletes a DB subnet group.</p> <note> <p>The specified database subnet group
-         * must not be associated with any DB instances.</p> </note><p><h3>See Also:</h3>  
+         * <p>Deletes a DB subnet group.</p>  <p>The specified database subnet group
+         * must not be associated with any DB instances.</p> <p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DeleteDBSubnetGroup">AWS
          * API Reference</a></p>
@@ -1380,8 +1380,8 @@ namespace Model
 
         /**
          * <p>Returns information about provisioned DB clusters, and supports
-         * pagination.</p> <note> <p>This operation can also return information for Amazon
-         * RDS clusters and Amazon DocDB clusters.</p> </note><p><h3>See Also:</h3>   <a
+         * pagination.</p>  <p>This operation can also return information for Amazon
+         * RDS clusters and Amazon DocDB clusters.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DescribeDBClusters">AWS
          * API Reference</a></p>
          */
@@ -1389,8 +1389,8 @@ namespace Model
 
         /**
          * <p>Returns information about provisioned DB clusters, and supports
-         * pagination.</p> <note> <p>This operation can also return information for Amazon
-         * RDS clusters and Amazon DocDB clusters.</p> </note><p><h3>See Also:</h3>   <a
+         * pagination.</p>  <p>This operation can also return information for Amazon
+         * RDS clusters and Amazon DocDB clusters.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DescribeDBClusters">AWS
          * API Reference</a></p>
          *
@@ -1400,8 +1400,8 @@ namespace Model
 
         /**
          * <p>Returns information about provisioned DB clusters, and supports
-         * pagination.</p> <note> <p>This operation can also return information for Amazon
-         * RDS clusters and Amazon DocDB clusters.</p> </note><p><h3>See Also:</h3>   <a
+         * pagination.</p>  <p>This operation can also return information for Amazon
+         * RDS clusters and Amazon DocDB clusters.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DescribeDBClusters">AWS
          * API Reference</a></p>
          *
@@ -1436,8 +1436,8 @@ namespace Model
 
         /**
          * <p>Returns information about provisioned instances, and supports pagination.</p>
-         * <note> <p>This operation can also return information for Amazon RDS instances
-         * and Amazon DocDB instances.</p> </note><p><h3>See Also:</h3>   <a
+         *  <p>This operation can also return information for Amazon RDS instances
+         * and Amazon DocDB instances.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DescribeDBInstances">AWS
          * API Reference</a></p>
          */
@@ -1445,8 +1445,8 @@ namespace Model
 
         /**
          * <p>Returns information about provisioned instances, and supports pagination.</p>
-         * <note> <p>This operation can also return information for Amazon RDS instances
-         * and Amazon DocDB instances.</p> </note><p><h3>See Also:</h3>   <a
+         *  <p>This operation can also return information for Amazon RDS instances
+         * and Amazon DocDB instances.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DescribeDBInstances">AWS
          * API Reference</a></p>
          *
@@ -1456,8 +1456,8 @@ namespace Model
 
         /**
          * <p>Returns information about provisioned instances, and supports pagination.</p>
-         * <note> <p>This operation can also return information for Amazon RDS instances
-         * and Amazon DocDB instances.</p> </note><p><h3>See Also:</h3>   <a
+         *  <p>This operation can also return information for Amazon RDS instances
+         * and Amazon DocDB instances.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DescribeDBInstances">AWS
          * API Reference</a></p>
          *
@@ -1915,10 +1915,10 @@ namespace Model
          * <p> Modifies the parameters of a DB cluster parameter group. To modify more than
          * one parameter, submit a list of the following: <code>ParameterName</code>,
          * <code>ParameterValue</code>, and <code>ApplyMethod</code>. A maximum of 20
-         * parameters can be modified in a single request.</p> <note> <p>Changes to dynamic
+         * parameters can be modified in a single request.</p>  <p>Changes to dynamic
          * parameters are applied immediately. Changes to static parameters require a
          * reboot without failover to the DB cluster associated with the parameter group
-         * before the change can take effect.</p> </note> <important> <p>After you create a
+         * before the change can take effect.</p>   <p>After you create a
          * DB cluster parameter group, you should wait at least 5 minutes before creating
          * your first DB cluster that uses that DB cluster parameter group as the default
          * parameter group. This allows Amazon Neptune to fully complete the create action
@@ -1928,7 +1928,7 @@ namespace Model
          * defined by the <code>character_set_database</code> parameter. You can use the
          * <i>Parameter Groups</i> option of the Amazon Neptune console or the
          * <a>DescribeDBClusterParameters</a> command to verify that your DB cluster
-         * parameter group has been created or modified.</p> </important><p><h3>See
+         * parameter group has been created or modified.</p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/ModifyDBClusterParameterGroup">AWS
          * API Reference</a></p>
@@ -1939,10 +1939,10 @@ namespace Model
          * <p> Modifies the parameters of a DB cluster parameter group. To modify more than
          * one parameter, submit a list of the following: <code>ParameterName</code>,
          * <code>ParameterValue</code>, and <code>ApplyMethod</code>. A maximum of 20
-         * parameters can be modified in a single request.</p> <note> <p>Changes to dynamic
+         * parameters can be modified in a single request.</p>  <p>Changes to dynamic
          * parameters are applied immediately. Changes to static parameters require a
          * reboot without failover to the DB cluster associated with the parameter group
-         * before the change can take effect.</p> </note> <important> <p>After you create a
+         * before the change can take effect.</p>   <p>After you create a
          * DB cluster parameter group, you should wait at least 5 minutes before creating
          * your first DB cluster that uses that DB cluster parameter group as the default
          * parameter group. This allows Amazon Neptune to fully complete the create action
@@ -1952,7 +1952,7 @@ namespace Model
          * defined by the <code>character_set_database</code> parameter. You can use the
          * <i>Parameter Groups</i> option of the Amazon Neptune console or the
          * <a>DescribeDBClusterParameters</a> command to verify that your DB cluster
-         * parameter group has been created or modified.</p> </important><p><h3>See
+         * parameter group has been created or modified.</p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/ModifyDBClusterParameterGroup">AWS
          * API Reference</a></p>
@@ -1965,10 +1965,10 @@ namespace Model
          * <p> Modifies the parameters of a DB cluster parameter group. To modify more than
          * one parameter, submit a list of the following: <code>ParameterName</code>,
          * <code>ParameterValue</code>, and <code>ApplyMethod</code>. A maximum of 20
-         * parameters can be modified in a single request.</p> <note> <p>Changes to dynamic
+         * parameters can be modified in a single request.</p>  <p>Changes to dynamic
          * parameters are applied immediately. Changes to static parameters require a
          * reboot without failover to the DB cluster associated with the parameter group
-         * before the change can take effect.</p> </note> <important> <p>After you create a
+         * before the change can take effect.</p>   <p>After you create a
          * DB cluster parameter group, you should wait at least 5 minutes before creating
          * your first DB cluster that uses that DB cluster parameter group as the default
          * parameter group. This allows Amazon Neptune to fully complete the create action
@@ -1978,7 +1978,7 @@ namespace Model
          * defined by the <code>character_set_database</code> parameter. You can use the
          * <i>Parameter Groups</i> option of the Amazon Neptune console or the
          * <a>DescribeDBClusterParameters</a> command to verify that your DB cluster
-         * parameter group has been created or modified.</p> </important><p><h3>See
+         * parameter group has been created or modified.</p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/ModifyDBClusterParameterGroup">AWS
          * API Reference</a></p>
@@ -2098,10 +2098,10 @@ namespace Model
          * <p>Modifies the parameters of a DB parameter group. To modify more than one
          * parameter, submit a list of the following: <code>ParameterName</code>,
          * <code>ParameterValue</code>, and <code>ApplyMethod</code>. A maximum of 20
-         * parameters can be modified in a single request.</p> <note> <p>Changes to dynamic
+         * parameters can be modified in a single request.</p>  <p>Changes to dynamic
          * parameters are applied immediately. Changes to static parameters require a
          * reboot without failover to the DB instance associated with the parameter group
-         * before the change can take effect.</p> </note> <important> <p>After you modify a
+         * before the change can take effect.</p>   <p>After you modify a
          * DB parameter group, you should wait at least 5 minutes before creating your
          * first DB instance that uses that DB parameter group as the default parameter
          * group. This allows Amazon Neptune to fully complete the modify action before the
@@ -2111,7 +2111,7 @@ namespace Model
          * the <code>character_set_database</code> parameter. You can use the <i>Parameter
          * Groups</i> option of the Amazon Neptune console or the
          * <i>DescribeDBParameters</i> command to verify that your DB parameter group has
-         * been created or modified.</p> </important><p><h3>See Also:</h3>   <a
+         * been created or modified.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/ModifyDBParameterGroup">AWS
          * API Reference</a></p>
          */
@@ -2121,10 +2121,10 @@ namespace Model
          * <p>Modifies the parameters of a DB parameter group. To modify more than one
          * parameter, submit a list of the following: <code>ParameterName</code>,
          * <code>ParameterValue</code>, and <code>ApplyMethod</code>. A maximum of 20
-         * parameters can be modified in a single request.</p> <note> <p>Changes to dynamic
+         * parameters can be modified in a single request.</p>  <p>Changes to dynamic
          * parameters are applied immediately. Changes to static parameters require a
          * reboot without failover to the DB instance associated with the parameter group
-         * before the change can take effect.</p> </note> <important> <p>After you modify a
+         * before the change can take effect.</p>   <p>After you modify a
          * DB parameter group, you should wait at least 5 minutes before creating your
          * first DB instance that uses that DB parameter group as the default parameter
          * group. This allows Amazon Neptune to fully complete the modify action before the
@@ -2134,7 +2134,7 @@ namespace Model
          * the <code>character_set_database</code> parameter. You can use the <i>Parameter
          * Groups</i> option of the Amazon Neptune console or the
          * <i>DescribeDBParameters</i> command to verify that your DB parameter group has
-         * been created or modified.</p> </important><p><h3>See Also:</h3>   <a
+         * been created or modified.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/ModifyDBParameterGroup">AWS
          * API Reference</a></p>
          *
@@ -2146,10 +2146,10 @@ namespace Model
          * <p>Modifies the parameters of a DB parameter group. To modify more than one
          * parameter, submit a list of the following: <code>ParameterName</code>,
          * <code>ParameterValue</code>, and <code>ApplyMethod</code>. A maximum of 20
-         * parameters can be modified in a single request.</p> <note> <p>Changes to dynamic
+         * parameters can be modified in a single request.</p>  <p>Changes to dynamic
          * parameters are applied immediately. Changes to static parameters require a
          * reboot without failover to the DB instance associated with the parameter group
-         * before the change can take effect.</p> </note> <important> <p>After you modify a
+         * before the change can take effect.</p>   <p>After you modify a
          * DB parameter group, you should wait at least 5 minutes before creating your
          * first DB instance that uses that DB parameter group as the default parameter
          * group. This allows Amazon Neptune to fully complete the modify action before the
@@ -2159,7 +2159,7 @@ namespace Model
          * the <code>character_set_database</code> parameter. You can use the <i>Parameter
          * Groups</i> option of the Amazon Neptune console or the
          * <i>DescribeDBParameters</i> command to verify that your DB parameter group has
-         * been created or modified.</p> </important><p><h3>See Also:</h3>   <a
+         * been created or modified.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/ModifyDBParameterGroup">AWS
          * API Reference</a></p>
          *
@@ -2534,13 +2534,13 @@ namespace Model
          * <code>BackupRetentionPeriod</code> days. The target DB cluster is created from
          * the source DB cluster with the same configuration as the original DB cluster,
          * except that the new DB cluster is created with the default DB security
-         * group.</p> <note> <p>This action only restores the DB cluster, not the DB
+         * group.</p>  <p>This action only restores the DB cluster, not the DB
          * instances for that DB cluster. You must invoke the <a>CreateDBInstance</a>
          * action to create DB instances for the restored DB cluster, specifying the
          * identifier of the restored DB cluster in <code>DBClusterIdentifier</code>. You
          * can create DB instances only after the
          * <code>RestoreDBClusterToPointInTime</code> action has completed and the DB
-         * cluster is available.</p> </note><p><h3>See Also:</h3>   <a
+         * cluster is available.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/RestoreDBClusterToPointInTime">AWS
          * API Reference</a></p>
          */
@@ -2552,13 +2552,13 @@ namespace Model
          * <code>BackupRetentionPeriod</code> days. The target DB cluster is created from
          * the source DB cluster with the same configuration as the original DB cluster,
          * except that the new DB cluster is created with the default DB security
-         * group.</p> <note> <p>This action only restores the DB cluster, not the DB
+         * group.</p>  <p>This action only restores the DB cluster, not the DB
          * instances for that DB cluster. You must invoke the <a>CreateDBInstance</a>
          * action to create DB instances for the restored DB cluster, specifying the
          * identifier of the restored DB cluster in <code>DBClusterIdentifier</code>. You
          * can create DB instances only after the
          * <code>RestoreDBClusterToPointInTime</code> action has completed and the DB
-         * cluster is available.</p> </note><p><h3>See Also:</h3>   <a
+         * cluster is available.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/RestoreDBClusterToPointInTime">AWS
          * API Reference</a></p>
          *
@@ -2572,13 +2572,13 @@ namespace Model
          * <code>BackupRetentionPeriod</code> days. The target DB cluster is created from
          * the source DB cluster with the same configuration as the original DB cluster,
          * except that the new DB cluster is created with the default DB security
-         * group.</p> <note> <p>This action only restores the DB cluster, not the DB
+         * group.</p>  <p>This action only restores the DB cluster, not the DB
          * instances for that DB cluster. You must invoke the <a>CreateDBInstance</a>
          * action to create DB instances for the restored DB cluster, specifying the
          * identifier of the restored DB cluster in <code>DBClusterIdentifier</code>. You
          * can create DB instances only after the
          * <code>RestoreDBClusterToPointInTime</code> action has completed and the DB
-         * cluster is available.</p> </note><p><h3>See Also:</h3>   <a
+         * cluster is available.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/RestoreDBClusterToPointInTime">AWS
          * API Reference</a></p>
          *

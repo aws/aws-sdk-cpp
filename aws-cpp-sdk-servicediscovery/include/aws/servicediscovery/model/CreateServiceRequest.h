@@ -341,10 +341,10 @@ namespace Model
      * <p> <i>Public DNS and HTTP namespaces only.</i> A complex type that contains
      * settings for an optional Route 53 health check. If you specify settings for a
      * health check, AWS Cloud Map associates the health check with all the Route 53
-     * DNS records that you specify in <code>DnsConfig</code>.</p> <important> <p>If
+     * DNS records that you specify in <code>DnsConfig</code>.</p>  <p>If
      * you specify a health check configuration, you can specify either
      * <code>HealthCheckCustomConfig</code> or <code>HealthCheckConfig</code> but not
-     * both.</p> </important> <p>For information about the charges for health checks,
+     * both.</p>  <p>For information about the charges for health checks,
      * see <a href="http://aws.amazon.com/cloud-map/pricing/">AWS Cloud Map
      * Pricing</a>.</p>
      */
@@ -354,10 +354,10 @@ namespace Model
      * <p> <i>Public DNS and HTTP namespaces only.</i> A complex type that contains
      * settings for an optional Route 53 health check. If you specify settings for a
      * health check, AWS Cloud Map associates the health check with all the Route 53
-     * DNS records that you specify in <code>DnsConfig</code>.</p> <important> <p>If
+     * DNS records that you specify in <code>DnsConfig</code>.</p>  <p>If
      * you specify a health check configuration, you can specify either
      * <code>HealthCheckCustomConfig</code> or <code>HealthCheckConfig</code> but not
-     * both.</p> </important> <p>For information about the charges for health checks,
+     * both.</p>  <p>For information about the charges for health checks,
      * see <a href="http://aws.amazon.com/cloud-map/pricing/">AWS Cloud Map
      * Pricing</a>.</p>
      */
@@ -367,10 +367,10 @@ namespace Model
      * <p> <i>Public DNS and HTTP namespaces only.</i> A complex type that contains
      * settings for an optional Route 53 health check. If you specify settings for a
      * health check, AWS Cloud Map associates the health check with all the Route 53
-     * DNS records that you specify in <code>DnsConfig</code>.</p> <important> <p>If
+     * DNS records that you specify in <code>DnsConfig</code>.</p>  <p>If
      * you specify a health check configuration, you can specify either
      * <code>HealthCheckCustomConfig</code> or <code>HealthCheckConfig</code> but not
-     * both.</p> </important> <p>For information about the charges for health checks,
+     * both.</p>  <p>For information about the charges for health checks,
      * see <a href="http://aws.amazon.com/cloud-map/pricing/">AWS Cloud Map
      * Pricing</a>.</p>
      */
@@ -380,10 +380,10 @@ namespace Model
      * <p> <i>Public DNS and HTTP namespaces only.</i> A complex type that contains
      * settings for an optional Route 53 health check. If you specify settings for a
      * health check, AWS Cloud Map associates the health check with all the Route 53
-     * DNS records that you specify in <code>DnsConfig</code>.</p> <important> <p>If
+     * DNS records that you specify in <code>DnsConfig</code>.</p>  <p>If
      * you specify a health check configuration, you can specify either
      * <code>HealthCheckCustomConfig</code> or <code>HealthCheckConfig</code> but not
-     * both.</p> </important> <p>For information about the charges for health checks,
+     * both.</p>  <p>For information about the charges for health checks,
      * see <a href="http://aws.amazon.com/cloud-map/pricing/">AWS Cloud Map
      * Pricing</a>.</p>
      */
@@ -393,10 +393,10 @@ namespace Model
      * <p> <i>Public DNS and HTTP namespaces only.</i> A complex type that contains
      * settings for an optional Route 53 health check. If you specify settings for a
      * health check, AWS Cloud Map associates the health check with all the Route 53
-     * DNS records that you specify in <code>DnsConfig</code>.</p> <important> <p>If
+     * DNS records that you specify in <code>DnsConfig</code>.</p>  <p>If
      * you specify a health check configuration, you can specify either
      * <code>HealthCheckCustomConfig</code> or <code>HealthCheckConfig</code> but not
-     * both.</p> </important> <p>For information about the charges for health checks,
+     * both.</p>  <p>For information about the charges for health checks,
      * see <a href="http://aws.amazon.com/cloud-map/pricing/">AWS Cloud Map
      * Pricing</a>.</p>
      */
@@ -406,10 +406,10 @@ namespace Model
      * <p> <i>Public DNS and HTTP namespaces only.</i> A complex type that contains
      * settings for an optional Route 53 health check. If you specify settings for a
      * health check, AWS Cloud Map associates the health check with all the Route 53
-     * DNS records that you specify in <code>DnsConfig</code>.</p> <important> <p>If
+     * DNS records that you specify in <code>DnsConfig</code>.</p>  <p>If
      * you specify a health check configuration, you can specify either
      * <code>HealthCheckCustomConfig</code> or <code>HealthCheckConfig</code> but not
-     * both.</p> </important> <p>For information about the charges for health checks,
+     * both.</p>  <p>For information about the charges for health checks,
      * see <a href="http://aws.amazon.com/cloud-map/pricing/">AWS Cloud Map
      * Pricing</a>.</p>
      */
@@ -418,9 +418,9 @@ namespace Model
 
     /**
      * <p>A complex type that contains information about an optional custom health
-     * check.</p> <important> <p>If you specify a health check configuration, you can
+     * check.</p>  <p>If you specify a health check configuration, you can
      * specify either <code>HealthCheckCustomConfig</code> or
-     * <code>HealthCheckConfig</code> but not both.</p> </important> <p>You can't add,
+     * <code>HealthCheckConfig</code> but not both.</p>  <p>You can't add,
      * update, or delete a <code>HealthCheckCustomConfig</code> configuration from an
      * existing service.</p>
      */
@@ -428,9 +428,9 @@ namespace Model
 
     /**
      * <p>A complex type that contains information about an optional custom health
-     * check.</p> <important> <p>If you specify a health check configuration, you can
+     * check.</p>  <p>If you specify a health check configuration, you can
      * specify either <code>HealthCheckCustomConfig</code> or
-     * <code>HealthCheckConfig</code> but not both.</p> </important> <p>You can't add,
+     * <code>HealthCheckConfig</code> but not both.</p>  <p>You can't add,
      * update, or delete a <code>HealthCheckCustomConfig</code> configuration from an
      * existing service.</p>
      */
@@ -438,9 +438,9 @@ namespace Model
 
     /**
      * <p>A complex type that contains information about an optional custom health
-     * check.</p> <important> <p>If you specify a health check configuration, you can
+     * check.</p>  <p>If you specify a health check configuration, you can
      * specify either <code>HealthCheckCustomConfig</code> or
-     * <code>HealthCheckConfig</code> but not both.</p> </important> <p>You can't add,
+     * <code>HealthCheckConfig</code> but not both.</p>  <p>You can't add,
      * update, or delete a <code>HealthCheckCustomConfig</code> configuration from an
      * existing service.</p>
      */
@@ -448,9 +448,9 @@ namespace Model
 
     /**
      * <p>A complex type that contains information about an optional custom health
-     * check.</p> <important> <p>If you specify a health check configuration, you can
+     * check.</p>  <p>If you specify a health check configuration, you can
      * specify either <code>HealthCheckCustomConfig</code> or
-     * <code>HealthCheckConfig</code> but not both.</p> </important> <p>You can't add,
+     * <code>HealthCheckConfig</code> but not both.</p>  <p>You can't add,
      * update, or delete a <code>HealthCheckCustomConfig</code> configuration from an
      * existing service.</p>
      */
@@ -458,9 +458,9 @@ namespace Model
 
     /**
      * <p>A complex type that contains information about an optional custom health
-     * check.</p> <important> <p>If you specify a health check configuration, you can
+     * check.</p>  <p>If you specify a health check configuration, you can
      * specify either <code>HealthCheckCustomConfig</code> or
-     * <code>HealthCheckConfig</code> but not both.</p> </important> <p>You can't add,
+     * <code>HealthCheckConfig</code> but not both.</p>  <p>You can't add,
      * update, or delete a <code>HealthCheckCustomConfig</code> configuration from an
      * existing service.</p>
      */
@@ -468,9 +468,9 @@ namespace Model
 
     /**
      * <p>A complex type that contains information about an optional custom health
-     * check.</p> <important> <p>If you specify a health check configuration, you can
+     * check.</p>  <p>If you specify a health check configuration, you can
      * specify either <code>HealthCheckCustomConfig</code> or
-     * <code>HealthCheckConfig</code> but not both.</p> </important> <p>You can't add,
+     * <code>HealthCheckConfig</code> but not both.</p>  <p>You can't add,
      * update, or delete a <code>HealthCheckCustomConfig</code> configuration from an
      * existing service.</p>
      */

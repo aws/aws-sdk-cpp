@@ -456,9 +456,9 @@ namespace Model
      * with data download from the S3 bucket. If this value is set to
      * <code>true</code>, the requester pays the costs; otherwise, the S3 bucket owner
      * pays. However, the S3 bucket owner always pays the cost of storing data.</p>
-     * <note> <p> <code>RequesterPays</code> is a configuration for the S3 bucket that
+     *  <p> <code>RequesterPays</code> is a configuration for the S3 bucket that
      * backs the file share, so make sure that the configuration on the file share is
-     * the same as the S3 bucket configuration.</p> </note> <p>Valid Values:
+     * the same as the S3 bucket configuration.</p>  <p>Valid Values:
      * <code>true</code> | <code>false</code> </p>
      */
     inline bool GetRequesterPays() const{ return m_requesterPays; }
@@ -468,9 +468,9 @@ namespace Model
      * with data download from the S3 bucket. If this value is set to
      * <code>true</code>, the requester pays the costs; otherwise, the S3 bucket owner
      * pays. However, the S3 bucket owner always pays the cost of storing data.</p>
-     * <note> <p> <code>RequesterPays</code> is a configuration for the S3 bucket that
+     *  <p> <code>RequesterPays</code> is a configuration for the S3 bucket that
      * backs the file share, so make sure that the configuration on the file share is
-     * the same as the S3 bucket configuration.</p> </note> <p>Valid Values:
+     * the same as the S3 bucket configuration.</p>  <p>Valid Values:
      * <code>true</code> | <code>false</code> </p>
      */
     inline bool RequesterPaysHasBeenSet() const { return m_requesterPaysHasBeenSet; }
@@ -480,9 +480,9 @@ namespace Model
      * with data download from the S3 bucket. If this value is set to
      * <code>true</code>, the requester pays the costs; otherwise, the S3 bucket owner
      * pays. However, the S3 bucket owner always pays the cost of storing data.</p>
-     * <note> <p> <code>RequesterPays</code> is a configuration for the S3 bucket that
+     *  <p> <code>RequesterPays</code> is a configuration for the S3 bucket that
      * backs the file share, so make sure that the configuration on the file share is
-     * the same as the S3 bucket configuration.</p> </note> <p>Valid Values:
+     * the same as the S3 bucket configuration.</p>  <p>Valid Values:
      * <code>true</code> | <code>false</code> </p>
      */
     inline void SetRequesterPays(bool value) { m_requesterPaysHasBeenSet = true; m_requesterPays = value; }
@@ -492,9 +492,9 @@ namespace Model
      * with data download from the S3 bucket. If this value is set to
      * <code>true</code>, the requester pays the costs; otherwise, the S3 bucket owner
      * pays. However, the S3 bucket owner always pays the cost of storing data.</p>
-     * <note> <p> <code>RequesterPays</code> is a configuration for the S3 bucket that
+     *  <p> <code>RequesterPays</code> is a configuration for the S3 bucket that
      * backs the file share, so make sure that the configuration on the file share is
-     * the same as the S3 bucket configuration.</p> </note> <p>Valid Values:
+     * the same as the S3 bucket configuration.</p>  <p>Valid Values:
      * <code>true</code> | <code>false</code> </p>
      */
     inline SMBFileShareInfo& WithRequesterPays(bool value) { SetRequesterPays(value); return *this;}
@@ -972,58 +972,58 @@ namespace Model
 
 
     /**
-     * <p>The name of the file share. Optional.</p> <note> <p>
+     * <p>The name of the file share. Optional.</p>  <p>
      * <code>FileShareName</code> must be set if an S3 prefix name is set in
-     * <code>LocationARN</code>.</p> </note>
+     * <code>LocationARN</code>.</p> 
      */
     inline const Aws::String& GetFileShareName() const{ return m_fileShareName; }
 
     /**
-     * <p>The name of the file share. Optional.</p> <note> <p>
+     * <p>The name of the file share. Optional.</p>  <p>
      * <code>FileShareName</code> must be set if an S3 prefix name is set in
-     * <code>LocationARN</code>.</p> </note>
+     * <code>LocationARN</code>.</p> 
      */
     inline bool FileShareNameHasBeenSet() const { return m_fileShareNameHasBeenSet; }
 
     /**
-     * <p>The name of the file share. Optional.</p> <note> <p>
+     * <p>The name of the file share. Optional.</p>  <p>
      * <code>FileShareName</code> must be set if an S3 prefix name is set in
-     * <code>LocationARN</code>.</p> </note>
+     * <code>LocationARN</code>.</p> 
      */
     inline void SetFileShareName(const Aws::String& value) { m_fileShareNameHasBeenSet = true; m_fileShareName = value; }
 
     /**
-     * <p>The name of the file share. Optional.</p> <note> <p>
+     * <p>The name of the file share. Optional.</p>  <p>
      * <code>FileShareName</code> must be set if an S3 prefix name is set in
-     * <code>LocationARN</code>.</p> </note>
+     * <code>LocationARN</code>.</p> 
      */
     inline void SetFileShareName(Aws::String&& value) { m_fileShareNameHasBeenSet = true; m_fileShareName = std::move(value); }
 
     /**
-     * <p>The name of the file share. Optional.</p> <note> <p>
+     * <p>The name of the file share. Optional.</p>  <p>
      * <code>FileShareName</code> must be set if an S3 prefix name is set in
-     * <code>LocationARN</code>.</p> </note>
+     * <code>LocationARN</code>.</p> 
      */
     inline void SetFileShareName(const char* value) { m_fileShareNameHasBeenSet = true; m_fileShareName.assign(value); }
 
     /**
-     * <p>The name of the file share. Optional.</p> <note> <p>
+     * <p>The name of the file share. Optional.</p>  <p>
      * <code>FileShareName</code> must be set if an S3 prefix name is set in
-     * <code>LocationARN</code>.</p> </note>
+     * <code>LocationARN</code>.</p> 
      */
     inline SMBFileShareInfo& WithFileShareName(const Aws::String& value) { SetFileShareName(value); return *this;}
 
     /**
-     * <p>The name of the file share. Optional.</p> <note> <p>
+     * <p>The name of the file share. Optional.</p>  <p>
      * <code>FileShareName</code> must be set if an S3 prefix name is set in
-     * <code>LocationARN</code>.</p> </note>
+     * <code>LocationARN</code>.</p> 
      */
     inline SMBFileShareInfo& WithFileShareName(Aws::String&& value) { SetFileShareName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the file share. Optional.</p> <note> <p>
+     * <p>The name of the file share. Optional.</p>  <p>
      * <code>FileShareName</code> must be set if an S3 prefix name is set in
-     * <code>LocationARN</code>.</p> </note>
+     * <code>LocationARN</code>.</p> 
      */
     inline SMBFileShareInfo& WithFileShareName(const char* value) { SetFileShareName(value); return *this;}
 

@@ -262,7 +262,7 @@ namespace Model
          * operation. However, this total can include no more than one composite alarm. For
          * example, you could delete 99 metric alarms and one composite alarms with one
          * operation, but you can't delete two composite alarms with one operation.</p> <p>
-         * In the event of an error, no alarms are deleted.</p> <note> <p>It is possible to
+         * In the event of an error, no alarms are deleted.</p>  <p>It is possible to
          * create a loop or cycle of composite alarms, where composite alarm A depends on
          * composite alarm B, and composite alarm B also depends on composite alarm A. In
          * this scenario, you can't delete any composite alarm that is part of the cycle
@@ -273,7 +273,7 @@ namespace Model
          * cycle is to change the <code>AlarmRule</code> of one of the alarms to
          * <code>False</code>. </p> <p>Additionally, the evaluation of composite alarms
          * stops if CloudWatch detects a cycle in the evaluation path. </p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DeleteAlarms">AWS
          * API Reference</a></p>
          */
@@ -284,7 +284,7 @@ namespace Model
          * operation. However, this total can include no more than one composite alarm. For
          * example, you could delete 99 metric alarms and one composite alarms with one
          * operation, but you can't delete two composite alarms with one operation.</p> <p>
-         * In the event of an error, no alarms are deleted.</p> <note> <p>It is possible to
+         * In the event of an error, no alarms are deleted.</p>  <p>It is possible to
          * create a loop or cycle of composite alarms, where composite alarm A depends on
          * composite alarm B, and composite alarm B also depends on composite alarm A. In
          * this scenario, you can't delete any composite alarm that is part of the cycle
@@ -295,7 +295,7 @@ namespace Model
          * cycle is to change the <code>AlarmRule</code> of one of the alarms to
          * <code>False</code>. </p> <p>Additionally, the evaluation of composite alarms
          * stops if CloudWatch detects a cycle in the evaluation path. </p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DeleteAlarms">AWS
          * API Reference</a></p>
          *
@@ -308,7 +308,7 @@ namespace Model
          * operation. However, this total can include no more than one composite alarm. For
          * example, you could delete 99 metric alarms and one composite alarms with one
          * operation, but you can't delete two composite alarms with one operation.</p> <p>
-         * In the event of an error, no alarms are deleted.</p> <note> <p>It is possible to
+         * In the event of an error, no alarms are deleted.</p>  <p>It is possible to
          * create a loop or cycle of composite alarms, where composite alarm A depends on
          * composite alarm B, and composite alarm B also depends on composite alarm A. In
          * this scenario, you can't delete any composite alarm that is part of the cycle
@@ -319,7 +319,7 @@ namespace Model
          * cycle is to change the <code>AlarmRule</code> of one of the alarms to
          * <code>False</code>. </p> <p>Additionally, the evaluation of composite alarms
          * stops if CloudWatch detects a cycle in the evaluation path. </p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DeleteAlarms">AWS
          * API Reference</a></p>
          *
@@ -1317,7 +1317,7 @@ namespace Model
          * composite alarm that goes into ALARM state only when more than one of the
          * underlying metric alarms are in ALARM state.</p> <p>Currently, the only alarm
          * actions that can be taken by composite alarms are notifying SNS topics.</p>
-         * <note> <p>It is possible to create a loop or cycle of composite alarms, where
+         *  <p>It is possible to create a loop or cycle of composite alarms, where
          * composite alarm A depends on composite alarm B, and composite alarm B also
          * depends on composite alarm A. In this scenario, you can't delete any composite
          * alarm that is part of the cycle because there is always still a composite alarm
@@ -1327,7 +1327,7 @@ namespace Model
          * change to make to break a cycle is to change the <code>AlarmRule</code> of one
          * of the alarms to <code>False</code>. </p> <p>Additionally, the evaluation of
          * composite alarms stops if CloudWatch detects a cycle in the evaluation path.
-         * </p> </note> <p>When this operation creates an alarm, the alarm state is
+         * </p>  <p>When this operation creates an alarm, the alarm state is
          * immediately set to <code>INSUFFICIENT_DATA</code>. The alarm is then evaluated
          * and its state is set appropriately. Any actions associated with the new state
          * are then executed. For a composite alarm, this initial time after creation is
@@ -1352,7 +1352,7 @@ namespace Model
          * composite alarm that goes into ALARM state only when more than one of the
          * underlying metric alarms are in ALARM state.</p> <p>Currently, the only alarm
          * actions that can be taken by composite alarms are notifying SNS topics.</p>
-         * <note> <p>It is possible to create a loop or cycle of composite alarms, where
+         *  <p>It is possible to create a loop or cycle of composite alarms, where
          * composite alarm A depends on composite alarm B, and composite alarm B also
          * depends on composite alarm A. In this scenario, you can't delete any composite
          * alarm that is part of the cycle because there is always still a composite alarm
@@ -1362,7 +1362,7 @@ namespace Model
          * change to make to break a cycle is to change the <code>AlarmRule</code> of one
          * of the alarms to <code>False</code>. </p> <p>Additionally, the evaluation of
          * composite alarms stops if CloudWatch detects a cycle in the evaluation path.
-         * </p> </note> <p>When this operation creates an alarm, the alarm state is
+         * </p>  <p>When this operation creates an alarm, the alarm state is
          * immediately set to <code>INSUFFICIENT_DATA</code>. The alarm is then evaluated
          * and its state is set appropriately. Any actions associated with the new state
          * are then executed. For a composite alarm, this initial time after creation is
@@ -1389,7 +1389,7 @@ namespace Model
          * composite alarm that goes into ALARM state only when more than one of the
          * underlying metric alarms are in ALARM state.</p> <p>Currently, the only alarm
          * actions that can be taken by composite alarms are notifying SNS topics.</p>
-         * <note> <p>It is possible to create a loop or cycle of composite alarms, where
+         *  <p>It is possible to create a loop or cycle of composite alarms, where
          * composite alarm A depends on composite alarm B, and composite alarm B also
          * depends on composite alarm A. In this scenario, you can't delete any composite
          * alarm that is part of the cycle because there is always still a composite alarm
@@ -1399,7 +1399,7 @@ namespace Model
          * change to make to break a cycle is to change the <code>AlarmRule</code> of one
          * of the alarms to <code>False</code>. </p> <p>Additionally, the evaluation of
          * composite alarms stops if CloudWatch detects a cycle in the evaluation path.
-         * </p> </note> <p>When this operation creates an alarm, the alarm state is
+         * </p>  <p>When this operation creates an alarm, the alarm state is
          * immediately set to <code>INSUFFICIENT_DATA</code>. The alarm is then evaluated
          * and its state is set appropriately. Any actions associated with the new state
          * are then executed. For a composite alarm, this initial time after creation is

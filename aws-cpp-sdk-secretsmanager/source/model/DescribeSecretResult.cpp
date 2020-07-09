@@ -127,6 +127,12 @@ DescribeSecretResult& DescribeSecretResult::operator =(const Aws::AmazonWebServi
 
   }
 
+  if(jsonValue.ValueExists("CreatedDate"))
+  {
+    m_createdDate = jsonValue.GetDouble("CreatedDate");
+
+  }
+
 
 
   return *this;

@@ -44,8 +44,8 @@ namespace Model
     /**
      * <p>The type of build output artifact. Valid values include:</p> <ul> <li> <p>
      * <code>CODEPIPELINE</code>: The build project has build output generated through
-     * AWS CodePipeline. </p> <note> <p>The <code>CODEPIPELINE</code> type is not
-     * supported for <code>secondaryArtifacts</code>.</p> </note> </li> <li> <p>
+     * AWS CodePipeline. </p>  <p>The <code>CODEPIPELINE</code> type is not
+     * supported for <code>secondaryArtifacts</code>.</p>  </li> <li> <p>
      * <code>NO_ARTIFACTS</code>: The build project does not produce any build
      * output.</p> </li> <li> <p> <code>S3</code>: The build project stores build
      * output in Amazon Simple Storage Service (Amazon S3).</p> </li> </ul>
@@ -55,8 +55,8 @@ namespace Model
     /**
      * <p>The type of build output artifact. Valid values include:</p> <ul> <li> <p>
      * <code>CODEPIPELINE</code>: The build project has build output generated through
-     * AWS CodePipeline. </p> <note> <p>The <code>CODEPIPELINE</code> type is not
-     * supported for <code>secondaryArtifacts</code>.</p> </note> </li> <li> <p>
+     * AWS CodePipeline. </p>  <p>The <code>CODEPIPELINE</code> type is not
+     * supported for <code>secondaryArtifacts</code>.</p>  </li> <li> <p>
      * <code>NO_ARTIFACTS</code>: The build project does not produce any build
      * output.</p> </li> <li> <p> <code>S3</code>: The build project stores build
      * output in Amazon Simple Storage Service (Amazon S3).</p> </li> </ul>
@@ -66,8 +66,8 @@ namespace Model
     /**
      * <p>The type of build output artifact. Valid values include:</p> <ul> <li> <p>
      * <code>CODEPIPELINE</code>: The build project has build output generated through
-     * AWS CodePipeline. </p> <note> <p>The <code>CODEPIPELINE</code> type is not
-     * supported for <code>secondaryArtifacts</code>.</p> </note> </li> <li> <p>
+     * AWS CodePipeline. </p>  <p>The <code>CODEPIPELINE</code> type is not
+     * supported for <code>secondaryArtifacts</code>.</p>  </li> <li> <p>
      * <code>NO_ARTIFACTS</code>: The build project does not produce any build
      * output.</p> </li> <li> <p> <code>S3</code>: The build project stores build
      * output in Amazon Simple Storage Service (Amazon S3).</p> </li> </ul>
@@ -77,8 +77,8 @@ namespace Model
     /**
      * <p>The type of build output artifact. Valid values include:</p> <ul> <li> <p>
      * <code>CODEPIPELINE</code>: The build project has build output generated through
-     * AWS CodePipeline. </p> <note> <p>The <code>CODEPIPELINE</code> type is not
-     * supported for <code>secondaryArtifacts</code>.</p> </note> </li> <li> <p>
+     * AWS CodePipeline. </p>  <p>The <code>CODEPIPELINE</code> type is not
+     * supported for <code>secondaryArtifacts</code>.</p>  </li> <li> <p>
      * <code>NO_ARTIFACTS</code>: The build project does not produce any build
      * output.</p> </li> <li> <p> <code>S3</code>: The build project stores build
      * output in Amazon Simple Storage Service (Amazon S3).</p> </li> </ul>
@@ -88,8 +88,8 @@ namespace Model
     /**
      * <p>The type of build output artifact. Valid values include:</p> <ul> <li> <p>
      * <code>CODEPIPELINE</code>: The build project has build output generated through
-     * AWS CodePipeline. </p> <note> <p>The <code>CODEPIPELINE</code> type is not
-     * supported for <code>secondaryArtifacts</code>.</p> </note> </li> <li> <p>
+     * AWS CodePipeline. </p>  <p>The <code>CODEPIPELINE</code> type is not
+     * supported for <code>secondaryArtifacts</code>.</p>  </li> <li> <p>
      * <code>NO_ARTIFACTS</code>: The build project does not produce any build
      * output.</p> </li> <li> <p> <code>S3</code>: The build project stores build
      * output in Amazon Simple Storage Service (Amazon S3).</p> </li> </ul>
@@ -99,8 +99,8 @@ namespace Model
     /**
      * <p>The type of build output artifact. Valid values include:</p> <ul> <li> <p>
      * <code>CODEPIPELINE</code>: The build project has build output generated through
-     * AWS CodePipeline. </p> <note> <p>The <code>CODEPIPELINE</code> type is not
-     * supported for <code>secondaryArtifacts</code>.</p> </note> </li> <li> <p>
+     * AWS CodePipeline. </p>  <p>The <code>CODEPIPELINE</code> type is not
+     * supported for <code>secondaryArtifacts</code>.</p>  </li> <li> <p>
      * <code>NO_ARTIFACTS</code>: The build project does not produce any build
      * output.</p> </li> <li> <p> <code>S3</code>: The build project stores build
      * output in Amazon Simple Storage Service (Amazon S3).</p> </li> </ul>

@@ -25,11 +25,11 @@ namespace Model
 {
 
   /**
-   * <p>Contains an AWS SSO identity ID for a user or group.</p> <note> <p>Currently,
+   * <p>Contains an AWS SSO identity ID for a user or group.</p>  <p>Currently,
    * you can't use AWS APIs to retrieve AWS SSO identity IDs. You can find the AWS
    * SSO identity IDs in the URL of user and group pages in the <a
    * href="https://console.aws.amazon.com/singlesignon">AWS SSO console</a>.</p>
-   * </note><p><h3>See Also:</h3>   <a
+   * <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/Identity">AWS
    * API Reference</a></p>
    */

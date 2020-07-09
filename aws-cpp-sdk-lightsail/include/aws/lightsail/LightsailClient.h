@@ -966,10 +966,10 @@ namespace Model
          * from an exported Amazon Lightsail snapshot. This operation results in a
          * CloudFormation stack record that can be used to track the AWS CloudFormation
          * stack created. Use the <code>get cloud formation stack records</code> operation
-         * to get a list of the CloudFormation stacks created.</p> <important> <p>Wait
+         * to get a list of the CloudFormation stacks created.</p>  <p>Wait
          * until after your new Amazon EC2 instance is created before running the
          * <code>create cloud formation stack</code> operation again with the same export
-         * snapshot record.</p> </important><p><h3>See Also:</h3>   <a
+         * snapshot record.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateCloudFormationStack">AWS
          * API Reference</a></p>
          */
@@ -980,10 +980,10 @@ namespace Model
          * from an exported Amazon Lightsail snapshot. This operation results in a
          * CloudFormation stack record that can be used to track the AWS CloudFormation
          * stack created. Use the <code>get cloud formation stack records</code> operation
-         * to get a list of the CloudFormation stacks created.</p> <important> <p>Wait
+         * to get a list of the CloudFormation stacks created.</p>  <p>Wait
          * until after your new Amazon EC2 instance is created before running the
          * <code>create cloud formation stack</code> operation again with the same export
-         * snapshot record.</p> </important><p><h3>See Also:</h3>   <a
+         * snapshot record.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateCloudFormationStack">AWS
          * API Reference</a></p>
          *
@@ -996,10 +996,10 @@ namespace Model
          * from an exported Amazon Lightsail snapshot. This operation results in a
          * CloudFormation stack record that can be used to track the AWS CloudFormation
          * stack created. Use the <code>get cloud formation stack records</code> operation
-         * to get a list of the CloudFormation stacks created.</p> <important> <p>Wait
+         * to get a list of the CloudFormation stacks created.</p>  <p>Wait
          * until after your new Amazon EC2 instance is created before running the
          * <code>create cloud formation stack</code> operation again with the same export
-         * snapshot record.</p> </important><p><h3>See Also:</h3>   <a
+         * snapshot record.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateCloudFormationStack">AWS
          * API Reference</a></p>
          *
@@ -1816,9 +1816,9 @@ namespace Model
 
         /**
          * <p>Deletes the specified block storage disk. The disk must be in the
-         * <code>available</code> state (not attached to a Lightsail instance).</p> <note>
+         * <code>available</code> state (not attached to a Lightsail instance).</p> 
          * <p>The disk may remain in the <code>deleting</code> state for several
-         * minutes.</p> </note> <p>The <code>delete disk</code> operation supports
+         * minutes.</p>  <p>The <code>delete disk</code> operation supports
          * tag-based access control via resource tags applied to the resource identified by
          * <code>disk name</code>. For more information, see the <a
          * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
@@ -1830,9 +1830,9 @@ namespace Model
 
         /**
          * <p>Deletes the specified block storage disk. The disk must be in the
-         * <code>available</code> state (not attached to a Lightsail instance).</p> <note>
+         * <code>available</code> state (not attached to a Lightsail instance).</p> 
          * <p>The disk may remain in the <code>deleting</code> state for several
-         * minutes.</p> </note> <p>The <code>delete disk</code> operation supports
+         * minutes.</p>  <p>The <code>delete disk</code> operation supports
          * tag-based access control via resource tags applied to the resource identified by
          * <code>disk name</code>. For more information, see the <a
          * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
@@ -1846,9 +1846,9 @@ namespace Model
 
         /**
          * <p>Deletes the specified block storage disk. The disk must be in the
-         * <code>available</code> state (not attached to a Lightsail instance).</p> <note>
+         * <code>available</code> state (not attached to a Lightsail instance).</p> 
          * <p>The disk may remain in the <code>deleting</code> state for several
-         * minutes.</p> </note> <p>The <code>delete disk</code> operation supports
+         * minutes.</p>  <p>The <code>delete disk</code> operation supports
          * tag-based access control via resource tags applied to the resource identified by
          * <code>disk name</code>. For more information, see the <a
          * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
@@ -2122,13 +2122,13 @@ namespace Model
          * <p>Deletes the known host key or certificate used by the Amazon Lightsail
          * browser-based SSH or RDP clients to authenticate an instance. This operation
          * enables the Lightsail browser-based SSH or RDP clients to connect to the
-         * instance after a host key mismatch.</p> <important> <p>Perform this operation
+         * instance after a host key mismatch.</p>  <p>Perform this operation
          * only if you were expecting the host key or certificate mismatch or if you are
          * familiar with the new host key or certificate on the instance. For more
          * information, see <a
          * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-troubleshooting-browser-based-ssh-rdp-client-connection">Troubleshooting
          * connection issues when using the Amazon Lightsail browser-based SSH or RDP
-         * client</a>.</p> </important><p><h3>See Also:</h3>   <a
+         * client</a>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteKnownHostKeys">AWS
          * API Reference</a></p>
          */
@@ -2138,13 +2138,13 @@ namespace Model
          * <p>Deletes the known host key or certificate used by the Amazon Lightsail
          * browser-based SSH or RDP clients to authenticate an instance. This operation
          * enables the Lightsail browser-based SSH or RDP clients to connect to the
-         * instance after a host key mismatch.</p> <important> <p>Perform this operation
+         * instance after a host key mismatch.</p>  <p>Perform this operation
          * only if you were expecting the host key or certificate mismatch or if you are
          * familiar with the new host key or certificate on the instance. For more
          * information, see <a
          * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-troubleshooting-browser-based-ssh-rdp-client-connection">Troubleshooting
          * connection issues when using the Amazon Lightsail browser-based SSH or RDP
-         * client</a>.</p> </important><p><h3>See Also:</h3>   <a
+         * client</a>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteKnownHostKeys">AWS
          * API Reference</a></p>
          *
@@ -2156,13 +2156,13 @@ namespace Model
          * <p>Deletes the known host key or certificate used by the Amazon Lightsail
          * browser-based SSH or RDP clients to authenticate an instance. This operation
          * enables the Lightsail browser-based SSH or RDP clients to connect to the
-         * instance after a host key mismatch.</p> <important> <p>Perform this operation
+         * instance after a host key mismatch.</p>  <p>Perform this operation
          * only if you were expecting the host key or certificate mismatch or if you are
          * familiar with the new host key or certificate on the instance. For more
          * information, see <a
          * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-troubleshooting-browser-based-ssh-rdp-client-connection">Troubleshooting
          * connection issues when using the Amazon Lightsail browser-based SSH or RDP
-         * client</a>.</p> </important><p><h3>See Also:</h3>   <a
+         * client</a>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteKnownHostKeys">AWS
          * API Reference</a></p>
          *
@@ -2565,9 +2565,9 @@ namespace Model
          * tag-based access control via resource tags applied to the resource identified by
          * <code>source snapshot name</code>. For more information, see the <a
          * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
-         * Dev Guide</a>.</p> <note> <p>Use the <code>get instance snapshots</code> or
+         * Dev Guide</a>.</p>  <p>Use the <code>get instance snapshots</code> or
          * <code>get disk snapshots</code> operations to get a list of snapshots that you
-         * can export to Amazon EC2.</p> </note><p><h3>See Also:</h3>   <a
+         * can export to Amazon EC2.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/ExportSnapshot">AWS
          * API Reference</a></p>
          */
@@ -2586,9 +2586,9 @@ namespace Model
          * tag-based access control via resource tags applied to the resource identified by
          * <code>source snapshot name</code>. For more information, see the <a
          * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
-         * Dev Guide</a>.</p> <note> <p>Use the <code>get instance snapshots</code> or
+         * Dev Guide</a>.</p>  <p>Use the <code>get instance snapshots</code> or
          * <code>get disk snapshots</code> operations to get a list of snapshots that you
-         * can export to Amazon EC2.</p> </note><p><h3>See Also:</h3>   <a
+         * can export to Amazon EC2.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/ExportSnapshot">AWS
          * API Reference</a></p>
          *
@@ -2609,9 +2609,9 @@ namespace Model
          * tag-based access control via resource tags applied to the resource identified by
          * <code>source snapshot name</code>. For more information, see the <a
          * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
-         * Dev Guide</a>.</p> <note> <p>Use the <code>get instance snapshots</code> or
+         * Dev Guide</a>.</p>  <p>Use the <code>get instance snapshots</code> or
          * <code>get disk snapshots</code> operations to get a list of snapshots that you
-         * can export to Amazon EC2.</p> </note><p><h3>See Also:</h3>   <a
+         * can export to Amazon EC2.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/ExportSnapshot">AWS
          * API Reference</a></p>
          *
@@ -2734,12 +2734,12 @@ namespace Model
          * <p>Returns the list of available instance images, or <i>blueprints</i>. You can
          * use a blueprint to create a new instance already running a specific operating
          * system, as well as a preinstalled app or development stack. The software each
-         * instance is running depends on the blueprint image you choose.</p> <note> <p>Use
+         * instance is running depends on the blueprint image you choose.</p>  <p>Use
          * active blueprints when creating new instances. Inactive blueprints are listed to
          * support customers with existing instances and are not necessarily available to
          * create new instances. Blueprints are marked inactive when they become outdated
          * due to operating system updates or new application releases.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetBlueprints">AWS
          * API Reference</a></p>
          */
@@ -2749,12 +2749,12 @@ namespace Model
          * <p>Returns the list of available instance images, or <i>blueprints</i>. You can
          * use a blueprint to create a new instance already running a specific operating
          * system, as well as a preinstalled app or development stack. The software each
-         * instance is running depends on the blueprint image you choose.</p> <note> <p>Use
+         * instance is running depends on the blueprint image you choose.</p>  <p>Use
          * active blueprints when creating new instances. Inactive blueprints are listed to
          * support customers with existing instances and are not necessarily available to
          * create new instances. Blueprints are marked inactive when they become outdated
          * due to operating system updates or new application releases.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetBlueprints">AWS
          * API Reference</a></p>
          *
@@ -2766,12 +2766,12 @@ namespace Model
          * <p>Returns the list of available instance images, or <i>blueprints</i>. You can
          * use a blueprint to create a new instance already running a specific operating
          * system, as well as a preinstalled app or development stack. The software each
-         * instance is running depends on the blueprint image you choose.</p> <note> <p>Use
+         * instance is running depends on the blueprint image you choose.</p>  <p>Use
          * active blueprints when creating new instances. Inactive blueprints are listed to
          * support customers with existing instances and are not necessarily available to
          * create new instances. Blueprints are marked inactive when they become outdated
          * due to operating system updates or new application releases.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetBlueprints">AWS
          * API Reference</a></p>
          *
@@ -4447,9 +4447,9 @@ namespace Model
          * in Amazon Lightsail</a>.</p> <p>A verification request is sent to the contact
          * method when you initially create it. Use this action to send another
          * verification request if a previous verification request was deleted, or has
-         * expired.</p> <important> <p>Notifications are not sent to an email contact
+         * expired.</p>  <p>Notifications are not sent to an email contact
          * method until after it is verified, and confirmed as valid.</p>
-         * </important><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/SendContactMethodVerification">AWS
          * API Reference</a></p>
          */
@@ -4467,9 +4467,9 @@ namespace Model
          * in Amazon Lightsail</a>.</p> <p>A verification request is sent to the contact
          * method when you initially create it. Use this action to send another
          * verification request if a previous verification request was deleted, or has
-         * expired.</p> <important> <p>Notifications are not sent to an email contact
+         * expired.</p>  <p>Notifications are not sent to an email contact
          * method until after it is verified, and confirmed as valid.</p>
-         * </important><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/SendContactMethodVerification">AWS
          * API Reference</a></p>
          *
@@ -4489,9 +4489,9 @@ namespace Model
          * in Amazon Lightsail</a>.</p> <p>A verification request is sent to the contact
          * method when you initially create it. Use this action to send another
          * verification request if a previous verification request was deleted, or has
-         * expired.</p> <important> <p>Notifications are not sent to an email contact
+         * expired.</p>  <p>Notifications are not sent to an email contact
          * method until after it is verified, and confirmed as valid.</p>
-         * </important><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/SendContactMethodVerification">AWS
          * API Reference</a></p>
          *
@@ -4501,13 +4501,13 @@ namespace Model
 
         /**
          * <p>Starts a specific Amazon Lightsail instance from a stopped state. To restart
-         * an instance, use the <code>reboot instance</code> operation.</p> <note> <p>When
+         * an instance, use the <code>reboot instance</code> operation.</p>  <p>When
          * you start a stopped instance, Lightsail assigns a new public IP address to the
          * instance. To use the same IP address after stopping and starting an instance,
          * create a static IP address and attach it to the instance. For more information,
          * see the <a
          * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/lightsail-create-static-ip">Lightsail
-         * Dev Guide</a>.</p> </note> <p>The <code>start instance</code> operation supports
+         * Dev Guide</a>.</p>  <p>The <code>start instance</code> operation supports
          * tag-based access control via resource tags applied to the resource identified by
          * <code>instance name</code>. For more information, see the <a
          * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
@@ -4519,13 +4519,13 @@ namespace Model
 
         /**
          * <p>Starts a specific Amazon Lightsail instance from a stopped state. To restart
-         * an instance, use the <code>reboot instance</code> operation.</p> <note> <p>When
+         * an instance, use the <code>reboot instance</code> operation.</p>  <p>When
          * you start a stopped instance, Lightsail assigns a new public IP address to the
          * instance. To use the same IP address after stopping and starting an instance,
          * create a static IP address and attach it to the instance. For more information,
          * see the <a
          * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/lightsail-create-static-ip">Lightsail
-         * Dev Guide</a>.</p> </note> <p>The <code>start instance</code> operation supports
+         * Dev Guide</a>.</p>  <p>The <code>start instance</code> operation supports
          * tag-based access control via resource tags applied to the resource identified by
          * <code>instance name</code>. For more information, see the <a
          * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
@@ -4539,13 +4539,13 @@ namespace Model
 
         /**
          * <p>Starts a specific Amazon Lightsail instance from a stopped state. To restart
-         * an instance, use the <code>reboot instance</code> operation.</p> <note> <p>When
+         * an instance, use the <code>reboot instance</code> operation.</p>  <p>When
          * you start a stopped instance, Lightsail assigns a new public IP address to the
          * instance. To use the same IP address after stopping and starting an instance,
          * create a static IP address and attach it to the instance. For more information,
          * see the <a
          * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/lightsail-create-static-ip">Lightsail
-         * Dev Guide</a>.</p> </note> <p>The <code>start instance</code> operation supports
+         * Dev Guide</a>.</p>  <p>The <code>start instance</code> operation supports
          * tag-based access control via resource tags applied to the resource identified by
          * <code>instance name</code>. For more information, see the <a
          * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
@@ -4602,12 +4602,12 @@ namespace Model
 
         /**
          * <p>Stops a specific Amazon Lightsail instance that is currently running.</p>
-         * <note> <p>When you start a stopped instance, Lightsail assigns a new public IP
+         *  <p>When you start a stopped instance, Lightsail assigns a new public IP
          * address to the instance. To use the same IP address after stopping and starting
          * an instance, create a static IP address and attach it to the instance. For more
          * information, see the <a
          * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/lightsail-create-static-ip">Lightsail
-         * Dev Guide</a>.</p> </note> <p>The <code>stop instance</code> operation supports
+         * Dev Guide</a>.</p>  <p>The <code>stop instance</code> operation supports
          * tag-based access control via resource tags applied to the resource identified by
          * <code>instance name</code>. For more information, see the <a
          * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
@@ -4619,12 +4619,12 @@ namespace Model
 
         /**
          * <p>Stops a specific Amazon Lightsail instance that is currently running.</p>
-         * <note> <p>When you start a stopped instance, Lightsail assigns a new public IP
+         *  <p>When you start a stopped instance, Lightsail assigns a new public IP
          * address to the instance. To use the same IP address after stopping and starting
          * an instance, create a static IP address and attach it to the instance. For more
          * information, see the <a
          * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/lightsail-create-static-ip">Lightsail
-         * Dev Guide</a>.</p> </note> <p>The <code>stop instance</code> operation supports
+         * Dev Guide</a>.</p>  <p>The <code>stop instance</code> operation supports
          * tag-based access control via resource tags applied to the resource identified by
          * <code>instance name</code>. For more information, see the <a
          * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
@@ -4638,12 +4638,12 @@ namespace Model
 
         /**
          * <p>Stops a specific Amazon Lightsail instance that is currently running.</p>
-         * <note> <p>When you start a stopped instance, Lightsail assigns a new public IP
+         *  <p>When you start a stopped instance, Lightsail assigns a new public IP
          * address to the instance. To use the same IP address after stopping and starting
          * an instance, create a static IP address and attach it to the instance. For more
          * information, see the <a
          * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/lightsail-create-static-ip">Lightsail
-         * Dev Guide</a>.</p> </note> <p>The <code>stop instance</code> operation supports
+         * Dev Guide</a>.</p>  <p>The <code>stop instance</code> operation supports
          * tag-based access control via resource tags applied to the resource identified by
          * <code>instance name</code>. For more information, see the <a
          * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail

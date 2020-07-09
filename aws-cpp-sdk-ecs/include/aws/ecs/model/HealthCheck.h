@@ -285,9 +285,9 @@ namespace Model
      * <p>The optional grace period within which to provide containers time to
      * bootstrap before failed health checks count towards the maximum number of
      * retries. You may specify between 0 and 300 seconds. The <code>startPeriod</code>
-     * is disabled by default.</p> <note> <p>If a health check succeeds within the
+     * is disabled by default.</p>  <p>If a health check succeeds within the
      * <code>startPeriod</code>, then the container is considered healthy and any
-     * subsequent failures count toward the maximum number of retries.</p> </note>
+     * subsequent failures count toward the maximum number of retries.</p> 
      */
     inline int GetStartPeriod() const{ return m_startPeriod; }
 
@@ -295,9 +295,9 @@ namespace Model
      * <p>The optional grace period within which to provide containers time to
      * bootstrap before failed health checks count towards the maximum number of
      * retries. You may specify between 0 and 300 seconds. The <code>startPeriod</code>
-     * is disabled by default.</p> <note> <p>If a health check succeeds within the
+     * is disabled by default.</p>  <p>If a health check succeeds within the
      * <code>startPeriod</code>, then the container is considered healthy and any
-     * subsequent failures count toward the maximum number of retries.</p> </note>
+     * subsequent failures count toward the maximum number of retries.</p> 
      */
     inline bool StartPeriodHasBeenSet() const { return m_startPeriodHasBeenSet; }
 
@@ -305,9 +305,9 @@ namespace Model
      * <p>The optional grace period within which to provide containers time to
      * bootstrap before failed health checks count towards the maximum number of
      * retries. You may specify between 0 and 300 seconds. The <code>startPeriod</code>
-     * is disabled by default.</p> <note> <p>If a health check succeeds within the
+     * is disabled by default.</p>  <p>If a health check succeeds within the
      * <code>startPeriod</code>, then the container is considered healthy and any
-     * subsequent failures count toward the maximum number of retries.</p> </note>
+     * subsequent failures count toward the maximum number of retries.</p> 
      */
     inline void SetStartPeriod(int value) { m_startPeriodHasBeenSet = true; m_startPeriod = value; }
 
@@ -315,9 +315,9 @@ namespace Model
      * <p>The optional grace period within which to provide containers time to
      * bootstrap before failed health checks count towards the maximum number of
      * retries. You may specify between 0 and 300 seconds. The <code>startPeriod</code>
-     * is disabled by default.</p> <note> <p>If a health check succeeds within the
+     * is disabled by default.</p>  <p>If a health check succeeds within the
      * <code>startPeriod</code>, then the container is considered healthy and any
-     * subsequent failures count toward the maximum number of retries.</p> </note>
+     * subsequent failures count toward the maximum number of retries.</p> 
      */
     inline HealthCheck& WithStartPeriod(int value) { SetStartPeriod(value); return *this;}
 

@@ -1239,9 +1239,9 @@ namespace Model
 
     /**
      * <p>The AWS Key Management Service (AWS KMS) customer master key (CMK) to be used
-     * for encrypting the build output artifacts.</p> <note> <p> You can use a
+     * for encrypting the build output artifacts.</p>  <p> You can use a
      * cross-account KMS key to encrypt the build output artifacts if your service role
-     * has permission to that key. </p> </note> <p>You can specify either the Amazon
+     * has permission to that key. </p>  <p>You can specify either the Amazon
      * Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the
      * format <code>alias/<i>alias-name</i> </code>).</p>
      */
@@ -1249,9 +1249,9 @@ namespace Model
 
     /**
      * <p>The AWS Key Management Service (AWS KMS) customer master key (CMK) to be used
-     * for encrypting the build output artifacts.</p> <note> <p> You can use a
+     * for encrypting the build output artifacts.</p>  <p> You can use a
      * cross-account KMS key to encrypt the build output artifacts if your service role
-     * has permission to that key. </p> </note> <p>You can specify either the Amazon
+     * has permission to that key. </p>  <p>You can specify either the Amazon
      * Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the
      * format <code>alias/<i>alias-name</i> </code>).</p>
      */
@@ -1259,9 +1259,9 @@ namespace Model
 
     /**
      * <p>The AWS Key Management Service (AWS KMS) customer master key (CMK) to be used
-     * for encrypting the build output artifacts.</p> <note> <p> You can use a
+     * for encrypting the build output artifacts.</p>  <p> You can use a
      * cross-account KMS key to encrypt the build output artifacts if your service role
-     * has permission to that key. </p> </note> <p>You can specify either the Amazon
+     * has permission to that key. </p>  <p>You can specify either the Amazon
      * Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the
      * format <code>alias/<i>alias-name</i> </code>).</p>
      */
@@ -1269,9 +1269,9 @@ namespace Model
 
     /**
      * <p>The AWS Key Management Service (AWS KMS) customer master key (CMK) to be used
-     * for encrypting the build output artifacts.</p> <note> <p> You can use a
+     * for encrypting the build output artifacts.</p>  <p> You can use a
      * cross-account KMS key to encrypt the build output artifacts if your service role
-     * has permission to that key. </p> </note> <p>You can specify either the Amazon
+     * has permission to that key. </p>  <p>You can specify either the Amazon
      * Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the
      * format <code>alias/<i>alias-name</i> </code>).</p>
      */
@@ -1279,9 +1279,9 @@ namespace Model
 
     /**
      * <p>The AWS Key Management Service (AWS KMS) customer master key (CMK) to be used
-     * for encrypting the build output artifacts.</p> <note> <p> You can use a
+     * for encrypting the build output artifacts.</p>  <p> You can use a
      * cross-account KMS key to encrypt the build output artifacts if your service role
-     * has permission to that key. </p> </note> <p>You can specify either the Amazon
+     * has permission to that key. </p>  <p>You can specify either the Amazon
      * Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the
      * format <code>alias/<i>alias-name</i> </code>).</p>
      */
@@ -1289,9 +1289,9 @@ namespace Model
 
     /**
      * <p>The AWS Key Management Service (AWS KMS) customer master key (CMK) to be used
-     * for encrypting the build output artifacts.</p> <note> <p> You can use a
+     * for encrypting the build output artifacts.</p>  <p> You can use a
      * cross-account KMS key to encrypt the build output artifacts if your service role
-     * has permission to that key. </p> </note> <p>You can specify either the Amazon
+     * has permission to that key. </p>  <p>You can specify either the Amazon
      * Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the
      * format <code>alias/<i>alias-name</i> </code>).</p>
      */
@@ -1299,9 +1299,9 @@ namespace Model
 
     /**
      * <p>The AWS Key Management Service (AWS KMS) customer master key (CMK) to be used
-     * for encrypting the build output artifacts.</p> <note> <p> You can use a
+     * for encrypting the build output artifacts.</p>  <p> You can use a
      * cross-account KMS key to encrypt the build output artifacts if your service role
-     * has permission to that key. </p> </note> <p>You can specify either the Amazon
+     * has permission to that key. </p>  <p>You can specify either the Amazon
      * Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the
      * format <code>alias/<i>alias-name</i> </code>).</p>
      */
@@ -1309,9 +1309,9 @@ namespace Model
 
     /**
      * <p>The AWS Key Management Service (AWS KMS) customer master key (CMK) to be used
-     * for encrypting the build output artifacts.</p> <note> <p> You can use a
+     * for encrypting the build output artifacts.</p>  <p> You can use a
      * cross-account KMS key to encrypt the build output artifacts if your service role
-     * has permission to that key. </p> </note> <p>You can specify either the Amazon
+     * has permission to that key. </p>  <p>You can specify either the Amazon
      * Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the
      * format <code>alias/<i>alias-name</i> </code>).</p>
      */

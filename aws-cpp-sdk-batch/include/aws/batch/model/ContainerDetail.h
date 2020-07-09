@@ -258,58 +258,58 @@ namespace Model
 
 
     /**
-     * <p>The environment variables to pass to a container.</p> <note> <p>Environment
+     * <p>The environment variables to pass to a container.</p>  <p>Environment
      * variables must not start with <code>AWS_BATCH</code>; this naming convention is
-     * reserved for variables that are set by the AWS Batch service.</p> </note>
+     * reserved for variables that are set by the AWS Batch service.</p> 
      */
     inline const Aws::Vector<KeyValuePair>& GetEnvironment() const{ return m_environment; }
 
     /**
-     * <p>The environment variables to pass to a container.</p> <note> <p>Environment
+     * <p>The environment variables to pass to a container.</p>  <p>Environment
      * variables must not start with <code>AWS_BATCH</code>; this naming convention is
-     * reserved for variables that are set by the AWS Batch service.</p> </note>
+     * reserved for variables that are set by the AWS Batch service.</p> 
      */
     inline bool EnvironmentHasBeenSet() const { return m_environmentHasBeenSet; }
 
     /**
-     * <p>The environment variables to pass to a container.</p> <note> <p>Environment
+     * <p>The environment variables to pass to a container.</p>  <p>Environment
      * variables must not start with <code>AWS_BATCH</code>; this naming convention is
-     * reserved for variables that are set by the AWS Batch service.</p> </note>
+     * reserved for variables that are set by the AWS Batch service.</p> 
      */
     inline void SetEnvironment(const Aws::Vector<KeyValuePair>& value) { m_environmentHasBeenSet = true; m_environment = value; }
 
     /**
-     * <p>The environment variables to pass to a container.</p> <note> <p>Environment
+     * <p>The environment variables to pass to a container.</p>  <p>Environment
      * variables must not start with <code>AWS_BATCH</code>; this naming convention is
-     * reserved for variables that are set by the AWS Batch service.</p> </note>
+     * reserved for variables that are set by the AWS Batch service.</p> 
      */
     inline void SetEnvironment(Aws::Vector<KeyValuePair>&& value) { m_environmentHasBeenSet = true; m_environment = std::move(value); }
 
     /**
-     * <p>The environment variables to pass to a container.</p> <note> <p>Environment
+     * <p>The environment variables to pass to a container.</p>  <p>Environment
      * variables must not start with <code>AWS_BATCH</code>; this naming convention is
-     * reserved for variables that are set by the AWS Batch service.</p> </note>
+     * reserved for variables that are set by the AWS Batch service.</p> 
      */
     inline ContainerDetail& WithEnvironment(const Aws::Vector<KeyValuePair>& value) { SetEnvironment(value); return *this;}
 
     /**
-     * <p>The environment variables to pass to a container.</p> <note> <p>Environment
+     * <p>The environment variables to pass to a container.</p>  <p>Environment
      * variables must not start with <code>AWS_BATCH</code>; this naming convention is
-     * reserved for variables that are set by the AWS Batch service.</p> </note>
+     * reserved for variables that are set by the AWS Batch service.</p> 
      */
     inline ContainerDetail& WithEnvironment(Aws::Vector<KeyValuePair>&& value) { SetEnvironment(std::move(value)); return *this;}
 
     /**
-     * <p>The environment variables to pass to a container.</p> <note> <p>Environment
+     * <p>The environment variables to pass to a container.</p>  <p>Environment
      * variables must not start with <code>AWS_BATCH</code>; this naming convention is
-     * reserved for variables that are set by the AWS Batch service.</p> </note>
+     * reserved for variables that are set by the AWS Batch service.</p> 
      */
     inline ContainerDetail& AddEnvironment(const KeyValuePair& value) { m_environmentHasBeenSet = true; m_environment.push_back(value); return *this; }
 
     /**
-     * <p>The environment variables to pass to a container.</p> <note> <p>Environment
+     * <p>The environment variables to pass to a container.</p>  <p>Environment
      * variables must not start with <code>AWS_BATCH</code>; this naming convention is
-     * reserved for variables that are set by the AWS Batch service.</p> </note>
+     * reserved for variables that are set by the AWS Batch service.</p> 
      */
     inline ContainerDetail& AddEnvironment(KeyValuePair&& value) { m_environmentHasBeenSet = true; m_environment.push_back(std::move(value)); return *this; }
 

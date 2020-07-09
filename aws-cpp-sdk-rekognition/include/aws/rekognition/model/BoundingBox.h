@@ -33,12 +33,12 @@ namespace Model
    * (50/200).</p> <p>The <code>width</code> and <code>height</code> values represent
    * the dimensions of the bounding box as a ratio of the overall image dimension.
    * For example, if the input image is 700x200 pixels, and the bounding box width is
-   * 70 pixels, the width returned is 0.1. </p> <note> <p> The bounding box
+   * 70 pixels, the width returned is 0.1. </p>  <p> The bounding box
    * coordinates can have negative values. For example, if Amazon Rekognition is able
    * to detect a face that is at the image edge and is only partially visible, the
    * service can return coordinates that are outside the image bounds and, depending
    * on the image edge, you might get negative values or values greater than 1 for
-   * the <code>left</code> or <code>top</code> values. </p> </note><p><h3>See
+   * the <code>left</code> or <code>top</code> values. </p> <p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/BoundingBox">AWS
    * API Reference</a></p>

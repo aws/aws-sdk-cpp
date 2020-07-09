@@ -78,20 +78,20 @@ namespace Model
 
 
     /**
-     * <p>The version number of the pipeline.</p> <note> <p>A newly created pipeline is
-     * always assigned a version number of <code>1</code>.</p> </note>
+     * <p>The version number of the pipeline.</p>  <p>A newly created pipeline is
+     * always assigned a version number of <code>1</code>.</p> 
      */
     inline int GetPipelineVersion() const{ return m_pipelineVersion; }
 
     /**
-     * <p>The version number of the pipeline.</p> <note> <p>A newly created pipeline is
-     * always assigned a version number of <code>1</code>.</p> </note>
+     * <p>The version number of the pipeline.</p>  <p>A newly created pipeline is
+     * always assigned a version number of <code>1</code>.</p> 
      */
     inline void SetPipelineVersion(int value) { m_pipelineVersion = value; }
 
     /**
-     * <p>The version number of the pipeline.</p> <note> <p>A newly created pipeline is
-     * always assigned a version number of <code>1</code>.</p> </note>
+     * <p>The version number of the pipeline.</p>  <p>A newly created pipeline is
+     * always assigned a version number of <code>1</code>.</p> 
      */
     inline GetPipelineStateResult& WithPipelineVersion(int value) { SetPipelineVersion(value); return *this;}
 

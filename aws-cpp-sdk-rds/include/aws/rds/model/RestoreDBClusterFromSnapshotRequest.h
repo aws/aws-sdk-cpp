@@ -320,8 +320,8 @@ namespace Model
      * <p>To list all of the available engine versions for
      * <code>aurora-postgresql</code>, use the following command:</p> <p> <code>aws rds
      * describe-db-engine-versions --engine aurora-postgresql --query
-     * "DBEngineVersions[].EngineVersion"</code> </p> <note> <p>If you aren't using the
-     * default engine version, then you must specify the engine version.</p> </note>
+     * "DBEngineVersions[].EngineVersion"</code> </p>  <p>If you aren't using the
+     * default engine version, then you must specify the engine version.</p> 
      * <p> <b>Aurora MySQL</b> </p> <p>Example: <code>5.6.10a</code>,
      * <code>5.6.mysql_aurora.1.19.2</code>, <code>5.7.12</code>,
      * <code>5.7.mysql_aurora.2.04.5</code> </p> <p> <b>Aurora PostgreSQL</b> </p>
@@ -341,8 +341,8 @@ namespace Model
      * <p>To list all of the available engine versions for
      * <code>aurora-postgresql</code>, use the following command:</p> <p> <code>aws rds
      * describe-db-engine-versions --engine aurora-postgresql --query
-     * "DBEngineVersions[].EngineVersion"</code> </p> <note> <p>If you aren't using the
-     * default engine version, then you must specify the engine version.</p> </note>
+     * "DBEngineVersions[].EngineVersion"</code> </p>  <p>If you aren't using the
+     * default engine version, then you must specify the engine version.</p> 
      * <p> <b>Aurora MySQL</b> </p> <p>Example: <code>5.6.10a</code>,
      * <code>5.6.mysql_aurora.1.19.2</code>, <code>5.7.12</code>,
      * <code>5.7.mysql_aurora.2.04.5</code> </p> <p> <b>Aurora PostgreSQL</b> </p>
@@ -362,8 +362,8 @@ namespace Model
      * <p>To list all of the available engine versions for
      * <code>aurora-postgresql</code>, use the following command:</p> <p> <code>aws rds
      * describe-db-engine-versions --engine aurora-postgresql --query
-     * "DBEngineVersions[].EngineVersion"</code> </p> <note> <p>If you aren't using the
-     * default engine version, then you must specify the engine version.</p> </note>
+     * "DBEngineVersions[].EngineVersion"</code> </p>  <p>If you aren't using the
+     * default engine version, then you must specify the engine version.</p> 
      * <p> <b>Aurora MySQL</b> </p> <p>Example: <code>5.6.10a</code>,
      * <code>5.6.mysql_aurora.1.19.2</code>, <code>5.7.12</code>,
      * <code>5.7.mysql_aurora.2.04.5</code> </p> <p> <b>Aurora PostgreSQL</b> </p>
@@ -383,8 +383,8 @@ namespace Model
      * <p>To list all of the available engine versions for
      * <code>aurora-postgresql</code>, use the following command:</p> <p> <code>aws rds
      * describe-db-engine-versions --engine aurora-postgresql --query
-     * "DBEngineVersions[].EngineVersion"</code> </p> <note> <p>If you aren't using the
-     * default engine version, then you must specify the engine version.</p> </note>
+     * "DBEngineVersions[].EngineVersion"</code> </p>  <p>If you aren't using the
+     * default engine version, then you must specify the engine version.</p> 
      * <p> <b>Aurora MySQL</b> </p> <p>Example: <code>5.6.10a</code>,
      * <code>5.6.mysql_aurora.1.19.2</code>, <code>5.7.12</code>,
      * <code>5.7.mysql_aurora.2.04.5</code> </p> <p> <b>Aurora PostgreSQL</b> </p>
@@ -404,8 +404,8 @@ namespace Model
      * <p>To list all of the available engine versions for
      * <code>aurora-postgresql</code>, use the following command:</p> <p> <code>aws rds
      * describe-db-engine-versions --engine aurora-postgresql --query
-     * "DBEngineVersions[].EngineVersion"</code> </p> <note> <p>If you aren't using the
-     * default engine version, then you must specify the engine version.</p> </note>
+     * "DBEngineVersions[].EngineVersion"</code> </p>  <p>If you aren't using the
+     * default engine version, then you must specify the engine version.</p> 
      * <p> <b>Aurora MySQL</b> </p> <p>Example: <code>5.6.10a</code>,
      * <code>5.6.mysql_aurora.1.19.2</code>, <code>5.7.12</code>,
      * <code>5.7.mysql_aurora.2.04.5</code> </p> <p> <b>Aurora PostgreSQL</b> </p>
@@ -425,8 +425,8 @@ namespace Model
      * <p>To list all of the available engine versions for
      * <code>aurora-postgresql</code>, use the following command:</p> <p> <code>aws rds
      * describe-db-engine-versions --engine aurora-postgresql --query
-     * "DBEngineVersions[].EngineVersion"</code> </p> <note> <p>If you aren't using the
-     * default engine version, then you must specify the engine version.</p> </note>
+     * "DBEngineVersions[].EngineVersion"</code> </p>  <p>If you aren't using the
+     * default engine version, then you must specify the engine version.</p> 
      * <p> <b>Aurora MySQL</b> </p> <p>Example: <code>5.6.10a</code>,
      * <code>5.6.mysql_aurora.1.19.2</code>, <code>5.7.12</code>,
      * <code>5.7.mysql_aurora.2.04.5</code> </p> <p> <b>Aurora PostgreSQL</b> </p>
@@ -446,8 +446,8 @@ namespace Model
      * <p>To list all of the available engine versions for
      * <code>aurora-postgresql</code>, use the following command:</p> <p> <code>aws rds
      * describe-db-engine-versions --engine aurora-postgresql --query
-     * "DBEngineVersions[].EngineVersion"</code> </p> <note> <p>If you aren't using the
-     * default engine version, then you must specify the engine version.</p> </note>
+     * "DBEngineVersions[].EngineVersion"</code> </p>  <p>If you aren't using the
+     * default engine version, then you must specify the engine version.</p> 
      * <p> <b>Aurora MySQL</b> </p> <p>Example: <code>5.6.10a</code>,
      * <code>5.6.mysql_aurora.1.19.2</code>, <code>5.7.12</code>,
      * <code>5.7.mysql_aurora.2.04.5</code> </p> <p> <b>Aurora PostgreSQL</b> </p>
@@ -467,8 +467,8 @@ namespace Model
      * <p>To list all of the available engine versions for
      * <code>aurora-postgresql</code>, use the following command:</p> <p> <code>aws rds
      * describe-db-engine-versions --engine aurora-postgresql --query
-     * "DBEngineVersions[].EngineVersion"</code> </p> <note> <p>If you aren't using the
-     * default engine version, then you must specify the engine version.</p> </note>
+     * "DBEngineVersions[].EngineVersion"</code> </p>  <p>If you aren't using the
+     * default engine version, then you must specify the engine version.</p> 
      * <p> <b>Aurora MySQL</b> </p> <p>Example: <code>5.6.10a</code>,
      * <code>5.6.mysql_aurora.1.19.2</code>, <code>5.7.12</code>,
      * <code>5.7.mysql_aurora.2.04.5</code> </p> <p> <b>Aurora PostgreSQL</b> </p>
@@ -900,8 +900,8 @@ namespace Model
 
     /**
      * <p>The target backtrack window, in seconds. To disable backtracking, set this
-     * value to 0.</p> <note> <p>Currently, Backtrack is only supported for Aurora
-     * MySQL DB clusters.</p> </note> <p>Default: 0</p> <p>Constraints:</p> <ul> <li>
+     * value to 0.</p>  <p>Currently, Backtrack is only supported for Aurora
+     * MySQL DB clusters.</p>  <p>Default: 0</p> <p>Constraints:</p> <ul> <li>
      * <p>If specified, this value must be set to a number from 0 to 259,200 (72
      * hours).</p> </li> </ul>
      */
@@ -909,8 +909,8 @@ namespace Model
 
     /**
      * <p>The target backtrack window, in seconds. To disable backtracking, set this
-     * value to 0.</p> <note> <p>Currently, Backtrack is only supported for Aurora
-     * MySQL DB clusters.</p> </note> <p>Default: 0</p> <p>Constraints:</p> <ul> <li>
+     * value to 0.</p>  <p>Currently, Backtrack is only supported for Aurora
+     * MySQL DB clusters.</p>  <p>Default: 0</p> <p>Constraints:</p> <ul> <li>
      * <p>If specified, this value must be set to a number from 0 to 259,200 (72
      * hours).</p> </li> </ul>
      */
@@ -918,8 +918,8 @@ namespace Model
 
     /**
      * <p>The target backtrack window, in seconds. To disable backtracking, set this
-     * value to 0.</p> <note> <p>Currently, Backtrack is only supported for Aurora
-     * MySQL DB clusters.</p> </note> <p>Default: 0</p> <p>Constraints:</p> <ul> <li>
+     * value to 0.</p>  <p>Currently, Backtrack is only supported for Aurora
+     * MySQL DB clusters.</p>  <p>Default: 0</p> <p>Constraints:</p> <ul> <li>
      * <p>If specified, this value must be set to a number from 0 to 259,200 (72
      * hours).</p> </li> </ul>
      */
@@ -927,8 +927,8 @@ namespace Model
 
     /**
      * <p>The target backtrack window, in seconds. To disable backtracking, set this
-     * value to 0.</p> <note> <p>Currently, Backtrack is only supported for Aurora
-     * MySQL DB clusters.</p> </note> <p>Default: 0</p> <p>Constraints:</p> <ul> <li>
+     * value to 0.</p>  <p>Currently, Backtrack is only supported for Aurora
+     * MySQL DB clusters.</p>  <p>Default: 0</p> <p>Constraints:</p> <ul> <li>
      * <p>If specified, this value must be set to a number from 0 to 259,200 (72
      * hours).</p> </li> </ul>
      */

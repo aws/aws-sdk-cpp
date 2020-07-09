@@ -102,8 +102,8 @@ namespace Model
         /**
          * <p>Re-ranks a list of recommended items for the given user. The first item in
          * the list is deemed the most likely item to be of interest to the user.</p>
-         * <note> <p>The solution backing the campaign must have been created using a
-         * recipe of type PERSONALIZED_RANKING.</p> </note><p><h3>See Also:</h3>   <a
+         *  <p>The solution backing the campaign must have been created using a
+         * recipe of type PERSONALIZED_RANKING.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-runtime-2018-05-22/GetPersonalizedRanking">AWS
          * API Reference</a></p>
          */
@@ -112,8 +112,8 @@ namespace Model
         /**
          * <p>Re-ranks a list of recommended items for the given user. The first item in
          * the list is deemed the most likely item to be of interest to the user.</p>
-         * <note> <p>The solution backing the campaign must have been created using a
-         * recipe of type PERSONALIZED_RANKING.</p> </note><p><h3>See Also:</h3>   <a
+         *  <p>The solution backing the campaign must have been created using a
+         * recipe of type PERSONALIZED_RANKING.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-runtime-2018-05-22/GetPersonalizedRanking">AWS
          * API Reference</a></p>
          *
@@ -124,8 +124,8 @@ namespace Model
         /**
          * <p>Re-ranks a list of recommended items for the given user. The first item in
          * the list is deemed the most likely item to be of interest to the user.</p>
-         * <note> <p>The solution backing the campaign must have been created using a
-         * recipe of type PERSONALIZED_RANKING.</p> </note><p><h3>See Also:</h3>   <a
+         *  <p>The solution backing the campaign must have been created using a
+         * recipe of type PERSONALIZED_RANKING.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-runtime-2018-05-22/GetPersonalizedRanking">AWS
          * API Reference</a></p>
          *
@@ -138,9 +138,9 @@ namespace Model
          * type used to create the solution backing the campaign, as follows:</p> <ul> <li>
          * <p>RELATED_ITEMS - <code>itemId</code> required, <code>userId</code> not
          * used</p> </li> <li> <p>USER_PERSONALIZATION - <code>itemId</code> optional,
-         * <code>userId</code> required</p> </li> </ul> <note> <p>Campaigns that are backed
+         * <code>userId</code> required</p> </li> </ul>  <p>Campaigns that are backed
          * by a solution created using a recipe of type PERSONALIZED_RANKING use the
-         * API.</p> </note><p><h3>See Also:</h3>   <a
+         * API.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-runtime-2018-05-22/GetRecommendations">AWS
          * API Reference</a></p>
          */
@@ -151,9 +151,9 @@ namespace Model
          * type used to create the solution backing the campaign, as follows:</p> <ul> <li>
          * <p>RELATED_ITEMS - <code>itemId</code> required, <code>userId</code> not
          * used</p> </li> <li> <p>USER_PERSONALIZATION - <code>itemId</code> optional,
-         * <code>userId</code> required</p> </li> </ul> <note> <p>Campaigns that are backed
+         * <code>userId</code> required</p> </li> </ul>  <p>Campaigns that are backed
          * by a solution created using a recipe of type PERSONALIZED_RANKING use the
-         * API.</p> </note><p><h3>See Also:</h3>   <a
+         * API.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-runtime-2018-05-22/GetRecommendations">AWS
          * API Reference</a></p>
          *
@@ -166,9 +166,9 @@ namespace Model
          * type used to create the solution backing the campaign, as follows:</p> <ul> <li>
          * <p>RELATED_ITEMS - <code>itemId</code> required, <code>userId</code> not
          * used</p> </li> <li> <p>USER_PERSONALIZATION - <code>itemId</code> optional,
-         * <code>userId</code> required</p> </li> </ul> <note> <p>Campaigns that are backed
+         * <code>userId</code> required</p> </li> </ul>  <p>Campaigns that are backed
          * by a solution created using a recipe of type PERSONALIZED_RANKING use the
-         * API.</p> </note><p><h3>See Also:</h3>   <a
+         * API.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-runtime-2018-05-22/GetRecommendations">AWS
          * API Reference</a></p>
          *

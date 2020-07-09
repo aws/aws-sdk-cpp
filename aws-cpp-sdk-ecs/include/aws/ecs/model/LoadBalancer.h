@@ -55,12 +55,12 @@ namespace Model
      * target groups for the load balancer. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-type-bluegreen.html">Blue/Green
      * Deployment with CodeDeploy</a> in the <i>Amazon Elastic Container Service
-     * Developer Guide</i>.</p> <important> <p>If your service's task definition uses
+     * Developer Guide</i>.</p>  <p>If your service's task definition uses
      * the <code>awsvpc</code> network mode (which is required for the Fargate launch
      * type), you must choose <code>ip</code> as the target type, not
      * <code>instance</code>, when creating your target groups because tasks that use
      * the <code>awsvpc</code> network mode are associated with an elastic network
-     * interface, not an Amazon EC2 instance.</p> </important>
+     * interface, not an Amazon EC2 instance.</p> 
      */
     inline const Aws::String& GetTargetGroupArn() const{ return m_targetGroupArn; }
 
@@ -79,12 +79,12 @@ namespace Model
      * target groups for the load balancer. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-type-bluegreen.html">Blue/Green
      * Deployment with CodeDeploy</a> in the <i>Amazon Elastic Container Service
-     * Developer Guide</i>.</p> <important> <p>If your service's task definition uses
+     * Developer Guide</i>.</p>  <p>If your service's task definition uses
      * the <code>awsvpc</code> network mode (which is required for the Fargate launch
      * type), you must choose <code>ip</code> as the target type, not
      * <code>instance</code>, when creating your target groups because tasks that use
      * the <code>awsvpc</code> network mode are associated with an elastic network
-     * interface, not an Amazon EC2 instance.</p> </important>
+     * interface, not an Amazon EC2 instance.</p> 
      */
     inline bool TargetGroupArnHasBeenSet() const { return m_targetGroupArnHasBeenSet; }
 
@@ -103,12 +103,12 @@ namespace Model
      * target groups for the load balancer. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-type-bluegreen.html">Blue/Green
      * Deployment with CodeDeploy</a> in the <i>Amazon Elastic Container Service
-     * Developer Guide</i>.</p> <important> <p>If your service's task definition uses
+     * Developer Guide</i>.</p>  <p>If your service's task definition uses
      * the <code>awsvpc</code> network mode (which is required for the Fargate launch
      * type), you must choose <code>ip</code> as the target type, not
      * <code>instance</code>, when creating your target groups because tasks that use
      * the <code>awsvpc</code> network mode are associated with an elastic network
-     * interface, not an Amazon EC2 instance.</p> </important>
+     * interface, not an Amazon EC2 instance.</p> 
      */
     inline void SetTargetGroupArn(const Aws::String& value) { m_targetGroupArnHasBeenSet = true; m_targetGroupArn = value; }
 
@@ -127,12 +127,12 @@ namespace Model
      * target groups for the load balancer. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-type-bluegreen.html">Blue/Green
      * Deployment with CodeDeploy</a> in the <i>Amazon Elastic Container Service
-     * Developer Guide</i>.</p> <important> <p>If your service's task definition uses
+     * Developer Guide</i>.</p>  <p>If your service's task definition uses
      * the <code>awsvpc</code> network mode (which is required for the Fargate launch
      * type), you must choose <code>ip</code> as the target type, not
      * <code>instance</code>, when creating your target groups because tasks that use
      * the <code>awsvpc</code> network mode are associated with an elastic network
-     * interface, not an Amazon EC2 instance.</p> </important>
+     * interface, not an Amazon EC2 instance.</p> 
      */
     inline void SetTargetGroupArn(Aws::String&& value) { m_targetGroupArnHasBeenSet = true; m_targetGroupArn = std::move(value); }
 
@@ -151,12 +151,12 @@ namespace Model
      * target groups for the load balancer. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-type-bluegreen.html">Blue/Green
      * Deployment with CodeDeploy</a> in the <i>Amazon Elastic Container Service
-     * Developer Guide</i>.</p> <important> <p>If your service's task definition uses
+     * Developer Guide</i>.</p>  <p>If your service's task definition uses
      * the <code>awsvpc</code> network mode (which is required for the Fargate launch
      * type), you must choose <code>ip</code> as the target type, not
      * <code>instance</code>, when creating your target groups because tasks that use
      * the <code>awsvpc</code> network mode are associated with an elastic network
-     * interface, not an Amazon EC2 instance.</p> </important>
+     * interface, not an Amazon EC2 instance.</p> 
      */
     inline void SetTargetGroupArn(const char* value) { m_targetGroupArnHasBeenSet = true; m_targetGroupArn.assign(value); }
 
@@ -175,12 +175,12 @@ namespace Model
      * target groups for the load balancer. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-type-bluegreen.html">Blue/Green
      * Deployment with CodeDeploy</a> in the <i>Amazon Elastic Container Service
-     * Developer Guide</i>.</p> <important> <p>If your service's task definition uses
+     * Developer Guide</i>.</p>  <p>If your service's task definition uses
      * the <code>awsvpc</code> network mode (which is required for the Fargate launch
      * type), you must choose <code>ip</code> as the target type, not
      * <code>instance</code>, when creating your target groups because tasks that use
      * the <code>awsvpc</code> network mode are associated with an elastic network
-     * interface, not an Amazon EC2 instance.</p> </important>
+     * interface, not an Amazon EC2 instance.</p> 
      */
     inline LoadBalancer& WithTargetGroupArn(const Aws::String& value) { SetTargetGroupArn(value); return *this;}
 
@@ -199,12 +199,12 @@ namespace Model
      * target groups for the load balancer. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-type-bluegreen.html">Blue/Green
      * Deployment with CodeDeploy</a> in the <i>Amazon Elastic Container Service
-     * Developer Guide</i>.</p> <important> <p>If your service's task definition uses
+     * Developer Guide</i>.</p>  <p>If your service's task definition uses
      * the <code>awsvpc</code> network mode (which is required for the Fargate launch
      * type), you must choose <code>ip</code> as the target type, not
      * <code>instance</code>, when creating your target groups because tasks that use
      * the <code>awsvpc</code> network mode are associated with an elastic network
-     * interface, not an Amazon EC2 instance.</p> </important>
+     * interface, not an Amazon EC2 instance.</p> 
      */
     inline LoadBalancer& WithTargetGroupArn(Aws::String&& value) { SetTargetGroupArn(std::move(value)); return *this;}
 
@@ -223,12 +223,12 @@ namespace Model
      * target groups for the load balancer. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-type-bluegreen.html">Blue/Green
      * Deployment with CodeDeploy</a> in the <i>Amazon Elastic Container Service
-     * Developer Guide</i>.</p> <important> <p>If your service's task definition uses
+     * Developer Guide</i>.</p>  <p>If your service's task definition uses
      * the <code>awsvpc</code> network mode (which is required for the Fargate launch
      * type), you must choose <code>ip</code> as the target type, not
      * <code>instance</code>, when creating your target groups because tasks that use
      * the <code>awsvpc</code> network mode are associated with an elastic network
-     * interface, not an Amazon EC2 instance.</p> </important>
+     * interface, not an Amazon EC2 instance.</p> 
      */
     inline LoadBalancer& WithTargetGroupArn(const char* value) { SetTargetGroupArn(value); return *this;}
 

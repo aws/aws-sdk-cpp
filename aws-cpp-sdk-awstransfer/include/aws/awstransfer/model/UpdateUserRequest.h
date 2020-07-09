@@ -176,14 +176,14 @@ namespace Model
      * most cases, you can use this value instead of the scope-down policy to lock your
      * user down to the designated home directory ("chroot"). To do this, you can set
      * <code>Entry</code> to '/' and set <code>Target</code> to the HomeDirectory
-     * parameter value.</p> <note> <p>If the target of a logical directory entry does
+     * parameter value.</p>  <p>If the target of a logical directory entry does
      * not exist in Amazon S3, the entry will be ignored. As a workaround, you can use
      * the Amazon S3 api to create 0 byte objects as place holders for your directory.
      * If using the CLI, use the <code>s3api</code> call instead of <code>s3</code> so
      * you can use the put-object operation. For example, you use the following:
      * <code>aws s3api put-object --bucket bucketname --key path/to/folder/</code>.
      * Make sure that the end of the key name ends in a / for it to be considered a
-     * folder.</p> </note>
+     * folder.</p> 
      */
     inline const Aws::Vector<HomeDirectoryMapEntry>& GetHomeDirectoryMappings() const{ return m_homeDirectoryMappings; }
 
@@ -200,14 +200,14 @@ namespace Model
      * most cases, you can use this value instead of the scope-down policy to lock your
      * user down to the designated home directory ("chroot"). To do this, you can set
      * <code>Entry</code> to '/' and set <code>Target</code> to the HomeDirectory
-     * parameter value.</p> <note> <p>If the target of a logical directory entry does
+     * parameter value.</p>  <p>If the target of a logical directory entry does
      * not exist in Amazon S3, the entry will be ignored. As a workaround, you can use
      * the Amazon S3 api to create 0 byte objects as place holders for your directory.
      * If using the CLI, use the <code>s3api</code> call instead of <code>s3</code> so
      * you can use the put-object operation. For example, you use the following:
      * <code>aws s3api put-object --bucket bucketname --key path/to/folder/</code>.
      * Make sure that the end of the key name ends in a / for it to be considered a
-     * folder.</p> </note>
+     * folder.</p> 
      */
     inline bool HomeDirectoryMappingsHasBeenSet() const { return m_homeDirectoryMappingsHasBeenSet; }
 
@@ -224,14 +224,14 @@ namespace Model
      * most cases, you can use this value instead of the scope-down policy to lock your
      * user down to the designated home directory ("chroot"). To do this, you can set
      * <code>Entry</code> to '/' and set <code>Target</code> to the HomeDirectory
-     * parameter value.</p> <note> <p>If the target of a logical directory entry does
+     * parameter value.</p>  <p>If the target of a logical directory entry does
      * not exist in Amazon S3, the entry will be ignored. As a workaround, you can use
      * the Amazon S3 api to create 0 byte objects as place holders for your directory.
      * If using the CLI, use the <code>s3api</code> call instead of <code>s3</code> so
      * you can use the put-object operation. For example, you use the following:
      * <code>aws s3api put-object --bucket bucketname --key path/to/folder/</code>.
      * Make sure that the end of the key name ends in a / for it to be considered a
-     * folder.</p> </note>
+     * folder.</p> 
      */
     inline void SetHomeDirectoryMappings(const Aws::Vector<HomeDirectoryMapEntry>& value) { m_homeDirectoryMappingsHasBeenSet = true; m_homeDirectoryMappings = value; }
 
@@ -248,14 +248,14 @@ namespace Model
      * most cases, you can use this value instead of the scope-down policy to lock your
      * user down to the designated home directory ("chroot"). To do this, you can set
      * <code>Entry</code> to '/' and set <code>Target</code> to the HomeDirectory
-     * parameter value.</p> <note> <p>If the target of a logical directory entry does
+     * parameter value.</p>  <p>If the target of a logical directory entry does
      * not exist in Amazon S3, the entry will be ignored. As a workaround, you can use
      * the Amazon S3 api to create 0 byte objects as place holders for your directory.
      * If using the CLI, use the <code>s3api</code> call instead of <code>s3</code> so
      * you can use the put-object operation. For example, you use the following:
      * <code>aws s3api put-object --bucket bucketname --key path/to/folder/</code>.
      * Make sure that the end of the key name ends in a / for it to be considered a
-     * folder.</p> </note>
+     * folder.</p> 
      */
     inline void SetHomeDirectoryMappings(Aws::Vector<HomeDirectoryMapEntry>&& value) { m_homeDirectoryMappingsHasBeenSet = true; m_homeDirectoryMappings = std::move(value); }
 
@@ -272,14 +272,14 @@ namespace Model
      * most cases, you can use this value instead of the scope-down policy to lock your
      * user down to the designated home directory ("chroot"). To do this, you can set
      * <code>Entry</code> to '/' and set <code>Target</code> to the HomeDirectory
-     * parameter value.</p> <note> <p>If the target of a logical directory entry does
+     * parameter value.</p>  <p>If the target of a logical directory entry does
      * not exist in Amazon S3, the entry will be ignored. As a workaround, you can use
      * the Amazon S3 api to create 0 byte objects as place holders for your directory.
      * If using the CLI, use the <code>s3api</code> call instead of <code>s3</code> so
      * you can use the put-object operation. For example, you use the following:
      * <code>aws s3api put-object --bucket bucketname --key path/to/folder/</code>.
      * Make sure that the end of the key name ends in a / for it to be considered a
-     * folder.</p> </note>
+     * folder.</p> 
      */
     inline UpdateUserRequest& WithHomeDirectoryMappings(const Aws::Vector<HomeDirectoryMapEntry>& value) { SetHomeDirectoryMappings(value); return *this;}
 
@@ -296,14 +296,14 @@ namespace Model
      * most cases, you can use this value instead of the scope-down policy to lock your
      * user down to the designated home directory ("chroot"). To do this, you can set
      * <code>Entry</code> to '/' and set <code>Target</code> to the HomeDirectory
-     * parameter value.</p> <note> <p>If the target of a logical directory entry does
+     * parameter value.</p>  <p>If the target of a logical directory entry does
      * not exist in Amazon S3, the entry will be ignored. As a workaround, you can use
      * the Amazon S3 api to create 0 byte objects as place holders for your directory.
      * If using the CLI, use the <code>s3api</code> call instead of <code>s3</code> so
      * you can use the put-object operation. For example, you use the following:
      * <code>aws s3api put-object --bucket bucketname --key path/to/folder/</code>.
      * Make sure that the end of the key name ends in a / for it to be considered a
-     * folder.</p> </note>
+     * folder.</p> 
      */
     inline UpdateUserRequest& WithHomeDirectoryMappings(Aws::Vector<HomeDirectoryMapEntry>&& value) { SetHomeDirectoryMappings(std::move(value)); return *this;}
 
@@ -320,14 +320,14 @@ namespace Model
      * most cases, you can use this value instead of the scope-down policy to lock your
      * user down to the designated home directory ("chroot"). To do this, you can set
      * <code>Entry</code> to '/' and set <code>Target</code> to the HomeDirectory
-     * parameter value.</p> <note> <p>If the target of a logical directory entry does
+     * parameter value.</p>  <p>If the target of a logical directory entry does
      * not exist in Amazon S3, the entry will be ignored. As a workaround, you can use
      * the Amazon S3 api to create 0 byte objects as place holders for your directory.
      * If using the CLI, use the <code>s3api</code> call instead of <code>s3</code> so
      * you can use the put-object operation. For example, you use the following:
      * <code>aws s3api put-object --bucket bucketname --key path/to/folder/</code>.
      * Make sure that the end of the key name ends in a / for it to be considered a
-     * folder.</p> </note>
+     * folder.</p> 
      */
     inline UpdateUserRequest& AddHomeDirectoryMappings(const HomeDirectoryMapEntry& value) { m_homeDirectoryMappingsHasBeenSet = true; m_homeDirectoryMappings.push_back(value); return *this; }
 
@@ -344,14 +344,14 @@ namespace Model
      * most cases, you can use this value instead of the scope-down policy to lock your
      * user down to the designated home directory ("chroot"). To do this, you can set
      * <code>Entry</code> to '/' and set <code>Target</code> to the HomeDirectory
-     * parameter value.</p> <note> <p>If the target of a logical directory entry does
+     * parameter value.</p>  <p>If the target of a logical directory entry does
      * not exist in Amazon S3, the entry will be ignored. As a workaround, you can use
      * the Amazon S3 api to create 0 byte objects as place holders for your directory.
      * If using the CLI, use the <code>s3api</code> call instead of <code>s3</code> so
      * you can use the put-object operation. For example, you use the following:
      * <code>aws s3api put-object --bucket bucketname --key path/to/folder/</code>.
      * Make sure that the end of the key name ends in a / for it to be considered a
-     * folder.</p> </note>
+     * folder.</p> 
      */
     inline UpdateUserRequest& AddHomeDirectoryMappings(HomeDirectoryMapEntry&& value) { m_homeDirectoryMappingsHasBeenSet = true; m_homeDirectoryMappings.push_back(std::move(value)); return *this; }
 
@@ -362,7 +362,7 @@ namespace Model
      * portions of your Amazon S3 bucket. Variables you can use inside this policy
      * include <code>${Transfer:UserName}</code>,
      * <code>${Transfer:HomeDirectory}</code>, and
-     * <code>${Transfer:HomeBucket}</code>.</p> <note> <p>For scope-down policies, AWS
+     * <code>${Transfer:HomeBucket}</code>.</p>  <p>For scope-down policies, AWS
      * Transfer Family stores the policy as a JSON blob, instead of the Amazon Resource
      * Name (ARN) of the policy. You save the policy as a JSON blob and pass it in the
      * <code>Policy</code> argument.</p> <p>For an example of a scope-down policy, see
@@ -370,7 +370,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/transfer/latest/userguide/users.html#users-policies-scope-down">Creating
      * a scope-down policy</a>.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html">AssumeRole</a>
-     * in the <i>AWS Security Token Service API Reference</i>.</p> </note>
+     * in the <i>AWS Security Token Service API Reference</i>.</p> 
      */
     inline const Aws::String& GetPolicy() const{ return m_policy; }
 
@@ -380,7 +380,7 @@ namespace Model
      * portions of your Amazon S3 bucket. Variables you can use inside this policy
      * include <code>${Transfer:UserName}</code>,
      * <code>${Transfer:HomeDirectory}</code>, and
-     * <code>${Transfer:HomeBucket}</code>.</p> <note> <p>For scope-down policies, AWS
+     * <code>${Transfer:HomeBucket}</code>.</p>  <p>For scope-down policies, AWS
      * Transfer Family stores the policy as a JSON blob, instead of the Amazon Resource
      * Name (ARN) of the policy. You save the policy as a JSON blob and pass it in the
      * <code>Policy</code> argument.</p> <p>For an example of a scope-down policy, see
@@ -388,7 +388,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/transfer/latest/userguide/users.html#users-policies-scope-down">Creating
      * a scope-down policy</a>.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html">AssumeRole</a>
-     * in the <i>AWS Security Token Service API Reference</i>.</p> </note>
+     * in the <i>AWS Security Token Service API Reference</i>.</p> 
      */
     inline bool PolicyHasBeenSet() const { return m_policyHasBeenSet; }
 
@@ -398,7 +398,7 @@ namespace Model
      * portions of your Amazon S3 bucket. Variables you can use inside this policy
      * include <code>${Transfer:UserName}</code>,
      * <code>${Transfer:HomeDirectory}</code>, and
-     * <code>${Transfer:HomeBucket}</code>.</p> <note> <p>For scope-down policies, AWS
+     * <code>${Transfer:HomeBucket}</code>.</p>  <p>For scope-down policies, AWS
      * Transfer Family stores the policy as a JSON blob, instead of the Amazon Resource
      * Name (ARN) of the policy. You save the policy as a JSON blob and pass it in the
      * <code>Policy</code> argument.</p> <p>For an example of a scope-down policy, see
@@ -406,7 +406,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/transfer/latest/userguide/users.html#users-policies-scope-down">Creating
      * a scope-down policy</a>.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html">AssumeRole</a>
-     * in the <i>AWS Security Token Service API Reference</i>.</p> </note>
+     * in the <i>AWS Security Token Service API Reference</i>.</p> 
      */
     inline void SetPolicy(const Aws::String& value) { m_policyHasBeenSet = true; m_policy = value; }
 
@@ -416,7 +416,7 @@ namespace Model
      * portions of your Amazon S3 bucket. Variables you can use inside this policy
      * include <code>${Transfer:UserName}</code>,
      * <code>${Transfer:HomeDirectory}</code>, and
-     * <code>${Transfer:HomeBucket}</code>.</p> <note> <p>For scope-down policies, AWS
+     * <code>${Transfer:HomeBucket}</code>.</p>  <p>For scope-down policies, AWS
      * Transfer Family stores the policy as a JSON blob, instead of the Amazon Resource
      * Name (ARN) of the policy. You save the policy as a JSON blob and pass it in the
      * <code>Policy</code> argument.</p> <p>For an example of a scope-down policy, see
@@ -424,7 +424,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/transfer/latest/userguide/users.html#users-policies-scope-down">Creating
      * a scope-down policy</a>.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html">AssumeRole</a>
-     * in the <i>AWS Security Token Service API Reference</i>.</p> </note>
+     * in the <i>AWS Security Token Service API Reference</i>.</p> 
      */
     inline void SetPolicy(Aws::String&& value) { m_policyHasBeenSet = true; m_policy = std::move(value); }
 
@@ -434,7 +434,7 @@ namespace Model
      * portions of your Amazon S3 bucket. Variables you can use inside this policy
      * include <code>${Transfer:UserName}</code>,
      * <code>${Transfer:HomeDirectory}</code>, and
-     * <code>${Transfer:HomeBucket}</code>.</p> <note> <p>For scope-down policies, AWS
+     * <code>${Transfer:HomeBucket}</code>.</p>  <p>For scope-down policies, AWS
      * Transfer Family stores the policy as a JSON blob, instead of the Amazon Resource
      * Name (ARN) of the policy. You save the policy as a JSON blob and pass it in the
      * <code>Policy</code> argument.</p> <p>For an example of a scope-down policy, see
@@ -442,7 +442,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/transfer/latest/userguide/users.html#users-policies-scope-down">Creating
      * a scope-down policy</a>.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html">AssumeRole</a>
-     * in the <i>AWS Security Token Service API Reference</i>.</p> </note>
+     * in the <i>AWS Security Token Service API Reference</i>.</p> 
      */
     inline void SetPolicy(const char* value) { m_policyHasBeenSet = true; m_policy.assign(value); }
 
@@ -452,7 +452,7 @@ namespace Model
      * portions of your Amazon S3 bucket. Variables you can use inside this policy
      * include <code>${Transfer:UserName}</code>,
      * <code>${Transfer:HomeDirectory}</code>, and
-     * <code>${Transfer:HomeBucket}</code>.</p> <note> <p>For scope-down policies, AWS
+     * <code>${Transfer:HomeBucket}</code>.</p>  <p>For scope-down policies, AWS
      * Transfer Family stores the policy as a JSON blob, instead of the Amazon Resource
      * Name (ARN) of the policy. You save the policy as a JSON blob and pass it in the
      * <code>Policy</code> argument.</p> <p>For an example of a scope-down policy, see
@@ -460,7 +460,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/transfer/latest/userguide/users.html#users-policies-scope-down">Creating
      * a scope-down policy</a>.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html">AssumeRole</a>
-     * in the <i>AWS Security Token Service API Reference</i>.</p> </note>
+     * in the <i>AWS Security Token Service API Reference</i>.</p> 
      */
     inline UpdateUserRequest& WithPolicy(const Aws::String& value) { SetPolicy(value); return *this;}
 
@@ -470,7 +470,7 @@ namespace Model
      * portions of your Amazon S3 bucket. Variables you can use inside this policy
      * include <code>${Transfer:UserName}</code>,
      * <code>${Transfer:HomeDirectory}</code>, and
-     * <code>${Transfer:HomeBucket}</code>.</p> <note> <p>For scope-down policies, AWS
+     * <code>${Transfer:HomeBucket}</code>.</p>  <p>For scope-down policies, AWS
      * Transfer Family stores the policy as a JSON blob, instead of the Amazon Resource
      * Name (ARN) of the policy. You save the policy as a JSON blob and pass it in the
      * <code>Policy</code> argument.</p> <p>For an example of a scope-down policy, see
@@ -478,7 +478,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/transfer/latest/userguide/users.html#users-policies-scope-down">Creating
      * a scope-down policy</a>.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html">AssumeRole</a>
-     * in the <i>AWS Security Token Service API Reference</i>.</p> </note>
+     * in the <i>AWS Security Token Service API Reference</i>.</p> 
      */
     inline UpdateUserRequest& WithPolicy(Aws::String&& value) { SetPolicy(std::move(value)); return *this;}
 
@@ -488,7 +488,7 @@ namespace Model
      * portions of your Amazon S3 bucket. Variables you can use inside this policy
      * include <code>${Transfer:UserName}</code>,
      * <code>${Transfer:HomeDirectory}</code>, and
-     * <code>${Transfer:HomeBucket}</code>.</p> <note> <p>For scope-down policies, AWS
+     * <code>${Transfer:HomeBucket}</code>.</p>  <p>For scope-down policies, AWS
      * Transfer Family stores the policy as a JSON blob, instead of the Amazon Resource
      * Name (ARN) of the policy. You save the policy as a JSON blob and pass it in the
      * <code>Policy</code> argument.</p> <p>For an example of a scope-down policy, see
@@ -496,7 +496,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/transfer/latest/userguide/users.html#users-policies-scope-down">Creating
      * a scope-down policy</a>.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html">AssumeRole</a>
-     * in the <i>AWS Security Token Service API Reference</i>.</p> </note>
+     * in the <i>AWS Security Token Service API Reference</i>.</p> 
      */
     inline UpdateUserRequest& WithPolicy(const char* value) { SetPolicy(value); return *this;}
 

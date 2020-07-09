@@ -269,10 +269,10 @@ namespace Model
          * the MPEG-DASH protocol. <code>GetDASHStreamingSessionURL</code> returns an
          * authenticated URL (that includes an encrypted session token) for the session's
          * MPEG-DASH <i>manifest</i> (the root resource needed for streaming with
-         * MPEG-DASH).</p> <note> <p>Don't share or store this token where an unauthorized
+         * MPEG-DASH).</p>  <p>Don't share or store this token where an unauthorized
          * entity could access it. The token provides access to the content of the stream.
          * Safeguard the token with the same measures that you would use with your AWS
-         * credentials.</p> </note> <p>The media that is made available through the
+         * credentials.</p>  <p>The media that is made available through the
          * manifest consists only of the requested stream, time range, and format. No other
          * media data (such as frames outside the requested window or alternate bitrates)
          * is made available.</p> </li> <li> <p>Provide the URL (containing the encrypted
@@ -297,15 +297,15 @@ namespace Model
          * <b>GetMP4MediaFragment:</b> Retrieves MP4 media fragments. These fragments
          * contain the "<code>moof</code>" and "<code>mdat</code>" MP4 atoms and their
          * child atoms, containing the encoded fragment's media frames and their
-         * timestamps. </p> <note> <p>After the first media fragment is made available in a
+         * timestamps. </p>  <p>After the first media fragment is made available in a
          * streaming session, any fragments that don't contain the same codec private data
          * cause an error to be returned when those different media fragments are loaded.
          * Therefore, the codec private data should not change between fragments in a
          * session. This also means that the session fails if the fragments in a stream
-         * change from having only video to having both audio and video.</p> </note>
+         * change from having only video to having both audio and video.</p> 
          * <p>Data retrieved with this action is billable. See <a
          * href="https://aws.amazon.com/kinesis/video-streams/pricing/">Pricing</a> for
-         * details.</p> </li> </ul> </li> </ol> <note> <p>The following restrictions apply
+         * details.</p> </li> </ul> </li> </ol>  <p>The following restrictions apply
          * to MPEG-DASH sessions:</p> <ul> <li> <p>A streaming session URL should not be
          * shared between players. The service might throttle a session if multiple media
          * players are sharing it. For connection limits, see <a
@@ -316,9 +316,9 @@ namespace Model
          * created) session is closed. The number of active <code>GetMedia</code>
          * connections on a Kinesis video stream does not count against this limit, and the
          * number of active MPEG-DASH sessions does not count against the active
-         * <code>GetMedia</code> connection limit.</p> <note> <p>The maximum limits for
+         * <code>GetMedia</code> connection limit.</p>  <p>The maximum limits for
          * active HLS and MPEG-DASH streaming sessions are independent of each other. </p>
-         * </note> </li> </ul> </note> <p>You can monitor the amount of data that the media
+         *  </li> </ul>  <p>You can monitor the amount of data that the media
          * player consumes by monitoring the <code>GetMP4MediaFragment.OutgoingBytes</code>
          * Amazon CloudWatch metric. For information about using CloudWatch to monitor
          * Kinesis Video Streams, see <a
@@ -329,7 +329,7 @@ namespace Model
          * Pricing</a>. Charges for both HLS sessions and outgoing AWS data apply.</p>
          * <p>For more information about HLS, see <a
          * href="https://developer.apple.com/streaming/">HTTP Live Streaming</a> on the <a
-         * href="https://developer.apple.com">Apple Developer site</a>.</p> <important>
+         * href="https://developer.apple.com">Apple Developer site</a>.</p> 
          * <p>If an error is thrown after invoking a Kinesis Video Streams archived media
          * API, in addition to the HTTP status code and the response body, it includes the
          * following pieces of information: </p> <ul> <li> <p> <code>x-amz-ErrorType</code>
@@ -343,7 +343,7 @@ namespace Model
          * in order to successfully try again.</p> <p>For more information, see the
          * <b>Errors</b> section at the bottom of this topic, as well as <a
          * href="https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/CommonErrors.html">Common
-         * Errors</a>. </p> </important><p><h3>See Also:</h3>   <a
+         * Errors</a>. </p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-video-archived-media-2017-09-30/GetDASHStreamingSessionURL">AWS
          * API Reference</a></p>
          */
@@ -383,10 +383,10 @@ namespace Model
          * the MPEG-DASH protocol. <code>GetDASHStreamingSessionURL</code> returns an
          * authenticated URL (that includes an encrypted session token) for the session's
          * MPEG-DASH <i>manifest</i> (the root resource needed for streaming with
-         * MPEG-DASH).</p> <note> <p>Don't share or store this token where an unauthorized
+         * MPEG-DASH).</p>  <p>Don't share or store this token where an unauthorized
          * entity could access it. The token provides access to the content of the stream.
          * Safeguard the token with the same measures that you would use with your AWS
-         * credentials.</p> </note> <p>The media that is made available through the
+         * credentials.</p>  <p>The media that is made available through the
          * manifest consists only of the requested stream, time range, and format. No other
          * media data (such as frames outside the requested window or alternate bitrates)
          * is made available.</p> </li> <li> <p>Provide the URL (containing the encrypted
@@ -411,15 +411,15 @@ namespace Model
          * <b>GetMP4MediaFragment:</b> Retrieves MP4 media fragments. These fragments
          * contain the "<code>moof</code>" and "<code>mdat</code>" MP4 atoms and their
          * child atoms, containing the encoded fragment's media frames and their
-         * timestamps. </p> <note> <p>After the first media fragment is made available in a
+         * timestamps. </p>  <p>After the first media fragment is made available in a
          * streaming session, any fragments that don't contain the same codec private data
          * cause an error to be returned when those different media fragments are loaded.
          * Therefore, the codec private data should not change between fragments in a
          * session. This also means that the session fails if the fragments in a stream
-         * change from having only video to having both audio and video.</p> </note>
+         * change from having only video to having both audio and video.</p> 
          * <p>Data retrieved with this action is billable. See <a
          * href="https://aws.amazon.com/kinesis/video-streams/pricing/">Pricing</a> for
-         * details.</p> </li> </ul> </li> </ol> <note> <p>The following restrictions apply
+         * details.</p> </li> </ul> </li> </ol>  <p>The following restrictions apply
          * to MPEG-DASH sessions:</p> <ul> <li> <p>A streaming session URL should not be
          * shared between players. The service might throttle a session if multiple media
          * players are sharing it. For connection limits, see <a
@@ -430,9 +430,9 @@ namespace Model
          * created) session is closed. The number of active <code>GetMedia</code>
          * connections on a Kinesis video stream does not count against this limit, and the
          * number of active MPEG-DASH sessions does not count against the active
-         * <code>GetMedia</code> connection limit.</p> <note> <p>The maximum limits for
+         * <code>GetMedia</code> connection limit.</p>  <p>The maximum limits for
          * active HLS and MPEG-DASH streaming sessions are independent of each other. </p>
-         * </note> </li> </ul> </note> <p>You can monitor the amount of data that the media
+         *  </li> </ul>  <p>You can monitor the amount of data that the media
          * player consumes by monitoring the <code>GetMP4MediaFragment.OutgoingBytes</code>
          * Amazon CloudWatch metric. For information about using CloudWatch to monitor
          * Kinesis Video Streams, see <a
@@ -443,7 +443,7 @@ namespace Model
          * Pricing</a>. Charges for both HLS sessions and outgoing AWS data apply.</p>
          * <p>For more information about HLS, see <a
          * href="https://developer.apple.com/streaming/">HTTP Live Streaming</a> on the <a
-         * href="https://developer.apple.com">Apple Developer site</a>.</p> <important>
+         * href="https://developer.apple.com">Apple Developer site</a>.</p> 
          * <p>If an error is thrown after invoking a Kinesis Video Streams archived media
          * API, in addition to the HTTP status code and the response body, it includes the
          * following pieces of information: </p> <ul> <li> <p> <code>x-amz-ErrorType</code>
@@ -457,7 +457,7 @@ namespace Model
          * in order to successfully try again.</p> <p>For more information, see the
          * <b>Errors</b> section at the bottom of this topic, as well as <a
          * href="https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/CommonErrors.html">Common
-         * Errors</a>. </p> </important><p><h3>See Also:</h3>   <a
+         * Errors</a>. </p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-video-archived-media-2017-09-30/GetDASHStreamingSessionURL">AWS
          * API Reference</a></p>
          *
@@ -499,10 +499,10 @@ namespace Model
          * the MPEG-DASH protocol. <code>GetDASHStreamingSessionURL</code> returns an
          * authenticated URL (that includes an encrypted session token) for the session's
          * MPEG-DASH <i>manifest</i> (the root resource needed for streaming with
-         * MPEG-DASH).</p> <note> <p>Don't share or store this token where an unauthorized
+         * MPEG-DASH).</p>  <p>Don't share or store this token where an unauthorized
          * entity could access it. The token provides access to the content of the stream.
          * Safeguard the token with the same measures that you would use with your AWS
-         * credentials.</p> </note> <p>The media that is made available through the
+         * credentials.</p>  <p>The media that is made available through the
          * manifest consists only of the requested stream, time range, and format. No other
          * media data (such as frames outside the requested window or alternate bitrates)
          * is made available.</p> </li> <li> <p>Provide the URL (containing the encrypted
@@ -527,15 +527,15 @@ namespace Model
          * <b>GetMP4MediaFragment:</b> Retrieves MP4 media fragments. These fragments
          * contain the "<code>moof</code>" and "<code>mdat</code>" MP4 atoms and their
          * child atoms, containing the encoded fragment's media frames and their
-         * timestamps. </p> <note> <p>After the first media fragment is made available in a
+         * timestamps. </p>  <p>After the first media fragment is made available in a
          * streaming session, any fragments that don't contain the same codec private data
          * cause an error to be returned when those different media fragments are loaded.
          * Therefore, the codec private data should not change between fragments in a
          * session. This also means that the session fails if the fragments in a stream
-         * change from having only video to having both audio and video.</p> </note>
+         * change from having only video to having both audio and video.</p> 
          * <p>Data retrieved with this action is billable. See <a
          * href="https://aws.amazon.com/kinesis/video-streams/pricing/">Pricing</a> for
-         * details.</p> </li> </ul> </li> </ol> <note> <p>The following restrictions apply
+         * details.</p> </li> </ul> </li> </ol>  <p>The following restrictions apply
          * to MPEG-DASH sessions:</p> <ul> <li> <p>A streaming session URL should not be
          * shared between players. The service might throttle a session if multiple media
          * players are sharing it. For connection limits, see <a
@@ -546,9 +546,9 @@ namespace Model
          * created) session is closed. The number of active <code>GetMedia</code>
          * connections on a Kinesis video stream does not count against this limit, and the
          * number of active MPEG-DASH sessions does not count against the active
-         * <code>GetMedia</code> connection limit.</p> <note> <p>The maximum limits for
+         * <code>GetMedia</code> connection limit.</p>  <p>The maximum limits for
          * active HLS and MPEG-DASH streaming sessions are independent of each other. </p>
-         * </note> </li> </ul> </note> <p>You can monitor the amount of data that the media
+         *  </li> </ul>  <p>You can monitor the amount of data that the media
          * player consumes by monitoring the <code>GetMP4MediaFragment.OutgoingBytes</code>
          * Amazon CloudWatch metric. For information about using CloudWatch to monitor
          * Kinesis Video Streams, see <a
@@ -559,7 +559,7 @@ namespace Model
          * Pricing</a>. Charges for both HLS sessions and outgoing AWS data apply.</p>
          * <p>For more information about HLS, see <a
          * href="https://developer.apple.com/streaming/">HTTP Live Streaming</a> on the <a
-         * href="https://developer.apple.com">Apple Developer site</a>.</p> <important>
+         * href="https://developer.apple.com">Apple Developer site</a>.</p> 
          * <p>If an error is thrown after invoking a Kinesis Video Streams archived media
          * API, in addition to the HTTP status code and the response body, it includes the
          * following pieces of information: </p> <ul> <li> <p> <code>x-amz-ErrorType</code>
@@ -573,7 +573,7 @@ namespace Model
          * in order to successfully try again.</p> <p>For more information, see the
          * <b>Errors</b> section at the bottom of this topic, as well as <a
          * href="https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/CommonErrors.html">Common
-         * Errors</a>. </p> </important><p><h3>See Also:</h3>   <a
+         * Errors</a>. </p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-video-archived-media-2017-09-30/GetDASHStreamingSessionURL">AWS
          * API Reference</a></p>
          *
@@ -616,10 +616,10 @@ namespace Model
          * streaming session to be used for accessing content in a stream using the HLS
          * protocol. <code>GetHLSStreamingSessionURL</code> returns an authenticated URL
          * (that includes an encrypted session token) for the session's HLS <i>master
-         * playlist</i> (the root resource needed for streaming with HLS).</p> <note>
+         * playlist</i> (the root resource needed for streaming with HLS).</p> 
          * <p>Don't share or store this token where an unauthorized entity could access it.
          * The token provides access to the content of the stream. Safeguard the token with
-         * the same measures that you would use with your AWS credentials.</p> </note>
+         * the same measures that you would use with your AWS credentials.</p> 
          * <p>The media that is made available through the playlist consists only of the
          * requested stream, time range, and format. No other media data (such as frames
          * outside the requested window or alternate bitrates) is made available.</p> </li>
@@ -657,23 +657,23 @@ namespace Model
          * media frames.</p> </li> <li> <p> <b>GetMP4MediaFragment:</b> Retrieves MP4 media
          * fragments. These fragments contain the "<code>moof</code>" and
          * "<code>mdat</code>" MP4 atoms and their child atoms, containing the encoded
-         * fragment's media frames and their timestamps. </p> <note> <p>After the first
+         * fragment's media frames and their timestamps. </p>  <p>After the first
          * media fragment is made available in a streaming session, any fragments that
          * don't contain the same codec private data cause an error to be returned when
          * those different media fragments are loaded. Therefore, the codec private data
          * should not change between fragments in a session. This also means that the
          * session fails if the fragments in a stream change from having only video to
-         * having both audio and video.</p> </note> <p>Data retrieved with this action is
+         * having both audio and video.</p>  <p>Data retrieved with this action is
          * billable. See <a
          * href="https://aws.amazon.com/kinesis/video-streams/pricing/">Pricing</a> for
          * details.</p> </li> <li> <p> <b>GetTSFragment:</b> Retrieves MPEG TS fragments
          * containing both initialization and media data for all tracks in the stream.</p>
-         * <note> <p>If the <code>ContainerFormat</code> is <code>MPEG_TS</code>, this API
+         *  <p>If the <code>ContainerFormat</code> is <code>MPEG_TS</code>, this API
          * is used instead of <code>GetMP4InitFragment</code> and
-         * <code>GetMP4MediaFragment</code> to retrieve stream media.</p> </note> <p>Data
+         * <code>GetMP4MediaFragment</code> to retrieve stream media.</p>  <p>Data
          * retrieved with this action is billable. For more information, see <a
          * href="https://aws.amazon.com/kinesis/video-streams/pricing/">Kinesis Video
-         * Streams pricing</a>.</p> </li> </ul> </li> </ol> <note> <p>The following
+         * Streams pricing</a>.</p> </li> </ul> </li> </ol>  <p>The following
          * restrictions apply to HLS sessions:</p> <ul> <li> <p>A streaming session URL
          * should not be shared between players. The service might throttle a session if
          * multiple media players are sharing it. For connection limits, see <a
@@ -684,8 +684,8 @@ namespace Model
          * session is closed. The number of active <code>GetMedia</code> connections on a
          * Kinesis video stream does not count against this limit, and the number of active
          * HLS sessions does not count against the active <code>GetMedia</code> connection
-         * limit.</p> <note> <p>The maximum limits for active HLS and MPEG-DASH streaming
-         * sessions are independent of each other.</p> </note> </li> </ul> </note> <p>You
+         * limit.</p>  <p>The maximum limits for active HLS and MPEG-DASH streaming
+         * sessions are independent of each other.</p>  </li> </ul>  <p>You
          * can monitor the amount of data that the media player consumes by monitoring the
          * <code>GetMP4MediaFragment.OutgoingBytes</code> Amazon CloudWatch metric. For
          * information about using CloudWatch to monitor Kinesis Video Streams, see <a
@@ -696,7 +696,7 @@ namespace Model
          * Pricing</a>. Charges for both HLS sessions and outgoing AWS data apply.</p>
          * <p>For more information about HLS, see <a
          * href="https://developer.apple.com/streaming/">HTTP Live Streaming</a> on the <a
-         * href="https://developer.apple.com">Apple Developer site</a>.</p> <important>
+         * href="https://developer.apple.com">Apple Developer site</a>.</p> 
          * <p>If an error is thrown after invoking a Kinesis Video Streams archived media
          * API, in addition to the HTTP status code and the response body, it includes the
          * following pieces of information: </p> <ul> <li> <p> <code>x-amz-ErrorType</code>
@@ -710,7 +710,7 @@ namespace Model
          * in order to successfully try again.</p> <p>For more information, see the
          * <b>Errors</b> section at the bottom of this topic, as well as <a
          * href="https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/CommonErrors.html">Common
-         * Errors</a>. </p> </important><p><h3>See Also:</h3>   <a
+         * Errors</a>. </p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-video-archived-media-2017-09-30/GetHLSStreamingSessionURL">AWS
          * API Reference</a></p>
          */
@@ -751,10 +751,10 @@ namespace Model
          * streaming session to be used for accessing content in a stream using the HLS
          * protocol. <code>GetHLSStreamingSessionURL</code> returns an authenticated URL
          * (that includes an encrypted session token) for the session's HLS <i>master
-         * playlist</i> (the root resource needed for streaming with HLS).</p> <note>
+         * playlist</i> (the root resource needed for streaming with HLS).</p> 
          * <p>Don't share or store this token where an unauthorized entity could access it.
          * The token provides access to the content of the stream. Safeguard the token with
-         * the same measures that you would use with your AWS credentials.</p> </note>
+         * the same measures that you would use with your AWS credentials.</p> 
          * <p>The media that is made available through the playlist consists only of the
          * requested stream, time range, and format. No other media data (such as frames
          * outside the requested window or alternate bitrates) is made available.</p> </li>
@@ -792,23 +792,23 @@ namespace Model
          * media frames.</p> </li> <li> <p> <b>GetMP4MediaFragment:</b> Retrieves MP4 media
          * fragments. These fragments contain the "<code>moof</code>" and
          * "<code>mdat</code>" MP4 atoms and their child atoms, containing the encoded
-         * fragment's media frames and their timestamps. </p> <note> <p>After the first
+         * fragment's media frames and their timestamps. </p>  <p>After the first
          * media fragment is made available in a streaming session, any fragments that
          * don't contain the same codec private data cause an error to be returned when
          * those different media fragments are loaded. Therefore, the codec private data
          * should not change between fragments in a session. This also means that the
          * session fails if the fragments in a stream change from having only video to
-         * having both audio and video.</p> </note> <p>Data retrieved with this action is
+         * having both audio and video.</p>  <p>Data retrieved with this action is
          * billable. See <a
          * href="https://aws.amazon.com/kinesis/video-streams/pricing/">Pricing</a> for
          * details.</p> </li> <li> <p> <b>GetTSFragment:</b> Retrieves MPEG TS fragments
          * containing both initialization and media data for all tracks in the stream.</p>
-         * <note> <p>If the <code>ContainerFormat</code> is <code>MPEG_TS</code>, this API
+         *  <p>If the <code>ContainerFormat</code> is <code>MPEG_TS</code>, this API
          * is used instead of <code>GetMP4InitFragment</code> and
-         * <code>GetMP4MediaFragment</code> to retrieve stream media.</p> </note> <p>Data
+         * <code>GetMP4MediaFragment</code> to retrieve stream media.</p>  <p>Data
          * retrieved with this action is billable. For more information, see <a
          * href="https://aws.amazon.com/kinesis/video-streams/pricing/">Kinesis Video
-         * Streams pricing</a>.</p> </li> </ul> </li> </ol> <note> <p>The following
+         * Streams pricing</a>.</p> </li> </ul> </li> </ol>  <p>The following
          * restrictions apply to HLS sessions:</p> <ul> <li> <p>A streaming session URL
          * should not be shared between players. The service might throttle a session if
          * multiple media players are sharing it. For connection limits, see <a
@@ -819,8 +819,8 @@ namespace Model
          * session is closed. The number of active <code>GetMedia</code> connections on a
          * Kinesis video stream does not count against this limit, and the number of active
          * HLS sessions does not count against the active <code>GetMedia</code> connection
-         * limit.</p> <note> <p>The maximum limits for active HLS and MPEG-DASH streaming
-         * sessions are independent of each other.</p> </note> </li> </ul> </note> <p>You
+         * limit.</p>  <p>The maximum limits for active HLS and MPEG-DASH streaming
+         * sessions are independent of each other.</p>  </li> </ul>  <p>You
          * can monitor the amount of data that the media player consumes by monitoring the
          * <code>GetMP4MediaFragment.OutgoingBytes</code> Amazon CloudWatch metric. For
          * information about using CloudWatch to monitor Kinesis Video Streams, see <a
@@ -831,7 +831,7 @@ namespace Model
          * Pricing</a>. Charges for both HLS sessions and outgoing AWS data apply.</p>
          * <p>For more information about HLS, see <a
          * href="https://developer.apple.com/streaming/">HTTP Live Streaming</a> on the <a
-         * href="https://developer.apple.com">Apple Developer site</a>.</p> <important>
+         * href="https://developer.apple.com">Apple Developer site</a>.</p> 
          * <p>If an error is thrown after invoking a Kinesis Video Streams archived media
          * API, in addition to the HTTP status code and the response body, it includes the
          * following pieces of information: </p> <ul> <li> <p> <code>x-amz-ErrorType</code>
@@ -845,7 +845,7 @@ namespace Model
          * in order to successfully try again.</p> <p>For more information, see the
          * <b>Errors</b> section at the bottom of this topic, as well as <a
          * href="https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/CommonErrors.html">Common
-         * Errors</a>. </p> </important><p><h3>See Also:</h3>   <a
+         * Errors</a>. </p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-video-archived-media-2017-09-30/GetHLSStreamingSessionURL">AWS
          * API Reference</a></p>
          *
@@ -888,10 +888,10 @@ namespace Model
          * streaming session to be used for accessing content in a stream using the HLS
          * protocol. <code>GetHLSStreamingSessionURL</code> returns an authenticated URL
          * (that includes an encrypted session token) for the session's HLS <i>master
-         * playlist</i> (the root resource needed for streaming with HLS).</p> <note>
+         * playlist</i> (the root resource needed for streaming with HLS).</p> 
          * <p>Don't share or store this token where an unauthorized entity could access it.
          * The token provides access to the content of the stream. Safeguard the token with
-         * the same measures that you would use with your AWS credentials.</p> </note>
+         * the same measures that you would use with your AWS credentials.</p> 
          * <p>The media that is made available through the playlist consists only of the
          * requested stream, time range, and format. No other media data (such as frames
          * outside the requested window or alternate bitrates) is made available.</p> </li>
@@ -929,23 +929,23 @@ namespace Model
          * media frames.</p> </li> <li> <p> <b>GetMP4MediaFragment:</b> Retrieves MP4 media
          * fragments. These fragments contain the "<code>moof</code>" and
          * "<code>mdat</code>" MP4 atoms and their child atoms, containing the encoded
-         * fragment's media frames and their timestamps. </p> <note> <p>After the first
+         * fragment's media frames and their timestamps. </p>  <p>After the first
          * media fragment is made available in a streaming session, any fragments that
          * don't contain the same codec private data cause an error to be returned when
          * those different media fragments are loaded. Therefore, the codec private data
          * should not change between fragments in a session. This also means that the
          * session fails if the fragments in a stream change from having only video to
-         * having both audio and video.</p> </note> <p>Data retrieved with this action is
+         * having both audio and video.</p>  <p>Data retrieved with this action is
          * billable. See <a
          * href="https://aws.amazon.com/kinesis/video-streams/pricing/">Pricing</a> for
          * details.</p> </li> <li> <p> <b>GetTSFragment:</b> Retrieves MPEG TS fragments
          * containing both initialization and media data for all tracks in the stream.</p>
-         * <note> <p>If the <code>ContainerFormat</code> is <code>MPEG_TS</code>, this API
+         *  <p>If the <code>ContainerFormat</code> is <code>MPEG_TS</code>, this API
          * is used instead of <code>GetMP4InitFragment</code> and
-         * <code>GetMP4MediaFragment</code> to retrieve stream media.</p> </note> <p>Data
+         * <code>GetMP4MediaFragment</code> to retrieve stream media.</p>  <p>Data
          * retrieved with this action is billable. For more information, see <a
          * href="https://aws.amazon.com/kinesis/video-streams/pricing/">Kinesis Video
-         * Streams pricing</a>.</p> </li> </ul> </li> </ol> <note> <p>The following
+         * Streams pricing</a>.</p> </li> </ul> </li> </ol>  <p>The following
          * restrictions apply to HLS sessions:</p> <ul> <li> <p>A streaming session URL
          * should not be shared between players. The service might throttle a session if
          * multiple media players are sharing it. For connection limits, see <a
@@ -956,8 +956,8 @@ namespace Model
          * session is closed. The number of active <code>GetMedia</code> connections on a
          * Kinesis video stream does not count against this limit, and the number of active
          * HLS sessions does not count against the active <code>GetMedia</code> connection
-         * limit.</p> <note> <p>The maximum limits for active HLS and MPEG-DASH streaming
-         * sessions are independent of each other.</p> </note> </li> </ul> </note> <p>You
+         * limit.</p>  <p>The maximum limits for active HLS and MPEG-DASH streaming
+         * sessions are independent of each other.</p>  </li> </ul>  <p>You
          * can monitor the amount of data that the media player consumes by monitoring the
          * <code>GetMP4MediaFragment.OutgoingBytes</code> Amazon CloudWatch metric. For
          * information about using CloudWatch to monitor Kinesis Video Streams, see <a
@@ -968,7 +968,7 @@ namespace Model
          * Pricing</a>. Charges for both HLS sessions and outgoing AWS data apply.</p>
          * <p>For more information about HLS, see <a
          * href="https://developer.apple.com/streaming/">HTTP Live Streaming</a> on the <a
-         * href="https://developer.apple.com">Apple Developer site</a>.</p> <important>
+         * href="https://developer.apple.com">Apple Developer site</a>.</p> 
          * <p>If an error is thrown after invoking a Kinesis Video Streams archived media
          * API, in addition to the HTTP status code and the response body, it includes the
          * following pieces of information: </p> <ul> <li> <p> <code>x-amz-ErrorType</code>
@@ -982,7 +982,7 @@ namespace Model
          * in order to successfully try again.</p> <p>For more information, see the
          * <b>Errors</b> section at the bottom of this topic, as well as <a
          * href="https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/CommonErrors.html">Common
-         * Errors</a>. </p> </important><p><h3>See Also:</h3>   <a
+         * Errors</a>. </p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-video-archived-media-2017-09-30/GetHLSStreamingSessionURL">AWS
          * API Reference</a></p>
          *
@@ -992,16 +992,16 @@ namespace Model
 
         /**
          * <p>Gets media for a list of fragments (specified by fragment number) from the
-         * archived data in an Amazon Kinesis video stream.</p> <note> <p>You must first
+         * archived data in an Amazon Kinesis video stream.</p>  <p>You must first
          * call the <code>GetDataEndpoint</code> API to get an endpoint. Then send the
          * <code>GetMediaForFragmentList</code> requests to this endpoint using the <a
          * href="https://docs.aws.amazon.com/cli/latest/reference/">--endpoint-url
-         * parameter</a>. </p> </note> <p>The following limits apply when using the
+         * parameter</a>. </p>  <p>The following limits apply when using the
          * <code>GetMediaForFragmentList</code> API:</p> <ul> <li> <p>A client can call
          * <code>GetMediaForFragmentList</code> up to five times per second per stream.
          * </p> </li> <li> <p>Kinesis Video Streams sends media data at a rate of up to 25
          * megabytes per second (or 200 megabits per second) during a
-         * <code>GetMediaForFragmentList</code> session. </p> </li> </ul> <important> <p>If
+         * <code>GetMediaForFragmentList</code> session. </p> </li> </ul>  <p>If
          * an error is thrown after invoking a Kinesis Video Streams archived media API, in
          * addition to the HTTP status code and the response body, it includes the
          * following pieces of information: </p> <ul> <li> <p> <code>x-amz-ErrorType</code>
@@ -1015,7 +1015,7 @@ namespace Model
          * in order to successfully try again.</p> <p>For more information, see the
          * <b>Errors</b> section at the bottom of this topic, as well as <a
          * href="https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/CommonErrors.html">Common
-         * Errors</a>. </p> </important><p><h3>See Also:</h3>   <a
+         * Errors</a>. </p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-video-archived-media-2017-09-30/GetMediaForFragmentList">AWS
          * API Reference</a></p>
          */
@@ -1023,16 +1023,16 @@ namespace Model
 
         /**
          * <p>Gets media for a list of fragments (specified by fragment number) from the
-         * archived data in an Amazon Kinesis video stream.</p> <note> <p>You must first
+         * archived data in an Amazon Kinesis video stream.</p>  <p>You must first
          * call the <code>GetDataEndpoint</code> API to get an endpoint. Then send the
          * <code>GetMediaForFragmentList</code> requests to this endpoint using the <a
          * href="https://docs.aws.amazon.com/cli/latest/reference/">--endpoint-url
-         * parameter</a>. </p> </note> <p>The following limits apply when using the
+         * parameter</a>. </p>  <p>The following limits apply when using the
          * <code>GetMediaForFragmentList</code> API:</p> <ul> <li> <p>A client can call
          * <code>GetMediaForFragmentList</code> up to five times per second per stream.
          * </p> </li> <li> <p>Kinesis Video Streams sends media data at a rate of up to 25
          * megabytes per second (or 200 megabits per second) during a
-         * <code>GetMediaForFragmentList</code> session. </p> </li> </ul> <important> <p>If
+         * <code>GetMediaForFragmentList</code> session. </p> </li> </ul>  <p>If
          * an error is thrown after invoking a Kinesis Video Streams archived media API, in
          * addition to the HTTP status code and the response body, it includes the
          * following pieces of information: </p> <ul> <li> <p> <code>x-amz-ErrorType</code>
@@ -1046,7 +1046,7 @@ namespace Model
          * in order to successfully try again.</p> <p>For more information, see the
          * <b>Errors</b> section at the bottom of this topic, as well as <a
          * href="https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/CommonErrors.html">Common
-         * Errors</a>. </p> </important><p><h3>See Also:</h3>   <a
+         * Errors</a>. </p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-video-archived-media-2017-09-30/GetMediaForFragmentList">AWS
          * API Reference</a></p>
          *
@@ -1056,16 +1056,16 @@ namespace Model
 
         /**
          * <p>Gets media for a list of fragments (specified by fragment number) from the
-         * archived data in an Amazon Kinesis video stream.</p> <note> <p>You must first
+         * archived data in an Amazon Kinesis video stream.</p>  <p>You must first
          * call the <code>GetDataEndpoint</code> API to get an endpoint. Then send the
          * <code>GetMediaForFragmentList</code> requests to this endpoint using the <a
          * href="https://docs.aws.amazon.com/cli/latest/reference/">--endpoint-url
-         * parameter</a>. </p> </note> <p>The following limits apply when using the
+         * parameter</a>. </p>  <p>The following limits apply when using the
          * <code>GetMediaForFragmentList</code> API:</p> <ul> <li> <p>A client can call
          * <code>GetMediaForFragmentList</code> up to five times per second per stream.
          * </p> </li> <li> <p>Kinesis Video Streams sends media data at a rate of up to 25
          * megabytes per second (or 200 megabits per second) during a
-         * <code>GetMediaForFragmentList</code> session. </p> </li> </ul> <important> <p>If
+         * <code>GetMediaForFragmentList</code> session. </p> </li> </ul>  <p>If
          * an error is thrown after invoking a Kinesis Video Streams archived media API, in
          * addition to the HTTP status code and the response body, it includes the
          * following pieces of information: </p> <ul> <li> <p> <code>x-amz-ErrorType</code>
@@ -1079,7 +1079,7 @@ namespace Model
          * in order to successfully try again.</p> <p>For more information, see the
          * <b>Errors</b> section at the bottom of this topic, as well as <a
          * href="https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/CommonErrors.html">Common
-         * Errors</a>. </p> </important><p><h3>See Also:</h3>   <a
+         * Errors</a>. </p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-video-archived-media-2017-09-30/GetMediaForFragmentList">AWS
          * API Reference</a></p>
          *
@@ -1093,11 +1093,11 @@ namespace Model
          * consistent. This means that even if the producer receives an acknowledgment that
          * a fragment is persisted, the result might not be returned immediately from a
          * request to <code>ListFragments</code>. However, results are typically available
-         * in less than one second.</p> <note> <p>You must first call the
+         * in less than one second.</p>  <p>You must first call the
          * <code>GetDataEndpoint</code> API to get an endpoint. Then send the
          * <code>ListFragments</code> requests to this endpoint using the <a
          * href="https://docs.aws.amazon.com/cli/latest/reference/">--endpoint-url
-         * parameter</a>. </p> </note> <important> <p>If an error is thrown after invoking
+         * parameter</a>. </p>   <p>If an error is thrown after invoking
          * a Kinesis Video Streams archived media API, in addition to the HTTP status code
          * and the response body, it includes the following pieces of information: </p>
          * <ul> <li> <p> <code>x-amz-ErrorType</code> HTTP header – contains a more
@@ -1111,7 +1111,7 @@ namespace Model
          * again.</p> <p>For more information, see the <b>Errors</b> section at the bottom
          * of this topic, as well as <a
          * href="https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/CommonErrors.html">Common
-         * Errors</a>. </p> </important><p><h3>See Also:</h3>   <a
+         * Errors</a>. </p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-video-archived-media-2017-09-30/ListFragments">AWS
          * API Reference</a></p>
          */
@@ -1123,11 +1123,11 @@ namespace Model
          * consistent. This means that even if the producer receives an acknowledgment that
          * a fragment is persisted, the result might not be returned immediately from a
          * request to <code>ListFragments</code>. However, results are typically available
-         * in less than one second.</p> <note> <p>You must first call the
+         * in less than one second.</p>  <p>You must first call the
          * <code>GetDataEndpoint</code> API to get an endpoint. Then send the
          * <code>ListFragments</code> requests to this endpoint using the <a
          * href="https://docs.aws.amazon.com/cli/latest/reference/">--endpoint-url
-         * parameter</a>. </p> </note> <important> <p>If an error is thrown after invoking
+         * parameter</a>. </p>   <p>If an error is thrown after invoking
          * a Kinesis Video Streams archived media API, in addition to the HTTP status code
          * and the response body, it includes the following pieces of information: </p>
          * <ul> <li> <p> <code>x-amz-ErrorType</code> HTTP header – contains a more
@@ -1141,7 +1141,7 @@ namespace Model
          * again.</p> <p>For more information, see the <b>Errors</b> section at the bottom
          * of this topic, as well as <a
          * href="https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/CommonErrors.html">Common
-         * Errors</a>. </p> </important><p><h3>See Also:</h3>   <a
+         * Errors</a>. </p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-video-archived-media-2017-09-30/ListFragments">AWS
          * API Reference</a></p>
          *
@@ -1155,11 +1155,11 @@ namespace Model
          * consistent. This means that even if the producer receives an acknowledgment that
          * a fragment is persisted, the result might not be returned immediately from a
          * request to <code>ListFragments</code>. However, results are typically available
-         * in less than one second.</p> <note> <p>You must first call the
+         * in less than one second.</p>  <p>You must first call the
          * <code>GetDataEndpoint</code> API to get an endpoint. Then send the
          * <code>ListFragments</code> requests to this endpoint using the <a
          * href="https://docs.aws.amazon.com/cli/latest/reference/">--endpoint-url
-         * parameter</a>. </p> </note> <important> <p>If an error is thrown after invoking
+         * parameter</a>. </p>   <p>If an error is thrown after invoking
          * a Kinesis Video Streams archived media API, in addition to the HTTP status code
          * and the response body, it includes the following pieces of information: </p>
          * <ul> <li> <p> <code>x-amz-ErrorType</code> HTTP header – contains a more
@@ -1173,7 +1173,7 @@ namespace Model
          * again.</p> <p>For more information, see the <b>Errors</b> section at the bottom
          * of this topic, as well as <a
          * href="https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/CommonErrors.html">Common
-         * Errors</a>. </p> </important><p><h3>See Also:</h3>   <a
+         * Errors</a>. </p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-video-archived-media-2017-09-30/ListFragments">AWS
          * API Reference</a></p>
          *

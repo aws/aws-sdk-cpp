@@ -48,13 +48,15 @@ namespace Model
      * <code>EffectiveDeliveryPolicy</code> – The JSON serialization of the effective
      * delivery policy that takes into account the topic delivery policy and account
      * system defaults.</p> </li> <li> <p> <code>FilterPolicy</code> – The filter
-     * policy JSON that is assigned to the subscription.</p> </li> <li> <p>
-     * <code>Owner</code> – The AWS account ID of the subscription's owner.</p> </li>
-     * <li> <p> <code>PendingConfirmation</code> – <code>true</code> if the
-     * subscription hasn't been confirmed. To confirm a pending subscription, call the
-     * <code>ConfirmSubscription</code> action with a confirmation token.</p> </li>
-     * <li> <p> <code>RawMessageDelivery</code> – <code>true</code> if raw message
-     * delivery is enabled for the subscription. Raw messages are free of JSON
+     * policy JSON that is assigned to the subscription. For more information, see <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-message-filtering.html">Amazon
+     * SNS Message Filtering</a> in the <i>Amazon SNS Developer Guide</i>.</p> </li>
+     * <li> <p> <code>Owner</code> – The AWS account ID of the subscription's
+     * owner.</p> </li> <li> <p> <code>PendingConfirmation</code> – <code>true</code>
+     * if the subscription hasn't been confirmed. To confirm a pending subscription,
+     * call the <code>ConfirmSubscription</code> action with a confirmation token.</p>
+     * </li> <li> <p> <code>RawMessageDelivery</code> – <code>true</code> if raw
+     * message delivery is enabled for the subscription. Raw messages are free of JSON
      * formatting and can be sent to HTTP/S and Amazon SQS endpoints.</p> </li> <li>
      * <p> <code>RedrivePolicy</code> – When specified, sends undeliverable messages to
      * the specified Amazon SQS dead-letter queue. Messages that can't be delivered due
@@ -76,13 +78,15 @@ namespace Model
      * <code>EffectiveDeliveryPolicy</code> – The JSON serialization of the effective
      * delivery policy that takes into account the topic delivery policy and account
      * system defaults.</p> </li> <li> <p> <code>FilterPolicy</code> – The filter
-     * policy JSON that is assigned to the subscription.</p> </li> <li> <p>
-     * <code>Owner</code> – The AWS account ID of the subscription's owner.</p> </li>
-     * <li> <p> <code>PendingConfirmation</code> – <code>true</code> if the
-     * subscription hasn't been confirmed. To confirm a pending subscription, call the
-     * <code>ConfirmSubscription</code> action with a confirmation token.</p> </li>
-     * <li> <p> <code>RawMessageDelivery</code> – <code>true</code> if raw message
-     * delivery is enabled for the subscription. Raw messages are free of JSON
+     * policy JSON that is assigned to the subscription. For more information, see <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-message-filtering.html">Amazon
+     * SNS Message Filtering</a> in the <i>Amazon SNS Developer Guide</i>.</p> </li>
+     * <li> <p> <code>Owner</code> – The AWS account ID of the subscription's
+     * owner.</p> </li> <li> <p> <code>PendingConfirmation</code> – <code>true</code>
+     * if the subscription hasn't been confirmed. To confirm a pending subscription,
+     * call the <code>ConfirmSubscription</code> action with a confirmation token.</p>
+     * </li> <li> <p> <code>RawMessageDelivery</code> – <code>true</code> if raw
+     * message delivery is enabled for the subscription. Raw messages are free of JSON
      * formatting and can be sent to HTTP/S and Amazon SQS endpoints.</p> </li> <li>
      * <p> <code>RedrivePolicy</code> – When specified, sends undeliverable messages to
      * the specified Amazon SQS dead-letter queue. Messages that can't be delivered due
@@ -104,13 +108,15 @@ namespace Model
      * <code>EffectiveDeliveryPolicy</code> – The JSON serialization of the effective
      * delivery policy that takes into account the topic delivery policy and account
      * system defaults.</p> </li> <li> <p> <code>FilterPolicy</code> – The filter
-     * policy JSON that is assigned to the subscription.</p> </li> <li> <p>
-     * <code>Owner</code> – The AWS account ID of the subscription's owner.</p> </li>
-     * <li> <p> <code>PendingConfirmation</code> – <code>true</code> if the
-     * subscription hasn't been confirmed. To confirm a pending subscription, call the
-     * <code>ConfirmSubscription</code> action with a confirmation token.</p> </li>
-     * <li> <p> <code>RawMessageDelivery</code> – <code>true</code> if raw message
-     * delivery is enabled for the subscription. Raw messages are free of JSON
+     * policy JSON that is assigned to the subscription. For more information, see <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-message-filtering.html">Amazon
+     * SNS Message Filtering</a> in the <i>Amazon SNS Developer Guide</i>.</p> </li>
+     * <li> <p> <code>Owner</code> – The AWS account ID of the subscription's
+     * owner.</p> </li> <li> <p> <code>PendingConfirmation</code> – <code>true</code>
+     * if the subscription hasn't been confirmed. To confirm a pending subscription,
+     * call the <code>ConfirmSubscription</code> action with a confirmation token.</p>
+     * </li> <li> <p> <code>RawMessageDelivery</code> – <code>true</code> if raw
+     * message delivery is enabled for the subscription. Raw messages are free of JSON
      * formatting and can be sent to HTTP/S and Amazon SQS endpoints.</p> </li> <li>
      * <p> <code>RedrivePolicy</code> – When specified, sends undeliverable messages to
      * the specified Amazon SQS dead-letter queue. Messages that can't be delivered due
@@ -132,13 +138,15 @@ namespace Model
      * <code>EffectiveDeliveryPolicy</code> – The JSON serialization of the effective
      * delivery policy that takes into account the topic delivery policy and account
      * system defaults.</p> </li> <li> <p> <code>FilterPolicy</code> – The filter
-     * policy JSON that is assigned to the subscription.</p> </li> <li> <p>
-     * <code>Owner</code> – The AWS account ID of the subscription's owner.</p> </li>
-     * <li> <p> <code>PendingConfirmation</code> – <code>true</code> if the
-     * subscription hasn't been confirmed. To confirm a pending subscription, call the
-     * <code>ConfirmSubscription</code> action with a confirmation token.</p> </li>
-     * <li> <p> <code>RawMessageDelivery</code> – <code>true</code> if raw message
-     * delivery is enabled for the subscription. Raw messages are free of JSON
+     * policy JSON that is assigned to the subscription. For more information, see <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-message-filtering.html">Amazon
+     * SNS Message Filtering</a> in the <i>Amazon SNS Developer Guide</i>.</p> </li>
+     * <li> <p> <code>Owner</code> – The AWS account ID of the subscription's
+     * owner.</p> </li> <li> <p> <code>PendingConfirmation</code> – <code>true</code>
+     * if the subscription hasn't been confirmed. To confirm a pending subscription,
+     * call the <code>ConfirmSubscription</code> action with a confirmation token.</p>
+     * </li> <li> <p> <code>RawMessageDelivery</code> – <code>true</code> if raw
+     * message delivery is enabled for the subscription. Raw messages are free of JSON
      * formatting and can be sent to HTTP/S and Amazon SQS endpoints.</p> </li> <li>
      * <p> <code>RedrivePolicy</code> – When specified, sends undeliverable messages to
      * the specified Amazon SQS dead-letter queue. Messages that can't be delivered due
@@ -160,13 +168,15 @@ namespace Model
      * <code>EffectiveDeliveryPolicy</code> – The JSON serialization of the effective
      * delivery policy that takes into account the topic delivery policy and account
      * system defaults.</p> </li> <li> <p> <code>FilterPolicy</code> – The filter
-     * policy JSON that is assigned to the subscription.</p> </li> <li> <p>
-     * <code>Owner</code> – The AWS account ID of the subscription's owner.</p> </li>
-     * <li> <p> <code>PendingConfirmation</code> – <code>true</code> if the
-     * subscription hasn't been confirmed. To confirm a pending subscription, call the
-     * <code>ConfirmSubscription</code> action with a confirmation token.</p> </li>
-     * <li> <p> <code>RawMessageDelivery</code> – <code>true</code> if raw message
-     * delivery is enabled for the subscription. Raw messages are free of JSON
+     * policy JSON that is assigned to the subscription. For more information, see <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-message-filtering.html">Amazon
+     * SNS Message Filtering</a> in the <i>Amazon SNS Developer Guide</i>.</p> </li>
+     * <li> <p> <code>Owner</code> – The AWS account ID of the subscription's
+     * owner.</p> </li> <li> <p> <code>PendingConfirmation</code> – <code>true</code>
+     * if the subscription hasn't been confirmed. To confirm a pending subscription,
+     * call the <code>ConfirmSubscription</code> action with a confirmation token.</p>
+     * </li> <li> <p> <code>RawMessageDelivery</code> – <code>true</code> if raw
+     * message delivery is enabled for the subscription. Raw messages are free of JSON
      * formatting and can be sent to HTTP/S and Amazon SQS endpoints.</p> </li> <li>
      * <p> <code>RedrivePolicy</code> – When specified, sends undeliverable messages to
      * the specified Amazon SQS dead-letter queue. Messages that can't be delivered due
@@ -188,13 +198,15 @@ namespace Model
      * <code>EffectiveDeliveryPolicy</code> – The JSON serialization of the effective
      * delivery policy that takes into account the topic delivery policy and account
      * system defaults.</p> </li> <li> <p> <code>FilterPolicy</code> – The filter
-     * policy JSON that is assigned to the subscription.</p> </li> <li> <p>
-     * <code>Owner</code> – The AWS account ID of the subscription's owner.</p> </li>
-     * <li> <p> <code>PendingConfirmation</code> – <code>true</code> if the
-     * subscription hasn't been confirmed. To confirm a pending subscription, call the
-     * <code>ConfirmSubscription</code> action with a confirmation token.</p> </li>
-     * <li> <p> <code>RawMessageDelivery</code> – <code>true</code> if raw message
-     * delivery is enabled for the subscription. Raw messages are free of JSON
+     * policy JSON that is assigned to the subscription. For more information, see <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-message-filtering.html">Amazon
+     * SNS Message Filtering</a> in the <i>Amazon SNS Developer Guide</i>.</p> </li>
+     * <li> <p> <code>Owner</code> – The AWS account ID of the subscription's
+     * owner.</p> </li> <li> <p> <code>PendingConfirmation</code> – <code>true</code>
+     * if the subscription hasn't been confirmed. To confirm a pending subscription,
+     * call the <code>ConfirmSubscription</code> action with a confirmation token.</p>
+     * </li> <li> <p> <code>RawMessageDelivery</code> – <code>true</code> if raw
+     * message delivery is enabled for the subscription. Raw messages are free of JSON
      * formatting and can be sent to HTTP/S and Amazon SQS endpoints.</p> </li> <li>
      * <p> <code>RedrivePolicy</code> – When specified, sends undeliverable messages to
      * the specified Amazon SQS dead-letter queue. Messages that can't be delivered due
@@ -216,13 +228,15 @@ namespace Model
      * <code>EffectiveDeliveryPolicy</code> – The JSON serialization of the effective
      * delivery policy that takes into account the topic delivery policy and account
      * system defaults.</p> </li> <li> <p> <code>FilterPolicy</code> – The filter
-     * policy JSON that is assigned to the subscription.</p> </li> <li> <p>
-     * <code>Owner</code> – The AWS account ID of the subscription's owner.</p> </li>
-     * <li> <p> <code>PendingConfirmation</code> – <code>true</code> if the
-     * subscription hasn't been confirmed. To confirm a pending subscription, call the
-     * <code>ConfirmSubscription</code> action with a confirmation token.</p> </li>
-     * <li> <p> <code>RawMessageDelivery</code> – <code>true</code> if raw message
-     * delivery is enabled for the subscription. Raw messages are free of JSON
+     * policy JSON that is assigned to the subscription. For more information, see <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-message-filtering.html">Amazon
+     * SNS Message Filtering</a> in the <i>Amazon SNS Developer Guide</i>.</p> </li>
+     * <li> <p> <code>Owner</code> – The AWS account ID of the subscription's
+     * owner.</p> </li> <li> <p> <code>PendingConfirmation</code> – <code>true</code>
+     * if the subscription hasn't been confirmed. To confirm a pending subscription,
+     * call the <code>ConfirmSubscription</code> action with a confirmation token.</p>
+     * </li> <li> <p> <code>RawMessageDelivery</code> – <code>true</code> if raw
+     * message delivery is enabled for the subscription. Raw messages are free of JSON
      * formatting and can be sent to HTTP/S and Amazon SQS endpoints.</p> </li> <li>
      * <p> <code>RedrivePolicy</code> – When specified, sends undeliverable messages to
      * the specified Amazon SQS dead-letter queue. Messages that can't be delivered due
@@ -244,13 +258,15 @@ namespace Model
      * <code>EffectiveDeliveryPolicy</code> – The JSON serialization of the effective
      * delivery policy that takes into account the topic delivery policy and account
      * system defaults.</p> </li> <li> <p> <code>FilterPolicy</code> – The filter
-     * policy JSON that is assigned to the subscription.</p> </li> <li> <p>
-     * <code>Owner</code> – The AWS account ID of the subscription's owner.</p> </li>
-     * <li> <p> <code>PendingConfirmation</code> – <code>true</code> if the
-     * subscription hasn't been confirmed. To confirm a pending subscription, call the
-     * <code>ConfirmSubscription</code> action with a confirmation token.</p> </li>
-     * <li> <p> <code>RawMessageDelivery</code> – <code>true</code> if raw message
-     * delivery is enabled for the subscription. Raw messages are free of JSON
+     * policy JSON that is assigned to the subscription. For more information, see <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-message-filtering.html">Amazon
+     * SNS Message Filtering</a> in the <i>Amazon SNS Developer Guide</i>.</p> </li>
+     * <li> <p> <code>Owner</code> – The AWS account ID of the subscription's
+     * owner.</p> </li> <li> <p> <code>PendingConfirmation</code> – <code>true</code>
+     * if the subscription hasn't been confirmed. To confirm a pending subscription,
+     * call the <code>ConfirmSubscription</code> action with a confirmation token.</p>
+     * </li> <li> <p> <code>RawMessageDelivery</code> – <code>true</code> if raw
+     * message delivery is enabled for the subscription. Raw messages are free of JSON
      * formatting and can be sent to HTTP/S and Amazon SQS endpoints.</p> </li> <li>
      * <p> <code>RedrivePolicy</code> – When specified, sends undeliverable messages to
      * the specified Amazon SQS dead-letter queue. Messages that can't be delivered due
@@ -272,13 +288,15 @@ namespace Model
      * <code>EffectiveDeliveryPolicy</code> – The JSON serialization of the effective
      * delivery policy that takes into account the topic delivery policy and account
      * system defaults.</p> </li> <li> <p> <code>FilterPolicy</code> – The filter
-     * policy JSON that is assigned to the subscription.</p> </li> <li> <p>
-     * <code>Owner</code> – The AWS account ID of the subscription's owner.</p> </li>
-     * <li> <p> <code>PendingConfirmation</code> – <code>true</code> if the
-     * subscription hasn't been confirmed. To confirm a pending subscription, call the
-     * <code>ConfirmSubscription</code> action with a confirmation token.</p> </li>
-     * <li> <p> <code>RawMessageDelivery</code> – <code>true</code> if raw message
-     * delivery is enabled for the subscription. Raw messages are free of JSON
+     * policy JSON that is assigned to the subscription. For more information, see <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-message-filtering.html">Amazon
+     * SNS Message Filtering</a> in the <i>Amazon SNS Developer Guide</i>.</p> </li>
+     * <li> <p> <code>Owner</code> – The AWS account ID of the subscription's
+     * owner.</p> </li> <li> <p> <code>PendingConfirmation</code> – <code>true</code>
+     * if the subscription hasn't been confirmed. To confirm a pending subscription,
+     * call the <code>ConfirmSubscription</code> action with a confirmation token.</p>
+     * </li> <li> <p> <code>RawMessageDelivery</code> – <code>true</code> if raw
+     * message delivery is enabled for the subscription. Raw messages are free of JSON
      * formatting and can be sent to HTTP/S and Amazon SQS endpoints.</p> </li> <li>
      * <p> <code>RedrivePolicy</code> – When specified, sends undeliverable messages to
      * the specified Amazon SQS dead-letter queue. Messages that can't be delivered due
@@ -300,13 +318,15 @@ namespace Model
      * <code>EffectiveDeliveryPolicy</code> – The JSON serialization of the effective
      * delivery policy that takes into account the topic delivery policy and account
      * system defaults.</p> </li> <li> <p> <code>FilterPolicy</code> – The filter
-     * policy JSON that is assigned to the subscription.</p> </li> <li> <p>
-     * <code>Owner</code> – The AWS account ID of the subscription's owner.</p> </li>
-     * <li> <p> <code>PendingConfirmation</code> – <code>true</code> if the
-     * subscription hasn't been confirmed. To confirm a pending subscription, call the
-     * <code>ConfirmSubscription</code> action with a confirmation token.</p> </li>
-     * <li> <p> <code>RawMessageDelivery</code> – <code>true</code> if raw message
-     * delivery is enabled for the subscription. Raw messages are free of JSON
+     * policy JSON that is assigned to the subscription. For more information, see <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-message-filtering.html">Amazon
+     * SNS Message Filtering</a> in the <i>Amazon SNS Developer Guide</i>.</p> </li>
+     * <li> <p> <code>Owner</code> – The AWS account ID of the subscription's
+     * owner.</p> </li> <li> <p> <code>PendingConfirmation</code> – <code>true</code>
+     * if the subscription hasn't been confirmed. To confirm a pending subscription,
+     * call the <code>ConfirmSubscription</code> action with a confirmation token.</p>
+     * </li> <li> <p> <code>RawMessageDelivery</code> – <code>true</code> if raw
+     * message delivery is enabled for the subscription. Raw messages are free of JSON
      * formatting and can be sent to HTTP/S and Amazon SQS endpoints.</p> </li> <li>
      * <p> <code>RedrivePolicy</code> – When specified, sends undeliverable messages to
      * the specified Amazon SQS dead-letter queue. Messages that can't be delivered due
@@ -328,13 +348,15 @@ namespace Model
      * <code>EffectiveDeliveryPolicy</code> – The JSON serialization of the effective
      * delivery policy that takes into account the topic delivery policy and account
      * system defaults.</p> </li> <li> <p> <code>FilterPolicy</code> – The filter
-     * policy JSON that is assigned to the subscription.</p> </li> <li> <p>
-     * <code>Owner</code> – The AWS account ID of the subscription's owner.</p> </li>
-     * <li> <p> <code>PendingConfirmation</code> – <code>true</code> if the
-     * subscription hasn't been confirmed. To confirm a pending subscription, call the
-     * <code>ConfirmSubscription</code> action with a confirmation token.</p> </li>
-     * <li> <p> <code>RawMessageDelivery</code> – <code>true</code> if raw message
-     * delivery is enabled for the subscription. Raw messages are free of JSON
+     * policy JSON that is assigned to the subscription. For more information, see <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-message-filtering.html">Amazon
+     * SNS Message Filtering</a> in the <i>Amazon SNS Developer Guide</i>.</p> </li>
+     * <li> <p> <code>Owner</code> – The AWS account ID of the subscription's
+     * owner.</p> </li> <li> <p> <code>PendingConfirmation</code> – <code>true</code>
+     * if the subscription hasn't been confirmed. To confirm a pending subscription,
+     * call the <code>ConfirmSubscription</code> action with a confirmation token.</p>
+     * </li> <li> <p> <code>RawMessageDelivery</code> – <code>true</code> if raw
+     * message delivery is enabled for the subscription. Raw messages are free of JSON
      * formatting and can be sent to HTTP/S and Amazon SQS endpoints.</p> </li> <li>
      * <p> <code>RedrivePolicy</code> – When specified, sends undeliverable messages to
      * the specified Amazon SQS dead-letter queue. Messages that can't be delivered due
@@ -356,13 +378,15 @@ namespace Model
      * <code>EffectiveDeliveryPolicy</code> – The JSON serialization of the effective
      * delivery policy that takes into account the topic delivery policy and account
      * system defaults.</p> </li> <li> <p> <code>FilterPolicy</code> – The filter
-     * policy JSON that is assigned to the subscription.</p> </li> <li> <p>
-     * <code>Owner</code> – The AWS account ID of the subscription's owner.</p> </li>
-     * <li> <p> <code>PendingConfirmation</code> – <code>true</code> if the
-     * subscription hasn't been confirmed. To confirm a pending subscription, call the
-     * <code>ConfirmSubscription</code> action with a confirmation token.</p> </li>
-     * <li> <p> <code>RawMessageDelivery</code> – <code>true</code> if raw message
-     * delivery is enabled for the subscription. Raw messages are free of JSON
+     * policy JSON that is assigned to the subscription. For more information, see <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-message-filtering.html">Amazon
+     * SNS Message Filtering</a> in the <i>Amazon SNS Developer Guide</i>.</p> </li>
+     * <li> <p> <code>Owner</code> – The AWS account ID of the subscription's
+     * owner.</p> </li> <li> <p> <code>PendingConfirmation</code> – <code>true</code>
+     * if the subscription hasn't been confirmed. To confirm a pending subscription,
+     * call the <code>ConfirmSubscription</code> action with a confirmation token.</p>
+     * </li> <li> <p> <code>RawMessageDelivery</code> – <code>true</code> if raw
+     * message delivery is enabled for the subscription. Raw messages are free of JSON
      * formatting and can be sent to HTTP/S and Amazon SQS endpoints.</p> </li> <li>
      * <p> <code>RedrivePolicy</code> – When specified, sends undeliverable messages to
      * the specified Amazon SQS dead-letter queue. Messages that can't be delivered due

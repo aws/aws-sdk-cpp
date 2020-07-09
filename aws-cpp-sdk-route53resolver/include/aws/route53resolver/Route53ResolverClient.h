@@ -482,9 +482,9 @@ namespace Model
 
         /**
          * <p>Removes the association between a specified resolver rule and a specified
-         * VPC.</p> <important> <p>If you disassociate a resolver rule from a VPC, Resolver
+         * VPC.</p>  <p>If you disassociate a resolver rule from a VPC, Resolver
          * stops forwarding DNS queries for the domain name that you specified in the
-         * resolver rule. </p> </important><p><h3>See Also:</h3>   <a
+         * resolver rule. </p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/DisassociateResolverRule">AWS
          * API Reference</a></p>
          */
@@ -492,9 +492,9 @@ namespace Model
 
         /**
          * <p>Removes the association between a specified resolver rule and a specified
-         * VPC.</p> <important> <p>If you disassociate a resolver rule from a VPC, Resolver
+         * VPC.</p>  <p>If you disassociate a resolver rule from a VPC, Resolver
          * stops forwarding DNS queries for the domain name that you specified in the
-         * resolver rule. </p> </important><p><h3>See Also:</h3>   <a
+         * resolver rule. </p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/DisassociateResolverRule">AWS
          * API Reference</a></p>
          *
@@ -504,9 +504,9 @@ namespace Model
 
         /**
          * <p>Removes the association between a specified resolver rule and a specified
-         * VPC.</p> <important> <p>If you disassociate a resolver rule from a VPC, Resolver
+         * VPC.</p>  <p>If you disassociate a resolver rule from a VPC, Resolver
          * stops forwarding DNS queries for the domain name that you specified in the
-         * resolver rule. </p> </important><p><h3>See Also:</h3>   <a
+         * resolver rule. </p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/DisassociateResolverRule">AWS
          * API Reference</a></p>
          *

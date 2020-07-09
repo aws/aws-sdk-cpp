@@ -299,51 +299,51 @@ namespace Model
 
 
     /**
-     * <p>The JSON output data of the execution.</p> <note> <p>This field is set only
+     * <p>The JSON output data of the execution.</p>  <p>This field is set only
      * if the execution succeeds. If the execution fails, this field is null.</p>
-     * </note>
+     * 
      */
     inline const Aws::String& GetOutput() const{ return m_output; }
 
     /**
-     * <p>The JSON output data of the execution.</p> <note> <p>This field is set only
+     * <p>The JSON output data of the execution.</p>  <p>This field is set only
      * if the execution succeeds. If the execution fails, this field is null.</p>
-     * </note>
+     * 
      */
     inline void SetOutput(const Aws::String& value) { m_output = value; }
 
     /**
-     * <p>The JSON output data of the execution.</p> <note> <p>This field is set only
+     * <p>The JSON output data of the execution.</p>  <p>This field is set only
      * if the execution succeeds. If the execution fails, this field is null.</p>
-     * </note>
+     * 
      */
     inline void SetOutput(Aws::String&& value) { m_output = std::move(value); }
 
     /**
-     * <p>The JSON output data of the execution.</p> <note> <p>This field is set only
+     * <p>The JSON output data of the execution.</p>  <p>This field is set only
      * if the execution succeeds. If the execution fails, this field is null.</p>
-     * </note>
+     * 
      */
     inline void SetOutput(const char* value) { m_output.assign(value); }
 
     /**
-     * <p>The JSON output data of the execution.</p> <note> <p>This field is set only
+     * <p>The JSON output data of the execution.</p>  <p>This field is set only
      * if the execution succeeds. If the execution fails, this field is null.</p>
-     * </note>
+     * 
      */
     inline DescribeExecutionResult& WithOutput(const Aws::String& value) { SetOutput(value); return *this;}
 
     /**
-     * <p>The JSON output data of the execution.</p> <note> <p>This field is set only
+     * <p>The JSON output data of the execution.</p>  <p>This field is set only
      * if the execution succeeds. If the execution fails, this field is null.</p>
-     * </note>
+     * 
      */
     inline DescribeExecutionResult& WithOutput(Aws::String&& value) { SetOutput(std::move(value)); return *this;}
 
     /**
-     * <p>The JSON output data of the execution.</p> <note> <p>This field is set only
+     * <p>The JSON output data of the execution.</p>  <p>This field is set only
      * if the execution succeeds. If the execution fails, this field is null.</p>
-     * </note>
+     * 
      */
     inline DescribeExecutionResult& WithOutput(const char* value) { SetOutput(value); return *this;}
 

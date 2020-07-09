@@ -84,72 +84,72 @@ namespace Model
     /**
      * <p>The name of the DB cluster snapshot attribute to modify.</p> <p>To manage
      * authorization for other AWS accounts to copy or restore a manual DB cluster
-     * snapshot, set this value to <code>restore</code>.</p> <note> <p>To view the list
+     * snapshot, set this value to <code>restore</code>.</p>  <p>To view the list
      * of attributes available to modify, use the
-     * <a>DescribeDBClusterSnapshotAttributes</a> API action.</p> </note>
+     * <a>DescribeDBClusterSnapshotAttributes</a> API action.</p> 
      */
     inline const Aws::String& GetAttributeName() const{ return m_attributeName; }
 
     /**
      * <p>The name of the DB cluster snapshot attribute to modify.</p> <p>To manage
      * authorization for other AWS accounts to copy or restore a manual DB cluster
-     * snapshot, set this value to <code>restore</code>.</p> <note> <p>To view the list
+     * snapshot, set this value to <code>restore</code>.</p>  <p>To view the list
      * of attributes available to modify, use the
-     * <a>DescribeDBClusterSnapshotAttributes</a> API action.</p> </note>
+     * <a>DescribeDBClusterSnapshotAttributes</a> API action.</p> 
      */
     inline bool AttributeNameHasBeenSet() const { return m_attributeNameHasBeenSet; }
 
     /**
      * <p>The name of the DB cluster snapshot attribute to modify.</p> <p>To manage
      * authorization for other AWS accounts to copy or restore a manual DB cluster
-     * snapshot, set this value to <code>restore</code>.</p> <note> <p>To view the list
+     * snapshot, set this value to <code>restore</code>.</p>  <p>To view the list
      * of attributes available to modify, use the
-     * <a>DescribeDBClusterSnapshotAttributes</a> API action.</p> </note>
+     * <a>DescribeDBClusterSnapshotAttributes</a> API action.</p> 
      */
     inline void SetAttributeName(const Aws::String& value) { m_attributeNameHasBeenSet = true; m_attributeName = value; }
 
     /**
      * <p>The name of the DB cluster snapshot attribute to modify.</p> <p>To manage
      * authorization for other AWS accounts to copy or restore a manual DB cluster
-     * snapshot, set this value to <code>restore</code>.</p> <note> <p>To view the list
+     * snapshot, set this value to <code>restore</code>.</p>  <p>To view the list
      * of attributes available to modify, use the
-     * <a>DescribeDBClusterSnapshotAttributes</a> API action.</p> </note>
+     * <a>DescribeDBClusterSnapshotAttributes</a> API action.</p> 
      */
     inline void SetAttributeName(Aws::String&& value) { m_attributeNameHasBeenSet = true; m_attributeName = std::move(value); }
 
     /**
      * <p>The name of the DB cluster snapshot attribute to modify.</p> <p>To manage
      * authorization for other AWS accounts to copy or restore a manual DB cluster
-     * snapshot, set this value to <code>restore</code>.</p> <note> <p>To view the list
+     * snapshot, set this value to <code>restore</code>.</p>  <p>To view the list
      * of attributes available to modify, use the
-     * <a>DescribeDBClusterSnapshotAttributes</a> API action.</p> </note>
+     * <a>DescribeDBClusterSnapshotAttributes</a> API action.</p> 
      */
     inline void SetAttributeName(const char* value) { m_attributeNameHasBeenSet = true; m_attributeName.assign(value); }
 
     /**
      * <p>The name of the DB cluster snapshot attribute to modify.</p> <p>To manage
      * authorization for other AWS accounts to copy or restore a manual DB cluster
-     * snapshot, set this value to <code>restore</code>.</p> <note> <p>To view the list
+     * snapshot, set this value to <code>restore</code>.</p>  <p>To view the list
      * of attributes available to modify, use the
-     * <a>DescribeDBClusterSnapshotAttributes</a> API action.</p> </note>
+     * <a>DescribeDBClusterSnapshotAttributes</a> API action.</p> 
      */
     inline ModifyDBClusterSnapshotAttributeRequest& WithAttributeName(const Aws::String& value) { SetAttributeName(value); return *this;}
 
     /**
      * <p>The name of the DB cluster snapshot attribute to modify.</p> <p>To manage
      * authorization for other AWS accounts to copy or restore a manual DB cluster
-     * snapshot, set this value to <code>restore</code>.</p> <note> <p>To view the list
+     * snapshot, set this value to <code>restore</code>.</p>  <p>To view the list
      * of attributes available to modify, use the
-     * <a>DescribeDBClusterSnapshotAttributes</a> API action.</p> </note>
+     * <a>DescribeDBClusterSnapshotAttributes</a> API action.</p> 
      */
     inline ModifyDBClusterSnapshotAttributeRequest& WithAttributeName(Aws::String&& value) { SetAttributeName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the DB cluster snapshot attribute to modify.</p> <p>To manage
      * authorization for other AWS accounts to copy or restore a manual DB cluster
-     * snapshot, set this value to <code>restore</code>.</p> <note> <p>To view the list
+     * snapshot, set this value to <code>restore</code>.</p>  <p>To view the list
      * of attributes available to modify, use the
-     * <a>DescribeDBClusterSnapshotAttributes</a> API action.</p> </note>
+     * <a>DescribeDBClusterSnapshotAttributes</a> API action.</p> 
      */
     inline ModifyDBClusterSnapshotAttributeRequest& WithAttributeName(const char* value) { SetAttributeName(value); return *this;}
 

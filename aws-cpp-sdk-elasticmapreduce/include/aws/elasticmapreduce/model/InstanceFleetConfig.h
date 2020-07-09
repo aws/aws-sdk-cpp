@@ -28,9 +28,9 @@ namespace Model
 {
 
   /**
-   * <p>The configuration that defines an instance fleet.</p> <note> <p>The instance
+   * <p>The configuration that defines an instance fleet.</p>  <p>The instance
    * fleet configuration is available only in Amazon EMR versions 4.8.0 and later,
-   * excluding 5.0.x versions.</p> </note><p><h3>See Also:</h3>   <a
+   * excluding 5.0.x versions.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/InstanceFleetConfig">AWS
    * API Reference</a></p>
    */
@@ -132,13 +132,13 @@ namespace Model
      * this results in an overage. For example, if there are 2 units remaining to
      * fulfill capacity, and Amazon EMR can only provision an instance with a
      * <code>WeightedCapacity</code> of 5 units, the instance is provisioned, and the
-     * target capacity is exceeded by 3 units.</p> <note> <p>If not specified or set to
+     * target capacity is exceeded by 3 units.</p>  <p>If not specified or set to
      * 0, only Spot instances are provisioned for the instance fleet using
      * <code>TargetSpotCapacity</code>. At least one of <code>TargetSpotCapacity</code>
      * and <code>TargetOnDemandCapacity</code> should be greater than 0. For a master
      * instance fleet, only one of <code>TargetSpotCapacity</code> and
      * <code>TargetOnDemandCapacity</code> can be specified, and its value must be
-     * 1.</p> </note>
+     * 1.</p> 
      */
     inline int GetTargetOnDemandCapacity() const{ return m_targetOnDemandCapacity; }
 
@@ -153,13 +153,13 @@ namespace Model
      * this results in an overage. For example, if there are 2 units remaining to
      * fulfill capacity, and Amazon EMR can only provision an instance with a
      * <code>WeightedCapacity</code> of 5 units, the instance is provisioned, and the
-     * target capacity is exceeded by 3 units.</p> <note> <p>If not specified or set to
+     * target capacity is exceeded by 3 units.</p>  <p>If not specified or set to
      * 0, only Spot instances are provisioned for the instance fleet using
      * <code>TargetSpotCapacity</code>. At least one of <code>TargetSpotCapacity</code>
      * and <code>TargetOnDemandCapacity</code> should be greater than 0. For a master
      * instance fleet, only one of <code>TargetSpotCapacity</code> and
      * <code>TargetOnDemandCapacity</code> can be specified, and its value must be
-     * 1.</p> </note>
+     * 1.</p> 
      */
     inline bool TargetOnDemandCapacityHasBeenSet() const { return m_targetOnDemandCapacityHasBeenSet; }
 
@@ -174,13 +174,13 @@ namespace Model
      * this results in an overage. For example, if there are 2 units remaining to
      * fulfill capacity, and Amazon EMR can only provision an instance with a
      * <code>WeightedCapacity</code> of 5 units, the instance is provisioned, and the
-     * target capacity is exceeded by 3 units.</p> <note> <p>If not specified or set to
+     * target capacity is exceeded by 3 units.</p>  <p>If not specified or set to
      * 0, only Spot instances are provisioned for the instance fleet using
      * <code>TargetSpotCapacity</code>. At least one of <code>TargetSpotCapacity</code>
      * and <code>TargetOnDemandCapacity</code> should be greater than 0. For a master
      * instance fleet, only one of <code>TargetSpotCapacity</code> and
      * <code>TargetOnDemandCapacity</code> can be specified, and its value must be
-     * 1.</p> </note>
+     * 1.</p> 
      */
     inline void SetTargetOnDemandCapacity(int value) { m_targetOnDemandCapacityHasBeenSet = true; m_targetOnDemandCapacity = value; }
 
@@ -195,13 +195,13 @@ namespace Model
      * this results in an overage. For example, if there are 2 units remaining to
      * fulfill capacity, and Amazon EMR can only provision an instance with a
      * <code>WeightedCapacity</code> of 5 units, the instance is provisioned, and the
-     * target capacity is exceeded by 3 units.</p> <note> <p>If not specified or set to
+     * target capacity is exceeded by 3 units.</p>  <p>If not specified or set to
      * 0, only Spot instances are provisioned for the instance fleet using
      * <code>TargetSpotCapacity</code>. At least one of <code>TargetSpotCapacity</code>
      * and <code>TargetOnDemandCapacity</code> should be greater than 0. For a master
      * instance fleet, only one of <code>TargetSpotCapacity</code> and
      * <code>TargetOnDemandCapacity</code> can be specified, and its value must be
-     * 1.</p> </note>
+     * 1.</p> 
      */
     inline InstanceFleetConfig& WithTargetOnDemandCapacity(int value) { SetTargetOnDemandCapacity(value); return *this;}
 
@@ -217,12 +217,12 @@ namespace Model
      * if there are 2 units remaining to fulfill capacity, and Amazon EMR can only
      * provision an instance with a <code>WeightedCapacity</code> of 5 units, the
      * instance is provisioned, and the target capacity is exceeded by 3 units.</p>
-     * <note> <p>If not specified or set to 0, only On-Demand instances are provisioned
+     *  <p>If not specified or set to 0, only On-Demand instances are provisioned
      * for the instance fleet. At least one of <code>TargetSpotCapacity</code> and
      * <code>TargetOnDemandCapacity</code> should be greater than 0. For a master
      * instance fleet, only one of <code>TargetSpotCapacity</code> and
      * <code>TargetOnDemandCapacity</code> can be specified, and its value must be
-     * 1.</p> </note>
+     * 1.</p> 
      */
     inline int GetTargetSpotCapacity() const{ return m_targetSpotCapacity; }
 
@@ -237,12 +237,12 @@ namespace Model
      * if there are 2 units remaining to fulfill capacity, and Amazon EMR can only
      * provision an instance with a <code>WeightedCapacity</code> of 5 units, the
      * instance is provisioned, and the target capacity is exceeded by 3 units.</p>
-     * <note> <p>If not specified or set to 0, only On-Demand instances are provisioned
+     *  <p>If not specified or set to 0, only On-Demand instances are provisioned
      * for the instance fleet. At least one of <code>TargetSpotCapacity</code> and
      * <code>TargetOnDemandCapacity</code> should be greater than 0. For a master
      * instance fleet, only one of <code>TargetSpotCapacity</code> and
      * <code>TargetOnDemandCapacity</code> can be specified, and its value must be
-     * 1.</p> </note>
+     * 1.</p> 
      */
     inline bool TargetSpotCapacityHasBeenSet() const { return m_targetSpotCapacityHasBeenSet; }
 
@@ -257,12 +257,12 @@ namespace Model
      * if there are 2 units remaining to fulfill capacity, and Amazon EMR can only
      * provision an instance with a <code>WeightedCapacity</code> of 5 units, the
      * instance is provisioned, and the target capacity is exceeded by 3 units.</p>
-     * <note> <p>If not specified or set to 0, only On-Demand instances are provisioned
+     *  <p>If not specified or set to 0, only On-Demand instances are provisioned
      * for the instance fleet. At least one of <code>TargetSpotCapacity</code> and
      * <code>TargetOnDemandCapacity</code> should be greater than 0. For a master
      * instance fleet, only one of <code>TargetSpotCapacity</code> and
      * <code>TargetOnDemandCapacity</code> can be specified, and its value must be
-     * 1.</p> </note>
+     * 1.</p> 
      */
     inline void SetTargetSpotCapacity(int value) { m_targetSpotCapacityHasBeenSet = true; m_targetSpotCapacity = value; }
 
@@ -277,12 +277,12 @@ namespace Model
      * if there are 2 units remaining to fulfill capacity, and Amazon EMR can only
      * provision an instance with a <code>WeightedCapacity</code> of 5 units, the
      * instance is provisioned, and the target capacity is exceeded by 3 units.</p>
-     * <note> <p>If not specified or set to 0, only On-Demand instances are provisioned
+     *  <p>If not specified or set to 0, only On-Demand instances are provisioned
      * for the instance fleet. At least one of <code>TargetSpotCapacity</code> and
      * <code>TargetOnDemandCapacity</code> should be greater than 0. For a master
      * instance fleet, only one of <code>TargetSpotCapacity</code> and
      * <code>TargetOnDemandCapacity</code> can be specified, and its value must be
-     * 1.</p> </note>
+     * 1.</p> 
      */
     inline InstanceFleetConfig& WithTargetSpotCapacity(int value) { SetTargetSpotCapacity(value); return *this;}
 

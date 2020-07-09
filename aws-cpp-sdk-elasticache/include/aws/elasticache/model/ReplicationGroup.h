@@ -557,9 +557,9 @@ namespace Model
      * <p>The number of days for which ElastiCache retains automatic cluster snapshots
      * before deleting them. For example, if you set
      * <code>SnapshotRetentionLimit</code> to 5, a snapshot that was taken today is
-     * retained for 5 days before being deleted.</p> <important> <p> If the value of
+     * retained for 5 days before being deleted.</p>  <p> If the value of
      * <code>SnapshotRetentionLimit</code> is set to zero (0), backups are turned
-     * off.</p> </important>
+     * off.</p> 
      */
     inline int GetSnapshotRetentionLimit() const{ return m_snapshotRetentionLimit; }
 
@@ -567,9 +567,9 @@ namespace Model
      * <p>The number of days for which ElastiCache retains automatic cluster snapshots
      * before deleting them. For example, if you set
      * <code>SnapshotRetentionLimit</code> to 5, a snapshot that was taken today is
-     * retained for 5 days before being deleted.</p> <important> <p> If the value of
+     * retained for 5 days before being deleted.</p>  <p> If the value of
      * <code>SnapshotRetentionLimit</code> is set to zero (0), backups are turned
-     * off.</p> </important>
+     * off.</p> 
      */
     inline bool SnapshotRetentionLimitHasBeenSet() const { return m_snapshotRetentionLimitHasBeenSet; }
 
@@ -577,9 +577,9 @@ namespace Model
      * <p>The number of days for which ElastiCache retains automatic cluster snapshots
      * before deleting them. For example, if you set
      * <code>SnapshotRetentionLimit</code> to 5, a snapshot that was taken today is
-     * retained for 5 days before being deleted.</p> <important> <p> If the value of
+     * retained for 5 days before being deleted.</p>  <p> If the value of
      * <code>SnapshotRetentionLimit</code> is set to zero (0), backups are turned
-     * off.</p> </important>
+     * off.</p> 
      */
     inline void SetSnapshotRetentionLimit(int value) { m_snapshotRetentionLimitHasBeenSet = true; m_snapshotRetentionLimit = value; }
 
@@ -587,9 +587,9 @@ namespace Model
      * <p>The number of days for which ElastiCache retains automatic cluster snapshots
      * before deleting them. For example, if you set
      * <code>SnapshotRetentionLimit</code> to 5, a snapshot that was taken today is
-     * retained for 5 days before being deleted.</p> <important> <p> If the value of
+     * retained for 5 days before being deleted.</p>  <p> If the value of
      * <code>SnapshotRetentionLimit</code> is set to zero (0), backups are turned
-     * off.</p> </important>
+     * off.</p> 
      */
     inline ReplicationGroup& WithSnapshotRetentionLimit(int value) { SetSnapshotRetentionLimit(value); return *this;}
 
@@ -598,8 +598,8 @@ namespace Model
      * <p>The daily time range (in UTC) during which ElastiCache begins taking a daily
      * snapshot of your node group (shard).</p> <p>Example: <code>05:00-09:00</code>
      * </p> <p>If you do not specify this parameter, ElastiCache automatically chooses
-     * an appropriate time range.</p> <note> <p>This parameter is only valid if the
-     * <code>Engine</code> parameter is <code>redis</code>.</p> </note>
+     * an appropriate time range.</p>  <p>This parameter is only valid if the
+     * <code>Engine</code> parameter is <code>redis</code>.</p> 
      */
     inline const Aws::String& GetSnapshotWindow() const{ return m_snapshotWindow; }
 
@@ -607,8 +607,8 @@ namespace Model
      * <p>The daily time range (in UTC) during which ElastiCache begins taking a daily
      * snapshot of your node group (shard).</p> <p>Example: <code>05:00-09:00</code>
      * </p> <p>If you do not specify this parameter, ElastiCache automatically chooses
-     * an appropriate time range.</p> <note> <p>This parameter is only valid if the
-     * <code>Engine</code> parameter is <code>redis</code>.</p> </note>
+     * an appropriate time range.</p>  <p>This parameter is only valid if the
+     * <code>Engine</code> parameter is <code>redis</code>.</p> 
      */
     inline bool SnapshotWindowHasBeenSet() const { return m_snapshotWindowHasBeenSet; }
 
@@ -616,8 +616,8 @@ namespace Model
      * <p>The daily time range (in UTC) during which ElastiCache begins taking a daily
      * snapshot of your node group (shard).</p> <p>Example: <code>05:00-09:00</code>
      * </p> <p>If you do not specify this parameter, ElastiCache automatically chooses
-     * an appropriate time range.</p> <note> <p>This parameter is only valid if the
-     * <code>Engine</code> parameter is <code>redis</code>.</p> </note>
+     * an appropriate time range.</p>  <p>This parameter is only valid if the
+     * <code>Engine</code> parameter is <code>redis</code>.</p> 
      */
     inline void SetSnapshotWindow(const Aws::String& value) { m_snapshotWindowHasBeenSet = true; m_snapshotWindow = value; }
 
@@ -625,8 +625,8 @@ namespace Model
      * <p>The daily time range (in UTC) during which ElastiCache begins taking a daily
      * snapshot of your node group (shard).</p> <p>Example: <code>05:00-09:00</code>
      * </p> <p>If you do not specify this parameter, ElastiCache automatically chooses
-     * an appropriate time range.</p> <note> <p>This parameter is only valid if the
-     * <code>Engine</code> parameter is <code>redis</code>.</p> </note>
+     * an appropriate time range.</p>  <p>This parameter is only valid if the
+     * <code>Engine</code> parameter is <code>redis</code>.</p> 
      */
     inline void SetSnapshotWindow(Aws::String&& value) { m_snapshotWindowHasBeenSet = true; m_snapshotWindow = std::move(value); }
 
@@ -634,8 +634,8 @@ namespace Model
      * <p>The daily time range (in UTC) during which ElastiCache begins taking a daily
      * snapshot of your node group (shard).</p> <p>Example: <code>05:00-09:00</code>
      * </p> <p>If you do not specify this parameter, ElastiCache automatically chooses
-     * an appropriate time range.</p> <note> <p>This parameter is only valid if the
-     * <code>Engine</code> parameter is <code>redis</code>.</p> </note>
+     * an appropriate time range.</p>  <p>This parameter is only valid if the
+     * <code>Engine</code> parameter is <code>redis</code>.</p> 
      */
     inline void SetSnapshotWindow(const char* value) { m_snapshotWindowHasBeenSet = true; m_snapshotWindow.assign(value); }
 
@@ -643,8 +643,8 @@ namespace Model
      * <p>The daily time range (in UTC) during which ElastiCache begins taking a daily
      * snapshot of your node group (shard).</p> <p>Example: <code>05:00-09:00</code>
      * </p> <p>If you do not specify this parameter, ElastiCache automatically chooses
-     * an appropriate time range.</p> <note> <p>This parameter is only valid if the
-     * <code>Engine</code> parameter is <code>redis</code>.</p> </note>
+     * an appropriate time range.</p>  <p>This parameter is only valid if the
+     * <code>Engine</code> parameter is <code>redis</code>.</p> 
      */
     inline ReplicationGroup& WithSnapshotWindow(const Aws::String& value) { SetSnapshotWindow(value); return *this;}
 
@@ -652,8 +652,8 @@ namespace Model
      * <p>The daily time range (in UTC) during which ElastiCache begins taking a daily
      * snapshot of your node group (shard).</p> <p>Example: <code>05:00-09:00</code>
      * </p> <p>If you do not specify this parameter, ElastiCache automatically chooses
-     * an appropriate time range.</p> <note> <p>This parameter is only valid if the
-     * <code>Engine</code> parameter is <code>redis</code>.</p> </note>
+     * an appropriate time range.</p>  <p>This parameter is only valid if the
+     * <code>Engine</code> parameter is <code>redis</code>.</p> 
      */
     inline ReplicationGroup& WithSnapshotWindow(Aws::String&& value) { SetSnapshotWindow(std::move(value)); return *this;}
 
@@ -661,8 +661,8 @@ namespace Model
      * <p>The daily time range (in UTC) during which ElastiCache begins taking a daily
      * snapshot of your node group (shard).</p> <p>Example: <code>05:00-09:00</code>
      * </p> <p>If you do not specify this parameter, ElastiCache automatically chooses
-     * an appropriate time range.</p> <note> <p>This parameter is only valid if the
-     * <code>Engine</code> parameter is <code>redis</code>.</p> </note>
+     * an appropriate time range.</p>  <p>This parameter is only valid if the
+     * <code>Engine</code> parameter is <code>redis</code>.</p> 
      */
     inline ReplicationGroup& WithSnapshotWindow(const char* value) { SetSnapshotWindow(value); return *this;}
 

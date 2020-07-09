@@ -56,8 +56,8 @@ namespace Model
      * port in the ephemeral port range. For more information, see
      * <code>hostPort</code>. Port mappings that are automatically assigned in this way
      * do not count toward the 100 reserved ports limit of a container instance.</p>
-     * <important> <p>You cannot expose the same container port for multiple protocols.
-     * An error will be returned if this is attempted.</p> </important>
+     *  <p>You cannot expose the same container port for multiple protocols.
+     * An error will be returned if this is attempted.</p> 
      */
     inline int GetContainerPort() const{ return m_containerPort; }
 
@@ -71,8 +71,8 @@ namespace Model
      * port in the ephemeral port range. For more information, see
      * <code>hostPort</code>. Port mappings that are automatically assigned in this way
      * do not count toward the 100 reserved ports limit of a container instance.</p>
-     * <important> <p>You cannot expose the same container port for multiple protocols.
-     * An error will be returned if this is attempted.</p> </important>
+     *  <p>You cannot expose the same container port for multiple protocols.
+     * An error will be returned if this is attempted.</p> 
      */
     inline bool ContainerPortHasBeenSet() const { return m_containerPortHasBeenSet; }
 
@@ -86,8 +86,8 @@ namespace Model
      * port in the ephemeral port range. For more information, see
      * <code>hostPort</code>. Port mappings that are automatically assigned in this way
      * do not count toward the 100 reserved ports limit of a container instance.</p>
-     * <important> <p>You cannot expose the same container port for multiple protocols.
-     * An error will be returned if this is attempted.</p> </important>
+     *  <p>You cannot expose the same container port for multiple protocols.
+     * An error will be returned if this is attempted.</p> 
      */
     inline void SetContainerPort(int value) { m_containerPortHasBeenSet = true; m_containerPort = value; }
 
@@ -101,8 +101,8 @@ namespace Model
      * port in the ephemeral port range. For more information, see
      * <code>hostPort</code>. Port mappings that are automatically assigned in this way
      * do not count toward the 100 reserved ports limit of a container instance.</p>
-     * <important> <p>You cannot expose the same container port for multiple protocols.
-     * An error will be returned if this is attempted.</p> </important>
+     *  <p>You cannot expose the same container port for multiple protocols.
+     * An error will be returned if this is attempted.</p> 
      */
     inline PortMapping& WithContainerPort(int value) { SetContainerPort(value); return *this;}
 
@@ -123,8 +123,8 @@ namespace Model
      * unavailable, the default ephemeral port range from 49153 through 65535 is used.
      * Do not attempt to specify a host port in the ephemeral port range as these are
      * reserved for automatic assignment. In general, ports below 32768 are outside of
-     * the ephemeral port range.</p> <note> <p>The default ephemeral port range from
-     * 49153 through 65535 is always used for Docker versions before 1.6.0.</p> </note>
+     * the ephemeral port range.</p>  <p>The default ephemeral port range from
+     * 49153 through 65535 is always used for Docker versions before 1.6.0.</p> 
      * <p>The default reserved ports are 22 for SSH, the Docker ports 2375 and 2376,
      * and the Amazon ECS container agent ports 51678-51680. Any host port that was
      * previously specified in a running task is also reserved while the task is
@@ -153,8 +153,8 @@ namespace Model
      * unavailable, the default ephemeral port range from 49153 through 65535 is used.
      * Do not attempt to specify a host port in the ephemeral port range as these are
      * reserved for automatic assignment. In general, ports below 32768 are outside of
-     * the ephemeral port range.</p> <note> <p>The default ephemeral port range from
-     * 49153 through 65535 is always used for Docker versions before 1.6.0.</p> </note>
+     * the ephemeral port range.</p>  <p>The default ephemeral port range from
+     * 49153 through 65535 is always used for Docker versions before 1.6.0.</p> 
      * <p>The default reserved ports are 22 for SSH, the Docker ports 2375 and 2376,
      * and the Amazon ECS container agent ports 51678-51680. Any host port that was
      * previously specified in a running task is also reserved while the task is
@@ -183,8 +183,8 @@ namespace Model
      * unavailable, the default ephemeral port range from 49153 through 65535 is used.
      * Do not attempt to specify a host port in the ephemeral port range as these are
      * reserved for automatic assignment. In general, ports below 32768 are outside of
-     * the ephemeral port range.</p> <note> <p>The default ephemeral port range from
-     * 49153 through 65535 is always used for Docker versions before 1.6.0.</p> </note>
+     * the ephemeral port range.</p>  <p>The default ephemeral port range from
+     * 49153 through 65535 is always used for Docker versions before 1.6.0.</p> 
      * <p>The default reserved ports are 22 for SSH, the Docker ports 2375 and 2376,
      * and the Amazon ECS container agent ports 51678-51680. Any host port that was
      * previously specified in a running task is also reserved while the task is
@@ -213,8 +213,8 @@ namespace Model
      * unavailable, the default ephemeral port range from 49153 through 65535 is used.
      * Do not attempt to specify a host port in the ephemeral port range as these are
      * reserved for automatic assignment. In general, ports below 32768 are outside of
-     * the ephemeral port range.</p> <note> <p>The default ephemeral port range from
-     * 49153 through 65535 is always used for Docker versions before 1.6.0.</p> </note>
+     * the ephemeral port range.</p>  <p>The default ephemeral port range from
+     * 49153 through 65535 is always used for Docker versions before 1.6.0.</p> 
      * <p>The default reserved ports are 22 for SSH, the Docker ports 2375 and 2376,
      * and the Amazon ECS container agent ports 51678-51680. Any host port that was
      * previously specified in a running task is also reserved while the task is

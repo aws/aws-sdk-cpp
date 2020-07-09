@@ -36,73 +36,73 @@ namespace Model
 
     /**
      * <p>The filters to use to return information by service or resource type. Valid
-     * filters include target type, target address, and target status.</p> <note> <p>A
+     * filters include target type, target address, and target status.</p>  <p>A
      * filter with the same name can appear more than once when used with OR
      * statements. Filters with different names should be applied with AND
-     * statements.</p> </note>
+     * statements.</p> 
      */
     inline const Aws::Vector<ListTargetsFilter>& GetFilters() const{ return m_filters; }
 
     /**
      * <p>The filters to use to return information by service or resource type. Valid
-     * filters include target type, target address, and target status.</p> <note> <p>A
+     * filters include target type, target address, and target status.</p>  <p>A
      * filter with the same name can appear more than once when used with OR
      * statements. Filters with different names should be applied with AND
-     * statements.</p> </note>
+     * statements.</p> 
      */
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
     /**
      * <p>The filters to use to return information by service or resource type. Valid
-     * filters include target type, target address, and target status.</p> <note> <p>A
+     * filters include target type, target address, and target status.</p>  <p>A
      * filter with the same name can appear more than once when used with OR
      * statements. Filters with different names should be applied with AND
-     * statements.</p> </note>
+     * statements.</p> 
      */
     inline void SetFilters(const Aws::Vector<ListTargetsFilter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
      * <p>The filters to use to return information by service or resource type. Valid
-     * filters include target type, target address, and target status.</p> <note> <p>A
+     * filters include target type, target address, and target status.</p>  <p>A
      * filter with the same name can appear more than once when used with OR
      * statements. Filters with different names should be applied with AND
-     * statements.</p> </note>
+     * statements.</p> 
      */
     inline void SetFilters(Aws::Vector<ListTargetsFilter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
     /**
      * <p>The filters to use to return information by service or resource type. Valid
-     * filters include target type, target address, and target status.</p> <note> <p>A
+     * filters include target type, target address, and target status.</p>  <p>A
      * filter with the same name can appear more than once when used with OR
      * statements. Filters with different names should be applied with AND
-     * statements.</p> </note>
+     * statements.</p> 
      */
     inline ListTargetsRequest& WithFilters(const Aws::Vector<ListTargetsFilter>& value) { SetFilters(value); return *this;}
 
     /**
      * <p>The filters to use to return information by service or resource type. Valid
-     * filters include target type, target address, and target status.</p> <note> <p>A
+     * filters include target type, target address, and target status.</p>  <p>A
      * filter with the same name can appear more than once when used with OR
      * statements. Filters with different names should be applied with AND
-     * statements.</p> </note>
+     * statements.</p> 
      */
     inline ListTargetsRequest& WithFilters(Aws::Vector<ListTargetsFilter>&& value) { SetFilters(std::move(value)); return *this;}
 
     /**
      * <p>The filters to use to return information by service or resource type. Valid
-     * filters include target type, target address, and target status.</p> <note> <p>A
+     * filters include target type, target address, and target status.</p>  <p>A
      * filter with the same name can appear more than once when used with OR
      * statements. Filters with different names should be applied with AND
-     * statements.</p> </note>
+     * statements.</p> 
      */
     inline ListTargetsRequest& AddFilters(const ListTargetsFilter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
     /**
      * <p>The filters to use to return information by service or resource type. Valid
-     * filters include target type, target address, and target status.</p> <note> <p>A
+     * filters include target type, target address, and target status.</p>  <p>A
      * filter with the same name can appear more than once when used with OR
      * statements. Filters with different names should be applied with AND
-     * statements.</p> </note>
+     * statements.</p> 
      */
     inline ListTargetsRequest& AddFilters(ListTargetsFilter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 

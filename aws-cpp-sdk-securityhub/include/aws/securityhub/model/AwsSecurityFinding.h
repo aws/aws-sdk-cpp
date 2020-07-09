@@ -45,9 +45,9 @@ namespace Model
    * <p>Provides consistent format for the contents of the Security Hub-aggregated
    * findings. <code>AwsSecurityFinding</code> format enables you to share findings
    * between AWS security services and third-party solutions, and security standards
-   * checks.</p> <note> <p>A finding is a potential security issue generated either
+   * checks.</p>  <p>A finding is a potential security issue generated either
    * by AWS services (Amazon GuardDuty, Amazon Inspector, and Amazon Macie) or by the
-   * integrated third-party solutions and standards checks.</p> </note><p><h3>See
+   * integrated third-party solutions and standards checks.</p> <p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsSecurityFinding">AWS
    * API Reference</a></p>
@@ -677,99 +677,99 @@ namespace Model
 
 
     /**
-     * <p>A finding's title.</p> <note> <p>In this release, <code>Title</code> is a
-     * required property.</p> </note>
+     * <p>A finding's title.</p>  <p>In this release, <code>Title</code> is a
+     * required property.</p> 
      */
     inline const Aws::String& GetTitle() const{ return m_title; }
 
     /**
-     * <p>A finding's title.</p> <note> <p>In this release, <code>Title</code> is a
-     * required property.</p> </note>
+     * <p>A finding's title.</p>  <p>In this release, <code>Title</code> is a
+     * required property.</p> 
      */
     inline bool TitleHasBeenSet() const { return m_titleHasBeenSet; }
 
     /**
-     * <p>A finding's title.</p> <note> <p>In this release, <code>Title</code> is a
-     * required property.</p> </note>
+     * <p>A finding's title.</p>  <p>In this release, <code>Title</code> is a
+     * required property.</p> 
      */
     inline void SetTitle(const Aws::String& value) { m_titleHasBeenSet = true; m_title = value; }
 
     /**
-     * <p>A finding's title.</p> <note> <p>In this release, <code>Title</code> is a
-     * required property.</p> </note>
+     * <p>A finding's title.</p>  <p>In this release, <code>Title</code> is a
+     * required property.</p> 
      */
     inline void SetTitle(Aws::String&& value) { m_titleHasBeenSet = true; m_title = std::move(value); }
 
     /**
-     * <p>A finding's title.</p> <note> <p>In this release, <code>Title</code> is a
-     * required property.</p> </note>
+     * <p>A finding's title.</p>  <p>In this release, <code>Title</code> is a
+     * required property.</p> 
      */
     inline void SetTitle(const char* value) { m_titleHasBeenSet = true; m_title.assign(value); }
 
     /**
-     * <p>A finding's title.</p> <note> <p>In this release, <code>Title</code> is a
-     * required property.</p> </note>
+     * <p>A finding's title.</p>  <p>In this release, <code>Title</code> is a
+     * required property.</p> 
      */
     inline AwsSecurityFinding& WithTitle(const Aws::String& value) { SetTitle(value); return *this;}
 
     /**
-     * <p>A finding's title.</p> <note> <p>In this release, <code>Title</code> is a
-     * required property.</p> </note>
+     * <p>A finding's title.</p>  <p>In this release, <code>Title</code> is a
+     * required property.</p> 
      */
     inline AwsSecurityFinding& WithTitle(Aws::String&& value) { SetTitle(std::move(value)); return *this;}
 
     /**
-     * <p>A finding's title.</p> <note> <p>In this release, <code>Title</code> is a
-     * required property.</p> </note>
+     * <p>A finding's title.</p>  <p>In this release, <code>Title</code> is a
+     * required property.</p> 
      */
     inline AwsSecurityFinding& WithTitle(const char* value) { SetTitle(value); return *this;}
 
 
     /**
-     * <p>A finding's description.</p> <note> <p>In this release,
-     * <code>Description</code> is a required property.</p> </note>
+     * <p>A finding's description.</p>  <p>In this release,
+     * <code>Description</code> is a required property.</p> 
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * <p>A finding's description.</p> <note> <p>In this release,
-     * <code>Description</code> is a required property.</p> </note>
+     * <p>A finding's description.</p>  <p>In this release,
+     * <code>Description</code> is a required property.</p> 
      */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
-     * <p>A finding's description.</p> <note> <p>In this release,
-     * <code>Description</code> is a required property.</p> </note>
+     * <p>A finding's description.</p>  <p>In this release,
+     * <code>Description</code> is a required property.</p> 
      */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * <p>A finding's description.</p> <note> <p>In this release,
-     * <code>Description</code> is a required property.</p> </note>
+     * <p>A finding's description.</p>  <p>In this release,
+     * <code>Description</code> is a required property.</p> 
      */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
-     * <p>A finding's description.</p> <note> <p>In this release,
-     * <code>Description</code> is a required property.</p> </note>
+     * <p>A finding's description.</p>  <p>In this release,
+     * <code>Description</code> is a required property.</p> 
      */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
-     * <p>A finding's description.</p> <note> <p>In this release,
-     * <code>Description</code> is a required property.</p> </note>
+     * <p>A finding's description.</p>  <p>In this release,
+     * <code>Description</code> is a required property.</p> 
      */
     inline AwsSecurityFinding& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * <p>A finding's description.</p> <note> <p>In this release,
-     * <code>Description</code> is a required property.</p> </note>
+     * <p>A finding's description.</p>  <p>In this release,
+     * <code>Description</code> is a required property.</p> 
      */
     inline AwsSecurityFinding& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
-     * <p>A finding's description.</p> <note> <p>In this release,
-     * <code>Description</code> is a required property.</p> </note>
+     * <p>A finding's description.</p>  <p>In this release,
+     * <code>Description</code> is a required property.</p> 
      */
     inline AwsSecurityFinding& WithDescription(const char* value) { SetDescription(value); return *this;}
 

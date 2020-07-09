@@ -607,9 +607,9 @@ namespace Model
      * the OpsItem. For example, you can specify log files, error strings, license
      * keys, troubleshooting tips, or other relevant data. You enter operational data
      * as key-value pairs. The key has a maximum length of 128 characters. The value
-     * has a maximum size of 20 KB.</p> <important> <p>Operational data keys
+     * has a maximum size of 20 KB.</p>  <p>Operational data keys
      * <i>can't</i> begin with the following: amazon, aws, amzn, ssm, /amazon, /aws,
-     * /amzn, /ssm.</p> </important> <p>You can choose to make the data searchable by
+     * /amzn, /ssm.</p>  <p>You can choose to make the data searchable by
      * other users in the account or you can restrict search access. Searchable data
      * means that all users with access to the OpsItem Overview page (as provided by
      * the <a>DescribeOpsItems</a> API action) can view and search on the specified
@@ -629,9 +629,9 @@ namespace Model
      * the OpsItem. For example, you can specify log files, error strings, license
      * keys, troubleshooting tips, or other relevant data. You enter operational data
      * as key-value pairs. The key has a maximum length of 128 characters. The value
-     * has a maximum size of 20 KB.</p> <important> <p>Operational data keys
+     * has a maximum size of 20 KB.</p>  <p>Operational data keys
      * <i>can't</i> begin with the following: amazon, aws, amzn, ssm, /amazon, /aws,
-     * /amzn, /ssm.</p> </important> <p>You can choose to make the data searchable by
+     * /amzn, /ssm.</p>  <p>You can choose to make the data searchable by
      * other users in the account or you can restrict search access. Searchable data
      * means that all users with access to the OpsItem Overview page (as provided by
      * the <a>DescribeOpsItems</a> API action) can view and search on the specified
@@ -651,9 +651,9 @@ namespace Model
      * the OpsItem. For example, you can specify log files, error strings, license
      * keys, troubleshooting tips, or other relevant data. You enter operational data
      * as key-value pairs. The key has a maximum length of 128 characters. The value
-     * has a maximum size of 20 KB.</p> <important> <p>Operational data keys
+     * has a maximum size of 20 KB.</p>  <p>Operational data keys
      * <i>can't</i> begin with the following: amazon, aws, amzn, ssm, /amazon, /aws,
-     * /amzn, /ssm.</p> </important> <p>You can choose to make the data searchable by
+     * /amzn, /ssm.</p>  <p>You can choose to make the data searchable by
      * other users in the account or you can restrict search access. Searchable data
      * means that all users with access to the OpsItem Overview page (as provided by
      * the <a>DescribeOpsItems</a> API action) can view and search on the specified
@@ -673,9 +673,9 @@ namespace Model
      * the OpsItem. For example, you can specify log files, error strings, license
      * keys, troubleshooting tips, or other relevant data. You enter operational data
      * as key-value pairs. The key has a maximum length of 128 characters. The value
-     * has a maximum size of 20 KB.</p> <important> <p>Operational data keys
+     * has a maximum size of 20 KB.</p>  <p>Operational data keys
      * <i>can't</i> begin with the following: amazon, aws, amzn, ssm, /amazon, /aws,
-     * /amzn, /ssm.</p> </important> <p>You can choose to make the data searchable by
+     * /amzn, /ssm.</p>  <p>You can choose to make the data searchable by
      * other users in the account or you can restrict search access. Searchable data
      * means that all users with access to the OpsItem Overview page (as provided by
      * the <a>DescribeOpsItems</a> API action) can view and search on the specified
@@ -695,9 +695,9 @@ namespace Model
      * the OpsItem. For example, you can specify log files, error strings, license
      * keys, troubleshooting tips, or other relevant data. You enter operational data
      * as key-value pairs. The key has a maximum length of 128 characters. The value
-     * has a maximum size of 20 KB.</p> <important> <p>Operational data keys
+     * has a maximum size of 20 KB.</p>  <p>Operational data keys
      * <i>can't</i> begin with the following: amazon, aws, amzn, ssm, /amazon, /aws,
-     * /amzn, /ssm.</p> </important> <p>You can choose to make the data searchable by
+     * /amzn, /ssm.</p>  <p>You can choose to make the data searchable by
      * other users in the account or you can restrict search access. Searchable data
      * means that all users with access to the OpsItem Overview page (as provided by
      * the <a>DescribeOpsItems</a> API action) can view and search on the specified
@@ -717,9 +717,9 @@ namespace Model
      * the OpsItem. For example, you can specify log files, error strings, license
      * keys, troubleshooting tips, or other relevant data. You enter operational data
      * as key-value pairs. The key has a maximum length of 128 characters. The value
-     * has a maximum size of 20 KB.</p> <important> <p>Operational data keys
+     * has a maximum size of 20 KB.</p>  <p>Operational data keys
      * <i>can't</i> begin with the following: amazon, aws, amzn, ssm, /amazon, /aws,
-     * /amzn, /ssm.</p> </important> <p>You can choose to make the data searchable by
+     * /amzn, /ssm.</p>  <p>You can choose to make the data searchable by
      * other users in the account or you can restrict search access. Searchable data
      * means that all users with access to the OpsItem Overview page (as provided by
      * the <a>DescribeOpsItems</a> API action) can view and search on the specified
@@ -739,9 +739,9 @@ namespace Model
      * the OpsItem. For example, you can specify log files, error strings, license
      * keys, troubleshooting tips, or other relevant data. You enter operational data
      * as key-value pairs. The key has a maximum length of 128 characters. The value
-     * has a maximum size of 20 KB.</p> <important> <p>Operational data keys
+     * has a maximum size of 20 KB.</p>  <p>Operational data keys
      * <i>can't</i> begin with the following: amazon, aws, amzn, ssm, /amazon, /aws,
-     * /amzn, /ssm.</p> </important> <p>You can choose to make the data searchable by
+     * /amzn, /ssm.</p>  <p>You can choose to make the data searchable by
      * other users in the account or you can restrict search access. Searchable data
      * means that all users with access to the OpsItem Overview page (as provided by
      * the <a>DescribeOpsItems</a> API action) can view and search on the specified
@@ -761,9 +761,9 @@ namespace Model
      * the OpsItem. For example, you can specify log files, error strings, license
      * keys, troubleshooting tips, or other relevant data. You enter operational data
      * as key-value pairs. The key has a maximum length of 128 characters. The value
-     * has a maximum size of 20 KB.</p> <important> <p>Operational data keys
+     * has a maximum size of 20 KB.</p>  <p>Operational data keys
      * <i>can't</i> begin with the following: amazon, aws, amzn, ssm, /amazon, /aws,
-     * /amzn, /ssm.</p> </important> <p>You can choose to make the data searchable by
+     * /amzn, /ssm.</p>  <p>You can choose to make the data searchable by
      * other users in the account or you can restrict search access. Searchable data
      * means that all users with access to the OpsItem Overview page (as provided by
      * the <a>DescribeOpsItems</a> API action) can view and search on the specified
@@ -783,9 +783,9 @@ namespace Model
      * the OpsItem. For example, you can specify log files, error strings, license
      * keys, troubleshooting tips, or other relevant data. You enter operational data
      * as key-value pairs. The key has a maximum length of 128 characters. The value
-     * has a maximum size of 20 KB.</p> <important> <p>Operational data keys
+     * has a maximum size of 20 KB.</p>  <p>Operational data keys
      * <i>can't</i> begin with the following: amazon, aws, amzn, ssm, /amazon, /aws,
-     * /amzn, /ssm.</p> </important> <p>You can choose to make the data searchable by
+     * /amzn, /ssm.</p>  <p>You can choose to make the data searchable by
      * other users in the account or you can restrict search access. Searchable data
      * means that all users with access to the OpsItem Overview page (as provided by
      * the <a>DescribeOpsItems</a> API action) can view and search on the specified
@@ -805,9 +805,9 @@ namespace Model
      * the OpsItem. For example, you can specify log files, error strings, license
      * keys, troubleshooting tips, or other relevant data. You enter operational data
      * as key-value pairs. The key has a maximum length of 128 characters. The value
-     * has a maximum size of 20 KB.</p> <important> <p>Operational data keys
+     * has a maximum size of 20 KB.</p>  <p>Operational data keys
      * <i>can't</i> begin with the following: amazon, aws, amzn, ssm, /amazon, /aws,
-     * /amzn, /ssm.</p> </important> <p>You can choose to make the data searchable by
+     * /amzn, /ssm.</p>  <p>You can choose to make the data searchable by
      * other users in the account or you can restrict search access. Searchable data
      * means that all users with access to the OpsItem Overview page (as provided by
      * the <a>DescribeOpsItems</a> API action) can view and search on the specified
@@ -827,9 +827,9 @@ namespace Model
      * the OpsItem. For example, you can specify log files, error strings, license
      * keys, troubleshooting tips, or other relevant data. You enter operational data
      * as key-value pairs. The key has a maximum length of 128 characters. The value
-     * has a maximum size of 20 KB.</p> <important> <p>Operational data keys
+     * has a maximum size of 20 KB.</p>  <p>Operational data keys
      * <i>can't</i> begin with the following: amazon, aws, amzn, ssm, /amazon, /aws,
-     * /amzn, /ssm.</p> </important> <p>You can choose to make the data searchable by
+     * /amzn, /ssm.</p>  <p>You can choose to make the data searchable by
      * other users in the account or you can restrict search access. Searchable data
      * means that all users with access to the OpsItem Overview page (as provided by
      * the <a>DescribeOpsItems</a> API action) can view and search on the specified
@@ -849,9 +849,9 @@ namespace Model
      * the OpsItem. For example, you can specify log files, error strings, license
      * keys, troubleshooting tips, or other relevant data. You enter operational data
      * as key-value pairs. The key has a maximum length of 128 characters. The value
-     * has a maximum size of 20 KB.</p> <important> <p>Operational data keys
+     * has a maximum size of 20 KB.</p>  <p>Operational data keys
      * <i>can't</i> begin with the following: amazon, aws, amzn, ssm, /amazon, /aws,
-     * /amzn, /ssm.</p> </important> <p>You can choose to make the data searchable by
+     * /amzn, /ssm.</p>  <p>You can choose to make the data searchable by
      * other users in the account or you can restrict search access. Searchable data
      * means that all users with access to the OpsItem Overview page (as provided by
      * the <a>DescribeOpsItems</a> API action) can view and search on the specified

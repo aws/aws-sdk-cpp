@@ -83,49 +83,49 @@ namespace Model
 
     /**
      * <p>The dataset column tag, currently only used for geospatial type tagging.
-     * .</p> <note> <p>This is not tags for the AWS tagging feature. .</p> </note>
+     * .</p>  <p>This is not tags for the AWS tagging feature. .</p> 
      */
     inline const Aws::Vector<ColumnTag>& GetTags() const{ return m_tags; }
 
     /**
      * <p>The dataset column tag, currently only used for geospatial type tagging.
-     * .</p> <note> <p>This is not tags for the AWS tagging feature. .</p> </note>
+     * .</p>  <p>This is not tags for the AWS tagging feature. .</p> 
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>The dataset column tag, currently only used for geospatial type tagging.
-     * .</p> <note> <p>This is not tags for the AWS tagging feature. .</p> </note>
+     * .</p>  <p>This is not tags for the AWS tagging feature. .</p> 
      */
     inline void SetTags(const Aws::Vector<ColumnTag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
      * <p>The dataset column tag, currently only used for geospatial type tagging.
-     * .</p> <note> <p>This is not tags for the AWS tagging feature. .</p> </note>
+     * .</p>  <p>This is not tags for the AWS tagging feature. .</p> 
      */
     inline void SetTags(Aws::Vector<ColumnTag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
      * <p>The dataset column tag, currently only used for geospatial type tagging.
-     * .</p> <note> <p>This is not tags for the AWS tagging feature. .</p> </note>
+     * .</p>  <p>This is not tags for the AWS tagging feature. .</p> 
      */
     inline TagColumnOperation& WithTags(const Aws::Vector<ColumnTag>& value) { SetTags(value); return *this;}
 
     /**
      * <p>The dataset column tag, currently only used for geospatial type tagging.
-     * .</p> <note> <p>This is not tags for the AWS tagging feature. .</p> </note>
+     * .</p>  <p>This is not tags for the AWS tagging feature. .</p> 
      */
     inline TagColumnOperation& WithTags(Aws::Vector<ColumnTag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
      * <p>The dataset column tag, currently only used for geospatial type tagging.
-     * .</p> <note> <p>This is not tags for the AWS tagging feature. .</p> </note>
+     * .</p>  <p>This is not tags for the AWS tagging feature. .</p> 
      */
     inline TagColumnOperation& AddTags(const ColumnTag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     /**
      * <p>The dataset column tag, currently only used for geospatial type tagging.
-     * .</p> <note> <p>This is not tags for the AWS tagging feature. .</p> </note>
+     * .</p>  <p>This is not tags for the AWS tagging feature. .</p> 
      */
     inline TagColumnOperation& AddTags(ColumnTag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 

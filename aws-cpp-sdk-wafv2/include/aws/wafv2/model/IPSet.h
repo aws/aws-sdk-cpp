@@ -26,11 +26,11 @@ namespace Model
 {
 
   /**
-   * <note> <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2,
+   *  <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2,
    * released in November, 2019. For information, including how to migrate your AWS
    * WAF resources from the prior release, see the <a
    * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-   * WAF Developer Guide</a>. </p> </note> <p>Contains one or more IP addresses or
+   * WAF Developer Guide</a>. </p>  <p>Contains one or more IP addresses or
    * blocks of IP addresses specified in Classless Inter-Domain Routing (CIDR)
    * notation. AWS WAF supports any CIDR range. For information about CIDR notation,
    * see the Wikipedia entry <a

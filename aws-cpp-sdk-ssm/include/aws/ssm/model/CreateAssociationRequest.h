@@ -219,7 +219,7 @@ namespace Model
 
 
     /**
-     * <p>The instance ID.</p> <note> <p> <code>InstanceId</code> has been deprecated.
+     * <p>The instance ID.</p>  <p> <code>InstanceId</code> has been deprecated.
      * To specify an instance ID for an association, use the <code>Targets</code>
      * parameter. Requests that include the parameter <code>InstanceID</code> with SSM
      * documents that use schema version 2.0 or later will fail. In addition, if you
@@ -227,12 +227,12 @@ namespace Model
      * <code>AssociationName</code>, <code>DocumentVersion</code>,
      * <code>MaxErrors</code>, <code>MaxConcurrency</code>,
      * <code>OutputLocation</code>, or <code>ScheduleExpression</code>. To use these
-     * parameters, you must use the <code>Targets</code> parameter.</p> </note>
+     * parameters, you must use the <code>Targets</code> parameter.</p> 
      */
     inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
 
     /**
-     * <p>The instance ID.</p> <note> <p> <code>InstanceId</code> has been deprecated.
+     * <p>The instance ID.</p>  <p> <code>InstanceId</code> has been deprecated.
      * To specify an instance ID for an association, use the <code>Targets</code>
      * parameter. Requests that include the parameter <code>InstanceID</code> with SSM
      * documents that use schema version 2.0 or later will fail. In addition, if you
@@ -240,12 +240,12 @@ namespace Model
      * <code>AssociationName</code>, <code>DocumentVersion</code>,
      * <code>MaxErrors</code>, <code>MaxConcurrency</code>,
      * <code>OutputLocation</code>, or <code>ScheduleExpression</code>. To use these
-     * parameters, you must use the <code>Targets</code> parameter.</p> </note>
+     * parameters, you must use the <code>Targets</code> parameter.</p> 
      */
     inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
 
     /**
-     * <p>The instance ID.</p> <note> <p> <code>InstanceId</code> has been deprecated.
+     * <p>The instance ID.</p>  <p> <code>InstanceId</code> has been deprecated.
      * To specify an instance ID for an association, use the <code>Targets</code>
      * parameter. Requests that include the parameter <code>InstanceID</code> with SSM
      * documents that use schema version 2.0 or later will fail. In addition, if you
@@ -253,12 +253,12 @@ namespace Model
      * <code>AssociationName</code>, <code>DocumentVersion</code>,
      * <code>MaxErrors</code>, <code>MaxConcurrency</code>,
      * <code>OutputLocation</code>, or <code>ScheduleExpression</code>. To use these
-     * parameters, you must use the <code>Targets</code> parameter.</p> </note>
+     * parameters, you must use the <code>Targets</code> parameter.</p> 
      */
     inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
 
     /**
-     * <p>The instance ID.</p> <note> <p> <code>InstanceId</code> has been deprecated.
+     * <p>The instance ID.</p>  <p> <code>InstanceId</code> has been deprecated.
      * To specify an instance ID for an association, use the <code>Targets</code>
      * parameter. Requests that include the parameter <code>InstanceID</code> with SSM
      * documents that use schema version 2.0 or later will fail. In addition, if you
@@ -266,12 +266,12 @@ namespace Model
      * <code>AssociationName</code>, <code>DocumentVersion</code>,
      * <code>MaxErrors</code>, <code>MaxConcurrency</code>,
      * <code>OutputLocation</code>, or <code>ScheduleExpression</code>. To use these
-     * parameters, you must use the <code>Targets</code> parameter.</p> </note>
+     * parameters, you must use the <code>Targets</code> parameter.</p> 
      */
     inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
 
     /**
-     * <p>The instance ID.</p> <note> <p> <code>InstanceId</code> has been deprecated.
+     * <p>The instance ID.</p>  <p> <code>InstanceId</code> has been deprecated.
      * To specify an instance ID for an association, use the <code>Targets</code>
      * parameter. Requests that include the parameter <code>InstanceID</code> with SSM
      * documents that use schema version 2.0 or later will fail. In addition, if you
@@ -279,12 +279,12 @@ namespace Model
      * <code>AssociationName</code>, <code>DocumentVersion</code>,
      * <code>MaxErrors</code>, <code>MaxConcurrency</code>,
      * <code>OutputLocation</code>, or <code>ScheduleExpression</code>. To use these
-     * parameters, you must use the <code>Targets</code> parameter.</p> </note>
+     * parameters, you must use the <code>Targets</code> parameter.</p> 
      */
     inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
 
     /**
-     * <p>The instance ID.</p> <note> <p> <code>InstanceId</code> has been deprecated.
+     * <p>The instance ID.</p>  <p> <code>InstanceId</code> has been deprecated.
      * To specify an instance ID for an association, use the <code>Targets</code>
      * parameter. Requests that include the parameter <code>InstanceID</code> with SSM
      * documents that use schema version 2.0 or later will fail. In addition, if you
@@ -292,12 +292,12 @@ namespace Model
      * <code>AssociationName</code>, <code>DocumentVersion</code>,
      * <code>MaxErrors</code>, <code>MaxConcurrency</code>,
      * <code>OutputLocation</code>, or <code>ScheduleExpression</code>. To use these
-     * parameters, you must use the <code>Targets</code> parameter.</p> </note>
+     * parameters, you must use the <code>Targets</code> parameter.</p> 
      */
     inline CreateAssociationRequest& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
 
     /**
-     * <p>The instance ID.</p> <note> <p> <code>InstanceId</code> has been deprecated.
+     * <p>The instance ID.</p>  <p> <code>InstanceId</code> has been deprecated.
      * To specify an instance ID for an association, use the <code>Targets</code>
      * parameter. Requests that include the parameter <code>InstanceID</code> with SSM
      * documents that use schema version 2.0 or later will fail. In addition, if you
@@ -305,12 +305,12 @@ namespace Model
      * <code>AssociationName</code>, <code>DocumentVersion</code>,
      * <code>MaxErrors</code>, <code>MaxConcurrency</code>,
      * <code>OutputLocation</code>, or <code>ScheduleExpression</code>. To use these
-     * parameters, you must use the <code>Targets</code> parameter.</p> </note>
+     * parameters, you must use the <code>Targets</code> parameter.</p> 
      */
     inline CreateAssociationRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
 
     /**
-     * <p>The instance ID.</p> <note> <p> <code>InstanceId</code> has been deprecated.
+     * <p>The instance ID.</p>  <p> <code>InstanceId</code> has been deprecated.
      * To specify an instance ID for an association, use the <code>Targets</code>
      * parameter. Requests that include the parameter <code>InstanceID</code> with SSM
      * documents that use schema version 2.0 or later will fail. In addition, if you
@@ -318,7 +318,7 @@ namespace Model
      * <code>AssociationName</code>, <code>DocumentVersion</code>,
      * <code>MaxErrors</code>, <code>MaxConcurrency</code>,
      * <code>OutputLocation</code>, or <code>ScheduleExpression</code>. To use these
-     * parameters, you must use the <code>Targets</code> parameter.</p> </note>
+     * parameters, you must use the <code>Targets</code> parameter.</p> 
      */
     inline CreateAssociationRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
 

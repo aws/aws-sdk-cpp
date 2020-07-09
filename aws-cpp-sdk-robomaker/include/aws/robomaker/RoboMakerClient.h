@@ -401,9 +401,9 @@ namespace Model
          * for consistency reasons. To create a new version, use
          * <code>CreateRobotApplicationVersion</code> or see <a
          * href="https://docs.aws.amazon.com/robomaker/latest/dg/create-robot-application-version.html">Creating
-         * a Robot Application Version</a>. </p> <note> <p>After 90 days, deployment jobs
+         * a Robot Application Version</a>. </p>  <p>After 90 days, deployment jobs
          * expire and will be deleted. They will no longer be accessible. </p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/CreateDeploymentJob">AWS
          * API Reference</a></p>
          */
@@ -415,9 +415,9 @@ namespace Model
          * for consistency reasons. To create a new version, use
          * <code>CreateRobotApplicationVersion</code> or see <a
          * href="https://docs.aws.amazon.com/robomaker/latest/dg/create-robot-application-version.html">Creating
-         * a Robot Application Version</a>. </p> <note> <p>After 90 days, deployment jobs
+         * a Robot Application Version</a>. </p>  <p>After 90 days, deployment jobs
          * expire and will be deleted. They will no longer be accessible. </p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/CreateDeploymentJob">AWS
          * API Reference</a></p>
          *
@@ -431,9 +431,9 @@ namespace Model
          * for consistency reasons. To create a new version, use
          * <code>CreateRobotApplicationVersion</code> or see <a
          * href="https://docs.aws.amazon.com/robomaker/latest/dg/create-robot-application-version.html">Creating
-         * a Robot Application Version</a>. </p> <note> <p>After 90 days, deployment jobs
+         * a Robot Application Version</a>. </p>  <p>After 90 days, deployment jobs
          * expire and will be deleted. They will no longer be accessible. </p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/CreateDeploymentJob">AWS
          * API Reference</a></p>
          *
@@ -598,8 +598,8 @@ namespace Model
         virtual void CreateSimulationApplicationVersionAsync(const Model::CreateSimulationApplicationVersionRequest& request, const CreateSimulationApplicationVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a simulation job.</p> <note> <p>After 90 days, simulation jobs expire
-         * and will be deleted. They will no longer be accessible. </p> </note><p><h3>See
+         * <p>Creates a simulation job.</p>  <p>After 90 days, simulation jobs expire
+         * and will be deleted. They will no longer be accessible. </p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/CreateSimulationJob">AWS
          * API Reference</a></p>
@@ -607,8 +607,8 @@ namespace Model
         virtual Model::CreateSimulationJobOutcome CreateSimulationJob(const Model::CreateSimulationJobRequest& request) const;
 
         /**
-         * <p>Creates a simulation job.</p> <note> <p>After 90 days, simulation jobs expire
-         * and will be deleted. They will no longer be accessible. </p> </note><p><h3>See
+         * <p>Creates a simulation job.</p>  <p>After 90 days, simulation jobs expire
+         * and will be deleted. They will no longer be accessible. </p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/CreateSimulationJob">AWS
          * API Reference</a></p>
@@ -618,8 +618,8 @@ namespace Model
         virtual Model::CreateSimulationJobOutcomeCallable CreateSimulationJobCallable(const Model::CreateSimulationJobRequest& request) const;
 
         /**
-         * <p>Creates a simulation job.</p> <note> <p>After 90 days, simulation jobs expire
-         * and will be deleted. They will no longer be accessible. </p> </note><p><h3>See
+         * <p>Creates a simulation job.</p>  <p>After 90 days, simulation jobs expire
+         * and will be deleted. They will no longer be accessible. </p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/CreateSimulationJob">AWS
          * API Reference</a></p>

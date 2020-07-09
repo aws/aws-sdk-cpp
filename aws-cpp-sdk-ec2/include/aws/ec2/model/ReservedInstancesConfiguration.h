@@ -84,26 +84,26 @@ namespace Model
 
 
     /**
-     * <p>The number of modified Reserved Instances.</p> <note> <p>This is a required
-     * field for a request.</p> </note>
+     * <p>The number of modified Reserved Instances.</p>  <p>This is a required
+     * field for a request.</p> 
      */
     inline int GetInstanceCount() const{ return m_instanceCount; }
 
     /**
-     * <p>The number of modified Reserved Instances.</p> <note> <p>This is a required
-     * field for a request.</p> </note>
+     * <p>The number of modified Reserved Instances.</p>  <p>This is a required
+     * field for a request.</p> 
      */
     inline bool InstanceCountHasBeenSet() const { return m_instanceCountHasBeenSet; }
 
     /**
-     * <p>The number of modified Reserved Instances.</p> <note> <p>This is a required
-     * field for a request.</p> </note>
+     * <p>The number of modified Reserved Instances.</p>  <p>This is a required
+     * field for a request.</p> 
      */
     inline void SetInstanceCount(int value) { m_instanceCountHasBeenSet = true; m_instanceCount = value; }
 
     /**
-     * <p>The number of modified Reserved Instances.</p> <note> <p>This is a required
-     * field for a request.</p> </note>
+     * <p>The number of modified Reserved Instances.</p>  <p>This is a required
+     * field for a request.</p> 
      */
     inline ReservedInstancesConfiguration& WithInstanceCount(int value) { SetInstanceCount(value); return *this;}
 

@@ -89,10 +89,10 @@ namespace Model
    * information about the Data Service API, see <a
    * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using
    * the Data API for Aurora Serverless</a> in the <i>Amazon Aurora User
-   * Guide</i>.</p> <note> <p>If you have questions or comments related to the Data
+   * Guide</i>.</p>  <p>If you have questions or comments related to the Data
    * API, send email to <a
    * href="mailto:Rds-data-api-feedback@amazon.com">Rds-data-api-feedback@amazon.com</a>.</p>
-   * </note></p>
+   * </p>
    */
   class AWS_RDSDATASERVICE_API RDSDataServiceClient : public Aws::Client::AWSJsonClient
   {
@@ -127,10 +127,10 @@ namespace Model
          * <p>Runs a batch SQL statement over an array of data.</p> <p>You can run bulk
          * update and insert operations for multiple records using a DML statement with
          * different parameter sets. Bulk operations can provide a significant performance
-         * improvement over individual insert and update operations.</p> <important> <p>If
+         * improvement over individual insert and update operations.</p>  <p>If
          * a call isn't part of a transaction because it doesn't include the
          * <code>transactionID</code> parameter, changes that result from the call are
-         * committed automatically.</p> </important><p><h3>See Also:</h3>   <a
+         * committed automatically.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-data-2018-08-01/BatchExecuteStatement">AWS
          * API Reference</a></p>
          */
@@ -140,10 +140,10 @@ namespace Model
          * <p>Runs a batch SQL statement over an array of data.</p> <p>You can run bulk
          * update and insert operations for multiple records using a DML statement with
          * different parameter sets. Bulk operations can provide a significant performance
-         * improvement over individual insert and update operations.</p> <important> <p>If
+         * improvement over individual insert and update operations.</p>  <p>If
          * a call isn't part of a transaction because it doesn't include the
          * <code>transactionID</code> parameter, changes that result from the call are
-         * committed automatically.</p> </important><p><h3>See Also:</h3>   <a
+         * committed automatically.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-data-2018-08-01/BatchExecuteStatement">AWS
          * API Reference</a></p>
          *
@@ -155,10 +155,10 @@ namespace Model
          * <p>Runs a batch SQL statement over an array of data.</p> <p>You can run bulk
          * update and insert operations for multiple records using a DML statement with
          * different parameter sets. Bulk operations can provide a significant performance
-         * improvement over individual insert and update operations.</p> <important> <p>If
+         * improvement over individual insert and update operations.</p>  <p>If
          * a call isn't part of a transaction because it doesn't include the
          * <code>transactionID</code> parameter, changes that result from the call are
-         * committed automatically.</p> </important><p><h3>See Also:</h3>   <a
+         * committed automatically.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-data-2018-08-01/BatchExecuteStatement">AWS
          * API Reference</a></p>
          *
@@ -247,10 +247,10 @@ namespace Model
         virtual void CommitTransactionAsync(const Model::CommitTransactionRequest& request, const CommitTransactionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Runs a SQL statement against a database.</p> <important> <p>If a call isn't
+         * <p>Runs a SQL statement against a database.</p>  <p>If a call isn't
          * part of a transaction because it doesn't include the <code>transactionID</code>
          * parameter, changes that result from the call are committed automatically.</p>
-         * </important> <p>The response size limit is 1 MB. If the call returns more than 1
+         *  <p>The response size limit is 1 MB. If the call returns more than 1
          * MB of response data, the call is terminated.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-data-2018-08-01/ExecuteStatement">AWS
          * API Reference</a></p>
@@ -258,10 +258,10 @@ namespace Model
         virtual Model::ExecuteStatementOutcome ExecuteStatement(const Model::ExecuteStatementRequest& request) const;
 
         /**
-         * <p>Runs a SQL statement against a database.</p> <important> <p>If a call isn't
+         * <p>Runs a SQL statement against a database.</p>  <p>If a call isn't
          * part of a transaction because it doesn't include the <code>transactionID</code>
          * parameter, changes that result from the call are committed automatically.</p>
-         * </important> <p>The response size limit is 1 MB. If the call returns more than 1
+         *  <p>The response size limit is 1 MB. If the call returns more than 1
          * MB of response data, the call is terminated.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-data-2018-08-01/ExecuteStatement">AWS
          * API Reference</a></p>
@@ -271,10 +271,10 @@ namespace Model
         virtual Model::ExecuteStatementOutcomeCallable ExecuteStatementCallable(const Model::ExecuteStatementRequest& request) const;
 
         /**
-         * <p>Runs a SQL statement against a database.</p> <important> <p>If a call isn't
+         * <p>Runs a SQL statement against a database.</p>  <p>If a call isn't
          * part of a transaction because it doesn't include the <code>transactionID</code>
          * parameter, changes that result from the call are committed automatically.</p>
-         * </important> <p>The response size limit is 1 MB. If the call returns more than 1
+         *  <p>The response size limit is 1 MB. If the call returns more than 1
          * MB of response data, the call is terminated.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-data-2018-08-01/ExecuteStatement">AWS
          * API Reference</a></p>

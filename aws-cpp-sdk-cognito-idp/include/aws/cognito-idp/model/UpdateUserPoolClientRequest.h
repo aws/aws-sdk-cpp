@@ -973,49 +973,49 @@ namespace Model
 
     /**
      * <p>The Amazon Pinpoint analytics configuration for collecting metrics for this
-     * user pool.</p> <note> <p>Cognito User Pools only supports sending events to
+     * user pool.</p>  <p>Cognito User Pools only supports sending events to
      * Amazon Pinpoint projects in the US East (N. Virginia) us-east-1 Region,
-     * regardless of the region in which the user pool resides.</p> </note>
+     * regardless of the region in which the user pool resides.</p> 
      */
     inline const AnalyticsConfigurationType& GetAnalyticsConfiguration() const{ return m_analyticsConfiguration; }
 
     /**
      * <p>The Amazon Pinpoint analytics configuration for collecting metrics for this
-     * user pool.</p> <note> <p>Cognito User Pools only supports sending events to
+     * user pool.</p>  <p>Cognito User Pools only supports sending events to
      * Amazon Pinpoint projects in the US East (N. Virginia) us-east-1 Region,
-     * regardless of the region in which the user pool resides.</p> </note>
+     * regardless of the region in which the user pool resides.</p> 
      */
     inline bool AnalyticsConfigurationHasBeenSet() const { return m_analyticsConfigurationHasBeenSet; }
 
     /**
      * <p>The Amazon Pinpoint analytics configuration for collecting metrics for this
-     * user pool.</p> <note> <p>Cognito User Pools only supports sending events to
+     * user pool.</p>  <p>Cognito User Pools only supports sending events to
      * Amazon Pinpoint projects in the US East (N. Virginia) us-east-1 Region,
-     * regardless of the region in which the user pool resides.</p> </note>
+     * regardless of the region in which the user pool resides.</p> 
      */
     inline void SetAnalyticsConfiguration(const AnalyticsConfigurationType& value) { m_analyticsConfigurationHasBeenSet = true; m_analyticsConfiguration = value; }
 
     /**
      * <p>The Amazon Pinpoint analytics configuration for collecting metrics for this
-     * user pool.</p> <note> <p>Cognito User Pools only supports sending events to
+     * user pool.</p>  <p>Cognito User Pools only supports sending events to
      * Amazon Pinpoint projects in the US East (N. Virginia) us-east-1 Region,
-     * regardless of the region in which the user pool resides.</p> </note>
+     * regardless of the region in which the user pool resides.</p> 
      */
     inline void SetAnalyticsConfiguration(AnalyticsConfigurationType&& value) { m_analyticsConfigurationHasBeenSet = true; m_analyticsConfiguration = std::move(value); }
 
     /**
      * <p>The Amazon Pinpoint analytics configuration for collecting metrics for this
-     * user pool.</p> <note> <p>Cognito User Pools only supports sending events to
+     * user pool.</p>  <p>Cognito User Pools only supports sending events to
      * Amazon Pinpoint projects in the US East (N. Virginia) us-east-1 Region,
-     * regardless of the region in which the user pool resides.</p> </note>
+     * regardless of the region in which the user pool resides.</p> 
      */
     inline UpdateUserPoolClientRequest& WithAnalyticsConfiguration(const AnalyticsConfigurationType& value) { SetAnalyticsConfiguration(value); return *this;}
 
     /**
      * <p>The Amazon Pinpoint analytics configuration for collecting metrics for this
-     * user pool.</p> <note> <p>Cognito User Pools only supports sending events to
+     * user pool.</p>  <p>Cognito User Pools only supports sending events to
      * Amazon Pinpoint projects in the US East (N. Virginia) us-east-1 Region,
-     * regardless of the region in which the user pool resides.</p> </note>
+     * regardless of the region in which the user pool resides.</p> 
      */
     inline UpdateUserPoolClientRequest& WithAnalyticsConfiguration(AnalyticsConfigurationType&& value) { SetAnalyticsConfiguration(std::move(value)); return *this;}
 
@@ -1039,9 +1039,9 @@ namespace Model
      * <a>RespondToAuthChallenge</a> </p> </li> <li> <p> <a>ForgotPassword</a> </p>
      * </li> <li> <p> <a>ConfirmForgotPassword</a> </p> </li> <li> <p>
      * <a>ConfirmSignUp</a> </p> </li> <li> <p> <a>ResendConfirmationCode</a> </p>
-     * </li> </ul> <note> <p>After February 15th 2020, the value of
+     * </li> </ul>  <p>After February 15th 2020, the value of
      * <code>PreventUserExistenceErrors</code> will default to <code>ENABLED</code> for
-     * newly created user pool clients if no value is provided.</p> </note>
+     * newly created user pool clients if no value is provided.</p> 
      */
     inline const PreventUserExistenceErrorTypes& GetPreventUserExistenceErrors() const{ return m_preventUserExistenceErrors; }
 
@@ -1064,9 +1064,9 @@ namespace Model
      * <a>RespondToAuthChallenge</a> </p> </li> <li> <p> <a>ForgotPassword</a> </p>
      * </li> <li> <p> <a>ConfirmForgotPassword</a> </p> </li> <li> <p>
      * <a>ConfirmSignUp</a> </p> </li> <li> <p> <a>ResendConfirmationCode</a> </p>
-     * </li> </ul> <note> <p>After February 15th 2020, the value of
+     * </li> </ul>  <p>After February 15th 2020, the value of
      * <code>PreventUserExistenceErrors</code> will default to <code>ENABLED</code> for
-     * newly created user pool clients if no value is provided.</p> </note>
+     * newly created user pool clients if no value is provided.</p> 
      */
     inline bool PreventUserExistenceErrorsHasBeenSet() const { return m_preventUserExistenceErrorsHasBeenSet; }
 
@@ -1089,9 +1089,9 @@ namespace Model
      * <a>RespondToAuthChallenge</a> </p> </li> <li> <p> <a>ForgotPassword</a> </p>
      * </li> <li> <p> <a>ConfirmForgotPassword</a> </p> </li> <li> <p>
      * <a>ConfirmSignUp</a> </p> </li> <li> <p> <a>ResendConfirmationCode</a> </p>
-     * </li> </ul> <note> <p>After February 15th 2020, the value of
+     * </li> </ul>  <p>After February 15th 2020, the value of
      * <code>PreventUserExistenceErrors</code> will default to <code>ENABLED</code> for
-     * newly created user pool clients if no value is provided.</p> </note>
+     * newly created user pool clients if no value is provided.</p> 
      */
     inline void SetPreventUserExistenceErrors(const PreventUserExistenceErrorTypes& value) { m_preventUserExistenceErrorsHasBeenSet = true; m_preventUserExistenceErrors = value; }
 
@@ -1114,9 +1114,9 @@ namespace Model
      * <a>RespondToAuthChallenge</a> </p> </li> <li> <p> <a>ForgotPassword</a> </p>
      * </li> <li> <p> <a>ConfirmForgotPassword</a> </p> </li> <li> <p>
      * <a>ConfirmSignUp</a> </p> </li> <li> <p> <a>ResendConfirmationCode</a> </p>
-     * </li> </ul> <note> <p>After February 15th 2020, the value of
+     * </li> </ul>  <p>After February 15th 2020, the value of
      * <code>PreventUserExistenceErrors</code> will default to <code>ENABLED</code> for
-     * newly created user pool clients if no value is provided.</p> </note>
+     * newly created user pool clients if no value is provided.</p> 
      */
     inline void SetPreventUserExistenceErrors(PreventUserExistenceErrorTypes&& value) { m_preventUserExistenceErrorsHasBeenSet = true; m_preventUserExistenceErrors = std::move(value); }
 
@@ -1139,9 +1139,9 @@ namespace Model
      * <a>RespondToAuthChallenge</a> </p> </li> <li> <p> <a>ForgotPassword</a> </p>
      * </li> <li> <p> <a>ConfirmForgotPassword</a> </p> </li> <li> <p>
      * <a>ConfirmSignUp</a> </p> </li> <li> <p> <a>ResendConfirmationCode</a> </p>
-     * </li> </ul> <note> <p>After February 15th 2020, the value of
+     * </li> </ul>  <p>After February 15th 2020, the value of
      * <code>PreventUserExistenceErrors</code> will default to <code>ENABLED</code> for
-     * newly created user pool clients if no value is provided.</p> </note>
+     * newly created user pool clients if no value is provided.</p> 
      */
     inline UpdateUserPoolClientRequest& WithPreventUserExistenceErrors(const PreventUserExistenceErrorTypes& value) { SetPreventUserExistenceErrors(value); return *this;}
 
@@ -1164,9 +1164,9 @@ namespace Model
      * <a>RespondToAuthChallenge</a> </p> </li> <li> <p> <a>ForgotPassword</a> </p>
      * </li> <li> <p> <a>ConfirmForgotPassword</a> </p> </li> <li> <p>
      * <a>ConfirmSignUp</a> </p> </li> <li> <p> <a>ResendConfirmationCode</a> </p>
-     * </li> </ul> <note> <p>After February 15th 2020, the value of
+     * </li> </ul>  <p>After February 15th 2020, the value of
      * <code>PreventUserExistenceErrors</code> will default to <code>ENABLED</code> for
-     * newly created user pool clients if no value is provided.</p> </note>
+     * newly created user pool clients if no value is provided.</p> 
      */
     inline UpdateUserPoolClientRequest& WithPreventUserExistenceErrors(PreventUserExistenceErrorTypes&& value) { SetPreventUserExistenceErrors(std::move(value)); return *this;}
 

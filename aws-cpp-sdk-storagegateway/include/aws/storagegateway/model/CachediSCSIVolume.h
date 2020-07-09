@@ -467,8 +467,8 @@ namespace Model
      * data written. This value can be useful for sequential write patterns but less
      * accurate for random write patterns. <code>VolumeUsedInBytes</code> is different
      * from the compressed size of the volume, which is the value that is used to
-     * calculate your bill.</p> <note> <p>This value is not available for volumes
-     * created prior to May 13, 2015, until you store data on the volume.</p> </note>
+     * calculate your bill.</p>  <p>This value is not available for volumes
+     * created prior to May 13, 2015, until you store data on the volume.</p> 
      */
     inline long long GetVolumeUsedInBytes() const{ return m_volumeUsedInBytes; }
 
@@ -478,8 +478,8 @@ namespace Model
      * data written. This value can be useful for sequential write patterns but less
      * accurate for random write patterns. <code>VolumeUsedInBytes</code> is different
      * from the compressed size of the volume, which is the value that is used to
-     * calculate your bill.</p> <note> <p>This value is not available for volumes
-     * created prior to May 13, 2015, until you store data on the volume.</p> </note>
+     * calculate your bill.</p>  <p>This value is not available for volumes
+     * created prior to May 13, 2015, until you store data on the volume.</p> 
      */
     inline bool VolumeUsedInBytesHasBeenSet() const { return m_volumeUsedInBytesHasBeenSet; }
 
@@ -489,8 +489,8 @@ namespace Model
      * data written. This value can be useful for sequential write patterns but less
      * accurate for random write patterns. <code>VolumeUsedInBytes</code> is different
      * from the compressed size of the volume, which is the value that is used to
-     * calculate your bill.</p> <note> <p>This value is not available for volumes
-     * created prior to May 13, 2015, until you store data on the volume.</p> </note>
+     * calculate your bill.</p>  <p>This value is not available for volumes
+     * created prior to May 13, 2015, until you store data on the volume.</p> 
      */
     inline void SetVolumeUsedInBytes(long long value) { m_volumeUsedInBytesHasBeenSet = true; m_volumeUsedInBytes = value; }
 
@@ -500,8 +500,8 @@ namespace Model
      * data written. This value can be useful for sequential write patterns but less
      * accurate for random write patterns. <code>VolumeUsedInBytes</code> is different
      * from the compressed size of the volume, which is the value that is used to
-     * calculate your bill.</p> <note> <p>This value is not available for volumes
-     * created prior to May 13, 2015, until you store data on the volume.</p> </note>
+     * calculate your bill.</p>  <p>This value is not available for volumes
+     * created prior to May 13, 2015, until you store data on the volume.</p> 
      */
     inline CachediSCSIVolume& WithVolumeUsedInBytes(long long value) { SetVolumeUsedInBytes(value); return *this;}
 

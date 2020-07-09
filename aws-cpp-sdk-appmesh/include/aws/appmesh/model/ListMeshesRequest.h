@@ -131,13 +131,13 @@ namespace Model
      * the end of the previous
          results that returned the
      * <code>nextToken</code> value.</p> 
-         <note>
+         
             <p>This token
      * should be treated as an opaque identifier that is used only to
                
      * retrieve the next items in a list and not for other programmatic purposes.</p>
  
-     *       </note>
+     *       
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
@@ -150,13 +150,13 @@ namespace Model
      * the end of the previous
          results that returned the
      * <code>nextToken</code> value.</p> 
-         <note>
+         
             <p>This token
      * should be treated as an opaque identifier that is used only to
                
      * retrieve the next items in a list and not for other programmatic purposes.</p>
  
-     *       </note>
+     *       
      */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
@@ -169,13 +169,13 @@ namespace Model
      * the end of the previous
          results that returned the
      * <code>nextToken</code> value.</p> 
-         <note>
+         
             <p>This token
      * should be treated as an opaque identifier that is used only to
                
      * retrieve the next items in a list and not for other programmatic purposes.</p>
  
-     *       </note>
+     *       
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
@@ -188,13 +188,13 @@ namespace Model
      * the end of the previous
          results that returned the
      * <code>nextToken</code> value.</p> 
-         <note>
+         
             <p>This token
      * should be treated as an opaque identifier that is used only to
                
      * retrieve the next items in a list and not for other programmatic purposes.</p>
  
-     *       </note>
+     *       
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
@@ -207,13 +207,13 @@ namespace Model
      * the end of the previous
          results that returned the
      * <code>nextToken</code> value.</p> 
-         <note>
+         
             <p>This token
      * should be treated as an opaque identifier that is used only to
                
      * retrieve the next items in a list and not for other programmatic purposes.</p>
  
-     *       </note>
+     *       
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
@@ -226,13 +226,13 @@ namespace Model
      * the end of the previous
          results that returned the
      * <code>nextToken</code> value.</p> 
-         <note>
+         
             <p>This token
      * should be treated as an opaque identifier that is used only to
                
      * retrieve the next items in a list and not for other programmatic purposes.</p>
  
-     *       </note>
+     *       
      */
     inline ListMeshesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
@@ -245,13 +245,13 @@ namespace Model
      * the end of the previous
          results that returned the
      * <code>nextToken</code> value.</p> 
-         <note>
+         
             <p>This token
      * should be treated as an opaque identifier that is used only to
                
      * retrieve the next items in a list and not for other programmatic purposes.</p>
  
-     *       </note>
+     *       
      */
     inline ListMeshesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
@@ -264,13 +264,13 @@ namespace Model
      * the end of the previous
          results that returned the
      * <code>nextToken</code> value.</p> 
-         <note>
+         
             <p>This token
      * should be treated as an opaque identifier that is used only to
                
      * retrieve the next items in a list and not for other programmatic purposes.</p>
  
-     *       </note>
+     *       
      */
     inline ListMeshesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

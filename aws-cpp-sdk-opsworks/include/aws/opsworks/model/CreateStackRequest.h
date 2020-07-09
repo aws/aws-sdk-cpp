@@ -85,7 +85,7 @@ namespace Model
      * <p>The stack's AWS region, such as <code>ap-south-1</code>. For more information
      * about Amazon regions, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
-     * Endpoints</a>.</p> <note> <p>In the AWS CLI, this API maps to the
+     * Endpoints</a>.</p>  <p>In the AWS CLI, this API maps to the
      * <code>--stack-region</code> parameter. If the <code>--stack-region</code>
      * parameter and the AWS CLI common parameter <code>--region</code> are set to the
      * same value, the stack uses a <i>regional</i> endpoint. If the
@@ -102,7 +102,7 @@ namespace Model
      * manage AWS, we recommend that you use regional endpoints for new stacks. The AWS
      * CLI common <code>--region</code> parameter always specifies a regional API
      * endpoint; it cannot be used to specify a classic AWS OpsWorks Stacks region.</p>
-     * </note>
+     * 
      */
     inline const Aws::String& GetRegion() const{ return m_region; }
 
@@ -110,7 +110,7 @@ namespace Model
      * <p>The stack's AWS region, such as <code>ap-south-1</code>. For more information
      * about Amazon regions, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
-     * Endpoints</a>.</p> <note> <p>In the AWS CLI, this API maps to the
+     * Endpoints</a>.</p>  <p>In the AWS CLI, this API maps to the
      * <code>--stack-region</code> parameter. If the <code>--stack-region</code>
      * parameter and the AWS CLI common parameter <code>--region</code> are set to the
      * same value, the stack uses a <i>regional</i> endpoint. If the
@@ -127,7 +127,7 @@ namespace Model
      * manage AWS, we recommend that you use regional endpoints for new stacks. The AWS
      * CLI common <code>--region</code> parameter always specifies a regional API
      * endpoint; it cannot be used to specify a classic AWS OpsWorks Stacks region.</p>
-     * </note>
+     * 
      */
     inline bool RegionHasBeenSet() const { return m_regionHasBeenSet; }
 
@@ -135,7 +135,7 @@ namespace Model
      * <p>The stack's AWS region, such as <code>ap-south-1</code>. For more information
      * about Amazon regions, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
-     * Endpoints</a>.</p> <note> <p>In the AWS CLI, this API maps to the
+     * Endpoints</a>.</p>  <p>In the AWS CLI, this API maps to the
      * <code>--stack-region</code> parameter. If the <code>--stack-region</code>
      * parameter and the AWS CLI common parameter <code>--region</code> are set to the
      * same value, the stack uses a <i>regional</i> endpoint. If the
@@ -152,7 +152,7 @@ namespace Model
      * manage AWS, we recommend that you use regional endpoints for new stacks. The AWS
      * CLI common <code>--region</code> parameter always specifies a regional API
      * endpoint; it cannot be used to specify a classic AWS OpsWorks Stacks region.</p>
-     * </note>
+     * 
      */
     inline void SetRegion(const Aws::String& value) { m_regionHasBeenSet = true; m_region = value; }
 
@@ -160,7 +160,7 @@ namespace Model
      * <p>The stack's AWS region, such as <code>ap-south-1</code>. For more information
      * about Amazon regions, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
-     * Endpoints</a>.</p> <note> <p>In the AWS CLI, this API maps to the
+     * Endpoints</a>.</p>  <p>In the AWS CLI, this API maps to the
      * <code>--stack-region</code> parameter. If the <code>--stack-region</code>
      * parameter and the AWS CLI common parameter <code>--region</code> are set to the
      * same value, the stack uses a <i>regional</i> endpoint. If the
@@ -177,7 +177,7 @@ namespace Model
      * manage AWS, we recommend that you use regional endpoints for new stacks. The AWS
      * CLI common <code>--region</code> parameter always specifies a regional API
      * endpoint; it cannot be used to specify a classic AWS OpsWorks Stacks region.</p>
-     * </note>
+     * 
      */
     inline void SetRegion(Aws::String&& value) { m_regionHasBeenSet = true; m_region = std::move(value); }
 
@@ -185,7 +185,7 @@ namespace Model
      * <p>The stack's AWS region, such as <code>ap-south-1</code>. For more information
      * about Amazon regions, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
-     * Endpoints</a>.</p> <note> <p>In the AWS CLI, this API maps to the
+     * Endpoints</a>.</p>  <p>In the AWS CLI, this API maps to the
      * <code>--stack-region</code> parameter. If the <code>--stack-region</code>
      * parameter and the AWS CLI common parameter <code>--region</code> are set to the
      * same value, the stack uses a <i>regional</i> endpoint. If the
@@ -202,7 +202,7 @@ namespace Model
      * manage AWS, we recommend that you use regional endpoints for new stacks. The AWS
      * CLI common <code>--region</code> parameter always specifies a regional API
      * endpoint; it cannot be used to specify a classic AWS OpsWorks Stacks region.</p>
-     * </note>
+     * 
      */
     inline void SetRegion(const char* value) { m_regionHasBeenSet = true; m_region.assign(value); }
 
@@ -210,7 +210,7 @@ namespace Model
      * <p>The stack's AWS region, such as <code>ap-south-1</code>. For more information
      * about Amazon regions, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
-     * Endpoints</a>.</p> <note> <p>In the AWS CLI, this API maps to the
+     * Endpoints</a>.</p>  <p>In the AWS CLI, this API maps to the
      * <code>--stack-region</code> parameter. If the <code>--stack-region</code>
      * parameter and the AWS CLI common parameter <code>--region</code> are set to the
      * same value, the stack uses a <i>regional</i> endpoint. If the
@@ -227,7 +227,7 @@ namespace Model
      * manage AWS, we recommend that you use regional endpoints for new stacks. The AWS
      * CLI common <code>--region</code> parameter always specifies a regional API
      * endpoint; it cannot be used to specify a classic AWS OpsWorks Stacks region.</p>
-     * </note>
+     * 
      */
     inline CreateStackRequest& WithRegion(const Aws::String& value) { SetRegion(value); return *this;}
 
@@ -235,7 +235,7 @@ namespace Model
      * <p>The stack's AWS region, such as <code>ap-south-1</code>. For more information
      * about Amazon regions, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
-     * Endpoints</a>.</p> <note> <p>In the AWS CLI, this API maps to the
+     * Endpoints</a>.</p>  <p>In the AWS CLI, this API maps to the
      * <code>--stack-region</code> parameter. If the <code>--stack-region</code>
      * parameter and the AWS CLI common parameter <code>--region</code> are set to the
      * same value, the stack uses a <i>regional</i> endpoint. If the
@@ -252,7 +252,7 @@ namespace Model
      * manage AWS, we recommend that you use regional endpoints for new stacks. The AWS
      * CLI common <code>--region</code> parameter always specifies a regional API
      * endpoint; it cannot be used to specify a classic AWS OpsWorks Stacks region.</p>
-     * </note>
+     * 
      */
     inline CreateStackRequest& WithRegion(Aws::String&& value) { SetRegion(std::move(value)); return *this;}
 
@@ -260,7 +260,7 @@ namespace Model
      * <p>The stack's AWS region, such as <code>ap-south-1</code>. For more information
      * about Amazon regions, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
-     * Endpoints</a>.</p> <note> <p>In the AWS CLI, this API maps to the
+     * Endpoints</a>.</p>  <p>In the AWS CLI, this API maps to the
      * <code>--stack-region</code> parameter. If the <code>--stack-region</code>
      * parameter and the AWS CLI common parameter <code>--region</code> are set to the
      * same value, the stack uses a <i>regional</i> endpoint. If the
@@ -277,7 +277,7 @@ namespace Model
      * manage AWS, we recommend that you use regional endpoints for new stacks. The AWS
      * CLI common <code>--region</code> parameter always specifies a regional API
      * endpoint; it cannot be used to specify a classic AWS OpsWorks Stacks region.</p>
-     * </note>
+     * 
      */
     inline CreateStackRequest& WithRegion(const char* value) { SetRegion(value); return *this;}
 
@@ -1798,9 +1798,9 @@ namespace Model
      * release of the agent. To specify an agent version, you must use the complete
      * version number, not the abbreviated number shown on the console. For a list of
      * available agent version numbers, call <a>DescribeAgentVersions</a>. AgentVersion
-     * cannot be set to Chef 12.2.</p> <note> <p>You can also specify an agent version
+     * cannot be set to Chef 12.2.</p>  <p>You can also specify an agent version
      * when you create or update an instance, which overrides the stack's default
-     * setting.</p> </note>
+     * setting.</p> 
      */
     inline const Aws::String& GetAgentVersion() const{ return m_agentVersion; }
 
@@ -1816,9 +1816,9 @@ namespace Model
      * release of the agent. To specify an agent version, you must use the complete
      * version number, not the abbreviated number shown on the console. For a list of
      * available agent version numbers, call <a>DescribeAgentVersions</a>. AgentVersion
-     * cannot be set to Chef 12.2.</p> <note> <p>You can also specify an agent version
+     * cannot be set to Chef 12.2.</p>  <p>You can also specify an agent version
      * when you create or update an instance, which overrides the stack's default
-     * setting.</p> </note>
+     * setting.</p> 
      */
     inline bool AgentVersionHasBeenSet() const { return m_agentVersionHasBeenSet; }
 
@@ -1834,9 +1834,9 @@ namespace Model
      * release of the agent. To specify an agent version, you must use the complete
      * version number, not the abbreviated number shown on the console. For a list of
      * available agent version numbers, call <a>DescribeAgentVersions</a>. AgentVersion
-     * cannot be set to Chef 12.2.</p> <note> <p>You can also specify an agent version
+     * cannot be set to Chef 12.2.</p>  <p>You can also specify an agent version
      * when you create or update an instance, which overrides the stack's default
-     * setting.</p> </note>
+     * setting.</p> 
      */
     inline void SetAgentVersion(const Aws::String& value) { m_agentVersionHasBeenSet = true; m_agentVersion = value; }
 
@@ -1852,9 +1852,9 @@ namespace Model
      * release of the agent. To specify an agent version, you must use the complete
      * version number, not the abbreviated number shown on the console. For a list of
      * available agent version numbers, call <a>DescribeAgentVersions</a>. AgentVersion
-     * cannot be set to Chef 12.2.</p> <note> <p>You can also specify an agent version
+     * cannot be set to Chef 12.2.</p>  <p>You can also specify an agent version
      * when you create or update an instance, which overrides the stack's default
-     * setting.</p> </note>
+     * setting.</p> 
      */
     inline void SetAgentVersion(Aws::String&& value) { m_agentVersionHasBeenSet = true; m_agentVersion = std::move(value); }
 
@@ -1870,9 +1870,9 @@ namespace Model
      * release of the agent. To specify an agent version, you must use the complete
      * version number, not the abbreviated number shown on the console. For a list of
      * available agent version numbers, call <a>DescribeAgentVersions</a>. AgentVersion
-     * cannot be set to Chef 12.2.</p> <note> <p>You can also specify an agent version
+     * cannot be set to Chef 12.2.</p>  <p>You can also specify an agent version
      * when you create or update an instance, which overrides the stack's default
-     * setting.</p> </note>
+     * setting.</p> 
      */
     inline void SetAgentVersion(const char* value) { m_agentVersionHasBeenSet = true; m_agentVersion.assign(value); }
 
@@ -1888,9 +1888,9 @@ namespace Model
      * release of the agent. To specify an agent version, you must use the complete
      * version number, not the abbreviated number shown on the console. For a list of
      * available agent version numbers, call <a>DescribeAgentVersions</a>. AgentVersion
-     * cannot be set to Chef 12.2.</p> <note> <p>You can also specify an agent version
+     * cannot be set to Chef 12.2.</p>  <p>You can also specify an agent version
      * when you create or update an instance, which overrides the stack's default
-     * setting.</p> </note>
+     * setting.</p> 
      */
     inline CreateStackRequest& WithAgentVersion(const Aws::String& value) { SetAgentVersion(value); return *this;}
 
@@ -1906,9 +1906,9 @@ namespace Model
      * release of the agent. To specify an agent version, you must use the complete
      * version number, not the abbreviated number shown on the console. For a list of
      * available agent version numbers, call <a>DescribeAgentVersions</a>. AgentVersion
-     * cannot be set to Chef 12.2.</p> <note> <p>You can also specify an agent version
+     * cannot be set to Chef 12.2.</p>  <p>You can also specify an agent version
      * when you create or update an instance, which overrides the stack's default
-     * setting.</p> </note>
+     * setting.</p> 
      */
     inline CreateStackRequest& WithAgentVersion(Aws::String&& value) { SetAgentVersion(std::move(value)); return *this;}
 
@@ -1924,9 +1924,9 @@ namespace Model
      * release of the agent. To specify an agent version, you must use the complete
      * version number, not the abbreviated number shown on the console. For a list of
      * available agent version numbers, call <a>DescribeAgentVersions</a>. AgentVersion
-     * cannot be set to Chef 12.2.</p> <note> <p>You can also specify an agent version
+     * cannot be set to Chef 12.2.</p>  <p>You can also specify an agent version
      * when you create or update an instance, which overrides the stack's default
-     * setting.</p> </note>
+     * setting.</p> 
      */
     inline CreateStackRequest& WithAgentVersion(const char* value) { SetAgentVersion(value); return *this;}
 

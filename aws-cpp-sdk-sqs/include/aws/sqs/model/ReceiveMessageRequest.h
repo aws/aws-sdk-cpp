@@ -525,14 +525,14 @@ namespace Model
      * the queue before returning. If a message is available, the call returns sooner
      * than <code>WaitTimeSeconds</code>. If no messages are available and the wait
      * time expires, the call returns successfully with an empty list of messages.</p>
-     * <important> <p>To avoid HTTP errors, ensure that the HTTP response timeout for
+     *  <p>To avoid HTTP errors, ensure that the HTTP response timeout for
      * <code>ReceiveMessage</code> requests is longer than the
      * <code>WaitTimeSeconds</code> parameter. For example, with the Java SDK, you can
      * set HTTP transport settings using the <a
      * href="https://sdk.amazonaws.com/java/api/latest/software/amazon/awssdk/http/nio/netty/NettyNioAsyncHttpClient.html">
      * NettyNioAsyncHttpClient</a> for asynchronous clients, or the <a
      * href="https://sdk.amazonaws.com/java/api/latest/software/amazon/awssdk/http/apache/ApacheHttpClient.html">
-     * ApacheHttpClient</a> for synchronous clients. </p> </important>
+     * ApacheHttpClient</a> for synchronous clients. </p> 
      */
     inline int GetWaitTimeSeconds() const{ return m_waitTimeSeconds; }
 
@@ -541,14 +541,14 @@ namespace Model
      * the queue before returning. If a message is available, the call returns sooner
      * than <code>WaitTimeSeconds</code>. If no messages are available and the wait
      * time expires, the call returns successfully with an empty list of messages.</p>
-     * <important> <p>To avoid HTTP errors, ensure that the HTTP response timeout for
+     *  <p>To avoid HTTP errors, ensure that the HTTP response timeout for
      * <code>ReceiveMessage</code> requests is longer than the
      * <code>WaitTimeSeconds</code> parameter. For example, with the Java SDK, you can
      * set HTTP transport settings using the <a
      * href="https://sdk.amazonaws.com/java/api/latest/software/amazon/awssdk/http/nio/netty/NettyNioAsyncHttpClient.html">
      * NettyNioAsyncHttpClient</a> for asynchronous clients, or the <a
      * href="https://sdk.amazonaws.com/java/api/latest/software/amazon/awssdk/http/apache/ApacheHttpClient.html">
-     * ApacheHttpClient</a> for synchronous clients. </p> </important>
+     * ApacheHttpClient</a> for synchronous clients. </p> 
      */
     inline bool WaitTimeSecondsHasBeenSet() const { return m_waitTimeSecondsHasBeenSet; }
 
@@ -557,14 +557,14 @@ namespace Model
      * the queue before returning. If a message is available, the call returns sooner
      * than <code>WaitTimeSeconds</code>. If no messages are available and the wait
      * time expires, the call returns successfully with an empty list of messages.</p>
-     * <important> <p>To avoid HTTP errors, ensure that the HTTP response timeout for
+     *  <p>To avoid HTTP errors, ensure that the HTTP response timeout for
      * <code>ReceiveMessage</code> requests is longer than the
      * <code>WaitTimeSeconds</code> parameter. For example, with the Java SDK, you can
      * set HTTP transport settings using the <a
      * href="https://sdk.amazonaws.com/java/api/latest/software/amazon/awssdk/http/nio/netty/NettyNioAsyncHttpClient.html">
      * NettyNioAsyncHttpClient</a> for asynchronous clients, or the <a
      * href="https://sdk.amazonaws.com/java/api/latest/software/amazon/awssdk/http/apache/ApacheHttpClient.html">
-     * ApacheHttpClient</a> for synchronous clients. </p> </important>
+     * ApacheHttpClient</a> for synchronous clients. </p> 
      */
     inline void SetWaitTimeSeconds(int value) { m_waitTimeSecondsHasBeenSet = true; m_waitTimeSeconds = value; }
 
@@ -573,14 +573,14 @@ namespace Model
      * the queue before returning. If a message is available, the call returns sooner
      * than <code>WaitTimeSeconds</code>. If no messages are available and the wait
      * time expires, the call returns successfully with an empty list of messages.</p>
-     * <important> <p>To avoid HTTP errors, ensure that the HTTP response timeout for
+     *  <p>To avoid HTTP errors, ensure that the HTTP response timeout for
      * <code>ReceiveMessage</code> requests is longer than the
      * <code>WaitTimeSeconds</code> parameter. For example, with the Java SDK, you can
      * set HTTP transport settings using the <a
      * href="https://sdk.amazonaws.com/java/api/latest/software/amazon/awssdk/http/nio/netty/NettyNioAsyncHttpClient.html">
      * NettyNioAsyncHttpClient</a> for asynchronous clients, or the <a
      * href="https://sdk.amazonaws.com/java/api/latest/software/amazon/awssdk/http/apache/ApacheHttpClient.html">
-     * ApacheHttpClient</a> for synchronous clients. </p> </important>
+     * ApacheHttpClient</a> for synchronous clients. </p> 
      */
     inline ReceiveMessageRequest& WithWaitTimeSeconds(int value) { SetWaitTimeSeconds(value); return *this;}
 
@@ -608,7 +608,7 @@ namespace Model
      * see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
      * Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.</p>
-     * <important> <p>If a caller of the <code>ReceiveMessage</code> action still
+     *  <p>If a caller of the <code>ReceiveMessage</code> action still
      * processes messages when the visibility timeout expires and messages become
      * visible, another worker consuming from the same queue can receive the same
      * messages and therefore process duplicates. Also, if a consumer whose message
@@ -616,7 +616,7 @@ namespace Model
      * processed messages, the action fails with an error.</p> <p>To mitigate this
      * effect, ensure that your application observes a safe threshold before the
      * visibility timeout expires and extend the visibility timeout as necessary.</p>
-     * </important> </li> <li> <p>While messages with a particular
+     *  </li> <li> <p>While messages with a particular
      * <code>MessageGroupId</code> are invisible, no more messages belonging to the
      * same <code>MessageGroupId</code> are returned until the visibility timeout
      * expires. You can still receive messages with another <code>MessageGroupId</code>
@@ -659,7 +659,7 @@ namespace Model
      * see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
      * Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.</p>
-     * <important> <p>If a caller of the <code>ReceiveMessage</code> action still
+     *  <p>If a caller of the <code>ReceiveMessage</code> action still
      * processes messages when the visibility timeout expires and messages become
      * visible, another worker consuming from the same queue can receive the same
      * messages and therefore process duplicates. Also, if a consumer whose message
@@ -667,7 +667,7 @@ namespace Model
      * processed messages, the action fails with an error.</p> <p>To mitigate this
      * effect, ensure that your application observes a safe threshold before the
      * visibility timeout expires and extend the visibility timeout as necessary.</p>
-     * </important> </li> <li> <p>While messages with a particular
+     *  </li> <li> <p>While messages with a particular
      * <code>MessageGroupId</code> are invisible, no more messages belonging to the
      * same <code>MessageGroupId</code> are returned until the visibility timeout
      * expires. You can still receive messages with another <code>MessageGroupId</code>
@@ -710,7 +710,7 @@ namespace Model
      * see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
      * Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.</p>
-     * <important> <p>If a caller of the <code>ReceiveMessage</code> action still
+     *  <p>If a caller of the <code>ReceiveMessage</code> action still
      * processes messages when the visibility timeout expires and messages become
      * visible, another worker consuming from the same queue can receive the same
      * messages and therefore process duplicates. Also, if a consumer whose message
@@ -718,7 +718,7 @@ namespace Model
      * processed messages, the action fails with an error.</p> <p>To mitigate this
      * effect, ensure that your application observes a safe threshold before the
      * visibility timeout expires and extend the visibility timeout as necessary.</p>
-     * </important> </li> <li> <p>While messages with a particular
+     *  </li> <li> <p>While messages with a particular
      * <code>MessageGroupId</code> are invisible, no more messages belonging to the
      * same <code>MessageGroupId</code> are returned until the visibility timeout
      * expires. You can still receive messages with another <code>MessageGroupId</code>
@@ -761,7 +761,7 @@ namespace Model
      * see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
      * Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.</p>
-     * <important> <p>If a caller of the <code>ReceiveMessage</code> action still
+     *  <p>If a caller of the <code>ReceiveMessage</code> action still
      * processes messages when the visibility timeout expires and messages become
      * visible, another worker consuming from the same queue can receive the same
      * messages and therefore process duplicates. Also, if a consumer whose message
@@ -769,7 +769,7 @@ namespace Model
      * processed messages, the action fails with an error.</p> <p>To mitigate this
      * effect, ensure that your application observes a safe threshold before the
      * visibility timeout expires and extend the visibility timeout as necessary.</p>
-     * </important> </li> <li> <p>While messages with a particular
+     *  </li> <li> <p>While messages with a particular
      * <code>MessageGroupId</code> are invisible, no more messages belonging to the
      * same <code>MessageGroupId</code> are returned until the visibility timeout
      * expires. You can still receive messages with another <code>MessageGroupId</code>
@@ -812,7 +812,7 @@ namespace Model
      * see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
      * Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.</p>
-     * <important> <p>If a caller of the <code>ReceiveMessage</code> action still
+     *  <p>If a caller of the <code>ReceiveMessage</code> action still
      * processes messages when the visibility timeout expires and messages become
      * visible, another worker consuming from the same queue can receive the same
      * messages and therefore process duplicates. Also, if a consumer whose message
@@ -820,7 +820,7 @@ namespace Model
      * processed messages, the action fails with an error.</p> <p>To mitigate this
      * effect, ensure that your application observes a safe threshold before the
      * visibility timeout expires and extend the visibility timeout as necessary.</p>
-     * </important> </li> <li> <p>While messages with a particular
+     *  </li> <li> <p>While messages with a particular
      * <code>MessageGroupId</code> are invisible, no more messages belonging to the
      * same <code>MessageGroupId</code> are returned until the visibility timeout
      * expires. You can still receive messages with another <code>MessageGroupId</code>
@@ -863,7 +863,7 @@ namespace Model
      * see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
      * Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.</p>
-     * <important> <p>If a caller of the <code>ReceiveMessage</code> action still
+     *  <p>If a caller of the <code>ReceiveMessage</code> action still
      * processes messages when the visibility timeout expires and messages become
      * visible, another worker consuming from the same queue can receive the same
      * messages and therefore process duplicates. Also, if a consumer whose message
@@ -871,7 +871,7 @@ namespace Model
      * processed messages, the action fails with an error.</p> <p>To mitigate this
      * effect, ensure that your application observes a safe threshold before the
      * visibility timeout expires and extend the visibility timeout as necessary.</p>
-     * </important> </li> <li> <p>While messages with a particular
+     *  </li> <li> <p>While messages with a particular
      * <code>MessageGroupId</code> are invisible, no more messages belonging to the
      * same <code>MessageGroupId</code> are returned until the visibility timeout
      * expires. You can still receive messages with another <code>MessageGroupId</code>
@@ -914,7 +914,7 @@ namespace Model
      * see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
      * Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.</p>
-     * <important> <p>If a caller of the <code>ReceiveMessage</code> action still
+     *  <p>If a caller of the <code>ReceiveMessage</code> action still
      * processes messages when the visibility timeout expires and messages become
      * visible, another worker consuming from the same queue can receive the same
      * messages and therefore process duplicates. Also, if a consumer whose message
@@ -922,7 +922,7 @@ namespace Model
      * processed messages, the action fails with an error.</p> <p>To mitigate this
      * effect, ensure that your application observes a safe threshold before the
      * visibility timeout expires and extend the visibility timeout as necessary.</p>
-     * </important> </li> <li> <p>While messages with a particular
+     *  </li> <li> <p>While messages with a particular
      * <code>MessageGroupId</code> are invisible, no more messages belonging to the
      * same <code>MessageGroupId</code> are returned until the visibility timeout
      * expires. You can still receive messages with another <code>MessageGroupId</code>
@@ -965,7 +965,7 @@ namespace Model
      * see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
      * Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.</p>
-     * <important> <p>If a caller of the <code>ReceiveMessage</code> action still
+     *  <p>If a caller of the <code>ReceiveMessage</code> action still
      * processes messages when the visibility timeout expires and messages become
      * visible, another worker consuming from the same queue can receive the same
      * messages and therefore process duplicates. Also, if a consumer whose message
@@ -973,7 +973,7 @@ namespace Model
      * processed messages, the action fails with an error.</p> <p>To mitigate this
      * effect, ensure that your application observes a safe threshold before the
      * visibility timeout expires and extend the visibility timeout as necessary.</p>
-     * </important> </li> <li> <p>While messages with a particular
+     *  </li> <li> <p>While messages with a particular
      * <code>MessageGroupId</code> are invisible, no more messages belonging to the
      * same <code>MessageGroupId</code> are returned until the visibility timeout
      * expires. You can still receive messages with another <code>MessageGroupId</code>

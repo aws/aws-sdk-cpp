@@ -1499,18 +1499,18 @@ namespace Model
         virtual void DeleteClusterAsync(const Model::DeleteClusterRequest& request, const DeleteClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes a specified Amazon Redshift parameter group.</p> <note> <p>You cannot
+         * <p>Deletes a specified Amazon Redshift parameter group.</p>  <p>You cannot
          * delete a parameter group if it is associated with a cluster.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteClusterParameterGroup">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteClusterParameterGroupOutcome DeleteClusterParameterGroup(const Model::DeleteClusterParameterGroupRequest& request) const;
 
         /**
-         * <p>Deletes a specified Amazon Redshift parameter group.</p> <note> <p>You cannot
+         * <p>Deletes a specified Amazon Redshift parameter group.</p>  <p>You cannot
          * delete a parameter group if it is associated with a cluster.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteClusterParameterGroup">AWS
          * API Reference</a></p>
          *
@@ -1519,9 +1519,9 @@ namespace Model
         virtual Model::DeleteClusterParameterGroupOutcomeCallable DeleteClusterParameterGroupCallable(const Model::DeleteClusterParameterGroupRequest& request) const;
 
         /**
-         * <p>Deletes a specified Amazon Redshift parameter group.</p> <note> <p>You cannot
+         * <p>Deletes a specified Amazon Redshift parameter group.</p>  <p>You cannot
          * delete a parameter group if it is associated with a cluster.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteClusterParameterGroup">AWS
          * API Reference</a></p>
          *
@@ -1530,9 +1530,9 @@ namespace Model
         virtual void DeleteClusterParameterGroupAsync(const Model::DeleteClusterParameterGroupRequest& request, const DeleteClusterParameterGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes an Amazon Redshift security group.</p> <note> <p>You cannot delete a
+         * <p>Deletes an Amazon Redshift security group.</p>  <p>You cannot delete a
          * security group that is associated with any clusters. You cannot delete the
-         * default security group.</p> </note> <p> For information about managing security
+         * default security group.</p>  <p> For information about managing security
          * groups, go to <a
          * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-security-groups.html">Amazon
          * Redshift Cluster Security Groups</a> in the <i>Amazon Redshift Cluster
@@ -1543,9 +1543,9 @@ namespace Model
         virtual Model::DeleteClusterSecurityGroupOutcome DeleteClusterSecurityGroup(const Model::DeleteClusterSecurityGroupRequest& request) const;
 
         /**
-         * <p>Deletes an Amazon Redshift security group.</p> <note> <p>You cannot delete a
+         * <p>Deletes an Amazon Redshift security group.</p>  <p>You cannot delete a
          * security group that is associated with any clusters. You cannot delete the
-         * default security group.</p> </note> <p> For information about managing security
+         * default security group.</p>  <p> For information about managing security
          * groups, go to <a
          * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-security-groups.html">Amazon
          * Redshift Cluster Security Groups</a> in the <i>Amazon Redshift Cluster
@@ -1558,9 +1558,9 @@ namespace Model
         virtual Model::DeleteClusterSecurityGroupOutcomeCallable DeleteClusterSecurityGroupCallable(const Model::DeleteClusterSecurityGroupRequest& request) const;
 
         /**
-         * <p>Deletes an Amazon Redshift security group.</p> <note> <p>You cannot delete a
+         * <p>Deletes an Amazon Redshift security group.</p>  <p>You cannot delete a
          * security group that is associated with any clusters. You cannot delete the
-         * default security group.</p> </note> <p> For information about managing security
+         * default security group.</p>  <p> For information about managing security
          * groups, go to <a
          * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-security-groups.html">Amazon
          * Redshift Cluster Security Groups</a> in the <i>Amazon Redshift Cluster

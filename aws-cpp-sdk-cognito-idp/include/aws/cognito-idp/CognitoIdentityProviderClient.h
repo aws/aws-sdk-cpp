@@ -673,9 +673,9 @@ namespace Model
         /**
          * <p>Creates a new user in the specified user pool.</p> <p>If
          * <code>MessageAction</code> is not set, the default is to send a welcome message
-         * via email or phone (SMS).</p> <note> <p>This message is based on a template that
+         * via email or phone (SMS).</p>  <p>This message is based on a template that
          * you configured in your call to or . This template includes your custom sign-up
-         * instructions and placeholders for user name and temporary password.</p> </note>
+         * instructions and placeholders for user name and temporary password.</p> 
          * <p>Alternatively, you can call AdminCreateUser with “SUPPRESS” for the
          * <code>MessageAction</code> parameter, and Amazon Cognito will not send any
          * email. </p> <p>In either case, the user will be in the
@@ -690,9 +690,9 @@ namespace Model
         /**
          * <p>Creates a new user in the specified user pool.</p> <p>If
          * <code>MessageAction</code> is not set, the default is to send a welcome message
-         * via email or phone (SMS).</p> <note> <p>This message is based on a template that
+         * via email or phone (SMS).</p>  <p>This message is based on a template that
          * you configured in your call to or . This template includes your custom sign-up
-         * instructions and placeholders for user name and temporary password.</p> </note>
+         * instructions and placeholders for user name and temporary password.</p> 
          * <p>Alternatively, you can call AdminCreateUser with “SUPPRESS” for the
          * <code>MessageAction</code> parameter, and Amazon Cognito will not send any
          * email. </p> <p>In either case, the user will be in the
@@ -709,9 +709,9 @@ namespace Model
         /**
          * <p>Creates a new user in the specified user pool.</p> <p>If
          * <code>MessageAction</code> is not set, the default is to send a welcome message
-         * via email or phone (SMS).</p> <note> <p>This message is based on a template that
+         * via email or phone (SMS).</p>  <p>This message is based on a template that
          * you configured in your call to or . This template includes your custom sign-up
-         * instructions and placeholders for user name and temporary password.</p> </note>
+         * instructions and placeholders for user name and temporary password.</p> 
          * <p>Alternatively, you can call AdminCreateUser with “SUPPRESS” for the
          * <code>MessageAction</code> parameter, and Amazon Cognito will not send any
          * email. </p> <p>In either case, the user will be in the
@@ -1068,10 +1068,10 @@ namespace Model
          * </p> <p> For example, if there is an existing user with a username and password,
          * this API links that user to a federated user identity, so that when the
          * federated user identity is used, the user signs in as the existing user account.
-         * </p> <important> <p>Because this API allows a user with an external federated
+         * </p>  <p>Because this API allows a user with an external federated
          * identity to sign in as an existing user in the user pool, it is critical that it
          * only be used with external identity providers and provider attributes that have
-         * been trusted by the application owner.</p> </important> <p>See also .</p>
+         * been trusted by the application owner.</p>  <p>See also .</p>
          * <p>This action is enabled only for admin access and requires developer
          * credentials.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminLinkProviderForUser">AWS
@@ -1089,10 +1089,10 @@ namespace Model
          * </p> <p> For example, if there is an existing user with a username and password,
          * this API links that user to a federated user identity, so that when the
          * federated user identity is used, the user signs in as the existing user account.
-         * </p> <important> <p>Because this API allows a user with an external federated
+         * </p>  <p>Because this API allows a user with an external federated
          * identity to sign in as an existing user in the user pool, it is critical that it
          * only be used with external identity providers and provider attributes that have
-         * been trusted by the application owner.</p> </important> <p>See also .</p>
+         * been trusted by the application owner.</p>  <p>See also .</p>
          * <p>This action is enabled only for admin access and requires developer
          * credentials.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminLinkProviderForUser">AWS
@@ -1112,10 +1112,10 @@ namespace Model
          * </p> <p> For example, if there is an existing user with a username and password,
          * this API links that user to a federated user identity, so that when the
          * federated user identity is used, the user signs in as the existing user account.
-         * </p> <important> <p>Because this API allows a user with an external federated
+         * </p>  <p>Because this API allows a user with an external federated
          * identity to sign in as an existing user in the user pool, it is critical that it
          * only be used with external identity providers and provider attributes that have
-         * been trusted by the application owner.</p> </important> <p>See also .</p>
+         * been trusted by the application owner.</p>  <p>See also .</p>
          * <p>This action is enabled only for admin access and requires developer
          * credentials.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminLinkProviderForUser">AWS
@@ -3071,9 +3071,9 @@ namespace Model
          * default configuration will be used for every client that has no UI customization
          * set previously. If you specify UI customization settings for a particular
          * client, it will no longer fall back to the <code>ALL</code> configuration. </p>
-         * <note> <p>To use this API, your user pool must have a domain associated with it.
+         *  <p>To use this API, your user pool must have a domain associated with it.
          * Otherwise, there is no place to host the app's pages, and the service will throw
-         * an error.</p> </note><p><h3>See Also:</h3>   <a
+         * an error.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/SetUICustomization">AWS
          * API Reference</a></p>
          */
@@ -3087,9 +3087,9 @@ namespace Model
          * default configuration will be used for every client that has no UI customization
          * set previously. If you specify UI customization settings for a particular
          * client, it will no longer fall back to the <code>ALL</code> configuration. </p>
-         * <note> <p>To use this API, your user pool must have a domain associated with it.
+         *  <p>To use this API, your user pool must have a domain associated with it.
          * Otherwise, there is no place to host the app's pages, and the service will throw
-         * an error.</p> </note><p><h3>See Also:</h3>   <a
+         * an error.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/SetUICustomization">AWS
          * API Reference</a></p>
          *
@@ -3105,9 +3105,9 @@ namespace Model
          * default configuration will be used for every client that has no UI customization
          * set previously. If you specify UI customization settings for a particular
          * client, it will no longer fall back to the <code>ALL</code> configuration. </p>
-         * <note> <p>To use this API, your user pool must have a domain associated with it.
+         *  <p>To use this API, your user pool must have a domain associated with it.
          * Otherwise, there is no place to host the app's pages, and the service will throw
-         * an error.</p> </note><p><h3>See Also:</h3>   <a
+         * an error.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/SetUICustomization">AWS
          * API Reference</a></p>
          *
@@ -3448,9 +3448,9 @@ namespace Model
 
         /**
          * <p>Updates the specified group with the specified attributes.</p> <p>Calling
-         * this action requires developer credentials.</p> <important> <p>If you don't
+         * this action requires developer credentials.</p>  <p>If you don't
          * provide a value for an attribute, it will be set to the default value.</p>
-         * </important><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UpdateGroup">AWS
          * API Reference</a></p>
          */
@@ -3458,9 +3458,9 @@ namespace Model
 
         /**
          * <p>Updates the specified group with the specified attributes.</p> <p>Calling
-         * this action requires developer credentials.</p> <important> <p>If you don't
+         * this action requires developer credentials.</p>  <p>If you don't
          * provide a value for an attribute, it will be set to the default value.</p>
-         * </important><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UpdateGroup">AWS
          * API Reference</a></p>
          *
@@ -3470,9 +3470,9 @@ namespace Model
 
         /**
          * <p>Updates the specified group with the specified attributes.</p> <p>Calling
-         * this action requires developer credentials.</p> <important> <p>If you don't
+         * this action requires developer credentials.</p>  <p>If you don't
          * provide a value for an attribute, it will be set to the default value.</p>
-         * </important><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UpdateGroup">AWS
          * API Reference</a></p>
          *
@@ -3510,8 +3510,8 @@ namespace Model
 
         /**
          * <p>Updates the name and scopes of resource server. All other fields are
-         * read-only.</p> <important> <p>If you don't provide a value for an attribute, it
-         * will be set to the default value.</p> </important><p><h3>See Also:</h3>   <a
+         * read-only.</p>  <p>If you don't provide a value for an attribute, it
+         * will be set to the default value.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UpdateResourceServer">AWS
          * API Reference</a></p>
          */
@@ -3519,8 +3519,8 @@ namespace Model
 
         /**
          * <p>Updates the name and scopes of resource server. All other fields are
-         * read-only.</p> <important> <p>If you don't provide a value for an attribute, it
-         * will be set to the default value.</p> </important><p><h3>See Also:</h3>   <a
+         * read-only.</p>  <p>If you don't provide a value for an attribute, it
+         * will be set to the default value.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UpdateResourceServer">AWS
          * API Reference</a></p>
          *
@@ -3530,8 +3530,8 @@ namespace Model
 
         /**
          * <p>Updates the name and scopes of resource server. All other fields are
-         * read-only.</p> <important> <p>If you don't provide a value for an attribute, it
-         * will be set to the default value.</p> </important><p><h3>See Also:</h3>   <a
+         * read-only.</p>  <p>If you don't provide a value for an attribute, it
+         * will be set to the default value.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UpdateResourceServer">AWS
          * API Reference</a></p>
          *
@@ -3569,9 +3569,9 @@ namespace Model
 
         /**
          * <p>Updates the specified user pool with the specified attributes. You can get a
-         * list of the current user pool settings with .</p> <important> <p>If you don't
+         * list of the current user pool settings with .</p>  <p>If you don't
          * provide a value for an attribute, it will be set to the default value.</p>
-         * </important><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UpdateUserPool">AWS
          * API Reference</a></p>
          */
@@ -3579,9 +3579,9 @@ namespace Model
 
         /**
          * <p>Updates the specified user pool with the specified attributes. You can get a
-         * list of the current user pool settings with .</p> <important> <p>If you don't
+         * list of the current user pool settings with .</p>  <p>If you don't
          * provide a value for an attribute, it will be set to the default value.</p>
-         * </important><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UpdateUserPool">AWS
          * API Reference</a></p>
          *
@@ -3591,9 +3591,9 @@ namespace Model
 
         /**
          * <p>Updates the specified user pool with the specified attributes. You can get a
-         * list of the current user pool settings with .</p> <important> <p>If you don't
+         * list of the current user pool settings with .</p>  <p>If you don't
          * provide a value for an attribute, it will be set to the default value.</p>
-         * </important><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UpdateUserPool">AWS
          * API Reference</a></p>
          *
@@ -3604,8 +3604,8 @@ namespace Model
         /**
          * <p>Updates the specified user pool app client with the specified attributes. You
          * can get a list of the current user pool app client settings with .</p>
-         * <important> <p>If you don't provide a value for an attribute, it will be set to
-         * the default value.</p> </important><p><h3>See Also:</h3>   <a
+         *  <p>If you don't provide a value for an attribute, it will be set to
+         * the default value.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UpdateUserPoolClient">AWS
          * API Reference</a></p>
          */
@@ -3614,8 +3614,8 @@ namespace Model
         /**
          * <p>Updates the specified user pool app client with the specified attributes. You
          * can get a list of the current user pool app client settings with .</p>
-         * <important> <p>If you don't provide a value for an attribute, it will be set to
-         * the default value.</p> </important><p><h3>See Also:</h3>   <a
+         *  <p>If you don't provide a value for an attribute, it will be set to
+         * the default value.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UpdateUserPoolClient">AWS
          * API Reference</a></p>
          *
@@ -3626,8 +3626,8 @@ namespace Model
         /**
          * <p>Updates the specified user pool app client with the specified attributes. You
          * can get a list of the current user pool app client settings with .</p>
-         * <important> <p>If you don't provide a value for an attribute, it will be set to
-         * the default value.</p> </important><p><h3>See Also:</h3>   <a
+         *  <p>If you don't provide a value for an attribute, it will be set to
+         * the default value.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UpdateUserPoolClient">AWS
          * API Reference</a></p>
          *

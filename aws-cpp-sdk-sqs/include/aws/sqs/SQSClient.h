@@ -225,7 +225,7 @@ namespace Model
          * permissions, see <a
          * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-writing-an-sqs-policy.html#write-messages-to-shared-queue">Allow
          * Developers to Write Messages to a Shared Queue</a> in the <i>Amazon Simple Queue
-         * Service Developer Guide</i>.</p> <note> <ul> <li> <p> <code>AddPermission</code>
+         * Service Developer Guide</i>.</p>  <ul> <li> <p> <code>AddPermission</code>
          * generates a policy for you. You can use <code> <a>SetQueueAttributes</a> </code>
          * to upload your policy. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-creating-custom-policies.html">Using
@@ -235,15 +235,15 @@ namespace Model
          * change queue permissions, you must deny permission to the
          * <code>AddPermission</code>, <code>RemovePermission</code>, and
          * <code>SetQueueAttributes</code> actions in your IAM policy.</p> </li> </ul>
-         * </note> <p>Some actions take lists of parameters. These lists are specified
+         *  <p>Some actions take lists of parameters. These lists are specified
          * using the <code>param.n</code> notation. Values of <code>n</code> are integers
          * starting from 1. For example, a parameter list with two elements looks like
          * this:</p> <p> <code>&amp;AttributeName.1=first</code> </p> <p>
-         * <code>&amp;AttributeName.2=second</code> </p> <note> <p>Cross-account
+         * <code>&amp;AttributeName.2=second</code> </p>  <p>Cross-account
          * permissions don't apply to this action. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
          * Cross-Account Permissions to a Role and a User Name</a> in the <i>Amazon Simple
-         * Queue Service Developer Guide</i>.</p> </note><p><h3>See Also:</h3>   <a
+         * Queue Service Developer Guide</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/AddPermission">AWS
          * API Reference</a></p>
          */
@@ -258,7 +258,7 @@ namespace Model
          * permissions, see <a
          * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-writing-an-sqs-policy.html#write-messages-to-shared-queue">Allow
          * Developers to Write Messages to a Shared Queue</a> in the <i>Amazon Simple Queue
-         * Service Developer Guide</i>.</p> <note> <ul> <li> <p> <code>AddPermission</code>
+         * Service Developer Guide</i>.</p>  <ul> <li> <p> <code>AddPermission</code>
          * generates a policy for you. You can use <code> <a>SetQueueAttributes</a> </code>
          * to upload your policy. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-creating-custom-policies.html">Using
@@ -268,15 +268,15 @@ namespace Model
          * change queue permissions, you must deny permission to the
          * <code>AddPermission</code>, <code>RemovePermission</code>, and
          * <code>SetQueueAttributes</code> actions in your IAM policy.</p> </li> </ul>
-         * </note> <p>Some actions take lists of parameters. These lists are specified
+         *  <p>Some actions take lists of parameters. These lists are specified
          * using the <code>param.n</code> notation. Values of <code>n</code> are integers
          * starting from 1. For example, a parameter list with two elements looks like
          * this:</p> <p> <code>&amp;AttributeName.1=first</code> </p> <p>
-         * <code>&amp;AttributeName.2=second</code> </p> <note> <p>Cross-account
+         * <code>&amp;AttributeName.2=second</code> </p>  <p>Cross-account
          * permissions don't apply to this action. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
          * Cross-Account Permissions to a Role and a User Name</a> in the <i>Amazon Simple
-         * Queue Service Developer Guide</i>.</p> </note><p><h3>See Also:</h3>   <a
+         * Queue Service Developer Guide</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/AddPermission">AWS
          * API Reference</a></p>
          *
@@ -293,7 +293,7 @@ namespace Model
          * permissions, see <a
          * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-writing-an-sqs-policy.html#write-messages-to-shared-queue">Allow
          * Developers to Write Messages to a Shared Queue</a> in the <i>Amazon Simple Queue
-         * Service Developer Guide</i>.</p> <note> <ul> <li> <p> <code>AddPermission</code>
+         * Service Developer Guide</i>.</p>  <ul> <li> <p> <code>AddPermission</code>
          * generates a policy for you. You can use <code> <a>SetQueueAttributes</a> </code>
          * to upload your policy. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-creating-custom-policies.html">Using
@@ -303,15 +303,15 @@ namespace Model
          * change queue permissions, you must deny permission to the
          * <code>AddPermission</code>, <code>RemovePermission</code>, and
          * <code>SetQueueAttributes</code> actions in your IAM policy.</p> </li> </ul>
-         * </note> <p>Some actions take lists of parameters. These lists are specified
+         *  <p>Some actions take lists of parameters. These lists are specified
          * using the <code>param.n</code> notation. Values of <code>n</code> are integers
          * starting from 1. For example, a parameter list with two elements looks like
          * this:</p> <p> <code>&amp;AttributeName.1=first</code> </p> <p>
-         * <code>&amp;AttributeName.2=second</code> </p> <note> <p>Cross-account
+         * <code>&amp;AttributeName.2=second</code> </p>  <p>Cross-account
          * permissions don't apply to this action. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
          * Cross-Account Permissions to a Role and a User Name</a> in the <i>Amazon Simple
-         * Queue Service Developer Guide</i>.</p> </note><p><h3>See Also:</h3>   <a
+         * Queue Service Developer Guide</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/AddPermission">AWS
          * API Reference</a></p>
          *
@@ -351,7 +351,7 @@ namespace Model
          * a support request</a>.</p> <p>For FIFO queues, there can be a maximum of 20,000
          * inflight messages (received from a queue by a consumer, but not yet deleted from
          * the queue). If you reach this limit, Amazon SQS returns no error messages.</p>
-         * <important> <p>If you attempt to set the <code>VisibilityTimeout</code> to a
+         *  <p>If you attempt to set the <code>VisibilityTimeout</code> to a
          * value greater than the maximum time left, Amazon SQS returns an error. Amazon
          * SQS doesn't automatically recalculate and increase the timeout to the maximum
          * remaining time.</p> <p>Unlike with a queue, when you change the visibility
@@ -360,7 +360,7 @@ namespace Model
          * is received, the visibility timeout for the message reverts to the original
          * timeout value (not to the value you set using the
          * <code>ChangeMessageVisibility</code> action) the next time the message is
-         * received.</p> </important><p><h3>See Also:</h3>   <a
+         * received.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ChangeMessageVisibility">AWS
          * API Reference</a></p>
          */
@@ -398,7 +398,7 @@ namespace Model
          * a support request</a>.</p> <p>For FIFO queues, there can be a maximum of 20,000
          * inflight messages (received from a queue by a consumer, but not yet deleted from
          * the queue). If you reach this limit, Amazon SQS returns no error messages.</p>
-         * <important> <p>If you attempt to set the <code>VisibilityTimeout</code> to a
+         *  <p>If you attempt to set the <code>VisibilityTimeout</code> to a
          * value greater than the maximum time left, Amazon SQS returns an error. Amazon
          * SQS doesn't automatically recalculate and increase the timeout to the maximum
          * remaining time.</p> <p>Unlike with a queue, when you change the visibility
@@ -407,7 +407,7 @@ namespace Model
          * is received, the visibility timeout for the message reverts to the original
          * timeout value (not to the value you set using the
          * <code>ChangeMessageVisibility</code> action) the next time the message is
-         * received.</p> </important><p><h3>See Also:</h3>   <a
+         * received.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ChangeMessageVisibility">AWS
          * API Reference</a></p>
          *
@@ -447,7 +447,7 @@ namespace Model
          * a support request</a>.</p> <p>For FIFO queues, there can be a maximum of 20,000
          * inflight messages (received from a queue by a consumer, but not yet deleted from
          * the queue). If you reach this limit, Amazon SQS returns no error messages.</p>
-         * <important> <p>If you attempt to set the <code>VisibilityTimeout</code> to a
+         *  <p>If you attempt to set the <code>VisibilityTimeout</code> to a
          * value greater than the maximum time left, Amazon SQS returns an error. Amazon
          * SQS doesn't automatically recalculate and increase the timeout to the maximum
          * remaining time.</p> <p>Unlike with a queue, when you change the visibility
@@ -456,7 +456,7 @@ namespace Model
          * is received, the visibility timeout for the message reverts to the original
          * timeout value (not to the value you set using the
          * <code>ChangeMessageVisibility</code> action) the next time the message is
-         * received.</p> </important><p><h3>See Also:</h3>   <a
+         * received.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ChangeMessageVisibility">AWS
          * API Reference</a></p>
          *
@@ -469,10 +469,10 @@ namespace Model
          * of <code> <a>ChangeMessageVisibility</a>.</code> The result of the action on
          * each message is reported individually in the response. You can send up to 10
          * <code> <a>ChangeMessageVisibility</a> </code> requests with each
-         * <code>ChangeMessageVisibilityBatch</code> action.</p> <important> <p>Because the
+         * <code>ChangeMessageVisibilityBatch</code> action.</p>  <p>Because the
          * batch request can result in a combination of successful and unsuccessful
          * actions, you should check for batch errors even when the call returns an HTTP
-         * status code of <code>200</code>.</p> </important> <p>Some actions take lists of
+         * status code of <code>200</code>.</p>  <p>Some actions take lists of
          * parameters. These lists are specified using the <code>param.n</code> notation.
          * Values of <code>n</code> are integers starting from 1. For example, a parameter
          * list with two elements looks like this:</p> <p>
@@ -488,10 +488,10 @@ namespace Model
          * of <code> <a>ChangeMessageVisibility</a>.</code> The result of the action on
          * each message is reported individually in the response. You can send up to 10
          * <code> <a>ChangeMessageVisibility</a> </code> requests with each
-         * <code>ChangeMessageVisibilityBatch</code> action.</p> <important> <p>Because the
+         * <code>ChangeMessageVisibilityBatch</code> action.</p>  <p>Because the
          * batch request can result in a combination of successful and unsuccessful
          * actions, you should check for batch errors even when the call returns an HTTP
-         * status code of <code>200</code>.</p> </important> <p>Some actions take lists of
+         * status code of <code>200</code>.</p>  <p>Some actions take lists of
          * parameters. These lists are specified using the <code>param.n</code> notation.
          * Values of <code>n</code> are integers starting from 1. For example, a parameter
          * list with two elements looks like this:</p> <p>
@@ -509,10 +509,10 @@ namespace Model
          * of <code> <a>ChangeMessageVisibility</a>.</code> The result of the action on
          * each message is reported individually in the response. You can send up to 10
          * <code> <a>ChangeMessageVisibility</a> </code> requests with each
-         * <code>ChangeMessageVisibilityBatch</code> action.</p> <important> <p>Because the
+         * <code>ChangeMessageVisibilityBatch</code> action.</p>  <p>Because the
          * batch request can result in a combination of successful and unsuccessful
          * actions, you should check for batch errors even when the call returns an HTTP
-         * status code of <code>200</code>.</p> </important> <p>Some actions take lists of
+         * status code of <code>200</code>.</p>  <p>Some actions take lists of
          * parameters. These lists are specified using the <code>param.n</code> notation.
          * Values of <code>n</code> are integers starting from 1. For example, a parameter
          * list with two elements looks like this:</p> <p>
@@ -529,21 +529,21 @@ namespace Model
          * <p>Creates a new standard or FIFO queue. You can pass one or more attributes in
          * the request. Keep the following in mind:</p> <ul> <li> <p>If you don't specify
          * the <code>FifoQueue</code> attribute, Amazon SQS creates a standard queue.</p>
-         * <note> <p>You can't change the queue type after you create it and you can't
+         *  <p>You can't change the queue type after you create it and you can't
          * convert an existing standard queue into a FIFO queue. You must either create a
          * new FIFO queue for your application or delete your existing standard queue and
          * recreate it as a FIFO queue. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-moving">Moving
          * From a Standard Queue to a FIFO Queue</a> in the <i>Amazon Simple Queue Service
-         * Developer Guide</i>. </p> </note> </li> <li> <p>If you don't provide a value for
+         * Developer Guide</i>. </p>  </li> <li> <p>If you don't provide a value for
          * an attribute, the queue is created with the default value for the attribute.</p>
          * </li> <li> <p>If you delete a queue, you must wait at least 60 seconds before
          * creating a queue with the same name.</p> </li> </ul> <p>To successfully create a
          * new queue, you must provide a queue name that adheres to the <a
          * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/limits-queues.html">limits
-         * related to queues</a> and is unique within the scope of your queues.</p> <note>
+         * related to queues</a> and is unique within the scope of your queues.</p> 
          * <p>After you create a queue, you must wait at least one second after the queue
-         * is created to be able to use the queue.</p> </note> <p>To get the queue URL, use
+         * is created to be able to use the queue.</p>  <p>To get the queue URL, use
          * the <code> <a>GetQueueUrl</a> </code> action. <code> <a>GetQueueUrl</a> </code>
          * requires only the <code>QueueName</code> parameter. be aware of existing queue
          * names:</p> <ul> <li> <p>If you provide the name of an existing queue along with
@@ -555,11 +555,11 @@ namespace Model
          * <code>param.n</code> notation. Values of <code>n</code> are integers starting
          * from 1. For example, a parameter list with two elements looks like this:</p> <p>
          * <code>&amp;AttributeName.1=first</code> </p> <p>
-         * <code>&amp;AttributeName.2=second</code> </p> <note> <p>Cross-account
+         * <code>&amp;AttributeName.2=second</code> </p>  <p>Cross-account
          * permissions don't apply to this action. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
          * Cross-Account Permissions to a Role and a User Name</a> in the <i>Amazon Simple
-         * Queue Service Developer Guide</i>.</p> </note><p><h3>See Also:</h3>   <a
+         * Queue Service Developer Guide</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/CreateQueue">AWS API
          * Reference</a></p>
          */
@@ -569,21 +569,21 @@ namespace Model
          * <p>Creates a new standard or FIFO queue. You can pass one or more attributes in
          * the request. Keep the following in mind:</p> <ul> <li> <p>If you don't specify
          * the <code>FifoQueue</code> attribute, Amazon SQS creates a standard queue.</p>
-         * <note> <p>You can't change the queue type after you create it and you can't
+         *  <p>You can't change the queue type after you create it and you can't
          * convert an existing standard queue into a FIFO queue. You must either create a
          * new FIFO queue for your application or delete your existing standard queue and
          * recreate it as a FIFO queue. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-moving">Moving
          * From a Standard Queue to a FIFO Queue</a> in the <i>Amazon Simple Queue Service
-         * Developer Guide</i>. </p> </note> </li> <li> <p>If you don't provide a value for
+         * Developer Guide</i>. </p>  </li> <li> <p>If you don't provide a value for
          * an attribute, the queue is created with the default value for the attribute.</p>
          * </li> <li> <p>If you delete a queue, you must wait at least 60 seconds before
          * creating a queue with the same name.</p> </li> </ul> <p>To successfully create a
          * new queue, you must provide a queue name that adheres to the <a
          * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/limits-queues.html">limits
-         * related to queues</a> and is unique within the scope of your queues.</p> <note>
+         * related to queues</a> and is unique within the scope of your queues.</p> 
          * <p>After you create a queue, you must wait at least one second after the queue
-         * is created to be able to use the queue.</p> </note> <p>To get the queue URL, use
+         * is created to be able to use the queue.</p>  <p>To get the queue URL, use
          * the <code> <a>GetQueueUrl</a> </code> action. <code> <a>GetQueueUrl</a> </code>
          * requires only the <code>QueueName</code> parameter. be aware of existing queue
          * names:</p> <ul> <li> <p>If you provide the name of an existing queue along with
@@ -595,11 +595,11 @@ namespace Model
          * <code>param.n</code> notation. Values of <code>n</code> are integers starting
          * from 1. For example, a parameter list with two elements looks like this:</p> <p>
          * <code>&amp;AttributeName.1=first</code> </p> <p>
-         * <code>&amp;AttributeName.2=second</code> </p> <note> <p>Cross-account
+         * <code>&amp;AttributeName.2=second</code> </p>  <p>Cross-account
          * permissions don't apply to this action. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
          * Cross-Account Permissions to a Role and a User Name</a> in the <i>Amazon Simple
-         * Queue Service Developer Guide</i>.</p> </note><p><h3>See Also:</h3>   <a
+         * Queue Service Developer Guide</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/CreateQueue">AWS API
          * Reference</a></p>
          *
@@ -611,21 +611,21 @@ namespace Model
          * <p>Creates a new standard or FIFO queue. You can pass one or more attributes in
          * the request. Keep the following in mind:</p> <ul> <li> <p>If you don't specify
          * the <code>FifoQueue</code> attribute, Amazon SQS creates a standard queue.</p>
-         * <note> <p>You can't change the queue type after you create it and you can't
+         *  <p>You can't change the queue type after you create it and you can't
          * convert an existing standard queue into a FIFO queue. You must either create a
          * new FIFO queue for your application or delete your existing standard queue and
          * recreate it as a FIFO queue. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-moving">Moving
          * From a Standard Queue to a FIFO Queue</a> in the <i>Amazon Simple Queue Service
-         * Developer Guide</i>. </p> </note> </li> <li> <p>If you don't provide a value for
+         * Developer Guide</i>. </p>  </li> <li> <p>If you don't provide a value for
          * an attribute, the queue is created with the default value for the attribute.</p>
          * </li> <li> <p>If you delete a queue, you must wait at least 60 seconds before
          * creating a queue with the same name.</p> </li> </ul> <p>To successfully create a
          * new queue, you must provide a queue name that adheres to the <a
          * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/limits-queues.html">limits
-         * related to queues</a> and is unique within the scope of your queues.</p> <note>
+         * related to queues</a> and is unique within the scope of your queues.</p> 
          * <p>After you create a queue, you must wait at least one second after the queue
-         * is created to be able to use the queue.</p> </note> <p>To get the queue URL, use
+         * is created to be able to use the queue.</p>  <p>To get the queue URL, use
          * the <code> <a>GetQueueUrl</a> </code> action. <code> <a>GetQueueUrl</a> </code>
          * requires only the <code>QueueName</code> parameter. be aware of existing queue
          * names:</p> <ul> <li> <p>If you provide the name of an existing queue along with
@@ -637,11 +637,11 @@ namespace Model
          * <code>param.n</code> notation. Values of <code>n</code> are integers starting
          * from 1. For example, a parameter list with two elements looks like this:</p> <p>
          * <code>&amp;AttributeName.1=first</code> </p> <p>
-         * <code>&amp;AttributeName.2=second</code> </p> <note> <p>Cross-account
+         * <code>&amp;AttributeName.2=second</code> </p>  <p>Cross-account
          * permissions don't apply to this action. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
          * Cross-Account Permissions to a Role and a User Name</a> in the <i>Amazon Simple
-         * Queue Service Developer Guide</i>.</p> </note><p><h3>See Also:</h3>   <a
+         * Queue Service Developer Guide</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/CreateQueue">AWS API
          * Reference</a></p>
          *
@@ -656,7 +656,7 @@ namespace Model
          * can delete a message from a queue even if a visibility timeout setting causes
          * the message to be locked by another consumer. Amazon SQS automatically deletes
          * messages left in a queue longer than the retention period configured for the
-         * queue. </p> <note> <p>The <code>ReceiptHandle</code> is associated with a
+         * queue. </p>  <p>The <code>ReceiptHandle</code> is associated with a
          * <i>specific instance</i> of receiving a message. If you receive a message more
          * than once, the <code>ReceiptHandle</code> is different each time you receive a
          * message. When you use the <code>DeleteMessage</code> action, you must provide
@@ -668,7 +668,7 @@ namespace Model
          * the message. The copy remains on the server and might be returned to you during
          * a subsequent receive request. You should ensure that your application is
          * idempotent, so that receiving a message more than once does not cause
-         * issues.</p> </note><p><h3>See Also:</h3>   <a
+         * issues.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/DeleteMessage">AWS
          * API Reference</a></p>
          */
@@ -681,7 +681,7 @@ namespace Model
          * can delete a message from a queue even if a visibility timeout setting causes
          * the message to be locked by another consumer. Amazon SQS automatically deletes
          * messages left in a queue longer than the retention period configured for the
-         * queue. </p> <note> <p>The <code>ReceiptHandle</code> is associated with a
+         * queue. </p>  <p>The <code>ReceiptHandle</code> is associated with a
          * <i>specific instance</i> of receiving a message. If you receive a message more
          * than once, the <code>ReceiptHandle</code> is different each time you receive a
          * message. When you use the <code>DeleteMessage</code> action, you must provide
@@ -693,7 +693,7 @@ namespace Model
          * the message. The copy remains on the server and might be returned to you during
          * a subsequent receive request. You should ensure that your application is
          * idempotent, so that receiving a message more than once does not cause
-         * issues.</p> </note><p><h3>See Also:</h3>   <a
+         * issues.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/DeleteMessage">AWS
          * API Reference</a></p>
          *
@@ -708,7 +708,7 @@ namespace Model
          * can delete a message from a queue even if a visibility timeout setting causes
          * the message to be locked by another consumer. Amazon SQS automatically deletes
          * messages left in a queue longer than the retention period configured for the
-         * queue. </p> <note> <p>The <code>ReceiptHandle</code> is associated with a
+         * queue. </p>  <p>The <code>ReceiptHandle</code> is associated with a
          * <i>specific instance</i> of receiving a message. If you receive a message more
          * than once, the <code>ReceiptHandle</code> is different each time you receive a
          * message. When you use the <code>DeleteMessage</code> action, you must provide
@@ -720,7 +720,7 @@ namespace Model
          * the message. The copy remains on the server and might be returned to you during
          * a subsequent receive request. You should ensure that your application is
          * idempotent, so that receiving a message more than once does not cause
-         * issues.</p> </note><p><h3>See Also:</h3>   <a
+         * issues.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/DeleteMessage">AWS
          * API Reference</a></p>
          *
@@ -731,10 +731,10 @@ namespace Model
         /**
          * <p>Deletes up to ten messages from the specified queue. This is a batch version
          * of <code> <a>DeleteMessage</a>.</code> The result of the action on each message
-         * is reported individually in the response.</p> <important> <p>Because the batch
+         * is reported individually in the response.</p>  <p>Because the batch
          * request can result in a combination of successful and unsuccessful actions, you
          * should check for batch errors even when the call returns an HTTP status code of
-         * <code>200</code>.</p> </important> <p>Some actions take lists of parameters.
+         * <code>200</code>.</p>  <p>Some actions take lists of parameters.
          * These lists are specified using the <code>param.n</code> notation. Values of
          * <code>n</code> are integers starting from 1. For example, a parameter list with
          * two elements looks like this:</p> <p> <code>&amp;AttributeName.1=first</code>
@@ -747,10 +747,10 @@ namespace Model
         /**
          * <p>Deletes up to ten messages from the specified queue. This is a batch version
          * of <code> <a>DeleteMessage</a>.</code> The result of the action on each message
-         * is reported individually in the response.</p> <important> <p>Because the batch
+         * is reported individually in the response.</p>  <p>Because the batch
          * request can result in a combination of successful and unsuccessful actions, you
          * should check for batch errors even when the call returns an HTTP status code of
-         * <code>200</code>.</p> </important> <p>Some actions take lists of parameters.
+         * <code>200</code>.</p>  <p>Some actions take lists of parameters.
          * These lists are specified using the <code>param.n</code> notation. Values of
          * <code>n</code> are integers starting from 1. For example, a parameter list with
          * two elements looks like this:</p> <p> <code>&amp;AttributeName.1=first</code>
@@ -765,10 +765,10 @@ namespace Model
         /**
          * <p>Deletes up to ten messages from the specified queue. This is a batch version
          * of <code> <a>DeleteMessage</a>.</code> The result of the action on each message
-         * is reported individually in the response.</p> <important> <p>Because the batch
+         * is reported individually in the response.</p>  <p>Because the batch
          * request can result in a combination of successful and unsuccessful actions, you
          * should check for batch errors even when the call returns an HTTP status code of
-         * <code>200</code>.</p> </important> <p>Some actions take lists of parameters.
+         * <code>200</code>.</p>  <p>Some actions take lists of parameters.
          * These lists are specified using the <code>param.n</code> notation. Values of
          * <code>n</code> are integers starting from 1. For example, a parameter list with
          * two elements looks like this:</p> <p> <code>&amp;AttributeName.1=first</code>
@@ -782,19 +782,19 @@ namespace Model
 
         /**
          * <p>Deletes the queue specified by the <code>QueueUrl</code>, regardless of the
-         * queue's contents.</p> <important> <p>Be careful with the
+         * queue's contents.</p>  <p>Be careful with the
          * <code>DeleteQueue</code> action: When you delete a queue, any messages in the
-         * queue are no longer available. </p> </important> <p>When you delete a queue, the
+         * queue are no longer available. </p>  <p>When you delete a queue, the
          * deletion process takes up to 60 seconds. Requests you send involving that queue
          * during the 60 seconds might succeed. For example, a <code> <a>SendMessage</a>
          * </code> request might succeed, but after 60 seconds the queue and the message
          * you sent no longer exist.</p> <p>When you delete a queue, you must wait at least
-         * 60 seconds before creating a queue with the same name.</p> <note>
+         * 60 seconds before creating a queue with the same name.</p> 
          * <p>Cross-account permissions don't apply to this action. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
          * Cross-Account Permissions to a Role and a User Name</a> in the <i>Amazon Simple
-         * Queue Service Developer Guide</i>.</p> </note><p><h3>See Also:</h3>   <a
+         * Queue Service Developer Guide</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/DeleteQueue">AWS API
          * Reference</a></p>
          */
@@ -802,19 +802,19 @@ namespace Model
 
         /**
          * <p>Deletes the queue specified by the <code>QueueUrl</code>, regardless of the
-         * queue's contents.</p> <important> <p>Be careful with the
+         * queue's contents.</p>  <p>Be careful with the
          * <code>DeleteQueue</code> action: When you delete a queue, any messages in the
-         * queue are no longer available. </p> </important> <p>When you delete a queue, the
+         * queue are no longer available. </p>  <p>When you delete a queue, the
          * deletion process takes up to 60 seconds. Requests you send involving that queue
          * during the 60 seconds might succeed. For example, a <code> <a>SendMessage</a>
          * </code> request might succeed, but after 60 seconds the queue and the message
          * you sent no longer exist.</p> <p>When you delete a queue, you must wait at least
-         * 60 seconds before creating a queue with the same name.</p> <note>
+         * 60 seconds before creating a queue with the same name.</p> 
          * <p>Cross-account permissions don't apply to this action. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
          * Cross-Account Permissions to a Role and a User Name</a> in the <i>Amazon Simple
-         * Queue Service Developer Guide</i>.</p> </note><p><h3>See Also:</h3>   <a
+         * Queue Service Developer Guide</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/DeleteQueue">AWS API
          * Reference</a></p>
          *
@@ -824,19 +824,19 @@ namespace Model
 
         /**
          * <p>Deletes the queue specified by the <code>QueueUrl</code>, regardless of the
-         * queue's contents.</p> <important> <p>Be careful with the
+         * queue's contents.</p>  <p>Be careful with the
          * <code>DeleteQueue</code> action: When you delete a queue, any messages in the
-         * queue are no longer available. </p> </important> <p>When you delete a queue, the
+         * queue are no longer available. </p>  <p>When you delete a queue, the
          * deletion process takes up to 60 seconds. Requests you send involving that queue
          * during the 60 seconds might succeed. For example, a <code> <a>SendMessage</a>
          * </code> request might succeed, but after 60 seconds the queue and the message
          * you sent no longer exist.</p> <p>When you delete a queue, you must wait at least
-         * 60 seconds before creating a queue with the same name.</p> <note>
+         * 60 seconds before creating a queue with the same name.</p> 
          * <p>Cross-account permissions don't apply to this action. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
          * Cross-Account Permissions to a Role and a User Name</a> in the <i>Amazon Simple
-         * Queue Service Developer Guide</i>.</p> </note><p><h3>See Also:</h3>   <a
+         * Queue Service Developer Guide</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/DeleteQueue">AWS API
          * Reference</a></p>
          *
@@ -845,22 +845,22 @@ namespace Model
         virtual void DeleteQueueAsync(const Model::DeleteQueueRequest& request, const DeleteQueueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets attributes for the specified queue.</p> <note> <p>To determine whether a
+         * <p>Gets attributes for the specified queue.</p>  <p>To determine whether a
          * queue is <a
          * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO</a>,
          * you can check whether <code>QueueName</code> ends with the <code>.fifo</code>
-         * suffix.</p> </note><p><h3>See Also:</h3>   <a
+         * suffix.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/GetQueueAttributes">AWS
          * API Reference</a></p>
          */
         virtual Model::GetQueueAttributesOutcome GetQueueAttributes(const Model::GetQueueAttributesRequest& request) const;
 
         /**
-         * <p>Gets attributes for the specified queue.</p> <note> <p>To determine whether a
+         * <p>Gets attributes for the specified queue.</p>  <p>To determine whether a
          * queue is <a
          * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO</a>,
          * you can check whether <code>QueueName</code> ends with the <code>.fifo</code>
-         * suffix.</p> </note><p><h3>See Also:</h3>   <a
+         * suffix.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/GetQueueAttributes">AWS
          * API Reference</a></p>
          *
@@ -869,11 +869,11 @@ namespace Model
         virtual Model::GetQueueAttributesOutcomeCallable GetQueueAttributesCallable(const Model::GetQueueAttributesRequest& request) const;
 
         /**
-         * <p>Gets attributes for the specified queue.</p> <note> <p>To determine whether a
+         * <p>Gets attributes for the specified queue.</p>  <p>To determine whether a
          * queue is <a
          * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO</a>,
          * you can check whether <code>QueueName</code> ends with the <code>.fifo</code>
-         * suffix.</p> </note><p><h3>See Also:</h3>   <a
+         * suffix.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/GetQueueAttributes">AWS
          * API Reference</a></p>
          *
@@ -972,11 +972,11 @@ namespace Model
          * overview, see <a
          * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-queue-tags.html">Tagging
          * Your Amazon SQS Queues</a> in the <i>Amazon Simple Queue Service Developer
-         * Guide</i>.</p> <note> <p>Cross-account permissions don't apply to this action.
+         * Guide</i>.</p>  <p>Cross-account permissions don't apply to this action.
          * For more information, see <a
          * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
          * Cross-Account Permissions to a Role and a User Name</a> in the <i>Amazon Simple
-         * Queue Service Developer Guide</i>.</p> </note><p><h3>See Also:</h3>   <a
+         * Queue Service Developer Guide</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ListQueueTags">AWS
          * API Reference</a></p>
          */
@@ -987,11 +987,11 @@ namespace Model
          * overview, see <a
          * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-queue-tags.html">Tagging
          * Your Amazon SQS Queues</a> in the <i>Amazon Simple Queue Service Developer
-         * Guide</i>.</p> <note> <p>Cross-account permissions don't apply to this action.
+         * Guide</i>.</p>  <p>Cross-account permissions don't apply to this action.
          * For more information, see <a
          * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
          * Cross-Account Permissions to a Role and a User Name</a> in the <i>Amazon Simple
-         * Queue Service Developer Guide</i>.</p> </note><p><h3>See Also:</h3>   <a
+         * Queue Service Developer Guide</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ListQueueTags">AWS
          * API Reference</a></p>
          *
@@ -1004,11 +1004,11 @@ namespace Model
          * overview, see <a
          * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-queue-tags.html">Tagging
          * Your Amazon SQS Queues</a> in the <i>Amazon Simple Queue Service Developer
-         * Guide</i>.</p> <note> <p>Cross-account permissions don't apply to this action.
+         * Guide</i>.</p>  <p>Cross-account permissions don't apply to this action.
          * For more information, see <a
          * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
          * Cross-Account Permissions to a Role and a User Name</a> in the <i>Amazon Simple
-         * Queue Service Developer Guide</i>.</p> </note><p><h3>See Also:</h3>   <a
+         * Queue Service Developer Guide</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ListQueueTags">AWS
          * API Reference</a></p>
          *
@@ -1020,11 +1020,11 @@ namespace Model
          * <p>Returns a list of your queues. The maximum number of queues that can be
          * returned is 1,000. If you specify a value for the optional
          * <code>QueueNamePrefix</code> parameter, only queues with a name that begins with
-         * the specified value are returned.</p> <note> <p>Cross-account permissions don't
+         * the specified value are returned.</p>  <p>Cross-account permissions don't
          * apply to this action. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
          * Cross-Account Permissions to a Role and a User Name</a> in the <i>Amazon Simple
-         * Queue Service Developer Guide</i>.</p> </note><p><h3>See Also:</h3>   <a
+         * Queue Service Developer Guide</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ListQueues">AWS API
          * Reference</a></p>
          */
@@ -1034,11 +1034,11 @@ namespace Model
          * <p>Returns a list of your queues. The maximum number of queues that can be
          * returned is 1,000. If you specify a value for the optional
          * <code>QueueNamePrefix</code> parameter, only queues with a name that begins with
-         * the specified value are returned.</p> <note> <p>Cross-account permissions don't
+         * the specified value are returned.</p>  <p>Cross-account permissions don't
          * apply to this action. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
          * Cross-Account Permissions to a Role and a User Name</a> in the <i>Amazon Simple
-         * Queue Service Developer Guide</i>.</p> </note><p><h3>See Also:</h3>   <a
+         * Queue Service Developer Guide</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ListQueues">AWS API
          * Reference</a></p>
          *
@@ -1050,11 +1050,11 @@ namespace Model
          * <p>Returns a list of your queues. The maximum number of queues that can be
          * returned is 1,000. If you specify a value for the optional
          * <code>QueueNamePrefix</code> parameter, only queues with a name that begins with
-         * the specified value are returned.</p> <note> <p>Cross-account permissions don't
+         * the specified value are returned.</p>  <p>Cross-account permissions don't
          * apply to this action. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
          * Cross-Account Permissions to a Role and a User Name</a> in the <i>Amazon Simple
-         * Queue Service Developer Guide</i>.</p> </note><p><h3>See Also:</h3>   <a
+         * Queue Service Developer Guide</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ListQueues">AWS API
          * Reference</a></p>
          *
@@ -1064,10 +1064,10 @@ namespace Model
 
         /**
          * <p>Deletes the messages in a queue specified by the <code>QueueURL</code>
-         * parameter.</p> <important> <p>When you use the <code>PurgeQueue</code> action,
+         * parameter.</p>  <p>When you use the <code>PurgeQueue</code> action,
          * you can't retrieve any messages deleted from a queue.</p> <p>The message
          * deletion process takes up to 60 seconds. We recommend waiting for 60 seconds
-         * regardless of your queue's size. </p> </important> <p>Messages sent to the queue
+         * regardless of your queue's size. </p>  <p>Messages sent to the queue
          * <i>before</i> you call <code>PurgeQueue</code> might be received but are deleted
          * within the next minute.</p> <p>Messages sent to the queue <i>after</i> you call
          * <code>PurgeQueue</code> might be deleted while the queue is being
@@ -1079,10 +1079,10 @@ namespace Model
 
         /**
          * <p>Deletes the messages in a queue specified by the <code>QueueURL</code>
-         * parameter.</p> <important> <p>When you use the <code>PurgeQueue</code> action,
+         * parameter.</p>  <p>When you use the <code>PurgeQueue</code> action,
          * you can't retrieve any messages deleted from a queue.</p> <p>The message
          * deletion process takes up to 60 seconds. We recommend waiting for 60 seconds
-         * regardless of your queue's size. </p> </important> <p>Messages sent to the queue
+         * regardless of your queue's size. </p>  <p>Messages sent to the queue
          * <i>before</i> you call <code>PurgeQueue</code> might be received but are deleted
          * within the next minute.</p> <p>Messages sent to the queue <i>after</i> you call
          * <code>PurgeQueue</code> might be deleted while the queue is being
@@ -1096,10 +1096,10 @@ namespace Model
 
         /**
          * <p>Deletes the messages in a queue specified by the <code>QueueURL</code>
-         * parameter.</p> <important> <p>When you use the <code>PurgeQueue</code> action,
+         * parameter.</p>  <p>When you use the <code>PurgeQueue</code> action,
          * you can't retrieve any messages deleted from a queue.</p> <p>The message
          * deletion process takes up to 60 seconds. We recommend waiting for 60 seconds
-         * regardless of your queue's size. </p> </important> <p>Messages sent to the queue
+         * regardless of your queue's size. </p>  <p>Messages sent to the queue
          * <i>before</i> you call <code>PurgeQueue</code> might be received but are deleted
          * within the next minute.</p> <p>Messages sent to the queue <i>after</i> you call
          * <code>PurgeQueue</code> might be deleted while the queue is being
@@ -1145,9 +1145,9 @@ namespace Model
          * message that isn't deleted or a message whose visibility isn't extended before
          * the visibility timeout expires counts as a failed receive. Depending on the
          * configuration of the queue, the message might be sent to the dead-letter
-         * queue.</p> <note> <p>In the future, new attributes might be added. If you write
+         * queue.</p>  <p>In the future, new attributes might be added. If you write
          * code that calls this action, we recommend that you structure your code so that
-         * it can handle new attributes gracefully.</p> </note><p><h3>See Also:</h3>   <a
+         * it can handle new attributes gracefully.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ReceiveMessage">AWS
          * API Reference</a></p>
          */
@@ -1187,9 +1187,9 @@ namespace Model
          * message that isn't deleted or a message whose visibility isn't extended before
          * the visibility timeout expires counts as a failed receive. Depending on the
          * configuration of the queue, the message might be sent to the dead-letter
-         * queue.</p> <note> <p>In the future, new attributes might be added. If you write
+         * queue.</p>  <p>In the future, new attributes might be added. If you write
          * code that calls this action, we recommend that you structure your code so that
-         * it can handle new attributes gracefully.</p> </note><p><h3>See Also:</h3>   <a
+         * it can handle new attributes gracefully.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ReceiveMessage">AWS
          * API Reference</a></p>
          *
@@ -1231,9 +1231,9 @@ namespace Model
          * message that isn't deleted or a message whose visibility isn't extended before
          * the visibility timeout expires counts as a failed receive. Depending on the
          * configuration of the queue, the message might be sent to the dead-letter
-         * queue.</p> <note> <p>In the future, new attributes might be added. If you write
+         * queue.</p>  <p>In the future, new attributes might be added. If you write
          * code that calls this action, we recommend that you structure your code so that
-         * it can handle new attributes gracefully.</p> </note><p><h3>See Also:</h3>   <a
+         * it can handle new attributes gracefully.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ReceiveMessage">AWS
          * API Reference</a></p>
          *
@@ -1243,7 +1243,7 @@ namespace Model
 
         /**
          * <p>Revokes any permissions in the queue policy that matches the specified
-         * <code>Label</code> parameter.</p> <note> <ul> <li> <p>Only the owner of a queue
+         * <code>Label</code> parameter.</p>  <ul> <li> <p>Only the owner of a queue
          * can remove permissions from it.</p> </li> <li> <p>Cross-account permissions
          * don't apply to this action. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
@@ -1252,7 +1252,7 @@ namespace Model
          * change queue permissions, you must deny permission to the
          * <code>AddPermission</code>, <code>RemovePermission</code>, and
          * <code>SetQueueAttributes</code> actions in your IAM policy.</p> </li> </ul>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/RemovePermission">AWS
          * API Reference</a></p>
          */
@@ -1260,7 +1260,7 @@ namespace Model
 
         /**
          * <p>Revokes any permissions in the queue policy that matches the specified
-         * <code>Label</code> parameter.</p> <note> <ul> <li> <p>Only the owner of a queue
+         * <code>Label</code> parameter.</p>  <ul> <li> <p>Only the owner of a queue
          * can remove permissions from it.</p> </li> <li> <p>Cross-account permissions
          * don't apply to this action. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
@@ -1269,7 +1269,7 @@ namespace Model
          * change queue permissions, you must deny permission to the
          * <code>AddPermission</code>, <code>RemovePermission</code>, and
          * <code>SetQueueAttributes</code> actions in your IAM policy.</p> </li> </ul>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/RemovePermission">AWS
          * API Reference</a></p>
          *
@@ -1279,7 +1279,7 @@ namespace Model
 
         /**
          * <p>Revokes any permissions in the queue policy that matches the specified
-         * <code>Label</code> parameter.</p> <note> <ul> <li> <p>Only the owner of a queue
+         * <code>Label</code> parameter.</p>  <ul> <li> <p>Only the owner of a queue
          * can remove permissions from it.</p> </li> <li> <p>Cross-account permissions
          * don't apply to this action. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
@@ -1288,7 +1288,7 @@ namespace Model
          * change queue permissions, you must deny permission to the
          * <code>AddPermission</code>, <code>RemovePermission</code>, and
          * <code>SetQueueAttributes</code> actions in your IAM policy.</p> </li> </ul>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/RemovePermission">AWS
          * API Reference</a></p>
          *
@@ -1297,28 +1297,28 @@ namespace Model
         virtual void RemovePermissionAsync(const Model::RemovePermissionRequest& request, const RemovePermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Delivers a message to the specified queue.</p> <important> <p>A message can
+         * <p>Delivers a message to the specified queue.</p>  <p>A message can
          * include only XML, JSON, and unformatted text. The following Unicode characters
          * are allowed:</p> <p> <code>#x9</code> | <code>#xA</code> | <code>#xD</code> |
          * <code>#x20</code> to <code>#xD7FF</code> | <code>#xE000</code> to
          * <code>#xFFFD</code> | <code>#x10000</code> to <code>#x10FFFF</code> </p> <p>Any
          * characters not included in this list will be rejected. For more information, see
          * the <a href="http://www.w3.org/TR/REC-xml/#charsets">W3C specification for
-         * characters</a>.</p> </important><p><h3>See Also:</h3>   <a
+         * characters</a>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/SendMessage">AWS API
          * Reference</a></p>
          */
         virtual Model::SendMessageOutcome SendMessage(const Model::SendMessageRequest& request) const;
 
         /**
-         * <p>Delivers a message to the specified queue.</p> <important> <p>A message can
+         * <p>Delivers a message to the specified queue.</p>  <p>A message can
          * include only XML, JSON, and unformatted text. The following Unicode characters
          * are allowed:</p> <p> <code>#x9</code> | <code>#xA</code> | <code>#xD</code> |
          * <code>#x20</code> to <code>#xD7FF</code> | <code>#xE000</code> to
          * <code>#xFFFD</code> | <code>#x10000</code> to <code>#x10FFFF</code> </p> <p>Any
          * characters not included in this list will be rejected. For more information, see
          * the <a href="http://www.w3.org/TR/REC-xml/#charsets">W3C specification for
-         * characters</a>.</p> </important><p><h3>See Also:</h3>   <a
+         * characters</a>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/SendMessage">AWS API
          * Reference</a></p>
          *
@@ -1327,14 +1327,14 @@ namespace Model
         virtual Model::SendMessageOutcomeCallable SendMessageCallable(const Model::SendMessageRequest& request) const;
 
         /**
-         * <p>Delivers a message to the specified queue.</p> <important> <p>A message can
+         * <p>Delivers a message to the specified queue.</p>  <p>A message can
          * include only XML, JSON, and unformatted text. The following Unicode characters
          * are allowed:</p> <p> <code>#x9</code> | <code>#xA</code> | <code>#xD</code> |
          * <code>#x20</code> to <code>#xD7FF</code> | <code>#xE000</code> to
          * <code>#xFFFD</code> | <code>#x10000</code> to <code>#x10FFFF</code> </p> <p>Any
          * characters not included in this list will be rejected. For more information, see
          * the <a href="http://www.w3.org/TR/REC-xml/#charsets">W3C specification for
-         * characters</a>.</p> </important><p><h3>See Also:</h3>   <a
+         * characters</a>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/SendMessage">AWS API
          * Reference</a></p>
          *
@@ -1351,7 +1351,7 @@ namespace Model
          * should check for batch errors even when the call returns an HTTP status code of
          * <code>200</code>.</p> <p>The maximum allowed individual message size and the
          * maximum total payload size (the sum of the individual lengths of all of the
-         * batched messages) are both 256 KB (262,144 bytes).</p> <important> <p>A message
+         * batched messages) are both 256 KB (262,144 bytes).</p>  <p>A message
          * can include only XML, JSON, and unformatted text. The following Unicode
          * characters are allowed:</p> <p> <code>#x9</code> | <code>#xA</code> |
          * <code>#xD</code> | <code>#x20</code> to <code>#xD7FF</code> |
@@ -1359,7 +1359,7 @@ namespace Model
          * <code>#x10FFFF</code> </p> <p>Any characters not included in this list will be
          * rejected. For more information, see the <a
          * href="http://www.w3.org/TR/REC-xml/#charsets">W3C specification for
-         * characters</a>.</p> </important> <p>If you don't specify the
+         * characters</a>.</p>  <p>If you don't specify the
          * <code>DelaySeconds</code> parameter for an entry, Amazon SQS uses the default
          * value for the queue.</p> <p>Some actions take lists of parameters. These lists
          * are specified using the <code>param.n</code> notation. Values of <code>n</code>
@@ -1380,7 +1380,7 @@ namespace Model
          * should check for batch errors even when the call returns an HTTP status code of
          * <code>200</code>.</p> <p>The maximum allowed individual message size and the
          * maximum total payload size (the sum of the individual lengths of all of the
-         * batched messages) are both 256 KB (262,144 bytes).</p> <important> <p>A message
+         * batched messages) are both 256 KB (262,144 bytes).</p>  <p>A message
          * can include only XML, JSON, and unformatted text. The following Unicode
          * characters are allowed:</p> <p> <code>#x9</code> | <code>#xA</code> |
          * <code>#xD</code> | <code>#x20</code> to <code>#xD7FF</code> |
@@ -1388,7 +1388,7 @@ namespace Model
          * <code>#x10FFFF</code> </p> <p>Any characters not included in this list will be
          * rejected. For more information, see the <a
          * href="http://www.w3.org/TR/REC-xml/#charsets">W3C specification for
-         * characters</a>.</p> </important> <p>If you don't specify the
+         * characters</a>.</p>  <p>If you don't specify the
          * <code>DelaySeconds</code> parameter for an entry, Amazon SQS uses the default
          * value for the queue.</p> <p>Some actions take lists of parameters. These lists
          * are specified using the <code>param.n</code> notation. Values of <code>n</code>
@@ -1411,7 +1411,7 @@ namespace Model
          * should check for batch errors even when the call returns an HTTP status code of
          * <code>200</code>.</p> <p>The maximum allowed individual message size and the
          * maximum total payload size (the sum of the individual lengths of all of the
-         * batched messages) are both 256 KB (262,144 bytes).</p> <important> <p>A message
+         * batched messages) are both 256 KB (262,144 bytes).</p>  <p>A message
          * can include only XML, JSON, and unformatted text. The following Unicode
          * characters are allowed:</p> <p> <code>#x9</code> | <code>#xA</code> |
          * <code>#xD</code> | <code>#x20</code> to <code>#xD7FF</code> |
@@ -1419,7 +1419,7 @@ namespace Model
          * <code>#x10FFFF</code> </p> <p>Any characters not included in this list will be
          * rejected. For more information, see the <a
          * href="http://www.w3.org/TR/REC-xml/#charsets">W3C specification for
-         * characters</a>.</p> </important> <p>If you don't specify the
+         * characters</a>.</p>  <p>If you don't specify the
          * <code>DelaySeconds</code> parameter for an entry, Amazon SQS uses the default
          * value for the queue.</p> <p>Some actions take lists of parameters. These lists
          * are specified using the <code>param.n</code> notation. Values of <code>n</code>
@@ -1438,7 +1438,7 @@ namespace Model
          * attributes, the change can take up to 60 seconds for most of the attributes to
          * propagate throughout the Amazon SQS system. Changes made to the
          * <code>MessageRetentionPeriod</code> attribute can take up to 15 minutes.</p>
-         * <note> <ul> <li> <p>In the future, new attributes might be added. If you write
+         *  <ul> <li> <p>In the future, new attributes might be added. If you write
          * code that calls this action, we recommend that you structure your code so that
          * it can handle new attributes gracefully.</p> </li> <li> <p>Cross-account
          * permissions don't apply to this action. For more information, see <a
@@ -1448,7 +1448,7 @@ namespace Model
          * change queue permissions, you must deny permission to the
          * <code>AddPermission</code>, <code>RemovePermission</code>, and
          * <code>SetQueueAttributes</code> actions in your IAM policy.</p> </li> </ul>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/SetQueueAttributes">AWS
          * API Reference</a></p>
          */
@@ -1459,7 +1459,7 @@ namespace Model
          * attributes, the change can take up to 60 seconds for most of the attributes to
          * propagate throughout the Amazon SQS system. Changes made to the
          * <code>MessageRetentionPeriod</code> attribute can take up to 15 minutes.</p>
-         * <note> <ul> <li> <p>In the future, new attributes might be added. If you write
+         *  <ul> <li> <p>In the future, new attributes might be added. If you write
          * code that calls this action, we recommend that you structure your code so that
          * it can handle new attributes gracefully.</p> </li> <li> <p>Cross-account
          * permissions don't apply to this action. For more information, see <a
@@ -1469,7 +1469,7 @@ namespace Model
          * change queue permissions, you must deny permission to the
          * <code>AddPermission</code>, <code>RemovePermission</code>, and
          * <code>SetQueueAttributes</code> actions in your IAM policy.</p> </li> </ul>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/SetQueueAttributes">AWS
          * API Reference</a></p>
          *
@@ -1482,7 +1482,7 @@ namespace Model
          * attributes, the change can take up to 60 seconds for most of the attributes to
          * propagate throughout the Amazon SQS system. Changes made to the
          * <code>MessageRetentionPeriod</code> attribute can take up to 15 minutes.</p>
-         * <note> <ul> <li> <p>In the future, new attributes might be added. If you write
+         *  <ul> <li> <p>In the future, new attributes might be added. If you write
          * code that calls this action, we recommend that you structure your code so that
          * it can handle new attributes gracefully.</p> </li> <li> <p>Cross-account
          * permissions don't apply to this action. For more information, see <a
@@ -1492,7 +1492,7 @@ namespace Model
          * change queue permissions, you must deny permission to the
          * <code>AddPermission</code>, <code>RemovePermission</code>, and
          * <code>SetQueueAttributes</code> actions in your IAM policy.</p> </li> </ul>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/SetQueueAttributes">AWS
          * API Reference</a></p>
          *
@@ -1514,11 +1514,11 @@ namespace Model
          * tag restrictions, see <a
          * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-limits.html#limits-queues">Limits
          * Related to Queues</a> in the <i>Amazon Simple Queue Service Developer
-         * Guide</i>.</p> <note> <p>Cross-account permissions don't apply to this action.
+         * Guide</i>.</p>  <p>Cross-account permissions don't apply to this action.
          * For more information, see <a
          * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
          * Cross-Account Permissions to a Role and a User Name</a> in the <i>Amazon Simple
-         * Queue Service Developer Guide</i>.</p> </note><p><h3>See Also:</h3>   <a
+         * Queue Service Developer Guide</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/TagQueue">AWS API
          * Reference</a></p>
          */
@@ -1538,11 +1538,11 @@ namespace Model
          * tag restrictions, see <a
          * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-limits.html#limits-queues">Limits
          * Related to Queues</a> in the <i>Amazon Simple Queue Service Developer
-         * Guide</i>.</p> <note> <p>Cross-account permissions don't apply to this action.
+         * Guide</i>.</p>  <p>Cross-account permissions don't apply to this action.
          * For more information, see <a
          * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
          * Cross-Account Permissions to a Role and a User Name</a> in the <i>Amazon Simple
-         * Queue Service Developer Guide</i>.</p> </note><p><h3>See Also:</h3>   <a
+         * Queue Service Developer Guide</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/TagQueue">AWS API
          * Reference</a></p>
          *
@@ -1564,11 +1564,11 @@ namespace Model
          * tag restrictions, see <a
          * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-limits.html#limits-queues">Limits
          * Related to Queues</a> in the <i>Amazon Simple Queue Service Developer
-         * Guide</i>.</p> <note> <p>Cross-account permissions don't apply to this action.
+         * Guide</i>.</p>  <p>Cross-account permissions don't apply to this action.
          * For more information, see <a
          * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
          * Cross-Account Permissions to a Role and a User Name</a> in the <i>Amazon Simple
-         * Queue Service Developer Guide</i>.</p> </note><p><h3>See Also:</h3>   <a
+         * Queue Service Developer Guide</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/TagQueue">AWS API
          * Reference</a></p>
          *
@@ -1581,11 +1581,11 @@ namespace Model
          * overview, see <a
          * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-queue-tags.html">Tagging
          * Your Amazon SQS Queues</a> in the <i>Amazon Simple Queue Service Developer
-         * Guide</i>.</p> <note> <p>Cross-account permissions don't apply to this action.
+         * Guide</i>.</p>  <p>Cross-account permissions don't apply to this action.
          * For more information, see <a
          * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
          * Cross-Account Permissions to a Role and a User Name</a> in the <i>Amazon Simple
-         * Queue Service Developer Guide</i>.</p> </note><p><h3>See Also:</h3>   <a
+         * Queue Service Developer Guide</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/UntagQueue">AWS API
          * Reference</a></p>
          */
@@ -1596,11 +1596,11 @@ namespace Model
          * overview, see <a
          * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-queue-tags.html">Tagging
          * Your Amazon SQS Queues</a> in the <i>Amazon Simple Queue Service Developer
-         * Guide</i>.</p> <note> <p>Cross-account permissions don't apply to this action.
+         * Guide</i>.</p>  <p>Cross-account permissions don't apply to this action.
          * For more information, see <a
          * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
          * Cross-Account Permissions to a Role and a User Name</a> in the <i>Amazon Simple
-         * Queue Service Developer Guide</i>.</p> </note><p><h3>See Also:</h3>   <a
+         * Queue Service Developer Guide</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/UntagQueue">AWS API
          * Reference</a></p>
          *
@@ -1613,11 +1613,11 @@ namespace Model
          * overview, see <a
          * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-queue-tags.html">Tagging
          * Your Amazon SQS Queues</a> in the <i>Amazon Simple Queue Service Developer
-         * Guide</i>.</p> <note> <p>Cross-account permissions don't apply to this action.
+         * Guide</i>.</p>  <p>Cross-account permissions don't apply to this action.
          * For more information, see <a
          * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
          * Cross-Account Permissions to a Role and a User Name</a> in the <i>Amazon Simple
-         * Queue Service Developer Guide</i>.</p> </note><p><h3>See Also:</h3>   <a
+         * Queue Service Developer Guide</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/UntagQueue">AWS API
          * Reference</a></p>
          *

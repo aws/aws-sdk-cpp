@@ -113,11 +113,11 @@ namespace Model
      * in the <i>AWS Key Management Service API Reference</i> and <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">AWS
      * KMS API Permissions Reference</a> in the <i>AWS Key Management Service Developer
-     * Guide</i>. </p> <important> <p> CodeArtifact supports only symmetric CMKs. Do
+     * Guide</i>. </p>  <p> CodeArtifact supports only symmetric CMKs. Do
      * not associate an asymmetric CMK with your domain. For more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using
      * symmetric and asymmetric keys</a> in the <i>AWS Key Management Service Developer
-     * Guide</i>. </p> </important>
+     * Guide</i>. </p> 
      */
     inline const Aws::String& GetEncryptionKey() const{ return m_encryptionKey; }
 
@@ -131,11 +131,11 @@ namespace Model
      * in the <i>AWS Key Management Service API Reference</i> and <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">AWS
      * KMS API Permissions Reference</a> in the <i>AWS Key Management Service Developer
-     * Guide</i>. </p> <important> <p> CodeArtifact supports only symmetric CMKs. Do
+     * Guide</i>. </p>  <p> CodeArtifact supports only symmetric CMKs. Do
      * not associate an asymmetric CMK with your domain. For more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using
      * symmetric and asymmetric keys</a> in the <i>AWS Key Management Service Developer
-     * Guide</i>. </p> </important>
+     * Guide</i>. </p> 
      */
     inline bool EncryptionKeyHasBeenSet() const { return m_encryptionKeyHasBeenSet; }
 
@@ -149,11 +149,11 @@ namespace Model
      * in the <i>AWS Key Management Service API Reference</i> and <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">AWS
      * KMS API Permissions Reference</a> in the <i>AWS Key Management Service Developer
-     * Guide</i>. </p> <important> <p> CodeArtifact supports only symmetric CMKs. Do
+     * Guide</i>. </p>  <p> CodeArtifact supports only symmetric CMKs. Do
      * not associate an asymmetric CMK with your domain. For more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using
      * symmetric and asymmetric keys</a> in the <i>AWS Key Management Service Developer
-     * Guide</i>. </p> </important>
+     * Guide</i>. </p> 
      */
     inline void SetEncryptionKey(const Aws::String& value) { m_encryptionKeyHasBeenSet = true; m_encryptionKey = value; }
 
@@ -167,11 +167,11 @@ namespace Model
      * in the <i>AWS Key Management Service API Reference</i> and <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">AWS
      * KMS API Permissions Reference</a> in the <i>AWS Key Management Service Developer
-     * Guide</i>. </p> <important> <p> CodeArtifact supports only symmetric CMKs. Do
+     * Guide</i>. </p>  <p> CodeArtifact supports only symmetric CMKs. Do
      * not associate an asymmetric CMK with your domain. For more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using
      * symmetric and asymmetric keys</a> in the <i>AWS Key Management Service Developer
-     * Guide</i>. </p> </important>
+     * Guide</i>. </p> 
      */
     inline void SetEncryptionKey(Aws::String&& value) { m_encryptionKeyHasBeenSet = true; m_encryptionKey = std::move(value); }
 
@@ -185,11 +185,11 @@ namespace Model
      * in the <i>AWS Key Management Service API Reference</i> and <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">AWS
      * KMS API Permissions Reference</a> in the <i>AWS Key Management Service Developer
-     * Guide</i>. </p> <important> <p> CodeArtifact supports only symmetric CMKs. Do
+     * Guide</i>. </p>  <p> CodeArtifact supports only symmetric CMKs. Do
      * not associate an asymmetric CMK with your domain. For more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using
      * symmetric and asymmetric keys</a> in the <i>AWS Key Management Service Developer
-     * Guide</i>. </p> </important>
+     * Guide</i>. </p> 
      */
     inline void SetEncryptionKey(const char* value) { m_encryptionKeyHasBeenSet = true; m_encryptionKey.assign(value); }
 
@@ -203,11 +203,11 @@ namespace Model
      * in the <i>AWS Key Management Service API Reference</i> and <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">AWS
      * KMS API Permissions Reference</a> in the <i>AWS Key Management Service Developer
-     * Guide</i>. </p> <important> <p> CodeArtifact supports only symmetric CMKs. Do
+     * Guide</i>. </p>  <p> CodeArtifact supports only symmetric CMKs. Do
      * not associate an asymmetric CMK with your domain. For more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using
      * symmetric and asymmetric keys</a> in the <i>AWS Key Management Service Developer
-     * Guide</i>. </p> </important>
+     * Guide</i>. </p> 
      */
     inline CreateDomainRequest& WithEncryptionKey(const Aws::String& value) { SetEncryptionKey(value); return *this;}
 
@@ -221,11 +221,11 @@ namespace Model
      * in the <i>AWS Key Management Service API Reference</i> and <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">AWS
      * KMS API Permissions Reference</a> in the <i>AWS Key Management Service Developer
-     * Guide</i>. </p> <important> <p> CodeArtifact supports only symmetric CMKs. Do
+     * Guide</i>. </p>  <p> CodeArtifact supports only symmetric CMKs. Do
      * not associate an asymmetric CMK with your domain. For more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using
      * symmetric and asymmetric keys</a> in the <i>AWS Key Management Service Developer
-     * Guide</i>. </p> </important>
+     * Guide</i>. </p> 
      */
     inline CreateDomainRequest& WithEncryptionKey(Aws::String&& value) { SetEncryptionKey(std::move(value)); return *this;}
 
@@ -239,11 +239,11 @@ namespace Model
      * in the <i>AWS Key Management Service API Reference</i> and <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">AWS
      * KMS API Permissions Reference</a> in the <i>AWS Key Management Service Developer
-     * Guide</i>. </p> <important> <p> CodeArtifact supports only symmetric CMKs. Do
+     * Guide</i>. </p>  <p> CodeArtifact supports only symmetric CMKs. Do
      * not associate an asymmetric CMK with your domain. For more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using
      * symmetric and asymmetric keys</a> in the <i>AWS Key Management Service Developer
-     * Guide</i>. </p> </important>
+     * Guide</i>. </p> 
      */
     inline CreateDomainRequest& WithEncryptionKey(const char* value) { SetEncryptionKey(value); return *this;}
 

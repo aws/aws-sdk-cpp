@@ -327,9 +327,9 @@ namespace Model
      * STS for that region. For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
      * and Deactivating AWS STS in an AWS Region</a> in the <i>AWS Identity and Access
-     * Management User Guide</i>.</p> <important> <p>If you use a built-in algorithm to
+     * Management User Guide</i>.</p>  <p>If you use a built-in algorithm to
      * create a model, Amazon SageMaker requires that you provide a S3 path to the
-     * model artifacts in <code>ModelDataUrl</code>.</p> </important>
+     * model artifacts in <code>ModelDataUrl</code>.</p> 
      */
     inline const Aws::String& GetModelDataUrl() const{ return m_modelDataUrl; }
 
@@ -347,9 +347,9 @@ namespace Model
      * STS for that region. For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
      * and Deactivating AWS STS in an AWS Region</a> in the <i>AWS Identity and Access
-     * Management User Guide</i>.</p> <important> <p>If you use a built-in algorithm to
+     * Management User Guide</i>.</p>  <p>If you use a built-in algorithm to
      * create a model, Amazon SageMaker requires that you provide a S3 path to the
-     * model artifacts in <code>ModelDataUrl</code>.</p> </important>
+     * model artifacts in <code>ModelDataUrl</code>.</p> 
      */
     inline bool ModelDataUrlHasBeenSet() const { return m_modelDataUrlHasBeenSet; }
 
@@ -367,9 +367,9 @@ namespace Model
      * STS for that region. For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
      * and Deactivating AWS STS in an AWS Region</a> in the <i>AWS Identity and Access
-     * Management User Guide</i>.</p> <important> <p>If you use a built-in algorithm to
+     * Management User Guide</i>.</p>  <p>If you use a built-in algorithm to
      * create a model, Amazon SageMaker requires that you provide a S3 path to the
-     * model artifacts in <code>ModelDataUrl</code>.</p> </important>
+     * model artifacts in <code>ModelDataUrl</code>.</p> 
      */
     inline void SetModelDataUrl(const Aws::String& value) { m_modelDataUrlHasBeenSet = true; m_modelDataUrl = value; }
 
@@ -387,9 +387,9 @@ namespace Model
      * STS for that region. For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
      * and Deactivating AWS STS in an AWS Region</a> in the <i>AWS Identity and Access
-     * Management User Guide</i>.</p> <important> <p>If you use a built-in algorithm to
+     * Management User Guide</i>.</p>  <p>If you use a built-in algorithm to
      * create a model, Amazon SageMaker requires that you provide a S3 path to the
-     * model artifacts in <code>ModelDataUrl</code>.</p> </important>
+     * model artifacts in <code>ModelDataUrl</code>.</p> 
      */
     inline void SetModelDataUrl(Aws::String&& value) { m_modelDataUrlHasBeenSet = true; m_modelDataUrl = std::move(value); }
 
@@ -407,9 +407,9 @@ namespace Model
      * STS for that region. For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
      * and Deactivating AWS STS in an AWS Region</a> in the <i>AWS Identity and Access
-     * Management User Guide</i>.</p> <important> <p>If you use a built-in algorithm to
+     * Management User Guide</i>.</p>  <p>If you use a built-in algorithm to
      * create a model, Amazon SageMaker requires that you provide a S3 path to the
-     * model artifacts in <code>ModelDataUrl</code>.</p> </important>
+     * model artifacts in <code>ModelDataUrl</code>.</p> 
      */
     inline void SetModelDataUrl(const char* value) { m_modelDataUrlHasBeenSet = true; m_modelDataUrl.assign(value); }
 
@@ -427,9 +427,9 @@ namespace Model
      * STS for that region. For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
      * and Deactivating AWS STS in an AWS Region</a> in the <i>AWS Identity and Access
-     * Management User Guide</i>.</p> <important> <p>If you use a built-in algorithm to
+     * Management User Guide</i>.</p>  <p>If you use a built-in algorithm to
      * create a model, Amazon SageMaker requires that you provide a S3 path to the
-     * model artifacts in <code>ModelDataUrl</code>.</p> </important>
+     * model artifacts in <code>ModelDataUrl</code>.</p> 
      */
     inline ContainerDefinition& WithModelDataUrl(const Aws::String& value) { SetModelDataUrl(value); return *this;}
 
@@ -447,9 +447,9 @@ namespace Model
      * STS for that region. For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
      * and Deactivating AWS STS in an AWS Region</a> in the <i>AWS Identity and Access
-     * Management User Guide</i>.</p> <important> <p>If you use a built-in algorithm to
+     * Management User Guide</i>.</p>  <p>If you use a built-in algorithm to
      * create a model, Amazon SageMaker requires that you provide a S3 path to the
-     * model artifacts in <code>ModelDataUrl</code>.</p> </important>
+     * model artifacts in <code>ModelDataUrl</code>.</p> 
      */
     inline ContainerDefinition& WithModelDataUrl(Aws::String&& value) { SetModelDataUrl(std::move(value)); return *this;}
 
@@ -467,9 +467,9 @@ namespace Model
      * STS for that region. For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
      * and Deactivating AWS STS in an AWS Region</a> in the <i>AWS Identity and Access
-     * Management User Guide</i>.</p> <important> <p>If you use a built-in algorithm to
+     * Management User Guide</i>.</p>  <p>If you use a built-in algorithm to
      * create a model, Amazon SageMaker requires that you provide a S3 path to the
-     * model artifacts in <code>ModelDataUrl</code>.</p> </important>
+     * model artifacts in <code>ModelDataUrl</code>.</p> 
      */
     inline ContainerDefinition& WithModelDataUrl(const char* value) { SetModelDataUrl(value); return *this;}
 

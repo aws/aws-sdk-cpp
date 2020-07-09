@@ -84,9 +84,9 @@ namespace Model
      * <p>If specified, the workflow executions are included in the returned results
      * based on whether their start times are within the range specified by this
      * filter. Also, if this parameter is specified, the returned results are ordered
-     * by their start times.</p> <note> <p> <code>startTimeFilter</code> and
+     * by their start times.</p>  <p> <code>startTimeFilter</code> and
      * <code>closeTimeFilter</code> are mutually exclusive. You must specify one of
-     * these in a request but not both.</p> </note>
+     * these in a request but not both.</p> 
      */
     inline const ExecutionTimeFilter& GetStartTimeFilter() const{ return m_startTimeFilter; }
 
@@ -94,9 +94,9 @@ namespace Model
      * <p>If specified, the workflow executions are included in the returned results
      * based on whether their start times are within the range specified by this
      * filter. Also, if this parameter is specified, the returned results are ordered
-     * by their start times.</p> <note> <p> <code>startTimeFilter</code> and
+     * by their start times.</p>  <p> <code>startTimeFilter</code> and
      * <code>closeTimeFilter</code> are mutually exclusive. You must specify one of
-     * these in a request but not both.</p> </note>
+     * these in a request but not both.</p> 
      */
     inline bool StartTimeFilterHasBeenSet() const { return m_startTimeFilterHasBeenSet; }
 
@@ -104,9 +104,9 @@ namespace Model
      * <p>If specified, the workflow executions are included in the returned results
      * based on whether their start times are within the range specified by this
      * filter. Also, if this parameter is specified, the returned results are ordered
-     * by their start times.</p> <note> <p> <code>startTimeFilter</code> and
+     * by their start times.</p>  <p> <code>startTimeFilter</code> and
      * <code>closeTimeFilter</code> are mutually exclusive. You must specify one of
-     * these in a request but not both.</p> </note>
+     * these in a request but not both.</p> 
      */
     inline void SetStartTimeFilter(const ExecutionTimeFilter& value) { m_startTimeFilterHasBeenSet = true; m_startTimeFilter = value; }
 
@@ -114,9 +114,9 @@ namespace Model
      * <p>If specified, the workflow executions are included in the returned results
      * based on whether their start times are within the range specified by this
      * filter. Also, if this parameter is specified, the returned results are ordered
-     * by their start times.</p> <note> <p> <code>startTimeFilter</code> and
+     * by their start times.</p>  <p> <code>startTimeFilter</code> and
      * <code>closeTimeFilter</code> are mutually exclusive. You must specify one of
-     * these in a request but not both.</p> </note>
+     * these in a request but not both.</p> 
      */
     inline void SetStartTimeFilter(ExecutionTimeFilter&& value) { m_startTimeFilterHasBeenSet = true; m_startTimeFilter = std::move(value); }
 
@@ -124,9 +124,9 @@ namespace Model
      * <p>If specified, the workflow executions are included in the returned results
      * based on whether their start times are within the range specified by this
      * filter. Also, if this parameter is specified, the returned results are ordered
-     * by their start times.</p> <note> <p> <code>startTimeFilter</code> and
+     * by their start times.</p>  <p> <code>startTimeFilter</code> and
      * <code>closeTimeFilter</code> are mutually exclusive. You must specify one of
-     * these in a request but not both.</p> </note>
+     * these in a request but not both.</p> 
      */
     inline ListClosedWorkflowExecutionsRequest& WithStartTimeFilter(const ExecutionTimeFilter& value) { SetStartTimeFilter(value); return *this;}
 
@@ -134,9 +134,9 @@ namespace Model
      * <p>If specified, the workflow executions are included in the returned results
      * based on whether their start times are within the range specified by this
      * filter. Also, if this parameter is specified, the returned results are ordered
-     * by their start times.</p> <note> <p> <code>startTimeFilter</code> and
+     * by their start times.</p>  <p> <code>startTimeFilter</code> and
      * <code>closeTimeFilter</code> are mutually exclusive. You must specify one of
-     * these in a request but not both.</p> </note>
+     * these in a request but not both.</p> 
      */
     inline ListClosedWorkflowExecutionsRequest& WithStartTimeFilter(ExecutionTimeFilter&& value) { SetStartTimeFilter(std::move(value)); return *this;}
 
@@ -145,9 +145,9 @@ namespace Model
      * <p>If specified, the workflow executions are included in the returned results
      * based on whether their close times are within the range specified by this
      * filter. Also, if this parameter is specified, the returned results are ordered
-     * by their close times.</p> <note> <p> <code>startTimeFilter</code> and
+     * by their close times.</p>  <p> <code>startTimeFilter</code> and
      * <code>closeTimeFilter</code> are mutually exclusive. You must specify one of
-     * these in a request but not both.</p> </note>
+     * these in a request but not both.</p> 
      */
     inline const ExecutionTimeFilter& GetCloseTimeFilter() const{ return m_closeTimeFilter; }
 
@@ -155,9 +155,9 @@ namespace Model
      * <p>If specified, the workflow executions are included in the returned results
      * based on whether their close times are within the range specified by this
      * filter. Also, if this parameter is specified, the returned results are ordered
-     * by their close times.</p> <note> <p> <code>startTimeFilter</code> and
+     * by their close times.</p>  <p> <code>startTimeFilter</code> and
      * <code>closeTimeFilter</code> are mutually exclusive. You must specify one of
-     * these in a request but not both.</p> </note>
+     * these in a request but not both.</p> 
      */
     inline bool CloseTimeFilterHasBeenSet() const { return m_closeTimeFilterHasBeenSet; }
 
@@ -165,9 +165,9 @@ namespace Model
      * <p>If specified, the workflow executions are included in the returned results
      * based on whether their close times are within the range specified by this
      * filter. Also, if this parameter is specified, the returned results are ordered
-     * by their close times.</p> <note> <p> <code>startTimeFilter</code> and
+     * by their close times.</p>  <p> <code>startTimeFilter</code> and
      * <code>closeTimeFilter</code> are mutually exclusive. You must specify one of
-     * these in a request but not both.</p> </note>
+     * these in a request but not both.</p> 
      */
     inline void SetCloseTimeFilter(const ExecutionTimeFilter& value) { m_closeTimeFilterHasBeenSet = true; m_closeTimeFilter = value; }
 
@@ -175,9 +175,9 @@ namespace Model
      * <p>If specified, the workflow executions are included in the returned results
      * based on whether their close times are within the range specified by this
      * filter. Also, if this parameter is specified, the returned results are ordered
-     * by their close times.</p> <note> <p> <code>startTimeFilter</code> and
+     * by their close times.</p>  <p> <code>startTimeFilter</code> and
      * <code>closeTimeFilter</code> are mutually exclusive. You must specify one of
-     * these in a request but not both.</p> </note>
+     * these in a request but not both.</p> 
      */
     inline void SetCloseTimeFilter(ExecutionTimeFilter&& value) { m_closeTimeFilterHasBeenSet = true; m_closeTimeFilter = std::move(value); }
 
@@ -185,9 +185,9 @@ namespace Model
      * <p>If specified, the workflow executions are included in the returned results
      * based on whether their close times are within the range specified by this
      * filter. Also, if this parameter is specified, the returned results are ordered
-     * by their close times.</p> <note> <p> <code>startTimeFilter</code> and
+     * by their close times.</p>  <p> <code>startTimeFilter</code> and
      * <code>closeTimeFilter</code> are mutually exclusive. You must specify one of
-     * these in a request but not both.</p> </note>
+     * these in a request but not both.</p> 
      */
     inline ListClosedWorkflowExecutionsRequest& WithCloseTimeFilter(const ExecutionTimeFilter& value) { SetCloseTimeFilter(value); return *this;}
 
@@ -195,64 +195,64 @@ namespace Model
      * <p>If specified, the workflow executions are included in the returned results
      * based on whether their close times are within the range specified by this
      * filter. Also, if this parameter is specified, the returned results are ordered
-     * by their close times.</p> <note> <p> <code>startTimeFilter</code> and
+     * by their close times.</p>  <p> <code>startTimeFilter</code> and
      * <code>closeTimeFilter</code> are mutually exclusive. You must specify one of
-     * these in a request but not both.</p> </note>
+     * these in a request but not both.</p> 
      */
     inline ListClosedWorkflowExecutionsRequest& WithCloseTimeFilter(ExecutionTimeFilter&& value) { SetCloseTimeFilter(std::move(value)); return *this;}
 
 
     /**
      * <p>If specified, only workflow executions matching the workflow ID specified in
-     * the filter are returned.</p> <note> <p> <code>closeStatusFilter</code>,
+     * the filter are returned.</p>  <p> <code>closeStatusFilter</code>,
      * <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code>
      * are mutually exclusive. You can specify at most one of these in a request.</p>
-     * </note>
+     * 
      */
     inline const WorkflowExecutionFilter& GetExecutionFilter() const{ return m_executionFilter; }
 
     /**
      * <p>If specified, only workflow executions matching the workflow ID specified in
-     * the filter are returned.</p> <note> <p> <code>closeStatusFilter</code>,
+     * the filter are returned.</p>  <p> <code>closeStatusFilter</code>,
      * <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code>
      * are mutually exclusive. You can specify at most one of these in a request.</p>
-     * </note>
+     * 
      */
     inline bool ExecutionFilterHasBeenSet() const { return m_executionFilterHasBeenSet; }
 
     /**
      * <p>If specified, only workflow executions matching the workflow ID specified in
-     * the filter are returned.</p> <note> <p> <code>closeStatusFilter</code>,
+     * the filter are returned.</p>  <p> <code>closeStatusFilter</code>,
      * <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code>
      * are mutually exclusive. You can specify at most one of these in a request.</p>
-     * </note>
+     * 
      */
     inline void SetExecutionFilter(const WorkflowExecutionFilter& value) { m_executionFilterHasBeenSet = true; m_executionFilter = value; }
 
     /**
      * <p>If specified, only workflow executions matching the workflow ID specified in
-     * the filter are returned.</p> <note> <p> <code>closeStatusFilter</code>,
+     * the filter are returned.</p>  <p> <code>closeStatusFilter</code>,
      * <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code>
      * are mutually exclusive. You can specify at most one of these in a request.</p>
-     * </note>
+     * 
      */
     inline void SetExecutionFilter(WorkflowExecutionFilter&& value) { m_executionFilterHasBeenSet = true; m_executionFilter = std::move(value); }
 
     /**
      * <p>If specified, only workflow executions matching the workflow ID specified in
-     * the filter are returned.</p> <note> <p> <code>closeStatusFilter</code>,
+     * the filter are returned.</p>  <p> <code>closeStatusFilter</code>,
      * <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code>
      * are mutually exclusive. You can specify at most one of these in a request.</p>
-     * </note>
+     * 
      */
     inline ListClosedWorkflowExecutionsRequest& WithExecutionFilter(const WorkflowExecutionFilter& value) { SetExecutionFilter(value); return *this;}
 
     /**
      * <p>If specified, only workflow executions matching the workflow ID specified in
-     * the filter are returned.</p> <note> <p> <code>closeStatusFilter</code>,
+     * the filter are returned.</p>  <p> <code>closeStatusFilter</code>,
      * <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code>
      * are mutually exclusive. You can specify at most one of these in a request.</p>
-     * </note>
+     * 
      */
     inline ListClosedWorkflowExecutionsRequest& WithExecutionFilter(WorkflowExecutionFilter&& value) { SetExecutionFilter(std::move(value)); return *this;}
 
@@ -260,164 +260,164 @@ namespace Model
     /**
      * <p>If specified, only workflow executions that match this <i>close status</i>
      * are listed. For example, if TERMINATED is specified, then only TERMINATED
-     * workflow executions are listed.</p> <note> <p> <code>closeStatusFilter</code>,
+     * workflow executions are listed.</p>  <p> <code>closeStatusFilter</code>,
      * <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code>
      * are mutually exclusive. You can specify at most one of these in a request.</p>
-     * </note>
+     * 
      */
     inline const CloseStatusFilter& GetCloseStatusFilter() const{ return m_closeStatusFilter; }
 
     /**
      * <p>If specified, only workflow executions that match this <i>close status</i>
      * are listed. For example, if TERMINATED is specified, then only TERMINATED
-     * workflow executions are listed.</p> <note> <p> <code>closeStatusFilter</code>,
+     * workflow executions are listed.</p>  <p> <code>closeStatusFilter</code>,
      * <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code>
      * are mutually exclusive. You can specify at most one of these in a request.</p>
-     * </note>
+     * 
      */
     inline bool CloseStatusFilterHasBeenSet() const { return m_closeStatusFilterHasBeenSet; }
 
     /**
      * <p>If specified, only workflow executions that match this <i>close status</i>
      * are listed. For example, if TERMINATED is specified, then only TERMINATED
-     * workflow executions are listed.</p> <note> <p> <code>closeStatusFilter</code>,
+     * workflow executions are listed.</p>  <p> <code>closeStatusFilter</code>,
      * <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code>
      * are mutually exclusive. You can specify at most one of these in a request.</p>
-     * </note>
+     * 
      */
     inline void SetCloseStatusFilter(const CloseStatusFilter& value) { m_closeStatusFilterHasBeenSet = true; m_closeStatusFilter = value; }
 
     /**
      * <p>If specified, only workflow executions that match this <i>close status</i>
      * are listed. For example, if TERMINATED is specified, then only TERMINATED
-     * workflow executions are listed.</p> <note> <p> <code>closeStatusFilter</code>,
+     * workflow executions are listed.</p>  <p> <code>closeStatusFilter</code>,
      * <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code>
      * are mutually exclusive. You can specify at most one of these in a request.</p>
-     * </note>
+     * 
      */
     inline void SetCloseStatusFilter(CloseStatusFilter&& value) { m_closeStatusFilterHasBeenSet = true; m_closeStatusFilter = std::move(value); }
 
     /**
      * <p>If specified, only workflow executions that match this <i>close status</i>
      * are listed. For example, if TERMINATED is specified, then only TERMINATED
-     * workflow executions are listed.</p> <note> <p> <code>closeStatusFilter</code>,
+     * workflow executions are listed.</p>  <p> <code>closeStatusFilter</code>,
      * <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code>
      * are mutually exclusive. You can specify at most one of these in a request.</p>
-     * </note>
+     * 
      */
     inline ListClosedWorkflowExecutionsRequest& WithCloseStatusFilter(const CloseStatusFilter& value) { SetCloseStatusFilter(value); return *this;}
 
     /**
      * <p>If specified, only workflow executions that match this <i>close status</i>
      * are listed. For example, if TERMINATED is specified, then only TERMINATED
-     * workflow executions are listed.</p> <note> <p> <code>closeStatusFilter</code>,
+     * workflow executions are listed.</p>  <p> <code>closeStatusFilter</code>,
      * <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code>
      * are mutually exclusive. You can specify at most one of these in a request.</p>
-     * </note>
+     * 
      */
     inline ListClosedWorkflowExecutionsRequest& WithCloseStatusFilter(CloseStatusFilter&& value) { SetCloseStatusFilter(std::move(value)); return *this;}
 
 
     /**
      * <p>If specified, only executions of the type specified in the filter are
-     * returned.</p> <note> <p> <code>closeStatusFilter</code>,
+     * returned.</p>  <p> <code>closeStatusFilter</code>,
      * <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code>
      * are mutually exclusive. You can specify at most one of these in a request.</p>
-     * </note>
+     * 
      */
     inline const WorkflowTypeFilter& GetTypeFilter() const{ return m_typeFilter; }
 
     /**
      * <p>If specified, only executions of the type specified in the filter are
-     * returned.</p> <note> <p> <code>closeStatusFilter</code>,
+     * returned.</p>  <p> <code>closeStatusFilter</code>,
      * <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code>
      * are mutually exclusive. You can specify at most one of these in a request.</p>
-     * </note>
+     * 
      */
     inline bool TypeFilterHasBeenSet() const { return m_typeFilterHasBeenSet; }
 
     /**
      * <p>If specified, only executions of the type specified in the filter are
-     * returned.</p> <note> <p> <code>closeStatusFilter</code>,
+     * returned.</p>  <p> <code>closeStatusFilter</code>,
      * <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code>
      * are mutually exclusive. You can specify at most one of these in a request.</p>
-     * </note>
+     * 
      */
     inline void SetTypeFilter(const WorkflowTypeFilter& value) { m_typeFilterHasBeenSet = true; m_typeFilter = value; }
 
     /**
      * <p>If specified, only executions of the type specified in the filter are
-     * returned.</p> <note> <p> <code>closeStatusFilter</code>,
+     * returned.</p>  <p> <code>closeStatusFilter</code>,
      * <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code>
      * are mutually exclusive. You can specify at most one of these in a request.</p>
-     * </note>
+     * 
      */
     inline void SetTypeFilter(WorkflowTypeFilter&& value) { m_typeFilterHasBeenSet = true; m_typeFilter = std::move(value); }
 
     /**
      * <p>If specified, only executions of the type specified in the filter are
-     * returned.</p> <note> <p> <code>closeStatusFilter</code>,
+     * returned.</p>  <p> <code>closeStatusFilter</code>,
      * <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code>
      * are mutually exclusive. You can specify at most one of these in a request.</p>
-     * </note>
+     * 
      */
     inline ListClosedWorkflowExecutionsRequest& WithTypeFilter(const WorkflowTypeFilter& value) { SetTypeFilter(value); return *this;}
 
     /**
      * <p>If specified, only executions of the type specified in the filter are
-     * returned.</p> <note> <p> <code>closeStatusFilter</code>,
+     * returned.</p>  <p> <code>closeStatusFilter</code>,
      * <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code>
      * are mutually exclusive. You can specify at most one of these in a request.</p>
-     * </note>
+     * 
      */
     inline ListClosedWorkflowExecutionsRequest& WithTypeFilter(WorkflowTypeFilter&& value) { SetTypeFilter(std::move(value)); return *this;}
 
 
     /**
      * <p>If specified, only executions that have the matching tag are listed.</p>
-     * <note> <p> <code>closeStatusFilter</code>, <code>executionFilter</code>,
+     *  <p> <code>closeStatusFilter</code>, <code>executionFilter</code>,
      * <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You
-     * can specify at most one of these in a request.</p> </note>
+     * can specify at most one of these in a request.</p> 
      */
     inline const TagFilter& GetTagFilter() const{ return m_tagFilter; }
 
     /**
      * <p>If specified, only executions that have the matching tag are listed.</p>
-     * <note> <p> <code>closeStatusFilter</code>, <code>executionFilter</code>,
+     *  <p> <code>closeStatusFilter</code>, <code>executionFilter</code>,
      * <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You
-     * can specify at most one of these in a request.</p> </note>
+     * can specify at most one of these in a request.</p> 
      */
     inline bool TagFilterHasBeenSet() const { return m_tagFilterHasBeenSet; }
 
     /**
      * <p>If specified, only executions that have the matching tag are listed.</p>
-     * <note> <p> <code>closeStatusFilter</code>, <code>executionFilter</code>,
+     *  <p> <code>closeStatusFilter</code>, <code>executionFilter</code>,
      * <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You
-     * can specify at most one of these in a request.</p> </note>
+     * can specify at most one of these in a request.</p> 
      */
     inline void SetTagFilter(const TagFilter& value) { m_tagFilterHasBeenSet = true; m_tagFilter = value; }
 
     /**
      * <p>If specified, only executions that have the matching tag are listed.</p>
-     * <note> <p> <code>closeStatusFilter</code>, <code>executionFilter</code>,
+     *  <p> <code>closeStatusFilter</code>, <code>executionFilter</code>,
      * <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You
-     * can specify at most one of these in a request.</p> </note>
+     * can specify at most one of these in a request.</p> 
      */
     inline void SetTagFilter(TagFilter&& value) { m_tagFilterHasBeenSet = true; m_tagFilter = std::move(value); }
 
     /**
      * <p>If specified, only executions that have the matching tag are listed.</p>
-     * <note> <p> <code>closeStatusFilter</code>, <code>executionFilter</code>,
+     *  <p> <code>closeStatusFilter</code>, <code>executionFilter</code>,
      * <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You
-     * can specify at most one of these in a request.</p> </note>
+     * can specify at most one of these in a request.</p> 
      */
     inline ListClosedWorkflowExecutionsRequest& WithTagFilter(const TagFilter& value) { SetTagFilter(value); return *this;}
 
     /**
      * <p>If specified, only executions that have the matching tag are listed.</p>
-     * <note> <p> <code>closeStatusFilter</code>, <code>executionFilter</code>,
+     *  <p> <code>closeStatusFilter</code>, <code>executionFilter</code>,
      * <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You
-     * can specify at most one of these in a request.</p> </note>
+     * can specify at most one of these in a request.</p> 
      */
     inline ListClosedWorkflowExecutionsRequest& WithTagFilter(TagFilter&& value) { SetTagFilter(std::move(value)); return *this;}
 

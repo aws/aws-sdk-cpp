@@ -36,7 +36,7 @@ namespace Model
 
     /**
      * <p>Specifies the secret that you want to delete. You can specify either the
-     * Amazon Resource Name (ARN) or the friendly name of the secret.</p> <note> <p>If
+     * Amazon Resource Name (ARN) or the friendly name of the secret.</p>  <p>If
      * you specify an ARN, we generally recommend that you specify a complete ARN. You
      * can specify a partial ARN too—for example, if you don’t include the final hyphen
      * and six random characters that Secrets Manager adds at the end of the ARN when
@@ -46,14 +46,18 @@ namespace Model
      * six characters to the ARN) and you try to use that as a partial ARN, then those
      * characters cause Secrets Manager to assume that you’re specifying a complete
      * ARN. This confusion can cause unexpected results. To avoid this situation, we
-     * recommend that you don’t create secret names that end with a hyphen followed by
-     * six characters.</p> </note>
+     * recommend that you don’t create secret names ending with a hyphen followed by
+     * six characters.</p> <p>If you specify an incomplete ARN without the random
+     * suffix, and instead provide the 'friendly name', you <i>must</i> not include the
+     * random suffix. If you do include the random suffix added by Secrets Manager, you
+     * receive either a <i>ResourceNotFoundException</i> or an
+     * <i>AccessDeniedException</i> error, depending on your permissions.</p> 
      */
     inline const Aws::String& GetSecretId() const{ return m_secretId; }
 
     /**
      * <p>Specifies the secret that you want to delete. You can specify either the
-     * Amazon Resource Name (ARN) or the friendly name of the secret.</p> <note> <p>If
+     * Amazon Resource Name (ARN) or the friendly name of the secret.</p>  <p>If
      * you specify an ARN, we generally recommend that you specify a complete ARN. You
      * can specify a partial ARN too—for example, if you don’t include the final hyphen
      * and six random characters that Secrets Manager adds at the end of the ARN when
@@ -63,14 +67,18 @@ namespace Model
      * six characters to the ARN) and you try to use that as a partial ARN, then those
      * characters cause Secrets Manager to assume that you’re specifying a complete
      * ARN. This confusion can cause unexpected results. To avoid this situation, we
-     * recommend that you don’t create secret names that end with a hyphen followed by
-     * six characters.</p> </note>
+     * recommend that you don’t create secret names ending with a hyphen followed by
+     * six characters.</p> <p>If you specify an incomplete ARN without the random
+     * suffix, and instead provide the 'friendly name', you <i>must</i> not include the
+     * random suffix. If you do include the random suffix added by Secrets Manager, you
+     * receive either a <i>ResourceNotFoundException</i> or an
+     * <i>AccessDeniedException</i> error, depending on your permissions.</p> 
      */
     inline bool SecretIdHasBeenSet() const { return m_secretIdHasBeenSet; }
 
     /**
      * <p>Specifies the secret that you want to delete. You can specify either the
-     * Amazon Resource Name (ARN) or the friendly name of the secret.</p> <note> <p>If
+     * Amazon Resource Name (ARN) or the friendly name of the secret.</p>  <p>If
      * you specify an ARN, we generally recommend that you specify a complete ARN. You
      * can specify a partial ARN too—for example, if you don’t include the final hyphen
      * and six random characters that Secrets Manager adds at the end of the ARN when
@@ -80,14 +88,18 @@ namespace Model
      * six characters to the ARN) and you try to use that as a partial ARN, then those
      * characters cause Secrets Manager to assume that you’re specifying a complete
      * ARN. This confusion can cause unexpected results. To avoid this situation, we
-     * recommend that you don’t create secret names that end with a hyphen followed by
-     * six characters.</p> </note>
+     * recommend that you don’t create secret names ending with a hyphen followed by
+     * six characters.</p> <p>If you specify an incomplete ARN without the random
+     * suffix, and instead provide the 'friendly name', you <i>must</i> not include the
+     * random suffix. If you do include the random suffix added by Secrets Manager, you
+     * receive either a <i>ResourceNotFoundException</i> or an
+     * <i>AccessDeniedException</i> error, depending on your permissions.</p> 
      */
     inline void SetSecretId(const Aws::String& value) { m_secretIdHasBeenSet = true; m_secretId = value; }
 
     /**
      * <p>Specifies the secret that you want to delete. You can specify either the
-     * Amazon Resource Name (ARN) or the friendly name of the secret.</p> <note> <p>If
+     * Amazon Resource Name (ARN) or the friendly name of the secret.</p>  <p>If
      * you specify an ARN, we generally recommend that you specify a complete ARN. You
      * can specify a partial ARN too—for example, if you don’t include the final hyphen
      * and six random characters that Secrets Manager adds at the end of the ARN when
@@ -97,14 +109,18 @@ namespace Model
      * six characters to the ARN) and you try to use that as a partial ARN, then those
      * characters cause Secrets Manager to assume that you’re specifying a complete
      * ARN. This confusion can cause unexpected results. To avoid this situation, we
-     * recommend that you don’t create secret names that end with a hyphen followed by
-     * six characters.</p> </note>
+     * recommend that you don’t create secret names ending with a hyphen followed by
+     * six characters.</p> <p>If you specify an incomplete ARN without the random
+     * suffix, and instead provide the 'friendly name', you <i>must</i> not include the
+     * random suffix. If you do include the random suffix added by Secrets Manager, you
+     * receive either a <i>ResourceNotFoundException</i> or an
+     * <i>AccessDeniedException</i> error, depending on your permissions.</p> 
      */
     inline void SetSecretId(Aws::String&& value) { m_secretIdHasBeenSet = true; m_secretId = std::move(value); }
 
     /**
      * <p>Specifies the secret that you want to delete. You can specify either the
-     * Amazon Resource Name (ARN) or the friendly name of the secret.</p> <note> <p>If
+     * Amazon Resource Name (ARN) or the friendly name of the secret.</p>  <p>If
      * you specify an ARN, we generally recommend that you specify a complete ARN. You
      * can specify a partial ARN too—for example, if you don’t include the final hyphen
      * and six random characters that Secrets Manager adds at the end of the ARN when
@@ -114,14 +130,18 @@ namespace Model
      * six characters to the ARN) and you try to use that as a partial ARN, then those
      * characters cause Secrets Manager to assume that you’re specifying a complete
      * ARN. This confusion can cause unexpected results. To avoid this situation, we
-     * recommend that you don’t create secret names that end with a hyphen followed by
-     * six characters.</p> </note>
+     * recommend that you don’t create secret names ending with a hyphen followed by
+     * six characters.</p> <p>If you specify an incomplete ARN without the random
+     * suffix, and instead provide the 'friendly name', you <i>must</i> not include the
+     * random suffix. If you do include the random suffix added by Secrets Manager, you
+     * receive either a <i>ResourceNotFoundException</i> or an
+     * <i>AccessDeniedException</i> error, depending on your permissions.</p> 
      */
     inline void SetSecretId(const char* value) { m_secretIdHasBeenSet = true; m_secretId.assign(value); }
 
     /**
      * <p>Specifies the secret that you want to delete. You can specify either the
-     * Amazon Resource Name (ARN) or the friendly name of the secret.</p> <note> <p>If
+     * Amazon Resource Name (ARN) or the friendly name of the secret.</p>  <p>If
      * you specify an ARN, we generally recommend that you specify a complete ARN. You
      * can specify a partial ARN too—for example, if you don’t include the final hyphen
      * and six random characters that Secrets Manager adds at the end of the ARN when
@@ -131,14 +151,18 @@ namespace Model
      * six characters to the ARN) and you try to use that as a partial ARN, then those
      * characters cause Secrets Manager to assume that you’re specifying a complete
      * ARN. This confusion can cause unexpected results. To avoid this situation, we
-     * recommend that you don’t create secret names that end with a hyphen followed by
-     * six characters.</p> </note>
+     * recommend that you don’t create secret names ending with a hyphen followed by
+     * six characters.</p> <p>If you specify an incomplete ARN without the random
+     * suffix, and instead provide the 'friendly name', you <i>must</i> not include the
+     * random suffix. If you do include the random suffix added by Secrets Manager, you
+     * receive either a <i>ResourceNotFoundException</i> or an
+     * <i>AccessDeniedException</i> error, depending on your permissions.</p> 
      */
     inline DeleteSecretRequest& WithSecretId(const Aws::String& value) { SetSecretId(value); return *this;}
 
     /**
      * <p>Specifies the secret that you want to delete. You can specify either the
-     * Amazon Resource Name (ARN) or the friendly name of the secret.</p> <note> <p>If
+     * Amazon Resource Name (ARN) or the friendly name of the secret.</p>  <p>If
      * you specify an ARN, we generally recommend that you specify a complete ARN. You
      * can specify a partial ARN too—for example, if you don’t include the final hyphen
      * and six random characters that Secrets Manager adds at the end of the ARN when
@@ -148,14 +172,18 @@ namespace Model
      * six characters to the ARN) and you try to use that as a partial ARN, then those
      * characters cause Secrets Manager to assume that you’re specifying a complete
      * ARN. This confusion can cause unexpected results. To avoid this situation, we
-     * recommend that you don’t create secret names that end with a hyphen followed by
-     * six characters.</p> </note>
+     * recommend that you don’t create secret names ending with a hyphen followed by
+     * six characters.</p> <p>If you specify an incomplete ARN without the random
+     * suffix, and instead provide the 'friendly name', you <i>must</i> not include the
+     * random suffix. If you do include the random suffix added by Secrets Manager, you
+     * receive either a <i>ResourceNotFoundException</i> or an
+     * <i>AccessDeniedException</i> error, depending on your permissions.</p> 
      */
     inline DeleteSecretRequest& WithSecretId(Aws::String&& value) { SetSecretId(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the secret that you want to delete. You can specify either the
-     * Amazon Resource Name (ARN) or the friendly name of the secret.</p> <note> <p>If
+     * Amazon Resource Name (ARN) or the friendly name of the secret.</p>  <p>If
      * you specify an ARN, we generally recommend that you specify a complete ARN. You
      * can specify a partial ARN too—for example, if you don’t include the final hyphen
      * and six random characters that Secrets Manager adds at the end of the ARN when
@@ -165,8 +193,12 @@ namespace Model
      * six characters to the ARN) and you try to use that as a partial ARN, then those
      * characters cause Secrets Manager to assume that you’re specifying a complete
      * ARN. This confusion can cause unexpected results. To avoid this situation, we
-     * recommend that you don’t create secret names that end with a hyphen followed by
-     * six characters.</p> </note>
+     * recommend that you don’t create secret names ending with a hyphen followed by
+     * six characters.</p> <p>If you specify an incomplete ARN without the random
+     * suffix, and instead provide the 'friendly name', you <i>must</i> not include the
+     * random suffix. If you do include the random suffix added by Secrets Manager, you
+     * receive either a <i>ResourceNotFoundException</i> or an
+     * <i>AccessDeniedException</i> error, depending on your permissions.</p> 
      */
     inline DeleteSecretRequest& WithSecretId(const char* value) { SetSecretId(value); return *this;}
 
@@ -211,12 +243,12 @@ namespace Model
      * asynchronous background process performs the actual deletion, so there can be a
      * short delay before the operation completes. If you write code to delete and then
      * immediately recreate a secret with the same name, ensure that your code includes
-     * appropriate back off and retry logic.</p> <important> <p>Use this parameter with
+     * appropriate back off and retry logic.</p>  <p>Use this parameter with
      * caution. This parameter causes the operation to skip the normal waiting period
      * before the permanent deletion that AWS would normally impose with the
      * <code>RecoveryWindowInDays</code> parameter. If you delete a secret with the
      * <code>ForceDeleteWithouRecovery</code> parameter, then you have no opportunity
-     * to recover the secret. It is permanently lost.</p> </important>
+     * to recover the secret. It is permanently lost.</p> 
      */
     inline bool GetForceDeleteWithoutRecovery() const{ return m_forceDeleteWithoutRecovery; }
 
@@ -227,12 +259,12 @@ namespace Model
      * asynchronous background process performs the actual deletion, so there can be a
      * short delay before the operation completes. If you write code to delete and then
      * immediately recreate a secret with the same name, ensure that your code includes
-     * appropriate back off and retry logic.</p> <important> <p>Use this parameter with
+     * appropriate back off and retry logic.</p>  <p>Use this parameter with
      * caution. This parameter causes the operation to skip the normal waiting period
      * before the permanent deletion that AWS would normally impose with the
      * <code>RecoveryWindowInDays</code> parameter. If you delete a secret with the
      * <code>ForceDeleteWithouRecovery</code> parameter, then you have no opportunity
-     * to recover the secret. It is permanently lost.</p> </important>
+     * to recover the secret. It is permanently lost.</p> 
      */
     inline bool ForceDeleteWithoutRecoveryHasBeenSet() const { return m_forceDeleteWithoutRecoveryHasBeenSet; }
 
@@ -243,12 +275,12 @@ namespace Model
      * asynchronous background process performs the actual deletion, so there can be a
      * short delay before the operation completes. If you write code to delete and then
      * immediately recreate a secret with the same name, ensure that your code includes
-     * appropriate back off and retry logic.</p> <important> <p>Use this parameter with
+     * appropriate back off and retry logic.</p>  <p>Use this parameter with
      * caution. This parameter causes the operation to skip the normal waiting period
      * before the permanent deletion that AWS would normally impose with the
      * <code>RecoveryWindowInDays</code> parameter. If you delete a secret with the
      * <code>ForceDeleteWithouRecovery</code> parameter, then you have no opportunity
-     * to recover the secret. It is permanently lost.</p> </important>
+     * to recover the secret. It is permanently lost.</p> 
      */
     inline void SetForceDeleteWithoutRecovery(bool value) { m_forceDeleteWithoutRecoveryHasBeenSet = true; m_forceDeleteWithoutRecovery = value; }
 
@@ -259,12 +291,12 @@ namespace Model
      * asynchronous background process performs the actual deletion, so there can be a
      * short delay before the operation completes. If you write code to delete and then
      * immediately recreate a secret with the same name, ensure that your code includes
-     * appropriate back off and retry logic.</p> <important> <p>Use this parameter with
+     * appropriate back off and retry logic.</p>  <p>Use this parameter with
      * caution. This parameter causes the operation to skip the normal waiting period
      * before the permanent deletion that AWS would normally impose with the
      * <code>RecoveryWindowInDays</code> parameter. If you delete a secret with the
      * <code>ForceDeleteWithouRecovery</code> parameter, then you have no opportunity
-     * to recover the secret. It is permanently lost.</p> </important>
+     * to recover the secret. It is permanently lost.</p> 
      */
     inline DeleteSecretRequest& WithForceDeleteWithoutRecovery(bool value) { SetForceDeleteWithoutRecovery(value); return *this;}
 

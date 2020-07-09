@@ -47,11 +47,11 @@ namespace Model
    * <code>TransactGetItems</code> request is in a different account or region.</p>
    * </li> <li> <p>There is insufficient provisioned capacity for the transaction to
    * be completed.</p> </li> <li> <p>There is a user error, such as an invalid data
-   * format.</p> </li> </ul> <note> <p>If using Java, DynamoDB lists the cancellation
+   * format.</p> </li> </ul>  <p>If using Java, DynamoDB lists the cancellation
    * reasons on the <code>CancellationReasons</code> property. This property is not
    * set for other languages. Transaction cancellation reasons are ordered in the
    * order of requested items, if an item has no error it will have <code>NONE</code>
-   * code and <code>Null</code> message.</p> </note> <p>Cancellation reason codes and
+   * code and <code>Null</code> message.</p>  <p>Cancellation reason codes and
    * possible error messages:</p> <ul> <li> <p>No Errors:</p> <ul> <li> <p>Code:
    * <code>NONE</code> </p> </li> <li> <p>Message: <code>null</code> </p> </li> </ul>
    * </li> <li> <p>Conditional Check Failed:</p> <ul> <li> <p>Code:
@@ -65,24 +65,24 @@ namespace Model
    * <code>ProvisionedThroughputExceeded</code> </p> </li> <li> <p>Messages: </p>
    * <ul> <li> <p>The level of configured provisioned throughput for the table was
    * exceeded. Consider increasing your provisioning level with the UpdateTable
-   * API.</p> <note> <p>This Message is received when provisioned throughput is
-   * exceeded is on a provisioned DynamoDB table.</p> </note> </li> <li> <p>The level
+   * API.</p>  <p>This Message is received when provisioned throughput is
+   * exceeded is on a provisioned DynamoDB table.</p>  </li> <li> <p>The level
    * of configured provisioned throughput for one or more global secondary indexes of
    * the table was exceeded. Consider increasing your provisioning level for the
-   * under-provisioned global secondary indexes with the UpdateTable API.</p> <note>
+   * under-provisioned global secondary indexes with the UpdateTable API.</p> 
    * <p>This message is returned when provisioned throughput is exceeded is on a
-   * provisioned GSI.</p> </note> </li> </ul> </li> </ul> </li> <li> <p>Throttling
+   * provisioned GSI.</p>  </li> </ul> </li> </ul> </li> <li> <p>Throttling
    * Error:</p> <ul> <li> <p>Code: <code>ThrottlingError</code> </p> </li> <li>
    * <p>Messages: </p> <ul> <li> <p>Throughput exceeds the current capacity of your
    * table or index. DynamoDB is automatically scaling your table or index so please
    * try again shortly. If exceptions persist, check if you have a hot key:
    * https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/bp-partition-key-design.html.</p>
-   * <note> <p>This message is returned when writes get throttled on an On-Demand
-   * table as DynamoDB is automatically scaling the table.</p> </note> </li> <li>
+   *  <p>This message is returned when writes get throttled on an On-Demand
+   * table as DynamoDB is automatically scaling the table.</p>  </li> <li>
    * <p>Throughput exceeds the current capacity for one or more global secondary
    * indexes. DynamoDB is automatically scaling your index so please try again
-   * shortly.</p> <note> <p>This message is returned when when writes get throttled
-   * on an On-Demand GSI as DynamoDB is automatically scaling the GSI.</p> </note>
+   * shortly.</p>  <p>This message is returned when when writes get throttled
+   * on an On-Demand GSI as DynamoDB is automatically scaling the GSI.</p> 
    * </li> </ul> </li> </ul> </li> <li> <p>Validation Error:</p> <ul> <li> <p>Code:
    * <code>ValidationError</code> </p> </li> <li> <p>Messages: </p> <ul> <li> <p>One
    * or more parameter values were invalid.</p> </li> <li> <p>The update expression

@@ -235,7 +235,7 @@ namespace Model
      * requests. For more information, refer to the AWS Key Management Service
      * section<a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">
-     * Using Key Policies in AWS KMS </a> </p> <note> <p>Certain Nitro-based instances
+     * Using Key Policies in AWS KMS </a> </p>  <p>Certain Nitro-based instances
      * include local storage, dependent on the instance type. Local storage volumes are
      * encrypted using a hardware module on the instance. You can't request a
      * <code>KmsKeyId</code> when using an instance type with local storage. If any of
@@ -249,7 +249,7 @@ namespace Model
      * Store Volumes</a>.</p> <p>For more information about local instance storage
      * encryption, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ssd-instance-store.html">SSD
-     * Instance Store Volumes</a>.</p> </note>
+     * Instance Store Volumes</a>.</p> 
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
@@ -268,7 +268,7 @@ namespace Model
      * requests. For more information, refer to the AWS Key Management Service
      * section<a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">
-     * Using Key Policies in AWS KMS </a> </p> <note> <p>Certain Nitro-based instances
+     * Using Key Policies in AWS KMS </a> </p>  <p>Certain Nitro-based instances
      * include local storage, dependent on the instance type. Local storage volumes are
      * encrypted using a hardware module on the instance. You can't request a
      * <code>KmsKeyId</code> when using an instance type with local storage. If any of
@@ -282,7 +282,7 @@ namespace Model
      * Store Volumes</a>.</p> <p>For more information about local instance storage
      * encryption, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ssd-instance-store.html">SSD
-     * Instance Store Volumes</a>.</p> </note>
+     * Instance Store Volumes</a>.</p> 
      */
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
@@ -301,7 +301,7 @@ namespace Model
      * requests. For more information, refer to the AWS Key Management Service
      * section<a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">
-     * Using Key Policies in AWS KMS </a> </p> <note> <p>Certain Nitro-based instances
+     * Using Key Policies in AWS KMS </a> </p>  <p>Certain Nitro-based instances
      * include local storage, dependent on the instance type. Local storage volumes are
      * encrypted using a hardware module on the instance. You can't request a
      * <code>KmsKeyId</code> when using an instance type with local storage. If any of
@@ -315,7 +315,7 @@ namespace Model
      * Store Volumes</a>.</p> <p>For more information about local instance storage
      * encryption, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ssd-instance-store.html">SSD
-     * Instance Store Volumes</a>.</p> </note>
+     * Instance Store Volumes</a>.</p> 
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
@@ -334,7 +334,7 @@ namespace Model
      * requests. For more information, refer to the AWS Key Management Service
      * section<a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">
-     * Using Key Policies in AWS KMS </a> </p> <note> <p>Certain Nitro-based instances
+     * Using Key Policies in AWS KMS </a> </p>  <p>Certain Nitro-based instances
      * include local storage, dependent on the instance type. Local storage volumes are
      * encrypted using a hardware module on the instance. You can't request a
      * <code>KmsKeyId</code> when using an instance type with local storage. If any of
@@ -348,7 +348,7 @@ namespace Model
      * Store Volumes</a>.</p> <p>For more information about local instance storage
      * encryption, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ssd-instance-store.html">SSD
-     * Instance Store Volumes</a>.</p> </note>
+     * Instance Store Volumes</a>.</p> 
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
@@ -367,7 +367,7 @@ namespace Model
      * requests. For more information, refer to the AWS Key Management Service
      * section<a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">
-     * Using Key Policies in AWS KMS </a> </p> <note> <p>Certain Nitro-based instances
+     * Using Key Policies in AWS KMS </a> </p>  <p>Certain Nitro-based instances
      * include local storage, dependent on the instance type. Local storage volumes are
      * encrypted using a hardware module on the instance. You can't request a
      * <code>KmsKeyId</code> when using an instance type with local storage. If any of
@@ -381,7 +381,7 @@ namespace Model
      * Store Volumes</a>.</p> <p>For more information about local instance storage
      * encryption, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ssd-instance-store.html">SSD
-     * Instance Store Volumes</a>.</p> </note>
+     * Instance Store Volumes</a>.</p> 
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
@@ -400,7 +400,7 @@ namespace Model
      * requests. For more information, refer to the AWS Key Management Service
      * section<a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">
-     * Using Key Policies in AWS KMS </a> </p> <note> <p>Certain Nitro-based instances
+     * Using Key Policies in AWS KMS </a> </p>  <p>Certain Nitro-based instances
      * include local storage, dependent on the instance type. Local storage volumes are
      * encrypted using a hardware module on the instance. You can't request a
      * <code>KmsKeyId</code> when using an instance type with local storage. If any of
@@ -414,7 +414,7 @@ namespace Model
      * Store Volumes</a>.</p> <p>For more information about local instance storage
      * encryption, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ssd-instance-store.html">SSD
-     * Instance Store Volumes</a>.</p> </note>
+     * Instance Store Volumes</a>.</p> 
      */
     inline CreateEndpointConfigRequest& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
@@ -433,7 +433,7 @@ namespace Model
      * requests. For more information, refer to the AWS Key Management Service
      * section<a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">
-     * Using Key Policies in AWS KMS </a> </p> <note> <p>Certain Nitro-based instances
+     * Using Key Policies in AWS KMS </a> </p>  <p>Certain Nitro-based instances
      * include local storage, dependent on the instance type. Local storage volumes are
      * encrypted using a hardware module on the instance. You can't request a
      * <code>KmsKeyId</code> when using an instance type with local storage. If any of
@@ -447,7 +447,7 @@ namespace Model
      * Store Volumes</a>.</p> <p>For more information about local instance storage
      * encryption, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ssd-instance-store.html">SSD
-     * Instance Store Volumes</a>.</p> </note>
+     * Instance Store Volumes</a>.</p> 
      */
     inline CreateEndpointConfigRequest& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
@@ -466,7 +466,7 @@ namespace Model
      * requests. For more information, refer to the AWS Key Management Service
      * section<a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">
-     * Using Key Policies in AWS KMS </a> </p> <note> <p>Certain Nitro-based instances
+     * Using Key Policies in AWS KMS </a> </p>  <p>Certain Nitro-based instances
      * include local storage, dependent on the instance type. Local storage volumes are
      * encrypted using a hardware module on the instance. You can't request a
      * <code>KmsKeyId</code> when using an instance type with local storage. If any of
@@ -480,7 +480,7 @@ namespace Model
      * Store Volumes</a>.</p> <p>For more information about local instance storage
      * encryption, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ssd-instance-store.html">SSD
-     * Instance Store Volumes</a>.</p> </note>
+     * Instance Store Volumes</a>.</p> 
      */
     inline CreateEndpointConfigRequest& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 

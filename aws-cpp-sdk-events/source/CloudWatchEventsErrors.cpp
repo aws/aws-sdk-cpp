@@ -19,6 +19,7 @@ namespace CloudWatchEventsErrorMapper
 {
 
 static const int INTERNAL_HASH = HashingUtils::HashString("InternalException");
+static const int OPERATION_DISABLED_HASH = HashingUtils::HashString("OperationDisabledException");
 static const int INVALID_EVENT_PATTERN_HASH = HashingUtils::HashString("InvalidEventPatternException");
 static const int MANAGED_RULE_HASH = HashingUtils::HashString("ManagedRuleException");
 static const int RESOURCE_ALREADY_EXISTS_HASH = HashingUtils::HashString("ResourceAlreadyExistsException");
@@ -35,6 +36,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   if (hashCode == INTERNAL_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudWatchEventsErrors::INTERNAL), false);
+  }
+  else if (hashCode == OPERATION_DISABLED_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudWatchEventsErrors::OPERATION_DISABLED), false);
   }
   else if (hashCode == INVALID_EVENT_PATTERN_HASH)
   {

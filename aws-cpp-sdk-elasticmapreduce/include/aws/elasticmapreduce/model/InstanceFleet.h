@@ -32,9 +32,9 @@ namespace Model
    * <p>Describes an instance fleet, which is a group of EC2 instances that host a
    * particular node type (master, core, or task) in an Amazon EMR cluster. Instance
    * fleets can consist of a mix of instance types and On-Demand and Spot instances,
-   * which are provisioned to meet a defined target capacity. </p> <note> <p>The
+   * which are provisioned to meet a defined target capacity. </p>  <p>The
    * instance fleet configuration is available only in Amazon EMR versions 4.8.0 and
-   * later, excluding 5.0.x versions.</p> </note><p><h3>See Also:</h3>   <a
+   * later, excluding 5.0.x versions.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/InstanceFleet">AWS
    * API Reference</a></p>
    */
@@ -210,13 +210,13 @@ namespace Model
      * <code>WeightedCapacity</code> of 5 units, the instance is provisioned, and the
      * target capacity is exceeded by 3 units. You can use
      * <a>InstanceFleet$ProvisionedOnDemandCapacity</a> to determine the Spot capacity
-     * units that have been provisioned for the instance fleet.</p> <note> <p>If not
+     * units that have been provisioned for the instance fleet.</p>  <p>If not
      * specified or set to 0, only Spot instances are provisioned for the instance
      * fleet using <code>TargetSpotCapacity</code>. At least one of
      * <code>TargetSpotCapacity</code> and <code>TargetOnDemandCapacity</code> should
      * be greater than 0. For a master instance fleet, only one of
      * <code>TargetSpotCapacity</code> and <code>TargetOnDemandCapacity</code> can be
-     * specified, and its value must be 1.</p> </note>
+     * specified, and its value must be 1.</p> 
      */
     inline int GetTargetOnDemandCapacity() const{ return m_targetOnDemandCapacity; }
 
@@ -233,13 +233,13 @@ namespace Model
      * <code>WeightedCapacity</code> of 5 units, the instance is provisioned, and the
      * target capacity is exceeded by 3 units. You can use
      * <a>InstanceFleet$ProvisionedOnDemandCapacity</a> to determine the Spot capacity
-     * units that have been provisioned for the instance fleet.</p> <note> <p>If not
+     * units that have been provisioned for the instance fleet.</p>  <p>If not
      * specified or set to 0, only Spot instances are provisioned for the instance
      * fleet using <code>TargetSpotCapacity</code>. At least one of
      * <code>TargetSpotCapacity</code> and <code>TargetOnDemandCapacity</code> should
      * be greater than 0. For a master instance fleet, only one of
      * <code>TargetSpotCapacity</code> and <code>TargetOnDemandCapacity</code> can be
-     * specified, and its value must be 1.</p> </note>
+     * specified, and its value must be 1.</p> 
      */
     inline bool TargetOnDemandCapacityHasBeenSet() const { return m_targetOnDemandCapacityHasBeenSet; }
 
@@ -256,13 +256,13 @@ namespace Model
      * <code>WeightedCapacity</code> of 5 units, the instance is provisioned, and the
      * target capacity is exceeded by 3 units. You can use
      * <a>InstanceFleet$ProvisionedOnDemandCapacity</a> to determine the Spot capacity
-     * units that have been provisioned for the instance fleet.</p> <note> <p>If not
+     * units that have been provisioned for the instance fleet.</p>  <p>If not
      * specified or set to 0, only Spot instances are provisioned for the instance
      * fleet using <code>TargetSpotCapacity</code>. At least one of
      * <code>TargetSpotCapacity</code> and <code>TargetOnDemandCapacity</code> should
      * be greater than 0. For a master instance fleet, only one of
      * <code>TargetSpotCapacity</code> and <code>TargetOnDemandCapacity</code> can be
-     * specified, and its value must be 1.</p> </note>
+     * specified, and its value must be 1.</p> 
      */
     inline void SetTargetOnDemandCapacity(int value) { m_targetOnDemandCapacityHasBeenSet = true; m_targetOnDemandCapacity = value; }
 
@@ -279,13 +279,13 @@ namespace Model
      * <code>WeightedCapacity</code> of 5 units, the instance is provisioned, and the
      * target capacity is exceeded by 3 units. You can use
      * <a>InstanceFleet$ProvisionedOnDemandCapacity</a> to determine the Spot capacity
-     * units that have been provisioned for the instance fleet.</p> <note> <p>If not
+     * units that have been provisioned for the instance fleet.</p>  <p>If not
      * specified or set to 0, only Spot instances are provisioned for the instance
      * fleet using <code>TargetSpotCapacity</code>. At least one of
      * <code>TargetSpotCapacity</code> and <code>TargetOnDemandCapacity</code> should
      * be greater than 0. For a master instance fleet, only one of
      * <code>TargetSpotCapacity</code> and <code>TargetOnDemandCapacity</code> can be
-     * specified, and its value must be 1.</p> </note>
+     * specified, and its value must be 1.</p> 
      */
     inline InstanceFleet& WithTargetOnDemandCapacity(int value) { SetTargetOnDemandCapacity(value); return *this;}
 
@@ -302,13 +302,13 @@ namespace Model
      * provision an instance with a <code>WeightedCapacity</code> of 5 units, the
      * instance is provisioned, and the target capacity is exceeded by 3 units. You can
      * use <a>InstanceFleet$ProvisionedSpotCapacity</a> to determine the Spot capacity
-     * units that have been provisioned for the instance fleet.</p> <note> <p>If not
+     * units that have been provisioned for the instance fleet.</p>  <p>If not
      * specified or set to 0, only On-Demand instances are provisioned for the instance
      * fleet. At least one of <code>TargetSpotCapacity</code> and
      * <code>TargetOnDemandCapacity</code> should be greater than 0. For a master
      * instance fleet, only one of <code>TargetSpotCapacity</code> and
      * <code>TargetOnDemandCapacity</code> can be specified, and its value must be
-     * 1.</p> </note>
+     * 1.</p> 
      */
     inline int GetTargetSpotCapacity() const{ return m_targetSpotCapacity; }
 
@@ -324,13 +324,13 @@ namespace Model
      * provision an instance with a <code>WeightedCapacity</code> of 5 units, the
      * instance is provisioned, and the target capacity is exceeded by 3 units. You can
      * use <a>InstanceFleet$ProvisionedSpotCapacity</a> to determine the Spot capacity
-     * units that have been provisioned for the instance fleet.</p> <note> <p>If not
+     * units that have been provisioned for the instance fleet.</p>  <p>If not
      * specified or set to 0, only On-Demand instances are provisioned for the instance
      * fleet. At least one of <code>TargetSpotCapacity</code> and
      * <code>TargetOnDemandCapacity</code> should be greater than 0. For a master
      * instance fleet, only one of <code>TargetSpotCapacity</code> and
      * <code>TargetOnDemandCapacity</code> can be specified, and its value must be
-     * 1.</p> </note>
+     * 1.</p> 
      */
     inline bool TargetSpotCapacityHasBeenSet() const { return m_targetSpotCapacityHasBeenSet; }
 
@@ -346,13 +346,13 @@ namespace Model
      * provision an instance with a <code>WeightedCapacity</code> of 5 units, the
      * instance is provisioned, and the target capacity is exceeded by 3 units. You can
      * use <a>InstanceFleet$ProvisionedSpotCapacity</a> to determine the Spot capacity
-     * units that have been provisioned for the instance fleet.</p> <note> <p>If not
+     * units that have been provisioned for the instance fleet.</p>  <p>If not
      * specified or set to 0, only On-Demand instances are provisioned for the instance
      * fleet. At least one of <code>TargetSpotCapacity</code> and
      * <code>TargetOnDemandCapacity</code> should be greater than 0. For a master
      * instance fleet, only one of <code>TargetSpotCapacity</code> and
      * <code>TargetOnDemandCapacity</code> can be specified, and its value must be
-     * 1.</p> </note>
+     * 1.</p> 
      */
     inline void SetTargetSpotCapacity(int value) { m_targetSpotCapacityHasBeenSet = true; m_targetSpotCapacity = value; }
 
@@ -368,13 +368,13 @@ namespace Model
      * provision an instance with a <code>WeightedCapacity</code> of 5 units, the
      * instance is provisioned, and the target capacity is exceeded by 3 units. You can
      * use <a>InstanceFleet$ProvisionedSpotCapacity</a> to determine the Spot capacity
-     * units that have been provisioned for the instance fleet.</p> <note> <p>If not
+     * units that have been provisioned for the instance fleet.</p>  <p>If not
      * specified or set to 0, only On-Demand instances are provisioned for the instance
      * fleet. At least one of <code>TargetSpotCapacity</code> and
      * <code>TargetOnDemandCapacity</code> should be greater than 0. For a master
      * instance fleet, only one of <code>TargetSpotCapacity</code> and
      * <code>TargetOnDemandCapacity</code> can be specified, and its value must be
-     * 1.</p> </note>
+     * 1.</p> 
      */
     inline InstanceFleet& WithTargetSpotCapacity(int value) { SetTargetSpotCapacity(value); return *this;}
 

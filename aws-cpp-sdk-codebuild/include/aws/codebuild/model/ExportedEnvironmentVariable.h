@@ -80,82 +80,82 @@ namespace Model
 
 
     /**
-     * <p> The value assigned to this exported environment variable. </p> <note> <p>
+     * <p> The value assigned to this exported environment variable. </p>  <p>
      * During a build, the value of a variable is available starting with the
      * <code>install</code> phase. It can be updated between the start of the
      * <code>install</code> phase and the end of the <code>post_build</code> phase.
      * After the <code>post_build</code> phase ends, the value of exported variables
-     * cannot change.</p> </note>
+     * cannot change.</p> 
      */
     inline const Aws::String& GetValue() const{ return m_value; }
 
     /**
-     * <p> The value assigned to this exported environment variable. </p> <note> <p>
+     * <p> The value assigned to this exported environment variable. </p>  <p>
      * During a build, the value of a variable is available starting with the
      * <code>install</code> phase. It can be updated between the start of the
      * <code>install</code> phase and the end of the <code>post_build</code> phase.
      * After the <code>post_build</code> phase ends, the value of exported variables
-     * cannot change.</p> </note>
+     * cannot change.</p> 
      */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
 
     /**
-     * <p> The value assigned to this exported environment variable. </p> <note> <p>
+     * <p> The value assigned to this exported environment variable. </p>  <p>
      * During a build, the value of a variable is available starting with the
      * <code>install</code> phase. It can be updated between the start of the
      * <code>install</code> phase and the end of the <code>post_build</code> phase.
      * After the <code>post_build</code> phase ends, the value of exported variables
-     * cannot change.</p> </note>
+     * cannot change.</p> 
      */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
 
     /**
-     * <p> The value assigned to this exported environment variable. </p> <note> <p>
+     * <p> The value assigned to this exported environment variable. </p>  <p>
      * During a build, the value of a variable is available starting with the
      * <code>install</code> phase. It can be updated between the start of the
      * <code>install</code> phase and the end of the <code>post_build</code> phase.
      * After the <code>post_build</code> phase ends, the value of exported variables
-     * cannot change.</p> </note>
+     * cannot change.</p> 
      */
     inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
 
     /**
-     * <p> The value assigned to this exported environment variable. </p> <note> <p>
+     * <p> The value assigned to this exported environment variable. </p>  <p>
      * During a build, the value of a variable is available starting with the
      * <code>install</code> phase. It can be updated between the start of the
      * <code>install</code> phase and the end of the <code>post_build</code> phase.
      * After the <code>post_build</code> phase ends, the value of exported variables
-     * cannot change.</p> </note>
+     * cannot change.</p> 
      */
     inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
 
     /**
-     * <p> The value assigned to this exported environment variable. </p> <note> <p>
+     * <p> The value assigned to this exported environment variable. </p>  <p>
      * During a build, the value of a variable is available starting with the
      * <code>install</code> phase. It can be updated between the start of the
      * <code>install</code> phase and the end of the <code>post_build</code> phase.
      * After the <code>post_build</code> phase ends, the value of exported variables
-     * cannot change.</p> </note>
+     * cannot change.</p> 
      */
     inline ExportedEnvironmentVariable& WithValue(const Aws::String& value) { SetValue(value); return *this;}
 
     /**
-     * <p> The value assigned to this exported environment variable. </p> <note> <p>
+     * <p> The value assigned to this exported environment variable. </p>  <p>
      * During a build, the value of a variable is available starting with the
      * <code>install</code> phase. It can be updated between the start of the
      * <code>install</code> phase and the end of the <code>post_build</code> phase.
      * After the <code>post_build</code> phase ends, the value of exported variables
-     * cannot change.</p> </note>
+     * cannot change.</p> 
      */
     inline ExportedEnvironmentVariable& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
 
     /**
-     * <p> The value assigned to this exported environment variable. </p> <note> <p>
+     * <p> The value assigned to this exported environment variable. </p>  <p>
      * During a build, the value of a variable is available starting with the
      * <code>install</code> phase. It can be updated between the start of the
      * <code>install</code> phase and the end of the <code>post_build</code> phase.
      * After the <code>post_build</code> phase ends, the value of exported variables
-     * cannot change.</p> </note>
+     * cannot change.</p> 
      */
     inline ExportedEnvironmentVariable& WithValue(const char* value) { SetValue(value); return *this;}
 

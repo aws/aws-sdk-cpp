@@ -41,56 +41,56 @@ namespace Model
     /**
      * <p>The name of the DB cluster parameter group.</p> <p>Constraints:</p> <ul> <li>
      * <p>Must match the name of an existing DBClusterParameterGroup.</p> </li> </ul>
-     * <note> <p>This value is stored as a lowercase string.</p> </note>
+     *  <p>This value is stored as a lowercase string.</p> 
      */
     inline const Aws::String& GetDBClusterParameterGroupName() const{ return m_dBClusterParameterGroupName; }
 
     /**
      * <p>The name of the DB cluster parameter group.</p> <p>Constraints:</p> <ul> <li>
      * <p>Must match the name of an existing DBClusterParameterGroup.</p> </li> </ul>
-     * <note> <p>This value is stored as a lowercase string.</p> </note>
+     *  <p>This value is stored as a lowercase string.</p> 
      */
     inline bool DBClusterParameterGroupNameHasBeenSet() const { return m_dBClusterParameterGroupNameHasBeenSet; }
 
     /**
      * <p>The name of the DB cluster parameter group.</p> <p>Constraints:</p> <ul> <li>
      * <p>Must match the name of an existing DBClusterParameterGroup.</p> </li> </ul>
-     * <note> <p>This value is stored as a lowercase string.</p> </note>
+     *  <p>This value is stored as a lowercase string.</p> 
      */
     inline void SetDBClusterParameterGroupName(const Aws::String& value) { m_dBClusterParameterGroupNameHasBeenSet = true; m_dBClusterParameterGroupName = value; }
 
     /**
      * <p>The name of the DB cluster parameter group.</p> <p>Constraints:</p> <ul> <li>
      * <p>Must match the name of an existing DBClusterParameterGroup.</p> </li> </ul>
-     * <note> <p>This value is stored as a lowercase string.</p> </note>
+     *  <p>This value is stored as a lowercase string.</p> 
      */
     inline void SetDBClusterParameterGroupName(Aws::String&& value) { m_dBClusterParameterGroupNameHasBeenSet = true; m_dBClusterParameterGroupName = std::move(value); }
 
     /**
      * <p>The name of the DB cluster parameter group.</p> <p>Constraints:</p> <ul> <li>
      * <p>Must match the name of an existing DBClusterParameterGroup.</p> </li> </ul>
-     * <note> <p>This value is stored as a lowercase string.</p> </note>
+     *  <p>This value is stored as a lowercase string.</p> 
      */
     inline void SetDBClusterParameterGroupName(const char* value) { m_dBClusterParameterGroupNameHasBeenSet = true; m_dBClusterParameterGroupName.assign(value); }
 
     /**
      * <p>The name of the DB cluster parameter group.</p> <p>Constraints:</p> <ul> <li>
      * <p>Must match the name of an existing DBClusterParameterGroup.</p> </li> </ul>
-     * <note> <p>This value is stored as a lowercase string.</p> </note>
+     *  <p>This value is stored as a lowercase string.</p> 
      */
     inline CreateDBClusterParameterGroupRequest& WithDBClusterParameterGroupName(const Aws::String& value) { SetDBClusterParameterGroupName(value); return *this;}
 
     /**
      * <p>The name of the DB cluster parameter group.</p> <p>Constraints:</p> <ul> <li>
      * <p>Must match the name of an existing DBClusterParameterGroup.</p> </li> </ul>
-     * <note> <p>This value is stored as a lowercase string.</p> </note>
+     *  <p>This value is stored as a lowercase string.</p> 
      */
     inline CreateDBClusterParameterGroupRequest& WithDBClusterParameterGroupName(Aws::String&& value) { SetDBClusterParameterGroupName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the DB cluster parameter group.</p> <p>Constraints:</p> <ul> <li>
      * <p>Must match the name of an existing DBClusterParameterGroup.</p> </li> </ul>
-     * <note> <p>This value is stored as a lowercase string.</p> </note>
+     *  <p>This value is stored as a lowercase string.</p> 
      */
     inline CreateDBClusterParameterGroupRequest& WithDBClusterParameterGroupName(const char* value) { SetDBClusterParameterGroupName(value); return *this;}
 

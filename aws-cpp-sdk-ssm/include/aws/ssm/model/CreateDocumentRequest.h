@@ -300,74 +300,74 @@ namespace Model
 
 
     /**
-     * <p>A name for the Systems Manager document.</p> <important> <p>You can't use the
+     * <p>A name for the Systems Manager document.</p>  <p>You can't use the
      * following strings as document name prefixes. These are reserved by AWS for use
      * as document name prefixes:</p> <ul> <li> <p> <code>aws-</code> </p> </li> <li>
      * <p> <code>amazon</code> </p> </li> <li> <p> <code>amzn</code> </p> </li> </ul>
-     * </important>
+     * 
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>A name for the Systems Manager document.</p> <important> <p>You can't use the
+     * <p>A name for the Systems Manager document.</p>  <p>You can't use the
      * following strings as document name prefixes. These are reserved by AWS for use
      * as document name prefixes:</p> <ul> <li> <p> <code>aws-</code> </p> </li> <li>
      * <p> <code>amazon</code> </p> </li> <li> <p> <code>amzn</code> </p> </li> </ul>
-     * </important>
+     * 
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>A name for the Systems Manager document.</p> <important> <p>You can't use the
+     * <p>A name for the Systems Manager document.</p>  <p>You can't use the
      * following strings as document name prefixes. These are reserved by AWS for use
      * as document name prefixes:</p> <ul> <li> <p> <code>aws-</code> </p> </li> <li>
      * <p> <code>amazon</code> </p> </li> <li> <p> <code>amzn</code> </p> </li> </ul>
-     * </important>
+     * 
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>A name for the Systems Manager document.</p> <important> <p>You can't use the
+     * <p>A name for the Systems Manager document.</p>  <p>You can't use the
      * following strings as document name prefixes. These are reserved by AWS for use
      * as document name prefixes:</p> <ul> <li> <p> <code>aws-</code> </p> </li> <li>
      * <p> <code>amazon</code> </p> </li> <li> <p> <code>amzn</code> </p> </li> </ul>
-     * </important>
+     * 
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>A name for the Systems Manager document.</p> <important> <p>You can't use the
+     * <p>A name for the Systems Manager document.</p>  <p>You can't use the
      * following strings as document name prefixes. These are reserved by AWS for use
      * as document name prefixes:</p> <ul> <li> <p> <code>aws-</code> </p> </li> <li>
      * <p> <code>amazon</code> </p> </li> <li> <p> <code>amzn</code> </p> </li> </ul>
-     * </important>
+     * 
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>A name for the Systems Manager document.</p> <important> <p>You can't use the
+     * <p>A name for the Systems Manager document.</p>  <p>You can't use the
      * following strings as document name prefixes. These are reserved by AWS for use
      * as document name prefixes:</p> <ul> <li> <p> <code>aws-</code> </p> </li> <li>
      * <p> <code>amazon</code> </p> </li> <li> <p> <code>amzn</code> </p> </li> </ul>
-     * </important>
+     * 
      */
     inline CreateDocumentRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>A name for the Systems Manager document.</p> <important> <p>You can't use the
+     * <p>A name for the Systems Manager document.</p>  <p>You can't use the
      * following strings as document name prefixes. These are reserved by AWS for use
      * as document name prefixes:</p> <ul> <li> <p> <code>aws-</code> </p> </li> <li>
      * <p> <code>amazon</code> </p> </li> <li> <p> <code>amzn</code> </p> </li> </ul>
-     * </important>
+     * 
      */
     inline CreateDocumentRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>A name for the Systems Manager document.</p> <important> <p>You can't use the
+     * <p>A name for the Systems Manager document.</p>  <p>You can't use the
      * following strings as document name prefixes. These are reserved by AWS for use
      * as document name prefixes:</p> <ul> <li> <p> <code>aws-</code> </p> </li> <li>
      * <p> <code>amazon</code> </p> </li> <li> <p> <code>amzn</code> </p> </li> </ul>
-     * </important>
+     * 
      */
     inline CreateDocumentRequest& WithName(const char* value) { SetName(value); return *this;}
 
@@ -601,9 +601,9 @@ namespace Model
      * types of targets or the environment where it will run. In this case, you could
      * specify the following key name/value pairs:</p> <ul> <li> <p>
      * <code>Key=OS,Value=Windows</code> </p> </li> <li> <p>
-     * <code>Key=Environment,Value=Production</code> </p> </li> </ul> <note> <p>To add
+     * <code>Key=Environment,Value=Production</code> </p> </li> </ul>  <p>To add
      * tags to an existing SSM document, use the <a>AddTagsToResource</a> action.</p>
-     * </note>
+     * 
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
@@ -614,9 +614,9 @@ namespace Model
      * types of targets or the environment where it will run. In this case, you could
      * specify the following key name/value pairs:</p> <ul> <li> <p>
      * <code>Key=OS,Value=Windows</code> </p> </li> <li> <p>
-     * <code>Key=Environment,Value=Production</code> </p> </li> </ul> <note> <p>To add
+     * <code>Key=Environment,Value=Production</code> </p> </li> </ul>  <p>To add
      * tags to an existing SSM document, use the <a>AddTagsToResource</a> action.</p>
-     * </note>
+     * 
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
@@ -627,9 +627,9 @@ namespace Model
      * types of targets or the environment where it will run. In this case, you could
      * specify the following key name/value pairs:</p> <ul> <li> <p>
      * <code>Key=OS,Value=Windows</code> </p> </li> <li> <p>
-     * <code>Key=Environment,Value=Production</code> </p> </li> </ul> <note> <p>To add
+     * <code>Key=Environment,Value=Production</code> </p> </li> </ul>  <p>To add
      * tags to an existing SSM document, use the <a>AddTagsToResource</a> action.</p>
-     * </note>
+     * 
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
@@ -640,9 +640,9 @@ namespace Model
      * types of targets or the environment where it will run. In this case, you could
      * specify the following key name/value pairs:</p> <ul> <li> <p>
      * <code>Key=OS,Value=Windows</code> </p> </li> <li> <p>
-     * <code>Key=Environment,Value=Production</code> </p> </li> </ul> <note> <p>To add
+     * <code>Key=Environment,Value=Production</code> </p> </li> </ul>  <p>To add
      * tags to an existing SSM document, use the <a>AddTagsToResource</a> action.</p>
-     * </note>
+     * 
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
@@ -653,9 +653,9 @@ namespace Model
      * types of targets or the environment where it will run. In this case, you could
      * specify the following key name/value pairs:</p> <ul> <li> <p>
      * <code>Key=OS,Value=Windows</code> </p> </li> <li> <p>
-     * <code>Key=Environment,Value=Production</code> </p> </li> </ul> <note> <p>To add
+     * <code>Key=Environment,Value=Production</code> </p> </li> </ul>  <p>To add
      * tags to an existing SSM document, use the <a>AddTagsToResource</a> action.</p>
-     * </note>
+     * 
      */
     inline CreateDocumentRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
@@ -666,9 +666,9 @@ namespace Model
      * types of targets or the environment where it will run. In this case, you could
      * specify the following key name/value pairs:</p> <ul> <li> <p>
      * <code>Key=OS,Value=Windows</code> </p> </li> <li> <p>
-     * <code>Key=Environment,Value=Production</code> </p> </li> </ul> <note> <p>To add
+     * <code>Key=Environment,Value=Production</code> </p> </li> </ul>  <p>To add
      * tags to an existing SSM document, use the <a>AddTagsToResource</a> action.</p>
-     * </note>
+     * 
      */
     inline CreateDocumentRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
@@ -679,9 +679,9 @@ namespace Model
      * types of targets or the environment where it will run. In this case, you could
      * specify the following key name/value pairs:</p> <ul> <li> <p>
      * <code>Key=OS,Value=Windows</code> </p> </li> <li> <p>
-     * <code>Key=Environment,Value=Production</code> </p> </li> </ul> <note> <p>To add
+     * <code>Key=Environment,Value=Production</code> </p> </li> </ul>  <p>To add
      * tags to an existing SSM document, use the <a>AddTagsToResource</a> action.</p>
-     * </note>
+     * 
      */
     inline CreateDocumentRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
@@ -692,9 +692,9 @@ namespace Model
      * types of targets or the environment where it will run. In this case, you could
      * specify the following key name/value pairs:</p> <ul> <li> <p>
      * <code>Key=OS,Value=Windows</code> </p> </li> <li> <p>
-     * <code>Key=Environment,Value=Production</code> </p> </li> </ul> <note> <p>To add
+     * <code>Key=Environment,Value=Production</code> </p> </li> </ul>  <p>To add
      * tags to an existing SSM document, use the <a>AddTagsToResource</a> action.</p>
-     * </note>
+     * 
      */
     inline CreateDocumentRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 

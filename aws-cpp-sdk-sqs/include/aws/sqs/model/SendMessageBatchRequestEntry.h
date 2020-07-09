@@ -46,73 +46,73 @@ namespace Model
 
     /**
      * <p>An identifier for a message in this batch used to communicate the result.</p>
-     * <note> <p>The <code>Id</code>s of a batch request need to be unique within a
+     *  <p>The <code>Id</code>s of a batch request need to be unique within a
      * request.</p> <p>This identifier can have up to 80 characters. The following
      * characters are accepted: alphanumeric characters, hyphens(-), and underscores
-     * (_).</p> </note>
+     * (_).</p> 
      */
     inline const Aws::String& GetId() const{ return m_id; }
 
     /**
      * <p>An identifier for a message in this batch used to communicate the result.</p>
-     * <note> <p>The <code>Id</code>s of a batch request need to be unique within a
+     *  <p>The <code>Id</code>s of a batch request need to be unique within a
      * request.</p> <p>This identifier can have up to 80 characters. The following
      * characters are accepted: alphanumeric characters, hyphens(-), and underscores
-     * (_).</p> </note>
+     * (_).</p> 
      */
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
 
     /**
      * <p>An identifier for a message in this batch used to communicate the result.</p>
-     * <note> <p>The <code>Id</code>s of a batch request need to be unique within a
+     *  <p>The <code>Id</code>s of a batch request need to be unique within a
      * request.</p> <p>This identifier can have up to 80 characters. The following
      * characters are accepted: alphanumeric characters, hyphens(-), and underscores
-     * (_).</p> </note>
+     * (_).</p> 
      */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
      * <p>An identifier for a message in this batch used to communicate the result.</p>
-     * <note> <p>The <code>Id</code>s of a batch request need to be unique within a
+     *  <p>The <code>Id</code>s of a batch request need to be unique within a
      * request.</p> <p>This identifier can have up to 80 characters. The following
      * characters are accepted: alphanumeric characters, hyphens(-), and underscores
-     * (_).</p> </note>
+     * (_).</p> 
      */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
      * <p>An identifier for a message in this batch used to communicate the result.</p>
-     * <note> <p>The <code>Id</code>s of a batch request need to be unique within a
+     *  <p>The <code>Id</code>s of a batch request need to be unique within a
      * request.</p> <p>This identifier can have up to 80 characters. The following
      * characters are accepted: alphanumeric characters, hyphens(-), and underscores
-     * (_).</p> </note>
+     * (_).</p> 
      */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
     /**
      * <p>An identifier for a message in this batch used to communicate the result.</p>
-     * <note> <p>The <code>Id</code>s of a batch request need to be unique within a
+     *  <p>The <code>Id</code>s of a batch request need to be unique within a
      * request.</p> <p>This identifier can have up to 80 characters. The following
      * characters are accepted: alphanumeric characters, hyphens(-), and underscores
-     * (_).</p> </note>
+     * (_).</p> 
      */
     inline SendMessageBatchRequestEntry& WithId(const Aws::String& value) { SetId(value); return *this;}
 
     /**
      * <p>An identifier for a message in this batch used to communicate the result.</p>
-     * <note> <p>The <code>Id</code>s of a batch request need to be unique within a
+     *  <p>The <code>Id</code>s of a batch request need to be unique within a
      * request.</p> <p>This identifier can have up to 80 characters. The following
      * characters are accepted: alphanumeric characters, hyphens(-), and underscores
-     * (_).</p> </note>
+     * (_).</p> 
      */
     inline SendMessageBatchRequestEntry& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
      * <p>An identifier for a message in this batch used to communicate the result.</p>
-     * <note> <p>The <code>Id</code>s of a batch request need to be unique within a
+     *  <p>The <code>Id</code>s of a batch request need to be unique within a
      * request.</p> <p>This identifier can have up to 80 characters. The following
      * characters are accepted: alphanumeric characters, hyphens(-), and underscores
-     * (_).</p> </note>
+     * (_).</p> 
      */
     inline SendMessageBatchRequestEntry& WithId(const char* value) { SetId(value); return *this;}
 
@@ -163,9 +163,9 @@ namespace Model
      * Valid values: 0 to 900. Maximum: 15 minutes. Messages with a positive
      * <code>DelaySeconds</code> value become available for processing after the delay
      * period is finished. If you don't specify a value, the default value for the
-     * queue is applied. </p> <note> <p>When you set <code>FifoQueue</code>, you can't
+     * queue is applied. </p>  <p>When you set <code>FifoQueue</code>, you can't
      * set <code>DelaySeconds</code> per message. You can set this parameter only on a
-     * queue level.</p> </note>
+     * queue level.</p> 
      */
     inline int GetDelaySeconds() const{ return m_delaySeconds; }
 
@@ -174,9 +174,9 @@ namespace Model
      * Valid values: 0 to 900. Maximum: 15 minutes. Messages with a positive
      * <code>DelaySeconds</code> value become available for processing after the delay
      * period is finished. If you don't specify a value, the default value for the
-     * queue is applied. </p> <note> <p>When you set <code>FifoQueue</code>, you can't
+     * queue is applied. </p>  <p>When you set <code>FifoQueue</code>, you can't
      * set <code>DelaySeconds</code> per message. You can set this parameter only on a
-     * queue level.</p> </note>
+     * queue level.</p> 
      */
     inline bool DelaySecondsHasBeenSet() const { return m_delaySecondsHasBeenSet; }
 
@@ -185,9 +185,9 @@ namespace Model
      * Valid values: 0 to 900. Maximum: 15 minutes. Messages with a positive
      * <code>DelaySeconds</code> value become available for processing after the delay
      * period is finished. If you don't specify a value, the default value for the
-     * queue is applied. </p> <note> <p>When you set <code>FifoQueue</code>, you can't
+     * queue is applied. </p>  <p>When you set <code>FifoQueue</code>, you can't
      * set <code>DelaySeconds</code> per message. You can set this parameter only on a
-     * queue level.</p> </note>
+     * queue level.</p> 
      */
     inline void SetDelaySeconds(int value) { m_delaySecondsHasBeenSet = true; m_delaySeconds = value; }
 
@@ -196,9 +196,9 @@ namespace Model
      * Valid values: 0 to 900. Maximum: 15 minutes. Messages with a positive
      * <code>DelaySeconds</code> value become available for processing after the delay
      * period is finished. If you don't specify a value, the default value for the
-     * queue is applied. </p> <note> <p>When you set <code>FifoQueue</code>, you can't
+     * queue is applied. </p>  <p>When you set <code>FifoQueue</code>, you can't
      * set <code>DelaySeconds</code> per message. You can set this parameter only on a
-     * queue level.</p> </note>
+     * queue level.</p> 
      */
     inline SendMessageBatchRequestEntry& WithDelaySeconds(int value) { SetDelaySeconds(value); return *this;}
 
@@ -315,110 +315,110 @@ namespace Model
     /**
      * <p>The message system attribute to send Each message system attribute consists
      * of a <code>Name</code>, <code>Type</code>, and <code>Value</code>.</p>
-     * <important> <ul> <li> <p>Currently, the only supported message system attribute
+     *  <ul> <li> <p>Currently, the only supported message system attribute
      * is <code>AWSTraceHeader</code>. Its type must be <code>String</code> and its
      * value must be a correctly formatted AWS X-Ray trace header string.</p> </li>
      * <li> <p>The size of a message system attribute doesn't count towards the total
-     * size of a message.</p> </li> </ul> </important>
+     * size of a message.</p> </li> </ul> 
      */
     inline const Aws::Map<MessageSystemAttributeNameForSends, MessageSystemAttributeValue>& GetMessageSystemAttributes() const{ return m_messageSystemAttributes; }
 
     /**
      * <p>The message system attribute to send Each message system attribute consists
      * of a <code>Name</code>, <code>Type</code>, and <code>Value</code>.</p>
-     * <important> <ul> <li> <p>Currently, the only supported message system attribute
+     *  <ul> <li> <p>Currently, the only supported message system attribute
      * is <code>AWSTraceHeader</code>. Its type must be <code>String</code> and its
      * value must be a correctly formatted AWS X-Ray trace header string.</p> </li>
      * <li> <p>The size of a message system attribute doesn't count towards the total
-     * size of a message.</p> </li> </ul> </important>
+     * size of a message.</p> </li> </ul> 
      */
     inline bool MessageSystemAttributesHasBeenSet() const { return m_messageSystemAttributesHasBeenSet; }
 
     /**
      * <p>The message system attribute to send Each message system attribute consists
      * of a <code>Name</code>, <code>Type</code>, and <code>Value</code>.</p>
-     * <important> <ul> <li> <p>Currently, the only supported message system attribute
+     *  <ul> <li> <p>Currently, the only supported message system attribute
      * is <code>AWSTraceHeader</code>. Its type must be <code>String</code> and its
      * value must be a correctly formatted AWS X-Ray trace header string.</p> </li>
      * <li> <p>The size of a message system attribute doesn't count towards the total
-     * size of a message.</p> </li> </ul> </important>
+     * size of a message.</p> </li> </ul> 
      */
     inline void SetMessageSystemAttributes(const Aws::Map<MessageSystemAttributeNameForSends, MessageSystemAttributeValue>& value) { m_messageSystemAttributesHasBeenSet = true; m_messageSystemAttributes = value; }
 
     /**
      * <p>The message system attribute to send Each message system attribute consists
      * of a <code>Name</code>, <code>Type</code>, and <code>Value</code>.</p>
-     * <important> <ul> <li> <p>Currently, the only supported message system attribute
+     *  <ul> <li> <p>Currently, the only supported message system attribute
      * is <code>AWSTraceHeader</code>. Its type must be <code>String</code> and its
      * value must be a correctly formatted AWS X-Ray trace header string.</p> </li>
      * <li> <p>The size of a message system attribute doesn't count towards the total
-     * size of a message.</p> </li> </ul> </important>
+     * size of a message.</p> </li> </ul> 
      */
     inline void SetMessageSystemAttributes(Aws::Map<MessageSystemAttributeNameForSends, MessageSystemAttributeValue>&& value) { m_messageSystemAttributesHasBeenSet = true; m_messageSystemAttributes = std::move(value); }
 
     /**
      * <p>The message system attribute to send Each message system attribute consists
      * of a <code>Name</code>, <code>Type</code>, and <code>Value</code>.</p>
-     * <important> <ul> <li> <p>Currently, the only supported message system attribute
+     *  <ul> <li> <p>Currently, the only supported message system attribute
      * is <code>AWSTraceHeader</code>. Its type must be <code>String</code> and its
      * value must be a correctly formatted AWS X-Ray trace header string.</p> </li>
      * <li> <p>The size of a message system attribute doesn't count towards the total
-     * size of a message.</p> </li> </ul> </important>
+     * size of a message.</p> </li> </ul> 
      */
     inline SendMessageBatchRequestEntry& WithMessageSystemAttributes(const Aws::Map<MessageSystemAttributeNameForSends, MessageSystemAttributeValue>& value) { SetMessageSystemAttributes(value); return *this;}
 
     /**
      * <p>The message system attribute to send Each message system attribute consists
      * of a <code>Name</code>, <code>Type</code>, and <code>Value</code>.</p>
-     * <important> <ul> <li> <p>Currently, the only supported message system attribute
+     *  <ul> <li> <p>Currently, the only supported message system attribute
      * is <code>AWSTraceHeader</code>. Its type must be <code>String</code> and its
      * value must be a correctly formatted AWS X-Ray trace header string.</p> </li>
      * <li> <p>The size of a message system attribute doesn't count towards the total
-     * size of a message.</p> </li> </ul> </important>
+     * size of a message.</p> </li> </ul> 
      */
     inline SendMessageBatchRequestEntry& WithMessageSystemAttributes(Aws::Map<MessageSystemAttributeNameForSends, MessageSystemAttributeValue>&& value) { SetMessageSystemAttributes(std::move(value)); return *this;}
 
     /**
      * <p>The message system attribute to send Each message system attribute consists
      * of a <code>Name</code>, <code>Type</code>, and <code>Value</code>.</p>
-     * <important> <ul> <li> <p>Currently, the only supported message system attribute
+     *  <ul> <li> <p>Currently, the only supported message system attribute
      * is <code>AWSTraceHeader</code>. Its type must be <code>String</code> and its
      * value must be a correctly formatted AWS X-Ray trace header string.</p> </li>
      * <li> <p>The size of a message system attribute doesn't count towards the total
-     * size of a message.</p> </li> </ul> </important>
+     * size of a message.</p> </li> </ul> 
      */
     inline SendMessageBatchRequestEntry& AddMessageSystemAttributes(const MessageSystemAttributeNameForSends& key, const MessageSystemAttributeValue& value) { m_messageSystemAttributesHasBeenSet = true; m_messageSystemAttributes.emplace(key, value); return *this; }
 
     /**
      * <p>The message system attribute to send Each message system attribute consists
      * of a <code>Name</code>, <code>Type</code>, and <code>Value</code>.</p>
-     * <important> <ul> <li> <p>Currently, the only supported message system attribute
+     *  <ul> <li> <p>Currently, the only supported message system attribute
      * is <code>AWSTraceHeader</code>. Its type must be <code>String</code> and its
      * value must be a correctly formatted AWS X-Ray trace header string.</p> </li>
      * <li> <p>The size of a message system attribute doesn't count towards the total
-     * size of a message.</p> </li> </ul> </important>
+     * size of a message.</p> </li> </ul> 
      */
     inline SendMessageBatchRequestEntry& AddMessageSystemAttributes(MessageSystemAttributeNameForSends&& key, const MessageSystemAttributeValue& value) { m_messageSystemAttributesHasBeenSet = true; m_messageSystemAttributes.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>The message system attribute to send Each message system attribute consists
      * of a <code>Name</code>, <code>Type</code>, and <code>Value</code>.</p>
-     * <important> <ul> <li> <p>Currently, the only supported message system attribute
+     *  <ul> <li> <p>Currently, the only supported message system attribute
      * is <code>AWSTraceHeader</code>. Its type must be <code>String</code> and its
      * value must be a correctly formatted AWS X-Ray trace header string.</p> </li>
      * <li> <p>The size of a message system attribute doesn't count towards the total
-     * size of a message.</p> </li> </ul> </important>
+     * size of a message.</p> </li> </ul> 
      */
     inline SendMessageBatchRequestEntry& AddMessageSystemAttributes(const MessageSystemAttributeNameForSends& key, MessageSystemAttributeValue&& value) { m_messageSystemAttributesHasBeenSet = true; m_messageSystemAttributes.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>The message system attribute to send Each message system attribute consists
      * of a <code>Name</code>, <code>Type</code>, and <code>Value</code>.</p>
-     * <important> <ul> <li> <p>Currently, the only supported message system attribute
+     *  <ul> <li> <p>Currently, the only supported message system attribute
      * is <code>AWSTraceHeader</code>. Its type must be <code>String</code> and its
      * value must be a correctly formatted AWS X-Ray trace header string.</p> </li>
      * <li> <p>The size of a message system attribute doesn't count towards the total
-     * size of a message.</p> </li> </ul> </important>
+     * size of a message.</p> </li> </ul> 
      */
     inline SendMessageBatchRequestEntry& AddMessageSystemAttributes(MessageSystemAttributeNameForSends&& key, MessageSystemAttributeValue&& value) { m_messageSystemAttributesHasBeenSet = true; m_messageSystemAttributes.emplace(std::move(key), std::move(value)); return *this; }
 
@@ -450,14 +450,14 @@ namespace Model
      * then another message with a <code>MessageDeduplicationId</code> that is the same
      * as the one generated for the first <code>MessageDeduplicationId</code>, the two
      * messages are treated as duplicates and only one copy of the message is
-     * delivered. </p> </li> </ul> <note> <p>The <code>MessageDeduplicationId</code> is
+     * delivered. </p> </li> </ul>  <p>The <code>MessageDeduplicationId</code> is
      * available to the consumer of the message (this can be useful for troubleshooting
      * delivery issues).</p> <p>If a message is sent successfully but the
      * acknowledgement is lost and the message is resent with the same
      * <code>MessageDeduplicationId</code> after the deduplication interval, Amazon SQS
      * can't detect duplicate messages.</p> <p>Amazon SQS continues to keep track of
      * the message deduplication ID even after the message is received and deleted.</p>
-     * </note> <p>The length of <code>MessageDeduplicationId</code> is 128 characters.
+     *  <p>The length of <code>MessageDeduplicationId</code> is 128 characters.
      * <code>MessageDeduplicationId</code> can contain alphanumeric characters
      * (<code>a-z</code>, <code>A-Z</code>, <code>0-9</code>) and punctuation
      * (<code>!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~</code>).</p> <p>For best
@@ -495,14 +495,14 @@ namespace Model
      * then another message with a <code>MessageDeduplicationId</code> that is the same
      * as the one generated for the first <code>MessageDeduplicationId</code>, the two
      * messages are treated as duplicates and only one copy of the message is
-     * delivered. </p> </li> </ul> <note> <p>The <code>MessageDeduplicationId</code> is
+     * delivered. </p> </li> </ul>  <p>The <code>MessageDeduplicationId</code> is
      * available to the consumer of the message (this can be useful for troubleshooting
      * delivery issues).</p> <p>If a message is sent successfully but the
      * acknowledgement is lost and the message is resent with the same
      * <code>MessageDeduplicationId</code> after the deduplication interval, Amazon SQS
      * can't detect duplicate messages.</p> <p>Amazon SQS continues to keep track of
      * the message deduplication ID even after the message is received and deleted.</p>
-     * </note> <p>The length of <code>MessageDeduplicationId</code> is 128 characters.
+     *  <p>The length of <code>MessageDeduplicationId</code> is 128 characters.
      * <code>MessageDeduplicationId</code> can contain alphanumeric characters
      * (<code>a-z</code>, <code>A-Z</code>, <code>0-9</code>) and punctuation
      * (<code>!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~</code>).</p> <p>For best
@@ -540,14 +540,14 @@ namespace Model
      * then another message with a <code>MessageDeduplicationId</code> that is the same
      * as the one generated for the first <code>MessageDeduplicationId</code>, the two
      * messages are treated as duplicates and only one copy of the message is
-     * delivered. </p> </li> </ul> <note> <p>The <code>MessageDeduplicationId</code> is
+     * delivered. </p> </li> </ul>  <p>The <code>MessageDeduplicationId</code> is
      * available to the consumer of the message (this can be useful for troubleshooting
      * delivery issues).</p> <p>If a message is sent successfully but the
      * acknowledgement is lost and the message is resent with the same
      * <code>MessageDeduplicationId</code> after the deduplication interval, Amazon SQS
      * can't detect duplicate messages.</p> <p>Amazon SQS continues to keep track of
      * the message deduplication ID even after the message is received and deleted.</p>
-     * </note> <p>The length of <code>MessageDeduplicationId</code> is 128 characters.
+     *  <p>The length of <code>MessageDeduplicationId</code> is 128 characters.
      * <code>MessageDeduplicationId</code> can contain alphanumeric characters
      * (<code>a-z</code>, <code>A-Z</code>, <code>0-9</code>) and punctuation
      * (<code>!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~</code>).</p> <p>For best
@@ -585,14 +585,14 @@ namespace Model
      * then another message with a <code>MessageDeduplicationId</code> that is the same
      * as the one generated for the first <code>MessageDeduplicationId</code>, the two
      * messages are treated as duplicates and only one copy of the message is
-     * delivered. </p> </li> </ul> <note> <p>The <code>MessageDeduplicationId</code> is
+     * delivered. </p> </li> </ul>  <p>The <code>MessageDeduplicationId</code> is
      * available to the consumer of the message (this can be useful for troubleshooting
      * delivery issues).</p> <p>If a message is sent successfully but the
      * acknowledgement is lost and the message is resent with the same
      * <code>MessageDeduplicationId</code> after the deduplication interval, Amazon SQS
      * can't detect duplicate messages.</p> <p>Amazon SQS continues to keep track of
      * the message deduplication ID even after the message is received and deleted.</p>
-     * </note> <p>The length of <code>MessageDeduplicationId</code> is 128 characters.
+     *  <p>The length of <code>MessageDeduplicationId</code> is 128 characters.
      * <code>MessageDeduplicationId</code> can contain alphanumeric characters
      * (<code>a-z</code>, <code>A-Z</code>, <code>0-9</code>) and punctuation
      * (<code>!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~</code>).</p> <p>For best
@@ -630,14 +630,14 @@ namespace Model
      * then another message with a <code>MessageDeduplicationId</code> that is the same
      * as the one generated for the first <code>MessageDeduplicationId</code>, the two
      * messages are treated as duplicates and only one copy of the message is
-     * delivered. </p> </li> </ul> <note> <p>The <code>MessageDeduplicationId</code> is
+     * delivered. </p> </li> </ul>  <p>The <code>MessageDeduplicationId</code> is
      * available to the consumer of the message (this can be useful for troubleshooting
      * delivery issues).</p> <p>If a message is sent successfully but the
      * acknowledgement is lost and the message is resent with the same
      * <code>MessageDeduplicationId</code> after the deduplication interval, Amazon SQS
      * can't detect duplicate messages.</p> <p>Amazon SQS continues to keep track of
      * the message deduplication ID even after the message is received and deleted.</p>
-     * </note> <p>The length of <code>MessageDeduplicationId</code> is 128 characters.
+     *  <p>The length of <code>MessageDeduplicationId</code> is 128 characters.
      * <code>MessageDeduplicationId</code> can contain alphanumeric characters
      * (<code>a-z</code>, <code>A-Z</code>, <code>0-9</code>) and punctuation
      * (<code>!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~</code>).</p> <p>For best
@@ -675,14 +675,14 @@ namespace Model
      * then another message with a <code>MessageDeduplicationId</code> that is the same
      * as the one generated for the first <code>MessageDeduplicationId</code>, the two
      * messages are treated as duplicates and only one copy of the message is
-     * delivered. </p> </li> </ul> <note> <p>The <code>MessageDeduplicationId</code> is
+     * delivered. </p> </li> </ul>  <p>The <code>MessageDeduplicationId</code> is
      * available to the consumer of the message (this can be useful for troubleshooting
      * delivery issues).</p> <p>If a message is sent successfully but the
      * acknowledgement is lost and the message is resent with the same
      * <code>MessageDeduplicationId</code> after the deduplication interval, Amazon SQS
      * can't detect duplicate messages.</p> <p>Amazon SQS continues to keep track of
      * the message deduplication ID even after the message is received and deleted.</p>
-     * </note> <p>The length of <code>MessageDeduplicationId</code> is 128 characters.
+     *  <p>The length of <code>MessageDeduplicationId</code> is 128 characters.
      * <code>MessageDeduplicationId</code> can contain alphanumeric characters
      * (<code>a-z</code>, <code>A-Z</code>, <code>0-9</code>) and punctuation
      * (<code>!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~</code>).</p> <p>For best
@@ -720,14 +720,14 @@ namespace Model
      * then another message with a <code>MessageDeduplicationId</code> that is the same
      * as the one generated for the first <code>MessageDeduplicationId</code>, the two
      * messages are treated as duplicates and only one copy of the message is
-     * delivered. </p> </li> </ul> <note> <p>The <code>MessageDeduplicationId</code> is
+     * delivered. </p> </li> </ul>  <p>The <code>MessageDeduplicationId</code> is
      * available to the consumer of the message (this can be useful for troubleshooting
      * delivery issues).</p> <p>If a message is sent successfully but the
      * acknowledgement is lost and the message is resent with the same
      * <code>MessageDeduplicationId</code> after the deduplication interval, Amazon SQS
      * can't detect duplicate messages.</p> <p>Amazon SQS continues to keep track of
      * the message deduplication ID even after the message is received and deleted.</p>
-     * </note> <p>The length of <code>MessageDeduplicationId</code> is 128 characters.
+     *  <p>The length of <code>MessageDeduplicationId</code> is 128 characters.
      * <code>MessageDeduplicationId</code> can contain alphanumeric characters
      * (<code>a-z</code>, <code>A-Z</code>, <code>0-9</code>) and punctuation
      * (<code>!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~</code>).</p> <p>For best
@@ -765,14 +765,14 @@ namespace Model
      * then another message with a <code>MessageDeduplicationId</code> that is the same
      * as the one generated for the first <code>MessageDeduplicationId</code>, the two
      * messages are treated as duplicates and only one copy of the message is
-     * delivered. </p> </li> </ul> <note> <p>The <code>MessageDeduplicationId</code> is
+     * delivered. </p> </li> </ul>  <p>The <code>MessageDeduplicationId</code> is
      * available to the consumer of the message (this can be useful for troubleshooting
      * delivery issues).</p> <p>If a message is sent successfully but the
      * acknowledgement is lost and the message is resent with the same
      * <code>MessageDeduplicationId</code> after the deduplication interval, Amazon SQS
      * can't detect duplicate messages.</p> <p>Amazon SQS continues to keep track of
      * the message deduplication ID even after the message is received and deleted.</p>
-     * </note> <p>The length of <code>MessageDeduplicationId</code> is 128 characters.
+     *  <p>The length of <code>MessageDeduplicationId</code> is 128 characters.
      * <code>MessageDeduplicationId</code> can contain alphanumeric characters
      * (<code>a-z</code>, <code>A-Z</code>, <code>0-9</code>) and punctuation
      * (<code>!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~</code>).</p> <p>For best
@@ -805,8 +805,8 @@ namespace Model
      * practices of using <code>MessageGroupId</code>, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagegroupid-property.html">Using
      * the MessageGroupId Property</a> in the <i>Amazon Simple Queue Service Developer
-     * Guide</i>.</p> <important> <p> <code>MessageGroupId</code> is required for FIFO
-     * queues. You can't use it for Standard queues.</p> </important>
+     * Guide</i>.</p>  <p> <code>MessageGroupId</code> is required for FIFO
+     * queues. You can't use it for Standard queues.</p> 
      */
     inline const Aws::String& GetMessageGroupId() const{ return m_messageGroupId; }
 
@@ -831,8 +831,8 @@ namespace Model
      * practices of using <code>MessageGroupId</code>, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagegroupid-property.html">Using
      * the MessageGroupId Property</a> in the <i>Amazon Simple Queue Service Developer
-     * Guide</i>.</p> <important> <p> <code>MessageGroupId</code> is required for FIFO
-     * queues. You can't use it for Standard queues.</p> </important>
+     * Guide</i>.</p>  <p> <code>MessageGroupId</code> is required for FIFO
+     * queues. You can't use it for Standard queues.</p> 
      */
     inline bool MessageGroupIdHasBeenSet() const { return m_messageGroupIdHasBeenSet; }
 
@@ -857,8 +857,8 @@ namespace Model
      * practices of using <code>MessageGroupId</code>, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagegroupid-property.html">Using
      * the MessageGroupId Property</a> in the <i>Amazon Simple Queue Service Developer
-     * Guide</i>.</p> <important> <p> <code>MessageGroupId</code> is required for FIFO
-     * queues. You can't use it for Standard queues.</p> </important>
+     * Guide</i>.</p>  <p> <code>MessageGroupId</code> is required for FIFO
+     * queues. You can't use it for Standard queues.</p> 
      */
     inline void SetMessageGroupId(const Aws::String& value) { m_messageGroupIdHasBeenSet = true; m_messageGroupId = value; }
 
@@ -883,8 +883,8 @@ namespace Model
      * practices of using <code>MessageGroupId</code>, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagegroupid-property.html">Using
      * the MessageGroupId Property</a> in the <i>Amazon Simple Queue Service Developer
-     * Guide</i>.</p> <important> <p> <code>MessageGroupId</code> is required for FIFO
-     * queues. You can't use it for Standard queues.</p> </important>
+     * Guide</i>.</p>  <p> <code>MessageGroupId</code> is required for FIFO
+     * queues. You can't use it for Standard queues.</p> 
      */
     inline void SetMessageGroupId(Aws::String&& value) { m_messageGroupIdHasBeenSet = true; m_messageGroupId = std::move(value); }
 
@@ -909,8 +909,8 @@ namespace Model
      * practices of using <code>MessageGroupId</code>, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagegroupid-property.html">Using
      * the MessageGroupId Property</a> in the <i>Amazon Simple Queue Service Developer
-     * Guide</i>.</p> <important> <p> <code>MessageGroupId</code> is required for FIFO
-     * queues. You can't use it for Standard queues.</p> </important>
+     * Guide</i>.</p>  <p> <code>MessageGroupId</code> is required for FIFO
+     * queues. You can't use it for Standard queues.</p> 
      */
     inline void SetMessageGroupId(const char* value) { m_messageGroupIdHasBeenSet = true; m_messageGroupId.assign(value); }
 
@@ -935,8 +935,8 @@ namespace Model
      * practices of using <code>MessageGroupId</code>, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagegroupid-property.html">Using
      * the MessageGroupId Property</a> in the <i>Amazon Simple Queue Service Developer
-     * Guide</i>.</p> <important> <p> <code>MessageGroupId</code> is required for FIFO
-     * queues. You can't use it for Standard queues.</p> </important>
+     * Guide</i>.</p>  <p> <code>MessageGroupId</code> is required for FIFO
+     * queues. You can't use it for Standard queues.</p> 
      */
     inline SendMessageBatchRequestEntry& WithMessageGroupId(const Aws::String& value) { SetMessageGroupId(value); return *this;}
 
@@ -961,8 +961,8 @@ namespace Model
      * practices of using <code>MessageGroupId</code>, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagegroupid-property.html">Using
      * the MessageGroupId Property</a> in the <i>Amazon Simple Queue Service Developer
-     * Guide</i>.</p> <important> <p> <code>MessageGroupId</code> is required for FIFO
-     * queues. You can't use it for Standard queues.</p> </important>
+     * Guide</i>.</p>  <p> <code>MessageGroupId</code> is required for FIFO
+     * queues. You can't use it for Standard queues.</p> 
      */
     inline SendMessageBatchRequestEntry& WithMessageGroupId(Aws::String&& value) { SetMessageGroupId(std::move(value)); return *this;}
 
@@ -987,8 +987,8 @@ namespace Model
      * practices of using <code>MessageGroupId</code>, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagegroupid-property.html">Using
      * the MessageGroupId Property</a> in the <i>Amazon Simple Queue Service Developer
-     * Guide</i>.</p> <important> <p> <code>MessageGroupId</code> is required for FIFO
-     * queues. You can't use it for Standard queues.</p> </important>
+     * Guide</i>.</p>  <p> <code>MessageGroupId</code> is required for FIFO
+     * queues. You can't use it for Standard queues.</p> 
      */
     inline SendMessageBatchRequestEntry& WithMessageGroupId(const char* value) { SetMessageGroupId(value); return *this;}
 

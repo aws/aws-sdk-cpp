@@ -30,8 +30,8 @@ namespace Model
    * or root, inviting or creating too many accounts to the organization, or
    * attaching too many policies to an account, OU, or root. This exception includes
    * a reason that contains additional information about the violated limit:</p>
-   * <note> <p>Some of the reasons in the following list might not be applicable to
-   * this specific API or operation.</p> </note> <ul> <li>
+   *  <p>Some of the reasons in the following list might not be applicable to
+   * this specific API or operation.</p>  <ul> <li>
    * <p>ACCOUNT_CANNOT_LEAVE_ORGANIZAION: You attempted to remove the master account
    * from the organization. You can't remove the master account. Instead, after you
    * remove all member accounts, delete the organization itself.</p> </li> <li>
@@ -55,13 +55,13 @@ namespace Model
    * request an increase in your limit. </p> <p>Or the number of invitations that you
    * tried to send would cause you to exceed the limit of accounts in your
    * organization. Send fewer invitations or contact AWS Support to request an
-   * increase in the number of accounts.</p> <note> <p>Deleted and closed accounts
-   * still count toward your limit.</p> </note> <important> <p>If you get this
+   * increase in the number of accounts.</p>  <p>Deleted and closed accounts
+   * still count toward your limit.</p>   <p>If you get this
    * exception when running a command immediately after creating the organization,
    * wait one hour and try again. After an hour, if the command continues to fail
    * with this error, contact <a
    * href="https://console.aws.amazon.com/support/home#/">AWS Support</a>.</p>
-   * </important> </li> <li> <p>CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR:
+   *  </li> <li> <p>CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR:
    * You attempted to register the master account of the organization as a delegated
    * administrator for an AWS service integrated with Organizations. You can
    * designate only a member account as a delegated administrator.</p> </li> <li>

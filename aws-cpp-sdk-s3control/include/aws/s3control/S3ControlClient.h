@@ -739,7 +739,7 @@ namespace Aws
          * For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-managing-jobs.html#batch-ops-job-tags">Using
          * Job Tags</a> in the Amazon Simple Storage Service Developer Guide. </p> <p/>
-         * <note> <ul> <li> <p>If you send this request with an empty tag set, Amazon S3
+         *  <ul> <li> <p>If you send this request with an empty tag set, Amazon S3
          * deletes the existing tag set on the Batch Operations job. If you use this
          * method, you will be charged for a Tier 1 Request (PUT). For more information,
          * see <a href="http://aws.amazon.com/s3/pricing/">Amazon S3 pricing</a>.</p> </li>
@@ -754,7 +754,7 @@ namespace Aws
          * <li> <p>For tagging-related restrictions related to characters and encodings,
          * see <a
          * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/allocation-tag-restrictions.html">User-Defined
-         * Tag Restrictions</a>.</p> </li> </ul> </li> </ul> </note> <p/> <p>To use this
+         * Tag Restrictions</a>.</p> </li> </ul> </li> </ul>  <p/> <p>To use this
          * operation, you must have permission to perform the <code>s3:PutJobTagging</code>
          * action.</p> <p>Related actions include:</p> <ul> <li> <p> <a>CreateJob</a> </p>
          * </li> <li> <p> <a>GetJobTagging</a> </p> </li> <li> <p> <a>DeleteJobTagging</a>
@@ -775,7 +775,7 @@ namespace Aws
          * For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-managing-jobs.html#batch-ops-job-tags">Using
          * Job Tags</a> in the Amazon Simple Storage Service Developer Guide. </p> <p/>
-         * <note> <ul> <li> <p>If you send this request with an empty tag set, Amazon S3
+         *  <ul> <li> <p>If you send this request with an empty tag set, Amazon S3
          * deletes the existing tag set on the Batch Operations job. If you use this
          * method, you will be charged for a Tier 1 Request (PUT). For more information,
          * see <a href="http://aws.amazon.com/s3/pricing/">Amazon S3 pricing</a>.</p> </li>
@@ -790,7 +790,7 @@ namespace Aws
          * <li> <p>For tagging-related restrictions related to characters and encodings,
          * see <a
          * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/allocation-tag-restrictions.html">User-Defined
-         * Tag Restrictions</a>.</p> </li> </ul> </li> </ul> </note> <p/> <p>To use this
+         * Tag Restrictions</a>.</p> </li> </ul> </li> </ul>  <p/> <p>To use this
          * operation, you must have permission to perform the <code>s3:PutJobTagging</code>
          * action.</p> <p>Related actions include:</p> <ul> <li> <p> <a>CreateJob</a> </p>
          * </li> <li> <p> <a>GetJobTagging</a> </p> </li> <li> <p> <a>DeleteJobTagging</a>
@@ -813,7 +813,7 @@ namespace Aws
          * For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-managing-jobs.html#batch-ops-job-tags">Using
          * Job Tags</a> in the Amazon Simple Storage Service Developer Guide. </p> <p/>
-         * <note> <ul> <li> <p>If you send this request with an empty tag set, Amazon S3
+         *  <ul> <li> <p>If you send this request with an empty tag set, Amazon S3
          * deletes the existing tag set on the Batch Operations job. If you use this
          * method, you will be charged for a Tier 1 Request (PUT). For more information,
          * see <a href="http://aws.amazon.com/s3/pricing/">Amazon S3 pricing</a>.</p> </li>
@@ -828,7 +828,7 @@ namespace Aws
          * <li> <p>For tagging-related restrictions related to characters and encodings,
          * see <a
          * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/allocation-tag-restrictions.html">User-Defined
-         * Tag Restrictions</a>.</p> </li> </ul> </li> </ul> </note> <p/> <p>To use this
+         * Tag Restrictions</a>.</p> </li> </ul> </li> </ul>  <p/> <p>To use this
          * operation, you must have permission to perform the <code>s3:PutJobTagging</code>
          * action.</p> <p>Related actions include:</p> <ul> <li> <p> <a>CreateJob</a> </p>
          * </li> <li> <p> <a>GetJobTagging</a> </p> </li> <li> <p> <a>DeleteJobTagging</a>

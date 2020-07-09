@@ -123,8 +123,8 @@ namespace Model
      * part of any replication group.</p> <p>If the specified replication group is
      * Multi-AZ enabled and the Availability Zone is not specified, the cluster is
      * created in Availability Zones that provide the best spread of read replicas
-     * across Availability Zones.</p> <note> <p>This parameter is only valid if the
-     * <code>Engine</code> parameter is <code>redis</code>.</p> </note>
+     * across Availability Zones.</p>  <p>This parameter is only valid if the
+     * <code>Engine</code> parameter is <code>redis</code>.</p> 
      */
     inline const Aws::String& GetReplicationGroupId() const{ return m_replicationGroupId; }
 
@@ -135,8 +135,8 @@ namespace Model
      * part of any replication group.</p> <p>If the specified replication group is
      * Multi-AZ enabled and the Availability Zone is not specified, the cluster is
      * created in Availability Zones that provide the best spread of read replicas
-     * across Availability Zones.</p> <note> <p>This parameter is only valid if the
-     * <code>Engine</code> parameter is <code>redis</code>.</p> </note>
+     * across Availability Zones.</p>  <p>This parameter is only valid if the
+     * <code>Engine</code> parameter is <code>redis</code>.</p> 
      */
     inline bool ReplicationGroupIdHasBeenSet() const { return m_replicationGroupIdHasBeenSet; }
 
@@ -147,8 +147,8 @@ namespace Model
      * part of any replication group.</p> <p>If the specified replication group is
      * Multi-AZ enabled and the Availability Zone is not specified, the cluster is
      * created in Availability Zones that provide the best spread of read replicas
-     * across Availability Zones.</p> <note> <p>This parameter is only valid if the
-     * <code>Engine</code> parameter is <code>redis</code>.</p> </note>
+     * across Availability Zones.</p>  <p>This parameter is only valid if the
+     * <code>Engine</code> parameter is <code>redis</code>.</p> 
      */
     inline void SetReplicationGroupId(const Aws::String& value) { m_replicationGroupIdHasBeenSet = true; m_replicationGroupId = value; }
 
@@ -159,8 +159,8 @@ namespace Model
      * part of any replication group.</p> <p>If the specified replication group is
      * Multi-AZ enabled and the Availability Zone is not specified, the cluster is
      * created in Availability Zones that provide the best spread of read replicas
-     * across Availability Zones.</p> <note> <p>This parameter is only valid if the
-     * <code>Engine</code> parameter is <code>redis</code>.</p> </note>
+     * across Availability Zones.</p>  <p>This parameter is only valid if the
+     * <code>Engine</code> parameter is <code>redis</code>.</p> 
      */
     inline void SetReplicationGroupId(Aws::String&& value) { m_replicationGroupIdHasBeenSet = true; m_replicationGroupId = std::move(value); }
 
@@ -171,8 +171,8 @@ namespace Model
      * part of any replication group.</p> <p>If the specified replication group is
      * Multi-AZ enabled and the Availability Zone is not specified, the cluster is
      * created in Availability Zones that provide the best spread of read replicas
-     * across Availability Zones.</p> <note> <p>This parameter is only valid if the
-     * <code>Engine</code> parameter is <code>redis</code>.</p> </note>
+     * across Availability Zones.</p>  <p>This parameter is only valid if the
+     * <code>Engine</code> parameter is <code>redis</code>.</p> 
      */
     inline void SetReplicationGroupId(const char* value) { m_replicationGroupIdHasBeenSet = true; m_replicationGroupId.assign(value); }
 
@@ -183,8 +183,8 @@ namespace Model
      * part of any replication group.</p> <p>If the specified replication group is
      * Multi-AZ enabled and the Availability Zone is not specified, the cluster is
      * created in Availability Zones that provide the best spread of read replicas
-     * across Availability Zones.</p> <note> <p>This parameter is only valid if the
-     * <code>Engine</code> parameter is <code>redis</code>.</p> </note>
+     * across Availability Zones.</p>  <p>This parameter is only valid if the
+     * <code>Engine</code> parameter is <code>redis</code>.</p> 
      */
     inline CreateCacheClusterRequest& WithReplicationGroupId(const Aws::String& value) { SetReplicationGroupId(value); return *this;}
 
@@ -195,8 +195,8 @@ namespace Model
      * part of any replication group.</p> <p>If the specified replication group is
      * Multi-AZ enabled and the Availability Zone is not specified, the cluster is
      * created in Availability Zones that provide the best spread of read replicas
-     * across Availability Zones.</p> <note> <p>This parameter is only valid if the
-     * <code>Engine</code> parameter is <code>redis</code>.</p> </note>
+     * across Availability Zones.</p>  <p>This parameter is only valid if the
+     * <code>Engine</code> parameter is <code>redis</code>.</p> 
      */
     inline CreateCacheClusterRequest& WithReplicationGroupId(Aws::String&& value) { SetReplicationGroupId(std::move(value)); return *this;}
 
@@ -207,8 +207,8 @@ namespace Model
      * part of any replication group.</p> <p>If the specified replication group is
      * Multi-AZ enabled and the Availability Zone is not specified, the cluster is
      * created in Availability Zones that provide the best spread of read replicas
-     * across Availability Zones.</p> <note> <p>This parameter is only valid if the
-     * <code>Engine</code> parameter is <code>redis</code>.</p> </note>
+     * across Availability Zones.</p>  <p>This parameter is only valid if the
+     * <code>Engine</code> parameter is <code>redis</code>.</p> 
      */
     inline CreateCacheClusterRequest& WithReplicationGroupId(const char* value) { SetReplicationGroupId(value); return *this;}
 
@@ -344,11 +344,11 @@ namespace Model
     /**
      * <p>A list of the Availability Zones in which cache nodes are created. The order
      * of the zones in the list is not important.</p> <p>This option is only supported
-     * on Memcached.</p> <note> <p>If you are creating your cluster in an Amazon VPC
+     * on Memcached.</p>  <p>If you are creating your cluster in an Amazon VPC
      * (recommended) you can only locate nodes in Availability Zones that are
      * associated with the subnets in the selected subnet group.</p> <p>The number of
      * Availability Zones listed must equal the value of
-     * <code>NumCacheNodes</code>.</p> </note> <p>If you want all the nodes in the same
+     * <code>NumCacheNodes</code>.</p>  <p>If you want all the nodes in the same
      * Availability Zone, use <code>PreferredAvailabilityZone</code> instead, or repeat
      * the Availability Zone multiple times in the list.</p> <p>Default: System chosen
      * Availability Zones.</p>
@@ -358,11 +358,11 @@ namespace Model
     /**
      * <p>A list of the Availability Zones in which cache nodes are created. The order
      * of the zones in the list is not important.</p> <p>This option is only supported
-     * on Memcached.</p> <note> <p>If you are creating your cluster in an Amazon VPC
+     * on Memcached.</p>  <p>If you are creating your cluster in an Amazon VPC
      * (recommended) you can only locate nodes in Availability Zones that are
      * associated with the subnets in the selected subnet group.</p> <p>The number of
      * Availability Zones listed must equal the value of
-     * <code>NumCacheNodes</code>.</p> </note> <p>If you want all the nodes in the same
+     * <code>NumCacheNodes</code>.</p>  <p>If you want all the nodes in the same
      * Availability Zone, use <code>PreferredAvailabilityZone</code> instead, or repeat
      * the Availability Zone multiple times in the list.</p> <p>Default: System chosen
      * Availability Zones.</p>
@@ -372,11 +372,11 @@ namespace Model
     /**
      * <p>A list of the Availability Zones in which cache nodes are created. The order
      * of the zones in the list is not important.</p> <p>This option is only supported
-     * on Memcached.</p> <note> <p>If you are creating your cluster in an Amazon VPC
+     * on Memcached.</p>  <p>If you are creating your cluster in an Amazon VPC
      * (recommended) you can only locate nodes in Availability Zones that are
      * associated with the subnets in the selected subnet group.</p> <p>The number of
      * Availability Zones listed must equal the value of
-     * <code>NumCacheNodes</code>.</p> </note> <p>If you want all the nodes in the same
+     * <code>NumCacheNodes</code>.</p>  <p>If you want all the nodes in the same
      * Availability Zone, use <code>PreferredAvailabilityZone</code> instead, or repeat
      * the Availability Zone multiple times in the list.</p> <p>Default: System chosen
      * Availability Zones.</p>
@@ -386,11 +386,11 @@ namespace Model
     /**
      * <p>A list of the Availability Zones in which cache nodes are created. The order
      * of the zones in the list is not important.</p> <p>This option is only supported
-     * on Memcached.</p> <note> <p>If you are creating your cluster in an Amazon VPC
+     * on Memcached.</p>  <p>If you are creating your cluster in an Amazon VPC
      * (recommended) you can only locate nodes in Availability Zones that are
      * associated with the subnets in the selected subnet group.</p> <p>The number of
      * Availability Zones listed must equal the value of
-     * <code>NumCacheNodes</code>.</p> </note> <p>If you want all the nodes in the same
+     * <code>NumCacheNodes</code>.</p>  <p>If you want all the nodes in the same
      * Availability Zone, use <code>PreferredAvailabilityZone</code> instead, or repeat
      * the Availability Zone multiple times in the list.</p> <p>Default: System chosen
      * Availability Zones.</p>
@@ -400,11 +400,11 @@ namespace Model
     /**
      * <p>A list of the Availability Zones in which cache nodes are created. The order
      * of the zones in the list is not important.</p> <p>This option is only supported
-     * on Memcached.</p> <note> <p>If you are creating your cluster in an Amazon VPC
+     * on Memcached.</p>  <p>If you are creating your cluster in an Amazon VPC
      * (recommended) you can only locate nodes in Availability Zones that are
      * associated with the subnets in the selected subnet group.</p> <p>The number of
      * Availability Zones listed must equal the value of
-     * <code>NumCacheNodes</code>.</p> </note> <p>If you want all the nodes in the same
+     * <code>NumCacheNodes</code>.</p>  <p>If you want all the nodes in the same
      * Availability Zone, use <code>PreferredAvailabilityZone</code> instead, or repeat
      * the Availability Zone multiple times in the list.</p> <p>Default: System chosen
      * Availability Zones.</p>
@@ -414,11 +414,11 @@ namespace Model
     /**
      * <p>A list of the Availability Zones in which cache nodes are created. The order
      * of the zones in the list is not important.</p> <p>This option is only supported
-     * on Memcached.</p> <note> <p>If you are creating your cluster in an Amazon VPC
+     * on Memcached.</p>  <p>If you are creating your cluster in an Amazon VPC
      * (recommended) you can only locate nodes in Availability Zones that are
      * associated with the subnets in the selected subnet group.</p> <p>The number of
      * Availability Zones listed must equal the value of
-     * <code>NumCacheNodes</code>.</p> </note> <p>If you want all the nodes in the same
+     * <code>NumCacheNodes</code>.</p>  <p>If you want all the nodes in the same
      * Availability Zone, use <code>PreferredAvailabilityZone</code> instead, or repeat
      * the Availability Zone multiple times in the list.</p> <p>Default: System chosen
      * Availability Zones.</p>
@@ -428,11 +428,11 @@ namespace Model
     /**
      * <p>A list of the Availability Zones in which cache nodes are created. The order
      * of the zones in the list is not important.</p> <p>This option is only supported
-     * on Memcached.</p> <note> <p>If you are creating your cluster in an Amazon VPC
+     * on Memcached.</p>  <p>If you are creating your cluster in an Amazon VPC
      * (recommended) you can only locate nodes in Availability Zones that are
      * associated with the subnets in the selected subnet group.</p> <p>The number of
      * Availability Zones listed must equal the value of
-     * <code>NumCacheNodes</code>.</p> </note> <p>If you want all the nodes in the same
+     * <code>NumCacheNodes</code>.</p>  <p>If you want all the nodes in the same
      * Availability Zone, use <code>PreferredAvailabilityZone</code> instead, or repeat
      * the Availability Zone multiple times in the list.</p> <p>Default: System chosen
      * Availability Zones.</p>
@@ -442,11 +442,11 @@ namespace Model
     /**
      * <p>A list of the Availability Zones in which cache nodes are created. The order
      * of the zones in the list is not important.</p> <p>This option is only supported
-     * on Memcached.</p> <note> <p>If you are creating your cluster in an Amazon VPC
+     * on Memcached.</p>  <p>If you are creating your cluster in an Amazon VPC
      * (recommended) you can only locate nodes in Availability Zones that are
      * associated with the subnets in the selected subnet group.</p> <p>The number of
      * Availability Zones listed must equal the value of
-     * <code>NumCacheNodes</code>.</p> </note> <p>If you want all the nodes in the same
+     * <code>NumCacheNodes</code>.</p>  <p>If you want all the nodes in the same
      * Availability Zone, use <code>PreferredAvailabilityZone</code> instead, or repeat
      * the Availability Zone multiple times in the list.</p> <p>Default: System chosen
      * Availability Zones.</p>
@@ -456,11 +456,11 @@ namespace Model
     /**
      * <p>A list of the Availability Zones in which cache nodes are created. The order
      * of the zones in the list is not important.</p> <p>This option is only supported
-     * on Memcached.</p> <note> <p>If you are creating your cluster in an Amazon VPC
+     * on Memcached.</p>  <p>If you are creating your cluster in an Amazon VPC
      * (recommended) you can only locate nodes in Availability Zones that are
      * associated with the subnets in the selected subnet group.</p> <p>The number of
      * Availability Zones listed must equal the value of
-     * <code>NumCacheNodes</code>.</p> </note> <p>If you want all the nodes in the same
+     * <code>NumCacheNodes</code>.</p>  <p>If you want all the nodes in the same
      * Availability Zone, use <code>PreferredAvailabilityZone</code> instead, or repeat
      * the Availability Zone multiple times in the list.</p> <p>Default: System chosen
      * Availability Zones.</p>
@@ -1116,88 +1116,88 @@ namespace Model
     /**
      * <p>The name of the subnet group to be used for the cluster.</p> <p>Use this
      * parameter only when you are creating a cluster in an Amazon Virtual Private
-     * Cloud (Amazon VPC).</p> <important> <p>If you're going to launch your cluster in
+     * Cloud (Amazon VPC).</p>  <p>If you're going to launch your cluster in
      * an Amazon VPC, you need to create a subnet group before you start creating a
      * cluster. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SubnetGroups.html">Subnets
-     * and Subnet Groups</a>.</p> </important>
+     * and Subnet Groups</a>.</p> 
      */
     inline const Aws::String& GetCacheSubnetGroupName() const{ return m_cacheSubnetGroupName; }
 
     /**
      * <p>The name of the subnet group to be used for the cluster.</p> <p>Use this
      * parameter only when you are creating a cluster in an Amazon Virtual Private
-     * Cloud (Amazon VPC).</p> <important> <p>If you're going to launch your cluster in
+     * Cloud (Amazon VPC).</p>  <p>If you're going to launch your cluster in
      * an Amazon VPC, you need to create a subnet group before you start creating a
      * cluster. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SubnetGroups.html">Subnets
-     * and Subnet Groups</a>.</p> </important>
+     * and Subnet Groups</a>.</p> 
      */
     inline bool CacheSubnetGroupNameHasBeenSet() const { return m_cacheSubnetGroupNameHasBeenSet; }
 
     /**
      * <p>The name of the subnet group to be used for the cluster.</p> <p>Use this
      * parameter only when you are creating a cluster in an Amazon Virtual Private
-     * Cloud (Amazon VPC).</p> <important> <p>If you're going to launch your cluster in
+     * Cloud (Amazon VPC).</p>  <p>If you're going to launch your cluster in
      * an Amazon VPC, you need to create a subnet group before you start creating a
      * cluster. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SubnetGroups.html">Subnets
-     * and Subnet Groups</a>.</p> </important>
+     * and Subnet Groups</a>.</p> 
      */
     inline void SetCacheSubnetGroupName(const Aws::String& value) { m_cacheSubnetGroupNameHasBeenSet = true; m_cacheSubnetGroupName = value; }
 
     /**
      * <p>The name of the subnet group to be used for the cluster.</p> <p>Use this
      * parameter only when you are creating a cluster in an Amazon Virtual Private
-     * Cloud (Amazon VPC).</p> <important> <p>If you're going to launch your cluster in
+     * Cloud (Amazon VPC).</p>  <p>If you're going to launch your cluster in
      * an Amazon VPC, you need to create a subnet group before you start creating a
      * cluster. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SubnetGroups.html">Subnets
-     * and Subnet Groups</a>.</p> </important>
+     * and Subnet Groups</a>.</p> 
      */
     inline void SetCacheSubnetGroupName(Aws::String&& value) { m_cacheSubnetGroupNameHasBeenSet = true; m_cacheSubnetGroupName = std::move(value); }
 
     /**
      * <p>The name of the subnet group to be used for the cluster.</p> <p>Use this
      * parameter only when you are creating a cluster in an Amazon Virtual Private
-     * Cloud (Amazon VPC).</p> <important> <p>If you're going to launch your cluster in
+     * Cloud (Amazon VPC).</p>  <p>If you're going to launch your cluster in
      * an Amazon VPC, you need to create a subnet group before you start creating a
      * cluster. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SubnetGroups.html">Subnets
-     * and Subnet Groups</a>.</p> </important>
+     * and Subnet Groups</a>.</p> 
      */
     inline void SetCacheSubnetGroupName(const char* value) { m_cacheSubnetGroupNameHasBeenSet = true; m_cacheSubnetGroupName.assign(value); }
 
     /**
      * <p>The name of the subnet group to be used for the cluster.</p> <p>Use this
      * parameter only when you are creating a cluster in an Amazon Virtual Private
-     * Cloud (Amazon VPC).</p> <important> <p>If you're going to launch your cluster in
+     * Cloud (Amazon VPC).</p>  <p>If you're going to launch your cluster in
      * an Amazon VPC, you need to create a subnet group before you start creating a
      * cluster. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SubnetGroups.html">Subnets
-     * and Subnet Groups</a>.</p> </important>
+     * and Subnet Groups</a>.</p> 
      */
     inline CreateCacheClusterRequest& WithCacheSubnetGroupName(const Aws::String& value) { SetCacheSubnetGroupName(value); return *this;}
 
     /**
      * <p>The name of the subnet group to be used for the cluster.</p> <p>Use this
      * parameter only when you are creating a cluster in an Amazon Virtual Private
-     * Cloud (Amazon VPC).</p> <important> <p>If you're going to launch your cluster in
+     * Cloud (Amazon VPC).</p>  <p>If you're going to launch your cluster in
      * an Amazon VPC, you need to create a subnet group before you start creating a
      * cluster. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SubnetGroups.html">Subnets
-     * and Subnet Groups</a>.</p> </important>
+     * and Subnet Groups</a>.</p> 
      */
     inline CreateCacheClusterRequest& WithCacheSubnetGroupName(Aws::String&& value) { SetCacheSubnetGroupName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the subnet group to be used for the cluster.</p> <p>Use this
      * parameter only when you are creating a cluster in an Amazon Virtual Private
-     * Cloud (Amazon VPC).</p> <important> <p>If you're going to launch your cluster in
+     * Cloud (Amazon VPC).</p>  <p>If you're going to launch your cluster in
      * an Amazon VPC, you need to create a subnet group before you start creating a
      * cluster. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SubnetGroups.html">Subnets
-     * and Subnet Groups</a>.</p> </important>
+     * and Subnet Groups</a>.</p> 
      */
     inline CreateCacheClusterRequest& WithCacheSubnetGroupName(const char* value) { SetCacheSubnetGroupName(value); return *this;}
 
@@ -1375,8 +1375,8 @@ namespace Model
      * <p>A single-element string list containing an Amazon Resource Name (ARN) that
      * uniquely identifies a Redis RDB snapshot file stored in Amazon S3. The snapshot
      * file is used to populate the node group (shard). The Amazon S3 object name in
-     * the ARN cannot contain any commas.</p> <note> <p>This parameter is only valid if
-     * the <code>Engine</code> parameter is <code>redis</code>.</p> </note> <p>Example
+     * the ARN cannot contain any commas.</p>  <p>This parameter is only valid if
+     * the <code>Engine</code> parameter is <code>redis</code>.</p>  <p>Example
      * of an Amazon S3 ARN: <code>arn:aws:s3:::my_bucket/snapshot1.rdb</code> </p>
      */
     inline const Aws::Vector<Aws::String>& GetSnapshotArns() const{ return m_snapshotArns; }
@@ -1385,8 +1385,8 @@ namespace Model
      * <p>A single-element string list containing an Amazon Resource Name (ARN) that
      * uniquely identifies a Redis RDB snapshot file stored in Amazon S3. The snapshot
      * file is used to populate the node group (shard). The Amazon S3 object name in
-     * the ARN cannot contain any commas.</p> <note> <p>This parameter is only valid if
-     * the <code>Engine</code> parameter is <code>redis</code>.</p> </note> <p>Example
+     * the ARN cannot contain any commas.</p>  <p>This parameter is only valid if
+     * the <code>Engine</code> parameter is <code>redis</code>.</p>  <p>Example
      * of an Amazon S3 ARN: <code>arn:aws:s3:::my_bucket/snapshot1.rdb</code> </p>
      */
     inline bool SnapshotArnsHasBeenSet() const { return m_snapshotArnsHasBeenSet; }
@@ -1395,8 +1395,8 @@ namespace Model
      * <p>A single-element string list containing an Amazon Resource Name (ARN) that
      * uniquely identifies a Redis RDB snapshot file stored in Amazon S3. The snapshot
      * file is used to populate the node group (shard). The Amazon S3 object name in
-     * the ARN cannot contain any commas.</p> <note> <p>This parameter is only valid if
-     * the <code>Engine</code> parameter is <code>redis</code>.</p> </note> <p>Example
+     * the ARN cannot contain any commas.</p>  <p>This parameter is only valid if
+     * the <code>Engine</code> parameter is <code>redis</code>.</p>  <p>Example
      * of an Amazon S3 ARN: <code>arn:aws:s3:::my_bucket/snapshot1.rdb</code> </p>
      */
     inline void SetSnapshotArns(const Aws::Vector<Aws::String>& value) { m_snapshotArnsHasBeenSet = true; m_snapshotArns = value; }
@@ -1405,8 +1405,8 @@ namespace Model
      * <p>A single-element string list containing an Amazon Resource Name (ARN) that
      * uniquely identifies a Redis RDB snapshot file stored in Amazon S3. The snapshot
      * file is used to populate the node group (shard). The Amazon S3 object name in
-     * the ARN cannot contain any commas.</p> <note> <p>This parameter is only valid if
-     * the <code>Engine</code> parameter is <code>redis</code>.</p> </note> <p>Example
+     * the ARN cannot contain any commas.</p>  <p>This parameter is only valid if
+     * the <code>Engine</code> parameter is <code>redis</code>.</p>  <p>Example
      * of an Amazon S3 ARN: <code>arn:aws:s3:::my_bucket/snapshot1.rdb</code> </p>
      */
     inline void SetSnapshotArns(Aws::Vector<Aws::String>&& value) { m_snapshotArnsHasBeenSet = true; m_snapshotArns = std::move(value); }
@@ -1415,8 +1415,8 @@ namespace Model
      * <p>A single-element string list containing an Amazon Resource Name (ARN) that
      * uniquely identifies a Redis RDB snapshot file stored in Amazon S3. The snapshot
      * file is used to populate the node group (shard). The Amazon S3 object name in
-     * the ARN cannot contain any commas.</p> <note> <p>This parameter is only valid if
-     * the <code>Engine</code> parameter is <code>redis</code>.</p> </note> <p>Example
+     * the ARN cannot contain any commas.</p>  <p>This parameter is only valid if
+     * the <code>Engine</code> parameter is <code>redis</code>.</p>  <p>Example
      * of an Amazon S3 ARN: <code>arn:aws:s3:::my_bucket/snapshot1.rdb</code> </p>
      */
     inline CreateCacheClusterRequest& WithSnapshotArns(const Aws::Vector<Aws::String>& value) { SetSnapshotArns(value); return *this;}
@@ -1425,8 +1425,8 @@ namespace Model
      * <p>A single-element string list containing an Amazon Resource Name (ARN) that
      * uniquely identifies a Redis RDB snapshot file stored in Amazon S3. The snapshot
      * file is used to populate the node group (shard). The Amazon S3 object name in
-     * the ARN cannot contain any commas.</p> <note> <p>This parameter is only valid if
-     * the <code>Engine</code> parameter is <code>redis</code>.</p> </note> <p>Example
+     * the ARN cannot contain any commas.</p>  <p>This parameter is only valid if
+     * the <code>Engine</code> parameter is <code>redis</code>.</p>  <p>Example
      * of an Amazon S3 ARN: <code>arn:aws:s3:::my_bucket/snapshot1.rdb</code> </p>
      */
     inline CreateCacheClusterRequest& WithSnapshotArns(Aws::Vector<Aws::String>&& value) { SetSnapshotArns(std::move(value)); return *this;}
@@ -1435,8 +1435,8 @@ namespace Model
      * <p>A single-element string list containing an Amazon Resource Name (ARN) that
      * uniquely identifies a Redis RDB snapshot file stored in Amazon S3. The snapshot
      * file is used to populate the node group (shard). The Amazon S3 object name in
-     * the ARN cannot contain any commas.</p> <note> <p>This parameter is only valid if
-     * the <code>Engine</code> parameter is <code>redis</code>.</p> </note> <p>Example
+     * the ARN cannot contain any commas.</p>  <p>This parameter is only valid if
+     * the <code>Engine</code> parameter is <code>redis</code>.</p>  <p>Example
      * of an Amazon S3 ARN: <code>arn:aws:s3:::my_bucket/snapshot1.rdb</code> </p>
      */
     inline CreateCacheClusterRequest& AddSnapshotArns(const Aws::String& value) { m_snapshotArnsHasBeenSet = true; m_snapshotArns.push_back(value); return *this; }
@@ -1445,8 +1445,8 @@ namespace Model
      * <p>A single-element string list containing an Amazon Resource Name (ARN) that
      * uniquely identifies a Redis RDB snapshot file stored in Amazon S3. The snapshot
      * file is used to populate the node group (shard). The Amazon S3 object name in
-     * the ARN cannot contain any commas.</p> <note> <p>This parameter is only valid if
-     * the <code>Engine</code> parameter is <code>redis</code>.</p> </note> <p>Example
+     * the ARN cannot contain any commas.</p>  <p>This parameter is only valid if
+     * the <code>Engine</code> parameter is <code>redis</code>.</p>  <p>Example
      * of an Amazon S3 ARN: <code>arn:aws:s3:::my_bucket/snapshot1.rdb</code> </p>
      */
     inline CreateCacheClusterRequest& AddSnapshotArns(Aws::String&& value) { m_snapshotArnsHasBeenSet = true; m_snapshotArns.push_back(std::move(value)); return *this; }
@@ -1455,8 +1455,8 @@ namespace Model
      * <p>A single-element string list containing an Amazon Resource Name (ARN) that
      * uniquely identifies a Redis RDB snapshot file stored in Amazon S3. The snapshot
      * file is used to populate the node group (shard). The Amazon S3 object name in
-     * the ARN cannot contain any commas.</p> <note> <p>This parameter is only valid if
-     * the <code>Engine</code> parameter is <code>redis</code>.</p> </note> <p>Example
+     * the ARN cannot contain any commas.</p>  <p>This parameter is only valid if
+     * the <code>Engine</code> parameter is <code>redis</code>.</p>  <p>Example
      * of an Amazon S3 ARN: <code>arn:aws:s3:::my_bucket/snapshot1.rdb</code> </p>
      */
     inline CreateCacheClusterRequest& AddSnapshotArns(const char* value) { m_snapshotArnsHasBeenSet = true; m_snapshotArns.push_back(value); return *this; }
@@ -1465,64 +1465,64 @@ namespace Model
     /**
      * <p>The name of a Redis snapshot from which to restore data into the new node
      * group (shard). The snapshot status changes to <code>restoring</code> while the
-     * new node group (shard) is being created.</p> <note> <p>This parameter is only
-     * valid if the <code>Engine</code> parameter is <code>redis</code>.</p> </note>
+     * new node group (shard) is being created.</p>  <p>This parameter is only
+     * valid if the <code>Engine</code> parameter is <code>redis</code>.</p> 
      */
     inline const Aws::String& GetSnapshotName() const{ return m_snapshotName; }
 
     /**
      * <p>The name of a Redis snapshot from which to restore data into the new node
      * group (shard). The snapshot status changes to <code>restoring</code> while the
-     * new node group (shard) is being created.</p> <note> <p>This parameter is only
-     * valid if the <code>Engine</code> parameter is <code>redis</code>.</p> </note>
+     * new node group (shard) is being created.</p>  <p>This parameter is only
+     * valid if the <code>Engine</code> parameter is <code>redis</code>.</p> 
      */
     inline bool SnapshotNameHasBeenSet() const { return m_snapshotNameHasBeenSet; }
 
     /**
      * <p>The name of a Redis snapshot from which to restore data into the new node
      * group (shard). The snapshot status changes to <code>restoring</code> while the
-     * new node group (shard) is being created.</p> <note> <p>This parameter is only
-     * valid if the <code>Engine</code> parameter is <code>redis</code>.</p> </note>
+     * new node group (shard) is being created.</p>  <p>This parameter is only
+     * valid if the <code>Engine</code> parameter is <code>redis</code>.</p> 
      */
     inline void SetSnapshotName(const Aws::String& value) { m_snapshotNameHasBeenSet = true; m_snapshotName = value; }
 
     /**
      * <p>The name of a Redis snapshot from which to restore data into the new node
      * group (shard). The snapshot status changes to <code>restoring</code> while the
-     * new node group (shard) is being created.</p> <note> <p>This parameter is only
-     * valid if the <code>Engine</code> parameter is <code>redis</code>.</p> </note>
+     * new node group (shard) is being created.</p>  <p>This parameter is only
+     * valid if the <code>Engine</code> parameter is <code>redis</code>.</p> 
      */
     inline void SetSnapshotName(Aws::String&& value) { m_snapshotNameHasBeenSet = true; m_snapshotName = std::move(value); }
 
     /**
      * <p>The name of a Redis snapshot from which to restore data into the new node
      * group (shard). The snapshot status changes to <code>restoring</code> while the
-     * new node group (shard) is being created.</p> <note> <p>This parameter is only
-     * valid if the <code>Engine</code> parameter is <code>redis</code>.</p> </note>
+     * new node group (shard) is being created.</p>  <p>This parameter is only
+     * valid if the <code>Engine</code> parameter is <code>redis</code>.</p> 
      */
     inline void SetSnapshotName(const char* value) { m_snapshotNameHasBeenSet = true; m_snapshotName.assign(value); }
 
     /**
      * <p>The name of a Redis snapshot from which to restore data into the new node
      * group (shard). The snapshot status changes to <code>restoring</code> while the
-     * new node group (shard) is being created.</p> <note> <p>This parameter is only
-     * valid if the <code>Engine</code> parameter is <code>redis</code>.</p> </note>
+     * new node group (shard) is being created.</p>  <p>This parameter is only
+     * valid if the <code>Engine</code> parameter is <code>redis</code>.</p> 
      */
     inline CreateCacheClusterRequest& WithSnapshotName(const Aws::String& value) { SetSnapshotName(value); return *this;}
 
     /**
      * <p>The name of a Redis snapshot from which to restore data into the new node
      * group (shard). The snapshot status changes to <code>restoring</code> while the
-     * new node group (shard) is being created.</p> <note> <p>This parameter is only
-     * valid if the <code>Engine</code> parameter is <code>redis</code>.</p> </note>
+     * new node group (shard) is being created.</p>  <p>This parameter is only
+     * valid if the <code>Engine</code> parameter is <code>redis</code>.</p> 
      */
     inline CreateCacheClusterRequest& WithSnapshotName(Aws::String&& value) { SetSnapshotName(std::move(value)); return *this;}
 
     /**
      * <p>The name of a Redis snapshot from which to restore data into the new node
      * group (shard). The snapshot status changes to <code>restoring</code> while the
-     * new node group (shard) is being created.</p> <note> <p>This parameter is only
-     * valid if the <code>Engine</code> parameter is <code>redis</code>.</p> </note>
+     * new node group (shard) is being created.</p>  <p>This parameter is only
+     * valid if the <code>Engine</code> parameter is <code>redis</code>.</p> 
      */
     inline CreateCacheClusterRequest& WithSnapshotName(const char* value) { SetSnapshotName(value); return *this;}
 
@@ -1679,57 +1679,57 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service
-     * (SNS) topic to which notifications are sent.</p> <note> <p>The Amazon SNS topic
-     * owner must be the same as the cluster owner.</p> </note>
+     * (SNS) topic to which notifications are sent.</p>  <p>The Amazon SNS topic
+     * owner must be the same as the cluster owner.</p> 
      */
     inline const Aws::String& GetNotificationTopicArn() const{ return m_notificationTopicArn; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service
-     * (SNS) topic to which notifications are sent.</p> <note> <p>The Amazon SNS topic
-     * owner must be the same as the cluster owner.</p> </note>
+     * (SNS) topic to which notifications are sent.</p>  <p>The Amazon SNS topic
+     * owner must be the same as the cluster owner.</p> 
      */
     inline bool NotificationTopicArnHasBeenSet() const { return m_notificationTopicArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service
-     * (SNS) topic to which notifications are sent.</p> <note> <p>The Amazon SNS topic
-     * owner must be the same as the cluster owner.</p> </note>
+     * (SNS) topic to which notifications are sent.</p>  <p>The Amazon SNS topic
+     * owner must be the same as the cluster owner.</p> 
      */
     inline void SetNotificationTopicArn(const Aws::String& value) { m_notificationTopicArnHasBeenSet = true; m_notificationTopicArn = value; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service
-     * (SNS) topic to which notifications are sent.</p> <note> <p>The Amazon SNS topic
-     * owner must be the same as the cluster owner.</p> </note>
+     * (SNS) topic to which notifications are sent.</p>  <p>The Amazon SNS topic
+     * owner must be the same as the cluster owner.</p> 
      */
     inline void SetNotificationTopicArn(Aws::String&& value) { m_notificationTopicArnHasBeenSet = true; m_notificationTopicArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service
-     * (SNS) topic to which notifications are sent.</p> <note> <p>The Amazon SNS topic
-     * owner must be the same as the cluster owner.</p> </note>
+     * (SNS) topic to which notifications are sent.</p>  <p>The Amazon SNS topic
+     * owner must be the same as the cluster owner.</p> 
      */
     inline void SetNotificationTopicArn(const char* value) { m_notificationTopicArnHasBeenSet = true; m_notificationTopicArn.assign(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service
-     * (SNS) topic to which notifications are sent.</p> <note> <p>The Amazon SNS topic
-     * owner must be the same as the cluster owner.</p> </note>
+     * (SNS) topic to which notifications are sent.</p>  <p>The Amazon SNS topic
+     * owner must be the same as the cluster owner.</p> 
      */
     inline CreateCacheClusterRequest& WithNotificationTopicArn(const Aws::String& value) { SetNotificationTopicArn(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service
-     * (SNS) topic to which notifications are sent.</p> <note> <p>The Amazon SNS topic
-     * owner must be the same as the cluster owner.</p> </note>
+     * (SNS) topic to which notifications are sent.</p>  <p>The Amazon SNS topic
+     * owner must be the same as the cluster owner.</p> 
      */
     inline CreateCacheClusterRequest& WithNotificationTopicArn(Aws::String&& value) { SetNotificationTopicArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service
-     * (SNS) topic to which notifications are sent.</p> <note> <p>The Amazon SNS topic
-     * owner must be the same as the cluster owner.</p> </note>
+     * (SNS) topic to which notifications are sent.</p>  <p>The Amazon SNS topic
+     * owner must be the same as the cluster owner.</p> 
      */
     inline CreateCacheClusterRequest& WithNotificationTopicArn(const char* value) { SetNotificationTopicArn(value); return *this;}
 
@@ -1758,9 +1758,9 @@ namespace Model
     /**
      * <p>The number of days for which ElastiCache retains automatic snapshots before
      * deleting them. For example, if you set <code>SnapshotRetentionLimit</code> to 5,
-     * a snapshot taken today is retained for 5 days before being deleted.</p> <note>
+     * a snapshot taken today is retained for 5 days before being deleted.</p> 
      * <p>This parameter is only valid if the <code>Engine</code> parameter is
-     * <code>redis</code>.</p> </note> <p>Default: 0 (i.e., automatic backups are
+     * <code>redis</code>.</p>  <p>Default: 0 (i.e., automatic backups are
      * disabled for this cache cluster).</p>
      */
     inline int GetSnapshotRetentionLimit() const{ return m_snapshotRetentionLimit; }
@@ -1768,9 +1768,9 @@ namespace Model
     /**
      * <p>The number of days for which ElastiCache retains automatic snapshots before
      * deleting them. For example, if you set <code>SnapshotRetentionLimit</code> to 5,
-     * a snapshot taken today is retained for 5 days before being deleted.</p> <note>
+     * a snapshot taken today is retained for 5 days before being deleted.</p> 
      * <p>This parameter is only valid if the <code>Engine</code> parameter is
-     * <code>redis</code>.</p> </note> <p>Default: 0 (i.e., automatic backups are
+     * <code>redis</code>.</p>  <p>Default: 0 (i.e., automatic backups are
      * disabled for this cache cluster).</p>
      */
     inline bool SnapshotRetentionLimitHasBeenSet() const { return m_snapshotRetentionLimitHasBeenSet; }
@@ -1778,9 +1778,9 @@ namespace Model
     /**
      * <p>The number of days for which ElastiCache retains automatic snapshots before
      * deleting them. For example, if you set <code>SnapshotRetentionLimit</code> to 5,
-     * a snapshot taken today is retained for 5 days before being deleted.</p> <note>
+     * a snapshot taken today is retained for 5 days before being deleted.</p> 
      * <p>This parameter is only valid if the <code>Engine</code> parameter is
-     * <code>redis</code>.</p> </note> <p>Default: 0 (i.e., automatic backups are
+     * <code>redis</code>.</p>  <p>Default: 0 (i.e., automatic backups are
      * disabled for this cache cluster).</p>
      */
     inline void SetSnapshotRetentionLimit(int value) { m_snapshotRetentionLimitHasBeenSet = true; m_snapshotRetentionLimit = value; }
@@ -1788,9 +1788,9 @@ namespace Model
     /**
      * <p>The number of days for which ElastiCache retains automatic snapshots before
      * deleting them. For example, if you set <code>SnapshotRetentionLimit</code> to 5,
-     * a snapshot taken today is retained for 5 days before being deleted.</p> <note>
+     * a snapshot taken today is retained for 5 days before being deleted.</p> 
      * <p>This parameter is only valid if the <code>Engine</code> parameter is
-     * <code>redis</code>.</p> </note> <p>Default: 0 (i.e., automatic backups are
+     * <code>redis</code>.</p>  <p>Default: 0 (i.e., automatic backups are
      * disabled for this cache cluster).</p>
      */
     inline CreateCacheClusterRequest& WithSnapshotRetentionLimit(int value) { SetSnapshotRetentionLimit(value); return *this;}
@@ -1800,8 +1800,8 @@ namespace Model
      * <p>The daily time range (in UTC) during which ElastiCache begins taking a daily
      * snapshot of your node group (shard).</p> <p>Example: <code>05:00-09:00</code>
      * </p> <p>If you do not specify this parameter, ElastiCache automatically chooses
-     * an appropriate time range.</p> <note> <p>This parameter is only valid if the
-     * <code>Engine</code> parameter is <code>redis</code>.</p> </note>
+     * an appropriate time range.</p>  <p>This parameter is only valid if the
+     * <code>Engine</code> parameter is <code>redis</code>.</p> 
      */
     inline const Aws::String& GetSnapshotWindow() const{ return m_snapshotWindow; }
 
@@ -1809,8 +1809,8 @@ namespace Model
      * <p>The daily time range (in UTC) during which ElastiCache begins taking a daily
      * snapshot of your node group (shard).</p> <p>Example: <code>05:00-09:00</code>
      * </p> <p>If you do not specify this parameter, ElastiCache automatically chooses
-     * an appropriate time range.</p> <note> <p>This parameter is only valid if the
-     * <code>Engine</code> parameter is <code>redis</code>.</p> </note>
+     * an appropriate time range.</p>  <p>This parameter is only valid if the
+     * <code>Engine</code> parameter is <code>redis</code>.</p> 
      */
     inline bool SnapshotWindowHasBeenSet() const { return m_snapshotWindowHasBeenSet; }
 
@@ -1818,8 +1818,8 @@ namespace Model
      * <p>The daily time range (in UTC) during which ElastiCache begins taking a daily
      * snapshot of your node group (shard).</p> <p>Example: <code>05:00-09:00</code>
      * </p> <p>If you do not specify this parameter, ElastiCache automatically chooses
-     * an appropriate time range.</p> <note> <p>This parameter is only valid if the
-     * <code>Engine</code> parameter is <code>redis</code>.</p> </note>
+     * an appropriate time range.</p>  <p>This parameter is only valid if the
+     * <code>Engine</code> parameter is <code>redis</code>.</p> 
      */
     inline void SetSnapshotWindow(const Aws::String& value) { m_snapshotWindowHasBeenSet = true; m_snapshotWindow = value; }
 
@@ -1827,8 +1827,8 @@ namespace Model
      * <p>The daily time range (in UTC) during which ElastiCache begins taking a daily
      * snapshot of your node group (shard).</p> <p>Example: <code>05:00-09:00</code>
      * </p> <p>If you do not specify this parameter, ElastiCache automatically chooses
-     * an appropriate time range.</p> <note> <p>This parameter is only valid if the
-     * <code>Engine</code> parameter is <code>redis</code>.</p> </note>
+     * an appropriate time range.</p>  <p>This parameter is only valid if the
+     * <code>Engine</code> parameter is <code>redis</code>.</p> 
      */
     inline void SetSnapshotWindow(Aws::String&& value) { m_snapshotWindowHasBeenSet = true; m_snapshotWindow = std::move(value); }
 
@@ -1836,8 +1836,8 @@ namespace Model
      * <p>The daily time range (in UTC) during which ElastiCache begins taking a daily
      * snapshot of your node group (shard).</p> <p>Example: <code>05:00-09:00</code>
      * </p> <p>If you do not specify this parameter, ElastiCache automatically chooses
-     * an appropriate time range.</p> <note> <p>This parameter is only valid if the
-     * <code>Engine</code> parameter is <code>redis</code>.</p> </note>
+     * an appropriate time range.</p>  <p>This parameter is only valid if the
+     * <code>Engine</code> parameter is <code>redis</code>.</p> 
      */
     inline void SetSnapshotWindow(const char* value) { m_snapshotWindowHasBeenSet = true; m_snapshotWindow.assign(value); }
 
@@ -1845,8 +1845,8 @@ namespace Model
      * <p>The daily time range (in UTC) during which ElastiCache begins taking a daily
      * snapshot of your node group (shard).</p> <p>Example: <code>05:00-09:00</code>
      * </p> <p>If you do not specify this parameter, ElastiCache automatically chooses
-     * an appropriate time range.</p> <note> <p>This parameter is only valid if the
-     * <code>Engine</code> parameter is <code>redis</code>.</p> </note>
+     * an appropriate time range.</p>  <p>This parameter is only valid if the
+     * <code>Engine</code> parameter is <code>redis</code>.</p> 
      */
     inline CreateCacheClusterRequest& WithSnapshotWindow(const Aws::String& value) { SetSnapshotWindow(value); return *this;}
 
@@ -1854,8 +1854,8 @@ namespace Model
      * <p>The daily time range (in UTC) during which ElastiCache begins taking a daily
      * snapshot of your node group (shard).</p> <p>Example: <code>05:00-09:00</code>
      * </p> <p>If you do not specify this parameter, ElastiCache automatically chooses
-     * an appropriate time range.</p> <note> <p>This parameter is only valid if the
-     * <code>Engine</code> parameter is <code>redis</code>.</p> </note>
+     * an appropriate time range.</p>  <p>This parameter is only valid if the
+     * <code>Engine</code> parameter is <code>redis</code>.</p> 
      */
     inline CreateCacheClusterRequest& WithSnapshotWindow(Aws::String&& value) { SetSnapshotWindow(std::move(value)); return *this;}
 
@@ -1863,8 +1863,8 @@ namespace Model
      * <p>The daily time range (in UTC) during which ElastiCache begins taking a daily
      * snapshot of your node group (shard).</p> <p>Example: <code>05:00-09:00</code>
      * </p> <p>If you do not specify this parameter, ElastiCache automatically chooses
-     * an appropriate time range.</p> <note> <p>This parameter is only valid if the
-     * <code>Engine</code> parameter is <code>redis</code>.</p> </note>
+     * an appropriate time range.</p>  <p>This parameter is only valid if the
+     * <code>Engine</code> parameter is <code>redis</code>.</p> 
      */
     inline CreateCacheClusterRequest& WithSnapshotWindow(const char* value) { SetSnapshotWindow(value); return *this;}
 

@@ -353,29 +353,25 @@ namespace Model
 
     /**
      * <p>The version of the resource. Resources are created at version 1, and this
-     * version is
-         incremented each time that they're updated.</p>
+     * version is incremented each time that they're updated.</p>
      */
     inline long long GetVersion() const{ return m_version; }
 
     /**
      * <p>The version of the resource. Resources are created at version 1, and this
-     * version is
-         incremented each time that they're updated.</p>
+     * version is incremented each time that they're updated.</p>
      */
     inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
 
     /**
      * <p>The version of the resource. Resources are created at version 1, and this
-     * version is
-         incremented each time that they're updated.</p>
+     * version is incremented each time that they're updated.</p>
      */
     inline void SetVersion(long long value) { m_versionHasBeenSet = true; m_version = value; }
 
     /**
      * <p>The version of the resource. Resources are created at version 1, and this
-     * version is
-         incremented each time that they're updated.</p>
+     * version is incremented each time that they're updated.</p>
      */
     inline ResourceMetadata& WithVersion(long long value) { SetVersion(value); return *this;}
 

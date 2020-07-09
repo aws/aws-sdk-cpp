@@ -46,9 +46,9 @@ namespace Model
      * – The maximum amount in USD that you are willing to spend each month to send SMS
      * messages. When Amazon SNS determines that sending an SMS message would incur a
      * cost that exceeds this limit, it stops sending SMS messages within minutes.</p>
-     * <important> <p>Amazon SNS stops sending SMS messages within minutes of the limit
+     *  <p>Amazon SNS stops sending SMS messages within minutes of the limit
      * being crossed. During that interval, if you continue to send SMS messages, you
-     * will incur costs that exceed your limit.</p> </important> <p>By default, the
+     * will incur costs that exceed your limit.</p>  <p>By default, the
      * spend limit is set to the maximum allowed by Amazon SNS. If you want to raise
      * the limit, submit an <a
      * href="https://console.aws.amazon.com/support/home#/case/create?issueType=service-limit-increase&amp;limitType=service-code-sns">SNS
@@ -100,9 +100,9 @@ namespace Model
      * – The maximum amount in USD that you are willing to spend each month to send SMS
      * messages. When Amazon SNS determines that sending an SMS message would incur a
      * cost that exceeds this limit, it stops sending SMS messages within minutes.</p>
-     * <important> <p>Amazon SNS stops sending SMS messages within minutes of the limit
+     *  <p>Amazon SNS stops sending SMS messages within minutes of the limit
      * being crossed. During that interval, if you continue to send SMS messages, you
-     * will incur costs that exceed your limit.</p> </important> <p>By default, the
+     * will incur costs that exceed your limit.</p>  <p>By default, the
      * spend limit is set to the maximum allowed by Amazon SNS. If you want to raise
      * the limit, submit an <a
      * href="https://console.aws.amazon.com/support/home#/case/create?issueType=service-limit-increase&amp;limitType=service-code-sns">SNS
@@ -154,9 +154,9 @@ namespace Model
      * – The maximum amount in USD that you are willing to spend each month to send SMS
      * messages. When Amazon SNS determines that sending an SMS message would incur a
      * cost that exceeds this limit, it stops sending SMS messages within minutes.</p>
-     * <important> <p>Amazon SNS stops sending SMS messages within minutes of the limit
+     *  <p>Amazon SNS stops sending SMS messages within minutes of the limit
      * being crossed. During that interval, if you continue to send SMS messages, you
-     * will incur costs that exceed your limit.</p> </important> <p>By default, the
+     * will incur costs that exceed your limit.</p>  <p>By default, the
      * spend limit is set to the maximum allowed by Amazon SNS. If you want to raise
      * the limit, submit an <a
      * href="https://console.aws.amazon.com/support/home#/case/create?issueType=service-limit-increase&amp;limitType=service-code-sns">SNS
@@ -208,9 +208,9 @@ namespace Model
      * – The maximum amount in USD that you are willing to spend each month to send SMS
      * messages. When Amazon SNS determines that sending an SMS message would incur a
      * cost that exceeds this limit, it stops sending SMS messages within minutes.</p>
-     * <important> <p>Amazon SNS stops sending SMS messages within minutes of the limit
+     *  <p>Amazon SNS stops sending SMS messages within minutes of the limit
      * being crossed. During that interval, if you continue to send SMS messages, you
-     * will incur costs that exceed your limit.</p> </important> <p>By default, the
+     * will incur costs that exceed your limit.</p>  <p>By default, the
      * spend limit is set to the maximum allowed by Amazon SNS. If you want to raise
      * the limit, submit an <a
      * href="https://console.aws.amazon.com/support/home#/case/create?issueType=service-limit-increase&amp;limitType=service-code-sns">SNS
@@ -262,9 +262,9 @@ namespace Model
      * – The maximum amount in USD that you are willing to spend each month to send SMS
      * messages. When Amazon SNS determines that sending an SMS message would incur a
      * cost that exceeds this limit, it stops sending SMS messages within minutes.</p>
-     * <important> <p>Amazon SNS stops sending SMS messages within minutes of the limit
+     *  <p>Amazon SNS stops sending SMS messages within minutes of the limit
      * being crossed. During that interval, if you continue to send SMS messages, you
-     * will incur costs that exceed your limit.</p> </important> <p>By default, the
+     * will incur costs that exceed your limit.</p>  <p>By default, the
      * spend limit is set to the maximum allowed by Amazon SNS. If you want to raise
      * the limit, submit an <a
      * href="https://console.aws.amazon.com/support/home#/case/create?issueType=service-limit-increase&amp;limitType=service-code-sns">SNS
@@ -316,9 +316,9 @@ namespace Model
      * – The maximum amount in USD that you are willing to spend each month to send SMS
      * messages. When Amazon SNS determines that sending an SMS message would incur a
      * cost that exceeds this limit, it stops sending SMS messages within minutes.</p>
-     * <important> <p>Amazon SNS stops sending SMS messages within minutes of the limit
+     *  <p>Amazon SNS stops sending SMS messages within minutes of the limit
      * being crossed. During that interval, if you continue to send SMS messages, you
-     * will incur costs that exceed your limit.</p> </important> <p>By default, the
+     * will incur costs that exceed your limit.</p>  <p>By default, the
      * spend limit is set to the maximum allowed by Amazon SNS. If you want to raise
      * the limit, submit an <a
      * href="https://console.aws.amazon.com/support/home#/case/create?issueType=service-limit-increase&amp;limitType=service-code-sns">SNS
@@ -370,9 +370,9 @@ namespace Model
      * – The maximum amount in USD that you are willing to spend each month to send SMS
      * messages. When Amazon SNS determines that sending an SMS message would incur a
      * cost that exceeds this limit, it stops sending SMS messages within minutes.</p>
-     * <important> <p>Amazon SNS stops sending SMS messages within minutes of the limit
+     *  <p>Amazon SNS stops sending SMS messages within minutes of the limit
      * being crossed. During that interval, if you continue to send SMS messages, you
-     * will incur costs that exceed your limit.</p> </important> <p>By default, the
+     * will incur costs that exceed your limit.</p>  <p>By default, the
      * spend limit is set to the maximum allowed by Amazon SNS. If you want to raise
      * the limit, submit an <a
      * href="https://console.aws.amazon.com/support/home#/case/create?issueType=service-limit-increase&amp;limitType=service-code-sns">SNS
@@ -424,9 +424,9 @@ namespace Model
      * – The maximum amount in USD that you are willing to spend each month to send SMS
      * messages. When Amazon SNS determines that sending an SMS message would incur a
      * cost that exceeds this limit, it stops sending SMS messages within minutes.</p>
-     * <important> <p>Amazon SNS stops sending SMS messages within minutes of the limit
+     *  <p>Amazon SNS stops sending SMS messages within minutes of the limit
      * being crossed. During that interval, if you continue to send SMS messages, you
-     * will incur costs that exceed your limit.</p> </important> <p>By default, the
+     * will incur costs that exceed your limit.</p>  <p>By default, the
      * spend limit is set to the maximum allowed by Amazon SNS. If you want to raise
      * the limit, submit an <a
      * href="https://console.aws.amazon.com/support/home#/case/create?issueType=service-limit-increase&amp;limitType=service-code-sns">SNS
@@ -478,9 +478,9 @@ namespace Model
      * – The maximum amount in USD that you are willing to spend each month to send SMS
      * messages. When Amazon SNS determines that sending an SMS message would incur a
      * cost that exceeds this limit, it stops sending SMS messages within minutes.</p>
-     * <important> <p>Amazon SNS stops sending SMS messages within minutes of the limit
+     *  <p>Amazon SNS stops sending SMS messages within minutes of the limit
      * being crossed. During that interval, if you continue to send SMS messages, you
-     * will incur costs that exceed your limit.</p> </important> <p>By default, the
+     * will incur costs that exceed your limit.</p>  <p>By default, the
      * spend limit is set to the maximum allowed by Amazon SNS. If you want to raise
      * the limit, submit an <a
      * href="https://console.aws.amazon.com/support/home#/case/create?issueType=service-limit-increase&amp;limitType=service-code-sns">SNS
@@ -532,9 +532,9 @@ namespace Model
      * – The maximum amount in USD that you are willing to spend each month to send SMS
      * messages. When Amazon SNS determines that sending an SMS message would incur a
      * cost that exceeds this limit, it stops sending SMS messages within minutes.</p>
-     * <important> <p>Amazon SNS stops sending SMS messages within minutes of the limit
+     *  <p>Amazon SNS stops sending SMS messages within minutes of the limit
      * being crossed. During that interval, if you continue to send SMS messages, you
-     * will incur costs that exceed your limit.</p> </important> <p>By default, the
+     * will incur costs that exceed your limit.</p>  <p>By default, the
      * spend limit is set to the maximum allowed by Amazon SNS. If you want to raise
      * the limit, submit an <a
      * href="https://console.aws.amazon.com/support/home#/case/create?issueType=service-limit-increase&amp;limitType=service-code-sns">SNS
@@ -586,9 +586,9 @@ namespace Model
      * – The maximum amount in USD that you are willing to spend each month to send SMS
      * messages. When Amazon SNS determines that sending an SMS message would incur a
      * cost that exceeds this limit, it stops sending SMS messages within minutes.</p>
-     * <important> <p>Amazon SNS stops sending SMS messages within minutes of the limit
+     *  <p>Amazon SNS stops sending SMS messages within minutes of the limit
      * being crossed. During that interval, if you continue to send SMS messages, you
-     * will incur costs that exceed your limit.</p> </important> <p>By default, the
+     * will incur costs that exceed your limit.</p>  <p>By default, the
      * spend limit is set to the maximum allowed by Amazon SNS. If you want to raise
      * the limit, submit an <a
      * href="https://console.aws.amazon.com/support/home#/case/create?issueType=service-limit-increase&amp;limitType=service-code-sns">SNS
@@ -640,9 +640,9 @@ namespace Model
      * – The maximum amount in USD that you are willing to spend each month to send SMS
      * messages. When Amazon SNS determines that sending an SMS message would incur a
      * cost that exceeds this limit, it stops sending SMS messages within minutes.</p>
-     * <important> <p>Amazon SNS stops sending SMS messages within minutes of the limit
+     *  <p>Amazon SNS stops sending SMS messages within minutes of the limit
      * being crossed. During that interval, if you continue to send SMS messages, you
-     * will incur costs that exceed your limit.</p> </important> <p>By default, the
+     * will incur costs that exceed your limit.</p>  <p>By default, the
      * spend limit is set to the maximum allowed by Amazon SNS. If you want to raise
      * the limit, submit an <a
      * href="https://console.aws.amazon.com/support/home#/case/create?issueType=service-limit-increase&amp;limitType=service-code-sns">SNS
@@ -694,9 +694,9 @@ namespace Model
      * – The maximum amount in USD that you are willing to spend each month to send SMS
      * messages. When Amazon SNS determines that sending an SMS message would incur a
      * cost that exceeds this limit, it stops sending SMS messages within minutes.</p>
-     * <important> <p>Amazon SNS stops sending SMS messages within minutes of the limit
+     *  <p>Amazon SNS stops sending SMS messages within minutes of the limit
      * being crossed. During that interval, if you continue to send SMS messages, you
-     * will incur costs that exceed your limit.</p> </important> <p>By default, the
+     * will incur costs that exceed your limit.</p>  <p>By default, the
      * spend limit is set to the maximum allowed by Amazon SNS. If you want to raise
      * the limit, submit an <a
      * href="https://console.aws.amazon.com/support/home#/case/create?issueType=service-limit-increase&amp;limitType=service-code-sns">SNS

@@ -25,10 +25,10 @@ namespace Model
 
   /**
    * <p> The launch specification for On-Demand instances in the instance fleet,
-   * which determines the allocation strategy. </p> <note> <p>The instance fleet
+   * which determines the allocation strategy. </p>  <p>The instance fleet
    * configuration is available only in Amazon EMR versions 4.8.0 and later,
    * excluding 5.0.x versions. On-Demand instances allocation strategy is available
-   * in Amazon EMR version 5.12.1 and later.</p> </note><p><h3>See Also:</h3>   <a
+   * in Amazon EMR version 5.12.1 and later.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/OnDemandProvisioningSpecification">AWS
    * API Reference</a></p>
    */

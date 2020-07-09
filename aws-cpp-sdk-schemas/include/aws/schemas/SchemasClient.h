@@ -284,16 +284,16 @@ namespace Model
         virtual void CreateRegistryAsync(const Model::CreateRegistryRequest& request, const CreateRegistryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a schema definition.</p> <note><p>Inactive schemas will be deleted
-         * after two years.</p></note><p><h3>See Also:</h3>   <a
+         * <p>Creates a schema definition.</p> <p>Inactive schemas will be deleted
+         * after two years.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/CreateSchema">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateSchemaOutcome CreateSchema(const Model::CreateSchemaRequest& request) const;
 
         /**
-         * <p>Creates a schema definition.</p> <note><p>Inactive schemas will be deleted
-         * after two years.</p></note><p><h3>See Also:</h3>   <a
+         * <p>Creates a schema definition.</p> <p>Inactive schemas will be deleted
+         * after two years.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/CreateSchema">AWS
          * API Reference</a></p>
          *
@@ -302,8 +302,8 @@ namespace Model
         virtual Model::CreateSchemaOutcomeCallable CreateSchemaCallable(const Model::CreateSchemaRequest& request) const;
 
         /**
-         * <p>Creates a schema definition.</p> <note><p>Inactive schemas will be deleted
-         * after two years.</p></note><p><h3>See Also:</h3>   <a
+         * <p>Creates a schema definition.</p> <p>Inactive schemas will be deleted
+         * after two years.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/CreateSchema">AWS
          * API Reference</a></p>
          *
@@ -974,16 +974,16 @@ namespace Model
         virtual void UpdateRegistryAsync(const Model::UpdateRegistryRequest& request, const UpdateRegistryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates the schema definition</p> <note><p>Inactive schemas will be deleted
-         * after two years.</p></note><p><h3>See Also:</h3>   <a
+         * <p>Updates the schema definition</p> <p>Inactive schemas will be deleted
+         * after two years.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/UpdateSchema">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateSchemaOutcome UpdateSchema(const Model::UpdateSchemaRequest& request) const;
 
         /**
-         * <p>Updates the schema definition</p> <note><p>Inactive schemas will be deleted
-         * after two years.</p></note><p><h3>See Also:</h3>   <a
+         * <p>Updates the schema definition</p> <p>Inactive schemas will be deleted
+         * after two years.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/UpdateSchema">AWS
          * API Reference</a></p>
          *
@@ -992,8 +992,8 @@ namespace Model
         virtual Model::UpdateSchemaOutcomeCallable UpdateSchemaCallable(const Model::UpdateSchemaRequest& request) const;
 
         /**
-         * <p>Updates the schema definition</p> <note><p>Inactive schemas will be deleted
-         * after two years.</p></note><p><h3>See Also:</h3>   <a
+         * <p>Updates the schema definition</p> <p>Inactive schemas will be deleted
+         * after two years.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/UpdateSchema">AWS
          * API Reference</a></p>
          *

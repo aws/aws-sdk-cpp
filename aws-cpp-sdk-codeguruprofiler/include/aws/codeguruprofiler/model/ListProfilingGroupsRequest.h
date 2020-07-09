@@ -133,9 +133,9 @@ namespace Model
      * <code>ListProfilingGroups</code> request where <code>maxResults</code> was used
      * and the results exceeded the value of that parameter. Pagination continues from
      * the end of the previous results that returned the <code>nextToken</code> value.
-     * </p> <note> <p>This token should be treated as an opaque identifier that is only
+     * </p>  <p>This token should be treated as an opaque identifier that is only
      * used to retrieve the next items in a list and not for other programmatic
-     * purposes.</p> </note>
+     * purposes.</p> 
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
@@ -144,9 +144,9 @@ namespace Model
      * <code>ListProfilingGroups</code> request where <code>maxResults</code> was used
      * and the results exceeded the value of that parameter. Pagination continues from
      * the end of the previous results that returned the <code>nextToken</code> value.
-     * </p> <note> <p>This token should be treated as an opaque identifier that is only
+     * </p>  <p>This token should be treated as an opaque identifier that is only
      * used to retrieve the next items in a list and not for other programmatic
-     * purposes.</p> </note>
+     * purposes.</p> 
      */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
@@ -155,9 +155,9 @@ namespace Model
      * <code>ListProfilingGroups</code> request where <code>maxResults</code> was used
      * and the results exceeded the value of that parameter. Pagination continues from
      * the end of the previous results that returned the <code>nextToken</code> value.
-     * </p> <note> <p>This token should be treated as an opaque identifier that is only
+     * </p>  <p>This token should be treated as an opaque identifier that is only
      * used to retrieve the next items in a list and not for other programmatic
-     * purposes.</p> </note>
+     * purposes.</p> 
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
@@ -166,9 +166,9 @@ namespace Model
      * <code>ListProfilingGroups</code> request where <code>maxResults</code> was used
      * and the results exceeded the value of that parameter. Pagination continues from
      * the end of the previous results that returned the <code>nextToken</code> value.
-     * </p> <note> <p>This token should be treated as an opaque identifier that is only
+     * </p>  <p>This token should be treated as an opaque identifier that is only
      * used to retrieve the next items in a list and not for other programmatic
-     * purposes.</p> </note>
+     * purposes.</p> 
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
@@ -177,9 +177,9 @@ namespace Model
      * <code>ListProfilingGroups</code> request where <code>maxResults</code> was used
      * and the results exceeded the value of that parameter. Pagination continues from
      * the end of the previous results that returned the <code>nextToken</code> value.
-     * </p> <note> <p>This token should be treated as an opaque identifier that is only
+     * </p>  <p>This token should be treated as an opaque identifier that is only
      * used to retrieve the next items in a list and not for other programmatic
-     * purposes.</p> </note>
+     * purposes.</p> 
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
@@ -188,9 +188,9 @@ namespace Model
      * <code>ListProfilingGroups</code> request where <code>maxResults</code> was used
      * and the results exceeded the value of that parameter. Pagination continues from
      * the end of the previous results that returned the <code>nextToken</code> value.
-     * </p> <note> <p>This token should be treated as an opaque identifier that is only
+     * </p>  <p>This token should be treated as an opaque identifier that is only
      * used to retrieve the next items in a list and not for other programmatic
-     * purposes.</p> </note>
+     * purposes.</p> 
      */
     inline ListProfilingGroupsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
@@ -199,9 +199,9 @@ namespace Model
      * <code>ListProfilingGroups</code> request where <code>maxResults</code> was used
      * and the results exceeded the value of that parameter. Pagination continues from
      * the end of the previous results that returned the <code>nextToken</code> value.
-     * </p> <note> <p>This token should be treated as an opaque identifier that is only
+     * </p>  <p>This token should be treated as an opaque identifier that is only
      * used to retrieve the next items in a list and not for other programmatic
-     * purposes.</p> </note>
+     * purposes.</p> 
      */
     inline ListProfilingGroupsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
@@ -210,9 +210,9 @@ namespace Model
      * <code>ListProfilingGroups</code> request where <code>maxResults</code> was used
      * and the results exceeded the value of that parameter. Pagination continues from
      * the end of the previous results that returned the <code>nextToken</code> value.
-     * </p> <note> <p>This token should be treated as an opaque identifier that is only
+     * </p>  <p>This token should be treated as an opaque identifier that is only
      * used to retrieve the next items in a list and not for other programmatic
-     * purposes.</p> </note>
+     * purposes.</p> 
      */
     inline ListProfilingGroupsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

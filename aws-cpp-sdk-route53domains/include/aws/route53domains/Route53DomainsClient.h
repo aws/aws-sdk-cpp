@@ -289,10 +289,10 @@ namespace Model
          * <p>Cancels the transfer of a domain from the current AWS account to another AWS
          * account. You initiate a transfer between AWS accounts using <a
          * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_TransferDomainToAnotherAwsAccount.html">TransferDomainToAnotherAwsAccount</a>.
-         * </p> <important> <p>You must cancel the transfer before the other AWS account
+         * </p>  <p>You must cancel the transfer before the other AWS account
          * accepts the transfer using <a
          * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_AcceptDomainTransferFromAnotherAwsAccount.html">AcceptDomainTransferFromAnotherAwsAccount</a>.</p>
-         * </important> <p>Use either <a
+         *  <p>Use either <a
          * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ListOperations.html">ListOperations</a>
          * or <a
          * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>
@@ -309,10 +309,10 @@ namespace Model
          * <p>Cancels the transfer of a domain from the current AWS account to another AWS
          * account. You initiate a transfer between AWS accounts using <a
          * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_TransferDomainToAnotherAwsAccount.html">TransferDomainToAnotherAwsAccount</a>.
-         * </p> <important> <p>You must cancel the transfer before the other AWS account
+         * </p>  <p>You must cancel the transfer before the other AWS account
          * accepts the transfer using <a
          * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_AcceptDomainTransferFromAnotherAwsAccount.html">AcceptDomainTransferFromAnotherAwsAccount</a>.</p>
-         * </important> <p>Use either <a
+         *  <p>Use either <a
          * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ListOperations.html">ListOperations</a>
          * or <a
          * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>
@@ -331,10 +331,10 @@ namespace Model
          * <p>Cancels the transfer of a domain from the current AWS account to another AWS
          * account. You initiate a transfer between AWS accounts using <a
          * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_TransferDomainToAnotherAwsAccount.html">TransferDomainToAnotherAwsAccount</a>.
-         * </p> <important> <p>You must cancel the transfer before the other AWS account
+         * </p>  <p>You must cancel the transfer before the other AWS account
          * accepts the transfer using <a
          * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_AcceptDomainTransferFromAnotherAwsAccount.html">AcceptDomainTransferFromAnotherAwsAccount</a>.</p>
-         * </important> <p>Use either <a
+         *  <p>Use either <a
          * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ListOperations.html">ListOperations</a>
          * or <a
          * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>
@@ -1096,10 +1096,10 @@ namespace Model
          * transfer your registration. Some registrars provide free DNS service when you
          * purchase a domain registration. When you transfer the registration, the previous
          * registrar will not renew your domain registration and could end your DNS service
-         * at any time.</p> <important> <p>If the registrar for your domain is also the DNS
+         * at any time.</p>  <p>If the registrar for your domain is also the DNS
          * service provider for the domain and you don't transfer DNS service to another
          * provider, your website, email, and the web applications associated with the
-         * domain might become unavailable.</p> </important> <p>If the transfer is
+         * domain might become unavailable.</p>  <p>If the transfer is
          * successful, this method returns an operation ID that you can use to track the
          * progress and completion of the action. If the transfer doesn't complete
          * successfully, the domain registrant will be notified by email.</p><p><h3>See
@@ -1132,10 +1132,10 @@ namespace Model
          * transfer your registration. Some registrars provide free DNS service when you
          * purchase a domain registration. When you transfer the registration, the previous
          * registrar will not renew your domain registration and could end your DNS service
-         * at any time.</p> <important> <p>If the registrar for your domain is also the DNS
+         * at any time.</p>  <p>If the registrar for your domain is also the DNS
          * service provider for the domain and you don't transfer DNS service to another
          * provider, your website, email, and the web applications associated with the
-         * domain might become unavailable.</p> </important> <p>If the transfer is
+         * domain might become unavailable.</p>  <p>If the transfer is
          * successful, this method returns an operation ID that you can use to track the
          * progress and completion of the action. If the transfer doesn't complete
          * successfully, the domain registrant will be notified by email.</p><p><h3>See
@@ -1170,10 +1170,10 @@ namespace Model
          * transfer your registration. Some registrars provide free DNS service when you
          * purchase a domain registration. When you transfer the registration, the previous
          * registrar will not renew your domain registration and could end your DNS service
-         * at any time.</p> <important> <p>If the registrar for your domain is also the DNS
+         * at any time.</p>  <p>If the registrar for your domain is also the DNS
          * service provider for the domain and you don't transfer DNS service to another
          * provider, your website, email, and the web applications associated with the
-         * domain might become unavailable.</p> </important> <p>If the transfer is
+         * domain might become unavailable.</p>  <p>If the transfer is
          * successful, this method returns an operation ID that you can use to track the
          * progress and completion of the action. If the transfer doesn't complete
          * successfully, the domain registrant will be notified by email.</p><p><h3>See
@@ -1196,14 +1196,14 @@ namespace Model
          * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_CancelDomainTransferToAnotherAwsAccount.html">CancelDomainTransferToAnotherAwsAccount</a>.
          * </p> </li> <li> <p>The other account can reject the transfer. See <a
          * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_RejectDomainTransferFromAnotherAwsAccount.html">RejectDomainTransferFromAnotherAwsAccount</a>.
-         * </p> </li> </ul> <important> <p>When you transfer a domain from one AWS account
+         * </p> </li> </ul>  <p>When you transfer a domain from one AWS account
          * to another, Route 53 doesn't transfer the hosted zone that is associated with
          * the domain. DNS resolution isn't affected if the domain and the hosted zone are
          * owned by separate accounts, so transferring the hosted zone is optional. For
          * information about transferring the hosted zone to another AWS account, see <a
          * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/hosted-zones-migrating.html">Migrating
          * a Hosted Zone to a Different AWS Account</a> in the <i>Amazon Route 53 Developer
-         * Guide</i>.</p> </important> <p>Use either <a
+         * Guide</i>.</p>  <p>Use either <a
          * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ListOperations.html">ListOperations</a>
          * or <a
          * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>
@@ -1227,14 +1227,14 @@ namespace Model
          * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_CancelDomainTransferToAnotherAwsAccount.html">CancelDomainTransferToAnotherAwsAccount</a>.
          * </p> </li> <li> <p>The other account can reject the transfer. See <a
          * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_RejectDomainTransferFromAnotherAwsAccount.html">RejectDomainTransferFromAnotherAwsAccount</a>.
-         * </p> </li> </ul> <important> <p>When you transfer a domain from one AWS account
+         * </p> </li> </ul>  <p>When you transfer a domain from one AWS account
          * to another, Route 53 doesn't transfer the hosted zone that is associated with
          * the domain. DNS resolution isn't affected if the domain and the hosted zone are
          * owned by separate accounts, so transferring the hosted zone is optional. For
          * information about transferring the hosted zone to another AWS account, see <a
          * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/hosted-zones-migrating.html">Migrating
          * a Hosted Zone to a Different AWS Account</a> in the <i>Amazon Route 53 Developer
-         * Guide</i>.</p> </important> <p>Use either <a
+         * Guide</i>.</p>  <p>Use either <a
          * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ListOperations.html">ListOperations</a>
          * or <a
          * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>
@@ -1260,14 +1260,14 @@ namespace Model
          * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_CancelDomainTransferToAnotherAwsAccount.html">CancelDomainTransferToAnotherAwsAccount</a>.
          * </p> </li> <li> <p>The other account can reject the transfer. See <a
          * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_RejectDomainTransferFromAnotherAwsAccount.html">RejectDomainTransferFromAnotherAwsAccount</a>.
-         * </p> </li> </ul> <important> <p>When you transfer a domain from one AWS account
+         * </p> </li> </ul>  <p>When you transfer a domain from one AWS account
          * to another, Route 53 doesn't transfer the hosted zone that is associated with
          * the domain. DNS resolution isn't affected if the domain and the hosted zone are
          * owned by separate accounts, so transferring the hosted zone is optional. For
          * information about transferring the hosted zone to another AWS account, see <a
          * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/hosted-zones-migrating.html">Migrating
          * a Hosted Zone to a Different AWS Account</a> in the <i>Amazon Route 53 Developer
-         * Guide</i>.</p> </important> <p>Use either <a
+         * Guide</i>.</p>  <p>Use either <a
          * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ListOperations.html">ListOperations</a>
          * or <a
          * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>
@@ -1333,7 +1333,7 @@ namespace Model
          * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>
          * to track the progress and completion of the action. If the request doesn't
          * complete successfully, the domain registrant will be notified by email.</p>
-         * <important> <p>By disabling the privacy service via API, you consent to the
+         *  <p>By disabling the privacy service via API, you consent to the
          * publication of the contact information provided for this domain via the public
          * WHOIS database. You certify that you are the registrant of this domain name and
          * have the authority to make this decision. You may withdraw your consent at any
@@ -1342,7 +1342,7 @@ namespace Model
          * privacy protection removes the contact information provided for this domain from
          * the WHOIS database. For more information on our privacy practices, see <a
          * href="https://aws.amazon.com/privacy/">https://aws.amazon.com/privacy/</a>.</p>
-         * </important><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/UpdateDomainContactPrivacy">AWS
          * API Reference</a></p>
          */
@@ -1359,7 +1359,7 @@ namespace Model
          * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>
          * to track the progress and completion of the action. If the request doesn't
          * complete successfully, the domain registrant will be notified by email.</p>
-         * <important> <p>By disabling the privacy service via API, you consent to the
+         *  <p>By disabling the privacy service via API, you consent to the
          * publication of the contact information provided for this domain via the public
          * WHOIS database. You certify that you are the registrant of this domain name and
          * have the authority to make this decision. You may withdraw your consent at any
@@ -1368,7 +1368,7 @@ namespace Model
          * privacy protection removes the contact information provided for this domain from
          * the WHOIS database. For more information on our privacy practices, see <a
          * href="https://aws.amazon.com/privacy/">https://aws.amazon.com/privacy/</a>.</p>
-         * </important><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/UpdateDomainContactPrivacy">AWS
          * API Reference</a></p>
          *
@@ -1387,7 +1387,7 @@ namespace Model
          * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>
          * to track the progress and completion of the action. If the request doesn't
          * complete successfully, the domain registrant will be notified by email.</p>
-         * <important> <p>By disabling the privacy service via API, you consent to the
+         *  <p>By disabling the privacy service via API, you consent to the
          * publication of the contact information provided for this domain via the public
          * WHOIS database. You certify that you are the registrant of this domain name and
          * have the authority to make this decision. You may withdraw your consent at any
@@ -1396,7 +1396,7 @@ namespace Model
          * privacy protection removes the contact information provided for this domain from
          * the WHOIS database. For more information on our privacy practices, see <a
          * href="https://aws.amazon.com/privacy/">https://aws.amazon.com/privacy/</a>.</p>
-         * </important><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/UpdateDomainContactPrivacy">AWS
          * API Reference</a></p>
          *

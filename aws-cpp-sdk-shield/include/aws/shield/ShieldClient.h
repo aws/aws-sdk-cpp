@@ -421,14 +421,14 @@ namespace Model
          * emergency contact list. </p> <p>After you have initialized proactive engagement
          * using this call, to disable or enable proactive engagement, use the calls
          * <code>DisableProactiveEngagement</code> and
-         * <code>EnableProactiveEngagement</code>. </p> <note> <p>This call defines the
+         * <code>EnableProactiveEngagement</code>. </p>  <p>This call defines the
          * list of email addresses and phone numbers that the DDoS Response Team (DRT) can
          * use to contact you for escalations to the DRT and to initiate proactive customer
          * support.</p> <p>The contacts that you provide in the request replace any
          * contacts that were already defined. If you already have contacts defined and
          * want to use them, retrieve the list using
          * <code>DescribeEmergencyContactSettings</code> and then provide it to this call.
-         * </p> </note><p><h3>See Also:</h3>   <a
+         * </p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/AssociateProactiveEngagementDetails">AWS
          * API Reference</a></p>
          */
@@ -440,14 +440,14 @@ namespace Model
          * emergency contact list. </p> <p>After you have initialized proactive engagement
          * using this call, to disable or enable proactive engagement, use the calls
          * <code>DisableProactiveEngagement</code> and
-         * <code>EnableProactiveEngagement</code>. </p> <note> <p>This call defines the
+         * <code>EnableProactiveEngagement</code>. </p>  <p>This call defines the
          * list of email addresses and phone numbers that the DDoS Response Team (DRT) can
          * use to contact you for escalations to the DRT and to initiate proactive customer
          * support.</p> <p>The contacts that you provide in the request replace any
          * contacts that were already defined. If you already have contacts defined and
          * want to use them, retrieve the list using
          * <code>DescribeEmergencyContactSettings</code> and then provide it to this call.
-         * </p> </note><p><h3>See Also:</h3>   <a
+         * </p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/AssociateProactiveEngagementDetails">AWS
          * API Reference</a></p>
          *
@@ -461,14 +461,14 @@ namespace Model
          * emergency contact list. </p> <p>After you have initialized proactive engagement
          * using this call, to disable or enable proactive engagement, use the calls
          * <code>DisableProactiveEngagement</code> and
-         * <code>EnableProactiveEngagement</code>. </p> <note> <p>This call defines the
+         * <code>EnableProactiveEngagement</code>. </p>  <p>This call defines the
          * list of email addresses and phone numbers that the DDoS Response Team (DRT) can
          * use to contact you for escalations to the DRT and to initiate proactive customer
          * support.</p> <p>The contacts that you provide in the request replace any
          * contacts that were already defined. If you already have contacts defined and
          * want to use them, retrieve the list using
          * <code>DescribeEmergencyContactSettings</code> and then provide it to this call.
-         * </p> </note><p><h3>See Also:</h3>   <a
+         * </p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/AssociateProactiveEngagementDetails">AWS
          * API Reference</a></p>
          *

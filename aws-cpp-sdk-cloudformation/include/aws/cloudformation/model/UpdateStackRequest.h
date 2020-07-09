@@ -589,12 +589,12 @@ namespace Model
      * transforms, which are macros hosted by AWS CloudFormation.</p> <p>Change sets do
      * not currently support nested stacks. If you want to update a stack from a stack
      * template that contains macros <i>and</i> nested stacks, you must update the
-     * stack directly from the template using this capability.</p> <important> <p>You
+     * stack directly from the template using this capability.</p>  <p>You
      * should only update stacks directly from a stack template that contains macros if
      * you know what processing the macro performs.</p> <p>Each macro relies on an
      * underlying Lambda service function for processing stack templates. Be aware that
      * the Lambda function owner can update the function operation without AWS
-     * CloudFormation being notified.</p> </important> <p>For more information, see <a
+     * CloudFormation being notified.</p>  <p>For more information, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
      * AWS CloudFormation Macros to Perform Custom Processing on Templates</a>.</p>
      * </li> </ul>
@@ -651,12 +651,12 @@ namespace Model
      * transforms, which are macros hosted by AWS CloudFormation.</p> <p>Change sets do
      * not currently support nested stacks. If you want to update a stack from a stack
      * template that contains macros <i>and</i> nested stacks, you must update the
-     * stack directly from the template using this capability.</p> <important> <p>You
+     * stack directly from the template using this capability.</p>  <p>You
      * should only update stacks directly from a stack template that contains macros if
      * you know what processing the macro performs.</p> <p>Each macro relies on an
      * underlying Lambda service function for processing stack templates. Be aware that
      * the Lambda function owner can update the function operation without AWS
-     * CloudFormation being notified.</p> </important> <p>For more information, see <a
+     * CloudFormation being notified.</p>  <p>For more information, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
      * AWS CloudFormation Macros to Perform Custom Processing on Templates</a>.</p>
      * </li> </ul>
@@ -713,12 +713,12 @@ namespace Model
      * transforms, which are macros hosted by AWS CloudFormation.</p> <p>Change sets do
      * not currently support nested stacks. If you want to update a stack from a stack
      * template that contains macros <i>and</i> nested stacks, you must update the
-     * stack directly from the template using this capability.</p> <important> <p>You
+     * stack directly from the template using this capability.</p>  <p>You
      * should only update stacks directly from a stack template that contains macros if
      * you know what processing the macro performs.</p> <p>Each macro relies on an
      * underlying Lambda service function for processing stack templates. Be aware that
      * the Lambda function owner can update the function operation without AWS
-     * CloudFormation being notified.</p> </important> <p>For more information, see <a
+     * CloudFormation being notified.</p>  <p>For more information, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
      * AWS CloudFormation Macros to Perform Custom Processing on Templates</a>.</p>
      * </li> </ul>
@@ -775,12 +775,12 @@ namespace Model
      * transforms, which are macros hosted by AWS CloudFormation.</p> <p>Change sets do
      * not currently support nested stacks. If you want to update a stack from a stack
      * template that contains macros <i>and</i> nested stacks, you must update the
-     * stack directly from the template using this capability.</p> <important> <p>You
+     * stack directly from the template using this capability.</p>  <p>You
      * should only update stacks directly from a stack template that contains macros if
      * you know what processing the macro performs.</p> <p>Each macro relies on an
      * underlying Lambda service function for processing stack templates. Be aware that
      * the Lambda function owner can update the function operation without AWS
-     * CloudFormation being notified.</p> </important> <p>For more information, see <a
+     * CloudFormation being notified.</p>  <p>For more information, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
      * AWS CloudFormation Macros to Perform Custom Processing on Templates</a>.</p>
      * </li> </ul>
@@ -837,12 +837,12 @@ namespace Model
      * transforms, which are macros hosted by AWS CloudFormation.</p> <p>Change sets do
      * not currently support nested stacks. If you want to update a stack from a stack
      * template that contains macros <i>and</i> nested stacks, you must update the
-     * stack directly from the template using this capability.</p> <important> <p>You
+     * stack directly from the template using this capability.</p>  <p>You
      * should only update stacks directly from a stack template that contains macros if
      * you know what processing the macro performs.</p> <p>Each macro relies on an
      * underlying Lambda service function for processing stack templates. Be aware that
      * the Lambda function owner can update the function operation without AWS
-     * CloudFormation being notified.</p> </important> <p>For more information, see <a
+     * CloudFormation being notified.</p>  <p>For more information, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
      * AWS CloudFormation Macros to Perform Custom Processing on Templates</a>.</p>
      * </li> </ul>
@@ -899,12 +899,12 @@ namespace Model
      * transforms, which are macros hosted by AWS CloudFormation.</p> <p>Change sets do
      * not currently support nested stacks. If you want to update a stack from a stack
      * template that contains macros <i>and</i> nested stacks, you must update the
-     * stack directly from the template using this capability.</p> <important> <p>You
+     * stack directly from the template using this capability.</p>  <p>You
      * should only update stacks directly from a stack template that contains macros if
      * you know what processing the macro performs.</p> <p>Each macro relies on an
      * underlying Lambda service function for processing stack templates. Be aware that
      * the Lambda function owner can update the function operation without AWS
-     * CloudFormation being notified.</p> </important> <p>For more information, see <a
+     * CloudFormation being notified.</p>  <p>For more information, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
      * AWS CloudFormation Macros to Perform Custom Processing on Templates</a>.</p>
      * </li> </ul>
@@ -961,12 +961,12 @@ namespace Model
      * transforms, which are macros hosted by AWS CloudFormation.</p> <p>Change sets do
      * not currently support nested stacks. If you want to update a stack from a stack
      * template that contains macros <i>and</i> nested stacks, you must update the
-     * stack directly from the template using this capability.</p> <important> <p>You
+     * stack directly from the template using this capability.</p>  <p>You
      * should only update stacks directly from a stack template that contains macros if
      * you know what processing the macro performs.</p> <p>Each macro relies on an
      * underlying Lambda service function for processing stack templates. Be aware that
      * the Lambda function owner can update the function operation without AWS
-     * CloudFormation being notified.</p> </important> <p>For more information, see <a
+     * CloudFormation being notified.</p>  <p>For more information, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
      * AWS CloudFormation Macros to Perform Custom Processing on Templates</a>.</p>
      * </li> </ul>
@@ -1023,12 +1023,12 @@ namespace Model
      * transforms, which are macros hosted by AWS CloudFormation.</p> <p>Change sets do
      * not currently support nested stacks. If you want to update a stack from a stack
      * template that contains macros <i>and</i> nested stacks, you must update the
-     * stack directly from the template using this capability.</p> <important> <p>You
+     * stack directly from the template using this capability.</p>  <p>You
      * should only update stacks directly from a stack template that contains macros if
      * you know what processing the macro performs.</p> <p>Each macro relies on an
      * underlying Lambda service function for processing stack templates. Be aware that
      * the Lambda function owner can update the function operation without AWS
-     * CloudFormation being notified.</p> </important> <p>For more information, see <a
+     * CloudFormation being notified.</p>  <p>For more information, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
      * AWS CloudFormation Macros to Perform Custom Processing on Templates</a>.</p>
      * </li> </ul>

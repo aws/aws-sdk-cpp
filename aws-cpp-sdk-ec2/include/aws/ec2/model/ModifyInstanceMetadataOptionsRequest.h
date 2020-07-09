@@ -206,48 +206,48 @@ namespace Model
     /**
      * <p>This parameter enables or disables the HTTP metadata endpoint on your
      * instances. If the parameter is not specified, the existing state is
-     * maintained.</p> <note> <p>If you specify a value of <code>disabled</code>, you
-     * will not be able to access your instance metadata.</p> </note>
+     * maintained.</p>  <p>If you specify a value of <code>disabled</code>, you
+     * will not be able to access your instance metadata.</p> 
      */
     inline const InstanceMetadataEndpointState& GetHttpEndpoint() const{ return m_httpEndpoint; }
 
     /**
      * <p>This parameter enables or disables the HTTP metadata endpoint on your
      * instances. If the parameter is not specified, the existing state is
-     * maintained.</p> <note> <p>If you specify a value of <code>disabled</code>, you
-     * will not be able to access your instance metadata.</p> </note>
+     * maintained.</p>  <p>If you specify a value of <code>disabled</code>, you
+     * will not be able to access your instance metadata.</p> 
      */
     inline bool HttpEndpointHasBeenSet() const { return m_httpEndpointHasBeenSet; }
 
     /**
      * <p>This parameter enables or disables the HTTP metadata endpoint on your
      * instances. If the parameter is not specified, the existing state is
-     * maintained.</p> <note> <p>If you specify a value of <code>disabled</code>, you
-     * will not be able to access your instance metadata.</p> </note>
+     * maintained.</p>  <p>If you specify a value of <code>disabled</code>, you
+     * will not be able to access your instance metadata.</p> 
      */
     inline void SetHttpEndpoint(const InstanceMetadataEndpointState& value) { m_httpEndpointHasBeenSet = true; m_httpEndpoint = value; }
 
     /**
      * <p>This parameter enables or disables the HTTP metadata endpoint on your
      * instances. If the parameter is not specified, the existing state is
-     * maintained.</p> <note> <p>If you specify a value of <code>disabled</code>, you
-     * will not be able to access your instance metadata.</p> </note>
+     * maintained.</p>  <p>If you specify a value of <code>disabled</code>, you
+     * will not be able to access your instance metadata.</p> 
      */
     inline void SetHttpEndpoint(InstanceMetadataEndpointState&& value) { m_httpEndpointHasBeenSet = true; m_httpEndpoint = std::move(value); }
 
     /**
      * <p>This parameter enables or disables the HTTP metadata endpoint on your
      * instances. If the parameter is not specified, the existing state is
-     * maintained.</p> <note> <p>If you specify a value of <code>disabled</code>, you
-     * will not be able to access your instance metadata.</p> </note>
+     * maintained.</p>  <p>If you specify a value of <code>disabled</code>, you
+     * will not be able to access your instance metadata.</p> 
      */
     inline ModifyInstanceMetadataOptionsRequest& WithHttpEndpoint(const InstanceMetadataEndpointState& value) { SetHttpEndpoint(value); return *this;}
 
     /**
      * <p>This parameter enables or disables the HTTP metadata endpoint on your
      * instances. If the parameter is not specified, the existing state is
-     * maintained.</p> <note> <p>If you specify a value of <code>disabled</code>, you
-     * will not be able to access your instance metadata.</p> </note>
+     * maintained.</p>  <p>If you specify a value of <code>disabled</code>, you
+     * will not be able to access your instance metadata.</p> 
      */
     inline ModifyInstanceMetadataOptionsRequest& WithHttpEndpoint(InstanceMetadataEndpointState&& value) { SetHttpEndpoint(std::move(value)); return *this;}
 

@@ -41,65 +41,65 @@ namespace Model
 
     /**
      * <p>A prefix that you append to the barcode of the virtual tape that you are
-     * creating. This prefix makes the barcode unique.</p> <note> <p>The prefix must be
+     * creating. This prefix makes the barcode unique.</p>  <p>The prefix must be
      * 1-4 characters in length and must be one of the uppercase letters from A to
-     * Z.</p> </note>
+     * Z.</p> 
      */
     inline const Aws::String& GetTapeBarcodePrefix() const{ return m_tapeBarcodePrefix; }
 
     /**
      * <p>A prefix that you append to the barcode of the virtual tape that you are
-     * creating. This prefix makes the barcode unique.</p> <note> <p>The prefix must be
+     * creating. This prefix makes the barcode unique.</p>  <p>The prefix must be
      * 1-4 characters in length and must be one of the uppercase letters from A to
-     * Z.</p> </note>
+     * Z.</p> 
      */
     inline bool TapeBarcodePrefixHasBeenSet() const { return m_tapeBarcodePrefixHasBeenSet; }
 
     /**
      * <p>A prefix that you append to the barcode of the virtual tape that you are
-     * creating. This prefix makes the barcode unique.</p> <note> <p>The prefix must be
+     * creating. This prefix makes the barcode unique.</p>  <p>The prefix must be
      * 1-4 characters in length and must be one of the uppercase letters from A to
-     * Z.</p> </note>
+     * Z.</p> 
      */
     inline void SetTapeBarcodePrefix(const Aws::String& value) { m_tapeBarcodePrefixHasBeenSet = true; m_tapeBarcodePrefix = value; }
 
     /**
      * <p>A prefix that you append to the barcode of the virtual tape that you are
-     * creating. This prefix makes the barcode unique.</p> <note> <p>The prefix must be
+     * creating. This prefix makes the barcode unique.</p>  <p>The prefix must be
      * 1-4 characters in length and must be one of the uppercase letters from A to
-     * Z.</p> </note>
+     * Z.</p> 
      */
     inline void SetTapeBarcodePrefix(Aws::String&& value) { m_tapeBarcodePrefixHasBeenSet = true; m_tapeBarcodePrefix = std::move(value); }
 
     /**
      * <p>A prefix that you append to the barcode of the virtual tape that you are
-     * creating. This prefix makes the barcode unique.</p> <note> <p>The prefix must be
+     * creating. This prefix makes the barcode unique.</p>  <p>The prefix must be
      * 1-4 characters in length and must be one of the uppercase letters from A to
-     * Z.</p> </note>
+     * Z.</p> 
      */
     inline void SetTapeBarcodePrefix(const char* value) { m_tapeBarcodePrefixHasBeenSet = true; m_tapeBarcodePrefix.assign(value); }
 
     /**
      * <p>A prefix that you append to the barcode of the virtual tape that you are
-     * creating. This prefix makes the barcode unique.</p> <note> <p>The prefix must be
+     * creating. This prefix makes the barcode unique.</p>  <p>The prefix must be
      * 1-4 characters in length and must be one of the uppercase letters from A to
-     * Z.</p> </note>
+     * Z.</p> 
      */
     inline AutomaticTapeCreationRule& WithTapeBarcodePrefix(const Aws::String& value) { SetTapeBarcodePrefix(value); return *this;}
 
     /**
      * <p>A prefix that you append to the barcode of the virtual tape that you are
-     * creating. This prefix makes the barcode unique.</p> <note> <p>The prefix must be
+     * creating. This prefix makes the barcode unique.</p>  <p>The prefix must be
      * 1-4 characters in length and must be one of the uppercase letters from A to
-     * Z.</p> </note>
+     * Z.</p> 
      */
     inline AutomaticTapeCreationRule& WithTapeBarcodePrefix(Aws::String&& value) { SetTapeBarcodePrefix(std::move(value)); return *this;}
 
     /**
      * <p>A prefix that you append to the barcode of the virtual tape that you are
-     * creating. This prefix makes the barcode unique.</p> <note> <p>The prefix must be
+     * creating. This prefix makes the barcode unique.</p>  <p>The prefix must be
      * 1-4 characters in length and must be one of the uppercase letters from A to
-     * Z.</p> </note>
+     * Z.</p> 
      */
     inline AutomaticTapeCreationRule& WithTapeBarcodePrefix(const char* value) { SetTapeBarcodePrefix(value); return *this;}
 

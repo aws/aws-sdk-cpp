@@ -198,65 +198,65 @@ namespace Model
 
     /**
      * <p>The string that contains the JSON input data for the execution, for
-     * example:</p> <p> <code>"input": "{\"first_name\" : \"test\"}"</code> </p> <note>
+     * example:</p> <p> <code>"input": "{\"first_name\" : \"test\"}"</code> </p> 
      * <p>If you don't include any JSON input data, you still must include the two
-     * braces, for example: <code>"input": "{}"</code> </p> </note>
+     * braces, for example: <code>"input": "{}"</code> </p> 
      */
     inline const Aws::String& GetInput() const{ return m_input; }
 
     /**
      * <p>The string that contains the JSON input data for the execution, for
-     * example:</p> <p> <code>"input": "{\"first_name\" : \"test\"}"</code> </p> <note>
+     * example:</p> <p> <code>"input": "{\"first_name\" : \"test\"}"</code> </p> 
      * <p>If you don't include any JSON input data, you still must include the two
-     * braces, for example: <code>"input": "{}"</code> </p> </note>
+     * braces, for example: <code>"input": "{}"</code> </p> 
      */
     inline bool InputHasBeenSet() const { return m_inputHasBeenSet; }
 
     /**
      * <p>The string that contains the JSON input data for the execution, for
-     * example:</p> <p> <code>"input": "{\"first_name\" : \"test\"}"</code> </p> <note>
+     * example:</p> <p> <code>"input": "{\"first_name\" : \"test\"}"</code> </p> 
      * <p>If you don't include any JSON input data, you still must include the two
-     * braces, for example: <code>"input": "{}"</code> </p> </note>
+     * braces, for example: <code>"input": "{}"</code> </p> 
      */
     inline void SetInput(const Aws::String& value) { m_inputHasBeenSet = true; m_input = value; }
 
     /**
      * <p>The string that contains the JSON input data for the execution, for
-     * example:</p> <p> <code>"input": "{\"first_name\" : \"test\"}"</code> </p> <note>
+     * example:</p> <p> <code>"input": "{\"first_name\" : \"test\"}"</code> </p> 
      * <p>If you don't include any JSON input data, you still must include the two
-     * braces, for example: <code>"input": "{}"</code> </p> </note>
+     * braces, for example: <code>"input": "{}"</code> </p> 
      */
     inline void SetInput(Aws::String&& value) { m_inputHasBeenSet = true; m_input = std::move(value); }
 
     /**
      * <p>The string that contains the JSON input data for the execution, for
-     * example:</p> <p> <code>"input": "{\"first_name\" : \"test\"}"</code> </p> <note>
+     * example:</p> <p> <code>"input": "{\"first_name\" : \"test\"}"</code> </p> 
      * <p>If you don't include any JSON input data, you still must include the two
-     * braces, for example: <code>"input": "{}"</code> </p> </note>
+     * braces, for example: <code>"input": "{}"</code> </p> 
      */
     inline void SetInput(const char* value) { m_inputHasBeenSet = true; m_input.assign(value); }
 
     /**
      * <p>The string that contains the JSON input data for the execution, for
-     * example:</p> <p> <code>"input": "{\"first_name\" : \"test\"}"</code> </p> <note>
+     * example:</p> <p> <code>"input": "{\"first_name\" : \"test\"}"</code> </p> 
      * <p>If you don't include any JSON input data, you still must include the two
-     * braces, for example: <code>"input": "{}"</code> </p> </note>
+     * braces, for example: <code>"input": "{}"</code> </p> 
      */
     inline StartExecutionRequest& WithInput(const Aws::String& value) { SetInput(value); return *this;}
 
     /**
      * <p>The string that contains the JSON input data for the execution, for
-     * example:</p> <p> <code>"input": "{\"first_name\" : \"test\"}"</code> </p> <note>
+     * example:</p> <p> <code>"input": "{\"first_name\" : \"test\"}"</code> </p> 
      * <p>If you don't include any JSON input data, you still must include the two
-     * braces, for example: <code>"input": "{}"</code> </p> </note>
+     * braces, for example: <code>"input": "{}"</code> </p> 
      */
     inline StartExecutionRequest& WithInput(Aws::String&& value) { SetInput(std::move(value)); return *this;}
 
     /**
      * <p>The string that contains the JSON input data for the execution, for
-     * example:</p> <p> <code>"input": "{\"first_name\" : \"test\"}"</code> </p> <note>
+     * example:</p> <p> <code>"input": "{\"first_name\" : \"test\"}"</code> </p> 
      * <p>If you don't include any JSON input data, you still must include the two
-     * braces, for example: <code>"input": "{}"</code> </p> </note>
+     * braces, for example: <code>"input": "{}"</code> </p> 
      */
     inline StartExecutionRequest& WithInput(const char* value) { SetInput(value); return *this;}
 

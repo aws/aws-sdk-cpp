@@ -35,41 +35,41 @@ namespace Model
 
     /**
      * <p>A structure with details about the updated service-specific credential,
-     * including the new password.</p> <important> <p>This is the <b>only</b> time that
+     * including the new password.</p>  <p>This is the <b>only</b> time that
      * you can access the password. You cannot recover the password later, but you can
-     * reset it again.</p> </important>
+     * reset it again.</p> 
      */
     inline const ServiceSpecificCredential& GetServiceSpecificCredential() const{ return m_serviceSpecificCredential; }
 
     /**
      * <p>A structure with details about the updated service-specific credential,
-     * including the new password.</p> <important> <p>This is the <b>only</b> time that
+     * including the new password.</p>  <p>This is the <b>only</b> time that
      * you can access the password. You cannot recover the password later, but you can
-     * reset it again.</p> </important>
+     * reset it again.</p> 
      */
     inline void SetServiceSpecificCredential(const ServiceSpecificCredential& value) { m_serviceSpecificCredential = value; }
 
     /**
      * <p>A structure with details about the updated service-specific credential,
-     * including the new password.</p> <important> <p>This is the <b>only</b> time that
+     * including the new password.</p>  <p>This is the <b>only</b> time that
      * you can access the password. You cannot recover the password later, but you can
-     * reset it again.</p> </important>
+     * reset it again.</p> 
      */
     inline void SetServiceSpecificCredential(ServiceSpecificCredential&& value) { m_serviceSpecificCredential = std::move(value); }
 
     /**
      * <p>A structure with details about the updated service-specific credential,
-     * including the new password.</p> <important> <p>This is the <b>only</b> time that
+     * including the new password.</p>  <p>This is the <b>only</b> time that
      * you can access the password. You cannot recover the password later, but you can
-     * reset it again.</p> </important>
+     * reset it again.</p> 
      */
     inline ResetServiceSpecificCredentialResult& WithServiceSpecificCredential(const ServiceSpecificCredential& value) { SetServiceSpecificCredential(value); return *this;}
 
     /**
      * <p>A structure with details about the updated service-specific credential,
-     * including the new password.</p> <important> <p>This is the <b>only</b> time that
+     * including the new password.</p>  <p>This is the <b>only</b> time that
      * you can access the password. You cannot recover the password later, but you can
-     * reset it again.</p> </important>
+     * reset it again.</p> 
      */
     inline ResetServiceSpecificCredentialResult& WithServiceSpecificCredential(ServiceSpecificCredential&& value) { SetServiceSpecificCredential(std::move(value)); return *this;}
 

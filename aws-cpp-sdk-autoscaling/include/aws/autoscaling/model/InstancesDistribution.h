@@ -154,10 +154,10 @@ namespace Model
      * group scales.</p> <p>Default if not set is 0. If you leave it set to 0,
      * On-Demand Instances are launched as a percentage of the Auto Scaling group's
      * desired capacity, per the <code>OnDemandPercentageAboveBaseCapacity</code>
-     * setting.</p> <note> <p>An update to this setting means a gradual replacement of
+     * setting.</p>  <p>An update to this setting means a gradual replacement of
      * instances to maintain the specified number of On-Demand Instances for your base
      * capacity. When replacing instances, Amazon EC2 Auto Scaling launches new
-     * instances before terminating the old ones.</p> </note>
+     * instances before terminating the old ones.</p> 
      */
     inline int GetOnDemandBaseCapacity() const{ return m_onDemandBaseCapacity; }
 
@@ -167,10 +167,10 @@ namespace Model
      * group scales.</p> <p>Default if not set is 0. If you leave it set to 0,
      * On-Demand Instances are launched as a percentage of the Auto Scaling group's
      * desired capacity, per the <code>OnDemandPercentageAboveBaseCapacity</code>
-     * setting.</p> <note> <p>An update to this setting means a gradual replacement of
+     * setting.</p>  <p>An update to this setting means a gradual replacement of
      * instances to maintain the specified number of On-Demand Instances for your base
      * capacity. When replacing instances, Amazon EC2 Auto Scaling launches new
-     * instances before terminating the old ones.</p> </note>
+     * instances before terminating the old ones.</p> 
      */
     inline bool OnDemandBaseCapacityHasBeenSet() const { return m_onDemandBaseCapacityHasBeenSet; }
 
@@ -180,10 +180,10 @@ namespace Model
      * group scales.</p> <p>Default if not set is 0. If you leave it set to 0,
      * On-Demand Instances are launched as a percentage of the Auto Scaling group's
      * desired capacity, per the <code>OnDemandPercentageAboveBaseCapacity</code>
-     * setting.</p> <note> <p>An update to this setting means a gradual replacement of
+     * setting.</p>  <p>An update to this setting means a gradual replacement of
      * instances to maintain the specified number of On-Demand Instances for your base
      * capacity. When replacing instances, Amazon EC2 Auto Scaling launches new
-     * instances before terminating the old ones.</p> </note>
+     * instances before terminating the old ones.</p> 
      */
     inline void SetOnDemandBaseCapacity(int value) { m_onDemandBaseCapacityHasBeenSet = true; m_onDemandBaseCapacity = value; }
 
@@ -193,10 +193,10 @@ namespace Model
      * group scales.</p> <p>Default if not set is 0. If you leave it set to 0,
      * On-Demand Instances are launched as a percentage of the Auto Scaling group's
      * desired capacity, per the <code>OnDemandPercentageAboveBaseCapacity</code>
-     * setting.</p> <note> <p>An update to this setting means a gradual replacement of
+     * setting.</p>  <p>An update to this setting means a gradual replacement of
      * instances to maintain the specified number of On-Demand Instances for your base
      * capacity. When replacing instances, Amazon EC2 Auto Scaling launches new
-     * instances before terminating the old ones.</p> </note>
+     * instances before terminating the old ones.</p> 
      */
     inline InstancesDistribution& WithOnDemandBaseCapacity(int value) { SetOnDemandBaseCapacity(value); return *this;}
 
@@ -205,11 +205,11 @@ namespace Model
      * <p>Controls the percentages of On-Demand Instances and Spot Instances for your
      * additional capacity beyond <code>OnDemandBaseCapacity</code>.</p> <p>Default if
      * not set is 100. If you leave it set to 100, the percentages are 100% for
-     * On-Demand Instances and 0% for Spot Instances.</p> <note> <p>An update to this
+     * On-Demand Instances and 0% for Spot Instances.</p>  <p>An update to this
      * setting means a gradual replacement of instances to maintain the percentage of
      * On-Demand Instances for your additional capacity above the base capacity. When
      * replacing instances, Amazon EC2 Auto Scaling launches new instances before
-     * terminating the old ones.</p> </note> <p>Valid Range: Minimum value of 0.
+     * terminating the old ones.</p>  <p>Valid Range: Minimum value of 0.
      * Maximum value of 100.</p>
      */
     inline int GetOnDemandPercentageAboveBaseCapacity() const{ return m_onDemandPercentageAboveBaseCapacity; }
@@ -218,11 +218,11 @@ namespace Model
      * <p>Controls the percentages of On-Demand Instances and Spot Instances for your
      * additional capacity beyond <code>OnDemandBaseCapacity</code>.</p> <p>Default if
      * not set is 100. If you leave it set to 100, the percentages are 100% for
-     * On-Demand Instances and 0% for Spot Instances.</p> <note> <p>An update to this
+     * On-Demand Instances and 0% for Spot Instances.</p>  <p>An update to this
      * setting means a gradual replacement of instances to maintain the percentage of
      * On-Demand Instances for your additional capacity above the base capacity. When
      * replacing instances, Amazon EC2 Auto Scaling launches new instances before
-     * terminating the old ones.</p> </note> <p>Valid Range: Minimum value of 0.
+     * terminating the old ones.</p>  <p>Valid Range: Minimum value of 0.
      * Maximum value of 100.</p>
      */
     inline bool OnDemandPercentageAboveBaseCapacityHasBeenSet() const { return m_onDemandPercentageAboveBaseCapacityHasBeenSet; }
@@ -231,11 +231,11 @@ namespace Model
      * <p>Controls the percentages of On-Demand Instances and Spot Instances for your
      * additional capacity beyond <code>OnDemandBaseCapacity</code>.</p> <p>Default if
      * not set is 100. If you leave it set to 100, the percentages are 100% for
-     * On-Demand Instances and 0% for Spot Instances.</p> <note> <p>An update to this
+     * On-Demand Instances and 0% for Spot Instances.</p>  <p>An update to this
      * setting means a gradual replacement of instances to maintain the percentage of
      * On-Demand Instances for your additional capacity above the base capacity. When
      * replacing instances, Amazon EC2 Auto Scaling launches new instances before
-     * terminating the old ones.</p> </note> <p>Valid Range: Minimum value of 0.
+     * terminating the old ones.</p>  <p>Valid Range: Minimum value of 0.
      * Maximum value of 100.</p>
      */
     inline void SetOnDemandPercentageAboveBaseCapacity(int value) { m_onDemandPercentageAboveBaseCapacityHasBeenSet = true; m_onDemandPercentageAboveBaseCapacity = value; }
@@ -244,11 +244,11 @@ namespace Model
      * <p>Controls the percentages of On-Demand Instances and Spot Instances for your
      * additional capacity beyond <code>OnDemandBaseCapacity</code>.</p> <p>Default if
      * not set is 100. If you leave it set to 100, the percentages are 100% for
-     * On-Demand Instances and 0% for Spot Instances.</p> <note> <p>An update to this
+     * On-Demand Instances and 0% for Spot Instances.</p>  <p>An update to this
      * setting means a gradual replacement of instances to maintain the percentage of
      * On-Demand Instances for your additional capacity above the base capacity. When
      * replacing instances, Amazon EC2 Auto Scaling launches new instances before
-     * terminating the old ones.</p> </note> <p>Valid Range: Minimum value of 0.
+     * terminating the old ones.</p>  <p>Valid Range: Minimum value of 0.
      * Maximum value of 100.</p>
      */
     inline InstancesDistribution& WithOnDemandPercentageAboveBaseCapacity(int value) { SetOnDemandPercentageAboveBaseCapacity(value); return *this;}

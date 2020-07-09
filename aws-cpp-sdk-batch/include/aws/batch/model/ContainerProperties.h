@@ -304,11 +304,11 @@ namespace Model
      * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
      * <code>--memory</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>. You must
-     * specify at least 4 MiB of memory for a job.</p> <note> <p>If you are trying to
+     * specify at least 4 MiB of memory for a job.</p>  <p>If you are trying to
      * maximize your resource utilization by providing your jobs as much memory as
      * possible for a particular instance type, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/memory-management.html">Memory
-     * Management</a> in the <i>AWS Batch User Guide</i>.</p> </note>
+     * Management</a> in the <i>AWS Batch User Guide</i>.</p> 
      */
     inline int GetMemory() const{ return m_memory; }
 
@@ -321,11 +321,11 @@ namespace Model
      * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
      * <code>--memory</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>. You must
-     * specify at least 4 MiB of memory for a job.</p> <note> <p>If you are trying to
+     * specify at least 4 MiB of memory for a job.</p>  <p>If you are trying to
      * maximize your resource utilization by providing your jobs as much memory as
      * possible for a particular instance type, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/memory-management.html">Memory
-     * Management</a> in the <i>AWS Batch User Guide</i>.</p> </note>
+     * Management</a> in the <i>AWS Batch User Guide</i>.</p> 
      */
     inline bool MemoryHasBeenSet() const { return m_memoryHasBeenSet; }
 
@@ -338,11 +338,11 @@ namespace Model
      * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
      * <code>--memory</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>. You must
-     * specify at least 4 MiB of memory for a job.</p> <note> <p>If you are trying to
+     * specify at least 4 MiB of memory for a job.</p>  <p>If you are trying to
      * maximize your resource utilization by providing your jobs as much memory as
      * possible for a particular instance type, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/memory-management.html">Memory
-     * Management</a> in the <i>AWS Batch User Guide</i>.</p> </note>
+     * Management</a> in the <i>AWS Batch User Guide</i>.</p> 
      */
     inline void SetMemory(int value) { m_memoryHasBeenSet = true; m_memory = value; }
 
@@ -355,11 +355,11 @@ namespace Model
      * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
      * <code>--memory</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>. You must
-     * specify at least 4 MiB of memory for a job.</p> <note> <p>If you are trying to
+     * specify at least 4 MiB of memory for a job.</p>  <p>If you are trying to
      * maximize your resource utilization by providing your jobs as much memory as
      * possible for a particular instance type, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/memory-management.html">Memory
-     * Management</a> in the <i>AWS Batch User Guide</i>.</p> </note>
+     * Management</a> in the <i>AWS Batch User Guide</i>.</p> 
      */
     inline ContainerProperties& WithMemory(int value) { SetMemory(value); return *this;}
 
@@ -580,11 +580,11 @@ namespace Model
      * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
      * <code>--env</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
-     * <important> <p>We do not recommend using plaintext environment variables for
-     * sensitive information, such as credential data.</p> </important> <note>
+     *  <p>We do not recommend using plaintext environment variables for
+     * sensitive information, such as credential data.</p>  
      * <p>Environment variables must not start with <code>AWS_BATCH</code>; this naming
      * convention is reserved for variables that are set by the AWS Batch service.</p>
-     * </note>
+     * 
      */
     inline const Aws::Vector<KeyValuePair>& GetEnvironment() const{ return m_environment; }
 
@@ -596,11 +596,11 @@ namespace Model
      * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
      * <code>--env</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
-     * <important> <p>We do not recommend using plaintext environment variables for
-     * sensitive information, such as credential data.</p> </important> <note>
+     *  <p>We do not recommend using plaintext environment variables for
+     * sensitive information, such as credential data.</p>  
      * <p>Environment variables must not start with <code>AWS_BATCH</code>; this naming
      * convention is reserved for variables that are set by the AWS Batch service.</p>
-     * </note>
+     * 
      */
     inline bool EnvironmentHasBeenSet() const { return m_environmentHasBeenSet; }
 
@@ -612,11 +612,11 @@ namespace Model
      * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
      * <code>--env</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
-     * <important> <p>We do not recommend using plaintext environment variables for
-     * sensitive information, such as credential data.</p> </important> <note>
+     *  <p>We do not recommend using plaintext environment variables for
+     * sensitive information, such as credential data.</p>  
      * <p>Environment variables must not start with <code>AWS_BATCH</code>; this naming
      * convention is reserved for variables that are set by the AWS Batch service.</p>
-     * </note>
+     * 
      */
     inline void SetEnvironment(const Aws::Vector<KeyValuePair>& value) { m_environmentHasBeenSet = true; m_environment = value; }
 
@@ -628,11 +628,11 @@ namespace Model
      * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
      * <code>--env</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
-     * <important> <p>We do not recommend using plaintext environment variables for
-     * sensitive information, such as credential data.</p> </important> <note>
+     *  <p>We do not recommend using plaintext environment variables for
+     * sensitive information, such as credential data.</p>  
      * <p>Environment variables must not start with <code>AWS_BATCH</code>; this naming
      * convention is reserved for variables that are set by the AWS Batch service.</p>
-     * </note>
+     * 
      */
     inline void SetEnvironment(Aws::Vector<KeyValuePair>&& value) { m_environmentHasBeenSet = true; m_environment = std::move(value); }
 
@@ -644,11 +644,11 @@ namespace Model
      * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
      * <code>--env</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
-     * <important> <p>We do not recommend using plaintext environment variables for
-     * sensitive information, such as credential data.</p> </important> <note>
+     *  <p>We do not recommend using plaintext environment variables for
+     * sensitive information, such as credential data.</p>  
      * <p>Environment variables must not start with <code>AWS_BATCH</code>; this naming
      * convention is reserved for variables that are set by the AWS Batch service.</p>
-     * </note>
+     * 
      */
     inline ContainerProperties& WithEnvironment(const Aws::Vector<KeyValuePair>& value) { SetEnvironment(value); return *this;}
 
@@ -660,11 +660,11 @@ namespace Model
      * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
      * <code>--env</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
-     * <important> <p>We do not recommend using plaintext environment variables for
-     * sensitive information, such as credential data.</p> </important> <note>
+     *  <p>We do not recommend using plaintext environment variables for
+     * sensitive information, such as credential data.</p>  
      * <p>Environment variables must not start with <code>AWS_BATCH</code>; this naming
      * convention is reserved for variables that are set by the AWS Batch service.</p>
-     * </note>
+     * 
      */
     inline ContainerProperties& WithEnvironment(Aws::Vector<KeyValuePair>&& value) { SetEnvironment(std::move(value)); return *this;}
 
@@ -676,11 +676,11 @@ namespace Model
      * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
      * <code>--env</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
-     * <important> <p>We do not recommend using plaintext environment variables for
-     * sensitive information, such as credential data.</p> </important> <note>
+     *  <p>We do not recommend using plaintext environment variables for
+     * sensitive information, such as credential data.</p>  
      * <p>Environment variables must not start with <code>AWS_BATCH</code>; this naming
      * convention is reserved for variables that are set by the AWS Batch service.</p>
-     * </note>
+     * 
      */
     inline ContainerProperties& AddEnvironment(const KeyValuePair& value) { m_environmentHasBeenSet = true; m_environment.push_back(value); return *this; }
 
@@ -692,11 +692,11 @@ namespace Model
      * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
      * <code>--env</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
-     * <important> <p>We do not recommend using plaintext environment variables for
-     * sensitive information, such as credential data.</p> </important> <note>
+     *  <p>We do not recommend using plaintext environment variables for
+     * sensitive information, such as credential data.</p>  
      * <p>Environment variables must not start with <code>AWS_BATCH</code>; this naming
      * convention is reserved for variables that are set by the AWS Batch service.</p>
-     * </note>
+     * 
      */
     inline ContainerProperties& AddEnvironment(KeyValuePair&& value) { m_environmentHasBeenSet = true; m_environment.push_back(std::move(value)); return *this; }
 

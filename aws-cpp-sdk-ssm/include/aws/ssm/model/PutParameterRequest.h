@@ -54,13 +54,13 @@ namespace Model
      * values for parameter names, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-parameter-name-constraints.html">About
      * requirements and constraints for parameter names</a> in the <i>AWS Systems
-     * Manager User Guide</i>.</p> <note> <p>The maximum length constraint listed below
+     * Manager User Guide</i>.</p>  <p>The maximum length constraint listed below
      * includes capacity for additional system attributes that are not part of the
      * name. The maximum length for a parameter name, including the full length of the
      * parameter ARN, is 1011 characters. For example, the length of the following
      * parameter name is 65 characters, not 20 characters:</p> <p>
      * <code>arn:aws:ssm:us-east-2:111122223333:parameter/ExampleParameterName</code>
-     * </p> </note>
+     * </p> 
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
@@ -80,13 +80,13 @@ namespace Model
      * values for parameter names, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-parameter-name-constraints.html">About
      * requirements and constraints for parameter names</a> in the <i>AWS Systems
-     * Manager User Guide</i>.</p> <note> <p>The maximum length constraint listed below
+     * Manager User Guide</i>.</p>  <p>The maximum length constraint listed below
      * includes capacity for additional system attributes that are not part of the
      * name. The maximum length for a parameter name, including the full length of the
      * parameter ARN, is 1011 characters. For example, the length of the following
      * parameter name is 65 characters, not 20 characters:</p> <p>
      * <code>arn:aws:ssm:us-east-2:111122223333:parameter/ExampleParameterName</code>
-     * </p> </note>
+     * </p> 
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
@@ -106,13 +106,13 @@ namespace Model
      * values for parameter names, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-parameter-name-constraints.html">About
      * requirements and constraints for parameter names</a> in the <i>AWS Systems
-     * Manager User Guide</i>.</p> <note> <p>The maximum length constraint listed below
+     * Manager User Guide</i>.</p>  <p>The maximum length constraint listed below
      * includes capacity for additional system attributes that are not part of the
      * name. The maximum length for a parameter name, including the full length of the
      * parameter ARN, is 1011 characters. For example, the length of the following
      * parameter name is 65 characters, not 20 characters:</p> <p>
      * <code>arn:aws:ssm:us-east-2:111122223333:parameter/ExampleParameterName</code>
-     * </p> </note>
+     * </p> 
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
@@ -132,13 +132,13 @@ namespace Model
      * values for parameter names, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-parameter-name-constraints.html">About
      * requirements and constraints for parameter names</a> in the <i>AWS Systems
-     * Manager User Guide</i>.</p> <note> <p>The maximum length constraint listed below
+     * Manager User Guide</i>.</p>  <p>The maximum length constraint listed below
      * includes capacity for additional system attributes that are not part of the
      * name. The maximum length for a parameter name, including the full length of the
      * parameter ARN, is 1011 characters. For example, the length of the following
      * parameter name is 65 characters, not 20 characters:</p> <p>
      * <code>arn:aws:ssm:us-east-2:111122223333:parameter/ExampleParameterName</code>
-     * </p> </note>
+     * </p> 
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
@@ -158,13 +158,13 @@ namespace Model
      * values for parameter names, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-parameter-name-constraints.html">About
      * requirements and constraints for parameter names</a> in the <i>AWS Systems
-     * Manager User Guide</i>.</p> <note> <p>The maximum length constraint listed below
+     * Manager User Guide</i>.</p>  <p>The maximum length constraint listed below
      * includes capacity for additional system attributes that are not part of the
      * name. The maximum length for a parameter name, including the full length of the
      * parameter ARN, is 1011 characters. For example, the length of the following
      * parameter name is 65 characters, not 20 characters:</p> <p>
      * <code>arn:aws:ssm:us-east-2:111122223333:parameter/ExampleParameterName</code>
-     * </p> </note>
+     * </p> 
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
@@ -184,13 +184,13 @@ namespace Model
      * values for parameter names, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-parameter-name-constraints.html">About
      * requirements and constraints for parameter names</a> in the <i>AWS Systems
-     * Manager User Guide</i>.</p> <note> <p>The maximum length constraint listed below
+     * Manager User Guide</i>.</p>  <p>The maximum length constraint listed below
      * includes capacity for additional system attributes that are not part of the
      * name. The maximum length for a parameter name, including the full length of the
      * parameter ARN, is 1011 characters. For example, the length of the following
      * parameter name is 65 characters, not 20 characters:</p> <p>
      * <code>arn:aws:ssm:us-east-2:111122223333:parameter/ExampleParameterName</code>
-     * </p> </note>
+     * </p> 
      */
     inline PutParameterRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
@@ -210,13 +210,13 @@ namespace Model
      * values for parameter names, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-parameter-name-constraints.html">About
      * requirements and constraints for parameter names</a> in the <i>AWS Systems
-     * Manager User Guide</i>.</p> <note> <p>The maximum length constraint listed below
+     * Manager User Guide</i>.</p>  <p>The maximum length constraint listed below
      * includes capacity for additional system attributes that are not part of the
      * name. The maximum length for a parameter name, including the full length of the
      * parameter ARN, is 1011 characters. For example, the length of the following
      * parameter name is 65 characters, not 20 characters:</p> <p>
      * <code>arn:aws:ssm:us-east-2:111122223333:parameter/ExampleParameterName</code>
-     * </p> </note>
+     * </p> 
      */
     inline PutParameterRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
@@ -236,70 +236,70 @@ namespace Model
      * values for parameter names, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-parameter-name-constraints.html">About
      * requirements and constraints for parameter names</a> in the <i>AWS Systems
-     * Manager User Guide</i>.</p> <note> <p>The maximum length constraint listed below
+     * Manager User Guide</i>.</p>  <p>The maximum length constraint listed below
      * includes capacity for additional system attributes that are not part of the
      * name. The maximum length for a parameter name, including the full length of the
      * parameter ARN, is 1011 characters. For example, the length of the following
      * parameter name is 65 characters, not 20 characters:</p> <p>
      * <code>arn:aws:ssm:us-east-2:111122223333:parameter/ExampleParameterName</code>
-     * </p> </note>
+     * </p> 
      */
     inline PutParameterRequest& WithName(const char* value) { SetName(value); return *this;}
 
 
     /**
      * <p>Information about the parameter that you want to add to the system. Optional
-     * but recommended.</p> <important> <p>Do not enter personally identifiable
-     * information in this field.</p> </important>
+     * but recommended.</p>  <p>Do not enter personally identifiable
+     * information in this field.</p> 
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
      * <p>Information about the parameter that you want to add to the system. Optional
-     * but recommended.</p> <important> <p>Do not enter personally identifiable
-     * information in this field.</p> </important>
+     * but recommended.</p>  <p>Do not enter personally identifiable
+     * information in this field.</p> 
      */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * <p>Information about the parameter that you want to add to the system. Optional
-     * but recommended.</p> <important> <p>Do not enter personally identifiable
-     * information in this field.</p> </important>
+     * but recommended.</p>  <p>Do not enter personally identifiable
+     * information in this field.</p> 
      */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
      * <p>Information about the parameter that you want to add to the system. Optional
-     * but recommended.</p> <important> <p>Do not enter personally identifiable
-     * information in this field.</p> </important>
+     * but recommended.</p>  <p>Do not enter personally identifiable
+     * information in this field.</p> 
      */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
      * <p>Information about the parameter that you want to add to the system. Optional
-     * but recommended.</p> <important> <p>Do not enter personally identifiable
-     * information in this field.</p> </important>
+     * but recommended.</p>  <p>Do not enter personally identifiable
+     * information in this field.</p> 
      */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
      * <p>Information about the parameter that you want to add to the system. Optional
-     * but recommended.</p> <important> <p>Do not enter personally identifiable
-     * information in this field.</p> </important>
+     * but recommended.</p>  <p>Do not enter personally identifiable
+     * information in this field.</p> 
      */
     inline PutParameterRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
      * <p>Information about the parameter that you want to add to the system. Optional
-     * but recommended.</p> <important> <p>Do not enter personally identifiable
-     * information in this field.</p> </important>
+     * but recommended.</p>  <p>Do not enter personally identifiable
+     * information in this field.</p> 
      */
     inline PutParameterRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
      * <p>Information about the parameter that you want to add to the system. Optional
-     * but recommended.</p> <important> <p>Do not enter personally identifiable
-     * information in this field.</p> </important>
+     * but recommended.</p>  <p>Do not enter personally identifiable
+     * information in this field.</p> 
      */
     inline PutParameterRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
@@ -354,80 +354,80 @@ namespace Model
 
 
     /**
-     * <p>The type of parameter that you want to add to the system.</p> <note> <p>
+     * <p>The type of parameter that you want to add to the system.</p>  <p>
      * <code>SecureString</code> is not currently supported for AWS CloudFormation
-     * templates or in the China Regions.</p> </note> <p>Items in a
+     * templates or in the China Regions.</p>  <p>Items in a
      * <code>StringList</code> must be separated by a comma (,). You can't use other
      * punctuation or special character to escape items in the list. If you have a
      * parameter value that requires a comma, then use the <code>String</code> data
-     * type.</p> <important> <p>Specifying a parameter type is not required when
+     * type.</p>  <p>Specifying a parameter type is not required when
      * updating a parameter. You must specify a parameter type when creating a
-     * parameter.</p> </important>
+     * parameter.</p> 
      */
     inline const ParameterType& GetType() const{ return m_type; }
 
     /**
-     * <p>The type of parameter that you want to add to the system.</p> <note> <p>
+     * <p>The type of parameter that you want to add to the system.</p>  <p>
      * <code>SecureString</code> is not currently supported for AWS CloudFormation
-     * templates or in the China Regions.</p> </note> <p>Items in a
+     * templates or in the China Regions.</p>  <p>Items in a
      * <code>StringList</code> must be separated by a comma (,). You can't use other
      * punctuation or special character to escape items in the list. If you have a
      * parameter value that requires a comma, then use the <code>String</code> data
-     * type.</p> <important> <p>Specifying a parameter type is not required when
+     * type.</p>  <p>Specifying a parameter type is not required when
      * updating a parameter. You must specify a parameter type when creating a
-     * parameter.</p> </important>
+     * parameter.</p> 
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
-     * <p>The type of parameter that you want to add to the system.</p> <note> <p>
+     * <p>The type of parameter that you want to add to the system.</p>  <p>
      * <code>SecureString</code> is not currently supported for AWS CloudFormation
-     * templates or in the China Regions.</p> </note> <p>Items in a
+     * templates or in the China Regions.</p>  <p>Items in a
      * <code>StringList</code> must be separated by a comma (,). You can't use other
      * punctuation or special character to escape items in the list. If you have a
      * parameter value that requires a comma, then use the <code>String</code> data
-     * type.</p> <important> <p>Specifying a parameter type is not required when
+     * type.</p>  <p>Specifying a parameter type is not required when
      * updating a parameter. You must specify a parameter type when creating a
-     * parameter.</p> </important>
+     * parameter.</p> 
      */
     inline void SetType(const ParameterType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>The type of parameter that you want to add to the system.</p> <note> <p>
+     * <p>The type of parameter that you want to add to the system.</p>  <p>
      * <code>SecureString</code> is not currently supported for AWS CloudFormation
-     * templates or in the China Regions.</p> </note> <p>Items in a
+     * templates or in the China Regions.</p>  <p>Items in a
      * <code>StringList</code> must be separated by a comma (,). You can't use other
      * punctuation or special character to escape items in the list. If you have a
      * parameter value that requires a comma, then use the <code>String</code> data
-     * type.</p> <important> <p>Specifying a parameter type is not required when
+     * type.</p>  <p>Specifying a parameter type is not required when
      * updating a parameter. You must specify a parameter type when creating a
-     * parameter.</p> </important>
+     * parameter.</p> 
      */
     inline void SetType(ParameterType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p>The type of parameter that you want to add to the system.</p> <note> <p>
+     * <p>The type of parameter that you want to add to the system.</p>  <p>
      * <code>SecureString</code> is not currently supported for AWS CloudFormation
-     * templates or in the China Regions.</p> </note> <p>Items in a
+     * templates or in the China Regions.</p>  <p>Items in a
      * <code>StringList</code> must be separated by a comma (,). You can't use other
      * punctuation or special character to escape items in the list. If you have a
      * parameter value that requires a comma, then use the <code>String</code> data
-     * type.</p> <important> <p>Specifying a parameter type is not required when
+     * type.</p>  <p>Specifying a parameter type is not required when
      * updating a parameter. You must specify a parameter type when creating a
-     * parameter.</p> </important>
+     * parameter.</p> 
      */
     inline PutParameterRequest& WithType(const ParameterType& value) { SetType(value); return *this;}
 
     /**
-     * <p>The type of parameter that you want to add to the system.</p> <note> <p>
+     * <p>The type of parameter that you want to add to the system.</p>  <p>
      * <code>SecureString</code> is not currently supported for AWS CloudFormation
-     * templates or in the China Regions.</p> </note> <p>Items in a
+     * templates or in the China Regions.</p>  <p>Items in a
      * <code>StringList</code> must be separated by a comma (,). You can't use other
      * punctuation or special character to escape items in the list. If you have a
      * parameter value that requires a comma, then use the <code>String</code> data
-     * type.</p> <important> <p>Specifying a parameter type is not required when
+     * type.</p>  <p>Specifying a parameter type is not required when
      * updating a parameter. You must specify a parameter type when creating a
-     * parameter.</p> </important>
+     * parameter.</p> 
      */
     inline PutParameterRequest& WithType(ParameterType&& value) { SetType(std::move(value)); return *this;}
 
@@ -644,9 +644,9 @@ namespace Model
      * specify the following key name/value pairs:</p> <ul> <li> <p>
      * <code>Key=Resource,Value=S3bucket</code> </p> </li> <li> <p>
      * <code>Key=OS,Value=Windows</code> </p> </li> <li> <p>
-     * <code>Key=ParameterType,Value=LicenseKey</code> </p> </li> </ul> <note> <p>To
+     * <code>Key=ParameterType,Value=LicenseKey</code> </p> </li> </ul>  <p>To
      * add tags to an existing Systems Manager parameter, use the
-     * <a>AddTagsToResource</a> action.</p> </note>
+     * <a>AddTagsToResource</a> action.</p> 
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
@@ -659,9 +659,9 @@ namespace Model
      * specify the following key name/value pairs:</p> <ul> <li> <p>
      * <code>Key=Resource,Value=S3bucket</code> </p> </li> <li> <p>
      * <code>Key=OS,Value=Windows</code> </p> </li> <li> <p>
-     * <code>Key=ParameterType,Value=LicenseKey</code> </p> </li> </ul> <note> <p>To
+     * <code>Key=ParameterType,Value=LicenseKey</code> </p> </li> </ul>  <p>To
      * add tags to an existing Systems Manager parameter, use the
-     * <a>AddTagsToResource</a> action.</p> </note>
+     * <a>AddTagsToResource</a> action.</p> 
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
@@ -674,9 +674,9 @@ namespace Model
      * specify the following key name/value pairs:</p> <ul> <li> <p>
      * <code>Key=Resource,Value=S3bucket</code> </p> </li> <li> <p>
      * <code>Key=OS,Value=Windows</code> </p> </li> <li> <p>
-     * <code>Key=ParameterType,Value=LicenseKey</code> </p> </li> </ul> <note> <p>To
+     * <code>Key=ParameterType,Value=LicenseKey</code> </p> </li> </ul>  <p>To
      * add tags to an existing Systems Manager parameter, use the
-     * <a>AddTagsToResource</a> action.</p> </note>
+     * <a>AddTagsToResource</a> action.</p> 
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
@@ -689,9 +689,9 @@ namespace Model
      * specify the following key name/value pairs:</p> <ul> <li> <p>
      * <code>Key=Resource,Value=S3bucket</code> </p> </li> <li> <p>
      * <code>Key=OS,Value=Windows</code> </p> </li> <li> <p>
-     * <code>Key=ParameterType,Value=LicenseKey</code> </p> </li> </ul> <note> <p>To
+     * <code>Key=ParameterType,Value=LicenseKey</code> </p> </li> </ul>  <p>To
      * add tags to an existing Systems Manager parameter, use the
-     * <a>AddTagsToResource</a> action.</p> </note>
+     * <a>AddTagsToResource</a> action.</p> 
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
@@ -704,9 +704,9 @@ namespace Model
      * specify the following key name/value pairs:</p> <ul> <li> <p>
      * <code>Key=Resource,Value=S3bucket</code> </p> </li> <li> <p>
      * <code>Key=OS,Value=Windows</code> </p> </li> <li> <p>
-     * <code>Key=ParameterType,Value=LicenseKey</code> </p> </li> </ul> <note> <p>To
+     * <code>Key=ParameterType,Value=LicenseKey</code> </p> </li> </ul>  <p>To
      * add tags to an existing Systems Manager parameter, use the
-     * <a>AddTagsToResource</a> action.</p> </note>
+     * <a>AddTagsToResource</a> action.</p> 
      */
     inline PutParameterRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
@@ -719,9 +719,9 @@ namespace Model
      * specify the following key name/value pairs:</p> <ul> <li> <p>
      * <code>Key=Resource,Value=S3bucket</code> </p> </li> <li> <p>
      * <code>Key=OS,Value=Windows</code> </p> </li> <li> <p>
-     * <code>Key=ParameterType,Value=LicenseKey</code> </p> </li> </ul> <note> <p>To
+     * <code>Key=ParameterType,Value=LicenseKey</code> </p> </li> </ul>  <p>To
      * add tags to an existing Systems Manager parameter, use the
-     * <a>AddTagsToResource</a> action.</p> </note>
+     * <a>AddTagsToResource</a> action.</p> 
      */
     inline PutParameterRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
@@ -734,9 +734,9 @@ namespace Model
      * specify the following key name/value pairs:</p> <ul> <li> <p>
      * <code>Key=Resource,Value=S3bucket</code> </p> </li> <li> <p>
      * <code>Key=OS,Value=Windows</code> </p> </li> <li> <p>
-     * <code>Key=ParameterType,Value=LicenseKey</code> </p> </li> </ul> <note> <p>To
+     * <code>Key=ParameterType,Value=LicenseKey</code> </p> </li> </ul>  <p>To
      * add tags to an existing Systems Manager parameter, use the
-     * <a>AddTagsToResource</a> action.</p> </note>
+     * <a>AddTagsToResource</a> action.</p> 
      */
     inline PutParameterRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
@@ -749,9 +749,9 @@ namespace Model
      * specify the following key name/value pairs:</p> <ul> <li> <p>
      * <code>Key=Resource,Value=S3bucket</code> </p> </li> <li> <p>
      * <code>Key=OS,Value=Windows</code> </p> </li> <li> <p>
-     * <code>Key=ParameterType,Value=LicenseKey</code> </p> </li> </ul> <note> <p>To
+     * <code>Key=ParameterType,Value=LicenseKey</code> </p> </li> </ul>  <p>To
      * add tags to an existing Systems Manager parameter, use the
-     * <a>AddTagsToResource</a> action.</p> </note>
+     * <a>AddTagsToResource</a> action.</p> 
      */
     inline PutParameterRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 

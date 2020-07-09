@@ -156,9 +156,9 @@ namespace Model
      * for <code>severityCode</code>. </p> <p>For more information, see
      * <a>SeverityLevel</a> and <a
      * href="https://docs.aws.amazon.com/awssupport/latest/user/getting-started.html#choosing-severity">Choosing
-     * a Severity</a> in the <i>AWS Support User Guide</i>.</p> <note> <p>The
+     * a Severity</a> in the <i>AWS Support User Guide</i>.</p>  <p>The
      * availability of severity levels depends on the support plan for the AWS
-     * account.</p> </note>
+     * account.</p> 
      */
     inline const Aws::String& GetSeverityCode() const{ return m_severityCode; }
 
@@ -169,9 +169,9 @@ namespace Model
      * for <code>severityCode</code>. </p> <p>For more information, see
      * <a>SeverityLevel</a> and <a
      * href="https://docs.aws.amazon.com/awssupport/latest/user/getting-started.html#choosing-severity">Choosing
-     * a Severity</a> in the <i>AWS Support User Guide</i>.</p> <note> <p>The
+     * a Severity</a> in the <i>AWS Support User Guide</i>.</p>  <p>The
      * availability of severity levels depends on the support plan for the AWS
-     * account.</p> </note>
+     * account.</p> 
      */
     inline bool SeverityCodeHasBeenSet() const { return m_severityCodeHasBeenSet; }
 
@@ -182,9 +182,9 @@ namespace Model
      * for <code>severityCode</code>. </p> <p>For more information, see
      * <a>SeverityLevel</a> and <a
      * href="https://docs.aws.amazon.com/awssupport/latest/user/getting-started.html#choosing-severity">Choosing
-     * a Severity</a> in the <i>AWS Support User Guide</i>.</p> <note> <p>The
+     * a Severity</a> in the <i>AWS Support User Guide</i>.</p>  <p>The
      * availability of severity levels depends on the support plan for the AWS
-     * account.</p> </note>
+     * account.</p> 
      */
     inline void SetSeverityCode(const Aws::String& value) { m_severityCodeHasBeenSet = true; m_severityCode = value; }
 
@@ -195,9 +195,9 @@ namespace Model
      * for <code>severityCode</code>. </p> <p>For more information, see
      * <a>SeverityLevel</a> and <a
      * href="https://docs.aws.amazon.com/awssupport/latest/user/getting-started.html#choosing-severity">Choosing
-     * a Severity</a> in the <i>AWS Support User Guide</i>.</p> <note> <p>The
+     * a Severity</a> in the <i>AWS Support User Guide</i>.</p>  <p>The
      * availability of severity levels depends on the support plan for the AWS
-     * account.</p> </note>
+     * account.</p> 
      */
     inline void SetSeverityCode(Aws::String&& value) { m_severityCodeHasBeenSet = true; m_severityCode = std::move(value); }
 
@@ -208,9 +208,9 @@ namespace Model
      * for <code>severityCode</code>. </p> <p>For more information, see
      * <a>SeverityLevel</a> and <a
      * href="https://docs.aws.amazon.com/awssupport/latest/user/getting-started.html#choosing-severity">Choosing
-     * a Severity</a> in the <i>AWS Support User Guide</i>.</p> <note> <p>The
+     * a Severity</a> in the <i>AWS Support User Guide</i>.</p>  <p>The
      * availability of severity levels depends on the support plan for the AWS
-     * account.</p> </note>
+     * account.</p> 
      */
     inline void SetSeverityCode(const char* value) { m_severityCodeHasBeenSet = true; m_severityCode.assign(value); }
 
@@ -221,9 +221,9 @@ namespace Model
      * for <code>severityCode</code>. </p> <p>For more information, see
      * <a>SeverityLevel</a> and <a
      * href="https://docs.aws.amazon.com/awssupport/latest/user/getting-started.html#choosing-severity">Choosing
-     * a Severity</a> in the <i>AWS Support User Guide</i>.</p> <note> <p>The
+     * a Severity</a> in the <i>AWS Support User Guide</i>.</p>  <p>The
      * availability of severity levels depends on the support plan for the AWS
-     * account.</p> </note>
+     * account.</p> 
      */
     inline CreateCaseRequest& WithSeverityCode(const Aws::String& value) { SetSeverityCode(value); return *this;}
 
@@ -234,9 +234,9 @@ namespace Model
      * for <code>severityCode</code>. </p> <p>For more information, see
      * <a>SeverityLevel</a> and <a
      * href="https://docs.aws.amazon.com/awssupport/latest/user/getting-started.html#choosing-severity">Choosing
-     * a Severity</a> in the <i>AWS Support User Guide</i>.</p> <note> <p>The
+     * a Severity</a> in the <i>AWS Support User Guide</i>.</p>  <p>The
      * availability of severity levels depends on the support plan for the AWS
-     * account.</p> </note>
+     * account.</p> 
      */
     inline CreateCaseRequest& WithSeverityCode(Aws::String&& value) { SetSeverityCode(std::move(value)); return *this;}
 
@@ -247,9 +247,9 @@ namespace Model
      * for <code>severityCode</code>. </p> <p>For more information, see
      * <a>SeverityLevel</a> and <a
      * href="https://docs.aws.amazon.com/awssupport/latest/user/getting-started.html#choosing-severity">Choosing
-     * a Severity</a> in the <i>AWS Support User Guide</i>.</p> <note> <p>The
+     * a Severity</a> in the <i>AWS Support User Guide</i>.</p>  <p>The
      * availability of severity levels depends on the support plan for the AWS
-     * account.</p> </note>
+     * account.</p> 
      */
     inline CreateCaseRequest& WithSeverityCode(const char* value) { SetSeverityCode(value); return *this;}
 

@@ -24,6 +24,7 @@ static const int INTERNAL_SERVICE_HASH = HashingUtils::HashString("InternalServi
 static const int INVALID_PARAMETER_HASH = HashingUtils::HashString("InvalidParameterException");
 static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
 static const int DECRYPTION_FAILURE_HASH = HashingUtils::HashString("DecryptionFailure");
+static const int PUBLIC_POLICY_HASH = HashingUtils::HashString("PublicPolicyException");
 static const int PRECONDITION_NOT_MET_HASH = HashingUtils::HashString("PreconditionNotMetException");
 static const int INVALID_NEXT_TOKEN_HASH = HashingUtils::HashString("InvalidNextTokenException");
 static const int INVALID_REQUEST_HASH = HashingUtils::HashString("InvalidRequestException");
@@ -57,6 +58,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == DECRYPTION_FAILURE_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SecretsManagerErrors::DECRYPTION_FAILURE), false);
+  }
+  else if (hashCode == PUBLIC_POLICY_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SecretsManagerErrors::PUBLIC_POLICY), false);
   }
   else if (hashCode == PRECONDITION_NOT_MET_HASH)
   {

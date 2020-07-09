@@ -134,29 +134,29 @@ namespace Model
 
     /**
      * <p>Use this option to stop the pipeline execution by abandoning, rather than
-     * finishing, in-progress actions.</p> <note> <p>This option can lead to failed or
-     * out-of-sequence tasks.</p> </note>
+     * finishing, in-progress actions.</p>  <p>This option can lead to failed or
+     * out-of-sequence tasks.</p> 
      */
     inline bool GetAbandon() const{ return m_abandon; }
 
     /**
      * <p>Use this option to stop the pipeline execution by abandoning, rather than
-     * finishing, in-progress actions.</p> <note> <p>This option can lead to failed or
-     * out-of-sequence tasks.</p> </note>
+     * finishing, in-progress actions.</p>  <p>This option can lead to failed or
+     * out-of-sequence tasks.</p> 
      */
     inline bool AbandonHasBeenSet() const { return m_abandonHasBeenSet; }
 
     /**
      * <p>Use this option to stop the pipeline execution by abandoning, rather than
-     * finishing, in-progress actions.</p> <note> <p>This option can lead to failed or
-     * out-of-sequence tasks.</p> </note>
+     * finishing, in-progress actions.</p>  <p>This option can lead to failed or
+     * out-of-sequence tasks.</p> 
      */
     inline void SetAbandon(bool value) { m_abandonHasBeenSet = true; m_abandon = value; }
 
     /**
      * <p>Use this option to stop the pipeline execution by abandoning, rather than
-     * finishing, in-progress actions.</p> <note> <p>This option can lead to failed or
-     * out-of-sequence tasks.</p> </note>
+     * finishing, in-progress actions.</p>  <p>This option can lead to failed or
+     * out-of-sequence tasks.</p> 
      */
     inline StopPipelineExecutionRequest& WithAbandon(bool value) { SetAbandon(value); return *this;}
 

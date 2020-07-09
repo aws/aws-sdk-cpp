@@ -39,37 +39,37 @@ namespace Model
 
 
     /**
-     * <p>The details of the job.</p> <note> <p>If AWSSessionCredentials is used, a
+     * <p>The details of the job.</p>  <p>If AWSSessionCredentials is used, a
      * long-running job can call <code>GetJobDetails</code> again to obtain new
-     * credentials.</p> </note>
+     * credentials.</p> 
      */
     inline const JobDetails& GetJobDetails() const{ return m_jobDetails; }
 
     /**
-     * <p>The details of the job.</p> <note> <p>If AWSSessionCredentials is used, a
+     * <p>The details of the job.</p>  <p>If AWSSessionCredentials is used, a
      * long-running job can call <code>GetJobDetails</code> again to obtain new
-     * credentials.</p> </note>
+     * credentials.</p> 
      */
     inline void SetJobDetails(const JobDetails& value) { m_jobDetails = value; }
 
     /**
-     * <p>The details of the job.</p> <note> <p>If AWSSessionCredentials is used, a
+     * <p>The details of the job.</p>  <p>If AWSSessionCredentials is used, a
      * long-running job can call <code>GetJobDetails</code> again to obtain new
-     * credentials.</p> </note>
+     * credentials.</p> 
      */
     inline void SetJobDetails(JobDetails&& value) { m_jobDetails = std::move(value); }
 
     /**
-     * <p>The details of the job.</p> <note> <p>If AWSSessionCredentials is used, a
+     * <p>The details of the job.</p>  <p>If AWSSessionCredentials is used, a
      * long-running job can call <code>GetJobDetails</code> again to obtain new
-     * credentials.</p> </note>
+     * credentials.</p> 
      */
     inline GetJobDetailsResult& WithJobDetails(const JobDetails& value) { SetJobDetails(value); return *this;}
 
     /**
-     * <p>The details of the job.</p> <note> <p>If AWSSessionCredentials is used, a
+     * <p>The details of the job.</p>  <p>If AWSSessionCredentials is used, a
      * long-running job can call <code>GetJobDetails</code> again to obtain new
-     * credentials.</p> </note>
+     * credentials.</p> 
      */
     inline GetJobDetailsResult& WithJobDetails(JobDetails&& value) { SetJobDetails(std::move(value)); return *this;}
 

@@ -302,9 +302,9 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
      * Networking</a> in the <i>Amazon Elastic Container Service Developer
-     * Guide</i>.</p> <note> <p>Currently, only Amazon ECS-optimized AMIs, other Amazon
+     * Guide</i>.</p>  <p>Currently, only Amazon ECS-optimized AMIs, other Amazon
      * Linux variants with the <code>ecs-init</code> package, or AWS Fargate
-     * infrastructure support the <code>awsvpc</code> network mode. </p> </note> <p>If
+     * infrastructure support the <code>awsvpc</code> network mode. </p>  <p>If
      * the network mode is <code>host</code>, you cannot run multiple instantiations of
      * the same task on a single container instance when port mappings are used.</p>
      * <p>Docker for Windows uses different network modes than Docker for Linux. When
@@ -339,9 +339,9 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
      * Networking</a> in the <i>Amazon Elastic Container Service Developer
-     * Guide</i>.</p> <note> <p>Currently, only Amazon ECS-optimized AMIs, other Amazon
+     * Guide</i>.</p>  <p>Currently, only Amazon ECS-optimized AMIs, other Amazon
      * Linux variants with the <code>ecs-init</code> package, or AWS Fargate
-     * infrastructure support the <code>awsvpc</code> network mode. </p> </note> <p>If
+     * infrastructure support the <code>awsvpc</code> network mode. </p>  <p>If
      * the network mode is <code>host</code>, you cannot run multiple instantiations of
      * the same task on a single container instance when port mappings are used.</p>
      * <p>Docker for Windows uses different network modes than Docker for Linux. When
@@ -376,9 +376,9 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
      * Networking</a> in the <i>Amazon Elastic Container Service Developer
-     * Guide</i>.</p> <note> <p>Currently, only Amazon ECS-optimized AMIs, other Amazon
+     * Guide</i>.</p>  <p>Currently, only Amazon ECS-optimized AMIs, other Amazon
      * Linux variants with the <code>ecs-init</code> package, or AWS Fargate
-     * infrastructure support the <code>awsvpc</code> network mode. </p> </note> <p>If
+     * infrastructure support the <code>awsvpc</code> network mode. </p>  <p>If
      * the network mode is <code>host</code>, you cannot run multiple instantiations of
      * the same task on a single container instance when port mappings are used.</p>
      * <p>Docker for Windows uses different network modes than Docker for Linux. When
@@ -413,9 +413,9 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
      * Networking</a> in the <i>Amazon Elastic Container Service Developer
-     * Guide</i>.</p> <note> <p>Currently, only Amazon ECS-optimized AMIs, other Amazon
+     * Guide</i>.</p>  <p>Currently, only Amazon ECS-optimized AMIs, other Amazon
      * Linux variants with the <code>ecs-init</code> package, or AWS Fargate
-     * infrastructure support the <code>awsvpc</code> network mode. </p> </note> <p>If
+     * infrastructure support the <code>awsvpc</code> network mode. </p>  <p>If
      * the network mode is <code>host</code>, you cannot run multiple instantiations of
      * the same task on a single container instance when port mappings are used.</p>
      * <p>Docker for Windows uses different network modes than Docker for Linux. When
@@ -450,9 +450,9 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
      * Networking</a> in the <i>Amazon Elastic Container Service Developer
-     * Guide</i>.</p> <note> <p>Currently, only Amazon ECS-optimized AMIs, other Amazon
+     * Guide</i>.</p>  <p>Currently, only Amazon ECS-optimized AMIs, other Amazon
      * Linux variants with the <code>ecs-init</code> package, or AWS Fargate
-     * infrastructure support the <code>awsvpc</code> network mode. </p> </note> <p>If
+     * infrastructure support the <code>awsvpc</code> network mode. </p>  <p>If
      * the network mode is <code>host</code>, you cannot run multiple instantiations of
      * the same task on a single container instance when port mappings are used.</p>
      * <p>Docker for Windows uses different network modes than Docker for Linux. When
@@ -487,9 +487,9 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
      * Networking</a> in the <i>Amazon Elastic Container Service Developer
-     * Guide</i>.</p> <note> <p>Currently, only Amazon ECS-optimized AMIs, other Amazon
+     * Guide</i>.</p>  <p>Currently, only Amazon ECS-optimized AMIs, other Amazon
      * Linux variants with the <code>ecs-init</code> package, or AWS Fargate
-     * infrastructure support the <code>awsvpc</code> network mode. </p> </note> <p>If
+     * infrastructure support the <code>awsvpc</code> network mode. </p>  <p>If
      * the network mode is <code>host</code>, you cannot run multiple instantiations of
      * the same task on a single container instance when port mappings are used.</p>
      * <p>Docker for Windows uses different network modes than Docker for Linux. When
@@ -712,9 +712,9 @@ namespace Model
      * using CPU units, for example <code>1024</code>, or as a string using vCPUs, for
      * example <code>1 vCPU</code> or <code>1 vcpu</code>, in a task definition. String
      * values are converted to an integer indicating the CPU units when the task
-     * definition is registered.</p> <note> <p>Task-level CPU and memory parameters are
+     * definition is registered.</p>  <p>Task-level CPU and memory parameters are
      * ignored for Windows containers. We recommend specifying container-level
-     * resources for Windows containers.</p> </note> <p>If you are using the EC2 launch
+     * resources for Windows containers.</p>  <p>If you are using the EC2 launch
      * type, this field is optional. Supported values are between <code>128</code> CPU
      * units (<code>0.125</code> vCPUs) and <code>10240</code> CPU units
      * (<code>10</code> vCPUs).</p> <p>If you are using the Fargate launch type, this
@@ -737,9 +737,9 @@ namespace Model
      * using CPU units, for example <code>1024</code>, or as a string using vCPUs, for
      * example <code>1 vCPU</code> or <code>1 vcpu</code>, in a task definition. String
      * values are converted to an integer indicating the CPU units when the task
-     * definition is registered.</p> <note> <p>Task-level CPU and memory parameters are
+     * definition is registered.</p>  <p>Task-level CPU and memory parameters are
      * ignored for Windows containers. We recommend specifying container-level
-     * resources for Windows containers.</p> </note> <p>If you are using the EC2 launch
+     * resources for Windows containers.</p>  <p>If you are using the EC2 launch
      * type, this field is optional. Supported values are between <code>128</code> CPU
      * units (<code>0.125</code> vCPUs) and <code>10240</code> CPU units
      * (<code>10</code> vCPUs).</p> <p>If you are using the Fargate launch type, this
@@ -762,9 +762,9 @@ namespace Model
      * using CPU units, for example <code>1024</code>, or as a string using vCPUs, for
      * example <code>1 vCPU</code> or <code>1 vcpu</code>, in a task definition. String
      * values are converted to an integer indicating the CPU units when the task
-     * definition is registered.</p> <note> <p>Task-level CPU and memory parameters are
+     * definition is registered.</p>  <p>Task-level CPU and memory parameters are
      * ignored for Windows containers. We recommend specifying container-level
-     * resources for Windows containers.</p> </note> <p>If you are using the EC2 launch
+     * resources for Windows containers.</p>  <p>If you are using the EC2 launch
      * type, this field is optional. Supported values are between <code>128</code> CPU
      * units (<code>0.125</code> vCPUs) and <code>10240</code> CPU units
      * (<code>10</code> vCPUs).</p> <p>If you are using the Fargate launch type, this
@@ -787,9 +787,9 @@ namespace Model
      * using CPU units, for example <code>1024</code>, or as a string using vCPUs, for
      * example <code>1 vCPU</code> or <code>1 vcpu</code>, in a task definition. String
      * values are converted to an integer indicating the CPU units when the task
-     * definition is registered.</p> <note> <p>Task-level CPU and memory parameters are
+     * definition is registered.</p>  <p>Task-level CPU and memory parameters are
      * ignored for Windows containers. We recommend specifying container-level
-     * resources for Windows containers.</p> </note> <p>If you are using the EC2 launch
+     * resources for Windows containers.</p>  <p>If you are using the EC2 launch
      * type, this field is optional. Supported values are between <code>128</code> CPU
      * units (<code>0.125</code> vCPUs) and <code>10240</code> CPU units
      * (<code>10</code> vCPUs).</p> <p>If you are using the Fargate launch type, this
@@ -812,9 +812,9 @@ namespace Model
      * using CPU units, for example <code>1024</code>, or as a string using vCPUs, for
      * example <code>1 vCPU</code> or <code>1 vcpu</code>, in a task definition. String
      * values are converted to an integer indicating the CPU units when the task
-     * definition is registered.</p> <note> <p>Task-level CPU and memory parameters are
+     * definition is registered.</p>  <p>Task-level CPU and memory parameters are
      * ignored for Windows containers. We recommend specifying container-level
-     * resources for Windows containers.</p> </note> <p>If you are using the EC2 launch
+     * resources for Windows containers.</p>  <p>If you are using the EC2 launch
      * type, this field is optional. Supported values are between <code>128</code> CPU
      * units (<code>0.125</code> vCPUs) and <code>10240</code> CPU units
      * (<code>10</code> vCPUs).</p> <p>If you are using the Fargate launch type, this
@@ -837,9 +837,9 @@ namespace Model
      * using CPU units, for example <code>1024</code>, or as a string using vCPUs, for
      * example <code>1 vCPU</code> or <code>1 vcpu</code>, in a task definition. String
      * values are converted to an integer indicating the CPU units when the task
-     * definition is registered.</p> <note> <p>Task-level CPU and memory parameters are
+     * definition is registered.</p>  <p>Task-level CPU and memory parameters are
      * ignored for Windows containers. We recommend specifying container-level
-     * resources for Windows containers.</p> </note> <p>If you are using the EC2 launch
+     * resources for Windows containers.</p>  <p>If you are using the EC2 launch
      * type, this field is optional. Supported values are between <code>128</code> CPU
      * units (<code>0.125</code> vCPUs) and <code>10240</code> CPU units
      * (<code>10</code> vCPUs).</p> <p>If you are using the Fargate launch type, this
@@ -862,9 +862,9 @@ namespace Model
      * using CPU units, for example <code>1024</code>, or as a string using vCPUs, for
      * example <code>1 vCPU</code> or <code>1 vcpu</code>, in a task definition. String
      * values are converted to an integer indicating the CPU units when the task
-     * definition is registered.</p> <note> <p>Task-level CPU and memory parameters are
+     * definition is registered.</p>  <p>Task-level CPU and memory parameters are
      * ignored for Windows containers. We recommend specifying container-level
-     * resources for Windows containers.</p> </note> <p>If you are using the EC2 launch
+     * resources for Windows containers.</p>  <p>If you are using the EC2 launch
      * type, this field is optional. Supported values are between <code>128</code> CPU
      * units (<code>0.125</code> vCPUs) and <code>10240</code> CPU units
      * (<code>10</code> vCPUs).</p> <p>If you are using the Fargate launch type, this
@@ -887,9 +887,9 @@ namespace Model
      * using CPU units, for example <code>1024</code>, or as a string using vCPUs, for
      * example <code>1 vCPU</code> or <code>1 vcpu</code>, in a task definition. String
      * values are converted to an integer indicating the CPU units when the task
-     * definition is registered.</p> <note> <p>Task-level CPU and memory parameters are
+     * definition is registered.</p>  <p>Task-level CPU and memory parameters are
      * ignored for Windows containers. We recommend specifying container-level
-     * resources for Windows containers.</p> </note> <p>If you are using the EC2 launch
+     * resources for Windows containers.</p>  <p>If you are using the EC2 launch
      * type, this field is optional. Supported values are between <code>128</code> CPU
      * units (<code>0.125</code> vCPUs) and <code>10240</code> CPU units
      * (<code>10</code> vCPUs).</p> <p>If you are using the Fargate launch type, this
@@ -913,9 +913,9 @@ namespace Model
      * integer using MiB, for example <code>1024</code>, or as a string using GB, for
      * example <code>1GB</code> or <code>1 GB</code>, in a task definition. String
      * values are converted to an integer indicating the MiB when the task definition
-     * is registered.</p> <note> <p>Task-level CPU and memory parameters are ignored
+     * is registered.</p>  <p>Task-level CPU and memory parameters are ignored
      * for Windows containers. We recommend specifying container-level resources for
-     * Windows containers.</p> </note> <p>If using the EC2 launch type, this field is
+     * Windows containers.</p>  <p>If using the EC2 launch type, this field is
      * optional.</p> <p>If using the Fargate launch type, this field is required and
      * you must use one of the following values, which determines your range of
      * supported values for the <code>cpu</code> parameter:</p> <ul> <li> <p>512 (0.5
@@ -936,9 +936,9 @@ namespace Model
      * integer using MiB, for example <code>1024</code>, or as a string using GB, for
      * example <code>1GB</code> or <code>1 GB</code>, in a task definition. String
      * values are converted to an integer indicating the MiB when the task definition
-     * is registered.</p> <note> <p>Task-level CPU and memory parameters are ignored
+     * is registered.</p>  <p>Task-level CPU and memory parameters are ignored
      * for Windows containers. We recommend specifying container-level resources for
-     * Windows containers.</p> </note> <p>If using the EC2 launch type, this field is
+     * Windows containers.</p>  <p>If using the EC2 launch type, this field is
      * optional.</p> <p>If using the Fargate launch type, this field is required and
      * you must use one of the following values, which determines your range of
      * supported values for the <code>cpu</code> parameter:</p> <ul> <li> <p>512 (0.5
@@ -959,9 +959,9 @@ namespace Model
      * integer using MiB, for example <code>1024</code>, or as a string using GB, for
      * example <code>1GB</code> or <code>1 GB</code>, in a task definition. String
      * values are converted to an integer indicating the MiB when the task definition
-     * is registered.</p> <note> <p>Task-level CPU and memory parameters are ignored
+     * is registered.</p>  <p>Task-level CPU and memory parameters are ignored
      * for Windows containers. We recommend specifying container-level resources for
-     * Windows containers.</p> </note> <p>If using the EC2 launch type, this field is
+     * Windows containers.</p>  <p>If using the EC2 launch type, this field is
      * optional.</p> <p>If using the Fargate launch type, this field is required and
      * you must use one of the following values, which determines your range of
      * supported values for the <code>cpu</code> parameter:</p> <ul> <li> <p>512 (0.5
@@ -982,9 +982,9 @@ namespace Model
      * integer using MiB, for example <code>1024</code>, or as a string using GB, for
      * example <code>1GB</code> or <code>1 GB</code>, in a task definition. String
      * values are converted to an integer indicating the MiB when the task definition
-     * is registered.</p> <note> <p>Task-level CPU and memory parameters are ignored
+     * is registered.</p>  <p>Task-level CPU and memory parameters are ignored
      * for Windows containers. We recommend specifying container-level resources for
-     * Windows containers.</p> </note> <p>If using the EC2 launch type, this field is
+     * Windows containers.</p>  <p>If using the EC2 launch type, this field is
      * optional.</p> <p>If using the Fargate launch type, this field is required and
      * you must use one of the following values, which determines your range of
      * supported values for the <code>cpu</code> parameter:</p> <ul> <li> <p>512 (0.5
@@ -1005,9 +1005,9 @@ namespace Model
      * integer using MiB, for example <code>1024</code>, or as a string using GB, for
      * example <code>1GB</code> or <code>1 GB</code>, in a task definition. String
      * values are converted to an integer indicating the MiB when the task definition
-     * is registered.</p> <note> <p>Task-level CPU and memory parameters are ignored
+     * is registered.</p>  <p>Task-level CPU and memory parameters are ignored
      * for Windows containers. We recommend specifying container-level resources for
-     * Windows containers.</p> </note> <p>If using the EC2 launch type, this field is
+     * Windows containers.</p>  <p>If using the EC2 launch type, this field is
      * optional.</p> <p>If using the Fargate launch type, this field is required and
      * you must use one of the following values, which determines your range of
      * supported values for the <code>cpu</code> parameter:</p> <ul> <li> <p>512 (0.5
@@ -1028,9 +1028,9 @@ namespace Model
      * integer using MiB, for example <code>1024</code>, or as a string using GB, for
      * example <code>1GB</code> or <code>1 GB</code>, in a task definition. String
      * values are converted to an integer indicating the MiB when the task definition
-     * is registered.</p> <note> <p>Task-level CPU and memory parameters are ignored
+     * is registered.</p>  <p>Task-level CPU and memory parameters are ignored
      * for Windows containers. We recommend specifying container-level resources for
-     * Windows containers.</p> </note> <p>If using the EC2 launch type, this field is
+     * Windows containers.</p>  <p>If using the EC2 launch type, this field is
      * optional.</p> <p>If using the Fargate launch type, this field is required and
      * you must use one of the following values, which determines your range of
      * supported values for the <code>cpu</code> parameter:</p> <ul> <li> <p>512 (0.5
@@ -1051,9 +1051,9 @@ namespace Model
      * integer using MiB, for example <code>1024</code>, or as a string using GB, for
      * example <code>1GB</code> or <code>1 GB</code>, in a task definition. String
      * values are converted to an integer indicating the MiB when the task definition
-     * is registered.</p> <note> <p>Task-level CPU and memory parameters are ignored
+     * is registered.</p>  <p>Task-level CPU and memory parameters are ignored
      * for Windows containers. We recommend specifying container-level resources for
-     * Windows containers.</p> </note> <p>If using the EC2 launch type, this field is
+     * Windows containers.</p>  <p>If using the EC2 launch type, this field is
      * optional.</p> <p>If using the Fargate launch type, this field is required and
      * you must use one of the following values, which determines your range of
      * supported values for the <code>cpu</code> parameter:</p> <ul> <li> <p>512 (0.5
@@ -1074,9 +1074,9 @@ namespace Model
      * integer using MiB, for example <code>1024</code>, or as a string using GB, for
      * example <code>1GB</code> or <code>1 GB</code>, in a task definition. String
      * values are converted to an integer indicating the MiB when the task definition
-     * is registered.</p> <note> <p>Task-level CPU and memory parameters are ignored
+     * is registered.</p>  <p>Task-level CPU and memory parameters are ignored
      * for Windows containers. We recommend specifying container-level resources for
-     * Windows containers.</p> </note> <p>If using the EC2 launch type, this field is
+     * Windows containers.</p>  <p>If using the EC2 launch type, this field is
      * optional.</p> <p>If using the Fargate launch type, this field is required and
      * you must use one of the following values, which determines your range of
      * supported values for the <code>cpu</code> parameter:</p> <ul> <li> <p>512 (0.5
@@ -1267,8 +1267,8 @@ namespace Model
      * PID mode is used, be aware that there is a heightened risk of undesired process
      * namespace expose. For more information, see <a
      * href="https://docs.docker.com/engine/security/security/">Docker
-     * security</a>.</p> <note> <p>This parameter is not supported for Windows
-     * containers or tasks using the Fargate launch type.</p> </note>
+     * security</a>.</p>  <p>This parameter is not supported for Windows
+     * containers or tasks using the Fargate launch type.</p> 
      */
     inline const PidMode& GetPidMode() const{ return m_pidMode; }
 
@@ -1285,8 +1285,8 @@ namespace Model
      * PID mode is used, be aware that there is a heightened risk of undesired process
      * namespace expose. For more information, see <a
      * href="https://docs.docker.com/engine/security/security/">Docker
-     * security</a>.</p> <note> <p>This parameter is not supported for Windows
-     * containers or tasks using the Fargate launch type.</p> </note>
+     * security</a>.</p>  <p>This parameter is not supported for Windows
+     * containers or tasks using the Fargate launch type.</p> 
      */
     inline bool PidModeHasBeenSet() const { return m_pidModeHasBeenSet; }
 
@@ -1303,8 +1303,8 @@ namespace Model
      * PID mode is used, be aware that there is a heightened risk of undesired process
      * namespace expose. For more information, see <a
      * href="https://docs.docker.com/engine/security/security/">Docker
-     * security</a>.</p> <note> <p>This parameter is not supported for Windows
-     * containers or tasks using the Fargate launch type.</p> </note>
+     * security</a>.</p>  <p>This parameter is not supported for Windows
+     * containers or tasks using the Fargate launch type.</p> 
      */
     inline void SetPidMode(const PidMode& value) { m_pidModeHasBeenSet = true; m_pidMode = value; }
 
@@ -1321,8 +1321,8 @@ namespace Model
      * PID mode is used, be aware that there is a heightened risk of undesired process
      * namespace expose. For more information, see <a
      * href="https://docs.docker.com/engine/security/security/">Docker
-     * security</a>.</p> <note> <p>This parameter is not supported for Windows
-     * containers or tasks using the Fargate launch type.</p> </note>
+     * security</a>.</p>  <p>This parameter is not supported for Windows
+     * containers or tasks using the Fargate launch type.</p> 
      */
     inline void SetPidMode(PidMode&& value) { m_pidModeHasBeenSet = true; m_pidMode = std::move(value); }
 
@@ -1339,8 +1339,8 @@ namespace Model
      * PID mode is used, be aware that there is a heightened risk of undesired process
      * namespace expose. For more information, see <a
      * href="https://docs.docker.com/engine/security/security/">Docker
-     * security</a>.</p> <note> <p>This parameter is not supported for Windows
-     * containers or tasks using the Fargate launch type.</p> </note>
+     * security</a>.</p>  <p>This parameter is not supported for Windows
+     * containers or tasks using the Fargate launch type.</p> 
      */
     inline RegisterTaskDefinitionRequest& WithPidMode(const PidMode& value) { SetPidMode(value); return *this;}
 
@@ -1357,8 +1357,8 @@ namespace Model
      * PID mode is used, be aware that there is a heightened risk of undesired process
      * namespace expose. For more information, see <a
      * href="https://docs.docker.com/engine/security/security/">Docker
-     * security</a>.</p> <note> <p>This parameter is not supported for Windows
-     * containers or tasks using the Fargate launch type.</p> </note>
+     * security</a>.</p>  <p>This parameter is not supported for Windows
+     * containers or tasks using the Fargate launch type.</p> 
      */
     inline RegisterTaskDefinitionRequest& WithPidMode(PidMode&& value) { SetPidMode(std::move(value)); return *this;}
 
@@ -1389,8 +1389,8 @@ namespace Model
      * related <code>systemControls</code> are not supported.</p> </li> <li> <p>For
      * tasks that use the <code>task</code> IPC mode, IPC namespace related
      * <code>systemControls</code> will apply to all containers within a task.</p>
-     * </li> </ul> <note> <p>This parameter is not supported for Windows containers or
-     * tasks using the Fargate launch type.</p> </note>
+     * </li> </ul>  <p>This parameter is not supported for Windows containers or
+     * tasks using the Fargate launch type.</p> 
      */
     inline const IpcMode& GetIpcMode() const{ return m_ipcMode; }
 
@@ -1420,8 +1420,8 @@ namespace Model
      * related <code>systemControls</code> are not supported.</p> </li> <li> <p>For
      * tasks that use the <code>task</code> IPC mode, IPC namespace related
      * <code>systemControls</code> will apply to all containers within a task.</p>
-     * </li> </ul> <note> <p>This parameter is not supported for Windows containers or
-     * tasks using the Fargate launch type.</p> </note>
+     * </li> </ul>  <p>This parameter is not supported for Windows containers or
+     * tasks using the Fargate launch type.</p> 
      */
     inline bool IpcModeHasBeenSet() const { return m_ipcModeHasBeenSet; }
 
@@ -1451,8 +1451,8 @@ namespace Model
      * related <code>systemControls</code> are not supported.</p> </li> <li> <p>For
      * tasks that use the <code>task</code> IPC mode, IPC namespace related
      * <code>systemControls</code> will apply to all containers within a task.</p>
-     * </li> </ul> <note> <p>This parameter is not supported for Windows containers or
-     * tasks using the Fargate launch type.</p> </note>
+     * </li> </ul>  <p>This parameter is not supported for Windows containers or
+     * tasks using the Fargate launch type.</p> 
      */
     inline void SetIpcMode(const IpcMode& value) { m_ipcModeHasBeenSet = true; m_ipcMode = value; }
 
@@ -1482,8 +1482,8 @@ namespace Model
      * related <code>systemControls</code> are not supported.</p> </li> <li> <p>For
      * tasks that use the <code>task</code> IPC mode, IPC namespace related
      * <code>systemControls</code> will apply to all containers within a task.</p>
-     * </li> </ul> <note> <p>This parameter is not supported for Windows containers or
-     * tasks using the Fargate launch type.</p> </note>
+     * </li> </ul>  <p>This parameter is not supported for Windows containers or
+     * tasks using the Fargate launch type.</p> 
      */
     inline void SetIpcMode(IpcMode&& value) { m_ipcModeHasBeenSet = true; m_ipcMode = std::move(value); }
 
@@ -1513,8 +1513,8 @@ namespace Model
      * related <code>systemControls</code> are not supported.</p> </li> <li> <p>For
      * tasks that use the <code>task</code> IPC mode, IPC namespace related
      * <code>systemControls</code> will apply to all containers within a task.</p>
-     * </li> </ul> <note> <p>This parameter is not supported for Windows containers or
-     * tasks using the Fargate launch type.</p> </note>
+     * </li> </ul>  <p>This parameter is not supported for Windows containers or
+     * tasks using the Fargate launch type.</p> 
      */
     inline RegisterTaskDefinitionRequest& WithIpcMode(const IpcMode& value) { SetIpcMode(value); return *this;}
 
@@ -1544,8 +1544,8 @@ namespace Model
      * related <code>systemControls</code> are not supported.</p> </li> <li> <p>For
      * tasks that use the <code>task</code> IPC mode, IPC namespace related
      * <code>systemControls</code> will apply to all containers within a task.</p>
-     * </li> </ul> <note> <p>This parameter is not supported for Windows containers or
-     * tasks using the Fargate launch type.</p> </note>
+     * </li> </ul>  <p>This parameter is not supported for Windows containers or
+     * tasks using the Fargate launch type.</p> 
      */
     inline RegisterTaskDefinitionRequest& WithIpcMode(IpcMode&& value) { SetIpcMode(std::move(value)); return *this;}
 

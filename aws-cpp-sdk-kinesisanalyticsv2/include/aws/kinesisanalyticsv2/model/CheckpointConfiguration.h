@@ -48,11 +48,11 @@ namespace Model
      * checkpointing behavior. You must set this property to <code>CUSTOM</code> in
      * order to set the <code>CheckpointingEnabled</code>,
      * <code>CheckpointInterval</code>, or <code>MinPauseBetweenCheckpoints</code>
-     * parameters.</p> <note> <p>If this value is set to <code>DEFAULT</code>, the
+     * parameters.</p>  <p>If this value is set to <code>DEFAULT</code>, the
      * application will use the following values, even if they are set to other values
      * using APIs or application code:</p> <ul> <li> <p> <b>CheckpointingEnabled:</b>
      * true</p> </li> <li> <p> <b>CheckpointInterval:</b> 60000</p> </li> <li> <p>
-     * <b>MinPauseBetweenCheckpoints:</b> 5000</p> </li> </ul> </note>
+     * <b>MinPauseBetweenCheckpoints:</b> 5000</p> </li> </ul> 
      */
     inline const ConfigurationType& GetConfigurationType() const{ return m_configurationType; }
 
@@ -61,11 +61,11 @@ namespace Model
      * checkpointing behavior. You must set this property to <code>CUSTOM</code> in
      * order to set the <code>CheckpointingEnabled</code>,
      * <code>CheckpointInterval</code>, or <code>MinPauseBetweenCheckpoints</code>
-     * parameters.</p> <note> <p>If this value is set to <code>DEFAULT</code>, the
+     * parameters.</p>  <p>If this value is set to <code>DEFAULT</code>, the
      * application will use the following values, even if they are set to other values
      * using APIs or application code:</p> <ul> <li> <p> <b>CheckpointingEnabled:</b>
      * true</p> </li> <li> <p> <b>CheckpointInterval:</b> 60000</p> </li> <li> <p>
-     * <b>MinPauseBetweenCheckpoints:</b> 5000</p> </li> </ul> </note>
+     * <b>MinPauseBetweenCheckpoints:</b> 5000</p> </li> </ul> 
      */
     inline bool ConfigurationTypeHasBeenSet() const { return m_configurationTypeHasBeenSet; }
 
@@ -74,11 +74,11 @@ namespace Model
      * checkpointing behavior. You must set this property to <code>CUSTOM</code> in
      * order to set the <code>CheckpointingEnabled</code>,
      * <code>CheckpointInterval</code>, or <code>MinPauseBetweenCheckpoints</code>
-     * parameters.</p> <note> <p>If this value is set to <code>DEFAULT</code>, the
+     * parameters.</p>  <p>If this value is set to <code>DEFAULT</code>, the
      * application will use the following values, even if they are set to other values
      * using APIs or application code:</p> <ul> <li> <p> <b>CheckpointingEnabled:</b>
      * true</p> </li> <li> <p> <b>CheckpointInterval:</b> 60000</p> </li> <li> <p>
-     * <b>MinPauseBetweenCheckpoints:</b> 5000</p> </li> </ul> </note>
+     * <b>MinPauseBetweenCheckpoints:</b> 5000</p> </li> </ul> 
      */
     inline void SetConfigurationType(const ConfigurationType& value) { m_configurationTypeHasBeenSet = true; m_configurationType = value; }
 
@@ -87,11 +87,11 @@ namespace Model
      * checkpointing behavior. You must set this property to <code>CUSTOM</code> in
      * order to set the <code>CheckpointingEnabled</code>,
      * <code>CheckpointInterval</code>, or <code>MinPauseBetweenCheckpoints</code>
-     * parameters.</p> <note> <p>If this value is set to <code>DEFAULT</code>, the
+     * parameters.</p>  <p>If this value is set to <code>DEFAULT</code>, the
      * application will use the following values, even if they are set to other values
      * using APIs or application code:</p> <ul> <li> <p> <b>CheckpointingEnabled:</b>
      * true</p> </li> <li> <p> <b>CheckpointInterval:</b> 60000</p> </li> <li> <p>
-     * <b>MinPauseBetweenCheckpoints:</b> 5000</p> </li> </ul> </note>
+     * <b>MinPauseBetweenCheckpoints:</b> 5000</p> </li> </ul> 
      */
     inline void SetConfigurationType(ConfigurationType&& value) { m_configurationTypeHasBeenSet = true; m_configurationType = std::move(value); }
 
@@ -100,11 +100,11 @@ namespace Model
      * checkpointing behavior. You must set this property to <code>CUSTOM</code> in
      * order to set the <code>CheckpointingEnabled</code>,
      * <code>CheckpointInterval</code>, or <code>MinPauseBetweenCheckpoints</code>
-     * parameters.</p> <note> <p>If this value is set to <code>DEFAULT</code>, the
+     * parameters.</p>  <p>If this value is set to <code>DEFAULT</code>, the
      * application will use the following values, even if they are set to other values
      * using APIs or application code:</p> <ul> <li> <p> <b>CheckpointingEnabled:</b>
      * true</p> </li> <li> <p> <b>CheckpointInterval:</b> 60000</p> </li> <li> <p>
-     * <b>MinPauseBetweenCheckpoints:</b> 5000</p> </li> </ul> </note>
+     * <b>MinPauseBetweenCheckpoints:</b> 5000</p> </li> </ul> 
      */
     inline CheckpointConfiguration& WithConfigurationType(const ConfigurationType& value) { SetConfigurationType(value); return *this;}
 
@@ -113,89 +113,89 @@ namespace Model
      * checkpointing behavior. You must set this property to <code>CUSTOM</code> in
      * order to set the <code>CheckpointingEnabled</code>,
      * <code>CheckpointInterval</code>, or <code>MinPauseBetweenCheckpoints</code>
-     * parameters.</p> <note> <p>If this value is set to <code>DEFAULT</code>, the
+     * parameters.</p>  <p>If this value is set to <code>DEFAULT</code>, the
      * application will use the following values, even if they are set to other values
      * using APIs or application code:</p> <ul> <li> <p> <b>CheckpointingEnabled:</b>
      * true</p> </li> <li> <p> <b>CheckpointInterval:</b> 60000</p> </li> <li> <p>
-     * <b>MinPauseBetweenCheckpoints:</b> 5000</p> </li> </ul> </note>
+     * <b>MinPauseBetweenCheckpoints:</b> 5000</p> </li> </ul> 
      */
     inline CheckpointConfiguration& WithConfigurationType(ConfigurationType&& value) { SetConfigurationType(std::move(value)); return *this;}
 
 
     /**
      * <p>Describes whether checkpointing is enabled for a Java-based Kinesis Data
-     * Analytics application.</p> <note> <p>If
+     * Analytics application.</p>  <p>If
      * <code>CheckpointConfiguration.ConfigurationType</code> is <code>DEFAULT</code>,
      * the application will use a <code>CheckpointingEnabled</code> value of
      * <code>true</code>, even if this value is set to another value using this API or
-     * in application code.</p> </note>
+     * in application code.</p> 
      */
     inline bool GetCheckpointingEnabled() const{ return m_checkpointingEnabled; }
 
     /**
      * <p>Describes whether checkpointing is enabled for a Java-based Kinesis Data
-     * Analytics application.</p> <note> <p>If
+     * Analytics application.</p>  <p>If
      * <code>CheckpointConfiguration.ConfigurationType</code> is <code>DEFAULT</code>,
      * the application will use a <code>CheckpointingEnabled</code> value of
      * <code>true</code>, even if this value is set to another value using this API or
-     * in application code.</p> </note>
+     * in application code.</p> 
      */
     inline bool CheckpointingEnabledHasBeenSet() const { return m_checkpointingEnabledHasBeenSet; }
 
     /**
      * <p>Describes whether checkpointing is enabled for a Java-based Kinesis Data
-     * Analytics application.</p> <note> <p>If
+     * Analytics application.</p>  <p>If
      * <code>CheckpointConfiguration.ConfigurationType</code> is <code>DEFAULT</code>,
      * the application will use a <code>CheckpointingEnabled</code> value of
      * <code>true</code>, even if this value is set to another value using this API or
-     * in application code.</p> </note>
+     * in application code.</p> 
      */
     inline void SetCheckpointingEnabled(bool value) { m_checkpointingEnabledHasBeenSet = true; m_checkpointingEnabled = value; }
 
     /**
      * <p>Describes whether checkpointing is enabled for a Java-based Kinesis Data
-     * Analytics application.</p> <note> <p>If
+     * Analytics application.</p>  <p>If
      * <code>CheckpointConfiguration.ConfigurationType</code> is <code>DEFAULT</code>,
      * the application will use a <code>CheckpointingEnabled</code> value of
      * <code>true</code>, even if this value is set to another value using this API or
-     * in application code.</p> </note>
+     * in application code.</p> 
      */
     inline CheckpointConfiguration& WithCheckpointingEnabled(bool value) { SetCheckpointingEnabled(value); return *this;}
 
 
     /**
      * <p>Describes the interval in milliseconds between checkpoint operations. </p>
-     * <note> <p>If <code>CheckpointConfiguration.ConfigurationType</code> is
+     *  <p>If <code>CheckpointConfiguration.ConfigurationType</code> is
      * <code>DEFAULT</code>, the application will use a <code>CheckpointInterval</code>
      * vaue of 60000, even if this value is set to another value using this API or in
-     * application code.</p> </note>
+     * application code.</p> 
      */
     inline long long GetCheckpointInterval() const{ return m_checkpointInterval; }
 
     /**
      * <p>Describes the interval in milliseconds between checkpoint operations. </p>
-     * <note> <p>If <code>CheckpointConfiguration.ConfigurationType</code> is
+     *  <p>If <code>CheckpointConfiguration.ConfigurationType</code> is
      * <code>DEFAULT</code>, the application will use a <code>CheckpointInterval</code>
      * vaue of 60000, even if this value is set to another value using this API or in
-     * application code.</p> </note>
+     * application code.</p> 
      */
     inline bool CheckpointIntervalHasBeenSet() const { return m_checkpointIntervalHasBeenSet; }
 
     /**
      * <p>Describes the interval in milliseconds between checkpoint operations. </p>
-     * <note> <p>If <code>CheckpointConfiguration.ConfigurationType</code> is
+     *  <p>If <code>CheckpointConfiguration.ConfigurationType</code> is
      * <code>DEFAULT</code>, the application will use a <code>CheckpointInterval</code>
      * vaue of 60000, even if this value is set to another value using this API or in
-     * application code.</p> </note>
+     * application code.</p> 
      */
     inline void SetCheckpointInterval(long long value) { m_checkpointIntervalHasBeenSet = true; m_checkpointInterval = value; }
 
     /**
      * <p>Describes the interval in milliseconds between checkpoint operations. </p>
-     * <note> <p>If <code>CheckpointConfiguration.ConfigurationType</code> is
+     *  <p>If <code>CheckpointConfiguration.ConfigurationType</code> is
      * <code>DEFAULT</code>, the application will use a <code>CheckpointInterval</code>
      * vaue of 60000, even if this value is set to another value using this API or in
-     * application code.</p> </note>
+     * application code.</p> 
      */
     inline CheckpointConfiguration& WithCheckpointInterval(long long value) { SetCheckpointInterval(value); return *this;}
 
@@ -208,11 +208,11 @@ namespace Model
      * href="https://ci.apache.org/projects/flink/flink-docs-stable/ops/state/large_state_tuning.html#tuning-checkpointing">
      * Tuning Checkpointing</a> in the <a
      * href="https://ci.apache.org/projects/flink/flink-docs-release-1.6/">Apache Flink
-     * Documentation</a>.</p> <note> <p>If
+     * Documentation</a>.</p>  <p>If
      * <code>CheckpointConfiguration.ConfigurationType</code> is <code>DEFAULT</code>,
      * the application will use a <code>MinPauseBetweenCheckpoints</code> value of
      * 5000, even if this value is set using this API or in application code.</p>
-     * </note>
+     * 
      */
     inline long long GetMinPauseBetweenCheckpoints() const{ return m_minPauseBetweenCheckpoints; }
 
@@ -224,11 +224,11 @@ namespace Model
      * href="https://ci.apache.org/projects/flink/flink-docs-stable/ops/state/large_state_tuning.html#tuning-checkpointing">
      * Tuning Checkpointing</a> in the <a
      * href="https://ci.apache.org/projects/flink/flink-docs-release-1.6/">Apache Flink
-     * Documentation</a>.</p> <note> <p>If
+     * Documentation</a>.</p>  <p>If
      * <code>CheckpointConfiguration.ConfigurationType</code> is <code>DEFAULT</code>,
      * the application will use a <code>MinPauseBetweenCheckpoints</code> value of
      * 5000, even if this value is set using this API or in application code.</p>
-     * </note>
+     * 
      */
     inline bool MinPauseBetweenCheckpointsHasBeenSet() const { return m_minPauseBetweenCheckpointsHasBeenSet; }
 
@@ -240,11 +240,11 @@ namespace Model
      * href="https://ci.apache.org/projects/flink/flink-docs-stable/ops/state/large_state_tuning.html#tuning-checkpointing">
      * Tuning Checkpointing</a> in the <a
      * href="https://ci.apache.org/projects/flink/flink-docs-release-1.6/">Apache Flink
-     * Documentation</a>.</p> <note> <p>If
+     * Documentation</a>.</p>  <p>If
      * <code>CheckpointConfiguration.ConfigurationType</code> is <code>DEFAULT</code>,
      * the application will use a <code>MinPauseBetweenCheckpoints</code> value of
      * 5000, even if this value is set using this API or in application code.</p>
-     * </note>
+     * 
      */
     inline void SetMinPauseBetweenCheckpoints(long long value) { m_minPauseBetweenCheckpointsHasBeenSet = true; m_minPauseBetweenCheckpoints = value; }
 
@@ -256,11 +256,11 @@ namespace Model
      * href="https://ci.apache.org/projects/flink/flink-docs-stable/ops/state/large_state_tuning.html#tuning-checkpointing">
      * Tuning Checkpointing</a> in the <a
      * href="https://ci.apache.org/projects/flink/flink-docs-release-1.6/">Apache Flink
-     * Documentation</a>.</p> <note> <p>If
+     * Documentation</a>.</p>  <p>If
      * <code>CheckpointConfiguration.ConfigurationType</code> is <code>DEFAULT</code>,
      * the application will use a <code>MinPauseBetweenCheckpoints</code> value of
      * 5000, even if this value is set using this API or in application code.</p>
-     * </note>
+     * 
      */
     inline CheckpointConfiguration& WithMinPauseBetweenCheckpoints(long long value) { SetMinPauseBetweenCheckpoints(value); return *this;}
 

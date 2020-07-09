@@ -1475,12 +1475,12 @@ namespace Model
      * Authenticating Requests: Using Query Parameters (AWS Signature Version 4)</a>
      * and <a
      * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">
-     * Signature Version 4 Signing Process</a>.</p> <note> <p>If you are using an AWS
+     * Signature Version 4 Signing Process</a>.</p>  <p>If you are using an AWS
      * SDK tool or the AWS CLI, you can specify <code>SourceRegion</code> (or
      * <code>--source-region</code> for the AWS CLI) instead of specifying
      * <code>PreSignedUrl</code> manually. Specifying <code>SourceRegion</code>
      * autogenerates a pre-signed URL that is a valid request for the operation that
-     * can be executed in the source AWS Region.</p> </note>
+     * can be executed in the source AWS Region.</p> 
      */
     inline const Aws::String& GetPreSignedUrl() const{ return m_preSignedUrl; }
 
@@ -1511,12 +1511,12 @@ namespace Model
      * Authenticating Requests: Using Query Parameters (AWS Signature Version 4)</a>
      * and <a
      * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">
-     * Signature Version 4 Signing Process</a>.</p> <note> <p>If you are using an AWS
+     * Signature Version 4 Signing Process</a>.</p>  <p>If you are using an AWS
      * SDK tool or the AWS CLI, you can specify <code>SourceRegion</code> (or
      * <code>--source-region</code> for the AWS CLI) instead of specifying
      * <code>PreSignedUrl</code> manually. Specifying <code>SourceRegion</code>
      * autogenerates a pre-signed URL that is a valid request for the operation that
-     * can be executed in the source AWS Region.</p> </note>
+     * can be executed in the source AWS Region.</p> 
      */
     inline bool PreSignedUrlHasBeenSet() const { return m_preSignedUrlHasBeenSet; }
 
@@ -1547,12 +1547,12 @@ namespace Model
      * Authenticating Requests: Using Query Parameters (AWS Signature Version 4)</a>
      * and <a
      * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">
-     * Signature Version 4 Signing Process</a>.</p> <note> <p>If you are using an AWS
+     * Signature Version 4 Signing Process</a>.</p>  <p>If you are using an AWS
      * SDK tool or the AWS CLI, you can specify <code>SourceRegion</code> (or
      * <code>--source-region</code> for the AWS CLI) instead of specifying
      * <code>PreSignedUrl</code> manually. Specifying <code>SourceRegion</code>
      * autogenerates a pre-signed URL that is a valid request for the operation that
-     * can be executed in the source AWS Region.</p> </note>
+     * can be executed in the source AWS Region.</p> 
      */
     inline void SetPreSignedUrl(const Aws::String& value) { m_preSignedUrlHasBeenSet = true; m_preSignedUrl = value; }
 
@@ -1583,12 +1583,12 @@ namespace Model
      * Authenticating Requests: Using Query Parameters (AWS Signature Version 4)</a>
      * and <a
      * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">
-     * Signature Version 4 Signing Process</a>.</p> <note> <p>If you are using an AWS
+     * Signature Version 4 Signing Process</a>.</p>  <p>If you are using an AWS
      * SDK tool or the AWS CLI, you can specify <code>SourceRegion</code> (or
      * <code>--source-region</code> for the AWS CLI) instead of specifying
      * <code>PreSignedUrl</code> manually. Specifying <code>SourceRegion</code>
      * autogenerates a pre-signed URL that is a valid request for the operation that
-     * can be executed in the source AWS Region.</p> </note>
+     * can be executed in the source AWS Region.</p> 
      */
     inline void SetPreSignedUrl(Aws::String&& value) { m_preSignedUrlHasBeenSet = true; m_preSignedUrl = std::move(value); }
 
@@ -1619,12 +1619,12 @@ namespace Model
      * Authenticating Requests: Using Query Parameters (AWS Signature Version 4)</a>
      * and <a
      * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">
-     * Signature Version 4 Signing Process</a>.</p> <note> <p>If you are using an AWS
+     * Signature Version 4 Signing Process</a>.</p>  <p>If you are using an AWS
      * SDK tool or the AWS CLI, you can specify <code>SourceRegion</code> (or
      * <code>--source-region</code> for the AWS CLI) instead of specifying
      * <code>PreSignedUrl</code> manually. Specifying <code>SourceRegion</code>
      * autogenerates a pre-signed URL that is a valid request for the operation that
-     * can be executed in the source AWS Region.</p> </note>
+     * can be executed in the source AWS Region.</p> 
      */
     inline void SetPreSignedUrl(const char* value) { m_preSignedUrlHasBeenSet = true; m_preSignedUrl.assign(value); }
 
@@ -1655,12 +1655,12 @@ namespace Model
      * Authenticating Requests: Using Query Parameters (AWS Signature Version 4)</a>
      * and <a
      * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">
-     * Signature Version 4 Signing Process</a>.</p> <note> <p>If you are using an AWS
+     * Signature Version 4 Signing Process</a>.</p>  <p>If you are using an AWS
      * SDK tool or the AWS CLI, you can specify <code>SourceRegion</code> (or
      * <code>--source-region</code> for the AWS CLI) instead of specifying
      * <code>PreSignedUrl</code> manually. Specifying <code>SourceRegion</code>
      * autogenerates a pre-signed URL that is a valid request for the operation that
-     * can be executed in the source AWS Region.</p> </note>
+     * can be executed in the source AWS Region.</p> 
      */
     inline CreateDBClusterRequest& WithPreSignedUrl(const Aws::String& value) { SetPreSignedUrl(value); return *this;}
 
@@ -1691,12 +1691,12 @@ namespace Model
      * Authenticating Requests: Using Query Parameters (AWS Signature Version 4)</a>
      * and <a
      * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">
-     * Signature Version 4 Signing Process</a>.</p> <note> <p>If you are using an AWS
+     * Signature Version 4 Signing Process</a>.</p>  <p>If you are using an AWS
      * SDK tool or the AWS CLI, you can specify <code>SourceRegion</code> (or
      * <code>--source-region</code> for the AWS CLI) instead of specifying
      * <code>PreSignedUrl</code> manually. Specifying <code>SourceRegion</code>
      * autogenerates a pre-signed URL that is a valid request for the operation that
-     * can be executed in the source AWS Region.</p> </note>
+     * can be executed in the source AWS Region.</p> 
      */
     inline CreateDBClusterRequest& WithPreSignedUrl(Aws::String&& value) { SetPreSignedUrl(std::move(value)); return *this;}
 
@@ -1727,12 +1727,12 @@ namespace Model
      * Authenticating Requests: Using Query Parameters (AWS Signature Version 4)</a>
      * and <a
      * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">
-     * Signature Version 4 Signing Process</a>.</p> <note> <p>If you are using an AWS
+     * Signature Version 4 Signing Process</a>.</p>  <p>If you are using an AWS
      * SDK tool or the AWS CLI, you can specify <code>SourceRegion</code> (or
      * <code>--source-region</code> for the AWS CLI) instead of specifying
      * <code>PreSignedUrl</code> manually. Specifying <code>SourceRegion</code>
      * autogenerates a pre-signed URL that is a valid request for the operation that
-     * can be executed in the source AWS Region.</p> </note>
+     * can be executed in the source AWS Region.</p> 
      */
     inline CreateDBClusterRequest& WithPreSignedUrl(const char* value) { SetPreSignedUrl(value); return *this;}
 
@@ -1776,8 +1776,8 @@ namespace Model
 
     /**
      * <p>The target backtrack window, in seconds. To disable backtracking, set this
-     * value to 0. </p> <note> <p>Currently, Backtrack is only supported for Aurora
-     * MySQL DB clusters.</p> </note> <p>Default: 0</p> <p>Constraints:</p> <ul> <li>
+     * value to 0. </p>  <p>Currently, Backtrack is only supported for Aurora
+     * MySQL DB clusters.</p>  <p>Default: 0</p> <p>Constraints:</p> <ul> <li>
      * <p>If specified, this value must be set to a number from 0 to 259,200 (72
      * hours).</p> </li> </ul>
      */
@@ -1785,8 +1785,8 @@ namespace Model
 
     /**
      * <p>The target backtrack window, in seconds. To disable backtracking, set this
-     * value to 0. </p> <note> <p>Currently, Backtrack is only supported for Aurora
-     * MySQL DB clusters.</p> </note> <p>Default: 0</p> <p>Constraints:</p> <ul> <li>
+     * value to 0. </p>  <p>Currently, Backtrack is only supported for Aurora
+     * MySQL DB clusters.</p>  <p>Default: 0</p> <p>Constraints:</p> <ul> <li>
      * <p>If specified, this value must be set to a number from 0 to 259,200 (72
      * hours).</p> </li> </ul>
      */
@@ -1794,8 +1794,8 @@ namespace Model
 
     /**
      * <p>The target backtrack window, in seconds. To disable backtracking, set this
-     * value to 0. </p> <note> <p>Currently, Backtrack is only supported for Aurora
-     * MySQL DB clusters.</p> </note> <p>Default: 0</p> <p>Constraints:</p> <ul> <li>
+     * value to 0. </p>  <p>Currently, Backtrack is only supported for Aurora
+     * MySQL DB clusters.</p>  <p>Default: 0</p> <p>Constraints:</p> <ul> <li>
      * <p>If specified, this value must be set to a number from 0 to 259,200 (72
      * hours).</p> </li> </ul>
      */
@@ -1803,8 +1803,8 @@ namespace Model
 
     /**
      * <p>The target backtrack window, in seconds. To disable backtracking, set this
-     * value to 0. </p> <note> <p>Currently, Backtrack is only supported for Aurora
-     * MySQL DB clusters.</p> </note> <p>Default: 0</p> <p>Constraints:</p> <ul> <li>
+     * value to 0. </p>  <p>Currently, Backtrack is only supported for Aurora
+     * MySQL DB clusters.</p>  <p>Default: 0</p> <p>Constraints:</p> <ul> <li>
      * <p>If specified, this value must be set to a number from 0 to 259,200 (72
      * hours).</p> </li> </ul>
      */
@@ -1905,10 +1905,10 @@ namespace Model
     /**
      * <p>The DB engine mode of the DB cluster, either <code>provisioned</code>,
      * <code>serverless</code>, <code>parallelquery</code>, <code>global</code>, or
-     * <code>multimaster</code>.</p> <note> <p> <code>global</code> engine mode only
+     * <code>multimaster</code>.</p>  <p> <code>global</code> engine mode only
      * applies for global database clusters created with Aurora MySQL version 5.6.10a.
      * For higher Aurora MySQL versions, the clusters in a global database use
-     * <code>provisioned</code> engine mode. </p> </note> <p>Limitations and
+     * <code>provisioned</code> engine mode. </p>  <p>Limitations and
      * requirements apply to some DB engine modes. For more information, see the
      * following sections in the <i>Amazon Aurora User Guide</i>:</p> <ul> <li> <p> <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html#aurora-serverless.limitations">
@@ -1925,10 +1925,10 @@ namespace Model
     /**
      * <p>The DB engine mode of the DB cluster, either <code>provisioned</code>,
      * <code>serverless</code>, <code>parallelquery</code>, <code>global</code>, or
-     * <code>multimaster</code>.</p> <note> <p> <code>global</code> engine mode only
+     * <code>multimaster</code>.</p>  <p> <code>global</code> engine mode only
      * applies for global database clusters created with Aurora MySQL version 5.6.10a.
      * For higher Aurora MySQL versions, the clusters in a global database use
-     * <code>provisioned</code> engine mode. </p> </note> <p>Limitations and
+     * <code>provisioned</code> engine mode. </p>  <p>Limitations and
      * requirements apply to some DB engine modes. For more information, see the
      * following sections in the <i>Amazon Aurora User Guide</i>:</p> <ul> <li> <p> <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html#aurora-serverless.limitations">
@@ -1945,10 +1945,10 @@ namespace Model
     /**
      * <p>The DB engine mode of the DB cluster, either <code>provisioned</code>,
      * <code>serverless</code>, <code>parallelquery</code>, <code>global</code>, or
-     * <code>multimaster</code>.</p> <note> <p> <code>global</code> engine mode only
+     * <code>multimaster</code>.</p>  <p> <code>global</code> engine mode only
      * applies for global database clusters created with Aurora MySQL version 5.6.10a.
      * For higher Aurora MySQL versions, the clusters in a global database use
-     * <code>provisioned</code> engine mode. </p> </note> <p>Limitations and
+     * <code>provisioned</code> engine mode. </p>  <p>Limitations and
      * requirements apply to some DB engine modes. For more information, see the
      * following sections in the <i>Amazon Aurora User Guide</i>:</p> <ul> <li> <p> <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html#aurora-serverless.limitations">
@@ -1965,10 +1965,10 @@ namespace Model
     /**
      * <p>The DB engine mode of the DB cluster, either <code>provisioned</code>,
      * <code>serverless</code>, <code>parallelquery</code>, <code>global</code>, or
-     * <code>multimaster</code>.</p> <note> <p> <code>global</code> engine mode only
+     * <code>multimaster</code>.</p>  <p> <code>global</code> engine mode only
      * applies for global database clusters created with Aurora MySQL version 5.6.10a.
      * For higher Aurora MySQL versions, the clusters in a global database use
-     * <code>provisioned</code> engine mode. </p> </note> <p>Limitations and
+     * <code>provisioned</code> engine mode. </p>  <p>Limitations and
      * requirements apply to some DB engine modes. For more information, see the
      * following sections in the <i>Amazon Aurora User Guide</i>:</p> <ul> <li> <p> <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html#aurora-serverless.limitations">
@@ -1985,10 +1985,10 @@ namespace Model
     /**
      * <p>The DB engine mode of the DB cluster, either <code>provisioned</code>,
      * <code>serverless</code>, <code>parallelquery</code>, <code>global</code>, or
-     * <code>multimaster</code>.</p> <note> <p> <code>global</code> engine mode only
+     * <code>multimaster</code>.</p>  <p> <code>global</code> engine mode only
      * applies for global database clusters created with Aurora MySQL version 5.6.10a.
      * For higher Aurora MySQL versions, the clusters in a global database use
-     * <code>provisioned</code> engine mode. </p> </note> <p>Limitations and
+     * <code>provisioned</code> engine mode. </p>  <p>Limitations and
      * requirements apply to some DB engine modes. For more information, see the
      * following sections in the <i>Amazon Aurora User Guide</i>:</p> <ul> <li> <p> <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html#aurora-serverless.limitations">
@@ -2005,10 +2005,10 @@ namespace Model
     /**
      * <p>The DB engine mode of the DB cluster, either <code>provisioned</code>,
      * <code>serverless</code>, <code>parallelquery</code>, <code>global</code>, or
-     * <code>multimaster</code>.</p> <note> <p> <code>global</code> engine mode only
+     * <code>multimaster</code>.</p>  <p> <code>global</code> engine mode only
      * applies for global database clusters created with Aurora MySQL version 5.6.10a.
      * For higher Aurora MySQL versions, the clusters in a global database use
-     * <code>provisioned</code> engine mode. </p> </note> <p>Limitations and
+     * <code>provisioned</code> engine mode. </p>  <p>Limitations and
      * requirements apply to some DB engine modes. For more information, see the
      * following sections in the <i>Amazon Aurora User Guide</i>:</p> <ul> <li> <p> <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html#aurora-serverless.limitations">
@@ -2025,10 +2025,10 @@ namespace Model
     /**
      * <p>The DB engine mode of the DB cluster, either <code>provisioned</code>,
      * <code>serverless</code>, <code>parallelquery</code>, <code>global</code>, or
-     * <code>multimaster</code>.</p> <note> <p> <code>global</code> engine mode only
+     * <code>multimaster</code>.</p>  <p> <code>global</code> engine mode only
      * applies for global database clusters created with Aurora MySQL version 5.6.10a.
      * For higher Aurora MySQL versions, the clusters in a global database use
-     * <code>provisioned</code> engine mode. </p> </note> <p>Limitations and
+     * <code>provisioned</code> engine mode. </p>  <p>Limitations and
      * requirements apply to some DB engine modes. For more information, see the
      * following sections in the <i>Amazon Aurora User Guide</i>:</p> <ul> <li> <p> <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html#aurora-serverless.limitations">
@@ -2045,10 +2045,10 @@ namespace Model
     /**
      * <p>The DB engine mode of the DB cluster, either <code>provisioned</code>,
      * <code>serverless</code>, <code>parallelquery</code>, <code>global</code>, or
-     * <code>multimaster</code>.</p> <note> <p> <code>global</code> engine mode only
+     * <code>multimaster</code>.</p>  <p> <code>global</code> engine mode only
      * applies for global database clusters created with Aurora MySQL version 5.6.10a.
      * For higher Aurora MySQL versions, the clusters in a global database use
-     * <code>provisioned</code> engine mode. </p> </note> <p>Limitations and
+     * <code>provisioned</code> engine mode. </p>  <p>Limitations and
      * requirements apply to some DB engine modes. For more information, see the
      * following sections in the <i>Amazon Aurora User Guide</i>:</p> <ul> <li> <p> <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html#aurora-serverless.limitations">

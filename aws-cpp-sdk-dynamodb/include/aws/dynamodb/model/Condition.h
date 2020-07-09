@@ -203,19 +203,19 @@ namespace Model
      * does not equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not
      * compare to <code>{"NS":["6", "2", "1"]}</code>.</p> <p/> </li> <li> <p>
      * <code>NOT_NULL</code> : The attribute exists. <code>NOT_NULL</code> is supported
-     * for all data types, including lists and maps.</p> <note> <p>This operator tests
+     * for all data types, including lists and maps.</p>  <p>This operator tests
      * for the existence of an attribute, not its data type. If the data type of
      * attribute "<code>a</code>" is null, and you evaluate it using
      * <code>NOT_NULL</code>, the result is a Boolean <code>true</code>. This result is
      * because the attribute "<code>a</code>" exists; its data type is not relevant to
-     * the <code>NOT_NULL</code> comparison operator.</p> </note> </li> <li> <p>
+     * the <code>NOT_NULL</code> comparison operator.</p>  </li> <li> <p>
      * <code>NULL</code> : The attribute does not exist. <code>NULL</code> is supported
-     * for all data types, including lists and maps.</p> <note> <p>This operator tests
+     * for all data types, including lists and maps.</p>  <p>This operator tests
      * for the nonexistence of an attribute, not its data type. If the data type of
      * attribute "<code>a</code>" is null, and you evaluate it using <code>NULL</code>,
      * the result is a Boolean <code>false</code>. This is because the attribute
      * "<code>a</code>" exists; its data type is not relevant to the <code>NULL</code>
-     * comparison operator.</p> </note> </li> <li> <p> <code>CONTAINS</code> : Checks
+     * comparison operator.</p>  </li> <li> <p> <code>CONTAINS</code> : Checks
      * for a subsequence, or value in a set.</p> <p> <code>AttributeValueList</code>
      * can contain only one <code>AttributeValue</code> element of type String, Number,
      * or Binary (not a set type). If the target attribute of the comparison is of type
@@ -314,19 +314,19 @@ namespace Model
      * does not equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not
      * compare to <code>{"NS":["6", "2", "1"]}</code>.</p> <p/> </li> <li> <p>
      * <code>NOT_NULL</code> : The attribute exists. <code>NOT_NULL</code> is supported
-     * for all data types, including lists and maps.</p> <note> <p>This operator tests
+     * for all data types, including lists and maps.</p>  <p>This operator tests
      * for the existence of an attribute, not its data type. If the data type of
      * attribute "<code>a</code>" is null, and you evaluate it using
      * <code>NOT_NULL</code>, the result is a Boolean <code>true</code>. This result is
      * because the attribute "<code>a</code>" exists; its data type is not relevant to
-     * the <code>NOT_NULL</code> comparison operator.</p> </note> </li> <li> <p>
+     * the <code>NOT_NULL</code> comparison operator.</p>  </li> <li> <p>
      * <code>NULL</code> : The attribute does not exist. <code>NULL</code> is supported
-     * for all data types, including lists and maps.</p> <note> <p>This operator tests
+     * for all data types, including lists and maps.</p>  <p>This operator tests
      * for the nonexistence of an attribute, not its data type. If the data type of
      * attribute "<code>a</code>" is null, and you evaluate it using <code>NULL</code>,
      * the result is a Boolean <code>false</code>. This is because the attribute
      * "<code>a</code>" exists; its data type is not relevant to the <code>NULL</code>
-     * comparison operator.</p> </note> </li> <li> <p> <code>CONTAINS</code> : Checks
+     * comparison operator.</p>  </li> <li> <p> <code>CONTAINS</code> : Checks
      * for a subsequence, or value in a set.</p> <p> <code>AttributeValueList</code>
      * can contain only one <code>AttributeValue</code> element of type String, Number,
      * or Binary (not a set type). If the target attribute of the comparison is of type
@@ -425,19 +425,19 @@ namespace Model
      * does not equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not
      * compare to <code>{"NS":["6", "2", "1"]}</code>.</p> <p/> </li> <li> <p>
      * <code>NOT_NULL</code> : The attribute exists. <code>NOT_NULL</code> is supported
-     * for all data types, including lists and maps.</p> <note> <p>This operator tests
+     * for all data types, including lists and maps.</p>  <p>This operator tests
      * for the existence of an attribute, not its data type. If the data type of
      * attribute "<code>a</code>" is null, and you evaluate it using
      * <code>NOT_NULL</code>, the result is a Boolean <code>true</code>. This result is
      * because the attribute "<code>a</code>" exists; its data type is not relevant to
-     * the <code>NOT_NULL</code> comparison operator.</p> </note> </li> <li> <p>
+     * the <code>NOT_NULL</code> comparison operator.</p>  </li> <li> <p>
      * <code>NULL</code> : The attribute does not exist. <code>NULL</code> is supported
-     * for all data types, including lists and maps.</p> <note> <p>This operator tests
+     * for all data types, including lists and maps.</p>  <p>This operator tests
      * for the nonexistence of an attribute, not its data type. If the data type of
      * attribute "<code>a</code>" is null, and you evaluate it using <code>NULL</code>,
      * the result is a Boolean <code>false</code>. This is because the attribute
      * "<code>a</code>" exists; its data type is not relevant to the <code>NULL</code>
-     * comparison operator.</p> </note> </li> <li> <p> <code>CONTAINS</code> : Checks
+     * comparison operator.</p>  </li> <li> <p> <code>CONTAINS</code> : Checks
      * for a subsequence, or value in a set.</p> <p> <code>AttributeValueList</code>
      * can contain only one <code>AttributeValue</code> element of type String, Number,
      * or Binary (not a set type). If the target attribute of the comparison is of type
@@ -536,19 +536,19 @@ namespace Model
      * does not equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not
      * compare to <code>{"NS":["6", "2", "1"]}</code>.</p> <p/> </li> <li> <p>
      * <code>NOT_NULL</code> : The attribute exists. <code>NOT_NULL</code> is supported
-     * for all data types, including lists and maps.</p> <note> <p>This operator tests
+     * for all data types, including lists and maps.</p>  <p>This operator tests
      * for the existence of an attribute, not its data type. If the data type of
      * attribute "<code>a</code>" is null, and you evaluate it using
      * <code>NOT_NULL</code>, the result is a Boolean <code>true</code>. This result is
      * because the attribute "<code>a</code>" exists; its data type is not relevant to
-     * the <code>NOT_NULL</code> comparison operator.</p> </note> </li> <li> <p>
+     * the <code>NOT_NULL</code> comparison operator.</p>  </li> <li> <p>
      * <code>NULL</code> : The attribute does not exist. <code>NULL</code> is supported
-     * for all data types, including lists and maps.</p> <note> <p>This operator tests
+     * for all data types, including lists and maps.</p>  <p>This operator tests
      * for the nonexistence of an attribute, not its data type. If the data type of
      * attribute "<code>a</code>" is null, and you evaluate it using <code>NULL</code>,
      * the result is a Boolean <code>false</code>. This is because the attribute
      * "<code>a</code>" exists; its data type is not relevant to the <code>NULL</code>
-     * comparison operator.</p> </note> </li> <li> <p> <code>CONTAINS</code> : Checks
+     * comparison operator.</p>  </li> <li> <p> <code>CONTAINS</code> : Checks
      * for a subsequence, or value in a set.</p> <p> <code>AttributeValueList</code>
      * can contain only one <code>AttributeValue</code> element of type String, Number,
      * or Binary (not a set type). If the target attribute of the comparison is of type
@@ -647,19 +647,19 @@ namespace Model
      * does not equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not
      * compare to <code>{"NS":["6", "2", "1"]}</code>.</p> <p/> </li> <li> <p>
      * <code>NOT_NULL</code> : The attribute exists. <code>NOT_NULL</code> is supported
-     * for all data types, including lists and maps.</p> <note> <p>This operator tests
+     * for all data types, including lists and maps.</p>  <p>This operator tests
      * for the existence of an attribute, not its data type. If the data type of
      * attribute "<code>a</code>" is null, and you evaluate it using
      * <code>NOT_NULL</code>, the result is a Boolean <code>true</code>. This result is
      * because the attribute "<code>a</code>" exists; its data type is not relevant to
-     * the <code>NOT_NULL</code> comparison operator.</p> </note> </li> <li> <p>
+     * the <code>NOT_NULL</code> comparison operator.</p>  </li> <li> <p>
      * <code>NULL</code> : The attribute does not exist. <code>NULL</code> is supported
-     * for all data types, including lists and maps.</p> <note> <p>This operator tests
+     * for all data types, including lists and maps.</p>  <p>This operator tests
      * for the nonexistence of an attribute, not its data type. If the data type of
      * attribute "<code>a</code>" is null, and you evaluate it using <code>NULL</code>,
      * the result is a Boolean <code>false</code>. This is because the attribute
      * "<code>a</code>" exists; its data type is not relevant to the <code>NULL</code>
-     * comparison operator.</p> </note> </li> <li> <p> <code>CONTAINS</code> : Checks
+     * comparison operator.</p>  </li> <li> <p> <code>CONTAINS</code> : Checks
      * for a subsequence, or value in a set.</p> <p> <code>AttributeValueList</code>
      * can contain only one <code>AttributeValue</code> element of type String, Number,
      * or Binary (not a set type). If the target attribute of the comparison is of type
@@ -758,19 +758,19 @@ namespace Model
      * does not equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not
      * compare to <code>{"NS":["6", "2", "1"]}</code>.</p> <p/> </li> <li> <p>
      * <code>NOT_NULL</code> : The attribute exists. <code>NOT_NULL</code> is supported
-     * for all data types, including lists and maps.</p> <note> <p>This operator tests
+     * for all data types, including lists and maps.</p>  <p>This operator tests
      * for the existence of an attribute, not its data type. If the data type of
      * attribute "<code>a</code>" is null, and you evaluate it using
      * <code>NOT_NULL</code>, the result is a Boolean <code>true</code>. This result is
      * because the attribute "<code>a</code>" exists; its data type is not relevant to
-     * the <code>NOT_NULL</code> comparison operator.</p> </note> </li> <li> <p>
+     * the <code>NOT_NULL</code> comparison operator.</p>  </li> <li> <p>
      * <code>NULL</code> : The attribute does not exist. <code>NULL</code> is supported
-     * for all data types, including lists and maps.</p> <note> <p>This operator tests
+     * for all data types, including lists and maps.</p>  <p>This operator tests
      * for the nonexistence of an attribute, not its data type. If the data type of
      * attribute "<code>a</code>" is null, and you evaluate it using <code>NULL</code>,
      * the result is a Boolean <code>false</code>. This is because the attribute
      * "<code>a</code>" exists; its data type is not relevant to the <code>NULL</code>
-     * comparison operator.</p> </note> </li> <li> <p> <code>CONTAINS</code> : Checks
+     * comparison operator.</p>  </li> <li> <p> <code>CONTAINS</code> : Checks
      * for a subsequence, or value in a set.</p> <p> <code>AttributeValueList</code>
      * can contain only one <code>AttributeValue</code> element of type String, Number,
      * or Binary (not a set type). If the target attribute of the comparison is of type

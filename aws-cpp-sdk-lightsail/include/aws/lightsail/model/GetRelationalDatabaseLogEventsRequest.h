@@ -239,8 +239,8 @@ namespace Model
      * <p>Parameter to specify if the log should start from head or tail. If
      * <code>true</code> is specified, the log event starts from the head of the log.
      * If <code>false</code> is specified, the log event starts from the tail of the
-     * log.</p> <note> <p>For PostgreSQL, the default value of <code>false</code> is
-     * the only option available.</p> </note>
+     * log.</p>  <p>For PostgreSQL, the default value of <code>false</code> is
+     * the only option available.</p> 
      */
     inline bool GetStartFromHead() const{ return m_startFromHead; }
 
@@ -248,8 +248,8 @@ namespace Model
      * <p>Parameter to specify if the log should start from head or tail. If
      * <code>true</code> is specified, the log event starts from the head of the log.
      * If <code>false</code> is specified, the log event starts from the tail of the
-     * log.</p> <note> <p>For PostgreSQL, the default value of <code>false</code> is
-     * the only option available.</p> </note>
+     * log.</p>  <p>For PostgreSQL, the default value of <code>false</code> is
+     * the only option available.</p> 
      */
     inline bool StartFromHeadHasBeenSet() const { return m_startFromHeadHasBeenSet; }
 
@@ -257,8 +257,8 @@ namespace Model
      * <p>Parameter to specify if the log should start from head or tail. If
      * <code>true</code> is specified, the log event starts from the head of the log.
      * If <code>false</code> is specified, the log event starts from the tail of the
-     * log.</p> <note> <p>For PostgreSQL, the default value of <code>false</code> is
-     * the only option available.</p> </note>
+     * log.</p>  <p>For PostgreSQL, the default value of <code>false</code> is
+     * the only option available.</p> 
      */
     inline void SetStartFromHead(bool value) { m_startFromHeadHasBeenSet = true; m_startFromHead = value; }
 
@@ -266,8 +266,8 @@ namespace Model
      * <p>Parameter to specify if the log should start from head or tail. If
      * <code>true</code> is specified, the log event starts from the head of the log.
      * If <code>false</code> is specified, the log event starts from the tail of the
-     * log.</p> <note> <p>For PostgreSQL, the default value of <code>false</code> is
-     * the only option available.</p> </note>
+     * log.</p>  <p>For PostgreSQL, the default value of <code>false</code> is
+     * the only option available.</p> 
      */
     inline GetRelationalDatabaseLogEventsRequest& WithStartFromHead(bool value) { SetStartFromHead(value); return *this;}
 

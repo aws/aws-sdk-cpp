@@ -35,10 +35,10 @@ namespace Model
    * might not be in a state from which it can be saved. For example, if training has
    * just started, the model might not be ready to save. When saved, this
    * intermediate data is a valid model artifact. You can use it to create a model
-   * with <code>CreateModel</code>.</p> <note> <p>The Neural Topic Model (NTM)
+   * with <code>CreateModel</code>.</p>  <p>The Neural Topic Model (NTM)
    * currently does not support saving intermediate model artifacts. When training
    * NTMs, make sure that the maximum runtime is sufficient for the training job to
-   * complete.</p> </note><p><h3>See Also:</h3>   <a
+   * complete.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StoppingCondition">AWS
    * API Reference</a></p>
    */

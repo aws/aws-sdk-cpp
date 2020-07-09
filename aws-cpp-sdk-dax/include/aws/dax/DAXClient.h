@@ -284,20 +284,20 @@ namespace Model
         virtual void CreateSubnetGroupAsync(const Model::CreateSubnetGroupRequest& request, const CreateSubnetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Removes one or more nodes from a DAX cluster.</p> <note> <p>You cannot use
+         * <p>Removes one or more nodes from a DAX cluster.</p>  <p>You cannot use
          * <code>DecreaseReplicationFactor</code> to remove the last node in a DAX cluster.
          * If you need to do this, use <code>DeleteCluster</code> instead.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/DecreaseReplicationFactor">AWS
          * API Reference</a></p>
          */
         virtual Model::DecreaseReplicationFactorOutcome DecreaseReplicationFactor(const Model::DecreaseReplicationFactorRequest& request) const;
 
         /**
-         * <p>Removes one or more nodes from a DAX cluster.</p> <note> <p>You cannot use
+         * <p>Removes one or more nodes from a DAX cluster.</p>  <p>You cannot use
          * <code>DecreaseReplicationFactor</code> to remove the last node in a DAX cluster.
          * If you need to do this, use <code>DeleteCluster</code> instead.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/DecreaseReplicationFactor">AWS
          * API Reference</a></p>
          *
@@ -306,10 +306,10 @@ namespace Model
         virtual Model::DecreaseReplicationFactorOutcomeCallable DecreaseReplicationFactorCallable(const Model::DecreaseReplicationFactorRequest& request) const;
 
         /**
-         * <p>Removes one or more nodes from a DAX cluster.</p> <note> <p>You cannot use
+         * <p>Removes one or more nodes from a DAX cluster.</p>  <p>You cannot use
          * <code>DecreaseReplicationFactor</code> to remove the last node in a DAX cluster.
          * If you need to do this, use <code>DeleteCluster</code> instead.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/DecreaseReplicationFactor">AWS
          * API Reference</a></p>
          *
@@ -383,16 +383,16 @@ namespace Model
         virtual void DeleteParameterGroupAsync(const Model::DeleteParameterGroupRequest& request, const DeleteParameterGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes a subnet group.</p> <note> <p>You cannot delete a subnet group if it
-         * is associated with any DAX clusters.</p> </note><p><h3>See Also:</h3>   <a
+         * <p>Deletes a subnet group.</p>  <p>You cannot delete a subnet group if it
+         * is associated with any DAX clusters.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/DeleteSubnetGroup">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteSubnetGroupOutcome DeleteSubnetGroup(const Model::DeleteSubnetGroupRequest& request) const;
 
         /**
-         * <p>Deletes a subnet group.</p> <note> <p>You cannot delete a subnet group if it
-         * is associated with any DAX clusters.</p> </note><p><h3>See Also:</h3>   <a
+         * <p>Deletes a subnet group.</p>  <p>You cannot delete a subnet group if it
+         * is associated with any DAX clusters.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/DeleteSubnetGroup">AWS
          * API Reference</a></p>
          *
@@ -401,8 +401,8 @@ namespace Model
         virtual Model::DeleteSubnetGroupOutcomeCallable DeleteSubnetGroupCallable(const Model::DeleteSubnetGroupRequest& request) const;
 
         /**
-         * <p>Deletes a subnet group.</p> <note> <p>You cannot delete a subnet group if it
-         * is associated with any DAX clusters.</p> </note><p><h3>See Also:</h3>   <a
+         * <p>Deletes a subnet group.</p>  <p>You cannot delete a subnet group if it
+         * is associated with any DAX clusters.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/DeleteSubnetGroup">AWS
          * API Reference</a></p>
          *
@@ -675,9 +675,9 @@ namespace Model
 
         /**
          * <p>Reboots a single node of a DAX cluster. The reboot action takes place as soon
-         * as possible. During the reboot, the node status is set to REBOOTING.</p> <note>
+         * as possible. During the reboot, the node status is set to REBOOTING.</p> 
          * <p> <code>RebootNode</code> restarts the DAX engine process and does not remove
-         * the contents of the cache. </p> </note><p><h3>See Also:</h3>   <a
+         * the contents of the cache. </p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/RebootNode">AWS API
          * Reference</a></p>
          */
@@ -685,9 +685,9 @@ namespace Model
 
         /**
          * <p>Reboots a single node of a DAX cluster. The reboot action takes place as soon
-         * as possible. During the reboot, the node status is set to REBOOTING.</p> <note>
+         * as possible. During the reboot, the node status is set to REBOOTING.</p> 
          * <p> <code>RebootNode</code> restarts the DAX engine process and does not remove
-         * the contents of the cache. </p> </note><p><h3>See Also:</h3>   <a
+         * the contents of the cache. </p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/RebootNode">AWS API
          * Reference</a></p>
          *
@@ -697,9 +697,9 @@ namespace Model
 
         /**
          * <p>Reboots a single node of a DAX cluster. The reboot action takes place as soon
-         * as possible. During the reboot, the node status is set to REBOOTING.</p> <note>
+         * as possible. During the reboot, the node status is set to REBOOTING.</p> 
          * <p> <code>RebootNode</code> restarts the DAX engine process and does not remove
-         * the contents of the cache. </p> </note><p><h3>See Also:</h3>   <a
+         * the contents of the cache. </p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/RebootNode">AWS API
          * Reference</a></p>
          *

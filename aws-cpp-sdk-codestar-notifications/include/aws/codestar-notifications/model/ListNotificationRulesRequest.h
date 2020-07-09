@@ -36,65 +36,65 @@ namespace Model
 
     /**
      * <p>The filters to use to return information by service or resource type. For
-     * valid values, see <a>ListNotificationRulesFilter</a>.</p> <note> <p>A filter
+     * valid values, see <a>ListNotificationRulesFilter</a>.</p>  <p>A filter
      * with the same name can appear more than once when used with OR statements.
-     * Filters with different names should be applied with AND statements.</p> </note>
+     * Filters with different names should be applied with AND statements.</p> 
      */
     inline const Aws::Vector<ListNotificationRulesFilter>& GetFilters() const{ return m_filters; }
 
     /**
      * <p>The filters to use to return information by service or resource type. For
-     * valid values, see <a>ListNotificationRulesFilter</a>.</p> <note> <p>A filter
+     * valid values, see <a>ListNotificationRulesFilter</a>.</p>  <p>A filter
      * with the same name can appear more than once when used with OR statements.
-     * Filters with different names should be applied with AND statements.</p> </note>
+     * Filters with different names should be applied with AND statements.</p> 
      */
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
     /**
      * <p>The filters to use to return information by service or resource type. For
-     * valid values, see <a>ListNotificationRulesFilter</a>.</p> <note> <p>A filter
+     * valid values, see <a>ListNotificationRulesFilter</a>.</p>  <p>A filter
      * with the same name can appear more than once when used with OR statements.
-     * Filters with different names should be applied with AND statements.</p> </note>
+     * Filters with different names should be applied with AND statements.</p> 
      */
     inline void SetFilters(const Aws::Vector<ListNotificationRulesFilter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
      * <p>The filters to use to return information by service or resource type. For
-     * valid values, see <a>ListNotificationRulesFilter</a>.</p> <note> <p>A filter
+     * valid values, see <a>ListNotificationRulesFilter</a>.</p>  <p>A filter
      * with the same name can appear more than once when used with OR statements.
-     * Filters with different names should be applied with AND statements.</p> </note>
+     * Filters with different names should be applied with AND statements.</p> 
      */
     inline void SetFilters(Aws::Vector<ListNotificationRulesFilter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
     /**
      * <p>The filters to use to return information by service or resource type. For
-     * valid values, see <a>ListNotificationRulesFilter</a>.</p> <note> <p>A filter
+     * valid values, see <a>ListNotificationRulesFilter</a>.</p>  <p>A filter
      * with the same name can appear more than once when used with OR statements.
-     * Filters with different names should be applied with AND statements.</p> </note>
+     * Filters with different names should be applied with AND statements.</p> 
      */
     inline ListNotificationRulesRequest& WithFilters(const Aws::Vector<ListNotificationRulesFilter>& value) { SetFilters(value); return *this;}
 
     /**
      * <p>The filters to use to return information by service or resource type. For
-     * valid values, see <a>ListNotificationRulesFilter</a>.</p> <note> <p>A filter
+     * valid values, see <a>ListNotificationRulesFilter</a>.</p>  <p>A filter
      * with the same name can appear more than once when used with OR statements.
-     * Filters with different names should be applied with AND statements.</p> </note>
+     * Filters with different names should be applied with AND statements.</p> 
      */
     inline ListNotificationRulesRequest& WithFilters(Aws::Vector<ListNotificationRulesFilter>&& value) { SetFilters(std::move(value)); return *this;}
 
     /**
      * <p>The filters to use to return information by service or resource type. For
-     * valid values, see <a>ListNotificationRulesFilter</a>.</p> <note> <p>A filter
+     * valid values, see <a>ListNotificationRulesFilter</a>.</p>  <p>A filter
      * with the same name can appear more than once when used with OR statements.
-     * Filters with different names should be applied with AND statements.</p> </note>
+     * Filters with different names should be applied with AND statements.</p> 
      */
     inline ListNotificationRulesRequest& AddFilters(const ListNotificationRulesFilter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
     /**
      * <p>The filters to use to return information by service or resource type. For
-     * valid values, see <a>ListNotificationRulesFilter</a>.</p> <note> <p>A filter
+     * valid values, see <a>ListNotificationRulesFilter</a>.</p>  <p>A filter
      * with the same name can appear more than once when used with OR statements.
-     * Filters with different names should be applied with AND statements.</p> </note>
+     * Filters with different names should be applied with AND statements.</p> 
      */
     inline ListNotificationRulesRequest& AddFilters(ListNotificationRulesFilter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 

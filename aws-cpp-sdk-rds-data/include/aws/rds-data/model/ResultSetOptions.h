@@ -43,10 +43,10 @@ namespace Model
      * represented in the response. The value of <code>STRING</code>, the default,
      * specifies that it is converted to a String value. The value of
      * <code>DOUBLE_OR_LONG</code> specifies that it is converted to a Long value if
-     * its scale is 0, or to a Double value otherwise.</p> <important> <p>Conversion to
+     * its scale is 0, or to a Double value otherwise.</p>  <p>Conversion to
      * Double or Long can result in roundoff errors due to precision loss. We recommend
      * converting to String, especially when working with currency values.</p>
-     * </important>
+     * 
      */
     inline const DecimalReturnType& GetDecimalReturnType() const{ return m_decimalReturnType; }
 
@@ -55,10 +55,10 @@ namespace Model
      * represented in the response. The value of <code>STRING</code>, the default,
      * specifies that it is converted to a String value. The value of
      * <code>DOUBLE_OR_LONG</code> specifies that it is converted to a Long value if
-     * its scale is 0, or to a Double value otherwise.</p> <important> <p>Conversion to
+     * its scale is 0, or to a Double value otherwise.</p>  <p>Conversion to
      * Double or Long can result in roundoff errors due to precision loss. We recommend
      * converting to String, especially when working with currency values.</p>
-     * </important>
+     * 
      */
     inline bool DecimalReturnTypeHasBeenSet() const { return m_decimalReturnTypeHasBeenSet; }
 
@@ -67,10 +67,10 @@ namespace Model
      * represented in the response. The value of <code>STRING</code>, the default,
      * specifies that it is converted to a String value. The value of
      * <code>DOUBLE_OR_LONG</code> specifies that it is converted to a Long value if
-     * its scale is 0, or to a Double value otherwise.</p> <important> <p>Conversion to
+     * its scale is 0, or to a Double value otherwise.</p>  <p>Conversion to
      * Double or Long can result in roundoff errors due to precision loss. We recommend
      * converting to String, especially when working with currency values.</p>
-     * </important>
+     * 
      */
     inline void SetDecimalReturnType(const DecimalReturnType& value) { m_decimalReturnTypeHasBeenSet = true; m_decimalReturnType = value; }
 
@@ -79,10 +79,10 @@ namespace Model
      * represented in the response. The value of <code>STRING</code>, the default,
      * specifies that it is converted to a String value. The value of
      * <code>DOUBLE_OR_LONG</code> specifies that it is converted to a Long value if
-     * its scale is 0, or to a Double value otherwise.</p> <important> <p>Conversion to
+     * its scale is 0, or to a Double value otherwise.</p>  <p>Conversion to
      * Double or Long can result in roundoff errors due to precision loss. We recommend
      * converting to String, especially when working with currency values.</p>
-     * </important>
+     * 
      */
     inline void SetDecimalReturnType(DecimalReturnType&& value) { m_decimalReturnTypeHasBeenSet = true; m_decimalReturnType = std::move(value); }
 
@@ -91,10 +91,10 @@ namespace Model
      * represented in the response. The value of <code>STRING</code>, the default,
      * specifies that it is converted to a String value. The value of
      * <code>DOUBLE_OR_LONG</code> specifies that it is converted to a Long value if
-     * its scale is 0, or to a Double value otherwise.</p> <important> <p>Conversion to
+     * its scale is 0, or to a Double value otherwise.</p>  <p>Conversion to
      * Double or Long can result in roundoff errors due to precision loss. We recommend
      * converting to String, especially when working with currency values.</p>
-     * </important>
+     * 
      */
     inline ResultSetOptions& WithDecimalReturnType(const DecimalReturnType& value) { SetDecimalReturnType(value); return *this;}
 
@@ -103,10 +103,10 @@ namespace Model
      * represented in the response. The value of <code>STRING</code>, the default,
      * specifies that it is converted to a String value. The value of
      * <code>DOUBLE_OR_LONG</code> specifies that it is converted to a Long value if
-     * its scale is 0, or to a Double value otherwise.</p> <important> <p>Conversion to
+     * its scale is 0, or to a Double value otherwise.</p>  <p>Conversion to
      * Double or Long can result in roundoff errors due to precision loss. We recommend
      * converting to String, especially when working with currency values.</p>
-     * </important>
+     * 
      */
     inline ResultSetOptions& WithDecimalReturnType(DecimalReturnType&& value) { SetDecimalReturnType(std::move(value)); return *this;}
 

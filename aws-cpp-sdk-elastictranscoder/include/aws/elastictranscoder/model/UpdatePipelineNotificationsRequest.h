@@ -88,9 +88,9 @@ namespace Model
 
     /**
      * <p>The topic ARN for the Amazon Simple Notification Service (Amazon SNS) topic
-     * that you want to notify to report job status.</p> <important> <p>To receive
+     * that you want to notify to report job status.</p>  <p>To receive
      * notifications, you must also subscribe to the new topic in the Amazon SNS
-     * console.</p> </important> <ul> <li> <p> <b>Progressing</b>: The topic ARN for
+     * console.</p>  <ul> <li> <p> <b>Progressing</b>: The topic ARN for
      * the Amazon Simple Notification Service (Amazon SNS) topic that you want to
      * notify when Elastic Transcoder has started to process jobs that are added to
      * this pipeline. This is the ARN that Amazon SNS returned when you created the
@@ -108,9 +108,9 @@ namespace Model
 
     /**
      * <p>The topic ARN for the Amazon Simple Notification Service (Amazon SNS) topic
-     * that you want to notify to report job status.</p> <important> <p>To receive
+     * that you want to notify to report job status.</p>  <p>To receive
      * notifications, you must also subscribe to the new topic in the Amazon SNS
-     * console.</p> </important> <ul> <li> <p> <b>Progressing</b>: The topic ARN for
+     * console.</p>  <ul> <li> <p> <b>Progressing</b>: The topic ARN for
      * the Amazon Simple Notification Service (Amazon SNS) topic that you want to
      * notify when Elastic Transcoder has started to process jobs that are added to
      * this pipeline. This is the ARN that Amazon SNS returned when you created the
@@ -128,9 +128,9 @@ namespace Model
 
     /**
      * <p>The topic ARN for the Amazon Simple Notification Service (Amazon SNS) topic
-     * that you want to notify to report job status.</p> <important> <p>To receive
+     * that you want to notify to report job status.</p>  <p>To receive
      * notifications, you must also subscribe to the new topic in the Amazon SNS
-     * console.</p> </important> <ul> <li> <p> <b>Progressing</b>: The topic ARN for
+     * console.</p>  <ul> <li> <p> <b>Progressing</b>: The topic ARN for
      * the Amazon Simple Notification Service (Amazon SNS) topic that you want to
      * notify when Elastic Transcoder has started to process jobs that are added to
      * this pipeline. This is the ARN that Amazon SNS returned when you created the
@@ -148,9 +148,9 @@ namespace Model
 
     /**
      * <p>The topic ARN for the Amazon Simple Notification Service (Amazon SNS) topic
-     * that you want to notify to report job status.</p> <important> <p>To receive
+     * that you want to notify to report job status.</p>  <p>To receive
      * notifications, you must also subscribe to the new topic in the Amazon SNS
-     * console.</p> </important> <ul> <li> <p> <b>Progressing</b>: The topic ARN for
+     * console.</p>  <ul> <li> <p> <b>Progressing</b>: The topic ARN for
      * the Amazon Simple Notification Service (Amazon SNS) topic that you want to
      * notify when Elastic Transcoder has started to process jobs that are added to
      * this pipeline. This is the ARN that Amazon SNS returned when you created the
@@ -168,9 +168,9 @@ namespace Model
 
     /**
      * <p>The topic ARN for the Amazon Simple Notification Service (Amazon SNS) topic
-     * that you want to notify to report job status.</p> <important> <p>To receive
+     * that you want to notify to report job status.</p>  <p>To receive
      * notifications, you must also subscribe to the new topic in the Amazon SNS
-     * console.</p> </important> <ul> <li> <p> <b>Progressing</b>: The topic ARN for
+     * console.</p>  <ul> <li> <p> <b>Progressing</b>: The topic ARN for
      * the Amazon Simple Notification Service (Amazon SNS) topic that you want to
      * notify when Elastic Transcoder has started to process jobs that are added to
      * this pipeline. This is the ARN that Amazon SNS returned when you created the
@@ -188,9 +188,9 @@ namespace Model
 
     /**
      * <p>The topic ARN for the Amazon Simple Notification Service (Amazon SNS) topic
-     * that you want to notify to report job status.</p> <important> <p>To receive
+     * that you want to notify to report job status.</p>  <p>To receive
      * notifications, you must also subscribe to the new topic in the Amazon SNS
-     * console.</p> </important> <ul> <li> <p> <b>Progressing</b>: The topic ARN for
+     * console.</p>  <ul> <li> <p> <b>Progressing</b>: The topic ARN for
      * the Amazon Simple Notification Service (Amazon SNS) topic that you want to
      * notify when Elastic Transcoder has started to process jobs that are added to
      * this pipeline. This is the ARN that Amazon SNS returned when you created the

@@ -97,83 +97,83 @@ namespace Model
 
 
     /**
-     * <p>The size, in bytes, of the virtual tape that you want to create.</p> <note>
-     * <p>The size must be aligned by gigabyte (1024*1024*1024 bytes).</p> </note>
+     * <p>The size, in bytes, of the virtual tape that you want to create.</p> 
+     * <p>The size must be aligned by gigabyte (1024*1024*1024 bytes).</p> 
      */
     inline long long GetTapeSizeInBytes() const{ return m_tapeSizeInBytes; }
 
     /**
-     * <p>The size, in bytes, of the virtual tape that you want to create.</p> <note>
-     * <p>The size must be aligned by gigabyte (1024*1024*1024 bytes).</p> </note>
+     * <p>The size, in bytes, of the virtual tape that you want to create.</p> 
+     * <p>The size must be aligned by gigabyte (1024*1024*1024 bytes).</p> 
      */
     inline bool TapeSizeInBytesHasBeenSet() const { return m_tapeSizeInBytesHasBeenSet; }
 
     /**
-     * <p>The size, in bytes, of the virtual tape that you want to create.</p> <note>
-     * <p>The size must be aligned by gigabyte (1024*1024*1024 bytes).</p> </note>
+     * <p>The size, in bytes, of the virtual tape that you want to create.</p> 
+     * <p>The size must be aligned by gigabyte (1024*1024*1024 bytes).</p> 
      */
     inline void SetTapeSizeInBytes(long long value) { m_tapeSizeInBytesHasBeenSet = true; m_tapeSizeInBytes = value; }
 
     /**
-     * <p>The size, in bytes, of the virtual tape that you want to create.</p> <note>
-     * <p>The size must be aligned by gigabyte (1024*1024*1024 bytes).</p> </note>
+     * <p>The size, in bytes, of the virtual tape that you want to create.</p> 
+     * <p>The size must be aligned by gigabyte (1024*1024*1024 bytes).</p> 
      */
     inline CreateTapeWithBarcodeRequest& WithTapeSizeInBytes(long long value) { SetTapeSizeInBytes(value); return *this;}
 
 
     /**
-     * <p>The barcode that you want to assign to the tape.</p> <note> <p>Barcodes
+     * <p>The barcode that you want to assign to the tape.</p>  <p>Barcodes
      * cannot be reused. This includes barcodes used for tapes that have been
-     * deleted.</p> </note>
+     * deleted.</p> 
      */
     inline const Aws::String& GetTapeBarcode() const{ return m_tapeBarcode; }
 
     /**
-     * <p>The barcode that you want to assign to the tape.</p> <note> <p>Barcodes
+     * <p>The barcode that you want to assign to the tape.</p>  <p>Barcodes
      * cannot be reused. This includes barcodes used for tapes that have been
-     * deleted.</p> </note>
+     * deleted.</p> 
      */
     inline bool TapeBarcodeHasBeenSet() const { return m_tapeBarcodeHasBeenSet; }
 
     /**
-     * <p>The barcode that you want to assign to the tape.</p> <note> <p>Barcodes
+     * <p>The barcode that you want to assign to the tape.</p>  <p>Barcodes
      * cannot be reused. This includes barcodes used for tapes that have been
-     * deleted.</p> </note>
+     * deleted.</p> 
      */
     inline void SetTapeBarcode(const Aws::String& value) { m_tapeBarcodeHasBeenSet = true; m_tapeBarcode = value; }
 
     /**
-     * <p>The barcode that you want to assign to the tape.</p> <note> <p>Barcodes
+     * <p>The barcode that you want to assign to the tape.</p>  <p>Barcodes
      * cannot be reused. This includes barcodes used for tapes that have been
-     * deleted.</p> </note>
+     * deleted.</p> 
      */
     inline void SetTapeBarcode(Aws::String&& value) { m_tapeBarcodeHasBeenSet = true; m_tapeBarcode = std::move(value); }
 
     /**
-     * <p>The barcode that you want to assign to the tape.</p> <note> <p>Barcodes
+     * <p>The barcode that you want to assign to the tape.</p>  <p>Barcodes
      * cannot be reused. This includes barcodes used for tapes that have been
-     * deleted.</p> </note>
+     * deleted.</p> 
      */
     inline void SetTapeBarcode(const char* value) { m_tapeBarcodeHasBeenSet = true; m_tapeBarcode.assign(value); }
 
     /**
-     * <p>The barcode that you want to assign to the tape.</p> <note> <p>Barcodes
+     * <p>The barcode that you want to assign to the tape.</p>  <p>Barcodes
      * cannot be reused. This includes barcodes used for tapes that have been
-     * deleted.</p> </note>
+     * deleted.</p> 
      */
     inline CreateTapeWithBarcodeRequest& WithTapeBarcode(const Aws::String& value) { SetTapeBarcode(value); return *this;}
 
     /**
-     * <p>The barcode that you want to assign to the tape.</p> <note> <p>Barcodes
+     * <p>The barcode that you want to assign to the tape.</p>  <p>Barcodes
      * cannot be reused. This includes barcodes used for tapes that have been
-     * deleted.</p> </note>
+     * deleted.</p> 
      */
     inline CreateTapeWithBarcodeRequest& WithTapeBarcode(Aws::String&& value) { SetTapeBarcode(std::move(value)); return *this;}
 
     /**
-     * <p>The barcode that you want to assign to the tape.</p> <note> <p>Barcodes
+     * <p>The barcode that you want to assign to the tape.</p>  <p>Barcodes
      * cannot be reused. This includes barcodes used for tapes that have been
-     * deleted.</p> </note>
+     * deleted.</p> 
      */
     inline CreateTapeWithBarcodeRequest& WithTapeBarcode(const char* value) { SetTapeBarcode(value); return *this;}
 
@@ -355,81 +355,81 @@ namespace Model
 
     /**
      * <p>A list of up to 50 tags that can be assigned to a virtual tape that has a
-     * barcode. Each tag is a key-value pair.</p> <note> <p>Valid characters for key
+     * barcode. Each tag is a key-value pair.</p>  <p>Valid characters for key
      * and value are letters, spaces, and numbers representable in UTF-8 format, and
      * the following special characters: + - = . _ : / @. The maximum length of a tag's
      * key is 128 characters, and the maximum length for a tag's value is 256.</p>
-     * </note>
+     * 
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
      * <p>A list of up to 50 tags that can be assigned to a virtual tape that has a
-     * barcode. Each tag is a key-value pair.</p> <note> <p>Valid characters for key
+     * barcode. Each tag is a key-value pair.</p>  <p>Valid characters for key
      * and value are letters, spaces, and numbers representable in UTF-8 format, and
      * the following special characters: + - = . _ : / @. The maximum length of a tag's
      * key is 128 characters, and the maximum length for a tag's value is 256.</p>
-     * </note>
+     * 
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>A list of up to 50 tags that can be assigned to a virtual tape that has a
-     * barcode. Each tag is a key-value pair.</p> <note> <p>Valid characters for key
+     * barcode. Each tag is a key-value pair.</p>  <p>Valid characters for key
      * and value are letters, spaces, and numbers representable in UTF-8 format, and
      * the following special characters: + - = . _ : / @. The maximum length of a tag's
      * key is 128 characters, and the maximum length for a tag's value is 256.</p>
-     * </note>
+     * 
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
      * <p>A list of up to 50 tags that can be assigned to a virtual tape that has a
-     * barcode. Each tag is a key-value pair.</p> <note> <p>Valid characters for key
+     * barcode. Each tag is a key-value pair.</p>  <p>Valid characters for key
      * and value are letters, spaces, and numbers representable in UTF-8 format, and
      * the following special characters: + - = . _ : / @. The maximum length of a tag's
      * key is 128 characters, and the maximum length for a tag's value is 256.</p>
-     * </note>
+     * 
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
      * <p>A list of up to 50 tags that can be assigned to a virtual tape that has a
-     * barcode. Each tag is a key-value pair.</p> <note> <p>Valid characters for key
+     * barcode. Each tag is a key-value pair.</p>  <p>Valid characters for key
      * and value are letters, spaces, and numbers representable in UTF-8 format, and
      * the following special characters: + - = . _ : / @. The maximum length of a tag's
      * key is 128 characters, and the maximum length for a tag's value is 256.</p>
-     * </note>
+     * 
      */
     inline CreateTapeWithBarcodeRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
      * <p>A list of up to 50 tags that can be assigned to a virtual tape that has a
-     * barcode. Each tag is a key-value pair.</p> <note> <p>Valid characters for key
+     * barcode. Each tag is a key-value pair.</p>  <p>Valid characters for key
      * and value are letters, spaces, and numbers representable in UTF-8 format, and
      * the following special characters: + - = . _ : / @. The maximum length of a tag's
      * key is 128 characters, and the maximum length for a tag's value is 256.</p>
-     * </note>
+     * 
      */
     inline CreateTapeWithBarcodeRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
      * <p>A list of up to 50 tags that can be assigned to a virtual tape that has a
-     * barcode. Each tag is a key-value pair.</p> <note> <p>Valid characters for key
+     * barcode. Each tag is a key-value pair.</p>  <p>Valid characters for key
      * and value are letters, spaces, and numbers representable in UTF-8 format, and
      * the following special characters: + - = . _ : / @. The maximum length of a tag's
      * key is 128 characters, and the maximum length for a tag's value is 256.</p>
-     * </note>
+     * 
      */
     inline CreateTapeWithBarcodeRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     /**
      * <p>A list of up to 50 tags that can be assigned to a virtual tape that has a
-     * barcode. Each tag is a key-value pair.</p> <note> <p>Valid characters for key
+     * barcode. Each tag is a key-value pair.</p>  <p>Valid characters for key
      * and value are letters, spaces, and numbers representable in UTF-8 format, and
      * the following special characters: + - = . _ : / @. The maximum length of a tag's
      * key is 128 characters, and the maximum length for a tag's value is 256.</p>
-     * </note>
+     * 
      */
     inline CreateTapeWithBarcodeRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 

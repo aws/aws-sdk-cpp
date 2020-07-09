@@ -356,8 +356,8 @@ namespace Model
      * <p>In <code>PARTIAL</code> mode, the system overwrites compliance information
      * for a specific association. The association must be configured with
      * <code>SyncCompliance</code> set to <code>MANUAL</code>. By default, all requests
-     * use <code>COMPLETE</code> mode.</p> <note> <p>This attribute is only valid for
-     * association compliance.</p> </note>
+     * use <code>COMPLETE</code> mode.</p>  <p>This attribute is only valid for
+     * association compliance.</p> 
      */
     inline const ComplianceUploadType& GetUploadType() const{ return m_uploadType; }
 
@@ -369,8 +369,8 @@ namespace Model
      * <p>In <code>PARTIAL</code> mode, the system overwrites compliance information
      * for a specific association. The association must be configured with
      * <code>SyncCompliance</code> set to <code>MANUAL</code>. By default, all requests
-     * use <code>COMPLETE</code> mode.</p> <note> <p>This attribute is only valid for
-     * association compliance.</p> </note>
+     * use <code>COMPLETE</code> mode.</p>  <p>This attribute is only valid for
+     * association compliance.</p> 
      */
     inline bool UploadTypeHasBeenSet() const { return m_uploadTypeHasBeenSet; }
 
@@ -382,8 +382,8 @@ namespace Model
      * <p>In <code>PARTIAL</code> mode, the system overwrites compliance information
      * for a specific association. The association must be configured with
      * <code>SyncCompliance</code> set to <code>MANUAL</code>. By default, all requests
-     * use <code>COMPLETE</code> mode.</p> <note> <p>This attribute is only valid for
-     * association compliance.</p> </note>
+     * use <code>COMPLETE</code> mode.</p>  <p>This attribute is only valid for
+     * association compliance.</p> 
      */
     inline void SetUploadType(const ComplianceUploadType& value) { m_uploadTypeHasBeenSet = true; m_uploadType = value; }
 
@@ -395,8 +395,8 @@ namespace Model
      * <p>In <code>PARTIAL</code> mode, the system overwrites compliance information
      * for a specific association. The association must be configured with
      * <code>SyncCompliance</code> set to <code>MANUAL</code>. By default, all requests
-     * use <code>COMPLETE</code> mode.</p> <note> <p>This attribute is only valid for
-     * association compliance.</p> </note>
+     * use <code>COMPLETE</code> mode.</p>  <p>This attribute is only valid for
+     * association compliance.</p> 
      */
     inline void SetUploadType(ComplianceUploadType&& value) { m_uploadTypeHasBeenSet = true; m_uploadType = std::move(value); }
 
@@ -408,8 +408,8 @@ namespace Model
      * <p>In <code>PARTIAL</code> mode, the system overwrites compliance information
      * for a specific association. The association must be configured with
      * <code>SyncCompliance</code> set to <code>MANUAL</code>. By default, all requests
-     * use <code>COMPLETE</code> mode.</p> <note> <p>This attribute is only valid for
-     * association compliance.</p> </note>
+     * use <code>COMPLETE</code> mode.</p>  <p>This attribute is only valid for
+     * association compliance.</p> 
      */
     inline PutComplianceItemsRequest& WithUploadType(const ComplianceUploadType& value) { SetUploadType(value); return *this;}
 
@@ -421,8 +421,8 @@ namespace Model
      * <p>In <code>PARTIAL</code> mode, the system overwrites compliance information
      * for a specific association. The association must be configured with
      * <code>SyncCompliance</code> set to <code>MANUAL</code>. By default, all requests
-     * use <code>COMPLETE</code> mode.</p> <note> <p>This attribute is only valid for
-     * association compliance.</p> </note>
+     * use <code>COMPLETE</code> mode.</p>  <p>This attribute is only valid for
+     * association compliance.</p> 
      */
     inline PutComplianceItemsRequest& WithUploadType(ComplianceUploadType&& value) { SetUploadType(std::move(value)); return *this;}
 

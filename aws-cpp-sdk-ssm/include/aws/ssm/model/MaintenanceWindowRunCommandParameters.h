@@ -32,7 +32,7 @@ namespace Model
    * <p>The parameters for a RUN_COMMAND task type.</p> <p>For information about
    * specifying and updating task parameters, see
    * <a>RegisterTaskWithMaintenanceWindow</a> and
-   * <a>UpdateMaintenanceWindowTask</a>.</p> <note> <p> <code>LoggingInfo</code> has
+   * <a>UpdateMaintenanceWindowTask</a>.</p>  <p> <code>LoggingInfo</code> has
    * been deprecated. To specify an S3 bucket to contain logs, instead use the
    * <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in
    * the <code>TaskInvocationParameters</code> structure. For information about how
@@ -45,7 +45,7 @@ namespace Model
    * types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> <p>For Run
    * Command tasks, Systems Manager uses specified values for
    * <code>TaskParameters</code> and <code>LoggingInfo</code> only if no values are
-   * specified for <code>TaskInvocationParameters</code>. </p> </note><p><h3>See
+   * specified for <code>TaskInvocationParameters</code>. </p> <p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/MaintenanceWindowRunCommandParameters">AWS
    * API Reference</a></p>

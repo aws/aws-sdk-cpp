@@ -29,9 +29,9 @@ namespace Model
    * <p>A resource that represents the infrastructure where a third-party provider is
    * installed. The host is used when you create connections to an installed
    * third-party provider type, such as GitHub Enterprise Server. You create one host
-   * for all connections to that provider.</p> <note> <p>A host created through the
+   * for all connections to that provider.</p>  <p>A host created through the
    * CLI or the SDK is in `PENDING` status by default. You can make its status
-   * `AVAILABLE` by setting up the host in the console.</p> </note><p><h3>See
+   * `AVAILABLE` by setting up the host in the console.</p> <p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/Host">AWS
    * API Reference</a></p>

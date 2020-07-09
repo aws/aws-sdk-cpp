@@ -51,10 +51,10 @@ namespace Model
      * <code>install_dependencies</code>: Install the stack's dependencies.</p> </li>
      * <li> <p> <code>update_custom_cookbooks</code>: Update the stack's custom
      * cookbooks.</p> </li> <li> <p> <code>update_dependencies</code>: Update the
-     * stack's dependencies.</p> </li> </ul> <note> <p>The update_dependencies and
+     * stack's dependencies.</p> </li> </ul>  <p>The update_dependencies and
      * install_dependencies commands are supported only for Linux instances. You can
      * run the commands successfully on Windows instances, but they do nothing.</p>
-     * </note> <p>For apps, the following commands are available:</p> <ul> <li> <p>
+     *  <p>For apps, the following commands are available:</p> <ul> <li> <p>
      * <code>deploy</code>: Deploy an app. Ruby on Rails apps have an optional
      * <code>Args</code> parameter named <code>migrate</code>. Set <code>Args</code> to
      * {"migrate":["true"]} to migrate the database. The default setting is
@@ -80,10 +80,10 @@ namespace Model
      * <code>install_dependencies</code>: Install the stack's dependencies.</p> </li>
      * <li> <p> <code>update_custom_cookbooks</code>: Update the stack's custom
      * cookbooks.</p> </li> <li> <p> <code>update_dependencies</code>: Update the
-     * stack's dependencies.</p> </li> </ul> <note> <p>The update_dependencies and
+     * stack's dependencies.</p> </li> </ul>  <p>The update_dependencies and
      * install_dependencies commands are supported only for Linux instances. You can
      * run the commands successfully on Windows instances, but they do nothing.</p>
-     * </note> <p>For apps, the following commands are available:</p> <ul> <li> <p>
+     *  <p>For apps, the following commands are available:</p> <ul> <li> <p>
      * <code>deploy</code>: Deploy an app. Ruby on Rails apps have an optional
      * <code>Args</code> parameter named <code>migrate</code>. Set <code>Args</code> to
      * {"migrate":["true"]} to migrate the database. The default setting is
@@ -109,10 +109,10 @@ namespace Model
      * <code>install_dependencies</code>: Install the stack's dependencies.</p> </li>
      * <li> <p> <code>update_custom_cookbooks</code>: Update the stack's custom
      * cookbooks.</p> </li> <li> <p> <code>update_dependencies</code>: Update the
-     * stack's dependencies.</p> </li> </ul> <note> <p>The update_dependencies and
+     * stack's dependencies.</p> </li> </ul>  <p>The update_dependencies and
      * install_dependencies commands are supported only for Linux instances. You can
      * run the commands successfully on Windows instances, but they do nothing.</p>
-     * </note> <p>For apps, the following commands are available:</p> <ul> <li> <p>
+     *  <p>For apps, the following commands are available:</p> <ul> <li> <p>
      * <code>deploy</code>: Deploy an app. Ruby on Rails apps have an optional
      * <code>Args</code> parameter named <code>migrate</code>. Set <code>Args</code> to
      * {"migrate":["true"]} to migrate the database. The default setting is
@@ -138,10 +138,10 @@ namespace Model
      * <code>install_dependencies</code>: Install the stack's dependencies.</p> </li>
      * <li> <p> <code>update_custom_cookbooks</code>: Update the stack's custom
      * cookbooks.</p> </li> <li> <p> <code>update_dependencies</code>: Update the
-     * stack's dependencies.</p> </li> </ul> <note> <p>The update_dependencies and
+     * stack's dependencies.</p> </li> </ul>  <p>The update_dependencies and
      * install_dependencies commands are supported only for Linux instances. You can
      * run the commands successfully on Windows instances, but they do nothing.</p>
-     * </note> <p>For apps, the following commands are available:</p> <ul> <li> <p>
+     *  <p>For apps, the following commands are available:</p> <ul> <li> <p>
      * <code>deploy</code>: Deploy an app. Ruby on Rails apps have an optional
      * <code>Args</code> parameter named <code>migrate</code>. Set <code>Args</code> to
      * {"migrate":["true"]} to migrate the database. The default setting is
@@ -167,10 +167,10 @@ namespace Model
      * <code>install_dependencies</code>: Install the stack's dependencies.</p> </li>
      * <li> <p> <code>update_custom_cookbooks</code>: Update the stack's custom
      * cookbooks.</p> </li> <li> <p> <code>update_dependencies</code>: Update the
-     * stack's dependencies.</p> </li> </ul> <note> <p>The update_dependencies and
+     * stack's dependencies.</p> </li> </ul>  <p>The update_dependencies and
      * install_dependencies commands are supported only for Linux instances. You can
      * run the commands successfully on Windows instances, but they do nothing.</p>
-     * </note> <p>For apps, the following commands are available:</p> <ul> <li> <p>
+     *  <p>For apps, the following commands are available:</p> <ul> <li> <p>
      * <code>deploy</code>: Deploy an app. Ruby on Rails apps have an optional
      * <code>Args</code> parameter named <code>migrate</code>. Set <code>Args</code> to
      * {"migrate":["true"]} to migrate the database. The default setting is
@@ -196,10 +196,10 @@ namespace Model
      * <code>install_dependencies</code>: Install the stack's dependencies.</p> </li>
      * <li> <p> <code>update_custom_cookbooks</code>: Update the stack's custom
      * cookbooks.</p> </li> <li> <p> <code>update_dependencies</code>: Update the
-     * stack's dependencies.</p> </li> </ul> <note> <p>The update_dependencies and
+     * stack's dependencies.</p> </li> </ul>  <p>The update_dependencies and
      * install_dependencies commands are supported only for Linux instances. You can
      * run the commands successfully on Windows instances, but they do nothing.</p>
-     * </note> <p>For apps, the following commands are available:</p> <ul> <li> <p>
+     *  <p>For apps, the following commands are available:</p> <ul> <li> <p>
      * <code>deploy</code>: Deploy an app. Ruby on Rails apps have an optional
      * <code>Args</code> parameter named <code>migrate</code>. Set <code>Args</code> to
      * {"migrate":["true"]} to migrate the database. The default setting is

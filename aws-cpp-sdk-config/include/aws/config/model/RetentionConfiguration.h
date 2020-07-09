@@ -81,26 +81,26 @@ namespace Model
 
 
     /**
-     * <p>Number of days AWS Config stores your historical information.</p> <note>
-     * <p>Currently, only applicable to the configuration item history.</p> </note>
+     * <p>Number of days AWS Config stores your historical information.</p> 
+     * <p>Currently, only applicable to the configuration item history.</p> 
      */
     inline int GetRetentionPeriodInDays() const{ return m_retentionPeriodInDays; }
 
     /**
-     * <p>Number of days AWS Config stores your historical information.</p> <note>
-     * <p>Currently, only applicable to the configuration item history.</p> </note>
+     * <p>Number of days AWS Config stores your historical information.</p> 
+     * <p>Currently, only applicable to the configuration item history.</p> 
      */
     inline bool RetentionPeriodInDaysHasBeenSet() const { return m_retentionPeriodInDaysHasBeenSet; }
 
     /**
-     * <p>Number of days AWS Config stores your historical information.</p> <note>
-     * <p>Currently, only applicable to the configuration item history.</p> </note>
+     * <p>Number of days AWS Config stores your historical information.</p> 
+     * <p>Currently, only applicable to the configuration item history.</p> 
      */
     inline void SetRetentionPeriodInDays(int value) { m_retentionPeriodInDaysHasBeenSet = true; m_retentionPeriodInDays = value; }
 
     /**
-     * <p>Number of days AWS Config stores your historical information.</p> <note>
-     * <p>Currently, only applicable to the configuration item history.</p> </note>
+     * <p>Number of days AWS Config stores your historical information.</p> 
+     * <p>Currently, only applicable to the configuration item history.</p> 
      */
     inline RetentionConfiguration& WithRetentionPeriodInDays(int value) { SetRetentionPeriodInDays(value); return *this;}
 

@@ -210,12 +210,12 @@ namespace Model
      * see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and AWS Service Namespaces</a> in the AWS General
-     * Reference.</p> <note> <p>An AWS conversion compresses the passed session
+     * Reference.</p>  <p>An AWS conversion compresses the passed session
      * policies and session tags into a packed binary format that has a separate limit.
      * Your request can fail for this limit even if your plain text meets the other
      * requirements. The <code>PackedPolicySize</code> response element indicates by
      * percentage how close the policies and tags for your request are to the upper
-     * size limit. </p> </note> <p>Passing policies to this operation returns new
+     * size limit. </p>  <p>Passing policies to this operation returns new
      * temporary credentials. The resulting session's permissions are the intersection
      * of the role's identity-based policy and the session policies. You can use the
      * role's temporary credentials in subsequent AWS API calls to access resources in
@@ -236,12 +236,12 @@ namespace Model
      * see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and AWS Service Namespaces</a> in the AWS General
-     * Reference.</p> <note> <p>An AWS conversion compresses the passed session
+     * Reference.</p>  <p>An AWS conversion compresses the passed session
      * policies and session tags into a packed binary format that has a separate limit.
      * Your request can fail for this limit even if your plain text meets the other
      * requirements. The <code>PackedPolicySize</code> response element indicates by
      * percentage how close the policies and tags for your request are to the upper
-     * size limit. </p> </note> <p>Passing policies to this operation returns new
+     * size limit. </p>  <p>Passing policies to this operation returns new
      * temporary credentials. The resulting session's permissions are the intersection
      * of the role's identity-based policy and the session policies. You can use the
      * role's temporary credentials in subsequent AWS API calls to access resources in
@@ -262,12 +262,12 @@ namespace Model
      * see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and AWS Service Namespaces</a> in the AWS General
-     * Reference.</p> <note> <p>An AWS conversion compresses the passed session
+     * Reference.</p>  <p>An AWS conversion compresses the passed session
      * policies and session tags into a packed binary format that has a separate limit.
      * Your request can fail for this limit even if your plain text meets the other
      * requirements. The <code>PackedPolicySize</code> response element indicates by
      * percentage how close the policies and tags for your request are to the upper
-     * size limit. </p> </note> <p>Passing policies to this operation returns new
+     * size limit. </p>  <p>Passing policies to this operation returns new
      * temporary credentials. The resulting session's permissions are the intersection
      * of the role's identity-based policy and the session policies. You can use the
      * role's temporary credentials in subsequent AWS API calls to access resources in
@@ -288,12 +288,12 @@ namespace Model
      * see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and AWS Service Namespaces</a> in the AWS General
-     * Reference.</p> <note> <p>An AWS conversion compresses the passed session
+     * Reference.</p>  <p>An AWS conversion compresses the passed session
      * policies and session tags into a packed binary format that has a separate limit.
      * Your request can fail for this limit even if your plain text meets the other
      * requirements. The <code>PackedPolicySize</code> response element indicates by
      * percentage how close the policies and tags for your request are to the upper
-     * size limit. </p> </note> <p>Passing policies to this operation returns new
+     * size limit. </p>  <p>Passing policies to this operation returns new
      * temporary credentials. The resulting session's permissions are the intersection
      * of the role's identity-based policy and the session policies. You can use the
      * role's temporary credentials in subsequent AWS API calls to access resources in
@@ -314,12 +314,12 @@ namespace Model
      * see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and AWS Service Namespaces</a> in the AWS General
-     * Reference.</p> <note> <p>An AWS conversion compresses the passed session
+     * Reference.</p>  <p>An AWS conversion compresses the passed session
      * policies and session tags into a packed binary format that has a separate limit.
      * Your request can fail for this limit even if your plain text meets the other
      * requirements. The <code>PackedPolicySize</code> response element indicates by
      * percentage how close the policies and tags for your request are to the upper
-     * size limit. </p> </note> <p>Passing policies to this operation returns new
+     * size limit. </p>  <p>Passing policies to this operation returns new
      * temporary credentials. The resulting session's permissions are the intersection
      * of the role's identity-based policy and the session policies. You can use the
      * role's temporary credentials in subsequent AWS API calls to access resources in
@@ -340,12 +340,12 @@ namespace Model
      * see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and AWS Service Namespaces</a> in the AWS General
-     * Reference.</p> <note> <p>An AWS conversion compresses the passed session
+     * Reference.</p>  <p>An AWS conversion compresses the passed session
      * policies and session tags into a packed binary format that has a separate limit.
      * Your request can fail for this limit even if your plain text meets the other
      * requirements. The <code>PackedPolicySize</code> response element indicates by
      * percentage how close the policies and tags for your request are to the upper
-     * size limit. </p> </note> <p>Passing policies to this operation returns new
+     * size limit. </p>  <p>Passing policies to this operation returns new
      * temporary credentials. The resulting session's permissions are the intersection
      * of the role's identity-based policy and the session policies. You can use the
      * role's temporary credentials in subsequent AWS API calls to access resources in
@@ -366,12 +366,12 @@ namespace Model
      * see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and AWS Service Namespaces</a> in the AWS General
-     * Reference.</p> <note> <p>An AWS conversion compresses the passed session
+     * Reference.</p>  <p>An AWS conversion compresses the passed session
      * policies and session tags into a packed binary format that has a separate limit.
      * Your request can fail for this limit even if your plain text meets the other
      * requirements. The <code>PackedPolicySize</code> response element indicates by
      * percentage how close the policies and tags for your request are to the upper
-     * size limit. </p> </note> <p>Passing policies to this operation returns new
+     * size limit. </p>  <p>Passing policies to this operation returns new
      * temporary credentials. The resulting session's permissions are the intersection
      * of the role's identity-based policy and the session policies. You can use the
      * role's temporary credentials in subsequent AWS API calls to access resources in
@@ -392,12 +392,12 @@ namespace Model
      * see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and AWS Service Namespaces</a> in the AWS General
-     * Reference.</p> <note> <p>An AWS conversion compresses the passed session
+     * Reference.</p>  <p>An AWS conversion compresses the passed session
      * policies and session tags into a packed binary format that has a separate limit.
      * Your request can fail for this limit even if your plain text meets the other
      * requirements. The <code>PackedPolicySize</code> response element indicates by
      * percentage how close the policies and tags for your request are to the upper
-     * size limit. </p> </note> <p>Passing policies to this operation returns new
+     * size limit. </p>  <p>Passing policies to this operation returns new
      * temporary credentials. The resulting session's permissions are the intersection
      * of the role's identity-based policy and the session policies. You can use the
      * role's temporary credentials in subsequent AWS API calls to access resources in
@@ -425,12 +425,12 @@ namespace Model
      * JSON policy characters can be any ASCII character from the space character to
      * the end of the valid character list (\u0020 through \u00FF). It can also include
      * the tab (\u0009), linefeed (\u000A), and carriage return (\u000D)
-     * characters.</p> <note> <p>An AWS conversion compresses the passed session
+     * characters.</p>  <p>An AWS conversion compresses the passed session
      * policies and session tags into a packed binary format that has a separate limit.
      * Your request can fail for this limit even if your plain text meets the other
      * requirements. The <code>PackedPolicySize</code> response element indicates by
      * percentage how close the policies and tags for your request are to the upper
-     * size limit. </p> </note>
+     * size limit. </p> 
      */
     inline const Aws::String& GetPolicy() const{ return m_policy; }
 
@@ -449,12 +449,12 @@ namespace Model
      * JSON policy characters can be any ASCII character from the space character to
      * the end of the valid character list (\u0020 through \u00FF). It can also include
      * the tab (\u0009), linefeed (\u000A), and carriage return (\u000D)
-     * characters.</p> <note> <p>An AWS conversion compresses the passed session
+     * characters.</p>  <p>An AWS conversion compresses the passed session
      * policies and session tags into a packed binary format that has a separate limit.
      * Your request can fail for this limit even if your plain text meets the other
      * requirements. The <code>PackedPolicySize</code> response element indicates by
      * percentage how close the policies and tags for your request are to the upper
-     * size limit. </p> </note>
+     * size limit. </p> 
      */
     inline bool PolicyHasBeenSet() const { return m_policyHasBeenSet; }
 
@@ -473,12 +473,12 @@ namespace Model
      * JSON policy characters can be any ASCII character from the space character to
      * the end of the valid character list (\u0020 through \u00FF). It can also include
      * the tab (\u0009), linefeed (\u000A), and carriage return (\u000D)
-     * characters.</p> <note> <p>An AWS conversion compresses the passed session
+     * characters.</p>  <p>An AWS conversion compresses the passed session
      * policies and session tags into a packed binary format that has a separate limit.
      * Your request can fail for this limit even if your plain text meets the other
      * requirements. The <code>PackedPolicySize</code> response element indicates by
      * percentage how close the policies and tags for your request are to the upper
-     * size limit. </p> </note>
+     * size limit. </p> 
      */
     inline void SetPolicy(const Aws::String& value) { m_policyHasBeenSet = true; m_policy = value; }
 
@@ -497,12 +497,12 @@ namespace Model
      * JSON policy characters can be any ASCII character from the space character to
      * the end of the valid character list (\u0020 through \u00FF). It can also include
      * the tab (\u0009), linefeed (\u000A), and carriage return (\u000D)
-     * characters.</p> <note> <p>An AWS conversion compresses the passed session
+     * characters.</p>  <p>An AWS conversion compresses the passed session
      * policies and session tags into a packed binary format that has a separate limit.
      * Your request can fail for this limit even if your plain text meets the other
      * requirements. The <code>PackedPolicySize</code> response element indicates by
      * percentage how close the policies and tags for your request are to the upper
-     * size limit. </p> </note>
+     * size limit. </p> 
      */
     inline void SetPolicy(Aws::String&& value) { m_policyHasBeenSet = true; m_policy = std::move(value); }
 
@@ -521,12 +521,12 @@ namespace Model
      * JSON policy characters can be any ASCII character from the space character to
      * the end of the valid character list (\u0020 through \u00FF). It can also include
      * the tab (\u0009), linefeed (\u000A), and carriage return (\u000D)
-     * characters.</p> <note> <p>An AWS conversion compresses the passed session
+     * characters.</p>  <p>An AWS conversion compresses the passed session
      * policies and session tags into a packed binary format that has a separate limit.
      * Your request can fail for this limit even if your plain text meets the other
      * requirements. The <code>PackedPolicySize</code> response element indicates by
      * percentage how close the policies and tags for your request are to the upper
-     * size limit. </p> </note>
+     * size limit. </p> 
      */
     inline void SetPolicy(const char* value) { m_policyHasBeenSet = true; m_policy.assign(value); }
 
@@ -545,12 +545,12 @@ namespace Model
      * JSON policy characters can be any ASCII character from the space character to
      * the end of the valid character list (\u0020 through \u00FF). It can also include
      * the tab (\u0009), linefeed (\u000A), and carriage return (\u000D)
-     * characters.</p> <note> <p>An AWS conversion compresses the passed session
+     * characters.</p>  <p>An AWS conversion compresses the passed session
      * policies and session tags into a packed binary format that has a separate limit.
      * Your request can fail for this limit even if your plain text meets the other
      * requirements. The <code>PackedPolicySize</code> response element indicates by
      * percentage how close the policies and tags for your request are to the upper
-     * size limit. </p> </note>
+     * size limit. </p> 
      */
     inline AssumeRoleRequest& WithPolicy(const Aws::String& value) { SetPolicy(value); return *this;}
 
@@ -569,12 +569,12 @@ namespace Model
      * JSON policy characters can be any ASCII character from the space character to
      * the end of the valid character list (\u0020 through \u00FF). It can also include
      * the tab (\u0009), linefeed (\u000A), and carriage return (\u000D)
-     * characters.</p> <note> <p>An AWS conversion compresses the passed session
+     * characters.</p>  <p>An AWS conversion compresses the passed session
      * policies and session tags into a packed binary format that has a separate limit.
      * Your request can fail for this limit even if your plain text meets the other
      * requirements. The <code>PackedPolicySize</code> response element indicates by
      * percentage how close the policies and tags for your request are to the upper
-     * size limit. </p> </note>
+     * size limit. </p> 
      */
     inline AssumeRoleRequest& WithPolicy(Aws::String&& value) { SetPolicy(std::move(value)); return *this;}
 
@@ -593,12 +593,12 @@ namespace Model
      * JSON policy characters can be any ASCII character from the space character to
      * the end of the valid character list (\u0020 through \u00FF). It can also include
      * the tab (\u0009), linefeed (\u000A), and carriage return (\u000D)
-     * characters.</p> <note> <p>An AWS conversion compresses the passed session
+     * characters.</p>  <p>An AWS conversion compresses the passed session
      * policies and session tags into a packed binary format that has a separate limit.
      * Your request can fail for this limit even if your plain text meets the other
      * requirements. The <code>PackedPolicySize</code> response element indicates by
      * percentage how close the policies and tags for your request are to the upper
-     * size limit. </p> </note>
+     * size limit. </p> 
      */
     inline AssumeRoleRequest& WithPolicy(const char* value) { SetPolicy(value); return *this;}
 
@@ -614,14 +614,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html#id_roles_use_view-role-max-session">View
      * the Maximum Session Duration Setting for a Role</a> in the <i>IAM User
      * Guide</i>.</p> <p>By default, the value is set to <code>3600</code> seconds.
-     * </p> <note> <p>The <code>DurationSeconds</code> parameter is separate from the
+     * </p>  <p>The <code>DurationSeconds</code> parameter is separate from the
      * duration of a console session that you might request using the returned
      * credentials. The request to the federation endpoint for a console sign-in token
      * takes a <code>SessionDuration</code> parameter that specifies the maximum length
      * of the console session. For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_enable-console-custom-url.html">Creating
      * a URL that Enables Federated Users to Access the AWS Management Console</a> in
-     * the <i>IAM User Guide</i>.</p> </note>
+     * the <i>IAM User Guide</i>.</p> 
      */
     inline int GetDurationSeconds() const{ return m_durationSeconds; }
 
@@ -636,14 +636,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html#id_roles_use_view-role-max-session">View
      * the Maximum Session Duration Setting for a Role</a> in the <i>IAM User
      * Guide</i>.</p> <p>By default, the value is set to <code>3600</code> seconds.
-     * </p> <note> <p>The <code>DurationSeconds</code> parameter is separate from the
+     * </p>  <p>The <code>DurationSeconds</code> parameter is separate from the
      * duration of a console session that you might request using the returned
      * credentials. The request to the federation endpoint for a console sign-in token
      * takes a <code>SessionDuration</code> parameter that specifies the maximum length
      * of the console session. For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_enable-console-custom-url.html">Creating
      * a URL that Enables Federated Users to Access the AWS Management Console</a> in
-     * the <i>IAM User Guide</i>.</p> </note>
+     * the <i>IAM User Guide</i>.</p> 
      */
     inline bool DurationSecondsHasBeenSet() const { return m_durationSecondsHasBeenSet; }
 
@@ -658,14 +658,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html#id_roles_use_view-role-max-session">View
      * the Maximum Session Duration Setting for a Role</a> in the <i>IAM User
      * Guide</i>.</p> <p>By default, the value is set to <code>3600</code> seconds.
-     * </p> <note> <p>The <code>DurationSeconds</code> parameter is separate from the
+     * </p>  <p>The <code>DurationSeconds</code> parameter is separate from the
      * duration of a console session that you might request using the returned
      * credentials. The request to the federation endpoint for a console sign-in token
      * takes a <code>SessionDuration</code> parameter that specifies the maximum length
      * of the console session. For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_enable-console-custom-url.html">Creating
      * a URL that Enables Federated Users to Access the AWS Management Console</a> in
-     * the <i>IAM User Guide</i>.</p> </note>
+     * the <i>IAM User Guide</i>.</p> 
      */
     inline void SetDurationSeconds(int value) { m_durationSecondsHasBeenSet = true; m_durationSeconds = value; }
 
@@ -680,14 +680,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html#id_roles_use_view-role-max-session">View
      * the Maximum Session Duration Setting for a Role</a> in the <i>IAM User
      * Guide</i>.</p> <p>By default, the value is set to <code>3600</code> seconds.
-     * </p> <note> <p>The <code>DurationSeconds</code> parameter is separate from the
+     * </p>  <p>The <code>DurationSeconds</code> parameter is separate from the
      * duration of a console session that you might request using the returned
      * credentials. The request to the federation endpoint for a console sign-in token
      * takes a <code>SessionDuration</code> parameter that specifies the maximum length
      * of the console session. For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_enable-console-custom-url.html">Creating
      * a URL that Enables Federated Users to Access the AWS Management Console</a> in
-     * the <i>IAM User Guide</i>.</p> </note>
+     * the <i>IAM User Guide</i>.</p> 
      */
     inline AssumeRoleRequest& WithDurationSeconds(int value) { SetDurationSeconds(value); return *this;}
 
@@ -702,12 +702,12 @@ namespace Model
      * can’t exceed 128 characters, and the values can’t exceed 256 characters. For
      * these and additional limits, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-limits.html#reference_iam-limits-entity-length">IAM
-     * and STS Character Limits</a> in the <i>IAM User Guide</i>.</p> <note> <p>An AWS
+     * and STS Character Limits</a> in the <i>IAM User Guide</i>.</p>  <p>An AWS
      * conversion compresses the passed session policies and session tags into a packed
      * binary format that has a separate limit. Your request can fail for this limit
      * even if your plain text meets the other requirements. The
      * <code>PackedPolicySize</code> response element indicates by percentage how close
-     * the policies and tags for your request are to the upper size limit. </p> </note>
+     * the policies and tags for your request are to the upper size limit. </p> 
      * <p>You can pass a session tag with the same key as a tag that is already
      * attached to the role. When you do, session tags override a role tag with the
      * same key. </p> <p>Tag key–value pairs are not case sensitive, but case is
@@ -737,12 +737,12 @@ namespace Model
      * can’t exceed 128 characters, and the values can’t exceed 256 characters. For
      * these and additional limits, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-limits.html#reference_iam-limits-entity-length">IAM
-     * and STS Character Limits</a> in the <i>IAM User Guide</i>.</p> <note> <p>An AWS
+     * and STS Character Limits</a> in the <i>IAM User Guide</i>.</p>  <p>An AWS
      * conversion compresses the passed session policies and session tags into a packed
      * binary format that has a separate limit. Your request can fail for this limit
      * even if your plain text meets the other requirements. The
      * <code>PackedPolicySize</code> response element indicates by percentage how close
-     * the policies and tags for your request are to the upper size limit. </p> </note>
+     * the policies and tags for your request are to the upper size limit. </p> 
      * <p>You can pass a session tag with the same key as a tag that is already
      * attached to the role. When you do, session tags override a role tag with the
      * same key. </p> <p>Tag key–value pairs are not case sensitive, but case is
@@ -772,12 +772,12 @@ namespace Model
      * can’t exceed 128 characters, and the values can’t exceed 256 characters. For
      * these and additional limits, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-limits.html#reference_iam-limits-entity-length">IAM
-     * and STS Character Limits</a> in the <i>IAM User Guide</i>.</p> <note> <p>An AWS
+     * and STS Character Limits</a> in the <i>IAM User Guide</i>.</p>  <p>An AWS
      * conversion compresses the passed session policies and session tags into a packed
      * binary format that has a separate limit. Your request can fail for this limit
      * even if your plain text meets the other requirements. The
      * <code>PackedPolicySize</code> response element indicates by percentage how close
-     * the policies and tags for your request are to the upper size limit. </p> </note>
+     * the policies and tags for your request are to the upper size limit. </p> 
      * <p>You can pass a session tag with the same key as a tag that is already
      * attached to the role. When you do, session tags override a role tag with the
      * same key. </p> <p>Tag key–value pairs are not case sensitive, but case is
@@ -807,12 +807,12 @@ namespace Model
      * can’t exceed 128 characters, and the values can’t exceed 256 characters. For
      * these and additional limits, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-limits.html#reference_iam-limits-entity-length">IAM
-     * and STS Character Limits</a> in the <i>IAM User Guide</i>.</p> <note> <p>An AWS
+     * and STS Character Limits</a> in the <i>IAM User Guide</i>.</p>  <p>An AWS
      * conversion compresses the passed session policies and session tags into a packed
      * binary format that has a separate limit. Your request can fail for this limit
      * even if your plain text meets the other requirements. The
      * <code>PackedPolicySize</code> response element indicates by percentage how close
-     * the policies and tags for your request are to the upper size limit. </p> </note>
+     * the policies and tags for your request are to the upper size limit. </p> 
      * <p>You can pass a session tag with the same key as a tag that is already
      * attached to the role. When you do, session tags override a role tag with the
      * same key. </p> <p>Tag key–value pairs are not case sensitive, but case is
@@ -842,12 +842,12 @@ namespace Model
      * can’t exceed 128 characters, and the values can’t exceed 256 characters. For
      * these and additional limits, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-limits.html#reference_iam-limits-entity-length">IAM
-     * and STS Character Limits</a> in the <i>IAM User Guide</i>.</p> <note> <p>An AWS
+     * and STS Character Limits</a> in the <i>IAM User Guide</i>.</p>  <p>An AWS
      * conversion compresses the passed session policies and session tags into a packed
      * binary format that has a separate limit. Your request can fail for this limit
      * even if your plain text meets the other requirements. The
      * <code>PackedPolicySize</code> response element indicates by percentage how close
-     * the policies and tags for your request are to the upper size limit. </p> </note>
+     * the policies and tags for your request are to the upper size limit. </p> 
      * <p>You can pass a session tag with the same key as a tag that is already
      * attached to the role. When you do, session tags override a role tag with the
      * same key. </p> <p>Tag key–value pairs are not case sensitive, but case is
@@ -877,12 +877,12 @@ namespace Model
      * can’t exceed 128 characters, and the values can’t exceed 256 characters. For
      * these and additional limits, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-limits.html#reference_iam-limits-entity-length">IAM
-     * and STS Character Limits</a> in the <i>IAM User Guide</i>.</p> <note> <p>An AWS
+     * and STS Character Limits</a> in the <i>IAM User Guide</i>.</p>  <p>An AWS
      * conversion compresses the passed session policies and session tags into a packed
      * binary format that has a separate limit. Your request can fail for this limit
      * even if your plain text meets the other requirements. The
      * <code>PackedPolicySize</code> response element indicates by percentage how close
-     * the policies and tags for your request are to the upper size limit. </p> </note>
+     * the policies and tags for your request are to the upper size limit. </p> 
      * <p>You can pass a session tag with the same key as a tag that is already
      * attached to the role. When you do, session tags override a role tag with the
      * same key. </p> <p>Tag key–value pairs are not case sensitive, but case is
@@ -912,12 +912,12 @@ namespace Model
      * can’t exceed 128 characters, and the values can’t exceed 256 characters. For
      * these and additional limits, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-limits.html#reference_iam-limits-entity-length">IAM
-     * and STS Character Limits</a> in the <i>IAM User Guide</i>.</p> <note> <p>An AWS
+     * and STS Character Limits</a> in the <i>IAM User Guide</i>.</p>  <p>An AWS
      * conversion compresses the passed session policies and session tags into a packed
      * binary format that has a separate limit. Your request can fail for this limit
      * even if your plain text meets the other requirements. The
      * <code>PackedPolicySize</code> response element indicates by percentage how close
-     * the policies and tags for your request are to the upper size limit. </p> </note>
+     * the policies and tags for your request are to the upper size limit. </p> 
      * <p>You can pass a session tag with the same key as a tag that is already
      * attached to the role. When you do, session tags override a role tag with the
      * same key. </p> <p>Tag key–value pairs are not case sensitive, but case is
@@ -947,12 +947,12 @@ namespace Model
      * can’t exceed 128 characters, and the values can’t exceed 256 characters. For
      * these and additional limits, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-limits.html#reference_iam-limits-entity-length">IAM
-     * and STS Character Limits</a> in the <i>IAM User Guide</i>.</p> <note> <p>An AWS
+     * and STS Character Limits</a> in the <i>IAM User Guide</i>.</p>  <p>An AWS
      * conversion compresses the passed session policies and session tags into a packed
      * binary format that has a separate limit. Your request can fail for this limit
      * even if your plain text meets the other requirements. The
      * <code>PackedPolicySize</code> response element indicates by percentage how close
-     * the policies and tags for your request are to the upper size limit. </p> </note>
+     * the policies and tags for your request are to the upper size limit. </p> 
      * <p>You can pass a session tag with the same key as a tag that is already
      * attached to the role. When you do, session tags override a role tag with the
      * same key. </p> <p>Tag key–value pairs are not case sensitive, but case is

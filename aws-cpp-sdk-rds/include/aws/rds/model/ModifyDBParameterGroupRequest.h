@@ -103,10 +103,10 @@ namespace Model
      * update. At least one parameter name, value, and apply method must be supplied;
      * later arguments are optional. A maximum of 20 parameters can be modified in a
      * single request.</p> <p>Valid Values (for the application method):
-     * <code>immediate | pending-reboot</code> </p> <note> <p>You can use the immediate
+     * <code>immediate | pending-reboot</code> </p>  <p>You can use the immediate
      * value with dynamic parameters only. You can use the pending-reboot value for
      * both dynamic and static parameters, and changes are applied when you reboot the
-     * DB instance without failover.</p> </note>
+     * DB instance without failover.</p> 
      */
     inline const Aws::Vector<Parameter>& GetParameters() const{ return m_parameters; }
 
@@ -115,10 +115,10 @@ namespace Model
      * update. At least one parameter name, value, and apply method must be supplied;
      * later arguments are optional. A maximum of 20 parameters can be modified in a
      * single request.</p> <p>Valid Values (for the application method):
-     * <code>immediate | pending-reboot</code> </p> <note> <p>You can use the immediate
+     * <code>immediate | pending-reboot</code> </p>  <p>You can use the immediate
      * value with dynamic parameters only. You can use the pending-reboot value for
      * both dynamic and static parameters, and changes are applied when you reboot the
-     * DB instance without failover.</p> </note>
+     * DB instance without failover.</p> 
      */
     inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
 
@@ -127,10 +127,10 @@ namespace Model
      * update. At least one parameter name, value, and apply method must be supplied;
      * later arguments are optional. A maximum of 20 parameters can be modified in a
      * single request.</p> <p>Valid Values (for the application method):
-     * <code>immediate | pending-reboot</code> </p> <note> <p>You can use the immediate
+     * <code>immediate | pending-reboot</code> </p>  <p>You can use the immediate
      * value with dynamic parameters only. You can use the pending-reboot value for
      * both dynamic and static parameters, and changes are applied when you reboot the
-     * DB instance without failover.</p> </note>
+     * DB instance without failover.</p> 
      */
     inline void SetParameters(const Aws::Vector<Parameter>& value) { m_parametersHasBeenSet = true; m_parameters = value; }
 
@@ -139,10 +139,10 @@ namespace Model
      * update. At least one parameter name, value, and apply method must be supplied;
      * later arguments are optional. A maximum of 20 parameters can be modified in a
      * single request.</p> <p>Valid Values (for the application method):
-     * <code>immediate | pending-reboot</code> </p> <note> <p>You can use the immediate
+     * <code>immediate | pending-reboot</code> </p>  <p>You can use the immediate
      * value with dynamic parameters only. You can use the pending-reboot value for
      * both dynamic and static parameters, and changes are applied when you reboot the
-     * DB instance without failover.</p> </note>
+     * DB instance without failover.</p> 
      */
     inline void SetParameters(Aws::Vector<Parameter>&& value) { m_parametersHasBeenSet = true; m_parameters = std::move(value); }
 
@@ -151,10 +151,10 @@ namespace Model
      * update. At least one parameter name, value, and apply method must be supplied;
      * later arguments are optional. A maximum of 20 parameters can be modified in a
      * single request.</p> <p>Valid Values (for the application method):
-     * <code>immediate | pending-reboot</code> </p> <note> <p>You can use the immediate
+     * <code>immediate | pending-reboot</code> </p>  <p>You can use the immediate
      * value with dynamic parameters only. You can use the pending-reboot value for
      * both dynamic and static parameters, and changes are applied when you reboot the
-     * DB instance without failover.</p> </note>
+     * DB instance without failover.</p> 
      */
     inline ModifyDBParameterGroupRequest& WithParameters(const Aws::Vector<Parameter>& value) { SetParameters(value); return *this;}
 
@@ -163,10 +163,10 @@ namespace Model
      * update. At least one parameter name, value, and apply method must be supplied;
      * later arguments are optional. A maximum of 20 parameters can be modified in a
      * single request.</p> <p>Valid Values (for the application method):
-     * <code>immediate | pending-reboot</code> </p> <note> <p>You can use the immediate
+     * <code>immediate | pending-reboot</code> </p>  <p>You can use the immediate
      * value with dynamic parameters only. You can use the pending-reboot value for
      * both dynamic and static parameters, and changes are applied when you reboot the
-     * DB instance without failover.</p> </note>
+     * DB instance without failover.</p> 
      */
     inline ModifyDBParameterGroupRequest& WithParameters(Aws::Vector<Parameter>&& value) { SetParameters(std::move(value)); return *this;}
 
@@ -175,10 +175,10 @@ namespace Model
      * update. At least one parameter name, value, and apply method must be supplied;
      * later arguments are optional. A maximum of 20 parameters can be modified in a
      * single request.</p> <p>Valid Values (for the application method):
-     * <code>immediate | pending-reboot</code> </p> <note> <p>You can use the immediate
+     * <code>immediate | pending-reboot</code> </p>  <p>You can use the immediate
      * value with dynamic parameters only. You can use the pending-reboot value for
      * both dynamic and static parameters, and changes are applied when you reboot the
-     * DB instance without failover.</p> </note>
+     * DB instance without failover.</p> 
      */
     inline ModifyDBParameterGroupRequest& AddParameters(const Parameter& value) { m_parametersHasBeenSet = true; m_parameters.push_back(value); return *this; }
 
@@ -187,10 +187,10 @@ namespace Model
      * update. At least one parameter name, value, and apply method must be supplied;
      * later arguments are optional. A maximum of 20 parameters can be modified in a
      * single request.</p> <p>Valid Values (for the application method):
-     * <code>immediate | pending-reboot</code> </p> <note> <p>You can use the immediate
+     * <code>immediate | pending-reboot</code> </p>  <p>You can use the immediate
      * value with dynamic parameters only. You can use the pending-reboot value for
      * both dynamic and static parameters, and changes are applied when you reboot the
-     * DB instance without failover.</p> </note>
+     * DB instance without failover.</p> 
      */
     inline ModifyDBParameterGroupRequest& AddParameters(Parameter&& value) { m_parametersHasBeenSet = true; m_parameters.push_back(std::move(value)); return *this; }
 

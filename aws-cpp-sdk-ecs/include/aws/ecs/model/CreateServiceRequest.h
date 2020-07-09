@@ -623,10 +623,10 @@ namespace Model
      * <p>The details of the service discovery registries to assign to this service.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
-     * Discovery</a>.</p> <note> <p>Service discovery is supported for Fargate tasks if
+     * Discovery</a>.</p>  <p>Service discovery is supported for Fargate tasks if
      * you are using platform version v1.1.0 or later. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
-     * Fargate Platform Versions</a>.</p> </note>
+     * Fargate Platform Versions</a>.</p> 
      */
     inline const Aws::Vector<ServiceRegistry>& GetServiceRegistries() const{ return m_serviceRegistries; }
 
@@ -634,10 +634,10 @@ namespace Model
      * <p>The details of the service discovery registries to assign to this service.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
-     * Discovery</a>.</p> <note> <p>Service discovery is supported for Fargate tasks if
+     * Discovery</a>.</p>  <p>Service discovery is supported for Fargate tasks if
      * you are using platform version v1.1.0 or later. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
-     * Fargate Platform Versions</a>.</p> </note>
+     * Fargate Platform Versions</a>.</p> 
      */
     inline bool ServiceRegistriesHasBeenSet() const { return m_serviceRegistriesHasBeenSet; }
 
@@ -645,10 +645,10 @@ namespace Model
      * <p>The details of the service discovery registries to assign to this service.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
-     * Discovery</a>.</p> <note> <p>Service discovery is supported for Fargate tasks if
+     * Discovery</a>.</p>  <p>Service discovery is supported for Fargate tasks if
      * you are using platform version v1.1.0 or later. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
-     * Fargate Platform Versions</a>.</p> </note>
+     * Fargate Platform Versions</a>.</p> 
      */
     inline void SetServiceRegistries(const Aws::Vector<ServiceRegistry>& value) { m_serviceRegistriesHasBeenSet = true; m_serviceRegistries = value; }
 
@@ -656,10 +656,10 @@ namespace Model
      * <p>The details of the service discovery registries to assign to this service.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
-     * Discovery</a>.</p> <note> <p>Service discovery is supported for Fargate tasks if
+     * Discovery</a>.</p>  <p>Service discovery is supported for Fargate tasks if
      * you are using platform version v1.1.0 or later. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
-     * Fargate Platform Versions</a>.</p> </note>
+     * Fargate Platform Versions</a>.</p> 
      */
     inline void SetServiceRegistries(Aws::Vector<ServiceRegistry>&& value) { m_serviceRegistriesHasBeenSet = true; m_serviceRegistries = std::move(value); }
 
@@ -667,10 +667,10 @@ namespace Model
      * <p>The details of the service discovery registries to assign to this service.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
-     * Discovery</a>.</p> <note> <p>Service discovery is supported for Fargate tasks if
+     * Discovery</a>.</p>  <p>Service discovery is supported for Fargate tasks if
      * you are using platform version v1.1.0 or later. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
-     * Fargate Platform Versions</a>.</p> </note>
+     * Fargate Platform Versions</a>.</p> 
      */
     inline CreateServiceRequest& WithServiceRegistries(const Aws::Vector<ServiceRegistry>& value) { SetServiceRegistries(value); return *this;}
 
@@ -678,10 +678,10 @@ namespace Model
      * <p>The details of the service discovery registries to assign to this service.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
-     * Discovery</a>.</p> <note> <p>Service discovery is supported for Fargate tasks if
+     * Discovery</a>.</p>  <p>Service discovery is supported for Fargate tasks if
      * you are using platform version v1.1.0 or later. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
-     * Fargate Platform Versions</a>.</p> </note>
+     * Fargate Platform Versions</a>.</p> 
      */
     inline CreateServiceRequest& WithServiceRegistries(Aws::Vector<ServiceRegistry>&& value) { SetServiceRegistries(std::move(value)); return *this;}
 
@@ -689,10 +689,10 @@ namespace Model
      * <p>The details of the service discovery registries to assign to this service.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
-     * Discovery</a>.</p> <note> <p>Service discovery is supported for Fargate tasks if
+     * Discovery</a>.</p>  <p>Service discovery is supported for Fargate tasks if
      * you are using platform version v1.1.0 or later. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
-     * Fargate Platform Versions</a>.</p> </note>
+     * Fargate Platform Versions</a>.</p> 
      */
     inline CreateServiceRequest& AddServiceRegistries(const ServiceRegistry& value) { m_serviceRegistriesHasBeenSet = true; m_serviceRegistries.push_back(value); return *this; }
 
@@ -700,10 +700,10 @@ namespace Model
      * <p>The details of the service discovery registries to assign to this service.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
-     * Discovery</a>.</p> <note> <p>Service discovery is supported for Fargate tasks if
+     * Discovery</a>.</p>  <p>Service discovery is supported for Fargate tasks if
      * you are using platform version v1.1.0 or later. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
-     * Fargate Platform Versions</a>.</p> </note>
+     * Fargate Platform Versions</a>.</p> 
      */
     inline CreateServiceRequest& AddServiceRegistries(ServiceRegistry&& value) { m_serviceRegistriesHasBeenSet = true; m_serviceRegistries.push_back(std::move(value)); return *this; }
 
@@ -1137,7 +1137,7 @@ namespace Model
      * only permitted if you are using a load balancer with your service and your task
      * definition does not use the <code>awsvpc</code> network mode. If you specify the
      * <code>role</code> parameter, you must also specify a load balancer object with
-     * the <code>loadBalancers</code> parameter.</p> <important> <p>If your account has
+     * the <code>loadBalancers</code> parameter.</p>  <p>If your account has
      * already created the Amazon ECS service-linked role, that role is used by default
      * for your service unless you specify a role here. The service-linked role is
      * required if your task definition uses the <code>awsvpc</code> network mode or if
@@ -1146,7 +1146,7 @@ namespace Model
      * case you should not specify a role here. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
      * Service-Linked Roles for Amazon ECS</a> in the <i>Amazon Elastic Container
-     * Service Developer Guide</i>.</p> </important> <p>If your specified role has a
+     * Service Developer Guide</i>.</p>  <p>If your specified role has a
      * path other than <code>/</code>, then you must either specify the full role ARN
      * (this is recommended) or prefix the role name with the path. For example, if a
      * role with the name <code>bar</code> has a path of <code>/foo/</code> then you
@@ -1163,7 +1163,7 @@ namespace Model
      * only permitted if you are using a load balancer with your service and your task
      * definition does not use the <code>awsvpc</code> network mode. If you specify the
      * <code>role</code> parameter, you must also specify a load balancer object with
-     * the <code>loadBalancers</code> parameter.</p> <important> <p>If your account has
+     * the <code>loadBalancers</code> parameter.</p>  <p>If your account has
      * already created the Amazon ECS service-linked role, that role is used by default
      * for your service unless you specify a role here. The service-linked role is
      * required if your task definition uses the <code>awsvpc</code> network mode or if
@@ -1172,7 +1172,7 @@ namespace Model
      * case you should not specify a role here. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
      * Service-Linked Roles for Amazon ECS</a> in the <i>Amazon Elastic Container
-     * Service Developer Guide</i>.</p> </important> <p>If your specified role has a
+     * Service Developer Guide</i>.</p>  <p>If your specified role has a
      * path other than <code>/</code>, then you must either specify the full role ARN
      * (this is recommended) or prefix the role name with the path. For example, if a
      * role with the name <code>bar</code> has a path of <code>/foo/</code> then you
@@ -1189,7 +1189,7 @@ namespace Model
      * only permitted if you are using a load balancer with your service and your task
      * definition does not use the <code>awsvpc</code> network mode. If you specify the
      * <code>role</code> parameter, you must also specify a load balancer object with
-     * the <code>loadBalancers</code> parameter.</p> <important> <p>If your account has
+     * the <code>loadBalancers</code> parameter.</p>  <p>If your account has
      * already created the Amazon ECS service-linked role, that role is used by default
      * for your service unless you specify a role here. The service-linked role is
      * required if your task definition uses the <code>awsvpc</code> network mode or if
@@ -1198,7 +1198,7 @@ namespace Model
      * case you should not specify a role here. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
      * Service-Linked Roles for Amazon ECS</a> in the <i>Amazon Elastic Container
-     * Service Developer Guide</i>.</p> </important> <p>If your specified role has a
+     * Service Developer Guide</i>.</p>  <p>If your specified role has a
      * path other than <code>/</code>, then you must either specify the full role ARN
      * (this is recommended) or prefix the role name with the path. For example, if a
      * role with the name <code>bar</code> has a path of <code>/foo/</code> then you
@@ -1215,7 +1215,7 @@ namespace Model
      * only permitted if you are using a load balancer with your service and your task
      * definition does not use the <code>awsvpc</code> network mode. If you specify the
      * <code>role</code> parameter, you must also specify a load balancer object with
-     * the <code>loadBalancers</code> parameter.</p> <important> <p>If your account has
+     * the <code>loadBalancers</code> parameter.</p>  <p>If your account has
      * already created the Amazon ECS service-linked role, that role is used by default
      * for your service unless you specify a role here. The service-linked role is
      * required if your task definition uses the <code>awsvpc</code> network mode or if
@@ -1224,7 +1224,7 @@ namespace Model
      * case you should not specify a role here. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
      * Service-Linked Roles for Amazon ECS</a> in the <i>Amazon Elastic Container
-     * Service Developer Guide</i>.</p> </important> <p>If your specified role has a
+     * Service Developer Guide</i>.</p>  <p>If your specified role has a
      * path other than <code>/</code>, then you must either specify the full role ARN
      * (this is recommended) or prefix the role name with the path. For example, if a
      * role with the name <code>bar</code> has a path of <code>/foo/</code> then you
@@ -1241,7 +1241,7 @@ namespace Model
      * only permitted if you are using a load balancer with your service and your task
      * definition does not use the <code>awsvpc</code> network mode. If you specify the
      * <code>role</code> parameter, you must also specify a load balancer object with
-     * the <code>loadBalancers</code> parameter.</p> <important> <p>If your account has
+     * the <code>loadBalancers</code> parameter.</p>  <p>If your account has
      * already created the Amazon ECS service-linked role, that role is used by default
      * for your service unless you specify a role here. The service-linked role is
      * required if your task definition uses the <code>awsvpc</code> network mode or if
@@ -1250,7 +1250,7 @@ namespace Model
      * case you should not specify a role here. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
      * Service-Linked Roles for Amazon ECS</a> in the <i>Amazon Elastic Container
-     * Service Developer Guide</i>.</p> </important> <p>If your specified role has a
+     * Service Developer Guide</i>.</p>  <p>If your specified role has a
      * path other than <code>/</code>, then you must either specify the full role ARN
      * (this is recommended) or prefix the role name with the path. For example, if a
      * role with the name <code>bar</code> has a path of <code>/foo/</code> then you
@@ -1267,7 +1267,7 @@ namespace Model
      * only permitted if you are using a load balancer with your service and your task
      * definition does not use the <code>awsvpc</code> network mode. If you specify the
      * <code>role</code> parameter, you must also specify a load balancer object with
-     * the <code>loadBalancers</code> parameter.</p> <important> <p>If your account has
+     * the <code>loadBalancers</code> parameter.</p>  <p>If your account has
      * already created the Amazon ECS service-linked role, that role is used by default
      * for your service unless you specify a role here. The service-linked role is
      * required if your task definition uses the <code>awsvpc</code> network mode or if
@@ -1276,7 +1276,7 @@ namespace Model
      * case you should not specify a role here. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
      * Service-Linked Roles for Amazon ECS</a> in the <i>Amazon Elastic Container
-     * Service Developer Guide</i>.</p> </important> <p>If your specified role has a
+     * Service Developer Guide</i>.</p>  <p>If your specified role has a
      * path other than <code>/</code>, then you must either specify the full role ARN
      * (this is recommended) or prefix the role name with the path. For example, if a
      * role with the name <code>bar</code> has a path of <code>/foo/</code> then you
@@ -1293,7 +1293,7 @@ namespace Model
      * only permitted if you are using a load balancer with your service and your task
      * definition does not use the <code>awsvpc</code> network mode. If you specify the
      * <code>role</code> parameter, you must also specify a load balancer object with
-     * the <code>loadBalancers</code> parameter.</p> <important> <p>If your account has
+     * the <code>loadBalancers</code> parameter.</p>  <p>If your account has
      * already created the Amazon ECS service-linked role, that role is used by default
      * for your service unless you specify a role here. The service-linked role is
      * required if your task definition uses the <code>awsvpc</code> network mode or if
@@ -1302,7 +1302,7 @@ namespace Model
      * case you should not specify a role here. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
      * Service-Linked Roles for Amazon ECS</a> in the <i>Amazon Elastic Container
-     * Service Developer Guide</i>.</p> </important> <p>If your specified role has a
+     * Service Developer Guide</i>.</p>  <p>If your specified role has a
      * path other than <code>/</code>, then you must either specify the full role ARN
      * (this is recommended) or prefix the role name with the path. For example, if a
      * role with the name <code>bar</code> has a path of <code>/foo/</code> then you
@@ -1319,7 +1319,7 @@ namespace Model
      * only permitted if you are using a load balancer with your service and your task
      * definition does not use the <code>awsvpc</code> network mode. If you specify the
      * <code>role</code> parameter, you must also specify a load balancer object with
-     * the <code>loadBalancers</code> parameter.</p> <important> <p>If your account has
+     * the <code>loadBalancers</code> parameter.</p>  <p>If your account has
      * already created the Amazon ECS service-linked role, that role is used by default
      * for your service unless you specify a role here. The service-linked role is
      * required if your task definition uses the <code>awsvpc</code> network mode or if
@@ -1328,7 +1328,7 @@ namespace Model
      * case you should not specify a role here. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
      * Service-Linked Roles for Amazon ECS</a> in the <i>Amazon Elastic Container
-     * Service Developer Guide</i>.</p> </important> <p>If your specified role has a
+     * Service Developer Guide</i>.</p>  <p>If your specified role has a
      * path other than <code>/</code>, then you must either specify the full role ARN
      * (this is recommended) or prefix the role name with the path. For example, if a
      * role with the name <code>bar</code> has a path of <code>/foo/</code> then you
@@ -1627,9 +1627,9 @@ namespace Model
      * placement constraints for running tasks and will stop tasks that do not meet the
      * placement constraints. When you're using this strategy, you don't need to
      * specify a desired number of tasks, a task placement strategy, or use Service
-     * Auto Scaling policies.</p> <note> <p>Tasks using the Fargate launch type or the
+     * Auto Scaling policies.</p>  <p>Tasks using the Fargate launch type or the
      * <code>CODE_DEPLOY</code> or <code>EXTERNAL</code> deployment controller types
-     * don't support the <code>DAEMON</code> scheduling strategy.</p> </note> </li>
+     * don't support the <code>DAEMON</code> scheduling strategy.</p>  </li>
      * </ul>
      */
     inline const SchedulingStrategy& GetSchedulingStrategy() const{ return m_schedulingStrategy; }
@@ -1650,9 +1650,9 @@ namespace Model
      * placement constraints for running tasks and will stop tasks that do not meet the
      * placement constraints. When you're using this strategy, you don't need to
      * specify a desired number of tasks, a task placement strategy, or use Service
-     * Auto Scaling policies.</p> <note> <p>Tasks using the Fargate launch type or the
+     * Auto Scaling policies.</p>  <p>Tasks using the Fargate launch type or the
      * <code>CODE_DEPLOY</code> or <code>EXTERNAL</code> deployment controller types
-     * don't support the <code>DAEMON</code> scheduling strategy.</p> </note> </li>
+     * don't support the <code>DAEMON</code> scheduling strategy.</p>  </li>
      * </ul>
      */
     inline bool SchedulingStrategyHasBeenSet() const { return m_schedulingStrategyHasBeenSet; }
@@ -1673,9 +1673,9 @@ namespace Model
      * placement constraints for running tasks and will stop tasks that do not meet the
      * placement constraints. When you're using this strategy, you don't need to
      * specify a desired number of tasks, a task placement strategy, or use Service
-     * Auto Scaling policies.</p> <note> <p>Tasks using the Fargate launch type or the
+     * Auto Scaling policies.</p>  <p>Tasks using the Fargate launch type or the
      * <code>CODE_DEPLOY</code> or <code>EXTERNAL</code> deployment controller types
-     * don't support the <code>DAEMON</code> scheduling strategy.</p> </note> </li>
+     * don't support the <code>DAEMON</code> scheduling strategy.</p>  </li>
      * </ul>
      */
     inline void SetSchedulingStrategy(const SchedulingStrategy& value) { m_schedulingStrategyHasBeenSet = true; m_schedulingStrategy = value; }
@@ -1696,9 +1696,9 @@ namespace Model
      * placement constraints for running tasks and will stop tasks that do not meet the
      * placement constraints. When you're using this strategy, you don't need to
      * specify a desired number of tasks, a task placement strategy, or use Service
-     * Auto Scaling policies.</p> <note> <p>Tasks using the Fargate launch type or the
+     * Auto Scaling policies.</p>  <p>Tasks using the Fargate launch type or the
      * <code>CODE_DEPLOY</code> or <code>EXTERNAL</code> deployment controller types
-     * don't support the <code>DAEMON</code> scheduling strategy.</p> </note> </li>
+     * don't support the <code>DAEMON</code> scheduling strategy.</p>  </li>
      * </ul>
      */
     inline void SetSchedulingStrategy(SchedulingStrategy&& value) { m_schedulingStrategyHasBeenSet = true; m_schedulingStrategy = std::move(value); }
@@ -1719,9 +1719,9 @@ namespace Model
      * placement constraints for running tasks and will stop tasks that do not meet the
      * placement constraints. When you're using this strategy, you don't need to
      * specify a desired number of tasks, a task placement strategy, or use Service
-     * Auto Scaling policies.</p> <note> <p>Tasks using the Fargate launch type or the
+     * Auto Scaling policies.</p>  <p>Tasks using the Fargate launch type or the
      * <code>CODE_DEPLOY</code> or <code>EXTERNAL</code> deployment controller types
-     * don't support the <code>DAEMON</code> scheduling strategy.</p> </note> </li>
+     * don't support the <code>DAEMON</code> scheduling strategy.</p>  </li>
      * </ul>
      */
     inline CreateServiceRequest& WithSchedulingStrategy(const SchedulingStrategy& value) { SetSchedulingStrategy(value); return *this;}
@@ -1742,9 +1742,9 @@ namespace Model
      * placement constraints for running tasks and will stop tasks that do not meet the
      * placement constraints. When you're using this strategy, you don't need to
      * specify a desired number of tasks, a task placement strategy, or use Service
-     * Auto Scaling policies.</p> <note> <p>Tasks using the Fargate launch type or the
+     * Auto Scaling policies.</p>  <p>Tasks using the Fargate launch type or the
      * <code>CODE_DEPLOY</code> or <code>EXTERNAL</code> deployment controller types
-     * don't support the <code>DAEMON</code> scheduling strategy.</p> </note> </li>
+     * don't support the <code>DAEMON</code> scheduling strategy.</p>  </li>
      * </ul>
      */
     inline CreateServiceRequest& WithSchedulingStrategy(SchedulingStrategy&& value) { SetSchedulingStrategy(std::move(value)); return *this;}

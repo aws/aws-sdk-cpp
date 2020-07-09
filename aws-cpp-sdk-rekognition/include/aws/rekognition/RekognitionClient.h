@@ -326,9 +326,9 @@ namespace Model
 
         /**
          * <p>Compares a face in the <i>source</i> input image with each of the 100 largest
-         * faces detected in the <i>target</i> input image. </p> <note> <p> If the source
+         * faces detected in the <i>target</i> input image. </p>  <p> If the source
          * image contains multiple faces, the service detects the largest face and compares
-         * it with each face detected in the target image. </p> </note> <p>You pass the
+         * it with each face detected in the target image. </p>  <p>You pass the
          * input and target images either as base64-encoded image bytes or as references to
          * images in an Amazon S3 bucket. If you use the AWS CLI to call Amazon Rekognition
          * operations, passing image bytes isn't supported. The image must be formatted as
@@ -338,9 +338,9 @@ namespace Model
          * (pitch, role, and yaw), quality (brightness and sharpness), and confidence value
          * (indicating the level of confidence that the bounding box contains a face). The
          * response also provides a similarity score, which indicates how closely the faces
-         * match. </p> <note> <p>By default, only faces with a similarity score of greater
+         * match. </p>  <p>By default, only faces with a similarity score of greater
          * than or equal to 80% are returned in the response. You can change this value by
-         * specifying the <code>SimilarityThreshold</code> parameter.</p> </note> <p>
+         * specifying the <code>SimilarityThreshold</code> parameter.</p>  <p>
          * <code>CompareFaces</code> also returns an array of faces that don't match the
          * source image. For each face, it returns a bounding box, confidence value,
          * landmarks, pose details, and quality. The response also returns information
@@ -351,17 +351,17 @@ namespace Model
          * <code>QualityFilter</code> to set the quality bar by specifying
          * <code>LOW</code>, <code>MEDIUM</code>, or <code>HIGH</code>. If you do not want
          * to filter detected faces, specify <code>NONE</code>. The default value is
-         * <code>NONE</code>. </p> <note> <p>To use quality filtering, you need a
+         * <code>NONE</code>. </p>  <p>To use quality filtering, you need a
          * collection associated with version 3 of the face model or higher. To get the
          * version of the face model associated with a collection, call
-         * <a>DescribeCollection</a>. </p> </note> <p>If the image doesn't contain Exif
+         * <a>DescribeCollection</a>. </p>  <p>If the image doesn't contain Exif
          * metadata, <code>CompareFaces</code> returns orientation information for the
          * source and target images. Use these values to display the images with the
          * correct image orientation.</p> <p>If no faces are detected in the source or
          * target images, <code>CompareFaces</code> returns an
-         * <code>InvalidParameterException</code> error. </p> <note> <p> This is a
+         * <code>InvalidParameterException</code> error. </p>  <p> This is a
          * stateless API operation. That is, data returned by this operation doesn't
-         * persist.</p> </note> <p>For an example, see Comparing Faces in Images in the
+         * persist.</p>  <p>For an example, see Comparing Faces in Images in the
          * Amazon Rekognition Developer Guide.</p> <p>This operation requires permissions
          * to perform the <code>rekognition:CompareFaces</code> action.</p><p><h3>See
          * Also:</h3>   <a
@@ -372,9 +372,9 @@ namespace Model
 
         /**
          * <p>Compares a face in the <i>source</i> input image with each of the 100 largest
-         * faces detected in the <i>target</i> input image. </p> <note> <p> If the source
+         * faces detected in the <i>target</i> input image. </p>  <p> If the source
          * image contains multiple faces, the service detects the largest face and compares
-         * it with each face detected in the target image. </p> </note> <p>You pass the
+         * it with each face detected in the target image. </p>  <p>You pass the
          * input and target images either as base64-encoded image bytes or as references to
          * images in an Amazon S3 bucket. If you use the AWS CLI to call Amazon Rekognition
          * operations, passing image bytes isn't supported. The image must be formatted as
@@ -384,9 +384,9 @@ namespace Model
          * (pitch, role, and yaw), quality (brightness and sharpness), and confidence value
          * (indicating the level of confidence that the bounding box contains a face). The
          * response also provides a similarity score, which indicates how closely the faces
-         * match. </p> <note> <p>By default, only faces with a similarity score of greater
+         * match. </p>  <p>By default, only faces with a similarity score of greater
          * than or equal to 80% are returned in the response. You can change this value by
-         * specifying the <code>SimilarityThreshold</code> parameter.</p> </note> <p>
+         * specifying the <code>SimilarityThreshold</code> parameter.</p>  <p>
          * <code>CompareFaces</code> also returns an array of faces that don't match the
          * source image. For each face, it returns a bounding box, confidence value,
          * landmarks, pose details, and quality. The response also returns information
@@ -397,17 +397,17 @@ namespace Model
          * <code>QualityFilter</code> to set the quality bar by specifying
          * <code>LOW</code>, <code>MEDIUM</code>, or <code>HIGH</code>. If you do not want
          * to filter detected faces, specify <code>NONE</code>. The default value is
-         * <code>NONE</code>. </p> <note> <p>To use quality filtering, you need a
+         * <code>NONE</code>. </p>  <p>To use quality filtering, you need a
          * collection associated with version 3 of the face model or higher. To get the
          * version of the face model associated with a collection, call
-         * <a>DescribeCollection</a>. </p> </note> <p>If the image doesn't contain Exif
+         * <a>DescribeCollection</a>. </p>  <p>If the image doesn't contain Exif
          * metadata, <code>CompareFaces</code> returns orientation information for the
          * source and target images. Use these values to display the images with the
          * correct image orientation.</p> <p>If no faces are detected in the source or
          * target images, <code>CompareFaces</code> returns an
-         * <code>InvalidParameterException</code> error. </p> <note> <p> This is a
+         * <code>InvalidParameterException</code> error. </p>  <p> This is a
          * stateless API operation. That is, data returned by this operation doesn't
-         * persist.</p> </note> <p>For an example, see Comparing Faces in Images in the
+         * persist.</p>  <p>For an example, see Comparing Faces in Images in the
          * Amazon Rekognition Developer Guide.</p> <p>This operation requires permissions
          * to perform the <code>rekognition:CompareFaces</code> action.</p><p><h3>See
          * Also:</h3>   <a
@@ -420,9 +420,9 @@ namespace Model
 
         /**
          * <p>Compares a face in the <i>source</i> input image with each of the 100 largest
-         * faces detected in the <i>target</i> input image. </p> <note> <p> If the source
+         * faces detected in the <i>target</i> input image. </p>  <p> If the source
          * image contains multiple faces, the service detects the largest face and compares
-         * it with each face detected in the target image. </p> </note> <p>You pass the
+         * it with each face detected in the target image. </p>  <p>You pass the
          * input and target images either as base64-encoded image bytes or as references to
          * images in an Amazon S3 bucket. If you use the AWS CLI to call Amazon Rekognition
          * operations, passing image bytes isn't supported. The image must be formatted as
@@ -432,9 +432,9 @@ namespace Model
          * (pitch, role, and yaw), quality (brightness and sharpness), and confidence value
          * (indicating the level of confidence that the bounding box contains a face). The
          * response also provides a similarity score, which indicates how closely the faces
-         * match. </p> <note> <p>By default, only faces with a similarity score of greater
+         * match. </p>  <p>By default, only faces with a similarity score of greater
          * than or equal to 80% are returned in the response. You can change this value by
-         * specifying the <code>SimilarityThreshold</code> parameter.</p> </note> <p>
+         * specifying the <code>SimilarityThreshold</code> parameter.</p>  <p>
          * <code>CompareFaces</code> also returns an array of faces that don't match the
          * source image. For each face, it returns a bounding box, confidence value,
          * landmarks, pose details, and quality. The response also returns information
@@ -445,17 +445,17 @@ namespace Model
          * <code>QualityFilter</code> to set the quality bar by specifying
          * <code>LOW</code>, <code>MEDIUM</code>, or <code>HIGH</code>. If you do not want
          * to filter detected faces, specify <code>NONE</code>. The default value is
-         * <code>NONE</code>. </p> <note> <p>To use quality filtering, you need a
+         * <code>NONE</code>. </p>  <p>To use quality filtering, you need a
          * collection associated with version 3 of the face model or higher. To get the
          * version of the face model associated with a collection, call
-         * <a>DescribeCollection</a>. </p> </note> <p>If the image doesn't contain Exif
+         * <a>DescribeCollection</a>. </p>  <p>If the image doesn't contain Exif
          * metadata, <code>CompareFaces</code> returns orientation information for the
          * source and target images. Use these values to display the images with the
          * correct image orientation.</p> <p>If no faces are detected in the source or
          * target images, <code>CompareFaces</code> returns an
-         * <code>InvalidParameterException</code> error. </p> <note> <p> This is a
+         * <code>InvalidParameterException</code> error. </p>  <p> This is a
          * stateless API operation. That is, data returned by this operation doesn't
-         * persist.</p> </note> <p>For an example, see Comparing Faces in Images in the
+         * persist.</p>  <p>For an example, see Comparing Faces in Images in the
          * Amazon Rekognition Developer Guide.</p> <p>This operation requires permissions
          * to perform the <code>rekognition:CompareFaces</code> action.</p><p><h3>See
          * Also:</h3>   <a
@@ -473,8 +473,8 @@ namespace Model
          * using the <code>IndexFaces</code> operation and persist results in a specific
          * collection. Then, a user can search the collection for faces in the
          * user-specific container. </p> <p>When you create a collection, it is associated
-         * with the latest version of the face model version.</p> <note> <p>Collection
-         * names are case-sensitive.</p> </note> <p>This operation requires permissions to
+         * with the latest version of the face model version.</p>  <p>Collection
+         * names are case-sensitive.</p>  <p>This operation requires permissions to
          * perform the <code>rekognition:CreateCollection</code> action.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/CreateCollection">AWS
@@ -489,8 +489,8 @@ namespace Model
          * using the <code>IndexFaces</code> operation and persist results in a specific
          * collection. Then, a user can search the collection for faces in the
          * user-specific container. </p> <p>When you create a collection, it is associated
-         * with the latest version of the face model version.</p> <note> <p>Collection
-         * names are case-sensitive.</p> </note> <p>This operation requires permissions to
+         * with the latest version of the face model version.</p>  <p>Collection
+         * names are case-sensitive.</p>  <p>This operation requires permissions to
          * perform the <code>rekognition:CreateCollection</code> action.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/CreateCollection">AWS
@@ -507,8 +507,8 @@ namespace Model
          * using the <code>IndexFaces</code> operation and persist results in a specific
          * collection. Then, a user can search the collection for faces in the
          * user-specific container. </p> <p>When you create a collection, it is associated
-         * with the latest version of the face model version.</p> <note> <p>Collection
-         * names are case-sensitive.</p> </note> <p>This operation requires permissions to
+         * with the latest version of the face model version.</p>  <p>Collection
+         * names are case-sensitive.</p>  <p>This operation requires permissions to
          * perform the <code>rekognition:CreateCollection</code> action.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/CreateCollection">AWS
@@ -1114,8 +1114,8 @@ namespace Model
          * base64-encoded image bytes or as a reference to an image in an Amazon S3 bucket.
          * If you use the AWS CLI to call Amazon Rekognition operations, passing image
          * bytes is not supported. The image must be either a PNG or JPEG formatted file.
-         * </p> <note> <p>This is a stateless API operation. That is, the operation does
-         * not persist any data.</p> </note> <p>This operation requires permissions to
+         * </p>  <p>This is a stateless API operation. That is, the operation does
+         * not persist any data.</p>  <p>This operation requires permissions to
          * perform the <code>rekognition:DetectFaces</code> action. </p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DetectFaces">AWS
@@ -1136,8 +1136,8 @@ namespace Model
          * base64-encoded image bytes or as a reference to an image in an Amazon S3 bucket.
          * If you use the AWS CLI to call Amazon Rekognition operations, passing image
          * bytes is not supported. The image must be either a PNG or JPEG formatted file.
-         * </p> <note> <p>This is a stateless API operation. That is, the operation does
-         * not persist any data.</p> </note> <p>This operation requires permissions to
+         * </p>  <p>This is a stateless API operation. That is, the operation does
+         * not persist any data.</p>  <p>This operation requires permissions to
          * perform the <code>rekognition:DetectFaces</code> action. </p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DetectFaces">AWS
@@ -1160,8 +1160,8 @@ namespace Model
          * base64-encoded image bytes or as a reference to an image in an Amazon S3 bucket.
          * If you use the AWS CLI to call Amazon Rekognition operations, passing image
          * bytes is not supported. The image must be either a PNG or JPEG formatted file.
-         * </p> <note> <p>This is a stateless API operation. That is, the operation does
-         * not persist any data.</p> </note> <p>This operation requires permissions to
+         * </p>  <p>This is a stateless API operation. That is, the operation does
+         * not persist any data.</p>  <p>This operation requires permissions to
          * perform the <code>rekognition:DetectFaces</code> action. </p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DetectFaces">AWS
@@ -1176,11 +1176,11 @@ namespace Model
          * provided as input. This includes objects like flower, tree, and table; events
          * like wedding, graduation, and birthday party; and concepts like landscape,
          * evening, and nature. </p> <p>For an example, see Analyzing Images Stored in an
-         * Amazon S3 Bucket in the Amazon Rekognition Developer Guide.</p> <note> <p>
+         * Amazon S3 Bucket in the Amazon Rekognition Developer Guide.</p>  <p>
          * <code>DetectLabels</code> does not support the detection of activities. However,
          * activity detection is supported for label detection in videos. For more
          * information, see StartLabelDetection in the Amazon Rekognition Developer
-         * Guide.</p> </note> <p>You pass the input image as base64-encoded image bytes or
+         * Guide.</p>  <p>You pass the input image as base64-encoded image bytes or
          * as a reference to an image in an Amazon S3 bucket. If you use the AWS CLI to
          * call Amazon Rekognition operations, passing image bytes is not supported. The
          * image must be either a PNG or JPEG formatted file. </p> <p> For each object,
@@ -1202,8 +1202,8 @@ namespace Model
          * Optionally, you can specify <code>MinConfidence</code> to control the confidence
          * threshold for the labels returned. The default is 55%. You can also add the
          * <code>MaxLabels</code> parameter to limit the number of labels returned. </p>
-         * <note> <p>If the object detected is a person, the operation doesn't provide the
-         * same facial details that the <a>DetectFaces</a> operation provides.</p> </note>
+         *  <p>If the object detected is a person, the operation doesn't provide the
+         * same facial details that the <a>DetectFaces</a> operation provides.</p> 
          * <p> <code>DetectLabels</code> returns bounding boxes for instances of common
          * object labels in an array of <a>Instance</a> objects. An <code>Instance</code>
          * object contains a <a>BoundingBox</a> object, for the location of the label on
@@ -1228,11 +1228,11 @@ namespace Model
          * provided as input. This includes objects like flower, tree, and table; events
          * like wedding, graduation, and birthday party; and concepts like landscape,
          * evening, and nature. </p> <p>For an example, see Analyzing Images Stored in an
-         * Amazon S3 Bucket in the Amazon Rekognition Developer Guide.</p> <note> <p>
+         * Amazon S3 Bucket in the Amazon Rekognition Developer Guide.</p>  <p>
          * <code>DetectLabels</code> does not support the detection of activities. However,
          * activity detection is supported for label detection in videos. For more
          * information, see StartLabelDetection in the Amazon Rekognition Developer
-         * Guide.</p> </note> <p>You pass the input image as base64-encoded image bytes or
+         * Guide.</p>  <p>You pass the input image as base64-encoded image bytes or
          * as a reference to an image in an Amazon S3 bucket. If you use the AWS CLI to
          * call Amazon Rekognition operations, passing image bytes is not supported. The
          * image must be either a PNG or JPEG formatted file. </p> <p> For each object,
@@ -1254,8 +1254,8 @@ namespace Model
          * Optionally, you can specify <code>MinConfidence</code> to control the confidence
          * threshold for the labels returned. The default is 55%. You can also add the
          * <code>MaxLabels</code> parameter to limit the number of labels returned. </p>
-         * <note> <p>If the object detected is a person, the operation doesn't provide the
-         * same facial details that the <a>DetectFaces</a> operation provides.</p> </note>
+         *  <p>If the object detected is a person, the operation doesn't provide the
+         * same facial details that the <a>DetectFaces</a> operation provides.</p> 
          * <p> <code>DetectLabels</code> returns bounding boxes for instances of common
          * object labels in an array of <a>Instance</a> objects. An <code>Instance</code>
          * object contains a <a>BoundingBox</a> object, for the location of the label on
@@ -1282,11 +1282,11 @@ namespace Model
          * provided as input. This includes objects like flower, tree, and table; events
          * like wedding, graduation, and birthday party; and concepts like landscape,
          * evening, and nature. </p> <p>For an example, see Analyzing Images Stored in an
-         * Amazon S3 Bucket in the Amazon Rekognition Developer Guide.</p> <note> <p>
+         * Amazon S3 Bucket in the Amazon Rekognition Developer Guide.</p>  <p>
          * <code>DetectLabels</code> does not support the detection of activities. However,
          * activity detection is supported for label detection in videos. For more
          * information, see StartLabelDetection in the Amazon Rekognition Developer
-         * Guide.</p> </note> <p>You pass the input image as base64-encoded image bytes or
+         * Guide.</p>  <p>You pass the input image as base64-encoded image bytes or
          * as a reference to an image in an Amazon S3 bucket. If you use the AWS CLI to
          * call Amazon Rekognition operations, passing image bytes is not supported. The
          * image must be either a PNG or JPEG formatted file. </p> <p> For each object,
@@ -1308,8 +1308,8 @@ namespace Model
          * Optionally, you can specify <code>MinConfidence</code> to control the confidence
          * threshold for the labels returned. The default is 55%. You can also add the
          * <code>MaxLabels</code> parameter to limit the number of labels returned. </p>
-         * <note> <p>If the object detected is a person, the operation doesn't provide the
-         * same facial details that the <a>DetectFaces</a> operation provides.</p> </note>
+         *  <p>If the object detected is a person, the operation doesn't provide the
+         * same facial details that the <a>DetectFaces</a> operation provides.</p> 
          * <p> <code>DetectLabels</code> returns bounding boxes for instances of common
          * object labels in an array of <a>Instance</a> objects. An <code>Instance</code>
          * object contains a <a>BoundingBox</a> object, for the location of the label on
@@ -1545,13 +1545,13 @@ namespace Model
          * time(s) they are detected in an array (<code>Celebrities</code>) of
          * <a>CelebrityRecognition</a> objects. Each <code>CelebrityRecognition</code>
          * contains information about the celebrity in a <a>CelebrityDetail</a> object and
-         * the time, <code>Timestamp</code>, the celebrity was detected. </p> <note> <p>
+         * the time, <code>Timestamp</code>, the celebrity was detected. </p>  <p>
          * <code>GetCelebrityRecognition</code> only returns the default facial attributes
          * (<code>BoundingBox</code>, <code>Confidence</code>, <code>Landmarks</code>,
          * <code>Pose</code>, and <code>Quality</code>). The other facial attributes listed
          * in the <code>Face</code> object of the following response syntax are not
          * returned. For more information, see FaceDetail in the Amazon Rekognition
-         * Developer Guide. </p> </note> <p>By default, the <code>Celebrities</code> array
+         * Developer Guide. </p>  <p>By default, the <code>Celebrities</code> array
          * is sorted by time (milliseconds from the start of the video). You can also sort
          * the array by celebrity by specifying the value <code>ID</code> in the
          * <code>SortBy</code> input parameter.</p> <p>The <code>CelebrityDetail</code>
@@ -1590,13 +1590,13 @@ namespace Model
          * time(s) they are detected in an array (<code>Celebrities</code>) of
          * <a>CelebrityRecognition</a> objects. Each <code>CelebrityRecognition</code>
          * contains information about the celebrity in a <a>CelebrityDetail</a> object and
-         * the time, <code>Timestamp</code>, the celebrity was detected. </p> <note> <p>
+         * the time, <code>Timestamp</code>, the celebrity was detected. </p>  <p>
          * <code>GetCelebrityRecognition</code> only returns the default facial attributes
          * (<code>BoundingBox</code>, <code>Confidence</code>, <code>Landmarks</code>,
          * <code>Pose</code>, and <code>Quality</code>). The other facial attributes listed
          * in the <code>Face</code> object of the following response syntax are not
          * returned. For more information, see FaceDetail in the Amazon Rekognition
-         * Developer Guide. </p> </note> <p>By default, the <code>Celebrities</code> array
+         * Developer Guide. </p>  <p>By default, the <code>Celebrities</code> array
          * is sorted by time (milliseconds from the start of the video). You can also sort
          * the array by celebrity by specifying the value <code>ID</code> in the
          * <code>SortBy</code> input parameter.</p> <p>The <code>CelebrityDetail</code>
@@ -1637,13 +1637,13 @@ namespace Model
          * time(s) they are detected in an array (<code>Celebrities</code>) of
          * <a>CelebrityRecognition</a> objects. Each <code>CelebrityRecognition</code>
          * contains information about the celebrity in a <a>CelebrityDetail</a> object and
-         * the time, <code>Timestamp</code>, the celebrity was detected. </p> <note> <p>
+         * the time, <code>Timestamp</code>, the celebrity was detected. </p>  <p>
          * <code>GetCelebrityRecognition</code> only returns the default facial attributes
          * (<code>BoundingBox</code>, <code>Confidence</code>, <code>Landmarks</code>,
          * <code>Pose</code>, and <code>Quality</code>). The other facial attributes listed
          * in the <code>Face</code> object of the following response syntax are not
          * returned. For more information, see FaceDetail in the Amazon Rekognition
-         * Developer Guide. </p> </note> <p>By default, the <code>Celebrities</code> array
+         * Developer Guide. </p>  <p>By default, the <code>Celebrities</code> array
          * is sorted by time (milliseconds from the start of the video). You can also sort
          * the array by celebrity by specifying the value <code>ID</code> in the
          * <code>SortBy</code> input parameter.</p> <p>The <code>CelebrityDetail</code>
@@ -1875,12 +1875,12 @@ namespace Model
          * Each<code>PersonMatch</code> element contains details about the matching faces
          * in the input collection, person information (facial attributes, bounding boxes,
          * and person identifer) for the matched person, and the time the person was
-         * matched in the video.</p> <note> <p> <code>GetFaceSearch</code> only returns the
+         * matched in the video.</p>  <p> <code>GetFaceSearch</code> only returns the
          * default facial attributes (<code>BoundingBox</code>, <code>Confidence</code>,
          * <code>Landmarks</code>, <code>Pose</code>, and <code>Quality</code>). The other
          * facial attributes listed in the <code>Face</code> object of the following
          * response syntax are not returned. For more information, see FaceDetail in the
-         * Amazon Rekognition Developer Guide. </p> </note> <p>By default, the
+         * Amazon Rekognition Developer Guide. </p>  <p>By default, the
          * <code>Persons</code> array is sorted by the time, in milliseconds from the start
          * of the video, persons are matched. You can also sort by persons by specifying
          * <code>INDEX</code> for the <code>SORTBY</code> input parameter.</p><p><h3>See
@@ -1909,12 +1909,12 @@ namespace Model
          * Each<code>PersonMatch</code> element contains details about the matching faces
          * in the input collection, person information (facial attributes, bounding boxes,
          * and person identifer) for the matched person, and the time the person was
-         * matched in the video.</p> <note> <p> <code>GetFaceSearch</code> only returns the
+         * matched in the video.</p>  <p> <code>GetFaceSearch</code> only returns the
          * default facial attributes (<code>BoundingBox</code>, <code>Confidence</code>,
          * <code>Landmarks</code>, <code>Pose</code>, and <code>Quality</code>). The other
          * facial attributes listed in the <code>Face</code> object of the following
          * response syntax are not returned. For more information, see FaceDetail in the
-         * Amazon Rekognition Developer Guide. </p> </note> <p>By default, the
+         * Amazon Rekognition Developer Guide. </p>  <p>By default, the
          * <code>Persons</code> array is sorted by the time, in milliseconds from the start
          * of the video, persons are matched. You can also sort by persons by specifying
          * <code>INDEX</code> for the <code>SORTBY</code> input parameter.</p><p><h3>See
@@ -1945,12 +1945,12 @@ namespace Model
          * Each<code>PersonMatch</code> element contains details about the matching faces
          * in the input collection, person information (facial attributes, bounding boxes,
          * and person identifer) for the matched person, and the time the person was
-         * matched in the video.</p> <note> <p> <code>GetFaceSearch</code> only returns the
+         * matched in the video.</p>  <p> <code>GetFaceSearch</code> only returns the
          * default facial attributes (<code>BoundingBox</code>, <code>Confidence</code>,
          * <code>Landmarks</code>, <code>Pose</code>, and <code>Quality</code>). The other
          * facial attributes listed in the <code>Face</code> object of the following
          * response syntax are not returned. For more information, see FaceDetail in the
-         * Amazon Rekognition Developer Guide. </p> </note> <p>By default, the
+         * Amazon Rekognition Developer Guide. </p>  <p>By default, the
          * <code>Persons</code> array is sorted by the time, in milliseconds from the start
          * of the video, persons are matched. You can also sort by persons by specifying
          * <code>INDEX</code> for the <code>SORTBY</code> input parameter.</p><p><h3>See
@@ -2072,13 +2072,13 @@ namespace Model
          * (<code>JobId</code>) from the initial call to
          * <code>StartPersonTracking</code>.</p> <p> <code>GetPersonTracking</code> returns
          * an array, <code>Persons</code>, of tracked persons and the time(s) their paths
-         * were tracked in the video. </p> <note> <p> <code>GetPersonTracking</code> only
+         * were tracked in the video. </p>  <p> <code>GetPersonTracking</code> only
          * returns the default facial attributes (<code>BoundingBox</code>,
          * <code>Confidence</code>, <code>Landmarks</code>, <code>Pose</code>, and
          * <code>Quality</code>). The other facial attributes listed in the
          * <code>Face</code> object of the following response syntax are not returned. </p>
          * <p>For more information, see FaceDetail in the Amazon Rekognition Developer
-         * Guide.</p> </note> <p>By default, the array is sorted by the time(s) a person's
+         * Guide.</p>  <p>By default, the array is sorted by the time(s) a person's
          * path is tracked in the video. You can sort by tracked persons by specifying
          * <code>INDEX</code> for the <code>SortBy</code> input parameter.</p> <p>Use the
          * <code>MaxResults</code> parameter to limit the number of items returned. If
@@ -2106,13 +2106,13 @@ namespace Model
          * (<code>JobId</code>) from the initial call to
          * <code>StartPersonTracking</code>.</p> <p> <code>GetPersonTracking</code> returns
          * an array, <code>Persons</code>, of tracked persons and the time(s) their paths
-         * were tracked in the video. </p> <note> <p> <code>GetPersonTracking</code> only
+         * were tracked in the video. </p>  <p> <code>GetPersonTracking</code> only
          * returns the default facial attributes (<code>BoundingBox</code>,
          * <code>Confidence</code>, <code>Landmarks</code>, <code>Pose</code>, and
          * <code>Quality</code>). The other facial attributes listed in the
          * <code>Face</code> object of the following response syntax are not returned. </p>
          * <p>For more information, see FaceDetail in the Amazon Rekognition Developer
-         * Guide.</p> </note> <p>By default, the array is sorted by the time(s) a person's
+         * Guide.</p>  <p>By default, the array is sorted by the time(s) a person's
          * path is tracked in the video. You can sort by tracked persons by specifying
          * <code>INDEX</code> for the <code>SortBy</code> input parameter.</p> <p>Use the
          * <code>MaxResults</code> parameter to limit the number of items returned. If
@@ -2142,13 +2142,13 @@ namespace Model
          * (<code>JobId</code>) from the initial call to
          * <code>StartPersonTracking</code>.</p> <p> <code>GetPersonTracking</code> returns
          * an array, <code>Persons</code>, of tracked persons and the time(s) their paths
-         * were tracked in the video. </p> <note> <p> <code>GetPersonTracking</code> only
+         * were tracked in the video. </p>  <p> <code>GetPersonTracking</code> only
          * returns the default facial attributes (<code>BoundingBox</code>,
          * <code>Confidence</code>, <code>Landmarks</code>, <code>Pose</code>, and
          * <code>Quality</code>). The other facial attributes listed in the
          * <code>Face</code> object of the following response syntax are not returned. </p>
          * <p>For more information, see FaceDetail in the Amazon Rekognition Developer
-         * Guide.</p> </note> <p>By default, the array is sorted by the time(s) a person's
+         * Guide.</p>  <p>By default, the array is sorted by the time(s) a person's
          * path is tracked in the video. You can sort by tracked persons by specifying
          * <code>INDEX</code> for the <code>SortBy</code> input parameter.</p> <p>Use the
          * <code>MaxResults</code> parameter to limit the number of items returned. If
@@ -2406,10 +2406,10 @@ namespace Model
          * the quality bar that's used to filter faces. You can also explicitly choose the
          * quality bar. Use <code>QualityFilter</code>, to set the quality bar by
          * specifying <code>LOW</code>, <code>MEDIUM</code>, or <code>HIGH</code>. If you
-         * do not want to filter detected faces, specify <code>NONE</code>. </p> <note>
+         * do not want to filter detected faces, specify <code>NONE</code>. </p> 
          * <p>To use quality filtering, you need a collection associated with version 3 of
          * the face model or higher. To get the version of the face model associated with a
-         * collection, call <a>DescribeCollection</a>. </p> </note> <p>Information about
+         * collection, call <a>DescribeCollection</a>. </p>  <p>Information about
          * faces detected in an image, but not indexed, is returned in an array of
          * <a>UnindexedFace</a> objects, <code>UnindexedFaces</code>. Faces aren't indexed
          * for reasons such as:</p> <ul> <li> <p>The number of faces detected exceeds the
@@ -2477,10 +2477,10 @@ namespace Model
          * the quality bar that's used to filter faces. You can also explicitly choose the
          * quality bar. Use <code>QualityFilter</code>, to set the quality bar by
          * specifying <code>LOW</code>, <code>MEDIUM</code>, or <code>HIGH</code>. If you
-         * do not want to filter detected faces, specify <code>NONE</code>. </p> <note>
+         * do not want to filter detected faces, specify <code>NONE</code>. </p> 
          * <p>To use quality filtering, you need a collection associated with version 3 of
          * the face model or higher. To get the version of the face model associated with a
-         * collection, call <a>DescribeCollection</a>. </p> </note> <p>Information about
+         * collection, call <a>DescribeCollection</a>. </p>  <p>Information about
          * faces detected in an image, but not indexed, is returned in an array of
          * <a>UnindexedFace</a> objects, <code>UnindexedFaces</code>. Faces aren't indexed
          * for reasons such as:</p> <ul> <li> <p>The number of faces detected exceeds the
@@ -2550,10 +2550,10 @@ namespace Model
          * the quality bar that's used to filter faces. You can also explicitly choose the
          * quality bar. Use <code>QualityFilter</code>, to set the quality bar by
          * specifying <code>LOW</code>, <code>MEDIUM</code>, or <code>HIGH</code>. If you
-         * do not want to filter detected faces, specify <code>NONE</code>. </p> <note>
+         * do not want to filter detected faces, specify <code>NONE</code>. </p> 
          * <p>To use quality filtering, you need a collection associated with version 3 of
          * the face model or higher. To get the version of the face model associated with a
-         * collection, call <a>DescribeCollection</a>. </p> </note> <p>Information about
+         * collection, call <a>DescribeCollection</a>. </p>  <p>Information about
          * faces detected in an image, but not indexed, is returned in an array of
          * <a>UnindexedFace</a> objects, <code>UnindexedFaces</code>. Faces aren't indexed
          * for reasons such as:</p> <ul> <li> <p>The number of faces detected exceeds the
@@ -2797,9 +2797,9 @@ namespace Model
          * <p>For a given input face ID, searches for matching faces in the collection the
          * face belongs to. You get a face ID when you add a face to the collection using
          * the <a>IndexFaces</a> operation. The operation compares the features of the
-         * input face with faces in the specified collection. </p> <note> <p>You can also
+         * input face with faces in the specified collection. </p>  <p>You can also
          * search faces without indexing faces by using the <code>SearchFacesByImage</code>
-         * operation.</p> </note> <p> The operation response returns an array of faces that
+         * operation.</p>  <p> The operation response returns an array of faces that
          * match, ordered by similarity score with the highest similarity first. More
          * specifically, it is an array of metadata for each face match that is found.
          * Along with the metadata, the response also includes a <code>confidence</code>
@@ -2817,9 +2817,9 @@ namespace Model
          * <p>For a given input face ID, searches for matching faces in the collection the
          * face belongs to. You get a face ID when you add a face to the collection using
          * the <a>IndexFaces</a> operation. The operation compares the features of the
-         * input face with faces in the specified collection. </p> <note> <p>You can also
+         * input face with faces in the specified collection. </p>  <p>You can also
          * search faces without indexing faces by using the <code>SearchFacesByImage</code>
-         * operation.</p> </note> <p> The operation response returns an array of faces that
+         * operation.</p>  <p> The operation response returns an array of faces that
          * match, ordered by similarity score with the highest similarity first. More
          * specifically, it is an array of metadata for each face match that is found.
          * Along with the metadata, the response also includes a <code>confidence</code>
@@ -2839,9 +2839,9 @@ namespace Model
          * <p>For a given input face ID, searches for matching faces in the collection the
          * face belongs to. You get a face ID when you add a face to the collection using
          * the <a>IndexFaces</a> operation. The operation compares the features of the
-         * input face with faces in the specified collection. </p> <note> <p>You can also
+         * input face with faces in the specified collection. </p>  <p>You can also
          * search faces without indexing faces by using the <code>SearchFacesByImage</code>
-         * operation.</p> </note> <p> The operation response returns an array of faces that
+         * operation.</p>  <p> The operation response returns an array of faces that
          * match, ordered by similarity score with the highest similarity first. More
          * specifically, it is an array of metadata for each face match that is found.
          * Along with the metadata, the response also includes a <code>confidence</code>
@@ -2861,12 +2861,12 @@ namespace Model
          * <p>For a given input image, first detects the largest face in the image, and
          * then searches the specified collection for matching faces. The operation
          * compares the features of the input face with faces in the specified collection.
-         * </p> <note> <p>To search for all faces in an input image, you might first call
+         * </p>  <p>To search for all faces in an input image, you might first call
          * the <a>IndexFaces</a> operation, and then use the face IDs returned in
          * subsequent calls to the <a>SearchFaces</a> operation. </p> <p> You can also call
          * the <code>DetectFaces</code> operation and use the bounding boxes in the
          * response to make face crops, which then you can pass in to the
-         * <code>SearchFacesByImage</code> operation. </p> </note> <p>You pass the input
+         * <code>SearchFacesByImage</code> operation. </p>  <p>You pass the input
          * image either as base64-encoded image bytes or as a reference to an image in an
          * Amazon S3 bucket. If you use the AWS CLI to call Amazon Rekognition operations,
          * passing image bytes is not supported. The image must be either a PNG or JPEG
@@ -2884,10 +2884,10 @@ namespace Model
          * <code>QualityFilter</code> to set the quality bar for filtering by specifying
          * <code>LOW</code>, <code>MEDIUM</code>, or <code>HIGH</code>. If you do not want
          * to filter detected faces, specify <code>NONE</code>. The default value is
-         * <code>NONE</code>.</p> <note> <p>To use quality filtering, you need a collection
+         * <code>NONE</code>.</p>  <p>To use quality filtering, you need a collection
          * associated with version 3 of the face model or higher. To get the version of the
          * face model associated with a collection, call <a>DescribeCollection</a>. </p>
-         * </note> <p>This operation requires permissions to perform the
+         *  <p>This operation requires permissions to perform the
          * <code>rekognition:SearchFacesByImage</code> action.</p><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/SearchFacesByImage">AWS
@@ -2899,12 +2899,12 @@ namespace Model
          * <p>For a given input image, first detects the largest face in the image, and
          * then searches the specified collection for matching faces. The operation
          * compares the features of the input face with faces in the specified collection.
-         * </p> <note> <p>To search for all faces in an input image, you might first call
+         * </p>  <p>To search for all faces in an input image, you might first call
          * the <a>IndexFaces</a> operation, and then use the face IDs returned in
          * subsequent calls to the <a>SearchFaces</a> operation. </p> <p> You can also call
          * the <code>DetectFaces</code> operation and use the bounding boxes in the
          * response to make face crops, which then you can pass in to the
-         * <code>SearchFacesByImage</code> operation. </p> </note> <p>You pass the input
+         * <code>SearchFacesByImage</code> operation. </p>  <p>You pass the input
          * image either as base64-encoded image bytes or as a reference to an image in an
          * Amazon S3 bucket. If you use the AWS CLI to call Amazon Rekognition operations,
          * passing image bytes is not supported. The image must be either a PNG or JPEG
@@ -2922,10 +2922,10 @@ namespace Model
          * <code>QualityFilter</code> to set the quality bar for filtering by specifying
          * <code>LOW</code>, <code>MEDIUM</code>, or <code>HIGH</code>. If you do not want
          * to filter detected faces, specify <code>NONE</code>. The default value is
-         * <code>NONE</code>.</p> <note> <p>To use quality filtering, you need a collection
+         * <code>NONE</code>.</p>  <p>To use quality filtering, you need a collection
          * associated with version 3 of the face model or higher. To get the version of the
          * face model associated with a collection, call <a>DescribeCollection</a>. </p>
-         * </note> <p>This operation requires permissions to perform the
+         *  <p>This operation requires permissions to perform the
          * <code>rekognition:SearchFacesByImage</code> action.</p><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/SearchFacesByImage">AWS
@@ -2939,12 +2939,12 @@ namespace Model
          * <p>For a given input image, first detects the largest face in the image, and
          * then searches the specified collection for matching faces. The operation
          * compares the features of the input face with faces in the specified collection.
-         * </p> <note> <p>To search for all faces in an input image, you might first call
+         * </p>  <p>To search for all faces in an input image, you might first call
          * the <a>IndexFaces</a> operation, and then use the face IDs returned in
          * subsequent calls to the <a>SearchFaces</a> operation. </p> <p> You can also call
          * the <code>DetectFaces</code> operation and use the bounding boxes in the
          * response to make face crops, which then you can pass in to the
-         * <code>SearchFacesByImage</code> operation. </p> </note> <p>You pass the input
+         * <code>SearchFacesByImage</code> operation. </p>  <p>You pass the input
          * image either as base64-encoded image bytes or as a reference to an image in an
          * Amazon S3 bucket. If you use the AWS CLI to call Amazon Rekognition operations,
          * passing image bytes is not supported. The image must be either a PNG or JPEG
@@ -2962,10 +2962,10 @@ namespace Model
          * <code>QualityFilter</code> to set the quality bar for filtering by specifying
          * <code>LOW</code>, <code>MEDIUM</code>, or <code>HIGH</code>. If you do not want
          * to filter detected faces, specify <code>NONE</code>. The default value is
-         * <code>NONE</code>.</p> <note> <p>To use quality filtering, you need a collection
+         * <code>NONE</code>.</p>  <p>To use quality filtering, you need a collection
          * associated with version 3 of the face model or higher. To get the version of the
          * face model associated with a collection, call <a>DescribeCollection</a>. </p>
-         * </note> <p>This operation requires permissions to perform the
+         *  <p>This operation requires permissions to perform the
          * <code>rekognition:SearchFacesByImage</code> action.</p><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/SearchFacesByImage">AWS
@@ -3360,9 +3360,9 @@ namespace Model
          * <p>Starts the running of the version of a model. Starting a model takes a while
          * to complete. To check the current state of the model, use
          * <a>DescribeProjectVersions</a>.</p> <p>Once the model is running, you can detect
-         * custom labels in new images by calling <a>DetectCustomLabels</a>.</p> <note>
+         * custom labels in new images by calling <a>DetectCustomLabels</a>.</p> 
          * <p>You are charged for the amount of time that the model is running. To stop a
-         * running model, call <a>StopProjectVersion</a>.</p> </note> <p>This operation
+         * running model, call <a>StopProjectVersion</a>.</p>  <p>This operation
          * requires permissions to perform the <code>rekognition:StartProjectVersion</code>
          * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/StartProjectVersion">AWS
@@ -3374,9 +3374,9 @@ namespace Model
          * <p>Starts the running of the version of a model. Starting a model takes a while
          * to complete. To check the current state of the model, use
          * <a>DescribeProjectVersions</a>.</p> <p>Once the model is running, you can detect
-         * custom labels in new images by calling <a>DetectCustomLabels</a>.</p> <note>
+         * custom labels in new images by calling <a>DetectCustomLabels</a>.</p> 
          * <p>You are charged for the amount of time that the model is running. To stop a
-         * running model, call <a>StopProjectVersion</a>.</p> </note> <p>This operation
+         * running model, call <a>StopProjectVersion</a>.</p>  <p>This operation
          * requires permissions to perform the <code>rekognition:StartProjectVersion</code>
          * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/StartProjectVersion">AWS
@@ -3390,9 +3390,9 @@ namespace Model
          * <p>Starts the running of the version of a model. Starting a model takes a while
          * to complete. To check the current state of the model, use
          * <a>DescribeProjectVersions</a>.</p> <p>Once the model is running, you can detect
-         * custom labels in new images by calling <a>DetectCustomLabels</a>.</p> <note>
+         * custom labels in new images by calling <a>DetectCustomLabels</a>.</p> 
          * <p>You are charged for the amount of time that the model is running. To stop a
-         * running model, call <a>StopProjectVersion</a>.</p> </note> <p>This operation
+         * running model, call <a>StopProjectVersion</a>.</p>  <p>This operation
          * requires permissions to perform the <code>rekognition:StartProjectVersion</code>
          * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/StartProjectVersion">AWS

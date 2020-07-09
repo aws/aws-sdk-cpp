@@ -19,12 +19,14 @@ namespace Model
 {
 
 IPSetReferenceStatement::IPSetReferenceStatement() : 
-    m_aRNHasBeenSet(false)
+    m_aRNHasBeenSet(false),
+    m_iPSetForwardedIPConfigHasBeenSet(false)
 {
 }
 
 IPSetReferenceStatement::IPSetReferenceStatement(JsonView jsonValue) : 
-    m_aRNHasBeenSet(false)
+    m_aRNHasBeenSet(false),
+    m_iPSetForwardedIPConfigHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -38,6 +40,13 @@ IPSetReferenceStatement& IPSetReferenceStatement::operator =(JsonView jsonValue)
     m_aRNHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("IPSetForwardedIPConfig"))
+  {
+    m_iPSetForwardedIPConfig = jsonValue.GetObject("IPSetForwardedIPConfig");
+
+    m_iPSetForwardedIPConfigHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -48,6 +57,12 @@ JsonValue IPSetReferenceStatement::Jsonize() const
   if(m_aRNHasBeenSet)
   {
    payload.WithString("ARN", m_aRN);
+
+  }
+
+  if(m_iPSetForwardedIPConfigHasBeenSet)
+  {
+   payload.WithObject("IPSetForwardedIPConfig", m_iPSetForwardedIPConfig.Jsonize());
 
   }
 

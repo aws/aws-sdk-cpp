@@ -55,9 +55,9 @@ namespace Model
      * for this cache behavior. You can configure each cache behavior in a web
      * distribution to do one of the following:</p> <ul> <li> <p> <b>Forward all
      * headers to your origin</b>: Specify <code>1</code> for <code>Quantity</code> and
-     * <code>*</code> for <code>Name</code>.</p> <important> <p>CloudFront doesn't
+     * <code>*</code> for <code>Name</code>.</p>  <p>CloudFront doesn't
      * cache the objects that are associated with this cache behavior. Instead,
-     * CloudFront sends every request to the origin. </p> </important> </li> <li> <p>
+     * CloudFront sends every request to the origin. </p>  </li> <li> <p>
      * <b>Forward a whitelist of headers you specify</b>: Specify the number of headers
      * that you want CloudFront to base caching on. Then specify the header names in
      * <code>Name</code> elements. CloudFront caches your objects based on the values
@@ -81,9 +81,9 @@ namespace Model
      * for this cache behavior. You can configure each cache behavior in a web
      * distribution to do one of the following:</p> <ul> <li> <p> <b>Forward all
      * headers to your origin</b>: Specify <code>1</code> for <code>Quantity</code> and
-     * <code>*</code> for <code>Name</code>.</p> <important> <p>CloudFront doesn't
+     * <code>*</code> for <code>Name</code>.</p>  <p>CloudFront doesn't
      * cache the objects that are associated with this cache behavior. Instead,
-     * CloudFront sends every request to the origin. </p> </important> </li> <li> <p>
+     * CloudFront sends every request to the origin. </p>  </li> <li> <p>
      * <b>Forward a whitelist of headers you specify</b>: Specify the number of headers
      * that you want CloudFront to base caching on. Then specify the header names in
      * <code>Name</code> elements. CloudFront caches your objects based on the values
@@ -107,9 +107,9 @@ namespace Model
      * for this cache behavior. You can configure each cache behavior in a web
      * distribution to do one of the following:</p> <ul> <li> <p> <b>Forward all
      * headers to your origin</b>: Specify <code>1</code> for <code>Quantity</code> and
-     * <code>*</code> for <code>Name</code>.</p> <important> <p>CloudFront doesn't
+     * <code>*</code> for <code>Name</code>.</p>  <p>CloudFront doesn't
      * cache the objects that are associated with this cache behavior. Instead,
-     * CloudFront sends every request to the origin. </p> </important> </li> <li> <p>
+     * CloudFront sends every request to the origin. </p>  </li> <li> <p>
      * <b>Forward a whitelist of headers you specify</b>: Specify the number of headers
      * that you want CloudFront to base caching on. Then specify the header names in
      * <code>Name</code> elements. CloudFront caches your objects based on the values
@@ -133,9 +133,9 @@ namespace Model
      * for this cache behavior. You can configure each cache behavior in a web
      * distribution to do one of the following:</p> <ul> <li> <p> <b>Forward all
      * headers to your origin</b>: Specify <code>1</code> for <code>Quantity</code> and
-     * <code>*</code> for <code>Name</code>.</p> <important> <p>CloudFront doesn't
+     * <code>*</code> for <code>Name</code>.</p>  <p>CloudFront doesn't
      * cache the objects that are associated with this cache behavior. Instead,
-     * CloudFront sends every request to the origin. </p> </important> </li> <li> <p>
+     * CloudFront sends every request to the origin. </p>  </li> <li> <p>
      * <b>Forward a whitelist of headers you specify</b>: Specify the number of headers
      * that you want CloudFront to base caching on. Then specify the header names in
      * <code>Name</code> elements. CloudFront caches your objects based on the values

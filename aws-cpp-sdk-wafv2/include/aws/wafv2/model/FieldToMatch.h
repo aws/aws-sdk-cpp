@@ -30,11 +30,11 @@ namespace Model
 {
 
   /**
-   * <note> <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2,
+   *  <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2,
    * released in November, 2019. For information, including how to migrate your AWS
    * WAF resources from the prior release, see the <a
    * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-   * WAF Developer Guide</a>. </p> </note> <p>The part of a web request that you want
+   * WAF Developer Guide</a>. </p>  <p>The part of a web request that you want
    * AWS WAF to inspect. Include the single <code>FieldToMatch</code> type that you
    * want to inspect, with additional specifications as needed, according to the
    * type. You specify a single request component in <code>FieldToMatch</code> for

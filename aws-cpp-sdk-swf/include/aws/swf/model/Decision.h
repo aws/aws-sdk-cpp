@@ -130,7 +130,7 @@ namespace Model
    * <p>The preceding error events might occur due to an error in the decider logic,
    * which might put the workflow execution in an unstable state The cause field in
    * the event structure for the error event indicates the cause of the error.</p>
-   * <note> <p>A workflow execution may be closed by the decider by returning one of
+   *  <p>A workflow execution may be closed by the decider by returning one of
    * the following decisions when completing a decision task:
    * <code>CompleteWorkflowExecution</code>, <code>FailWorkflowExecution</code>,
    * <code>CancelWorkflowExecution</code> and
@@ -142,7 +142,7 @@ namespace Model
    * system. The right action here is to call <a>RespondDecisionTaskCompleted</a>
    * without any decisions. This would result in another decision task with these new
    * events included in the history. The decider should handle the new events and may
-   * decide to close the workflow execution.</p> </note> <p> <b>How to Code a
+   * decide to close the workflow execution.</p>  <p> <b>How to Code a
    * Decision</b> </p> <p>You code a decision by first setting the decision type
    * field to one of the above decision values, and then set the corresponding
    * attributes field shown below:</p> <ul> <li> <p> <code>

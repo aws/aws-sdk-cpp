@@ -1134,8 +1134,8 @@ namespace Model
      * <p>The recipe to use when training the <code>MLModel</code>. The
      * <code>Recipe</code> provides detailed information about the observation data to
      * use during training, and manipulations to perform on the observation data during
-     * training.</p> <note><title>Note</title> <p>This parameter is provided as part of
-     * the verbose format.</p></note>
+     * training.</p> <title>Note</title> <p>This parameter is provided as part of
+     * the verbose format.</p>
      */
     inline const Aws::String& GetRecipe() const{ return m_recipe; }
 
@@ -1143,8 +1143,8 @@ namespace Model
      * <p>The recipe to use when training the <code>MLModel</code>. The
      * <code>Recipe</code> provides detailed information about the observation data to
      * use during training, and manipulations to perform on the observation data during
-     * training.</p> <note><title>Note</title> <p>This parameter is provided as part of
-     * the verbose format.</p></note>
+     * training.</p> <title>Note</title> <p>This parameter is provided as part of
+     * the verbose format.</p>
      */
     inline void SetRecipe(const Aws::String& value) { m_recipe = value; }
 
@@ -1152,8 +1152,8 @@ namespace Model
      * <p>The recipe to use when training the <code>MLModel</code>. The
      * <code>Recipe</code> provides detailed information about the observation data to
      * use during training, and manipulations to perform on the observation data during
-     * training.</p> <note><title>Note</title> <p>This parameter is provided as part of
-     * the verbose format.</p></note>
+     * training.</p> <title>Note</title> <p>This parameter is provided as part of
+     * the verbose format.</p>
      */
     inline void SetRecipe(Aws::String&& value) { m_recipe = std::move(value); }
 
@@ -1161,8 +1161,8 @@ namespace Model
      * <p>The recipe to use when training the <code>MLModel</code>. The
      * <code>Recipe</code> provides detailed information about the observation data to
      * use during training, and manipulations to perform on the observation data during
-     * training.</p> <note><title>Note</title> <p>This parameter is provided as part of
-     * the verbose format.</p></note>
+     * training.</p> <title>Note</title> <p>This parameter is provided as part of
+     * the verbose format.</p>
      */
     inline void SetRecipe(const char* value) { m_recipe.assign(value); }
 
@@ -1170,8 +1170,8 @@ namespace Model
      * <p>The recipe to use when training the <code>MLModel</code>. The
      * <code>Recipe</code> provides detailed information about the observation data to
      * use during training, and manipulations to perform on the observation data during
-     * training.</p> <note><title>Note</title> <p>This parameter is provided as part of
-     * the verbose format.</p></note>
+     * training.</p> <title>Note</title> <p>This parameter is provided as part of
+     * the verbose format.</p>
      */
     inline GetMLModelResult& WithRecipe(const Aws::String& value) { SetRecipe(value); return *this;}
 
@@ -1179,8 +1179,8 @@ namespace Model
      * <p>The recipe to use when training the <code>MLModel</code>. The
      * <code>Recipe</code> provides detailed information about the observation data to
      * use during training, and manipulations to perform on the observation data during
-     * training.</p> <note><title>Note</title> <p>This parameter is provided as part of
-     * the verbose format.</p></note>
+     * training.</p> <title>Note</title> <p>This parameter is provided as part of
+     * the verbose format.</p>
      */
     inline GetMLModelResult& WithRecipe(Aws::String&& value) { SetRecipe(std::move(value)); return *this;}
 
@@ -1188,58 +1188,58 @@ namespace Model
      * <p>The recipe to use when training the <code>MLModel</code>. The
      * <code>Recipe</code> provides detailed information about the observation data to
      * use during training, and manipulations to perform on the observation data during
-     * training.</p> <note><title>Note</title> <p>This parameter is provided as part of
-     * the verbose format.</p></note>
+     * training.</p> <title>Note</title> <p>This parameter is provided as part of
+     * the verbose format.</p>
      */
     inline GetMLModelResult& WithRecipe(const char* value) { SetRecipe(value); return *this;}
 
 
     /**
      * <p>The schema used by all of the data files referenced by the
-     * <code>DataSource</code>.</p> <note><title>Note</title> <p>This parameter is
-     * provided as part of the verbose format.</p></note>
+     * <code>DataSource</code>.</p> <title>Note</title> <p>This parameter is
+     * provided as part of the verbose format.</p>
      */
     inline const Aws::String& GetSchema() const{ return m_schema; }
 
     /**
      * <p>The schema used by all of the data files referenced by the
-     * <code>DataSource</code>.</p> <note><title>Note</title> <p>This parameter is
-     * provided as part of the verbose format.</p></note>
+     * <code>DataSource</code>.</p> <title>Note</title> <p>This parameter is
+     * provided as part of the verbose format.</p>
      */
     inline void SetSchema(const Aws::String& value) { m_schema = value; }
 
     /**
      * <p>The schema used by all of the data files referenced by the
-     * <code>DataSource</code>.</p> <note><title>Note</title> <p>This parameter is
-     * provided as part of the verbose format.</p></note>
+     * <code>DataSource</code>.</p> <title>Note</title> <p>This parameter is
+     * provided as part of the verbose format.</p>
      */
     inline void SetSchema(Aws::String&& value) { m_schema = std::move(value); }
 
     /**
      * <p>The schema used by all of the data files referenced by the
-     * <code>DataSource</code>.</p> <note><title>Note</title> <p>This parameter is
-     * provided as part of the verbose format.</p></note>
+     * <code>DataSource</code>.</p> <title>Note</title> <p>This parameter is
+     * provided as part of the verbose format.</p>
      */
     inline void SetSchema(const char* value) { m_schema.assign(value); }
 
     /**
      * <p>The schema used by all of the data files referenced by the
-     * <code>DataSource</code>.</p> <note><title>Note</title> <p>This parameter is
-     * provided as part of the verbose format.</p></note>
+     * <code>DataSource</code>.</p> <title>Note</title> <p>This parameter is
+     * provided as part of the verbose format.</p>
      */
     inline GetMLModelResult& WithSchema(const Aws::String& value) { SetSchema(value); return *this;}
 
     /**
      * <p>The schema used by all of the data files referenced by the
-     * <code>DataSource</code>.</p> <note><title>Note</title> <p>This parameter is
-     * provided as part of the verbose format.</p></note>
+     * <code>DataSource</code>.</p> <title>Note</title> <p>This parameter is
+     * provided as part of the verbose format.</p>
      */
     inline GetMLModelResult& WithSchema(Aws::String&& value) { SetSchema(std::move(value)); return *this;}
 
     /**
      * <p>The schema used by all of the data files referenced by the
-     * <code>DataSource</code>.</p> <note><title>Note</title> <p>This parameter is
-     * provided as part of the verbose format.</p></note>
+     * <code>DataSource</code>.</p> <title>Note</title> <p>This parameter is
+     * provided as part of the verbose format.</p>
      */
     inline GetMLModelResult& WithSchema(const char* value) { SetSchema(value); return *this;}
 

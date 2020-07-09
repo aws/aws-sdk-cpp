@@ -348,11 +348,11 @@ namespace Model
      * association states are:</p> <ul> <li> <p> <b>Associated</b>: The repository
      * association is complete. </p> </li> <li> <p> <b>Associating</b>: CodeGuru
      * Reviewer is: </p> <ul> <li> <p> Setting up pull request notifications. This is
-     * required for pull requests to trigger a CodeGuru Reviewer review. </p> <note>
+     * required for pull requests to trigger a CodeGuru Reviewer review. </p> 
      * <p> If your repository <code>ProviderType</code> is <code>GitHub</code> or
      * <code>Bitbucket</code>, CodeGuru Reviewer creates webhooks in your repository to
      * trigger CodeGuru Reviewer reviews. If you delete these webhooks, reviews of code
-     * in your repository cannot be triggered. </p> </note> </li> <li> <p> Setting up
+     * in your repository cannot be triggered. </p>  </li> <li> <p> Setting up
      * source code access. This is required for CodeGuru Reviewer to securely clone
      * code in your repository. </p> </li> </ul> </li> <li> <p> <b>Failed</b>: The
      * repository failed to associate or disassociate. </p> </li> <li> <p>
@@ -366,11 +366,11 @@ namespace Model
      * association states are:</p> <ul> <li> <p> <b>Associated</b>: The repository
      * association is complete. </p> </li> <li> <p> <b>Associating</b>: CodeGuru
      * Reviewer is: </p> <ul> <li> <p> Setting up pull request notifications. This is
-     * required for pull requests to trigger a CodeGuru Reviewer review. </p> <note>
+     * required for pull requests to trigger a CodeGuru Reviewer review. </p> 
      * <p> If your repository <code>ProviderType</code> is <code>GitHub</code> or
      * <code>Bitbucket</code>, CodeGuru Reviewer creates webhooks in your repository to
      * trigger CodeGuru Reviewer reviews. If you delete these webhooks, reviews of code
-     * in your repository cannot be triggered. </p> </note> </li> <li> <p> Setting up
+     * in your repository cannot be triggered. </p>  </li> <li> <p> Setting up
      * source code access. This is required for CodeGuru Reviewer to securely clone
      * code in your repository. </p> </li> </ul> </li> <li> <p> <b>Failed</b>: The
      * repository failed to associate or disassociate. </p> </li> <li> <p>
@@ -384,11 +384,11 @@ namespace Model
      * association states are:</p> <ul> <li> <p> <b>Associated</b>: The repository
      * association is complete. </p> </li> <li> <p> <b>Associating</b>: CodeGuru
      * Reviewer is: </p> <ul> <li> <p> Setting up pull request notifications. This is
-     * required for pull requests to trigger a CodeGuru Reviewer review. </p> <note>
+     * required for pull requests to trigger a CodeGuru Reviewer review. </p> 
      * <p> If your repository <code>ProviderType</code> is <code>GitHub</code> or
      * <code>Bitbucket</code>, CodeGuru Reviewer creates webhooks in your repository to
      * trigger CodeGuru Reviewer reviews. If you delete these webhooks, reviews of code
-     * in your repository cannot be triggered. </p> </note> </li> <li> <p> Setting up
+     * in your repository cannot be triggered. </p>  </li> <li> <p> Setting up
      * source code access. This is required for CodeGuru Reviewer to securely clone
      * code in your repository. </p> </li> </ul> </li> <li> <p> <b>Failed</b>: The
      * repository failed to associate or disassociate. </p> </li> <li> <p>
@@ -402,11 +402,11 @@ namespace Model
      * association states are:</p> <ul> <li> <p> <b>Associated</b>: The repository
      * association is complete. </p> </li> <li> <p> <b>Associating</b>: CodeGuru
      * Reviewer is: </p> <ul> <li> <p> Setting up pull request notifications. This is
-     * required for pull requests to trigger a CodeGuru Reviewer review. </p> <note>
+     * required for pull requests to trigger a CodeGuru Reviewer review. </p> 
      * <p> If your repository <code>ProviderType</code> is <code>GitHub</code> or
      * <code>Bitbucket</code>, CodeGuru Reviewer creates webhooks in your repository to
      * trigger CodeGuru Reviewer reviews. If you delete these webhooks, reviews of code
-     * in your repository cannot be triggered. </p> </note> </li> <li> <p> Setting up
+     * in your repository cannot be triggered. </p>  </li> <li> <p> Setting up
      * source code access. This is required for CodeGuru Reviewer to securely clone
      * code in your repository. </p> </li> </ul> </li> <li> <p> <b>Failed</b>: The
      * repository failed to associate or disassociate. </p> </li> <li> <p>
@@ -420,11 +420,11 @@ namespace Model
      * association states are:</p> <ul> <li> <p> <b>Associated</b>: The repository
      * association is complete. </p> </li> <li> <p> <b>Associating</b>: CodeGuru
      * Reviewer is: </p> <ul> <li> <p> Setting up pull request notifications. This is
-     * required for pull requests to trigger a CodeGuru Reviewer review. </p> <note>
+     * required for pull requests to trigger a CodeGuru Reviewer review. </p> 
      * <p> If your repository <code>ProviderType</code> is <code>GitHub</code> or
      * <code>Bitbucket</code>, CodeGuru Reviewer creates webhooks in your repository to
      * trigger CodeGuru Reviewer reviews. If you delete these webhooks, reviews of code
-     * in your repository cannot be triggered. </p> </note> </li> <li> <p> Setting up
+     * in your repository cannot be triggered. </p>  </li> <li> <p> Setting up
      * source code access. This is required for CodeGuru Reviewer to securely clone
      * code in your repository. </p> </li> </ul> </li> <li> <p> <b>Failed</b>: The
      * repository failed to associate or disassociate. </p> </li> <li> <p>
@@ -438,11 +438,11 @@ namespace Model
      * association states are:</p> <ul> <li> <p> <b>Associated</b>: The repository
      * association is complete. </p> </li> <li> <p> <b>Associating</b>: CodeGuru
      * Reviewer is: </p> <ul> <li> <p> Setting up pull request notifications. This is
-     * required for pull requests to trigger a CodeGuru Reviewer review. </p> <note>
+     * required for pull requests to trigger a CodeGuru Reviewer review. </p> 
      * <p> If your repository <code>ProviderType</code> is <code>GitHub</code> or
      * <code>Bitbucket</code>, CodeGuru Reviewer creates webhooks in your repository to
      * trigger CodeGuru Reviewer reviews. If you delete these webhooks, reviews of code
-     * in your repository cannot be triggered. </p> </note> </li> <li> <p> Setting up
+     * in your repository cannot be triggered. </p>  </li> <li> <p> Setting up
      * source code access. This is required for CodeGuru Reviewer to securely clone
      * code in your repository. </p> </li> </ul> </li> <li> <p> <b>Failed</b>: The
      * repository failed to associate or disassociate. </p> </li> <li> <p>

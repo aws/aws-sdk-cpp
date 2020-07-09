@@ -67,10 +67,10 @@ namespace Model
      * <p>The pattern (for example, <code>images/ *.jpg</code>) that specifies which
      * requests to apply the behavior to. When CloudFront receives a viewer request,
      * the requested path is compared with path patterns in the order in which cache
-     * behaviors are listed in the distribution.</p> <note> <p>You can optionally
+     * behaviors are listed in the distribution.</p>  <p>You can optionally
      * include a slash (<code>/</code>) at the beginning of the path pattern. For
      * example, <code>/images/ *.jpg</code>. CloudFront behavior is the same with or
-     * without the leading <code>/</code>.</p> </note> <p>The path pattern for the
+     * without the leading <code>/</code>.</p>  <p>The path pattern for the
      * default cache behavior is <code>*</code> and cannot be changed. If the request
      * for an object does not match the path pattern for any cache behaviors,
      * CloudFront applies the behavior in the default cache behavior.</p> <p>For more
@@ -84,10 +84,10 @@ namespace Model
      * <p>The pattern (for example, <code>images/ *.jpg</code>) that specifies which
      * requests to apply the behavior to. When CloudFront receives a viewer request,
      * the requested path is compared with path patterns in the order in which cache
-     * behaviors are listed in the distribution.</p> <note> <p>You can optionally
+     * behaviors are listed in the distribution.</p>  <p>You can optionally
      * include a slash (<code>/</code>) at the beginning of the path pattern. For
      * example, <code>/images/ *.jpg</code>. CloudFront behavior is the same with or
-     * without the leading <code>/</code>.</p> </note> <p>The path pattern for the
+     * without the leading <code>/</code>.</p>  <p>The path pattern for the
      * default cache behavior is <code>*</code> and cannot be changed. If the request
      * for an object does not match the path pattern for any cache behaviors,
      * CloudFront applies the behavior in the default cache behavior.</p> <p>For more
@@ -101,10 +101,10 @@ namespace Model
      * <p>The pattern (for example, <code>images/ *.jpg</code>) that specifies which
      * requests to apply the behavior to. When CloudFront receives a viewer request,
      * the requested path is compared with path patterns in the order in which cache
-     * behaviors are listed in the distribution.</p> <note> <p>You can optionally
+     * behaviors are listed in the distribution.</p>  <p>You can optionally
      * include a slash (<code>/</code>) at the beginning of the path pattern. For
      * example, <code>/images/ *.jpg</code>. CloudFront behavior is the same with or
-     * without the leading <code>/</code>.</p> </note> <p>The path pattern for the
+     * without the leading <code>/</code>.</p>  <p>The path pattern for the
      * default cache behavior is <code>*</code> and cannot be changed. If the request
      * for an object does not match the path pattern for any cache behaviors,
      * CloudFront applies the behavior in the default cache behavior.</p> <p>For more
@@ -118,10 +118,10 @@ namespace Model
      * <p>The pattern (for example, <code>images/ *.jpg</code>) that specifies which
      * requests to apply the behavior to. When CloudFront receives a viewer request,
      * the requested path is compared with path patterns in the order in which cache
-     * behaviors are listed in the distribution.</p> <note> <p>You can optionally
+     * behaviors are listed in the distribution.</p>  <p>You can optionally
      * include a slash (<code>/</code>) at the beginning of the path pattern. For
      * example, <code>/images/ *.jpg</code>. CloudFront behavior is the same with or
-     * without the leading <code>/</code>.</p> </note> <p>The path pattern for the
+     * without the leading <code>/</code>.</p>  <p>The path pattern for the
      * default cache behavior is <code>*</code> and cannot be changed. If the request
      * for an object does not match the path pattern for any cache behaviors,
      * CloudFront applies the behavior in the default cache behavior.</p> <p>For more
@@ -135,10 +135,10 @@ namespace Model
      * <p>The pattern (for example, <code>images/ *.jpg</code>) that specifies which
      * requests to apply the behavior to. When CloudFront receives a viewer request,
      * the requested path is compared with path patterns in the order in which cache
-     * behaviors are listed in the distribution.</p> <note> <p>You can optionally
+     * behaviors are listed in the distribution.</p>  <p>You can optionally
      * include a slash (<code>/</code>) at the beginning of the path pattern. For
      * example, <code>/images/ *.jpg</code>. CloudFront behavior is the same with or
-     * without the leading <code>/</code>.</p> </note> <p>The path pattern for the
+     * without the leading <code>/</code>.</p>  <p>The path pattern for the
      * default cache behavior is <code>*</code> and cannot be changed. If the request
      * for an object does not match the path pattern for any cache behaviors,
      * CloudFront applies the behavior in the default cache behavior.</p> <p>For more
@@ -152,10 +152,10 @@ namespace Model
      * <p>The pattern (for example, <code>images/ *.jpg</code>) that specifies which
      * requests to apply the behavior to. When CloudFront receives a viewer request,
      * the requested path is compared with path patterns in the order in which cache
-     * behaviors are listed in the distribution.</p> <note> <p>You can optionally
+     * behaviors are listed in the distribution.</p>  <p>You can optionally
      * include a slash (<code>/</code>) at the beginning of the path pattern. For
      * example, <code>/images/ *.jpg</code>. CloudFront behavior is the same with or
-     * without the leading <code>/</code>.</p> </note> <p>The path pattern for the
+     * without the leading <code>/</code>.</p>  <p>The path pattern for the
      * default cache behavior is <code>*</code> and cannot be changed. If the request
      * for an object does not match the path pattern for any cache behaviors,
      * CloudFront applies the behavior in the default cache behavior.</p> <p>For more
@@ -169,10 +169,10 @@ namespace Model
      * <p>The pattern (for example, <code>images/ *.jpg</code>) that specifies which
      * requests to apply the behavior to. When CloudFront receives a viewer request,
      * the requested path is compared with path patterns in the order in which cache
-     * behaviors are listed in the distribution.</p> <note> <p>You can optionally
+     * behaviors are listed in the distribution.</p>  <p>You can optionally
      * include a slash (<code>/</code>) at the beginning of the path pattern. For
      * example, <code>/images/ *.jpg</code>. CloudFront behavior is the same with or
-     * without the leading <code>/</code>.</p> </note> <p>The path pattern for the
+     * without the leading <code>/</code>.</p>  <p>The path pattern for the
      * default cache behavior is <code>*</code> and cannot be changed. If the request
      * for an object does not match the path pattern for any cache behaviors,
      * CloudFront applies the behavior in the default cache behavior.</p> <p>For more
@@ -186,10 +186,10 @@ namespace Model
      * <p>The pattern (for example, <code>images/ *.jpg</code>) that specifies which
      * requests to apply the behavior to. When CloudFront receives a viewer request,
      * the requested path is compared with path patterns in the order in which cache
-     * behaviors are listed in the distribution.</p> <note> <p>You can optionally
+     * behaviors are listed in the distribution.</p>  <p>You can optionally
      * include a slash (<code>/</code>) at the beginning of the path pattern. For
      * example, <code>/images/ *.jpg</code>. CloudFront behavior is the same with or
-     * without the leading <code>/</code>.</p> </note> <p>The path pattern for the
+     * without the leading <code>/</code>.</p>  <p>The path pattern for the
      * default cache behavior is <code>*</code> and cannot be changed. If the request
      * for an object does not match the path pattern for any cache behaviors,
      * CloudFront applies the behavior in the default cache behavior.</p> <p>For more
@@ -420,7 +420,7 @@ namespace Model
      * <p>For more information about requiring the HTTPS protocol, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-https-viewers-to-cloudfront.html">Requiring
      * HTTPS Between Viewers and CloudFront</a> in the <i>Amazon CloudFront Developer
-     * Guide</i>.</p> <note> <p>The only way to guarantee that viewers retrieve an
+     * Guide</i>.</p>  <p>The only way to guarantee that viewers retrieve an
      * object that was fetched from the origin using HTTPS is never to use any other
      * protocol to fetch the object. If you have recently changed from HTTP to HTTPS,
      * we recommend that you clear your objects’ cache because cached objects are
@@ -429,7 +429,7 @@ namespace Model
      * protocol used previously. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing
      * Cache Expiration</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
-     * </note>
+     * 
      */
     inline const ViewerProtocolPolicy& GetViewerProtocolPolicy() const{ return m_viewerProtocolPolicy; }
 
@@ -446,7 +446,7 @@ namespace Model
      * <p>For more information about requiring the HTTPS protocol, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-https-viewers-to-cloudfront.html">Requiring
      * HTTPS Between Viewers and CloudFront</a> in the <i>Amazon CloudFront Developer
-     * Guide</i>.</p> <note> <p>The only way to guarantee that viewers retrieve an
+     * Guide</i>.</p>  <p>The only way to guarantee that viewers retrieve an
      * object that was fetched from the origin using HTTPS is never to use any other
      * protocol to fetch the object. If you have recently changed from HTTP to HTTPS,
      * we recommend that you clear your objects’ cache because cached objects are
@@ -455,7 +455,7 @@ namespace Model
      * protocol used previously. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing
      * Cache Expiration</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
-     * </note>
+     * 
      */
     inline bool ViewerProtocolPolicyHasBeenSet() const { return m_viewerProtocolPolicyHasBeenSet; }
 
@@ -472,7 +472,7 @@ namespace Model
      * <p>For more information about requiring the HTTPS protocol, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-https-viewers-to-cloudfront.html">Requiring
      * HTTPS Between Viewers and CloudFront</a> in the <i>Amazon CloudFront Developer
-     * Guide</i>.</p> <note> <p>The only way to guarantee that viewers retrieve an
+     * Guide</i>.</p>  <p>The only way to guarantee that viewers retrieve an
      * object that was fetched from the origin using HTTPS is never to use any other
      * protocol to fetch the object. If you have recently changed from HTTP to HTTPS,
      * we recommend that you clear your objects’ cache because cached objects are
@@ -481,7 +481,7 @@ namespace Model
      * protocol used previously. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing
      * Cache Expiration</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
-     * </note>
+     * 
      */
     inline void SetViewerProtocolPolicy(const ViewerProtocolPolicy& value) { m_viewerProtocolPolicyHasBeenSet = true; m_viewerProtocolPolicy = value; }
 
@@ -498,7 +498,7 @@ namespace Model
      * <p>For more information about requiring the HTTPS protocol, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-https-viewers-to-cloudfront.html">Requiring
      * HTTPS Between Viewers and CloudFront</a> in the <i>Amazon CloudFront Developer
-     * Guide</i>.</p> <note> <p>The only way to guarantee that viewers retrieve an
+     * Guide</i>.</p>  <p>The only way to guarantee that viewers retrieve an
      * object that was fetched from the origin using HTTPS is never to use any other
      * protocol to fetch the object. If you have recently changed from HTTP to HTTPS,
      * we recommend that you clear your objects’ cache because cached objects are
@@ -507,7 +507,7 @@ namespace Model
      * protocol used previously. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing
      * Cache Expiration</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
-     * </note>
+     * 
      */
     inline void SetViewerProtocolPolicy(ViewerProtocolPolicy&& value) { m_viewerProtocolPolicyHasBeenSet = true; m_viewerProtocolPolicy = std::move(value); }
 
@@ -524,7 +524,7 @@ namespace Model
      * <p>For more information about requiring the HTTPS protocol, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-https-viewers-to-cloudfront.html">Requiring
      * HTTPS Between Viewers and CloudFront</a> in the <i>Amazon CloudFront Developer
-     * Guide</i>.</p> <note> <p>The only way to guarantee that viewers retrieve an
+     * Guide</i>.</p>  <p>The only way to guarantee that viewers retrieve an
      * object that was fetched from the origin using HTTPS is never to use any other
      * protocol to fetch the object. If you have recently changed from HTTP to HTTPS,
      * we recommend that you clear your objects’ cache because cached objects are
@@ -533,7 +533,7 @@ namespace Model
      * protocol used previously. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing
      * Cache Expiration</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
-     * </note>
+     * 
      */
     inline CacheBehavior& WithViewerProtocolPolicy(const ViewerProtocolPolicy& value) { SetViewerProtocolPolicy(value); return *this;}
 
@@ -550,7 +550,7 @@ namespace Model
      * <p>For more information about requiring the HTTPS protocol, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-https-viewers-to-cloudfront.html">Requiring
      * HTTPS Between Viewers and CloudFront</a> in the <i>Amazon CloudFront Developer
-     * Guide</i>.</p> <note> <p>The only way to guarantee that viewers retrieve an
+     * Guide</i>.</p>  <p>The only way to guarantee that viewers retrieve an
      * object that was fetched from the origin using HTTPS is never to use any other
      * protocol to fetch the object. If you have recently changed from HTTP to HTTPS,
      * we recommend that you clear your objects’ cache because cached objects are
@@ -559,7 +559,7 @@ namespace Model
      * protocol used previously. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing
      * Cache Expiration</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
-     * </note>
+     * 
      */
     inline CacheBehavior& WithViewerProtocolPolicy(ViewerProtocolPolicy&& value) { SetViewerProtocolPolicy(std::move(value)); return *this;}
 

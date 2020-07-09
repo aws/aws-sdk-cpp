@@ -291,8 +291,8 @@ namespace Model
      * see <a
      * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/custom-platforms.html">
      * Custom Platforms</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p>
-     * <note> <p>If you specify <code>PlatformArn</code>, then don't specify
-     * <code>SolutionStackName</code>.</p> </note>
+     *  <p>If you specify <code>PlatformArn</code>, then don't specify
+     * <code>SolutionStackName</code>.</p> 
      */
     inline const Aws::String& GetPlatformArn() const{ return m_platformArn; }
 
@@ -301,8 +301,8 @@ namespace Model
      * see <a
      * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/custom-platforms.html">
      * Custom Platforms</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p>
-     * <note> <p>If you specify <code>PlatformArn</code>, then don't specify
-     * <code>SolutionStackName</code>.</p> </note>
+     *  <p>If you specify <code>PlatformArn</code>, then don't specify
+     * <code>SolutionStackName</code>.</p> 
      */
     inline bool PlatformArnHasBeenSet() const { return m_platformArnHasBeenSet; }
 
@@ -311,8 +311,8 @@ namespace Model
      * see <a
      * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/custom-platforms.html">
      * Custom Platforms</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p>
-     * <note> <p>If you specify <code>PlatformArn</code>, then don't specify
-     * <code>SolutionStackName</code>.</p> </note>
+     *  <p>If you specify <code>PlatformArn</code>, then don't specify
+     * <code>SolutionStackName</code>.</p> 
      */
     inline void SetPlatformArn(const Aws::String& value) { m_platformArnHasBeenSet = true; m_platformArn = value; }
 
@@ -321,8 +321,8 @@ namespace Model
      * see <a
      * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/custom-platforms.html">
      * Custom Platforms</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p>
-     * <note> <p>If you specify <code>PlatformArn</code>, then don't specify
-     * <code>SolutionStackName</code>.</p> </note>
+     *  <p>If you specify <code>PlatformArn</code>, then don't specify
+     * <code>SolutionStackName</code>.</p> 
      */
     inline void SetPlatformArn(Aws::String&& value) { m_platformArnHasBeenSet = true; m_platformArn = std::move(value); }
 
@@ -331,8 +331,8 @@ namespace Model
      * see <a
      * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/custom-platforms.html">
      * Custom Platforms</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p>
-     * <note> <p>If you specify <code>PlatformArn</code>, then don't specify
-     * <code>SolutionStackName</code>.</p> </note>
+     *  <p>If you specify <code>PlatformArn</code>, then don't specify
+     * <code>SolutionStackName</code>.</p> 
      */
     inline void SetPlatformArn(const char* value) { m_platformArnHasBeenSet = true; m_platformArn.assign(value); }
 
@@ -341,8 +341,8 @@ namespace Model
      * see <a
      * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/custom-platforms.html">
      * Custom Platforms</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p>
-     * <note> <p>If you specify <code>PlatformArn</code>, then don't specify
-     * <code>SolutionStackName</code>.</p> </note>
+     *  <p>If you specify <code>PlatformArn</code>, then don't specify
+     * <code>SolutionStackName</code>.</p> 
      */
     inline CreateConfigurationTemplateRequest& WithPlatformArn(const Aws::String& value) { SetPlatformArn(value); return *this;}
 
@@ -351,8 +351,8 @@ namespace Model
      * see <a
      * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/custom-platforms.html">
      * Custom Platforms</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p>
-     * <note> <p>If you specify <code>PlatformArn</code>, then don't specify
-     * <code>SolutionStackName</code>.</p> </note>
+     *  <p>If you specify <code>PlatformArn</code>, then don't specify
+     * <code>SolutionStackName</code>.</p> 
      */
     inline CreateConfigurationTemplateRequest& WithPlatformArn(Aws::String&& value) { SetPlatformArn(std::move(value)); return *this;}
 
@@ -361,8 +361,8 @@ namespace Model
      * see <a
      * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/custom-platforms.html">
      * Custom Platforms</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p>
-     * <note> <p>If you specify <code>PlatformArn</code>, then don't specify
-     * <code>SolutionStackName</code>.</p> </note>
+     *  <p>If you specify <code>PlatformArn</code>, then don't specify
+     * <code>SolutionStackName</code>.</p> 
      */
     inline CreateConfigurationTemplateRequest& WithPlatformArn(const char* value) { SetPlatformArn(value); return *this;}
 

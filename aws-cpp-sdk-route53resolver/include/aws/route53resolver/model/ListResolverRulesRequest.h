@@ -140,73 +140,73 @@ namespace Model
 
     /**
      * <p>An optional specification to return a subset of resolver rules, such as all
-     * resolver rules that are associated with the same resolver endpoint.</p> <note>
+     * resolver rules that are associated with the same resolver endpoint.</p> 
      * <p>If you submit a second or subsequent <code>ListResolverRules</code> request
      * and specify the <code>NextToken</code> parameter, you must use the same values
-     * for <code>Filters</code>, if any, as in the previous request.</p> </note>
+     * for <code>Filters</code>, if any, as in the previous request.</p> 
      */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
 
     /**
      * <p>An optional specification to return a subset of resolver rules, such as all
-     * resolver rules that are associated with the same resolver endpoint.</p> <note>
+     * resolver rules that are associated with the same resolver endpoint.</p> 
      * <p>If you submit a second or subsequent <code>ListResolverRules</code> request
      * and specify the <code>NextToken</code> parameter, you must use the same values
-     * for <code>Filters</code>, if any, as in the previous request.</p> </note>
+     * for <code>Filters</code>, if any, as in the previous request.</p> 
      */
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
     /**
      * <p>An optional specification to return a subset of resolver rules, such as all
-     * resolver rules that are associated with the same resolver endpoint.</p> <note>
+     * resolver rules that are associated with the same resolver endpoint.</p> 
      * <p>If you submit a second or subsequent <code>ListResolverRules</code> request
      * and specify the <code>NextToken</code> parameter, you must use the same values
-     * for <code>Filters</code>, if any, as in the previous request.</p> </note>
+     * for <code>Filters</code>, if any, as in the previous request.</p> 
      */
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
      * <p>An optional specification to return a subset of resolver rules, such as all
-     * resolver rules that are associated with the same resolver endpoint.</p> <note>
+     * resolver rules that are associated with the same resolver endpoint.</p> 
      * <p>If you submit a second or subsequent <code>ListResolverRules</code> request
      * and specify the <code>NextToken</code> parameter, you must use the same values
-     * for <code>Filters</code>, if any, as in the previous request.</p> </note>
+     * for <code>Filters</code>, if any, as in the previous request.</p> 
      */
     inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
     /**
      * <p>An optional specification to return a subset of resolver rules, such as all
-     * resolver rules that are associated with the same resolver endpoint.</p> <note>
+     * resolver rules that are associated with the same resolver endpoint.</p> 
      * <p>If you submit a second or subsequent <code>ListResolverRules</code> request
      * and specify the <code>NextToken</code> parameter, you must use the same values
-     * for <code>Filters</code>, if any, as in the previous request.</p> </note>
+     * for <code>Filters</code>, if any, as in the previous request.</p> 
      */
     inline ListResolverRulesRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
 
     /**
      * <p>An optional specification to return a subset of resolver rules, such as all
-     * resolver rules that are associated with the same resolver endpoint.</p> <note>
+     * resolver rules that are associated with the same resolver endpoint.</p> 
      * <p>If you submit a second or subsequent <code>ListResolverRules</code> request
      * and specify the <code>NextToken</code> parameter, you must use the same values
-     * for <code>Filters</code>, if any, as in the previous request.</p> </note>
+     * for <code>Filters</code>, if any, as in the previous request.</p> 
      */
     inline ListResolverRulesRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
 
     /**
      * <p>An optional specification to return a subset of resolver rules, such as all
-     * resolver rules that are associated with the same resolver endpoint.</p> <note>
+     * resolver rules that are associated with the same resolver endpoint.</p> 
      * <p>If you submit a second or subsequent <code>ListResolverRules</code> request
      * and specify the <code>NextToken</code> parameter, you must use the same values
-     * for <code>Filters</code>, if any, as in the previous request.</p> </note>
+     * for <code>Filters</code>, if any, as in the previous request.</p> 
      */
     inline ListResolverRulesRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
     /**
      * <p>An optional specification to return a subset of resolver rules, such as all
-     * resolver rules that are associated with the same resolver endpoint.</p> <note>
+     * resolver rules that are associated with the same resolver endpoint.</p> 
      * <p>If you submit a second or subsequent <code>ListResolverRules</code> request
      * and specify the <code>NextToken</code> parameter, you must use the same values
-     * for <code>Filters</code>, if any, as in the previous request.</p> </note>
+     * for <code>Filters</code>, if any, as in the previous request.</p> 
      */
     inline ListResolverRulesRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 

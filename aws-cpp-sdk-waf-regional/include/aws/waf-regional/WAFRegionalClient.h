@@ -463,14 +463,14 @@ namespace Model
     typedef std::function<void(const WAFRegionalClient*, const Model::UpdateXssMatchSetRequest&, const Model::UpdateXssMatchSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateXssMatchSetResponseReceivedHandler;
 
   /**
-   * <note> <p>This is <b>AWS WAF Classic Regional</b> documentation. For more
+   *  <p>This is <b>AWS WAF Classic Regional</b> documentation. For more
    * information, see <a
    * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
    * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
    * WAF</b>, use the AWS WAFV2 API and see the <a
    * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
    * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-   * endpoints for regional and global use. </p> </note> <p>This is the <i>AWS WAF
+   * endpoints for regional and global use. </p>  <p>This is the <i>AWS WAF
    * Regional Classic API Reference</i> for using AWS WAF Classic with the AWS
    * resources, Elastic Load Balancing (ELB) Application Load Balancers and API
    * Gateway APIs. The AWS WAF Classic actions and data types listed in the reference
@@ -515,14 +515,14 @@ namespace Model
 
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic Regional</b> documentation. For more
+         *  <p>This is <b>AWS WAF Classic Regional</b> documentation. For more
          * information, see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Associates a web ACL with
+         * endpoints for regional and global use. </p>  <p>Associates a web ACL with
          * a resource, either an application load balancer or Amazon API Gateway
          * stage.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/AssociateWebACL">AWS
@@ -531,14 +531,14 @@ namespace Model
         virtual Model::AssociateWebACLOutcome AssociateWebACL(const Model::AssociateWebACLRequest& request) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic Regional</b> documentation. For more
+         *  <p>This is <b>AWS WAF Classic Regional</b> documentation. For more
          * information, see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Associates a web ACL with
+         * endpoints for regional and global use. </p>  <p>Associates a web ACL with
          * a resource, either an application load balancer or Amazon API Gateway
          * stage.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/AssociateWebACL">AWS
@@ -549,14 +549,14 @@ namespace Model
         virtual Model::AssociateWebACLOutcomeCallable AssociateWebACLCallable(const Model::AssociateWebACLRequest& request) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic Regional</b> documentation. For more
+         *  <p>This is <b>AWS WAF Classic Regional</b> documentation. For more
          * information, see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Associates a web ACL with
+         * endpoints for regional and global use. </p>  <p>Associates a web ACL with
          * a resource, either an application load balancer or Amazon API Gateway
          * stage.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/AssociateWebACL">AWS
@@ -567,14 +567,14 @@ namespace Model
         virtual void AssociateWebACLAsync(const Model::AssociateWebACLRequest& request, const AssociateWebACLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Creates a
+         * endpoints for regional and global use. </p>  <p>Creates a
          * <code>ByteMatchSet</code>. You then use <a>UpdateByteMatchSet</a> to identify
          * the part of a web request that you want AWS WAF to inspect, such as the values
          * of the <code>User-Agent</code> header or the query string. For example, you can
@@ -600,14 +600,14 @@ namespace Model
         virtual Model::CreateByteMatchSetOutcome CreateByteMatchSet(const Model::CreateByteMatchSetRequest& request) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Creates a
+         * endpoints for regional and global use. </p>  <p>Creates a
          * <code>ByteMatchSet</code>. You then use <a>UpdateByteMatchSet</a> to identify
          * the part of a web request that you want AWS WAF to inspect, such as the values
          * of the <code>User-Agent</code> header or the query string. For example, you can
@@ -635,14 +635,14 @@ namespace Model
         virtual Model::CreateByteMatchSetOutcomeCallable CreateByteMatchSetCallable(const Model::CreateByteMatchSetRequest& request) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Creates a
+         * endpoints for regional and global use. </p>  <p>Creates a
          * <code>ByteMatchSet</code>. You then use <a>UpdateByteMatchSet</a> to identify
          * the part of a web request that you want AWS WAF to inspect, such as the values
          * of the <code>User-Agent</code> header or the query string. For example, you can
@@ -670,14 +670,14 @@ namespace Model
         virtual void CreateByteMatchSetAsync(const Model::CreateByteMatchSetRequest& request, const CreateByteMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Creates an
+         * endpoints for regional and global use. </p>  <p>Creates an
          * <a>GeoMatchSet</a>, which you use to specify which web requests you want to
          * allow or block based on the country that the requests originate from. For
          * example, if you're receiving a lot of requests from one or more countries and
@@ -701,14 +701,14 @@ namespace Model
         virtual Model::CreateGeoMatchSetOutcome CreateGeoMatchSet(const Model::CreateGeoMatchSetRequest& request) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Creates an
+         * endpoints for regional and global use. </p>  <p>Creates an
          * <a>GeoMatchSet</a>, which you use to specify which web requests you want to
          * allow or block based on the country that the requests originate from. For
          * example, if you're receiving a lot of requests from one or more countries and
@@ -734,14 +734,14 @@ namespace Model
         virtual Model::CreateGeoMatchSetOutcomeCallable CreateGeoMatchSetCallable(const Model::CreateGeoMatchSetRequest& request) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Creates an
+         * endpoints for regional and global use. </p>  <p>Creates an
          * <a>GeoMatchSet</a>, which you use to specify which web requests you want to
          * allow or block based on the country that the requests originate from. For
          * example, if you're receiving a lot of requests from one or more countries and
@@ -767,14 +767,14 @@ namespace Model
         virtual void CreateGeoMatchSetAsync(const Model::CreateGeoMatchSetRequest& request, const CreateGeoMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Creates an <a>IPSet</a>,
+         * endpoints for regional and global use. </p>  <p>Creates an <a>IPSet</a>,
          * which you use to specify which web requests that you want to allow or block
          * based on the IP addresses that the requests originate from. For example, if
          * you're receiving a lot of requests from one or more individual IP addresses or
@@ -798,14 +798,14 @@ namespace Model
         virtual Model::CreateIPSetOutcome CreateIPSet(const Model::CreateIPSetRequest& request) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Creates an <a>IPSet</a>,
+         * endpoints for regional and global use. </p>  <p>Creates an <a>IPSet</a>,
          * which you use to specify which web requests that you want to allow or block
          * based on the IP addresses that the requests originate from. For example, if
          * you're receiving a lot of requests from one or more individual IP addresses or
@@ -831,14 +831,14 @@ namespace Model
         virtual Model::CreateIPSetOutcomeCallable CreateIPSetCallable(const Model::CreateIPSetRequest& request) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Creates an <a>IPSet</a>,
+         * endpoints for regional and global use. </p>  <p>Creates an <a>IPSet</a>,
          * which you use to specify which web requests that you want to allow or block
          * based on the IP addresses that the requests originate from. For example, if
          * you're receiving a lot of requests from one or more individual IP addresses or
@@ -864,14 +864,14 @@ namespace Model
         virtual void CreateIPSetAsync(const Model::CreateIPSetRequest& request, const CreateIPSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Creates a
+         * endpoints for regional and global use. </p>  <p>Creates a
          * <a>RateBasedRule</a>. The <code>RateBasedRule</code> contains a
          * <code>RateLimit</code>, which specifies the maximum number of requests that AWS
          * WAF allows from a specified IP address in a five-minute period. The
@@ -926,14 +926,14 @@ namespace Model
         virtual Model::CreateRateBasedRuleOutcome CreateRateBasedRule(const Model::CreateRateBasedRuleRequest& request) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Creates a
+         * endpoints for regional and global use. </p>  <p>Creates a
          * <a>RateBasedRule</a>. The <code>RateBasedRule</code> contains a
          * <code>RateLimit</code>, which specifies the maximum number of requests that AWS
          * WAF allows from a specified IP address in a five-minute period. The
@@ -990,14 +990,14 @@ namespace Model
         virtual Model::CreateRateBasedRuleOutcomeCallable CreateRateBasedRuleCallable(const Model::CreateRateBasedRuleRequest& request) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Creates a
+         * endpoints for regional and global use. </p>  <p>Creates a
          * <a>RateBasedRule</a>. The <code>RateBasedRule</code> contains a
          * <code>RateLimit</code>, which specifies the maximum number of requests that AWS
          * WAF allows from a specified IP address in a five-minute period. The
@@ -1054,14 +1054,14 @@ namespace Model
         virtual void CreateRateBasedRuleAsync(const Model::CreateRateBasedRuleRequest& request, const CreateRateBasedRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Creates a
+         * endpoints for regional and global use. </p>  <p>Creates a
          * <a>RegexMatchSet</a>. You then use <a>UpdateRegexMatchSet</a> to identify the
          * part of a web request that you want AWS WAF to inspect, such as the values of
          * the <code>User-Agent</code> header or the query string. For example, you can
@@ -1089,14 +1089,14 @@ namespace Model
         virtual Model::CreateRegexMatchSetOutcome CreateRegexMatchSet(const Model::CreateRegexMatchSetRequest& request) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Creates a
+         * endpoints for regional and global use. </p>  <p>Creates a
          * <a>RegexMatchSet</a>. You then use <a>UpdateRegexMatchSet</a> to identify the
          * part of a web request that you want AWS WAF to inspect, such as the values of
          * the <code>User-Agent</code> header or the query string. For example, you can
@@ -1126,14 +1126,14 @@ namespace Model
         virtual Model::CreateRegexMatchSetOutcomeCallable CreateRegexMatchSetCallable(const Model::CreateRegexMatchSetRequest& request) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Creates a
+         * endpoints for regional and global use. </p>  <p>Creates a
          * <a>RegexMatchSet</a>. You then use <a>UpdateRegexMatchSet</a> to identify the
          * part of a web request that you want AWS WAF to inspect, such as the values of
          * the <code>User-Agent</code> header or the query string. For example, you can
@@ -1163,14 +1163,14 @@ namespace Model
         virtual void CreateRegexMatchSetAsync(const Model::CreateRegexMatchSetRequest& request, const CreateRegexMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Creates a
+         * endpoints for regional and global use. </p>  <p>Creates a
          * <code>RegexPatternSet</code>. You then use <a>UpdateRegexPatternSet</a> to
          * specify the regular expression (regex) pattern that you want AWS WAF to search
          * for, such as <code>B[a@]dB[o0]t</code>. You can then configure AWS WAF to reject
@@ -1193,14 +1193,14 @@ namespace Model
         virtual Model::CreateRegexPatternSetOutcome CreateRegexPatternSet(const Model::CreateRegexPatternSetRequest& request) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Creates a
+         * endpoints for regional and global use. </p>  <p>Creates a
          * <code>RegexPatternSet</code>. You then use <a>UpdateRegexPatternSet</a> to
          * specify the regular expression (regex) pattern that you want AWS WAF to search
          * for, such as <code>B[a@]dB[o0]t</code>. You can then configure AWS WAF to reject
@@ -1225,14 +1225,14 @@ namespace Model
         virtual Model::CreateRegexPatternSetOutcomeCallable CreateRegexPatternSetCallable(const Model::CreateRegexPatternSetRequest& request) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Creates a
+         * endpoints for regional and global use. </p>  <p>Creates a
          * <code>RegexPatternSet</code>. You then use <a>UpdateRegexPatternSet</a> to
          * specify the regular expression (regex) pattern that you want AWS WAF to search
          * for, such as <code>B[a@]dB[o0]t</code>. You can then configure AWS WAF to reject
@@ -1257,14 +1257,14 @@ namespace Model
         virtual void CreateRegexPatternSetAsync(const Model::CreateRegexPatternSetRequest& request, const CreateRegexPatternSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Creates a
+         * endpoints for regional and global use. </p>  <p>Creates a
          * <code>Rule</code>, which contains the <code>IPSet</code> objects,
          * <code>ByteMatchSet</code> objects, and other predicates that identify the
          * requests that you want to block. If you add more than one predicate to a
@@ -1300,14 +1300,14 @@ namespace Model
         virtual Model::CreateRuleOutcome CreateRule(const Model::CreateRuleRequest& request) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Creates a
+         * endpoints for regional and global use. </p>  <p>Creates a
          * <code>Rule</code>, which contains the <code>IPSet</code> objects,
          * <code>ByteMatchSet</code> objects, and other predicates that identify the
          * requests that you want to block. If you add more than one predicate to a
@@ -1345,14 +1345,14 @@ namespace Model
         virtual Model::CreateRuleOutcomeCallable CreateRuleCallable(const Model::CreateRuleRequest& request) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Creates a
+         * endpoints for regional and global use. </p>  <p>Creates a
          * <code>Rule</code>, which contains the <code>IPSet</code> objects,
          * <code>ByteMatchSet</code> objects, and other predicates that identify the
          * requests that you want to block. If you add more than one predicate to a
@@ -1390,14 +1390,14 @@ namespace Model
         virtual void CreateRuleAsync(const Model::CreateRuleRequest& request, const CreateRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Creates a
+         * endpoints for regional and global use. </p>  <p>Creates a
          * <code>RuleGroup</code>. A rule group is a collection of predefined rules that
          * you add to a web ACL. You use <a>UpdateRuleGroup</a> to add rules to the rule
          * group.</p> <p>Rule groups are subject to the following limits:</p> <ul> <li>
@@ -1413,14 +1413,14 @@ namespace Model
         virtual Model::CreateRuleGroupOutcome CreateRuleGroup(const Model::CreateRuleGroupRequest& request) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Creates a
+         * endpoints for regional and global use. </p>  <p>Creates a
          * <code>RuleGroup</code>. A rule group is a collection of predefined rules that
          * you add to a web ACL. You use <a>UpdateRuleGroup</a> to add rules to the rule
          * group.</p> <p>Rule groups are subject to the following limits:</p> <ul> <li>
@@ -1438,14 +1438,14 @@ namespace Model
         virtual Model::CreateRuleGroupOutcomeCallable CreateRuleGroupCallable(const Model::CreateRuleGroupRequest& request) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Creates a
+         * endpoints for regional and global use. </p>  <p>Creates a
          * <code>RuleGroup</code>. A rule group is a collection of predefined rules that
          * you add to a web ACL. You use <a>UpdateRuleGroup</a> to add rules to the rule
          * group.</p> <p>Rule groups are subject to the following limits:</p> <ul> <li>
@@ -1463,14 +1463,14 @@ namespace Model
         virtual void CreateRuleGroupAsync(const Model::CreateRuleGroupRequest& request, const CreateRuleGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Creates a
+         * endpoints for regional and global use. </p>  <p>Creates a
          * <code>SizeConstraintSet</code>. You then use <a>UpdateSizeConstraintSet</a> to
          * identify the part of a web request that you want AWS WAF to check for length,
          * such as the length of the <code>User-Agent</code> header or the length of the
@@ -1497,14 +1497,14 @@ namespace Model
         virtual Model::CreateSizeConstraintSetOutcome CreateSizeConstraintSet(const Model::CreateSizeConstraintSetRequest& request) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Creates a
+         * endpoints for regional and global use. </p>  <p>Creates a
          * <code>SizeConstraintSet</code>. You then use <a>UpdateSizeConstraintSet</a> to
          * identify the part of a web request that you want AWS WAF to check for length,
          * such as the length of the <code>User-Agent</code> header or the length of the
@@ -1533,14 +1533,14 @@ namespace Model
         virtual Model::CreateSizeConstraintSetOutcomeCallable CreateSizeConstraintSetCallable(const Model::CreateSizeConstraintSetRequest& request) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Creates a
+         * endpoints for regional and global use. </p>  <p>Creates a
          * <code>SizeConstraintSet</code>. You then use <a>UpdateSizeConstraintSet</a> to
          * identify the part of a web request that you want AWS WAF to check for length,
          * such as the length of the <code>User-Agent</code> header or the length of the
@@ -1569,14 +1569,14 @@ namespace Model
         virtual void CreateSizeConstraintSetAsync(const Model::CreateSizeConstraintSetRequest& request, const CreateSizeConstraintSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Creates a
+         * endpoints for regional and global use. </p>  <p>Creates a
          * <a>SqlInjectionMatchSet</a>, which you use to allow, block, or count requests
          * that contain snippets of SQL code in a specified part of web requests. AWS WAF
          * searches for character sequences that are likely to be malicious strings.</p>
@@ -1599,14 +1599,14 @@ namespace Model
         virtual Model::CreateSqlInjectionMatchSetOutcome CreateSqlInjectionMatchSet(const Model::CreateSqlInjectionMatchSetRequest& request) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Creates a
+         * endpoints for regional and global use. </p>  <p>Creates a
          * <a>SqlInjectionMatchSet</a>, which you use to allow, block, or count requests
          * that contain snippets of SQL code in a specified part of web requests. AWS WAF
          * searches for character sequences that are likely to be malicious strings.</p>
@@ -1631,14 +1631,14 @@ namespace Model
         virtual Model::CreateSqlInjectionMatchSetOutcomeCallable CreateSqlInjectionMatchSetCallable(const Model::CreateSqlInjectionMatchSetRequest& request) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Creates a
+         * endpoints for regional and global use. </p>  <p>Creates a
          * <a>SqlInjectionMatchSet</a>, which you use to allow, block, or count requests
          * that contain snippets of SQL code in a specified part of web requests. AWS WAF
          * searches for character sequences that are likely to be malicious strings.</p>
@@ -1663,14 +1663,14 @@ namespace Model
         virtual void CreateSqlInjectionMatchSetAsync(const Model::CreateSqlInjectionMatchSetRequest& request, const CreateSqlInjectionMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Creates a
+         * endpoints for regional and global use. </p>  <p>Creates a
          * <code>WebACL</code>, which contains the <code>Rules</code> that identify the
          * CloudFront web requests that you want to allow, block, or count. AWS WAF
          * evaluates <code>Rules</code> in order based on the value of
@@ -1704,14 +1704,14 @@ namespace Model
         virtual Model::CreateWebACLOutcome CreateWebACL(const Model::CreateWebACLRequest& request) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Creates a
+         * endpoints for regional and global use. </p>  <p>Creates a
          * <code>WebACL</code>, which contains the <code>Rules</code> that identify the
          * CloudFront web requests that you want to allow, block, or count. AWS WAF
          * evaluates <code>Rules</code> in order based on the value of
@@ -1747,14 +1747,14 @@ namespace Model
         virtual Model::CreateWebACLOutcomeCallable CreateWebACLCallable(const Model::CreateWebACLRequest& request) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Creates a
+         * endpoints for regional and global use. </p>  <p>Creates a
          * <code>WebACL</code>, which contains the <code>Rules</code> that identify the
          * CloudFront web requests that you want to allow, block, or count. AWS WAF
          * evaluates <code>Rules</code> in order based on the value of
@@ -1848,14 +1848,14 @@ namespace Model
         virtual void CreateWebACLMigrationStackAsync(const Model::CreateWebACLMigrationStackRequest& request, const CreateWebACLMigrationStackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Creates an
+         * endpoints for regional and global use. </p>  <p>Creates an
          * <a>XssMatchSet</a>, which you use to allow, block, or count requests that
          * contain cross-site scripting attacks in the specified part of web requests. AWS
          * WAF searches for character sequences that are likely to be malicious
@@ -1878,14 +1878,14 @@ namespace Model
         virtual Model::CreateXssMatchSetOutcome CreateXssMatchSet(const Model::CreateXssMatchSetRequest& request) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Creates an
+         * endpoints for regional and global use. </p>  <p>Creates an
          * <a>XssMatchSet</a>, which you use to allow, block, or count requests that
          * contain cross-site scripting attacks in the specified part of web requests. AWS
          * WAF searches for character sequences that are likely to be malicious
@@ -1910,14 +1910,14 @@ namespace Model
         virtual Model::CreateXssMatchSetOutcomeCallable CreateXssMatchSetCallable(const Model::CreateXssMatchSetRequest& request) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Creates an
+         * endpoints for regional and global use. </p>  <p>Creates an
          * <a>XssMatchSet</a>, which you use to allow, block, or count requests that
          * contain cross-site scripting attacks in the specified part of web requests. AWS
          * WAF searches for character sequences that are likely to be malicious
@@ -1942,14 +1942,14 @@ namespace Model
         virtual void CreateXssMatchSetAsync(const Model::CreateXssMatchSetRequest& request, const CreateXssMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Permanently deletes a
+         * endpoints for regional and global use. </p>  <p>Permanently deletes a
          * <a>ByteMatchSet</a>. You can't delete a <code>ByteMatchSet</code> if it's still
          * used in any <code>Rules</code> or if it still includes any <a>ByteMatchTuple</a>
          * objects (any filters).</p> <p>If you just want to remove a
@@ -1967,14 +1967,14 @@ namespace Model
         virtual Model::DeleteByteMatchSetOutcome DeleteByteMatchSet(const Model::DeleteByteMatchSetRequest& request) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Permanently deletes a
+         * endpoints for regional and global use. </p>  <p>Permanently deletes a
          * <a>ByteMatchSet</a>. You can't delete a <code>ByteMatchSet</code> if it's still
          * used in any <code>Rules</code> or if it still includes any <a>ByteMatchTuple</a>
          * objects (any filters).</p> <p>If you just want to remove a
@@ -1994,14 +1994,14 @@ namespace Model
         virtual Model::DeleteByteMatchSetOutcomeCallable DeleteByteMatchSetCallable(const Model::DeleteByteMatchSetRequest& request) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Permanently deletes a
+         * endpoints for regional and global use. </p>  <p>Permanently deletes a
          * <a>ByteMatchSet</a>. You can't delete a <code>ByteMatchSet</code> if it's still
          * used in any <code>Rules</code> or if it still includes any <a>ByteMatchTuple</a>
          * objects (any filters).</p> <p>If you just want to remove a
@@ -2021,14 +2021,14 @@ namespace Model
         virtual void DeleteByteMatchSetAsync(const Model::DeleteByteMatchSetRequest& request, const DeleteByteMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Permanently deletes a
+         * endpoints for regional and global use. </p>  <p>Permanently deletes a
          * <a>GeoMatchSet</a>. You can't delete a <code>GeoMatchSet</code> if it's still
          * used in any <code>Rules</code> or if it still includes any countries.</p> <p>If
          * you just want to remove a <code>GeoMatchSet</code> from a <code>Rule</code>, use
@@ -2046,14 +2046,14 @@ namespace Model
         virtual Model::DeleteGeoMatchSetOutcome DeleteGeoMatchSet(const Model::DeleteGeoMatchSetRequest& request) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Permanently deletes a
+         * endpoints for regional and global use. </p>  <p>Permanently deletes a
          * <a>GeoMatchSet</a>. You can't delete a <code>GeoMatchSet</code> if it's still
          * used in any <code>Rules</code> or if it still includes any countries.</p> <p>If
          * you just want to remove a <code>GeoMatchSet</code> from a <code>Rule</code>, use
@@ -2073,14 +2073,14 @@ namespace Model
         virtual Model::DeleteGeoMatchSetOutcomeCallable DeleteGeoMatchSetCallable(const Model::DeleteGeoMatchSetRequest& request) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Permanently deletes a
+         * endpoints for regional and global use. </p>  <p>Permanently deletes a
          * <a>GeoMatchSet</a>. You can't delete a <code>GeoMatchSet</code> if it's still
          * used in any <code>Rules</code> or if it still includes any countries.</p> <p>If
          * you just want to remove a <code>GeoMatchSet</code> from a <code>Rule</code>, use
@@ -2100,14 +2100,14 @@ namespace Model
         virtual void DeleteGeoMatchSetAsync(const Model::DeleteGeoMatchSetRequest& request, const DeleteGeoMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Permanently deletes an
+         * endpoints for regional and global use. </p>  <p>Permanently deletes an
          * <a>IPSet</a>. You can't delete an <code>IPSet</code> if it's still used in any
          * <code>Rules</code> or if it still includes any IP addresses.</p> <p>If you just
          * want to remove an <code>IPSet</code> from a <code>Rule</code>, use
@@ -2124,14 +2124,14 @@ namespace Model
         virtual Model::DeleteIPSetOutcome DeleteIPSet(const Model::DeleteIPSetRequest& request) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Permanently deletes an
+         * endpoints for regional and global use. </p>  <p>Permanently deletes an
          * <a>IPSet</a>. You can't delete an <code>IPSet</code> if it's still used in any
          * <code>Rules</code> or if it still includes any IP addresses.</p> <p>If you just
          * want to remove an <code>IPSet</code> from a <code>Rule</code>, use
@@ -2150,14 +2150,14 @@ namespace Model
         virtual Model::DeleteIPSetOutcomeCallable DeleteIPSetCallable(const Model::DeleteIPSetRequest& request) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Permanently deletes an
+         * endpoints for regional and global use. </p>  <p>Permanently deletes an
          * <a>IPSet</a>. You can't delete an <code>IPSet</code> if it's still used in any
          * <code>Rules</code> or if it still includes any IP addresses.</p> <p>If you just
          * want to remove an <code>IPSet</code> from a <code>Rule</code>, use
@@ -2176,14 +2176,14 @@ namespace Model
         virtual void DeleteIPSetAsync(const Model::DeleteIPSetRequest& request, const DeleteIPSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Permanently deletes the
+         * endpoints for regional and global use. </p>  <p>Permanently deletes the
          * <a>LoggingConfiguration</a> from the specified web ACL.</p><p><h3>See Also:</h3>
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/DeleteLoggingConfiguration">AWS
@@ -2192,14 +2192,14 @@ namespace Model
         virtual Model::DeleteLoggingConfigurationOutcome DeleteLoggingConfiguration(const Model::DeleteLoggingConfigurationRequest& request) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Permanently deletes the
+         * endpoints for regional and global use. </p>  <p>Permanently deletes the
          * <a>LoggingConfiguration</a> from the specified web ACL.</p><p><h3>See Also:</h3>
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/DeleteLoggingConfiguration">AWS
@@ -2210,14 +2210,14 @@ namespace Model
         virtual Model::DeleteLoggingConfigurationOutcomeCallable DeleteLoggingConfigurationCallable(const Model::DeleteLoggingConfigurationRequest& request) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Permanently deletes the
+         * endpoints for regional and global use. </p>  <p>Permanently deletes the
          * <a>LoggingConfiguration</a> from the specified web ACL.</p><p><h3>See Also:</h3>
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/DeleteLoggingConfiguration">AWS
@@ -2228,14 +2228,14 @@ namespace Model
         virtual void DeleteLoggingConfigurationAsync(const Model::DeleteLoggingConfigurationRequest& request, const DeleteLoggingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Permanently deletes an
+         * endpoints for regional and global use. </p>  <p>Permanently deletes an
          * IAM policy from the specified RuleGroup.</p> <p>The user making the request must
          * be the owner of the RuleGroup.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/DeletePermissionPolicy">AWS
@@ -2244,14 +2244,14 @@ namespace Model
         virtual Model::DeletePermissionPolicyOutcome DeletePermissionPolicy(const Model::DeletePermissionPolicyRequest& request) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Permanently deletes an
+         * endpoints for regional and global use. </p>  <p>Permanently deletes an
          * IAM policy from the specified RuleGroup.</p> <p>The user making the request must
          * be the owner of the RuleGroup.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/DeletePermissionPolicy">AWS
@@ -2262,14 +2262,14 @@ namespace Model
         virtual Model::DeletePermissionPolicyOutcomeCallable DeletePermissionPolicyCallable(const Model::DeletePermissionPolicyRequest& request) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Permanently deletes an
+         * endpoints for regional and global use. </p>  <p>Permanently deletes an
          * IAM policy from the specified RuleGroup.</p> <p>The user making the request must
          * be the owner of the RuleGroup.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/DeletePermissionPolicy">AWS
@@ -2280,14 +2280,14 @@ namespace Model
         virtual void DeletePermissionPolicyAsync(const Model::DeletePermissionPolicyRequest& request, const DeletePermissionPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Permanently deletes a
+         * endpoints for regional and global use. </p>  <p>Permanently deletes a
          * <a>RateBasedRule</a>. You can't delete a rule if it's still used in any
          * <code>WebACL</code> objects or if it still includes any predicates, such as
          * <code>ByteMatchSet</code> objects.</p> <p>If you just want to remove a rule from
@@ -2305,14 +2305,14 @@ namespace Model
         virtual Model::DeleteRateBasedRuleOutcome DeleteRateBasedRule(const Model::DeleteRateBasedRuleRequest& request) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Permanently deletes a
+         * endpoints for regional and global use. </p>  <p>Permanently deletes a
          * <a>RateBasedRule</a>. You can't delete a rule if it's still used in any
          * <code>WebACL</code> objects or if it still includes any predicates, such as
          * <code>ByteMatchSet</code> objects.</p> <p>If you just want to remove a rule from
@@ -2332,14 +2332,14 @@ namespace Model
         virtual Model::DeleteRateBasedRuleOutcomeCallable DeleteRateBasedRuleCallable(const Model::DeleteRateBasedRuleRequest& request) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Permanently deletes a
+         * endpoints for regional and global use. </p>  <p>Permanently deletes a
          * <a>RateBasedRule</a>. You can't delete a rule if it's still used in any
          * <code>WebACL</code> objects or if it still includes any predicates, such as
          * <code>ByteMatchSet</code> objects.</p> <p>If you just want to remove a rule from
@@ -2359,14 +2359,14 @@ namespace Model
         virtual void DeleteRateBasedRuleAsync(const Model::DeleteRateBasedRuleRequest& request, const DeleteRateBasedRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Permanently deletes a
+         * endpoints for regional and global use. </p>  <p>Permanently deletes a
          * <a>RegexMatchSet</a>. You can't delete a <code>RegexMatchSet</code> if it's
          * still used in any <code>Rules</code> or if it still includes any
          * <code>RegexMatchTuples</code> objects (any filters).</p> <p>If you just want to
@@ -2385,14 +2385,14 @@ namespace Model
         virtual Model::DeleteRegexMatchSetOutcome DeleteRegexMatchSet(const Model::DeleteRegexMatchSetRequest& request) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Permanently deletes a
+         * endpoints for regional and global use. </p>  <p>Permanently deletes a
          * <a>RegexMatchSet</a>. You can't delete a <code>RegexMatchSet</code> if it's
          * still used in any <code>Rules</code> or if it still includes any
          * <code>RegexMatchTuples</code> objects (any filters).</p> <p>If you just want to
@@ -2413,14 +2413,14 @@ namespace Model
         virtual Model::DeleteRegexMatchSetOutcomeCallable DeleteRegexMatchSetCallable(const Model::DeleteRegexMatchSetRequest& request) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Permanently deletes a
+         * endpoints for regional and global use. </p>  <p>Permanently deletes a
          * <a>RegexMatchSet</a>. You can't delete a <code>RegexMatchSet</code> if it's
          * still used in any <code>Rules</code> or if it still includes any
          * <code>RegexMatchTuples</code> objects (any filters).</p> <p>If you just want to
@@ -2441,14 +2441,14 @@ namespace Model
         virtual void DeleteRegexMatchSetAsync(const Model::DeleteRegexMatchSetRequest& request, const DeleteRegexMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Permanently deletes a
+         * endpoints for regional and global use. </p>  <p>Permanently deletes a
          * <a>RegexPatternSet</a>. You can't delete a <code>RegexPatternSet</code> if it's
          * still used in any <code>RegexMatchSet</code> or if the
          * <code>RegexPatternSet</code> is not empty. </p><p><h3>See Also:</h3>   <a
@@ -2458,14 +2458,14 @@ namespace Model
         virtual Model::DeleteRegexPatternSetOutcome DeleteRegexPatternSet(const Model::DeleteRegexPatternSetRequest& request) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Permanently deletes a
+         * endpoints for regional and global use. </p>  <p>Permanently deletes a
          * <a>RegexPatternSet</a>. You can't delete a <code>RegexPatternSet</code> if it's
          * still used in any <code>RegexMatchSet</code> or if the
          * <code>RegexPatternSet</code> is not empty. </p><p><h3>See Also:</h3>   <a
@@ -2477,14 +2477,14 @@ namespace Model
         virtual Model::DeleteRegexPatternSetOutcomeCallable DeleteRegexPatternSetCallable(const Model::DeleteRegexPatternSetRequest& request) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Permanently deletes a
+         * endpoints for regional and global use. </p>  <p>Permanently deletes a
          * <a>RegexPatternSet</a>. You can't delete a <code>RegexPatternSet</code> if it's
          * still used in any <code>RegexMatchSet</code> or if the
          * <code>RegexPatternSet</code> is not empty. </p><p><h3>See Also:</h3>   <a
@@ -2496,14 +2496,14 @@ namespace Model
         virtual void DeleteRegexPatternSetAsync(const Model::DeleteRegexPatternSetRequest& request, const DeleteRegexPatternSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Permanently deletes a
+         * endpoints for regional and global use. </p>  <p>Permanently deletes a
          * <a>Rule</a>. You can't delete a <code>Rule</code> if it's still used in any
          * <code>WebACL</code> objects or if it still includes any predicates, such as
          * <code>ByteMatchSet</code> objects.</p> <p>If you just want to remove a
@@ -2521,14 +2521,14 @@ namespace Model
         virtual Model::DeleteRuleOutcome DeleteRule(const Model::DeleteRuleRequest& request) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Permanently deletes a
+         * endpoints for regional and global use. </p>  <p>Permanently deletes a
          * <a>Rule</a>. You can't delete a <code>Rule</code> if it's still used in any
          * <code>WebACL</code> objects or if it still includes any predicates, such as
          * <code>ByteMatchSet</code> objects.</p> <p>If you just want to remove a
@@ -2548,14 +2548,14 @@ namespace Model
         virtual Model::DeleteRuleOutcomeCallable DeleteRuleCallable(const Model::DeleteRuleRequest& request) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Permanently deletes a
+         * endpoints for regional and global use. </p>  <p>Permanently deletes a
          * <a>Rule</a>. You can't delete a <code>Rule</code> if it's still used in any
          * <code>WebACL</code> objects or if it still includes any predicates, such as
          * <code>ByteMatchSet</code> objects.</p> <p>If you just want to remove a
@@ -2575,14 +2575,14 @@ namespace Model
         virtual void DeleteRuleAsync(const Model::DeleteRuleRequest& request, const DeleteRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Permanently deletes a
+         * endpoints for regional and global use. </p>  <p>Permanently deletes a
          * <a>RuleGroup</a>. You can't delete a <code>RuleGroup</code> if it's still used
          * in any <code>WebACL</code> objects or if it still includes any rules.</p> <p>If
          * you just want to remove a <code>RuleGroup</code> from a <code>WebACL</code>, use
@@ -2599,14 +2599,14 @@ namespace Model
         virtual Model::DeleteRuleGroupOutcome DeleteRuleGroup(const Model::DeleteRuleGroupRequest& request) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Permanently deletes a
+         * endpoints for regional and global use. </p>  <p>Permanently deletes a
          * <a>RuleGroup</a>. You can't delete a <code>RuleGroup</code> if it's still used
          * in any <code>WebACL</code> objects or if it still includes any rules.</p> <p>If
          * you just want to remove a <code>RuleGroup</code> from a <code>WebACL</code>, use
@@ -2625,14 +2625,14 @@ namespace Model
         virtual Model::DeleteRuleGroupOutcomeCallable DeleteRuleGroupCallable(const Model::DeleteRuleGroupRequest& request) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Permanently deletes a
+         * endpoints for regional and global use. </p>  <p>Permanently deletes a
          * <a>RuleGroup</a>. You can't delete a <code>RuleGroup</code> if it's still used
          * in any <code>WebACL</code> objects or if it still includes any rules.</p> <p>If
          * you just want to remove a <code>RuleGroup</code> from a <code>WebACL</code>, use
@@ -2651,14 +2651,14 @@ namespace Model
         virtual void DeleteRuleGroupAsync(const Model::DeleteRuleGroupRequest& request, const DeleteRuleGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Permanently deletes a
+         * endpoints for regional and global use. </p>  <p>Permanently deletes a
          * <a>SizeConstraintSet</a>. You can't delete a <code>SizeConstraintSet</code> if
          * it's still used in any <code>Rules</code> or if it still includes any
          * <a>SizeConstraint</a> objects (any filters).</p> <p>If you just want to remove a
@@ -2677,14 +2677,14 @@ namespace Model
         virtual Model::DeleteSizeConstraintSetOutcome DeleteSizeConstraintSet(const Model::DeleteSizeConstraintSetRequest& request) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Permanently deletes a
+         * endpoints for regional and global use. </p>  <p>Permanently deletes a
          * <a>SizeConstraintSet</a>. You can't delete a <code>SizeConstraintSet</code> if
          * it's still used in any <code>Rules</code> or if it still includes any
          * <a>SizeConstraint</a> objects (any filters).</p> <p>If you just want to remove a
@@ -2705,14 +2705,14 @@ namespace Model
         virtual Model::DeleteSizeConstraintSetOutcomeCallable DeleteSizeConstraintSetCallable(const Model::DeleteSizeConstraintSetRequest& request) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Permanently deletes a
+         * endpoints for regional and global use. </p>  <p>Permanently deletes a
          * <a>SizeConstraintSet</a>. You can't delete a <code>SizeConstraintSet</code> if
          * it's still used in any <code>Rules</code> or if it still includes any
          * <a>SizeConstraint</a> objects (any filters).</p> <p>If you just want to remove a
@@ -2733,14 +2733,14 @@ namespace Model
         virtual void DeleteSizeConstraintSetAsync(const Model::DeleteSizeConstraintSetRequest& request, const DeleteSizeConstraintSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Permanently deletes a
+         * endpoints for regional and global use. </p>  <p>Permanently deletes a
          * <a>SqlInjectionMatchSet</a>. You can't delete a
          * <code>SqlInjectionMatchSet</code> if it's still used in any <code>Rules</code>
          * or if it still contains any <a>SqlInjectionMatchTuple</a> objects.</p> <p>If you
@@ -2759,14 +2759,14 @@ namespace Model
         virtual Model::DeleteSqlInjectionMatchSetOutcome DeleteSqlInjectionMatchSet(const Model::DeleteSqlInjectionMatchSetRequest& request) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Permanently deletes a
+         * endpoints for regional and global use. </p>  <p>Permanently deletes a
          * <a>SqlInjectionMatchSet</a>. You can't delete a
          * <code>SqlInjectionMatchSet</code> if it's still used in any <code>Rules</code>
          * or if it still contains any <a>SqlInjectionMatchTuple</a> objects.</p> <p>If you
@@ -2787,14 +2787,14 @@ namespace Model
         virtual Model::DeleteSqlInjectionMatchSetOutcomeCallable DeleteSqlInjectionMatchSetCallable(const Model::DeleteSqlInjectionMatchSetRequest& request) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Permanently deletes a
+         * endpoints for regional and global use. </p>  <p>Permanently deletes a
          * <a>SqlInjectionMatchSet</a>. You can't delete a
          * <code>SqlInjectionMatchSet</code> if it's still used in any <code>Rules</code>
          * or if it still contains any <a>SqlInjectionMatchTuple</a> objects.</p> <p>If you
@@ -2815,14 +2815,14 @@ namespace Model
         virtual void DeleteSqlInjectionMatchSetAsync(const Model::DeleteSqlInjectionMatchSetRequest& request, const DeleteSqlInjectionMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Permanently deletes a
+         * endpoints for regional and global use. </p>  <p>Permanently deletes a
          * <a>WebACL</a>. You can't delete a <code>WebACL</code> if it still contains any
          * <code>Rules</code>.</p> <p>To delete a <code>WebACL</code>, perform the
          * following steps:</p> <ol> <li> <p>Update the <code>WebACL</code> to remove
@@ -2837,14 +2837,14 @@ namespace Model
         virtual Model::DeleteWebACLOutcome DeleteWebACL(const Model::DeleteWebACLRequest& request) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Permanently deletes a
+         * endpoints for regional and global use. </p>  <p>Permanently deletes a
          * <a>WebACL</a>. You can't delete a <code>WebACL</code> if it still contains any
          * <code>Rules</code>.</p> <p>To delete a <code>WebACL</code>, perform the
          * following steps:</p> <ol> <li> <p>Update the <code>WebACL</code> to remove
@@ -2861,14 +2861,14 @@ namespace Model
         virtual Model::DeleteWebACLOutcomeCallable DeleteWebACLCallable(const Model::DeleteWebACLRequest& request) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Permanently deletes a
+         * endpoints for regional and global use. </p>  <p>Permanently deletes a
          * <a>WebACL</a>. You can't delete a <code>WebACL</code> if it still contains any
          * <code>Rules</code>.</p> <p>To delete a <code>WebACL</code>, perform the
          * following steps:</p> <ol> <li> <p>Update the <code>WebACL</code> to remove
@@ -2885,14 +2885,14 @@ namespace Model
         virtual void DeleteWebACLAsync(const Model::DeleteWebACLRequest& request, const DeleteWebACLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Permanently deletes an
+         * endpoints for regional and global use. </p>  <p>Permanently deletes an
          * <a>XssMatchSet</a>. You can't delete an <code>XssMatchSet</code> if it's still
          * used in any <code>Rules</code> or if it still contains any <a>XssMatchTuple</a>
          * objects.</p> <p>If you just want to remove an <code>XssMatchSet</code> from a
@@ -2910,14 +2910,14 @@ namespace Model
         virtual Model::DeleteXssMatchSetOutcome DeleteXssMatchSet(const Model::DeleteXssMatchSetRequest& request) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Permanently deletes an
+         * endpoints for regional and global use. </p>  <p>Permanently deletes an
          * <a>XssMatchSet</a>. You can't delete an <code>XssMatchSet</code> if it's still
          * used in any <code>Rules</code> or if it still contains any <a>XssMatchTuple</a>
          * objects.</p> <p>If you just want to remove an <code>XssMatchSet</code> from a
@@ -2937,14 +2937,14 @@ namespace Model
         virtual Model::DeleteXssMatchSetOutcomeCallable DeleteXssMatchSetCallable(const Model::DeleteXssMatchSetRequest& request) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Permanently deletes an
+         * endpoints for regional and global use. </p>  <p>Permanently deletes an
          * <a>XssMatchSet</a>. You can't delete an <code>XssMatchSet</code> if it's still
          * used in any <code>Rules</code> or if it still contains any <a>XssMatchTuple</a>
          * objects.</p> <p>If you just want to remove an <code>XssMatchSet</code> from a
@@ -2964,14 +2964,14 @@ namespace Model
         virtual void DeleteXssMatchSetAsync(const Model::DeleteXssMatchSetRequest& request, const DeleteXssMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic Regional</b> documentation. For more
+         *  <p>This is <b>AWS WAF Classic Regional</b> documentation. For more
          * information, see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Removes a web ACL from
+         * endpoints for regional and global use. </p>  <p>Removes a web ACL from
          * the specified resource, either an application load balancer or Amazon API
          * Gateway stage.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/DisassociateWebACL">AWS
@@ -2980,14 +2980,14 @@ namespace Model
         virtual Model::DisassociateWebACLOutcome DisassociateWebACL(const Model::DisassociateWebACLRequest& request) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic Regional</b> documentation. For more
+         *  <p>This is <b>AWS WAF Classic Regional</b> documentation. For more
          * information, see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Removes a web ACL from
+         * endpoints for regional and global use. </p>  <p>Removes a web ACL from
          * the specified resource, either an application load balancer or Amazon API
          * Gateway stage.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/DisassociateWebACL">AWS
@@ -2998,14 +2998,14 @@ namespace Model
         virtual Model::DisassociateWebACLOutcomeCallable DisassociateWebACLCallable(const Model::DisassociateWebACLRequest& request) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic Regional</b> documentation. For more
+         *  <p>This is <b>AWS WAF Classic Regional</b> documentation. For more
          * information, see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Removes a web ACL from
+         * endpoints for regional and global use. </p>  <p>Removes a web ACL from
          * the specified resource, either an application load balancer or Amazon API
          * Gateway stage.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/DisassociateWebACL">AWS
@@ -3016,14 +3016,14 @@ namespace Model
         virtual void DisassociateWebACLAsync(const Model::DisassociateWebACLRequest& request, const DisassociateWebACLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Returns the
+         * endpoints for regional and global use. </p>  <p>Returns the
          * <a>ByteMatchSet</a> specified by <code>ByteMatchSetId</code>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/GetByteMatchSet">AWS
@@ -3032,14 +3032,14 @@ namespace Model
         virtual Model::GetByteMatchSetOutcome GetByteMatchSet(const Model::GetByteMatchSetRequest& request) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Returns the
+         * endpoints for regional and global use. </p>  <p>Returns the
          * <a>ByteMatchSet</a> specified by <code>ByteMatchSetId</code>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/GetByteMatchSet">AWS
@@ -3050,14 +3050,14 @@ namespace Model
         virtual Model::GetByteMatchSetOutcomeCallable GetByteMatchSetCallable(const Model::GetByteMatchSetRequest& request) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Returns the
+         * endpoints for regional and global use. </p>  <p>Returns the
          * <a>ByteMatchSet</a> specified by <code>ByteMatchSetId</code>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/GetByteMatchSet">AWS
@@ -3068,14 +3068,14 @@ namespace Model
         virtual void GetByteMatchSetAsync(const Model::GetByteMatchSetRequest& request, const GetByteMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>When you want to create,
+         * endpoints for regional and global use. </p>  <p>When you want to create,
          * update, or delete AWS WAF objects, get a change token and include the change
          * token in the create, update, or delete request. Change tokens ensure that your
          * application doesn't submit conflicting requests to AWS WAF.</p> <p>Each create,
@@ -3095,14 +3095,14 @@ namespace Model
         virtual Model::GetChangeTokenOutcome GetChangeToken(const Model::GetChangeTokenRequest& request) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>When you want to create,
+         * endpoints for regional and global use. </p>  <p>When you want to create,
          * update, or delete AWS WAF objects, get a change token and include the change
          * token in the create, update, or delete request. Change tokens ensure that your
          * application doesn't submit conflicting requests to AWS WAF.</p> <p>Each create,
@@ -3124,14 +3124,14 @@ namespace Model
         virtual Model::GetChangeTokenOutcomeCallable GetChangeTokenCallable(const Model::GetChangeTokenRequest& request) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>When you want to create,
+         * endpoints for regional and global use. </p>  <p>When you want to create,
          * update, or delete AWS WAF objects, get a change token and include the change
          * token in the create, update, or delete request. Change tokens ensure that your
          * application doesn't submit conflicting requests to AWS WAF.</p> <p>Each create,
@@ -3153,14 +3153,14 @@ namespace Model
         virtual void GetChangeTokenAsync(const Model::GetChangeTokenRequest& request, const GetChangeTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Returns the status of a
+         * endpoints for regional and global use. </p>  <p>Returns the status of a
          * <code>ChangeToken</code> that you got by calling <a>GetChangeToken</a>.
          * <code>ChangeTokenStatus</code> is one of the following values:</p> <ul> <li> <p>
          * <code>PROVISIONED</code>: You requested the change token by calling
@@ -3175,14 +3175,14 @@ namespace Model
         virtual Model::GetChangeTokenStatusOutcome GetChangeTokenStatus(const Model::GetChangeTokenStatusRequest& request) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Returns the status of a
+         * endpoints for regional and global use. </p>  <p>Returns the status of a
          * <code>ChangeToken</code> that you got by calling <a>GetChangeToken</a>.
          * <code>ChangeTokenStatus</code> is one of the following values:</p> <ul> <li> <p>
          * <code>PROVISIONED</code>: You requested the change token by calling
@@ -3199,14 +3199,14 @@ namespace Model
         virtual Model::GetChangeTokenStatusOutcomeCallable GetChangeTokenStatusCallable(const Model::GetChangeTokenStatusRequest& request) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Returns the status of a
+         * endpoints for regional and global use. </p>  <p>Returns the status of a
          * <code>ChangeToken</code> that you got by calling <a>GetChangeToken</a>.
          * <code>ChangeTokenStatus</code> is one of the following values:</p> <ul> <li> <p>
          * <code>PROVISIONED</code>: You requested the change token by calling
@@ -3223,14 +3223,14 @@ namespace Model
         virtual void GetChangeTokenStatusAsync(const Model::GetChangeTokenStatusRequest& request, const GetChangeTokenStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Returns the
+         * endpoints for regional and global use. </p>  <p>Returns the
          * <a>GeoMatchSet</a> that is specified by
          * <code>GeoMatchSetId</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/GetGeoMatchSet">AWS
@@ -3239,14 +3239,14 @@ namespace Model
         virtual Model::GetGeoMatchSetOutcome GetGeoMatchSet(const Model::GetGeoMatchSetRequest& request) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Returns the
+         * endpoints for regional and global use. </p>  <p>Returns the
          * <a>GeoMatchSet</a> that is specified by
          * <code>GeoMatchSetId</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/GetGeoMatchSet">AWS
@@ -3257,14 +3257,14 @@ namespace Model
         virtual Model::GetGeoMatchSetOutcomeCallable GetGeoMatchSetCallable(const Model::GetGeoMatchSetRequest& request) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Returns the
+         * endpoints for regional and global use. </p>  <p>Returns the
          * <a>GeoMatchSet</a> that is specified by
          * <code>GeoMatchSetId</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/GetGeoMatchSet">AWS
@@ -3275,14 +3275,14 @@ namespace Model
         virtual void GetGeoMatchSetAsync(const Model::GetGeoMatchSetRequest& request, const GetGeoMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Returns the <a>IPSet</a>
+         * endpoints for regional and global use. </p>  <p>Returns the <a>IPSet</a>
          * that is specified by <code>IPSetId</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/GetIPSet">AWS
          * API Reference</a></p>
@@ -3290,14 +3290,14 @@ namespace Model
         virtual Model::GetIPSetOutcome GetIPSet(const Model::GetIPSetRequest& request) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Returns the <a>IPSet</a>
+         * endpoints for regional and global use. </p>  <p>Returns the <a>IPSet</a>
          * that is specified by <code>IPSetId</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/GetIPSet">AWS
          * API Reference</a></p>
@@ -3307,14 +3307,14 @@ namespace Model
         virtual Model::GetIPSetOutcomeCallable GetIPSetCallable(const Model::GetIPSetRequest& request) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Returns the <a>IPSet</a>
+         * endpoints for regional and global use. </p>  <p>Returns the <a>IPSet</a>
          * that is specified by <code>IPSetId</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/GetIPSet">AWS
          * API Reference</a></p>
@@ -3324,14 +3324,14 @@ namespace Model
         virtual void GetIPSetAsync(const Model::GetIPSetRequest& request, const GetIPSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Returns the
+         * endpoints for regional and global use. </p>  <p>Returns the
          * <a>LoggingConfiguration</a> for the specified web ACL.</p><p><h3>See Also:</h3> 
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/GetLoggingConfiguration">AWS
@@ -3340,14 +3340,14 @@ namespace Model
         virtual Model::GetLoggingConfigurationOutcome GetLoggingConfiguration(const Model::GetLoggingConfigurationRequest& request) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Returns the
+         * endpoints for regional and global use. </p>  <p>Returns the
          * <a>LoggingConfiguration</a> for the specified web ACL.</p><p><h3>See Also:</h3> 
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/GetLoggingConfiguration">AWS
@@ -3358,14 +3358,14 @@ namespace Model
         virtual Model::GetLoggingConfigurationOutcomeCallable GetLoggingConfigurationCallable(const Model::GetLoggingConfigurationRequest& request) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Returns the
+         * endpoints for regional and global use. </p>  <p>Returns the
          * <a>LoggingConfiguration</a> for the specified web ACL.</p><p><h3>See Also:</h3> 
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/GetLoggingConfiguration">AWS
@@ -3376,14 +3376,14 @@ namespace Model
         virtual void GetLoggingConfigurationAsync(const Model::GetLoggingConfigurationRequest& request, const GetLoggingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Returns the IAM policy
+         * endpoints for regional and global use. </p>  <p>Returns the IAM policy
          * attached to the RuleGroup.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/GetPermissionPolicy">AWS
          * API Reference</a></p>
@@ -3391,14 +3391,14 @@ namespace Model
         virtual Model::GetPermissionPolicyOutcome GetPermissionPolicy(const Model::GetPermissionPolicyRequest& request) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Returns the IAM policy
+         * endpoints for regional and global use. </p>  <p>Returns the IAM policy
          * attached to the RuleGroup.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/GetPermissionPolicy">AWS
          * API Reference</a></p>
@@ -3408,14 +3408,14 @@ namespace Model
         virtual Model::GetPermissionPolicyOutcomeCallable GetPermissionPolicyCallable(const Model::GetPermissionPolicyRequest& request) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Returns the IAM policy
+         * endpoints for regional and global use. </p>  <p>Returns the IAM policy
          * attached to the RuleGroup.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/GetPermissionPolicy">AWS
          * API Reference</a></p>
@@ -3425,14 +3425,14 @@ namespace Model
         virtual void GetPermissionPolicyAsync(const Model::GetPermissionPolicyRequest& request, const GetPermissionPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Returns the
+         * endpoints for regional and global use. </p>  <p>Returns the
          * <a>RateBasedRule</a> that is specified by the <code>RuleId</code> that you
          * included in the <code>GetRateBasedRule</code> request.</p><p><h3>See Also:</h3> 
          * <a
@@ -3442,14 +3442,14 @@ namespace Model
         virtual Model::GetRateBasedRuleOutcome GetRateBasedRule(const Model::GetRateBasedRuleRequest& request) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Returns the
+         * endpoints for regional and global use. </p>  <p>Returns the
          * <a>RateBasedRule</a> that is specified by the <code>RuleId</code> that you
          * included in the <code>GetRateBasedRule</code> request.</p><p><h3>See Also:</h3> 
          * <a
@@ -3461,14 +3461,14 @@ namespace Model
         virtual Model::GetRateBasedRuleOutcomeCallable GetRateBasedRuleCallable(const Model::GetRateBasedRuleRequest& request) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Returns the
+         * endpoints for regional and global use. </p>  <p>Returns the
          * <a>RateBasedRule</a> that is specified by the <code>RuleId</code> that you
          * included in the <code>GetRateBasedRule</code> request.</p><p><h3>See Also:</h3> 
          * <a
@@ -3480,14 +3480,14 @@ namespace Model
         virtual void GetRateBasedRuleAsync(const Model::GetRateBasedRuleRequest& request, const GetRateBasedRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Returns an array of IP
+         * endpoints for regional and global use. </p>  <p>Returns an array of IP
          * addresses currently being blocked by the <a>RateBasedRule</a> that is specified
          * by the <code>RuleId</code>. The maximum number of managed keys that will be
          * blocked is 10,000. If more than 10,000 addresses exceed the rate limit, the
@@ -3499,14 +3499,14 @@ namespace Model
         virtual Model::GetRateBasedRuleManagedKeysOutcome GetRateBasedRuleManagedKeys(const Model::GetRateBasedRuleManagedKeysRequest& request) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Returns an array of IP
+         * endpoints for regional and global use. </p>  <p>Returns an array of IP
          * addresses currently being blocked by the <a>RateBasedRule</a> that is specified
          * by the <code>RuleId</code>. The maximum number of managed keys that will be
          * blocked is 10,000. If more than 10,000 addresses exceed the rate limit, the
@@ -3520,14 +3520,14 @@ namespace Model
         virtual Model::GetRateBasedRuleManagedKeysOutcomeCallable GetRateBasedRuleManagedKeysCallable(const Model::GetRateBasedRuleManagedKeysRequest& request) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Returns an array of IP
+         * endpoints for regional and global use. </p>  <p>Returns an array of IP
          * addresses currently being blocked by the <a>RateBasedRule</a> that is specified
          * by the <code>RuleId</code>. The maximum number of managed keys that will be
          * blocked is 10,000. If more than 10,000 addresses exceed the rate limit, the
@@ -3541,14 +3541,14 @@ namespace Model
         virtual void GetRateBasedRuleManagedKeysAsync(const Model::GetRateBasedRuleManagedKeysRequest& request, const GetRateBasedRuleManagedKeysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Returns the
+         * endpoints for regional and global use. </p>  <p>Returns the
          * <a>RegexMatchSet</a> specified by <code>RegexMatchSetId</code>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/GetRegexMatchSet">AWS
@@ -3557,14 +3557,14 @@ namespace Model
         virtual Model::GetRegexMatchSetOutcome GetRegexMatchSet(const Model::GetRegexMatchSetRequest& request) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Returns the
+         * endpoints for regional and global use. </p>  <p>Returns the
          * <a>RegexMatchSet</a> specified by <code>RegexMatchSetId</code>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/GetRegexMatchSet">AWS
@@ -3575,14 +3575,14 @@ namespace Model
         virtual Model::GetRegexMatchSetOutcomeCallable GetRegexMatchSetCallable(const Model::GetRegexMatchSetRequest& request) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Returns the
+         * endpoints for regional and global use. </p>  <p>Returns the
          * <a>RegexMatchSet</a> specified by <code>RegexMatchSetId</code>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/GetRegexMatchSet">AWS
@@ -3593,14 +3593,14 @@ namespace Model
         virtual void GetRegexMatchSetAsync(const Model::GetRegexMatchSetRequest& request, const GetRegexMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Returns the
+         * endpoints for regional and global use. </p>  <p>Returns the
          * <a>RegexPatternSet</a> specified by
          * <code>RegexPatternSetId</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/GetRegexPatternSet">AWS
@@ -3609,14 +3609,14 @@ namespace Model
         virtual Model::GetRegexPatternSetOutcome GetRegexPatternSet(const Model::GetRegexPatternSetRequest& request) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Returns the
+         * endpoints for regional and global use. </p>  <p>Returns the
          * <a>RegexPatternSet</a> specified by
          * <code>RegexPatternSetId</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/GetRegexPatternSet">AWS
@@ -3627,14 +3627,14 @@ namespace Model
         virtual Model::GetRegexPatternSetOutcomeCallable GetRegexPatternSetCallable(const Model::GetRegexPatternSetRequest& request) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Returns the
+         * endpoints for regional and global use. </p>  <p>Returns the
          * <a>RegexPatternSet</a> specified by
          * <code>RegexPatternSetId</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/GetRegexPatternSet">AWS
@@ -3645,14 +3645,14 @@ namespace Model
         virtual void GetRegexPatternSetAsync(const Model::GetRegexPatternSetRequest& request, const GetRegexPatternSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Returns the <a>Rule</a>
+         * endpoints for regional and global use. </p>  <p>Returns the <a>Rule</a>
          * that is specified by the <code>RuleId</code> that you included in the
          * <code>GetRule</code> request.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/GetRule">AWS
@@ -3661,14 +3661,14 @@ namespace Model
         virtual Model::GetRuleOutcome GetRule(const Model::GetRuleRequest& request) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Returns the <a>Rule</a>
+         * endpoints for regional and global use. </p>  <p>Returns the <a>Rule</a>
          * that is specified by the <code>RuleId</code> that you included in the
          * <code>GetRule</code> request.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/GetRule">AWS
@@ -3679,14 +3679,14 @@ namespace Model
         virtual Model::GetRuleOutcomeCallable GetRuleCallable(const Model::GetRuleRequest& request) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Returns the <a>Rule</a>
+         * endpoints for regional and global use. </p>  <p>Returns the <a>Rule</a>
          * that is specified by the <code>RuleId</code> that you included in the
          * <code>GetRule</code> request.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/GetRule">AWS
@@ -3697,14 +3697,14 @@ namespace Model
         virtual void GetRuleAsync(const Model::GetRuleRequest& request, const GetRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Returns the
+         * endpoints for regional and global use. </p>  <p>Returns the
          * <a>RuleGroup</a> that is specified by the <code>RuleGroupId</code> that you
          * included in the <code>GetRuleGroup</code> request.</p> <p>To view the rules in a
          * rule group, use <a>ListActivatedRulesInRuleGroup</a>.</p><p><h3>See Also:</h3>  
@@ -3715,14 +3715,14 @@ namespace Model
         virtual Model::GetRuleGroupOutcome GetRuleGroup(const Model::GetRuleGroupRequest& request) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Returns the
+         * endpoints for regional and global use. </p>  <p>Returns the
          * <a>RuleGroup</a> that is specified by the <code>RuleGroupId</code> that you
          * included in the <code>GetRuleGroup</code> request.</p> <p>To view the rules in a
          * rule group, use <a>ListActivatedRulesInRuleGroup</a>.</p><p><h3>See Also:</h3>  
@@ -3735,14 +3735,14 @@ namespace Model
         virtual Model::GetRuleGroupOutcomeCallable GetRuleGroupCallable(const Model::GetRuleGroupRequest& request) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Returns the
+         * endpoints for regional and global use. </p>  <p>Returns the
          * <a>RuleGroup</a> that is specified by the <code>RuleGroupId</code> that you
          * included in the <code>GetRuleGroup</code> request.</p> <p>To view the rules in a
          * rule group, use <a>ListActivatedRulesInRuleGroup</a>.</p><p><h3>See Also:</h3>  
@@ -3755,14 +3755,14 @@ namespace Model
         virtual void GetRuleGroupAsync(const Model::GetRuleGroupRequest& request, const GetRuleGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Gets detailed information
+         * endpoints for regional and global use. </p>  <p>Gets detailed information
          * about a specified number of requests--a sample--that AWS WAF randomly selects
          * from among the first 5,000 requests that your AWS resource received during a
          * time range that you choose. You can specify a sample size of up to 500 requests,
@@ -3779,14 +3779,14 @@ namespace Model
         virtual Model::GetSampledRequestsOutcome GetSampledRequests(const Model::GetSampledRequestsRequest& request) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Gets detailed information
+         * endpoints for regional and global use. </p>  <p>Gets detailed information
          * about a specified number of requests--a sample--that AWS WAF randomly selects
          * from among the first 5,000 requests that your AWS resource received during a
          * time range that you choose. You can specify a sample size of up to 500 requests,
@@ -3805,14 +3805,14 @@ namespace Model
         virtual Model::GetSampledRequestsOutcomeCallable GetSampledRequestsCallable(const Model::GetSampledRequestsRequest& request) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Gets detailed information
+         * endpoints for regional and global use. </p>  <p>Gets detailed information
          * about a specified number of requests--a sample--that AWS WAF randomly selects
          * from among the first 5,000 requests that your AWS resource received during a
          * time range that you choose. You can specify a sample size of up to 500 requests,
@@ -3831,14 +3831,14 @@ namespace Model
         virtual void GetSampledRequestsAsync(const Model::GetSampledRequestsRequest& request, const GetSampledRequestsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Returns the
+         * endpoints for regional and global use. </p>  <p>Returns the
          * <a>SizeConstraintSet</a> specified by
          * <code>SizeConstraintSetId</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/GetSizeConstraintSet">AWS
@@ -3847,14 +3847,14 @@ namespace Model
         virtual Model::GetSizeConstraintSetOutcome GetSizeConstraintSet(const Model::GetSizeConstraintSetRequest& request) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Returns the
+         * endpoints for regional and global use. </p>  <p>Returns the
          * <a>SizeConstraintSet</a> specified by
          * <code>SizeConstraintSetId</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/GetSizeConstraintSet">AWS
@@ -3865,14 +3865,14 @@ namespace Model
         virtual Model::GetSizeConstraintSetOutcomeCallable GetSizeConstraintSetCallable(const Model::GetSizeConstraintSetRequest& request) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Returns the
+         * endpoints for regional and global use. </p>  <p>Returns the
          * <a>SizeConstraintSet</a> specified by
          * <code>SizeConstraintSetId</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/GetSizeConstraintSet">AWS
@@ -3883,14 +3883,14 @@ namespace Model
         virtual void GetSizeConstraintSetAsync(const Model::GetSizeConstraintSetRequest& request, const GetSizeConstraintSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Returns the
+         * endpoints for regional and global use. </p>  <p>Returns the
          * <a>SqlInjectionMatchSet</a> that is specified by
          * <code>SqlInjectionMatchSetId</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/GetSqlInjectionMatchSet">AWS
@@ -3899,14 +3899,14 @@ namespace Model
         virtual Model::GetSqlInjectionMatchSetOutcome GetSqlInjectionMatchSet(const Model::GetSqlInjectionMatchSetRequest& request) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Returns the
+         * endpoints for regional and global use. </p>  <p>Returns the
          * <a>SqlInjectionMatchSet</a> that is specified by
          * <code>SqlInjectionMatchSetId</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/GetSqlInjectionMatchSet">AWS
@@ -3917,14 +3917,14 @@ namespace Model
         virtual Model::GetSqlInjectionMatchSetOutcomeCallable GetSqlInjectionMatchSetCallable(const Model::GetSqlInjectionMatchSetRequest& request) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Returns the
+         * endpoints for regional and global use. </p>  <p>Returns the
          * <a>SqlInjectionMatchSet</a> that is specified by
          * <code>SqlInjectionMatchSetId</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/GetSqlInjectionMatchSet">AWS
@@ -3935,14 +3935,14 @@ namespace Model
         virtual void GetSqlInjectionMatchSetAsync(const Model::GetSqlInjectionMatchSetRequest& request, const GetSqlInjectionMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Returns the <a>WebACL</a>
+         * endpoints for regional and global use. </p>  <p>Returns the <a>WebACL</a>
          * that is specified by <code>WebACLId</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/GetWebACL">AWS
          * API Reference</a></p>
@@ -3950,14 +3950,14 @@ namespace Model
         virtual Model::GetWebACLOutcome GetWebACL(const Model::GetWebACLRequest& request) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Returns the <a>WebACL</a>
+         * endpoints for regional and global use. </p>  <p>Returns the <a>WebACL</a>
          * that is specified by <code>WebACLId</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/GetWebACL">AWS
          * API Reference</a></p>
@@ -3967,14 +3967,14 @@ namespace Model
         virtual Model::GetWebACLOutcomeCallable GetWebACLCallable(const Model::GetWebACLRequest& request) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Returns the <a>WebACL</a>
+         * endpoints for regional and global use. </p>  <p>Returns the <a>WebACL</a>
          * that is specified by <code>WebACLId</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/GetWebACL">AWS
          * API Reference</a></p>
@@ -3984,14 +3984,14 @@ namespace Model
         virtual void GetWebACLAsync(const Model::GetWebACLRequest& request, const GetWebACLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic Regional</b> documentation. For more
+         *  <p>This is <b>AWS WAF Classic Regional</b> documentation. For more
          * information, see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Returns the web ACL for
+         * endpoints for regional and global use. </p>  <p>Returns the web ACL for
          * the specified resource, either an application load balancer or Amazon API
          * Gateway stage.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/GetWebACLForResource">AWS
@@ -4000,14 +4000,14 @@ namespace Model
         virtual Model::GetWebACLForResourceOutcome GetWebACLForResource(const Model::GetWebACLForResourceRequest& request) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic Regional</b> documentation. For more
+         *  <p>This is <b>AWS WAF Classic Regional</b> documentation. For more
          * information, see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Returns the web ACL for
+         * endpoints for regional and global use. </p>  <p>Returns the web ACL for
          * the specified resource, either an application load balancer or Amazon API
          * Gateway stage.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/GetWebACLForResource">AWS
@@ -4018,14 +4018,14 @@ namespace Model
         virtual Model::GetWebACLForResourceOutcomeCallable GetWebACLForResourceCallable(const Model::GetWebACLForResourceRequest& request) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic Regional</b> documentation. For more
+         *  <p>This is <b>AWS WAF Classic Regional</b> documentation. For more
          * information, see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Returns the web ACL for
+         * endpoints for regional and global use. </p>  <p>Returns the web ACL for
          * the specified resource, either an application load balancer or Amazon API
          * Gateway stage.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/GetWebACLForResource">AWS
@@ -4036,14 +4036,14 @@ namespace Model
         virtual void GetWebACLForResourceAsync(const Model::GetWebACLForResourceRequest& request, const GetWebACLForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Returns the
+         * endpoints for regional and global use. </p>  <p>Returns the
          * <a>XssMatchSet</a> that is specified by
          * <code>XssMatchSetId</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/GetXssMatchSet">AWS
@@ -4052,14 +4052,14 @@ namespace Model
         virtual Model::GetXssMatchSetOutcome GetXssMatchSet(const Model::GetXssMatchSetRequest& request) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Returns the
+         * endpoints for regional and global use. </p>  <p>Returns the
          * <a>XssMatchSet</a> that is specified by
          * <code>XssMatchSetId</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/GetXssMatchSet">AWS
@@ -4070,14 +4070,14 @@ namespace Model
         virtual Model::GetXssMatchSetOutcomeCallable GetXssMatchSetCallable(const Model::GetXssMatchSetRequest& request) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Returns the
+         * endpoints for regional and global use. </p>  <p>Returns the
          * <a>XssMatchSet</a> that is specified by
          * <code>XssMatchSetId</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/GetXssMatchSet">AWS
@@ -4088,14 +4088,14 @@ namespace Model
         virtual void GetXssMatchSetAsync(const Model::GetXssMatchSetRequest& request, const GetXssMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Returns an array of
+         * endpoints for regional and global use. </p>  <p>Returns an array of
          * <a>ActivatedRule</a> objects.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/ListActivatedRulesInRuleGroup">AWS
          * API Reference</a></p>
@@ -4103,14 +4103,14 @@ namespace Model
         virtual Model::ListActivatedRulesInRuleGroupOutcome ListActivatedRulesInRuleGroup(const Model::ListActivatedRulesInRuleGroupRequest& request) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Returns an array of
+         * endpoints for regional and global use. </p>  <p>Returns an array of
          * <a>ActivatedRule</a> objects.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/ListActivatedRulesInRuleGroup">AWS
          * API Reference</a></p>
@@ -4120,14 +4120,14 @@ namespace Model
         virtual Model::ListActivatedRulesInRuleGroupOutcomeCallable ListActivatedRulesInRuleGroupCallable(const Model::ListActivatedRulesInRuleGroupRequest& request) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Returns an array of
+         * endpoints for regional and global use. </p>  <p>Returns an array of
          * <a>ActivatedRule</a> objects.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/ListActivatedRulesInRuleGroup">AWS
          * API Reference</a></p>
@@ -4137,14 +4137,14 @@ namespace Model
         virtual void ListActivatedRulesInRuleGroupAsync(const Model::ListActivatedRulesInRuleGroupRequest& request, const ListActivatedRulesInRuleGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Returns an array of
+         * endpoints for regional and global use. </p>  <p>Returns an array of
          * <a>ByteMatchSetSummary</a> objects.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/ListByteMatchSets">AWS
          * API Reference</a></p>
@@ -4152,14 +4152,14 @@ namespace Model
         virtual Model::ListByteMatchSetsOutcome ListByteMatchSets(const Model::ListByteMatchSetsRequest& request) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Returns an array of
+         * endpoints for regional and global use. </p>  <p>Returns an array of
          * <a>ByteMatchSetSummary</a> objects.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/ListByteMatchSets">AWS
          * API Reference</a></p>
@@ -4169,14 +4169,14 @@ namespace Model
         virtual Model::ListByteMatchSetsOutcomeCallable ListByteMatchSetsCallable(const Model::ListByteMatchSetsRequest& request) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Returns an array of
+         * endpoints for regional and global use. </p>  <p>Returns an array of
          * <a>ByteMatchSetSummary</a> objects.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/ListByteMatchSets">AWS
          * API Reference</a></p>
@@ -4186,14 +4186,14 @@ namespace Model
         virtual void ListByteMatchSetsAsync(const Model::ListByteMatchSetsRequest& request, const ListByteMatchSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Returns an array of
+         * endpoints for regional and global use. </p>  <p>Returns an array of
          * <a>GeoMatchSetSummary</a> objects in the response.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/ListGeoMatchSets">AWS
          * API Reference</a></p>
@@ -4201,14 +4201,14 @@ namespace Model
         virtual Model::ListGeoMatchSetsOutcome ListGeoMatchSets(const Model::ListGeoMatchSetsRequest& request) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Returns an array of
+         * endpoints for regional and global use. </p>  <p>Returns an array of
          * <a>GeoMatchSetSummary</a> objects in the response.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/ListGeoMatchSets">AWS
          * API Reference</a></p>
@@ -4218,14 +4218,14 @@ namespace Model
         virtual Model::ListGeoMatchSetsOutcomeCallable ListGeoMatchSetsCallable(const Model::ListGeoMatchSetsRequest& request) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Returns an array of
+         * endpoints for regional and global use. </p>  <p>Returns an array of
          * <a>GeoMatchSetSummary</a> objects in the response.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/ListGeoMatchSets">AWS
          * API Reference</a></p>
@@ -4235,14 +4235,14 @@ namespace Model
         virtual void ListGeoMatchSetsAsync(const Model::ListGeoMatchSetsRequest& request, const ListGeoMatchSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Returns an array of
+         * endpoints for regional and global use. </p>  <p>Returns an array of
          * <a>IPSetSummary</a> objects in the response.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/ListIPSets">AWS
          * API Reference</a></p>
@@ -4250,14 +4250,14 @@ namespace Model
         virtual Model::ListIPSetsOutcome ListIPSets(const Model::ListIPSetsRequest& request) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Returns an array of
+         * endpoints for regional and global use. </p>  <p>Returns an array of
          * <a>IPSetSummary</a> objects in the response.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/ListIPSets">AWS
          * API Reference</a></p>
@@ -4267,14 +4267,14 @@ namespace Model
         virtual Model::ListIPSetsOutcomeCallable ListIPSetsCallable(const Model::ListIPSetsRequest& request) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Returns an array of
+         * endpoints for regional and global use. </p>  <p>Returns an array of
          * <a>IPSetSummary</a> objects in the response.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/ListIPSets">AWS
          * API Reference</a></p>
@@ -4284,14 +4284,14 @@ namespace Model
         virtual void ListIPSetsAsync(const Model::ListIPSetsRequest& request, const ListIPSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Returns an array of
+         * endpoints for regional and global use. </p>  <p>Returns an array of
          * <a>LoggingConfiguration</a> objects.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/ListLoggingConfigurations">AWS
          * API Reference</a></p>
@@ -4299,14 +4299,14 @@ namespace Model
         virtual Model::ListLoggingConfigurationsOutcome ListLoggingConfigurations(const Model::ListLoggingConfigurationsRequest& request) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Returns an array of
+         * endpoints for regional and global use. </p>  <p>Returns an array of
          * <a>LoggingConfiguration</a> objects.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/ListLoggingConfigurations">AWS
          * API Reference</a></p>
@@ -4316,14 +4316,14 @@ namespace Model
         virtual Model::ListLoggingConfigurationsOutcomeCallable ListLoggingConfigurationsCallable(const Model::ListLoggingConfigurationsRequest& request) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Returns an array of
+         * endpoints for regional and global use. </p>  <p>Returns an array of
          * <a>LoggingConfiguration</a> objects.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/ListLoggingConfigurations">AWS
          * API Reference</a></p>
@@ -4333,14 +4333,14 @@ namespace Model
         virtual void ListLoggingConfigurationsAsync(const Model::ListLoggingConfigurationsRequest& request, const ListLoggingConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Returns an array of
+         * endpoints for regional and global use. </p>  <p>Returns an array of
          * <a>RuleSummary</a> objects.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/ListRateBasedRules">AWS
          * API Reference</a></p>
@@ -4348,14 +4348,14 @@ namespace Model
         virtual Model::ListRateBasedRulesOutcome ListRateBasedRules(const Model::ListRateBasedRulesRequest& request) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Returns an array of
+         * endpoints for regional and global use. </p>  <p>Returns an array of
          * <a>RuleSummary</a> objects.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/ListRateBasedRules">AWS
          * API Reference</a></p>
@@ -4365,14 +4365,14 @@ namespace Model
         virtual Model::ListRateBasedRulesOutcomeCallable ListRateBasedRulesCallable(const Model::ListRateBasedRulesRequest& request) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Returns an array of
+         * endpoints for regional and global use. </p>  <p>Returns an array of
          * <a>RuleSummary</a> objects.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/ListRateBasedRules">AWS
          * API Reference</a></p>
@@ -4382,14 +4382,14 @@ namespace Model
         virtual void ListRateBasedRulesAsync(const Model::ListRateBasedRulesRequest& request, const ListRateBasedRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Returns an array of
+         * endpoints for regional and global use. </p>  <p>Returns an array of
          * <a>RegexMatchSetSummary</a> objects.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/ListRegexMatchSets">AWS
          * API Reference</a></p>
@@ -4397,14 +4397,14 @@ namespace Model
         virtual Model::ListRegexMatchSetsOutcome ListRegexMatchSets(const Model::ListRegexMatchSetsRequest& request) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Returns an array of
+         * endpoints for regional and global use. </p>  <p>Returns an array of
          * <a>RegexMatchSetSummary</a> objects.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/ListRegexMatchSets">AWS
          * API Reference</a></p>
@@ -4414,14 +4414,14 @@ namespace Model
         virtual Model::ListRegexMatchSetsOutcomeCallable ListRegexMatchSetsCallable(const Model::ListRegexMatchSetsRequest& request) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Returns an array of
+         * endpoints for regional and global use. </p>  <p>Returns an array of
          * <a>RegexMatchSetSummary</a> objects.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/ListRegexMatchSets">AWS
          * API Reference</a></p>
@@ -4431,14 +4431,14 @@ namespace Model
         virtual void ListRegexMatchSetsAsync(const Model::ListRegexMatchSetsRequest& request, const ListRegexMatchSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Returns an array of
+         * endpoints for regional and global use. </p>  <p>Returns an array of
          * <a>RegexPatternSetSummary</a> objects.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/ListRegexPatternSets">AWS
          * API Reference</a></p>
@@ -4446,14 +4446,14 @@ namespace Model
         virtual Model::ListRegexPatternSetsOutcome ListRegexPatternSets(const Model::ListRegexPatternSetsRequest& request) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Returns an array of
+         * endpoints for regional and global use. </p>  <p>Returns an array of
          * <a>RegexPatternSetSummary</a> objects.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/ListRegexPatternSets">AWS
          * API Reference</a></p>
@@ -4463,14 +4463,14 @@ namespace Model
         virtual Model::ListRegexPatternSetsOutcomeCallable ListRegexPatternSetsCallable(const Model::ListRegexPatternSetsRequest& request) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Returns an array of
+         * endpoints for regional and global use. </p>  <p>Returns an array of
          * <a>RegexPatternSetSummary</a> objects.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/ListRegexPatternSets">AWS
          * API Reference</a></p>
@@ -4480,14 +4480,14 @@ namespace Model
         virtual void ListRegexPatternSetsAsync(const Model::ListRegexPatternSetsRequest& request, const ListRegexPatternSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic Regional</b> documentation. For more
+         *  <p>This is <b>AWS WAF Classic Regional</b> documentation. For more
          * information, see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Returns an array of
+         * endpoints for regional and global use. </p>  <p>Returns an array of
          * resources associated with the specified web ACL.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/ListResourcesForWebACL">AWS
          * API Reference</a></p>
@@ -4495,14 +4495,14 @@ namespace Model
         virtual Model::ListResourcesForWebACLOutcome ListResourcesForWebACL(const Model::ListResourcesForWebACLRequest& request) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic Regional</b> documentation. For more
+         *  <p>This is <b>AWS WAF Classic Regional</b> documentation. For more
          * information, see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Returns an array of
+         * endpoints for regional and global use. </p>  <p>Returns an array of
          * resources associated with the specified web ACL.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/ListResourcesForWebACL">AWS
          * API Reference</a></p>
@@ -4512,14 +4512,14 @@ namespace Model
         virtual Model::ListResourcesForWebACLOutcomeCallable ListResourcesForWebACLCallable(const Model::ListResourcesForWebACLRequest& request) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic Regional</b> documentation. For more
+         *  <p>This is <b>AWS WAF Classic Regional</b> documentation. For more
          * information, see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Returns an array of
+         * endpoints for regional and global use. </p>  <p>Returns an array of
          * resources associated with the specified web ACL.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/ListResourcesForWebACL">AWS
          * API Reference</a></p>
@@ -4529,14 +4529,14 @@ namespace Model
         virtual void ListResourcesForWebACLAsync(const Model::ListResourcesForWebACLRequest& request, const ListResourcesForWebACLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Returns an array of
+         * endpoints for regional and global use. </p>  <p>Returns an array of
          * <a>RuleGroup</a> objects.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/ListRuleGroups">AWS
          * API Reference</a></p>
@@ -4544,14 +4544,14 @@ namespace Model
         virtual Model::ListRuleGroupsOutcome ListRuleGroups(const Model::ListRuleGroupsRequest& request) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Returns an array of
+         * endpoints for regional and global use. </p>  <p>Returns an array of
          * <a>RuleGroup</a> objects.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/ListRuleGroups">AWS
          * API Reference</a></p>
@@ -4561,14 +4561,14 @@ namespace Model
         virtual Model::ListRuleGroupsOutcomeCallable ListRuleGroupsCallable(const Model::ListRuleGroupsRequest& request) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Returns an array of
+         * endpoints for regional and global use. </p>  <p>Returns an array of
          * <a>RuleGroup</a> objects.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/ListRuleGroups">AWS
          * API Reference</a></p>
@@ -4578,14 +4578,14 @@ namespace Model
         virtual void ListRuleGroupsAsync(const Model::ListRuleGroupsRequest& request, const ListRuleGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Returns an array of
+         * endpoints for regional and global use. </p>  <p>Returns an array of
          * <a>RuleSummary</a> objects.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/ListRules">AWS
          * API Reference</a></p>
@@ -4593,14 +4593,14 @@ namespace Model
         virtual Model::ListRulesOutcome ListRules(const Model::ListRulesRequest& request) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Returns an array of
+         * endpoints for regional and global use. </p>  <p>Returns an array of
          * <a>RuleSummary</a> objects.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/ListRules">AWS
          * API Reference</a></p>
@@ -4610,14 +4610,14 @@ namespace Model
         virtual Model::ListRulesOutcomeCallable ListRulesCallable(const Model::ListRulesRequest& request) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Returns an array of
+         * endpoints for regional and global use. </p>  <p>Returns an array of
          * <a>RuleSummary</a> objects.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/ListRules">AWS
          * API Reference</a></p>
@@ -4627,14 +4627,14 @@ namespace Model
         virtual void ListRulesAsync(const Model::ListRulesRequest& request, const ListRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Returns an array of
+         * endpoints for regional and global use. </p>  <p>Returns an array of
          * <a>SizeConstraintSetSummary</a> objects.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/ListSizeConstraintSets">AWS
          * API Reference</a></p>
@@ -4642,14 +4642,14 @@ namespace Model
         virtual Model::ListSizeConstraintSetsOutcome ListSizeConstraintSets(const Model::ListSizeConstraintSetsRequest& request) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Returns an array of
+         * endpoints for regional and global use. </p>  <p>Returns an array of
          * <a>SizeConstraintSetSummary</a> objects.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/ListSizeConstraintSets">AWS
          * API Reference</a></p>
@@ -4659,14 +4659,14 @@ namespace Model
         virtual Model::ListSizeConstraintSetsOutcomeCallable ListSizeConstraintSetsCallable(const Model::ListSizeConstraintSetsRequest& request) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Returns an array of
+         * endpoints for regional and global use. </p>  <p>Returns an array of
          * <a>SizeConstraintSetSummary</a> objects.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/ListSizeConstraintSets">AWS
          * API Reference</a></p>
@@ -4676,14 +4676,14 @@ namespace Model
         virtual void ListSizeConstraintSetsAsync(const Model::ListSizeConstraintSetsRequest& request, const ListSizeConstraintSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Returns an array of
+         * endpoints for regional and global use. </p>  <p>Returns an array of
          * <a>SqlInjectionMatchSet</a> objects.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/ListSqlInjectionMatchSets">AWS
          * API Reference</a></p>
@@ -4691,14 +4691,14 @@ namespace Model
         virtual Model::ListSqlInjectionMatchSetsOutcome ListSqlInjectionMatchSets(const Model::ListSqlInjectionMatchSetsRequest& request) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Returns an array of
+         * endpoints for regional and global use. </p>  <p>Returns an array of
          * <a>SqlInjectionMatchSet</a> objects.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/ListSqlInjectionMatchSets">AWS
          * API Reference</a></p>
@@ -4708,14 +4708,14 @@ namespace Model
         virtual Model::ListSqlInjectionMatchSetsOutcomeCallable ListSqlInjectionMatchSetsCallable(const Model::ListSqlInjectionMatchSetsRequest& request) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Returns an array of
+         * endpoints for regional and global use. </p>  <p>Returns an array of
          * <a>SqlInjectionMatchSet</a> objects.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/ListSqlInjectionMatchSets">AWS
          * API Reference</a></p>
@@ -4725,14 +4725,14 @@ namespace Model
         virtual void ListSqlInjectionMatchSetsAsync(const Model::ListSqlInjectionMatchSetsRequest& request, const ListSqlInjectionMatchSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Returns an array of
+         * endpoints for regional and global use. </p>  <p>Returns an array of
          * <a>RuleGroup</a> objects that you are subscribed to.</p><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/ListSubscribedRuleGroups">AWS
@@ -4741,14 +4741,14 @@ namespace Model
         virtual Model::ListSubscribedRuleGroupsOutcome ListSubscribedRuleGroups(const Model::ListSubscribedRuleGroupsRequest& request) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Returns an array of
+         * endpoints for regional and global use. </p>  <p>Returns an array of
          * <a>RuleGroup</a> objects that you are subscribed to.</p><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/ListSubscribedRuleGroups">AWS
@@ -4759,14 +4759,14 @@ namespace Model
         virtual Model::ListSubscribedRuleGroupsOutcomeCallable ListSubscribedRuleGroupsCallable(const Model::ListSubscribedRuleGroupsRequest& request) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Returns an array of
+         * endpoints for regional and global use. </p>  <p>Returns an array of
          * <a>RuleGroup</a> objects that you are subscribed to.</p><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/ListSubscribedRuleGroups">AWS
@@ -4777,14 +4777,14 @@ namespace Model
         virtual void ListSubscribedRuleGroupsAsync(const Model::ListSubscribedRuleGroupsRequest& request, const ListSubscribedRuleGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Retrieves the tags
+         * endpoints for regional and global use. </p>  <p>Retrieves the tags
          * associated with the specified AWS resource. Tags are key:value pairs that you
          * can use to categorize and manage your resources, for purposes like billing. For
          * example, you might set the tag key to "customer" and the value to the customer
@@ -4799,14 +4799,14 @@ namespace Model
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Retrieves the tags
+         * endpoints for regional and global use. </p>  <p>Retrieves the tags
          * associated with the specified AWS resource. Tags are key:value pairs that you
          * can use to categorize and manage your resources, for purposes like billing. For
          * example, you might set the tag key to "customer" and the value to the customer
@@ -4823,14 +4823,14 @@ namespace Model
         virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Retrieves the tags
+         * endpoints for regional and global use. </p>  <p>Retrieves the tags
          * associated with the specified AWS resource. Tags are key:value pairs that you
          * can use to categorize and manage your resources, for purposes like billing. For
          * example, you might set the tag key to "customer" and the value to the customer
@@ -4847,14 +4847,14 @@ namespace Model
         virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Returns an array of
+         * endpoints for regional and global use. </p>  <p>Returns an array of
          * <a>WebACLSummary</a> objects in the response.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/ListWebACLs">AWS
          * API Reference</a></p>
@@ -4862,14 +4862,14 @@ namespace Model
         virtual Model::ListWebACLsOutcome ListWebACLs(const Model::ListWebACLsRequest& request) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Returns an array of
+         * endpoints for regional and global use. </p>  <p>Returns an array of
          * <a>WebACLSummary</a> objects in the response.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/ListWebACLs">AWS
          * API Reference</a></p>
@@ -4879,14 +4879,14 @@ namespace Model
         virtual Model::ListWebACLsOutcomeCallable ListWebACLsCallable(const Model::ListWebACLsRequest& request) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Returns an array of
+         * endpoints for regional and global use. </p>  <p>Returns an array of
          * <a>WebACLSummary</a> objects in the response.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/ListWebACLs">AWS
          * API Reference</a></p>
@@ -4896,14 +4896,14 @@ namespace Model
         virtual void ListWebACLsAsync(const Model::ListWebACLsRequest& request, const ListWebACLsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Returns an array of
+         * endpoints for regional and global use. </p>  <p>Returns an array of
          * <a>XssMatchSet</a> objects.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/ListXssMatchSets">AWS
          * API Reference</a></p>
@@ -4911,14 +4911,14 @@ namespace Model
         virtual Model::ListXssMatchSetsOutcome ListXssMatchSets(const Model::ListXssMatchSetsRequest& request) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Returns an array of
+         * endpoints for regional and global use. </p>  <p>Returns an array of
          * <a>XssMatchSet</a> objects.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/ListXssMatchSets">AWS
          * API Reference</a></p>
@@ -4928,14 +4928,14 @@ namespace Model
         virtual Model::ListXssMatchSetsOutcomeCallable ListXssMatchSetsCallable(const Model::ListXssMatchSetsRequest& request) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Returns an array of
+         * endpoints for regional and global use. </p>  <p>Returns an array of
          * <a>XssMatchSet</a> objects.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/ListXssMatchSets">AWS
          * API Reference</a></p>
@@ -4945,21 +4945,21 @@ namespace Model
         virtual void ListXssMatchSetsAsync(const Model::ListXssMatchSetsRequest& request, const ListXssMatchSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Associates a
+         * endpoints for regional and global use. </p>  <p>Associates a
          * <a>LoggingConfiguration</a> with a specified web ACL.</p> <p>You can access
          * information about all traffic that AWS WAF inspects using the following
          * steps:</p> <ol> <li> <p>Create an Amazon Kinesis Data Firehose. </p> <p>Create
          * the data firehose with a PUT source and in the region that you are operating.
          * However, if you are capturing logs for Amazon CloudFront, always create the
-         * firehose in US East (N. Virginia). </p> <note> <p>Do not create the data
-         * firehose using a <code>Kinesis stream</code> as your source.</p> </note> </li>
+         * firehose in US East (N. Virginia). </p>  <p>Do not create the data
+         * firehose using a <code>Kinesis stream</code> as your source.</p>  </li>
          * <li> <p>Associate that firehose to your web ACL using a
          * <code>PutLoggingConfiguration</code> request.</p> </li> </ol> <p>When you
          * successfully enable logging using a <code>PutLoggingConfiguration</code>
@@ -4975,21 +4975,21 @@ namespace Model
         virtual Model::PutLoggingConfigurationOutcome PutLoggingConfiguration(const Model::PutLoggingConfigurationRequest& request) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Associates a
+         * endpoints for regional and global use. </p>  <p>Associates a
          * <a>LoggingConfiguration</a> with a specified web ACL.</p> <p>You can access
          * information about all traffic that AWS WAF inspects using the following
          * steps:</p> <ol> <li> <p>Create an Amazon Kinesis Data Firehose. </p> <p>Create
          * the data firehose with a PUT source and in the region that you are operating.
          * However, if you are capturing logs for Amazon CloudFront, always create the
-         * firehose in US East (N. Virginia). </p> <note> <p>Do not create the data
-         * firehose using a <code>Kinesis stream</code> as your source.</p> </note> </li>
+         * firehose in US East (N. Virginia). </p>  <p>Do not create the data
+         * firehose using a <code>Kinesis stream</code> as your source.</p>  </li>
          * <li> <p>Associate that firehose to your web ACL using a
          * <code>PutLoggingConfiguration</code> request.</p> </li> </ol> <p>When you
          * successfully enable logging using a <code>PutLoggingConfiguration</code>
@@ -5007,21 +5007,21 @@ namespace Model
         virtual Model::PutLoggingConfigurationOutcomeCallable PutLoggingConfigurationCallable(const Model::PutLoggingConfigurationRequest& request) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Associates a
+         * endpoints for regional and global use. </p>  <p>Associates a
          * <a>LoggingConfiguration</a> with a specified web ACL.</p> <p>You can access
          * information about all traffic that AWS WAF inspects using the following
          * steps:</p> <ol> <li> <p>Create an Amazon Kinesis Data Firehose. </p> <p>Create
          * the data firehose with a PUT source and in the region that you are operating.
          * However, if you are capturing logs for Amazon CloudFront, always create the
-         * firehose in US East (N. Virginia). </p> <note> <p>Do not create the data
-         * firehose using a <code>Kinesis stream</code> as your source.</p> </note> </li>
+         * firehose in US East (N. Virginia). </p>  <p>Do not create the data
+         * firehose using a <code>Kinesis stream</code> as your source.</p>  </li>
          * <li> <p>Associate that firehose to your web ACL using a
          * <code>PutLoggingConfiguration</code> request.</p> </li> </ol> <p>When you
          * successfully enable logging using a <code>PutLoggingConfiguration</code>
@@ -5039,14 +5039,14 @@ namespace Model
         virtual void PutLoggingConfigurationAsync(const Model::PutLoggingConfigurationRequest& request, const PutLoggingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Attaches an IAM policy to
+         * endpoints for regional and global use. </p>  <p>Attaches an IAM policy to
          * the specified resource. The only supported use for this action is to share a
          * RuleGroup across accounts.</p> <p>The <code>PutPermissionPolicy</code> is
          * subject to the following restrictions:</p> <ul> <li> <p>You can attach only one
@@ -5071,14 +5071,14 @@ namespace Model
         virtual Model::PutPermissionPolicyOutcome PutPermissionPolicy(const Model::PutPermissionPolicyRequest& request) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Attaches an IAM policy to
+         * endpoints for regional and global use. </p>  <p>Attaches an IAM policy to
          * the specified resource. The only supported use for this action is to share a
          * RuleGroup across accounts.</p> <p>The <code>PutPermissionPolicy</code> is
          * subject to the following restrictions:</p> <ul> <li> <p>You can attach only one
@@ -5105,14 +5105,14 @@ namespace Model
         virtual Model::PutPermissionPolicyOutcomeCallable PutPermissionPolicyCallable(const Model::PutPermissionPolicyRequest& request) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Attaches an IAM policy to
+         * endpoints for regional and global use. </p>  <p>Attaches an IAM policy to
          * the specified resource. The only supported use for this action is to share a
          * RuleGroup across accounts.</p> <p>The <code>PutPermissionPolicy</code> is
          * subject to the following restrictions:</p> <ul> <li> <p>You can attach only one
@@ -5139,14 +5139,14 @@ namespace Model
         virtual void PutPermissionPolicyAsync(const Model::PutPermissionPolicyRequest& request, const PutPermissionPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Associates tags with the
+         * endpoints for regional and global use. </p>  <p>Associates tags with the
          * specified AWS resource. Tags are key:value pairs that you can use to categorize
          * and manage your resources, for purposes like billing. For example, you might set
          * the tag key to "customer" and the value to the customer name or ID. You can
@@ -5161,14 +5161,14 @@ namespace Model
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Associates tags with the
+         * endpoints for regional and global use. </p>  <p>Associates tags with the
          * specified AWS resource. Tags are key:value pairs that you can use to categorize
          * and manage your resources, for purposes like billing. For example, you might set
          * the tag key to "customer" and the value to the customer name or ID. You can
@@ -5185,14 +5185,14 @@ namespace Model
         virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Associates tags with the
+         * endpoints for regional and global use. </p>  <p>Associates tags with the
          * specified AWS resource. Tags are key:value pairs that you can use to categorize
          * and manage your resources, for purposes like billing. For example, you might set
          * the tag key to "customer" and the value to the customer name or ID. You can
@@ -5209,14 +5209,14 @@ namespace Model
         virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p/><p><h3>See Also:</h3>  
+         * endpoints for regional and global use. </p>  <p/><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/UntagResource">AWS
          * API Reference</a></p>
@@ -5224,14 +5224,14 @@ namespace Model
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p/><p><h3>See Also:</h3>  
+         * endpoints for regional and global use. </p>  <p/><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/UntagResource">AWS
          * API Reference</a></p>
@@ -5241,14 +5241,14 @@ namespace Model
         virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p/><p><h3>See Also:</h3>  
+         * endpoints for regional and global use. </p>  <p/><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/UntagResource">AWS
          * API Reference</a></p>
@@ -5258,14 +5258,14 @@ namespace Model
         virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Inserts or deletes
+         * endpoints for regional and global use. </p>  <p>Inserts or deletes
          * <a>ByteMatchTuple</a> objects (filters) in a <a>ByteMatchSet</a>. For each
          * <code>ByteMatchTuple</code> object, you specify the following values: </p> <ul>
          * <li> <p>Whether to insert or delete the object from the array. If you want to
@@ -5300,14 +5300,14 @@ namespace Model
         virtual Model::UpdateByteMatchSetOutcome UpdateByteMatchSet(const Model::UpdateByteMatchSetRequest& request) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Inserts or deletes
+         * endpoints for regional and global use. </p>  <p>Inserts or deletes
          * <a>ByteMatchTuple</a> objects (filters) in a <a>ByteMatchSet</a>. For each
          * <code>ByteMatchTuple</code> object, you specify the following values: </p> <ul>
          * <li> <p>Whether to insert or delete the object from the array. If you want to
@@ -5344,14 +5344,14 @@ namespace Model
         virtual Model::UpdateByteMatchSetOutcomeCallable UpdateByteMatchSetCallable(const Model::UpdateByteMatchSetRequest& request) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Inserts or deletes
+         * endpoints for regional and global use. </p>  <p>Inserts or deletes
          * <a>ByteMatchTuple</a> objects (filters) in a <a>ByteMatchSet</a>. For each
          * <code>ByteMatchTuple</code> object, you specify the following values: </p> <ul>
          * <li> <p>Whether to insert or delete the object from the array. If you want to
@@ -5388,14 +5388,14 @@ namespace Model
         virtual void UpdateByteMatchSetAsync(const Model::UpdateByteMatchSetRequest& request, const UpdateByteMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Inserts or deletes
+         * endpoints for regional and global use. </p>  <p>Inserts or deletes
          * <a>GeoMatchConstraint</a> objects in an <code>GeoMatchSet</code>. For each
          * <code>GeoMatchConstraint</code> object, you specify the following values: </p>
          * <ul> <li> <p>Whether to insert or delete the object from the array. If you want
@@ -5423,14 +5423,14 @@ namespace Model
         virtual Model::UpdateGeoMatchSetOutcome UpdateGeoMatchSet(const Model::UpdateGeoMatchSetRequest& request) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Inserts or deletes
+         * endpoints for regional and global use. </p>  <p>Inserts or deletes
          * <a>GeoMatchConstraint</a> objects in an <code>GeoMatchSet</code>. For each
          * <code>GeoMatchConstraint</code> object, you specify the following values: </p>
          * <ul> <li> <p>Whether to insert or delete the object from the array. If you want
@@ -5460,14 +5460,14 @@ namespace Model
         virtual Model::UpdateGeoMatchSetOutcomeCallable UpdateGeoMatchSetCallable(const Model::UpdateGeoMatchSetRequest& request) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Inserts or deletes
+         * endpoints for regional and global use. </p>  <p>Inserts or deletes
          * <a>GeoMatchConstraint</a> objects in an <code>GeoMatchSet</code>. For each
          * <code>GeoMatchConstraint</code> object, you specify the following values: </p>
          * <ul> <li> <p>Whether to insert or delete the object from the array. If you want
@@ -5497,14 +5497,14 @@ namespace Model
         virtual void UpdateGeoMatchSetAsync(const Model::UpdateGeoMatchSetRequest& request, const UpdateGeoMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Inserts or deletes
+         * endpoints for regional and global use. </p>  <p>Inserts or deletes
          * <a>IPSetDescriptor</a> objects in an <code>IPSet</code>. For each
          * <code>IPSetDescriptor</code> object, you specify the following values: </p> <ul>
          * <li> <p>Whether to insert or delete the object from the array. If you want to
@@ -5548,14 +5548,14 @@ namespace Model
         virtual Model::UpdateIPSetOutcome UpdateIPSet(const Model::UpdateIPSetRequest& request) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Inserts or deletes
+         * endpoints for regional and global use. </p>  <p>Inserts or deletes
          * <a>IPSetDescriptor</a> objects in an <code>IPSet</code>. For each
          * <code>IPSetDescriptor</code> object, you specify the following values: </p> <ul>
          * <li> <p>Whether to insert or delete the object from the array. If you want to
@@ -5601,14 +5601,14 @@ namespace Model
         virtual Model::UpdateIPSetOutcomeCallable UpdateIPSetCallable(const Model::UpdateIPSetRequest& request) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Inserts or deletes
+         * endpoints for regional and global use. </p>  <p>Inserts or deletes
          * <a>IPSetDescriptor</a> objects in an <code>IPSet</code>. For each
          * <code>IPSetDescriptor</code> object, you specify the following values: </p> <ul>
          * <li> <p>Whether to insert or delete the object from the array. If you want to
@@ -5654,14 +5654,14 @@ namespace Model
         virtual void UpdateIPSetAsync(const Model::UpdateIPSetRequest& request, const UpdateIPSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Inserts or deletes
+         * endpoints for regional and global use. </p>  <p>Inserts or deletes
          * <a>Predicate</a> objects in a rule and updates the <code>RateLimit</code> in the
          * rule. </p> <p>Each <code>Predicate</code> object identifies a predicate, such as
          * a <a>ByteMatchSet</a> or an <a>IPSet</a>, that specifies the web requests that
@@ -5697,14 +5697,14 @@ namespace Model
         virtual Model::UpdateRateBasedRuleOutcome UpdateRateBasedRule(const Model::UpdateRateBasedRuleRequest& request) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Inserts or deletes
+         * endpoints for regional and global use. </p>  <p>Inserts or deletes
          * <a>Predicate</a> objects in a rule and updates the <code>RateLimit</code> in the
          * rule. </p> <p>Each <code>Predicate</code> object identifies a predicate, such as
          * a <a>ByteMatchSet</a> or an <a>IPSet</a>, that specifies the web requests that
@@ -5742,14 +5742,14 @@ namespace Model
         virtual Model::UpdateRateBasedRuleOutcomeCallable UpdateRateBasedRuleCallable(const Model::UpdateRateBasedRuleRequest& request) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Inserts or deletes
+         * endpoints for regional and global use. </p>  <p>Inserts or deletes
          * <a>Predicate</a> objects in a rule and updates the <code>RateLimit</code> in the
          * rule. </p> <p>Each <code>Predicate</code> object identifies a predicate, such as
          * a <a>ByteMatchSet</a> or an <a>IPSet</a>, that specifies the web requests that
@@ -5787,14 +5787,14 @@ namespace Model
         virtual void UpdateRateBasedRuleAsync(const Model::UpdateRateBasedRuleRequest& request, const UpdateRateBasedRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Inserts or deletes
+         * endpoints for regional and global use. </p>  <p>Inserts or deletes
          * <a>RegexMatchTuple</a> objects (filters) in a <a>RegexMatchSet</a>. For each
          * <code>RegexMatchSetUpdate</code> object, you specify the following values: </p>
          * <ul> <li> <p>Whether to insert or delete the object from the array. If you want
@@ -5828,14 +5828,14 @@ namespace Model
         virtual Model::UpdateRegexMatchSetOutcome UpdateRegexMatchSet(const Model::UpdateRegexMatchSetRequest& request) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Inserts or deletes
+         * endpoints for regional and global use. </p>  <p>Inserts or deletes
          * <a>RegexMatchTuple</a> objects (filters) in a <a>RegexMatchSet</a>. For each
          * <code>RegexMatchSetUpdate</code> object, you specify the following values: </p>
          * <ul> <li> <p>Whether to insert or delete the object from the array. If you want
@@ -5871,14 +5871,14 @@ namespace Model
         virtual Model::UpdateRegexMatchSetOutcomeCallable UpdateRegexMatchSetCallable(const Model::UpdateRegexMatchSetRequest& request) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Inserts or deletes
+         * endpoints for regional and global use. </p>  <p>Inserts or deletes
          * <a>RegexMatchTuple</a> objects (filters) in a <a>RegexMatchSet</a>. For each
          * <code>RegexMatchSetUpdate</code> object, you specify the following values: </p>
          * <ul> <li> <p>Whether to insert or delete the object from the array. If you want
@@ -5914,14 +5914,14 @@ namespace Model
         virtual void UpdateRegexMatchSetAsync(const Model::UpdateRegexMatchSetRequest& request, const UpdateRegexMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Inserts or deletes
+         * endpoints for regional and global use. </p>  <p>Inserts or deletes
          * <code>RegexPatternString</code> objects in a <a>RegexPatternSet</a>. For each
          * <code>RegexPatternString</code> object, you specify the following values: </p>
          * <ul> <li> <p>Whether to insert or delete the
@@ -5948,14 +5948,14 @@ namespace Model
         virtual Model::UpdateRegexPatternSetOutcome UpdateRegexPatternSet(const Model::UpdateRegexPatternSetRequest& request) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Inserts or deletes
+         * endpoints for regional and global use. </p>  <p>Inserts or deletes
          * <code>RegexPatternString</code> objects in a <a>RegexPatternSet</a>. For each
          * <code>RegexPatternString</code> object, you specify the following values: </p>
          * <ul> <li> <p>Whether to insert or delete the
@@ -5984,14 +5984,14 @@ namespace Model
         virtual Model::UpdateRegexPatternSetOutcomeCallable UpdateRegexPatternSetCallable(const Model::UpdateRegexPatternSetRequest& request) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Inserts or deletes
+         * endpoints for regional and global use. </p>  <p>Inserts or deletes
          * <code>RegexPatternString</code> objects in a <a>RegexPatternSet</a>. For each
          * <code>RegexPatternString</code> object, you specify the following values: </p>
          * <ul> <li> <p>Whether to insert or delete the
@@ -6020,14 +6020,14 @@ namespace Model
         virtual void UpdateRegexPatternSetAsync(const Model::UpdateRegexPatternSetRequest& request, const UpdateRegexPatternSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Inserts or deletes
+         * endpoints for regional and global use. </p>  <p>Inserts or deletes
          * <a>Predicate</a> objects in a <code>Rule</code>. Each <code>Predicate</code>
          * object identifies a predicate, such as a <a>ByteMatchSet</a> or an <a>IPSet</a>,
          * that specifies the web requests that you want to allow, block, or count. If you
@@ -6061,14 +6061,14 @@ namespace Model
         virtual Model::UpdateRuleOutcome UpdateRule(const Model::UpdateRuleRequest& request) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Inserts or deletes
+         * endpoints for regional and global use. </p>  <p>Inserts or deletes
          * <a>Predicate</a> objects in a <code>Rule</code>. Each <code>Predicate</code>
          * object identifies a predicate, such as a <a>ByteMatchSet</a> or an <a>IPSet</a>,
          * that specifies the web requests that you want to allow, block, or count. If you
@@ -6104,14 +6104,14 @@ namespace Model
         virtual Model::UpdateRuleOutcomeCallable UpdateRuleCallable(const Model::UpdateRuleRequest& request) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Inserts or deletes
+         * endpoints for regional and global use. </p>  <p>Inserts or deletes
          * <a>Predicate</a> objects in a <code>Rule</code>. Each <code>Predicate</code>
          * object identifies a predicate, such as a <a>ByteMatchSet</a> or an <a>IPSet</a>,
          * that specifies the web requests that you want to allow, block, or count. If you
@@ -6147,14 +6147,14 @@ namespace Model
         virtual void UpdateRuleAsync(const Model::UpdateRuleRequest& request, const UpdateRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Inserts or deletes
+         * endpoints for regional and global use. </p>  <p>Inserts or deletes
          * <a>ActivatedRule</a> objects in a <code>RuleGroup</code>.</p> <p>You can only
          * insert <code>REGULAR</code> rules into a rule group.</p> <p>You can have a
          * maximum of ten rules per rule group.</p> <p>To create and configure a
@@ -6178,14 +6178,14 @@ namespace Model
         virtual Model::UpdateRuleGroupOutcome UpdateRuleGroup(const Model::UpdateRuleGroupRequest& request) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Inserts or deletes
+         * endpoints for regional and global use. </p>  <p>Inserts or deletes
          * <a>ActivatedRule</a> objects in a <code>RuleGroup</code>.</p> <p>You can only
          * insert <code>REGULAR</code> rules into a rule group.</p> <p>You can have a
          * maximum of ten rules per rule group.</p> <p>To create and configure a
@@ -6211,14 +6211,14 @@ namespace Model
         virtual Model::UpdateRuleGroupOutcomeCallable UpdateRuleGroupCallable(const Model::UpdateRuleGroupRequest& request) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Inserts or deletes
+         * endpoints for regional and global use. </p>  <p>Inserts or deletes
          * <a>ActivatedRule</a> objects in a <code>RuleGroup</code>.</p> <p>You can only
          * insert <code>REGULAR</code> rules into a rule group.</p> <p>You can have a
          * maximum of ten rules per rule group.</p> <p>To create and configure a
@@ -6244,14 +6244,14 @@ namespace Model
         virtual void UpdateRuleGroupAsync(const Model::UpdateRuleGroupRequest& request, const UpdateRuleGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Inserts or deletes
+         * endpoints for regional and global use. </p>  <p>Inserts or deletes
          * <a>SizeConstraint</a> objects (filters) in a <a>SizeConstraintSet</a>. For each
          * <code>SizeConstraint</code> object, you specify the following values: </p> <ul>
          * <li> <p>Whether to insert or delete the object from the array. If you want to
@@ -6289,14 +6289,14 @@ namespace Model
         virtual Model::UpdateSizeConstraintSetOutcome UpdateSizeConstraintSet(const Model::UpdateSizeConstraintSetRequest& request) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Inserts or deletes
+         * endpoints for regional and global use. </p>  <p>Inserts or deletes
          * <a>SizeConstraint</a> objects (filters) in a <a>SizeConstraintSet</a>. For each
          * <code>SizeConstraint</code> object, you specify the following values: </p> <ul>
          * <li> <p>Whether to insert or delete the object from the array. If you want to
@@ -6336,14 +6336,14 @@ namespace Model
         virtual Model::UpdateSizeConstraintSetOutcomeCallable UpdateSizeConstraintSetCallable(const Model::UpdateSizeConstraintSetRequest& request) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Inserts or deletes
+         * endpoints for regional and global use. </p>  <p>Inserts or deletes
          * <a>SizeConstraint</a> objects (filters) in a <a>SizeConstraintSet</a>. For each
          * <code>SizeConstraint</code> object, you specify the following values: </p> <ul>
          * <li> <p>Whether to insert or delete the object from the array. If you want to
@@ -6383,14 +6383,14 @@ namespace Model
         virtual void UpdateSizeConstraintSetAsync(const Model::UpdateSizeConstraintSetRequest& request, const UpdateSizeConstraintSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Inserts or deletes
+         * endpoints for regional and global use. </p>  <p>Inserts or deletes
          * <a>SqlInjectionMatchTuple</a> objects (filters) in a
          * <a>SqlInjectionMatchSet</a>. For each <code>SqlInjectionMatchTuple</code>
          * object, you specify the following values:</p> <ul> <li> <p> <code>Action</code>:
@@ -6424,14 +6424,14 @@ namespace Model
         virtual Model::UpdateSqlInjectionMatchSetOutcome UpdateSqlInjectionMatchSet(const Model::UpdateSqlInjectionMatchSetRequest& request) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Inserts or deletes
+         * endpoints for regional and global use. </p>  <p>Inserts or deletes
          * <a>SqlInjectionMatchTuple</a> objects (filters) in a
          * <a>SqlInjectionMatchSet</a>. For each <code>SqlInjectionMatchTuple</code>
          * object, you specify the following values:</p> <ul> <li> <p> <code>Action</code>:
@@ -6467,14 +6467,14 @@ namespace Model
         virtual Model::UpdateSqlInjectionMatchSetOutcomeCallable UpdateSqlInjectionMatchSetCallable(const Model::UpdateSqlInjectionMatchSetRequest& request) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Inserts or deletes
+         * endpoints for regional and global use. </p>  <p>Inserts or deletes
          * <a>SqlInjectionMatchTuple</a> objects (filters) in a
          * <a>SqlInjectionMatchSet</a>. For each <code>SqlInjectionMatchTuple</code>
          * object, you specify the following values:</p> <ul> <li> <p> <code>Action</code>:
@@ -6510,14 +6510,14 @@ namespace Model
         virtual void UpdateSqlInjectionMatchSetAsync(const Model::UpdateSqlInjectionMatchSetRequest& request, const UpdateSqlInjectionMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Inserts or deletes
+         * endpoints for regional and global use. </p>  <p>Inserts or deletes
          * <a>ActivatedRule</a> objects in a <code>WebACL</code>. Each <code>Rule</code>
          * identifies web requests that you want to allow, block, or count. When you update
          * a <code>WebACL</code>, you specify the following values:</p> <ul> <li> <p>A
@@ -6572,14 +6572,14 @@ namespace Model
         virtual Model::UpdateWebACLOutcome UpdateWebACL(const Model::UpdateWebACLRequest& request) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Inserts or deletes
+         * endpoints for regional and global use. </p>  <p>Inserts or deletes
          * <a>ActivatedRule</a> objects in a <code>WebACL</code>. Each <code>Rule</code>
          * identifies web requests that you want to allow, block, or count. When you update
          * a <code>WebACL</code>, you specify the following values:</p> <ul> <li> <p>A
@@ -6636,14 +6636,14 @@ namespace Model
         virtual Model::UpdateWebACLOutcomeCallable UpdateWebACLCallable(const Model::UpdateWebACLRequest& request) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Inserts or deletes
+         * endpoints for regional and global use. </p>  <p>Inserts or deletes
          * <a>ActivatedRule</a> objects in a <code>WebACL</code>. Each <code>Rule</code>
          * identifies web requests that you want to allow, block, or count. When you update
          * a <code>WebACL</code>, you specify the following values:</p> <ul> <li> <p>A
@@ -6700,14 +6700,14 @@ namespace Model
         virtual void UpdateWebACLAsync(const Model::UpdateWebACLRequest& request, const UpdateWebACLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Inserts or deletes
+         * endpoints for regional and global use. </p>  <p>Inserts or deletes
          * <a>XssMatchTuple</a> objects (filters) in an <a>XssMatchSet</a>. For each
          * <code>XssMatchTuple</code> object, you specify the following values:</p> <ul>
          * <li> <p> <code>Action</code>: Whether to insert the object into or delete the
@@ -6740,14 +6740,14 @@ namespace Model
         virtual Model::UpdateXssMatchSetOutcome UpdateXssMatchSet(const Model::UpdateXssMatchSetRequest& request) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Inserts or deletes
+         * endpoints for regional and global use. </p>  <p>Inserts or deletes
          * <a>XssMatchTuple</a> objects (filters) in an <a>XssMatchSet</a>. For each
          * <code>XssMatchTuple</code> object, you specify the following values:</p> <ul>
          * <li> <p> <code>Action</code>: Whether to insert the object into or delete the
@@ -6782,14 +6782,14 @@ namespace Model
         virtual Model::UpdateXssMatchSetOutcomeCallable UpdateXssMatchSetCallable(const Model::UpdateXssMatchSetRequest& request) const;
 
         /**
-         * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+         *  <p>This is <b>AWS WAF Classic</b> documentation. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
          * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
          * WAF</b>, use the AWS WAFV2 API and see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
-         * endpoints for regional and global use. </p> </note> <p>Inserts or deletes
+         * endpoints for regional and global use. </p>  <p>Inserts or deletes
          * <a>XssMatchTuple</a> objects (filters) in an <a>XssMatchSet</a>. For each
          * <code>XssMatchTuple</code> object, you specify the following values:</p> <ul>
          * <li> <p> <code>Action</code>: Whether to insert the object into or delete the

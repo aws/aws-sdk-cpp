@@ -376,54 +376,54 @@ namespace Model
     /**
      * <p>Specifies the billing method for a test run: <code>metered</code> or
      * <code>unmetered</code>. If the parameter is not specified, the default value is
-     * <code>metered</code>.</p> <note> <p>If you have purchased unmetered device
+     * <code>metered</code>.</p>  <p>If you have purchased unmetered device
      * slots, you must set this parameter to <code>unmetered</code> to make use of
-     * them. Otherwise, your run counts against your metered time.</p> </note>
+     * them. Otherwise, your run counts against your metered time.</p> 
      */
     inline const BillingMethod& GetBillingMethod() const{ return m_billingMethod; }
 
     /**
      * <p>Specifies the billing method for a test run: <code>metered</code> or
      * <code>unmetered</code>. If the parameter is not specified, the default value is
-     * <code>metered</code>.</p> <note> <p>If you have purchased unmetered device
+     * <code>metered</code>.</p>  <p>If you have purchased unmetered device
      * slots, you must set this parameter to <code>unmetered</code> to make use of
-     * them. Otherwise, your run counts against your metered time.</p> </note>
+     * them. Otherwise, your run counts against your metered time.</p> 
      */
     inline bool BillingMethodHasBeenSet() const { return m_billingMethodHasBeenSet; }
 
     /**
      * <p>Specifies the billing method for a test run: <code>metered</code> or
      * <code>unmetered</code>. If the parameter is not specified, the default value is
-     * <code>metered</code>.</p> <note> <p>If you have purchased unmetered device
+     * <code>metered</code>.</p>  <p>If you have purchased unmetered device
      * slots, you must set this parameter to <code>unmetered</code> to make use of
-     * them. Otherwise, your run counts against your metered time.</p> </note>
+     * them. Otherwise, your run counts against your metered time.</p> 
      */
     inline void SetBillingMethod(const BillingMethod& value) { m_billingMethodHasBeenSet = true; m_billingMethod = value; }
 
     /**
      * <p>Specifies the billing method for a test run: <code>metered</code> or
      * <code>unmetered</code>. If the parameter is not specified, the default value is
-     * <code>metered</code>.</p> <note> <p>If you have purchased unmetered device
+     * <code>metered</code>.</p>  <p>If you have purchased unmetered device
      * slots, you must set this parameter to <code>unmetered</code> to make use of
-     * them. Otherwise, your run counts against your metered time.</p> </note>
+     * them. Otherwise, your run counts against your metered time.</p> 
      */
     inline void SetBillingMethod(BillingMethod&& value) { m_billingMethodHasBeenSet = true; m_billingMethod = std::move(value); }
 
     /**
      * <p>Specifies the billing method for a test run: <code>metered</code> or
      * <code>unmetered</code>. If the parameter is not specified, the default value is
-     * <code>metered</code>.</p> <note> <p>If you have purchased unmetered device
+     * <code>metered</code>.</p>  <p>If you have purchased unmetered device
      * slots, you must set this parameter to <code>unmetered</code> to make use of
-     * them. Otherwise, your run counts against your metered time.</p> </note>
+     * them. Otherwise, your run counts against your metered time.</p> 
      */
     inline ScheduleRunConfiguration& WithBillingMethod(const BillingMethod& value) { SetBillingMethod(value); return *this;}
 
     /**
      * <p>Specifies the billing method for a test run: <code>metered</code> or
      * <code>unmetered</code>. If the parameter is not specified, the default value is
-     * <code>metered</code>.</p> <note> <p>If you have purchased unmetered device
+     * <code>metered</code>.</p>  <p>If you have purchased unmetered device
      * slots, you must set this parameter to <code>unmetered</code> to make use of
-     * them. Otherwise, your run counts against your metered time.</p> </note>
+     * them. Otherwise, your run counts against your metered time.</p> 
      */
     inline ScheduleRunConfiguration& WithBillingMethod(BillingMethod&& value) { SetBillingMethod(std::move(value)); return *this;}
 

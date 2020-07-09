@@ -365,7 +365,7 @@ namespace Model
          * CloudFront where you want content to be delivered from, and the details about
          * how to track and manage content delivery. Send a <code>POST</code> request to
          * the <code>/<i>CloudFront API version</i>/distribution</code>/<code>distribution
-         * ID</code> resource.</p> <important> <p>When you update a distribution, there are
+         * ID</code> resource.</p>  <p>When you update a distribution, there are
          * more required fields than when you create a distribution. When you update your
          * distribution by using <a
          * href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateDistribution.html">UpdateDistribution</a>,
@@ -374,7 +374,7 @@ namespace Model
          * required fields. To view a summary, see <a
          * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-overview-required-fields.html">Required
          * Fields for Create Distribution and Update Distribution</a> in the <i>Amazon
-         * CloudFront Developer Guide</i>.</p> </important><p><h3>See Also:</h3>   <a
+         * CloudFront Developer Guide</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/CreateDistribution2019_03_26">AWS
          * API Reference</a></p>
          */
@@ -385,7 +385,7 @@ namespace Model
          * CloudFront where you want content to be delivered from, and the details about
          * how to track and manage content delivery. Send a <code>POST</code> request to
          * the <code>/<i>CloudFront API version</i>/distribution</code>/<code>distribution
-         * ID</code> resource.</p> <important> <p>When you update a distribution, there are
+         * ID</code> resource.</p>  <p>When you update a distribution, there are
          * more required fields than when you create a distribution. When you update your
          * distribution by using <a
          * href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateDistribution.html">UpdateDistribution</a>,
@@ -394,7 +394,7 @@ namespace Model
          * required fields. To view a summary, see <a
          * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-overview-required-fields.html">Required
          * Fields for Create Distribution and Update Distribution</a> in the <i>Amazon
-         * CloudFront Developer Guide</i>.</p> </important><p><h3>See Also:</h3>   <a
+         * CloudFront Developer Guide</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/CreateDistribution2019_03_26">AWS
          * API Reference</a></p>
          *
@@ -407,7 +407,7 @@ namespace Model
          * CloudFront where you want content to be delivered from, and the details about
          * how to track and manage content delivery. Send a <code>POST</code> request to
          * the <code>/<i>CloudFront API version</i>/distribution</code>/<code>distribution
-         * ID</code> resource.</p> <important> <p>When you update a distribution, there are
+         * ID</code> resource.</p>  <p>When you update a distribution, there are
          * more required fields than when you create a distribution. When you update your
          * distribution by using <a
          * href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateDistribution.html">UpdateDistribution</a>,
@@ -416,7 +416,7 @@ namespace Model
          * required fields. To view a summary, see <a
          * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-overview-required-fields.html">Required
          * Fields for Create Distribution and Update Distribution</a> in the <i>Amazon
-         * CloudFront Developer Guide</i>.</p> </important><p><h3>See Also:</h3>   <a
+         * CloudFront Developer Guide</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/CreateDistribution2019_03_26">AWS
          * API Reference</a></p>
          *
@@ -574,7 +574,7 @@ namespace Model
          * distributions, see <a
          * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-rtmp.html">Working
          * with RTMP Distributions</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
-         * <important> <p>Beginning with the 2012-05-05 version of the CloudFront API, we
+         *  <p>Beginning with the 2012-05-05 version of the CloudFront API, we
          * made substantial changes to the format of the XML document that you include in
          * the request body when you create or update a web distribution or an RTMP
          * distribution, and when you invalidate objects. With previous versions of the
@@ -583,7 +583,7 @@ namespace Model
          * trusted signers. Our changes for the 2012-05-05 release are intended to prevent
          * these accidental deletions and to notify you when there's a mismatch between the
          * number of values you say you're specifying in the <code>Quantity</code> element
-         * and the number of values specified.</p> </important><p><h3>See Also:</h3>   <a
+         * and the number of values specified.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/CreateStreamingDistribution2019_03_26">AWS
          * API Reference</a></p>
          */
@@ -605,7 +605,7 @@ namespace Model
          * distributions, see <a
          * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-rtmp.html">Working
          * with RTMP Distributions</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
-         * <important> <p>Beginning with the 2012-05-05 version of the CloudFront API, we
+         *  <p>Beginning with the 2012-05-05 version of the CloudFront API, we
          * made substantial changes to the format of the XML document that you include in
          * the request body when you create or update a web distribution or an RTMP
          * distribution, and when you invalidate objects. With previous versions of the
@@ -614,7 +614,7 @@ namespace Model
          * trusted signers. Our changes for the 2012-05-05 release are intended to prevent
          * these accidental deletions and to notify you when there's a mismatch between the
          * number of values you say you're specifying in the <code>Quantity</code> element
-         * and the number of values specified.</p> </important><p><h3>See Also:</h3>   <a
+         * and the number of values specified.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/CreateStreamingDistribution2019_03_26">AWS
          * API Reference</a></p>
          *
@@ -638,7 +638,7 @@ namespace Model
          * distributions, see <a
          * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-rtmp.html">Working
          * with RTMP Distributions</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
-         * <important> <p>Beginning with the 2012-05-05 version of the CloudFront API, we
+         *  <p>Beginning with the 2012-05-05 version of the CloudFront API, we
          * made substantial changes to the format of the XML document that you include in
          * the request body when you create or update a web distribution or an RTMP
          * distribution, and when you invalidate objects. With previous versions of the
@@ -647,7 +647,7 @@ namespace Model
          * trusted signers. Our changes for the 2012-05-05 release are intended to prevent
          * these accidental deletions and to notify you when there's a mismatch between the
          * number of values you say you're specifying in the <code>Quantity</code> element
-         * and the number of values specified.</p> </important><p><h3>See Also:</h3>   <a
+         * and the number of values specified.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/CreateStreamingDistribution2019_03_26">AWS
          * API Reference</a></p>
          *
@@ -1582,14 +1582,14 @@ namespace Model
         virtual void UpdateCloudFrontOriginAccessIdentity2019_03_26Async(const Model::UpdateCloudFrontOriginAccessIdentity2019_03_26Request& request, const UpdateCloudFrontOriginAccessIdentity2019_03_26ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates the configuration for a web distribution. </p> <important> <p>When
+         * <p>Updates the configuration for a web distribution. </p>  <p>When
          * you update a distribution, there are more required fields than when you create a
          * distribution. When you update your distribution by using this API action, follow
          * the steps here to get the current configuration and then make your updates, to
          * make sure that you include all of the required fields. To view a summary, see <a
          * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-overview-required-fields.html">Required
          * Fields for Create Distribution and Update Distribution</a> in the <i>Amazon
-         * CloudFront Developer Guide</i>.</p> </important> <p>The update process includes
+         * CloudFront Developer Guide</i>.</p>  <p>The update process includes
          * getting the current distribution configuration, updating the XML document that
          * is returned to make your changes, and then submitting an
          * <code>UpdateDistribution</code> request to make the updates.</p> <p>For
@@ -1601,10 +1601,10 @@ namespace Model
          * <p>Submit a <a
          * href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetDistributionConfig.html">GetDistributionConfig</a>
          * request to get the current configuration and an <code>Etag</code> header for the
-         * distribution.</p> <note> <p>If you update the distribution again, you must get a
-         * new <code>Etag</code> header.</p> </note> </li> <li> <p>Update the XML document
+         * distribution.</p>  <p>If you update the distribution again, you must get a
+         * new <code>Etag</code> header.</p>  </li> <li> <p>Update the XML document
          * that was returned in the response to your <code>GetDistributionConfig</code>
-         * request to include your changes. </p> <important> <p>When you edit the XML file,
+         * request to include your changes. </p>  <p>When you edit the XML file,
          * be aware of the following:</p> <ul> <li> <p>You must strip out the ETag
          * parameter that is returned.</p> </li> <li> <p>Additional fields are required
          * when you update a distribution. There may be fields included in the XML file for
@@ -1618,7 +1618,7 @@ namespace Model
          * element that allows multiple values (for example, <code>CNAME</code>), you must
          * specify all of the values that you want to appear in the updated distribution.
          * In addition, you must update the corresponding <code>Quantity</code>
-         * element.</p> </li> </ul> </important> </li> <li> <p>Submit an
+         * element.</p> </li> </ul>  </li> <li> <p>Submit an
          * <code>UpdateDistribution</code> request to update the configuration for your
          * distribution:</p> <ul> <li> <p>In the request body, include the XML document
          * that you updated in Step 2. The request body must include an XML document with a
@@ -1639,14 +1639,14 @@ namespace Model
         virtual Model::UpdateDistribution2019_03_26Outcome UpdateDistribution2019_03_26(const Model::UpdateDistribution2019_03_26Request& request) const;
 
         /**
-         * <p>Updates the configuration for a web distribution. </p> <important> <p>When
+         * <p>Updates the configuration for a web distribution. </p>  <p>When
          * you update a distribution, there are more required fields than when you create a
          * distribution. When you update your distribution by using this API action, follow
          * the steps here to get the current configuration and then make your updates, to
          * make sure that you include all of the required fields. To view a summary, see <a
          * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-overview-required-fields.html">Required
          * Fields for Create Distribution and Update Distribution</a> in the <i>Amazon
-         * CloudFront Developer Guide</i>.</p> </important> <p>The update process includes
+         * CloudFront Developer Guide</i>.</p>  <p>The update process includes
          * getting the current distribution configuration, updating the XML document that
          * is returned to make your changes, and then submitting an
          * <code>UpdateDistribution</code> request to make the updates.</p> <p>For
@@ -1658,10 +1658,10 @@ namespace Model
          * <p>Submit a <a
          * href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetDistributionConfig.html">GetDistributionConfig</a>
          * request to get the current configuration and an <code>Etag</code> header for the
-         * distribution.</p> <note> <p>If you update the distribution again, you must get a
-         * new <code>Etag</code> header.</p> </note> </li> <li> <p>Update the XML document
+         * distribution.</p>  <p>If you update the distribution again, you must get a
+         * new <code>Etag</code> header.</p>  </li> <li> <p>Update the XML document
          * that was returned in the response to your <code>GetDistributionConfig</code>
-         * request to include your changes. </p> <important> <p>When you edit the XML file,
+         * request to include your changes. </p>  <p>When you edit the XML file,
          * be aware of the following:</p> <ul> <li> <p>You must strip out the ETag
          * parameter that is returned.</p> </li> <li> <p>Additional fields are required
          * when you update a distribution. There may be fields included in the XML file for
@@ -1675,7 +1675,7 @@ namespace Model
          * element that allows multiple values (for example, <code>CNAME</code>), you must
          * specify all of the values that you want to appear in the updated distribution.
          * In addition, you must update the corresponding <code>Quantity</code>
-         * element.</p> </li> </ul> </important> </li> <li> <p>Submit an
+         * element.</p> </li> </ul>  </li> <li> <p>Submit an
          * <code>UpdateDistribution</code> request to update the configuration for your
          * distribution:</p> <ul> <li> <p>In the request body, include the XML document
          * that you updated in Step 2. The request body must include an XML document with a
@@ -1698,14 +1698,14 @@ namespace Model
         virtual Model::UpdateDistribution2019_03_26OutcomeCallable UpdateDistribution2019_03_26Callable(const Model::UpdateDistribution2019_03_26Request& request) const;
 
         /**
-         * <p>Updates the configuration for a web distribution. </p> <important> <p>When
+         * <p>Updates the configuration for a web distribution. </p>  <p>When
          * you update a distribution, there are more required fields than when you create a
          * distribution. When you update your distribution by using this API action, follow
          * the steps here to get the current configuration and then make your updates, to
          * make sure that you include all of the required fields. To view a summary, see <a
          * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-overview-required-fields.html">Required
          * Fields for Create Distribution and Update Distribution</a> in the <i>Amazon
-         * CloudFront Developer Guide</i>.</p> </important> <p>The update process includes
+         * CloudFront Developer Guide</i>.</p>  <p>The update process includes
          * getting the current distribution configuration, updating the XML document that
          * is returned to make your changes, and then submitting an
          * <code>UpdateDistribution</code> request to make the updates.</p> <p>For
@@ -1717,10 +1717,10 @@ namespace Model
          * <p>Submit a <a
          * href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetDistributionConfig.html">GetDistributionConfig</a>
          * request to get the current configuration and an <code>Etag</code> header for the
-         * distribution.</p> <note> <p>If you update the distribution again, you must get a
-         * new <code>Etag</code> header.</p> </note> </li> <li> <p>Update the XML document
+         * distribution.</p>  <p>If you update the distribution again, you must get a
+         * new <code>Etag</code> header.</p>  </li> <li> <p>Update the XML document
          * that was returned in the response to your <code>GetDistributionConfig</code>
-         * request to include your changes. </p> <important> <p>When you edit the XML file,
+         * request to include your changes. </p>  <p>When you edit the XML file,
          * be aware of the following:</p> <ul> <li> <p>You must strip out the ETag
          * parameter that is returned.</p> </li> <li> <p>Additional fields are required
          * when you update a distribution. There may be fields included in the XML file for
@@ -1734,7 +1734,7 @@ namespace Model
          * element that allows multiple values (for example, <code>CNAME</code>), you must
          * specify all of the values that you want to appear in the updated distribution.
          * In addition, you must update the corresponding <code>Quantity</code>
-         * element.</p> </li> </ul> </important> </li> <li> <p>Submit an
+         * element.</p> </li> </ul>  </li> <li> <p>Submit an
          * <code>UpdateDistribution</code> request to update the configuration for your
          * distribution:</p> <ul> <li> <p>In the request body, include the XML document
          * that you updated in Step 2. The request body must include an XML document with a

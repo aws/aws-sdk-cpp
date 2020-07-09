@@ -208,56 +208,56 @@ namespace Model
 
 
     /**
-     * <p>The resource compliance status.</p> <note> <p>For the
+     * <p>The resource compliance status.</p>  <p>For the
      * <code>GetAggregateComplianceDetailsByConfigRuleRequest</code> data type, AWS
      * Config supports only the <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>.
      * AWS Config does not support the <code>NOT_APPLICABLE</code> and
-     * <code>INSUFFICIENT_DATA</code> values.</p> </note>
+     * <code>INSUFFICIENT_DATA</code> values.</p> 
      */
     inline const ComplianceType& GetComplianceType() const{ return m_complianceType; }
 
     /**
-     * <p>The resource compliance status.</p> <note> <p>For the
+     * <p>The resource compliance status.</p>  <p>For the
      * <code>GetAggregateComplianceDetailsByConfigRuleRequest</code> data type, AWS
      * Config supports only the <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>.
      * AWS Config does not support the <code>NOT_APPLICABLE</code> and
-     * <code>INSUFFICIENT_DATA</code> values.</p> </note>
+     * <code>INSUFFICIENT_DATA</code> values.</p> 
      */
     inline bool ComplianceTypeHasBeenSet() const { return m_complianceTypeHasBeenSet; }
 
     /**
-     * <p>The resource compliance status.</p> <note> <p>For the
+     * <p>The resource compliance status.</p>  <p>For the
      * <code>GetAggregateComplianceDetailsByConfigRuleRequest</code> data type, AWS
      * Config supports only the <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>.
      * AWS Config does not support the <code>NOT_APPLICABLE</code> and
-     * <code>INSUFFICIENT_DATA</code> values.</p> </note>
+     * <code>INSUFFICIENT_DATA</code> values.</p> 
      */
     inline void SetComplianceType(const ComplianceType& value) { m_complianceTypeHasBeenSet = true; m_complianceType = value; }
 
     /**
-     * <p>The resource compliance status.</p> <note> <p>For the
+     * <p>The resource compliance status.</p>  <p>For the
      * <code>GetAggregateComplianceDetailsByConfigRuleRequest</code> data type, AWS
      * Config supports only the <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>.
      * AWS Config does not support the <code>NOT_APPLICABLE</code> and
-     * <code>INSUFFICIENT_DATA</code> values.</p> </note>
+     * <code>INSUFFICIENT_DATA</code> values.</p> 
      */
     inline void SetComplianceType(ComplianceType&& value) { m_complianceTypeHasBeenSet = true; m_complianceType = std::move(value); }
 
     /**
-     * <p>The resource compliance status.</p> <note> <p>For the
+     * <p>The resource compliance status.</p>  <p>For the
      * <code>GetAggregateComplianceDetailsByConfigRuleRequest</code> data type, AWS
      * Config supports only the <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>.
      * AWS Config does not support the <code>NOT_APPLICABLE</code> and
-     * <code>INSUFFICIENT_DATA</code> values.</p> </note>
+     * <code>INSUFFICIENT_DATA</code> values.</p> 
      */
     inline GetAggregateComplianceDetailsByConfigRuleRequest& WithComplianceType(const ComplianceType& value) { SetComplianceType(value); return *this;}
 
     /**
-     * <p>The resource compliance status.</p> <note> <p>For the
+     * <p>The resource compliance status.</p>  <p>For the
      * <code>GetAggregateComplianceDetailsByConfigRuleRequest</code> data type, AWS
      * Config supports only the <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>.
      * AWS Config does not support the <code>NOT_APPLICABLE</code> and
-     * <code>INSUFFICIENT_DATA</code> values.</p> </note>
+     * <code>INSUFFICIENT_DATA</code> values.</p> 
      */
     inline GetAggregateComplianceDetailsByConfigRuleRequest& WithComplianceType(ComplianceType&& value) { SetComplianceType(std::move(value)); return *this;}
 

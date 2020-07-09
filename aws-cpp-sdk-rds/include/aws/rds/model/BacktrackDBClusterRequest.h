@@ -125,9 +125,9 @@ namespace Model
      * <p>The timestamp of the time to backtrack the DB cluster to, specified in ISO
      * 8601 format. For more information about ISO 8601, see the <a
      * href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia page.</a> </p>
-     * <note> <p>If the specified time isn't a consistent time for the DB cluster,
+     *  <p>If the specified time isn't a consistent time for the DB cluster,
      * Aurora automatically chooses the nearest possible consistent time for the DB
-     * cluster.</p> </note> <p>Constraints:</p> <ul> <li> <p>Must contain a valid ISO
+     * cluster.</p>  <p>Constraints:</p> <ul> <li> <p>Must contain a valid ISO
      * 8601 timestamp.</p> </li> <li> <p>Can't contain a timestamp set in the
      * future.</p> </li> </ul> <p>Example: <code>2017-07-08T18:00Z</code> </p>
      */
@@ -137,9 +137,9 @@ namespace Model
      * <p>The timestamp of the time to backtrack the DB cluster to, specified in ISO
      * 8601 format. For more information about ISO 8601, see the <a
      * href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia page.</a> </p>
-     * <note> <p>If the specified time isn't a consistent time for the DB cluster,
+     *  <p>If the specified time isn't a consistent time for the DB cluster,
      * Aurora automatically chooses the nearest possible consistent time for the DB
-     * cluster.</p> </note> <p>Constraints:</p> <ul> <li> <p>Must contain a valid ISO
+     * cluster.</p>  <p>Constraints:</p> <ul> <li> <p>Must contain a valid ISO
      * 8601 timestamp.</p> </li> <li> <p>Can't contain a timestamp set in the
      * future.</p> </li> </ul> <p>Example: <code>2017-07-08T18:00Z</code> </p>
      */
@@ -149,9 +149,9 @@ namespace Model
      * <p>The timestamp of the time to backtrack the DB cluster to, specified in ISO
      * 8601 format. For more information about ISO 8601, see the <a
      * href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia page.</a> </p>
-     * <note> <p>If the specified time isn't a consistent time for the DB cluster,
+     *  <p>If the specified time isn't a consistent time for the DB cluster,
      * Aurora automatically chooses the nearest possible consistent time for the DB
-     * cluster.</p> </note> <p>Constraints:</p> <ul> <li> <p>Must contain a valid ISO
+     * cluster.</p>  <p>Constraints:</p> <ul> <li> <p>Must contain a valid ISO
      * 8601 timestamp.</p> </li> <li> <p>Can't contain a timestamp set in the
      * future.</p> </li> </ul> <p>Example: <code>2017-07-08T18:00Z</code> </p>
      */
@@ -161,9 +161,9 @@ namespace Model
      * <p>The timestamp of the time to backtrack the DB cluster to, specified in ISO
      * 8601 format. For more information about ISO 8601, see the <a
      * href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia page.</a> </p>
-     * <note> <p>If the specified time isn't a consistent time for the DB cluster,
+     *  <p>If the specified time isn't a consistent time for the DB cluster,
      * Aurora automatically chooses the nearest possible consistent time for the DB
-     * cluster.</p> </note> <p>Constraints:</p> <ul> <li> <p>Must contain a valid ISO
+     * cluster.</p>  <p>Constraints:</p> <ul> <li> <p>Must contain a valid ISO
      * 8601 timestamp.</p> </li> <li> <p>Can't contain a timestamp set in the
      * future.</p> </li> </ul> <p>Example: <code>2017-07-08T18:00Z</code> </p>
      */
@@ -173,9 +173,9 @@ namespace Model
      * <p>The timestamp of the time to backtrack the DB cluster to, specified in ISO
      * 8601 format. For more information about ISO 8601, see the <a
      * href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia page.</a> </p>
-     * <note> <p>If the specified time isn't a consistent time for the DB cluster,
+     *  <p>If the specified time isn't a consistent time for the DB cluster,
      * Aurora automatically chooses the nearest possible consistent time for the DB
-     * cluster.</p> </note> <p>Constraints:</p> <ul> <li> <p>Must contain a valid ISO
+     * cluster.</p>  <p>Constraints:</p> <ul> <li> <p>Must contain a valid ISO
      * 8601 timestamp.</p> </li> <li> <p>Can't contain a timestamp set in the
      * future.</p> </li> </ul> <p>Example: <code>2017-07-08T18:00Z</code> </p>
      */
@@ -185,9 +185,9 @@ namespace Model
      * <p>The timestamp of the time to backtrack the DB cluster to, specified in ISO
      * 8601 format. For more information about ISO 8601, see the <a
      * href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia page.</a> </p>
-     * <note> <p>If the specified time isn't a consistent time for the DB cluster,
+     *  <p>If the specified time isn't a consistent time for the DB cluster,
      * Aurora automatically chooses the nearest possible consistent time for the DB
-     * cluster.</p> </note> <p>Constraints:</p> <ul> <li> <p>Must contain a valid ISO
+     * cluster.</p>  <p>Constraints:</p> <ul> <li> <p>Must contain a valid ISO
      * 8601 timestamp.</p> </li> <li> <p>Can't contain a timestamp set in the
      * future.</p> </li> </ul> <p>Example: <code>2017-07-08T18:00Z</code> </p>
      */

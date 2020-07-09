@@ -114,9 +114,9 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the IAM role that Amazon SageMaker can
      * assume to access the notebook instance. For more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
-     * SageMaker Roles</a>. </p> <note> <p>To be able to pass this role to Amazon
+     * SageMaker Roles</a>. </p>  <p>To be able to pass this role to Amazon
      * SageMaker, the caller of this API must have the <code>iam:PassRole</code>
-     * permission.</p> </note>
+     * permission.</p> 
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
 
@@ -124,9 +124,9 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the IAM role that Amazon SageMaker can
      * assume to access the notebook instance. For more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
-     * SageMaker Roles</a>. </p> <note> <p>To be able to pass this role to Amazon
+     * SageMaker Roles</a>. </p>  <p>To be able to pass this role to Amazon
      * SageMaker, the caller of this API must have the <code>iam:PassRole</code>
-     * permission.</p> </note>
+     * permission.</p> 
      */
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
 
@@ -134,9 +134,9 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the IAM role that Amazon SageMaker can
      * assume to access the notebook instance. For more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
-     * SageMaker Roles</a>. </p> <note> <p>To be able to pass this role to Amazon
+     * SageMaker Roles</a>. </p>  <p>To be able to pass this role to Amazon
      * SageMaker, the caller of this API must have the <code>iam:PassRole</code>
-     * permission.</p> </note>
+     * permission.</p> 
      */
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
 
@@ -144,9 +144,9 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the IAM role that Amazon SageMaker can
      * assume to access the notebook instance. For more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
-     * SageMaker Roles</a>. </p> <note> <p>To be able to pass this role to Amazon
+     * SageMaker Roles</a>. </p>  <p>To be able to pass this role to Amazon
      * SageMaker, the caller of this API must have the <code>iam:PassRole</code>
-     * permission.</p> </note>
+     * permission.</p> 
      */
     inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
 
@@ -154,9 +154,9 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the IAM role that Amazon SageMaker can
      * assume to access the notebook instance. For more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
-     * SageMaker Roles</a>. </p> <note> <p>To be able to pass this role to Amazon
+     * SageMaker Roles</a>. </p>  <p>To be able to pass this role to Amazon
      * SageMaker, the caller of this API must have the <code>iam:PassRole</code>
-     * permission.</p> </note>
+     * permission.</p> 
      */
     inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
 
@@ -164,9 +164,9 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the IAM role that Amazon SageMaker can
      * assume to access the notebook instance. For more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
-     * SageMaker Roles</a>. </p> <note> <p>To be able to pass this role to Amazon
+     * SageMaker Roles</a>. </p>  <p>To be able to pass this role to Amazon
      * SageMaker, the caller of this API must have the <code>iam:PassRole</code>
-     * permission.</p> </note>
+     * permission.</p> 
      */
     inline UpdateNotebookInstanceRequest& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
 
@@ -174,9 +174,9 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the IAM role that Amazon SageMaker can
      * assume to access the notebook instance. For more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
-     * SageMaker Roles</a>. </p> <note> <p>To be able to pass this role to Amazon
+     * SageMaker Roles</a>. </p>  <p>To be able to pass this role to Amazon
      * SageMaker, the caller of this API must have the <code>iam:PassRole</code>
-     * permission.</p> </note>
+     * permission.</p> 
      */
     inline UpdateNotebookInstanceRequest& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
 
@@ -184,9 +184,9 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the IAM role that Amazon SageMaker can
      * assume to access the notebook instance. For more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
-     * SageMaker Roles</a>. </p> <note> <p>To be able to pass this role to Amazon
+     * SageMaker Roles</a>. </p>  <p>To be able to pass this role to Amazon
      * SageMaker, the caller of this API must have the <code>iam:PassRole</code>
-     * permission.</p> </note>
+     * permission.</p> 
      */
     inline UpdateNotebookInstanceRequest& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 
@@ -727,55 +727,55 @@ namespace Model
 
     /**
      * <p>Whether root access is enabled or disabled for users of the notebook
-     * instance. The default value is <code>Enabled</code>.</p> <note> <p>If you set
+     * instance. The default value is <code>Enabled</code>.</p>  <p>If you set
      * this to <code>Disabled</code>, users don't have root access on the notebook
      * instance, but lifecycle configuration scripts still run with root
-     * permissions.</p> </note>
+     * permissions.</p> 
      */
     inline const RootAccess& GetRootAccess() const{ return m_rootAccess; }
 
     /**
      * <p>Whether root access is enabled or disabled for users of the notebook
-     * instance. The default value is <code>Enabled</code>.</p> <note> <p>If you set
+     * instance. The default value is <code>Enabled</code>.</p>  <p>If you set
      * this to <code>Disabled</code>, users don't have root access on the notebook
      * instance, but lifecycle configuration scripts still run with root
-     * permissions.</p> </note>
+     * permissions.</p> 
      */
     inline bool RootAccessHasBeenSet() const { return m_rootAccessHasBeenSet; }
 
     /**
      * <p>Whether root access is enabled or disabled for users of the notebook
-     * instance. The default value is <code>Enabled</code>.</p> <note> <p>If you set
+     * instance. The default value is <code>Enabled</code>.</p>  <p>If you set
      * this to <code>Disabled</code>, users don't have root access on the notebook
      * instance, but lifecycle configuration scripts still run with root
-     * permissions.</p> </note>
+     * permissions.</p> 
      */
     inline void SetRootAccess(const RootAccess& value) { m_rootAccessHasBeenSet = true; m_rootAccess = value; }
 
     /**
      * <p>Whether root access is enabled or disabled for users of the notebook
-     * instance. The default value is <code>Enabled</code>.</p> <note> <p>If you set
+     * instance. The default value is <code>Enabled</code>.</p>  <p>If you set
      * this to <code>Disabled</code>, users don't have root access on the notebook
      * instance, but lifecycle configuration scripts still run with root
-     * permissions.</p> </note>
+     * permissions.</p> 
      */
     inline void SetRootAccess(RootAccess&& value) { m_rootAccessHasBeenSet = true; m_rootAccess = std::move(value); }
 
     /**
      * <p>Whether root access is enabled or disabled for users of the notebook
-     * instance. The default value is <code>Enabled</code>.</p> <note> <p>If you set
+     * instance. The default value is <code>Enabled</code>.</p>  <p>If you set
      * this to <code>Disabled</code>, users don't have root access on the notebook
      * instance, but lifecycle configuration scripts still run with root
-     * permissions.</p> </note>
+     * permissions.</p> 
      */
     inline UpdateNotebookInstanceRequest& WithRootAccess(const RootAccess& value) { SetRootAccess(value); return *this;}
 
     /**
      * <p>Whether root access is enabled or disabled for users of the notebook
-     * instance. The default value is <code>Enabled</code>.</p> <note> <p>If you set
+     * instance. The default value is <code>Enabled</code>.</p>  <p>If you set
      * this to <code>Disabled</code>, users don't have root access on the notebook
      * instance, but lifecycle configuration scripts still run with root
-     * permissions.</p> </note>
+     * permissions.</p> 
      */
     inline UpdateNotebookInstanceRequest& WithRootAccess(RootAccess&& value) { SetRootAccess(std::move(value)); return *this;}
 

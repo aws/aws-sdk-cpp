@@ -325,37 +325,37 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>The reason your flow definition failed.</p>
      */
     inline const Aws::String& GetFailureReason() const{ return m_failureReason; }
 
     /**
-     * <p/>
+     * <p>The reason your flow definition failed.</p>
      */
     inline void SetFailureReason(const Aws::String& value) { m_failureReason = value; }
 
     /**
-     * <p/>
+     * <p>The reason your flow definition failed.</p>
      */
     inline void SetFailureReason(Aws::String&& value) { m_failureReason = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The reason your flow definition failed.</p>
      */
     inline void SetFailureReason(const char* value) { m_failureReason.assign(value); }
 
     /**
-     * <p/>
+     * <p>The reason your flow definition failed.</p>
      */
     inline DescribeFlowDefinitionResult& WithFailureReason(const Aws::String& value) { SetFailureReason(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The reason your flow definition failed.</p>
      */
     inline DescribeFlowDefinitionResult& WithFailureReason(Aws::String&& value) { SetFailureReason(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>The reason your flow definition failed.</p>
      */
     inline DescribeFlowDefinitionResult& WithFailureReason(const char* value) { SetFailureReason(value); return *this;}
 

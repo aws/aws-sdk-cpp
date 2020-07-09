@@ -127,7 +127,7 @@ namespace Model
     /**
      * <p>The content of the approval rule, including the number of approvals needed
      * and the structure of an approval pool defined for approvals, if any. For more
-     * information about approval pools, see the AWS CodeCommit User Guide.</p> <note>
+     * information about approval pools, see the AWS CodeCommit User Guide.</p> 
      * <p>When you create the content of the approval rule, you can specify approvers
      * in an approval pool in one of two ways:</p> <ul> <li> <p>
      * <b>CodeCommitApprovers</b>: This option only requires an AWS account and a
@@ -147,14 +147,14 @@ namespace Model
      * Resource Name (ARN) of the IAM user or role. </p> </li> </ul> <p>For more
      * information about IAM ARNs, wildcards, and formats, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
-     * Identifiers</a> in the <i>IAM User Guide</i>.</p> </note>
+     * Identifiers</a> in the <i>IAM User Guide</i>.</p> 
      */
     inline const Aws::String& GetApprovalRuleContent() const{ return m_approvalRuleContent; }
 
     /**
      * <p>The content of the approval rule, including the number of approvals needed
      * and the structure of an approval pool defined for approvals, if any. For more
-     * information about approval pools, see the AWS CodeCommit User Guide.</p> <note>
+     * information about approval pools, see the AWS CodeCommit User Guide.</p> 
      * <p>When you create the content of the approval rule, you can specify approvers
      * in an approval pool in one of two ways:</p> <ul> <li> <p>
      * <b>CodeCommitApprovers</b>: This option only requires an AWS account and a
@@ -174,14 +174,14 @@ namespace Model
      * Resource Name (ARN) of the IAM user or role. </p> </li> </ul> <p>For more
      * information about IAM ARNs, wildcards, and formats, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
-     * Identifiers</a> in the <i>IAM User Guide</i>.</p> </note>
+     * Identifiers</a> in the <i>IAM User Guide</i>.</p> 
      */
     inline bool ApprovalRuleContentHasBeenSet() const { return m_approvalRuleContentHasBeenSet; }
 
     /**
      * <p>The content of the approval rule, including the number of approvals needed
      * and the structure of an approval pool defined for approvals, if any. For more
-     * information about approval pools, see the AWS CodeCommit User Guide.</p> <note>
+     * information about approval pools, see the AWS CodeCommit User Guide.</p> 
      * <p>When you create the content of the approval rule, you can specify approvers
      * in an approval pool in one of two ways:</p> <ul> <li> <p>
      * <b>CodeCommitApprovers</b>: This option only requires an AWS account and a
@@ -201,14 +201,14 @@ namespace Model
      * Resource Name (ARN) of the IAM user or role. </p> </li> </ul> <p>For more
      * information about IAM ARNs, wildcards, and formats, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
-     * Identifiers</a> in the <i>IAM User Guide</i>.</p> </note>
+     * Identifiers</a> in the <i>IAM User Guide</i>.</p> 
      */
     inline void SetApprovalRuleContent(const Aws::String& value) { m_approvalRuleContentHasBeenSet = true; m_approvalRuleContent = value; }
 
     /**
      * <p>The content of the approval rule, including the number of approvals needed
      * and the structure of an approval pool defined for approvals, if any. For more
-     * information about approval pools, see the AWS CodeCommit User Guide.</p> <note>
+     * information about approval pools, see the AWS CodeCommit User Guide.</p> 
      * <p>When you create the content of the approval rule, you can specify approvers
      * in an approval pool in one of two ways:</p> <ul> <li> <p>
      * <b>CodeCommitApprovers</b>: This option only requires an AWS account and a
@@ -228,14 +228,14 @@ namespace Model
      * Resource Name (ARN) of the IAM user or role. </p> </li> </ul> <p>For more
      * information about IAM ARNs, wildcards, and formats, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
-     * Identifiers</a> in the <i>IAM User Guide</i>.</p> </note>
+     * Identifiers</a> in the <i>IAM User Guide</i>.</p> 
      */
     inline void SetApprovalRuleContent(Aws::String&& value) { m_approvalRuleContentHasBeenSet = true; m_approvalRuleContent = std::move(value); }
 
     /**
      * <p>The content of the approval rule, including the number of approvals needed
      * and the structure of an approval pool defined for approvals, if any. For more
-     * information about approval pools, see the AWS CodeCommit User Guide.</p> <note>
+     * information about approval pools, see the AWS CodeCommit User Guide.</p> 
      * <p>When you create the content of the approval rule, you can specify approvers
      * in an approval pool in one of two ways:</p> <ul> <li> <p>
      * <b>CodeCommitApprovers</b>: This option only requires an AWS account and a
@@ -255,14 +255,14 @@ namespace Model
      * Resource Name (ARN) of the IAM user or role. </p> </li> </ul> <p>For more
      * information about IAM ARNs, wildcards, and formats, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
-     * Identifiers</a> in the <i>IAM User Guide</i>.</p> </note>
+     * Identifiers</a> in the <i>IAM User Guide</i>.</p> 
      */
     inline void SetApprovalRuleContent(const char* value) { m_approvalRuleContentHasBeenSet = true; m_approvalRuleContent.assign(value); }
 
     /**
      * <p>The content of the approval rule, including the number of approvals needed
      * and the structure of an approval pool defined for approvals, if any. For more
-     * information about approval pools, see the AWS CodeCommit User Guide.</p> <note>
+     * information about approval pools, see the AWS CodeCommit User Guide.</p> 
      * <p>When you create the content of the approval rule, you can specify approvers
      * in an approval pool in one of two ways:</p> <ul> <li> <p>
      * <b>CodeCommitApprovers</b>: This option only requires an AWS account and a
@@ -282,14 +282,14 @@ namespace Model
      * Resource Name (ARN) of the IAM user or role. </p> </li> </ul> <p>For more
      * information about IAM ARNs, wildcards, and formats, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
-     * Identifiers</a> in the <i>IAM User Guide</i>.</p> </note>
+     * Identifiers</a> in the <i>IAM User Guide</i>.</p> 
      */
     inline CreatePullRequestApprovalRuleRequest& WithApprovalRuleContent(const Aws::String& value) { SetApprovalRuleContent(value); return *this;}
 
     /**
      * <p>The content of the approval rule, including the number of approvals needed
      * and the structure of an approval pool defined for approvals, if any. For more
-     * information about approval pools, see the AWS CodeCommit User Guide.</p> <note>
+     * information about approval pools, see the AWS CodeCommit User Guide.</p> 
      * <p>When you create the content of the approval rule, you can specify approvers
      * in an approval pool in one of two ways:</p> <ul> <li> <p>
      * <b>CodeCommitApprovers</b>: This option only requires an AWS account and a
@@ -309,14 +309,14 @@ namespace Model
      * Resource Name (ARN) of the IAM user or role. </p> </li> </ul> <p>For more
      * information about IAM ARNs, wildcards, and formats, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
-     * Identifiers</a> in the <i>IAM User Guide</i>.</p> </note>
+     * Identifiers</a> in the <i>IAM User Guide</i>.</p> 
      */
     inline CreatePullRequestApprovalRuleRequest& WithApprovalRuleContent(Aws::String&& value) { SetApprovalRuleContent(std::move(value)); return *this;}
 
     /**
      * <p>The content of the approval rule, including the number of approvals needed
      * and the structure of an approval pool defined for approvals, if any. For more
-     * information about approval pools, see the AWS CodeCommit User Guide.</p> <note>
+     * information about approval pools, see the AWS CodeCommit User Guide.</p> 
      * <p>When you create the content of the approval rule, you can specify approvers
      * in an approval pool in one of two ways:</p> <ul> <li> <p>
      * <b>CodeCommitApprovers</b>: This option only requires an AWS account and a
@@ -336,7 +336,7 @@ namespace Model
      * Resource Name (ARN) of the IAM user or role. </p> </li> </ul> <p>For more
      * information about IAM ARNs, wildcards, and formats, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
-     * Identifiers</a> in the <i>IAM User Guide</i>.</p> </note>
+     * Identifiers</a> in the <i>IAM User Guide</i>.</p> 
      */
     inline CreatePullRequestApprovalRuleRequest& WithApprovalRuleContent(const char* value) { SetApprovalRuleContent(value); return *this;}
 

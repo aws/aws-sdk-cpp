@@ -29,7 +29,8 @@ Target::Target() :
     m_runCommandParametersHasBeenSet(false),
     m_ecsParametersHasBeenSet(false),
     m_batchParametersHasBeenSet(false),
-    m_sqsParametersHasBeenSet(false)
+    m_sqsParametersHasBeenSet(false),
+    m_httpParametersHasBeenSet(false)
 {
 }
 
@@ -44,7 +45,8 @@ Target::Target(JsonView jsonValue) :
     m_runCommandParametersHasBeenSet(false),
     m_ecsParametersHasBeenSet(false),
     m_batchParametersHasBeenSet(false),
-    m_sqsParametersHasBeenSet(false)
+    m_sqsParametersHasBeenSet(false),
+    m_httpParametersHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -128,6 +130,13 @@ Target& Target::operator =(JsonView jsonValue)
     m_sqsParametersHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("HttpParameters"))
+  {
+    m_httpParameters = jsonValue.GetObject("HttpParameters");
+
+    m_httpParametersHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -198,6 +207,12 @@ JsonValue Target::Jsonize() const
   if(m_sqsParametersHasBeenSet)
   {
    payload.WithObject("SqsParameters", m_sqsParameters.Jsonize());
+
+  }
+
+  if(m_httpParametersHasBeenSet)
+  {
+   payload.WithObject("HttpParameters", m_httpParameters.Jsonize());
 
   }
 

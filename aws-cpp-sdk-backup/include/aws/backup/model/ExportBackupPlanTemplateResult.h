@@ -33,51 +33,51 @@ namespace Model
 
 
     /**
-     * <p>The body of a backup plan template in JSON format.</p> <note> <p>This is a
+     * <p>The body of a backup plan template in JSON format.</p>  <p>This is a
      * signed JSON document that cannot be modified before being passed to
-     * <code>GetBackupPlanFromJSON.</code> </p> </note>
+     * <code>GetBackupPlanFromJSON.</code> </p> 
      */
     inline const Aws::String& GetBackupPlanTemplateJson() const{ return m_backupPlanTemplateJson; }
 
     /**
-     * <p>The body of a backup plan template in JSON format.</p> <note> <p>This is a
+     * <p>The body of a backup plan template in JSON format.</p>  <p>This is a
      * signed JSON document that cannot be modified before being passed to
-     * <code>GetBackupPlanFromJSON.</code> </p> </note>
+     * <code>GetBackupPlanFromJSON.</code> </p> 
      */
     inline void SetBackupPlanTemplateJson(const Aws::String& value) { m_backupPlanTemplateJson = value; }
 
     /**
-     * <p>The body of a backup plan template in JSON format.</p> <note> <p>This is a
+     * <p>The body of a backup plan template in JSON format.</p>  <p>This is a
      * signed JSON document that cannot be modified before being passed to
-     * <code>GetBackupPlanFromJSON.</code> </p> </note>
+     * <code>GetBackupPlanFromJSON.</code> </p> 
      */
     inline void SetBackupPlanTemplateJson(Aws::String&& value) { m_backupPlanTemplateJson = std::move(value); }
 
     /**
-     * <p>The body of a backup plan template in JSON format.</p> <note> <p>This is a
+     * <p>The body of a backup plan template in JSON format.</p>  <p>This is a
      * signed JSON document that cannot be modified before being passed to
-     * <code>GetBackupPlanFromJSON.</code> </p> </note>
+     * <code>GetBackupPlanFromJSON.</code> </p> 
      */
     inline void SetBackupPlanTemplateJson(const char* value) { m_backupPlanTemplateJson.assign(value); }
 
     /**
-     * <p>The body of a backup plan template in JSON format.</p> <note> <p>This is a
+     * <p>The body of a backup plan template in JSON format.</p>  <p>This is a
      * signed JSON document that cannot be modified before being passed to
-     * <code>GetBackupPlanFromJSON.</code> </p> </note>
+     * <code>GetBackupPlanFromJSON.</code> </p> 
      */
     inline ExportBackupPlanTemplateResult& WithBackupPlanTemplateJson(const Aws::String& value) { SetBackupPlanTemplateJson(value); return *this;}
 
     /**
-     * <p>The body of a backup plan template in JSON format.</p> <note> <p>This is a
+     * <p>The body of a backup plan template in JSON format.</p>  <p>This is a
      * signed JSON document that cannot be modified before being passed to
-     * <code>GetBackupPlanFromJSON.</code> </p> </note>
+     * <code>GetBackupPlanFromJSON.</code> </p> 
      */
     inline ExportBackupPlanTemplateResult& WithBackupPlanTemplateJson(Aws::String&& value) { SetBackupPlanTemplateJson(std::move(value)); return *this;}
 
     /**
-     * <p>The body of a backup plan template in JSON format.</p> <note> <p>This is a
+     * <p>The body of a backup plan template in JSON format.</p>  <p>This is a
      * signed JSON document that cannot be modified before being passed to
-     * <code>GetBackupPlanFromJSON.</code> </p> </note>
+     * <code>GetBackupPlanFromJSON.</code> </p> 
      */
     inline ExportBackupPlanTemplateResult& WithBackupPlanTemplateJson(const char* value) { SetBackupPlanTemplateJson(value); return *this;}
 

@@ -392,8 +392,8 @@ namespace Model
         /**
          * <p>Cancels an update on the specified stack. If the call completes successfully,
          * the stack rolls back the update and reverts to the previous stack
-         * configuration.</p> <note> <p>You can cancel only stacks that are in the
-         * UPDATE_IN_PROGRESS state.</p> </note><p><h3>See Also:</h3>   <a
+         * configuration.</p>  <p>You can cancel only stacks that are in the
+         * UPDATE_IN_PROGRESS state.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CancelUpdateStack">AWS
          * API Reference</a></p>
          */
@@ -402,8 +402,8 @@ namespace Model
         /**
          * <p>Cancels an update on the specified stack. If the call completes successfully,
          * the stack rolls back the update and reverts to the previous stack
-         * configuration.</p> <note> <p>You can cancel only stacks that are in the
-         * UPDATE_IN_PROGRESS state.</p> </note><p><h3>See Also:</h3>   <a
+         * configuration.</p>  <p>You can cancel only stacks that are in the
+         * UPDATE_IN_PROGRESS state.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CancelUpdateStack">AWS
          * API Reference</a></p>
          *
@@ -414,8 +414,8 @@ namespace Model
         /**
          * <p>Cancels an update on the specified stack. If the call completes successfully,
          * the stack rolls back the update and reverts to the previous stack
-         * configuration.</p> <note> <p>You can cancel only stacks that are in the
-         * UPDATE_IN_PROGRESS state.</p> </note><p><h3>See Also:</h3>   <a
+         * configuration.</p>  <p>You can cancel only stacks that are in the
+         * UPDATE_IN_PROGRESS state.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CancelUpdateStack">AWS
          * API Reference</a></p>
          *
@@ -978,9 +978,9 @@ namespace Model
          * chronological order. For more information about a stack's event history, go to
          * <a
          * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/concept-stack.html">Stacks</a>
-         * in the AWS CloudFormation User Guide.</p> <note> <p>You can list events for
+         * in the AWS CloudFormation User Guide.</p>  <p>You can list events for
          * stacks that have failed to create or have been deleted by specifying the unique
-         * stack identifier (stack ID).</p> </note><p><h3>See Also:</h3>   <a
+         * stack identifier (stack ID).</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeStackEvents">AWS
          * API Reference</a></p>
          */
@@ -991,9 +991,9 @@ namespace Model
          * chronological order. For more information about a stack's event history, go to
          * <a
          * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/concept-stack.html">Stacks</a>
-         * in the AWS CloudFormation User Guide.</p> <note> <p>You can list events for
+         * in the AWS CloudFormation User Guide.</p>  <p>You can list events for
          * stacks that have failed to create or have been deleted by specifying the unique
-         * stack identifier (stack ID).</p> </note><p><h3>See Also:</h3>   <a
+         * stack identifier (stack ID).</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeStackEvents">AWS
          * API Reference</a></p>
          *
@@ -1006,9 +1006,9 @@ namespace Model
          * chronological order. For more information about a stack's event history, go to
          * <a
          * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/concept-stack.html">Stacks</a>
-         * in the AWS CloudFormation User Guide.</p> <note> <p>You can list events for
+         * in the AWS CloudFormation User Guide.</p>  <p>You can list events for
          * stacks that have failed to create or have been deleted by specifying the unique
-         * stack identifier (stack ID).</p> </note><p><h3>See Also:</h3>   <a
+         * stack identifier (stack ID).</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeStackEvents">AWS
          * API Reference</a></p>
          *
@@ -1144,9 +1144,9 @@ namespace Model
          * <code>StackName</code> is specified, all the associated resources that are part
          * of the stack are returned. If <code>PhysicalResourceId</code> is specified, the
          * associated resources of the stack that the resource belongs to are returned.</p>
-         * <note> <p>Only the first 100 resources will be returned. If your stack has more
+         *  <p>Only the first 100 resources will be returned. If your stack has more
          * resources than this, you should use <code>ListStackResources</code> instead.</p>
-         * </note> <p>For deleted stacks, <code>DescribeStackResources</code> returns
+         *  <p>For deleted stacks, <code>DescribeStackResources</code> returns
          * resource information for up to 90 days after the stack has been deleted.</p>
          * <p>You must specify either <code>StackName</code> or
          * <code>PhysicalResourceId</code>, but not both. In addition, you can specify
@@ -1154,9 +1154,9 @@ namespace Model
          * information about resources, the <code>LogicalResourceId</code> and
          * <code>PhysicalResourceId</code>, go to the <a
          * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/">AWS
-         * CloudFormation User Guide</a>.</p> <note> <p>A <code>ValidationError</code> is
+         * CloudFormation User Guide</a>.</p>  <p>A <code>ValidationError</code> is
          * returned if you specify both <code>StackName</code> and
-         * <code>PhysicalResourceId</code> in the same request.</p> </note><p><h3>See
+         * <code>PhysicalResourceId</code> in the same request.</p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeStackResources">AWS
          * API Reference</a></p>
@@ -1168,9 +1168,9 @@ namespace Model
          * <code>StackName</code> is specified, all the associated resources that are part
          * of the stack are returned. If <code>PhysicalResourceId</code> is specified, the
          * associated resources of the stack that the resource belongs to are returned.</p>
-         * <note> <p>Only the first 100 resources will be returned. If your stack has more
+         *  <p>Only the first 100 resources will be returned. If your stack has more
          * resources than this, you should use <code>ListStackResources</code> instead.</p>
-         * </note> <p>For deleted stacks, <code>DescribeStackResources</code> returns
+         *  <p>For deleted stacks, <code>DescribeStackResources</code> returns
          * resource information for up to 90 days after the stack has been deleted.</p>
          * <p>You must specify either <code>StackName</code> or
          * <code>PhysicalResourceId</code>, but not both. In addition, you can specify
@@ -1178,9 +1178,9 @@ namespace Model
          * information about resources, the <code>LogicalResourceId</code> and
          * <code>PhysicalResourceId</code>, go to the <a
          * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/">AWS
-         * CloudFormation User Guide</a>.</p> <note> <p>A <code>ValidationError</code> is
+         * CloudFormation User Guide</a>.</p>  <p>A <code>ValidationError</code> is
          * returned if you specify both <code>StackName</code> and
-         * <code>PhysicalResourceId</code> in the same request.</p> </note><p><h3>See
+         * <code>PhysicalResourceId</code> in the same request.</p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeStackResources">AWS
          * API Reference</a></p>
@@ -1194,9 +1194,9 @@ namespace Model
          * <code>StackName</code> is specified, all the associated resources that are part
          * of the stack are returned. If <code>PhysicalResourceId</code> is specified, the
          * associated resources of the stack that the resource belongs to are returned.</p>
-         * <note> <p>Only the first 100 resources will be returned. If your stack has more
+         *  <p>Only the first 100 resources will be returned. If your stack has more
          * resources than this, you should use <code>ListStackResources</code> instead.</p>
-         * </note> <p>For deleted stacks, <code>DescribeStackResources</code> returns
+         *  <p>For deleted stacks, <code>DescribeStackResources</code> returns
          * resource information for up to 90 days after the stack has been deleted.</p>
          * <p>You must specify either <code>StackName</code> or
          * <code>PhysicalResourceId</code>, but not both. In addition, you can specify
@@ -1204,9 +1204,9 @@ namespace Model
          * information about resources, the <code>LogicalResourceId</code> and
          * <code>PhysicalResourceId</code>, go to the <a
          * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/">AWS
-         * CloudFormation User Guide</a>.</p> <note> <p>A <code>ValidationError</code> is
+         * CloudFormation User Guide</a>.</p>  <p>A <code>ValidationError</code> is
          * returned if you specify both <code>StackName</code> and
-         * <code>PhysicalResourceId</code> in the same request.</p> </note><p><h3>See
+         * <code>PhysicalResourceId</code> in the same request.</p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeStackResources">AWS
          * API Reference</a></p>
@@ -1274,8 +1274,8 @@ namespace Model
         /**
          * <p>Returns the description for the specified stack; if no stack name was
          * specified, then it returns the description for all the stacks created.</p>
-         * <note> <p>If the stack does not exist, an
-         * <code>AmazonCloudFormationException</code> is returned.</p> </note><p><h3>See
+         *  <p>If the stack does not exist, an
+         * <code>AmazonCloudFormationException</code> is returned.</p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeStacks">AWS
          * API Reference</a></p>
@@ -1285,8 +1285,8 @@ namespace Model
         /**
          * <p>Returns the description for the specified stack; if no stack name was
          * specified, then it returns the description for all the stacks created.</p>
-         * <note> <p>If the stack does not exist, an
-         * <code>AmazonCloudFormationException</code> is returned.</p> </note><p><h3>See
+         *  <p>If the stack does not exist, an
+         * <code>AmazonCloudFormationException</code> is returned.</p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeStacks">AWS
          * API Reference</a></p>
@@ -1298,8 +1298,8 @@ namespace Model
         /**
          * <p>Returns the description for the specified stack; if no stack name was
          * specified, then it returns the description for all the stacks created.</p>
-         * <note> <p>If the stack does not exist, an
-         * <code>AmazonCloudFormationException</code> is returned.</p> </note><p><h3>See
+         *  <p>If the stack does not exist, an
+         * <code>AmazonCloudFormationException</code> is returned.</p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeStacks">AWS
          * API Reference</a></p>
@@ -1766,9 +1766,9 @@ namespace Model
         /**
          * <p>Returns the template body for a specified stack. You can get the template for
          * running or deleted stacks.</p> <p>For deleted stacks, GetTemplate returns the
-         * template for up to 90 days after the stack has been deleted.</p> <note> <p> If
+         * template for up to 90 days after the stack has been deleted.</p>  <p> If
          * the template does not exist, a <code>ValidationError</code> is returned. </p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/GetTemplate">AWS
          * API Reference</a></p>
          */
@@ -1777,9 +1777,9 @@ namespace Model
         /**
          * <p>Returns the template body for a specified stack. You can get the template for
          * running or deleted stacks.</p> <p>For deleted stacks, GetTemplate returns the
-         * template for up to 90 days after the stack has been deleted.</p> <note> <p> If
+         * template for up to 90 days after the stack has been deleted.</p>  <p> If
          * the template does not exist, a <code>ValidationError</code> is returned. </p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/GetTemplate">AWS
          * API Reference</a></p>
          *
@@ -1790,9 +1790,9 @@ namespace Model
         /**
          * <p>Returns the template body for a specified stack. You can get the template for
          * running or deleted stacks.</p> <p>For deleted stacks, GetTemplate returns the
-         * template for up to 90 days after the stack has been deleted.</p> <note> <p> If
+         * template for up to 90 days after the stack has been deleted.</p>  <p> If
          * the template does not exist, a <code>ValidationError</code> is returned. </p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/GetTemplate">AWS
          * API Reference</a></p>
          *

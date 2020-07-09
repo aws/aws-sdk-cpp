@@ -484,9 +484,9 @@ namespace Model
      * applied as soon as possible. Between the time of the request and the completion
      * of the request, the <code>MasterUserPassword</code> element exists in the
      * <code>PendingModifiedValues</code> element of the operation response. </p>
-     * <note> <p>Operations never return the password, so this operation provides a way
+     *  <p>Operations never return the password, so this operation provides a way
      * to regain access to the master user account for a cluster if the password is
-     * lost.</p> </note> <p>Default: Uses existing setting.</p> <p>Constraints:</p>
+     * lost.</p>  <p>Default: Uses existing setting.</p> <p>Constraints:</p>
      * <ul> <li> <p>Must be between 8 and 64 characters in length.</p> </li> <li>
      * <p>Must contain at least one uppercase letter.</p> </li> <li> <p>Must contain at
      * least one lowercase letter.</p> </li> <li> <p>Must contain one number.</p> </li>
@@ -500,9 +500,9 @@ namespace Model
      * applied as soon as possible. Between the time of the request and the completion
      * of the request, the <code>MasterUserPassword</code> element exists in the
      * <code>PendingModifiedValues</code> element of the operation response. </p>
-     * <note> <p>Operations never return the password, so this operation provides a way
+     *  <p>Operations never return the password, so this operation provides a way
      * to regain access to the master user account for a cluster if the password is
-     * lost.</p> </note> <p>Default: Uses existing setting.</p> <p>Constraints:</p>
+     * lost.</p>  <p>Default: Uses existing setting.</p> <p>Constraints:</p>
      * <ul> <li> <p>Must be between 8 and 64 characters in length.</p> </li> <li>
      * <p>Must contain at least one uppercase letter.</p> </li> <li> <p>Must contain at
      * least one lowercase letter.</p> </li> <li> <p>Must contain one number.</p> </li>
@@ -516,9 +516,9 @@ namespace Model
      * applied as soon as possible. Between the time of the request and the completion
      * of the request, the <code>MasterUserPassword</code> element exists in the
      * <code>PendingModifiedValues</code> element of the operation response. </p>
-     * <note> <p>Operations never return the password, so this operation provides a way
+     *  <p>Operations never return the password, so this operation provides a way
      * to regain access to the master user account for a cluster if the password is
-     * lost.</p> </note> <p>Default: Uses existing setting.</p> <p>Constraints:</p>
+     * lost.</p>  <p>Default: Uses existing setting.</p> <p>Constraints:</p>
      * <ul> <li> <p>Must be between 8 and 64 characters in length.</p> </li> <li>
      * <p>Must contain at least one uppercase letter.</p> </li> <li> <p>Must contain at
      * least one lowercase letter.</p> </li> <li> <p>Must contain one number.</p> </li>
@@ -532,9 +532,9 @@ namespace Model
      * applied as soon as possible. Between the time of the request and the completion
      * of the request, the <code>MasterUserPassword</code> element exists in the
      * <code>PendingModifiedValues</code> element of the operation response. </p>
-     * <note> <p>Operations never return the password, so this operation provides a way
+     *  <p>Operations never return the password, so this operation provides a way
      * to regain access to the master user account for a cluster if the password is
-     * lost.</p> </note> <p>Default: Uses existing setting.</p> <p>Constraints:</p>
+     * lost.</p>  <p>Default: Uses existing setting.</p> <p>Constraints:</p>
      * <ul> <li> <p>Must be between 8 and 64 characters in length.</p> </li> <li>
      * <p>Must contain at least one uppercase letter.</p> </li> <li> <p>Must contain at
      * least one lowercase letter.</p> </li> <li> <p>Must contain one number.</p> </li>
@@ -548,9 +548,9 @@ namespace Model
      * applied as soon as possible. Between the time of the request and the completion
      * of the request, the <code>MasterUserPassword</code> element exists in the
      * <code>PendingModifiedValues</code> element of the operation response. </p>
-     * <note> <p>Operations never return the password, so this operation provides a way
+     *  <p>Operations never return the password, so this operation provides a way
      * to regain access to the master user account for a cluster if the password is
-     * lost.</p> </note> <p>Default: Uses existing setting.</p> <p>Constraints:</p>
+     * lost.</p>  <p>Default: Uses existing setting.</p> <p>Constraints:</p>
      * <ul> <li> <p>Must be between 8 and 64 characters in length.</p> </li> <li>
      * <p>Must contain at least one uppercase letter.</p> </li> <li> <p>Must contain at
      * least one lowercase letter.</p> </li> <li> <p>Must contain one number.</p> </li>
@@ -564,9 +564,9 @@ namespace Model
      * applied as soon as possible. Between the time of the request and the completion
      * of the request, the <code>MasterUserPassword</code> element exists in the
      * <code>PendingModifiedValues</code> element of the operation response. </p>
-     * <note> <p>Operations never return the password, so this operation provides a way
+     *  <p>Operations never return the password, so this operation provides a way
      * to regain access to the master user account for a cluster if the password is
-     * lost.</p> </note> <p>Default: Uses existing setting.</p> <p>Constraints:</p>
+     * lost.</p>  <p>Default: Uses existing setting.</p> <p>Constraints:</p>
      * <ul> <li> <p>Must be between 8 and 64 characters in length.</p> </li> <li>
      * <p>Must contain at least one uppercase letter.</p> </li> <li> <p>Must contain at
      * least one lowercase letter.</p> </li> <li> <p>Must contain one number.</p> </li>
@@ -580,9 +580,9 @@ namespace Model
      * applied as soon as possible. Between the time of the request and the completion
      * of the request, the <code>MasterUserPassword</code> element exists in the
      * <code>PendingModifiedValues</code> element of the operation response. </p>
-     * <note> <p>Operations never return the password, so this operation provides a way
+     *  <p>Operations never return the password, so this operation provides a way
      * to regain access to the master user account for a cluster if the password is
-     * lost.</p> </note> <p>Default: Uses existing setting.</p> <p>Constraints:</p>
+     * lost.</p>  <p>Default: Uses existing setting.</p> <p>Constraints:</p>
      * <ul> <li> <p>Must be between 8 and 64 characters in length.</p> </li> <li>
      * <p>Must contain at least one uppercase letter.</p> </li> <li> <p>Must contain at
      * least one lowercase letter.</p> </li> <li> <p>Must contain one number.</p> </li>
@@ -596,9 +596,9 @@ namespace Model
      * applied as soon as possible. Between the time of the request and the completion
      * of the request, the <code>MasterUserPassword</code> element exists in the
      * <code>PendingModifiedValues</code> element of the operation response. </p>
-     * <note> <p>Operations never return the password, so this operation provides a way
+     *  <p>Operations never return the password, so this operation provides a way
      * to regain access to the master user account for a cluster if the password is
-     * lost.</p> </note> <p>Default: Uses existing setting.</p> <p>Constraints:</p>
+     * lost.</p>  <p>Default: Uses existing setting.</p> <p>Constraints:</p>
      * <ul> <li> <p>Must be between 8 and 64 characters in length.</p> </li> <li>
      * <p>Must contain at least one uppercase letter.</p> </li> <li> <p>Must contain at
      * least one lowercase letter.</p> </li> <li> <p>Must contain one number.</p> </li>

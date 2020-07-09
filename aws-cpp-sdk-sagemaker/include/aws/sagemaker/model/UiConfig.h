@@ -113,57 +113,177 @@ namespace Model
 
     /**
      * <p>The ARN of the worker task template used to render the worker UI and tools
-     * for labeling job tasks. Do not use this parameter if you use
-     * UiTemplateS3Uri.</p>
+     * for labeling job tasks.</p> <p>Use this parameter when you are creating a
+     * labeling job for 3D point cloud labeling modalities. Use your labeling job task
+     * type to select one of the following ARN's and use it with this parameter when
+     * you create a labeling job. Replace <code>aws-region</code> with the AWS region
+     * you are creating your labeling job in.</p> <p>Use this
+     * <code>HumanTaskUiArn</code> for 3D point cloud object detection and 3D point
+     * cloud object detection adjustment labeling jobs. </p> <ul> <li> <p>
+     * <code>arn:aws:sagemaker:aws-region:394669845002:human-task-ui/PointCloudObjectDetection</code>
+     * </p> </li> </ul> <p> Use this <code>HumanTaskUiArn</code> for 3D point cloud
+     * object tracking and 3D point cloud object tracking adjustment labeling jobs.
+     * </p> <ul> <li> <p>
+     * <code>arn:aws:sagemaker:aws-region:394669845002:human-task-ui/PointCloudObjectTracking</code>
+     * </p> </li> </ul> <p> Use this <code>HumanTaskUiArn</code> for 3D point cloud
+     * semantic segmentation and 3D point cloud semantic segmentation adjustment
+     * labeling jobs.</p> <ul> <li> <p>
+     * <code>arn:aws:sagemaker:aws-region:394669845002:human-task-ui/PointCloudSemanticSegmentation</code>
+     * </p> </li> </ul>
      */
     inline const Aws::String& GetHumanTaskUiArn() const{ return m_humanTaskUiArn; }
 
     /**
      * <p>The ARN of the worker task template used to render the worker UI and tools
-     * for labeling job tasks. Do not use this parameter if you use
-     * UiTemplateS3Uri.</p>
+     * for labeling job tasks.</p> <p>Use this parameter when you are creating a
+     * labeling job for 3D point cloud labeling modalities. Use your labeling job task
+     * type to select one of the following ARN's and use it with this parameter when
+     * you create a labeling job. Replace <code>aws-region</code> with the AWS region
+     * you are creating your labeling job in.</p> <p>Use this
+     * <code>HumanTaskUiArn</code> for 3D point cloud object detection and 3D point
+     * cloud object detection adjustment labeling jobs. </p> <ul> <li> <p>
+     * <code>arn:aws:sagemaker:aws-region:394669845002:human-task-ui/PointCloudObjectDetection</code>
+     * </p> </li> </ul> <p> Use this <code>HumanTaskUiArn</code> for 3D point cloud
+     * object tracking and 3D point cloud object tracking adjustment labeling jobs.
+     * </p> <ul> <li> <p>
+     * <code>arn:aws:sagemaker:aws-region:394669845002:human-task-ui/PointCloudObjectTracking</code>
+     * </p> </li> </ul> <p> Use this <code>HumanTaskUiArn</code> for 3D point cloud
+     * semantic segmentation and 3D point cloud semantic segmentation adjustment
+     * labeling jobs.</p> <ul> <li> <p>
+     * <code>arn:aws:sagemaker:aws-region:394669845002:human-task-ui/PointCloudSemanticSegmentation</code>
+     * </p> </li> </ul>
      */
     inline bool HumanTaskUiArnHasBeenSet() const { return m_humanTaskUiArnHasBeenSet; }
 
     /**
      * <p>The ARN of the worker task template used to render the worker UI and tools
-     * for labeling job tasks. Do not use this parameter if you use
-     * UiTemplateS3Uri.</p>
+     * for labeling job tasks.</p> <p>Use this parameter when you are creating a
+     * labeling job for 3D point cloud labeling modalities. Use your labeling job task
+     * type to select one of the following ARN's and use it with this parameter when
+     * you create a labeling job. Replace <code>aws-region</code> with the AWS region
+     * you are creating your labeling job in.</p> <p>Use this
+     * <code>HumanTaskUiArn</code> for 3D point cloud object detection and 3D point
+     * cloud object detection adjustment labeling jobs. </p> <ul> <li> <p>
+     * <code>arn:aws:sagemaker:aws-region:394669845002:human-task-ui/PointCloudObjectDetection</code>
+     * </p> </li> </ul> <p> Use this <code>HumanTaskUiArn</code> for 3D point cloud
+     * object tracking and 3D point cloud object tracking adjustment labeling jobs.
+     * </p> <ul> <li> <p>
+     * <code>arn:aws:sagemaker:aws-region:394669845002:human-task-ui/PointCloudObjectTracking</code>
+     * </p> </li> </ul> <p> Use this <code>HumanTaskUiArn</code> for 3D point cloud
+     * semantic segmentation and 3D point cloud semantic segmentation adjustment
+     * labeling jobs.</p> <ul> <li> <p>
+     * <code>arn:aws:sagemaker:aws-region:394669845002:human-task-ui/PointCloudSemanticSegmentation</code>
+     * </p> </li> </ul>
      */
     inline void SetHumanTaskUiArn(const Aws::String& value) { m_humanTaskUiArnHasBeenSet = true; m_humanTaskUiArn = value; }
 
     /**
      * <p>The ARN of the worker task template used to render the worker UI and tools
-     * for labeling job tasks. Do not use this parameter if you use
-     * UiTemplateS3Uri.</p>
+     * for labeling job tasks.</p> <p>Use this parameter when you are creating a
+     * labeling job for 3D point cloud labeling modalities. Use your labeling job task
+     * type to select one of the following ARN's and use it with this parameter when
+     * you create a labeling job. Replace <code>aws-region</code> with the AWS region
+     * you are creating your labeling job in.</p> <p>Use this
+     * <code>HumanTaskUiArn</code> for 3D point cloud object detection and 3D point
+     * cloud object detection adjustment labeling jobs. </p> <ul> <li> <p>
+     * <code>arn:aws:sagemaker:aws-region:394669845002:human-task-ui/PointCloudObjectDetection</code>
+     * </p> </li> </ul> <p> Use this <code>HumanTaskUiArn</code> for 3D point cloud
+     * object tracking and 3D point cloud object tracking adjustment labeling jobs.
+     * </p> <ul> <li> <p>
+     * <code>arn:aws:sagemaker:aws-region:394669845002:human-task-ui/PointCloudObjectTracking</code>
+     * </p> </li> </ul> <p> Use this <code>HumanTaskUiArn</code> for 3D point cloud
+     * semantic segmentation and 3D point cloud semantic segmentation adjustment
+     * labeling jobs.</p> <ul> <li> <p>
+     * <code>arn:aws:sagemaker:aws-region:394669845002:human-task-ui/PointCloudSemanticSegmentation</code>
+     * </p> </li> </ul>
      */
     inline void SetHumanTaskUiArn(Aws::String&& value) { m_humanTaskUiArnHasBeenSet = true; m_humanTaskUiArn = std::move(value); }
 
     /**
      * <p>The ARN of the worker task template used to render the worker UI and tools
-     * for labeling job tasks. Do not use this parameter if you use
-     * UiTemplateS3Uri.</p>
+     * for labeling job tasks.</p> <p>Use this parameter when you are creating a
+     * labeling job for 3D point cloud labeling modalities. Use your labeling job task
+     * type to select one of the following ARN's and use it with this parameter when
+     * you create a labeling job. Replace <code>aws-region</code> with the AWS region
+     * you are creating your labeling job in.</p> <p>Use this
+     * <code>HumanTaskUiArn</code> for 3D point cloud object detection and 3D point
+     * cloud object detection adjustment labeling jobs. </p> <ul> <li> <p>
+     * <code>arn:aws:sagemaker:aws-region:394669845002:human-task-ui/PointCloudObjectDetection</code>
+     * </p> </li> </ul> <p> Use this <code>HumanTaskUiArn</code> for 3D point cloud
+     * object tracking and 3D point cloud object tracking adjustment labeling jobs.
+     * </p> <ul> <li> <p>
+     * <code>arn:aws:sagemaker:aws-region:394669845002:human-task-ui/PointCloudObjectTracking</code>
+     * </p> </li> </ul> <p> Use this <code>HumanTaskUiArn</code> for 3D point cloud
+     * semantic segmentation and 3D point cloud semantic segmentation adjustment
+     * labeling jobs.</p> <ul> <li> <p>
+     * <code>arn:aws:sagemaker:aws-region:394669845002:human-task-ui/PointCloudSemanticSegmentation</code>
+     * </p> </li> </ul>
      */
     inline void SetHumanTaskUiArn(const char* value) { m_humanTaskUiArnHasBeenSet = true; m_humanTaskUiArn.assign(value); }
 
     /**
      * <p>The ARN of the worker task template used to render the worker UI and tools
-     * for labeling job tasks. Do not use this parameter if you use
-     * UiTemplateS3Uri.</p>
+     * for labeling job tasks.</p> <p>Use this parameter when you are creating a
+     * labeling job for 3D point cloud labeling modalities. Use your labeling job task
+     * type to select one of the following ARN's and use it with this parameter when
+     * you create a labeling job. Replace <code>aws-region</code> with the AWS region
+     * you are creating your labeling job in.</p> <p>Use this
+     * <code>HumanTaskUiArn</code> for 3D point cloud object detection and 3D point
+     * cloud object detection adjustment labeling jobs. </p> <ul> <li> <p>
+     * <code>arn:aws:sagemaker:aws-region:394669845002:human-task-ui/PointCloudObjectDetection</code>
+     * </p> </li> </ul> <p> Use this <code>HumanTaskUiArn</code> for 3D point cloud
+     * object tracking and 3D point cloud object tracking adjustment labeling jobs.
+     * </p> <ul> <li> <p>
+     * <code>arn:aws:sagemaker:aws-region:394669845002:human-task-ui/PointCloudObjectTracking</code>
+     * </p> </li> </ul> <p> Use this <code>HumanTaskUiArn</code> for 3D point cloud
+     * semantic segmentation and 3D point cloud semantic segmentation adjustment
+     * labeling jobs.</p> <ul> <li> <p>
+     * <code>arn:aws:sagemaker:aws-region:394669845002:human-task-ui/PointCloudSemanticSegmentation</code>
+     * </p> </li> </ul>
      */
     inline UiConfig& WithHumanTaskUiArn(const Aws::String& value) { SetHumanTaskUiArn(value); return *this;}
 
     /**
      * <p>The ARN of the worker task template used to render the worker UI and tools
-     * for labeling job tasks. Do not use this parameter if you use
-     * UiTemplateS3Uri.</p>
+     * for labeling job tasks.</p> <p>Use this parameter when you are creating a
+     * labeling job for 3D point cloud labeling modalities. Use your labeling job task
+     * type to select one of the following ARN's and use it with this parameter when
+     * you create a labeling job. Replace <code>aws-region</code> with the AWS region
+     * you are creating your labeling job in.</p> <p>Use this
+     * <code>HumanTaskUiArn</code> for 3D point cloud object detection and 3D point
+     * cloud object detection adjustment labeling jobs. </p> <ul> <li> <p>
+     * <code>arn:aws:sagemaker:aws-region:394669845002:human-task-ui/PointCloudObjectDetection</code>
+     * </p> </li> </ul> <p> Use this <code>HumanTaskUiArn</code> for 3D point cloud
+     * object tracking and 3D point cloud object tracking adjustment labeling jobs.
+     * </p> <ul> <li> <p>
+     * <code>arn:aws:sagemaker:aws-region:394669845002:human-task-ui/PointCloudObjectTracking</code>
+     * </p> </li> </ul> <p> Use this <code>HumanTaskUiArn</code> for 3D point cloud
+     * semantic segmentation and 3D point cloud semantic segmentation adjustment
+     * labeling jobs.</p> <ul> <li> <p>
+     * <code>arn:aws:sagemaker:aws-region:394669845002:human-task-ui/PointCloudSemanticSegmentation</code>
+     * </p> </li> </ul>
      */
     inline UiConfig& WithHumanTaskUiArn(Aws::String&& value) { SetHumanTaskUiArn(std::move(value)); return *this;}
 
     /**
      * <p>The ARN of the worker task template used to render the worker UI and tools
-     * for labeling job tasks. Do not use this parameter if you use
-     * UiTemplateS3Uri.</p>
+     * for labeling job tasks.</p> <p>Use this parameter when you are creating a
+     * labeling job for 3D point cloud labeling modalities. Use your labeling job task
+     * type to select one of the following ARN's and use it with this parameter when
+     * you create a labeling job. Replace <code>aws-region</code> with the AWS region
+     * you are creating your labeling job in.</p> <p>Use this
+     * <code>HumanTaskUiArn</code> for 3D point cloud object detection and 3D point
+     * cloud object detection adjustment labeling jobs. </p> <ul> <li> <p>
+     * <code>arn:aws:sagemaker:aws-region:394669845002:human-task-ui/PointCloudObjectDetection</code>
+     * </p> </li> </ul> <p> Use this <code>HumanTaskUiArn</code> for 3D point cloud
+     * object tracking and 3D point cloud object tracking adjustment labeling jobs.
+     * </p> <ul> <li> <p>
+     * <code>arn:aws:sagemaker:aws-region:394669845002:human-task-ui/PointCloudObjectTracking</code>
+     * </p> </li> </ul> <p> Use this <code>HumanTaskUiArn</code> for 3D point cloud
+     * semantic segmentation and 3D point cloud semantic segmentation adjustment
+     * labeling jobs.</p> <ul> <li> <p>
+     * <code>arn:aws:sagemaker:aws-region:394669845002:human-task-ui/PointCloudSemanticSegmentation</code>
+     * </p> </li> </ul>
      */
     inline UiConfig& WithHumanTaskUiArn(const char* value) { SetHumanTaskUiArn(value); return *this;}
 

@@ -175,57 +175,57 @@ namespace Model
 
     /**
      * <p>The name of the Amazon Lex bot to which this association is being made. </p>
-     * <note> <p>Currently, Amazon Lex supports associations with Facebook and Slack,
-     * and Twilio.</p> </note>
+     *  <p>Currently, Amazon Lex supports associations with Facebook and Slack,
+     * and Twilio.</p> 
      */
     inline const Aws::String& GetBotName() const{ return m_botName; }
 
     /**
      * <p>The name of the Amazon Lex bot to which this association is being made. </p>
-     * <note> <p>Currently, Amazon Lex supports associations with Facebook and Slack,
-     * and Twilio.</p> </note>
+     *  <p>Currently, Amazon Lex supports associations with Facebook and Slack,
+     * and Twilio.</p> 
      */
     inline bool BotNameHasBeenSet() const { return m_botNameHasBeenSet; }
 
     /**
      * <p>The name of the Amazon Lex bot to which this association is being made. </p>
-     * <note> <p>Currently, Amazon Lex supports associations with Facebook and Slack,
-     * and Twilio.</p> </note>
+     *  <p>Currently, Amazon Lex supports associations with Facebook and Slack,
+     * and Twilio.</p> 
      */
     inline void SetBotName(const Aws::String& value) { m_botNameHasBeenSet = true; m_botName = value; }
 
     /**
      * <p>The name of the Amazon Lex bot to which this association is being made. </p>
-     * <note> <p>Currently, Amazon Lex supports associations with Facebook and Slack,
-     * and Twilio.</p> </note>
+     *  <p>Currently, Amazon Lex supports associations with Facebook and Slack,
+     * and Twilio.</p> 
      */
     inline void SetBotName(Aws::String&& value) { m_botNameHasBeenSet = true; m_botName = std::move(value); }
 
     /**
      * <p>The name of the Amazon Lex bot to which this association is being made. </p>
-     * <note> <p>Currently, Amazon Lex supports associations with Facebook and Slack,
-     * and Twilio.</p> </note>
+     *  <p>Currently, Amazon Lex supports associations with Facebook and Slack,
+     * and Twilio.</p> 
      */
     inline void SetBotName(const char* value) { m_botNameHasBeenSet = true; m_botName.assign(value); }
 
     /**
      * <p>The name of the Amazon Lex bot to which this association is being made. </p>
-     * <note> <p>Currently, Amazon Lex supports associations with Facebook and Slack,
-     * and Twilio.</p> </note>
+     *  <p>Currently, Amazon Lex supports associations with Facebook and Slack,
+     * and Twilio.</p> 
      */
     inline BotChannelAssociation& WithBotName(const Aws::String& value) { SetBotName(value); return *this;}
 
     /**
      * <p>The name of the Amazon Lex bot to which this association is being made. </p>
-     * <note> <p>Currently, Amazon Lex supports associations with Facebook and Slack,
-     * and Twilio.</p> </note>
+     *  <p>Currently, Amazon Lex supports associations with Facebook and Slack,
+     * and Twilio.</p> 
      */
     inline BotChannelAssociation& WithBotName(Aws::String&& value) { SetBotName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the Amazon Lex bot to which this association is being made. </p>
-     * <note> <p>Currently, Amazon Lex supports associations with Facebook and Slack,
-     * and Twilio.</p> </note>
+     *  <p>Currently, Amazon Lex supports associations with Facebook and Slack,
+     * and Twilio.</p> 
      */
     inline BotChannelAssociation& WithBotName(const char* value) { SetBotName(value); return *this;}
 

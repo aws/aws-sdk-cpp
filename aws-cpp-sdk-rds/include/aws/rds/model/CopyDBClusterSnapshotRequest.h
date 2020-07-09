@@ -434,12 +434,12 @@ namespace Model
      * Authenticating Requests: Using Query Parameters (AWS Signature Version 4)</a>
      * and <a
      * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">
-     * Signature Version 4 Signing Process</a>.</p> <note> <p>If you are using an AWS
+     * Signature Version 4 Signing Process</a>.</p>  <p>If you are using an AWS
      * SDK tool or the AWS CLI, you can specify <code>SourceRegion</code> (or
      * <code>--source-region</code> for the AWS CLI) instead of specifying
      * <code>PreSignedUrl</code> manually. Specifying <code>SourceRegion</code>
      * autogenerates a pre-signed URL that is a valid request for the operation that
-     * can be executed in the source AWS Region.</p> </note>
+     * can be executed in the source AWS Region.</p> 
      */
     inline const Aws::String& GetPreSignedUrl() const{ return m_preSignedUrl; }
 
@@ -473,12 +473,12 @@ namespace Model
      * Authenticating Requests: Using Query Parameters (AWS Signature Version 4)</a>
      * and <a
      * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">
-     * Signature Version 4 Signing Process</a>.</p> <note> <p>If you are using an AWS
+     * Signature Version 4 Signing Process</a>.</p>  <p>If you are using an AWS
      * SDK tool or the AWS CLI, you can specify <code>SourceRegion</code> (or
      * <code>--source-region</code> for the AWS CLI) instead of specifying
      * <code>PreSignedUrl</code> manually. Specifying <code>SourceRegion</code>
      * autogenerates a pre-signed URL that is a valid request for the operation that
-     * can be executed in the source AWS Region.</p> </note>
+     * can be executed in the source AWS Region.</p> 
      */
     inline bool PreSignedUrlHasBeenSet() const { return m_preSignedUrlHasBeenSet; }
 
@@ -512,12 +512,12 @@ namespace Model
      * Authenticating Requests: Using Query Parameters (AWS Signature Version 4)</a>
      * and <a
      * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">
-     * Signature Version 4 Signing Process</a>.</p> <note> <p>If you are using an AWS
+     * Signature Version 4 Signing Process</a>.</p>  <p>If you are using an AWS
      * SDK tool or the AWS CLI, you can specify <code>SourceRegion</code> (or
      * <code>--source-region</code> for the AWS CLI) instead of specifying
      * <code>PreSignedUrl</code> manually. Specifying <code>SourceRegion</code>
      * autogenerates a pre-signed URL that is a valid request for the operation that
-     * can be executed in the source AWS Region.</p> </note>
+     * can be executed in the source AWS Region.</p> 
      */
     inline void SetPreSignedUrl(const Aws::String& value) { m_preSignedUrlHasBeenSet = true; m_preSignedUrl = value; }
 
@@ -551,12 +551,12 @@ namespace Model
      * Authenticating Requests: Using Query Parameters (AWS Signature Version 4)</a>
      * and <a
      * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">
-     * Signature Version 4 Signing Process</a>.</p> <note> <p>If you are using an AWS
+     * Signature Version 4 Signing Process</a>.</p>  <p>If you are using an AWS
      * SDK tool or the AWS CLI, you can specify <code>SourceRegion</code> (or
      * <code>--source-region</code> for the AWS CLI) instead of specifying
      * <code>PreSignedUrl</code> manually. Specifying <code>SourceRegion</code>
      * autogenerates a pre-signed URL that is a valid request for the operation that
-     * can be executed in the source AWS Region.</p> </note>
+     * can be executed in the source AWS Region.</p> 
      */
     inline void SetPreSignedUrl(Aws::String&& value) { m_preSignedUrlHasBeenSet = true; m_preSignedUrl = std::move(value); }
 
@@ -590,12 +590,12 @@ namespace Model
      * Authenticating Requests: Using Query Parameters (AWS Signature Version 4)</a>
      * and <a
      * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">
-     * Signature Version 4 Signing Process</a>.</p> <note> <p>If you are using an AWS
+     * Signature Version 4 Signing Process</a>.</p>  <p>If you are using an AWS
      * SDK tool or the AWS CLI, you can specify <code>SourceRegion</code> (or
      * <code>--source-region</code> for the AWS CLI) instead of specifying
      * <code>PreSignedUrl</code> manually. Specifying <code>SourceRegion</code>
      * autogenerates a pre-signed URL that is a valid request for the operation that
-     * can be executed in the source AWS Region.</p> </note>
+     * can be executed in the source AWS Region.</p> 
      */
     inline void SetPreSignedUrl(const char* value) { m_preSignedUrlHasBeenSet = true; m_preSignedUrl.assign(value); }
 
@@ -629,12 +629,12 @@ namespace Model
      * Authenticating Requests: Using Query Parameters (AWS Signature Version 4)</a>
      * and <a
      * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">
-     * Signature Version 4 Signing Process</a>.</p> <note> <p>If you are using an AWS
+     * Signature Version 4 Signing Process</a>.</p>  <p>If you are using an AWS
      * SDK tool or the AWS CLI, you can specify <code>SourceRegion</code> (or
      * <code>--source-region</code> for the AWS CLI) instead of specifying
      * <code>PreSignedUrl</code> manually. Specifying <code>SourceRegion</code>
      * autogenerates a pre-signed URL that is a valid request for the operation that
-     * can be executed in the source AWS Region.</p> </note>
+     * can be executed in the source AWS Region.</p> 
      */
     inline CopyDBClusterSnapshotRequest& WithPreSignedUrl(const Aws::String& value) { SetPreSignedUrl(value); return *this;}
 
@@ -668,12 +668,12 @@ namespace Model
      * Authenticating Requests: Using Query Parameters (AWS Signature Version 4)</a>
      * and <a
      * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">
-     * Signature Version 4 Signing Process</a>.</p> <note> <p>If you are using an AWS
+     * Signature Version 4 Signing Process</a>.</p>  <p>If you are using an AWS
      * SDK tool or the AWS CLI, you can specify <code>SourceRegion</code> (or
      * <code>--source-region</code> for the AWS CLI) instead of specifying
      * <code>PreSignedUrl</code> manually. Specifying <code>SourceRegion</code>
      * autogenerates a pre-signed URL that is a valid request for the operation that
-     * can be executed in the source AWS Region.</p> </note>
+     * can be executed in the source AWS Region.</p> 
      */
     inline CopyDBClusterSnapshotRequest& WithPreSignedUrl(Aws::String&& value) { SetPreSignedUrl(std::move(value)); return *this;}
 
@@ -707,12 +707,12 @@ namespace Model
      * Authenticating Requests: Using Query Parameters (AWS Signature Version 4)</a>
      * and <a
      * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">
-     * Signature Version 4 Signing Process</a>.</p> <note> <p>If you are using an AWS
+     * Signature Version 4 Signing Process</a>.</p>  <p>If you are using an AWS
      * SDK tool or the AWS CLI, you can specify <code>SourceRegion</code> (or
      * <code>--source-region</code> for the AWS CLI) instead of specifying
      * <code>PreSignedUrl</code> manually. Specifying <code>SourceRegion</code>
      * autogenerates a pre-signed URL that is a valid request for the operation that
-     * can be executed in the source AWS Region.</p> </note>
+     * can be executed in the source AWS Region.</p> 
      */
     inline CopyDBClusterSnapshotRequest& WithPreSignedUrl(const char* value) { SetPreSignedUrl(value); return *this;}
 

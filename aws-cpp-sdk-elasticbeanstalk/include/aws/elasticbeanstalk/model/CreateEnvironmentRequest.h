@@ -502,57 +502,57 @@ namespace Model
 
     /**
      * <p>The name of the Elastic Beanstalk configuration template to use with the
-     * environment.</p> <note> <p>If you specify <code>TemplateName</code>, then don't
-     * specify <code>SolutionStackName</code>.</p> </note>
+     * environment.</p>  <p>If you specify <code>TemplateName</code>, then don't
+     * specify <code>SolutionStackName</code>.</p> 
      */
     inline const Aws::String& GetTemplateName() const{ return m_templateName; }
 
     /**
      * <p>The name of the Elastic Beanstalk configuration template to use with the
-     * environment.</p> <note> <p>If you specify <code>TemplateName</code>, then don't
-     * specify <code>SolutionStackName</code>.</p> </note>
+     * environment.</p>  <p>If you specify <code>TemplateName</code>, then don't
+     * specify <code>SolutionStackName</code>.</p> 
      */
     inline bool TemplateNameHasBeenSet() const { return m_templateNameHasBeenSet; }
 
     /**
      * <p>The name of the Elastic Beanstalk configuration template to use with the
-     * environment.</p> <note> <p>If you specify <code>TemplateName</code>, then don't
-     * specify <code>SolutionStackName</code>.</p> </note>
+     * environment.</p>  <p>If you specify <code>TemplateName</code>, then don't
+     * specify <code>SolutionStackName</code>.</p> 
      */
     inline void SetTemplateName(const Aws::String& value) { m_templateNameHasBeenSet = true; m_templateName = value; }
 
     /**
      * <p>The name of the Elastic Beanstalk configuration template to use with the
-     * environment.</p> <note> <p>If you specify <code>TemplateName</code>, then don't
-     * specify <code>SolutionStackName</code>.</p> </note>
+     * environment.</p>  <p>If you specify <code>TemplateName</code>, then don't
+     * specify <code>SolutionStackName</code>.</p> 
      */
     inline void SetTemplateName(Aws::String&& value) { m_templateNameHasBeenSet = true; m_templateName = std::move(value); }
 
     /**
      * <p>The name of the Elastic Beanstalk configuration template to use with the
-     * environment.</p> <note> <p>If you specify <code>TemplateName</code>, then don't
-     * specify <code>SolutionStackName</code>.</p> </note>
+     * environment.</p>  <p>If you specify <code>TemplateName</code>, then don't
+     * specify <code>SolutionStackName</code>.</p> 
      */
     inline void SetTemplateName(const char* value) { m_templateNameHasBeenSet = true; m_templateName.assign(value); }
 
     /**
      * <p>The name of the Elastic Beanstalk configuration template to use with the
-     * environment.</p> <note> <p>If you specify <code>TemplateName</code>, then don't
-     * specify <code>SolutionStackName</code>.</p> </note>
+     * environment.</p>  <p>If you specify <code>TemplateName</code>, then don't
+     * specify <code>SolutionStackName</code>.</p> 
      */
     inline CreateEnvironmentRequest& WithTemplateName(const Aws::String& value) { SetTemplateName(value); return *this;}
 
     /**
      * <p>The name of the Elastic Beanstalk configuration template to use with the
-     * environment.</p> <note> <p>If you specify <code>TemplateName</code>, then don't
-     * specify <code>SolutionStackName</code>.</p> </note>
+     * environment.</p>  <p>If you specify <code>TemplateName</code>, then don't
+     * specify <code>SolutionStackName</code>.</p> 
      */
     inline CreateEnvironmentRequest& WithTemplateName(Aws::String&& value) { SetTemplateName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the Elastic Beanstalk configuration template to use with the
-     * environment.</p> <note> <p>If you specify <code>TemplateName</code>, then don't
-     * specify <code>SolutionStackName</code>.</p> </note>
+     * environment.</p>  <p>If you specify <code>TemplateName</code>, then don't
+     * specify <code>SolutionStackName</code>.</p> 
      */
     inline CreateEnvironmentRequest& WithTemplateName(const char* value) { SetTemplateName(value); return *this;}
 
@@ -564,8 +564,8 @@ namespace Model
      * list of current solution stacks, see <a
      * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/platforms/platforms-supported.html">Elastic
      * Beanstalk Supported Platforms</a> in the <i>AWS Elastic Beanstalk Platforms</i>
-     * guide.</p> <note> <p>If you specify <code>SolutionStackName</code>, don't
-     * specify <code>PlatformArn</code> or <code>TemplateName</code>.</p> </note>
+     * guide.</p>  <p>If you specify <code>SolutionStackName</code>, don't
+     * specify <code>PlatformArn</code> or <code>TemplateName</code>.</p> 
      */
     inline const Aws::String& GetSolutionStackName() const{ return m_solutionStackName; }
 
@@ -576,8 +576,8 @@ namespace Model
      * list of current solution stacks, see <a
      * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/platforms/platforms-supported.html">Elastic
      * Beanstalk Supported Platforms</a> in the <i>AWS Elastic Beanstalk Platforms</i>
-     * guide.</p> <note> <p>If you specify <code>SolutionStackName</code>, don't
-     * specify <code>PlatformArn</code> or <code>TemplateName</code>.</p> </note>
+     * guide.</p>  <p>If you specify <code>SolutionStackName</code>, don't
+     * specify <code>PlatformArn</code> or <code>TemplateName</code>.</p> 
      */
     inline bool SolutionStackNameHasBeenSet() const { return m_solutionStackNameHasBeenSet; }
 
@@ -588,8 +588,8 @@ namespace Model
      * list of current solution stacks, see <a
      * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/platforms/platforms-supported.html">Elastic
      * Beanstalk Supported Platforms</a> in the <i>AWS Elastic Beanstalk Platforms</i>
-     * guide.</p> <note> <p>If you specify <code>SolutionStackName</code>, don't
-     * specify <code>PlatformArn</code> or <code>TemplateName</code>.</p> </note>
+     * guide.</p>  <p>If you specify <code>SolutionStackName</code>, don't
+     * specify <code>PlatformArn</code> or <code>TemplateName</code>.</p> 
      */
     inline void SetSolutionStackName(const Aws::String& value) { m_solutionStackNameHasBeenSet = true; m_solutionStackName = value; }
 
@@ -600,8 +600,8 @@ namespace Model
      * list of current solution stacks, see <a
      * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/platforms/platforms-supported.html">Elastic
      * Beanstalk Supported Platforms</a> in the <i>AWS Elastic Beanstalk Platforms</i>
-     * guide.</p> <note> <p>If you specify <code>SolutionStackName</code>, don't
-     * specify <code>PlatformArn</code> or <code>TemplateName</code>.</p> </note>
+     * guide.</p>  <p>If you specify <code>SolutionStackName</code>, don't
+     * specify <code>PlatformArn</code> or <code>TemplateName</code>.</p> 
      */
     inline void SetSolutionStackName(Aws::String&& value) { m_solutionStackNameHasBeenSet = true; m_solutionStackName = std::move(value); }
 
@@ -612,8 +612,8 @@ namespace Model
      * list of current solution stacks, see <a
      * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/platforms/platforms-supported.html">Elastic
      * Beanstalk Supported Platforms</a> in the <i>AWS Elastic Beanstalk Platforms</i>
-     * guide.</p> <note> <p>If you specify <code>SolutionStackName</code>, don't
-     * specify <code>PlatformArn</code> or <code>TemplateName</code>.</p> </note>
+     * guide.</p>  <p>If you specify <code>SolutionStackName</code>, don't
+     * specify <code>PlatformArn</code> or <code>TemplateName</code>.</p> 
      */
     inline void SetSolutionStackName(const char* value) { m_solutionStackNameHasBeenSet = true; m_solutionStackName.assign(value); }
 
@@ -624,8 +624,8 @@ namespace Model
      * list of current solution stacks, see <a
      * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/platforms/platforms-supported.html">Elastic
      * Beanstalk Supported Platforms</a> in the <i>AWS Elastic Beanstalk Platforms</i>
-     * guide.</p> <note> <p>If you specify <code>SolutionStackName</code>, don't
-     * specify <code>PlatformArn</code> or <code>TemplateName</code>.</p> </note>
+     * guide.</p>  <p>If you specify <code>SolutionStackName</code>, don't
+     * specify <code>PlatformArn</code> or <code>TemplateName</code>.</p> 
      */
     inline CreateEnvironmentRequest& WithSolutionStackName(const Aws::String& value) { SetSolutionStackName(value); return *this;}
 
@@ -636,8 +636,8 @@ namespace Model
      * list of current solution stacks, see <a
      * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/platforms/platforms-supported.html">Elastic
      * Beanstalk Supported Platforms</a> in the <i>AWS Elastic Beanstalk Platforms</i>
-     * guide.</p> <note> <p>If you specify <code>SolutionStackName</code>, don't
-     * specify <code>PlatformArn</code> or <code>TemplateName</code>.</p> </note>
+     * guide.</p>  <p>If you specify <code>SolutionStackName</code>, don't
+     * specify <code>PlatformArn</code> or <code>TemplateName</code>.</p> 
      */
     inline CreateEnvironmentRequest& WithSolutionStackName(Aws::String&& value) { SetSolutionStackName(std::move(value)); return *this;}
 
@@ -648,8 +648,8 @@ namespace Model
      * list of current solution stacks, see <a
      * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/platforms/platforms-supported.html">Elastic
      * Beanstalk Supported Platforms</a> in the <i>AWS Elastic Beanstalk Platforms</i>
-     * guide.</p> <note> <p>If you specify <code>SolutionStackName</code>, don't
-     * specify <code>PlatformArn</code> or <code>TemplateName</code>.</p> </note>
+     * guide.</p>  <p>If you specify <code>SolutionStackName</code>, don't
+     * specify <code>PlatformArn</code> or <code>TemplateName</code>.</p> 
      */
     inline CreateEnvironmentRequest& WithSolutionStackName(const char* value) { SetSolutionStackName(value); return *this;}
 
@@ -658,9 +658,9 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the custom platform to use with the
      * environment. For more information, see <a
      * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/custom-platforms.html">Custom
-     * Platforms</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p> <note>
+     * Platforms</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p> 
      * <p>If you specify <code>PlatformArn</code>, don't specify
-     * <code>SolutionStackName</code>.</p> </note>
+     * <code>SolutionStackName</code>.</p> 
      */
     inline const Aws::String& GetPlatformArn() const{ return m_platformArn; }
 
@@ -668,9 +668,9 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the custom platform to use with the
      * environment. For more information, see <a
      * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/custom-platforms.html">Custom
-     * Platforms</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p> <note>
+     * Platforms</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p> 
      * <p>If you specify <code>PlatformArn</code>, don't specify
-     * <code>SolutionStackName</code>.</p> </note>
+     * <code>SolutionStackName</code>.</p> 
      */
     inline bool PlatformArnHasBeenSet() const { return m_platformArnHasBeenSet; }
 
@@ -678,9 +678,9 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the custom platform to use with the
      * environment. For more information, see <a
      * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/custom-platforms.html">Custom
-     * Platforms</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p> <note>
+     * Platforms</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p> 
      * <p>If you specify <code>PlatformArn</code>, don't specify
-     * <code>SolutionStackName</code>.</p> </note>
+     * <code>SolutionStackName</code>.</p> 
      */
     inline void SetPlatformArn(const Aws::String& value) { m_platformArnHasBeenSet = true; m_platformArn = value; }
 
@@ -688,9 +688,9 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the custom platform to use with the
      * environment. For more information, see <a
      * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/custom-platforms.html">Custom
-     * Platforms</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p> <note>
+     * Platforms</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p> 
      * <p>If you specify <code>PlatformArn</code>, don't specify
-     * <code>SolutionStackName</code>.</p> </note>
+     * <code>SolutionStackName</code>.</p> 
      */
     inline void SetPlatformArn(Aws::String&& value) { m_platformArnHasBeenSet = true; m_platformArn = std::move(value); }
 
@@ -698,9 +698,9 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the custom platform to use with the
      * environment. For more information, see <a
      * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/custom-platforms.html">Custom
-     * Platforms</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p> <note>
+     * Platforms</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p> 
      * <p>If you specify <code>PlatformArn</code>, don't specify
-     * <code>SolutionStackName</code>.</p> </note>
+     * <code>SolutionStackName</code>.</p> 
      */
     inline void SetPlatformArn(const char* value) { m_platformArnHasBeenSet = true; m_platformArn.assign(value); }
 
@@ -708,9 +708,9 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the custom platform to use with the
      * environment. For more information, see <a
      * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/custom-platforms.html">Custom
-     * Platforms</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p> <note>
+     * Platforms</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p> 
      * <p>If you specify <code>PlatformArn</code>, don't specify
-     * <code>SolutionStackName</code>.</p> </note>
+     * <code>SolutionStackName</code>.</p> 
      */
     inline CreateEnvironmentRequest& WithPlatformArn(const Aws::String& value) { SetPlatformArn(value); return *this;}
 
@@ -718,9 +718,9 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the custom platform to use with the
      * environment. For more information, see <a
      * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/custom-platforms.html">Custom
-     * Platforms</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p> <note>
+     * Platforms</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p> 
      * <p>If you specify <code>PlatformArn</code>, don't specify
-     * <code>SolutionStackName</code>.</p> </note>
+     * <code>SolutionStackName</code>.</p> 
      */
     inline CreateEnvironmentRequest& WithPlatformArn(Aws::String&& value) { SetPlatformArn(std::move(value)); return *this;}
 
@@ -728,9 +728,9 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the custom platform to use with the
      * environment. For more information, see <a
      * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/custom-platforms.html">Custom
-     * Platforms</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p> <note>
+     * Platforms</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p> 
      * <p>If you specify <code>PlatformArn</code>, don't specify
-     * <code>SolutionStackName</code>.</p> </note>
+     * <code>SolutionStackName</code>.</p> 
      */
     inline CreateEnvironmentRequest& WithPlatformArn(const char* value) { SetPlatformArn(value); return *this;}
 

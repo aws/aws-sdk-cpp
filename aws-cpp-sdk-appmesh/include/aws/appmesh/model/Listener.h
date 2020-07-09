@@ -103,22 +103,34 @@ namespace Model
     inline Listener& WithPortMapping(PortMapping&& value) { SetPortMapping(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p>An object that represents timeouts for different protocols.</p>
+     */
     inline const ListenerTimeout& GetTimeout() const{ return m_timeout; }
 
-    
+    /**
+     * <p>An object that represents timeouts for different protocols.</p>
+     */
     inline bool TimeoutHasBeenSet() const { return m_timeoutHasBeenSet; }
 
-    
+    /**
+     * <p>An object that represents timeouts for different protocols.</p>
+     */
     inline void SetTimeout(const ListenerTimeout& value) { m_timeoutHasBeenSet = true; m_timeout = value; }
 
-    
+    /**
+     * <p>An object that represents timeouts for different protocols.</p>
+     */
     inline void SetTimeout(ListenerTimeout&& value) { m_timeoutHasBeenSet = true; m_timeout = std::move(value); }
 
-    
+    /**
+     * <p>An object that represents timeouts for different protocols.</p>
+     */
     inline Listener& WithTimeout(const ListenerTimeout& value) { SetTimeout(value); return *this;}
 
-    
+    /**
+     * <p>An object that represents timeouts for different protocols.</p>
+     */
     inline Listener& WithTimeout(ListenerTimeout&& value) { SetTimeout(std::move(value)); return *this;}
 
 

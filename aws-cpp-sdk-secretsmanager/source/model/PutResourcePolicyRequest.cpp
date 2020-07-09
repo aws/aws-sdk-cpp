@@ -14,7 +14,9 @@ using namespace Aws::Utils;
 
 PutResourcePolicyRequest::PutResourcePolicyRequest() : 
     m_secretIdHasBeenSet(false),
-    m_resourcePolicyHasBeenSet(false)
+    m_resourcePolicyHasBeenSet(false),
+    m_blockPublicPolicy(false),
+    m_blockPublicPolicyHasBeenSet(false)
 {
 }
 
@@ -31,6 +33,12 @@ Aws::String PutResourcePolicyRequest::SerializePayload() const
   if(m_resourcePolicyHasBeenSet)
   {
    payload.WithString("ResourcePolicy", m_resourcePolicy);
+
+  }
+
+  if(m_blockPublicPolicyHasBeenSet)
+  {
+   payload.WithBool("BlockPublicPolicy", m_blockPublicPolicy);
 
   }
 

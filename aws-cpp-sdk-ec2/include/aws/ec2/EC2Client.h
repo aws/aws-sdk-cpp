@@ -2621,12 +2621,12 @@ namespace Model
          * reassociation. You cannot associate an Elastic IP address with an instance or
          * network interface that has an existing Elastic IP address.</p> <p>You cannot
          * associate an Elastic IP address with an interface in a different network border
-         * group.</p> <important> <p>This is an idempotent operation. If you perform the
+         * group.</p>  <p>This is an idempotent operation. If you perform the
          * operation more than once, Amazon EC2 doesn't return an error, and you may be
          * charged for each time the Elastic IP address is remapped to the same instance.
          * For more information, see the <i>Elastic IP Addresses</i> section of <a
          * href="http://aws.amazon.com/ec2/pricing/">Amazon EC2 Pricing</a>.</p>
-         * </important><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateAddress">AWS
          * API Reference</a></p>
          */
@@ -2651,12 +2651,12 @@ namespace Model
          * reassociation. You cannot associate an Elastic IP address with an instance or
          * network interface that has an existing Elastic IP address.</p> <p>You cannot
          * associate an Elastic IP address with an interface in a different network border
-         * group.</p> <important> <p>This is an idempotent operation. If you perform the
+         * group.</p>  <p>This is an idempotent operation. If you perform the
          * operation more than once, Amazon EC2 doesn't return an error, and you may be
          * charged for each time the Elastic IP address is remapped to the same instance.
          * For more information, see the <i>Elastic IP Addresses</i> section of <a
          * href="http://aws.amazon.com/ec2/pricing/">Amazon EC2 Pricing</a>.</p>
-         * </important><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateAddress">AWS
          * API Reference</a></p>
          *
@@ -2683,12 +2683,12 @@ namespace Model
          * reassociation. You cannot associate an Elastic IP address with an instance or
          * network interface that has an existing Elastic IP address.</p> <p>You cannot
          * associate an Elastic IP address with an interface in a different network border
-         * group.</p> <important> <p>This is an idempotent operation. If you perform the
+         * group.</p>  <p>This is an idempotent operation. If you perform the
          * operation more than once, Amazon EC2 doesn't return an error, and you may be
          * charged for each time the Elastic IP address is remapped to the same instance.
          * For more information, see the <i>Elastic IP Addresses</i> section of <a
          * href="http://aws.amazon.com/ec2/pricing/">Amazon EC2 Pricing</a>.</p>
-         * </important><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateAddress">AWS
          * API Reference</a></p>
          *
@@ -3417,9 +3417,9 @@ namespace Model
         /**
          * <p>Bundles an Amazon instance store-backed Windows instance.</p> <p>During
          * bundling, only the root device volume (C:\) is bundled. Data on other instance
-         * store volumes is not preserved.</p> <note> <p>This action is not applicable for
+         * store volumes is not preserved.</p>  <p>This action is not applicable for
          * Linux/Unix instances or Windows instances that are backed by Amazon EBS.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/BundleInstance">AWS
          * API Reference</a></p>
          */
@@ -3428,9 +3428,9 @@ namespace Model
         /**
          * <p>Bundles an Amazon instance store-backed Windows instance.</p> <p>During
          * bundling, only the root device volume (C:\) is bundled. Data on other instance
-         * store volumes is not preserved.</p> <note> <p>This action is not applicable for
+         * store volumes is not preserved.</p>  <p>This action is not applicable for
          * Linux/Unix instances or Windows instances that are backed by Amazon EBS.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/BundleInstance">AWS
          * API Reference</a></p>
          *
@@ -3441,9 +3441,9 @@ namespace Model
         /**
          * <p>Bundles an Amazon instance store-backed Windows instance.</p> <p>During
          * bundling, only the root device volume (C:\) is bundled. Data on other instance
-         * store volumes is not preserved.</p> <note> <p>This action is not applicable for
+         * store volumes is not preserved.</p>  <p>This action is not applicable for
          * Linux/Unix instances or Windows instances that are backed by Amazon EBS.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/BundleInstance">AWS
          * API Reference</a></p>
          *
@@ -3714,18 +3714,18 @@ namespace Model
         virtual void CancelSpotFleetRequestsAsync(const Model::CancelSpotFleetRequestsRequest& request, const CancelSpotFleetRequestsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Cancels one or more Spot Instance requests.</p> <important> <p>Canceling a
+         * <p>Cancels one or more Spot Instance requests.</p>  <p>Canceling a
          * Spot Instance request does not terminate running Spot Instances associated with
-         * the request.</p> </important><p><h3>See Also:</h3>   <a
+         * the request.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CancelSpotInstanceRequests">AWS
          * API Reference</a></p>
          */
         virtual Model::CancelSpotInstanceRequestsOutcome CancelSpotInstanceRequests(const Model::CancelSpotInstanceRequestsRequest& request) const;
 
         /**
-         * <p>Cancels one or more Spot Instance requests.</p> <important> <p>Canceling a
+         * <p>Cancels one or more Spot Instance requests.</p>  <p>Canceling a
          * Spot Instance request does not terminate running Spot Instances associated with
-         * the request.</p> </important><p><h3>See Also:</h3>   <a
+         * the request.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CancelSpotInstanceRequests">AWS
          * API Reference</a></p>
          *
@@ -3734,9 +3734,9 @@ namespace Model
         virtual Model::CancelSpotInstanceRequestsOutcomeCallable CancelSpotInstanceRequestsCallable(const Model::CancelSpotInstanceRequestsRequest& request) const;
 
         /**
-         * <p>Cancels one or more Spot Instance requests.</p> <important> <p>Canceling a
+         * <p>Cancels one or more Spot Instance requests.</p>  <p>Canceling a
          * Spot Instance request does not terminate running Spot Instances associated with
-         * the request.</p> </important><p><h3>See Also:</h3>   <a
+         * the request.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CancelSpotInstanceRequests">AWS
          * API Reference</a></p>
          *
@@ -4091,16 +4091,16 @@ namespace Model
          * Protocol (BGP), you can also provide the device's BGP Autonomous System Number
          * (ASN). You can use an existing ASN assigned to your network. If you don't have
          * an ASN already, you can use a private ASN (in the 64512 - 65534 range).</p>
-         * <note> <p>Amazon EC2 supports all 2-byte ASN numbers in the range of 1 - 65534,
+         *  <p>Amazon EC2 supports all 2-byte ASN numbers in the range of 1 - 65534,
          * with the exception of 7224, which is reserved in the <code>us-east-1</code>
          * Region, and 9059, which is reserved in the <code>eu-west-1</code> Region.</p>
-         * </note> <p>For more information, see <a
+         *  <p>For more information, see <a
          * href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">AWS
          * Site-to-Site VPN</a> in the <i>AWS Site-to-Site VPN User Guide</i>.</p>
-         * <important> <p>To create more than one customer gateway with the same VPN type,
+         *  <p>To create more than one customer gateway with the same VPN type,
          * IP address, and BGP ASN, specify a unique device name for each customer gateway.
          * Identical requests return information about the existing customer gateway and do
-         * not create new customer gateways.</p> </important><p><h3>See Also:</h3>   <a
+         * not create new customer gateways.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateCustomerGateway">AWS
          * API Reference</a></p>
          */
@@ -4116,16 +4116,16 @@ namespace Model
          * Protocol (BGP), you can also provide the device's BGP Autonomous System Number
          * (ASN). You can use an existing ASN assigned to your network. If you don't have
          * an ASN already, you can use a private ASN (in the 64512 - 65534 range).</p>
-         * <note> <p>Amazon EC2 supports all 2-byte ASN numbers in the range of 1 - 65534,
+         *  <p>Amazon EC2 supports all 2-byte ASN numbers in the range of 1 - 65534,
          * with the exception of 7224, which is reserved in the <code>us-east-1</code>
          * Region, and 9059, which is reserved in the <code>eu-west-1</code> Region.</p>
-         * </note> <p>For more information, see <a
+         *  <p>For more information, see <a
          * href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">AWS
          * Site-to-Site VPN</a> in the <i>AWS Site-to-Site VPN User Guide</i>.</p>
-         * <important> <p>To create more than one customer gateway with the same VPN type,
+         *  <p>To create more than one customer gateway with the same VPN type,
          * IP address, and BGP ASN, specify a unique device name for each customer gateway.
          * Identical requests return information about the existing customer gateway and do
-         * not create new customer gateways.</p> </important><p><h3>See Also:</h3>   <a
+         * not create new customer gateways.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateCustomerGateway">AWS
          * API Reference</a></p>
          *
@@ -4143,16 +4143,16 @@ namespace Model
          * Protocol (BGP), you can also provide the device's BGP Autonomous System Number
          * (ASN). You can use an existing ASN assigned to your network. If you don't have
          * an ASN already, you can use a private ASN (in the 64512 - 65534 range).</p>
-         * <note> <p>Amazon EC2 supports all 2-byte ASN numbers in the range of 1 - 65534,
+         *  <p>Amazon EC2 supports all 2-byte ASN numbers in the range of 1 - 65534,
          * with the exception of 7224, which is reserved in the <code>us-east-1</code>
          * Region, and 9059, which is reserved in the <code>eu-west-1</code> Region.</p>
-         * </note> <p>For more information, see <a
+         *  <p>For more information, see <a
          * href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">AWS
          * Site-to-Site VPN</a> in the <i>AWS Site-to-Site VPN User Guide</i>.</p>
-         * <important> <p>To create more than one customer gateway with the same VPN type,
+         *  <p>To create more than one customer gateway with the same VPN type,
          * IP address, and BGP ASN, specify a unique device name for each customer gateway.
          * Identical requests return information about the existing customer gateway and do
-         * not create new customer gateways.</p> </important><p><h3>See Also:</h3>   <a
+         * not create new customer gateways.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateCustomerGateway">AWS
          * API Reference</a></p>
          *
@@ -5233,9 +5233,9 @@ namespace Model
          * <p>Creates a listing for Amazon EC2 Standard Reserved Instances to be sold in
          * the Reserved Instance Marketplace. You can submit one Standard Reserved Instance
          * listing at a time. To get a list of your Standard Reserved Instances, you can
-         * use the <a>DescribeReservedInstances</a> operation.</p> <note> <p>Only Standard
+         * use the <a>DescribeReservedInstances</a> operation.</p>  <p>Only Standard
          * Reserved Instances can be sold in the Reserved Instance Marketplace. Convertible
-         * Reserved Instances cannot be sold.</p> </note> <p>The Reserved Instance
+         * Reserved Instances cannot be sold.</p>  <p>The Reserved Instance
          * Marketplace matches sellers who want to resell Standard Reserved Instance
          * capacity that they no longer need with buyers who want to purchase additional
          * capacity. Reserved Instances bought and sold through the Reserved Instance
@@ -5260,9 +5260,9 @@ namespace Model
          * <p>Creates a listing for Amazon EC2 Standard Reserved Instances to be sold in
          * the Reserved Instance Marketplace. You can submit one Standard Reserved Instance
          * listing at a time. To get a list of your Standard Reserved Instances, you can
-         * use the <a>DescribeReservedInstances</a> operation.</p> <note> <p>Only Standard
+         * use the <a>DescribeReservedInstances</a> operation.</p>  <p>Only Standard
          * Reserved Instances can be sold in the Reserved Instance Marketplace. Convertible
-         * Reserved Instances cannot be sold.</p> </note> <p>The Reserved Instance
+         * Reserved Instances cannot be sold.</p>  <p>The Reserved Instance
          * Marketplace matches sellers who want to resell Standard Reserved Instance
          * capacity that they no longer need with buyers who want to purchase additional
          * capacity. Reserved Instances bought and sold through the Reserved Instance
@@ -5289,9 +5289,9 @@ namespace Model
          * <p>Creates a listing for Amazon EC2 Standard Reserved Instances to be sold in
          * the Reserved Instance Marketplace. You can submit one Standard Reserved Instance
          * listing at a time. To get a list of your Standard Reserved Instances, you can
-         * use the <a>DescribeReservedInstances</a> operation.</p> <note> <p>Only Standard
+         * use the <a>DescribeReservedInstances</a> operation.</p>  <p>Only Standard
          * Reserved Instances can be sold in the Reserved Instance Marketplace. Convertible
-         * Reserved Instances cannot be sold.</p> </note> <p>The Reserved Instance
+         * Reserved Instances cannot be sold.</p>  <p>The Reserved Instance
          * Marketplace matches sellers who want to resell Standard Reserved Instance
          * capacity that they no longer need with buyers who want to purchase additional
          * capacity. Reserved Instances bought and sold through the Reserved Instance
@@ -5705,9 +5705,9 @@ namespace Model
          * /28 netmask (16 IP addresses). The CIDR block must not overlap with the CIDR
          * block of an existing subnet in the VPC.</p> <p>If you've associated an IPv6 CIDR
          * block with your VPC, you can create a subnet with an IPv6 CIDR block that uses a
-         * /64 prefix length. </p> <important> <p>AWS reserves both the first four and the
+         * /64 prefix length. </p>  <p>AWS reserves both the first four and the
          * last IPv4 address in each subnet's CIDR block. They're not available for
-         * use.</p> </important> <p>If you add more than one subnet to a VPC, they're set
+         * use.</p>  <p>If you add more than one subnet to a VPC, they're set
          * up in a star topology with a logical router in the middle.</p> <p>When you stop
          * an instance in a subnet, it retains its private IPv4 address. It's therefore
          * possible to have a subnet with no running instances (they're all stopped), but
@@ -5728,9 +5728,9 @@ namespace Model
          * /28 netmask (16 IP addresses). The CIDR block must not overlap with the CIDR
          * block of an existing subnet in the VPC.</p> <p>If you've associated an IPv6 CIDR
          * block with your VPC, you can create a subnet with an IPv6 CIDR block that uses a
-         * /64 prefix length. </p> <important> <p>AWS reserves both the first four and the
+         * /64 prefix length. </p>  <p>AWS reserves both the first four and the
          * last IPv4 address in each subnet's CIDR block. They're not available for
-         * use.</p> </important> <p>If you add more than one subnet to a VPC, they're set
+         * use.</p>  <p>If you add more than one subnet to a VPC, they're set
          * up in a star topology with a logical router in the middle.</p> <p>When you stop
          * an instance in a subnet, it retains its private IPv4 address. It's therefore
          * possible to have a subnet with no running instances (they're all stopped), but
@@ -5753,9 +5753,9 @@ namespace Model
          * /28 netmask (16 IP addresses). The CIDR block must not overlap with the CIDR
          * block of an existing subnet in the VPC.</p> <p>If you've associated an IPv6 CIDR
          * block with your VPC, you can create a subnet with an IPv6 CIDR block that uses a
-         * /64 prefix length. </p> <important> <p>AWS reserves both the first four and the
+         * /64 prefix length. </p>  <p>AWS reserves both the first four and the
          * last IPv4 address in each subnet's CIDR block. They're not available for
-         * use.</p> </important> <p>If you add more than one subnet to a VPC, they're set
+         * use.</p>  <p>If you add more than one subnet to a VPC, they're set
          * up in a star topology with a logical router in the middle.</p> <p>When you stop
          * an instance in a subnet, it retains its private IPv4 address. It's therefore
          * possible to have a subnet with no running instances (they're all stopped), but
@@ -6599,10 +6599,10 @@ namespace Model
          * own and an accepter VPC with which to create the connection. The accepter VPC
          * can belong to another AWS account and can be in a different Region to the
          * requester VPC. The requester VPC and accepter VPC cannot have overlapping CIDR
-         * blocks.</p> <note> <p>Limitations and rules apply to a VPC peering connection.
+         * blocks.</p>  <p>Limitations and rules apply to a VPC peering connection.
          * For more information, see the <a
          * href="https://docs.aws.amazon.com/vpc/latest/peering/vpc-peering-basics.html#vpc-peering-limitations">limitations</a>
-         * section in the <i>VPC Peering Guide</i>.</p> </note> <p>The owner of the
+         * section in the <i>VPC Peering Guide</i>.</p>  <p>The owner of the
          * accepter VPC must accept the peering request to activate the peering connection.
          * The VPC peering connection request expires after 7 days, after which it cannot
          * be accepted or rejected.</p> <p>If you create a VPC peering connection request
@@ -6618,10 +6618,10 @@ namespace Model
          * own and an accepter VPC with which to create the connection. The accepter VPC
          * can belong to another AWS account and can be in a different Region to the
          * requester VPC. The requester VPC and accepter VPC cannot have overlapping CIDR
-         * blocks.</p> <note> <p>Limitations and rules apply to a VPC peering connection.
+         * blocks.</p>  <p>Limitations and rules apply to a VPC peering connection.
          * For more information, see the <a
          * href="https://docs.aws.amazon.com/vpc/latest/peering/vpc-peering-basics.html#vpc-peering-limitations">limitations</a>
-         * section in the <i>VPC Peering Guide</i>.</p> </note> <p>The owner of the
+         * section in the <i>VPC Peering Guide</i>.</p>  <p>The owner of the
          * accepter VPC must accept the peering request to activate the peering connection.
          * The VPC peering connection request expires after 7 days, after which it cannot
          * be accepted or rejected.</p> <p>If you create a VPC peering connection request
@@ -6639,10 +6639,10 @@ namespace Model
          * own and an accepter VPC with which to create the connection. The accepter VPC
          * can belong to another AWS account and can be in a different Region to the
          * requester VPC. The requester VPC and accepter VPC cannot have overlapping CIDR
-         * blocks.</p> <note> <p>Limitations and rules apply to a VPC peering connection.
+         * blocks.</p>  <p>Limitations and rules apply to a VPC peering connection.
          * For more information, see the <a
          * href="https://docs.aws.amazon.com/vpc/latest/peering/vpc-peering-basics.html#vpc-peering-limitations">limitations</a>
-         * section in the <i>VPC Peering Guide</i>.</p> </note> <p>The owner of the
+         * section in the <i>VPC Peering Guide</i>.</p>  <p>The owner of the
          * accepter VPC must accept the peering request to activate the peering connection.
          * The VPC peering connection request expires after 7 days, after which it cannot
          * be accepted or rejected.</p> <p>If you create a VPC peering connection request
@@ -6659,10 +6659,10 @@ namespace Model
          * <p>Creates a VPN connection between an existing virtual private gateway and a
          * VPN customer gateway. The supported connection type is <code>ipsec.1</code>.</p>
          * <p>The response includes information that you need to give to your network
-         * administrator to configure your customer gateway.</p> <important> <p>We strongly
+         * administrator to configure your customer gateway.</p>  <p>We strongly
          * recommend that you use HTTPS when calling this operation because the response
          * contains sensitive cryptographic information for configuring your customer
-         * gateway.</p> </important> <p>If you decide to shut down your VPN connection for
+         * gateway.</p>  <p>If you decide to shut down your VPN connection for
          * any reason and later create a new VPN connection, you must reconfigure your
          * customer gateway with the new information returned from this call.</p> <p>This
          * is an idempotent operation. If you perform the operation more than once, Amazon
@@ -6679,10 +6679,10 @@ namespace Model
          * <p>Creates a VPN connection between an existing virtual private gateway and a
          * VPN customer gateway. The supported connection type is <code>ipsec.1</code>.</p>
          * <p>The response includes information that you need to give to your network
-         * administrator to configure your customer gateway.</p> <important> <p>We strongly
+         * administrator to configure your customer gateway.</p>  <p>We strongly
          * recommend that you use HTTPS when calling this operation because the response
          * contains sensitive cryptographic information for configuring your customer
-         * gateway.</p> </important> <p>If you decide to shut down your VPN connection for
+         * gateway.</p>  <p>If you decide to shut down your VPN connection for
          * any reason and later create a new VPN connection, you must reconfigure your
          * customer gateway with the new information returned from this call.</p> <p>This
          * is an idempotent operation. If you perform the operation more than once, Amazon
@@ -6701,10 +6701,10 @@ namespace Model
          * <p>Creates a VPN connection between an existing virtual private gateway and a
          * VPN customer gateway. The supported connection type is <code>ipsec.1</code>.</p>
          * <p>The response includes information that you need to give to your network
-         * administrator to configure your customer gateway.</p> <important> <p>We strongly
+         * administrator to configure your customer gateway.</p>  <p>We strongly
          * recommend that you use HTTPS when calling this operation because the response
          * contains sensitive cryptographic information for configuring your customer
-         * gateway.</p> </important> <p>If you decide to shut down your VPN connection for
+         * gateway.</p>  <p>If you decide to shut down your VPN connection for
          * any reason and later create a new VPN connection, you must reconfigure your
          * customer gateway with the new information returned from this call.</p> <p>This
          * is an idempotent operation. If you perform the operation more than once, Amazon
@@ -8750,22 +8750,22 @@ namespace Model
         virtual void DescribeAvailabilityZonesAsync(const Model::DescribeAvailabilityZonesRequest& request, const DescribeAvailabilityZonesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes the specified bundle tasks or all of your bundle tasks.</p> <note>
+         * <p>Describes the specified bundle tasks or all of your bundle tasks.</p> 
          * <p>Completed bundle tasks are listed for only a limited time. If your bundle
          * task is no longer in the list, you can still register an AMI from it. Just use
          * <code>RegisterImage</code> with the Amazon S3 bucket name and image manifest
-         * name you provided to the bundle task.</p> </note><p><h3>See Also:</h3>   <a
+         * name you provided to the bundle task.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeBundleTasks">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeBundleTasksOutcome DescribeBundleTasks(const Model::DescribeBundleTasksRequest& request) const;
 
         /**
-         * <p>Describes the specified bundle tasks or all of your bundle tasks.</p> <note>
+         * <p>Describes the specified bundle tasks or all of your bundle tasks.</p> 
          * <p>Completed bundle tasks are listed for only a limited time. If your bundle
          * task is no longer in the list, you can still register an AMI from it. Just use
          * <code>RegisterImage</code> with the Amazon S3 bucket name and image manifest
-         * name you provided to the bundle task.</p> </note><p><h3>See Also:</h3>   <a
+         * name you provided to the bundle task.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeBundleTasks">AWS
          * API Reference</a></p>
          *
@@ -8774,11 +8774,11 @@ namespace Model
         virtual Model::DescribeBundleTasksOutcomeCallable DescribeBundleTasksCallable(const Model::DescribeBundleTasksRequest& request) const;
 
         /**
-         * <p>Describes the specified bundle tasks or all of your bundle tasks.</p> <note>
+         * <p>Describes the specified bundle tasks or all of your bundle tasks.</p> 
          * <p>Completed bundle tasks are listed for only a limited time. If your bundle
          * task is no longer in the list, you can still register an AMI from it. Just use
          * <code>RegisterImage</code> with the Amazon S3 bucket name and image manifest
-         * name you provided to the bundle task.</p> </note><p><h3>See Also:</h3>   <a
+         * name you provided to the bundle task.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeBundleTasks">AWS
          * API Reference</a></p>
          *
@@ -17399,9 +17399,9 @@ namespace Model
          * information about creating AMIs, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami.html">Creating
          * Your Own AMIs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-         * <note> <p>For Amazon EBS-backed instances, <a>CreateImage</a> creates and
+         *  <p>For Amazon EBS-backed instances, <a>CreateImage</a> creates and
          * registers the AMI in a single request, so you don't have to register the AMI
-         * yourself.</p> </note> <p>You can also use <code>RegisterImage</code> to create
+         * yourself.</p>  <p>You can also use <code>RegisterImage</code> to create
          * an Amazon EBS-backed Linux AMI from a snapshot of a root device volume. You
          * specify the snapshot using the block device mapping. For more information, see
          * <a
@@ -17440,9 +17440,9 @@ namespace Model
          * information about creating AMIs, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami.html">Creating
          * Your Own AMIs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-         * <note> <p>For Amazon EBS-backed instances, <a>CreateImage</a> creates and
+         *  <p>For Amazon EBS-backed instances, <a>CreateImage</a> creates and
          * registers the AMI in a single request, so you don't have to register the AMI
-         * yourself.</p> </note> <p>You can also use <code>RegisterImage</code> to create
+         * yourself.</p>  <p>You can also use <code>RegisterImage</code> to create
          * an Amazon EBS-backed Linux AMI from a snapshot of a root device volume. You
          * specify the snapshot using the block device mapping. For more information, see
          * <a
@@ -17483,9 +17483,9 @@ namespace Model
          * information about creating AMIs, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami.html">Creating
          * Your Own AMIs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-         * <note> <p>For Amazon EBS-backed instances, <a>CreateImage</a> creates and
+         *  <p>For Amazon EBS-backed instances, <a>CreateImage</a> creates and
          * registers the AMI in a single request, so you don't have to register the AMI
-         * yourself.</p> </note> <p>You can also use <code>RegisterImage</code> to create
+         * yourself.</p>  <p>You can also use <code>RegisterImage</code> to create
          * an Amazon EBS-backed Linux AMI from a snapshot of a root device volume. You
          * specify the snapshot using the block device mapping. For more information, see
          * <a
@@ -18369,16 +18369,16 @@ namespace Model
         virtual void ResetFpgaImageAttributeAsync(const Model::ResetFpgaImageAttributeRequest& request, const ResetFpgaImageAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Resets an attribute of an AMI to its default value.</p> <note> <p>The
-         * productCodes attribute can't be reset.</p> </note><p><h3>See Also:</h3>   <a
+         * <p>Resets an attribute of an AMI to its default value.</p>  <p>The
+         * productCodes attribute can't be reset.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ResetImageAttribute">AWS
          * API Reference</a></p>
          */
         virtual Model::ResetImageAttributeOutcome ResetImageAttribute(const Model::ResetImageAttributeRequest& request) const;
 
         /**
-         * <p>Resets an attribute of an AMI to its default value.</p> <note> <p>The
-         * productCodes attribute can't be reset.</p> </note><p><h3>See Also:</h3>   <a
+         * <p>Resets an attribute of an AMI to its default value.</p>  <p>The
+         * productCodes attribute can't be reset.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ResetImageAttribute">AWS
          * API Reference</a></p>
          *
@@ -18387,8 +18387,8 @@ namespace Model
         virtual Model::ResetImageAttributeOutcomeCallable ResetImageAttributeCallable(const Model::ResetImageAttributeRequest& request) const;
 
         /**
-         * <p>Resets an attribute of an AMI to its default value.</p> <note> <p>The
-         * productCodes attribute can't be reset.</p> </note><p><h3>See Also:</h3>   <a
+         * <p>Resets an attribute of an AMI to its default value.</p>  <p>The
+         * productCodes attribute can't be reset.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ResetImageAttribute">AWS
          * API Reference</a></p>
          *
@@ -18667,10 +18667,10 @@ namespace Model
         /**
          * <p>Removes the specified ingress rules from a security group. To remove a rule,
          * the values that you specify (for example, ports) must match the existing rule's
-         * values exactly.</p> <note> <p>[EC2-Classic only] If the values you specify do
+         * values exactly.</p>  <p>[EC2-Classic only] If the values you specify do
          * not match the existing rule's values, no error is returned. Use
          * <a>DescribeSecurityGroups</a> to verify that the rule has been removed.</p>
-         * </note> <p>Each rule consists of the protocol and the CIDR range or source
+         *  <p>Each rule consists of the protocol and the CIDR range or source
          * security group. For the TCP and UDP protocols, you must also specify the
          * destination port or range of ports. For the ICMP protocol, you must also specify
          * the ICMP type and code. If the security group rule has a description, you do not
@@ -18685,10 +18685,10 @@ namespace Model
         /**
          * <p>Removes the specified ingress rules from a security group. To remove a rule,
          * the values that you specify (for example, ports) must match the existing rule's
-         * values exactly.</p> <note> <p>[EC2-Classic only] If the values you specify do
+         * values exactly.</p>  <p>[EC2-Classic only] If the values you specify do
          * not match the existing rule's values, no error is returned. Use
          * <a>DescribeSecurityGroups</a> to verify that the rule has been removed.</p>
-         * </note> <p>Each rule consists of the protocol and the CIDR range or source
+         *  <p>Each rule consists of the protocol and the CIDR range or source
          * security group. For the TCP and UDP protocols, you must also specify the
          * destination port or range of ports. For the ICMP protocol, you must also specify
          * the ICMP type and code. If the security group rule has a description, you do not
@@ -18705,10 +18705,10 @@ namespace Model
         /**
          * <p>Removes the specified ingress rules from a security group. To remove a rule,
          * the values that you specify (for example, ports) must match the existing rule's
-         * values exactly.</p> <note> <p>[EC2-Classic only] If the values you specify do
+         * values exactly.</p>  <p>[EC2-Classic only] If the values you specify do
          * not match the existing rule's values, no error is returned. Use
          * <a>DescribeSecurityGroups</a> to verify that the rule has been removed.</p>
-         * </note> <p>Each rule consists of the protocol and the CIDR range or source
+         *  <p>Each rule consists of the protocol and the CIDR range or source
          * security group. For the TCP and UDP protocols, you must also specify the
          * destination port or range of ports. For the ICMP protocol, you must also specify
          * the ICMP type and code. If the security group rule has a description, you do not

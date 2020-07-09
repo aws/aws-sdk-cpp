@@ -15,7 +15,8 @@ using namespace Aws::Utils;
 DetectEntitiesRequest::DetectEntitiesRequest() : 
     m_textHasBeenSet(false),
     m_languageCode(LanguageCode::NOT_SET),
-    m_languageCodeHasBeenSet(false)
+    m_languageCodeHasBeenSet(false),
+    m_endpointArnHasBeenSet(false)
 {
 }
 
@@ -32,6 +33,12 @@ Aws::String DetectEntitiesRequest::SerializePayload() const
   if(m_languageCodeHasBeenSet)
   {
    payload.WithString("LanguageCode", LanguageCodeMapper::GetNameForLanguageCode(m_languageCode));
+  }
+
+  if(m_endpointArnHasBeenSet)
+  {
+   payload.WithString("EndpointArn", m_endpointArn);
+
   }
 
   return payload.View().WriteReadable();

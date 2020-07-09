@@ -180,56 +180,56 @@ namespace Model
 
 
     /**
-     * <p>The current status for the job.</p> <note> <p>If your jobs do not progress to
+     * <p>The current status for the job.</p>  <p>If your jobs do not progress to
      * <code>STARTING</code>, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#job_stuck_in_runnable">Jobs
      * Stuck in RUNNABLE Status</a> in the troubleshooting section of the <i>AWS Batch
-     * User Guide</i>.</p> </note>
+     * User Guide</i>.</p> 
      */
     inline const JobStatus& GetStatus() const{ return m_status; }
 
     /**
-     * <p>The current status for the job.</p> <note> <p>If your jobs do not progress to
+     * <p>The current status for the job.</p>  <p>If your jobs do not progress to
      * <code>STARTING</code>, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#job_stuck_in_runnable">Jobs
      * Stuck in RUNNABLE Status</a> in the troubleshooting section of the <i>AWS Batch
-     * User Guide</i>.</p> </note>
+     * User Guide</i>.</p> 
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
-     * <p>The current status for the job.</p> <note> <p>If your jobs do not progress to
+     * <p>The current status for the job.</p>  <p>If your jobs do not progress to
      * <code>STARTING</code>, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#job_stuck_in_runnable">Jobs
      * Stuck in RUNNABLE Status</a> in the troubleshooting section of the <i>AWS Batch
-     * User Guide</i>.</p> </note>
+     * User Guide</i>.</p> 
      */
     inline void SetStatus(const JobStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>The current status for the job.</p> <note> <p>If your jobs do not progress to
+     * <p>The current status for the job.</p>  <p>If your jobs do not progress to
      * <code>STARTING</code>, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#job_stuck_in_runnable">Jobs
      * Stuck in RUNNABLE Status</a> in the troubleshooting section of the <i>AWS Batch
-     * User Guide</i>.</p> </note>
+     * User Guide</i>.</p> 
      */
     inline void SetStatus(JobStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * <p>The current status for the job.</p> <note> <p>If your jobs do not progress to
+     * <p>The current status for the job.</p>  <p>If your jobs do not progress to
      * <code>STARTING</code>, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#job_stuck_in_runnable">Jobs
      * Stuck in RUNNABLE Status</a> in the troubleshooting section of the <i>AWS Batch
-     * User Guide</i>.</p> </note>
+     * User Guide</i>.</p> 
      */
     inline JobDetail& WithStatus(const JobStatus& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The current status for the job.</p> <note> <p>If your jobs do not progress to
+     * <p>The current status for the job.</p>  <p>If your jobs do not progress to
      * <code>STARTING</code>, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#job_stuck_in_runnable">Jobs
      * Stuck in RUNNABLE Status</a> in the troubleshooting section of the <i>AWS Batch
-     * User Guide</i>.</p> </note>
+     * User Guide</i>.</p> 
      */
     inline JobDetail& WithStatus(JobStatus&& value) { SetStatus(std::move(value)); return *this;}
 

@@ -193,42 +193,42 @@ namespace Model
 
 
     /**
-     * <p>A list of one to four IP address ranges (<a
+     * <p>A list of one to ten IP address ranges (<a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>)
      * to be added to the workforce allow list.</p>
      */
     inline const SourceIpConfig& GetSourceIpConfig() const{ return m_sourceIpConfig; }
 
     /**
-     * <p>A list of one to four IP address ranges (<a
+     * <p>A list of one to ten IP address ranges (<a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>)
      * to be added to the workforce allow list.</p>
      */
     inline bool SourceIpConfigHasBeenSet() const { return m_sourceIpConfigHasBeenSet; }
 
     /**
-     * <p>A list of one to four IP address ranges (<a
+     * <p>A list of one to ten IP address ranges (<a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>)
      * to be added to the workforce allow list.</p>
      */
     inline void SetSourceIpConfig(const SourceIpConfig& value) { m_sourceIpConfigHasBeenSet = true; m_sourceIpConfig = value; }
 
     /**
-     * <p>A list of one to four IP address ranges (<a
+     * <p>A list of one to ten IP address ranges (<a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>)
      * to be added to the workforce allow list.</p>
      */
     inline void SetSourceIpConfig(SourceIpConfig&& value) { m_sourceIpConfigHasBeenSet = true; m_sourceIpConfig = std::move(value); }
 
     /**
-     * <p>A list of one to four IP address ranges (<a
+     * <p>A list of one to ten IP address ranges (<a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>)
      * to be added to the workforce allow list.</p>
      */
     inline Workforce& WithSourceIpConfig(const SourceIpConfig& value) { SetSourceIpConfig(value); return *this;}
 
     /**
-     * <p>A list of one to four IP address ranges (<a
+     * <p>A list of one to ten IP address ranges (<a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>)
      * to be added to the workforce allow list.</p>
      */

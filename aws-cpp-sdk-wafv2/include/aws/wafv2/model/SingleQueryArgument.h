@@ -24,11 +24,11 @@ namespace Model
 {
 
   /**
-   * <note> <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2,
+   *  <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2,
    * released in November, 2019. For information, including how to migrate your AWS
    * WAF resources from the prior release, see the <a
    * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-   * WAF Developer Guide</a>. </p> </note> <p>One query argument in a web request,
+   * WAF Developer Guide</a>. </p>  <p>One query argument in a web request,
    * identified by name, for example <i>UserName</i> or <i>SalesRegion</i>. The name
    * can be up to 30 characters long and isn't case sensitive. </p><p><h3>See
    * Also:</h3>   <a

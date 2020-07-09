@@ -23,7 +23,8 @@ RateBasedStatement::RateBasedStatement() :
     m_limitHasBeenSet(false),
     m_aggregateKeyType(RateBasedStatementAggregateKeyType::NOT_SET),
     m_aggregateKeyTypeHasBeenSet(false),
-    m_scopeDownStatementHasBeenSet(false)
+    m_scopeDownStatementHasBeenSet(false),
+    m_forwardedIPConfigHasBeenSet(false)
 {
 }
 
@@ -32,7 +33,8 @@ RateBasedStatement::RateBasedStatement(JsonView jsonValue) :
     m_limitHasBeenSet(false),
     m_aggregateKeyType(RateBasedStatementAggregateKeyType::NOT_SET),
     m_aggregateKeyTypeHasBeenSet(false),
-    m_scopeDownStatementHasBeenSet(false)
+    m_scopeDownStatementHasBeenSet(false),
+    m_forwardedIPConfigHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -68,6 +70,13 @@ RateBasedStatement& RateBasedStatement::operator =(JsonView jsonValue)
     m_scopeDownStatementHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ForwardedIPConfig"))
+  {
+    m_forwardedIPConfig = jsonValue.GetObject("ForwardedIPConfig");
+
+    m_forwardedIPConfigHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -89,6 +98,12 @@ JsonValue RateBasedStatement::Jsonize() const
   if(m_scopeDownStatementHasBeenSet)
   {
    payload.WithObject("ScopeDownStatement", m_scopeDownStatement[0].Jsonize());
+
+  }
+
+  if(m_forwardedIPConfigHasBeenSet)
+  {
+   payload.WithObject("ForwardedIPConfig", m_forwardedIPConfig.Jsonize());
 
   }
 

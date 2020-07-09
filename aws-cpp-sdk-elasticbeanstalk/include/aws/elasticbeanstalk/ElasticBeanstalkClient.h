@@ -549,11 +549,11 @@ namespace Model
          * with <code>SourceBuildInformation</code> and
          * <code>BuildConfiguration</code>.</p> <p>Specify a source bundle in S3 with
          * <code>SourceBundle</code> </p> <p>Omit both <code>SourceBuildInformation</code>
-         * and <code>SourceBundle</code> to use the default sample application.</p> <note>
+         * and <code>SourceBundle</code> to use the default sample application.</p> 
          * <p>After you create an application version with a specified Amazon S3 bucket and
          * key location, you can't change that Amazon S3 location. If you change the Amazon
          * S3 location, you receive an exception when you attempt to launch an environment
-         * from the application version.</p> </note><p><h3>See Also:</h3>   <a
+         * from the application version.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/CreateApplicationVersion">AWS
          * API Reference</a></p>
          */
@@ -568,11 +568,11 @@ namespace Model
          * with <code>SourceBuildInformation</code> and
          * <code>BuildConfiguration</code>.</p> <p>Specify a source bundle in S3 with
          * <code>SourceBundle</code> </p> <p>Omit both <code>SourceBuildInformation</code>
-         * and <code>SourceBundle</code> to use the default sample application.</p> <note>
+         * and <code>SourceBundle</code> to use the default sample application.</p> 
          * <p>After you create an application version with a specified Amazon S3 bucket and
          * key location, you can't change that Amazon S3 location. If you change the Amazon
          * S3 location, you receive an exception when you attempt to launch an environment
-         * from the application version.</p> </note><p><h3>See Also:</h3>   <a
+         * from the application version.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/CreateApplicationVersion">AWS
          * API Reference</a></p>
          *
@@ -589,11 +589,11 @@ namespace Model
          * with <code>SourceBuildInformation</code> and
          * <code>BuildConfiguration</code>.</p> <p>Specify a source bundle in S3 with
          * <code>SourceBundle</code> </p> <p>Omit both <code>SourceBuildInformation</code>
-         * and <code>SourceBundle</code> to use the default sample application.</p> <note>
+         * and <code>SourceBundle</code> to use the default sample application.</p> 
          * <p>After you create an application version with a specified Amazon S3 bucket and
          * key location, you can't change that Amazon S3 location. If you change the Amazon
          * S3 location, you receive an exception when you attempt to launch an environment
-         * from the application version.</p> </note><p><h3>See Also:</h3>   <a
+         * from the application version.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/CreateApplicationVersion">AWS
          * API Reference</a></p>
          *
@@ -749,8 +749,8 @@ namespace Model
         /**
          * <p>Deletes the specified application along with all associated versions and
          * configurations. The application versions will not be deleted from your Amazon S3
-         * bucket.</p> <note> <p>You cannot delete an application that has a running
-         * environment.</p> </note><p><h3>See Also:</h3>   <a
+         * bucket.</p>  <p>You cannot delete an application that has a running
+         * environment.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DeleteApplication">AWS
          * API Reference</a></p>
          */
@@ -759,8 +759,8 @@ namespace Model
         /**
          * <p>Deletes the specified application along with all associated versions and
          * configurations. The application versions will not be deleted from your Amazon S3
-         * bucket.</p> <note> <p>You cannot delete an application that has a running
-         * environment.</p> </note><p><h3>See Also:</h3>   <a
+         * bucket.</p>  <p>You cannot delete an application that has a running
+         * environment.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DeleteApplication">AWS
          * API Reference</a></p>
          *
@@ -771,8 +771,8 @@ namespace Model
         /**
          * <p>Deletes the specified application along with all associated versions and
          * configurations. The application versions will not be deleted from your Amazon S3
-         * bucket.</p> <note> <p>You cannot delete an application that has a running
-         * environment.</p> </note><p><h3>See Also:</h3>   <a
+         * bucket.</p>  <p>You cannot delete an application that has a running
+         * environment.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DeleteApplication">AWS
          * API Reference</a></p>
          *
@@ -781,18 +781,18 @@ namespace Model
         virtual void DeleteApplicationAsync(const Model::DeleteApplicationRequest& request, const DeleteApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes the specified version from the specified application.</p> <note>
+         * <p>Deletes the specified version from the specified application.</p> 
          * <p>You cannot delete an application version that is associated with a running
-         * environment.</p> </note><p><h3>See Also:</h3>   <a
+         * environment.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DeleteApplicationVersion">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteApplicationVersionOutcome DeleteApplicationVersion(const Model::DeleteApplicationVersionRequest& request) const;
 
         /**
-         * <p>Deletes the specified version from the specified application.</p> <note>
+         * <p>Deletes the specified version from the specified application.</p> 
          * <p>You cannot delete an application version that is associated with a running
-         * environment.</p> </note><p><h3>See Also:</h3>   <a
+         * environment.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DeleteApplicationVersion">AWS
          * API Reference</a></p>
          *
@@ -801,9 +801,9 @@ namespace Model
         virtual Model::DeleteApplicationVersionOutcomeCallable DeleteApplicationVersionCallable(const Model::DeleteApplicationVersionRequest& request) const;
 
         /**
-         * <p>Deletes the specified version from the specified application.</p> <note>
+         * <p>Deletes the specified version from the specified application.</p> 
          * <p>You cannot delete an application version that is associated with a running
-         * environment.</p> </note><p><h3>See Also:</h3>   <a
+         * environment.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DeleteApplicationVersion">AWS
          * API Reference</a></p>
          *
@@ -812,20 +812,20 @@ namespace Model
         virtual void DeleteApplicationVersionAsync(const Model::DeleteApplicationVersionRequest& request, const DeleteApplicationVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes the specified configuration template.</p> <note> <p>When you launch
+         * <p>Deletes the specified configuration template.</p>  <p>When you launch
          * an environment using a configuration template, the environment gets a copy of
          * the template. You can delete or modify the environment's copy of the template
-         * without affecting the running environment.</p> </note><p><h3>See Also:</h3>   <a
+         * without affecting the running environment.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DeleteConfigurationTemplate">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteConfigurationTemplateOutcome DeleteConfigurationTemplate(const Model::DeleteConfigurationTemplateRequest& request) const;
 
         /**
-         * <p>Deletes the specified configuration template.</p> <note> <p>When you launch
+         * <p>Deletes the specified configuration template.</p>  <p>When you launch
          * an environment using a configuration template, the environment gets a copy of
          * the template. You can delete or modify the environment's copy of the template
-         * without affecting the running environment.</p> </note><p><h3>See Also:</h3>   <a
+         * without affecting the running environment.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DeleteConfigurationTemplate">AWS
          * API Reference</a></p>
          *
@@ -834,10 +834,10 @@ namespace Model
         virtual Model::DeleteConfigurationTemplateOutcomeCallable DeleteConfigurationTemplateCallable(const Model::DeleteConfigurationTemplateRequest& request) const;
 
         /**
-         * <p>Deletes the specified configuration template.</p> <note> <p>When you launch
+         * <p>Deletes the specified configuration template.</p>  <p>When you launch
          * an environment using a configuration template, the environment gets a copy of
          * the template. You can delete or modify the environment's copy of the template
-         * without affecting the running environment.</p> </note><p><h3>See Also:</h3>   <a
+         * without affecting the running environment.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DeleteConfigurationTemplate">AWS
          * API Reference</a></p>
          *
@@ -1228,8 +1228,8 @@ namespace Model
 
         /**
          * <p>Returns list of event descriptions matching criteria up to the last 6
-         * weeks.</p> <note> <p>This action returns the most recent 1,000 events from the
-         * specified <code>NextToken</code>.</p> </note><p><h3>See Also:</h3>   <a
+         * weeks.</p>  <p>This action returns the most recent 1,000 events from the
+         * specified <code>NextToken</code>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeEvents">AWS
          * API Reference</a></p>
          */
@@ -1237,8 +1237,8 @@ namespace Model
 
         /**
          * <p>Returns list of event descriptions matching criteria up to the last 6
-         * weeks.</p> <note> <p>This action returns the most recent 1,000 events from the
-         * specified <code>NextToken</code>.</p> </note><p><h3>See Also:</h3>   <a
+         * weeks.</p>  <p>This action returns the most recent 1,000 events from the
+         * specified <code>NextToken</code>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeEvents">AWS
          * API Reference</a></p>
          *
@@ -1248,8 +1248,8 @@ namespace Model
 
         /**
          * <p>Returns list of event descriptions matching criteria up to the last 6
-         * weeks.</p> <note> <p>This action returns the most recent 1,000 events from the
-         * specified <code>NextToken</code>.</p> </note><p><h3>See Also:</h3>   <a
+         * weeks.</p>  <p>This action returns the most recent 1,000 events from the
+         * specified <code>NextToken</code>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeEvents">AWS
          * API Reference</a></p>
          *
@@ -1713,9 +1713,9 @@ namespace Model
 
         /**
          * <p>Updates the specified application to have the specified properties.</p>
-         * <note> <p>If a property (for example, <code>description</code>) is not provided,
+         *  <p>If a property (for example, <code>description</code>) is not provided,
          * the value remains unchanged. To clear these properties, specify an empty
-         * string.</p> </note><p><h3>See Also:</h3>   <a
+         * string.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/UpdateApplication">AWS
          * API Reference</a></p>
          */
@@ -1723,9 +1723,9 @@ namespace Model
 
         /**
          * <p>Updates the specified application to have the specified properties.</p>
-         * <note> <p>If a property (for example, <code>description</code>) is not provided,
+         *  <p>If a property (for example, <code>description</code>) is not provided,
          * the value remains unchanged. To clear these properties, specify an empty
-         * string.</p> </note><p><h3>See Also:</h3>   <a
+         * string.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/UpdateApplication">AWS
          * API Reference</a></p>
          *
@@ -1735,9 +1735,9 @@ namespace Model
 
         /**
          * <p>Updates the specified application to have the specified properties.</p>
-         * <note> <p>If a property (for example, <code>description</code>) is not provided,
+         *  <p>If a property (for example, <code>description</code>) is not provided,
          * the value remains unchanged. To clear these properties, specify an empty
-         * string.</p> </note><p><h3>See Also:</h3>   <a
+         * string.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/UpdateApplication">AWS
          * API Reference</a></p>
          *
@@ -1772,9 +1772,9 @@ namespace Model
 
         /**
          * <p>Updates the specified application version to have the specified
-         * properties.</p> <note> <p>If a property (for example, <code>description</code>)
+         * properties.</p>  <p>If a property (for example, <code>description</code>)
          * is not provided, the value remains unchanged. To clear properties, specify an
-         * empty string.</p> </note><p><h3>See Also:</h3>   <a
+         * empty string.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/UpdateApplicationVersion">AWS
          * API Reference</a></p>
          */
@@ -1782,9 +1782,9 @@ namespace Model
 
         /**
          * <p>Updates the specified application version to have the specified
-         * properties.</p> <note> <p>If a property (for example, <code>description</code>)
+         * properties.</p>  <p>If a property (for example, <code>description</code>)
          * is not provided, the value remains unchanged. To clear properties, specify an
-         * empty string.</p> </note><p><h3>See Also:</h3>   <a
+         * empty string.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/UpdateApplicationVersion">AWS
          * API Reference</a></p>
          *
@@ -1794,9 +1794,9 @@ namespace Model
 
         /**
          * <p>Updates the specified application version to have the specified
-         * properties.</p> <note> <p>If a property (for example, <code>description</code>)
+         * properties.</p>  <p>If a property (for example, <code>description</code>)
          * is not provided, the value remains unchanged. To clear properties, specify an
-         * empty string.</p> </note><p><h3>See Also:</h3>   <a
+         * empty string.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/UpdateApplicationVersion">AWS
          * API Reference</a></p>
          *
@@ -1806,9 +1806,9 @@ namespace Model
 
         /**
          * <p>Updates the specified configuration template to have the specified properties
-         * or configuration option values.</p> <note> <p>If a property (for example,
+         * or configuration option values.</p>  <p>If a property (for example,
          * <code>ApplicationName</code>) is not provided, its value remains unchanged. To
-         * clear such properties, specify an empty string.</p> </note> <p>Related
+         * clear such properties, specify an empty string.</p>  <p>Related
          * Topics</p> <ul> <li> <p> <a>DescribeConfigurationOptions</a> </p> </li>
          * </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/UpdateConfigurationTemplate">AWS
@@ -1818,9 +1818,9 @@ namespace Model
 
         /**
          * <p>Updates the specified configuration template to have the specified properties
-         * or configuration option values.</p> <note> <p>If a property (for example,
+         * or configuration option values.</p>  <p>If a property (for example,
          * <code>ApplicationName</code>) is not provided, its value remains unchanged. To
-         * clear such properties, specify an empty string.</p> </note> <p>Related
+         * clear such properties, specify an empty string.</p>  <p>Related
          * Topics</p> <ul> <li> <p> <a>DescribeConfigurationOptions</a> </p> </li>
          * </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/UpdateConfigurationTemplate">AWS
@@ -1832,9 +1832,9 @@ namespace Model
 
         /**
          * <p>Updates the specified configuration template to have the specified properties
-         * or configuration option values.</p> <note> <p>If a property (for example,
+         * or configuration option values.</p>  <p>If a property (for example,
          * <code>ApplicationName</code>) is not provided, its value remains unchanged. To
-         * clear such properties, specify an empty string.</p> </note> <p>Related
+         * clear such properties, specify an empty string.</p>  <p>Related
          * Topics</p> <ul> <li> <p> <a>DescribeConfigurationOptions</a> </p> </li>
          * </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/UpdateConfigurationTemplate">AWS

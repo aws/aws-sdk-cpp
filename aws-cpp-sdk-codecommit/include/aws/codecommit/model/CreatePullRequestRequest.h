@@ -197,8 +197,8 @@ namespace Model
      * request, ensures the request cannot be repeated with a changed parameter. If a
      * request is received with the same parameters and a token is included, the
      * request returns information about the initial request that used that token.</p>
-     * <note> <p>The AWS SDKs prepopulate client request tokens. If you are using an
-     * AWS SDK, an idempotency token is created for you.</p> </note>
+     *  <p>The AWS SDKs prepopulate client request tokens. If you are using an
+     * AWS SDK, an idempotency token is created for you.</p> 
      */
     inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
 
@@ -207,8 +207,8 @@ namespace Model
      * request, ensures the request cannot be repeated with a changed parameter. If a
      * request is received with the same parameters and a token is included, the
      * request returns information about the initial request that used that token.</p>
-     * <note> <p>The AWS SDKs prepopulate client request tokens. If you are using an
-     * AWS SDK, an idempotency token is created for you.</p> </note>
+     *  <p>The AWS SDKs prepopulate client request tokens. If you are using an
+     * AWS SDK, an idempotency token is created for you.</p> 
      */
     inline bool ClientRequestTokenHasBeenSet() const { return m_clientRequestTokenHasBeenSet; }
 
@@ -217,8 +217,8 @@ namespace Model
      * request, ensures the request cannot be repeated with a changed parameter. If a
      * request is received with the same parameters and a token is included, the
      * request returns information about the initial request that used that token.</p>
-     * <note> <p>The AWS SDKs prepopulate client request tokens. If you are using an
-     * AWS SDK, an idempotency token is created for you.</p> </note>
+     *  <p>The AWS SDKs prepopulate client request tokens. If you are using an
+     * AWS SDK, an idempotency token is created for you.</p> 
      */
     inline void SetClientRequestToken(const Aws::String& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = value; }
 
@@ -227,8 +227,8 @@ namespace Model
      * request, ensures the request cannot be repeated with a changed parameter. If a
      * request is received with the same parameters and a token is included, the
      * request returns information about the initial request that used that token.</p>
-     * <note> <p>The AWS SDKs prepopulate client request tokens. If you are using an
-     * AWS SDK, an idempotency token is created for you.</p> </note>
+     *  <p>The AWS SDKs prepopulate client request tokens. If you are using an
+     * AWS SDK, an idempotency token is created for you.</p> 
      */
     inline void SetClientRequestToken(Aws::String&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::move(value); }
 
@@ -237,8 +237,8 @@ namespace Model
      * request, ensures the request cannot be repeated with a changed parameter. If a
      * request is received with the same parameters and a token is included, the
      * request returns information about the initial request that used that token.</p>
-     * <note> <p>The AWS SDKs prepopulate client request tokens. If you are using an
-     * AWS SDK, an idempotency token is created for you.</p> </note>
+     *  <p>The AWS SDKs prepopulate client request tokens. If you are using an
+     * AWS SDK, an idempotency token is created for you.</p> 
      */
     inline void SetClientRequestToken(const char* value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken.assign(value); }
 
@@ -247,8 +247,8 @@ namespace Model
      * request, ensures the request cannot be repeated with a changed parameter. If a
      * request is received with the same parameters and a token is included, the
      * request returns information about the initial request that used that token.</p>
-     * <note> <p>The AWS SDKs prepopulate client request tokens. If you are using an
-     * AWS SDK, an idempotency token is created for you.</p> </note>
+     *  <p>The AWS SDKs prepopulate client request tokens. If you are using an
+     * AWS SDK, an idempotency token is created for you.</p> 
      */
     inline CreatePullRequestRequest& WithClientRequestToken(const Aws::String& value) { SetClientRequestToken(value); return *this;}
 
@@ -257,8 +257,8 @@ namespace Model
      * request, ensures the request cannot be repeated with a changed parameter. If a
      * request is received with the same parameters and a token is included, the
      * request returns information about the initial request that used that token.</p>
-     * <note> <p>The AWS SDKs prepopulate client request tokens. If you are using an
-     * AWS SDK, an idempotency token is created for you.</p> </note>
+     *  <p>The AWS SDKs prepopulate client request tokens. If you are using an
+     * AWS SDK, an idempotency token is created for you.</p> 
      */
     inline CreatePullRequestRequest& WithClientRequestToken(Aws::String&& value) { SetClientRequestToken(std::move(value)); return *this;}
 
@@ -267,8 +267,8 @@ namespace Model
      * request, ensures the request cannot be repeated with a changed parameter. If a
      * request is received with the same parameters and a token is included, the
      * request returns information about the initial request that used that token.</p>
-     * <note> <p>The AWS SDKs prepopulate client request tokens. If you are using an
-     * AWS SDK, an idempotency token is created for you.</p> </note>
+     *  <p>The AWS SDKs prepopulate client request tokens. If you are using an
+     * AWS SDK, an idempotency token is created for you.</p> 
      */
     inline CreatePullRequestRequest& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
 

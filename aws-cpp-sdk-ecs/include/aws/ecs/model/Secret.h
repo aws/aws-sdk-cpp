@@ -90,88 +90,88 @@ namespace Model
     /**
      * <p>The secret to expose to the container. The supported values are either the
      * full ARN of the AWS Secrets Manager secret or the full ARN of the parameter in
-     * the AWS Systems Manager Parameter Store.</p> <note> <p>If the AWS Systems
+     * the AWS Systems Manager Parameter Store.</p>  <p>If the AWS Systems
      * Manager Parameter Store parameter exists in the same Region as the task you are
      * launching, then you can use either the full ARN or name of the parameter. If the
      * parameter exists in a different Region, then the full ARN must be specified.</p>
-     * </note>
+     * 
      */
     inline const Aws::String& GetValueFrom() const{ return m_valueFrom; }
 
     /**
      * <p>The secret to expose to the container. The supported values are either the
      * full ARN of the AWS Secrets Manager secret or the full ARN of the parameter in
-     * the AWS Systems Manager Parameter Store.</p> <note> <p>If the AWS Systems
+     * the AWS Systems Manager Parameter Store.</p>  <p>If the AWS Systems
      * Manager Parameter Store parameter exists in the same Region as the task you are
      * launching, then you can use either the full ARN or name of the parameter. If the
      * parameter exists in a different Region, then the full ARN must be specified.</p>
-     * </note>
+     * 
      */
     inline bool ValueFromHasBeenSet() const { return m_valueFromHasBeenSet; }
 
     /**
      * <p>The secret to expose to the container. The supported values are either the
      * full ARN of the AWS Secrets Manager secret or the full ARN of the parameter in
-     * the AWS Systems Manager Parameter Store.</p> <note> <p>If the AWS Systems
+     * the AWS Systems Manager Parameter Store.</p>  <p>If the AWS Systems
      * Manager Parameter Store parameter exists in the same Region as the task you are
      * launching, then you can use either the full ARN or name of the parameter. If the
      * parameter exists in a different Region, then the full ARN must be specified.</p>
-     * </note>
+     * 
      */
     inline void SetValueFrom(const Aws::String& value) { m_valueFromHasBeenSet = true; m_valueFrom = value; }
 
     /**
      * <p>The secret to expose to the container. The supported values are either the
      * full ARN of the AWS Secrets Manager secret or the full ARN of the parameter in
-     * the AWS Systems Manager Parameter Store.</p> <note> <p>If the AWS Systems
+     * the AWS Systems Manager Parameter Store.</p>  <p>If the AWS Systems
      * Manager Parameter Store parameter exists in the same Region as the task you are
      * launching, then you can use either the full ARN or name of the parameter. If the
      * parameter exists in a different Region, then the full ARN must be specified.</p>
-     * </note>
+     * 
      */
     inline void SetValueFrom(Aws::String&& value) { m_valueFromHasBeenSet = true; m_valueFrom = std::move(value); }
 
     /**
      * <p>The secret to expose to the container. The supported values are either the
      * full ARN of the AWS Secrets Manager secret or the full ARN of the parameter in
-     * the AWS Systems Manager Parameter Store.</p> <note> <p>If the AWS Systems
+     * the AWS Systems Manager Parameter Store.</p>  <p>If the AWS Systems
      * Manager Parameter Store parameter exists in the same Region as the task you are
      * launching, then you can use either the full ARN or name of the parameter. If the
      * parameter exists in a different Region, then the full ARN must be specified.</p>
-     * </note>
+     * 
      */
     inline void SetValueFrom(const char* value) { m_valueFromHasBeenSet = true; m_valueFrom.assign(value); }
 
     /**
      * <p>The secret to expose to the container. The supported values are either the
      * full ARN of the AWS Secrets Manager secret or the full ARN of the parameter in
-     * the AWS Systems Manager Parameter Store.</p> <note> <p>If the AWS Systems
+     * the AWS Systems Manager Parameter Store.</p>  <p>If the AWS Systems
      * Manager Parameter Store parameter exists in the same Region as the task you are
      * launching, then you can use either the full ARN or name of the parameter. If the
      * parameter exists in a different Region, then the full ARN must be specified.</p>
-     * </note>
+     * 
      */
     inline Secret& WithValueFrom(const Aws::String& value) { SetValueFrom(value); return *this;}
 
     /**
      * <p>The secret to expose to the container. The supported values are either the
      * full ARN of the AWS Secrets Manager secret or the full ARN of the parameter in
-     * the AWS Systems Manager Parameter Store.</p> <note> <p>If the AWS Systems
+     * the AWS Systems Manager Parameter Store.</p>  <p>If the AWS Systems
      * Manager Parameter Store parameter exists in the same Region as the task you are
      * launching, then you can use either the full ARN or name of the parameter. If the
      * parameter exists in a different Region, then the full ARN must be specified.</p>
-     * </note>
+     * 
      */
     inline Secret& WithValueFrom(Aws::String&& value) { SetValueFrom(std::move(value)); return *this;}
 
     /**
      * <p>The secret to expose to the container. The supported values are either the
      * full ARN of the AWS Secrets Manager secret or the full ARN of the parameter in
-     * the AWS Systems Manager Parameter Store.</p> <note> <p>If the AWS Systems
+     * the AWS Systems Manager Parameter Store.</p>  <p>If the AWS Systems
      * Manager Parameter Store parameter exists in the same Region as the task you are
      * launching, then you can use either the full ARN or name of the parameter. If the
      * parameter exists in a different Region, then the full ARN must be specified.</p>
-     * </note>
+     * 
      */
     inline Secret& WithValueFrom(const char* value) { SetValueFrom(value); return *this;}
 

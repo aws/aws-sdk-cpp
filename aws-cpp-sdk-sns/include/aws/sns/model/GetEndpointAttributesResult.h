@@ -51,8 +51,8 @@ namespace Model
      * </li> <li> <p> <code>Token</code> – device token, also referred to as a
      * registration id, for an app and mobile device. This is returned from the
      * notification service when an app and mobile device are registered with the
-     * notification service.</p> <note> <p>The device token for the iOS platform is
-     * returned in lowercase.</p> </note> </li> </ul>
+     * notification service.</p>  <p>The device token for the iOS platform is
+     * returned in lowercase.</p>  </li> </ul>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetAttributes() const{ return m_attributes; }
 
@@ -67,8 +67,8 @@ namespace Model
      * </li> <li> <p> <code>Token</code> – device token, also referred to as a
      * registration id, for an app and mobile device. This is returned from the
      * notification service when an app and mobile device are registered with the
-     * notification service.</p> <note> <p>The device token for the iOS platform is
-     * returned in lowercase.</p> </note> </li> </ul>
+     * notification service.</p>  <p>The device token for the iOS platform is
+     * returned in lowercase.</p>  </li> </ul>
      */
     inline void SetAttributes(const Aws::Map<Aws::String, Aws::String>& value) { m_attributes = value; }
 
@@ -83,8 +83,8 @@ namespace Model
      * </li> <li> <p> <code>Token</code> – device token, also referred to as a
      * registration id, for an app and mobile device. This is returned from the
      * notification service when an app and mobile device are registered with the
-     * notification service.</p> <note> <p>The device token for the iOS platform is
-     * returned in lowercase.</p> </note> </li> </ul>
+     * notification service.</p>  <p>The device token for the iOS platform is
+     * returned in lowercase.</p>  </li> </ul>
      */
     inline void SetAttributes(Aws::Map<Aws::String, Aws::String>&& value) { m_attributes = std::move(value); }
 
@@ -99,8 +99,8 @@ namespace Model
      * </li> <li> <p> <code>Token</code> – device token, also referred to as a
      * registration id, for an app and mobile device. This is returned from the
      * notification service when an app and mobile device are registered with the
-     * notification service.</p> <note> <p>The device token for the iOS platform is
-     * returned in lowercase.</p> </note> </li> </ul>
+     * notification service.</p>  <p>The device token for the iOS platform is
+     * returned in lowercase.</p>  </li> </ul>
      */
     inline GetEndpointAttributesResult& WithAttributes(const Aws::Map<Aws::String, Aws::String>& value) { SetAttributes(value); return *this;}
 
@@ -115,8 +115,8 @@ namespace Model
      * </li> <li> <p> <code>Token</code> – device token, also referred to as a
      * registration id, for an app and mobile device. This is returned from the
      * notification service when an app and mobile device are registered with the
-     * notification service.</p> <note> <p>The device token for the iOS platform is
-     * returned in lowercase.</p> </note> </li> </ul>
+     * notification service.</p>  <p>The device token for the iOS platform is
+     * returned in lowercase.</p>  </li> </ul>
      */
     inline GetEndpointAttributesResult& WithAttributes(Aws::Map<Aws::String, Aws::String>&& value) { SetAttributes(std::move(value)); return *this;}
 
@@ -131,8 +131,8 @@ namespace Model
      * </li> <li> <p> <code>Token</code> – device token, also referred to as a
      * registration id, for an app and mobile device. This is returned from the
      * notification service when an app and mobile device are registered with the
-     * notification service.</p> <note> <p>The device token for the iOS platform is
-     * returned in lowercase.</p> </note> </li> </ul>
+     * notification service.</p>  <p>The device token for the iOS platform is
+     * returned in lowercase.</p>  </li> </ul>
      */
     inline GetEndpointAttributesResult& AddAttributes(const Aws::String& key, const Aws::String& value) { m_attributes.emplace(key, value); return *this; }
 
@@ -147,8 +147,8 @@ namespace Model
      * </li> <li> <p> <code>Token</code> – device token, also referred to as a
      * registration id, for an app and mobile device. This is returned from the
      * notification service when an app and mobile device are registered with the
-     * notification service.</p> <note> <p>The device token for the iOS platform is
-     * returned in lowercase.</p> </note> </li> </ul>
+     * notification service.</p>  <p>The device token for the iOS platform is
+     * returned in lowercase.</p>  </li> </ul>
      */
     inline GetEndpointAttributesResult& AddAttributes(Aws::String&& key, const Aws::String& value) { m_attributes.emplace(std::move(key), value); return *this; }
 
@@ -163,8 +163,8 @@ namespace Model
      * </li> <li> <p> <code>Token</code> – device token, also referred to as a
      * registration id, for an app and mobile device. This is returned from the
      * notification service when an app and mobile device are registered with the
-     * notification service.</p> <note> <p>The device token for the iOS platform is
-     * returned in lowercase.</p> </note> </li> </ul>
+     * notification service.</p>  <p>The device token for the iOS platform is
+     * returned in lowercase.</p>  </li> </ul>
      */
     inline GetEndpointAttributesResult& AddAttributes(const Aws::String& key, Aws::String&& value) { m_attributes.emplace(key, std::move(value)); return *this; }
 
@@ -179,8 +179,8 @@ namespace Model
      * </li> <li> <p> <code>Token</code> – device token, also referred to as a
      * registration id, for an app and mobile device. This is returned from the
      * notification service when an app and mobile device are registered with the
-     * notification service.</p> <note> <p>The device token for the iOS platform is
-     * returned in lowercase.</p> </note> </li> </ul>
+     * notification service.</p>  <p>The device token for the iOS platform is
+     * returned in lowercase.</p>  </li> </ul>
      */
     inline GetEndpointAttributesResult& AddAttributes(Aws::String&& key, Aws::String&& value) { m_attributes.emplace(std::move(key), std::move(value)); return *this; }
 
@@ -195,8 +195,8 @@ namespace Model
      * </li> <li> <p> <code>Token</code> – device token, also referred to as a
      * registration id, for an app and mobile device. This is returned from the
      * notification service when an app and mobile device are registered with the
-     * notification service.</p> <note> <p>The device token for the iOS platform is
-     * returned in lowercase.</p> </note> </li> </ul>
+     * notification service.</p>  <p>The device token for the iOS platform is
+     * returned in lowercase.</p>  </li> </ul>
      */
     inline GetEndpointAttributesResult& AddAttributes(const char* key, Aws::String&& value) { m_attributes.emplace(key, std::move(value)); return *this; }
 
@@ -211,8 +211,8 @@ namespace Model
      * </li> <li> <p> <code>Token</code> – device token, also referred to as a
      * registration id, for an app and mobile device. This is returned from the
      * notification service when an app and mobile device are registered with the
-     * notification service.</p> <note> <p>The device token for the iOS platform is
-     * returned in lowercase.</p> </note> </li> </ul>
+     * notification service.</p>  <p>The device token for the iOS platform is
+     * returned in lowercase.</p>  </li> </ul>
      */
     inline GetEndpointAttributesResult& AddAttributes(Aws::String&& key, const char* value) { m_attributes.emplace(std::move(key), value); return *this; }
 
@@ -227,8 +227,8 @@ namespace Model
      * </li> <li> <p> <code>Token</code> – device token, also referred to as a
      * registration id, for an app and mobile device. This is returned from the
      * notification service when an app and mobile device are registered with the
-     * notification service.</p> <note> <p>The device token for the iOS platform is
-     * returned in lowercase.</p> </note> </li> </ul>
+     * notification service.</p>  <p>The device token for the iOS platform is
+     * returned in lowercase.</p>  </li> </ul>
      */
     inline GetEndpointAttributesResult& AddAttributes(const char* key, const char* value) { m_attributes.emplace(key, value); return *this; }
 

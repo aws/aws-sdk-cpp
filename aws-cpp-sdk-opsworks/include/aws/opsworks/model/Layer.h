@@ -1003,9 +1003,9 @@ namespace Model
      * <code>false</code>, you must then update your instances manually by using
      * <a>CreateDeployment</a> to run the <code>update_dependencies</code> stack
      * command or manually running <code>yum</code> (Amazon Linux) or
-     * <code>apt-get</code> (Ubuntu) on the instances. </p> <note> <p>We strongly
+     * <code>apt-get</code> (Ubuntu) on the instances. </p>  <p>We strongly
      * recommend using the default value of <code>true</code>, to ensure that your
-     * instances have the latest security updates.</p> </note>
+     * instances have the latest security updates.</p> 
      */
     inline bool GetInstallUpdatesOnBoot() const{ return m_installUpdatesOnBoot; }
 
@@ -1015,9 +1015,9 @@ namespace Model
      * <code>false</code>, you must then update your instances manually by using
      * <a>CreateDeployment</a> to run the <code>update_dependencies</code> stack
      * command or manually running <code>yum</code> (Amazon Linux) or
-     * <code>apt-get</code> (Ubuntu) on the instances. </p> <note> <p>We strongly
+     * <code>apt-get</code> (Ubuntu) on the instances. </p>  <p>We strongly
      * recommend using the default value of <code>true</code>, to ensure that your
-     * instances have the latest security updates.</p> </note>
+     * instances have the latest security updates.</p> 
      */
     inline bool InstallUpdatesOnBootHasBeenSet() const { return m_installUpdatesOnBootHasBeenSet; }
 
@@ -1027,9 +1027,9 @@ namespace Model
      * <code>false</code>, you must then update your instances manually by using
      * <a>CreateDeployment</a> to run the <code>update_dependencies</code> stack
      * command or manually running <code>yum</code> (Amazon Linux) or
-     * <code>apt-get</code> (Ubuntu) on the instances. </p> <note> <p>We strongly
+     * <code>apt-get</code> (Ubuntu) on the instances. </p>  <p>We strongly
      * recommend using the default value of <code>true</code>, to ensure that your
-     * instances have the latest security updates.</p> </note>
+     * instances have the latest security updates.</p> 
      */
     inline void SetInstallUpdatesOnBoot(bool value) { m_installUpdatesOnBootHasBeenSet = true; m_installUpdatesOnBoot = value; }
 
@@ -1039,9 +1039,9 @@ namespace Model
      * <code>false</code>, you must then update your instances manually by using
      * <a>CreateDeployment</a> to run the <code>update_dependencies</code> stack
      * command or manually running <code>yum</code> (Amazon Linux) or
-     * <code>apt-get</code> (Ubuntu) on the instances. </p> <note> <p>We strongly
+     * <code>apt-get</code> (Ubuntu) on the instances. </p>  <p>We strongly
      * recommend using the default value of <code>true</code>, to ensure that your
-     * instances have the latest security updates.</p> </note>
+     * instances have the latest security updates.</p> 
      */
     inline Layer& WithInstallUpdatesOnBoot(bool value) { SetInstallUpdatesOnBoot(value); return *this;}
 

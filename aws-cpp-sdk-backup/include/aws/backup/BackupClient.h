@@ -437,9 +437,9 @@ namespace Model
         /**
          * <p>Creates a logical container where backups are stored. A
          * <code>CreateBackupVault</code> request includes a name, optionally one or more
-         * resource tags, an encryption key, and a request ID.</p> <note> <p>Sensitive
+         * resource tags, an encryption key, and a request ID.</p>  <p>Sensitive
          * data, such as passport numbers, should not be included the name of a backup
-         * vault.</p> </note><p><h3>See Also:</h3>   <a
+         * vault.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/CreateBackupVault">AWS
          * API Reference</a></p>
          */
@@ -448,9 +448,9 @@ namespace Model
         /**
          * <p>Creates a logical container where backups are stored. A
          * <code>CreateBackupVault</code> request includes a name, optionally one or more
-         * resource tags, an encryption key, and a request ID.</p> <note> <p>Sensitive
+         * resource tags, an encryption key, and a request ID.</p>  <p>Sensitive
          * data, such as passport numbers, should not be included the name of a backup
-         * vault.</p> </note><p><h3>See Also:</h3>   <a
+         * vault.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/CreateBackupVault">AWS
          * API Reference</a></p>
          *
@@ -461,9 +461,9 @@ namespace Model
         /**
          * <p>Creates a logical container where backups are stored. A
          * <code>CreateBackupVault</code> request includes a name, optionally one or more
-         * resource tags, an encryption key, and a request ID.</p> <note> <p>Sensitive
+         * resource tags, an encryption key, and a request ID.</p>  <p>Sensitive
          * data, such as passport numbers, should not be included the name of a backup
-         * vault.</p> </note><p><h3>See Also:</h3>   <a
+         * vault.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/CreateBackupVault">AWS
          * API Reference</a></p>
          *
@@ -1423,8 +1423,8 @@ namespace Model
 
         /**
          * <p>Returns a list of key-value pairs assigned to a target recovery point, backup
-         * plan, or backup vault.</p> <note> <p> <code>ListTags</code> are currently only
-         * supported with Amazon EFS backups.</p> </note><p><h3>See Also:</h3>   <a
+         * plan, or backup vault.</p>  <p> <code>ListTags</code> are currently only
+         * supported with Amazon EFS backups.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListTags">AWS API
          * Reference</a></p>
          */
@@ -1432,8 +1432,8 @@ namespace Model
 
         /**
          * <p>Returns a list of key-value pairs assigned to a target recovery point, backup
-         * plan, or backup vault.</p> <note> <p> <code>ListTags</code> are currently only
-         * supported with Amazon EFS backups.</p> </note><p><h3>See Also:</h3>   <a
+         * plan, or backup vault.</p>  <p> <code>ListTags</code> are currently only
+         * supported with Amazon EFS backups.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListTags">AWS API
          * Reference</a></p>
          *
@@ -1443,8 +1443,8 @@ namespace Model
 
         /**
          * <p>Returns a list of key-value pairs assigned to a target recovery point, backup
-         * plan, or backup vault.</p> <note> <p> <code>ListTags</code> are currently only
-         * supported with Amazon EFS backups.</p> </note><p><h3>See Also:</h3>   <a
+         * plan, or backup vault.</p>  <p> <code>ListTags</code> are currently only
+         * supported with Amazon EFS backups.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListTags">AWS API
          * Reference</a></p>
          *

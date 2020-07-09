@@ -129,8 +129,8 @@ namespace Model
         /**
          * <p>Returns information about a stream, including the current status of the
          * stream, its Amazon Resource Name (ARN), the composition of its shards, and its
-         * corresponding DynamoDB table.</p> <note><p>You can call <i>DescribeStream</i> at
-         * a maximum rate of 10 times per second.</p></note> <p>Each shard in the stream
+         * corresponding DynamoDB table.</p> <p>You can call <i>DescribeStream</i> at
+         * a maximum rate of 10 times per second.</p> <p>Each shard in the stream
          * has a <code>SequenceNumberRange</code> associated with it. If the
          * <code>SequenceNumberRange</code> has a <code>StartingSequenceNumber</code> but
          * no <code>EndingSequenceNumber</code>, then the shard is still open (able to
@@ -143,8 +143,8 @@ namespace Model
         /**
          * <p>Returns information about a stream, including the current status of the
          * stream, its Amazon Resource Name (ARN), the composition of its shards, and its
-         * corresponding DynamoDB table.</p> <note><p>You can call <i>DescribeStream</i> at
-         * a maximum rate of 10 times per second.</p></note> <p>Each shard in the stream
+         * corresponding DynamoDB table.</p> <p>You can call <i>DescribeStream</i> at
+         * a maximum rate of 10 times per second.</p> <p>Each shard in the stream
          * has a <code>SequenceNumberRange</code> associated with it. If the
          * <code>SequenceNumberRange</code> has a <code>StartingSequenceNumber</code> but
          * no <code>EndingSequenceNumber</code>, then the shard is still open (able to
@@ -159,8 +159,8 @@ namespace Model
         /**
          * <p>Returns information about a stream, including the current status of the
          * stream, its Amazon Resource Name (ARN), the composition of its shards, and its
-         * corresponding DynamoDB table.</p> <note><p>You can call <i>DescribeStream</i> at
-         * a maximum rate of 10 times per second.</p></note> <p>Each shard in the stream
+         * corresponding DynamoDB table.</p> <p>You can call <i>DescribeStream</i> at
+         * a maximum rate of 10 times per second.</p> <p>Each shard in the stream
          * has a <code>SequenceNumberRange</code> associated with it. If the
          * <code>SequenceNumberRange</code> has a <code>StartingSequenceNumber</code> but
          * no <code>EndingSequenceNumber</code>, then the shard is still open (able to
@@ -179,9 +179,9 @@ namespace Model
          * records sequentially. If there are no stream records available in the portion of
          * the shard that the iterator points to, <code>GetRecords</code> returns an empty
          * list. Note that it might take multiple calls to get to a portion of the shard
-         * that contains stream records.</p> <note><p><function>GetRecords</function> can
+         * that contains stream records.</p> <p><function>GetRecords</function> can
          * retrieve a maximum of 1 MB of data or 2000 stream records, whichever comes
-         * first.</p></note>
+         * first.</p>
          */
         virtual Model::GetRecordsOutcome GetRecords(const Model::GetRecordsRequest& request) const;
 
@@ -192,9 +192,9 @@ namespace Model
          * records sequentially. If there are no stream records available in the portion of
          * the shard that the iterator points to, <code>GetRecords</code> returns an empty
          * list. Note that it might take multiple calls to get to a portion of the shard
-         * that contains stream records.</p> <note><p><function>GetRecords</function> can
+         * that contains stream records.</p> <p><function>GetRecords</function> can
          * retrieve a maximum of 1 MB of data or 2000 stream records, whichever comes
-         * first.</p></note>
+         * first.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -207,9 +207,9 @@ namespace Model
          * records sequentially. If there are no stream records available in the portion of
          * the shard that the iterator points to, <code>GetRecords</code> returns an empty
          * list. Note that it might take multiple calls to get to a portion of the shard
-         * that contains stream records.</p> <note><p><function>GetRecords</function> can
+         * that contains stream records.</p> <p><function>GetRecords</function> can
          * retrieve a maximum of 1 MB of data or 2000 stream records, whichever comes
-         * first.</p></note>
+         * first.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -219,8 +219,8 @@ namespace Model
          * <p>Returns a shard iterator. A shard iterator provides information about how to
          * retrieve the stream records from within a shard. Use the shard iterator in a
          * subsequent <code>GetRecords</code> request to read the stream records from the
-         * shard.</p> <note><p>A shard iterator expires 15 minutes after it is returned to
-         * the requester.</p></note>
+         * shard.</p> <p>A shard iterator expires 15 minutes after it is returned to
+         * the requester.</p>
          */
         virtual Model::GetShardIteratorOutcome GetShardIterator(const Model::GetShardIteratorRequest& request) const;
 
@@ -228,8 +228,8 @@ namespace Model
          * <p>Returns a shard iterator. A shard iterator provides information about how to
          * retrieve the stream records from within a shard. Use the shard iterator in a
          * subsequent <code>GetRecords</code> request to read the stream records from the
-         * shard.</p> <note><p>A shard iterator expires 15 minutes after it is returned to
-         * the requester.</p></note>
+         * shard.</p> <p>A shard iterator expires 15 minutes after it is returned to
+         * the requester.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -239,8 +239,8 @@ namespace Model
          * <p>Returns a shard iterator. A shard iterator provides information about how to
          * retrieve the stream records from within a shard. Use the shard iterator in a
          * subsequent <code>GetRecords</code> request to read the stream records from the
-         * shard.</p> <note><p>A shard iterator expires 15 minutes after it is returned to
-         * the requester.</p></note>
+         * shard.</p> <p>A shard iterator expires 15 minutes after it is returned to
+         * the requester.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -250,8 +250,8 @@ namespace Model
          * <p>Returns an array of stream ARNs associated with the current account and
          * endpoint. If the <code>TableName</code> parameter is present, then
          * <i>ListStreams</i> will return only the streams ARNs for that table.</p>
-         * <note><p>You can call <i>ListStreams</i> at a maximum rate of 5 times per
-         * second.</p></note>
+         * <p>You can call <i>ListStreams</i> at a maximum rate of 5 times per
+         * second.</p>
          */
         virtual Model::ListStreamsOutcome ListStreams(const Model::ListStreamsRequest& request) const;
 
@@ -259,8 +259,8 @@ namespace Model
          * <p>Returns an array of stream ARNs associated with the current account and
          * endpoint. If the <code>TableName</code> parameter is present, then
          * <i>ListStreams</i> will return only the streams ARNs for that table.</p>
-         * <note><p>You can call <i>ListStreams</i> at a maximum rate of 5 times per
-         * second.</p></note>
+         * <p>You can call <i>ListStreams</i> at a maximum rate of 5 times per
+         * second.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -270,8 +270,8 @@ namespace Model
          * <p>Returns an array of stream ARNs associated with the current account and
          * endpoint. If the <code>TableName</code> parameter is present, then
          * <i>ListStreams</i> will return only the streams ARNs for that table.</p>
-         * <note><p>You can call <i>ListStreams</i> at a maximum rate of 5 times per
-         * second.</p></note>
+         * <p>You can call <i>ListStreams</i> at a maximum rate of 5 times per
+         * second.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */

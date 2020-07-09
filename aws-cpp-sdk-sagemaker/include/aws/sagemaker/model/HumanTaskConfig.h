@@ -131,11 +131,14 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of a Lambda function that is run before a data
      * object is sent to a human worker. Use this function to provide input to a custom
-     * labeling job.</p> <p>For the built-in bounding box, image classification,
-     * semantic segmentation, and text classification task types, Amazon SageMaker
-     * Ground Truth provides the following Lambda functions:</p> <p> <b>Bounding
-     * box</b> - Finds the most similar boxes from different workers based on the
-     * Jaccard index of the boxes.</p> <ul> <li> <p>
+     * labeling job.</p> <p>For <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-task-types.html">built-in
+     * task types</a>, use one of the following Amazon SageMaker Ground Truth Lambda
+     * function ARNs for <code>PreHumanTaskLambdaArn</code>. For custom labeling
+     * workflows, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-custom-templates-step3.html#sms-custom-templates-step3-prelambda">Pre-annotation
+     * Lambda</a>. </p> <p> <b>Bounding box</b> - Finds the most similar boxes from
+     * different workers based on the Jaccard index of the boxes.</p> <ul> <li> <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-BoundingBox</code> </p>
      * </li> <li> <p>
      * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-BoundingBox</code> </p>
@@ -315,33 +318,123 @@ namespace Model
      * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-NamedEntityRecognition</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-NamedEntityRecognition</code>
-     * </p> </li> </ul> <p> <b>Bounding box verification</b> - Uses a variant of the
-     * Expectation Maximization approach to estimate the true class of verification
-     * judgement for bounding box labels based on annotations from individual
-     * workers.</p> <ul> <li> <p>
-     * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-VerificationBoundingBox</code>
+     * </p> </li> </ul> <p> <b>3D Point Cloud Modalities</b> </p> <p>Use the following
+     * pre-annotation lambdas for 3D point cloud labeling modality tasks. See <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-point-cloud-task-types.html">3D
+     * Point Cloud Task types </a> to learn more. </p> <p> <b>3D Point Cloud Object
+     * Detection</b> - Use this task type when you want workers to classify objects in
+     * a 3D point cloud by drawing 3D cuboids around objects. For example, you can use
+     * this task type to ask workers to identify different types of objects in a point
+     * cloud, such as cars, bikes, and pedestrians.</p> <ul> <li> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-3DPointCloudObjectDetection</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-3DPointCloudObjectDetection</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-3DPointCloudObjectDetection</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-3DPointCloudObjectDetection</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-3DPointCloudObjectDetection</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:eu-west-2:487402164563:function:PRE-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-3DPointCloudObjectDetection</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:eu-central-1:203001061592:function:PRE-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:PRE-3DPointCloudObjectDetection</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:PRE-3DPointCloudObjectDetection</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-3DPointCloudObjectDetection</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:ap-south-1:565803892007:function:PRE-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:PRE-3DPointCloudObjectDetection</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-3DPointCloudObjectDetection</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-3DPointCloudObjectDetection</code>
+     * </p> </li> </ul> <p> <b>3D Point Cloud Object Tracking</b> - Use this task type
+     * when you want workers to draw 3D cuboids around objects that appear in a
+     * sequence of 3D point cloud frames. For example, you can use this task type to
+     * ask workers to track the movement of vehicles across multiple point cloud
+     * frames. </p> <ul> <li> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:PRE-3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:PRE-3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:PRE-3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-3DPointCloudObjectTracking</code>
+     * </p> </li> </ul> <p> <b>3D Point Cloud Semantic Segmentation</b> - Use this task
+     * type when you want workers to create a point-level semantic segmentation masks
+     * by painting objects in a 3D point cloud using different colors where each color
+     * is assigned to one of the classes you specify.</p> <ul> <li> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:PRE-3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:PRE-3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:PRE-3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-3DPointCloudSemanticSegmentation</code>
+     * </p> </li> </ul> <p> <b>Use the following ARNs for Label Verification and
+     * Adjustment Jobs</b> </p> <p>Use label verification and adjustment jobs to review
+     * and adjust labels. To learn more, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-verification-data.html">Verify
+     * and Adjust Labels </a>.</p> <p> <b>Bounding box verification</b> - Uses a
+     * variant of the Expectation Maximization approach to estimate the true class of
+     * verification judgement for bounding box labels based on annotations from
+     * individual workers.</p> <ul> <li> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-Adjustment3DPointCloudObjectTracking</code>
      * </p> </li> </ul> <p> <b>Bounding box adjustment</b> - Finds the most similar
      * boxes from different workers based on the Jaccard index of the adjusted
      * annotations.</p> <ul> <li> <p>
@@ -421,6 +514,81 @@ namespace Model
      * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-AdjustmentSemanticSegmentation</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-AdjustmentSemanticSegmentation</code>
+     * </p> </li> </ul> <p> <b>3D point cloud object detection adjustment</b> - Adjust
+     * 3D cuboids in a point cloud frame. </p> <ul> <li> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-Adjustment3DPointCloudObjectDetection</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-Adjustment3DPointCloudObjectDetection</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-Adjustment3DPointCloudObjectDetection</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-Adjustment3DPointCloudObjectDetection</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-Adjustment3DPointCloudObjectDetection</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-Adjustment3DPointCloudObjectDetection</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:PRE-Adjustment3DPointCloudObjectDetection</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:PRE-Adjustment3DPointCloudObjectDetection</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-Adjustment3DPointCloudObjectDetection</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:PRE-Adjustment3DPointCloudObjectDetection</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-Adjustment3DPointCloudObjectDetection</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-Adjustment3DPointCloudObjectDetection</code>
+     * </p> </li> </ul> <p> <b>3D point cloud object tracking adjustment</b> - Adjust
+     * 3D cuboids across a sequence of point cloud frames. </p> <ul> <li> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> </ul> <p> <b>3D point cloud semantic segmentation adjustment</b> -
+     * Adjust semantic segmentation masks in a 3D point cloud. </p> <ul> <li> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:PRE-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:PRE-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:PRE-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-Adjustment3DPointCloudSemanticSegmentation</code>
      * </p> </li> </ul>
      */
     inline const Aws::String& GetPreHumanTaskLambdaArn() const{ return m_preHumanTaskLambdaArn; }
@@ -428,11 +596,14 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of a Lambda function that is run before a data
      * object is sent to a human worker. Use this function to provide input to a custom
-     * labeling job.</p> <p>For the built-in bounding box, image classification,
-     * semantic segmentation, and text classification task types, Amazon SageMaker
-     * Ground Truth provides the following Lambda functions:</p> <p> <b>Bounding
-     * box</b> - Finds the most similar boxes from different workers based on the
-     * Jaccard index of the boxes.</p> <ul> <li> <p>
+     * labeling job.</p> <p>For <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-task-types.html">built-in
+     * task types</a>, use one of the following Amazon SageMaker Ground Truth Lambda
+     * function ARNs for <code>PreHumanTaskLambdaArn</code>. For custom labeling
+     * workflows, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-custom-templates-step3.html#sms-custom-templates-step3-prelambda">Pre-annotation
+     * Lambda</a>. </p> <p> <b>Bounding box</b> - Finds the most similar boxes from
+     * different workers based on the Jaccard index of the boxes.</p> <ul> <li> <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-BoundingBox</code> </p>
      * </li> <li> <p>
      * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-BoundingBox</code> </p>
@@ -612,33 +783,123 @@ namespace Model
      * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-NamedEntityRecognition</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-NamedEntityRecognition</code>
-     * </p> </li> </ul> <p> <b>Bounding box verification</b> - Uses a variant of the
-     * Expectation Maximization approach to estimate the true class of verification
-     * judgement for bounding box labels based on annotations from individual
-     * workers.</p> <ul> <li> <p>
-     * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-VerificationBoundingBox</code>
+     * </p> </li> </ul> <p> <b>3D Point Cloud Modalities</b> </p> <p>Use the following
+     * pre-annotation lambdas for 3D point cloud labeling modality tasks. See <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-point-cloud-task-types.html">3D
+     * Point Cloud Task types </a> to learn more. </p> <p> <b>3D Point Cloud Object
+     * Detection</b> - Use this task type when you want workers to classify objects in
+     * a 3D point cloud by drawing 3D cuboids around objects. For example, you can use
+     * this task type to ask workers to identify different types of objects in a point
+     * cloud, such as cars, bikes, and pedestrians.</p> <ul> <li> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-3DPointCloudObjectDetection</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-3DPointCloudObjectDetection</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-3DPointCloudObjectDetection</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-3DPointCloudObjectDetection</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-3DPointCloudObjectDetection</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:eu-west-2:487402164563:function:PRE-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-3DPointCloudObjectDetection</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:eu-central-1:203001061592:function:PRE-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:PRE-3DPointCloudObjectDetection</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:PRE-3DPointCloudObjectDetection</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-3DPointCloudObjectDetection</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:ap-south-1:565803892007:function:PRE-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:PRE-3DPointCloudObjectDetection</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-3DPointCloudObjectDetection</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-3DPointCloudObjectDetection</code>
+     * </p> </li> </ul> <p> <b>3D Point Cloud Object Tracking</b> - Use this task type
+     * when you want workers to draw 3D cuboids around objects that appear in a
+     * sequence of 3D point cloud frames. For example, you can use this task type to
+     * ask workers to track the movement of vehicles across multiple point cloud
+     * frames. </p> <ul> <li> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:PRE-3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:PRE-3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:PRE-3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-3DPointCloudObjectTracking</code>
+     * </p> </li> </ul> <p> <b>3D Point Cloud Semantic Segmentation</b> - Use this task
+     * type when you want workers to create a point-level semantic segmentation masks
+     * by painting objects in a 3D point cloud using different colors where each color
+     * is assigned to one of the classes you specify.</p> <ul> <li> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:PRE-3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:PRE-3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:PRE-3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-3DPointCloudSemanticSegmentation</code>
+     * </p> </li> </ul> <p> <b>Use the following ARNs for Label Verification and
+     * Adjustment Jobs</b> </p> <p>Use label verification and adjustment jobs to review
+     * and adjust labels. To learn more, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-verification-data.html">Verify
+     * and Adjust Labels </a>.</p> <p> <b>Bounding box verification</b> - Uses a
+     * variant of the Expectation Maximization approach to estimate the true class of
+     * verification judgement for bounding box labels based on annotations from
+     * individual workers.</p> <ul> <li> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-Adjustment3DPointCloudObjectTracking</code>
      * </p> </li> </ul> <p> <b>Bounding box adjustment</b> - Finds the most similar
      * boxes from different workers based on the Jaccard index of the adjusted
      * annotations.</p> <ul> <li> <p>
@@ -718,6 +979,81 @@ namespace Model
      * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-AdjustmentSemanticSegmentation</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-AdjustmentSemanticSegmentation</code>
+     * </p> </li> </ul> <p> <b>3D point cloud object detection adjustment</b> - Adjust
+     * 3D cuboids in a point cloud frame. </p> <ul> <li> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-Adjustment3DPointCloudObjectDetection</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-Adjustment3DPointCloudObjectDetection</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-Adjustment3DPointCloudObjectDetection</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-Adjustment3DPointCloudObjectDetection</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-Adjustment3DPointCloudObjectDetection</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-Adjustment3DPointCloudObjectDetection</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:PRE-Adjustment3DPointCloudObjectDetection</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:PRE-Adjustment3DPointCloudObjectDetection</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-Adjustment3DPointCloudObjectDetection</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:PRE-Adjustment3DPointCloudObjectDetection</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-Adjustment3DPointCloudObjectDetection</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-Adjustment3DPointCloudObjectDetection</code>
+     * </p> </li> </ul> <p> <b>3D point cloud object tracking adjustment</b> - Adjust
+     * 3D cuboids across a sequence of point cloud frames. </p> <ul> <li> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> </ul> <p> <b>3D point cloud semantic segmentation adjustment</b> -
+     * Adjust semantic segmentation masks in a 3D point cloud. </p> <ul> <li> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:PRE-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:PRE-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:PRE-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-Adjustment3DPointCloudSemanticSegmentation</code>
      * </p> </li> </ul>
      */
     inline bool PreHumanTaskLambdaArnHasBeenSet() const { return m_preHumanTaskLambdaArnHasBeenSet; }
@@ -725,11 +1061,14 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of a Lambda function that is run before a data
      * object is sent to a human worker. Use this function to provide input to a custom
-     * labeling job.</p> <p>For the built-in bounding box, image classification,
-     * semantic segmentation, and text classification task types, Amazon SageMaker
-     * Ground Truth provides the following Lambda functions:</p> <p> <b>Bounding
-     * box</b> - Finds the most similar boxes from different workers based on the
-     * Jaccard index of the boxes.</p> <ul> <li> <p>
+     * labeling job.</p> <p>For <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-task-types.html">built-in
+     * task types</a>, use one of the following Amazon SageMaker Ground Truth Lambda
+     * function ARNs for <code>PreHumanTaskLambdaArn</code>. For custom labeling
+     * workflows, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-custom-templates-step3.html#sms-custom-templates-step3-prelambda">Pre-annotation
+     * Lambda</a>. </p> <p> <b>Bounding box</b> - Finds the most similar boxes from
+     * different workers based on the Jaccard index of the boxes.</p> <ul> <li> <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-BoundingBox</code> </p>
      * </li> <li> <p>
      * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-BoundingBox</code> </p>
@@ -909,33 +1248,123 @@ namespace Model
      * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-NamedEntityRecognition</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-NamedEntityRecognition</code>
-     * </p> </li> </ul> <p> <b>Bounding box verification</b> - Uses a variant of the
-     * Expectation Maximization approach to estimate the true class of verification
-     * judgement for bounding box labels based on annotations from individual
-     * workers.</p> <ul> <li> <p>
-     * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-VerificationBoundingBox</code>
+     * </p> </li> </ul> <p> <b>3D Point Cloud Modalities</b> </p> <p>Use the following
+     * pre-annotation lambdas for 3D point cloud labeling modality tasks. See <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-point-cloud-task-types.html">3D
+     * Point Cloud Task types </a> to learn more. </p> <p> <b>3D Point Cloud Object
+     * Detection</b> - Use this task type when you want workers to classify objects in
+     * a 3D point cloud by drawing 3D cuboids around objects. For example, you can use
+     * this task type to ask workers to identify different types of objects in a point
+     * cloud, such as cars, bikes, and pedestrians.</p> <ul> <li> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-3DPointCloudObjectDetection</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-3DPointCloudObjectDetection</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-3DPointCloudObjectDetection</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-3DPointCloudObjectDetection</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-3DPointCloudObjectDetection</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:eu-west-2:487402164563:function:PRE-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-3DPointCloudObjectDetection</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:eu-central-1:203001061592:function:PRE-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:PRE-3DPointCloudObjectDetection</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:PRE-3DPointCloudObjectDetection</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-3DPointCloudObjectDetection</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:ap-south-1:565803892007:function:PRE-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:PRE-3DPointCloudObjectDetection</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-3DPointCloudObjectDetection</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-3DPointCloudObjectDetection</code>
+     * </p> </li> </ul> <p> <b>3D Point Cloud Object Tracking</b> - Use this task type
+     * when you want workers to draw 3D cuboids around objects that appear in a
+     * sequence of 3D point cloud frames. For example, you can use this task type to
+     * ask workers to track the movement of vehicles across multiple point cloud
+     * frames. </p> <ul> <li> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:PRE-3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:PRE-3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:PRE-3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-3DPointCloudObjectTracking</code>
+     * </p> </li> </ul> <p> <b>3D Point Cloud Semantic Segmentation</b> - Use this task
+     * type when you want workers to create a point-level semantic segmentation masks
+     * by painting objects in a 3D point cloud using different colors where each color
+     * is assigned to one of the classes you specify.</p> <ul> <li> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:PRE-3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:PRE-3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:PRE-3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-3DPointCloudSemanticSegmentation</code>
+     * </p> </li> </ul> <p> <b>Use the following ARNs for Label Verification and
+     * Adjustment Jobs</b> </p> <p>Use label verification and adjustment jobs to review
+     * and adjust labels. To learn more, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-verification-data.html">Verify
+     * and Adjust Labels </a>.</p> <p> <b>Bounding box verification</b> - Uses a
+     * variant of the Expectation Maximization approach to estimate the true class of
+     * verification judgement for bounding box labels based on annotations from
+     * individual workers.</p> <ul> <li> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-Adjustment3DPointCloudObjectTracking</code>
      * </p> </li> </ul> <p> <b>Bounding box adjustment</b> - Finds the most similar
      * boxes from different workers based on the Jaccard index of the adjusted
      * annotations.</p> <ul> <li> <p>
@@ -1015,6 +1444,81 @@ namespace Model
      * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-AdjustmentSemanticSegmentation</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-AdjustmentSemanticSegmentation</code>
+     * </p> </li> </ul> <p> <b>3D point cloud object detection adjustment</b> - Adjust
+     * 3D cuboids in a point cloud frame. </p> <ul> <li> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-Adjustment3DPointCloudObjectDetection</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-Adjustment3DPointCloudObjectDetection</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-Adjustment3DPointCloudObjectDetection</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-Adjustment3DPointCloudObjectDetection</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-Adjustment3DPointCloudObjectDetection</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-Adjustment3DPointCloudObjectDetection</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:PRE-Adjustment3DPointCloudObjectDetection</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:PRE-Adjustment3DPointCloudObjectDetection</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-Adjustment3DPointCloudObjectDetection</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:PRE-Adjustment3DPointCloudObjectDetection</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-Adjustment3DPointCloudObjectDetection</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-Adjustment3DPointCloudObjectDetection</code>
+     * </p> </li> </ul> <p> <b>3D point cloud object tracking adjustment</b> - Adjust
+     * 3D cuboids across a sequence of point cloud frames. </p> <ul> <li> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> </ul> <p> <b>3D point cloud semantic segmentation adjustment</b> -
+     * Adjust semantic segmentation masks in a 3D point cloud. </p> <ul> <li> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:PRE-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:PRE-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:PRE-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-Adjustment3DPointCloudSemanticSegmentation</code>
      * </p> </li> </ul>
      */
     inline void SetPreHumanTaskLambdaArn(const Aws::String& value) { m_preHumanTaskLambdaArnHasBeenSet = true; m_preHumanTaskLambdaArn = value; }
@@ -1022,11 +1526,14 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of a Lambda function that is run before a data
      * object is sent to a human worker. Use this function to provide input to a custom
-     * labeling job.</p> <p>For the built-in bounding box, image classification,
-     * semantic segmentation, and text classification task types, Amazon SageMaker
-     * Ground Truth provides the following Lambda functions:</p> <p> <b>Bounding
-     * box</b> - Finds the most similar boxes from different workers based on the
-     * Jaccard index of the boxes.</p> <ul> <li> <p>
+     * labeling job.</p> <p>For <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-task-types.html">built-in
+     * task types</a>, use one of the following Amazon SageMaker Ground Truth Lambda
+     * function ARNs for <code>PreHumanTaskLambdaArn</code>. For custom labeling
+     * workflows, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-custom-templates-step3.html#sms-custom-templates-step3-prelambda">Pre-annotation
+     * Lambda</a>. </p> <p> <b>Bounding box</b> - Finds the most similar boxes from
+     * different workers based on the Jaccard index of the boxes.</p> <ul> <li> <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-BoundingBox</code> </p>
      * </li> <li> <p>
      * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-BoundingBox</code> </p>
@@ -1206,33 +1713,123 @@ namespace Model
      * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-NamedEntityRecognition</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-NamedEntityRecognition</code>
-     * </p> </li> </ul> <p> <b>Bounding box verification</b> - Uses a variant of the
-     * Expectation Maximization approach to estimate the true class of verification
-     * judgement for bounding box labels based on annotations from individual
-     * workers.</p> <ul> <li> <p>
-     * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-VerificationBoundingBox</code>
+     * </p> </li> </ul> <p> <b>3D Point Cloud Modalities</b> </p> <p>Use the following
+     * pre-annotation lambdas for 3D point cloud labeling modality tasks. See <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-point-cloud-task-types.html">3D
+     * Point Cloud Task types </a> to learn more. </p> <p> <b>3D Point Cloud Object
+     * Detection</b> - Use this task type when you want workers to classify objects in
+     * a 3D point cloud by drawing 3D cuboids around objects. For example, you can use
+     * this task type to ask workers to identify different types of objects in a point
+     * cloud, such as cars, bikes, and pedestrians.</p> <ul> <li> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-3DPointCloudObjectDetection</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-3DPointCloudObjectDetection</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-3DPointCloudObjectDetection</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-3DPointCloudObjectDetection</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-3DPointCloudObjectDetection</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:eu-west-2:487402164563:function:PRE-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-3DPointCloudObjectDetection</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:eu-central-1:203001061592:function:PRE-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:PRE-3DPointCloudObjectDetection</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:PRE-3DPointCloudObjectDetection</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-3DPointCloudObjectDetection</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:ap-south-1:565803892007:function:PRE-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:PRE-3DPointCloudObjectDetection</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-3DPointCloudObjectDetection</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-3DPointCloudObjectDetection</code>
+     * </p> </li> </ul> <p> <b>3D Point Cloud Object Tracking</b> - Use this task type
+     * when you want workers to draw 3D cuboids around objects that appear in a
+     * sequence of 3D point cloud frames. For example, you can use this task type to
+     * ask workers to track the movement of vehicles across multiple point cloud
+     * frames. </p> <ul> <li> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:PRE-3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:PRE-3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:PRE-3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-3DPointCloudObjectTracking</code>
+     * </p> </li> </ul> <p> <b>3D Point Cloud Semantic Segmentation</b> - Use this task
+     * type when you want workers to create a point-level semantic segmentation masks
+     * by painting objects in a 3D point cloud using different colors where each color
+     * is assigned to one of the classes you specify.</p> <ul> <li> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:PRE-3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:PRE-3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:PRE-3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-3DPointCloudSemanticSegmentation</code>
+     * </p> </li> </ul> <p> <b>Use the following ARNs for Label Verification and
+     * Adjustment Jobs</b> </p> <p>Use label verification and adjustment jobs to review
+     * and adjust labels. To learn more, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-verification-data.html">Verify
+     * and Adjust Labels </a>.</p> <p> <b>Bounding box verification</b> - Uses a
+     * variant of the Expectation Maximization approach to estimate the true class of
+     * verification judgement for bounding box labels based on annotations from
+     * individual workers.</p> <ul> <li> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-Adjustment3DPointCloudObjectTracking</code>
      * </p> </li> </ul> <p> <b>Bounding box adjustment</b> - Finds the most similar
      * boxes from different workers based on the Jaccard index of the adjusted
      * annotations.</p> <ul> <li> <p>
@@ -1312,6 +1909,81 @@ namespace Model
      * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-AdjustmentSemanticSegmentation</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-AdjustmentSemanticSegmentation</code>
+     * </p> </li> </ul> <p> <b>3D point cloud object detection adjustment</b> - Adjust
+     * 3D cuboids in a point cloud frame. </p> <ul> <li> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-Adjustment3DPointCloudObjectDetection</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-Adjustment3DPointCloudObjectDetection</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-Adjustment3DPointCloudObjectDetection</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-Adjustment3DPointCloudObjectDetection</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-Adjustment3DPointCloudObjectDetection</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-Adjustment3DPointCloudObjectDetection</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:PRE-Adjustment3DPointCloudObjectDetection</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:PRE-Adjustment3DPointCloudObjectDetection</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-Adjustment3DPointCloudObjectDetection</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:PRE-Adjustment3DPointCloudObjectDetection</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-Adjustment3DPointCloudObjectDetection</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-Adjustment3DPointCloudObjectDetection</code>
+     * </p> </li> </ul> <p> <b>3D point cloud object tracking adjustment</b> - Adjust
+     * 3D cuboids across a sequence of point cloud frames. </p> <ul> <li> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> </ul> <p> <b>3D point cloud semantic segmentation adjustment</b> -
+     * Adjust semantic segmentation masks in a 3D point cloud. </p> <ul> <li> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:PRE-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:PRE-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:PRE-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-Adjustment3DPointCloudSemanticSegmentation</code>
      * </p> </li> </ul>
      */
     inline void SetPreHumanTaskLambdaArn(Aws::String&& value) { m_preHumanTaskLambdaArnHasBeenSet = true; m_preHumanTaskLambdaArn = std::move(value); }
@@ -1319,11 +1991,14 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of a Lambda function that is run before a data
      * object is sent to a human worker. Use this function to provide input to a custom
-     * labeling job.</p> <p>For the built-in bounding box, image classification,
-     * semantic segmentation, and text classification task types, Amazon SageMaker
-     * Ground Truth provides the following Lambda functions:</p> <p> <b>Bounding
-     * box</b> - Finds the most similar boxes from different workers based on the
-     * Jaccard index of the boxes.</p> <ul> <li> <p>
+     * labeling job.</p> <p>For <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-task-types.html">built-in
+     * task types</a>, use one of the following Amazon SageMaker Ground Truth Lambda
+     * function ARNs for <code>PreHumanTaskLambdaArn</code>. For custom labeling
+     * workflows, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-custom-templates-step3.html#sms-custom-templates-step3-prelambda">Pre-annotation
+     * Lambda</a>. </p> <p> <b>Bounding box</b> - Finds the most similar boxes from
+     * different workers based on the Jaccard index of the boxes.</p> <ul> <li> <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-BoundingBox</code> </p>
      * </li> <li> <p>
      * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-BoundingBox</code> </p>
@@ -1503,33 +2178,123 @@ namespace Model
      * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-NamedEntityRecognition</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-NamedEntityRecognition</code>
-     * </p> </li> </ul> <p> <b>Bounding box verification</b> - Uses a variant of the
-     * Expectation Maximization approach to estimate the true class of verification
-     * judgement for bounding box labels based on annotations from individual
-     * workers.</p> <ul> <li> <p>
-     * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-VerificationBoundingBox</code>
+     * </p> </li> </ul> <p> <b>3D Point Cloud Modalities</b> </p> <p>Use the following
+     * pre-annotation lambdas for 3D point cloud labeling modality tasks. See <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-point-cloud-task-types.html">3D
+     * Point Cloud Task types </a> to learn more. </p> <p> <b>3D Point Cloud Object
+     * Detection</b> - Use this task type when you want workers to classify objects in
+     * a 3D point cloud by drawing 3D cuboids around objects. For example, you can use
+     * this task type to ask workers to identify different types of objects in a point
+     * cloud, such as cars, bikes, and pedestrians.</p> <ul> <li> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-3DPointCloudObjectDetection</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-3DPointCloudObjectDetection</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-3DPointCloudObjectDetection</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-3DPointCloudObjectDetection</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-3DPointCloudObjectDetection</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:eu-west-2:487402164563:function:PRE-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-3DPointCloudObjectDetection</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:eu-central-1:203001061592:function:PRE-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:PRE-3DPointCloudObjectDetection</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:PRE-3DPointCloudObjectDetection</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-3DPointCloudObjectDetection</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:ap-south-1:565803892007:function:PRE-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:PRE-3DPointCloudObjectDetection</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-3DPointCloudObjectDetection</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-3DPointCloudObjectDetection</code>
+     * </p> </li> </ul> <p> <b>3D Point Cloud Object Tracking</b> - Use this task type
+     * when you want workers to draw 3D cuboids around objects that appear in a
+     * sequence of 3D point cloud frames. For example, you can use this task type to
+     * ask workers to track the movement of vehicles across multiple point cloud
+     * frames. </p> <ul> <li> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:PRE-3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:PRE-3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:PRE-3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-3DPointCloudObjectTracking</code>
+     * </p> </li> </ul> <p> <b>3D Point Cloud Semantic Segmentation</b> - Use this task
+     * type when you want workers to create a point-level semantic segmentation masks
+     * by painting objects in a 3D point cloud using different colors where each color
+     * is assigned to one of the classes you specify.</p> <ul> <li> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:PRE-3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:PRE-3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:PRE-3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-3DPointCloudSemanticSegmentation</code>
+     * </p> </li> </ul> <p> <b>Use the following ARNs for Label Verification and
+     * Adjustment Jobs</b> </p> <p>Use label verification and adjustment jobs to review
+     * and adjust labels. To learn more, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-verification-data.html">Verify
+     * and Adjust Labels </a>.</p> <p> <b>Bounding box verification</b> - Uses a
+     * variant of the Expectation Maximization approach to estimate the true class of
+     * verification judgement for bounding box labels based on annotations from
+     * individual workers.</p> <ul> <li> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-Adjustment3DPointCloudObjectTracking</code>
      * </p> </li> </ul> <p> <b>Bounding box adjustment</b> - Finds the most similar
      * boxes from different workers based on the Jaccard index of the adjusted
      * annotations.</p> <ul> <li> <p>
@@ -1609,6 +2374,81 @@ namespace Model
      * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-AdjustmentSemanticSegmentation</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-AdjustmentSemanticSegmentation</code>
+     * </p> </li> </ul> <p> <b>3D point cloud object detection adjustment</b> - Adjust
+     * 3D cuboids in a point cloud frame. </p> <ul> <li> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-Adjustment3DPointCloudObjectDetection</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-Adjustment3DPointCloudObjectDetection</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-Adjustment3DPointCloudObjectDetection</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-Adjustment3DPointCloudObjectDetection</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-Adjustment3DPointCloudObjectDetection</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-Adjustment3DPointCloudObjectDetection</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:PRE-Adjustment3DPointCloudObjectDetection</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:PRE-Adjustment3DPointCloudObjectDetection</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-Adjustment3DPointCloudObjectDetection</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:PRE-Adjustment3DPointCloudObjectDetection</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-Adjustment3DPointCloudObjectDetection</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-Adjustment3DPointCloudObjectDetection</code>
+     * </p> </li> </ul> <p> <b>3D point cloud object tracking adjustment</b> - Adjust
+     * 3D cuboids across a sequence of point cloud frames. </p> <ul> <li> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> </ul> <p> <b>3D point cloud semantic segmentation adjustment</b> -
+     * Adjust semantic segmentation masks in a 3D point cloud. </p> <ul> <li> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:PRE-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:PRE-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:PRE-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-Adjustment3DPointCloudSemanticSegmentation</code>
      * </p> </li> </ul>
      */
     inline void SetPreHumanTaskLambdaArn(const char* value) { m_preHumanTaskLambdaArnHasBeenSet = true; m_preHumanTaskLambdaArn.assign(value); }
@@ -1616,11 +2456,14 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of a Lambda function that is run before a data
      * object is sent to a human worker. Use this function to provide input to a custom
-     * labeling job.</p> <p>For the built-in bounding box, image classification,
-     * semantic segmentation, and text classification task types, Amazon SageMaker
-     * Ground Truth provides the following Lambda functions:</p> <p> <b>Bounding
-     * box</b> - Finds the most similar boxes from different workers based on the
-     * Jaccard index of the boxes.</p> <ul> <li> <p>
+     * labeling job.</p> <p>For <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-task-types.html">built-in
+     * task types</a>, use one of the following Amazon SageMaker Ground Truth Lambda
+     * function ARNs for <code>PreHumanTaskLambdaArn</code>. For custom labeling
+     * workflows, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-custom-templates-step3.html#sms-custom-templates-step3-prelambda">Pre-annotation
+     * Lambda</a>. </p> <p> <b>Bounding box</b> - Finds the most similar boxes from
+     * different workers based on the Jaccard index of the boxes.</p> <ul> <li> <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-BoundingBox</code> </p>
      * </li> <li> <p>
      * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-BoundingBox</code> </p>
@@ -1800,33 +2643,123 @@ namespace Model
      * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-NamedEntityRecognition</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-NamedEntityRecognition</code>
-     * </p> </li> </ul> <p> <b>Bounding box verification</b> - Uses a variant of the
-     * Expectation Maximization approach to estimate the true class of verification
-     * judgement for bounding box labels based on annotations from individual
-     * workers.</p> <ul> <li> <p>
-     * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-VerificationBoundingBox</code>
+     * </p> </li> </ul> <p> <b>3D Point Cloud Modalities</b> </p> <p>Use the following
+     * pre-annotation lambdas for 3D point cloud labeling modality tasks. See <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-point-cloud-task-types.html">3D
+     * Point Cloud Task types </a> to learn more. </p> <p> <b>3D Point Cloud Object
+     * Detection</b> - Use this task type when you want workers to classify objects in
+     * a 3D point cloud by drawing 3D cuboids around objects. For example, you can use
+     * this task type to ask workers to identify different types of objects in a point
+     * cloud, such as cars, bikes, and pedestrians.</p> <ul> <li> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-3DPointCloudObjectDetection</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-3DPointCloudObjectDetection</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-3DPointCloudObjectDetection</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-3DPointCloudObjectDetection</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-3DPointCloudObjectDetection</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:eu-west-2:487402164563:function:PRE-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-3DPointCloudObjectDetection</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:eu-central-1:203001061592:function:PRE-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:PRE-3DPointCloudObjectDetection</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:PRE-3DPointCloudObjectDetection</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-3DPointCloudObjectDetection</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:ap-south-1:565803892007:function:PRE-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:PRE-3DPointCloudObjectDetection</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-3DPointCloudObjectDetection</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-3DPointCloudObjectDetection</code>
+     * </p> </li> </ul> <p> <b>3D Point Cloud Object Tracking</b> - Use this task type
+     * when you want workers to draw 3D cuboids around objects that appear in a
+     * sequence of 3D point cloud frames. For example, you can use this task type to
+     * ask workers to track the movement of vehicles across multiple point cloud
+     * frames. </p> <ul> <li> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:PRE-3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:PRE-3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:PRE-3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-3DPointCloudObjectTracking</code>
+     * </p> </li> </ul> <p> <b>3D Point Cloud Semantic Segmentation</b> - Use this task
+     * type when you want workers to create a point-level semantic segmentation masks
+     * by painting objects in a 3D point cloud using different colors where each color
+     * is assigned to one of the classes you specify.</p> <ul> <li> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:PRE-3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:PRE-3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:PRE-3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-3DPointCloudSemanticSegmentation</code>
+     * </p> </li> </ul> <p> <b>Use the following ARNs for Label Verification and
+     * Adjustment Jobs</b> </p> <p>Use label verification and adjustment jobs to review
+     * and adjust labels. To learn more, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-verification-data.html">Verify
+     * and Adjust Labels </a>.</p> <p> <b>Bounding box verification</b> - Uses a
+     * variant of the Expectation Maximization approach to estimate the true class of
+     * verification judgement for bounding box labels based on annotations from
+     * individual workers.</p> <ul> <li> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-Adjustment3DPointCloudObjectTracking</code>
      * </p> </li> </ul> <p> <b>Bounding box adjustment</b> - Finds the most similar
      * boxes from different workers based on the Jaccard index of the adjusted
      * annotations.</p> <ul> <li> <p>
@@ -1906,6 +2839,81 @@ namespace Model
      * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-AdjustmentSemanticSegmentation</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-AdjustmentSemanticSegmentation</code>
+     * </p> </li> </ul> <p> <b>3D point cloud object detection adjustment</b> - Adjust
+     * 3D cuboids in a point cloud frame. </p> <ul> <li> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-Adjustment3DPointCloudObjectDetection</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-Adjustment3DPointCloudObjectDetection</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-Adjustment3DPointCloudObjectDetection</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-Adjustment3DPointCloudObjectDetection</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-Adjustment3DPointCloudObjectDetection</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-Adjustment3DPointCloudObjectDetection</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:PRE-Adjustment3DPointCloudObjectDetection</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:PRE-Adjustment3DPointCloudObjectDetection</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-Adjustment3DPointCloudObjectDetection</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:PRE-Adjustment3DPointCloudObjectDetection</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-Adjustment3DPointCloudObjectDetection</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-Adjustment3DPointCloudObjectDetection</code>
+     * </p> </li> </ul> <p> <b>3D point cloud object tracking adjustment</b> - Adjust
+     * 3D cuboids across a sequence of point cloud frames. </p> <ul> <li> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> </ul> <p> <b>3D point cloud semantic segmentation adjustment</b> -
+     * Adjust semantic segmentation masks in a 3D point cloud. </p> <ul> <li> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:PRE-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:PRE-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:PRE-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-Adjustment3DPointCloudSemanticSegmentation</code>
      * </p> </li> </ul>
      */
     inline HumanTaskConfig& WithPreHumanTaskLambdaArn(const Aws::String& value) { SetPreHumanTaskLambdaArn(value); return *this;}
@@ -1913,11 +2921,14 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of a Lambda function that is run before a data
      * object is sent to a human worker. Use this function to provide input to a custom
-     * labeling job.</p> <p>For the built-in bounding box, image classification,
-     * semantic segmentation, and text classification task types, Amazon SageMaker
-     * Ground Truth provides the following Lambda functions:</p> <p> <b>Bounding
-     * box</b> - Finds the most similar boxes from different workers based on the
-     * Jaccard index of the boxes.</p> <ul> <li> <p>
+     * labeling job.</p> <p>For <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-task-types.html">built-in
+     * task types</a>, use one of the following Amazon SageMaker Ground Truth Lambda
+     * function ARNs for <code>PreHumanTaskLambdaArn</code>. For custom labeling
+     * workflows, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-custom-templates-step3.html#sms-custom-templates-step3-prelambda">Pre-annotation
+     * Lambda</a>. </p> <p> <b>Bounding box</b> - Finds the most similar boxes from
+     * different workers based on the Jaccard index of the boxes.</p> <ul> <li> <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-BoundingBox</code> </p>
      * </li> <li> <p>
      * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-BoundingBox</code> </p>
@@ -2097,33 +3108,123 @@ namespace Model
      * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-NamedEntityRecognition</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-NamedEntityRecognition</code>
-     * </p> </li> </ul> <p> <b>Bounding box verification</b> - Uses a variant of the
-     * Expectation Maximization approach to estimate the true class of verification
-     * judgement for bounding box labels based on annotations from individual
-     * workers.</p> <ul> <li> <p>
-     * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-VerificationBoundingBox</code>
+     * </p> </li> </ul> <p> <b>3D Point Cloud Modalities</b> </p> <p>Use the following
+     * pre-annotation lambdas for 3D point cloud labeling modality tasks. See <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-point-cloud-task-types.html">3D
+     * Point Cloud Task types </a> to learn more. </p> <p> <b>3D Point Cloud Object
+     * Detection</b> - Use this task type when you want workers to classify objects in
+     * a 3D point cloud by drawing 3D cuboids around objects. For example, you can use
+     * this task type to ask workers to identify different types of objects in a point
+     * cloud, such as cars, bikes, and pedestrians.</p> <ul> <li> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-3DPointCloudObjectDetection</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-3DPointCloudObjectDetection</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-3DPointCloudObjectDetection</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-3DPointCloudObjectDetection</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-3DPointCloudObjectDetection</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:eu-west-2:487402164563:function:PRE-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-3DPointCloudObjectDetection</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:eu-central-1:203001061592:function:PRE-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:PRE-3DPointCloudObjectDetection</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:PRE-3DPointCloudObjectDetection</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-3DPointCloudObjectDetection</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:ap-south-1:565803892007:function:PRE-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:PRE-3DPointCloudObjectDetection</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-3DPointCloudObjectDetection</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-3DPointCloudObjectDetection</code>
+     * </p> </li> </ul> <p> <b>3D Point Cloud Object Tracking</b> - Use this task type
+     * when you want workers to draw 3D cuboids around objects that appear in a
+     * sequence of 3D point cloud frames. For example, you can use this task type to
+     * ask workers to track the movement of vehicles across multiple point cloud
+     * frames. </p> <ul> <li> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:PRE-3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:PRE-3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:PRE-3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-3DPointCloudObjectTracking</code>
+     * </p> </li> </ul> <p> <b>3D Point Cloud Semantic Segmentation</b> - Use this task
+     * type when you want workers to create a point-level semantic segmentation masks
+     * by painting objects in a 3D point cloud using different colors where each color
+     * is assigned to one of the classes you specify.</p> <ul> <li> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:PRE-3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:PRE-3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:PRE-3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-3DPointCloudSemanticSegmentation</code>
+     * </p> </li> </ul> <p> <b>Use the following ARNs for Label Verification and
+     * Adjustment Jobs</b> </p> <p>Use label verification and adjustment jobs to review
+     * and adjust labels. To learn more, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-verification-data.html">Verify
+     * and Adjust Labels </a>.</p> <p> <b>Bounding box verification</b> - Uses a
+     * variant of the Expectation Maximization approach to estimate the true class of
+     * verification judgement for bounding box labels based on annotations from
+     * individual workers.</p> <ul> <li> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-Adjustment3DPointCloudObjectTracking</code>
      * </p> </li> </ul> <p> <b>Bounding box adjustment</b> - Finds the most similar
      * boxes from different workers based on the Jaccard index of the adjusted
      * annotations.</p> <ul> <li> <p>
@@ -2203,6 +3304,81 @@ namespace Model
      * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-AdjustmentSemanticSegmentation</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-AdjustmentSemanticSegmentation</code>
+     * </p> </li> </ul> <p> <b>3D point cloud object detection adjustment</b> - Adjust
+     * 3D cuboids in a point cloud frame. </p> <ul> <li> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-Adjustment3DPointCloudObjectDetection</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-Adjustment3DPointCloudObjectDetection</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-Adjustment3DPointCloudObjectDetection</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-Adjustment3DPointCloudObjectDetection</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-Adjustment3DPointCloudObjectDetection</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-Adjustment3DPointCloudObjectDetection</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:PRE-Adjustment3DPointCloudObjectDetection</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:PRE-Adjustment3DPointCloudObjectDetection</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-Adjustment3DPointCloudObjectDetection</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:PRE-Adjustment3DPointCloudObjectDetection</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-Adjustment3DPointCloudObjectDetection</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-Adjustment3DPointCloudObjectDetection</code>
+     * </p> </li> </ul> <p> <b>3D point cloud object tracking adjustment</b> - Adjust
+     * 3D cuboids across a sequence of point cloud frames. </p> <ul> <li> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> </ul> <p> <b>3D point cloud semantic segmentation adjustment</b> -
+     * Adjust semantic segmentation masks in a 3D point cloud. </p> <ul> <li> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:PRE-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:PRE-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:PRE-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-Adjustment3DPointCloudSemanticSegmentation</code>
      * </p> </li> </ul>
      */
     inline HumanTaskConfig& WithPreHumanTaskLambdaArn(Aws::String&& value) { SetPreHumanTaskLambdaArn(std::move(value)); return *this;}
@@ -2210,11 +3386,14 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of a Lambda function that is run before a data
      * object is sent to a human worker. Use this function to provide input to a custom
-     * labeling job.</p> <p>For the built-in bounding box, image classification,
-     * semantic segmentation, and text classification task types, Amazon SageMaker
-     * Ground Truth provides the following Lambda functions:</p> <p> <b>Bounding
-     * box</b> - Finds the most similar boxes from different workers based on the
-     * Jaccard index of the boxes.</p> <ul> <li> <p>
+     * labeling job.</p> <p>For <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-task-types.html">built-in
+     * task types</a>, use one of the following Amazon SageMaker Ground Truth Lambda
+     * function ARNs for <code>PreHumanTaskLambdaArn</code>. For custom labeling
+     * workflows, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-custom-templates-step3.html#sms-custom-templates-step3-prelambda">Pre-annotation
+     * Lambda</a>. </p> <p> <b>Bounding box</b> - Finds the most similar boxes from
+     * different workers based on the Jaccard index of the boxes.</p> <ul> <li> <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-BoundingBox</code> </p>
      * </li> <li> <p>
      * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-BoundingBox</code> </p>
@@ -2394,33 +3573,123 @@ namespace Model
      * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-NamedEntityRecognition</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-NamedEntityRecognition</code>
-     * </p> </li> </ul> <p> <b>Bounding box verification</b> - Uses a variant of the
-     * Expectation Maximization approach to estimate the true class of verification
-     * judgement for bounding box labels based on annotations from individual
-     * workers.</p> <ul> <li> <p>
-     * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-VerificationBoundingBox</code>
+     * </p> </li> </ul> <p> <b>3D Point Cloud Modalities</b> </p> <p>Use the following
+     * pre-annotation lambdas for 3D point cloud labeling modality tasks. See <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-point-cloud-task-types.html">3D
+     * Point Cloud Task types </a> to learn more. </p> <p> <b>3D Point Cloud Object
+     * Detection</b> - Use this task type when you want workers to classify objects in
+     * a 3D point cloud by drawing 3D cuboids around objects. For example, you can use
+     * this task type to ask workers to identify different types of objects in a point
+     * cloud, such as cars, bikes, and pedestrians.</p> <ul> <li> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-3DPointCloudObjectDetection</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-3DPointCloudObjectDetection</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-3DPointCloudObjectDetection</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-3DPointCloudObjectDetection</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-3DPointCloudObjectDetection</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:eu-west-2:487402164563:function:PRE-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-3DPointCloudObjectDetection</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:eu-central-1:203001061592:function:PRE-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:PRE-3DPointCloudObjectDetection</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:PRE-3DPointCloudObjectDetection</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-3DPointCloudObjectDetection</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:ap-south-1:565803892007:function:PRE-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:PRE-3DPointCloudObjectDetection</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-3DPointCloudObjectDetection</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-3DPointCloudObjectDetection</code>
+     * </p> </li> </ul> <p> <b>3D Point Cloud Object Tracking</b> - Use this task type
+     * when you want workers to draw 3D cuboids around objects that appear in a
+     * sequence of 3D point cloud frames. For example, you can use this task type to
+     * ask workers to track the movement of vehicles across multiple point cloud
+     * frames. </p> <ul> <li> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:PRE-3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:PRE-3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:PRE-3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-3DPointCloudObjectTracking</code>
+     * </p> </li> </ul> <p> <b>3D Point Cloud Semantic Segmentation</b> - Use this task
+     * type when you want workers to create a point-level semantic segmentation masks
+     * by painting objects in a 3D point cloud using different colors where each color
+     * is assigned to one of the classes you specify.</p> <ul> <li> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:PRE-3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:PRE-3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:PRE-3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-3DPointCloudSemanticSegmentation</code>
+     * </p> </li> </ul> <p> <b>Use the following ARNs for Label Verification and
+     * Adjustment Jobs</b> </p> <p>Use label verification and adjustment jobs to review
+     * and adjust labels. To learn more, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-verification-data.html">Verify
+     * and Adjust Labels </a>.</p> <p> <b>Bounding box verification</b> - Uses a
+     * variant of the Expectation Maximization approach to estimate the true class of
+     * verification judgement for bounding box labels based on annotations from
+     * individual workers.</p> <ul> <li> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-Adjustment3DPointCloudObjectTracking</code>
      * </p> </li> </ul> <p> <b>Bounding box adjustment</b> - Finds the most similar
      * boxes from different workers based on the Jaccard index of the adjusted
      * annotations.</p> <ul> <li> <p>
@@ -2500,6 +3769,81 @@ namespace Model
      * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-AdjustmentSemanticSegmentation</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-AdjustmentSemanticSegmentation</code>
+     * </p> </li> </ul> <p> <b>3D point cloud object detection adjustment</b> - Adjust
+     * 3D cuboids in a point cloud frame. </p> <ul> <li> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-Adjustment3DPointCloudObjectDetection</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-Adjustment3DPointCloudObjectDetection</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-Adjustment3DPointCloudObjectDetection</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-Adjustment3DPointCloudObjectDetection</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-Adjustment3DPointCloudObjectDetection</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-Adjustment3DPointCloudObjectDetection</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:PRE-Adjustment3DPointCloudObjectDetection</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:PRE-Adjustment3DPointCloudObjectDetection</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-Adjustment3DPointCloudObjectDetection</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:PRE-Adjustment3DPointCloudObjectDetection</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-Adjustment3DPointCloudObjectDetection</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-Adjustment3DPointCloudObjectDetection</code>
+     * </p> </li> </ul> <p> <b>3D point cloud object tracking adjustment</b> - Adjust
+     * 3D cuboids across a sequence of point cloud frames. </p> <ul> <li> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> </ul> <p> <b>3D point cloud semantic segmentation adjustment</b> -
+     * Adjust semantic segmentation masks in a 3D point cloud. </p> <ul> <li> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:PRE-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:PRE-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:PRE-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-Adjustment3DPointCloudSemanticSegmentation</code>
      * </p> </li> </ul>
      */
     inline HumanTaskConfig& WithPreHumanTaskLambdaArn(const char* value) { SetPreHumanTaskLambdaArn(value); return *this;}

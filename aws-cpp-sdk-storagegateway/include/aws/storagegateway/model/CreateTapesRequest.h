@@ -97,26 +97,26 @@ namespace Model
 
 
     /**
-     * <p>The size, in bytes, of the virtual tapes that you want to create.</p> <note>
-     * <p>The size must be aligned by gigabyte (1024*1024*1024 bytes).</p> </note>
+     * <p>The size, in bytes, of the virtual tapes that you want to create.</p> 
+     * <p>The size must be aligned by gigabyte (1024*1024*1024 bytes).</p> 
      */
     inline long long GetTapeSizeInBytes() const{ return m_tapeSizeInBytes; }
 
     /**
-     * <p>The size, in bytes, of the virtual tapes that you want to create.</p> <note>
-     * <p>The size must be aligned by gigabyte (1024*1024*1024 bytes).</p> </note>
+     * <p>The size, in bytes, of the virtual tapes that you want to create.</p> 
+     * <p>The size must be aligned by gigabyte (1024*1024*1024 bytes).</p> 
      */
     inline bool TapeSizeInBytesHasBeenSet() const { return m_tapeSizeInBytesHasBeenSet; }
 
     /**
-     * <p>The size, in bytes, of the virtual tapes that you want to create.</p> <note>
-     * <p>The size must be aligned by gigabyte (1024*1024*1024 bytes).</p> </note>
+     * <p>The size, in bytes, of the virtual tapes that you want to create.</p> 
+     * <p>The size must be aligned by gigabyte (1024*1024*1024 bytes).</p> 
      */
     inline void SetTapeSizeInBytes(long long value) { m_tapeSizeInBytesHasBeenSet = true; m_tapeSizeInBytes = value; }
 
     /**
-     * <p>The size, in bytes, of the virtual tapes that you want to create.</p> <note>
-     * <p>The size must be aligned by gigabyte (1024*1024*1024 bytes).</p> </note>
+     * <p>The size, in bytes, of the virtual tapes that you want to create.</p> 
+     * <p>The size must be aligned by gigabyte (1024*1024*1024 bytes).</p> 
      */
     inline CreateTapesRequest& WithTapeSizeInBytes(long long value) { SetTapeSizeInBytes(value); return *this;}
 
@@ -124,64 +124,64 @@ namespace Model
     /**
      * <p>A unique identifier that you use to retry a request. If you retry a request,
      * use the same <code>ClientToken</code> you specified in the initial request.</p>
-     * <note> <p>Using the same <code>ClientToken</code> prevents creating the tape
-     * multiple times.</p> </note>
+     *  <p>Using the same <code>ClientToken</code> prevents creating the tape
+     * multiple times.</p> 
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
 
     /**
      * <p>A unique identifier that you use to retry a request. If you retry a request,
      * use the same <code>ClientToken</code> you specified in the initial request.</p>
-     * <note> <p>Using the same <code>ClientToken</code> prevents creating the tape
-     * multiple times.</p> </note>
+     *  <p>Using the same <code>ClientToken</code> prevents creating the tape
+     * multiple times.</p> 
      */
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
 
     /**
      * <p>A unique identifier that you use to retry a request. If you retry a request,
      * use the same <code>ClientToken</code> you specified in the initial request.</p>
-     * <note> <p>Using the same <code>ClientToken</code> prevents creating the tape
-     * multiple times.</p> </note>
+     *  <p>Using the same <code>ClientToken</code> prevents creating the tape
+     * multiple times.</p> 
      */
     inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
 
     /**
      * <p>A unique identifier that you use to retry a request. If you retry a request,
      * use the same <code>ClientToken</code> you specified in the initial request.</p>
-     * <note> <p>Using the same <code>ClientToken</code> prevents creating the tape
-     * multiple times.</p> </note>
+     *  <p>Using the same <code>ClientToken</code> prevents creating the tape
+     * multiple times.</p> 
      */
     inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
 
     /**
      * <p>A unique identifier that you use to retry a request. If you retry a request,
      * use the same <code>ClientToken</code> you specified in the initial request.</p>
-     * <note> <p>Using the same <code>ClientToken</code> prevents creating the tape
-     * multiple times.</p> </note>
+     *  <p>Using the same <code>ClientToken</code> prevents creating the tape
+     * multiple times.</p> 
      */
     inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
 
     /**
      * <p>A unique identifier that you use to retry a request. If you retry a request,
      * use the same <code>ClientToken</code> you specified in the initial request.</p>
-     * <note> <p>Using the same <code>ClientToken</code> prevents creating the tape
-     * multiple times.</p> </note>
+     *  <p>Using the same <code>ClientToken</code> prevents creating the tape
+     * multiple times.</p> 
      */
     inline CreateTapesRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
 
     /**
      * <p>A unique identifier that you use to retry a request. If you retry a request,
      * use the same <code>ClientToken</code> you specified in the initial request.</p>
-     * <note> <p>Using the same <code>ClientToken</code> prevents creating the tape
-     * multiple times.</p> </note>
+     *  <p>Using the same <code>ClientToken</code> prevents creating the tape
+     * multiple times.</p> 
      */
     inline CreateTapesRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
 
     /**
      * <p>A unique identifier that you use to retry a request. If you retry a request,
      * use the same <code>ClientToken</code> you specified in the initial request.</p>
-     * <note> <p>Using the same <code>ClientToken</code> prevents creating the tape
-     * multiple times.</p> </note>
+     *  <p>Using the same <code>ClientToken</code> prevents creating the tape
+     * multiple times.</p> 
      */
     inline CreateTapesRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 
@@ -209,65 +209,65 @@ namespace Model
 
     /**
      * <p>A prefix that you append to the barcode of the virtual tape you are creating.
-     * This prefix makes the barcode unique.</p> <note> <p>The prefix must be 1 to 4
+     * This prefix makes the barcode unique.</p>  <p>The prefix must be 1 to 4
      * characters in length and must be one of the uppercase letters from A to Z.</p>
-     * </note>
+     * 
      */
     inline const Aws::String& GetTapeBarcodePrefix() const{ return m_tapeBarcodePrefix; }
 
     /**
      * <p>A prefix that you append to the barcode of the virtual tape you are creating.
-     * This prefix makes the barcode unique.</p> <note> <p>The prefix must be 1 to 4
+     * This prefix makes the barcode unique.</p>  <p>The prefix must be 1 to 4
      * characters in length and must be one of the uppercase letters from A to Z.</p>
-     * </note>
+     * 
      */
     inline bool TapeBarcodePrefixHasBeenSet() const { return m_tapeBarcodePrefixHasBeenSet; }
 
     /**
      * <p>A prefix that you append to the barcode of the virtual tape you are creating.
-     * This prefix makes the barcode unique.</p> <note> <p>The prefix must be 1 to 4
+     * This prefix makes the barcode unique.</p>  <p>The prefix must be 1 to 4
      * characters in length and must be one of the uppercase letters from A to Z.</p>
-     * </note>
+     * 
      */
     inline void SetTapeBarcodePrefix(const Aws::String& value) { m_tapeBarcodePrefixHasBeenSet = true; m_tapeBarcodePrefix = value; }
 
     /**
      * <p>A prefix that you append to the barcode of the virtual tape you are creating.
-     * This prefix makes the barcode unique.</p> <note> <p>The prefix must be 1 to 4
+     * This prefix makes the barcode unique.</p>  <p>The prefix must be 1 to 4
      * characters in length and must be one of the uppercase letters from A to Z.</p>
-     * </note>
+     * 
      */
     inline void SetTapeBarcodePrefix(Aws::String&& value) { m_tapeBarcodePrefixHasBeenSet = true; m_tapeBarcodePrefix = std::move(value); }
 
     /**
      * <p>A prefix that you append to the barcode of the virtual tape you are creating.
-     * This prefix makes the barcode unique.</p> <note> <p>The prefix must be 1 to 4
+     * This prefix makes the barcode unique.</p>  <p>The prefix must be 1 to 4
      * characters in length and must be one of the uppercase letters from A to Z.</p>
-     * </note>
+     * 
      */
     inline void SetTapeBarcodePrefix(const char* value) { m_tapeBarcodePrefixHasBeenSet = true; m_tapeBarcodePrefix.assign(value); }
 
     /**
      * <p>A prefix that you append to the barcode of the virtual tape you are creating.
-     * This prefix makes the barcode unique.</p> <note> <p>The prefix must be 1 to 4
+     * This prefix makes the barcode unique.</p>  <p>The prefix must be 1 to 4
      * characters in length and must be one of the uppercase letters from A to Z.</p>
-     * </note>
+     * 
      */
     inline CreateTapesRequest& WithTapeBarcodePrefix(const Aws::String& value) { SetTapeBarcodePrefix(value); return *this;}
 
     /**
      * <p>A prefix that you append to the barcode of the virtual tape you are creating.
-     * This prefix makes the barcode unique.</p> <note> <p>The prefix must be 1 to 4
+     * This prefix makes the barcode unique.</p>  <p>The prefix must be 1 to 4
      * characters in length and must be one of the uppercase letters from A to Z.</p>
-     * </note>
+     * 
      */
     inline CreateTapesRequest& WithTapeBarcodePrefix(Aws::String&& value) { SetTapeBarcodePrefix(std::move(value)); return *this;}
 
     /**
      * <p>A prefix that you append to the barcode of the virtual tape you are creating.
-     * This prefix makes the barcode unique.</p> <note> <p>The prefix must be 1 to 4
+     * This prefix makes the barcode unique.</p>  <p>The prefix must be 1 to 4
      * characters in length and must be one of the uppercase letters from A to Z.</p>
-     * </note>
+     * 
      */
     inline CreateTapesRequest& WithTapeBarcodePrefix(const char* value) { SetTapeBarcodePrefix(value); return *this;}
 
@@ -449,73 +449,73 @@ namespace Model
 
     /**
      * <p>A list of up to 50 tags that can be assigned to a virtual tape. Each tag is a
-     * key-value pair.</p> <note> <p>Valid characters for key and value are letters,
+     * key-value pair.</p>  <p>Valid characters for key and value are letters,
      * spaces, and numbers representable in UTF-8 format, and the following special
      * characters: + - = . _ : / @. The maximum length of a tag's key is 128
-     * characters, and the maximum length for a tag's value is 256.</p> </note>
+     * characters, and the maximum length for a tag's value is 256.</p> 
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
      * <p>A list of up to 50 tags that can be assigned to a virtual tape. Each tag is a
-     * key-value pair.</p> <note> <p>Valid characters for key and value are letters,
+     * key-value pair.</p>  <p>Valid characters for key and value are letters,
      * spaces, and numbers representable in UTF-8 format, and the following special
      * characters: + - = . _ : / @. The maximum length of a tag's key is 128
-     * characters, and the maximum length for a tag's value is 256.</p> </note>
+     * characters, and the maximum length for a tag's value is 256.</p> 
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>A list of up to 50 tags that can be assigned to a virtual tape. Each tag is a
-     * key-value pair.</p> <note> <p>Valid characters for key and value are letters,
+     * key-value pair.</p>  <p>Valid characters for key and value are letters,
      * spaces, and numbers representable in UTF-8 format, and the following special
      * characters: + - = . _ : / @. The maximum length of a tag's key is 128
-     * characters, and the maximum length for a tag's value is 256.</p> </note>
+     * characters, and the maximum length for a tag's value is 256.</p> 
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
      * <p>A list of up to 50 tags that can be assigned to a virtual tape. Each tag is a
-     * key-value pair.</p> <note> <p>Valid characters for key and value are letters,
+     * key-value pair.</p>  <p>Valid characters for key and value are letters,
      * spaces, and numbers representable in UTF-8 format, and the following special
      * characters: + - = . _ : / @. The maximum length of a tag's key is 128
-     * characters, and the maximum length for a tag's value is 256.</p> </note>
+     * characters, and the maximum length for a tag's value is 256.</p> 
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
      * <p>A list of up to 50 tags that can be assigned to a virtual tape. Each tag is a
-     * key-value pair.</p> <note> <p>Valid characters for key and value are letters,
+     * key-value pair.</p>  <p>Valid characters for key and value are letters,
      * spaces, and numbers representable in UTF-8 format, and the following special
      * characters: + - = . _ : / @. The maximum length of a tag's key is 128
-     * characters, and the maximum length for a tag's value is 256.</p> </note>
+     * characters, and the maximum length for a tag's value is 256.</p> 
      */
     inline CreateTapesRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
      * <p>A list of up to 50 tags that can be assigned to a virtual tape. Each tag is a
-     * key-value pair.</p> <note> <p>Valid characters for key and value are letters,
+     * key-value pair.</p>  <p>Valid characters for key and value are letters,
      * spaces, and numbers representable in UTF-8 format, and the following special
      * characters: + - = . _ : / @. The maximum length of a tag's key is 128
-     * characters, and the maximum length for a tag's value is 256.</p> </note>
+     * characters, and the maximum length for a tag's value is 256.</p> 
      */
     inline CreateTapesRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
      * <p>A list of up to 50 tags that can be assigned to a virtual tape. Each tag is a
-     * key-value pair.</p> <note> <p>Valid characters for key and value are letters,
+     * key-value pair.</p>  <p>Valid characters for key and value are letters,
      * spaces, and numbers representable in UTF-8 format, and the following special
      * characters: + - = . _ : / @. The maximum length of a tag's key is 128
-     * characters, and the maximum length for a tag's value is 256.</p> </note>
+     * characters, and the maximum length for a tag's value is 256.</p> 
      */
     inline CreateTapesRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     /**
      * <p>A list of up to 50 tags that can be assigned to a virtual tape. Each tag is a
-     * key-value pair.</p> <note> <p>Valid characters for key and value are letters,
+     * key-value pair.</p>  <p>Valid characters for key and value are letters,
      * spaces, and numbers representable in UTF-8 format, and the following special
      * characters: + - = . _ : / @. The maximum length of a tag's key is 128
-     * characters, and the maximum length for a tag's value is 256.</p> </note>
+     * characters, and the maximum length for a tag's value is 256.</p> 
      */
     inline CreateTapesRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 

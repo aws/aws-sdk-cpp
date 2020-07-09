@@ -205,13 +205,13 @@ namespace Model
      * <p>The frequency at which you want AWS Config to run evaluations for a custom
      * rule with a periodic trigger. If you specify a value for
      * <code>MaximumExecutionFrequency</code>, then <code>MessageType</code> must use
-     * the <code>ScheduledNotification</code> value.</p> <note> <p>By default, rules
+     * the <code>ScheduledNotification</code> value.</p>  <p>By default, rules
      * with a periodic trigger are evaluated every 24 hours. To change the frequency,
      * specify a valid value for the <code>MaximumExecutionFrequency</code>
      * parameter.</p> <p>Based on the valid value you choose, AWS Config runs
      * evaluations once for each valid value. For example, if you choose
      * <code>Three_Hours</code>, AWS Config runs evaluations once every three hours. In
-     * this case, <code>Three_Hours</code> is the frequency of this rule. </p> </note>
+     * this case, <code>Three_Hours</code> is the frequency of this rule. </p> 
      */
     inline const MaximumExecutionFrequency& GetMaximumExecutionFrequency() const{ return m_maximumExecutionFrequency; }
 
@@ -219,13 +219,13 @@ namespace Model
      * <p>The frequency at which you want AWS Config to run evaluations for a custom
      * rule with a periodic trigger. If you specify a value for
      * <code>MaximumExecutionFrequency</code>, then <code>MessageType</code> must use
-     * the <code>ScheduledNotification</code> value.</p> <note> <p>By default, rules
+     * the <code>ScheduledNotification</code> value.</p>  <p>By default, rules
      * with a periodic trigger are evaluated every 24 hours. To change the frequency,
      * specify a valid value for the <code>MaximumExecutionFrequency</code>
      * parameter.</p> <p>Based on the valid value you choose, AWS Config runs
      * evaluations once for each valid value. For example, if you choose
      * <code>Three_Hours</code>, AWS Config runs evaluations once every three hours. In
-     * this case, <code>Three_Hours</code> is the frequency of this rule. </p> </note>
+     * this case, <code>Three_Hours</code> is the frequency of this rule. </p> 
      */
     inline bool MaximumExecutionFrequencyHasBeenSet() const { return m_maximumExecutionFrequencyHasBeenSet; }
 
@@ -233,13 +233,13 @@ namespace Model
      * <p>The frequency at which you want AWS Config to run evaluations for a custom
      * rule with a periodic trigger. If you specify a value for
      * <code>MaximumExecutionFrequency</code>, then <code>MessageType</code> must use
-     * the <code>ScheduledNotification</code> value.</p> <note> <p>By default, rules
+     * the <code>ScheduledNotification</code> value.</p>  <p>By default, rules
      * with a periodic trigger are evaluated every 24 hours. To change the frequency,
      * specify a valid value for the <code>MaximumExecutionFrequency</code>
      * parameter.</p> <p>Based on the valid value you choose, AWS Config runs
      * evaluations once for each valid value. For example, if you choose
      * <code>Three_Hours</code>, AWS Config runs evaluations once every three hours. In
-     * this case, <code>Three_Hours</code> is the frequency of this rule. </p> </note>
+     * this case, <code>Three_Hours</code> is the frequency of this rule. </p> 
      */
     inline void SetMaximumExecutionFrequency(const MaximumExecutionFrequency& value) { m_maximumExecutionFrequencyHasBeenSet = true; m_maximumExecutionFrequency = value; }
 
@@ -247,13 +247,13 @@ namespace Model
      * <p>The frequency at which you want AWS Config to run evaluations for a custom
      * rule with a periodic trigger. If you specify a value for
      * <code>MaximumExecutionFrequency</code>, then <code>MessageType</code> must use
-     * the <code>ScheduledNotification</code> value.</p> <note> <p>By default, rules
+     * the <code>ScheduledNotification</code> value.</p>  <p>By default, rules
      * with a periodic trigger are evaluated every 24 hours. To change the frequency,
      * specify a valid value for the <code>MaximumExecutionFrequency</code>
      * parameter.</p> <p>Based on the valid value you choose, AWS Config runs
      * evaluations once for each valid value. For example, if you choose
      * <code>Three_Hours</code>, AWS Config runs evaluations once every three hours. In
-     * this case, <code>Three_Hours</code> is the frequency of this rule. </p> </note>
+     * this case, <code>Three_Hours</code> is the frequency of this rule. </p> 
      */
     inline void SetMaximumExecutionFrequency(MaximumExecutionFrequency&& value) { m_maximumExecutionFrequencyHasBeenSet = true; m_maximumExecutionFrequency = std::move(value); }
 
@@ -261,13 +261,13 @@ namespace Model
      * <p>The frequency at which you want AWS Config to run evaluations for a custom
      * rule with a periodic trigger. If you specify a value for
      * <code>MaximumExecutionFrequency</code>, then <code>MessageType</code> must use
-     * the <code>ScheduledNotification</code> value.</p> <note> <p>By default, rules
+     * the <code>ScheduledNotification</code> value.</p>  <p>By default, rules
      * with a periodic trigger are evaluated every 24 hours. To change the frequency,
      * specify a valid value for the <code>MaximumExecutionFrequency</code>
      * parameter.</p> <p>Based on the valid value you choose, AWS Config runs
      * evaluations once for each valid value. For example, if you choose
      * <code>Three_Hours</code>, AWS Config runs evaluations once every three hours. In
-     * this case, <code>Three_Hours</code> is the frequency of this rule. </p> </note>
+     * this case, <code>Three_Hours</code> is the frequency of this rule. </p> 
      */
     inline SourceDetail& WithMaximumExecutionFrequency(const MaximumExecutionFrequency& value) { SetMaximumExecutionFrequency(value); return *this;}
 
@@ -275,13 +275,13 @@ namespace Model
      * <p>The frequency at which you want AWS Config to run evaluations for a custom
      * rule with a periodic trigger. If you specify a value for
      * <code>MaximumExecutionFrequency</code>, then <code>MessageType</code> must use
-     * the <code>ScheduledNotification</code> value.</p> <note> <p>By default, rules
+     * the <code>ScheduledNotification</code> value.</p>  <p>By default, rules
      * with a periodic trigger are evaluated every 24 hours. To change the frequency,
      * specify a valid value for the <code>MaximumExecutionFrequency</code>
      * parameter.</p> <p>Based on the valid value you choose, AWS Config runs
      * evaluations once for each valid value. For example, if you choose
      * <code>Three_Hours</code>, AWS Config runs evaluations once every three hours. In
-     * this case, <code>Three_Hours</code> is the frequency of this rule. </p> </note>
+     * this case, <code>Three_Hours</code> is the frequency of this rule. </p> 
      */
     inline SourceDetail& WithMaximumExecutionFrequency(MaximumExecutionFrequency&& value) { SetMaximumExecutionFrequency(std::move(value)); return *this;}
 

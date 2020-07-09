@@ -91,86 +91,86 @@ namespace Model
 
     /**
      * <p>The Sha256 or Sha1 hash created by the system when the document was created.
-     * </p> <note> <p>Sha1 hashes have been deprecated.</p> </note>
+     * </p>  <p>Sha1 hashes have been deprecated.</p> 
      */
     inline const Aws::String& GetHash() const{ return m_hash; }
 
     /**
      * <p>The Sha256 or Sha1 hash created by the system when the document was created.
-     * </p> <note> <p>Sha1 hashes have been deprecated.</p> </note>
+     * </p>  <p>Sha1 hashes have been deprecated.</p> 
      */
     inline bool HashHasBeenSet() const { return m_hashHasBeenSet; }
 
     /**
      * <p>The Sha256 or Sha1 hash created by the system when the document was created.
-     * </p> <note> <p>Sha1 hashes have been deprecated.</p> </note>
+     * </p>  <p>Sha1 hashes have been deprecated.</p> 
      */
     inline void SetHash(const Aws::String& value) { m_hashHasBeenSet = true; m_hash = value; }
 
     /**
      * <p>The Sha256 or Sha1 hash created by the system when the document was created.
-     * </p> <note> <p>Sha1 hashes have been deprecated.</p> </note>
+     * </p>  <p>Sha1 hashes have been deprecated.</p> 
      */
     inline void SetHash(Aws::String&& value) { m_hashHasBeenSet = true; m_hash = std::move(value); }
 
     /**
      * <p>The Sha256 or Sha1 hash created by the system when the document was created.
-     * </p> <note> <p>Sha1 hashes have been deprecated.</p> </note>
+     * </p>  <p>Sha1 hashes have been deprecated.</p> 
      */
     inline void SetHash(const char* value) { m_hashHasBeenSet = true; m_hash.assign(value); }
 
     /**
      * <p>The Sha256 or Sha1 hash created by the system when the document was created.
-     * </p> <note> <p>Sha1 hashes have been deprecated.</p> </note>
+     * </p>  <p>Sha1 hashes have been deprecated.</p> 
      */
     inline DocumentDescription& WithHash(const Aws::String& value) { SetHash(value); return *this;}
 
     /**
      * <p>The Sha256 or Sha1 hash created by the system when the document was created.
-     * </p> <note> <p>Sha1 hashes have been deprecated.</p> </note>
+     * </p>  <p>Sha1 hashes have been deprecated.</p> 
      */
     inline DocumentDescription& WithHash(Aws::String&& value) { SetHash(std::move(value)); return *this;}
 
     /**
      * <p>The Sha256 or Sha1 hash created by the system when the document was created.
-     * </p> <note> <p>Sha1 hashes have been deprecated.</p> </note>
+     * </p>  <p>Sha1 hashes have been deprecated.</p> 
      */
     inline DocumentDescription& WithHash(const char* value) { SetHash(value); return *this;}
 
 
     /**
      * <p>The hash type of the document. Valid values include <code>Sha256</code> or
-     * <code>Sha1</code>.</p> <note> <p>Sha1 hashes have been deprecated.</p> </note>
+     * <code>Sha1</code>.</p>  <p>Sha1 hashes have been deprecated.</p> 
      */
     inline const DocumentHashType& GetHashType() const{ return m_hashType; }
 
     /**
      * <p>The hash type of the document. Valid values include <code>Sha256</code> or
-     * <code>Sha1</code>.</p> <note> <p>Sha1 hashes have been deprecated.</p> </note>
+     * <code>Sha1</code>.</p>  <p>Sha1 hashes have been deprecated.</p> 
      */
     inline bool HashTypeHasBeenSet() const { return m_hashTypeHasBeenSet; }
 
     /**
      * <p>The hash type of the document. Valid values include <code>Sha256</code> or
-     * <code>Sha1</code>.</p> <note> <p>Sha1 hashes have been deprecated.</p> </note>
+     * <code>Sha1</code>.</p>  <p>Sha1 hashes have been deprecated.</p> 
      */
     inline void SetHashType(const DocumentHashType& value) { m_hashTypeHasBeenSet = true; m_hashType = value; }
 
     /**
      * <p>The hash type of the document. Valid values include <code>Sha256</code> or
-     * <code>Sha1</code>.</p> <note> <p>Sha1 hashes have been deprecated.</p> </note>
+     * <code>Sha1</code>.</p>  <p>Sha1 hashes have been deprecated.</p> 
      */
     inline void SetHashType(DocumentHashType&& value) { m_hashTypeHasBeenSet = true; m_hashType = std::move(value); }
 
     /**
      * <p>The hash type of the document. Valid values include <code>Sha256</code> or
-     * <code>Sha1</code>.</p> <note> <p>Sha1 hashes have been deprecated.</p> </note>
+     * <code>Sha1</code>.</p>  <p>Sha1 hashes have been deprecated.</p> 
      */
     inline DocumentDescription& WithHashType(const DocumentHashType& value) { SetHashType(value); return *this;}
 
     /**
      * <p>The hash type of the document. Valid values include <code>Sha256</code> or
-     * <code>Sha1</code>.</p> <note> <p>Sha1 hashes have been deprecated.</p> </note>
+     * <code>Sha1</code>.</p>  <p>Sha1 hashes have been deprecated.</p> 
      */
     inline DocumentDescription& WithHashType(DocumentHashType&& value) { SetHashType(std::move(value)); return *this;}
 

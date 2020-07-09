@@ -352,13 +352,13 @@ namespace Model
    * href="https://aws.amazon.com/directoryservice/">AWS Directory Service</a> and
    * the <a
    * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/what_is.html">AWS
-   * Directory Service Administration Guide</a>.</p> <note> <p>AWS provides SDKs that
+   * Directory Service Administration Guide</a>.</p>  <p>AWS provides SDKs that
    * consist of libraries and sample code for various programming languages and
    * platforms (Java, Ruby, .Net, iOS, Android, etc.). The SDKs provide a convenient
    * way to create programmatic access to AWS Directory Service and other AWS
    * services. For more information about the AWS SDKs, including how to download and
    * install them, see <a href="http://aws.amazon.com/tools/">Tools for Amazon Web
-   * Services</a>.</p> </note>
+   * Services</a>.</p> 
    */
   class AWS_DIRECTORYSERVICE_API DirectoryServiceClient : public Aws::Client::AWSJsonClient
   {
@@ -589,9 +589,9 @@ namespace Model
         /**
          * <p>Creates an alias for a directory and assigns the alias to the directory. The
          * alias is used to construct the access URL for the directory, such as
-         * <code>http://&lt;alias&gt;.awsapps.com</code>.</p> <important> <p>After an alias
+         * <code>http://&lt;alias&gt;.awsapps.com</code>.</p>  <p>After an alias
          * has been created, it cannot be deleted or reused, so this operation should only
-         * be used when absolutely necessary.</p> </important><p><h3>See Also:</h3>   <a
+         * be used when absolutely necessary.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateAlias">AWS API
          * Reference</a></p>
          */
@@ -600,9 +600,9 @@ namespace Model
         /**
          * <p>Creates an alias for a directory and assigns the alias to the directory. The
          * alias is used to construct the access URL for the directory, such as
-         * <code>http://&lt;alias&gt;.awsapps.com</code>.</p> <important> <p>After an alias
+         * <code>http://&lt;alias&gt;.awsapps.com</code>.</p>  <p>After an alias
          * has been created, it cannot be deleted or reused, so this operation should only
-         * be used when absolutely necessary.</p> </important><p><h3>See Also:</h3>   <a
+         * be used when absolutely necessary.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateAlias">AWS API
          * Reference</a></p>
          *
@@ -613,9 +613,9 @@ namespace Model
         /**
          * <p>Creates an alias for a directory and assigns the alias to the directory. The
          * alias is used to construct the access URL for the directory, such as
-         * <code>http://&lt;alias&gt;.awsapps.com</code>.</p> <important> <p>After an alias
+         * <code>http://&lt;alias&gt;.awsapps.com</code>.</p>  <p>After an alias
          * has been created, it cannot be deleted or reused, so this operation should only
-         * be used when absolutely necessary.</p> </important><p><h3>See Also:</h3>   <a
+         * be used when absolutely necessary.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateAlias">AWS API
          * Reference</a></p>
          *
@@ -825,8 +825,8 @@ namespace Model
 
         /**
          * <p>Creates a snapshot of a Simple AD or Microsoft AD directory in the AWS
-         * cloud.</p> <note> <p>You cannot take snapshots of AD Connector directories.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * cloud.</p>  <p>You cannot take snapshots of AD Connector directories.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateSnapshot">AWS
          * API Reference</a></p>
          */
@@ -834,8 +834,8 @@ namespace Model
 
         /**
          * <p>Creates a snapshot of a Simple AD or Microsoft AD directory in the AWS
-         * cloud.</p> <note> <p>You cannot take snapshots of AD Connector directories.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * cloud.</p>  <p>You cannot take snapshots of AD Connector directories.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateSnapshot">AWS
          * API Reference</a></p>
          *
@@ -845,8 +845,8 @@ namespace Model
 
         /**
          * <p>Creates a snapshot of a Simple AD or Microsoft AD directory in the AWS
-         * cloud.</p> <note> <p>You cannot take snapshots of AD Connector directories.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * cloud.</p>  <p>You cannot take snapshots of AD Connector directories.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateSnapshot">AWS
          * API Reference</a></p>
          *

@@ -29,10 +29,10 @@ namespace Model
    * point's <code>RootDirectory</code> &gt; <code>Path</code>. If the access point
    * root directory does not exist, EFS creates it with these settings when a client
    * connects to the access point. When specifying <code>CreationInfo</code>, you
-   * must include values for all properties. </p> <important> <p>If you do not
+   * must include values for all properties. </p>  <p>If you do not
    * provide <code>CreationInfo</code> and the specified <code>RootDirectory</code>
    * does not exist, attempts to mount the file system using the access point will
-   * fail.</p> </important><p><h3>See Also:</h3>   <a
+   * fail.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/CreationInfo">AWS
    * API Reference</a></p>
    */

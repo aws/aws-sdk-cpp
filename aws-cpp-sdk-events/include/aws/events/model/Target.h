@@ -12,6 +12,7 @@
 #include <aws/events/model/EcsParameters.h>
 #include <aws/events/model/BatchParameters.h>
 #include <aws/events/model/SqsParameters.h>
+#include <aws/events/model/HttpParameters.h>
 #include <utility>
 
 namespace Aws
@@ -590,6 +591,55 @@ namespace Model
      */
     inline Target& WithSqsParameters(SqsParameters&& value) { SetSqsParameters(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Contains the HTTP parameters to use when the target is a API Gateway REST
+     * endpoint.</p> <p>If you specify an API Gateway REST API as a target, you can use
+     * this parameter to specify headers, path parameter, query string keys/values as
+     * part of your target invoking request.</p>
+     */
+    inline const HttpParameters& GetHttpParameters() const{ return m_httpParameters; }
+
+    /**
+     * <p>Contains the HTTP parameters to use when the target is a API Gateway REST
+     * endpoint.</p> <p>If you specify an API Gateway REST API as a target, you can use
+     * this parameter to specify headers, path parameter, query string keys/values as
+     * part of your target invoking request.</p>
+     */
+    inline bool HttpParametersHasBeenSet() const { return m_httpParametersHasBeenSet; }
+
+    /**
+     * <p>Contains the HTTP parameters to use when the target is a API Gateway REST
+     * endpoint.</p> <p>If you specify an API Gateway REST API as a target, you can use
+     * this parameter to specify headers, path parameter, query string keys/values as
+     * part of your target invoking request.</p>
+     */
+    inline void SetHttpParameters(const HttpParameters& value) { m_httpParametersHasBeenSet = true; m_httpParameters = value; }
+
+    /**
+     * <p>Contains the HTTP parameters to use when the target is a API Gateway REST
+     * endpoint.</p> <p>If you specify an API Gateway REST API as a target, you can use
+     * this parameter to specify headers, path parameter, query string keys/values as
+     * part of your target invoking request.</p>
+     */
+    inline void SetHttpParameters(HttpParameters&& value) { m_httpParametersHasBeenSet = true; m_httpParameters = std::move(value); }
+
+    /**
+     * <p>Contains the HTTP parameters to use when the target is a API Gateway REST
+     * endpoint.</p> <p>If you specify an API Gateway REST API as a target, you can use
+     * this parameter to specify headers, path parameter, query string keys/values as
+     * part of your target invoking request.</p>
+     */
+    inline Target& WithHttpParameters(const HttpParameters& value) { SetHttpParameters(value); return *this;}
+
+    /**
+     * <p>Contains the HTTP parameters to use when the target is a API Gateway REST
+     * endpoint.</p> <p>If you specify an API Gateway REST API as a target, you can use
+     * this parameter to specify headers, path parameter, query string keys/values as
+     * part of your target invoking request.</p>
+     */
+    inline Target& WithHttpParameters(HttpParameters&& value) { SetHttpParameters(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_id;
@@ -624,6 +674,9 @@ namespace Model
 
     SqsParameters m_sqsParameters;
     bool m_sqsParametersHasBeenSet;
+
+    HttpParameters m_httpParameters;
+    bool m_httpParametersHasBeenSet;
   };
 
 } // namespace Model

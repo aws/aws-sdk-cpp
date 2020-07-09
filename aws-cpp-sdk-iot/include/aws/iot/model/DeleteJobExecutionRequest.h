@@ -157,10 +157,10 @@ namespace Model
      * <p>(Optional) When true, you can delete a job execution which is "IN_PROGRESS".
      * Otherwise, you can only delete a job execution which is in a terminal state
      * ("SUCCEEDED", "FAILED", "REJECTED", "REMOVED" or "CANCELED") or an exception
-     * will occur. The default is false.</p> <note> <p>Deleting a job execution which
+     * will occur. The default is false.</p>  <p>Deleting a job execution which
      * is "IN_PROGRESS", will cause the device to be unable to access job information
      * or update the job execution status. Use caution and ensure that the device is
-     * able to recover to a valid state.</p> </note>
+     * able to recover to a valid state.</p> 
      */
     inline bool GetForce() const{ return m_force; }
 
@@ -168,10 +168,10 @@ namespace Model
      * <p>(Optional) When true, you can delete a job execution which is "IN_PROGRESS".
      * Otherwise, you can only delete a job execution which is in a terminal state
      * ("SUCCEEDED", "FAILED", "REJECTED", "REMOVED" or "CANCELED") or an exception
-     * will occur. The default is false.</p> <note> <p>Deleting a job execution which
+     * will occur. The default is false.</p>  <p>Deleting a job execution which
      * is "IN_PROGRESS", will cause the device to be unable to access job information
      * or update the job execution status. Use caution and ensure that the device is
-     * able to recover to a valid state.</p> </note>
+     * able to recover to a valid state.</p> 
      */
     inline bool ForceHasBeenSet() const { return m_forceHasBeenSet; }
 
@@ -179,10 +179,10 @@ namespace Model
      * <p>(Optional) When true, you can delete a job execution which is "IN_PROGRESS".
      * Otherwise, you can only delete a job execution which is in a terminal state
      * ("SUCCEEDED", "FAILED", "REJECTED", "REMOVED" or "CANCELED") or an exception
-     * will occur. The default is false.</p> <note> <p>Deleting a job execution which
+     * will occur. The default is false.</p>  <p>Deleting a job execution which
      * is "IN_PROGRESS", will cause the device to be unable to access job information
      * or update the job execution status. Use caution and ensure that the device is
-     * able to recover to a valid state.</p> </note>
+     * able to recover to a valid state.</p> 
      */
     inline void SetForce(bool value) { m_forceHasBeenSet = true; m_force = value; }
 
@@ -190,10 +190,10 @@ namespace Model
      * <p>(Optional) When true, you can delete a job execution which is "IN_PROGRESS".
      * Otherwise, you can only delete a job execution which is in a terminal state
      * ("SUCCEEDED", "FAILED", "REJECTED", "REMOVED" or "CANCELED") or an exception
-     * will occur. The default is false.</p> <note> <p>Deleting a job execution which
+     * will occur. The default is false.</p>  <p>Deleting a job execution which
      * is "IN_PROGRESS", will cause the device to be unable to access job information
      * or update the job execution status. Use caution and ensure that the device is
-     * able to recover to a valid state.</p> </note>
+     * able to recover to a valid state.</p> 
      */
     inline DeleteJobExecutionRequest& WithForce(bool value) { SetForce(value); return *this;}
 

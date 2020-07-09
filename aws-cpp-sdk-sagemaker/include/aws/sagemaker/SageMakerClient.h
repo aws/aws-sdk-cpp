@@ -42,6 +42,7 @@
 #include <aws/sagemaker/model/CreateWorkteamResult.h>
 #include <aws/sagemaker/model/DeleteExperimentResult.h>
 #include <aws/sagemaker/model/DeleteFlowDefinitionResult.h>
+#include <aws/sagemaker/model/DeleteHumanTaskUiResult.h>
 #include <aws/sagemaker/model/DeleteTagsResult.h>
 #include <aws/sagemaker/model/DeleteTrialResult.h>
 #include <aws/sagemaker/model/DeleteTrialComponentResult.h>
@@ -198,6 +199,7 @@ namespace Model
         class DeleteEndpointConfigRequest;
         class DeleteExperimentRequest;
         class DeleteFlowDefinitionRequest;
+        class DeleteHumanTaskUiRequest;
         class DeleteModelRequest;
         class DeleteModelPackageRequest;
         class DeleteMonitoringScheduleRequest;
@@ -332,6 +334,7 @@ namespace Model
         typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerError> DeleteEndpointConfigOutcome;
         typedef Aws::Utils::Outcome<DeleteExperimentResult, SageMakerError> DeleteExperimentOutcome;
         typedef Aws::Utils::Outcome<DeleteFlowDefinitionResult, SageMakerError> DeleteFlowDefinitionOutcome;
+        typedef Aws::Utils::Outcome<DeleteHumanTaskUiResult, SageMakerError> DeleteHumanTaskUiOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerError> DeleteModelOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerError> DeleteModelPackageOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerError> DeleteMonitoringScheduleOutcome;
@@ -466,6 +469,7 @@ namespace Model
         typedef std::future<DeleteEndpointConfigOutcome> DeleteEndpointConfigOutcomeCallable;
         typedef std::future<DeleteExperimentOutcome> DeleteExperimentOutcomeCallable;
         typedef std::future<DeleteFlowDefinitionOutcome> DeleteFlowDefinitionOutcomeCallable;
+        typedef std::future<DeleteHumanTaskUiOutcome> DeleteHumanTaskUiOutcomeCallable;
         typedef std::future<DeleteModelOutcome> DeleteModelOutcomeCallable;
         typedef std::future<DeleteModelPackageOutcome> DeleteModelPackageOutcomeCallable;
         typedef std::future<DeleteMonitoringScheduleOutcome> DeleteMonitoringScheduleOutcomeCallable;
@@ -603,6 +607,7 @@ namespace Model
     typedef std::function<void(const SageMakerClient*, const Model::DeleteEndpointConfigRequest&, const Model::DeleteEndpointConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteEndpointConfigResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DeleteExperimentRequest&, const Model::DeleteExperimentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteExperimentResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DeleteFlowDefinitionRequest&, const Model::DeleteFlowDefinitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteFlowDefinitionResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::DeleteHumanTaskUiRequest&, const Model::DeleteHumanTaskUiOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteHumanTaskUiResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DeleteModelRequest&, const Model::DeleteModelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteModelResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DeleteModelPackageRequest&, const Model::DeleteModelPackageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteModelPackageResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DeleteMonitoringScheduleRequest&, const Model::DeleteMonitoringScheduleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteMonitoringScheduleResponseReceivedHandler;
@@ -745,7 +750,7 @@ namespace Model
          * value. Tag keys must be unique per resource. For more information about tags,
          * see For more information, see <a
          * href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS
-         * Tagging Strategies</a>.</p> <note> <p>Tags that you add to a hyperparameter
+         * Tagging Strategies</a>.</p>  <p>Tags that you add to a hyperparameter
          * tuning job by calling this API are also added to any training jobs that the
          * hyperparameter tuning job launches after you call this API, but not to training
          * jobs that the hyperparameter tuning job launched before you called this API. To
@@ -753,7 +758,7 @@ namespace Model
          * added to all training jobs that the hyperparameter tuning job launches, add the
          * tags when you first create the tuning job by specifying them in the
          * <code>Tags</code> parameter of <a>CreateHyperParameterTuningJob</a> </p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/AddTags">AWS
          * API Reference</a></p>
          */
@@ -767,7 +772,7 @@ namespace Model
          * value. Tag keys must be unique per resource. For more information about tags,
          * see For more information, see <a
          * href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS
-         * Tagging Strategies</a>.</p> <note> <p>Tags that you add to a hyperparameter
+         * Tagging Strategies</a>.</p>  <p>Tags that you add to a hyperparameter
          * tuning job by calling this API are also added to any training jobs that the
          * hyperparameter tuning job launches after you call this API, but not to training
          * jobs that the hyperparameter tuning job launched before you called this API. To
@@ -775,7 +780,7 @@ namespace Model
          * added to all training jobs that the hyperparameter tuning job launches, add the
          * tags when you first create the tuning job by specifying them in the
          * <code>Tags</code> parameter of <a>CreateHyperParameterTuningJob</a> </p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/AddTags">AWS
          * API Reference</a></p>
          *
@@ -791,7 +796,7 @@ namespace Model
          * value. Tag keys must be unique per resource. For more information about tags,
          * see For more information, see <a
          * href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS
-         * Tagging Strategies</a>.</p> <note> <p>Tags that you add to a hyperparameter
+         * Tagging Strategies</a>.</p>  <p>Tags that you add to a hyperparameter
          * tuning job by calling this API are also added to any training jobs that the
          * hyperparameter tuning job launches after you call this API, but not to training
          * jobs that the hyperparameter tuning job launched before you called this API. To
@@ -799,7 +804,7 @@ namespace Model
          * added to all training jobs that the hyperparameter tuning job launches, add the
          * tags when you first create the tuning job by specifying them in the
          * <code>Tags</code> parameter of <a>CreateHyperParameterTuningJob</a> </p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/AddTags">AWS
          * API Reference</a></p>
          *
@@ -868,11 +873,10 @@ namespace Model
 
         /**
          * <p>Creates a running App for the specified UserProfile. Supported Apps are
-         * JupyterServer, KernelGateway, and TensorBoard. This operation is automatically
-         * invoked by Amazon SageMaker Studio upon access to the associated Domain, and
-         * when new kernel configurations are selected by the user. A user may have
-         * multiple Apps active simultaneously. UserProfiles are limited to 5 concurrently
-         * running Apps at a time.</p><p><h3>See Also:</h3>   <a
+         * JupyterServer and KernelGateway. This operation is automatically invoked by
+         * Amazon SageMaker Studio upon access to the associated Domain, and when new
+         * kernel configurations are selected by the user. A user may have multiple Apps
+         * active simultaneously.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateApp">AWS
          * API Reference</a></p>
          */
@@ -880,11 +884,10 @@ namespace Model
 
         /**
          * <p>Creates a running App for the specified UserProfile. Supported Apps are
-         * JupyterServer, KernelGateway, and TensorBoard. This operation is automatically
-         * invoked by Amazon SageMaker Studio upon access to the associated Domain, and
-         * when new kernel configurations are selected by the user. A user may have
-         * multiple Apps active simultaneously. UserProfiles are limited to 5 concurrently
-         * running Apps at a time.</p><p><h3>See Also:</h3>   <a
+         * JupyterServer and KernelGateway. This operation is automatically invoked by
+         * Amazon SageMaker Studio upon access to the associated Domain, and when new
+         * kernel configurations are selected by the user. A user may have multiple Apps
+         * active simultaneously.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateApp">AWS
          * API Reference</a></p>
          *
@@ -894,11 +897,10 @@ namespace Model
 
         /**
          * <p>Creates a running App for the specified UserProfile. Supported Apps are
-         * JupyterServer, KernelGateway, and TensorBoard. This operation is automatically
-         * invoked by Amazon SageMaker Studio upon access to the associated Domain, and
-         * when new kernel configurations are selected by the user. A user may have
-         * multiple Apps active simultaneously. UserProfiles are limited to 5 concurrently
-         * running Apps at a time.</p><p><h3>See Also:</h3>   <a
+         * JupyterServer and KernelGateway. This operation is automatically invoked by
+         * Amazon SageMaker Studio upon access to the associated Domain, and when new
+         * kernel configurations are selected by the user. A user may have multiple Apps
+         * active simultaneously.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateApp">AWS
          * API Reference</a></p>
          *
@@ -1089,9 +1091,9 @@ namespace Model
          * traffic between the domain and the EFS volume is communicated through the
          * specified subnet IDs. All other traffic goes over the Internet through an Amazon
          * SageMaker system VPC. The EFS traffic uses the NFS/TCP protocol over port
-         * 2049.</p> <important> <p>NFS traffic over TCP on port 2049 needs to be allowed
+         * 2049.</p>  <p>NFS traffic over TCP on port 2049 needs to be allowed
          * in both inbound and outbound rules in order to launch a SageMaker Studio app
-         * successfully.</p> </important><p><h3>See Also:</h3>   <a
+         * successfully.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateDomain">AWS
          * API Reference</a></p>
          */
@@ -1109,9 +1111,9 @@ namespace Model
          * traffic between the domain and the EFS volume is communicated through the
          * specified subnet IDs. All other traffic goes over the Internet through an Amazon
          * SageMaker system VPC. The EFS traffic uses the NFS/TCP protocol over port
-         * 2049.</p> <important> <p>NFS traffic over TCP on port 2049 needs to be allowed
+         * 2049.</p>  <p>NFS traffic over TCP on port 2049 needs to be allowed
          * in both inbound and outbound rules in order to launch a SageMaker Studio app
-         * successfully.</p> </important><p><h3>See Also:</h3>   <a
+         * successfully.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateDomain">AWS
          * API Reference</a></p>
          *
@@ -1131,9 +1133,9 @@ namespace Model
          * traffic between the domain and the EFS volume is communicated through the
          * specified subnet IDs. All other traffic goes over the Internet through an Amazon
          * SageMaker system VPC. The EFS traffic uses the NFS/TCP protocol over port
-         * 2049.</p> <important> <p>NFS traffic over TCP on port 2049 needs to be allowed
+         * 2049.</p>  <p>NFS traffic over TCP on port 2049 needs to be allowed
          * in both inbound and outbound rules in order to launch a SageMaker Studio app
-         * successfully.</p> </important><p><h3>See Also:</h3>   <a
+         * successfully.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateDomain">AWS
          * API Reference</a></p>
          *
@@ -1150,14 +1152,14 @@ namespace Model
          * when deploying a model to Amazon SageMaker hosting services, see <a
          * href="https://docs.aws.amazon.com/sagemaker/latest/dg/ex1-deploy-model.html#ex1-deploy-model-boto">Deploy
          * the Model to Amazon SageMaker Hosting Services (AWS SDK for Python (Boto
-         * 3)).</a> </p> <note> <p> You must not delete an <code>EndpointConfig</code> that
+         * 3)).</a> </p>  <p> You must not delete an <code>EndpointConfig</code> that
          * is in use by an endpoint that is live or while the <code>UpdateEndpoint</code>
          * or <code>CreateEndpoint</code> operations are being performed on the endpoint.
          * To update an endpoint, you must create a new <code>EndpointConfig</code>.</p>
-         * </note> <p>The endpoint name must be unique within an AWS Region in your AWS
+         *  <p>The endpoint name must be unique within an AWS Region in your AWS
          * account. </p> <p>When it receives the request, Amazon SageMaker creates the
          * endpoint, launches the resources (ML compute instances), and deploys the
-         * model(s) on them. </p> <note> <p>When you call <a>CreateEndpoint</a>, a load
+         * model(s) on them. </p>  <p>When you call <a>CreateEndpoint</a>, a load
          * call is made to DynamoDB to verify that your endpoint configuration exists. When
          * you read data from a DynamoDB table supporting <a
          * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadConsistency.html">
@@ -1168,7 +1170,7 @@ namespace Model
          * response should return the latest data. So retry logic is recommended to handle
          * these possible issues. We also recommend that customers call
          * <a>DescribeEndpointConfig</a> before calling <a>CreateEndpoint</a> to minimize
-         * the potential impact of a DynamoDB eventually consistent read.</p> </note>
+         * the potential impact of a DynamoDB eventually consistent read.</p> 
          * <p>When Amazon SageMaker receives the request, it sets the endpoint status to
          * <code>Creating</code>. After it creates the endpoint, it sets the status to
          * <code>InService</code>. Amazon SageMaker can then process incoming requests for
@@ -1195,14 +1197,14 @@ namespace Model
          * when deploying a model to Amazon SageMaker hosting services, see <a
          * href="https://docs.aws.amazon.com/sagemaker/latest/dg/ex1-deploy-model.html#ex1-deploy-model-boto">Deploy
          * the Model to Amazon SageMaker Hosting Services (AWS SDK for Python (Boto
-         * 3)).</a> </p> <note> <p> You must not delete an <code>EndpointConfig</code> that
+         * 3)).</a> </p>  <p> You must not delete an <code>EndpointConfig</code> that
          * is in use by an endpoint that is live or while the <code>UpdateEndpoint</code>
          * or <code>CreateEndpoint</code> operations are being performed on the endpoint.
          * To update an endpoint, you must create a new <code>EndpointConfig</code>.</p>
-         * </note> <p>The endpoint name must be unique within an AWS Region in your AWS
+         *  <p>The endpoint name must be unique within an AWS Region in your AWS
          * account. </p> <p>When it receives the request, Amazon SageMaker creates the
          * endpoint, launches the resources (ML compute instances), and deploys the
-         * model(s) on them. </p> <note> <p>When you call <a>CreateEndpoint</a>, a load
+         * model(s) on them. </p>  <p>When you call <a>CreateEndpoint</a>, a load
          * call is made to DynamoDB to verify that your endpoint configuration exists. When
          * you read data from a DynamoDB table supporting <a
          * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadConsistency.html">
@@ -1213,7 +1215,7 @@ namespace Model
          * response should return the latest data. So retry logic is recommended to handle
          * these possible issues. We also recommend that customers call
          * <a>DescribeEndpointConfig</a> before calling <a>CreateEndpoint</a> to minimize
-         * the potential impact of a DynamoDB eventually consistent read.</p> </note>
+         * the potential impact of a DynamoDB eventually consistent read.</p> 
          * <p>When Amazon SageMaker receives the request, it sets the endpoint status to
          * <code>Creating</code>. After it creates the endpoint, it sets the status to
          * <code>InService</code>. Amazon SageMaker can then process incoming requests for
@@ -1242,14 +1244,14 @@ namespace Model
          * when deploying a model to Amazon SageMaker hosting services, see <a
          * href="https://docs.aws.amazon.com/sagemaker/latest/dg/ex1-deploy-model.html#ex1-deploy-model-boto">Deploy
          * the Model to Amazon SageMaker Hosting Services (AWS SDK for Python (Boto
-         * 3)).</a> </p> <note> <p> You must not delete an <code>EndpointConfig</code> that
+         * 3)).</a> </p>  <p> You must not delete an <code>EndpointConfig</code> that
          * is in use by an endpoint that is live or while the <code>UpdateEndpoint</code>
          * or <code>CreateEndpoint</code> operations are being performed on the endpoint.
          * To update an endpoint, you must create a new <code>EndpointConfig</code>.</p>
-         * </note> <p>The endpoint name must be unique within an AWS Region in your AWS
+         *  <p>The endpoint name must be unique within an AWS Region in your AWS
          * account. </p> <p>When it receives the request, Amazon SageMaker creates the
          * endpoint, launches the resources (ML compute instances), and deploys the
-         * model(s) on them. </p> <note> <p>When you call <a>CreateEndpoint</a>, a load
+         * model(s) on them. </p>  <p>When you call <a>CreateEndpoint</a>, a load
          * call is made to DynamoDB to verify that your endpoint configuration exists. When
          * you read data from a DynamoDB table supporting <a
          * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadConsistency.html">
@@ -1260,7 +1262,7 @@ namespace Model
          * response should return the latest data. So retry logic is recommended to handle
          * these possible issues. We also recommend that customers call
          * <a>DescribeEndpointConfig</a> before calling <a>CreateEndpoint</a> to minimize
-         * the potential impact of a DynamoDB eventually consistent read.</p> </note>
+         * the potential impact of a DynamoDB eventually consistent read.</p> 
          * <p>When Amazon SageMaker receives the request, it sets the endpoint status to
          * <code>Creating</code>. After it creates the endpoint, it sets the status to
          * <code>InService</code>. Amazon SageMaker can then process incoming requests for
@@ -1285,8 +1287,8 @@ namespace Model
          * to deploy models. In the configuration, you identify one or more models, created
          * using the <code>CreateModel</code> API, to deploy and the resources that you
          * want Amazon SageMaker to provision. Then you call the <a>CreateEndpoint</a>
-         * API.</p> <note> <p> Use this API if you want to use Amazon SageMaker hosting
-         * services to deploy models into production. </p> </note> <p>In the request, you
+         * API.</p>  <p> Use this API if you want to use Amazon SageMaker hosting
+         * services to deploy models into production. </p>  <p>In the request, you
          * define a <code>ProductionVariant</code>, for each model that you want to deploy.
          * Each <code>ProductionVariant</code> parameter also describes the resources that
          * you want Amazon SageMaker to provision. This includes the number and type of ML
@@ -1299,7 +1301,7 @@ namespace Model
          * Amazon SageMaker hosting services, see <a
          * href="https://docs.aws.amazon.com/sagemaker/latest/dg/ex1-deploy-model.html#ex1-deploy-model-boto">Deploy
          * the Model to Amazon SageMaker Hosting Services (AWS SDK for Python (Boto
-         * 3)).</a> </p> <note> <p>When you call <a>CreateEndpoint</a>, a load call is made
+         * 3)).</a> </p>  <p>When you call <a>CreateEndpoint</a>, a load call is made
          * to DynamoDB to verify that your endpoint configuration exists. When you read
          * data from a DynamoDB table supporting <a
          * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadConsistency.html">
@@ -1311,7 +1313,7 @@ namespace Model
          * these possible issues. We also recommend that customers call
          * <a>DescribeEndpointConfig</a> before calling <a>CreateEndpoint</a> to minimize
          * the potential impact of a DynamoDB eventually consistent read.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateEndpointConfig">AWS
          * API Reference</a></p>
          */
@@ -1322,8 +1324,8 @@ namespace Model
          * to deploy models. In the configuration, you identify one or more models, created
          * using the <code>CreateModel</code> API, to deploy and the resources that you
          * want Amazon SageMaker to provision. Then you call the <a>CreateEndpoint</a>
-         * API.</p> <note> <p> Use this API if you want to use Amazon SageMaker hosting
-         * services to deploy models into production. </p> </note> <p>In the request, you
+         * API.</p>  <p> Use this API if you want to use Amazon SageMaker hosting
+         * services to deploy models into production. </p>  <p>In the request, you
          * define a <code>ProductionVariant</code>, for each model that you want to deploy.
          * Each <code>ProductionVariant</code> parameter also describes the resources that
          * you want Amazon SageMaker to provision. This includes the number and type of ML
@@ -1336,7 +1338,7 @@ namespace Model
          * Amazon SageMaker hosting services, see <a
          * href="https://docs.aws.amazon.com/sagemaker/latest/dg/ex1-deploy-model.html#ex1-deploy-model-boto">Deploy
          * the Model to Amazon SageMaker Hosting Services (AWS SDK for Python (Boto
-         * 3)).</a> </p> <note> <p>When you call <a>CreateEndpoint</a>, a load call is made
+         * 3)).</a> </p>  <p>When you call <a>CreateEndpoint</a>, a load call is made
          * to DynamoDB to verify that your endpoint configuration exists. When you read
          * data from a DynamoDB table supporting <a
          * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadConsistency.html">
@@ -1348,7 +1350,7 @@ namespace Model
          * these possible issues. We also recommend that customers call
          * <a>DescribeEndpointConfig</a> before calling <a>CreateEndpoint</a> to minimize
          * the potential impact of a DynamoDB eventually consistent read.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateEndpointConfig">AWS
          * API Reference</a></p>
          *
@@ -1361,8 +1363,8 @@ namespace Model
          * to deploy models. In the configuration, you identify one or more models, created
          * using the <code>CreateModel</code> API, to deploy and the resources that you
          * want Amazon SageMaker to provision. Then you call the <a>CreateEndpoint</a>
-         * API.</p> <note> <p> Use this API if you want to use Amazon SageMaker hosting
-         * services to deploy models into production. </p> </note> <p>In the request, you
+         * API.</p>  <p> Use this API if you want to use Amazon SageMaker hosting
+         * services to deploy models into production. </p>  <p>In the request, you
          * define a <code>ProductionVariant</code>, for each model that you want to deploy.
          * Each <code>ProductionVariant</code> parameter also describes the resources that
          * you want Amazon SageMaker to provision. This includes the number and type of ML
@@ -1375,7 +1377,7 @@ namespace Model
          * Amazon SageMaker hosting services, see <a
          * href="https://docs.aws.amazon.com/sagemaker/latest/dg/ex1-deploy-model.html#ex1-deploy-model-boto">Deploy
          * the Model to Amazon SageMaker Hosting Services (AWS SDK for Python (Boto
-         * 3)).</a> </p> <note> <p>When you call <a>CreateEndpoint</a>, a load call is made
+         * 3)).</a> </p>  <p>When you call <a>CreateEndpoint</a>, a load call is made
          * to DynamoDB to verify that your endpoint configuration exists. When you read
          * data from a DynamoDB table supporting <a
          * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadConsistency.html">
@@ -1387,7 +1389,7 @@ namespace Model
          * these possible issues. We also recommend that customers call
          * <a>DescribeEndpointConfig</a> before calling <a>CreateEndpoint</a> to minimize
          * the potential impact of a DynamoDB eventually consistent read.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateEndpointConfig">AWS
          * API Reference</a></p>
          *
@@ -2058,10 +2060,10 @@ namespace Model
          * condition context key to specify the list of IP addresses that you want to have
          * access to the notebook instance. For more information, see <a
          * href="https://docs.aws.amazon.com/sagemaker/latest/dg/security_iam_id-based-policy-examples.html#nbi-ip-filter">Limit
-         * Access to a Notebook Instance by IP Address</a>.</p> <note> <p>The URL that you
+         * Access to a Notebook Instance by IP Address</a>.</p>  <p>The URL that you
          * get from a call to <a>CreatePresignedNotebookInstanceUrl</a> is valid only for 5
          * minutes. If you try to use the URL after the 5-minute limit expires, you are
-         * directed to the AWS console sign-in page.</p> </note><p><h3>See Also:</h3>   <a
+         * directed to the AWS console sign-in page.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreatePresignedNotebookInstanceUrl">AWS
          * API Reference</a></p>
          */
@@ -2083,10 +2085,10 @@ namespace Model
          * condition context key to specify the list of IP addresses that you want to have
          * access to the notebook instance. For more information, see <a
          * href="https://docs.aws.amazon.com/sagemaker/latest/dg/security_iam_id-based-policy-examples.html#nbi-ip-filter">Limit
-         * Access to a Notebook Instance by IP Address</a>.</p> <note> <p>The URL that you
+         * Access to a Notebook Instance by IP Address</a>.</p>  <p>The URL that you
          * get from a call to <a>CreatePresignedNotebookInstanceUrl</a> is valid only for 5
          * minutes. If you try to use the URL after the 5-minute limit expires, you are
-         * directed to the AWS console sign-in page.</p> </note><p><h3>See Also:</h3>   <a
+         * directed to the AWS console sign-in page.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreatePresignedNotebookInstanceUrl">AWS
          * API Reference</a></p>
          *
@@ -2110,10 +2112,10 @@ namespace Model
          * condition context key to specify the list of IP addresses that you want to have
          * access to the notebook instance. For more information, see <a
          * href="https://docs.aws.amazon.com/sagemaker/latest/dg/security_iam_id-based-policy-examples.html#nbi-ip-filter">Limit
-         * Access to a Notebook Instance by IP Address</a>.</p> <note> <p>The URL that you
+         * Access to a Notebook Instance by IP Address</a>.</p>  <p>The URL that you
          * get from a call to <a>CreatePresignedNotebookInstanceUrl</a> is valid only for 5
          * minutes. If you try to use the URL after the 5-minute limit expires, you are
-         * directed to the AWS console sign-in page.</p> </note><p><h3>See Also:</h3>   <a
+         * directed to the AWS console sign-in page.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreatePresignedNotebookInstanceUrl">AWS
          * API Reference</a></p>
          *
@@ -2413,12 +2415,12 @@ namespace Model
          * trials, and trial components are automatically tracked, logged, and indexed.
          * When you use the AWS SDK for Python (Boto), you must use the logging APIs
          * provided by the SDK.</p> <p>You can add tags to a trial component and then use
-         * the <a>Search</a> API to search for the tags.</p> <note> <p>
+         * the <a>Search</a> API to search for the tags.</p>  <p>
          * <code>CreateTrialComponent</code> can only be invoked from within an Amazon
          * SageMaker managed environment. This includes Amazon SageMaker training jobs,
          * processing jobs, transform jobs, and Amazon SageMaker notebooks. A call to
          * <code>CreateTrialComponent</code> from outside one of these environments results
-         * in an error.</p> </note><p><h3>See Also:</h3>   <a
+         * in an error.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateTrialComponent">AWS
          * API Reference</a></p>
          */
@@ -2433,12 +2435,12 @@ namespace Model
          * trials, and trial components are automatically tracked, logged, and indexed.
          * When you use the AWS SDK for Python (Boto), you must use the logging APIs
          * provided by the SDK.</p> <p>You can add tags to a trial component and then use
-         * the <a>Search</a> API to search for the tags.</p> <note> <p>
+         * the <a>Search</a> API to search for the tags.</p>  <p>
          * <code>CreateTrialComponent</code> can only be invoked from within an Amazon
          * SageMaker managed environment. This includes Amazon SageMaker training jobs,
          * processing jobs, transform jobs, and Amazon SageMaker notebooks. A call to
          * <code>CreateTrialComponent</code> from outside one of these environments results
-         * in an error.</p> </note><p><h3>See Also:</h3>   <a
+         * in an error.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateTrialComponent">AWS
          * API Reference</a></p>
          *
@@ -2455,12 +2457,12 @@ namespace Model
          * trials, and trial components are automatically tracked, logged, and indexed.
          * When you use the AWS SDK for Python (Boto), you must use the logging APIs
          * provided by the SDK.</p> <p>You can add tags to a trial component and then use
-         * the <a>Search</a> API to search for the tags.</p> <note> <p>
+         * the <a>Search</a> API to search for the tags.</p>  <p>
          * <code>CreateTrialComponent</code> can only be invoked from within an Amazon
          * SageMaker managed environment. This includes Amazon SageMaker training jobs,
          * processing jobs, transform jobs, and Amazon SageMaker notebooks. A call to
          * <code>CreateTrialComponent</code> from outside one of these environments results
-         * in an error.</p> </note><p><h3>See Also:</h3>   <a
+         * in an error.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateTrialComponent">AWS
          * API Reference</a></p>
          *
@@ -2809,6 +2811,43 @@ namespace Model
         virtual void DeleteFlowDefinitionAsync(const Model::DeleteFlowDefinitionRequest& request, const DeleteFlowDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Use this operation to delete a worker task template
+         * (<code>HumanTaskUi</code>).</p> <p> To see a list of human task user interfaces
+         * (work task templates) in your account, use . When you delete a worker task
+         * template, it no longer appears when you call
+         * <code>ListHumanTaskUis</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteHumanTaskUi">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteHumanTaskUiOutcome DeleteHumanTaskUi(const Model::DeleteHumanTaskUiRequest& request) const;
+
+        /**
+         * <p>Use this operation to delete a worker task template
+         * (<code>HumanTaskUi</code>).</p> <p> To see a list of human task user interfaces
+         * (work task templates) in your account, use . When you delete a worker task
+         * template, it no longer appears when you call
+         * <code>ListHumanTaskUis</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteHumanTaskUi">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteHumanTaskUiOutcomeCallable DeleteHumanTaskUiCallable(const Model::DeleteHumanTaskUiRequest& request) const;
+
+        /**
+         * <p>Use this operation to delete a worker task template
+         * (<code>HumanTaskUi</code>).</p> <p> To see a list of human task user interfaces
+         * (work task templates) in your account, use . When you delete a worker task
+         * template, it no longer appears when you call
+         * <code>ListHumanTaskUis</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteHumanTaskUi">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteHumanTaskUiAsync(const Model::DeleteHumanTaskUiRequest& request, const DeleteHumanTaskUiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Deletes a model. The <code>DeleteModel</code> API deletes only the model
          * entry that was created in Amazon SageMaker when you called the
          * <a>CreateModel</a> API. It does not delete model artifacts, inference code, or
@@ -2913,10 +2952,10 @@ namespace Model
         /**
          * <p> Deletes an Amazon SageMaker notebook instance. Before you can delete a
          * notebook instance, you must call the <code>StopNotebookInstance</code> API. </p>
-         * <important> <p>When you delete a notebook instance, you lose all of your data.
+         *  <p>When you delete a notebook instance, you lose all of your data.
          * Amazon SageMaker removes the ML compute instance, and deletes the ML storage
          * volume and the network interface associated with the notebook instance. </p>
-         * </important><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteNotebookInstance">AWS
          * API Reference</a></p>
          */
@@ -2925,10 +2964,10 @@ namespace Model
         /**
          * <p> Deletes an Amazon SageMaker notebook instance. Before you can delete a
          * notebook instance, you must call the <code>StopNotebookInstance</code> API. </p>
-         * <important> <p>When you delete a notebook instance, you lose all of your data.
+         *  <p>When you delete a notebook instance, you lose all of your data.
          * Amazon SageMaker removes the ML compute instance, and deletes the ML storage
          * volume and the network interface associated with the notebook instance. </p>
-         * </important><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteNotebookInstance">AWS
          * API Reference</a></p>
          *
@@ -2939,10 +2978,10 @@ namespace Model
         /**
          * <p> Deletes an Amazon SageMaker notebook instance. Before you can delete a
          * notebook instance, you must call the <code>StopNotebookInstance</code> API. </p>
-         * <important> <p>When you delete a notebook instance, you lose all of your data.
+         *  <p>When you delete a notebook instance, you lose all of your data.
          * Amazon SageMaker removes the ML compute instance, and deletes the ML storage
          * volume and the network interface associated with the notebook instance. </p>
-         * </important><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteNotebookInstance">AWS
          * API Reference</a></p>
          *
@@ -2980,10 +3019,10 @@ namespace Model
 
         /**
          * <p>Deletes the specified tags from an Amazon SageMaker resource.</p> <p>To list
-         * a resource's tags, use the <code>ListTags</code> API. </p> <note> <p>When you
+         * a resource's tags, use the <code>ListTags</code> API. </p>  <p>When you
          * call this API to delete tags from a hyperparameter tuning job, the deleted tags
          * are not removed from training jobs that the hyperparameter tuning job launched
-         * before you called this API.</p> </note><p><h3>See Also:</h3>   <a
+         * before you called this API.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteTags">AWS
          * API Reference</a></p>
          */
@@ -2991,10 +3030,10 @@ namespace Model
 
         /**
          * <p>Deletes the specified tags from an Amazon SageMaker resource.</p> <p>To list
-         * a resource's tags, use the <code>ListTags</code> API. </p> <note> <p>When you
+         * a resource's tags, use the <code>ListTags</code> API. </p>  <p>When you
          * call this API to delete tags from a hyperparameter tuning job, the deleted tags
          * are not removed from training jobs that the hyperparameter tuning job launched
-         * before you called this API.</p> </note><p><h3>See Also:</h3>   <a
+         * before you called this API.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteTags">AWS
          * API Reference</a></p>
          *
@@ -3004,10 +3043,10 @@ namespace Model
 
         /**
          * <p>Deletes the specified tags from an Amazon SageMaker resource.</p> <p>To list
-         * a resource's tags, use the <code>ListTags</code> API. </p> <note> <p>When you
+         * a resource's tags, use the <code>ListTags</code> API. </p>  <p>When you
          * call this API to delete tags from a hyperparameter tuning job, the deleted tags
          * are not removed from training jobs that the hyperparameter tuning job launched
-         * before you called this API.</p> </note><p><h3>See Also:</h3>   <a
+         * before you called this API.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteTags">AWS
          * API Reference</a></p>
          *
@@ -3414,16 +3453,16 @@ namespace Model
         virtual void DescribeFlowDefinitionAsync(const Model::DescribeFlowDefinitionRequest& request, const DescribeFlowDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns information about the requested human task user
-         * interface.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns information about the requested human task user interface (worker
+         * task template).</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeHumanTaskUi">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeHumanTaskUiOutcome DescribeHumanTaskUi(const Model::DescribeHumanTaskUiRequest& request) const;
 
         /**
-         * <p>Returns information about the requested human task user
-         * interface.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns information about the requested human task user interface (worker
+         * task template).</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeHumanTaskUi">AWS
          * API Reference</a></p>
          *
@@ -3432,8 +3471,8 @@ namespace Model
         virtual Model::DescribeHumanTaskUiOutcomeCallable DescribeHumanTaskUiCallable(const Model::DescribeHumanTaskUiRequest& request) const;
 
         /**
-         * <p>Returns information about the requested human task user
-         * interface.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns information about the requested human task user interface (worker
+         * task template).</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeHumanTaskUi">AWS
          * API Reference</a></p>
          *
@@ -3832,8 +3871,8 @@ namespace Model
          * Resource Name (ARN), and, if applicable, allowed IP address ranges (<a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>).
          * Allowable IP address ranges are the IP addresses that workers can use to access
-         * tasks. </p> <important> <p>This operation applies only to private
-         * workforces.</p> </important><p><h3>See Also:</h3>   <a
+         * tasks. </p>  <p>This operation applies only to private
+         * workforces.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeWorkforce">AWS
          * API Reference</a></p>
          */
@@ -3844,8 +3883,8 @@ namespace Model
          * Resource Name (ARN), and, if applicable, allowed IP address ranges (<a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>).
          * Allowable IP address ranges are the IP addresses that workers can use to access
-         * tasks. </p> <important> <p>This operation applies only to private
-         * workforces.</p> </important><p><h3>See Also:</h3>   <a
+         * tasks. </p>  <p>This operation applies only to private
+         * workforces.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeWorkforce">AWS
          * API Reference</a></p>
          *
@@ -3858,8 +3897,8 @@ namespace Model
          * Resource Name (ARN), and, if applicable, allowed IP address ranges (<a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>).
          * Allowable IP address ranges are the IP addresses that workers can use to access
-         * tasks. </p> <important> <p>This operation applies only to private
-         * workforces.</p> </important><p><h3>See Also:</h3>   <a
+         * tasks. </p>  <p>This operation applies only to private
+         * workforces.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeWorkforce">AWS
          * API Reference</a></p>
          *
@@ -4927,8 +4966,8 @@ namespace Model
         virtual void SearchAsync(const Model::SearchRequest& request, const SearchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Starts a previously stopped monitoring schedule.</p> <note> <p>New monitoring
-         * schedules are immediately started after creation.</p> </note><p><h3>See
+         * <p>Starts a previously stopped monitoring schedule.</p>  <p>New monitoring
+         * schedules are immediately started after creation.</p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StartMonitoringSchedule">AWS
          * API Reference</a></p>
@@ -4936,8 +4975,8 @@ namespace Model
         virtual Model::StartMonitoringScheduleOutcome StartMonitoringSchedule(const Model::StartMonitoringScheduleRequest& request) const;
 
         /**
-         * <p>Starts a previously stopped monitoring schedule.</p> <note> <p>New monitoring
-         * schedules are immediately started after creation.</p> </note><p><h3>See
+         * <p>Starts a previously stopped monitoring schedule.</p>  <p>New monitoring
+         * schedules are immediately started after creation.</p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StartMonitoringSchedule">AWS
          * API Reference</a></p>
@@ -4947,8 +4986,8 @@ namespace Model
         virtual Model::StartMonitoringScheduleOutcomeCallable StartMonitoringScheduleCallable(const Model::StartMonitoringScheduleRequest& request) const;
 
         /**
-         * <p>Starts a previously stopped monitoring schedule.</p> <note> <p>New monitoring
-         * schedules are immediately started after creation.</p> </note><p><h3>See
+         * <p>Starts a previously stopped monitoring schedule.</p>  <p>New monitoring
+         * schedules are immediately started after creation.</p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StartMonitoringSchedule">AWS
          * API Reference</a></p>
@@ -5381,7 +5420,7 @@ namespace Model
          * availability loss). </p> <p>When Amazon SageMaker receives the request, it sets
          * the endpoint status to <code>Updating</code>. After updating the endpoint, it
          * sets the status to <code>InService</code>. To check the status of an endpoint,
-         * use the <a>DescribeEndpoint</a> API. </p> <note> <p>You must not delete an
+         * use the <a>DescribeEndpoint</a> API. </p>  <p>You must not delete an
          * <code>EndpointConfig</code> in use by an endpoint that is live or while the
          * <code>UpdateEndpoint</code> or <code>CreateEndpoint</code> operations are being
          * performed on the endpoint. To update an endpoint, you must create a new
@@ -5389,7 +5428,7 @@ namespace Model
          * <code>EndpointConfig</code> of an endpoint that is active or being created or
          * updated you may lose visibility into the instance type the endpoint is using.
          * The endpoint must be deleted in order to stop incurring charges.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateEndpoint">AWS
          * API Reference</a></p>
          */
@@ -5402,7 +5441,7 @@ namespace Model
          * availability loss). </p> <p>When Amazon SageMaker receives the request, it sets
          * the endpoint status to <code>Updating</code>. After updating the endpoint, it
          * sets the status to <code>InService</code>. To check the status of an endpoint,
-         * use the <a>DescribeEndpoint</a> API. </p> <note> <p>You must not delete an
+         * use the <a>DescribeEndpoint</a> API. </p>  <p>You must not delete an
          * <code>EndpointConfig</code> in use by an endpoint that is live or while the
          * <code>UpdateEndpoint</code> or <code>CreateEndpoint</code> operations are being
          * performed on the endpoint. To update an endpoint, you must create a new
@@ -5410,7 +5449,7 @@ namespace Model
          * <code>EndpointConfig</code> of an endpoint that is active or being created or
          * updated you may lose visibility into the instance type the endpoint is using.
          * The endpoint must be deleted in order to stop incurring charges.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateEndpoint">AWS
          * API Reference</a></p>
          *
@@ -5425,7 +5464,7 @@ namespace Model
          * availability loss). </p> <p>When Amazon SageMaker receives the request, it sets
          * the endpoint status to <code>Updating</code>. After updating the endpoint, it
          * sets the status to <code>InService</code>. To check the status of an endpoint,
-         * use the <a>DescribeEndpoint</a> API. </p> <note> <p>You must not delete an
+         * use the <a>DescribeEndpoint</a> API. </p>  <p>You must not delete an
          * <code>EndpointConfig</code> in use by an endpoint that is live or while the
          * <code>UpdateEndpoint</code> or <code>CreateEndpoint</code> operations are being
          * performed on the endpoint. To update an endpoint, you must create a new
@@ -5433,7 +5472,7 @@ namespace Model
          * <code>EndpointConfig</code> of an endpoint that is active or being created or
          * updated you may lose visibility into the instance type the endpoint is using.
          * The endpoint must be deleted in order to stop incurring charges.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateEndpoint">AWS
          * API Reference</a></p>
          *
@@ -5674,15 +5713,15 @@ namespace Model
         /**
          * <p>Restricts access to tasks assigned to workers in the specified workforce to
          * those within specific ranges of IP addresses. You specify allowed IP addresses
-         * by creating a list of up to four <a
+         * by creating a list of up to ten <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>.</p>
          * <p>By default, a workforce isn't restricted to specific IP addresses. If you
          * specify a range of IP addresses, workers who attempt to access tasks using any
          * IP address outside the specified range are denied access and get a <code>Not
          * Found</code> error message on the worker portal. After restricting access with
          * this operation, you can see the allowed IP values for a private workforce with
-         * the operation.</p> <important> <p>This operation applies only to private
-         * workforces.</p> </important><p><h3>See Also:</h3>   <a
+         * the operation.</p>  <p>This operation applies only to private
+         * workforces.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateWorkforce">AWS
          * API Reference</a></p>
          */
@@ -5691,15 +5730,15 @@ namespace Model
         /**
          * <p>Restricts access to tasks assigned to workers in the specified workforce to
          * those within specific ranges of IP addresses. You specify allowed IP addresses
-         * by creating a list of up to four <a
+         * by creating a list of up to ten <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>.</p>
          * <p>By default, a workforce isn't restricted to specific IP addresses. If you
          * specify a range of IP addresses, workers who attempt to access tasks using any
          * IP address outside the specified range are denied access and get a <code>Not
          * Found</code> error message on the worker portal. After restricting access with
          * this operation, you can see the allowed IP values for a private workforce with
-         * the operation.</p> <important> <p>This operation applies only to private
-         * workforces.</p> </important><p><h3>See Also:</h3>   <a
+         * the operation.</p>  <p>This operation applies only to private
+         * workforces.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateWorkforce">AWS
          * API Reference</a></p>
          *
@@ -5710,15 +5749,15 @@ namespace Model
         /**
          * <p>Restricts access to tasks assigned to workers in the specified workforce to
          * those within specific ranges of IP addresses. You specify allowed IP addresses
-         * by creating a list of up to four <a
+         * by creating a list of up to ten <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>.</p>
          * <p>By default, a workforce isn't restricted to specific IP addresses. If you
          * specify a range of IP addresses, workers who attempt to access tasks using any
          * IP address outside the specified range are denied access and get a <code>Not
          * Found</code> error message on the worker portal. After restricting access with
          * this operation, you can see the allowed IP values for a private workforce with
-         * the operation.</p> <important> <p>This operation applies only to private
-         * workforces.</p> </important><p><h3>See Also:</h3>   <a
+         * the operation.</p>  <p>This operation applies only to private
+         * workforces.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateWorkforce">AWS
          * API Reference</a></p>
          *
@@ -5795,6 +5834,7 @@ namespace Model
         void DeleteEndpointConfigAsyncHelper(const Model::DeleteEndpointConfigRequest& request, const DeleteEndpointConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteExperimentAsyncHelper(const Model::DeleteExperimentRequest& request, const DeleteExperimentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteFlowDefinitionAsyncHelper(const Model::DeleteFlowDefinitionRequest& request, const DeleteFlowDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteHumanTaskUiAsyncHelper(const Model::DeleteHumanTaskUiRequest& request, const DeleteHumanTaskUiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteModelAsyncHelper(const Model::DeleteModelRequest& request, const DeleteModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteModelPackageAsyncHelper(const Model::DeleteModelPackageRequest& request, const DeleteModelPackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteMonitoringScheduleAsyncHelper(const Model::DeleteMonitoringScheduleRequest& request, const DeleteMonitoringScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

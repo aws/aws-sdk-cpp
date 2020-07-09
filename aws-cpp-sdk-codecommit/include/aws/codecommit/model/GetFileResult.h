@@ -158,46 +158,46 @@ namespace Model
 
     /**
      * <p>The extrapolated file mode permissions of the blob. Valid values include
-     * strings such as EXECUTABLE and not numeric values.</p> <note> <p>The file mode
+     * strings such as EXECUTABLE and not numeric values.</p>  <p>The file mode
      * permissions returned by this API are not the standard file mode permission
      * values, such as 100644, but rather extrapolated values. See the supported return
-     * values.</p> </note>
+     * values.</p> 
      */
     inline const FileModeTypeEnum& GetFileMode() const{ return m_fileMode; }
 
     /**
      * <p>The extrapolated file mode permissions of the blob. Valid values include
-     * strings such as EXECUTABLE and not numeric values.</p> <note> <p>The file mode
+     * strings such as EXECUTABLE and not numeric values.</p>  <p>The file mode
      * permissions returned by this API are not the standard file mode permission
      * values, such as 100644, but rather extrapolated values. See the supported return
-     * values.</p> </note>
+     * values.</p> 
      */
     inline void SetFileMode(const FileModeTypeEnum& value) { m_fileMode = value; }
 
     /**
      * <p>The extrapolated file mode permissions of the blob. Valid values include
-     * strings such as EXECUTABLE and not numeric values.</p> <note> <p>The file mode
+     * strings such as EXECUTABLE and not numeric values.</p>  <p>The file mode
      * permissions returned by this API are not the standard file mode permission
      * values, such as 100644, but rather extrapolated values. See the supported return
-     * values.</p> </note>
+     * values.</p> 
      */
     inline void SetFileMode(FileModeTypeEnum&& value) { m_fileMode = std::move(value); }
 
     /**
      * <p>The extrapolated file mode permissions of the blob. Valid values include
-     * strings such as EXECUTABLE and not numeric values.</p> <note> <p>The file mode
+     * strings such as EXECUTABLE and not numeric values.</p>  <p>The file mode
      * permissions returned by this API are not the standard file mode permission
      * values, such as 100644, but rather extrapolated values. See the supported return
-     * values.</p> </note>
+     * values.</p> 
      */
     inline GetFileResult& WithFileMode(const FileModeTypeEnum& value) { SetFileMode(value); return *this;}
 
     /**
      * <p>The extrapolated file mode permissions of the blob. Valid values include
-     * strings such as EXECUTABLE and not numeric values.</p> <note> <p>The file mode
+     * strings such as EXECUTABLE and not numeric values.</p>  <p>The file mode
      * permissions returned by this API are not the standard file mode permission
      * values, such as 100644, but rather extrapolated values. See the supported return
-     * values.</p> </note>
+     * values.</p> 
      */
     inline GetFileResult& WithFileMode(FileModeTypeEnum&& value) { SetFileMode(std::move(value)); return *this;}
 

@@ -399,65 +399,65 @@ namespace Model
 
 
     /**
-     * <p> The versions of the package to copy. </p> <note> <p> You must specify
+     * <p> The versions of the package to copy. </p>  <p> You must specify
      * <code>versions</code> or <code>versionRevisions</code>. You cannot specify both.
-     * </p> </note>
+     * </p> 
      */
     inline const Aws::Vector<Aws::String>& GetVersions() const{ return m_versions; }
 
     /**
-     * <p> The versions of the package to copy. </p> <note> <p> You must specify
+     * <p> The versions of the package to copy. </p>  <p> You must specify
      * <code>versions</code> or <code>versionRevisions</code>. You cannot specify both.
-     * </p> </note>
+     * </p> 
      */
     inline bool VersionsHasBeenSet() const { return m_versionsHasBeenSet; }
 
     /**
-     * <p> The versions of the package to copy. </p> <note> <p> You must specify
+     * <p> The versions of the package to copy. </p>  <p> You must specify
      * <code>versions</code> or <code>versionRevisions</code>. You cannot specify both.
-     * </p> </note>
+     * </p> 
      */
     inline void SetVersions(const Aws::Vector<Aws::String>& value) { m_versionsHasBeenSet = true; m_versions = value; }
 
     /**
-     * <p> The versions of the package to copy. </p> <note> <p> You must specify
+     * <p> The versions of the package to copy. </p>  <p> You must specify
      * <code>versions</code> or <code>versionRevisions</code>. You cannot specify both.
-     * </p> </note>
+     * </p> 
      */
     inline void SetVersions(Aws::Vector<Aws::String>&& value) { m_versionsHasBeenSet = true; m_versions = std::move(value); }
 
     /**
-     * <p> The versions of the package to copy. </p> <note> <p> You must specify
+     * <p> The versions of the package to copy. </p>  <p> You must specify
      * <code>versions</code> or <code>versionRevisions</code>. You cannot specify both.
-     * </p> </note>
+     * </p> 
      */
     inline CopyPackageVersionsRequest& WithVersions(const Aws::Vector<Aws::String>& value) { SetVersions(value); return *this;}
 
     /**
-     * <p> The versions of the package to copy. </p> <note> <p> You must specify
+     * <p> The versions of the package to copy. </p>  <p> You must specify
      * <code>versions</code> or <code>versionRevisions</code>. You cannot specify both.
-     * </p> </note>
+     * </p> 
      */
     inline CopyPackageVersionsRequest& WithVersions(Aws::Vector<Aws::String>&& value) { SetVersions(std::move(value)); return *this;}
 
     /**
-     * <p> The versions of the package to copy. </p> <note> <p> You must specify
+     * <p> The versions of the package to copy. </p>  <p> You must specify
      * <code>versions</code> or <code>versionRevisions</code>. You cannot specify both.
-     * </p> </note>
+     * </p> 
      */
     inline CopyPackageVersionsRequest& AddVersions(const Aws::String& value) { m_versionsHasBeenSet = true; m_versions.push_back(value); return *this; }
 
     /**
-     * <p> The versions of the package to copy. </p> <note> <p> You must specify
+     * <p> The versions of the package to copy. </p>  <p> You must specify
      * <code>versions</code> or <code>versionRevisions</code>. You cannot specify both.
-     * </p> </note>
+     * </p> 
      */
     inline CopyPackageVersionsRequest& AddVersions(Aws::String&& value) { m_versionsHasBeenSet = true; m_versions.push_back(std::move(value)); return *this; }
 
     /**
-     * <p> The versions of the package to copy. </p> <note> <p> You must specify
+     * <p> The versions of the package to copy. </p>  <p> You must specify
      * <code>versions</code> or <code>versionRevisions</code>. You cannot specify both.
-     * </p> </note>
+     * </p> 
      */
     inline CopyPackageVersionsRequest& AddVersions(const char* value) { m_versionsHasBeenSet = true; m_versions.push_back(value); return *this; }
 
@@ -466,8 +466,8 @@ namespace Model
      * <p> A list of key-value pairs. The keys are package versions and the values are
      * package version revisions. A <code>CopyPackageVersion</code> operation succeeds
      * if the specified versions in the source repository match the specified package
-     * version revision. </p> <note> <p> You must specify <code>versions</code> or
-     * <code>versionRevisions</code>. You cannot specify both. </p> </note>
+     * version revision. </p>  <p> You must specify <code>versions</code> or
+     * <code>versionRevisions</code>. You cannot specify both. </p> 
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetVersionRevisions() const{ return m_versionRevisions; }
 
@@ -475,8 +475,8 @@ namespace Model
      * <p> A list of key-value pairs. The keys are package versions and the values are
      * package version revisions. A <code>CopyPackageVersion</code> operation succeeds
      * if the specified versions in the source repository match the specified package
-     * version revision. </p> <note> <p> You must specify <code>versions</code> or
-     * <code>versionRevisions</code>. You cannot specify both. </p> </note>
+     * version revision. </p>  <p> You must specify <code>versions</code> or
+     * <code>versionRevisions</code>. You cannot specify both. </p> 
      */
     inline bool VersionRevisionsHasBeenSet() const { return m_versionRevisionsHasBeenSet; }
 
@@ -484,8 +484,8 @@ namespace Model
      * <p> A list of key-value pairs. The keys are package versions and the values are
      * package version revisions. A <code>CopyPackageVersion</code> operation succeeds
      * if the specified versions in the source repository match the specified package
-     * version revision. </p> <note> <p> You must specify <code>versions</code> or
-     * <code>versionRevisions</code>. You cannot specify both. </p> </note>
+     * version revision. </p>  <p> You must specify <code>versions</code> or
+     * <code>versionRevisions</code>. You cannot specify both. </p> 
      */
     inline void SetVersionRevisions(const Aws::Map<Aws::String, Aws::String>& value) { m_versionRevisionsHasBeenSet = true; m_versionRevisions = value; }
 
@@ -493,8 +493,8 @@ namespace Model
      * <p> A list of key-value pairs. The keys are package versions and the values are
      * package version revisions. A <code>CopyPackageVersion</code> operation succeeds
      * if the specified versions in the source repository match the specified package
-     * version revision. </p> <note> <p> You must specify <code>versions</code> or
-     * <code>versionRevisions</code>. You cannot specify both. </p> </note>
+     * version revision. </p>  <p> You must specify <code>versions</code> or
+     * <code>versionRevisions</code>. You cannot specify both. </p> 
      */
     inline void SetVersionRevisions(Aws::Map<Aws::String, Aws::String>&& value) { m_versionRevisionsHasBeenSet = true; m_versionRevisions = std::move(value); }
 
@@ -502,8 +502,8 @@ namespace Model
      * <p> A list of key-value pairs. The keys are package versions and the values are
      * package version revisions. A <code>CopyPackageVersion</code> operation succeeds
      * if the specified versions in the source repository match the specified package
-     * version revision. </p> <note> <p> You must specify <code>versions</code> or
-     * <code>versionRevisions</code>. You cannot specify both. </p> </note>
+     * version revision. </p>  <p> You must specify <code>versions</code> or
+     * <code>versionRevisions</code>. You cannot specify both. </p> 
      */
     inline CopyPackageVersionsRequest& WithVersionRevisions(const Aws::Map<Aws::String, Aws::String>& value) { SetVersionRevisions(value); return *this;}
 
@@ -511,8 +511,8 @@ namespace Model
      * <p> A list of key-value pairs. The keys are package versions and the values are
      * package version revisions. A <code>CopyPackageVersion</code> operation succeeds
      * if the specified versions in the source repository match the specified package
-     * version revision. </p> <note> <p> You must specify <code>versions</code> or
-     * <code>versionRevisions</code>. You cannot specify both. </p> </note>
+     * version revision. </p>  <p> You must specify <code>versions</code> or
+     * <code>versionRevisions</code>. You cannot specify both. </p> 
      */
     inline CopyPackageVersionsRequest& WithVersionRevisions(Aws::Map<Aws::String, Aws::String>&& value) { SetVersionRevisions(std::move(value)); return *this;}
 
@@ -520,8 +520,8 @@ namespace Model
      * <p> A list of key-value pairs. The keys are package versions and the values are
      * package version revisions. A <code>CopyPackageVersion</code> operation succeeds
      * if the specified versions in the source repository match the specified package
-     * version revision. </p> <note> <p> You must specify <code>versions</code> or
-     * <code>versionRevisions</code>. You cannot specify both. </p> </note>
+     * version revision. </p>  <p> You must specify <code>versions</code> or
+     * <code>versionRevisions</code>. You cannot specify both. </p> 
      */
     inline CopyPackageVersionsRequest& AddVersionRevisions(const Aws::String& key, const Aws::String& value) { m_versionRevisionsHasBeenSet = true; m_versionRevisions.emplace(key, value); return *this; }
 
@@ -529,8 +529,8 @@ namespace Model
      * <p> A list of key-value pairs. The keys are package versions and the values are
      * package version revisions. A <code>CopyPackageVersion</code> operation succeeds
      * if the specified versions in the source repository match the specified package
-     * version revision. </p> <note> <p> You must specify <code>versions</code> or
-     * <code>versionRevisions</code>. You cannot specify both. </p> </note>
+     * version revision. </p>  <p> You must specify <code>versions</code> or
+     * <code>versionRevisions</code>. You cannot specify both. </p> 
      */
     inline CopyPackageVersionsRequest& AddVersionRevisions(Aws::String&& key, const Aws::String& value) { m_versionRevisionsHasBeenSet = true; m_versionRevisions.emplace(std::move(key), value); return *this; }
 
@@ -538,8 +538,8 @@ namespace Model
      * <p> A list of key-value pairs. The keys are package versions and the values are
      * package version revisions. A <code>CopyPackageVersion</code> operation succeeds
      * if the specified versions in the source repository match the specified package
-     * version revision. </p> <note> <p> You must specify <code>versions</code> or
-     * <code>versionRevisions</code>. You cannot specify both. </p> </note>
+     * version revision. </p>  <p> You must specify <code>versions</code> or
+     * <code>versionRevisions</code>. You cannot specify both. </p> 
      */
     inline CopyPackageVersionsRequest& AddVersionRevisions(const Aws::String& key, Aws::String&& value) { m_versionRevisionsHasBeenSet = true; m_versionRevisions.emplace(key, std::move(value)); return *this; }
 
@@ -547,8 +547,8 @@ namespace Model
      * <p> A list of key-value pairs. The keys are package versions and the values are
      * package version revisions. A <code>CopyPackageVersion</code> operation succeeds
      * if the specified versions in the source repository match the specified package
-     * version revision. </p> <note> <p> You must specify <code>versions</code> or
-     * <code>versionRevisions</code>. You cannot specify both. </p> </note>
+     * version revision. </p>  <p> You must specify <code>versions</code> or
+     * <code>versionRevisions</code>. You cannot specify both. </p> 
      */
     inline CopyPackageVersionsRequest& AddVersionRevisions(Aws::String&& key, Aws::String&& value) { m_versionRevisionsHasBeenSet = true; m_versionRevisions.emplace(std::move(key), std::move(value)); return *this; }
 
@@ -556,8 +556,8 @@ namespace Model
      * <p> A list of key-value pairs. The keys are package versions and the values are
      * package version revisions. A <code>CopyPackageVersion</code> operation succeeds
      * if the specified versions in the source repository match the specified package
-     * version revision. </p> <note> <p> You must specify <code>versions</code> or
-     * <code>versionRevisions</code>. You cannot specify both. </p> </note>
+     * version revision. </p>  <p> You must specify <code>versions</code> or
+     * <code>versionRevisions</code>. You cannot specify both. </p> 
      */
     inline CopyPackageVersionsRequest& AddVersionRevisions(const char* key, Aws::String&& value) { m_versionRevisionsHasBeenSet = true; m_versionRevisions.emplace(key, std::move(value)); return *this; }
 
@@ -565,8 +565,8 @@ namespace Model
      * <p> A list of key-value pairs. The keys are package versions and the values are
      * package version revisions. A <code>CopyPackageVersion</code> operation succeeds
      * if the specified versions in the source repository match the specified package
-     * version revision. </p> <note> <p> You must specify <code>versions</code> or
-     * <code>versionRevisions</code>. You cannot specify both. </p> </note>
+     * version revision. </p>  <p> You must specify <code>versions</code> or
+     * <code>versionRevisions</code>. You cannot specify both. </p> 
      */
     inline CopyPackageVersionsRequest& AddVersionRevisions(Aws::String&& key, const char* value) { m_versionRevisionsHasBeenSet = true; m_versionRevisions.emplace(std::move(key), value); return *this; }
 
@@ -574,8 +574,8 @@ namespace Model
      * <p> A list of key-value pairs. The keys are package versions and the values are
      * package version revisions. A <code>CopyPackageVersion</code> operation succeeds
      * if the specified versions in the source repository match the specified package
-     * version revision. </p> <note> <p> You must specify <code>versions</code> or
-     * <code>versionRevisions</code>. You cannot specify both. </p> </note>
+     * version revision. </p>  <p> You must specify <code>versions</code> or
+     * <code>versionRevisions</code>. You cannot specify both. </p> 
      */
     inline CopyPackageVersionsRequest& AddVersionRevisions(const char* key, const char* value) { m_versionRevisionsHasBeenSet = true; m_versionRevisions.emplace(key, value); return *this; }
 

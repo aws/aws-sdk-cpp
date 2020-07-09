@@ -159,7 +159,7 @@ namespace Model
      * available. We recommend that the media player retrieve a new playlist on a
      * one-second interval. When this type of session is played in a media player, the
      * user interface typically displays a "live" notification, with no scrubber
-     * control for choosing the position in the playback window to display.</p> <note>
+     * control for choosing the position in the playback window to display.</p> 
      * <p>In <code>LIVE</code> mode, the newest available fragments are included in an
      * HLS media playlist, even if there is a gap between fragments (that is, if a
      * fragment is missing). A gap like this might cause a media player to halt or
@@ -167,7 +167,7 @@ namespace Model
      * playlist if they are older than the newest fragment in the playlist. If the
      * missing fragment becomes available after a subsequent fragment is added to the
      * playlist, the older fragment is not added, and the gap is not filled.</p>
-     * </note> </li> <li> <p> <b> <code>LIVE_REPLAY</code> </b>: For sessions of this
+     *  </li> <li> <p> <b> <code>LIVE_REPLAY</code> </b>: For sessions of this
      * type, the HLS media playlist is updated similarly to how it is updated for
      * <code>LIVE</code> mode except that it starts by including fragments from a given
      * start time. Instead of fragments being added as they are ingested, fragments are
@@ -203,7 +203,7 @@ namespace Model
      * available. We recommend that the media player retrieve a new playlist on a
      * one-second interval. When this type of session is played in a media player, the
      * user interface typically displays a "live" notification, with no scrubber
-     * control for choosing the position in the playback window to display.</p> <note>
+     * control for choosing the position in the playback window to display.</p> 
      * <p>In <code>LIVE</code> mode, the newest available fragments are included in an
      * HLS media playlist, even if there is a gap between fragments (that is, if a
      * fragment is missing). A gap like this might cause a media player to halt or
@@ -211,7 +211,7 @@ namespace Model
      * playlist if they are older than the newest fragment in the playlist. If the
      * missing fragment becomes available after a subsequent fragment is added to the
      * playlist, the older fragment is not added, and the gap is not filled.</p>
-     * </note> </li> <li> <p> <b> <code>LIVE_REPLAY</code> </b>: For sessions of this
+     *  </li> <li> <p> <b> <code>LIVE_REPLAY</code> </b>: For sessions of this
      * type, the HLS media playlist is updated similarly to how it is updated for
      * <code>LIVE</code> mode except that it starts by including fragments from a given
      * start time. Instead of fragments being added as they are ingested, fragments are
@@ -247,7 +247,7 @@ namespace Model
      * available. We recommend that the media player retrieve a new playlist on a
      * one-second interval. When this type of session is played in a media player, the
      * user interface typically displays a "live" notification, with no scrubber
-     * control for choosing the position in the playback window to display.</p> <note>
+     * control for choosing the position in the playback window to display.</p> 
      * <p>In <code>LIVE</code> mode, the newest available fragments are included in an
      * HLS media playlist, even if there is a gap between fragments (that is, if a
      * fragment is missing). A gap like this might cause a media player to halt or
@@ -255,7 +255,7 @@ namespace Model
      * playlist if they are older than the newest fragment in the playlist. If the
      * missing fragment becomes available after a subsequent fragment is added to the
      * playlist, the older fragment is not added, and the gap is not filled.</p>
-     * </note> </li> <li> <p> <b> <code>LIVE_REPLAY</code> </b>: For sessions of this
+     *  </li> <li> <p> <b> <code>LIVE_REPLAY</code> </b>: For sessions of this
      * type, the HLS media playlist is updated similarly to how it is updated for
      * <code>LIVE</code> mode except that it starts by including fragments from a given
      * start time. Instead of fragments being added as they are ingested, fragments are
@@ -291,7 +291,7 @@ namespace Model
      * available. We recommend that the media player retrieve a new playlist on a
      * one-second interval. When this type of session is played in a media player, the
      * user interface typically displays a "live" notification, with no scrubber
-     * control for choosing the position in the playback window to display.</p> <note>
+     * control for choosing the position in the playback window to display.</p> 
      * <p>In <code>LIVE</code> mode, the newest available fragments are included in an
      * HLS media playlist, even if there is a gap between fragments (that is, if a
      * fragment is missing). A gap like this might cause a media player to halt or
@@ -299,7 +299,7 @@ namespace Model
      * playlist if they are older than the newest fragment in the playlist. If the
      * missing fragment becomes available after a subsequent fragment is added to the
      * playlist, the older fragment is not added, and the gap is not filled.</p>
-     * </note> </li> <li> <p> <b> <code>LIVE_REPLAY</code> </b>: For sessions of this
+     *  </li> <li> <p> <b> <code>LIVE_REPLAY</code> </b>: For sessions of this
      * type, the HLS media playlist is updated similarly to how it is updated for
      * <code>LIVE</code> mode except that it starts by including fragments from a given
      * start time. Instead of fragments being added as they are ingested, fragments are
@@ -335,7 +335,7 @@ namespace Model
      * available. We recommend that the media player retrieve a new playlist on a
      * one-second interval. When this type of session is played in a media player, the
      * user interface typically displays a "live" notification, with no scrubber
-     * control for choosing the position in the playback window to display.</p> <note>
+     * control for choosing the position in the playback window to display.</p> 
      * <p>In <code>LIVE</code> mode, the newest available fragments are included in an
      * HLS media playlist, even if there is a gap between fragments (that is, if a
      * fragment is missing). A gap like this might cause a media player to halt or
@@ -343,7 +343,7 @@ namespace Model
      * playlist if they are older than the newest fragment in the playlist. If the
      * missing fragment becomes available after a subsequent fragment is added to the
      * playlist, the older fragment is not added, and the gap is not filled.</p>
-     * </note> </li> <li> <p> <b> <code>LIVE_REPLAY</code> </b>: For sessions of this
+     *  </li> <li> <p> <b> <code>LIVE_REPLAY</code> </b>: For sessions of this
      * type, the HLS media playlist is updated similarly to how it is updated for
      * <code>LIVE</code> mode except that it starts by including fragments from a given
      * start time. Instead of fragments being added as they are ingested, fragments are
@@ -379,7 +379,7 @@ namespace Model
      * available. We recommend that the media player retrieve a new playlist on a
      * one-second interval. When this type of session is played in a media player, the
      * user interface typically displays a "live" notification, with no scrubber
-     * control for choosing the position in the playback window to display.</p> <note>
+     * control for choosing the position in the playback window to display.</p> 
      * <p>In <code>LIVE</code> mode, the newest available fragments are included in an
      * HLS media playlist, even if there is a gap between fragments (that is, if a
      * fragment is missing). A gap like this might cause a media player to halt or
@@ -387,7 +387,7 @@ namespace Model
      * playlist if they are older than the newest fragment in the playlist. If the
      * missing fragment becomes available after a subsequent fragment is added to the
      * playlist, the older fragment is not added, and the gap is not filled.</p>
-     * </note> </li> <li> <p> <b> <code>LIVE_REPLAY</code> </b>: For sessions of this
+     *  </li> <li> <p> <b> <code>LIVE_REPLAY</code> </b>: For sessions of this
      * type, the HLS media playlist is updated similarly to how it is updated for
      * <code>LIVE</code> mode except that it starts by including fragments from a given
      * start time. Instead of fragments being added as they are ingested, fragments are

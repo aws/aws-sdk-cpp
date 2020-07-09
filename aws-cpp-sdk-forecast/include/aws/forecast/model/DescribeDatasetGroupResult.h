@@ -190,9 +190,9 @@ namespace Model
      * <code>DELETE_FAILED</code> </p> </li> <li> <p> <code>UPDATE_PENDING</code>,
      * <code>UPDATE_IN_PROGRESS</code>, <code>UPDATE_FAILED</code> </p> </li> </ul>
      * <p>The <code>UPDATE</code> states apply when you call the
-     * <a>UpdateDatasetGroup</a> operation.</p> <note> <p>The <code>Status</code> of
+     * <a>UpdateDatasetGroup</a> operation.</p>  <p>The <code>Status</code> of
      * the dataset group must be <code>ACTIVE</code> before you can use the dataset
-     * group to create a predictor.</p> </note>
+     * group to create a predictor.</p> 
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
 
@@ -204,9 +204,9 @@ namespace Model
      * <code>DELETE_FAILED</code> </p> </li> <li> <p> <code>UPDATE_PENDING</code>,
      * <code>UPDATE_IN_PROGRESS</code>, <code>UPDATE_FAILED</code> </p> </li> </ul>
      * <p>The <code>UPDATE</code> states apply when you call the
-     * <a>UpdateDatasetGroup</a> operation.</p> <note> <p>The <code>Status</code> of
+     * <a>UpdateDatasetGroup</a> operation.</p>  <p>The <code>Status</code> of
      * the dataset group must be <code>ACTIVE</code> before you can use the dataset
-     * group to create a predictor.</p> </note>
+     * group to create a predictor.</p> 
      */
     inline void SetStatus(const Aws::String& value) { m_status = value; }
 
@@ -218,9 +218,9 @@ namespace Model
      * <code>DELETE_FAILED</code> </p> </li> <li> <p> <code>UPDATE_PENDING</code>,
      * <code>UPDATE_IN_PROGRESS</code>, <code>UPDATE_FAILED</code> </p> </li> </ul>
      * <p>The <code>UPDATE</code> states apply when you call the
-     * <a>UpdateDatasetGroup</a> operation.</p> <note> <p>The <code>Status</code> of
+     * <a>UpdateDatasetGroup</a> operation.</p>  <p>The <code>Status</code> of
      * the dataset group must be <code>ACTIVE</code> before you can use the dataset
-     * group to create a predictor.</p> </note>
+     * group to create a predictor.</p> 
      */
     inline void SetStatus(Aws::String&& value) { m_status = std::move(value); }
 
@@ -232,9 +232,9 @@ namespace Model
      * <code>DELETE_FAILED</code> </p> </li> <li> <p> <code>UPDATE_PENDING</code>,
      * <code>UPDATE_IN_PROGRESS</code>, <code>UPDATE_FAILED</code> </p> </li> </ul>
      * <p>The <code>UPDATE</code> states apply when you call the
-     * <a>UpdateDatasetGroup</a> operation.</p> <note> <p>The <code>Status</code> of
+     * <a>UpdateDatasetGroup</a> operation.</p>  <p>The <code>Status</code> of
      * the dataset group must be <code>ACTIVE</code> before you can use the dataset
-     * group to create a predictor.</p> </note>
+     * group to create a predictor.</p> 
      */
     inline void SetStatus(const char* value) { m_status.assign(value); }
 
@@ -246,9 +246,9 @@ namespace Model
      * <code>DELETE_FAILED</code> </p> </li> <li> <p> <code>UPDATE_PENDING</code>,
      * <code>UPDATE_IN_PROGRESS</code>, <code>UPDATE_FAILED</code> </p> </li> </ul>
      * <p>The <code>UPDATE</code> states apply when you call the
-     * <a>UpdateDatasetGroup</a> operation.</p> <note> <p>The <code>Status</code> of
+     * <a>UpdateDatasetGroup</a> operation.</p>  <p>The <code>Status</code> of
      * the dataset group must be <code>ACTIVE</code> before you can use the dataset
-     * group to create a predictor.</p> </note>
+     * group to create a predictor.</p> 
      */
     inline DescribeDatasetGroupResult& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
 
@@ -260,9 +260,9 @@ namespace Model
      * <code>DELETE_FAILED</code> </p> </li> <li> <p> <code>UPDATE_PENDING</code>,
      * <code>UPDATE_IN_PROGRESS</code>, <code>UPDATE_FAILED</code> </p> </li> </ul>
      * <p>The <code>UPDATE</code> states apply when you call the
-     * <a>UpdateDatasetGroup</a> operation.</p> <note> <p>The <code>Status</code> of
+     * <a>UpdateDatasetGroup</a> operation.</p>  <p>The <code>Status</code> of
      * the dataset group must be <code>ACTIVE</code> before you can use the dataset
-     * group to create a predictor.</p> </note>
+     * group to create a predictor.</p> 
      */
     inline DescribeDatasetGroupResult& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
 
@@ -274,9 +274,9 @@ namespace Model
      * <code>DELETE_FAILED</code> </p> </li> <li> <p> <code>UPDATE_PENDING</code>,
      * <code>UPDATE_IN_PROGRESS</code>, <code>UPDATE_FAILED</code> </p> </li> </ul>
      * <p>The <code>UPDATE</code> states apply when you call the
-     * <a>UpdateDatasetGroup</a> operation.</p> <note> <p>The <code>Status</code> of
+     * <a>UpdateDatasetGroup</a> operation.</p>  <p>The <code>Status</code> of
      * the dataset group must be <code>ACTIVE</code> before you can use the dataset
-     * group to create a predictor.</p> </note>
+     * group to create a predictor.</p> 
      */
     inline DescribeDatasetGroupResult& WithStatus(const char* value) { SetStatus(value); return *this;}
 

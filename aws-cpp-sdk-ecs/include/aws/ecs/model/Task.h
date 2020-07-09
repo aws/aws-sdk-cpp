@@ -778,12 +778,12 @@ namespace Model
      * <code>HEALTHY</code>. If any essential containers in the task are reporting as
      * <code>UNHEALTHY</code> or <code>UNKNOWN</code>, then the task status also
      * reports as <code>UNHEALTHY</code> or <code>UNKNOWN</code>, accordingly.</p>
-     * <note> <p>The Amazon ECS container agent does not monitor or report on Docker
+     *  <p>The Amazon ECS container agent does not monitor or report on Docker
      * health checks that are embedded in a container image (such as those specified in
      * a parent image or from the image's Dockerfile) and not specified in the
      * container definition. Health check parameters that are specified in a container
      * definition override any Docker health checks that exist in the container
-     * image.</p> </note>
+     * image.</p> 
      */
     inline const HealthStatus& GetHealthStatus() const{ return m_healthStatus; }
 
@@ -794,12 +794,12 @@ namespace Model
      * <code>HEALTHY</code>. If any essential containers in the task are reporting as
      * <code>UNHEALTHY</code> or <code>UNKNOWN</code>, then the task status also
      * reports as <code>UNHEALTHY</code> or <code>UNKNOWN</code>, accordingly.</p>
-     * <note> <p>The Amazon ECS container agent does not monitor or report on Docker
+     *  <p>The Amazon ECS container agent does not monitor or report on Docker
      * health checks that are embedded in a container image (such as those specified in
      * a parent image or from the image's Dockerfile) and not specified in the
      * container definition. Health check parameters that are specified in a container
      * definition override any Docker health checks that exist in the container
-     * image.</p> </note>
+     * image.</p> 
      */
     inline bool HealthStatusHasBeenSet() const { return m_healthStatusHasBeenSet; }
 
@@ -810,12 +810,12 @@ namespace Model
      * <code>HEALTHY</code>. If any essential containers in the task are reporting as
      * <code>UNHEALTHY</code> or <code>UNKNOWN</code>, then the task status also
      * reports as <code>UNHEALTHY</code> or <code>UNKNOWN</code>, accordingly.</p>
-     * <note> <p>The Amazon ECS container agent does not monitor or report on Docker
+     *  <p>The Amazon ECS container agent does not monitor or report on Docker
      * health checks that are embedded in a container image (such as those specified in
      * a parent image or from the image's Dockerfile) and not specified in the
      * container definition. Health check parameters that are specified in a container
      * definition override any Docker health checks that exist in the container
-     * image.</p> </note>
+     * image.</p> 
      */
     inline void SetHealthStatus(const HealthStatus& value) { m_healthStatusHasBeenSet = true; m_healthStatus = value; }
 
@@ -826,12 +826,12 @@ namespace Model
      * <code>HEALTHY</code>. If any essential containers in the task are reporting as
      * <code>UNHEALTHY</code> or <code>UNKNOWN</code>, then the task status also
      * reports as <code>UNHEALTHY</code> or <code>UNKNOWN</code>, accordingly.</p>
-     * <note> <p>The Amazon ECS container agent does not monitor or report on Docker
+     *  <p>The Amazon ECS container agent does not monitor or report on Docker
      * health checks that are embedded in a container image (such as those specified in
      * a parent image or from the image's Dockerfile) and not specified in the
      * container definition. Health check parameters that are specified in a container
      * definition override any Docker health checks that exist in the container
-     * image.</p> </note>
+     * image.</p> 
      */
     inline void SetHealthStatus(HealthStatus&& value) { m_healthStatusHasBeenSet = true; m_healthStatus = std::move(value); }
 
@@ -842,12 +842,12 @@ namespace Model
      * <code>HEALTHY</code>. If any essential containers in the task are reporting as
      * <code>UNHEALTHY</code> or <code>UNKNOWN</code>, then the task status also
      * reports as <code>UNHEALTHY</code> or <code>UNKNOWN</code>, accordingly.</p>
-     * <note> <p>The Amazon ECS container agent does not monitor or report on Docker
+     *  <p>The Amazon ECS container agent does not monitor or report on Docker
      * health checks that are embedded in a container image (such as those specified in
      * a parent image or from the image's Dockerfile) and not specified in the
      * container definition. Health check parameters that are specified in a container
      * definition override any Docker health checks that exist in the container
-     * image.</p> </note>
+     * image.</p> 
      */
     inline Task& WithHealthStatus(const HealthStatus& value) { SetHealthStatus(value); return *this;}
 
@@ -858,12 +858,12 @@ namespace Model
      * <code>HEALTHY</code>. If any essential containers in the task are reporting as
      * <code>UNHEALTHY</code> or <code>UNKNOWN</code>, then the task status also
      * reports as <code>UNHEALTHY</code> or <code>UNKNOWN</code>, accordingly.</p>
-     * <note> <p>The Amazon ECS container agent does not monitor or report on Docker
+     *  <p>The Amazon ECS container agent does not monitor or report on Docker
      * health checks that are embedded in a container image (such as those specified in
      * a parent image or from the image's Dockerfile) and not specified in the
      * container definition. Health check parameters that are specified in a container
      * definition override any Docker health checks that exist in the container
-     * image.</p> </note>
+     * image.</p> 
      */
     inline Task& WithHealthStatus(HealthStatus&& value) { SetHealthStatus(std::move(value)); return *this;}
 

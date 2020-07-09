@@ -298,9 +298,9 @@ namespace Model
      * <code>OrderPizza</code> intent, you might want to confirm that the order is
      * correct before placing it. For other intents, such as intents that simply
      * respond to user questions, you might not need to ask the user for confirmation
-     * before providing the information. </p> <note> <p>You you must provide both the
+     * before providing the information. </p>  <p>You you must provide both the
      * <code>rejectionStatement</code> and the <code>confirmationPrompt</code>, or
-     * neither.</p> </note>
+     * neither.</p> 
      */
     inline const Prompt& GetConfirmationPrompt() const{ return m_confirmationPrompt; }
 
@@ -311,9 +311,9 @@ namespace Model
      * <code>OrderPizza</code> intent, you might want to confirm that the order is
      * correct before placing it. For other intents, such as intents that simply
      * respond to user questions, you might not need to ask the user for confirmation
-     * before providing the information. </p> <note> <p>You you must provide both the
+     * before providing the information. </p>  <p>You you must provide both the
      * <code>rejectionStatement</code> and the <code>confirmationPrompt</code>, or
-     * neither.</p> </note>
+     * neither.</p> 
      */
     inline bool ConfirmationPromptHasBeenSet() const { return m_confirmationPromptHasBeenSet; }
 
@@ -324,9 +324,9 @@ namespace Model
      * <code>OrderPizza</code> intent, you might want to confirm that the order is
      * correct before placing it. For other intents, such as intents that simply
      * respond to user questions, you might not need to ask the user for confirmation
-     * before providing the information. </p> <note> <p>You you must provide both the
+     * before providing the information. </p>  <p>You you must provide both the
      * <code>rejectionStatement</code> and the <code>confirmationPrompt</code>, or
-     * neither.</p> </note>
+     * neither.</p> 
      */
     inline void SetConfirmationPrompt(const Prompt& value) { m_confirmationPromptHasBeenSet = true; m_confirmationPrompt = value; }
 
@@ -337,9 +337,9 @@ namespace Model
      * <code>OrderPizza</code> intent, you might want to confirm that the order is
      * correct before placing it. For other intents, such as intents that simply
      * respond to user questions, you might not need to ask the user for confirmation
-     * before providing the information. </p> <note> <p>You you must provide both the
+     * before providing the information. </p>  <p>You you must provide both the
      * <code>rejectionStatement</code> and the <code>confirmationPrompt</code>, or
-     * neither.</p> </note>
+     * neither.</p> 
      */
     inline void SetConfirmationPrompt(Prompt&& value) { m_confirmationPromptHasBeenSet = true; m_confirmationPrompt = std::move(value); }
 
@@ -350,9 +350,9 @@ namespace Model
      * <code>OrderPizza</code> intent, you might want to confirm that the order is
      * correct before placing it. For other intents, such as intents that simply
      * respond to user questions, you might not need to ask the user for confirmation
-     * before providing the information. </p> <note> <p>You you must provide both the
+     * before providing the information. </p>  <p>You you must provide both the
      * <code>rejectionStatement</code> and the <code>confirmationPrompt</code>, or
-     * neither.</p> </note>
+     * neither.</p> 
      */
     inline PutIntentRequest& WithConfirmationPrompt(const Prompt& value) { SetConfirmationPrompt(value); return *this;}
 
@@ -363,9 +363,9 @@ namespace Model
      * <code>OrderPizza</code> intent, you might want to confirm that the order is
      * correct before placing it. For other intents, such as intents that simply
      * respond to user questions, you might not need to ask the user for confirmation
-     * before providing the information. </p> <note> <p>You you must provide both the
+     * before providing the information. </p>  <p>You you must provide both the
      * <code>rejectionStatement</code> and the <code>confirmationPrompt</code>, or
-     * neither.</p> </note>
+     * neither.</p> 
      */
     inline PutIntentRequest& WithConfirmationPrompt(Prompt&& value) { SetConfirmationPrompt(std::move(value)); return *this;}
 
@@ -373,54 +373,54 @@ namespace Model
     /**
      * <p>When the user answers "no" to the question defined in
      * <code>confirmationPrompt</code>, Amazon Lex responds with this statement to
-     * acknowledge that the intent was canceled. </p> <note> <p>You must provide both
+     * acknowledge that the intent was canceled. </p>  <p>You must provide both
      * the <code>rejectionStatement</code> and the <code>confirmationPrompt</code>, or
-     * neither.</p> </note>
+     * neither.</p> 
      */
     inline const Statement& GetRejectionStatement() const{ return m_rejectionStatement; }
 
     /**
      * <p>When the user answers "no" to the question defined in
      * <code>confirmationPrompt</code>, Amazon Lex responds with this statement to
-     * acknowledge that the intent was canceled. </p> <note> <p>You must provide both
+     * acknowledge that the intent was canceled. </p>  <p>You must provide both
      * the <code>rejectionStatement</code> and the <code>confirmationPrompt</code>, or
-     * neither.</p> </note>
+     * neither.</p> 
      */
     inline bool RejectionStatementHasBeenSet() const { return m_rejectionStatementHasBeenSet; }
 
     /**
      * <p>When the user answers "no" to the question defined in
      * <code>confirmationPrompt</code>, Amazon Lex responds with this statement to
-     * acknowledge that the intent was canceled. </p> <note> <p>You must provide both
+     * acknowledge that the intent was canceled. </p>  <p>You must provide both
      * the <code>rejectionStatement</code> and the <code>confirmationPrompt</code>, or
-     * neither.</p> </note>
+     * neither.</p> 
      */
     inline void SetRejectionStatement(const Statement& value) { m_rejectionStatementHasBeenSet = true; m_rejectionStatement = value; }
 
     /**
      * <p>When the user answers "no" to the question defined in
      * <code>confirmationPrompt</code>, Amazon Lex responds with this statement to
-     * acknowledge that the intent was canceled. </p> <note> <p>You must provide both
+     * acknowledge that the intent was canceled. </p>  <p>You must provide both
      * the <code>rejectionStatement</code> and the <code>confirmationPrompt</code>, or
-     * neither.</p> </note>
+     * neither.</p> 
      */
     inline void SetRejectionStatement(Statement&& value) { m_rejectionStatementHasBeenSet = true; m_rejectionStatement = std::move(value); }
 
     /**
      * <p>When the user answers "no" to the question defined in
      * <code>confirmationPrompt</code>, Amazon Lex responds with this statement to
-     * acknowledge that the intent was canceled. </p> <note> <p>You must provide both
+     * acknowledge that the intent was canceled. </p>  <p>You must provide both
      * the <code>rejectionStatement</code> and the <code>confirmationPrompt</code>, or
-     * neither.</p> </note>
+     * neither.</p> 
      */
     inline PutIntentRequest& WithRejectionStatement(const Statement& value) { SetRejectionStatement(value); return *this;}
 
     /**
      * <p>When the user answers "no" to the question defined in
      * <code>confirmationPrompt</code>, Amazon Lex responds with this statement to
-     * acknowledge that the intent was canceled. </p> <note> <p>You must provide both
+     * acknowledge that the intent was canceled. </p>  <p>You must provide both
      * the <code>rejectionStatement</code> and the <code>confirmationPrompt</code>, or
-     * neither.</p> </note>
+     * neither.</p> 
      */
     inline PutIntentRequest& WithRejectionStatement(Statement&& value) { SetRejectionStatement(std::move(value)); return *this;}
 
@@ -527,9 +527,9 @@ namespace Model
      * intent is successfully fulfilled by the Lambda function. </p> <p>This element is
      * relevant only if you provide a Lambda function in the
      * <code>fulfillmentActivity</code>. If you return the intent to the client
-     * application, you can't specify this element.</p> <note> <p>The
+     * application, you can't specify this element.</p>  <p>The
      * <code>followUpPrompt</code> and <code>conclusionStatement</code> are mutually
-     * exclusive. You can specify only one.</p> </note>
+     * exclusive. You can specify only one.</p> 
      */
     inline const Statement& GetConclusionStatement() const{ return m_conclusionStatement; }
 
@@ -538,9 +538,9 @@ namespace Model
      * intent is successfully fulfilled by the Lambda function. </p> <p>This element is
      * relevant only if you provide a Lambda function in the
      * <code>fulfillmentActivity</code>. If you return the intent to the client
-     * application, you can't specify this element.</p> <note> <p>The
+     * application, you can't specify this element.</p>  <p>The
      * <code>followUpPrompt</code> and <code>conclusionStatement</code> are mutually
-     * exclusive. You can specify only one.</p> </note>
+     * exclusive. You can specify only one.</p> 
      */
     inline bool ConclusionStatementHasBeenSet() const { return m_conclusionStatementHasBeenSet; }
 
@@ -549,9 +549,9 @@ namespace Model
      * intent is successfully fulfilled by the Lambda function. </p> <p>This element is
      * relevant only if you provide a Lambda function in the
      * <code>fulfillmentActivity</code>. If you return the intent to the client
-     * application, you can't specify this element.</p> <note> <p>The
+     * application, you can't specify this element.</p>  <p>The
      * <code>followUpPrompt</code> and <code>conclusionStatement</code> are mutually
-     * exclusive. You can specify only one.</p> </note>
+     * exclusive. You can specify only one.</p> 
      */
     inline void SetConclusionStatement(const Statement& value) { m_conclusionStatementHasBeenSet = true; m_conclusionStatement = value; }
 
@@ -560,9 +560,9 @@ namespace Model
      * intent is successfully fulfilled by the Lambda function. </p> <p>This element is
      * relevant only if you provide a Lambda function in the
      * <code>fulfillmentActivity</code>. If you return the intent to the client
-     * application, you can't specify this element.</p> <note> <p>The
+     * application, you can't specify this element.</p>  <p>The
      * <code>followUpPrompt</code> and <code>conclusionStatement</code> are mutually
-     * exclusive. You can specify only one.</p> </note>
+     * exclusive. You can specify only one.</p> 
      */
     inline void SetConclusionStatement(Statement&& value) { m_conclusionStatementHasBeenSet = true; m_conclusionStatement = std::move(value); }
 
@@ -571,9 +571,9 @@ namespace Model
      * intent is successfully fulfilled by the Lambda function. </p> <p>This element is
      * relevant only if you provide a Lambda function in the
      * <code>fulfillmentActivity</code>. If you return the intent to the client
-     * application, you can't specify this element.</p> <note> <p>The
+     * application, you can't specify this element.</p>  <p>The
      * <code>followUpPrompt</code> and <code>conclusionStatement</code> are mutually
-     * exclusive. You can specify only one.</p> </note>
+     * exclusive. You can specify only one.</p> 
      */
     inline PutIntentRequest& WithConclusionStatement(const Statement& value) { SetConclusionStatement(value); return *this;}
 
@@ -582,9 +582,9 @@ namespace Model
      * intent is successfully fulfilled by the Lambda function. </p> <p>This element is
      * relevant only if you provide a Lambda function in the
      * <code>fulfillmentActivity</code>. If you return the intent to the client
-     * application, you can't specify this element.</p> <note> <p>The
+     * application, you can't specify this element.</p>  <p>The
      * <code>followUpPrompt</code> and <code>conclusionStatement</code> are mutually
-     * exclusive. You can specify only one.</p> </note>
+     * exclusive. You can specify only one.</p> 
      */
     inline PutIntentRequest& WithConclusionStatement(Statement&& value) { SetConclusionStatement(std::move(value)); return *this;}
 

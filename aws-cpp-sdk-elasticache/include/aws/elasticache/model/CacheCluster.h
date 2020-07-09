@@ -1295,9 +1295,9 @@ namespace Model
      * <p>The number of days for which ElastiCache retains automatic cluster snapshots
      * before deleting them. For example, if you set
      * <code>SnapshotRetentionLimit</code> to 5, a snapshot that was taken today is
-     * retained for 5 days before being deleted.</p> <important> <p> If the value of
+     * retained for 5 days before being deleted.</p>  <p> If the value of
      * SnapshotRetentionLimit is set to zero (0), backups are turned off.</p>
-     * </important>
+     * 
      */
     inline int GetSnapshotRetentionLimit() const{ return m_snapshotRetentionLimit; }
 
@@ -1305,9 +1305,9 @@ namespace Model
      * <p>The number of days for which ElastiCache retains automatic cluster snapshots
      * before deleting them. For example, if you set
      * <code>SnapshotRetentionLimit</code> to 5, a snapshot that was taken today is
-     * retained for 5 days before being deleted.</p> <important> <p> If the value of
+     * retained for 5 days before being deleted.</p>  <p> If the value of
      * SnapshotRetentionLimit is set to zero (0), backups are turned off.</p>
-     * </important>
+     * 
      */
     inline bool SnapshotRetentionLimitHasBeenSet() const { return m_snapshotRetentionLimitHasBeenSet; }
 
@@ -1315,9 +1315,9 @@ namespace Model
      * <p>The number of days for which ElastiCache retains automatic cluster snapshots
      * before deleting them. For example, if you set
      * <code>SnapshotRetentionLimit</code> to 5, a snapshot that was taken today is
-     * retained for 5 days before being deleted.</p> <important> <p> If the value of
+     * retained for 5 days before being deleted.</p>  <p> If the value of
      * SnapshotRetentionLimit is set to zero (0), backups are turned off.</p>
-     * </important>
+     * 
      */
     inline void SetSnapshotRetentionLimit(int value) { m_snapshotRetentionLimitHasBeenSet = true; m_snapshotRetentionLimit = value; }
 
@@ -1325,9 +1325,9 @@ namespace Model
      * <p>The number of days for which ElastiCache retains automatic cluster snapshots
      * before deleting them. For example, if you set
      * <code>SnapshotRetentionLimit</code> to 5, a snapshot that was taken today is
-     * retained for 5 days before being deleted.</p> <important> <p> If the value of
+     * retained for 5 days before being deleted.</p>  <p> If the value of
      * SnapshotRetentionLimit is set to zero (0), backups are turned off.</p>
-     * </important>
+     * 
      */
     inline CacheCluster& WithSnapshotRetentionLimit(int value) { SetSnapshotRetentionLimit(value); return *this;}
 

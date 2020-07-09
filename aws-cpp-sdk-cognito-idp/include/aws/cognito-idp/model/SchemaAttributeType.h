@@ -114,10 +114,10 @@ namespace Model
 
 
     /**
-     * <note> <p>We recommend that you use <a
+     *  <p>We recommend that you use <a
      * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UserPoolClientType.html#CognitoUserPools-Type-UserPoolClientType-WriteAttributes">WriteAttributes</a>
      * in the user pool client to control how attributes can be mutated for new use
-     * cases instead of using <code>DeveloperOnlyAttribute</code>.</p> </note>
+     * cases instead of using <code>DeveloperOnlyAttribute</code>.</p> 
      * <p>Specifies whether the attribute type is developer only. This attribute can
      * only be modified by an administrator. Users will not be able to modify this
      * attribute using their access token. For example,
@@ -127,10 +127,10 @@ namespace Model
     inline bool GetDeveloperOnlyAttribute() const{ return m_developerOnlyAttribute; }
 
     /**
-     * <note> <p>We recommend that you use <a
+     *  <p>We recommend that you use <a
      * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UserPoolClientType.html#CognitoUserPools-Type-UserPoolClientType-WriteAttributes">WriteAttributes</a>
      * in the user pool client to control how attributes can be mutated for new use
-     * cases instead of using <code>DeveloperOnlyAttribute</code>.</p> </note>
+     * cases instead of using <code>DeveloperOnlyAttribute</code>.</p> 
      * <p>Specifies whether the attribute type is developer only. This attribute can
      * only be modified by an administrator. Users will not be able to modify this
      * attribute using their access token. For example,
@@ -140,10 +140,10 @@ namespace Model
     inline bool DeveloperOnlyAttributeHasBeenSet() const { return m_developerOnlyAttributeHasBeenSet; }
 
     /**
-     * <note> <p>We recommend that you use <a
+     *  <p>We recommend that you use <a
      * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UserPoolClientType.html#CognitoUserPools-Type-UserPoolClientType-WriteAttributes">WriteAttributes</a>
      * in the user pool client to control how attributes can be mutated for new use
-     * cases instead of using <code>DeveloperOnlyAttribute</code>.</p> </note>
+     * cases instead of using <code>DeveloperOnlyAttribute</code>.</p> 
      * <p>Specifies whether the attribute type is developer only. This attribute can
      * only be modified by an administrator. Users will not be able to modify this
      * attribute using their access token. For example,
@@ -153,10 +153,10 @@ namespace Model
     inline void SetDeveloperOnlyAttribute(bool value) { m_developerOnlyAttributeHasBeenSet = true; m_developerOnlyAttribute = value; }
 
     /**
-     * <note> <p>We recommend that you use <a
+     *  <p>We recommend that you use <a
      * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UserPoolClientType.html#CognitoUserPools-Type-UserPoolClientType-WriteAttributes">WriteAttributes</a>
      * in the user pool client to control how attributes can be mutated for new use
-     * cases instead of using <code>DeveloperOnlyAttribute</code>.</p> </note>
+     * cases instead of using <code>DeveloperOnlyAttribute</code>.</p> 
      * <p>Specifies whether the attribute type is developer only. This attribute can
      * only be modified by an administrator. Users will not be able to modify this
      * attribute using their access token. For example,

@@ -383,9 +383,9 @@ namespace Model
      * <p> Choose <code>SCRATCH_1</code> and <code>SCRATCH_2</code> deployment types
      * when you need temporary storage and shorter-term processing of data. The
      * <code>SCRATCH_2</code> deployment type provides in-transit encryption of data
-     * and higher burst throughput capacity than <code>SCRATCH_1</code>.</p> <note>
+     * and higher burst throughput capacity than <code>SCRATCH_1</code>.</p> 
      * <p>This option can only be set for for PERSISTENT_1 deployments types.</p>
-     * </note> <p>Choose <code>PERSISTENT_1</code> deployment type for longer-term
+     *  <p>Choose <code>PERSISTENT_1</code> deployment type for longer-term
      * storage and workloads and encryption of data in transit. To learn more about
      * deployment types, see <a
      * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/lustre-deployment-types.html">
@@ -406,9 +406,9 @@ namespace Model
      * <p> Choose <code>SCRATCH_1</code> and <code>SCRATCH_2</code> deployment types
      * when you need temporary storage and shorter-term processing of data. The
      * <code>SCRATCH_2</code> deployment type provides in-transit encryption of data
-     * and higher burst throughput capacity than <code>SCRATCH_1</code>.</p> <note>
+     * and higher burst throughput capacity than <code>SCRATCH_1</code>.</p> 
      * <p>This option can only be set for for PERSISTENT_1 deployments types.</p>
-     * </note> <p>Choose <code>PERSISTENT_1</code> deployment type for longer-term
+     *  <p>Choose <code>PERSISTENT_1</code> deployment type for longer-term
      * storage and workloads and encryption of data in transit. To learn more about
      * deployment types, see <a
      * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/lustre-deployment-types.html">
@@ -429,9 +429,9 @@ namespace Model
      * <p> Choose <code>SCRATCH_1</code> and <code>SCRATCH_2</code> deployment types
      * when you need temporary storage and shorter-term processing of data. The
      * <code>SCRATCH_2</code> deployment type provides in-transit encryption of data
-     * and higher burst throughput capacity than <code>SCRATCH_1</code>.</p> <note>
+     * and higher burst throughput capacity than <code>SCRATCH_1</code>.</p> 
      * <p>This option can only be set for for PERSISTENT_1 deployments types.</p>
-     * </note> <p>Choose <code>PERSISTENT_1</code> deployment type for longer-term
+     *  <p>Choose <code>PERSISTENT_1</code> deployment type for longer-term
      * storage and workloads and encryption of data in transit. To learn more about
      * deployment types, see <a
      * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/lustre-deployment-types.html">
@@ -452,9 +452,9 @@ namespace Model
      * <p> Choose <code>SCRATCH_1</code> and <code>SCRATCH_2</code> deployment types
      * when you need temporary storage and shorter-term processing of data. The
      * <code>SCRATCH_2</code> deployment type provides in-transit encryption of data
-     * and higher burst throughput capacity than <code>SCRATCH_1</code>.</p> <note>
+     * and higher burst throughput capacity than <code>SCRATCH_1</code>.</p> 
      * <p>This option can only be set for for PERSISTENT_1 deployments types.</p>
-     * </note> <p>Choose <code>PERSISTENT_1</code> deployment type for longer-term
+     *  <p>Choose <code>PERSISTENT_1</code> deployment type for longer-term
      * storage and workloads and encryption of data in transit. To learn more about
      * deployment types, see <a
      * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/lustre-deployment-types.html">
@@ -475,9 +475,9 @@ namespace Model
      * <p> Choose <code>SCRATCH_1</code> and <code>SCRATCH_2</code> deployment types
      * when you need temporary storage and shorter-term processing of data. The
      * <code>SCRATCH_2</code> deployment type provides in-transit encryption of data
-     * and higher burst throughput capacity than <code>SCRATCH_1</code>.</p> <note>
+     * and higher burst throughput capacity than <code>SCRATCH_1</code>.</p> 
      * <p>This option can only be set for for PERSISTENT_1 deployments types.</p>
-     * </note> <p>Choose <code>PERSISTENT_1</code> deployment type for longer-term
+     *  <p>Choose <code>PERSISTENT_1</code> deployment type for longer-term
      * storage and workloads and encryption of data in transit. To learn more about
      * deployment types, see <a
      * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/lustre-deployment-types.html">
@@ -498,9 +498,9 @@ namespace Model
      * <p> Choose <code>SCRATCH_1</code> and <code>SCRATCH_2</code> deployment types
      * when you need temporary storage and shorter-term processing of data. The
      * <code>SCRATCH_2</code> deployment type provides in-transit encryption of data
-     * and higher burst throughput capacity than <code>SCRATCH_1</code>.</p> <note>
+     * and higher burst throughput capacity than <code>SCRATCH_1</code>.</p> 
      * <p>This option can only be set for for PERSISTENT_1 deployments types.</p>
-     * </note> <p>Choose <code>PERSISTENT_1</code> deployment type for longer-term
+     *  <p>Choose <code>PERSISTENT_1</code> deployment type for longer-term
      * storage and workloads and encryption of data in transit. To learn more about
      * deployment types, see <a
      * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/lustre-deployment-types.html">

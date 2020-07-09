@@ -98,11 +98,11 @@ namespace Model
          * <p> Use this API to retrieve media content from a Kinesis video stream. In the
          * request, you identify the stream name or stream Amazon Resource Name (ARN), and
          * the starting chunk. Kinesis Video Streams then returns a stream of chunks in
-         * order by fragment number.</p> <note> <p>You must first call the
+         * order by fragment number.</p>  <p>You must first call the
          * <code>GetDataEndpoint</code> API to get an endpoint. Then send the
          * <code>GetMedia</code> requests to this endpoint using the <a
          * href="https://docs.aws.amazon.com/cli/latest/reference/">--endpoint-url
-         * parameter</a>. </p> </note> <p>When you put media data (fragments) on a stream,
+         * parameter</a>. </p>  <p>When you put media data (fragments) on a stream,
          * Kinesis Video Streams stores each incoming fragment and related metadata in what
          * is called a "chunk." For more information, see <a
          * href="https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_dataplane_PutMedia.html">PutMedia</a>.
@@ -112,7 +112,7 @@ namespace Model
          * <code>GetMedia</code> up to five times per second per stream. </p> </li> <li>
          * <p>Kinesis Video Streams sends media data at a rate of up to 25 megabytes per
          * second (or 200 megabits per second) during a <code>GetMedia</code> session. </p>
-         * </li> </ul> <note> <p>If an error is thrown after invoking a Kinesis Video
+         * </li> </ul>  <p>If an error is thrown after invoking a Kinesis Video
          * Streams media API, in addition to the HTTP status code and the response body, it
          * includes the following pieces of information: </p> <ul> <li> <p>
          * <code>x-amz-ErrorType</code> HTTP header – contains a more specific error type
@@ -126,7 +126,7 @@ namespace Model
          * more information, see the <b>Errors</b> section at the bottom of this topic, as
          * well as <a
          * href="https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/CommonErrors.html">Common
-         * Errors</a>. </p> </note><p><h3>See Also:</h3>   <a
+         * Errors</a>. </p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-video-media-2017-09-30/GetMedia">AWS
          * API Reference</a></p>
          */
@@ -136,11 +136,11 @@ namespace Model
          * <p> Use this API to retrieve media content from a Kinesis video stream. In the
          * request, you identify the stream name or stream Amazon Resource Name (ARN), and
          * the starting chunk. Kinesis Video Streams then returns a stream of chunks in
-         * order by fragment number.</p> <note> <p>You must first call the
+         * order by fragment number.</p>  <p>You must first call the
          * <code>GetDataEndpoint</code> API to get an endpoint. Then send the
          * <code>GetMedia</code> requests to this endpoint using the <a
          * href="https://docs.aws.amazon.com/cli/latest/reference/">--endpoint-url
-         * parameter</a>. </p> </note> <p>When you put media data (fragments) on a stream,
+         * parameter</a>. </p>  <p>When you put media data (fragments) on a stream,
          * Kinesis Video Streams stores each incoming fragment and related metadata in what
          * is called a "chunk." For more information, see <a
          * href="https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_dataplane_PutMedia.html">PutMedia</a>.
@@ -150,7 +150,7 @@ namespace Model
          * <code>GetMedia</code> up to five times per second per stream. </p> </li> <li>
          * <p>Kinesis Video Streams sends media data at a rate of up to 25 megabytes per
          * second (or 200 megabits per second) during a <code>GetMedia</code> session. </p>
-         * </li> </ul> <note> <p>If an error is thrown after invoking a Kinesis Video
+         * </li> </ul>  <p>If an error is thrown after invoking a Kinesis Video
          * Streams media API, in addition to the HTTP status code and the response body, it
          * includes the following pieces of information: </p> <ul> <li> <p>
          * <code>x-amz-ErrorType</code> HTTP header – contains a more specific error type
@@ -164,7 +164,7 @@ namespace Model
          * more information, see the <b>Errors</b> section at the bottom of this topic, as
          * well as <a
          * href="https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/CommonErrors.html">Common
-         * Errors</a>. </p> </note><p><h3>See Also:</h3>   <a
+         * Errors</a>. </p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-video-media-2017-09-30/GetMedia">AWS
          * API Reference</a></p>
          *
@@ -176,11 +176,11 @@ namespace Model
          * <p> Use this API to retrieve media content from a Kinesis video stream. In the
          * request, you identify the stream name or stream Amazon Resource Name (ARN), and
          * the starting chunk. Kinesis Video Streams then returns a stream of chunks in
-         * order by fragment number.</p> <note> <p>You must first call the
+         * order by fragment number.</p>  <p>You must first call the
          * <code>GetDataEndpoint</code> API to get an endpoint. Then send the
          * <code>GetMedia</code> requests to this endpoint using the <a
          * href="https://docs.aws.amazon.com/cli/latest/reference/">--endpoint-url
-         * parameter</a>. </p> </note> <p>When you put media data (fragments) on a stream,
+         * parameter</a>. </p>  <p>When you put media data (fragments) on a stream,
          * Kinesis Video Streams stores each incoming fragment and related metadata in what
          * is called a "chunk." For more information, see <a
          * href="https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_dataplane_PutMedia.html">PutMedia</a>.
@@ -190,7 +190,7 @@ namespace Model
          * <code>GetMedia</code> up to five times per second per stream. </p> </li> <li>
          * <p>Kinesis Video Streams sends media data at a rate of up to 25 megabytes per
          * second (or 200 megabits per second) during a <code>GetMedia</code> session. </p>
-         * </li> </ul> <note> <p>If an error is thrown after invoking a Kinesis Video
+         * </li> </ul>  <p>If an error is thrown after invoking a Kinesis Video
          * Streams media API, in addition to the HTTP status code and the response body, it
          * includes the following pieces of information: </p> <ul> <li> <p>
          * <code>x-amz-ErrorType</code> HTTP header – contains a more specific error type
@@ -204,7 +204,7 @@ namespace Model
          * more information, see the <b>Errors</b> section at the bottom of this topic, as
          * well as <a
          * href="https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/CommonErrors.html">Common
-         * Errors</a>. </p> </note><p><h3>See Also:</h3>   <a
+         * Errors</a>. </p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-video-media-2017-09-30/GetMedia">AWS
          * API Reference</a></p>
          *

@@ -312,11 +312,11 @@ namespace Model
          * After a CMK is associated with a log group, all newly ingested data for the log
          * group is encrypted using the CMK. This association is stored as long as the data
          * encrypted with the CMK is still within Amazon CloudWatch Logs. This enables
-         * Amazon CloudWatch Logs to decrypt this data whenever it is requested.</p> <note>
+         * Amazon CloudWatch Logs to decrypt this data whenever it is requested.</p> 
          * <p> <b>Important:</b> CloudWatch Logs supports only symmetric CMKs. Do not use
          * an associate an asymmetric CMK with your log group. For more information, see <a
          * href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using
-         * Symmetric and Asymmetric Keys</a>.</p> </note> <p>Note that it can take up to 5
+         * Symmetric and Asymmetric Keys</a>.</p>  <p>Note that it can take up to 5
          * minutes for this operation to take effect.</p> <p>If you attempt to associate a
          * CMK with a log group but the CMK does not exist or the CMK is disabled, you will
          * receive an <code>InvalidParameterException</code> error. </p><p><h3>See
@@ -333,11 +333,11 @@ namespace Model
          * After a CMK is associated with a log group, all newly ingested data for the log
          * group is encrypted using the CMK. This association is stored as long as the data
          * encrypted with the CMK is still within Amazon CloudWatch Logs. This enables
-         * Amazon CloudWatch Logs to decrypt this data whenever it is requested.</p> <note>
+         * Amazon CloudWatch Logs to decrypt this data whenever it is requested.</p> 
          * <p> <b>Important:</b> CloudWatch Logs supports only symmetric CMKs. Do not use
          * an associate an asymmetric CMK with your log group. For more information, see <a
          * href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using
-         * Symmetric and Asymmetric Keys</a>.</p> </note> <p>Note that it can take up to 5
+         * Symmetric and Asymmetric Keys</a>.</p>  <p>Note that it can take up to 5
          * minutes for this operation to take effect.</p> <p>If you attempt to associate a
          * CMK with a log group but the CMK does not exist or the CMK is disabled, you will
          * receive an <code>InvalidParameterException</code> error. </p><p><h3>See
@@ -356,11 +356,11 @@ namespace Model
          * After a CMK is associated with a log group, all newly ingested data for the log
          * group is encrypted using the CMK. This association is stored as long as the data
          * encrypted with the CMK is still within Amazon CloudWatch Logs. This enables
-         * Amazon CloudWatch Logs to decrypt this data whenever it is requested.</p> <note>
+         * Amazon CloudWatch Logs to decrypt this data whenever it is requested.</p> 
          * <p> <b>Important:</b> CloudWatch Logs supports only symmetric CMKs. Do not use
          * an associate an asymmetric CMK with your log group. For more information, see <a
          * href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using
-         * Symmetric and Asymmetric Keys</a>.</p> </note> <p>Note that it can take up to 5
+         * Symmetric and Asymmetric Keys</a>.</p>  <p>Note that it can take up to 5
          * minutes for this operation to take effect.</p> <p>If you attempt to associate a
          * CMK with a log group but the CMK does not exist or the CMK is disabled, you will
          * receive an <code>InvalidParameterException</code> error. </p><p><h3>See
@@ -484,11 +484,11 @@ namespace Model
          * CloudWatch Logs. This enables Amazon CloudWatch Logs to decrypt this data
          * whenever it is requested.</p> <p>If you attempt to associate a CMK with the log
          * group but the CMK does not exist or the CMK is disabled, you will receive an
-         * <code>InvalidParameterException</code> error. </p> <note> <p> <b>Important:</b>
+         * <code>InvalidParameterException</code> error. </p>  <p> <b>Important:</b>
          * CloudWatch Logs supports only symmetric CMKs. Do not associate an asymmetric CMK
          * with your log group. For more information, see <a
          * href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using
-         * Symmetric and Asymmetric Keys</a>.</p> </note><p><h3>See Also:</h3>   <a
+         * Symmetric and Asymmetric Keys</a>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/CreateLogGroup">AWS
          * API Reference</a></p>
          */
@@ -508,11 +508,11 @@ namespace Model
          * CloudWatch Logs. This enables Amazon CloudWatch Logs to decrypt this data
          * whenever it is requested.</p> <p>If you attempt to associate a CMK with the log
          * group but the CMK does not exist or the CMK is disabled, you will receive an
-         * <code>InvalidParameterException</code> error. </p> <note> <p> <b>Important:</b>
+         * <code>InvalidParameterException</code> error. </p>  <p> <b>Important:</b>
          * CloudWatch Logs supports only symmetric CMKs. Do not associate an asymmetric CMK
          * with your log group. For more information, see <a
          * href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using
-         * Symmetric and Asymmetric Keys</a>.</p> </note><p><h3>See Also:</h3>   <a
+         * Symmetric and Asymmetric Keys</a>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/CreateLogGroup">AWS
          * API Reference</a></p>
          *
@@ -534,11 +534,11 @@ namespace Model
          * CloudWatch Logs. This enables Amazon CloudWatch Logs to decrypt this data
          * whenever it is requested.</p> <p>If you attempt to associate a CMK with the log
          * group but the CMK does not exist or the CMK is disabled, you will receive an
-         * <code>InvalidParameterException</code> error. </p> <note> <p> <b>Important:</b>
+         * <code>InvalidParameterException</code> error. </p>  <p> <b>Important:</b>
          * CloudWatch Logs supports only symmetric CMKs. Do not associate an asymmetric CMK
          * with your log group. For more information, see <a
          * href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using
-         * Symmetric and Asymmetric Keys</a>.</p> </note><p><h3>See Also:</h3>   <a
+         * Symmetric and Asymmetric Keys</a>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/CreateLogGroup">AWS
          * API Reference</a></p>
          *

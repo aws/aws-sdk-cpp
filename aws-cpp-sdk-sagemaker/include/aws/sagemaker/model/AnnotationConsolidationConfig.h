@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>Configures how labels are consolidated across human workers.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Configures how labels are consolidated across human workers and processes
+   * output data. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/AnnotationConsolidationConfig">AWS
    * API Reference</a></p>
    */
@@ -40,11 +40,17 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of a Lambda function implements the logic for
-     * annotation consolidation.</p> <p>For the built-in bounding box, image
-     * classification, semantic segmentation, and text classification task types,
-     * Amazon SageMaker Ground Truth provides the following Lambda functions:</p> <p>
-     * <b>Bounding box</b> - Finds the most similar boxes from different workers based
-     * on the Jaccard index of the boxes.</p> <ul> <li> <p>
+     * <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-annotation-consolidation.html">annotation
+     * consolidation</a> and to process output data.</p> <p>This parameter is required
+     * for all labeling jobs. For <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-task-types.html">built-in
+     * task types</a>, use one of the following Amazon SageMaker Ground Truth Lambda
+     * function ARNs for <code>AnnotationConsolidationLambdaArn</code>. For custom
+     * labeling workflows, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-custom-templates-step3.html#sms-custom-templates-step3-postlambda">Post-annotation
+     * Lambda</a>. </p> <p> <b>Bounding box</b> - Finds the most similar boxes from
+     * different workers based on the Jaccard index of the boxes.</p> <ul> <li> <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-BoundingBox</code> </p>
      * <p> <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-BoundingBox</code>
      * </p> <p>
@@ -222,33 +228,119 @@ namespace Model
      * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-NamedEntityRecognition</code>
      * </p> <p>
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-NamedEntityRecognition</code>
-     * </p> </li> </ul> <p> <b>Bounding box verification</b> - Uses a variant of the
-     * Expectation Maximization approach to estimate the true class of verification
-     * judgement for bounding box labels based on annotations from individual
-     * workers.</p> <ul> <li> <p>
-     * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-VerificationBoundingBox</code>
+     * </p> </li> </ul> <p> <b>3D point cloud object detection</b> - Use this task type
+     * when you want workers to classify objects in a 3D point cloud by drawing 3D
+     * cuboids around objects. For example, you can use this task type to ask workers
+     * to identify different types of objects in a point cloud, such as cars, bikes,
+     * and pedestrians.</p> <ul> <li> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-3DPointCloudObjectDetection</code>
+     * </p> </li> </ul> <p> <b>3D point cloud object tracking</b> - Use this task type
+     * when you want workers to draw 3D cuboids around objects that appear in a
+     * sequence of 3D point cloud frames. For example, you can use this task type to
+     * ask workers to track the movement of vehicles across multiple point cloud
+     * frames. </p> <ul> <li> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-3DPointCloudObjectTracking</code>
+     * </p> </li> </ul> <p> <b>3D point cloud semantic segmentation</b> - Use this task
+     * type when you want workers to create a point-level semantic segmentation masks
+     * by painting objects in a 3D point cloud using different colors where each color
+     * is assigned to one of the classes you specify.</p> <ul> <li> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-3DPointCloudSemanticSegmentation</code>
+     * </p> </li> </ul> <p> <b>Use the following ARNs for Label Verification and
+     * Adjustment Jobs</b> </p> <p>Use label verification and adjustment jobs to review
+     * and adjust labels. To learn more, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-verification-data.html">Verify
+     * and Adjust Labels </a>.</p> <p> <b>Semantic segmentation adjustment</b> - Treats
+     * each pixel in an image as a multi-class classification and treats pixel adjusted
+     * annotations from workers as "votes" for the correct label.</p> <ul> <li> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-AdjustmentSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-AdjustmentSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-AdjustmentSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-AdjustmentSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-AdjustmentSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-AdjustmentSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-AdjustmentSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-AdjustmentSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-AdjustmentSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-AdjustmentSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-AdjustmentSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-AdjustmentSemanticSegmentation</code>
      * </p> </li> </ul> <p> <b>Semantic segmentation verification</b> - Uses a variant
      * of the Expectation Maximization approach to estimate the true class of
      * verification judgment for semantic segmentation labels based on annotations from
@@ -276,6 +368,33 @@ namespace Model
      * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-VerificationSemanticSegmentation</code>
      * </p> <p>
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-VerificationSemanticSegmentation</code>
+     * </p> </li> </ul> <p> <b>Bounding box verification</b> - Uses a variant of the
+     * Expectation Maximization approach to estimate the true class of verification
+     * judgement for bounding box labels based on annotations from individual
+     * workers.</p> <ul> <li> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-VerificationBoundingBox</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-VerificationBoundingBox</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-VerificationBoundingBox</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-VerificationBoundingBox</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-VerificationBoundingBox</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-VerificationBoundingBox</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-VerificationBoundingBox</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-VerificationBoundingBox</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-VerificationBoundingBox</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-VerificationBoundingBox</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-VerificationBoundingBox</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-VerificationBoundingBox</code>
      * </p> </li> </ul> <p> <b>Bounding box adjustment</b> - Finds the most similar
      * boxes from different workers based on the Jaccard index of the adjusted
      * annotations.</p> <ul> <li> <p>
@@ -302,45 +421,101 @@ namespace Model
      * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-AdjustmentBoundingBox</code>
      * </p> <p>
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-AdjustmentBoundingBox</code>
-     * </p> </li> </ul> <p> <b>Semantic segmentation adjustment</b> - Treats each pixel
-     * in an image as a multi-class classification and treats pixel adjusted
-     * annotations from workers as "votes" for the correct label.</p> <ul> <li> <p>
-     * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-AdjustmentSemanticSegmentation</code>
+     * </p> </li> </ul> <p> <b>3D point cloud object detection adjustment</b> - Use
+     * this task type when you want workers to adjust 3D cuboids around objects in a 3D
+     * point cloud. </p> <ul> <li> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-Adjustment3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-AdjustmentSemanticSegmentation</code>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-Adjustment3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-AdjustmentSemanticSegmentation</code>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-Adjustment3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-AdjustmentSemanticSegmentation</code>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-Adjustment3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-AdjustmentSemanticSegmentation</code>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-Adjustment3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-AdjustmentSemanticSegmentation</code>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-Adjustment3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-AdjustmentSemanticSegmentation</code>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-Adjustment3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-AdjustmentSemanticSegmentation</code>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-Adjustment3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-AdjustmentSemanticSegmentation</code>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-Adjustment3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-AdjustmentSemanticSegmentation</code>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-Adjustment3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-AdjustmentSemanticSegmentation</code>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-Adjustment3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-AdjustmentSemanticSegmentation</code>
-     * </p> </li> </ul> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-annotation-consolidation.html">Annotation
-     * Consolidation</a>.</p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-Adjustment3DPointCloudObjectDetection</code>
+     * </p> </li> </ul> <p> <b>3D point cloud object tracking adjustment</b> - Use this
+     * task type when you want workers to adjust 3D cuboids around objects that appear
+     * in a sequence of 3D point cloud frames.</p> <ul> <li> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-Adjustment3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-Adjustment3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-Adjustment3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-Adjustment3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-Adjustment3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-Adjustment3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-Adjustment3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-Adjustment3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-Adjustment3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-Adjustment3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-Adjustment3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> </ul> <p> <b>3D point cloud semantic segmentation adjustment</b> -
+     * Use this task type when you want workers to adjust a point-level semantic
+     * segmentation masks using a paint tool.</p> <ul> <li> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> </li> </ul>
      */
     inline const Aws::String& GetAnnotationConsolidationLambdaArn() const{ return m_annotationConsolidationLambdaArn; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of a Lambda function implements the logic for
-     * annotation consolidation.</p> <p>For the built-in bounding box, image
-     * classification, semantic segmentation, and text classification task types,
-     * Amazon SageMaker Ground Truth provides the following Lambda functions:</p> <p>
-     * <b>Bounding box</b> - Finds the most similar boxes from different workers based
-     * on the Jaccard index of the boxes.</p> <ul> <li> <p>
+     * <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-annotation-consolidation.html">annotation
+     * consolidation</a> and to process output data.</p> <p>This parameter is required
+     * for all labeling jobs. For <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-task-types.html">built-in
+     * task types</a>, use one of the following Amazon SageMaker Ground Truth Lambda
+     * function ARNs for <code>AnnotationConsolidationLambdaArn</code>. For custom
+     * labeling workflows, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-custom-templates-step3.html#sms-custom-templates-step3-postlambda">Post-annotation
+     * Lambda</a>. </p> <p> <b>Bounding box</b> - Finds the most similar boxes from
+     * different workers based on the Jaccard index of the boxes.</p> <ul> <li> <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-BoundingBox</code> </p>
      * <p> <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-BoundingBox</code>
      * </p> <p>
@@ -518,33 +693,119 @@ namespace Model
      * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-NamedEntityRecognition</code>
      * </p> <p>
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-NamedEntityRecognition</code>
-     * </p> </li> </ul> <p> <b>Bounding box verification</b> - Uses a variant of the
-     * Expectation Maximization approach to estimate the true class of verification
-     * judgement for bounding box labels based on annotations from individual
-     * workers.</p> <ul> <li> <p>
-     * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-VerificationBoundingBox</code>
+     * </p> </li> </ul> <p> <b>3D point cloud object detection</b> - Use this task type
+     * when you want workers to classify objects in a 3D point cloud by drawing 3D
+     * cuboids around objects. For example, you can use this task type to ask workers
+     * to identify different types of objects in a point cloud, such as cars, bikes,
+     * and pedestrians.</p> <ul> <li> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-3DPointCloudObjectDetection</code>
+     * </p> </li> </ul> <p> <b>3D point cloud object tracking</b> - Use this task type
+     * when you want workers to draw 3D cuboids around objects that appear in a
+     * sequence of 3D point cloud frames. For example, you can use this task type to
+     * ask workers to track the movement of vehicles across multiple point cloud
+     * frames. </p> <ul> <li> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-3DPointCloudObjectTracking</code>
+     * </p> </li> </ul> <p> <b>3D point cloud semantic segmentation</b> - Use this task
+     * type when you want workers to create a point-level semantic segmentation masks
+     * by painting objects in a 3D point cloud using different colors where each color
+     * is assigned to one of the classes you specify.</p> <ul> <li> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-3DPointCloudSemanticSegmentation</code>
+     * </p> </li> </ul> <p> <b>Use the following ARNs for Label Verification and
+     * Adjustment Jobs</b> </p> <p>Use label verification and adjustment jobs to review
+     * and adjust labels. To learn more, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-verification-data.html">Verify
+     * and Adjust Labels </a>.</p> <p> <b>Semantic segmentation adjustment</b> - Treats
+     * each pixel in an image as a multi-class classification and treats pixel adjusted
+     * annotations from workers as "votes" for the correct label.</p> <ul> <li> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-AdjustmentSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-AdjustmentSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-AdjustmentSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-AdjustmentSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-AdjustmentSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-AdjustmentSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-AdjustmentSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-AdjustmentSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-AdjustmentSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-AdjustmentSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-AdjustmentSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-AdjustmentSemanticSegmentation</code>
      * </p> </li> </ul> <p> <b>Semantic segmentation verification</b> - Uses a variant
      * of the Expectation Maximization approach to estimate the true class of
      * verification judgment for semantic segmentation labels based on annotations from
@@ -572,6 +833,33 @@ namespace Model
      * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-VerificationSemanticSegmentation</code>
      * </p> <p>
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-VerificationSemanticSegmentation</code>
+     * </p> </li> </ul> <p> <b>Bounding box verification</b> - Uses a variant of the
+     * Expectation Maximization approach to estimate the true class of verification
+     * judgement for bounding box labels based on annotations from individual
+     * workers.</p> <ul> <li> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-VerificationBoundingBox</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-VerificationBoundingBox</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-VerificationBoundingBox</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-VerificationBoundingBox</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-VerificationBoundingBox</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-VerificationBoundingBox</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-VerificationBoundingBox</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-VerificationBoundingBox</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-VerificationBoundingBox</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-VerificationBoundingBox</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-VerificationBoundingBox</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-VerificationBoundingBox</code>
      * </p> </li> </ul> <p> <b>Bounding box adjustment</b> - Finds the most similar
      * boxes from different workers based on the Jaccard index of the adjusted
      * annotations.</p> <ul> <li> <p>
@@ -598,45 +886,101 @@ namespace Model
      * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-AdjustmentBoundingBox</code>
      * </p> <p>
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-AdjustmentBoundingBox</code>
-     * </p> </li> </ul> <p> <b>Semantic segmentation adjustment</b> - Treats each pixel
-     * in an image as a multi-class classification and treats pixel adjusted
-     * annotations from workers as "votes" for the correct label.</p> <ul> <li> <p>
-     * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-AdjustmentSemanticSegmentation</code>
+     * </p> </li> </ul> <p> <b>3D point cloud object detection adjustment</b> - Use
+     * this task type when you want workers to adjust 3D cuboids around objects in a 3D
+     * point cloud. </p> <ul> <li> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-Adjustment3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-AdjustmentSemanticSegmentation</code>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-Adjustment3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-AdjustmentSemanticSegmentation</code>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-Adjustment3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-AdjustmentSemanticSegmentation</code>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-Adjustment3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-AdjustmentSemanticSegmentation</code>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-Adjustment3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-AdjustmentSemanticSegmentation</code>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-Adjustment3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-AdjustmentSemanticSegmentation</code>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-Adjustment3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-AdjustmentSemanticSegmentation</code>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-Adjustment3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-AdjustmentSemanticSegmentation</code>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-Adjustment3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-AdjustmentSemanticSegmentation</code>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-Adjustment3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-AdjustmentSemanticSegmentation</code>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-Adjustment3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-AdjustmentSemanticSegmentation</code>
-     * </p> </li> </ul> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-annotation-consolidation.html">Annotation
-     * Consolidation</a>.</p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-Adjustment3DPointCloudObjectDetection</code>
+     * </p> </li> </ul> <p> <b>3D point cloud object tracking adjustment</b> - Use this
+     * task type when you want workers to adjust 3D cuboids around objects that appear
+     * in a sequence of 3D point cloud frames.</p> <ul> <li> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-Adjustment3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-Adjustment3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-Adjustment3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-Adjustment3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-Adjustment3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-Adjustment3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-Adjustment3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-Adjustment3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-Adjustment3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-Adjustment3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-Adjustment3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> </ul> <p> <b>3D point cloud semantic segmentation adjustment</b> -
+     * Use this task type when you want workers to adjust a point-level semantic
+     * segmentation masks using a paint tool.</p> <ul> <li> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> </li> </ul>
      */
     inline bool AnnotationConsolidationLambdaArnHasBeenSet() const { return m_annotationConsolidationLambdaArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of a Lambda function implements the logic for
-     * annotation consolidation.</p> <p>For the built-in bounding box, image
-     * classification, semantic segmentation, and text classification task types,
-     * Amazon SageMaker Ground Truth provides the following Lambda functions:</p> <p>
-     * <b>Bounding box</b> - Finds the most similar boxes from different workers based
-     * on the Jaccard index of the boxes.</p> <ul> <li> <p>
+     * <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-annotation-consolidation.html">annotation
+     * consolidation</a> and to process output data.</p> <p>This parameter is required
+     * for all labeling jobs. For <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-task-types.html">built-in
+     * task types</a>, use one of the following Amazon SageMaker Ground Truth Lambda
+     * function ARNs for <code>AnnotationConsolidationLambdaArn</code>. For custom
+     * labeling workflows, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-custom-templates-step3.html#sms-custom-templates-step3-postlambda">Post-annotation
+     * Lambda</a>. </p> <p> <b>Bounding box</b> - Finds the most similar boxes from
+     * different workers based on the Jaccard index of the boxes.</p> <ul> <li> <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-BoundingBox</code> </p>
      * <p> <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-BoundingBox</code>
      * </p> <p>
@@ -814,33 +1158,119 @@ namespace Model
      * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-NamedEntityRecognition</code>
      * </p> <p>
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-NamedEntityRecognition</code>
-     * </p> </li> </ul> <p> <b>Bounding box verification</b> - Uses a variant of the
-     * Expectation Maximization approach to estimate the true class of verification
-     * judgement for bounding box labels based on annotations from individual
-     * workers.</p> <ul> <li> <p>
-     * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-VerificationBoundingBox</code>
+     * </p> </li> </ul> <p> <b>3D point cloud object detection</b> - Use this task type
+     * when you want workers to classify objects in a 3D point cloud by drawing 3D
+     * cuboids around objects. For example, you can use this task type to ask workers
+     * to identify different types of objects in a point cloud, such as cars, bikes,
+     * and pedestrians.</p> <ul> <li> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-3DPointCloudObjectDetection</code>
+     * </p> </li> </ul> <p> <b>3D point cloud object tracking</b> - Use this task type
+     * when you want workers to draw 3D cuboids around objects that appear in a
+     * sequence of 3D point cloud frames. For example, you can use this task type to
+     * ask workers to track the movement of vehicles across multiple point cloud
+     * frames. </p> <ul> <li> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-3DPointCloudObjectTracking</code>
+     * </p> </li> </ul> <p> <b>3D point cloud semantic segmentation</b> - Use this task
+     * type when you want workers to create a point-level semantic segmentation masks
+     * by painting objects in a 3D point cloud using different colors where each color
+     * is assigned to one of the classes you specify.</p> <ul> <li> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-3DPointCloudSemanticSegmentation</code>
+     * </p> </li> </ul> <p> <b>Use the following ARNs for Label Verification and
+     * Adjustment Jobs</b> </p> <p>Use label verification and adjustment jobs to review
+     * and adjust labels. To learn more, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-verification-data.html">Verify
+     * and Adjust Labels </a>.</p> <p> <b>Semantic segmentation adjustment</b> - Treats
+     * each pixel in an image as a multi-class classification and treats pixel adjusted
+     * annotations from workers as "votes" for the correct label.</p> <ul> <li> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-AdjustmentSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-AdjustmentSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-AdjustmentSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-AdjustmentSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-AdjustmentSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-AdjustmentSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-AdjustmentSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-AdjustmentSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-AdjustmentSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-AdjustmentSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-AdjustmentSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-AdjustmentSemanticSegmentation</code>
      * </p> </li> </ul> <p> <b>Semantic segmentation verification</b> - Uses a variant
      * of the Expectation Maximization approach to estimate the true class of
      * verification judgment for semantic segmentation labels based on annotations from
@@ -868,6 +1298,33 @@ namespace Model
      * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-VerificationSemanticSegmentation</code>
      * </p> <p>
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-VerificationSemanticSegmentation</code>
+     * </p> </li> </ul> <p> <b>Bounding box verification</b> - Uses a variant of the
+     * Expectation Maximization approach to estimate the true class of verification
+     * judgement for bounding box labels based on annotations from individual
+     * workers.</p> <ul> <li> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-VerificationBoundingBox</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-VerificationBoundingBox</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-VerificationBoundingBox</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-VerificationBoundingBox</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-VerificationBoundingBox</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-VerificationBoundingBox</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-VerificationBoundingBox</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-VerificationBoundingBox</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-VerificationBoundingBox</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-VerificationBoundingBox</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-VerificationBoundingBox</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-VerificationBoundingBox</code>
      * </p> </li> </ul> <p> <b>Bounding box adjustment</b> - Finds the most similar
      * boxes from different workers based on the Jaccard index of the adjusted
      * annotations.</p> <ul> <li> <p>
@@ -894,45 +1351,101 @@ namespace Model
      * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-AdjustmentBoundingBox</code>
      * </p> <p>
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-AdjustmentBoundingBox</code>
-     * </p> </li> </ul> <p> <b>Semantic segmentation adjustment</b> - Treats each pixel
-     * in an image as a multi-class classification and treats pixel adjusted
-     * annotations from workers as "votes" for the correct label.</p> <ul> <li> <p>
-     * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-AdjustmentSemanticSegmentation</code>
+     * </p> </li> </ul> <p> <b>3D point cloud object detection adjustment</b> - Use
+     * this task type when you want workers to adjust 3D cuboids around objects in a 3D
+     * point cloud. </p> <ul> <li> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-Adjustment3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-AdjustmentSemanticSegmentation</code>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-Adjustment3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-AdjustmentSemanticSegmentation</code>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-Adjustment3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-AdjustmentSemanticSegmentation</code>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-Adjustment3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-AdjustmentSemanticSegmentation</code>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-Adjustment3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-AdjustmentSemanticSegmentation</code>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-Adjustment3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-AdjustmentSemanticSegmentation</code>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-Adjustment3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-AdjustmentSemanticSegmentation</code>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-Adjustment3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-AdjustmentSemanticSegmentation</code>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-Adjustment3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-AdjustmentSemanticSegmentation</code>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-Adjustment3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-AdjustmentSemanticSegmentation</code>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-Adjustment3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-AdjustmentSemanticSegmentation</code>
-     * </p> </li> </ul> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-annotation-consolidation.html">Annotation
-     * Consolidation</a>.</p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-Adjustment3DPointCloudObjectDetection</code>
+     * </p> </li> </ul> <p> <b>3D point cloud object tracking adjustment</b> - Use this
+     * task type when you want workers to adjust 3D cuboids around objects that appear
+     * in a sequence of 3D point cloud frames.</p> <ul> <li> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-Adjustment3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-Adjustment3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-Adjustment3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-Adjustment3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-Adjustment3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-Adjustment3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-Adjustment3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-Adjustment3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-Adjustment3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-Adjustment3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-Adjustment3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> </ul> <p> <b>3D point cloud semantic segmentation adjustment</b> -
+     * Use this task type when you want workers to adjust a point-level semantic
+     * segmentation masks using a paint tool.</p> <ul> <li> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> </li> </ul>
      */
     inline void SetAnnotationConsolidationLambdaArn(const Aws::String& value) { m_annotationConsolidationLambdaArnHasBeenSet = true; m_annotationConsolidationLambdaArn = value; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of a Lambda function implements the logic for
-     * annotation consolidation.</p> <p>For the built-in bounding box, image
-     * classification, semantic segmentation, and text classification task types,
-     * Amazon SageMaker Ground Truth provides the following Lambda functions:</p> <p>
-     * <b>Bounding box</b> - Finds the most similar boxes from different workers based
-     * on the Jaccard index of the boxes.</p> <ul> <li> <p>
+     * <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-annotation-consolidation.html">annotation
+     * consolidation</a> and to process output data.</p> <p>This parameter is required
+     * for all labeling jobs. For <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-task-types.html">built-in
+     * task types</a>, use one of the following Amazon SageMaker Ground Truth Lambda
+     * function ARNs for <code>AnnotationConsolidationLambdaArn</code>. For custom
+     * labeling workflows, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-custom-templates-step3.html#sms-custom-templates-step3-postlambda">Post-annotation
+     * Lambda</a>. </p> <p> <b>Bounding box</b> - Finds the most similar boxes from
+     * different workers based on the Jaccard index of the boxes.</p> <ul> <li> <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-BoundingBox</code> </p>
      * <p> <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-BoundingBox</code>
      * </p> <p>
@@ -1110,33 +1623,119 @@ namespace Model
      * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-NamedEntityRecognition</code>
      * </p> <p>
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-NamedEntityRecognition</code>
-     * </p> </li> </ul> <p> <b>Bounding box verification</b> - Uses a variant of the
-     * Expectation Maximization approach to estimate the true class of verification
-     * judgement for bounding box labels based on annotations from individual
-     * workers.</p> <ul> <li> <p>
-     * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-VerificationBoundingBox</code>
+     * </p> </li> </ul> <p> <b>3D point cloud object detection</b> - Use this task type
+     * when you want workers to classify objects in a 3D point cloud by drawing 3D
+     * cuboids around objects. For example, you can use this task type to ask workers
+     * to identify different types of objects in a point cloud, such as cars, bikes,
+     * and pedestrians.</p> <ul> <li> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-3DPointCloudObjectDetection</code>
+     * </p> </li> </ul> <p> <b>3D point cloud object tracking</b> - Use this task type
+     * when you want workers to draw 3D cuboids around objects that appear in a
+     * sequence of 3D point cloud frames. For example, you can use this task type to
+     * ask workers to track the movement of vehicles across multiple point cloud
+     * frames. </p> <ul> <li> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-3DPointCloudObjectTracking</code>
+     * </p> </li> </ul> <p> <b>3D point cloud semantic segmentation</b> - Use this task
+     * type when you want workers to create a point-level semantic segmentation masks
+     * by painting objects in a 3D point cloud using different colors where each color
+     * is assigned to one of the classes you specify.</p> <ul> <li> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-3DPointCloudSemanticSegmentation</code>
+     * </p> </li> </ul> <p> <b>Use the following ARNs for Label Verification and
+     * Adjustment Jobs</b> </p> <p>Use label verification and adjustment jobs to review
+     * and adjust labels. To learn more, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-verification-data.html">Verify
+     * and Adjust Labels </a>.</p> <p> <b>Semantic segmentation adjustment</b> - Treats
+     * each pixel in an image as a multi-class classification and treats pixel adjusted
+     * annotations from workers as "votes" for the correct label.</p> <ul> <li> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-AdjustmentSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-AdjustmentSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-AdjustmentSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-AdjustmentSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-AdjustmentSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-AdjustmentSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-AdjustmentSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-AdjustmentSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-AdjustmentSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-AdjustmentSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-AdjustmentSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-AdjustmentSemanticSegmentation</code>
      * </p> </li> </ul> <p> <b>Semantic segmentation verification</b> - Uses a variant
      * of the Expectation Maximization approach to estimate the true class of
      * verification judgment for semantic segmentation labels based on annotations from
@@ -1164,6 +1763,33 @@ namespace Model
      * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-VerificationSemanticSegmentation</code>
      * </p> <p>
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-VerificationSemanticSegmentation</code>
+     * </p> </li> </ul> <p> <b>Bounding box verification</b> - Uses a variant of the
+     * Expectation Maximization approach to estimate the true class of verification
+     * judgement for bounding box labels based on annotations from individual
+     * workers.</p> <ul> <li> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-VerificationBoundingBox</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-VerificationBoundingBox</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-VerificationBoundingBox</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-VerificationBoundingBox</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-VerificationBoundingBox</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-VerificationBoundingBox</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-VerificationBoundingBox</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-VerificationBoundingBox</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-VerificationBoundingBox</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-VerificationBoundingBox</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-VerificationBoundingBox</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-VerificationBoundingBox</code>
      * </p> </li> </ul> <p> <b>Bounding box adjustment</b> - Finds the most similar
      * boxes from different workers based on the Jaccard index of the adjusted
      * annotations.</p> <ul> <li> <p>
@@ -1190,45 +1816,101 @@ namespace Model
      * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-AdjustmentBoundingBox</code>
      * </p> <p>
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-AdjustmentBoundingBox</code>
-     * </p> </li> </ul> <p> <b>Semantic segmentation adjustment</b> - Treats each pixel
-     * in an image as a multi-class classification and treats pixel adjusted
-     * annotations from workers as "votes" for the correct label.</p> <ul> <li> <p>
-     * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-AdjustmentSemanticSegmentation</code>
+     * </p> </li> </ul> <p> <b>3D point cloud object detection adjustment</b> - Use
+     * this task type when you want workers to adjust 3D cuboids around objects in a 3D
+     * point cloud. </p> <ul> <li> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-Adjustment3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-AdjustmentSemanticSegmentation</code>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-Adjustment3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-AdjustmentSemanticSegmentation</code>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-Adjustment3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-AdjustmentSemanticSegmentation</code>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-Adjustment3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-AdjustmentSemanticSegmentation</code>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-Adjustment3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-AdjustmentSemanticSegmentation</code>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-Adjustment3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-AdjustmentSemanticSegmentation</code>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-Adjustment3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-AdjustmentSemanticSegmentation</code>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-Adjustment3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-AdjustmentSemanticSegmentation</code>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-Adjustment3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-AdjustmentSemanticSegmentation</code>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-Adjustment3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-AdjustmentSemanticSegmentation</code>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-Adjustment3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-AdjustmentSemanticSegmentation</code>
-     * </p> </li> </ul> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-annotation-consolidation.html">Annotation
-     * Consolidation</a>.</p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-Adjustment3DPointCloudObjectDetection</code>
+     * </p> </li> </ul> <p> <b>3D point cloud object tracking adjustment</b> - Use this
+     * task type when you want workers to adjust 3D cuboids around objects that appear
+     * in a sequence of 3D point cloud frames.</p> <ul> <li> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-Adjustment3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-Adjustment3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-Adjustment3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-Adjustment3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-Adjustment3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-Adjustment3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-Adjustment3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-Adjustment3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-Adjustment3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-Adjustment3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-Adjustment3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> </ul> <p> <b>3D point cloud semantic segmentation adjustment</b> -
+     * Use this task type when you want workers to adjust a point-level semantic
+     * segmentation masks using a paint tool.</p> <ul> <li> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> </li> </ul>
      */
     inline void SetAnnotationConsolidationLambdaArn(Aws::String&& value) { m_annotationConsolidationLambdaArnHasBeenSet = true; m_annotationConsolidationLambdaArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of a Lambda function implements the logic for
-     * annotation consolidation.</p> <p>For the built-in bounding box, image
-     * classification, semantic segmentation, and text classification task types,
-     * Amazon SageMaker Ground Truth provides the following Lambda functions:</p> <p>
-     * <b>Bounding box</b> - Finds the most similar boxes from different workers based
-     * on the Jaccard index of the boxes.</p> <ul> <li> <p>
+     * <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-annotation-consolidation.html">annotation
+     * consolidation</a> and to process output data.</p> <p>This parameter is required
+     * for all labeling jobs. For <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-task-types.html">built-in
+     * task types</a>, use one of the following Amazon SageMaker Ground Truth Lambda
+     * function ARNs for <code>AnnotationConsolidationLambdaArn</code>. For custom
+     * labeling workflows, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-custom-templates-step3.html#sms-custom-templates-step3-postlambda">Post-annotation
+     * Lambda</a>. </p> <p> <b>Bounding box</b> - Finds the most similar boxes from
+     * different workers based on the Jaccard index of the boxes.</p> <ul> <li> <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-BoundingBox</code> </p>
      * <p> <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-BoundingBox</code>
      * </p> <p>
@@ -1406,33 +2088,119 @@ namespace Model
      * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-NamedEntityRecognition</code>
      * </p> <p>
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-NamedEntityRecognition</code>
-     * </p> </li> </ul> <p> <b>Bounding box verification</b> - Uses a variant of the
-     * Expectation Maximization approach to estimate the true class of verification
-     * judgement for bounding box labels based on annotations from individual
-     * workers.</p> <ul> <li> <p>
-     * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-VerificationBoundingBox</code>
+     * </p> </li> </ul> <p> <b>3D point cloud object detection</b> - Use this task type
+     * when you want workers to classify objects in a 3D point cloud by drawing 3D
+     * cuboids around objects. For example, you can use this task type to ask workers
+     * to identify different types of objects in a point cloud, such as cars, bikes,
+     * and pedestrians.</p> <ul> <li> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-3DPointCloudObjectDetection</code>
+     * </p> </li> </ul> <p> <b>3D point cloud object tracking</b> - Use this task type
+     * when you want workers to draw 3D cuboids around objects that appear in a
+     * sequence of 3D point cloud frames. For example, you can use this task type to
+     * ask workers to track the movement of vehicles across multiple point cloud
+     * frames. </p> <ul> <li> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-3DPointCloudObjectTracking</code>
+     * </p> </li> </ul> <p> <b>3D point cloud semantic segmentation</b> - Use this task
+     * type when you want workers to create a point-level semantic segmentation masks
+     * by painting objects in a 3D point cloud using different colors where each color
+     * is assigned to one of the classes you specify.</p> <ul> <li> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-3DPointCloudSemanticSegmentation</code>
+     * </p> </li> </ul> <p> <b>Use the following ARNs for Label Verification and
+     * Adjustment Jobs</b> </p> <p>Use label verification and adjustment jobs to review
+     * and adjust labels. To learn more, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-verification-data.html">Verify
+     * and Adjust Labels </a>.</p> <p> <b>Semantic segmentation adjustment</b> - Treats
+     * each pixel in an image as a multi-class classification and treats pixel adjusted
+     * annotations from workers as "votes" for the correct label.</p> <ul> <li> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-AdjustmentSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-AdjustmentSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-AdjustmentSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-AdjustmentSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-AdjustmentSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-AdjustmentSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-AdjustmentSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-AdjustmentSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-AdjustmentSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-AdjustmentSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-AdjustmentSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-AdjustmentSemanticSegmentation</code>
      * </p> </li> </ul> <p> <b>Semantic segmentation verification</b> - Uses a variant
      * of the Expectation Maximization approach to estimate the true class of
      * verification judgment for semantic segmentation labels based on annotations from
@@ -1460,6 +2228,33 @@ namespace Model
      * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-VerificationSemanticSegmentation</code>
      * </p> <p>
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-VerificationSemanticSegmentation</code>
+     * </p> </li> </ul> <p> <b>Bounding box verification</b> - Uses a variant of the
+     * Expectation Maximization approach to estimate the true class of verification
+     * judgement for bounding box labels based on annotations from individual
+     * workers.</p> <ul> <li> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-VerificationBoundingBox</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-VerificationBoundingBox</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-VerificationBoundingBox</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-VerificationBoundingBox</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-VerificationBoundingBox</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-VerificationBoundingBox</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-VerificationBoundingBox</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-VerificationBoundingBox</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-VerificationBoundingBox</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-VerificationBoundingBox</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-VerificationBoundingBox</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-VerificationBoundingBox</code>
      * </p> </li> </ul> <p> <b>Bounding box adjustment</b> - Finds the most similar
      * boxes from different workers based on the Jaccard index of the adjusted
      * annotations.</p> <ul> <li> <p>
@@ -1486,45 +2281,101 @@ namespace Model
      * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-AdjustmentBoundingBox</code>
      * </p> <p>
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-AdjustmentBoundingBox</code>
-     * </p> </li> </ul> <p> <b>Semantic segmentation adjustment</b> - Treats each pixel
-     * in an image as a multi-class classification and treats pixel adjusted
-     * annotations from workers as "votes" for the correct label.</p> <ul> <li> <p>
-     * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-AdjustmentSemanticSegmentation</code>
+     * </p> </li> </ul> <p> <b>3D point cloud object detection adjustment</b> - Use
+     * this task type when you want workers to adjust 3D cuboids around objects in a 3D
+     * point cloud. </p> <ul> <li> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-Adjustment3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-AdjustmentSemanticSegmentation</code>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-Adjustment3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-AdjustmentSemanticSegmentation</code>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-Adjustment3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-AdjustmentSemanticSegmentation</code>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-Adjustment3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-AdjustmentSemanticSegmentation</code>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-Adjustment3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-AdjustmentSemanticSegmentation</code>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-Adjustment3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-AdjustmentSemanticSegmentation</code>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-Adjustment3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-AdjustmentSemanticSegmentation</code>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-Adjustment3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-AdjustmentSemanticSegmentation</code>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-Adjustment3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-AdjustmentSemanticSegmentation</code>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-Adjustment3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-AdjustmentSemanticSegmentation</code>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-Adjustment3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-AdjustmentSemanticSegmentation</code>
-     * </p> </li> </ul> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-annotation-consolidation.html">Annotation
-     * Consolidation</a>.</p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-Adjustment3DPointCloudObjectDetection</code>
+     * </p> </li> </ul> <p> <b>3D point cloud object tracking adjustment</b> - Use this
+     * task type when you want workers to adjust 3D cuboids around objects that appear
+     * in a sequence of 3D point cloud frames.</p> <ul> <li> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-Adjustment3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-Adjustment3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-Adjustment3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-Adjustment3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-Adjustment3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-Adjustment3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-Adjustment3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-Adjustment3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-Adjustment3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-Adjustment3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-Adjustment3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> </ul> <p> <b>3D point cloud semantic segmentation adjustment</b> -
+     * Use this task type when you want workers to adjust a point-level semantic
+     * segmentation masks using a paint tool.</p> <ul> <li> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> </li> </ul>
      */
     inline void SetAnnotationConsolidationLambdaArn(const char* value) { m_annotationConsolidationLambdaArnHasBeenSet = true; m_annotationConsolidationLambdaArn.assign(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of a Lambda function implements the logic for
-     * annotation consolidation.</p> <p>For the built-in bounding box, image
-     * classification, semantic segmentation, and text classification task types,
-     * Amazon SageMaker Ground Truth provides the following Lambda functions:</p> <p>
-     * <b>Bounding box</b> - Finds the most similar boxes from different workers based
-     * on the Jaccard index of the boxes.</p> <ul> <li> <p>
+     * <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-annotation-consolidation.html">annotation
+     * consolidation</a> and to process output data.</p> <p>This parameter is required
+     * for all labeling jobs. For <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-task-types.html">built-in
+     * task types</a>, use one of the following Amazon SageMaker Ground Truth Lambda
+     * function ARNs for <code>AnnotationConsolidationLambdaArn</code>. For custom
+     * labeling workflows, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-custom-templates-step3.html#sms-custom-templates-step3-postlambda">Post-annotation
+     * Lambda</a>. </p> <p> <b>Bounding box</b> - Finds the most similar boxes from
+     * different workers based on the Jaccard index of the boxes.</p> <ul> <li> <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-BoundingBox</code> </p>
      * <p> <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-BoundingBox</code>
      * </p> <p>
@@ -1702,33 +2553,119 @@ namespace Model
      * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-NamedEntityRecognition</code>
      * </p> <p>
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-NamedEntityRecognition</code>
-     * </p> </li> </ul> <p> <b>Bounding box verification</b> - Uses a variant of the
-     * Expectation Maximization approach to estimate the true class of verification
-     * judgement for bounding box labels based on annotations from individual
-     * workers.</p> <ul> <li> <p>
-     * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-VerificationBoundingBox</code>
+     * </p> </li> </ul> <p> <b>3D point cloud object detection</b> - Use this task type
+     * when you want workers to classify objects in a 3D point cloud by drawing 3D
+     * cuboids around objects. For example, you can use this task type to ask workers
+     * to identify different types of objects in a point cloud, such as cars, bikes,
+     * and pedestrians.</p> <ul> <li> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-3DPointCloudObjectDetection</code>
+     * </p> </li> </ul> <p> <b>3D point cloud object tracking</b> - Use this task type
+     * when you want workers to draw 3D cuboids around objects that appear in a
+     * sequence of 3D point cloud frames. For example, you can use this task type to
+     * ask workers to track the movement of vehicles across multiple point cloud
+     * frames. </p> <ul> <li> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-3DPointCloudObjectTracking</code>
+     * </p> </li> </ul> <p> <b>3D point cloud semantic segmentation</b> - Use this task
+     * type when you want workers to create a point-level semantic segmentation masks
+     * by painting objects in a 3D point cloud using different colors where each color
+     * is assigned to one of the classes you specify.</p> <ul> <li> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-3DPointCloudSemanticSegmentation</code>
+     * </p> </li> </ul> <p> <b>Use the following ARNs for Label Verification and
+     * Adjustment Jobs</b> </p> <p>Use label verification and adjustment jobs to review
+     * and adjust labels. To learn more, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-verification-data.html">Verify
+     * and Adjust Labels </a>.</p> <p> <b>Semantic segmentation adjustment</b> - Treats
+     * each pixel in an image as a multi-class classification and treats pixel adjusted
+     * annotations from workers as "votes" for the correct label.</p> <ul> <li> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-AdjustmentSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-AdjustmentSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-AdjustmentSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-AdjustmentSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-AdjustmentSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-AdjustmentSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-AdjustmentSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-AdjustmentSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-AdjustmentSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-AdjustmentSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-AdjustmentSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-AdjustmentSemanticSegmentation</code>
      * </p> </li> </ul> <p> <b>Semantic segmentation verification</b> - Uses a variant
      * of the Expectation Maximization approach to estimate the true class of
      * verification judgment for semantic segmentation labels based on annotations from
@@ -1756,6 +2693,33 @@ namespace Model
      * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-VerificationSemanticSegmentation</code>
      * </p> <p>
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-VerificationSemanticSegmentation</code>
+     * </p> </li> </ul> <p> <b>Bounding box verification</b> - Uses a variant of the
+     * Expectation Maximization approach to estimate the true class of verification
+     * judgement for bounding box labels based on annotations from individual
+     * workers.</p> <ul> <li> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-VerificationBoundingBox</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-VerificationBoundingBox</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-VerificationBoundingBox</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-VerificationBoundingBox</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-VerificationBoundingBox</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-VerificationBoundingBox</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-VerificationBoundingBox</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-VerificationBoundingBox</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-VerificationBoundingBox</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-VerificationBoundingBox</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-VerificationBoundingBox</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-VerificationBoundingBox</code>
      * </p> </li> </ul> <p> <b>Bounding box adjustment</b> - Finds the most similar
      * boxes from different workers based on the Jaccard index of the adjusted
      * annotations.</p> <ul> <li> <p>
@@ -1782,45 +2746,101 @@ namespace Model
      * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-AdjustmentBoundingBox</code>
      * </p> <p>
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-AdjustmentBoundingBox</code>
-     * </p> </li> </ul> <p> <b>Semantic segmentation adjustment</b> - Treats each pixel
-     * in an image as a multi-class classification and treats pixel adjusted
-     * annotations from workers as "votes" for the correct label.</p> <ul> <li> <p>
-     * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-AdjustmentSemanticSegmentation</code>
+     * </p> </li> </ul> <p> <b>3D point cloud object detection adjustment</b> - Use
+     * this task type when you want workers to adjust 3D cuboids around objects in a 3D
+     * point cloud. </p> <ul> <li> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-Adjustment3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-AdjustmentSemanticSegmentation</code>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-Adjustment3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-AdjustmentSemanticSegmentation</code>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-Adjustment3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-AdjustmentSemanticSegmentation</code>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-Adjustment3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-AdjustmentSemanticSegmentation</code>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-Adjustment3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-AdjustmentSemanticSegmentation</code>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-Adjustment3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-AdjustmentSemanticSegmentation</code>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-Adjustment3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-AdjustmentSemanticSegmentation</code>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-Adjustment3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-AdjustmentSemanticSegmentation</code>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-Adjustment3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-AdjustmentSemanticSegmentation</code>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-Adjustment3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-AdjustmentSemanticSegmentation</code>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-Adjustment3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-AdjustmentSemanticSegmentation</code>
-     * </p> </li> </ul> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-annotation-consolidation.html">Annotation
-     * Consolidation</a>.</p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-Adjustment3DPointCloudObjectDetection</code>
+     * </p> </li> </ul> <p> <b>3D point cloud object tracking adjustment</b> - Use this
+     * task type when you want workers to adjust 3D cuboids around objects that appear
+     * in a sequence of 3D point cloud frames.</p> <ul> <li> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-Adjustment3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-Adjustment3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-Adjustment3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-Adjustment3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-Adjustment3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-Adjustment3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-Adjustment3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-Adjustment3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-Adjustment3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-Adjustment3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-Adjustment3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> </ul> <p> <b>3D point cloud semantic segmentation adjustment</b> -
+     * Use this task type when you want workers to adjust a point-level semantic
+     * segmentation masks using a paint tool.</p> <ul> <li> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> </li> </ul>
      */
     inline AnnotationConsolidationConfig& WithAnnotationConsolidationLambdaArn(const Aws::String& value) { SetAnnotationConsolidationLambdaArn(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of a Lambda function implements the logic for
-     * annotation consolidation.</p> <p>For the built-in bounding box, image
-     * classification, semantic segmentation, and text classification task types,
-     * Amazon SageMaker Ground Truth provides the following Lambda functions:</p> <p>
-     * <b>Bounding box</b> - Finds the most similar boxes from different workers based
-     * on the Jaccard index of the boxes.</p> <ul> <li> <p>
+     * <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-annotation-consolidation.html">annotation
+     * consolidation</a> and to process output data.</p> <p>This parameter is required
+     * for all labeling jobs. For <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-task-types.html">built-in
+     * task types</a>, use one of the following Amazon SageMaker Ground Truth Lambda
+     * function ARNs for <code>AnnotationConsolidationLambdaArn</code>. For custom
+     * labeling workflows, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-custom-templates-step3.html#sms-custom-templates-step3-postlambda">Post-annotation
+     * Lambda</a>. </p> <p> <b>Bounding box</b> - Finds the most similar boxes from
+     * different workers based on the Jaccard index of the boxes.</p> <ul> <li> <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-BoundingBox</code> </p>
      * <p> <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-BoundingBox</code>
      * </p> <p>
@@ -1998,33 +3018,119 @@ namespace Model
      * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-NamedEntityRecognition</code>
      * </p> <p>
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-NamedEntityRecognition</code>
-     * </p> </li> </ul> <p> <b>Bounding box verification</b> - Uses a variant of the
-     * Expectation Maximization approach to estimate the true class of verification
-     * judgement for bounding box labels based on annotations from individual
-     * workers.</p> <ul> <li> <p>
-     * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-VerificationBoundingBox</code>
+     * </p> </li> </ul> <p> <b>3D point cloud object detection</b> - Use this task type
+     * when you want workers to classify objects in a 3D point cloud by drawing 3D
+     * cuboids around objects. For example, you can use this task type to ask workers
+     * to identify different types of objects in a point cloud, such as cars, bikes,
+     * and pedestrians.</p> <ul> <li> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-3DPointCloudObjectDetection</code>
+     * </p> </li> </ul> <p> <b>3D point cloud object tracking</b> - Use this task type
+     * when you want workers to draw 3D cuboids around objects that appear in a
+     * sequence of 3D point cloud frames. For example, you can use this task type to
+     * ask workers to track the movement of vehicles across multiple point cloud
+     * frames. </p> <ul> <li> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-3DPointCloudObjectTracking</code>
+     * </p> </li> </ul> <p> <b>3D point cloud semantic segmentation</b> - Use this task
+     * type when you want workers to create a point-level semantic segmentation masks
+     * by painting objects in a 3D point cloud using different colors where each color
+     * is assigned to one of the classes you specify.</p> <ul> <li> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-3DPointCloudSemanticSegmentation</code>
+     * </p> </li> </ul> <p> <b>Use the following ARNs for Label Verification and
+     * Adjustment Jobs</b> </p> <p>Use label verification and adjustment jobs to review
+     * and adjust labels. To learn more, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-verification-data.html">Verify
+     * and Adjust Labels </a>.</p> <p> <b>Semantic segmentation adjustment</b> - Treats
+     * each pixel in an image as a multi-class classification and treats pixel adjusted
+     * annotations from workers as "votes" for the correct label.</p> <ul> <li> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-AdjustmentSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-AdjustmentSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-AdjustmentSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-AdjustmentSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-AdjustmentSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-AdjustmentSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-AdjustmentSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-AdjustmentSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-AdjustmentSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-AdjustmentSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-AdjustmentSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-AdjustmentSemanticSegmentation</code>
      * </p> </li> </ul> <p> <b>Semantic segmentation verification</b> - Uses a variant
      * of the Expectation Maximization approach to estimate the true class of
      * verification judgment for semantic segmentation labels based on annotations from
@@ -2052,6 +3158,33 @@ namespace Model
      * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-VerificationSemanticSegmentation</code>
      * </p> <p>
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-VerificationSemanticSegmentation</code>
+     * </p> </li> </ul> <p> <b>Bounding box verification</b> - Uses a variant of the
+     * Expectation Maximization approach to estimate the true class of verification
+     * judgement for bounding box labels based on annotations from individual
+     * workers.</p> <ul> <li> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-VerificationBoundingBox</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-VerificationBoundingBox</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-VerificationBoundingBox</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-VerificationBoundingBox</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-VerificationBoundingBox</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-VerificationBoundingBox</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-VerificationBoundingBox</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-VerificationBoundingBox</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-VerificationBoundingBox</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-VerificationBoundingBox</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-VerificationBoundingBox</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-VerificationBoundingBox</code>
      * </p> </li> </ul> <p> <b>Bounding box adjustment</b> - Finds the most similar
      * boxes from different workers based on the Jaccard index of the adjusted
      * annotations.</p> <ul> <li> <p>
@@ -2078,45 +3211,101 @@ namespace Model
      * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-AdjustmentBoundingBox</code>
      * </p> <p>
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-AdjustmentBoundingBox</code>
-     * </p> </li> </ul> <p> <b>Semantic segmentation adjustment</b> - Treats each pixel
-     * in an image as a multi-class classification and treats pixel adjusted
-     * annotations from workers as "votes" for the correct label.</p> <ul> <li> <p>
-     * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-AdjustmentSemanticSegmentation</code>
+     * </p> </li> </ul> <p> <b>3D point cloud object detection adjustment</b> - Use
+     * this task type when you want workers to adjust 3D cuboids around objects in a 3D
+     * point cloud. </p> <ul> <li> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-Adjustment3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-AdjustmentSemanticSegmentation</code>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-Adjustment3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-AdjustmentSemanticSegmentation</code>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-Adjustment3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-AdjustmentSemanticSegmentation</code>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-Adjustment3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-AdjustmentSemanticSegmentation</code>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-Adjustment3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-AdjustmentSemanticSegmentation</code>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-Adjustment3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-AdjustmentSemanticSegmentation</code>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-Adjustment3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-AdjustmentSemanticSegmentation</code>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-Adjustment3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-AdjustmentSemanticSegmentation</code>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-Adjustment3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-AdjustmentSemanticSegmentation</code>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-Adjustment3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-AdjustmentSemanticSegmentation</code>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-Adjustment3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-AdjustmentSemanticSegmentation</code>
-     * </p> </li> </ul> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-annotation-consolidation.html">Annotation
-     * Consolidation</a>.</p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-Adjustment3DPointCloudObjectDetection</code>
+     * </p> </li> </ul> <p> <b>3D point cloud object tracking adjustment</b> - Use this
+     * task type when you want workers to adjust 3D cuboids around objects that appear
+     * in a sequence of 3D point cloud frames.</p> <ul> <li> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-Adjustment3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-Adjustment3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-Adjustment3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-Adjustment3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-Adjustment3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-Adjustment3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-Adjustment3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-Adjustment3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-Adjustment3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-Adjustment3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-Adjustment3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> </ul> <p> <b>3D point cloud semantic segmentation adjustment</b> -
+     * Use this task type when you want workers to adjust a point-level semantic
+     * segmentation masks using a paint tool.</p> <ul> <li> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> </li> </ul>
      */
     inline AnnotationConsolidationConfig& WithAnnotationConsolidationLambdaArn(Aws::String&& value) { SetAnnotationConsolidationLambdaArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of a Lambda function implements the logic for
-     * annotation consolidation.</p> <p>For the built-in bounding box, image
-     * classification, semantic segmentation, and text classification task types,
-     * Amazon SageMaker Ground Truth provides the following Lambda functions:</p> <p>
-     * <b>Bounding box</b> - Finds the most similar boxes from different workers based
-     * on the Jaccard index of the boxes.</p> <ul> <li> <p>
+     * <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-annotation-consolidation.html">annotation
+     * consolidation</a> and to process output data.</p> <p>This parameter is required
+     * for all labeling jobs. For <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-task-types.html">built-in
+     * task types</a>, use one of the following Amazon SageMaker Ground Truth Lambda
+     * function ARNs for <code>AnnotationConsolidationLambdaArn</code>. For custom
+     * labeling workflows, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-custom-templates-step3.html#sms-custom-templates-step3-postlambda">Post-annotation
+     * Lambda</a>. </p> <p> <b>Bounding box</b> - Finds the most similar boxes from
+     * different workers based on the Jaccard index of the boxes.</p> <ul> <li> <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-BoundingBox</code> </p>
      * <p> <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-BoundingBox</code>
      * </p> <p>
@@ -2294,33 +3483,119 @@ namespace Model
      * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-NamedEntityRecognition</code>
      * </p> <p>
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-NamedEntityRecognition</code>
-     * </p> </li> </ul> <p> <b>Bounding box verification</b> - Uses a variant of the
-     * Expectation Maximization approach to estimate the true class of verification
-     * judgement for bounding box labels based on annotations from individual
-     * workers.</p> <ul> <li> <p>
-     * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-VerificationBoundingBox</code>
+     * </p> </li> </ul> <p> <b>3D point cloud object detection</b> - Use this task type
+     * when you want workers to classify objects in a 3D point cloud by drawing 3D
+     * cuboids around objects. For example, you can use this task type to ask workers
+     * to identify different types of objects in a point cloud, such as cars, bikes,
+     * and pedestrians.</p> <ul> <li> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-VerificationBoundingBox</code>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-3DPointCloudObjectDetection</code>
+     * </p> </li> </ul> <p> <b>3D point cloud object tracking</b> - Use this task type
+     * when you want workers to draw 3D cuboids around objects that appear in a
+     * sequence of 3D point cloud frames. For example, you can use this task type to
+     * ask workers to track the movement of vehicles across multiple point cloud
+     * frames. </p> <ul> <li> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-3DPointCloudObjectTracking</code>
+     * </p> </li> </ul> <p> <b>3D point cloud semantic segmentation</b> - Use this task
+     * type when you want workers to create a point-level semantic segmentation masks
+     * by painting objects in a 3D point cloud using different colors where each color
+     * is assigned to one of the classes you specify.</p> <ul> <li> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-3DPointCloudSemanticSegmentation</code>
+     * </p> </li> </ul> <p> <b>Use the following ARNs for Label Verification and
+     * Adjustment Jobs</b> </p> <p>Use label verification and adjustment jobs to review
+     * and adjust labels. To learn more, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-verification-data.html">Verify
+     * and Adjust Labels </a>.</p> <p> <b>Semantic segmentation adjustment</b> - Treats
+     * each pixel in an image as a multi-class classification and treats pixel adjusted
+     * annotations from workers as "votes" for the correct label.</p> <ul> <li> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-AdjustmentSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-AdjustmentSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-AdjustmentSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-AdjustmentSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-AdjustmentSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-AdjustmentSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-AdjustmentSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-AdjustmentSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-AdjustmentSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-AdjustmentSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-AdjustmentSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-AdjustmentSemanticSegmentation</code>
      * </p> </li> </ul> <p> <b>Semantic segmentation verification</b> - Uses a variant
      * of the Expectation Maximization approach to estimate the true class of
      * verification judgment for semantic segmentation labels based on annotations from
@@ -2348,6 +3623,33 @@ namespace Model
      * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-VerificationSemanticSegmentation</code>
      * </p> <p>
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-VerificationSemanticSegmentation</code>
+     * </p> </li> </ul> <p> <b>Bounding box verification</b> - Uses a variant of the
+     * Expectation Maximization approach to estimate the true class of verification
+     * judgement for bounding box labels based on annotations from individual
+     * workers.</p> <ul> <li> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-VerificationBoundingBox</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-VerificationBoundingBox</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-VerificationBoundingBox</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-VerificationBoundingBox</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-VerificationBoundingBox</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-VerificationBoundingBox</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-VerificationBoundingBox</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-VerificationBoundingBox</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-VerificationBoundingBox</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-VerificationBoundingBox</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-VerificationBoundingBox</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-VerificationBoundingBox</code>
      * </p> </li> </ul> <p> <b>Bounding box adjustment</b> - Finds the most similar
      * boxes from different workers based on the Jaccard index of the adjusted
      * annotations.</p> <ul> <li> <p>
@@ -2374,35 +3676,85 @@ namespace Model
      * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-AdjustmentBoundingBox</code>
      * </p> <p>
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-AdjustmentBoundingBox</code>
-     * </p> </li> </ul> <p> <b>Semantic segmentation adjustment</b> - Treats each pixel
-     * in an image as a multi-class classification and treats pixel adjusted
-     * annotations from workers as "votes" for the correct label.</p> <ul> <li> <p>
-     * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-AdjustmentSemanticSegmentation</code>
+     * </p> </li> </ul> <p> <b>3D point cloud object detection adjustment</b> - Use
+     * this task type when you want workers to adjust 3D cuboids around objects in a 3D
+     * point cloud. </p> <ul> <li> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-Adjustment3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-AdjustmentSemanticSegmentation</code>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-Adjustment3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-AdjustmentSemanticSegmentation</code>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-Adjustment3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-AdjustmentSemanticSegmentation</code>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-Adjustment3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-AdjustmentSemanticSegmentation</code>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-Adjustment3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-AdjustmentSemanticSegmentation</code>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-Adjustment3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-AdjustmentSemanticSegmentation</code>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-Adjustment3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-AdjustmentSemanticSegmentation</code>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-Adjustment3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-AdjustmentSemanticSegmentation</code>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-Adjustment3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-AdjustmentSemanticSegmentation</code>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-Adjustment3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-AdjustmentSemanticSegmentation</code>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-Adjustment3DPointCloudObjectDetection</code>
      * </p> <p>
-     * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-AdjustmentSemanticSegmentation</code>
-     * </p> </li> </ul> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-annotation-consolidation.html">Annotation
-     * Consolidation</a>.</p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-Adjustment3DPointCloudObjectDetection</code>
+     * </p> </li> </ul> <p> <b>3D point cloud object tracking adjustment</b> - Use this
+     * task type when you want workers to adjust 3D cuboids around objects that appear
+     * in a sequence of 3D point cloud frames.</p> <ul> <li> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-Adjustment3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-Adjustment3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-Adjustment3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-Adjustment3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-Adjustment3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-Adjustment3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-Adjustment3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-Adjustment3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-Adjustment3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-Adjustment3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-Adjustment3DPointCloudObjectTracking</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-Adjustment3DPointCloudObjectTracking</code>
+     * </p> </li> </ul> <p> <b>3D point cloud semantic segmentation adjustment</b> -
+     * Use this task type when you want workers to adjust a point-level semantic
+     * segmentation masks using a paint tool.</p> <ul> <li> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-Adjustment3DPointCloudSemanticSegmentation</code>
+     * </p> </li> </ul>
      */
     inline AnnotationConsolidationConfig& WithAnnotationConsolidationLambdaArn(const char* value) { SetAnnotationConsolidationLambdaArn(value); return *this;}
 

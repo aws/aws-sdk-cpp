@@ -438,9 +438,9 @@ namespace Model
         virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Adds tags to an AWS Cloud9 development environment.</p> <important> <p>Tags
+         * <p>Adds tags to an AWS Cloud9 development environment.</p>  <p>Tags
          * that you add to an AWS Cloud9 environment by using this method will NOT be
-         * automatically propagated to underlying resources.</p> </important><p><h3>See
+         * automatically propagated to underlying resources.</p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloud9-2017-09-23/TagResource">AWS
          * API Reference</a></p>
@@ -448,9 +448,9 @@ namespace Model
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
         /**
-         * <p>Adds tags to an AWS Cloud9 development environment.</p> <important> <p>Tags
+         * <p>Adds tags to an AWS Cloud9 development environment.</p>  <p>Tags
          * that you add to an AWS Cloud9 environment by using this method will NOT be
-         * automatically propagated to underlying resources.</p> </important><p><h3>See
+         * automatically propagated to underlying resources.</p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloud9-2017-09-23/TagResource">AWS
          * API Reference</a></p>
@@ -460,9 +460,9 @@ namespace Model
         virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
 
         /**
-         * <p>Adds tags to an AWS Cloud9 development environment.</p> <important> <p>Tags
+         * <p>Adds tags to an AWS Cloud9 development environment.</p>  <p>Tags
          * that you add to an AWS Cloud9 environment by using this method will NOT be
-         * automatically propagated to underlying resources.</p> </important><p><h3>See
+         * automatically propagated to underlying resources.</p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloud9-2017-09-23/TagResource">AWS
          * API Reference</a></p>

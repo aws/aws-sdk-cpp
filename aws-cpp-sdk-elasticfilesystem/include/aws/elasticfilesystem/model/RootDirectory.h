@@ -114,10 +114,10 @@ namespace Model
      * <code>Path</code> specified does not exist, EFS creates the root directory using
      * the <code>CreationInfo</code> settings when a client connects to an access
      * point. When specifying the <code>CreationInfo</code>, you must provide values
-     * for all properties. </p> <important> <p>If you do not provide
+     * for all properties. </p>  <p>If you do not provide
      * <code>CreationInfo</code> and the specified <code>RootDirectory</code> &gt;
      * <code>Path</code> does not exist, attempts to mount the file system using the
-     * access point will fail.</p> </important>
+     * access point will fail.</p> 
      */
     inline const CreationInfo& GetCreationInfo() const{ return m_creationInfo; }
 
@@ -127,10 +127,10 @@ namespace Model
      * <code>Path</code> specified does not exist, EFS creates the root directory using
      * the <code>CreationInfo</code> settings when a client connects to an access
      * point. When specifying the <code>CreationInfo</code>, you must provide values
-     * for all properties. </p> <important> <p>If you do not provide
+     * for all properties. </p>  <p>If you do not provide
      * <code>CreationInfo</code> and the specified <code>RootDirectory</code> &gt;
      * <code>Path</code> does not exist, attempts to mount the file system using the
-     * access point will fail.</p> </important>
+     * access point will fail.</p> 
      */
     inline bool CreationInfoHasBeenSet() const { return m_creationInfoHasBeenSet; }
 
@@ -140,10 +140,10 @@ namespace Model
      * <code>Path</code> specified does not exist, EFS creates the root directory using
      * the <code>CreationInfo</code> settings when a client connects to an access
      * point. When specifying the <code>CreationInfo</code>, you must provide values
-     * for all properties. </p> <important> <p>If you do not provide
+     * for all properties. </p>  <p>If you do not provide
      * <code>CreationInfo</code> and the specified <code>RootDirectory</code> &gt;
      * <code>Path</code> does not exist, attempts to mount the file system using the
-     * access point will fail.</p> </important>
+     * access point will fail.</p> 
      */
     inline void SetCreationInfo(const CreationInfo& value) { m_creationInfoHasBeenSet = true; m_creationInfo = value; }
 
@@ -153,10 +153,10 @@ namespace Model
      * <code>Path</code> specified does not exist, EFS creates the root directory using
      * the <code>CreationInfo</code> settings when a client connects to an access
      * point. When specifying the <code>CreationInfo</code>, you must provide values
-     * for all properties. </p> <important> <p>If you do not provide
+     * for all properties. </p>  <p>If you do not provide
      * <code>CreationInfo</code> and the specified <code>RootDirectory</code> &gt;
      * <code>Path</code> does not exist, attempts to mount the file system using the
-     * access point will fail.</p> </important>
+     * access point will fail.</p> 
      */
     inline void SetCreationInfo(CreationInfo&& value) { m_creationInfoHasBeenSet = true; m_creationInfo = std::move(value); }
 
@@ -166,10 +166,10 @@ namespace Model
      * <code>Path</code> specified does not exist, EFS creates the root directory using
      * the <code>CreationInfo</code> settings when a client connects to an access
      * point. When specifying the <code>CreationInfo</code>, you must provide values
-     * for all properties. </p> <important> <p>If you do not provide
+     * for all properties. </p>  <p>If you do not provide
      * <code>CreationInfo</code> and the specified <code>RootDirectory</code> &gt;
      * <code>Path</code> does not exist, attempts to mount the file system using the
-     * access point will fail.</p> </important>
+     * access point will fail.</p> 
      */
     inline RootDirectory& WithCreationInfo(const CreationInfo& value) { SetCreationInfo(value); return *this;}
 
@@ -179,10 +179,10 @@ namespace Model
      * <code>Path</code> specified does not exist, EFS creates the root directory using
      * the <code>CreationInfo</code> settings when a client connects to an access
      * point. When specifying the <code>CreationInfo</code>, you must provide values
-     * for all properties. </p> <important> <p>If you do not provide
+     * for all properties. </p>  <p>If you do not provide
      * <code>CreationInfo</code> and the specified <code>RootDirectory</code> &gt;
      * <code>Path</code> does not exist, attempts to mount the file system using the
-     * access point will fail.</p> </important>
+     * access point will fail.</p> 
      */
     inline RootDirectory& WithCreationInfo(CreationInfo&& value) { SetCreationInfo(std::move(value)); return *this;}
 

@@ -359,37 +359,37 @@ namespace Model
 
 
     /**
-     * <p>A status code specifying the state of the recovery point.</p> <note> <p>A
+     * <p>A status code specifying the state of the recovery point.</p>  <p>A
      * partial status indicates that the recovery point was not successfully re-created
-     * and must be retried.</p> </note>
+     * and must be retried.</p> 
      */
     inline const RecoveryPointStatus& GetStatus() const{ return m_status; }
 
     /**
-     * <p>A status code specifying the state of the recovery point.</p> <note> <p>A
+     * <p>A status code specifying the state of the recovery point.</p>  <p>A
      * partial status indicates that the recovery point was not successfully re-created
-     * and must be retried.</p> </note>
+     * and must be retried.</p> 
      */
     inline void SetStatus(const RecoveryPointStatus& value) { m_status = value; }
 
     /**
-     * <p>A status code specifying the state of the recovery point.</p> <note> <p>A
+     * <p>A status code specifying the state of the recovery point.</p>  <p>A
      * partial status indicates that the recovery point was not successfully re-created
-     * and must be retried.</p> </note>
+     * and must be retried.</p> 
      */
     inline void SetStatus(RecoveryPointStatus&& value) { m_status = std::move(value); }
 
     /**
-     * <p>A status code specifying the state of the recovery point.</p> <note> <p>A
+     * <p>A status code specifying the state of the recovery point.</p>  <p>A
      * partial status indicates that the recovery point was not successfully re-created
-     * and must be retried.</p> </note>
+     * and must be retried.</p> 
      */
     inline DescribeRecoveryPointResult& WithStatus(const RecoveryPointStatus& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>A status code specifying the state of the recovery point.</p> <note> <p>A
+     * <p>A status code specifying the state of the recovery point.</p>  <p>A
      * partial status indicates that the recovery point was not successfully re-created
-     * and must be retried.</p> </note>
+     * and must be retried.</p> 
      */
     inline DescribeRecoveryPointResult& WithStatus(RecoveryPointStatus&& value) { SetStatus(std::move(value)); return *this;}
 

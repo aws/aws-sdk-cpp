@@ -27,9 +27,9 @@ namespace Model
   /**
    * <p>Sends information about the detector model instance and the event that
    * triggered the action to a specified asset property in AWS IoT SiteWise.</p>
-   * <important> <p>You must specify either <code>propertyAlias</code> or both
+   *  <p>You must specify either <code>propertyAlias</code> or both
    * <code>assetId</code> and <code>propertyId</code> to identify the target asset
-   * property in AWS IoT SiteWise.</p> </important> <p>For parameters that are string
+   * property in AWS IoT SiteWise.</p>  <p>For parameters that are string
    * data type, you can specify the following options: </p> <ul> <li> <p>Use a
    * string. For example, the <code>propertyAlias</code> value can be
    * <code>'/company/windfarm/3/turbine/7/temperature'</code>.</p> </li> <li> <p>Use

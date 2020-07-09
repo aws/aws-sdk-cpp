@@ -428,64 +428,64 @@ namespace Model
 
 
     /**
-     * <important> <p>Do not use. This field is deprecated and doesn't provide complete
-     * information about the policies in your organization.</p> </important> <p>To
+     *  <p>Do not use. This field is deprecated and doesn't provide complete
+     * information about the policies in your organization.</p>  <p>To
      * determine the policies that are enabled and available for use in your
      * organization, use the <a>ListRoots</a> operation instead.</p>
      */
     inline const Aws::Vector<PolicyTypeSummary>& GetAvailablePolicyTypes() const{ return m_availablePolicyTypes; }
 
     /**
-     * <important> <p>Do not use. This field is deprecated and doesn't provide complete
-     * information about the policies in your organization.</p> </important> <p>To
+     *  <p>Do not use. This field is deprecated and doesn't provide complete
+     * information about the policies in your organization.</p>  <p>To
      * determine the policies that are enabled and available for use in your
      * organization, use the <a>ListRoots</a> operation instead.</p>
      */
     inline bool AvailablePolicyTypesHasBeenSet() const { return m_availablePolicyTypesHasBeenSet; }
 
     /**
-     * <important> <p>Do not use. This field is deprecated and doesn't provide complete
-     * information about the policies in your organization.</p> </important> <p>To
+     *  <p>Do not use. This field is deprecated and doesn't provide complete
+     * information about the policies in your organization.</p>  <p>To
      * determine the policies that are enabled and available for use in your
      * organization, use the <a>ListRoots</a> operation instead.</p>
      */
     inline void SetAvailablePolicyTypes(const Aws::Vector<PolicyTypeSummary>& value) { m_availablePolicyTypesHasBeenSet = true; m_availablePolicyTypes = value; }
 
     /**
-     * <important> <p>Do not use. This field is deprecated and doesn't provide complete
-     * information about the policies in your organization.</p> </important> <p>To
+     *  <p>Do not use. This field is deprecated and doesn't provide complete
+     * information about the policies in your organization.</p>  <p>To
      * determine the policies that are enabled and available for use in your
      * organization, use the <a>ListRoots</a> operation instead.</p>
      */
     inline void SetAvailablePolicyTypes(Aws::Vector<PolicyTypeSummary>&& value) { m_availablePolicyTypesHasBeenSet = true; m_availablePolicyTypes = std::move(value); }
 
     /**
-     * <important> <p>Do not use. This field is deprecated and doesn't provide complete
-     * information about the policies in your organization.</p> </important> <p>To
+     *  <p>Do not use. This field is deprecated and doesn't provide complete
+     * information about the policies in your organization.</p>  <p>To
      * determine the policies that are enabled and available for use in your
      * organization, use the <a>ListRoots</a> operation instead.</p>
      */
     inline Organization& WithAvailablePolicyTypes(const Aws::Vector<PolicyTypeSummary>& value) { SetAvailablePolicyTypes(value); return *this;}
 
     /**
-     * <important> <p>Do not use. This field is deprecated and doesn't provide complete
-     * information about the policies in your organization.</p> </important> <p>To
+     *  <p>Do not use. This field is deprecated and doesn't provide complete
+     * information about the policies in your organization.</p>  <p>To
      * determine the policies that are enabled and available for use in your
      * organization, use the <a>ListRoots</a> operation instead.</p>
      */
     inline Organization& WithAvailablePolicyTypes(Aws::Vector<PolicyTypeSummary>&& value) { SetAvailablePolicyTypes(std::move(value)); return *this;}
 
     /**
-     * <important> <p>Do not use. This field is deprecated and doesn't provide complete
-     * information about the policies in your organization.</p> </important> <p>To
+     *  <p>Do not use. This field is deprecated and doesn't provide complete
+     * information about the policies in your organization.</p>  <p>To
      * determine the policies that are enabled and available for use in your
      * organization, use the <a>ListRoots</a> operation instead.</p>
      */
     inline Organization& AddAvailablePolicyTypes(const PolicyTypeSummary& value) { m_availablePolicyTypesHasBeenSet = true; m_availablePolicyTypes.push_back(value); return *this; }
 
     /**
-     * <important> <p>Do not use. This field is deprecated and doesn't provide complete
-     * information about the policies in your organization.</p> </important> <p>To
+     *  <p>Do not use. This field is deprecated and doesn't provide complete
+     * information about the policies in your organization.</p>  <p>To
      * determine the policies that are enabled and available for use in your
      * organization, use the <a>ListRoots</a> operation instead.</p>
      */

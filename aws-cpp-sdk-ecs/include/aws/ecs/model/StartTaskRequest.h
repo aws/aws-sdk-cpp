@@ -296,9 +296,9 @@ namespace Model
      * task definition or Docker image) with a <code>command</code> override. You can
      * also override existing environment variables (that are specified in the task
      * definition or Docker image) on a container or add new environment variables to
-     * it with an <code>environment</code> override.</p> <note> <p>A total of 8192
+     * it with an <code>environment</code> override.</p>  <p>A total of 8192
      * characters are allowed for overrides. This limit includes the JSON formatting
-     * characters of the override structure.</p> </note>
+     * characters of the override structure.</p> 
      */
     inline const TaskOverride& GetOverrides() const{ return m_overrides; }
 
@@ -309,9 +309,9 @@ namespace Model
      * task definition or Docker image) with a <code>command</code> override. You can
      * also override existing environment variables (that are specified in the task
      * definition or Docker image) on a container or add new environment variables to
-     * it with an <code>environment</code> override.</p> <note> <p>A total of 8192
+     * it with an <code>environment</code> override.</p>  <p>A total of 8192
      * characters are allowed for overrides. This limit includes the JSON formatting
-     * characters of the override structure.</p> </note>
+     * characters of the override structure.</p> 
      */
     inline bool OverridesHasBeenSet() const { return m_overridesHasBeenSet; }
 
@@ -322,9 +322,9 @@ namespace Model
      * task definition or Docker image) with a <code>command</code> override. You can
      * also override existing environment variables (that are specified in the task
      * definition or Docker image) on a container or add new environment variables to
-     * it with an <code>environment</code> override.</p> <note> <p>A total of 8192
+     * it with an <code>environment</code> override.</p>  <p>A total of 8192
      * characters are allowed for overrides. This limit includes the JSON formatting
-     * characters of the override structure.</p> </note>
+     * characters of the override structure.</p> 
      */
     inline void SetOverrides(const TaskOverride& value) { m_overridesHasBeenSet = true; m_overrides = value; }
 
@@ -335,9 +335,9 @@ namespace Model
      * task definition or Docker image) with a <code>command</code> override. You can
      * also override existing environment variables (that are specified in the task
      * definition or Docker image) on a container or add new environment variables to
-     * it with an <code>environment</code> override.</p> <note> <p>A total of 8192
+     * it with an <code>environment</code> override.</p>  <p>A total of 8192
      * characters are allowed for overrides. This limit includes the JSON formatting
-     * characters of the override structure.</p> </note>
+     * characters of the override structure.</p> 
      */
     inline void SetOverrides(TaskOverride&& value) { m_overridesHasBeenSet = true; m_overrides = std::move(value); }
 
@@ -348,9 +348,9 @@ namespace Model
      * task definition or Docker image) with a <code>command</code> override. You can
      * also override existing environment variables (that are specified in the task
      * definition or Docker image) on a container or add new environment variables to
-     * it with an <code>environment</code> override.</p> <note> <p>A total of 8192
+     * it with an <code>environment</code> override.</p>  <p>A total of 8192
      * characters are allowed for overrides. This limit includes the JSON formatting
-     * characters of the override structure.</p> </note>
+     * characters of the override structure.</p> 
      */
     inline StartTaskRequest& WithOverrides(const TaskOverride& value) { SetOverrides(value); return *this;}
 
@@ -361,9 +361,9 @@ namespace Model
      * task definition or Docker image) with a <code>command</code> override. You can
      * also override existing environment variables (that are specified in the task
      * definition or Docker image) on a container or add new environment variables to
-     * it with an <code>environment</code> override.</p> <note> <p>A total of 8192
+     * it with an <code>environment</code> override.</p>  <p>A total of 8192
      * characters are allowed for overrides. This limit includes the JSON formatting
-     * characters of the override structure.</p> </note>
+     * characters of the override structure.</p> 
      */
     inline StartTaskRequest& WithOverrides(TaskOverride&& value) { SetOverrides(std::move(value)); return *this;}
 

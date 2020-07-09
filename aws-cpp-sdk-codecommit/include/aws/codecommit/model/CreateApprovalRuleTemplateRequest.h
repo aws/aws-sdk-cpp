@@ -96,7 +96,7 @@ namespace Model
      * associated repositories. If you specify one or more destination references
      * (branches), approval rules are created in an associated repository only if their
      * destination references (branches) match those specified in the template.</p>
-     * <note> <p>When you create the content of the approval rule template, you can
+     *  <p>When you create the content of the approval rule template, you can
      * specify approvers in an approval pool in one of two ways:</p> <ul> <li> <p>
      * <b>CodeCommitApprovers</b>: This option only requires an AWS account and a
      * resource. It can be used for both IAM users and federated access users whose
@@ -115,7 +115,7 @@ namespace Model
      * Resource Name (ARN) of the IAM user or role. </p> </li> </ul> <p>For more
      * information about IAM ARNs, wildcards, and formats, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
-     * Identifiers</a> in the <i>IAM User Guide</i>.</p> </note>
+     * Identifiers</a> in the <i>IAM User Guide</i>.</p> 
      */
     inline const Aws::String& GetApprovalRuleTemplateContent() const{ return m_approvalRuleTemplateContent; }
 
@@ -124,7 +124,7 @@ namespace Model
      * associated repositories. If you specify one or more destination references
      * (branches), approval rules are created in an associated repository only if their
      * destination references (branches) match those specified in the template.</p>
-     * <note> <p>When you create the content of the approval rule template, you can
+     *  <p>When you create the content of the approval rule template, you can
      * specify approvers in an approval pool in one of two ways:</p> <ul> <li> <p>
      * <b>CodeCommitApprovers</b>: This option only requires an AWS account and a
      * resource. It can be used for both IAM users and federated access users whose
@@ -143,7 +143,7 @@ namespace Model
      * Resource Name (ARN) of the IAM user or role. </p> </li> </ul> <p>For more
      * information about IAM ARNs, wildcards, and formats, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
-     * Identifiers</a> in the <i>IAM User Guide</i>.</p> </note>
+     * Identifiers</a> in the <i>IAM User Guide</i>.</p> 
      */
     inline bool ApprovalRuleTemplateContentHasBeenSet() const { return m_approvalRuleTemplateContentHasBeenSet; }
 
@@ -152,7 +152,7 @@ namespace Model
      * associated repositories. If you specify one or more destination references
      * (branches), approval rules are created in an associated repository only if their
      * destination references (branches) match those specified in the template.</p>
-     * <note> <p>When you create the content of the approval rule template, you can
+     *  <p>When you create the content of the approval rule template, you can
      * specify approvers in an approval pool in one of two ways:</p> <ul> <li> <p>
      * <b>CodeCommitApprovers</b>: This option only requires an AWS account and a
      * resource. It can be used for both IAM users and federated access users whose
@@ -171,7 +171,7 @@ namespace Model
      * Resource Name (ARN) of the IAM user or role. </p> </li> </ul> <p>For more
      * information about IAM ARNs, wildcards, and formats, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
-     * Identifiers</a> in the <i>IAM User Guide</i>.</p> </note>
+     * Identifiers</a> in the <i>IAM User Guide</i>.</p> 
      */
     inline void SetApprovalRuleTemplateContent(const Aws::String& value) { m_approvalRuleTemplateContentHasBeenSet = true; m_approvalRuleTemplateContent = value; }
 
@@ -180,7 +180,7 @@ namespace Model
      * associated repositories. If you specify one or more destination references
      * (branches), approval rules are created in an associated repository only if their
      * destination references (branches) match those specified in the template.</p>
-     * <note> <p>When you create the content of the approval rule template, you can
+     *  <p>When you create the content of the approval rule template, you can
      * specify approvers in an approval pool in one of two ways:</p> <ul> <li> <p>
      * <b>CodeCommitApprovers</b>: This option only requires an AWS account and a
      * resource. It can be used for both IAM users and federated access users whose
@@ -199,7 +199,7 @@ namespace Model
      * Resource Name (ARN) of the IAM user or role. </p> </li> </ul> <p>For more
      * information about IAM ARNs, wildcards, and formats, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
-     * Identifiers</a> in the <i>IAM User Guide</i>.</p> </note>
+     * Identifiers</a> in the <i>IAM User Guide</i>.</p> 
      */
     inline void SetApprovalRuleTemplateContent(Aws::String&& value) { m_approvalRuleTemplateContentHasBeenSet = true; m_approvalRuleTemplateContent = std::move(value); }
 
@@ -208,7 +208,7 @@ namespace Model
      * associated repositories. If you specify one or more destination references
      * (branches), approval rules are created in an associated repository only if their
      * destination references (branches) match those specified in the template.</p>
-     * <note> <p>When you create the content of the approval rule template, you can
+     *  <p>When you create the content of the approval rule template, you can
      * specify approvers in an approval pool in one of two ways:</p> <ul> <li> <p>
      * <b>CodeCommitApprovers</b>: This option only requires an AWS account and a
      * resource. It can be used for both IAM users and federated access users whose
@@ -227,7 +227,7 @@ namespace Model
      * Resource Name (ARN) of the IAM user or role. </p> </li> </ul> <p>For more
      * information about IAM ARNs, wildcards, and formats, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
-     * Identifiers</a> in the <i>IAM User Guide</i>.</p> </note>
+     * Identifiers</a> in the <i>IAM User Guide</i>.</p> 
      */
     inline void SetApprovalRuleTemplateContent(const char* value) { m_approvalRuleTemplateContentHasBeenSet = true; m_approvalRuleTemplateContent.assign(value); }
 
@@ -236,7 +236,7 @@ namespace Model
      * associated repositories. If you specify one or more destination references
      * (branches), approval rules are created in an associated repository only if their
      * destination references (branches) match those specified in the template.</p>
-     * <note> <p>When you create the content of the approval rule template, you can
+     *  <p>When you create the content of the approval rule template, you can
      * specify approvers in an approval pool in one of two ways:</p> <ul> <li> <p>
      * <b>CodeCommitApprovers</b>: This option only requires an AWS account and a
      * resource. It can be used for both IAM users and federated access users whose
@@ -255,7 +255,7 @@ namespace Model
      * Resource Name (ARN) of the IAM user or role. </p> </li> </ul> <p>For more
      * information about IAM ARNs, wildcards, and formats, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
-     * Identifiers</a> in the <i>IAM User Guide</i>.</p> </note>
+     * Identifiers</a> in the <i>IAM User Guide</i>.</p> 
      */
     inline CreateApprovalRuleTemplateRequest& WithApprovalRuleTemplateContent(const Aws::String& value) { SetApprovalRuleTemplateContent(value); return *this;}
 
@@ -264,7 +264,7 @@ namespace Model
      * associated repositories. If you specify one or more destination references
      * (branches), approval rules are created in an associated repository only if their
      * destination references (branches) match those specified in the template.</p>
-     * <note> <p>When you create the content of the approval rule template, you can
+     *  <p>When you create the content of the approval rule template, you can
      * specify approvers in an approval pool in one of two ways:</p> <ul> <li> <p>
      * <b>CodeCommitApprovers</b>: This option only requires an AWS account and a
      * resource. It can be used for both IAM users and federated access users whose
@@ -283,7 +283,7 @@ namespace Model
      * Resource Name (ARN) of the IAM user or role. </p> </li> </ul> <p>For more
      * information about IAM ARNs, wildcards, and formats, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
-     * Identifiers</a> in the <i>IAM User Guide</i>.</p> </note>
+     * Identifiers</a> in the <i>IAM User Guide</i>.</p> 
      */
     inline CreateApprovalRuleTemplateRequest& WithApprovalRuleTemplateContent(Aws::String&& value) { SetApprovalRuleTemplateContent(std::move(value)); return *this;}
 
@@ -292,7 +292,7 @@ namespace Model
      * associated repositories. If you specify one or more destination references
      * (branches), approval rules are created in an associated repository only if their
      * destination references (branches) match those specified in the template.</p>
-     * <note> <p>When you create the content of the approval rule template, you can
+     *  <p>When you create the content of the approval rule template, you can
      * specify approvers in an approval pool in one of two ways:</p> <ul> <li> <p>
      * <b>CodeCommitApprovers</b>: This option only requires an AWS account and a
      * resource. It can be used for both IAM users and federated access users whose
@@ -311,7 +311,7 @@ namespace Model
      * Resource Name (ARN) of the IAM user or role. </p> </li> </ul> <p>For more
      * information about IAM ARNs, wildcards, and formats, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
-     * Identifiers</a> in the <i>IAM User Guide</i>.</p> </note>
+     * Identifiers</a> in the <i>IAM User Guide</i>.</p> 
      */
     inline CreateApprovalRuleTemplateRequest& WithApprovalRuleTemplateContent(const char* value) { SetApprovalRuleTemplateContent(value); return *this;}
 

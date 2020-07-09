@@ -84,13 +84,13 @@ namespace Model
    * is AWS Single Sign-On?</a> in the <i>AWS SSO User Guide</i>.</p> <p>This API
    * reference guide describes the AWS SSO OIDC operations that you can call
    * programatically and includes detailed information on data types and errors.</p>
-   * <note> <p>AWS provides SDKs that consist of libraries and sample code for
+   *  <p>AWS provides SDKs that consist of libraries and sample code for
    * various programming languages and platforms such as Java, Ruby, .Net, iOS, and
    * Android. The SDKs provide a convenient way to create programmatic access to AWS
    * SSO and other AWS services. For more information about the AWS SDKs, including
    * how to download and install them, see <a
    * href="http://aws.amazon.com/tools/">Tools for Amazon Web Services</a>.</p>
-   * </note>
+   * 
    */
   class AWS_SSOOIDC_API SSOOIDCClient : public Aws::Client::AWSJsonClient
   {

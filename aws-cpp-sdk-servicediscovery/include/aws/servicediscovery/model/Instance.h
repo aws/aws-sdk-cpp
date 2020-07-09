@@ -53,9 +53,9 @@ namespace Model
      * </li> <li> <p>If you specify an existing <code>InstanceId</code> and
      * <code>ServiceId</code>, AWS Cloud Map updates the existing DNS records. If
      * there's also an existing health check, AWS Cloud Map deletes the old health
-     * check and creates a new one. </p> <note> <p>The health check isn't deleted
+     * check and creates a new one. </p>  <p>The health check isn't deleted
      * immediately, so it will still appear for a while if you submit a
-     * <code>ListHealthChecks</code> request, for example.</p> </note> </li> </ul>
+     * <code>ListHealthChecks</code> request, for example.</p>  </li> </ul>
      */
     inline const Aws::String& GetId() const{ return m_id; }
 
@@ -72,9 +72,9 @@ namespace Model
      * </li> <li> <p>If you specify an existing <code>InstanceId</code> and
      * <code>ServiceId</code>, AWS Cloud Map updates the existing DNS records. If
      * there's also an existing health check, AWS Cloud Map deletes the old health
-     * check and creates a new one. </p> <note> <p>The health check isn't deleted
+     * check and creates a new one. </p>  <p>The health check isn't deleted
      * immediately, so it will still appear for a while if you submit a
-     * <code>ListHealthChecks</code> request, for example.</p> </note> </li> </ul>
+     * <code>ListHealthChecks</code> request, for example.</p>  </li> </ul>
      */
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
 
@@ -91,9 +91,9 @@ namespace Model
      * </li> <li> <p>If you specify an existing <code>InstanceId</code> and
      * <code>ServiceId</code>, AWS Cloud Map updates the existing DNS records. If
      * there's also an existing health check, AWS Cloud Map deletes the old health
-     * check and creates a new one. </p> <note> <p>The health check isn't deleted
+     * check and creates a new one. </p>  <p>The health check isn't deleted
      * immediately, so it will still appear for a while if you submit a
-     * <code>ListHealthChecks</code> request, for example.</p> </note> </li> </ul>
+     * <code>ListHealthChecks</code> request, for example.</p>  </li> </ul>
      */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
@@ -110,9 +110,9 @@ namespace Model
      * </li> <li> <p>If you specify an existing <code>InstanceId</code> and
      * <code>ServiceId</code>, AWS Cloud Map updates the existing DNS records. If
      * there's also an existing health check, AWS Cloud Map deletes the old health
-     * check and creates a new one. </p> <note> <p>The health check isn't deleted
+     * check and creates a new one. </p>  <p>The health check isn't deleted
      * immediately, so it will still appear for a while if you submit a
-     * <code>ListHealthChecks</code> request, for example.</p> </note> </li> </ul>
+     * <code>ListHealthChecks</code> request, for example.</p>  </li> </ul>
      */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
@@ -129,9 +129,9 @@ namespace Model
      * </li> <li> <p>If you specify an existing <code>InstanceId</code> and
      * <code>ServiceId</code>, AWS Cloud Map updates the existing DNS records. If
      * there's also an existing health check, AWS Cloud Map deletes the old health
-     * check and creates a new one. </p> <note> <p>The health check isn't deleted
+     * check and creates a new one. </p>  <p>The health check isn't deleted
      * immediately, so it will still appear for a while if you submit a
-     * <code>ListHealthChecks</code> request, for example.</p> </note> </li> </ul>
+     * <code>ListHealthChecks</code> request, for example.</p>  </li> </ul>
      */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
@@ -148,9 +148,9 @@ namespace Model
      * </li> <li> <p>If you specify an existing <code>InstanceId</code> and
      * <code>ServiceId</code>, AWS Cloud Map updates the existing DNS records. If
      * there's also an existing health check, AWS Cloud Map deletes the old health
-     * check and creates a new one. </p> <note> <p>The health check isn't deleted
+     * check and creates a new one. </p>  <p>The health check isn't deleted
      * immediately, so it will still appear for a while if you submit a
-     * <code>ListHealthChecks</code> request, for example.</p> </note> </li> </ul>
+     * <code>ListHealthChecks</code> request, for example.</p>  </li> </ul>
      */
     inline Instance& WithId(const Aws::String& value) { SetId(value); return *this;}
 
@@ -167,9 +167,9 @@ namespace Model
      * </li> <li> <p>If you specify an existing <code>InstanceId</code> and
      * <code>ServiceId</code>, AWS Cloud Map updates the existing DNS records. If
      * there's also an existing health check, AWS Cloud Map deletes the old health
-     * check and creates a new one. </p> <note> <p>The health check isn't deleted
+     * check and creates a new one. </p>  <p>The health check isn't deleted
      * immediately, so it will still appear for a while if you submit a
-     * <code>ListHealthChecks</code> request, for example.</p> </note> </li> </ul>
+     * <code>ListHealthChecks</code> request, for example.</p>  </li> </ul>
      */
     inline Instance& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
@@ -186,9 +186,9 @@ namespace Model
      * </li> <li> <p>If you specify an existing <code>InstanceId</code> and
      * <code>ServiceId</code>, AWS Cloud Map updates the existing DNS records. If
      * there's also an existing health check, AWS Cloud Map deletes the old health
-     * check and creates a new one. </p> <note> <p>The health check isn't deleted
+     * check and creates a new one. </p>  <p>The health check isn't deleted
      * immediately, so it will still appear for a while if you submit a
-     * <code>ListHealthChecks</code> request, for example.</p> </note> </li> </ul>
+     * <code>ListHealthChecks</code> request, for example.</p>  </li> </ul>
      */
     inline Instance& WithId(const char* value) { SetId(value); return *this;}
 

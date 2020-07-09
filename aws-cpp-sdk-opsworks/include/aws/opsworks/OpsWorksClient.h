@@ -438,9 +438,9 @@ namespace Model
    * Linux stacks is currently 12. Windows stacks use Chef 12.2. For more
    * information, see <a
    * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-chef11.html">Chef
-   * Versions</a>.</p> <note> <p>You can specify Chef 12, 11.10, or 11.4 for your
+   * Versions</a>.</p>  <p>You can specify Chef 12, 11.10, or 11.4 for your
    * Linux stack. We recommend migrating your existing Linux stacks to Chef 12 as
-   * soon as possible.</p> </note>
+   * soon as possible.</p> 
    */
   class AWS_OPSWORKS_API OpsWorksClient : public Aws::Client::AWSJsonClient
   {
@@ -638,11 +638,11 @@ namespace Model
          * OpsWorks Stacks does not support Application Load Balancer. You can only use
          * Classic Load Balancer with AWS OpsWorks Stacks. For more information, see <a
          * href="https://docs.aws.amazon.com/opsworks/latest/userguide/layers-elb.html">Elastic
-         * Load Balancing</a>.</p> <note> <p>You must create the Elastic Load Balancing
+         * Load Balancing</a>.</p>  <p>You must create the Elastic Load Balancing
          * instance separately, by using the Elastic Load Balancing console, API, or CLI.
          * For more information, see <a
          * href="https://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/Welcome.html">
-         * Elastic Load Balancing Developer Guide</a>.</p> </note> <p> <b>Required
+         * Elastic Load Balancing Developer Guide</a>.</p>  <p> <b>Required
          * Permissions</b>: To use this action, an IAM user must have a Manage permissions
          * level for the stack, or an attached policy that explicitly grants permissions.
          * For more information on user permissions, see <a
@@ -658,11 +658,11 @@ namespace Model
          * OpsWorks Stacks does not support Application Load Balancer. You can only use
          * Classic Load Balancer with AWS OpsWorks Stacks. For more information, see <a
          * href="https://docs.aws.amazon.com/opsworks/latest/userguide/layers-elb.html">Elastic
-         * Load Balancing</a>.</p> <note> <p>You must create the Elastic Load Balancing
+         * Load Balancing</a>.</p>  <p>You must create the Elastic Load Balancing
          * instance separately, by using the Elastic Load Balancing console, API, or CLI.
          * For more information, see <a
          * href="https://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/Welcome.html">
-         * Elastic Load Balancing Developer Guide</a>.</p> </note> <p> <b>Required
+         * Elastic Load Balancing Developer Guide</a>.</p>  <p> <b>Required
          * Permissions</b>: To use this action, an IAM user must have a Manage permissions
          * level for the stack, or an attached policy that explicitly grants permissions.
          * For more information on user permissions, see <a
@@ -680,11 +680,11 @@ namespace Model
          * OpsWorks Stacks does not support Application Load Balancer. You can only use
          * Classic Load Balancer with AWS OpsWorks Stacks. For more information, see <a
          * href="https://docs.aws.amazon.com/opsworks/latest/userguide/layers-elb.html">Elastic
-         * Load Balancing</a>.</p> <note> <p>You must create the Elastic Load Balancing
+         * Load Balancing</a>.</p>  <p>You must create the Elastic Load Balancing
          * instance separately, by using the Elastic Load Balancing console, API, or CLI.
          * For more information, see <a
          * href="https://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/Welcome.html">
-         * Elastic Load Balancing Developer Guide</a>.</p> </note> <p> <b>Required
+         * Elastic Load Balancing Developer Guide</a>.</p>  <p> <b>Required
          * Permissions</b>: To use this action, an IAM user must have a Manage permissions
          * level for the stack, or an attached policy that explicitly grants permissions.
          * For more information on user permissions, see <a
@@ -887,12 +887,12 @@ namespace Model
         /**
          * <p>Creates a layer. For more information, see <a
          * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-create.html">How
-         * to Create a Layer</a>.</p> <note> <p>You should use <b>CreateLayer</b> for
+         * to Create a Layer</a>.</p>  <p>You should use <b>CreateLayer</b> for
          * noncustom layer types such as PHP App Server only if the stack does not have an
          * existing layer of that type. A stack can have at most one instance of each
          * noncustom layer; if you attempt to create a second instance, <b>CreateLayer</b>
          * fails. A stack can have an arbitrary number of custom layers, so you can call
-         * <b>CreateLayer</b> as many times as you like for that layer type.</p> </note>
+         * <b>CreateLayer</b> as many times as you like for that layer type.</p> 
          * <p> <b>Required Permissions</b>: To use this action, an IAM user must have a
          * Manage permissions level for the stack, or an attached policy that explicitly
          * grants permissions. For more information on user permissions, see <a
@@ -906,12 +906,12 @@ namespace Model
         /**
          * <p>Creates a layer. For more information, see <a
          * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-create.html">How
-         * to Create a Layer</a>.</p> <note> <p>You should use <b>CreateLayer</b> for
+         * to Create a Layer</a>.</p>  <p>You should use <b>CreateLayer</b> for
          * noncustom layer types such as PHP App Server only if the stack does not have an
          * existing layer of that type. A stack can have at most one instance of each
          * noncustom layer; if you attempt to create a second instance, <b>CreateLayer</b>
          * fails. A stack can have an arbitrary number of custom layers, so you can call
-         * <b>CreateLayer</b> as many times as you like for that layer type.</p> </note>
+         * <b>CreateLayer</b> as many times as you like for that layer type.</p> 
          * <p> <b>Required Permissions</b>: To use this action, an IAM user must have a
          * Manage permissions level for the stack, or an attached policy that explicitly
          * grants permissions. For more information on user permissions, see <a
@@ -927,12 +927,12 @@ namespace Model
         /**
          * <p>Creates a layer. For more information, see <a
          * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-create.html">How
-         * to Create a Layer</a>.</p> <note> <p>You should use <b>CreateLayer</b> for
+         * to Create a Layer</a>.</p>  <p>You should use <b>CreateLayer</b> for
          * noncustom layer types such as PHP App Server only if the stack does not have an
          * existing layer of that type. A stack can have at most one instance of each
          * noncustom layer; if you attempt to create a second instance, <b>CreateLayer</b>
          * fails. A stack can have an arbitrary number of custom layers, so you can call
-         * <b>CreateLayer</b> as many times as you like for that layer type.</p> </note>
+         * <b>CreateLayer</b> as many times as you like for that layer type.</p> 
          * <p> <b>Required Permissions</b>: To use this action, an IAM user must have a
          * Manage permissions level for the stack, or an attached policy that explicitly
          * grants permissions. For more information on user permissions, see <a
@@ -1520,8 +1520,8 @@ namespace Model
         virtual void DescribeAgentVersionsAsync(const Model::DescribeAgentVersionsRequest& request, const DescribeAgentVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Requests a description of a specified set of apps.</p> <note> <p>This call
-         * accepts only one resource-identifying parameter.</p> </note> <p> <b>Required
+         * <p>Requests a description of a specified set of apps.</p>  <p>This call
+         * accepts only one resource-identifying parameter.</p>  <p> <b>Required
          * Permissions</b>: To use this action, an IAM user must have a Show, Deploy, or
          * Manage permissions level for the stack, or an attached policy that explicitly
          * grants permissions. For more information about user permissions, see <a
@@ -1533,8 +1533,8 @@ namespace Model
         virtual Model::DescribeAppsOutcome DescribeApps(const Model::DescribeAppsRequest& request) const;
 
         /**
-         * <p>Requests a description of a specified set of apps.</p> <note> <p>This call
-         * accepts only one resource-identifying parameter.</p> </note> <p> <b>Required
+         * <p>Requests a description of a specified set of apps.</p>  <p>This call
+         * accepts only one resource-identifying parameter.</p>  <p> <b>Required
          * Permissions</b>: To use this action, an IAM user must have a Show, Deploy, or
          * Manage permissions level for the stack, or an attached policy that explicitly
          * grants permissions. For more information about user permissions, see <a
@@ -1548,8 +1548,8 @@ namespace Model
         virtual Model::DescribeAppsOutcomeCallable DescribeAppsCallable(const Model::DescribeAppsRequest& request) const;
 
         /**
-         * <p>Requests a description of a specified set of apps.</p> <note> <p>This call
-         * accepts only one resource-identifying parameter.</p> </note> <p> <b>Required
+         * <p>Requests a description of a specified set of apps.</p>  <p>This call
+         * accepts only one resource-identifying parameter.</p>  <p> <b>Required
          * Permissions</b>: To use this action, an IAM user must have a Show, Deploy, or
          * Manage permissions level for the stack, or an attached policy that explicitly
          * grants permissions. For more information about user permissions, see <a
@@ -1563,8 +1563,8 @@ namespace Model
         virtual void DescribeAppsAsync(const Model::DescribeAppsRequest& request, const DescribeAppsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes the results of specified commands.</p> <note> <p>This call accepts
-         * only one resource-identifying parameter.</p> </note> <p> <b>Required
+         * <p>Describes the results of specified commands.</p>  <p>This call accepts
+         * only one resource-identifying parameter.</p>  <p> <b>Required
          * Permissions</b>: To use this action, an IAM user must have a Show, Deploy, or
          * Manage permissions level for the stack, or an attached policy that explicitly
          * grants permissions. For more information about user permissions, see <a
@@ -1576,8 +1576,8 @@ namespace Model
         virtual Model::DescribeCommandsOutcome DescribeCommands(const Model::DescribeCommandsRequest& request) const;
 
         /**
-         * <p>Describes the results of specified commands.</p> <note> <p>This call accepts
-         * only one resource-identifying parameter.</p> </note> <p> <b>Required
+         * <p>Describes the results of specified commands.</p>  <p>This call accepts
+         * only one resource-identifying parameter.</p>  <p> <b>Required
          * Permissions</b>: To use this action, an IAM user must have a Show, Deploy, or
          * Manage permissions level for the stack, or an attached policy that explicitly
          * grants permissions. For more information about user permissions, see <a
@@ -1591,8 +1591,8 @@ namespace Model
         virtual Model::DescribeCommandsOutcomeCallable DescribeCommandsCallable(const Model::DescribeCommandsRequest& request) const;
 
         /**
-         * <p>Describes the results of specified commands.</p> <note> <p>This call accepts
-         * only one resource-identifying parameter.</p> </note> <p> <b>Required
+         * <p>Describes the results of specified commands.</p>  <p>This call accepts
+         * only one resource-identifying parameter.</p>  <p> <b>Required
          * Permissions</b>: To use this action, an IAM user must have a Show, Deploy, or
          * Manage permissions level for the stack, or an attached policy that explicitly
          * grants permissions. For more information about user permissions, see <a
@@ -1606,8 +1606,8 @@ namespace Model
         virtual void DescribeCommandsAsync(const Model::DescribeCommandsRequest& request, const DescribeCommandsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Requests a description of a specified set of deployments.</p> <note> <p>This
-         * call accepts only one resource-identifying parameter.</p> </note> <p>
+         * <p>Requests a description of a specified set of deployments.</p>  <p>This
+         * call accepts only one resource-identifying parameter.</p>  <p>
          * <b>Required Permissions</b>: To use this action, an IAM user must have a Show,
          * Deploy, or Manage permissions level for the stack, or an attached policy that
          * explicitly grants permissions. For more information about user permissions, see
@@ -1620,8 +1620,8 @@ namespace Model
         virtual Model::DescribeDeploymentsOutcome DescribeDeployments(const Model::DescribeDeploymentsRequest& request) const;
 
         /**
-         * <p>Requests a description of a specified set of deployments.</p> <note> <p>This
-         * call accepts only one resource-identifying parameter.</p> </note> <p>
+         * <p>Requests a description of a specified set of deployments.</p>  <p>This
+         * call accepts only one resource-identifying parameter.</p>  <p>
          * <b>Required Permissions</b>: To use this action, an IAM user must have a Show,
          * Deploy, or Manage permissions level for the stack, or an attached policy that
          * explicitly grants permissions. For more information about user permissions, see
@@ -1636,8 +1636,8 @@ namespace Model
         virtual Model::DescribeDeploymentsOutcomeCallable DescribeDeploymentsCallable(const Model::DescribeDeploymentsRequest& request) const;
 
         /**
-         * <p>Requests a description of a specified set of deployments.</p> <note> <p>This
-         * call accepts only one resource-identifying parameter.</p> </note> <p>
+         * <p>Requests a description of a specified set of deployments.</p>  <p>This
+         * call accepts only one resource-identifying parameter.</p>  <p>
          * <b>Required Permissions</b>: To use this action, an IAM user must have a Show,
          * Deploy, or Manage permissions level for the stack, or an attached policy that
          * explicitly grants permissions. For more information about user permissions, see
@@ -1709,8 +1709,8 @@ namespace Model
         /**
          * <p>Describes <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
-         * IP addresses</a>.</p> <note> <p>This call accepts only one resource-identifying
-         * parameter.</p> </note> <p> <b>Required Permissions</b>: To use this action, an
+         * IP addresses</a>.</p>  <p>This call accepts only one resource-identifying
+         * parameter.</p>  <p> <b>Required Permissions</b>: To use this action, an
          * IAM user must have a Show, Deploy, or Manage permissions level for the stack, or
          * an attached policy that explicitly grants permissions. For more information
          * about user permissions, see <a
@@ -1724,8 +1724,8 @@ namespace Model
         /**
          * <p>Describes <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
-         * IP addresses</a>.</p> <note> <p>This call accepts only one resource-identifying
-         * parameter.</p> </note> <p> <b>Required Permissions</b>: To use this action, an
+         * IP addresses</a>.</p>  <p>This call accepts only one resource-identifying
+         * parameter.</p>  <p> <b>Required Permissions</b>: To use this action, an
          * IAM user must have a Show, Deploy, or Manage permissions level for the stack, or
          * an attached policy that explicitly grants permissions. For more information
          * about user permissions, see <a
@@ -1741,8 +1741,8 @@ namespace Model
         /**
          * <p>Describes <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
-         * IP addresses</a>.</p> <note> <p>This call accepts only one resource-identifying
-         * parameter.</p> </note> <p> <b>Required Permissions</b>: To use this action, an
+         * IP addresses</a>.</p>  <p>This call accepts only one resource-identifying
+         * parameter.</p>  <p> <b>Required Permissions</b>: To use this action, an
          * IAM user must have a Show, Deploy, or Manage permissions level for the stack, or
          * an attached policy that explicitly grants permissions. For more information
          * about user permissions, see <a
@@ -1756,8 +1756,8 @@ namespace Model
         virtual void DescribeElasticIpsAsync(const Model::DescribeElasticIpsRequest& request, const DescribeElasticIpsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes a stack's Elastic Load Balancing instances.</p> <note> <p>This call
-         * accepts only one resource-identifying parameter.</p> </note> <p> <b>Required
+         * <p>Describes a stack's Elastic Load Balancing instances.</p>  <p>This call
+         * accepts only one resource-identifying parameter.</p>  <p> <b>Required
          * Permissions</b>: To use this action, an IAM user must have a Show, Deploy, or
          * Manage permissions level for the stack, or an attached policy that explicitly
          * grants permissions. For more information about user permissions, see <a
@@ -1769,8 +1769,8 @@ namespace Model
         virtual Model::DescribeElasticLoadBalancersOutcome DescribeElasticLoadBalancers(const Model::DescribeElasticLoadBalancersRequest& request) const;
 
         /**
-         * <p>Describes a stack's Elastic Load Balancing instances.</p> <note> <p>This call
-         * accepts only one resource-identifying parameter.</p> </note> <p> <b>Required
+         * <p>Describes a stack's Elastic Load Balancing instances.</p>  <p>This call
+         * accepts only one resource-identifying parameter.</p>  <p> <b>Required
          * Permissions</b>: To use this action, an IAM user must have a Show, Deploy, or
          * Manage permissions level for the stack, or an attached policy that explicitly
          * grants permissions. For more information about user permissions, see <a
@@ -1784,8 +1784,8 @@ namespace Model
         virtual Model::DescribeElasticLoadBalancersOutcomeCallable DescribeElasticLoadBalancersCallable(const Model::DescribeElasticLoadBalancersRequest& request) const;
 
         /**
-         * <p>Describes a stack's Elastic Load Balancing instances.</p> <note> <p>This call
-         * accepts only one resource-identifying parameter.</p> </note> <p> <b>Required
+         * <p>Describes a stack's Elastic Load Balancing instances.</p>  <p>This call
+         * accepts only one resource-identifying parameter.</p>  <p> <b>Required
          * Permissions</b>: To use this action, an IAM user must have a Show, Deploy, or
          * Manage permissions level for the stack, or an attached policy that explicitly
          * grants permissions. For more information about user permissions, see <a
@@ -1799,8 +1799,8 @@ namespace Model
         virtual void DescribeElasticLoadBalancersAsync(const Model::DescribeElasticLoadBalancersRequest& request, const DescribeElasticLoadBalancersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Requests a description of a set of instances.</p> <note> <p>This call accepts
-         * only one resource-identifying parameter.</p> </note> <p> <b>Required
+         * <p>Requests a description of a set of instances.</p>  <p>This call accepts
+         * only one resource-identifying parameter.</p>  <p> <b>Required
          * Permissions</b>: To use this action, an IAM user must have a Show, Deploy, or
          * Manage permissions level for the stack, or an attached policy that explicitly
          * grants permissions. For more information about user permissions, see <a
@@ -1812,8 +1812,8 @@ namespace Model
         virtual Model::DescribeInstancesOutcome DescribeInstances(const Model::DescribeInstancesRequest& request) const;
 
         /**
-         * <p>Requests a description of a set of instances.</p> <note> <p>This call accepts
-         * only one resource-identifying parameter.</p> </note> <p> <b>Required
+         * <p>Requests a description of a set of instances.</p>  <p>This call accepts
+         * only one resource-identifying parameter.</p>  <p> <b>Required
          * Permissions</b>: To use this action, an IAM user must have a Show, Deploy, or
          * Manage permissions level for the stack, or an attached policy that explicitly
          * grants permissions. For more information about user permissions, see <a
@@ -1827,8 +1827,8 @@ namespace Model
         virtual Model::DescribeInstancesOutcomeCallable DescribeInstancesCallable(const Model::DescribeInstancesRequest& request) const;
 
         /**
-         * <p>Requests a description of a set of instances.</p> <note> <p>This call accepts
-         * only one resource-identifying parameter.</p> </note> <p> <b>Required
+         * <p>Requests a description of a set of instances.</p>  <p>This call accepts
+         * only one resource-identifying parameter.</p>  <p> <b>Required
          * Permissions</b>: To use this action, an IAM user must have a Show, Deploy, or
          * Manage permissions level for the stack, or an attached policy that explicitly
          * grants permissions. For more information about user permissions, see <a
@@ -1842,8 +1842,8 @@ namespace Model
         virtual void DescribeInstancesAsync(const Model::DescribeInstancesRequest& request, const DescribeInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Requests a description of one or more layers in a specified stack.</p> <note>
-         * <p>This call accepts only one resource-identifying parameter.</p> </note> <p>
+         * <p>Requests a description of one or more layers in a specified stack.</p> 
+         * <p>This call accepts only one resource-identifying parameter.</p>  <p>
          * <b>Required Permissions</b>: To use this action, an IAM user must have a Show,
          * Deploy, or Manage permissions level for the stack, or an attached policy that
          * explicitly grants permissions. For more information about user permissions, see
@@ -1856,8 +1856,8 @@ namespace Model
         virtual Model::DescribeLayersOutcome DescribeLayers(const Model::DescribeLayersRequest& request) const;
 
         /**
-         * <p>Requests a description of one or more layers in a specified stack.</p> <note>
-         * <p>This call accepts only one resource-identifying parameter.</p> </note> <p>
+         * <p>Requests a description of one or more layers in a specified stack.</p> 
+         * <p>This call accepts only one resource-identifying parameter.</p>  <p>
          * <b>Required Permissions</b>: To use this action, an IAM user must have a Show,
          * Deploy, or Manage permissions level for the stack, or an attached policy that
          * explicitly grants permissions. For more information about user permissions, see
@@ -1872,8 +1872,8 @@ namespace Model
         virtual Model::DescribeLayersOutcomeCallable DescribeLayersCallable(const Model::DescribeLayersRequest& request) const;
 
         /**
-         * <p>Requests a description of one or more layers in a specified stack.</p> <note>
-         * <p>This call accepts only one resource-identifying parameter.</p> </note> <p>
+         * <p>Requests a description of one or more layers in a specified stack.</p> 
+         * <p>This call accepts only one resource-identifying parameter.</p>  <p>
          * <b>Required Permissions</b>: To use this action, an IAM user must have a Show,
          * Deploy, or Manage permissions level for the stack, or an attached policy that
          * explicitly grants permissions. For more information about user permissions, see
@@ -1889,7 +1889,7 @@ namespace Model
 
         /**
          * <p>Describes load-based auto scaling configurations for specified layers.</p>
-         * <note> <p>You must specify at least one of the parameters.</p> </note> <p>
+         *  <p>You must specify at least one of the parameters.</p>  <p>
          * <b>Required Permissions</b>: To use this action, an IAM user must have a Show,
          * Deploy, or Manage permissions level for the stack, or an attached policy that
          * explicitly grants permissions. For more information about user permissions, see
@@ -1903,7 +1903,7 @@ namespace Model
 
         /**
          * <p>Describes load-based auto scaling configurations for specified layers.</p>
-         * <note> <p>You must specify at least one of the parameters.</p> </note> <p>
+         *  <p>You must specify at least one of the parameters.</p>  <p>
          * <b>Required Permissions</b>: To use this action, an IAM user must have a Show,
          * Deploy, or Manage permissions level for the stack, or an attached policy that
          * explicitly grants permissions. For more information about user permissions, see
@@ -1919,7 +1919,7 @@ namespace Model
 
         /**
          * <p>Describes load-based auto scaling configurations for specified layers.</p>
-         * <note> <p>You must specify at least one of the parameters.</p> </note> <p>
+         *  <p>You must specify at least one of the parameters.</p>  <p>
          * <b>Required Permissions</b>: To use this action, an IAM user must have a Show,
          * Deploy, or Manage permissions level for the stack, or an attached policy that
          * explicitly grants permissions. For more information about user permissions, see
@@ -2040,8 +2040,8 @@ namespace Model
         virtual void DescribePermissionsAsync(const Model::DescribePermissionsRequest& request, const DescribePermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describe an instance's RAID arrays.</p> <note> <p>This call accepts only one
-         * resource-identifying parameter.</p> </note> <p> <b>Required Permissions</b>: To
+         * <p>Describe an instance's RAID arrays.</p>  <p>This call accepts only one
+         * resource-identifying parameter.</p>  <p> <b>Required Permissions</b>: To
          * use this action, an IAM user must have a Show, Deploy, or Manage permissions
          * level for the stack, or an attached policy that explicitly grants permissions.
          * For more information about user permissions, see <a
@@ -2053,8 +2053,8 @@ namespace Model
         virtual Model::DescribeRaidArraysOutcome DescribeRaidArrays(const Model::DescribeRaidArraysRequest& request) const;
 
         /**
-         * <p>Describe an instance's RAID arrays.</p> <note> <p>This call accepts only one
-         * resource-identifying parameter.</p> </note> <p> <b>Required Permissions</b>: To
+         * <p>Describe an instance's RAID arrays.</p>  <p>This call accepts only one
+         * resource-identifying parameter.</p>  <p> <b>Required Permissions</b>: To
          * use this action, an IAM user must have a Show, Deploy, or Manage permissions
          * level for the stack, or an attached policy that explicitly grants permissions.
          * For more information about user permissions, see <a
@@ -2068,8 +2068,8 @@ namespace Model
         virtual Model::DescribeRaidArraysOutcomeCallable DescribeRaidArraysCallable(const Model::DescribeRaidArraysRequest& request) const;
 
         /**
-         * <p>Describe an instance's RAID arrays.</p> <note> <p>This call accepts only one
-         * resource-identifying parameter.</p> </note> <p> <b>Required Permissions</b>: To
+         * <p>Describe an instance's RAID arrays.</p>  <p>This call accepts only one
+         * resource-identifying parameter.</p>  <p> <b>Required Permissions</b>: To
          * use this action, an IAM user must have a Show, Deploy, or Manage permissions
          * level for the stack, or an attached policy that explicitly grants permissions.
          * For more information about user permissions, see <a
@@ -2299,7 +2299,7 @@ namespace Model
 
         /**
          * <p>Describes time-based auto scaling configurations for specified instances.</p>
-         * <note> <p>You must specify at least one of the parameters.</p> </note> <p>
+         *  <p>You must specify at least one of the parameters.</p>  <p>
          * <b>Required Permissions</b>: To use this action, an IAM user must have a Show,
          * Deploy, or Manage permissions level for the stack, or an attached policy that
          * explicitly grants permissions. For more information about user permissions, see
@@ -2313,7 +2313,7 @@ namespace Model
 
         /**
          * <p>Describes time-based auto scaling configurations for specified instances.</p>
-         * <note> <p>You must specify at least one of the parameters.</p> </note> <p>
+         *  <p>You must specify at least one of the parameters.</p>  <p>
          * <b>Required Permissions</b>: To use this action, an IAM user must have a Show,
          * Deploy, or Manage permissions level for the stack, or an attached policy that
          * explicitly grants permissions. For more information about user permissions, see
@@ -2329,7 +2329,7 @@ namespace Model
 
         /**
          * <p>Describes time-based auto scaling configurations for specified instances.</p>
-         * <note> <p>You must specify at least one of the parameters.</p> </note> <p>
+         *  <p>You must specify at least one of the parameters.</p>  <p>
          * <b>Required Permissions</b>: To use this action, an IAM user must have a Show,
          * Deploy, or Manage permissions level for the stack, or an attached policy that
          * explicitly grants permissions. For more information about user permissions, see
@@ -2381,8 +2381,8 @@ namespace Model
         virtual void DescribeUserProfilesAsync(const Model::DescribeUserProfilesRequest& request, const DescribeUserProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes an instance's Amazon EBS volumes.</p> <note> <p>This call accepts
-         * only one resource-identifying parameter.</p> </note> <p> <b>Required
+         * <p>Describes an instance's Amazon EBS volumes.</p>  <p>This call accepts
+         * only one resource-identifying parameter.</p>  <p> <b>Required
          * Permissions</b>: To use this action, an IAM user must have a Show, Deploy, or
          * Manage permissions level for the stack, or an attached policy that explicitly
          * grants permissions. For more information about user permissions, see <a
@@ -2394,8 +2394,8 @@ namespace Model
         virtual Model::DescribeVolumesOutcome DescribeVolumes(const Model::DescribeVolumesRequest& request) const;
 
         /**
-         * <p>Describes an instance's Amazon EBS volumes.</p> <note> <p>This call accepts
-         * only one resource-identifying parameter.</p> </note> <p> <b>Required
+         * <p>Describes an instance's Amazon EBS volumes.</p>  <p>This call accepts
+         * only one resource-identifying parameter.</p>  <p> <b>Required
          * Permissions</b>: To use this action, an IAM user must have a Show, Deploy, or
          * Manage permissions level for the stack, or an attached policy that explicitly
          * grants permissions. For more information about user permissions, see <a
@@ -2409,8 +2409,8 @@ namespace Model
         virtual Model::DescribeVolumesOutcomeCallable DescribeVolumesCallable(const Model::DescribeVolumesRequest& request) const;
 
         /**
-         * <p>Describes an instance's Amazon EBS volumes.</p> <note> <p>This call accepts
-         * only one resource-identifying parameter.</p> </note> <p> <b>Required
+         * <p>Describes an instance's Amazon EBS volumes.</p>  <p>This call accepts
+         * only one resource-identifying parameter.</p>  <p> <b>Required
          * Permissions</b>: To use this action, an IAM user must have a Show, Deploy, or
          * Manage permissions level for the stack, or an attached policy that explicitly
          * grants permissions. For more information about user permissions, see <a
@@ -2553,7 +2553,7 @@ namespace Model
         virtual void GetHostnameSuggestionAsync(const Model::GetHostnameSuggestionRequest& request, const GetHostnameSuggestionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <note> <p>This action can be used only with Windows stacks.</p> </note>
+         *  <p>This action can be used only with Windows stacks.</p> 
          * <p>Grants RDP access to a Windows instance for a specified time
          * period.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/GrantAccess">AWS
@@ -2562,7 +2562,7 @@ namespace Model
         virtual Model::GrantAccessOutcome GrantAccess(const Model::GrantAccessRequest& request) const;
 
         /**
-         * <note> <p>This action can be used only with Windows stacks.</p> </note>
+         *  <p>This action can be used only with Windows stacks.</p> 
          * <p>Grants RDP access to a Windows instance for a specified time
          * period.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/GrantAccess">AWS
@@ -2573,7 +2573,7 @@ namespace Model
         virtual Model::GrantAccessOutcomeCallable GrantAccessCallable(const Model::GrantAccessRequest& request) const;
 
         /**
-         * <note> <p>This action can be used only with Windows stacks.</p> </note>
+         *  <p>This action can be used only with Windows stacks.</p> 
          * <p>Grants RDP access to a Windows instance for a specified time
          * period.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/GrantAccess">AWS
@@ -2766,14 +2766,14 @@ namespace Model
 
         /**
          * <p>Registers instances that were created outside of AWS OpsWorks Stacks with a
-         * specified stack.</p> <note> <p>We do not recommend using this action to register
+         * specified stack.</p>  <p>We do not recommend using this action to register
          * instances. The complete registration operation includes two tasks: installing
          * the AWS OpsWorks Stacks agent on the instance, and registering the instance with
          * the stack. <code>RegisterInstance</code> handles only the second step. You
          * should instead use the AWS CLI <code>register</code> command, which performs the
          * entire registration operation. For more information, see <a
          * href="https://docs.aws.amazon.com/opsworks/latest/userguide/registered-instances-register.html">
-         * Registering an Instance with an AWS OpsWorks Stacks Stack</a>.</p> </note>
+         * Registering an Instance with an AWS OpsWorks Stacks Stack</a>.</p> 
          * <p>Registered instances have the same requirements as instances that are created
          * by using the <a>CreateInstance</a> API. For example, registered instances must
          * be running a supported Linux-based operating system, and they must have a
@@ -2793,14 +2793,14 @@ namespace Model
 
         /**
          * <p>Registers instances that were created outside of AWS OpsWorks Stacks with a
-         * specified stack.</p> <note> <p>We do not recommend using this action to register
+         * specified stack.</p>  <p>We do not recommend using this action to register
          * instances. The complete registration operation includes two tasks: installing
          * the AWS OpsWorks Stacks agent on the instance, and registering the instance with
          * the stack. <code>RegisterInstance</code> handles only the second step. You
          * should instead use the AWS CLI <code>register</code> command, which performs the
          * entire registration operation. For more information, see <a
          * href="https://docs.aws.amazon.com/opsworks/latest/userguide/registered-instances-register.html">
-         * Registering an Instance with an AWS OpsWorks Stacks Stack</a>.</p> </note>
+         * Registering an Instance with an AWS OpsWorks Stacks Stack</a>.</p> 
          * <p>Registered instances have the same requirements as instances that are created
          * by using the <a>CreateInstance</a> API. For example, registered instances must
          * be running a supported Linux-based operating system, and they must have a
@@ -2822,14 +2822,14 @@ namespace Model
 
         /**
          * <p>Registers instances that were created outside of AWS OpsWorks Stacks with a
-         * specified stack.</p> <note> <p>We do not recommend using this action to register
+         * specified stack.</p>  <p>We do not recommend using this action to register
          * instances. The complete registration operation includes two tasks: installing
          * the AWS OpsWorks Stacks agent on the instance, and registering the instance with
          * the stack. <code>RegisterInstance</code> handles only the second step. You
          * should instead use the AWS CLI <code>register</code> command, which performs the
          * entire registration operation. For more information, see <a
          * href="https://docs.aws.amazon.com/opsworks/latest/userguide/registered-instances-register.html">
-         * Registering an Instance with an AWS OpsWorks Stacks Stack</a>.</p> </note>
+         * Registering an Instance with an AWS OpsWorks Stacks Stack</a>.</p> 
          * <p>Registered instances have the same requirements as instances that are created
          * by using the <a>CreateInstance</a> API. For example, registered instances must
          * be running a supported Linux-based operating system, and they must have a
@@ -2948,11 +2948,11 @@ namespace Model
          * <p>Specify the load-based auto scaling configuration for a specified layer. For
          * more information, see <a
          * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-autoscaling.html">Managing
-         * Load with Time-based and Load-based Instances</a>.</p> <note> <p>To use
+         * Load with Time-based and Load-based Instances</a>.</p>  <p>To use
          * load-based auto scaling, you must create a set of load-based auto scaling
          * instances. Load-based auto scaling operates only on the instances from that set,
          * so you must ensure that you have created enough instances to handle the maximum
-         * anticipated load.</p> </note> <p> <b>Required Permissions</b>: To use this
+         * anticipated load.</p>  <p> <b>Required Permissions</b>: To use this
          * action, an IAM user must have a Manage permissions level for the stack, or an
          * attached policy that explicitly grants permissions. For more information on user
          * permissions, see <a
@@ -2967,11 +2967,11 @@ namespace Model
          * <p>Specify the load-based auto scaling configuration for a specified layer. For
          * more information, see <a
          * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-autoscaling.html">Managing
-         * Load with Time-based and Load-based Instances</a>.</p> <note> <p>To use
+         * Load with Time-based and Load-based Instances</a>.</p>  <p>To use
          * load-based auto scaling, you must create a set of load-based auto scaling
          * instances. Load-based auto scaling operates only on the instances from that set,
          * so you must ensure that you have created enough instances to handle the maximum
-         * anticipated load.</p> </note> <p> <b>Required Permissions</b>: To use this
+         * anticipated load.</p>  <p> <b>Required Permissions</b>: To use this
          * action, an IAM user must have a Manage permissions level for the stack, or an
          * attached policy that explicitly grants permissions. For more information on user
          * permissions, see <a
@@ -2988,11 +2988,11 @@ namespace Model
          * <p>Specify the load-based auto scaling configuration for a specified layer. For
          * more information, see <a
          * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-autoscaling.html">Managing
-         * Load with Time-based and Load-based Instances</a>.</p> <note> <p>To use
+         * Load with Time-based and Load-based Instances</a>.</p>  <p>To use
          * load-based auto scaling, you must create a set of load-based auto scaling
          * instances. Load-based auto scaling operates only on the instances from that set,
          * so you must ensure that you have created enough instances to handle the maximum
-         * anticipated load.</p> </note> <p> <b>Required Permissions</b>: To use this
+         * anticipated load.</p>  <p> <b>Required Permissions</b>: To use this
          * action, an IAM user must have a Manage permissions level for the stack, or an
          * attached policy that explicitly grants permissions. For more information on user
          * permissions, see <a

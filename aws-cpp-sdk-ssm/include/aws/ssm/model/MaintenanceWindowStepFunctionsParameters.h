@@ -27,7 +27,7 @@ namespace Model
    * <p>The parameters for a STEP_FUNCTIONS task.</p> <p>For information about
    * specifying and updating task parameters, see
    * <a>RegisterTaskWithMaintenanceWindow</a> and
-   * <a>UpdateMaintenanceWindowTask</a>.</p> <note> <p> <code>LoggingInfo</code> has
+   * <a>UpdateMaintenanceWindowTask</a>.</p>  <p> <code>LoggingInfo</code> has
    * been deprecated. To specify an S3 bucket to contain logs, instead use the
    * <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in
    * the <code>TaskInvocationParameters</code> structure. For information about how
@@ -39,7 +39,7 @@ namespace Model
    * Systems Manager handles these options for the supported maintenance window task
    * types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> <p>For Step
    * Functions tasks, Systems Manager ignores any values specified for
-   * <code>TaskParameters</code> and <code>LoggingInfo</code>.</p> </note><p><h3>See
+   * <code>TaskParameters</code> and <code>LoggingInfo</code>.</p> <p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/MaintenanceWindowStepFunctionsParameters">AWS
    * API Reference</a></p>

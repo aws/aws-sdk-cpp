@@ -365,8 +365,8 @@ namespace Model
 
         /**
          * <p>Adds an existing external connection to a repository. One external connection
-         * is allowed per repository.</p> <note> <p>A repository can have one or more
-         * upstream repositories, or an external connection.</p> </note><p><h3>See
+         * is allowed per repository.</p>  <p>A repository can have one or more
+         * upstream repositories, or an external connection.</p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/AssociateExternalConnection">AWS
          * API Reference</a></p>
@@ -375,8 +375,8 @@ namespace Model
 
         /**
          * <p>Adds an existing external connection to a repository. One external connection
-         * is allowed per repository.</p> <note> <p>A repository can have one or more
-         * upstream repositories, or an external connection.</p> </note><p><h3>See
+         * is allowed per repository.</p>  <p>A repository can have one or more
+         * upstream repositories, or an external connection.</p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/AssociateExternalConnection">AWS
          * API Reference</a></p>
@@ -387,8 +387,8 @@ namespace Model
 
         /**
          * <p>Adds an existing external connection to a repository. One external connection
-         * is allowed per repository.</p> <note> <p>A repository can have one or more
-         * upstream repositories, or an external connection.</p> </note><p><h3>See
+         * is allowed per repository.</p>  <p>A repository can have one or more
+         * upstream repositories, or an external connection.</p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/AssociateExternalConnection">AWS
          * API Reference</a></p>
@@ -399,8 +399,8 @@ namespace Model
 
         /**
          * <p> Copies package versions from one repository to another repository in the
-         * same domain. </p> <note> <p> You must specify <code>versions</code> or
-         * <code>versionRevisions</code>. You cannot specify both. </p> </note><p><h3>See
+         * same domain. </p>  <p> You must specify <code>versions</code> or
+         * <code>versionRevisions</code>. You cannot specify both. </p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/CopyPackageVersions">AWS
          * API Reference</a></p>
@@ -409,8 +409,8 @@ namespace Model
 
         /**
          * <p> Copies package versions from one repository to another repository in the
-         * same domain. </p> <note> <p> You must specify <code>versions</code> or
-         * <code>versionRevisions</code>. You cannot specify both. </p> </note><p><h3>See
+         * same domain. </p>  <p> You must specify <code>versions</code> or
+         * <code>versionRevisions</code>. You cannot specify both. </p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/CopyPackageVersions">AWS
          * API Reference</a></p>
@@ -421,8 +421,8 @@ namespace Model
 
         /**
          * <p> Copies package versions from one repository to another repository in the
-         * same domain. </p> <note> <p> You must specify <code>versions</code> or
-         * <code>versionRevisions</code>. You cannot specify both. </p> </note><p><h3>See
+         * same domain. </p>  <p> You must specify <code>versions</code> or
+         * <code>versionRevisions</code>. You cannot specify both. </p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/CopyPackageVersions">AWS
          * API Reference</a></p>
@@ -636,10 +636,10 @@ namespace Model
          * <p> Deletes the resource policy that is set on a repository. After a resource
          * policy is deleted, the permissions allowed and denied by the deleted policy are
          * removed. The effect of deleting a resource policy might not be immediate. </p>
-         * <important> <p> Use <code>DeleteRepositoryPermissionsPolicy</code> with caution.
+         *  <p> Use <code>DeleteRepositoryPermissionsPolicy</code> with caution.
          * After a policy is deleted, AWS users, roles, and accounts lose permissions to
          * perform the repository actions granted by the deleted policy. </p>
-         * </important><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/DeleteRepositoryPermissionsPolicy">AWS
          * API Reference</a></p>
          */
@@ -649,10 +649,10 @@ namespace Model
          * <p> Deletes the resource policy that is set on a repository. After a resource
          * policy is deleted, the permissions allowed and denied by the deleted policy are
          * removed. The effect of deleting a resource policy might not be immediate. </p>
-         * <important> <p> Use <code>DeleteRepositoryPermissionsPolicy</code> with caution.
+         *  <p> Use <code>DeleteRepositoryPermissionsPolicy</code> with caution.
          * After a policy is deleted, AWS users, roles, and accounts lose permissions to
          * perform the repository actions granted by the deleted policy. </p>
-         * </important><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/DeleteRepositoryPermissionsPolicy">AWS
          * API Reference</a></p>
          *
@@ -664,10 +664,10 @@ namespace Model
          * <p> Deletes the resource policy that is set on a repository. After a resource
          * policy is deleted, the permissions allowed and denied by the deleted policy are
          * removed. The effect of deleting a resource policy might not be immediate. </p>
-         * <important> <p> Use <code>DeleteRepositoryPermissionsPolicy</code> with caution.
+         *  <p> Use <code>DeleteRepositoryPermissionsPolicy</code> with caution.
          * After a policy is deleted, AWS users, roles, and accounts lose permissions to
          * perform the repository actions granted by the deleted policy. </p>
-         * </important><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/DeleteRepositoryPermissionsPolicy">AWS
          * API Reference</a></p>
          *
@@ -863,7 +863,7 @@ namespace Model
         /**
          * <p> Generates a temporary authentication token for accessing repositories in the
          * domain. This API requires the <code>codeartifact:GetAuthorizationToken</code>
-         * and <code>sts:GetServiceBearerToken</code> permissions. </p> <note>
+         * and <code>sts:GetServiceBearerToken</code> permissions. </p> 
          * <p>CodeArtifact authorization tokens are valid for a period of 12 hours when
          * created with the <code>login</code> command. You can call <code>login</code>
          * periodically to refresh the token. When you create an authorization token with
@@ -879,7 +879,7 @@ namespace Model
          * 15-minute session duration.</p> <p>See <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using
          * IAM Roles</a> for more information on controlling session duration. </p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/GetAuthorizationToken">AWS
          * API Reference</a></p>
          */
@@ -888,7 +888,7 @@ namespace Model
         /**
          * <p> Generates a temporary authentication token for accessing repositories in the
          * domain. This API requires the <code>codeartifact:GetAuthorizationToken</code>
-         * and <code>sts:GetServiceBearerToken</code> permissions. </p> <note>
+         * and <code>sts:GetServiceBearerToken</code> permissions. </p> 
          * <p>CodeArtifact authorization tokens are valid for a period of 12 hours when
          * created with the <code>login</code> command. You can call <code>login</code>
          * periodically to refresh the token. When you create an authorization token with
@@ -904,7 +904,7 @@ namespace Model
          * 15-minute session duration.</p> <p>See <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using
          * IAM Roles</a> for more information on controlling session duration. </p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/GetAuthorizationToken">AWS
          * API Reference</a></p>
          *
@@ -915,7 +915,7 @@ namespace Model
         /**
          * <p> Generates a temporary authentication token for accessing repositories in the
          * domain. This API requires the <code>codeartifact:GetAuthorizationToken</code>
-         * and <code>sts:GetServiceBearerToken</code> permissions. </p> <note>
+         * and <code>sts:GetServiceBearerToken</code> permissions. </p> 
          * <p>CodeArtifact authorization tokens are valid for a period of 12 hours when
          * created with the <code>login</code> command. You can call <code>login</code>
          * periodically to refresh the token. When you create an authorization token with
@@ -931,7 +931,7 @@ namespace Model
          * 15-minute session duration.</p> <p>See <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using
          * IAM Roles</a> for more information on controlling session duration. </p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/GetAuthorizationToken">AWS
          * API Reference</a></p>
          *
@@ -940,24 +940,24 @@ namespace Model
         virtual void GetAuthorizationTokenAsync(const Model::GetAuthorizationTokenRequest& request, const GetAuthorizationTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> Returns the resource policy attached to the specified domain. </p> <note>
+         * <p> Returns the resource policy attached to the specified domain. </p> 
          * <p> The policy is a resource-based policy, not an identity-based policy. For
          * more information, see <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_identity-vs-resource.html">Identity-based
          * policies and resource-based policies </a> in the <i>AWS Identity and Access
-         * Management User Guide</i>. </p> </note><p><h3>See Also:</h3>   <a
+         * Management User Guide</i>. </p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/GetDomainPermissionsPolicy">AWS
          * API Reference</a></p>
          */
         virtual Model::GetDomainPermissionsPolicyOutcome GetDomainPermissionsPolicy(const Model::GetDomainPermissionsPolicyRequest& request) const;
 
         /**
-         * <p> Returns the resource policy attached to the specified domain. </p> <note>
+         * <p> Returns the resource policy attached to the specified domain. </p> 
          * <p> The policy is a resource-based policy, not an identity-based policy. For
          * more information, see <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_identity-vs-resource.html">Identity-based
          * policies and resource-based policies </a> in the <i>AWS Identity and Access
-         * Management User Guide</i>. </p> </note><p><h3>See Also:</h3>   <a
+         * Management User Guide</i>. </p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/GetDomainPermissionsPolicy">AWS
          * API Reference</a></p>
          *
@@ -966,12 +966,12 @@ namespace Model
         virtual Model::GetDomainPermissionsPolicyOutcomeCallable GetDomainPermissionsPolicyCallable(const Model::GetDomainPermissionsPolicyRequest& request) const;
 
         /**
-         * <p> Returns the resource policy attached to the specified domain. </p> <note>
+         * <p> Returns the resource policy attached to the specified domain. </p> 
          * <p> The policy is a resource-based policy, not an identity-based policy. For
          * more information, see <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_identity-vs-resource.html">Identity-based
          * policies and resource-based policies </a> in the <i>AWS Identity and Access
-         * Management User Guide</i>. </p> </note><p><h3>See Also:</h3>   <a
+         * Management User Guide</i>. </p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/GetDomainPermissionsPolicy">AWS
          * API Reference</a></p>
          *

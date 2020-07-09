@@ -900,46 +900,46 @@ namespace Model
 
     /**
      * <p>Whether root access is enabled or disabled for users of the notebook
-     * instance.</p> <note> <p>Lifecycle configurations need root access to be able to
+     * instance.</p>  <p>Lifecycle configurations need root access to be able to
      * set up a notebook instance. Because of this, lifecycle configurations associated
      * with a notebook instance always run with root access even if you disable root
-     * access for users.</p> </note>
+     * access for users.</p> 
      */
     inline const RootAccess& GetRootAccess() const{ return m_rootAccess; }
 
     /**
      * <p>Whether root access is enabled or disabled for users of the notebook
-     * instance.</p> <note> <p>Lifecycle configurations need root access to be able to
+     * instance.</p>  <p>Lifecycle configurations need root access to be able to
      * set up a notebook instance. Because of this, lifecycle configurations associated
      * with a notebook instance always run with root access even if you disable root
-     * access for users.</p> </note>
+     * access for users.</p> 
      */
     inline void SetRootAccess(const RootAccess& value) { m_rootAccess = value; }
 
     /**
      * <p>Whether root access is enabled or disabled for users of the notebook
-     * instance.</p> <note> <p>Lifecycle configurations need root access to be able to
+     * instance.</p>  <p>Lifecycle configurations need root access to be able to
      * set up a notebook instance. Because of this, lifecycle configurations associated
      * with a notebook instance always run with root access even if you disable root
-     * access for users.</p> </note>
+     * access for users.</p> 
      */
     inline void SetRootAccess(RootAccess&& value) { m_rootAccess = std::move(value); }
 
     /**
      * <p>Whether root access is enabled or disabled for users of the notebook
-     * instance.</p> <note> <p>Lifecycle configurations need root access to be able to
+     * instance.</p>  <p>Lifecycle configurations need root access to be able to
      * set up a notebook instance. Because of this, lifecycle configurations associated
      * with a notebook instance always run with root access even if you disable root
-     * access for users.</p> </note>
+     * access for users.</p> 
      */
     inline DescribeNotebookInstanceResult& WithRootAccess(const RootAccess& value) { SetRootAccess(value); return *this;}
 
     /**
      * <p>Whether root access is enabled or disabled for users of the notebook
-     * instance.</p> <note> <p>Lifecycle configurations need root access to be able to
+     * instance.</p>  <p>Lifecycle configurations need root access to be able to
      * set up a notebook instance. Because of this, lifecycle configurations associated
      * with a notebook instance always run with root access even if you disable root
-     * access for users.</p> </note>
+     * access for users.</p> 
      */
     inline DescribeNotebookInstanceResult& WithRootAccess(RootAccess&& value) { SetRootAccess(std::move(value)); return *this;}
 

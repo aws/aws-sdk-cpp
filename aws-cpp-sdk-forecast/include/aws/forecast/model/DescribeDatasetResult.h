@@ -296,9 +296,9 @@ namespace Model
      * from a call to the <a>CreateDatasetImportJob</a> operation and reflect the
      * status of the dataset import job. For example, when the import job status is
      * <code>CREATE_IN_PROGRESS</code>, the status of the dataset is
-     * <code>UPDATE_IN_PROGRESS</code>.</p> <note> <p>The <code>Status</code> of the
+     * <code>UPDATE_IN_PROGRESS</code>.</p>  <p>The <code>Status</code> of the
      * dataset must be <code>ACTIVE</code> before you can import training data.</p>
-     * </note>
+     * 
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
 
@@ -313,9 +313,9 @@ namespace Model
      * from a call to the <a>CreateDatasetImportJob</a> operation and reflect the
      * status of the dataset import job. For example, when the import job status is
      * <code>CREATE_IN_PROGRESS</code>, the status of the dataset is
-     * <code>UPDATE_IN_PROGRESS</code>.</p> <note> <p>The <code>Status</code> of the
+     * <code>UPDATE_IN_PROGRESS</code>.</p>  <p>The <code>Status</code> of the
      * dataset must be <code>ACTIVE</code> before you can import training data.</p>
-     * </note>
+     * 
      */
     inline void SetStatus(const Aws::String& value) { m_status = value; }
 
@@ -330,9 +330,9 @@ namespace Model
      * from a call to the <a>CreateDatasetImportJob</a> operation and reflect the
      * status of the dataset import job. For example, when the import job status is
      * <code>CREATE_IN_PROGRESS</code>, the status of the dataset is
-     * <code>UPDATE_IN_PROGRESS</code>.</p> <note> <p>The <code>Status</code> of the
+     * <code>UPDATE_IN_PROGRESS</code>.</p>  <p>The <code>Status</code> of the
      * dataset must be <code>ACTIVE</code> before you can import training data.</p>
-     * </note>
+     * 
      */
     inline void SetStatus(Aws::String&& value) { m_status = std::move(value); }
 
@@ -347,9 +347,9 @@ namespace Model
      * from a call to the <a>CreateDatasetImportJob</a> operation and reflect the
      * status of the dataset import job. For example, when the import job status is
      * <code>CREATE_IN_PROGRESS</code>, the status of the dataset is
-     * <code>UPDATE_IN_PROGRESS</code>.</p> <note> <p>The <code>Status</code> of the
+     * <code>UPDATE_IN_PROGRESS</code>.</p>  <p>The <code>Status</code> of the
      * dataset must be <code>ACTIVE</code> before you can import training data.</p>
-     * </note>
+     * 
      */
     inline void SetStatus(const char* value) { m_status.assign(value); }
 
@@ -364,9 +364,9 @@ namespace Model
      * from a call to the <a>CreateDatasetImportJob</a> operation and reflect the
      * status of the dataset import job. For example, when the import job status is
      * <code>CREATE_IN_PROGRESS</code>, the status of the dataset is
-     * <code>UPDATE_IN_PROGRESS</code>.</p> <note> <p>The <code>Status</code> of the
+     * <code>UPDATE_IN_PROGRESS</code>.</p>  <p>The <code>Status</code> of the
      * dataset must be <code>ACTIVE</code> before you can import training data.</p>
-     * </note>
+     * 
      */
     inline DescribeDatasetResult& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
 
@@ -381,9 +381,9 @@ namespace Model
      * from a call to the <a>CreateDatasetImportJob</a> operation and reflect the
      * status of the dataset import job. For example, when the import job status is
      * <code>CREATE_IN_PROGRESS</code>, the status of the dataset is
-     * <code>UPDATE_IN_PROGRESS</code>.</p> <note> <p>The <code>Status</code> of the
+     * <code>UPDATE_IN_PROGRESS</code>.</p>  <p>The <code>Status</code> of the
      * dataset must be <code>ACTIVE</code> before you can import training data.</p>
-     * </note>
+     * 
      */
     inline DescribeDatasetResult& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
 
@@ -398,9 +398,9 @@ namespace Model
      * from a call to the <a>CreateDatasetImportJob</a> operation and reflect the
      * status of the dataset import job. For example, when the import job status is
      * <code>CREATE_IN_PROGRESS</code>, the status of the dataset is
-     * <code>UPDATE_IN_PROGRESS</code>.</p> <note> <p>The <code>Status</code> of the
+     * <code>UPDATE_IN_PROGRESS</code>.</p>  <p>The <code>Status</code> of the
      * dataset must be <code>ACTIVE</code> before you can import training data.</p>
-     * </note>
+     * 
      */
     inline DescribeDatasetResult& WithStatus(const char* value) { SetStatus(value); return *this;}
 

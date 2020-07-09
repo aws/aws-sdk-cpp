@@ -265,19 +265,19 @@ namespace Model
          * an initial lifecycle state <code>creating</code>.</p> </li> <li> <p>Returns with
          * the description of the created file system.</p> </li> </ul> <p>Otherwise, this
          * operation returns a <code>FileSystemAlreadyExists</code> error with the ID of
-         * the existing file system.</p> <note> <p>For basic use cases, you can use a
-         * randomly generated UUID for the creation token.</p> </note> <p> The idempotent
+         * the existing file system.</p>  <p>For basic use cases, you can use a
+         * randomly generated UUID for the creation token.</p>  <p> The idempotent
          * operation allows you to retry a <code>CreateFileSystem</code> call without risk
          * of creating an extra file system. This can happen when an initial call fails in
          * a way that leaves it uncertain whether or not a file system was actually
          * created. An example might be that a transport level timeout occurred or your
          * connection was reset. As long as you use the same creation token, if the initial
          * call had succeeded in creating a file system, the client can learn of its
-         * existence from the <code>FileSystemAlreadyExists</code> error.</p> <note> <p>The
+         * existence from the <code>FileSystemAlreadyExists</code> error.</p>  <p>The
          * <code>CreateFileSystem</code> call returns while the file system's lifecycle
          * state is still <code>creating</code>. You can check the file system creation
          * status by calling the <a>DescribeFileSystems</a> operation, which among other
-         * things returns the file system state.</p> </note> <p>This operation also takes
+         * things returns the file system state.</p>  <p>This operation also takes
          * an optional <code>PerformanceMode</code> parameter that you choose for your file
          * system. We recommend <code>generalPurpose</code> performance mode for most file
          * systems. File systems using the <code>maxIO</code> performance mode can scale to
@@ -311,19 +311,19 @@ namespace Model
          * an initial lifecycle state <code>creating</code>.</p> </li> <li> <p>Returns with
          * the description of the created file system.</p> </li> </ul> <p>Otherwise, this
          * operation returns a <code>FileSystemAlreadyExists</code> error with the ID of
-         * the existing file system.</p> <note> <p>For basic use cases, you can use a
-         * randomly generated UUID for the creation token.</p> </note> <p> The idempotent
+         * the existing file system.</p>  <p>For basic use cases, you can use a
+         * randomly generated UUID for the creation token.</p>  <p> The idempotent
          * operation allows you to retry a <code>CreateFileSystem</code> call without risk
          * of creating an extra file system. This can happen when an initial call fails in
          * a way that leaves it uncertain whether or not a file system was actually
          * created. An example might be that a transport level timeout occurred or your
          * connection was reset. As long as you use the same creation token, if the initial
          * call had succeeded in creating a file system, the client can learn of its
-         * existence from the <code>FileSystemAlreadyExists</code> error.</p> <note> <p>The
+         * existence from the <code>FileSystemAlreadyExists</code> error.</p>  <p>The
          * <code>CreateFileSystem</code> call returns while the file system's lifecycle
          * state is still <code>creating</code>. You can check the file system creation
          * status by calling the <a>DescribeFileSystems</a> operation, which among other
-         * things returns the file system state.</p> </note> <p>This operation also takes
+         * things returns the file system state.</p>  <p>This operation also takes
          * an optional <code>PerformanceMode</code> parameter that you choose for your file
          * system. We recommend <code>generalPurpose</code> performance mode for most file
          * systems. File systems using the <code>maxIO</code> performance mode can scale to
@@ -359,19 +359,19 @@ namespace Model
          * an initial lifecycle state <code>creating</code>.</p> </li> <li> <p>Returns with
          * the description of the created file system.</p> </li> </ul> <p>Otherwise, this
          * operation returns a <code>FileSystemAlreadyExists</code> error with the ID of
-         * the existing file system.</p> <note> <p>For basic use cases, you can use a
-         * randomly generated UUID for the creation token.</p> </note> <p> The idempotent
+         * the existing file system.</p>  <p>For basic use cases, you can use a
+         * randomly generated UUID for the creation token.</p>  <p> The idempotent
          * operation allows you to retry a <code>CreateFileSystem</code> call without risk
          * of creating an extra file system. This can happen when an initial call fails in
          * a way that leaves it uncertain whether or not a file system was actually
          * created. An example might be that a transport level timeout occurred or your
          * connection was reset. As long as you use the same creation token, if the initial
          * call had succeeded in creating a file system, the client can learn of its
-         * existence from the <code>FileSystemAlreadyExists</code> error.</p> <note> <p>The
+         * existence from the <code>FileSystemAlreadyExists</code> error.</p>  <p>The
          * <code>CreateFileSystem</code> call returns while the file system's lifecycle
          * state is still <code>creating</code>. You can check the file system creation
          * status by calling the <a>DescribeFileSystems</a> operation, which among other
-         * things returns the file system state.</p> </note> <p>This operation also takes
+         * things returns the file system state.</p>  <p>This operation also takes
          * an optional <code>PerformanceMode</code> parameter that you choose for your file
          * system. We recommend <code>generalPurpose</code> performance mode for most file
          * systems. File systems using the <code>maxIO</code> performance mode can scale to
@@ -451,11 +451,11 @@ namespace Model
          * in the mount target's description to the network interface ID, and the
          * <code>IpAddress</code> field to its address. If network interface creation
          * fails, the entire <code>CreateMountTarget</code> operation fails.</p> </li>
-         * </ul> <note> <p>The <code>CreateMountTarget</code> call returns only after
+         * </ul>  <p>The <code>CreateMountTarget</code> call returns only after
          * creating the network interface, but while the mount target state is still
          * <code>creating</code>, you can check the mount target creation status by calling
          * the <a>DescribeMountTargets</a> operation, which among other things returns the
-         * mount target state.</p> </note> <p>We recommend that you create a mount target
+         * mount target state.</p>  <p>We recommend that you create a mount target
          * in each of the Availability Zones. There are cost considerations for using a
          * file system in an Availability Zone through a mount target created in another
          * Availability Zone. For more information, see <a
@@ -529,11 +529,11 @@ namespace Model
          * in the mount target's description to the network interface ID, and the
          * <code>IpAddress</code> field to its address. If network interface creation
          * fails, the entire <code>CreateMountTarget</code> operation fails.</p> </li>
-         * </ul> <note> <p>The <code>CreateMountTarget</code> call returns only after
+         * </ul>  <p>The <code>CreateMountTarget</code> call returns only after
          * creating the network interface, but while the mount target state is still
          * <code>creating</code>, you can check the mount target creation status by calling
          * the <a>DescribeMountTargets</a> operation, which among other things returns the
-         * mount target state.</p> </note> <p>We recommend that you create a mount target
+         * mount target state.</p>  <p>We recommend that you create a mount target
          * in each of the Availability Zones. There are cost considerations for using a
          * file system in an Availability Zone through a mount target created in another
          * Availability Zone. For more information, see <a
@@ -609,11 +609,11 @@ namespace Model
          * in the mount target's description to the network interface ID, and the
          * <code>IpAddress</code> field to its address. If network interface creation
          * fails, the entire <code>CreateMountTarget</code> operation fails.</p> </li>
-         * </ul> <note> <p>The <code>CreateMountTarget</code> call returns only after
+         * </ul>  <p>The <code>CreateMountTarget</code> call returns only after
          * creating the network interface, but while the mount target state is still
          * <code>creating</code>, you can check the mount target creation status by calling
          * the <a>DescribeMountTargets</a> operation, which among other things returns the
-         * mount target state.</p> </note> <p>We recommend that you create a mount target
+         * mount target state.</p>  <p>We recommend that you create a mount target
          * in each of the Availability Zones. There are cost considerations for using a
          * file system in an Availability Zone through a mount target created in another
          * Availability Zone. For more information, see <a
@@ -681,13 +681,13 @@ namespace Model
          * the deleted file system.</p> <p> You can't delete a file system that is in use.
          * That is, if the file system has any mount targets, you must first delete them.
          * For more information, see <a>DescribeMountTargets</a> and
-         * <a>DeleteMountTarget</a>. </p> <note> <p>The <code>DeleteFileSystem</code> call
+         * <a>DeleteMountTarget</a>. </p>  <p>The <code>DeleteFileSystem</code> call
          * returns while the file system state is still <code>deleting</code>. You can
          * check the file system deletion status by calling the <a>DescribeFileSystems</a>
          * operation, which returns a list of file systems in your account. If you pass
          * file system ID or creation token for the deleted file system, the
          * <a>DescribeFileSystems</a> returns a <code>404 FileSystemNotFound</code>
-         * error.</p> </note> <p>This operation requires permissions for the
+         * error.</p>  <p>This operation requires permissions for the
          * <code>elasticfilesystem:DeleteFileSystem</code> action.</p><p><h3>See Also:</h3>
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DeleteFileSystem">AWS
@@ -701,13 +701,13 @@ namespace Model
          * the deleted file system.</p> <p> You can't delete a file system that is in use.
          * That is, if the file system has any mount targets, you must first delete them.
          * For more information, see <a>DescribeMountTargets</a> and
-         * <a>DeleteMountTarget</a>. </p> <note> <p>The <code>DeleteFileSystem</code> call
+         * <a>DeleteMountTarget</a>. </p>  <p>The <code>DeleteFileSystem</code> call
          * returns while the file system state is still <code>deleting</code>. You can
          * check the file system deletion status by calling the <a>DescribeFileSystems</a>
          * operation, which returns a list of file systems in your account. If you pass
          * file system ID or creation token for the deleted file system, the
          * <a>DescribeFileSystems</a> returns a <code>404 FileSystemNotFound</code>
-         * error.</p> </note> <p>This operation requires permissions for the
+         * error.</p>  <p>This operation requires permissions for the
          * <code>elasticfilesystem:DeleteFileSystem</code> action.</p><p><h3>See Also:</h3>
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DeleteFileSystem">AWS
@@ -723,13 +723,13 @@ namespace Model
          * the deleted file system.</p> <p> You can't delete a file system that is in use.
          * That is, if the file system has any mount targets, you must first delete them.
          * For more information, see <a>DescribeMountTargets</a> and
-         * <a>DeleteMountTarget</a>. </p> <note> <p>The <code>DeleteFileSystem</code> call
+         * <a>DeleteMountTarget</a>. </p>  <p>The <code>DeleteFileSystem</code> call
          * returns while the file system state is still <code>deleting</code>. You can
          * check the file system deletion status by calling the <a>DescribeFileSystems</a>
          * operation, which returns a list of file systems in your account. If you pass
          * file system ID or creation token for the deleted file system, the
          * <a>DescribeFileSystems</a> returns a <code>404 FileSystemNotFound</code>
-         * error.</p> </note> <p>This operation requires permissions for the
+         * error.</p>  <p>This operation requires permissions for the
          * <code>elasticfilesystem:DeleteFileSystem</code> action.</p><p><h3>See Also:</h3>
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DeleteFileSystem">AWS
@@ -793,11 +793,11 @@ namespace Model
          * you created remains. You can mount an EC2 instance in your VPC by using another
          * mount target.</p> <p>This operation requires permissions for the following
          * action on the file system:</p> <ul> <li> <p>
-         * <code>elasticfilesystem:DeleteMountTarget</code> </p> </li> </ul> <note> <p>The
+         * <code>elasticfilesystem:DeleteMountTarget</code> </p> </li> </ul>  <p>The
          * <code>DeleteMountTarget</code> call returns while the mount target state is
          * still <code>deleting</code>. You can check the mount target deletion by calling
          * the <a>DescribeMountTargets</a> operation, which returns a list of mount target
-         * descriptions for the given file system. </p> </note> <p>The operation also
+         * descriptions for the given file system. </p>  <p>The operation also
          * requires permissions for the following Amazon EC2 action on the mount target's
          * network interface:</p> <ul> <li> <p> <code>ec2:DeleteNetworkInterface</code>
          * </p> </li> </ul><p><h3>See Also:</h3>   <a
@@ -817,11 +817,11 @@ namespace Model
          * you created remains. You can mount an EC2 instance in your VPC by using another
          * mount target.</p> <p>This operation requires permissions for the following
          * action on the file system:</p> <ul> <li> <p>
-         * <code>elasticfilesystem:DeleteMountTarget</code> </p> </li> </ul> <note> <p>The
+         * <code>elasticfilesystem:DeleteMountTarget</code> </p> </li> </ul>  <p>The
          * <code>DeleteMountTarget</code> call returns while the mount target state is
          * still <code>deleting</code>. You can check the mount target deletion by calling
          * the <a>DescribeMountTargets</a> operation, which returns a list of mount target
-         * descriptions for the given file system. </p> </note> <p>The operation also
+         * descriptions for the given file system. </p>  <p>The operation also
          * requires permissions for the following Amazon EC2 action on the mount target's
          * network interface:</p> <ul> <li> <p> <code>ec2:DeleteNetworkInterface</code>
          * </p> </li> </ul><p><h3>See Also:</h3>   <a
@@ -843,11 +843,11 @@ namespace Model
          * you created remains. You can mount an EC2 instance in your VPC by using another
          * mount target.</p> <p>This operation requires permissions for the following
          * action on the file system:</p> <ul> <li> <p>
-         * <code>elasticfilesystem:DeleteMountTarget</code> </p> </li> </ul> <note> <p>The
+         * <code>elasticfilesystem:DeleteMountTarget</code> </p> </li> </ul>  <p>The
          * <code>DeleteMountTarget</code> call returns while the mount target state is
          * still <code>deleting</code>. You can check the mount target deletion by calling
          * the <a>DescribeMountTargets</a> operation, which returns a list of mount target
-         * descriptions for the given file system. </p> </note> <p>The operation also
+         * descriptions for the given file system. </p>  <p>The operation also
          * requires permissions for the following Amazon EC2 action on the mount target's
          * network interface:</p> <ul> <li> <p> <code>ec2:DeleteNetworkInterface</code>
          * </p> </li> </ul><p><h3>See Also:</h3>   <a

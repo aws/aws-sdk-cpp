@@ -176,82 +176,82 @@ namespace Model
 
 
     /**
-     * <p>The job document.</p> <note> <p>If the job document resides in an S3 bucket,
+     * <p>The job document.</p>  <p>If the job document resides in an S3 bucket,
      * you must use a placeholder link when specifying the document.</p> <p>The
      * placeholder link is of the following form:</p> <p>
      * <code>${aws:iot:s3-presigned-url:https://s3.amazonaws.com/<i>bucket</i>/<i>key</i>}</code>
      * </p> <p>where <i>bucket</i> is your bucket name and <i>key</i> is the object in
-     * the bucket to which you are linking.</p> </note>
+     * the bucket to which you are linking.</p> 
      */
     inline const Aws::String& GetDocument() const{ return m_document; }
 
     /**
-     * <p>The job document.</p> <note> <p>If the job document resides in an S3 bucket,
+     * <p>The job document.</p>  <p>If the job document resides in an S3 bucket,
      * you must use a placeholder link when specifying the document.</p> <p>The
      * placeholder link is of the following form:</p> <p>
      * <code>${aws:iot:s3-presigned-url:https://s3.amazonaws.com/<i>bucket</i>/<i>key</i>}</code>
      * </p> <p>where <i>bucket</i> is your bucket name and <i>key</i> is the object in
-     * the bucket to which you are linking.</p> </note>
+     * the bucket to which you are linking.</p> 
      */
     inline bool DocumentHasBeenSet() const { return m_documentHasBeenSet; }
 
     /**
-     * <p>The job document.</p> <note> <p>If the job document resides in an S3 bucket,
+     * <p>The job document.</p>  <p>If the job document resides in an S3 bucket,
      * you must use a placeholder link when specifying the document.</p> <p>The
      * placeholder link is of the following form:</p> <p>
      * <code>${aws:iot:s3-presigned-url:https://s3.amazonaws.com/<i>bucket</i>/<i>key</i>}</code>
      * </p> <p>where <i>bucket</i> is your bucket name and <i>key</i> is the object in
-     * the bucket to which you are linking.</p> </note>
+     * the bucket to which you are linking.</p> 
      */
     inline void SetDocument(const Aws::String& value) { m_documentHasBeenSet = true; m_document = value; }
 
     /**
-     * <p>The job document.</p> <note> <p>If the job document resides in an S3 bucket,
+     * <p>The job document.</p>  <p>If the job document resides in an S3 bucket,
      * you must use a placeholder link when specifying the document.</p> <p>The
      * placeholder link is of the following form:</p> <p>
      * <code>${aws:iot:s3-presigned-url:https://s3.amazonaws.com/<i>bucket</i>/<i>key</i>}</code>
      * </p> <p>where <i>bucket</i> is your bucket name and <i>key</i> is the object in
-     * the bucket to which you are linking.</p> </note>
+     * the bucket to which you are linking.</p> 
      */
     inline void SetDocument(Aws::String&& value) { m_documentHasBeenSet = true; m_document = std::move(value); }
 
     /**
-     * <p>The job document.</p> <note> <p>If the job document resides in an S3 bucket,
+     * <p>The job document.</p>  <p>If the job document resides in an S3 bucket,
      * you must use a placeholder link when specifying the document.</p> <p>The
      * placeholder link is of the following form:</p> <p>
      * <code>${aws:iot:s3-presigned-url:https://s3.amazonaws.com/<i>bucket</i>/<i>key</i>}</code>
      * </p> <p>where <i>bucket</i> is your bucket name and <i>key</i> is the object in
-     * the bucket to which you are linking.</p> </note>
+     * the bucket to which you are linking.</p> 
      */
     inline void SetDocument(const char* value) { m_documentHasBeenSet = true; m_document.assign(value); }
 
     /**
-     * <p>The job document.</p> <note> <p>If the job document resides in an S3 bucket,
+     * <p>The job document.</p>  <p>If the job document resides in an S3 bucket,
      * you must use a placeholder link when specifying the document.</p> <p>The
      * placeholder link is of the following form:</p> <p>
      * <code>${aws:iot:s3-presigned-url:https://s3.amazonaws.com/<i>bucket</i>/<i>key</i>}</code>
      * </p> <p>where <i>bucket</i> is your bucket name and <i>key</i> is the object in
-     * the bucket to which you are linking.</p> </note>
+     * the bucket to which you are linking.</p> 
      */
     inline CreateJobRequest& WithDocument(const Aws::String& value) { SetDocument(value); return *this;}
 
     /**
-     * <p>The job document.</p> <note> <p>If the job document resides in an S3 bucket,
+     * <p>The job document.</p>  <p>If the job document resides in an S3 bucket,
      * you must use a placeholder link when specifying the document.</p> <p>The
      * placeholder link is of the following form:</p> <p>
      * <code>${aws:iot:s3-presigned-url:https://s3.amazonaws.com/<i>bucket</i>/<i>key</i>}</code>
      * </p> <p>where <i>bucket</i> is your bucket name and <i>key</i> is the object in
-     * the bucket to which you are linking.</p> </note>
+     * the bucket to which you are linking.</p> 
      */
     inline CreateJobRequest& WithDocument(Aws::String&& value) { SetDocument(std::move(value)); return *this;}
 
     /**
-     * <p>The job document.</p> <note> <p>If the job document resides in an S3 bucket,
+     * <p>The job document.</p>  <p>If the job document resides in an S3 bucket,
      * you must use a placeholder link when specifying the document.</p> <p>The
      * placeholder link is of the following form:</p> <p>
      * <code>${aws:iot:s3-presigned-url:https://s3.amazonaws.com/<i>bucket</i>/<i>key</i>}</code>
      * </p> <p>where <i>bucket</i> is your bucket name and <i>key</i> is the object in
-     * the bucket to which you are linking.</p> </note>
+     * the bucket to which you are linking.</p> 
      */
     inline CreateJobRequest& WithDocument(const char* value) { SetDocument(value); return *this;}
 

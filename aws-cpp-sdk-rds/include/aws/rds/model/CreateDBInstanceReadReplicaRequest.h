@@ -589,57 +589,57 @@ namespace Model
 
     /**
      * <p>The option group the DB instance is associated with. If omitted, the option
-     * group associated with the source instance is used.</p> <note> <p>For SQL Server,
-     * you must use the option group associated with the source instance.</p> </note>
+     * group associated with the source instance is used.</p>  <p>For SQL Server,
+     * you must use the option group associated with the source instance.</p> 
      */
     inline const Aws::String& GetOptionGroupName() const{ return m_optionGroupName; }
 
     /**
      * <p>The option group the DB instance is associated with. If omitted, the option
-     * group associated with the source instance is used.</p> <note> <p>For SQL Server,
-     * you must use the option group associated with the source instance.</p> </note>
+     * group associated with the source instance is used.</p>  <p>For SQL Server,
+     * you must use the option group associated with the source instance.</p> 
      */
     inline bool OptionGroupNameHasBeenSet() const { return m_optionGroupNameHasBeenSet; }
 
     /**
      * <p>The option group the DB instance is associated with. If omitted, the option
-     * group associated with the source instance is used.</p> <note> <p>For SQL Server,
-     * you must use the option group associated with the source instance.</p> </note>
+     * group associated with the source instance is used.</p>  <p>For SQL Server,
+     * you must use the option group associated with the source instance.</p> 
      */
     inline void SetOptionGroupName(const Aws::String& value) { m_optionGroupNameHasBeenSet = true; m_optionGroupName = value; }
 
     /**
      * <p>The option group the DB instance is associated with. If omitted, the option
-     * group associated with the source instance is used.</p> <note> <p>For SQL Server,
-     * you must use the option group associated with the source instance.</p> </note>
+     * group associated with the source instance is used.</p>  <p>For SQL Server,
+     * you must use the option group associated with the source instance.</p> 
      */
     inline void SetOptionGroupName(Aws::String&& value) { m_optionGroupNameHasBeenSet = true; m_optionGroupName = std::move(value); }
 
     /**
      * <p>The option group the DB instance is associated with. If omitted, the option
-     * group associated with the source instance is used.</p> <note> <p>For SQL Server,
-     * you must use the option group associated with the source instance.</p> </note>
+     * group associated with the source instance is used.</p>  <p>For SQL Server,
+     * you must use the option group associated with the source instance.</p> 
      */
     inline void SetOptionGroupName(const char* value) { m_optionGroupNameHasBeenSet = true; m_optionGroupName.assign(value); }
 
     /**
      * <p>The option group the DB instance is associated with. If omitted, the option
-     * group associated with the source instance is used.</p> <note> <p>For SQL Server,
-     * you must use the option group associated with the source instance.</p> </note>
+     * group associated with the source instance is used.</p>  <p>For SQL Server,
+     * you must use the option group associated with the source instance.</p> 
      */
     inline CreateDBInstanceReadReplicaRequest& WithOptionGroupName(const Aws::String& value) { SetOptionGroupName(value); return *this;}
 
     /**
      * <p>The option group the DB instance is associated with. If omitted, the option
-     * group associated with the source instance is used.</p> <note> <p>For SQL Server,
-     * you must use the option group associated with the source instance.</p> </note>
+     * group associated with the source instance is used.</p>  <p>For SQL Server,
+     * you must use the option group associated with the source instance.</p> 
      */
     inline CreateDBInstanceReadReplicaRequest& WithOptionGroupName(Aws::String&& value) { SetOptionGroupName(std::move(value)); return *this;}
 
     /**
      * <p>The option group the DB instance is associated with. If omitted, the option
-     * group associated with the source instance is used.</p> <note> <p>For SQL Server,
-     * you must use the option group associated with the source instance.</p> </note>
+     * group associated with the source instance is used.</p>  <p>For SQL Server,
+     * you must use the option group associated with the source instance.</p> 
      */
     inline CreateDBInstanceReadReplicaRequest& WithOptionGroupName(const char* value) { SetOptionGroupName(value); return *this;}
 
@@ -649,9 +649,9 @@ namespace Model
      * <p>If you do not specify a value for <code>DBParameterGroupName</code>, then
      * Amazon RDS uses the <code>DBParameterGroup</code> of source DB instance for a
      * same region read replica, or the default <code>DBParameterGroup</code> for the
-     * specified DB engine for a cross region read replica.</p> <note> <p>Currently,
+     * specified DB engine for a cross region read replica.</p>  <p>Currently,
      * specifying a parameter group for this operation is only supported for Oracle DB
-     * instances.</p> </note> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255
+     * instances.</p>  <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255
      * letters, numbers, or hyphens.</p> </li> <li> <p>First character must be a
      * letter</p> </li> <li> <p>Can't end with a hyphen or contain two consecutive
      * hyphens</p> </li> </ul>
@@ -663,9 +663,9 @@ namespace Model
      * <p>If you do not specify a value for <code>DBParameterGroupName</code>, then
      * Amazon RDS uses the <code>DBParameterGroup</code> of source DB instance for a
      * same region read replica, or the default <code>DBParameterGroup</code> for the
-     * specified DB engine for a cross region read replica.</p> <note> <p>Currently,
+     * specified DB engine for a cross region read replica.</p>  <p>Currently,
      * specifying a parameter group for this operation is only supported for Oracle DB
-     * instances.</p> </note> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255
+     * instances.</p>  <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255
      * letters, numbers, or hyphens.</p> </li> <li> <p>First character must be a
      * letter</p> </li> <li> <p>Can't end with a hyphen or contain two consecutive
      * hyphens</p> </li> </ul>
@@ -677,9 +677,9 @@ namespace Model
      * <p>If you do not specify a value for <code>DBParameterGroupName</code>, then
      * Amazon RDS uses the <code>DBParameterGroup</code> of source DB instance for a
      * same region read replica, or the default <code>DBParameterGroup</code> for the
-     * specified DB engine for a cross region read replica.</p> <note> <p>Currently,
+     * specified DB engine for a cross region read replica.</p>  <p>Currently,
      * specifying a parameter group for this operation is only supported for Oracle DB
-     * instances.</p> </note> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255
+     * instances.</p>  <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255
      * letters, numbers, or hyphens.</p> </li> <li> <p>First character must be a
      * letter</p> </li> <li> <p>Can't end with a hyphen or contain two consecutive
      * hyphens</p> </li> </ul>
@@ -691,9 +691,9 @@ namespace Model
      * <p>If you do not specify a value for <code>DBParameterGroupName</code>, then
      * Amazon RDS uses the <code>DBParameterGroup</code> of source DB instance for a
      * same region read replica, or the default <code>DBParameterGroup</code> for the
-     * specified DB engine for a cross region read replica.</p> <note> <p>Currently,
+     * specified DB engine for a cross region read replica.</p>  <p>Currently,
      * specifying a parameter group for this operation is only supported for Oracle DB
-     * instances.</p> </note> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255
+     * instances.</p>  <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255
      * letters, numbers, or hyphens.</p> </li> <li> <p>First character must be a
      * letter</p> </li> <li> <p>Can't end with a hyphen or contain two consecutive
      * hyphens</p> </li> </ul>
@@ -705,9 +705,9 @@ namespace Model
      * <p>If you do not specify a value for <code>DBParameterGroupName</code>, then
      * Amazon RDS uses the <code>DBParameterGroup</code> of source DB instance for a
      * same region read replica, or the default <code>DBParameterGroup</code> for the
-     * specified DB engine for a cross region read replica.</p> <note> <p>Currently,
+     * specified DB engine for a cross region read replica.</p>  <p>Currently,
      * specifying a parameter group for this operation is only supported for Oracle DB
-     * instances.</p> </note> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255
+     * instances.</p>  <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255
      * letters, numbers, or hyphens.</p> </li> <li> <p>First character must be a
      * letter</p> </li> <li> <p>Can't end with a hyphen or contain two consecutive
      * hyphens</p> </li> </ul>
@@ -719,9 +719,9 @@ namespace Model
      * <p>If you do not specify a value for <code>DBParameterGroupName</code>, then
      * Amazon RDS uses the <code>DBParameterGroup</code> of source DB instance for a
      * same region read replica, or the default <code>DBParameterGroup</code> for the
-     * specified DB engine for a cross region read replica.</p> <note> <p>Currently,
+     * specified DB engine for a cross region read replica.</p>  <p>Currently,
      * specifying a parameter group for this operation is only supported for Oracle DB
-     * instances.</p> </note> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255
+     * instances.</p>  <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255
      * letters, numbers, or hyphens.</p> </li> <li> <p>First character must be a
      * letter</p> </li> <li> <p>Can't end with a hyphen or contain two consecutive
      * hyphens</p> </li> </ul>
@@ -733,9 +733,9 @@ namespace Model
      * <p>If you do not specify a value for <code>DBParameterGroupName</code>, then
      * Amazon RDS uses the <code>DBParameterGroup</code> of source DB instance for a
      * same region read replica, or the default <code>DBParameterGroup</code> for the
-     * specified DB engine for a cross region read replica.</p> <note> <p>Currently,
+     * specified DB engine for a cross region read replica.</p>  <p>Currently,
      * specifying a parameter group for this operation is only supported for Oracle DB
-     * instances.</p> </note> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255
+     * instances.</p>  <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255
      * letters, numbers, or hyphens.</p> </li> <li> <p>First character must be a
      * letter</p> </li> <li> <p>Can't end with a hyphen or contain two consecutive
      * hyphens</p> </li> </ul>
@@ -747,9 +747,9 @@ namespace Model
      * <p>If you do not specify a value for <code>DBParameterGroupName</code>, then
      * Amazon RDS uses the <code>DBParameterGroup</code> of source DB instance for a
      * same region read replica, or the default <code>DBParameterGroup</code> for the
-     * specified DB engine for a cross region read replica.</p> <note> <p>Currently,
+     * specified DB engine for a cross region read replica.</p>  <p>Currently,
      * specifying a parameter group for this operation is only supported for Oracle DB
-     * instances.</p> </note> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255
+     * instances.</p>  <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255
      * letters, numbers, or hyphens.</p> </li> <li> <p>First character must be a
      * letter</p> </li> <li> <p>Can't end with a hyphen or contain two consecutive
      * hyphens</p> </li> </ul>
@@ -1425,14 +1425,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">Authenticating
      * Requests: Using Query Parameters (AWS Signature Version 4)</a> and <a
      * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
-     * Version 4 Signing Process</a>. </p> <note> <p>If you are using an AWS SDK tool
+     * Version 4 Signing Process</a>. </p>  <p>If you are using an AWS SDK tool
      * or the AWS CLI, you can specify <code>SourceRegion</code> (or
      * <code>--source-region</code> for the AWS CLI) instead of specifying
      * <code>PreSignedUrl</code> manually. Specifying <code>SourceRegion</code>
      * autogenerates a presigned URL that is a valid request for the operation that can
      * be executed in the source AWS Region.</p> <p> <code>SourceRegion</code> isn't
      * supported for SQL Server, because SQL Server on Amazon RDS doesn't support
-     * cross-region read replicas.</p> </note>
+     * cross-region read replicas.</p> 
      */
     inline const Aws::String& GetPreSignedUrl() const{ return m_preSignedUrl; }
 
@@ -1472,14 +1472,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">Authenticating
      * Requests: Using Query Parameters (AWS Signature Version 4)</a> and <a
      * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
-     * Version 4 Signing Process</a>. </p> <note> <p>If you are using an AWS SDK tool
+     * Version 4 Signing Process</a>. </p>  <p>If you are using an AWS SDK tool
      * or the AWS CLI, you can specify <code>SourceRegion</code> (or
      * <code>--source-region</code> for the AWS CLI) instead of specifying
      * <code>PreSignedUrl</code> manually. Specifying <code>SourceRegion</code>
      * autogenerates a presigned URL that is a valid request for the operation that can
      * be executed in the source AWS Region.</p> <p> <code>SourceRegion</code> isn't
      * supported for SQL Server, because SQL Server on Amazon RDS doesn't support
-     * cross-region read replicas.</p> </note>
+     * cross-region read replicas.</p> 
      */
     inline bool PreSignedUrlHasBeenSet() const { return m_preSignedUrlHasBeenSet; }
 
@@ -1519,14 +1519,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">Authenticating
      * Requests: Using Query Parameters (AWS Signature Version 4)</a> and <a
      * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
-     * Version 4 Signing Process</a>. </p> <note> <p>If you are using an AWS SDK tool
+     * Version 4 Signing Process</a>. </p>  <p>If you are using an AWS SDK tool
      * or the AWS CLI, you can specify <code>SourceRegion</code> (or
      * <code>--source-region</code> for the AWS CLI) instead of specifying
      * <code>PreSignedUrl</code> manually. Specifying <code>SourceRegion</code>
      * autogenerates a presigned URL that is a valid request for the operation that can
      * be executed in the source AWS Region.</p> <p> <code>SourceRegion</code> isn't
      * supported for SQL Server, because SQL Server on Amazon RDS doesn't support
-     * cross-region read replicas.</p> </note>
+     * cross-region read replicas.</p> 
      */
     inline void SetPreSignedUrl(const Aws::String& value) { m_preSignedUrlHasBeenSet = true; m_preSignedUrl = value; }
 
@@ -1566,14 +1566,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">Authenticating
      * Requests: Using Query Parameters (AWS Signature Version 4)</a> and <a
      * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
-     * Version 4 Signing Process</a>. </p> <note> <p>If you are using an AWS SDK tool
+     * Version 4 Signing Process</a>. </p>  <p>If you are using an AWS SDK tool
      * or the AWS CLI, you can specify <code>SourceRegion</code> (or
      * <code>--source-region</code> for the AWS CLI) instead of specifying
      * <code>PreSignedUrl</code> manually. Specifying <code>SourceRegion</code>
      * autogenerates a presigned URL that is a valid request for the operation that can
      * be executed in the source AWS Region.</p> <p> <code>SourceRegion</code> isn't
      * supported for SQL Server, because SQL Server on Amazon RDS doesn't support
-     * cross-region read replicas.</p> </note>
+     * cross-region read replicas.</p> 
      */
     inline void SetPreSignedUrl(Aws::String&& value) { m_preSignedUrlHasBeenSet = true; m_preSignedUrl = std::move(value); }
 
@@ -1613,14 +1613,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">Authenticating
      * Requests: Using Query Parameters (AWS Signature Version 4)</a> and <a
      * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
-     * Version 4 Signing Process</a>. </p> <note> <p>If you are using an AWS SDK tool
+     * Version 4 Signing Process</a>. </p>  <p>If you are using an AWS SDK tool
      * or the AWS CLI, you can specify <code>SourceRegion</code> (or
      * <code>--source-region</code> for the AWS CLI) instead of specifying
      * <code>PreSignedUrl</code> manually. Specifying <code>SourceRegion</code>
      * autogenerates a presigned URL that is a valid request for the operation that can
      * be executed in the source AWS Region.</p> <p> <code>SourceRegion</code> isn't
      * supported for SQL Server, because SQL Server on Amazon RDS doesn't support
-     * cross-region read replicas.</p> </note>
+     * cross-region read replicas.</p> 
      */
     inline void SetPreSignedUrl(const char* value) { m_preSignedUrlHasBeenSet = true; m_preSignedUrl.assign(value); }
 
@@ -1660,14 +1660,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">Authenticating
      * Requests: Using Query Parameters (AWS Signature Version 4)</a> and <a
      * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
-     * Version 4 Signing Process</a>. </p> <note> <p>If you are using an AWS SDK tool
+     * Version 4 Signing Process</a>. </p>  <p>If you are using an AWS SDK tool
      * or the AWS CLI, you can specify <code>SourceRegion</code> (or
      * <code>--source-region</code> for the AWS CLI) instead of specifying
      * <code>PreSignedUrl</code> manually. Specifying <code>SourceRegion</code>
      * autogenerates a presigned URL that is a valid request for the operation that can
      * be executed in the source AWS Region.</p> <p> <code>SourceRegion</code> isn't
      * supported for SQL Server, because SQL Server on Amazon RDS doesn't support
-     * cross-region read replicas.</p> </note>
+     * cross-region read replicas.</p> 
      */
     inline CreateDBInstanceReadReplicaRequest& WithPreSignedUrl(const Aws::String& value) { SetPreSignedUrl(value); return *this;}
 
@@ -1707,14 +1707,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">Authenticating
      * Requests: Using Query Parameters (AWS Signature Version 4)</a> and <a
      * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
-     * Version 4 Signing Process</a>. </p> <note> <p>If you are using an AWS SDK tool
+     * Version 4 Signing Process</a>. </p>  <p>If you are using an AWS SDK tool
      * or the AWS CLI, you can specify <code>SourceRegion</code> (or
      * <code>--source-region</code> for the AWS CLI) instead of specifying
      * <code>PreSignedUrl</code> manually. Specifying <code>SourceRegion</code>
      * autogenerates a presigned URL that is a valid request for the operation that can
      * be executed in the source AWS Region.</p> <p> <code>SourceRegion</code> isn't
      * supported for SQL Server, because SQL Server on Amazon RDS doesn't support
-     * cross-region read replicas.</p> </note>
+     * cross-region read replicas.</p> 
      */
     inline CreateDBInstanceReadReplicaRequest& WithPreSignedUrl(Aws::String&& value) { SetPreSignedUrl(std::move(value)); return *this;}
 
@@ -1754,14 +1754,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">Authenticating
      * Requests: Using Query Parameters (AWS Signature Version 4)</a> and <a
      * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
-     * Version 4 Signing Process</a>. </p> <note> <p>If you are using an AWS SDK tool
+     * Version 4 Signing Process</a>. </p>  <p>If you are using an AWS SDK tool
      * or the AWS CLI, you can specify <code>SourceRegion</code> (or
      * <code>--source-region</code> for the AWS CLI) instead of specifying
      * <code>PreSignedUrl</code> manually. Specifying <code>SourceRegion</code>
      * autogenerates a presigned URL that is a valid request for the operation that can
      * be executed in the source AWS Region.</p> <p> <code>SourceRegion</code> isn't
      * supported for SQL Server, because SQL Server on Amazon RDS doesn't support
-     * cross-region read replicas.</p> </note>
+     * cross-region read replicas.</p> 
      */
     inline CreateDBInstanceReadReplicaRequest& WithPreSignedUrl(const char* value) { SetPreSignedUrl(value); return *this;}
 

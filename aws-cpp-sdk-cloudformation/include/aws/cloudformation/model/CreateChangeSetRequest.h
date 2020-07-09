@@ -379,13 +379,13 @@ namespace Model
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html">AWS::Include</a>
      * and <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">AWS::Serverless</a>
-     * transforms, which are macros hosted by AWS CloudFormation.</p> <note> <p>This
+     * transforms, which are macros hosted by AWS CloudFormation.</p>  <p>This
      * capacity does not apply to creating change sets, and specifying it when creating
      * change sets has no effect.</p> <p>Also, change sets do not currently support
      * nested stacks. If you want to create a stack from a stack template that contains
      * macros <i>and</i> nested stacks, you must create or update the stack directly
      * from the template using the <a>CreateStack</a> or <a>UpdateStack</a> action, and
-     * specifying this capability.</p> </note> <p>For more information on macros, see
+     * specifying this capability.</p>  <p>For more information on macros, see
      * <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
      * AWS CloudFormation Macros to Perform Custom Processing on Templates</a>.</p>
@@ -440,13 +440,13 @@ namespace Model
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html">AWS::Include</a>
      * and <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">AWS::Serverless</a>
-     * transforms, which are macros hosted by AWS CloudFormation.</p> <note> <p>This
+     * transforms, which are macros hosted by AWS CloudFormation.</p>  <p>This
      * capacity does not apply to creating change sets, and specifying it when creating
      * change sets has no effect.</p> <p>Also, change sets do not currently support
      * nested stacks. If you want to create a stack from a stack template that contains
      * macros <i>and</i> nested stacks, you must create or update the stack directly
      * from the template using the <a>CreateStack</a> or <a>UpdateStack</a> action, and
-     * specifying this capability.</p> </note> <p>For more information on macros, see
+     * specifying this capability.</p>  <p>For more information on macros, see
      * <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
      * AWS CloudFormation Macros to Perform Custom Processing on Templates</a>.</p>
@@ -501,13 +501,13 @@ namespace Model
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html">AWS::Include</a>
      * and <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">AWS::Serverless</a>
-     * transforms, which are macros hosted by AWS CloudFormation.</p> <note> <p>This
+     * transforms, which are macros hosted by AWS CloudFormation.</p>  <p>This
      * capacity does not apply to creating change sets, and specifying it when creating
      * change sets has no effect.</p> <p>Also, change sets do not currently support
      * nested stacks. If you want to create a stack from a stack template that contains
      * macros <i>and</i> nested stacks, you must create or update the stack directly
      * from the template using the <a>CreateStack</a> or <a>UpdateStack</a> action, and
-     * specifying this capability.</p> </note> <p>For more information on macros, see
+     * specifying this capability.</p>  <p>For more information on macros, see
      * <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
      * AWS CloudFormation Macros to Perform Custom Processing on Templates</a>.</p>
@@ -562,13 +562,13 @@ namespace Model
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html">AWS::Include</a>
      * and <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">AWS::Serverless</a>
-     * transforms, which are macros hosted by AWS CloudFormation.</p> <note> <p>This
+     * transforms, which are macros hosted by AWS CloudFormation.</p>  <p>This
      * capacity does not apply to creating change sets, and specifying it when creating
      * change sets has no effect.</p> <p>Also, change sets do not currently support
      * nested stacks. If you want to create a stack from a stack template that contains
      * macros <i>and</i> nested stacks, you must create or update the stack directly
      * from the template using the <a>CreateStack</a> or <a>UpdateStack</a> action, and
-     * specifying this capability.</p> </note> <p>For more information on macros, see
+     * specifying this capability.</p>  <p>For more information on macros, see
      * <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
      * AWS CloudFormation Macros to Perform Custom Processing on Templates</a>.</p>
@@ -623,13 +623,13 @@ namespace Model
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html">AWS::Include</a>
      * and <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">AWS::Serverless</a>
-     * transforms, which are macros hosted by AWS CloudFormation.</p> <note> <p>This
+     * transforms, which are macros hosted by AWS CloudFormation.</p>  <p>This
      * capacity does not apply to creating change sets, and specifying it when creating
      * change sets has no effect.</p> <p>Also, change sets do not currently support
      * nested stacks. If you want to create a stack from a stack template that contains
      * macros <i>and</i> nested stacks, you must create or update the stack directly
      * from the template using the <a>CreateStack</a> or <a>UpdateStack</a> action, and
-     * specifying this capability.</p> </note> <p>For more information on macros, see
+     * specifying this capability.</p>  <p>For more information on macros, see
      * <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
      * AWS CloudFormation Macros to Perform Custom Processing on Templates</a>.</p>
@@ -684,13 +684,13 @@ namespace Model
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html">AWS::Include</a>
      * and <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">AWS::Serverless</a>
-     * transforms, which are macros hosted by AWS CloudFormation.</p> <note> <p>This
+     * transforms, which are macros hosted by AWS CloudFormation.</p>  <p>This
      * capacity does not apply to creating change sets, and specifying it when creating
      * change sets has no effect.</p> <p>Also, change sets do not currently support
      * nested stacks. If you want to create a stack from a stack template that contains
      * macros <i>and</i> nested stacks, you must create or update the stack directly
      * from the template using the <a>CreateStack</a> or <a>UpdateStack</a> action, and
-     * specifying this capability.</p> </note> <p>For more information on macros, see
+     * specifying this capability.</p>  <p>For more information on macros, see
      * <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
      * AWS CloudFormation Macros to Perform Custom Processing on Templates</a>.</p>
@@ -745,13 +745,13 @@ namespace Model
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html">AWS::Include</a>
      * and <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">AWS::Serverless</a>
-     * transforms, which are macros hosted by AWS CloudFormation.</p> <note> <p>This
+     * transforms, which are macros hosted by AWS CloudFormation.</p>  <p>This
      * capacity does not apply to creating change sets, and specifying it when creating
      * change sets has no effect.</p> <p>Also, change sets do not currently support
      * nested stacks. If you want to create a stack from a stack template that contains
      * macros <i>and</i> nested stacks, you must create or update the stack directly
      * from the template using the <a>CreateStack</a> or <a>UpdateStack</a> action, and
-     * specifying this capability.</p> </note> <p>For more information on macros, see
+     * specifying this capability.</p>  <p>For more information on macros, see
      * <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
      * AWS CloudFormation Macros to Perform Custom Processing on Templates</a>.</p>
@@ -806,13 +806,13 @@ namespace Model
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html">AWS::Include</a>
      * and <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">AWS::Serverless</a>
-     * transforms, which are macros hosted by AWS CloudFormation.</p> <note> <p>This
+     * transforms, which are macros hosted by AWS CloudFormation.</p>  <p>This
      * capacity does not apply to creating change sets, and specifying it when creating
      * change sets has no effect.</p> <p>Also, change sets do not currently support
      * nested stacks. If you want to create a stack from a stack template that contains
      * macros <i>and</i> nested stacks, you must create or update the stack directly
      * from the template using the <a>CreateStack</a> or <a>UpdateStack</a> action, and
-     * specifying this capability.</p> </note> <p>For more information on macros, see
+     * specifying this capability.</p>  <p>For more information on macros, see
      * <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
      * AWS CloudFormation Macros to Perform Custom Processing on Templates</a>.</p>

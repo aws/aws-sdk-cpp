@@ -281,12 +281,12 @@ namespace Model
          * </li> <li> <p>Information about compliance with the account's effective tag
          * policy. For more information on tag policies, see <a
          * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">Tag
-         * Policies</a> in the <i>AWS Organizations User Guide.</i> </p> </li> </ul> <note>
+         * Policies</a> in the <i>AWS Organizations User Guide.</i> </p> </li> </ul> 
          * <p>You can check the <code>PaginationToken</code> response parameter to
          * determine if a query is complete. Queries occasionally return fewer results on a
          * page than allowed. The <code>PaginationToken</code> response parameter value is
          * <code>null</code> <i>only</i> when there are no more results to display. </p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/resourcegroupstaggingapi-2017-01-26/GetResources">AWS
          * API Reference</a></p>
          */
@@ -301,12 +301,12 @@ namespace Model
          * </li> <li> <p>Information about compliance with the account's effective tag
          * policy. For more information on tag policies, see <a
          * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">Tag
-         * Policies</a> in the <i>AWS Organizations User Guide.</i> </p> </li> </ul> <note>
+         * Policies</a> in the <i>AWS Organizations User Guide.</i> </p> </li> </ul> 
          * <p>You can check the <code>PaginationToken</code> response parameter to
          * determine if a query is complete. Queries occasionally return fewer results on a
          * page than allowed. The <code>PaginationToken</code> response parameter value is
          * <code>null</code> <i>only</i> when there are no more results to display. </p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/resourcegroupstaggingapi-2017-01-26/GetResources">AWS
          * API Reference</a></p>
          *
@@ -323,12 +323,12 @@ namespace Model
          * </li> <li> <p>Information about compliance with the account's effective tag
          * policy. For more information on tag policies, see <a
          * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">Tag
-         * Policies</a> in the <i>AWS Organizations User Guide.</i> </p> </li> </ul> <note>
+         * Policies</a> in the <i>AWS Organizations User Guide.</i> </p> </li> </ul> 
          * <p>You can check the <code>PaginationToken</code> response parameter to
          * determine if a query is complete. Queries occasionally return fewer results on a
          * page than allowed. The <code>PaginationToken</code> response parameter value is
          * <code>null</code> <i>only</i> when there are no more results to display. </p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/resourcegroupstaggingapi-2017-01-26/GetResources">AWS
          * API Reference</a></p>
          *

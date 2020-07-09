@@ -298,43 +298,43 @@ namespace Model
 
     /**
      * <p>Specifies whether the instance port is <code>open</code> or
-     * <code>closed</code>.</p> <note> <p>The port state for Lightsail instances is
-     * always <code>open</code>.</p> </note>
+     * <code>closed</code>.</p>  <p>The port state for Lightsail instances is
+     * always <code>open</code>.</p> 
      */
     inline const PortState& GetState() const{ return m_state; }
 
     /**
      * <p>Specifies whether the instance port is <code>open</code> or
-     * <code>closed</code>.</p> <note> <p>The port state for Lightsail instances is
-     * always <code>open</code>.</p> </note>
+     * <code>closed</code>.</p>  <p>The port state for Lightsail instances is
+     * always <code>open</code>.</p> 
      */
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
 
     /**
      * <p>Specifies whether the instance port is <code>open</code> or
-     * <code>closed</code>.</p> <note> <p>The port state for Lightsail instances is
-     * always <code>open</code>.</p> </note>
+     * <code>closed</code>.</p>  <p>The port state for Lightsail instances is
+     * always <code>open</code>.</p> 
      */
     inline void SetState(const PortState& value) { m_stateHasBeenSet = true; m_state = value; }
 
     /**
      * <p>Specifies whether the instance port is <code>open</code> or
-     * <code>closed</code>.</p> <note> <p>The port state for Lightsail instances is
-     * always <code>open</code>.</p> </note>
+     * <code>closed</code>.</p>  <p>The port state for Lightsail instances is
+     * always <code>open</code>.</p> 
      */
     inline void SetState(PortState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
 
     /**
      * <p>Specifies whether the instance port is <code>open</code> or
-     * <code>closed</code>.</p> <note> <p>The port state for Lightsail instances is
-     * always <code>open</code>.</p> </note>
+     * <code>closed</code>.</p>  <p>The port state for Lightsail instances is
+     * always <code>open</code>.</p> 
      */
     inline InstancePortState& WithState(const PortState& value) { SetState(value); return *this;}
 
     /**
      * <p>Specifies whether the instance port is <code>open</code> or
-     * <code>closed</code>.</p> <note> <p>The port state for Lightsail instances is
-     * always <code>open</code>.</p> </note>
+     * <code>closed</code>.</p>  <p>The port state for Lightsail instances is
+     * always <code>open</code>.</p> 
      */
     inline InstancePortState& WithState(PortState&& value) { SetState(std::move(value)); return *this;}
 

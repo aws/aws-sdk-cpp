@@ -48,10 +48,10 @@ namespace Model
      * the current region is returned.</p> </li> <li> <p>If an empty list is specified
      * and IncludeShadowTrails is null or true, then information for all trails in the
      * current region and any associated shadow trails in other regions is
-     * returned.</p> </li> </ul> <note> <p>If one or more trail names are specified,
+     * returned.</p> </li> </ul>  <p>If one or more trail names are specified,
      * information is returned only if the names match the names of trails belonging
      * only to the current region. To return information about a trail in another
-     * region, you must specify its trail ARN.</p> </note>
+     * region, you must specify its trail ARN.</p> 
      */
     inline const Aws::Vector<Aws::String>& GetTrailNameList() const{ return m_trailNameList; }
 
@@ -65,10 +65,10 @@ namespace Model
      * the current region is returned.</p> </li> <li> <p>If an empty list is specified
      * and IncludeShadowTrails is null or true, then information for all trails in the
      * current region and any associated shadow trails in other regions is
-     * returned.</p> </li> </ul> <note> <p>If one or more trail names are specified,
+     * returned.</p> </li> </ul>  <p>If one or more trail names are specified,
      * information is returned only if the names match the names of trails belonging
      * only to the current region. To return information about a trail in another
-     * region, you must specify its trail ARN.</p> </note>
+     * region, you must specify its trail ARN.</p> 
      */
     inline bool TrailNameListHasBeenSet() const { return m_trailNameListHasBeenSet; }
 
@@ -82,10 +82,10 @@ namespace Model
      * the current region is returned.</p> </li> <li> <p>If an empty list is specified
      * and IncludeShadowTrails is null or true, then information for all trails in the
      * current region and any associated shadow trails in other regions is
-     * returned.</p> </li> </ul> <note> <p>If one or more trail names are specified,
+     * returned.</p> </li> </ul>  <p>If one or more trail names are specified,
      * information is returned only if the names match the names of trails belonging
      * only to the current region. To return information about a trail in another
-     * region, you must specify its trail ARN.</p> </note>
+     * region, you must specify its trail ARN.</p> 
      */
     inline void SetTrailNameList(const Aws::Vector<Aws::String>& value) { m_trailNameListHasBeenSet = true; m_trailNameList = value; }
 
@@ -99,10 +99,10 @@ namespace Model
      * the current region is returned.</p> </li> <li> <p>If an empty list is specified
      * and IncludeShadowTrails is null or true, then information for all trails in the
      * current region and any associated shadow trails in other regions is
-     * returned.</p> </li> </ul> <note> <p>If one or more trail names are specified,
+     * returned.</p> </li> </ul>  <p>If one or more trail names are specified,
      * information is returned only if the names match the names of trails belonging
      * only to the current region. To return information about a trail in another
-     * region, you must specify its trail ARN.</p> </note>
+     * region, you must specify its trail ARN.</p> 
      */
     inline void SetTrailNameList(Aws::Vector<Aws::String>&& value) { m_trailNameListHasBeenSet = true; m_trailNameList = std::move(value); }
 
@@ -116,10 +116,10 @@ namespace Model
      * the current region is returned.</p> </li> <li> <p>If an empty list is specified
      * and IncludeShadowTrails is null or true, then information for all trails in the
      * current region and any associated shadow trails in other regions is
-     * returned.</p> </li> </ul> <note> <p>If one or more trail names are specified,
+     * returned.</p> </li> </ul>  <p>If one or more trail names are specified,
      * information is returned only if the names match the names of trails belonging
      * only to the current region. To return information about a trail in another
-     * region, you must specify its trail ARN.</p> </note>
+     * region, you must specify its trail ARN.</p> 
      */
     inline DescribeTrailsRequest& WithTrailNameList(const Aws::Vector<Aws::String>& value) { SetTrailNameList(value); return *this;}
 
@@ -133,10 +133,10 @@ namespace Model
      * the current region is returned.</p> </li> <li> <p>If an empty list is specified
      * and IncludeShadowTrails is null or true, then information for all trails in the
      * current region and any associated shadow trails in other regions is
-     * returned.</p> </li> </ul> <note> <p>If one or more trail names are specified,
+     * returned.</p> </li> </ul>  <p>If one or more trail names are specified,
      * information is returned only if the names match the names of trails belonging
      * only to the current region. To return information about a trail in another
-     * region, you must specify its trail ARN.</p> </note>
+     * region, you must specify its trail ARN.</p> 
      */
     inline DescribeTrailsRequest& WithTrailNameList(Aws::Vector<Aws::String>&& value) { SetTrailNameList(std::move(value)); return *this;}
 
@@ -150,10 +150,10 @@ namespace Model
      * the current region is returned.</p> </li> <li> <p>If an empty list is specified
      * and IncludeShadowTrails is null or true, then information for all trails in the
      * current region and any associated shadow trails in other regions is
-     * returned.</p> </li> </ul> <note> <p>If one or more trail names are specified,
+     * returned.</p> </li> </ul>  <p>If one or more trail names are specified,
      * information is returned only if the names match the names of trails belonging
      * only to the current region. To return information about a trail in another
-     * region, you must specify its trail ARN.</p> </note>
+     * region, you must specify its trail ARN.</p> 
      */
     inline DescribeTrailsRequest& AddTrailNameList(const Aws::String& value) { m_trailNameListHasBeenSet = true; m_trailNameList.push_back(value); return *this; }
 
@@ -167,10 +167,10 @@ namespace Model
      * the current region is returned.</p> </li> <li> <p>If an empty list is specified
      * and IncludeShadowTrails is null or true, then information for all trails in the
      * current region and any associated shadow trails in other regions is
-     * returned.</p> </li> </ul> <note> <p>If one or more trail names are specified,
+     * returned.</p> </li> </ul>  <p>If one or more trail names are specified,
      * information is returned only if the names match the names of trails belonging
      * only to the current region. To return information about a trail in another
-     * region, you must specify its trail ARN.</p> </note>
+     * region, you must specify its trail ARN.</p> 
      */
     inline DescribeTrailsRequest& AddTrailNameList(Aws::String&& value) { m_trailNameListHasBeenSet = true; m_trailNameList.push_back(std::move(value)); return *this; }
 
@@ -184,10 +184,10 @@ namespace Model
      * the current region is returned.</p> </li> <li> <p>If an empty list is specified
      * and IncludeShadowTrails is null or true, then information for all trails in the
      * current region and any associated shadow trails in other regions is
-     * returned.</p> </li> </ul> <note> <p>If one or more trail names are specified,
+     * returned.</p> </li> </ul>  <p>If one or more trail names are specified,
      * information is returned only if the names match the names of trails belonging
      * only to the current region. To return information about a trail in another
-     * region, you must specify its trail ARN.</p> </note>
+     * region, you must specify its trail ARN.</p> 
      */
     inline DescribeTrailsRequest& AddTrailNameList(const char* value) { m_trailNameListHasBeenSet = true; m_trailNameList.push_back(value); return *this; }
 

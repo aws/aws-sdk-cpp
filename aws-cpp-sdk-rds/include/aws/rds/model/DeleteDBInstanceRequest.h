@@ -104,8 +104,8 @@ namespace Model
      * created.</p> <p>When a DB instance is in a failure state and has a status of
      * 'failed', 'incompatible-restore', or 'incompatible-network', it can only be
      * deleted when skip is specified.</p> <p>Specify skip when deleting a read
-     * replica.</p> <note> <p>The FinalDBSnapshotIdentifier parameter must be specified
-     * if skip isn't specified.</p> </note>
+     * replica.</p>  <p>The FinalDBSnapshotIdentifier parameter must be specified
+     * if skip isn't specified.</p> 
      */
     inline bool GetSkipFinalSnapshot() const{ return m_skipFinalSnapshot; }
 
@@ -117,8 +117,8 @@ namespace Model
      * created.</p> <p>When a DB instance is in a failure state and has a status of
      * 'failed', 'incompatible-restore', or 'incompatible-network', it can only be
      * deleted when skip is specified.</p> <p>Specify skip when deleting a read
-     * replica.</p> <note> <p>The FinalDBSnapshotIdentifier parameter must be specified
-     * if skip isn't specified.</p> </note>
+     * replica.</p>  <p>The FinalDBSnapshotIdentifier parameter must be specified
+     * if skip isn't specified.</p> 
      */
     inline bool SkipFinalSnapshotHasBeenSet() const { return m_skipFinalSnapshotHasBeenSet; }
 
@@ -130,8 +130,8 @@ namespace Model
      * created.</p> <p>When a DB instance is in a failure state and has a status of
      * 'failed', 'incompatible-restore', or 'incompatible-network', it can only be
      * deleted when skip is specified.</p> <p>Specify skip when deleting a read
-     * replica.</p> <note> <p>The FinalDBSnapshotIdentifier parameter must be specified
-     * if skip isn't specified.</p> </note>
+     * replica.</p>  <p>The FinalDBSnapshotIdentifier parameter must be specified
+     * if skip isn't specified.</p> 
      */
     inline void SetSkipFinalSnapshot(bool value) { m_skipFinalSnapshotHasBeenSet = true; m_skipFinalSnapshot = value; }
 
@@ -143,8 +143,8 @@ namespace Model
      * created.</p> <p>When a DB instance is in a failure state and has a status of
      * 'failed', 'incompatible-restore', or 'incompatible-network', it can only be
      * deleted when skip is specified.</p> <p>Specify skip when deleting a read
-     * replica.</p> <note> <p>The FinalDBSnapshotIdentifier parameter must be specified
-     * if skip isn't specified.</p> </note>
+     * replica.</p>  <p>The FinalDBSnapshotIdentifier parameter must be specified
+     * if skip isn't specified.</p> 
      */
     inline DeleteDBInstanceRequest& WithSkipFinalSnapshot(bool value) { SetSkipFinalSnapshot(value); return *this;}
 
@@ -152,8 +152,8 @@ namespace Model
     /**
      * <p> The <code>DBSnapshotIdentifier</code> of the new <code>DBSnapshot</code>
      * created when the <code>SkipFinalSnapshot</code> parameter is disabled. </p>
-     * <note> <p>Specifying this parameter and also specifying to skip final DB
-     * snapshot creation in SkipFinalShapshot results in an error.</p> </note>
+     *  <p>Specifying this parameter and also specifying to skip final DB
+     * snapshot creation in SkipFinalShapshot results in an error.</p> 
      * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters or numbers.</p> </li>
      * <li> <p>First character must be a letter.</p> </li> <li> <p>Can't end with a
      * hyphen or contain two consecutive hyphens.</p> </li> <li> <p>Can't be specified
@@ -164,8 +164,8 @@ namespace Model
     /**
      * <p> The <code>DBSnapshotIdentifier</code> of the new <code>DBSnapshot</code>
      * created when the <code>SkipFinalSnapshot</code> parameter is disabled. </p>
-     * <note> <p>Specifying this parameter and also specifying to skip final DB
-     * snapshot creation in SkipFinalShapshot results in an error.</p> </note>
+     *  <p>Specifying this parameter and also specifying to skip final DB
+     * snapshot creation in SkipFinalShapshot results in an error.</p> 
      * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters or numbers.</p> </li>
      * <li> <p>First character must be a letter.</p> </li> <li> <p>Can't end with a
      * hyphen or contain two consecutive hyphens.</p> </li> <li> <p>Can't be specified
@@ -176,8 +176,8 @@ namespace Model
     /**
      * <p> The <code>DBSnapshotIdentifier</code> of the new <code>DBSnapshot</code>
      * created when the <code>SkipFinalSnapshot</code> parameter is disabled. </p>
-     * <note> <p>Specifying this parameter and also specifying to skip final DB
-     * snapshot creation in SkipFinalShapshot results in an error.</p> </note>
+     *  <p>Specifying this parameter and also specifying to skip final DB
+     * snapshot creation in SkipFinalShapshot results in an error.</p> 
      * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters or numbers.</p> </li>
      * <li> <p>First character must be a letter.</p> </li> <li> <p>Can't end with a
      * hyphen or contain two consecutive hyphens.</p> </li> <li> <p>Can't be specified
@@ -188,8 +188,8 @@ namespace Model
     /**
      * <p> The <code>DBSnapshotIdentifier</code> of the new <code>DBSnapshot</code>
      * created when the <code>SkipFinalSnapshot</code> parameter is disabled. </p>
-     * <note> <p>Specifying this parameter and also specifying to skip final DB
-     * snapshot creation in SkipFinalShapshot results in an error.</p> </note>
+     *  <p>Specifying this parameter and also specifying to skip final DB
+     * snapshot creation in SkipFinalShapshot results in an error.</p> 
      * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters or numbers.</p> </li>
      * <li> <p>First character must be a letter.</p> </li> <li> <p>Can't end with a
      * hyphen or contain two consecutive hyphens.</p> </li> <li> <p>Can't be specified
@@ -200,8 +200,8 @@ namespace Model
     /**
      * <p> The <code>DBSnapshotIdentifier</code> of the new <code>DBSnapshot</code>
      * created when the <code>SkipFinalSnapshot</code> parameter is disabled. </p>
-     * <note> <p>Specifying this parameter and also specifying to skip final DB
-     * snapshot creation in SkipFinalShapshot results in an error.</p> </note>
+     *  <p>Specifying this parameter and also specifying to skip final DB
+     * snapshot creation in SkipFinalShapshot results in an error.</p> 
      * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters or numbers.</p> </li>
      * <li> <p>First character must be a letter.</p> </li> <li> <p>Can't end with a
      * hyphen or contain two consecutive hyphens.</p> </li> <li> <p>Can't be specified
@@ -212,8 +212,8 @@ namespace Model
     /**
      * <p> The <code>DBSnapshotIdentifier</code> of the new <code>DBSnapshot</code>
      * created when the <code>SkipFinalSnapshot</code> parameter is disabled. </p>
-     * <note> <p>Specifying this parameter and also specifying to skip final DB
-     * snapshot creation in SkipFinalShapshot results in an error.</p> </note>
+     *  <p>Specifying this parameter and also specifying to skip final DB
+     * snapshot creation in SkipFinalShapshot results in an error.</p> 
      * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters or numbers.</p> </li>
      * <li> <p>First character must be a letter.</p> </li> <li> <p>Can't end with a
      * hyphen or contain two consecutive hyphens.</p> </li> <li> <p>Can't be specified
@@ -224,8 +224,8 @@ namespace Model
     /**
      * <p> The <code>DBSnapshotIdentifier</code> of the new <code>DBSnapshot</code>
      * created when the <code>SkipFinalSnapshot</code> parameter is disabled. </p>
-     * <note> <p>Specifying this parameter and also specifying to skip final DB
-     * snapshot creation in SkipFinalShapshot results in an error.</p> </note>
+     *  <p>Specifying this parameter and also specifying to skip final DB
+     * snapshot creation in SkipFinalShapshot results in an error.</p> 
      * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters or numbers.</p> </li>
      * <li> <p>First character must be a letter.</p> </li> <li> <p>Can't end with a
      * hyphen or contain two consecutive hyphens.</p> </li> <li> <p>Can't be specified
@@ -236,8 +236,8 @@ namespace Model
     /**
      * <p> The <code>DBSnapshotIdentifier</code> of the new <code>DBSnapshot</code>
      * created when the <code>SkipFinalSnapshot</code> parameter is disabled. </p>
-     * <note> <p>Specifying this parameter and also specifying to skip final DB
-     * snapshot creation in SkipFinalShapshot results in an error.</p> </note>
+     *  <p>Specifying this parameter and also specifying to skip final DB
+     * snapshot creation in SkipFinalShapshot results in an error.</p> 
      * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters or numbers.</p> </li>
      * <li> <p>First character must be a letter.</p> </li> <li> <p>Can't end with a
      * hyphen or contain two consecutive hyphens.</p> </li> <li> <p>Can't be specified

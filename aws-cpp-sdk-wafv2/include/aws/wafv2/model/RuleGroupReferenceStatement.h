@@ -26,11 +26,11 @@ namespace Model
 {
 
   /**
-   * <note> <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2,
+   *  <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2,
    * released in November, 2019. For information, including how to migrate your AWS
    * WAF resources from the prior release, see the <a
    * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-   * WAF Developer Guide</a>. </p> </note> <p>A rule statement used to run the rules
+   * WAF Developer Guide</a>. </p>  <p>A rule statement used to run the rules
    * that are defined in a <a>RuleGroup</a>. To use this, create a rule group with
    * your rules, then provide the ARN of the rule group in this statement.</p> <p>You
    * cannot nest a <code>RuleGroupReferenceStatement</code>, for example for use

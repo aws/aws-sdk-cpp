@@ -459,8 +459,8 @@ namespace Model
      * which includes the variables' names, values, and protected flag values - cannot
      * exceed 20 KB. This limit should accommodate most if not all use cases. Exceeding
      * it will cause an exception with the message, "Environment: is too large (maximum
-     * is 20 KB)."</p> <note> <p>If you have specified one or more environment
-     * variables, you cannot modify the stack's Chef version.</p> </note>
+     * is 20 KB)."</p>  <p>If you have specified one or more environment
+     * variables, you cannot modify the stack's Chef version.</p> 
      */
     inline const Aws::Vector<EnvironmentVariable>& GetEnvironment() const{ return m_environment; }
 
@@ -475,8 +475,8 @@ namespace Model
      * which includes the variables' names, values, and protected flag values - cannot
      * exceed 20 KB. This limit should accommodate most if not all use cases. Exceeding
      * it will cause an exception with the message, "Environment: is too large (maximum
-     * is 20 KB)."</p> <note> <p>If you have specified one or more environment
-     * variables, you cannot modify the stack's Chef version.</p> </note>
+     * is 20 KB)."</p>  <p>If you have specified one or more environment
+     * variables, you cannot modify the stack's Chef version.</p> 
      */
     inline bool EnvironmentHasBeenSet() const { return m_environmentHasBeenSet; }
 
@@ -491,8 +491,8 @@ namespace Model
      * which includes the variables' names, values, and protected flag values - cannot
      * exceed 20 KB. This limit should accommodate most if not all use cases. Exceeding
      * it will cause an exception with the message, "Environment: is too large (maximum
-     * is 20 KB)."</p> <note> <p>If you have specified one or more environment
-     * variables, you cannot modify the stack's Chef version.</p> </note>
+     * is 20 KB)."</p>  <p>If you have specified one or more environment
+     * variables, you cannot modify the stack's Chef version.</p> 
      */
     inline void SetEnvironment(const Aws::Vector<EnvironmentVariable>& value) { m_environmentHasBeenSet = true; m_environment = value; }
 
@@ -507,8 +507,8 @@ namespace Model
      * which includes the variables' names, values, and protected flag values - cannot
      * exceed 20 KB. This limit should accommodate most if not all use cases. Exceeding
      * it will cause an exception with the message, "Environment: is too large (maximum
-     * is 20 KB)."</p> <note> <p>If you have specified one or more environment
-     * variables, you cannot modify the stack's Chef version.</p> </note>
+     * is 20 KB)."</p>  <p>If you have specified one or more environment
+     * variables, you cannot modify the stack's Chef version.</p> 
      */
     inline void SetEnvironment(Aws::Vector<EnvironmentVariable>&& value) { m_environmentHasBeenSet = true; m_environment = std::move(value); }
 
@@ -523,8 +523,8 @@ namespace Model
      * which includes the variables' names, values, and protected flag values - cannot
      * exceed 20 KB. This limit should accommodate most if not all use cases. Exceeding
      * it will cause an exception with the message, "Environment: is too large (maximum
-     * is 20 KB)."</p> <note> <p>If you have specified one or more environment
-     * variables, you cannot modify the stack's Chef version.</p> </note>
+     * is 20 KB)."</p>  <p>If you have specified one or more environment
+     * variables, you cannot modify the stack's Chef version.</p> 
      */
     inline UpdateAppRequest& WithEnvironment(const Aws::Vector<EnvironmentVariable>& value) { SetEnvironment(value); return *this;}
 
@@ -539,8 +539,8 @@ namespace Model
      * which includes the variables' names, values, and protected flag values - cannot
      * exceed 20 KB. This limit should accommodate most if not all use cases. Exceeding
      * it will cause an exception with the message, "Environment: is too large (maximum
-     * is 20 KB)."</p> <note> <p>If you have specified one or more environment
-     * variables, you cannot modify the stack's Chef version.</p> </note>
+     * is 20 KB)."</p>  <p>If you have specified one or more environment
+     * variables, you cannot modify the stack's Chef version.</p> 
      */
     inline UpdateAppRequest& WithEnvironment(Aws::Vector<EnvironmentVariable>&& value) { SetEnvironment(std::move(value)); return *this;}
 
@@ -555,8 +555,8 @@ namespace Model
      * which includes the variables' names, values, and protected flag values - cannot
      * exceed 20 KB. This limit should accommodate most if not all use cases. Exceeding
      * it will cause an exception with the message, "Environment: is too large (maximum
-     * is 20 KB)."</p> <note> <p>If you have specified one or more environment
-     * variables, you cannot modify the stack's Chef version.</p> </note>
+     * is 20 KB)."</p>  <p>If you have specified one or more environment
+     * variables, you cannot modify the stack's Chef version.</p> 
      */
     inline UpdateAppRequest& AddEnvironment(const EnvironmentVariable& value) { m_environmentHasBeenSet = true; m_environment.push_back(value); return *this; }
 
@@ -571,8 +571,8 @@ namespace Model
      * which includes the variables' names, values, and protected flag values - cannot
      * exceed 20 KB. This limit should accommodate most if not all use cases. Exceeding
      * it will cause an exception with the message, "Environment: is too large (maximum
-     * is 20 KB)."</p> <note> <p>If you have specified one or more environment
-     * variables, you cannot modify the stack's Chef version.</p> </note>
+     * is 20 KB)."</p>  <p>If you have specified one or more environment
+     * variables, you cannot modify the stack's Chef version.</p> 
      */
     inline UpdateAppRequest& AddEnvironment(EnvironmentVariable&& value) { m_environmentHasBeenSet = true; m_environment.push_back(std::move(value)); return *this; }
 

@@ -227,9 +227,9 @@ namespace Model
      * <a>StopMatchmaking</a> or a proposed match that one or more players failed to
      * accept.</p> </li> <li> <p> <b>TIMED_OUT</b> -- The matchmaking request was not
      * successful within the duration specified in the matchmaking configuration. </p>
-     * </li> </ul> <note> <p>Matchmaking requests that fail to successfully complete
+     * </li> </ul>  <p>Matchmaking requests that fail to successfully complete
      * (statuses FAILED, CANCELLED, TIMED_OUT) can be resubmitted as new requests with
-     * new ticket IDs.</p> </note>
+     * new ticket IDs.</p> 
      */
     inline const MatchmakingConfigurationStatus& GetStatus() const{ return m_status; }
 
@@ -251,9 +251,9 @@ namespace Model
      * <a>StopMatchmaking</a> or a proposed match that one or more players failed to
      * accept.</p> </li> <li> <p> <b>TIMED_OUT</b> -- The matchmaking request was not
      * successful within the duration specified in the matchmaking configuration. </p>
-     * </li> </ul> <note> <p>Matchmaking requests that fail to successfully complete
+     * </li> </ul>  <p>Matchmaking requests that fail to successfully complete
      * (statuses FAILED, CANCELLED, TIMED_OUT) can be resubmitted as new requests with
-     * new ticket IDs.</p> </note>
+     * new ticket IDs.</p> 
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
@@ -275,9 +275,9 @@ namespace Model
      * <a>StopMatchmaking</a> or a proposed match that one or more players failed to
      * accept.</p> </li> <li> <p> <b>TIMED_OUT</b> -- The matchmaking request was not
      * successful within the duration specified in the matchmaking configuration. </p>
-     * </li> </ul> <note> <p>Matchmaking requests that fail to successfully complete
+     * </li> </ul>  <p>Matchmaking requests that fail to successfully complete
      * (statuses FAILED, CANCELLED, TIMED_OUT) can be resubmitted as new requests with
-     * new ticket IDs.</p> </note>
+     * new ticket IDs.</p> 
      */
     inline void SetStatus(const MatchmakingConfigurationStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
@@ -299,9 +299,9 @@ namespace Model
      * <a>StopMatchmaking</a> or a proposed match that one or more players failed to
      * accept.</p> </li> <li> <p> <b>TIMED_OUT</b> -- The matchmaking request was not
      * successful within the duration specified in the matchmaking configuration. </p>
-     * </li> </ul> <note> <p>Matchmaking requests that fail to successfully complete
+     * </li> </ul>  <p>Matchmaking requests that fail to successfully complete
      * (statuses FAILED, CANCELLED, TIMED_OUT) can be resubmitted as new requests with
-     * new ticket IDs.</p> </note>
+     * new ticket IDs.</p> 
      */
     inline void SetStatus(MatchmakingConfigurationStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
@@ -323,9 +323,9 @@ namespace Model
      * <a>StopMatchmaking</a> or a proposed match that one or more players failed to
      * accept.</p> </li> <li> <p> <b>TIMED_OUT</b> -- The matchmaking request was not
      * successful within the duration specified in the matchmaking configuration. </p>
-     * </li> </ul> <note> <p>Matchmaking requests that fail to successfully complete
+     * </li> </ul>  <p>Matchmaking requests that fail to successfully complete
      * (statuses FAILED, CANCELLED, TIMED_OUT) can be resubmitted as new requests with
-     * new ticket IDs.</p> </note>
+     * new ticket IDs.</p> 
      */
     inline MatchmakingTicket& WithStatus(const MatchmakingConfigurationStatus& value) { SetStatus(value); return *this;}
 
@@ -347,9 +347,9 @@ namespace Model
      * <a>StopMatchmaking</a> or a proposed match that one or more players failed to
      * accept.</p> </li> <li> <p> <b>TIMED_OUT</b> -- The matchmaking request was not
      * successful within the duration specified in the matchmaking configuration. </p>
-     * </li> </ul> <note> <p>Matchmaking requests that fail to successfully complete
+     * </li> </ul>  <p>Matchmaking requests that fail to successfully complete
      * (statuses FAILED, CANCELLED, TIMED_OUT) can be resubmitted as new requests with
-     * new ticket IDs.</p> </note>
+     * new ticket IDs.</p> 
      */
     inline MatchmakingTicket& WithStatus(MatchmakingConfigurationStatus&& value) { SetStatus(std::move(value)); return *this;}
 

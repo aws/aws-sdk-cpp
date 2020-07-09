@@ -486,8 +486,8 @@ namespace Model
         virtual void AttachLoadBalancerTargetGroupsAsync(const Model::AttachLoadBalancerTargetGroupsRequest& request, const AttachLoadBalancerTargetGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <note> <p>To attach an Application Load Balancer or a Network Load Balancer, use
-         * the <a>AttachLoadBalancerTargetGroups</a> API operation instead.</p> </note>
+         *  <p>To attach an Application Load Balancer or a Network Load Balancer, use
+         * the <a>AttachLoadBalancerTargetGroups</a> API operation instead.</p> 
          * <p>Attaches one or more Classic Load Balancers to the specified Auto Scaling
          * group. Amazon EC2 Auto Scaling registers the running instances with these
          * Classic Load Balancers.</p> <p>To describe the load balancers for an Auto
@@ -503,8 +503,8 @@ namespace Model
         virtual Model::AttachLoadBalancersOutcome AttachLoadBalancers(const Model::AttachLoadBalancersRequest& request) const;
 
         /**
-         * <note> <p>To attach an Application Load Balancer or a Network Load Balancer, use
-         * the <a>AttachLoadBalancerTargetGroups</a> API operation instead.</p> </note>
+         *  <p>To attach an Application Load Balancer or a Network Load Balancer, use
+         * the <a>AttachLoadBalancerTargetGroups</a> API operation instead.</p> 
          * <p>Attaches one or more Classic Load Balancers to the specified Auto Scaling
          * group. Amazon EC2 Auto Scaling registers the running instances with these
          * Classic Load Balancers.</p> <p>To describe the load balancers for an Auto
@@ -522,8 +522,8 @@ namespace Model
         virtual Model::AttachLoadBalancersOutcomeCallable AttachLoadBalancersCallable(const Model::AttachLoadBalancersRequest& request) const;
 
         /**
-         * <note> <p>To attach an Application Load Balancer or a Network Load Balancer, use
-         * the <a>AttachLoadBalancerTargetGroups</a> API operation instead.</p> </note>
+         *  <p>To attach an Application Load Balancer or a Network Load Balancer, use
+         * the <a>AttachLoadBalancerTargetGroups</a> API operation instead.</p> 
          * <p>Attaches one or more Classic Load Balancers to the specified Auto Scaling
          * group. Amazon EC2 Auto Scaling registers the running instances with these
          * Classic Load Balancers.</p> <p>To describe the load balancers for an Auto

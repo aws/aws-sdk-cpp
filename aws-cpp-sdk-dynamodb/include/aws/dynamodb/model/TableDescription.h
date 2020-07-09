@@ -178,14 +178,14 @@ namespace Model
      * consists of:</p> <ul> <li> <p> <code>AttributeName</code> - The name of the
      * attribute.</p> </li> <li> <p> <code>KeyType</code> - The role of the
      * attribute:</p> <ul> <li> <p> <code>HASH</code> - partition key</p> </li> <li>
-     * <p> <code>RANGE</code> - sort key</p> </li> </ul> <note> <p>The partition key of
+     * <p> <code>RANGE</code> - sort key</p> </li> </ul>  <p>The partition key of
      * an item is also known as its <i>hash attribute</i>. The term "hash attribute"
      * derives from DynamoDB's usage of an internal hash function to evenly distribute
      * data items across partitions, based on their partition key values.</p> <p>The
      * sort key of an item is also known as its <i>range attribute</i>. The term "range
      * attribute" derives from the way DynamoDB stores items with the same partition
      * key physically close together, in sorted order by the sort key value.</p>
-     * </note> </li> </ul> <p>For more information about primary keys, see <a
+     *  </li> </ul> <p>For more information about primary keys, see <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html#DataModelPrimaryKey">Primary
      * Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
@@ -196,14 +196,14 @@ namespace Model
      * consists of:</p> <ul> <li> <p> <code>AttributeName</code> - The name of the
      * attribute.</p> </li> <li> <p> <code>KeyType</code> - The role of the
      * attribute:</p> <ul> <li> <p> <code>HASH</code> - partition key</p> </li> <li>
-     * <p> <code>RANGE</code> - sort key</p> </li> </ul> <note> <p>The partition key of
+     * <p> <code>RANGE</code> - sort key</p> </li> </ul>  <p>The partition key of
      * an item is also known as its <i>hash attribute</i>. The term "hash attribute"
      * derives from DynamoDB's usage of an internal hash function to evenly distribute
      * data items across partitions, based on their partition key values.</p> <p>The
      * sort key of an item is also known as its <i>range attribute</i>. The term "range
      * attribute" derives from the way DynamoDB stores items with the same partition
      * key physically close together, in sorted order by the sort key value.</p>
-     * </note> </li> </ul> <p>For more information about primary keys, see <a
+     *  </li> </ul> <p>For more information about primary keys, see <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html#DataModelPrimaryKey">Primary
      * Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
@@ -214,14 +214,14 @@ namespace Model
      * consists of:</p> <ul> <li> <p> <code>AttributeName</code> - The name of the
      * attribute.</p> </li> <li> <p> <code>KeyType</code> - The role of the
      * attribute:</p> <ul> <li> <p> <code>HASH</code> - partition key</p> </li> <li>
-     * <p> <code>RANGE</code> - sort key</p> </li> </ul> <note> <p>The partition key of
+     * <p> <code>RANGE</code> - sort key</p> </li> </ul>  <p>The partition key of
      * an item is also known as its <i>hash attribute</i>. The term "hash attribute"
      * derives from DynamoDB's usage of an internal hash function to evenly distribute
      * data items across partitions, based on their partition key values.</p> <p>The
      * sort key of an item is also known as its <i>range attribute</i>. The term "range
      * attribute" derives from the way DynamoDB stores items with the same partition
      * key physically close together, in sorted order by the sort key value.</p>
-     * </note> </li> </ul> <p>For more information about primary keys, see <a
+     *  </li> </ul> <p>For more information about primary keys, see <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html#DataModelPrimaryKey">Primary
      * Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
@@ -232,14 +232,14 @@ namespace Model
      * consists of:</p> <ul> <li> <p> <code>AttributeName</code> - The name of the
      * attribute.</p> </li> <li> <p> <code>KeyType</code> - The role of the
      * attribute:</p> <ul> <li> <p> <code>HASH</code> - partition key</p> </li> <li>
-     * <p> <code>RANGE</code> - sort key</p> </li> </ul> <note> <p>The partition key of
+     * <p> <code>RANGE</code> - sort key</p> </li> </ul>  <p>The partition key of
      * an item is also known as its <i>hash attribute</i>. The term "hash attribute"
      * derives from DynamoDB's usage of an internal hash function to evenly distribute
      * data items across partitions, based on their partition key values.</p> <p>The
      * sort key of an item is also known as its <i>range attribute</i>. The term "range
      * attribute" derives from the way DynamoDB stores items with the same partition
      * key physically close together, in sorted order by the sort key value.</p>
-     * </note> </li> </ul> <p>For more information about primary keys, see <a
+     *  </li> </ul> <p>For more information about primary keys, see <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html#DataModelPrimaryKey">Primary
      * Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
@@ -250,14 +250,14 @@ namespace Model
      * consists of:</p> <ul> <li> <p> <code>AttributeName</code> - The name of the
      * attribute.</p> </li> <li> <p> <code>KeyType</code> - The role of the
      * attribute:</p> <ul> <li> <p> <code>HASH</code> - partition key</p> </li> <li>
-     * <p> <code>RANGE</code> - sort key</p> </li> </ul> <note> <p>The partition key of
+     * <p> <code>RANGE</code> - sort key</p> </li> </ul>  <p>The partition key of
      * an item is also known as its <i>hash attribute</i>. The term "hash attribute"
      * derives from DynamoDB's usage of an internal hash function to evenly distribute
      * data items across partitions, based on their partition key values.</p> <p>The
      * sort key of an item is also known as its <i>range attribute</i>. The term "range
      * attribute" derives from the way DynamoDB stores items with the same partition
      * key physically close together, in sorted order by the sort key value.</p>
-     * </note> </li> </ul> <p>For more information about primary keys, see <a
+     *  </li> </ul> <p>For more information about primary keys, see <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html#DataModelPrimaryKey">Primary
      * Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
@@ -268,14 +268,14 @@ namespace Model
      * consists of:</p> <ul> <li> <p> <code>AttributeName</code> - The name of the
      * attribute.</p> </li> <li> <p> <code>KeyType</code> - The role of the
      * attribute:</p> <ul> <li> <p> <code>HASH</code> - partition key</p> </li> <li>
-     * <p> <code>RANGE</code> - sort key</p> </li> </ul> <note> <p>The partition key of
+     * <p> <code>RANGE</code> - sort key</p> </li> </ul>  <p>The partition key of
      * an item is also known as its <i>hash attribute</i>. The term "hash attribute"
      * derives from DynamoDB's usage of an internal hash function to evenly distribute
      * data items across partitions, based on their partition key values.</p> <p>The
      * sort key of an item is also known as its <i>range attribute</i>. The term "range
      * attribute" derives from the way DynamoDB stores items with the same partition
      * key physically close together, in sorted order by the sort key value.</p>
-     * </note> </li> </ul> <p>For more information about primary keys, see <a
+     *  </li> </ul> <p>For more information about primary keys, see <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html#DataModelPrimaryKey">Primary
      * Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
@@ -286,14 +286,14 @@ namespace Model
      * consists of:</p> <ul> <li> <p> <code>AttributeName</code> - The name of the
      * attribute.</p> </li> <li> <p> <code>KeyType</code> - The role of the
      * attribute:</p> <ul> <li> <p> <code>HASH</code> - partition key</p> </li> <li>
-     * <p> <code>RANGE</code> - sort key</p> </li> </ul> <note> <p>The partition key of
+     * <p> <code>RANGE</code> - sort key</p> </li> </ul>  <p>The partition key of
      * an item is also known as its <i>hash attribute</i>. The term "hash attribute"
      * derives from DynamoDB's usage of an internal hash function to evenly distribute
      * data items across partitions, based on their partition key values.</p> <p>The
      * sort key of an item is also known as its <i>range attribute</i>. The term "range
      * attribute" derives from the way DynamoDB stores items with the same partition
      * key physically close together, in sorted order by the sort key value.</p>
-     * </note> </li> </ul> <p>For more information about primary keys, see <a
+     *  </li> </ul> <p>For more information about primary keys, see <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html#DataModelPrimaryKey">Primary
      * Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
@@ -304,14 +304,14 @@ namespace Model
      * consists of:</p> <ul> <li> <p> <code>AttributeName</code> - The name of the
      * attribute.</p> </li> <li> <p> <code>KeyType</code> - The role of the
      * attribute:</p> <ul> <li> <p> <code>HASH</code> - partition key</p> </li> <li>
-     * <p> <code>RANGE</code> - sort key</p> </li> </ul> <note> <p>The partition key of
+     * <p> <code>RANGE</code> - sort key</p> </li> </ul>  <p>The partition key of
      * an item is also known as its <i>hash attribute</i>. The term "hash attribute"
      * derives from DynamoDB's usage of an internal hash function to evenly distribute
      * data items across partitions, based on their partition key values.</p> <p>The
      * sort key of an item is also known as its <i>range attribute</i>. The term "range
      * attribute" derives from the way DynamoDB stores items with the same partition
      * key physically close together, in sorted order by the sort key value.</p>
-     * </note> </li> </ul> <p>For more information about primary keys, see <a
+     *  </li> </ul> <p>For more information about primary keys, see <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html#DataModelPrimaryKey">Primary
      * Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */

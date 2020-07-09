@@ -214,7 +214,7 @@ namespace Model
    * for each action shows the API request parameters and the response.
    * Alternatively, you can use one of the AWS SDKs to access an API that is tailored
    * to the programming language or platform that you're using. For more information,
-   * see <a href="http://aws.amazon.com/tools/#SDKs">AWS SDKs</a>.</p> <note> <ul>
+   * see <a href="http://aws.amazon.com/tools/#SDKs">AWS SDKs</a>.</p>  <ul>
    * <li> <p>Remember that you must set your Migration Hub home region before you
    * call any of these APIs.</p> </li> <li> <p>You must make API calls for write
    * actions (create, notify, associate, disassociate, import, or put) while in your
@@ -224,13 +224,13 @@ namespace Model
    * unlikely, the Migration Hub home region could change. If you call APIs outside
    * the home region, an <code>InvalidInputException</code> is returned.</p> </li>
    * <li> <p>You must call <code>GetHomeRegion</code> to obtain the latest Migration
-   * Hub home region.</p> </li> </ul> </note> <p>This guide is intended for use with
+   * Hub home region.</p> </li> </ul>  <p>This guide is intended for use with
    * the <a
    * href="http://docs.aws.amazon.com/application-discovery/latest/userguide/">AWS
-   * Application Discovery Service User Guide</a>.</p> <important> <p>All data is
+   * Application Discovery Service User Guide</a>.</p>  <p>All data is
    * handled according to the <a href="http://aws.amazon.com/privacy/">AWS Privacy
    * Policy</a>. You can operate Application Discovery Service offline to inspect
-   * collected data before it is shared with the service.</p> </important>
+   * collected data before it is shared with the service.</p> 
    */
   class AWS_APPLICATIONDISCOVERYSERVICE_API ApplicationDiscoveryServiceClient : public Aws::Client::AWSJsonClient
   {
@@ -488,7 +488,7 @@ namespace Model
         virtual void DescribeAgentsAsync(const Model::DescribeAgentsRequest& request, const DescribeAgentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves attributes for a list of configuration item IDs.</p> <note> <p>All
+         * <p>Retrieves attributes for a list of configuration item IDs.</p>  <p>All
          * of the supplied IDs must be for the same asset type from one of the
          * following:</p> <ul> <li> <p>server</p> </li> <li> <p>application</p> </li> <li>
          * <p>process</p> </li> <li> <p>connection</p> </li> </ul> <p>Output fields are
@@ -498,14 +498,14 @@ namespace Model
          * complete list of outputs for each asset type, see <a
          * href="https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-api-queries.html#DescribeConfigurations">Using
          * the DescribeConfigurations Action</a> in the <i>AWS Application Discovery
-         * Service User Guide</i>.</p> </note><p><h3>See Also:</h3>   <a
+         * Service User Guide</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/DescribeConfigurations">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeConfigurationsOutcome DescribeConfigurations(const Model::DescribeConfigurationsRequest& request) const;
 
         /**
-         * <p>Retrieves attributes for a list of configuration item IDs.</p> <note> <p>All
+         * <p>Retrieves attributes for a list of configuration item IDs.</p>  <p>All
          * of the supplied IDs must be for the same asset type from one of the
          * following:</p> <ul> <li> <p>server</p> </li> <li> <p>application</p> </li> <li>
          * <p>process</p> </li> <li> <p>connection</p> </li> </ul> <p>Output fields are
@@ -515,7 +515,7 @@ namespace Model
          * complete list of outputs for each asset type, see <a
          * href="https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-api-queries.html#DescribeConfigurations">Using
          * the DescribeConfigurations Action</a> in the <i>AWS Application Discovery
-         * Service User Guide</i>.</p> </note><p><h3>See Also:</h3>   <a
+         * Service User Guide</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/DescribeConfigurations">AWS
          * API Reference</a></p>
          *
@@ -524,7 +524,7 @@ namespace Model
         virtual Model::DescribeConfigurationsOutcomeCallable DescribeConfigurationsCallable(const Model::DescribeConfigurationsRequest& request) const;
 
         /**
-         * <p>Retrieves attributes for a list of configuration item IDs.</p> <note> <p>All
+         * <p>Retrieves attributes for a list of configuration item IDs.</p>  <p>All
          * of the supplied IDs must be for the same asset type from one of the
          * following:</p> <ul> <li> <p>server</p> </li> <li> <p>application</p> </li> <li>
          * <p>process</p> </li> <li> <p>connection</p> </li> </ul> <p>Output fields are
@@ -534,7 +534,7 @@ namespace Model
          * complete list of outputs for each asset type, see <a
          * href="https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-api-queries.html#DescribeConfigurations">Using
          * the DescribeConfigurations Action</a> in the <i>AWS Application Discovery
-         * Service User Guide</i>.</p> </note><p><h3>See Also:</h3>   <a
+         * Service User Guide</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/DescribeConfigurations">AWS
          * API Reference</a></p>
          *
@@ -919,11 +919,11 @@ namespace Model
          * <p>For more information, including step-by-step procedures, see <a
          * href="https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-import.html">Migration
          * Hub Import</a> in the <i>AWS Application Discovery Service User Guide</i>.</p>
-         * <note> <p>There are limits to the number of import tasks you can create (and
+         *  <p>There are limits to the number of import tasks you can create (and
          * delete) in an AWS account. For more information, see <a
          * href="https://docs.aws.amazon.com/application-discovery/latest/userguide/ads_service_limits.html">AWS
          * Application Discovery Service Limits</a> in the <i>AWS Application Discovery
-         * Service User Guide</i>.</p> </note><p><h3>See Also:</h3>   <a
+         * Service User Guide</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/StartImportTask">AWS
          * API Reference</a></p>
          */
@@ -947,11 +947,11 @@ namespace Model
          * <p>For more information, including step-by-step procedures, see <a
          * href="https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-import.html">Migration
          * Hub Import</a> in the <i>AWS Application Discovery Service User Guide</i>.</p>
-         * <note> <p>There are limits to the number of import tasks you can create (and
+         *  <p>There are limits to the number of import tasks you can create (and
          * delete) in an AWS account. For more information, see <a
          * href="https://docs.aws.amazon.com/application-discovery/latest/userguide/ads_service_limits.html">AWS
          * Application Discovery Service Limits</a> in the <i>AWS Application Discovery
-         * Service User Guide</i>.</p> </note><p><h3>See Also:</h3>   <a
+         * Service User Guide</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/StartImportTask">AWS
          * API Reference</a></p>
          *
@@ -977,11 +977,11 @@ namespace Model
          * <p>For more information, including step-by-step procedures, see <a
          * href="https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-import.html">Migration
          * Hub Import</a> in the <i>AWS Application Discovery Service User Guide</i>.</p>
-         * <note> <p>There are limits to the number of import tasks you can create (and
+         *  <p>There are limits to the number of import tasks you can create (and
          * delete) in an AWS account. For more information, see <a
          * href="https://docs.aws.amazon.com/application-discovery/latest/userguide/ads_service_limits.html">AWS
          * Application Discovery Service Limits</a> in the <i>AWS Application Discovery
-         * Service User Guide</i>.</p> </note><p><h3>See Also:</h3>   <a
+         * Service User Guide</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/StartImportTask">AWS
          * API Reference</a></p>
          *

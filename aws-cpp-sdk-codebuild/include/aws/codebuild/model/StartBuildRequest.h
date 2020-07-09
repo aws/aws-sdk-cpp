@@ -844,36 +844,36 @@ namespace Model
     /**
      * <p> Set to true to report to your source provider the status of a build's start
      * and completion. If you use this option with a source provider other than GitHub,
-     * GitHub Enterprise, or Bitbucket, an invalidInputException is thrown. </p> <note>
+     * GitHub Enterprise, or Bitbucket, an invalidInputException is thrown. </p> 
      * <p> The status of a build triggered by a webhook is always reported to your
-     * source provider. </p> </note>
+     * source provider. </p> 
      */
     inline bool GetReportBuildStatusOverride() const{ return m_reportBuildStatusOverride; }
 
     /**
      * <p> Set to true to report to your source provider the status of a build's start
      * and completion. If you use this option with a source provider other than GitHub,
-     * GitHub Enterprise, or Bitbucket, an invalidInputException is thrown. </p> <note>
+     * GitHub Enterprise, or Bitbucket, an invalidInputException is thrown. </p> 
      * <p> The status of a build triggered by a webhook is always reported to your
-     * source provider. </p> </note>
+     * source provider. </p> 
      */
     inline bool ReportBuildStatusOverrideHasBeenSet() const { return m_reportBuildStatusOverrideHasBeenSet; }
 
     /**
      * <p> Set to true to report to your source provider the status of a build's start
      * and completion. If you use this option with a source provider other than GitHub,
-     * GitHub Enterprise, or Bitbucket, an invalidInputException is thrown. </p> <note>
+     * GitHub Enterprise, or Bitbucket, an invalidInputException is thrown. </p> 
      * <p> The status of a build triggered by a webhook is always reported to your
-     * source provider. </p> </note>
+     * source provider. </p> 
      */
     inline void SetReportBuildStatusOverride(bool value) { m_reportBuildStatusOverrideHasBeenSet = true; m_reportBuildStatusOverride = value; }
 
     /**
      * <p> Set to true to report to your source provider the status of a build's start
      * and completion. If you use this option with a source provider other than GitHub,
-     * GitHub Enterprise, or Bitbucket, an invalidInputException is thrown. </p> <note>
+     * GitHub Enterprise, or Bitbucket, an invalidInputException is thrown. </p> 
      * <p> The status of a build triggered by a webhook is always reported to your
-     * source provider. </p> </note>
+     * source provider. </p> 
      */
     inline StartBuildRequest& WithReportBuildStatusOverride(bool value) { SetReportBuildStatusOverride(value); return *this;}
 
@@ -1263,9 +1263,9 @@ namespace Model
     /**
      * <p>The AWS Key Management Service (AWS KMS) customer master key (CMK) that
      * overrides the one specified in the build project. The CMK key encrypts the build
-     * output artifacts.</p> <note> <p> You can use a cross-account KMS key to encrypt
+     * output artifacts.</p>  <p> You can use a cross-account KMS key to encrypt
      * the build output artifacts if your service role has permission to that key. </p>
-     * </note> <p>You can specify either the Amazon Resource Name (ARN) of the CMK or,
+     *  <p>You can specify either the Amazon Resource Name (ARN) of the CMK or,
      * if available, the CMK's alias (using the format <code>alias/<i>alias-name</i>
      * </code>).</p>
      */
@@ -1274,9 +1274,9 @@ namespace Model
     /**
      * <p>The AWS Key Management Service (AWS KMS) customer master key (CMK) that
      * overrides the one specified in the build project. The CMK key encrypts the build
-     * output artifacts.</p> <note> <p> You can use a cross-account KMS key to encrypt
+     * output artifacts.</p>  <p> You can use a cross-account KMS key to encrypt
      * the build output artifacts if your service role has permission to that key. </p>
-     * </note> <p>You can specify either the Amazon Resource Name (ARN) of the CMK or,
+     *  <p>You can specify either the Amazon Resource Name (ARN) of the CMK or,
      * if available, the CMK's alias (using the format <code>alias/<i>alias-name</i>
      * </code>).</p>
      */
@@ -1285,9 +1285,9 @@ namespace Model
     /**
      * <p>The AWS Key Management Service (AWS KMS) customer master key (CMK) that
      * overrides the one specified in the build project. The CMK key encrypts the build
-     * output artifacts.</p> <note> <p> You can use a cross-account KMS key to encrypt
+     * output artifacts.</p>  <p> You can use a cross-account KMS key to encrypt
      * the build output artifacts if your service role has permission to that key. </p>
-     * </note> <p>You can specify either the Amazon Resource Name (ARN) of the CMK or,
+     *  <p>You can specify either the Amazon Resource Name (ARN) of the CMK or,
      * if available, the CMK's alias (using the format <code>alias/<i>alias-name</i>
      * </code>).</p>
      */
@@ -1296,9 +1296,9 @@ namespace Model
     /**
      * <p>The AWS Key Management Service (AWS KMS) customer master key (CMK) that
      * overrides the one specified in the build project. The CMK key encrypts the build
-     * output artifacts.</p> <note> <p> You can use a cross-account KMS key to encrypt
+     * output artifacts.</p>  <p> You can use a cross-account KMS key to encrypt
      * the build output artifacts if your service role has permission to that key. </p>
-     * </note> <p>You can specify either the Amazon Resource Name (ARN) of the CMK or,
+     *  <p>You can specify either the Amazon Resource Name (ARN) of the CMK or,
      * if available, the CMK's alias (using the format <code>alias/<i>alias-name</i>
      * </code>).</p>
      */
@@ -1307,9 +1307,9 @@ namespace Model
     /**
      * <p>The AWS Key Management Service (AWS KMS) customer master key (CMK) that
      * overrides the one specified in the build project. The CMK key encrypts the build
-     * output artifacts.</p> <note> <p> You can use a cross-account KMS key to encrypt
+     * output artifacts.</p>  <p> You can use a cross-account KMS key to encrypt
      * the build output artifacts if your service role has permission to that key. </p>
-     * </note> <p>You can specify either the Amazon Resource Name (ARN) of the CMK or,
+     *  <p>You can specify either the Amazon Resource Name (ARN) of the CMK or,
      * if available, the CMK's alias (using the format <code>alias/<i>alias-name</i>
      * </code>).</p>
      */
@@ -1318,9 +1318,9 @@ namespace Model
     /**
      * <p>The AWS Key Management Service (AWS KMS) customer master key (CMK) that
      * overrides the one specified in the build project. The CMK key encrypts the build
-     * output artifacts.</p> <note> <p> You can use a cross-account KMS key to encrypt
+     * output artifacts.</p>  <p> You can use a cross-account KMS key to encrypt
      * the build output artifacts if your service role has permission to that key. </p>
-     * </note> <p>You can specify either the Amazon Resource Name (ARN) of the CMK or,
+     *  <p>You can specify either the Amazon Resource Name (ARN) of the CMK or,
      * if available, the CMK's alias (using the format <code>alias/<i>alias-name</i>
      * </code>).</p>
      */
@@ -1329,9 +1329,9 @@ namespace Model
     /**
      * <p>The AWS Key Management Service (AWS KMS) customer master key (CMK) that
      * overrides the one specified in the build project. The CMK key encrypts the build
-     * output artifacts.</p> <note> <p> You can use a cross-account KMS key to encrypt
+     * output artifacts.</p>  <p> You can use a cross-account KMS key to encrypt
      * the build output artifacts if your service role has permission to that key. </p>
-     * </note> <p>You can specify either the Amazon Resource Name (ARN) of the CMK or,
+     *  <p>You can specify either the Amazon Resource Name (ARN) of the CMK or,
      * if available, the CMK's alias (using the format <code>alias/<i>alias-name</i>
      * </code>).</p>
      */
@@ -1340,9 +1340,9 @@ namespace Model
     /**
      * <p>The AWS Key Management Service (AWS KMS) customer master key (CMK) that
      * overrides the one specified in the build project. The CMK key encrypts the build
-     * output artifacts.</p> <note> <p> You can use a cross-account KMS key to encrypt
+     * output artifacts.</p>  <p> You can use a cross-account KMS key to encrypt
      * the build output artifacts if your service role has permission to that key. </p>
-     * </note> <p>You can specify either the Amazon Resource Name (ARN) of the CMK or,
+     *  <p>You can specify either the Amazon Resource Name (ARN) of the CMK or,
      * if available, the CMK's alias (using the format <code>alias/<i>alias-name</i>
      * </code>).</p>
      */

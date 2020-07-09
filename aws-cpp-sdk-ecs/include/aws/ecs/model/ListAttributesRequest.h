@@ -210,9 +210,9 @@ namespace Model
      * request indicating that more results are available to fulfill the request and
      * further calls will be needed. If <code>maxResults</code> was provided, it is
      * possible the number of results to be fewer than <code>maxResults</code>.</p>
-     * <note> <p>This token should be treated as an opaque identifier that is only used
+     *  <p>This token should be treated as an opaque identifier that is only used
      * to retrieve the next items in a list and not for other programmatic
-     * purposes.</p> </note>
+     * purposes.</p> 
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
@@ -221,9 +221,9 @@ namespace Model
      * request indicating that more results are available to fulfill the request and
      * further calls will be needed. If <code>maxResults</code> was provided, it is
      * possible the number of results to be fewer than <code>maxResults</code>.</p>
-     * <note> <p>This token should be treated as an opaque identifier that is only used
+     *  <p>This token should be treated as an opaque identifier that is only used
      * to retrieve the next items in a list and not for other programmatic
-     * purposes.</p> </note>
+     * purposes.</p> 
      */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
@@ -232,9 +232,9 @@ namespace Model
      * request indicating that more results are available to fulfill the request and
      * further calls will be needed. If <code>maxResults</code> was provided, it is
      * possible the number of results to be fewer than <code>maxResults</code>.</p>
-     * <note> <p>This token should be treated as an opaque identifier that is only used
+     *  <p>This token should be treated as an opaque identifier that is only used
      * to retrieve the next items in a list and not for other programmatic
-     * purposes.</p> </note>
+     * purposes.</p> 
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
@@ -243,9 +243,9 @@ namespace Model
      * request indicating that more results are available to fulfill the request and
      * further calls will be needed. If <code>maxResults</code> was provided, it is
      * possible the number of results to be fewer than <code>maxResults</code>.</p>
-     * <note> <p>This token should be treated as an opaque identifier that is only used
+     *  <p>This token should be treated as an opaque identifier that is only used
      * to retrieve the next items in a list and not for other programmatic
-     * purposes.</p> </note>
+     * purposes.</p> 
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
@@ -254,9 +254,9 @@ namespace Model
      * request indicating that more results are available to fulfill the request and
      * further calls will be needed. If <code>maxResults</code> was provided, it is
      * possible the number of results to be fewer than <code>maxResults</code>.</p>
-     * <note> <p>This token should be treated as an opaque identifier that is only used
+     *  <p>This token should be treated as an opaque identifier that is only used
      * to retrieve the next items in a list and not for other programmatic
-     * purposes.</p> </note>
+     * purposes.</p> 
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
@@ -265,9 +265,9 @@ namespace Model
      * request indicating that more results are available to fulfill the request and
      * further calls will be needed. If <code>maxResults</code> was provided, it is
      * possible the number of results to be fewer than <code>maxResults</code>.</p>
-     * <note> <p>This token should be treated as an opaque identifier that is only used
+     *  <p>This token should be treated as an opaque identifier that is only used
      * to retrieve the next items in a list and not for other programmatic
-     * purposes.</p> </note>
+     * purposes.</p> 
      */
     inline ListAttributesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
@@ -276,9 +276,9 @@ namespace Model
      * request indicating that more results are available to fulfill the request and
      * further calls will be needed. If <code>maxResults</code> was provided, it is
      * possible the number of results to be fewer than <code>maxResults</code>.</p>
-     * <note> <p>This token should be treated as an opaque identifier that is only used
+     *  <p>This token should be treated as an opaque identifier that is only used
      * to retrieve the next items in a list and not for other programmatic
-     * purposes.</p> </note>
+     * purposes.</p> 
      */
     inline ListAttributesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
@@ -287,9 +287,9 @@ namespace Model
      * request indicating that more results are available to fulfill the request and
      * further calls will be needed. If <code>maxResults</code> was provided, it is
      * possible the number of results to be fewer than <code>maxResults</code>.</p>
-     * <note> <p>This token should be treated as an opaque identifier that is only used
+     *  <p>This token should be treated as an opaque identifier that is only used
      * to retrieve the next items in a list and not for other programmatic
-     * purposes.</p> </note>
+     * purposes.</p> 
      */
     inline ListAttributesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

@@ -872,12 +872,12 @@ namespace Model
         /**
          * <p>Creates a new Amazon GameLift build resource for your game server binary
          * files. Game server binaries must be combined into a zip file for use with Amazon
-         * GameLift. </p> <important> <p>When setting up a new game build for GameLift, we
+         * GameLift. </p>  <p>When setting up a new game build for GameLift, we
          * recommend using the AWS CLI command <b> <a
          * href="https://docs.aws.amazon.com/cli/latest/reference/gamelift/upload-build.html">upload-build</a>
          * </b>. This helper command combines two tasks: (1) it uploads your build files
          * from a file directory to a GameLift Amazon S3 location, and (2) it creates a new
-         * build resource. </p> </important> <p>The <code>CreateBuild</code> operation can
+         * build resource. </p>  <p>The <code>CreateBuild</code> operation can
          * used in the following scenarios:</p> <ul> <li> <p>To create a new game build
          * with build files that are in an S3 location under an AWS account that you
          * control. To use this option, you must first give Amazon GameLift access to the
@@ -911,12 +911,12 @@ namespace Model
         /**
          * <p>Creates a new Amazon GameLift build resource for your game server binary
          * files. Game server binaries must be combined into a zip file for use with Amazon
-         * GameLift. </p> <important> <p>When setting up a new game build for GameLift, we
+         * GameLift. </p>  <p>When setting up a new game build for GameLift, we
          * recommend using the AWS CLI command <b> <a
          * href="https://docs.aws.amazon.com/cli/latest/reference/gamelift/upload-build.html">upload-build</a>
          * </b>. This helper command combines two tasks: (1) it uploads your build files
          * from a file directory to a GameLift Amazon S3 location, and (2) it creates a new
-         * build resource. </p> </important> <p>The <code>CreateBuild</code> operation can
+         * build resource. </p>  <p>The <code>CreateBuild</code> operation can
          * used in the following scenarios:</p> <ul> <li> <p>To create a new game build
          * with build files that are in an S3 location under an AWS account that you
          * control. To use this option, you must first give Amazon GameLift access to the
@@ -952,12 +952,12 @@ namespace Model
         /**
          * <p>Creates a new Amazon GameLift build resource for your game server binary
          * files. Game server binaries must be combined into a zip file for use with Amazon
-         * GameLift. </p> <important> <p>When setting up a new game build for GameLift, we
+         * GameLift. </p>  <p>When setting up a new game build for GameLift, we
          * recommend using the AWS CLI command <b> <a
          * href="https://docs.aws.amazon.com/cli/latest/reference/gamelift/upload-build.html">upload-build</a>
          * </b>. This helper command combines two tasks: (1) it uploads your build files
          * from a file directory to a GameLift Amazon S3 location, and (2) it creates a new
-         * build resource. </p> </important> <p>The <code>CreateBuild</code> operation can
+         * build resource. </p>  <p>The <code>CreateBuild</code> operation can
          * used in the following scenarios:</p> <ul> <li> <p>To create a new game build
          * with build files that are in an S3 location under an AWS account that you
          * control. To use this option, you must first give Amazon GameLift access to the
@@ -3051,10 +3051,10 @@ namespace Model
          * fleet identifier. When requesting attributes for multiple fleets, use the
          * pagination parameters to retrieve results as a set of sequential pages. If
          * successful, a <a>FleetAttributes</a> object is returned for each fleet
-         * requested, unless the fleet identifier is not found.</p> <note> <p>Some API
+         * requested, unless the fleet identifier is not found.</p>  <p>Some API
          * actions may limit the number of fleet IDs allowed in one request. If a request
          * exceeds this limit, the request fails and the error message includes the maximum
-         * allowed number.</p> </note> <p> <b>Learn more</b> </p> <p> <a
+         * allowed number.</p>  <p> <b>Learn more</b> </p> <p> <a
          * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting
          * up GameLift Fleets</a> </p> <p> <b>Related operations</b> </p> <ul> <li> <p>
          * <a>CreateFleet</a> </p> </li> <li> <p> <a>ListFleets</a> </p> </li> <li> <p>
@@ -3079,10 +3079,10 @@ namespace Model
          * fleet identifier. When requesting attributes for multiple fleets, use the
          * pagination parameters to retrieve results as a set of sequential pages. If
          * successful, a <a>FleetAttributes</a> object is returned for each fleet
-         * requested, unless the fleet identifier is not found.</p> <note> <p>Some API
+         * requested, unless the fleet identifier is not found.</p>  <p>Some API
          * actions may limit the number of fleet IDs allowed in one request. If a request
          * exceeds this limit, the request fails and the error message includes the maximum
-         * allowed number.</p> </note> <p> <b>Learn more</b> </p> <p> <a
+         * allowed number.</p>  <p> <b>Learn more</b> </p> <p> <a
          * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting
          * up GameLift Fleets</a> </p> <p> <b>Related operations</b> </p> <ul> <li> <p>
          * <a>CreateFleet</a> </p> </li> <li> <p> <a>ListFleets</a> </p> </li> <li> <p>
@@ -3109,10 +3109,10 @@ namespace Model
          * fleet identifier. When requesting attributes for multiple fleets, use the
          * pagination parameters to retrieve results as a set of sequential pages. If
          * successful, a <a>FleetAttributes</a> object is returned for each fleet
-         * requested, unless the fleet identifier is not found.</p> <note> <p>Some API
+         * requested, unless the fleet identifier is not found.</p>  <p>Some API
          * actions may limit the number of fleet IDs allowed in one request. If a request
          * exceeds this limit, the request fails and the error message includes the maximum
-         * allowed number.</p> </note> <p> <b>Learn more</b> </p> <p> <a
+         * allowed number.</p>  <p> <b>Learn more</b> </p> <p> <a
          * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting
          * up GameLift Fleets</a> </p> <p> <b>Related operations</b> </p> <ul> <li> <p>
          * <a>CreateFleet</a> </p> </li> <li> <p> <a>ListFleets</a> </p> </li> <li> <p>
@@ -3141,10 +3141,10 @@ namespace Model
          * requesting multiple fleets, use the pagination parameters to retrieve results as
          * a set of sequential pages. If successful, a <a>FleetCapacity</a> object is
          * returned for each requested fleet ID. When a list of fleet IDs is provided,
-         * attribute objects are returned only for fleets that currently exist.</p> <note>
+         * attribute objects are returned only for fleets that currently exist.</p> 
          * <p>Some API actions may limit the number of fleet IDs allowed in one request. If
          * a request exceeds this limit, the request fails and the error message includes
-         * the maximum allowed.</p> </note> <p> <b>Learn more</b> </p> <p> <a
+         * the maximum allowed.</p>  <p> <b>Learn more</b> </p> <p> <a
          * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting
          * up GameLift Fleets</a> </p> <p> <a
          * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/monitoring-cloudwatch.html#gamelift-metrics-fleet">GameLift
@@ -3173,10 +3173,10 @@ namespace Model
          * requesting multiple fleets, use the pagination parameters to retrieve results as
          * a set of sequential pages. If successful, a <a>FleetCapacity</a> object is
          * returned for each requested fleet ID. When a list of fleet IDs is provided,
-         * attribute objects are returned only for fleets that currently exist.</p> <note>
+         * attribute objects are returned only for fleets that currently exist.</p> 
          * <p>Some API actions may limit the number of fleet IDs allowed in one request. If
          * a request exceeds this limit, the request fails and the error message includes
-         * the maximum allowed.</p> </note> <p> <b>Learn more</b> </p> <p> <a
+         * the maximum allowed.</p>  <p> <b>Learn more</b> </p> <p> <a
          * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting
          * up GameLift Fleets</a> </p> <p> <a
          * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/monitoring-cloudwatch.html#gamelift-metrics-fleet">GameLift
@@ -3207,10 +3207,10 @@ namespace Model
          * requesting multiple fleets, use the pagination parameters to retrieve results as
          * a set of sequential pages. If successful, a <a>FleetCapacity</a> object is
          * returned for each requested fleet ID. When a list of fleet IDs is provided,
-         * attribute objects are returned only for fleets that currently exist.</p> <note>
+         * attribute objects are returned only for fleets that currently exist.</p> 
          * <p>Some API actions may limit the number of fleet IDs allowed in one request. If
          * a request exceeds this limit, the request fails and the error message includes
-         * the maximum allowed.</p> </note> <p> <b>Learn more</b> </p> <p> <a
+         * the maximum allowed.</p>  <p> <b>Learn more</b> </p> <p> <a
          * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting
          * up GameLift Fleets</a> </p> <p> <a
          * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/monitoring-cloudwatch.html#gamelift-metrics-fleet">GameLift
@@ -3392,10 +3392,10 @@ namespace Model
          * fleets, or specify a list of one or more fleet IDs. When requesting multiple
          * fleets, use the pagination parameters to retrieve results as a set of sequential
          * pages. If successful, a <a>FleetUtilization</a> object is returned for each
-         * requested fleet ID, unless the fleet identifier is not found. </p> <note>
+         * requested fleet ID, unless the fleet identifier is not found. </p> 
          * <p>Some API actions may limit the number of fleet IDs allowed in one request. If
          * a request exceeds this limit, the request fails and the error message includes
-         * the maximum allowed.</p> </note> <p> <b>Learn more</b> </p> <p> <a
+         * the maximum allowed.</p>  <p> <b>Learn more</b> </p> <p> <a
          * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting
          * up GameLift Fleets</a> </p> <p> <a
          * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/monitoring-cloudwatch.html#gamelift-metrics-fleet">GameLift
@@ -3423,10 +3423,10 @@ namespace Model
          * fleets, or specify a list of one or more fleet IDs. When requesting multiple
          * fleets, use the pagination parameters to retrieve results as a set of sequential
          * pages. If successful, a <a>FleetUtilization</a> object is returned for each
-         * requested fleet ID, unless the fleet identifier is not found. </p> <note>
+         * requested fleet ID, unless the fleet identifier is not found. </p> 
          * <p>Some API actions may limit the number of fleet IDs allowed in one request. If
          * a request exceeds this limit, the request fails and the error message includes
-         * the maximum allowed.</p> </note> <p> <b>Learn more</b> </p> <p> <a
+         * the maximum allowed.</p>  <p> <b>Learn more</b> </p> <p> <a
          * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting
          * up GameLift Fleets</a> </p> <p> <a
          * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/monitoring-cloudwatch.html#gamelift-metrics-fleet">GameLift
@@ -3456,10 +3456,10 @@ namespace Model
          * fleets, or specify a list of one or more fleet IDs. When requesting multiple
          * fleets, use the pagination parameters to retrieve results as a set of sequential
          * pages. If successful, a <a>FleetUtilization</a> object is returned for each
-         * requested fleet ID, unless the fleet identifier is not found. </p> <note>
+         * requested fleet ID, unless the fleet identifier is not found. </p> 
          * <p>Some API actions may limit the number of fleet IDs allowed in one request. If
          * a request exceeds this limit, the request fails and the error message includes
-         * the maximum allowed.</p> </note> <p> <b>Learn more</b> </p> <p> <a
+         * the maximum allowed.</p>  <p> <b>Learn more</b> </p> <p> <a
          * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting
          * up GameLift Fleets</a> </p> <p> <a
          * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/monitoring-cloudwatch.html#gamelift-metrics-fleet">GameLift
@@ -4536,10 +4536,10 @@ namespace Model
          * <p>Retrieves the location of stored game session logs for a specified game
          * session. When a game session is terminated, Amazon GameLift automatically stores
          * the logs in Amazon S3 and retains them for 14 days. Use this URL to download the
-         * logs.</p> <note> <p>See the <a
+         * logs.</p>  <p>See the <a
          * href="https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_gamelift">AWS
          * Service Limits</a> page for maximum log file sizes. Log files that exceed this
-         * limit are not saved.</p> </note> <ul> <li> <p> <a>CreateGameSession</a> </p>
+         * limit are not saved.</p>  <ul> <li> <p> <a>CreateGameSession</a> </p>
          * </li> <li> <p> <a>DescribeGameSessions</a> </p> </li> <li> <p>
          * <a>DescribeGameSessionDetails</a> </p> </li> <li> <p> <a>SearchGameSessions</a>
          * </p> </li> <li> <p> <a>UpdateGameSession</a> </p> </li> <li> <p>
@@ -4557,10 +4557,10 @@ namespace Model
          * <p>Retrieves the location of stored game session logs for a specified game
          * session. When a game session is terminated, Amazon GameLift automatically stores
          * the logs in Amazon S3 and retains them for 14 days. Use this URL to download the
-         * logs.</p> <note> <p>See the <a
+         * logs.</p>  <p>See the <a
          * href="https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_gamelift">AWS
          * Service Limits</a> page for maximum log file sizes. Log files that exceed this
-         * limit are not saved.</p> </note> <ul> <li> <p> <a>CreateGameSession</a> </p>
+         * limit are not saved.</p>  <ul> <li> <p> <a>CreateGameSession</a> </p>
          * </li> <li> <p> <a>DescribeGameSessions</a> </p> </li> <li> <p>
          * <a>DescribeGameSessionDetails</a> </p> </li> <li> <p> <a>SearchGameSessions</a>
          * </p> </li> <li> <p> <a>UpdateGameSession</a> </p> </li> <li> <p>
@@ -4580,10 +4580,10 @@ namespace Model
          * <p>Retrieves the location of stored game session logs for a specified game
          * session. When a game session is terminated, Amazon GameLift automatically stores
          * the logs in Amazon S3 and retains them for 14 days. Use this URL to download the
-         * logs.</p> <note> <p>See the <a
+         * logs.</p>  <p>See the <a
          * href="https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_gamelift">AWS
          * Service Limits</a> page for maximum log file sizes. Log files that exceed this
-         * limit are not saved.</p> </note> <ul> <li> <p> <a>CreateGameSession</a> </p>
+         * limit are not saved.</p>  <ul> <li> <p> <a>CreateGameSession</a> </p>
          * </li> <li> <p> <a>DescribeGameSessions</a> </p> </li> <li> <p>
          * <a>DescribeGameSessionDetails</a> </p> </li> <li> <p> <a>SearchGameSessions</a>
          * </p> </li> <li> <p> <a>UpdateGameSession</a> </p> </li> <li> <p>
@@ -4687,8 +4687,8 @@ namespace Model
         /**
          * <p>Retrieves all aliases for this AWS account. You can filter the result set by
          * alias name and/or routing strategy type. Use the pagination parameters to
-         * retrieve results in sequential pages.</p> <note> <p>Returned aliases are not
-         * listed in any particular order.</p> </note> <ul> <li> <p> <a>CreateAlias</a>
+         * retrieve results in sequential pages.</p>  <p>Returned aliases are not
+         * listed in any particular order.</p>  <ul> <li> <p> <a>CreateAlias</a>
          * </p> </li> <li> <p> <a>ListAliases</a> </p> </li> <li> <p> <a>DescribeAlias</a>
          * </p> </li> <li> <p> <a>UpdateAlias</a> </p> </li> <li> <p> <a>DeleteAlias</a>
          * </p> </li> <li> <p> <a>ResolveAlias</a> </p> </li> </ul><p><h3>See Also:</h3>  
@@ -4701,8 +4701,8 @@ namespace Model
         /**
          * <p>Retrieves all aliases for this AWS account. You can filter the result set by
          * alias name and/or routing strategy type. Use the pagination parameters to
-         * retrieve results in sequential pages.</p> <note> <p>Returned aliases are not
-         * listed in any particular order.</p> </note> <ul> <li> <p> <a>CreateAlias</a>
+         * retrieve results in sequential pages.</p>  <p>Returned aliases are not
+         * listed in any particular order.</p>  <ul> <li> <p> <a>CreateAlias</a>
          * </p> </li> <li> <p> <a>ListAliases</a> </p> </li> <li> <p> <a>DescribeAlias</a>
          * </p> </li> <li> <p> <a>UpdateAlias</a> </p> </li> <li> <p> <a>DeleteAlias</a>
          * </p> </li> <li> <p> <a>ResolveAlias</a> </p> </li> </ul><p><h3>See Also:</h3>  
@@ -4717,8 +4717,8 @@ namespace Model
         /**
          * <p>Retrieves all aliases for this AWS account. You can filter the result set by
          * alias name and/or routing strategy type. Use the pagination parameters to
-         * retrieve results in sequential pages.</p> <note> <p>Returned aliases are not
-         * listed in any particular order.</p> </note> <ul> <li> <p> <a>CreateAlias</a>
+         * retrieve results in sequential pages.</p>  <p>Returned aliases are not
+         * listed in any particular order.</p>  <ul> <li> <p> <a>CreateAlias</a>
          * </p> </li> <li> <p> <a>ListAliases</a> </p> </li> <li> <p> <a>DescribeAlias</a>
          * </p> </li> <li> <p> <a>UpdateAlias</a> </p> </li> <li> <p> <a>DeleteAlias</a>
          * </p> </li> <li> <p> <a>ResolveAlias</a> </p> </li> </ul><p><h3>See Also:</h3>  
@@ -4734,8 +4734,8 @@ namespace Model
          * <p>Retrieves build resources for all builds associated with the AWS account in
          * use. You can limit results to builds that are in a specific status by using the
          * <code>Status</code> parameter. Use the pagination parameters to retrieve results
-         * in a set of sequential pages. </p> <note> <p>Build resources are not listed in
-         * any particular order.</p> </note> <p> <b>Learn more</b> </p> <p> <a
+         * in a set of sequential pages. </p>  <p>Build resources are not listed in
+         * any particular order.</p>  <p> <b>Learn more</b> </p> <p> <a
          * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-intro.html">
          * Upload a Custom Server Build</a> </p> <p> <b>Related operations</b> </p> <ul>
          * <li> <p> <a>CreateBuild</a> </p> </li> <li> <p> <a>ListBuilds</a> </p> </li>
@@ -4750,8 +4750,8 @@ namespace Model
          * <p>Retrieves build resources for all builds associated with the AWS account in
          * use. You can limit results to builds that are in a specific status by using the
          * <code>Status</code> parameter. Use the pagination parameters to retrieve results
-         * in a set of sequential pages. </p> <note> <p>Build resources are not listed in
-         * any particular order.</p> </note> <p> <b>Learn more</b> </p> <p> <a
+         * in a set of sequential pages. </p>  <p>Build resources are not listed in
+         * any particular order.</p>  <p> <b>Learn more</b> </p> <p> <a
          * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-intro.html">
          * Upload a Custom Server Build</a> </p> <p> <b>Related operations</b> </p> <ul>
          * <li> <p> <a>CreateBuild</a> </p> </li> <li> <p> <a>ListBuilds</a> </p> </li>
@@ -4768,8 +4768,8 @@ namespace Model
          * <p>Retrieves build resources for all builds associated with the AWS account in
          * use. You can limit results to builds that are in a specific status by using the
          * <code>Status</code> parameter. Use the pagination parameters to retrieve results
-         * in a set of sequential pages. </p> <note> <p>Build resources are not listed in
-         * any particular order.</p> </note> <p> <b>Learn more</b> </p> <p> <a
+         * in a set of sequential pages. </p>  <p>Build resources are not listed in
+         * any particular order.</p>  <p> <b>Learn more</b> </p> <p> <a
          * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-intro.html">
          * Upload a Custom Server Build</a> </p> <p> <b>Related operations</b> </p> <ul>
          * <li> <p> <a>CreateBuild</a> </p> </li> <li> <p> <a>ListBuilds</a> </p> </li>
@@ -4786,8 +4786,8 @@ namespace Model
          * <p>Retrieves a collection of fleet resources for this AWS account. You can
          * filter the result set to find only those fleets that are deployed with a
          * specific build or script. Use the pagination parameters to retrieve results in
-         * sequential pages.</p> <note> <p>Fleet resources are not listed in a particular
-         * order.</p> </note> <p> <b>Learn more</b> </p> <p> <a
+         * sequential pages.</p>  <p>Fleet resources are not listed in a particular
+         * order.</p>  <p> <b>Learn more</b> </p> <p> <a
          * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting
          * up GameLift Fleets</a> </p> <p> <b>Related operations</b> </p> <ul> <li> <p>
          * <a>CreateFleet</a> </p> </li> <li> <p> <a>ListFleets</a> </p> </li> <li> <p>
@@ -4804,8 +4804,8 @@ namespace Model
          * <p>Retrieves a collection of fleet resources for this AWS account. You can
          * filter the result set to find only those fleets that are deployed with a
          * specific build or script. Use the pagination parameters to retrieve results in
-         * sequential pages.</p> <note> <p>Fleet resources are not listed in a particular
-         * order.</p> </note> <p> <b>Learn more</b> </p> <p> <a
+         * sequential pages.</p>  <p>Fleet resources are not listed in a particular
+         * order.</p>  <p> <b>Learn more</b> </p> <p> <a
          * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting
          * up GameLift Fleets</a> </p> <p> <b>Related operations</b> </p> <ul> <li> <p>
          * <a>CreateFleet</a> </p> </li> <li> <p> <a>ListFleets</a> </p> </li> <li> <p>
@@ -4824,8 +4824,8 @@ namespace Model
          * <p>Retrieves a collection of fleet resources for this AWS account. You can
          * filter the result set to find only those fleets that are deployed with a
          * specific build or script. Use the pagination parameters to retrieve results in
-         * sequential pages.</p> <note> <p>Fleet resources are not listed in a particular
-         * order.</p> </note> <p> <b>Learn more</b> </p> <p> <a
+         * sequential pages.</p>  <p>Fleet resources are not listed in a particular
+         * order.</p>  <p> <b>Learn more</b> </p> <p> <a
          * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting
          * up GameLift Fleets</a> </p> <p> <b>Related operations</b> </p> <ul> <li> <p>
          * <a>CreateFleet</a> </p> </li> <li> <p> <a>ListFleets</a> </p> </li> <li> <p>
@@ -5565,12 +5565,12 @@ namespace Model
          * <b>hasAvailablePlayerSessions</b> -- Boolean value indicating whether a game
          * session has reached its maximum number of players. It is highly recommended that
          * all search requests include this filter attribute to optimize search performance
-         * and return only sessions that players can join. </p> </li> </ul> <note>
+         * and return only sessions that players can join. </p> </li> </ul> 
          * <p>Returned values for <code>playerSessionCount</code> and
          * <code>hasAvailablePlayerSessions</code> change quickly as players join sessions
          * and others drop out. Results should be considered a snapshot in time. Be sure to
          * refresh search results often, and handle sessions that fill up before a player
-         * can join. </p> </note> <p>To search or sort, specify either a fleet ID or an
+         * can join. </p>  <p>To search or sort, specify either a fleet ID or an
          * alias ID, and provide a search filter expression, a sort expression, or both. If
          * successful, a collection of <a>GameSession</a> objects matching the request is
          * returned. Use the pagination parameters to retrieve results as a set of
@@ -5618,12 +5618,12 @@ namespace Model
          * <b>hasAvailablePlayerSessions</b> -- Boolean value indicating whether a game
          * session has reached its maximum number of players. It is highly recommended that
          * all search requests include this filter attribute to optimize search performance
-         * and return only sessions that players can join. </p> </li> </ul> <note>
+         * and return only sessions that players can join. </p> </li> </ul> 
          * <p>Returned values for <code>playerSessionCount</code> and
          * <code>hasAvailablePlayerSessions</code> change quickly as players join sessions
          * and others drop out. Results should be considered a snapshot in time. Be sure to
          * refresh search results often, and handle sessions that fill up before a player
-         * can join. </p> </note> <p>To search or sort, specify either a fleet ID or an
+         * can join. </p>  <p>To search or sort, specify either a fleet ID or an
          * alias ID, and provide a search filter expression, a sort expression, or both. If
          * successful, a collection of <a>GameSession</a> objects matching the request is
          * returned. Use the pagination parameters to retrieve results as a set of
@@ -5673,12 +5673,12 @@ namespace Model
          * <b>hasAvailablePlayerSessions</b> -- Boolean value indicating whether a game
          * session has reached its maximum number of players. It is highly recommended that
          * all search requests include this filter attribute to optimize search performance
-         * and return only sessions that players can join. </p> </li> </ul> <note>
+         * and return only sessions that players can join. </p> </li> </ul> 
          * <p>Returned values for <code>playerSessionCount</code> and
          * <code>hasAvailablePlayerSessions</code> change quickly as players join sessions
          * and others drop out. Results should be considered a snapshot in time. Be sure to
          * refresh search results often, and handle sessions that fill up before a player
-         * can join. </p> </note> <p>To search or sort, specify either a fleet ID or an
+         * can join. </p>  <p>To search or sort, specify either a fleet ID or an
          * alias ID, and provide a search filter expression, a sort expression, or both. If
          * successful, a collection of <a>GameSession</a> objects matching the request is
          * returned. Use the pagination parameters to retrieve results as a set of
@@ -6352,9 +6352,9 @@ namespace Model
          * backfill for an individual game session. This is for game sessions that are
          * created with a matchmaking configuration that has automatic backfill enabled.
          * The ticket ID is included in the <code>MatchmakerData</code> of an updated game
-         * session object, which is provided to the game server.</p> <note> <p>If the
+         * session object, which is provided to the game server.</p>  <p>If the
          * action is successful, the service sends back an empty JSON struct with the HTTP
-         * 200 response (not an empty HTTP body).</p> </note> <p> <b>Learn more</b> </p>
+         * 200 response (not an empty HTTP body).</p>  <p> <b>Learn more</b> </p>
          * <p> <a
          * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/match-client.html">
          * Add FlexMatch to a Game Client</a> </p> <p> <b>Related operations</b> </p> <ul>
@@ -6375,9 +6375,9 @@ namespace Model
          * backfill for an individual game session. This is for game sessions that are
          * created with a matchmaking configuration that has automatic backfill enabled.
          * The ticket ID is included in the <code>MatchmakerData</code> of an updated game
-         * session object, which is provided to the game server.</p> <note> <p>If the
+         * session object, which is provided to the game server.</p>  <p>If the
          * action is successful, the service sends back an empty JSON struct with the HTTP
-         * 200 response (not an empty HTTP body).</p> </note> <p> <b>Learn more</b> </p>
+         * 200 response (not an empty HTTP body).</p>  <p> <b>Learn more</b> </p>
          * <p> <a
          * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/match-client.html">
          * Add FlexMatch to a Game Client</a> </p> <p> <b>Related operations</b> </p> <ul>
@@ -6400,9 +6400,9 @@ namespace Model
          * backfill for an individual game session. This is for game sessions that are
          * created with a matchmaking configuration that has automatic backfill enabled.
          * The ticket ID is included in the <code>MatchmakerData</code> of an updated game
-         * session object, which is provided to the game server.</p> <note> <p>If the
+         * session object, which is provided to the game server.</p>  <p>If the
          * action is successful, the service sends back an empty JSON struct with the HTTP
-         * 200 response (not an empty HTTP body).</p> </note> <p> <b>Learn more</b> </p>
+         * 200 response (not an empty HTTP body).</p>  <p> <b>Learn more</b> </p>
          * <p> <a
          * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/match-client.html">
          * Add FlexMatch to a Game Client</a> </p> <p> <b>Related operations</b> </p> <ul>

@@ -93,50 +93,50 @@ namespace Model
 
 
     /**
-     * <p>A list of one to four worker IP address ranges (<a
+     * <p>A list of one to ten worker IP address ranges (<a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>)
-     * that can be used to access tasks assigned to this workforce.</p> <p>Maximum:
-     * Four CIDR values</p>
+     * that can be used to access tasks assigned to this workforce.</p> <p>Maximum: Ten
+     * CIDR values</p>
      */
     inline const SourceIpConfig& GetSourceIpConfig() const{ return m_sourceIpConfig; }
 
     /**
-     * <p>A list of one to four worker IP address ranges (<a
+     * <p>A list of one to ten worker IP address ranges (<a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>)
-     * that can be used to access tasks assigned to this workforce.</p> <p>Maximum:
-     * Four CIDR values</p>
+     * that can be used to access tasks assigned to this workforce.</p> <p>Maximum: Ten
+     * CIDR values</p>
      */
     inline bool SourceIpConfigHasBeenSet() const { return m_sourceIpConfigHasBeenSet; }
 
     /**
-     * <p>A list of one to four worker IP address ranges (<a
+     * <p>A list of one to ten worker IP address ranges (<a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>)
-     * that can be used to access tasks assigned to this workforce.</p> <p>Maximum:
-     * Four CIDR values</p>
+     * that can be used to access tasks assigned to this workforce.</p> <p>Maximum: Ten
+     * CIDR values</p>
      */
     inline void SetSourceIpConfig(const SourceIpConfig& value) { m_sourceIpConfigHasBeenSet = true; m_sourceIpConfig = value; }
 
     /**
-     * <p>A list of one to four worker IP address ranges (<a
+     * <p>A list of one to ten worker IP address ranges (<a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>)
-     * that can be used to access tasks assigned to this workforce.</p> <p>Maximum:
-     * Four CIDR values</p>
+     * that can be used to access tasks assigned to this workforce.</p> <p>Maximum: Ten
+     * CIDR values</p>
      */
     inline void SetSourceIpConfig(SourceIpConfig&& value) { m_sourceIpConfigHasBeenSet = true; m_sourceIpConfig = std::move(value); }
 
     /**
-     * <p>A list of one to four worker IP address ranges (<a
+     * <p>A list of one to ten worker IP address ranges (<a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>)
-     * that can be used to access tasks assigned to this workforce.</p> <p>Maximum:
-     * Four CIDR values</p>
+     * that can be used to access tasks assigned to this workforce.</p> <p>Maximum: Ten
+     * CIDR values</p>
      */
     inline UpdateWorkforceRequest& WithSourceIpConfig(const SourceIpConfig& value) { SetSourceIpConfig(value); return *this;}
 
     /**
-     * <p>A list of one to four worker IP address ranges (<a
+     * <p>A list of one to ten worker IP address ranges (<a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>)
-     * that can be used to access tasks assigned to this workforce.</p> <p>Maximum:
-     * Four CIDR values</p>
+     * that can be used to access tasks assigned to this workforce.</p> <p>Maximum: Ten
+     * CIDR values</p>
      */
     inline UpdateWorkforceRequest& WithSourceIpConfig(SourceIpConfig&& value) { SetSourceIpConfig(std::move(value)); return *this;}
 

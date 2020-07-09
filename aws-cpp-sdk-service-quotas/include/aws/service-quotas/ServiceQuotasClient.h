@@ -144,13 +144,13 @@ namespace Model
    * Quotas actions that you can call from an API. For the Service Quotas user guide,
    * which explains how to use Service Quotas from the console, see <a
    * href="https://docs.aws.amazon.com/servicequotas/latest/userguide/intro.html">What
-   * is Service Quotas</a>. </p> <note> <p>AWS provides SDKs that consist of
+   * is Service Quotas</a>. </p>  <p>AWS provides SDKs that consist of
    * libraries and sample code for programming languages and platforms (Java, Ruby,
    * .NET, iOS, Android, etc...,). The SDKs provide a convenient way to create
    * programmatic access to Service Quotas and AWS. For information about the AWS
    * SDKs, including how to download and install them, see the <a
    * href="https://docs.aws.amazon.com/aws.amazon.com/tools">Tools for Amazon Web
-   * Services</a> page.</p> </note>
+   * Services</a> page.</p> 
    */
   class AWS_SERVICEQUOTAS_API ServiceQuotasClient : public Aws::Client::AWSJsonClient
   {
@@ -457,12 +457,12 @@ namespace Model
          * <code>ListAWSDefaultServiceQuotas</code> is the default value assigned by AWS.
          * This request returns a list of all service quotas for the specified service. The
          * listing of each you'll see the default values are the values that AWS provides
-         * for the quotas. </p> <note> <p>Always check the <code>NextToken</code> response
+         * for the quotas. </p>  <p>Always check the <code>NextToken</code> response
          * parameter when calling any of the <code>List*</code> operations. These
          * operations can return an unexpected list of results, even when there are more
          * results available. When this happens, the <code>NextToken</code> response
          * parameter contains a value to pass the next call to the same API to request the
-         * next part of the list.</p> </note><p><h3>See Also:</h3>   <a
+         * next part of the list.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/service-quotas-2019-06-24/ListAWSDefaultServiceQuotas">AWS
          * API Reference</a></p>
          */
@@ -475,12 +475,12 @@ namespace Model
          * <code>ListAWSDefaultServiceQuotas</code> is the default value assigned by AWS.
          * This request returns a list of all service quotas for the specified service. The
          * listing of each you'll see the default values are the values that AWS provides
-         * for the quotas. </p> <note> <p>Always check the <code>NextToken</code> response
+         * for the quotas. </p>  <p>Always check the <code>NextToken</code> response
          * parameter when calling any of the <code>List*</code> operations. These
          * operations can return an unexpected list of results, even when there are more
          * results available. When this happens, the <code>NextToken</code> response
          * parameter contains a value to pass the next call to the same API to request the
-         * next part of the list.</p> </note><p><h3>See Also:</h3>   <a
+         * next part of the list.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/service-quotas-2019-06-24/ListAWSDefaultServiceQuotas">AWS
          * API Reference</a></p>
          *
@@ -495,12 +495,12 @@ namespace Model
          * <code>ListAWSDefaultServiceQuotas</code> is the default value assigned by AWS.
          * This request returns a list of all service quotas for the specified service. The
          * listing of each you'll see the default values are the values that AWS provides
-         * for the quotas. </p> <note> <p>Always check the <code>NextToken</code> response
+         * for the quotas. </p>  <p>Always check the <code>NextToken</code> response
          * parameter when calling any of the <code>List*</code> operations. These
          * operations can return an unexpected list of results, even when there are more
          * results available. When this happens, the <code>NextToken</code> response
          * parameter contains a value to pass the next call to the same API to request the
-         * next part of the list.</p> </note><p><h3>See Also:</h3>   <a
+         * next part of the list.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/service-quotas-2019-06-24/ListAWSDefaultServiceQuotas">AWS
          * API Reference</a></p>
          *
@@ -604,12 +604,12 @@ namespace Model
         /**
          * <p>Lists all service quotas for the specified AWS service. This request returns
          * a list of the service quotas for the specified service. you'll see the default
-         * values are the values that AWS provides for the quotas. </p> <note> <p>Always
+         * values are the values that AWS provides for the quotas. </p>  <p>Always
          * check the <code>NextToken</code> response parameter when calling any of the
          * <code>List*</code> operations. These operations can return an unexpected list of
          * results, even when there are more results available. When this happens, the
          * <code>NextToken</code> response parameter contains a value to pass the next call
-         * to the same API to request the next part of the list.</p> </note><p><h3>See
+         * to the same API to request the next part of the list.</p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/service-quotas-2019-06-24/ListServiceQuotas">AWS
          * API Reference</a></p>
@@ -619,12 +619,12 @@ namespace Model
         /**
          * <p>Lists all service quotas for the specified AWS service. This request returns
          * a list of the service quotas for the specified service. you'll see the default
-         * values are the values that AWS provides for the quotas. </p> <note> <p>Always
+         * values are the values that AWS provides for the quotas. </p>  <p>Always
          * check the <code>NextToken</code> response parameter when calling any of the
          * <code>List*</code> operations. These operations can return an unexpected list of
          * results, even when there are more results available. When this happens, the
          * <code>NextToken</code> response parameter contains a value to pass the next call
-         * to the same API to request the next part of the list.</p> </note><p><h3>See
+         * to the same API to request the next part of the list.</p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/service-quotas-2019-06-24/ListServiceQuotas">AWS
          * API Reference</a></p>
@@ -636,12 +636,12 @@ namespace Model
         /**
          * <p>Lists all service quotas for the specified AWS service. This request returns
          * a list of the service quotas for the specified service. you'll see the default
-         * values are the values that AWS provides for the quotas. </p> <note> <p>Always
+         * values are the values that AWS provides for the quotas. </p>  <p>Always
          * check the <code>NextToken</code> response parameter when calling any of the
          * <code>List*</code> operations. These operations can return an unexpected list of
          * results, even when there are more results available. When this happens, the
          * <code>NextToken</code> response parameter contains a value to pass the next call
-         * to the same API to request the next part of the list.</p> </note><p><h3>See
+         * to the same API to request the next part of the list.</p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/service-quotas-2019-06-24/ListServiceQuotas">AWS
          * API Reference</a></p>

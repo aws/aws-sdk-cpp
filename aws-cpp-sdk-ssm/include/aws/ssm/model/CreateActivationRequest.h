@@ -39,57 +39,57 @@ namespace Model
 
     /**
      * <p>A user-defined description of the resource that you want to register with
-     * Systems Manager. </p> <important> <p>Do not enter personally identifiable
-     * information in this field.</p> </important>
+     * Systems Manager. </p>  <p>Do not enter personally identifiable
+     * information in this field.</p> 
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
      * <p>A user-defined description of the resource that you want to register with
-     * Systems Manager. </p> <important> <p>Do not enter personally identifiable
-     * information in this field.</p> </important>
+     * Systems Manager. </p>  <p>Do not enter personally identifiable
+     * information in this field.</p> 
      */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * <p>A user-defined description of the resource that you want to register with
-     * Systems Manager. </p> <important> <p>Do not enter personally identifiable
-     * information in this field.</p> </important>
+     * Systems Manager. </p>  <p>Do not enter personally identifiable
+     * information in this field.</p> 
      */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
      * <p>A user-defined description of the resource that you want to register with
-     * Systems Manager. </p> <important> <p>Do not enter personally identifiable
-     * information in this field.</p> </important>
+     * Systems Manager. </p>  <p>Do not enter personally identifiable
+     * information in this field.</p> 
      */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
      * <p>A user-defined description of the resource that you want to register with
-     * Systems Manager. </p> <important> <p>Do not enter personally identifiable
-     * information in this field.</p> </important>
+     * Systems Manager. </p>  <p>Do not enter personally identifiable
+     * information in this field.</p> 
      */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
      * <p>A user-defined description of the resource that you want to register with
-     * Systems Manager. </p> <important> <p>Do not enter personally identifiable
-     * information in this field.</p> </important>
+     * Systems Manager. </p>  <p>Do not enter personally identifiable
+     * information in this field.</p> 
      */
     inline CreateActivationRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
      * <p>A user-defined description of the resource that you want to register with
-     * Systems Manager. </p> <important> <p>Do not enter personally identifiable
-     * information in this field.</p> </important>
+     * Systems Manager. </p>  <p>Do not enter personally identifiable
+     * information in this field.</p> 
      */
     inline CreateActivationRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
      * <p>A user-defined description of the resource that you want to register with
-     * Systems Manager. </p> <important> <p>Do not enter personally identifiable
-     * information in this field.</p> </important>
+     * Systems Manager. </p>  <p>Do not enter personally identifiable
+     * information in this field.</p> 
      */
     inline CreateActivationRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
@@ -97,64 +97,64 @@ namespace Model
     /**
      * <p>The name of the registered, managed instance as it will appear in the Systems
      * Manager console or when you use the AWS command line tools to list Systems
-     * Manager resources.</p> <important> <p>Do not enter personally identifiable
-     * information in this field.</p> </important>
+     * Manager resources.</p>  <p>Do not enter personally identifiable
+     * information in this field.</p> 
      */
     inline const Aws::String& GetDefaultInstanceName() const{ return m_defaultInstanceName; }
 
     /**
      * <p>The name of the registered, managed instance as it will appear in the Systems
      * Manager console or when you use the AWS command line tools to list Systems
-     * Manager resources.</p> <important> <p>Do not enter personally identifiable
-     * information in this field.</p> </important>
+     * Manager resources.</p>  <p>Do not enter personally identifiable
+     * information in this field.</p> 
      */
     inline bool DefaultInstanceNameHasBeenSet() const { return m_defaultInstanceNameHasBeenSet; }
 
     /**
      * <p>The name of the registered, managed instance as it will appear in the Systems
      * Manager console or when you use the AWS command line tools to list Systems
-     * Manager resources.</p> <important> <p>Do not enter personally identifiable
-     * information in this field.</p> </important>
+     * Manager resources.</p>  <p>Do not enter personally identifiable
+     * information in this field.</p> 
      */
     inline void SetDefaultInstanceName(const Aws::String& value) { m_defaultInstanceNameHasBeenSet = true; m_defaultInstanceName = value; }
 
     /**
      * <p>The name of the registered, managed instance as it will appear in the Systems
      * Manager console or when you use the AWS command line tools to list Systems
-     * Manager resources.</p> <important> <p>Do not enter personally identifiable
-     * information in this field.</p> </important>
+     * Manager resources.</p>  <p>Do not enter personally identifiable
+     * information in this field.</p> 
      */
     inline void SetDefaultInstanceName(Aws::String&& value) { m_defaultInstanceNameHasBeenSet = true; m_defaultInstanceName = std::move(value); }
 
     /**
      * <p>The name of the registered, managed instance as it will appear in the Systems
      * Manager console or when you use the AWS command line tools to list Systems
-     * Manager resources.</p> <important> <p>Do not enter personally identifiable
-     * information in this field.</p> </important>
+     * Manager resources.</p>  <p>Do not enter personally identifiable
+     * information in this field.</p> 
      */
     inline void SetDefaultInstanceName(const char* value) { m_defaultInstanceNameHasBeenSet = true; m_defaultInstanceName.assign(value); }
 
     /**
      * <p>The name of the registered, managed instance as it will appear in the Systems
      * Manager console or when you use the AWS command line tools to list Systems
-     * Manager resources.</p> <important> <p>Do not enter personally identifiable
-     * information in this field.</p> </important>
+     * Manager resources.</p>  <p>Do not enter personally identifiable
+     * information in this field.</p> 
      */
     inline CreateActivationRequest& WithDefaultInstanceName(const Aws::String& value) { SetDefaultInstanceName(value); return *this;}
 
     /**
      * <p>The name of the registered, managed instance as it will appear in the Systems
      * Manager console or when you use the AWS command line tools to list Systems
-     * Manager resources.</p> <important> <p>Do not enter personally identifiable
-     * information in this field.</p> </important>
+     * Manager resources.</p>  <p>Do not enter personally identifiable
+     * information in this field.</p> 
      */
     inline CreateActivationRequest& WithDefaultInstanceName(Aws::String&& value) { SetDefaultInstanceName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the registered, managed instance as it will appear in the Systems
      * Manager console or when you use the AWS command line tools to list Systems
-     * Manager resources.</p> <important> <p>Do not enter personally identifiable
-     * information in this field.</p> </important>
+     * Manager resources.</p>  <p>Do not enter personally identifiable
+     * information in this field.</p> 
      */
     inline CreateActivationRequest& WithDefaultInstanceName(const char* value) { SetDefaultInstanceName(value); return *this;}
 
@@ -317,11 +317,11 @@ namespace Model
      * servers or virtual machines (VMs) in your on-premises environment you intend to
      * activate. In this case, you could specify the following key name/value
      * pairs:</p> <ul> <li> <p> <code>Key=OS,Value=Windows</code> </p> </li> <li> <p>
-     * <code>Key=Environment,Value=Production</code> </p> </li> </ul> <important>
+     * <code>Key=Environment,Value=Production</code> </p> </li> </ul> 
      * <p>When you install SSM Agent on your on-premises servers and VMs, you specify
      * an activation ID and code. When you specify the activation ID and code, tags
      * assigned to the activation are automatically applied to the on-premises servers
-     * or VMs.</p> </important> <p>You can't add tags to or delete tags from an
+     * or VMs.</p>  <p>You can't add tags to or delete tags from an
      * existing activation. You can tag your on-premises servers and VMs after they
      * connect to Systems Manager for the first time and are assigned a managed
      * instance ID. This means they are listed in the AWS Systems Manager console with
@@ -338,11 +338,11 @@ namespace Model
      * servers or virtual machines (VMs) in your on-premises environment you intend to
      * activate. In this case, you could specify the following key name/value
      * pairs:</p> <ul> <li> <p> <code>Key=OS,Value=Windows</code> </p> </li> <li> <p>
-     * <code>Key=Environment,Value=Production</code> </p> </li> </ul> <important>
+     * <code>Key=Environment,Value=Production</code> </p> </li> </ul> 
      * <p>When you install SSM Agent on your on-premises servers and VMs, you specify
      * an activation ID and code. When you specify the activation ID and code, tags
      * assigned to the activation are automatically applied to the on-premises servers
-     * or VMs.</p> </important> <p>You can't add tags to or delete tags from an
+     * or VMs.</p>  <p>You can't add tags to or delete tags from an
      * existing activation. You can tag your on-premises servers and VMs after they
      * connect to Systems Manager for the first time and are assigned a managed
      * instance ID. This means they are listed in the AWS Systems Manager console with
@@ -359,11 +359,11 @@ namespace Model
      * servers or virtual machines (VMs) in your on-premises environment you intend to
      * activate. In this case, you could specify the following key name/value
      * pairs:</p> <ul> <li> <p> <code>Key=OS,Value=Windows</code> </p> </li> <li> <p>
-     * <code>Key=Environment,Value=Production</code> </p> </li> </ul> <important>
+     * <code>Key=Environment,Value=Production</code> </p> </li> </ul> 
      * <p>When you install SSM Agent on your on-premises servers and VMs, you specify
      * an activation ID and code. When you specify the activation ID and code, tags
      * assigned to the activation are automatically applied to the on-premises servers
-     * or VMs.</p> </important> <p>You can't add tags to or delete tags from an
+     * or VMs.</p>  <p>You can't add tags to or delete tags from an
      * existing activation. You can tag your on-premises servers and VMs after they
      * connect to Systems Manager for the first time and are assigned a managed
      * instance ID. This means they are listed in the AWS Systems Manager console with
@@ -380,11 +380,11 @@ namespace Model
      * servers or virtual machines (VMs) in your on-premises environment you intend to
      * activate. In this case, you could specify the following key name/value
      * pairs:</p> <ul> <li> <p> <code>Key=OS,Value=Windows</code> </p> </li> <li> <p>
-     * <code>Key=Environment,Value=Production</code> </p> </li> </ul> <important>
+     * <code>Key=Environment,Value=Production</code> </p> </li> </ul> 
      * <p>When you install SSM Agent on your on-premises servers and VMs, you specify
      * an activation ID and code. When you specify the activation ID and code, tags
      * assigned to the activation are automatically applied to the on-premises servers
-     * or VMs.</p> </important> <p>You can't add tags to or delete tags from an
+     * or VMs.</p>  <p>You can't add tags to or delete tags from an
      * existing activation. You can tag your on-premises servers and VMs after they
      * connect to Systems Manager for the first time and are assigned a managed
      * instance ID. This means they are listed in the AWS Systems Manager console with
@@ -401,11 +401,11 @@ namespace Model
      * servers or virtual machines (VMs) in your on-premises environment you intend to
      * activate. In this case, you could specify the following key name/value
      * pairs:</p> <ul> <li> <p> <code>Key=OS,Value=Windows</code> </p> </li> <li> <p>
-     * <code>Key=Environment,Value=Production</code> </p> </li> </ul> <important>
+     * <code>Key=Environment,Value=Production</code> </p> </li> </ul> 
      * <p>When you install SSM Agent on your on-premises servers and VMs, you specify
      * an activation ID and code. When you specify the activation ID and code, tags
      * assigned to the activation are automatically applied to the on-premises servers
-     * or VMs.</p> </important> <p>You can't add tags to or delete tags from an
+     * or VMs.</p>  <p>You can't add tags to or delete tags from an
      * existing activation. You can tag your on-premises servers and VMs after they
      * connect to Systems Manager for the first time and are assigned a managed
      * instance ID. This means they are listed in the AWS Systems Manager console with
@@ -422,11 +422,11 @@ namespace Model
      * servers or virtual machines (VMs) in your on-premises environment you intend to
      * activate. In this case, you could specify the following key name/value
      * pairs:</p> <ul> <li> <p> <code>Key=OS,Value=Windows</code> </p> </li> <li> <p>
-     * <code>Key=Environment,Value=Production</code> </p> </li> </ul> <important>
+     * <code>Key=Environment,Value=Production</code> </p> </li> </ul> 
      * <p>When you install SSM Agent on your on-premises servers and VMs, you specify
      * an activation ID and code. When you specify the activation ID and code, tags
      * assigned to the activation are automatically applied to the on-premises servers
-     * or VMs.</p> </important> <p>You can't add tags to or delete tags from an
+     * or VMs.</p>  <p>You can't add tags to or delete tags from an
      * existing activation. You can tag your on-premises servers and VMs after they
      * connect to Systems Manager for the first time and are assigned a managed
      * instance ID. This means they are listed in the AWS Systems Manager console with
@@ -443,11 +443,11 @@ namespace Model
      * servers or virtual machines (VMs) in your on-premises environment you intend to
      * activate. In this case, you could specify the following key name/value
      * pairs:</p> <ul> <li> <p> <code>Key=OS,Value=Windows</code> </p> </li> <li> <p>
-     * <code>Key=Environment,Value=Production</code> </p> </li> </ul> <important>
+     * <code>Key=Environment,Value=Production</code> </p> </li> </ul> 
      * <p>When you install SSM Agent on your on-premises servers and VMs, you specify
      * an activation ID and code. When you specify the activation ID and code, tags
      * assigned to the activation are automatically applied to the on-premises servers
-     * or VMs.</p> </important> <p>You can't add tags to or delete tags from an
+     * or VMs.</p>  <p>You can't add tags to or delete tags from an
      * existing activation. You can tag your on-premises servers and VMs after they
      * connect to Systems Manager for the first time and are assigned a managed
      * instance ID. This means they are listed in the AWS Systems Manager console with
@@ -464,11 +464,11 @@ namespace Model
      * servers or virtual machines (VMs) in your on-premises environment you intend to
      * activate. In this case, you could specify the following key name/value
      * pairs:</p> <ul> <li> <p> <code>Key=OS,Value=Windows</code> </p> </li> <li> <p>
-     * <code>Key=Environment,Value=Production</code> </p> </li> </ul> <important>
+     * <code>Key=Environment,Value=Production</code> </p> </li> </ul> 
      * <p>When you install SSM Agent on your on-premises servers and VMs, you specify
      * an activation ID and code. When you specify the activation ID and code, tags
      * assigned to the activation are automatically applied to the on-premises servers
-     * or VMs.</p> </important> <p>You can't add tags to or delete tags from an
+     * or VMs.</p>  <p>You can't add tags to or delete tags from an
      * existing activation. You can tag your on-premises servers and VMs after they
      * connect to Systems Manager for the first time and are assigned a managed
      * instance ID. This means they are listed in the AWS Systems Manager console with

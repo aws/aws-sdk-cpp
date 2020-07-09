@@ -274,56 +274,56 @@ namespace Model
 
 
     /**
-     * <note> <p>Amazon EMR releases 4.x or later.</p> </note> <p>The list of
+     *  <p>Amazon EMR releases 4.x or later.</p>  <p>The list of
      * configurations supplied for an EMR cluster instance group. You can specify a
      * separate configuration for each instance group (master, core, and task).</p>
      */
     inline const Aws::Vector<Configuration>& GetConfigurations() const{ return m_configurations; }
 
     /**
-     * <note> <p>Amazon EMR releases 4.x or later.</p> </note> <p>The list of
+     *  <p>Amazon EMR releases 4.x or later.</p>  <p>The list of
      * configurations supplied for an EMR cluster instance group. You can specify a
      * separate configuration for each instance group (master, core, and task).</p>
      */
     inline bool ConfigurationsHasBeenSet() const { return m_configurationsHasBeenSet; }
 
     /**
-     * <note> <p>Amazon EMR releases 4.x or later.</p> </note> <p>The list of
+     *  <p>Amazon EMR releases 4.x or later.</p>  <p>The list of
      * configurations supplied for an EMR cluster instance group. You can specify a
      * separate configuration for each instance group (master, core, and task).</p>
      */
     inline void SetConfigurations(const Aws::Vector<Configuration>& value) { m_configurationsHasBeenSet = true; m_configurations = value; }
 
     /**
-     * <note> <p>Amazon EMR releases 4.x or later.</p> </note> <p>The list of
+     *  <p>Amazon EMR releases 4.x or later.</p>  <p>The list of
      * configurations supplied for an EMR cluster instance group. You can specify a
      * separate configuration for each instance group (master, core, and task).</p>
      */
     inline void SetConfigurations(Aws::Vector<Configuration>&& value) { m_configurationsHasBeenSet = true; m_configurations = std::move(value); }
 
     /**
-     * <note> <p>Amazon EMR releases 4.x or later.</p> </note> <p>The list of
+     *  <p>Amazon EMR releases 4.x or later.</p>  <p>The list of
      * configurations supplied for an EMR cluster instance group. You can specify a
      * separate configuration for each instance group (master, core, and task).</p>
      */
     inline InstanceGroupConfig& WithConfigurations(const Aws::Vector<Configuration>& value) { SetConfigurations(value); return *this;}
 
     /**
-     * <note> <p>Amazon EMR releases 4.x or later.</p> </note> <p>The list of
+     *  <p>Amazon EMR releases 4.x or later.</p>  <p>The list of
      * configurations supplied for an EMR cluster instance group. You can specify a
      * separate configuration for each instance group (master, core, and task).</p>
      */
     inline InstanceGroupConfig& WithConfigurations(Aws::Vector<Configuration>&& value) { SetConfigurations(std::move(value)); return *this;}
 
     /**
-     * <note> <p>Amazon EMR releases 4.x or later.</p> </note> <p>The list of
+     *  <p>Amazon EMR releases 4.x or later.</p>  <p>The list of
      * configurations supplied for an EMR cluster instance group. You can specify a
      * separate configuration for each instance group (master, core, and task).</p>
      */
     inline InstanceGroupConfig& AddConfigurations(const Configuration& value) { m_configurationsHasBeenSet = true; m_configurations.push_back(value); return *this; }
 
     /**
-     * <note> <p>Amazon EMR releases 4.x or later.</p> </note> <p>The list of
+     *  <p>Amazon EMR releases 4.x or later.</p>  <p>The list of
      * configurations supplied for an EMR cluster instance group. You can specify a
      * separate configuration for each instance group (master, core, and task).</p>
      */

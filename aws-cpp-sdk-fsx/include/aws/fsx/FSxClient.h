@@ -384,11 +384,11 @@ namespace Model
          * created. Examples are if a transport level timeout occurred, or your connection
          * was reset. If you use the same client request token and the initial call created
          * a file system, the client receives success as long as the parameters are the
-         * same.</p> <note> <p>The <code>CreateFileSystem</code> call returns while the
+         * same.</p>  <p>The <code>CreateFileSystem</code> call returns while the
          * file system's lifecycle state is still <code>CREATING</code>. You can check the
          * file-system creation status by calling the <a>DescribeFileSystems</a> operation,
          * which returns the file system state along with other information.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CreateFileSystem">AWS
          * API Reference</a></p>
          */
@@ -414,11 +414,11 @@ namespace Model
          * created. Examples are if a transport level timeout occurred, or your connection
          * was reset. If you use the same client request token and the initial call created
          * a file system, the client receives success as long as the parameters are the
-         * same.</p> <note> <p>The <code>CreateFileSystem</code> call returns while the
+         * same.</p>  <p>The <code>CreateFileSystem</code> call returns while the
          * file system's lifecycle state is still <code>CREATING</code>. You can check the
          * file-system creation status by calling the <a>DescribeFileSystems</a> operation,
          * which returns the file system state along with other information.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CreateFileSystem">AWS
          * API Reference</a></p>
          *
@@ -446,11 +446,11 @@ namespace Model
          * created. Examples are if a transport level timeout occurred, or your connection
          * was reset. If you use the same client request token and the initial call created
          * a file system, the client receives success as long as the parameters are the
-         * same.</p> <note> <p>The <code>CreateFileSystem</code> call returns while the
+         * same.</p>  <p>The <code>CreateFileSystem</code> call returns while the
          * file system's lifecycle state is still <code>CREATING</code>. You can check the
          * file-system creation status by calling the <a>DescribeFileSystems</a> operation,
          * which returns the file system state along with other information.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CreateFileSystem">AWS
          * API Reference</a></p>
          *
@@ -477,12 +477,12 @@ namespace Model
          * way that makes it unclear whether a file system was created. Examples are if a
          * transport level timeout occurred, or your connection was reset. If you use the
          * same client request token and the initial call created a file system, the client
-         * receives success as long as the parameters are the same.</p> <note> <p>The
+         * receives success as long as the parameters are the same.</p>  <p>The
          * <code>CreateFileSystemFromBackup</code> call returns while the file system's
          * lifecycle state is still <code>CREATING</code>. You can check the file-system
          * creation status by calling the <a>DescribeFileSystems</a> operation, which
          * returns the file system state along with other information.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CreateFileSystemFromBackup">AWS
          * API Reference</a></p>
          */
@@ -507,12 +507,12 @@ namespace Model
          * way that makes it unclear whether a file system was created. Examples are if a
          * transport level timeout occurred, or your connection was reset. If you use the
          * same client request token and the initial call created a file system, the client
-         * receives success as long as the parameters are the same.</p> <note> <p>The
+         * receives success as long as the parameters are the same.</p>  <p>The
          * <code>CreateFileSystemFromBackup</code> call returns while the file system's
          * lifecycle state is still <code>CREATING</code>. You can check the file-system
          * creation status by calling the <a>DescribeFileSystems</a> operation, which
          * returns the file system state along with other information.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CreateFileSystemFromBackup">AWS
          * API Reference</a></p>
          *
@@ -539,12 +539,12 @@ namespace Model
          * way that makes it unclear whether a file system was created. Examples are if a
          * transport level timeout occurred, or your connection was reset. If you use the
          * same client request token and the initial call created a file system, the client
-         * receives success as long as the parameters are the same.</p> <note> <p>The
+         * receives success as long as the parameters are the same.</p>  <p>The
          * <code>CreateFileSystemFromBackup</code> call returns while the file system's
          * lifecycle state is still <code>CREATING</code>. You can check the file-system
          * creation status by calling the <a>DescribeFileSystems</a> operation, which
          * returns the file system state along with other information.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CreateFileSystemFromBackup">AWS
          * API Reference</a></p>
          *
@@ -556,9 +556,9 @@ namespace Model
          * <p>Deletes an Amazon FSx backup, deleting its contents. After deletion, the
          * backup no longer exists, and its data is gone.</p> <p>The
          * <code>DeleteBackup</code> call returns instantly. The backup will not show up in
-         * later <code>DescribeBackups</code> calls.</p> <important> <p>The data in a
+         * later <code>DescribeBackups</code> calls.</p>  <p>The data in a
          * deleted backup is also deleted and can't be recovered by any means.</p>
-         * </important><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DeleteBackup">AWS
          * API Reference</a></p>
          */
@@ -568,9 +568,9 @@ namespace Model
          * <p>Deletes an Amazon FSx backup, deleting its contents. After deletion, the
          * backup no longer exists, and its data is gone.</p> <p>The
          * <code>DeleteBackup</code> call returns instantly. The backup will not show up in
-         * later <code>DescribeBackups</code> calls.</p> <important> <p>The data in a
+         * later <code>DescribeBackups</code> calls.</p>  <p>The data in a
          * deleted backup is also deleted and can't be recovered by any means.</p>
-         * </important><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DeleteBackup">AWS
          * API Reference</a></p>
          *
@@ -582,9 +582,9 @@ namespace Model
          * <p>Deletes an Amazon FSx backup, deleting its contents. After deletion, the
          * backup no longer exists, and its data is gone.</p> <p>The
          * <code>DeleteBackup</code> call returns instantly. The backup will not show up in
-         * later <code>DescribeBackups</code> calls.</p> <important> <p>The data in a
+         * later <code>DescribeBackups</code> calls.</p>  <p>The data in a
          * deleted backup is also deleted and can't be recovered by any means.</p>
-         * </important><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DeleteBackup">AWS
          * API Reference</a></p>
          *
@@ -603,11 +603,11 @@ namespace Model
          * deletion status by calling the <a>DescribeFileSystems</a> action, which returns
          * a list of file systems in your account. If you pass the file system ID for a
          * deleted file system, the <a>DescribeFileSystems</a> returns a
-         * <code>FileSystemNotFound</code> error.</p> <note> <p>Deleting an Amazon FSx for
+         * <code>FileSystemNotFound</code> error.</p>  <p>Deleting an Amazon FSx for
          * Lustre file system will fail with a 400 BadRequest if a data repository task is
-         * in a <code>PENDING</code> or <code>EXECUTING</code> state.</p> </note>
-         * <important> <p>The data in a deleted file system is also deleted and can't be
-         * recovered by any means.</p> </important><p><h3>See Also:</h3>   <a
+         * in a <code>PENDING</code> or <code>EXECUTING</code> state.</p> 
+         *  <p>The data in a deleted file system is also deleted and can't be
+         * recovered by any means.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DeleteFileSystem">AWS
          * API Reference</a></p>
          */
@@ -624,11 +624,11 @@ namespace Model
          * deletion status by calling the <a>DescribeFileSystems</a> action, which returns
          * a list of file systems in your account. If you pass the file system ID for a
          * deleted file system, the <a>DescribeFileSystems</a> returns a
-         * <code>FileSystemNotFound</code> error.</p> <note> <p>Deleting an Amazon FSx for
+         * <code>FileSystemNotFound</code> error.</p>  <p>Deleting an Amazon FSx for
          * Lustre file system will fail with a 400 BadRequest if a data repository task is
-         * in a <code>PENDING</code> or <code>EXECUTING</code> state.</p> </note>
-         * <important> <p>The data in a deleted file system is also deleted and can't be
-         * recovered by any means.</p> </important><p><h3>See Also:</h3>   <a
+         * in a <code>PENDING</code> or <code>EXECUTING</code> state.</p> 
+         *  <p>The data in a deleted file system is also deleted and can't be
+         * recovered by any means.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DeleteFileSystem">AWS
          * API Reference</a></p>
          *
@@ -647,11 +647,11 @@ namespace Model
          * deletion status by calling the <a>DescribeFileSystems</a> action, which returns
          * a list of file systems in your account. If you pass the file system ID for a
          * deleted file system, the <a>DescribeFileSystems</a> returns a
-         * <code>FileSystemNotFound</code> error.</p> <note> <p>Deleting an Amazon FSx for
+         * <code>FileSystemNotFound</code> error.</p>  <p>Deleting an Amazon FSx for
          * Lustre file system will fail with a 400 BadRequest if a data repository task is
-         * in a <code>PENDING</code> or <code>EXECUTING</code> state.</p> </note>
-         * <important> <p>The data in a deleted file system is also deleted and can't be
-         * recovered by any means.</p> </important><p><h3>See Also:</h3>   <a
+         * in a <code>PENDING</code> or <code>EXECUTING</code> state.</p> 
+         *  <p>The data in a deleted file system is also deleted and can't be
+         * recovered by any means.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DeleteFileSystem">AWS
          * API Reference</a></p>
          *

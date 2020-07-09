@@ -404,9 +404,9 @@ namespace Model
          * <p>Gets an endpoint for a specified stream for either reading or writing. Use
          * this endpoint in your application to read from the specified stream (using the
          * <code>GetMedia</code> or <code>GetMediaForFragmentList</code> operations) or
-         * write to it (using the <code>PutMedia</code> operation). </p> <note> <p>The
+         * write to it (using the <code>PutMedia</code> operation). </p>  <p>The
          * returned endpoint does not have the API name appended. The client needs to add
-         * the API name to the returned endpoint.</p> </note> <p>In the request, specify
+         * the API name to the returned endpoint.</p>  <p>In the request, specify
          * the stream either by <code>StreamName</code> or
          * <code>StreamARN</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/GetDataEndpoint">AWS
@@ -418,9 +418,9 @@ namespace Model
          * <p>Gets an endpoint for a specified stream for either reading or writing. Use
          * this endpoint in your application to read from the specified stream (using the
          * <code>GetMedia</code> or <code>GetMediaForFragmentList</code> operations) or
-         * write to it (using the <code>PutMedia</code> operation). </p> <note> <p>The
+         * write to it (using the <code>PutMedia</code> operation). </p>  <p>The
          * returned endpoint does not have the API name appended. The client needs to add
-         * the API name to the returned endpoint.</p> </note> <p>In the request, specify
+         * the API name to the returned endpoint.</p>  <p>In the request, specify
          * the stream either by <code>StreamName</code> or
          * <code>StreamARN</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/GetDataEndpoint">AWS
@@ -434,9 +434,9 @@ namespace Model
          * <p>Gets an endpoint for a specified stream for either reading or writing. Use
          * this endpoint in your application to read from the specified stream (using the
          * <code>GetMedia</code> or <code>GetMediaForFragmentList</code> operations) or
-         * write to it (using the <code>PutMedia</code> operation). </p> <note> <p>The
+         * write to it (using the <code>PutMedia</code> operation). </p>  <p>The
          * returned endpoint does not have the API name appended. The client needs to add
-         * the API name to the returned endpoint.</p> </note> <p>In the request, specify
+         * the API name to the returned endpoint.</p>  <p>In the request, specify
          * the stream either by <code>StreamName</code> or
          * <code>StreamARN</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/GetDataEndpoint">AWS
@@ -796,8 +796,8 @@ namespace Model
          * you specify. To indicate whether you want to increase or decrease the data
          * retention period, specify the <code>Operation</code> parameter in the request
          * body. In the request, you must specify either the <code>StreamName</code> or the
-         * <code>StreamARN</code>. </p> <note> <p>The retention period that you specify
-         * replaces the current value.</p> </note> <p>This operation requires permission
+         * <code>StreamARN</code>. </p>  <p>The retention period that you specify
+         * replaces the current value.</p>  <p>This operation requires permission
          * for the <code>KinesisVideo:UpdateDataRetention</code> action.</p> <p>Changing
          * the data retention period affects the data in the stream as follows:</p> <ul>
          * <li> <p>If the data retention period is increased, existing data is retained for
@@ -818,8 +818,8 @@ namespace Model
          * you specify. To indicate whether you want to increase or decrease the data
          * retention period, specify the <code>Operation</code> parameter in the request
          * body. In the request, you must specify either the <code>StreamName</code> or the
-         * <code>StreamARN</code>. </p> <note> <p>The retention period that you specify
-         * replaces the current value.</p> </note> <p>This operation requires permission
+         * <code>StreamARN</code>. </p>  <p>The retention period that you specify
+         * replaces the current value.</p>  <p>This operation requires permission
          * for the <code>KinesisVideo:UpdateDataRetention</code> action.</p> <p>Changing
          * the data retention period affects the data in the stream as follows:</p> <ul>
          * <li> <p>If the data retention period is increased, existing data is retained for
@@ -842,8 +842,8 @@ namespace Model
          * you specify. To indicate whether you want to increase or decrease the data
          * retention period, specify the <code>Operation</code> parameter in the request
          * body. In the request, you must specify either the <code>StreamName</code> or the
-         * <code>StreamARN</code>. </p> <note> <p>The retention period that you specify
-         * replaces the current value.</p> </note> <p>This operation requires permission
+         * <code>StreamARN</code>. </p>  <p>The retention period that you specify
+         * replaces the current value.</p>  <p>This operation requires permission
          * for the <code>KinesisVideo:UpdateDataRetention</code> action.</p> <p>Changing
          * the data retention period affects the data in the stream as follows:</p> <ul>
          * <li> <p>If the data retention period is increased, existing data is retained for

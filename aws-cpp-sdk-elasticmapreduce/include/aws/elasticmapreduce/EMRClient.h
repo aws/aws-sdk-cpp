@@ -249,18 +249,18 @@ namespace Model
 
 
         /**
-         * <p>Adds an instance fleet to a running cluster.</p> <note> <p>The instance fleet
+         * <p>Adds an instance fleet to a running cluster.</p>  <p>The instance fleet
          * configuration is available only in Amazon EMR versions 4.8.0 and later,
-         * excluding 5.0.x.</p> </note><p><h3>See Also:</h3>   <a
+         * excluding 5.0.x.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/AddInstanceFleet">AWS
          * API Reference</a></p>
          */
         virtual Model::AddInstanceFleetOutcome AddInstanceFleet(const Model::AddInstanceFleetRequest& request) const;
 
         /**
-         * <p>Adds an instance fleet to a running cluster.</p> <note> <p>The instance fleet
+         * <p>Adds an instance fleet to a running cluster.</p>  <p>The instance fleet
          * configuration is available only in Amazon EMR versions 4.8.0 and later,
-         * excluding 5.0.x.</p> </note><p><h3>See Also:</h3>   <a
+         * excluding 5.0.x.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/AddInstanceFleet">AWS
          * API Reference</a></p>
          *
@@ -269,9 +269,9 @@ namespace Model
         virtual Model::AddInstanceFleetOutcomeCallable AddInstanceFleetCallable(const Model::AddInstanceFleetRequest& request) const;
 
         /**
-         * <p>Adds an instance fleet to a running cluster.</p> <note> <p>The instance fleet
+         * <p>Adds an instance fleet to a running cluster.</p>  <p>The instance fleet
          * configuration is available only in Amazon EMR versions 4.8.0 and later,
-         * excluding 5.0.x.</p> </note><p><h3>See Also:</h3>   <a
+         * excluding 5.0.x.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/AddInstanceFleet">AWS
          * API Reference</a></p>
          *
@@ -729,8 +729,8 @@ namespace Model
 
         /**
          * <p>Lists all available details about the instance fleets in a cluster.</p>
-         * <note> <p>The instance fleet configuration is available only in Amazon EMR
-         * versions 4.8.0 and later, excluding 5.0.x versions.</p> </note><p><h3>See
+         *  <p>The instance fleet configuration is available only in Amazon EMR
+         * versions 4.8.0 and later, excluding 5.0.x versions.</p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ListInstanceFleets">AWS
          * API Reference</a></p>
@@ -739,8 +739,8 @@ namespace Model
 
         /**
          * <p>Lists all available details about the instance fleets in a cluster.</p>
-         * <note> <p>The instance fleet configuration is available only in Amazon EMR
-         * versions 4.8.0 and later, excluding 5.0.x versions.</p> </note><p><h3>See
+         *  <p>The instance fleet configuration is available only in Amazon EMR
+         * versions 4.8.0 and later, excluding 5.0.x versions.</p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ListInstanceFleets">AWS
          * API Reference</a></p>
@@ -751,8 +751,8 @@ namespace Model
 
         /**
          * <p>Lists all available details about the instance fleets in a cluster.</p>
-         * <note> <p>The instance fleet configuration is available only in Amazon EMR
-         * versions 4.8.0 and later, excluding 5.0.x versions.</p> </note><p><h3>See
+         *  <p>The instance fleet configuration is available only in Amazon EMR
+         * versions 4.8.0 and later, excluding 5.0.x versions.</p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ListInstanceFleets">AWS
          * API Reference</a></p>
@@ -922,9 +922,9 @@ namespace Model
         /**
          * <p>Modifies the target On-Demand and target Spot capacities for the instance
          * fleet with the specified InstanceFleetID within the cluster specified using
-         * ClusterID. The call either succeeds or fails atomically.</p> <note> <p>The
+         * ClusterID. The call either succeeds or fails atomically.</p>  <p>The
          * instance fleet configuration is available only in Amazon EMR versions 4.8.0 and
-         * later, excluding 5.0.x versions.</p> </note><p><h3>See Also:</h3>   <a
+         * later, excluding 5.0.x versions.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ModifyInstanceFleet">AWS
          * API Reference</a></p>
          */
@@ -933,9 +933,9 @@ namespace Model
         /**
          * <p>Modifies the target On-Demand and target Spot capacities for the instance
          * fleet with the specified InstanceFleetID within the cluster specified using
-         * ClusterID. The call either succeeds or fails atomically.</p> <note> <p>The
+         * ClusterID. The call either succeeds or fails atomically.</p>  <p>The
          * instance fleet configuration is available only in Amazon EMR versions 4.8.0 and
-         * later, excluding 5.0.x versions.</p> </note><p><h3>See Also:</h3>   <a
+         * later, excluding 5.0.x versions.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ModifyInstanceFleet">AWS
          * API Reference</a></p>
          *
@@ -946,9 +946,9 @@ namespace Model
         /**
          * <p>Modifies the target On-Demand and target Spot capacities for the instance
          * fleet with the specified InstanceFleetID within the cluster specified using
-         * ClusterID. The call either succeeds or fails atomically.</p> <note> <p>The
+         * ClusterID. The call either succeeds or fails atomically.</p>  <p>The
          * instance fleet configuration is available only in Amazon EMR versions 4.8.0 and
-         * later, excluding 5.0.x versions.</p> </note><p><h3>See Also:</h3>   <a
+         * later, excluding 5.0.x versions.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ModifyInstanceFleet">AWS
          * API Reference</a></p>
          *
@@ -1214,10 +1214,10 @@ namespace Model
          * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/AddMoreThan256Steps.html">Add
          * More than 256 Steps to a Cluster</a> in the <i>Amazon EMR Management
          * Guide</i>.</p> <p>For long running clusters, we recommend that you periodically
-         * store your results.</p> <note> <p>The instance fleets configuration is available
+         * store your results.</p>  <p>The instance fleets configuration is available
          * only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions. The
          * RunJobFlow request can contain InstanceFleets parameters or InstanceGroups
-         * parameters, but not both.</p> </note><p><h3>See Also:</h3>   <a
+         * parameters, but not both.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/RunJobFlow">AWS
          * API Reference</a></p>
          */
@@ -1243,10 +1243,10 @@ namespace Model
          * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/AddMoreThan256Steps.html">Add
          * More than 256 Steps to a Cluster</a> in the <i>Amazon EMR Management
          * Guide</i>.</p> <p>For long running clusters, we recommend that you periodically
-         * store your results.</p> <note> <p>The instance fleets configuration is available
+         * store your results.</p>  <p>The instance fleets configuration is available
          * only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions. The
          * RunJobFlow request can contain InstanceFleets parameters or InstanceGroups
-         * parameters, but not both.</p> </note><p><h3>See Also:</h3>   <a
+         * parameters, but not both.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/RunJobFlow">AWS
          * API Reference</a></p>
          *
@@ -1274,10 +1274,10 @@ namespace Model
          * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/AddMoreThan256Steps.html">Add
          * More than 256 Steps to a Cluster</a> in the <i>Amazon EMR Management
          * Guide</i>.</p> <p>For long running clusters, we recommend that you periodically
-         * store your results.</p> <note> <p>The instance fleets configuration is available
+         * store your results.</p>  <p>The instance fleets configuration is available
          * only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions. The
          * RunJobFlow request can contain InstanceFleets parameters or InstanceGroups
-         * parameters, but not both.</p> </note><p><h3>See Also:</h3>   <a
+         * parameters, but not both.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/RunJobFlow">AWS
          * API Reference</a></p>
          *

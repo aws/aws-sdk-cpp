@@ -222,44 +222,44 @@ namespace Model
     /**
      * <p>The size, in bytes, of the image in the repository.</p> <p>If the image is a
      * manifest list, this will be the max size of all manifests in the list.</p>
-     * <note> <p>Beginning with Docker version 1.9, the Docker client compresses image
+     *  <p>Beginning with Docker version 1.9, the Docker client compresses image
      * layers before pushing them to a V2 Docker registry. The output of the
      * <code>docker images</code> command shows the uncompressed image size, so it may
      * return a larger image size than the image sizes returned by
-     * <a>DescribeImages</a>.</p> </note>
+     * <a>DescribeImages</a>.</p> 
      */
     inline long long GetImageSizeInBytes() const{ return m_imageSizeInBytes; }
 
     /**
      * <p>The size, in bytes, of the image in the repository.</p> <p>If the image is a
      * manifest list, this will be the max size of all manifests in the list.</p>
-     * <note> <p>Beginning with Docker version 1.9, the Docker client compresses image
+     *  <p>Beginning with Docker version 1.9, the Docker client compresses image
      * layers before pushing them to a V2 Docker registry. The output of the
      * <code>docker images</code> command shows the uncompressed image size, so it may
      * return a larger image size than the image sizes returned by
-     * <a>DescribeImages</a>.</p> </note>
+     * <a>DescribeImages</a>.</p> 
      */
     inline bool ImageSizeInBytesHasBeenSet() const { return m_imageSizeInBytesHasBeenSet; }
 
     /**
      * <p>The size, in bytes, of the image in the repository.</p> <p>If the image is a
      * manifest list, this will be the max size of all manifests in the list.</p>
-     * <note> <p>Beginning with Docker version 1.9, the Docker client compresses image
+     *  <p>Beginning with Docker version 1.9, the Docker client compresses image
      * layers before pushing them to a V2 Docker registry. The output of the
      * <code>docker images</code> command shows the uncompressed image size, so it may
      * return a larger image size than the image sizes returned by
-     * <a>DescribeImages</a>.</p> </note>
+     * <a>DescribeImages</a>.</p> 
      */
     inline void SetImageSizeInBytes(long long value) { m_imageSizeInBytesHasBeenSet = true; m_imageSizeInBytes = value; }
 
     /**
      * <p>The size, in bytes, of the image in the repository.</p> <p>If the image is a
      * manifest list, this will be the max size of all manifests in the list.</p>
-     * <note> <p>Beginning with Docker version 1.9, the Docker client compresses image
+     *  <p>Beginning with Docker version 1.9, the Docker client compresses image
      * layers before pushing them to a V2 Docker registry. The output of the
      * <code>docker images</code> command shows the uncompressed image size, so it may
      * return a larger image size than the image sizes returned by
-     * <a>DescribeImages</a>.</p> </note>
+     * <a>DescribeImages</a>.</p> 
      */
     inline ImageDetail& WithImageSizeInBytes(long long value) { SetImageSizeInBytes(value); return *this;}
 

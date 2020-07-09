@@ -318,9 +318,9 @@ namespace Model
      * a single request, unless the value for <code>Select</code> is
      * <code>SPECIFIC_ATTRIBUTES</code>. (This usage is equivalent to specifying
      * <code>AttributesToGet</code> without any value for <code>Select</code>.)</p>
-     * <note> <p>If you use the <code>ProjectionExpression</code> parameter, then the
+     *  <p>If you use the <code>ProjectionExpression</code> parameter, then the
      * value for <code>Select</code> can only be <code>SPECIFIC_ATTRIBUTES</code>. Any
-     * other value for <code>Select</code> will return an error.</p> </note>
+     * other value for <code>Select</code> will return an error.</p> 
      */
     inline const Select& GetSelect() const{ return m_select; }
 
@@ -357,9 +357,9 @@ namespace Model
      * a single request, unless the value for <code>Select</code> is
      * <code>SPECIFIC_ATTRIBUTES</code>. (This usage is equivalent to specifying
      * <code>AttributesToGet</code> without any value for <code>Select</code>.)</p>
-     * <note> <p>If you use the <code>ProjectionExpression</code> parameter, then the
+     *  <p>If you use the <code>ProjectionExpression</code> parameter, then the
      * value for <code>Select</code> can only be <code>SPECIFIC_ATTRIBUTES</code>. Any
-     * other value for <code>Select</code> will return an error.</p> </note>
+     * other value for <code>Select</code> will return an error.</p> 
      */
     inline bool SelectHasBeenSet() const { return m_selectHasBeenSet; }
 
@@ -396,9 +396,9 @@ namespace Model
      * a single request, unless the value for <code>Select</code> is
      * <code>SPECIFIC_ATTRIBUTES</code>. (This usage is equivalent to specifying
      * <code>AttributesToGet</code> without any value for <code>Select</code>.)</p>
-     * <note> <p>If you use the <code>ProjectionExpression</code> parameter, then the
+     *  <p>If you use the <code>ProjectionExpression</code> parameter, then the
      * value for <code>Select</code> can only be <code>SPECIFIC_ATTRIBUTES</code>. Any
-     * other value for <code>Select</code> will return an error.</p> </note>
+     * other value for <code>Select</code> will return an error.</p> 
      */
     inline void SetSelect(const Select& value) { m_selectHasBeenSet = true; m_select = value; }
 
@@ -435,9 +435,9 @@ namespace Model
      * a single request, unless the value for <code>Select</code> is
      * <code>SPECIFIC_ATTRIBUTES</code>. (This usage is equivalent to specifying
      * <code>AttributesToGet</code> without any value for <code>Select</code>.)</p>
-     * <note> <p>If you use the <code>ProjectionExpression</code> parameter, then the
+     *  <p>If you use the <code>ProjectionExpression</code> parameter, then the
      * value for <code>Select</code> can only be <code>SPECIFIC_ATTRIBUTES</code>. Any
-     * other value for <code>Select</code> will return an error.</p> </note>
+     * other value for <code>Select</code> will return an error.</p> 
      */
     inline void SetSelect(Select&& value) { m_selectHasBeenSet = true; m_select = std::move(value); }
 
@@ -474,9 +474,9 @@ namespace Model
      * a single request, unless the value for <code>Select</code> is
      * <code>SPECIFIC_ATTRIBUTES</code>. (This usage is equivalent to specifying
      * <code>AttributesToGet</code> without any value for <code>Select</code>.)</p>
-     * <note> <p>If you use the <code>ProjectionExpression</code> parameter, then the
+     *  <p>If you use the <code>ProjectionExpression</code> parameter, then the
      * value for <code>Select</code> can only be <code>SPECIFIC_ATTRIBUTES</code>. Any
-     * other value for <code>Select</code> will return an error.</p> </note>
+     * other value for <code>Select</code> will return an error.</p> 
      */
     inline ScanRequest& WithSelect(const Select& value) { SetSelect(value); return *this;}
 
@@ -513,9 +513,9 @@ namespace Model
      * a single request, unless the value for <code>Select</code> is
      * <code>SPECIFIC_ATTRIBUTES</code>. (This usage is equivalent to specifying
      * <code>AttributesToGet</code> without any value for <code>Select</code>.)</p>
-     * <note> <p>If you use the <code>ProjectionExpression</code> parameter, then the
+     *  <p>If you use the <code>ProjectionExpression</code> parameter, then the
      * value for <code>Select</code> can only be <code>SPECIFIC_ATTRIBUTES</code>. Any
-     * other value for <code>Select</code> will return an error.</p> </note>
+     * other value for <code>Select</code> will return an error.</p> 
      */
     inline ScanRequest& WithSelect(Select&& value) { SetSelect(std::move(value)); return *this;}
 
@@ -1045,9 +1045,9 @@ namespace Model
      * <p>A string that contains conditions that DynamoDB applies after the
      * <code>Scan</code> operation, but before the data is returned to you. Items that
      * do not satisfy the <code>FilterExpression</code> criteria are not returned.</p>
-     * <note> <p>A <code>FilterExpression</code> is applied after the items have
+     *  <p>A <code>FilterExpression</code> is applied after the items have
      * already been read; the process of filtering does not consume any additional read
-     * capacity units.</p> </note> <p>For more information, see <a
+     * capacity units.</p>  <p>For more information, see <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#FilteringResults">Filter
      * Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
@@ -1057,9 +1057,9 @@ namespace Model
      * <p>A string that contains conditions that DynamoDB applies after the
      * <code>Scan</code> operation, but before the data is returned to you. Items that
      * do not satisfy the <code>FilterExpression</code> criteria are not returned.</p>
-     * <note> <p>A <code>FilterExpression</code> is applied after the items have
+     *  <p>A <code>FilterExpression</code> is applied after the items have
      * already been read; the process of filtering does not consume any additional read
-     * capacity units.</p> </note> <p>For more information, see <a
+     * capacity units.</p>  <p>For more information, see <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#FilteringResults">Filter
      * Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
@@ -1069,9 +1069,9 @@ namespace Model
      * <p>A string that contains conditions that DynamoDB applies after the
      * <code>Scan</code> operation, but before the data is returned to you. Items that
      * do not satisfy the <code>FilterExpression</code> criteria are not returned.</p>
-     * <note> <p>A <code>FilterExpression</code> is applied after the items have
+     *  <p>A <code>FilterExpression</code> is applied after the items have
      * already been read; the process of filtering does not consume any additional read
-     * capacity units.</p> </note> <p>For more information, see <a
+     * capacity units.</p>  <p>For more information, see <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#FilteringResults">Filter
      * Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
@@ -1081,9 +1081,9 @@ namespace Model
      * <p>A string that contains conditions that DynamoDB applies after the
      * <code>Scan</code> operation, but before the data is returned to you. Items that
      * do not satisfy the <code>FilterExpression</code> criteria are not returned.</p>
-     * <note> <p>A <code>FilterExpression</code> is applied after the items have
+     *  <p>A <code>FilterExpression</code> is applied after the items have
      * already been read; the process of filtering does not consume any additional read
-     * capacity units.</p> </note> <p>For more information, see <a
+     * capacity units.</p>  <p>For more information, see <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#FilteringResults">Filter
      * Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
@@ -1093,9 +1093,9 @@ namespace Model
      * <p>A string that contains conditions that DynamoDB applies after the
      * <code>Scan</code> operation, but before the data is returned to you. Items that
      * do not satisfy the <code>FilterExpression</code> criteria are not returned.</p>
-     * <note> <p>A <code>FilterExpression</code> is applied after the items have
+     *  <p>A <code>FilterExpression</code> is applied after the items have
      * already been read; the process of filtering does not consume any additional read
-     * capacity units.</p> </note> <p>For more information, see <a
+     * capacity units.</p>  <p>For more information, see <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#FilteringResults">Filter
      * Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
@@ -1105,9 +1105,9 @@ namespace Model
      * <p>A string that contains conditions that DynamoDB applies after the
      * <code>Scan</code> operation, but before the data is returned to you. Items that
      * do not satisfy the <code>FilterExpression</code> criteria are not returned.</p>
-     * <note> <p>A <code>FilterExpression</code> is applied after the items have
+     *  <p>A <code>FilterExpression</code> is applied after the items have
      * already been read; the process of filtering does not consume any additional read
-     * capacity units.</p> </note> <p>For more information, see <a
+     * capacity units.</p>  <p>For more information, see <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#FilteringResults">Filter
      * Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
@@ -1117,9 +1117,9 @@ namespace Model
      * <p>A string that contains conditions that DynamoDB applies after the
      * <code>Scan</code> operation, but before the data is returned to you. Items that
      * do not satisfy the <code>FilterExpression</code> criteria are not returned.</p>
-     * <note> <p>A <code>FilterExpression</code> is applied after the items have
+     *  <p>A <code>FilterExpression</code> is applied after the items have
      * already been read; the process of filtering does not consume any additional read
-     * capacity units.</p> </note> <p>For more information, see <a
+     * capacity units.</p>  <p>For more information, see <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#FilteringResults">Filter
      * Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
@@ -1129,9 +1129,9 @@ namespace Model
      * <p>A string that contains conditions that DynamoDB applies after the
      * <code>Scan</code> operation, but before the data is returned to you. Items that
      * do not satisfy the <code>FilterExpression</code> criteria are not returned.</p>
-     * <note> <p>A <code>FilterExpression</code> is applied after the items have
+     *  <p>A <code>FilterExpression</code> is applied after the items have
      * already been read; the process of filtering does not consume any additional read
-     * capacity units.</p> </note> <p>For more information, see <a
+     * capacity units.</p>  <p>For more information, see <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#FilteringResults">Filter
      * Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
@@ -1156,9 +1156,9 @@ namespace Model
      * you could specify the following for <code>ExpressionAttributeNames</code>:</p>
      * <ul> <li> <p> <code>{"#P":"Percentile"}</code> </p> </li> </ul> <p>You could
      * then use this substitution in an expression, as in this example:</p> <ul> <li>
-     * <p> <code>#P = :val</code> </p> </li> </ul> <note> <p>Tokens that begin with the
+     * <p> <code>#P = :val</code> </p> </li> </ul>  <p>Tokens that begin with the
      * <b>:</b> character are <i>expression attribute values</i>, which are
-     * placeholders for the actual value at runtime.</p> </note> <p>For more
+     * placeholders for the actual value at runtime.</p>  <p>For more
      * information on expression attribute names, see <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
@@ -1183,9 +1183,9 @@ namespace Model
      * you could specify the following for <code>ExpressionAttributeNames</code>:</p>
      * <ul> <li> <p> <code>{"#P":"Percentile"}</code> </p> </li> </ul> <p>You could
      * then use this substitution in an expression, as in this example:</p> <ul> <li>
-     * <p> <code>#P = :val</code> </p> </li> </ul> <note> <p>Tokens that begin with the
+     * <p> <code>#P = :val</code> </p> </li> </ul>  <p>Tokens that begin with the
      * <b>:</b> character are <i>expression attribute values</i>, which are
-     * placeholders for the actual value at runtime.</p> </note> <p>For more
+     * placeholders for the actual value at runtime.</p>  <p>For more
      * information on expression attribute names, see <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
@@ -1210,9 +1210,9 @@ namespace Model
      * you could specify the following for <code>ExpressionAttributeNames</code>:</p>
      * <ul> <li> <p> <code>{"#P":"Percentile"}</code> </p> </li> </ul> <p>You could
      * then use this substitution in an expression, as in this example:</p> <ul> <li>
-     * <p> <code>#P = :val</code> </p> </li> </ul> <note> <p>Tokens that begin with the
+     * <p> <code>#P = :val</code> </p> </li> </ul>  <p>Tokens that begin with the
      * <b>:</b> character are <i>expression attribute values</i>, which are
-     * placeholders for the actual value at runtime.</p> </note> <p>For more
+     * placeholders for the actual value at runtime.</p>  <p>For more
      * information on expression attribute names, see <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
@@ -1237,9 +1237,9 @@ namespace Model
      * you could specify the following for <code>ExpressionAttributeNames</code>:</p>
      * <ul> <li> <p> <code>{"#P":"Percentile"}</code> </p> </li> </ul> <p>You could
      * then use this substitution in an expression, as in this example:</p> <ul> <li>
-     * <p> <code>#P = :val</code> </p> </li> </ul> <note> <p>Tokens that begin with the
+     * <p> <code>#P = :val</code> </p> </li> </ul>  <p>Tokens that begin with the
      * <b>:</b> character are <i>expression attribute values</i>, which are
-     * placeholders for the actual value at runtime.</p> </note> <p>For more
+     * placeholders for the actual value at runtime.</p>  <p>For more
      * information on expression attribute names, see <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
@@ -1264,9 +1264,9 @@ namespace Model
      * you could specify the following for <code>ExpressionAttributeNames</code>:</p>
      * <ul> <li> <p> <code>{"#P":"Percentile"}</code> </p> </li> </ul> <p>You could
      * then use this substitution in an expression, as in this example:</p> <ul> <li>
-     * <p> <code>#P = :val</code> </p> </li> </ul> <note> <p>Tokens that begin with the
+     * <p> <code>#P = :val</code> </p> </li> </ul>  <p>Tokens that begin with the
      * <b>:</b> character are <i>expression attribute values</i>, which are
-     * placeholders for the actual value at runtime.</p> </note> <p>For more
+     * placeholders for the actual value at runtime.</p>  <p>For more
      * information on expression attribute names, see <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
@@ -1291,9 +1291,9 @@ namespace Model
      * you could specify the following for <code>ExpressionAttributeNames</code>:</p>
      * <ul> <li> <p> <code>{"#P":"Percentile"}</code> </p> </li> </ul> <p>You could
      * then use this substitution in an expression, as in this example:</p> <ul> <li>
-     * <p> <code>#P = :val</code> </p> </li> </ul> <note> <p>Tokens that begin with the
+     * <p> <code>#P = :val</code> </p> </li> </ul>  <p>Tokens that begin with the
      * <b>:</b> character are <i>expression attribute values</i>, which are
-     * placeholders for the actual value at runtime.</p> </note> <p>For more
+     * placeholders for the actual value at runtime.</p>  <p>For more
      * information on expression attribute names, see <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
@@ -1318,9 +1318,9 @@ namespace Model
      * you could specify the following for <code>ExpressionAttributeNames</code>:</p>
      * <ul> <li> <p> <code>{"#P":"Percentile"}</code> </p> </li> </ul> <p>You could
      * then use this substitution in an expression, as in this example:</p> <ul> <li>
-     * <p> <code>#P = :val</code> </p> </li> </ul> <note> <p>Tokens that begin with the
+     * <p> <code>#P = :val</code> </p> </li> </ul>  <p>Tokens that begin with the
      * <b>:</b> character are <i>expression attribute values</i>, which are
-     * placeholders for the actual value at runtime.</p> </note> <p>For more
+     * placeholders for the actual value at runtime.</p>  <p>For more
      * information on expression attribute names, see <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
@@ -1345,9 +1345,9 @@ namespace Model
      * you could specify the following for <code>ExpressionAttributeNames</code>:</p>
      * <ul> <li> <p> <code>{"#P":"Percentile"}</code> </p> </li> </ul> <p>You could
      * then use this substitution in an expression, as in this example:</p> <ul> <li>
-     * <p> <code>#P = :val</code> </p> </li> </ul> <note> <p>Tokens that begin with the
+     * <p> <code>#P = :val</code> </p> </li> </ul>  <p>Tokens that begin with the
      * <b>:</b> character are <i>expression attribute values</i>, which are
-     * placeholders for the actual value at runtime.</p> </note> <p>For more
+     * placeholders for the actual value at runtime.</p>  <p>For more
      * information on expression attribute names, see <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
@@ -1372,9 +1372,9 @@ namespace Model
      * you could specify the following for <code>ExpressionAttributeNames</code>:</p>
      * <ul> <li> <p> <code>{"#P":"Percentile"}</code> </p> </li> </ul> <p>You could
      * then use this substitution in an expression, as in this example:</p> <ul> <li>
-     * <p> <code>#P = :val</code> </p> </li> </ul> <note> <p>Tokens that begin with the
+     * <p> <code>#P = :val</code> </p> </li> </ul>  <p>Tokens that begin with the
      * <b>:</b> character are <i>expression attribute values</i>, which are
-     * placeholders for the actual value at runtime.</p> </note> <p>For more
+     * placeholders for the actual value at runtime.</p>  <p>For more
      * information on expression attribute names, see <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
@@ -1399,9 +1399,9 @@ namespace Model
      * you could specify the following for <code>ExpressionAttributeNames</code>:</p>
      * <ul> <li> <p> <code>{"#P":"Percentile"}</code> </p> </li> </ul> <p>You could
      * then use this substitution in an expression, as in this example:</p> <ul> <li>
-     * <p> <code>#P = :val</code> </p> </li> </ul> <note> <p>Tokens that begin with the
+     * <p> <code>#P = :val</code> </p> </li> </ul>  <p>Tokens that begin with the
      * <b>:</b> character are <i>expression attribute values</i>, which are
-     * placeholders for the actual value at runtime.</p> </note> <p>For more
+     * placeholders for the actual value at runtime.</p>  <p>For more
      * information on expression attribute names, see <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
@@ -1426,9 +1426,9 @@ namespace Model
      * you could specify the following for <code>ExpressionAttributeNames</code>:</p>
      * <ul> <li> <p> <code>{"#P":"Percentile"}</code> </p> </li> </ul> <p>You could
      * then use this substitution in an expression, as in this example:</p> <ul> <li>
-     * <p> <code>#P = :val</code> </p> </li> </ul> <note> <p>Tokens that begin with the
+     * <p> <code>#P = :val</code> </p> </li> </ul>  <p>Tokens that begin with the
      * <b>:</b> character are <i>expression attribute values</i>, which are
-     * placeholders for the actual value at runtime.</p> </note> <p>For more
+     * placeholders for the actual value at runtime.</p>  <p>For more
      * information on expression attribute names, see <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
@@ -1453,9 +1453,9 @@ namespace Model
      * you could specify the following for <code>ExpressionAttributeNames</code>:</p>
      * <ul> <li> <p> <code>{"#P":"Percentile"}</code> </p> </li> </ul> <p>You could
      * then use this substitution in an expression, as in this example:</p> <ul> <li>
-     * <p> <code>#P = :val</code> </p> </li> </ul> <note> <p>Tokens that begin with the
+     * <p> <code>#P = :val</code> </p> </li> </ul>  <p>Tokens that begin with the
      * <b>:</b> character are <i>expression attribute values</i>, which are
-     * placeholders for the actual value at runtime.</p> </note> <p>For more
+     * placeholders for the actual value at runtime.</p>  <p>For more
      * information on expression attribute names, see <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
@@ -1480,9 +1480,9 @@ namespace Model
      * you could specify the following for <code>ExpressionAttributeNames</code>:</p>
      * <ul> <li> <p> <code>{"#P":"Percentile"}</code> </p> </li> </ul> <p>You could
      * then use this substitution in an expression, as in this example:</p> <ul> <li>
-     * <p> <code>#P = :val</code> </p> </li> </ul> <note> <p>Tokens that begin with the
+     * <p> <code>#P = :val</code> </p> </li> </ul>  <p>Tokens that begin with the
      * <b>:</b> character are <i>expression attribute values</i>, which are
-     * placeholders for the actual value at runtime.</p> </note> <p>For more
+     * placeholders for the actual value at runtime.</p>  <p>For more
      * information on expression attribute names, see <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>

@@ -39,7 +39,7 @@ namespace Model
     /**
      * <p>Specifies the secret that you want to modify or to which you want to add a
      * new version. You can specify either the Amazon Resource Name (ARN) or the
-     * friendly name of the secret.</p> <note> <p>If you specify an ARN, we generally
+     * friendly name of the secret.</p>  <p>If you specify an ARN, we generally
      * recommend that you specify a complete ARN. You can specify a partial ARN too—for
      * example, if you don’t include the final hyphen and six random characters that
      * Secrets Manager adds at the end of the ARN when you created the secret. A
@@ -49,15 +49,19 @@ namespace Model
      * ARN) and you try to use that as a partial ARN, then those characters cause
      * Secrets Manager to assume that you’re specifying a complete ARN. This confusion
      * can cause unexpected results. To avoid this situation, we recommend that you
-     * don’t create secret names that end with a hyphen followed by six characters.</p>
-     * </note>
+     * don’t create secret names ending with a hyphen followed by six characters.</p>
+     * <p>If you specify an incomplete ARN without the random suffix, and instead
+     * provide the 'friendly name', you <i>must</i> not include the random suffix. If
+     * you do include the random suffix added by Secrets Manager, you receive either a
+     * <i>ResourceNotFoundException</i> or an <i>AccessDeniedException</i> error,
+     * depending on your permissions.</p> 
      */
     inline const Aws::String& GetSecretId() const{ return m_secretId; }
 
     /**
      * <p>Specifies the secret that you want to modify or to which you want to add a
      * new version. You can specify either the Amazon Resource Name (ARN) or the
-     * friendly name of the secret.</p> <note> <p>If you specify an ARN, we generally
+     * friendly name of the secret.</p>  <p>If you specify an ARN, we generally
      * recommend that you specify a complete ARN. You can specify a partial ARN too—for
      * example, if you don’t include the final hyphen and six random characters that
      * Secrets Manager adds at the end of the ARN when you created the secret. A
@@ -67,15 +71,19 @@ namespace Model
      * ARN) and you try to use that as a partial ARN, then those characters cause
      * Secrets Manager to assume that you’re specifying a complete ARN. This confusion
      * can cause unexpected results. To avoid this situation, we recommend that you
-     * don’t create secret names that end with a hyphen followed by six characters.</p>
-     * </note>
+     * don’t create secret names ending with a hyphen followed by six characters.</p>
+     * <p>If you specify an incomplete ARN without the random suffix, and instead
+     * provide the 'friendly name', you <i>must</i> not include the random suffix. If
+     * you do include the random suffix added by Secrets Manager, you receive either a
+     * <i>ResourceNotFoundException</i> or an <i>AccessDeniedException</i> error,
+     * depending on your permissions.</p> 
      */
     inline bool SecretIdHasBeenSet() const { return m_secretIdHasBeenSet; }
 
     /**
      * <p>Specifies the secret that you want to modify or to which you want to add a
      * new version. You can specify either the Amazon Resource Name (ARN) or the
-     * friendly name of the secret.</p> <note> <p>If you specify an ARN, we generally
+     * friendly name of the secret.</p>  <p>If you specify an ARN, we generally
      * recommend that you specify a complete ARN. You can specify a partial ARN too—for
      * example, if you don’t include the final hyphen and six random characters that
      * Secrets Manager adds at the end of the ARN when you created the secret. A
@@ -85,15 +93,19 @@ namespace Model
      * ARN) and you try to use that as a partial ARN, then those characters cause
      * Secrets Manager to assume that you’re specifying a complete ARN. This confusion
      * can cause unexpected results. To avoid this situation, we recommend that you
-     * don’t create secret names that end with a hyphen followed by six characters.</p>
-     * </note>
+     * don’t create secret names ending with a hyphen followed by six characters.</p>
+     * <p>If you specify an incomplete ARN without the random suffix, and instead
+     * provide the 'friendly name', you <i>must</i> not include the random suffix. If
+     * you do include the random suffix added by Secrets Manager, you receive either a
+     * <i>ResourceNotFoundException</i> or an <i>AccessDeniedException</i> error,
+     * depending on your permissions.</p> 
      */
     inline void SetSecretId(const Aws::String& value) { m_secretIdHasBeenSet = true; m_secretId = value; }
 
     /**
      * <p>Specifies the secret that you want to modify or to which you want to add a
      * new version. You can specify either the Amazon Resource Name (ARN) or the
-     * friendly name of the secret.</p> <note> <p>If you specify an ARN, we generally
+     * friendly name of the secret.</p>  <p>If you specify an ARN, we generally
      * recommend that you specify a complete ARN. You can specify a partial ARN too—for
      * example, if you don’t include the final hyphen and six random characters that
      * Secrets Manager adds at the end of the ARN when you created the secret. A
@@ -103,15 +115,19 @@ namespace Model
      * ARN) and you try to use that as a partial ARN, then those characters cause
      * Secrets Manager to assume that you’re specifying a complete ARN. This confusion
      * can cause unexpected results. To avoid this situation, we recommend that you
-     * don’t create secret names that end with a hyphen followed by six characters.</p>
-     * </note>
+     * don’t create secret names ending with a hyphen followed by six characters.</p>
+     * <p>If you specify an incomplete ARN without the random suffix, and instead
+     * provide the 'friendly name', you <i>must</i> not include the random suffix. If
+     * you do include the random suffix added by Secrets Manager, you receive either a
+     * <i>ResourceNotFoundException</i> or an <i>AccessDeniedException</i> error,
+     * depending on your permissions.</p> 
      */
     inline void SetSecretId(Aws::String&& value) { m_secretIdHasBeenSet = true; m_secretId = std::move(value); }
 
     /**
      * <p>Specifies the secret that you want to modify or to which you want to add a
      * new version. You can specify either the Amazon Resource Name (ARN) or the
-     * friendly name of the secret.</p> <note> <p>If you specify an ARN, we generally
+     * friendly name of the secret.</p>  <p>If you specify an ARN, we generally
      * recommend that you specify a complete ARN. You can specify a partial ARN too—for
      * example, if you don’t include the final hyphen and six random characters that
      * Secrets Manager adds at the end of the ARN when you created the secret. A
@@ -121,15 +137,19 @@ namespace Model
      * ARN) and you try to use that as a partial ARN, then those characters cause
      * Secrets Manager to assume that you’re specifying a complete ARN. This confusion
      * can cause unexpected results. To avoid this situation, we recommend that you
-     * don’t create secret names that end with a hyphen followed by six characters.</p>
-     * </note>
+     * don’t create secret names ending with a hyphen followed by six characters.</p>
+     * <p>If you specify an incomplete ARN without the random suffix, and instead
+     * provide the 'friendly name', you <i>must</i> not include the random suffix. If
+     * you do include the random suffix added by Secrets Manager, you receive either a
+     * <i>ResourceNotFoundException</i> or an <i>AccessDeniedException</i> error,
+     * depending on your permissions.</p> 
      */
     inline void SetSecretId(const char* value) { m_secretIdHasBeenSet = true; m_secretId.assign(value); }
 
     /**
      * <p>Specifies the secret that you want to modify or to which you want to add a
      * new version. You can specify either the Amazon Resource Name (ARN) or the
-     * friendly name of the secret.</p> <note> <p>If you specify an ARN, we generally
+     * friendly name of the secret.</p>  <p>If you specify an ARN, we generally
      * recommend that you specify a complete ARN. You can specify a partial ARN too—for
      * example, if you don’t include the final hyphen and six random characters that
      * Secrets Manager adds at the end of the ARN when you created the secret. A
@@ -139,15 +159,19 @@ namespace Model
      * ARN) and you try to use that as a partial ARN, then those characters cause
      * Secrets Manager to assume that you’re specifying a complete ARN. This confusion
      * can cause unexpected results. To avoid this situation, we recommend that you
-     * don’t create secret names that end with a hyphen followed by six characters.</p>
-     * </note>
+     * don’t create secret names ending with a hyphen followed by six characters.</p>
+     * <p>If you specify an incomplete ARN without the random suffix, and instead
+     * provide the 'friendly name', you <i>must</i> not include the random suffix. If
+     * you do include the random suffix added by Secrets Manager, you receive either a
+     * <i>ResourceNotFoundException</i> or an <i>AccessDeniedException</i> error,
+     * depending on your permissions.</p> 
      */
     inline UpdateSecretRequest& WithSecretId(const Aws::String& value) { SetSecretId(value); return *this;}
 
     /**
      * <p>Specifies the secret that you want to modify or to which you want to add a
      * new version. You can specify either the Amazon Resource Name (ARN) or the
-     * friendly name of the secret.</p> <note> <p>If you specify an ARN, we generally
+     * friendly name of the secret.</p>  <p>If you specify an ARN, we generally
      * recommend that you specify a complete ARN. You can specify a partial ARN too—for
      * example, if you don’t include the final hyphen and six random characters that
      * Secrets Manager adds at the end of the ARN when you created the secret. A
@@ -157,15 +181,19 @@ namespace Model
      * ARN) and you try to use that as a partial ARN, then those characters cause
      * Secrets Manager to assume that you’re specifying a complete ARN. This confusion
      * can cause unexpected results. To avoid this situation, we recommend that you
-     * don’t create secret names that end with a hyphen followed by six characters.</p>
-     * </note>
+     * don’t create secret names ending with a hyphen followed by six characters.</p>
+     * <p>If you specify an incomplete ARN without the random suffix, and instead
+     * provide the 'friendly name', you <i>must</i> not include the random suffix. If
+     * you do include the random suffix added by Secrets Manager, you receive either a
+     * <i>ResourceNotFoundException</i> or an <i>AccessDeniedException</i> error,
+     * depending on your permissions.</p> 
      */
     inline UpdateSecretRequest& WithSecretId(Aws::String&& value) { SetSecretId(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the secret that you want to modify or to which you want to add a
      * new version. You can specify either the Amazon Resource Name (ARN) or the
-     * friendly name of the secret.</p> <note> <p>If you specify an ARN, we generally
+     * friendly name of the secret.</p>  <p>If you specify an ARN, we generally
      * recommend that you specify a complete ARN. You can specify a partial ARN too—for
      * example, if you don’t include the final hyphen and six random characters that
      * Secrets Manager adds at the end of the ARN when you created the secret. A
@@ -175,8 +203,12 @@ namespace Model
      * ARN) and you try to use that as a partial ARN, then those characters cause
      * Secrets Manager to assume that you’re specifying a complete ARN. This confusion
      * can cause unexpected results. To avoid this situation, we recommend that you
-     * don’t create secret names that end with a hyphen followed by six characters.</p>
-     * </note>
+     * don’t create secret names ending with a hyphen followed by six characters.</p>
+     * <p>If you specify an incomplete ARN without the random suffix, and instead
+     * provide the 'friendly name', you <i>must</i> not include the random suffix. If
+     * you do include the random suffix added by Secrets Manager, you receive either a
+     * <i>ResourceNotFoundException</i> or an <i>AccessDeniedException</i> error,
+     * depending on your permissions.</p> 
      */
     inline UpdateSecretRequest& WithSecretId(const char* value) { SetSecretId(value); return *this;}
 
@@ -450,96 +482,96 @@ namespace Model
     /**
      * <p>(Optional) Specifies an updated ARN or alias of the AWS KMS customer master
      * key (CMK) to be used to encrypt the protected text in new versions of this
-     * secret.</p> <important> <p>You can only use the account's default CMK to encrypt
+     * secret.</p>  <p>You can only use the account's default CMK to encrypt
      * and decrypt if you call this operation using credentials from the same account
      * that owns the secret. If the secret is in a different account, then you must
      * create a custom CMK and provide the ARN of that CMK in this field. The user
      * making the call must have permissions to both the secret and the CMK in their
-     * respective accounts.</p> </important>
+     * respective accounts.</p> 
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
      * <p>(Optional) Specifies an updated ARN or alias of the AWS KMS customer master
      * key (CMK) to be used to encrypt the protected text in new versions of this
-     * secret.</p> <important> <p>You can only use the account's default CMK to encrypt
+     * secret.</p>  <p>You can only use the account's default CMK to encrypt
      * and decrypt if you call this operation using credentials from the same account
      * that owns the secret. If the secret is in a different account, then you must
      * create a custom CMK and provide the ARN of that CMK in this field. The user
      * making the call must have permissions to both the secret and the CMK in their
-     * respective accounts.</p> </important>
+     * respective accounts.</p> 
      */
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
      * <p>(Optional) Specifies an updated ARN or alias of the AWS KMS customer master
      * key (CMK) to be used to encrypt the protected text in new versions of this
-     * secret.</p> <important> <p>You can only use the account's default CMK to encrypt
+     * secret.</p>  <p>You can only use the account's default CMK to encrypt
      * and decrypt if you call this operation using credentials from the same account
      * that owns the secret. If the secret is in a different account, then you must
      * create a custom CMK and provide the ARN of that CMK in this field. The user
      * making the call must have permissions to both the secret and the CMK in their
-     * respective accounts.</p> </important>
+     * respective accounts.</p> 
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
     /**
      * <p>(Optional) Specifies an updated ARN or alias of the AWS KMS customer master
      * key (CMK) to be used to encrypt the protected text in new versions of this
-     * secret.</p> <important> <p>You can only use the account's default CMK to encrypt
+     * secret.</p>  <p>You can only use the account's default CMK to encrypt
      * and decrypt if you call this operation using credentials from the same account
      * that owns the secret. If the secret is in a different account, then you must
      * create a custom CMK and provide the ARN of that CMK in this field. The user
      * making the call must have permissions to both the secret and the CMK in their
-     * respective accounts.</p> </important>
+     * respective accounts.</p> 
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
     /**
      * <p>(Optional) Specifies an updated ARN or alias of the AWS KMS customer master
      * key (CMK) to be used to encrypt the protected text in new versions of this
-     * secret.</p> <important> <p>You can only use the account's default CMK to encrypt
+     * secret.</p>  <p>You can only use the account's default CMK to encrypt
      * and decrypt if you call this operation using credentials from the same account
      * that owns the secret. If the secret is in a different account, then you must
      * create a custom CMK and provide the ARN of that CMK in this field. The user
      * making the call must have permissions to both the secret and the CMK in their
-     * respective accounts.</p> </important>
+     * respective accounts.</p> 
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
     /**
      * <p>(Optional) Specifies an updated ARN or alias of the AWS KMS customer master
      * key (CMK) to be used to encrypt the protected text in new versions of this
-     * secret.</p> <important> <p>You can only use the account's default CMK to encrypt
+     * secret.</p>  <p>You can only use the account's default CMK to encrypt
      * and decrypt if you call this operation using credentials from the same account
      * that owns the secret. If the secret is in a different account, then you must
      * create a custom CMK and provide the ARN of that CMK in this field. The user
      * making the call must have permissions to both the secret and the CMK in their
-     * respective accounts.</p> </important>
+     * respective accounts.</p> 
      */
     inline UpdateSecretRequest& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
      * <p>(Optional) Specifies an updated ARN or alias of the AWS KMS customer master
      * key (CMK) to be used to encrypt the protected text in new versions of this
-     * secret.</p> <important> <p>You can only use the account's default CMK to encrypt
+     * secret.</p>  <p>You can only use the account's default CMK to encrypt
      * and decrypt if you call this operation using credentials from the same account
      * that owns the secret. If the secret is in a different account, then you must
      * create a custom CMK and provide the ARN of that CMK in this field. The user
      * making the call must have permissions to both the secret and the CMK in their
-     * respective accounts.</p> </important>
+     * respective accounts.</p> 
      */
     inline UpdateSecretRequest& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
      * <p>(Optional) Specifies an updated ARN or alias of the AWS KMS customer master
      * key (CMK) to be used to encrypt the protected text in new versions of this
-     * secret.</p> <important> <p>You can only use the account's default CMK to encrypt
+     * secret.</p>  <p>You can only use the account's default CMK to encrypt
      * and decrypt if you call this operation using credentials from the same account
      * that owns the secret. If the secret is in a different account, then you must
      * create a custom CMK and provide the ARN of that CMK in this field. The user
      * making the call must have permissions to both the secret and the CMK in their
-     * respective accounts.</p> </important>
+     * respective accounts.</p> 
      */
     inline UpdateSecretRequest& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 

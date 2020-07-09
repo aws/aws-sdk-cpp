@@ -1718,8 +1718,8 @@ namespace Model
         virtual void CreateDimensionAsync(const Model::CreateDimensionRequest& request, const CreateDimensionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a domain configuration.</p> <note> <p>The domain configuration
-         * feature is in public preview and is subject to change.</p> </note><p><h3>See
+         * <p>Creates a domain configuration.</p>  <p>The domain configuration
+         * feature is in public preview and is subject to change.</p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateDomainConfiguration">AWS
          * API Reference</a></p>
@@ -1727,8 +1727,8 @@ namespace Model
         virtual Model::CreateDomainConfigurationOutcome CreateDomainConfiguration(const Model::CreateDomainConfigurationRequest& request) const;
 
         /**
-         * <p>Creates a domain configuration.</p> <note> <p>The domain configuration
-         * feature is in public preview and is subject to change.</p> </note><p><h3>See
+         * <p>Creates a domain configuration.</p>  <p>The domain configuration
+         * feature is in public preview and is subject to change.</p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateDomainConfiguration">AWS
          * API Reference</a></p>
@@ -1738,8 +1738,8 @@ namespace Model
         virtual Model::CreateDomainConfigurationOutcomeCallable CreateDomainConfigurationCallable(const Model::CreateDomainConfigurationRequest& request) const;
 
         /**
-         * <p>Creates a domain configuration.</p> <note> <p>The domain configuration
-         * feature is in public preview and is subject to change.</p> </note><p><h3>See
+         * <p>Creates a domain configuration.</p>  <p>The domain configuration
+         * feature is in public preview and is subject to change.</p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateDomainConfiguration">AWS
          * API Reference</a></p>
@@ -2171,10 +2171,10 @@ namespace Model
          * <p>Creates a thing record in the registry. If this call is made multiple times
          * using the same thing name and configuration, the call will succeed. If this call
          * is made with the same thing name but different configuration a
-         * <code>ResourceAlreadyExistsException</code> is thrown.</p> <note> <p>This is a
+         * <code>ResourceAlreadyExistsException</code> is thrown.</p>  <p>This is a
          * control plane operation. See <a
          * href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-authorization.html">Authorization</a>
-         * for information about authorizing control plane actions.</p> </note><p><h3>See
+         * for information about authorizing control plane actions.</p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateThing">AWS API
          * Reference</a></p>
@@ -2185,10 +2185,10 @@ namespace Model
          * <p>Creates a thing record in the registry. If this call is made multiple times
          * using the same thing name and configuration, the call will succeed. If this call
          * is made with the same thing name but different configuration a
-         * <code>ResourceAlreadyExistsException</code> is thrown.</p> <note> <p>This is a
+         * <code>ResourceAlreadyExistsException</code> is thrown.</p>  <p>This is a
          * control plane operation. See <a
          * href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-authorization.html">Authorization</a>
-         * for information about authorizing control plane actions.</p> </note><p><h3>See
+         * for information about authorizing control plane actions.</p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateThing">AWS API
          * Reference</a></p>
@@ -2201,10 +2201,10 @@ namespace Model
          * <p>Creates a thing record in the registry. If this call is made multiple times
          * using the same thing name and configuration, the call will succeed. If this call
          * is made with the same thing name but different configuration a
-         * <code>ResourceAlreadyExistsException</code> is thrown.</p> <note> <p>This is a
+         * <code>ResourceAlreadyExistsException</code> is thrown.</p>  <p>This is a
          * control plane operation. See <a
          * href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-authorization.html">Authorization</a>
-         * for information about authorizing control plane actions.</p> </note><p><h3>See
+         * for information about authorizing control plane actions.</p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateThing">AWS API
          * Reference</a></p>
@@ -2214,9 +2214,9 @@ namespace Model
         virtual void CreateThingAsync(const Model::CreateThingRequest& request, const CreateThingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Create a thing group.</p> <note> <p>This is a control plane operation. See <a
+         * <p>Create a thing group.</p>  <p>This is a control plane operation. See <a
          * href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-authorization.html">Authorization</a>
-         * for information about authorizing control plane actions.</p> </note><p><h3>See
+         * for information about authorizing control plane actions.</p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateThingGroup">AWS
          * API Reference</a></p>
@@ -2224,9 +2224,9 @@ namespace Model
         virtual Model::CreateThingGroupOutcome CreateThingGroup(const Model::CreateThingGroupRequest& request) const;
 
         /**
-         * <p>Create a thing group.</p> <note> <p>This is a control plane operation. See <a
+         * <p>Create a thing group.</p>  <p>This is a control plane operation. See <a
          * href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-authorization.html">Authorization</a>
-         * for information about authorizing control plane actions.</p> </note><p><h3>See
+         * for information about authorizing control plane actions.</p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateThingGroup">AWS
          * API Reference</a></p>
@@ -2236,9 +2236,9 @@ namespace Model
         virtual Model::CreateThingGroupOutcomeCallable CreateThingGroupCallable(const Model::CreateThingGroupRequest& request) const;
 
         /**
-         * <p>Create a thing group.</p> <note> <p>This is a control plane operation. See <a
+         * <p>Create a thing group.</p>  <p>This is a control plane operation. See <a
          * href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-authorization.html">Authorization</a>
-         * for information about authorizing control plane actions.</p> </note><p><h3>See
+         * for information about authorizing control plane actions.</p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateThingGroup">AWS
          * API Reference</a></p>
@@ -2503,18 +2503,18 @@ namespace Model
         virtual void DeleteDimensionAsync(const Model::DeleteDimensionRequest& request, const DeleteDimensionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes the specified domain configuration.</p> <note> <p>The domain
+         * <p>Deletes the specified domain configuration.</p>  <p>The domain
          * configuration feature is in public preview and is subject to change.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteDomainConfiguration">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteDomainConfigurationOutcome DeleteDomainConfiguration(const Model::DeleteDomainConfigurationRequest& request) const;
 
         /**
-         * <p>Deletes the specified domain configuration.</p> <note> <p>The domain
+         * <p>Deletes the specified domain configuration.</p>  <p>The domain
          * configuration feature is in public preview and is subject to change.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteDomainConfiguration">AWS
          * API Reference</a></p>
          *
@@ -2523,9 +2523,9 @@ namespace Model
         virtual Model::DeleteDomainConfigurationOutcomeCallable DeleteDomainConfigurationCallable(const Model::DeleteDomainConfigurationRequest& request) const;
 
         /**
-         * <p>Deletes the specified domain configuration.</p> <note> <p>The domain
+         * <p>Deletes the specified domain configuration.</p>  <p>The domain
          * configuration feature is in public preview and is subject to change.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteDomainConfiguration">AWS
          * API Reference</a></p>
          *
@@ -3408,18 +3408,18 @@ namespace Model
         virtual void DescribeDimensionAsync(const Model::DescribeDimensionRequest& request, const DescribeDimensionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets summary information about a domain configuration.</p> <note> <p>The
+         * <p>Gets summary information about a domain configuration.</p>  <p>The
          * domain configuration feature is in public preview and is subject to change.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeDomainConfiguration">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeDomainConfigurationOutcome DescribeDomainConfiguration(const Model::DescribeDomainConfigurationRequest& request) const;
 
         /**
-         * <p>Gets summary information about a domain configuration.</p> <note> <p>The
+         * <p>Gets summary information about a domain configuration.</p>  <p>The
          * domain configuration feature is in public preview and is subject to change.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeDomainConfiguration">AWS
          * API Reference</a></p>
          *
@@ -3428,9 +3428,9 @@ namespace Model
         virtual Model::DescribeDomainConfigurationOutcomeCallable DescribeDomainConfigurationCallable(const Model::DescribeDomainConfigurationRequest& request) const;
 
         /**
-         * <p>Gets summary information about a domain configuration.</p> <note> <p>The
+         * <p>Gets summary information about a domain configuration.</p>  <p>The
          * domain configuration feature is in public preview and is subject to change.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeDomainConfiguration">AWS
          * API Reference</a></p>
          *
@@ -3909,8 +3909,8 @@ namespace Model
         /**
          * <p>Detaches the specified principal from the specified thing. A principal can be
          * X.509 certificates, IAM users, groups, and roles, Amazon Cognito identities or
-         * federated identities.</p> <note> <p>This call is asynchronous. It might take
-         * several seconds for the detachment to propagate.</p> </note><p><h3>See
+         * federated identities.</p>  <p>This call is asynchronous. It might take
+         * several seconds for the detachment to propagate.</p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DetachThingPrincipal">AWS
          * API Reference</a></p>
@@ -3920,8 +3920,8 @@ namespace Model
         /**
          * <p>Detaches the specified principal from the specified thing. A principal can be
          * X.509 certificates, IAM users, groups, and roles, Amazon Cognito identities or
-         * federated identities.</p> <note> <p>This call is asynchronous. It might take
-         * several seconds for the detachment to propagate.</p> </note><p><h3>See
+         * federated identities.</p>  <p>This call is asynchronous. It might take
+         * several seconds for the detachment to propagate.</p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DetachThingPrincipal">AWS
          * API Reference</a></p>
@@ -3933,8 +3933,8 @@ namespace Model
         /**
          * <p>Detaches the specified principal from the specified thing. A principal can be
          * X.509 certificates, IAM users, groups, and roles, Amazon Cognito identities or
-         * federated identities.</p> <note> <p>This call is asynchronous. It might take
-         * several seconds for the detachment to propagate.</p> </note><p><h3>See
+         * federated identities.</p>  <p>This call is asynchronous. It might take
+         * several seconds for the detachment to propagate.</p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DetachThingPrincipal">AWS
          * API Reference</a></p>
@@ -4750,9 +4750,9 @@ namespace Model
 
         /**
          * <p>Gets a list of domain configurations for the user. This list is sorted
-         * alphabetically by domain configuration name.</p> <note> <p>The domain
+         * alphabetically by domain configuration name.</p>  <p>The domain
          * configuration feature is in public preview and is subject to change.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListDomainConfigurations">AWS
          * API Reference</a></p>
          */
@@ -4760,9 +4760,9 @@ namespace Model
 
         /**
          * <p>Gets a list of domain configurations for the user. This list is sorted
-         * alphabetically by domain configuration name.</p> <note> <p>The domain
+         * alphabetically by domain configuration name.</p>  <p>The domain
          * configuration feature is in public preview and is subject to change.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListDomainConfigurations">AWS
          * API Reference</a></p>
          *
@@ -4772,9 +4772,9 @@ namespace Model
 
         /**
          * <p>Gets a list of domain configurations for the user. This list is sorted
-         * alphabetically by domain configuration name.</p> <note> <p>The domain
+         * alphabetically by domain configuration name.</p>  <p>The domain
          * configuration feature is in public preview and is subject to change.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListDomainConfigurations">AWS
          * API Reference</a></p>
          *
@@ -6586,8 +6586,8 @@ namespace Model
 
         /**
          * <p>Updates values stored in the domain configuration. Domain configurations for
-         * default endpoints can't be updated.</p> <note> <p>The domain configuration
-         * feature is in public preview and is subject to change.</p> </note><p><h3>See
+         * default endpoints can't be updated.</p>  <p>The domain configuration
+         * feature is in public preview and is subject to change.</p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateDomainConfiguration">AWS
          * API Reference</a></p>
@@ -6596,8 +6596,8 @@ namespace Model
 
         /**
          * <p>Updates values stored in the domain configuration. Domain configurations for
-         * default endpoints can't be updated.</p> <note> <p>The domain configuration
-         * feature is in public preview and is subject to change.</p> </note><p><h3>See
+         * default endpoints can't be updated.</p>  <p>The domain configuration
+         * feature is in public preview and is subject to change.</p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateDomainConfiguration">AWS
          * API Reference</a></p>
@@ -6608,8 +6608,8 @@ namespace Model
 
         /**
          * <p>Updates values stored in the domain configuration. Domain configurations for
-         * default endpoints can't be updated.</p> <note> <p>The domain configuration
-         * feature is in public preview and is subject to change.</p> </note><p><h3>See
+         * default endpoints can't be updated.</p>  <p>The domain configuration
+         * feature is in public preview and is subject to change.</p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateDomainConfiguration">AWS
          * API Reference</a></p>

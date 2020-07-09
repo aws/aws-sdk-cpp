@@ -84,7 +84,7 @@ namespace Model
      * <p>The parameters for the AUTOMATION task.</p> <p>For information about
      * specifying and updating task parameters, see
      * <a>RegisterTaskWithMaintenanceWindow</a> and
-     * <a>UpdateMaintenanceWindowTask</a>.</p> <note> <p> <code>LoggingInfo</code> has
+     * <a>UpdateMaintenanceWindowTask</a>.</p>  <p> <code>LoggingInfo</code> has
      * been deprecated. To specify an S3 bucket to contain logs, instead use the
      * <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in
      * the <code>TaskInvocationParameters</code> structure. For information about how
@@ -96,7 +96,7 @@ namespace Model
      * Systems Manager handles these options for the supported maintenance window task
      * types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> <p>For
      * AUTOMATION task types, Systems Manager ignores any values specified for these
-     * parameters.</p> </note>
+     * parameters.</p> 
      */
     inline const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& GetParameters() const{ return m_parameters; }
 
@@ -104,7 +104,7 @@ namespace Model
      * <p>The parameters for the AUTOMATION task.</p> <p>For information about
      * specifying and updating task parameters, see
      * <a>RegisterTaskWithMaintenanceWindow</a> and
-     * <a>UpdateMaintenanceWindowTask</a>.</p> <note> <p> <code>LoggingInfo</code> has
+     * <a>UpdateMaintenanceWindowTask</a>.</p>  <p> <code>LoggingInfo</code> has
      * been deprecated. To specify an S3 bucket to contain logs, instead use the
      * <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in
      * the <code>TaskInvocationParameters</code> structure. For information about how
@@ -116,7 +116,7 @@ namespace Model
      * Systems Manager handles these options for the supported maintenance window task
      * types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> <p>For
      * AUTOMATION task types, Systems Manager ignores any values specified for these
-     * parameters.</p> </note>
+     * parameters.</p> 
      */
     inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
 
@@ -124,7 +124,7 @@ namespace Model
      * <p>The parameters for the AUTOMATION task.</p> <p>For information about
      * specifying and updating task parameters, see
      * <a>RegisterTaskWithMaintenanceWindow</a> and
-     * <a>UpdateMaintenanceWindowTask</a>.</p> <note> <p> <code>LoggingInfo</code> has
+     * <a>UpdateMaintenanceWindowTask</a>.</p>  <p> <code>LoggingInfo</code> has
      * been deprecated. To specify an S3 bucket to contain logs, instead use the
      * <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in
      * the <code>TaskInvocationParameters</code> structure. For information about how
@@ -136,7 +136,7 @@ namespace Model
      * Systems Manager handles these options for the supported maintenance window task
      * types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> <p>For
      * AUTOMATION task types, Systems Manager ignores any values specified for these
-     * parameters.</p> </note>
+     * parameters.</p> 
      */
     inline void SetParameters(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { m_parametersHasBeenSet = true; m_parameters = value; }
 
@@ -144,7 +144,7 @@ namespace Model
      * <p>The parameters for the AUTOMATION task.</p> <p>For information about
      * specifying and updating task parameters, see
      * <a>RegisterTaskWithMaintenanceWindow</a> and
-     * <a>UpdateMaintenanceWindowTask</a>.</p> <note> <p> <code>LoggingInfo</code> has
+     * <a>UpdateMaintenanceWindowTask</a>.</p>  <p> <code>LoggingInfo</code> has
      * been deprecated. To specify an S3 bucket to contain logs, instead use the
      * <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in
      * the <code>TaskInvocationParameters</code> structure. For information about how
@@ -156,7 +156,7 @@ namespace Model
      * Systems Manager handles these options for the supported maintenance window task
      * types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> <p>For
      * AUTOMATION task types, Systems Manager ignores any values specified for these
-     * parameters.</p> </note>
+     * parameters.</p> 
      */
     inline void SetParameters(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { m_parametersHasBeenSet = true; m_parameters = std::move(value); }
 
@@ -164,7 +164,7 @@ namespace Model
      * <p>The parameters for the AUTOMATION task.</p> <p>For information about
      * specifying and updating task parameters, see
      * <a>RegisterTaskWithMaintenanceWindow</a> and
-     * <a>UpdateMaintenanceWindowTask</a>.</p> <note> <p> <code>LoggingInfo</code> has
+     * <a>UpdateMaintenanceWindowTask</a>.</p>  <p> <code>LoggingInfo</code> has
      * been deprecated. To specify an S3 bucket to contain logs, instead use the
      * <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in
      * the <code>TaskInvocationParameters</code> structure. For information about how
@@ -176,7 +176,7 @@ namespace Model
      * Systems Manager handles these options for the supported maintenance window task
      * types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> <p>For
      * AUTOMATION task types, Systems Manager ignores any values specified for these
-     * parameters.</p> </note>
+     * parameters.</p> 
      */
     inline MaintenanceWindowAutomationParameters& WithParameters(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { SetParameters(value); return *this;}
 
@@ -184,7 +184,7 @@ namespace Model
      * <p>The parameters for the AUTOMATION task.</p> <p>For information about
      * specifying and updating task parameters, see
      * <a>RegisterTaskWithMaintenanceWindow</a> and
-     * <a>UpdateMaintenanceWindowTask</a>.</p> <note> <p> <code>LoggingInfo</code> has
+     * <a>UpdateMaintenanceWindowTask</a>.</p>  <p> <code>LoggingInfo</code> has
      * been deprecated. To specify an S3 bucket to contain logs, instead use the
      * <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in
      * the <code>TaskInvocationParameters</code> structure. For information about how
@@ -196,7 +196,7 @@ namespace Model
      * Systems Manager handles these options for the supported maintenance window task
      * types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> <p>For
      * AUTOMATION task types, Systems Manager ignores any values specified for these
-     * parameters.</p> </note>
+     * parameters.</p> 
      */
     inline MaintenanceWindowAutomationParameters& WithParameters(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { SetParameters(std::move(value)); return *this;}
 
@@ -204,7 +204,7 @@ namespace Model
      * <p>The parameters for the AUTOMATION task.</p> <p>For information about
      * specifying and updating task parameters, see
      * <a>RegisterTaskWithMaintenanceWindow</a> and
-     * <a>UpdateMaintenanceWindowTask</a>.</p> <note> <p> <code>LoggingInfo</code> has
+     * <a>UpdateMaintenanceWindowTask</a>.</p>  <p> <code>LoggingInfo</code> has
      * been deprecated. To specify an S3 bucket to contain logs, instead use the
      * <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in
      * the <code>TaskInvocationParameters</code> structure. For information about how
@@ -216,7 +216,7 @@ namespace Model
      * Systems Manager handles these options for the supported maintenance window task
      * types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> <p>For
      * AUTOMATION task types, Systems Manager ignores any values specified for these
-     * parameters.</p> </note>
+     * parameters.</p> 
      */
     inline MaintenanceWindowAutomationParameters& AddParameters(const Aws::String& key, const Aws::Vector<Aws::String>& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
 
@@ -224,7 +224,7 @@ namespace Model
      * <p>The parameters for the AUTOMATION task.</p> <p>For information about
      * specifying and updating task parameters, see
      * <a>RegisterTaskWithMaintenanceWindow</a> and
-     * <a>UpdateMaintenanceWindowTask</a>.</p> <note> <p> <code>LoggingInfo</code> has
+     * <a>UpdateMaintenanceWindowTask</a>.</p>  <p> <code>LoggingInfo</code> has
      * been deprecated. To specify an S3 bucket to contain logs, instead use the
      * <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in
      * the <code>TaskInvocationParameters</code> structure. For information about how
@@ -236,7 +236,7 @@ namespace Model
      * Systems Manager handles these options for the supported maintenance window task
      * types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> <p>For
      * AUTOMATION task types, Systems Manager ignores any values specified for these
-     * parameters.</p> </note>
+     * parameters.</p> 
      */
     inline MaintenanceWindowAutomationParameters& AddParameters(Aws::String&& key, const Aws::Vector<Aws::String>& value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), value); return *this; }
 
@@ -244,7 +244,7 @@ namespace Model
      * <p>The parameters for the AUTOMATION task.</p> <p>For information about
      * specifying and updating task parameters, see
      * <a>RegisterTaskWithMaintenanceWindow</a> and
-     * <a>UpdateMaintenanceWindowTask</a>.</p> <note> <p> <code>LoggingInfo</code> has
+     * <a>UpdateMaintenanceWindowTask</a>.</p>  <p> <code>LoggingInfo</code> has
      * been deprecated. To specify an S3 bucket to contain logs, instead use the
      * <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in
      * the <code>TaskInvocationParameters</code> structure. For information about how
@@ -256,7 +256,7 @@ namespace Model
      * Systems Manager handles these options for the supported maintenance window task
      * types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> <p>For
      * AUTOMATION task types, Systems Manager ignores any values specified for these
-     * parameters.</p> </note>
+     * parameters.</p> 
      */
     inline MaintenanceWindowAutomationParameters& AddParameters(const Aws::String& key, Aws::Vector<Aws::String>&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, std::move(value)); return *this; }
 
@@ -264,7 +264,7 @@ namespace Model
      * <p>The parameters for the AUTOMATION task.</p> <p>For information about
      * specifying and updating task parameters, see
      * <a>RegisterTaskWithMaintenanceWindow</a> and
-     * <a>UpdateMaintenanceWindowTask</a>.</p> <note> <p> <code>LoggingInfo</code> has
+     * <a>UpdateMaintenanceWindowTask</a>.</p>  <p> <code>LoggingInfo</code> has
      * been deprecated. To specify an S3 bucket to contain logs, instead use the
      * <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in
      * the <code>TaskInvocationParameters</code> structure. For information about how
@@ -276,7 +276,7 @@ namespace Model
      * Systems Manager handles these options for the supported maintenance window task
      * types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> <p>For
      * AUTOMATION task types, Systems Manager ignores any values specified for these
-     * parameters.</p> </note>
+     * parameters.</p> 
      */
     inline MaintenanceWindowAutomationParameters& AddParameters(Aws::String&& key, Aws::Vector<Aws::String>&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), std::move(value)); return *this; }
 
@@ -284,7 +284,7 @@ namespace Model
      * <p>The parameters for the AUTOMATION task.</p> <p>For information about
      * specifying and updating task parameters, see
      * <a>RegisterTaskWithMaintenanceWindow</a> and
-     * <a>UpdateMaintenanceWindowTask</a>.</p> <note> <p> <code>LoggingInfo</code> has
+     * <a>UpdateMaintenanceWindowTask</a>.</p>  <p> <code>LoggingInfo</code> has
      * been deprecated. To specify an S3 bucket to contain logs, instead use the
      * <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in
      * the <code>TaskInvocationParameters</code> structure. For information about how
@@ -296,7 +296,7 @@ namespace Model
      * Systems Manager handles these options for the supported maintenance window task
      * types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> <p>For
      * AUTOMATION task types, Systems Manager ignores any values specified for these
-     * parameters.</p> </note>
+     * parameters.</p> 
      */
     inline MaintenanceWindowAutomationParameters& AddParameters(const char* key, Aws::Vector<Aws::String>&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, std::move(value)); return *this; }
 
@@ -304,7 +304,7 @@ namespace Model
      * <p>The parameters for the AUTOMATION task.</p> <p>For information about
      * specifying and updating task parameters, see
      * <a>RegisterTaskWithMaintenanceWindow</a> and
-     * <a>UpdateMaintenanceWindowTask</a>.</p> <note> <p> <code>LoggingInfo</code> has
+     * <a>UpdateMaintenanceWindowTask</a>.</p>  <p> <code>LoggingInfo</code> has
      * been deprecated. To specify an S3 bucket to contain logs, instead use the
      * <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in
      * the <code>TaskInvocationParameters</code> structure. For information about how
@@ -316,7 +316,7 @@ namespace Model
      * Systems Manager handles these options for the supported maintenance window task
      * types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> <p>For
      * AUTOMATION task types, Systems Manager ignores any values specified for these
-     * parameters.</p> </note>
+     * parameters.</p> 
      */
     inline MaintenanceWindowAutomationParameters& AddParameters(const char* key, const Aws::Vector<Aws::String>& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
 

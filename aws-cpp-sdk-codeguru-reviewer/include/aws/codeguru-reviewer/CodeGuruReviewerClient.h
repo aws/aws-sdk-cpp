@@ -164,12 +164,12 @@ namespace Model
          * information, see <a
          * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/reviewer-ug/step-one.html#select-repository-source-provider">Connect
          * to a repository source provider</a> in the <i>Amazon CodeGuru Reviewer User
-         * Guide.</i> </p> <note> <p> You cannot use the CodeGuru Reviewer SDK or the AWS
+         * Guide.</i> </p>  <p> You cannot use the CodeGuru Reviewer SDK or the AWS
          * CLI to associate a GitHub repository with Amazon CodeGuru Reviewer. To associate
          * a GitHub repository, use the console. For more information, see <a
          * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/getting-started-with-guru.html">Getting
          * started with CodeGuru Reviewer</a> in the <i>CodeGuru Reviewer User Guide.</i>
-         * </p> </note><p><h3>See Also:</h3>   <a
+         * </p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/AssociateRepository">AWS
          * API Reference</a></p>
          */
@@ -191,12 +191,12 @@ namespace Model
          * information, see <a
          * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/reviewer-ug/step-one.html#select-repository-source-provider">Connect
          * to a repository source provider</a> in the <i>Amazon CodeGuru Reviewer User
-         * Guide.</i> </p> <note> <p> You cannot use the CodeGuru Reviewer SDK or the AWS
+         * Guide.</i> </p>  <p> You cannot use the CodeGuru Reviewer SDK or the AWS
          * CLI to associate a GitHub repository with Amazon CodeGuru Reviewer. To associate
          * a GitHub repository, use the console. For more information, see <a
          * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/getting-started-with-guru.html">Getting
          * started with CodeGuru Reviewer</a> in the <i>CodeGuru Reviewer User Guide.</i>
-         * </p> </note><p><h3>See Also:</h3>   <a
+         * </p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/AssociateRepository">AWS
          * API Reference</a></p>
          *
@@ -220,12 +220,12 @@ namespace Model
          * information, see <a
          * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/reviewer-ug/step-one.html#select-repository-source-provider">Connect
          * to a repository source provider</a> in the <i>Amazon CodeGuru Reviewer User
-         * Guide.</i> </p> <note> <p> You cannot use the CodeGuru Reviewer SDK or the AWS
+         * Guide.</i> </p>  <p> You cannot use the CodeGuru Reviewer SDK or the AWS
          * CLI to associate a GitHub repository with Amazon CodeGuru Reviewer. To associate
          * a GitHub repository, use the console. For more information, see <a
          * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/getting-started-with-guru.html">Getting
          * started with CodeGuru Reviewer</a> in the <i>CodeGuru Reviewer User Guide.</i>
-         * </p> </note><p><h3>See Also:</h3>   <a
+         * </p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/AssociateRepository">AWS
          * API Reference</a></p>
          *

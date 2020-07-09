@@ -79,9 +79,9 @@ namespace Model
 
 
     /**
-     * <p>Whether the domain name is available for registering.</p> <note> <p>You can
+     * <p>Whether the domain name is available for registering.</p>  <p>You can
      * register only the domains that are designated as <code>AVAILABLE</code>.</p>
-     * </note> <p>Valid values:</p> <dl> <dt>AVAILABLE</dt> <dd> <p>The domain name is
+     *  <p>Valid values:</p> <dl> <dt>AVAILABLE</dt> <dd> <p>The domain name is
      * available.</p> </dd> <dt>AVAILABLE_RESERVED</dt> <dd> <p>The domain name is
      * reserved under specific conditions.</p> </dd> <dt>AVAILABLE_PREORDER</dt> <dd>
      * <p>The domain name is available and can be preordered.</p> </dd>
@@ -101,9 +101,9 @@ namespace Model
     inline const Aws::String& GetAvailability() const{ return m_availability; }
 
     /**
-     * <p>Whether the domain name is available for registering.</p> <note> <p>You can
+     * <p>Whether the domain name is available for registering.</p>  <p>You can
      * register only the domains that are designated as <code>AVAILABLE</code>.</p>
-     * </note> <p>Valid values:</p> <dl> <dt>AVAILABLE</dt> <dd> <p>The domain name is
+     *  <p>Valid values:</p> <dl> <dt>AVAILABLE</dt> <dd> <p>The domain name is
      * available.</p> </dd> <dt>AVAILABLE_RESERVED</dt> <dd> <p>The domain name is
      * reserved under specific conditions.</p> </dd> <dt>AVAILABLE_PREORDER</dt> <dd>
      * <p>The domain name is available and can be preordered.</p> </dd>
@@ -123,9 +123,9 @@ namespace Model
     inline bool AvailabilityHasBeenSet() const { return m_availabilityHasBeenSet; }
 
     /**
-     * <p>Whether the domain name is available for registering.</p> <note> <p>You can
+     * <p>Whether the domain name is available for registering.</p>  <p>You can
      * register only the domains that are designated as <code>AVAILABLE</code>.</p>
-     * </note> <p>Valid values:</p> <dl> <dt>AVAILABLE</dt> <dd> <p>The domain name is
+     *  <p>Valid values:</p> <dl> <dt>AVAILABLE</dt> <dd> <p>The domain name is
      * available.</p> </dd> <dt>AVAILABLE_RESERVED</dt> <dd> <p>The domain name is
      * reserved under specific conditions.</p> </dd> <dt>AVAILABLE_PREORDER</dt> <dd>
      * <p>The domain name is available and can be preordered.</p> </dd>
@@ -145,9 +145,9 @@ namespace Model
     inline void SetAvailability(const Aws::String& value) { m_availabilityHasBeenSet = true; m_availability = value; }
 
     /**
-     * <p>Whether the domain name is available for registering.</p> <note> <p>You can
+     * <p>Whether the domain name is available for registering.</p>  <p>You can
      * register only the domains that are designated as <code>AVAILABLE</code>.</p>
-     * </note> <p>Valid values:</p> <dl> <dt>AVAILABLE</dt> <dd> <p>The domain name is
+     *  <p>Valid values:</p> <dl> <dt>AVAILABLE</dt> <dd> <p>The domain name is
      * available.</p> </dd> <dt>AVAILABLE_RESERVED</dt> <dd> <p>The domain name is
      * reserved under specific conditions.</p> </dd> <dt>AVAILABLE_PREORDER</dt> <dd>
      * <p>The domain name is available and can be preordered.</p> </dd>
@@ -167,9 +167,9 @@ namespace Model
     inline void SetAvailability(Aws::String&& value) { m_availabilityHasBeenSet = true; m_availability = std::move(value); }
 
     /**
-     * <p>Whether the domain name is available for registering.</p> <note> <p>You can
+     * <p>Whether the domain name is available for registering.</p>  <p>You can
      * register only the domains that are designated as <code>AVAILABLE</code>.</p>
-     * </note> <p>Valid values:</p> <dl> <dt>AVAILABLE</dt> <dd> <p>The domain name is
+     *  <p>Valid values:</p> <dl> <dt>AVAILABLE</dt> <dd> <p>The domain name is
      * available.</p> </dd> <dt>AVAILABLE_RESERVED</dt> <dd> <p>The domain name is
      * reserved under specific conditions.</p> </dd> <dt>AVAILABLE_PREORDER</dt> <dd>
      * <p>The domain name is available and can be preordered.</p> </dd>
@@ -189,9 +189,9 @@ namespace Model
     inline void SetAvailability(const char* value) { m_availabilityHasBeenSet = true; m_availability.assign(value); }
 
     /**
-     * <p>Whether the domain name is available for registering.</p> <note> <p>You can
+     * <p>Whether the domain name is available for registering.</p>  <p>You can
      * register only the domains that are designated as <code>AVAILABLE</code>.</p>
-     * </note> <p>Valid values:</p> <dl> <dt>AVAILABLE</dt> <dd> <p>The domain name is
+     *  <p>Valid values:</p> <dl> <dt>AVAILABLE</dt> <dd> <p>The domain name is
      * available.</p> </dd> <dt>AVAILABLE_RESERVED</dt> <dd> <p>The domain name is
      * reserved under specific conditions.</p> </dd> <dt>AVAILABLE_PREORDER</dt> <dd>
      * <p>The domain name is available and can be preordered.</p> </dd>
@@ -211,9 +211,9 @@ namespace Model
     inline DomainSuggestion& WithAvailability(const Aws::String& value) { SetAvailability(value); return *this;}
 
     /**
-     * <p>Whether the domain name is available for registering.</p> <note> <p>You can
+     * <p>Whether the domain name is available for registering.</p>  <p>You can
      * register only the domains that are designated as <code>AVAILABLE</code>.</p>
-     * </note> <p>Valid values:</p> <dl> <dt>AVAILABLE</dt> <dd> <p>The domain name is
+     *  <p>Valid values:</p> <dl> <dt>AVAILABLE</dt> <dd> <p>The domain name is
      * available.</p> </dd> <dt>AVAILABLE_RESERVED</dt> <dd> <p>The domain name is
      * reserved under specific conditions.</p> </dd> <dt>AVAILABLE_PREORDER</dt> <dd>
      * <p>The domain name is available and can be preordered.</p> </dd>
@@ -233,9 +233,9 @@ namespace Model
     inline DomainSuggestion& WithAvailability(Aws::String&& value) { SetAvailability(std::move(value)); return *this;}
 
     /**
-     * <p>Whether the domain name is available for registering.</p> <note> <p>You can
+     * <p>Whether the domain name is available for registering.</p>  <p>You can
      * register only the domains that are designated as <code>AVAILABLE</code>.</p>
-     * </note> <p>Valid values:</p> <dl> <dt>AVAILABLE</dt> <dd> <p>The domain name is
+     *  <p>Valid values:</p> <dl> <dt>AVAILABLE</dt> <dd> <p>The domain name is
      * available.</p> </dd> <dt>AVAILABLE_RESERVED</dt> <dd> <p>The domain name is
      * reserved under specific conditions.</p> </dd> <dt>AVAILABLE_PREORDER</dt> <dd>
      * <p>The domain name is available and can be preordered.</p> </dd>

@@ -30,10 +30,10 @@ namespace Model
 
   /**
    * <p>Contains information about the event destination that the specified email
-   * sending events will be published to.</p> <note> <p>When you create or update an
+   * sending events will be published to.</p>  <p>When you create or update an
    * event destination, you must provide one, and only one, destination. The
    * destination can be Amazon CloudWatch, Amazon Kinesis Firehose or Amazon Simple
-   * Notification Service (Amazon SNS).</p> </note> <p>Event destinations are
+   * Notification Service (Amazon SNS).</p>  <p>Event destinations are
    * associated with configuration sets, which enable you to publish email sending
    * events to Amazon CloudWatch, Amazon Kinesis Firehose, or Amazon Simple
    * Notification Service (Amazon SNS). For information about using configuration

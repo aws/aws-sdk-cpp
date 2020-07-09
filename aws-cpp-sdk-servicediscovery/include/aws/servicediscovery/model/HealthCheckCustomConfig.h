@@ -30,10 +30,10 @@ namespace Model
    * internet. For example, you can use a custom health check when the instance is in
    * an Amazon VPC. (To check the health of resources in a VPC, the health checker
    * must also be in the VPC.)</p> </li> <li> <p>You want to use a third-party health
-   * checker regardless of where your resources are.</p> </li> </ul> <important>
+   * checker regardless of where your resources are.</p> </li> </ul> 
    * <p>If you specify a health check configuration, you can specify either
    * <code>HealthCheckCustomConfig</code> or <code>HealthCheckConfig</code> but not
-   * both.</p> </important> <p>To change the status of a custom health check, submit
+   * both.</p>  <p>To change the status of a custom health check, submit
    * an <code>UpdateInstanceCustomHealthStatus</code> request. AWS Cloud Map doesn't
    * monitor the status of the resource, it just keeps a record of the status
    * specified in the most recent <code>UpdateInstanceCustomHealthStatus</code>
@@ -45,8 +45,8 @@ namespace Model
    * request and the time that AWS Cloud Map stops routing internet traffic to the
    * corresponding resource.</p> </li> <li> <p>You register an instance.</p> </li>
    * <li> <p>You configure a third-party health checker to monitor the resource that
-   * is associated with the new instance. </p> <note> <p>AWS Cloud Map doesn't check
-   * the health of the resource directly. </p> </note> </li> <li> <p>The third-party
+   * is associated with the new instance. </p>  <p>AWS Cloud Map doesn't check
+   * the health of the resource directly. </p>  </li> <li> <p>The third-party
    * health-checker determines that the resource is unhealthy and notifies your
    * application.</p> </li> <li> <p>Your application submits an
    * <code>UpdateInstanceCustomHealthStatus</code> request.</p> </li> <li> <p>AWS

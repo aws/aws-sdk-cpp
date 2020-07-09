@@ -26,11 +26,11 @@ namespace Model
 {
 
   /**
-   * <note> <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2,
+   *  <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2,
    * released in November, 2019. For information, including how to migrate your AWS
    * WAF resources from the prior release, see the <a
    * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-   * WAF Developer Guide</a>. </p> </note> <p>Attackers sometimes insert malicious
+   * WAF Developer Guide</a>. </p>  <p>Attackers sometimes insert malicious
    * SQL code into web requests in an effort to extract data from your database. To
    * allow or block web requests that appear to contain malicious SQL code, create
    * one or more SQL injection match conditions. An SQL injection match condition

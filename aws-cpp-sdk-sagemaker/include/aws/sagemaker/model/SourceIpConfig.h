@@ -42,83 +42,83 @@ namespace Model
 
 
     /**
-     * <p>A list of one to four <a
+     * <p>A list of one to ten <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">Classless
-     * Inter-Domain Routing</a> (CIDR) values.</p> <p>Maximum: Four CIDR values</p>
-     * <note> <p>The following Length Constraints apply to individual CIDR values in
-     * the CIDR value list.</p> </note>
+     * Inter-Domain Routing</a> (CIDR) values.</p> <p>Maximum: Ten CIDR values</p>
+     *  <p>The following Length Constraints apply to individual CIDR values in
+     * the CIDR value list.</p> 
      */
     inline const Aws::Vector<Aws::String>& GetCidrs() const{ return m_cidrs; }
 
     /**
-     * <p>A list of one to four <a
+     * <p>A list of one to ten <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">Classless
-     * Inter-Domain Routing</a> (CIDR) values.</p> <p>Maximum: Four CIDR values</p>
-     * <note> <p>The following Length Constraints apply to individual CIDR values in
-     * the CIDR value list.</p> </note>
+     * Inter-Domain Routing</a> (CIDR) values.</p> <p>Maximum: Ten CIDR values</p>
+     *  <p>The following Length Constraints apply to individual CIDR values in
+     * the CIDR value list.</p> 
      */
     inline bool CidrsHasBeenSet() const { return m_cidrsHasBeenSet; }
 
     /**
-     * <p>A list of one to four <a
+     * <p>A list of one to ten <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">Classless
-     * Inter-Domain Routing</a> (CIDR) values.</p> <p>Maximum: Four CIDR values</p>
-     * <note> <p>The following Length Constraints apply to individual CIDR values in
-     * the CIDR value list.</p> </note>
+     * Inter-Domain Routing</a> (CIDR) values.</p> <p>Maximum: Ten CIDR values</p>
+     *  <p>The following Length Constraints apply to individual CIDR values in
+     * the CIDR value list.</p> 
      */
     inline void SetCidrs(const Aws::Vector<Aws::String>& value) { m_cidrsHasBeenSet = true; m_cidrs = value; }
 
     /**
-     * <p>A list of one to four <a
+     * <p>A list of one to ten <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">Classless
-     * Inter-Domain Routing</a> (CIDR) values.</p> <p>Maximum: Four CIDR values</p>
-     * <note> <p>The following Length Constraints apply to individual CIDR values in
-     * the CIDR value list.</p> </note>
+     * Inter-Domain Routing</a> (CIDR) values.</p> <p>Maximum: Ten CIDR values</p>
+     *  <p>The following Length Constraints apply to individual CIDR values in
+     * the CIDR value list.</p> 
      */
     inline void SetCidrs(Aws::Vector<Aws::String>&& value) { m_cidrsHasBeenSet = true; m_cidrs = std::move(value); }
 
     /**
-     * <p>A list of one to four <a
+     * <p>A list of one to ten <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">Classless
-     * Inter-Domain Routing</a> (CIDR) values.</p> <p>Maximum: Four CIDR values</p>
-     * <note> <p>The following Length Constraints apply to individual CIDR values in
-     * the CIDR value list.</p> </note>
+     * Inter-Domain Routing</a> (CIDR) values.</p> <p>Maximum: Ten CIDR values</p>
+     *  <p>The following Length Constraints apply to individual CIDR values in
+     * the CIDR value list.</p> 
      */
     inline SourceIpConfig& WithCidrs(const Aws::Vector<Aws::String>& value) { SetCidrs(value); return *this;}
 
     /**
-     * <p>A list of one to four <a
+     * <p>A list of one to ten <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">Classless
-     * Inter-Domain Routing</a> (CIDR) values.</p> <p>Maximum: Four CIDR values</p>
-     * <note> <p>The following Length Constraints apply to individual CIDR values in
-     * the CIDR value list.</p> </note>
+     * Inter-Domain Routing</a> (CIDR) values.</p> <p>Maximum: Ten CIDR values</p>
+     *  <p>The following Length Constraints apply to individual CIDR values in
+     * the CIDR value list.</p> 
      */
     inline SourceIpConfig& WithCidrs(Aws::Vector<Aws::String>&& value) { SetCidrs(std::move(value)); return *this;}
 
     /**
-     * <p>A list of one to four <a
+     * <p>A list of one to ten <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">Classless
-     * Inter-Domain Routing</a> (CIDR) values.</p> <p>Maximum: Four CIDR values</p>
-     * <note> <p>The following Length Constraints apply to individual CIDR values in
-     * the CIDR value list.</p> </note>
+     * Inter-Domain Routing</a> (CIDR) values.</p> <p>Maximum: Ten CIDR values</p>
+     *  <p>The following Length Constraints apply to individual CIDR values in
+     * the CIDR value list.</p> 
      */
     inline SourceIpConfig& AddCidrs(const Aws::String& value) { m_cidrsHasBeenSet = true; m_cidrs.push_back(value); return *this; }
 
     /**
-     * <p>A list of one to four <a
+     * <p>A list of one to ten <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">Classless
-     * Inter-Domain Routing</a> (CIDR) values.</p> <p>Maximum: Four CIDR values</p>
-     * <note> <p>The following Length Constraints apply to individual CIDR values in
-     * the CIDR value list.</p> </note>
+     * Inter-Domain Routing</a> (CIDR) values.</p> <p>Maximum: Ten CIDR values</p>
+     *  <p>The following Length Constraints apply to individual CIDR values in
+     * the CIDR value list.</p> 
      */
     inline SourceIpConfig& AddCidrs(Aws::String&& value) { m_cidrsHasBeenSet = true; m_cidrs.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>A list of one to four <a
+     * <p>A list of one to ten <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">Classless
-     * Inter-Domain Routing</a> (CIDR) values.</p> <p>Maximum: Four CIDR values</p>
-     * <note> <p>The following Length Constraints apply to individual CIDR values in
-     * the CIDR value list.</p> </note>
+     * Inter-Domain Routing</a> (CIDR) values.</p> <p>Maximum: Ten CIDR values</p>
+     *  <p>The following Length Constraints apply to individual CIDR values in
+     * the CIDR value list.</p> 
      */
     inline SourceIpConfig& AddCidrs(const char* value) { m_cidrsHasBeenSet = true; m_cidrs.push_back(value); return *this; }
 

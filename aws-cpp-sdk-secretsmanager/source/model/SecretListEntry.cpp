@@ -33,7 +33,8 @@ SecretListEntry::SecretListEntry() :
     m_deletedDateHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_secretVersionsToStagesHasBeenSet(false),
-    m_owningServiceHasBeenSet(false)
+    m_owningServiceHasBeenSet(false),
+    m_createdDateHasBeenSet(false)
 {
 }
 
@@ -52,7 +53,8 @@ SecretListEntry::SecretListEntry(JsonView jsonValue) :
     m_deletedDateHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_secretVersionsToStagesHasBeenSet(false),
-    m_owningServiceHasBeenSet(false)
+    m_owningServiceHasBeenSet(false),
+    m_createdDateHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -170,6 +172,13 @@ SecretListEntry& SecretListEntry::operator =(JsonView jsonValue)
     m_owningServiceHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("CreatedDate"))
+  {
+    m_createdDate = jsonValue.GetDouble("CreatedDate");
+
+    m_createdDateHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -270,6 +279,11 @@ JsonValue SecretListEntry::Jsonize() const
   {
    payload.WithString("OwningService", m_owningService);
 
+  }
+
+  if(m_createdDateHasBeenSet)
+  {
+   payload.WithDouble("CreatedDate", m_createdDate.SecondsWithMSPrecision());
   }
 
   return payload;

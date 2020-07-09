@@ -27,11 +27,11 @@ namespace Model
    * <p>A structure that contains an asset property value. For more information, see
    * <a
    * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_Variant.html">Variant</a>
-   * in the <i>AWS IoT SiteWise API Reference</i>.</p> <important> <p>You must
+   * in the <i>AWS IoT SiteWise API Reference</i>.</p>  <p>You must
    * specify one of the following value types, depending on the <code>dataType</code>
    * of the specified asset property. For more information, see <a
    * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_AssetProperty.html">AssetProperty</a>
-   * in the <i>AWS IoT SiteWise API Reference</i>.</p> </important> <p>For parameters
+   * in the <i>AWS IoT SiteWise API Reference</i>.</p>  <p>For parameters
    * that are string data type, you can specify the following options:</p> <ul> <li>
    * <p>Use a string. For example, the <code>doubleValue</code> value can be
    * <code>'47.9'</code>.</p> </li> <li> <p>Use an expression. For example, the

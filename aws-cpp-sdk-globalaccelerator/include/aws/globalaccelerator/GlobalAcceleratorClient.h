@@ -188,9 +188,9 @@ namespace Model
    * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/Welcome.html">AWS
    * Global Accelerator Developer Guide</a>. </p> <p>AWS Global Accelerator is a
    * service in which you create accelerators to improve availability and performance
-   * of your applications for local and global users. </p> <important> <p>You must
+   * of your applications for local and global users. </p>  <p>You must
    * specify the US West (Oregon) Region to create or update accelerators.</p>
-   * </important> <p>By default, Global Accelerator provides you with static IP
+   *  <p>By default, Global Accelerator provides you with static IP
    * addresses that you associate with your accelerator. (Instead of using the IP
    * addresses that Global Accelerator provides, you can configure these entry points
    * to be IPv4 addresses from your own IP address ranges that you bring to Global
@@ -216,7 +216,7 @@ namespace Model
    * Guide</i>. If you already have load balancers, EC2 instances, or Elastic IP
    * addresses set up for your applications, you can easily add those to Global
    * Accelerator to allow the resources to be accessed by the static IP
-   * addresses.</p> <important> <p>The static IP addresses remain assigned to your
+   * addresses.</p>  <p>The static IP addresses remain assigned to your
    * accelerator for as long as it exists, even if you disable the accelerator and it
    * no longer accepts or routes traffic. However, when you <i>delete</i> an
    * accelerator, you lose the static IP addresses that are assigned to it, so you
@@ -225,7 +225,7 @@ namespace Model
    * For more information, see <a
    * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/auth-and-access-control.html">Authentication
    * and Access Control</a> in the <i>AWS Global Accelerator Developer Guide</i>.
-   * </p> </important> </dd> <dt>Accelerator</dt> <dd> <p>An accelerator directs
+   * </p>  </dd> <dt>Accelerator</dt> <dd> <p>An accelerator directs
    * traffic to optimal endpoints over the AWS global network to improve availability
    * and performance for your internet applications that have a global audience. Each
    * accelerator includes one or more listeners.</p> </dd> <dt>DNS name</dt> <dd>
@@ -355,9 +355,9 @@ namespace Model
          * you bring your own IP address ranges to AWS Global Accelerator (BYOIP), you can
          * assign IP addresses from your own pool to your accelerator as the static IP
          * address entry points. Only one IP address from each of your IP address ranges
-         * can be used for each accelerator.</p> <important> <p>You must specify the US
+         * can be used for each accelerator.</p>  <p>You must specify the US
          * West (Oregon) Region to create or update accelerators.</p>
-         * </important><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/CreateAccelerator">AWS
          * API Reference</a></p>
          */
@@ -371,9 +371,9 @@ namespace Model
          * you bring your own IP address ranges to AWS Global Accelerator (BYOIP), you can
          * assign IP addresses from your own pool to your accelerator as the static IP
          * address entry points. Only one IP address from each of your IP address ranges
-         * can be used for each accelerator.</p> <important> <p>You must specify the US
+         * can be used for each accelerator.</p>  <p>You must specify the US
          * West (Oregon) Region to create or update accelerators.</p>
-         * </important><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/CreateAccelerator">AWS
          * API Reference</a></p>
          *
@@ -389,9 +389,9 @@ namespace Model
          * you bring your own IP address ranges to AWS Global Accelerator (BYOIP), you can
          * assign IP addresses from your own pool to your accelerator as the static IP
          * address entry points. Only one IP address from each of your IP address ranges
-         * can be used for each accelerator.</p> <important> <p>You must specify the US
+         * can be used for each accelerator.</p>  <p>You must specify the US
          * West (Oregon) Region to create or update accelerators.</p>
-         * </important><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/CreateAccelerator">AWS
          * API Reference</a></p>
          *
@@ -471,7 +471,7 @@ namespace Model
          * <p>Delete an accelerator. Before you can delete an accelerator, you must disable
          * it and remove all dependent resources (listeners and endpoint groups). To
          * disable the accelerator, update the accelerator to set <code>Enabled</code> to
-         * false.</p> <important> <p>When you create an accelerator, by default, Global
+         * false.</p>  <p>When you create an accelerator, by default, Global
          * Accelerator provides you with a set of two static IP addresses. Alternatively,
          * you can bring your own IP address ranges to Global Accelerator and assign IP
          * addresses from those ranges. </p> <p>The IP addresses are assigned to your
@@ -485,7 +485,7 @@ namespace Model
          * see <a
          * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/auth-and-access-control.html">Authentication
          * and Access Control</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
-         * </important><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/DeleteAccelerator">AWS
          * API Reference</a></p>
          */
@@ -495,7 +495,7 @@ namespace Model
          * <p>Delete an accelerator. Before you can delete an accelerator, you must disable
          * it and remove all dependent resources (listeners and endpoint groups). To
          * disable the accelerator, update the accelerator to set <code>Enabled</code> to
-         * false.</p> <important> <p>When you create an accelerator, by default, Global
+         * false.</p>  <p>When you create an accelerator, by default, Global
          * Accelerator provides you with a set of two static IP addresses. Alternatively,
          * you can bring your own IP address ranges to Global Accelerator and assign IP
          * addresses from those ranges. </p> <p>The IP addresses are assigned to your
@@ -509,7 +509,7 @@ namespace Model
          * see <a
          * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/auth-and-access-control.html">Authentication
          * and Access Control</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
-         * </important><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/DeleteAccelerator">AWS
          * API Reference</a></p>
          *
@@ -521,7 +521,7 @@ namespace Model
          * <p>Delete an accelerator. Before you can delete an accelerator, you must disable
          * it and remove all dependent resources (listeners and endpoint groups). To
          * disable the accelerator, update the accelerator to set <code>Enabled</code> to
-         * false.</p> <important> <p>When you create an accelerator, by default, Global
+         * false.</p>  <p>When you create an accelerator, by default, Global
          * Accelerator provides you with a set of two static IP addresses. Alternatively,
          * you can bring your own IP address ranges to Global Accelerator and assign IP
          * addresses from those ranges. </p> <p>The IP addresses are assigned to your
@@ -535,7 +535,7 @@ namespace Model
          * see <a
          * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/auth-and-access-control.html">Authentication
          * and Access Control</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
-         * </important><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/DeleteAccelerator">AWS
          * API Reference</a></p>
          *
@@ -1073,8 +1073,8 @@ namespace Model
 
         /**
          * <p>Update an accelerator. To see an AWS CLI example of updating an accelerator,
-         * scroll down to <b>Example</b>.</p> <important> <p>You must specify the US West
-         * (Oregon) Region to create or update accelerators.</p> </important><p><h3>See
+         * scroll down to <b>Example</b>.</p>  <p>You must specify the US West
+         * (Oregon) Region to create or update accelerators.</p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/UpdateAccelerator">AWS
          * API Reference</a></p>
@@ -1083,8 +1083,8 @@ namespace Model
 
         /**
          * <p>Update an accelerator. To see an AWS CLI example of updating an accelerator,
-         * scroll down to <b>Example</b>.</p> <important> <p>You must specify the US West
-         * (Oregon) Region to create or update accelerators.</p> </important><p><h3>See
+         * scroll down to <b>Example</b>.</p>  <p>You must specify the US West
+         * (Oregon) Region to create or update accelerators.</p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/UpdateAccelerator">AWS
          * API Reference</a></p>
@@ -1095,8 +1095,8 @@ namespace Model
 
         /**
          * <p>Update an accelerator. To see an AWS CLI example of updating an accelerator,
-         * scroll down to <b>Example</b>.</p> <important> <p>You must specify the US West
-         * (Oregon) Region to create or update accelerators.</p> </important><p><h3>See
+         * scroll down to <b>Example</b>.</p>  <p>You must specify the US West
+         * (Oregon) Region to create or update accelerators.</p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/UpdateAccelerator">AWS
          * API Reference</a></p>

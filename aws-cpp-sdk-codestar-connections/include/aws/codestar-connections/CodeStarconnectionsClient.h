@@ -113,9 +113,9 @@ namespace Model
     typedef std::function<void(const CodeStarconnectionsClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
 
   /**
-   * <fullname>AWS CodeStar Connections</fullname> <important> <p>The CodeStar
+   * <fullname>AWS CodeStar Connections</fullname>  <p>The CodeStar
    * Connections feature is in preview release and is subject to change.</p>
-   * </important> <p>This AWS CodeStar Connections API Reference provides
+   *  <p>This AWS CodeStar Connections API Reference provides
    * descriptions and usage examples of the operations and data types for the AWS
    * CodeStar Connections API. You can use the connections API to work with
    * connections and installations.</p> <p> <i>Connections</i> are configurations
@@ -222,10 +222,10 @@ namespace Model
          * <p>Creates a resource that represents the infrastructure where a third-party
          * provider is installed. The host is used when you create connections to an
          * installed third-party provider type, such as GitHub Enterprise Server. You
-         * create one host for all connections to that provider.</p> <note> <p>A host
+         * create one host for all connections to that provider.</p>  <p>A host
          * created through the CLI or the SDK is in `PENDING` status by default. You can
          * make its status `AVAILABLE` by setting up the host in the console.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/CreateHost">AWS
          * API Reference</a></p>
          */
@@ -235,10 +235,10 @@ namespace Model
          * <p>Creates a resource that represents the infrastructure where a third-party
          * provider is installed. The host is used when you create connections to an
          * installed third-party provider type, such as GitHub Enterprise Server. You
-         * create one host for all connections to that provider.</p> <note> <p>A host
+         * create one host for all connections to that provider.</p>  <p>A host
          * created through the CLI or the SDK is in `PENDING` status by default. You can
          * make its status `AVAILABLE` by setting up the host in the console.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/CreateHost">AWS
          * API Reference</a></p>
          *
@@ -250,10 +250,10 @@ namespace Model
          * <p>Creates a resource that represents the infrastructure where a third-party
          * provider is installed. The host is used when you create connections to an
          * installed third-party provider type, such as GitHub Enterprise Server. You
-         * create one host for all connections to that provider.</p> <note> <p>A host
+         * create one host for all connections to that provider.</p>  <p>A host
          * created through the CLI or the SDK is in `PENDING` status by default. You can
          * make its status `AVAILABLE` by setting up the host in the console.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/CreateHost">AWS
          * API Reference</a></p>
          *
@@ -288,8 +288,8 @@ namespace Model
 
         /**
          * <p>The host to be deleted. Before you delete a host, all connections associated
-         * to the host must be deleted.</p> <note> <p>A host cannot be deleted if it is in
-         * the VPC_CONFIG_INITIALIZING or VPC_CONFIG_DELETING state.</p> </note><p><h3>See
+         * to the host must be deleted.</p>  <p>A host cannot be deleted if it is in
+         * the VPC_CONFIG_INITIALIZING or VPC_CONFIG_DELETING state.</p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/DeleteHost">AWS
          * API Reference</a></p>
@@ -298,8 +298,8 @@ namespace Model
 
         /**
          * <p>The host to be deleted. Before you delete a host, all connections associated
-         * to the host must be deleted.</p> <note> <p>A host cannot be deleted if it is in
-         * the VPC_CONFIG_INITIALIZING or VPC_CONFIG_DELETING state.</p> </note><p><h3>See
+         * to the host must be deleted.</p>  <p>A host cannot be deleted if it is in
+         * the VPC_CONFIG_INITIALIZING or VPC_CONFIG_DELETING state.</p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/DeleteHost">AWS
          * API Reference</a></p>
@@ -310,8 +310,8 @@ namespace Model
 
         /**
          * <p>The host to be deleted. Before you delete a host, all connections associated
-         * to the host must be deleted.</p> <note> <p>A host cannot be deleted if it is in
-         * the VPC_CONFIG_INITIALIZING or VPC_CONFIG_DELETING state.</p> </note><p><h3>See
+         * to the host must be deleted.</p>  <p>A host cannot be deleted if it is in
+         * the VPC_CONFIG_INITIALIZING or VPC_CONFIG_DELETING state.</p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/DeleteHost">AWS
          * API Reference</a></p>

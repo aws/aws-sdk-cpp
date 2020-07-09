@@ -27,7 +27,7 @@ namespace Model
 {
 
   /**
-   * <note> <p>Amazon EMR releases 4.x or later.</p> </note> <p>An optional
+   *  <p>Amazon EMR releases 4.x or later.</p>  <p>An optional
    * configuration specification to be used when provisioning cluster instances,
    * which can include configurations for applications and software bundled with
    * Amazon EMR. A configuration consists of a classification, properties, and

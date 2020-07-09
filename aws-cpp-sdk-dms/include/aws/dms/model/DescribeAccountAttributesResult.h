@@ -83,9 +83,9 @@ namespace Model
      * reports in a given AWS Region. The format of this S3 bucket name is the
      * following: <code>dms-<i>AccountNumber</i>-<i>UniqueAccountIdentifier</i>.</code>
      * Here is an example name for this default S3 bucket:
-     * <code>dms-111122223333-c44445555666</code>.</p> <note> <p>AWS DMS supports the
+     * <code>dms-111122223333-c44445555666</code>.</p>  <p>AWS DMS supports the
      * <code>UniqueAccountIdentifier</code> parameter in versions 3.1.4 and later.</p>
-     * </note>
+     * 
      */
     inline const Aws::String& GetUniqueAccountIdentifier() const{ return m_uniqueAccountIdentifier; }
 
@@ -97,9 +97,9 @@ namespace Model
      * reports in a given AWS Region. The format of this S3 bucket name is the
      * following: <code>dms-<i>AccountNumber</i>-<i>UniqueAccountIdentifier</i>.</code>
      * Here is an example name for this default S3 bucket:
-     * <code>dms-111122223333-c44445555666</code>.</p> <note> <p>AWS DMS supports the
+     * <code>dms-111122223333-c44445555666</code>.</p>  <p>AWS DMS supports the
      * <code>UniqueAccountIdentifier</code> parameter in versions 3.1.4 and later.</p>
-     * </note>
+     * 
      */
     inline void SetUniqueAccountIdentifier(const Aws::String& value) { m_uniqueAccountIdentifier = value; }
 
@@ -111,9 +111,9 @@ namespace Model
      * reports in a given AWS Region. The format of this S3 bucket name is the
      * following: <code>dms-<i>AccountNumber</i>-<i>UniqueAccountIdentifier</i>.</code>
      * Here is an example name for this default S3 bucket:
-     * <code>dms-111122223333-c44445555666</code>.</p> <note> <p>AWS DMS supports the
+     * <code>dms-111122223333-c44445555666</code>.</p>  <p>AWS DMS supports the
      * <code>UniqueAccountIdentifier</code> parameter in versions 3.1.4 and later.</p>
-     * </note>
+     * 
      */
     inline void SetUniqueAccountIdentifier(Aws::String&& value) { m_uniqueAccountIdentifier = std::move(value); }
 
@@ -125,9 +125,9 @@ namespace Model
      * reports in a given AWS Region. The format of this S3 bucket name is the
      * following: <code>dms-<i>AccountNumber</i>-<i>UniqueAccountIdentifier</i>.</code>
      * Here is an example name for this default S3 bucket:
-     * <code>dms-111122223333-c44445555666</code>.</p> <note> <p>AWS DMS supports the
+     * <code>dms-111122223333-c44445555666</code>.</p>  <p>AWS DMS supports the
      * <code>UniqueAccountIdentifier</code> parameter in versions 3.1.4 and later.</p>
-     * </note>
+     * 
      */
     inline void SetUniqueAccountIdentifier(const char* value) { m_uniqueAccountIdentifier.assign(value); }
 
@@ -139,9 +139,9 @@ namespace Model
      * reports in a given AWS Region. The format of this S3 bucket name is the
      * following: <code>dms-<i>AccountNumber</i>-<i>UniqueAccountIdentifier</i>.</code>
      * Here is an example name for this default S3 bucket:
-     * <code>dms-111122223333-c44445555666</code>.</p> <note> <p>AWS DMS supports the
+     * <code>dms-111122223333-c44445555666</code>.</p>  <p>AWS DMS supports the
      * <code>UniqueAccountIdentifier</code> parameter in versions 3.1.4 and later.</p>
-     * </note>
+     * 
      */
     inline DescribeAccountAttributesResult& WithUniqueAccountIdentifier(const Aws::String& value) { SetUniqueAccountIdentifier(value); return *this;}
 
@@ -153,9 +153,9 @@ namespace Model
      * reports in a given AWS Region. The format of this S3 bucket name is the
      * following: <code>dms-<i>AccountNumber</i>-<i>UniqueAccountIdentifier</i>.</code>
      * Here is an example name for this default S3 bucket:
-     * <code>dms-111122223333-c44445555666</code>.</p> <note> <p>AWS DMS supports the
+     * <code>dms-111122223333-c44445555666</code>.</p>  <p>AWS DMS supports the
      * <code>UniqueAccountIdentifier</code> parameter in versions 3.1.4 and later.</p>
-     * </note>
+     * 
      */
     inline DescribeAccountAttributesResult& WithUniqueAccountIdentifier(Aws::String&& value) { SetUniqueAccountIdentifier(std::move(value)); return *this;}
 
@@ -167,9 +167,9 @@ namespace Model
      * reports in a given AWS Region. The format of this S3 bucket name is the
      * following: <code>dms-<i>AccountNumber</i>-<i>UniqueAccountIdentifier</i>.</code>
      * Here is an example name for this default S3 bucket:
-     * <code>dms-111122223333-c44445555666</code>.</p> <note> <p>AWS DMS supports the
+     * <code>dms-111122223333-c44445555666</code>.</p>  <p>AWS DMS supports the
      * <code>UniqueAccountIdentifier</code> parameter in versions 3.1.4 and later.</p>
-     * </note>
+     * 
      */
     inline DescribeAccountAttributesResult& WithUniqueAccountIdentifier(const char* value) { SetUniqueAccountIdentifier(value); return *this;}
 

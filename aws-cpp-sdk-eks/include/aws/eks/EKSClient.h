@@ -231,10 +231,10 @@ namespace Model
          * CloudWatch Logs. For more information, see <a
          * href="https://docs.aws.amazon.com/eks/latest/userguide/control-plane-logs.html">Amazon
          * EKS Cluster Control Plane Logs</a> in the <i> <i>Amazon EKS User Guide</i>
-         * </i>.</p> <note> <p>CloudWatch Logs ingestion, archive storage, and data
+         * </i>.</p>  <p>CloudWatch Logs ingestion, archive storage, and data
          * scanning rates apply to exported control plane logs. For more information, see
          * <a href="http://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch
-         * Pricing</a>.</p> </note> <p>Cluster creation typically takes between 10 and 15
+         * Pricing</a>.</p>  <p>Cluster creation typically takes between 10 and 15
          * minutes. After you create an Amazon EKS cluster, you must configure your
          * Kubernetes tooling to communicate with the API server and launch worker nodes
          * into your cluster. For more information, see <a
@@ -275,10 +275,10 @@ namespace Model
          * CloudWatch Logs. For more information, see <a
          * href="https://docs.aws.amazon.com/eks/latest/userguide/control-plane-logs.html">Amazon
          * EKS Cluster Control Plane Logs</a> in the <i> <i>Amazon EKS User Guide</i>
-         * </i>.</p> <note> <p>CloudWatch Logs ingestion, archive storage, and data
+         * </i>.</p>  <p>CloudWatch Logs ingestion, archive storage, and data
          * scanning rates apply to exported control plane logs. For more information, see
          * <a href="http://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch
-         * Pricing</a>.</p> </note> <p>Cluster creation typically takes between 10 and 15
+         * Pricing</a>.</p>  <p>Cluster creation typically takes between 10 and 15
          * minutes. After you create an Amazon EKS cluster, you must configure your
          * Kubernetes tooling to communicate with the API server and launch worker nodes
          * into your cluster. For more information, see <a
@@ -321,10 +321,10 @@ namespace Model
          * CloudWatch Logs. For more information, see <a
          * href="https://docs.aws.amazon.com/eks/latest/userguide/control-plane-logs.html">Amazon
          * EKS Cluster Control Plane Logs</a> in the <i> <i>Amazon EKS User Guide</i>
-         * </i>.</p> <note> <p>CloudWatch Logs ingestion, archive storage, and data
+         * </i>.</p>  <p>CloudWatch Logs ingestion, archive storage, and data
          * scanning rates apply to exported control plane logs. For more information, see
          * <a href="http://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch
-         * Pricing</a>.</p> </note> <p>Cluster creation typically takes between 10 and 15
+         * Pricing</a>.</p>  <p>Cluster creation typically takes between 10 and 15
          * minutes. After you create an Amazon EKS cluster, you must configure your
          * Kubernetes tooling to communicate with the API server and launch worker nodes
          * into your cluster. For more information, see <a
@@ -633,9 +633,9 @@ namespace Model
          * required for <code>kubelet</code> and <code>kubectl</code> to communicate with
          * your Kubernetes API server. For more information, see <a
          * href="https://docs.aws.amazon.com/eks/latest/userguide/create-kubeconfig.html">Create
-         * a kubeconfig for Amazon EKS</a>.</p> <note> <p>The API server endpoint and
+         * a kubeconfig for Amazon EKS</a>.</p>  <p>The API server endpoint and
          * certificate authority data aren't available until the cluster reaches the
-         * <code>ACTIVE</code> state.</p> </note><p><h3>See Also:</h3>   <a
+         * <code>ACTIVE</code> state.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DescribeCluster">AWS
          * API Reference</a></p>
          */
@@ -647,9 +647,9 @@ namespace Model
          * required for <code>kubelet</code> and <code>kubectl</code> to communicate with
          * your Kubernetes API server. For more information, see <a
          * href="https://docs.aws.amazon.com/eks/latest/userguide/create-kubeconfig.html">Create
-         * a kubeconfig for Amazon EKS</a>.</p> <note> <p>The API server endpoint and
+         * a kubeconfig for Amazon EKS</a>.</p>  <p>The API server endpoint and
          * certificate authority data aren't available until the cluster reaches the
-         * <code>ACTIVE</code> state.</p> </note><p><h3>See Also:</h3>   <a
+         * <code>ACTIVE</code> state.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DescribeCluster">AWS
          * API Reference</a></p>
          *
@@ -663,9 +663,9 @@ namespace Model
          * required for <code>kubelet</code> and <code>kubectl</code> to communicate with
          * your Kubernetes API server. For more information, see <a
          * href="https://docs.aws.amazon.com/eks/latest/userguide/create-kubeconfig.html">Create
-         * a kubeconfig for Amazon EKS</a>.</p> <note> <p>The API server endpoint and
+         * a kubeconfig for Amazon EKS</a>.</p>  <p>The API server endpoint and
          * certificate authority data aren't available until the cluster reaches the
-         * <code>ACTIVE</code> state.</p> </note><p><h3>See Also:</h3>   <a
+         * <code>ACTIVE</code> state.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DescribeCluster">AWS
          * API Reference</a></p>
          *
@@ -987,17 +987,17 @@ namespace Model
          * CloudWatch Logs. For more information, see <a
          * href="https://docs.aws.amazon.com/eks/latest/userguide/control-plane-logs.html">Amazon
          * EKS Cluster Control Plane Logs</a> in the <i> <i>Amazon EKS User Guide</i>
-         * </i>.</p> <note> <p>CloudWatch Logs ingestion, archive storage, and data
+         * </i>.</p>  <p>CloudWatch Logs ingestion, archive storage, and data
          * scanning rates apply to exported control plane logs. For more information, see
          * <a href="http://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch
-         * Pricing</a>.</p> </note> <p>You can also use this API operation to enable or
+         * Pricing</a>.</p>  <p>You can also use this API operation to enable or
          * disable public and private access to your cluster's Kubernetes API server
          * endpoint. By default, public access is enabled, and private access is disabled.
          * For more information, see <a
          * href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon
          * EKS Cluster Endpoint Access Control</a> in the <i> <i>Amazon EKS User Guide</i>
-         * </i>. </p> <important> <p>At this time, you can not update the subnets or
-         * security group IDs for an existing cluster.</p> </important> <p>Cluster updates
+         * </i>. </p>  <p>At this time, you can not update the subnets or
+         * security group IDs for an existing cluster.</p>  <p>Cluster updates
          * are asynchronous, and they should finish within a few minutes. During an update,
          * the cluster status moves to <code>UPDATING</code> (this status transition is
          * eventually consistent). When the update is complete (either <code>Failed</code>
@@ -1018,17 +1018,17 @@ namespace Model
          * CloudWatch Logs. For more information, see <a
          * href="https://docs.aws.amazon.com/eks/latest/userguide/control-plane-logs.html">Amazon
          * EKS Cluster Control Plane Logs</a> in the <i> <i>Amazon EKS User Guide</i>
-         * </i>.</p> <note> <p>CloudWatch Logs ingestion, archive storage, and data
+         * </i>.</p>  <p>CloudWatch Logs ingestion, archive storage, and data
          * scanning rates apply to exported control plane logs. For more information, see
          * <a href="http://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch
-         * Pricing</a>.</p> </note> <p>You can also use this API operation to enable or
+         * Pricing</a>.</p>  <p>You can also use this API operation to enable or
          * disable public and private access to your cluster's Kubernetes API server
          * endpoint. By default, public access is enabled, and private access is disabled.
          * For more information, see <a
          * href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon
          * EKS Cluster Endpoint Access Control</a> in the <i> <i>Amazon EKS User Guide</i>
-         * </i>. </p> <important> <p>At this time, you can not update the subnets or
-         * security group IDs for an existing cluster.</p> </important> <p>Cluster updates
+         * </i>. </p>  <p>At this time, you can not update the subnets or
+         * security group IDs for an existing cluster.</p>  <p>Cluster updates
          * are asynchronous, and they should finish within a few minutes. During an update,
          * the cluster status moves to <code>UPDATING</code> (this status transition is
          * eventually consistent). When the update is complete (either <code>Failed</code>
@@ -1051,17 +1051,17 @@ namespace Model
          * CloudWatch Logs. For more information, see <a
          * href="https://docs.aws.amazon.com/eks/latest/userguide/control-plane-logs.html">Amazon
          * EKS Cluster Control Plane Logs</a> in the <i> <i>Amazon EKS User Guide</i>
-         * </i>.</p> <note> <p>CloudWatch Logs ingestion, archive storage, and data
+         * </i>.</p>  <p>CloudWatch Logs ingestion, archive storage, and data
          * scanning rates apply to exported control plane logs. For more information, see
          * <a href="http://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch
-         * Pricing</a>.</p> </note> <p>You can also use this API operation to enable or
+         * Pricing</a>.</p>  <p>You can also use this API operation to enable or
          * disable public and private access to your cluster's Kubernetes API server
          * endpoint. By default, public access is enabled, and private access is disabled.
          * For more information, see <a
          * href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon
          * EKS Cluster Endpoint Access Control</a> in the <i> <i>Amazon EKS User Guide</i>
-         * </i>. </p> <important> <p>At this time, you can not update the subnets or
-         * security group IDs for an existing cluster.</p> </important> <p>Cluster updates
+         * </i>. </p>  <p>At this time, you can not update the subnets or
+         * security group IDs for an existing cluster.</p>  <p>Cluster updates
          * are asynchronous, and they should finish within a few minutes. During an update,
          * the cluster status moves to <code>UPDATING</code> (this status transition is
          * eventually consistent). When the update is complete (either <code>Failed</code>

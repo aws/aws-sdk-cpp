@@ -116,9 +116,9 @@ namespace Model
      * <p>Determines whether a final snapshot of the cluster is created before Amazon
      * Redshift deletes the cluster. If <code>true</code>, a final cluster snapshot is
      * not created. If <code>false</code>, a final cluster snapshot is created before
-     * the cluster is deleted. </p> <note> <p>The <i>FinalClusterSnapshotIdentifier</i>
+     * the cluster is deleted. </p>  <p>The <i>FinalClusterSnapshotIdentifier</i>
      * parameter must be specified if <i>SkipFinalClusterSnapshot</i> is
-     * <code>false</code>.</p> </note> <p>Default: <code>false</code> </p>
+     * <code>false</code>.</p>  <p>Default: <code>false</code> </p>
      */
     inline bool GetSkipFinalClusterSnapshot() const{ return m_skipFinalClusterSnapshot; }
 
@@ -126,9 +126,9 @@ namespace Model
      * <p>Determines whether a final snapshot of the cluster is created before Amazon
      * Redshift deletes the cluster. If <code>true</code>, a final cluster snapshot is
      * not created. If <code>false</code>, a final cluster snapshot is created before
-     * the cluster is deleted. </p> <note> <p>The <i>FinalClusterSnapshotIdentifier</i>
+     * the cluster is deleted. </p>  <p>The <i>FinalClusterSnapshotIdentifier</i>
      * parameter must be specified if <i>SkipFinalClusterSnapshot</i> is
-     * <code>false</code>.</p> </note> <p>Default: <code>false</code> </p>
+     * <code>false</code>.</p>  <p>Default: <code>false</code> </p>
      */
     inline bool SkipFinalClusterSnapshotHasBeenSet() const { return m_skipFinalClusterSnapshotHasBeenSet; }
 
@@ -136,9 +136,9 @@ namespace Model
      * <p>Determines whether a final snapshot of the cluster is created before Amazon
      * Redshift deletes the cluster. If <code>true</code>, a final cluster snapshot is
      * not created. If <code>false</code>, a final cluster snapshot is created before
-     * the cluster is deleted. </p> <note> <p>The <i>FinalClusterSnapshotIdentifier</i>
+     * the cluster is deleted. </p>  <p>The <i>FinalClusterSnapshotIdentifier</i>
      * parameter must be specified if <i>SkipFinalClusterSnapshot</i> is
-     * <code>false</code>.</p> </note> <p>Default: <code>false</code> </p>
+     * <code>false</code>.</p>  <p>Default: <code>false</code> </p>
      */
     inline void SetSkipFinalClusterSnapshot(bool value) { m_skipFinalClusterSnapshotHasBeenSet = true; m_skipFinalClusterSnapshot = value; }
 
@@ -146,9 +146,9 @@ namespace Model
      * <p>Determines whether a final snapshot of the cluster is created before Amazon
      * Redshift deletes the cluster. If <code>true</code>, a final cluster snapshot is
      * not created. If <code>false</code>, a final cluster snapshot is created before
-     * the cluster is deleted. </p> <note> <p>The <i>FinalClusterSnapshotIdentifier</i>
+     * the cluster is deleted. </p>  <p>The <i>FinalClusterSnapshotIdentifier</i>
      * parameter must be specified if <i>SkipFinalClusterSnapshot</i> is
-     * <code>false</code>.</p> </note> <p>Default: <code>false</code> </p>
+     * <code>false</code>.</p>  <p>Default: <code>false</code> </p>
      */
     inline DeleteClusterRequest& WithSkipFinalClusterSnapshot(bool value) { SetSkipFinalClusterSnapshot(value); return *this;}
 

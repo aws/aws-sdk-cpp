@@ -99,13 +99,13 @@ namespace Model
      * task successfully.</p> </li> <li> <p> <code>CANCELED</code> - Amazon FSx
      * canceled the task and it did not complete.</p> </li> <li> <p>
      * <code>CANCELING</code> - FSx is in process of canceling the task.</p> </li>
-     * </ul> <note> <p>You cannot delete an FSx for Lustre file system if there are
+     * </ul>  <p>You cannot delete an FSx for Lustre file system if there are
      * data repository tasks for the file system in the <code>PENDING</code> or
      * <code>EXECUTING</code> states. Please retry when the data repository task is
      * finished (with a status of <code>CANCELED</code>, <code>SUCCEEDED</code>, or
      * <code>FAILED</code>). You can use the DescribeDataRepositoryTask action to
      * monitor the task status. Contact the FSx team if you need to delete your file
-     * system immediately.</p> </note>
+     * system immediately.</p> 
      */
     inline const DataRepositoryTaskLifecycle& GetLifecycle() const{ return m_lifecycle; }
 
@@ -120,13 +120,13 @@ namespace Model
      * task successfully.</p> </li> <li> <p> <code>CANCELED</code> - Amazon FSx
      * canceled the task and it did not complete.</p> </li> <li> <p>
      * <code>CANCELING</code> - FSx is in process of canceling the task.</p> </li>
-     * </ul> <note> <p>You cannot delete an FSx for Lustre file system if there are
+     * </ul>  <p>You cannot delete an FSx for Lustre file system if there are
      * data repository tasks for the file system in the <code>PENDING</code> or
      * <code>EXECUTING</code> states. Please retry when the data repository task is
      * finished (with a status of <code>CANCELED</code>, <code>SUCCEEDED</code>, or
      * <code>FAILED</code>). You can use the DescribeDataRepositoryTask action to
      * monitor the task status. Contact the FSx team if you need to delete your file
-     * system immediately.</p> </note>
+     * system immediately.</p> 
      */
     inline bool LifecycleHasBeenSet() const { return m_lifecycleHasBeenSet; }
 
@@ -141,13 +141,13 @@ namespace Model
      * task successfully.</p> </li> <li> <p> <code>CANCELED</code> - Amazon FSx
      * canceled the task and it did not complete.</p> </li> <li> <p>
      * <code>CANCELING</code> - FSx is in process of canceling the task.</p> </li>
-     * </ul> <note> <p>You cannot delete an FSx for Lustre file system if there are
+     * </ul>  <p>You cannot delete an FSx for Lustre file system if there are
      * data repository tasks for the file system in the <code>PENDING</code> or
      * <code>EXECUTING</code> states. Please retry when the data repository task is
      * finished (with a status of <code>CANCELED</code>, <code>SUCCEEDED</code>, or
      * <code>FAILED</code>). You can use the DescribeDataRepositoryTask action to
      * monitor the task status. Contact the FSx team if you need to delete your file
-     * system immediately.</p> </note>
+     * system immediately.</p> 
      */
     inline void SetLifecycle(const DataRepositoryTaskLifecycle& value) { m_lifecycleHasBeenSet = true; m_lifecycle = value; }
 
@@ -162,13 +162,13 @@ namespace Model
      * task successfully.</p> </li> <li> <p> <code>CANCELED</code> - Amazon FSx
      * canceled the task and it did not complete.</p> </li> <li> <p>
      * <code>CANCELING</code> - FSx is in process of canceling the task.</p> </li>
-     * </ul> <note> <p>You cannot delete an FSx for Lustre file system if there are
+     * </ul>  <p>You cannot delete an FSx for Lustre file system if there are
      * data repository tasks for the file system in the <code>PENDING</code> or
      * <code>EXECUTING</code> states. Please retry when the data repository task is
      * finished (with a status of <code>CANCELED</code>, <code>SUCCEEDED</code>, or
      * <code>FAILED</code>). You can use the DescribeDataRepositoryTask action to
      * monitor the task status. Contact the FSx team if you need to delete your file
-     * system immediately.</p> </note>
+     * system immediately.</p> 
      */
     inline void SetLifecycle(DataRepositoryTaskLifecycle&& value) { m_lifecycleHasBeenSet = true; m_lifecycle = std::move(value); }
 
@@ -183,13 +183,13 @@ namespace Model
      * task successfully.</p> </li> <li> <p> <code>CANCELED</code> - Amazon FSx
      * canceled the task and it did not complete.</p> </li> <li> <p>
      * <code>CANCELING</code> - FSx is in process of canceling the task.</p> </li>
-     * </ul> <note> <p>You cannot delete an FSx for Lustre file system if there are
+     * </ul>  <p>You cannot delete an FSx for Lustre file system if there are
      * data repository tasks for the file system in the <code>PENDING</code> or
      * <code>EXECUTING</code> states. Please retry when the data repository task is
      * finished (with a status of <code>CANCELED</code>, <code>SUCCEEDED</code>, or
      * <code>FAILED</code>). You can use the DescribeDataRepositoryTask action to
      * monitor the task status. Contact the FSx team if you need to delete your file
-     * system immediately.</p> </note>
+     * system immediately.</p> 
      */
     inline DataRepositoryTask& WithLifecycle(const DataRepositoryTaskLifecycle& value) { SetLifecycle(value); return *this;}
 
@@ -204,13 +204,13 @@ namespace Model
      * task successfully.</p> </li> <li> <p> <code>CANCELED</code> - Amazon FSx
      * canceled the task and it did not complete.</p> </li> <li> <p>
      * <code>CANCELING</code> - FSx is in process of canceling the task.</p> </li>
-     * </ul> <note> <p>You cannot delete an FSx for Lustre file system if there are
+     * </ul>  <p>You cannot delete an FSx for Lustre file system if there are
      * data repository tasks for the file system in the <code>PENDING</code> or
      * <code>EXECUTING</code> states. Please retry when the data repository task is
      * finished (with a status of <code>CANCELED</code>, <code>SUCCEEDED</code>, or
      * <code>FAILED</code>). You can use the DescribeDataRepositoryTask action to
      * monitor the task status. Contact the FSx team if you need to delete your file
-     * system immediately.</p> </note>
+     * system immediately.</p> 
      */
     inline DataRepositoryTask& WithLifecycle(DataRepositoryTaskLifecycle&& value) { SetLifecycle(std::move(value)); return *this;}
 

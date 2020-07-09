@@ -37,8 +37,8 @@ namespace Model
      * <p>The name of the DB cluster parameter group.</p> <p>Constraints:</p> <ul> <li>
      * <p>Must be 1 to 255 letters or numbers.</p> </li> <li> <p>First character must
      * be a letter</p> </li> <li> <p>Cannot end with a hyphen or contain two
-     * consecutive hyphens</p> </li> </ul> <note> <p>This value is stored as a
-     * lowercase string.</p> </note>
+     * consecutive hyphens</p> </li> </ul>  <p>This value is stored as a
+     * lowercase string.</p> 
      */
     inline const Aws::String& GetDBClusterParameterGroupName() const{ return m_dBClusterParameterGroupName; }
 
@@ -46,8 +46,8 @@ namespace Model
      * <p>The name of the DB cluster parameter group.</p> <p>Constraints:</p> <ul> <li>
      * <p>Must be 1 to 255 letters or numbers.</p> </li> <li> <p>First character must
      * be a letter</p> </li> <li> <p>Cannot end with a hyphen or contain two
-     * consecutive hyphens</p> </li> </ul> <note> <p>This value is stored as a
-     * lowercase string.</p> </note>
+     * consecutive hyphens</p> </li> </ul>  <p>This value is stored as a
+     * lowercase string.</p> 
      */
     inline void SetDBClusterParameterGroupName(const Aws::String& value) { m_dBClusterParameterGroupName = value; }
 
@@ -55,8 +55,8 @@ namespace Model
      * <p>The name of the DB cluster parameter group.</p> <p>Constraints:</p> <ul> <li>
      * <p>Must be 1 to 255 letters or numbers.</p> </li> <li> <p>First character must
      * be a letter</p> </li> <li> <p>Cannot end with a hyphen or contain two
-     * consecutive hyphens</p> </li> </ul> <note> <p>This value is stored as a
-     * lowercase string.</p> </note>
+     * consecutive hyphens</p> </li> </ul>  <p>This value is stored as a
+     * lowercase string.</p> 
      */
     inline void SetDBClusterParameterGroupName(Aws::String&& value) { m_dBClusterParameterGroupName = std::move(value); }
 
@@ -64,8 +64,8 @@ namespace Model
      * <p>The name of the DB cluster parameter group.</p> <p>Constraints:</p> <ul> <li>
      * <p>Must be 1 to 255 letters or numbers.</p> </li> <li> <p>First character must
      * be a letter</p> </li> <li> <p>Cannot end with a hyphen or contain two
-     * consecutive hyphens</p> </li> </ul> <note> <p>This value is stored as a
-     * lowercase string.</p> </note>
+     * consecutive hyphens</p> </li> </ul>  <p>This value is stored as a
+     * lowercase string.</p> 
      */
     inline void SetDBClusterParameterGroupName(const char* value) { m_dBClusterParameterGroupName.assign(value); }
 
@@ -73,8 +73,8 @@ namespace Model
      * <p>The name of the DB cluster parameter group.</p> <p>Constraints:</p> <ul> <li>
      * <p>Must be 1 to 255 letters or numbers.</p> </li> <li> <p>First character must
      * be a letter</p> </li> <li> <p>Cannot end with a hyphen or contain two
-     * consecutive hyphens</p> </li> </ul> <note> <p>This value is stored as a
-     * lowercase string.</p> </note>
+     * consecutive hyphens</p> </li> </ul>  <p>This value is stored as a
+     * lowercase string.</p> 
      */
     inline ModifyDBClusterParameterGroupResult& WithDBClusterParameterGroupName(const Aws::String& value) { SetDBClusterParameterGroupName(value); return *this;}
 
@@ -82,8 +82,8 @@ namespace Model
      * <p>The name of the DB cluster parameter group.</p> <p>Constraints:</p> <ul> <li>
      * <p>Must be 1 to 255 letters or numbers.</p> </li> <li> <p>First character must
      * be a letter</p> </li> <li> <p>Cannot end with a hyphen or contain two
-     * consecutive hyphens</p> </li> </ul> <note> <p>This value is stored as a
-     * lowercase string.</p> </note>
+     * consecutive hyphens</p> </li> </ul>  <p>This value is stored as a
+     * lowercase string.</p> 
      */
     inline ModifyDBClusterParameterGroupResult& WithDBClusterParameterGroupName(Aws::String&& value) { SetDBClusterParameterGroupName(std::move(value)); return *this;}
 
@@ -91,8 +91,8 @@ namespace Model
      * <p>The name of the DB cluster parameter group.</p> <p>Constraints:</p> <ul> <li>
      * <p>Must be 1 to 255 letters or numbers.</p> </li> <li> <p>First character must
      * be a letter</p> </li> <li> <p>Cannot end with a hyphen or contain two
-     * consecutive hyphens</p> </li> </ul> <note> <p>This value is stored as a
-     * lowercase string.</p> </note>
+     * consecutive hyphens</p> </li> </ul>  <p>This value is stored as a
+     * lowercase string.</p> 
      */
     inline ModifyDBClusterParameterGroupResult& WithDBClusterParameterGroupName(const char* value) { SetDBClusterParameterGroupName(value); return *this;}
 

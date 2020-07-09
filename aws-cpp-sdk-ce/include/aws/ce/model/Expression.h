@@ -46,17 +46,17 @@ namespace Model
    * for that looks like this:</p> <p> <code>{ "And": [ {"Or": [ {"Dimensions": {
    * "Key": "REGION", "Values": [ "us-east-1", "us-west-1" ] }}, {"Tags": { "Key":
    * "TagName", "Values": ["Value1"] } } ]}, {"Not": {"Dimensions": { "Key":
-   * "USAGE_TYPE", "Values": ["DataTransfer"] }}} ] } </code> </p> <note> <p>Because
+   * "USAGE_TYPE", "Values": ["DataTransfer"] }}} ] } </code> </p>  <p>Because
    * each <code>Expression</code> can have only one operator, the service returns an
    * error if more than one is specified. The following example shows an
-   * <code>Expression</code> object that creates an error.</p> </note> <p> <code> {
+   * <code>Expression</code> object that creates an error.</p>  <p> <code> {
    * "And": [ ... ], "DimensionValues": { "Dimension": "USAGE_TYPE", "Values": [
-   * "DataTransfer" ] } } </code> </p> </li> </ul> <note> <p>For
+   * "DataTransfer" ] } } </code> </p> </li> </ul>  <p>For
    * <code>GetRightsizingRecommendation</code> action, a combination of OR and NOT is
    * not supported. OR is not supported between different dimensions, or dimensions
    * and tags. NOT operators aren't supported. Dimensions are also limited to
    * <code>LINKED_ACCOUNT</code>, <code>REGION</code>, or
-   * <code>RIGHTSIZING_TYPE</code>.</p> </note><p><h3>See Also:</h3>   <a
+   * <code>RIGHTSIZING_TYPE</code>.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/Expression">AWS API
    * Reference</a></p>
    */

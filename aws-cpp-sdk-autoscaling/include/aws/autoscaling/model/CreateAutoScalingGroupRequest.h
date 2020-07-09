@@ -514,42 +514,42 @@ namespace Model
 
 
     /**
-     * <p>The maximum size of the group.</p> <note> <p>With a mixed instances policy
+     * <p>The maximum size of the group.</p>  <p>With a mixed instances policy
      * that uses instance weighting, Amazon EC2 Auto Scaling may need to go above
      * <code>MaxSize</code> to meet your capacity requirements. In this event, Amazon
      * EC2 Auto Scaling will never go above <code>MaxSize</code> by more than your
      * maximum instance weight (weights that define how many capacity units each
-     * instance contributes to the capacity of the group).</p> </note>
+     * instance contributes to the capacity of the group).</p> 
      */
     inline int GetMaxSize() const{ return m_maxSize; }
 
     /**
-     * <p>The maximum size of the group.</p> <note> <p>With a mixed instances policy
+     * <p>The maximum size of the group.</p>  <p>With a mixed instances policy
      * that uses instance weighting, Amazon EC2 Auto Scaling may need to go above
      * <code>MaxSize</code> to meet your capacity requirements. In this event, Amazon
      * EC2 Auto Scaling will never go above <code>MaxSize</code> by more than your
      * maximum instance weight (weights that define how many capacity units each
-     * instance contributes to the capacity of the group).</p> </note>
+     * instance contributes to the capacity of the group).</p> 
      */
     inline bool MaxSizeHasBeenSet() const { return m_maxSizeHasBeenSet; }
 
     /**
-     * <p>The maximum size of the group.</p> <note> <p>With a mixed instances policy
+     * <p>The maximum size of the group.</p>  <p>With a mixed instances policy
      * that uses instance weighting, Amazon EC2 Auto Scaling may need to go above
      * <code>MaxSize</code> to meet your capacity requirements. In this event, Amazon
      * EC2 Auto Scaling will never go above <code>MaxSize</code> by more than your
      * maximum instance weight (weights that define how many capacity units each
-     * instance contributes to the capacity of the group).</p> </note>
+     * instance contributes to the capacity of the group).</p> 
      */
     inline void SetMaxSize(int value) { m_maxSizeHasBeenSet = true; m_maxSize = value; }
 
     /**
-     * <p>The maximum size of the group.</p> <note> <p>With a mixed instances policy
+     * <p>The maximum size of the group.</p>  <p>With a mixed instances policy
      * that uses instance weighting, Amazon EC2 Auto Scaling may need to go above
      * <code>MaxSize</code> to meet your capacity requirements. In this event, Amazon
      * EC2 Auto Scaling will never go above <code>MaxSize</code> by more than your
      * maximum instance weight (weights that define how many capacity units each
-     * instance contributes to the capacity of the group).</p> </note>
+     * instance contributes to the capacity of the group).</p> 
      */
     inline CreateAutoScalingGroupRequest& WithMaxSize(int value) { SetMaxSize(value); return *this;}
 

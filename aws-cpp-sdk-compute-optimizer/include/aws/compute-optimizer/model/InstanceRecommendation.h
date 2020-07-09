@@ -225,9 +225,9 @@ namespace Model
      * and is not over provisioned. An optimized instance runs your workloads with
      * optimal performance and infrastructure cost. For optimized resources, AWS
      * Compute Optimizer might recommend a new generation instance type.</p> </li>
-     * </ul> <note> <p>The values that are returned might be
+     * </ul>  <p>The values that are returned might be
      * <code>UNDER_PROVISIONED</code>, <code>OVER_PROVISIONED</code>, or
-     * <code>OPTIMIZED</code>.</p> </note>
+     * <code>OPTIMIZED</code>.</p> 
      */
     inline const Finding& GetFinding() const{ return m_finding; }
 
@@ -248,9 +248,9 @@ namespace Model
      * and is not over provisioned. An optimized instance runs your workloads with
      * optimal performance and infrastructure cost. For optimized resources, AWS
      * Compute Optimizer might recommend a new generation instance type.</p> </li>
-     * </ul> <note> <p>The values that are returned might be
+     * </ul>  <p>The values that are returned might be
      * <code>UNDER_PROVISIONED</code>, <code>OVER_PROVISIONED</code>, or
-     * <code>OPTIMIZED</code>.</p> </note>
+     * <code>OPTIMIZED</code>.</p> 
      */
     inline bool FindingHasBeenSet() const { return m_findingHasBeenSet; }
 
@@ -271,9 +271,9 @@ namespace Model
      * and is not over provisioned. An optimized instance runs your workloads with
      * optimal performance and infrastructure cost. For optimized resources, AWS
      * Compute Optimizer might recommend a new generation instance type.</p> </li>
-     * </ul> <note> <p>The values that are returned might be
+     * </ul>  <p>The values that are returned might be
      * <code>UNDER_PROVISIONED</code>, <code>OVER_PROVISIONED</code>, or
-     * <code>OPTIMIZED</code>.</p> </note>
+     * <code>OPTIMIZED</code>.</p> 
      */
     inline void SetFinding(const Finding& value) { m_findingHasBeenSet = true; m_finding = value; }
 
@@ -294,9 +294,9 @@ namespace Model
      * and is not over provisioned. An optimized instance runs your workloads with
      * optimal performance and infrastructure cost. For optimized resources, AWS
      * Compute Optimizer might recommend a new generation instance type.</p> </li>
-     * </ul> <note> <p>The values that are returned might be
+     * </ul>  <p>The values that are returned might be
      * <code>UNDER_PROVISIONED</code>, <code>OVER_PROVISIONED</code>, or
-     * <code>OPTIMIZED</code>.</p> </note>
+     * <code>OPTIMIZED</code>.</p> 
      */
     inline void SetFinding(Finding&& value) { m_findingHasBeenSet = true; m_finding = std::move(value); }
 
@@ -317,9 +317,9 @@ namespace Model
      * and is not over provisioned. An optimized instance runs your workloads with
      * optimal performance and infrastructure cost. For optimized resources, AWS
      * Compute Optimizer might recommend a new generation instance type.</p> </li>
-     * </ul> <note> <p>The values that are returned might be
+     * </ul>  <p>The values that are returned might be
      * <code>UNDER_PROVISIONED</code>, <code>OVER_PROVISIONED</code>, or
-     * <code>OPTIMIZED</code>.</p> </note>
+     * <code>OPTIMIZED</code>.</p> 
      */
     inline InstanceRecommendation& WithFinding(const Finding& value) { SetFinding(value); return *this;}
 
@@ -340,9 +340,9 @@ namespace Model
      * and is not over provisioned. An optimized instance runs your workloads with
      * optimal performance and infrastructure cost. For optimized resources, AWS
      * Compute Optimizer might recommend a new generation instance type.</p> </li>
-     * </ul> <note> <p>The values that are returned might be
+     * </ul>  <p>The values that are returned might be
      * <code>UNDER_PROVISIONED</code>, <code>OVER_PROVISIONED</code>, or
-     * <code>OPTIMIZED</code>.</p> </note>
+     * <code>OPTIMIZED</code>.</p> 
      */
     inline InstanceRecommendation& WithFinding(Finding&& value) { SetFinding(std::move(value)); return *this;}
 

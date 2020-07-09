@@ -47,7 +47,10 @@ enum class EBSErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-
+  CONCURRENT_LIMIT_EXCEEDED= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  CONFLICT,
+  INTERNAL_SERVER,
+  SERVICE_QUOTA_EXCEEDED
 };
 
 class AWS_EBS_API EBSError : public Aws::Client::AWSError<EBSErrors>

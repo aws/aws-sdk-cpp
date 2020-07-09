@@ -218,9 +218,9 @@ namespace Model
      * <code>ACTIVE</code> </p> </li> <li> <p> <code>CREATE_PENDING</code>,
      * <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li> <li> <p>
      * <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>,
-     * <code>DELETE_FAILED</code> </p> </li> </ul> <note> <p>The <code>Status</code> of
+     * <code>DELETE_FAILED</code> </p> </li> </ul>  <p>The <code>Status</code> of
      * the forecast must be <code>ACTIVE</code> before you can query or export the
-     * forecast.</p> </note>
+     * forecast.</p> 
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
 
@@ -229,9 +229,9 @@ namespace Model
      * <code>ACTIVE</code> </p> </li> <li> <p> <code>CREATE_PENDING</code>,
      * <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li> <li> <p>
      * <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>,
-     * <code>DELETE_FAILED</code> </p> </li> </ul> <note> <p>The <code>Status</code> of
+     * <code>DELETE_FAILED</code> </p> </li> </ul>  <p>The <code>Status</code> of
      * the forecast must be <code>ACTIVE</code> before you can query or export the
-     * forecast.</p> </note>
+     * forecast.</p> 
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
@@ -240,9 +240,9 @@ namespace Model
      * <code>ACTIVE</code> </p> </li> <li> <p> <code>CREATE_PENDING</code>,
      * <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li> <li> <p>
      * <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>,
-     * <code>DELETE_FAILED</code> </p> </li> </ul> <note> <p>The <code>Status</code> of
+     * <code>DELETE_FAILED</code> </p> </li> </ul>  <p>The <code>Status</code> of
      * the forecast must be <code>ACTIVE</code> before you can query or export the
-     * forecast.</p> </note>
+     * forecast.</p> 
      */
     inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
 
@@ -251,9 +251,9 @@ namespace Model
      * <code>ACTIVE</code> </p> </li> <li> <p> <code>CREATE_PENDING</code>,
      * <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li> <li> <p>
      * <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>,
-     * <code>DELETE_FAILED</code> </p> </li> </ul> <note> <p>The <code>Status</code> of
+     * <code>DELETE_FAILED</code> </p> </li> </ul>  <p>The <code>Status</code> of
      * the forecast must be <code>ACTIVE</code> before you can query or export the
-     * forecast.</p> </note>
+     * forecast.</p> 
      */
     inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
@@ -262,9 +262,9 @@ namespace Model
      * <code>ACTIVE</code> </p> </li> <li> <p> <code>CREATE_PENDING</code>,
      * <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li> <li> <p>
      * <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>,
-     * <code>DELETE_FAILED</code> </p> </li> </ul> <note> <p>The <code>Status</code> of
+     * <code>DELETE_FAILED</code> </p> </li> </ul>  <p>The <code>Status</code> of
      * the forecast must be <code>ACTIVE</code> before you can query or export the
-     * forecast.</p> </note>
+     * forecast.</p> 
      */
     inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
 
@@ -273,9 +273,9 @@ namespace Model
      * <code>ACTIVE</code> </p> </li> <li> <p> <code>CREATE_PENDING</code>,
      * <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li> <li> <p>
      * <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>,
-     * <code>DELETE_FAILED</code> </p> </li> </ul> <note> <p>The <code>Status</code> of
+     * <code>DELETE_FAILED</code> </p> </li> </ul>  <p>The <code>Status</code> of
      * the forecast must be <code>ACTIVE</code> before you can query or export the
-     * forecast.</p> </note>
+     * forecast.</p> 
      */
     inline ForecastSummary& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
 
@@ -284,9 +284,9 @@ namespace Model
      * <code>ACTIVE</code> </p> </li> <li> <p> <code>CREATE_PENDING</code>,
      * <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li> <li> <p>
      * <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>,
-     * <code>DELETE_FAILED</code> </p> </li> </ul> <note> <p>The <code>Status</code> of
+     * <code>DELETE_FAILED</code> </p> </li> </ul>  <p>The <code>Status</code> of
      * the forecast must be <code>ACTIVE</code> before you can query or export the
-     * forecast.</p> </note>
+     * forecast.</p> 
      */
     inline ForecastSummary& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
 
@@ -295,9 +295,9 @@ namespace Model
      * <code>ACTIVE</code> </p> </li> <li> <p> <code>CREATE_PENDING</code>,
      * <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li> <li> <p>
      * <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>,
-     * <code>DELETE_FAILED</code> </p> </li> </ul> <note> <p>The <code>Status</code> of
+     * <code>DELETE_FAILED</code> </p> </li> </ul>  <p>The <code>Status</code> of
      * the forecast must be <code>ACTIVE</code> before you can query or export the
-     * forecast.</p> </note>
+     * forecast.</p> 
      */
     inline ForecastSummary& WithStatus(const char* value) { SetStatus(value); return *this;}
 

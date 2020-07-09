@@ -522,9 +522,9 @@ namespace Model
         /**
          * <p>Updates a notification rule for a resource. You can change the events that
          * trigger the notification rule, the status of the rule, and the targets that
-         * receive the notifications.</p> <note> <p>To add or remove tags for a
+         * receive the notifications.</p>  <p>To add or remove tags for a
          * notification rule, you must use <a>TagResource</a> and <a>UntagResource</a>.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codestar-notifications-2019-10-15/UpdateNotificationRule">AWS
          * API Reference</a></p>
          */
@@ -533,9 +533,9 @@ namespace Model
         /**
          * <p>Updates a notification rule for a resource. You can change the events that
          * trigger the notification rule, the status of the rule, and the targets that
-         * receive the notifications.</p> <note> <p>To add or remove tags for a
+         * receive the notifications.</p>  <p>To add or remove tags for a
          * notification rule, you must use <a>TagResource</a> and <a>UntagResource</a>.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codestar-notifications-2019-10-15/UpdateNotificationRule">AWS
          * API Reference</a></p>
          *
@@ -546,9 +546,9 @@ namespace Model
         /**
          * <p>Updates a notification rule for a resource. You can change the events that
          * trigger the notification rule, the status of the rule, and the targets that
-         * receive the notifications.</p> <note> <p>To add or remove tags for a
+         * receive the notifications.</p>  <p>To add or remove tags for a
          * notification rule, you must use <a>TagResource</a> and <a>UntagResource</a>.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codestar-notifications-2019-10-15/UpdateNotificationRule">AWS
          * API Reference</a></p>
          *

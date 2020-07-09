@@ -29,11 +29,11 @@ namespace Model
 {
 
   /**
-   * <note> <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2,
+   *  <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2,
    * released in November, 2019. For information, including how to migrate your AWS
    * WAF resources from the prior release, see the <a
    * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-   * WAF Developer Guide</a>. </p> </note> <p> A Web ACL defines a collection of
+   * WAF Developer Guide</a>. </p>  <p> A Web ACL defines a collection of
    * rules to use to inspect and control web requests. Each rule has an action
    * defined (allow, block, or count) for requests that match the statement of the
    * rule. In the Web ACL, you assign a default action to take (allow, block) for any

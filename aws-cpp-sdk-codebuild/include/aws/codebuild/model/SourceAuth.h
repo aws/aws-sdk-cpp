@@ -42,43 +42,43 @@ namespace Model
 
 
     /**
-     * <note> <p> This data type is deprecated and is no longer accurate or used. </p>
-     * </note> <p>The authorization type to use. The only valid value is
+     *  <p> This data type is deprecated and is no longer accurate or used. </p>
+     *  <p>The authorization type to use. The only valid value is
      * <code>OAUTH</code>, which represents the OAuth authorization type.</p>
      */
     inline const SourceAuthType& GetType() const{ return m_type; }
 
     /**
-     * <note> <p> This data type is deprecated and is no longer accurate or used. </p>
-     * </note> <p>The authorization type to use. The only valid value is
+     *  <p> This data type is deprecated and is no longer accurate or used. </p>
+     *  <p>The authorization type to use. The only valid value is
      * <code>OAUTH</code>, which represents the OAuth authorization type.</p>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
-     * <note> <p> This data type is deprecated and is no longer accurate or used. </p>
-     * </note> <p>The authorization type to use. The only valid value is
+     *  <p> This data type is deprecated and is no longer accurate or used. </p>
+     *  <p>The authorization type to use. The only valid value is
      * <code>OAUTH</code>, which represents the OAuth authorization type.</p>
      */
     inline void SetType(const SourceAuthType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <note> <p> This data type is deprecated and is no longer accurate or used. </p>
-     * </note> <p>The authorization type to use. The only valid value is
+     *  <p> This data type is deprecated and is no longer accurate or used. </p>
+     *  <p>The authorization type to use. The only valid value is
      * <code>OAUTH</code>, which represents the OAuth authorization type.</p>
      */
     inline void SetType(SourceAuthType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <note> <p> This data type is deprecated and is no longer accurate or used. </p>
-     * </note> <p>The authorization type to use. The only valid value is
+     *  <p> This data type is deprecated and is no longer accurate or used. </p>
+     *  <p>The authorization type to use. The only valid value is
      * <code>OAUTH</code>, which represents the OAuth authorization type.</p>
      */
     inline SourceAuth& WithType(const SourceAuthType& value) { SetType(value); return *this;}
 
     /**
-     * <note> <p> This data type is deprecated and is no longer accurate or used. </p>
-     * </note> <p>The authorization type to use. The only valid value is
+     *  <p> This data type is deprecated and is no longer accurate or used. </p>
+     *  <p>The authorization type to use. The only valid value is
      * <code>OAUTH</code>, which represents the OAuth authorization type.</p>
      */
     inline SourceAuth& WithType(SourceAuthType&& value) { SetType(std::move(value)); return *this;}

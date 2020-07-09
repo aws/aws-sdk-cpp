@@ -27,10 +27,10 @@ namespace Model
   /**
    * <p>The launch specification for Spot instances in the fleet, which determines
    * the defined duration, provisioning timeout behavior, and allocation
-   * strategy.</p> <note> <p>The instance fleet configuration is available only in
+   * strategy.</p>  <p>The instance fleet configuration is available only in
    * Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions. On-Demand and
    * Spot instance allocation strategies are available in Amazon EMR version 5.12.1
-   * and later.</p> </note><p><h3>See Also:</h3>   <a
+   * and later.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/InstanceFleetProvisioningSpecifications">AWS
    * API Reference</a></p>
    */
@@ -88,55 +88,55 @@ namespace Model
 
     /**
      * <p> The launch specification for On-Demand instances in the instance fleet,
-     * which determines the allocation strategy. </p> <note> <p>The instance fleet
+     * which determines the allocation strategy. </p>  <p>The instance fleet
      * configuration is available only in Amazon EMR versions 4.8.0 and later,
      * excluding 5.0.x versions. On-Demand instances allocation strategy is available
-     * in Amazon EMR version 5.12.1 and later.</p> </note>
+     * in Amazon EMR version 5.12.1 and later.</p> 
      */
     inline const OnDemandProvisioningSpecification& GetOnDemandSpecification() const{ return m_onDemandSpecification; }
 
     /**
      * <p> The launch specification for On-Demand instances in the instance fleet,
-     * which determines the allocation strategy. </p> <note> <p>The instance fleet
+     * which determines the allocation strategy. </p>  <p>The instance fleet
      * configuration is available only in Amazon EMR versions 4.8.0 and later,
      * excluding 5.0.x versions. On-Demand instances allocation strategy is available
-     * in Amazon EMR version 5.12.1 and later.</p> </note>
+     * in Amazon EMR version 5.12.1 and later.</p> 
      */
     inline bool OnDemandSpecificationHasBeenSet() const { return m_onDemandSpecificationHasBeenSet; }
 
     /**
      * <p> The launch specification for On-Demand instances in the instance fleet,
-     * which determines the allocation strategy. </p> <note> <p>The instance fleet
+     * which determines the allocation strategy. </p>  <p>The instance fleet
      * configuration is available only in Amazon EMR versions 4.8.0 and later,
      * excluding 5.0.x versions. On-Demand instances allocation strategy is available
-     * in Amazon EMR version 5.12.1 and later.</p> </note>
+     * in Amazon EMR version 5.12.1 and later.</p> 
      */
     inline void SetOnDemandSpecification(const OnDemandProvisioningSpecification& value) { m_onDemandSpecificationHasBeenSet = true; m_onDemandSpecification = value; }
 
     /**
      * <p> The launch specification for On-Demand instances in the instance fleet,
-     * which determines the allocation strategy. </p> <note> <p>The instance fleet
+     * which determines the allocation strategy. </p>  <p>The instance fleet
      * configuration is available only in Amazon EMR versions 4.8.0 and later,
      * excluding 5.0.x versions. On-Demand instances allocation strategy is available
-     * in Amazon EMR version 5.12.1 and later.</p> </note>
+     * in Amazon EMR version 5.12.1 and later.</p> 
      */
     inline void SetOnDemandSpecification(OnDemandProvisioningSpecification&& value) { m_onDemandSpecificationHasBeenSet = true; m_onDemandSpecification = std::move(value); }
 
     /**
      * <p> The launch specification for On-Demand instances in the instance fleet,
-     * which determines the allocation strategy. </p> <note> <p>The instance fleet
+     * which determines the allocation strategy. </p>  <p>The instance fleet
      * configuration is available only in Amazon EMR versions 4.8.0 and later,
      * excluding 5.0.x versions. On-Demand instances allocation strategy is available
-     * in Amazon EMR version 5.12.1 and later.</p> </note>
+     * in Amazon EMR version 5.12.1 and later.</p> 
      */
     inline InstanceFleetProvisioningSpecifications& WithOnDemandSpecification(const OnDemandProvisioningSpecification& value) { SetOnDemandSpecification(value); return *this;}
 
     /**
      * <p> The launch specification for On-Demand instances in the instance fleet,
-     * which determines the allocation strategy. </p> <note> <p>The instance fleet
+     * which determines the allocation strategy. </p>  <p>The instance fleet
      * configuration is available only in Amazon EMR versions 4.8.0 and later,
      * excluding 5.0.x versions. On-Demand instances allocation strategy is available
-     * in Amazon EMR version 5.12.1 and later.</p> </note>
+     * in Amazon EMR version 5.12.1 and later.</p> 
      */
     inline InstanceFleetProvisioningSpecifications& WithOnDemandSpecification(OnDemandProvisioningSpecification&& value) { SetOnDemandSpecification(std::move(value)); return *this;}
 

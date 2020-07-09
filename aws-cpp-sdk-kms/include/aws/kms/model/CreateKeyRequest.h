@@ -413,14 +413,14 @@ namespace Model
      * or <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-signing-algorithm">kms:Signing
      * Algorithm</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
-     * <important> <p> <a
+     *  <p> <a
      * href="http://aws.amazon.com/kms/features/#AWS_Service_Integration">AWS services
      * that are integrated with AWS KMS</a> use symmetric CMKs to protect your data.
      * These services do not support asymmetric CMKs. For help determining whether a
      * CMK is symmetric or asymmetric, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/find-symm-asymm.html">Identifying
      * Symmetric and Asymmetric CMKs</a> in the <i>AWS Key Management Service Developer
-     * Guide</i>.</p> </important> <p>AWS KMS supports the following key specs for
+     * Guide</i>.</p>  <p>AWS KMS supports the following key specs for
      * CMKs:</p> <ul> <li> <p>Symmetric key (default)</p> <ul> <li> <p>
      * <code>SYMMETRIC_DEFAULT</code> (AES-256-GCM)</p> </li> </ul> </li> <li>
      * <p>Asymmetric RSA key pairs</p> <ul> <li> <p> <code>RSA_2048</code> </p> </li>
@@ -452,14 +452,14 @@ namespace Model
      * or <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-signing-algorithm">kms:Signing
      * Algorithm</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
-     * <important> <p> <a
+     *  <p> <a
      * href="http://aws.amazon.com/kms/features/#AWS_Service_Integration">AWS services
      * that are integrated with AWS KMS</a> use symmetric CMKs to protect your data.
      * These services do not support asymmetric CMKs. For help determining whether a
      * CMK is symmetric or asymmetric, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/find-symm-asymm.html">Identifying
      * Symmetric and Asymmetric CMKs</a> in the <i>AWS Key Management Service Developer
-     * Guide</i>.</p> </important> <p>AWS KMS supports the following key specs for
+     * Guide</i>.</p>  <p>AWS KMS supports the following key specs for
      * CMKs:</p> <ul> <li> <p>Symmetric key (default)</p> <ul> <li> <p>
      * <code>SYMMETRIC_DEFAULT</code> (AES-256-GCM)</p> </li> </ul> </li> <li>
      * <p>Asymmetric RSA key pairs</p> <ul> <li> <p> <code>RSA_2048</code> </p> </li>
@@ -491,14 +491,14 @@ namespace Model
      * or <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-signing-algorithm">kms:Signing
      * Algorithm</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
-     * <important> <p> <a
+     *  <p> <a
      * href="http://aws.amazon.com/kms/features/#AWS_Service_Integration">AWS services
      * that are integrated with AWS KMS</a> use symmetric CMKs to protect your data.
      * These services do not support asymmetric CMKs. For help determining whether a
      * CMK is symmetric or asymmetric, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/find-symm-asymm.html">Identifying
      * Symmetric and Asymmetric CMKs</a> in the <i>AWS Key Management Service Developer
-     * Guide</i>.</p> </important> <p>AWS KMS supports the following key specs for
+     * Guide</i>.</p>  <p>AWS KMS supports the following key specs for
      * CMKs:</p> <ul> <li> <p>Symmetric key (default)</p> <ul> <li> <p>
      * <code>SYMMETRIC_DEFAULT</code> (AES-256-GCM)</p> </li> </ul> </li> <li>
      * <p>Asymmetric RSA key pairs</p> <ul> <li> <p> <code>RSA_2048</code> </p> </li>
@@ -530,14 +530,14 @@ namespace Model
      * or <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-signing-algorithm">kms:Signing
      * Algorithm</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
-     * <important> <p> <a
+     *  <p> <a
      * href="http://aws.amazon.com/kms/features/#AWS_Service_Integration">AWS services
      * that are integrated with AWS KMS</a> use symmetric CMKs to protect your data.
      * These services do not support asymmetric CMKs. For help determining whether a
      * CMK is symmetric or asymmetric, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/find-symm-asymm.html">Identifying
      * Symmetric and Asymmetric CMKs</a> in the <i>AWS Key Management Service Developer
-     * Guide</i>.</p> </important> <p>AWS KMS supports the following key specs for
+     * Guide</i>.</p>  <p>AWS KMS supports the following key specs for
      * CMKs:</p> <ul> <li> <p>Symmetric key (default)</p> <ul> <li> <p>
      * <code>SYMMETRIC_DEFAULT</code> (AES-256-GCM)</p> </li> </ul> </li> <li>
      * <p>Asymmetric RSA key pairs</p> <ul> <li> <p> <code>RSA_2048</code> </p> </li>
@@ -569,14 +569,14 @@ namespace Model
      * or <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-signing-algorithm">kms:Signing
      * Algorithm</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
-     * <important> <p> <a
+     *  <p> <a
      * href="http://aws.amazon.com/kms/features/#AWS_Service_Integration">AWS services
      * that are integrated with AWS KMS</a> use symmetric CMKs to protect your data.
      * These services do not support asymmetric CMKs. For help determining whether a
      * CMK is symmetric or asymmetric, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/find-symm-asymm.html">Identifying
      * Symmetric and Asymmetric CMKs</a> in the <i>AWS Key Management Service Developer
-     * Guide</i>.</p> </important> <p>AWS KMS supports the following key specs for
+     * Guide</i>.</p>  <p>AWS KMS supports the following key specs for
      * CMKs:</p> <ul> <li> <p>Symmetric key (default)</p> <ul> <li> <p>
      * <code>SYMMETRIC_DEFAULT</code> (AES-256-GCM)</p> </li> </ul> </li> <li>
      * <p>Asymmetric RSA key pairs</p> <ul> <li> <p> <code>RSA_2048</code> </p> </li>
@@ -608,14 +608,14 @@ namespace Model
      * or <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-signing-algorithm">kms:Signing
      * Algorithm</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
-     * <important> <p> <a
+     *  <p> <a
      * href="http://aws.amazon.com/kms/features/#AWS_Service_Integration">AWS services
      * that are integrated with AWS KMS</a> use symmetric CMKs to protect your data.
      * These services do not support asymmetric CMKs. For help determining whether a
      * CMK is symmetric or asymmetric, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/find-symm-asymm.html">Identifying
      * Symmetric and Asymmetric CMKs</a> in the <i>AWS Key Management Service Developer
-     * Guide</i>.</p> </important> <p>AWS KMS supports the following key specs for
+     * Guide</i>.</p>  <p>AWS KMS supports the following key specs for
      * CMKs:</p> <ul> <li> <p>Symmetric key (default)</p> <ul> <li> <p>
      * <code>SYMMETRIC_DEFAULT</code> (AES-256-GCM)</p> </li> </ul> </li> <li>
      * <p>Asymmetric RSA key pairs</p> <ul> <li> <p> <code>RSA_2048</code> </p> </li>
@@ -903,12 +903,12 @@ namespace Model
 
     /**
      * <p>A flag to indicate whether to bypass the key policy lockout safety check.</p>
-     * <important> <p>Setting this value to true increases the risk that the CMK
+     *  <p>Setting this value to true increases the risk that the CMK
      * becomes unmanageable. Do not set this value to true indiscriminately.</p> <p>For
      * more information, refer to the scenario in the <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam">Default
      * Key Policy</a> section in the <i> <i>AWS Key Management Service Developer
-     * Guide</i> </i>.</p> </important> <p>Use this parameter only when you include a
+     * Guide</i> </i>.</p>  <p>Use this parameter only when you include a
      * policy in the request and you intend to prevent the principal that is making the
      * request from making a subsequent <a>PutKeyPolicy</a> request on the CMK.</p>
      * <p>The default value is false.</p>
@@ -917,12 +917,12 @@ namespace Model
 
     /**
      * <p>A flag to indicate whether to bypass the key policy lockout safety check.</p>
-     * <important> <p>Setting this value to true increases the risk that the CMK
+     *  <p>Setting this value to true increases the risk that the CMK
      * becomes unmanageable. Do not set this value to true indiscriminately.</p> <p>For
      * more information, refer to the scenario in the <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam">Default
      * Key Policy</a> section in the <i> <i>AWS Key Management Service Developer
-     * Guide</i> </i>.</p> </important> <p>Use this parameter only when you include a
+     * Guide</i> </i>.</p>  <p>Use this parameter only when you include a
      * policy in the request and you intend to prevent the principal that is making the
      * request from making a subsequent <a>PutKeyPolicy</a> request on the CMK.</p>
      * <p>The default value is false.</p>
@@ -931,12 +931,12 @@ namespace Model
 
     /**
      * <p>A flag to indicate whether to bypass the key policy lockout safety check.</p>
-     * <important> <p>Setting this value to true increases the risk that the CMK
+     *  <p>Setting this value to true increases the risk that the CMK
      * becomes unmanageable. Do not set this value to true indiscriminately.</p> <p>For
      * more information, refer to the scenario in the <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam">Default
      * Key Policy</a> section in the <i> <i>AWS Key Management Service Developer
-     * Guide</i> </i>.</p> </important> <p>Use this parameter only when you include a
+     * Guide</i> </i>.</p>  <p>Use this parameter only when you include a
      * policy in the request and you intend to prevent the principal that is making the
      * request from making a subsequent <a>PutKeyPolicy</a> request on the CMK.</p>
      * <p>The default value is false.</p>
@@ -945,12 +945,12 @@ namespace Model
 
     /**
      * <p>A flag to indicate whether to bypass the key policy lockout safety check.</p>
-     * <important> <p>Setting this value to true increases the risk that the CMK
+     *  <p>Setting this value to true increases the risk that the CMK
      * becomes unmanageable. Do not set this value to true indiscriminately.</p> <p>For
      * more information, refer to the scenario in the <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam">Default
      * Key Policy</a> section in the <i> <i>AWS Key Management Service Developer
-     * Guide</i> </i>.</p> </important> <p>Use this parameter only when you include a
+     * Guide</i> </i>.</p>  <p>Use this parameter only when you include a
      * policy in the request and you intend to prevent the principal that is making the
      * request from making a subsequent <a>PutKeyPolicy</a> request on the CMK.</p>
      * <p>The default value is false.</p>

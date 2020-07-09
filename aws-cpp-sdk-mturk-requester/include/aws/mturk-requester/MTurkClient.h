@@ -388,14 +388,14 @@ namespace Model
          * that the Worker submit a Qualification request. It gives the Qualification
          * directly to the Worker. </p> <p> You can only assign a Qualification of a
          * Qualification type that you created (using the
-         * <code>CreateQualificationType</code> operation). </p> <note> <p> Note:
+         * <code>CreateQualificationType</code> operation). </p>  <p> Note:
          * <code>AssociateQualificationWithWorker</code> does not affect any pending
          * Qualification requests for the Qualification by the Worker. If you assign a
          * Qualification to a Worker, then later grant a Qualification request made by the
          * Worker, the granting of the request may modify the Qualification score. To
          * resolve a pending Qualification request without affecting the Qualification the
          * Worker already has, reject the request with the
-         * <code>RejectQualificationRequest</code> operation. </p> </note><p><h3>See
+         * <code>RejectQualificationRequest</code> operation. </p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/AssociateQualificationWithWorker">AWS
          * API Reference</a></p>
@@ -408,14 +408,14 @@ namespace Model
          * that the Worker submit a Qualification request. It gives the Qualification
          * directly to the Worker. </p> <p> You can only assign a Qualification of a
          * Qualification type that you created (using the
-         * <code>CreateQualificationType</code> operation). </p> <note> <p> Note:
+         * <code>CreateQualificationType</code> operation). </p>  <p> Note:
          * <code>AssociateQualificationWithWorker</code> does not affect any pending
          * Qualification requests for the Qualification by the Worker. If you assign a
          * Qualification to a Worker, then later grant a Qualification request made by the
          * Worker, the granting of the request may modify the Qualification score. To
          * resolve a pending Qualification request without affecting the Qualification the
          * Worker already has, reject the request with the
-         * <code>RejectQualificationRequest</code> operation. </p> </note><p><h3>See
+         * <code>RejectQualificationRequest</code> operation. </p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/AssociateQualificationWithWorker">AWS
          * API Reference</a></p>
@@ -430,14 +430,14 @@ namespace Model
          * that the Worker submit a Qualification request. It gives the Qualification
          * directly to the Worker. </p> <p> You can only assign a Qualification of a
          * Qualification type that you created (using the
-         * <code>CreateQualificationType</code> operation). </p> <note> <p> Note:
+         * <code>CreateQualificationType</code> operation). </p>  <p> Note:
          * <code>AssociateQualificationWithWorker</code> does not affect any pending
          * Qualification requests for the Qualification by the Worker. If you assign a
          * Qualification to a Worker, then later grant a Qualification request made by the
          * Worker, the granting of the request may modify the Qualification score. To
          * resolve a pending Qualification request without affecting the Qualification the
          * Worker already has, reject the request with the
-         * <code>RejectQualificationRequest</code> operation. </p> </note><p><h3>See
+         * <code>RejectQualificationRequest</code> operation. </p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/AssociateQualificationWithWorker">AWS
          * API Reference</a></p>
@@ -449,7 +449,7 @@ namespace Model
         /**
          * <p> The <code>CreateAdditionalAssignmentsForHIT</code> operation increases the
          * maximum number of assignments of an existing HIT. </p> <p> To extend the maximum
-         * number of assignments, specify the number of additional assignments.</p> <note>
+         * number of assignments, specify the number of additional assignments.</p> 
          * <ul> <li> <p>HITs created with fewer than 10 assignments cannot be extended to
          * have 10 or more assignments. Attempting to add assignments in a way that brings
          * the total number of assignments for a HIT from fewer than 10 assignments to 10
@@ -458,7 +458,7 @@ namespace Model
          * </li> <li> <p>HITs that were created before July 22, 2015 cannot be extended.
          * Attempting to extend HITs that were created before July 22, 2015 will result in
          * an <code>AWS.MechanicalTurk.HITTooOldForExtension</code> exception. </p> </li>
-         * </ul> </note><p><h3>See Also:</h3>   <a
+         * </ul> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/CreateAdditionalAssignmentsForHIT">AWS
          * API Reference</a></p>
          */
@@ -467,7 +467,7 @@ namespace Model
         /**
          * <p> The <code>CreateAdditionalAssignmentsForHIT</code> operation increases the
          * maximum number of assignments of an existing HIT. </p> <p> To extend the maximum
-         * number of assignments, specify the number of additional assignments.</p> <note>
+         * number of assignments, specify the number of additional assignments.</p> 
          * <ul> <li> <p>HITs created with fewer than 10 assignments cannot be extended to
          * have 10 or more assignments. Attempting to add assignments in a way that brings
          * the total number of assignments for a HIT from fewer than 10 assignments to 10
@@ -476,7 +476,7 @@ namespace Model
          * </li> <li> <p>HITs that were created before July 22, 2015 cannot be extended.
          * Attempting to extend HITs that were created before July 22, 2015 will result in
          * an <code>AWS.MechanicalTurk.HITTooOldForExtension</code> exception. </p> </li>
-         * </ul> </note><p><h3>See Also:</h3>   <a
+         * </ul> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/CreateAdditionalAssignmentsForHIT">AWS
          * API Reference</a></p>
          *
@@ -487,7 +487,7 @@ namespace Model
         /**
          * <p> The <code>CreateAdditionalAssignmentsForHIT</code> operation increases the
          * maximum number of assignments of an existing HIT. </p> <p> To extend the maximum
-         * number of assignments, specify the number of additional assignments.</p> <note>
+         * number of assignments, specify the number of additional assignments.</p> 
          * <ul> <li> <p>HITs created with fewer than 10 assignments cannot be extended to
          * have 10 or more assignments. Attempting to add assignments in a way that brings
          * the total number of assignments for a HIT from fewer than 10 assignments to 10
@@ -496,7 +496,7 @@ namespace Model
          * </li> <li> <p>HITs that were created before July 22, 2015 cannot be extended.
          * Attempting to extend HITs that were created before July 22, 2015 will result in
          * an <code>AWS.MechanicalTurk.HITTooOldForExtension</code> exception. </p> </li>
-         * </ul> </note><p><h3>See Also:</h3>   <a
+         * </ul> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/CreateAdditionalAssignmentsForHIT">AWS
          * API Reference</a></p>
          *
@@ -520,10 +520,10 @@ namespace Model
          * HITs. </p> <p>CreateHIT also supports several ways to provide question data: by
          * providing a value for the <code>Question</code> parameter that fully specifies
          * the contents of the HIT, or by providing a <code>HitLayoutId</code> and
-         * associated <code>HitLayoutParameters</code>. </p> <note> <p> If a HIT is created
+         * associated <code>HitLayoutParameters</code>. </p>  <p> If a HIT is created
          * with 10 or more maximum assignments, there is an additional fee. For more
          * information, see <a href="https://requester.mturk.com/pricing">Amazon Mechanical
-         * Turk Pricing</a>.</p> </note><p><h3>See Also:</h3>   <a
+         * Turk Pricing</a>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/CreateHIT">AWS
          * API Reference</a></p>
          */
@@ -545,10 +545,10 @@ namespace Model
          * HITs. </p> <p>CreateHIT also supports several ways to provide question data: by
          * providing a value for the <code>Question</code> parameter that fully specifies
          * the contents of the HIT, or by providing a <code>HitLayoutId</code> and
-         * associated <code>HitLayoutParameters</code>. </p> <note> <p> If a HIT is created
+         * associated <code>HitLayoutParameters</code>. </p>  <p> If a HIT is created
          * with 10 or more maximum assignments, there is an additional fee. For more
          * information, see <a href="https://requester.mturk.com/pricing">Amazon Mechanical
-         * Turk Pricing</a>.</p> </note><p><h3>See Also:</h3>   <a
+         * Turk Pricing</a>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/CreateHIT">AWS
          * API Reference</a></p>
          *
@@ -572,10 +572,10 @@ namespace Model
          * HITs. </p> <p>CreateHIT also supports several ways to provide question data: by
          * providing a value for the <code>Question</code> parameter that fully specifies
          * the contents of the HIT, or by providing a <code>HitLayoutId</code> and
-         * associated <code>HitLayoutParameters</code>. </p> <note> <p> If a HIT is created
+         * associated <code>HitLayoutParameters</code>. </p>  <p> If a HIT is created
          * with 10 or more maximum assignments, there is an additional fee. For more
          * information, see <a href="https://requester.mturk.com/pricing">Amazon Mechanical
-         * Turk Pricing</a>.</p> </note><p><h3>See Also:</h3>   <a
+         * Turk Pricing</a>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/CreateHIT">AWS
          * API Reference</a></p>
          *
@@ -629,10 +629,10 @@ namespace Model
          * <p>CreateHITWithHITType also supports several ways to provide question data: by
          * providing a value for the <code>Question</code> parameter that fully specifies
          * the contents of the HIT, or by providing a <code>HitLayoutId</code> and
-         * associated <code>HitLayoutParameters</code>. </p> <note> <p> If a HIT is created
+         * associated <code>HitLayoutParameters</code>. </p>  <p> If a HIT is created
          * with 10 or more maximum assignments, there is an additional fee. For more
          * information, see <a href="https://requester.mturk.com/pricing">Amazon Mechanical
-         * Turk Pricing</a>. </p> </note><p><h3>See Also:</h3>   <a
+         * Turk Pricing</a>. </p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/CreateHITWithHITType">AWS
          * API Reference</a></p>
          */
@@ -647,10 +647,10 @@ namespace Model
          * <p>CreateHITWithHITType also supports several ways to provide question data: by
          * providing a value for the <code>Question</code> parameter that fully specifies
          * the contents of the HIT, or by providing a <code>HitLayoutId</code> and
-         * associated <code>HitLayoutParameters</code>. </p> <note> <p> If a HIT is created
+         * associated <code>HitLayoutParameters</code>. </p>  <p> If a HIT is created
          * with 10 or more maximum assignments, there is an additional fee. For more
          * information, see <a href="https://requester.mturk.com/pricing">Amazon Mechanical
-         * Turk Pricing</a>. </p> </note><p><h3>See Also:</h3>   <a
+         * Turk Pricing</a>. </p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/CreateHITWithHITType">AWS
          * API Reference</a></p>
          *
@@ -667,10 +667,10 @@ namespace Model
          * <p>CreateHITWithHITType also supports several ways to provide question data: by
          * providing a value for the <code>Question</code> parameter that fully specifies
          * the contents of the HIT, or by providing a <code>HitLayoutId</code> and
-         * associated <code>HitLayoutParameters</code>. </p> <note> <p> If a HIT is created
+         * associated <code>HitLayoutParameters</code>. </p>  <p> If a HIT is created
          * with 10 or more maximum assignments, there is an additional fee. For more
          * information, see <a href="https://requester.mturk.com/pricing">Amazon Mechanical
-         * Turk Pricing</a>. </p> </note><p><h3>See Also:</h3>   <a
+         * Turk Pricing</a>. </p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/CreateHITWithHITType">AWS
          * API Reference</a></p>
          *
@@ -751,13 +751,13 @@ namespace Model
          * DeleteHIT operation on a HIT that is not in the <code>Reviewable</code> state
          * (for example, that has not expired, or still has active assignments), or on a
          * HIT that is Reviewable but without all of its submitted assignments already
-         * approved or rejected, the service will return an error. </p> <note> <ul> <li>
+         * approved or rejected, the service will return an error. </p>  <ul> <li>
          * <p> HITs are automatically disposed of after 120 days. </p> </li> <li> <p> After
          * you dispose of a HIT, you can no longer approve the HIT's rejected assignments.
          * </p> </li> <li> <p> Disposed HITs are not returned in results for the ListHITs
          * operation. </p> </li> <li> <p> Disposing HITs can improve the performance of
          * operations such as ListReviewableHITs and ListHITs. </p> </li> </ul>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/DeleteHIT">AWS
          * API Reference</a></p>
          */
@@ -771,13 +771,13 @@ namespace Model
          * DeleteHIT operation on a HIT that is not in the <code>Reviewable</code> state
          * (for example, that has not expired, or still has active assignments), or on a
          * HIT that is Reviewable but without all of its submitted assignments already
-         * approved or rejected, the service will return an error. </p> <note> <ul> <li>
+         * approved or rejected, the service will return an error. </p>  <ul> <li>
          * <p> HITs are automatically disposed of after 120 days. </p> </li> <li> <p> After
          * you dispose of a HIT, you can no longer approve the HIT's rejected assignments.
          * </p> </li> <li> <p> Disposed HITs are not returned in results for the ListHITs
          * operation. </p> </li> <li> <p> Disposing HITs can improve the performance of
          * operations such as ListReviewableHITs and ListHITs. </p> </li> </ul>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/DeleteHIT">AWS
          * API Reference</a></p>
          *
@@ -793,13 +793,13 @@ namespace Model
          * DeleteHIT operation on a HIT that is not in the <code>Reviewable</code> state
          * (for example, that has not expired, or still has active assignments), or on a
          * HIT that is Reviewable but without all of its submitted assignments already
-         * approved or rejected, the service will return an error. </p> <note> <ul> <li>
+         * approved or rejected, the service will return an error. </p>  <ul> <li>
          * <p> HITs are automatically disposed of after 120 days. </p> </li> <li> <p> After
          * you dispose of a HIT, you can no longer approve the HIT's rejected assignments.
          * </p> </li> <li> <p> Disposed HITs are not returned in results for the ListHITs
          * operation. </p> </li> <li> <p> Disposing HITs can improve the performance of
          * operations such as ListReviewableHITs and ListHITs. </p> </li> </ul>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/DeleteHIT">AWS
          * API Reference</a></p>
          *
@@ -814,11 +814,11 @@ namespace Model
          * because the Qualifications might be needed for active HITs. If there are any
          * pending requests for the Qualification type, Amazon Mechanical Turk rejects
          * those requests. After you delete a Qualification type, you can no longer use it
-         * to create HITs or HIT types.</p> <note> <p>DeleteQualificationType must wait for
+         * to create HITs or HIT types.</p>  <p>DeleteQualificationType must wait for
          * all the HITs that use the deleted Qualification type to be deleted before
          * completing. It may take up to 48 hours before DeleteQualificationType completes
          * and the unique name of the Qualification type is available for reuse with
-         * CreateQualificationType.</p> </note><p><h3>See Also:</h3>   <a
+         * CreateQualificationType.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/DeleteQualificationType">AWS
          * API Reference</a></p>
          */
@@ -831,11 +831,11 @@ namespace Model
          * because the Qualifications might be needed for active HITs. If there are any
          * pending requests for the Qualification type, Amazon Mechanical Turk rejects
          * those requests. After you delete a Qualification type, you can no longer use it
-         * to create HITs or HIT types.</p> <note> <p>DeleteQualificationType must wait for
+         * to create HITs or HIT types.</p>  <p>DeleteQualificationType must wait for
          * all the HITs that use the deleted Qualification type to be deleted before
          * completing. It may take up to 48 hours before DeleteQualificationType completes
          * and the unique name of the Qualification type is available for reuse with
-         * CreateQualificationType.</p> </note><p><h3>See Also:</h3>   <a
+         * CreateQualificationType.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/DeleteQualificationType">AWS
          * API Reference</a></p>
          *
@@ -850,11 +850,11 @@ namespace Model
          * because the Qualifications might be needed for active HITs. If there are any
          * pending requests for the Qualification type, Amazon Mechanical Turk rejects
          * those requests. After you delete a Qualification type, you can no longer use it
-         * to create HITs or HIT types.</p> <note> <p>DeleteQualificationType must wait for
+         * to create HITs or HIT types.</p>  <p>DeleteQualificationType must wait for
          * all the HITs that use the deleted Qualification type to be deleted before
          * completing. It may take up to 48 hours before DeleteQualificationType completes
          * and the unique name of the Qualification type is available for reuse with
-         * CreateQualificationType.</p> </note><p><h3>See Also:</h3>   <a
+         * CreateQualificationType.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/DeleteQualificationType">AWS
          * API Reference</a></p>
          *

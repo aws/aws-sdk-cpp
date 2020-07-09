@@ -244,10 +244,10 @@ namespace Model
          * <p>Checks the availability of one or more image layers in a repository.</p>
          * <p>When an image is pushed to a repository, each image layer is checked to
          * verify if it has been uploaded before. If it has been uploaded, then the image
-         * layer is skipped.</p> <note> <p>This operation is used by the Amazon ECR proxy
+         * layer is skipped.</p>  <p>This operation is used by the Amazon ECR proxy
          * and is not generally used by customers for pulling and pushing images. In most
          * cases, you should use the <code>docker</code> CLI to pull, tag, and push
-         * images.</p> </note><p><h3>See Also:</h3>   <a
+         * images.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/BatchCheckLayerAvailability">AWS
          * API Reference</a></p>
          */
@@ -257,10 +257,10 @@ namespace Model
          * <p>Checks the availability of one or more image layers in a repository.</p>
          * <p>When an image is pushed to a repository, each image layer is checked to
          * verify if it has been uploaded before. If it has been uploaded, then the image
-         * layer is skipped.</p> <note> <p>This operation is used by the Amazon ECR proxy
+         * layer is skipped.</p>  <p>This operation is used by the Amazon ECR proxy
          * and is not generally used by customers for pulling and pushing images. In most
          * cases, you should use the <code>docker</code> CLI to pull, tag, and push
-         * images.</p> </note><p><h3>See Also:</h3>   <a
+         * images.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/BatchCheckLayerAvailability">AWS
          * API Reference</a></p>
          *
@@ -272,10 +272,10 @@ namespace Model
          * <p>Checks the availability of one or more image layers in a repository.</p>
          * <p>When an image is pushed to a repository, each image layer is checked to
          * verify if it has been uploaded before. If it has been uploaded, then the image
-         * layer is skipped.</p> <note> <p>This operation is used by the Amazon ECR proxy
+         * layer is skipped.</p>  <p>This operation is used by the Amazon ECR proxy
          * and is not generally used by customers for pulling and pushing images. In most
          * cases, you should use the <code>docker</code> CLI to pull, tag, and push
-         * images.</p> </note><p><h3>See Also:</h3>   <a
+         * images.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/BatchCheckLayerAvailability">AWS
          * API Reference</a></p>
          *
@@ -362,10 +362,10 @@ namespace Model
          * registry, repository name, and upload ID. You can optionally provide a
          * <code>sha256</code> digest of the image layer for data validation purposes.</p>
          * <p>When an image is pushed, the CompleteLayerUpload API is called once per each
-         * new image layer to verify that the upload has completed.</p> <note> <p>This
+         * new image layer to verify that the upload has completed.</p>  <p>This
          * operation is used by the Amazon ECR proxy and is not generally used by customers
          * for pulling and pushing images. In most cases, you should use the
-         * <code>docker</code> CLI to pull, tag, and push images.</p> </note><p><h3>See
+         * <code>docker</code> CLI to pull, tag, and push images.</p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/CompleteLayerUpload">AWS
          * API Reference</a></p>
@@ -377,10 +377,10 @@ namespace Model
          * registry, repository name, and upload ID. You can optionally provide a
          * <code>sha256</code> digest of the image layer for data validation purposes.</p>
          * <p>When an image is pushed, the CompleteLayerUpload API is called once per each
-         * new image layer to verify that the upload has completed.</p> <note> <p>This
+         * new image layer to verify that the upload has completed.</p>  <p>This
          * operation is used by the Amazon ECR proxy and is not generally used by customers
          * for pulling and pushing images. In most cases, you should use the
-         * <code>docker</code> CLI to pull, tag, and push images.</p> </note><p><h3>See
+         * <code>docker</code> CLI to pull, tag, and push images.</p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/CompleteLayerUpload">AWS
          * API Reference</a></p>
@@ -394,10 +394,10 @@ namespace Model
          * registry, repository name, and upload ID. You can optionally provide a
          * <code>sha256</code> digest of the image layer for data validation purposes.</p>
          * <p>When an image is pushed, the CompleteLayerUpload API is called once per each
-         * new image layer to verify that the upload has completed.</p> <note> <p>This
+         * new image layer to verify that the upload has completed.</p>  <p>This
          * operation is used by the Amazon ECR proxy and is not generally used by customers
          * for pulling and pushing images. In most cases, you should use the
-         * <code>docker</code> CLI to pull, tag, and push images.</p> </note><p><h3>See
+         * <code>docker</code> CLI to pull, tag, and push images.</p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/CompleteLayerUpload">AWS
          * API Reference</a></p>
@@ -556,24 +556,24 @@ namespace Model
         virtual void DescribeImageScanFindingsAsync(const Model::DescribeImageScanFindingsRequest& request, const DescribeImageScanFindingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns metadata about the images in a repository.</p> <note> <p>Beginning
+         * <p>Returns metadata about the images in a repository.</p>  <p>Beginning
          * with Docker version 1.9, the Docker client compresses image layers before
          * pushing them to a V2 Docker registry. The output of the <code>docker
          * images</code> command shows the uncompressed image size, so it may return a
          * larger image size than the image sizes returned by <a>DescribeImages</a>.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DescribeImages">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeImagesOutcome DescribeImages(const Model::DescribeImagesRequest& request) const;
 
         /**
-         * <p>Returns metadata about the images in a repository.</p> <note> <p>Beginning
+         * <p>Returns metadata about the images in a repository.</p>  <p>Beginning
          * with Docker version 1.9, the Docker client compresses image layers before
          * pushing them to a V2 Docker registry. The output of the <code>docker
          * images</code> command shows the uncompressed image size, so it may return a
          * larger image size than the image sizes returned by <a>DescribeImages</a>.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DescribeImages">AWS
          * API Reference</a></p>
          *
@@ -582,12 +582,12 @@ namespace Model
         virtual Model::DescribeImagesOutcomeCallable DescribeImagesCallable(const Model::DescribeImagesRequest& request) const;
 
         /**
-         * <p>Returns metadata about the images in a repository.</p> <note> <p>Beginning
+         * <p>Returns metadata about the images in a repository.</p>  <p>Beginning
          * with Docker version 1.9, the Docker client compresses image layers before
          * pushing them to a V2 Docker registry. The output of the <code>docker
          * images</code> command shows the uncompressed image size, so it may return a
          * larger image size than the image sizes returned by <a>DescribeImages</a>.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DescribeImages">AWS
          * API Reference</a></p>
          *
@@ -679,10 +679,10 @@ namespace Model
          * <p>Retrieves the pre-signed Amazon S3 download URL corresponding to an image
          * layer. You can only get URLs for image layers that are referenced in an
          * image.</p> <p>When an image is pulled, the GetDownloadUrlForLayer API is called
-         * once per image layer that is not already cached.</p> <note> <p>This operation is
+         * once per image layer that is not already cached.</p>  <p>This operation is
          * used by the Amazon ECR proxy and is not generally used by customers for pulling
          * and pushing images. In most cases, you should use the <code>docker</code> CLI to
-         * pull, tag, and push images.</p> </note><p><h3>See Also:</h3>   <a
+         * pull, tag, and push images.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/GetDownloadUrlForLayer">AWS
          * API Reference</a></p>
          */
@@ -692,10 +692,10 @@ namespace Model
          * <p>Retrieves the pre-signed Amazon S3 download URL corresponding to an image
          * layer. You can only get URLs for image layers that are referenced in an
          * image.</p> <p>When an image is pulled, the GetDownloadUrlForLayer API is called
-         * once per image layer that is not already cached.</p> <note> <p>This operation is
+         * once per image layer that is not already cached.</p>  <p>This operation is
          * used by the Amazon ECR proxy and is not generally used by customers for pulling
          * and pushing images. In most cases, you should use the <code>docker</code> CLI to
-         * pull, tag, and push images.</p> </note><p><h3>See Also:</h3>   <a
+         * pull, tag, and push images.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/GetDownloadUrlForLayer">AWS
          * API Reference</a></p>
          *
@@ -707,10 +707,10 @@ namespace Model
          * <p>Retrieves the pre-signed Amazon S3 download URL corresponding to an image
          * layer. You can only get URLs for image layers that are referenced in an
          * image.</p> <p>When an image is pulled, the GetDownloadUrlForLayer API is called
-         * once per image layer that is not already cached.</p> <note> <p>This operation is
+         * once per image layer that is not already cached.</p>  <p>This operation is
          * used by the Amazon ECR proxy and is not generally used by customers for pulling
          * and pushing images. In most cases, you should use the <code>docker</code> CLI to
-         * pull, tag, and push images.</p> </note><p><h3>See Also:</h3>   <a
+         * pull, tag, and push images.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/GetDownloadUrlForLayer">AWS
          * API Reference</a></p>
          *
@@ -806,10 +806,10 @@ namespace Model
          * <p>Notifies Amazon ECR that you intend to upload an image layer.</p> <p>When an
          * image is pushed, the InitiateLayerUpload API is called once per image layer that
          * has not already been uploaded. Whether or not an image layer has been uploaded
-         * is determined by the BatchCheckLayerAvailability API action.</p> <note> <p>This
+         * is determined by the BatchCheckLayerAvailability API action.</p>  <p>This
          * operation is used by the Amazon ECR proxy and is not generally used by customers
          * for pulling and pushing images. In most cases, you should use the
-         * <code>docker</code> CLI to pull, tag, and push images.</p> </note><p><h3>See
+         * <code>docker</code> CLI to pull, tag, and push images.</p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/InitiateLayerUpload">AWS
          * API Reference</a></p>
@@ -820,10 +820,10 @@ namespace Model
          * <p>Notifies Amazon ECR that you intend to upload an image layer.</p> <p>When an
          * image is pushed, the InitiateLayerUpload API is called once per image layer that
          * has not already been uploaded. Whether or not an image layer has been uploaded
-         * is determined by the BatchCheckLayerAvailability API action.</p> <note> <p>This
+         * is determined by the BatchCheckLayerAvailability API action.</p>  <p>This
          * operation is used by the Amazon ECR proxy and is not generally used by customers
          * for pulling and pushing images. In most cases, you should use the
-         * <code>docker</code> CLI to pull, tag, and push images.</p> </note><p><h3>See
+         * <code>docker</code> CLI to pull, tag, and push images.</p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/InitiateLayerUpload">AWS
          * API Reference</a></p>
@@ -836,10 +836,10 @@ namespace Model
          * <p>Notifies Amazon ECR that you intend to upload an image layer.</p> <p>When an
          * image is pushed, the InitiateLayerUpload API is called once per image layer that
          * has not already been uploaded. Whether or not an image layer has been uploaded
-         * is determined by the BatchCheckLayerAvailability API action.</p> <note> <p>This
+         * is determined by the BatchCheckLayerAvailability API action.</p>  <p>This
          * operation is used by the Amazon ECR proxy and is not generally used by customers
          * for pulling and pushing images. In most cases, you should use the
-         * <code>docker</code> CLI to pull, tag, and push images.</p> </note><p><h3>See
+         * <code>docker</code> CLI to pull, tag, and push images.</p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/InitiateLayerUpload">AWS
          * API Reference</a></p>
@@ -923,10 +923,10 @@ namespace Model
          * <p>Creates or updates the image manifest and tags associated with an image.</p>
          * <p>When an image is pushed and all new image layers have been uploaded, the
          * PutImage API is called once to create or update the image manifest and the tags
-         * associated with the image.</p> <note> <p>This operation is used by the Amazon
+         * associated with the image.</p>  <p>This operation is used by the Amazon
          * ECR proxy and is not generally used by customers for pulling and pushing images.
          * In most cases, you should use the <code>docker</code> CLI to pull, tag, and push
-         * images.</p> </note><p><h3>See Also:</h3>   <a
+         * images.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/PutImage">AWS API
          * Reference</a></p>
          */
@@ -936,10 +936,10 @@ namespace Model
          * <p>Creates or updates the image manifest and tags associated with an image.</p>
          * <p>When an image is pushed and all new image layers have been uploaded, the
          * PutImage API is called once to create or update the image manifest and the tags
-         * associated with the image.</p> <note> <p>This operation is used by the Amazon
+         * associated with the image.</p>  <p>This operation is used by the Amazon
          * ECR proxy and is not generally used by customers for pulling and pushing images.
          * In most cases, you should use the <code>docker</code> CLI to pull, tag, and push
-         * images.</p> </note><p><h3>See Also:</h3>   <a
+         * images.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/PutImage">AWS API
          * Reference</a></p>
          *
@@ -951,10 +951,10 @@ namespace Model
          * <p>Creates or updates the image manifest and tags associated with an image.</p>
          * <p>When an image is pushed and all new image layers have been uploaded, the
          * PutImage API is called once to create or update the image manifest and the tags
-         * associated with the image.</p> <note> <p>This operation is used by the Amazon
+         * associated with the image.</p>  <p>This operation is used by the Amazon
          * ECR proxy and is not generally used by customers for pulling and pushing images.
          * In most cases, you should use the <code>docker</code> CLI to pull, tag, and push
-         * images.</p> </note><p><h3>See Also:</h3>   <a
+         * images.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/PutImage">AWS API
          * Reference</a></p>
          *
@@ -1229,10 +1229,10 @@ namespace Model
          * <p>Uploads an image layer part to Amazon ECR.</p> <p>When an image is pushed,
          * each new image layer is uploaded in parts. The maximum size of each image layer
          * part can be 20971520 bytes (or about 20MB). The UploadLayerPart API is called
-         * once per each new image layer part.</p> <note> <p>This operation is used by the
+         * once per each new image layer part.</p>  <p>This operation is used by the
          * Amazon ECR proxy and is not generally used by customers for pulling and pushing
          * images. In most cases, you should use the <code>docker</code> CLI to pull, tag,
-         * and push images.</p> </note><p><h3>See Also:</h3>   <a
+         * and push images.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/UploadLayerPart">AWS
          * API Reference</a></p>
          */
@@ -1242,10 +1242,10 @@ namespace Model
          * <p>Uploads an image layer part to Amazon ECR.</p> <p>When an image is pushed,
          * each new image layer is uploaded in parts. The maximum size of each image layer
          * part can be 20971520 bytes (or about 20MB). The UploadLayerPart API is called
-         * once per each new image layer part.</p> <note> <p>This operation is used by the
+         * once per each new image layer part.</p>  <p>This operation is used by the
          * Amazon ECR proxy and is not generally used by customers for pulling and pushing
          * images. In most cases, you should use the <code>docker</code> CLI to pull, tag,
-         * and push images.</p> </note><p><h3>See Also:</h3>   <a
+         * and push images.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/UploadLayerPart">AWS
          * API Reference</a></p>
          *
@@ -1257,10 +1257,10 @@ namespace Model
          * <p>Uploads an image layer part to Amazon ECR.</p> <p>When an image is pushed,
          * each new image layer is uploaded in parts. The maximum size of each image layer
          * part can be 20971520 bytes (or about 20MB). The UploadLayerPart API is called
-         * once per each new image layer part.</p> <note> <p>This operation is used by the
+         * once per each new image layer part.</p>  <p>This operation is used by the
          * Amazon ECR proxy and is not generally used by customers for pulling and pushing
          * images. In most cases, you should use the <code>docker</code> CLI to pull, tag,
-         * and push images.</p> </note><p><h3>See Also:</h3>   <a
+         * and push images.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/UploadLayerPart">AWS
          * API Reference</a></p>
          *

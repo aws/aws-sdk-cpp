@@ -72,65 +72,65 @@ namespace Model
 
     /**
      * <p>The account ID that owns the destination S3 bucket. If no account ID is
-     * provided, the owner is not validated before exporting data.</p> <note> <p>
+     * provided, the owner is not validated before exporting data.</p>  <p>
      * Although this value is optional, we strongly recommend that you set it to help
-     * prevent problems if the destination bucket ownership changes. </p> </note>
+     * prevent problems if the destination bucket ownership changes. </p> 
      */
     inline const Aws::String& GetBucketAccountId() const{ return m_bucketAccountId; }
 
     /**
      * <p>The account ID that owns the destination S3 bucket. If no account ID is
-     * provided, the owner is not validated before exporting data.</p> <note> <p>
+     * provided, the owner is not validated before exporting data.</p>  <p>
      * Although this value is optional, we strongly recommend that you set it to help
-     * prevent problems if the destination bucket ownership changes. </p> </note>
+     * prevent problems if the destination bucket ownership changes. </p> 
      */
     inline bool BucketAccountIdHasBeenSet() const { return m_bucketAccountIdHasBeenSet; }
 
     /**
      * <p>The account ID that owns the destination S3 bucket. If no account ID is
-     * provided, the owner is not validated before exporting data.</p> <note> <p>
+     * provided, the owner is not validated before exporting data.</p>  <p>
      * Although this value is optional, we strongly recommend that you set it to help
-     * prevent problems if the destination bucket ownership changes. </p> </note>
+     * prevent problems if the destination bucket ownership changes. </p> 
      */
     inline void SetBucketAccountId(const Aws::String& value) { m_bucketAccountIdHasBeenSet = true; m_bucketAccountId = value; }
 
     /**
      * <p>The account ID that owns the destination S3 bucket. If no account ID is
-     * provided, the owner is not validated before exporting data.</p> <note> <p>
+     * provided, the owner is not validated before exporting data.</p>  <p>
      * Although this value is optional, we strongly recommend that you set it to help
-     * prevent problems if the destination bucket ownership changes. </p> </note>
+     * prevent problems if the destination bucket ownership changes. </p> 
      */
     inline void SetBucketAccountId(Aws::String&& value) { m_bucketAccountIdHasBeenSet = true; m_bucketAccountId = std::move(value); }
 
     /**
      * <p>The account ID that owns the destination S3 bucket. If no account ID is
-     * provided, the owner is not validated before exporting data.</p> <note> <p>
+     * provided, the owner is not validated before exporting data.</p>  <p>
      * Although this value is optional, we strongly recommend that you set it to help
-     * prevent problems if the destination bucket ownership changes. </p> </note>
+     * prevent problems if the destination bucket ownership changes. </p> 
      */
     inline void SetBucketAccountId(const char* value) { m_bucketAccountIdHasBeenSet = true; m_bucketAccountId.assign(value); }
 
     /**
      * <p>The account ID that owns the destination S3 bucket. If no account ID is
-     * provided, the owner is not validated before exporting data.</p> <note> <p>
+     * provided, the owner is not validated before exporting data.</p>  <p>
      * Although this value is optional, we strongly recommend that you set it to help
-     * prevent problems if the destination bucket ownership changes. </p> </note>
+     * prevent problems if the destination bucket ownership changes. </p> 
      */
     inline AnalyticsS3BucketDestination& WithBucketAccountId(const Aws::String& value) { SetBucketAccountId(value); return *this;}
 
     /**
      * <p>The account ID that owns the destination S3 bucket. If no account ID is
-     * provided, the owner is not validated before exporting data.</p> <note> <p>
+     * provided, the owner is not validated before exporting data.</p>  <p>
      * Although this value is optional, we strongly recommend that you set it to help
-     * prevent problems if the destination bucket ownership changes. </p> </note>
+     * prevent problems if the destination bucket ownership changes. </p> 
      */
     inline AnalyticsS3BucketDestination& WithBucketAccountId(Aws::String&& value) { SetBucketAccountId(std::move(value)); return *this;}
 
     /**
      * <p>The account ID that owns the destination S3 bucket. If no account ID is
-     * provided, the owner is not validated before exporting data.</p> <note> <p>
+     * provided, the owner is not validated before exporting data.</p>  <p>
      * Although this value is optional, we strongly recommend that you set it to help
-     * prevent problems if the destination bucket ownership changes. </p> </note>
+     * prevent problems if the destination bucket ownership changes. </p> 
      */
     inline AnalyticsS3BucketDestination& WithBucketAccountId(const char* value) { SetBucketAccountId(value); return *this;}
 

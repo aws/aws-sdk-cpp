@@ -128,66 +128,66 @@ namespace Model
 
 
     /**
-     * <p>The IAM ARN of the role to use to send application messages. </p> <note>
+     * <p>The IAM ARN of the role to use to send application messages. </p> 
      * <p>Provided for backward compatibility. Applications created with the current
      * API version have an application-level service execution role rather than a
-     * resource-level role.</p> </note>
+     * resource-level role.</p> 
      */
     inline const Aws::String& GetRoleARN() const{ return m_roleARN; }
 
     /**
-     * <p>The IAM ARN of the role to use to send application messages. </p> <note>
+     * <p>The IAM ARN of the role to use to send application messages. </p> 
      * <p>Provided for backward compatibility. Applications created with the current
      * API version have an application-level service execution role rather than a
-     * resource-level role.</p> </note>
+     * resource-level role.</p> 
      */
     inline bool RoleARNHasBeenSet() const { return m_roleARNHasBeenSet; }
 
     /**
-     * <p>The IAM ARN of the role to use to send application messages. </p> <note>
+     * <p>The IAM ARN of the role to use to send application messages. </p> 
      * <p>Provided for backward compatibility. Applications created with the current
      * API version have an application-level service execution role rather than a
-     * resource-level role.</p> </note>
+     * resource-level role.</p> 
      */
     inline void SetRoleARN(const Aws::String& value) { m_roleARNHasBeenSet = true; m_roleARN = value; }
 
     /**
-     * <p>The IAM ARN of the role to use to send application messages. </p> <note>
+     * <p>The IAM ARN of the role to use to send application messages. </p> 
      * <p>Provided for backward compatibility. Applications created with the current
      * API version have an application-level service execution role rather than a
-     * resource-level role.</p> </note>
+     * resource-level role.</p> 
      */
     inline void SetRoleARN(Aws::String&& value) { m_roleARNHasBeenSet = true; m_roleARN = std::move(value); }
 
     /**
-     * <p>The IAM ARN of the role to use to send application messages. </p> <note>
+     * <p>The IAM ARN of the role to use to send application messages. </p> 
      * <p>Provided for backward compatibility. Applications created with the current
      * API version have an application-level service execution role rather than a
-     * resource-level role.</p> </note>
+     * resource-level role.</p> 
      */
     inline void SetRoleARN(const char* value) { m_roleARNHasBeenSet = true; m_roleARN.assign(value); }
 
     /**
-     * <p>The IAM ARN of the role to use to send application messages. </p> <note>
+     * <p>The IAM ARN of the role to use to send application messages. </p> 
      * <p>Provided for backward compatibility. Applications created with the current
      * API version have an application-level service execution role rather than a
-     * resource-level role.</p> </note>
+     * resource-level role.</p> 
      */
     inline CloudWatchLoggingOptionDescription& WithRoleARN(const Aws::String& value) { SetRoleARN(value); return *this;}
 
     /**
-     * <p>The IAM ARN of the role to use to send application messages. </p> <note>
+     * <p>The IAM ARN of the role to use to send application messages. </p> 
      * <p>Provided for backward compatibility. Applications created with the current
      * API version have an application-level service execution role rather than a
-     * resource-level role.</p> </note>
+     * resource-level role.</p> 
      */
     inline CloudWatchLoggingOptionDescription& WithRoleARN(Aws::String&& value) { SetRoleARN(std::move(value)); return *this;}
 
     /**
-     * <p>The IAM ARN of the role to use to send application messages. </p> <note>
+     * <p>The IAM ARN of the role to use to send application messages. </p> 
      * <p>Provided for backward compatibility. Applications created with the current
      * API version have an application-level service execution role rather than a
-     * resource-level role.</p> </note>
+     * resource-level role.</p> 
      */
     inline CloudWatchLoggingOptionDescription& WithRoleARN(const char* value) { SetRoleARN(value); return *this;}
 

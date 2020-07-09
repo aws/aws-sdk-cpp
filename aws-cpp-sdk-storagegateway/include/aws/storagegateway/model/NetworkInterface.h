@@ -79,50 +79,50 @@ namespace Model
 
 
     /**
-     * <p>The Media Access Control (MAC) address of the interface.</p> <note> <p>This
-     * is currently unsupported and will not be returned in output.</p> </note>
+     * <p>The Media Access Control (MAC) address of the interface.</p>  <p>This
+     * is currently unsupported and will not be returned in output.</p> 
      */
     inline const Aws::String& GetMacAddress() const{ return m_macAddress; }
 
     /**
-     * <p>The Media Access Control (MAC) address of the interface.</p> <note> <p>This
-     * is currently unsupported and will not be returned in output.</p> </note>
+     * <p>The Media Access Control (MAC) address of the interface.</p>  <p>This
+     * is currently unsupported and will not be returned in output.</p> 
      */
     inline bool MacAddressHasBeenSet() const { return m_macAddressHasBeenSet; }
 
     /**
-     * <p>The Media Access Control (MAC) address of the interface.</p> <note> <p>This
-     * is currently unsupported and will not be returned in output.</p> </note>
+     * <p>The Media Access Control (MAC) address of the interface.</p>  <p>This
+     * is currently unsupported and will not be returned in output.</p> 
      */
     inline void SetMacAddress(const Aws::String& value) { m_macAddressHasBeenSet = true; m_macAddress = value; }
 
     /**
-     * <p>The Media Access Control (MAC) address of the interface.</p> <note> <p>This
-     * is currently unsupported and will not be returned in output.</p> </note>
+     * <p>The Media Access Control (MAC) address of the interface.</p>  <p>This
+     * is currently unsupported and will not be returned in output.</p> 
      */
     inline void SetMacAddress(Aws::String&& value) { m_macAddressHasBeenSet = true; m_macAddress = std::move(value); }
 
     /**
-     * <p>The Media Access Control (MAC) address of the interface.</p> <note> <p>This
-     * is currently unsupported and will not be returned in output.</p> </note>
+     * <p>The Media Access Control (MAC) address of the interface.</p>  <p>This
+     * is currently unsupported and will not be returned in output.</p> 
      */
     inline void SetMacAddress(const char* value) { m_macAddressHasBeenSet = true; m_macAddress.assign(value); }
 
     /**
-     * <p>The Media Access Control (MAC) address of the interface.</p> <note> <p>This
-     * is currently unsupported and will not be returned in output.</p> </note>
+     * <p>The Media Access Control (MAC) address of the interface.</p>  <p>This
+     * is currently unsupported and will not be returned in output.</p> 
      */
     inline NetworkInterface& WithMacAddress(const Aws::String& value) { SetMacAddress(value); return *this;}
 
     /**
-     * <p>The Media Access Control (MAC) address of the interface.</p> <note> <p>This
-     * is currently unsupported and will not be returned in output.</p> </note>
+     * <p>The Media Access Control (MAC) address of the interface.</p>  <p>This
+     * is currently unsupported and will not be returned in output.</p> 
      */
     inline NetworkInterface& WithMacAddress(Aws::String&& value) { SetMacAddress(std::move(value)); return *this;}
 
     /**
-     * <p>The Media Access Control (MAC) address of the interface.</p> <note> <p>This
-     * is currently unsupported and will not be returned in output.</p> </note>
+     * <p>The Media Access Control (MAC) address of the interface.</p>  <p>This
+     * is currently unsupported and will not be returned in output.</p> 
      */
     inline NetworkInterface& WithMacAddress(const char* value) { SetMacAddress(value); return *this;}
 

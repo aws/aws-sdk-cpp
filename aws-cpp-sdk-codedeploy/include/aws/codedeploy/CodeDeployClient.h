@@ -749,18 +749,18 @@ namespace Model
         virtual void DeleteApplicationAsync(const Model::DeleteApplicationRequest& request, const DeleteApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes a deployment configuration.</p> <note> <p>A deployment configuration
+         * <p>Deletes a deployment configuration.</p>  <p>A deployment configuration
          * cannot be deleted if it is currently in use. Predefined configurations cannot be
-         * deleted.</p> </note><p><h3>See Also:</h3>   <a
+         * deleted.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/DeleteDeploymentConfig">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteDeploymentConfigOutcome DeleteDeploymentConfig(const Model::DeleteDeploymentConfigRequest& request) const;
 
         /**
-         * <p>Deletes a deployment configuration.</p> <note> <p>A deployment configuration
+         * <p>Deletes a deployment configuration.</p>  <p>A deployment configuration
          * cannot be deleted if it is currently in use. Predefined configurations cannot be
-         * deleted.</p> </note><p><h3>See Also:</h3>   <a
+         * deleted.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/DeleteDeploymentConfig">AWS
          * API Reference</a></p>
          *
@@ -769,9 +769,9 @@ namespace Model
         virtual Model::DeleteDeploymentConfigOutcomeCallable DeleteDeploymentConfigCallable(const Model::DeleteDeploymentConfigRequest& request) const;
 
         /**
-         * <p>Deletes a deployment configuration.</p> <note> <p>A deployment configuration
+         * <p>Deletes a deployment configuration.</p>  <p>A deployment configuration
          * cannot be deleted if it is currently in use. Predefined configurations cannot be
-         * deleted.</p> </note><p><h3>See Also:</h3>   <a
+         * deleted.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/DeleteDeploymentConfig">AWS
          * API Reference</a></p>
          *
@@ -930,22 +930,22 @@ namespace Model
         virtual void GetApplicationRevisionAsync(const Model::GetApplicationRevisionRequest& request, const GetApplicationRevisionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets information about a deployment.</p> <note> <p> The <code>content</code>
+         * <p>Gets information about a deployment.</p>  <p> The <code>content</code>
          * property of the <code>appSpecContent</code> object in the returned revision is
          * always null. Use <code>GetApplicationRevision</code> and the <code>sha256</code>
          * property of the returned <code>appSpecContent</code> object to get the content
-         * of the deployment’s AppSpec file. </p> </note><p><h3>See Also:</h3>   <a
+         * of the deployment’s AppSpec file. </p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/GetDeployment">AWS
          * API Reference</a></p>
          */
         virtual Model::GetDeploymentOutcome GetDeployment(const Model::GetDeploymentRequest& request) const;
 
         /**
-         * <p>Gets information about a deployment.</p> <note> <p> The <code>content</code>
+         * <p>Gets information about a deployment.</p>  <p> The <code>content</code>
          * property of the <code>appSpecContent</code> object in the returned revision is
          * always null. Use <code>GetApplicationRevision</code> and the <code>sha256</code>
          * property of the returned <code>appSpecContent</code> object to get the content
-         * of the deployment’s AppSpec file. </p> </note><p><h3>See Also:</h3>   <a
+         * of the deployment’s AppSpec file. </p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/GetDeployment">AWS
          * API Reference</a></p>
          *
@@ -954,11 +954,11 @@ namespace Model
         virtual Model::GetDeploymentOutcomeCallable GetDeploymentCallable(const Model::GetDeploymentRequest& request) const;
 
         /**
-         * <p>Gets information about a deployment.</p> <note> <p> The <code>content</code>
+         * <p>Gets information about a deployment.</p>  <p> The <code>content</code>
          * property of the <code>appSpecContent</code> object in the returned revision is
          * always null. Use <code>GetApplicationRevision</code> and the <code>sha256</code>
          * property of the returned <code>appSpecContent</code> object to get the content
-         * of the deployment’s AppSpec file. </p> </note><p><h3>See Also:</h3>   <a
+         * of the deployment’s AppSpec file. </p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/GetDeployment">AWS
          * API Reference</a></p>
          *
@@ -1426,18 +1426,18 @@ namespace Model
         virtual void RegisterApplicationRevisionAsync(const Model::RegisterApplicationRevisionRequest& request, const RegisterApplicationRevisionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Registers an on-premises instance.</p> <note> <p>Only one IAM ARN (an IAM
+         * <p>Registers an on-premises instance.</p>  <p>Only one IAM ARN (an IAM
          * session ARN or IAM user ARN) is supported in the request. You cannot use
-         * both.</p> </note><p><h3>See Also:</h3>   <a
+         * both.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/RegisterOnPremisesInstance">AWS
          * API Reference</a></p>
          */
         virtual Model::RegisterOnPremisesInstanceOutcome RegisterOnPremisesInstance(const Model::RegisterOnPremisesInstanceRequest& request) const;
 
         /**
-         * <p>Registers an on-premises instance.</p> <note> <p>Only one IAM ARN (an IAM
+         * <p>Registers an on-premises instance.</p>  <p>Only one IAM ARN (an IAM
          * session ARN or IAM user ARN) is supported in the request. You cannot use
-         * both.</p> </note><p><h3>See Also:</h3>   <a
+         * both.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/RegisterOnPremisesInstance">AWS
          * API Reference</a></p>
          *
@@ -1446,9 +1446,9 @@ namespace Model
         virtual Model::RegisterOnPremisesInstanceOutcomeCallable RegisterOnPremisesInstanceCallable(const Model::RegisterOnPremisesInstanceRequest& request) const;
 
         /**
-         * <p>Registers an on-premises instance.</p> <note> <p>Only one IAM ARN (an IAM
+         * <p>Registers an on-premises instance.</p>  <p>Only one IAM ARN (an IAM
          * session ARN or IAM user ARN) is supported in the request. You cannot use
-         * both.</p> </note><p><h3>See Also:</h3>   <a
+         * both.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/RegisterOnPremisesInstance">AWS
          * API Reference</a></p>
          *

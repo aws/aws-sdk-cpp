@@ -154,9 +154,9 @@ namespace Model
      * delivered to the source queue before being moved to the dead-letter queue. When
      * the <code>ReceiveCount</code> for a message exceeds the
      * <code>maxReceiveCount</code> for a queue, Amazon SQS moves the message to the
-     * dead-letter-queue.</p> </li> </ul> <note> <p>The dead-letter queue of a FIFO
+     * dead-letter-queue.</p> </li> </ul>  <p>The dead-letter queue of a FIFO
      * queue must also be a FIFO queue. Similarly, the dead-letter queue of a standard
-     * queue must also be a standard queue.</p> </note> </li> <li> <p>
+     * queue must also be a standard queue.</p>  </li> <li> <p>
      * <code>VisibilityTimeout</code> – The visibility timeout for the queue, in
      * seconds. Valid values: An integer from 0 to 43,200 (12 hours). Default: 30. For
      * more information about the visibility timeout, see <a
@@ -252,9 +252,9 @@ namespace Model
      * delivered to the source queue before being moved to the dead-letter queue. When
      * the <code>ReceiveCount</code> for a message exceeds the
      * <code>maxReceiveCount</code> for a queue, Amazon SQS moves the message to the
-     * dead-letter-queue.</p> </li> </ul> <note> <p>The dead-letter queue of a FIFO
+     * dead-letter-queue.</p> </li> </ul>  <p>The dead-letter queue of a FIFO
      * queue must also be a FIFO queue. Similarly, the dead-letter queue of a standard
-     * queue must also be a standard queue.</p> </note> </li> <li> <p>
+     * queue must also be a standard queue.</p>  </li> <li> <p>
      * <code>VisibilityTimeout</code> – The visibility timeout for the queue, in
      * seconds. Valid values: An integer from 0 to 43,200 (12 hours). Default: 30. For
      * more information about the visibility timeout, see <a
@@ -350,9 +350,9 @@ namespace Model
      * delivered to the source queue before being moved to the dead-letter queue. When
      * the <code>ReceiveCount</code> for a message exceeds the
      * <code>maxReceiveCount</code> for a queue, Amazon SQS moves the message to the
-     * dead-letter-queue.</p> </li> </ul> <note> <p>The dead-letter queue of a FIFO
+     * dead-letter-queue.</p> </li> </ul>  <p>The dead-letter queue of a FIFO
      * queue must also be a FIFO queue. Similarly, the dead-letter queue of a standard
-     * queue must also be a standard queue.</p> </note> </li> <li> <p>
+     * queue must also be a standard queue.</p>  </li> <li> <p>
      * <code>VisibilityTimeout</code> – The visibility timeout for the queue, in
      * seconds. Valid values: An integer from 0 to 43,200 (12 hours). Default: 30. For
      * more information about the visibility timeout, see <a
@@ -448,9 +448,9 @@ namespace Model
      * delivered to the source queue before being moved to the dead-letter queue. When
      * the <code>ReceiveCount</code> for a message exceeds the
      * <code>maxReceiveCount</code> for a queue, Amazon SQS moves the message to the
-     * dead-letter-queue.</p> </li> </ul> <note> <p>The dead-letter queue of a FIFO
+     * dead-letter-queue.</p> </li> </ul>  <p>The dead-letter queue of a FIFO
      * queue must also be a FIFO queue. Similarly, the dead-letter queue of a standard
-     * queue must also be a standard queue.</p> </note> </li> <li> <p>
+     * queue must also be a standard queue.</p>  </li> <li> <p>
      * <code>VisibilityTimeout</code> – The visibility timeout for the queue, in
      * seconds. Valid values: An integer from 0 to 43,200 (12 hours). Default: 30. For
      * more information about the visibility timeout, see <a
@@ -546,9 +546,9 @@ namespace Model
      * delivered to the source queue before being moved to the dead-letter queue. When
      * the <code>ReceiveCount</code> for a message exceeds the
      * <code>maxReceiveCount</code> for a queue, Amazon SQS moves the message to the
-     * dead-letter-queue.</p> </li> </ul> <note> <p>The dead-letter queue of a FIFO
+     * dead-letter-queue.</p> </li> </ul>  <p>The dead-letter queue of a FIFO
      * queue must also be a FIFO queue. Similarly, the dead-letter queue of a standard
-     * queue must also be a standard queue.</p> </note> </li> <li> <p>
+     * queue must also be a standard queue.</p>  </li> <li> <p>
      * <code>VisibilityTimeout</code> – The visibility timeout for the queue, in
      * seconds. Valid values: An integer from 0 to 43,200 (12 hours). Default: 30. For
      * more information about the visibility timeout, see <a
@@ -644,9 +644,9 @@ namespace Model
      * delivered to the source queue before being moved to the dead-letter queue. When
      * the <code>ReceiveCount</code> for a message exceeds the
      * <code>maxReceiveCount</code> for a queue, Amazon SQS moves the message to the
-     * dead-letter-queue.</p> </li> </ul> <note> <p>The dead-letter queue of a FIFO
+     * dead-letter-queue.</p> </li> </ul>  <p>The dead-letter queue of a FIFO
      * queue must also be a FIFO queue. Similarly, the dead-letter queue of a standard
-     * queue must also be a standard queue.</p> </note> </li> <li> <p>
+     * queue must also be a standard queue.</p>  </li> <li> <p>
      * <code>VisibilityTimeout</code> – The visibility timeout for the queue, in
      * seconds. Valid values: An integer from 0 to 43,200 (12 hours). Default: 30. For
      * more information about the visibility timeout, see <a
@@ -742,9 +742,9 @@ namespace Model
      * delivered to the source queue before being moved to the dead-letter queue. When
      * the <code>ReceiveCount</code> for a message exceeds the
      * <code>maxReceiveCount</code> for a queue, Amazon SQS moves the message to the
-     * dead-letter-queue.</p> </li> </ul> <note> <p>The dead-letter queue of a FIFO
+     * dead-letter-queue.</p> </li> </ul>  <p>The dead-letter queue of a FIFO
      * queue must also be a FIFO queue. Similarly, the dead-letter queue of a standard
-     * queue must also be a standard queue.</p> </note> </li> <li> <p>
+     * queue must also be a standard queue.</p>  </li> <li> <p>
      * <code>VisibilityTimeout</code> – The visibility timeout for the queue, in
      * seconds. Valid values: An integer from 0 to 43,200 (12 hours). Default: 30. For
      * more information about the visibility timeout, see <a
@@ -840,9 +840,9 @@ namespace Model
      * delivered to the source queue before being moved to the dead-letter queue. When
      * the <code>ReceiveCount</code> for a message exceeds the
      * <code>maxReceiveCount</code> for a queue, Amazon SQS moves the message to the
-     * dead-letter-queue.</p> </li> </ul> <note> <p>The dead-letter queue of a FIFO
+     * dead-letter-queue.</p> </li> </ul>  <p>The dead-letter queue of a FIFO
      * queue must also be a FIFO queue. Similarly, the dead-letter queue of a standard
-     * queue must also be a standard queue.</p> </note> </li> <li> <p>
+     * queue must also be a standard queue.</p>  </li> <li> <p>
      * <code>VisibilityTimeout</code> – The visibility timeout for the queue, in
      * seconds. Valid values: An integer from 0 to 43,200 (12 hours). Default: 30. For
      * more information about the visibility timeout, see <a
@@ -938,9 +938,9 @@ namespace Model
      * delivered to the source queue before being moved to the dead-letter queue. When
      * the <code>ReceiveCount</code> for a message exceeds the
      * <code>maxReceiveCount</code> for a queue, Amazon SQS moves the message to the
-     * dead-letter-queue.</p> </li> </ul> <note> <p>The dead-letter queue of a FIFO
+     * dead-letter-queue.</p> </li> </ul>  <p>The dead-letter queue of a FIFO
      * queue must also be a FIFO queue. Similarly, the dead-letter queue of a standard
-     * queue must also be a standard queue.</p> </note> </li> <li> <p>
+     * queue must also be a standard queue.</p>  </li> <li> <p>
      * <code>VisibilityTimeout</code> – The visibility timeout for the queue, in
      * seconds. Valid values: An integer from 0 to 43,200 (12 hours). Default: 30. For
      * more information about the visibility timeout, see <a
@@ -1036,9 +1036,9 @@ namespace Model
      * delivered to the source queue before being moved to the dead-letter queue. When
      * the <code>ReceiveCount</code> for a message exceeds the
      * <code>maxReceiveCount</code> for a queue, Amazon SQS moves the message to the
-     * dead-letter-queue.</p> </li> </ul> <note> <p>The dead-letter queue of a FIFO
+     * dead-letter-queue.</p> </li> </ul>  <p>The dead-letter queue of a FIFO
      * queue must also be a FIFO queue. Similarly, the dead-letter queue of a standard
-     * queue must also be a standard queue.</p> </note> </li> <li> <p>
+     * queue must also be a standard queue.</p>  </li> <li> <p>
      * <code>VisibilityTimeout</code> – The visibility timeout for the queue, in
      * seconds. Valid values: An integer from 0 to 43,200 (12 hours). Default: 30. For
      * more information about the visibility timeout, see <a
@@ -1134,9 +1134,9 @@ namespace Model
      * delivered to the source queue before being moved to the dead-letter queue. When
      * the <code>ReceiveCount</code> for a message exceeds the
      * <code>maxReceiveCount</code> for a queue, Amazon SQS moves the message to the
-     * dead-letter-queue.</p> </li> </ul> <note> <p>The dead-letter queue of a FIFO
+     * dead-letter-queue.</p> </li> </ul>  <p>The dead-letter queue of a FIFO
      * queue must also be a FIFO queue. Similarly, the dead-letter queue of a standard
-     * queue must also be a standard queue.</p> </note> </li> <li> <p>
+     * queue must also be a standard queue.</p>  </li> <li> <p>
      * <code>VisibilityTimeout</code> – The visibility timeout for the queue, in
      * seconds. Valid values: An integer from 0 to 43,200 (12 hours). Default: 30. For
      * more information about the visibility timeout, see <a
@@ -1232,9 +1232,9 @@ namespace Model
      * delivered to the source queue before being moved to the dead-letter queue. When
      * the <code>ReceiveCount</code> for a message exceeds the
      * <code>maxReceiveCount</code> for a queue, Amazon SQS moves the message to the
-     * dead-letter-queue.</p> </li> </ul> <note> <p>The dead-letter queue of a FIFO
+     * dead-letter-queue.</p> </li> </ul>  <p>The dead-letter queue of a FIFO
      * queue must also be a FIFO queue. Similarly, the dead-letter queue of a standard
-     * queue must also be a standard queue.</p> </note> </li> <li> <p>
+     * queue must also be a standard queue.</p>  </li> <li> <p>
      * <code>VisibilityTimeout</code> – The visibility timeout for the queue, in
      * seconds. Valid values: An integer from 0 to 43,200 (12 hours). Default: 30. For
      * more information about the visibility timeout, see <a
@@ -1313,13 +1313,13 @@ namespace Model
      * tag restrictions, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-limits.html#limits-queues">Limits
      * Related to Queues</a> in the <i>Amazon Simple Queue Service Developer
-     * Guide</i>.</p> <note> <p>To be able to tag a queue on creation, you must have
+     * Guide</i>.</p>  <p>To be able to tag a queue on creation, you must have
      * the <code>sqs:CreateQueue</code> and <code>sqs:TagQueue</code> permissions.</p>
      * <p>Cross-account permissions don't apply to this action. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
      * Cross-Account Permissions to a Role and a User Name</a> in the <i>Amazon Simple
-     * Queue Service Developer Guide</i>.</p> </note>
+     * Queue Service Developer Guide</i>.</p> 
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
 
@@ -1337,13 +1337,13 @@ namespace Model
      * tag restrictions, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-limits.html#limits-queues">Limits
      * Related to Queues</a> in the <i>Amazon Simple Queue Service Developer
-     * Guide</i>.</p> <note> <p>To be able to tag a queue on creation, you must have
+     * Guide</i>.</p>  <p>To be able to tag a queue on creation, you must have
      * the <code>sqs:CreateQueue</code> and <code>sqs:TagQueue</code> permissions.</p>
      * <p>Cross-account permissions don't apply to this action. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
      * Cross-Account Permissions to a Role and a User Name</a> in the <i>Amazon Simple
-     * Queue Service Developer Guide</i>.</p> </note>
+     * Queue Service Developer Guide</i>.</p> 
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
@@ -1361,13 +1361,13 @@ namespace Model
      * tag restrictions, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-limits.html#limits-queues">Limits
      * Related to Queues</a> in the <i>Amazon Simple Queue Service Developer
-     * Guide</i>.</p> <note> <p>To be able to tag a queue on creation, you must have
+     * Guide</i>.</p>  <p>To be able to tag a queue on creation, you must have
      * the <code>sqs:CreateQueue</code> and <code>sqs:TagQueue</code> permissions.</p>
      * <p>Cross-account permissions don't apply to this action. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
      * Cross-Account Permissions to a Role and a User Name</a> in the <i>Amazon Simple
-     * Queue Service Developer Guide</i>.</p> </note>
+     * Queue Service Developer Guide</i>.</p> 
      */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
@@ -1385,13 +1385,13 @@ namespace Model
      * tag restrictions, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-limits.html#limits-queues">Limits
      * Related to Queues</a> in the <i>Amazon Simple Queue Service Developer
-     * Guide</i>.</p> <note> <p>To be able to tag a queue on creation, you must have
+     * Guide</i>.</p>  <p>To be able to tag a queue on creation, you must have
      * the <code>sqs:CreateQueue</code> and <code>sqs:TagQueue</code> permissions.</p>
      * <p>Cross-account permissions don't apply to this action. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
      * Cross-Account Permissions to a Role and a User Name</a> in the <i>Amazon Simple
-     * Queue Service Developer Guide</i>.</p> </note>
+     * Queue Service Developer Guide</i>.</p> 
      */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
@@ -1409,13 +1409,13 @@ namespace Model
      * tag restrictions, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-limits.html#limits-queues">Limits
      * Related to Queues</a> in the <i>Amazon Simple Queue Service Developer
-     * Guide</i>.</p> <note> <p>To be able to tag a queue on creation, you must have
+     * Guide</i>.</p>  <p>To be able to tag a queue on creation, you must have
      * the <code>sqs:CreateQueue</code> and <code>sqs:TagQueue</code> permissions.</p>
      * <p>Cross-account permissions don't apply to this action. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
      * Cross-Account Permissions to a Role and a User Name</a> in the <i>Amazon Simple
-     * Queue Service Developer Guide</i>.</p> </note>
+     * Queue Service Developer Guide</i>.</p> 
      */
     inline CreateQueueRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
 
@@ -1433,13 +1433,13 @@ namespace Model
      * tag restrictions, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-limits.html#limits-queues">Limits
      * Related to Queues</a> in the <i>Amazon Simple Queue Service Developer
-     * Guide</i>.</p> <note> <p>To be able to tag a queue on creation, you must have
+     * Guide</i>.</p>  <p>To be able to tag a queue on creation, you must have
      * the <code>sqs:CreateQueue</code> and <code>sqs:TagQueue</code> permissions.</p>
      * <p>Cross-account permissions don't apply to this action. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
      * Cross-Account Permissions to a Role and a User Name</a> in the <i>Amazon Simple
-     * Queue Service Developer Guide</i>.</p> </note>
+     * Queue Service Developer Guide</i>.</p> 
      */
     inline CreateQueueRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
 
@@ -1457,13 +1457,13 @@ namespace Model
      * tag restrictions, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-limits.html#limits-queues">Limits
      * Related to Queues</a> in the <i>Amazon Simple Queue Service Developer
-     * Guide</i>.</p> <note> <p>To be able to tag a queue on creation, you must have
+     * Guide</i>.</p>  <p>To be able to tag a queue on creation, you must have
      * the <code>sqs:CreateQueue</code> and <code>sqs:TagQueue</code> permissions.</p>
      * <p>Cross-account permissions don't apply to this action. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
      * Cross-Account Permissions to a Role and a User Name</a> in the <i>Amazon Simple
-     * Queue Service Developer Guide</i>.</p> </note>
+     * Queue Service Developer Guide</i>.</p> 
      */
     inline CreateQueueRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
@@ -1481,13 +1481,13 @@ namespace Model
      * tag restrictions, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-limits.html#limits-queues">Limits
      * Related to Queues</a> in the <i>Amazon Simple Queue Service Developer
-     * Guide</i>.</p> <note> <p>To be able to tag a queue on creation, you must have
+     * Guide</i>.</p>  <p>To be able to tag a queue on creation, you must have
      * the <code>sqs:CreateQueue</code> and <code>sqs:TagQueue</code> permissions.</p>
      * <p>Cross-account permissions don't apply to this action. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
      * Cross-Account Permissions to a Role and a User Name</a> in the <i>Amazon Simple
-     * Queue Service Developer Guide</i>.</p> </note>
+     * Queue Service Developer Guide</i>.</p> 
      */
     inline CreateQueueRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
@@ -1505,13 +1505,13 @@ namespace Model
      * tag restrictions, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-limits.html#limits-queues">Limits
      * Related to Queues</a> in the <i>Amazon Simple Queue Service Developer
-     * Guide</i>.</p> <note> <p>To be able to tag a queue on creation, you must have
+     * Guide</i>.</p>  <p>To be able to tag a queue on creation, you must have
      * the <code>sqs:CreateQueue</code> and <code>sqs:TagQueue</code> permissions.</p>
      * <p>Cross-account permissions don't apply to this action. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
      * Cross-Account Permissions to a Role and a User Name</a> in the <i>Amazon Simple
-     * Queue Service Developer Guide</i>.</p> </note>
+     * Queue Service Developer Guide</i>.</p> 
      */
     inline CreateQueueRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
@@ -1529,13 +1529,13 @@ namespace Model
      * tag restrictions, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-limits.html#limits-queues">Limits
      * Related to Queues</a> in the <i>Amazon Simple Queue Service Developer
-     * Guide</i>.</p> <note> <p>To be able to tag a queue on creation, you must have
+     * Guide</i>.</p>  <p>To be able to tag a queue on creation, you must have
      * the <code>sqs:CreateQueue</code> and <code>sqs:TagQueue</code> permissions.</p>
      * <p>Cross-account permissions don't apply to this action. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
      * Cross-Account Permissions to a Role and a User Name</a> in the <i>Amazon Simple
-     * Queue Service Developer Guide</i>.</p> </note>
+     * Queue Service Developer Guide</i>.</p> 
      */
     inline CreateQueueRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
 
@@ -1553,13 +1553,13 @@ namespace Model
      * tag restrictions, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-limits.html#limits-queues">Limits
      * Related to Queues</a> in the <i>Amazon Simple Queue Service Developer
-     * Guide</i>.</p> <note> <p>To be able to tag a queue on creation, you must have
+     * Guide</i>.</p>  <p>To be able to tag a queue on creation, you must have
      * the <code>sqs:CreateQueue</code> and <code>sqs:TagQueue</code> permissions.</p>
      * <p>Cross-account permissions don't apply to this action. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
      * Cross-Account Permissions to a Role and a User Name</a> in the <i>Amazon Simple
-     * Queue Service Developer Guide</i>.</p> </note>
+     * Queue Service Developer Guide</i>.</p> 
      */
     inline CreateQueueRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
@@ -1577,13 +1577,13 @@ namespace Model
      * tag restrictions, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-limits.html#limits-queues">Limits
      * Related to Queues</a> in the <i>Amazon Simple Queue Service Developer
-     * Guide</i>.</p> <note> <p>To be able to tag a queue on creation, you must have
+     * Guide</i>.</p>  <p>To be able to tag a queue on creation, you must have
      * the <code>sqs:CreateQueue</code> and <code>sqs:TagQueue</code> permissions.</p>
      * <p>Cross-account permissions don't apply to this action. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
      * Cross-Account Permissions to a Role and a User Name</a> in the <i>Amazon Simple
-     * Queue Service Developer Guide</i>.</p> </note>
+     * Queue Service Developer Guide</i>.</p> 
      */
     inline CreateQueueRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
@@ -1601,13 +1601,13 @@ namespace Model
      * tag restrictions, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-limits.html#limits-queues">Limits
      * Related to Queues</a> in the <i>Amazon Simple Queue Service Developer
-     * Guide</i>.</p> <note> <p>To be able to tag a queue on creation, you must have
+     * Guide</i>.</p>  <p>To be able to tag a queue on creation, you must have
      * the <code>sqs:CreateQueue</code> and <code>sqs:TagQueue</code> permissions.</p>
      * <p>Cross-account permissions don't apply to this action. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
      * Cross-Account Permissions to a Role and a User Name</a> in the <i>Amazon Simple
-     * Queue Service Developer Guide</i>.</p> </note>
+     * Queue Service Developer Guide</i>.</p> 
      */
     inline CreateQueueRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 

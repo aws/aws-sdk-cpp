@@ -558,9 +558,9 @@ namespace Model
         /**
          * <p>Gets the current health status (<code>Healthy</code>, <code>Unhealthy</code>,
          * or <code>Unknown</code>) of one or more instances that are associated with a
-         * specified service.</p> <note> <p>There is a brief delay between when you
+         * specified service.</p>  <p>There is a brief delay between when you
          * register an instance and when the health status for the instance is available.
-         * </p> </note><p><h3>See Also:</h3>   <a
+         * </p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/GetInstancesHealthStatus">AWS
          * API Reference</a></p>
          */
@@ -569,9 +569,9 @@ namespace Model
         /**
          * <p>Gets the current health status (<code>Healthy</code>, <code>Unhealthy</code>,
          * or <code>Unknown</code>) of one or more instances that are associated with a
-         * specified service.</p> <note> <p>There is a brief delay between when you
+         * specified service.</p>  <p>There is a brief delay between when you
          * register an instance and when the health status for the instance is available.
-         * </p> </note><p><h3>See Also:</h3>   <a
+         * </p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/GetInstancesHealthStatus">AWS
          * API Reference</a></p>
          *
@@ -582,9 +582,9 @@ namespace Model
         /**
          * <p>Gets the current health status (<code>Healthy</code>, <code>Unhealthy</code>,
          * or <code>Unknown</code>) of one or more instances that are associated with a
-         * specified service.</p> <note> <p>There is a brief delay between when you
+         * specified service.</p>  <p>There is a brief delay between when you
          * register an instance and when the health status for the instance is available.
-         * </p> </note><p><h3>See Also:</h3>   <a
+         * </p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/GetInstancesHealthStatus">AWS
          * API Reference</a></p>
          *
@@ -619,10 +619,10 @@ namespace Model
 
         /**
          * <p>Gets information about any operation that returns an operation ID in the
-         * response, such as a <code>CreateService</code> request.</p> <note> <p>To get a
+         * response, such as a <code>CreateService</code> request.</p>  <p>To get a
          * list of operations that match specified criteria, see <a
          * href="https://docs.aws.amazon.com/cloud-map/latest/api/API_ListOperations.html">ListOperations</a>.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/GetOperation">AWS
          * API Reference</a></p>
          */
@@ -630,10 +630,10 @@ namespace Model
 
         /**
          * <p>Gets information about any operation that returns an operation ID in the
-         * response, such as a <code>CreateService</code> request.</p> <note> <p>To get a
+         * response, such as a <code>CreateService</code> request.</p>  <p>To get a
          * list of operations that match specified criteria, see <a
          * href="https://docs.aws.amazon.com/cloud-map/latest/api/API_ListOperations.html">ListOperations</a>.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/GetOperation">AWS
          * API Reference</a></p>
          *
@@ -643,10 +643,10 @@ namespace Model
 
         /**
          * <p>Gets information about any operation that returns an operation ID in the
-         * response, such as a <code>CreateService</code> request.</p> <note> <p>To get a
+         * response, such as a <code>CreateService</code> request.</p>  <p>To get a
          * list of operations that match specified criteria, see <a
          * href="https://docs.aws.amazon.com/cloud-map/latest/api/API_ListOperations.html">ListOperations</a>.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/GetOperation">AWS
          * API Reference</a></p>
          *
@@ -826,9 +826,9 @@ namespace Model
          * includes <code>HealthCheckConfig</code>, a health check is created based on the
          * settings in the health check configuration.</p> </li> <li> <p>The health check,
          * if any, is associated with each of the new or updated records.</p> </li> </ul>
-         * <important> <p>One <code>RegisterInstance</code> request must complete before
+         *  <p>One <code>RegisterInstance</code> request must complete before
          * you can submit another request and specify the same service ID and instance
-         * ID.</p> </important> <p>For more information, see <a
+         * ID.</p>  <p>For more information, see <a
          * href="https://docs.aws.amazon.com/cloud-map/latest/api/API_CreateService.html">CreateService</a>.</p>
          * <p>When AWS Cloud Map receives a DNS query for the specified DNS name, it
          * returns the applicable value:</p> <ul> <li> <p> <b>If the health check is
@@ -856,9 +856,9 @@ namespace Model
          * includes <code>HealthCheckConfig</code>, a health check is created based on the
          * settings in the health check configuration.</p> </li> <li> <p>The health check,
          * if any, is associated with each of the new or updated records.</p> </li> </ul>
-         * <important> <p>One <code>RegisterInstance</code> request must complete before
+         *  <p>One <code>RegisterInstance</code> request must complete before
          * you can submit another request and specify the same service ID and instance
-         * ID.</p> </important> <p>For more information, see <a
+         * ID.</p>  <p>For more information, see <a
          * href="https://docs.aws.amazon.com/cloud-map/latest/api/API_CreateService.html">CreateService</a>.</p>
          * <p>When AWS Cloud Map receives a DNS query for the specified DNS name, it
          * returns the applicable value:</p> <ul> <li> <p> <b>If the health check is
@@ -888,9 +888,9 @@ namespace Model
          * includes <code>HealthCheckConfig</code>, a health check is created based on the
          * settings in the health check configuration.</p> </li> <li> <p>The health check,
          * if any, is associated with each of the new or updated records.</p> </li> </ul>
-         * <important> <p>One <code>RegisterInstance</code> request must complete before
+         *  <p>One <code>RegisterInstance</code> request must complete before
          * you can submit another request and specify the same service ID and instance
-         * ID.</p> </important> <p>For more information, see <a
+         * ID.</p>  <p>For more information, see <a
          * href="https://docs.aws.amazon.com/cloud-map/latest/api/API_CreateService.html">CreateService</a>.</p>
          * <p>When AWS Cloud Map receives a DNS query for the specified DNS name, it
          * returns the applicable value:</p> <ul> <li> <p> <b>If the health check is
@@ -1019,9 +1019,9 @@ namespace Model
          * <p>Submits a request to perform the following operations:</p> <ul> <li>
          * <p>Update the TTL setting for existing <code>DnsRecords</code>
          * configurations</p> </li> <li> <p>Add, update, or delete
-         * <code>HealthCheckConfig</code> for a specified service</p> <note> <p>You can't
+         * <code>HealthCheckConfig</code> for a specified service</p>  <p>You can't
          * add, update, or delete a <code>HealthCheckCustomConfig</code> configuration.</p>
-         * </note> </li> </ul> <p>For public and private DNS namespaces, note the
+         *  </li> </ul> <p>For public and private DNS namespaces, note the
          * following:</p> <ul> <li> <p>If you omit any existing <code>DnsRecords</code> or
          * <code>HealthCheckConfig</code> configurations from an <code>UpdateService</code>
          * request, the configurations are deleted from the service.</p> </li> <li> <p>If
@@ -1039,9 +1039,9 @@ namespace Model
          * <p>Submits a request to perform the following operations:</p> <ul> <li>
          * <p>Update the TTL setting for existing <code>DnsRecords</code>
          * configurations</p> </li> <li> <p>Add, update, or delete
-         * <code>HealthCheckConfig</code> for a specified service</p> <note> <p>You can't
+         * <code>HealthCheckConfig</code> for a specified service</p>  <p>You can't
          * add, update, or delete a <code>HealthCheckCustomConfig</code> configuration.</p>
-         * </note> </li> </ul> <p>For public and private DNS namespaces, note the
+         *  </li> </ul> <p>For public and private DNS namespaces, note the
          * following:</p> <ul> <li> <p>If you omit any existing <code>DnsRecords</code> or
          * <code>HealthCheckConfig</code> configurations from an <code>UpdateService</code>
          * request, the configurations are deleted from the service.</p> </li> <li> <p>If
@@ -1061,9 +1061,9 @@ namespace Model
          * <p>Submits a request to perform the following operations:</p> <ul> <li>
          * <p>Update the TTL setting for existing <code>DnsRecords</code>
          * configurations</p> </li> <li> <p>Add, update, or delete
-         * <code>HealthCheckConfig</code> for a specified service</p> <note> <p>You can't
+         * <code>HealthCheckConfig</code> for a specified service</p>  <p>You can't
          * add, update, or delete a <code>HealthCheckCustomConfig</code> configuration.</p>
-         * </note> </li> </ul> <p>For public and private DNS namespaces, note the
+         *  </li> </ul> <p>For public and private DNS namespaces, note the
          * following:</p> <ul> <li> <p>If you omit any existing <code>DnsRecords</code> or
          * <code>HealthCheckConfig</code> configurations from an <code>UpdateService</code>
          * request, the configurations are deleted from the service.</p> </li> <li> <p>If

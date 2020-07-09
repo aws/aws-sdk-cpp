@@ -16,7 +16,8 @@ namespace Model
   enum class RateBasedStatementAggregateKeyType
   {
     NOT_SET,
-    IP
+    IP,
+    FORWARDED_IP
   };
 
 namespace RateBasedStatementAggregateKeyTypeMapper

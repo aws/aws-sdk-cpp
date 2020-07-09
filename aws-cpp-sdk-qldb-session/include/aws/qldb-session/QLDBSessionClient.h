@@ -63,7 +63,7 @@ namespace Model
     typedef std::function<void(const QLDBSessionClient*, const Model::SendCommandRequest&, const Model::SendCommandOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SendCommandResponseReceivedHandler;
 
   /**
-   * <p>The transactional data APIs for Amazon QLDB</p> <note> <p>Instead of
+   * <p>The transactional data APIs for Amazon QLDB</p>  <p>Instead of
    * interacting directly with this API, we recommend that you use the Amazon QLDB
    * Driver or the QLDB Shell to execute data transactions on a ledger.</p> <ul> <li>
    * <p>If you are working with an AWS SDK, use the QLDB Driver. The driver provides
@@ -76,7 +76,7 @@ namespace Model
    * the QLDB Shell. The shell is a command line interface that uses the QLDB Driver
    * to interact with a ledger. For information, see <a
    * href="https://docs.aws.amazon.com/qldb/latest/developerguide/data-shell.html">Accessing
-   * Amazon QLDB using the QLDB Shell</a>.</p> </li> </ul> </note>
+   * Amazon QLDB using the QLDB Shell</a>.</p> </li> </ul> 
    */
   class AWS_QLDBSESSION_API QLDBSessionClient : public Aws::Client::AWSJsonClient
   {
@@ -108,7 +108,7 @@ namespace Model
 
 
         /**
-         * <p>Sends a command to an Amazon QLDB ledger.</p> <note> <p>Instead of
+         * <p>Sends a command to an Amazon QLDB ledger.</p>  <p>Instead of
          * interacting directly with this API, we recommend that you use the Amazon QLDB
          * Driver or the QLDB Shell to execute data transactions on a ledger.</p> <ul> <li>
          * <p>If you are working with an AWS SDK, use the QLDB Driver. The driver provides
@@ -121,7 +121,7 @@ namespace Model
          * the QLDB Shell. The shell is a command line interface that uses the QLDB Driver
          * to interact with a ledger. For information, see <a
          * href="https://docs.aws.amazon.com/qldb/latest/developerguide/data-shell.html">Accessing
-         * Amazon QLDB using the QLDB Shell</a>.</p> </li> </ul> </note><p><h3>See
+         * Amazon QLDB using the QLDB Shell</a>.</p> </li> </ul> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/qldb-session-2019-07-11/SendCommand">AWS
          * API Reference</a></p>
@@ -129,7 +129,7 @@ namespace Model
         virtual Model::SendCommandOutcome SendCommand(const Model::SendCommandRequest& request) const;
 
         /**
-         * <p>Sends a command to an Amazon QLDB ledger.</p> <note> <p>Instead of
+         * <p>Sends a command to an Amazon QLDB ledger.</p>  <p>Instead of
          * interacting directly with this API, we recommend that you use the Amazon QLDB
          * Driver or the QLDB Shell to execute data transactions on a ledger.</p> <ul> <li>
          * <p>If you are working with an AWS SDK, use the QLDB Driver. The driver provides
@@ -142,7 +142,7 @@ namespace Model
          * the QLDB Shell. The shell is a command line interface that uses the QLDB Driver
          * to interact with a ledger. For information, see <a
          * href="https://docs.aws.amazon.com/qldb/latest/developerguide/data-shell.html">Accessing
-         * Amazon QLDB using the QLDB Shell</a>.</p> </li> </ul> </note><p><h3>See
+         * Amazon QLDB using the QLDB Shell</a>.</p> </li> </ul> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/qldb-session-2019-07-11/SendCommand">AWS
          * API Reference</a></p>
@@ -152,7 +152,7 @@ namespace Model
         virtual Model::SendCommandOutcomeCallable SendCommandCallable(const Model::SendCommandRequest& request) const;
 
         /**
-         * <p>Sends a command to an Amazon QLDB ledger.</p> <note> <p>Instead of
+         * <p>Sends a command to an Amazon QLDB ledger.</p>  <p>Instead of
          * interacting directly with this API, we recommend that you use the Amazon QLDB
          * Driver or the QLDB Shell to execute data transactions on a ledger.</p> <ul> <li>
          * <p>If you are working with an AWS SDK, use the QLDB Driver. The driver provides
@@ -165,7 +165,7 @@ namespace Model
          * the QLDB Shell. The shell is a command line interface that uses the QLDB Driver
          * to interact with a ledger. For information, see <a
          * href="https://docs.aws.amazon.com/qldb/latest/developerguide/data-shell.html">Accessing
-         * Amazon QLDB using the QLDB Shell</a>.</p> </li> </ul> </note><p><h3>See
+         * Amazon QLDB using the QLDB Shell</a>.</p> </li> </ul> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/qldb-session-2019-07-11/SendCommand">AWS
          * API Reference</a></p>

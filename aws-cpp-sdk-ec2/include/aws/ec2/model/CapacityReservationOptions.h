@@ -25,8 +25,8 @@ namespace Model
 
   /**
    * <p>Describes the strategy for using unused Capacity Reservations for fulfilling
-   * On-Demand capacity.</p> <note> <p>This strategy can only be used if the EC2
-   * Fleet is of type <code>instant</code>.</p> </note> <p>For more information about
+   * On-Demand capacity.</p>  <p>This strategy can only be used if the EC2
+   * Fleet is of type <code>instant</code>.</p>  <p>For more information about
    * Capacity Reservations, see <a
    * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-capacity-reservations.html">On-Demand
    * Capacity Reservations</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.

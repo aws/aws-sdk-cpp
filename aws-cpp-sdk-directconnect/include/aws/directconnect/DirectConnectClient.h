@@ -389,8 +389,8 @@ namespace Model
          * specified amount of capacity (bandwidth) for use by a hosted connection on the
          * specified interconnect or LAG of interconnects. AWS polices the hosted
          * connection for the specified capacity and the AWS Direct Connect Partner must
-         * also police the hosted connection for the specified capacity.</p> <note>
-         * <p>Intended for use by AWS Direct Connect Partners only.</p> </note><p><h3>See
+         * also police the hosted connection for the specified capacity.</p> 
+         * <p>Intended for use by AWS Direct Connect Partners only.</p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/AllocateHostedConnection">AWS
          * API Reference</a></p>
@@ -403,8 +403,8 @@ namespace Model
          * specified amount of capacity (bandwidth) for use by a hosted connection on the
          * specified interconnect or LAG of interconnects. AWS polices the hosted
          * connection for the specified capacity and the AWS Direct Connect Partner must
-         * also police the hosted connection for the specified capacity.</p> <note>
-         * <p>Intended for use by AWS Direct Connect Partners only.</p> </note><p><h3>See
+         * also police the hosted connection for the specified capacity.</p> 
+         * <p>Intended for use by AWS Direct Connect Partners only.</p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/AllocateHostedConnection">AWS
          * API Reference</a></p>
@@ -419,8 +419,8 @@ namespace Model
          * specified amount of capacity (bandwidth) for use by a hosted connection on the
          * specified interconnect or LAG of interconnects. AWS polices the hosted
          * connection for the specified capacity and the AWS Direct Connect Partner must
-         * also police the hosted connection for the specified capacity.</p> <note>
-         * <p>Intended for use by AWS Direct Connect Partners only.</p> </note><p><h3>See
+         * also police the hosted connection for the specified capacity.</p> 
+         * <p>Intended for use by AWS Direct Connect Partners only.</p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/AllocateHostedConnection">AWS
          * API Reference</a></p>
@@ -636,8 +636,8 @@ namespace Model
          * aggregation group (LAG) or interconnect. If the target interconnect or LAG has
          * an existing hosted connection with a conflicting VLAN number or IP address, the
          * operation fails. This action temporarily interrupts the hosted connection's
-         * connectivity to AWS as it is being migrated.</p> <note> <p>Intended for use by
-         * AWS Direct Connect Partners only.</p> </note><p><h3>See Also:</h3>   <a
+         * connectivity to AWS as it is being migrated.</p>  <p>Intended for use by
+         * AWS Direct Connect Partners only.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/AssociateHostedConnection">AWS
          * API Reference</a></p>
          */
@@ -648,8 +648,8 @@ namespace Model
          * aggregation group (LAG) or interconnect. If the target interconnect or LAG has
          * an existing hosted connection with a conflicting VLAN number or IP address, the
          * operation fails. This action temporarily interrupts the hosted connection's
-         * connectivity to AWS as it is being migrated.</p> <note> <p>Intended for use by
-         * AWS Direct Connect Partners only.</p> </note><p><h3>See Also:</h3>   <a
+         * connectivity to AWS as it is being migrated.</p>  <p>Intended for use by
+         * AWS Direct Connect Partners only.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/AssociateHostedConnection">AWS
          * API Reference</a></p>
          *
@@ -662,8 +662,8 @@ namespace Model
          * aggregation group (LAG) or interconnect. If the target interconnect or LAG has
          * an existing hosted connection with a conflicting VLAN number or IP address, the
          * operation fails. This action temporarily interrupts the hosted connection's
-         * connectivity to AWS as it is being migrated.</p> <note> <p>Intended for use by
-         * AWS Direct Connect Partners only.</p> </note><p><h3>See Also:</h3>   <a
+         * connectivity to AWS as it is being migrated.</p>  <p>Intended for use by
+         * AWS Direct Connect Partners only.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/AssociateHostedConnection">AWS
          * API Reference</a></p>
          *
@@ -1106,8 +1106,8 @@ namespace Model
          * a connection on their interconnect by calling <a>AllocateHostedConnection</a>.
          * The end customer can then connect to AWS resources by creating a virtual
          * interface on their connection, using the VLAN assigned to them by the AWS Direct
-         * Connect Partner.</p> <note> <p>Intended for use by AWS Direct Connect Partners
-         * only.</p> </note><p><h3>See Also:</h3>   <a
+         * Connect Partner.</p>  <p>Intended for use by AWS Direct Connect Partners
+         * only.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreateInterconnect">AWS
          * API Reference</a></p>
          */
@@ -1130,8 +1130,8 @@ namespace Model
          * a connection on their interconnect by calling <a>AllocateHostedConnection</a>.
          * The end customer can then connect to AWS resources by creating a virtual
          * interface on their connection, using the VLAN assigned to them by the AWS Direct
-         * Connect Partner.</p> <note> <p>Intended for use by AWS Direct Connect Partners
-         * only.</p> </note><p><h3>See Also:</h3>   <a
+         * Connect Partner.</p>  <p>Intended for use by AWS Direct Connect Partners
+         * only.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreateInterconnect">AWS
          * API Reference</a></p>
          *
@@ -1156,8 +1156,8 @@ namespace Model
          * a connection on their interconnect by calling <a>AllocateHostedConnection</a>.
          * The end customer can then connect to AWS resources by creating a virtual
          * interface on their connection, using the VLAN assigned to them by the AWS Direct
-         * Connect Partner.</p> <note> <p>Intended for use by AWS Direct Connect Partners
-         * only.</p> </note><p><h3>See Also:</h3>   <a
+         * Connect Partner.</p>  <p>Intended for use by AWS Direct Connect Partners
+         * only.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreateInterconnect">AWS
          * API Reference</a></p>
          *
@@ -1355,12 +1355,12 @@ namespace Model
          * <p>Creates a transit virtual interface. A transit virtual interface should be
          * used to access one or more transit gateways associated with Direct Connect
          * gateways. A transit virtual interface enables the connection of multiple VPCs
-         * attached to a transit gateway to a Direct Connect gateway.</p> <important> <p>If
+         * attached to a transit gateway to a Direct Connect gateway.</p>  <p>If
          * you associate your transit gateway with one or more Direct Connect gateways, the
          * Autonomous System Number (ASN) used by the transit gateway and the Direct
          * Connect gateway must be different. For example, if you use the default ASN 64512
          * for both your the transit gateway and Direct Connect gateway, the association
-         * request fails.</p> </important> <p>Setting the MTU of a virtual interface to
+         * request fails.</p>  <p>Setting the MTU of a virtual interface to
          * 8500 (jumbo frames) can cause an update to the underlying physical connection if
          * it wasn't updated to support jumbo frames. Updating the connection disrupts
          * network connectivity for all virtual interfaces associated with the connection
@@ -1377,12 +1377,12 @@ namespace Model
          * <p>Creates a transit virtual interface. A transit virtual interface should be
          * used to access one or more transit gateways associated with Direct Connect
          * gateways. A transit virtual interface enables the connection of multiple VPCs
-         * attached to a transit gateway to a Direct Connect gateway.</p> <important> <p>If
+         * attached to a transit gateway to a Direct Connect gateway.</p>  <p>If
          * you associate your transit gateway with one or more Direct Connect gateways, the
          * Autonomous System Number (ASN) used by the transit gateway and the Direct
          * Connect gateway must be different. For example, if you use the default ASN 64512
          * for both your the transit gateway and Direct Connect gateway, the association
-         * request fails.</p> </important> <p>Setting the MTU of a virtual interface to
+         * request fails.</p>  <p>Setting the MTU of a virtual interface to
          * 8500 (jumbo frames) can cause an update to the underlying physical connection if
          * it wasn't updated to support jumbo frames. Updating the connection disrupts
          * network connectivity for all virtual interfaces associated with the connection
@@ -1401,12 +1401,12 @@ namespace Model
          * <p>Creates a transit virtual interface. A transit virtual interface should be
          * used to access one or more transit gateways associated with Direct Connect
          * gateways. A transit virtual interface enables the connection of multiple VPCs
-         * attached to a transit gateway to a Direct Connect gateway.</p> <important> <p>If
+         * attached to a transit gateway to a Direct Connect gateway.</p>  <p>If
          * you associate your transit gateway with one or more Direct Connect gateways, the
          * Autonomous System Number (ASN) used by the transit gateway and the Direct
          * Connect gateway must be different. For example, if you use the default ASN 64512
          * for both your the transit gateway and Direct Connect gateway, the association
-         * request fails.</p> </important> <p>Setting the MTU of a virtual interface to
+         * request fails.</p>  <p>Setting the MTU of a virtual interface to
          * 8500 (jumbo frames) can cause an update to the underlying physical connection if
          * it wasn't updated to support jumbo frames. Updating the connection disrupts
          * network connectivity for all virtual interfaces associated with the connection
@@ -1592,16 +1592,16 @@ namespace Model
         virtual void DeleteDirectConnectGatewayAssociationProposalAsync(const Model::DeleteDirectConnectGatewayAssociationProposalRequest& request, const DeleteDirectConnectGatewayAssociationProposalResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes the specified interconnect.</p> <note> <p>Intended for use by AWS
-         * Direct Connect Partners only.</p> </note><p><h3>See Also:</h3>   <a
+         * <p>Deletes the specified interconnect.</p>  <p>Intended for use by AWS
+         * Direct Connect Partners only.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DeleteInterconnect">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteInterconnectOutcome DeleteInterconnect(const Model::DeleteInterconnectRequest& request) const;
 
         /**
-         * <p>Deletes the specified interconnect.</p> <note> <p>Intended for use by AWS
-         * Direct Connect Partners only.</p> </note><p><h3>See Also:</h3>   <a
+         * <p>Deletes the specified interconnect.</p>  <p>Intended for use by AWS
+         * Direct Connect Partners only.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DeleteInterconnect">AWS
          * API Reference</a></p>
          *
@@ -1610,8 +1610,8 @@ namespace Model
         virtual Model::DeleteInterconnectOutcomeCallable DeleteInterconnectCallable(const Model::DeleteInterconnectRequest& request) const;
 
         /**
-         * <p>Deletes the specified interconnect.</p> <note> <p>Intended for use by AWS
-         * Direct Connect Partners only.</p> </note><p><h3>See Also:</h3>   <a
+         * <p>Deletes the specified interconnect.</p>  <p>Intended for use by AWS
+         * Direct Connect Partners only.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DeleteInterconnect">AWS
          * API Reference</a></p>
          *
@@ -1859,8 +1859,8 @@ namespace Model
 
         /**
          * <p>Lists the hosted connections that have been provisioned on the specified
-         * interconnect or link aggregation group (LAG).</p> <note> <p>Intended for use by
-         * AWS Direct Connect Partners only.</p> </note><p><h3>See Also:</h3>   <a
+         * interconnect or link aggregation group (LAG).</p>  <p>Intended for use by
+         * AWS Direct Connect Partners only.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeHostedConnections">AWS
          * API Reference</a></p>
          */
@@ -1868,8 +1868,8 @@ namespace Model
 
         /**
          * <p>Lists the hosted connections that have been provisioned on the specified
-         * interconnect or link aggregation group (LAG).</p> <note> <p>Intended for use by
-         * AWS Direct Connect Partners only.</p> </note><p><h3>See Also:</h3>   <a
+         * interconnect or link aggregation group (LAG).</p>  <p>Intended for use by
+         * AWS Direct Connect Partners only.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeHostedConnections">AWS
          * API Reference</a></p>
          *
@@ -1879,8 +1879,8 @@ namespace Model
 
         /**
          * <p>Lists the hosted connections that have been provisioned on the specified
-         * interconnect or link aggregation group (LAG).</p> <note> <p>Intended for use by
-         * AWS Direct Connect Partners only.</p> </note><p><h3>See Also:</h3>   <a
+         * interconnect or link aggregation group (LAG).</p>  <p>Intended for use by
+         * AWS Direct Connect Partners only.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeHostedConnections">AWS
          * API Reference</a></p>
          *

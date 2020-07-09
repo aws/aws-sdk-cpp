@@ -330,9 +330,9 @@ namespace Model
          * more information, see <a>async</a>.</p> <p>Batch translation jobs can be
          * described with the <a>DescribeTextTranslationJob</a> operation, listed with the
          * <a>ListTextTranslationJobs</a> operation, and stopped with the
-         * <a>StopTextTranslationJob</a> operation.</p> <note> <p>Amazon Translate does not
+         * <a>StopTextTranslationJob</a> operation.</p>  <p>Amazon Translate does not
          * support batch translation of multiple source languages at once.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/StartTextTranslationJob">AWS
          * API Reference</a></p>
          */
@@ -344,9 +344,9 @@ namespace Model
          * more information, see <a>async</a>.</p> <p>Batch translation jobs can be
          * described with the <a>DescribeTextTranslationJob</a> operation, listed with the
          * <a>ListTextTranslationJobs</a> operation, and stopped with the
-         * <a>StopTextTranslationJob</a> operation.</p> <note> <p>Amazon Translate does not
+         * <a>StopTextTranslationJob</a> operation.</p>  <p>Amazon Translate does not
          * support batch translation of multiple source languages at once.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/StartTextTranslationJob">AWS
          * API Reference</a></p>
          *
@@ -360,9 +360,9 @@ namespace Model
          * more information, see <a>async</a>.</p> <p>Batch translation jobs can be
          * described with the <a>DescribeTextTranslationJob</a> operation, listed with the
          * <a>ListTextTranslationJobs</a> operation, and stopped with the
-         * <a>StopTextTranslationJob</a> operation.</p> <note> <p>Amazon Translate does not
+         * <a>StopTextTranslationJob</a> operation.</p>  <p>Amazon Translate does not
          * support batch translation of multiple source languages at once.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/StartTextTranslationJob">AWS
          * API Reference</a></p>
          *

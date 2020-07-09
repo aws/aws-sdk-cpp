@@ -587,25 +587,25 @@ namespace Model
 
 
     /**
-     * <p> Automatically disconnects a branch in the Amplify Console when you delete a
+     * <p> Automatically disconnect a branch in the Amplify Console when you delete a
      * branch from your Git repository. </p>
      */
     inline bool GetEnableBranchAutoDeletion() const{ return m_enableBranchAutoDeletion; }
 
     /**
-     * <p> Automatically disconnects a branch in the Amplify Console when you delete a
+     * <p> Automatically disconnect a branch in the Amplify Console when you delete a
      * branch from your Git repository. </p>
      */
     inline bool EnableBranchAutoDeletionHasBeenSet() const { return m_enableBranchAutoDeletionHasBeenSet; }
 
     /**
-     * <p> Automatically disconnects a branch in the Amplify Console when you delete a
+     * <p> Automatically disconnect a branch in the Amplify Console when you delete a
      * branch from your Git repository. </p>
      */
     inline void SetEnableBranchAutoDeletion(bool value) { m_enableBranchAutoDeletionHasBeenSet = true; m_enableBranchAutoDeletion = value; }
 
     /**
-     * <p> Automatically disconnects a branch in the Amplify Console when you delete a
+     * <p> Automatically disconnect a branch in the Amplify Console when you delete a
      * branch from your Git repository. </p>
      */
     inline App& WithEnableBranchAutoDeletion(bool value) { SetEnableBranchAutoDeletion(value); return *this;}

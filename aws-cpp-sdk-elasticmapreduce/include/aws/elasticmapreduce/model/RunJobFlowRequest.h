@@ -513,8 +513,8 @@ namespace Model
 
 
     /**
-     * <note> <p>For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and
-     * later, use Applications.</p> </note> <p>A list of strings that indicates
+     *  <p>For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and
+     * later, use Applications.</p>  <p>A list of strings that indicates
      * third-party software to use. For more information, see the <a
      * href="https://docs.aws.amazon.com/emr/latest/DeveloperGuide/emr-dg.pdf">Amazon
      * EMR Developer Guide</a>. Currently supported values are:</p> <ul> <li>
@@ -524,8 +524,8 @@ namespace Model
     inline const Aws::Vector<Aws::String>& GetSupportedProducts() const{ return m_supportedProducts; }
 
     /**
-     * <note> <p>For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and
-     * later, use Applications.</p> </note> <p>A list of strings that indicates
+     *  <p>For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and
+     * later, use Applications.</p>  <p>A list of strings that indicates
      * third-party software to use. For more information, see the <a
      * href="https://docs.aws.amazon.com/emr/latest/DeveloperGuide/emr-dg.pdf">Amazon
      * EMR Developer Guide</a>. Currently supported values are:</p> <ul> <li>
@@ -535,8 +535,8 @@ namespace Model
     inline bool SupportedProductsHasBeenSet() const { return m_supportedProductsHasBeenSet; }
 
     /**
-     * <note> <p>For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and
-     * later, use Applications.</p> </note> <p>A list of strings that indicates
+     *  <p>For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and
+     * later, use Applications.</p>  <p>A list of strings that indicates
      * third-party software to use. For more information, see the <a
      * href="https://docs.aws.amazon.com/emr/latest/DeveloperGuide/emr-dg.pdf">Amazon
      * EMR Developer Guide</a>. Currently supported values are:</p> <ul> <li>
@@ -546,8 +546,8 @@ namespace Model
     inline void SetSupportedProducts(const Aws::Vector<Aws::String>& value) { m_supportedProductsHasBeenSet = true; m_supportedProducts = value; }
 
     /**
-     * <note> <p>For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and
-     * later, use Applications.</p> </note> <p>A list of strings that indicates
+     *  <p>For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and
+     * later, use Applications.</p>  <p>A list of strings that indicates
      * third-party software to use. For more information, see the <a
      * href="https://docs.aws.amazon.com/emr/latest/DeveloperGuide/emr-dg.pdf">Amazon
      * EMR Developer Guide</a>. Currently supported values are:</p> <ul> <li>
@@ -557,8 +557,8 @@ namespace Model
     inline void SetSupportedProducts(Aws::Vector<Aws::String>&& value) { m_supportedProductsHasBeenSet = true; m_supportedProducts = std::move(value); }
 
     /**
-     * <note> <p>For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and
-     * later, use Applications.</p> </note> <p>A list of strings that indicates
+     *  <p>For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and
+     * later, use Applications.</p>  <p>A list of strings that indicates
      * third-party software to use. For more information, see the <a
      * href="https://docs.aws.amazon.com/emr/latest/DeveloperGuide/emr-dg.pdf">Amazon
      * EMR Developer Guide</a>. Currently supported values are:</p> <ul> <li>
@@ -568,8 +568,8 @@ namespace Model
     inline RunJobFlowRequest& WithSupportedProducts(const Aws::Vector<Aws::String>& value) { SetSupportedProducts(value); return *this;}
 
     /**
-     * <note> <p>For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and
-     * later, use Applications.</p> </note> <p>A list of strings that indicates
+     *  <p>For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and
+     * later, use Applications.</p>  <p>A list of strings that indicates
      * third-party software to use. For more information, see the <a
      * href="https://docs.aws.amazon.com/emr/latest/DeveloperGuide/emr-dg.pdf">Amazon
      * EMR Developer Guide</a>. Currently supported values are:</p> <ul> <li>
@@ -579,8 +579,8 @@ namespace Model
     inline RunJobFlowRequest& WithSupportedProducts(Aws::Vector<Aws::String>&& value) { SetSupportedProducts(std::move(value)); return *this;}
 
     /**
-     * <note> <p>For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and
-     * later, use Applications.</p> </note> <p>A list of strings that indicates
+     *  <p>For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and
+     * later, use Applications.</p>  <p>A list of strings that indicates
      * third-party software to use. For more information, see the <a
      * href="https://docs.aws.amazon.com/emr/latest/DeveloperGuide/emr-dg.pdf">Amazon
      * EMR Developer Guide</a>. Currently supported values are:</p> <ul> <li>
@@ -590,8 +590,8 @@ namespace Model
     inline RunJobFlowRequest& AddSupportedProducts(const Aws::String& value) { m_supportedProductsHasBeenSet = true; m_supportedProducts.push_back(value); return *this; }
 
     /**
-     * <note> <p>For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and
-     * later, use Applications.</p> </note> <p>A list of strings that indicates
+     *  <p>For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and
+     * later, use Applications.</p>  <p>A list of strings that indicates
      * third-party software to use. For more information, see the <a
      * href="https://docs.aws.amazon.com/emr/latest/DeveloperGuide/emr-dg.pdf">Amazon
      * EMR Developer Guide</a>. Currently supported values are:</p> <ul> <li>
@@ -601,8 +601,8 @@ namespace Model
     inline RunJobFlowRequest& AddSupportedProducts(Aws::String&& value) { m_supportedProductsHasBeenSet = true; m_supportedProducts.push_back(std::move(value)); return *this; }
 
     /**
-     * <note> <p>For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and
-     * later, use Applications.</p> </note> <p>A list of strings that indicates
+     *  <p>For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and
+     * later, use Applications.</p>  <p>A list of strings that indicates
      * third-party software to use. For more information, see the <a
      * href="https://docs.aws.amazon.com/emr/latest/DeveloperGuide/emr-dg.pdf">Amazon
      * EMR Developer Guide</a>. Currently supported values are:</p> <ul> <li>
@@ -613,8 +613,8 @@ namespace Model
 
 
     /**
-     * <note> <p>For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and
-     * later, use Applications.</p> </note> <p>A list of strings that indicates
+     *  <p>For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and
+     * later, use Applications.</p>  <p>A list of strings that indicates
      * third-party software to use with the job flow that accepts a user argument list.
      * EMR accepts and forwards the argument list to the corresponding installation
      * script as bootstrap action arguments. For more information, see "Launch a Job
@@ -634,8 +634,8 @@ namespace Model
     inline const Aws::Vector<SupportedProductConfig>& GetNewSupportedProducts() const{ return m_newSupportedProducts; }
 
     /**
-     * <note> <p>For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and
-     * later, use Applications.</p> </note> <p>A list of strings that indicates
+     *  <p>For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and
+     * later, use Applications.</p>  <p>A list of strings that indicates
      * third-party software to use with the job flow that accepts a user argument list.
      * EMR accepts and forwards the argument list to the corresponding installation
      * script as bootstrap action arguments. For more information, see "Launch a Job
@@ -655,8 +655,8 @@ namespace Model
     inline bool NewSupportedProductsHasBeenSet() const { return m_newSupportedProductsHasBeenSet; }
 
     /**
-     * <note> <p>For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and
-     * later, use Applications.</p> </note> <p>A list of strings that indicates
+     *  <p>For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and
+     * later, use Applications.</p>  <p>A list of strings that indicates
      * third-party software to use with the job flow that accepts a user argument list.
      * EMR accepts and forwards the argument list to the corresponding installation
      * script as bootstrap action arguments. For more information, see "Launch a Job
@@ -676,8 +676,8 @@ namespace Model
     inline void SetNewSupportedProducts(const Aws::Vector<SupportedProductConfig>& value) { m_newSupportedProductsHasBeenSet = true; m_newSupportedProducts = value; }
 
     /**
-     * <note> <p>For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and
-     * later, use Applications.</p> </note> <p>A list of strings that indicates
+     *  <p>For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and
+     * later, use Applications.</p>  <p>A list of strings that indicates
      * third-party software to use with the job flow that accepts a user argument list.
      * EMR accepts and forwards the argument list to the corresponding installation
      * script as bootstrap action arguments. For more information, see "Launch a Job
@@ -697,8 +697,8 @@ namespace Model
     inline void SetNewSupportedProducts(Aws::Vector<SupportedProductConfig>&& value) { m_newSupportedProductsHasBeenSet = true; m_newSupportedProducts = std::move(value); }
 
     /**
-     * <note> <p>For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and
-     * later, use Applications.</p> </note> <p>A list of strings that indicates
+     *  <p>For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and
+     * later, use Applications.</p>  <p>A list of strings that indicates
      * third-party software to use with the job flow that accepts a user argument list.
      * EMR accepts and forwards the argument list to the corresponding installation
      * script as bootstrap action arguments. For more information, see "Launch a Job
@@ -718,8 +718,8 @@ namespace Model
     inline RunJobFlowRequest& WithNewSupportedProducts(const Aws::Vector<SupportedProductConfig>& value) { SetNewSupportedProducts(value); return *this;}
 
     /**
-     * <note> <p>For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and
-     * later, use Applications.</p> </note> <p>A list of strings that indicates
+     *  <p>For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and
+     * later, use Applications.</p>  <p>A list of strings that indicates
      * third-party software to use with the job flow that accepts a user argument list.
      * EMR accepts and forwards the argument list to the corresponding installation
      * script as bootstrap action arguments. For more information, see "Launch a Job
@@ -739,8 +739,8 @@ namespace Model
     inline RunJobFlowRequest& WithNewSupportedProducts(Aws::Vector<SupportedProductConfig>&& value) { SetNewSupportedProducts(std::move(value)); return *this;}
 
     /**
-     * <note> <p>For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and
-     * later, use Applications.</p> </note> <p>A list of strings that indicates
+     *  <p>For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and
+     * later, use Applications.</p>  <p>A list of strings that indicates
      * third-party software to use with the job flow that accepts a user argument list.
      * EMR accepts and forwards the argument list to the corresponding installation
      * script as bootstrap action arguments. For more information, see "Launch a Job
@@ -760,8 +760,8 @@ namespace Model
     inline RunJobFlowRequest& AddNewSupportedProducts(const SupportedProductConfig& value) { m_newSupportedProductsHasBeenSet = true; m_newSupportedProducts.push_back(value); return *this; }
 
     /**
-     * <note> <p>For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and
-     * later, use Applications.</p> </note> <p>A list of strings that indicates
+     *  <p>For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and
+     * later, use Applications.</p>  <p>A list of strings that indicates
      * third-party software to use with the job flow that accepts a user argument list.
      * EMR accepts and forwards the argument list to the corresponding installation
      * script as bootstrap action arguments. For more information, see "Launch a Job

@@ -149,10 +149,10 @@ namespace Model
      * <p>Use this parameter to specify a test run for <code>PutEvaluations</code>. You
      * can verify whether your AWS Lambda function will deliver evaluation results to
      * AWS Config. No updates occur to your existing evaluations, and evaluation
-     * results are not sent to AWS Config.</p> <note> <p>When <code>TestMode</code> is
+     * results are not sent to AWS Config.</p>  <p>When <code>TestMode</code> is
      * <code>true</code>, <code>PutEvaluations</code> doesn't require a valid value for
      * the <code>ResultToken</code> parameter, but the value cannot be null.</p>
-     * </note>
+     * 
      */
     inline bool GetTestMode() const{ return m_testMode; }
 
@@ -160,10 +160,10 @@ namespace Model
      * <p>Use this parameter to specify a test run for <code>PutEvaluations</code>. You
      * can verify whether your AWS Lambda function will deliver evaluation results to
      * AWS Config. No updates occur to your existing evaluations, and evaluation
-     * results are not sent to AWS Config.</p> <note> <p>When <code>TestMode</code> is
+     * results are not sent to AWS Config.</p>  <p>When <code>TestMode</code> is
      * <code>true</code>, <code>PutEvaluations</code> doesn't require a valid value for
      * the <code>ResultToken</code> parameter, but the value cannot be null.</p>
-     * </note>
+     * 
      */
     inline bool TestModeHasBeenSet() const { return m_testModeHasBeenSet; }
 
@@ -171,10 +171,10 @@ namespace Model
      * <p>Use this parameter to specify a test run for <code>PutEvaluations</code>. You
      * can verify whether your AWS Lambda function will deliver evaluation results to
      * AWS Config. No updates occur to your existing evaluations, and evaluation
-     * results are not sent to AWS Config.</p> <note> <p>When <code>TestMode</code> is
+     * results are not sent to AWS Config.</p>  <p>When <code>TestMode</code> is
      * <code>true</code>, <code>PutEvaluations</code> doesn't require a valid value for
      * the <code>ResultToken</code> parameter, but the value cannot be null.</p>
-     * </note>
+     * 
      */
     inline void SetTestMode(bool value) { m_testModeHasBeenSet = true; m_testMode = value; }
 
@@ -182,10 +182,10 @@ namespace Model
      * <p>Use this parameter to specify a test run for <code>PutEvaluations</code>. You
      * can verify whether your AWS Lambda function will deliver evaluation results to
      * AWS Config. No updates occur to your existing evaluations, and evaluation
-     * results are not sent to AWS Config.</p> <note> <p>When <code>TestMode</code> is
+     * results are not sent to AWS Config.</p>  <p>When <code>TestMode</code> is
      * <code>true</code>, <code>PutEvaluations</code> doesn't require a valid value for
      * the <code>ResultToken</code> parameter, but the value cannot be null.</p>
-     * </note>
+     * 
      */
     inline PutEvaluationsRequest& WithTestMode(bool value) { SetTestMode(value); return *this;}
 

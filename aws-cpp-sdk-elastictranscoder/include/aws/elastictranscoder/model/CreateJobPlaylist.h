@@ -45,12 +45,12 @@ namespace Model
      * for example, nyc-vacation.m3u8. If the name includes a <code>/</code> character,
      * the section of the name before the last <code>/</code> must be identical for all
      * <code>Name</code> objects. If you create more than one master playlist, the
-     * values of all <code>Name</code> objects must be unique.</p> <note> <p> Elastic
+     * values of all <code>Name</code> objects must be unique.</p>  <p> Elastic
      * Transcoder automatically appends the relevant file extension to the file name
      * (<code>.m3u8</code> for <code>HLSv3</code> and <code>HLSv4</code> playlists, and
      * <code>.ism</code> and <code>.ismc</code> for <code>Smooth</code> playlists). If
      * you include a file extension in <code>Name</code>, the file name will have two
-     * extensions.</p> </note>
+     * extensions.</p> 
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
@@ -59,12 +59,12 @@ namespace Model
      * for example, nyc-vacation.m3u8. If the name includes a <code>/</code> character,
      * the section of the name before the last <code>/</code> must be identical for all
      * <code>Name</code> objects. If you create more than one master playlist, the
-     * values of all <code>Name</code> objects must be unique.</p> <note> <p> Elastic
+     * values of all <code>Name</code> objects must be unique.</p>  <p> Elastic
      * Transcoder automatically appends the relevant file extension to the file name
      * (<code>.m3u8</code> for <code>HLSv3</code> and <code>HLSv4</code> playlists, and
      * <code>.ism</code> and <code>.ismc</code> for <code>Smooth</code> playlists). If
      * you include a file extension in <code>Name</code>, the file name will have two
-     * extensions.</p> </note>
+     * extensions.</p> 
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
@@ -73,12 +73,12 @@ namespace Model
      * for example, nyc-vacation.m3u8. If the name includes a <code>/</code> character,
      * the section of the name before the last <code>/</code> must be identical for all
      * <code>Name</code> objects. If you create more than one master playlist, the
-     * values of all <code>Name</code> objects must be unique.</p> <note> <p> Elastic
+     * values of all <code>Name</code> objects must be unique.</p>  <p> Elastic
      * Transcoder automatically appends the relevant file extension to the file name
      * (<code>.m3u8</code> for <code>HLSv3</code> and <code>HLSv4</code> playlists, and
      * <code>.ism</code> and <code>.ismc</code> for <code>Smooth</code> playlists). If
      * you include a file extension in <code>Name</code>, the file name will have two
-     * extensions.</p> </note>
+     * extensions.</p> 
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
@@ -87,12 +87,12 @@ namespace Model
      * for example, nyc-vacation.m3u8. If the name includes a <code>/</code> character,
      * the section of the name before the last <code>/</code> must be identical for all
      * <code>Name</code> objects. If you create more than one master playlist, the
-     * values of all <code>Name</code> objects must be unique.</p> <note> <p> Elastic
+     * values of all <code>Name</code> objects must be unique.</p>  <p> Elastic
      * Transcoder automatically appends the relevant file extension to the file name
      * (<code>.m3u8</code> for <code>HLSv3</code> and <code>HLSv4</code> playlists, and
      * <code>.ism</code> and <code>.ismc</code> for <code>Smooth</code> playlists). If
      * you include a file extension in <code>Name</code>, the file name will have two
-     * extensions.</p> </note>
+     * extensions.</p> 
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
@@ -101,12 +101,12 @@ namespace Model
      * for example, nyc-vacation.m3u8. If the name includes a <code>/</code> character,
      * the section of the name before the last <code>/</code> must be identical for all
      * <code>Name</code> objects. If you create more than one master playlist, the
-     * values of all <code>Name</code> objects must be unique.</p> <note> <p> Elastic
+     * values of all <code>Name</code> objects must be unique.</p>  <p> Elastic
      * Transcoder automatically appends the relevant file extension to the file name
      * (<code>.m3u8</code> for <code>HLSv3</code> and <code>HLSv4</code> playlists, and
      * <code>.ism</code> and <code>.ismc</code> for <code>Smooth</code> playlists). If
      * you include a file extension in <code>Name</code>, the file name will have two
-     * extensions.</p> </note>
+     * extensions.</p> 
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
@@ -115,12 +115,12 @@ namespace Model
      * for example, nyc-vacation.m3u8. If the name includes a <code>/</code> character,
      * the section of the name before the last <code>/</code> must be identical for all
      * <code>Name</code> objects. If you create more than one master playlist, the
-     * values of all <code>Name</code> objects must be unique.</p> <note> <p> Elastic
+     * values of all <code>Name</code> objects must be unique.</p>  <p> Elastic
      * Transcoder automatically appends the relevant file extension to the file name
      * (<code>.m3u8</code> for <code>HLSv3</code> and <code>HLSv4</code> playlists, and
      * <code>.ism</code> and <code>.ismc</code> for <code>Smooth</code> playlists). If
      * you include a file extension in <code>Name</code>, the file name will have two
-     * extensions.</p> </note>
+     * extensions.</p> 
      */
     inline CreateJobPlaylist& WithName(const Aws::String& value) { SetName(value); return *this;}
 
@@ -129,12 +129,12 @@ namespace Model
      * for example, nyc-vacation.m3u8. If the name includes a <code>/</code> character,
      * the section of the name before the last <code>/</code> must be identical for all
      * <code>Name</code> objects. If you create more than one master playlist, the
-     * values of all <code>Name</code> objects must be unique.</p> <note> <p> Elastic
+     * values of all <code>Name</code> objects must be unique.</p>  <p> Elastic
      * Transcoder automatically appends the relevant file extension to the file name
      * (<code>.m3u8</code> for <code>HLSv3</code> and <code>HLSv4</code> playlists, and
      * <code>.ism</code> and <code>.ismc</code> for <code>Smooth</code> playlists). If
      * you include a file extension in <code>Name</code>, the file name will have two
-     * extensions.</p> </note>
+     * extensions.</p> 
      */
     inline CreateJobPlaylist& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
@@ -143,12 +143,12 @@ namespace Model
      * for example, nyc-vacation.m3u8. If the name includes a <code>/</code> character,
      * the section of the name before the last <code>/</code> must be identical for all
      * <code>Name</code> objects. If you create more than one master playlist, the
-     * values of all <code>Name</code> objects must be unique.</p> <note> <p> Elastic
+     * values of all <code>Name</code> objects must be unique.</p>  <p> Elastic
      * Transcoder automatically appends the relevant file extension to the file name
      * (<code>.m3u8</code> for <code>HLSv3</code> and <code>HLSv4</code> playlists, and
      * <code>.ism</code> and <code>.ismc</code> for <code>Smooth</code> playlists). If
      * you include a file extension in <code>Name</code>, the file name will have two
-     * extensions.</p> </note>
+     * extensions.</p> 
      */
     inline CreateJobPlaylist& WithName(const char* value) { SetName(value); return *this;}
 

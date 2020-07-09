@@ -23,6 +23,11 @@ namespace AppMesh
 namespace Model
 {
 
+  /**
+   * <p>An object that represents types of timeouts. </p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/TcpTimeout">AWS
+   * API Reference</a></p>
+   */
   class AWS_APPMESH_API TcpTimeout
   {
   public:

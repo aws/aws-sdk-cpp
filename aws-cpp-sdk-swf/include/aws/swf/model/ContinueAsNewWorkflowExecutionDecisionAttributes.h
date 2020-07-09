@@ -105,11 +105,11 @@ namespace Model
      * overrides the <code>defaultExecutionStartToCloseTimeout</code> specified when
      * registering the workflow type.</p> <p>The duration is specified in seconds, an
      * integer greater than or equal to <code>0</code>. You can use <code>NONE</code>
-     * to specify unlimited duration.</p> <note> <p>An execution start-to-close timeout
+     * to specify unlimited duration.</p>  <p>An execution start-to-close timeout
      * for this workflow execution must be specified either as a default for the
      * workflow type or through this field. If neither this field is set nor a default
      * execution start-to-close timeout was specified at registration time then a fault
-     * is returned.</p> </note>
+     * is returned.</p> 
      */
     inline const Aws::String& GetExecutionStartToCloseTimeout() const{ return m_executionStartToCloseTimeout; }
 
@@ -118,11 +118,11 @@ namespace Model
      * overrides the <code>defaultExecutionStartToCloseTimeout</code> specified when
      * registering the workflow type.</p> <p>The duration is specified in seconds, an
      * integer greater than or equal to <code>0</code>. You can use <code>NONE</code>
-     * to specify unlimited duration.</p> <note> <p>An execution start-to-close timeout
+     * to specify unlimited duration.</p>  <p>An execution start-to-close timeout
      * for this workflow execution must be specified either as a default for the
      * workflow type or through this field. If neither this field is set nor a default
      * execution start-to-close timeout was specified at registration time then a fault
-     * is returned.</p> </note>
+     * is returned.</p> 
      */
     inline bool ExecutionStartToCloseTimeoutHasBeenSet() const { return m_executionStartToCloseTimeoutHasBeenSet; }
 
@@ -131,11 +131,11 @@ namespace Model
      * overrides the <code>defaultExecutionStartToCloseTimeout</code> specified when
      * registering the workflow type.</p> <p>The duration is specified in seconds, an
      * integer greater than or equal to <code>0</code>. You can use <code>NONE</code>
-     * to specify unlimited duration.</p> <note> <p>An execution start-to-close timeout
+     * to specify unlimited duration.</p>  <p>An execution start-to-close timeout
      * for this workflow execution must be specified either as a default for the
      * workflow type or through this field. If neither this field is set nor a default
      * execution start-to-close timeout was specified at registration time then a fault
-     * is returned.</p> </note>
+     * is returned.</p> 
      */
     inline void SetExecutionStartToCloseTimeout(const Aws::String& value) { m_executionStartToCloseTimeoutHasBeenSet = true; m_executionStartToCloseTimeout = value; }
 
@@ -144,11 +144,11 @@ namespace Model
      * overrides the <code>defaultExecutionStartToCloseTimeout</code> specified when
      * registering the workflow type.</p> <p>The duration is specified in seconds, an
      * integer greater than or equal to <code>0</code>. You can use <code>NONE</code>
-     * to specify unlimited duration.</p> <note> <p>An execution start-to-close timeout
+     * to specify unlimited duration.</p>  <p>An execution start-to-close timeout
      * for this workflow execution must be specified either as a default for the
      * workflow type or through this field. If neither this field is set nor a default
      * execution start-to-close timeout was specified at registration time then a fault
-     * is returned.</p> </note>
+     * is returned.</p> 
      */
     inline void SetExecutionStartToCloseTimeout(Aws::String&& value) { m_executionStartToCloseTimeoutHasBeenSet = true; m_executionStartToCloseTimeout = std::move(value); }
 
@@ -157,11 +157,11 @@ namespace Model
      * overrides the <code>defaultExecutionStartToCloseTimeout</code> specified when
      * registering the workflow type.</p> <p>The duration is specified in seconds, an
      * integer greater than or equal to <code>0</code>. You can use <code>NONE</code>
-     * to specify unlimited duration.</p> <note> <p>An execution start-to-close timeout
+     * to specify unlimited duration.</p>  <p>An execution start-to-close timeout
      * for this workflow execution must be specified either as a default for the
      * workflow type or through this field. If neither this field is set nor a default
      * execution start-to-close timeout was specified at registration time then a fault
-     * is returned.</p> </note>
+     * is returned.</p> 
      */
     inline void SetExecutionStartToCloseTimeout(const char* value) { m_executionStartToCloseTimeoutHasBeenSet = true; m_executionStartToCloseTimeout.assign(value); }
 
@@ -170,11 +170,11 @@ namespace Model
      * overrides the <code>defaultExecutionStartToCloseTimeout</code> specified when
      * registering the workflow type.</p> <p>The duration is specified in seconds, an
      * integer greater than or equal to <code>0</code>. You can use <code>NONE</code>
-     * to specify unlimited duration.</p> <note> <p>An execution start-to-close timeout
+     * to specify unlimited duration.</p>  <p>An execution start-to-close timeout
      * for this workflow execution must be specified either as a default for the
      * workflow type or through this field. If neither this field is set nor a default
      * execution start-to-close timeout was specified at registration time then a fault
-     * is returned.</p> </note>
+     * is returned.</p> 
      */
     inline ContinueAsNewWorkflowExecutionDecisionAttributes& WithExecutionStartToCloseTimeout(const Aws::String& value) { SetExecutionStartToCloseTimeout(value); return *this;}
 
@@ -183,11 +183,11 @@ namespace Model
      * overrides the <code>defaultExecutionStartToCloseTimeout</code> specified when
      * registering the workflow type.</p> <p>The duration is specified in seconds, an
      * integer greater than or equal to <code>0</code>. You can use <code>NONE</code>
-     * to specify unlimited duration.</p> <note> <p>An execution start-to-close timeout
+     * to specify unlimited duration.</p>  <p>An execution start-to-close timeout
      * for this workflow execution must be specified either as a default for the
      * workflow type or through this field. If neither this field is set nor a default
      * execution start-to-close timeout was specified at registration time then a fault
-     * is returned.</p> </note>
+     * is returned.</p> 
      */
     inline ContinueAsNewWorkflowExecutionDecisionAttributes& WithExecutionStartToCloseTimeout(Aws::String&& value) { SetExecutionStartToCloseTimeout(std::move(value)); return *this;}
 
@@ -196,11 +196,11 @@ namespace Model
      * overrides the <code>defaultExecutionStartToCloseTimeout</code> specified when
      * registering the workflow type.</p> <p>The duration is specified in seconds, an
      * integer greater than or equal to <code>0</code>. You can use <code>NONE</code>
-     * to specify unlimited duration.</p> <note> <p>An execution start-to-close timeout
+     * to specify unlimited duration.</p>  <p>An execution start-to-close timeout
      * for this workflow execution must be specified either as a default for the
      * workflow type or through this field. If neither this field is set nor a default
      * execution start-to-close timeout was specified at registration time then a fault
-     * is returned.</p> </note>
+     * is returned.</p> 
      */
     inline ContinueAsNewWorkflowExecutionDecisionAttributes& WithExecutionStartToCloseTimeout(const char* value) { SetExecutionStartToCloseTimeout(value); return *this;}
 
@@ -345,11 +345,11 @@ namespace Model
      * <code>defaultTaskStartToCloseTimout</code> specified when registering the
      * workflow type using <a>RegisterWorkflowType</a>.</p> <p>The duration is
      * specified in seconds, an integer greater than or equal to <code>0</code>. You
-     * can use <code>NONE</code> to specify unlimited duration.</p> <note> <p>A task
+     * can use <code>NONE</code> to specify unlimited duration.</p>  <p>A task
      * start-to-close timeout for the new workflow execution must be specified either
      * as a default for the workflow type or through this parameter. If neither this
      * parameter is set nor a default task start-to-close timeout was specified at
-     * registration time then a fault is returned.</p> </note>
+     * registration time then a fault is returned.</p> 
      */
     inline const Aws::String& GetTaskStartToCloseTimeout() const{ return m_taskStartToCloseTimeout; }
 
@@ -359,11 +359,11 @@ namespace Model
      * <code>defaultTaskStartToCloseTimout</code> specified when registering the
      * workflow type using <a>RegisterWorkflowType</a>.</p> <p>The duration is
      * specified in seconds, an integer greater than or equal to <code>0</code>. You
-     * can use <code>NONE</code> to specify unlimited duration.</p> <note> <p>A task
+     * can use <code>NONE</code> to specify unlimited duration.</p>  <p>A task
      * start-to-close timeout for the new workflow execution must be specified either
      * as a default for the workflow type or through this parameter. If neither this
      * parameter is set nor a default task start-to-close timeout was specified at
-     * registration time then a fault is returned.</p> </note>
+     * registration time then a fault is returned.</p> 
      */
     inline bool TaskStartToCloseTimeoutHasBeenSet() const { return m_taskStartToCloseTimeoutHasBeenSet; }
 
@@ -373,11 +373,11 @@ namespace Model
      * <code>defaultTaskStartToCloseTimout</code> specified when registering the
      * workflow type using <a>RegisterWorkflowType</a>.</p> <p>The duration is
      * specified in seconds, an integer greater than or equal to <code>0</code>. You
-     * can use <code>NONE</code> to specify unlimited duration.</p> <note> <p>A task
+     * can use <code>NONE</code> to specify unlimited duration.</p>  <p>A task
      * start-to-close timeout for the new workflow execution must be specified either
      * as a default for the workflow type or through this parameter. If neither this
      * parameter is set nor a default task start-to-close timeout was specified at
-     * registration time then a fault is returned.</p> </note>
+     * registration time then a fault is returned.</p> 
      */
     inline void SetTaskStartToCloseTimeout(const Aws::String& value) { m_taskStartToCloseTimeoutHasBeenSet = true; m_taskStartToCloseTimeout = value; }
 
@@ -387,11 +387,11 @@ namespace Model
      * <code>defaultTaskStartToCloseTimout</code> specified when registering the
      * workflow type using <a>RegisterWorkflowType</a>.</p> <p>The duration is
      * specified in seconds, an integer greater than or equal to <code>0</code>. You
-     * can use <code>NONE</code> to specify unlimited duration.</p> <note> <p>A task
+     * can use <code>NONE</code> to specify unlimited duration.</p>  <p>A task
      * start-to-close timeout for the new workflow execution must be specified either
      * as a default for the workflow type or through this parameter. If neither this
      * parameter is set nor a default task start-to-close timeout was specified at
-     * registration time then a fault is returned.</p> </note>
+     * registration time then a fault is returned.</p> 
      */
     inline void SetTaskStartToCloseTimeout(Aws::String&& value) { m_taskStartToCloseTimeoutHasBeenSet = true; m_taskStartToCloseTimeout = std::move(value); }
 
@@ -401,11 +401,11 @@ namespace Model
      * <code>defaultTaskStartToCloseTimout</code> specified when registering the
      * workflow type using <a>RegisterWorkflowType</a>.</p> <p>The duration is
      * specified in seconds, an integer greater than or equal to <code>0</code>. You
-     * can use <code>NONE</code> to specify unlimited duration.</p> <note> <p>A task
+     * can use <code>NONE</code> to specify unlimited duration.</p>  <p>A task
      * start-to-close timeout for the new workflow execution must be specified either
      * as a default for the workflow type or through this parameter. If neither this
      * parameter is set nor a default task start-to-close timeout was specified at
-     * registration time then a fault is returned.</p> </note>
+     * registration time then a fault is returned.</p> 
      */
     inline void SetTaskStartToCloseTimeout(const char* value) { m_taskStartToCloseTimeoutHasBeenSet = true; m_taskStartToCloseTimeout.assign(value); }
 
@@ -415,11 +415,11 @@ namespace Model
      * <code>defaultTaskStartToCloseTimout</code> specified when registering the
      * workflow type using <a>RegisterWorkflowType</a>.</p> <p>The duration is
      * specified in seconds, an integer greater than or equal to <code>0</code>. You
-     * can use <code>NONE</code> to specify unlimited duration.</p> <note> <p>A task
+     * can use <code>NONE</code> to specify unlimited duration.</p>  <p>A task
      * start-to-close timeout for the new workflow execution must be specified either
      * as a default for the workflow type or through this parameter. If neither this
      * parameter is set nor a default task start-to-close timeout was specified at
-     * registration time then a fault is returned.</p> </note>
+     * registration time then a fault is returned.</p> 
      */
     inline ContinueAsNewWorkflowExecutionDecisionAttributes& WithTaskStartToCloseTimeout(const Aws::String& value) { SetTaskStartToCloseTimeout(value); return *this;}
 
@@ -429,11 +429,11 @@ namespace Model
      * <code>defaultTaskStartToCloseTimout</code> specified when registering the
      * workflow type using <a>RegisterWorkflowType</a>.</p> <p>The duration is
      * specified in seconds, an integer greater than or equal to <code>0</code>. You
-     * can use <code>NONE</code> to specify unlimited duration.</p> <note> <p>A task
+     * can use <code>NONE</code> to specify unlimited duration.</p>  <p>A task
      * start-to-close timeout for the new workflow execution must be specified either
      * as a default for the workflow type or through this parameter. If neither this
      * parameter is set nor a default task start-to-close timeout was specified at
-     * registration time then a fault is returned.</p> </note>
+     * registration time then a fault is returned.</p> 
      */
     inline ContinueAsNewWorkflowExecutionDecisionAttributes& WithTaskStartToCloseTimeout(Aws::String&& value) { SetTaskStartToCloseTimeout(std::move(value)); return *this;}
 
@@ -443,11 +443,11 @@ namespace Model
      * <code>defaultTaskStartToCloseTimout</code> specified when registering the
      * workflow type using <a>RegisterWorkflowType</a>.</p> <p>The duration is
      * specified in seconds, an integer greater than or equal to <code>0</code>. You
-     * can use <code>NONE</code> to specify unlimited duration.</p> <note> <p>A task
+     * can use <code>NONE</code> to specify unlimited duration.</p>  <p>A task
      * start-to-close timeout for the new workflow execution must be specified either
      * as a default for the workflow type or through this parameter. If neither this
      * parameter is set nor a default task start-to-close timeout was specified at
-     * registration time then a fault is returned.</p> </note>
+     * registration time then a fault is returned.</p> 
      */
     inline ContinueAsNewWorkflowExecutionDecisionAttributes& WithTaskStartToCloseTimeout(const char* value) { SetTaskStartToCloseTimeout(value); return *this;}
 
@@ -464,11 +464,11 @@ namespace Model
      * <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to
      * the decider to take appropriate actions when it receives an execution history
      * with this event.</p> </li> <li> <p> <code>ABANDON</code> – No action is taken.
-     * The child executions continue to run.</p> </li> </ul> <note> <p>A child policy
+     * The child executions continue to run.</p> </li> </ul>  <p>A child policy
      * for this workflow execution must be specified either as a default for the
      * workflow type or through this parameter. If neither this parameter is set nor a
      * default child policy was specified at registration time then a fault is
-     * returned.</p> </note>
+     * returned.</p> 
      */
     inline const ChildPolicy& GetChildPolicy() const{ return m_childPolicy; }
 
@@ -484,11 +484,11 @@ namespace Model
      * <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to
      * the decider to take appropriate actions when it receives an execution history
      * with this event.</p> </li> <li> <p> <code>ABANDON</code> – No action is taken.
-     * The child executions continue to run.</p> </li> </ul> <note> <p>A child policy
+     * The child executions continue to run.</p> </li> </ul>  <p>A child policy
      * for this workflow execution must be specified either as a default for the
      * workflow type or through this parameter. If neither this parameter is set nor a
      * default child policy was specified at registration time then a fault is
-     * returned.</p> </note>
+     * returned.</p> 
      */
     inline bool ChildPolicyHasBeenSet() const { return m_childPolicyHasBeenSet; }
 
@@ -504,11 +504,11 @@ namespace Model
      * <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to
      * the decider to take appropriate actions when it receives an execution history
      * with this event.</p> </li> <li> <p> <code>ABANDON</code> – No action is taken.
-     * The child executions continue to run.</p> </li> </ul> <note> <p>A child policy
+     * The child executions continue to run.</p> </li> </ul>  <p>A child policy
      * for this workflow execution must be specified either as a default for the
      * workflow type or through this parameter. If neither this parameter is set nor a
      * default child policy was specified at registration time then a fault is
-     * returned.</p> </note>
+     * returned.</p> 
      */
     inline void SetChildPolicy(const ChildPolicy& value) { m_childPolicyHasBeenSet = true; m_childPolicy = value; }
 
@@ -524,11 +524,11 @@ namespace Model
      * <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to
      * the decider to take appropriate actions when it receives an execution history
      * with this event.</p> </li> <li> <p> <code>ABANDON</code> – No action is taken.
-     * The child executions continue to run.</p> </li> </ul> <note> <p>A child policy
+     * The child executions continue to run.</p> </li> </ul>  <p>A child policy
      * for this workflow execution must be specified either as a default for the
      * workflow type or through this parameter. If neither this parameter is set nor a
      * default child policy was specified at registration time then a fault is
-     * returned.</p> </note>
+     * returned.</p> 
      */
     inline void SetChildPolicy(ChildPolicy&& value) { m_childPolicyHasBeenSet = true; m_childPolicy = std::move(value); }
 
@@ -544,11 +544,11 @@ namespace Model
      * <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to
      * the decider to take appropriate actions when it receives an execution history
      * with this event.</p> </li> <li> <p> <code>ABANDON</code> – No action is taken.
-     * The child executions continue to run.</p> </li> </ul> <note> <p>A child policy
+     * The child executions continue to run.</p> </li> </ul>  <p>A child policy
      * for this workflow execution must be specified either as a default for the
      * workflow type or through this parameter. If neither this parameter is set nor a
      * default child policy was specified at registration time then a fault is
-     * returned.</p> </note>
+     * returned.</p> 
      */
     inline ContinueAsNewWorkflowExecutionDecisionAttributes& WithChildPolicy(const ChildPolicy& value) { SetChildPolicy(value); return *this;}
 
@@ -564,11 +564,11 @@ namespace Model
      * <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to
      * the decider to take appropriate actions when it receives an execution history
      * with this event.</p> </li> <li> <p> <code>ABANDON</code> – No action is taken.
-     * The child executions continue to run.</p> </li> </ul> <note> <p>A child policy
+     * The child executions continue to run.</p> </li> </ul>  <p>A child policy
      * for this workflow execution must be specified either as a default for the
      * workflow type or through this parameter. If neither this parameter is set nor a
      * default child policy was specified at registration time then a fault is
-     * returned.</p> </note>
+     * returned.</p> 
      */
     inline ContinueAsNewWorkflowExecutionDecisionAttributes& WithChildPolicy(ChildPolicy&& value) { SetChildPolicy(std::move(value)); return *this;}
 

@@ -388,49 +388,49 @@ namespace Model
 
     /**
      * <p>A complex type that contains information about an optional custom health
-     * check.</p> <important> <p>If you specify a health check configuration, you can
+     * check.</p>  <p>If you specify a health check configuration, you can
      * specify either <code>HealthCheckCustomConfig</code> or
-     * <code>HealthCheckConfig</code> but not both.</p> </important>
+     * <code>HealthCheckConfig</code> but not both.</p> 
      */
     inline const HealthCheckCustomConfig& GetHealthCheckCustomConfig() const{ return m_healthCheckCustomConfig; }
 
     /**
      * <p>A complex type that contains information about an optional custom health
-     * check.</p> <important> <p>If you specify a health check configuration, you can
+     * check.</p>  <p>If you specify a health check configuration, you can
      * specify either <code>HealthCheckCustomConfig</code> or
-     * <code>HealthCheckConfig</code> but not both.</p> </important>
+     * <code>HealthCheckConfig</code> but not both.</p> 
      */
     inline bool HealthCheckCustomConfigHasBeenSet() const { return m_healthCheckCustomConfigHasBeenSet; }
 
     /**
      * <p>A complex type that contains information about an optional custom health
-     * check.</p> <important> <p>If you specify a health check configuration, you can
+     * check.</p>  <p>If you specify a health check configuration, you can
      * specify either <code>HealthCheckCustomConfig</code> or
-     * <code>HealthCheckConfig</code> but not both.</p> </important>
+     * <code>HealthCheckConfig</code> but not both.</p> 
      */
     inline void SetHealthCheckCustomConfig(const HealthCheckCustomConfig& value) { m_healthCheckCustomConfigHasBeenSet = true; m_healthCheckCustomConfig = value; }
 
     /**
      * <p>A complex type that contains information about an optional custom health
-     * check.</p> <important> <p>If you specify a health check configuration, you can
+     * check.</p>  <p>If you specify a health check configuration, you can
      * specify either <code>HealthCheckCustomConfig</code> or
-     * <code>HealthCheckConfig</code> but not both.</p> </important>
+     * <code>HealthCheckConfig</code> but not both.</p> 
      */
     inline void SetHealthCheckCustomConfig(HealthCheckCustomConfig&& value) { m_healthCheckCustomConfigHasBeenSet = true; m_healthCheckCustomConfig = std::move(value); }
 
     /**
      * <p>A complex type that contains information about an optional custom health
-     * check.</p> <important> <p>If you specify a health check configuration, you can
+     * check.</p>  <p>If you specify a health check configuration, you can
      * specify either <code>HealthCheckCustomConfig</code> or
-     * <code>HealthCheckConfig</code> but not both.</p> </important>
+     * <code>HealthCheckConfig</code> but not both.</p> 
      */
     inline Service& WithHealthCheckCustomConfig(const HealthCheckCustomConfig& value) { SetHealthCheckCustomConfig(value); return *this;}
 
     /**
      * <p>A complex type that contains information about an optional custom health
-     * check.</p> <important> <p>If you specify a health check configuration, you can
+     * check.</p>  <p>If you specify a health check configuration, you can
      * specify either <code>HealthCheckCustomConfig</code> or
-     * <code>HealthCheckConfig</code> but not both.</p> </important>
+     * <code>HealthCheckConfig</code> but not both.</p> 
      */
     inline Service& WithHealthCheckCustomConfig(HealthCheckCustomConfig&& value) { SetHealthCheckCustomConfig(std::move(value)); return *this;}
 

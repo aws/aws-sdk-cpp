@@ -648,12 +648,12 @@ namespace Model
          * query.</p> <p>To stream query results successfully, the IAM principal with
          * permission to call <code>GetQueryResults</code> also must have permissions to
          * the Amazon S3 <code>GetObject</code> action for the Athena query results
-         * location.</p> <important> <p>IAM principals with permission to the Amazon S3
+         * location.</p>  <p>IAM principals with permission to the Amazon S3
          * <code>GetObject</code> action for the query results location are able to
          * retrieve query results from Amazon S3 even if permission to the
          * <code>GetQueryResults</code> action is denied. To restrict user or role access,
          * ensure that Amazon S3 permissions to the Athena query location are denied.</p>
-         * </important><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetQueryResults">AWS
          * API Reference</a></p>
          */
@@ -669,12 +669,12 @@ namespace Model
          * query.</p> <p>To stream query results successfully, the IAM principal with
          * permission to call <code>GetQueryResults</code> also must have permissions to
          * the Amazon S3 <code>GetObject</code> action for the Athena query results
-         * location.</p> <important> <p>IAM principals with permission to the Amazon S3
+         * location.</p>  <p>IAM principals with permission to the Amazon S3
          * <code>GetObject</code> action for the query results location are able to
          * retrieve query results from Amazon S3 even if permission to the
          * <code>GetQueryResults</code> action is denied. To restrict user or role access,
          * ensure that Amazon S3 permissions to the Athena query location are denied.</p>
-         * </important><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetQueryResults">AWS
          * API Reference</a></p>
          *
@@ -692,12 +692,12 @@ namespace Model
          * query.</p> <p>To stream query results successfully, the IAM principal with
          * permission to call <code>GetQueryResults</code> also must have permissions to
          * the Amazon S3 <code>GetObject</code> action for the Athena query results
-         * location.</p> <important> <p>IAM principals with permission to the Amazon S3
+         * location.</p>  <p>IAM principals with permission to the Amazon S3
          * <code>GetObject</code> action for the query results location are able to
          * retrieve query results from Amazon S3 even if permission to the
          * <code>GetQueryResults</code> action is denied. To restrict user or role access,
          * ensure that Amazon S3 permissions to the Athena query location are denied.</p>
-         * </important><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetQueryResults">AWS
          * API Reference</a></p>
          *

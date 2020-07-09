@@ -171,11 +171,11 @@ namespace Model
      * <code>LOCAL_DOCKER_LAYER_CACHE</code> mode caches existing Docker layers. This
      * mode is a good choice for projects that build or pull large Docker images. It
      * can prevent the performance issues caused by pulling large Docker images down
-     * from the network. </p> <note> <ul> <li> <p> You can use a Docker layer cache in
+     * from the network. </p>  <ul> <li> <p> You can use a Docker layer cache in
      * the Linux environment only. </p> </li> <li> <p> The <code>privileged</code> flag
      * must be set so that your project has the required Docker permissions. </p> </li>
      * <li> <p> You should consider the security implications before you use a Docker
-     * layer cache. </p> </li> </ul> </note> </li> </ul> <ul> <li> <p>
+     * layer cache. </p> </li> </ul>  </li> </ul> <ul> <li> <p>
      * <code>LOCAL_CUSTOM_CACHE</code> mode caches directories you specify in the
      * buildspec file. This mode is a good choice if your build scenario is not suited
      * to one of the other three local cache modes. If you use a custom cache: </p>
@@ -200,11 +200,11 @@ namespace Model
      * <code>LOCAL_DOCKER_LAYER_CACHE</code> mode caches existing Docker layers. This
      * mode is a good choice for projects that build or pull large Docker images. It
      * can prevent the performance issues caused by pulling large Docker images down
-     * from the network. </p> <note> <ul> <li> <p> You can use a Docker layer cache in
+     * from the network. </p>  <ul> <li> <p> You can use a Docker layer cache in
      * the Linux environment only. </p> </li> <li> <p> The <code>privileged</code> flag
      * must be set so that your project has the required Docker permissions. </p> </li>
      * <li> <p> You should consider the security implications before you use a Docker
-     * layer cache. </p> </li> </ul> </note> </li> </ul> <ul> <li> <p>
+     * layer cache. </p> </li> </ul>  </li> </ul> <ul> <li> <p>
      * <code>LOCAL_CUSTOM_CACHE</code> mode caches directories you specify in the
      * buildspec file. This mode is a good choice if your build scenario is not suited
      * to one of the other three local cache modes. If you use a custom cache: </p>
@@ -229,11 +229,11 @@ namespace Model
      * <code>LOCAL_DOCKER_LAYER_CACHE</code> mode caches existing Docker layers. This
      * mode is a good choice for projects that build or pull large Docker images. It
      * can prevent the performance issues caused by pulling large Docker images down
-     * from the network. </p> <note> <ul> <li> <p> You can use a Docker layer cache in
+     * from the network. </p>  <ul> <li> <p> You can use a Docker layer cache in
      * the Linux environment only. </p> </li> <li> <p> The <code>privileged</code> flag
      * must be set so that your project has the required Docker permissions. </p> </li>
      * <li> <p> You should consider the security implications before you use a Docker
-     * layer cache. </p> </li> </ul> </note> </li> </ul> <ul> <li> <p>
+     * layer cache. </p> </li> </ul>  </li> </ul> <ul> <li> <p>
      * <code>LOCAL_CUSTOM_CACHE</code> mode caches directories you specify in the
      * buildspec file. This mode is a good choice if your build scenario is not suited
      * to one of the other three local cache modes. If you use a custom cache: </p>
@@ -258,11 +258,11 @@ namespace Model
      * <code>LOCAL_DOCKER_LAYER_CACHE</code> mode caches existing Docker layers. This
      * mode is a good choice for projects that build or pull large Docker images. It
      * can prevent the performance issues caused by pulling large Docker images down
-     * from the network. </p> <note> <ul> <li> <p> You can use a Docker layer cache in
+     * from the network. </p>  <ul> <li> <p> You can use a Docker layer cache in
      * the Linux environment only. </p> </li> <li> <p> The <code>privileged</code> flag
      * must be set so that your project has the required Docker permissions. </p> </li>
      * <li> <p> You should consider the security implications before you use a Docker
-     * layer cache. </p> </li> </ul> </note> </li> </ul> <ul> <li> <p>
+     * layer cache. </p> </li> </ul>  </li> </ul> <ul> <li> <p>
      * <code>LOCAL_CUSTOM_CACHE</code> mode caches directories you specify in the
      * buildspec file. This mode is a good choice if your build scenario is not suited
      * to one of the other three local cache modes. If you use a custom cache: </p>
@@ -287,11 +287,11 @@ namespace Model
      * <code>LOCAL_DOCKER_LAYER_CACHE</code> mode caches existing Docker layers. This
      * mode is a good choice for projects that build or pull large Docker images. It
      * can prevent the performance issues caused by pulling large Docker images down
-     * from the network. </p> <note> <ul> <li> <p> You can use a Docker layer cache in
+     * from the network. </p>  <ul> <li> <p> You can use a Docker layer cache in
      * the Linux environment only. </p> </li> <li> <p> The <code>privileged</code> flag
      * must be set so that your project has the required Docker permissions. </p> </li>
      * <li> <p> You should consider the security implications before you use a Docker
-     * layer cache. </p> </li> </ul> </note> </li> </ul> <ul> <li> <p>
+     * layer cache. </p> </li> </ul>  </li> </ul> <ul> <li> <p>
      * <code>LOCAL_CUSTOM_CACHE</code> mode caches directories you specify in the
      * buildspec file. This mode is a good choice if your build scenario is not suited
      * to one of the other three local cache modes. If you use a custom cache: </p>
@@ -316,11 +316,11 @@ namespace Model
      * <code>LOCAL_DOCKER_LAYER_CACHE</code> mode caches existing Docker layers. This
      * mode is a good choice for projects that build or pull large Docker images. It
      * can prevent the performance issues caused by pulling large Docker images down
-     * from the network. </p> <note> <ul> <li> <p> You can use a Docker layer cache in
+     * from the network. </p>  <ul> <li> <p> You can use a Docker layer cache in
      * the Linux environment only. </p> </li> <li> <p> The <code>privileged</code> flag
      * must be set so that your project has the required Docker permissions. </p> </li>
      * <li> <p> You should consider the security implications before you use a Docker
-     * layer cache. </p> </li> </ul> </note> </li> </ul> <ul> <li> <p>
+     * layer cache. </p> </li> </ul>  </li> </ul> <ul> <li> <p>
      * <code>LOCAL_CUSTOM_CACHE</code> mode caches directories you specify in the
      * buildspec file. This mode is a good choice if your build scenario is not suited
      * to one of the other three local cache modes. If you use a custom cache: </p>
@@ -345,11 +345,11 @@ namespace Model
      * <code>LOCAL_DOCKER_LAYER_CACHE</code> mode caches existing Docker layers. This
      * mode is a good choice for projects that build or pull large Docker images. It
      * can prevent the performance issues caused by pulling large Docker images down
-     * from the network. </p> <note> <ul> <li> <p> You can use a Docker layer cache in
+     * from the network. </p>  <ul> <li> <p> You can use a Docker layer cache in
      * the Linux environment only. </p> </li> <li> <p> The <code>privileged</code> flag
      * must be set so that your project has the required Docker permissions. </p> </li>
      * <li> <p> You should consider the security implications before you use a Docker
-     * layer cache. </p> </li> </ul> </note> </li> </ul> <ul> <li> <p>
+     * layer cache. </p> </li> </ul>  </li> </ul> <ul> <li> <p>
      * <code>LOCAL_CUSTOM_CACHE</code> mode caches directories you specify in the
      * buildspec file. This mode is a good choice if your build scenario is not suited
      * to one of the other three local cache modes. If you use a custom cache: </p>
@@ -374,11 +374,11 @@ namespace Model
      * <code>LOCAL_DOCKER_LAYER_CACHE</code> mode caches existing Docker layers. This
      * mode is a good choice for projects that build or pull large Docker images. It
      * can prevent the performance issues caused by pulling large Docker images down
-     * from the network. </p> <note> <ul> <li> <p> You can use a Docker layer cache in
+     * from the network. </p>  <ul> <li> <p> You can use a Docker layer cache in
      * the Linux environment only. </p> </li> <li> <p> The <code>privileged</code> flag
      * must be set so that your project has the required Docker permissions. </p> </li>
      * <li> <p> You should consider the security implications before you use a Docker
-     * layer cache. </p> </li> </ul> </note> </li> </ul> <ul> <li> <p>
+     * layer cache. </p> </li> </ul>  </li> </ul> <ul> <li> <p>
      * <code>LOCAL_CUSTOM_CACHE</code> mode caches directories you specify in the
      * buildspec file. This mode is a good choice if your build scenario is not suited
      * to one of the other three local cache modes. If you use a custom cache: </p>

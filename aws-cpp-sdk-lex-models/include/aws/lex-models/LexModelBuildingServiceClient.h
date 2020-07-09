@@ -283,9 +283,9 @@ namespace Model
          * <p>Creates a new version of the bot based on the <code>$LATEST</code> version.
          * If the <code>$LATEST</code> version of this resource hasn't changed since you
          * created the last version, Amazon Lex doesn't create a new version. It returns
-         * the last created version.</p> <note> <p>You can update only the
+         * the last created version.</p>  <p>You can update only the
          * <code>$LATEST</code> version of the bot. You can't update the numbered versions
-         * that you create with the <code>CreateBotVersion</code> operation.</p> </note>
+         * that you create with the <code>CreateBotVersion</code> operation.</p> 
          * <p> When you create the first version of a bot, Amazon Lex sets the version to
          * 1. Subsequent versions increment by 1. For more information, see
          * <a>versioning-intro</a>. </p> <p> This operation requires permission for the
@@ -299,9 +299,9 @@ namespace Model
          * <p>Creates a new version of the bot based on the <code>$LATEST</code> version.
          * If the <code>$LATEST</code> version of this resource hasn't changed since you
          * created the last version, Amazon Lex doesn't create a new version. It returns
-         * the last created version.</p> <note> <p>You can update only the
+         * the last created version.</p>  <p>You can update only the
          * <code>$LATEST</code> version of the bot. You can't update the numbered versions
-         * that you create with the <code>CreateBotVersion</code> operation.</p> </note>
+         * that you create with the <code>CreateBotVersion</code> operation.</p> 
          * <p> When you create the first version of a bot, Amazon Lex sets the version to
          * 1. Subsequent versions increment by 1. For more information, see
          * <a>versioning-intro</a>. </p> <p> This operation requires permission for the
@@ -317,9 +317,9 @@ namespace Model
          * <p>Creates a new version of the bot based on the <code>$LATEST</code> version.
          * If the <code>$LATEST</code> version of this resource hasn't changed since you
          * created the last version, Amazon Lex doesn't create a new version. It returns
-         * the last created version.</p> <note> <p>You can update only the
+         * the last created version.</p>  <p>You can update only the
          * <code>$LATEST</code> version of the bot. You can't update the numbered versions
-         * that you create with the <code>CreateBotVersion</code> operation.</p> </note>
+         * that you create with the <code>CreateBotVersion</code> operation.</p> 
          * <p> When you create the first version of a bot, Amazon Lex sets the version to
          * 1. Subsequent versions increment by 1. For more information, see
          * <a>versioning-intro</a>. </p> <p> This operation requires permission for the
@@ -335,10 +335,10 @@ namespace Model
          * <p>Creates a new version of an intent based on the <code>$LATEST</code> version
          * of the intent. If the <code>$LATEST</code> version of this intent hasn't changed
          * since you last updated it, Amazon Lex doesn't create a new version. It returns
-         * the last version you created.</p> <note> <p>You can update only the
+         * the last version you created.</p>  <p>You can update only the
          * <code>$LATEST</code> version of the intent. You can't update the numbered
          * versions that you create with the <code>CreateIntentVersion</code>
-         * operation.</p> </note> <p> When you create a version of an intent, Amazon Lex
+         * operation.</p>  <p> When you create a version of an intent, Amazon Lex
          * sets the version to 1. Subsequent versions increment by 1. For more information,
          * see <a>versioning-intro</a>. </p> <p>This operation requires permissions to
          * perform the <code>lex:CreateIntentVersion</code> action. </p><p><h3>See
@@ -352,10 +352,10 @@ namespace Model
          * <p>Creates a new version of an intent based on the <code>$LATEST</code> version
          * of the intent. If the <code>$LATEST</code> version of this intent hasn't changed
          * since you last updated it, Amazon Lex doesn't create a new version. It returns
-         * the last version you created.</p> <note> <p>You can update only the
+         * the last version you created.</p>  <p>You can update only the
          * <code>$LATEST</code> version of the intent. You can't update the numbered
          * versions that you create with the <code>CreateIntentVersion</code>
-         * operation.</p> </note> <p> When you create a version of an intent, Amazon Lex
+         * operation.</p>  <p> When you create a version of an intent, Amazon Lex
          * sets the version to 1. Subsequent versions increment by 1. For more information,
          * see <a>versioning-intro</a>. </p> <p>This operation requires permissions to
          * perform the <code>lex:CreateIntentVersion</code> action. </p><p><h3>See
@@ -371,10 +371,10 @@ namespace Model
          * <p>Creates a new version of an intent based on the <code>$LATEST</code> version
          * of the intent. If the <code>$LATEST</code> version of this intent hasn't changed
          * since you last updated it, Amazon Lex doesn't create a new version. It returns
-         * the last version you created.</p> <note> <p>You can update only the
+         * the last version you created.</p>  <p>You can update only the
          * <code>$LATEST</code> version of the intent. You can't update the numbered
          * versions that you create with the <code>CreateIntentVersion</code>
-         * operation.</p> </note> <p> When you create a version of an intent, Amazon Lex
+         * operation.</p>  <p> When you create a version of an intent, Amazon Lex
          * sets the version to 1. Subsequent versions increment by 1. For more information,
          * see <a>versioning-intro</a>. </p> <p>This operation requires permissions to
          * perform the <code>lex:CreateIntentVersion</code> action. </p><p><h3>See
@@ -391,9 +391,9 @@ namespace Model
          * version of the specified slot type. If the <code>$LATEST</code> version of this
          * resource has not changed since the last version that you created, Amazon Lex
          * doesn't create a new version. It returns the last version that you created. </p>
-         * <note> <p>You can update only the <code>$LATEST</code> version of a slot type.
+         *  <p>You can update only the <code>$LATEST</code> version of a slot type.
          * You can't update the numbered versions that you create with the
-         * <code>CreateSlotTypeVersion</code> operation.</p> </note> <p>When you create a
+         * <code>CreateSlotTypeVersion</code> operation.</p>  <p>When you create a
          * version of a slot type, Amazon Lex sets the version to 1. Subsequent versions
          * increment by 1. For more information, see <a>versioning-intro</a>. </p> <p>This
          * operation requires permissions for the <code>lex:CreateSlotTypeVersion</code>
@@ -408,9 +408,9 @@ namespace Model
          * version of the specified slot type. If the <code>$LATEST</code> version of this
          * resource has not changed since the last version that you created, Amazon Lex
          * doesn't create a new version. It returns the last version that you created. </p>
-         * <note> <p>You can update only the <code>$LATEST</code> version of a slot type.
+         *  <p>You can update only the <code>$LATEST</code> version of a slot type.
          * You can't update the numbered versions that you create with the
-         * <code>CreateSlotTypeVersion</code> operation.</p> </note> <p>When you create a
+         * <code>CreateSlotTypeVersion</code> operation.</p>  <p>When you create a
          * version of a slot type, Amazon Lex sets the version to 1. Subsequent versions
          * increment by 1. For more information, see <a>versioning-intro</a>. </p> <p>This
          * operation requires permissions for the <code>lex:CreateSlotTypeVersion</code>
@@ -427,9 +427,9 @@ namespace Model
          * version of the specified slot type. If the <code>$LATEST</code> version of this
          * resource has not changed since the last version that you created, Amazon Lex
          * doesn't create a new version. It returns the last version that you created. </p>
-         * <note> <p>You can update only the <code>$LATEST</code> version of a slot type.
+         *  <p>You can update only the <code>$LATEST</code> version of a slot type.
          * You can't update the numbered versions that you create with the
-         * <code>CreateSlotTypeVersion</code> operation.</p> </note> <p>When you create a
+         * <code>CreateSlotTypeVersion</code> operation.</p>  <p>When you create a
          * version of a slot type, Amazon Lex sets the version to 1. Subsequent versions
          * increment by 1. For more information, see <a>versioning-intro</a>. </p> <p>This
          * operation requires permissions for the <code>lex:CreateSlotTypeVersion</code>
@@ -625,12 +625,12 @@ namespace Model
          * <a>DeleteIntentVersion</a> operation.</p> <p> You can delete a version of an
          * intent only if it is not referenced. To delete an intent that is referred to in
          * one or more bots (see <a>how-it-works</a>), you must remove those references
-         * first. </p> <note> <p> If you get the <code>ResourceInUseException</code>
+         * first. </p>  <p> If you get the <code>ResourceInUseException</code>
          * exception, it provides an example reference that shows where the intent is
          * referenced. To remove the reference to the intent, either update the bot or
          * delete it. If you get the same exception when you attempt to delete the intent
          * again, repeat until the intent has no references and the call to
-         * <code>DeleteIntent</code> is successful. </p> </note> <p> This operation
+         * <code>DeleteIntent</code> is successful. </p>  <p> This operation
          * requires permission for the <code>lex:DeleteIntent</code> action. </p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/DeleteIntent">AWS
@@ -644,12 +644,12 @@ namespace Model
          * <a>DeleteIntentVersion</a> operation.</p> <p> You can delete a version of an
          * intent only if it is not referenced. To delete an intent that is referred to in
          * one or more bots (see <a>how-it-works</a>), you must remove those references
-         * first. </p> <note> <p> If you get the <code>ResourceInUseException</code>
+         * first. </p>  <p> If you get the <code>ResourceInUseException</code>
          * exception, it provides an example reference that shows where the intent is
          * referenced. To remove the reference to the intent, either update the bot or
          * delete it. If you get the same exception when you attempt to delete the intent
          * again, repeat until the intent has no references and the call to
-         * <code>DeleteIntent</code> is successful. </p> </note> <p> This operation
+         * <code>DeleteIntent</code> is successful. </p>  <p> This operation
          * requires permission for the <code>lex:DeleteIntent</code> action. </p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/DeleteIntent">AWS
@@ -665,12 +665,12 @@ namespace Model
          * <a>DeleteIntentVersion</a> operation.</p> <p> You can delete a version of an
          * intent only if it is not referenced. To delete an intent that is referred to in
          * one or more bots (see <a>how-it-works</a>), you must remove those references
-         * first. </p> <note> <p> If you get the <code>ResourceInUseException</code>
+         * first. </p>  <p> If you get the <code>ResourceInUseException</code>
          * exception, it provides an example reference that shows where the intent is
          * referenced. To remove the reference to the intent, either update the bot or
          * delete it. If you get the same exception when you attempt to delete the intent
          * again, repeat until the intent has no references and the call to
-         * <code>DeleteIntent</code> is successful. </p> </note> <p> This operation
+         * <code>DeleteIntent</code> is successful. </p>  <p> This operation
          * requires permission for the <code>lex:DeleteIntent</code> action. </p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/DeleteIntent">AWS
@@ -719,13 +719,13 @@ namespace Model
          * version. To delete a specific version of the slot type, use the
          * <a>DeleteSlotTypeVersion</a> operation.</p> <p> You can delete a version of a
          * slot type only if it is not referenced. To delete a slot type that is referred
-         * to in one or more intents, you must remove those references first. </p> <note>
+         * to in one or more intents, you must remove those references first. </p> 
          * <p> If you get the <code>ResourceInUseException</code> exception, the exception
          * provides an example reference that shows the intent where the slot type is
          * referenced. To remove the reference to the slot type, either update the intent
          * or delete it. If you get the same exception when you attempt to delete the slot
          * type again, repeat until the slot type has no references and the
-         * <code>DeleteSlotType</code> call is successful. </p> </note> <p>This operation
+         * <code>DeleteSlotType</code> call is successful. </p>  <p>This operation
          * requires permission for the <code>lex:DeleteSlotType</code>
          * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/DeleteSlotType">AWS
@@ -738,13 +738,13 @@ namespace Model
          * version. To delete a specific version of the slot type, use the
          * <a>DeleteSlotTypeVersion</a> operation.</p> <p> You can delete a version of a
          * slot type only if it is not referenced. To delete a slot type that is referred
-         * to in one or more intents, you must remove those references first. </p> <note>
+         * to in one or more intents, you must remove those references first. </p> 
          * <p> If you get the <code>ResourceInUseException</code> exception, the exception
          * provides an example reference that shows the intent where the slot type is
          * referenced. To remove the reference to the slot type, either update the intent
          * or delete it. If you get the same exception when you attempt to delete the slot
          * type again, repeat until the slot type has no references and the
-         * <code>DeleteSlotType</code> call is successful. </p> </note> <p>This operation
+         * <code>DeleteSlotType</code> call is successful. </p>  <p>This operation
          * requires permission for the <code>lex:DeleteSlotType</code>
          * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/DeleteSlotType">AWS
@@ -759,13 +759,13 @@ namespace Model
          * version. To delete a specific version of the slot type, use the
          * <a>DeleteSlotTypeVersion</a> operation.</p> <p> You can delete a version of a
          * slot type only if it is not referenced. To delete a slot type that is referred
-         * to in one or more intents, you must remove those references first. </p> <note>
+         * to in one or more intents, you must remove those references first. </p> 
          * <p> If you get the <code>ResourceInUseException</code> exception, the exception
          * provides an example reference that shows the intent where the slot type is
          * referenced. To remove the reference to the slot type, either update the intent
          * or delete it. If you get the same exception when you attempt to delete the slot
          * type again, repeat until the slot type has no references and the
-         * <code>DeleteSlotType</code> call is successful. </p> </note> <p>This operation
+         * <code>DeleteSlotType</code> call is successful. </p>  <p>This operation
          * requires permission for the <code>lex:DeleteSlotType</code>
          * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/DeleteSlotType">AWS

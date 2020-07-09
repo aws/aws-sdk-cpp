@@ -33,10 +33,10 @@ namespace Model
    * evaluates configuration items to assess whether your AWS resources comply with
    * your desired configurations. This function can run when AWS Config detects a
    * configuration change to an AWS resource and at a periodic frequency that you
-   * choose (for example, every 24 hours).</p> <note> <p>You can use the AWS CLI and
+   * choose (for example, every 24 hours).</p>  <p>You can use the AWS CLI and
    * AWS SDKs if you want to create a rule that triggers evaluations for your
    * resources when AWS Config delivers the configuration snapshot. For more
-   * information, see <a>ConfigSnapshotDeliveryProperties</a>.</p> </note> <p>For
+   * information, see <a>ConfigSnapshotDeliveryProperties</a>.</p>  <p>For
    * more information about developing and using AWS Config rules, see <a
    * href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config.html">Evaluating
    * AWS Resource Configurations with AWS Config</a> in the <i>AWS Config Developer
@@ -378,10 +378,10 @@ namespace Model
      * <li> <p>You are using an AWS managed rule that is triggered at a periodic
      * frequency.</p> </li> <li> <p>Your custom rule is triggered when AWS Config
      * delivers the configuration snapshot. For more information, see
-     * <a>ConfigSnapshotDeliveryProperties</a>.</p> </li> </ul> <note> <p>By default,
+     * <a>ConfigSnapshotDeliveryProperties</a>.</p> </li> </ul>  <p>By default,
      * rules with a periodic trigger are evaluated every 24 hours. To change the
      * frequency, specify a valid value for the <code>MaximumExecutionFrequency</code>
-     * parameter.</p> </note>
+     * parameter.</p> 
      */
     inline const MaximumExecutionFrequency& GetMaximumExecutionFrequency() const{ return m_maximumExecutionFrequency; }
 
@@ -391,10 +391,10 @@ namespace Model
      * <li> <p>You are using an AWS managed rule that is triggered at a periodic
      * frequency.</p> </li> <li> <p>Your custom rule is triggered when AWS Config
      * delivers the configuration snapshot. For more information, see
-     * <a>ConfigSnapshotDeliveryProperties</a>.</p> </li> </ul> <note> <p>By default,
+     * <a>ConfigSnapshotDeliveryProperties</a>.</p> </li> </ul>  <p>By default,
      * rules with a periodic trigger are evaluated every 24 hours. To change the
      * frequency, specify a valid value for the <code>MaximumExecutionFrequency</code>
-     * parameter.</p> </note>
+     * parameter.</p> 
      */
     inline bool MaximumExecutionFrequencyHasBeenSet() const { return m_maximumExecutionFrequencyHasBeenSet; }
 
@@ -404,10 +404,10 @@ namespace Model
      * <li> <p>You are using an AWS managed rule that is triggered at a periodic
      * frequency.</p> </li> <li> <p>Your custom rule is triggered when AWS Config
      * delivers the configuration snapshot. For more information, see
-     * <a>ConfigSnapshotDeliveryProperties</a>.</p> </li> </ul> <note> <p>By default,
+     * <a>ConfigSnapshotDeliveryProperties</a>.</p> </li> </ul>  <p>By default,
      * rules with a periodic trigger are evaluated every 24 hours. To change the
      * frequency, specify a valid value for the <code>MaximumExecutionFrequency</code>
-     * parameter.</p> </note>
+     * parameter.</p> 
      */
     inline void SetMaximumExecutionFrequency(const MaximumExecutionFrequency& value) { m_maximumExecutionFrequencyHasBeenSet = true; m_maximumExecutionFrequency = value; }
 
@@ -417,10 +417,10 @@ namespace Model
      * <li> <p>You are using an AWS managed rule that is triggered at a periodic
      * frequency.</p> </li> <li> <p>Your custom rule is triggered when AWS Config
      * delivers the configuration snapshot. For more information, see
-     * <a>ConfigSnapshotDeliveryProperties</a>.</p> </li> </ul> <note> <p>By default,
+     * <a>ConfigSnapshotDeliveryProperties</a>.</p> </li> </ul>  <p>By default,
      * rules with a periodic trigger are evaluated every 24 hours. To change the
      * frequency, specify a valid value for the <code>MaximumExecutionFrequency</code>
-     * parameter.</p> </note>
+     * parameter.</p> 
      */
     inline void SetMaximumExecutionFrequency(MaximumExecutionFrequency&& value) { m_maximumExecutionFrequencyHasBeenSet = true; m_maximumExecutionFrequency = std::move(value); }
 
@@ -430,10 +430,10 @@ namespace Model
      * <li> <p>You are using an AWS managed rule that is triggered at a periodic
      * frequency.</p> </li> <li> <p>Your custom rule is triggered when AWS Config
      * delivers the configuration snapshot. For more information, see
-     * <a>ConfigSnapshotDeliveryProperties</a>.</p> </li> </ul> <note> <p>By default,
+     * <a>ConfigSnapshotDeliveryProperties</a>.</p> </li> </ul>  <p>By default,
      * rules with a periodic trigger are evaluated every 24 hours. To change the
      * frequency, specify a valid value for the <code>MaximumExecutionFrequency</code>
-     * parameter.</p> </note>
+     * parameter.</p> 
      */
     inline ConfigRule& WithMaximumExecutionFrequency(const MaximumExecutionFrequency& value) { SetMaximumExecutionFrequency(value); return *this;}
 
@@ -443,10 +443,10 @@ namespace Model
      * <li> <p>You are using an AWS managed rule that is triggered at a periodic
      * frequency.</p> </li> <li> <p>Your custom rule is triggered when AWS Config
      * delivers the configuration snapshot. For more information, see
-     * <a>ConfigSnapshotDeliveryProperties</a>.</p> </li> </ul> <note> <p>By default,
+     * <a>ConfigSnapshotDeliveryProperties</a>.</p> </li> </ul>  <p>By default,
      * rules with a periodic trigger are evaluated every 24 hours. To change the
      * frequency, specify a valid value for the <code>MaximumExecutionFrequency</code>
-     * parameter.</p> </note>
+     * parameter.</p> 
      */
     inline ConfigRule& WithMaximumExecutionFrequency(MaximumExecutionFrequency&& value) { SetMaximumExecutionFrequency(std::move(value)); return *this;}
 
@@ -543,58 +543,58 @@ namespace Model
 
 
     /**
-     * <p>Service principal name of the service that created the rule.</p> <note>
+     * <p>Service principal name of the service that created the rule.</p> 
      * <p>The field is populated only if the service linked rule is created by a
-     * service. The field is empty if you create your own rule.</p> </note>
+     * service. The field is empty if you create your own rule.</p> 
      */
     inline const Aws::String& GetCreatedBy() const{ return m_createdBy; }
 
     /**
-     * <p>Service principal name of the service that created the rule.</p> <note>
+     * <p>Service principal name of the service that created the rule.</p> 
      * <p>The field is populated only if the service linked rule is created by a
-     * service. The field is empty if you create your own rule.</p> </note>
+     * service. The field is empty if you create your own rule.</p> 
      */
     inline bool CreatedByHasBeenSet() const { return m_createdByHasBeenSet; }
 
     /**
-     * <p>Service principal name of the service that created the rule.</p> <note>
+     * <p>Service principal name of the service that created the rule.</p> 
      * <p>The field is populated only if the service linked rule is created by a
-     * service. The field is empty if you create your own rule.</p> </note>
+     * service. The field is empty if you create your own rule.</p> 
      */
     inline void SetCreatedBy(const Aws::String& value) { m_createdByHasBeenSet = true; m_createdBy = value; }
 
     /**
-     * <p>Service principal name of the service that created the rule.</p> <note>
+     * <p>Service principal name of the service that created the rule.</p> 
      * <p>The field is populated only if the service linked rule is created by a
-     * service. The field is empty if you create your own rule.</p> </note>
+     * service. The field is empty if you create your own rule.</p> 
      */
     inline void SetCreatedBy(Aws::String&& value) { m_createdByHasBeenSet = true; m_createdBy = std::move(value); }
 
     /**
-     * <p>Service principal name of the service that created the rule.</p> <note>
+     * <p>Service principal name of the service that created the rule.</p> 
      * <p>The field is populated only if the service linked rule is created by a
-     * service. The field is empty if you create your own rule.</p> </note>
+     * service. The field is empty if you create your own rule.</p> 
      */
     inline void SetCreatedBy(const char* value) { m_createdByHasBeenSet = true; m_createdBy.assign(value); }
 
     /**
-     * <p>Service principal name of the service that created the rule.</p> <note>
+     * <p>Service principal name of the service that created the rule.</p> 
      * <p>The field is populated only if the service linked rule is created by a
-     * service. The field is empty if you create your own rule.</p> </note>
+     * service. The field is empty if you create your own rule.</p> 
      */
     inline ConfigRule& WithCreatedBy(const Aws::String& value) { SetCreatedBy(value); return *this;}
 
     /**
-     * <p>Service principal name of the service that created the rule.</p> <note>
+     * <p>Service principal name of the service that created the rule.</p> 
      * <p>The field is populated only if the service linked rule is created by a
-     * service. The field is empty if you create your own rule.</p> </note>
+     * service. The field is empty if you create your own rule.</p> 
      */
     inline ConfigRule& WithCreatedBy(Aws::String&& value) { SetCreatedBy(std::move(value)); return *this;}
 
     /**
-     * <p>Service principal name of the service that created the rule.</p> <note>
+     * <p>Service principal name of the service that created the rule.</p> 
      * <p>The field is populated only if the service linked rule is created by a
-     * service. The field is empty if you create your own rule.</p> </note>
+     * service. The field is empty if you create your own rule.</p> 
      */
     inline ConfigRule& WithCreatedBy(const char* value) { SetCreatedBy(value); return *this;}
 

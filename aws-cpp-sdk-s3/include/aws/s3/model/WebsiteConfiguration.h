@@ -106,43 +106,43 @@ namespace Model
 
     /**
      * <p>The redirect behavior for every request to this bucket's website
-     * endpoint.</p> <important> <p>If you specify this property, you can't specify any
-     * other property.</p> </important>
+     * endpoint.</p>  <p>If you specify this property, you can't specify any
+     * other property.</p> 
      */
     inline const RedirectAllRequestsTo& GetRedirectAllRequestsTo() const{ return m_redirectAllRequestsTo; }
 
     /**
      * <p>The redirect behavior for every request to this bucket's website
-     * endpoint.</p> <important> <p>If you specify this property, you can't specify any
-     * other property.</p> </important>
+     * endpoint.</p>  <p>If you specify this property, you can't specify any
+     * other property.</p> 
      */
     inline bool RedirectAllRequestsToHasBeenSet() const { return m_redirectAllRequestsToHasBeenSet; }
 
     /**
      * <p>The redirect behavior for every request to this bucket's website
-     * endpoint.</p> <important> <p>If you specify this property, you can't specify any
-     * other property.</p> </important>
+     * endpoint.</p>  <p>If you specify this property, you can't specify any
+     * other property.</p> 
      */
     inline void SetRedirectAllRequestsTo(const RedirectAllRequestsTo& value) { m_redirectAllRequestsToHasBeenSet = true; m_redirectAllRequestsTo = value; }
 
     /**
      * <p>The redirect behavior for every request to this bucket's website
-     * endpoint.</p> <important> <p>If you specify this property, you can't specify any
-     * other property.</p> </important>
+     * endpoint.</p>  <p>If you specify this property, you can't specify any
+     * other property.</p> 
      */
     inline void SetRedirectAllRequestsTo(RedirectAllRequestsTo&& value) { m_redirectAllRequestsToHasBeenSet = true; m_redirectAllRequestsTo = std::move(value); }
 
     /**
      * <p>The redirect behavior for every request to this bucket's website
-     * endpoint.</p> <important> <p>If you specify this property, you can't specify any
-     * other property.</p> </important>
+     * endpoint.</p>  <p>If you specify this property, you can't specify any
+     * other property.</p> 
      */
     inline WebsiteConfiguration& WithRedirectAllRequestsTo(const RedirectAllRequestsTo& value) { SetRedirectAllRequestsTo(value); return *this;}
 
     /**
      * <p>The redirect behavior for every request to this bucket's website
-     * endpoint.</p> <important> <p>If you specify this property, you can't specify any
-     * other property.</p> </important>
+     * endpoint.</p>  <p>If you specify this property, you can't specify any
+     * other property.</p> 
      */
     inline WebsiteConfiguration& WithRedirectAllRequestsTo(RedirectAllRequestsTo&& value) { SetRedirectAllRequestsTo(std::move(value)); return *this;}
 

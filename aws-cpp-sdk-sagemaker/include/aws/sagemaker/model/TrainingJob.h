@@ -408,8 +408,8 @@ namespace Model
      * exceeded the maximum allowed runtime.</p> </li> <li> <p> <code>Stopped</code> -
      * The training job has stopped.</p> </li> </ul> </dd> <dt>Stopping</dt> <dd> <ul>
      * <li> <p> <code>Stopping</code> - Stopping the training job.</p> </li> </ul>
-     * </dd> </dl> <important> <p>Valid values for <code>SecondaryStatus</code> are
-     * subject to change. </p> </important> <p>We no longer support the following
+     * </dd> </dl>  <p>Valid values for <code>SecondaryStatus</code> are
+     * subject to change. </p>  <p>We no longer support the following
      * secondary statuses:</p> <ul> <li> <p> <code>LaunchingMLInstances</code> </p>
      * </li> <li> <p> <code>PreparingTrainingStack</code> </p> </li> <li> <p>
      * <code>DownloadingTrainingImage</code> </p> </li> </ul>
@@ -437,8 +437,8 @@ namespace Model
      * exceeded the maximum allowed runtime.</p> </li> <li> <p> <code>Stopped</code> -
      * The training job has stopped.</p> </li> </ul> </dd> <dt>Stopping</dt> <dd> <ul>
      * <li> <p> <code>Stopping</code> - Stopping the training job.</p> </li> </ul>
-     * </dd> </dl> <important> <p>Valid values for <code>SecondaryStatus</code> are
-     * subject to change. </p> </important> <p>We no longer support the following
+     * </dd> </dl>  <p>Valid values for <code>SecondaryStatus</code> are
+     * subject to change. </p>  <p>We no longer support the following
      * secondary statuses:</p> <ul> <li> <p> <code>LaunchingMLInstances</code> </p>
      * </li> <li> <p> <code>PreparingTrainingStack</code> </p> </li> <li> <p>
      * <code>DownloadingTrainingImage</code> </p> </li> </ul>
@@ -466,8 +466,8 @@ namespace Model
      * exceeded the maximum allowed runtime.</p> </li> <li> <p> <code>Stopped</code> -
      * The training job has stopped.</p> </li> </ul> </dd> <dt>Stopping</dt> <dd> <ul>
      * <li> <p> <code>Stopping</code> - Stopping the training job.</p> </li> </ul>
-     * </dd> </dl> <important> <p>Valid values for <code>SecondaryStatus</code> are
-     * subject to change. </p> </important> <p>We no longer support the following
+     * </dd> </dl>  <p>Valid values for <code>SecondaryStatus</code> are
+     * subject to change. </p>  <p>We no longer support the following
      * secondary statuses:</p> <ul> <li> <p> <code>LaunchingMLInstances</code> </p>
      * </li> <li> <p> <code>PreparingTrainingStack</code> </p> </li> <li> <p>
      * <code>DownloadingTrainingImage</code> </p> </li> </ul>
@@ -495,8 +495,8 @@ namespace Model
      * exceeded the maximum allowed runtime.</p> </li> <li> <p> <code>Stopped</code> -
      * The training job has stopped.</p> </li> </ul> </dd> <dt>Stopping</dt> <dd> <ul>
      * <li> <p> <code>Stopping</code> - Stopping the training job.</p> </li> </ul>
-     * </dd> </dl> <important> <p>Valid values for <code>SecondaryStatus</code> are
-     * subject to change. </p> </important> <p>We no longer support the following
+     * </dd> </dl>  <p>Valid values for <code>SecondaryStatus</code> are
+     * subject to change. </p>  <p>We no longer support the following
      * secondary statuses:</p> <ul> <li> <p> <code>LaunchingMLInstances</code> </p>
      * </li> <li> <p> <code>PreparingTrainingStack</code> </p> </li> <li> <p>
      * <code>DownloadingTrainingImage</code> </p> </li> </ul>
@@ -524,8 +524,8 @@ namespace Model
      * exceeded the maximum allowed runtime.</p> </li> <li> <p> <code>Stopped</code> -
      * The training job has stopped.</p> </li> </ul> </dd> <dt>Stopping</dt> <dd> <ul>
      * <li> <p> <code>Stopping</code> - Stopping the training job.</p> </li> </ul>
-     * </dd> </dl> <important> <p>Valid values for <code>SecondaryStatus</code> are
-     * subject to change. </p> </important> <p>We no longer support the following
+     * </dd> </dl>  <p>Valid values for <code>SecondaryStatus</code> are
+     * subject to change. </p>  <p>We no longer support the following
      * secondary statuses:</p> <ul> <li> <p> <code>LaunchingMLInstances</code> </p>
      * </li> <li> <p> <code>PreparingTrainingStack</code> </p> </li> <li> <p>
      * <code>DownloadingTrainingImage</code> </p> </li> </ul>
@@ -553,8 +553,8 @@ namespace Model
      * exceeded the maximum allowed runtime.</p> </li> <li> <p> <code>Stopped</code> -
      * The training job has stopped.</p> </li> </ul> </dd> <dt>Stopping</dt> <dd> <ul>
      * <li> <p> <code>Stopping</code> - Stopping the training job.</p> </li> </ul>
-     * </dd> </dl> <important> <p>Valid values for <code>SecondaryStatus</code> are
-     * subject to change. </p> </important> <p>We no longer support the following
+     * </dd> </dl>  <p>Valid values for <code>SecondaryStatus</code> are
+     * subject to change. </p>  <p>We no longer support the following
      * secondary statuses:</p> <ul> <li> <p> <code>LaunchingMLInstances</code> </p>
      * </li> <li> <p> <code>PreparingTrainingStack</code> </p> </li> <li> <p>
      * <code>DownloadingTrainingImage</code> </p> </li> </ul>

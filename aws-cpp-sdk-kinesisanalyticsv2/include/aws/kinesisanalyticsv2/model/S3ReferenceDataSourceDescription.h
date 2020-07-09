@@ -124,72 +124,72 @@ namespace Model
     /**
      * <p>The ARN of the IAM role that Kinesis Data Analytics can assume to read the
      * Amazon S3 object on your behalf to populate the in-application reference table.
-     * </p> <note> <p>Provided for backward compatibility. Applications that are
+     * </p>  <p>Provided for backward compatibility. Applications that are
      * created with the current API version have an application-level service execution
-     * role rather than a resource-level role.</p> </note>
+     * role rather than a resource-level role.</p> 
      */
     inline const Aws::String& GetReferenceRoleARN() const{ return m_referenceRoleARN; }
 
     /**
      * <p>The ARN of the IAM role that Kinesis Data Analytics can assume to read the
      * Amazon S3 object on your behalf to populate the in-application reference table.
-     * </p> <note> <p>Provided for backward compatibility. Applications that are
+     * </p>  <p>Provided for backward compatibility. Applications that are
      * created with the current API version have an application-level service execution
-     * role rather than a resource-level role.</p> </note>
+     * role rather than a resource-level role.</p> 
      */
     inline bool ReferenceRoleARNHasBeenSet() const { return m_referenceRoleARNHasBeenSet; }
 
     /**
      * <p>The ARN of the IAM role that Kinesis Data Analytics can assume to read the
      * Amazon S3 object on your behalf to populate the in-application reference table.
-     * </p> <note> <p>Provided for backward compatibility. Applications that are
+     * </p>  <p>Provided for backward compatibility. Applications that are
      * created with the current API version have an application-level service execution
-     * role rather than a resource-level role.</p> </note>
+     * role rather than a resource-level role.</p> 
      */
     inline void SetReferenceRoleARN(const Aws::String& value) { m_referenceRoleARNHasBeenSet = true; m_referenceRoleARN = value; }
 
     /**
      * <p>The ARN of the IAM role that Kinesis Data Analytics can assume to read the
      * Amazon S3 object on your behalf to populate the in-application reference table.
-     * </p> <note> <p>Provided for backward compatibility. Applications that are
+     * </p>  <p>Provided for backward compatibility. Applications that are
      * created with the current API version have an application-level service execution
-     * role rather than a resource-level role.</p> </note>
+     * role rather than a resource-level role.</p> 
      */
     inline void SetReferenceRoleARN(Aws::String&& value) { m_referenceRoleARNHasBeenSet = true; m_referenceRoleARN = std::move(value); }
 
     /**
      * <p>The ARN of the IAM role that Kinesis Data Analytics can assume to read the
      * Amazon S3 object on your behalf to populate the in-application reference table.
-     * </p> <note> <p>Provided for backward compatibility. Applications that are
+     * </p>  <p>Provided for backward compatibility. Applications that are
      * created with the current API version have an application-level service execution
-     * role rather than a resource-level role.</p> </note>
+     * role rather than a resource-level role.</p> 
      */
     inline void SetReferenceRoleARN(const char* value) { m_referenceRoleARNHasBeenSet = true; m_referenceRoleARN.assign(value); }
 
     /**
      * <p>The ARN of the IAM role that Kinesis Data Analytics can assume to read the
      * Amazon S3 object on your behalf to populate the in-application reference table.
-     * </p> <note> <p>Provided for backward compatibility. Applications that are
+     * </p>  <p>Provided for backward compatibility. Applications that are
      * created with the current API version have an application-level service execution
-     * role rather than a resource-level role.</p> </note>
+     * role rather than a resource-level role.</p> 
      */
     inline S3ReferenceDataSourceDescription& WithReferenceRoleARN(const Aws::String& value) { SetReferenceRoleARN(value); return *this;}
 
     /**
      * <p>The ARN of the IAM role that Kinesis Data Analytics can assume to read the
      * Amazon S3 object on your behalf to populate the in-application reference table.
-     * </p> <note> <p>Provided for backward compatibility. Applications that are
+     * </p>  <p>Provided for backward compatibility. Applications that are
      * created with the current API version have an application-level service execution
-     * role rather than a resource-level role.</p> </note>
+     * role rather than a resource-level role.</p> 
      */
     inline S3ReferenceDataSourceDescription& WithReferenceRoleARN(Aws::String&& value) { SetReferenceRoleARN(std::move(value)); return *this;}
 
     /**
      * <p>The ARN of the IAM role that Kinesis Data Analytics can assume to read the
      * Amazon S3 object on your behalf to populate the in-application reference table.
-     * </p> <note> <p>Provided for backward compatibility. Applications that are
+     * </p>  <p>Provided for backward compatibility. Applications that are
      * created with the current API version have an application-level service execution
-     * role rather than a resource-level role.</p> </note>
+     * role rather than a resource-level role.</p> 
      */
     inline S3ReferenceDataSourceDescription& WithReferenceRoleARN(const char* value) { SetReferenceRoleARN(value); return *this;}
 

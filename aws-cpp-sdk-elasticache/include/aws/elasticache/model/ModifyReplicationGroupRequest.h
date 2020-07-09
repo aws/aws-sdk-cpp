@@ -570,57 +570,57 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which notifications
-     * are sent.</p> <note> <p>The Amazon SNS topic owner must be same as the
-     * replication group owner. </p> </note>
+     * are sent.</p>  <p>The Amazon SNS topic owner must be same as the
+     * replication group owner. </p> 
      */
     inline const Aws::String& GetNotificationTopicArn() const{ return m_notificationTopicArn; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which notifications
-     * are sent.</p> <note> <p>The Amazon SNS topic owner must be same as the
-     * replication group owner. </p> </note>
+     * are sent.</p>  <p>The Amazon SNS topic owner must be same as the
+     * replication group owner. </p> 
      */
     inline bool NotificationTopicArnHasBeenSet() const { return m_notificationTopicArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which notifications
-     * are sent.</p> <note> <p>The Amazon SNS topic owner must be same as the
-     * replication group owner. </p> </note>
+     * are sent.</p>  <p>The Amazon SNS topic owner must be same as the
+     * replication group owner. </p> 
      */
     inline void SetNotificationTopicArn(const Aws::String& value) { m_notificationTopicArnHasBeenSet = true; m_notificationTopicArn = value; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which notifications
-     * are sent.</p> <note> <p>The Amazon SNS topic owner must be same as the
-     * replication group owner. </p> </note>
+     * are sent.</p>  <p>The Amazon SNS topic owner must be same as the
+     * replication group owner. </p> 
      */
     inline void SetNotificationTopicArn(Aws::String&& value) { m_notificationTopicArnHasBeenSet = true; m_notificationTopicArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which notifications
-     * are sent.</p> <note> <p>The Amazon SNS topic owner must be same as the
-     * replication group owner. </p> </note>
+     * are sent.</p>  <p>The Amazon SNS topic owner must be same as the
+     * replication group owner. </p> 
      */
     inline void SetNotificationTopicArn(const char* value) { m_notificationTopicArnHasBeenSet = true; m_notificationTopicArn.assign(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which notifications
-     * are sent.</p> <note> <p>The Amazon SNS topic owner must be same as the
-     * replication group owner. </p> </note>
+     * are sent.</p>  <p>The Amazon SNS topic owner must be same as the
+     * replication group owner. </p> 
      */
     inline ModifyReplicationGroupRequest& WithNotificationTopicArn(const Aws::String& value) { SetNotificationTopicArn(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which notifications
-     * are sent.</p> <note> <p>The Amazon SNS topic owner must be same as the
-     * replication group owner. </p> </note>
+     * are sent.</p>  <p>The Amazon SNS topic owner must be same as the
+     * replication group owner. </p> 
      */
     inline ModifyReplicationGroupRequest& WithNotificationTopicArn(Aws::String&& value) { SetNotificationTopicArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which notifications
-     * are sent.</p> <note> <p>The Amazon SNS topic owner must be same as the
-     * replication group owner. </p> </note>
+     * are sent.</p>  <p>The Amazon SNS topic owner must be same as the
+     * replication group owner. </p> 
      */
     inline ModifyReplicationGroupRequest& WithNotificationTopicArn(const char* value) { SetNotificationTopicArn(value); return *this;}
 

@@ -423,8 +423,8 @@ namespace Model
      * Policy</a> and <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/secure-connections-supported-viewer-protocols-ciphers.html#secure-connections-supported-ciphers">Supported
      * Protocols and Ciphers Between Viewers and CloudFront</a> in the <i>Amazon
-     * CloudFront Developer Guide</i>.</p> <note> <p>On the CloudFront console, this
-     * setting is called <b>Security Policy</b>.</p> </note> <p>When you’re using SNI
+     * CloudFront Developer Guide</i>.</p>  <p>On the CloudFront console, this
+     * setting is called <b>Security Policy</b>.</p>  <p>When you’re using SNI
      * only (you set <code>SSLSupportMethod</code> to <code>sni-only</code>), you must
      * specify <code>TLSv1</code> or higher. </p> <p>If the distribution uses the
      * CloudFront domain name such as <code>d111111abcdef8.cloudfront.net</code> (you
@@ -446,8 +446,8 @@ namespace Model
      * Policy</a> and <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/secure-connections-supported-viewer-protocols-ciphers.html#secure-connections-supported-ciphers">Supported
      * Protocols and Ciphers Between Viewers and CloudFront</a> in the <i>Amazon
-     * CloudFront Developer Guide</i>.</p> <note> <p>On the CloudFront console, this
-     * setting is called <b>Security Policy</b>.</p> </note> <p>When you’re using SNI
+     * CloudFront Developer Guide</i>.</p>  <p>On the CloudFront console, this
+     * setting is called <b>Security Policy</b>.</p>  <p>When you’re using SNI
      * only (you set <code>SSLSupportMethod</code> to <code>sni-only</code>), you must
      * specify <code>TLSv1</code> or higher. </p> <p>If the distribution uses the
      * CloudFront domain name such as <code>d111111abcdef8.cloudfront.net</code> (you
@@ -469,8 +469,8 @@ namespace Model
      * Policy</a> and <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/secure-connections-supported-viewer-protocols-ciphers.html#secure-connections-supported-ciphers">Supported
      * Protocols and Ciphers Between Viewers and CloudFront</a> in the <i>Amazon
-     * CloudFront Developer Guide</i>.</p> <note> <p>On the CloudFront console, this
-     * setting is called <b>Security Policy</b>.</p> </note> <p>When you’re using SNI
+     * CloudFront Developer Guide</i>.</p>  <p>On the CloudFront console, this
+     * setting is called <b>Security Policy</b>.</p>  <p>When you’re using SNI
      * only (you set <code>SSLSupportMethod</code> to <code>sni-only</code>), you must
      * specify <code>TLSv1</code> or higher. </p> <p>If the distribution uses the
      * CloudFront domain name such as <code>d111111abcdef8.cloudfront.net</code> (you
@@ -492,8 +492,8 @@ namespace Model
      * Policy</a> and <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/secure-connections-supported-viewer-protocols-ciphers.html#secure-connections-supported-ciphers">Supported
      * Protocols and Ciphers Between Viewers and CloudFront</a> in the <i>Amazon
-     * CloudFront Developer Guide</i>.</p> <note> <p>On the CloudFront console, this
-     * setting is called <b>Security Policy</b>.</p> </note> <p>When you’re using SNI
+     * CloudFront Developer Guide</i>.</p>  <p>On the CloudFront console, this
+     * setting is called <b>Security Policy</b>.</p>  <p>When you’re using SNI
      * only (you set <code>SSLSupportMethod</code> to <code>sni-only</code>), you must
      * specify <code>TLSv1</code> or higher. </p> <p>If the distribution uses the
      * CloudFront domain name such as <code>d111111abcdef8.cloudfront.net</code> (you
@@ -515,8 +515,8 @@ namespace Model
      * Policy</a> and <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/secure-connections-supported-viewer-protocols-ciphers.html#secure-connections-supported-ciphers">Supported
      * Protocols and Ciphers Between Viewers and CloudFront</a> in the <i>Amazon
-     * CloudFront Developer Guide</i>.</p> <note> <p>On the CloudFront console, this
-     * setting is called <b>Security Policy</b>.</p> </note> <p>When you’re using SNI
+     * CloudFront Developer Guide</i>.</p>  <p>On the CloudFront console, this
+     * setting is called <b>Security Policy</b>.</p>  <p>When you’re using SNI
      * only (you set <code>SSLSupportMethod</code> to <code>sni-only</code>), you must
      * specify <code>TLSv1</code> or higher. </p> <p>If the distribution uses the
      * CloudFront domain name such as <code>d111111abcdef8.cloudfront.net</code> (you
@@ -538,8 +538,8 @@ namespace Model
      * Policy</a> and <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/secure-connections-supported-viewer-protocols-ciphers.html#secure-connections-supported-ciphers">Supported
      * Protocols and Ciphers Between Viewers and CloudFront</a> in the <i>Amazon
-     * CloudFront Developer Guide</i>.</p> <note> <p>On the CloudFront console, this
-     * setting is called <b>Security Policy</b>.</p> </note> <p>When you’re using SNI
+     * CloudFront Developer Guide</i>.</p>  <p>On the CloudFront console, this
+     * setting is called <b>Security Policy</b>.</p>  <p>When you’re using SNI
      * only (you set <code>SSLSupportMethod</code> to <code>sni-only</code>), you must
      * specify <code>TLSv1</code> or higher. </p> <p>If the distribution uses the
      * CloudFront domain name such as <code>d111111abcdef8.cloudfront.net</code> (you

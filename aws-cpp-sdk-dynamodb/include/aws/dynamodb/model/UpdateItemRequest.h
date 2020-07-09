@@ -651,7 +651,7 @@ namespace Model
      * the data type of the attribute:</p> <ul> <li> <p>If the existing attribute is a
      * number, and if <code>Value</code> is also a number, then <code>Value</code> is
      * mathematically added to the existing attribute. If <code>Value</code> is a
-     * negative number, then it is subtracted from the existing attribute.</p> <note>
+     * negative number, then it is subtracted from the existing attribute.</p> 
      * <p>If you use <code>ADD</code> to increment or decrement a number value for an
      * item that doesn't exist before the update, DynamoDB uses <code>0</code> as the
      * initial value.</p> <p>Similarly, if you use <code>ADD</code> for an existing
@@ -663,7 +663,7 @@ namespace Model
      * <code>itemcount</code> attribute, set its initial value to <code>0</code>, and
      * finally add <code>3</code> to it. The result will be a new
      * <code>itemcount</code> attribute in the item, with a value of
-     * <code>3</code>.</p> </note> </li> <li> <p>If the existing data type is a set and
+     * <code>3</code>.</p>  </li> <li> <p>If the existing data type is a set and
      * if <code>Value</code> is also a set, then <code>Value</code> is added to the
      * existing set. For example, if the attribute value is the set <code>[1,2]</code>,
      * and the <code>ADD</code> action specified <code>[3]</code>, then the final
@@ -671,17 +671,17 @@ namespace Model
      * action is specified for a set attribute and the attribute type specified does
      * not match the existing set type. </p> <p>Both sets must have the same primitive
      * data type. For example, if the existing data type is a set of strings, the
-     * <code>Value</code> must also be a set of strings.</p> </li> </ul> <important>
+     * <code>Value</code> must also be a set of strings.</p> </li> </ul> 
      * <p>The <code>ADD</code> action only supports Number and set data types. In
      * addition, <code>ADD</code> can only be used on top-level attributes, not nested
-     * attributes.</p> </important> </li> <li> <p> <code>DELETE</code> - Deletes an
+     * attributes.</p>  </li> <li> <p> <code>DELETE</code> - Deletes an
      * element from a set.</p> <p>If a set of values is specified, then those values
      * are subtracted from the old set. For example, if the attribute value was the set
      * <code>[a,b,c]</code> and the <code>DELETE</code> action specifies
      * <code>[a,c]</code>, then the final attribute value is <code>[b]</code>.
-     * Specifying an empty set is an error.</p> <important> <p>The <code>DELETE</code>
+     * Specifying an empty set is an error.</p>  <p>The <code>DELETE</code>
      * action only supports set data types. In addition, <code>DELETE</code> can only
-     * be used on top-level attributes, not nested attributes.</p> </important> </li>
+     * be used on top-level attributes, not nested attributes.</p>  </li>
      * </ul> <p>You can have many actions in a single expression, such as the
      * following: <code>SET a=:value1, b=:value2 DELETE :value3, :value4,
      * :value5</code> </p> <p>For more information on update expressions, see <a
@@ -713,7 +713,7 @@ namespace Model
      * the data type of the attribute:</p> <ul> <li> <p>If the existing attribute is a
      * number, and if <code>Value</code> is also a number, then <code>Value</code> is
      * mathematically added to the existing attribute. If <code>Value</code> is a
-     * negative number, then it is subtracted from the existing attribute.</p> <note>
+     * negative number, then it is subtracted from the existing attribute.</p> 
      * <p>If you use <code>ADD</code> to increment or decrement a number value for an
      * item that doesn't exist before the update, DynamoDB uses <code>0</code> as the
      * initial value.</p> <p>Similarly, if you use <code>ADD</code> for an existing
@@ -725,7 +725,7 @@ namespace Model
      * <code>itemcount</code> attribute, set its initial value to <code>0</code>, and
      * finally add <code>3</code> to it. The result will be a new
      * <code>itemcount</code> attribute in the item, with a value of
-     * <code>3</code>.</p> </note> </li> <li> <p>If the existing data type is a set and
+     * <code>3</code>.</p>  </li> <li> <p>If the existing data type is a set and
      * if <code>Value</code> is also a set, then <code>Value</code> is added to the
      * existing set. For example, if the attribute value is the set <code>[1,2]</code>,
      * and the <code>ADD</code> action specified <code>[3]</code>, then the final
@@ -733,17 +733,17 @@ namespace Model
      * action is specified for a set attribute and the attribute type specified does
      * not match the existing set type. </p> <p>Both sets must have the same primitive
      * data type. For example, if the existing data type is a set of strings, the
-     * <code>Value</code> must also be a set of strings.</p> </li> </ul> <important>
+     * <code>Value</code> must also be a set of strings.</p> </li> </ul> 
      * <p>The <code>ADD</code> action only supports Number and set data types. In
      * addition, <code>ADD</code> can only be used on top-level attributes, not nested
-     * attributes.</p> </important> </li> <li> <p> <code>DELETE</code> - Deletes an
+     * attributes.</p>  </li> <li> <p> <code>DELETE</code> - Deletes an
      * element from a set.</p> <p>If a set of values is specified, then those values
      * are subtracted from the old set. For example, if the attribute value was the set
      * <code>[a,b,c]</code> and the <code>DELETE</code> action specifies
      * <code>[a,c]</code>, then the final attribute value is <code>[b]</code>.
-     * Specifying an empty set is an error.</p> <important> <p>The <code>DELETE</code>
+     * Specifying an empty set is an error.</p>  <p>The <code>DELETE</code>
      * action only supports set data types. In addition, <code>DELETE</code> can only
-     * be used on top-level attributes, not nested attributes.</p> </important> </li>
+     * be used on top-level attributes, not nested attributes.</p>  </li>
      * </ul> <p>You can have many actions in a single expression, such as the
      * following: <code>SET a=:value1, b=:value2 DELETE :value3, :value4,
      * :value5</code> </p> <p>For more information on update expressions, see <a
@@ -775,7 +775,7 @@ namespace Model
      * the data type of the attribute:</p> <ul> <li> <p>If the existing attribute is a
      * number, and if <code>Value</code> is also a number, then <code>Value</code> is
      * mathematically added to the existing attribute. If <code>Value</code> is a
-     * negative number, then it is subtracted from the existing attribute.</p> <note>
+     * negative number, then it is subtracted from the existing attribute.</p> 
      * <p>If you use <code>ADD</code> to increment or decrement a number value for an
      * item that doesn't exist before the update, DynamoDB uses <code>0</code> as the
      * initial value.</p> <p>Similarly, if you use <code>ADD</code> for an existing
@@ -787,7 +787,7 @@ namespace Model
      * <code>itemcount</code> attribute, set its initial value to <code>0</code>, and
      * finally add <code>3</code> to it. The result will be a new
      * <code>itemcount</code> attribute in the item, with a value of
-     * <code>3</code>.</p> </note> </li> <li> <p>If the existing data type is a set and
+     * <code>3</code>.</p>  </li> <li> <p>If the existing data type is a set and
      * if <code>Value</code> is also a set, then <code>Value</code> is added to the
      * existing set. For example, if the attribute value is the set <code>[1,2]</code>,
      * and the <code>ADD</code> action specified <code>[3]</code>, then the final
@@ -795,17 +795,17 @@ namespace Model
      * action is specified for a set attribute and the attribute type specified does
      * not match the existing set type. </p> <p>Both sets must have the same primitive
      * data type. For example, if the existing data type is a set of strings, the
-     * <code>Value</code> must also be a set of strings.</p> </li> </ul> <important>
+     * <code>Value</code> must also be a set of strings.</p> </li> </ul> 
      * <p>The <code>ADD</code> action only supports Number and set data types. In
      * addition, <code>ADD</code> can only be used on top-level attributes, not nested
-     * attributes.</p> </important> </li> <li> <p> <code>DELETE</code> - Deletes an
+     * attributes.</p>  </li> <li> <p> <code>DELETE</code> - Deletes an
      * element from a set.</p> <p>If a set of values is specified, then those values
      * are subtracted from the old set. For example, if the attribute value was the set
      * <code>[a,b,c]</code> and the <code>DELETE</code> action specifies
      * <code>[a,c]</code>, then the final attribute value is <code>[b]</code>.
-     * Specifying an empty set is an error.</p> <important> <p>The <code>DELETE</code>
+     * Specifying an empty set is an error.</p>  <p>The <code>DELETE</code>
      * action only supports set data types. In addition, <code>DELETE</code> can only
-     * be used on top-level attributes, not nested attributes.</p> </important> </li>
+     * be used on top-level attributes, not nested attributes.</p>  </li>
      * </ul> <p>You can have many actions in a single expression, such as the
      * following: <code>SET a=:value1, b=:value2 DELETE :value3, :value4,
      * :value5</code> </p> <p>For more information on update expressions, see <a
@@ -837,7 +837,7 @@ namespace Model
      * the data type of the attribute:</p> <ul> <li> <p>If the existing attribute is a
      * number, and if <code>Value</code> is also a number, then <code>Value</code> is
      * mathematically added to the existing attribute. If <code>Value</code> is a
-     * negative number, then it is subtracted from the existing attribute.</p> <note>
+     * negative number, then it is subtracted from the existing attribute.</p> 
      * <p>If you use <code>ADD</code> to increment or decrement a number value for an
      * item that doesn't exist before the update, DynamoDB uses <code>0</code> as the
      * initial value.</p> <p>Similarly, if you use <code>ADD</code> for an existing
@@ -849,7 +849,7 @@ namespace Model
      * <code>itemcount</code> attribute, set its initial value to <code>0</code>, and
      * finally add <code>3</code> to it. The result will be a new
      * <code>itemcount</code> attribute in the item, with a value of
-     * <code>3</code>.</p> </note> </li> <li> <p>If the existing data type is a set and
+     * <code>3</code>.</p>  </li> <li> <p>If the existing data type is a set and
      * if <code>Value</code> is also a set, then <code>Value</code> is added to the
      * existing set. For example, if the attribute value is the set <code>[1,2]</code>,
      * and the <code>ADD</code> action specified <code>[3]</code>, then the final
@@ -857,17 +857,17 @@ namespace Model
      * action is specified for a set attribute and the attribute type specified does
      * not match the existing set type. </p> <p>Both sets must have the same primitive
      * data type. For example, if the existing data type is a set of strings, the
-     * <code>Value</code> must also be a set of strings.</p> </li> </ul> <important>
+     * <code>Value</code> must also be a set of strings.</p> </li> </ul> 
      * <p>The <code>ADD</code> action only supports Number and set data types. In
      * addition, <code>ADD</code> can only be used on top-level attributes, not nested
-     * attributes.</p> </important> </li> <li> <p> <code>DELETE</code> - Deletes an
+     * attributes.</p>  </li> <li> <p> <code>DELETE</code> - Deletes an
      * element from a set.</p> <p>If a set of values is specified, then those values
      * are subtracted from the old set. For example, if the attribute value was the set
      * <code>[a,b,c]</code> and the <code>DELETE</code> action specifies
      * <code>[a,c]</code>, then the final attribute value is <code>[b]</code>.
-     * Specifying an empty set is an error.</p> <important> <p>The <code>DELETE</code>
+     * Specifying an empty set is an error.</p>  <p>The <code>DELETE</code>
      * action only supports set data types. In addition, <code>DELETE</code> can only
-     * be used on top-level attributes, not nested attributes.</p> </important> </li>
+     * be used on top-level attributes, not nested attributes.</p>  </li>
      * </ul> <p>You can have many actions in a single expression, such as the
      * following: <code>SET a=:value1, b=:value2 DELETE :value3, :value4,
      * :value5</code> </p> <p>For more information on update expressions, see <a
@@ -899,7 +899,7 @@ namespace Model
      * the data type of the attribute:</p> <ul> <li> <p>If the existing attribute is a
      * number, and if <code>Value</code> is also a number, then <code>Value</code> is
      * mathematically added to the existing attribute. If <code>Value</code> is a
-     * negative number, then it is subtracted from the existing attribute.</p> <note>
+     * negative number, then it is subtracted from the existing attribute.</p> 
      * <p>If you use <code>ADD</code> to increment or decrement a number value for an
      * item that doesn't exist before the update, DynamoDB uses <code>0</code> as the
      * initial value.</p> <p>Similarly, if you use <code>ADD</code> for an existing
@@ -911,7 +911,7 @@ namespace Model
      * <code>itemcount</code> attribute, set its initial value to <code>0</code>, and
      * finally add <code>3</code> to it. The result will be a new
      * <code>itemcount</code> attribute in the item, with a value of
-     * <code>3</code>.</p> </note> </li> <li> <p>If the existing data type is a set and
+     * <code>3</code>.</p>  </li> <li> <p>If the existing data type is a set and
      * if <code>Value</code> is also a set, then <code>Value</code> is added to the
      * existing set. For example, if the attribute value is the set <code>[1,2]</code>,
      * and the <code>ADD</code> action specified <code>[3]</code>, then the final
@@ -919,17 +919,17 @@ namespace Model
      * action is specified for a set attribute and the attribute type specified does
      * not match the existing set type. </p> <p>Both sets must have the same primitive
      * data type. For example, if the existing data type is a set of strings, the
-     * <code>Value</code> must also be a set of strings.</p> </li> </ul> <important>
+     * <code>Value</code> must also be a set of strings.</p> </li> </ul> 
      * <p>The <code>ADD</code> action only supports Number and set data types. In
      * addition, <code>ADD</code> can only be used on top-level attributes, not nested
-     * attributes.</p> </important> </li> <li> <p> <code>DELETE</code> - Deletes an
+     * attributes.</p>  </li> <li> <p> <code>DELETE</code> - Deletes an
      * element from a set.</p> <p>If a set of values is specified, then those values
      * are subtracted from the old set. For example, if the attribute value was the set
      * <code>[a,b,c]</code> and the <code>DELETE</code> action specifies
      * <code>[a,c]</code>, then the final attribute value is <code>[b]</code>.
-     * Specifying an empty set is an error.</p> <important> <p>The <code>DELETE</code>
+     * Specifying an empty set is an error.</p>  <p>The <code>DELETE</code>
      * action only supports set data types. In addition, <code>DELETE</code> can only
-     * be used on top-level attributes, not nested attributes.</p> </important> </li>
+     * be used on top-level attributes, not nested attributes.</p>  </li>
      * </ul> <p>You can have many actions in a single expression, such as the
      * following: <code>SET a=:value1, b=:value2 DELETE :value3, :value4,
      * :value5</code> </p> <p>For more information on update expressions, see <a
@@ -961,7 +961,7 @@ namespace Model
      * the data type of the attribute:</p> <ul> <li> <p>If the existing attribute is a
      * number, and if <code>Value</code> is also a number, then <code>Value</code> is
      * mathematically added to the existing attribute. If <code>Value</code> is a
-     * negative number, then it is subtracted from the existing attribute.</p> <note>
+     * negative number, then it is subtracted from the existing attribute.</p> 
      * <p>If you use <code>ADD</code> to increment or decrement a number value for an
      * item that doesn't exist before the update, DynamoDB uses <code>0</code> as the
      * initial value.</p> <p>Similarly, if you use <code>ADD</code> for an existing
@@ -973,7 +973,7 @@ namespace Model
      * <code>itemcount</code> attribute, set its initial value to <code>0</code>, and
      * finally add <code>3</code> to it. The result will be a new
      * <code>itemcount</code> attribute in the item, with a value of
-     * <code>3</code>.</p> </note> </li> <li> <p>If the existing data type is a set and
+     * <code>3</code>.</p>  </li> <li> <p>If the existing data type is a set and
      * if <code>Value</code> is also a set, then <code>Value</code> is added to the
      * existing set. For example, if the attribute value is the set <code>[1,2]</code>,
      * and the <code>ADD</code> action specified <code>[3]</code>, then the final
@@ -981,17 +981,17 @@ namespace Model
      * action is specified for a set attribute and the attribute type specified does
      * not match the existing set type. </p> <p>Both sets must have the same primitive
      * data type. For example, if the existing data type is a set of strings, the
-     * <code>Value</code> must also be a set of strings.</p> </li> </ul> <important>
+     * <code>Value</code> must also be a set of strings.</p> </li> </ul> 
      * <p>The <code>ADD</code> action only supports Number and set data types. In
      * addition, <code>ADD</code> can only be used on top-level attributes, not nested
-     * attributes.</p> </important> </li> <li> <p> <code>DELETE</code> - Deletes an
+     * attributes.</p>  </li> <li> <p> <code>DELETE</code> - Deletes an
      * element from a set.</p> <p>If a set of values is specified, then those values
      * are subtracted from the old set. For example, if the attribute value was the set
      * <code>[a,b,c]</code> and the <code>DELETE</code> action specifies
      * <code>[a,c]</code>, then the final attribute value is <code>[b]</code>.
-     * Specifying an empty set is an error.</p> <important> <p>The <code>DELETE</code>
+     * Specifying an empty set is an error.</p>  <p>The <code>DELETE</code>
      * action only supports set data types. In addition, <code>DELETE</code> can only
-     * be used on top-level attributes, not nested attributes.</p> </important> </li>
+     * be used on top-level attributes, not nested attributes.</p>  </li>
      * </ul> <p>You can have many actions in a single expression, such as the
      * following: <code>SET a=:value1, b=:value2 DELETE :value3, :value4,
      * :value5</code> </p> <p>For more information on update expressions, see <a
@@ -1023,7 +1023,7 @@ namespace Model
      * the data type of the attribute:</p> <ul> <li> <p>If the existing attribute is a
      * number, and if <code>Value</code> is also a number, then <code>Value</code> is
      * mathematically added to the existing attribute. If <code>Value</code> is a
-     * negative number, then it is subtracted from the existing attribute.</p> <note>
+     * negative number, then it is subtracted from the existing attribute.</p> 
      * <p>If you use <code>ADD</code> to increment or decrement a number value for an
      * item that doesn't exist before the update, DynamoDB uses <code>0</code> as the
      * initial value.</p> <p>Similarly, if you use <code>ADD</code> for an existing
@@ -1035,7 +1035,7 @@ namespace Model
      * <code>itemcount</code> attribute, set its initial value to <code>0</code>, and
      * finally add <code>3</code> to it. The result will be a new
      * <code>itemcount</code> attribute in the item, with a value of
-     * <code>3</code>.</p> </note> </li> <li> <p>If the existing data type is a set and
+     * <code>3</code>.</p>  </li> <li> <p>If the existing data type is a set and
      * if <code>Value</code> is also a set, then <code>Value</code> is added to the
      * existing set. For example, if the attribute value is the set <code>[1,2]</code>,
      * and the <code>ADD</code> action specified <code>[3]</code>, then the final
@@ -1043,17 +1043,17 @@ namespace Model
      * action is specified for a set attribute and the attribute type specified does
      * not match the existing set type. </p> <p>Both sets must have the same primitive
      * data type. For example, if the existing data type is a set of strings, the
-     * <code>Value</code> must also be a set of strings.</p> </li> </ul> <important>
+     * <code>Value</code> must also be a set of strings.</p> </li> </ul> 
      * <p>The <code>ADD</code> action only supports Number and set data types. In
      * addition, <code>ADD</code> can only be used on top-level attributes, not nested
-     * attributes.</p> </important> </li> <li> <p> <code>DELETE</code> - Deletes an
+     * attributes.</p>  </li> <li> <p> <code>DELETE</code> - Deletes an
      * element from a set.</p> <p>If a set of values is specified, then those values
      * are subtracted from the old set. For example, if the attribute value was the set
      * <code>[a,b,c]</code> and the <code>DELETE</code> action specifies
      * <code>[a,c]</code>, then the final attribute value is <code>[b]</code>.
-     * Specifying an empty set is an error.</p> <important> <p>The <code>DELETE</code>
+     * Specifying an empty set is an error.</p>  <p>The <code>DELETE</code>
      * action only supports set data types. In addition, <code>DELETE</code> can only
-     * be used on top-level attributes, not nested attributes.</p> </important> </li>
+     * be used on top-level attributes, not nested attributes.</p>  </li>
      * </ul> <p>You can have many actions in a single expression, such as the
      * following: <code>SET a=:value1, b=:value2 DELETE :value3, :value4,
      * :value5</code> </p> <p>For more information on update expressions, see <a
@@ -1085,7 +1085,7 @@ namespace Model
      * the data type of the attribute:</p> <ul> <li> <p>If the existing attribute is a
      * number, and if <code>Value</code> is also a number, then <code>Value</code> is
      * mathematically added to the existing attribute. If <code>Value</code> is a
-     * negative number, then it is subtracted from the existing attribute.</p> <note>
+     * negative number, then it is subtracted from the existing attribute.</p> 
      * <p>If you use <code>ADD</code> to increment or decrement a number value for an
      * item that doesn't exist before the update, DynamoDB uses <code>0</code> as the
      * initial value.</p> <p>Similarly, if you use <code>ADD</code> for an existing
@@ -1097,7 +1097,7 @@ namespace Model
      * <code>itemcount</code> attribute, set its initial value to <code>0</code>, and
      * finally add <code>3</code> to it. The result will be a new
      * <code>itemcount</code> attribute in the item, with a value of
-     * <code>3</code>.</p> </note> </li> <li> <p>If the existing data type is a set and
+     * <code>3</code>.</p>  </li> <li> <p>If the existing data type is a set and
      * if <code>Value</code> is also a set, then <code>Value</code> is added to the
      * existing set. For example, if the attribute value is the set <code>[1,2]</code>,
      * and the <code>ADD</code> action specified <code>[3]</code>, then the final
@@ -1105,17 +1105,17 @@ namespace Model
      * action is specified for a set attribute and the attribute type specified does
      * not match the existing set type. </p> <p>Both sets must have the same primitive
      * data type. For example, if the existing data type is a set of strings, the
-     * <code>Value</code> must also be a set of strings.</p> </li> </ul> <important>
+     * <code>Value</code> must also be a set of strings.</p> </li> </ul> 
      * <p>The <code>ADD</code> action only supports Number and set data types. In
      * addition, <code>ADD</code> can only be used on top-level attributes, not nested
-     * attributes.</p> </important> </li> <li> <p> <code>DELETE</code> - Deletes an
+     * attributes.</p>  </li> <li> <p> <code>DELETE</code> - Deletes an
      * element from a set.</p> <p>If a set of values is specified, then those values
      * are subtracted from the old set. For example, if the attribute value was the set
      * <code>[a,b,c]</code> and the <code>DELETE</code> action specifies
      * <code>[a,c]</code>, then the final attribute value is <code>[b]</code>.
-     * Specifying an empty set is an error.</p> <important> <p>The <code>DELETE</code>
+     * Specifying an empty set is an error.</p>  <p>The <code>DELETE</code>
      * action only supports set data types. In addition, <code>DELETE</code> can only
-     * be used on top-level attributes, not nested attributes.</p> </important> </li>
+     * be used on top-level attributes, not nested attributes.</p>  </li>
      * </ul> <p>You can have many actions in a single expression, such as the
      * following: <code>SET a=:value1, b=:value2 DELETE :value3, :value4,
      * :value5</code> </p> <p>For more information on update expressions, see <a
@@ -1256,9 +1256,9 @@ namespace Model
      * you could specify the following for <code>ExpressionAttributeNames</code>:</p>
      * <ul> <li> <p> <code>{"#P":"Percentile"}</code> </p> </li> </ul> <p>You could
      * then use this substitution in an expression, as in this example:</p> <ul> <li>
-     * <p> <code>#P = :val</code> </p> </li> </ul> <note> <p>Tokens that begin with the
+     * <p> <code>#P = :val</code> </p> </li> </ul>  <p>Tokens that begin with the
      * <b>:</b> character are <i>expression attribute values</i>, which are
-     * placeholders for the actual value at runtime.</p> </note> <p>For more
+     * placeholders for the actual value at runtime.</p>  <p>For more
      * information about expression attribute names, see <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
@@ -1283,9 +1283,9 @@ namespace Model
      * you could specify the following for <code>ExpressionAttributeNames</code>:</p>
      * <ul> <li> <p> <code>{"#P":"Percentile"}</code> </p> </li> </ul> <p>You could
      * then use this substitution in an expression, as in this example:</p> <ul> <li>
-     * <p> <code>#P = :val</code> </p> </li> </ul> <note> <p>Tokens that begin with the
+     * <p> <code>#P = :val</code> </p> </li> </ul>  <p>Tokens that begin with the
      * <b>:</b> character are <i>expression attribute values</i>, which are
-     * placeholders for the actual value at runtime.</p> </note> <p>For more
+     * placeholders for the actual value at runtime.</p>  <p>For more
      * information about expression attribute names, see <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
@@ -1310,9 +1310,9 @@ namespace Model
      * you could specify the following for <code>ExpressionAttributeNames</code>:</p>
      * <ul> <li> <p> <code>{"#P":"Percentile"}</code> </p> </li> </ul> <p>You could
      * then use this substitution in an expression, as in this example:</p> <ul> <li>
-     * <p> <code>#P = :val</code> </p> </li> </ul> <note> <p>Tokens that begin with the
+     * <p> <code>#P = :val</code> </p> </li> </ul>  <p>Tokens that begin with the
      * <b>:</b> character are <i>expression attribute values</i>, which are
-     * placeholders for the actual value at runtime.</p> </note> <p>For more
+     * placeholders for the actual value at runtime.</p>  <p>For more
      * information about expression attribute names, see <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
@@ -1337,9 +1337,9 @@ namespace Model
      * you could specify the following for <code>ExpressionAttributeNames</code>:</p>
      * <ul> <li> <p> <code>{"#P":"Percentile"}</code> </p> </li> </ul> <p>You could
      * then use this substitution in an expression, as in this example:</p> <ul> <li>
-     * <p> <code>#P = :val</code> </p> </li> </ul> <note> <p>Tokens that begin with the
+     * <p> <code>#P = :val</code> </p> </li> </ul>  <p>Tokens that begin with the
      * <b>:</b> character are <i>expression attribute values</i>, which are
-     * placeholders for the actual value at runtime.</p> </note> <p>For more
+     * placeholders for the actual value at runtime.</p>  <p>For more
      * information about expression attribute names, see <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
@@ -1364,9 +1364,9 @@ namespace Model
      * you could specify the following for <code>ExpressionAttributeNames</code>:</p>
      * <ul> <li> <p> <code>{"#P":"Percentile"}</code> </p> </li> </ul> <p>You could
      * then use this substitution in an expression, as in this example:</p> <ul> <li>
-     * <p> <code>#P = :val</code> </p> </li> </ul> <note> <p>Tokens that begin with the
+     * <p> <code>#P = :val</code> </p> </li> </ul>  <p>Tokens that begin with the
      * <b>:</b> character are <i>expression attribute values</i>, which are
-     * placeholders for the actual value at runtime.</p> </note> <p>For more
+     * placeholders for the actual value at runtime.</p>  <p>For more
      * information about expression attribute names, see <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
@@ -1391,9 +1391,9 @@ namespace Model
      * you could specify the following for <code>ExpressionAttributeNames</code>:</p>
      * <ul> <li> <p> <code>{"#P":"Percentile"}</code> </p> </li> </ul> <p>You could
      * then use this substitution in an expression, as in this example:</p> <ul> <li>
-     * <p> <code>#P = :val</code> </p> </li> </ul> <note> <p>Tokens that begin with the
+     * <p> <code>#P = :val</code> </p> </li> </ul>  <p>Tokens that begin with the
      * <b>:</b> character are <i>expression attribute values</i>, which are
-     * placeholders for the actual value at runtime.</p> </note> <p>For more
+     * placeholders for the actual value at runtime.</p>  <p>For more
      * information about expression attribute names, see <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
@@ -1418,9 +1418,9 @@ namespace Model
      * you could specify the following for <code>ExpressionAttributeNames</code>:</p>
      * <ul> <li> <p> <code>{"#P":"Percentile"}</code> </p> </li> </ul> <p>You could
      * then use this substitution in an expression, as in this example:</p> <ul> <li>
-     * <p> <code>#P = :val</code> </p> </li> </ul> <note> <p>Tokens that begin with the
+     * <p> <code>#P = :val</code> </p> </li> </ul>  <p>Tokens that begin with the
      * <b>:</b> character are <i>expression attribute values</i>, which are
-     * placeholders for the actual value at runtime.</p> </note> <p>For more
+     * placeholders for the actual value at runtime.</p>  <p>For more
      * information about expression attribute names, see <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
@@ -1445,9 +1445,9 @@ namespace Model
      * you could specify the following for <code>ExpressionAttributeNames</code>:</p>
      * <ul> <li> <p> <code>{"#P":"Percentile"}</code> </p> </li> </ul> <p>You could
      * then use this substitution in an expression, as in this example:</p> <ul> <li>
-     * <p> <code>#P = :val</code> </p> </li> </ul> <note> <p>Tokens that begin with the
+     * <p> <code>#P = :val</code> </p> </li> </ul>  <p>Tokens that begin with the
      * <b>:</b> character are <i>expression attribute values</i>, which are
-     * placeholders for the actual value at runtime.</p> </note> <p>For more
+     * placeholders for the actual value at runtime.</p>  <p>For more
      * information about expression attribute names, see <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
@@ -1472,9 +1472,9 @@ namespace Model
      * you could specify the following for <code>ExpressionAttributeNames</code>:</p>
      * <ul> <li> <p> <code>{"#P":"Percentile"}</code> </p> </li> </ul> <p>You could
      * then use this substitution in an expression, as in this example:</p> <ul> <li>
-     * <p> <code>#P = :val</code> </p> </li> </ul> <note> <p>Tokens that begin with the
+     * <p> <code>#P = :val</code> </p> </li> </ul>  <p>Tokens that begin with the
      * <b>:</b> character are <i>expression attribute values</i>, which are
-     * placeholders for the actual value at runtime.</p> </note> <p>For more
+     * placeholders for the actual value at runtime.</p>  <p>For more
      * information about expression attribute names, see <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
@@ -1499,9 +1499,9 @@ namespace Model
      * you could specify the following for <code>ExpressionAttributeNames</code>:</p>
      * <ul> <li> <p> <code>{"#P":"Percentile"}</code> </p> </li> </ul> <p>You could
      * then use this substitution in an expression, as in this example:</p> <ul> <li>
-     * <p> <code>#P = :val</code> </p> </li> </ul> <note> <p>Tokens that begin with the
+     * <p> <code>#P = :val</code> </p> </li> </ul>  <p>Tokens that begin with the
      * <b>:</b> character are <i>expression attribute values</i>, which are
-     * placeholders for the actual value at runtime.</p> </note> <p>For more
+     * placeholders for the actual value at runtime.</p>  <p>For more
      * information about expression attribute names, see <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
@@ -1526,9 +1526,9 @@ namespace Model
      * you could specify the following for <code>ExpressionAttributeNames</code>:</p>
      * <ul> <li> <p> <code>{"#P":"Percentile"}</code> </p> </li> </ul> <p>You could
      * then use this substitution in an expression, as in this example:</p> <ul> <li>
-     * <p> <code>#P = :val</code> </p> </li> </ul> <note> <p>Tokens that begin with the
+     * <p> <code>#P = :val</code> </p> </li> </ul>  <p>Tokens that begin with the
      * <b>:</b> character are <i>expression attribute values</i>, which are
-     * placeholders for the actual value at runtime.</p> </note> <p>For more
+     * placeholders for the actual value at runtime.</p>  <p>For more
      * information about expression attribute names, see <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
@@ -1553,9 +1553,9 @@ namespace Model
      * you could specify the following for <code>ExpressionAttributeNames</code>:</p>
      * <ul> <li> <p> <code>{"#P":"Percentile"}</code> </p> </li> </ul> <p>You could
      * then use this substitution in an expression, as in this example:</p> <ul> <li>
-     * <p> <code>#P = :val</code> </p> </li> </ul> <note> <p>Tokens that begin with the
+     * <p> <code>#P = :val</code> </p> </li> </ul>  <p>Tokens that begin with the
      * <b>:</b> character are <i>expression attribute values</i>, which are
-     * placeholders for the actual value at runtime.</p> </note> <p>For more
+     * placeholders for the actual value at runtime.</p>  <p>For more
      * information about expression attribute names, see <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
@@ -1580,9 +1580,9 @@ namespace Model
      * you could specify the following for <code>ExpressionAttributeNames</code>:</p>
      * <ul> <li> <p> <code>{"#P":"Percentile"}</code> </p> </li> </ul> <p>You could
      * then use this substitution in an expression, as in this example:</p> <ul> <li>
-     * <p> <code>#P = :val</code> </p> </li> </ul> <note> <p>Tokens that begin with the
+     * <p> <code>#P = :val</code> </p> </li> </ul>  <p>Tokens that begin with the
      * <b>:</b> character are <i>expression attribute values</i>, which are
-     * placeholders for the actual value at runtime.</p> </note> <p>For more
+     * placeholders for the actual value at runtime.</p>  <p>For more
      * information about expression attribute names, see <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>

@@ -322,26 +322,26 @@ namespace Model
 
 
     /**
-     * <p>The current version of the thing record in the registry.</p> <note> <p>To
+     * <p>The current version of the thing record in the registry.</p>  <p>To
      * avoid unintentional changes to the information in the registry, you can pass the
      * version information in the <code>expectedVersion</code> parameter of the
-     * <code>UpdateThing</code> and <code>DeleteThing</code> calls.</p> </note>
+     * <code>UpdateThing</code> and <code>DeleteThing</code> calls.</p> 
      */
     inline long long GetVersion() const{ return m_version; }
 
     /**
-     * <p>The current version of the thing record in the registry.</p> <note> <p>To
+     * <p>The current version of the thing record in the registry.</p>  <p>To
      * avoid unintentional changes to the information in the registry, you can pass the
      * version information in the <code>expectedVersion</code> parameter of the
-     * <code>UpdateThing</code> and <code>DeleteThing</code> calls.</p> </note>
+     * <code>UpdateThing</code> and <code>DeleteThing</code> calls.</p> 
      */
     inline void SetVersion(long long value) { m_version = value; }
 
     /**
-     * <p>The current version of the thing record in the registry.</p> <note> <p>To
+     * <p>The current version of the thing record in the registry.</p>  <p>To
      * avoid unintentional changes to the information in the registry, you can pass the
      * version information in the <code>expectedVersion</code> parameter of the
-     * <code>UpdateThing</code> and <code>DeleteThing</code> calls.</p> </note>
+     * <code>UpdateThing</code> and <code>DeleteThing</code> calls.</p> 
      */
     inline DescribeThingResult& WithVersion(long long value) { SetVersion(value); return *this;}
 

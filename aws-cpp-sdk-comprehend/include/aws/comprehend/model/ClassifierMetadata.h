@@ -86,25 +86,29 @@ namespace Model
 
     /**
      * <p>The number of documents in the input data that were used to test the
-     * classifier. Typically this is 10 to 20 percent of the input documents.</p>
+     * classifier. Typically this is 10 to 20 percent of the input documents, up to
+     * 10,000 documents.</p>
      */
     inline int GetNumberOfTestDocuments() const{ return m_numberOfTestDocuments; }
 
     /**
      * <p>The number of documents in the input data that were used to test the
-     * classifier. Typically this is 10 to 20 percent of the input documents.</p>
+     * classifier. Typically this is 10 to 20 percent of the input documents, up to
+     * 10,000 documents.</p>
      */
     inline bool NumberOfTestDocumentsHasBeenSet() const { return m_numberOfTestDocumentsHasBeenSet; }
 
     /**
      * <p>The number of documents in the input data that were used to test the
-     * classifier. Typically this is 10 to 20 percent of the input documents.</p>
+     * classifier. Typically this is 10 to 20 percent of the input documents, up to
+     * 10,000 documents.</p>
      */
     inline void SetNumberOfTestDocuments(int value) { m_numberOfTestDocumentsHasBeenSet = true; m_numberOfTestDocuments = value; }
 
     /**
      * <p>The number of documents in the input data that were used to test the
-     * classifier. Typically this is 10 to 20 percent of the input documents.</p>
+     * classifier. Typically this is 10 to 20 percent of the input documents, up to
+     * 10,000 documents.</p>
      */
     inline ClassifierMetadata& WithNumberOfTestDocuments(int value) { SetNumberOfTestDocuments(value); return *this;}
 

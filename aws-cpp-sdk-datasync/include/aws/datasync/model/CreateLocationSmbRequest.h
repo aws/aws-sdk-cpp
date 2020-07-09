@@ -45,8 +45,8 @@ namespace Model
      * SMB source location or write data to the SMB destination. The SMB path should be
      * a path that's exported by the SMB server, or a subdirectory of that path. The
      * path should be such that it can be mounted by other SMB clients in your
-     * network.</p> <note> <p> <code>Subdirectory</code> must be specified with forward
-     * slashes. For example <code>/path/to/folder</code>.</p> </note> <p>To transfer
+     * network.</p>  <p> <code>Subdirectory</code> must be specified with forward
+     * slashes. For example <code>/path/to/folder</code>.</p>  <p>To transfer
      * all the data in the folder you specified, DataSync needs to have permissions to
      * mount the SMB share, as well as to access all the data in that share. To ensure
      * this, either ensure that the user/password specified belongs to the user who can
@@ -63,8 +63,8 @@ namespace Model
      * SMB source location or write data to the SMB destination. The SMB path should be
      * a path that's exported by the SMB server, or a subdirectory of that path. The
      * path should be such that it can be mounted by other SMB clients in your
-     * network.</p> <note> <p> <code>Subdirectory</code> must be specified with forward
-     * slashes. For example <code>/path/to/folder</code>.</p> </note> <p>To transfer
+     * network.</p>  <p> <code>Subdirectory</code> must be specified with forward
+     * slashes. For example <code>/path/to/folder</code>.</p>  <p>To transfer
      * all the data in the folder you specified, DataSync needs to have permissions to
      * mount the SMB share, as well as to access all the data in that share. To ensure
      * this, either ensure that the user/password specified belongs to the user who can
@@ -81,8 +81,8 @@ namespace Model
      * SMB source location or write data to the SMB destination. The SMB path should be
      * a path that's exported by the SMB server, or a subdirectory of that path. The
      * path should be such that it can be mounted by other SMB clients in your
-     * network.</p> <note> <p> <code>Subdirectory</code> must be specified with forward
-     * slashes. For example <code>/path/to/folder</code>.</p> </note> <p>To transfer
+     * network.</p>  <p> <code>Subdirectory</code> must be specified with forward
+     * slashes. For example <code>/path/to/folder</code>.</p>  <p>To transfer
      * all the data in the folder you specified, DataSync needs to have permissions to
      * mount the SMB share, as well as to access all the data in that share. To ensure
      * this, either ensure that the user/password specified belongs to the user who can
@@ -99,8 +99,8 @@ namespace Model
      * SMB source location or write data to the SMB destination. The SMB path should be
      * a path that's exported by the SMB server, or a subdirectory of that path. The
      * path should be such that it can be mounted by other SMB clients in your
-     * network.</p> <note> <p> <code>Subdirectory</code> must be specified with forward
-     * slashes. For example <code>/path/to/folder</code>.</p> </note> <p>To transfer
+     * network.</p>  <p> <code>Subdirectory</code> must be specified with forward
+     * slashes. For example <code>/path/to/folder</code>.</p>  <p>To transfer
      * all the data in the folder you specified, DataSync needs to have permissions to
      * mount the SMB share, as well as to access all the data in that share. To ensure
      * this, either ensure that the user/password specified belongs to the user who can
@@ -117,8 +117,8 @@ namespace Model
      * SMB source location or write data to the SMB destination. The SMB path should be
      * a path that's exported by the SMB server, or a subdirectory of that path. The
      * path should be such that it can be mounted by other SMB clients in your
-     * network.</p> <note> <p> <code>Subdirectory</code> must be specified with forward
-     * slashes. For example <code>/path/to/folder</code>.</p> </note> <p>To transfer
+     * network.</p>  <p> <code>Subdirectory</code> must be specified with forward
+     * slashes. For example <code>/path/to/folder</code>.</p>  <p>To transfer
      * all the data in the folder you specified, DataSync needs to have permissions to
      * mount the SMB share, as well as to access all the data in that share. To ensure
      * this, either ensure that the user/password specified belongs to the user who can
@@ -135,8 +135,8 @@ namespace Model
      * SMB source location or write data to the SMB destination. The SMB path should be
      * a path that's exported by the SMB server, or a subdirectory of that path. The
      * path should be such that it can be mounted by other SMB clients in your
-     * network.</p> <note> <p> <code>Subdirectory</code> must be specified with forward
-     * slashes. For example <code>/path/to/folder</code>.</p> </note> <p>To transfer
+     * network.</p>  <p> <code>Subdirectory</code> must be specified with forward
+     * slashes. For example <code>/path/to/folder</code>.</p>  <p>To transfer
      * all the data in the folder you specified, DataSync needs to have permissions to
      * mount the SMB share, as well as to access all the data in that share. To ensure
      * this, either ensure that the user/password specified belongs to the user who can
@@ -153,8 +153,8 @@ namespace Model
      * SMB source location or write data to the SMB destination. The SMB path should be
      * a path that's exported by the SMB server, or a subdirectory of that path. The
      * path should be such that it can be mounted by other SMB clients in your
-     * network.</p> <note> <p> <code>Subdirectory</code> must be specified with forward
-     * slashes. For example <code>/path/to/folder</code>.</p> </note> <p>To transfer
+     * network.</p>  <p> <code>Subdirectory</code> must be specified with forward
+     * slashes. For example <code>/path/to/folder</code>.</p>  <p>To transfer
      * all the data in the folder you specified, DataSync needs to have permissions to
      * mount the SMB share, as well as to access all the data in that share. To ensure
      * this, either ensure that the user/password specified belongs to the user who can
@@ -171,8 +171,8 @@ namespace Model
      * SMB source location or write data to the SMB destination. The SMB path should be
      * a path that's exported by the SMB server, or a subdirectory of that path. The
      * path should be such that it can be mounted by other SMB clients in your
-     * network.</p> <note> <p> <code>Subdirectory</code> must be specified with forward
-     * slashes. For example <code>/path/to/folder</code>.</p> </note> <p>To transfer
+     * network.</p>  <p> <code>Subdirectory</code> must be specified with forward
+     * slashes. For example <code>/path/to/folder</code>.</p>  <p>To transfer
      * all the data in the folder you specified, DataSync needs to have permissions to
      * mount the SMB share, as well as to access all the data in that share. To ensure
      * this, either ensure that the user/password specified belongs to the user who can
@@ -188,72 +188,72 @@ namespace Model
     /**
      * <p>The name of the SMB server. This value is the IP address or Domain Name
      * Service (DNS) name of the SMB server. An agent that is installed on-premises
-     * uses this hostname to mount the SMB server in a network.</p> <note> <p>This name
+     * uses this hostname to mount the SMB server in a network.</p>  <p>This name
      * must either be DNS-compliant or must be an IP version 4 (IPv4) address.</p>
-     * </note>
+     * 
      */
     inline const Aws::String& GetServerHostname() const{ return m_serverHostname; }
 
     /**
      * <p>The name of the SMB server. This value is the IP address or Domain Name
      * Service (DNS) name of the SMB server. An agent that is installed on-premises
-     * uses this hostname to mount the SMB server in a network.</p> <note> <p>This name
+     * uses this hostname to mount the SMB server in a network.</p>  <p>This name
      * must either be DNS-compliant or must be an IP version 4 (IPv4) address.</p>
-     * </note>
+     * 
      */
     inline bool ServerHostnameHasBeenSet() const { return m_serverHostnameHasBeenSet; }
 
     /**
      * <p>The name of the SMB server. This value is the IP address or Domain Name
      * Service (DNS) name of the SMB server. An agent that is installed on-premises
-     * uses this hostname to mount the SMB server in a network.</p> <note> <p>This name
+     * uses this hostname to mount the SMB server in a network.</p>  <p>This name
      * must either be DNS-compliant or must be an IP version 4 (IPv4) address.</p>
-     * </note>
+     * 
      */
     inline void SetServerHostname(const Aws::String& value) { m_serverHostnameHasBeenSet = true; m_serverHostname = value; }
 
     /**
      * <p>The name of the SMB server. This value is the IP address or Domain Name
      * Service (DNS) name of the SMB server. An agent that is installed on-premises
-     * uses this hostname to mount the SMB server in a network.</p> <note> <p>This name
+     * uses this hostname to mount the SMB server in a network.</p>  <p>This name
      * must either be DNS-compliant or must be an IP version 4 (IPv4) address.</p>
-     * </note>
+     * 
      */
     inline void SetServerHostname(Aws::String&& value) { m_serverHostnameHasBeenSet = true; m_serverHostname = std::move(value); }
 
     /**
      * <p>The name of the SMB server. This value is the IP address or Domain Name
      * Service (DNS) name of the SMB server. An agent that is installed on-premises
-     * uses this hostname to mount the SMB server in a network.</p> <note> <p>This name
+     * uses this hostname to mount the SMB server in a network.</p>  <p>This name
      * must either be DNS-compliant or must be an IP version 4 (IPv4) address.</p>
-     * </note>
+     * 
      */
     inline void SetServerHostname(const char* value) { m_serverHostnameHasBeenSet = true; m_serverHostname.assign(value); }
 
     /**
      * <p>The name of the SMB server. This value is the IP address or Domain Name
      * Service (DNS) name of the SMB server. An agent that is installed on-premises
-     * uses this hostname to mount the SMB server in a network.</p> <note> <p>This name
+     * uses this hostname to mount the SMB server in a network.</p>  <p>This name
      * must either be DNS-compliant or must be an IP version 4 (IPv4) address.</p>
-     * </note>
+     * 
      */
     inline CreateLocationSmbRequest& WithServerHostname(const Aws::String& value) { SetServerHostname(value); return *this;}
 
     /**
      * <p>The name of the SMB server. This value is the IP address or Domain Name
      * Service (DNS) name of the SMB server. An agent that is installed on-premises
-     * uses this hostname to mount the SMB server in a network.</p> <note> <p>This name
+     * uses this hostname to mount the SMB server in a network.</p>  <p>This name
      * must either be DNS-compliant or must be an IP version 4 (IPv4) address.</p>
-     * </note>
+     * 
      */
     inline CreateLocationSmbRequest& WithServerHostname(Aws::String&& value) { SetServerHostname(std::move(value)); return *this;}
 
     /**
      * <p>The name of the SMB server. This value is the IP address or Domain Name
      * Service (DNS) name of the SMB server. An agent that is installed on-premises
-     * uses this hostname to mount the SMB server in a network.</p> <note> <p>This name
+     * uses this hostname to mount the SMB server in a network.</p>  <p>This name
      * must either be DNS-compliant or must be an IP version 4 (IPv4) address.</p>
-     * </note>
+     * 
      */
     inline CreateLocationSmbRequest& WithServerHostname(const char* value) { SetServerHostname(value); return *this;}
 

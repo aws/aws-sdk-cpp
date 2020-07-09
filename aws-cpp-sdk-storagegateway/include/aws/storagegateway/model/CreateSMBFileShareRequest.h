@@ -515,9 +515,9 @@ namespace Model
      * with data download from the S3 bucket. If this value is set to
      * <code>true</code>, the requester pays the costs; otherwise, the S3 bucket owner
      * pays. However, the S3 bucket owner always pays the cost of storing data.</p>
-     * <note> <p> <code>RequesterPays</code> is a configuration for the S3 bucket that
+     *  <p> <code>RequesterPays</code> is a configuration for the S3 bucket that
      * backs the file share, so make sure that the configuration on the file share is
-     * the same as the S3 bucket configuration.</p> </note> <p>Valid Values:
+     * the same as the S3 bucket configuration.</p>  <p>Valid Values:
      * <code>true</code> | <code>false</code> </p>
      */
     inline bool GetRequesterPays() const{ return m_requesterPays; }
@@ -527,9 +527,9 @@ namespace Model
      * with data download from the S3 bucket. If this value is set to
      * <code>true</code>, the requester pays the costs; otherwise, the S3 bucket owner
      * pays. However, the S3 bucket owner always pays the cost of storing data.</p>
-     * <note> <p> <code>RequesterPays</code> is a configuration for the S3 bucket that
+     *  <p> <code>RequesterPays</code> is a configuration for the S3 bucket that
      * backs the file share, so make sure that the configuration on the file share is
-     * the same as the S3 bucket configuration.</p> </note> <p>Valid Values:
+     * the same as the S3 bucket configuration.</p>  <p>Valid Values:
      * <code>true</code> | <code>false</code> </p>
      */
     inline bool RequesterPaysHasBeenSet() const { return m_requesterPaysHasBeenSet; }
@@ -539,9 +539,9 @@ namespace Model
      * with data download from the S3 bucket. If this value is set to
      * <code>true</code>, the requester pays the costs; otherwise, the S3 bucket owner
      * pays. However, the S3 bucket owner always pays the cost of storing data.</p>
-     * <note> <p> <code>RequesterPays</code> is a configuration for the S3 bucket that
+     *  <p> <code>RequesterPays</code> is a configuration for the S3 bucket that
      * backs the file share, so make sure that the configuration on the file share is
-     * the same as the S3 bucket configuration.</p> </note> <p>Valid Values:
+     * the same as the S3 bucket configuration.</p>  <p>Valid Values:
      * <code>true</code> | <code>false</code> </p>
      */
     inline void SetRequesterPays(bool value) { m_requesterPaysHasBeenSet = true; m_requesterPays = value; }
@@ -551,9 +551,9 @@ namespace Model
      * with data download from the S3 bucket. If this value is set to
      * <code>true</code>, the requester pays the costs; otherwise, the S3 bucket owner
      * pays. However, the S3 bucket owner always pays the cost of storing data.</p>
-     * <note> <p> <code>RequesterPays</code> is a configuration for the S3 bucket that
+     *  <p> <code>RequesterPays</code> is a configuration for the S3 bucket that
      * backs the file share, so make sure that the configuration on the file share is
-     * the same as the S3 bucket configuration.</p> </note> <p>Valid Values:
+     * the same as the S3 bucket configuration.</p>  <p>Valid Values:
      * <code>true</code> | <code>false</code> </p>
      */
     inline CreateSMBFileShareRequest& WithRequesterPays(bool value) { SetRequesterPays(value); return *this;}
@@ -609,9 +609,9 @@ namespace Model
      * administrator privileges on the file share. These users can do all file
      * operations as the super-user. Acceptable formats include:
      * <code>DOMAIN\User1</code>, <code>user1</code>, <code>@group1</code>, and
-     * <code>@DOMAIN\group1</code>.</p> <important> <p>Use this option very carefully,
+     * <code>@DOMAIN\group1</code>.</p>  <p>Use this option very carefully,
      * because any user in this list can do anything they like on the file share,
-     * regardless of file permissions.</p> </important>
+     * regardless of file permissions.</p> 
      */
     inline const Aws::Vector<Aws::String>& GetAdminUserList() const{ return m_adminUserList; }
 
@@ -620,9 +620,9 @@ namespace Model
      * administrator privileges on the file share. These users can do all file
      * operations as the super-user. Acceptable formats include:
      * <code>DOMAIN\User1</code>, <code>user1</code>, <code>@group1</code>, and
-     * <code>@DOMAIN\group1</code>.</p> <important> <p>Use this option very carefully,
+     * <code>@DOMAIN\group1</code>.</p>  <p>Use this option very carefully,
      * because any user in this list can do anything they like on the file share,
-     * regardless of file permissions.</p> </important>
+     * regardless of file permissions.</p> 
      */
     inline bool AdminUserListHasBeenSet() const { return m_adminUserListHasBeenSet; }
 
@@ -631,9 +631,9 @@ namespace Model
      * administrator privileges on the file share. These users can do all file
      * operations as the super-user. Acceptable formats include:
      * <code>DOMAIN\User1</code>, <code>user1</code>, <code>@group1</code>, and
-     * <code>@DOMAIN\group1</code>.</p> <important> <p>Use this option very carefully,
+     * <code>@DOMAIN\group1</code>.</p>  <p>Use this option very carefully,
      * because any user in this list can do anything they like on the file share,
-     * regardless of file permissions.</p> </important>
+     * regardless of file permissions.</p> 
      */
     inline void SetAdminUserList(const Aws::Vector<Aws::String>& value) { m_adminUserListHasBeenSet = true; m_adminUserList = value; }
 
@@ -642,9 +642,9 @@ namespace Model
      * administrator privileges on the file share. These users can do all file
      * operations as the super-user. Acceptable formats include:
      * <code>DOMAIN\User1</code>, <code>user1</code>, <code>@group1</code>, and
-     * <code>@DOMAIN\group1</code>.</p> <important> <p>Use this option very carefully,
+     * <code>@DOMAIN\group1</code>.</p>  <p>Use this option very carefully,
      * because any user in this list can do anything they like on the file share,
-     * regardless of file permissions.</p> </important>
+     * regardless of file permissions.</p> 
      */
     inline void SetAdminUserList(Aws::Vector<Aws::String>&& value) { m_adminUserListHasBeenSet = true; m_adminUserList = std::move(value); }
 
@@ -653,9 +653,9 @@ namespace Model
      * administrator privileges on the file share. These users can do all file
      * operations as the super-user. Acceptable formats include:
      * <code>DOMAIN\User1</code>, <code>user1</code>, <code>@group1</code>, and
-     * <code>@DOMAIN\group1</code>.</p> <important> <p>Use this option very carefully,
+     * <code>@DOMAIN\group1</code>.</p>  <p>Use this option very carefully,
      * because any user in this list can do anything they like on the file share,
-     * regardless of file permissions.</p> </important>
+     * regardless of file permissions.</p> 
      */
     inline CreateSMBFileShareRequest& WithAdminUserList(const Aws::Vector<Aws::String>& value) { SetAdminUserList(value); return *this;}
 
@@ -664,9 +664,9 @@ namespace Model
      * administrator privileges on the file share. These users can do all file
      * operations as the super-user. Acceptable formats include:
      * <code>DOMAIN\User1</code>, <code>user1</code>, <code>@group1</code>, and
-     * <code>@DOMAIN\group1</code>.</p> <important> <p>Use this option very carefully,
+     * <code>@DOMAIN\group1</code>.</p>  <p>Use this option very carefully,
      * because any user in this list can do anything they like on the file share,
-     * regardless of file permissions.</p> </important>
+     * regardless of file permissions.</p> 
      */
     inline CreateSMBFileShareRequest& WithAdminUserList(Aws::Vector<Aws::String>&& value) { SetAdminUserList(std::move(value)); return *this;}
 
@@ -675,9 +675,9 @@ namespace Model
      * administrator privileges on the file share. These users can do all file
      * operations as the super-user. Acceptable formats include:
      * <code>DOMAIN\User1</code>, <code>user1</code>, <code>@group1</code>, and
-     * <code>@DOMAIN\group1</code>.</p> <important> <p>Use this option very carefully,
+     * <code>@DOMAIN\group1</code>.</p>  <p>Use this option very carefully,
      * because any user in this list can do anything they like on the file share,
-     * regardless of file permissions.</p> </important>
+     * regardless of file permissions.</p> 
      */
     inline CreateSMBFileShareRequest& AddAdminUserList(const Aws::String& value) { m_adminUserListHasBeenSet = true; m_adminUserList.push_back(value); return *this; }
 
@@ -686,9 +686,9 @@ namespace Model
      * administrator privileges on the file share. These users can do all file
      * operations as the super-user. Acceptable formats include:
      * <code>DOMAIN\User1</code>, <code>user1</code>, <code>@group1</code>, and
-     * <code>@DOMAIN\group1</code>.</p> <important> <p>Use this option very carefully,
+     * <code>@DOMAIN\group1</code>.</p>  <p>Use this option very carefully,
      * because any user in this list can do anything they like on the file share,
-     * regardless of file permissions.</p> </important>
+     * regardless of file permissions.</p> 
      */
     inline CreateSMBFileShareRequest& AddAdminUserList(Aws::String&& value) { m_adminUserListHasBeenSet = true; m_adminUserList.push_back(std::move(value)); return *this; }
 
@@ -697,9 +697,9 @@ namespace Model
      * administrator privileges on the file share. These users can do all file
      * operations as the super-user. Acceptable formats include:
      * <code>DOMAIN\User1</code>, <code>user1</code>, <code>@group1</code>, and
-     * <code>@DOMAIN\group1</code>.</p> <important> <p>Use this option very carefully,
+     * <code>@DOMAIN\group1</code>.</p>  <p>Use this option very carefully,
      * because any user in this list can do anything they like on the file share,
-     * regardless of file permissions.</p> </important>
+     * regardless of file permissions.</p> 
      */
     inline CreateSMBFileShareRequest& AddAdminUserList(const char* value) { m_adminUserListHasBeenSet = true; m_adminUserList.push_back(value); return *this; }
 
@@ -1017,130 +1017,130 @@ namespace Model
 
     /**
      * <p>A list of up to 50 tags that can be assigned to the NFS file share. Each tag
-     * is a key-value pair.</p> <note> <p>Valid characters for key and value are
+     * is a key-value pair.</p>  <p>Valid characters for key and value are
      * letters, spaces, and numbers representable in UTF-8 format, and the following
      * special characters: + - = . _ : / @. The maximum length of a tag's key is 128
-     * characters, and the maximum length for a tag's value is 256.</p> </note>
+     * characters, and the maximum length for a tag's value is 256.</p> 
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
      * <p>A list of up to 50 tags that can be assigned to the NFS file share. Each tag
-     * is a key-value pair.</p> <note> <p>Valid characters for key and value are
+     * is a key-value pair.</p>  <p>Valid characters for key and value are
      * letters, spaces, and numbers representable in UTF-8 format, and the following
      * special characters: + - = . _ : / @. The maximum length of a tag's key is 128
-     * characters, and the maximum length for a tag's value is 256.</p> </note>
+     * characters, and the maximum length for a tag's value is 256.</p> 
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>A list of up to 50 tags that can be assigned to the NFS file share. Each tag
-     * is a key-value pair.</p> <note> <p>Valid characters for key and value are
+     * is a key-value pair.</p>  <p>Valid characters for key and value are
      * letters, spaces, and numbers representable in UTF-8 format, and the following
      * special characters: + - = . _ : / @. The maximum length of a tag's key is 128
-     * characters, and the maximum length for a tag's value is 256.</p> </note>
+     * characters, and the maximum length for a tag's value is 256.</p> 
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
      * <p>A list of up to 50 tags that can be assigned to the NFS file share. Each tag
-     * is a key-value pair.</p> <note> <p>Valid characters for key and value are
+     * is a key-value pair.</p>  <p>Valid characters for key and value are
      * letters, spaces, and numbers representable in UTF-8 format, and the following
      * special characters: + - = . _ : / @. The maximum length of a tag's key is 128
-     * characters, and the maximum length for a tag's value is 256.</p> </note>
+     * characters, and the maximum length for a tag's value is 256.</p> 
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
      * <p>A list of up to 50 tags that can be assigned to the NFS file share. Each tag
-     * is a key-value pair.</p> <note> <p>Valid characters for key and value are
+     * is a key-value pair.</p>  <p>Valid characters for key and value are
      * letters, spaces, and numbers representable in UTF-8 format, and the following
      * special characters: + - = . _ : / @. The maximum length of a tag's key is 128
-     * characters, and the maximum length for a tag's value is 256.</p> </note>
+     * characters, and the maximum length for a tag's value is 256.</p> 
      */
     inline CreateSMBFileShareRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
      * <p>A list of up to 50 tags that can be assigned to the NFS file share. Each tag
-     * is a key-value pair.</p> <note> <p>Valid characters for key and value are
+     * is a key-value pair.</p>  <p>Valid characters for key and value are
      * letters, spaces, and numbers representable in UTF-8 format, and the following
      * special characters: + - = . _ : / @. The maximum length of a tag's key is 128
-     * characters, and the maximum length for a tag's value is 256.</p> </note>
+     * characters, and the maximum length for a tag's value is 256.</p> 
      */
     inline CreateSMBFileShareRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
      * <p>A list of up to 50 tags that can be assigned to the NFS file share. Each tag
-     * is a key-value pair.</p> <note> <p>Valid characters for key and value are
+     * is a key-value pair.</p>  <p>Valid characters for key and value are
      * letters, spaces, and numbers representable in UTF-8 format, and the following
      * special characters: + - = . _ : / @. The maximum length of a tag's key is 128
-     * characters, and the maximum length for a tag's value is 256.</p> </note>
+     * characters, and the maximum length for a tag's value is 256.</p> 
      */
     inline CreateSMBFileShareRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     /**
      * <p>A list of up to 50 tags that can be assigned to the NFS file share. Each tag
-     * is a key-value pair.</p> <note> <p>Valid characters for key and value are
+     * is a key-value pair.</p>  <p>Valid characters for key and value are
      * letters, spaces, and numbers representable in UTF-8 format, and the following
      * special characters: + - = . _ : / @. The maximum length of a tag's key is 128
-     * characters, and the maximum length for a tag's value is 256.</p> </note>
+     * characters, and the maximum length for a tag's value is 256.</p> 
      */
     inline CreateSMBFileShareRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>The name of the file share. Optional.</p> <note> <p>
+     * <p>The name of the file share. Optional.</p>  <p>
      * <code>FileShareName</code> must be set if an S3 prefix name is set in
-     * <code>LocationARN</code>.</p> </note>
+     * <code>LocationARN</code>.</p> 
      */
     inline const Aws::String& GetFileShareName() const{ return m_fileShareName; }
 
     /**
-     * <p>The name of the file share. Optional.</p> <note> <p>
+     * <p>The name of the file share. Optional.</p>  <p>
      * <code>FileShareName</code> must be set if an S3 prefix name is set in
-     * <code>LocationARN</code>.</p> </note>
+     * <code>LocationARN</code>.</p> 
      */
     inline bool FileShareNameHasBeenSet() const { return m_fileShareNameHasBeenSet; }
 
     /**
-     * <p>The name of the file share. Optional.</p> <note> <p>
+     * <p>The name of the file share. Optional.</p>  <p>
      * <code>FileShareName</code> must be set if an S3 prefix name is set in
-     * <code>LocationARN</code>.</p> </note>
+     * <code>LocationARN</code>.</p> 
      */
     inline void SetFileShareName(const Aws::String& value) { m_fileShareNameHasBeenSet = true; m_fileShareName = value; }
 
     /**
-     * <p>The name of the file share. Optional.</p> <note> <p>
+     * <p>The name of the file share. Optional.</p>  <p>
      * <code>FileShareName</code> must be set if an S3 prefix name is set in
-     * <code>LocationARN</code>.</p> </note>
+     * <code>LocationARN</code>.</p> 
      */
     inline void SetFileShareName(Aws::String&& value) { m_fileShareNameHasBeenSet = true; m_fileShareName = std::move(value); }
 
     /**
-     * <p>The name of the file share. Optional.</p> <note> <p>
+     * <p>The name of the file share. Optional.</p>  <p>
      * <code>FileShareName</code> must be set if an S3 prefix name is set in
-     * <code>LocationARN</code>.</p> </note>
+     * <code>LocationARN</code>.</p> 
      */
     inline void SetFileShareName(const char* value) { m_fileShareNameHasBeenSet = true; m_fileShareName.assign(value); }
 
     /**
-     * <p>The name of the file share. Optional.</p> <note> <p>
+     * <p>The name of the file share. Optional.</p>  <p>
      * <code>FileShareName</code> must be set if an S3 prefix name is set in
-     * <code>LocationARN</code>.</p> </note>
+     * <code>LocationARN</code>.</p> 
      */
     inline CreateSMBFileShareRequest& WithFileShareName(const Aws::String& value) { SetFileShareName(value); return *this;}
 
     /**
-     * <p>The name of the file share. Optional.</p> <note> <p>
+     * <p>The name of the file share. Optional.</p>  <p>
      * <code>FileShareName</code> must be set if an S3 prefix name is set in
-     * <code>LocationARN</code>.</p> </note>
+     * <code>LocationARN</code>.</p> 
      */
     inline CreateSMBFileShareRequest& WithFileShareName(Aws::String&& value) { SetFileShareName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the file share. Optional.</p> <note> <p>
+     * <p>The name of the file share. Optional.</p>  <p>
      * <code>FileShareName</code> must be set if an S3 prefix name is set in
-     * <code>LocationARN</code>.</p> </note>
+     * <code>LocationARN</code>.</p> 
      */
     inline CreateSMBFileShareRequest& WithFileShareName(const char* value) { SetFileShareName(value); return *this;}
 

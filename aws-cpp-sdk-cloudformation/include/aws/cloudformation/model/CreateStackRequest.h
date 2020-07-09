@@ -47,73 +47,73 @@ namespace Model
 
     /**
      * <p>The name that is associated with the stack. The name must be unique in the
-     * Region in which you are creating the stack.</p> <note> <p>A stack name can
+     * Region in which you are creating the stack.</p>  <p>A stack name can
      * contain only alphanumeric characters (case sensitive) and hyphens. It must start
      * with an alphabetic character and cannot be longer than 128 characters.</p>
-     * </note>
+     * 
      */
     inline const Aws::String& GetStackName() const{ return m_stackName; }
 
     /**
      * <p>The name that is associated with the stack. The name must be unique in the
-     * Region in which you are creating the stack.</p> <note> <p>A stack name can
+     * Region in which you are creating the stack.</p>  <p>A stack name can
      * contain only alphanumeric characters (case sensitive) and hyphens. It must start
      * with an alphabetic character and cannot be longer than 128 characters.</p>
-     * </note>
+     * 
      */
     inline bool StackNameHasBeenSet() const { return m_stackNameHasBeenSet; }
 
     /**
      * <p>The name that is associated with the stack. The name must be unique in the
-     * Region in which you are creating the stack.</p> <note> <p>A stack name can
+     * Region in which you are creating the stack.</p>  <p>A stack name can
      * contain only alphanumeric characters (case sensitive) and hyphens. It must start
      * with an alphabetic character and cannot be longer than 128 characters.</p>
-     * </note>
+     * 
      */
     inline void SetStackName(const Aws::String& value) { m_stackNameHasBeenSet = true; m_stackName = value; }
 
     /**
      * <p>The name that is associated with the stack. The name must be unique in the
-     * Region in which you are creating the stack.</p> <note> <p>A stack name can
+     * Region in which you are creating the stack.</p>  <p>A stack name can
      * contain only alphanumeric characters (case sensitive) and hyphens. It must start
      * with an alphabetic character and cannot be longer than 128 characters.</p>
-     * </note>
+     * 
      */
     inline void SetStackName(Aws::String&& value) { m_stackNameHasBeenSet = true; m_stackName = std::move(value); }
 
     /**
      * <p>The name that is associated with the stack. The name must be unique in the
-     * Region in which you are creating the stack.</p> <note> <p>A stack name can
+     * Region in which you are creating the stack.</p>  <p>A stack name can
      * contain only alphanumeric characters (case sensitive) and hyphens. It must start
      * with an alphabetic character and cannot be longer than 128 characters.</p>
-     * </note>
+     * 
      */
     inline void SetStackName(const char* value) { m_stackNameHasBeenSet = true; m_stackName.assign(value); }
 
     /**
      * <p>The name that is associated with the stack. The name must be unique in the
-     * Region in which you are creating the stack.</p> <note> <p>A stack name can
+     * Region in which you are creating the stack.</p>  <p>A stack name can
      * contain only alphanumeric characters (case sensitive) and hyphens. It must start
      * with an alphabetic character and cannot be longer than 128 characters.</p>
-     * </note>
+     * 
      */
     inline CreateStackRequest& WithStackName(const Aws::String& value) { SetStackName(value); return *this;}
 
     /**
      * <p>The name that is associated with the stack. The name must be unique in the
-     * Region in which you are creating the stack.</p> <note> <p>A stack name can
+     * Region in which you are creating the stack.</p>  <p>A stack name can
      * contain only alphanumeric characters (case sensitive) and hyphens. It must start
      * with an alphabetic character and cannot be longer than 128 characters.</p>
-     * </note>
+     * 
      */
     inline CreateStackRequest& WithStackName(Aws::String&& value) { SetStackName(std::move(value)); return *this;}
 
     /**
      * <p>The name that is associated with the stack. The name must be unique in the
-     * Region in which you are creating the stack.</p> <note> <p>A stack name can
+     * Region in which you are creating the stack.</p>  <p>A stack name can
      * contain only alphanumeric characters (case sensitive) and hyphens. It must start
      * with an alphabetic character and cannot be longer than 128 characters.</p>
-     * </note>
+     * 
      */
     inline CreateStackRequest& WithStackName(const char* value) { SetStackName(value); return *this;}
 
@@ -562,12 +562,12 @@ namespace Model
      * transforms, which are macros hosted by AWS CloudFormation.</p> <p>Change sets do
      * not currently support nested stacks. If you want to create a stack from a stack
      * template that contains macros <i>and</i> nested stacks, you must create the
-     * stack directly from the template using this capability.</p> <important> <p>You
+     * stack directly from the template using this capability.</p>  <p>You
      * should only create stacks directly from a stack template that contains macros if
      * you know what processing the macro performs.</p> <p>Each macro relies on an
      * underlying Lambda service function for processing stack templates. Be aware that
      * the Lambda function owner can update the function operation without AWS
-     * CloudFormation being notified.</p> </important> <p>For more information, see <a
+     * CloudFormation being notified.</p>  <p>For more information, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
      * AWS CloudFormation Macros to Perform Custom Processing on Templates</a>.</p>
      * </li> </ul>
@@ -624,12 +624,12 @@ namespace Model
      * transforms, which are macros hosted by AWS CloudFormation.</p> <p>Change sets do
      * not currently support nested stacks. If you want to create a stack from a stack
      * template that contains macros <i>and</i> nested stacks, you must create the
-     * stack directly from the template using this capability.</p> <important> <p>You
+     * stack directly from the template using this capability.</p>  <p>You
      * should only create stacks directly from a stack template that contains macros if
      * you know what processing the macro performs.</p> <p>Each macro relies on an
      * underlying Lambda service function for processing stack templates. Be aware that
      * the Lambda function owner can update the function operation without AWS
-     * CloudFormation being notified.</p> </important> <p>For more information, see <a
+     * CloudFormation being notified.</p>  <p>For more information, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
      * AWS CloudFormation Macros to Perform Custom Processing on Templates</a>.</p>
      * </li> </ul>
@@ -686,12 +686,12 @@ namespace Model
      * transforms, which are macros hosted by AWS CloudFormation.</p> <p>Change sets do
      * not currently support nested stacks. If you want to create a stack from a stack
      * template that contains macros <i>and</i> nested stacks, you must create the
-     * stack directly from the template using this capability.</p> <important> <p>You
+     * stack directly from the template using this capability.</p>  <p>You
      * should only create stacks directly from a stack template that contains macros if
      * you know what processing the macro performs.</p> <p>Each macro relies on an
      * underlying Lambda service function for processing stack templates. Be aware that
      * the Lambda function owner can update the function operation without AWS
-     * CloudFormation being notified.</p> </important> <p>For more information, see <a
+     * CloudFormation being notified.</p>  <p>For more information, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
      * AWS CloudFormation Macros to Perform Custom Processing on Templates</a>.</p>
      * </li> </ul>
@@ -748,12 +748,12 @@ namespace Model
      * transforms, which are macros hosted by AWS CloudFormation.</p> <p>Change sets do
      * not currently support nested stacks. If you want to create a stack from a stack
      * template that contains macros <i>and</i> nested stacks, you must create the
-     * stack directly from the template using this capability.</p> <important> <p>You
+     * stack directly from the template using this capability.</p>  <p>You
      * should only create stacks directly from a stack template that contains macros if
      * you know what processing the macro performs.</p> <p>Each macro relies on an
      * underlying Lambda service function for processing stack templates. Be aware that
      * the Lambda function owner can update the function operation without AWS
-     * CloudFormation being notified.</p> </important> <p>For more information, see <a
+     * CloudFormation being notified.</p>  <p>For more information, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
      * AWS CloudFormation Macros to Perform Custom Processing on Templates</a>.</p>
      * </li> </ul>
@@ -810,12 +810,12 @@ namespace Model
      * transforms, which are macros hosted by AWS CloudFormation.</p> <p>Change sets do
      * not currently support nested stacks. If you want to create a stack from a stack
      * template that contains macros <i>and</i> nested stacks, you must create the
-     * stack directly from the template using this capability.</p> <important> <p>You
+     * stack directly from the template using this capability.</p>  <p>You
      * should only create stacks directly from a stack template that contains macros if
      * you know what processing the macro performs.</p> <p>Each macro relies on an
      * underlying Lambda service function for processing stack templates. Be aware that
      * the Lambda function owner can update the function operation without AWS
-     * CloudFormation being notified.</p> </important> <p>For more information, see <a
+     * CloudFormation being notified.</p>  <p>For more information, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
      * AWS CloudFormation Macros to Perform Custom Processing on Templates</a>.</p>
      * </li> </ul>
@@ -872,12 +872,12 @@ namespace Model
      * transforms, which are macros hosted by AWS CloudFormation.</p> <p>Change sets do
      * not currently support nested stacks. If you want to create a stack from a stack
      * template that contains macros <i>and</i> nested stacks, you must create the
-     * stack directly from the template using this capability.</p> <important> <p>You
+     * stack directly from the template using this capability.</p>  <p>You
      * should only create stacks directly from a stack template that contains macros if
      * you know what processing the macro performs.</p> <p>Each macro relies on an
      * underlying Lambda service function for processing stack templates. Be aware that
      * the Lambda function owner can update the function operation without AWS
-     * CloudFormation being notified.</p> </important> <p>For more information, see <a
+     * CloudFormation being notified.</p>  <p>For more information, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
      * AWS CloudFormation Macros to Perform Custom Processing on Templates</a>.</p>
      * </li> </ul>
@@ -934,12 +934,12 @@ namespace Model
      * transforms, which are macros hosted by AWS CloudFormation.</p> <p>Change sets do
      * not currently support nested stacks. If you want to create a stack from a stack
      * template that contains macros <i>and</i> nested stacks, you must create the
-     * stack directly from the template using this capability.</p> <important> <p>You
+     * stack directly from the template using this capability.</p>  <p>You
      * should only create stacks directly from a stack template that contains macros if
      * you know what processing the macro performs.</p> <p>Each macro relies on an
      * underlying Lambda service function for processing stack templates. Be aware that
      * the Lambda function owner can update the function operation without AWS
-     * CloudFormation being notified.</p> </important> <p>For more information, see <a
+     * CloudFormation being notified.</p>  <p>For more information, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
      * AWS CloudFormation Macros to Perform Custom Processing on Templates</a>.</p>
      * </li> </ul>
@@ -996,12 +996,12 @@ namespace Model
      * transforms, which are macros hosted by AWS CloudFormation.</p> <p>Change sets do
      * not currently support nested stacks. If you want to create a stack from a stack
      * template that contains macros <i>and</i> nested stacks, you must create the
-     * stack directly from the template using this capability.</p> <important> <p>You
+     * stack directly from the template using this capability.</p>  <p>You
      * should only create stacks directly from a stack template that contains macros if
      * you know what processing the macro performs.</p> <p>Each macro relies on an
      * underlying Lambda service function for processing stack templates. Be aware that
      * the Lambda function owner can update the function operation without AWS
-     * CloudFormation being notified.</p> </important> <p>For more information, see <a
+     * CloudFormation being notified.</p>  <p>For more information, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
      * AWS CloudFormation Macros to Perform Custom Processing on Templates</a>.</p>
      * </li> </ul>

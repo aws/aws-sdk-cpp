@@ -378,53 +378,53 @@ namespace Model
 
     /**
      * <p>The amount of time, in seconds, that you want DNS resolvers to cache the
-     * settings for this record.</p> <note> <p>Alias records don't include a TTL
+     * settings for this record.</p>  <p>Alias records don't include a TTL
      * because Route 53 uses the TTL for the AWS resource that an alias record routes
      * traffic to. If you include the <code>AWS_ALIAS_DNS_NAME</code> attribute when
      * you submit a <a
      * href="https://docs.aws.amazon.com/cloud-map/latest/api/API_RegisterInstance.html">RegisterInstance</a>
      * request, the <code>TTL</code> value is ignored. Always specify a TTL for the
      * service; you can use a service to register instances that create either alias or
-     * non-alias records.</p> </note>
+     * non-alias records.</p> 
      */
     inline long long GetTTL() const{ return m_tTL; }
 
     /**
      * <p>The amount of time, in seconds, that you want DNS resolvers to cache the
-     * settings for this record.</p> <note> <p>Alias records don't include a TTL
+     * settings for this record.</p>  <p>Alias records don't include a TTL
      * because Route 53 uses the TTL for the AWS resource that an alias record routes
      * traffic to. If you include the <code>AWS_ALIAS_DNS_NAME</code> attribute when
      * you submit a <a
      * href="https://docs.aws.amazon.com/cloud-map/latest/api/API_RegisterInstance.html">RegisterInstance</a>
      * request, the <code>TTL</code> value is ignored. Always specify a TTL for the
      * service; you can use a service to register instances that create either alias or
-     * non-alias records.</p> </note>
+     * non-alias records.</p> 
      */
     inline bool TTLHasBeenSet() const { return m_tTLHasBeenSet; }
 
     /**
      * <p>The amount of time, in seconds, that you want DNS resolvers to cache the
-     * settings for this record.</p> <note> <p>Alias records don't include a TTL
+     * settings for this record.</p>  <p>Alias records don't include a TTL
      * because Route 53 uses the TTL for the AWS resource that an alias record routes
      * traffic to. If you include the <code>AWS_ALIAS_DNS_NAME</code> attribute when
      * you submit a <a
      * href="https://docs.aws.amazon.com/cloud-map/latest/api/API_RegisterInstance.html">RegisterInstance</a>
      * request, the <code>TTL</code> value is ignored. Always specify a TTL for the
      * service; you can use a service to register instances that create either alias or
-     * non-alias records.</p> </note>
+     * non-alias records.</p> 
      */
     inline void SetTTL(long long value) { m_tTLHasBeenSet = true; m_tTL = value; }
 
     /**
      * <p>The amount of time, in seconds, that you want DNS resolvers to cache the
-     * settings for this record.</p> <note> <p>Alias records don't include a TTL
+     * settings for this record.</p>  <p>Alias records don't include a TTL
      * because Route 53 uses the TTL for the AWS resource that an alias record routes
      * traffic to. If you include the <code>AWS_ALIAS_DNS_NAME</code> attribute when
      * you submit a <a
      * href="https://docs.aws.amazon.com/cloud-map/latest/api/API_RegisterInstance.html">RegisterInstance</a>
      * request, the <code>TTL</code> value is ignored. Always specify a TTL for the
      * service; you can use a service to register instances that create either alias or
-     * non-alias records.</p> </note>
+     * non-alias records.</p> 
      */
     inline DnsRecord& WithTTL(long long value) { SetTTL(value); return *this;}
 

@@ -124,50 +124,50 @@ namespace Model
 
 
     /**
-     * <p> The secret token of the associated repository. </p> <note> <p> A Bitbucket
-     * webhook does not support <code>secret</code>. </p> </note>
+     * <p> The secret token of the associated repository. </p>  <p> A Bitbucket
+     * webhook does not support <code>secret</code>. </p> 
      */
     inline const Aws::String& GetSecret() const{ return m_secret; }
 
     /**
-     * <p> The secret token of the associated repository. </p> <note> <p> A Bitbucket
-     * webhook does not support <code>secret</code>. </p> </note>
+     * <p> The secret token of the associated repository. </p>  <p> A Bitbucket
+     * webhook does not support <code>secret</code>. </p> 
      */
     inline bool SecretHasBeenSet() const { return m_secretHasBeenSet; }
 
     /**
-     * <p> The secret token of the associated repository. </p> <note> <p> A Bitbucket
-     * webhook does not support <code>secret</code>. </p> </note>
+     * <p> The secret token of the associated repository. </p>  <p> A Bitbucket
+     * webhook does not support <code>secret</code>. </p> 
      */
     inline void SetSecret(const Aws::String& value) { m_secretHasBeenSet = true; m_secret = value; }
 
     /**
-     * <p> The secret token of the associated repository. </p> <note> <p> A Bitbucket
-     * webhook does not support <code>secret</code>. </p> </note>
+     * <p> The secret token of the associated repository. </p>  <p> A Bitbucket
+     * webhook does not support <code>secret</code>. </p> 
      */
     inline void SetSecret(Aws::String&& value) { m_secretHasBeenSet = true; m_secret = std::move(value); }
 
     /**
-     * <p> The secret token of the associated repository. </p> <note> <p> A Bitbucket
-     * webhook does not support <code>secret</code>. </p> </note>
+     * <p> The secret token of the associated repository. </p>  <p> A Bitbucket
+     * webhook does not support <code>secret</code>. </p> 
      */
     inline void SetSecret(const char* value) { m_secretHasBeenSet = true; m_secret.assign(value); }
 
     /**
-     * <p> The secret token of the associated repository. </p> <note> <p> A Bitbucket
-     * webhook does not support <code>secret</code>. </p> </note>
+     * <p> The secret token of the associated repository. </p>  <p> A Bitbucket
+     * webhook does not support <code>secret</code>. </p> 
      */
     inline Webhook& WithSecret(const Aws::String& value) { SetSecret(value); return *this;}
 
     /**
-     * <p> The secret token of the associated repository. </p> <note> <p> A Bitbucket
-     * webhook does not support <code>secret</code>. </p> </note>
+     * <p> The secret token of the associated repository. </p>  <p> A Bitbucket
+     * webhook does not support <code>secret</code>. </p> 
      */
     inline Webhook& WithSecret(Aws::String&& value) { SetSecret(std::move(value)); return *this;}
 
     /**
-     * <p> The secret token of the associated repository. </p> <note> <p> A Bitbucket
-     * webhook does not support <code>secret</code>. </p> </note>
+     * <p> The secret token of the associated repository. </p>  <p> A Bitbucket
+     * webhook does not support <code>secret</code>. </p> 
      */
     inline Webhook& WithSecret(const char* value) { SetSecret(value); return *this;}
 
@@ -176,8 +176,8 @@ namespace Model
      * <p>A regular expression used to determine which repository branches are built
      * when a webhook is triggered. If the name of a branch matches the regular
      * expression, then it is built. If <code>branchFilter</code> is empty, then all
-     * branches are built.</p> <note> <p> It is recommended that you use
-     * <code>filterGroups</code> instead of <code>branchFilter</code>. </p> </note>
+     * branches are built.</p>  <p> It is recommended that you use
+     * <code>filterGroups</code> instead of <code>branchFilter</code>. </p> 
      */
     inline const Aws::String& GetBranchFilter() const{ return m_branchFilter; }
 
@@ -185,8 +185,8 @@ namespace Model
      * <p>A regular expression used to determine which repository branches are built
      * when a webhook is triggered. If the name of a branch matches the regular
      * expression, then it is built. If <code>branchFilter</code> is empty, then all
-     * branches are built.</p> <note> <p> It is recommended that you use
-     * <code>filterGroups</code> instead of <code>branchFilter</code>. </p> </note>
+     * branches are built.</p>  <p> It is recommended that you use
+     * <code>filterGroups</code> instead of <code>branchFilter</code>. </p> 
      */
     inline bool BranchFilterHasBeenSet() const { return m_branchFilterHasBeenSet; }
 
@@ -194,8 +194,8 @@ namespace Model
      * <p>A regular expression used to determine which repository branches are built
      * when a webhook is triggered. If the name of a branch matches the regular
      * expression, then it is built. If <code>branchFilter</code> is empty, then all
-     * branches are built.</p> <note> <p> It is recommended that you use
-     * <code>filterGroups</code> instead of <code>branchFilter</code>. </p> </note>
+     * branches are built.</p>  <p> It is recommended that you use
+     * <code>filterGroups</code> instead of <code>branchFilter</code>. </p> 
      */
     inline void SetBranchFilter(const Aws::String& value) { m_branchFilterHasBeenSet = true; m_branchFilter = value; }
 
@@ -203,8 +203,8 @@ namespace Model
      * <p>A regular expression used to determine which repository branches are built
      * when a webhook is triggered. If the name of a branch matches the regular
      * expression, then it is built. If <code>branchFilter</code> is empty, then all
-     * branches are built.</p> <note> <p> It is recommended that you use
-     * <code>filterGroups</code> instead of <code>branchFilter</code>. </p> </note>
+     * branches are built.</p>  <p> It is recommended that you use
+     * <code>filterGroups</code> instead of <code>branchFilter</code>. </p> 
      */
     inline void SetBranchFilter(Aws::String&& value) { m_branchFilterHasBeenSet = true; m_branchFilter = std::move(value); }
 
@@ -212,8 +212,8 @@ namespace Model
      * <p>A regular expression used to determine which repository branches are built
      * when a webhook is triggered. If the name of a branch matches the regular
      * expression, then it is built. If <code>branchFilter</code> is empty, then all
-     * branches are built.</p> <note> <p> It is recommended that you use
-     * <code>filterGroups</code> instead of <code>branchFilter</code>. </p> </note>
+     * branches are built.</p>  <p> It is recommended that you use
+     * <code>filterGroups</code> instead of <code>branchFilter</code>. </p> 
      */
     inline void SetBranchFilter(const char* value) { m_branchFilterHasBeenSet = true; m_branchFilter.assign(value); }
 
@@ -221,8 +221,8 @@ namespace Model
      * <p>A regular expression used to determine which repository branches are built
      * when a webhook is triggered. If the name of a branch matches the regular
      * expression, then it is built. If <code>branchFilter</code> is empty, then all
-     * branches are built.</p> <note> <p> It is recommended that you use
-     * <code>filterGroups</code> instead of <code>branchFilter</code>. </p> </note>
+     * branches are built.</p>  <p> It is recommended that you use
+     * <code>filterGroups</code> instead of <code>branchFilter</code>. </p> 
      */
     inline Webhook& WithBranchFilter(const Aws::String& value) { SetBranchFilter(value); return *this;}
 
@@ -230,8 +230,8 @@ namespace Model
      * <p>A regular expression used to determine which repository branches are built
      * when a webhook is triggered. If the name of a branch matches the regular
      * expression, then it is built. If <code>branchFilter</code> is empty, then all
-     * branches are built.</p> <note> <p> It is recommended that you use
-     * <code>filterGroups</code> instead of <code>branchFilter</code>. </p> </note>
+     * branches are built.</p>  <p> It is recommended that you use
+     * <code>filterGroups</code> instead of <code>branchFilter</code>. </p> 
      */
     inline Webhook& WithBranchFilter(Aws::String&& value) { SetBranchFilter(std::move(value)); return *this;}
 
@@ -239,8 +239,8 @@ namespace Model
      * <p>A regular expression used to determine which repository branches are built
      * when a webhook is triggered. If the name of a branch matches the regular
      * expression, then it is built. If <code>branchFilter</code> is empty, then all
-     * branches are built.</p> <note> <p> It is recommended that you use
-     * <code>filterGroups</code> instead of <code>branchFilter</code>. </p> </note>
+     * branches are built.</p>  <p> It is recommended that you use
+     * <code>filterGroups</code> instead of <code>branchFilter</code>. </p> 
      */
     inline Webhook& WithBranchFilter(const char* value) { SetBranchFilter(value); return *this;}
 

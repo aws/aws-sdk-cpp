@@ -25,6 +25,12 @@ namespace AppMesh
 namespace Model
 {
 
+  /**
+   * <p>An object that represents timeouts for different protocols.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/ListenerTimeout">AWS
+   * API Reference</a></p>
+   */
   class AWS_APPMESH_API ListenerTimeout
   {
   public:
@@ -53,60 +59,96 @@ namespace Model
     inline ListenerTimeout& WithGrpc(GrpcTimeout&& value) { SetGrpc(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p>An object that represents types of timeouts. </p>
+     */
     inline const HttpTimeout& GetHttp() const{ return m_http; }
 
-    
+    /**
+     * <p>An object that represents types of timeouts. </p>
+     */
     inline bool HttpHasBeenSet() const { return m_httpHasBeenSet; }
 
-    
+    /**
+     * <p>An object that represents types of timeouts. </p>
+     */
     inline void SetHttp(const HttpTimeout& value) { m_httpHasBeenSet = true; m_http = value; }
 
-    
+    /**
+     * <p>An object that represents types of timeouts. </p>
+     */
     inline void SetHttp(HttpTimeout&& value) { m_httpHasBeenSet = true; m_http = std::move(value); }
 
-    
+    /**
+     * <p>An object that represents types of timeouts. </p>
+     */
     inline ListenerTimeout& WithHttp(const HttpTimeout& value) { SetHttp(value); return *this;}
 
-    
+    /**
+     * <p>An object that represents types of timeouts. </p>
+     */
     inline ListenerTimeout& WithHttp(HttpTimeout&& value) { SetHttp(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p>An object that represents types of timeouts. </p>
+     */
     inline const HttpTimeout& GetHttp2() const{ return m_http2; }
 
-    
+    /**
+     * <p>An object that represents types of timeouts. </p>
+     */
     inline bool Http2HasBeenSet() const { return m_http2HasBeenSet; }
 
-    
+    /**
+     * <p>An object that represents types of timeouts. </p>
+     */
     inline void SetHttp2(const HttpTimeout& value) { m_http2HasBeenSet = true; m_http2 = value; }
 
-    
+    /**
+     * <p>An object that represents types of timeouts. </p>
+     */
     inline void SetHttp2(HttpTimeout&& value) { m_http2HasBeenSet = true; m_http2 = std::move(value); }
 
-    
+    /**
+     * <p>An object that represents types of timeouts. </p>
+     */
     inline ListenerTimeout& WithHttp2(const HttpTimeout& value) { SetHttp2(value); return *this;}
 
-    
+    /**
+     * <p>An object that represents types of timeouts. </p>
+     */
     inline ListenerTimeout& WithHttp2(HttpTimeout&& value) { SetHttp2(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p>An object that represents types of timeouts. </p>
+     */
     inline const TcpTimeout& GetTcp() const{ return m_tcp; }
 
-    
+    /**
+     * <p>An object that represents types of timeouts. </p>
+     */
     inline bool TcpHasBeenSet() const { return m_tcpHasBeenSet; }
 
-    
+    /**
+     * <p>An object that represents types of timeouts. </p>
+     */
     inline void SetTcp(const TcpTimeout& value) { m_tcpHasBeenSet = true; m_tcp = value; }
 
-    
+    /**
+     * <p>An object that represents types of timeouts. </p>
+     */
     inline void SetTcp(TcpTimeout&& value) { m_tcpHasBeenSet = true; m_tcp = std::move(value); }
 
-    
+    /**
+     * <p>An object that represents types of timeouts. </p>
+     */
     inline ListenerTimeout& WithTcp(const TcpTimeout& value) { SetTcp(value); return *this;}
 
-    
+    /**
+     * <p>An object that represents types of timeouts. </p>
+     */
     inline ListenerTimeout& WithTcp(TcpTimeout&& value) { SetTcp(std::move(value)); return *this;}
 
   private:

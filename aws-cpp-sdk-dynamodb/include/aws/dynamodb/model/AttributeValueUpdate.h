@@ -26,10 +26,10 @@ namespace Model
 
   /**
    * <p>For the <code>UpdateItem</code> operation, represents the attributes to be
-   * modified, the action to perform on each, and the new value for each.</p> <note>
+   * modified, the action to perform on each, and the new value for each.</p> 
    * <p>You cannot use <code>UpdateItem</code> to update any primary key attributes.
    * Instead, you will need to delete the item, and then use <code>PutItem</code> to
-   * create a new item with new attributes.</p> </note> <p>Attribute values cannot be
+   * create a new item with new attributes.</p>  <p>Attribute values cannot be
    * null; string and binary type attributes must have lengths greater than zero; and
    * set type attributes must not be empty. Requests with empty values will be
    * rejected with a <code>ValidationException</code> exception.</p><p><h3>See
@@ -121,7 +121,7 @@ namespace Model
      * <li> <p>If the existing attribute is a number, and if <code>Value</code> is also
      * a number, then the <code>Value</code> is mathematically added to the existing
      * attribute. If <code>Value</code> is a negative number, then it is subtracted
-     * from the existing attribute.</p> <note> <p> If you use <code>ADD</code> to
+     * from the existing attribute.</p>  <p> If you use <code>ADD</code> to
      * increment or decrement a number value for an item that doesn't exist before the
      * update, DynamoDB uses 0 as the initial value.</p> <p>In addition, if you use
      * <code>ADD</code> to update an existing item, and intend to increment or
@@ -132,7 +132,7 @@ namespace Model
      * though it currently does not exist. DynamoDB will create the <i>itemcount</i>
      * attribute, set its initial value to <code>0</code>, and finally add
      * <code>3</code> to it. The result will be a new <i>itemcount</i> attribute in the
-     * item, with a value of <code>3</code>.</p> </note> </li> <li> <p>If the existing
+     * item, with a value of <code>3</code>.</p>  </li> <li> <p>If the existing
      * data type is a set, and if the <code>Value</code> is also a set, then the
      * <code>Value</code> is added to the existing set. (This is a <i>set</i>
      * operation, not mathematical addition.) For example, if the attribute value was
@@ -175,7 +175,7 @@ namespace Model
      * <li> <p>If the existing attribute is a number, and if <code>Value</code> is also
      * a number, then the <code>Value</code> is mathematically added to the existing
      * attribute. If <code>Value</code> is a negative number, then it is subtracted
-     * from the existing attribute.</p> <note> <p> If you use <code>ADD</code> to
+     * from the existing attribute.</p>  <p> If you use <code>ADD</code> to
      * increment or decrement a number value for an item that doesn't exist before the
      * update, DynamoDB uses 0 as the initial value.</p> <p>In addition, if you use
      * <code>ADD</code> to update an existing item, and intend to increment or
@@ -186,7 +186,7 @@ namespace Model
      * though it currently does not exist. DynamoDB will create the <i>itemcount</i>
      * attribute, set its initial value to <code>0</code>, and finally add
      * <code>3</code> to it. The result will be a new <i>itemcount</i> attribute in the
-     * item, with a value of <code>3</code>.</p> </note> </li> <li> <p>If the existing
+     * item, with a value of <code>3</code>.</p>  </li> <li> <p>If the existing
      * data type is a set, and if the <code>Value</code> is also a set, then the
      * <code>Value</code> is added to the existing set. (This is a <i>set</i>
      * operation, not mathematical addition.) For example, if the attribute value was
@@ -229,7 +229,7 @@ namespace Model
      * <li> <p>If the existing attribute is a number, and if <code>Value</code> is also
      * a number, then the <code>Value</code> is mathematically added to the existing
      * attribute. If <code>Value</code> is a negative number, then it is subtracted
-     * from the existing attribute.</p> <note> <p> If you use <code>ADD</code> to
+     * from the existing attribute.</p>  <p> If you use <code>ADD</code> to
      * increment or decrement a number value for an item that doesn't exist before the
      * update, DynamoDB uses 0 as the initial value.</p> <p>In addition, if you use
      * <code>ADD</code> to update an existing item, and intend to increment or
@@ -240,7 +240,7 @@ namespace Model
      * though it currently does not exist. DynamoDB will create the <i>itemcount</i>
      * attribute, set its initial value to <code>0</code>, and finally add
      * <code>3</code> to it. The result will be a new <i>itemcount</i> attribute in the
-     * item, with a value of <code>3</code>.</p> </note> </li> <li> <p>If the existing
+     * item, with a value of <code>3</code>.</p>  </li> <li> <p>If the existing
      * data type is a set, and if the <code>Value</code> is also a set, then the
      * <code>Value</code> is added to the existing set. (This is a <i>set</i>
      * operation, not mathematical addition.) For example, if the attribute value was
@@ -283,7 +283,7 @@ namespace Model
      * <li> <p>If the existing attribute is a number, and if <code>Value</code> is also
      * a number, then the <code>Value</code> is mathematically added to the existing
      * attribute. If <code>Value</code> is a negative number, then it is subtracted
-     * from the existing attribute.</p> <note> <p> If you use <code>ADD</code> to
+     * from the existing attribute.</p>  <p> If you use <code>ADD</code> to
      * increment or decrement a number value for an item that doesn't exist before the
      * update, DynamoDB uses 0 as the initial value.</p> <p>In addition, if you use
      * <code>ADD</code> to update an existing item, and intend to increment or
@@ -294,7 +294,7 @@ namespace Model
      * though it currently does not exist. DynamoDB will create the <i>itemcount</i>
      * attribute, set its initial value to <code>0</code>, and finally add
      * <code>3</code> to it. The result will be a new <i>itemcount</i> attribute in the
-     * item, with a value of <code>3</code>.</p> </note> </li> <li> <p>If the existing
+     * item, with a value of <code>3</code>.</p>  </li> <li> <p>If the existing
      * data type is a set, and if the <code>Value</code> is also a set, then the
      * <code>Value</code> is added to the existing set. (This is a <i>set</i>
      * operation, not mathematical addition.) For example, if the attribute value was
@@ -337,7 +337,7 @@ namespace Model
      * <li> <p>If the existing attribute is a number, and if <code>Value</code> is also
      * a number, then the <code>Value</code> is mathematically added to the existing
      * attribute. If <code>Value</code> is a negative number, then it is subtracted
-     * from the existing attribute.</p> <note> <p> If you use <code>ADD</code> to
+     * from the existing attribute.</p>  <p> If you use <code>ADD</code> to
      * increment or decrement a number value for an item that doesn't exist before the
      * update, DynamoDB uses 0 as the initial value.</p> <p>In addition, if you use
      * <code>ADD</code> to update an existing item, and intend to increment or
@@ -348,7 +348,7 @@ namespace Model
      * though it currently does not exist. DynamoDB will create the <i>itemcount</i>
      * attribute, set its initial value to <code>0</code>, and finally add
      * <code>3</code> to it. The result will be a new <i>itemcount</i> attribute in the
-     * item, with a value of <code>3</code>.</p> </note> </li> <li> <p>If the existing
+     * item, with a value of <code>3</code>.</p>  </li> <li> <p>If the existing
      * data type is a set, and if the <code>Value</code> is also a set, then the
      * <code>Value</code> is added to the existing set. (This is a <i>set</i>
      * operation, not mathematical addition.) For example, if the attribute value was
@@ -391,7 +391,7 @@ namespace Model
      * <li> <p>If the existing attribute is a number, and if <code>Value</code> is also
      * a number, then the <code>Value</code> is mathematically added to the existing
      * attribute. If <code>Value</code> is a negative number, then it is subtracted
-     * from the existing attribute.</p> <note> <p> If you use <code>ADD</code> to
+     * from the existing attribute.</p>  <p> If you use <code>ADD</code> to
      * increment or decrement a number value for an item that doesn't exist before the
      * update, DynamoDB uses 0 as the initial value.</p> <p>In addition, if you use
      * <code>ADD</code> to update an existing item, and intend to increment or
@@ -402,7 +402,7 @@ namespace Model
      * though it currently does not exist. DynamoDB will create the <i>itemcount</i>
      * attribute, set its initial value to <code>0</code>, and finally add
      * <code>3</code> to it. The result will be a new <i>itemcount</i> attribute in the
-     * item, with a value of <code>3</code>.</p> </note> </li> <li> <p>If the existing
+     * item, with a value of <code>3</code>.</p>  </li> <li> <p>If the existing
      * data type is a set, and if the <code>Value</code> is also a set, then the
      * <code>Value</code> is added to the existing set. (This is a <i>set</i>
      * operation, not mathematical addition.) For example, if the attribute value was

@@ -410,9 +410,9 @@ namespace Model
 
         /**
          * <p>Archives GuardDuty findings that are specified by the list of finding
-         * IDs.</p> <note> <p>Only the master account can archive findings. Member accounts
+         * IDs.</p>  <p>Only the master account can archive findings. Member accounts
          * don't have permission to archive findings from their accounts.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ArchiveFindings">AWS
          * API Reference</a></p>
          */
@@ -420,9 +420,9 @@ namespace Model
 
         /**
          * <p>Archives GuardDuty findings that are specified by the list of finding
-         * IDs.</p> <note> <p>Only the master account can archive findings. Member accounts
+         * IDs.</p>  <p>Only the master account can archive findings. Member accounts
          * don't have permission to archive findings from their accounts.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ArchiveFindings">AWS
          * API Reference</a></p>
          *
@@ -432,9 +432,9 @@ namespace Model
 
         /**
          * <p>Archives GuardDuty findings that are specified by the list of finding
-         * IDs.</p> <note> <p>Only the master account can archive findings. Member accounts
+         * IDs.</p>  <p>Only the master account can archive findings. Member accounts
          * don't have permission to archive findings from their accounts.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ArchiveFindings">AWS
          * API Reference</a></p>
          *

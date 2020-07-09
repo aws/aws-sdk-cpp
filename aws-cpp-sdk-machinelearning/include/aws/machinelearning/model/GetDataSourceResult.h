@@ -683,50 +683,50 @@ namespace Model
 
     /**
      * <p>The schema used by all of the data files of this <code>DataSource</code>.</p>
-     * <note><title>Note</title> <p>This parameter is provided as part of the verbose
-     * format.</p></note>
+     * <title>Note</title> <p>This parameter is provided as part of the verbose
+     * format.</p>
      */
     inline const Aws::String& GetDataSourceSchema() const{ return m_dataSourceSchema; }
 
     /**
      * <p>The schema used by all of the data files of this <code>DataSource</code>.</p>
-     * <note><title>Note</title> <p>This parameter is provided as part of the verbose
-     * format.</p></note>
+     * <title>Note</title> <p>This parameter is provided as part of the verbose
+     * format.</p>
      */
     inline void SetDataSourceSchema(const Aws::String& value) { m_dataSourceSchema = value; }
 
     /**
      * <p>The schema used by all of the data files of this <code>DataSource</code>.</p>
-     * <note><title>Note</title> <p>This parameter is provided as part of the verbose
-     * format.</p></note>
+     * <title>Note</title> <p>This parameter is provided as part of the verbose
+     * format.</p>
      */
     inline void SetDataSourceSchema(Aws::String&& value) { m_dataSourceSchema = std::move(value); }
 
     /**
      * <p>The schema used by all of the data files of this <code>DataSource</code>.</p>
-     * <note><title>Note</title> <p>This parameter is provided as part of the verbose
-     * format.</p></note>
+     * <title>Note</title> <p>This parameter is provided as part of the verbose
+     * format.</p>
      */
     inline void SetDataSourceSchema(const char* value) { m_dataSourceSchema.assign(value); }
 
     /**
      * <p>The schema used by all of the data files of this <code>DataSource</code>.</p>
-     * <note><title>Note</title> <p>This parameter is provided as part of the verbose
-     * format.</p></note>
+     * <title>Note</title> <p>This parameter is provided as part of the verbose
+     * format.</p>
      */
     inline GetDataSourceResult& WithDataSourceSchema(const Aws::String& value) { SetDataSourceSchema(value); return *this;}
 
     /**
      * <p>The schema used by all of the data files of this <code>DataSource</code>.</p>
-     * <note><title>Note</title> <p>This parameter is provided as part of the verbose
-     * format.</p></note>
+     * <title>Note</title> <p>This parameter is provided as part of the verbose
+     * format.</p>
      */
     inline GetDataSourceResult& WithDataSourceSchema(Aws::String&& value) { SetDataSourceSchema(std::move(value)); return *this;}
 
     /**
      * <p>The schema used by all of the data files of this <code>DataSource</code>.</p>
-     * <note><title>Note</title> <p>This parameter is provided as part of the verbose
-     * format.</p></note>
+     * <title>Note</title> <p>This parameter is provided as part of the verbose
+     * format.</p>
      */
     inline GetDataSourceResult& WithDataSourceSchema(const char* value) { SetDataSourceSchema(value); return *this;}
 

@@ -194,7 +194,7 @@ namespace Model
      * the maximum number of records in each request, up to the
      * <code>MaxPayloadInMB</code> limit. If the value of <code>BatchStrategy</code> is
      * <code>SingleRecord</code>, Amazon SageMaker sends individual records in each
-     * request.</p> <note> <p>Some data formats represent a record as a binary payload
+     * request.</p>  <p>Some data formats represent a record as a binary payload
      * wrapped with extra padding bytes. When splitting is applied to a binary data
      * format, padding is removed if the value of <code>BatchStrategy</code> is set to
      * <code>SingleRecord</code>. Padding is not removed if the value of
@@ -204,7 +204,7 @@ namespace Model
      * RecordIO</a> in the MXNet documentation. For more information about
      * <code>TFRecord</code>, see <a
      * href="https://www.tensorflow.org/guide/datasets#consuming_tfrecord_data">Consuming
-     * TFRecord data</a> in the TensorFlow documentation.</p> </note>
+     * TFRecord data</a> in the TensorFlow documentation.</p> 
      */
     inline const SplitType& GetSplitType() const{ return m_splitType; }
 
@@ -224,7 +224,7 @@ namespace Model
      * the maximum number of records in each request, up to the
      * <code>MaxPayloadInMB</code> limit. If the value of <code>BatchStrategy</code> is
      * <code>SingleRecord</code>, Amazon SageMaker sends individual records in each
-     * request.</p> <note> <p>Some data formats represent a record as a binary payload
+     * request.</p>  <p>Some data formats represent a record as a binary payload
      * wrapped with extra padding bytes. When splitting is applied to a binary data
      * format, padding is removed if the value of <code>BatchStrategy</code> is set to
      * <code>SingleRecord</code>. Padding is not removed if the value of
@@ -234,7 +234,7 @@ namespace Model
      * RecordIO</a> in the MXNet documentation. For more information about
      * <code>TFRecord</code>, see <a
      * href="https://www.tensorflow.org/guide/datasets#consuming_tfrecord_data">Consuming
-     * TFRecord data</a> in the TensorFlow documentation.</p> </note>
+     * TFRecord data</a> in the TensorFlow documentation.</p> 
      */
     inline bool SplitTypeHasBeenSet() const { return m_splitTypeHasBeenSet; }
 
@@ -254,7 +254,7 @@ namespace Model
      * the maximum number of records in each request, up to the
      * <code>MaxPayloadInMB</code> limit. If the value of <code>BatchStrategy</code> is
      * <code>SingleRecord</code>, Amazon SageMaker sends individual records in each
-     * request.</p> <note> <p>Some data formats represent a record as a binary payload
+     * request.</p>  <p>Some data formats represent a record as a binary payload
      * wrapped with extra padding bytes. When splitting is applied to a binary data
      * format, padding is removed if the value of <code>BatchStrategy</code> is set to
      * <code>SingleRecord</code>. Padding is not removed if the value of
@@ -264,7 +264,7 @@ namespace Model
      * RecordIO</a> in the MXNet documentation. For more information about
      * <code>TFRecord</code>, see <a
      * href="https://www.tensorflow.org/guide/datasets#consuming_tfrecord_data">Consuming
-     * TFRecord data</a> in the TensorFlow documentation.</p> </note>
+     * TFRecord data</a> in the TensorFlow documentation.</p> 
      */
     inline void SetSplitType(const SplitType& value) { m_splitTypeHasBeenSet = true; m_splitType = value; }
 
@@ -284,7 +284,7 @@ namespace Model
      * the maximum number of records in each request, up to the
      * <code>MaxPayloadInMB</code> limit. If the value of <code>BatchStrategy</code> is
      * <code>SingleRecord</code>, Amazon SageMaker sends individual records in each
-     * request.</p> <note> <p>Some data formats represent a record as a binary payload
+     * request.</p>  <p>Some data formats represent a record as a binary payload
      * wrapped with extra padding bytes. When splitting is applied to a binary data
      * format, padding is removed if the value of <code>BatchStrategy</code> is set to
      * <code>SingleRecord</code>. Padding is not removed if the value of
@@ -294,7 +294,7 @@ namespace Model
      * RecordIO</a> in the MXNet documentation. For more information about
      * <code>TFRecord</code>, see <a
      * href="https://www.tensorflow.org/guide/datasets#consuming_tfrecord_data">Consuming
-     * TFRecord data</a> in the TensorFlow documentation.</p> </note>
+     * TFRecord data</a> in the TensorFlow documentation.</p> 
      */
     inline void SetSplitType(SplitType&& value) { m_splitTypeHasBeenSet = true; m_splitType = std::move(value); }
 
@@ -314,7 +314,7 @@ namespace Model
      * the maximum number of records in each request, up to the
      * <code>MaxPayloadInMB</code> limit. If the value of <code>BatchStrategy</code> is
      * <code>SingleRecord</code>, Amazon SageMaker sends individual records in each
-     * request.</p> <note> <p>Some data formats represent a record as a binary payload
+     * request.</p>  <p>Some data formats represent a record as a binary payload
      * wrapped with extra padding bytes. When splitting is applied to a binary data
      * format, padding is removed if the value of <code>BatchStrategy</code> is set to
      * <code>SingleRecord</code>. Padding is not removed if the value of
@@ -324,7 +324,7 @@ namespace Model
      * RecordIO</a> in the MXNet documentation. For more information about
      * <code>TFRecord</code>, see <a
      * href="https://www.tensorflow.org/guide/datasets#consuming_tfrecord_data">Consuming
-     * TFRecord data</a> in the TensorFlow documentation.</p> </note>
+     * TFRecord data</a> in the TensorFlow documentation.</p> 
      */
     inline TransformInput& WithSplitType(const SplitType& value) { SetSplitType(value); return *this;}
 
@@ -344,7 +344,7 @@ namespace Model
      * the maximum number of records in each request, up to the
      * <code>MaxPayloadInMB</code> limit. If the value of <code>BatchStrategy</code> is
      * <code>SingleRecord</code>, Amazon SageMaker sends individual records in each
-     * request.</p> <note> <p>Some data formats represent a record as a binary payload
+     * request.</p>  <p>Some data formats represent a record as a binary payload
      * wrapped with extra padding bytes. When splitting is applied to a binary data
      * format, padding is removed if the value of <code>BatchStrategy</code> is set to
      * <code>SingleRecord</code>. Padding is not removed if the value of
@@ -354,7 +354,7 @@ namespace Model
      * RecordIO</a> in the MXNet documentation. For more information about
      * <code>TFRecord</code>, see <a
      * href="https://www.tensorflow.org/guide/datasets#consuming_tfrecord_data">Consuming
-     * TFRecord data</a> in the TensorFlow documentation.</p> </note>
+     * TFRecord data</a> in the TensorFlow documentation.</p> 
      */
     inline TransformInput& WithSplitType(SplitType&& value) { SetSplitType(std::move(value)); return *this;}
 

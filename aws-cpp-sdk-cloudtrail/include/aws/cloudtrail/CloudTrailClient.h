@@ -154,7 +154,7 @@ namespace Model
    * calls for your AWS account and delivers log files to an Amazon S3 bucket. The
    * recorded information includes the identity of the user, the start time of the
    * AWS API call, the source IP address, the request parameters, and the response
-   * elements returned by the service.</p> <note> <p>As an alternative to the API,
+   * elements returned by the service.</p>  <p>As an alternative to the API,
    * you can use one of the AWS SDKs, which consist of libraries and sample code for
    * various programming languages and platforms (Java, Ruby, .NET, iOS, Android,
    * etc.). The SDKs provide a convenient way to create programmatic access to
@@ -162,7 +162,7 @@ namespace Model
    * requests, managing errors, and retrying requests automatically. For information
    * about the AWS SDKs, including how to download and install them, see the <a
    * href="http://aws.amazon.com/tools/">Tools for Amazon Web Services page</a>.</p>
-   * </note> <p>See the <a
+   *  <p>See the <a
    * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-user-guide.html">AWS
    * CloudTrail User Guide</a> for information about the data that is included with
    * each AWS API call listed in the log files.</p>
@@ -501,11 +501,11 @@ namespace Model
         /**
          * <p>Returns all public keys whose private keys were used to sign the digest files
          * within the specified time range. The public key is needed to validate digest
-         * files that were signed with its corresponding private key.</p> <note>
+         * files that were signed with its corresponding private key.</p> 
          * <p>CloudTrail uses different private/public key pairs per region. Each digest
          * file is signed with a private key unique to its region. Therefore, when you
          * validate a digest file from a particular region, you must look in the same
-         * region for its corresponding public key.</p> </note><p><h3>See Also:</h3>   <a
+         * region for its corresponding public key.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/ListPublicKeys">AWS
          * API Reference</a></p>
          */
@@ -514,11 +514,11 @@ namespace Model
         /**
          * <p>Returns all public keys whose private keys were used to sign the digest files
          * within the specified time range. The public key is needed to validate digest
-         * files that were signed with its corresponding private key.</p> <note>
+         * files that were signed with its corresponding private key.</p> 
          * <p>CloudTrail uses different private/public key pairs per region. Each digest
          * file is signed with a private key unique to its region. Therefore, when you
          * validate a digest file from a particular region, you must look in the same
-         * region for its corresponding public key.</p> </note><p><h3>See Also:</h3>   <a
+         * region for its corresponding public key.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/ListPublicKeys">AWS
          * API Reference</a></p>
          *
@@ -529,11 +529,11 @@ namespace Model
         /**
          * <p>Returns all public keys whose private keys were used to sign the digest files
          * within the specified time range. The public key is needed to validate digest
-         * files that were signed with its corresponding private key.</p> <note>
+         * files that were signed with its corresponding private key.</p> 
          * <p>CloudTrail uses different private/public key pairs per region. Each digest
          * file is signed with a private key unique to its region. Therefore, when you
          * validate a digest file from a particular region, you must look in the same
-         * region for its corresponding public key.</p> </note><p><h3>See Also:</h3>   <a
+         * region for its corresponding public key.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/ListPublicKeys">AWS
          * API Reference</a></p>
          *
@@ -609,9 +609,9 @@ namespace Model
          * </li> <li> <p>Event name</p> </li> <li> <p>Event source</p> </li> </ul> <p>All
          * attributes are optional. The default number of results returned is 50, with a
          * maximum of 50 possible. The response includes a token that you can use to get
-         * the next page of results.</p> <important> <p>The rate of lookup requests is
+         * the next page of results.</p>  <p>The rate of lookup requests is
          * limited to two per second per account. If this limit is exceeded, a throttling
-         * error occurs.</p> </important><p><h3>See Also:</h3>   <a
+         * error occurs.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/LookupEvents">AWS
          * API Reference</a></p>
          */
@@ -632,9 +632,9 @@ namespace Model
          * </li> <li> <p>Event name</p> </li> <li> <p>Event source</p> </li> </ul> <p>All
          * attributes are optional. The default number of results returned is 50, with a
          * maximum of 50 possible. The response includes a token that you can use to get
-         * the next page of results.</p> <important> <p>The rate of lookup requests is
+         * the next page of results.</p>  <p>The rate of lookup requests is
          * limited to two per second per account. If this limit is exceeded, a throttling
-         * error occurs.</p> </important><p><h3>See Also:</h3>   <a
+         * error occurs.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/LookupEvents">AWS
          * API Reference</a></p>
          *
@@ -657,9 +657,9 @@ namespace Model
          * </li> <li> <p>Event name</p> </li> <li> <p>Event source</p> </li> </ul> <p>All
          * attributes are optional. The default number of results returned is 50, with a
          * maximum of 50 possible. The response includes a token that you can use to get
-         * the next page of results.</p> <important> <p>The rate of lookup requests is
+         * the next page of results.</p>  <p>The rate of lookup requests is
          * limited to two per second per account. If this limit is exceeded, a throttling
-         * error occurs.</p> </important><p><h3>See Also:</h3>   <a
+         * error occurs.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/LookupEvents">AWS
          * API Reference</a></p>
          *

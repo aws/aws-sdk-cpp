@@ -219,11 +219,11 @@ namespace Model
      * the function will be invoked asynchronously. The default value is
      * <code>Event</code>. For information about AWS Lambda invocation types, see the
      * <a href="https://docs.aws.amazon.com/lambda/latest/dg/API_Invoke.html">AWS
-     * Lambda Developer Guide</a>.</p> <important> <p>There is a 30-second timeout on
+     * Lambda Developer Guide</a>.</p>  <p>There is a 30-second timeout on
      * <code>RequestResponse</code> invocations. You should use <code>Event</code>
      * invocation in most cases. Use <code>RequestResponse</code> only when you want to
      * make a mail flow decision, such as whether to stop the receipt rule or the
-     * receipt rule set.</p> </important>
+     * receipt rule set.</p> 
      */
     inline const InvocationType& GetInvocationType() const{ return m_invocationType; }
 
@@ -234,11 +234,11 @@ namespace Model
      * the function will be invoked asynchronously. The default value is
      * <code>Event</code>. For information about AWS Lambda invocation types, see the
      * <a href="https://docs.aws.amazon.com/lambda/latest/dg/API_Invoke.html">AWS
-     * Lambda Developer Guide</a>.</p> <important> <p>There is a 30-second timeout on
+     * Lambda Developer Guide</a>.</p>  <p>There is a 30-second timeout on
      * <code>RequestResponse</code> invocations. You should use <code>Event</code>
      * invocation in most cases. Use <code>RequestResponse</code> only when you want to
      * make a mail flow decision, such as whether to stop the receipt rule or the
-     * receipt rule set.</p> </important>
+     * receipt rule set.</p> 
      */
     inline bool InvocationTypeHasBeenSet() const { return m_invocationTypeHasBeenSet; }
 
@@ -249,11 +249,11 @@ namespace Model
      * the function will be invoked asynchronously. The default value is
      * <code>Event</code>. For information about AWS Lambda invocation types, see the
      * <a href="https://docs.aws.amazon.com/lambda/latest/dg/API_Invoke.html">AWS
-     * Lambda Developer Guide</a>.</p> <important> <p>There is a 30-second timeout on
+     * Lambda Developer Guide</a>.</p>  <p>There is a 30-second timeout on
      * <code>RequestResponse</code> invocations. You should use <code>Event</code>
      * invocation in most cases. Use <code>RequestResponse</code> only when you want to
      * make a mail flow decision, such as whether to stop the receipt rule or the
-     * receipt rule set.</p> </important>
+     * receipt rule set.</p> 
      */
     inline void SetInvocationType(const InvocationType& value) { m_invocationTypeHasBeenSet = true; m_invocationType = value; }
 
@@ -264,11 +264,11 @@ namespace Model
      * the function will be invoked asynchronously. The default value is
      * <code>Event</code>. For information about AWS Lambda invocation types, see the
      * <a href="https://docs.aws.amazon.com/lambda/latest/dg/API_Invoke.html">AWS
-     * Lambda Developer Guide</a>.</p> <important> <p>There is a 30-second timeout on
+     * Lambda Developer Guide</a>.</p>  <p>There is a 30-second timeout on
      * <code>RequestResponse</code> invocations. You should use <code>Event</code>
      * invocation in most cases. Use <code>RequestResponse</code> only when you want to
      * make a mail flow decision, such as whether to stop the receipt rule or the
-     * receipt rule set.</p> </important>
+     * receipt rule set.</p> 
      */
     inline void SetInvocationType(InvocationType&& value) { m_invocationTypeHasBeenSet = true; m_invocationType = std::move(value); }
 
@@ -279,11 +279,11 @@ namespace Model
      * the function will be invoked asynchronously. The default value is
      * <code>Event</code>. For information about AWS Lambda invocation types, see the
      * <a href="https://docs.aws.amazon.com/lambda/latest/dg/API_Invoke.html">AWS
-     * Lambda Developer Guide</a>.</p> <important> <p>There is a 30-second timeout on
+     * Lambda Developer Guide</a>.</p>  <p>There is a 30-second timeout on
      * <code>RequestResponse</code> invocations. You should use <code>Event</code>
      * invocation in most cases. Use <code>RequestResponse</code> only when you want to
      * make a mail flow decision, such as whether to stop the receipt rule or the
-     * receipt rule set.</p> </important>
+     * receipt rule set.</p> 
      */
     inline LambdaAction& WithInvocationType(const InvocationType& value) { SetInvocationType(value); return *this;}
 
@@ -294,11 +294,11 @@ namespace Model
      * the function will be invoked asynchronously. The default value is
      * <code>Event</code>. For information about AWS Lambda invocation types, see the
      * <a href="https://docs.aws.amazon.com/lambda/latest/dg/API_Invoke.html">AWS
-     * Lambda Developer Guide</a>.</p> <important> <p>There is a 30-second timeout on
+     * Lambda Developer Guide</a>.</p>  <p>There is a 30-second timeout on
      * <code>RequestResponse</code> invocations. You should use <code>Event</code>
      * invocation in most cases. Use <code>RequestResponse</code> only when you want to
      * make a mail flow decision, such as whether to stop the receipt rule or the
-     * receipt rule set.</p> </important>
+     * receipt rule set.</p> 
      */
     inline LambdaAction& WithInvocationType(InvocationType&& value) { SetInvocationType(std::move(value)); return *this;}
 

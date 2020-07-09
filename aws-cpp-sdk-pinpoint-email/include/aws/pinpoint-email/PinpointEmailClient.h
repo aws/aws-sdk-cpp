@@ -1469,11 +1469,11 @@ namespace Model
         virtual void PutConfigurationSetTrackingOptionsAsync(const Model::PutConfigurationSetTrackingOptionsRequest& request, const PutConfigurationSetTrackingOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Move a dedicated IP address to an existing dedicated IP pool.</p> <note>
+         * <p>Move a dedicated IP address to an existing dedicated IP pool.</p> 
          * <p>The dedicated IP address that you specify must already exist, and must be
          * associated with your Amazon Pinpoint account. </p> <p>The dedicated IP pool you
          * specify must already exist. You can create a new pool by using the
-         * <code>CreateDedicatedIpPool</code> operation.</p> </note><p><h3>See Also:</h3>  
+         * <code>CreateDedicatedIpPool</code> operation.</p> <p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/PutDedicatedIpInPool">AWS
          * API Reference</a></p>
@@ -1481,11 +1481,11 @@ namespace Model
         virtual Model::PutDedicatedIpInPoolOutcome PutDedicatedIpInPool(const Model::PutDedicatedIpInPoolRequest& request) const;
 
         /**
-         * <p>Move a dedicated IP address to an existing dedicated IP pool.</p> <note>
+         * <p>Move a dedicated IP address to an existing dedicated IP pool.</p> 
          * <p>The dedicated IP address that you specify must already exist, and must be
          * associated with your Amazon Pinpoint account. </p> <p>The dedicated IP pool you
          * specify must already exist. You can create a new pool by using the
-         * <code>CreateDedicatedIpPool</code> operation.</p> </note><p><h3>See Also:</h3>  
+         * <code>CreateDedicatedIpPool</code> operation.</p> <p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/PutDedicatedIpInPool">AWS
          * API Reference</a></p>
@@ -1495,11 +1495,11 @@ namespace Model
         virtual Model::PutDedicatedIpInPoolOutcomeCallable PutDedicatedIpInPoolCallable(const Model::PutDedicatedIpInPoolRequest& request) const;
 
         /**
-         * <p>Move a dedicated IP address to an existing dedicated IP pool.</p> <note>
+         * <p>Move a dedicated IP address to an existing dedicated IP pool.</p> 
          * <p>The dedicated IP address that you specify must already exist, and must be
          * associated with your Amazon Pinpoint account. </p> <p>The dedicated IP pool you
          * specify must already exist. You can create a new pool by using the
-         * <code>CreateDedicatedIpPool</code> operation.</p> </note><p><h3>See Also:</h3>  
+         * <code>CreateDedicatedIpPool</code> operation.</p> <p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/PutDedicatedIpInPool">AWS
          * API Reference</a></p>

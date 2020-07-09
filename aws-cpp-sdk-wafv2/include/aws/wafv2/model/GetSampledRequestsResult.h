@@ -107,7 +107,7 @@ namespace Model
      * <code>GetSampledRequests</code> request. However, if your AWS resource received
      * more than 5,000 requests during the time range that you specified in the
      * request, <code>GetSampledRequests</code> returns the time range for the first
-     * 5,000 requests.</p>
+     * 5,000 requests. Times are in Coordinated Universal Time (UTC) format.</p>
      */
     inline const TimeWindow& GetTimeWindow() const{ return m_timeWindow; }
 
@@ -116,7 +116,7 @@ namespace Model
      * <code>GetSampledRequests</code> request. However, if your AWS resource received
      * more than 5,000 requests during the time range that you specified in the
      * request, <code>GetSampledRequests</code> returns the time range for the first
-     * 5,000 requests.</p>
+     * 5,000 requests. Times are in Coordinated Universal Time (UTC) format.</p>
      */
     inline void SetTimeWindow(const TimeWindow& value) { m_timeWindow = value; }
 
@@ -125,7 +125,7 @@ namespace Model
      * <code>GetSampledRequests</code> request. However, if your AWS resource received
      * more than 5,000 requests during the time range that you specified in the
      * request, <code>GetSampledRequests</code> returns the time range for the first
-     * 5,000 requests.</p>
+     * 5,000 requests. Times are in Coordinated Universal Time (UTC) format.</p>
      */
     inline void SetTimeWindow(TimeWindow&& value) { m_timeWindow = std::move(value); }
 
@@ -134,7 +134,7 @@ namespace Model
      * <code>GetSampledRequests</code> request. However, if your AWS resource received
      * more than 5,000 requests during the time range that you specified in the
      * request, <code>GetSampledRequests</code> returns the time range for the first
-     * 5,000 requests.</p>
+     * 5,000 requests. Times are in Coordinated Universal Time (UTC) format.</p>
      */
     inline GetSampledRequestsResult& WithTimeWindow(const TimeWindow& value) { SetTimeWindow(value); return *this;}
 
@@ -143,7 +143,7 @@ namespace Model
      * <code>GetSampledRequests</code> request. However, if your AWS resource received
      * more than 5,000 requests during the time range that you specified in the
      * request, <code>GetSampledRequests</code> returns the time range for the first
-     * 5,000 requests.</p>
+     * 5,000 requests. Times are in Coordinated Universal Time (UTC) format.</p>
      */
     inline GetSampledRequestsResult& WithTimeWindow(TimeWindow&& value) { SetTimeWindow(std::move(value)); return *this;}
 

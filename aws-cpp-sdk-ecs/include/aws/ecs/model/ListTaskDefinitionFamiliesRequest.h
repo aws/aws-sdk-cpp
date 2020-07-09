@@ -184,9 +184,9 @@ namespace Model
      * <code>ListTaskDefinitionFamilies</code> request indicating that more results are
      * available to fulfill the request and further calls will be needed. If
      * <code>maxResults</code> was provided, it is possible the number of results to be
-     * fewer than <code>maxResults</code>.</p> <note> <p>This token should be treated
+     * fewer than <code>maxResults</code>.</p>  <p>This token should be treated
      * as an opaque identifier that is only used to retrieve the next items in a list
-     * and not for other programmatic purposes.</p> </note>
+     * and not for other programmatic purposes.</p> 
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
@@ -195,9 +195,9 @@ namespace Model
      * <code>ListTaskDefinitionFamilies</code> request indicating that more results are
      * available to fulfill the request and further calls will be needed. If
      * <code>maxResults</code> was provided, it is possible the number of results to be
-     * fewer than <code>maxResults</code>.</p> <note> <p>This token should be treated
+     * fewer than <code>maxResults</code>.</p>  <p>This token should be treated
      * as an opaque identifier that is only used to retrieve the next items in a list
-     * and not for other programmatic purposes.</p> </note>
+     * and not for other programmatic purposes.</p> 
      */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
@@ -206,9 +206,9 @@ namespace Model
      * <code>ListTaskDefinitionFamilies</code> request indicating that more results are
      * available to fulfill the request and further calls will be needed. If
      * <code>maxResults</code> was provided, it is possible the number of results to be
-     * fewer than <code>maxResults</code>.</p> <note> <p>This token should be treated
+     * fewer than <code>maxResults</code>.</p>  <p>This token should be treated
      * as an opaque identifier that is only used to retrieve the next items in a list
-     * and not for other programmatic purposes.</p> </note>
+     * and not for other programmatic purposes.</p> 
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
@@ -217,9 +217,9 @@ namespace Model
      * <code>ListTaskDefinitionFamilies</code> request indicating that more results are
      * available to fulfill the request and further calls will be needed. If
      * <code>maxResults</code> was provided, it is possible the number of results to be
-     * fewer than <code>maxResults</code>.</p> <note> <p>This token should be treated
+     * fewer than <code>maxResults</code>.</p>  <p>This token should be treated
      * as an opaque identifier that is only used to retrieve the next items in a list
-     * and not for other programmatic purposes.</p> </note>
+     * and not for other programmatic purposes.</p> 
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
@@ -228,9 +228,9 @@ namespace Model
      * <code>ListTaskDefinitionFamilies</code> request indicating that more results are
      * available to fulfill the request and further calls will be needed. If
      * <code>maxResults</code> was provided, it is possible the number of results to be
-     * fewer than <code>maxResults</code>.</p> <note> <p>This token should be treated
+     * fewer than <code>maxResults</code>.</p>  <p>This token should be treated
      * as an opaque identifier that is only used to retrieve the next items in a list
-     * and not for other programmatic purposes.</p> </note>
+     * and not for other programmatic purposes.</p> 
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
@@ -239,9 +239,9 @@ namespace Model
      * <code>ListTaskDefinitionFamilies</code> request indicating that more results are
      * available to fulfill the request and further calls will be needed. If
      * <code>maxResults</code> was provided, it is possible the number of results to be
-     * fewer than <code>maxResults</code>.</p> <note> <p>This token should be treated
+     * fewer than <code>maxResults</code>.</p>  <p>This token should be treated
      * as an opaque identifier that is only used to retrieve the next items in a list
-     * and not for other programmatic purposes.</p> </note>
+     * and not for other programmatic purposes.</p> 
      */
     inline ListTaskDefinitionFamiliesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
@@ -250,9 +250,9 @@ namespace Model
      * <code>ListTaskDefinitionFamilies</code> request indicating that more results are
      * available to fulfill the request and further calls will be needed. If
      * <code>maxResults</code> was provided, it is possible the number of results to be
-     * fewer than <code>maxResults</code>.</p> <note> <p>This token should be treated
+     * fewer than <code>maxResults</code>.</p>  <p>This token should be treated
      * as an opaque identifier that is only used to retrieve the next items in a list
-     * and not for other programmatic purposes.</p> </note>
+     * and not for other programmatic purposes.</p> 
      */
     inline ListTaskDefinitionFamiliesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
@@ -261,9 +261,9 @@ namespace Model
      * <code>ListTaskDefinitionFamilies</code> request indicating that more results are
      * available to fulfill the request and further calls will be needed. If
      * <code>maxResults</code> was provided, it is possible the number of results to be
-     * fewer than <code>maxResults</code>.</p> <note> <p>This token should be treated
+     * fewer than <code>maxResults</code>.</p>  <p>This token should be treated
      * as an opaque identifier that is only used to retrieve the next items in a list
-     * and not for other programmatic purposes.</p> </note>
+     * and not for other programmatic purposes.</p> 
      */
     inline ListTaskDefinitionFamiliesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

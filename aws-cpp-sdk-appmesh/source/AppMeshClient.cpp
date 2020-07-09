@@ -20,31 +20,41 @@
 #include <aws/appmesh/AppMeshClient.h>
 #include <aws/appmesh/AppMeshEndpoint.h>
 #include <aws/appmesh/AppMeshErrorMarshaller.h>
+#include <aws/appmesh/model/CreateGatewayRouteRequest.h>
 #include <aws/appmesh/model/CreateMeshRequest.h>
 #include <aws/appmesh/model/CreateRouteRequest.h>
+#include <aws/appmesh/model/CreateVirtualGatewayRequest.h>
 #include <aws/appmesh/model/CreateVirtualNodeRequest.h>
 #include <aws/appmesh/model/CreateVirtualRouterRequest.h>
 #include <aws/appmesh/model/CreateVirtualServiceRequest.h>
+#include <aws/appmesh/model/DeleteGatewayRouteRequest.h>
 #include <aws/appmesh/model/DeleteMeshRequest.h>
 #include <aws/appmesh/model/DeleteRouteRequest.h>
+#include <aws/appmesh/model/DeleteVirtualGatewayRequest.h>
 #include <aws/appmesh/model/DeleteVirtualNodeRequest.h>
 #include <aws/appmesh/model/DeleteVirtualRouterRequest.h>
 #include <aws/appmesh/model/DeleteVirtualServiceRequest.h>
+#include <aws/appmesh/model/DescribeGatewayRouteRequest.h>
 #include <aws/appmesh/model/DescribeMeshRequest.h>
 #include <aws/appmesh/model/DescribeRouteRequest.h>
+#include <aws/appmesh/model/DescribeVirtualGatewayRequest.h>
 #include <aws/appmesh/model/DescribeVirtualNodeRequest.h>
 #include <aws/appmesh/model/DescribeVirtualRouterRequest.h>
 #include <aws/appmesh/model/DescribeVirtualServiceRequest.h>
+#include <aws/appmesh/model/ListGatewayRoutesRequest.h>
 #include <aws/appmesh/model/ListMeshesRequest.h>
 #include <aws/appmesh/model/ListRoutesRequest.h>
 #include <aws/appmesh/model/ListTagsForResourceRequest.h>
+#include <aws/appmesh/model/ListVirtualGatewaysRequest.h>
 #include <aws/appmesh/model/ListVirtualNodesRequest.h>
 #include <aws/appmesh/model/ListVirtualRoutersRequest.h>
 #include <aws/appmesh/model/ListVirtualServicesRequest.h>
 #include <aws/appmesh/model/TagResourceRequest.h>
 #include <aws/appmesh/model/UntagResourceRequest.h>
+#include <aws/appmesh/model/UpdateGatewayRouteRequest.h>
 #include <aws/appmesh/model/UpdateMeshRequest.h>
 #include <aws/appmesh/model/UpdateRouteRequest.h>
+#include <aws/appmesh/model/UpdateVirtualGatewayRequest.h>
 #include <aws/appmesh/model/UpdateVirtualNodeRequest.h>
 #include <aws/appmesh/model/UpdateVirtualRouterRequest.h>
 #include <aws/appmesh/model/UpdateVirtualServiceRequest.h>
@@ -121,6 +131,47 @@ void AppMeshClient::OverrideEndpoint(const Aws::String& endpoint)
   }
 }
 
+CreateGatewayRouteOutcome AppMeshClient::CreateGatewayRoute(const CreateGatewayRouteRequest& request) const
+{
+  if (!request.MeshNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateGatewayRoute", "Required field: MeshName, is not set");
+    return CreateGatewayRouteOutcome(Aws::Client::AWSError<AppMeshErrors>(AppMeshErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MeshName]", false));
+  }
+  if (!request.VirtualGatewayNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateGatewayRoute", "Required field: VirtualGatewayName, is not set");
+    return CreateGatewayRouteOutcome(Aws::Client::AWSError<AppMeshErrors>(AppMeshErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VirtualGatewayName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/v20190125/meshes/";
+  ss << request.GetMeshName();
+  ss << "/virtualGateway/";
+  ss << request.GetVirtualGatewayName();
+  ss << "/gatewayRoutes";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return CreateGatewayRouteOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateGatewayRouteOutcomeCallable AppMeshClient::CreateGatewayRouteCallable(const CreateGatewayRouteRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateGatewayRouteOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateGatewayRoute(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AppMeshClient::CreateGatewayRouteAsync(const CreateGatewayRouteRequest& request, const CreateGatewayRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateGatewayRouteAsyncHelper( request, handler, context ); } );
+}
+
+void AppMeshClient::CreateGatewayRouteAsyncHelper(const CreateGatewayRouteRequest& request, const CreateGatewayRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateGatewayRoute(request), context);
+}
+
 CreateMeshOutcome AppMeshClient::CreateMesh(const CreateMeshRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -187,6 +238,40 @@ void AppMeshClient::CreateRouteAsync(const CreateRouteRequest& request, const Cr
 void AppMeshClient::CreateRouteAsyncHelper(const CreateRouteRequest& request, const CreateRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, CreateRoute(request), context);
+}
+
+CreateVirtualGatewayOutcome AppMeshClient::CreateVirtualGateway(const CreateVirtualGatewayRequest& request) const
+{
+  if (!request.MeshNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateVirtualGateway", "Required field: MeshName, is not set");
+    return CreateVirtualGatewayOutcome(Aws::Client::AWSError<AppMeshErrors>(AppMeshErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MeshName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/v20190125/meshes/";
+  ss << request.GetMeshName();
+  ss << "/virtualGateways";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return CreateVirtualGatewayOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateVirtualGatewayOutcomeCallable AppMeshClient::CreateVirtualGatewayCallable(const CreateVirtualGatewayRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateVirtualGatewayOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateVirtualGateway(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AppMeshClient::CreateVirtualGatewayAsync(const CreateVirtualGatewayRequest& request, const CreateVirtualGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateVirtualGatewayAsyncHelper( request, handler, context ); } );
+}
+
+void AppMeshClient::CreateVirtualGatewayAsyncHelper(const CreateVirtualGatewayRequest& request, const CreateVirtualGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateVirtualGateway(request), context);
 }
 
 CreateVirtualNodeOutcome AppMeshClient::CreateVirtualNode(const CreateVirtualNodeRequest& request) const
@@ -291,6 +376,53 @@ void AppMeshClient::CreateVirtualServiceAsyncHelper(const CreateVirtualServiceRe
   handler(this, request, CreateVirtualService(request), context);
 }
 
+DeleteGatewayRouteOutcome AppMeshClient::DeleteGatewayRoute(const DeleteGatewayRouteRequest& request) const
+{
+  if (!request.GatewayRouteNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteGatewayRoute", "Required field: GatewayRouteName, is not set");
+    return DeleteGatewayRouteOutcome(Aws::Client::AWSError<AppMeshErrors>(AppMeshErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [GatewayRouteName]", false));
+  }
+  if (!request.MeshNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteGatewayRoute", "Required field: MeshName, is not set");
+    return DeleteGatewayRouteOutcome(Aws::Client::AWSError<AppMeshErrors>(AppMeshErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MeshName]", false));
+  }
+  if (!request.VirtualGatewayNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteGatewayRoute", "Required field: VirtualGatewayName, is not set");
+    return DeleteGatewayRouteOutcome(Aws::Client::AWSError<AppMeshErrors>(AppMeshErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VirtualGatewayName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/v20190125/meshes/";
+  ss << request.GetMeshName();
+  ss << "/virtualGateway/";
+  ss << request.GetVirtualGatewayName();
+  ss << "/gatewayRoutes/";
+  ss << request.GetGatewayRouteName();
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DeleteGatewayRouteOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteGatewayRouteOutcomeCallable AppMeshClient::DeleteGatewayRouteCallable(const DeleteGatewayRouteRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteGatewayRouteOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteGatewayRoute(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AppMeshClient::DeleteGatewayRouteAsync(const DeleteGatewayRouteRequest& request, const DeleteGatewayRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteGatewayRouteAsyncHelper( request, handler, context ); } );
+}
+
+void AppMeshClient::DeleteGatewayRouteAsyncHelper(const DeleteGatewayRouteRequest& request, const DeleteGatewayRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteGatewayRoute(request), context);
+}
+
 DeleteMeshOutcome AppMeshClient::DeleteMesh(const DeleteMeshRequest& request) const
 {
   if (!request.MeshNameHasBeenSet())
@@ -369,6 +501,46 @@ void AppMeshClient::DeleteRouteAsync(const DeleteRouteRequest& request, const De
 void AppMeshClient::DeleteRouteAsyncHelper(const DeleteRouteRequest& request, const DeleteRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteRoute(request), context);
+}
+
+DeleteVirtualGatewayOutcome AppMeshClient::DeleteVirtualGateway(const DeleteVirtualGatewayRequest& request) const
+{
+  if (!request.MeshNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteVirtualGateway", "Required field: MeshName, is not set");
+    return DeleteVirtualGatewayOutcome(Aws::Client::AWSError<AppMeshErrors>(AppMeshErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MeshName]", false));
+  }
+  if (!request.VirtualGatewayNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteVirtualGateway", "Required field: VirtualGatewayName, is not set");
+    return DeleteVirtualGatewayOutcome(Aws::Client::AWSError<AppMeshErrors>(AppMeshErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VirtualGatewayName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/v20190125/meshes/";
+  ss << request.GetMeshName();
+  ss << "/virtualGateways/";
+  ss << request.GetVirtualGatewayName();
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DeleteVirtualGatewayOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteVirtualGatewayOutcomeCallable AppMeshClient::DeleteVirtualGatewayCallable(const DeleteVirtualGatewayRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteVirtualGatewayOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteVirtualGateway(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AppMeshClient::DeleteVirtualGatewayAsync(const DeleteVirtualGatewayRequest& request, const DeleteVirtualGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteVirtualGatewayAsyncHelper( request, handler, context ); } );
+}
+
+void AppMeshClient::DeleteVirtualGatewayAsyncHelper(const DeleteVirtualGatewayRequest& request, const DeleteVirtualGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteVirtualGateway(request), context);
 }
 
 DeleteVirtualNodeOutcome AppMeshClient::DeleteVirtualNode(const DeleteVirtualNodeRequest& request) const
@@ -491,6 +663,53 @@ void AppMeshClient::DeleteVirtualServiceAsyncHelper(const DeleteVirtualServiceRe
   handler(this, request, DeleteVirtualService(request), context);
 }
 
+DescribeGatewayRouteOutcome AppMeshClient::DescribeGatewayRoute(const DescribeGatewayRouteRequest& request) const
+{
+  if (!request.GatewayRouteNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeGatewayRoute", "Required field: GatewayRouteName, is not set");
+    return DescribeGatewayRouteOutcome(Aws::Client::AWSError<AppMeshErrors>(AppMeshErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [GatewayRouteName]", false));
+  }
+  if (!request.MeshNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeGatewayRoute", "Required field: MeshName, is not set");
+    return DescribeGatewayRouteOutcome(Aws::Client::AWSError<AppMeshErrors>(AppMeshErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MeshName]", false));
+  }
+  if (!request.VirtualGatewayNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeGatewayRoute", "Required field: VirtualGatewayName, is not set");
+    return DescribeGatewayRouteOutcome(Aws::Client::AWSError<AppMeshErrors>(AppMeshErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VirtualGatewayName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/v20190125/meshes/";
+  ss << request.GetMeshName();
+  ss << "/virtualGateway/";
+  ss << request.GetVirtualGatewayName();
+  ss << "/gatewayRoutes/";
+  ss << request.GetGatewayRouteName();
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DescribeGatewayRouteOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeGatewayRouteOutcomeCallable AppMeshClient::DescribeGatewayRouteCallable(const DescribeGatewayRouteRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeGatewayRouteOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeGatewayRoute(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AppMeshClient::DescribeGatewayRouteAsync(const DescribeGatewayRouteRequest& request, const DescribeGatewayRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeGatewayRouteAsyncHelper( request, handler, context ); } );
+}
+
+void AppMeshClient::DescribeGatewayRouteAsyncHelper(const DescribeGatewayRouteRequest& request, const DescribeGatewayRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeGatewayRoute(request), context);
+}
+
 DescribeMeshOutcome AppMeshClient::DescribeMesh(const DescribeMeshRequest& request) const
 {
   if (!request.MeshNameHasBeenSet())
@@ -569,6 +788,46 @@ void AppMeshClient::DescribeRouteAsync(const DescribeRouteRequest& request, cons
 void AppMeshClient::DescribeRouteAsyncHelper(const DescribeRouteRequest& request, const DescribeRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribeRoute(request), context);
+}
+
+DescribeVirtualGatewayOutcome AppMeshClient::DescribeVirtualGateway(const DescribeVirtualGatewayRequest& request) const
+{
+  if (!request.MeshNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeVirtualGateway", "Required field: MeshName, is not set");
+    return DescribeVirtualGatewayOutcome(Aws::Client::AWSError<AppMeshErrors>(AppMeshErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MeshName]", false));
+  }
+  if (!request.VirtualGatewayNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeVirtualGateway", "Required field: VirtualGatewayName, is not set");
+    return DescribeVirtualGatewayOutcome(Aws::Client::AWSError<AppMeshErrors>(AppMeshErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VirtualGatewayName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/v20190125/meshes/";
+  ss << request.GetMeshName();
+  ss << "/virtualGateways/";
+  ss << request.GetVirtualGatewayName();
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DescribeVirtualGatewayOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeVirtualGatewayOutcomeCallable AppMeshClient::DescribeVirtualGatewayCallable(const DescribeVirtualGatewayRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeVirtualGatewayOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeVirtualGateway(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AppMeshClient::DescribeVirtualGatewayAsync(const DescribeVirtualGatewayRequest& request, const DescribeVirtualGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeVirtualGatewayAsyncHelper( request, handler, context ); } );
+}
+
+void AppMeshClient::DescribeVirtualGatewayAsyncHelper(const DescribeVirtualGatewayRequest& request, const DescribeVirtualGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeVirtualGateway(request), context);
 }
 
 DescribeVirtualNodeOutcome AppMeshClient::DescribeVirtualNode(const DescribeVirtualNodeRequest& request) const
@@ -691,6 +950,47 @@ void AppMeshClient::DescribeVirtualServiceAsyncHelper(const DescribeVirtualServi
   handler(this, request, DescribeVirtualService(request), context);
 }
 
+ListGatewayRoutesOutcome AppMeshClient::ListGatewayRoutes(const ListGatewayRoutesRequest& request) const
+{
+  if (!request.MeshNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListGatewayRoutes", "Required field: MeshName, is not set");
+    return ListGatewayRoutesOutcome(Aws::Client::AWSError<AppMeshErrors>(AppMeshErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MeshName]", false));
+  }
+  if (!request.VirtualGatewayNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListGatewayRoutes", "Required field: VirtualGatewayName, is not set");
+    return ListGatewayRoutesOutcome(Aws::Client::AWSError<AppMeshErrors>(AppMeshErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VirtualGatewayName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/v20190125/meshes/";
+  ss << request.GetMeshName();
+  ss << "/virtualGateway/";
+  ss << request.GetVirtualGatewayName();
+  ss << "/gatewayRoutes";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return ListGatewayRoutesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListGatewayRoutesOutcomeCallable AppMeshClient::ListGatewayRoutesCallable(const ListGatewayRoutesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListGatewayRoutesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListGatewayRoutes(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AppMeshClient::ListGatewayRoutesAsync(const ListGatewayRoutesRequest& request, const ListGatewayRoutesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListGatewayRoutesAsyncHelper( request, handler, context ); } );
+}
+
+void AppMeshClient::ListGatewayRoutesAsyncHelper(const ListGatewayRoutesRequest& request, const ListGatewayRoutesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListGatewayRoutes(request), context);
+}
+
 ListMeshesOutcome AppMeshClient::ListMeshes(const ListMeshesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -789,6 +1089,40 @@ void AppMeshClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& r
 void AppMeshClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListTagsForResource(request), context);
+}
+
+ListVirtualGatewaysOutcome AppMeshClient::ListVirtualGateways(const ListVirtualGatewaysRequest& request) const
+{
+  if (!request.MeshNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListVirtualGateways", "Required field: MeshName, is not set");
+    return ListVirtualGatewaysOutcome(Aws::Client::AWSError<AppMeshErrors>(AppMeshErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MeshName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/v20190125/meshes/";
+  ss << request.GetMeshName();
+  ss << "/virtualGateways";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return ListVirtualGatewaysOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListVirtualGatewaysOutcomeCallable AppMeshClient::ListVirtualGatewaysCallable(const ListVirtualGatewaysRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListVirtualGatewaysOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListVirtualGateways(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AppMeshClient::ListVirtualGatewaysAsync(const ListVirtualGatewaysRequest& request, const ListVirtualGatewaysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListVirtualGatewaysAsyncHelper( request, handler, context ); } );
+}
+
+void AppMeshClient::ListVirtualGatewaysAsyncHelper(const ListVirtualGatewaysRequest& request, const ListVirtualGatewaysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListVirtualGateways(request), context);
 }
 
 ListVirtualNodesOutcome AppMeshClient::ListVirtualNodes(const ListVirtualNodesRequest& request) const
@@ -957,6 +1291,53 @@ void AppMeshClient::UntagResourceAsyncHelper(const UntagResourceRequest& request
   handler(this, request, UntagResource(request), context);
 }
 
+UpdateGatewayRouteOutcome AppMeshClient::UpdateGatewayRoute(const UpdateGatewayRouteRequest& request) const
+{
+  if (!request.GatewayRouteNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateGatewayRoute", "Required field: GatewayRouteName, is not set");
+    return UpdateGatewayRouteOutcome(Aws::Client::AWSError<AppMeshErrors>(AppMeshErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [GatewayRouteName]", false));
+  }
+  if (!request.MeshNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateGatewayRoute", "Required field: MeshName, is not set");
+    return UpdateGatewayRouteOutcome(Aws::Client::AWSError<AppMeshErrors>(AppMeshErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MeshName]", false));
+  }
+  if (!request.VirtualGatewayNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateGatewayRoute", "Required field: VirtualGatewayName, is not set");
+    return UpdateGatewayRouteOutcome(Aws::Client::AWSError<AppMeshErrors>(AppMeshErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VirtualGatewayName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/v20190125/meshes/";
+  ss << request.GetMeshName();
+  ss << "/virtualGateway/";
+  ss << request.GetVirtualGatewayName();
+  ss << "/gatewayRoutes/";
+  ss << request.GetGatewayRouteName();
+  uri.SetPath(uri.GetPath() + ss.str());
+  return UpdateGatewayRouteOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateGatewayRouteOutcomeCallable AppMeshClient::UpdateGatewayRouteCallable(const UpdateGatewayRouteRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateGatewayRouteOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateGatewayRoute(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AppMeshClient::UpdateGatewayRouteAsync(const UpdateGatewayRouteRequest& request, const UpdateGatewayRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateGatewayRouteAsyncHelper( request, handler, context ); } );
+}
+
+void AppMeshClient::UpdateGatewayRouteAsyncHelper(const UpdateGatewayRouteRequest& request, const UpdateGatewayRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateGatewayRoute(request), context);
+}
+
 UpdateMeshOutcome AppMeshClient::UpdateMesh(const UpdateMeshRequest& request) const
 {
   if (!request.MeshNameHasBeenSet())
@@ -1035,6 +1416,46 @@ void AppMeshClient::UpdateRouteAsync(const UpdateRouteRequest& request, const Up
 void AppMeshClient::UpdateRouteAsyncHelper(const UpdateRouteRequest& request, const UpdateRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateRoute(request), context);
+}
+
+UpdateVirtualGatewayOutcome AppMeshClient::UpdateVirtualGateway(const UpdateVirtualGatewayRequest& request) const
+{
+  if (!request.MeshNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateVirtualGateway", "Required field: MeshName, is not set");
+    return UpdateVirtualGatewayOutcome(Aws::Client::AWSError<AppMeshErrors>(AppMeshErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MeshName]", false));
+  }
+  if (!request.VirtualGatewayNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateVirtualGateway", "Required field: VirtualGatewayName, is not set");
+    return UpdateVirtualGatewayOutcome(Aws::Client::AWSError<AppMeshErrors>(AppMeshErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VirtualGatewayName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/v20190125/meshes/";
+  ss << request.GetMeshName();
+  ss << "/virtualGateways/";
+  ss << request.GetVirtualGatewayName();
+  uri.SetPath(uri.GetPath() + ss.str());
+  return UpdateVirtualGatewayOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateVirtualGatewayOutcomeCallable AppMeshClient::UpdateVirtualGatewayCallable(const UpdateVirtualGatewayRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateVirtualGatewayOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateVirtualGateway(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AppMeshClient::UpdateVirtualGatewayAsync(const UpdateVirtualGatewayRequest& request, const UpdateVirtualGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateVirtualGatewayAsyncHelper( request, handler, context ); } );
+}
+
+void AppMeshClient::UpdateVirtualGatewayAsyncHelper(const UpdateVirtualGatewayRequest& request, const UpdateVirtualGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateVirtualGateway(request), context);
 }
 
 UpdateVirtualNodeOutcome AppMeshClient::UpdateVirtualNode(const UpdateVirtualNodeRequest& request) const

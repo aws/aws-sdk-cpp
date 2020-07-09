@@ -45,50 +45,50 @@ namespace Model
 
 
     /**
-     * <p>The name of the build project.</p> <note> <p>You cannot change a build
-     * project's name.</p> </note>
+     * <p>The name of the build project.</p>  <p>You cannot change a build
+     * project's name.</p> 
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The name of the build project.</p> <note> <p>You cannot change a build
-     * project's name.</p> </note>
+     * <p>The name of the build project.</p>  <p>You cannot change a build
+     * project's name.</p> 
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>The name of the build project.</p> <note> <p>You cannot change a build
-     * project's name.</p> </note>
+     * <p>The name of the build project.</p>  <p>You cannot change a build
+     * project's name.</p> 
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The name of the build project.</p> <note> <p>You cannot change a build
-     * project's name.</p> </note>
+     * <p>The name of the build project.</p>  <p>You cannot change a build
+     * project's name.</p> 
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>The name of the build project.</p> <note> <p>You cannot change a build
-     * project's name.</p> </note>
+     * <p>The name of the build project.</p>  <p>You cannot change a build
+     * project's name.</p> 
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>The name of the build project.</p> <note> <p>You cannot change a build
-     * project's name.</p> </note>
+     * <p>The name of the build project.</p>  <p>You cannot change a build
+     * project's name.</p> 
      */
     inline UpdateProjectRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The name of the build project.</p> <note> <p>You cannot change a build
-     * project's name.</p> </note>
+     * <p>The name of the build project.</p>  <p>You cannot change a build
+     * project's name.</p> 
      */
     inline UpdateProjectRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the build project.</p> <note> <p>You cannot change a build
-     * project's name.</p> </note>
+     * <p>The name of the build project.</p>  <p>You cannot change a build
+     * project's name.</p> 
      */
     inline UpdateProjectRequest& WithName(const char* value) { SetName(value); return *this;}
 
@@ -727,9 +727,9 @@ namespace Model
 
     /**
      * <p>The AWS Key Management Service (AWS KMS) customer master key (CMK) to be used
-     * for encrypting the build output artifacts.</p> <note> <p> You can use a
+     * for encrypting the build output artifacts.</p>  <p> You can use a
      * cross-account KMS key to encrypt the build output artifacts if your service role
-     * has permission to that key. </p> </note> <p>You can specify either the Amazon
+     * has permission to that key. </p>  <p>You can specify either the Amazon
      * Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the
      * format <code>alias/<i>alias-name</i> </code>).</p>
      */
@@ -737,9 +737,9 @@ namespace Model
 
     /**
      * <p>The AWS Key Management Service (AWS KMS) customer master key (CMK) to be used
-     * for encrypting the build output artifacts.</p> <note> <p> You can use a
+     * for encrypting the build output artifacts.</p>  <p> You can use a
      * cross-account KMS key to encrypt the build output artifacts if your service role
-     * has permission to that key. </p> </note> <p>You can specify either the Amazon
+     * has permission to that key. </p>  <p>You can specify either the Amazon
      * Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the
      * format <code>alias/<i>alias-name</i> </code>).</p>
      */
@@ -747,9 +747,9 @@ namespace Model
 
     /**
      * <p>The AWS Key Management Service (AWS KMS) customer master key (CMK) to be used
-     * for encrypting the build output artifacts.</p> <note> <p> You can use a
+     * for encrypting the build output artifacts.</p>  <p> You can use a
      * cross-account KMS key to encrypt the build output artifacts if your service role
-     * has permission to that key. </p> </note> <p>You can specify either the Amazon
+     * has permission to that key. </p>  <p>You can specify either the Amazon
      * Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the
      * format <code>alias/<i>alias-name</i> </code>).</p>
      */
@@ -757,9 +757,9 @@ namespace Model
 
     /**
      * <p>The AWS Key Management Service (AWS KMS) customer master key (CMK) to be used
-     * for encrypting the build output artifacts.</p> <note> <p> You can use a
+     * for encrypting the build output artifacts.</p>  <p> You can use a
      * cross-account KMS key to encrypt the build output artifacts if your service role
-     * has permission to that key. </p> </note> <p>You can specify either the Amazon
+     * has permission to that key. </p>  <p>You can specify either the Amazon
      * Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the
      * format <code>alias/<i>alias-name</i> </code>).</p>
      */
@@ -767,9 +767,9 @@ namespace Model
 
     /**
      * <p>The AWS Key Management Service (AWS KMS) customer master key (CMK) to be used
-     * for encrypting the build output artifacts.</p> <note> <p> You can use a
+     * for encrypting the build output artifacts.</p>  <p> You can use a
      * cross-account KMS key to encrypt the build output artifacts if your service role
-     * has permission to that key. </p> </note> <p>You can specify either the Amazon
+     * has permission to that key. </p>  <p>You can specify either the Amazon
      * Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the
      * format <code>alias/<i>alias-name</i> </code>).</p>
      */
@@ -777,9 +777,9 @@ namespace Model
 
     /**
      * <p>The AWS Key Management Service (AWS KMS) customer master key (CMK) to be used
-     * for encrypting the build output artifacts.</p> <note> <p> You can use a
+     * for encrypting the build output artifacts.</p>  <p> You can use a
      * cross-account KMS key to encrypt the build output artifacts if your service role
-     * has permission to that key. </p> </note> <p>You can specify either the Amazon
+     * has permission to that key. </p>  <p>You can specify either the Amazon
      * Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the
      * format <code>alias/<i>alias-name</i> </code>).</p>
      */
@@ -787,9 +787,9 @@ namespace Model
 
     /**
      * <p>The AWS Key Management Service (AWS KMS) customer master key (CMK) to be used
-     * for encrypting the build output artifacts.</p> <note> <p> You can use a
+     * for encrypting the build output artifacts.</p>  <p> You can use a
      * cross-account KMS key to encrypt the build output artifacts if your service role
-     * has permission to that key. </p> </note> <p>You can specify either the Amazon
+     * has permission to that key. </p>  <p>You can specify either the Amazon
      * Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the
      * format <code>alias/<i>alias-name</i> </code>).</p>
      */
@@ -797,9 +797,9 @@ namespace Model
 
     /**
      * <p>The AWS Key Management Service (AWS KMS) customer master key (CMK) to be used
-     * for encrypting the build output artifacts.</p> <note> <p> You can use a
+     * for encrypting the build output artifacts.</p>  <p> You can use a
      * cross-account KMS key to encrypt the build output artifacts if your service role
-     * has permission to that key. </p> </note> <p>You can specify either the Amazon
+     * has permission to that key. </p>  <p>You can specify either the Amazon
      * Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the
      * format <code>alias/<i>alias-name</i> </code>).</p>
      */

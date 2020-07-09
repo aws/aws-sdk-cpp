@@ -40,56 +40,56 @@ namespace Model
 
 
     /**
-     * <p>The name of the utilization metric.</p> <note> <p>Memory metrics are only
+     * <p>The name of the utilization metric.</p>  <p>Memory metrics are only
      * returned for resources that have the unified CloudWatch agent installed on them.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Install-CloudWatch-Agent.html">Enabling
-     * Memory Utilization with the CloudWatch Agent</a>.</p> </note>
+     * Memory Utilization with the CloudWatch Agent</a>.</p> 
      */
     inline const MetricName& GetName() const{ return m_name; }
 
     /**
-     * <p>The name of the utilization metric.</p> <note> <p>Memory metrics are only
+     * <p>The name of the utilization metric.</p>  <p>Memory metrics are only
      * returned for resources that have the unified CloudWatch agent installed on them.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Install-CloudWatch-Agent.html">Enabling
-     * Memory Utilization with the CloudWatch Agent</a>.</p> </note>
+     * Memory Utilization with the CloudWatch Agent</a>.</p> 
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>The name of the utilization metric.</p> <note> <p>Memory metrics are only
+     * <p>The name of the utilization metric.</p>  <p>Memory metrics are only
      * returned for resources that have the unified CloudWatch agent installed on them.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Install-CloudWatch-Agent.html">Enabling
-     * Memory Utilization with the CloudWatch Agent</a>.</p> </note>
+     * Memory Utilization with the CloudWatch Agent</a>.</p> 
      */
     inline void SetName(const MetricName& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The name of the utilization metric.</p> <note> <p>Memory metrics are only
+     * <p>The name of the utilization metric.</p>  <p>Memory metrics are only
      * returned for resources that have the unified CloudWatch agent installed on them.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Install-CloudWatch-Agent.html">Enabling
-     * Memory Utilization with the CloudWatch Agent</a>.</p> </note>
+     * Memory Utilization with the CloudWatch Agent</a>.</p> 
      */
     inline void SetName(MetricName&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>The name of the utilization metric.</p> <note> <p>Memory metrics are only
+     * <p>The name of the utilization metric.</p>  <p>Memory metrics are only
      * returned for resources that have the unified CloudWatch agent installed on them.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Install-CloudWatch-Agent.html">Enabling
-     * Memory Utilization with the CloudWatch Agent</a>.</p> </note>
+     * Memory Utilization with the CloudWatch Agent</a>.</p> 
      */
     inline UtilizationMetric& WithName(const MetricName& value) { SetName(value); return *this;}
 
     /**
-     * <p>The name of the utilization metric.</p> <note> <p>Memory metrics are only
+     * <p>The name of the utilization metric.</p>  <p>Memory metrics are only
      * returned for resources that have the unified CloudWatch agent installed on them.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Install-CloudWatch-Agent.html">Enabling
-     * Memory Utilization with the CloudWatch Agent</a>.</p> </note>
+     * Memory Utilization with the CloudWatch Agent</a>.</p> 
      */
     inline UtilizationMetric& WithName(MetricName&& value) { SetName(std::move(value)); return *this;}
 

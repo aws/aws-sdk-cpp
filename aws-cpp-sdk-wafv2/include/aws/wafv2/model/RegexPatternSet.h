@@ -26,11 +26,11 @@ namespace Model
 {
 
   /**
-   * <note> <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2,
+   *  <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2,
    * released in November, 2019. For information, including how to migrate your AWS
    * WAF resources from the prior release, see the <a
    * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-   * WAF Developer Guide</a>. </p> </note> <p>Contains one or more regular
+   * WAF Developer Guide</a>. </p>  <p>Contains one or more regular
    * expressions. </p> <p>AWS WAF assigns an ARN to each <code>RegexPatternSet</code>
    * that you create. To use a set in a rule, you provide the ARN to the <a>Rule</a>
    * statement <a>RegexPatternSetReferenceStatement</a>. </p><p><h3>See Also:</h3>  

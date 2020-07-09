@@ -447,36 +447,36 @@ namespace Model
     /**
      * <p>The number of instances with patches installed that are specified in a
      * RejectedPatches list. Patches with a status of <i>InstalledRejected</i> were
-     * typically installed before they were added to a RejectedPatches list.</p> <note>
+     * typically installed before they were added to a RejectedPatches list.</p> 
      * <p>If ALLOW_AS_DEPENDENCY is the specified option for RejectedPatchesAction, the
-     * value of InstalledRejectedCount will always be 0 (zero).</p> </note>
+     * value of InstalledRejectedCount will always be 0 (zero).</p> 
      */
     inline int GetInstalledRejectedCount() const{ return m_installedRejectedCount; }
 
     /**
      * <p>The number of instances with patches installed that are specified in a
      * RejectedPatches list. Patches with a status of <i>InstalledRejected</i> were
-     * typically installed before they were added to a RejectedPatches list.</p> <note>
+     * typically installed before they were added to a RejectedPatches list.</p> 
      * <p>If ALLOW_AS_DEPENDENCY is the specified option for RejectedPatchesAction, the
-     * value of InstalledRejectedCount will always be 0 (zero).</p> </note>
+     * value of InstalledRejectedCount will always be 0 (zero).</p> 
      */
     inline bool InstalledRejectedCountHasBeenSet() const { return m_installedRejectedCountHasBeenSet; }
 
     /**
      * <p>The number of instances with patches installed that are specified in a
      * RejectedPatches list. Patches with a status of <i>InstalledRejected</i> were
-     * typically installed before they were added to a RejectedPatches list.</p> <note>
+     * typically installed before they were added to a RejectedPatches list.</p> 
      * <p>If ALLOW_AS_DEPENDENCY is the specified option for RejectedPatchesAction, the
-     * value of InstalledRejectedCount will always be 0 (zero).</p> </note>
+     * value of InstalledRejectedCount will always be 0 (zero).</p> 
      */
     inline void SetInstalledRejectedCount(int value) { m_installedRejectedCountHasBeenSet = true; m_installedRejectedCount = value; }
 
     /**
      * <p>The number of instances with patches installed that are specified in a
      * RejectedPatches list. Patches with a status of <i>InstalledRejected</i> were
-     * typically installed before they were added to a RejectedPatches list.</p> <note>
+     * typically installed before they were added to a RejectedPatches list.</p> 
      * <p>If ALLOW_AS_DEPENDENCY is the specified option for RejectedPatchesAction, the
-     * value of InstalledRejectedCount will always be 0 (zero).</p> </note>
+     * value of InstalledRejectedCount will always be 0 (zero).</p> 
      */
     inline InstancePatchState& WithInstalledRejectedCount(int value) { SetInstalledRejectedCount(value); return *this;}
 
@@ -730,9 +730,9 @@ namespace Model
 
 
     /**
-     * <p>Indicates the reboot option specified in the patch baseline.</p> <note>
+     * <p>Indicates the reboot option specified in the patch baseline.</p> 
      * <p>Reboot options apply to <code>Install</code> operations only. Reboots are not
-     * attempted for Patch Manager <code>Scan</code> operations.</p> </note> <ul> <li>
+     * attempted for Patch Manager <code>Scan</code> operations.</p>  <ul> <li>
      * <p> <b>RebootIfNeeded</b>: Patch Manager tries to reboot the instance if it
      * installed any patches, or if any patches are detected with a status of
      * <code>InstalledPendingReboot</code>.</p> </li> <li> <p> <b>NoReboot</b>: Patch
@@ -744,9 +744,9 @@ namespace Model
     inline const RebootOption& GetRebootOption() const{ return m_rebootOption; }
 
     /**
-     * <p>Indicates the reboot option specified in the patch baseline.</p> <note>
+     * <p>Indicates the reboot option specified in the patch baseline.</p> 
      * <p>Reboot options apply to <code>Install</code> operations only. Reboots are not
-     * attempted for Patch Manager <code>Scan</code> operations.</p> </note> <ul> <li>
+     * attempted for Patch Manager <code>Scan</code> operations.</p>  <ul> <li>
      * <p> <b>RebootIfNeeded</b>: Patch Manager tries to reboot the instance if it
      * installed any patches, or if any patches are detected with a status of
      * <code>InstalledPendingReboot</code>.</p> </li> <li> <p> <b>NoReboot</b>: Patch
@@ -758,9 +758,9 @@ namespace Model
     inline bool RebootOptionHasBeenSet() const { return m_rebootOptionHasBeenSet; }
 
     /**
-     * <p>Indicates the reboot option specified in the patch baseline.</p> <note>
+     * <p>Indicates the reboot option specified in the patch baseline.</p> 
      * <p>Reboot options apply to <code>Install</code> operations only. Reboots are not
-     * attempted for Patch Manager <code>Scan</code> operations.</p> </note> <ul> <li>
+     * attempted for Patch Manager <code>Scan</code> operations.</p>  <ul> <li>
      * <p> <b>RebootIfNeeded</b>: Patch Manager tries to reboot the instance if it
      * installed any patches, or if any patches are detected with a status of
      * <code>InstalledPendingReboot</code>.</p> </li> <li> <p> <b>NoReboot</b>: Patch
@@ -772,9 +772,9 @@ namespace Model
     inline void SetRebootOption(const RebootOption& value) { m_rebootOptionHasBeenSet = true; m_rebootOption = value; }
 
     /**
-     * <p>Indicates the reboot option specified in the patch baseline.</p> <note>
+     * <p>Indicates the reboot option specified in the patch baseline.</p> 
      * <p>Reboot options apply to <code>Install</code> operations only. Reboots are not
-     * attempted for Patch Manager <code>Scan</code> operations.</p> </note> <ul> <li>
+     * attempted for Patch Manager <code>Scan</code> operations.</p>  <ul> <li>
      * <p> <b>RebootIfNeeded</b>: Patch Manager tries to reboot the instance if it
      * installed any patches, or if any patches are detected with a status of
      * <code>InstalledPendingReboot</code>.</p> </li> <li> <p> <b>NoReboot</b>: Patch
@@ -786,9 +786,9 @@ namespace Model
     inline void SetRebootOption(RebootOption&& value) { m_rebootOptionHasBeenSet = true; m_rebootOption = std::move(value); }
 
     /**
-     * <p>Indicates the reboot option specified in the patch baseline.</p> <note>
+     * <p>Indicates the reboot option specified in the patch baseline.</p> 
      * <p>Reboot options apply to <code>Install</code> operations only. Reboots are not
-     * attempted for Patch Manager <code>Scan</code> operations.</p> </note> <ul> <li>
+     * attempted for Patch Manager <code>Scan</code> operations.</p>  <ul> <li>
      * <p> <b>RebootIfNeeded</b>: Patch Manager tries to reboot the instance if it
      * installed any patches, or if any patches are detected with a status of
      * <code>InstalledPendingReboot</code>.</p> </li> <li> <p> <b>NoReboot</b>: Patch
@@ -800,9 +800,9 @@ namespace Model
     inline InstancePatchState& WithRebootOption(const RebootOption& value) { SetRebootOption(value); return *this;}
 
     /**
-     * <p>Indicates the reboot option specified in the patch baseline.</p> <note>
+     * <p>Indicates the reboot option specified in the patch baseline.</p> 
      * <p>Reboot options apply to <code>Install</code> operations only. Reboots are not
-     * attempted for Patch Manager <code>Scan</code> operations.</p> </note> <ul> <li>
+     * attempted for Patch Manager <code>Scan</code> operations.</p>  <ul> <li>
      * <p> <b>RebootIfNeeded</b>: Patch Manager tries to reboot the instance if it
      * installed any patches, or if any patches are detected with a status of
      * <code>InstalledPendingReboot</code>.</p> </li> <li> <p> <b>NoReboot</b>: Patch

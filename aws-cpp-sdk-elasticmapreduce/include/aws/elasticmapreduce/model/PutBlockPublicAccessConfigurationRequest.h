@@ -45,11 +45,11 @@ namespace Model
      * <code>BlockPublicAccessConfiguration</code>. By default, Port 22 (SSH) is an
      * exception, and public access is allowed on this port. You can change this by
      * updating <code>BlockPublicSecurityGroupRules</code> to remove the exception.</p>
-     * <note> <p>For accounts that created clusters in a Region before November 25,
+     *  <p>For accounts that created clusters in a Region before November 25,
      * 2019, block public access is disabled by default in that Region. To use this
      * feature, you must manually enable and configure it. For accounts that did not
      * create an EMR cluster in a Region before this date, block public access is
-     * enabled by default in that Region.</p> </note>
+     * enabled by default in that Region.</p> 
      */
     inline const BlockPublicAccessConfiguration& GetBlockPublicAccessConfiguration() const{ return m_blockPublicAccessConfiguration; }
 
@@ -64,11 +64,11 @@ namespace Model
      * <code>BlockPublicAccessConfiguration</code>. By default, Port 22 (SSH) is an
      * exception, and public access is allowed on this port. You can change this by
      * updating <code>BlockPublicSecurityGroupRules</code> to remove the exception.</p>
-     * <note> <p>For accounts that created clusters in a Region before November 25,
+     *  <p>For accounts that created clusters in a Region before November 25,
      * 2019, block public access is disabled by default in that Region. To use this
      * feature, you must manually enable and configure it. For accounts that did not
      * create an EMR cluster in a Region before this date, block public access is
-     * enabled by default in that Region.</p> </note>
+     * enabled by default in that Region.</p> 
      */
     inline bool BlockPublicAccessConfigurationHasBeenSet() const { return m_blockPublicAccessConfigurationHasBeenSet; }
 
@@ -83,11 +83,11 @@ namespace Model
      * <code>BlockPublicAccessConfiguration</code>. By default, Port 22 (SSH) is an
      * exception, and public access is allowed on this port. You can change this by
      * updating <code>BlockPublicSecurityGroupRules</code> to remove the exception.</p>
-     * <note> <p>For accounts that created clusters in a Region before November 25,
+     *  <p>For accounts that created clusters in a Region before November 25,
      * 2019, block public access is disabled by default in that Region. To use this
      * feature, you must manually enable and configure it. For accounts that did not
      * create an EMR cluster in a Region before this date, block public access is
-     * enabled by default in that Region.</p> </note>
+     * enabled by default in that Region.</p> 
      */
     inline void SetBlockPublicAccessConfiguration(const BlockPublicAccessConfiguration& value) { m_blockPublicAccessConfigurationHasBeenSet = true; m_blockPublicAccessConfiguration = value; }
 
@@ -102,11 +102,11 @@ namespace Model
      * <code>BlockPublicAccessConfiguration</code>. By default, Port 22 (SSH) is an
      * exception, and public access is allowed on this port. You can change this by
      * updating <code>BlockPublicSecurityGroupRules</code> to remove the exception.</p>
-     * <note> <p>For accounts that created clusters in a Region before November 25,
+     *  <p>For accounts that created clusters in a Region before November 25,
      * 2019, block public access is disabled by default in that Region. To use this
      * feature, you must manually enable and configure it. For accounts that did not
      * create an EMR cluster in a Region before this date, block public access is
-     * enabled by default in that Region.</p> </note>
+     * enabled by default in that Region.</p> 
      */
     inline void SetBlockPublicAccessConfiguration(BlockPublicAccessConfiguration&& value) { m_blockPublicAccessConfigurationHasBeenSet = true; m_blockPublicAccessConfiguration = std::move(value); }
 
@@ -121,11 +121,11 @@ namespace Model
      * <code>BlockPublicAccessConfiguration</code>. By default, Port 22 (SSH) is an
      * exception, and public access is allowed on this port. You can change this by
      * updating <code>BlockPublicSecurityGroupRules</code> to remove the exception.</p>
-     * <note> <p>For accounts that created clusters in a Region before November 25,
+     *  <p>For accounts that created clusters in a Region before November 25,
      * 2019, block public access is disabled by default in that Region. To use this
      * feature, you must manually enable and configure it. For accounts that did not
      * create an EMR cluster in a Region before this date, block public access is
-     * enabled by default in that Region.</p> </note>
+     * enabled by default in that Region.</p> 
      */
     inline PutBlockPublicAccessConfigurationRequest& WithBlockPublicAccessConfiguration(const BlockPublicAccessConfiguration& value) { SetBlockPublicAccessConfiguration(value); return *this;}
 
@@ -140,11 +140,11 @@ namespace Model
      * <code>BlockPublicAccessConfiguration</code>. By default, Port 22 (SSH) is an
      * exception, and public access is allowed on this port. You can change this by
      * updating <code>BlockPublicSecurityGroupRules</code> to remove the exception.</p>
-     * <note> <p>For accounts that created clusters in a Region before November 25,
+     *  <p>For accounts that created clusters in a Region before November 25,
      * 2019, block public access is disabled by default in that Region. To use this
      * feature, you must manually enable and configure it. For accounts that did not
      * create an EMR cluster in a Region before this date, block public access is
-     * enabled by default in that Region.</p> </note>
+     * enabled by default in that Region.</p> 
      */
     inline PutBlockPublicAccessConfigurationRequest& WithBlockPublicAccessConfiguration(BlockPublicAccessConfiguration&& value) { SetBlockPublicAccessConfiguration(std::move(value)); return *this;}
 

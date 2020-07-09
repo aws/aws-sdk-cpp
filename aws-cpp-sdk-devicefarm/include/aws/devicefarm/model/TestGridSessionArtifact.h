@@ -26,9 +26,9 @@ namespace Model
 
   /**
    * <p>Artifacts are video and other files that are produced in the process of
-   * running a browser in an automated context. </p> <note> <p>Video elements might
+   * running a browser in an automated context. </p>  <p>Video elements might
    * be broken up into multiple artifacts as they grow in size during creation. </p>
-   * </note><p><h3>See Also:</h3>   <a
+   * <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/TestGridSessionArtifact">AWS
    * API Reference</a></p>
    */

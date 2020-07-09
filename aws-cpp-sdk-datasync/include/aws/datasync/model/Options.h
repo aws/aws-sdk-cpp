@@ -198,9 +198,9 @@ namespace Model
      * so AWS DataSync can only do this on a best-effort basis. </p> <p>Default value:
      * BEST_EFFORT.</p> <p>BEST_EFFORT: Attempt to preserve the per-file
      * <code>Atime</code> value (recommended).</p> <p>NONE: Ignore
-     * <code>Atime</code>.</p> <note> <p>If <code>Atime</code> is set to BEST_EFFORT,
+     * <code>Atime</code>.</p>  <p>If <code>Atime</code> is set to BEST_EFFORT,
      * <code>Mtime</code> must be set to PRESERVE. </p> <p>If <code>Atime</code> is set
-     * to NONE, <code>Mtime</code> must also be NONE. </p> </note>
+     * to NONE, <code>Mtime</code> must also be NONE. </p> 
      */
     inline const Atime& GetAtime() const{ return m_atime; }
 
@@ -213,9 +213,9 @@ namespace Model
      * so AWS DataSync can only do this on a best-effort basis. </p> <p>Default value:
      * BEST_EFFORT.</p> <p>BEST_EFFORT: Attempt to preserve the per-file
      * <code>Atime</code> value (recommended).</p> <p>NONE: Ignore
-     * <code>Atime</code>.</p> <note> <p>If <code>Atime</code> is set to BEST_EFFORT,
+     * <code>Atime</code>.</p>  <p>If <code>Atime</code> is set to BEST_EFFORT,
      * <code>Mtime</code> must be set to PRESERVE. </p> <p>If <code>Atime</code> is set
-     * to NONE, <code>Mtime</code> must also be NONE. </p> </note>
+     * to NONE, <code>Mtime</code> must also be NONE. </p> 
      */
     inline bool AtimeHasBeenSet() const { return m_atimeHasBeenSet; }
 
@@ -228,9 +228,9 @@ namespace Model
      * so AWS DataSync can only do this on a best-effort basis. </p> <p>Default value:
      * BEST_EFFORT.</p> <p>BEST_EFFORT: Attempt to preserve the per-file
      * <code>Atime</code> value (recommended).</p> <p>NONE: Ignore
-     * <code>Atime</code>.</p> <note> <p>If <code>Atime</code> is set to BEST_EFFORT,
+     * <code>Atime</code>.</p>  <p>If <code>Atime</code> is set to BEST_EFFORT,
      * <code>Mtime</code> must be set to PRESERVE. </p> <p>If <code>Atime</code> is set
-     * to NONE, <code>Mtime</code> must also be NONE. </p> </note>
+     * to NONE, <code>Mtime</code> must also be NONE. </p> 
      */
     inline void SetAtime(const Atime& value) { m_atimeHasBeenSet = true; m_atime = value; }
 
@@ -243,9 +243,9 @@ namespace Model
      * so AWS DataSync can only do this on a best-effort basis. </p> <p>Default value:
      * BEST_EFFORT.</p> <p>BEST_EFFORT: Attempt to preserve the per-file
      * <code>Atime</code> value (recommended).</p> <p>NONE: Ignore
-     * <code>Atime</code>.</p> <note> <p>If <code>Atime</code> is set to BEST_EFFORT,
+     * <code>Atime</code>.</p>  <p>If <code>Atime</code> is set to BEST_EFFORT,
      * <code>Mtime</code> must be set to PRESERVE. </p> <p>If <code>Atime</code> is set
-     * to NONE, <code>Mtime</code> must also be NONE. </p> </note>
+     * to NONE, <code>Mtime</code> must also be NONE. </p> 
      */
     inline void SetAtime(Atime&& value) { m_atimeHasBeenSet = true; m_atime = std::move(value); }
 
@@ -258,9 +258,9 @@ namespace Model
      * so AWS DataSync can only do this on a best-effort basis. </p> <p>Default value:
      * BEST_EFFORT.</p> <p>BEST_EFFORT: Attempt to preserve the per-file
      * <code>Atime</code> value (recommended).</p> <p>NONE: Ignore
-     * <code>Atime</code>.</p> <note> <p>If <code>Atime</code> is set to BEST_EFFORT,
+     * <code>Atime</code>.</p>  <p>If <code>Atime</code> is set to BEST_EFFORT,
      * <code>Mtime</code> must be set to PRESERVE. </p> <p>If <code>Atime</code> is set
-     * to NONE, <code>Mtime</code> must also be NONE. </p> </note>
+     * to NONE, <code>Mtime</code> must also be NONE. </p> 
      */
     inline Options& WithAtime(const Atime& value) { SetAtime(value); return *this;}
 
@@ -273,9 +273,9 @@ namespace Model
      * so AWS DataSync can only do this on a best-effort basis. </p> <p>Default value:
      * BEST_EFFORT.</p> <p>BEST_EFFORT: Attempt to preserve the per-file
      * <code>Atime</code> value (recommended).</p> <p>NONE: Ignore
-     * <code>Atime</code>.</p> <note> <p>If <code>Atime</code> is set to BEST_EFFORT,
+     * <code>Atime</code>.</p>  <p>If <code>Atime</code> is set to BEST_EFFORT,
      * <code>Mtime</code> must be set to PRESERVE. </p> <p>If <code>Atime</code> is set
-     * to NONE, <code>Mtime</code> must also be NONE. </p> </note>
+     * to NONE, <code>Mtime</code> must also be NONE. </p> 
      */
     inline Options& WithAtime(Atime&& value) { SetAtime(std::move(value)); return *this;}
 
@@ -284,10 +284,10 @@ namespace Model
      * <p>A value that indicates the last time that a file was modified (that is, a
      * file was written to) before the PREPARING phase. </p> <p>Default value:
      * PRESERVE. </p> <p>PRESERVE: Preserve original <code>Mtime</code>
-     * (recommended)</p> <p> NONE: Ignore <code>Mtime</code>. </p> <note> <p>If
+     * (recommended)</p> <p> NONE: Ignore <code>Mtime</code>. </p>  <p>If
      * <code>Mtime</code> is set to PRESERVE, <code>Atime</code> must be set to
      * BEST_EFFORT.</p> <p>If <code>Mtime</code> is set to NONE, <code>Atime</code>
-     * must also be set to NONE. </p> </note>
+     * must also be set to NONE. </p> 
      */
     inline const Mtime& GetMtime() const{ return m_mtime; }
 
@@ -295,10 +295,10 @@ namespace Model
      * <p>A value that indicates the last time that a file was modified (that is, a
      * file was written to) before the PREPARING phase. </p> <p>Default value:
      * PRESERVE. </p> <p>PRESERVE: Preserve original <code>Mtime</code>
-     * (recommended)</p> <p> NONE: Ignore <code>Mtime</code>. </p> <note> <p>If
+     * (recommended)</p> <p> NONE: Ignore <code>Mtime</code>. </p>  <p>If
      * <code>Mtime</code> is set to PRESERVE, <code>Atime</code> must be set to
      * BEST_EFFORT.</p> <p>If <code>Mtime</code> is set to NONE, <code>Atime</code>
-     * must also be set to NONE. </p> </note>
+     * must also be set to NONE. </p> 
      */
     inline bool MtimeHasBeenSet() const { return m_mtimeHasBeenSet; }
 
@@ -306,10 +306,10 @@ namespace Model
      * <p>A value that indicates the last time that a file was modified (that is, a
      * file was written to) before the PREPARING phase. </p> <p>Default value:
      * PRESERVE. </p> <p>PRESERVE: Preserve original <code>Mtime</code>
-     * (recommended)</p> <p> NONE: Ignore <code>Mtime</code>. </p> <note> <p>If
+     * (recommended)</p> <p> NONE: Ignore <code>Mtime</code>. </p>  <p>If
      * <code>Mtime</code> is set to PRESERVE, <code>Atime</code> must be set to
      * BEST_EFFORT.</p> <p>If <code>Mtime</code> is set to NONE, <code>Atime</code>
-     * must also be set to NONE. </p> </note>
+     * must also be set to NONE. </p> 
      */
     inline void SetMtime(const Mtime& value) { m_mtimeHasBeenSet = true; m_mtime = value; }
 
@@ -317,10 +317,10 @@ namespace Model
      * <p>A value that indicates the last time that a file was modified (that is, a
      * file was written to) before the PREPARING phase. </p> <p>Default value:
      * PRESERVE. </p> <p>PRESERVE: Preserve original <code>Mtime</code>
-     * (recommended)</p> <p> NONE: Ignore <code>Mtime</code>. </p> <note> <p>If
+     * (recommended)</p> <p> NONE: Ignore <code>Mtime</code>. </p>  <p>If
      * <code>Mtime</code> is set to PRESERVE, <code>Atime</code> must be set to
      * BEST_EFFORT.</p> <p>If <code>Mtime</code> is set to NONE, <code>Atime</code>
-     * must also be set to NONE. </p> </note>
+     * must also be set to NONE. </p> 
      */
     inline void SetMtime(Mtime&& value) { m_mtimeHasBeenSet = true; m_mtime = std::move(value); }
 
@@ -328,10 +328,10 @@ namespace Model
      * <p>A value that indicates the last time that a file was modified (that is, a
      * file was written to) before the PREPARING phase. </p> <p>Default value:
      * PRESERVE. </p> <p>PRESERVE: Preserve original <code>Mtime</code>
-     * (recommended)</p> <p> NONE: Ignore <code>Mtime</code>. </p> <note> <p>If
+     * (recommended)</p> <p> NONE: Ignore <code>Mtime</code>. </p>  <p>If
      * <code>Mtime</code> is set to PRESERVE, <code>Atime</code> must be set to
      * BEST_EFFORT.</p> <p>If <code>Mtime</code> is set to NONE, <code>Atime</code>
-     * must also be set to NONE. </p> </note>
+     * must also be set to NONE. </p> 
      */
     inline Options& WithMtime(const Mtime& value) { SetMtime(value); return *this;}
 
@@ -339,10 +339,10 @@ namespace Model
      * <p>A value that indicates the last time that a file was modified (that is, a
      * file was written to) before the PREPARING phase. </p> <p>Default value:
      * PRESERVE. </p> <p>PRESERVE: Preserve original <code>Mtime</code>
-     * (recommended)</p> <p> NONE: Ignore <code>Mtime</code>. </p> <note> <p>If
+     * (recommended)</p> <p> NONE: Ignore <code>Mtime</code>. </p>  <p>If
      * <code>Mtime</code> is set to PRESERVE, <code>Atime</code> must be set to
      * BEST_EFFORT.</p> <p>If <code>Mtime</code> is set to NONE, <code>Atime</code>
-     * must also be set to NONE. </p> </note>
+     * must also be set to NONE. </p> 
      */
     inline Options& WithMtime(Mtime&& value) { SetMtime(std::move(value)); return *this;}
 
@@ -521,9 +521,9 @@ namespace Model
     /**
      * <p>A value that determines whether AWS DataSync should preserve the metadata of
      * block and character devices in the source file system, and recreate the files
-     * with that device name and metadata on the destination.</p> <note> <p>AWS
+     * with that device name and metadata on the destination.</p>  <p>AWS
      * DataSync can't sync the actual contents of such devices, because they are
-     * nonterminal and don't return an end-of-file (EOF) marker.</p> </note> <p>Default
+     * nonterminal and don't return an end-of-file (EOF) marker.</p>  <p>Default
      * value: NONE.</p> <p>NONE: Ignore special devices (recommended). </p>
      * <p>PRESERVE: Preserve character and block device metadata. This option isn't
      * currently supported for Amazon EFS. </p>
@@ -533,9 +533,9 @@ namespace Model
     /**
      * <p>A value that determines whether AWS DataSync should preserve the metadata of
      * block and character devices in the source file system, and recreate the files
-     * with that device name and metadata on the destination.</p> <note> <p>AWS
+     * with that device name and metadata on the destination.</p>  <p>AWS
      * DataSync can't sync the actual contents of such devices, because they are
-     * nonterminal and don't return an end-of-file (EOF) marker.</p> </note> <p>Default
+     * nonterminal and don't return an end-of-file (EOF) marker.</p>  <p>Default
      * value: NONE.</p> <p>NONE: Ignore special devices (recommended). </p>
      * <p>PRESERVE: Preserve character and block device metadata. This option isn't
      * currently supported for Amazon EFS. </p>
@@ -545,9 +545,9 @@ namespace Model
     /**
      * <p>A value that determines whether AWS DataSync should preserve the metadata of
      * block and character devices in the source file system, and recreate the files
-     * with that device name and metadata on the destination.</p> <note> <p>AWS
+     * with that device name and metadata on the destination.</p>  <p>AWS
      * DataSync can't sync the actual contents of such devices, because they are
-     * nonterminal and don't return an end-of-file (EOF) marker.</p> </note> <p>Default
+     * nonterminal and don't return an end-of-file (EOF) marker.</p>  <p>Default
      * value: NONE.</p> <p>NONE: Ignore special devices (recommended). </p>
      * <p>PRESERVE: Preserve character and block device metadata. This option isn't
      * currently supported for Amazon EFS. </p>
@@ -557,9 +557,9 @@ namespace Model
     /**
      * <p>A value that determines whether AWS DataSync should preserve the metadata of
      * block and character devices in the source file system, and recreate the files
-     * with that device name and metadata on the destination.</p> <note> <p>AWS
+     * with that device name and metadata on the destination.</p>  <p>AWS
      * DataSync can't sync the actual contents of such devices, because they are
-     * nonterminal and don't return an end-of-file (EOF) marker.</p> </note> <p>Default
+     * nonterminal and don't return an end-of-file (EOF) marker.</p>  <p>Default
      * value: NONE.</p> <p>NONE: Ignore special devices (recommended). </p>
      * <p>PRESERVE: Preserve character and block device metadata. This option isn't
      * currently supported for Amazon EFS. </p>
@@ -569,9 +569,9 @@ namespace Model
     /**
      * <p>A value that determines whether AWS DataSync should preserve the metadata of
      * block and character devices in the source file system, and recreate the files
-     * with that device name and metadata on the destination.</p> <note> <p>AWS
+     * with that device name and metadata on the destination.</p>  <p>AWS
      * DataSync can't sync the actual contents of such devices, because they are
-     * nonterminal and don't return an end-of-file (EOF) marker.</p> </note> <p>Default
+     * nonterminal and don't return an end-of-file (EOF) marker.</p>  <p>Default
      * value: NONE.</p> <p>NONE: Ignore special devices (recommended). </p>
      * <p>PRESERVE: Preserve character and block device metadata. This option isn't
      * currently supported for Amazon EFS. </p>
@@ -581,9 +581,9 @@ namespace Model
     /**
      * <p>A value that determines whether AWS DataSync should preserve the metadata of
      * block and character devices in the source file system, and recreate the files
-     * with that device name and metadata on the destination.</p> <note> <p>AWS
+     * with that device name and metadata on the destination.</p>  <p>AWS
      * DataSync can't sync the actual contents of such devices, because they are
-     * nonterminal and don't return an end-of-file (EOF) marker.</p> </note> <p>Default
+     * nonterminal and don't return an end-of-file (EOF) marker.</p>  <p>Default
      * value: NONE.</p> <p>NONE: Ignore special devices (recommended). </p>
      * <p>PRESERVE: Preserve character and block device metadata. This option isn't
      * currently supported for Amazon EFS. </p>
@@ -595,8 +595,8 @@ namespace Model
      * <p>A value that determines which users or groups can access a file for a
      * specific purpose such as reading, writing, or execution of the file. </p>
      * <p>Default value: PRESERVE.</p> <p>PRESERVE: Preserve POSIX-style permissions
-     * (recommended).</p> <p>NONE: Ignore permissions. </p> <note> <p>AWS DataSync can
-     * preserve extant permissions of a source location.</p> </note>
+     * (recommended).</p> <p>NONE: Ignore permissions. </p>  <p>AWS DataSync can
+     * preserve extant permissions of a source location.</p> 
      */
     inline const PosixPermissions& GetPosixPermissions() const{ return m_posixPermissions; }
 
@@ -604,8 +604,8 @@ namespace Model
      * <p>A value that determines which users or groups can access a file for a
      * specific purpose such as reading, writing, or execution of the file. </p>
      * <p>Default value: PRESERVE.</p> <p>PRESERVE: Preserve POSIX-style permissions
-     * (recommended).</p> <p>NONE: Ignore permissions. </p> <note> <p>AWS DataSync can
-     * preserve extant permissions of a source location.</p> </note>
+     * (recommended).</p> <p>NONE: Ignore permissions. </p>  <p>AWS DataSync can
+     * preserve extant permissions of a source location.</p> 
      */
     inline bool PosixPermissionsHasBeenSet() const { return m_posixPermissionsHasBeenSet; }
 
@@ -613,8 +613,8 @@ namespace Model
      * <p>A value that determines which users or groups can access a file for a
      * specific purpose such as reading, writing, or execution of the file. </p>
      * <p>Default value: PRESERVE.</p> <p>PRESERVE: Preserve POSIX-style permissions
-     * (recommended).</p> <p>NONE: Ignore permissions. </p> <note> <p>AWS DataSync can
-     * preserve extant permissions of a source location.</p> </note>
+     * (recommended).</p> <p>NONE: Ignore permissions. </p>  <p>AWS DataSync can
+     * preserve extant permissions of a source location.</p> 
      */
     inline void SetPosixPermissions(const PosixPermissions& value) { m_posixPermissionsHasBeenSet = true; m_posixPermissions = value; }
 
@@ -622,8 +622,8 @@ namespace Model
      * <p>A value that determines which users or groups can access a file for a
      * specific purpose such as reading, writing, or execution of the file. </p>
      * <p>Default value: PRESERVE.</p> <p>PRESERVE: Preserve POSIX-style permissions
-     * (recommended).</p> <p>NONE: Ignore permissions. </p> <note> <p>AWS DataSync can
-     * preserve extant permissions of a source location.</p> </note>
+     * (recommended).</p> <p>NONE: Ignore permissions. </p>  <p>AWS DataSync can
+     * preserve extant permissions of a source location.</p> 
      */
     inline void SetPosixPermissions(PosixPermissions&& value) { m_posixPermissionsHasBeenSet = true; m_posixPermissions = std::move(value); }
 
@@ -631,8 +631,8 @@ namespace Model
      * <p>A value that determines which users or groups can access a file for a
      * specific purpose such as reading, writing, or execution of the file. </p>
      * <p>Default value: PRESERVE.</p> <p>PRESERVE: Preserve POSIX-style permissions
-     * (recommended).</p> <p>NONE: Ignore permissions. </p> <note> <p>AWS DataSync can
-     * preserve extant permissions of a source location.</p> </note>
+     * (recommended).</p> <p>NONE: Ignore permissions. </p>  <p>AWS DataSync can
+     * preserve extant permissions of a source location.</p> 
      */
     inline Options& WithPosixPermissions(const PosixPermissions& value) { SetPosixPermissions(value); return *this;}
 
@@ -640,8 +640,8 @@ namespace Model
      * <p>A value that determines which users or groups can access a file for a
      * specific purpose such as reading, writing, or execution of the file. </p>
      * <p>Default value: PRESERVE.</p> <p>PRESERVE: Preserve POSIX-style permissions
-     * (recommended).</p> <p>NONE: Ignore permissions. </p> <note> <p>AWS DataSync can
-     * preserve extant permissions of a source location.</p> </note>
+     * (recommended).</p> <p>NONE: Ignore permissions. </p>  <p>AWS DataSync can
+     * preserve extant permissions of a source location.</p> 
      */
     inline Options& WithPosixPermissions(PosixPermissions&& value) { SetPosixPermissions(std::move(value)); return *this;}
 

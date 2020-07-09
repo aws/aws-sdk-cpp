@@ -121,9 +121,9 @@ namespace Model
      * <p>Specifies whether the list of attributes provided in the
      * <code>AttributePayload</code> is merged with the attributes stored in the
      * registry, instead of overwriting them.</p> <p>To remove an attribute, call
-     * <code>UpdateThing</code> with an empty attribute value.</p> <note> <p>The
+     * <code>UpdateThing</code> with an empty attribute value.</p>  <p>The
      * <code>merge</code> attribute is only valid when calling <code>UpdateThing</code>
-     * or <code>UpdateThingGroup</code>.</p> </note>
+     * or <code>UpdateThingGroup</code>.</p> 
      */
     inline bool GetMerge() const{ return m_merge; }
 
@@ -131,9 +131,9 @@ namespace Model
      * <p>Specifies whether the list of attributes provided in the
      * <code>AttributePayload</code> is merged with the attributes stored in the
      * registry, instead of overwriting them.</p> <p>To remove an attribute, call
-     * <code>UpdateThing</code> with an empty attribute value.</p> <note> <p>The
+     * <code>UpdateThing</code> with an empty attribute value.</p>  <p>The
      * <code>merge</code> attribute is only valid when calling <code>UpdateThing</code>
-     * or <code>UpdateThingGroup</code>.</p> </note>
+     * or <code>UpdateThingGroup</code>.</p> 
      */
     inline bool MergeHasBeenSet() const { return m_mergeHasBeenSet; }
 
@@ -141,9 +141,9 @@ namespace Model
      * <p>Specifies whether the list of attributes provided in the
      * <code>AttributePayload</code> is merged with the attributes stored in the
      * registry, instead of overwriting them.</p> <p>To remove an attribute, call
-     * <code>UpdateThing</code> with an empty attribute value.</p> <note> <p>The
+     * <code>UpdateThing</code> with an empty attribute value.</p>  <p>The
      * <code>merge</code> attribute is only valid when calling <code>UpdateThing</code>
-     * or <code>UpdateThingGroup</code>.</p> </note>
+     * or <code>UpdateThingGroup</code>.</p> 
      */
     inline void SetMerge(bool value) { m_mergeHasBeenSet = true; m_merge = value; }
 
@@ -151,9 +151,9 @@ namespace Model
      * <p>Specifies whether the list of attributes provided in the
      * <code>AttributePayload</code> is merged with the attributes stored in the
      * registry, instead of overwriting them.</p> <p>To remove an attribute, call
-     * <code>UpdateThing</code> with an empty attribute value.</p> <note> <p>The
+     * <code>UpdateThing</code> with an empty attribute value.</p>  <p>The
      * <code>merge</code> attribute is only valid when calling <code>UpdateThing</code>
-     * or <code>UpdateThingGroup</code>.</p> </note>
+     * or <code>UpdateThingGroup</code>.</p> 
      */
     inline AttributePayload& WithMerge(bool value) { SetMerge(value); return *this;}
 

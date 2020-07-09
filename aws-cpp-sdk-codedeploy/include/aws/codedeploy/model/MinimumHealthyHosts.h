@@ -68,7 +68,7 @@ namespace Model
      * instances are deployed to successfully. Otherwise, the deployment fails. If a
      * FLEET_PERCENT of 40 is specified, deploy to up to five instances at a time. The
      * deployment is successful if four or more instances are deployed to successfully.
-     * Otherwise, the deployment fails.</p> <note> <p>In a call to the
+     * Otherwise, the deployment fails.</p>  <p>In a call to the
      * <code>GetDeploymentConfig</code>, CodeDeployDefault.OneAtATime returns a minimum
      * healthy instance type of MOST_CONCURRENCY and a value of 1. This means a
      * deployment to only one instance at a time. (You cannot set the type to
@@ -77,7 +77,7 @@ namespace Model
      * instances but one are kept in a healthy state during the deployment. Although
      * this allows one instance at a time to be taken offline for a new deployment, it
      * also means that if the deployment to the last instance fails, the overall
-     * deployment is still successful.</p> </note> <p>For more information, see <a
+     * deployment is still successful.</p>  <p>For more information, see <a
      * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/instances-health.html">AWS
      * CodeDeploy Instance Health</a> in the <i>AWS CodeDeploy User Guide</i>.</p>
      */
@@ -93,7 +93,7 @@ namespace Model
      * instances are deployed to successfully. Otherwise, the deployment fails. If a
      * FLEET_PERCENT of 40 is specified, deploy to up to five instances at a time. The
      * deployment is successful if four or more instances are deployed to successfully.
-     * Otherwise, the deployment fails.</p> <note> <p>In a call to the
+     * Otherwise, the deployment fails.</p>  <p>In a call to the
      * <code>GetDeploymentConfig</code>, CodeDeployDefault.OneAtATime returns a minimum
      * healthy instance type of MOST_CONCURRENCY and a value of 1. This means a
      * deployment to only one instance at a time. (You cannot set the type to
@@ -102,7 +102,7 @@ namespace Model
      * instances but one are kept in a healthy state during the deployment. Although
      * this allows one instance at a time to be taken offline for a new deployment, it
      * also means that if the deployment to the last instance fails, the overall
-     * deployment is still successful.</p> </note> <p>For more information, see <a
+     * deployment is still successful.</p>  <p>For more information, see <a
      * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/instances-health.html">AWS
      * CodeDeploy Instance Health</a> in the <i>AWS CodeDeploy User Guide</i>.</p>
      */
@@ -118,7 +118,7 @@ namespace Model
      * instances are deployed to successfully. Otherwise, the deployment fails. If a
      * FLEET_PERCENT of 40 is specified, deploy to up to five instances at a time. The
      * deployment is successful if four or more instances are deployed to successfully.
-     * Otherwise, the deployment fails.</p> <note> <p>In a call to the
+     * Otherwise, the deployment fails.</p>  <p>In a call to the
      * <code>GetDeploymentConfig</code>, CodeDeployDefault.OneAtATime returns a minimum
      * healthy instance type of MOST_CONCURRENCY and a value of 1. This means a
      * deployment to only one instance at a time. (You cannot set the type to
@@ -127,7 +127,7 @@ namespace Model
      * instances but one are kept in a healthy state during the deployment. Although
      * this allows one instance at a time to be taken offline for a new deployment, it
      * also means that if the deployment to the last instance fails, the overall
-     * deployment is still successful.</p> </note> <p>For more information, see <a
+     * deployment is still successful.</p>  <p>For more information, see <a
      * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/instances-health.html">AWS
      * CodeDeploy Instance Health</a> in the <i>AWS CodeDeploy User Guide</i>.</p>
      */
@@ -143,7 +143,7 @@ namespace Model
      * instances are deployed to successfully. Otherwise, the deployment fails. If a
      * FLEET_PERCENT of 40 is specified, deploy to up to five instances at a time. The
      * deployment is successful if four or more instances are deployed to successfully.
-     * Otherwise, the deployment fails.</p> <note> <p>In a call to the
+     * Otherwise, the deployment fails.</p>  <p>In a call to the
      * <code>GetDeploymentConfig</code>, CodeDeployDefault.OneAtATime returns a minimum
      * healthy instance type of MOST_CONCURRENCY and a value of 1. This means a
      * deployment to only one instance at a time. (You cannot set the type to
@@ -152,7 +152,7 @@ namespace Model
      * instances but one are kept in a healthy state during the deployment. Although
      * this allows one instance at a time to be taken offline for a new deployment, it
      * also means that if the deployment to the last instance fails, the overall
-     * deployment is still successful.</p> </note> <p>For more information, see <a
+     * deployment is still successful.</p>  <p>For more information, see <a
      * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/instances-health.html">AWS
      * CodeDeploy Instance Health</a> in the <i>AWS CodeDeploy User Guide</i>.</p>
      */
@@ -168,7 +168,7 @@ namespace Model
      * instances are deployed to successfully. Otherwise, the deployment fails. If a
      * FLEET_PERCENT of 40 is specified, deploy to up to five instances at a time. The
      * deployment is successful if four or more instances are deployed to successfully.
-     * Otherwise, the deployment fails.</p> <note> <p>In a call to the
+     * Otherwise, the deployment fails.</p>  <p>In a call to the
      * <code>GetDeploymentConfig</code>, CodeDeployDefault.OneAtATime returns a minimum
      * healthy instance type of MOST_CONCURRENCY and a value of 1. This means a
      * deployment to only one instance at a time. (You cannot set the type to
@@ -177,7 +177,7 @@ namespace Model
      * instances but one are kept in a healthy state during the deployment. Although
      * this allows one instance at a time to be taken offline for a new deployment, it
      * also means that if the deployment to the last instance fails, the overall
-     * deployment is still successful.</p> </note> <p>For more information, see <a
+     * deployment is still successful.</p>  <p>For more information, see <a
      * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/instances-health.html">AWS
      * CodeDeploy Instance Health</a> in the <i>AWS CodeDeploy User Guide</i>.</p>
      */
@@ -193,7 +193,7 @@ namespace Model
      * instances are deployed to successfully. Otherwise, the deployment fails. If a
      * FLEET_PERCENT of 40 is specified, deploy to up to five instances at a time. The
      * deployment is successful if four or more instances are deployed to successfully.
-     * Otherwise, the deployment fails.</p> <note> <p>In a call to the
+     * Otherwise, the deployment fails.</p>  <p>In a call to the
      * <code>GetDeploymentConfig</code>, CodeDeployDefault.OneAtATime returns a minimum
      * healthy instance type of MOST_CONCURRENCY and a value of 1. This means a
      * deployment to only one instance at a time. (You cannot set the type to
@@ -202,7 +202,7 @@ namespace Model
      * instances but one are kept in a healthy state during the deployment. Although
      * this allows one instance at a time to be taken offline for a new deployment, it
      * also means that if the deployment to the last instance fails, the overall
-     * deployment is still successful.</p> </note> <p>For more information, see <a
+     * deployment is still successful.</p>  <p>For more information, see <a
      * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/instances-health.html">AWS
      * CodeDeploy Instance Health</a> in the <i>AWS CodeDeploy User Guide</i>.</p>
      */

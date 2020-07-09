@@ -378,57 +378,57 @@ namespace Model
 
     /**
      * <p>The lease identifier filter value. Specify this parameter to show only the
-     * reservation that matches the specified lease ID.</p> <note> <p>AWS Support might
-     * request the lease ID for an issue related to a reserved DB instance.</p> </note>
+     * reservation that matches the specified lease ID.</p>  <p>AWS Support might
+     * request the lease ID for an issue related to a reserved DB instance.</p> 
      */
     inline const Aws::String& GetLeaseId() const{ return m_leaseId; }
 
     /**
      * <p>The lease identifier filter value. Specify this parameter to show only the
-     * reservation that matches the specified lease ID.</p> <note> <p>AWS Support might
-     * request the lease ID for an issue related to a reserved DB instance.</p> </note>
+     * reservation that matches the specified lease ID.</p>  <p>AWS Support might
+     * request the lease ID for an issue related to a reserved DB instance.</p> 
      */
     inline bool LeaseIdHasBeenSet() const { return m_leaseIdHasBeenSet; }
 
     /**
      * <p>The lease identifier filter value. Specify this parameter to show only the
-     * reservation that matches the specified lease ID.</p> <note> <p>AWS Support might
-     * request the lease ID for an issue related to a reserved DB instance.</p> </note>
+     * reservation that matches the specified lease ID.</p>  <p>AWS Support might
+     * request the lease ID for an issue related to a reserved DB instance.</p> 
      */
     inline void SetLeaseId(const Aws::String& value) { m_leaseIdHasBeenSet = true; m_leaseId = value; }
 
     /**
      * <p>The lease identifier filter value. Specify this parameter to show only the
-     * reservation that matches the specified lease ID.</p> <note> <p>AWS Support might
-     * request the lease ID for an issue related to a reserved DB instance.</p> </note>
+     * reservation that matches the specified lease ID.</p>  <p>AWS Support might
+     * request the lease ID for an issue related to a reserved DB instance.</p> 
      */
     inline void SetLeaseId(Aws::String&& value) { m_leaseIdHasBeenSet = true; m_leaseId = std::move(value); }
 
     /**
      * <p>The lease identifier filter value. Specify this parameter to show only the
-     * reservation that matches the specified lease ID.</p> <note> <p>AWS Support might
-     * request the lease ID for an issue related to a reserved DB instance.</p> </note>
+     * reservation that matches the specified lease ID.</p>  <p>AWS Support might
+     * request the lease ID for an issue related to a reserved DB instance.</p> 
      */
     inline void SetLeaseId(const char* value) { m_leaseIdHasBeenSet = true; m_leaseId.assign(value); }
 
     /**
      * <p>The lease identifier filter value. Specify this parameter to show only the
-     * reservation that matches the specified lease ID.</p> <note> <p>AWS Support might
-     * request the lease ID for an issue related to a reserved DB instance.</p> </note>
+     * reservation that matches the specified lease ID.</p>  <p>AWS Support might
+     * request the lease ID for an issue related to a reserved DB instance.</p> 
      */
     inline DescribeReservedDBInstancesRequest& WithLeaseId(const Aws::String& value) { SetLeaseId(value); return *this;}
 
     /**
      * <p>The lease identifier filter value. Specify this parameter to show only the
-     * reservation that matches the specified lease ID.</p> <note> <p>AWS Support might
-     * request the lease ID for an issue related to a reserved DB instance.</p> </note>
+     * reservation that matches the specified lease ID.</p>  <p>AWS Support might
+     * request the lease ID for an issue related to a reserved DB instance.</p> 
      */
     inline DescribeReservedDBInstancesRequest& WithLeaseId(Aws::String&& value) { SetLeaseId(std::move(value)); return *this;}
 
     /**
      * <p>The lease identifier filter value. Specify this parameter to show only the
-     * reservation that matches the specified lease ID.</p> <note> <p>AWS Support might
-     * request the lease ID for an issue related to a reserved DB instance.</p> </note>
+     * reservation that matches the specified lease ID.</p>  <p>AWS Support might
+     * request the lease ID for an issue related to a reserved DB instance.</p> 
      */
     inline DescribeReservedDBInstancesRequest& WithLeaseId(const char* value) { SetLeaseId(value); return *this;}
 

@@ -1063,10 +1063,10 @@ namespace Model
          * including the job initiation date, the user who initiated the job, the job
          * status code/message and the Amazon SNS topic to notify after Amazon S3 Glacier
          * (Glacier) completes the job. For more information about initiating a job, see
-         * <a>InitiateJob</a>. </p> <note> <p>This operation enables you to check the
+         * <a>InitiateJob</a>. </p>  <p>This operation enables you to check the
          * status of your job. However, it is strongly recommended that you set up an
          * Amazon SNS topic and specify it in your initiate job request so that Glacier can
-         * notify the topic after it completes the job.</p> </note> <p>A job ID will not
+         * notify the topic after it completes the job.</p>  <p>A job ID will not
          * expire for at least 24 hours after Glacier completes the job.</p> <p>An AWS
          * account has full permission to perform all operations (actions). However, AWS
          * Identity and Access Management (IAM) users don't have any permissions by
@@ -1089,10 +1089,10 @@ namespace Model
          * including the job initiation date, the user who initiated the job, the job
          * status code/message and the Amazon SNS topic to notify after Amazon S3 Glacier
          * (Glacier) completes the job. For more information about initiating a job, see
-         * <a>InitiateJob</a>. </p> <note> <p>This operation enables you to check the
+         * <a>InitiateJob</a>. </p>  <p>This operation enables you to check the
          * status of your job. However, it is strongly recommended that you set up an
          * Amazon SNS topic and specify it in your initiate job request so that Glacier can
-         * notify the topic after it completes the job.</p> </note> <p>A job ID will not
+         * notify the topic after it completes the job.</p>  <p>A job ID will not
          * expire for at least 24 hours after Glacier completes the job.</p> <p>An AWS
          * account has full permission to perform all operations (actions). However, AWS
          * Identity and Access Management (IAM) users don't have any permissions by
@@ -1117,10 +1117,10 @@ namespace Model
          * including the job initiation date, the user who initiated the job, the job
          * status code/message and the Amazon SNS topic to notify after Amazon S3 Glacier
          * (Glacier) completes the job. For more information about initiating a job, see
-         * <a>InitiateJob</a>. </p> <note> <p>This operation enables you to check the
+         * <a>InitiateJob</a>. </p>  <p>This operation enables you to check the
          * status of your job. However, it is strongly recommended that you set up an
          * Amazon SNS topic and specify it in your initiate job request so that Glacier can
-         * notify the topic after it completes the job.</p> </note> <p>A job ID will not
+         * notify the topic after it completes the job.</p>  <p>A job ID will not
          * expire for at least 24 hours after Glacier completes the job.</p> <p>An AWS
          * account has full permission to perform all operations (actions). However, AWS
          * Identity and Access Management (IAM) users don't have any permissions by
@@ -1661,9 +1661,9 @@ namespace Model
          * last one can be the same size or smaller. For example, suppose you want to
          * upload a 16.2 MB file. If you initiate the multipart upload with a part size of
          * 4 MB, you will upload four parts of 4 MB each and one part of 0.2 MB. </p>
-         * <note> <p>You don't need to know the size of the archive when you start a
+         *  <p>You don't need to know the size of the archive when you start a
          * multipart upload because Amazon S3 Glacier does not require you to specify the
-         * overall archive size.</p> </note> <p>After you complete the multipart upload,
+         * overall archive size.</p>  <p>After you complete the multipart upload,
          * Amazon S3 Glacier (Glacier) removes the multipart upload resource referenced by
          * the ID. Glacier also removes the multipart upload resource if you cancel the
          * multipart upload or it may be removed if there is no activity for a period of 24
@@ -1697,9 +1697,9 @@ namespace Model
          * last one can be the same size or smaller. For example, suppose you want to
          * upload a 16.2 MB file. If you initiate the multipart upload with a part size of
          * 4 MB, you will upload four parts of 4 MB each and one part of 0.2 MB. </p>
-         * <note> <p>You don't need to know the size of the archive when you start a
+         *  <p>You don't need to know the size of the archive when you start a
          * multipart upload because Amazon S3 Glacier does not require you to specify the
-         * overall archive size.</p> </note> <p>After you complete the multipart upload,
+         * overall archive size.</p>  <p>After you complete the multipart upload,
          * Amazon S3 Glacier (Glacier) removes the multipart upload resource referenced by
          * the ID. Glacier also removes the multipart upload resource if you cancel the
          * multipart upload or it may be removed if there is no activity for a period of 24
@@ -1735,9 +1735,9 @@ namespace Model
          * last one can be the same size or smaller. For example, suppose you want to
          * upload a 16.2 MB file. If you initiate the multipart upload with a part size of
          * 4 MB, you will upload four parts of 4 MB each and one part of 0.2 MB. </p>
-         * <note> <p>You don't need to know the size of the archive when you start a
+         *  <p>You don't need to know the size of the archive when you start a
          * multipart upload because Amazon S3 Glacier does not require you to specify the
-         * overall archive size.</p> </note> <p>After you complete the multipart upload,
+         * overall archive size.</p>  <p>After you complete the multipart upload,
          * Amazon S3 Glacier (Glacier) removes the multipart upload resource referenced by
          * the ID. Glacier also removes the multipart upload resource if you cancel the
          * multipart upload or it may be removed if there is no activity for a period of 24
@@ -1860,7 +1860,7 @@ namespace Model
         /**
          * <p>This operation lists jobs for a vault, including jobs that are in-progress
          * and jobs that have recently finished. The List Job operation returns a list of
-         * these jobs sorted by job initiation time.</p> <note> <p>Amazon Glacier retains
+         * these jobs sorted by job initiation time.</p>  <p>Amazon Glacier retains
          * recently completed jobs for a period before deleting them; however, it
          * eventually removes completed jobs. The output of completed jobs can be
          * retrieved. Retaining completed jobs for a period of time after they have
@@ -1869,7 +1869,7 @@ namespace Model
          * suppose you start an archive retrieval job to download an archive. After the job
          * completes, you start to download the archive but encounter a network error. In
          * this scenario, you can retry and download the archive while the job exists.</p>
-         * </note> <p>The List Jobs operation supports pagination. You should always check
+         *  <p>The List Jobs operation supports pagination. You should always check
          * the response <code>Marker</code> field. If there are no more jobs to list, the
          * <code>Marker</code> field is set to <code>null</code>. If there are more jobs to
          * list, the <code>Marker</code> field is set to a non-null value, which you can
@@ -1898,7 +1898,7 @@ namespace Model
         /**
          * <p>This operation lists jobs for a vault, including jobs that are in-progress
          * and jobs that have recently finished. The List Job operation returns a list of
-         * these jobs sorted by job initiation time.</p> <note> <p>Amazon Glacier retains
+         * these jobs sorted by job initiation time.</p>  <p>Amazon Glacier retains
          * recently completed jobs for a period before deleting them; however, it
          * eventually removes completed jobs. The output of completed jobs can be
          * retrieved. Retaining completed jobs for a period of time after they have
@@ -1907,7 +1907,7 @@ namespace Model
          * suppose you start an archive retrieval job to download an archive. After the job
          * completes, you start to download the archive but encounter a network error. In
          * this scenario, you can retry and download the archive while the job exists.</p>
-         * </note> <p>The List Jobs operation supports pagination. You should always check
+         *  <p>The List Jobs operation supports pagination. You should always check
          * the response <code>Marker</code> field. If there are no more jobs to list, the
          * <code>Marker</code> field is set to <code>null</code>. If there are more jobs to
          * list, the <code>Marker</code> field is set to a non-null value, which you can
@@ -1938,7 +1938,7 @@ namespace Model
         /**
          * <p>This operation lists jobs for a vault, including jobs that are in-progress
          * and jobs that have recently finished. The List Job operation returns a list of
-         * these jobs sorted by job initiation time.</p> <note> <p>Amazon Glacier retains
+         * these jobs sorted by job initiation time.</p>  <p>Amazon Glacier retains
          * recently completed jobs for a period before deleting them; however, it
          * eventually removes completed jobs. The output of completed jobs can be
          * retrieved. Retaining completed jobs for a period of time after they have
@@ -1947,7 +1947,7 @@ namespace Model
          * suppose you start an archive retrieval job to download an archive. After the job
          * completes, you start to download the archive but encounter a network error. In
          * this scenario, you can retry and download the archive while the job exists.</p>
-         * </note> <p>The List Jobs operation supports pagination. You should always check
+         *  <p>The List Jobs operation supports pagination. You should always check
          * the response <code>Marker</code> field. If there are no more jobs to list, the
          * <code>Marker</code> field is set to <code>null</code>. If there are more jobs to
          * list, the <code>Marker</code> field is set to a non-null value, which you can
@@ -2735,11 +2735,11 @@ namespace Model
          * Checksums</a>.</p> </li> <li> <p> <b>Part size does not match</b>The size of
          * each part except the last must match the size specified in the corresponding
          * <a>InitiateMultipartUpload</a> request. The size of the last part must be the
-         * same size as, or smaller than, the specified size.</p> <note> <p>If you upload a
+         * same size as, or smaller than, the specified size.</p>  <p>If you upload a
          * part whose size is smaller than the part size you specified in your initiate
          * multipart upload request and that part is not the last part, then the upload
          * part request will succeed. However, the subsequent Complete Multipart Upload
-         * request will fail.</p> </note> </li> <li> <p> <b>Range does not align</b>The
+         * request will fail.</p>  </li> <li> <p> <b>Range does not align</b>The
          * byte range value in the request does not align with the part size specified in
          * the corresponding initiate request. For example, if you specify a part size of
          * 4194304 bytes (4 MB), then 0 to 4194303 bytes (4 MB - 1) and 4194304 (4 MB) to
@@ -2778,11 +2778,11 @@ namespace Model
          * Checksums</a>.</p> </li> <li> <p> <b>Part size does not match</b>The size of
          * each part except the last must match the size specified in the corresponding
          * <a>InitiateMultipartUpload</a> request. The size of the last part must be the
-         * same size as, or smaller than, the specified size.</p> <note> <p>If you upload a
+         * same size as, or smaller than, the specified size.</p>  <p>If you upload a
          * part whose size is smaller than the part size you specified in your initiate
          * multipart upload request and that part is not the last part, then the upload
          * part request will succeed. However, the subsequent Complete Multipart Upload
-         * request will fail.</p> </note> </li> <li> <p> <b>Range does not align</b>The
+         * request will fail.</p>  </li> <li> <p> <b>Range does not align</b>The
          * byte range value in the request does not align with the part size specified in
          * the corresponding initiate request. For example, if you specify a part size of
          * 4194304 bytes (4 MB), then 0 to 4194303 bytes (4 MB - 1) and 4194304 (4 MB) to
@@ -2823,11 +2823,11 @@ namespace Model
          * Checksums</a>.</p> </li> <li> <p> <b>Part size does not match</b>The size of
          * each part except the last must match the size specified in the corresponding
          * <a>InitiateMultipartUpload</a> request. The size of the last part must be the
-         * same size as, or smaller than, the specified size.</p> <note> <p>If you upload a
+         * same size as, or smaller than, the specified size.</p>  <p>If you upload a
          * part whose size is smaller than the part size you specified in your initiate
          * multipart upload request and that part is not the last part, then the upload
          * part request will succeed. However, the subsequent Complete Multipart Upload
-         * request will fail.</p> </note> </li> <li> <p> <b>Range does not align</b>The
+         * request will fail.</p>  </li> <li> <p> <b>Range does not align</b>The
          * byte range value in the request does not align with the part size specified in
          * the corresponding initiate request. For example, if you specify a part size of
          * 4194304 bytes (4 MB), then 0 to 4194303 bytes (4 MB - 1) and 4194304 (4 MB) to

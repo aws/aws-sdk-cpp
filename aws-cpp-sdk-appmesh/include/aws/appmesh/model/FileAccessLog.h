@@ -48,12 +48,12 @@ namespace Model
      * You can also specify a path in the Envoy container's file system to write
       
      * the files to disk.</p>
-         <note>
+         
             <p>The Envoy process must
      * have write permissions to the path that you specify here.
             Otherwise,
      * Envoy fails to bootstrap properly.</p>
-         </note>
+         
      */
     inline const Aws::String& GetPath() const{ return m_path; }
 
@@ -68,12 +68,12 @@ namespace Model
      * You can also specify a path in the Envoy container's file system to write
       
      * the files to disk.</p>
-         <note>
+         
             <p>The Envoy process must
      * have write permissions to the path that you specify here.
             Otherwise,
      * Envoy fails to bootstrap properly.</p>
-         </note>
+         
      */
     inline bool PathHasBeenSet() const { return m_pathHasBeenSet; }
 
@@ -88,12 +88,12 @@ namespace Model
      * You can also specify a path in the Envoy container's file system to write
       
      * the files to disk.</p>
-         <note>
+         
             <p>The Envoy process must
      * have write permissions to the path that you specify here.
             Otherwise,
      * Envoy fails to bootstrap properly.</p>
-         </note>
+         
      */
     inline void SetPath(const Aws::String& value) { m_pathHasBeenSet = true; m_path = value; }
 
@@ -108,12 +108,12 @@ namespace Model
      * You can also specify a path in the Envoy container's file system to write
       
      * the files to disk.</p>
-         <note>
+         
             <p>The Envoy process must
      * have write permissions to the path that you specify here.
             Otherwise,
      * Envoy fails to bootstrap properly.</p>
-         </note>
+         
      */
     inline void SetPath(Aws::String&& value) { m_pathHasBeenSet = true; m_path = std::move(value); }
 
@@ -128,12 +128,12 @@ namespace Model
      * You can also specify a path in the Envoy container's file system to write
       
      * the files to disk.</p>
-         <note>
+         
             <p>The Envoy process must
      * have write permissions to the path that you specify here.
             Otherwise,
      * Envoy fails to bootstrap properly.</p>
-         </note>
+         
      */
     inline void SetPath(const char* value) { m_pathHasBeenSet = true; m_path.assign(value); }
 
@@ -148,12 +148,12 @@ namespace Model
      * You can also specify a path in the Envoy container's file system to write
       
      * the files to disk.</p>
-         <note>
+         
             <p>The Envoy process must
      * have write permissions to the path that you specify here.
             Otherwise,
      * Envoy fails to bootstrap properly.</p>
-         </note>
+         
      */
     inline FileAccessLog& WithPath(const Aws::String& value) { SetPath(value); return *this;}
 
@@ -168,12 +168,12 @@ namespace Model
      * You can also specify a path in the Envoy container's file system to write
       
      * the files to disk.</p>
-         <note>
+         
             <p>The Envoy process must
      * have write permissions to the path that you specify here.
             Otherwise,
      * Envoy fails to bootstrap properly.</p>
-         </note>
+         
      */
     inline FileAccessLog& WithPath(Aws::String&& value) { SetPath(std::move(value)); return *this;}
 
@@ -188,12 +188,12 @@ namespace Model
      * You can also specify a path in the Envoy container's file system to write
       
      * the files to disk.</p>
-         <note>
+         
             <p>The Envoy process must
      * have write permissions to the path that you specify here.
             Otherwise,
      * Envoy fails to bootstrap properly.</p>
-         </note>
+         
      */
     inline FileAccessLog& WithPath(const char* value) { SetPath(value); return *this;}
 

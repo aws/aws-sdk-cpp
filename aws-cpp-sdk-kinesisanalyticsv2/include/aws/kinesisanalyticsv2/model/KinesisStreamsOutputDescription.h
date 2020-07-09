@@ -82,65 +82,65 @@ namespace Model
 
     /**
      * <p>The ARN of the IAM role that Kinesis Data Analytics can assume to access the
-     * stream.</p> <note> <p>Provided for backward compatibility. Applications that are
+     * stream.</p>  <p>Provided for backward compatibility. Applications that are
      * created with the current API version have an application-level service execution
-     * role rather than a resource-level role.</p> </note>
+     * role rather than a resource-level role.</p> 
      */
     inline const Aws::String& GetRoleARN() const{ return m_roleARN; }
 
     /**
      * <p>The ARN of the IAM role that Kinesis Data Analytics can assume to access the
-     * stream.</p> <note> <p>Provided for backward compatibility. Applications that are
+     * stream.</p>  <p>Provided for backward compatibility. Applications that are
      * created with the current API version have an application-level service execution
-     * role rather than a resource-level role.</p> </note>
+     * role rather than a resource-level role.</p> 
      */
     inline bool RoleARNHasBeenSet() const { return m_roleARNHasBeenSet; }
 
     /**
      * <p>The ARN of the IAM role that Kinesis Data Analytics can assume to access the
-     * stream.</p> <note> <p>Provided for backward compatibility. Applications that are
+     * stream.</p>  <p>Provided for backward compatibility. Applications that are
      * created with the current API version have an application-level service execution
-     * role rather than a resource-level role.</p> </note>
+     * role rather than a resource-level role.</p> 
      */
     inline void SetRoleARN(const Aws::String& value) { m_roleARNHasBeenSet = true; m_roleARN = value; }
 
     /**
      * <p>The ARN of the IAM role that Kinesis Data Analytics can assume to access the
-     * stream.</p> <note> <p>Provided for backward compatibility. Applications that are
+     * stream.</p>  <p>Provided for backward compatibility. Applications that are
      * created with the current API version have an application-level service execution
-     * role rather than a resource-level role.</p> </note>
+     * role rather than a resource-level role.</p> 
      */
     inline void SetRoleARN(Aws::String&& value) { m_roleARNHasBeenSet = true; m_roleARN = std::move(value); }
 
     /**
      * <p>The ARN of the IAM role that Kinesis Data Analytics can assume to access the
-     * stream.</p> <note> <p>Provided for backward compatibility. Applications that are
+     * stream.</p>  <p>Provided for backward compatibility. Applications that are
      * created with the current API version have an application-level service execution
-     * role rather than a resource-level role.</p> </note>
+     * role rather than a resource-level role.</p> 
      */
     inline void SetRoleARN(const char* value) { m_roleARNHasBeenSet = true; m_roleARN.assign(value); }
 
     /**
      * <p>The ARN of the IAM role that Kinesis Data Analytics can assume to access the
-     * stream.</p> <note> <p>Provided for backward compatibility. Applications that are
+     * stream.</p>  <p>Provided for backward compatibility. Applications that are
      * created with the current API version have an application-level service execution
-     * role rather than a resource-level role.</p> </note>
+     * role rather than a resource-level role.</p> 
      */
     inline KinesisStreamsOutputDescription& WithRoleARN(const Aws::String& value) { SetRoleARN(value); return *this;}
 
     /**
      * <p>The ARN of the IAM role that Kinesis Data Analytics can assume to access the
-     * stream.</p> <note> <p>Provided for backward compatibility. Applications that are
+     * stream.</p>  <p>Provided for backward compatibility. Applications that are
      * created with the current API version have an application-level service execution
-     * role rather than a resource-level role.</p> </note>
+     * role rather than a resource-level role.</p> 
      */
     inline KinesisStreamsOutputDescription& WithRoleARN(Aws::String&& value) { SetRoleARN(std::move(value)); return *this;}
 
     /**
      * <p>The ARN of the IAM role that Kinesis Data Analytics can assume to access the
-     * stream.</p> <note> <p>Provided for backward compatibility. Applications that are
+     * stream.</p>  <p>Provided for backward compatibility. Applications that are
      * created with the current API version have an application-level service execution
-     * role rather than a resource-level role.</p> </note>
+     * role rather than a resource-level role.</p> 
      */
     inline KinesisStreamsOutputDescription& WithRoleARN(const char* value) { SetRoleARN(value); return *this;}
 

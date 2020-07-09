@@ -28,9 +28,9 @@ namespace Model
    * <p> <i>Public DNS and HTTP namespaces only.</i> A complex type that contains
    * settings for an optional health check. If you specify settings for a health
    * check, AWS Cloud Map associates the health check with the records that you
-   * specify in <code>DnsConfig</code>.</p> <important> <p>If you specify a health
+   * specify in <code>DnsConfig</code>.</p>  <p>If you specify a health
    * check configuration, you can specify either <code>HealthCheckCustomConfig</code>
-   * or <code>HealthCheckConfig</code> but not both.</p> </important> <p>Health
+   * or <code>HealthCheckConfig</code> but not both.</p>  <p>Health
    * checks are basic Route 53 health checks that monitor an AWS endpoint. For
    * information about pricing for health checks, see <a
    * href="http://aws.amazon.com/route53/pricing/">Amazon Route 53 Pricing</a>.</p>
@@ -81,16 +81,16 @@ namespace Model
 
     /**
      * <p>The type of health check that you want to create, which indicates how Route
-     * 53 determines whether an endpoint is healthy.</p> <important> <p>You can't
+     * 53 determines whether an endpoint is healthy.</p>  <p>You can't
      * change the value of <code>Type</code> after you create a health check.</p>
-     * </important> <p>You can create the following types of health checks:</p> <ul>
+     *  <p>You can create the following types of health checks:</p> <ul>
      * <li> <p> <b>HTTP</b>: Route 53 tries to establish a TCP connection. If
      * successful, Route 53 submits an HTTP request and waits for an HTTP status code
      * of 200 or greater and less than 400.</p> </li> <li> <p> <b>HTTPS</b>: Route 53
      * tries to establish a TCP connection. If successful, Route 53 submits an HTTPS
      * request and waits for an HTTP status code of 200 or greater and less than
-     * 400.</p> <important> <p>If you specify HTTPS for the value of <code>Type</code>,
-     * the endpoint must support TLS v1.0 or later.</p> </important> </li> <li> <p>
+     * 400.</p>  <p>If you specify HTTPS for the value of <code>Type</code>,
+     * the endpoint must support TLS v1.0 or later.</p>  </li> <li> <p>
      * <b>TCP</b>: Route 53 tries to establish a TCP connection.</p> <p>If you specify
      * <code>TCP</code> for <code>Type</code>, don't specify a value for
      * <code>ResourcePath</code>.</p> </li> </ul> <p>For more information, see <a
@@ -102,16 +102,16 @@ namespace Model
 
     /**
      * <p>The type of health check that you want to create, which indicates how Route
-     * 53 determines whether an endpoint is healthy.</p> <important> <p>You can't
+     * 53 determines whether an endpoint is healthy.</p>  <p>You can't
      * change the value of <code>Type</code> after you create a health check.</p>
-     * </important> <p>You can create the following types of health checks:</p> <ul>
+     *  <p>You can create the following types of health checks:</p> <ul>
      * <li> <p> <b>HTTP</b>: Route 53 tries to establish a TCP connection. If
      * successful, Route 53 submits an HTTP request and waits for an HTTP status code
      * of 200 or greater and less than 400.</p> </li> <li> <p> <b>HTTPS</b>: Route 53
      * tries to establish a TCP connection. If successful, Route 53 submits an HTTPS
      * request and waits for an HTTP status code of 200 or greater and less than
-     * 400.</p> <important> <p>If you specify HTTPS for the value of <code>Type</code>,
-     * the endpoint must support TLS v1.0 or later.</p> </important> </li> <li> <p>
+     * 400.</p>  <p>If you specify HTTPS for the value of <code>Type</code>,
+     * the endpoint must support TLS v1.0 or later.</p>  </li> <li> <p>
      * <b>TCP</b>: Route 53 tries to establish a TCP connection.</p> <p>If you specify
      * <code>TCP</code> for <code>Type</code>, don't specify a value for
      * <code>ResourcePath</code>.</p> </li> </ul> <p>For more information, see <a
@@ -123,16 +123,16 @@ namespace Model
 
     /**
      * <p>The type of health check that you want to create, which indicates how Route
-     * 53 determines whether an endpoint is healthy.</p> <important> <p>You can't
+     * 53 determines whether an endpoint is healthy.</p>  <p>You can't
      * change the value of <code>Type</code> after you create a health check.</p>
-     * </important> <p>You can create the following types of health checks:</p> <ul>
+     *  <p>You can create the following types of health checks:</p> <ul>
      * <li> <p> <b>HTTP</b>: Route 53 tries to establish a TCP connection. If
      * successful, Route 53 submits an HTTP request and waits for an HTTP status code
      * of 200 or greater and less than 400.</p> </li> <li> <p> <b>HTTPS</b>: Route 53
      * tries to establish a TCP connection. If successful, Route 53 submits an HTTPS
      * request and waits for an HTTP status code of 200 or greater and less than
-     * 400.</p> <important> <p>If you specify HTTPS for the value of <code>Type</code>,
-     * the endpoint must support TLS v1.0 or later.</p> </important> </li> <li> <p>
+     * 400.</p>  <p>If you specify HTTPS for the value of <code>Type</code>,
+     * the endpoint must support TLS v1.0 or later.</p>  </li> <li> <p>
      * <b>TCP</b>: Route 53 tries to establish a TCP connection.</p> <p>If you specify
      * <code>TCP</code> for <code>Type</code>, don't specify a value for
      * <code>ResourcePath</code>.</p> </li> </ul> <p>For more information, see <a
@@ -144,16 +144,16 @@ namespace Model
 
     /**
      * <p>The type of health check that you want to create, which indicates how Route
-     * 53 determines whether an endpoint is healthy.</p> <important> <p>You can't
+     * 53 determines whether an endpoint is healthy.</p>  <p>You can't
      * change the value of <code>Type</code> after you create a health check.</p>
-     * </important> <p>You can create the following types of health checks:</p> <ul>
+     *  <p>You can create the following types of health checks:</p> <ul>
      * <li> <p> <b>HTTP</b>: Route 53 tries to establish a TCP connection. If
      * successful, Route 53 submits an HTTP request and waits for an HTTP status code
      * of 200 or greater and less than 400.</p> </li> <li> <p> <b>HTTPS</b>: Route 53
      * tries to establish a TCP connection. If successful, Route 53 submits an HTTPS
      * request and waits for an HTTP status code of 200 or greater and less than
-     * 400.</p> <important> <p>If you specify HTTPS for the value of <code>Type</code>,
-     * the endpoint must support TLS v1.0 or later.</p> </important> </li> <li> <p>
+     * 400.</p>  <p>If you specify HTTPS for the value of <code>Type</code>,
+     * the endpoint must support TLS v1.0 or later.</p>  </li> <li> <p>
      * <b>TCP</b>: Route 53 tries to establish a TCP connection.</p> <p>If you specify
      * <code>TCP</code> for <code>Type</code>, don't specify a value for
      * <code>ResourcePath</code>.</p> </li> </ul> <p>For more information, see <a
@@ -165,16 +165,16 @@ namespace Model
 
     /**
      * <p>The type of health check that you want to create, which indicates how Route
-     * 53 determines whether an endpoint is healthy.</p> <important> <p>You can't
+     * 53 determines whether an endpoint is healthy.</p>  <p>You can't
      * change the value of <code>Type</code> after you create a health check.</p>
-     * </important> <p>You can create the following types of health checks:</p> <ul>
+     *  <p>You can create the following types of health checks:</p> <ul>
      * <li> <p> <b>HTTP</b>: Route 53 tries to establish a TCP connection. If
      * successful, Route 53 submits an HTTP request and waits for an HTTP status code
      * of 200 or greater and less than 400.</p> </li> <li> <p> <b>HTTPS</b>: Route 53
      * tries to establish a TCP connection. If successful, Route 53 submits an HTTPS
      * request and waits for an HTTP status code of 200 or greater and less than
-     * 400.</p> <important> <p>If you specify HTTPS for the value of <code>Type</code>,
-     * the endpoint must support TLS v1.0 or later.</p> </important> </li> <li> <p>
+     * 400.</p>  <p>If you specify HTTPS for the value of <code>Type</code>,
+     * the endpoint must support TLS v1.0 or later.</p>  </li> <li> <p>
      * <b>TCP</b>: Route 53 tries to establish a TCP connection.</p> <p>If you specify
      * <code>TCP</code> for <code>Type</code>, don't specify a value for
      * <code>ResourcePath</code>.</p> </li> </ul> <p>For more information, see <a
@@ -186,16 +186,16 @@ namespace Model
 
     /**
      * <p>The type of health check that you want to create, which indicates how Route
-     * 53 determines whether an endpoint is healthy.</p> <important> <p>You can't
+     * 53 determines whether an endpoint is healthy.</p>  <p>You can't
      * change the value of <code>Type</code> after you create a health check.</p>
-     * </important> <p>You can create the following types of health checks:</p> <ul>
+     *  <p>You can create the following types of health checks:</p> <ul>
      * <li> <p> <b>HTTP</b>: Route 53 tries to establish a TCP connection. If
      * successful, Route 53 submits an HTTP request and waits for an HTTP status code
      * of 200 or greater and less than 400.</p> </li> <li> <p> <b>HTTPS</b>: Route 53
      * tries to establish a TCP connection. If successful, Route 53 submits an HTTPS
      * request and waits for an HTTP status code of 200 or greater and less than
-     * 400.</p> <important> <p>If you specify HTTPS for the value of <code>Type</code>,
-     * the endpoint must support TLS v1.0 or later.</p> </important> </li> <li> <p>
+     * 400.</p>  <p>If you specify HTTPS for the value of <code>Type</code>,
+     * the endpoint must support TLS v1.0 or later.</p>  </li> <li> <p>
      * <b>TCP</b>: Route 53 tries to establish a TCP connection.</p> <p>If you specify
      * <code>TCP</code> for <code>Type</code>, don't specify a value for
      * <code>ResourcePath</code>.</p> </li> </ul> <p>For more information, see <a

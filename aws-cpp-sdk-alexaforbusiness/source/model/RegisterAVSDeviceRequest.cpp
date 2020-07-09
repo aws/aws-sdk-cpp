@@ -17,7 +17,8 @@ RegisterAVSDeviceRequest::RegisterAVSDeviceRequest() :
     m_userCodeHasBeenSet(false),
     m_productIdHasBeenSet(false),
     m_deviceSerialNumberHasBeenSet(false),
-    m_amazonIdHasBeenSet(false)
+    m_amazonIdHasBeenSet(false),
+    m_roomArnHasBeenSet(false)
 {
 }
 
@@ -52,6 +53,12 @@ Aws::String RegisterAVSDeviceRequest::SerializePayload() const
   if(m_amazonIdHasBeenSet)
   {
    payload.WithString("AmazonId", m_amazonId);
+
+  }
+
+  if(m_roomArnHasBeenSet)
+  {
+   payload.WithString("RoomArn", m_roomArn);
 
   }
 

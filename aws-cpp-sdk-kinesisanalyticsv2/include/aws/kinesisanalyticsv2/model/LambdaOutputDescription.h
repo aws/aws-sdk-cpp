@@ -82,73 +82,73 @@ namespace Model
 
     /**
      * <p>The ARN of the IAM role that Kinesis Data Analytics can assume to write to
-     * the destination function.</p> <note> <p>Provided for backward compatibility.
+     * the destination function.</p>  <p>Provided for backward compatibility.
      * Applications that are created with the current API version have an
      * application-level service execution role rather than a resource-level role.</p>
-     * </note>
+     * 
      */
     inline const Aws::String& GetRoleARN() const{ return m_roleARN; }
 
     /**
      * <p>The ARN of the IAM role that Kinesis Data Analytics can assume to write to
-     * the destination function.</p> <note> <p>Provided for backward compatibility.
+     * the destination function.</p>  <p>Provided for backward compatibility.
      * Applications that are created with the current API version have an
      * application-level service execution role rather than a resource-level role.</p>
-     * </note>
+     * 
      */
     inline bool RoleARNHasBeenSet() const { return m_roleARNHasBeenSet; }
 
     /**
      * <p>The ARN of the IAM role that Kinesis Data Analytics can assume to write to
-     * the destination function.</p> <note> <p>Provided for backward compatibility.
+     * the destination function.</p>  <p>Provided for backward compatibility.
      * Applications that are created with the current API version have an
      * application-level service execution role rather than a resource-level role.</p>
-     * </note>
+     * 
      */
     inline void SetRoleARN(const Aws::String& value) { m_roleARNHasBeenSet = true; m_roleARN = value; }
 
     /**
      * <p>The ARN of the IAM role that Kinesis Data Analytics can assume to write to
-     * the destination function.</p> <note> <p>Provided for backward compatibility.
+     * the destination function.</p>  <p>Provided for backward compatibility.
      * Applications that are created with the current API version have an
      * application-level service execution role rather than a resource-level role.</p>
-     * </note>
+     * 
      */
     inline void SetRoleARN(Aws::String&& value) { m_roleARNHasBeenSet = true; m_roleARN = std::move(value); }
 
     /**
      * <p>The ARN of the IAM role that Kinesis Data Analytics can assume to write to
-     * the destination function.</p> <note> <p>Provided for backward compatibility.
+     * the destination function.</p>  <p>Provided for backward compatibility.
      * Applications that are created with the current API version have an
      * application-level service execution role rather than a resource-level role.</p>
-     * </note>
+     * 
      */
     inline void SetRoleARN(const char* value) { m_roleARNHasBeenSet = true; m_roleARN.assign(value); }
 
     /**
      * <p>The ARN of the IAM role that Kinesis Data Analytics can assume to write to
-     * the destination function.</p> <note> <p>Provided for backward compatibility.
+     * the destination function.</p>  <p>Provided for backward compatibility.
      * Applications that are created with the current API version have an
      * application-level service execution role rather than a resource-level role.</p>
-     * </note>
+     * 
      */
     inline LambdaOutputDescription& WithRoleARN(const Aws::String& value) { SetRoleARN(value); return *this;}
 
     /**
      * <p>The ARN of the IAM role that Kinesis Data Analytics can assume to write to
-     * the destination function.</p> <note> <p>Provided for backward compatibility.
+     * the destination function.</p>  <p>Provided for backward compatibility.
      * Applications that are created with the current API version have an
      * application-level service execution role rather than a resource-level role.</p>
-     * </note>
+     * 
      */
     inline LambdaOutputDescription& WithRoleARN(Aws::String&& value) { SetRoleARN(std::move(value)); return *this;}
 
     /**
      * <p>The ARN of the IAM role that Kinesis Data Analytics can assume to write to
-     * the destination function.</p> <note> <p>Provided for backward compatibility.
+     * the destination function.</p>  <p>Provided for backward compatibility.
      * Applications that are created with the current API version have an
      * application-level service execution role rather than a resource-level role.</p>
-     * </note>
+     * 
      */
     inline LambdaOutputDescription& WithRoleARN(const char* value) { SetRoleARN(value); return *this;}
 

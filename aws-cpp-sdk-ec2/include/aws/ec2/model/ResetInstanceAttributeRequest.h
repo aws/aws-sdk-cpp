@@ -38,50 +38,50 @@ namespace Model
   public:
 
     /**
-     * <p>The attribute to reset.</p> <important> <p>You can only reset the following
+     * <p>The attribute to reset.</p>  <p>You can only reset the following
      * attributes: <code>kernel</code> | <code>ramdisk</code> |
      * <code>sourceDestCheck</code>. To change an instance attribute, use
-     * <a>ModifyInstanceAttribute</a>.</p> </important>
+     * <a>ModifyInstanceAttribute</a>.</p> 
      */
     inline const InstanceAttributeName& GetAttribute() const{ return m_attribute; }
 
     /**
-     * <p>The attribute to reset.</p> <important> <p>You can only reset the following
+     * <p>The attribute to reset.</p>  <p>You can only reset the following
      * attributes: <code>kernel</code> | <code>ramdisk</code> |
      * <code>sourceDestCheck</code>. To change an instance attribute, use
-     * <a>ModifyInstanceAttribute</a>.</p> </important>
+     * <a>ModifyInstanceAttribute</a>.</p> 
      */
     inline bool AttributeHasBeenSet() const { return m_attributeHasBeenSet; }
 
     /**
-     * <p>The attribute to reset.</p> <important> <p>You can only reset the following
+     * <p>The attribute to reset.</p>  <p>You can only reset the following
      * attributes: <code>kernel</code> | <code>ramdisk</code> |
      * <code>sourceDestCheck</code>. To change an instance attribute, use
-     * <a>ModifyInstanceAttribute</a>.</p> </important>
+     * <a>ModifyInstanceAttribute</a>.</p> 
      */
     inline void SetAttribute(const InstanceAttributeName& value) { m_attributeHasBeenSet = true; m_attribute = value; }
 
     /**
-     * <p>The attribute to reset.</p> <important> <p>You can only reset the following
+     * <p>The attribute to reset.</p>  <p>You can only reset the following
      * attributes: <code>kernel</code> | <code>ramdisk</code> |
      * <code>sourceDestCheck</code>. To change an instance attribute, use
-     * <a>ModifyInstanceAttribute</a>.</p> </important>
+     * <a>ModifyInstanceAttribute</a>.</p> 
      */
     inline void SetAttribute(InstanceAttributeName&& value) { m_attributeHasBeenSet = true; m_attribute = std::move(value); }
 
     /**
-     * <p>The attribute to reset.</p> <important> <p>You can only reset the following
+     * <p>The attribute to reset.</p>  <p>You can only reset the following
      * attributes: <code>kernel</code> | <code>ramdisk</code> |
      * <code>sourceDestCheck</code>. To change an instance attribute, use
-     * <a>ModifyInstanceAttribute</a>.</p> </important>
+     * <a>ModifyInstanceAttribute</a>.</p> 
      */
     inline ResetInstanceAttributeRequest& WithAttribute(const InstanceAttributeName& value) { SetAttribute(value); return *this;}
 
     /**
-     * <p>The attribute to reset.</p> <important> <p>You can only reset the following
+     * <p>The attribute to reset.</p>  <p>You can only reset the following
      * attributes: <code>kernel</code> | <code>ramdisk</code> |
      * <code>sourceDestCheck</code>. To change an instance attribute, use
-     * <a>ModifyInstanceAttribute</a>.</p> </important>
+     * <a>ModifyInstanceAttribute</a>.</p> 
      */
     inline ResetInstanceAttributeRequest& WithAttribute(InstanceAttributeName&& value) { SetAttribute(std::move(value)); return *this;}
 

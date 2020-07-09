@@ -318,44 +318,44 @@ namespace Model
 
 
     /**
-     * <p>The type of AWS Snowball device to use for this cluster. </p> <note> <p>For
+     * <p>The type of AWS Snowball device to use for this cluster. </p>  <p>For
      * cluster jobs, AWS Snowball currently supports only the <code>EDGE</code> device
-     * type.</p> </note>
+     * type.</p> 
      */
     inline const SnowballType& GetSnowballType() const{ return m_snowballType; }
 
     /**
-     * <p>The type of AWS Snowball device to use for this cluster. </p> <note> <p>For
+     * <p>The type of AWS Snowball device to use for this cluster. </p>  <p>For
      * cluster jobs, AWS Snowball currently supports only the <code>EDGE</code> device
-     * type.</p> </note>
+     * type.</p> 
      */
     inline bool SnowballTypeHasBeenSet() const { return m_snowballTypeHasBeenSet; }
 
     /**
-     * <p>The type of AWS Snowball device to use for this cluster. </p> <note> <p>For
+     * <p>The type of AWS Snowball device to use for this cluster. </p>  <p>For
      * cluster jobs, AWS Snowball currently supports only the <code>EDGE</code> device
-     * type.</p> </note>
+     * type.</p> 
      */
     inline void SetSnowballType(const SnowballType& value) { m_snowballTypeHasBeenSet = true; m_snowballType = value; }
 
     /**
-     * <p>The type of AWS Snowball device to use for this cluster. </p> <note> <p>For
+     * <p>The type of AWS Snowball device to use for this cluster. </p>  <p>For
      * cluster jobs, AWS Snowball currently supports only the <code>EDGE</code> device
-     * type.</p> </note>
+     * type.</p> 
      */
     inline void SetSnowballType(SnowballType&& value) { m_snowballTypeHasBeenSet = true; m_snowballType = std::move(value); }
 
     /**
-     * <p>The type of AWS Snowball device to use for this cluster. </p> <note> <p>For
+     * <p>The type of AWS Snowball device to use for this cluster. </p>  <p>For
      * cluster jobs, AWS Snowball currently supports only the <code>EDGE</code> device
-     * type.</p> </note>
+     * type.</p> 
      */
     inline ClusterMetadata& WithSnowballType(const SnowballType& value) { SetSnowballType(value); return *this;}
 
     /**
-     * <p>The type of AWS Snowball device to use for this cluster. </p> <note> <p>For
+     * <p>The type of AWS Snowball device to use for this cluster. </p>  <p>For
      * cluster jobs, AWS Snowball currently supports only the <code>EDGE</code> device
-     * type.</p> </note>
+     * type.</p> 
      */
     inline ClusterMetadata& WithSnowballType(SnowballType&& value) { SetSnowballType(std::move(value)); return *this;}
 

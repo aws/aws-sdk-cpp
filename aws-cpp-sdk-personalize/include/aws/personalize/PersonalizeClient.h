@@ -352,9 +352,9 @@ namespace Model
          * <p> <b>Status</b> </p> <p>A campaign can be in one of the following states:</p>
          * <ul> <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE
          * FAILED</p> </li> <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li> </ul>
-         * <p>To get the campaign status, call <a>DescribeCampaign</a>.</p> <note> <p>Wait
+         * <p>To get the campaign status, call <a>DescribeCampaign</a>.</p>  <p>Wait
          * until the <code>status</code> of the campaign is <code>ACTIVE</code> before
-         * asking the campaign for recommendations.</p> </note> <p class="title">
+         * asking the campaign for recommendations.</p>  <p class="title">
          * <b>Related APIs</b> </p> <ul> <li> <p> <a>ListCampaigns</a> </p> </li> <li> <p>
          * <a>DescribeCampaign</a> </p> </li> <li> <p> <a>UpdateCampaign</a> </p> </li>
          * <li> <p> <a>DeleteCampaign</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
@@ -385,9 +385,9 @@ namespace Model
          * <p> <b>Status</b> </p> <p>A campaign can be in one of the following states:</p>
          * <ul> <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE
          * FAILED</p> </li> <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li> </ul>
-         * <p>To get the campaign status, call <a>DescribeCampaign</a>.</p> <note> <p>Wait
+         * <p>To get the campaign status, call <a>DescribeCampaign</a>.</p>  <p>Wait
          * until the <code>status</code> of the campaign is <code>ACTIVE</code> before
-         * asking the campaign for recommendations.</p> </note> <p class="title">
+         * asking the campaign for recommendations.</p>  <p class="title">
          * <b>Related APIs</b> </p> <ul> <li> <p> <a>ListCampaigns</a> </p> </li> <li> <p>
          * <a>DescribeCampaign</a> </p> </li> <li> <p> <a>UpdateCampaign</a> </p> </li>
          * <li> <p> <a>DeleteCampaign</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
@@ -420,9 +420,9 @@ namespace Model
          * <p> <b>Status</b> </p> <p>A campaign can be in one of the following states:</p>
          * <ul> <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE
          * FAILED</p> </li> <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li> </ul>
-         * <p>To get the campaign status, call <a>DescribeCampaign</a>.</p> <note> <p>Wait
+         * <p>To get the campaign status, call <a>DescribeCampaign</a>.</p>  <p>Wait
          * until the <code>status</code> of the campaign is <code>ACTIVE</code> before
-         * asking the campaign for recommendations.</p> </note> <p class="title">
+         * asking the campaign for recommendations.</p>  <p class="title">
          * <b>Related APIs</b> </p> <ul> <li> <p> <a>ListCampaigns</a> </p> </li> <li> <p>
          * <a>DescribeCampaign</a> </p> </li> <li> <p> <a>UpdateCampaign</a> </p> </li>
          * <li> <p> <a>DeleteCampaign</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
@@ -509,9 +509,9 @@ namespace Model
          * FAILED</p> </li> <li> <p>DELETE PENDING</p> </li> </ul> <p>To get the status of
          * the dataset group, call <a>DescribeDatasetGroup</a>. If the status shows as
          * CREATE FAILED, the response includes a <code>failureReason</code> key, which
-         * describes why the creation failed.</p> <note> <p>You must wait until the
+         * describes why the creation failed.</p>  <p>You must wait until the
          * <code>status</code> of the dataset group is <code>ACTIVE</code> before adding a
-         * dataset to the group.</p> </note> <p>You can specify an AWS Key Management
+         * dataset to the group.</p>  <p>You can specify an AWS Key Management
          * Service (KMS) key to encrypt the datasets in the group. If you specify a KMS
          * key, you must also include an AWS Identity and Access Management (IAM) role that
          * has permission to access the key.</p> <p class="title"> <b>APIs that require a
@@ -538,9 +538,9 @@ namespace Model
          * FAILED</p> </li> <li> <p>DELETE PENDING</p> </li> </ul> <p>To get the status of
          * the dataset group, call <a>DescribeDatasetGroup</a>. If the status shows as
          * CREATE FAILED, the response includes a <code>failureReason</code> key, which
-         * describes why the creation failed.</p> <note> <p>You must wait until the
+         * describes why the creation failed.</p>  <p>You must wait until the
          * <code>status</code> of the dataset group is <code>ACTIVE</code> before adding a
-         * dataset to the group.</p> </note> <p>You can specify an AWS Key Management
+         * dataset to the group.</p>  <p>You can specify an AWS Key Management
          * Service (KMS) key to encrypt the datasets in the group. If you specify a KMS
          * key, you must also include an AWS Identity and Access Management (IAM) role that
          * has permission to access the key.</p> <p class="title"> <b>APIs that require a
@@ -569,9 +569,9 @@ namespace Model
          * FAILED</p> </li> <li> <p>DELETE PENDING</p> </li> </ul> <p>To get the status of
          * the dataset group, call <a>DescribeDatasetGroup</a>. If the status shows as
          * CREATE FAILED, the response includes a <code>failureReason</code> key, which
-         * describes why the creation failed.</p> <note> <p>You must wait until the
+         * describes why the creation failed.</p>  <p>You must wait until the
          * <code>status</code> of the dataset group is <code>ACTIVE</code> before adding a
-         * dataset to the group.</p> </note> <p>You can specify an AWS Key Management
+         * dataset to the group.</p>  <p>You can specify an AWS Key Management
          * Service (KMS) key to encrypt the datasets in the group. If you specify a KMS
          * key, you must also include an AWS Identity and Access Management (IAM) role that
          * has permission to access the key.</p> <p class="title"> <b>APIs that require a
@@ -592,17 +592,17 @@ namespace Model
          * <p>Creates a job that imports training data from your data source (an Amazon S3
          * bucket) to an Amazon Personalize dataset. To allow Amazon Personalize to import
          * the training data, you must specify an AWS Identity and Access Management (IAM)
-         * role that has permission to read from the data source.</p> <important> <p>The
-         * dataset import job replaces any previous data in the dataset.</p> </important>
+         * role that has permission to read from the data source.</p>  <p>The
+         * dataset import job replaces any previous data in the dataset.</p> 
          * <p> <b>Status</b> </p> <p>A dataset import job can be in one of the following
          * states:</p> <ul> <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or-
          * CREATE FAILED</p> </li> </ul> <p>To get the status of the import job, call
          * <a>DescribeDatasetImportJob</a>, providing the Amazon Resource Name (ARN) of the
          * dataset import job. The dataset import is complete when the status shows as
          * ACTIVE. If the status shows as CREATE FAILED, the response includes a
-         * <code>failureReason</code> key, which describes why the job failed.</p> <note>
+         * <code>failureReason</code> key, which describes why the job failed.</p> 
          * <p>Importing takes time. You must wait until the status shows as ACTIVE before
-         * training a model using the dataset.</p> </note> <p class="title"> <b>Related
+         * training a model using the dataset.</p>  <p class="title"> <b>Related
          * APIs</b> </p> <ul> <li> <p> <a>ListDatasetImportJobs</a> </p> </li> <li> <p>
          * <a>DescribeDatasetImportJob</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/CreateDatasetImportJob">AWS
@@ -614,17 +614,17 @@ namespace Model
          * <p>Creates a job that imports training data from your data source (an Amazon S3
          * bucket) to an Amazon Personalize dataset. To allow Amazon Personalize to import
          * the training data, you must specify an AWS Identity and Access Management (IAM)
-         * role that has permission to read from the data source.</p> <important> <p>The
-         * dataset import job replaces any previous data in the dataset.</p> </important>
+         * role that has permission to read from the data source.</p>  <p>The
+         * dataset import job replaces any previous data in the dataset.</p> 
          * <p> <b>Status</b> </p> <p>A dataset import job can be in one of the following
          * states:</p> <ul> <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or-
          * CREATE FAILED</p> </li> </ul> <p>To get the status of the import job, call
          * <a>DescribeDatasetImportJob</a>, providing the Amazon Resource Name (ARN) of the
          * dataset import job. The dataset import is complete when the status shows as
          * ACTIVE. If the status shows as CREATE FAILED, the response includes a
-         * <code>failureReason</code> key, which describes why the job failed.</p> <note>
+         * <code>failureReason</code> key, which describes why the job failed.</p> 
          * <p>Importing takes time. You must wait until the status shows as ACTIVE before
-         * training a model using the dataset.</p> </note> <p class="title"> <b>Related
+         * training a model using the dataset.</p>  <p class="title"> <b>Related
          * APIs</b> </p> <ul> <li> <p> <a>ListDatasetImportJobs</a> </p> </li> <li> <p>
          * <a>DescribeDatasetImportJob</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/CreateDatasetImportJob">AWS
@@ -638,17 +638,17 @@ namespace Model
          * <p>Creates a job that imports training data from your data source (an Amazon S3
          * bucket) to an Amazon Personalize dataset. To allow Amazon Personalize to import
          * the training data, you must specify an AWS Identity and Access Management (IAM)
-         * role that has permission to read from the data source.</p> <important> <p>The
-         * dataset import job replaces any previous data in the dataset.</p> </important>
+         * role that has permission to read from the data source.</p>  <p>The
+         * dataset import job replaces any previous data in the dataset.</p> 
          * <p> <b>Status</b> </p> <p>A dataset import job can be in one of the following
          * states:</p> <ul> <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or-
          * CREATE FAILED</p> </li> </ul> <p>To get the status of the import job, call
          * <a>DescribeDatasetImportJob</a>, providing the Amazon Resource Name (ARN) of the
          * dataset import job. The dataset import is complete when the status shows as
          * ACTIVE. If the status shows as CREATE FAILED, the response includes a
-         * <code>failureReason</code> key, which describes why the job failed.</p> <note>
+         * <code>failureReason</code> key, which describes why the job failed.</p> 
          * <p>Importing takes time. You must wait until the status shows as ACTIVE before
-         * training a model using the dataset.</p> </note> <p class="title"> <b>Related
+         * training a model using the dataset.</p>  <p class="title"> <b>Related
          * APIs</b> </p> <ul> <li> <p> <a>ListDatasetImportJobs</a> </p> </li> <li> <p>
          * <a>DescribeDatasetImportJob</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/CreateDatasetImportJob">AWS
@@ -666,16 +666,16 @@ namespace Model
          * <i>event-interactions</i> dataset in the dataset group associated with the event
          * tracker. The event-interactions dataset stores the event data from the
          * <code>PutEvents</code> call. The contents of this dataset are not available to
-         * the user.</p> <note> <p>Only one event tracker can be associated with a dataset
+         * the user.</p>  <p>Only one event tracker can be associated with a dataset
          * group. You will get an error if you call <code>CreateEventTracker</code> using
-         * the same dataset group as an existing event tracker.</p> </note> <p>When you
+         * the same dataset group as an existing event tracker.</p>  <p>When you
          * send event data you include your tracking ID. The tracking ID identifies the
          * customer and authorizes the customer to send the data.</p> <p>The event tracker
          * can be in one of the following states:</p> <ul> <li> <p>CREATE PENDING &gt;
          * CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li> <li> <p>DELETE
          * PENDING &gt; DELETE IN_PROGRESS</p> </li> </ul> <p>To get the status of the
-         * event tracker, call <a>DescribeEventTracker</a>.</p> <note> <p>The event tracker
-         * must be in the ACTIVE state before using the tracking ID.</p> </note> <p
+         * event tracker, call <a>DescribeEventTracker</a>.</p>  <p>The event tracker
+         * must be in the ACTIVE state before using the tracking ID.</p>  <p
          * class="title"> <b>Related APIs</b> </p> <ul> <li> <p> <a>ListEventTrackers</a>
          * </p> </li> <li> <p> <a>DescribeEventTracker</a> </p> </li> <li> <p>
          * <a>DeleteEventTracker</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
@@ -692,16 +692,16 @@ namespace Model
          * <i>event-interactions</i> dataset in the dataset group associated with the event
          * tracker. The event-interactions dataset stores the event data from the
          * <code>PutEvents</code> call. The contents of this dataset are not available to
-         * the user.</p> <note> <p>Only one event tracker can be associated with a dataset
+         * the user.</p>  <p>Only one event tracker can be associated with a dataset
          * group. You will get an error if you call <code>CreateEventTracker</code> using
-         * the same dataset group as an existing event tracker.</p> </note> <p>When you
+         * the same dataset group as an existing event tracker.</p>  <p>When you
          * send event data you include your tracking ID. The tracking ID identifies the
          * customer and authorizes the customer to send the data.</p> <p>The event tracker
          * can be in one of the following states:</p> <ul> <li> <p>CREATE PENDING &gt;
          * CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li> <li> <p>DELETE
          * PENDING &gt; DELETE IN_PROGRESS</p> </li> </ul> <p>To get the status of the
-         * event tracker, call <a>DescribeEventTracker</a>.</p> <note> <p>The event tracker
-         * must be in the ACTIVE state before using the tracking ID.</p> </note> <p
+         * event tracker, call <a>DescribeEventTracker</a>.</p>  <p>The event tracker
+         * must be in the ACTIVE state before using the tracking ID.</p>  <p
          * class="title"> <b>Related APIs</b> </p> <ul> <li> <p> <a>ListEventTrackers</a>
          * </p> </li> <li> <p> <a>DescribeEventTracker</a> </p> </li> <li> <p>
          * <a>DeleteEventTracker</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
@@ -720,16 +720,16 @@ namespace Model
          * <i>event-interactions</i> dataset in the dataset group associated with the event
          * tracker. The event-interactions dataset stores the event data from the
          * <code>PutEvents</code> call. The contents of this dataset are not available to
-         * the user.</p> <note> <p>Only one event tracker can be associated with a dataset
+         * the user.</p>  <p>Only one event tracker can be associated with a dataset
          * group. You will get an error if you call <code>CreateEventTracker</code> using
-         * the same dataset group as an existing event tracker.</p> </note> <p>When you
+         * the same dataset group as an existing event tracker.</p>  <p>When you
          * send event data you include your tracking ID. The tracking ID identifies the
          * customer and authorizes the customer to send the data.</p> <p>The event tracker
          * can be in one of the following states:</p> <ul> <li> <p>CREATE PENDING &gt;
          * CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li> <li> <p>DELETE
          * PENDING &gt; DELETE IN_PROGRESS</p> </li> </ul> <p>To get the status of the
-         * event tracker, call <a>DescribeEventTracker</a>.</p> <note> <p>The event tracker
-         * must be in the ACTIVE state before using the tracking ID.</p> </note> <p
+         * event tracker, call <a>DescribeEventTracker</a>.</p>  <p>The event tracker
+         * must be in the ACTIVE state before using the tracking ID.</p>  <p
          * class="title"> <b>Related APIs</b> </p> <ul> <li> <p> <a>ListEventTrackers</a>
          * </p> </li> <li> <p> <a>DescribeEventTracker</a> </p> </li> <li> <p>
          * <a>DeleteEventTracker</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
@@ -2022,9 +2022,9 @@ namespace Model
          * <p>Updates a campaign by either deploying a new solution or changing the value
          * of the campaign's <code>minProvisionedTPS</code> parameter.</p> <p>To update a
          * campaign, the campaign status must be ACTIVE or CREATE FAILED. Check the
-         * campaign status using the <a>DescribeCampaign</a> API.</p> <note> <p>You must
+         * campaign status using the <a>DescribeCampaign</a> API.</p>  <p>You must
          * wait until the <code>status</code> of the updated campaign is
-         * <code>ACTIVE</code> before asking the campaign for recommendations.</p> </note>
+         * <code>ACTIVE</code> before asking the campaign for recommendations.</p> 
          * <p>For more information on campaigns, see <a>CreateCampaign</a>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/UpdateCampaign">AWS
@@ -2036,9 +2036,9 @@ namespace Model
          * <p>Updates a campaign by either deploying a new solution or changing the value
          * of the campaign's <code>minProvisionedTPS</code> parameter.</p> <p>To update a
          * campaign, the campaign status must be ACTIVE or CREATE FAILED. Check the
-         * campaign status using the <a>DescribeCampaign</a> API.</p> <note> <p>You must
+         * campaign status using the <a>DescribeCampaign</a> API.</p>  <p>You must
          * wait until the <code>status</code> of the updated campaign is
-         * <code>ACTIVE</code> before asking the campaign for recommendations.</p> </note>
+         * <code>ACTIVE</code> before asking the campaign for recommendations.</p> 
          * <p>For more information on campaigns, see <a>CreateCampaign</a>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/UpdateCampaign">AWS
@@ -2052,9 +2052,9 @@ namespace Model
          * <p>Updates a campaign by either deploying a new solution or changing the value
          * of the campaign's <code>minProvisionedTPS</code> parameter.</p> <p>To update a
          * campaign, the campaign status must be ACTIVE or CREATE FAILED. Check the
-         * campaign status using the <a>DescribeCampaign</a> API.</p> <note> <p>You must
+         * campaign status using the <a>DescribeCampaign</a> API.</p>  <p>You must
          * wait until the <code>status</code> of the updated campaign is
-         * <code>ACTIVE</code> before asking the campaign for recommendations.</p> </note>
+         * <code>ACTIVE</code> before asking the campaign for recommendations.</p> 
          * <p>For more information on campaigns, see <a>CreateCampaign</a>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/UpdateCampaign">AWS

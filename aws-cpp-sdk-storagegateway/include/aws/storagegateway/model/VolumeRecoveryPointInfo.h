@@ -101,30 +101,30 @@ namespace Model
 
 
     /**
-     * <p>The size of the data stored on the volume in bytes.</p> <note> <p>This value
+     * <p>The size of the data stored on the volume in bytes.</p>  <p>This value
      * is not available for volumes created prior to May 13, 2015, until you store data
-     * on the volume.</p> </note>
+     * on the volume.</p> 
      */
     inline long long GetVolumeUsageInBytes() const{ return m_volumeUsageInBytes; }
 
     /**
-     * <p>The size of the data stored on the volume in bytes.</p> <note> <p>This value
+     * <p>The size of the data stored on the volume in bytes.</p>  <p>This value
      * is not available for volumes created prior to May 13, 2015, until you store data
-     * on the volume.</p> </note>
+     * on the volume.</p> 
      */
     inline bool VolumeUsageInBytesHasBeenSet() const { return m_volumeUsageInBytesHasBeenSet; }
 
     /**
-     * <p>The size of the data stored on the volume in bytes.</p> <note> <p>This value
+     * <p>The size of the data stored on the volume in bytes.</p>  <p>This value
      * is not available for volumes created prior to May 13, 2015, until you store data
-     * on the volume.</p> </note>
+     * on the volume.</p> 
      */
     inline void SetVolumeUsageInBytes(long long value) { m_volumeUsageInBytesHasBeenSet = true; m_volumeUsageInBytes = value; }
 
     /**
-     * <p>The size of the data stored on the volume in bytes.</p> <note> <p>This value
+     * <p>The size of the data stored on the volume in bytes.</p>  <p>This value
      * is not available for volumes created prior to May 13, 2015, until you store data
-     * on the volume.</p> </note>
+     * on the volume.</p> 
      */
     inline VolumeRecoveryPointInfo& WithVolumeUsageInBytes(long long value) { SetVolumeUsageInBytes(value); return *this;}
 

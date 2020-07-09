@@ -91,12 +91,12 @@ namespace Model
      * log driver, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_firelens.html">Custom
      * Log Routing</a> in the <i>Amazon Elastic Container Service Developer
-     * Guide</i>.</p> <note> <p>If you have a custom driver that is not listed, you can
+     * Guide</i>.</p>  <p>If you have a custom driver that is not listed, you can
      * fork the Amazon ECS container agent project that is <a
      * href="https://github.com/aws/amazon-ecs-agent">available on GitHub</a> and
      * customize it to work with that driver. We encourage you to submit pull requests
      * for changes that you would like to have included. However, we do not currently
-     * provide support for running modified copies of this software.</p> </note>
+     * provide support for running modified copies of this software.</p> 
      */
     inline const LogDriver& GetLogDriver() const{ return m_logDriver; }
 
@@ -117,12 +117,12 @@ namespace Model
      * log driver, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_firelens.html">Custom
      * Log Routing</a> in the <i>Amazon Elastic Container Service Developer
-     * Guide</i>.</p> <note> <p>If you have a custom driver that is not listed, you can
+     * Guide</i>.</p>  <p>If you have a custom driver that is not listed, you can
      * fork the Amazon ECS container agent project that is <a
      * href="https://github.com/aws/amazon-ecs-agent">available on GitHub</a> and
      * customize it to work with that driver. We encourage you to submit pull requests
      * for changes that you would like to have included. However, we do not currently
-     * provide support for running modified copies of this software.</p> </note>
+     * provide support for running modified copies of this software.</p> 
      */
     inline bool LogDriverHasBeenSet() const { return m_logDriverHasBeenSet; }
 
@@ -143,12 +143,12 @@ namespace Model
      * log driver, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_firelens.html">Custom
      * Log Routing</a> in the <i>Amazon Elastic Container Service Developer
-     * Guide</i>.</p> <note> <p>If you have a custom driver that is not listed, you can
+     * Guide</i>.</p>  <p>If you have a custom driver that is not listed, you can
      * fork the Amazon ECS container agent project that is <a
      * href="https://github.com/aws/amazon-ecs-agent">available on GitHub</a> and
      * customize it to work with that driver. We encourage you to submit pull requests
      * for changes that you would like to have included. However, we do not currently
-     * provide support for running modified copies of this software.</p> </note>
+     * provide support for running modified copies of this software.</p> 
      */
     inline void SetLogDriver(const LogDriver& value) { m_logDriverHasBeenSet = true; m_logDriver = value; }
 
@@ -169,12 +169,12 @@ namespace Model
      * log driver, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_firelens.html">Custom
      * Log Routing</a> in the <i>Amazon Elastic Container Service Developer
-     * Guide</i>.</p> <note> <p>If you have a custom driver that is not listed, you can
+     * Guide</i>.</p>  <p>If you have a custom driver that is not listed, you can
      * fork the Amazon ECS container agent project that is <a
      * href="https://github.com/aws/amazon-ecs-agent">available on GitHub</a> and
      * customize it to work with that driver. We encourage you to submit pull requests
      * for changes that you would like to have included. However, we do not currently
-     * provide support for running modified copies of this software.</p> </note>
+     * provide support for running modified copies of this software.</p> 
      */
     inline void SetLogDriver(LogDriver&& value) { m_logDriverHasBeenSet = true; m_logDriver = std::move(value); }
 
@@ -195,12 +195,12 @@ namespace Model
      * log driver, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_firelens.html">Custom
      * Log Routing</a> in the <i>Amazon Elastic Container Service Developer
-     * Guide</i>.</p> <note> <p>If you have a custom driver that is not listed, you can
+     * Guide</i>.</p>  <p>If you have a custom driver that is not listed, you can
      * fork the Amazon ECS container agent project that is <a
      * href="https://github.com/aws/amazon-ecs-agent">available on GitHub</a> and
      * customize it to work with that driver. We encourage you to submit pull requests
      * for changes that you would like to have included. However, we do not currently
-     * provide support for running modified copies of this software.</p> </note>
+     * provide support for running modified copies of this software.</p> 
      */
     inline LogConfiguration& WithLogDriver(const LogDriver& value) { SetLogDriver(value); return *this;}
 
@@ -221,12 +221,12 @@ namespace Model
      * log driver, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_firelens.html">Custom
      * Log Routing</a> in the <i>Amazon Elastic Container Service Developer
-     * Guide</i>.</p> <note> <p>If you have a custom driver that is not listed, you can
+     * Guide</i>.</p>  <p>If you have a custom driver that is not listed, you can
      * fork the Amazon ECS container agent project that is <a
      * href="https://github.com/aws/amazon-ecs-agent">available on GitHub</a> and
      * customize it to work with that driver. We encourage you to submit pull requests
      * for changes that you would like to have included. However, we do not currently
-     * provide support for running modified copies of this software.</p> </note>
+     * provide support for running modified copies of this software.</p> 
      */
     inline LogConfiguration& WithLogDriver(LogDriver&& value) { SetLogDriver(std::move(value)); return *this;}
 

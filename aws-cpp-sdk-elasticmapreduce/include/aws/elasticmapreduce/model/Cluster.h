@@ -198,8 +198,8 @@ namespace Model
 
 
     /**
-     * <note> <p>The instance fleet configuration is available only in Amazon EMR
-     * versions 4.8.0 and later, excluding 5.0.x versions.</p> </note> <p>The instance
+     *  <p>The instance fleet configuration is available only in Amazon EMR
+     * versions 4.8.0 and later, excluding 5.0.x versions.</p>  <p>The instance
      * group configuration of the cluster. A value of <code>INSTANCE_GROUP</code>
      * indicates a uniform instance group configuration. A value of
      * <code>INSTANCE_FLEET</code> indicates an instance fleets configuration.</p>
@@ -207,8 +207,8 @@ namespace Model
     inline const InstanceCollectionType& GetInstanceCollectionType() const{ return m_instanceCollectionType; }
 
     /**
-     * <note> <p>The instance fleet configuration is available only in Amazon EMR
-     * versions 4.8.0 and later, excluding 5.0.x versions.</p> </note> <p>The instance
+     *  <p>The instance fleet configuration is available only in Amazon EMR
+     * versions 4.8.0 and later, excluding 5.0.x versions.</p>  <p>The instance
      * group configuration of the cluster. A value of <code>INSTANCE_GROUP</code>
      * indicates a uniform instance group configuration. A value of
      * <code>INSTANCE_FLEET</code> indicates an instance fleets configuration.</p>
@@ -216,8 +216,8 @@ namespace Model
     inline bool InstanceCollectionTypeHasBeenSet() const { return m_instanceCollectionTypeHasBeenSet; }
 
     /**
-     * <note> <p>The instance fleet configuration is available only in Amazon EMR
-     * versions 4.8.0 and later, excluding 5.0.x versions.</p> </note> <p>The instance
+     *  <p>The instance fleet configuration is available only in Amazon EMR
+     * versions 4.8.0 and later, excluding 5.0.x versions.</p>  <p>The instance
      * group configuration of the cluster. A value of <code>INSTANCE_GROUP</code>
      * indicates a uniform instance group configuration. A value of
      * <code>INSTANCE_FLEET</code> indicates an instance fleets configuration.</p>
@@ -225,8 +225,8 @@ namespace Model
     inline void SetInstanceCollectionType(const InstanceCollectionType& value) { m_instanceCollectionTypeHasBeenSet = true; m_instanceCollectionType = value; }
 
     /**
-     * <note> <p>The instance fleet configuration is available only in Amazon EMR
-     * versions 4.8.0 and later, excluding 5.0.x versions.</p> </note> <p>The instance
+     *  <p>The instance fleet configuration is available only in Amazon EMR
+     * versions 4.8.0 and later, excluding 5.0.x versions.</p>  <p>The instance
      * group configuration of the cluster. A value of <code>INSTANCE_GROUP</code>
      * indicates a uniform instance group configuration. A value of
      * <code>INSTANCE_FLEET</code> indicates an instance fleets configuration.</p>
@@ -234,8 +234,8 @@ namespace Model
     inline void SetInstanceCollectionType(InstanceCollectionType&& value) { m_instanceCollectionTypeHasBeenSet = true; m_instanceCollectionType = std::move(value); }
 
     /**
-     * <note> <p>The instance fleet configuration is available only in Amazon EMR
-     * versions 4.8.0 and later, excluding 5.0.x versions.</p> </note> <p>The instance
+     *  <p>The instance fleet configuration is available only in Amazon EMR
+     * versions 4.8.0 and later, excluding 5.0.x versions.</p>  <p>The instance
      * group configuration of the cluster. A value of <code>INSTANCE_GROUP</code>
      * indicates a uniform instance group configuration. A value of
      * <code>INSTANCE_FLEET</code> indicates an instance fleets configuration.</p>
@@ -243,8 +243,8 @@ namespace Model
     inline Cluster& WithInstanceCollectionType(const InstanceCollectionType& value) { SetInstanceCollectionType(value); return *this;}
 
     /**
-     * <note> <p>The instance fleet configuration is available only in Amazon EMR
-     * versions 4.8.0 and later, excluding 5.0.x versions.</p> </note> <p>The instance
+     *  <p>The instance fleet configuration is available only in Amazon EMR
+     * versions 4.8.0 and later, excluding 5.0.x versions.</p>  <p>The instance
      * group configuration of the cluster. A value of <code>INSTANCE_GROUP</code>
      * indicates a uniform instance group configuration. A value of
      * <code>INSTANCE_FLEET</code> indicates an instance fleets configuration.</p>

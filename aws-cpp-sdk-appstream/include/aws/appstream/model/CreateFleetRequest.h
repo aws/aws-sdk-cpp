@@ -837,13 +837,13 @@ namespace Model
      * <code>IdleDisconnectTimeoutInSeconds</code> elapses, they are disconnected.</p>
      * <p>To prevent users from being disconnected due to inactivity, specify a value
      * of 0. Otherwise, specify a value between 60 and 3600. The default value is
-     * 0.</p> <note> <p>If you enable this feature, we recommend that you specify a
+     * 0.</p>  <p>If you enable this feature, we recommend that you specify a
      * value that corresponds exactly to a whole number of minutes (for example, 60,
      * 120, and 180). If you don't do this, the value is rounded to the nearest minute.
      * For example, if you specify a value of 70, users are disconnected after 1 minute
      * of inactivity. If you specify a value that is at the midpoint between two
      * different minutes, the value is rounded up. For example, if you specify a value
-     * of 90, users are disconnected after 2 minutes of inactivity. </p> </note>
+     * of 90, users are disconnected after 2 minutes of inactivity. </p> 
      */
     inline int GetIdleDisconnectTimeoutInSeconds() const{ return m_idleDisconnectTimeoutInSeconds; }
 
@@ -861,13 +861,13 @@ namespace Model
      * <code>IdleDisconnectTimeoutInSeconds</code> elapses, they are disconnected.</p>
      * <p>To prevent users from being disconnected due to inactivity, specify a value
      * of 0. Otherwise, specify a value between 60 and 3600. The default value is
-     * 0.</p> <note> <p>If you enable this feature, we recommend that you specify a
+     * 0.</p>  <p>If you enable this feature, we recommend that you specify a
      * value that corresponds exactly to a whole number of minutes (for example, 60,
      * 120, and 180). If you don't do this, the value is rounded to the nearest minute.
      * For example, if you specify a value of 70, users are disconnected after 1 minute
      * of inactivity. If you specify a value that is at the midpoint between two
      * different minutes, the value is rounded up. For example, if you specify a value
-     * of 90, users are disconnected after 2 minutes of inactivity. </p> </note>
+     * of 90, users are disconnected after 2 minutes of inactivity. </p> 
      */
     inline bool IdleDisconnectTimeoutInSecondsHasBeenSet() const { return m_idleDisconnectTimeoutInSecondsHasBeenSet; }
 
@@ -885,13 +885,13 @@ namespace Model
      * <code>IdleDisconnectTimeoutInSeconds</code> elapses, they are disconnected.</p>
      * <p>To prevent users from being disconnected due to inactivity, specify a value
      * of 0. Otherwise, specify a value between 60 and 3600. The default value is
-     * 0.</p> <note> <p>If you enable this feature, we recommend that you specify a
+     * 0.</p>  <p>If you enable this feature, we recommend that you specify a
      * value that corresponds exactly to a whole number of minutes (for example, 60,
      * 120, and 180). If you don't do this, the value is rounded to the nearest minute.
      * For example, if you specify a value of 70, users are disconnected after 1 minute
      * of inactivity. If you specify a value that is at the midpoint between two
      * different minutes, the value is rounded up. For example, if you specify a value
-     * of 90, users are disconnected after 2 minutes of inactivity. </p> </note>
+     * of 90, users are disconnected after 2 minutes of inactivity. </p> 
      */
     inline void SetIdleDisconnectTimeoutInSeconds(int value) { m_idleDisconnectTimeoutInSecondsHasBeenSet = true; m_idleDisconnectTimeoutInSeconds = value; }
 
@@ -909,13 +909,13 @@ namespace Model
      * <code>IdleDisconnectTimeoutInSeconds</code> elapses, they are disconnected.</p>
      * <p>To prevent users from being disconnected due to inactivity, specify a value
      * of 0. Otherwise, specify a value between 60 and 3600. The default value is
-     * 0.</p> <note> <p>If you enable this feature, we recommend that you specify a
+     * 0.</p>  <p>If you enable this feature, we recommend that you specify a
      * value that corresponds exactly to a whole number of minutes (for example, 60,
      * 120, and 180). If you don't do this, the value is rounded to the nearest minute.
      * For example, if you specify a value of 70, users are disconnected after 1 minute
      * of inactivity. If you specify a value that is at the midpoint between two
      * different minutes, the value is rounded up. For example, if you specify a value
-     * of 90, users are disconnected after 2 minutes of inactivity. </p> </note>
+     * of 90, users are disconnected after 2 minutes of inactivity. </p> 
      */
     inline CreateFleetRequest& WithIdleDisconnectTimeoutInSeconds(int value) { SetIdleDisconnectTimeoutInSeconds(value); return *this;}
 

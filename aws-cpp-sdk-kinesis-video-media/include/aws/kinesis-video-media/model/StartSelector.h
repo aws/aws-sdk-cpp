@@ -59,9 +59,9 @@ namespace Model
      * the chunk containing a fragment with the specified producer or server timestamp.
      * You specify the timestamp by adding <code>StartTimestamp</code>.</p> </li> <li>
      * <p> CONTINUATION_TOKEN - Read using the specified continuation token. </p> </li>
-     * </ul> <note> <p>If you choose the NOW, EARLIEST, or CONTINUATION_TOKEN as the
+     * </ul>  <p>If you choose the NOW, EARLIEST, or CONTINUATION_TOKEN as the
      * <code>startSelectorType</code>, you don't provide any additional information in
-     * the <code>startSelector</code>.</p> </note>
+     * the <code>startSelector</code>.</p> 
      */
     inline const StartSelectorType& GetStartSelectorType() const{ return m_startSelectorType; }
 
@@ -75,9 +75,9 @@ namespace Model
      * the chunk containing a fragment with the specified producer or server timestamp.
      * You specify the timestamp by adding <code>StartTimestamp</code>.</p> </li> <li>
      * <p> CONTINUATION_TOKEN - Read using the specified continuation token. </p> </li>
-     * </ul> <note> <p>If you choose the NOW, EARLIEST, or CONTINUATION_TOKEN as the
+     * </ul>  <p>If you choose the NOW, EARLIEST, or CONTINUATION_TOKEN as the
      * <code>startSelectorType</code>, you don't provide any additional information in
-     * the <code>startSelector</code>.</p> </note>
+     * the <code>startSelector</code>.</p> 
      */
     inline bool StartSelectorTypeHasBeenSet() const { return m_startSelectorTypeHasBeenSet; }
 
@@ -91,9 +91,9 @@ namespace Model
      * the chunk containing a fragment with the specified producer or server timestamp.
      * You specify the timestamp by adding <code>StartTimestamp</code>.</p> </li> <li>
      * <p> CONTINUATION_TOKEN - Read using the specified continuation token. </p> </li>
-     * </ul> <note> <p>If you choose the NOW, EARLIEST, or CONTINUATION_TOKEN as the
+     * </ul>  <p>If you choose the NOW, EARLIEST, or CONTINUATION_TOKEN as the
      * <code>startSelectorType</code>, you don't provide any additional information in
-     * the <code>startSelector</code>.</p> </note>
+     * the <code>startSelector</code>.</p> 
      */
     inline void SetStartSelectorType(const StartSelectorType& value) { m_startSelectorTypeHasBeenSet = true; m_startSelectorType = value; }
 
@@ -107,9 +107,9 @@ namespace Model
      * the chunk containing a fragment with the specified producer or server timestamp.
      * You specify the timestamp by adding <code>StartTimestamp</code>.</p> </li> <li>
      * <p> CONTINUATION_TOKEN - Read using the specified continuation token. </p> </li>
-     * </ul> <note> <p>If you choose the NOW, EARLIEST, or CONTINUATION_TOKEN as the
+     * </ul>  <p>If you choose the NOW, EARLIEST, or CONTINUATION_TOKEN as the
      * <code>startSelectorType</code>, you don't provide any additional information in
-     * the <code>startSelector</code>.</p> </note>
+     * the <code>startSelector</code>.</p> 
      */
     inline void SetStartSelectorType(StartSelectorType&& value) { m_startSelectorTypeHasBeenSet = true; m_startSelectorType = std::move(value); }
 
@@ -123,9 +123,9 @@ namespace Model
      * the chunk containing a fragment with the specified producer or server timestamp.
      * You specify the timestamp by adding <code>StartTimestamp</code>.</p> </li> <li>
      * <p> CONTINUATION_TOKEN - Read using the specified continuation token. </p> </li>
-     * </ul> <note> <p>If you choose the NOW, EARLIEST, or CONTINUATION_TOKEN as the
+     * </ul>  <p>If you choose the NOW, EARLIEST, or CONTINUATION_TOKEN as the
      * <code>startSelectorType</code>, you don't provide any additional information in
-     * the <code>startSelector</code>.</p> </note>
+     * the <code>startSelector</code>.</p> 
      */
     inline StartSelector& WithStartSelectorType(const StartSelectorType& value) { SetStartSelectorType(value); return *this;}
 
@@ -139,9 +139,9 @@ namespace Model
      * the chunk containing a fragment with the specified producer or server timestamp.
      * You specify the timestamp by adding <code>StartTimestamp</code>.</p> </li> <li>
      * <p> CONTINUATION_TOKEN - Read using the specified continuation token. </p> </li>
-     * </ul> <note> <p>If you choose the NOW, EARLIEST, or CONTINUATION_TOKEN as the
+     * </ul>  <p>If you choose the NOW, EARLIEST, or CONTINUATION_TOKEN as the
      * <code>startSelectorType</code>, you don't provide any additional information in
-     * the <code>startSelector</code>.</p> </note>
+     * the <code>startSelector</code>.</p> 
      */
     inline StartSelector& WithStartSelectorType(StartSelectorType&& value) { SetStartSelectorType(std::move(value)); return *this;}
 

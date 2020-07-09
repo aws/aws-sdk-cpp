@@ -401,53 +401,53 @@ namespace Model
 
     /**
      * <p>Specifies whether log file validation is enabled. The default is false.</p>
-     * <note> <p>When you disable log file integrity validation, the chain of digest
+     *  <p>When you disable log file integrity validation, the chain of digest
      * files is broken after one hour. CloudTrail will not create digest files for log
      * files that were delivered during a period in which log file integrity validation
      * was disabled. For example, if you enable log file integrity validation at noon
      * on January 1, disable it at noon on January 2, and re-enable it at noon on
      * January 10, digest files will not be created for the log files delivered from
      * noon on January 2 to noon on January 10. The same applies whenever you stop
-     * CloudTrail logging or delete a trail.</p> </note>
+     * CloudTrail logging or delete a trail.</p> 
      */
     inline bool GetEnableLogFileValidation() const{ return m_enableLogFileValidation; }
 
     /**
      * <p>Specifies whether log file validation is enabled. The default is false.</p>
-     * <note> <p>When you disable log file integrity validation, the chain of digest
+     *  <p>When you disable log file integrity validation, the chain of digest
      * files is broken after one hour. CloudTrail will not create digest files for log
      * files that were delivered during a period in which log file integrity validation
      * was disabled. For example, if you enable log file integrity validation at noon
      * on January 1, disable it at noon on January 2, and re-enable it at noon on
      * January 10, digest files will not be created for the log files delivered from
      * noon on January 2 to noon on January 10. The same applies whenever you stop
-     * CloudTrail logging or delete a trail.</p> </note>
+     * CloudTrail logging or delete a trail.</p> 
      */
     inline bool EnableLogFileValidationHasBeenSet() const { return m_enableLogFileValidationHasBeenSet; }
 
     /**
      * <p>Specifies whether log file validation is enabled. The default is false.</p>
-     * <note> <p>When you disable log file integrity validation, the chain of digest
+     *  <p>When you disable log file integrity validation, the chain of digest
      * files is broken after one hour. CloudTrail will not create digest files for log
      * files that were delivered during a period in which log file integrity validation
      * was disabled. For example, if you enable log file integrity validation at noon
      * on January 1, disable it at noon on January 2, and re-enable it at noon on
      * January 10, digest files will not be created for the log files delivered from
      * noon on January 2 to noon on January 10. The same applies whenever you stop
-     * CloudTrail logging or delete a trail.</p> </note>
+     * CloudTrail logging or delete a trail.</p> 
      */
     inline void SetEnableLogFileValidation(bool value) { m_enableLogFileValidationHasBeenSet = true; m_enableLogFileValidation = value; }
 
     /**
      * <p>Specifies whether log file validation is enabled. The default is false.</p>
-     * <note> <p>When you disable log file integrity validation, the chain of digest
+     *  <p>When you disable log file integrity validation, the chain of digest
      * files is broken after one hour. CloudTrail will not create digest files for log
      * files that were delivered during a period in which log file integrity validation
      * was disabled. For example, if you enable log file integrity validation at noon
      * on January 1, disable it at noon on January 2, and re-enable it at noon on
      * January 10, digest files will not be created for the log files delivered from
      * noon on January 2 to noon on January 10. The same applies whenever you stop
-     * CloudTrail logging or delete a trail.</p> </note>
+     * CloudTrail logging or delete a trail.</p> 
      */
     inline UpdateTrailRequest& WithEnableLogFileValidation(bool value) { SetEnableLogFileValidation(value); return *this;}
 

@@ -127,9 +127,9 @@ namespace Model
 
     /**
      * <p>The suite's type.</p> <p>Must be one of the following values:</p> <ul> <li>
-     * <p>BUILTIN_FUZZ</p> </li> <li> <p>BUILTIN_EXPLORER </p> <note> <p>Only available
+     * <p>BUILTIN_FUZZ</p> </li> <li> <p>BUILTIN_EXPLORER </p>  <p>Only available
      * for Android; an app explorer that traverses an Android app, interacting with it
-     * and capturing screenshots at the same time.</p> </note> </li> <li>
+     * and capturing screenshots at the same time.</p>  </li> <li>
      * <p>APPIUM_JAVA_JUNIT</p> </li> <li> <p>APPIUM_JAVA_TESTNG</p> </li> <li>
      * <p>APPIUM_PYTHON</p> </li> <li> <p>APPIUM_NODE</p> </li> <li> <p>APPIUM_RUBY</p>
      * </li> <li> <p>APPIUM_WEB_JAVA_JUNIT</p> </li> <li> <p>APPIUM_WEB_JAVA_TESTNG</p>
@@ -143,9 +143,9 @@ namespace Model
 
     /**
      * <p>The suite's type.</p> <p>Must be one of the following values:</p> <ul> <li>
-     * <p>BUILTIN_FUZZ</p> </li> <li> <p>BUILTIN_EXPLORER </p> <note> <p>Only available
+     * <p>BUILTIN_FUZZ</p> </li> <li> <p>BUILTIN_EXPLORER </p>  <p>Only available
      * for Android; an app explorer that traverses an Android app, interacting with it
-     * and capturing screenshots at the same time.</p> </note> </li> <li>
+     * and capturing screenshots at the same time.</p>  </li> <li>
      * <p>APPIUM_JAVA_JUNIT</p> </li> <li> <p>APPIUM_JAVA_TESTNG</p> </li> <li>
      * <p>APPIUM_PYTHON</p> </li> <li> <p>APPIUM_NODE</p> </li> <li> <p>APPIUM_RUBY</p>
      * </li> <li> <p>APPIUM_WEB_JAVA_JUNIT</p> </li> <li> <p>APPIUM_WEB_JAVA_TESTNG</p>
@@ -159,9 +159,9 @@ namespace Model
 
     /**
      * <p>The suite's type.</p> <p>Must be one of the following values:</p> <ul> <li>
-     * <p>BUILTIN_FUZZ</p> </li> <li> <p>BUILTIN_EXPLORER </p> <note> <p>Only available
+     * <p>BUILTIN_FUZZ</p> </li> <li> <p>BUILTIN_EXPLORER </p>  <p>Only available
      * for Android; an app explorer that traverses an Android app, interacting with it
-     * and capturing screenshots at the same time.</p> </note> </li> <li>
+     * and capturing screenshots at the same time.</p>  </li> <li>
      * <p>APPIUM_JAVA_JUNIT</p> </li> <li> <p>APPIUM_JAVA_TESTNG</p> </li> <li>
      * <p>APPIUM_PYTHON</p> </li> <li> <p>APPIUM_NODE</p> </li> <li> <p>APPIUM_RUBY</p>
      * </li> <li> <p>APPIUM_WEB_JAVA_JUNIT</p> </li> <li> <p>APPIUM_WEB_JAVA_TESTNG</p>
@@ -175,9 +175,9 @@ namespace Model
 
     /**
      * <p>The suite's type.</p> <p>Must be one of the following values:</p> <ul> <li>
-     * <p>BUILTIN_FUZZ</p> </li> <li> <p>BUILTIN_EXPLORER </p> <note> <p>Only available
+     * <p>BUILTIN_FUZZ</p> </li> <li> <p>BUILTIN_EXPLORER </p>  <p>Only available
      * for Android; an app explorer that traverses an Android app, interacting with it
-     * and capturing screenshots at the same time.</p> </note> </li> <li>
+     * and capturing screenshots at the same time.</p>  </li> <li>
      * <p>APPIUM_JAVA_JUNIT</p> </li> <li> <p>APPIUM_JAVA_TESTNG</p> </li> <li>
      * <p>APPIUM_PYTHON</p> </li> <li> <p>APPIUM_NODE</p> </li> <li> <p>APPIUM_RUBY</p>
      * </li> <li> <p>APPIUM_WEB_JAVA_JUNIT</p> </li> <li> <p>APPIUM_WEB_JAVA_TESTNG</p>
@@ -191,9 +191,9 @@ namespace Model
 
     /**
      * <p>The suite's type.</p> <p>Must be one of the following values:</p> <ul> <li>
-     * <p>BUILTIN_FUZZ</p> </li> <li> <p>BUILTIN_EXPLORER </p> <note> <p>Only available
+     * <p>BUILTIN_FUZZ</p> </li> <li> <p>BUILTIN_EXPLORER </p>  <p>Only available
      * for Android; an app explorer that traverses an Android app, interacting with it
-     * and capturing screenshots at the same time.</p> </note> </li> <li>
+     * and capturing screenshots at the same time.</p>  </li> <li>
      * <p>APPIUM_JAVA_JUNIT</p> </li> <li> <p>APPIUM_JAVA_TESTNG</p> </li> <li>
      * <p>APPIUM_PYTHON</p> </li> <li> <p>APPIUM_NODE</p> </li> <li> <p>APPIUM_RUBY</p>
      * </li> <li> <p>APPIUM_WEB_JAVA_JUNIT</p> </li> <li> <p>APPIUM_WEB_JAVA_TESTNG</p>
@@ -207,9 +207,9 @@ namespace Model
 
     /**
      * <p>The suite's type.</p> <p>Must be one of the following values:</p> <ul> <li>
-     * <p>BUILTIN_FUZZ</p> </li> <li> <p>BUILTIN_EXPLORER </p> <note> <p>Only available
+     * <p>BUILTIN_FUZZ</p> </li> <li> <p>BUILTIN_EXPLORER </p>  <p>Only available
      * for Android; an app explorer that traverses an Android app, interacting with it
-     * and capturing screenshots at the same time.</p> </note> </li> <li>
+     * and capturing screenshots at the same time.</p>  </li> <li>
      * <p>APPIUM_JAVA_JUNIT</p> </li> <li> <p>APPIUM_JAVA_TESTNG</p> </li> <li>
      * <p>APPIUM_PYTHON</p> </li> <li> <p>APPIUM_NODE</p> </li> <li> <p>APPIUM_RUBY</p>
      * </li> <li> <p>APPIUM_WEB_JAVA_JUNIT</p> </li> <li> <p>APPIUM_WEB_JAVA_TESTNG</p>

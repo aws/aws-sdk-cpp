@@ -235,8 +235,8 @@ namespace Model
          * choose to use Amazon EC2 On-Demand Instances or Spot Instances in your managed
          * compute environment. You can optionally set a maximum price so that Spot
          * Instances only launch when the Spot Instance price is below a specified
-         * percentage of the On-Demand price.</p> <note> <p>Multi-node parallel jobs are
-         * not supported on Spot Instances.</p> </note> <p>In an unmanaged compute
+         * percentage of the On-Demand price.</p>  <p>Multi-node parallel jobs are
+         * not supported on Spot Instances.</p>  <p>In an unmanaged compute
          * environment, you can manage your own compute resources. This provides more
          * compute resource configuration options, such as using a custom AMI, but you must
          * ensure that your AMI meets the Amazon ECS container instance AMI specification.
@@ -249,7 +249,7 @@ namespace Model
          * instances into that Amazon ECS cluster. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_container_instance.html">Launching
          * an Amazon ECS Container Instance</a> in the <i>Amazon Elastic Container Service
-         * Developer Guide</i>.</p> <note> <p>AWS Batch does not upgrade the AMIs in a
+         * Developer Guide</i>.</p>  <p>AWS Batch does not upgrade the AMIs in a
          * compute environment after it is created (for example, when a newer version of
          * the Amazon ECS-optimized AMI is available). You are responsible for the
          * management of the guest operating system (including updates and security
@@ -258,7 +258,7 @@ namespace Model
          * <li> <p>Create a new compute environment with the new AMI.</p> </li> <li> <p>Add
          * the compute environment to an existing job queue.</p> </li> <li> <p>Remove the
          * old compute environment from your job queue.</p> </li> <li> <p>Delete the old
-         * compute environment.</p> </li> </ol> </note><p><h3>See Also:</h3>   <a
+         * compute environment.</p> </li> </ol> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/CreateComputeEnvironment">AWS
          * API Reference</a></p>
          */
@@ -275,8 +275,8 @@ namespace Model
          * choose to use Amazon EC2 On-Demand Instances or Spot Instances in your managed
          * compute environment. You can optionally set a maximum price so that Spot
          * Instances only launch when the Spot Instance price is below a specified
-         * percentage of the On-Demand price.</p> <note> <p>Multi-node parallel jobs are
-         * not supported on Spot Instances.</p> </note> <p>In an unmanaged compute
+         * percentage of the On-Demand price.</p>  <p>Multi-node parallel jobs are
+         * not supported on Spot Instances.</p>  <p>In an unmanaged compute
          * environment, you can manage your own compute resources. This provides more
          * compute resource configuration options, such as using a custom AMI, but you must
          * ensure that your AMI meets the Amazon ECS container instance AMI specification.
@@ -289,7 +289,7 @@ namespace Model
          * instances into that Amazon ECS cluster. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_container_instance.html">Launching
          * an Amazon ECS Container Instance</a> in the <i>Amazon Elastic Container Service
-         * Developer Guide</i>.</p> <note> <p>AWS Batch does not upgrade the AMIs in a
+         * Developer Guide</i>.</p>  <p>AWS Batch does not upgrade the AMIs in a
          * compute environment after it is created (for example, when a newer version of
          * the Amazon ECS-optimized AMI is available). You are responsible for the
          * management of the guest operating system (including updates and security
@@ -298,7 +298,7 @@ namespace Model
          * <li> <p>Create a new compute environment with the new AMI.</p> </li> <li> <p>Add
          * the compute environment to an existing job queue.</p> </li> <li> <p>Remove the
          * old compute environment from your job queue.</p> </li> <li> <p>Delete the old
-         * compute environment.</p> </li> </ol> </note><p><h3>See Also:</h3>   <a
+         * compute environment.</p> </li> </ol> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/CreateComputeEnvironment">AWS
          * API Reference</a></p>
          *
@@ -317,8 +317,8 @@ namespace Model
          * choose to use Amazon EC2 On-Demand Instances or Spot Instances in your managed
          * compute environment. You can optionally set a maximum price so that Spot
          * Instances only launch when the Spot Instance price is below a specified
-         * percentage of the On-Demand price.</p> <note> <p>Multi-node parallel jobs are
-         * not supported on Spot Instances.</p> </note> <p>In an unmanaged compute
+         * percentage of the On-Demand price.</p>  <p>Multi-node parallel jobs are
+         * not supported on Spot Instances.</p>  <p>In an unmanaged compute
          * environment, you can manage your own compute resources. This provides more
          * compute resource configuration options, such as using a custom AMI, but you must
          * ensure that your AMI meets the Amazon ECS container instance AMI specification.
@@ -331,7 +331,7 @@ namespace Model
          * instances into that Amazon ECS cluster. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_container_instance.html">Launching
          * an Amazon ECS Container Instance</a> in the <i>Amazon Elastic Container Service
-         * Developer Guide</i>.</p> <note> <p>AWS Batch does not upgrade the AMIs in a
+         * Developer Guide</i>.</p>  <p>AWS Batch does not upgrade the AMIs in a
          * compute environment after it is created (for example, when a newer version of
          * the Amazon ECS-optimized AMI is available). You are responsible for the
          * management of the guest operating system (including updates and security
@@ -340,7 +340,7 @@ namespace Model
          * <li> <p>Create a new compute environment with the new AMI.</p> </li> <li> <p>Add
          * the compute environment to an existing job queue.</p> </li> <li> <p>Remove the
          * old compute environment from your job queue.</p> </li> <li> <p>Delete the old
-         * compute environment.</p> </li> </ol> </note><p><h3>See Also:</h3>   <a
+         * compute environment.</p> </li> </ol> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/CreateComputeEnvironment">AWS
          * API Reference</a></p>
          *

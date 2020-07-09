@@ -16,11 +16,13 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeHumanTaskUiResult::DescribeHumanTaskUiResult()
+DescribeHumanTaskUiResult::DescribeHumanTaskUiResult() : 
+    m_humanTaskUiStatus(HumanTaskUiStatus::NOT_SET)
 {
 }
 
-DescribeHumanTaskUiResult::DescribeHumanTaskUiResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+DescribeHumanTaskUiResult::DescribeHumanTaskUiResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
+    m_humanTaskUiStatus(HumanTaskUiStatus::NOT_SET)
 {
   *this = result;
 }
@@ -37,6 +39,12 @@ DescribeHumanTaskUiResult& DescribeHumanTaskUiResult::operator =(const Aws::Amaz
   if(jsonValue.ValueExists("HumanTaskUiName"))
   {
     m_humanTaskUiName = jsonValue.GetString("HumanTaskUiName");
+
+  }
+
+  if(jsonValue.ValueExists("HumanTaskUiStatus"))
+  {
+    m_humanTaskUiStatus = HumanTaskUiStatusMapper::GetHumanTaskUiStatusForName(jsonValue.GetString("HumanTaskUiStatus"));
 
   }
 

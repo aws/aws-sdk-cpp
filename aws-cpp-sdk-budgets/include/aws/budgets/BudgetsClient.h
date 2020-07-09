@@ -185,13 +185,13 @@ namespace Model
 
         /**
          * <p>Creates a budget and, if included, notifications and subscribers. </p>
-         * <important> <p>Only one of <code>BudgetLimit</code> or
+         *  <p>Only one of <code>BudgetLimit</code> or
          * <code>PlannedBudgetLimits</code> can be present in the syntax at one time. Use
          * the syntax that matches your case. The Request Syntax section shows the
          * <code>BudgetLimit</code> syntax. For <code>PlannedBudgetLimits</code>, see the
          * <a
          * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_budgets_CreateBudget.html#API_CreateBudget_Examples">Examples</a>
-         * section. </p> </important><p><h3>See Also:</h3>   <a
+         * section. </p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/CreateBudget">AWS
          * API Reference</a></p>
          */
@@ -199,13 +199,13 @@ namespace Model
 
         /**
          * <p>Creates a budget and, if included, notifications and subscribers. </p>
-         * <important> <p>Only one of <code>BudgetLimit</code> or
+         *  <p>Only one of <code>BudgetLimit</code> or
          * <code>PlannedBudgetLimits</code> can be present in the syntax at one time. Use
          * the syntax that matches your case. The Request Syntax section shows the
          * <code>BudgetLimit</code> syntax. For <code>PlannedBudgetLimits</code>, see the
          * <a
          * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_budgets_CreateBudget.html#API_CreateBudget_Examples">Examples</a>
-         * section. </p> </important><p><h3>See Also:</h3>   <a
+         * section. </p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/CreateBudget">AWS
          * API Reference</a></p>
          *
@@ -215,13 +215,13 @@ namespace Model
 
         /**
          * <p>Creates a budget and, if included, notifications and subscribers. </p>
-         * <important> <p>Only one of <code>BudgetLimit</code> or
+         *  <p>Only one of <code>BudgetLimit</code> or
          * <code>PlannedBudgetLimits</code> can be present in the syntax at one time. Use
          * the syntax that matches your case. The Request Syntax section shows the
          * <code>BudgetLimit</code> syntax. For <code>PlannedBudgetLimits</code>, see the
          * <a
          * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_budgets_CreateBudget.html#API_CreateBudget_Examples">Examples</a>
-         * section. </p> </important><p><h3>See Also:</h3>   <a
+         * section. </p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/CreateBudget">AWS
          * API Reference</a></p>
          *
@@ -286,18 +286,18 @@ namespace Model
         virtual void CreateSubscriberAsync(const Model::CreateSubscriberRequest& request, const CreateSubscriberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes a budget. You can delete your budget at any time.</p> <important>
+         * <p>Deletes a budget. You can delete your budget at any time.</p> 
          * <p>Deleting a budget also deletes the notifications and subscribers that are
-         * associated with that budget.</p> </important><p><h3>See Also:</h3>   <a
+         * associated with that budget.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DeleteBudget">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteBudgetOutcome DeleteBudget(const Model::DeleteBudgetRequest& request) const;
 
         /**
-         * <p>Deletes a budget. You can delete your budget at any time.</p> <important>
+         * <p>Deletes a budget. You can delete your budget at any time.</p> 
          * <p>Deleting a budget also deletes the notifications and subscribers that are
-         * associated with that budget.</p> </important><p><h3>See Also:</h3>   <a
+         * associated with that budget.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DeleteBudget">AWS
          * API Reference</a></p>
          *
@@ -306,9 +306,9 @@ namespace Model
         virtual Model::DeleteBudgetOutcomeCallable DeleteBudgetCallable(const Model::DeleteBudgetRequest& request) const;
 
         /**
-         * <p>Deletes a budget. You can delete your budget at any time.</p> <important>
+         * <p>Deletes a budget. You can delete your budget at any time.</p> 
          * <p>Deleting a budget also deletes the notifications and subscribers that are
-         * associated with that budget.</p> </important><p><h3>See Also:</h3>   <a
+         * associated with that budget.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DeleteBudget">AWS
          * API Reference</a></p>
          *
@@ -317,18 +317,18 @@ namespace Model
         virtual void DeleteBudgetAsync(const Model::DeleteBudgetRequest& request, const DeleteBudgetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes a notification.</p> <important> <p>Deleting a notification also
+         * <p>Deletes a notification.</p>  <p>Deleting a notification also
          * deletes the subscribers that are associated with the notification.</p>
-         * </important><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DeleteNotification">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteNotificationOutcome DeleteNotification(const Model::DeleteNotificationRequest& request) const;
 
         /**
-         * <p>Deletes a notification.</p> <important> <p>Deleting a notification also
+         * <p>Deletes a notification.</p>  <p>Deleting a notification also
          * deletes the subscribers that are associated with the notification.</p>
-         * </important><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DeleteNotification">AWS
          * API Reference</a></p>
          *
@@ -337,9 +337,9 @@ namespace Model
         virtual Model::DeleteNotificationOutcomeCallable DeleteNotificationCallable(const Model::DeleteNotificationRequest& request) const;
 
         /**
-         * <p>Deletes a notification.</p> <important> <p>Deleting a notification also
+         * <p>Deletes a notification.</p>  <p>Deleting a notification also
          * deletes the subscribers that are associated with the notification.</p>
-         * </important><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DeleteNotification">AWS
          * API Reference</a></p>
          *
@@ -348,8 +348,8 @@ namespace Model
         virtual void DeleteNotificationAsync(const Model::DeleteNotificationRequest& request, const DeleteNotificationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes a subscriber.</p> <important> <p>Deleting the last subscriber to a
-         * notification also deletes the notification.</p> </important><p><h3>See
+         * <p>Deletes a subscriber.</p>  <p>Deleting the last subscriber to a
+         * notification also deletes the notification.</p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DeleteSubscriber">AWS
          * API Reference</a></p>
@@ -357,8 +357,8 @@ namespace Model
         virtual Model::DeleteSubscriberOutcome DeleteSubscriber(const Model::DeleteSubscriberRequest& request) const;
 
         /**
-         * <p>Deletes a subscriber.</p> <important> <p>Deleting the last subscriber to a
-         * notification also deletes the notification.</p> </important><p><h3>See
+         * <p>Deletes a subscriber.</p>  <p>Deleting the last subscriber to a
+         * notification also deletes the notification.</p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DeleteSubscriber">AWS
          * API Reference</a></p>
@@ -368,8 +368,8 @@ namespace Model
         virtual Model::DeleteSubscriberOutcomeCallable DeleteSubscriberCallable(const Model::DeleteSubscriberRequest& request) const;
 
         /**
-         * <p>Deletes a subscriber.</p> <important> <p>Deleting the last subscriber to a
-         * notification also deletes the notification.</p> </important><p><h3>See
+         * <p>Deletes a subscriber.</p>  <p>Deleting the last subscriber to a
+         * notification also deletes the notification.</p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DeleteSubscriber">AWS
          * API Reference</a></p>
@@ -379,22 +379,22 @@ namespace Model
         virtual void DeleteSubscriberAsync(const Model::DeleteSubscriberRequest& request, const DeleteSubscriberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes a budget.</p> <important> <p>The Request Syntax section shows the
+         * <p>Describes a budget.</p>  <p>The Request Syntax section shows the
          * <code>BudgetLimit</code> syntax. For <code>PlannedBudgetLimits</code>, see the
          * <a
          * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_budgets_DescribeBudget.html#API_DescribeBudget_Examples">Examples</a>
-         * section. </p> </important><p><h3>See Also:</h3>   <a
+         * section. </p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DescribeBudget">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeBudgetOutcome DescribeBudget(const Model::DescribeBudgetRequest& request) const;
 
         /**
-         * <p>Describes a budget.</p> <important> <p>The Request Syntax section shows the
+         * <p>Describes a budget.</p>  <p>The Request Syntax section shows the
          * <code>BudgetLimit</code> syntax. For <code>PlannedBudgetLimits</code>, see the
          * <a
          * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_budgets_DescribeBudget.html#API_DescribeBudget_Examples">Examples</a>
-         * section. </p> </important><p><h3>See Also:</h3>   <a
+         * section. </p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DescribeBudget">AWS
          * API Reference</a></p>
          *
@@ -403,11 +403,11 @@ namespace Model
         virtual Model::DescribeBudgetOutcomeCallable DescribeBudgetCallable(const Model::DescribeBudgetRequest& request) const;
 
         /**
-         * <p>Describes a budget.</p> <important> <p>The Request Syntax section shows the
+         * <p>Describes a budget.</p>  <p>The Request Syntax section shows the
          * <code>BudgetLimit</code> syntax. For <code>PlannedBudgetLimits</code>, see the
          * <a
          * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_budgets_DescribeBudget.html#API_DescribeBudget_Examples">Examples</a>
-         * section. </p> </important><p><h3>See Also:</h3>   <a
+         * section. </p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DescribeBudget">AWS
          * API Reference</a></p>
          *
@@ -447,22 +447,22 @@ namespace Model
         virtual void DescribeBudgetPerformanceHistoryAsync(const Model::DescribeBudgetPerformanceHistoryRequest& request, const DescribeBudgetPerformanceHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists the budgets that are associated with an account.</p> <important> <p>The
+         * <p>Lists the budgets that are associated with an account.</p>  <p>The
          * Request Syntax section shows the <code>BudgetLimit</code> syntax. For
          * <code>PlannedBudgetLimits</code>, see the <a
          * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_budgets_DescribeBudgets.html#API_DescribeBudgets_Examples">Examples</a>
-         * section. </p> </important><p><h3>See Also:</h3>   <a
+         * section. </p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DescribeBudgets">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeBudgetsOutcome DescribeBudgets(const Model::DescribeBudgetsRequest& request) const;
 
         /**
-         * <p>Lists the budgets that are associated with an account.</p> <important> <p>The
+         * <p>Lists the budgets that are associated with an account.</p>  <p>The
          * Request Syntax section shows the <code>BudgetLimit</code> syntax. For
          * <code>PlannedBudgetLimits</code>, see the <a
          * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_budgets_DescribeBudgets.html#API_DescribeBudgets_Examples">Examples</a>
-         * section. </p> </important><p><h3>See Also:</h3>   <a
+         * section. </p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DescribeBudgets">AWS
          * API Reference</a></p>
          *
@@ -471,11 +471,11 @@ namespace Model
         virtual Model::DescribeBudgetsOutcomeCallable DescribeBudgetsCallable(const Model::DescribeBudgetsRequest& request) const;
 
         /**
-         * <p>Lists the budgets that are associated with an account.</p> <important> <p>The
+         * <p>Lists the budgets that are associated with an account.</p>  <p>The
          * Request Syntax section shows the <code>BudgetLimit</code> syntax. For
          * <code>PlannedBudgetLimits</code>, see the <a
          * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_budgets_DescribeBudgets.html#API_DescribeBudgets_Examples">Examples</a>
-         * section. </p> </important><p><h3>See Also:</h3>   <a
+         * section. </p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DescribeBudgets">AWS
          * API Reference</a></p>
          *
@@ -543,13 +543,13 @@ namespace Model
          * <p>Updates a budget. You can change every part of a budget except for the
          * <code>budgetName</code> and the <code>calculatedSpend</code>. When you modify a
          * budget, the <code>calculatedSpend</code> drops to zero until AWS has new usage
-         * data to use for forecasting.</p> <important> <p>Only one of
+         * data to use for forecasting.</p>  <p>Only one of
          * <code>BudgetLimit</code> or <code>PlannedBudgetLimits</code> can be present in
          * the syntax at one time. Use the syntax that matches your case. The Request
          * Syntax section shows the <code>BudgetLimit</code> syntax. For
          * <code>PlannedBudgetLimits</code>, see the <a
          * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_budgets_UpdateBudget.html#API_UpdateBudget_Examples">Examples</a>
-         * section. </p> </important><p><h3>See Also:</h3>   <a
+         * section. </p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/UpdateBudget">AWS
          * API Reference</a></p>
          */
@@ -559,13 +559,13 @@ namespace Model
          * <p>Updates a budget. You can change every part of a budget except for the
          * <code>budgetName</code> and the <code>calculatedSpend</code>. When you modify a
          * budget, the <code>calculatedSpend</code> drops to zero until AWS has new usage
-         * data to use for forecasting.</p> <important> <p>Only one of
+         * data to use for forecasting.</p>  <p>Only one of
          * <code>BudgetLimit</code> or <code>PlannedBudgetLimits</code> can be present in
          * the syntax at one time. Use the syntax that matches your case. The Request
          * Syntax section shows the <code>BudgetLimit</code> syntax. For
          * <code>PlannedBudgetLimits</code>, see the <a
          * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_budgets_UpdateBudget.html#API_UpdateBudget_Examples">Examples</a>
-         * section. </p> </important><p><h3>See Also:</h3>   <a
+         * section. </p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/UpdateBudget">AWS
          * API Reference</a></p>
          *
@@ -577,13 +577,13 @@ namespace Model
          * <p>Updates a budget. You can change every part of a budget except for the
          * <code>budgetName</code> and the <code>calculatedSpend</code>. When you modify a
          * budget, the <code>calculatedSpend</code> drops to zero until AWS has new usage
-         * data to use for forecasting.</p> <important> <p>Only one of
+         * data to use for forecasting.</p>  <p>Only one of
          * <code>BudgetLimit</code> or <code>PlannedBudgetLimits</code> can be present in
          * the syntax at one time. Use the syntax that matches your case. The Request
          * Syntax section shows the <code>BudgetLimit</code> syntax. For
          * <code>PlannedBudgetLimits</code>, see the <a
          * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_budgets_UpdateBudget.html#API_UpdateBudget_Examples">Examples</a>
-         * section. </p> </important><p><h3>See Also:</h3>   <a
+         * section. </p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/UpdateBudget">AWS
          * API Reference</a></p>
          *

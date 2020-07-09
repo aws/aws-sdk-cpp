@@ -202,12 +202,12 @@ namespace Model
      * seconds. Using an expired pagination token will return a <code>400</code> error:
      * "<code>Specified token has exceeded its maximum lifetime</code>". </p> <p>The
      * configured <code>maximumPageSize</code> determines how many results can be
-     * returned in a single call. </p> <note> <p>The <code>nextPageToken</code>
+     * returned in a single call. </p>  <p>The <code>nextPageToken</code>
      * returned by this action cannot be used with <a>GetWorkflowExecutionHistory</a>
      * to get the next page. You must call <a>PollForDecisionTask</a> again (with the
      * <code>nextPageToken</code>) to retrieve the next page of history records.
      * Calling <a>PollForDecisionTask</a> with a <code>nextPageToken</code> doesn't
-     * return a new decision task.</p> </note>
+     * return a new decision task.</p> 
      */
     inline const Aws::String& GetNextPageToken() const{ return m_nextPageToken; }
 
@@ -219,12 +219,12 @@ namespace Model
      * seconds. Using an expired pagination token will return a <code>400</code> error:
      * "<code>Specified token has exceeded its maximum lifetime</code>". </p> <p>The
      * configured <code>maximumPageSize</code> determines how many results can be
-     * returned in a single call. </p> <note> <p>The <code>nextPageToken</code>
+     * returned in a single call. </p>  <p>The <code>nextPageToken</code>
      * returned by this action cannot be used with <a>GetWorkflowExecutionHistory</a>
      * to get the next page. You must call <a>PollForDecisionTask</a> again (with the
      * <code>nextPageToken</code>) to retrieve the next page of history records.
      * Calling <a>PollForDecisionTask</a> with a <code>nextPageToken</code> doesn't
-     * return a new decision task.</p> </note>
+     * return a new decision task.</p> 
      */
     inline bool NextPageTokenHasBeenSet() const { return m_nextPageTokenHasBeenSet; }
 
@@ -236,12 +236,12 @@ namespace Model
      * seconds. Using an expired pagination token will return a <code>400</code> error:
      * "<code>Specified token has exceeded its maximum lifetime</code>". </p> <p>The
      * configured <code>maximumPageSize</code> determines how many results can be
-     * returned in a single call. </p> <note> <p>The <code>nextPageToken</code>
+     * returned in a single call. </p>  <p>The <code>nextPageToken</code>
      * returned by this action cannot be used with <a>GetWorkflowExecutionHistory</a>
      * to get the next page. You must call <a>PollForDecisionTask</a> again (with the
      * <code>nextPageToken</code>) to retrieve the next page of history records.
      * Calling <a>PollForDecisionTask</a> with a <code>nextPageToken</code> doesn't
-     * return a new decision task.</p> </note>
+     * return a new decision task.</p> 
      */
     inline void SetNextPageToken(const Aws::String& value) { m_nextPageTokenHasBeenSet = true; m_nextPageToken = value; }
 
@@ -253,12 +253,12 @@ namespace Model
      * seconds. Using an expired pagination token will return a <code>400</code> error:
      * "<code>Specified token has exceeded its maximum lifetime</code>". </p> <p>The
      * configured <code>maximumPageSize</code> determines how many results can be
-     * returned in a single call. </p> <note> <p>The <code>nextPageToken</code>
+     * returned in a single call. </p>  <p>The <code>nextPageToken</code>
      * returned by this action cannot be used with <a>GetWorkflowExecutionHistory</a>
      * to get the next page. You must call <a>PollForDecisionTask</a> again (with the
      * <code>nextPageToken</code>) to retrieve the next page of history records.
      * Calling <a>PollForDecisionTask</a> with a <code>nextPageToken</code> doesn't
-     * return a new decision task.</p> </note>
+     * return a new decision task.</p> 
      */
     inline void SetNextPageToken(Aws::String&& value) { m_nextPageTokenHasBeenSet = true; m_nextPageToken = std::move(value); }
 
@@ -270,12 +270,12 @@ namespace Model
      * seconds. Using an expired pagination token will return a <code>400</code> error:
      * "<code>Specified token has exceeded its maximum lifetime</code>". </p> <p>The
      * configured <code>maximumPageSize</code> determines how many results can be
-     * returned in a single call. </p> <note> <p>The <code>nextPageToken</code>
+     * returned in a single call. </p>  <p>The <code>nextPageToken</code>
      * returned by this action cannot be used with <a>GetWorkflowExecutionHistory</a>
      * to get the next page. You must call <a>PollForDecisionTask</a> again (with the
      * <code>nextPageToken</code>) to retrieve the next page of history records.
      * Calling <a>PollForDecisionTask</a> with a <code>nextPageToken</code> doesn't
-     * return a new decision task.</p> </note>
+     * return a new decision task.</p> 
      */
     inline void SetNextPageToken(const char* value) { m_nextPageTokenHasBeenSet = true; m_nextPageToken.assign(value); }
 
@@ -287,12 +287,12 @@ namespace Model
      * seconds. Using an expired pagination token will return a <code>400</code> error:
      * "<code>Specified token has exceeded its maximum lifetime</code>". </p> <p>The
      * configured <code>maximumPageSize</code> determines how many results can be
-     * returned in a single call. </p> <note> <p>The <code>nextPageToken</code>
+     * returned in a single call. </p>  <p>The <code>nextPageToken</code>
      * returned by this action cannot be used with <a>GetWorkflowExecutionHistory</a>
      * to get the next page. You must call <a>PollForDecisionTask</a> again (with the
      * <code>nextPageToken</code>) to retrieve the next page of history records.
      * Calling <a>PollForDecisionTask</a> with a <code>nextPageToken</code> doesn't
-     * return a new decision task.</p> </note>
+     * return a new decision task.</p> 
      */
     inline PollForDecisionTaskRequest& WithNextPageToken(const Aws::String& value) { SetNextPageToken(value); return *this;}
 
@@ -304,12 +304,12 @@ namespace Model
      * seconds. Using an expired pagination token will return a <code>400</code> error:
      * "<code>Specified token has exceeded its maximum lifetime</code>". </p> <p>The
      * configured <code>maximumPageSize</code> determines how many results can be
-     * returned in a single call. </p> <note> <p>The <code>nextPageToken</code>
+     * returned in a single call. </p>  <p>The <code>nextPageToken</code>
      * returned by this action cannot be used with <a>GetWorkflowExecutionHistory</a>
      * to get the next page. You must call <a>PollForDecisionTask</a> again (with the
      * <code>nextPageToken</code>) to retrieve the next page of history records.
      * Calling <a>PollForDecisionTask</a> with a <code>nextPageToken</code> doesn't
-     * return a new decision task.</p> </note>
+     * return a new decision task.</p> 
      */
     inline PollForDecisionTaskRequest& WithNextPageToken(Aws::String&& value) { SetNextPageToken(std::move(value)); return *this;}
 
@@ -321,12 +321,12 @@ namespace Model
      * seconds. Using an expired pagination token will return a <code>400</code> error:
      * "<code>Specified token has exceeded its maximum lifetime</code>". </p> <p>The
      * configured <code>maximumPageSize</code> determines how many results can be
-     * returned in a single call. </p> <note> <p>The <code>nextPageToken</code>
+     * returned in a single call. </p>  <p>The <code>nextPageToken</code>
      * returned by this action cannot be used with <a>GetWorkflowExecutionHistory</a>
      * to get the next page. You must call <a>PollForDecisionTask</a> again (with the
      * <code>nextPageToken</code>) to retrieve the next page of history records.
      * Calling <a>PollForDecisionTask</a> with a <code>nextPageToken</code> doesn't
-     * return a new decision task.</p> </note>
+     * return a new decision task.</p> 
      */
     inline PollForDecisionTaskRequest& WithNextPageToken(const char* value) { SetNextPageToken(value); return *this;}
 

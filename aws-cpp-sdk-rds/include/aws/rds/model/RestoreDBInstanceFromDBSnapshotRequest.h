@@ -593,50 +593,50 @@ namespace Model
 
 
     /**
-     * <p>The database name for the restored DB instance.</p> <note> <p>This parameter
-     * doesn't apply to the MySQL, PostgreSQL, or MariaDB engines.</p> </note>
+     * <p>The database name for the restored DB instance.</p>  <p>This parameter
+     * doesn't apply to the MySQL, PostgreSQL, or MariaDB engines.</p> 
      */
     inline const Aws::String& GetDBName() const{ return m_dBName; }
 
     /**
-     * <p>The database name for the restored DB instance.</p> <note> <p>This parameter
-     * doesn't apply to the MySQL, PostgreSQL, or MariaDB engines.</p> </note>
+     * <p>The database name for the restored DB instance.</p>  <p>This parameter
+     * doesn't apply to the MySQL, PostgreSQL, or MariaDB engines.</p> 
      */
     inline bool DBNameHasBeenSet() const { return m_dBNameHasBeenSet; }
 
     /**
-     * <p>The database name for the restored DB instance.</p> <note> <p>This parameter
-     * doesn't apply to the MySQL, PostgreSQL, or MariaDB engines.</p> </note>
+     * <p>The database name for the restored DB instance.</p>  <p>This parameter
+     * doesn't apply to the MySQL, PostgreSQL, or MariaDB engines.</p> 
      */
     inline void SetDBName(const Aws::String& value) { m_dBNameHasBeenSet = true; m_dBName = value; }
 
     /**
-     * <p>The database name for the restored DB instance.</p> <note> <p>This parameter
-     * doesn't apply to the MySQL, PostgreSQL, or MariaDB engines.</p> </note>
+     * <p>The database name for the restored DB instance.</p>  <p>This parameter
+     * doesn't apply to the MySQL, PostgreSQL, or MariaDB engines.</p> 
      */
     inline void SetDBName(Aws::String&& value) { m_dBNameHasBeenSet = true; m_dBName = std::move(value); }
 
     /**
-     * <p>The database name for the restored DB instance.</p> <note> <p>This parameter
-     * doesn't apply to the MySQL, PostgreSQL, or MariaDB engines.</p> </note>
+     * <p>The database name for the restored DB instance.</p>  <p>This parameter
+     * doesn't apply to the MySQL, PostgreSQL, or MariaDB engines.</p> 
      */
     inline void SetDBName(const char* value) { m_dBNameHasBeenSet = true; m_dBName.assign(value); }
 
     /**
-     * <p>The database name for the restored DB instance.</p> <note> <p>This parameter
-     * doesn't apply to the MySQL, PostgreSQL, or MariaDB engines.</p> </note>
+     * <p>The database name for the restored DB instance.</p>  <p>This parameter
+     * doesn't apply to the MySQL, PostgreSQL, or MariaDB engines.</p> 
      */
     inline RestoreDBInstanceFromDBSnapshotRequest& WithDBName(const Aws::String& value) { SetDBName(value); return *this;}
 
     /**
-     * <p>The database name for the restored DB instance.</p> <note> <p>This parameter
-     * doesn't apply to the MySQL, PostgreSQL, or MariaDB engines.</p> </note>
+     * <p>The database name for the restored DB instance.</p>  <p>This parameter
+     * doesn't apply to the MySQL, PostgreSQL, or MariaDB engines.</p> 
      */
     inline RestoreDBInstanceFromDBSnapshotRequest& WithDBName(Aws::String&& value) { SetDBName(std::move(value)); return *this;}
 
     /**
-     * <p>The database name for the restored DB instance.</p> <note> <p>This parameter
-     * doesn't apply to the MySQL, PostgreSQL, or MariaDB engines.</p> </note>
+     * <p>The database name for the restored DB instance.</p>  <p>This parameter
+     * doesn't apply to the MySQL, PostgreSQL, or MariaDB engines.</p> 
      */
     inline RestoreDBInstanceFromDBSnapshotRequest& WithDBName(const char* value) { SetDBName(value); return *this;}
 

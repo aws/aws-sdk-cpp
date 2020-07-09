@@ -428,43 +428,43 @@ namespace Model
 
     /**
      * <p>The access direction (<code>inbound</code> or <code>outbound</code>).</p>
-     * <note> <p>Lightsail currently supports only <code>inbound</code> access
-     * direction.</p> </note>
+     *  <p>Lightsail currently supports only <code>inbound</code> access
+     * direction.</p> 
      */
     inline const AccessDirection& GetAccessDirection() const{ return m_accessDirection; }
 
     /**
      * <p>The access direction (<code>inbound</code> or <code>outbound</code>).</p>
-     * <note> <p>Lightsail currently supports only <code>inbound</code> access
-     * direction.</p> </note>
+     *  <p>Lightsail currently supports only <code>inbound</code> access
+     * direction.</p> 
      */
     inline bool AccessDirectionHasBeenSet() const { return m_accessDirectionHasBeenSet; }
 
     /**
      * <p>The access direction (<code>inbound</code> or <code>outbound</code>).</p>
-     * <note> <p>Lightsail currently supports only <code>inbound</code> access
-     * direction.</p> </note>
+     *  <p>Lightsail currently supports only <code>inbound</code> access
+     * direction.</p> 
      */
     inline void SetAccessDirection(const AccessDirection& value) { m_accessDirectionHasBeenSet = true; m_accessDirection = value; }
 
     /**
      * <p>The access direction (<code>inbound</code> or <code>outbound</code>).</p>
-     * <note> <p>Lightsail currently supports only <code>inbound</code> access
-     * direction.</p> </note>
+     *  <p>Lightsail currently supports only <code>inbound</code> access
+     * direction.</p> 
      */
     inline void SetAccessDirection(AccessDirection&& value) { m_accessDirectionHasBeenSet = true; m_accessDirection = std::move(value); }
 
     /**
      * <p>The access direction (<code>inbound</code> or <code>outbound</code>).</p>
-     * <note> <p>Lightsail currently supports only <code>inbound</code> access
-     * direction.</p> </note>
+     *  <p>Lightsail currently supports only <code>inbound</code> access
+     * direction.</p> 
      */
     inline InstancePortInfo& WithAccessDirection(const AccessDirection& value) { SetAccessDirection(value); return *this;}
 
     /**
      * <p>The access direction (<code>inbound</code> or <code>outbound</code>).</p>
-     * <note> <p>Lightsail currently supports only <code>inbound</code> access
-     * direction.</p> </note>
+     *  <p>Lightsail currently supports only <code>inbound</code> access
+     * direction.</p> 
      */
     inline InstancePortInfo& WithAccessDirection(AccessDirection&& value) { SetAccessDirection(std::move(value)); return *this;}
 

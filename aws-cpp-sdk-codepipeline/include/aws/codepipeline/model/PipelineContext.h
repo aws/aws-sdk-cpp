@@ -26,11 +26,11 @@ namespace Model
 {
 
   /**
-   * <p>Represents information about a pipeline to a job worker.</p> <note>
+   * <p>Represents information about a pipeline to a job worker.</p> 
    * <p>PipelineContext contains <code>pipelineArn</code> and
    * <code>pipelineExecutionId</code> for custom action jobs. The
    * <code>pipelineArn</code> and <code>pipelineExecutionId</code> fields are not
-   * populated for ThirdParty action jobs.</p> </note><p><h3>See Also:</h3>   <a
+   * populated for ThirdParty action jobs.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/PipelineContext">AWS
    * API Reference</a></p>
    */

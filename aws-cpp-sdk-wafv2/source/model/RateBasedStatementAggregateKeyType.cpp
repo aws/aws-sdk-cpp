@@ -21,6 +21,7 @@ namespace Aws
       {
 
         static const int IP_HASH = HashingUtils::HashString("IP");
+        static const int FORWARDED_IP_HASH = HashingUtils::HashString("FORWARDED_IP");
 
 
         RateBasedStatementAggregateKeyType GetRateBasedStatementAggregateKeyTypeForName(const Aws::String& name)
@@ -29,6 +30,10 @@ namespace Aws
           if (hashCode == IP_HASH)
           {
             return RateBasedStatementAggregateKeyType::IP;
+          }
+          else if (hashCode == FORWARDED_IP_HASH)
+          {
+            return RateBasedStatementAggregateKeyType::FORWARDED_IP;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -46,6 +51,8 @@ namespace Aws
           {
           case RateBasedStatementAggregateKeyType::IP:
             return "IP";
+          case RateBasedStatementAggregateKeyType::FORWARDED_IP:
+            return "FORWARDED_IP";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

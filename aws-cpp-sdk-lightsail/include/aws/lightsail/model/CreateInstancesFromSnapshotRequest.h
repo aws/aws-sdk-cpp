@@ -359,97 +359,97 @@ namespace Model
 
     /**
      * <p>You can create a launch script that configures a server with additional user
-     * data. For example, <code>apt-get -y update</code>.</p> <note> <p>Depending on
+     * data. For example, <code>apt-get -y update</code>.</p>  <p>Depending on
      * the machine image you choose, the command to get software on your instance
      * varies. Amazon Linux and CentOS use <code>yum</code>, Debian and Ubuntu use
      * <code>apt-get</code>, and FreeBSD uses <code>pkg</code>. For a complete list,
      * see the <a
      * href="https://lightsail.aws.amazon.com/ls/docs/getting-started/article/compare-options-choose-lightsail-instance-image">Dev
-     * Guide</a>.</p> </note>
+     * Guide</a>.</p> 
      */
     inline const Aws::String& GetUserData() const{ return m_userData; }
 
     /**
      * <p>You can create a launch script that configures a server with additional user
-     * data. For example, <code>apt-get -y update</code>.</p> <note> <p>Depending on
+     * data. For example, <code>apt-get -y update</code>.</p>  <p>Depending on
      * the machine image you choose, the command to get software on your instance
      * varies. Amazon Linux and CentOS use <code>yum</code>, Debian and Ubuntu use
      * <code>apt-get</code>, and FreeBSD uses <code>pkg</code>. For a complete list,
      * see the <a
      * href="https://lightsail.aws.amazon.com/ls/docs/getting-started/article/compare-options-choose-lightsail-instance-image">Dev
-     * Guide</a>.</p> </note>
+     * Guide</a>.</p> 
      */
     inline bool UserDataHasBeenSet() const { return m_userDataHasBeenSet; }
 
     /**
      * <p>You can create a launch script that configures a server with additional user
-     * data. For example, <code>apt-get -y update</code>.</p> <note> <p>Depending on
+     * data. For example, <code>apt-get -y update</code>.</p>  <p>Depending on
      * the machine image you choose, the command to get software on your instance
      * varies. Amazon Linux and CentOS use <code>yum</code>, Debian and Ubuntu use
      * <code>apt-get</code>, and FreeBSD uses <code>pkg</code>. For a complete list,
      * see the <a
      * href="https://lightsail.aws.amazon.com/ls/docs/getting-started/article/compare-options-choose-lightsail-instance-image">Dev
-     * Guide</a>.</p> </note>
+     * Guide</a>.</p> 
      */
     inline void SetUserData(const Aws::String& value) { m_userDataHasBeenSet = true; m_userData = value; }
 
     /**
      * <p>You can create a launch script that configures a server with additional user
-     * data. For example, <code>apt-get -y update</code>.</p> <note> <p>Depending on
+     * data. For example, <code>apt-get -y update</code>.</p>  <p>Depending on
      * the machine image you choose, the command to get software on your instance
      * varies. Amazon Linux and CentOS use <code>yum</code>, Debian and Ubuntu use
      * <code>apt-get</code>, and FreeBSD uses <code>pkg</code>. For a complete list,
      * see the <a
      * href="https://lightsail.aws.amazon.com/ls/docs/getting-started/article/compare-options-choose-lightsail-instance-image">Dev
-     * Guide</a>.</p> </note>
+     * Guide</a>.</p> 
      */
     inline void SetUserData(Aws::String&& value) { m_userDataHasBeenSet = true; m_userData = std::move(value); }
 
     /**
      * <p>You can create a launch script that configures a server with additional user
-     * data. For example, <code>apt-get -y update</code>.</p> <note> <p>Depending on
+     * data. For example, <code>apt-get -y update</code>.</p>  <p>Depending on
      * the machine image you choose, the command to get software on your instance
      * varies. Amazon Linux and CentOS use <code>yum</code>, Debian and Ubuntu use
      * <code>apt-get</code>, and FreeBSD uses <code>pkg</code>. For a complete list,
      * see the <a
      * href="https://lightsail.aws.amazon.com/ls/docs/getting-started/article/compare-options-choose-lightsail-instance-image">Dev
-     * Guide</a>.</p> </note>
+     * Guide</a>.</p> 
      */
     inline void SetUserData(const char* value) { m_userDataHasBeenSet = true; m_userData.assign(value); }
 
     /**
      * <p>You can create a launch script that configures a server with additional user
-     * data. For example, <code>apt-get -y update</code>.</p> <note> <p>Depending on
+     * data. For example, <code>apt-get -y update</code>.</p>  <p>Depending on
      * the machine image you choose, the command to get software on your instance
      * varies. Amazon Linux and CentOS use <code>yum</code>, Debian and Ubuntu use
      * <code>apt-get</code>, and FreeBSD uses <code>pkg</code>. For a complete list,
      * see the <a
      * href="https://lightsail.aws.amazon.com/ls/docs/getting-started/article/compare-options-choose-lightsail-instance-image">Dev
-     * Guide</a>.</p> </note>
+     * Guide</a>.</p> 
      */
     inline CreateInstancesFromSnapshotRequest& WithUserData(const Aws::String& value) { SetUserData(value); return *this;}
 
     /**
      * <p>You can create a launch script that configures a server with additional user
-     * data. For example, <code>apt-get -y update</code>.</p> <note> <p>Depending on
+     * data. For example, <code>apt-get -y update</code>.</p>  <p>Depending on
      * the machine image you choose, the command to get software on your instance
      * varies. Amazon Linux and CentOS use <code>yum</code>, Debian and Ubuntu use
      * <code>apt-get</code>, and FreeBSD uses <code>pkg</code>. For a complete list,
      * see the <a
      * href="https://lightsail.aws.amazon.com/ls/docs/getting-started/article/compare-options-choose-lightsail-instance-image">Dev
-     * Guide</a>.</p> </note>
+     * Guide</a>.</p> 
      */
     inline CreateInstancesFromSnapshotRequest& WithUserData(Aws::String&& value) { SetUserData(std::move(value)); return *this;}
 
     /**
      * <p>You can create a launch script that configures a server with additional user
-     * data. For example, <code>apt-get -y update</code>.</p> <note> <p>Depending on
+     * data. For example, <code>apt-get -y update</code>.</p>  <p>Depending on
      * the machine image you choose, the command to get software on your instance
      * varies. Amazon Linux and CentOS use <code>yum</code>, Debian and Ubuntu use
      * <code>apt-get</code>, and FreeBSD uses <code>pkg</code>. For a complete list,
      * see the <a
      * href="https://lightsail.aws.amazon.com/ls/docs/getting-started/article/compare-options-choose-lightsail-instance-image">Dev
-     * Guide</a>.</p> </note>
+     * Guide</a>.</p> 
      */
     inline CreateInstancesFromSnapshotRequest& WithUserData(const char* value) { SetUserData(value); return *this;}
 

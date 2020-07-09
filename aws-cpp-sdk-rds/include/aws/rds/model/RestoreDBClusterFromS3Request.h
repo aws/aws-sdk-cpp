@@ -1569,8 +1569,8 @@ namespace Model
 
     /**
      * <p>The target backtrack window, in seconds. To disable backtracking, set this
-     * value to 0.</p> <note> <p>Currently, Backtrack is only supported for Aurora
-     * MySQL DB clusters.</p> </note> <p>Default: 0</p> <p>Constraints:</p> <ul> <li>
+     * value to 0.</p>  <p>Currently, Backtrack is only supported for Aurora
+     * MySQL DB clusters.</p>  <p>Default: 0</p> <p>Constraints:</p> <ul> <li>
      * <p>If specified, this value must be set to a number from 0 to 259,200 (72
      * hours).</p> </li> </ul>
      */
@@ -1578,8 +1578,8 @@ namespace Model
 
     /**
      * <p>The target backtrack window, in seconds. To disable backtracking, set this
-     * value to 0.</p> <note> <p>Currently, Backtrack is only supported for Aurora
-     * MySQL DB clusters.</p> </note> <p>Default: 0</p> <p>Constraints:</p> <ul> <li>
+     * value to 0.</p>  <p>Currently, Backtrack is only supported for Aurora
+     * MySQL DB clusters.</p>  <p>Default: 0</p> <p>Constraints:</p> <ul> <li>
      * <p>If specified, this value must be set to a number from 0 to 259,200 (72
      * hours).</p> </li> </ul>
      */
@@ -1587,8 +1587,8 @@ namespace Model
 
     /**
      * <p>The target backtrack window, in seconds. To disable backtracking, set this
-     * value to 0.</p> <note> <p>Currently, Backtrack is only supported for Aurora
-     * MySQL DB clusters.</p> </note> <p>Default: 0</p> <p>Constraints:</p> <ul> <li>
+     * value to 0.</p>  <p>Currently, Backtrack is only supported for Aurora
+     * MySQL DB clusters.</p>  <p>Default: 0</p> <p>Constraints:</p> <ul> <li>
      * <p>If specified, this value must be set to a number from 0 to 259,200 (72
      * hours).</p> </li> </ul>
      */
@@ -1596,8 +1596,8 @@ namespace Model
 
     /**
      * <p>The target backtrack window, in seconds. To disable backtracking, set this
-     * value to 0.</p> <note> <p>Currently, Backtrack is only supported for Aurora
-     * MySQL DB clusters.</p> </note> <p>Default: 0</p> <p>Constraints:</p> <ul> <li>
+     * value to 0.</p>  <p>Currently, Backtrack is only supported for Aurora
+     * MySQL DB clusters.</p>  <p>Default: 0</p> <p>Constraints:</p> <ul> <li>
      * <p>If specified, this value must be set to a number from 0 to 259,200 (72
      * hours).</p> </li> </ul>
      */

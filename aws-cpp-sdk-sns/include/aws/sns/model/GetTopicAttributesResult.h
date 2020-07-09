@@ -53,7 +53,7 @@ namespace Model
      * deleted subscriptions for the topic.</p> </li> <li> <p>
      * <code>SubscriptionsPending</code> – The number of subscriptions pending
      * confirmation for the topic.</p> </li> <li> <p> <code>TopicArn</code> – The
-     * topic's ARN.</p> </li> <li> <p> <code>EffectiveDeliveryPolicy</code> – Yhe JSON
+     * topic's ARN.</p> </li> <li> <p> <code>EffectiveDeliveryPolicy</code> – The JSON
      * serialization of the effective delivery policy, taking system defaults into
      * account.</p> </li> </ul> <p>The following attribute applies only to <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html">server-side-encryption</a>:</p>
@@ -80,7 +80,7 @@ namespace Model
      * deleted subscriptions for the topic.</p> </li> <li> <p>
      * <code>SubscriptionsPending</code> – The number of subscriptions pending
      * confirmation for the topic.</p> </li> <li> <p> <code>TopicArn</code> – The
-     * topic's ARN.</p> </li> <li> <p> <code>EffectiveDeliveryPolicy</code> – Yhe JSON
+     * topic's ARN.</p> </li> <li> <p> <code>EffectiveDeliveryPolicy</code> – The JSON
      * serialization of the effective delivery policy, taking system defaults into
      * account.</p> </li> </ul> <p>The following attribute applies only to <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html">server-side-encryption</a>:</p>
@@ -107,7 +107,7 @@ namespace Model
      * deleted subscriptions for the topic.</p> </li> <li> <p>
      * <code>SubscriptionsPending</code> – The number of subscriptions pending
      * confirmation for the topic.</p> </li> <li> <p> <code>TopicArn</code> – The
-     * topic's ARN.</p> </li> <li> <p> <code>EffectiveDeliveryPolicy</code> – Yhe JSON
+     * topic's ARN.</p> </li> <li> <p> <code>EffectiveDeliveryPolicy</code> – The JSON
      * serialization of the effective delivery policy, taking system defaults into
      * account.</p> </li> </ul> <p>The following attribute applies only to <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html">server-side-encryption</a>:</p>
@@ -134,7 +134,7 @@ namespace Model
      * deleted subscriptions for the topic.</p> </li> <li> <p>
      * <code>SubscriptionsPending</code> – The number of subscriptions pending
      * confirmation for the topic.</p> </li> <li> <p> <code>TopicArn</code> – The
-     * topic's ARN.</p> </li> <li> <p> <code>EffectiveDeliveryPolicy</code> – Yhe JSON
+     * topic's ARN.</p> </li> <li> <p> <code>EffectiveDeliveryPolicy</code> – The JSON
      * serialization of the effective delivery policy, taking system defaults into
      * account.</p> </li> </ul> <p>The following attribute applies only to <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html">server-side-encryption</a>:</p>
@@ -161,7 +161,7 @@ namespace Model
      * deleted subscriptions for the topic.</p> </li> <li> <p>
      * <code>SubscriptionsPending</code> – The number of subscriptions pending
      * confirmation for the topic.</p> </li> <li> <p> <code>TopicArn</code> – The
-     * topic's ARN.</p> </li> <li> <p> <code>EffectiveDeliveryPolicy</code> – Yhe JSON
+     * topic's ARN.</p> </li> <li> <p> <code>EffectiveDeliveryPolicy</code> – The JSON
      * serialization of the effective delivery policy, taking system defaults into
      * account.</p> </li> </ul> <p>The following attribute applies only to <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html">server-side-encryption</a>:</p>
@@ -188,7 +188,7 @@ namespace Model
      * deleted subscriptions for the topic.</p> </li> <li> <p>
      * <code>SubscriptionsPending</code> – The number of subscriptions pending
      * confirmation for the topic.</p> </li> <li> <p> <code>TopicArn</code> – The
-     * topic's ARN.</p> </li> <li> <p> <code>EffectiveDeliveryPolicy</code> – Yhe JSON
+     * topic's ARN.</p> </li> <li> <p> <code>EffectiveDeliveryPolicy</code> – The JSON
      * serialization of the effective delivery policy, taking system defaults into
      * account.</p> </li> </ul> <p>The following attribute applies only to <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html">server-side-encryption</a>:</p>
@@ -215,7 +215,7 @@ namespace Model
      * deleted subscriptions for the topic.</p> </li> <li> <p>
      * <code>SubscriptionsPending</code> – The number of subscriptions pending
      * confirmation for the topic.</p> </li> <li> <p> <code>TopicArn</code> – The
-     * topic's ARN.</p> </li> <li> <p> <code>EffectiveDeliveryPolicy</code> – Yhe JSON
+     * topic's ARN.</p> </li> <li> <p> <code>EffectiveDeliveryPolicy</code> – The JSON
      * serialization of the effective delivery policy, taking system defaults into
      * account.</p> </li> </ul> <p>The following attribute applies only to <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html">server-side-encryption</a>:</p>
@@ -242,7 +242,7 @@ namespace Model
      * deleted subscriptions for the topic.</p> </li> <li> <p>
      * <code>SubscriptionsPending</code> – The number of subscriptions pending
      * confirmation for the topic.</p> </li> <li> <p> <code>TopicArn</code> – The
-     * topic's ARN.</p> </li> <li> <p> <code>EffectiveDeliveryPolicy</code> – Yhe JSON
+     * topic's ARN.</p> </li> <li> <p> <code>EffectiveDeliveryPolicy</code> – The JSON
      * serialization of the effective delivery policy, taking system defaults into
      * account.</p> </li> </ul> <p>The following attribute applies only to <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html">server-side-encryption</a>:</p>
@@ -269,7 +269,7 @@ namespace Model
      * deleted subscriptions for the topic.</p> </li> <li> <p>
      * <code>SubscriptionsPending</code> – The number of subscriptions pending
      * confirmation for the topic.</p> </li> <li> <p> <code>TopicArn</code> – The
-     * topic's ARN.</p> </li> <li> <p> <code>EffectiveDeliveryPolicy</code> – Yhe JSON
+     * topic's ARN.</p> </li> <li> <p> <code>EffectiveDeliveryPolicy</code> – The JSON
      * serialization of the effective delivery policy, taking system defaults into
      * account.</p> </li> </ul> <p>The following attribute applies only to <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html">server-side-encryption</a>:</p>
@@ -296,7 +296,7 @@ namespace Model
      * deleted subscriptions for the topic.</p> </li> <li> <p>
      * <code>SubscriptionsPending</code> – The number of subscriptions pending
      * confirmation for the topic.</p> </li> <li> <p> <code>TopicArn</code> – The
-     * topic's ARN.</p> </li> <li> <p> <code>EffectiveDeliveryPolicy</code> – Yhe JSON
+     * topic's ARN.</p> </li> <li> <p> <code>EffectiveDeliveryPolicy</code> – The JSON
      * serialization of the effective delivery policy, taking system defaults into
      * account.</p> </li> </ul> <p>The following attribute applies only to <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html">server-side-encryption</a>:</p>
@@ -323,7 +323,7 @@ namespace Model
      * deleted subscriptions for the topic.</p> </li> <li> <p>
      * <code>SubscriptionsPending</code> – The number of subscriptions pending
      * confirmation for the topic.</p> </li> <li> <p> <code>TopicArn</code> – The
-     * topic's ARN.</p> </li> <li> <p> <code>EffectiveDeliveryPolicy</code> – Yhe JSON
+     * topic's ARN.</p> </li> <li> <p> <code>EffectiveDeliveryPolicy</code> – The JSON
      * serialization of the effective delivery policy, taking system defaults into
      * account.</p> </li> </ul> <p>The following attribute applies only to <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html">server-side-encryption</a>:</p>
@@ -350,7 +350,7 @@ namespace Model
      * deleted subscriptions for the topic.</p> </li> <li> <p>
      * <code>SubscriptionsPending</code> – The number of subscriptions pending
      * confirmation for the topic.</p> </li> <li> <p> <code>TopicArn</code> – The
-     * topic's ARN.</p> </li> <li> <p> <code>EffectiveDeliveryPolicy</code> – Yhe JSON
+     * topic's ARN.</p> </li> <li> <p> <code>EffectiveDeliveryPolicy</code> – The JSON
      * serialization of the effective delivery policy, taking system defaults into
      * account.</p> </li> </ul> <p>The following attribute applies only to <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html">server-side-encryption</a>:</p>

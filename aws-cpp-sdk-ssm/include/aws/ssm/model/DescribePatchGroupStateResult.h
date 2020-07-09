@@ -106,30 +106,30 @@ namespace Model
     /**
      * <p>The number of instances with patches installed that are specified in a
      * RejectedPatches list. Patches with a status of <i>INSTALLED_REJECTED</i> were
-     * typically installed before they were added to a RejectedPatches list.</p> <note>
+     * typically installed before they were added to a RejectedPatches list.</p> 
      * <p>If ALLOW_AS_DEPENDENCY is the specified option for RejectedPatchesAction, the
      * value of InstancesWithInstalledRejectedPatches will always be 0 (zero).</p>
-     * </note>
+     * 
      */
     inline int GetInstancesWithInstalledRejectedPatches() const{ return m_instancesWithInstalledRejectedPatches; }
 
     /**
      * <p>The number of instances with patches installed that are specified in a
      * RejectedPatches list. Patches with a status of <i>INSTALLED_REJECTED</i> were
-     * typically installed before they were added to a RejectedPatches list.</p> <note>
+     * typically installed before they were added to a RejectedPatches list.</p> 
      * <p>If ALLOW_AS_DEPENDENCY is the specified option for RejectedPatchesAction, the
      * value of InstancesWithInstalledRejectedPatches will always be 0 (zero).</p>
-     * </note>
+     * 
      */
     inline void SetInstancesWithInstalledRejectedPatches(int value) { m_instancesWithInstalledRejectedPatches = value; }
 
     /**
      * <p>The number of instances with patches installed that are specified in a
      * RejectedPatches list. Patches with a status of <i>INSTALLED_REJECTED</i> were
-     * typically installed before they were added to a RejectedPatches list.</p> <note>
+     * typically installed before they were added to a RejectedPatches list.</p> 
      * <p>If ALLOW_AS_DEPENDENCY is the specified option for RejectedPatchesAction, the
      * value of InstancesWithInstalledRejectedPatches will always be 0 (zero).</p>
-     * </note>
+     * 
      */
     inline DescribePatchGroupStateResult& WithInstancesWithInstalledRejectedPatches(int value) { SetInstancesWithInstalledRejectedPatches(value); return *this;}
 

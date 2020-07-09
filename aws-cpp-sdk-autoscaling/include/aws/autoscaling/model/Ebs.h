@@ -319,7 +319,7 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#EBSEncryption_supported_instances">Supported
      * Instance Types</a>. If your AMI uses encrypted volumes, you can also only launch
-     * it on supported instance types.</p> <note> <p>If you are creating a volume from
+     * it on supported instance types.</p>  <p>If you are creating a volume from
      * a snapshot, you cannot specify an encryption value. Volumes that are created
      * from encrypted snapshots are automatically encrypted, and volumes that are
      * created from unencrypted snapshots are automatically unencrypted. By default,
@@ -331,7 +331,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#encryption-by-default">encryption
      * by default</a> results in all EBS volumes being encrypted with the AWS managed
      * CMK or a customer managed CMK, whether or not the snapshot was encrypted.</p>
-     * </note> <p>For more information, see <a
+     *  <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AMIEncryption.html">Using
      * Encryption with EBS-Backed AMIs</a> in the <i>Amazon EC2 User Guide for Linux
      * Instances</i> and <a
@@ -347,7 +347,7 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#EBSEncryption_supported_instances">Supported
      * Instance Types</a>. If your AMI uses encrypted volumes, you can also only launch
-     * it on supported instance types.</p> <note> <p>If you are creating a volume from
+     * it on supported instance types.</p>  <p>If you are creating a volume from
      * a snapshot, you cannot specify an encryption value. Volumes that are created
      * from encrypted snapshots are automatically encrypted, and volumes that are
      * created from unencrypted snapshots are automatically unencrypted. By default,
@@ -359,7 +359,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#encryption-by-default">encryption
      * by default</a> results in all EBS volumes being encrypted with the AWS managed
      * CMK or a customer managed CMK, whether or not the snapshot was encrypted.</p>
-     * </note> <p>For more information, see <a
+     *  <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AMIEncryption.html">Using
      * Encryption with EBS-Backed AMIs</a> in the <i>Amazon EC2 User Guide for Linux
      * Instances</i> and <a
@@ -375,7 +375,7 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#EBSEncryption_supported_instances">Supported
      * Instance Types</a>. If your AMI uses encrypted volumes, you can also only launch
-     * it on supported instance types.</p> <note> <p>If you are creating a volume from
+     * it on supported instance types.</p>  <p>If you are creating a volume from
      * a snapshot, you cannot specify an encryption value. Volumes that are created
      * from encrypted snapshots are automatically encrypted, and volumes that are
      * created from unencrypted snapshots are automatically unencrypted. By default,
@@ -387,7 +387,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#encryption-by-default">encryption
      * by default</a> results in all EBS volumes being encrypted with the AWS managed
      * CMK or a customer managed CMK, whether or not the snapshot was encrypted.</p>
-     * </note> <p>For more information, see <a
+     *  <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AMIEncryption.html">Using
      * Encryption with EBS-Backed AMIs</a> in the <i>Amazon EC2 User Guide for Linux
      * Instances</i> and <a
@@ -403,7 +403,7 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#EBSEncryption_supported_instances">Supported
      * Instance Types</a>. If your AMI uses encrypted volumes, you can also only launch
-     * it on supported instance types.</p> <note> <p>If you are creating a volume from
+     * it on supported instance types.</p>  <p>If you are creating a volume from
      * a snapshot, you cannot specify an encryption value. Volumes that are created
      * from encrypted snapshots are automatically encrypted, and volumes that are
      * created from unencrypted snapshots are automatically unencrypted. By default,
@@ -415,7 +415,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#encryption-by-default">encryption
      * by default</a> results in all EBS volumes being encrypted with the AWS managed
      * CMK or a customer managed CMK, whether or not the snapshot was encrypted.</p>
-     * </note> <p>For more information, see <a
+     *  <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AMIEncryption.html">Using
      * Encryption with EBS-Backed AMIs</a> in the <i>Amazon EC2 User Guide for Linux
      * Instances</i> and <a

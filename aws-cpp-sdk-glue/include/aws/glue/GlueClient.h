@@ -835,7 +835,7 @@ namespace Model
         virtual void BatchDeletePartitionAsync(const Model::BatchDeletePartitionRequest& request, const BatchDeletePartitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes multiple tables at once.</p> <note> <p>After completing this
+         * <p>Deletes multiple tables at once.</p>  <p>After completing this
          * operation, you no longer have access to the table versions and partitions that
          * belong to the deleted table. AWS Glue deletes these "orphaned" resources
          * asynchronously in a timely manner, at the discretion of the service.</p> <p>To
@@ -843,14 +843,14 @@ namespace Model
          * <code>BatchDeleteTable</code>, use <code>DeleteTableVersion</code> or
          * <code>BatchDeleteTableVersion</code>, and <code>DeletePartition</code> or
          * <code>BatchDeletePartition</code>, to delete any resources that belong to the
-         * table.</p> </note><p><h3>See Also:</h3>   <a
+         * table.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/BatchDeleteTable">AWS
          * API Reference</a></p>
          */
         virtual Model::BatchDeleteTableOutcome BatchDeleteTable(const Model::BatchDeleteTableRequest& request) const;
 
         /**
-         * <p>Deletes multiple tables at once.</p> <note> <p>After completing this
+         * <p>Deletes multiple tables at once.</p>  <p>After completing this
          * operation, you no longer have access to the table versions and partitions that
          * belong to the deleted table. AWS Glue deletes these "orphaned" resources
          * asynchronously in a timely manner, at the discretion of the service.</p> <p>To
@@ -858,7 +858,7 @@ namespace Model
          * <code>BatchDeleteTable</code>, use <code>DeleteTableVersion</code> or
          * <code>BatchDeleteTableVersion</code>, and <code>DeletePartition</code> or
          * <code>BatchDeletePartition</code>, to delete any resources that belong to the
-         * table.</p> </note><p><h3>See Also:</h3>   <a
+         * table.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/BatchDeleteTable">AWS
          * API Reference</a></p>
          *
@@ -867,7 +867,7 @@ namespace Model
         virtual Model::BatchDeleteTableOutcomeCallable BatchDeleteTableCallable(const Model::BatchDeleteTableRequest& request) const;
 
         /**
-         * <p>Deletes multiple tables at once.</p> <note> <p>After completing this
+         * <p>Deletes multiple tables at once.</p>  <p>After completing this
          * operation, you no longer have access to the table versions and partitions that
          * belong to the deleted table. AWS Glue deletes these "orphaned" resources
          * asynchronously in a timely manner, at the discretion of the service.</p> <p>To
@@ -875,7 +875,7 @@ namespace Model
          * <code>BatchDeleteTable</code>, use <code>DeleteTableVersion</code> or
          * <code>BatchDeleteTableVersion</code>, and <code>DeletePartition</code> or
          * <code>BatchDeletePartition</code>, to delete any resources that belong to the
-         * table.</p> </note><p><h3>See Also:</h3>   <a
+         * table.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/BatchDeleteTable">AWS
          * API Reference</a></p>
          *
@@ -1752,7 +1752,7 @@ namespace Model
         virtual void DeleteCrawlerAsync(const Model::DeleteCrawlerRequest& request, const DeleteCrawlerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Removes a specified database from a Data Catalog.</p> <note> <p>After
+         * <p>Removes a specified database from a Data Catalog.</p>  <p>After
          * completing this operation, you no longer have access to the tables (and all
          * table versions and partitions that might belong to the tables) and the
          * user-defined functions in the deleted database. AWS Glue deletes these
@@ -1762,14 +1762,14 @@ namespace Model
          * or <code>BatchDeleteTableVersion</code>, <code>DeletePartition</code> or
          * <code>BatchDeletePartition</code>, <code>DeleteUserDefinedFunction</code>, and
          * <code>DeleteTable</code> or <code>BatchDeleteTable</code>, to delete any
-         * resources that belong to the database.</p> </note><p><h3>See Also:</h3>   <a
+         * resources that belong to the database.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteDatabase">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteDatabaseOutcome DeleteDatabase(const Model::DeleteDatabaseRequest& request) const;
 
         /**
-         * <p>Removes a specified database from a Data Catalog.</p> <note> <p>After
+         * <p>Removes a specified database from a Data Catalog.</p>  <p>After
          * completing this operation, you no longer have access to the tables (and all
          * table versions and partitions that might belong to the tables) and the
          * user-defined functions in the deleted database. AWS Glue deletes these
@@ -1779,7 +1779,7 @@ namespace Model
          * or <code>BatchDeleteTableVersion</code>, <code>DeletePartition</code> or
          * <code>BatchDeletePartition</code>, <code>DeleteUserDefinedFunction</code>, and
          * <code>DeleteTable</code> or <code>BatchDeleteTable</code>, to delete any
-         * resources that belong to the database.</p> </note><p><h3>See Also:</h3>   <a
+         * resources that belong to the database.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteDatabase">AWS
          * API Reference</a></p>
          *
@@ -1788,7 +1788,7 @@ namespace Model
         virtual Model::DeleteDatabaseOutcomeCallable DeleteDatabaseCallable(const Model::DeleteDatabaseRequest& request) const;
 
         /**
-         * <p>Removes a specified database from a Data Catalog.</p> <note> <p>After
+         * <p>Removes a specified database from a Data Catalog.</p>  <p>After
          * completing this operation, you no longer have access to the tables (and all
          * table versions and partitions that might belong to the tables) and the
          * user-defined functions in the deleted database. AWS Glue deletes these
@@ -1798,7 +1798,7 @@ namespace Model
          * or <code>BatchDeleteTableVersion</code>, <code>DeletePartition</code> or
          * <code>BatchDeletePartition</code>, <code>DeleteUserDefinedFunction</code>, and
          * <code>DeleteTable</code> or <code>BatchDeleteTable</code>, to delete any
-         * resources that belong to the database.</p> </note><p><h3>See Also:</h3>   <a
+         * resources that belong to the database.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteDatabase">AWS
          * API Reference</a></p>
          *
@@ -1978,7 +1978,7 @@ namespace Model
         virtual void DeleteSecurityConfigurationAsync(const Model::DeleteSecurityConfigurationRequest& request, const DeleteSecurityConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Removes a table definition from the Data Catalog.</p> <note> <p>After
+         * <p>Removes a table definition from the Data Catalog.</p>  <p>After
          * completing this operation, you no longer have access to the table versions and
          * partitions that belong to the deleted table. AWS Glue deletes these "orphaned"
          * resources asynchronously in a timely manner, at the discretion of the
@@ -1986,14 +1986,14 @@ namespace Model
          * before calling <code>DeleteTable</code>, use <code>DeleteTableVersion</code> or
          * <code>BatchDeleteTableVersion</code>, and <code>DeletePartition</code> or
          * <code>BatchDeletePartition</code>, to delete any resources that belong to the
-         * table.</p> </note><p><h3>See Also:</h3>   <a
+         * table.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteTable">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteTableOutcome DeleteTable(const Model::DeleteTableRequest& request) const;
 
         /**
-         * <p>Removes a table definition from the Data Catalog.</p> <note> <p>After
+         * <p>Removes a table definition from the Data Catalog.</p>  <p>After
          * completing this operation, you no longer have access to the table versions and
          * partitions that belong to the deleted table. AWS Glue deletes these "orphaned"
          * resources asynchronously in a timely manner, at the discretion of the
@@ -2001,7 +2001,7 @@ namespace Model
          * before calling <code>DeleteTable</code>, use <code>DeleteTableVersion</code> or
          * <code>BatchDeleteTableVersion</code>, and <code>DeletePartition</code> or
          * <code>BatchDeletePartition</code>, to delete any resources that belong to the
-         * table.</p> </note><p><h3>See Also:</h3>   <a
+         * table.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteTable">AWS
          * API Reference</a></p>
          *
@@ -2010,7 +2010,7 @@ namespace Model
         virtual Model::DeleteTableOutcomeCallable DeleteTableCallable(const Model::DeleteTableRequest& request) const;
 
         /**
-         * <p>Removes a table definition from the Data Catalog.</p> <note> <p>After
+         * <p>Removes a table definition from the Data Catalog.</p>  <p>After
          * completing this operation, you no longer have access to the table versions and
          * partitions that belong to the deleted table. AWS Glue deletes these "orphaned"
          * resources asynchronously in a timely manner, at the discretion of the
@@ -2018,7 +2018,7 @@ namespace Model
          * before calling <code>DeleteTable</code>, use <code>DeleteTableVersion</code> or
          * <code>BatchDeleteTableVersion</code>, and <code>DeletePartition</code> or
          * <code>BatchDeletePartition</code>, to delete any resources that belong to the
-         * table.</p> </note><p><h3>See Also:</h3>   <a
+         * table.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteTable">AWS
          * API Reference</a></p>
          *
@@ -2504,22 +2504,22 @@ namespace Model
         virtual void GetDataflowGraphAsync(const Model::GetDataflowGraphRequest& request, const GetDataflowGraphResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves information about a specified development endpoint.</p> <note>
+         * <p>Retrieves information about a specified development endpoint.</p> 
          * <p>When you create a development endpoint in a virtual private cloud (VPC), AWS
          * Glue returns only a private IP address, and the public IP address field is not
          * populated. When you create a non-VPC development endpoint, AWS Glue returns only
-         * a public IP address.</p> </note><p><h3>See Also:</h3>   <a
+         * a public IP address.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetDevEndpoint">AWS
          * API Reference</a></p>
          */
         virtual Model::GetDevEndpointOutcome GetDevEndpoint(const Model::GetDevEndpointRequest& request) const;
 
         /**
-         * <p>Retrieves information about a specified development endpoint.</p> <note>
+         * <p>Retrieves information about a specified development endpoint.</p> 
          * <p>When you create a development endpoint in a virtual private cloud (VPC), AWS
          * Glue returns only a private IP address, and the public IP address field is not
          * populated. When you create a non-VPC development endpoint, AWS Glue returns only
-         * a public IP address.</p> </note><p><h3>See Also:</h3>   <a
+         * a public IP address.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetDevEndpoint">AWS
          * API Reference</a></p>
          *
@@ -2528,11 +2528,11 @@ namespace Model
         virtual Model::GetDevEndpointOutcomeCallable GetDevEndpointCallable(const Model::GetDevEndpointRequest& request) const;
 
         /**
-         * <p>Retrieves information about a specified development endpoint.</p> <note>
+         * <p>Retrieves information about a specified development endpoint.</p> 
          * <p>When you create a development endpoint in a virtual private cloud (VPC), AWS
          * Glue returns only a private IP address, and the public IP address field is not
          * populated. When you create a non-VPC development endpoint, AWS Glue returns only
-         * a public IP address.</p> </note><p><h3>See Also:</h3>   <a
+         * a public IP address.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetDevEndpoint">AWS
          * API Reference</a></p>
          *
@@ -2541,22 +2541,22 @@ namespace Model
         virtual void GetDevEndpointAsync(const Model::GetDevEndpointRequest& request, const GetDevEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves all the development endpoints in this AWS account.</p> <note>
+         * <p>Retrieves all the development endpoints in this AWS account.</p> 
          * <p>When you create a development endpoint in a virtual private cloud (VPC), AWS
          * Glue returns only a private IP address and the public IP address field is not
          * populated. When you create a non-VPC development endpoint, AWS Glue returns only
-         * a public IP address.</p> </note><p><h3>See Also:</h3>   <a
+         * a public IP address.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetDevEndpoints">AWS
          * API Reference</a></p>
          */
         virtual Model::GetDevEndpointsOutcome GetDevEndpoints(const Model::GetDevEndpointsRequest& request) const;
 
         /**
-         * <p>Retrieves all the development endpoints in this AWS account.</p> <note>
+         * <p>Retrieves all the development endpoints in this AWS account.</p> 
          * <p>When you create a development endpoint in a virtual private cloud (VPC), AWS
          * Glue returns only a private IP address and the public IP address field is not
          * populated. When you create a non-VPC development endpoint, AWS Glue returns only
-         * a public IP address.</p> </note><p><h3>See Also:</h3>   <a
+         * a public IP address.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetDevEndpoints">AWS
          * API Reference</a></p>
          *
@@ -2565,11 +2565,11 @@ namespace Model
         virtual Model::GetDevEndpointsOutcomeCallable GetDevEndpointsCallable(const Model::GetDevEndpointsRequest& request) const;
 
         /**
-         * <p>Retrieves all the development endpoints in this AWS account.</p> <note>
+         * <p>Retrieves all the development endpoints in this AWS account.</p> 
          * <p>When you create a development endpoint in a virtual private cloud (VPC), AWS
          * Glue returns only a private IP address and the public IP address field is not
          * populated. When you create a non-VPC development endpoint, AWS Glue returns only
-         * a public IP address.</p> </note><p><h3>See Also:</h3>   <a
+         * a public IP address.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetDevEndpoints">AWS
          * API Reference</a></p>
          *

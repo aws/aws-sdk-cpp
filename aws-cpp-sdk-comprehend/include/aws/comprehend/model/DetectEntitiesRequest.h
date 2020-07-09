@@ -87,44 +87,137 @@ namespace Model
     /**
      * <p>The language of the input documents. You can specify any of the primary
      * languages supported by Amazon Comprehend. All documents must be in the same
-     * language.</p>
+     * language.</p> <p>If your request includes the endpoint for a custom entity
+     * recognition model, Amazon Comprehend uses the language of your custom model, and
+     * it ignores any language code that you specify here.</p>
      */
     inline const LanguageCode& GetLanguageCode() const{ return m_languageCode; }
 
     /**
      * <p>The language of the input documents. You can specify any of the primary
      * languages supported by Amazon Comprehend. All documents must be in the same
-     * language.</p>
+     * language.</p> <p>If your request includes the endpoint for a custom entity
+     * recognition model, Amazon Comprehend uses the language of your custom model, and
+     * it ignores any language code that you specify here.</p>
      */
     inline bool LanguageCodeHasBeenSet() const { return m_languageCodeHasBeenSet; }
 
     /**
      * <p>The language of the input documents. You can specify any of the primary
      * languages supported by Amazon Comprehend. All documents must be in the same
-     * language.</p>
+     * language.</p> <p>If your request includes the endpoint for a custom entity
+     * recognition model, Amazon Comprehend uses the language of your custom model, and
+     * it ignores any language code that you specify here.</p>
      */
     inline void SetLanguageCode(const LanguageCode& value) { m_languageCodeHasBeenSet = true; m_languageCode = value; }
 
     /**
      * <p>The language of the input documents. You can specify any of the primary
      * languages supported by Amazon Comprehend. All documents must be in the same
-     * language.</p>
+     * language.</p> <p>If your request includes the endpoint for a custom entity
+     * recognition model, Amazon Comprehend uses the language of your custom model, and
+     * it ignores any language code that you specify here.</p>
      */
     inline void SetLanguageCode(LanguageCode&& value) { m_languageCodeHasBeenSet = true; m_languageCode = std::move(value); }
 
     /**
      * <p>The language of the input documents. You can specify any of the primary
      * languages supported by Amazon Comprehend. All documents must be in the same
-     * language.</p>
+     * language.</p> <p>If your request includes the endpoint for a custom entity
+     * recognition model, Amazon Comprehend uses the language of your custom model, and
+     * it ignores any language code that you specify here.</p>
      */
     inline DetectEntitiesRequest& WithLanguageCode(const LanguageCode& value) { SetLanguageCode(value); return *this;}
 
     /**
      * <p>The language of the input documents. You can specify any of the primary
      * languages supported by Amazon Comprehend. All documents must be in the same
-     * language.</p>
+     * language.</p> <p>If your request includes the endpoint for a custom entity
+     * recognition model, Amazon Comprehend uses the language of your custom model, and
+     * it ignores any language code that you specify here.</p>
      */
     inline DetectEntitiesRequest& WithLanguageCode(LanguageCode&& value) { SetLanguageCode(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The Amazon Resource Name of an endpoint that is associated with a custom
+     * entity recognition model. Provide an endpoint if you want to detect entities by
+     * using your own custom model instead of the default model that is used by Amazon
+     * Comprehend.</p> <p>If you specify an endpoint, Amazon Comprehend uses the
+     * language of your custom model, and it ignores any language code that you provide
+     * in your request.</p>
+     */
+    inline const Aws::String& GetEndpointArn() const{ return m_endpointArn; }
+
+    /**
+     * <p>The Amazon Resource Name of an endpoint that is associated with a custom
+     * entity recognition model. Provide an endpoint if you want to detect entities by
+     * using your own custom model instead of the default model that is used by Amazon
+     * Comprehend.</p> <p>If you specify an endpoint, Amazon Comprehend uses the
+     * language of your custom model, and it ignores any language code that you provide
+     * in your request.</p>
+     */
+    inline bool EndpointArnHasBeenSet() const { return m_endpointArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name of an endpoint that is associated with a custom
+     * entity recognition model. Provide an endpoint if you want to detect entities by
+     * using your own custom model instead of the default model that is used by Amazon
+     * Comprehend.</p> <p>If you specify an endpoint, Amazon Comprehend uses the
+     * language of your custom model, and it ignores any language code that you provide
+     * in your request.</p>
+     */
+    inline void SetEndpointArn(const Aws::String& value) { m_endpointArnHasBeenSet = true; m_endpointArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name of an endpoint that is associated with a custom
+     * entity recognition model. Provide an endpoint if you want to detect entities by
+     * using your own custom model instead of the default model that is used by Amazon
+     * Comprehend.</p> <p>If you specify an endpoint, Amazon Comprehend uses the
+     * language of your custom model, and it ignores any language code that you provide
+     * in your request.</p>
+     */
+    inline void SetEndpointArn(Aws::String&& value) { m_endpointArnHasBeenSet = true; m_endpointArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name of an endpoint that is associated with a custom
+     * entity recognition model. Provide an endpoint if you want to detect entities by
+     * using your own custom model instead of the default model that is used by Amazon
+     * Comprehend.</p> <p>If you specify an endpoint, Amazon Comprehend uses the
+     * language of your custom model, and it ignores any language code that you provide
+     * in your request.</p>
+     */
+    inline void SetEndpointArn(const char* value) { m_endpointArnHasBeenSet = true; m_endpointArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name of an endpoint that is associated with a custom
+     * entity recognition model. Provide an endpoint if you want to detect entities by
+     * using your own custom model instead of the default model that is used by Amazon
+     * Comprehend.</p> <p>If you specify an endpoint, Amazon Comprehend uses the
+     * language of your custom model, and it ignores any language code that you provide
+     * in your request.</p>
+     */
+    inline DetectEntitiesRequest& WithEndpointArn(const Aws::String& value) { SetEndpointArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name of an endpoint that is associated with a custom
+     * entity recognition model. Provide an endpoint if you want to detect entities by
+     * using your own custom model instead of the default model that is used by Amazon
+     * Comprehend.</p> <p>If you specify an endpoint, Amazon Comprehend uses the
+     * language of your custom model, and it ignores any language code that you provide
+     * in your request.</p>
+     */
+    inline DetectEntitiesRequest& WithEndpointArn(Aws::String&& value) { SetEndpointArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name of an endpoint that is associated with a custom
+     * entity recognition model. Provide an endpoint if you want to detect entities by
+     * using your own custom model instead of the default model that is used by Amazon
+     * Comprehend.</p> <p>If you specify an endpoint, Amazon Comprehend uses the
+     * language of your custom model, and it ignores any language code that you provide
+     * in your request.</p>
+     */
+    inline DetectEntitiesRequest& WithEndpointArn(const char* value) { SetEndpointArn(value); return *this;}
 
   private:
 
@@ -133,6 +226,9 @@ namespace Model
 
     LanguageCode m_languageCode;
     bool m_languageCodeHasBeenSet;
+
+    Aws::String m_endpointArn;
+    bool m_endpointArnHasBeenSet;
   };
 
 } // namespace Model

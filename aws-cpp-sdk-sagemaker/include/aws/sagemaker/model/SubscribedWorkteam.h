@@ -211,42 +211,42 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>Marketplace product listing ID.</p>
      */
     inline const Aws::String& GetListingId() const{ return m_listingId; }
 
     /**
-     * <p/>
+     * <p>Marketplace product listing ID.</p>
      */
     inline bool ListingIdHasBeenSet() const { return m_listingIdHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>Marketplace product listing ID.</p>
      */
     inline void SetListingId(const Aws::String& value) { m_listingIdHasBeenSet = true; m_listingId = value; }
 
     /**
-     * <p/>
+     * <p>Marketplace product listing ID.</p>
      */
     inline void SetListingId(Aws::String&& value) { m_listingIdHasBeenSet = true; m_listingId = std::move(value); }
 
     /**
-     * <p/>
+     * <p>Marketplace product listing ID.</p>
      */
     inline void SetListingId(const char* value) { m_listingIdHasBeenSet = true; m_listingId.assign(value); }
 
     /**
-     * <p/>
+     * <p>Marketplace product listing ID.</p>
      */
     inline SubscribedWorkteam& WithListingId(const Aws::String& value) { SetListingId(value); return *this;}
 
     /**
-     * <p/>
+     * <p>Marketplace product listing ID.</p>
      */
     inline SubscribedWorkteam& WithListingId(Aws::String&& value) { SetListingId(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>Marketplace product listing ID.</p>
      */
     inline SubscribedWorkteam& WithListingId(const char* value) { SetListingId(value); return *this;}
 

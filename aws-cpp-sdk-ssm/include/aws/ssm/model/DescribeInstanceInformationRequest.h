@@ -41,9 +41,9 @@ namespace Model
      * <p>This is a legacy method. We recommend that you don't use this method.
      * Instead, use the <code>Filters</code> data type. <code>Filters</code> enables
      * you to return instance information by filtering based on tags applied to managed
-     * instances.</p> <note> <p>Attempting to use
+     * instances.</p>  <p>Attempting to use
      * <code>InstanceInformationFilterList</code> and <code>Filters</code> leads to an
-     * exception error. </p> </note>
+     * exception error. </p> 
      */
     inline const Aws::Vector<InstanceInformationFilter>& GetInstanceInformationFilterList() const{ return m_instanceInformationFilterList; }
 
@@ -51,9 +51,9 @@ namespace Model
      * <p>This is a legacy method. We recommend that you don't use this method.
      * Instead, use the <code>Filters</code> data type. <code>Filters</code> enables
      * you to return instance information by filtering based on tags applied to managed
-     * instances.</p> <note> <p>Attempting to use
+     * instances.</p>  <p>Attempting to use
      * <code>InstanceInformationFilterList</code> and <code>Filters</code> leads to an
-     * exception error. </p> </note>
+     * exception error. </p> 
      */
     inline bool InstanceInformationFilterListHasBeenSet() const { return m_instanceInformationFilterListHasBeenSet; }
 
@@ -61,9 +61,9 @@ namespace Model
      * <p>This is a legacy method. We recommend that you don't use this method.
      * Instead, use the <code>Filters</code> data type. <code>Filters</code> enables
      * you to return instance information by filtering based on tags applied to managed
-     * instances.</p> <note> <p>Attempting to use
+     * instances.</p>  <p>Attempting to use
      * <code>InstanceInformationFilterList</code> and <code>Filters</code> leads to an
-     * exception error. </p> </note>
+     * exception error. </p> 
      */
     inline void SetInstanceInformationFilterList(const Aws::Vector<InstanceInformationFilter>& value) { m_instanceInformationFilterListHasBeenSet = true; m_instanceInformationFilterList = value; }
 
@@ -71,9 +71,9 @@ namespace Model
      * <p>This is a legacy method. We recommend that you don't use this method.
      * Instead, use the <code>Filters</code> data type. <code>Filters</code> enables
      * you to return instance information by filtering based on tags applied to managed
-     * instances.</p> <note> <p>Attempting to use
+     * instances.</p>  <p>Attempting to use
      * <code>InstanceInformationFilterList</code> and <code>Filters</code> leads to an
-     * exception error. </p> </note>
+     * exception error. </p> 
      */
     inline void SetInstanceInformationFilterList(Aws::Vector<InstanceInformationFilter>&& value) { m_instanceInformationFilterListHasBeenSet = true; m_instanceInformationFilterList = std::move(value); }
 
@@ -81,9 +81,9 @@ namespace Model
      * <p>This is a legacy method. We recommend that you don't use this method.
      * Instead, use the <code>Filters</code> data type. <code>Filters</code> enables
      * you to return instance information by filtering based on tags applied to managed
-     * instances.</p> <note> <p>Attempting to use
+     * instances.</p>  <p>Attempting to use
      * <code>InstanceInformationFilterList</code> and <code>Filters</code> leads to an
-     * exception error. </p> </note>
+     * exception error. </p> 
      */
     inline DescribeInstanceInformationRequest& WithInstanceInformationFilterList(const Aws::Vector<InstanceInformationFilter>& value) { SetInstanceInformationFilterList(value); return *this;}
 
@@ -91,9 +91,9 @@ namespace Model
      * <p>This is a legacy method. We recommend that you don't use this method.
      * Instead, use the <code>Filters</code> data type. <code>Filters</code> enables
      * you to return instance information by filtering based on tags applied to managed
-     * instances.</p> <note> <p>Attempting to use
+     * instances.</p>  <p>Attempting to use
      * <code>InstanceInformationFilterList</code> and <code>Filters</code> leads to an
-     * exception error. </p> </note>
+     * exception error. </p> 
      */
     inline DescribeInstanceInformationRequest& WithInstanceInformationFilterList(Aws::Vector<InstanceInformationFilter>&& value) { SetInstanceInformationFilterList(std::move(value)); return *this;}
 
@@ -101,9 +101,9 @@ namespace Model
      * <p>This is a legacy method. We recommend that you don't use this method.
      * Instead, use the <code>Filters</code> data type. <code>Filters</code> enables
      * you to return instance information by filtering based on tags applied to managed
-     * instances.</p> <note> <p>Attempting to use
+     * instances.</p>  <p>Attempting to use
      * <code>InstanceInformationFilterList</code> and <code>Filters</code> leads to an
-     * exception error. </p> </note>
+     * exception error. </p> 
      */
     inline DescribeInstanceInformationRequest& AddInstanceInformationFilterList(const InstanceInformationFilter& value) { m_instanceInformationFilterListHasBeenSet = true; m_instanceInformationFilterList.push_back(value); return *this; }
 
@@ -111,9 +111,9 @@ namespace Model
      * <p>This is a legacy method. We recommend that you don't use this method.
      * Instead, use the <code>Filters</code> data type. <code>Filters</code> enables
      * you to return instance information by filtering based on tags applied to managed
-     * instances.</p> <note> <p>Attempting to use
+     * instances.</p>  <p>Attempting to use
      * <code>InstanceInformationFilterList</code> and <code>Filters</code> leads to an
-     * exception error. </p> </note>
+     * exception error. </p> 
      */
     inline DescribeInstanceInformationRequest& AddInstanceInformationFilterList(InstanceInformationFilter&& value) { m_instanceInformationFilterListHasBeenSet = true; m_instanceInformationFilterList.push_back(std::move(value)); return *this; }
 

@@ -38,6 +38,7 @@
 #include <aws/secretsmanager/model/UntagResourceRequest.h>
 #include <aws/secretsmanager/model/UpdateSecretRequest.h>
 #include <aws/secretsmanager/model/UpdateSecretVersionStageRequest.h>
+#include <aws/secretsmanager/model/ValidateResourcePolicyRequest.h>
 
 using namespace Aws;
 using namespace Aws::Auth;
@@ -595,5 +596,32 @@ void SecretsManagerClient::UpdateSecretVersionStageAsync(const UpdateSecretVersi
 void SecretsManagerClient::UpdateSecretVersionStageAsyncHelper(const UpdateSecretVersionStageRequest& request, const UpdateSecretVersionStageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateSecretVersionStage(request), context);
+}
+
+ValidateResourcePolicyOutcome SecretsManagerClient::ValidateResourcePolicy(const ValidateResourcePolicyRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return ValidateResourcePolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ValidateResourcePolicyOutcomeCallable SecretsManagerClient::ValidateResourcePolicyCallable(const ValidateResourcePolicyRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ValidateResourcePolicyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ValidateResourcePolicy(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SecretsManagerClient::ValidateResourcePolicyAsync(const ValidateResourcePolicyRequest& request, const ValidateResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ValidateResourcePolicyAsyncHelper( request, handler, context ); } );
+}
+
+void SecretsManagerClient::ValidateResourcePolicyAsyncHelper(const ValidateResourcePolicyRequest& request, const ValidateResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ValidateResourcePolicy(request), context);
 }
 

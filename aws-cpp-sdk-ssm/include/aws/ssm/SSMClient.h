@@ -866,9 +866,9 @@ namespace Model
          * see <a
          * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-managedinstances.html">Setting
          * up AWS Systems Manager for hybrid environments</a> in the <i>AWS Systems Manager
-         * User Guide</i>. </p> <note> <p>On-premises servers or VMs that are registered
+         * User Guide</i>. </p>  <p>On-premises servers or VMs that are registered
          * with Systems Manager and EC2 instances that you manage with Systems Manager are
-         * all called <i>managed instances</i>.</p> </note><p><h3>See Also:</h3>   <a
+         * all called <i>managed instances</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateActivation">AWS
          * API Reference</a></p>
          */
@@ -884,9 +884,9 @@ namespace Model
          * see <a
          * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-managedinstances.html">Setting
          * up AWS Systems Manager for hybrid environments</a> in the <i>AWS Systems Manager
-         * User Guide</i>. </p> <note> <p>On-premises servers or VMs that are registered
+         * User Guide</i>. </p>  <p>On-premises servers or VMs that are registered
          * with Systems Manager and EC2 instances that you manage with Systems Manager are
-         * all called <i>managed instances</i>.</p> </note><p><h3>See Also:</h3>   <a
+         * all called <i>managed instances</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateActivation">AWS
          * API Reference</a></p>
          *
@@ -904,9 +904,9 @@ namespace Model
          * see <a
          * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-managedinstances.html">Setting
          * up AWS Systems Manager for hybrid environments</a> in the <i>AWS Systems Manager
-         * User Guide</i>. </p> <note> <p>On-premises servers or VMs that are registered
+         * User Guide</i>. </p>  <p>On-premises servers or VMs that are registered
          * with Systems Manager and EC2 instances that you manage with Systems Manager are
-         * all called <i>managed instances</i>.</p> </note><p><h3>See Also:</h3>   <a
+         * all called <i>managed instances</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateActivation">AWS
          * API Reference</a></p>
          *
@@ -1059,28 +1059,28 @@ namespace Model
         virtual void CreateDocumentAsync(const Model::CreateDocumentRequest& request, const CreateDocumentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a new maintenance window.</p> <note> <p>The value you specify for
+         * <p>Creates a new maintenance window.</p>  <p>The value you specify for
          * <code>Duration</code> determines the specific end time for the maintenance
          * window based on the time it begins. No maintenance window tasks are permitted to
          * start after the resulting endtime minus the number of hours you specify for
          * <code>Cutoff</code>. For example, if the maintenance window starts at 3 PM, the
          * duration is three hours, and the value you specify for <code>Cutoff</code> is
          * one hour, no maintenance window tasks can start after 5 PM.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateMaintenanceWindow">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateMaintenanceWindowOutcome CreateMaintenanceWindow(const Model::CreateMaintenanceWindowRequest& request) const;
 
         /**
-         * <p>Creates a new maintenance window.</p> <note> <p>The value you specify for
+         * <p>Creates a new maintenance window.</p>  <p>The value you specify for
          * <code>Duration</code> determines the specific end time for the maintenance
          * window based on the time it begins. No maintenance window tasks are permitted to
          * start after the resulting endtime minus the number of hours you specify for
          * <code>Cutoff</code>. For example, if the maintenance window starts at 3 PM, the
          * duration is three hours, and the value you specify for <code>Cutoff</code> is
          * one hour, no maintenance window tasks can start after 5 PM.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateMaintenanceWindow">AWS
          * API Reference</a></p>
          *
@@ -1089,14 +1089,14 @@ namespace Model
         virtual Model::CreateMaintenanceWindowOutcomeCallable CreateMaintenanceWindowCallable(const Model::CreateMaintenanceWindowRequest& request) const;
 
         /**
-         * <p>Creates a new maintenance window.</p> <note> <p>The value you specify for
+         * <p>Creates a new maintenance window.</p>  <p>The value you specify for
          * <code>Duration</code> determines the specific end time for the maintenance
          * window based on the time it begins. No maintenance window tasks are permitted to
          * start after the resulting endtime minus the number of hours you specify for
          * <code>Cutoff</code>. For example, if the maintenance window starts at 3 PM, the
          * duration is three hours, and the value you specify for <code>Cutoff</code> is
          * one hour, no maintenance window tasks can start after 5 PM.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateMaintenanceWindow">AWS
          * API Reference</a></p>
          *
@@ -1157,22 +1157,22 @@ namespace Model
         virtual void CreateOpsItemAsync(const Model::CreateOpsItemRequest& request, const CreateOpsItemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a patch baseline.</p> <note> <p>For information about valid key and
+         * <p>Creates a patch baseline.</p>  <p>For information about valid key and
          * value pairs in <code>PatchFilters</code> for each supported operating system
          * type, see <a
          * href="http://docs.aws.amazon.com/systems-manager/latest/APIReference/API_PatchFilter.html">PatchFilter</a>.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreatePatchBaseline">AWS
          * API Reference</a></p>
          */
         virtual Model::CreatePatchBaselineOutcome CreatePatchBaseline(const Model::CreatePatchBaselineRequest& request) const;
 
         /**
-         * <p>Creates a patch baseline.</p> <note> <p>For information about valid key and
+         * <p>Creates a patch baseline.</p>  <p>For information about valid key and
          * value pairs in <code>PatchFilters</code> for each supported operating system
          * type, see <a
          * href="http://docs.aws.amazon.com/systems-manager/latest/APIReference/API_PatchFilter.html">PatchFilter</a>.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreatePatchBaseline">AWS
          * API Reference</a></p>
          *
@@ -1181,11 +1181,11 @@ namespace Model
         virtual Model::CreatePatchBaselineOutcomeCallable CreatePatchBaselineCallable(const Model::CreatePatchBaselineRequest& request) const;
 
         /**
-         * <p>Creates a patch baseline.</p> <note> <p>For information about valid key and
+         * <p>Creates a patch baseline.</p>  <p>For information about valid key and
          * value pairs in <code>PatchFilters</code> for each supported operating system
          * type, see <a
          * href="http://docs.aws.amazon.com/systems-manager/latest/APIReference/API_PatchFilter.html">PatchFilter</a>.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreatePatchBaseline">AWS
          * API Reference</a></p>
          *
@@ -1213,11 +1213,11 @@ namespace Model
          * Regions</a> in the <i>AWS Systems Manager User Guide</i>.</p> <p>A resource data
          * sync is an asynchronous operation that returns immediately. After a successful
          * initial sync is completed, the system continuously syncs data. To check the
-         * status of a sync, use the <a>ListResourceDataSync</a>.</p> <note> <p>By default,
+         * status of a sync, use the <a>ListResourceDataSync</a>.</p>  <p>By default,
          * data is not encrypted in Amazon S3. We strongly recommend that you enable
          * encryption in Amazon S3 to ensure secure data storage. We also recommend that
          * you secure access to the Amazon S3 bucket by creating a restrictive bucket
-         * policy. </p> </note><p><h3>See Also:</h3>   <a
+         * policy. </p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateResourceDataSync">AWS
          * API Reference</a></p>
          */
@@ -1243,11 +1243,11 @@ namespace Model
          * Regions</a> in the <i>AWS Systems Manager User Guide</i>.</p> <p>A resource data
          * sync is an asynchronous operation that returns immediately. After a successful
          * initial sync is completed, the system continuously syncs data. To check the
-         * status of a sync, use the <a>ListResourceDataSync</a>.</p> <note> <p>By default,
+         * status of a sync, use the <a>ListResourceDataSync</a>.</p>  <p>By default,
          * data is not encrypted in Amazon S3. We strongly recommend that you enable
          * encryption in Amazon S3 to ensure secure data storage. We also recommend that
          * you secure access to the Amazon S3 bucket by creating a restrictive bucket
-         * policy. </p> </note><p><h3>See Also:</h3>   <a
+         * policy. </p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateResourceDataSync">AWS
          * API Reference</a></p>
          *
@@ -1275,11 +1275,11 @@ namespace Model
          * Regions</a> in the <i>AWS Systems Manager User Guide</i>.</p> <p>A resource data
          * sync is an asynchronous operation that returns immediately. After a successful
          * initial sync is completed, the system continuously syncs data. To check the
-         * status of a sync, use the <a>ListResourceDataSync</a>.</p> <note> <p>By default,
+         * status of a sync, use the <a>ListResourceDataSync</a>.</p>  <p>By default,
          * data is not encrypted in Amazon S3. We strongly recommend that you enable
          * encryption in Amazon S3 to ensure secure data storage. We also recommend that
          * you secure access to the Amazon S3 bucket by creating a restrictive bucket
-         * policy. </p> </note><p><h3>See Also:</h3>   <a
+         * policy. </p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateResourceDataSync">AWS
          * API Reference</a></p>
          *
@@ -2036,9 +2036,9 @@ namespace Model
          * returns information for those instances. If you do not specify instance IDs, it
          * returns information for all your instances. If you specify an instance ID that
          * is not valid or an instance that you do not own, you receive an error.</p>
-         * <note> <p>The IamRole field for this API action is the Amazon Identity and
+         *  <p>The IamRole field for this API action is the Amazon Identity and
          * Access Management (IAM) role assigned to on-premises instances. This call does
-         * not return the IAM role for EC2 instances.</p> </note><p><h3>See Also:</h3>   <a
+         * not return the IAM role for EC2 instances.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeInstanceInformation">AWS
          * API Reference</a></p>
          */
@@ -2051,9 +2051,9 @@ namespace Model
          * returns information for those instances. If you do not specify instance IDs, it
          * returns information for all your instances. If you specify an instance ID that
          * is not valid or an instance that you do not own, you receive an error.</p>
-         * <note> <p>The IamRole field for this API action is the Amazon Identity and
+         *  <p>The IamRole field for this API action is the Amazon Identity and
          * Access Management (IAM) role assigned to on-premises instances. This call does
-         * not return the IAM role for EC2 instances.</p> </note><p><h3>See Also:</h3>   <a
+         * not return the IAM role for EC2 instances.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeInstanceInformation">AWS
          * API Reference</a></p>
          *
@@ -2068,9 +2068,9 @@ namespace Model
          * returns information for those instances. If you do not specify instance IDs, it
          * returns information for all your instances. If you specify an instance ID that
          * is not valid or an instance that you do not own, you receive an error.</p>
-         * <note> <p>The IamRole field for this API action is the Amazon Identity and
+         *  <p>The IamRole field for this API action is the Amazon Identity and
          * Access Management (IAM) role assigned to on-premises instances. This call does
-         * not return the IAM role for EC2 instances.</p> </note><p><h3>See Also:</h3>   <a
+         * not return the IAM role for EC2 instances.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeInstanceInformation">AWS
          * API Reference</a></p>
          *
@@ -2476,14 +2476,14 @@ namespace Model
         virtual void DescribeOpsItemsAsync(const Model::DescribeOpsItemsRequest& request, const DescribeOpsItemsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Get information about a parameter.</p> <note> <p>Request results are returned
+         * <p>Get information about a parameter.</p>  <p>Request results are returned
          * on a best-effort basis. If you specify <code>MaxResults</code> in the request,
          * the response includes information up to the limit specified. The number of items
          * returned, however, can be between zero and the value of <code>MaxResults</code>.
          * If the service reaches an internal limit while processing the results, it stops
          * the operation and returns the matching values up to that point and a
          * <code>NextToken</code>. You can specify the <code>NextToken</code> in a
-         * subsequent call to get the next set of results.</p> </note><p><h3>See Also:</h3>
+         * subsequent call to get the next set of results.</p> <p><h3>See Also:</h3>
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeParameters">AWS
          * API Reference</a></p>
@@ -2491,14 +2491,14 @@ namespace Model
         virtual Model::DescribeParametersOutcome DescribeParameters(const Model::DescribeParametersRequest& request) const;
 
         /**
-         * <p>Get information about a parameter.</p> <note> <p>Request results are returned
+         * <p>Get information about a parameter.</p>  <p>Request results are returned
          * on a best-effort basis. If you specify <code>MaxResults</code> in the request,
          * the response includes information up to the limit specified. The number of items
          * returned, however, can be between zero and the value of <code>MaxResults</code>.
          * If the service reaches an internal limit while processing the results, it stops
          * the operation and returns the matching values up to that point and a
          * <code>NextToken</code>. You can specify the <code>NextToken</code> in a
-         * subsequent call to get the next set of results.</p> </note><p><h3>See Also:</h3>
+         * subsequent call to get the next set of results.</p> <p><h3>See Also:</h3>
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeParameters">AWS
          * API Reference</a></p>
@@ -2508,14 +2508,14 @@ namespace Model
         virtual Model::DescribeParametersOutcomeCallable DescribeParametersCallable(const Model::DescribeParametersRequest& request) const;
 
         /**
-         * <p>Get information about a parameter.</p> <note> <p>Request results are returned
+         * <p>Get information about a parameter.</p>  <p>Request results are returned
          * on a best-effort basis. If you specify <code>MaxResults</code> in the request,
          * the response includes information up to the limit specified. The number of items
          * returned, however, can be between zero and the value of <code>MaxResults</code>.
          * If the service reaches an internal limit while processing the results, it stops
          * the operation and returns the matching values up to that point and a
          * <code>NextToken</code>. You can specify the <code>NextToken</code> in a
-         * subsequent call to get the next set of results.</p> </note><p><h3>See Also:</h3>
+         * subsequent call to get the next set of results.</p> <p><h3>See Also:</h3>
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeParameters">AWS
          * API Reference</a></p>
@@ -3300,14 +3300,14 @@ namespace Model
 
         /**
          * <p>Retrieve information about one or more parameters in a specific hierarchy.
-         * </p> <note> <p>Request results are returned on a best-effort basis. If you
+         * </p>  <p>Request results are returned on a best-effort basis. If you
          * specify <code>MaxResults</code> in the request, the response includes
          * information up to the limit specified. The number of items returned, however,
          * can be between zero and the value of <code>MaxResults</code>. If the service
          * reaches an internal limit while processing the results, it stops the operation
          * and returns the matching values up to that point and a <code>NextToken</code>.
          * You can specify the <code>NextToken</code> in a subsequent call to get the next
-         * set of results.</p> </note><p><h3>See Also:</h3>   <a
+         * set of results.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetParametersByPath">AWS
          * API Reference</a></p>
          */
@@ -3315,14 +3315,14 @@ namespace Model
 
         /**
          * <p>Retrieve information about one or more parameters in a specific hierarchy.
-         * </p> <note> <p>Request results are returned on a best-effort basis. If you
+         * </p>  <p>Request results are returned on a best-effort basis. If you
          * specify <code>MaxResults</code> in the request, the response includes
          * information up to the limit specified. The number of items returned, however,
          * can be between zero and the value of <code>MaxResults</code>. If the service
          * reaches an internal limit while processing the results, it stops the operation
          * and returns the matching values up to that point and a <code>NextToken</code>.
          * You can specify the <code>NextToken</code> in a subsequent call to get the next
-         * set of results.</p> </note><p><h3>See Also:</h3>   <a
+         * set of results.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetParametersByPath">AWS
          * API Reference</a></p>
          *
@@ -3332,14 +3332,14 @@ namespace Model
 
         /**
          * <p>Retrieve information about one or more parameters in a specific hierarchy.
-         * </p> <note> <p>Request results are returned on a best-effort basis. If you
+         * </p>  <p>Request results are returned on a best-effort basis. If you
          * specify <code>MaxResults</code> in the request, the response includes
          * information up to the limit specified. The number of items returned, however,
          * can be between zero and the value of <code>MaxResults</code>. If the service
          * reaches an internal limit while processing the results, it stops the operation
          * and returns the matching values up to that point and a <code>NextToken</code>.
          * You can specify the <code>NextToken</code> in a subsequent call to get the next
-         * set of results.</p> </note><p><h3>See Also:</h3>   <a
+         * set of results.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetParametersByPath">AWS
          * API Reference</a></p>
          *
@@ -4327,9 +4327,9 @@ namespace Model
         /**
          * <p>Reconnects a session to an instance after it has been disconnected.
          * Connections can be resumed for disconnected sessions, but not terminated
-         * sessions.</p> <note> <p>This command is primarily for use by client machines to
+         * sessions.</p>  <p>This command is primarily for use by client machines to
          * automatically reconnect during intermittent network issues. It is not intended
-         * for any other use.</p> </note><p><h3>See Also:</h3>   <a
+         * for any other use.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ResumeSession">AWS
          * API Reference</a></p>
          */
@@ -4338,9 +4338,9 @@ namespace Model
         /**
          * <p>Reconnects a session to an instance after it has been disconnected.
          * Connections can be resumed for disconnected sessions, but not terminated
-         * sessions.</p> <note> <p>This command is primarily for use by client machines to
+         * sessions.</p>  <p>This command is primarily for use by client machines to
          * automatically reconnect during intermittent network issues. It is not intended
-         * for any other use.</p> </note><p><h3>See Also:</h3>   <a
+         * for any other use.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ResumeSession">AWS
          * API Reference</a></p>
          *
@@ -4351,9 +4351,9 @@ namespace Model
         /**
          * <p>Reconnects a session to an instance after it has been disconnected.
          * Connections can be resumed for disconnected sessions, but not terminated
-         * sessions.</p> <note> <p>This command is primarily for use by client machines to
+         * sessions.</p>  <p>This command is primarily for use by client machines to
          * automatically reconnect during intermittent network issues. It is not intended
-         * for any other use.</p> </note><p><h3>See Also:</h3>   <a
+         * for any other use.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ResumeSession">AWS
          * API Reference</a></p>
          *
@@ -4473,7 +4473,7 @@ namespace Model
         /**
          * <p>Initiates a connection to a target (for example, an instance) for a Session
          * Manager session. Returns a URL and token that can be used to open a WebSocket
-         * connection for sending input and receiving outputs.</p> <note> <p>AWS CLI usage:
+         * connection for sending input and receiving outputs.</p>  <p>AWS CLI usage:
          * <code>start-session</code> is an interactive command that requires the Session
          * Manager plugin to be installed on the client machine making the call. For
          * information, see <a
@@ -4481,7 +4481,7 @@ namespace Model
          * the Session Manager plugin for the AWS CLI</a> in the <i>AWS Systems Manager
          * User Guide</i>.</p> <p>AWS Tools for PowerShell usage: Start-SSMSession is not
          * currently supported by AWS Tools for PowerShell on Windows local machines.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/StartSession">AWS
          * API Reference</a></p>
          */
@@ -4490,7 +4490,7 @@ namespace Model
         /**
          * <p>Initiates a connection to a target (for example, an instance) for a Session
          * Manager session. Returns a URL and token that can be used to open a WebSocket
-         * connection for sending input and receiving outputs.</p> <note> <p>AWS CLI usage:
+         * connection for sending input and receiving outputs.</p>  <p>AWS CLI usage:
          * <code>start-session</code> is an interactive command that requires the Session
          * Manager plugin to be installed on the client machine making the call. For
          * information, see <a
@@ -4498,7 +4498,7 @@ namespace Model
          * the Session Manager plugin for the AWS CLI</a> in the <i>AWS Systems Manager
          * User Guide</i>.</p> <p>AWS Tools for PowerShell usage: Start-SSMSession is not
          * currently supported by AWS Tools for PowerShell on Windows local machines.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/StartSession">AWS
          * API Reference</a></p>
          *
@@ -4509,7 +4509,7 @@ namespace Model
         /**
          * <p>Initiates a connection to a target (for example, an instance) for a Session
          * Manager session. Returns a URL and token that can be used to open a WebSocket
-         * connection for sending input and receiving outputs.</p> <note> <p>AWS CLI usage:
+         * connection for sending input and receiving outputs.</p>  <p>AWS CLI usage:
          * <code>start-session</code> is an interactive command that requires the Session
          * Manager plugin to be installed on the client machine making the call. For
          * information, see <a
@@ -4517,7 +4517,7 @@ namespace Model
          * the Session Manager plugin for the AWS CLI</a> in the <i>AWS Systems Manager
          * User Guide</i>.</p> <p>AWS Tools for PowerShell usage: Start-SSMSession is not
          * currently supported by AWS Tools for PowerShell on Windows local machines.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/StartSession">AWS
          * API Reference</a></p>
          *
@@ -4590,8 +4590,8 @@ namespace Model
          * following error: <code>An error occurred (AccessDeniedException) when calling
          * the UpdateAssociation operation: User: &lt;user_arn&gt; is not authorized to
          * perform: ssm:DescribeAssociation on resource: &lt;resource_arn&gt;</code> </p>
-         * <important> <p>When you update an association, the association immediately runs
-         * against the specified targets.</p> </important><p><h3>See Also:</h3>   <a
+         *  <p>When you update an association, the association immediately runs
+         * against the specified targets.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateAssociation">AWS
          * API Reference</a></p>
          */
@@ -4606,8 +4606,8 @@ namespace Model
          * following error: <code>An error occurred (AccessDeniedException) when calling
          * the UpdateAssociation operation: User: &lt;user_arn&gt; is not authorized to
          * perform: ssm:DescribeAssociation on resource: &lt;resource_arn&gt;</code> </p>
-         * <important> <p>When you update an association, the association immediately runs
-         * against the specified targets.</p> </important><p><h3>See Also:</h3>   <a
+         *  <p>When you update an association, the association immediately runs
+         * against the specified targets.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateAssociation">AWS
          * API Reference</a></p>
          *
@@ -4624,8 +4624,8 @@ namespace Model
          * following error: <code>An error occurred (AccessDeniedException) when calling
          * the UpdateAssociation operation: User: &lt;user_arn&gt; is not authorized to
          * perform: ssm:DescribeAssociation on resource: &lt;resource_arn&gt;</code> </p>
-         * <important> <p>When you update an association, the association immediately runs
-         * against the specified targets.</p> </important><p><h3>See Also:</h3>   <a
+         *  <p>When you update an association, the association immediately runs
+         * against the specified targets.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateAssociation">AWS
          * API Reference</a></p>
          *
@@ -4713,13 +4713,13 @@ namespace Model
 
         /**
          * <p>Updates an existing maintenance window. Only specified parameters are
-         * modified.</p> <note> <p>The value you specify for <code>Duration</code>
+         * modified.</p>  <p>The value you specify for <code>Duration</code>
          * determines the specific end time for the maintenance window based on the time it
          * begins. No maintenance window tasks are permitted to start after the resulting
          * endtime minus the number of hours you specify for <code>Cutoff</code>. For
          * example, if the maintenance window starts at 3 PM, the duration is three hours,
          * and the value you specify for <code>Cutoff</code> is one hour, no maintenance
-         * window tasks can start after 5 PM.</p> </note><p><h3>See Also:</h3>   <a
+         * window tasks can start after 5 PM.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateMaintenanceWindow">AWS
          * API Reference</a></p>
          */
@@ -4727,13 +4727,13 @@ namespace Model
 
         /**
          * <p>Updates an existing maintenance window. Only specified parameters are
-         * modified.</p> <note> <p>The value you specify for <code>Duration</code>
+         * modified.</p>  <p>The value you specify for <code>Duration</code>
          * determines the specific end time for the maintenance window based on the time it
          * begins. No maintenance window tasks are permitted to start after the resulting
          * endtime minus the number of hours you specify for <code>Cutoff</code>. For
          * example, if the maintenance window starts at 3 PM, the duration is three hours,
          * and the value you specify for <code>Cutoff</code> is one hour, no maintenance
-         * window tasks can start after 5 PM.</p> </note><p><h3>See Also:</h3>   <a
+         * window tasks can start after 5 PM.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateMaintenanceWindow">AWS
          * API Reference</a></p>
          *
@@ -4743,13 +4743,13 @@ namespace Model
 
         /**
          * <p>Updates an existing maintenance window. Only specified parameters are
-         * modified.</p> <note> <p>The value you specify for <code>Duration</code>
+         * modified.</p>  <p>The value you specify for <code>Duration</code>
          * determines the specific end time for the maintenance window based on the time it
          * begins. No maintenance window tasks are permitted to start after the resulting
          * endtime minus the number of hours you specify for <code>Cutoff</code>. For
          * example, if the maintenance window starts at 3 PM, the duration is three hours,
          * and the value you specify for <code>Cutoff</code> is one hour, no maintenance
-         * window tasks can start after 5 PM.</p> </note><p><h3>See Also:</h3>   <a
+         * window tasks can start after 5 PM.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateMaintenanceWindow">AWS
          * API Reference</a></p>
          *
@@ -4763,8 +4763,8 @@ namespace Model
          * <p>Owner</p> </li> <li> <p>IDs for an ID target</p> </li> <li> <p>Tags for a Tag
          * target</p> </li> <li> <p>From any supported tag type to another. The three
          * supported tag types are ID target, Tag target, and resource group. For more
-         * information, see <a>Target</a>.</p> </li> </ul> <note> <p>If a parameter is
-         * null, then the corresponding field is not modified.</p> </note><p><h3>See
+         * information, see <a>Target</a>.</p> </li> </ul>  <p>If a parameter is
+         * null, then the corresponding field is not modified.</p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateMaintenanceWindowTarget">AWS
          * API Reference</a></p>
@@ -4777,8 +4777,8 @@ namespace Model
          * <p>Owner</p> </li> <li> <p>IDs for an ID target</p> </li> <li> <p>Tags for a Tag
          * target</p> </li> <li> <p>From any supported tag type to another. The three
          * supported tag types are ID target, Tag target, and resource group. For more
-         * information, see <a>Target</a>.</p> </li> </ul> <note> <p>If a parameter is
-         * null, then the corresponding field is not modified.</p> </note><p><h3>See
+         * information, see <a>Target</a>.</p> </li> </ul>  <p>If a parameter is
+         * null, then the corresponding field is not modified.</p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateMaintenanceWindowTarget">AWS
          * API Reference</a></p>
@@ -4793,8 +4793,8 @@ namespace Model
          * <p>Owner</p> </li> <li> <p>IDs for an ID target</p> </li> <li> <p>Tags for a Tag
          * target</p> </li> <li> <p>From any supported tag type to another. The three
          * supported tag types are ID target, Tag target, and resource group. For more
-         * information, see <a>Target</a>.</p> </li> </ul> <note> <p>If a parameter is
-         * null, then the corresponding field is not modified.</p> </note><p><h3>See
+         * information, see <a>Target</a>.</p> </li> </ul>  <p>If a parameter is
+         * null, then the corresponding field is not modified.</p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateMaintenanceWindowTarget">AWS
          * API Reference</a></p>
@@ -4946,10 +4946,10 @@ namespace Model
 
         /**
          * <p>Modifies an existing patch baseline. Fields not specified in the request are
-         * left unchanged.</p> <note> <p>For information about valid key and value pairs in
+         * left unchanged.</p>  <p>For information about valid key and value pairs in
          * <code>PatchFilters</code> for each supported operating system type, see <a
          * href="http://docs.aws.amazon.com/systems-manager/latest/APIReference/API_PatchFilter.html">PatchFilter</a>.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdatePatchBaseline">AWS
          * API Reference</a></p>
          */
@@ -4957,10 +4957,10 @@ namespace Model
 
         /**
          * <p>Modifies an existing patch baseline. Fields not specified in the request are
-         * left unchanged.</p> <note> <p>For information about valid key and value pairs in
+         * left unchanged.</p>  <p>For information about valid key and value pairs in
          * <code>PatchFilters</code> for each supported operating system type, see <a
          * href="http://docs.aws.amazon.com/systems-manager/latest/APIReference/API_PatchFilter.html">PatchFilter</a>.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdatePatchBaseline">AWS
          * API Reference</a></p>
          *
@@ -4970,10 +4970,10 @@ namespace Model
 
         /**
          * <p>Modifies an existing patch baseline. Fields not specified in the request are
-         * left unchanged.</p> <note> <p>For information about valid key and value pairs in
+         * left unchanged.</p>  <p>For information about valid key and value pairs in
          * <code>PatchFilters</code> for each supported operating system type, see <a
          * href="http://docs.aws.amazon.com/systems-manager/latest/APIReference/API_PatchFilter.html">PatchFilter</a>.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdatePatchBaseline">AWS
          * API Reference</a></p>
          *
@@ -4987,9 +4987,9 @@ namespace Model
          * create a sync in the us-east-2 (Ohio) Region and you choose the Include only the
          * current account option, you can't edit that sync later and choose the Include
          * all accounts from my AWS Organizations configuration option. Instead, you must
-         * delete the first resource data sync, and create a new one.</p> <note> <p>This
+         * delete the first resource data sync, and create a new one.</p>  <p>This
          * API action only supports a resource data sync that was created with a
-         * SyncFromSource <code>SyncType</code>.</p> </note><p><h3>See Also:</h3>   <a
+         * SyncFromSource <code>SyncType</code>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateResourceDataSync">AWS
          * API Reference</a></p>
          */
@@ -5001,9 +5001,9 @@ namespace Model
          * create a sync in the us-east-2 (Ohio) Region and you choose the Include only the
          * current account option, you can't edit that sync later and choose the Include
          * all accounts from my AWS Organizations configuration option. Instead, you must
-         * delete the first resource data sync, and create a new one.</p> <note> <p>This
+         * delete the first resource data sync, and create a new one.</p>  <p>This
          * API action only supports a resource data sync that was created with a
-         * SyncFromSource <code>SyncType</code>.</p> </note><p><h3>See Also:</h3>   <a
+         * SyncFromSource <code>SyncType</code>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateResourceDataSync">AWS
          * API Reference</a></p>
          *
@@ -5017,9 +5017,9 @@ namespace Model
          * create a sync in the us-east-2 (Ohio) Region and you choose the Include only the
          * current account option, you can't edit that sync later and choose the Include
          * all accounts from my AWS Organizations configuration option. Instead, you must
-         * delete the first resource data sync, and create a new one.</p> <note> <p>This
+         * delete the first resource data sync, and create a new one.</p>  <p>This
          * API action only supports a resource data sync that was created with a
-         * SyncFromSource <code>SyncType</code>.</p> </note><p><h3>See Also:</h3>   <a
+         * SyncFromSource <code>SyncType</code>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateResourceDataSync">AWS
          * API Reference</a></p>
          *

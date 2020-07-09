@@ -86,9 +86,9 @@ namespace Model
      * the OpsItem. For example, you can specify log files, error strings, license
      * keys, troubleshooting tips, or other relevant data. You enter operational data
      * as key-value pairs. The key has a maximum length of 128 characters. The value
-     * has a maximum size of 20 KB.</p> <important> <p>Operational data keys
+     * has a maximum size of 20 KB.</p>  <p>Operational data keys
      * <i>can't</i> begin with the following: amazon, aws, amzn, ssm, /amazon, /aws,
-     * /amzn, /ssm.</p> </important> <p>You can choose to make the data searchable by
+     * /amzn, /ssm.</p>  <p>You can choose to make the data searchable by
      * other users in the account or you can restrict search access. Searchable data
      * means that all users with access to the OpsItem Overview page (as provided by
      * the <a>DescribeOpsItems</a> API action) can view and search on the specified
@@ -108,9 +108,9 @@ namespace Model
      * the OpsItem. For example, you can specify log files, error strings, license
      * keys, troubleshooting tips, or other relevant data. You enter operational data
      * as key-value pairs. The key has a maximum length of 128 characters. The value
-     * has a maximum size of 20 KB.</p> <important> <p>Operational data keys
+     * has a maximum size of 20 KB.</p>  <p>Operational data keys
      * <i>can't</i> begin with the following: amazon, aws, amzn, ssm, /amazon, /aws,
-     * /amzn, /ssm.</p> </important> <p>You can choose to make the data searchable by
+     * /amzn, /ssm.</p>  <p>You can choose to make the data searchable by
      * other users in the account or you can restrict search access. Searchable data
      * means that all users with access to the OpsItem Overview page (as provided by
      * the <a>DescribeOpsItems</a> API action) can view and search on the specified
@@ -130,9 +130,9 @@ namespace Model
      * the OpsItem. For example, you can specify log files, error strings, license
      * keys, troubleshooting tips, or other relevant data. You enter operational data
      * as key-value pairs. The key has a maximum length of 128 characters. The value
-     * has a maximum size of 20 KB.</p> <important> <p>Operational data keys
+     * has a maximum size of 20 KB.</p>  <p>Operational data keys
      * <i>can't</i> begin with the following: amazon, aws, amzn, ssm, /amazon, /aws,
-     * /amzn, /ssm.</p> </important> <p>You can choose to make the data searchable by
+     * /amzn, /ssm.</p>  <p>You can choose to make the data searchable by
      * other users in the account or you can restrict search access. Searchable data
      * means that all users with access to the OpsItem Overview page (as provided by
      * the <a>DescribeOpsItems</a> API action) can view and search on the specified
@@ -152,9 +152,9 @@ namespace Model
      * the OpsItem. For example, you can specify log files, error strings, license
      * keys, troubleshooting tips, or other relevant data. You enter operational data
      * as key-value pairs. The key has a maximum length of 128 characters. The value
-     * has a maximum size of 20 KB.</p> <important> <p>Operational data keys
+     * has a maximum size of 20 KB.</p>  <p>Operational data keys
      * <i>can't</i> begin with the following: amazon, aws, amzn, ssm, /amazon, /aws,
-     * /amzn, /ssm.</p> </important> <p>You can choose to make the data searchable by
+     * /amzn, /ssm.</p>  <p>You can choose to make the data searchable by
      * other users in the account or you can restrict search access. Searchable data
      * means that all users with access to the OpsItem Overview page (as provided by
      * the <a>DescribeOpsItems</a> API action) can view and search on the specified
@@ -174,9 +174,9 @@ namespace Model
      * the OpsItem. For example, you can specify log files, error strings, license
      * keys, troubleshooting tips, or other relevant data. You enter operational data
      * as key-value pairs. The key has a maximum length of 128 characters. The value
-     * has a maximum size of 20 KB.</p> <important> <p>Operational data keys
+     * has a maximum size of 20 KB.</p>  <p>Operational data keys
      * <i>can't</i> begin with the following: amazon, aws, amzn, ssm, /amazon, /aws,
-     * /amzn, /ssm.</p> </important> <p>You can choose to make the data searchable by
+     * /amzn, /ssm.</p>  <p>You can choose to make the data searchable by
      * other users in the account or you can restrict search access. Searchable data
      * means that all users with access to the OpsItem Overview page (as provided by
      * the <a>DescribeOpsItems</a> API action) can view and search on the specified
@@ -196,9 +196,9 @@ namespace Model
      * the OpsItem. For example, you can specify log files, error strings, license
      * keys, troubleshooting tips, or other relevant data. You enter operational data
      * as key-value pairs. The key has a maximum length of 128 characters. The value
-     * has a maximum size of 20 KB.</p> <important> <p>Operational data keys
+     * has a maximum size of 20 KB.</p>  <p>Operational data keys
      * <i>can't</i> begin with the following: amazon, aws, amzn, ssm, /amazon, /aws,
-     * /amzn, /ssm.</p> </important> <p>You can choose to make the data searchable by
+     * /amzn, /ssm.</p>  <p>You can choose to make the data searchable by
      * other users in the account or you can restrict search access. Searchable data
      * means that all users with access to the OpsItem Overview page (as provided by
      * the <a>DescribeOpsItems</a> API action) can view and search on the specified
@@ -218,9 +218,9 @@ namespace Model
      * the OpsItem. For example, you can specify log files, error strings, license
      * keys, troubleshooting tips, or other relevant data. You enter operational data
      * as key-value pairs. The key has a maximum length of 128 characters. The value
-     * has a maximum size of 20 KB.</p> <important> <p>Operational data keys
+     * has a maximum size of 20 KB.</p>  <p>Operational data keys
      * <i>can't</i> begin with the following: amazon, aws, amzn, ssm, /amazon, /aws,
-     * /amzn, /ssm.</p> </important> <p>You can choose to make the data searchable by
+     * /amzn, /ssm.</p>  <p>You can choose to make the data searchable by
      * other users in the account or you can restrict search access. Searchable data
      * means that all users with access to the OpsItem Overview page (as provided by
      * the <a>DescribeOpsItems</a> API action) can view and search on the specified
@@ -240,9 +240,9 @@ namespace Model
      * the OpsItem. For example, you can specify log files, error strings, license
      * keys, troubleshooting tips, or other relevant data. You enter operational data
      * as key-value pairs. The key has a maximum length of 128 characters. The value
-     * has a maximum size of 20 KB.</p> <important> <p>Operational data keys
+     * has a maximum size of 20 KB.</p>  <p>Operational data keys
      * <i>can't</i> begin with the following: amazon, aws, amzn, ssm, /amazon, /aws,
-     * /amzn, /ssm.</p> </important> <p>You can choose to make the data searchable by
+     * /amzn, /ssm.</p>  <p>You can choose to make the data searchable by
      * other users in the account or you can restrict search access. Searchable data
      * means that all users with access to the OpsItem Overview page (as provided by
      * the <a>DescribeOpsItems</a> API action) can view and search on the specified
@@ -262,9 +262,9 @@ namespace Model
      * the OpsItem. For example, you can specify log files, error strings, license
      * keys, troubleshooting tips, or other relevant data. You enter operational data
      * as key-value pairs. The key has a maximum length of 128 characters. The value
-     * has a maximum size of 20 KB.</p> <important> <p>Operational data keys
+     * has a maximum size of 20 KB.</p>  <p>Operational data keys
      * <i>can't</i> begin with the following: amazon, aws, amzn, ssm, /amazon, /aws,
-     * /amzn, /ssm.</p> </important> <p>You can choose to make the data searchable by
+     * /amzn, /ssm.</p>  <p>You can choose to make the data searchable by
      * other users in the account or you can restrict search access. Searchable data
      * means that all users with access to the OpsItem Overview page (as provided by
      * the <a>DescribeOpsItems</a> API action) can view and search on the specified
@@ -284,9 +284,9 @@ namespace Model
      * the OpsItem. For example, you can specify log files, error strings, license
      * keys, troubleshooting tips, or other relevant data. You enter operational data
      * as key-value pairs. The key has a maximum length of 128 characters. The value
-     * has a maximum size of 20 KB.</p> <important> <p>Operational data keys
+     * has a maximum size of 20 KB.</p>  <p>Operational data keys
      * <i>can't</i> begin with the following: amazon, aws, amzn, ssm, /amazon, /aws,
-     * /amzn, /ssm.</p> </important> <p>You can choose to make the data searchable by
+     * /amzn, /ssm.</p>  <p>You can choose to make the data searchable by
      * other users in the account or you can restrict search access. Searchable data
      * means that all users with access to the OpsItem Overview page (as provided by
      * the <a>DescribeOpsItems</a> API action) can view and search on the specified
@@ -306,9 +306,9 @@ namespace Model
      * the OpsItem. For example, you can specify log files, error strings, license
      * keys, troubleshooting tips, or other relevant data. You enter operational data
      * as key-value pairs. The key has a maximum length of 128 characters. The value
-     * has a maximum size of 20 KB.</p> <important> <p>Operational data keys
+     * has a maximum size of 20 KB.</p>  <p>Operational data keys
      * <i>can't</i> begin with the following: amazon, aws, amzn, ssm, /amazon, /aws,
-     * /amzn, /ssm.</p> </important> <p>You can choose to make the data searchable by
+     * /amzn, /ssm.</p>  <p>You can choose to make the data searchable by
      * other users in the account or you can restrict search access. Searchable data
      * means that all users with access to the OpsItem Overview page (as provided by
      * the <a>DescribeOpsItems</a> API action) can view and search on the specified
@@ -328,9 +328,9 @@ namespace Model
      * the OpsItem. For example, you can specify log files, error strings, license
      * keys, troubleshooting tips, or other relevant data. You enter operational data
      * as key-value pairs. The key has a maximum length of 128 characters. The value
-     * has a maximum size of 20 KB.</p> <important> <p>Operational data keys
+     * has a maximum size of 20 KB.</p>  <p>Operational data keys
      * <i>can't</i> begin with the following: amazon, aws, amzn, ssm, /amazon, /aws,
-     * /amzn, /ssm.</p> </important> <p>You can choose to make the data searchable by
+     * /amzn, /ssm.</p>  <p>You can choose to make the data searchable by
      * other users in the account or you can restrict search access. Searchable data
      * means that all users with access to the OpsItem Overview page (as provided by
      * the <a>DescribeOpsItems</a> API action) can view and search on the specified
@@ -478,58 +478,58 @@ namespace Model
 
 
     /**
-     * <p>The origin of the OpsItem, such as Amazon EC2 or Systems Manager.</p> <note>
+     * <p>The origin of the OpsItem, such as Amazon EC2 or Systems Manager.</p> 
      * <p>The source name can't contain the following strings: aws, amazon, and amzn.
-     * </p> </note>
+     * </p> 
      */
     inline const Aws::String& GetSource() const{ return m_source; }
 
     /**
-     * <p>The origin of the OpsItem, such as Amazon EC2 or Systems Manager.</p> <note>
+     * <p>The origin of the OpsItem, such as Amazon EC2 or Systems Manager.</p> 
      * <p>The source name can't contain the following strings: aws, amazon, and amzn.
-     * </p> </note>
+     * </p> 
      */
     inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
 
     /**
-     * <p>The origin of the OpsItem, such as Amazon EC2 or Systems Manager.</p> <note>
+     * <p>The origin of the OpsItem, such as Amazon EC2 or Systems Manager.</p> 
      * <p>The source name can't contain the following strings: aws, amazon, and amzn.
-     * </p> </note>
+     * </p> 
      */
     inline void SetSource(const Aws::String& value) { m_sourceHasBeenSet = true; m_source = value; }
 
     /**
-     * <p>The origin of the OpsItem, such as Amazon EC2 or Systems Manager.</p> <note>
+     * <p>The origin of the OpsItem, such as Amazon EC2 or Systems Manager.</p> 
      * <p>The source name can't contain the following strings: aws, amazon, and amzn.
-     * </p> </note>
+     * </p> 
      */
     inline void SetSource(Aws::String&& value) { m_sourceHasBeenSet = true; m_source = std::move(value); }
 
     /**
-     * <p>The origin of the OpsItem, such as Amazon EC2 or Systems Manager.</p> <note>
+     * <p>The origin of the OpsItem, such as Amazon EC2 or Systems Manager.</p> 
      * <p>The source name can't contain the following strings: aws, amazon, and amzn.
-     * </p> </note>
+     * </p> 
      */
     inline void SetSource(const char* value) { m_sourceHasBeenSet = true; m_source.assign(value); }
 
     /**
-     * <p>The origin of the OpsItem, such as Amazon EC2 or Systems Manager.</p> <note>
+     * <p>The origin of the OpsItem, such as Amazon EC2 or Systems Manager.</p> 
      * <p>The source name can't contain the following strings: aws, amazon, and amzn.
-     * </p> </note>
+     * </p> 
      */
     inline CreateOpsItemRequest& WithSource(const Aws::String& value) { SetSource(value); return *this;}
 
     /**
-     * <p>The origin of the OpsItem, such as Amazon EC2 or Systems Manager.</p> <note>
+     * <p>The origin of the OpsItem, such as Amazon EC2 or Systems Manager.</p> 
      * <p>The source name can't contain the following strings: aws, amazon, and amzn.
-     * </p> </note>
+     * </p> 
      */
     inline CreateOpsItemRequest& WithSource(Aws::String&& value) { SetSource(std::move(value)); return *this;}
 
     /**
-     * <p>The origin of the OpsItem, such as Amazon EC2 or Systems Manager.</p> <note>
+     * <p>The origin of the OpsItem, such as Amazon EC2 or Systems Manager.</p> 
      * <p>The source name can't contain the following strings: aws, amazon, and amzn.
-     * </p> </note>
+     * </p> 
      */
     inline CreateOpsItemRequest& WithSource(const char* value) { SetSource(value); return *this;}
 
@@ -590,8 +590,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html#OpsCenter-getting-started-user-permissions">Getting
      * started with OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>.</p>
      * <p>Tags use a key-value pair. For example:</p> <p>
-     * <code>Key=Department,Value=Finance</code> </p> <note> <p>To add tags to an
-     * existing OpsItem, use the <a>AddTagsToResource</a> action.</p> </note>
+     * <code>Key=Department,Value=Finance</code> </p>  <p>To add tags to an
+     * existing OpsItem, use the <a>AddTagsToResource</a> action.</p> 
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
@@ -602,8 +602,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html#OpsCenter-getting-started-user-permissions">Getting
      * started with OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>.</p>
      * <p>Tags use a key-value pair. For example:</p> <p>
-     * <code>Key=Department,Value=Finance</code> </p> <note> <p>To add tags to an
-     * existing OpsItem, use the <a>AddTagsToResource</a> action.</p> </note>
+     * <code>Key=Department,Value=Finance</code> </p>  <p>To add tags to an
+     * existing OpsItem, use the <a>AddTagsToResource</a> action.</p> 
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
@@ -614,8 +614,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html#OpsCenter-getting-started-user-permissions">Getting
      * started with OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>.</p>
      * <p>Tags use a key-value pair. For example:</p> <p>
-     * <code>Key=Department,Value=Finance</code> </p> <note> <p>To add tags to an
-     * existing OpsItem, use the <a>AddTagsToResource</a> action.</p> </note>
+     * <code>Key=Department,Value=Finance</code> </p>  <p>To add tags to an
+     * existing OpsItem, use the <a>AddTagsToResource</a> action.</p> 
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
@@ -626,8 +626,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html#OpsCenter-getting-started-user-permissions">Getting
      * started with OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>.</p>
      * <p>Tags use a key-value pair. For example:</p> <p>
-     * <code>Key=Department,Value=Finance</code> </p> <note> <p>To add tags to an
-     * existing OpsItem, use the <a>AddTagsToResource</a> action.</p> </note>
+     * <code>Key=Department,Value=Finance</code> </p>  <p>To add tags to an
+     * existing OpsItem, use the <a>AddTagsToResource</a> action.</p> 
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
@@ -638,8 +638,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html#OpsCenter-getting-started-user-permissions">Getting
      * started with OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>.</p>
      * <p>Tags use a key-value pair. For example:</p> <p>
-     * <code>Key=Department,Value=Finance</code> </p> <note> <p>To add tags to an
-     * existing OpsItem, use the <a>AddTagsToResource</a> action.</p> </note>
+     * <code>Key=Department,Value=Finance</code> </p>  <p>To add tags to an
+     * existing OpsItem, use the <a>AddTagsToResource</a> action.</p> 
      */
     inline CreateOpsItemRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
@@ -650,8 +650,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html#OpsCenter-getting-started-user-permissions">Getting
      * started with OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>.</p>
      * <p>Tags use a key-value pair. For example:</p> <p>
-     * <code>Key=Department,Value=Finance</code> </p> <note> <p>To add tags to an
-     * existing OpsItem, use the <a>AddTagsToResource</a> action.</p> </note>
+     * <code>Key=Department,Value=Finance</code> </p>  <p>To add tags to an
+     * existing OpsItem, use the <a>AddTagsToResource</a> action.</p> 
      */
     inline CreateOpsItemRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
@@ -662,8 +662,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html#OpsCenter-getting-started-user-permissions">Getting
      * started with OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>.</p>
      * <p>Tags use a key-value pair. For example:</p> <p>
-     * <code>Key=Department,Value=Finance</code> </p> <note> <p>To add tags to an
-     * existing OpsItem, use the <a>AddTagsToResource</a> action.</p> </note>
+     * <code>Key=Department,Value=Finance</code> </p>  <p>To add tags to an
+     * existing OpsItem, use the <a>AddTagsToResource</a> action.</p> 
      */
     inline CreateOpsItemRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
@@ -674,8 +674,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html#OpsCenter-getting-started-user-permissions">Getting
      * started with OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>.</p>
      * <p>Tags use a key-value pair. For example:</p> <p>
-     * <code>Key=Department,Value=Finance</code> </p> <note> <p>To add tags to an
-     * existing OpsItem, use the <a>AddTagsToResource</a> action.</p> </note>
+     * <code>Key=Department,Value=Finance</code> </p>  <p>To add tags to an
+     * existing OpsItem, use the <a>AddTagsToResource</a> action.</p> 
      */
     inline CreateOpsItemRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 

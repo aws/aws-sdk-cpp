@@ -35,10 +35,10 @@ namespace Model
    * a policy to the topic to give Amazon SES permissions to access it. For
    * information about giving permissions, see the <a
    * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-permissions.html">Amazon
-   * SES Developer Guide</a>.</p> <important> <p>You can only publish emails that are
+   * SES Developer Guide</a>.</p>  <p>You can only publish emails that are
    * 150 KB or less (including the header) to Amazon SNS. Larger emails will bounce.
    * If you anticipate emails larger than 150 KB, use the S3 action instead.</p>
-   * </important> <p>For information about using a receipt rule to publish an Amazon
+   *  <p>For information about using a receipt rule to publish an Amazon
    * SNS notification, see the <a
    * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-action-sns.html">Amazon
    * SES Developer Guide</a>.</p><p><h3>See Also:</h3>   <a

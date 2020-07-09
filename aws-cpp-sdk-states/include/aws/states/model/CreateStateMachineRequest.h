@@ -278,55 +278,55 @@ namespace Model
 
     /**
      * <p>Defines what execution history events are logged and where they are
-     * logged.</p> <note> <p>By default, the <code>level</code> is set to
+     * logged.</p>  <p>By default, the <code>level</code> is set to
      * <code>OFF</code>. For more information see <a
      * href="https://docs.aws.amazon.com/step-functions/latest/dg/cloudwatch-log-level.html">Log
-     * Levels</a> in the AWS Step Functions User Guide.</p> </note>
+     * Levels</a> in the AWS Step Functions User Guide.</p> 
      */
     inline const LoggingConfiguration& GetLoggingConfiguration() const{ return m_loggingConfiguration; }
 
     /**
      * <p>Defines what execution history events are logged and where they are
-     * logged.</p> <note> <p>By default, the <code>level</code> is set to
+     * logged.</p>  <p>By default, the <code>level</code> is set to
      * <code>OFF</code>. For more information see <a
      * href="https://docs.aws.amazon.com/step-functions/latest/dg/cloudwatch-log-level.html">Log
-     * Levels</a> in the AWS Step Functions User Guide.</p> </note>
+     * Levels</a> in the AWS Step Functions User Guide.</p> 
      */
     inline bool LoggingConfigurationHasBeenSet() const { return m_loggingConfigurationHasBeenSet; }
 
     /**
      * <p>Defines what execution history events are logged and where they are
-     * logged.</p> <note> <p>By default, the <code>level</code> is set to
+     * logged.</p>  <p>By default, the <code>level</code> is set to
      * <code>OFF</code>. For more information see <a
      * href="https://docs.aws.amazon.com/step-functions/latest/dg/cloudwatch-log-level.html">Log
-     * Levels</a> in the AWS Step Functions User Guide.</p> </note>
+     * Levels</a> in the AWS Step Functions User Guide.</p> 
      */
     inline void SetLoggingConfiguration(const LoggingConfiguration& value) { m_loggingConfigurationHasBeenSet = true; m_loggingConfiguration = value; }
 
     /**
      * <p>Defines what execution history events are logged and where they are
-     * logged.</p> <note> <p>By default, the <code>level</code> is set to
+     * logged.</p>  <p>By default, the <code>level</code> is set to
      * <code>OFF</code>. For more information see <a
      * href="https://docs.aws.amazon.com/step-functions/latest/dg/cloudwatch-log-level.html">Log
-     * Levels</a> in the AWS Step Functions User Guide.</p> </note>
+     * Levels</a> in the AWS Step Functions User Guide.</p> 
      */
     inline void SetLoggingConfiguration(LoggingConfiguration&& value) { m_loggingConfigurationHasBeenSet = true; m_loggingConfiguration = std::move(value); }
 
     /**
      * <p>Defines what execution history events are logged and where they are
-     * logged.</p> <note> <p>By default, the <code>level</code> is set to
+     * logged.</p>  <p>By default, the <code>level</code> is set to
      * <code>OFF</code>. For more information see <a
      * href="https://docs.aws.amazon.com/step-functions/latest/dg/cloudwatch-log-level.html">Log
-     * Levels</a> in the AWS Step Functions User Guide.</p> </note>
+     * Levels</a> in the AWS Step Functions User Guide.</p> 
      */
     inline CreateStateMachineRequest& WithLoggingConfiguration(const LoggingConfiguration& value) { SetLoggingConfiguration(value); return *this;}
 
     /**
      * <p>Defines what execution history events are logged and where they are
-     * logged.</p> <note> <p>By default, the <code>level</code> is set to
+     * logged.</p>  <p>By default, the <code>level</code> is set to
      * <code>OFF</code>. For more information see <a
      * href="https://docs.aws.amazon.com/step-functions/latest/dg/cloudwatch-log-level.html">Log
-     * Levels</a> in the AWS Step Functions User Guide.</p> </note>
+     * Levels</a> in the AWS Step Functions User Guide.</p> 
      */
     inline CreateStateMachineRequest& WithLoggingConfiguration(LoggingConfiguration&& value) { SetLoggingConfiguration(std::move(value)); return *this;}
 

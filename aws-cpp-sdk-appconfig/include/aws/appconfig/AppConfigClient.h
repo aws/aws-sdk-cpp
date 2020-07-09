@@ -646,7 +646,7 @@ namespace Model
         virtual void GetApplicationAsync(const Model::GetApplicationRequest& request, const GetApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Receive information about a configuration.</p> <important> <p>AWS AppConfig
+         * <p>Receive information about a configuration.</p>  <p>AWS AppConfig
          * uses the value of the <code>ClientConfigurationVersion</code> parameter to
          * identify the configuration version on your clients. If you don’t send
          * <code>ClientConfigurationVersion</code> with each call to
@@ -657,14 +657,14 @@ namespace Model
          * <code>GetConfiguration</code>. This value must be saved on your client.
          * Subsequent calls to <code>GetConfiguration</code> must pass this value by using
          * the <code>ClientConfigurationVersion</code> parameter. </p>
-         * </important><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/GetConfiguration">AWS
          * API Reference</a></p>
          */
         virtual Model::GetConfigurationOutcome GetConfiguration(const Model::GetConfigurationRequest& request) const;
 
         /**
-         * <p>Receive information about a configuration.</p> <important> <p>AWS AppConfig
+         * <p>Receive information about a configuration.</p>  <p>AWS AppConfig
          * uses the value of the <code>ClientConfigurationVersion</code> parameter to
          * identify the configuration version on your clients. If you don’t send
          * <code>ClientConfigurationVersion</code> with each call to
@@ -675,7 +675,7 @@ namespace Model
          * <code>GetConfiguration</code>. This value must be saved on your client.
          * Subsequent calls to <code>GetConfiguration</code> must pass this value by using
          * the <code>ClientConfigurationVersion</code> parameter. </p>
-         * </important><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/GetConfiguration">AWS
          * API Reference</a></p>
          *
@@ -684,7 +684,7 @@ namespace Model
         virtual Model::GetConfigurationOutcomeCallable GetConfigurationCallable(const Model::GetConfigurationRequest& request) const;
 
         /**
-         * <p>Receive information about a configuration.</p> <important> <p>AWS AppConfig
+         * <p>Receive information about a configuration.</p>  <p>AWS AppConfig
          * uses the value of the <code>ClientConfigurationVersion</code> parameter to
          * identify the configuration version on your clients. If you don’t send
          * <code>ClientConfigurationVersion</code> with each call to
@@ -695,7 +695,7 @@ namespace Model
          * <code>GetConfiguration</code>. This value must be saved on your client.
          * Subsequent calls to <code>GetConfiguration</code> must pass this value by using
          * the <code>ClientConfigurationVersion</code> parameter. </p>
-         * </important><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/GetConfiguration">AWS
          * API Reference</a></p>
          *

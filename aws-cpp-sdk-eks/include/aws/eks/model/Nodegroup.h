@@ -719,93 +719,93 @@ namespace Model
 
 
     /**
-     * <p>The Kubernetes labels applied to the nodes in the node group.</p> <note>
+     * <p>The Kubernetes labels applied to the nodes in the node group.</p> 
      * <p>Only labels that are applied with the Amazon EKS API are shown here. There
-     * may be other Kubernetes labels applied to the nodes in this group.</p> </note>
+     * may be other Kubernetes labels applied to the nodes in this group.</p> 
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetLabels() const{ return m_labels; }
 
     /**
-     * <p>The Kubernetes labels applied to the nodes in the node group.</p> <note>
+     * <p>The Kubernetes labels applied to the nodes in the node group.</p> 
      * <p>Only labels that are applied with the Amazon EKS API are shown here. There
-     * may be other Kubernetes labels applied to the nodes in this group.</p> </note>
+     * may be other Kubernetes labels applied to the nodes in this group.</p> 
      */
     inline bool LabelsHasBeenSet() const { return m_labelsHasBeenSet; }
 
     /**
-     * <p>The Kubernetes labels applied to the nodes in the node group.</p> <note>
+     * <p>The Kubernetes labels applied to the nodes in the node group.</p> 
      * <p>Only labels that are applied with the Amazon EKS API are shown here. There
-     * may be other Kubernetes labels applied to the nodes in this group.</p> </note>
+     * may be other Kubernetes labels applied to the nodes in this group.</p> 
      */
     inline void SetLabels(const Aws::Map<Aws::String, Aws::String>& value) { m_labelsHasBeenSet = true; m_labels = value; }
 
     /**
-     * <p>The Kubernetes labels applied to the nodes in the node group.</p> <note>
+     * <p>The Kubernetes labels applied to the nodes in the node group.</p> 
      * <p>Only labels that are applied with the Amazon EKS API are shown here. There
-     * may be other Kubernetes labels applied to the nodes in this group.</p> </note>
+     * may be other Kubernetes labels applied to the nodes in this group.</p> 
      */
     inline void SetLabels(Aws::Map<Aws::String, Aws::String>&& value) { m_labelsHasBeenSet = true; m_labels = std::move(value); }
 
     /**
-     * <p>The Kubernetes labels applied to the nodes in the node group.</p> <note>
+     * <p>The Kubernetes labels applied to the nodes in the node group.</p> 
      * <p>Only labels that are applied with the Amazon EKS API are shown here. There
-     * may be other Kubernetes labels applied to the nodes in this group.</p> </note>
+     * may be other Kubernetes labels applied to the nodes in this group.</p> 
      */
     inline Nodegroup& WithLabels(const Aws::Map<Aws::String, Aws::String>& value) { SetLabels(value); return *this;}
 
     /**
-     * <p>The Kubernetes labels applied to the nodes in the node group.</p> <note>
+     * <p>The Kubernetes labels applied to the nodes in the node group.</p> 
      * <p>Only labels that are applied with the Amazon EKS API are shown here. There
-     * may be other Kubernetes labels applied to the nodes in this group.</p> </note>
+     * may be other Kubernetes labels applied to the nodes in this group.</p> 
      */
     inline Nodegroup& WithLabels(Aws::Map<Aws::String, Aws::String>&& value) { SetLabels(std::move(value)); return *this;}
 
     /**
-     * <p>The Kubernetes labels applied to the nodes in the node group.</p> <note>
+     * <p>The Kubernetes labels applied to the nodes in the node group.</p> 
      * <p>Only labels that are applied with the Amazon EKS API are shown here. There
-     * may be other Kubernetes labels applied to the nodes in this group.</p> </note>
+     * may be other Kubernetes labels applied to the nodes in this group.</p> 
      */
     inline Nodegroup& AddLabels(const Aws::String& key, const Aws::String& value) { m_labelsHasBeenSet = true; m_labels.emplace(key, value); return *this; }
 
     /**
-     * <p>The Kubernetes labels applied to the nodes in the node group.</p> <note>
+     * <p>The Kubernetes labels applied to the nodes in the node group.</p> 
      * <p>Only labels that are applied with the Amazon EKS API are shown here. There
-     * may be other Kubernetes labels applied to the nodes in this group.</p> </note>
+     * may be other Kubernetes labels applied to the nodes in this group.</p> 
      */
     inline Nodegroup& AddLabels(Aws::String&& key, const Aws::String& value) { m_labelsHasBeenSet = true; m_labels.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The Kubernetes labels applied to the nodes in the node group.</p> <note>
+     * <p>The Kubernetes labels applied to the nodes in the node group.</p> 
      * <p>Only labels that are applied with the Amazon EKS API are shown here. There
-     * may be other Kubernetes labels applied to the nodes in this group.</p> </note>
+     * may be other Kubernetes labels applied to the nodes in this group.</p> 
      */
     inline Nodegroup& AddLabels(const Aws::String& key, Aws::String&& value) { m_labelsHasBeenSet = true; m_labels.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The Kubernetes labels applied to the nodes in the node group.</p> <note>
+     * <p>The Kubernetes labels applied to the nodes in the node group.</p> 
      * <p>Only labels that are applied with the Amazon EKS API are shown here. There
-     * may be other Kubernetes labels applied to the nodes in this group.</p> </note>
+     * may be other Kubernetes labels applied to the nodes in this group.</p> 
      */
     inline Nodegroup& AddLabels(Aws::String&& key, Aws::String&& value) { m_labelsHasBeenSet = true; m_labels.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>The Kubernetes labels applied to the nodes in the node group.</p> <note>
+     * <p>The Kubernetes labels applied to the nodes in the node group.</p> 
      * <p>Only labels that are applied with the Amazon EKS API are shown here. There
-     * may be other Kubernetes labels applied to the nodes in this group.</p> </note>
+     * may be other Kubernetes labels applied to the nodes in this group.</p> 
      */
     inline Nodegroup& AddLabels(const char* key, Aws::String&& value) { m_labelsHasBeenSet = true; m_labels.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The Kubernetes labels applied to the nodes in the node group.</p> <note>
+     * <p>The Kubernetes labels applied to the nodes in the node group.</p> 
      * <p>Only labels that are applied with the Amazon EKS API are shown here. There
-     * may be other Kubernetes labels applied to the nodes in this group.</p> </note>
+     * may be other Kubernetes labels applied to the nodes in this group.</p> 
      */
     inline Nodegroup& AddLabels(Aws::String&& key, const char* value) { m_labelsHasBeenSet = true; m_labels.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The Kubernetes labels applied to the nodes in the node group.</p> <note>
+     * <p>The Kubernetes labels applied to the nodes in the node group.</p> 
      * <p>Only labels that are applied with the Amazon EKS API are shown here. There
-     * may be other Kubernetes labels applied to the nodes in this group.</p> </note>
+     * may be other Kubernetes labels applied to the nodes in this group.</p> 
      */
     inline Nodegroup& AddLabels(const char* key, const char* value) { m_labelsHasBeenSet = true; m_labels.emplace(key, value); return *this; }
 

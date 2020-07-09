@@ -1911,9 +1911,9 @@ namespace Model
 
         /**
          * <p>Deletes the origination settings for the specified Amazon Chime Voice
-         * Connector.</p> <note> <p>If emergency calling is configured for the Amazon Chime
+         * Connector.</p>  <p>If emergency calling is configured for the Amazon Chime
          * Voice Connector, it must be deleted prior to deleting the origination
-         * settings.</p> </note><p><h3>See Also:</h3>   <a
+         * settings.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteVoiceConnectorOrigination">AWS
          * API Reference</a></p>
          */
@@ -1921,9 +1921,9 @@ namespace Model
 
         /**
          * <p>Deletes the origination settings for the specified Amazon Chime Voice
-         * Connector.</p> <note> <p>If emergency calling is configured for the Amazon Chime
+         * Connector.</p>  <p>If emergency calling is configured for the Amazon Chime
          * Voice Connector, it must be deleted prior to deleting the origination
-         * settings.</p> </note><p><h3>See Also:</h3>   <a
+         * settings.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteVoiceConnectorOrigination">AWS
          * API Reference</a></p>
          *
@@ -1933,9 +1933,9 @@ namespace Model
 
         /**
          * <p>Deletes the origination settings for the specified Amazon Chime Voice
-         * Connector.</p> <note> <p>If emergency calling is configured for the Amazon Chime
+         * Connector.</p>  <p>If emergency calling is configured for the Amazon Chime
          * Voice Connector, it must be deleted prior to deleting the origination
-         * settings.</p> </note><p><h3>See Also:</h3>   <a
+         * settings.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteVoiceConnectorOrigination">AWS
          * API Reference</a></p>
          *
@@ -2001,9 +2001,9 @@ namespace Model
 
         /**
          * <p>Deletes the termination settings for the specified Amazon Chime Voice
-         * Connector.</p> <note> <p>If emergency calling is configured for the Amazon Chime
+         * Connector.</p>  <p>If emergency calling is configured for the Amazon Chime
          * Voice Connector, it must be deleted prior to deleting the termination
-         * settings.</p> </note><p><h3>See Also:</h3>   <a
+         * settings.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteVoiceConnectorTermination">AWS
          * API Reference</a></p>
          */
@@ -2011,9 +2011,9 @@ namespace Model
 
         /**
          * <p>Deletes the termination settings for the specified Amazon Chime Voice
-         * Connector.</p> <note> <p>If emergency calling is configured for the Amazon Chime
+         * Connector.</p>  <p>If emergency calling is configured for the Amazon Chime
          * Voice Connector, it must be deleted prior to deleting the termination
-         * settings.</p> </note><p><h3>See Also:</h3>   <a
+         * settings.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteVoiceConnectorTermination">AWS
          * API Reference</a></p>
          *
@@ -2023,9 +2023,9 @@ namespace Model
 
         /**
          * <p>Deletes the termination settings for the specified Amazon Chime Voice
-         * Connector.</p> <note> <p>If emergency calling is configured for the Amazon Chime
+         * Connector.</p>  <p>If emergency calling is configured for the Amazon Chime
          * Voice Connector, it must be deleted prior to deleting the termination
-         * settings.</p> </note><p><h3>See Also:</h3>   <a
+         * settings.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteVoiceConnectorTermination">AWS
          * API Reference</a></p>
          *
@@ -3614,9 +3614,9 @@ namespace Model
 
         /**
          * <p>Adds origination settings for the specified Amazon Chime Voice Connector.</p>
-         * <note> <p>If emergency calling is configured for the Amazon Chime Voice
+         *  <p>If emergency calling is configured for the Amazon Chime Voice
          * Connector, it must be deleted prior to turning off origination settings.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/PutVoiceConnectorOrigination">AWS
          * API Reference</a></p>
          */
@@ -3624,9 +3624,9 @@ namespace Model
 
         /**
          * <p>Adds origination settings for the specified Amazon Chime Voice Connector.</p>
-         * <note> <p>If emergency calling is configured for the Amazon Chime Voice
+         *  <p>If emergency calling is configured for the Amazon Chime Voice
          * Connector, it must be deleted prior to turning off origination settings.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/PutVoiceConnectorOrigination">AWS
          * API Reference</a></p>
          *
@@ -3636,9 +3636,9 @@ namespace Model
 
         /**
          * <p>Adds origination settings for the specified Amazon Chime Voice Connector.</p>
-         * <note> <p>If emergency calling is configured for the Amazon Chime Voice
+         *  <p>If emergency calling is configured for the Amazon Chime Voice
          * Connector, it must be deleted prior to turning off origination settings.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/PutVoiceConnectorOrigination">AWS
          * API Reference</a></p>
          *
@@ -3710,9 +3710,9 @@ namespace Model
 
         /**
          * <p>Adds termination settings for the specified Amazon Chime Voice Connector.</p>
-         * <note> <p>If emergency calling is configured for the Amazon Chime Voice
+         *  <p>If emergency calling is configured for the Amazon Chime Voice
          * Connector, it must be deleted prior to turning off termination settings.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/PutVoiceConnectorTermination">AWS
          * API Reference</a></p>
          */
@@ -3720,9 +3720,9 @@ namespace Model
 
         /**
          * <p>Adds termination settings for the specified Amazon Chime Voice Connector.</p>
-         * <note> <p>If emergency calling is configured for the Amazon Chime Voice
+         *  <p>If emergency calling is configured for the Amazon Chime Voice
          * Connector, it must be deleted prior to turning off termination settings.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/PutVoiceConnectorTermination">AWS
          * API Reference</a></p>
          *
@@ -3732,9 +3732,9 @@ namespace Model
 
         /**
          * <p>Adds termination settings for the specified Amazon Chime Voice Connector.</p>
-         * <note> <p>If emergency calling is configured for the Amazon Chime Voice
+         *  <p>If emergency calling is configured for the Amazon Chime Voice
          * Connector, it must be deleted prior to turning off termination settings.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/PutVoiceConnectorTermination">AWS
          * API Reference</a></p>
          *

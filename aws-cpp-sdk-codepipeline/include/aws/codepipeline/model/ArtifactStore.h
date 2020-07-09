@@ -26,10 +26,10 @@ namespace Model
 {
 
   /**
-   * <p>The S3 bucket where artifacts for the pipeline are stored.</p> <note> <p>You
+   * <p>The S3 bucket where artifacts for the pipeline are stored.</p>  <p>You
    * must include either <code>artifactStore</code> or <code>artifactStores</code> in
    * your pipeline, but you cannot use both. If you create a cross-region action in
-   * your pipeline, you must use <code>artifactStores</code>.</p> </note><p><h3>See
+   * your pipeline, you must use <code>artifactStores</code>.</p> <p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ArtifactStore">AWS
    * API Reference</a></p>

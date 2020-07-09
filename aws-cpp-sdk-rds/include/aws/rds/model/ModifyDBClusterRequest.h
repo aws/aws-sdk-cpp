@@ -821,8 +821,8 @@ namespace Model
 
     /**
      * <p>The target backtrack window, in seconds. To disable backtracking, set this
-     * value to 0.</p> <note> <p>Currently, Backtrack is only supported for Aurora
-     * MySQL DB clusters.</p> </note> <p>Default: 0</p> <p>Constraints:</p> <ul> <li>
+     * value to 0.</p>  <p>Currently, Backtrack is only supported for Aurora
+     * MySQL DB clusters.</p>  <p>Default: 0</p> <p>Constraints:</p> <ul> <li>
      * <p>If specified, this value must be set to a number from 0 to 259,200 (72
      * hours).</p> </li> </ul>
      */
@@ -830,8 +830,8 @@ namespace Model
 
     /**
      * <p>The target backtrack window, in seconds. To disable backtracking, set this
-     * value to 0.</p> <note> <p>Currently, Backtrack is only supported for Aurora
-     * MySQL DB clusters.</p> </note> <p>Default: 0</p> <p>Constraints:</p> <ul> <li>
+     * value to 0.</p>  <p>Currently, Backtrack is only supported for Aurora
+     * MySQL DB clusters.</p>  <p>Default: 0</p> <p>Constraints:</p> <ul> <li>
      * <p>If specified, this value must be set to a number from 0 to 259,200 (72
      * hours).</p> </li> </ul>
      */
@@ -839,8 +839,8 @@ namespace Model
 
     /**
      * <p>The target backtrack window, in seconds. To disable backtracking, set this
-     * value to 0.</p> <note> <p>Currently, Backtrack is only supported for Aurora
-     * MySQL DB clusters.</p> </note> <p>Default: 0</p> <p>Constraints:</p> <ul> <li>
+     * value to 0.</p>  <p>Currently, Backtrack is only supported for Aurora
+     * MySQL DB clusters.</p>  <p>Default: 0</p> <p>Constraints:</p> <ul> <li>
      * <p>If specified, this value must be set to a number from 0 to 259,200 (72
      * hours).</p> </li> </ul>
      */
@@ -848,8 +848,8 @@ namespace Model
 
     /**
      * <p>The target backtrack window, in seconds. To disable backtracking, set this
-     * value to 0.</p> <note> <p>Currently, Backtrack is only supported for Aurora
-     * MySQL DB clusters.</p> </note> <p>Default: 0</p> <p>Constraints:</p> <ul> <li>
+     * value to 0.</p>  <p>Currently, Backtrack is only supported for Aurora
+     * MySQL DB clusters.</p>  <p>Default: 0</p> <p>Constraints:</p> <ul> <li>
      * <p>If specified, this value must be set to a number from 0 to 259,200 (72
      * hours).</p> </li> </ul>
      */
@@ -1073,10 +1073,10 @@ namespace Model
 
     /**
      * <p>The name of the DB parameter group to apply to all instances of the DB
-     * cluster. </p> <note> <p>When you apply a parameter group using the
+     * cluster. </p>  <p>When you apply a parameter group using the
      * <code>DBInstanceParameterGroupName</code> parameter, the DB cluster isn't
      * rebooted automatically. Also, parameter changes aren't applied during the next
-     * maintenance window but instead are applied immediately.</p> </note> <p>Default:
+     * maintenance window but instead are applied immediately.</p>  <p>Default:
      * The existing name setting</p> <p>Constraints:</p> <ul> <li> <p>The DB parameter
      * group must be in the same DB parameter group family as this DB cluster.</p>
      * </li> <li> <p>The <code>DBInstanceParameterGroupName</code> parameter is only
@@ -1087,10 +1087,10 @@ namespace Model
 
     /**
      * <p>The name of the DB parameter group to apply to all instances of the DB
-     * cluster. </p> <note> <p>When you apply a parameter group using the
+     * cluster. </p>  <p>When you apply a parameter group using the
      * <code>DBInstanceParameterGroupName</code> parameter, the DB cluster isn't
      * rebooted automatically. Also, parameter changes aren't applied during the next
-     * maintenance window but instead are applied immediately.</p> </note> <p>Default:
+     * maintenance window but instead are applied immediately.</p>  <p>Default:
      * The existing name setting</p> <p>Constraints:</p> <ul> <li> <p>The DB parameter
      * group must be in the same DB parameter group family as this DB cluster.</p>
      * </li> <li> <p>The <code>DBInstanceParameterGroupName</code> parameter is only
@@ -1101,10 +1101,10 @@ namespace Model
 
     /**
      * <p>The name of the DB parameter group to apply to all instances of the DB
-     * cluster. </p> <note> <p>When you apply a parameter group using the
+     * cluster. </p>  <p>When you apply a parameter group using the
      * <code>DBInstanceParameterGroupName</code> parameter, the DB cluster isn't
      * rebooted automatically. Also, parameter changes aren't applied during the next
-     * maintenance window but instead are applied immediately.</p> </note> <p>Default:
+     * maintenance window but instead are applied immediately.</p>  <p>Default:
      * The existing name setting</p> <p>Constraints:</p> <ul> <li> <p>The DB parameter
      * group must be in the same DB parameter group family as this DB cluster.</p>
      * </li> <li> <p>The <code>DBInstanceParameterGroupName</code> parameter is only
@@ -1115,10 +1115,10 @@ namespace Model
 
     /**
      * <p>The name of the DB parameter group to apply to all instances of the DB
-     * cluster. </p> <note> <p>When you apply a parameter group using the
+     * cluster. </p>  <p>When you apply a parameter group using the
      * <code>DBInstanceParameterGroupName</code> parameter, the DB cluster isn't
      * rebooted automatically. Also, parameter changes aren't applied during the next
-     * maintenance window but instead are applied immediately.</p> </note> <p>Default:
+     * maintenance window but instead are applied immediately.</p>  <p>Default:
      * The existing name setting</p> <p>Constraints:</p> <ul> <li> <p>The DB parameter
      * group must be in the same DB parameter group family as this DB cluster.</p>
      * </li> <li> <p>The <code>DBInstanceParameterGroupName</code> parameter is only
@@ -1129,10 +1129,10 @@ namespace Model
 
     /**
      * <p>The name of the DB parameter group to apply to all instances of the DB
-     * cluster. </p> <note> <p>When you apply a parameter group using the
+     * cluster. </p>  <p>When you apply a parameter group using the
      * <code>DBInstanceParameterGroupName</code> parameter, the DB cluster isn't
      * rebooted automatically. Also, parameter changes aren't applied during the next
-     * maintenance window but instead are applied immediately.</p> </note> <p>Default:
+     * maintenance window but instead are applied immediately.</p>  <p>Default:
      * The existing name setting</p> <p>Constraints:</p> <ul> <li> <p>The DB parameter
      * group must be in the same DB parameter group family as this DB cluster.</p>
      * </li> <li> <p>The <code>DBInstanceParameterGroupName</code> parameter is only
@@ -1143,10 +1143,10 @@ namespace Model
 
     /**
      * <p>The name of the DB parameter group to apply to all instances of the DB
-     * cluster. </p> <note> <p>When you apply a parameter group using the
+     * cluster. </p>  <p>When you apply a parameter group using the
      * <code>DBInstanceParameterGroupName</code> parameter, the DB cluster isn't
      * rebooted automatically. Also, parameter changes aren't applied during the next
-     * maintenance window but instead are applied immediately.</p> </note> <p>Default:
+     * maintenance window but instead are applied immediately.</p>  <p>Default:
      * The existing name setting</p> <p>Constraints:</p> <ul> <li> <p>The DB parameter
      * group must be in the same DB parameter group family as this DB cluster.</p>
      * </li> <li> <p>The <code>DBInstanceParameterGroupName</code> parameter is only
@@ -1157,10 +1157,10 @@ namespace Model
 
     /**
      * <p>The name of the DB parameter group to apply to all instances of the DB
-     * cluster. </p> <note> <p>When you apply a parameter group using the
+     * cluster. </p>  <p>When you apply a parameter group using the
      * <code>DBInstanceParameterGroupName</code> parameter, the DB cluster isn't
      * rebooted automatically. Also, parameter changes aren't applied during the next
-     * maintenance window but instead are applied immediately.</p> </note> <p>Default:
+     * maintenance window but instead are applied immediately.</p>  <p>Default:
      * The existing name setting</p> <p>Constraints:</p> <ul> <li> <p>The DB parameter
      * group must be in the same DB parameter group family as this DB cluster.</p>
      * </li> <li> <p>The <code>DBInstanceParameterGroupName</code> parameter is only
@@ -1171,10 +1171,10 @@ namespace Model
 
     /**
      * <p>The name of the DB parameter group to apply to all instances of the DB
-     * cluster. </p> <note> <p>When you apply a parameter group using the
+     * cluster. </p>  <p>When you apply a parameter group using the
      * <code>DBInstanceParameterGroupName</code> parameter, the DB cluster isn't
      * rebooted automatically. Also, parameter changes aren't applied during the next
-     * maintenance window but instead are applied immediately.</p> </note> <p>Default:
+     * maintenance window but instead are applied immediately.</p>  <p>Default:
      * The existing name setting</p> <p>Constraints:</p> <ul> <li> <p>The DB parameter
      * group must be in the same DB parameter group family as this DB cluster.</p>
      * </li> <li> <p>The <code>DBInstanceParameterGroupName</code> parameter is only

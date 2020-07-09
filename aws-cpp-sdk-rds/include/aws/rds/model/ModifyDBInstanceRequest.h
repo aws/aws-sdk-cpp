@@ -610,10 +610,10 @@ namespace Model
      * characters.</p> <p> <b>MySQL</b> </p> <p>Constraints: Must contain from 8 to 41
      * characters.</p> <p> <b>Oracle</b> </p> <p>Constraints: Must contain from 8 to 30
      * characters.</p> <p> <b>PostgreSQL</b> </p> <p>Constraints: Must contain from 8
-     * to 128 characters.</p> <note> <p>Amazon RDS API actions never return the
+     * to 128 characters.</p>  <p>Amazon RDS API actions never return the
      * password, so this action provides a way to regain access to a primary instance
      * user if the password is lost. This includes restoring privileges that might have
-     * been accidentally revoked. </p> </note>
+     * been accidentally revoked. </p> 
      */
     inline const Aws::String& GetMasterUserPassword() const{ return m_masterUserPassword; }
 
@@ -632,10 +632,10 @@ namespace Model
      * characters.</p> <p> <b>MySQL</b> </p> <p>Constraints: Must contain from 8 to 41
      * characters.</p> <p> <b>Oracle</b> </p> <p>Constraints: Must contain from 8 to 30
      * characters.</p> <p> <b>PostgreSQL</b> </p> <p>Constraints: Must contain from 8
-     * to 128 characters.</p> <note> <p>Amazon RDS API actions never return the
+     * to 128 characters.</p>  <p>Amazon RDS API actions never return the
      * password, so this action provides a way to regain access to a primary instance
      * user if the password is lost. This includes restoring privileges that might have
-     * been accidentally revoked. </p> </note>
+     * been accidentally revoked. </p> 
      */
     inline bool MasterUserPasswordHasBeenSet() const { return m_masterUserPasswordHasBeenSet; }
 
@@ -654,10 +654,10 @@ namespace Model
      * characters.</p> <p> <b>MySQL</b> </p> <p>Constraints: Must contain from 8 to 41
      * characters.</p> <p> <b>Oracle</b> </p> <p>Constraints: Must contain from 8 to 30
      * characters.</p> <p> <b>PostgreSQL</b> </p> <p>Constraints: Must contain from 8
-     * to 128 characters.</p> <note> <p>Amazon RDS API actions never return the
+     * to 128 characters.</p>  <p>Amazon RDS API actions never return the
      * password, so this action provides a way to regain access to a primary instance
      * user if the password is lost. This includes restoring privileges that might have
-     * been accidentally revoked. </p> </note>
+     * been accidentally revoked. </p> 
      */
     inline void SetMasterUserPassword(const Aws::String& value) { m_masterUserPasswordHasBeenSet = true; m_masterUserPassword = value; }
 
@@ -676,10 +676,10 @@ namespace Model
      * characters.</p> <p> <b>MySQL</b> </p> <p>Constraints: Must contain from 8 to 41
      * characters.</p> <p> <b>Oracle</b> </p> <p>Constraints: Must contain from 8 to 30
      * characters.</p> <p> <b>PostgreSQL</b> </p> <p>Constraints: Must contain from 8
-     * to 128 characters.</p> <note> <p>Amazon RDS API actions never return the
+     * to 128 characters.</p>  <p>Amazon RDS API actions never return the
      * password, so this action provides a way to regain access to a primary instance
      * user if the password is lost. This includes restoring privileges that might have
-     * been accidentally revoked. </p> </note>
+     * been accidentally revoked. </p> 
      */
     inline void SetMasterUserPassword(Aws::String&& value) { m_masterUserPasswordHasBeenSet = true; m_masterUserPassword = std::move(value); }
 
@@ -698,10 +698,10 @@ namespace Model
      * characters.</p> <p> <b>MySQL</b> </p> <p>Constraints: Must contain from 8 to 41
      * characters.</p> <p> <b>Oracle</b> </p> <p>Constraints: Must contain from 8 to 30
      * characters.</p> <p> <b>PostgreSQL</b> </p> <p>Constraints: Must contain from 8
-     * to 128 characters.</p> <note> <p>Amazon RDS API actions never return the
+     * to 128 characters.</p>  <p>Amazon RDS API actions never return the
      * password, so this action provides a way to regain access to a primary instance
      * user if the password is lost. This includes restoring privileges that might have
-     * been accidentally revoked. </p> </note>
+     * been accidentally revoked. </p> 
      */
     inline void SetMasterUserPassword(const char* value) { m_masterUserPasswordHasBeenSet = true; m_masterUserPassword.assign(value); }
 
@@ -720,10 +720,10 @@ namespace Model
      * characters.</p> <p> <b>MySQL</b> </p> <p>Constraints: Must contain from 8 to 41
      * characters.</p> <p> <b>Oracle</b> </p> <p>Constraints: Must contain from 8 to 30
      * characters.</p> <p> <b>PostgreSQL</b> </p> <p>Constraints: Must contain from 8
-     * to 128 characters.</p> <note> <p>Amazon RDS API actions never return the
+     * to 128 characters.</p>  <p>Amazon RDS API actions never return the
      * password, so this action provides a way to regain access to a primary instance
      * user if the password is lost. This includes restoring privileges that might have
-     * been accidentally revoked. </p> </note>
+     * been accidentally revoked. </p> 
      */
     inline ModifyDBInstanceRequest& WithMasterUserPassword(const Aws::String& value) { SetMasterUserPassword(value); return *this;}
 
@@ -742,10 +742,10 @@ namespace Model
      * characters.</p> <p> <b>MySQL</b> </p> <p>Constraints: Must contain from 8 to 41
      * characters.</p> <p> <b>Oracle</b> </p> <p>Constraints: Must contain from 8 to 30
      * characters.</p> <p> <b>PostgreSQL</b> </p> <p>Constraints: Must contain from 8
-     * to 128 characters.</p> <note> <p>Amazon RDS API actions never return the
+     * to 128 characters.</p>  <p>Amazon RDS API actions never return the
      * password, so this action provides a way to regain access to a primary instance
      * user if the password is lost. This includes restoring privileges that might have
-     * been accidentally revoked. </p> </note>
+     * been accidentally revoked. </p> 
      */
     inline ModifyDBInstanceRequest& WithMasterUserPassword(Aws::String&& value) { SetMasterUserPassword(std::move(value)); return *this;}
 
@@ -764,10 +764,10 @@ namespace Model
      * characters.</p> <p> <b>MySQL</b> </p> <p>Constraints: Must contain from 8 to 41
      * characters.</p> <p> <b>Oracle</b> </p> <p>Constraints: Must contain from 8 to 30
      * characters.</p> <p> <b>PostgreSQL</b> </p> <p>Constraints: Must contain from 8
-     * to 128 characters.</p> <note> <p>Amazon RDS API actions never return the
+     * to 128 characters.</p>  <p>Amazon RDS API actions never return the
      * password, so this action provides a way to regain access to a primary instance
      * user if the password is lost. This includes restoring privileges that might have
-     * been accidentally revoked. </p> </note>
+     * been accidentally revoked. </p> 
      */
     inline ModifyDBInstanceRequest& WithMasterUserPassword(const char* value) { SetMasterUserPassword(value); return *this;}
 
@@ -3035,8 +3035,8 @@ namespace Model
      * <p>A value that indicates whether the DB instance is restarted when you rotate
      * your SSL/TLS certificate.</p> <p>By default, the DB instance is restarted when
      * you rotate your SSL/TLS certificate. The certificate is not updated until the DB
-     * instance is restarted.</p> <important> <p>Set this parameter only if you are
-     * <i>not</i> using SSL/TLS to connect to the DB instance.</p> </important> <p>If
+     * instance is restarted.</p>  <p>Set this parameter only if you are
+     * <i>not</i> using SSL/TLS to connect to the DB instance.</p>  <p>If
      * you are using SSL/TLS to connect to the DB instance, follow the appropriate
      * instructions for your DB engine to rotate your SSL/TLS certificate:</p> <ul>
      * <li> <p>For more information about rotating your SSL/TLS certificate for RDS DB
@@ -3055,8 +3055,8 @@ namespace Model
      * <p>A value that indicates whether the DB instance is restarted when you rotate
      * your SSL/TLS certificate.</p> <p>By default, the DB instance is restarted when
      * you rotate your SSL/TLS certificate. The certificate is not updated until the DB
-     * instance is restarted.</p> <important> <p>Set this parameter only if you are
-     * <i>not</i> using SSL/TLS to connect to the DB instance.</p> </important> <p>If
+     * instance is restarted.</p>  <p>Set this parameter only if you are
+     * <i>not</i> using SSL/TLS to connect to the DB instance.</p>  <p>If
      * you are using SSL/TLS to connect to the DB instance, follow the appropriate
      * instructions for your DB engine to rotate your SSL/TLS certificate:</p> <ul>
      * <li> <p>For more information about rotating your SSL/TLS certificate for RDS DB
@@ -3075,8 +3075,8 @@ namespace Model
      * <p>A value that indicates whether the DB instance is restarted when you rotate
      * your SSL/TLS certificate.</p> <p>By default, the DB instance is restarted when
      * you rotate your SSL/TLS certificate. The certificate is not updated until the DB
-     * instance is restarted.</p> <important> <p>Set this parameter only if you are
-     * <i>not</i> using SSL/TLS to connect to the DB instance.</p> </important> <p>If
+     * instance is restarted.</p>  <p>Set this parameter only if you are
+     * <i>not</i> using SSL/TLS to connect to the DB instance.</p>  <p>If
      * you are using SSL/TLS to connect to the DB instance, follow the appropriate
      * instructions for your DB engine to rotate your SSL/TLS certificate:</p> <ul>
      * <li> <p>For more information about rotating your SSL/TLS certificate for RDS DB
@@ -3095,8 +3095,8 @@ namespace Model
      * <p>A value that indicates whether the DB instance is restarted when you rotate
      * your SSL/TLS certificate.</p> <p>By default, the DB instance is restarted when
      * you rotate your SSL/TLS certificate. The certificate is not updated until the DB
-     * instance is restarted.</p> <important> <p>Set this parameter only if you are
-     * <i>not</i> using SSL/TLS to connect to the DB instance.</p> </important> <p>If
+     * instance is restarted.</p>  <p>Set this parameter only if you are
+     * <i>not</i> using SSL/TLS to connect to the DB instance.</p>  <p>If
      * you are using SSL/TLS to connect to the DB instance, follow the appropriate
      * instructions for your DB engine to rotate your SSL/TLS certificate:</p> <ul>
      * <li> <p>For more information about rotating your SSL/TLS certificate for RDS DB

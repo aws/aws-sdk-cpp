@@ -656,8 +656,8 @@ namespace Model
         virtual void DeleteConnectionAsync(const Model::DeleteConnectionRequest& request, const DeleteConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes the specified endpoint.</p> <note> <p>All tasks associated with the
-         * endpoint must be deleted before you can delete the endpoint.</p> </note>
+         * <p>Deletes the specified endpoint.</p>  <p>All tasks associated with the
+         * endpoint must be deleted before you can delete the endpoint.</p> 
          * <p/><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DeleteEndpoint">AWS
          * API Reference</a></p>
@@ -665,8 +665,8 @@ namespace Model
         virtual Model::DeleteEndpointOutcome DeleteEndpoint(const Model::DeleteEndpointRequest& request) const;
 
         /**
-         * <p>Deletes the specified endpoint.</p> <note> <p>All tasks associated with the
-         * endpoint must be deleted before you can delete the endpoint.</p> </note>
+         * <p>Deletes the specified endpoint.</p>  <p>All tasks associated with the
+         * endpoint must be deleted before you can delete the endpoint.</p> 
          * <p/><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DeleteEndpoint">AWS
          * API Reference</a></p>
@@ -676,8 +676,8 @@ namespace Model
         virtual Model::DeleteEndpointOutcomeCallable DeleteEndpointCallable(const Model::DeleteEndpointRequest& request) const;
 
         /**
-         * <p>Deletes the specified endpoint.</p> <note> <p>All tasks associated with the
-         * endpoint must be deleted before you can delete the endpoint.</p> </note>
+         * <p>Deletes the specified endpoint.</p>  <p>All tasks associated with the
+         * endpoint must be deleted before you can delete the endpoint.</p> 
          * <p/><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DeleteEndpoint">AWS
          * API Reference</a></p>
@@ -712,18 +712,18 @@ namespace Model
         virtual void DeleteEventSubscriptionAsync(const Model::DeleteEventSubscriptionRequest& request, const DeleteEventSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes the specified replication instance.</p> <note> <p>You must delete any
+         * <p>Deletes the specified replication instance.</p>  <p>You must delete any
          * migration tasks that are associated with the replication instance before you can
-         * delete it.</p> </note> <p/><p><h3>See Also:</h3>   <a
+         * delete it.</p>  <p/><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DeleteReplicationInstance">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteReplicationInstanceOutcome DeleteReplicationInstance(const Model::DeleteReplicationInstanceRequest& request) const;
 
         /**
-         * <p>Deletes the specified replication instance.</p> <note> <p>You must delete any
+         * <p>Deletes the specified replication instance.</p>  <p>You must delete any
          * migration tasks that are associated with the replication instance before you can
-         * delete it.</p> </note> <p/><p><h3>See Also:</h3>   <a
+         * delete it.</p>  <p/><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DeleteReplicationInstance">AWS
          * API Reference</a></p>
          *
@@ -732,9 +732,9 @@ namespace Model
         virtual Model::DeleteReplicationInstanceOutcomeCallable DeleteReplicationInstanceCallable(const Model::DeleteReplicationInstanceRequest& request) const;
 
         /**
-         * <p>Deletes the specified replication instance.</p> <note> <p>You must delete any
+         * <p>Deletes the specified replication instance.</p>  <p>You must delete any
          * migration tasks that are associated with the replication instance before you can
-         * delete it.</p> </note> <p/><p><h3>See Also:</h3>   <a
+         * delete it.</p>  <p/><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DeleteReplicationInstance">AWS
          * API Reference</a></p>
          *

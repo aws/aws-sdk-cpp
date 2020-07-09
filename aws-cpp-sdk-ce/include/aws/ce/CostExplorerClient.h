@@ -351,12 +351,12 @@ namespace Model
          * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetDimensionValues.html">GetDimensionValues</a>
          * operation. Master accounts in an organization in AWS Organizations have access
          * to all member accounts. This API is currently available for the Amazon Elastic
-         * Compute Cloud – Compute service only.</p> <note> <p>This is an opt-in only
+         * Compute Cloud – Compute service only.</p>  <p>This is an opt-in only
          * feature. You can enable this feature from the Cost Explorer Settings page. For
          * information on how to access the Settings page, see <a
          * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/ce-access.html">Controlling
          * Access for Cost Explorer</a> in the <i>AWS Billing and Cost Management User
-         * Guide</i>.</p> </note><p><h3>See Also:</h3>   <a
+         * Guide</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetCostAndUsageWithResources">AWS
          * API Reference</a></p>
          */
@@ -372,12 +372,12 @@ namespace Model
          * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetDimensionValues.html">GetDimensionValues</a>
          * operation. Master accounts in an organization in AWS Organizations have access
          * to all member accounts. This API is currently available for the Amazon Elastic
-         * Compute Cloud – Compute service only.</p> <note> <p>This is an opt-in only
+         * Compute Cloud – Compute service only.</p>  <p>This is an opt-in only
          * feature. You can enable this feature from the Cost Explorer Settings page. For
          * information on how to access the Settings page, see <a
          * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/ce-access.html">Controlling
          * Access for Cost Explorer</a> in the <i>AWS Billing and Cost Management User
-         * Guide</i>.</p> </note><p><h3>See Also:</h3>   <a
+         * Guide</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetCostAndUsageWithResources">AWS
          * API Reference</a></p>
          *
@@ -395,12 +395,12 @@ namespace Model
          * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetDimensionValues.html">GetDimensionValues</a>
          * operation. Master accounts in an organization in AWS Organizations have access
          * to all member accounts. This API is currently available for the Amazon Elastic
-         * Compute Cloud – Compute service only.</p> <note> <p>This is an opt-in only
+         * Compute Cloud – Compute service only.</p>  <p>This is an opt-in only
          * feature. You can enable this feature from the Cost Explorer Settings page. For
          * information on how to access the Settings page, see <a
          * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/ce-access.html">Controlling
          * Access for Cost Explorer</a> in the <i>AWS Billing and Cost Management User
-         * Guide</i>.</p> </note><p><h3>See Also:</h3>   <a
+         * Guide</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetCostAndUsageWithResources">AWS
          * API Reference</a></p>
          *
@@ -772,8 +772,8 @@ namespace Model
          * with daily or monthly granularity. Master accounts in an organization have
          * access to member accounts. You can use <code>GetDimensionValues</code> in
          * <code>SAVINGS_PLANS</code> to determine the possible dimension values.</p>
-         * <note> <p>You cannot group by any dimension values for
-         * <code>GetSavingsPlansUtilization</code>.</p> </note><p><h3>See Also:</h3>   <a
+         *  <p>You cannot group by any dimension values for
+         * <code>GetSavingsPlansUtilization</code>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetSavingsPlansUtilization">AWS
          * API Reference</a></p>
          */
@@ -784,8 +784,8 @@ namespace Model
          * with daily or monthly granularity. Master accounts in an organization have
          * access to member accounts. You can use <code>GetDimensionValues</code> in
          * <code>SAVINGS_PLANS</code> to determine the possible dimension values.</p>
-         * <note> <p>You cannot group by any dimension values for
-         * <code>GetSavingsPlansUtilization</code>.</p> </note><p><h3>See Also:</h3>   <a
+         *  <p>You cannot group by any dimension values for
+         * <code>GetSavingsPlansUtilization</code>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetSavingsPlansUtilization">AWS
          * API Reference</a></p>
          *
@@ -798,8 +798,8 @@ namespace Model
          * with daily or monthly granularity. Master accounts in an organization have
          * access to member accounts. You can use <code>GetDimensionValues</code> in
          * <code>SAVINGS_PLANS</code> to determine the possible dimension values.</p>
-         * <note> <p>You cannot group by any dimension values for
-         * <code>GetSavingsPlansUtilization</code>.</p> </note><p><h3>See Also:</h3>   <a
+         *  <p>You cannot group by any dimension values for
+         * <code>GetSavingsPlansUtilization</code>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetSavingsPlansUtilization">AWS
          * API Reference</a></p>
          *
@@ -815,8 +815,8 @@ namespace Model
          * option to make multiple calls to <code>GetSavingsPlanUtilizationDetails</code>
          * by providing individual dates. You can use <code>GetDimensionValues</code> in
          * <code>SAVINGS_PLANS</code> to determine the possible dimension values.</p>
-         * <note> <p> <code>GetSavingsPlanUtilizationDetails</code> internally groups data
-         * by <code>SavingsPlansArn</code>.</p> </note><p><h3>See Also:</h3>   <a
+         *  <p> <code>GetSavingsPlanUtilizationDetails</code> internally groups data
+         * by <code>SavingsPlansArn</code>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetSavingsPlansUtilizationDetails">AWS
          * API Reference</a></p>
          */
@@ -830,8 +830,8 @@ namespace Model
          * option to make multiple calls to <code>GetSavingsPlanUtilizationDetails</code>
          * by providing individual dates. You can use <code>GetDimensionValues</code> in
          * <code>SAVINGS_PLANS</code> to determine the possible dimension values.</p>
-         * <note> <p> <code>GetSavingsPlanUtilizationDetails</code> internally groups data
-         * by <code>SavingsPlansArn</code>.</p> </note><p><h3>See Also:</h3>   <a
+         *  <p> <code>GetSavingsPlanUtilizationDetails</code> internally groups data
+         * by <code>SavingsPlansArn</code>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetSavingsPlansUtilizationDetails">AWS
          * API Reference</a></p>
          *
@@ -847,8 +847,8 @@ namespace Model
          * option to make multiple calls to <code>GetSavingsPlanUtilizationDetails</code>
          * by providing individual dates. You can use <code>GetDimensionValues</code> in
          * <code>SAVINGS_PLANS</code> to determine the possible dimension values.</p>
-         * <note> <p> <code>GetSavingsPlanUtilizationDetails</code> internally groups data
-         * by <code>SavingsPlansArn</code>.</p> </note><p><h3>See Also:</h3>   <a
+         *  <p> <code>GetSavingsPlanUtilizationDetails</code> internally groups data
+         * by <code>SavingsPlansArn</code>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetSavingsPlansUtilizationDetails">AWS
          * API Reference</a></p>
          *

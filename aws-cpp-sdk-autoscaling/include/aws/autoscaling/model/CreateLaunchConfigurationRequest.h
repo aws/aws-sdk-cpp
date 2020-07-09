@@ -968,78 +968,78 @@ namespace Model
     /**
      * <p>Controls whether instances in this group are launched with detailed
      * (<code>true</code>) or basic (<code>false</code>) monitoring.</p> <p>The default
-     * value is <code>true</code> (enabled).</p> <important> <p>When detailed
+     * value is <code>true</code> (enabled).</p>  <p>When detailed
      * monitoring is enabled, Amazon CloudWatch generates metrics every minute and your
      * account is charged a fee. When you disable detailed monitoring, CloudWatch
      * generates metrics every 5 minutes. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/latest/userguide/as-instance-monitoring.html#enable-as-instance-metrics">Configure
      * Monitoring for Auto Scaling Instances</a> in the <i>Amazon EC2 Auto Scaling User
-     * Guide</i>.</p> </important>
+     * Guide</i>.</p> 
      */
     inline const InstanceMonitoring& GetInstanceMonitoring() const{ return m_instanceMonitoring; }
 
     /**
      * <p>Controls whether instances in this group are launched with detailed
      * (<code>true</code>) or basic (<code>false</code>) monitoring.</p> <p>The default
-     * value is <code>true</code> (enabled).</p> <important> <p>When detailed
+     * value is <code>true</code> (enabled).</p>  <p>When detailed
      * monitoring is enabled, Amazon CloudWatch generates metrics every minute and your
      * account is charged a fee. When you disable detailed monitoring, CloudWatch
      * generates metrics every 5 minutes. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/latest/userguide/as-instance-monitoring.html#enable-as-instance-metrics">Configure
      * Monitoring for Auto Scaling Instances</a> in the <i>Amazon EC2 Auto Scaling User
-     * Guide</i>.</p> </important>
+     * Guide</i>.</p> 
      */
     inline bool InstanceMonitoringHasBeenSet() const { return m_instanceMonitoringHasBeenSet; }
 
     /**
      * <p>Controls whether instances in this group are launched with detailed
      * (<code>true</code>) or basic (<code>false</code>) monitoring.</p> <p>The default
-     * value is <code>true</code> (enabled).</p> <important> <p>When detailed
+     * value is <code>true</code> (enabled).</p>  <p>When detailed
      * monitoring is enabled, Amazon CloudWatch generates metrics every minute and your
      * account is charged a fee. When you disable detailed monitoring, CloudWatch
      * generates metrics every 5 minutes. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/latest/userguide/as-instance-monitoring.html#enable-as-instance-metrics">Configure
      * Monitoring for Auto Scaling Instances</a> in the <i>Amazon EC2 Auto Scaling User
-     * Guide</i>.</p> </important>
+     * Guide</i>.</p> 
      */
     inline void SetInstanceMonitoring(const InstanceMonitoring& value) { m_instanceMonitoringHasBeenSet = true; m_instanceMonitoring = value; }
 
     /**
      * <p>Controls whether instances in this group are launched with detailed
      * (<code>true</code>) or basic (<code>false</code>) monitoring.</p> <p>The default
-     * value is <code>true</code> (enabled).</p> <important> <p>When detailed
+     * value is <code>true</code> (enabled).</p>  <p>When detailed
      * monitoring is enabled, Amazon CloudWatch generates metrics every minute and your
      * account is charged a fee. When you disable detailed monitoring, CloudWatch
      * generates metrics every 5 minutes. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/latest/userguide/as-instance-monitoring.html#enable-as-instance-metrics">Configure
      * Monitoring for Auto Scaling Instances</a> in the <i>Amazon EC2 Auto Scaling User
-     * Guide</i>.</p> </important>
+     * Guide</i>.</p> 
      */
     inline void SetInstanceMonitoring(InstanceMonitoring&& value) { m_instanceMonitoringHasBeenSet = true; m_instanceMonitoring = std::move(value); }
 
     /**
      * <p>Controls whether instances in this group are launched with detailed
      * (<code>true</code>) or basic (<code>false</code>) monitoring.</p> <p>The default
-     * value is <code>true</code> (enabled).</p> <important> <p>When detailed
+     * value is <code>true</code> (enabled).</p>  <p>When detailed
      * monitoring is enabled, Amazon CloudWatch generates metrics every minute and your
      * account is charged a fee. When you disable detailed monitoring, CloudWatch
      * generates metrics every 5 minutes. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/latest/userguide/as-instance-monitoring.html#enable-as-instance-metrics">Configure
      * Monitoring for Auto Scaling Instances</a> in the <i>Amazon EC2 Auto Scaling User
-     * Guide</i>.</p> </important>
+     * Guide</i>.</p> 
      */
     inline CreateLaunchConfigurationRequest& WithInstanceMonitoring(const InstanceMonitoring& value) { SetInstanceMonitoring(value); return *this;}
 
     /**
      * <p>Controls whether instances in this group are launched with detailed
      * (<code>true</code>) or basic (<code>false</code>) monitoring.</p> <p>The default
-     * value is <code>true</code> (enabled).</p> <important> <p>When detailed
+     * value is <code>true</code> (enabled).</p>  <p>When detailed
      * monitoring is enabled, Amazon CloudWatch generates metrics every minute and your
      * account is charged a fee. When you disable detailed monitoring, CloudWatch
      * generates metrics every 5 minutes. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/latest/userguide/as-instance-monitoring.html#enable-as-instance-metrics">Configure
      * Monitoring for Auto Scaling Instances</a> in the <i>Amazon EC2 Auto Scaling User
-     * Guide</i>.</p> </important>
+     * Guide</i>.</p> 
      */
     inline CreateLaunchConfigurationRequest& WithInstanceMonitoring(InstanceMonitoring&& value) { SetInstanceMonitoring(std::move(value)); return *this;}
 
@@ -1050,10 +1050,10 @@ namespace Model
      * current Spot price. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-launch-spot-instances.html">Launching
      * Spot Instances in Your Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling
-     * User Guide</i>.</p> <note> <p>When you change your maximum price by creating a
+     * User Guide</i>.</p>  <p>When you change your maximum price by creating a
      * new launch configuration, running instances will continue to run as long as the
      * maximum price for those running instances is higher than the current Spot
-     * price.</p> </note>
+     * price.</p> 
      */
     inline const Aws::String& GetSpotPrice() const{ return m_spotPrice; }
 
@@ -1063,10 +1063,10 @@ namespace Model
      * current Spot price. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-launch-spot-instances.html">Launching
      * Spot Instances in Your Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling
-     * User Guide</i>.</p> <note> <p>When you change your maximum price by creating a
+     * User Guide</i>.</p>  <p>When you change your maximum price by creating a
      * new launch configuration, running instances will continue to run as long as the
      * maximum price for those running instances is higher than the current Spot
-     * price.</p> </note>
+     * price.</p> 
      */
     inline bool SpotPriceHasBeenSet() const { return m_spotPriceHasBeenSet; }
 
@@ -1076,10 +1076,10 @@ namespace Model
      * current Spot price. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-launch-spot-instances.html">Launching
      * Spot Instances in Your Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling
-     * User Guide</i>.</p> <note> <p>When you change your maximum price by creating a
+     * User Guide</i>.</p>  <p>When you change your maximum price by creating a
      * new launch configuration, running instances will continue to run as long as the
      * maximum price for those running instances is higher than the current Spot
-     * price.</p> </note>
+     * price.</p> 
      */
     inline void SetSpotPrice(const Aws::String& value) { m_spotPriceHasBeenSet = true; m_spotPrice = value; }
 
@@ -1089,10 +1089,10 @@ namespace Model
      * current Spot price. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-launch-spot-instances.html">Launching
      * Spot Instances in Your Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling
-     * User Guide</i>.</p> <note> <p>When you change your maximum price by creating a
+     * User Guide</i>.</p>  <p>When you change your maximum price by creating a
      * new launch configuration, running instances will continue to run as long as the
      * maximum price for those running instances is higher than the current Spot
-     * price.</p> </note>
+     * price.</p> 
      */
     inline void SetSpotPrice(Aws::String&& value) { m_spotPriceHasBeenSet = true; m_spotPrice = std::move(value); }
 
@@ -1102,10 +1102,10 @@ namespace Model
      * current Spot price. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-launch-spot-instances.html">Launching
      * Spot Instances in Your Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling
-     * User Guide</i>.</p> <note> <p>When you change your maximum price by creating a
+     * User Guide</i>.</p>  <p>When you change your maximum price by creating a
      * new launch configuration, running instances will continue to run as long as the
      * maximum price for those running instances is higher than the current Spot
-     * price.</p> </note>
+     * price.</p> 
      */
     inline void SetSpotPrice(const char* value) { m_spotPriceHasBeenSet = true; m_spotPrice.assign(value); }
 
@@ -1115,10 +1115,10 @@ namespace Model
      * current Spot price. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-launch-spot-instances.html">Launching
      * Spot Instances in Your Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling
-     * User Guide</i>.</p> <note> <p>When you change your maximum price by creating a
+     * User Guide</i>.</p>  <p>When you change your maximum price by creating a
      * new launch configuration, running instances will continue to run as long as the
      * maximum price for those running instances is higher than the current Spot
-     * price.</p> </note>
+     * price.</p> 
      */
     inline CreateLaunchConfigurationRequest& WithSpotPrice(const Aws::String& value) { SetSpotPrice(value); return *this;}
 
@@ -1128,10 +1128,10 @@ namespace Model
      * current Spot price. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-launch-spot-instances.html">Launching
      * Spot Instances in Your Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling
-     * User Guide</i>.</p> <note> <p>When you change your maximum price by creating a
+     * User Guide</i>.</p>  <p>When you change your maximum price by creating a
      * new launch configuration, running instances will continue to run as long as the
      * maximum price for those running instances is higher than the current Spot
-     * price.</p> </note>
+     * price.</p> 
      */
     inline CreateLaunchConfigurationRequest& WithSpotPrice(Aws::String&& value) { SetSpotPrice(std::move(value)); return *this;}
 
@@ -1141,10 +1141,10 @@ namespace Model
      * current Spot price. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-launch-spot-instances.html">Launching
      * Spot Instances in Your Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling
-     * User Guide</i>.</p> <note> <p>When you change your maximum price by creating a
+     * User Guide</i>.</p>  <p>When you change your maximum price by creating a
      * new launch configuration, running instances will continue to run as long as the
      * maximum price for those running instances is higher than the current Spot
-     * price.</p> </note>
+     * price.</p> 
      */
     inline CreateLaunchConfigurationRequest& WithSpotPrice(const char* value) { SetSpotPrice(value); return *this;}
 
@@ -1295,12 +1295,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html">Launching
      * Auto Scaling Instances in a VPC</a> in the <i>Amazon EC2 Auto Scaling User
      * Guide</i>.</p> <p>If you specify this parameter, you must specify at least one
-     * subnet for <code>VPCZoneIdentifier</code> when you create your group.</p> <note>
+     * subnet for <code>VPCZoneIdentifier</code> when you create your group.</p> 
      * <p>If the instance is launched into a default subnet, the default is to assign a
      * public IP address, unless you disabled the option to assign a public IP address
      * on the subnet. If the instance is launched into a nondefault subnet, the default
      * is not to assign a public IP address, unless you enabled the option to assign a
-     * public IP address on the subnet.</p> </note>
+     * public IP address on the subnet.</p> 
      */
     inline bool GetAssociatePublicIpAddress() const{ return m_associatePublicIpAddress; }
 
@@ -1312,12 +1312,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html">Launching
      * Auto Scaling Instances in a VPC</a> in the <i>Amazon EC2 Auto Scaling User
      * Guide</i>.</p> <p>If you specify this parameter, you must specify at least one
-     * subnet for <code>VPCZoneIdentifier</code> when you create your group.</p> <note>
+     * subnet for <code>VPCZoneIdentifier</code> when you create your group.</p> 
      * <p>If the instance is launched into a default subnet, the default is to assign a
      * public IP address, unless you disabled the option to assign a public IP address
      * on the subnet. If the instance is launched into a nondefault subnet, the default
      * is not to assign a public IP address, unless you enabled the option to assign a
-     * public IP address on the subnet.</p> </note>
+     * public IP address on the subnet.</p> 
      */
     inline bool AssociatePublicIpAddressHasBeenSet() const { return m_associatePublicIpAddressHasBeenSet; }
 
@@ -1329,12 +1329,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html">Launching
      * Auto Scaling Instances in a VPC</a> in the <i>Amazon EC2 Auto Scaling User
      * Guide</i>.</p> <p>If you specify this parameter, you must specify at least one
-     * subnet for <code>VPCZoneIdentifier</code> when you create your group.</p> <note>
+     * subnet for <code>VPCZoneIdentifier</code> when you create your group.</p> 
      * <p>If the instance is launched into a default subnet, the default is to assign a
      * public IP address, unless you disabled the option to assign a public IP address
      * on the subnet. If the instance is launched into a nondefault subnet, the default
      * is not to assign a public IP address, unless you enabled the option to assign a
-     * public IP address on the subnet.</p> </note>
+     * public IP address on the subnet.</p> 
      */
     inline void SetAssociatePublicIpAddress(bool value) { m_associatePublicIpAddressHasBeenSet = true; m_associatePublicIpAddress = value; }
 
@@ -1346,12 +1346,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html">Launching
      * Auto Scaling Instances in a VPC</a> in the <i>Amazon EC2 Auto Scaling User
      * Guide</i>.</p> <p>If you specify this parameter, you must specify at least one
-     * subnet for <code>VPCZoneIdentifier</code> when you create your group.</p> <note>
+     * subnet for <code>VPCZoneIdentifier</code> when you create your group.</p> 
      * <p>If the instance is launched into a default subnet, the default is to assign a
      * public IP address, unless you disabled the option to assign a public IP address
      * on the subnet. If the instance is launched into a nondefault subnet, the default
      * is not to assign a public IP address, unless you enabled the option to assign a
-     * public IP address on the subnet.</p> </note>
+     * public IP address on the subnet.</p> 
      */
     inline CreateLaunchConfigurationRequest& WithAssociatePublicIpAddress(bool value) { SetAssociatePublicIpAddress(value); return *this;}
 

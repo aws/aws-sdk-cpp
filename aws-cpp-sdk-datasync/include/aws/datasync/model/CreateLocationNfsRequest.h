@@ -205,72 +205,72 @@ namespace Model
     /**
      * <p>The name of the NFS server. This value is the IP address or Domain Name
      * Service (DNS) name of the NFS server. An agent that is installed on-premises
-     * uses this host name to mount the NFS server in a network. </p> <note> <p>This
+     * uses this host name to mount the NFS server in a network. </p>  <p>This
      * name must either be DNS-compliant or must be an IP version 4 (IPv4) address.</p>
-     * </note>
+     * 
      */
     inline const Aws::String& GetServerHostname() const{ return m_serverHostname; }
 
     /**
      * <p>The name of the NFS server. This value is the IP address or Domain Name
      * Service (DNS) name of the NFS server. An agent that is installed on-premises
-     * uses this host name to mount the NFS server in a network. </p> <note> <p>This
+     * uses this host name to mount the NFS server in a network. </p>  <p>This
      * name must either be DNS-compliant or must be an IP version 4 (IPv4) address.</p>
-     * </note>
+     * 
      */
     inline bool ServerHostnameHasBeenSet() const { return m_serverHostnameHasBeenSet; }
 
     /**
      * <p>The name of the NFS server. This value is the IP address or Domain Name
      * Service (DNS) name of the NFS server. An agent that is installed on-premises
-     * uses this host name to mount the NFS server in a network. </p> <note> <p>This
+     * uses this host name to mount the NFS server in a network. </p>  <p>This
      * name must either be DNS-compliant or must be an IP version 4 (IPv4) address.</p>
-     * </note>
+     * 
      */
     inline void SetServerHostname(const Aws::String& value) { m_serverHostnameHasBeenSet = true; m_serverHostname = value; }
 
     /**
      * <p>The name of the NFS server. This value is the IP address or Domain Name
      * Service (DNS) name of the NFS server. An agent that is installed on-premises
-     * uses this host name to mount the NFS server in a network. </p> <note> <p>This
+     * uses this host name to mount the NFS server in a network. </p>  <p>This
      * name must either be DNS-compliant or must be an IP version 4 (IPv4) address.</p>
-     * </note>
+     * 
      */
     inline void SetServerHostname(Aws::String&& value) { m_serverHostnameHasBeenSet = true; m_serverHostname = std::move(value); }
 
     /**
      * <p>The name of the NFS server. This value is the IP address or Domain Name
      * Service (DNS) name of the NFS server. An agent that is installed on-premises
-     * uses this host name to mount the NFS server in a network. </p> <note> <p>This
+     * uses this host name to mount the NFS server in a network. </p>  <p>This
      * name must either be DNS-compliant or must be an IP version 4 (IPv4) address.</p>
-     * </note>
+     * 
      */
     inline void SetServerHostname(const char* value) { m_serverHostnameHasBeenSet = true; m_serverHostname.assign(value); }
 
     /**
      * <p>The name of the NFS server. This value is the IP address or Domain Name
      * Service (DNS) name of the NFS server. An agent that is installed on-premises
-     * uses this host name to mount the NFS server in a network. </p> <note> <p>This
+     * uses this host name to mount the NFS server in a network. </p>  <p>This
      * name must either be DNS-compliant or must be an IP version 4 (IPv4) address.</p>
-     * </note>
+     * 
      */
     inline CreateLocationNfsRequest& WithServerHostname(const Aws::String& value) { SetServerHostname(value); return *this;}
 
     /**
      * <p>The name of the NFS server. This value is the IP address or Domain Name
      * Service (DNS) name of the NFS server. An agent that is installed on-premises
-     * uses this host name to mount the NFS server in a network. </p> <note> <p>This
+     * uses this host name to mount the NFS server in a network. </p>  <p>This
      * name must either be DNS-compliant or must be an IP version 4 (IPv4) address.</p>
-     * </note>
+     * 
      */
     inline CreateLocationNfsRequest& WithServerHostname(Aws::String&& value) { SetServerHostname(std::move(value)); return *this;}
 
     /**
      * <p>The name of the NFS server. This value is the IP address or Domain Name
      * Service (DNS) name of the NFS server. An agent that is installed on-premises
-     * uses this host name to mount the NFS server in a network. </p> <note> <p>This
+     * uses this host name to mount the NFS server in a network. </p>  <p>This
      * name must either be DNS-compliant or must be an IP version 4 (IPv4) address.</p>
-     * </note>
+     * 
      */
     inline CreateLocationNfsRequest& WithServerHostname(const char* value) { SetServerHostname(value); return *this;}
 

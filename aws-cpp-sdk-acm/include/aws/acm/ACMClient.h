@@ -232,10 +232,10 @@ namespace Model
          * succeeds, the certificate no longer appears in the list that can be displayed by
          * calling the <a>ListCertificates</a> action or be retrieved by calling the
          * <a>GetCertificate</a> action. The certificate will not be available for use by
-         * AWS services integrated with ACM. </p> <note> <p>You cannot delete an ACM
+         * AWS services integrated with ACM. </p>  <p>You cannot delete an ACM
          * certificate that is being used by another AWS service. To delete a certificate
          * that is in use, the certificate association must first be removed.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/DeleteCertificate">AWS
          * API Reference</a></p>
          */
@@ -246,10 +246,10 @@ namespace Model
          * succeeds, the certificate no longer appears in the list that can be displayed by
          * calling the <a>ListCertificates</a> action or be retrieved by calling the
          * <a>GetCertificate</a> action. The certificate will not be available for use by
-         * AWS services integrated with ACM. </p> <note> <p>You cannot delete an ACM
+         * AWS services integrated with ACM. </p>  <p>You cannot delete an ACM
          * certificate that is being used by another AWS service. To delete a certificate
          * that is in use, the certificate association must first be removed.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/DeleteCertificate">AWS
          * API Reference</a></p>
          *
@@ -262,10 +262,10 @@ namespace Model
          * succeeds, the certificate no longer appears in the list that can be displayed by
          * calling the <a>ListCertificates</a> action or be retrieved by calling the
          * <a>GetCertificate</a> action. The certificate will not be available for use by
-         * AWS services integrated with ACM. </p> <note> <p>You cannot delete an ACM
+         * AWS services integrated with ACM. </p>  <p>You cannot delete an ACM
          * certificate that is being used by another AWS service. To delete a certificate
          * that is in use, the certificate association must first be removed.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/DeleteCertificate">AWS
          * API Reference</a></p>
          *
@@ -400,10 +400,10 @@ namespace Model
          * documentation for each service. For more information about importing
          * certificates into ACM, see <a
          * href="https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing
-         * Certificates</a> in the <i>AWS Certificate Manager User Guide</i>. </p> <note>
+         * Certificates</a> in the <i>AWS Certificate Manager User Guide</i>. </p> 
          * <p>ACM does not provide <a
          * href="https://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed
-         * renewal</a> for certificates that you import.</p> </note> <p>Note the following
+         * renewal</a> for certificates that you import.</p>  <p>Note the following
          * guidelines when importing third party certificates:</p> <ul> <li> <p>You must
          * enter the private key that matches the certificate you are importing.</p> </li>
          * <li> <p>The private key must be unencrypted. You cannot import a private key
@@ -449,10 +449,10 @@ namespace Model
          * documentation for each service. For more information about importing
          * certificates into ACM, see <a
          * href="https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing
-         * Certificates</a> in the <i>AWS Certificate Manager User Guide</i>. </p> <note>
+         * Certificates</a> in the <i>AWS Certificate Manager User Guide</i>. </p> 
          * <p>ACM does not provide <a
          * href="https://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed
-         * renewal</a> for certificates that you import.</p> </note> <p>Note the following
+         * renewal</a> for certificates that you import.</p>  <p>Note the following
          * guidelines when importing third party certificates:</p> <ul> <li> <p>You must
          * enter the private key that matches the certificate you are importing.</p> </li>
          * <li> <p>The private key must be unencrypted. You cannot import a private key
@@ -500,10 +500,10 @@ namespace Model
          * documentation for each service. For more information about importing
          * certificates into ACM, see <a
          * href="https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing
-         * Certificates</a> in the <i>AWS Certificate Manager User Guide</i>. </p> <note>
+         * Certificates</a> in the <i>AWS Certificate Manager User Guide</i>. </p> 
          * <p>ACM does not provide <a
          * href="https://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed
-         * renewal</a> for certificates that you import.</p> </note> <p>Note the following
+         * renewal</a> for certificates that you import.</p>  <p>Note the following
          * guidelines when importing third party certificates:</p> <ul> <li> <p>You must
          * enter the private key that matches the certificate you are importing.</p> </li>
          * <li> <p>The private key must be unencrypted. You cannot import a private key

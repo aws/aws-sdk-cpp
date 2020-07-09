@@ -169,9 +169,9 @@ namespace Model
      * instances or for batch transform jobs. Deploying on ML compute instances is part
      * of model hosting. For more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
-     * SageMaker Roles</a>. </p> <note> <p>To be able to pass this role to Amazon
+     * SageMaker Roles</a>. </p>  <p>To be able to pass this role to Amazon
      * SageMaker, the caller of this API must have the <code>iam:PassRole</code>
-     * permission.</p> </note>
+     * permission.</p> 
      */
     inline const Aws::String& GetExecutionRoleArn() const{ return m_executionRoleArn; }
 
@@ -181,9 +181,9 @@ namespace Model
      * instances or for batch transform jobs. Deploying on ML compute instances is part
      * of model hosting. For more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
-     * SageMaker Roles</a>. </p> <note> <p>To be able to pass this role to Amazon
+     * SageMaker Roles</a>. </p>  <p>To be able to pass this role to Amazon
      * SageMaker, the caller of this API must have the <code>iam:PassRole</code>
-     * permission.</p> </note>
+     * permission.</p> 
      */
     inline bool ExecutionRoleArnHasBeenSet() const { return m_executionRoleArnHasBeenSet; }
 
@@ -193,9 +193,9 @@ namespace Model
      * instances or for batch transform jobs. Deploying on ML compute instances is part
      * of model hosting. For more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
-     * SageMaker Roles</a>. </p> <note> <p>To be able to pass this role to Amazon
+     * SageMaker Roles</a>. </p>  <p>To be able to pass this role to Amazon
      * SageMaker, the caller of this API must have the <code>iam:PassRole</code>
-     * permission.</p> </note>
+     * permission.</p> 
      */
     inline void SetExecutionRoleArn(const Aws::String& value) { m_executionRoleArnHasBeenSet = true; m_executionRoleArn = value; }
 
@@ -205,9 +205,9 @@ namespace Model
      * instances or for batch transform jobs. Deploying on ML compute instances is part
      * of model hosting. For more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
-     * SageMaker Roles</a>. </p> <note> <p>To be able to pass this role to Amazon
+     * SageMaker Roles</a>. </p>  <p>To be able to pass this role to Amazon
      * SageMaker, the caller of this API must have the <code>iam:PassRole</code>
-     * permission.</p> </note>
+     * permission.</p> 
      */
     inline void SetExecutionRoleArn(Aws::String&& value) { m_executionRoleArnHasBeenSet = true; m_executionRoleArn = std::move(value); }
 
@@ -217,9 +217,9 @@ namespace Model
      * instances or for batch transform jobs. Deploying on ML compute instances is part
      * of model hosting. For more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
-     * SageMaker Roles</a>. </p> <note> <p>To be able to pass this role to Amazon
+     * SageMaker Roles</a>. </p>  <p>To be able to pass this role to Amazon
      * SageMaker, the caller of this API must have the <code>iam:PassRole</code>
-     * permission.</p> </note>
+     * permission.</p> 
      */
     inline void SetExecutionRoleArn(const char* value) { m_executionRoleArnHasBeenSet = true; m_executionRoleArn.assign(value); }
 
@@ -229,9 +229,9 @@ namespace Model
      * instances or for batch transform jobs. Deploying on ML compute instances is part
      * of model hosting. For more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
-     * SageMaker Roles</a>. </p> <note> <p>To be able to pass this role to Amazon
+     * SageMaker Roles</a>. </p>  <p>To be able to pass this role to Amazon
      * SageMaker, the caller of this API must have the <code>iam:PassRole</code>
-     * permission.</p> </note>
+     * permission.</p> 
      */
     inline CreateModelRequest& WithExecutionRoleArn(const Aws::String& value) { SetExecutionRoleArn(value); return *this;}
 
@@ -241,9 +241,9 @@ namespace Model
      * instances or for batch transform jobs. Deploying on ML compute instances is part
      * of model hosting. For more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
-     * SageMaker Roles</a>. </p> <note> <p>To be able to pass this role to Amazon
+     * SageMaker Roles</a>. </p>  <p>To be able to pass this role to Amazon
      * SageMaker, the caller of this API must have the <code>iam:PassRole</code>
-     * permission.</p> </note>
+     * permission.</p> 
      */
     inline CreateModelRequest& WithExecutionRoleArn(Aws::String&& value) { SetExecutionRoleArn(std::move(value)); return *this;}
 
@@ -253,9 +253,9 @@ namespace Model
      * instances or for batch transform jobs. Deploying on ML compute instances is part
      * of model hosting. For more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
-     * SageMaker Roles</a>. </p> <note> <p>To be able to pass this role to Amazon
+     * SageMaker Roles</a>. </p>  <p>To be able to pass this role to Amazon
      * SageMaker, the caller of this API must have the <code>iam:PassRole</code>
-     * permission.</p> </note>
+     * permission.</p> 
      */
     inline CreateModelRequest& WithExecutionRoleArn(const char* value) { SetExecutionRoleArn(value); return *this;}
 

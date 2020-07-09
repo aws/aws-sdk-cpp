@@ -954,12 +954,12 @@ namespace Model
          * outbound call to a contact, and then puts the contact in queue, that's when the
          * call is routed to the agent, like any other inbound case.</p> <p>There is a 60
          * second dialing timeout for this operation. If the call is not connected after 60
-         * seconds, it fails.</p> <note> <p>UK numbers with a 447 prefix are not allowed by
+         * seconds, it fails.</p>  <p>UK numbers with a 447 prefix are not allowed by
          * default. Before you can dial these UK mobile numbers, you must submit a service
          * quota increase request. For more information, see <a
          * href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Amazon
          * Connect Service Quotas</a> in the <i>Amazon Connect Administrator Guide</i>.
-         * </p> </note><p><h3>See Also:</h3>   <a
+         * </p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StartOutboundVoiceContact">AWS
          * API Reference</a></p>
          */
@@ -973,12 +973,12 @@ namespace Model
          * outbound call to a contact, and then puts the contact in queue, that's when the
          * call is routed to the agent, like any other inbound case.</p> <p>There is a 60
          * second dialing timeout for this operation. If the call is not connected after 60
-         * seconds, it fails.</p> <note> <p>UK numbers with a 447 prefix are not allowed by
+         * seconds, it fails.</p>  <p>UK numbers with a 447 prefix are not allowed by
          * default. Before you can dial these UK mobile numbers, you must submit a service
          * quota increase request. For more information, see <a
          * href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Amazon
          * Connect Service Quotas</a> in the <i>Amazon Connect Administrator Guide</i>.
-         * </p> </note><p><h3>See Also:</h3>   <a
+         * </p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StartOutboundVoiceContact">AWS
          * API Reference</a></p>
          *
@@ -994,12 +994,12 @@ namespace Model
          * outbound call to a contact, and then puts the contact in queue, that's when the
          * call is routed to the agent, like any other inbound case.</p> <p>There is a 60
          * second dialing timeout for this operation. If the call is not connected after 60
-         * seconds, it fails.</p> <note> <p>UK numbers with a 447 prefix are not allowed by
+         * seconds, it fails.</p>  <p>UK numbers with a 447 prefix are not allowed by
          * default. Before you can dial these UK mobile numbers, you must submit a service
          * quota increase request. For more information, see <a
          * href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Amazon
          * Connect Service Quotas</a> in the <i>Amazon Connect Administrator Guide</i>.
-         * </p> </note><p><h3>See Also:</h3>   <a
+         * </p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StartOutboundVoiceContact">AWS
          * API Reference</a></p>
          *
@@ -1196,7 +1196,7 @@ namespace Model
         virtual void UpdateUserHierarchyAsync(const Model::UpdateUserHierarchyRequest& request, const UpdateUserHierarchyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates the identity information for the specified user.</p> <important>
+         * <p>Updates the identity information for the specified user.</p> 
          * <p>Someone with the ability to invoke <code>UpdateUserIndentityInfo</code> can
          * change the login credentials of other users by changing their email address.
          * This poses a security risk to your organization. They can change the email
@@ -1205,14 +1205,14 @@ namespace Model
          * <code>UpdateUserIndentityInfo</code>. For more information, see <a
          * href="https://docs.aws.amazon.com/connect/latest/adminguide/security-profile-best-practices.html">Best
          * Practices for Security Profiles</a> in the <i>Amazon Connect Administrator
-         * Guide</i>.</p> </important><p><h3>See Also:</h3>   <a
+         * Guide</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateUserIdentityInfo">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateUserIdentityInfoOutcome UpdateUserIdentityInfo(const Model::UpdateUserIdentityInfoRequest& request) const;
 
         /**
-         * <p>Updates the identity information for the specified user.</p> <important>
+         * <p>Updates the identity information for the specified user.</p> 
          * <p>Someone with the ability to invoke <code>UpdateUserIndentityInfo</code> can
          * change the login credentials of other users by changing their email address.
          * This poses a security risk to your organization. They can change the email
@@ -1221,7 +1221,7 @@ namespace Model
          * <code>UpdateUserIndentityInfo</code>. For more information, see <a
          * href="https://docs.aws.amazon.com/connect/latest/adminguide/security-profile-best-practices.html">Best
          * Practices for Security Profiles</a> in the <i>Amazon Connect Administrator
-         * Guide</i>.</p> </important><p><h3>See Also:</h3>   <a
+         * Guide</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateUserIdentityInfo">AWS
          * API Reference</a></p>
          *
@@ -1230,7 +1230,7 @@ namespace Model
         virtual Model::UpdateUserIdentityInfoOutcomeCallable UpdateUserIdentityInfoCallable(const Model::UpdateUserIdentityInfoRequest& request) const;
 
         /**
-         * <p>Updates the identity information for the specified user.</p> <important>
+         * <p>Updates the identity information for the specified user.</p> 
          * <p>Someone with the ability to invoke <code>UpdateUserIndentityInfo</code> can
          * change the login credentials of other users by changing their email address.
          * This poses a security risk to your organization. They can change the email
@@ -1239,7 +1239,7 @@ namespace Model
          * <code>UpdateUserIndentityInfo</code>. For more information, see <a
          * href="https://docs.aws.amazon.com/connect/latest/adminguide/security-profile-best-practices.html">Best
          * Practices for Security Profiles</a> in the <i>Amazon Connect Administrator
-         * Guide</i>.</p> </important><p><h3>See Also:</h3>   <a
+         * Guide</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateUserIdentityInfo">AWS
          * API Reference</a></p>
          *

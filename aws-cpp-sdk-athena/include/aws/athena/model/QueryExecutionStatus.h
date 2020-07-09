@@ -47,10 +47,10 @@ namespace Model
      * execution phase. <code>SUCCEEDED</code> indicates that the query completed
      * without errors. <code>FAILED</code> indicates that the query experienced an
      * error and did not complete processing. <code>CANCELLED</code> indicates that a
-     * user input interrupted query execution.</p> <note> <p>Athena automatically
+     * user input interrupted query execution.</p>  <p>Athena automatically
      * retries your queries in cases of certain transient errors. As a result, you may
      * see the query state transition from <code>RUNNING</code> or <code>FAILED</code>
-     * to <code>QUEUED</code>. </p> </note>
+     * to <code>QUEUED</code>. </p> 
      */
     inline const QueryExecutionState& GetState() const{ return m_state; }
 
@@ -61,10 +61,10 @@ namespace Model
      * execution phase. <code>SUCCEEDED</code> indicates that the query completed
      * without errors. <code>FAILED</code> indicates that the query experienced an
      * error and did not complete processing. <code>CANCELLED</code> indicates that a
-     * user input interrupted query execution.</p> <note> <p>Athena automatically
+     * user input interrupted query execution.</p>  <p>Athena automatically
      * retries your queries in cases of certain transient errors. As a result, you may
      * see the query state transition from <code>RUNNING</code> or <code>FAILED</code>
-     * to <code>QUEUED</code>. </p> </note>
+     * to <code>QUEUED</code>. </p> 
      */
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
 
@@ -75,10 +75,10 @@ namespace Model
      * execution phase. <code>SUCCEEDED</code> indicates that the query completed
      * without errors. <code>FAILED</code> indicates that the query experienced an
      * error and did not complete processing. <code>CANCELLED</code> indicates that a
-     * user input interrupted query execution.</p> <note> <p>Athena automatically
+     * user input interrupted query execution.</p>  <p>Athena automatically
      * retries your queries in cases of certain transient errors. As a result, you may
      * see the query state transition from <code>RUNNING</code> or <code>FAILED</code>
-     * to <code>QUEUED</code>. </p> </note>
+     * to <code>QUEUED</code>. </p> 
      */
     inline void SetState(const QueryExecutionState& value) { m_stateHasBeenSet = true; m_state = value; }
 
@@ -89,10 +89,10 @@ namespace Model
      * execution phase. <code>SUCCEEDED</code> indicates that the query completed
      * without errors. <code>FAILED</code> indicates that the query experienced an
      * error and did not complete processing. <code>CANCELLED</code> indicates that a
-     * user input interrupted query execution.</p> <note> <p>Athena automatically
+     * user input interrupted query execution.</p>  <p>Athena automatically
      * retries your queries in cases of certain transient errors. As a result, you may
      * see the query state transition from <code>RUNNING</code> or <code>FAILED</code>
-     * to <code>QUEUED</code>. </p> </note>
+     * to <code>QUEUED</code>. </p> 
      */
     inline void SetState(QueryExecutionState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
 
@@ -103,10 +103,10 @@ namespace Model
      * execution phase. <code>SUCCEEDED</code> indicates that the query completed
      * without errors. <code>FAILED</code> indicates that the query experienced an
      * error and did not complete processing. <code>CANCELLED</code> indicates that a
-     * user input interrupted query execution.</p> <note> <p>Athena automatically
+     * user input interrupted query execution.</p>  <p>Athena automatically
      * retries your queries in cases of certain transient errors. As a result, you may
      * see the query state transition from <code>RUNNING</code> or <code>FAILED</code>
-     * to <code>QUEUED</code>. </p> </note>
+     * to <code>QUEUED</code>. </p> 
      */
     inline QueryExecutionStatus& WithState(const QueryExecutionState& value) { SetState(value); return *this;}
 
@@ -117,10 +117,10 @@ namespace Model
      * execution phase. <code>SUCCEEDED</code> indicates that the query completed
      * without errors. <code>FAILED</code> indicates that the query experienced an
      * error and did not complete processing. <code>CANCELLED</code> indicates that a
-     * user input interrupted query execution.</p> <note> <p>Athena automatically
+     * user input interrupted query execution.</p>  <p>Athena automatically
      * retries your queries in cases of certain transient errors. As a result, you may
      * see the query state transition from <code>RUNNING</code> or <code>FAILED</code>
-     * to <code>QUEUED</code>. </p> </note>
+     * to <code>QUEUED</code>. </p> 
      */
     inline QueryExecutionStatus& WithState(QueryExecutionState&& value) { SetState(std::move(value)); return *this;}
 

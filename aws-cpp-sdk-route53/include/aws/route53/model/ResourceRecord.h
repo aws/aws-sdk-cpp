@@ -23,9 +23,9 @@ namespace Model
 {
 
   /**
-   * <p>Information specific to the resource record.</p> <note> <p>If you're creating
+   * <p>Information specific to the resource record.</p>  <p>If you're creating
    * an alias resource record set, omit <code>ResourceRecord</code>.</p>
-   * </note><p><h3>See Also:</h3>   <a
+   * <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ResourceRecord">AWS
    * API Reference</a></p>
    */
@@ -47,8 +47,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/ResourceRecordTypes.html">Supported
      * DNS Resource Record Types</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
      * <p>You can specify more than one value for all record types except
-     * <code>CNAME</code> and <code>SOA</code>. </p> <note> <p>If you're creating an
-     * alias resource record set, omit <code>Value</code>.</p> </note>
+     * <code>CNAME</code> and <code>SOA</code>. </p>  <p>If you're creating an
+     * alias resource record set, omit <code>Value</code>.</p> 
      */
     inline const Aws::String& GetValue() const{ return m_value; }
 
@@ -60,8 +60,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/ResourceRecordTypes.html">Supported
      * DNS Resource Record Types</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
      * <p>You can specify more than one value for all record types except
-     * <code>CNAME</code> and <code>SOA</code>. </p> <note> <p>If you're creating an
-     * alias resource record set, omit <code>Value</code>.</p> </note>
+     * <code>CNAME</code> and <code>SOA</code>. </p>  <p>If you're creating an
+     * alias resource record set, omit <code>Value</code>.</p> 
      */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
 
@@ -73,8 +73,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/ResourceRecordTypes.html">Supported
      * DNS Resource Record Types</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
      * <p>You can specify more than one value for all record types except
-     * <code>CNAME</code> and <code>SOA</code>. </p> <note> <p>If you're creating an
-     * alias resource record set, omit <code>Value</code>.</p> </note>
+     * <code>CNAME</code> and <code>SOA</code>. </p>  <p>If you're creating an
+     * alias resource record set, omit <code>Value</code>.</p> 
      */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
 
@@ -86,8 +86,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/ResourceRecordTypes.html">Supported
      * DNS Resource Record Types</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
      * <p>You can specify more than one value for all record types except
-     * <code>CNAME</code> and <code>SOA</code>. </p> <note> <p>If you're creating an
-     * alias resource record set, omit <code>Value</code>.</p> </note>
+     * <code>CNAME</code> and <code>SOA</code>. </p>  <p>If you're creating an
+     * alias resource record set, omit <code>Value</code>.</p> 
      */
     inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
 
@@ -99,8 +99,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/ResourceRecordTypes.html">Supported
      * DNS Resource Record Types</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
      * <p>You can specify more than one value for all record types except
-     * <code>CNAME</code> and <code>SOA</code>. </p> <note> <p>If you're creating an
-     * alias resource record set, omit <code>Value</code>.</p> </note>
+     * <code>CNAME</code> and <code>SOA</code>. </p>  <p>If you're creating an
+     * alias resource record set, omit <code>Value</code>.</p> 
      */
     inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
 
@@ -112,8 +112,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/ResourceRecordTypes.html">Supported
      * DNS Resource Record Types</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
      * <p>You can specify more than one value for all record types except
-     * <code>CNAME</code> and <code>SOA</code>. </p> <note> <p>If you're creating an
-     * alias resource record set, omit <code>Value</code>.</p> </note>
+     * <code>CNAME</code> and <code>SOA</code>. </p>  <p>If you're creating an
+     * alias resource record set, omit <code>Value</code>.</p> 
      */
     inline ResourceRecord& WithValue(const Aws::String& value) { SetValue(value); return *this;}
 
@@ -125,8 +125,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/ResourceRecordTypes.html">Supported
      * DNS Resource Record Types</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
      * <p>You can specify more than one value for all record types except
-     * <code>CNAME</code> and <code>SOA</code>. </p> <note> <p>If you're creating an
-     * alias resource record set, omit <code>Value</code>.</p> </note>
+     * <code>CNAME</code> and <code>SOA</code>. </p>  <p>If you're creating an
+     * alias resource record set, omit <code>Value</code>.</p> 
      */
     inline ResourceRecord& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
 
@@ -138,8 +138,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/ResourceRecordTypes.html">Supported
      * DNS Resource Record Types</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
      * <p>You can specify more than one value for all record types except
-     * <code>CNAME</code> and <code>SOA</code>. </p> <note> <p>If you're creating an
-     * alias resource record set, omit <code>Value</code>.</p> </note>
+     * <code>CNAME</code> and <code>SOA</code>. </p>  <p>If you're creating an
+     * alias resource record set, omit <code>Value</code>.</p> 
      */
     inline ResourceRecord& WithValue(const char* value) { SetValue(value); return *this;}
 

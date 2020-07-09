@@ -53,10 +53,10 @@ namespace Model
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
      * <code>--cap-add</code> option to <a
-     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> 
      * <p>The <code>SYS_PTRACE</code> capability is supported for tasks that use the
      * Fargate launch type if they are also using platform version 1.4.0. The other
-     * capabilities are not supported for any platform versions.</p> </note> <p>Valid
+     * capabilities are not supported for any platform versions.</p>  <p>Valid
      * values: <code>"ALL" | "AUDIT_CONTROL" | "AUDIT_WRITE" | "BLOCK_SUSPEND" |
      * "CHOWN" | "DAC_OVERRIDE" | "DAC_READ_SEARCH" | "FOWNER" | "FSETID" | "IPC_LOCK"
      * | "IPC_OWNER" | "KILL" | "LEASE" | "LINUX_IMMUTABLE" | "MAC_ADMIN" |
@@ -76,10 +76,10 @@ namespace Model
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
      * <code>--cap-add</code> option to <a
-     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> 
      * <p>The <code>SYS_PTRACE</code> capability is supported for tasks that use the
      * Fargate launch type if they are also using platform version 1.4.0. The other
-     * capabilities are not supported for any platform versions.</p> </note> <p>Valid
+     * capabilities are not supported for any platform versions.</p>  <p>Valid
      * values: <code>"ALL" | "AUDIT_CONTROL" | "AUDIT_WRITE" | "BLOCK_SUSPEND" |
      * "CHOWN" | "DAC_OVERRIDE" | "DAC_READ_SEARCH" | "FOWNER" | "FSETID" | "IPC_LOCK"
      * | "IPC_OWNER" | "KILL" | "LEASE" | "LINUX_IMMUTABLE" | "MAC_ADMIN" |
@@ -99,10 +99,10 @@ namespace Model
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
      * <code>--cap-add</code> option to <a
-     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> 
      * <p>The <code>SYS_PTRACE</code> capability is supported for tasks that use the
      * Fargate launch type if they are also using platform version 1.4.0. The other
-     * capabilities are not supported for any platform versions.</p> </note> <p>Valid
+     * capabilities are not supported for any platform versions.</p>  <p>Valid
      * values: <code>"ALL" | "AUDIT_CONTROL" | "AUDIT_WRITE" | "BLOCK_SUSPEND" |
      * "CHOWN" | "DAC_OVERRIDE" | "DAC_READ_SEARCH" | "FOWNER" | "FSETID" | "IPC_LOCK"
      * | "IPC_OWNER" | "KILL" | "LEASE" | "LINUX_IMMUTABLE" | "MAC_ADMIN" |
@@ -122,10 +122,10 @@ namespace Model
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
      * <code>--cap-add</code> option to <a
-     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> 
      * <p>The <code>SYS_PTRACE</code> capability is supported for tasks that use the
      * Fargate launch type if they are also using platform version 1.4.0. The other
-     * capabilities are not supported for any platform versions.</p> </note> <p>Valid
+     * capabilities are not supported for any platform versions.</p>  <p>Valid
      * values: <code>"ALL" | "AUDIT_CONTROL" | "AUDIT_WRITE" | "BLOCK_SUSPEND" |
      * "CHOWN" | "DAC_OVERRIDE" | "DAC_READ_SEARCH" | "FOWNER" | "FSETID" | "IPC_LOCK"
      * | "IPC_OWNER" | "KILL" | "LEASE" | "LINUX_IMMUTABLE" | "MAC_ADMIN" |
@@ -145,10 +145,10 @@ namespace Model
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
      * <code>--cap-add</code> option to <a
-     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> 
      * <p>The <code>SYS_PTRACE</code> capability is supported for tasks that use the
      * Fargate launch type if they are also using platform version 1.4.0. The other
-     * capabilities are not supported for any platform versions.</p> </note> <p>Valid
+     * capabilities are not supported for any platform versions.</p>  <p>Valid
      * values: <code>"ALL" | "AUDIT_CONTROL" | "AUDIT_WRITE" | "BLOCK_SUSPEND" |
      * "CHOWN" | "DAC_OVERRIDE" | "DAC_READ_SEARCH" | "FOWNER" | "FSETID" | "IPC_LOCK"
      * | "IPC_OWNER" | "KILL" | "LEASE" | "LINUX_IMMUTABLE" | "MAC_ADMIN" |
@@ -168,10 +168,10 @@ namespace Model
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
      * <code>--cap-add</code> option to <a
-     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> 
      * <p>The <code>SYS_PTRACE</code> capability is supported for tasks that use the
      * Fargate launch type if they are also using platform version 1.4.0. The other
-     * capabilities are not supported for any platform versions.</p> </note> <p>Valid
+     * capabilities are not supported for any platform versions.</p>  <p>Valid
      * values: <code>"ALL" | "AUDIT_CONTROL" | "AUDIT_WRITE" | "BLOCK_SUSPEND" |
      * "CHOWN" | "DAC_OVERRIDE" | "DAC_READ_SEARCH" | "FOWNER" | "FSETID" | "IPC_LOCK"
      * | "IPC_OWNER" | "KILL" | "LEASE" | "LINUX_IMMUTABLE" | "MAC_ADMIN" |
@@ -191,10 +191,10 @@ namespace Model
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
      * <code>--cap-add</code> option to <a
-     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> 
      * <p>The <code>SYS_PTRACE</code> capability is supported for tasks that use the
      * Fargate launch type if they are also using platform version 1.4.0. The other
-     * capabilities are not supported for any platform versions.</p> </note> <p>Valid
+     * capabilities are not supported for any platform versions.</p>  <p>Valid
      * values: <code>"ALL" | "AUDIT_CONTROL" | "AUDIT_WRITE" | "BLOCK_SUSPEND" |
      * "CHOWN" | "DAC_OVERRIDE" | "DAC_READ_SEARCH" | "FOWNER" | "FSETID" | "IPC_LOCK"
      * | "IPC_OWNER" | "KILL" | "LEASE" | "LINUX_IMMUTABLE" | "MAC_ADMIN" |
@@ -214,10 +214,10 @@ namespace Model
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
      * <code>--cap-add</code> option to <a
-     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> 
      * <p>The <code>SYS_PTRACE</code> capability is supported for tasks that use the
      * Fargate launch type if they are also using platform version 1.4.0. The other
-     * capabilities are not supported for any platform versions.</p> </note> <p>Valid
+     * capabilities are not supported for any platform versions.</p>  <p>Valid
      * values: <code>"ALL" | "AUDIT_CONTROL" | "AUDIT_WRITE" | "BLOCK_SUSPEND" |
      * "CHOWN" | "DAC_OVERRIDE" | "DAC_READ_SEARCH" | "FOWNER" | "FSETID" | "IPC_LOCK"
      * | "IPC_OWNER" | "KILL" | "LEASE" | "LINUX_IMMUTABLE" | "MAC_ADMIN" |
@@ -237,10 +237,10 @@ namespace Model
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
      * <code>--cap-add</code> option to <a
-     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> 
      * <p>The <code>SYS_PTRACE</code> capability is supported for tasks that use the
      * Fargate launch type if they are also using platform version 1.4.0. The other
-     * capabilities are not supported for any platform versions.</p> </note> <p>Valid
+     * capabilities are not supported for any platform versions.</p>  <p>Valid
      * values: <code>"ALL" | "AUDIT_CONTROL" | "AUDIT_WRITE" | "BLOCK_SUSPEND" |
      * "CHOWN" | "DAC_OVERRIDE" | "DAC_READ_SEARCH" | "FOWNER" | "FSETID" | "IPC_LOCK"
      * | "IPC_OWNER" | "KILL" | "LEASE" | "LINUX_IMMUTABLE" | "MAC_ADMIN" |

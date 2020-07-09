@@ -708,9 +708,9 @@ namespace Model
      * <p> Set to true to report the status of a build's start and finish to your
      * source provider. This option is valid only when your source provider is GitHub,
      * GitHub Enterprise, or Bitbucket. If this is set and you use a different source
-     * provider, an invalidInputException is thrown. </p> <note> <p> The status of a
+     * provider, an invalidInputException is thrown. </p>  <p> The status of a
      * build triggered by a webhook is always reported to your source provider. </p>
-     * </note>
+     * 
      */
     inline bool GetReportBuildStatus() const{ return m_reportBuildStatus; }
 
@@ -718,9 +718,9 @@ namespace Model
      * <p> Set to true to report the status of a build's start and finish to your
      * source provider. This option is valid only when your source provider is GitHub,
      * GitHub Enterprise, or Bitbucket. If this is set and you use a different source
-     * provider, an invalidInputException is thrown. </p> <note> <p> The status of a
+     * provider, an invalidInputException is thrown. </p>  <p> The status of a
      * build triggered by a webhook is always reported to your source provider. </p>
-     * </note>
+     * 
      */
     inline bool ReportBuildStatusHasBeenSet() const { return m_reportBuildStatusHasBeenSet; }
 
@@ -728,9 +728,9 @@ namespace Model
      * <p> Set to true to report the status of a build's start and finish to your
      * source provider. This option is valid only when your source provider is GitHub,
      * GitHub Enterprise, or Bitbucket. If this is set and you use a different source
-     * provider, an invalidInputException is thrown. </p> <note> <p> The status of a
+     * provider, an invalidInputException is thrown. </p>  <p> The status of a
      * build triggered by a webhook is always reported to your source provider. </p>
-     * </note>
+     * 
      */
     inline void SetReportBuildStatus(bool value) { m_reportBuildStatusHasBeenSet = true; m_reportBuildStatus = value; }
 
@@ -738,9 +738,9 @@ namespace Model
      * <p> Set to true to report the status of a build's start and finish to your
      * source provider. This option is valid only when your source provider is GitHub,
      * GitHub Enterprise, or Bitbucket. If this is set and you use a different source
-     * provider, an invalidInputException is thrown. </p> <note> <p> The status of a
+     * provider, an invalidInputException is thrown. </p>  <p> The status of a
      * build triggered by a webhook is always reported to your source provider. </p>
-     * </note>
+     * 
      */
     inline ProjectSource& WithReportBuildStatus(bool value) { SetReportBuildStatus(value); return *this;}
 

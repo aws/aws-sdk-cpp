@@ -44,9 +44,9 @@ namespace Model
     /**
      * <p>The routing policy that you want to apply to all Route 53 DNS records that
      * AWS Cloud Map creates when you register an instance and specify this
-     * service.</p> <note> <p>If you want to use this service to register instances
+     * service.</p>  <p>If you want to use this service to register instances
      * that create alias records, specify <code>WEIGHTED</code> for the routing
-     * policy.</p> </note> <p>You can specify the following values:</p> <p>
+     * policy.</p>  <p>You can specify the following values:</p> <p>
      * <b>MULTIVALUE</b> </p> <p>If you define a health check for the service and the
      * health check is healthy, Route 53 returns the applicable value for up to eight
      * instances.</p> <p>For example, suppose the service includes configurations for
@@ -79,9 +79,9 @@ namespace Model
     /**
      * <p>The routing policy that you want to apply to all Route 53 DNS records that
      * AWS Cloud Map creates when you register an instance and specify this
-     * service.</p> <note> <p>If you want to use this service to register instances
+     * service.</p>  <p>If you want to use this service to register instances
      * that create alias records, specify <code>WEIGHTED</code> for the routing
-     * policy.</p> </note> <p>You can specify the following values:</p> <p>
+     * policy.</p>  <p>You can specify the following values:</p> <p>
      * <b>MULTIVALUE</b> </p> <p>If you define a health check for the service and the
      * health check is healthy, Route 53 returns the applicable value for up to eight
      * instances.</p> <p>For example, suppose the service includes configurations for
@@ -114,9 +114,9 @@ namespace Model
     /**
      * <p>The routing policy that you want to apply to all Route 53 DNS records that
      * AWS Cloud Map creates when you register an instance and specify this
-     * service.</p> <note> <p>If you want to use this service to register instances
+     * service.</p>  <p>If you want to use this service to register instances
      * that create alias records, specify <code>WEIGHTED</code> for the routing
-     * policy.</p> </note> <p>You can specify the following values:</p> <p>
+     * policy.</p>  <p>You can specify the following values:</p> <p>
      * <b>MULTIVALUE</b> </p> <p>If you define a health check for the service and the
      * health check is healthy, Route 53 returns the applicable value for up to eight
      * instances.</p> <p>For example, suppose the service includes configurations for
@@ -149,9 +149,9 @@ namespace Model
     /**
      * <p>The routing policy that you want to apply to all Route 53 DNS records that
      * AWS Cloud Map creates when you register an instance and specify this
-     * service.</p> <note> <p>If you want to use this service to register instances
+     * service.</p>  <p>If you want to use this service to register instances
      * that create alias records, specify <code>WEIGHTED</code> for the routing
-     * policy.</p> </note> <p>You can specify the following values:</p> <p>
+     * policy.</p>  <p>You can specify the following values:</p> <p>
      * <b>MULTIVALUE</b> </p> <p>If you define a health check for the service and the
      * health check is healthy, Route 53 returns the applicable value for up to eight
      * instances.</p> <p>For example, suppose the service includes configurations for
@@ -184,9 +184,9 @@ namespace Model
     /**
      * <p>The routing policy that you want to apply to all Route 53 DNS records that
      * AWS Cloud Map creates when you register an instance and specify this
-     * service.</p> <note> <p>If you want to use this service to register instances
+     * service.</p>  <p>If you want to use this service to register instances
      * that create alias records, specify <code>WEIGHTED</code> for the routing
-     * policy.</p> </note> <p>You can specify the following values:</p> <p>
+     * policy.</p>  <p>You can specify the following values:</p> <p>
      * <b>MULTIVALUE</b> </p> <p>If you define a health check for the service and the
      * health check is healthy, Route 53 returns the applicable value for up to eight
      * instances.</p> <p>For example, suppose the service includes configurations for
@@ -219,9 +219,9 @@ namespace Model
     /**
      * <p>The routing policy that you want to apply to all Route 53 DNS records that
      * AWS Cloud Map creates when you register an instance and specify this
-     * service.</p> <note> <p>If you want to use this service to register instances
+     * service.</p>  <p>If you want to use this service to register instances
      * that create alias records, specify <code>WEIGHTED</code> for the routing
-     * policy.</p> </note> <p>You can specify the following values:</p> <p>
+     * policy.</p>  <p>You can specify the following values:</p> <p>
      * <b>MULTIVALUE</b> </p> <p>If you define a health check for the service and the
      * health check is healthy, Route 53 returns the applicable value for up to eight
      * instances.</p> <p>For example, suppose the service includes configurations for

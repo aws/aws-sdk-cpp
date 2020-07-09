@@ -60,22 +60,22 @@ namespace Model
 
     /**
      * <p>The maximum number of emails that Amazon SES can accept from the user's
-     * account per second.</p> <note> <p>The rate at which Amazon SES accepts the
-     * user's messages might be less than the maximum send rate.</p> </note>
+     * account per second.</p>  <p>The rate at which Amazon SES accepts the
+     * user's messages might be less than the maximum send rate.</p> 
      */
     inline double GetMaxSendRate() const{ return m_maxSendRate; }
 
     /**
      * <p>The maximum number of emails that Amazon SES can accept from the user's
-     * account per second.</p> <note> <p>The rate at which Amazon SES accepts the
-     * user's messages might be less than the maximum send rate.</p> </note>
+     * account per second.</p>  <p>The rate at which Amazon SES accepts the
+     * user's messages might be less than the maximum send rate.</p> 
      */
     inline void SetMaxSendRate(double value) { m_maxSendRate = value; }
 
     /**
      * <p>The maximum number of emails that Amazon SES can accept from the user's
-     * account per second.</p> <note> <p>The rate at which Amazon SES accepts the
-     * user's messages might be less than the maximum send rate.</p> </note>
+     * account per second.</p>  <p>The rate at which Amazon SES accepts the
+     * user's messages might be less than the maximum send rate.</p> 
      */
     inline GetSendQuotaResult& WithMaxSendRate(double value) { SetMaxSendRate(value); return *this;}
 

@@ -37,7 +37,7 @@ namespace Model
    * CMK</a>. Grant constraints are not applied to operations that do not support an
    * encryption context, such as cryptographic operations with asymmetric CMKs and
    * management operations, such as <a>DescribeKey</a> or
-   * <a>ScheduleKeyDeletion</a>.</p> <important> <p>In a cryptographic operation, the
+   * <a>ScheduleKeyDeletion</a>.</p>  <p>In a cryptographic operation, the
    * encryption context in the decryption operation must be an exact, case-sensitive
    * match for the keys and values in the encryption context of the encryption
    * operation. Only the order of the pairs can vary.</p> <p>However, in a grant
@@ -49,7 +49,7 @@ namespace Model
    * details, see <a
    * href="https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-encryption-context">kms:EncryptionContext:</a>
    * in the <i> <i>AWS Key Management Service Developer Guide</i> </i>.</p>
-   * </important><p><h3>See Also:</h3>   <a
+   * <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/GrantConstraints">AWS
    * API Reference</a></p>
    */

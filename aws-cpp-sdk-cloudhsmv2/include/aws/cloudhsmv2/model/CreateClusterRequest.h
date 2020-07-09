@@ -224,28 +224,44 @@ namespace Model
     inline CreateClusterRequest& WithSourceBackupId(const char* value) { SetSourceBackupId(value); return *this;}
 
 
-    
+    /**
+     * <p>Tags to apply to the CloudHSM cluster during creation.</p>
+     */
     inline const Aws::Vector<Tag>& GetTagList() const{ return m_tagList; }
 
-    
+    /**
+     * <p>Tags to apply to the CloudHSM cluster during creation.</p>
+     */
     inline bool TagListHasBeenSet() const { return m_tagListHasBeenSet; }
 
-    
+    /**
+     * <p>Tags to apply to the CloudHSM cluster during creation.</p>
+     */
     inline void SetTagList(const Aws::Vector<Tag>& value) { m_tagListHasBeenSet = true; m_tagList = value; }
 
-    
+    /**
+     * <p>Tags to apply to the CloudHSM cluster during creation.</p>
+     */
     inline void SetTagList(Aws::Vector<Tag>&& value) { m_tagListHasBeenSet = true; m_tagList = std::move(value); }
 
-    
+    /**
+     * <p>Tags to apply to the CloudHSM cluster during creation.</p>
+     */
     inline CreateClusterRequest& WithTagList(const Aws::Vector<Tag>& value) { SetTagList(value); return *this;}
 
-    
+    /**
+     * <p>Tags to apply to the CloudHSM cluster during creation.</p>
+     */
     inline CreateClusterRequest& WithTagList(Aws::Vector<Tag>&& value) { SetTagList(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>Tags to apply to the CloudHSM cluster during creation.</p>
+     */
     inline CreateClusterRequest& AddTagList(const Tag& value) { m_tagListHasBeenSet = true; m_tagList.push_back(value); return *this; }
 
-    
+    /**
+     * <p>Tags to apply to the CloudHSM cluster during creation.</p>
+     */
     inline CreateClusterRequest& AddTagList(Tag&& value) { m_tagListHasBeenSet = true; m_tagList.push_back(std::move(value)); return *this; }
 
   private:

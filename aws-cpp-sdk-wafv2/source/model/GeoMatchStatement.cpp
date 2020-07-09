@@ -19,12 +19,14 @@ namespace Model
 {
 
 GeoMatchStatement::GeoMatchStatement() : 
-    m_countryCodesHasBeenSet(false)
+    m_countryCodesHasBeenSet(false),
+    m_forwardedIPConfigHasBeenSet(false)
 {
 }
 
 GeoMatchStatement::GeoMatchStatement(JsonView jsonValue) : 
-    m_countryCodesHasBeenSet(false)
+    m_countryCodesHasBeenSet(false),
+    m_forwardedIPConfigHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -39,6 +41,13 @@ GeoMatchStatement& GeoMatchStatement::operator =(JsonView jsonValue)
       m_countryCodes.push_back(CountryCodeMapper::GetCountryCodeForName(countryCodesJsonList[countryCodesIndex].AsString()));
     }
     m_countryCodesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ForwardedIPConfig"))
+  {
+    m_forwardedIPConfig = jsonValue.GetObject("ForwardedIPConfig");
+
+    m_forwardedIPConfigHasBeenSet = true;
   }
 
   return *this;
@@ -56,6 +65,12 @@ JsonValue GeoMatchStatement::Jsonize() const
      countryCodesJsonList[countryCodesIndex].AsString(CountryCodeMapper::GetNameForCountryCode(m_countryCodes[countryCodesIndex]));
    }
    payload.WithArray("CountryCodes", std::move(countryCodesJsonList));
+
+  }
+
+  if(m_forwardedIPConfigHasBeenSet)
+  {
+   payload.WithObject("ForwardedIPConfig", m_forwardedIPConfig.Jsonize());
 
   }
 

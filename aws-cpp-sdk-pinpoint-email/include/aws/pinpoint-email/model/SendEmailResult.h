@@ -40,64 +40,64 @@ namespace Model
 
     /**
      * <p>A unique identifier for the message that is generated when Amazon Pinpoint
-     * accepts the message.</p> <note> <p>It is possible for Amazon Pinpoint to accept
+     * accepts the message.</p>  <p>It is possible for Amazon Pinpoint to accept
      * a message without sending it. This can happen when the message you're trying to
      * send has an attachment doesn't pass a virus check, or when you send a templated
-     * email that contains invalid personalization content, for example.</p> </note>
+     * email that contains invalid personalization content, for example.</p> 
      */
     inline const Aws::String& GetMessageId() const{ return m_messageId; }
 
     /**
      * <p>A unique identifier for the message that is generated when Amazon Pinpoint
-     * accepts the message.</p> <note> <p>It is possible for Amazon Pinpoint to accept
+     * accepts the message.</p>  <p>It is possible for Amazon Pinpoint to accept
      * a message without sending it. This can happen when the message you're trying to
      * send has an attachment doesn't pass a virus check, or when you send a templated
-     * email that contains invalid personalization content, for example.</p> </note>
+     * email that contains invalid personalization content, for example.</p> 
      */
     inline void SetMessageId(const Aws::String& value) { m_messageId = value; }
 
     /**
      * <p>A unique identifier for the message that is generated when Amazon Pinpoint
-     * accepts the message.</p> <note> <p>It is possible for Amazon Pinpoint to accept
+     * accepts the message.</p>  <p>It is possible for Amazon Pinpoint to accept
      * a message without sending it. This can happen when the message you're trying to
      * send has an attachment doesn't pass a virus check, or when you send a templated
-     * email that contains invalid personalization content, for example.</p> </note>
+     * email that contains invalid personalization content, for example.</p> 
      */
     inline void SetMessageId(Aws::String&& value) { m_messageId = std::move(value); }
 
     /**
      * <p>A unique identifier for the message that is generated when Amazon Pinpoint
-     * accepts the message.</p> <note> <p>It is possible for Amazon Pinpoint to accept
+     * accepts the message.</p>  <p>It is possible for Amazon Pinpoint to accept
      * a message without sending it. This can happen when the message you're trying to
      * send has an attachment doesn't pass a virus check, or when you send a templated
-     * email that contains invalid personalization content, for example.</p> </note>
+     * email that contains invalid personalization content, for example.</p> 
      */
     inline void SetMessageId(const char* value) { m_messageId.assign(value); }
 
     /**
      * <p>A unique identifier for the message that is generated when Amazon Pinpoint
-     * accepts the message.</p> <note> <p>It is possible for Amazon Pinpoint to accept
+     * accepts the message.</p>  <p>It is possible for Amazon Pinpoint to accept
      * a message without sending it. This can happen when the message you're trying to
      * send has an attachment doesn't pass a virus check, or when you send a templated
-     * email that contains invalid personalization content, for example.</p> </note>
+     * email that contains invalid personalization content, for example.</p> 
      */
     inline SendEmailResult& WithMessageId(const Aws::String& value) { SetMessageId(value); return *this;}
 
     /**
      * <p>A unique identifier for the message that is generated when Amazon Pinpoint
-     * accepts the message.</p> <note> <p>It is possible for Amazon Pinpoint to accept
+     * accepts the message.</p>  <p>It is possible for Amazon Pinpoint to accept
      * a message without sending it. This can happen when the message you're trying to
      * send has an attachment doesn't pass a virus check, or when you send a templated
-     * email that contains invalid personalization content, for example.</p> </note>
+     * email that contains invalid personalization content, for example.</p> 
      */
     inline SendEmailResult& WithMessageId(Aws::String&& value) { SetMessageId(std::move(value)); return *this;}
 
     /**
      * <p>A unique identifier for the message that is generated when Amazon Pinpoint
-     * accepts the message.</p> <note> <p>It is possible for Amazon Pinpoint to accept
+     * accepts the message.</p>  <p>It is possible for Amazon Pinpoint to accept
      * a message without sending it. This can happen when the message you're trying to
      * send has an attachment doesn't pass a virus check, or when you send a templated
-     * email that contains invalid personalization content, for example.</p> </note>
+     * email that contains invalid personalization content, for example.</p> 
      */
     inline SendEmailResult& WithMessageId(const char* value) { SetMessageId(value); return *this;}
 

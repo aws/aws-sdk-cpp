@@ -171,22 +171,22 @@ namespace Model
 
 
         /**
-         * <p>The CancelJob operation cancels an unfinished job.</p> <note> <p>You can only
+         * <p>The CancelJob operation cancels an unfinished job.</p>  <p>You can only
          * cancel a job that has a status of <code>Submitted</code>. To prevent a pipeline
          * from starting to process a job while you're getting the job identifier, use
          * <a>UpdatePipelineStatus</a> to temporarily pause the pipeline.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/CancelJob">AWS
          * API Reference</a></p>
          */
         virtual Model::CancelJobOutcome CancelJob(const Model::CancelJobRequest& request) const;
 
         /**
-         * <p>The CancelJob operation cancels an unfinished job.</p> <note> <p>You can only
+         * <p>The CancelJob operation cancels an unfinished job.</p>  <p>You can only
          * cancel a job that has a status of <code>Submitted</code>. To prevent a pipeline
          * from starting to process a job while you're getting the job identifier, use
          * <a>UpdatePipelineStatus</a> to temporarily pause the pipeline.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/CancelJob">AWS
          * API Reference</a></p>
          *
@@ -195,11 +195,11 @@ namespace Model
         virtual Model::CancelJobOutcomeCallable CancelJobCallable(const Model::CancelJobRequest& request) const;
 
         /**
-         * <p>The CancelJob operation cancels an unfinished job.</p> <note> <p>You can only
+         * <p>The CancelJob operation cancels an unfinished job.</p>  <p>You can only
          * cancel a job that has a status of <code>Submitted</code>. To prevent a pipeline
          * from starting to process a job while you're getting the job identifier, use
          * <a>UpdatePipelineStatus</a> to temporarily pause the pipeline.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/CancelJob">AWS
          * API Reference</a></p>
          *
@@ -277,7 +277,7 @@ namespace Model
 
         /**
          * <p>The CreatePreset operation creates a preset with settings that you
-         * specify.</p> <important> <p>Elastic Transcoder checks the CreatePreset settings
+         * specify.</p>  <p>Elastic Transcoder checks the CreatePreset settings
          * to ensure that they meet Elastic Transcoder requirements and to determine
          * whether they comply with H.264 standards. If your settings are not valid for
          * Elastic Transcoder, Elastic Transcoder returns an HTTP 400 response
@@ -286,7 +286,7 @@ namespace Model
          * H.264 standard, Elastic Transcoder creates the preset and returns a warning
          * message in the response. This helps you determine whether your settings comply
          * with the H.264 standard while giving you greater flexibility with respect to the
-         * video that Elastic Transcoder produces.</p> </important> <p>Elastic Transcoder
+         * video that Elastic Transcoder produces.</p>  <p>Elastic Transcoder
          * uses the H.264 video-compression format. For more information, see the
          * International Telecommunication Union publication <i>Recommendation ITU-T H.264:
          * Advanced video coding for generic audiovisual services</i>.</p><p><h3>See
@@ -298,7 +298,7 @@ namespace Model
 
         /**
          * <p>The CreatePreset operation creates a preset with settings that you
-         * specify.</p> <important> <p>Elastic Transcoder checks the CreatePreset settings
+         * specify.</p>  <p>Elastic Transcoder checks the CreatePreset settings
          * to ensure that they meet Elastic Transcoder requirements and to determine
          * whether they comply with H.264 standards. If your settings are not valid for
          * Elastic Transcoder, Elastic Transcoder returns an HTTP 400 response
@@ -307,7 +307,7 @@ namespace Model
          * H.264 standard, Elastic Transcoder creates the preset and returns a warning
          * message in the response. This helps you determine whether your settings comply
          * with the H.264 standard while giving you greater flexibility with respect to the
-         * video that Elastic Transcoder produces.</p> </important> <p>Elastic Transcoder
+         * video that Elastic Transcoder produces.</p>  <p>Elastic Transcoder
          * uses the H.264 video-compression format. For more information, see the
          * International Telecommunication Union publication <i>Recommendation ITU-T H.264:
          * Advanced video coding for generic audiovisual services</i>.</p><p><h3>See
@@ -321,7 +321,7 @@ namespace Model
 
         /**
          * <p>The CreatePreset operation creates a preset with settings that you
-         * specify.</p> <important> <p>Elastic Transcoder checks the CreatePreset settings
+         * specify.</p>  <p>Elastic Transcoder checks the CreatePreset settings
          * to ensure that they meet Elastic Transcoder requirements and to determine
          * whether they comply with H.264 standards. If your settings are not valid for
          * Elastic Transcoder, Elastic Transcoder returns an HTTP 400 response
@@ -330,7 +330,7 @@ namespace Model
          * H.264 standard, Elastic Transcoder creates the preset and returns a warning
          * message in the response. This helps you determine whether your settings comply
          * with the H.264 standard while giving you greater flexibility with respect to the
-         * video that Elastic Transcoder produces.</p> </important> <p>Elastic Transcoder
+         * video that Elastic Transcoder produces.</p>  <p>Elastic Transcoder
          * uses the H.264 video-compression format. For more information, see the
          * International Telecommunication Union publication <i>Recommendation ITU-T H.264:
          * Advanced video coding for generic audiovisual services</i>.</p><p><h3>See
@@ -378,8 +378,8 @@ namespace Model
 
         /**
          * <p>The DeletePreset operation removes a preset that you've added in an AWS
-         * region.</p> <note> <p>You can't delete the default presets that are included
-         * with Elastic Transcoder.</p> </note><p><h3>See Also:</h3>   <a
+         * region.</p>  <p>You can't delete the default presets that are included
+         * with Elastic Transcoder.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/DeletePreset">AWS
          * API Reference</a></p>
          */
@@ -387,8 +387,8 @@ namespace Model
 
         /**
          * <p>The DeletePreset operation removes a preset that you've added in an AWS
-         * region.</p> <note> <p>You can't delete the default presets that are included
-         * with Elastic Transcoder.</p> </note><p><h3>See Also:</h3>   <a
+         * region.</p>  <p>You can't delete the default presets that are included
+         * with Elastic Transcoder.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/DeletePreset">AWS
          * API Reference</a></p>
          *
@@ -398,8 +398,8 @@ namespace Model
 
         /**
          * <p>The DeletePreset operation removes a preset that you've added in an AWS
-         * region.</p> <note> <p>You can't delete the default presets that are included
-         * with Elastic Transcoder.</p> </note><p><h3>See Also:</h3>   <a
+         * region.</p>  <p>You can't delete the default presets that are included
+         * with Elastic Transcoder.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/DeletePreset">AWS
          * API Reference</a></p>
          *
@@ -617,10 +617,10 @@ namespace Model
 
         /**
          * <p> Use the <code>UpdatePipeline</code> operation to update settings for a
-         * pipeline.</p> <important> <p>When you change pipeline settings, your changes
+         * pipeline.</p>  <p>When you change pipeline settings, your changes
          * take effect immediately. Jobs that you have already submitted and that Elastic
          * Transcoder has not started to process are affected in addition to jobs that you
-         * submit after you change settings. </p> </important><p><h3>See Also:</h3>   <a
+         * submit after you change settings. </p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/UpdatePipeline">AWS
          * API Reference</a></p>
          */
@@ -628,10 +628,10 @@ namespace Model
 
         /**
          * <p> Use the <code>UpdatePipeline</code> operation to update settings for a
-         * pipeline.</p> <important> <p>When you change pipeline settings, your changes
+         * pipeline.</p>  <p>When you change pipeline settings, your changes
          * take effect immediately. Jobs that you have already submitted and that Elastic
          * Transcoder has not started to process are affected in addition to jobs that you
-         * submit after you change settings. </p> </important><p><h3>See Also:</h3>   <a
+         * submit after you change settings. </p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/UpdatePipeline">AWS
          * API Reference</a></p>
          *
@@ -641,10 +641,10 @@ namespace Model
 
         /**
          * <p> Use the <code>UpdatePipeline</code> operation to update settings for a
-         * pipeline.</p> <important> <p>When you change pipeline settings, your changes
+         * pipeline.</p>  <p>When you change pipeline settings, your changes
          * take effect immediately. Jobs that you have already submitted and that Elastic
          * Transcoder has not started to process are affected in addition to jobs that you
-         * submit after you change settings. </p> </important><p><h3>See Also:</h3>   <a
+         * submit after you change settings. </p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/UpdatePipeline">AWS
          * API Reference</a></p>
          *

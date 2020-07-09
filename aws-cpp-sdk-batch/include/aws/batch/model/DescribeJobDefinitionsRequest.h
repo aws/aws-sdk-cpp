@@ -229,9 +229,9 @@ namespace Model
      * used and the results exceeded the value of that parameter. Pagination continues
      * from the end of the previous results that returned the <code>nextToken</code>
      * value. This value is <code>null</code> when there are no more results to
-     * return.</p> <note> <p>This token should be treated as an opaque identifier that
+     * return.</p>  <p>This token should be treated as an opaque identifier that
      * is only used to retrieve the next items in a list and not for other programmatic
-     * purposes.</p> </note>
+     * purposes.</p> 
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
@@ -241,9 +241,9 @@ namespace Model
      * used and the results exceeded the value of that parameter. Pagination continues
      * from the end of the previous results that returned the <code>nextToken</code>
      * value. This value is <code>null</code> when there are no more results to
-     * return.</p> <note> <p>This token should be treated as an opaque identifier that
+     * return.</p>  <p>This token should be treated as an opaque identifier that
      * is only used to retrieve the next items in a list and not for other programmatic
-     * purposes.</p> </note>
+     * purposes.</p> 
      */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
@@ -253,9 +253,9 @@ namespace Model
      * used and the results exceeded the value of that parameter. Pagination continues
      * from the end of the previous results that returned the <code>nextToken</code>
      * value. This value is <code>null</code> when there are no more results to
-     * return.</p> <note> <p>This token should be treated as an opaque identifier that
+     * return.</p>  <p>This token should be treated as an opaque identifier that
      * is only used to retrieve the next items in a list and not for other programmatic
-     * purposes.</p> </note>
+     * purposes.</p> 
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
@@ -265,9 +265,9 @@ namespace Model
      * used and the results exceeded the value of that parameter. Pagination continues
      * from the end of the previous results that returned the <code>nextToken</code>
      * value. This value is <code>null</code> when there are no more results to
-     * return.</p> <note> <p>This token should be treated as an opaque identifier that
+     * return.</p>  <p>This token should be treated as an opaque identifier that
      * is only used to retrieve the next items in a list and not for other programmatic
-     * purposes.</p> </note>
+     * purposes.</p> 
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
@@ -277,9 +277,9 @@ namespace Model
      * used and the results exceeded the value of that parameter. Pagination continues
      * from the end of the previous results that returned the <code>nextToken</code>
      * value. This value is <code>null</code> when there are no more results to
-     * return.</p> <note> <p>This token should be treated as an opaque identifier that
+     * return.</p>  <p>This token should be treated as an opaque identifier that
      * is only used to retrieve the next items in a list and not for other programmatic
-     * purposes.</p> </note>
+     * purposes.</p> 
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
@@ -289,9 +289,9 @@ namespace Model
      * used and the results exceeded the value of that parameter. Pagination continues
      * from the end of the previous results that returned the <code>nextToken</code>
      * value. This value is <code>null</code> when there are no more results to
-     * return.</p> <note> <p>This token should be treated as an opaque identifier that
+     * return.</p>  <p>This token should be treated as an opaque identifier that
      * is only used to retrieve the next items in a list and not for other programmatic
-     * purposes.</p> </note>
+     * purposes.</p> 
      */
     inline DescribeJobDefinitionsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
@@ -301,9 +301,9 @@ namespace Model
      * used and the results exceeded the value of that parameter. Pagination continues
      * from the end of the previous results that returned the <code>nextToken</code>
      * value. This value is <code>null</code> when there are no more results to
-     * return.</p> <note> <p>This token should be treated as an opaque identifier that
+     * return.</p>  <p>This token should be treated as an opaque identifier that
      * is only used to retrieve the next items in a list and not for other programmatic
-     * purposes.</p> </note>
+     * purposes.</p> 
      */
     inline DescribeJobDefinitionsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
@@ -313,9 +313,9 @@ namespace Model
      * used and the results exceeded the value of that parameter. Pagination continues
      * from the end of the previous results that returned the <code>nextToken</code>
      * value. This value is <code>null</code> when there are no more results to
-     * return.</p> <note> <p>This token should be treated as an opaque identifier that
+     * return.</p>  <p>This token should be treated as an opaque identifier that
      * is only used to retrieve the next items in a list and not for other programmatic
-     * purposes.</p> </note>
+     * purposes.</p> 
      */
     inline DescribeJobDefinitionsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

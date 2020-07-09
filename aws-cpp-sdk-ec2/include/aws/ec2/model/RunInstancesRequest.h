@@ -319,74 +319,74 @@ namespace Model
 
 
     /**
-     * <p>The ID of the kernel.</p> <important> <p>We recommend that you use PV-GRUB
+     * <p>The ID of the kernel.</p>  <p>We recommend that you use PV-GRUB
      * instead of kernels and RAM disks. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html">
      * PV-GRUB</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-     * </important>
+     * 
      */
     inline const Aws::String& GetKernelId() const{ return m_kernelId; }
 
     /**
-     * <p>The ID of the kernel.</p> <important> <p>We recommend that you use PV-GRUB
+     * <p>The ID of the kernel.</p>  <p>We recommend that you use PV-GRUB
      * instead of kernels and RAM disks. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html">
      * PV-GRUB</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-     * </important>
+     * 
      */
     inline bool KernelIdHasBeenSet() const { return m_kernelIdHasBeenSet; }
 
     /**
-     * <p>The ID of the kernel.</p> <important> <p>We recommend that you use PV-GRUB
+     * <p>The ID of the kernel.</p>  <p>We recommend that you use PV-GRUB
      * instead of kernels and RAM disks. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html">
      * PV-GRUB</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-     * </important>
+     * 
      */
     inline void SetKernelId(const Aws::String& value) { m_kernelIdHasBeenSet = true; m_kernelId = value; }
 
     /**
-     * <p>The ID of the kernel.</p> <important> <p>We recommend that you use PV-GRUB
+     * <p>The ID of the kernel.</p>  <p>We recommend that you use PV-GRUB
      * instead of kernels and RAM disks. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html">
      * PV-GRUB</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-     * </important>
+     * 
      */
     inline void SetKernelId(Aws::String&& value) { m_kernelIdHasBeenSet = true; m_kernelId = std::move(value); }
 
     /**
-     * <p>The ID of the kernel.</p> <important> <p>We recommend that you use PV-GRUB
+     * <p>The ID of the kernel.</p>  <p>We recommend that you use PV-GRUB
      * instead of kernels and RAM disks. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html">
      * PV-GRUB</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-     * </important>
+     * 
      */
     inline void SetKernelId(const char* value) { m_kernelIdHasBeenSet = true; m_kernelId.assign(value); }
 
     /**
-     * <p>The ID of the kernel.</p> <important> <p>We recommend that you use PV-GRUB
+     * <p>The ID of the kernel.</p>  <p>We recommend that you use PV-GRUB
      * instead of kernels and RAM disks. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html">
      * PV-GRUB</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-     * </important>
+     * 
      */
     inline RunInstancesRequest& WithKernelId(const Aws::String& value) { SetKernelId(value); return *this;}
 
     /**
-     * <p>The ID of the kernel.</p> <important> <p>We recommend that you use PV-GRUB
+     * <p>The ID of the kernel.</p>  <p>We recommend that you use PV-GRUB
      * instead of kernels and RAM disks. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html">
      * PV-GRUB</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-     * </important>
+     * 
      */
     inline RunInstancesRequest& WithKernelId(Aws::String&& value) { SetKernelId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the kernel.</p> <important> <p>We recommend that you use PV-GRUB
+     * <p>The ID of the kernel.</p>  <p>We recommend that you use PV-GRUB
      * instead of kernels and RAM disks. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html">
      * PV-GRUB</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-     * </important>
+     * 
      */
     inline RunInstancesRequest& WithKernelId(const char* value) { SetKernelId(value); return *this;}
 
@@ -396,9 +396,9 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateKeyPair.html">CreateKeyPair</a>
      * or <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportKeyPair.html">ImportKeyPair</a>.</p>
-     * <important> <p>If you do not specify a key pair, you can't connect to the
+     *  <p>If you do not specify a key pair, you can't connect to the
      * instance unless you choose an AMI that is configured to allow users another way
-     * to log in.</p> </important>
+     * to log in.</p> 
      */
     inline const Aws::String& GetKeyName() const{ return m_keyName; }
 
@@ -407,9 +407,9 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateKeyPair.html">CreateKeyPair</a>
      * or <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportKeyPair.html">ImportKeyPair</a>.</p>
-     * <important> <p>If you do not specify a key pair, you can't connect to the
+     *  <p>If you do not specify a key pair, you can't connect to the
      * instance unless you choose an AMI that is configured to allow users another way
-     * to log in.</p> </important>
+     * to log in.</p> 
      */
     inline bool KeyNameHasBeenSet() const { return m_keyNameHasBeenSet; }
 
@@ -418,9 +418,9 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateKeyPair.html">CreateKeyPair</a>
      * or <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportKeyPair.html">ImportKeyPair</a>.</p>
-     * <important> <p>If you do not specify a key pair, you can't connect to the
+     *  <p>If you do not specify a key pair, you can't connect to the
      * instance unless you choose an AMI that is configured to allow users another way
-     * to log in.</p> </important>
+     * to log in.</p> 
      */
     inline void SetKeyName(const Aws::String& value) { m_keyNameHasBeenSet = true; m_keyName = value; }
 
@@ -429,9 +429,9 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateKeyPair.html">CreateKeyPair</a>
      * or <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportKeyPair.html">ImportKeyPair</a>.</p>
-     * <important> <p>If you do not specify a key pair, you can't connect to the
+     *  <p>If you do not specify a key pair, you can't connect to the
      * instance unless you choose an AMI that is configured to allow users another way
-     * to log in.</p> </important>
+     * to log in.</p> 
      */
     inline void SetKeyName(Aws::String&& value) { m_keyNameHasBeenSet = true; m_keyName = std::move(value); }
 
@@ -440,9 +440,9 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateKeyPair.html">CreateKeyPair</a>
      * or <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportKeyPair.html">ImportKeyPair</a>.</p>
-     * <important> <p>If you do not specify a key pair, you can't connect to the
+     *  <p>If you do not specify a key pair, you can't connect to the
      * instance unless you choose an AMI that is configured to allow users another way
-     * to log in.</p> </important>
+     * to log in.</p> 
      */
     inline void SetKeyName(const char* value) { m_keyNameHasBeenSet = true; m_keyName.assign(value); }
 
@@ -451,9 +451,9 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateKeyPair.html">CreateKeyPair</a>
      * or <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportKeyPair.html">ImportKeyPair</a>.</p>
-     * <important> <p>If you do not specify a key pair, you can't connect to the
+     *  <p>If you do not specify a key pair, you can't connect to the
      * instance unless you choose an AMI that is configured to allow users another way
-     * to log in.</p> </important>
+     * to log in.</p> 
      */
     inline RunInstancesRequest& WithKeyName(const Aws::String& value) { SetKeyName(value); return *this;}
 
@@ -462,9 +462,9 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateKeyPair.html">CreateKeyPair</a>
      * or <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportKeyPair.html">ImportKeyPair</a>.</p>
-     * <important> <p>If you do not specify a key pair, you can't connect to the
+     *  <p>If you do not specify a key pair, you can't connect to the
      * instance unless you choose an AMI that is configured to allow users another way
-     * to log in.</p> </important>
+     * to log in.</p> 
      */
     inline RunInstancesRequest& WithKeyName(Aws::String&& value) { SetKeyName(std::move(value)); return *this;}
 
@@ -473,9 +473,9 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateKeyPair.html">CreateKeyPair</a>
      * or <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportKeyPair.html">ImportKeyPair</a>.</p>
-     * <important> <p>If you do not specify a key pair, you can't connect to the
+     *  <p>If you do not specify a key pair, you can't connect to the
      * instance unless you choose an AMI that is configured to allow users another way
-     * to log in.</p> </important>
+     * to log in.</p> 
      */
     inline RunInstancesRequest& WithKeyName(const char* value) { SetKeyName(value); return *this;}
 
@@ -640,11 +640,11 @@ namespace Model
      * <p>The ID of the RAM disk to select. Some kernels require additional drivers at
      * launch. Check the kernel requirements for information about whether you need to
      * specify a RAM disk. To find kernel requirements, go to the AWS Resource Center
-     * and search for the kernel ID.</p> <important> <p>We recommend that you use
+     * and search for the kernel ID.</p>  <p>We recommend that you use
      * PV-GRUB instead of kernels and RAM disks. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html">
      * PV-GRUB</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-     * </important>
+     * 
      */
     inline const Aws::String& GetRamdiskId() const{ return m_ramdiskId; }
 
@@ -652,11 +652,11 @@ namespace Model
      * <p>The ID of the RAM disk to select. Some kernels require additional drivers at
      * launch. Check the kernel requirements for information about whether you need to
      * specify a RAM disk. To find kernel requirements, go to the AWS Resource Center
-     * and search for the kernel ID.</p> <important> <p>We recommend that you use
+     * and search for the kernel ID.</p>  <p>We recommend that you use
      * PV-GRUB instead of kernels and RAM disks. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html">
      * PV-GRUB</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-     * </important>
+     * 
      */
     inline bool RamdiskIdHasBeenSet() const { return m_ramdiskIdHasBeenSet; }
 
@@ -664,11 +664,11 @@ namespace Model
      * <p>The ID of the RAM disk to select. Some kernels require additional drivers at
      * launch. Check the kernel requirements for information about whether you need to
      * specify a RAM disk. To find kernel requirements, go to the AWS Resource Center
-     * and search for the kernel ID.</p> <important> <p>We recommend that you use
+     * and search for the kernel ID.</p>  <p>We recommend that you use
      * PV-GRUB instead of kernels and RAM disks. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html">
      * PV-GRUB</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-     * </important>
+     * 
      */
     inline void SetRamdiskId(const Aws::String& value) { m_ramdiskIdHasBeenSet = true; m_ramdiskId = value; }
 
@@ -676,11 +676,11 @@ namespace Model
      * <p>The ID of the RAM disk to select. Some kernels require additional drivers at
      * launch. Check the kernel requirements for information about whether you need to
      * specify a RAM disk. To find kernel requirements, go to the AWS Resource Center
-     * and search for the kernel ID.</p> <important> <p>We recommend that you use
+     * and search for the kernel ID.</p>  <p>We recommend that you use
      * PV-GRUB instead of kernels and RAM disks. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html">
      * PV-GRUB</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-     * </important>
+     * 
      */
     inline void SetRamdiskId(Aws::String&& value) { m_ramdiskIdHasBeenSet = true; m_ramdiskId = std::move(value); }
 
@@ -688,11 +688,11 @@ namespace Model
      * <p>The ID of the RAM disk to select. Some kernels require additional drivers at
      * launch. Check the kernel requirements for information about whether you need to
      * specify a RAM disk. To find kernel requirements, go to the AWS Resource Center
-     * and search for the kernel ID.</p> <important> <p>We recommend that you use
+     * and search for the kernel ID.</p>  <p>We recommend that you use
      * PV-GRUB instead of kernels and RAM disks. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html">
      * PV-GRUB</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-     * </important>
+     * 
      */
     inline void SetRamdiskId(const char* value) { m_ramdiskIdHasBeenSet = true; m_ramdiskId.assign(value); }
 
@@ -700,11 +700,11 @@ namespace Model
      * <p>The ID of the RAM disk to select. Some kernels require additional drivers at
      * launch. Check the kernel requirements for information about whether you need to
      * specify a RAM disk. To find kernel requirements, go to the AWS Resource Center
-     * and search for the kernel ID.</p> <important> <p>We recommend that you use
+     * and search for the kernel ID.</p>  <p>We recommend that you use
      * PV-GRUB instead of kernels and RAM disks. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html">
      * PV-GRUB</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-     * </important>
+     * 
      */
     inline RunInstancesRequest& WithRamdiskId(const Aws::String& value) { SetRamdiskId(value); return *this;}
 
@@ -712,11 +712,11 @@ namespace Model
      * <p>The ID of the RAM disk to select. Some kernels require additional drivers at
      * launch. Check the kernel requirements for information about whether you need to
      * specify a RAM disk. To find kernel requirements, go to the AWS Resource Center
-     * and search for the kernel ID.</p> <important> <p>We recommend that you use
+     * and search for the kernel ID.</p>  <p>We recommend that you use
      * PV-GRUB instead of kernels and RAM disks. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html">
      * PV-GRUB</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-     * </important>
+     * 
      */
     inline RunInstancesRequest& WithRamdiskId(Aws::String&& value) { SetRamdiskId(std::move(value)); return *this;}
 
@@ -724,11 +724,11 @@ namespace Model
      * <p>The ID of the RAM disk to select. Some kernels require additional drivers at
      * launch. Check the kernel requirements for information about whether you need to
      * specify a RAM disk. To find kernel requirements, go to the AWS Resource Center
-     * and search for the kernel ID.</p> <important> <p>We recommend that you use
+     * and search for the kernel ID.</p>  <p>We recommend that you use
      * PV-GRUB instead of kernels and RAM disks. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html">
      * PV-GRUB</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-     * </important>
+     * 
      */
     inline RunInstancesRequest& WithRamdiskId(const char* value) { SetRamdiskId(value); return *this;}
 

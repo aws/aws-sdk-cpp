@@ -292,26 +292,26 @@ namespace Model
 
 
     /**
-     * <p>The size, in bytes, of data stored on the virtual tape.</p> <note> <p>This
-     * value is not available for tapes created prior to May 13, 2015.</p> </note>
+     * <p>The size, in bytes, of data stored on the virtual tape.</p>  <p>This
+     * value is not available for tapes created prior to May 13, 2015.</p> 
      */
     inline long long GetTapeUsedInBytes() const{ return m_tapeUsedInBytes; }
 
     /**
-     * <p>The size, in bytes, of data stored on the virtual tape.</p> <note> <p>This
-     * value is not available for tapes created prior to May 13, 2015.</p> </note>
+     * <p>The size, in bytes, of data stored on the virtual tape.</p>  <p>This
+     * value is not available for tapes created prior to May 13, 2015.</p> 
      */
     inline bool TapeUsedInBytesHasBeenSet() const { return m_tapeUsedInBytesHasBeenSet; }
 
     /**
-     * <p>The size, in bytes, of data stored on the virtual tape.</p> <note> <p>This
-     * value is not available for tapes created prior to May 13, 2015.</p> </note>
+     * <p>The size, in bytes, of data stored on the virtual tape.</p>  <p>This
+     * value is not available for tapes created prior to May 13, 2015.</p> 
      */
     inline void SetTapeUsedInBytes(long long value) { m_tapeUsedInBytesHasBeenSet = true; m_tapeUsedInBytes = value; }
 
     /**
-     * <p>The size, in bytes, of data stored on the virtual tape.</p> <note> <p>This
-     * value is not available for tapes created prior to May 13, 2015.</p> </note>
+     * <p>The size, in bytes, of data stored on the virtual tape.</p>  <p>This
+     * value is not available for tapes created prior to May 13, 2015.</p> 
      */
     inline Tape& WithTapeUsedInBytes(long long value) { SetTapeUsedInBytes(value); return *this;}
 

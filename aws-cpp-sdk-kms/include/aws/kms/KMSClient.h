@@ -280,7 +280,7 @@ namespace Model
    * the AWS KMS operations that you can call programmatically. For general
    * information about AWS KMS, see the <a
    * href="https://docs.aws.amazon.com/kms/latest/developerguide/"> <i>AWS Key
-   * Management Service Developer Guide</i> </a>.</p> <note> <p>AWS provides SDKs
+   * Management Service Developer Guide</i> </a>.</p>  <p>AWS provides SDKs
    * that consist of libraries and sample code for various programming languages and
    * platforms (Java, Ruby, .Net, macOS, Android, etc.). The SDKs provide a
    * convenient way to create programmatic access to AWS KMS and other AWS services.
@@ -288,7 +288,7 @@ namespace Model
    * managing errors, and retrying requests automatically. For more information about
    * the AWS SDKs, including how to download and install them, see <a
    * href="http://aws.amazon.com/tools/">Tools for Amazon Web Services</a>.</p>
-   * </note> <p>We recommend that you use the AWS SDKs to make programmatic API calls
+   *  <p>We recommend that you use the AWS SDKs to make programmatic API calls
    * to AWS KMS.</p> <p>Clients must support TLS (Transport Layer Security) 1.0. We
    * recommend TLS 1.2. Clients must also support cipher suites with Perfect Forward
    * Secrecy (PFS) such as Ephemeral Diffie-Hellman (DHE) or Elliptic Curve Ephemeral
@@ -1898,12 +1898,12 @@ namespace Model
          * key store</a> from its associated AWS CloudHSM cluster. While a custom key store
          * is disconnected, you can manage the custom key store and its customer master
          * keys (CMKs), but you cannot create or use CMKs in the custom key store. You can
-         * reconnect the custom key store at any time.</p> <note> <p>While a custom key
+         * reconnect the custom key store at any time.</p>  <p>While a custom key
          * store is disconnected, all attempts to create customer master keys (CMKs) in the
          * custom key store or to use existing CMKs in <a
          * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
          * operations</a> will fail. This action can prevent users from storing and
-         * accessing sensitive data.</p> </note> <p/> <p>To find the connection state of a
+         * accessing sensitive data.</p>  <p/> <p>To find the connection state of a
          * custom key store, use the <a>DescribeCustomKeyStores</a> operation. To reconnect
          * a custom key store, use the <a>ConnectCustomKeyStore</a> operation.</p> <p>If
          * the operation succeeds, it returns a JSON object with no properties.</p> <p>This
@@ -1923,12 +1923,12 @@ namespace Model
          * key store</a> from its associated AWS CloudHSM cluster. While a custom key store
          * is disconnected, you can manage the custom key store and its customer master
          * keys (CMKs), but you cannot create or use CMKs in the custom key store. You can
-         * reconnect the custom key store at any time.</p> <note> <p>While a custom key
+         * reconnect the custom key store at any time.</p>  <p>While a custom key
          * store is disconnected, all attempts to create customer master keys (CMKs) in the
          * custom key store or to use existing CMKs in <a
          * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
          * operations</a> will fail. This action can prevent users from storing and
-         * accessing sensitive data.</p> </note> <p/> <p>To find the connection state of a
+         * accessing sensitive data.</p>  <p/> <p>To find the connection state of a
          * custom key store, use the <a>DescribeCustomKeyStores</a> operation. To reconnect
          * a custom key store, use the <a>ConnectCustomKeyStore</a> operation.</p> <p>If
          * the operation succeeds, it returns a JSON object with no properties.</p> <p>This
@@ -1950,12 +1950,12 @@ namespace Model
          * key store</a> from its associated AWS CloudHSM cluster. While a custom key store
          * is disconnected, you can manage the custom key store and its customer master
          * keys (CMKs), but you cannot create or use CMKs in the custom key store. You can
-         * reconnect the custom key store at any time.</p> <note> <p>While a custom key
+         * reconnect the custom key store at any time.</p>  <p>While a custom key
          * store is disconnected, all attempts to create customer master keys (CMKs) in the
          * custom key store or to use existing CMKs in <a
          * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
          * operations</a> will fail. This action can prevent users from storing and
-         * accessing sensitive data.</p> </note> <p/> <p>To find the connection state of a
+         * accessing sensitive data.</p>  <p/> <p>To find the connection state of a
          * custom key store, use the <a>DescribeCustomKeyStores</a> operation. To reconnect
          * a custom key store, use the <a>ConnectCustomKeyStore</a> operation.</p> <p>If
          * the operation succeeds, it returns a JSON object with no properties.</p> <p>This
@@ -2105,7 +2105,7 @@ namespace Model
          * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
          * Context</a> in the <i>AWS Key Management Service Developer Guide</i>.</p> <p>If
          * you specify an asymmetric CMK, you must also specify the encryption algorithm.
-         * The algorithm must be compatible with the CMK type.</p> <important> <p>When you
+         * The algorithm must be compatible with the CMK type.</p>  <p>When you
          * use an asymmetric CMK to encrypt or reencrypt data, be sure to record the CMK
          * and encryption algorithm that you choose. You will be required to provide the
          * same CMK and encryption algorithm when you decrypt the data. If the CMK and
@@ -2114,7 +2114,7 @@ namespace Model
          * algorithm when you decrypt with symmetric CMKs because AWS KMS stores this
          * information in the ciphertext blob. AWS KMS cannot store metadata in ciphertext
          * generated with asymmetric keys. The standard format for asymmetric key
-         * ciphertext does not include configurable fields.</p> </important> <p>The maximum
+         * ciphertext does not include configurable fields.</p>  <p>The maximum
          * size of the data that you can encrypt varies with the type of CMK and the
          * encryption algorithm that you choose.</p> <ul> <li> <p>Symmetric CMKs</p> <ul>
          * <li> <p> <code>SYMMETRIC_DEFAULT</code>: 4096 bytes</p> </li> </ul> </li> <li>
@@ -2164,7 +2164,7 @@ namespace Model
          * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
          * Context</a> in the <i>AWS Key Management Service Developer Guide</i>.</p> <p>If
          * you specify an asymmetric CMK, you must also specify the encryption algorithm.
-         * The algorithm must be compatible with the CMK type.</p> <important> <p>When you
+         * The algorithm must be compatible with the CMK type.</p>  <p>When you
          * use an asymmetric CMK to encrypt or reencrypt data, be sure to record the CMK
          * and encryption algorithm that you choose. You will be required to provide the
          * same CMK and encryption algorithm when you decrypt the data. If the CMK and
@@ -2173,7 +2173,7 @@ namespace Model
          * algorithm when you decrypt with symmetric CMKs because AWS KMS stores this
          * information in the ciphertext blob. AWS KMS cannot store metadata in ciphertext
          * generated with asymmetric keys. The standard format for asymmetric key
-         * ciphertext does not include configurable fields.</p> </important> <p>The maximum
+         * ciphertext does not include configurable fields.</p>  <p>The maximum
          * size of the data that you can encrypt varies with the type of CMK and the
          * encryption algorithm that you choose.</p> <ul> <li> <p>Symmetric CMKs</p> <ul>
          * <li> <p> <code>SYMMETRIC_DEFAULT</code>: 4096 bytes</p> </li> </ul> </li> <li>
@@ -2225,7 +2225,7 @@ namespace Model
          * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
          * Context</a> in the <i>AWS Key Management Service Developer Guide</i>.</p> <p>If
          * you specify an asymmetric CMK, you must also specify the encryption algorithm.
-         * The algorithm must be compatible with the CMK type.</p> <important> <p>When you
+         * The algorithm must be compatible with the CMK type.</p>  <p>When you
          * use an asymmetric CMK to encrypt or reencrypt data, be sure to record the CMK
          * and encryption algorithm that you choose. You will be required to provide the
          * same CMK and encryption algorithm when you decrypt the data. If the CMK and
@@ -2234,7 +2234,7 @@ namespace Model
          * algorithm when you decrypt with symmetric CMKs because AWS KMS stores this
          * information in the ciphertext blob. AWS KMS cannot store metadata in ciphertext
          * generated with asymmetric keys. The standard format for asymmetric key
-         * ciphertext does not include configurable fields.</p> </important> <p>The maximum
+         * ciphertext does not include configurable fields.</p>  <p>The maximum
          * size of the data that you can encrypt varies with the type of CMK and the
          * encryption algorithm that you choose.</p> <ul> <li> <p>Symmetric CMKs</p> <ul>
          * <li> <p> <code>SYMMETRIC_DEFAULT</code>: 4096 bytes</p> </li> </ul> </li> <li>
@@ -3398,14 +3398,14 @@ namespace Model
         /**
          * <p>Gets a list of all grants for the specified customer master key (CMK).</p>
          * <p>To perform this operation on a CMK in a different AWS account, specify the
-         * key ARN in the value of the <code>KeyId</code> parameter.</p> <note> <p>The
+         * key ARN in the value of the <code>KeyId</code> parameter.</p>  <p>The
          * <code>GranteePrincipal</code> field in the <code>ListGrants</code> response
          * usually contains the user or role designated as the grantee principal in the
          * grant. However, when the grantee principal in the grant is an AWS service, the
          * <code>GranteePrincipal</code> field contains the <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#principal-services">service
          * principal</a>, which might represent several different grantee principals.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/ListGrants">AWS API
          * Reference</a></p>
          */
@@ -3414,14 +3414,14 @@ namespace Model
         /**
          * <p>Gets a list of all grants for the specified customer master key (CMK).</p>
          * <p>To perform this operation on a CMK in a different AWS account, specify the
-         * key ARN in the value of the <code>KeyId</code> parameter.</p> <note> <p>The
+         * key ARN in the value of the <code>KeyId</code> parameter.</p>  <p>The
          * <code>GranteePrincipal</code> field in the <code>ListGrants</code> response
          * usually contains the user or role designated as the grantee principal in the
          * grant. However, when the grantee principal in the grant is an AWS service, the
          * <code>GranteePrincipal</code> field contains the <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#principal-services">service
          * principal</a>, which might represent several different grantee principals.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/ListGrants">AWS API
          * Reference</a></p>
          *
@@ -3432,14 +3432,14 @@ namespace Model
         /**
          * <p>Gets a list of all grants for the specified customer master key (CMK).</p>
          * <p>To perform this operation on a CMK in a different AWS account, specify the
-         * key ARN in the value of the <code>KeyId</code> parameter.</p> <note> <p>The
+         * key ARN in the value of the <code>KeyId</code> parameter.</p>  <p>The
          * <code>GranteePrincipal</code> field in the <code>ListGrants</code> response
          * usually contains the user or role designated as the grantee principal in the
          * grant. However, when the grantee principal in the grant is an AWS service, the
          * <code>GranteePrincipal</code> field contains the <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#principal-services">service
          * principal</a>, which might represent several different grantee principals.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/ListGrants">AWS API
          * Reference</a></p>
          *
@@ -3650,7 +3650,7 @@ namespace Model
          * CMK that re-encrypts the data after it is decrypted. You can select a symmetric
          * or asymmetric CMK. If the destination CMK is an asymmetric CMK, you must also
          * provide the encryption algorithm. The algorithm that you choose must be
-         * compatible with the CMK.</p> <important> <p>When you use an asymmetric CMK to
+         * compatible with the CMK.</p>  <p>When you use an asymmetric CMK to
          * encrypt or reencrypt data, be sure to record the CMK and encryption algorithm
          * that you choose. You will be required to provide the same CMK and encryption
          * algorithm when you decrypt the data. If the CMK and algorithm do not match the
@@ -3659,7 +3659,7 @@ namespace Model
          * symmetric CMKs because AWS KMS stores this information in the ciphertext blob.
          * AWS KMS cannot store metadata in ciphertext generated with asymmetric keys. The
          * standard format for asymmetric key ciphertext does not include configurable
-         * fields.</p> </important> </li> </ul> <p>Unlike other AWS KMS API operations,
+         * fields.</p>  </li> </ul> <p>Unlike other AWS KMS API operations,
          * <code>ReEncrypt</code> callers must have two permissions:</p> <ul> <li> <p>
          * <code>kms:ReEncryptFrom</code> permission on the source CMK</p> </li> <li> <p>
          * <code>kms:ReEncryptTo</code> permission on the destination CMK</p> </li> </ul>
@@ -3712,7 +3712,7 @@ namespace Model
          * CMK that re-encrypts the data after it is decrypted. You can select a symmetric
          * or asymmetric CMK. If the destination CMK is an asymmetric CMK, you must also
          * provide the encryption algorithm. The algorithm that you choose must be
-         * compatible with the CMK.</p> <important> <p>When you use an asymmetric CMK to
+         * compatible with the CMK.</p>  <p>When you use an asymmetric CMK to
          * encrypt or reencrypt data, be sure to record the CMK and encryption algorithm
          * that you choose. You will be required to provide the same CMK and encryption
          * algorithm when you decrypt the data. If the CMK and algorithm do not match the
@@ -3721,7 +3721,7 @@ namespace Model
          * symmetric CMKs because AWS KMS stores this information in the ciphertext blob.
          * AWS KMS cannot store metadata in ciphertext generated with asymmetric keys. The
          * standard format for asymmetric key ciphertext does not include configurable
-         * fields.</p> </important> </li> </ul> <p>Unlike other AWS KMS API operations,
+         * fields.</p>  </li> </ul> <p>Unlike other AWS KMS API operations,
          * <code>ReEncrypt</code> callers must have two permissions:</p> <ul> <li> <p>
          * <code>kms:ReEncryptFrom</code> permission on the source CMK</p> </li> <li> <p>
          * <code>kms:ReEncryptTo</code> permission on the destination CMK</p> </li> </ul>
@@ -3776,7 +3776,7 @@ namespace Model
          * CMK that re-encrypts the data after it is decrypted. You can select a symmetric
          * or asymmetric CMK. If the destination CMK is an asymmetric CMK, you must also
          * provide the encryption algorithm. The algorithm that you choose must be
-         * compatible with the CMK.</p> <important> <p>When you use an asymmetric CMK to
+         * compatible with the CMK.</p>  <p>When you use an asymmetric CMK to
          * encrypt or reencrypt data, be sure to record the CMK and encryption algorithm
          * that you choose. You will be required to provide the same CMK and encryption
          * algorithm when you decrypt the data. If the CMK and algorithm do not match the
@@ -3785,7 +3785,7 @@ namespace Model
          * symmetric CMKs because AWS KMS stores this information in the ciphertext blob.
          * AWS KMS cannot store metadata in ciphertext generated with asymmetric keys. The
          * standard format for asymmetric key ciphertext does not include configurable
-         * fields.</p> </important> </li> </ul> <p>Unlike other AWS KMS API operations,
+         * fields.</p>  </li> </ul> <p>Unlike other AWS KMS API operations,
          * <code>ReEncrypt</code> callers must have two permissions:</p> <ul> <li> <p>
          * <code>kms:ReEncryptFrom</code> permission on the source CMK</p> </li> <li> <p>
          * <code>kms:ReEncryptTo</code> permission on the destination CMK</p> </li> </ul>
@@ -3907,10 +3907,10 @@ namespace Model
          * Before the waiting period ends, you can use <a>CancelKeyDeletion</a> to cancel
          * the deletion of the CMK. After the waiting period ends, AWS KMS deletes the CMK
          * and all AWS KMS data associated with it, including all aliases that refer to
-         * it.</p> <important> <p>Deleting a CMK is a destructive and potentially dangerous
+         * it.</p>  <p>Deleting a CMK is a destructive and potentially dangerous
          * operation. When a CMK is deleted, all data that was encrypted under the CMK is
          * unrecoverable. To prevent the use of a CMK without deleting it, use
-         * <a>DisableKey</a>.</p> </important> <p>If you schedule deletion of a CMK from a
+         * <a>DisableKey</a>.</p>  <p>If you schedule deletion of a CMK from a
          * <a
          * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
          * key store</a>, when the waiting period expires, <code>ScheduleKeyDeletion</code>
@@ -3941,10 +3941,10 @@ namespace Model
          * Before the waiting period ends, you can use <a>CancelKeyDeletion</a> to cancel
          * the deletion of the CMK. After the waiting period ends, AWS KMS deletes the CMK
          * and all AWS KMS data associated with it, including all aliases that refer to
-         * it.</p> <important> <p>Deleting a CMK is a destructive and potentially dangerous
+         * it.</p>  <p>Deleting a CMK is a destructive and potentially dangerous
          * operation. When a CMK is deleted, all data that was encrypted under the CMK is
          * unrecoverable. To prevent the use of a CMK without deleting it, use
-         * <a>DisableKey</a>.</p> </important> <p>If you schedule deletion of a CMK from a
+         * <a>DisableKey</a>.</p>  <p>If you schedule deletion of a CMK from a
          * <a
          * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
          * key store</a>, when the waiting period expires, <code>ScheduleKeyDeletion</code>
@@ -3977,10 +3977,10 @@ namespace Model
          * Before the waiting period ends, you can use <a>CancelKeyDeletion</a> to cancel
          * the deletion of the CMK. After the waiting period ends, AWS KMS deletes the CMK
          * and all AWS KMS data associated with it, including all aliases that refer to
-         * it.</p> <important> <p>Deleting a CMK is a destructive and potentially dangerous
+         * it.</p>  <p>Deleting a CMK is a destructive and potentially dangerous
          * operation. When a CMK is deleted, all data that was encrypted under the CMK is
          * unrecoverable. To prevent the use of a CMK without deleting it, use
-         * <a>DisableKey</a>.</p> </important> <p>If you schedule deletion of a CMK from a
+         * <a>DisableKey</a>.</p>  <p>If you schedule deletion of a CMK from a
          * <a
          * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
          * key store</a>, when the waiting period expires, <code>ScheduleKeyDeletion</code>
@@ -4030,9 +4030,9 @@ namespace Model
          * in the <code>Message</code> parameter. To indicate whether the message is a full
          * message or a digest, use the <code>MessageType</code> parameter.</p> </li> <li>
          * <p>Choose a signing algorithm that is compatible with the CMK. </p> </li> </ul>
-         * <important> <p>When signing a message, be sure to record the CMK and the signing
+         *  <p>When signing a message, be sure to record the CMK and the signing
          * algorithm. This information is required to verify the signature.</p>
-         * </important> <p>To verify the signature that this operation generates, use the
+         *  <p>To verify the signature that this operation generates, use the
          * <a>Verify</a> operation. Or use the <a>GetPublicKey</a> operation to download
          * the public key and then use the public key to verify the signature outside of
          * AWS KMS. </p> <p>The CMK that you use for this operation must be in a compatible
@@ -4070,9 +4070,9 @@ namespace Model
          * in the <code>Message</code> parameter. To indicate whether the message is a full
          * message or a digest, use the <code>MessageType</code> parameter.</p> </li> <li>
          * <p>Choose a signing algorithm that is compatible with the CMK. </p> </li> </ul>
-         * <important> <p>When signing a message, be sure to record the CMK and the signing
+         *  <p>When signing a message, be sure to record the CMK and the signing
          * algorithm. This information is required to verify the signature.</p>
-         * </important> <p>To verify the signature that this operation generates, use the
+         *  <p>To verify the signature that this operation generates, use the
          * <a>Verify</a> operation. Or use the <a>GetPublicKey</a> operation to download
          * the public key and then use the public key to verify the signature outside of
          * AWS KMS. </p> <p>The CMK that you use for this operation must be in a compatible
@@ -4112,9 +4112,9 @@ namespace Model
          * in the <code>Message</code> parameter. To indicate whether the message is a full
          * message or a digest, use the <code>MessageType</code> parameter.</p> </li> <li>
          * <p>Choose a signing algorithm that is compatible with the CMK. </p> </li> </ul>
-         * <important> <p>When signing a message, be sure to record the CMK and the signing
+         *  <p>When signing a message, be sure to record the CMK and the signing
          * algorithm. This information is required to verify the signature.</p>
-         * </important> <p>To verify the signature that this operation generates, use the
+         *  <p>To verify the signature that this operation generates, use the
          * <a>Verify</a> operation. Or use the <a>GetPublicKey</a> operation to download
          * the public key and then use the public key to verify the signature outside of
          * AWS KMS. </p> <p>The CMK that you use for this operation must be in a compatible

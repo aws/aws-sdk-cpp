@@ -218,14 +218,14 @@ namespace Model
      * <p>Valid values are <code>AmortizedCost</code>, <code>BlendedCost</code>,
      * <code>NetAmortizedCost</code>, <code>NetUnblendedCost</code>,
      * <code>NormalizedUsageAmount</code>, <code>UnblendedCost</code>, and
-     * <code>UsageQuantity</code>. </p> <note> <p>If you return the
+     * <code>UsageQuantity</code>. </p>  <p>If you return the
      * <code>UsageQuantity</code> metric, the service aggregates all usage numbers
      * without taking into account the units. For example, if you aggregate
      * <code>usageQuantity</code> across all of Amazon EC2, the results aren't
      * meaningful because Amazon EC2 compute hours and data transfer are measured in
      * different units (for example, hours vs. GB). To get more meaningful
      * <code>UsageQuantity</code> metrics, filter by <code>UsageType</code> or
-     * <code>UsageTypeGroups</code>. </p> </note> <p> <code>Metrics</code> is required
+     * <code>UsageTypeGroups</code>. </p>  <p> <code>Metrics</code> is required
      * for <code>GetCostAndUsage</code> requests.</p>
      */
     inline const Aws::Vector<Aws::String>& GetMetrics() const{ return m_metrics; }
@@ -238,14 +238,14 @@ namespace Model
      * <p>Valid values are <code>AmortizedCost</code>, <code>BlendedCost</code>,
      * <code>NetAmortizedCost</code>, <code>NetUnblendedCost</code>,
      * <code>NormalizedUsageAmount</code>, <code>UnblendedCost</code>, and
-     * <code>UsageQuantity</code>. </p> <note> <p>If you return the
+     * <code>UsageQuantity</code>. </p>  <p>If you return the
      * <code>UsageQuantity</code> metric, the service aggregates all usage numbers
      * without taking into account the units. For example, if you aggregate
      * <code>usageQuantity</code> across all of Amazon EC2, the results aren't
      * meaningful because Amazon EC2 compute hours and data transfer are measured in
      * different units (for example, hours vs. GB). To get more meaningful
      * <code>UsageQuantity</code> metrics, filter by <code>UsageType</code> or
-     * <code>UsageTypeGroups</code>. </p> </note> <p> <code>Metrics</code> is required
+     * <code>UsageTypeGroups</code>. </p>  <p> <code>Metrics</code> is required
      * for <code>GetCostAndUsage</code> requests.</p>
      */
     inline bool MetricsHasBeenSet() const { return m_metricsHasBeenSet; }
@@ -258,14 +258,14 @@ namespace Model
      * <p>Valid values are <code>AmortizedCost</code>, <code>BlendedCost</code>,
      * <code>NetAmortizedCost</code>, <code>NetUnblendedCost</code>,
      * <code>NormalizedUsageAmount</code>, <code>UnblendedCost</code>, and
-     * <code>UsageQuantity</code>. </p> <note> <p>If you return the
+     * <code>UsageQuantity</code>. </p>  <p>If you return the
      * <code>UsageQuantity</code> metric, the service aggregates all usage numbers
      * without taking into account the units. For example, if you aggregate
      * <code>usageQuantity</code> across all of Amazon EC2, the results aren't
      * meaningful because Amazon EC2 compute hours and data transfer are measured in
      * different units (for example, hours vs. GB). To get more meaningful
      * <code>UsageQuantity</code> metrics, filter by <code>UsageType</code> or
-     * <code>UsageTypeGroups</code>. </p> </note> <p> <code>Metrics</code> is required
+     * <code>UsageTypeGroups</code>. </p>  <p> <code>Metrics</code> is required
      * for <code>GetCostAndUsage</code> requests.</p>
      */
     inline void SetMetrics(const Aws::Vector<Aws::String>& value) { m_metricsHasBeenSet = true; m_metrics = value; }
@@ -278,14 +278,14 @@ namespace Model
      * <p>Valid values are <code>AmortizedCost</code>, <code>BlendedCost</code>,
      * <code>NetAmortizedCost</code>, <code>NetUnblendedCost</code>,
      * <code>NormalizedUsageAmount</code>, <code>UnblendedCost</code>, and
-     * <code>UsageQuantity</code>. </p> <note> <p>If you return the
+     * <code>UsageQuantity</code>. </p>  <p>If you return the
      * <code>UsageQuantity</code> metric, the service aggregates all usage numbers
      * without taking into account the units. For example, if you aggregate
      * <code>usageQuantity</code> across all of Amazon EC2, the results aren't
      * meaningful because Amazon EC2 compute hours and data transfer are measured in
      * different units (for example, hours vs. GB). To get more meaningful
      * <code>UsageQuantity</code> metrics, filter by <code>UsageType</code> or
-     * <code>UsageTypeGroups</code>. </p> </note> <p> <code>Metrics</code> is required
+     * <code>UsageTypeGroups</code>. </p>  <p> <code>Metrics</code> is required
      * for <code>GetCostAndUsage</code> requests.</p>
      */
     inline void SetMetrics(Aws::Vector<Aws::String>&& value) { m_metricsHasBeenSet = true; m_metrics = std::move(value); }
@@ -298,14 +298,14 @@ namespace Model
      * <p>Valid values are <code>AmortizedCost</code>, <code>BlendedCost</code>,
      * <code>NetAmortizedCost</code>, <code>NetUnblendedCost</code>,
      * <code>NormalizedUsageAmount</code>, <code>UnblendedCost</code>, and
-     * <code>UsageQuantity</code>. </p> <note> <p>If you return the
+     * <code>UsageQuantity</code>. </p>  <p>If you return the
      * <code>UsageQuantity</code> metric, the service aggregates all usage numbers
      * without taking into account the units. For example, if you aggregate
      * <code>usageQuantity</code> across all of Amazon EC2, the results aren't
      * meaningful because Amazon EC2 compute hours and data transfer are measured in
      * different units (for example, hours vs. GB). To get more meaningful
      * <code>UsageQuantity</code> metrics, filter by <code>UsageType</code> or
-     * <code>UsageTypeGroups</code>. </p> </note> <p> <code>Metrics</code> is required
+     * <code>UsageTypeGroups</code>. </p>  <p> <code>Metrics</code> is required
      * for <code>GetCostAndUsage</code> requests.</p>
      */
     inline GetCostAndUsageRequest& WithMetrics(const Aws::Vector<Aws::String>& value) { SetMetrics(value); return *this;}
@@ -318,14 +318,14 @@ namespace Model
      * <p>Valid values are <code>AmortizedCost</code>, <code>BlendedCost</code>,
      * <code>NetAmortizedCost</code>, <code>NetUnblendedCost</code>,
      * <code>NormalizedUsageAmount</code>, <code>UnblendedCost</code>, and
-     * <code>UsageQuantity</code>. </p> <note> <p>If you return the
+     * <code>UsageQuantity</code>. </p>  <p>If you return the
      * <code>UsageQuantity</code> metric, the service aggregates all usage numbers
      * without taking into account the units. For example, if you aggregate
      * <code>usageQuantity</code> across all of Amazon EC2, the results aren't
      * meaningful because Amazon EC2 compute hours and data transfer are measured in
      * different units (for example, hours vs. GB). To get more meaningful
      * <code>UsageQuantity</code> metrics, filter by <code>UsageType</code> or
-     * <code>UsageTypeGroups</code>. </p> </note> <p> <code>Metrics</code> is required
+     * <code>UsageTypeGroups</code>. </p>  <p> <code>Metrics</code> is required
      * for <code>GetCostAndUsage</code> requests.</p>
      */
     inline GetCostAndUsageRequest& WithMetrics(Aws::Vector<Aws::String>&& value) { SetMetrics(std::move(value)); return *this;}
@@ -338,14 +338,14 @@ namespace Model
      * <p>Valid values are <code>AmortizedCost</code>, <code>BlendedCost</code>,
      * <code>NetAmortizedCost</code>, <code>NetUnblendedCost</code>,
      * <code>NormalizedUsageAmount</code>, <code>UnblendedCost</code>, and
-     * <code>UsageQuantity</code>. </p> <note> <p>If you return the
+     * <code>UsageQuantity</code>. </p>  <p>If you return the
      * <code>UsageQuantity</code> metric, the service aggregates all usage numbers
      * without taking into account the units. For example, if you aggregate
      * <code>usageQuantity</code> across all of Amazon EC2, the results aren't
      * meaningful because Amazon EC2 compute hours and data transfer are measured in
      * different units (for example, hours vs. GB). To get more meaningful
      * <code>UsageQuantity</code> metrics, filter by <code>UsageType</code> or
-     * <code>UsageTypeGroups</code>. </p> </note> <p> <code>Metrics</code> is required
+     * <code>UsageTypeGroups</code>. </p>  <p> <code>Metrics</code> is required
      * for <code>GetCostAndUsage</code> requests.</p>
      */
     inline GetCostAndUsageRequest& AddMetrics(const Aws::String& value) { m_metricsHasBeenSet = true; m_metrics.push_back(value); return *this; }
@@ -358,14 +358,14 @@ namespace Model
      * <p>Valid values are <code>AmortizedCost</code>, <code>BlendedCost</code>,
      * <code>NetAmortizedCost</code>, <code>NetUnblendedCost</code>,
      * <code>NormalizedUsageAmount</code>, <code>UnblendedCost</code>, and
-     * <code>UsageQuantity</code>. </p> <note> <p>If you return the
+     * <code>UsageQuantity</code>. </p>  <p>If you return the
      * <code>UsageQuantity</code> metric, the service aggregates all usage numbers
      * without taking into account the units. For example, if you aggregate
      * <code>usageQuantity</code> across all of Amazon EC2, the results aren't
      * meaningful because Amazon EC2 compute hours and data transfer are measured in
      * different units (for example, hours vs. GB). To get more meaningful
      * <code>UsageQuantity</code> metrics, filter by <code>UsageType</code> or
-     * <code>UsageTypeGroups</code>. </p> </note> <p> <code>Metrics</code> is required
+     * <code>UsageTypeGroups</code>. </p>  <p> <code>Metrics</code> is required
      * for <code>GetCostAndUsage</code> requests.</p>
      */
     inline GetCostAndUsageRequest& AddMetrics(Aws::String&& value) { m_metricsHasBeenSet = true; m_metrics.push_back(std::move(value)); return *this; }
@@ -378,14 +378,14 @@ namespace Model
      * <p>Valid values are <code>AmortizedCost</code>, <code>BlendedCost</code>,
      * <code>NetAmortizedCost</code>, <code>NetUnblendedCost</code>,
      * <code>NormalizedUsageAmount</code>, <code>UnblendedCost</code>, and
-     * <code>UsageQuantity</code>. </p> <note> <p>If you return the
+     * <code>UsageQuantity</code>. </p>  <p>If you return the
      * <code>UsageQuantity</code> metric, the service aggregates all usage numbers
      * without taking into account the units. For example, if you aggregate
      * <code>usageQuantity</code> across all of Amazon EC2, the results aren't
      * meaningful because Amazon EC2 compute hours and data transfer are measured in
      * different units (for example, hours vs. GB). To get more meaningful
      * <code>UsageQuantity</code> metrics, filter by <code>UsageType</code> or
-     * <code>UsageTypeGroups</code>. </p> </note> <p> <code>Metrics</code> is required
+     * <code>UsageTypeGroups</code>. </p>  <p> <code>Metrics</code> is required
      * for <code>GetCostAndUsage</code> requests.</p>
      */
     inline GetCostAndUsageRequest& AddMetrics(const char* value) { m_metricsHasBeenSet = true; m_metrics.push_back(value); return *this; }

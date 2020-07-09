@@ -1316,9 +1316,9 @@ namespace Model
 
         /**
          * <p>Generates a prediction for the observation using the specified <code>ML
-         * Model</code>.</p> <note><title>Note</title> <p>Not all response parameters will
+         * Model</code>.</p> <title>Note</title> <p>Not all response parameters will
          * be populated. Whether a response parameter is populated depends on the type of
-         * model requested.</p></note><p><h3>See Also:</h3>   <a
+         * model requested.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/Predict">AWS
          * API Reference</a></p>
          */
@@ -1326,9 +1326,9 @@ namespace Model
 
         /**
          * <p>Generates a prediction for the observation using the specified <code>ML
-         * Model</code>.</p> <note><title>Note</title> <p>Not all response parameters will
+         * Model</code>.</p> <title>Note</title> <p>Not all response parameters will
          * be populated. Whether a response parameter is populated depends on the type of
-         * model requested.</p></note><p><h3>See Also:</h3>   <a
+         * model requested.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/Predict">AWS
          * API Reference</a></p>
          *
@@ -1338,9 +1338,9 @@ namespace Model
 
         /**
          * <p>Generates a prediction for the observation using the specified <code>ML
-         * Model</code>.</p> <note><title>Note</title> <p>Not all response parameters will
+         * Model</code>.</p> <title>Note</title> <p>Not all response parameters will
          * be populated. Whether a response parameter is populated depends on the type of
-         * model requested.</p></note><p><h3>See Also:</h3>   <a
+         * model requested.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/Predict">AWS
          * API Reference</a></p>
          *

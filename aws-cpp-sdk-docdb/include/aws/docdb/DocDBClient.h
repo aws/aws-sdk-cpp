@@ -476,14 +476,14 @@ namespace Model
          * create a DB cluster parameter group, you must associate it with your cluster.
          * For the new DB cluster parameter group and associated settings to take effect,
          * you must then reboot the instances in the cluster without failover.</p>
-         * <important> <p>After you create a cluster parameter group, you should wait at
+         *  <p>After you create a cluster parameter group, you should wait at
          * least 5 minutes before creating your first cluster that uses that cluster
          * parameter group as the default parameter group. This allows Amazon DocumentDB to
          * fully complete the create action before the cluster parameter group is used as
          * the default for a new cluster. This step is especially important for parameters
          * that are critical when creating the default database for a cluster, such as the
          * character set for the default database defined by the
-         * <code>character_set_database</code> parameter.</p> </important><p><h3>See
+         * <code>character_set_database</code> parameter.</p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/CreateDBClusterParameterGroup">AWS
          * API Reference</a></p>
@@ -499,14 +499,14 @@ namespace Model
          * create a DB cluster parameter group, you must associate it with your cluster.
          * For the new DB cluster parameter group and associated settings to take effect,
          * you must then reboot the instances in the cluster without failover.</p>
-         * <important> <p>After you create a cluster parameter group, you should wait at
+         *  <p>After you create a cluster parameter group, you should wait at
          * least 5 minutes before creating your first cluster that uses that cluster
          * parameter group as the default parameter group. This allows Amazon DocumentDB to
          * fully complete the create action before the cluster parameter group is used as
          * the default for a new cluster. This step is especially important for parameters
          * that are critical when creating the default database for a cluster, such as the
          * character set for the default database defined by the
-         * <code>character_set_database</code> parameter.</p> </important><p><h3>See
+         * <code>character_set_database</code> parameter.</p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/CreateDBClusterParameterGroup">AWS
          * API Reference</a></p>
@@ -524,14 +524,14 @@ namespace Model
          * create a DB cluster parameter group, you must associate it with your cluster.
          * For the new DB cluster parameter group and associated settings to take effect,
          * you must then reboot the instances in the cluster without failover.</p>
-         * <important> <p>After you create a cluster parameter group, you should wait at
+         *  <p>After you create a cluster parameter group, you should wait at
          * least 5 minutes before creating your first cluster that uses that cluster
          * parameter group as the default parameter group. This allows Amazon DocumentDB to
          * fully complete the create action before the cluster parameter group is used as
          * the default for a new cluster. This step is especially important for parameters
          * that are critical when creating the default database for a cluster, such as the
          * character set for the default database defined by the
-         * <code>character_set_database</code> parameter.</p> </important><p><h3>See
+         * <code>character_set_database</code> parameter.</p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/CreateDBClusterParameterGroup">AWS
          * API Reference</a></p>
@@ -682,8 +682,8 @@ namespace Model
 
         /**
          * <p>Deletes a cluster snapshot. If the snapshot is being copied, the copy
-         * operation is terminated.</p> <note> <p>The cluster snapshot must be in the
-         * <code>available</code> state to be deleted.</p> </note><p><h3>See Also:</h3>  
+         * operation is terminated.</p>  <p>The cluster snapshot must be in the
+         * <code>available</code> state to be deleted.</p> <p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DeleteDBClusterSnapshot">AWS
          * API Reference</a></p>
@@ -692,8 +692,8 @@ namespace Model
 
         /**
          * <p>Deletes a cluster snapshot. If the snapshot is being copied, the copy
-         * operation is terminated.</p> <note> <p>The cluster snapshot must be in the
-         * <code>available</code> state to be deleted.</p> </note><p><h3>See Also:</h3>  
+         * operation is terminated.</p>  <p>The cluster snapshot must be in the
+         * <code>available</code> state to be deleted.</p> <p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DeleteDBClusterSnapshot">AWS
          * API Reference</a></p>
@@ -704,8 +704,8 @@ namespace Model
 
         /**
          * <p>Deletes a cluster snapshot. If the snapshot is being copied, the copy
-         * operation is terminated.</p> <note> <p>The cluster snapshot must be in the
-         * <code>available</code> state to be deleted.</p> </note><p><h3>See Also:</h3>  
+         * operation is terminated.</p>  <p>The cluster snapshot must be in the
+         * <code>available</code> state to be deleted.</p> <p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DeleteDBClusterSnapshot">AWS
          * API Reference</a></p>
@@ -740,8 +740,8 @@ namespace Model
         virtual void DeleteDBInstanceAsync(const Model::DeleteDBInstanceRequest& request, const DeleteDBInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes a subnet group.</p> <note> <p>The specified database subnet group
-         * must not be associated with any DB instances.</p> </note><p><h3>See Also:</h3>  
+         * <p>Deletes a subnet group.</p>  <p>The specified database subnet group
+         * must not be associated with any DB instances.</p> <p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DeleteDBSubnetGroup">AWS
          * API Reference</a></p>
@@ -749,8 +749,8 @@ namespace Model
         virtual Model::DeleteDBSubnetGroupOutcome DeleteDBSubnetGroup(const Model::DeleteDBSubnetGroupRequest& request) const;
 
         /**
-         * <p>Deletes a subnet group.</p> <note> <p>The specified database subnet group
-         * must not be associated with any DB instances.</p> </note><p><h3>See Also:</h3>  
+         * <p>Deletes a subnet group.</p>  <p>The specified database subnet group
+         * must not be associated with any DB instances.</p> <p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DeleteDBSubnetGroup">AWS
          * API Reference</a></p>
@@ -760,8 +760,8 @@ namespace Model
         virtual Model::DeleteDBSubnetGroupOutcomeCallable DeleteDBSubnetGroupCallable(const Model::DeleteDBSubnetGroupRequest& request) const;
 
         /**
-         * <p>Deletes a subnet group.</p> <note> <p>The specified database subnet group
-         * must not be associated with any DB instances.</p> </note><p><h3>See Also:</h3>  
+         * <p>Deletes a subnet group.</p>  <p>The specified database subnet group
+         * must not be associated with any DB instances.</p> <p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DeleteDBSubnetGroup">AWS
          * API Reference</a></p>
@@ -1313,17 +1313,17 @@ namespace Model
          * <p> Modifies the parameters of a cluster parameter group. To modify more than
          * one parameter, submit a list of the following: <code>ParameterName</code>,
          * <code>ParameterValue</code>, and <code>ApplyMethod</code>. A maximum of 20
-         * parameters can be modified in a single request. </p> <note> <p>Changes to
+         * parameters can be modified in a single request. </p>  <p>Changes to
          * dynamic parameters are applied immediately. Changes to static parameters require
-         * a reboot or maintenance window before the change can take effect.</p> </note>
-         * <important> <p>After you create a cluster parameter group, you should wait at
+         * a reboot or maintenance window before the change can take effect.</p> 
+         *  <p>After you create a cluster parameter group, you should wait at
          * least 5 minutes before creating your first cluster that uses that cluster
          * parameter group as the default parameter group. This allows Amazon DocumentDB to
          * fully complete the create action before the parameter group is used as the
          * default for a new cluster. This step is especially important for parameters that
          * are critical when creating the default database for a cluster, such as the
          * character set for the default database defined by the
-         * <code>character_set_database</code> parameter.</p> </important><p><h3>See
+         * <code>character_set_database</code> parameter.</p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/ModifyDBClusterParameterGroup">AWS
          * API Reference</a></p>
@@ -1334,17 +1334,17 @@ namespace Model
          * <p> Modifies the parameters of a cluster parameter group. To modify more than
          * one parameter, submit a list of the following: <code>ParameterName</code>,
          * <code>ParameterValue</code>, and <code>ApplyMethod</code>. A maximum of 20
-         * parameters can be modified in a single request. </p> <note> <p>Changes to
+         * parameters can be modified in a single request. </p>  <p>Changes to
          * dynamic parameters are applied immediately. Changes to static parameters require
-         * a reboot or maintenance window before the change can take effect.</p> </note>
-         * <important> <p>After you create a cluster parameter group, you should wait at
+         * a reboot or maintenance window before the change can take effect.</p> 
+         *  <p>After you create a cluster parameter group, you should wait at
          * least 5 minutes before creating your first cluster that uses that cluster
          * parameter group as the default parameter group. This allows Amazon DocumentDB to
          * fully complete the create action before the parameter group is used as the
          * default for a new cluster. This step is especially important for parameters that
          * are critical when creating the default database for a cluster, such as the
          * character set for the default database defined by the
-         * <code>character_set_database</code> parameter.</p> </important><p><h3>See
+         * <code>character_set_database</code> parameter.</p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/ModifyDBClusterParameterGroup">AWS
          * API Reference</a></p>
@@ -1357,17 +1357,17 @@ namespace Model
          * <p> Modifies the parameters of a cluster parameter group. To modify more than
          * one parameter, submit a list of the following: <code>ParameterName</code>,
          * <code>ParameterValue</code>, and <code>ApplyMethod</code>. A maximum of 20
-         * parameters can be modified in a single request. </p> <note> <p>Changes to
+         * parameters can be modified in a single request. </p>  <p>Changes to
          * dynamic parameters are applied immediately. Changes to static parameters require
-         * a reboot or maintenance window before the change can take effect.</p> </note>
-         * <important> <p>After you create a cluster parameter group, you should wait at
+         * a reboot or maintenance window before the change can take effect.</p> 
+         *  <p>After you create a cluster parameter group, you should wait at
          * least 5 minutes before creating your first cluster that uses that cluster
          * parameter group as the default parameter group. This allows Amazon DocumentDB to
          * fully complete the create action before the parameter group is used as the
          * default for a new cluster. This step is especially important for parameters that
          * are critical when creating the default database for a cluster, such as the
          * character set for the default database defined by the
-         * <code>character_set_database</code> parameter.</p> </important><p><h3>See
+         * <code>character_set_database</code> parameter.</p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/ModifyDBClusterParameterGroup">AWS
          * API Reference</a></p>

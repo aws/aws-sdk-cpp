@@ -69,22 +69,34 @@ namespace Model
     inline TcpRoute& WithAction(TcpRouteAction&& value) { SetAction(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p>An object that represents types of timeouts. </p>
+     */
     inline const TcpTimeout& GetTimeout() const{ return m_timeout; }
 
-    
+    /**
+     * <p>An object that represents types of timeouts. </p>
+     */
     inline bool TimeoutHasBeenSet() const { return m_timeoutHasBeenSet; }
 
-    
+    /**
+     * <p>An object that represents types of timeouts. </p>
+     */
     inline void SetTimeout(const TcpTimeout& value) { m_timeoutHasBeenSet = true; m_timeout = value; }
 
-    
+    /**
+     * <p>An object that represents types of timeouts. </p>
+     */
     inline void SetTimeout(TcpTimeout&& value) { m_timeoutHasBeenSet = true; m_timeout = std::move(value); }
 
-    
+    /**
+     * <p>An object that represents types of timeouts. </p>
+     */
     inline TcpRoute& WithTimeout(const TcpTimeout& value) { SetTimeout(value); return *this;}
 
-    
+    /**
+     * <p>An object that represents types of timeouts. </p>
+     */
     inline TcpRoute& WithTimeout(TcpTimeout&& value) { SetTimeout(std::move(value)); return *this;}
 
   private:

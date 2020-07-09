@@ -1048,15 +1048,15 @@ namespace Model
 
         /**
          * <p>Running <code>PutPermission</code> permits the specified AWS account or AWS
-         * organization to put events to the specified <i>event bus</i>. CloudWatch Events
-         * rules in your account are triggered by these events arriving to an event bus in
-         * your account. </p> <p>For another account to send events to your account, that
-         * external account must have an EventBridge rule with your account's event bus as
-         * a target.</p> <p>To enable multiple AWS accounts to put events to your event
-         * bus, run <code>PutPermission</code> once for each of these accounts. Or, if all
-         * the accounts are members of the same AWS organization, you can run
-         * <code>PutPermission</code> once specifying <code>Principal</code> as "*" and
-         * specifying the AWS organization ID in <code>Condition</code>, to grant
+         * organization to put events to the specified <i>event bus</i>. Amazon EventBridge
+         * (CloudWatch Events) rules in your account are triggered by these events arriving
+         * to an event bus in your account. </p> <p>For another account to send events to
+         * your account, that external account must have an EventBridge rule with your
+         * account's event bus as a target.</p> <p>To enable multiple AWS accounts to put
+         * events to your event bus, run <code>PutPermission</code> once for each of these
+         * accounts. Or, if all the accounts are members of the same AWS organization, you
+         * can run <code>PutPermission</code> once specifying <code>Principal</code> as "*"
+         * and specifying the AWS organization ID in <code>Condition</code>, to grant
          * permissions to all accounts in that organization.</p> <p>If you grant
          * permissions using an organization, then accounts in that organization must
          * specify a <code>RoleArn</code> with proper permissions when they use
@@ -1073,15 +1073,15 @@ namespace Model
 
         /**
          * <p>Running <code>PutPermission</code> permits the specified AWS account or AWS
-         * organization to put events to the specified <i>event bus</i>. CloudWatch Events
-         * rules in your account are triggered by these events arriving to an event bus in
-         * your account. </p> <p>For another account to send events to your account, that
-         * external account must have an EventBridge rule with your account's event bus as
-         * a target.</p> <p>To enable multiple AWS accounts to put events to your event
-         * bus, run <code>PutPermission</code> once for each of these accounts. Or, if all
-         * the accounts are members of the same AWS organization, you can run
-         * <code>PutPermission</code> once specifying <code>Principal</code> as "*" and
-         * specifying the AWS organization ID in <code>Condition</code>, to grant
+         * organization to put events to the specified <i>event bus</i>. Amazon EventBridge
+         * (CloudWatch Events) rules in your account are triggered by these events arriving
+         * to an event bus in your account. </p> <p>For another account to send events to
+         * your account, that external account must have an EventBridge rule with your
+         * account's event bus as a target.</p> <p>To enable multiple AWS accounts to put
+         * events to your event bus, run <code>PutPermission</code> once for each of these
+         * accounts. Or, if all the accounts are members of the same AWS organization, you
+         * can run <code>PutPermission</code> once specifying <code>Principal</code> as "*"
+         * and specifying the AWS organization ID in <code>Condition</code>, to grant
          * permissions to all accounts in that organization.</p> <p>If you grant
          * permissions using an organization, then accounts in that organization must
          * specify a <code>RoleArn</code> with proper permissions when they use
@@ -1100,15 +1100,15 @@ namespace Model
 
         /**
          * <p>Running <code>PutPermission</code> permits the specified AWS account or AWS
-         * organization to put events to the specified <i>event bus</i>. CloudWatch Events
-         * rules in your account are triggered by these events arriving to an event bus in
-         * your account. </p> <p>For another account to send events to your account, that
-         * external account must have an EventBridge rule with your account's event bus as
-         * a target.</p> <p>To enable multiple AWS accounts to put events to your event
-         * bus, run <code>PutPermission</code> once for each of these accounts. Or, if all
-         * the accounts are members of the same AWS organization, you can run
-         * <code>PutPermission</code> once specifying <code>Principal</code> as "*" and
-         * specifying the AWS organization ID in <code>Condition</code>, to grant
+         * organization to put events to the specified <i>event bus</i>. Amazon EventBridge
+         * (CloudWatch Events) rules in your account are triggered by these events arriving
+         * to an event bus in your account. </p> <p>For another account to send events to
+         * your account, that external account must have an EventBridge rule with your
+         * account's event bus as a target.</p> <p>To enable multiple AWS accounts to put
+         * events to your event bus, run <code>PutPermission</code> once for each of these
+         * accounts. Or, if all the accounts are members of the same AWS organization, you
+         * can run <code>PutPermission</code> once specifying <code>Principal</code> as "*"
+         * and specifying the AWS organization ID in <code>Condition</code>, to grant
          * permissions to all accounts in that organization.</p> <p>If you grant
          * permissions using an organization, then accounts in that organization must
          * specify a <code>RoleArn</code> with proper permissions when they use
@@ -1289,22 +1289,22 @@ namespace Model
          * <li> <p>Pipelines in AWS CodePipeline</p> </li> <li> <p>Amazon Inspector
          * assessment templates</p> </li> <li> <p>Amazon SNS topics</p> </li> <li>
          * <p>Amazon SQS queues, including FIFO queues</p> </li> <li> <p>The default event
-         * bus of another AWS account</p> </li> </ul> <p>Creating rules with built-in
-         * targets is supported only in the AWS Management Console. The built-in targets
-         * are <code>EC2 CreateSnapshot API call</code>, <code>EC2 RebootInstances API
-         * call</code>, <code>EC2 StopInstances API call</code>, and <code>EC2
-         * TerminateInstances API call</code>. </p> <p>For some target types,
-         * <code>PutTargets</code> provides target-specific parameters. If the target is a
-         * Kinesis data stream, you can optionally specify which shard the event goes to by
-         * using the <code>KinesisParameters</code> argument. To invoke a command on
-         * multiple EC2 instances with one rule, you can use the
+         * bus of another AWS account</p> </li> <li> <p>Amazon API Gateway REST APIs</p>
+         * </li> </ul> <p>Creating rules with built-in targets is supported only in the AWS
+         * Management Console. The built-in targets are <code>EC2 CreateSnapshot API
+         * call</code>, <code>EC2 RebootInstances API call</code>, <code>EC2 StopInstances
+         * API call</code>, and <code>EC2 TerminateInstances API call</code>. </p> <p>For
+         * some target types, <code>PutTargets</code> provides target-specific parameters.
+         * If the target is a Kinesis data stream, you can optionally specify which shard
+         * the event goes to by using the <code>KinesisParameters</code> argument. To
+         * invoke a command on multiple EC2 instances with one rule, you can use the
          * <code>RunCommandParameters</code> field.</p> <p>To be able to make API calls
-         * against the resources that you own, Amazon CloudWatch Events needs the
-         * appropriate permissions. For AWS Lambda and Amazon SNS resources, EventBridge
-         * relies on resource-based policies. For EC2 instances, Kinesis data streams, and
-         * AWS Step Functions state machines, EventBridge relies on IAM roles that you
-         * specify in the <code>RoleARN</code> argument in <code>PutTargets</code>. For
-         * more information, see <a
+         * against the resources that you own, Amazon EventBridge (CloudWatch Events) needs
+         * the appropriate permissions. For AWS Lambda and Amazon SNS resources,
+         * EventBridge relies on resource-based policies. For EC2 instances, Kinesis data
+         * streams, AWS Step Functions state machines and API Gateway REST APIs,
+         * EventBridge relies on IAM roles that you specify in the <code>RoleARN</code>
+         * argument in <code>PutTargets</code>. For more information, see <a
          * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/auth-and-access-control-eventbridge.html">Authentication
          * and Access Control</a> in the <i>Amazon EventBridge User Guide</i>.</p> <p>If
          * another AWS account is in the same region and has granted you permission (using
@@ -1315,14 +1315,15 @@ namespace Model
          * sends events to another account, your account is charged for each sent event.
          * Each event sent to another account is charged as a custom event. The account
          * receiving the event is not charged. For more information, see <a
-         * href="https://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch
-         * Pricing</a>.</p> <note> <p> <code>Input</code>, <code>InputPath</code>, and
-         * <code>InputTransformer</code> are not available with <code>PutTarget</code> if
-         * the target is an event bus of a different AWS account.</p> </note> <p>If you are
-         * setting the event bus of another account as the target, and that account granted
-         * permission to your account through an organization instead of directly by the
-         * account ID, then you must specify a <code>RoleArn</code> with proper permissions
-         * in the <code>Target</code> structure. For more information, see <a
+         * href="https://aws.amazon.com/eventbridge/pricing/">Amazon EventBridge
+         * (CloudWatch Events) Pricing</a>.</p>  <p> <code>Input</code>,
+         * <code>InputPath</code>, and <code>InputTransformer</code> are not available with
+         * <code>PutTarget</code> if the target is an event bus of a different AWS
+         * account.</p>  <p>If you are setting the event bus of another account as
+         * the target, and that account granted permission to your account through an
+         * organization instead of directly by the account ID, then you must specify a
+         * <code>RoleArn</code> with proper permissions in the <code>Target</code>
+         * structure. For more information, see <a
          * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-cross-account-event-delivery.html">Sending
          * and Receiving Events Between AWS Accounts</a> in the <i>Amazon EventBridge User
          * Guide</i>.</p> <p>For more information about enabling cross-account events, see
@@ -1366,22 +1367,22 @@ namespace Model
          * <li> <p>Pipelines in AWS CodePipeline</p> </li> <li> <p>Amazon Inspector
          * assessment templates</p> </li> <li> <p>Amazon SNS topics</p> </li> <li>
          * <p>Amazon SQS queues, including FIFO queues</p> </li> <li> <p>The default event
-         * bus of another AWS account</p> </li> </ul> <p>Creating rules with built-in
-         * targets is supported only in the AWS Management Console. The built-in targets
-         * are <code>EC2 CreateSnapshot API call</code>, <code>EC2 RebootInstances API
-         * call</code>, <code>EC2 StopInstances API call</code>, and <code>EC2
-         * TerminateInstances API call</code>. </p> <p>For some target types,
-         * <code>PutTargets</code> provides target-specific parameters. If the target is a
-         * Kinesis data stream, you can optionally specify which shard the event goes to by
-         * using the <code>KinesisParameters</code> argument. To invoke a command on
-         * multiple EC2 instances with one rule, you can use the
+         * bus of another AWS account</p> </li> <li> <p>Amazon API Gateway REST APIs</p>
+         * </li> </ul> <p>Creating rules with built-in targets is supported only in the AWS
+         * Management Console. The built-in targets are <code>EC2 CreateSnapshot API
+         * call</code>, <code>EC2 RebootInstances API call</code>, <code>EC2 StopInstances
+         * API call</code>, and <code>EC2 TerminateInstances API call</code>. </p> <p>For
+         * some target types, <code>PutTargets</code> provides target-specific parameters.
+         * If the target is a Kinesis data stream, you can optionally specify which shard
+         * the event goes to by using the <code>KinesisParameters</code> argument. To
+         * invoke a command on multiple EC2 instances with one rule, you can use the
          * <code>RunCommandParameters</code> field.</p> <p>To be able to make API calls
-         * against the resources that you own, Amazon CloudWatch Events needs the
-         * appropriate permissions. For AWS Lambda and Amazon SNS resources, EventBridge
-         * relies on resource-based policies. For EC2 instances, Kinesis data streams, and
-         * AWS Step Functions state machines, EventBridge relies on IAM roles that you
-         * specify in the <code>RoleARN</code> argument in <code>PutTargets</code>. For
-         * more information, see <a
+         * against the resources that you own, Amazon EventBridge (CloudWatch Events) needs
+         * the appropriate permissions. For AWS Lambda and Amazon SNS resources,
+         * EventBridge relies on resource-based policies. For EC2 instances, Kinesis data
+         * streams, AWS Step Functions state machines and API Gateway REST APIs,
+         * EventBridge relies on IAM roles that you specify in the <code>RoleARN</code>
+         * argument in <code>PutTargets</code>. For more information, see <a
          * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/auth-and-access-control-eventbridge.html">Authentication
          * and Access Control</a> in the <i>Amazon EventBridge User Guide</i>.</p> <p>If
          * another AWS account is in the same region and has granted you permission (using
@@ -1392,14 +1393,15 @@ namespace Model
          * sends events to another account, your account is charged for each sent event.
          * Each event sent to another account is charged as a custom event. The account
          * receiving the event is not charged. For more information, see <a
-         * href="https://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch
-         * Pricing</a>.</p> <note> <p> <code>Input</code>, <code>InputPath</code>, and
-         * <code>InputTransformer</code> are not available with <code>PutTarget</code> if
-         * the target is an event bus of a different AWS account.</p> </note> <p>If you are
-         * setting the event bus of another account as the target, and that account granted
-         * permission to your account through an organization instead of directly by the
-         * account ID, then you must specify a <code>RoleArn</code> with proper permissions
-         * in the <code>Target</code> structure. For more information, see <a
+         * href="https://aws.amazon.com/eventbridge/pricing/">Amazon EventBridge
+         * (CloudWatch Events) Pricing</a>.</p>  <p> <code>Input</code>,
+         * <code>InputPath</code>, and <code>InputTransformer</code> are not available with
+         * <code>PutTarget</code> if the target is an event bus of a different AWS
+         * account.</p>  <p>If you are setting the event bus of another account as
+         * the target, and that account granted permission to your account through an
+         * organization instead of directly by the account ID, then you must specify a
+         * <code>RoleArn</code> with proper permissions in the <code>Target</code>
+         * structure. For more information, see <a
          * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-cross-account-event-delivery.html">Sending
          * and Receiving Events Between AWS Accounts</a> in the <i>Amazon EventBridge User
          * Guide</i>.</p> <p>For more information about enabling cross-account events, see
@@ -1445,22 +1447,22 @@ namespace Model
          * <li> <p>Pipelines in AWS CodePipeline</p> </li> <li> <p>Amazon Inspector
          * assessment templates</p> </li> <li> <p>Amazon SNS topics</p> </li> <li>
          * <p>Amazon SQS queues, including FIFO queues</p> </li> <li> <p>The default event
-         * bus of another AWS account</p> </li> </ul> <p>Creating rules with built-in
-         * targets is supported only in the AWS Management Console. The built-in targets
-         * are <code>EC2 CreateSnapshot API call</code>, <code>EC2 RebootInstances API
-         * call</code>, <code>EC2 StopInstances API call</code>, and <code>EC2
-         * TerminateInstances API call</code>. </p> <p>For some target types,
-         * <code>PutTargets</code> provides target-specific parameters. If the target is a
-         * Kinesis data stream, you can optionally specify which shard the event goes to by
-         * using the <code>KinesisParameters</code> argument. To invoke a command on
-         * multiple EC2 instances with one rule, you can use the
+         * bus of another AWS account</p> </li> <li> <p>Amazon API Gateway REST APIs</p>
+         * </li> </ul> <p>Creating rules with built-in targets is supported only in the AWS
+         * Management Console. The built-in targets are <code>EC2 CreateSnapshot API
+         * call</code>, <code>EC2 RebootInstances API call</code>, <code>EC2 StopInstances
+         * API call</code>, and <code>EC2 TerminateInstances API call</code>. </p> <p>For
+         * some target types, <code>PutTargets</code> provides target-specific parameters.
+         * If the target is a Kinesis data stream, you can optionally specify which shard
+         * the event goes to by using the <code>KinesisParameters</code> argument. To
+         * invoke a command on multiple EC2 instances with one rule, you can use the
          * <code>RunCommandParameters</code> field.</p> <p>To be able to make API calls
-         * against the resources that you own, Amazon CloudWatch Events needs the
-         * appropriate permissions. For AWS Lambda and Amazon SNS resources, EventBridge
-         * relies on resource-based policies. For EC2 instances, Kinesis data streams, and
-         * AWS Step Functions state machines, EventBridge relies on IAM roles that you
-         * specify in the <code>RoleARN</code> argument in <code>PutTargets</code>. For
-         * more information, see <a
+         * against the resources that you own, Amazon EventBridge (CloudWatch Events) needs
+         * the appropriate permissions. For AWS Lambda and Amazon SNS resources,
+         * EventBridge relies on resource-based policies. For EC2 instances, Kinesis data
+         * streams, AWS Step Functions state machines and API Gateway REST APIs,
+         * EventBridge relies on IAM roles that you specify in the <code>RoleARN</code>
+         * argument in <code>PutTargets</code>. For more information, see <a
          * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/auth-and-access-control-eventbridge.html">Authentication
          * and Access Control</a> in the <i>Amazon EventBridge User Guide</i>.</p> <p>If
          * another AWS account is in the same region and has granted you permission (using
@@ -1471,14 +1473,15 @@ namespace Model
          * sends events to another account, your account is charged for each sent event.
          * Each event sent to another account is charged as a custom event. The account
          * receiving the event is not charged. For more information, see <a
-         * href="https://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch
-         * Pricing</a>.</p> <note> <p> <code>Input</code>, <code>InputPath</code>, and
-         * <code>InputTransformer</code> are not available with <code>PutTarget</code> if
-         * the target is an event bus of a different AWS account.</p> </note> <p>If you are
-         * setting the event bus of another account as the target, and that account granted
-         * permission to your account through an organization instead of directly by the
-         * account ID, then you must specify a <code>RoleArn</code> with proper permissions
-         * in the <code>Target</code> structure. For more information, see <a
+         * href="https://aws.amazon.com/eventbridge/pricing/">Amazon EventBridge
+         * (CloudWatch Events) Pricing</a>.</p>  <p> <code>Input</code>,
+         * <code>InputPath</code>, and <code>InputTransformer</code> are not available with
+         * <code>PutTarget</code> if the target is an event bus of a different AWS
+         * account.</p>  <p>If you are setting the event bus of another account as
+         * the target, and that account granted permission to your account through an
+         * organization instead of directly by the account ID, then you must specify a
+         * <code>RoleArn</code> with proper permissions in the <code>Target</code>
+         * structure. For more information, see <a
          * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-cross-account-event-delivery.html">Sending
          * and Receiving Events Between AWS Accounts</a> in the <i>Amazon EventBridge User
          * Guide</i>.</p> <p>For more information about enabling cross-account events, see
@@ -1696,18 +1699,18 @@ namespace Model
         virtual void TestEventPatternAsync(const Model::TestEventPatternRequest& request, const TestEventPatternResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Removes one or more tags from the specified EventBridge resource. In
-         * CloudWatch Events, rules and event buses can be tagged.</p><p><h3>See Also:</h3>
-         * <a
+         * <p>Removes one or more tags from the specified EventBridge resource. In Amazon
+         * EventBridge (CloudWatch Events, rules and event buses can be
+         * tagged.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/UntagResource">AWS
          * API Reference</a></p>
          */
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
         /**
-         * <p>Removes one or more tags from the specified EventBridge resource. In
-         * CloudWatch Events, rules and event buses can be tagged.</p><p><h3>See Also:</h3>
-         * <a
+         * <p>Removes one or more tags from the specified EventBridge resource. In Amazon
+         * EventBridge (CloudWatch Events, rules and event buses can be
+         * tagged.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/UntagResource">AWS
          * API Reference</a></p>
          *
@@ -1716,9 +1719,9 @@ namespace Model
         virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
 
         /**
-         * <p>Removes one or more tags from the specified EventBridge resource. In
-         * CloudWatch Events, rules and event buses can be tagged.</p><p><h3>See Also:</h3>
-         * <a
+         * <p>Removes one or more tags from the specified EventBridge resource. In Amazon
+         * EventBridge (CloudWatch Events, rules and event buses can be
+         * tagged.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/UntagResource">AWS
          * API Reference</a></p>
          *
