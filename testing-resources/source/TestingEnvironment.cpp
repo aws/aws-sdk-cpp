@@ -7,6 +7,7 @@
 #include <aws/testing/TestingEnvironment.h>
 
 #include <aws/core/platform/FileSystem.h>
+#include <aws/core/platform/Environment.h>
 #include <aws/testing/platform/PlatformTesting.h>
 
 #include <sstream>
@@ -18,7 +19,7 @@ namespace Testing
 
 void RedirectHomeToTempIfAppropriate()
 {
-    #if !defined(DISABLE_HOME_DIR_REDIRECT) 
+    #if !defined(DISABLE_HOME_DIR_REDIRECT)
         //Set $HOME to tmp on unix systems
         std::stringstream tempDir; //( P_tmpdir );
         tempDir << P_tmpdir;
@@ -62,6 +63,28 @@ void ParseArgs(int argc, char** argv)
         {
             arg = arg.substr(resourcePrefixOption.length()); // get whatever value after the '='
             Aws::Testing::SetAwsResourcePrefix(arg.c_str());
+        }
+    }
+}
+
+static std::vector<std::pair<const char*, std::string>> s_environments;
+
+void SaveEnvironmentVariable(const char* variableName)
+{
+    s_environments.emplace_back(variableName, Aws::Environment::GetEnv(variableName).c_str());
+}
+
+void RestoreEnvironmentVariables()
+{
+    for(const auto& iter : s_environments)
+    {
+        if(iter.second.empty())
+        {
+            Aws::Environment::UnSetEnv(iter.first);
+        }
+        else
+        {
+            Aws::Environment::SetEnv(iter.first, iter.second.c_str(), 1/*override*/);
         }
     }
 }

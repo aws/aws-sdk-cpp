@@ -143,7 +143,6 @@ protected:
         SaveEnvironmentVariable("AWS_PROFILE");
         SaveEnvironmentVariable("AWS_DEFAULT_REGION");
         SaveEnvironmentVariable("AWS_REGION");
-        SaveEnvironmentVariable("AWS_EC2_METADATA_DISABLED");
 
         Aws::StringStream ss;
         ss << Aws::Auth::GetConfigProfileFilename() + "_blah" << std::this_thread::get_id();
@@ -516,8 +515,6 @@ TEST(AWSClientTest, TestOverflowContainer)
 TEST_F(AWSConfigTestSuite, TestClientConfigurationWithNonExistentProfile)
 {
     // create a config file with profile named Dijkstra
-    Aws::Environment::SetEnv("AWS_EC2_METADATA_DISABLED", "true", 1);
-
     Aws::OFStream configFileNew(m_configFileName.c_str(), Aws::OFStream::out | Aws::OFStream::trunc);
     configFileNew << "[Dijkstra]" << std::endl;
     configFileNew << "region = " << Aws::Region::US_WEST_2 << std::endl;
@@ -537,7 +534,6 @@ TEST_F(AWSConfigTestSuite, TestClientConfigurationWithNonExistentProfile)
 TEST_F(AWSConfigTestSuite, TestClientConfigurationWithNonExistentConfigFile)
 {
     Aws::Environment::SetEnv("AWS_CONFIG_FILE", "WhatAreTheChances", 1/*overwrite*/);
-    Aws::Environment::SetEnv("AWS_EC2_METADATA_DISABLED", "true", 1);
     Aws::Config::ReloadCachedConfigFile();
 
     Aws::Client::ClientConfiguration config("default");
@@ -675,6 +671,8 @@ TEST_F(AWSRegionTest, TestResolveRegionFromEC2InstanceMetadata)
 
     Aws::Environment::UnSetEnv("AWS_DEFAULT_REGION");
     Aws::Environment::UnSetEnv("AWS_REGION");
+    // We set AWS_EC2_METADATA_DISABLED=true Aws::Testing::InitPlatformTest, we need to set it to false explicitly for this test.
+    Aws::Environment::UnSetEnv("AWS_EC2_METADATA_DISABLED");
     Aws::OFStream configFile(m_configFileName.c_str(), Aws::OFStream::out | Aws::OFStream::trunc);
     configFile << "[default]" << std::endl;
     configFile.close();
@@ -708,7 +706,6 @@ TEST_F(AWSRegionTest, TestResolveDefaultRegion)
 {
     Aws::Environment::UnSetEnv("AWS_DEFAULT_REGION");
     Aws::Environment::UnSetEnv("AWS_REGION");
-    Aws::Environment::SetEnv("AWS_EC2_METADATA_DISABLED", "true", 1);
     Aws::OFStream configFile(m_configFileName.c_str(), Aws::OFStream::out | Aws::OFStream::trunc);
     configFile << "[default]" << std::endl;
     configFile.close();
