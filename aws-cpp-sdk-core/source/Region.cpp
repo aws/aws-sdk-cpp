@@ -23,7 +23,7 @@ namespace Aws
             {
                 return region.substr(5);
             }
-            else if (region.compare(region.size() - 5, 5, "-fips") == 0)
+            else if (region.size() >= 5 && region.compare(region.size() - 5, 5, "-fips") == 0)
             {
                 return region.substr(0, region.size() - 5);
             }
