@@ -461,7 +461,7 @@ namespace Aws
                     return CryptoBuffer();
                 }
 
-                if (lengthWritten == 0) 
+                if (lengthWritten == 0)
                 {
                     m_emptyPlaintext = true;
                 }
@@ -484,7 +484,11 @@ namespace Aws
                 CryptoBuffer finalBlock(GetBlockSizeBytes());
                 int writtenSize = static_cast<int>(finalBlock.GetLength());
                 int ret = EVP_DecryptFinal_ex(m_decryptor_ctx, finalBlock.GetUnderlyingData(), &writtenSize);
-                if (ret <= 0 && !m_emptyPlaintext)
+#if OPENSSL_VERSION_NUMBER > 0x1010104fL //1.1.1d
+                if (ret <= 0)
+#else
+                if (ret <= 0 && !m_emptyPlaintext) // see details why making exception for empty string at: https://github.com/aws/aws-sdk-cpp/issues/1413
+#endif
                 {
                     m_failure = true;
                     LogErrors();
@@ -616,13 +620,13 @@ namespace Aws
 
             static const char* GCM_LOG_TAG = "AES_GCM_Cipher_OpenSSL";
 
-            AES_GCM_Cipher_OpenSSL::AES_GCM_Cipher_OpenSSL(const CryptoBuffer& key) 
+            AES_GCM_Cipher_OpenSSL::AES_GCM_Cipher_OpenSSL(const CryptoBuffer& key)
                 : OpenSSLCipher(key, IVLengthBytes)
             {
                 InitCipher();
             }
 
-            AES_GCM_Cipher_OpenSSL::AES_GCM_Cipher_OpenSSL(const CryptoBuffer& key, const CryptoBuffer* aad) 
+            AES_GCM_Cipher_OpenSSL::AES_GCM_Cipher_OpenSSL(const CryptoBuffer& key, const CryptoBuffer* aad)
                 : OpenSSLCipher(key, IVLengthBytes), m_aad(*aad)
             {
                 InitCipher();
