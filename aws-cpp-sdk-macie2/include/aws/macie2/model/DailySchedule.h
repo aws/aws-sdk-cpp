@@ -22,8 +22,8 @@ namespace Model
 {
 
   /**
-   * <p>Run the job once a day, every day. If specified, this is an empty
-   * object.</p><p><h3>See Also:</h3>   <a
+   * <p>Specifies that a classification job runs once a day, every day. This is an
+   * empty object.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DailySchedule">AWS
    * API Reference</a></p>
    */

@@ -24,8 +24,9 @@ namespace Model
 {
 
   /**
-   * <p>An object that specifies conditions for including or excluding objects from
-   * the job.</p><p><h3>See Also:</h3>   <a
+   * <p>Specifies one or more property- and tag-based conditions that refine the
+   * scope of a classification job. These conditions define criteria that determine
+   * which objects a job analyzes.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/Scoping">AWS API
    * Reference</a></p>
    */
@@ -39,63 +40,75 @@ namespace Model
 
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>The property- or tag-based conditions that determine which objects to exclude
+     * from the analysis.</p>
      */
     inline const JobScopingBlock& GetExcludes() const{ return m_excludes; }
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>The property- or tag-based conditions that determine which objects to exclude
+     * from the analysis.</p>
      */
     inline bool ExcludesHasBeenSet() const { return m_excludesHasBeenSet; }
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>The property- or tag-based conditions that determine which objects to exclude
+     * from the analysis.</p>
      */
     inline void SetExcludes(const JobScopingBlock& value) { m_excludesHasBeenSet = true; m_excludes = value; }
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>The property- or tag-based conditions that determine which objects to exclude
+     * from the analysis.</p>
      */
     inline void SetExcludes(JobScopingBlock&& value) { m_excludesHasBeenSet = true; m_excludes = std::move(value); }
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>The property- or tag-based conditions that determine which objects to exclude
+     * from the analysis.</p>
      */
     inline Scoping& WithExcludes(const JobScopingBlock& value) { SetExcludes(value); return *this;}
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>The property- or tag-based conditions that determine which objects to exclude
+     * from the analysis.</p>
      */
     inline Scoping& WithExcludes(JobScopingBlock&& value) { SetExcludes(std::move(value)); return *this;}
 
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>The property- or tag-based conditions that determine which objects to include
+     * in the analysis.</p>
      */
     inline const JobScopingBlock& GetIncludes() const{ return m_includes; }
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>The property- or tag-based conditions that determine which objects to include
+     * in the analysis.</p>
      */
     inline bool IncludesHasBeenSet() const { return m_includesHasBeenSet; }
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>The property- or tag-based conditions that determine which objects to include
+     * in the analysis.</p>
      */
     inline void SetIncludes(const JobScopingBlock& value) { m_includesHasBeenSet = true; m_includes = value; }
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>The property- or tag-based conditions that determine which objects to include
+     * in the analysis.</p>
      */
     inline void SetIncludes(JobScopingBlock&& value) { m_includesHasBeenSet = true; m_includes = std::move(value); }
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>The property- or tag-based conditions that determine which objects to include
+     * in the analysis.</p>
      */
     inline Scoping& WithIncludes(const JobScopingBlock& value) { SetIncludes(value); return *this;}
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>The property- or tag-based conditions that determine which objects to include
+     * in the analysis.</p>
      */
     inline Scoping& WithIncludes(JobScopingBlock&& value) { SetIncludes(std::move(value)); return *this;}
 

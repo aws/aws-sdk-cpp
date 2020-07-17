@@ -39,32 +39,38 @@ namespace Model
 
 
     /**
-     * <p>The date and time, in ISO 8601 format, when the credentials were issued.</p>
+     * <p>The date and time, in UTC and ISO 8601 format, when the credentials were
+     * issued.</p>
      */
     inline const Aws::Utils::DateTime& GetCreationDate() const{ return m_creationDate; }
 
     /**
-     * <p>The date and time, in ISO 8601 format, when the credentials were issued.</p>
+     * <p>The date and time, in UTC and ISO 8601 format, when the credentials were
+     * issued.</p>
      */
     inline bool CreationDateHasBeenSet() const { return m_creationDateHasBeenSet; }
 
     /**
-     * <p>The date and time, in ISO 8601 format, when the credentials were issued.</p>
+     * <p>The date and time, in UTC and ISO 8601 format, when the credentials were
+     * issued.</p>
      */
     inline void SetCreationDate(const Aws::Utils::DateTime& value) { m_creationDateHasBeenSet = true; m_creationDate = value; }
 
     /**
-     * <p>The date and time, in ISO 8601 format, when the credentials were issued.</p>
+     * <p>The date and time, in UTC and ISO 8601 format, when the credentials were
+     * issued.</p>
      */
     inline void SetCreationDate(Aws::Utils::DateTime&& value) { m_creationDateHasBeenSet = true; m_creationDate = std::move(value); }
 
     /**
-     * <p>The date and time, in ISO 8601 format, when the credentials were issued.</p>
+     * <p>The date and time, in UTC and ISO 8601 format, when the credentials were
+     * issued.</p>
      */
     inline SessionContextAttributes& WithCreationDate(const Aws::Utils::DateTime& value) { SetCreationDate(value); return *this;}
 
     /**
-     * <p>The date and time, in ISO 8601 format, when the credentials were issued.</p>
+     * <p>The date and time, in UTC and ISO 8601 format, when the credentials were
+     * issued.</p>
      */
     inline SessionContextAttributes& WithCreationDate(Aws::Utils::DateTime&& value) { SetCreationDate(std::move(value)); return *this;}
 

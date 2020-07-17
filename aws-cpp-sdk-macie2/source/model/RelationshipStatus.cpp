@@ -28,6 +28,8 @@ namespace Aws
         static const int Resigned_HASH = HashingUtils::HashString("Resigned");
         static const int EmailVerificationInProgress_HASH = HashingUtils::HashString("EmailVerificationInProgress");
         static const int EmailVerificationFailed_HASH = HashingUtils::HashString("EmailVerificationFailed");
+        static const int RegionDisabled_HASH = HashingUtils::HashString("RegionDisabled");
+        static const int AccountSuspended_HASH = HashingUtils::HashString("AccountSuspended");
 
 
         RelationshipStatus GetRelationshipStatusForName(const Aws::String& name)
@@ -65,6 +67,14 @@ namespace Aws
           {
             return RelationshipStatus::EmailVerificationFailed;
           }
+          else if (hashCode == RegionDisabled_HASH)
+          {
+            return RelationshipStatus::RegionDisabled;
+          }
+          else if (hashCode == AccountSuspended_HASH)
+          {
+            return RelationshipStatus::AccountSuspended;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -95,6 +105,10 @@ namespace Aws
             return "EmailVerificationInProgress";
           case RelationshipStatus::EmailVerificationFailed:
             return "EmailVerificationFailed";
+          case RelationshipStatus::RegionDisabled:
+            return "RegionDisabled";
+          case RelationshipStatus::AccountSuspended:
+            return "AccountSuspended";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

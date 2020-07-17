@@ -281,8 +281,8 @@ namespace Model
 
 
     /**
-     * <p>The current status of the job. Possible value are:</p> <ul><li><p>CANCELLED -
-     * The job was cancelled by you or a user of the master account for your
+     * <p>The current status of the job. Possible values are:</p> <ul><li><p>CANCELLED
+     * - The job was cancelled by you or a user of the master account for your
      * organization. A job might also be cancelled if ownership of an S3 bucket changed
      * while the job was running, and that change affected the job's access to the
      * bucket.</p></li> <li><p>COMPLETE - Amazon Macie finished processing all the data
@@ -296,8 +296,8 @@ namespace Model
     inline const JobStatus& GetJobStatus() const{ return m_jobStatus; }
 
     /**
-     * <p>The current status of the job. Possible value are:</p> <ul><li><p>CANCELLED -
-     * The job was cancelled by you or a user of the master account for your
+     * <p>The current status of the job. Possible values are:</p> <ul><li><p>CANCELLED
+     * - The job was cancelled by you or a user of the master account for your
      * organization. A job might also be cancelled if ownership of an S3 bucket changed
      * while the job was running, and that change affected the job's access to the
      * bucket.</p></li> <li><p>COMPLETE - Amazon Macie finished processing all the data
@@ -311,8 +311,8 @@ namespace Model
     inline void SetJobStatus(const JobStatus& value) { m_jobStatus = value; }
 
     /**
-     * <p>The current status of the job. Possible value are:</p> <ul><li><p>CANCELLED -
-     * The job was cancelled by you or a user of the master account for your
+     * <p>The current status of the job. Possible values are:</p> <ul><li><p>CANCELLED
+     * - The job was cancelled by you or a user of the master account for your
      * organization. A job might also be cancelled if ownership of an S3 bucket changed
      * while the job was running, and that change affected the job's access to the
      * bucket.</p></li> <li><p>COMPLETE - Amazon Macie finished processing all the data
@@ -326,8 +326,8 @@ namespace Model
     inline void SetJobStatus(JobStatus&& value) { m_jobStatus = std::move(value); }
 
     /**
-     * <p>The current status of the job. Possible value are:</p> <ul><li><p>CANCELLED -
-     * The job was cancelled by you or a user of the master account for your
+     * <p>The current status of the job. Possible values are:</p> <ul><li><p>CANCELLED
+     * - The job was cancelled by you or a user of the master account for your
      * organization. A job might also be cancelled if ownership of an S3 bucket changed
      * while the job was running, and that change affected the job's access to the
      * bucket.</p></li> <li><p>COMPLETE - Amazon Macie finished processing all the data
@@ -341,8 +341,8 @@ namespace Model
     inline DescribeClassificationJobResult& WithJobStatus(const JobStatus& value) { SetJobStatus(value); return *this;}
 
     /**
-     * <p>The current status of the job. Possible value are:</p> <ul><li><p>CANCELLED -
-     * The job was cancelled by you or a user of the master account for your
+     * <p>The current status of the job. Possible values are:</p> <ul><li><p>CANCELLED
+     * - The job was cancelled by you or a user of the master account for your
      * organization. A job might also be cancelled if ownership of an S3 bucket changed
      * while the job was running, and that change affected the job's access to the
      * bucket.</p></li> <li><p>COMPLETE - Amazon Macie finished processing all the data
@@ -357,42 +357,47 @@ namespace Model
 
 
     /**
-     * <p>The schedule for running the job. Possible value are:</p> <ul><li><p>ONE_TIME
-     * - The job ran or will run only once.</p></li> <li><p>SCHEDULED - The job runs on
-     * a daily, weekly, or monthly basis. The scheduleFrequency property indicates the
-     * recurrence pattern for the job.</p></li></ul>
+     * <p>The schedule for running the job. Possible values are:</p>
+     * <ul><li><p>ONE_TIME - The job ran or will run only once.</p></li>
+     * <li><p>SCHEDULED - The job runs on a daily, weekly, or monthly basis. The
+     * scheduleFrequency property indicates the recurrence pattern for the
+     * job.</p></li></ul>
      */
     inline const JobType& GetJobType() const{ return m_jobType; }
 
     /**
-     * <p>The schedule for running the job. Possible value are:</p> <ul><li><p>ONE_TIME
-     * - The job ran or will run only once.</p></li> <li><p>SCHEDULED - The job runs on
-     * a daily, weekly, or monthly basis. The scheduleFrequency property indicates the
-     * recurrence pattern for the job.</p></li></ul>
+     * <p>The schedule for running the job. Possible values are:</p>
+     * <ul><li><p>ONE_TIME - The job ran or will run only once.</p></li>
+     * <li><p>SCHEDULED - The job runs on a daily, weekly, or monthly basis. The
+     * scheduleFrequency property indicates the recurrence pattern for the
+     * job.</p></li></ul>
      */
     inline void SetJobType(const JobType& value) { m_jobType = value; }
 
     /**
-     * <p>The schedule for running the job. Possible value are:</p> <ul><li><p>ONE_TIME
-     * - The job ran or will run only once.</p></li> <li><p>SCHEDULED - The job runs on
-     * a daily, weekly, or monthly basis. The scheduleFrequency property indicates the
-     * recurrence pattern for the job.</p></li></ul>
+     * <p>The schedule for running the job. Possible values are:</p>
+     * <ul><li><p>ONE_TIME - The job ran or will run only once.</p></li>
+     * <li><p>SCHEDULED - The job runs on a daily, weekly, or monthly basis. The
+     * scheduleFrequency property indicates the recurrence pattern for the
+     * job.</p></li></ul>
      */
     inline void SetJobType(JobType&& value) { m_jobType = std::move(value); }
 
     /**
-     * <p>The schedule for running the job. Possible value are:</p> <ul><li><p>ONE_TIME
-     * - The job ran or will run only once.</p></li> <li><p>SCHEDULED - The job runs on
-     * a daily, weekly, or monthly basis. The scheduleFrequency property indicates the
-     * recurrence pattern for the job.</p></li></ul>
+     * <p>The schedule for running the job. Possible values are:</p>
+     * <ul><li><p>ONE_TIME - The job ran or will run only once.</p></li>
+     * <li><p>SCHEDULED - The job runs on a daily, weekly, or monthly basis. The
+     * scheduleFrequency property indicates the recurrence pattern for the
+     * job.</p></li></ul>
      */
     inline DescribeClassificationJobResult& WithJobType(const JobType& value) { SetJobType(value); return *this;}
 
     /**
-     * <p>The schedule for running the job. Possible value are:</p> <ul><li><p>ONE_TIME
-     * - The job ran or will run only once.</p></li> <li><p>SCHEDULED - The job runs on
-     * a daily, weekly, or monthly basis. The scheduleFrequency property indicates the
-     * recurrence pattern for the job.</p></li></ul>
+     * <p>The schedule for running the job. Possible values are:</p>
+     * <ul><li><p>ONE_TIME - The job ran or will run only once.</p></li>
+     * <li><p>SCHEDULED - The job runs on a daily, weekly, or monthly basis. The
+     * scheduleFrequency property indicates the recurrence pattern for the
+     * job.</p></li></ul>
      */
     inline DescribeClassificationJobResult& WithJobType(JobType&& value) { SetJobType(std::move(value)); return *this;}
 
@@ -516,36 +521,31 @@ namespace Model
 
     /**
      * <p>The recurrence pattern for running the job. If the job is configured to run
-     * every day, this value is an empty dailySchedule object. If the job is configured
-     * to run only once, this value is null.</p>
+     * only once, this value is null.</p>
      */
     inline const JobScheduleFrequency& GetScheduleFrequency() const{ return m_scheduleFrequency; }
 
     /**
      * <p>The recurrence pattern for running the job. If the job is configured to run
-     * every day, this value is an empty dailySchedule object. If the job is configured
-     * to run only once, this value is null.</p>
+     * only once, this value is null.</p>
      */
     inline void SetScheduleFrequency(const JobScheduleFrequency& value) { m_scheduleFrequency = value; }
 
     /**
      * <p>The recurrence pattern for running the job. If the job is configured to run
-     * every day, this value is an empty dailySchedule object. If the job is configured
-     * to run only once, this value is null.</p>
+     * only once, this value is null.</p>
      */
     inline void SetScheduleFrequency(JobScheduleFrequency&& value) { m_scheduleFrequency = std::move(value); }
 
     /**
      * <p>The recurrence pattern for running the job. If the job is configured to run
-     * every day, this value is an empty dailySchedule object. If the job is configured
-     * to run only once, this value is null.</p>
+     * only once, this value is null.</p>
      */
     inline DescribeClassificationJobResult& WithScheduleFrequency(const JobScheduleFrequency& value) { SetScheduleFrequency(value); return *this;}
 
     /**
      * <p>The recurrence pattern for running the job. If the job is configured to run
-     * every day, this value is an empty dailySchedule object. If the job is configured
-     * to run only once, this value is null.</p>
+     * only once, this value is null.</p>
      */
     inline DescribeClassificationJobResult& WithScheduleFrequency(JobScheduleFrequency&& value) { SetScheduleFrequency(std::move(value)); return *this;}
 

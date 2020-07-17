@@ -62,42 +62,50 @@ namespace Model
 
 
     /**
-     * <p>The name of the CloudWatch Logs log group.</p>
+     * <p>The name of the CloudWatch Logs log group. Required if connection logging is
+     * enabled.</p>
      */
     inline const Aws::String& GetCloudwatchLogGroup() const{ return m_cloudwatchLogGroup; }
 
     /**
-     * <p>The name of the CloudWatch Logs log group.</p>
+     * <p>The name of the CloudWatch Logs log group. Required if connection logging is
+     * enabled.</p>
      */
     inline bool CloudwatchLogGroupHasBeenSet() const { return m_cloudwatchLogGroupHasBeenSet; }
 
     /**
-     * <p>The name of the CloudWatch Logs log group.</p>
+     * <p>The name of the CloudWatch Logs log group. Required if connection logging is
+     * enabled.</p>
      */
     inline void SetCloudwatchLogGroup(const Aws::String& value) { m_cloudwatchLogGroupHasBeenSet = true; m_cloudwatchLogGroup = value; }
 
     /**
-     * <p>The name of the CloudWatch Logs log group.</p>
+     * <p>The name of the CloudWatch Logs log group. Required if connection logging is
+     * enabled.</p>
      */
     inline void SetCloudwatchLogGroup(Aws::String&& value) { m_cloudwatchLogGroupHasBeenSet = true; m_cloudwatchLogGroup = std::move(value); }
 
     /**
-     * <p>The name of the CloudWatch Logs log group.</p>
+     * <p>The name of the CloudWatch Logs log group. Required if connection logging is
+     * enabled.</p>
      */
     inline void SetCloudwatchLogGroup(const char* value) { m_cloudwatchLogGroupHasBeenSet = true; m_cloudwatchLogGroup.assign(value); }
 
     /**
-     * <p>The name of the CloudWatch Logs log group.</p>
+     * <p>The name of the CloudWatch Logs log group. Required if connection logging is
+     * enabled.</p>
      */
     inline ConnectionLogOptions& WithCloudwatchLogGroup(const Aws::String& value) { SetCloudwatchLogGroup(value); return *this;}
 
     /**
-     * <p>The name of the CloudWatch Logs log group.</p>
+     * <p>The name of the CloudWatch Logs log group. Required if connection logging is
+     * enabled.</p>
      */
     inline ConnectionLogOptions& WithCloudwatchLogGroup(Aws::String&& value) { SetCloudwatchLogGroup(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the CloudWatch Logs log group.</p>
+     * <p>The name of the CloudWatch Logs log group. Required if connection logging is
+     * enabled.</p>
      */
     inline ConnectionLogOptions& WithCloudwatchLogGroup(const char* value) { SetCloudwatchLogGroup(value); return *this;}
 

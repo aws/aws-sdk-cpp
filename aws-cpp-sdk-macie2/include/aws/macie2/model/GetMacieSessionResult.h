@@ -103,43 +103,43 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the service-level role that allows Amazon
+     * <p>The Amazon Resource Name (ARN) of the service-linked role that allows Amazon
      * Macie to monitor and analyze data in AWS resources for the account.</p>
      */
     inline const Aws::String& GetServiceRole() const{ return m_serviceRole; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the service-level role that allows Amazon
+     * <p>The Amazon Resource Name (ARN) of the service-linked role that allows Amazon
      * Macie to monitor and analyze data in AWS resources for the account.</p>
      */
     inline void SetServiceRole(const Aws::String& value) { m_serviceRole = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the service-level role that allows Amazon
+     * <p>The Amazon Resource Name (ARN) of the service-linked role that allows Amazon
      * Macie to monitor and analyze data in AWS resources for the account.</p>
      */
     inline void SetServiceRole(Aws::String&& value) { m_serviceRole = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the service-level role that allows Amazon
+     * <p>The Amazon Resource Name (ARN) of the service-linked role that allows Amazon
      * Macie to monitor and analyze data in AWS resources for the account.</p>
      */
     inline void SetServiceRole(const char* value) { m_serviceRole.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the service-level role that allows Amazon
+     * <p>The Amazon Resource Name (ARN) of the service-linked role that allows Amazon
      * Macie to monitor and analyze data in AWS resources for the account.</p>
      */
     inline GetMacieSessionResult& WithServiceRole(const Aws::String& value) { SetServiceRole(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the service-level role that allows Amazon
+     * <p>The Amazon Resource Name (ARN) of the service-linked role that allows Amazon
      * Macie to monitor and analyze data in AWS resources for the account.</p>
      */
     inline GetMacieSessionResult& WithServiceRole(Aws::String&& value) { SetServiceRole(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the service-level role that allows Amazon
+     * <p>The Amazon Resource Name (ARN) of the service-linked role that allows Amazon
      * Macie to monitor and analyze data in AWS resources for the account.</p>
      */
     inline GetMacieSessionResult& WithServiceRole(const char* value) { SetServiceRole(value); return *this;}

@@ -1090,38 +1090,38 @@ namespace Model
 
 
     /**
-     * <p>The credit option for CPU usage of the instance. Valid for T2 or T3 instances
-     * only.</p>
+     * <p>The credit option for CPU usage of the instance. Valid for T2, T3, or T3a
+     * instances only.</p>
      */
     inline const CreditSpecificationRequest& GetCreditSpecification() const{ return m_creditSpecification; }
 
     /**
-     * <p>The credit option for CPU usage of the instance. Valid for T2 or T3 instances
-     * only.</p>
+     * <p>The credit option for CPU usage of the instance. Valid for T2, T3, or T3a
+     * instances only.</p>
      */
     inline bool CreditSpecificationHasBeenSet() const { return m_creditSpecificationHasBeenSet; }
 
     /**
-     * <p>The credit option for CPU usage of the instance. Valid for T2 or T3 instances
-     * only.</p>
+     * <p>The credit option for CPU usage of the instance. Valid for T2, T3, or T3a
+     * instances only.</p>
      */
     inline void SetCreditSpecification(const CreditSpecificationRequest& value) { m_creditSpecificationHasBeenSet = true; m_creditSpecification = value; }
 
     /**
-     * <p>The credit option for CPU usage of the instance. Valid for T2 or T3 instances
-     * only.</p>
+     * <p>The credit option for CPU usage of the instance. Valid for T2, T3, or T3a
+     * instances only.</p>
      */
     inline void SetCreditSpecification(CreditSpecificationRequest&& value) { m_creditSpecificationHasBeenSet = true; m_creditSpecification = std::move(value); }
 
     /**
-     * <p>The credit option for CPU usage of the instance. Valid for T2 or T3 instances
-     * only.</p>
+     * <p>The credit option for CPU usage of the instance. Valid for T2, T3, or T3a
+     * instances only.</p>
      */
     inline RequestLaunchTemplateData& WithCreditSpecification(const CreditSpecificationRequest& value) { SetCreditSpecification(value); return *this;}
 
     /**
-     * <p>The credit option for CPU usage of the instance. Valid for T2 or T3 instances
-     * only.</p>
+     * <p>The credit option for CPU usage of the instance. Valid for T2, T3, or T3a
+     * instances only.</p>
      */
     inline RequestLaunchTemplateData& WithCreditSpecification(CreditSpecificationRequest&& value) { SetCreditSpecification(std::move(value)); return *this;}
 

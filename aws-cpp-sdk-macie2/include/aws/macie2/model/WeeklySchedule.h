@@ -24,7 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>Reserved for future use.</p><p><h3>See Also:</h3>   <a
+   * <p>Specifies a weekly recurrence pattern for running a classification
+   * job.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/WeeklySchedule">AWS
    * API Reference</a></p>
    */
@@ -38,38 +39,32 @@ namespace Model
 
 
     /**
-     * <p>Run the job once a week, on a specific day of the week. Valid values are:
-     * MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, and SUNDAY.</p>
+     * <p>The day of the week when Amazon Macie runs the job.</p>
      */
     inline const DayOfWeek& GetDayOfWeek() const{ return m_dayOfWeek; }
 
     /**
-     * <p>Run the job once a week, on a specific day of the week. Valid values are:
-     * MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, and SUNDAY.</p>
+     * <p>The day of the week when Amazon Macie runs the job.</p>
      */
     inline bool DayOfWeekHasBeenSet() const { return m_dayOfWeekHasBeenSet; }
 
     /**
-     * <p>Run the job once a week, on a specific day of the week. Valid values are:
-     * MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, and SUNDAY.</p>
+     * <p>The day of the week when Amazon Macie runs the job.</p>
      */
     inline void SetDayOfWeek(const DayOfWeek& value) { m_dayOfWeekHasBeenSet = true; m_dayOfWeek = value; }
 
     /**
-     * <p>Run the job once a week, on a specific day of the week. Valid values are:
-     * MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, and SUNDAY.</p>
+     * <p>The day of the week when Amazon Macie runs the job.</p>
      */
     inline void SetDayOfWeek(DayOfWeek&& value) { m_dayOfWeekHasBeenSet = true; m_dayOfWeek = std::move(value); }
 
     /**
-     * <p>Run the job once a week, on a specific day of the week. Valid values are:
-     * MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, and SUNDAY.</p>
+     * <p>The day of the week when Amazon Macie runs the job.</p>
      */
     inline WeeklySchedule& WithDayOfWeek(const DayOfWeek& value) { SetDayOfWeek(value); return *this;}
 
     /**
-     * <p>Run the job once a week, on a specific day of the week. Valid values are:
-     * MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, and SUNDAY.</p>
+     * <p>The day of the week when Amazon Macie runs the job.</p>
      */
     inline WeeklySchedule& WithDayOfWeek(DayOfWeek&& value) { SetDayOfWeek(std::move(value)); return *this;}
 

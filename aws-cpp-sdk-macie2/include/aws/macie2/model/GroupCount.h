@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>Provides a group of results for a query that retrieved information about
-   * findings.</p><p><h3>See Also:</h3>   <a
+   * <p>Provides a group of results for a query that retrieved aggregated statistical
+   * data about findings.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GroupCount">AWS
    * API Reference</a></p>
    */

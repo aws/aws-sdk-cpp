@@ -41,50 +41,50 @@ namespace Model
 
 
     /**
-     * <p>The names of the custom data identifiers that detected the data, and the
-     * number of occurrences of the data that each identifier detected.</p>
+     * <p>The custom data identifiers that detected the data, and the number of
+     * occurrences of the data that each identifier detected.</p>
      */
     inline const Aws::Vector<CustomDetection>& GetDetections() const{ return m_detections; }
 
     /**
-     * <p>The names of the custom data identifiers that detected the data, and the
-     * number of occurrences of the data that each identifier detected.</p>
+     * <p>The custom data identifiers that detected the data, and the number of
+     * occurrences of the data that each identifier detected.</p>
      */
     inline bool DetectionsHasBeenSet() const { return m_detectionsHasBeenSet; }
 
     /**
-     * <p>The names of the custom data identifiers that detected the data, and the
-     * number of occurrences of the data that each identifier detected.</p>
+     * <p>The custom data identifiers that detected the data, and the number of
+     * occurrences of the data that each identifier detected.</p>
      */
     inline void SetDetections(const Aws::Vector<CustomDetection>& value) { m_detectionsHasBeenSet = true; m_detections = value; }
 
     /**
-     * <p>The names of the custom data identifiers that detected the data, and the
-     * number of occurrences of the data that each identifier detected.</p>
+     * <p>The custom data identifiers that detected the data, and the number of
+     * occurrences of the data that each identifier detected.</p>
      */
     inline void SetDetections(Aws::Vector<CustomDetection>&& value) { m_detectionsHasBeenSet = true; m_detections = std::move(value); }
 
     /**
-     * <p>The names of the custom data identifiers that detected the data, and the
-     * number of occurrences of the data that each identifier detected.</p>
+     * <p>The custom data identifiers that detected the data, and the number of
+     * occurrences of the data that each identifier detected.</p>
      */
     inline CustomDataIdentifiers& WithDetections(const Aws::Vector<CustomDetection>& value) { SetDetections(value); return *this;}
 
     /**
-     * <p>The names of the custom data identifiers that detected the data, and the
-     * number of occurrences of the data that each identifier detected.</p>
+     * <p>The custom data identifiers that detected the data, and the number of
+     * occurrences of the data that each identifier detected.</p>
      */
     inline CustomDataIdentifiers& WithDetections(Aws::Vector<CustomDetection>&& value) { SetDetections(std::move(value)); return *this;}
 
     /**
-     * <p>The names of the custom data identifiers that detected the data, and the
-     * number of occurrences of the data that each identifier detected.</p>
+     * <p>The custom data identifiers that detected the data, and the number of
+     * occurrences of the data that each identifier detected.</p>
      */
     inline CustomDataIdentifiers& AddDetections(const CustomDetection& value) { m_detectionsHasBeenSet = true; m_detections.push_back(value); return *this; }
 
     /**
-     * <p>The names of the custom data identifiers that detected the data, and the
-     * number of occurrences of the data that each identifier detected.</p>
+     * <p>The custom data identifiers that detected the data, and the number of
+     * occurrences of the data that each identifier detected.</p>
      */
     inline CustomDataIdentifiers& AddDetections(CustomDetection&& value) { m_detectionsHasBeenSet = true; m_detections.push_back(std::move(value)); return *this; }
 

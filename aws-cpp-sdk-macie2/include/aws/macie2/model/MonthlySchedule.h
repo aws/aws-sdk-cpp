@@ -22,8 +22,8 @@ namespace Model
 {
 
   /**
-   * <p>Run the job once a month, on a specific day of the month. This value can be
-   * an integer from 1 through 30.</p><p><h3>See Also:</h3>   <a
+   * <p>Specifies a monthly recurrence pattern for running a classification
+   * job.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/MonthlySchedule">AWS
    * API Reference</a></p>
    */
@@ -37,26 +37,26 @@ namespace Model
 
 
     /**
-     * <p>Run the job once a month, on a specific day of the month. This value can be
-     * an integer from 1 through 30.</p>
+     * <p>The numeric day of the month when Amazon Macie runs the job. This value can
+     * be an integer from 1 through 30.</p>
      */
     inline int GetDayOfMonth() const{ return m_dayOfMonth; }
 
     /**
-     * <p>Run the job once a month, on a specific day of the month. This value can be
-     * an integer from 1 through 30.</p>
+     * <p>The numeric day of the month when Amazon Macie runs the job. This value can
+     * be an integer from 1 through 30.</p>
      */
     inline bool DayOfMonthHasBeenSet() const { return m_dayOfMonthHasBeenSet; }
 
     /**
-     * <p>Run the job once a month, on a specific day of the month. This value can be
-     * an integer from 1 through 30.</p>
+     * <p>The numeric day of the month when Amazon Macie runs the job. This value can
+     * be an integer from 1 through 30.</p>
      */
     inline void SetDayOfMonth(int value) { m_dayOfMonthHasBeenSet = true; m_dayOfMonth = value; }
 
     /**
-     * <p>Run the job once a month, on a specific day of the month. This value can be
-     * an integer from 1 through 30.</p>
+     * <p>The numeric day of the month when Amazon Macie runs the job. This value can
+     * be an integer from 1 through 30.</p>
      */
     inline MonthlySchedule& WithDayOfMonth(int value) { SetDayOfMonth(value); return *this;}
 

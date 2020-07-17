@@ -22,9 +22,9 @@ namespace Model
 {
 
   /**
-   * <p>The total number of buckets that are publicly accessible, based on a
-   * combination of permissions settings for each bucket.</p><p><h3>See Also:</h3>  
-   * <a
+   * <p>Provides information about the number of S3 buckets that are publicly
+   * accessible based on a combination of permissions settings for each
+   * bucket.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/BucketCountByEffectivePermission">AWS
    * API Reference</a></p>
    */
@@ -38,64 +38,76 @@ namespace Model
 
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>The total number of buckets that allow the general public to have read or
+     * write access to the bucket.</p>
      */
     inline long long GetPubliclyAccessible() const{ return m_publiclyAccessible; }
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>The total number of buckets that allow the general public to have read or
+     * write access to the bucket.</p>
      */
     inline bool PubliclyAccessibleHasBeenSet() const { return m_publiclyAccessibleHasBeenSet; }
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>The total number of buckets that allow the general public to have read or
+     * write access to the bucket.</p>
      */
     inline void SetPubliclyAccessible(long long value) { m_publiclyAccessibleHasBeenSet = true; m_publiclyAccessible = value; }
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>The total number of buckets that allow the general public to have read or
+     * write access to the bucket.</p>
      */
     inline BucketCountByEffectivePermission& WithPubliclyAccessible(long long value) { SetPubliclyAccessible(value); return *this;}
 
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>The total number of buckets that allow the general public to have read access
+     * to the bucket.</p>
      */
     inline long long GetPubliclyReadable() const{ return m_publiclyReadable; }
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>The total number of buckets that allow the general public to have read access
+     * to the bucket.</p>
      */
     inline bool PubliclyReadableHasBeenSet() const { return m_publiclyReadableHasBeenSet; }
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>The total number of buckets that allow the general public to have read access
+     * to the bucket.</p>
      */
     inline void SetPubliclyReadable(long long value) { m_publiclyReadableHasBeenSet = true; m_publiclyReadable = value; }
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>The total number of buckets that allow the general public to have read access
+     * to the bucket.</p>
      */
     inline BucketCountByEffectivePermission& WithPubliclyReadable(long long value) { SetPubliclyReadable(value); return *this;}
 
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>The total number of buckets that allow the general public to have write
+     * access to the bucket.</p>
      */
     inline long long GetPubliclyWritable() const{ return m_publiclyWritable; }
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>The total number of buckets that allow the general public to have write
+     * access to the bucket.</p>
      */
     inline bool PubliclyWritableHasBeenSet() const { return m_publiclyWritableHasBeenSet; }
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>The total number of buckets that allow the general public to have write
+     * access to the bucket.</p>
      */
     inline void SetPubliclyWritable(long long value) { m_publiclyWritableHasBeenSet = true; m_publiclyWritable = value; }
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>The total number of buckets that allow the general public to have write
+     * access to the bucket.</p>
      */
     inline BucketCountByEffectivePermission& WithPubliclyWritable(long long value) { SetPubliclyWritable(value); return *this;}
 

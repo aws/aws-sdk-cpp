@@ -25,8 +25,8 @@ namespace Model
 {
 
   /**
-   * <p>Specifies criteria for sorting the results of a query for information about
-   * findings.</p><p><h3>See Also:</h3>   <a
+   * <p>Specifies criteria for sorting the results of a query that retrieves
+   * aggregated statistical data about findings.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/FindingStatisticsSortCriteria">AWS
    * API Reference</a></p>
    */

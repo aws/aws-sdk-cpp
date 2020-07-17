@@ -25,8 +25,7 @@ namespace Model
 {
 
   /**
-   * <p>Provides detailed information about a policy finding.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Provides the details of a policy finding.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/PolicyDetails">AWS
    * API Reference</a></p>
    */
@@ -40,32 +39,32 @@ namespace Model
 
 
     /**
-     * <p>The action that occurred and produced the finding.</p>
+     * <p>The action that produced the finding.</p>
      */
     inline const FindingAction& GetAction() const{ return m_action; }
 
     /**
-     * <p>The action that occurred and produced the finding.</p>
+     * <p>The action that produced the finding.</p>
      */
     inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
 
     /**
-     * <p>The action that occurred and produced the finding.</p>
+     * <p>The action that produced the finding.</p>
      */
     inline void SetAction(const FindingAction& value) { m_actionHasBeenSet = true; m_action = value; }
 
     /**
-     * <p>The action that occurred and produced the finding.</p>
+     * <p>The action that produced the finding.</p>
      */
     inline void SetAction(FindingAction&& value) { m_actionHasBeenSet = true; m_action = std::move(value); }
 
     /**
-     * <p>The action that occurred and produced the finding.</p>
+     * <p>The action that produced the finding.</p>
      */
     inline PolicyDetails& WithAction(const FindingAction& value) { SetAction(value); return *this;}
 
     /**
-     * <p>The action that occurred and produced the finding.</p>
+     * <p>The action that produced the finding.</p>
      */
     inline PolicyDetails& WithAction(FindingAction&& value) { SetAction(std::move(value)); return *this;}
 

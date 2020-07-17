@@ -186,37 +186,32 @@ namespace Model
 
 
     /**
-     * <p>Indicates whether this Elastic IP address is for use with instances in
-     * EC2-Classic (<code>standard</code>) or instances in a VPC
-     * (<code>vpc</code>).</p>
+     * <p>Indicates whether the Elastic IP address is for use with instances in a VPC
+     * (<code>vpc</code>) or instances in EC2-Classic (<code>standard</code>).</p>
      */
     inline const DomainType& GetDomain() const{ return m_domain; }
 
     /**
-     * <p>Indicates whether this Elastic IP address is for use with instances in
-     * EC2-Classic (<code>standard</code>) or instances in a VPC
-     * (<code>vpc</code>).</p>
+     * <p>Indicates whether the Elastic IP address is for use with instances in a VPC
+     * (<code>vpc</code>) or instances in EC2-Classic (<code>standard</code>).</p>
      */
     inline void SetDomain(const DomainType& value) { m_domain = value; }
 
     /**
-     * <p>Indicates whether this Elastic IP address is for use with instances in
-     * EC2-Classic (<code>standard</code>) or instances in a VPC
-     * (<code>vpc</code>).</p>
+     * <p>Indicates whether the Elastic IP address is for use with instances in a VPC
+     * (<code>vpc</code>) or instances in EC2-Classic (<code>standard</code>).</p>
      */
     inline void SetDomain(DomainType&& value) { m_domain = std::move(value); }
 
     /**
-     * <p>Indicates whether this Elastic IP address is for use with instances in
-     * EC2-Classic (<code>standard</code>) or instances in a VPC
-     * (<code>vpc</code>).</p>
+     * <p>Indicates whether the Elastic IP address is for use with instances in a VPC
+     * (<code>vpc</code>) or instances in EC2-Classic (<code>standard</code>).</p>
      */
     inline AllocateAddressResponse& WithDomain(const DomainType& value) { SetDomain(value); return *this;}
 
     /**
-     * <p>Indicates whether this Elastic IP address is for use with instances in
-     * EC2-Classic (<code>standard</code>) or instances in a VPC
-     * (<code>vpc</code>).</p>
+     * <p>Indicates whether the Elastic IP address is for use with instances in a VPC
+     * (<code>vpc</code>) or instances in EC2-Classic (<code>standard</code>).</p>
      */
     inline AllocateAddressResponse& WithDomain(DomainType&& value) { SetDomain(std::move(value)); return *this;}
 

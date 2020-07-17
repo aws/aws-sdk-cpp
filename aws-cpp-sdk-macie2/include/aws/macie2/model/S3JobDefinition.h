@@ -90,38 +90,38 @@ namespace Model
 
 
     /**
-     * <p>A JobScopeTerm object that specifies conditions for including or excluding
-     * objects from the job.</p>
+     * <p>The property- and tag-based conditions that determine which objects to
+     * include or exclude from the analysis.</p>
      */
     inline const Scoping& GetScoping() const{ return m_scoping; }
 
     /**
-     * <p>A JobScopeTerm object that specifies conditions for including or excluding
-     * objects from the job.</p>
+     * <p>The property- and tag-based conditions that determine which objects to
+     * include or exclude from the analysis.</p>
      */
     inline bool ScopingHasBeenSet() const { return m_scopingHasBeenSet; }
 
     /**
-     * <p>A JobScopeTerm object that specifies conditions for including or excluding
-     * objects from the job.</p>
+     * <p>The property- and tag-based conditions that determine which objects to
+     * include or exclude from the analysis.</p>
      */
     inline void SetScoping(const Scoping& value) { m_scopingHasBeenSet = true; m_scoping = value; }
 
     /**
-     * <p>A JobScopeTerm object that specifies conditions for including or excluding
-     * objects from the job.</p>
+     * <p>The property- and tag-based conditions that determine which objects to
+     * include or exclude from the analysis.</p>
      */
     inline void SetScoping(Scoping&& value) { m_scopingHasBeenSet = true; m_scoping = std::move(value); }
 
     /**
-     * <p>A JobScopeTerm object that specifies conditions for including or excluding
-     * objects from the job.</p>
+     * <p>The property- and tag-based conditions that determine which objects to
+     * include or exclude from the analysis.</p>
      */
     inline S3JobDefinition& WithScoping(const Scoping& value) { SetScoping(value); return *this;}
 
     /**
-     * <p>A JobScopeTerm object that specifies conditions for including or excluding
-     * objects from the job.</p>
+     * <p>The property- and tag-based conditions that determine which objects to
+     * include or exclude from the analysis.</p>
      */
     inline S3JobDefinition& WithScoping(Scoping&& value) { SetScoping(std::move(value)); return *this;}
 

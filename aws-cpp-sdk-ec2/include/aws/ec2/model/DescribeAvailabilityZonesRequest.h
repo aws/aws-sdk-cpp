@@ -45,16 +45,20 @@ namespace Model
      * </li> <li> <p> <code>message</code> - The Zone message.</p> </li> <li> <p>
      * <code>opt-in-status</code> - The opt in status (<code>opted-in</code>, and
      * <code>not-opted-in</code> | <code>opt-in-not-required</code>).</p> </li> <li>
-     * <p> <code>region-name</code> - The name of the Region for the Zone (for example,
-     * <code>us-east-1</code>).</p> </li> <li> <p> <code>state</code> - The state of
-     * the Availability Zone or Local Zone (<code>available</code> |
-     * <code>information</code> | <code>impaired</code> |
+     * <p>The ID of the zone that handles some of the Local Zone control plane
+     * operations, such as API calls.</p> </li> <li> <p> <code>region-name</code> - The
+     * name of the Region for the Zone (for example, <code>us-east-1</code>).</p> </li>
+     * <li> <p> <code>state</code> - The state of the Availability Zone or Local Zone
+     * (<code>available</code> | <code>information</code> | <code>impaired</code> |
      * <code>unavailable</code>).</p> </li> <li> <p> <code>zone-id</code> - The ID of
      * the Availability Zone (for example, <code>use1-az1</code>) or the Local Zone
      * (for example, use <code>usw2-lax1-az1</code>).</p> </li> <li> <p>
-     * <code>zone-name</code> - The name of the Availability Zone (for example,
-     * <code>us-east-1a</code>) or the Local Zone (for example, use
-     * <code>us-west-2-lax-1a</code>).</p> </li> </ul>
+     * <code>zone-type</code> - The type of zone, for example,
+     * <code>local-zone</code>.</p> </li> <li> <p> <code>zone-name</code> - The name of
+     * the Availability Zone (for example, <code>us-east-1a</code>) or the Local Zone
+     * (for example, use <code>us-west-2-lax-1a</code>).</p> </li> <li> <p>
+     * <code>zone-type</code> - The type of zone, for example,
+     * <code>local-zone</code>.</p> </li> </ul>
      */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
 
@@ -65,16 +69,20 @@ namespace Model
      * </li> <li> <p> <code>message</code> - The Zone message.</p> </li> <li> <p>
      * <code>opt-in-status</code> - The opt in status (<code>opted-in</code>, and
      * <code>not-opted-in</code> | <code>opt-in-not-required</code>).</p> </li> <li>
-     * <p> <code>region-name</code> - The name of the Region for the Zone (for example,
-     * <code>us-east-1</code>).</p> </li> <li> <p> <code>state</code> - The state of
-     * the Availability Zone or Local Zone (<code>available</code> |
-     * <code>information</code> | <code>impaired</code> |
+     * <p>The ID of the zone that handles some of the Local Zone control plane
+     * operations, such as API calls.</p> </li> <li> <p> <code>region-name</code> - The
+     * name of the Region for the Zone (for example, <code>us-east-1</code>).</p> </li>
+     * <li> <p> <code>state</code> - The state of the Availability Zone or Local Zone
+     * (<code>available</code> | <code>information</code> | <code>impaired</code> |
      * <code>unavailable</code>).</p> </li> <li> <p> <code>zone-id</code> - The ID of
      * the Availability Zone (for example, <code>use1-az1</code>) or the Local Zone
      * (for example, use <code>usw2-lax1-az1</code>).</p> </li> <li> <p>
-     * <code>zone-name</code> - The name of the Availability Zone (for example,
-     * <code>us-east-1a</code>) or the Local Zone (for example, use
-     * <code>us-west-2-lax-1a</code>).</p> </li> </ul>
+     * <code>zone-type</code> - The type of zone, for example,
+     * <code>local-zone</code>.</p> </li> <li> <p> <code>zone-name</code> - The name of
+     * the Availability Zone (for example, <code>us-east-1a</code>) or the Local Zone
+     * (for example, use <code>us-west-2-lax-1a</code>).</p> </li> <li> <p>
+     * <code>zone-type</code> - The type of zone, for example,
+     * <code>local-zone</code>.</p> </li> </ul>
      */
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
@@ -85,16 +93,20 @@ namespace Model
      * </li> <li> <p> <code>message</code> - The Zone message.</p> </li> <li> <p>
      * <code>opt-in-status</code> - The opt in status (<code>opted-in</code>, and
      * <code>not-opted-in</code> | <code>opt-in-not-required</code>).</p> </li> <li>
-     * <p> <code>region-name</code> - The name of the Region for the Zone (for example,
-     * <code>us-east-1</code>).</p> </li> <li> <p> <code>state</code> - The state of
-     * the Availability Zone or Local Zone (<code>available</code> |
-     * <code>information</code> | <code>impaired</code> |
+     * <p>The ID of the zone that handles some of the Local Zone control plane
+     * operations, such as API calls.</p> </li> <li> <p> <code>region-name</code> - The
+     * name of the Region for the Zone (for example, <code>us-east-1</code>).</p> </li>
+     * <li> <p> <code>state</code> - The state of the Availability Zone or Local Zone
+     * (<code>available</code> | <code>information</code> | <code>impaired</code> |
      * <code>unavailable</code>).</p> </li> <li> <p> <code>zone-id</code> - The ID of
      * the Availability Zone (for example, <code>use1-az1</code>) or the Local Zone
      * (for example, use <code>usw2-lax1-az1</code>).</p> </li> <li> <p>
-     * <code>zone-name</code> - The name of the Availability Zone (for example,
-     * <code>us-east-1a</code>) or the Local Zone (for example, use
-     * <code>us-west-2-lax-1a</code>).</p> </li> </ul>
+     * <code>zone-type</code> - The type of zone, for example,
+     * <code>local-zone</code>.</p> </li> <li> <p> <code>zone-name</code> - The name of
+     * the Availability Zone (for example, <code>us-east-1a</code>) or the Local Zone
+     * (for example, use <code>us-west-2-lax-1a</code>).</p> </li> <li> <p>
+     * <code>zone-type</code> - The type of zone, for example,
+     * <code>local-zone</code>.</p> </li> </ul>
      */
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
@@ -105,16 +117,20 @@ namespace Model
      * </li> <li> <p> <code>message</code> - The Zone message.</p> </li> <li> <p>
      * <code>opt-in-status</code> - The opt in status (<code>opted-in</code>, and
      * <code>not-opted-in</code> | <code>opt-in-not-required</code>).</p> </li> <li>
-     * <p> <code>region-name</code> - The name of the Region for the Zone (for example,
-     * <code>us-east-1</code>).</p> </li> <li> <p> <code>state</code> - The state of
-     * the Availability Zone or Local Zone (<code>available</code> |
-     * <code>information</code> | <code>impaired</code> |
+     * <p>The ID of the zone that handles some of the Local Zone control plane
+     * operations, such as API calls.</p> </li> <li> <p> <code>region-name</code> - The
+     * name of the Region for the Zone (for example, <code>us-east-1</code>).</p> </li>
+     * <li> <p> <code>state</code> - The state of the Availability Zone or Local Zone
+     * (<code>available</code> | <code>information</code> | <code>impaired</code> |
      * <code>unavailable</code>).</p> </li> <li> <p> <code>zone-id</code> - The ID of
      * the Availability Zone (for example, <code>use1-az1</code>) or the Local Zone
      * (for example, use <code>usw2-lax1-az1</code>).</p> </li> <li> <p>
-     * <code>zone-name</code> - The name of the Availability Zone (for example,
-     * <code>us-east-1a</code>) or the Local Zone (for example, use
-     * <code>us-west-2-lax-1a</code>).</p> </li> </ul>
+     * <code>zone-type</code> - The type of zone, for example,
+     * <code>local-zone</code>.</p> </li> <li> <p> <code>zone-name</code> - The name of
+     * the Availability Zone (for example, <code>us-east-1a</code>) or the Local Zone
+     * (for example, use <code>us-west-2-lax-1a</code>).</p> </li> <li> <p>
+     * <code>zone-type</code> - The type of zone, for example,
+     * <code>local-zone</code>.</p> </li> </ul>
      */
     inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
@@ -125,16 +141,20 @@ namespace Model
      * </li> <li> <p> <code>message</code> - The Zone message.</p> </li> <li> <p>
      * <code>opt-in-status</code> - The opt in status (<code>opted-in</code>, and
      * <code>not-opted-in</code> | <code>opt-in-not-required</code>).</p> </li> <li>
-     * <p> <code>region-name</code> - The name of the Region for the Zone (for example,
-     * <code>us-east-1</code>).</p> </li> <li> <p> <code>state</code> - The state of
-     * the Availability Zone or Local Zone (<code>available</code> |
-     * <code>information</code> | <code>impaired</code> |
+     * <p>The ID of the zone that handles some of the Local Zone control plane
+     * operations, such as API calls.</p> </li> <li> <p> <code>region-name</code> - The
+     * name of the Region for the Zone (for example, <code>us-east-1</code>).</p> </li>
+     * <li> <p> <code>state</code> - The state of the Availability Zone or Local Zone
+     * (<code>available</code> | <code>information</code> | <code>impaired</code> |
      * <code>unavailable</code>).</p> </li> <li> <p> <code>zone-id</code> - The ID of
      * the Availability Zone (for example, <code>use1-az1</code>) or the Local Zone
      * (for example, use <code>usw2-lax1-az1</code>).</p> </li> <li> <p>
-     * <code>zone-name</code> - The name of the Availability Zone (for example,
-     * <code>us-east-1a</code>) or the Local Zone (for example, use
-     * <code>us-west-2-lax-1a</code>).</p> </li> </ul>
+     * <code>zone-type</code> - The type of zone, for example,
+     * <code>local-zone</code>.</p> </li> <li> <p> <code>zone-name</code> - The name of
+     * the Availability Zone (for example, <code>us-east-1a</code>) or the Local Zone
+     * (for example, use <code>us-west-2-lax-1a</code>).</p> </li> <li> <p>
+     * <code>zone-type</code> - The type of zone, for example,
+     * <code>local-zone</code>.</p> </li> </ul>
      */
     inline DescribeAvailabilityZonesRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
 
@@ -145,16 +165,20 @@ namespace Model
      * </li> <li> <p> <code>message</code> - The Zone message.</p> </li> <li> <p>
      * <code>opt-in-status</code> - The opt in status (<code>opted-in</code>, and
      * <code>not-opted-in</code> | <code>opt-in-not-required</code>).</p> </li> <li>
-     * <p> <code>region-name</code> - The name of the Region for the Zone (for example,
-     * <code>us-east-1</code>).</p> </li> <li> <p> <code>state</code> - The state of
-     * the Availability Zone or Local Zone (<code>available</code> |
-     * <code>information</code> | <code>impaired</code> |
+     * <p>The ID of the zone that handles some of the Local Zone control plane
+     * operations, such as API calls.</p> </li> <li> <p> <code>region-name</code> - The
+     * name of the Region for the Zone (for example, <code>us-east-1</code>).</p> </li>
+     * <li> <p> <code>state</code> - The state of the Availability Zone or Local Zone
+     * (<code>available</code> | <code>information</code> | <code>impaired</code> |
      * <code>unavailable</code>).</p> </li> <li> <p> <code>zone-id</code> - The ID of
      * the Availability Zone (for example, <code>use1-az1</code>) or the Local Zone
      * (for example, use <code>usw2-lax1-az1</code>).</p> </li> <li> <p>
-     * <code>zone-name</code> - The name of the Availability Zone (for example,
-     * <code>us-east-1a</code>) or the Local Zone (for example, use
-     * <code>us-west-2-lax-1a</code>).</p> </li> </ul>
+     * <code>zone-type</code> - The type of zone, for example,
+     * <code>local-zone</code>.</p> </li> <li> <p> <code>zone-name</code> - The name of
+     * the Availability Zone (for example, <code>us-east-1a</code>) or the Local Zone
+     * (for example, use <code>us-west-2-lax-1a</code>).</p> </li> <li> <p>
+     * <code>zone-type</code> - The type of zone, for example,
+     * <code>local-zone</code>.</p> </li> </ul>
      */
     inline DescribeAvailabilityZonesRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
 
@@ -165,16 +189,20 @@ namespace Model
      * </li> <li> <p> <code>message</code> - The Zone message.</p> </li> <li> <p>
      * <code>opt-in-status</code> - The opt in status (<code>opted-in</code>, and
      * <code>not-opted-in</code> | <code>opt-in-not-required</code>).</p> </li> <li>
-     * <p> <code>region-name</code> - The name of the Region for the Zone (for example,
-     * <code>us-east-1</code>).</p> </li> <li> <p> <code>state</code> - The state of
-     * the Availability Zone or Local Zone (<code>available</code> |
-     * <code>information</code> | <code>impaired</code> |
+     * <p>The ID of the zone that handles some of the Local Zone control plane
+     * operations, such as API calls.</p> </li> <li> <p> <code>region-name</code> - The
+     * name of the Region for the Zone (for example, <code>us-east-1</code>).</p> </li>
+     * <li> <p> <code>state</code> - The state of the Availability Zone or Local Zone
+     * (<code>available</code> | <code>information</code> | <code>impaired</code> |
      * <code>unavailable</code>).</p> </li> <li> <p> <code>zone-id</code> - The ID of
      * the Availability Zone (for example, <code>use1-az1</code>) or the Local Zone
      * (for example, use <code>usw2-lax1-az1</code>).</p> </li> <li> <p>
-     * <code>zone-name</code> - The name of the Availability Zone (for example,
-     * <code>us-east-1a</code>) or the Local Zone (for example, use
-     * <code>us-west-2-lax-1a</code>).</p> </li> </ul>
+     * <code>zone-type</code> - The type of zone, for example,
+     * <code>local-zone</code>.</p> </li> <li> <p> <code>zone-name</code> - The name of
+     * the Availability Zone (for example, <code>us-east-1a</code>) or the Local Zone
+     * (for example, use <code>us-west-2-lax-1a</code>).</p> </li> <li> <p>
+     * <code>zone-type</code> - The type of zone, for example,
+     * <code>local-zone</code>.</p> </li> </ul>
      */
     inline DescribeAvailabilityZonesRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
@@ -185,16 +213,20 @@ namespace Model
      * </li> <li> <p> <code>message</code> - The Zone message.</p> </li> <li> <p>
      * <code>opt-in-status</code> - The opt in status (<code>opted-in</code>, and
      * <code>not-opted-in</code> | <code>opt-in-not-required</code>).</p> </li> <li>
-     * <p> <code>region-name</code> - The name of the Region for the Zone (for example,
-     * <code>us-east-1</code>).</p> </li> <li> <p> <code>state</code> - The state of
-     * the Availability Zone or Local Zone (<code>available</code> |
-     * <code>information</code> | <code>impaired</code> |
+     * <p>The ID of the zone that handles some of the Local Zone control plane
+     * operations, such as API calls.</p> </li> <li> <p> <code>region-name</code> - The
+     * name of the Region for the Zone (for example, <code>us-east-1</code>).</p> </li>
+     * <li> <p> <code>state</code> - The state of the Availability Zone or Local Zone
+     * (<code>available</code> | <code>information</code> | <code>impaired</code> |
      * <code>unavailable</code>).</p> </li> <li> <p> <code>zone-id</code> - The ID of
      * the Availability Zone (for example, <code>use1-az1</code>) or the Local Zone
      * (for example, use <code>usw2-lax1-az1</code>).</p> </li> <li> <p>
-     * <code>zone-name</code> - The name of the Availability Zone (for example,
-     * <code>us-east-1a</code>) or the Local Zone (for example, use
-     * <code>us-west-2-lax-1a</code>).</p> </li> </ul>
+     * <code>zone-type</code> - The type of zone, for example,
+     * <code>local-zone</code>.</p> </li> <li> <p> <code>zone-name</code> - The name of
+     * the Availability Zone (for example, <code>us-east-1a</code>) or the Local Zone
+     * (for example, use <code>us-west-2-lax-1a</code>).</p> </li> <li> <p>
+     * <code>zone-type</code> - The type of zone, for example,
+     * <code>local-zone</code>.</p> </li> </ul>
      */
     inline DescribeAvailabilityZonesRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 

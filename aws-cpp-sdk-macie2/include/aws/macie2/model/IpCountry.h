@@ -24,7 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>Reserved for future use.</p><p><h3>See Also:</h3>   <a
+   * <p>Provides information about the country that an IP address originated
+   * from.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/IpCountry">AWS
    * API Reference</a></p>
    */
@@ -38,83 +39,91 @@ namespace Model
 
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country that
+     * the IP address originated from. For example, US for the United States.</p>
      */
     inline const Aws::String& GetCode() const{ return m_code; }
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country that
+     * the IP address originated from. For example, US for the United States.</p>
      */
     inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country that
+     * the IP address originated from. For example, US for the United States.</p>
      */
     inline void SetCode(const Aws::String& value) { m_codeHasBeenSet = true; m_code = value; }
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country that
+     * the IP address originated from. For example, US for the United States.</p>
      */
     inline void SetCode(Aws::String&& value) { m_codeHasBeenSet = true; m_code = std::move(value); }
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country that
+     * the IP address originated from. For example, US for the United States.</p>
      */
     inline void SetCode(const char* value) { m_codeHasBeenSet = true; m_code.assign(value); }
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country that
+     * the IP address originated from. For example, US for the United States.</p>
      */
     inline IpCountry& WithCode(const Aws::String& value) { SetCode(value); return *this;}
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country that
+     * the IP address originated from. For example, US for the United States.</p>
      */
     inline IpCountry& WithCode(Aws::String&& value) { SetCode(std::move(value)); return *this;}
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country that
+     * the IP address originated from. For example, US for the United States.</p>
      */
     inline IpCountry& WithCode(const char* value) { SetCode(value); return *this;}
 
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>The name of the country that the IP address originated from.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>The name of the country that the IP address originated from.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>The name of the country that the IP address originated from.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>The name of the country that the IP address originated from.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>The name of the country that the IP address originated from.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>The name of the country that the IP address originated from.</p>
      */
     inline IpCountry& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>The name of the country that the IP address originated from.</p>
      */
     inline IpCountry& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>The name of the country that the IP address originated from.</p>
      */
     inline IpCountry& WithName(const char* value) { SetName(value); return *this;}
 

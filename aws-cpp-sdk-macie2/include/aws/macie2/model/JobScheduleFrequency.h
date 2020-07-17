@@ -41,106 +41,94 @@ namespace Model
 
 
     /**
-     * <p>Run the job once a day, every day. If specified, this is an empty object.</p>
+     * <p>Specifies a daily recurrence pattern for running the job.</p>
      */
     inline const DailySchedule& GetDailySchedule() const{ return m_dailySchedule; }
 
     /**
-     * <p>Run the job once a day, every day. If specified, this is an empty object.</p>
+     * <p>Specifies a daily recurrence pattern for running the job.</p>
      */
     inline bool DailyScheduleHasBeenSet() const { return m_dailyScheduleHasBeenSet; }
 
     /**
-     * <p>Run the job once a day, every day. If specified, this is an empty object.</p>
+     * <p>Specifies a daily recurrence pattern for running the job.</p>
      */
     inline void SetDailySchedule(const DailySchedule& value) { m_dailyScheduleHasBeenSet = true; m_dailySchedule = value; }
 
     /**
-     * <p>Run the job once a day, every day. If specified, this is an empty object.</p>
+     * <p>Specifies a daily recurrence pattern for running the job.</p>
      */
     inline void SetDailySchedule(DailySchedule&& value) { m_dailyScheduleHasBeenSet = true; m_dailySchedule = std::move(value); }
 
     /**
-     * <p>Run the job once a day, every day. If specified, this is an empty object.</p>
+     * <p>Specifies a daily recurrence pattern for running the job.</p>
      */
     inline JobScheduleFrequency& WithDailySchedule(const DailySchedule& value) { SetDailySchedule(value); return *this;}
 
     /**
-     * <p>Run the job once a day, every day. If specified, this is an empty object.</p>
+     * <p>Specifies a daily recurrence pattern for running the job.</p>
      */
     inline JobScheduleFrequency& WithDailySchedule(DailySchedule&& value) { SetDailySchedule(std::move(value)); return *this;}
 
 
     /**
-     * <p>Run the job once a month, on a specific day of the month. This value can be
-     * an integer from 1 through 30.</p>
+     * <p>Specifies a monthly recurrence pattern for running the job.</p>
      */
     inline const MonthlySchedule& GetMonthlySchedule() const{ return m_monthlySchedule; }
 
     /**
-     * <p>Run the job once a month, on a specific day of the month. This value can be
-     * an integer from 1 through 30.</p>
+     * <p>Specifies a monthly recurrence pattern for running the job.</p>
      */
     inline bool MonthlyScheduleHasBeenSet() const { return m_monthlyScheduleHasBeenSet; }
 
     /**
-     * <p>Run the job once a month, on a specific day of the month. This value can be
-     * an integer from 1 through 30.</p>
+     * <p>Specifies a monthly recurrence pattern for running the job.</p>
      */
     inline void SetMonthlySchedule(const MonthlySchedule& value) { m_monthlyScheduleHasBeenSet = true; m_monthlySchedule = value; }
 
     /**
-     * <p>Run the job once a month, on a specific day of the month. This value can be
-     * an integer from 1 through 30.</p>
+     * <p>Specifies a monthly recurrence pattern for running the job.</p>
      */
     inline void SetMonthlySchedule(MonthlySchedule&& value) { m_monthlyScheduleHasBeenSet = true; m_monthlySchedule = std::move(value); }
 
     /**
-     * <p>Run the job once a month, on a specific day of the month. This value can be
-     * an integer from 1 through 30.</p>
+     * <p>Specifies a monthly recurrence pattern for running the job.</p>
      */
     inline JobScheduleFrequency& WithMonthlySchedule(const MonthlySchedule& value) { SetMonthlySchedule(value); return *this;}
 
     /**
-     * <p>Run the job once a month, on a specific day of the month. This value can be
-     * an integer from 1 through 30.</p>
+     * <p>Specifies a monthly recurrence pattern for running the job.</p>
      */
     inline JobScheduleFrequency& WithMonthlySchedule(MonthlySchedule&& value) { SetMonthlySchedule(std::move(value)); return *this;}
 
 
     /**
-     * <p>Run the job once a week, on a specific day of the week. Valid values are:
-     * MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, and SUNDAY.</p>
+     * <p>Specifies a weekly recurrence pattern for running the job.</p>
      */
     inline const WeeklySchedule& GetWeeklySchedule() const{ return m_weeklySchedule; }
 
     /**
-     * <p>Run the job once a week, on a specific day of the week. Valid values are:
-     * MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, and SUNDAY.</p>
+     * <p>Specifies a weekly recurrence pattern for running the job.</p>
      */
     inline bool WeeklyScheduleHasBeenSet() const { return m_weeklyScheduleHasBeenSet; }
 
     /**
-     * <p>Run the job once a week, on a specific day of the week. Valid values are:
-     * MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, and SUNDAY.</p>
+     * <p>Specifies a weekly recurrence pattern for running the job.</p>
      */
     inline void SetWeeklySchedule(const WeeklySchedule& value) { m_weeklyScheduleHasBeenSet = true; m_weeklySchedule = value; }
 
     /**
-     * <p>Run the job once a week, on a specific day of the week. Valid values are:
-     * MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, and SUNDAY.</p>
+     * <p>Specifies a weekly recurrence pattern for running the job.</p>
      */
     inline void SetWeeklySchedule(WeeklySchedule&& value) { m_weeklyScheduleHasBeenSet = true; m_weeklySchedule = std::move(value); }
 
     /**
-     * <p>Run the job once a week, on a specific day of the week. Valid values are:
-     * MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, and SUNDAY.</p>
+     * <p>Specifies a weekly recurrence pattern for running the job.</p>
      */
     inline JobScheduleFrequency& WithWeeklySchedule(const WeeklySchedule& value) { SetWeeklySchedule(value); return *this;}
 
     /**
-     * <p>Run the job once a week, on a specific day of the week. Valid values are:
-     * MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, and SUNDAY.</p>
+     * <p>Specifies a weekly recurrence pattern for running the job.</p>
      */
     inline JobScheduleFrequency& WithWeeklySchedule(WeeklySchedule&& value) { SetWeeklySchedule(std::move(value)); return *this;}
 

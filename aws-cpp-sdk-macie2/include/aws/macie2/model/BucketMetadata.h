@@ -214,30 +214,30 @@ namespace Model
 
 
     /**
-     * <p>The total number of objects that Amazon Macie can monitor and analyze in the
-     * bucket. These objects use a file format, file extension, or content type that
-     * Amazon Macie supports.</p>
+     * <p>The total number of objects that Amazon Macie can analyze in the bucket.
+     * These objects use a file format, file extension, or content type that Amazon
+     * Macie supports.</p>
      */
     inline long long GetClassifiableObjectCount() const{ return m_classifiableObjectCount; }
 
     /**
-     * <p>The total number of objects that Amazon Macie can monitor and analyze in the
-     * bucket. These objects use a file format, file extension, or content type that
-     * Amazon Macie supports.</p>
+     * <p>The total number of objects that Amazon Macie can analyze in the bucket.
+     * These objects use a file format, file extension, or content type that Amazon
+     * Macie supports.</p>
      */
     inline bool ClassifiableObjectCountHasBeenSet() const { return m_classifiableObjectCountHasBeenSet; }
 
     /**
-     * <p>The total number of objects that Amazon Macie can monitor and analyze in the
-     * bucket. These objects use a file format, file extension, or content type that
-     * Amazon Macie supports.</p>
+     * <p>The total number of objects that Amazon Macie can analyze in the bucket.
+     * These objects use a file format, file extension, or content type that Amazon
+     * Macie supports.</p>
      */
     inline void SetClassifiableObjectCount(long long value) { m_classifiableObjectCountHasBeenSet = true; m_classifiableObjectCount = value; }
 
     /**
-     * <p>The total number of objects that Amazon Macie can monitor and analyze in the
-     * bucket. These objects use a file format, file extension, or content type that
-     * Amazon Macie supports.</p>
+     * <p>The total number of objects that Amazon Macie can analyze in the bucket.
+     * These objects use a file format, file extension, or content type that Amazon
+     * Macie supports.</p>
      */
     inline BucketMetadata& WithClassifiableObjectCount(long long value) { SetClassifiableObjectCount(value); return *this;}
 
@@ -465,66 +465,60 @@ namespace Model
 
 
     /**
-     * <p>Specifies whether the bucket is shared with another AWS account or configured
-     * to support cross-origin resource sharing (CORS). Valid values are:</p>
-     * <ul><li><p>EXTERNAL - The bucket is shared with an AWS account that isn’t part
-     * of the Amazon Macie organization.</p></li> <li><p>INTERNAL - The bucket is
-     * shared with an AWS account that's part of the Amazon Macie
+     * <p>Specifies whether the bucket is shared with another AWS account. Valid values
+     * are:</p> <ul><li><p>EXTERNAL - The bucket is shared with an AWS account that
+     * isn’t part of the same Amazon Macie organization.</p></li> <li><p>INTERNAL - The
+     * bucket is shared with an AWS account that's part of the same Amazon Macie
      * organization.</p></li> <li><p>NOT_SHARED - The bucket isn't shared with other
      * AWS accounts.</p></li></ul>
      */
     inline const SharedAccess& GetSharedAccess() const{ return m_sharedAccess; }
 
     /**
-     * <p>Specifies whether the bucket is shared with another AWS account or configured
-     * to support cross-origin resource sharing (CORS). Valid values are:</p>
-     * <ul><li><p>EXTERNAL - The bucket is shared with an AWS account that isn’t part
-     * of the Amazon Macie organization.</p></li> <li><p>INTERNAL - The bucket is
-     * shared with an AWS account that's part of the Amazon Macie
+     * <p>Specifies whether the bucket is shared with another AWS account. Valid values
+     * are:</p> <ul><li><p>EXTERNAL - The bucket is shared with an AWS account that
+     * isn’t part of the same Amazon Macie organization.</p></li> <li><p>INTERNAL - The
+     * bucket is shared with an AWS account that's part of the same Amazon Macie
      * organization.</p></li> <li><p>NOT_SHARED - The bucket isn't shared with other
      * AWS accounts.</p></li></ul>
      */
     inline bool SharedAccessHasBeenSet() const { return m_sharedAccessHasBeenSet; }
 
     /**
-     * <p>Specifies whether the bucket is shared with another AWS account or configured
-     * to support cross-origin resource sharing (CORS). Valid values are:</p>
-     * <ul><li><p>EXTERNAL - The bucket is shared with an AWS account that isn’t part
-     * of the Amazon Macie organization.</p></li> <li><p>INTERNAL - The bucket is
-     * shared with an AWS account that's part of the Amazon Macie
+     * <p>Specifies whether the bucket is shared with another AWS account. Valid values
+     * are:</p> <ul><li><p>EXTERNAL - The bucket is shared with an AWS account that
+     * isn’t part of the same Amazon Macie organization.</p></li> <li><p>INTERNAL - The
+     * bucket is shared with an AWS account that's part of the same Amazon Macie
      * organization.</p></li> <li><p>NOT_SHARED - The bucket isn't shared with other
      * AWS accounts.</p></li></ul>
      */
     inline void SetSharedAccess(const SharedAccess& value) { m_sharedAccessHasBeenSet = true; m_sharedAccess = value; }
 
     /**
-     * <p>Specifies whether the bucket is shared with another AWS account or configured
-     * to support cross-origin resource sharing (CORS). Valid values are:</p>
-     * <ul><li><p>EXTERNAL - The bucket is shared with an AWS account that isn’t part
-     * of the Amazon Macie organization.</p></li> <li><p>INTERNAL - The bucket is
-     * shared with an AWS account that's part of the Amazon Macie
+     * <p>Specifies whether the bucket is shared with another AWS account. Valid values
+     * are:</p> <ul><li><p>EXTERNAL - The bucket is shared with an AWS account that
+     * isn’t part of the same Amazon Macie organization.</p></li> <li><p>INTERNAL - The
+     * bucket is shared with an AWS account that's part of the same Amazon Macie
      * organization.</p></li> <li><p>NOT_SHARED - The bucket isn't shared with other
      * AWS accounts.</p></li></ul>
      */
     inline void SetSharedAccess(SharedAccess&& value) { m_sharedAccessHasBeenSet = true; m_sharedAccess = std::move(value); }
 
     /**
-     * <p>Specifies whether the bucket is shared with another AWS account or configured
-     * to support cross-origin resource sharing (CORS). Valid values are:</p>
-     * <ul><li><p>EXTERNAL - The bucket is shared with an AWS account that isn’t part
-     * of the Amazon Macie organization.</p></li> <li><p>INTERNAL - The bucket is
-     * shared with an AWS account that's part of the Amazon Macie
+     * <p>Specifies whether the bucket is shared with another AWS account. Valid values
+     * are:</p> <ul><li><p>EXTERNAL - The bucket is shared with an AWS account that
+     * isn’t part of the same Amazon Macie organization.</p></li> <li><p>INTERNAL - The
+     * bucket is shared with an AWS account that's part of the same Amazon Macie
      * organization.</p></li> <li><p>NOT_SHARED - The bucket isn't shared with other
      * AWS accounts.</p></li></ul>
      */
     inline BucketMetadata& WithSharedAccess(const SharedAccess& value) { SetSharedAccess(value); return *this;}
 
     /**
-     * <p>Specifies whether the bucket is shared with another AWS account or configured
-     * to support cross-origin resource sharing (CORS). Valid values are:</p>
-     * <ul><li><p>EXTERNAL - The bucket is shared with an AWS account that isn’t part
-     * of the Amazon Macie organization.</p></li> <li><p>INTERNAL - The bucket is
-     * shared with an AWS account that's part of the Amazon Macie
+     * <p>Specifies whether the bucket is shared with another AWS account. Valid values
+     * are:</p> <ul><li><p>EXTERNAL - The bucket is shared with an AWS account that
+     * isn’t part of the same Amazon Macie organization.</p></li> <li><p>INTERNAL - The
+     * bucket is shared with an AWS account that's part of the same Amazon Macie
      * organization.</p></li> <li><p>NOT_SHARED - The bucket isn't shared with other
      * AWS accounts.</p></li></ul>
      */

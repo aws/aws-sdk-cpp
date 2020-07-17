@@ -25,7 +25,9 @@ namespace Model
 {
 
   /**
-   * <p>Reserved for future use.</p><p><h3>See Also:</h3>   <a
+   * <p>Specifies one or more property- and tag-based conditions that define criteria
+   * for including or excluding objects from a classification job.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/JobScopingBlock">AWS
    * API Reference</a></p>
    */
@@ -39,42 +41,50 @@ namespace Model
 
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>An array of conditions, one for each condition that determines which objects
+     * to include or exclude from the job.</p>
      */
     inline const Aws::Vector<JobScopeTerm>& GetAnd() const{ return m_and; }
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>An array of conditions, one for each condition that determines which objects
+     * to include or exclude from the job.</p>
      */
     inline bool AndHasBeenSet() const { return m_andHasBeenSet; }
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>An array of conditions, one for each condition that determines which objects
+     * to include or exclude from the job.</p>
      */
     inline void SetAnd(const Aws::Vector<JobScopeTerm>& value) { m_andHasBeenSet = true; m_and = value; }
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>An array of conditions, one for each condition that determines which objects
+     * to include or exclude from the job.</p>
      */
     inline void SetAnd(Aws::Vector<JobScopeTerm>&& value) { m_andHasBeenSet = true; m_and = std::move(value); }
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>An array of conditions, one for each condition that determines which objects
+     * to include or exclude from the job.</p>
      */
     inline JobScopingBlock& WithAnd(const Aws::Vector<JobScopeTerm>& value) { SetAnd(value); return *this;}
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>An array of conditions, one for each condition that determines which objects
+     * to include or exclude from the job.</p>
      */
     inline JobScopingBlock& WithAnd(Aws::Vector<JobScopeTerm>&& value) { SetAnd(std::move(value)); return *this;}
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>An array of conditions, one for each condition that determines which objects
+     * to include or exclude from the job.</p>
      */
     inline JobScopingBlock& AddAnd(const JobScopeTerm& value) { m_andHasBeenSet = true; m_and.push_back(value); return *this; }
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>An array of conditions, one for each condition that determines which objects
+     * to include or exclude from the job.</p>
      */
     inline JobScopingBlock& AddAnd(JobScopeTerm&& value) { m_andHasBeenSet = true; m_and.push_back(std::move(value)); return *this; }
 

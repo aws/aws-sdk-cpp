@@ -83,62 +83,38 @@ namespace Model
 
 
     /**
-     * <p>For the affected resource:</p> <ul><li><p>The name of the operation that was
-     * invoked most recently and produced the finding (api).</p></li> <li><p>The first
-     * date and time when any operation was invoked and produced the finding
-     * (firstSeen).</p></li> <li><p>The most recent date and time when the specified
-     * operation was invoked and produced the finding (lastSeen).</p></li></ul> <p>All
-     * date and time values are in UTC and extended ISO 8601 format.</p>
+     * <p>The invocation details of the API operation that an entity invoked for the
+     * affected resource, if the value for the actionType property is AWS_API_CALL.</p>
      */
     inline const ApiCallDetails& GetApiCallDetails() const{ return m_apiCallDetails; }
 
     /**
-     * <p>For the affected resource:</p> <ul><li><p>The name of the operation that was
-     * invoked most recently and produced the finding (api).</p></li> <li><p>The first
-     * date and time when any operation was invoked and produced the finding
-     * (firstSeen).</p></li> <li><p>The most recent date and time when the specified
-     * operation was invoked and produced the finding (lastSeen).</p></li></ul> <p>All
-     * date and time values are in UTC and extended ISO 8601 format.</p>
+     * <p>The invocation details of the API operation that an entity invoked for the
+     * affected resource, if the value for the actionType property is AWS_API_CALL.</p>
      */
     inline bool ApiCallDetailsHasBeenSet() const { return m_apiCallDetailsHasBeenSet; }
 
     /**
-     * <p>For the affected resource:</p> <ul><li><p>The name of the operation that was
-     * invoked most recently and produced the finding (api).</p></li> <li><p>The first
-     * date and time when any operation was invoked and produced the finding
-     * (firstSeen).</p></li> <li><p>The most recent date and time when the specified
-     * operation was invoked and produced the finding (lastSeen).</p></li></ul> <p>All
-     * date and time values are in UTC and extended ISO 8601 format.</p>
+     * <p>The invocation details of the API operation that an entity invoked for the
+     * affected resource, if the value for the actionType property is AWS_API_CALL.</p>
      */
     inline void SetApiCallDetails(const ApiCallDetails& value) { m_apiCallDetailsHasBeenSet = true; m_apiCallDetails = value; }
 
     /**
-     * <p>For the affected resource:</p> <ul><li><p>The name of the operation that was
-     * invoked most recently and produced the finding (api).</p></li> <li><p>The first
-     * date and time when any operation was invoked and produced the finding
-     * (firstSeen).</p></li> <li><p>The most recent date and time when the specified
-     * operation was invoked and produced the finding (lastSeen).</p></li></ul> <p>All
-     * date and time values are in UTC and extended ISO 8601 format.</p>
+     * <p>The invocation details of the API operation that an entity invoked for the
+     * affected resource, if the value for the actionType property is AWS_API_CALL.</p>
      */
     inline void SetApiCallDetails(ApiCallDetails&& value) { m_apiCallDetailsHasBeenSet = true; m_apiCallDetails = std::move(value); }
 
     /**
-     * <p>For the affected resource:</p> <ul><li><p>The name of the operation that was
-     * invoked most recently and produced the finding (api).</p></li> <li><p>The first
-     * date and time when any operation was invoked and produced the finding
-     * (firstSeen).</p></li> <li><p>The most recent date and time when the specified
-     * operation was invoked and produced the finding (lastSeen).</p></li></ul> <p>All
-     * date and time values are in UTC and extended ISO 8601 format.</p>
+     * <p>The invocation details of the API operation that an entity invoked for the
+     * affected resource, if the value for the actionType property is AWS_API_CALL.</p>
      */
     inline FindingAction& WithApiCallDetails(const ApiCallDetails& value) { SetApiCallDetails(value); return *this;}
 
     /**
-     * <p>For the affected resource:</p> <ul><li><p>The name of the operation that was
-     * invoked most recently and produced the finding (api).</p></li> <li><p>The first
-     * date and time when any operation was invoked and produced the finding
-     * (firstSeen).</p></li> <li><p>The most recent date and time when the specified
-     * operation was invoked and produced the finding (lastSeen).</p></li></ul> <p>All
-     * date and time values are in UTC and extended ISO 8601 format.</p>
+     * <p>The invocation details of the API operation that an entity invoked for the
+     * affected resource, if the value for the actionType property is AWS_API_CALL.</p>
      */
     inline FindingAction& WithApiCallDetails(ApiCallDetails&& value) { SetApiCallDetails(std::move(value)); return *this;}
 

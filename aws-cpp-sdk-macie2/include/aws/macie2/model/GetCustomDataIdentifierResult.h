@@ -372,37 +372,37 @@ namespace Model
 
 
     /**
-     * <p>The regular expression (regex) that defines the pattern to match.</p>
+     * <p>The regular expression (<i>regex</i>) that defines the pattern to match.</p>
      */
     inline const Aws::String& GetRegex() const{ return m_regex; }
 
     /**
-     * <p>The regular expression (regex) that defines the pattern to match.</p>
+     * <p>The regular expression (<i>regex</i>) that defines the pattern to match.</p>
      */
     inline void SetRegex(const Aws::String& value) { m_regex = value; }
 
     /**
-     * <p>The regular expression (regex) that defines the pattern to match.</p>
+     * <p>The regular expression (<i>regex</i>) that defines the pattern to match.</p>
      */
     inline void SetRegex(Aws::String&& value) { m_regex = std::move(value); }
 
     /**
-     * <p>The regular expression (regex) that defines the pattern to match.</p>
+     * <p>The regular expression (<i>regex</i>) that defines the pattern to match.</p>
      */
     inline void SetRegex(const char* value) { m_regex.assign(value); }
 
     /**
-     * <p>The regular expression (regex) that defines the pattern to match.</p>
+     * <p>The regular expression (<i>regex</i>) that defines the pattern to match.</p>
      */
     inline GetCustomDataIdentifierResult& WithRegex(const Aws::String& value) { SetRegex(value); return *this;}
 
     /**
-     * <p>The regular expression (regex) that defines the pattern to match.</p>
+     * <p>The regular expression (<i>regex</i>) that defines the pattern to match.</p>
      */
     inline GetCustomDataIdentifierResult& WithRegex(Aws::String&& value) { SetRegex(std::move(value)); return *this;}
 
     /**
-     * <p>The regular expression (regex) that defines the pattern to match.</p>
+     * <p>The regular expression (<i>regex</i>) that defines the pattern to match.</p>
      */
     inline GetCustomDataIdentifierResult& WithRegex(const char* value) { SetRegex(value); return *this;}
 

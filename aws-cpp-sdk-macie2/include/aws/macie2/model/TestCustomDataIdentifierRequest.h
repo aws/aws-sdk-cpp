@@ -217,50 +217,50 @@ namespace Model
 
 
     /**
-     * <p>The regular expression (regex) that defines the pattern to match. The
-     * expression can contain as many as 500 characters.</p>
+     * <p>The regular expression (<i>regex</i>) that defines the pattern to match. The
+     * expression can contain as many as 512 characters.</p>
      */
     inline const Aws::String& GetRegex() const{ return m_regex; }
 
     /**
-     * <p>The regular expression (regex) that defines the pattern to match. The
-     * expression can contain as many as 500 characters.</p>
+     * <p>The regular expression (<i>regex</i>) that defines the pattern to match. The
+     * expression can contain as many as 512 characters.</p>
      */
     inline bool RegexHasBeenSet() const { return m_regexHasBeenSet; }
 
     /**
-     * <p>The regular expression (regex) that defines the pattern to match. The
-     * expression can contain as many as 500 characters.</p>
+     * <p>The regular expression (<i>regex</i>) that defines the pattern to match. The
+     * expression can contain as many as 512 characters.</p>
      */
     inline void SetRegex(const Aws::String& value) { m_regexHasBeenSet = true; m_regex = value; }
 
     /**
-     * <p>The regular expression (regex) that defines the pattern to match. The
-     * expression can contain as many as 500 characters.</p>
+     * <p>The regular expression (<i>regex</i>) that defines the pattern to match. The
+     * expression can contain as many as 512 characters.</p>
      */
     inline void SetRegex(Aws::String&& value) { m_regexHasBeenSet = true; m_regex = std::move(value); }
 
     /**
-     * <p>The regular expression (regex) that defines the pattern to match. The
-     * expression can contain as many as 500 characters.</p>
+     * <p>The regular expression (<i>regex</i>) that defines the pattern to match. The
+     * expression can contain as many as 512 characters.</p>
      */
     inline void SetRegex(const char* value) { m_regexHasBeenSet = true; m_regex.assign(value); }
 
     /**
-     * <p>The regular expression (regex) that defines the pattern to match. The
-     * expression can contain as many as 500 characters.</p>
+     * <p>The regular expression (<i>regex</i>) that defines the pattern to match. The
+     * expression can contain as many as 512 characters.</p>
      */
     inline TestCustomDataIdentifierRequest& WithRegex(const Aws::String& value) { SetRegex(value); return *this;}
 
     /**
-     * <p>The regular expression (regex) that defines the pattern to match. The
-     * expression can contain as many as 500 characters.</p>
+     * <p>The regular expression (<i>regex</i>) that defines the pattern to match. The
+     * expression can contain as many as 512 characters.</p>
      */
     inline TestCustomDataIdentifierRequest& WithRegex(Aws::String&& value) { SetRegex(std::move(value)); return *this;}
 
     /**
-     * <p>The regular expression (regex) that defines the pattern to match. The
-     * expression can contain as many as 500 characters.</p>
+     * <p>The regular expression (<i>regex</i>) that defines the pattern to match. The
+     * expression can contain as many as 512 characters.</p>
      */
     inline TestCustomDataIdentifierRequest& WithRegex(const char* value) { SetRegex(value); return *this;}
 

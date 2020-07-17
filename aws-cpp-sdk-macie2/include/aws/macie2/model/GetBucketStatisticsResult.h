@@ -52,31 +52,31 @@ namespace Model
 
 
     /**
-     * <p>The total number of buckets that are publicly accessible, based on a
+     * <p>The total number of buckets that are publicly accessible based on a
      * combination of permissions settings for each bucket.</p>
      */
     inline const BucketCountByEffectivePermission& GetBucketCountByEffectivePermission() const{ return m_bucketCountByEffectivePermission; }
 
     /**
-     * <p>The total number of buckets that are publicly accessible, based on a
+     * <p>The total number of buckets that are publicly accessible based on a
      * combination of permissions settings for each bucket.</p>
      */
     inline void SetBucketCountByEffectivePermission(const BucketCountByEffectivePermission& value) { m_bucketCountByEffectivePermission = value; }
 
     /**
-     * <p>The total number of buckets that are publicly accessible, based on a
+     * <p>The total number of buckets that are publicly accessible based on a
      * combination of permissions settings for each bucket.</p>
      */
     inline void SetBucketCountByEffectivePermission(BucketCountByEffectivePermission&& value) { m_bucketCountByEffectivePermission = std::move(value); }
 
     /**
-     * <p>The total number of buckets that are publicly accessible, based on a
+     * <p>The total number of buckets that are publicly accessible based on a
      * combination of permissions settings for each bucket.</p>
      */
     inline GetBucketStatisticsResult& WithBucketCountByEffectivePermission(const BucketCountByEffectivePermission& value) { SetBucketCountByEffectivePermission(value); return *this;}
 
     /**
-     * <p>The total number of buckets that are publicly accessible, based on a
+     * <p>The total number of buckets that are publicly accessible based on a
      * combination of permissions settings for each bucket.</p>
      */
     inline GetBucketStatisticsResult& WithBucketCountByEffectivePermission(BucketCountByEffectivePermission&& value) { SetBucketCountByEffectivePermission(std::move(value)); return *this;}
@@ -114,54 +114,49 @@ namespace Model
 
 
     /**
-     * <p>The total number of buckets that are shared with another AWS account or
-     * configured to support cross-origin resource sharing (CORS).</p>
+     * <p>The total number of buckets that are shared with another AWS account.</p>
      */
     inline const BucketCountBySharedAccessType& GetBucketCountBySharedAccessType() const{ return m_bucketCountBySharedAccessType; }
 
     /**
-     * <p>The total number of buckets that are shared with another AWS account or
-     * configured to support cross-origin resource sharing (CORS).</p>
+     * <p>The total number of buckets that are shared with another AWS account.</p>
      */
     inline void SetBucketCountBySharedAccessType(const BucketCountBySharedAccessType& value) { m_bucketCountBySharedAccessType = value; }
 
     /**
-     * <p>The total number of buckets that are shared with another AWS account or
-     * configured to support cross-origin resource sharing (CORS).</p>
+     * <p>The total number of buckets that are shared with another AWS account.</p>
      */
     inline void SetBucketCountBySharedAccessType(BucketCountBySharedAccessType&& value) { m_bucketCountBySharedAccessType = std::move(value); }
 
     /**
-     * <p>The total number of buckets that are shared with another AWS account or
-     * configured to support cross-origin resource sharing (CORS).</p>
+     * <p>The total number of buckets that are shared with another AWS account.</p>
      */
     inline GetBucketStatisticsResult& WithBucketCountBySharedAccessType(const BucketCountBySharedAccessType& value) { SetBucketCountBySharedAccessType(value); return *this;}
 
     /**
-     * <p>The total number of buckets that are shared with another AWS account or
-     * configured to support cross-origin resource sharing (CORS).</p>
+     * <p>The total number of buckets that are shared with another AWS account.</p>
      */
     inline GetBucketStatisticsResult& WithBucketCountBySharedAccessType(BucketCountBySharedAccessType&& value) { SetBucketCountBySharedAccessType(std::move(value)); return *this;}
 
 
     /**
-     * <p>The total number of objects that Amazon Macie can monitor and analyze in all
-     * the buckets. These objects use a file format, file extension, or content type
-     * that Amazon Macie supports.</p>
+     * <p>The total number of objects that Amazon Macie can analyze in all the buckets.
+     * These objects use a file format, file extension, or content type that Amazon
+     * Macie supports.</p>
      */
     inline long long GetClassifiableObjectCount() const{ return m_classifiableObjectCount; }
 
     /**
-     * <p>The total number of objects that Amazon Macie can monitor and analyze in all
-     * the buckets. These objects use a file format, file extension, or content type
-     * that Amazon Macie supports.</p>
+     * <p>The total number of objects that Amazon Macie can analyze in all the buckets.
+     * These objects use a file format, file extension, or content type that Amazon
+     * Macie supports.</p>
      */
     inline void SetClassifiableObjectCount(long long value) { m_classifiableObjectCount = value; }
 
     /**
-     * <p>The total number of objects that Amazon Macie can monitor and analyze in all
-     * the buckets. These objects use a file format, file extension, or content type
-     * that Amazon Macie supports.</p>
+     * <p>The total number of objects that Amazon Macie can analyze in all the buckets.
+     * These objects use a file format, file extension, or content type that Amazon
+     * Macie supports.</p>
      */
     inline GetBucketStatisticsResult& WithClassifiableObjectCount(long long value) { SetClassifiableObjectCount(value); return *this;}
 

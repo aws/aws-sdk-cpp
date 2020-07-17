@@ -24,7 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>Reserved for future use.</p><p><h3>See Also:</h3>   <a
+   * <p>Provides information about the city that an IP address originated
+   * from.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/IpCity">AWS API
    * Reference</a></p>
    */
@@ -38,42 +39,42 @@ namespace Model
 
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>The name of the city.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>The name of the city.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>The name of the city.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>The name of the city.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>The name of the city.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>The name of the city.</p>
      */
     inline IpCity& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>The name of the city.</p>
      */
     inline IpCity& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>The name of the city.</p>
      */
     inline IpCity& WithName(const char* value) { SetName(value); return *this;}
 

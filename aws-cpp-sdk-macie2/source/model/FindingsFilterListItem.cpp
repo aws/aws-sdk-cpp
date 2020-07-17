@@ -19,6 +19,8 @@ namespace Model
 {
 
 FindingsFilterListItem::FindingsFilterListItem() : 
+    m_action(FindingsFilterAction::NOT_SET),
+    m_actionHasBeenSet(false),
     m_arnHasBeenSet(false),
     m_idHasBeenSet(false),
     m_nameHasBeenSet(false),
@@ -27,6 +29,8 @@ FindingsFilterListItem::FindingsFilterListItem() :
 }
 
 FindingsFilterListItem::FindingsFilterListItem(JsonView jsonValue) : 
+    m_action(FindingsFilterAction::NOT_SET),
+    m_actionHasBeenSet(false),
     m_arnHasBeenSet(false),
     m_idHasBeenSet(false),
     m_nameHasBeenSet(false),
@@ -37,6 +41,13 @@ FindingsFilterListItem::FindingsFilterListItem(JsonView jsonValue) :
 
 FindingsFilterListItem& FindingsFilterListItem::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("action"))
+  {
+    m_action = FindingsFilterActionMapper::GetFindingsFilterActionForName(jsonValue.GetString("action"));
+
+    m_actionHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
@@ -74,6 +85,11 @@ FindingsFilterListItem& FindingsFilterListItem::operator =(JsonView jsonValue)
 JsonValue FindingsFilterListItem::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_actionHasBeenSet)
+  {
+   payload.WithString("action", FindingsFilterActionMapper::GetNameForFindingsFilterAction(m_action));
+  }
 
   if(m_arnHasBeenSet)
   {

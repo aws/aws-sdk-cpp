@@ -38,38 +38,50 @@ namespace Model
   public:
 
     /**
-     * <p>Set to <code>vpc</code> to allocate the address for use with instances in a
-     * VPC.</p> <p>Default: The address is for use with instances in EC2-Classic.</p>
+     * <p>Indicates whether the Elastic IP address is for use with instances in a VPC
+     * or instances in EC2-Classic.</p> <p>Default: If the Region supports EC2-Classic,
+     * the default is <code>standard</code>. Otherwise, the default is
+     * <code>vpc</code>.</p>
      */
     inline const DomainType& GetDomain() const{ return m_domain; }
 
     /**
-     * <p>Set to <code>vpc</code> to allocate the address for use with instances in a
-     * VPC.</p> <p>Default: The address is for use with instances in EC2-Classic.</p>
+     * <p>Indicates whether the Elastic IP address is for use with instances in a VPC
+     * or instances in EC2-Classic.</p> <p>Default: If the Region supports EC2-Classic,
+     * the default is <code>standard</code>. Otherwise, the default is
+     * <code>vpc</code>.</p>
      */
     inline bool DomainHasBeenSet() const { return m_domainHasBeenSet; }
 
     /**
-     * <p>Set to <code>vpc</code> to allocate the address for use with instances in a
-     * VPC.</p> <p>Default: The address is for use with instances in EC2-Classic.</p>
+     * <p>Indicates whether the Elastic IP address is for use with instances in a VPC
+     * or instances in EC2-Classic.</p> <p>Default: If the Region supports EC2-Classic,
+     * the default is <code>standard</code>. Otherwise, the default is
+     * <code>vpc</code>.</p>
      */
     inline void SetDomain(const DomainType& value) { m_domainHasBeenSet = true; m_domain = value; }
 
     /**
-     * <p>Set to <code>vpc</code> to allocate the address for use with instances in a
-     * VPC.</p> <p>Default: The address is for use with instances in EC2-Classic.</p>
+     * <p>Indicates whether the Elastic IP address is for use with instances in a VPC
+     * or instances in EC2-Classic.</p> <p>Default: If the Region supports EC2-Classic,
+     * the default is <code>standard</code>. Otherwise, the default is
+     * <code>vpc</code>.</p>
      */
     inline void SetDomain(DomainType&& value) { m_domainHasBeenSet = true; m_domain = std::move(value); }
 
     /**
-     * <p>Set to <code>vpc</code> to allocate the address for use with instances in a
-     * VPC.</p> <p>Default: The address is for use with instances in EC2-Classic.</p>
+     * <p>Indicates whether the Elastic IP address is for use with instances in a VPC
+     * or instances in EC2-Classic.</p> <p>Default: If the Region supports EC2-Classic,
+     * the default is <code>standard</code>. Otherwise, the default is
+     * <code>vpc</code>.</p>
      */
     inline AllocateAddressRequest& WithDomain(const DomainType& value) { SetDomain(value); return *this;}
 
     /**
-     * <p>Set to <code>vpc</code> to allocate the address for use with instances in a
-     * VPC.</p> <p>Default: The address is for use with instances in EC2-Classic.</p>
+     * <p>Indicates whether the Elastic IP address is for use with instances in a VPC
+     * or instances in EC2-Classic.</p> <p>Default: If the Region supports EC2-Classic,
+     * the default is <code>standard</code>. Otherwise, the default is
+     * <code>vpc</code>.</p>
      */
     inline AllocateAddressRequest& WithDomain(DomainType&& value) { SetDomain(std::move(value)); return *this;}
 

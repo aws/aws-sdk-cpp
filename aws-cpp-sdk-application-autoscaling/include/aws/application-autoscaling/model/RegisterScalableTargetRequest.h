@@ -652,9 +652,10 @@ namespace Model
      * <p>The minimum value that you plan to scale in to. When a scaling policy is in
      * effect, Application Auto Scaling can scale in (contract) as needed to the
      * minimum capacity limit in response to changing demand. </p> <p>This parameter is
-     * required if you are registering a scalable target. For Lambda provisioned
-     * concurrency, the minimum value allowed is 0. For all other resources, the
-     * minimum value allowed is 1.</p>
+     * required if you are registering a scalable target. For certain resources, the
+     * minimum value allowed is 0. This includes Lambda provisioned concurrency, Spot
+     * Fleet, ECS services, Aurora DB clusters, EMR clusters, and custom resources. For
+     * all other resources, the minimum value allowed is 1.</p>
      */
     inline int GetMinCapacity() const{ return m_minCapacity; }
 
@@ -662,9 +663,10 @@ namespace Model
      * <p>The minimum value that you plan to scale in to. When a scaling policy is in
      * effect, Application Auto Scaling can scale in (contract) as needed to the
      * minimum capacity limit in response to changing demand. </p> <p>This parameter is
-     * required if you are registering a scalable target. For Lambda provisioned
-     * concurrency, the minimum value allowed is 0. For all other resources, the
-     * minimum value allowed is 1.</p>
+     * required if you are registering a scalable target. For certain resources, the
+     * minimum value allowed is 0. This includes Lambda provisioned concurrency, Spot
+     * Fleet, ECS services, Aurora DB clusters, EMR clusters, and custom resources. For
+     * all other resources, the minimum value allowed is 1.</p>
      */
     inline bool MinCapacityHasBeenSet() const { return m_minCapacityHasBeenSet; }
 
@@ -672,9 +674,10 @@ namespace Model
      * <p>The minimum value that you plan to scale in to. When a scaling policy is in
      * effect, Application Auto Scaling can scale in (contract) as needed to the
      * minimum capacity limit in response to changing demand. </p> <p>This parameter is
-     * required if you are registering a scalable target. For Lambda provisioned
-     * concurrency, the minimum value allowed is 0. For all other resources, the
-     * minimum value allowed is 1.</p>
+     * required if you are registering a scalable target. For certain resources, the
+     * minimum value allowed is 0. This includes Lambda provisioned concurrency, Spot
+     * Fleet, ECS services, Aurora DB clusters, EMR clusters, and custom resources. For
+     * all other resources, the minimum value allowed is 1.</p>
      */
     inline void SetMinCapacity(int value) { m_minCapacityHasBeenSet = true; m_minCapacity = value; }
 
@@ -682,9 +685,10 @@ namespace Model
      * <p>The minimum value that you plan to scale in to. When a scaling policy is in
      * effect, Application Auto Scaling can scale in (contract) as needed to the
      * minimum capacity limit in response to changing demand. </p> <p>This parameter is
-     * required if you are registering a scalable target. For Lambda provisioned
-     * concurrency, the minimum value allowed is 0. For all other resources, the
-     * minimum value allowed is 1.</p>
+     * required if you are registering a scalable target. For certain resources, the
+     * minimum value allowed is 0. This includes Lambda provisioned concurrency, Spot
+     * Fleet, ECS services, Aurora DB clusters, EMR clusters, and custom resources. For
+     * all other resources, the minimum value allowed is 1.</p>
      */
     inline RegisterScalableTargetRequest& WithMinCapacity(int value) { SetMinCapacity(value); return *this;}
 

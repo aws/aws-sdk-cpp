@@ -23,7 +23,9 @@ namespace Model
     Removed,
     Resigned,
     EmailVerificationInProgress,
-    EmailVerificationFailed
+    EmailVerificationFailed,
+    RegionDisabled,
+    AccountSuspended
   };
 
 namespace RelationshipStatusMapper

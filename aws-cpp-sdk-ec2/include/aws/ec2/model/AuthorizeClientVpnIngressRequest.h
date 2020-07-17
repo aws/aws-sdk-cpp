@@ -129,78 +129,90 @@ namespace Model
 
     /**
      * <p>The ID of the group to grant access to, for example, the Active Directory
-     * group or identity provider (IdP) group.</p>
+     * group or identity provider (IdP) group. Required if
+     * <code>AuthorizeAllGroups</code> is <code>false</code> or not specified.</p>
      */
     inline const Aws::String& GetAccessGroupId() const{ return m_accessGroupId; }
 
     /**
      * <p>The ID of the group to grant access to, for example, the Active Directory
-     * group or identity provider (IdP) group.</p>
+     * group or identity provider (IdP) group. Required if
+     * <code>AuthorizeAllGroups</code> is <code>false</code> or not specified.</p>
      */
     inline bool AccessGroupIdHasBeenSet() const { return m_accessGroupIdHasBeenSet; }
 
     /**
      * <p>The ID of the group to grant access to, for example, the Active Directory
-     * group or identity provider (IdP) group.</p>
+     * group or identity provider (IdP) group. Required if
+     * <code>AuthorizeAllGroups</code> is <code>false</code> or not specified.</p>
      */
     inline void SetAccessGroupId(const Aws::String& value) { m_accessGroupIdHasBeenSet = true; m_accessGroupId = value; }
 
     /**
      * <p>The ID of the group to grant access to, for example, the Active Directory
-     * group or identity provider (IdP) group.</p>
+     * group or identity provider (IdP) group. Required if
+     * <code>AuthorizeAllGroups</code> is <code>false</code> or not specified.</p>
      */
     inline void SetAccessGroupId(Aws::String&& value) { m_accessGroupIdHasBeenSet = true; m_accessGroupId = std::move(value); }
 
     /**
      * <p>The ID of the group to grant access to, for example, the Active Directory
-     * group or identity provider (IdP) group.</p>
+     * group or identity provider (IdP) group. Required if
+     * <code>AuthorizeAllGroups</code> is <code>false</code> or not specified.</p>
      */
     inline void SetAccessGroupId(const char* value) { m_accessGroupIdHasBeenSet = true; m_accessGroupId.assign(value); }
 
     /**
      * <p>The ID of the group to grant access to, for example, the Active Directory
-     * group or identity provider (IdP) group.</p>
+     * group or identity provider (IdP) group. Required if
+     * <code>AuthorizeAllGroups</code> is <code>false</code> or not specified.</p>
      */
     inline AuthorizeClientVpnIngressRequest& WithAccessGroupId(const Aws::String& value) { SetAccessGroupId(value); return *this;}
 
     /**
      * <p>The ID of the group to grant access to, for example, the Active Directory
-     * group or identity provider (IdP) group.</p>
+     * group or identity provider (IdP) group. Required if
+     * <code>AuthorizeAllGroups</code> is <code>false</code> or not specified.</p>
      */
     inline AuthorizeClientVpnIngressRequest& WithAccessGroupId(Aws::String&& value) { SetAccessGroupId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the group to grant access to, for example, the Active Directory
-     * group or identity provider (IdP) group.</p>
+     * group or identity provider (IdP) group. Required if
+     * <code>AuthorizeAllGroups</code> is <code>false</code> or not specified.</p>
      */
     inline AuthorizeClientVpnIngressRequest& WithAccessGroupId(const char* value) { SetAccessGroupId(value); return *this;}
 
 
     /**
-     * <p>Indicates whether to grant access to all clients. Use <code>true</code> to
-     * grant all clients who successfully establish a VPN connection access to the
-     * network.</p>
+     * <p>Indicates whether to grant access to all clients. Specify <code>true</code>
+     * to grant all clients who successfully establish a VPN connection access to the
+     * network. Must be set to <code>true</code> if <code>AccessGroupId</code> is not
+     * specified.</p>
      */
     inline bool GetAuthorizeAllGroups() const{ return m_authorizeAllGroups; }
 
     /**
-     * <p>Indicates whether to grant access to all clients. Use <code>true</code> to
-     * grant all clients who successfully establish a VPN connection access to the
-     * network.</p>
+     * <p>Indicates whether to grant access to all clients. Specify <code>true</code>
+     * to grant all clients who successfully establish a VPN connection access to the
+     * network. Must be set to <code>true</code> if <code>AccessGroupId</code> is not
+     * specified.</p>
      */
     inline bool AuthorizeAllGroupsHasBeenSet() const { return m_authorizeAllGroupsHasBeenSet; }
 
     /**
-     * <p>Indicates whether to grant access to all clients. Use <code>true</code> to
-     * grant all clients who successfully establish a VPN connection access to the
-     * network.</p>
+     * <p>Indicates whether to grant access to all clients. Specify <code>true</code>
+     * to grant all clients who successfully establish a VPN connection access to the
+     * network. Must be set to <code>true</code> if <code>AccessGroupId</code> is not
+     * specified.</p>
      */
     inline void SetAuthorizeAllGroups(bool value) { m_authorizeAllGroupsHasBeenSet = true; m_authorizeAllGroups = value; }
 
     /**
-     * <p>Indicates whether to grant access to all clients. Use <code>true</code> to
-     * grant all clients who successfully establish a VPN connection access to the
-     * network.</p>
+     * <p>Indicates whether to grant access to all clients. Specify <code>true</code>
+     * to grant all clients who successfully establish a VPN connection access to the
+     * network. Must be set to <code>true</code> if <code>AccessGroupId</code> is not
+     * specified.</p>
      */
     inline AuthorizeClientVpnIngressRequest& WithAuthorizeAllGroups(bool value) { SetAuthorizeAllGroups(value); return *this;}
 

@@ -601,14 +601,14 @@ namespace Model
         virtual void DeclineInvitationsAsync(const Model::DeclineInvitationsRequest& request, const DeclineInvitationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes a custom data identifier.</p><p><h3>See Also:</h3>   <a
+         * <p>Soft deletes a custom data identifier.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DeleteCustomDataIdentifier">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteCustomDataIdentifierOutcome DeleteCustomDataIdentifier(const Model::DeleteCustomDataIdentifierRequest& request) const;
 
         /**
-         * <p>Deletes a custom data identifier.</p><p><h3>See Also:</h3>   <a
+         * <p>Soft deletes a custom data identifier.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DeleteCustomDataIdentifier">AWS
          * API Reference</a></p>
          *
@@ -617,7 +617,7 @@ namespace Model
         virtual Model::DeleteCustomDataIdentifierOutcomeCallable DeleteCustomDataIdentifierCallable(const Model::DeleteCustomDataIdentifierRequest& request) const;
 
         /**
-         * <p>Deletes a custom data identifier.</p><p><h3>See Also:</h3>   <a
+         * <p>Soft deletes a custom data identifier.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DeleteCustomDataIdentifier">AWS
          * API Reference</a></p>
          *
@@ -1298,16 +1298,16 @@ namespace Model
         virtual void GetUsageTotalsAsync(const Model::GetUsageTotalsRequest& request, const GetUsageTotalsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves information about the status and settings for one or more
-         * classification jobs.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves a subset of information about one or more classification
+         * jobs.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListClassificationJobs">AWS
          * API Reference</a></p>
          */
         virtual Model::ListClassificationJobsOutcome ListClassificationJobs(const Model::ListClassificationJobsRequest& request) const;
 
         /**
-         * <p>Retrieves information about the status and settings for one or more
-         * classification jobs.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves a subset of information about one or more classification
+         * jobs.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListClassificationJobs">AWS
          * API Reference</a></p>
          *
@@ -1316,8 +1316,8 @@ namespace Model
         virtual Model::ListClassificationJobsOutcomeCallable ListClassificationJobsCallable(const Model::ListClassificationJobsRequest& request) const;
 
         /**
-         * <p>Retrieves information about the status and settings for one or more
-         * classification jobs.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves a subset of information about one or more classification
+         * jobs.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListClassificationJobs">AWS
          * API Reference</a></p>
          *

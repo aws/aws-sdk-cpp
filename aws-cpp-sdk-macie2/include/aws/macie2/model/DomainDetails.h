@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>The DNS name of the entity that performed the action on the affected
-   * resource.</p><p><h3>See Also:</h3>   <a
+   * <p>Provides information about the domain name of the device that an entity used
+   * to perform an action on an affected resource.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DomainDetails">AWS
    * API Reference</a></p>
    */
@@ -39,42 +39,42 @@ namespace Model
 
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>The name of the domain.</p>
      */
     inline const Aws::String& GetDomainName() const{ return m_domainName; }
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>The name of the domain.</p>
      */
     inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>The name of the domain.</p>
      */
     inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>The name of the domain.</p>
      */
     inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>The name of the domain.</p>
      */
     inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>The name of the domain.</p>
      */
     inline DomainDetails& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>The name of the domain.</p>
      */
     inline DomainDetails& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>The name of the domain.</p>
      */
     inline DomainDetails& WithDomainName(const char* value) { SetDomainName(value); return *this;}
 

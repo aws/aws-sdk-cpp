@@ -22,9 +22,8 @@ namespace Model
 {
 
   /**
-   * <p>The total number of buckets that are shared with another AWS account or
-   * configured to support cross-origin resource sharing (CORS).</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Provides information about the number of S3 buckets that are shared with
+   * other AWS accounts.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/BucketCountBySharedAccessType">AWS
    * API Reference</a></p>
    */
@@ -38,64 +37,76 @@ namespace Model
 
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>The total number of buckets that are shared with an AWS account that isn't
+     * part of the same Amazon Macie organization.</p>
      */
     inline long long GetExternal() const{ return m_external; }
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>The total number of buckets that are shared with an AWS account that isn't
+     * part of the same Amazon Macie organization.</p>
      */
     inline bool ExternalHasBeenSet() const { return m_externalHasBeenSet; }
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>The total number of buckets that are shared with an AWS account that isn't
+     * part of the same Amazon Macie organization.</p>
      */
     inline void SetExternal(long long value) { m_externalHasBeenSet = true; m_external = value; }
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>The total number of buckets that are shared with an AWS account that isn't
+     * part of the same Amazon Macie organization.</p>
      */
     inline BucketCountBySharedAccessType& WithExternal(long long value) { SetExternal(value); return *this;}
 
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>The total number of buckets that are shared with an AWS account that's part
+     * of the same Amazon Macie organization.</p>
      */
     inline long long GetInternal() const{ return m_internal; }
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>The total number of buckets that are shared with an AWS account that's part
+     * of the same Amazon Macie organization.</p>
      */
     inline bool InternalHasBeenSet() const { return m_internalHasBeenSet; }
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>The total number of buckets that are shared with an AWS account that's part
+     * of the same Amazon Macie organization.</p>
      */
     inline void SetInternal(long long value) { m_internalHasBeenSet = true; m_internal = value; }
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>The total number of buckets that are shared with an AWS account that's part
+     * of the same Amazon Macie organization.</p>
      */
     inline BucketCountBySharedAccessType& WithInternal(long long value) { SetInternal(value); return *this;}
 
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>The total number of buckets that aren't shared with any other AWS
+     * accounts.</p>
      */
     inline long long GetNotShared() const{ return m_notShared; }
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>The total number of buckets that aren't shared with any other AWS
+     * accounts.</p>
      */
     inline bool NotSharedHasBeenSet() const { return m_notSharedHasBeenSet; }
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>The total number of buckets that aren't shared with any other AWS
+     * accounts.</p>
      */
     inline void SetNotShared(long long value) { m_notSharedHasBeenSet = true; m_notShared = value; }
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>The total number of buckets that aren't shared with any other AWS
+     * accounts.</p>
      */
     inline BucketCountBySharedAccessType& WithNotShared(long long value) { SetNotShared(value); return *this;}
 

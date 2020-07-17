@@ -130,13 +130,14 @@ namespace Model
      * public.</p> </li> <li> <p> <code>kernel-id</code> - The kernel ID.</p> </li>
      * <li> <p> <code>manifest-location</code> - The location of the image
      * manifest.</p> </li> <li> <p> <code>name</code> - The name of the AMI (provided
-     * during image creation).</p> </li> <li> <p> <code>owner-alias</code> - String
-     * value from an Amazon-maintained list (<code>amazon</code> |
-     * <code>aws-marketplace</code> | <code>microsoft</code>) of snapshot owners. Not
-     * to be confused with the user-configured AWS account alias, which is set from the
-     * IAM console.</p> </li> <li> <p> <code>owner-id</code> - The AWS account ID of
-     * the image owner.</p> </li> <li> <p> <code>platform</code> - The platform. To
-     * only list Windows-based AMIs, use <code>windows</code>.</p> </li> <li> <p>
+     * during image creation).</p> </li> <li> <p> <code>owner-alias</code> - The owner
+     * alias, from an Amazon-maintained list (<code>amazon</code> |
+     * <code>aws-marketplace</code>). This is not the user-configured AWS account alias
+     * set using the IAM console. We recommend that you use the related parameter
+     * instead of this filter.</p> </li> <li> <p> <code>owner-id</code> - The AWS
+     * account ID of the owner. We recommend that you use the related parameter instead
+     * of this filter.</p> </li> <li> <p> <code>platform</code> - The platform. To only
+     * list Windows-based AMIs, use <code>windows</code>.</p> </li> <li> <p>
      * <code>product-code</code> - The product code.</p> </li> <li> <p>
      * <code>product-code.type</code> - The type of the product code
      * (<code>devpay</code> | <code>marketplace</code>).</p> </li> <li> <p>
@@ -192,13 +193,14 @@ namespace Model
      * public.</p> </li> <li> <p> <code>kernel-id</code> - The kernel ID.</p> </li>
      * <li> <p> <code>manifest-location</code> - The location of the image
      * manifest.</p> </li> <li> <p> <code>name</code> - The name of the AMI (provided
-     * during image creation).</p> </li> <li> <p> <code>owner-alias</code> - String
-     * value from an Amazon-maintained list (<code>amazon</code> |
-     * <code>aws-marketplace</code> | <code>microsoft</code>) of snapshot owners. Not
-     * to be confused with the user-configured AWS account alias, which is set from the
-     * IAM console.</p> </li> <li> <p> <code>owner-id</code> - The AWS account ID of
-     * the image owner.</p> </li> <li> <p> <code>platform</code> - The platform. To
-     * only list Windows-based AMIs, use <code>windows</code>.</p> </li> <li> <p>
+     * during image creation).</p> </li> <li> <p> <code>owner-alias</code> - The owner
+     * alias, from an Amazon-maintained list (<code>amazon</code> |
+     * <code>aws-marketplace</code>). This is not the user-configured AWS account alias
+     * set using the IAM console. We recommend that you use the related parameter
+     * instead of this filter.</p> </li> <li> <p> <code>owner-id</code> - The AWS
+     * account ID of the owner. We recommend that you use the related parameter instead
+     * of this filter.</p> </li> <li> <p> <code>platform</code> - The platform. To only
+     * list Windows-based AMIs, use <code>windows</code>.</p> </li> <li> <p>
      * <code>product-code</code> - The product code.</p> </li> <li> <p>
      * <code>product-code.type</code> - The type of the product code
      * (<code>devpay</code> | <code>marketplace</code>).</p> </li> <li> <p>
@@ -254,13 +256,14 @@ namespace Model
      * public.</p> </li> <li> <p> <code>kernel-id</code> - The kernel ID.</p> </li>
      * <li> <p> <code>manifest-location</code> - The location of the image
      * manifest.</p> </li> <li> <p> <code>name</code> - The name of the AMI (provided
-     * during image creation).</p> </li> <li> <p> <code>owner-alias</code> - String
-     * value from an Amazon-maintained list (<code>amazon</code> |
-     * <code>aws-marketplace</code> | <code>microsoft</code>) of snapshot owners. Not
-     * to be confused with the user-configured AWS account alias, which is set from the
-     * IAM console.</p> </li> <li> <p> <code>owner-id</code> - The AWS account ID of
-     * the image owner.</p> </li> <li> <p> <code>platform</code> - The platform. To
-     * only list Windows-based AMIs, use <code>windows</code>.</p> </li> <li> <p>
+     * during image creation).</p> </li> <li> <p> <code>owner-alias</code> - The owner
+     * alias, from an Amazon-maintained list (<code>amazon</code> |
+     * <code>aws-marketplace</code>). This is not the user-configured AWS account alias
+     * set using the IAM console. We recommend that you use the related parameter
+     * instead of this filter.</p> </li> <li> <p> <code>owner-id</code> - The AWS
+     * account ID of the owner. We recommend that you use the related parameter instead
+     * of this filter.</p> </li> <li> <p> <code>platform</code> - The platform. To only
+     * list Windows-based AMIs, use <code>windows</code>.</p> </li> <li> <p>
      * <code>product-code</code> - The product code.</p> </li> <li> <p>
      * <code>product-code.type</code> - The type of the product code
      * (<code>devpay</code> | <code>marketplace</code>).</p> </li> <li> <p>
@@ -316,13 +319,14 @@ namespace Model
      * public.</p> </li> <li> <p> <code>kernel-id</code> - The kernel ID.</p> </li>
      * <li> <p> <code>manifest-location</code> - The location of the image
      * manifest.</p> </li> <li> <p> <code>name</code> - The name of the AMI (provided
-     * during image creation).</p> </li> <li> <p> <code>owner-alias</code> - String
-     * value from an Amazon-maintained list (<code>amazon</code> |
-     * <code>aws-marketplace</code> | <code>microsoft</code>) of snapshot owners. Not
-     * to be confused with the user-configured AWS account alias, which is set from the
-     * IAM console.</p> </li> <li> <p> <code>owner-id</code> - The AWS account ID of
-     * the image owner.</p> </li> <li> <p> <code>platform</code> - The platform. To
-     * only list Windows-based AMIs, use <code>windows</code>.</p> </li> <li> <p>
+     * during image creation).</p> </li> <li> <p> <code>owner-alias</code> - The owner
+     * alias, from an Amazon-maintained list (<code>amazon</code> |
+     * <code>aws-marketplace</code>). This is not the user-configured AWS account alias
+     * set using the IAM console. We recommend that you use the related parameter
+     * instead of this filter.</p> </li> <li> <p> <code>owner-id</code> - The AWS
+     * account ID of the owner. We recommend that you use the related parameter instead
+     * of this filter.</p> </li> <li> <p> <code>platform</code> - The platform. To only
+     * list Windows-based AMIs, use <code>windows</code>.</p> </li> <li> <p>
      * <code>product-code</code> - The product code.</p> </li> <li> <p>
      * <code>product-code.type</code> - The type of the product code
      * (<code>devpay</code> | <code>marketplace</code>).</p> </li> <li> <p>
@@ -378,13 +382,14 @@ namespace Model
      * public.</p> </li> <li> <p> <code>kernel-id</code> - The kernel ID.</p> </li>
      * <li> <p> <code>manifest-location</code> - The location of the image
      * manifest.</p> </li> <li> <p> <code>name</code> - The name of the AMI (provided
-     * during image creation).</p> </li> <li> <p> <code>owner-alias</code> - String
-     * value from an Amazon-maintained list (<code>amazon</code> |
-     * <code>aws-marketplace</code> | <code>microsoft</code>) of snapshot owners. Not
-     * to be confused with the user-configured AWS account alias, which is set from the
-     * IAM console.</p> </li> <li> <p> <code>owner-id</code> - The AWS account ID of
-     * the image owner.</p> </li> <li> <p> <code>platform</code> - The platform. To
-     * only list Windows-based AMIs, use <code>windows</code>.</p> </li> <li> <p>
+     * during image creation).</p> </li> <li> <p> <code>owner-alias</code> - The owner
+     * alias, from an Amazon-maintained list (<code>amazon</code> |
+     * <code>aws-marketplace</code>). This is not the user-configured AWS account alias
+     * set using the IAM console. We recommend that you use the related parameter
+     * instead of this filter.</p> </li> <li> <p> <code>owner-id</code> - The AWS
+     * account ID of the owner. We recommend that you use the related parameter instead
+     * of this filter.</p> </li> <li> <p> <code>platform</code> - The platform. To only
+     * list Windows-based AMIs, use <code>windows</code>.</p> </li> <li> <p>
      * <code>product-code</code> - The product code.</p> </li> <li> <p>
      * <code>product-code.type</code> - The type of the product code
      * (<code>devpay</code> | <code>marketplace</code>).</p> </li> <li> <p>
@@ -440,13 +445,14 @@ namespace Model
      * public.</p> </li> <li> <p> <code>kernel-id</code> - The kernel ID.</p> </li>
      * <li> <p> <code>manifest-location</code> - The location of the image
      * manifest.</p> </li> <li> <p> <code>name</code> - The name of the AMI (provided
-     * during image creation).</p> </li> <li> <p> <code>owner-alias</code> - String
-     * value from an Amazon-maintained list (<code>amazon</code> |
-     * <code>aws-marketplace</code> | <code>microsoft</code>) of snapshot owners. Not
-     * to be confused with the user-configured AWS account alias, which is set from the
-     * IAM console.</p> </li> <li> <p> <code>owner-id</code> - The AWS account ID of
-     * the image owner.</p> </li> <li> <p> <code>platform</code> - The platform. To
-     * only list Windows-based AMIs, use <code>windows</code>.</p> </li> <li> <p>
+     * during image creation).</p> </li> <li> <p> <code>owner-alias</code> - The owner
+     * alias, from an Amazon-maintained list (<code>amazon</code> |
+     * <code>aws-marketplace</code>). This is not the user-configured AWS account alias
+     * set using the IAM console. We recommend that you use the related parameter
+     * instead of this filter.</p> </li> <li> <p> <code>owner-id</code> - The AWS
+     * account ID of the owner. We recommend that you use the related parameter instead
+     * of this filter.</p> </li> <li> <p> <code>platform</code> - The platform. To only
+     * list Windows-based AMIs, use <code>windows</code>.</p> </li> <li> <p>
      * <code>product-code</code> - The product code.</p> </li> <li> <p>
      * <code>product-code.type</code> - The type of the product code
      * (<code>devpay</code> | <code>marketplace</code>).</p> </li> <li> <p>
@@ -502,13 +508,14 @@ namespace Model
      * public.</p> </li> <li> <p> <code>kernel-id</code> - The kernel ID.</p> </li>
      * <li> <p> <code>manifest-location</code> - The location of the image
      * manifest.</p> </li> <li> <p> <code>name</code> - The name of the AMI (provided
-     * during image creation).</p> </li> <li> <p> <code>owner-alias</code> - String
-     * value from an Amazon-maintained list (<code>amazon</code> |
-     * <code>aws-marketplace</code> | <code>microsoft</code>) of snapshot owners. Not
-     * to be confused with the user-configured AWS account alias, which is set from the
-     * IAM console.</p> </li> <li> <p> <code>owner-id</code> - The AWS account ID of
-     * the image owner.</p> </li> <li> <p> <code>platform</code> - The platform. To
-     * only list Windows-based AMIs, use <code>windows</code>.</p> </li> <li> <p>
+     * during image creation).</p> </li> <li> <p> <code>owner-alias</code> - The owner
+     * alias, from an Amazon-maintained list (<code>amazon</code> |
+     * <code>aws-marketplace</code>). This is not the user-configured AWS account alias
+     * set using the IAM console. We recommend that you use the related parameter
+     * instead of this filter.</p> </li> <li> <p> <code>owner-id</code> - The AWS
+     * account ID of the owner. We recommend that you use the related parameter instead
+     * of this filter.</p> </li> <li> <p> <code>platform</code> - The platform. To only
+     * list Windows-based AMIs, use <code>windows</code>.</p> </li> <li> <p>
      * <code>product-code</code> - The product code.</p> </li> <li> <p>
      * <code>product-code.type</code> - The type of the product code
      * (<code>devpay</code> | <code>marketplace</code>).</p> </li> <li> <p>
@@ -564,13 +571,14 @@ namespace Model
      * public.</p> </li> <li> <p> <code>kernel-id</code> - The kernel ID.</p> </li>
      * <li> <p> <code>manifest-location</code> - The location of the image
      * manifest.</p> </li> <li> <p> <code>name</code> - The name of the AMI (provided
-     * during image creation).</p> </li> <li> <p> <code>owner-alias</code> - String
-     * value from an Amazon-maintained list (<code>amazon</code> |
-     * <code>aws-marketplace</code> | <code>microsoft</code>) of snapshot owners. Not
-     * to be confused with the user-configured AWS account alias, which is set from the
-     * IAM console.</p> </li> <li> <p> <code>owner-id</code> - The AWS account ID of
-     * the image owner.</p> </li> <li> <p> <code>platform</code> - The platform. To
-     * only list Windows-based AMIs, use <code>windows</code>.</p> </li> <li> <p>
+     * during image creation).</p> </li> <li> <p> <code>owner-alias</code> - The owner
+     * alias, from an Amazon-maintained list (<code>amazon</code> |
+     * <code>aws-marketplace</code>). This is not the user-configured AWS account alias
+     * set using the IAM console. We recommend that you use the related parameter
+     * instead of this filter.</p> </li> <li> <p> <code>owner-id</code> - The AWS
+     * account ID of the owner. We recommend that you use the related parameter instead
+     * of this filter.</p> </li> <li> <p> <code>platform</code> - The platform. To only
+     * list Windows-based AMIs, use <code>windows</code>.</p> </li> <li> <p>
      * <code>product-code</code> - The product code.</p> </li> <li> <p>
      * <code>product-code.type</code> - The type of the product code
      * (<code>devpay</code> | <code>marketplace</code>).</p> </li> <li> <p>
@@ -646,83 +654,74 @@ namespace Model
 
 
     /**
-     * <p>Filters the images by the owner. Specify an AWS account ID, <code>self</code>
-     * (owner is the sender of the request), or an AWS owner alias (valid values are
-     * <code>amazon</code> | <code>aws-marketplace</code> | <code>microsoft</code>).
-     * Omitting this option returns all images for which you have launch permissions,
-     * regardless of ownership.</p>
+     * <p>Scopes the results to images with the specified owners. You can specify a
+     * combination of AWS account IDs, <code>self</code>, <code>amazon</code>, and
+     * <code>aws-marketplace</code>. If you omit this parameter, the results include
+     * all images for which you have launch permissions, regardless of ownership.</p>
      */
     inline const Aws::Vector<Aws::String>& GetOwners() const{ return m_owners; }
 
     /**
-     * <p>Filters the images by the owner. Specify an AWS account ID, <code>self</code>
-     * (owner is the sender of the request), or an AWS owner alias (valid values are
-     * <code>amazon</code> | <code>aws-marketplace</code> | <code>microsoft</code>).
-     * Omitting this option returns all images for which you have launch permissions,
-     * regardless of ownership.</p>
+     * <p>Scopes the results to images with the specified owners. You can specify a
+     * combination of AWS account IDs, <code>self</code>, <code>amazon</code>, and
+     * <code>aws-marketplace</code>. If you omit this parameter, the results include
+     * all images for which you have launch permissions, regardless of ownership.</p>
      */
     inline bool OwnersHasBeenSet() const { return m_ownersHasBeenSet; }
 
     /**
-     * <p>Filters the images by the owner. Specify an AWS account ID, <code>self</code>
-     * (owner is the sender of the request), or an AWS owner alias (valid values are
-     * <code>amazon</code> | <code>aws-marketplace</code> | <code>microsoft</code>).
-     * Omitting this option returns all images for which you have launch permissions,
-     * regardless of ownership.</p>
+     * <p>Scopes the results to images with the specified owners. You can specify a
+     * combination of AWS account IDs, <code>self</code>, <code>amazon</code>, and
+     * <code>aws-marketplace</code>. If you omit this parameter, the results include
+     * all images for which you have launch permissions, regardless of ownership.</p>
      */
     inline void SetOwners(const Aws::Vector<Aws::String>& value) { m_ownersHasBeenSet = true; m_owners = value; }
 
     /**
-     * <p>Filters the images by the owner. Specify an AWS account ID, <code>self</code>
-     * (owner is the sender of the request), or an AWS owner alias (valid values are
-     * <code>amazon</code> | <code>aws-marketplace</code> | <code>microsoft</code>).
-     * Omitting this option returns all images for which you have launch permissions,
-     * regardless of ownership.</p>
+     * <p>Scopes the results to images with the specified owners. You can specify a
+     * combination of AWS account IDs, <code>self</code>, <code>amazon</code>, and
+     * <code>aws-marketplace</code>. If you omit this parameter, the results include
+     * all images for which you have launch permissions, regardless of ownership.</p>
      */
     inline void SetOwners(Aws::Vector<Aws::String>&& value) { m_ownersHasBeenSet = true; m_owners = std::move(value); }
 
     /**
-     * <p>Filters the images by the owner. Specify an AWS account ID, <code>self</code>
-     * (owner is the sender of the request), or an AWS owner alias (valid values are
-     * <code>amazon</code> | <code>aws-marketplace</code> | <code>microsoft</code>).
-     * Omitting this option returns all images for which you have launch permissions,
-     * regardless of ownership.</p>
+     * <p>Scopes the results to images with the specified owners. You can specify a
+     * combination of AWS account IDs, <code>self</code>, <code>amazon</code>, and
+     * <code>aws-marketplace</code>. If you omit this parameter, the results include
+     * all images for which you have launch permissions, regardless of ownership.</p>
      */
     inline DescribeImagesRequest& WithOwners(const Aws::Vector<Aws::String>& value) { SetOwners(value); return *this;}
 
     /**
-     * <p>Filters the images by the owner. Specify an AWS account ID, <code>self</code>
-     * (owner is the sender of the request), or an AWS owner alias (valid values are
-     * <code>amazon</code> | <code>aws-marketplace</code> | <code>microsoft</code>).
-     * Omitting this option returns all images for which you have launch permissions,
-     * regardless of ownership.</p>
+     * <p>Scopes the results to images with the specified owners. You can specify a
+     * combination of AWS account IDs, <code>self</code>, <code>amazon</code>, and
+     * <code>aws-marketplace</code>. If you omit this parameter, the results include
+     * all images for which you have launch permissions, regardless of ownership.</p>
      */
     inline DescribeImagesRequest& WithOwners(Aws::Vector<Aws::String>&& value) { SetOwners(std::move(value)); return *this;}
 
     /**
-     * <p>Filters the images by the owner. Specify an AWS account ID, <code>self</code>
-     * (owner is the sender of the request), or an AWS owner alias (valid values are
-     * <code>amazon</code> | <code>aws-marketplace</code> | <code>microsoft</code>).
-     * Omitting this option returns all images for which you have launch permissions,
-     * regardless of ownership.</p>
+     * <p>Scopes the results to images with the specified owners. You can specify a
+     * combination of AWS account IDs, <code>self</code>, <code>amazon</code>, and
+     * <code>aws-marketplace</code>. If you omit this parameter, the results include
+     * all images for which you have launch permissions, regardless of ownership.</p>
      */
     inline DescribeImagesRequest& AddOwners(const Aws::String& value) { m_ownersHasBeenSet = true; m_owners.push_back(value); return *this; }
 
     /**
-     * <p>Filters the images by the owner. Specify an AWS account ID, <code>self</code>
-     * (owner is the sender of the request), or an AWS owner alias (valid values are
-     * <code>amazon</code> | <code>aws-marketplace</code> | <code>microsoft</code>).
-     * Omitting this option returns all images for which you have launch permissions,
-     * regardless of ownership.</p>
+     * <p>Scopes the results to images with the specified owners. You can specify a
+     * combination of AWS account IDs, <code>self</code>, <code>amazon</code>, and
+     * <code>aws-marketplace</code>. If you omit this parameter, the results include
+     * all images for which you have launch permissions, regardless of ownership.</p>
      */
     inline DescribeImagesRequest& AddOwners(Aws::String&& value) { m_ownersHasBeenSet = true; m_owners.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>Filters the images by the owner. Specify an AWS account ID, <code>self</code>
-     * (owner is the sender of the request), or an AWS owner alias (valid values are
-     * <code>amazon</code> | <code>aws-marketplace</code> | <code>microsoft</code>).
-     * Omitting this option returns all images for which you have launch permissions,
-     * regardless of ownership.</p>
+     * <p>Scopes the results to images with the specified owners. You can specify a
+     * combination of AWS account IDs, <code>self</code>, <code>amazon</code>, and
+     * <code>aws-marketplace</code>. If you omit this parameter, the results include
+     * all images for which you have launch permissions, regardless of ownership.</p>
      */
     inline DescribeImagesRequest& AddOwners(const char* value) { m_ownersHasBeenSet = true; m_owners.push_back(value); return *this; }
 

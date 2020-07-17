@@ -84,32 +84,32 @@ namespace Model
 
 
     /**
-     * <p>The source and type of credentials that the entity obtained.</p>
+     * <p>The source and type of credentials that were issued to the entity.</p>
      */
     inline const SessionIssuer& GetSessionIssuer() const{ return m_sessionIssuer; }
 
     /**
-     * <p>The source and type of credentials that the entity obtained.</p>
+     * <p>The source and type of credentials that were issued to the entity.</p>
      */
     inline bool SessionIssuerHasBeenSet() const { return m_sessionIssuerHasBeenSet; }
 
     /**
-     * <p>The source and type of credentials that the entity obtained.</p>
+     * <p>The source and type of credentials that were issued to the entity.</p>
      */
     inline void SetSessionIssuer(const SessionIssuer& value) { m_sessionIssuerHasBeenSet = true; m_sessionIssuer = value; }
 
     /**
-     * <p>The source and type of credentials that the entity obtained.</p>
+     * <p>The source and type of credentials that were issued to the entity.</p>
      */
     inline void SetSessionIssuer(SessionIssuer&& value) { m_sessionIssuerHasBeenSet = true; m_sessionIssuer = std::move(value); }
 
     /**
-     * <p>The source and type of credentials that the entity obtained.</p>
+     * <p>The source and type of credentials that were issued to the entity.</p>
      */
     inline SessionContext& WithSessionIssuer(const SessionIssuer& value) { SetSessionIssuer(value); return *this;}
 
     /**
-     * <p>The source and type of credentials that the entity obtained.</p>
+     * <p>The source and type of credentials that were issued to the entity.</p>
      */
     inline SessionContext& WithSessionIssuer(SessionIssuer&& value) { SetSessionIssuer(std::move(value)); return *this;}
 

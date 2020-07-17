@@ -22,7 +22,8 @@ namespace Model
 {
 
   /**
-   * <p>Reserved for future use.</p><p><h3>See Also:</h3>   <a
+   * <p>Provides geographic coordinates that indicate where a specified IP address
+   * originated from.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/IpGeoLocation">AWS
    * API Reference</a></p>
    */
@@ -36,43 +37,43 @@ namespace Model
 
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>The latitude coordinate of the location, rounded to four decimal places.</p>
      */
     inline double GetLat() const{ return m_lat; }
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>The latitude coordinate of the location, rounded to four decimal places.</p>
      */
     inline bool LatHasBeenSet() const { return m_latHasBeenSet; }
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>The latitude coordinate of the location, rounded to four decimal places.</p>
      */
     inline void SetLat(double value) { m_latHasBeenSet = true; m_lat = value; }
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>The latitude coordinate of the location, rounded to four decimal places.</p>
      */
     inline IpGeoLocation& WithLat(double value) { SetLat(value); return *this;}
 
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>The longitude coordinate of the location, rounded to four decimal places.</p>
      */
     inline double GetLon() const{ return m_lon; }
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>The longitude coordinate of the location, rounded to four decimal places.</p>
      */
     inline bool LonHasBeenSet() const { return m_lonHasBeenSet; }
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>The longitude coordinate of the location, rounded to four decimal places.</p>
      */
     inline void SetLon(double value) { m_lonHasBeenSet = true; m_lon = value; }
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>The longitude coordinate of the location, rounded to four decimal places.</p>
      */
     inline IpGeoLocation& WithLon(double value) { SetLon(value); return *this;}
 

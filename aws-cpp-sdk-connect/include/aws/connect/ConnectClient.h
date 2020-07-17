@@ -28,9 +28,13 @@
 #include <aws/connect/model/ListTagsForResourceResult.h>
 #include <aws/connect/model/ListUserHierarchyGroupsResult.h>
 #include <aws/connect/model/ListUsersResult.h>
+#include <aws/connect/model/ResumeContactRecordingResult.h>
 #include <aws/connect/model/StartChatContactResult.h>
+#include <aws/connect/model/StartContactRecordingResult.h>
 #include <aws/connect/model/StartOutboundVoiceContactResult.h>
 #include <aws/connect/model/StopContactResult.h>
+#include <aws/connect/model/StopContactRecordingResult.h>
+#include <aws/connect/model/SuspendContactRecordingResult.h>
 #include <aws/connect/model/UpdateContactAttributesResult.h>
 #include <aws/core/NoResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
@@ -90,9 +94,13 @@ namespace Model
         class ListTagsForResourceRequest;
         class ListUserHierarchyGroupsRequest;
         class ListUsersRequest;
+        class ResumeContactRecordingRequest;
         class StartChatContactRequest;
+        class StartContactRecordingRequest;
         class StartOutboundVoiceContactRequest;
         class StopContactRequest;
+        class StopContactRecordingRequest;
+        class SuspendContactRecordingRequest;
         class TagResourceRequest;
         class UntagResourceRequest;
         class UpdateContactAttributesRequest;
@@ -120,9 +128,13 @@ namespace Model
         typedef Aws::Utils::Outcome<ListTagsForResourceResult, ConnectError> ListTagsForResourceOutcome;
         typedef Aws::Utils::Outcome<ListUserHierarchyGroupsResult, ConnectError> ListUserHierarchyGroupsOutcome;
         typedef Aws::Utils::Outcome<ListUsersResult, ConnectError> ListUsersOutcome;
+        typedef Aws::Utils::Outcome<ResumeContactRecordingResult, ConnectError> ResumeContactRecordingOutcome;
         typedef Aws::Utils::Outcome<StartChatContactResult, ConnectError> StartChatContactOutcome;
+        typedef Aws::Utils::Outcome<StartContactRecordingResult, ConnectError> StartContactRecordingOutcome;
         typedef Aws::Utils::Outcome<StartOutboundVoiceContactResult, ConnectError> StartOutboundVoiceContactOutcome;
         typedef Aws::Utils::Outcome<StopContactResult, ConnectError> StopContactOutcome;
+        typedef Aws::Utils::Outcome<StopContactRecordingResult, ConnectError> StopContactRecordingOutcome;
+        typedef Aws::Utils::Outcome<SuspendContactRecordingResult, ConnectError> SuspendContactRecordingOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> TagResourceOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> UntagResourceOutcome;
         typedef Aws::Utils::Outcome<UpdateContactAttributesResult, ConnectError> UpdateContactAttributesOutcome;
@@ -150,9 +162,13 @@ namespace Model
         typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
         typedef std::future<ListUserHierarchyGroupsOutcome> ListUserHierarchyGroupsOutcomeCallable;
         typedef std::future<ListUsersOutcome> ListUsersOutcomeCallable;
+        typedef std::future<ResumeContactRecordingOutcome> ResumeContactRecordingOutcomeCallable;
         typedef std::future<StartChatContactOutcome> StartChatContactOutcomeCallable;
+        typedef std::future<StartContactRecordingOutcome> StartContactRecordingOutcomeCallable;
         typedef std::future<StartOutboundVoiceContactOutcome> StartOutboundVoiceContactOutcomeCallable;
         typedef std::future<StopContactOutcome> StopContactOutcomeCallable;
+        typedef std::future<StopContactRecordingOutcome> StopContactRecordingOutcomeCallable;
+        typedef std::future<SuspendContactRecordingOutcome> SuspendContactRecordingOutcomeCallable;
         typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
         typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
         typedef std::future<UpdateContactAttributesOutcome> UpdateContactAttributesOutcomeCallable;
@@ -183,9 +199,13 @@ namespace Model
     typedef std::function<void(const ConnectClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::ListUserHierarchyGroupsRequest&, const Model::ListUserHierarchyGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListUserHierarchyGroupsResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::ListUsersRequest&, const Model::ListUsersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListUsersResponseReceivedHandler;
+    typedef std::function<void(const ConnectClient*, const Model::ResumeContactRecordingRequest&, const Model::ResumeContactRecordingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ResumeContactRecordingResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::StartChatContactRequest&, const Model::StartChatContactOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartChatContactResponseReceivedHandler;
+    typedef std::function<void(const ConnectClient*, const Model::StartContactRecordingRequest&, const Model::StartContactRecordingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartContactRecordingResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::StartOutboundVoiceContactRequest&, const Model::StartOutboundVoiceContactOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartOutboundVoiceContactResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::StopContactRequest&, const Model::StopContactOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopContactResponseReceivedHandler;
+    typedef std::function<void(const ConnectClient*, const Model::StopContactRecordingRequest&, const Model::StopContactRecordingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopContactRecordingResponseReceivedHandler;
+    typedef std::function<void(const ConnectClient*, const Model::SuspendContactRecordingRequest&, const Model::SuspendContactRecordingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SuspendContactRecordingResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::UpdateContactAttributesRequest&, const Model::UpdateContactAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateContactAttributesResponseReceivedHandler;
@@ -205,11 +225,7 @@ namespace Model
    * that you can create and limits to the number of requests that you can make per
    * second. For more information, see <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Amazon
-   * Connect Service Quotas</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
-   * <p>To connect programmatically to an AWS service, you use an endpoint. For a
-   * list of Amazon Connect endpoints, see <a
-   * href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
-   * Connect Endpoints</a>.</p>
+   * Connect Service Limits</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
    */
   class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient
   {
@@ -241,24 +257,16 @@ namespace Model
 
 
         /**
-         * <p>Creates a user account for the specified Amazon Connect instance.</p> <p>For
-         * information about how to create user accounts using the Amazon Connect console,
-         * see <a
-         * href="https://docs.aws.amazon.com/connect/latest/adminguide/user-management.html">Add
-         * Users</a> in the <i>Amazon Connect Administrator Guide</i>.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Creates a user account for the specified Amazon Connect
+         * instance.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateUser">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateUserOutcome CreateUser(const Model::CreateUserRequest& request) const;
 
         /**
-         * <p>Creates a user account for the specified Amazon Connect instance.</p> <p>For
-         * information about how to create user accounts using the Amazon Connect console,
-         * see <a
-         * href="https://docs.aws.amazon.com/connect/latest/adminguide/user-management.html">Add
-         * Users</a> in the <i>Amazon Connect Administrator Guide</i>.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Creates a user account for the specified Amazon Connect
+         * instance.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateUser">AWS
          * API Reference</a></p>
          *
@@ -267,12 +275,8 @@ namespace Model
         virtual Model::CreateUserOutcomeCallable CreateUserCallable(const Model::CreateUserRequest& request) const;
 
         /**
-         * <p>Creates a user account for the specified Amazon Connect instance.</p> <p>For
-         * information about how to create user accounts using the Amazon Connect console,
-         * see <a
-         * href="https://docs.aws.amazon.com/connect/latest/adminguide/user-management.html">Add
-         * Users</a> in the <i>Amazon Connect Administrator Guide</i>.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Creates a user account for the specified Amazon Connect
+         * instance.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateUser">AWS
          * API Reference</a></p>
          *
@@ -281,24 +285,16 @@ namespace Model
         virtual void CreateUserAsync(const Model::CreateUserRequest& request, const CreateUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes a user account from the specified Amazon Connect instance.</p> <p>For
-         * information about what happens to a user's data when their account is deleted,
-         * see <a
-         * href="https://docs.aws.amazon.com/connect/latest/adminguide/delete-users.html">Delete
-         * Users from Your Amazon Connect Instance</a> in the <i>Amazon Connect
-         * Administrator Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a user account from the specified Amazon Connect
+         * instance.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteUser">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteUserOutcome DeleteUser(const Model::DeleteUserRequest& request) const;
 
         /**
-         * <p>Deletes a user account from the specified Amazon Connect instance.</p> <p>For
-         * information about what happens to a user's data when their account is deleted,
-         * see <a
-         * href="https://docs.aws.amazon.com/connect/latest/adminguide/delete-users.html">Delete
-         * Users from Your Amazon Connect Instance</a> in the <i>Amazon Connect
-         * Administrator Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a user account from the specified Amazon Connect
+         * instance.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteUser">AWS
          * API Reference</a></p>
          *
@@ -307,12 +303,8 @@ namespace Model
         virtual Model::DeleteUserOutcomeCallable DeleteUserCallable(const Model::DeleteUserRequest& request) const;
 
         /**
-         * <p>Deletes a user account from the specified Amazon Connect instance.</p> <p>For
-         * information about what happens to a user's data when their account is deleted,
-         * see <a
-         * href="https://docs.aws.amazon.com/connect/latest/adminguide/delete-users.html">Delete
-         * Users from Your Amazon Connect Instance</a> in the <i>Amazon Connect
-         * Administrator Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a user account from the specified Amazon Connect
+         * instance.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteUser">AWS
          * API Reference</a></p>
          *
@@ -437,9 +429,9 @@ namespace Model
 
         /**
          * <p>Gets the real-time metric data from the specified Amazon Connect
-         * instance.</p> <p>For a description of each metric, see <a
-         * href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html">Real-time
-         * Metrics Definitions</a> in the <i>Amazon Connect Administrator
+         * instance.</p> <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-reports.html">Real-time
+         * Metrics Reports</a> in the <i>Amazon Connect Administrator
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/GetCurrentMetricData">AWS
          * API Reference</a></p>
@@ -448,9 +440,9 @@ namespace Model
 
         /**
          * <p>Gets the real-time metric data from the specified Amazon Connect
-         * instance.</p> <p>For a description of each metric, see <a
-         * href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html">Real-time
-         * Metrics Definitions</a> in the <i>Amazon Connect Administrator
+         * instance.</p> <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-reports.html">Real-time
+         * Metrics Reports</a> in the <i>Amazon Connect Administrator
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/GetCurrentMetricData">AWS
          * API Reference</a></p>
@@ -461,9 +453,9 @@ namespace Model
 
         /**
          * <p>Gets the real-time metric data from the specified Amazon Connect
-         * instance.</p> <p>For a description of each metric, see <a
-         * href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html">Real-time
-         * Metrics Definitions</a> in the <i>Amazon Connect Administrator
+         * instance.</p> <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-reports.html">Real-time
+         * Metrics Reports</a> in the <i>Amazon Connect Administrator
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/GetCurrentMetricData">AWS
          * API Reference</a></p>
@@ -499,9 +491,9 @@ namespace Model
 
         /**
          * <p>Gets historical metric data from the specified Amazon Connect instance.</p>
-         * <p>For a description of each historical metric, see <a
-         * href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html">Historical
-         * Metrics Definitions</a> in the <i>Amazon Connect Administrator
+         * <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics.html">Historical
+         * Metrics Reports</a> in the <i>Amazon Connect Administrator
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/GetMetricData">AWS
          * API Reference</a></p>
@@ -510,9 +502,9 @@ namespace Model
 
         /**
          * <p>Gets historical metric data from the specified Amazon Connect instance.</p>
-         * <p>For a description of each historical metric, see <a
-         * href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html">Historical
-         * Metrics Definitions</a> in the <i>Amazon Connect Administrator
+         * <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics.html">Historical
+         * Metrics Reports</a> in the <i>Amazon Connect Administrator
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/GetMetricData">AWS
          * API Reference</a></p>
@@ -523,9 +515,9 @@ namespace Model
 
         /**
          * <p>Gets historical metric data from the specified Amazon Connect instance.</p>
-         * <p>For a description of each historical metric, see <a
-         * href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html">Historical
-         * Metrics Definitions</a> in the <i>Amazon Connect Administrator
+         * <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics.html">Historical
+         * Metrics Reports</a> in the <i>Amazon Connect Administrator
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/GetMetricData">AWS
          * API Reference</a></p>
@@ -536,10 +528,7 @@ namespace Model
 
         /**
          * <p>Provides information about the contact flows for the specified Amazon Connect
-         * instance.</p> <p>For more information about contact flows, see <a
-         * href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-contact-flows.html">Contact
-         * Flows</a> in the <i>Amazon Connect Administrator Guide</i>.</p><p><h3>See
-         * Also:</h3>   <a
+         * instance.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListContactFlows">AWS
          * API Reference</a></p>
          */
@@ -547,10 +536,7 @@ namespace Model
 
         /**
          * <p>Provides information about the contact flows for the specified Amazon Connect
-         * instance.</p> <p>For more information about contact flows, see <a
-         * href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-contact-flows.html">Contact
-         * Flows</a> in the <i>Amazon Connect Administrator Guide</i>.</p><p><h3>See
-         * Also:</h3>   <a
+         * instance.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListContactFlows">AWS
          * API Reference</a></p>
          *
@@ -560,10 +546,7 @@ namespace Model
 
         /**
          * <p>Provides information about the contact flows for the specified Amazon Connect
-         * instance.</p> <p>For more information about contact flows, see <a
-         * href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-contact-flows.html">Contact
-         * Flows</a> in the <i>Amazon Connect Administrator Guide</i>.</p><p><h3>See
-         * Also:</h3>   <a
+         * instance.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListContactFlows">AWS
          * API Reference</a></p>
          *
@@ -573,10 +556,7 @@ namespace Model
 
         /**
          * <p>Provides information about the hours of operation for the specified Amazon
-         * Connect instance.</p> <p>For more information about hours of operation, see <a
-         * href="https://docs.aws.amazon.com/connect/latest/adminguide/set-hours-operation.html">Set
-         * the Hours of Operation for a Queue</a> in the <i>Amazon Connect Administrator
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * Connect instance.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListHoursOfOperations">AWS
          * API Reference</a></p>
          */
@@ -584,10 +564,7 @@ namespace Model
 
         /**
          * <p>Provides information about the hours of operation for the specified Amazon
-         * Connect instance.</p> <p>For more information about hours of operation, see <a
-         * href="https://docs.aws.amazon.com/connect/latest/adminguide/set-hours-operation.html">Set
-         * the Hours of Operation for a Queue</a> in the <i>Amazon Connect Administrator
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * Connect instance.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListHoursOfOperations">AWS
          * API Reference</a></p>
          *
@@ -597,10 +574,7 @@ namespace Model
 
         /**
          * <p>Provides information about the hours of operation for the specified Amazon
-         * Connect instance.</p> <p>For more information about hours of operation, see <a
-         * href="https://docs.aws.amazon.com/connect/latest/adminguide/set-hours-operation.html">Set
-         * the Hours of Operation for a Queue</a> in the <i>Amazon Connect Administrator
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * Connect instance.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListHoursOfOperations">AWS
          * API Reference</a></p>
          *
@@ -610,10 +584,7 @@ namespace Model
 
         /**
          * <p>Provides information about the phone numbers for the specified Amazon Connect
-         * instance. </p> <p>For more information about phone numbers, see <a
-         * href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-center-phone-number.html">Set
-         * Up Phone Numbers for Your Contact Center</a> in the <i>Amazon Connect
-         * Administrator Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * instance.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListPhoneNumbers">AWS
          * API Reference</a></p>
          */
@@ -621,10 +592,7 @@ namespace Model
 
         /**
          * <p>Provides information about the phone numbers for the specified Amazon Connect
-         * instance. </p> <p>For more information about phone numbers, see <a
-         * href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-center-phone-number.html">Set
-         * Up Phone Numbers for Your Contact Center</a> in the <i>Amazon Connect
-         * Administrator Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * instance.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListPhoneNumbers">AWS
          * API Reference</a></p>
          *
@@ -634,10 +602,7 @@ namespace Model
 
         /**
          * <p>Provides information about the phone numbers for the specified Amazon Connect
-         * instance. </p> <p>For more information about phone numbers, see <a
-         * href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-center-phone-number.html">Set
-         * Up Phone Numbers for Your Contact Center</a> in the <i>Amazon Connect
-         * Administrator Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * instance.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListPhoneNumbers">AWS
          * API Reference</a></p>
          *
@@ -647,10 +612,7 @@ namespace Model
 
         /**
          * <p>Provides information about the queues for the specified Amazon Connect
-         * instance.</p> <p>For more information about queues, see <a
-         * href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-queues-standard-and-agent.html">Queues:
-         * Standard and Agent</a> in the <i>Amazon Connect Administrator
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * instance.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListQueues">AWS
          * API Reference</a></p>
          */
@@ -658,10 +620,7 @@ namespace Model
 
         /**
          * <p>Provides information about the queues for the specified Amazon Connect
-         * instance.</p> <p>For more information about queues, see <a
-         * href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-queues-standard-and-agent.html">Queues:
-         * Standard and Agent</a> in the <i>Amazon Connect Administrator
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * instance.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListQueues">AWS
          * API Reference</a></p>
          *
@@ -671,10 +630,7 @@ namespace Model
 
         /**
          * <p>Provides information about the queues for the specified Amazon Connect
-         * instance.</p> <p>For more information about queues, see <a
-         * href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-queues-standard-and-agent.html">Queues:
-         * Standard and Agent</a> in the <i>Amazon Connect Administrator
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * instance.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListQueues">AWS
          * API Reference</a></p>
          *
@@ -684,13 +640,7 @@ namespace Model
 
         /**
          * <p>Provides summary information about the routing profiles for the specified
-         * Amazon Connect instance.</p> <p>For more information about routing profiles, see
-         * <a
-         * href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-routing.html">Routing
-         * Profiles</a> and <a
-         * href="https://docs.aws.amazon.com/connect/latest/adminguide/routing-profiles.html">Create
-         * a Routing Profile</a> in the <i>Amazon Connect Administrator
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * Amazon Connect instance.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListRoutingProfiles">AWS
          * API Reference</a></p>
          */
@@ -698,13 +648,7 @@ namespace Model
 
         /**
          * <p>Provides summary information about the routing profiles for the specified
-         * Amazon Connect instance.</p> <p>For more information about routing profiles, see
-         * <a
-         * href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-routing.html">Routing
-         * Profiles</a> and <a
-         * href="https://docs.aws.amazon.com/connect/latest/adminguide/routing-profiles.html">Create
-         * a Routing Profile</a> in the <i>Amazon Connect Administrator
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * Amazon Connect instance.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListRoutingProfiles">AWS
          * API Reference</a></p>
          *
@@ -714,13 +658,7 @@ namespace Model
 
         /**
          * <p>Provides summary information about the routing profiles for the specified
-         * Amazon Connect instance.</p> <p>For more information about routing profiles, see
-         * <a
-         * href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-routing.html">Routing
-         * Profiles</a> and <a
-         * href="https://docs.aws.amazon.com/connect/latest/adminguide/routing-profiles.html">Create
-         * a Routing Profile</a> in the <i>Amazon Connect Administrator
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * Amazon Connect instance.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListRoutingProfiles">AWS
          * API Reference</a></p>
          *
@@ -730,11 +668,7 @@ namespace Model
 
         /**
          * <p>Provides summary information about the security profiles for the specified
-         * Amazon Connect instance.</p> <p>For more information about security profiles,
-         * see <a
-         * href="https://docs.aws.amazon.com/connect/latest/adminguide/connect-security-profiles.html">Security
-         * Profiles</a> in the <i>Amazon Connect Administrator Guide</i>.</p><p><h3>See
-         * Also:</h3>   <a
+         * Amazon Connect instance.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListSecurityProfiles">AWS
          * API Reference</a></p>
          */
@@ -742,11 +676,7 @@ namespace Model
 
         /**
          * <p>Provides summary information about the security profiles for the specified
-         * Amazon Connect instance.</p> <p>For more information about security profiles,
-         * see <a
-         * href="https://docs.aws.amazon.com/connect/latest/adminguide/connect-security-profiles.html">Security
-         * Profiles</a> in the <i>Amazon Connect Administrator Guide</i>.</p><p><h3>See
-         * Also:</h3>   <a
+         * Amazon Connect instance.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListSecurityProfiles">AWS
          * API Reference</a></p>
          *
@@ -756,11 +686,7 @@ namespace Model
 
         /**
          * <p>Provides summary information about the security profiles for the specified
-         * Amazon Connect instance.</p> <p>For more information about security profiles,
-         * see <a
-         * href="https://docs.aws.amazon.com/connect/latest/adminguide/connect-security-profiles.html">Security
-         * Profiles</a> in the <i>Amazon Connect Administrator Guide</i>.</p><p><h3>See
-         * Also:</h3>   <a
+         * Amazon Connect instance.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListSecurityProfiles">AWS
          * API Reference</a></p>
          *
@@ -769,22 +695,14 @@ namespace Model
         virtual void ListSecurityProfilesAsync(const Model::ListSecurityProfilesRequest& request, const ListSecurityProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists the tags for the specified resource.</p> <p>For sample policies that
-         * use tags, see <a
-         * href="https://docs.aws.amazon.com/connect/latest/adminguide/security_iam_id-based-policy-examples.html">Amazon
-         * Connect Identity-Based Policy Examples</a> in the <i>Amazon Connect
-         * Administrator Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the tags for the specified resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListTagsForResource">AWS
          * API Reference</a></p>
          */
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
         /**
-         * <p>Lists the tags for the specified resource.</p> <p>For sample policies that
-         * use tags, see <a
-         * href="https://docs.aws.amazon.com/connect/latest/adminguide/security_iam_id-based-policy-examples.html">Amazon
-         * Connect Identity-Based Policy Examples</a> in the <i>Amazon Connect
-         * Administrator Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the tags for the specified resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListTagsForResource">AWS
          * API Reference</a></p>
          *
@@ -793,11 +711,7 @@ namespace Model
         virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
 
         /**
-         * <p>Lists the tags for the specified resource.</p> <p>For sample policies that
-         * use tags, see <a
-         * href="https://docs.aws.amazon.com/connect/latest/adminguide/security_iam_id-based-policy-examples.html">Amazon
-         * Connect Identity-Based Policy Examples</a> in the <i>Amazon Connect
-         * Administrator Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the tags for the specified resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListTagsForResource">AWS
          * API Reference</a></p>
          *
@@ -807,11 +721,7 @@ namespace Model
 
         /**
          * <p>Provides summary information about the hierarchy groups for the specified
-         * Amazon Connect instance.</p> <p>For more information about agent hierarchies,
-         * see <a
-         * href="https://docs.aws.amazon.com/connect/latest/adminguide/agent-hierarchy.html">Set
-         * Up Agent Hierarchies</a> in the <i>Amazon Connect Administrator
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * Amazon Connect instance.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListUserHierarchyGroups">AWS
          * API Reference</a></p>
          */
@@ -819,11 +729,7 @@ namespace Model
 
         /**
          * <p>Provides summary information about the hierarchy groups for the specified
-         * Amazon Connect instance.</p> <p>For more information about agent hierarchies,
-         * see <a
-         * href="https://docs.aws.amazon.com/connect/latest/adminguide/agent-hierarchy.html">Set
-         * Up Agent Hierarchies</a> in the <i>Amazon Connect Administrator
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * Amazon Connect instance.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListUserHierarchyGroups">AWS
          * API Reference</a></p>
          *
@@ -833,11 +739,7 @@ namespace Model
 
         /**
          * <p>Provides summary information about the hierarchy groups for the specified
-         * Amazon Connect instance.</p> <p>For more information about agent hierarchies,
-         * see <a
-         * href="https://docs.aws.amazon.com/connect/latest/adminguide/agent-hierarchy.html">Set
-         * Up Agent Hierarchies</a> in the <i>Amazon Connect Administrator
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * Amazon Connect instance.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListUserHierarchyGroups">AWS
          * API Reference</a></p>
          *
@@ -874,6 +776,37 @@ namespace Model
         virtual void ListUsersAsync(const Model::ListUsersRequest& request, const ListUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>When a contact is being recorded, and the recording has been suspended using
+         * SuspendContactRecording, this API resumes recording the call.</p> <p>Only voice
+         * recordings are supported at this time.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ResumeContactRecording">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ResumeContactRecordingOutcome ResumeContactRecording(const Model::ResumeContactRecordingRequest& request) const;
+
+        /**
+         * <p>When a contact is being recorded, and the recording has been suspended using
+         * SuspendContactRecording, this API resumes recording the call.</p> <p>Only voice
+         * recordings are supported at this time.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ResumeContactRecording">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ResumeContactRecordingOutcomeCallable ResumeContactRecordingCallable(const Model::ResumeContactRecordingRequest& request) const;
+
+        /**
+         * <p>When a contact is being recorded, and the recording has been suspended using
+         * SuspendContactRecording, this API resumes recording the call.</p> <p>Only voice
+         * recordings are supported at this time.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ResumeContactRecording">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ResumeContactRecordingAsync(const Model::ResumeContactRecordingRequest& request, const ResumeContactRecordingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Initiates a contact flow to start a new chat for the customer. Response of
          * this API provides a token required to obtain credentials from the <a
          * href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_CreateParticipantConnection.html">CreateParticipantConnection</a>
@@ -881,16 +814,7 @@ namespace Model
          * successfully created, clients need to subscribe to the participant’s connection
          * for the created chat within 5 minutes. This is achieved by invoking <a
          * href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_CreateParticipantConnection.html">CreateParticipantConnection</a>
-         * with WEBSOCKET and CONNECTION_CREDENTIALS. </p> <p>A 429 error occurs in two
-         * situations:</p> <ul> <li> <p>API rate limit is exceeded. API TPS throttling
-         * returns a <code>TooManyRequests</code> exception from the API Gateway.</p> </li>
-         * <li> <p>The <a
-         * href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">quota
-         * for concurrent active chats</a> is exceeded. Active chat throttling returns a
-         * <code>LimitExceededException</code>.</p> </li> </ul> <p>For more information
-         * about how chat works, see <a
-         * href="https://docs.aws.amazon.com/connect/latest/adminguide/chat.html">Chat</a>
-         * in the <i>Amazon Connect Administrator Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * with WEBSOCKET and CONNECTION_CREDENTIALS. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StartChatContact">AWS
          * API Reference</a></p>
          */
@@ -904,16 +828,7 @@ namespace Model
          * successfully created, clients need to subscribe to the participant’s connection
          * for the created chat within 5 minutes. This is achieved by invoking <a
          * href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_CreateParticipantConnection.html">CreateParticipantConnection</a>
-         * with WEBSOCKET and CONNECTION_CREDENTIALS. </p> <p>A 429 error occurs in two
-         * situations:</p> <ul> <li> <p>API rate limit is exceeded. API TPS throttling
-         * returns a <code>TooManyRequests</code> exception from the API Gateway.</p> </li>
-         * <li> <p>The <a
-         * href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">quota
-         * for concurrent active chats</a> is exceeded. Active chat throttling returns a
-         * <code>LimitExceededException</code>.</p> </li> </ul> <p>For more information
-         * about how chat works, see <a
-         * href="https://docs.aws.amazon.com/connect/latest/adminguide/chat.html">Chat</a>
-         * in the <i>Amazon Connect Administrator Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * with WEBSOCKET and CONNECTION_CREDENTIALS. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StartChatContact">AWS
          * API Reference</a></p>
          *
@@ -929,22 +844,68 @@ namespace Model
          * successfully created, clients need to subscribe to the participant’s connection
          * for the created chat within 5 minutes. This is achieved by invoking <a
          * href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_CreateParticipantConnection.html">CreateParticipantConnection</a>
-         * with WEBSOCKET and CONNECTION_CREDENTIALS. </p> <p>A 429 error occurs in two
-         * situations:</p> <ul> <li> <p>API rate limit is exceeded. API TPS throttling
-         * returns a <code>TooManyRequests</code> exception from the API Gateway.</p> </li>
-         * <li> <p>The <a
-         * href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">quota
-         * for concurrent active chats</a> is exceeded. Active chat throttling returns a
-         * <code>LimitExceededException</code>.</p> </li> </ul> <p>For more information
-         * about how chat works, see <a
-         * href="https://docs.aws.amazon.com/connect/latest/adminguide/chat.html">Chat</a>
-         * in the <i>Amazon Connect Administrator Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * with WEBSOCKET and CONNECTION_CREDENTIALS. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StartChatContact">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void StartChatContactAsync(const Model::StartChatContactRequest& request, const StartChatContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>This API starts recording the contact when the agent joins the call.
+         * StartContactRecording is a one-time action. For example, if you use
+         * StopContactRecording to stop recording an ongoing call, you can't use
+         * StartContactRecording to restart it. For scenarios where the recording has
+         * started and you want to suspend and resume it, such as when collecting sensitive
+         * information (for example, a credit card number), use SuspendContactRecording and
+         * ResumeContactRecording.</p> <p>You can use this API to override the recording
+         * behavior configured in the <a
+         * href="https://docs.aws.amazon.com/connect/latest/adminguide/set-recording-behavior.html">Set
+         * recording behavior</a> block.</p> <p>Only voice recordings are supported at this
+         * time.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StartContactRecording">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartContactRecordingOutcome StartContactRecording(const Model::StartContactRecordingRequest& request) const;
+
+        /**
+         * <p>This API starts recording the contact when the agent joins the call.
+         * StartContactRecording is a one-time action. For example, if you use
+         * StopContactRecording to stop recording an ongoing call, you can't use
+         * StartContactRecording to restart it. For scenarios where the recording has
+         * started and you want to suspend and resume it, such as when collecting sensitive
+         * information (for example, a credit card number), use SuspendContactRecording and
+         * ResumeContactRecording.</p> <p>You can use this API to override the recording
+         * behavior configured in the <a
+         * href="https://docs.aws.amazon.com/connect/latest/adminguide/set-recording-behavior.html">Set
+         * recording behavior</a> block.</p> <p>Only voice recordings are supported at this
+         * time.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StartContactRecording">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::StartContactRecordingOutcomeCallable StartContactRecordingCallable(const Model::StartContactRecordingRequest& request) const;
+
+        /**
+         * <p>This API starts recording the contact when the agent joins the call.
+         * StartContactRecording is a one-time action. For example, if you use
+         * StopContactRecording to stop recording an ongoing call, you can't use
+         * StartContactRecording to restart it. For scenarios where the recording has
+         * started and you want to suspend and resume it, such as when collecting sensitive
+         * information (for example, a credit card number), use SuspendContactRecording and
+         * ResumeContactRecording.</p> <p>You can use this API to override the recording
+         * behavior configured in the <a
+         * href="https://docs.aws.amazon.com/connect/latest/adminguide/set-recording-behavior.html">Set
+         * recording behavior</a> block.</p> <p>Only voice recordings are supported at this
+         * time.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StartContactRecording">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void StartContactRecordingAsync(const Model::StartContactRecordingRequest& request, const StartContactRecordingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>This API places an outbound call to a contact, and then initiates the contact
@@ -954,12 +915,7 @@ namespace Model
          * outbound call to a contact, and then puts the contact in queue, that's when the
          * call is routed to the agent, like any other inbound case.</p> <p>There is a 60
          * second dialing timeout for this operation. If the call is not connected after 60
-         * seconds, it fails.</p>  <p>UK numbers with a 447 prefix are not allowed by
-         * default. Before you can dial these UK mobile numbers, you must submit a service
-         * quota increase request. For more information, see <a
-         * href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Amazon
-         * Connect Service Quotas</a> in the <i>Amazon Connect Administrator Guide</i>.
-         * </p> <p><h3>See Also:</h3>   <a
+         * seconds, it fails.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StartOutboundVoiceContact">AWS
          * API Reference</a></p>
          */
@@ -973,12 +929,7 @@ namespace Model
          * outbound call to a contact, and then puts the contact in queue, that's when the
          * call is routed to the agent, like any other inbound case.</p> <p>There is a 60
          * second dialing timeout for this operation. If the call is not connected after 60
-         * seconds, it fails.</p>  <p>UK numbers with a 447 prefix are not allowed by
-         * default. Before you can dial these UK mobile numbers, you must submit a service
-         * quota increase request. For more information, see <a
-         * href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Amazon
-         * Connect Service Quotas</a> in the <i>Amazon Connect Administrator Guide</i>.
-         * </p> <p><h3>See Also:</h3>   <a
+         * seconds, it fails.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StartOutboundVoiceContact">AWS
          * API Reference</a></p>
          *
@@ -994,12 +945,7 @@ namespace Model
          * outbound call to a contact, and then puts the contact in queue, that's when the
          * call is routed to the agent, like any other inbound case.</p> <p>There is a 60
          * second dialing timeout for this operation. If the call is not connected after 60
-         * seconds, it fails.</p>  <p>UK numbers with a 447 prefix are not allowed by
-         * default. Before you can dial these UK mobile numbers, you must submit a service
-         * quota increase request. For more information, see <a
-         * href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Amazon
-         * Connect Service Quotas</a> in the <i>Amazon Connect Administrator Guide</i>.
-         * </p> <p><h3>See Also:</h3>   <a
+         * seconds, it fails.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StartOutboundVoiceContact">AWS
          * API Reference</a></p>
          *
@@ -1033,11 +979,91 @@ namespace Model
         virtual void StopContactAsync(const Model::StopContactRequest& request, const StopContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>When a contact is being recorded, this API stops recording the call.
+         * StopContactRecording is a one-time action. If you use StopContactRecording to
+         * stop recording an ongoing call, you can't use StartContactRecording to restart
+         * it. For scenarios where the recording has started and you want to suspend it for
+         * sensitive information (for example, to collect a credit card number), and then
+         * restart it, use SuspendContactRecording and ResumeContactRecording.</p> <p>Only
+         * voice recordings are supported at this time.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StopContactRecording">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StopContactRecordingOutcome StopContactRecording(const Model::StopContactRecordingRequest& request) const;
+
+        /**
+         * <p>When a contact is being recorded, this API stops recording the call.
+         * StopContactRecording is a one-time action. If you use StopContactRecording to
+         * stop recording an ongoing call, you can't use StartContactRecording to restart
+         * it. For scenarios where the recording has started and you want to suspend it for
+         * sensitive information (for example, to collect a credit card number), and then
+         * restart it, use SuspendContactRecording and ResumeContactRecording.</p> <p>Only
+         * voice recordings are supported at this time.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StopContactRecording">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::StopContactRecordingOutcomeCallable StopContactRecordingCallable(const Model::StopContactRecordingRequest& request) const;
+
+        /**
+         * <p>When a contact is being recorded, this API stops recording the call.
+         * StopContactRecording is a one-time action. If you use StopContactRecording to
+         * stop recording an ongoing call, you can't use StartContactRecording to restart
+         * it. For scenarios where the recording has started and you want to suspend it for
+         * sensitive information (for example, to collect a credit card number), and then
+         * restart it, use SuspendContactRecording and ResumeContactRecording.</p> <p>Only
+         * voice recordings are supported at this time.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StopContactRecording">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void StopContactRecordingAsync(const Model::StopContactRecordingRequest& request, const StopContactRecordingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>When a contact is being recorded, this API suspends recording the call. For
+         * example, you might suspend the call recording while collecting sensitive
+         * information, such as a credit card number. Then use ResumeContactRecording to
+         * restart recording. </p> <p>The period of time that the recording is suspended is
+         * filled with silence in the final recording. </p> <p>Only voice recordings are
+         * supported at this time.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SuspendContactRecording">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::SuspendContactRecordingOutcome SuspendContactRecording(const Model::SuspendContactRecordingRequest& request) const;
+
+        /**
+         * <p>When a contact is being recorded, this API suspends recording the call. For
+         * example, you might suspend the call recording while collecting sensitive
+         * information, such as a credit card number. Then use ResumeContactRecording to
+         * restart recording. </p> <p>The period of time that the recording is suspended is
+         * filled with silence in the final recording. </p> <p>Only voice recordings are
+         * supported at this time.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SuspendContactRecording">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::SuspendContactRecordingOutcomeCallable SuspendContactRecordingCallable(const Model::SuspendContactRecordingRequest& request) const;
+
+        /**
+         * <p>When a contact is being recorded, this API suspends recording the call. For
+         * example, you might suspend the call recording while collecting sensitive
+         * information, such as a credit card number. Then use ResumeContactRecording to
+         * restart recording. </p> <p>The period of time that the recording is suspended is
+         * filled with silence in the final recording. </p> <p>Only voice recordings are
+         * supported at this time.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SuspendContactRecording">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void SuspendContactRecordingAsync(const Model::SuspendContactRecordingRequest& request, const SuspendContactRecordingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Adds the specified tags to the specified resource.</p> <p>The supported
-         * resource type is users.</p> <p>For sample policies that use tags, see <a
-         * href="https://docs.aws.amazon.com/connect/latest/adminguide/security_iam_id-based-policy-examples.html">Amazon
-         * Connect Identity-Based Policy Examples</a> in the <i>Amazon Connect
-         * Administrator Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * resource type is users.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/TagResource">AWS
          * API Reference</a></p>
          */
@@ -1045,10 +1071,7 @@ namespace Model
 
         /**
          * <p>Adds the specified tags to the specified resource.</p> <p>The supported
-         * resource type is users.</p> <p>For sample policies that use tags, see <a
-         * href="https://docs.aws.amazon.com/connect/latest/adminguide/security_iam_id-based-policy-examples.html">Amazon
-         * Connect Identity-Based Policy Examples</a> in the <i>Amazon Connect
-         * Administrator Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * resource type is users.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/TagResource">AWS
          * API Reference</a></p>
          *
@@ -1058,10 +1081,7 @@ namespace Model
 
         /**
          * <p>Adds the specified tags to the specified resource.</p> <p>The supported
-         * resource type is users.</p> <p>For sample policies that use tags, see <a
-         * href="https://docs.aws.amazon.com/connect/latest/adminguide/security_iam_id-based-policy-examples.html">Amazon
-         * Connect Identity-Based Policy Examples</a> in the <i>Amazon Connect
-         * Administrator Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * resource type is users.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/TagResource">AWS
          * API Reference</a></p>
          *
@@ -1196,32 +1216,16 @@ namespace Model
         virtual void UpdateUserHierarchyAsync(const Model::UpdateUserHierarchyRequest& request, const UpdateUserHierarchyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates the identity information for the specified user.</p> 
-         * <p>Someone with the ability to invoke <code>UpdateUserIndentityInfo</code> can
-         * change the login credentials of other users by changing their email address.
-         * This poses a security risk to your organization. They can change the email
-         * address of a user to the attacker's email address, and then reset the password
-         * through email. We strongly recommend limiting who has the ability to invoke
-         * <code>UpdateUserIndentityInfo</code>. For more information, see <a
-         * href="https://docs.aws.amazon.com/connect/latest/adminguide/security-profile-best-practices.html">Best
-         * Practices for Security Profiles</a> in the <i>Amazon Connect Administrator
-         * Guide</i>.</p> <p><h3>See Also:</h3>   <a
+         * <p>Updates the identity information for the specified user.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateUserIdentityInfo">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateUserIdentityInfoOutcome UpdateUserIdentityInfo(const Model::UpdateUserIdentityInfoRequest& request) const;
 
         /**
-         * <p>Updates the identity information for the specified user.</p> 
-         * <p>Someone with the ability to invoke <code>UpdateUserIndentityInfo</code> can
-         * change the login credentials of other users by changing their email address.
-         * This poses a security risk to your organization. They can change the email
-         * address of a user to the attacker's email address, and then reset the password
-         * through email. We strongly recommend limiting who has the ability to invoke
-         * <code>UpdateUserIndentityInfo</code>. For more information, see <a
-         * href="https://docs.aws.amazon.com/connect/latest/adminguide/security-profile-best-practices.html">Best
-         * Practices for Security Profiles</a> in the <i>Amazon Connect Administrator
-         * Guide</i>.</p> <p><h3>See Also:</h3>   <a
+         * <p>Updates the identity information for the specified user.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateUserIdentityInfo">AWS
          * API Reference</a></p>
          *
@@ -1230,16 +1234,8 @@ namespace Model
         virtual Model::UpdateUserIdentityInfoOutcomeCallable UpdateUserIdentityInfoCallable(const Model::UpdateUserIdentityInfoRequest& request) const;
 
         /**
-         * <p>Updates the identity information for the specified user.</p> 
-         * <p>Someone with the ability to invoke <code>UpdateUserIndentityInfo</code> can
-         * change the login credentials of other users by changing their email address.
-         * This poses a security risk to your organization. They can change the email
-         * address of a user to the attacker's email address, and then reset the password
-         * through email. We strongly recommend limiting who has the ability to invoke
-         * <code>UpdateUserIndentityInfo</code>. For more information, see <a
-         * href="https://docs.aws.amazon.com/connect/latest/adminguide/security-profile-best-practices.html">Best
-         * Practices for Security Profiles</a> in the <i>Amazon Connect Administrator
-         * Guide</i>.</p> <p><h3>See Also:</h3>   <a
+         * <p>Updates the identity information for the specified user.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateUserIdentityInfo">AWS
          * API Reference</a></p>
          *
@@ -1353,9 +1349,13 @@ namespace Model
         void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListUserHierarchyGroupsAsyncHelper(const Model::ListUserHierarchyGroupsRequest& request, const ListUserHierarchyGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListUsersAsyncHelper(const Model::ListUsersRequest& request, const ListUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ResumeContactRecordingAsyncHelper(const Model::ResumeContactRecordingRequest& request, const ResumeContactRecordingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartChatContactAsyncHelper(const Model::StartChatContactRequest& request, const StartChatContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void StartContactRecordingAsyncHelper(const Model::StartContactRecordingRequest& request, const StartContactRecordingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartOutboundVoiceContactAsyncHelper(const Model::StartOutboundVoiceContactRequest& request, const StartOutboundVoiceContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StopContactAsyncHelper(const Model::StopContactRequest& request, const StopContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void StopContactRecordingAsyncHelper(const Model::StopContactRecordingRequest& request, const StopContactRecordingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void SuspendContactRecordingAsyncHelper(const Model::SuspendContactRecordingRequest& request, const SuspendContactRecordingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateContactAttributesAsyncHelper(const Model::UpdateContactAttributesRequest& request, const UpdateContactAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

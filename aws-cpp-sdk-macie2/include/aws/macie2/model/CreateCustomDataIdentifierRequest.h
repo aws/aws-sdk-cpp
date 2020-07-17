@@ -86,7 +86,7 @@ namespace Model
 
     /**
      * <p>A custom description of the custom data identifier. The description can
-     * contain up to 120 characters.</p> <p>We strongly recommend that you avoid
+     * contain as many as 512 characters.</p> <p>We strongly recommend that you avoid
      * including any sensitive data in the description of a custom data identifier.
      * Other users of your account might be able to see the identifier's description,
      * depending on the actions that they're allowed to perform in Amazon Macie.</p>
@@ -95,7 +95,7 @@ namespace Model
 
     /**
      * <p>A custom description of the custom data identifier. The description can
-     * contain up to 120 characters.</p> <p>We strongly recommend that you avoid
+     * contain as many as 512 characters.</p> <p>We strongly recommend that you avoid
      * including any sensitive data in the description of a custom data identifier.
      * Other users of your account might be able to see the identifier's description,
      * depending on the actions that they're allowed to perform in Amazon Macie.</p>
@@ -104,7 +104,7 @@ namespace Model
 
     /**
      * <p>A custom description of the custom data identifier. The description can
-     * contain up to 120 characters.</p> <p>We strongly recommend that you avoid
+     * contain as many as 512 characters.</p> <p>We strongly recommend that you avoid
      * including any sensitive data in the description of a custom data identifier.
      * Other users of your account might be able to see the identifier's description,
      * depending on the actions that they're allowed to perform in Amazon Macie.</p>
@@ -113,7 +113,7 @@ namespace Model
 
     /**
      * <p>A custom description of the custom data identifier. The description can
-     * contain up to 120 characters.</p> <p>We strongly recommend that you avoid
+     * contain as many as 512 characters.</p> <p>We strongly recommend that you avoid
      * including any sensitive data in the description of a custom data identifier.
      * Other users of your account might be able to see the identifier's description,
      * depending on the actions that they're allowed to perform in Amazon Macie.</p>
@@ -122,7 +122,7 @@ namespace Model
 
     /**
      * <p>A custom description of the custom data identifier. The description can
-     * contain up to 120 characters.</p> <p>We strongly recommend that you avoid
+     * contain as many as 512 characters.</p> <p>We strongly recommend that you avoid
      * including any sensitive data in the description of a custom data identifier.
      * Other users of your account might be able to see the identifier's description,
      * depending on the actions that they're allowed to perform in Amazon Macie.</p>
@@ -131,7 +131,7 @@ namespace Model
 
     /**
      * <p>A custom description of the custom data identifier. The description can
-     * contain up to 120 characters.</p> <p>We strongly recommend that you avoid
+     * contain as many as 512 characters.</p> <p>We strongly recommend that you avoid
      * including any sensitive data in the description of a custom data identifier.
      * Other users of your account might be able to see the identifier's description,
      * depending on the actions that they're allowed to perform in Amazon Macie.</p>
@@ -140,7 +140,7 @@ namespace Model
 
     /**
      * <p>A custom description of the custom data identifier. The description can
-     * contain up to 120 characters.</p> <p>We strongly recommend that you avoid
+     * contain as many as 512 characters.</p> <p>We strongly recommend that you avoid
      * including any sensitive data in the description of a custom data identifier.
      * Other users of your account might be able to see the identifier's description,
      * depending on the actions that they're allowed to perform in Amazon Macie.</p>
@@ -149,7 +149,7 @@ namespace Model
 
     /**
      * <p>A custom description of the custom data identifier. The description can
-     * contain up to 120 characters.</p> <p>We strongly recommend that you avoid
+     * contain as many as 512 characters.</p> <p>We strongly recommend that you avoid
      * including any sensitive data in the description of a custom data identifier.
      * Other users of your account might be able to see the identifier's description,
      * depending on the actions that they're allowed to perform in Amazon Macie.</p>
@@ -342,7 +342,7 @@ namespace Model
 
     /**
      * <p>A custom name for the custom data identifier. The name can contain as many as
-     * 120 characters.</p> <p>We strongly recommend that you avoid including any
+     * 128 characters.</p> <p>We strongly recommend that you avoid including any
      * sensitive data in the name of a custom data identifier. Other users of your
      * account might be able to see the identifier's name, depending on the actions
      * that they're allowed to perform in Amazon Macie.</p>
@@ -351,7 +351,7 @@ namespace Model
 
     /**
      * <p>A custom name for the custom data identifier. The name can contain as many as
-     * 120 characters.</p> <p>We strongly recommend that you avoid including any
+     * 128 characters.</p> <p>We strongly recommend that you avoid including any
      * sensitive data in the name of a custom data identifier. Other users of your
      * account might be able to see the identifier's name, depending on the actions
      * that they're allowed to perform in Amazon Macie.</p>
@@ -360,7 +360,7 @@ namespace Model
 
     /**
      * <p>A custom name for the custom data identifier. The name can contain as many as
-     * 120 characters.</p> <p>We strongly recommend that you avoid including any
+     * 128 characters.</p> <p>We strongly recommend that you avoid including any
      * sensitive data in the name of a custom data identifier. Other users of your
      * account might be able to see the identifier's name, depending on the actions
      * that they're allowed to perform in Amazon Macie.</p>
@@ -369,7 +369,7 @@ namespace Model
 
     /**
      * <p>A custom name for the custom data identifier. The name can contain as many as
-     * 120 characters.</p> <p>We strongly recommend that you avoid including any
+     * 128 characters.</p> <p>We strongly recommend that you avoid including any
      * sensitive data in the name of a custom data identifier. Other users of your
      * account might be able to see the identifier's name, depending on the actions
      * that they're allowed to perform in Amazon Macie.</p>
@@ -378,7 +378,7 @@ namespace Model
 
     /**
      * <p>A custom name for the custom data identifier. The name can contain as many as
-     * 120 characters.</p> <p>We strongly recommend that you avoid including any
+     * 128 characters.</p> <p>We strongly recommend that you avoid including any
      * sensitive data in the name of a custom data identifier. Other users of your
      * account might be able to see the identifier's name, depending on the actions
      * that they're allowed to perform in Amazon Macie.</p>
@@ -387,7 +387,7 @@ namespace Model
 
     /**
      * <p>A custom name for the custom data identifier. The name can contain as many as
-     * 120 characters.</p> <p>We strongly recommend that you avoid including any
+     * 128 characters.</p> <p>We strongly recommend that you avoid including any
      * sensitive data in the name of a custom data identifier. Other users of your
      * account might be able to see the identifier's name, depending on the actions
      * that they're allowed to perform in Amazon Macie.</p>
@@ -396,7 +396,7 @@ namespace Model
 
     /**
      * <p>A custom name for the custom data identifier. The name can contain as many as
-     * 120 characters.</p> <p>We strongly recommend that you avoid including any
+     * 128 characters.</p> <p>We strongly recommend that you avoid including any
      * sensitive data in the name of a custom data identifier. Other users of your
      * account might be able to see the identifier's name, depending on the actions
      * that they're allowed to perform in Amazon Macie.</p>
@@ -405,7 +405,7 @@ namespace Model
 
     /**
      * <p>A custom name for the custom data identifier. The name can contain as many as
-     * 120 characters.</p> <p>We strongly recommend that you avoid including any
+     * 128 characters.</p> <p>We strongly recommend that you avoid including any
      * sensitive data in the name of a custom data identifier. Other users of your
      * account might be able to see the identifier's name, depending on the actions
      * that they're allowed to perform in Amazon Macie.</p>
@@ -414,50 +414,50 @@ namespace Model
 
 
     /**
-     * <p>The regular expression (regex) that defines the pattern to match. The
-     * expression can contain as many as 500 characters.</p>
+     * <p>The regular expression (<i>regex</i>) that defines the pattern to match. The
+     * expression can contain as many as 512 characters.</p>
      */
     inline const Aws::String& GetRegex() const{ return m_regex; }
 
     /**
-     * <p>The regular expression (regex) that defines the pattern to match. The
-     * expression can contain as many as 500 characters.</p>
+     * <p>The regular expression (<i>regex</i>) that defines the pattern to match. The
+     * expression can contain as many as 512 characters.</p>
      */
     inline bool RegexHasBeenSet() const { return m_regexHasBeenSet; }
 
     /**
-     * <p>The regular expression (regex) that defines the pattern to match. The
-     * expression can contain as many as 500 characters.</p>
+     * <p>The regular expression (<i>regex</i>) that defines the pattern to match. The
+     * expression can contain as many as 512 characters.</p>
      */
     inline void SetRegex(const Aws::String& value) { m_regexHasBeenSet = true; m_regex = value; }
 
     /**
-     * <p>The regular expression (regex) that defines the pattern to match. The
-     * expression can contain as many as 500 characters.</p>
+     * <p>The regular expression (<i>regex</i>) that defines the pattern to match. The
+     * expression can contain as many as 512 characters.</p>
      */
     inline void SetRegex(Aws::String&& value) { m_regexHasBeenSet = true; m_regex = std::move(value); }
 
     /**
-     * <p>The regular expression (regex) that defines the pattern to match. The
-     * expression can contain as many as 500 characters.</p>
+     * <p>The regular expression (<i>regex</i>) that defines the pattern to match. The
+     * expression can contain as many as 512 characters.</p>
      */
     inline void SetRegex(const char* value) { m_regexHasBeenSet = true; m_regex.assign(value); }
 
     /**
-     * <p>The regular expression (regex) that defines the pattern to match. The
-     * expression can contain as many as 500 characters.</p>
+     * <p>The regular expression (<i>regex</i>) that defines the pattern to match. The
+     * expression can contain as many as 512 characters.</p>
      */
     inline CreateCustomDataIdentifierRequest& WithRegex(const Aws::String& value) { SetRegex(value); return *this;}
 
     /**
-     * <p>The regular expression (regex) that defines the pattern to match. The
-     * expression can contain as many as 500 characters.</p>
+     * <p>The regular expression (<i>regex</i>) that defines the pattern to match. The
+     * expression can contain as many as 512 characters.</p>
      */
     inline CreateCustomDataIdentifierRequest& WithRegex(Aws::String&& value) { SetRegex(std::move(value)); return *this;}
 
     /**
-     * <p>The regular expression (regex) that defines the pattern to match. The
-     * expression can contain as many as 500 characters.</p>
+     * <p>The regular expression (<i>regex</i>) that defines the pattern to match. The
+     * expression can contain as many as 512 characters.</p>
      */
     inline CreateCustomDataIdentifierRequest& WithRegex(const char* value) { SetRegex(value); return *this;}
 

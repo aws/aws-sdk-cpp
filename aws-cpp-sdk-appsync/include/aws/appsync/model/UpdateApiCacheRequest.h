@@ -148,115 +148,67 @@ namespace Model
 
 
     /**
-     * <p>The cache instance type. Valid values are </p> <ul> <li> <p>
-     * <code>SMALL</code> </p> </li> <li> <p> <code>MEDIUM</code> </p> </li> <li> <p>
-     * <code>LARGE</code> </p> </li> <li> <p> <code>XLARGE</code> </p> </li> <li> <p>
-     * <code>LARGE_2X</code> </p> </li> <li> <p> <code>LARGE_4X</code> </p> </li> <li>
-     * <p> <code>LARGE_8X</code> (not available in all regions)</p> </li> <li> <p>
-     * <code>LARGE_12X</code> </p> </li> </ul> <p>Historically, instance types were
-     * identified by an EC2-style value. As of July 2020, this is deprecated, and the
-     * generic identifiers above should be used.</p> <p>The following legacy instance
-     * types are avaible, but their use is discouraged:</p> <ul> <li> <p>
-     * <b>T2_SMALL</b>: A t2.small instance type.</p> </li> <li> <p> <b>T2_MEDIUM</b>:
-     * A t2.medium instance type.</p> </li> <li> <p> <b>R4_LARGE</b>: A r4.large
-     * instance type.</p> </li> <li> <p> <b>R4_XLARGE</b>: A r4.xlarge instance
-     * type.</p> </li> <li> <p> <b>R4_2XLARGE</b>: A r4.2xlarge instance type.</p>
-     * </li> <li> <p> <b>R4_4XLARGE</b>: A r4.4xlarge instance type.</p> </li> <li> <p>
+     * <p>The cache instance type.</p> <ul> <li> <p> <b>T2_SMALL</b>: A t2.small
+     * instance type.</p> </li> <li> <p> <b>T2_MEDIUM</b>: A t2.medium instance
+     * type.</p> </li> <li> <p> <b>R4_LARGE</b>: A r4.large instance type.</p> </li>
+     * <li> <p> <b>R4_XLARGE</b>: A r4.xlarge instance type.</p> </li> <li> <p>
+     * <b>R4_2XLARGE</b>: A r4.2xlarge instance type.</p> </li> <li> <p>
+     * <b>R4_4XLARGE</b>: A r4.4xlarge instance type.</p> </li> <li> <p>
      * <b>R4_8XLARGE</b>: A r4.8xlarge instance type.</p> </li> </ul>
      */
     inline const ApiCacheType& GetType() const{ return m_type; }
 
     /**
-     * <p>The cache instance type. Valid values are </p> <ul> <li> <p>
-     * <code>SMALL</code> </p> </li> <li> <p> <code>MEDIUM</code> </p> </li> <li> <p>
-     * <code>LARGE</code> </p> </li> <li> <p> <code>XLARGE</code> </p> </li> <li> <p>
-     * <code>LARGE_2X</code> </p> </li> <li> <p> <code>LARGE_4X</code> </p> </li> <li>
-     * <p> <code>LARGE_8X</code> (not available in all regions)</p> </li> <li> <p>
-     * <code>LARGE_12X</code> </p> </li> </ul> <p>Historically, instance types were
-     * identified by an EC2-style value. As of July 2020, this is deprecated, and the
-     * generic identifiers above should be used.</p> <p>The following legacy instance
-     * types are avaible, but their use is discouraged:</p> <ul> <li> <p>
-     * <b>T2_SMALL</b>: A t2.small instance type.</p> </li> <li> <p> <b>T2_MEDIUM</b>:
-     * A t2.medium instance type.</p> </li> <li> <p> <b>R4_LARGE</b>: A r4.large
-     * instance type.</p> </li> <li> <p> <b>R4_XLARGE</b>: A r4.xlarge instance
-     * type.</p> </li> <li> <p> <b>R4_2XLARGE</b>: A r4.2xlarge instance type.</p>
-     * </li> <li> <p> <b>R4_4XLARGE</b>: A r4.4xlarge instance type.</p> </li> <li> <p>
+     * <p>The cache instance type.</p> <ul> <li> <p> <b>T2_SMALL</b>: A t2.small
+     * instance type.</p> </li> <li> <p> <b>T2_MEDIUM</b>: A t2.medium instance
+     * type.</p> </li> <li> <p> <b>R4_LARGE</b>: A r4.large instance type.</p> </li>
+     * <li> <p> <b>R4_XLARGE</b>: A r4.xlarge instance type.</p> </li> <li> <p>
+     * <b>R4_2XLARGE</b>: A r4.2xlarge instance type.</p> </li> <li> <p>
+     * <b>R4_4XLARGE</b>: A r4.4xlarge instance type.</p> </li> <li> <p>
      * <b>R4_8XLARGE</b>: A r4.8xlarge instance type.</p> </li> </ul>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
-     * <p>The cache instance type. Valid values are </p> <ul> <li> <p>
-     * <code>SMALL</code> </p> </li> <li> <p> <code>MEDIUM</code> </p> </li> <li> <p>
-     * <code>LARGE</code> </p> </li> <li> <p> <code>XLARGE</code> </p> </li> <li> <p>
-     * <code>LARGE_2X</code> </p> </li> <li> <p> <code>LARGE_4X</code> </p> </li> <li>
-     * <p> <code>LARGE_8X</code> (not available in all regions)</p> </li> <li> <p>
-     * <code>LARGE_12X</code> </p> </li> </ul> <p>Historically, instance types were
-     * identified by an EC2-style value. As of July 2020, this is deprecated, and the
-     * generic identifiers above should be used.</p> <p>The following legacy instance
-     * types are avaible, but their use is discouraged:</p> <ul> <li> <p>
-     * <b>T2_SMALL</b>: A t2.small instance type.</p> </li> <li> <p> <b>T2_MEDIUM</b>:
-     * A t2.medium instance type.</p> </li> <li> <p> <b>R4_LARGE</b>: A r4.large
-     * instance type.</p> </li> <li> <p> <b>R4_XLARGE</b>: A r4.xlarge instance
-     * type.</p> </li> <li> <p> <b>R4_2XLARGE</b>: A r4.2xlarge instance type.</p>
-     * </li> <li> <p> <b>R4_4XLARGE</b>: A r4.4xlarge instance type.</p> </li> <li> <p>
+     * <p>The cache instance type.</p> <ul> <li> <p> <b>T2_SMALL</b>: A t2.small
+     * instance type.</p> </li> <li> <p> <b>T2_MEDIUM</b>: A t2.medium instance
+     * type.</p> </li> <li> <p> <b>R4_LARGE</b>: A r4.large instance type.</p> </li>
+     * <li> <p> <b>R4_XLARGE</b>: A r4.xlarge instance type.</p> </li> <li> <p>
+     * <b>R4_2XLARGE</b>: A r4.2xlarge instance type.</p> </li> <li> <p>
+     * <b>R4_4XLARGE</b>: A r4.4xlarge instance type.</p> </li> <li> <p>
      * <b>R4_8XLARGE</b>: A r4.8xlarge instance type.</p> </li> </ul>
      */
     inline void SetType(const ApiCacheType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>The cache instance type. Valid values are </p> <ul> <li> <p>
-     * <code>SMALL</code> </p> </li> <li> <p> <code>MEDIUM</code> </p> </li> <li> <p>
-     * <code>LARGE</code> </p> </li> <li> <p> <code>XLARGE</code> </p> </li> <li> <p>
-     * <code>LARGE_2X</code> </p> </li> <li> <p> <code>LARGE_4X</code> </p> </li> <li>
-     * <p> <code>LARGE_8X</code> (not available in all regions)</p> </li> <li> <p>
-     * <code>LARGE_12X</code> </p> </li> </ul> <p>Historically, instance types were
-     * identified by an EC2-style value. As of July 2020, this is deprecated, and the
-     * generic identifiers above should be used.</p> <p>The following legacy instance
-     * types are avaible, but their use is discouraged:</p> <ul> <li> <p>
-     * <b>T2_SMALL</b>: A t2.small instance type.</p> </li> <li> <p> <b>T2_MEDIUM</b>:
-     * A t2.medium instance type.</p> </li> <li> <p> <b>R4_LARGE</b>: A r4.large
-     * instance type.</p> </li> <li> <p> <b>R4_XLARGE</b>: A r4.xlarge instance
-     * type.</p> </li> <li> <p> <b>R4_2XLARGE</b>: A r4.2xlarge instance type.</p>
-     * </li> <li> <p> <b>R4_4XLARGE</b>: A r4.4xlarge instance type.</p> </li> <li> <p>
+     * <p>The cache instance type.</p> <ul> <li> <p> <b>T2_SMALL</b>: A t2.small
+     * instance type.</p> </li> <li> <p> <b>T2_MEDIUM</b>: A t2.medium instance
+     * type.</p> </li> <li> <p> <b>R4_LARGE</b>: A r4.large instance type.</p> </li>
+     * <li> <p> <b>R4_XLARGE</b>: A r4.xlarge instance type.</p> </li> <li> <p>
+     * <b>R4_2XLARGE</b>: A r4.2xlarge instance type.</p> </li> <li> <p>
+     * <b>R4_4XLARGE</b>: A r4.4xlarge instance type.</p> </li> <li> <p>
      * <b>R4_8XLARGE</b>: A r4.8xlarge instance type.</p> </li> </ul>
      */
     inline void SetType(ApiCacheType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p>The cache instance type. Valid values are </p> <ul> <li> <p>
-     * <code>SMALL</code> </p> </li> <li> <p> <code>MEDIUM</code> </p> </li> <li> <p>
-     * <code>LARGE</code> </p> </li> <li> <p> <code>XLARGE</code> </p> </li> <li> <p>
-     * <code>LARGE_2X</code> </p> </li> <li> <p> <code>LARGE_4X</code> </p> </li> <li>
-     * <p> <code>LARGE_8X</code> (not available in all regions)</p> </li> <li> <p>
-     * <code>LARGE_12X</code> </p> </li> </ul> <p>Historically, instance types were
-     * identified by an EC2-style value. As of July 2020, this is deprecated, and the
-     * generic identifiers above should be used.</p> <p>The following legacy instance
-     * types are avaible, but their use is discouraged:</p> <ul> <li> <p>
-     * <b>T2_SMALL</b>: A t2.small instance type.</p> </li> <li> <p> <b>T2_MEDIUM</b>:
-     * A t2.medium instance type.</p> </li> <li> <p> <b>R4_LARGE</b>: A r4.large
-     * instance type.</p> </li> <li> <p> <b>R4_XLARGE</b>: A r4.xlarge instance
-     * type.</p> </li> <li> <p> <b>R4_2XLARGE</b>: A r4.2xlarge instance type.</p>
-     * </li> <li> <p> <b>R4_4XLARGE</b>: A r4.4xlarge instance type.</p> </li> <li> <p>
+     * <p>The cache instance type.</p> <ul> <li> <p> <b>T2_SMALL</b>: A t2.small
+     * instance type.</p> </li> <li> <p> <b>T2_MEDIUM</b>: A t2.medium instance
+     * type.</p> </li> <li> <p> <b>R4_LARGE</b>: A r4.large instance type.</p> </li>
+     * <li> <p> <b>R4_XLARGE</b>: A r4.xlarge instance type.</p> </li> <li> <p>
+     * <b>R4_2XLARGE</b>: A r4.2xlarge instance type.</p> </li> <li> <p>
+     * <b>R4_4XLARGE</b>: A r4.4xlarge instance type.</p> </li> <li> <p>
      * <b>R4_8XLARGE</b>: A r4.8xlarge instance type.</p> </li> </ul>
      */
     inline UpdateApiCacheRequest& WithType(const ApiCacheType& value) { SetType(value); return *this;}
 
     /**
-     * <p>The cache instance type. Valid values are </p> <ul> <li> <p>
-     * <code>SMALL</code> </p> </li> <li> <p> <code>MEDIUM</code> </p> </li> <li> <p>
-     * <code>LARGE</code> </p> </li> <li> <p> <code>XLARGE</code> </p> </li> <li> <p>
-     * <code>LARGE_2X</code> </p> </li> <li> <p> <code>LARGE_4X</code> </p> </li> <li>
-     * <p> <code>LARGE_8X</code> (not available in all regions)</p> </li> <li> <p>
-     * <code>LARGE_12X</code> </p> </li> </ul> <p>Historically, instance types were
-     * identified by an EC2-style value. As of July 2020, this is deprecated, and the
-     * generic identifiers above should be used.</p> <p>The following legacy instance
-     * types are avaible, but their use is discouraged:</p> <ul> <li> <p>
-     * <b>T2_SMALL</b>: A t2.small instance type.</p> </li> <li> <p> <b>T2_MEDIUM</b>:
-     * A t2.medium instance type.</p> </li> <li> <p> <b>R4_LARGE</b>: A r4.large
-     * instance type.</p> </li> <li> <p> <b>R4_XLARGE</b>: A r4.xlarge instance
-     * type.</p> </li> <li> <p> <b>R4_2XLARGE</b>: A r4.2xlarge instance type.</p>
-     * </li> <li> <p> <b>R4_4XLARGE</b>: A r4.4xlarge instance type.</p> </li> <li> <p>
+     * <p>The cache instance type.</p> <ul> <li> <p> <b>T2_SMALL</b>: A t2.small
+     * instance type.</p> </li> <li> <p> <b>T2_MEDIUM</b>: A t2.medium instance
+     * type.</p> </li> <li> <p> <b>R4_LARGE</b>: A r4.large instance type.</p> </li>
+     * <li> <p> <b>R4_XLARGE</b>: A r4.xlarge instance type.</p> </li> <li> <p>
+     * <b>R4_2XLARGE</b>: A r4.2xlarge instance type.</p> </li> <li> <p>
+     * <b>R4_4XLARGE</b>: A r4.4xlarge instance type.</p> </li> <li> <p>
      * <b>R4_8XLARGE</b>: A r4.8xlarge instance type.</p> </li> </ul>
      */
     inline UpdateApiCacheRequest& WithType(ApiCacheType&& value) { SetType(std::move(value)); return *this;}
