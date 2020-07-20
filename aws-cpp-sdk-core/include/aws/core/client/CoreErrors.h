@@ -77,5 +77,3 @@ namespace Aws
         } // namespace CoreErrorsMapper
     } // namespace Client
 } // namespace Aws
-
-

@@ -94,8 +94,12 @@ public:
 
     Aws::Client::HttpResponseOutcome MakeRequest(const Aws::AmazonWebServiceRequest& request)
     {
+        return MakeRequest("domain.com/something", request);
+    }
+
+    Aws::Client::HttpResponseOutcome MakeRequest(const Aws::Http::URI& uri, const Aws::AmazonWebServiceRequest& request)
+    {
         m_countedRetryStrategy->ResetAttemptedRetriesCount();
-        const Aws::Http::URI uri("domain.com/something");
         const auto method = Aws::Http::HttpMethod::HTTP_GET;
         Aws::Client::HttpResponseOutcome httpOutcome(Aws::Client::AWSClient::AttemptExhaustively(uri, request, method, Aws::Auth::SIGV4_SIGNER));
         return httpOutcome;

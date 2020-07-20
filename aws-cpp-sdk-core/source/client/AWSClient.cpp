@@ -33,6 +33,7 @@
 #include <aws/core/utils/UUID.h>
 #include <aws/core/monitoring/MonitoringManager.h>
 #include <aws/core/Region.h>
+#include <aws/core/utils/DNS.h>
 
 #include <cstring>
 #include <cassert>
@@ -199,6 +200,10 @@ HttpResponseOutcome AWSClient::AttemptExhaustively(const Aws::Http::URI& uri,
     const char* signerName,
     const char* signerRegionOverride) const
 {
+    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
+    {
+        return HttpResponseOutcome(AWSError<CoreErrors>(CoreErrors::VALIDATION, "", "Invalid DNS Label found in URI host", false/*retryable*/));
+    }
     std::shared_ptr<HttpRequest> httpRequest(CreateHttpRequest(uri, method, request.GetResponseStreamFactory()));
     HttpResponseOutcome outcome;
     AWSError<CoreErrors> lastError;
@@ -317,6 +322,11 @@ HttpResponseOutcome AWSClient::AttemptExhaustively(const Aws::Http::URI& uri,
     const char* requestName,
     const char* signerRegionOverride) const
 {
+    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
+    {
+        return HttpResponseOutcome(AWSError<CoreErrors>(CoreErrors::VALIDATION, "", "Invalid DNS Label found in URI host", false/*retryable*/));
+    }
+
     std::shared_ptr<HttpRequest> httpRequest(CreateHttpRequest(uri, method, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod));
     HttpResponseOutcome outcome;
     AWSError<CoreErrors> lastError;

@@ -186,6 +186,15 @@ protected:
     Aws::String m_configFileName;
 };
 
+TEST_F(AWSClientTestSuite, TestValidateInvalidURI)
+{
+    const Aws::Http::URI uri("-west-3.domain.com/something");
+    AmazonWebServiceRequestMock request;
+    auto outcome = client->MakeRequest(uri, request);
+    ASSERT_FALSE(outcome.IsSuccess());
+    ASSERT_EQ(CoreErrors::VALIDATION, outcome.GetError().GetErrorType());
+}
+
 TEST_F(AWSClientTestSuite, TestClockSkewOutsideAcceptableRange)
 {
     HeaderValueCollection responseHeaders;
