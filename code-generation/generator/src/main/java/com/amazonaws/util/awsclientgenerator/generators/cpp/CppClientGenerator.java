@@ -76,7 +76,7 @@ public abstract class CppClientGenerator implements ClientGenerator {
 
     protected final VelocityContext createContext(final ServiceModel serviceModel) {
         VelocityContext context = new VelocityContext();
-        context.put("nl", "\n");
+        context.put("nl", System.lineSeparator());
         context.put("serviceModel", serviceModel);
         context.put("input.encoding", StandardCharsets.UTF_8.name());
         context.put("output.encoding", StandardCharsets.UTF_8.name());

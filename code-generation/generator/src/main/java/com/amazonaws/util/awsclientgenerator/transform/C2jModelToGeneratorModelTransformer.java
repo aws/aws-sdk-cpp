@@ -70,7 +70,7 @@ public class C2jModelToGeneratorModelTransformer {
             for(int i = 0; i < indentDepth; ++i) {
                 tabString += " ";
             }
-            String wrappedString = WordUtils.wrap(documentation, 80, "\n" + tabString + "* ", false);
+            String wrappedString = WordUtils.wrap(documentation, 80, System.lineSeparator() + tabString + "* ", false);
             wrappedString = wrappedString.replace("/*", "/ *").replace("*/", "* /");
             for (String s : UNSUPPORTEDHTMLTAGS) {
                 wrappedString = wrappedString.replace(s, "");
