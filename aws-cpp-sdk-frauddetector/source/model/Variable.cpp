@@ -28,7 +28,8 @@ Variable::Variable() :
     m_descriptionHasBeenSet(false),
     m_variableTypeHasBeenSet(false),
     m_lastUpdatedTimeHasBeenSet(false),
-    m_createdTimeHasBeenSet(false)
+    m_createdTimeHasBeenSet(false),
+    m_arnHasBeenSet(false)
 {
 }
 
@@ -42,7 +43,8 @@ Variable::Variable(JsonView jsonValue) :
     m_descriptionHasBeenSet(false),
     m_variableTypeHasBeenSet(false),
     m_lastUpdatedTimeHasBeenSet(false),
-    m_createdTimeHasBeenSet(false)
+    m_createdTimeHasBeenSet(false),
+    m_arnHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -105,6 +107,13 @@ Variable& Variable::operator =(JsonView jsonValue)
     m_createdTimeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("arn"))
+  {
+    m_arn = jsonValue.GetString("arn");
+
+    m_arnHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -155,6 +164,12 @@ JsonValue Variable::Jsonize() const
   if(m_createdTimeHasBeenSet)
   {
    payload.WithString("createdTime", m_createdTime);
+
+  }
+
+  if(m_arnHasBeenSet)
+  {
+   payload.WithString("arn", m_arn);
 
   }
 

@@ -19,7 +19,8 @@ CreateDetectorVersionRequest::CreateDetectorVersionRequest() :
     m_rulesHasBeenSet(false),
     m_modelVersionsHasBeenSet(false),
     m_ruleExecutionMode(RuleExecutionMode::NOT_SET),
-    m_ruleExecutionModeHasBeenSet(false)
+    m_ruleExecutionModeHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -75,6 +76,17 @@ Aws::String CreateDetectorVersionRequest::SerializePayload() const
   if(m_ruleExecutionModeHasBeenSet)
   {
    payload.WithString("ruleExecutionMode", RuleExecutionModeMapper::GetNameForRuleExecutionMode(m_ruleExecutionMode));
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   Array<JsonValue> tagsJsonList(m_tags.size());
+   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+   {
+     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+   }
+   payload.WithArray("tags", std::move(tagsJsonList));
+
   }
 
   return payload.View().WriteReadable();

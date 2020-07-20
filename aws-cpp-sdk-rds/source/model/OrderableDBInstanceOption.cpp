@@ -63,7 +63,9 @@ OrderableDBInstanceOption::OrderableDBInstanceOption() :
     m_supportsKerberosAuthentication(false),
     m_supportsKerberosAuthenticationHasBeenSet(false),
     m_outpostCapable(false),
-    m_outpostCapableHasBeenSet(false)
+    m_outpostCapableHasBeenSet(false),
+    m_supportsGlobalDatabases(false),
+    m_supportsGlobalDatabasesHasBeenSet(false)
 {
 }
 
@@ -110,7 +112,9 @@ OrderableDBInstanceOption::OrderableDBInstanceOption(const XmlNode& xmlNode) :
     m_supportsKerberosAuthentication(false),
     m_supportsKerberosAuthenticationHasBeenSet(false),
     m_outpostCapable(false),
-    m_outpostCapableHasBeenSet(false)
+    m_outpostCapableHasBeenSet(false),
+    m_supportsGlobalDatabases(false),
+    m_supportsGlobalDatabasesHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -295,6 +299,12 @@ OrderableDBInstanceOption& OrderableDBInstanceOption::operator =(const XmlNode& 
       m_outpostCapable = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(outpostCapableNode.GetText()).c_str()).c_str());
       m_outpostCapableHasBeenSet = true;
     }
+    XmlNode supportsGlobalDatabasesNode = resultNode.FirstChild("SupportsGlobalDatabases");
+    if(!supportsGlobalDatabasesNode.IsNull())
+    {
+      m_supportsGlobalDatabases = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(supportsGlobalDatabasesNode.GetText()).c_str()).c_str());
+      m_supportsGlobalDatabasesHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -448,6 +458,11 @@ void OrderableDBInstanceOption::OutputToStream(Aws::OStream& oStream, const char
       oStream << location << index << locationValue << ".OutpostCapable=" << std::boolalpha << m_outpostCapable << "&";
   }
 
+  if(m_supportsGlobalDatabasesHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".SupportsGlobalDatabases=" << std::boolalpha << m_supportsGlobalDatabases << "&";
+  }
+
 }
 
 void OrderableDBInstanceOption::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -571,6 +586,10 @@ void OrderableDBInstanceOption::OutputToStream(Aws::OStream& oStream, const char
   if(m_outpostCapableHasBeenSet)
   {
       oStream << location << ".OutpostCapable=" << std::boolalpha << m_outpostCapable << "&";
+  }
+  if(m_supportsGlobalDatabasesHasBeenSet)
+  {
+      oStream << location << ".SupportsGlobalDatabases=" << std::boolalpha << m_supportsGlobalDatabases << "&";
   }
 }
 

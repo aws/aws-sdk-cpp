@@ -35,73 +35,73 @@ namespace Model
 
 
     /**
-     * <p>The next token for subsequent requests. </p>
+     * <p>The next page token to be used in subsequent requests.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>The next token for subsequent requests. </p>
+     * <p>The next page token to be used in subsequent requests.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
     /**
-     * <p>The next token for subsequent requests. </p>
+     * <p>The next page token to be used in subsequent requests.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
-     * <p>The next token for subsequent requests. </p>
+     * <p>The next page token to be used in subsequent requests.</p>
      */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
     /**
-     * <p>The next token for subsequent requests. </p>
+     * <p>The next page token to be used in subsequent requests.</p>
      */
     inline GetModelsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>The next token for subsequent requests. </p>
+     * <p>The next page token to be used in subsequent requests.</p>
      */
     inline GetModelsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>The next token for subsequent requests. </p>
+     * <p>The next page token to be used in subsequent requests.</p>
      */
     inline GetModelsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
 
     /**
-     * <p>The returned models. </p>
+     * <p>The array of models.</p>
      */
     inline const Aws::Vector<Model>& GetModels() const{ return m_models; }
 
     /**
-     * <p>The returned models. </p>
+     * <p>The array of models.</p>
      */
     inline void SetModels(const Aws::Vector<Model>& value) { m_models = value; }
 
     /**
-     * <p>The returned models. </p>
+     * <p>The array of models.</p>
      */
     inline void SetModels(Aws::Vector<Model>&& value) { m_models = std::move(value); }
 
     /**
-     * <p>The returned models. </p>
+     * <p>The array of models.</p>
      */
     inline GetModelsResult& WithModels(const Aws::Vector<Model>& value) { SetModels(value); return *this;}
 
     /**
-     * <p>The returned models. </p>
+     * <p>The array of models.</p>
      */
     inline GetModelsResult& WithModels(Aws::Vector<Model>&& value) { SetModels(std::move(value)); return *this;}
 
     /**
-     * <p>The returned models. </p>
+     * <p>The array of models.</p>
      */
     inline GetModelsResult& AddModels(const Model& value) { m_models.push_back(value); return *this; }
 
     /**
-     * <p>The returned models. </p>
+     * <p>The array of models.</p>
      */
     inline GetModelsResult& AddModels(Model&& value) { m_models.push_back(std::move(value)); return *this; }
 

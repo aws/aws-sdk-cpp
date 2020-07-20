@@ -101,6 +101,12 @@ GetDetectorVersionResult& GetDetectorVersionResult::operator =(const Aws::Amazon
 
   }
 
+  if(jsonValue.ValueExists("arn"))
+  {
+    m_arn = jsonValue.GetString("arn");
+
+  }
+
 
 
   return *this;

@@ -13,7 +13,8 @@ using namespace Aws::Utils;
 CreateRouteTableRequest::CreateRouteTableRequest() : 
     m_dryRun(false),
     m_dryRunHasBeenSet(false),
-    m_vpcIdHasBeenSet(false)
+    m_vpcIdHasBeenSet(false),
+    m_tagSpecificationsHasBeenSet(false)
 {
 }
 
@@ -29,6 +30,16 @@ Aws::String CreateRouteTableRequest::SerializePayload() const
   if(m_vpcIdHasBeenSet)
   {
     ss << "VpcId=" << StringUtils::URLEncode(m_vpcId.c_str()) << "&";
+  }
+
+  if(m_tagSpecificationsHasBeenSet)
+  {
+    unsigned tagSpecificationsCount = 1;
+    for(auto& item : m_tagSpecifications)
+    {
+      item.OutputToStream(ss, "TagSpecification.", tagSpecificationsCount, "");
+      tagSpecificationsCount++;
+    }
   }
 
   ss << "Version=2016-11-15";

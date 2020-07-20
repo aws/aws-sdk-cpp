@@ -29,7 +29,7 @@ namespace Model
    * <a
    * href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ActiveTrustedSigners.html">ActiveTrustedSigners</a>.</p><p><h3>See
    * Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/KeyPairIds">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/KeyPairIds">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDFRONT_API KeyPairIds

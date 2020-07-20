@@ -20,7 +20,8 @@ CreateVariableRequest::CreateVariableRequest() :
     m_dataSourceHasBeenSet(false),
     m_defaultValueHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_variableTypeHasBeenSet(false)
+    m_variableTypeHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -59,6 +60,17 @@ Aws::String CreateVariableRequest::SerializePayload() const
   if(m_variableTypeHasBeenSet)
   {
    payload.WithString("variableType", m_variableType);
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   Array<JsonValue> tagsJsonList(m_tags.size());
+   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+   {
+     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+   }
+   payload.WithArray("tags", std::move(tagsJsonList));
 
   }
 

@@ -14,7 +14,9 @@ using namespace Aws::Utils;
 
 PutDetectorRequest::PutDetectorRequest() : 
     m_detectorIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+    m_descriptionHasBeenSet(false),
+    m_eventTypeNameHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -31,6 +33,23 @@ Aws::String PutDetectorRequest::SerializePayload() const
   if(m_descriptionHasBeenSet)
   {
    payload.WithString("description", m_description);
+
+  }
+
+  if(m_eventTypeNameHasBeenSet)
+  {
+   payload.WithString("eventTypeName", m_eventTypeName);
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   Array<JsonValue> tagsJsonList(m_tags.size());
+   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+   {
+     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+   }
+   payload.WithArray("tags", std::move(tagsJsonList));
 
   }
 

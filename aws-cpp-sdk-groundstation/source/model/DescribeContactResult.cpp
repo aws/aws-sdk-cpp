@@ -42,6 +42,15 @@ DescribeContactResult& DescribeContactResult::operator =(const Aws::AmazonWebSer
 
   }
 
+  if(jsonValue.ValueExists("dataflowList"))
+  {
+    Array<JsonView> dataflowListJsonList = jsonValue.GetArray("dataflowList");
+    for(unsigned dataflowListIndex = 0; dataflowListIndex < dataflowListJsonList.GetLength(); ++dataflowListIndex)
+    {
+      m_dataflowList.push_back(dataflowListJsonList[dataflowListIndex].AsObject());
+    }
+  }
+
   if(jsonValue.ValueExists("endTime"))
   {
     m_endTime = jsonValue.GetDouble("endTime");

@@ -7,6 +7,8 @@
 #include <aws/frauddetector/FraudDetector_EXPORTS.h>
 #include <aws/frauddetector/FraudDetectorRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/frauddetector/model/Tag.h>
 #include <utility>
 
 namespace Aws
@@ -115,6 +117,88 @@ namespace Model
      */
     inline PutDetectorRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
+
+    /**
+     * <p>The name of the event type.</p>
+     */
+    inline const Aws::String& GetEventTypeName() const{ return m_eventTypeName; }
+
+    /**
+     * <p>The name of the event type.</p>
+     */
+    inline bool EventTypeNameHasBeenSet() const { return m_eventTypeNameHasBeenSet; }
+
+    /**
+     * <p>The name of the event type.</p>
+     */
+    inline void SetEventTypeName(const Aws::String& value) { m_eventTypeNameHasBeenSet = true; m_eventTypeName = value; }
+
+    /**
+     * <p>The name of the event type.</p>
+     */
+    inline void SetEventTypeName(Aws::String&& value) { m_eventTypeNameHasBeenSet = true; m_eventTypeName = std::move(value); }
+
+    /**
+     * <p>The name of the event type.</p>
+     */
+    inline void SetEventTypeName(const char* value) { m_eventTypeNameHasBeenSet = true; m_eventTypeName.assign(value); }
+
+    /**
+     * <p>The name of the event type.</p>
+     */
+    inline PutDetectorRequest& WithEventTypeName(const Aws::String& value) { SetEventTypeName(value); return *this;}
+
+    /**
+     * <p>The name of the event type.</p>
+     */
+    inline PutDetectorRequest& WithEventTypeName(Aws::String&& value) { SetEventTypeName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the event type.</p>
+     */
+    inline PutDetectorRequest& WithEventTypeName(const char* value) { SetEventTypeName(value); return *this;}
+
+
+    /**
+     * <p>A collection of key and value pairs.</p>
+     */
+    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>A collection of key and value pairs.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>A collection of key and value pairs.</p>
+     */
+    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>A collection of key and value pairs.</p>
+     */
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>A collection of key and value pairs.</p>
+     */
+    inline PutDetectorRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>A collection of key and value pairs.</p>
+     */
+    inline PutDetectorRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>A collection of key and value pairs.</p>
+     */
+    inline PutDetectorRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+
+    /**
+     * <p>A collection of key and value pairs.</p>
+     */
+    inline PutDetectorRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_detectorId;
@@ -122,6 +206,12 @@ namespace Model
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
+    Aws::String m_eventTypeName;
+    bool m_eventTypeNameHasBeenSet;
+
+    Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet;
   };
 
 } // namespace Model

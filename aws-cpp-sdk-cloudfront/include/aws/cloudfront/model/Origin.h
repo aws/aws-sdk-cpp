@@ -41,7 +41,7 @@ namespace Model
    * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html#limits-web-distributions">General
    * Quotas on Web Distributions</a> in the <i>Amazon CloudFront Developer Guide</i>
    * (quotas were formerly referred to as limits).</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/Origin">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/Origin">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDFRONT_API Origin

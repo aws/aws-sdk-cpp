@@ -17,12 +17,14 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 GetModelVersionResult::GetModelVersionResult() : 
-    m_modelType(ModelTypeEnum::NOT_SET)
+    m_modelType(ModelTypeEnum::NOT_SET),
+    m_trainingDataSource(TrainingDataSourceEnum::NOT_SET)
 {
 }
 
 GetModelVersionResult::GetModelVersionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_modelType(ModelTypeEnum::NOT_SET)
+    m_modelType(ModelTypeEnum::NOT_SET),
+    m_trainingDataSource(TrainingDataSourceEnum::NOT_SET)
 {
   *this = result;
 }
@@ -48,15 +50,33 @@ GetModelVersionResult& GetModelVersionResult::operator =(const Aws::AmazonWebSer
 
   }
 
-  if(jsonValue.ValueExists("description"))
+  if(jsonValue.ValueExists("trainingDataSource"))
   {
-    m_description = jsonValue.GetString("description");
+    m_trainingDataSource = TrainingDataSourceEnumMapper::GetTrainingDataSourceEnumForName(jsonValue.GetString("trainingDataSource"));
+
+  }
+
+  if(jsonValue.ValueExists("trainingDataSchema"))
+  {
+    m_trainingDataSchema = jsonValue.GetObject("trainingDataSchema");
+
+  }
+
+  if(jsonValue.ValueExists("externalEventsDetail"))
+  {
+    m_externalEventsDetail = jsonValue.GetObject("externalEventsDetail");
 
   }
 
   if(jsonValue.ValueExists("status"))
   {
     m_status = jsonValue.GetString("status");
+
+  }
+
+  if(jsonValue.ValueExists("arn"))
+  {
+    m_arn = jsonValue.GetString("arn");
 
   }
 

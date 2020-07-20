@@ -16,18 +16,44 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateModelVersionResult::UpdateModelVersionResult()
+UpdateModelVersionResult::UpdateModelVersionResult() : 
+    m_modelType(ModelTypeEnum::NOT_SET)
 {
 }
 
-UpdateModelVersionResult::UpdateModelVersionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+UpdateModelVersionResult::UpdateModelVersionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
+    m_modelType(ModelTypeEnum::NOT_SET)
 {
   *this = result;
 }
 
 UpdateModelVersionResult& UpdateModelVersionResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  AWS_UNREFERENCED_PARAM(result);
+  JsonView jsonValue = result.GetPayload().View();
+  if(jsonValue.ValueExists("modelId"))
+  {
+    m_modelId = jsonValue.GetString("modelId");
+
+  }
+
+  if(jsonValue.ValueExists("modelType"))
+  {
+    m_modelType = ModelTypeEnumMapper::GetModelTypeEnumForName(jsonValue.GetString("modelType"));
+
+  }
+
+  if(jsonValue.ValueExists("modelVersionNumber"))
+  {
+    m_modelVersionNumber = jsonValue.GetString("modelVersionNumber");
+
+  }
+
+  if(jsonValue.ValueExists("status"))
+  {
+    m_status = jsonValue.GetString("status");
+
+  }
+
 
 
   return *this;

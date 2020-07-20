@@ -35,50 +35,50 @@ namespace Model
 
 
     /**
-     * <p>The ID of the policy that you want to delete. <code>PolicyId</code> is
-     * returned by <code>PutPolicy</code> and by <code>ListPolicies</code>.</p>
+     * <p>The ID of the policy that you want to delete. You can retrieve this ID from
+     * <code>PutPolicy</code> and <code>ListPolicies</code>.</p>
      */
     inline const Aws::String& GetPolicyId() const{ return m_policyId; }
 
     /**
-     * <p>The ID of the policy that you want to delete. <code>PolicyId</code> is
-     * returned by <code>PutPolicy</code> and by <code>ListPolicies</code>.</p>
+     * <p>The ID of the policy that you want to delete. You can retrieve this ID from
+     * <code>PutPolicy</code> and <code>ListPolicies</code>.</p>
      */
     inline bool PolicyIdHasBeenSet() const { return m_policyIdHasBeenSet; }
 
     /**
-     * <p>The ID of the policy that you want to delete. <code>PolicyId</code> is
-     * returned by <code>PutPolicy</code> and by <code>ListPolicies</code>.</p>
+     * <p>The ID of the policy that you want to delete. You can retrieve this ID from
+     * <code>PutPolicy</code> and <code>ListPolicies</code>.</p>
      */
     inline void SetPolicyId(const Aws::String& value) { m_policyIdHasBeenSet = true; m_policyId = value; }
 
     /**
-     * <p>The ID of the policy that you want to delete. <code>PolicyId</code> is
-     * returned by <code>PutPolicy</code> and by <code>ListPolicies</code>.</p>
+     * <p>The ID of the policy that you want to delete. You can retrieve this ID from
+     * <code>PutPolicy</code> and <code>ListPolicies</code>.</p>
      */
     inline void SetPolicyId(Aws::String&& value) { m_policyIdHasBeenSet = true; m_policyId = std::move(value); }
 
     /**
-     * <p>The ID of the policy that you want to delete. <code>PolicyId</code> is
-     * returned by <code>PutPolicy</code> and by <code>ListPolicies</code>.</p>
+     * <p>The ID of the policy that you want to delete. You can retrieve this ID from
+     * <code>PutPolicy</code> and <code>ListPolicies</code>.</p>
      */
     inline void SetPolicyId(const char* value) { m_policyIdHasBeenSet = true; m_policyId.assign(value); }
 
     /**
-     * <p>The ID of the policy that you want to delete. <code>PolicyId</code> is
-     * returned by <code>PutPolicy</code> and by <code>ListPolicies</code>.</p>
+     * <p>The ID of the policy that you want to delete. You can retrieve this ID from
+     * <code>PutPolicy</code> and <code>ListPolicies</code>.</p>
      */
     inline DeletePolicyRequest& WithPolicyId(const Aws::String& value) { SetPolicyId(value); return *this;}
 
     /**
-     * <p>The ID of the policy that you want to delete. <code>PolicyId</code> is
-     * returned by <code>PutPolicy</code> and by <code>ListPolicies</code>.</p>
+     * <p>The ID of the policy that you want to delete. You can retrieve this ID from
+     * <code>PutPolicy</code> and <code>ListPolicies</code>.</p>
      */
     inline DeletePolicyRequest& WithPolicyId(Aws::String&& value) { SetPolicyId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the policy that you want to delete. <code>PolicyId</code> is
-     * returned by <code>PutPolicy</code> and by <code>ListPolicies</code>.</p>
+     * <p>The ID of the policy that you want to delete. You can retrieve this ID from
+     * <code>PutPolicy</code> and <code>ListPolicies</code>.</p>
      */
     inline DeletePolicyRequest& WithPolicyId(const char* value) { SetPolicyId(value); return *this;}
 

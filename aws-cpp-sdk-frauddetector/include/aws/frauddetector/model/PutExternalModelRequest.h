@@ -12,6 +12,8 @@
 #include <aws/frauddetector/model/ModelInputConfiguration.h>
 #include <aws/frauddetector/model/ModelOutputConfiguration.h>
 #include <aws/frauddetector/model/ModelEndpointStatus.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/frauddetector/model/Tag.h>
 #include <utility>
 
 namespace Aws
@@ -78,6 +80,47 @@ namespace Model
      * <p>The model endpoints name.</p>
      */
     inline PutExternalModelRequest& WithModelEndpoint(const char* value) { SetModelEndpoint(value); return *this;}
+
+
+    /**
+     * <p>The event type name.</p>
+     */
+    inline const Aws::String& GetEventTypeName() const{ return m_eventTypeName; }
+
+    /**
+     * <p>The event type name.</p>
+     */
+    inline bool EventTypeNameHasBeenSet() const { return m_eventTypeNameHasBeenSet; }
+
+    /**
+     * <p>The event type name.</p>
+     */
+    inline void SetEventTypeName(const Aws::String& value) { m_eventTypeNameHasBeenSet = true; m_eventTypeName = value; }
+
+    /**
+     * <p>The event type name.</p>
+     */
+    inline void SetEventTypeName(Aws::String&& value) { m_eventTypeNameHasBeenSet = true; m_eventTypeName = std::move(value); }
+
+    /**
+     * <p>The event type name.</p>
+     */
+    inline void SetEventTypeName(const char* value) { m_eventTypeNameHasBeenSet = true; m_eventTypeName.assign(value); }
+
+    /**
+     * <p>The event type name.</p>
+     */
+    inline PutExternalModelRequest& WithEventTypeName(const Aws::String& value) { SetEventTypeName(value); return *this;}
+
+    /**
+     * <p>The event type name.</p>
+     */
+    inline PutExternalModelRequest& WithEventTypeName(Aws::String&& value) { SetEventTypeName(std::move(value)); return *this;}
+
+    /**
+     * <p>The event type name.</p>
+     */
+    inline PutExternalModelRequest& WithEventTypeName(const char* value) { SetEventTypeName(value); return *this;}
 
 
     /**
@@ -234,10 +277,54 @@ namespace Model
      */
     inline PutExternalModelRequest& WithModelEndpointStatus(ModelEndpointStatus&& value) { SetModelEndpointStatus(std::move(value)); return *this;}
 
+
+    /**
+     * <p>A collection of key and value pairs.</p>
+     */
+    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>A collection of key and value pairs.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>A collection of key and value pairs.</p>
+     */
+    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>A collection of key and value pairs.</p>
+     */
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>A collection of key and value pairs.</p>
+     */
+    inline PutExternalModelRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>A collection of key and value pairs.</p>
+     */
+    inline PutExternalModelRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>A collection of key and value pairs.</p>
+     */
+    inline PutExternalModelRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+
+    /**
+     * <p>A collection of key and value pairs.</p>
+     */
+    inline PutExternalModelRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_modelEndpoint;
     bool m_modelEndpointHasBeenSet;
+
+    Aws::String m_eventTypeName;
+    bool m_eventTypeNameHasBeenSet;
 
     ModelSource m_modelSource;
     bool m_modelSourceHasBeenSet;
@@ -253,6 +340,9 @@ namespace Model
 
     ModelEndpointStatus m_modelEndpointStatus;
     bool m_modelEndpointStatusHasBeenSet;
+
+    Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet;
   };
 
 } // namespace Model

@@ -27,6 +27,8 @@ namespace Aws
         static const int ACTIVE_HASH = HashingUtils::HashString("ACTIVE");
         static const int INACTIVATE_IN_PROGRESS_HASH = HashingUtils::HashString("INACTIVATE_IN_PROGRESS");
         static const int INACTIVE_HASH = HashingUtils::HashString("INACTIVE");
+        static const int DELETE_REQUESTED_HASH = HashingUtils::HashString("DELETE_REQUESTED");
+        static const int DELETE_IN_PROGRESS_HASH = HashingUtils::HashString("DELETE_IN_PROGRESS");
         static const int ERROR__HASH = HashingUtils::HashString("ERROR");
 
 
@@ -61,6 +63,14 @@ namespace Aws
           {
             return ModelVersionStatus::INACTIVE;
           }
+          else if (hashCode == DELETE_REQUESTED_HASH)
+          {
+            return ModelVersionStatus::DELETE_REQUESTED;
+          }
+          else if (hashCode == DELETE_IN_PROGRESS_HASH)
+          {
+            return ModelVersionStatus::DELETE_IN_PROGRESS;
+          }
           else if (hashCode == ERROR__HASH)
           {
             return ModelVersionStatus::ERROR_;
@@ -93,6 +103,10 @@ namespace Aws
             return "INACTIVATE_IN_PROGRESS";
           case ModelVersionStatus::INACTIVE:
             return "INACTIVE";
+          case ModelVersionStatus::DELETE_REQUESTED:
+            return "DELETE_REQUESTED";
+          case ModelVersionStatus::DELETE_IN_PROGRESS:
+            return "DELETE_IN_PROGRESS";
           case ModelVersionStatus::ERROR_:
             return "ERROR";
           default:

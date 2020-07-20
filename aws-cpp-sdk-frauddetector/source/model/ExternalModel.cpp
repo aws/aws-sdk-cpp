@@ -20,6 +20,7 @@ namespace Model
 
 ExternalModel::ExternalModel() : 
     m_modelEndpointHasBeenSet(false),
+    m_eventTypeNameHasBeenSet(false),
     m_modelSource(ModelSource::NOT_SET),
     m_modelSourceHasBeenSet(false),
     m_roleHasBeenSet(false),
@@ -28,12 +29,14 @@ ExternalModel::ExternalModel() :
     m_modelEndpointStatus(ModelEndpointStatus::NOT_SET),
     m_modelEndpointStatusHasBeenSet(false),
     m_lastUpdatedTimeHasBeenSet(false),
-    m_createdTimeHasBeenSet(false)
+    m_createdTimeHasBeenSet(false),
+    m_arnHasBeenSet(false)
 {
 }
 
 ExternalModel::ExternalModel(JsonView jsonValue) : 
     m_modelEndpointHasBeenSet(false),
+    m_eventTypeNameHasBeenSet(false),
     m_modelSource(ModelSource::NOT_SET),
     m_modelSourceHasBeenSet(false),
     m_roleHasBeenSet(false),
@@ -42,7 +45,8 @@ ExternalModel::ExternalModel(JsonView jsonValue) :
     m_modelEndpointStatus(ModelEndpointStatus::NOT_SET),
     m_modelEndpointStatusHasBeenSet(false),
     m_lastUpdatedTimeHasBeenSet(false),
-    m_createdTimeHasBeenSet(false)
+    m_createdTimeHasBeenSet(false),
+    m_arnHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -54,6 +58,13 @@ ExternalModel& ExternalModel::operator =(JsonView jsonValue)
     m_modelEndpoint = jsonValue.GetString("modelEndpoint");
 
     m_modelEndpointHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("eventTypeName"))
+  {
+    m_eventTypeName = jsonValue.GetString("eventTypeName");
+
+    m_eventTypeNameHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("modelSource"))
@@ -105,6 +116,13 @@ ExternalModel& ExternalModel::operator =(JsonView jsonValue)
     m_createdTimeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("arn"))
+  {
+    m_arn = jsonValue.GetString("arn");
+
+    m_arnHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -115,6 +133,12 @@ JsonValue ExternalModel::Jsonize() const
   if(m_modelEndpointHasBeenSet)
   {
    payload.WithString("modelEndpoint", m_modelEndpoint);
+
+  }
+
+  if(m_eventTypeNameHasBeenSet)
+  {
+   payload.WithString("eventTypeName", m_eventTypeName);
 
   }
 
@@ -155,6 +179,12 @@ JsonValue ExternalModel::Jsonize() const
   if(m_createdTimeHasBeenSet)
   {
    payload.WithString("createdTime", m_createdTime);
+
+  }
+
+  if(m_arnHasBeenSet)
+  {
+   payload.WithString("arn", m_arn);
 
   }
 

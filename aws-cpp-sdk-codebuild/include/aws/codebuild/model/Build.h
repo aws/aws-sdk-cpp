@@ -16,6 +16,7 @@
 #include <aws/codebuild/model/LogsLocation.h>
 #include <aws/codebuild/model/VpcConfig.h>
 #include <aws/codebuild/model/NetworkInterface.h>
+#include <aws/codebuild/model/DebugSession.h>
 #include <aws/codebuild/model/BuildPhase.h>
 #include <aws/codebuild/model/ProjectSourceVersion.h>
 #include <aws/codebuild/model/ExportedEnvironmentVariable.h>
@@ -1477,6 +1478,37 @@ namespace Model
      */
     inline Build& AddFileSystemLocations(ProjectFileSystemLocation&& value) { m_fileSystemLocationsHasBeenSet = true; m_fileSystemLocations.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>Contains information about the debug session for this build.</p>
+     */
+    inline const DebugSession& GetDebugSession() const{ return m_debugSession; }
+
+    /**
+     * <p>Contains information about the debug session for this build.</p>
+     */
+    inline bool DebugSessionHasBeenSet() const { return m_debugSessionHasBeenSet; }
+
+    /**
+     * <p>Contains information about the debug session for this build.</p>
+     */
+    inline void SetDebugSession(const DebugSession& value) { m_debugSessionHasBeenSet = true; m_debugSession = value; }
+
+    /**
+     * <p>Contains information about the debug session for this build.</p>
+     */
+    inline void SetDebugSession(DebugSession&& value) { m_debugSessionHasBeenSet = true; m_debugSession = std::move(value); }
+
+    /**
+     * <p>Contains information about the debug session for this build.</p>
+     */
+    inline Build& WithDebugSession(const DebugSession& value) { SetDebugSession(value); return *this;}
+
+    /**
+     * <p>Contains information about the debug session for this build.</p>
+     */
+    inline Build& WithDebugSession(DebugSession&& value) { SetDebugSession(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_id;
@@ -1568,6 +1600,9 @@ namespace Model
 
     Aws::Vector<ProjectFileSystemLocation> m_fileSystemLocations;
     bool m_fileSystemLocationsHasBeenSet;
+
+    DebugSession m_debugSession;
+    bool m_debugSessionHasBeenSet;
   };
 
 } // namespace Model

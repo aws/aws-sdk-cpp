@@ -209,6 +209,47 @@ namespace Model
      */
     inline CoipPool& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The ARN of the address pool.</p>
+     */
+    inline const Aws::String& GetPoolArn() const{ return m_poolArn; }
+
+    /**
+     * <p>The ARN of the address pool.</p>
+     */
+    inline bool PoolArnHasBeenSet() const { return m_poolArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the address pool.</p>
+     */
+    inline void SetPoolArn(const Aws::String& value) { m_poolArnHasBeenSet = true; m_poolArn = value; }
+
+    /**
+     * <p>The ARN of the address pool.</p>
+     */
+    inline void SetPoolArn(Aws::String&& value) { m_poolArnHasBeenSet = true; m_poolArn = std::move(value); }
+
+    /**
+     * <p>The ARN of the address pool.</p>
+     */
+    inline void SetPoolArn(const char* value) { m_poolArnHasBeenSet = true; m_poolArn.assign(value); }
+
+    /**
+     * <p>The ARN of the address pool.</p>
+     */
+    inline CoipPool& WithPoolArn(const Aws::String& value) { SetPoolArn(value); return *this;}
+
+    /**
+     * <p>The ARN of the address pool.</p>
+     */
+    inline CoipPool& WithPoolArn(Aws::String&& value) { SetPoolArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The ARN of the address pool.</p>
+     */
+    inline CoipPool& WithPoolArn(const char* value) { SetPoolArn(value); return *this;}
+
   private:
 
     Aws::String m_poolId;
@@ -222,6 +263,9 @@ namespace Model
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
+
+    Aws::String m_poolArn;
+    bool m_poolArnHasBeenSet;
   };
 
 } // namespace Model

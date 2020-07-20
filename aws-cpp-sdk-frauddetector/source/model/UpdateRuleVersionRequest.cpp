@@ -18,7 +18,8 @@ UpdateRuleVersionRequest::UpdateRuleVersionRequest() :
     m_expressionHasBeenSet(false),
     m_language(Language::NOT_SET),
     m_languageHasBeenSet(false),
-    m_outcomesHasBeenSet(false)
+    m_outcomesHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -57,6 +58,17 @@ Aws::String UpdateRuleVersionRequest::SerializePayload() const
      outcomesJsonList[outcomesIndex].AsString(m_outcomes[outcomesIndex]);
    }
    payload.WithArray("outcomes", std::move(outcomesJsonList));
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   Array<JsonValue> tagsJsonList(m_tags.size());
+   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+   {
+     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+   }
+   payload.WithArray("tags", std::move(tagsJsonList));
 
   }
 

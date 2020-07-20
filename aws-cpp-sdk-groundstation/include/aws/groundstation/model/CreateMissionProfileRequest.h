@@ -38,25 +38,25 @@ namespace Model
 
 
     /**
-     * <p>Amount of time after a contact ends that you���d like to receive a CloudWatch
+     * <p>Amount of time after a contact ends that you’d like to receive a CloudWatch
      * event indicating the pass has finished.</p>
      */
     inline int GetContactPostPassDurationSeconds() const{ return m_contactPostPassDurationSeconds; }
 
     /**
-     * <p>Amount of time after a contact ends that you���d like to receive a CloudWatch
+     * <p>Amount of time after a contact ends that you’d like to receive a CloudWatch
      * event indicating the pass has finished.</p>
      */
     inline bool ContactPostPassDurationSecondsHasBeenSet() const { return m_contactPostPassDurationSecondsHasBeenSet; }
 
     /**
-     * <p>Amount of time after a contact ends that you���d like to receive a CloudWatch
+     * <p>Amount of time after a contact ends that you’d like to receive a CloudWatch
      * event indicating the pass has finished.</p>
      */
     inline void SetContactPostPassDurationSeconds(int value) { m_contactPostPassDurationSecondsHasBeenSet = true; m_contactPostPassDurationSeconds = value; }
 
     /**
-     * <p>Amount of time after a contact ends that you���d like to receive a CloudWatch
+     * <p>Amount of time after a contact ends that you’d like to receive a CloudWatch
      * event indicating the pass has finished.</p>
      */
     inline CreateMissionProfileRequest& WithContactPostPassDurationSeconds(int value) { SetContactPostPassDurationSeconds(value); return *this;}

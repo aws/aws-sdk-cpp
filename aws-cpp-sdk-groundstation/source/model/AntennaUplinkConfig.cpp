@@ -20,13 +20,17 @@ namespace Model
 
 AntennaUplinkConfig::AntennaUplinkConfig() : 
     m_spectrumConfigHasBeenSet(false),
-    m_targetEirpHasBeenSet(false)
+    m_targetEirpHasBeenSet(false),
+    m_transmitDisabled(false),
+    m_transmitDisabledHasBeenSet(false)
 {
 }
 
 AntennaUplinkConfig::AntennaUplinkConfig(JsonView jsonValue) : 
     m_spectrumConfigHasBeenSet(false),
-    m_targetEirpHasBeenSet(false)
+    m_targetEirpHasBeenSet(false),
+    m_transmitDisabled(false),
+    m_transmitDisabledHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -47,6 +51,13 @@ AntennaUplinkConfig& AntennaUplinkConfig::operator =(JsonView jsonValue)
     m_targetEirpHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("transmitDisabled"))
+  {
+    m_transmitDisabled = jsonValue.GetBool("transmitDisabled");
+
+    m_transmitDisabledHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -63,6 +74,12 @@ JsonValue AntennaUplinkConfig::Jsonize() const
   if(m_targetEirpHasBeenSet)
   {
    payload.WithObject("targetEirp", m_targetEirp.Jsonize());
+
+  }
+
+  if(m_transmitDisabledHasBeenSet)
+  {
+   payload.WithBool("transmitDisabled", m_transmitDisabled);
 
   }
 

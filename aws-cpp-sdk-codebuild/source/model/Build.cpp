@@ -53,7 +53,8 @@ Build::Build() :
     m_encryptionKeyHasBeenSet(false),
     m_exportedEnvironmentVariablesHasBeenSet(false),
     m_reportArnsHasBeenSet(false),
-    m_fileSystemLocationsHasBeenSet(false)
+    m_fileSystemLocationsHasBeenSet(false),
+    m_debugSessionHasBeenSet(false)
 {
 }
 
@@ -92,7 +93,8 @@ Build::Build(JsonView jsonValue) :
     m_encryptionKeyHasBeenSet(false),
     m_exportedEnvironmentVariablesHasBeenSet(false),
     m_reportArnsHasBeenSet(false),
-    m_fileSystemLocationsHasBeenSet(false)
+    m_fileSystemLocationsHasBeenSet(false),
+    m_debugSessionHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -330,6 +332,13 @@ Build& Build::operator =(JsonView jsonValue)
     m_fileSystemLocationsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("debugSession"))
+  {
+    m_debugSession = jsonValue.GetObject("debugSession");
+
+    m_debugSessionHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -546,6 +555,12 @@ JsonValue Build::Jsonize() const
      fileSystemLocationsJsonList[fileSystemLocationsIndex].AsObject(m_fileSystemLocations[fileSystemLocationsIndex].Jsonize());
    }
    payload.WithArray("fileSystemLocations", std::move(fileSystemLocationsJsonList));
+
+  }
+
+  if(m_debugSessionHasBeenSet)
+  {
+   payload.WithObject("debugSession", m_debugSession.Jsonize());
 
   }
 

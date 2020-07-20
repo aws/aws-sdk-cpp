@@ -13,7 +13,8 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 DeleteEventRequest::DeleteEventRequest() : 
-    m_eventIdHasBeenSet(false)
+    m_eventIdHasBeenSet(false),
+    m_eventTypeNameHasBeenSet(false)
 {
 }
 
@@ -24,6 +25,12 @@ Aws::String DeleteEventRequest::SerializePayload() const
   if(m_eventIdHasBeenSet)
   {
    payload.WithString("eventId", m_eventId);
+
+  }
+
+  if(m_eventTypeNameHasBeenSet)
+  {
+   payload.WithString("eventTypeName", m_eventTypeName);
 
   }
 

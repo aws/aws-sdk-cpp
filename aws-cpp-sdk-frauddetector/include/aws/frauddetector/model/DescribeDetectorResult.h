@@ -141,6 +141,42 @@ namespace Model
      */
     inline DescribeDetectorResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
+    /**
+     * <p>The detector ARN.</p>
+     */
+    inline const Aws::String& GetArn() const{ return m_arn; }
+
+    /**
+     * <p>The detector ARN.</p>
+     */
+    inline void SetArn(const Aws::String& value) { m_arn = value; }
+
+    /**
+     * <p>The detector ARN.</p>
+     */
+    inline void SetArn(Aws::String&& value) { m_arn = std::move(value); }
+
+    /**
+     * <p>The detector ARN.</p>
+     */
+    inline void SetArn(const char* value) { m_arn.assign(value); }
+
+    /**
+     * <p>The detector ARN.</p>
+     */
+    inline DescribeDetectorResult& WithArn(const Aws::String& value) { SetArn(value); return *this;}
+
+    /**
+     * <p>The detector ARN.</p>
+     */
+    inline DescribeDetectorResult& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The detector ARN.</p>
+     */
+    inline DescribeDetectorResult& WithArn(const char* value) { SetArn(value); return *this;}
+
   private:
 
     Aws::String m_detectorId;
@@ -148,6 +184,8 @@ namespace Model
     Aws::Vector<DetectorVersionSummary> m_detectorVersionSummaries;
 
     Aws::String m_nextToken;
+
+    Aws::String m_arn;
   };
 
 } // namespace Model

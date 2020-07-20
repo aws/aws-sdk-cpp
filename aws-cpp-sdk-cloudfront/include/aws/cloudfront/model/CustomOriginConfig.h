@@ -29,7 +29,7 @@ namespace Model
    * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/WebsiteHosting.html">configured
    * with static website hosting</a> <i>is</i> a custom origin.</p><p><h3>See
    * Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/CustomOriginConfig">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CustomOriginConfig">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDFRONT_API CustomOriginConfig

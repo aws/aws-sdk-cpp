@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p>The model input configuration.</p><p><h3>See Also:</h3>   <a
+   * <p>The Amazon SageMaker model input configuration.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/ModelInputConfiguration">AWS
    * API Reference</a></p>
    */
@@ -82,36 +82,24 @@ namespace Model
 
 
     /**
-     * <p> For an opaque-model, the input to the model will be a ByteBuffer blob
-     * provided in the getPrediction request, and will be passed to SageMaker as-is.
-     * For non-opaque models, the input will be constructed by Amazon Fraud Detector
-     * based on the model-configuration. </p>
+     * <p>The event variables.</p>
      */
-    inline bool GetIsOpaque() const{ return m_isOpaque; }
+    inline bool GetUseEventVariables() const{ return m_useEventVariables; }
 
     /**
-     * <p> For an opaque-model, the input to the model will be a ByteBuffer blob
-     * provided in the getPrediction request, and will be passed to SageMaker as-is.
-     * For non-opaque models, the input will be constructed by Amazon Fraud Detector
-     * based on the model-configuration. </p>
+     * <p>The event variables.</p>
      */
-    inline bool IsOpaqueHasBeenSet() const { return m_isOpaqueHasBeenSet; }
+    inline bool UseEventVariablesHasBeenSet() const { return m_useEventVariablesHasBeenSet; }
 
     /**
-     * <p> For an opaque-model, the input to the model will be a ByteBuffer blob
-     * provided in the getPrediction request, and will be passed to SageMaker as-is.
-     * For non-opaque models, the input will be constructed by Amazon Fraud Detector
-     * based on the model-configuration. </p>
+     * <p>The event variables.</p>
      */
-    inline void SetIsOpaque(bool value) { m_isOpaqueHasBeenSet = true; m_isOpaque = value; }
+    inline void SetUseEventVariables(bool value) { m_useEventVariablesHasBeenSet = true; m_useEventVariables = value; }
 
     /**
-     * <p> For an opaque-model, the input to the model will be a ByteBuffer blob
-     * provided in the getPrediction request, and will be passed to SageMaker as-is.
-     * For non-opaque models, the input will be constructed by Amazon Fraud Detector
-     * based on the model-configuration. </p>
+     * <p>The event variables.</p>
      */
-    inline ModelInputConfiguration& WithIsOpaque(bool value) { SetIsOpaque(value); return *this;}
+    inline ModelInputConfiguration& WithUseEventVariables(bool value) { SetUseEventVariables(value); return *this;}
 
 
     /**
@@ -232,8 +220,8 @@ namespace Model
     ModelInputDataFormat m_format;
     bool m_formatHasBeenSet;
 
-    bool m_isOpaque;
-    bool m_isOpaqueHasBeenSet;
+    bool m_useEventVariables;
+    bool m_useEventVariablesHasBeenSet;
 
     Aws::String m_jsonInputTemplate;
     bool m_jsonInputTemplateHasBeenSet;

@@ -28,7 +28,8 @@ RuleDetail::RuleDetail() :
     m_languageHasBeenSet(false),
     m_outcomesHasBeenSet(false),
     m_lastUpdatedTimeHasBeenSet(false),
-    m_createdTimeHasBeenSet(false)
+    m_createdTimeHasBeenSet(false),
+    m_arnHasBeenSet(false)
 {
 }
 
@@ -42,7 +43,8 @@ RuleDetail::RuleDetail(JsonView jsonValue) :
     m_languageHasBeenSet(false),
     m_outcomesHasBeenSet(false),
     m_lastUpdatedTimeHasBeenSet(false),
-    m_createdTimeHasBeenSet(false)
+    m_createdTimeHasBeenSet(false),
+    m_arnHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -115,6 +117,13 @@ RuleDetail& RuleDetail::operator =(JsonView jsonValue)
     m_createdTimeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("arn"))
+  {
+    m_arn = jsonValue.GetString("arn");
+
+    m_arnHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -177,6 +186,12 @@ JsonValue RuleDetail::Jsonize() const
   if(m_createdTimeHasBeenSet)
   {
    payload.WithString("createdTime", m_createdTime);
+
+  }
+
+  if(m_arnHasBeenSet)
+  {
+   payload.WithString("arn", m_arn);
 
   }
 

@@ -22,7 +22,8 @@ ModelVersion::ModelVersion() :
     m_modelIdHasBeenSet(false),
     m_modelType(ModelTypeEnum::NOT_SET),
     m_modelTypeHasBeenSet(false),
-    m_modelVersionNumberHasBeenSet(false)
+    m_modelVersionNumberHasBeenSet(false),
+    m_arnHasBeenSet(false)
 {
 }
 
@@ -30,7 +31,8 @@ ModelVersion::ModelVersion(JsonView jsonValue) :
     m_modelIdHasBeenSet(false),
     m_modelType(ModelTypeEnum::NOT_SET),
     m_modelTypeHasBeenSet(false),
-    m_modelVersionNumberHasBeenSet(false)
+    m_modelVersionNumberHasBeenSet(false),
+    m_arnHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -58,6 +60,13 @@ ModelVersion& ModelVersion::operator =(JsonView jsonValue)
     m_modelVersionNumberHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("arn"))
+  {
+    m_arn = jsonValue.GetString("arn");
+
+    m_arnHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -79,6 +88,12 @@ JsonValue ModelVersion::Jsonize() const
   if(m_modelVersionNumberHasBeenSet)
   {
    payload.WithString("modelVersionNumber", m_modelVersionNumber);
+
+  }
+
+  if(m_arnHasBeenSet)
+  {
+   payload.WithString("arn", m_arn);
 
   }
 

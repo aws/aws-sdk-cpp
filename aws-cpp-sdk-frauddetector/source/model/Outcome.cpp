@@ -22,7 +22,8 @@ Outcome::Outcome() :
     m_nameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_lastUpdatedTimeHasBeenSet(false),
-    m_createdTimeHasBeenSet(false)
+    m_createdTimeHasBeenSet(false),
+    m_arnHasBeenSet(false)
 {
 }
 
@@ -30,7 +31,8 @@ Outcome::Outcome(JsonView jsonValue) :
     m_nameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_lastUpdatedTimeHasBeenSet(false),
-    m_createdTimeHasBeenSet(false)
+    m_createdTimeHasBeenSet(false),
+    m_arnHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -65,6 +67,13 @@ Outcome& Outcome::operator =(JsonView jsonValue)
     m_createdTimeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("arn"))
+  {
+    m_arn = jsonValue.GetString("arn");
+
+    m_arnHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -93,6 +102,12 @@ JsonValue Outcome::Jsonize() const
   if(m_createdTimeHasBeenSet)
   {
    payload.WithString("createdTime", m_createdTime);
+
+  }
+
+  if(m_arnHasBeenSet)
+  {
+   payload.WithString("arn", m_arn);
 
   }
 

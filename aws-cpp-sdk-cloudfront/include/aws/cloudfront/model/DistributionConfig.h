@@ -35,7 +35,7 @@ namespace Model
 
   /**
    * <p>A distribution configuration.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/DistributionConfig">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DistributionConfig">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDFRONT_API DistributionConfig

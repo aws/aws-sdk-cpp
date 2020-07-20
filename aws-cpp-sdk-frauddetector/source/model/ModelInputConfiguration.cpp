@@ -21,8 +21,8 @@ namespace Model
 ModelInputConfiguration::ModelInputConfiguration() : 
     m_format(ModelInputDataFormat::NOT_SET),
     m_formatHasBeenSet(false),
-    m_isOpaque(false),
-    m_isOpaqueHasBeenSet(false),
+    m_useEventVariables(false),
+    m_useEventVariablesHasBeenSet(false),
     m_jsonInputTemplateHasBeenSet(false),
     m_csvInputTemplateHasBeenSet(false)
 {
@@ -31,8 +31,8 @@ ModelInputConfiguration::ModelInputConfiguration() :
 ModelInputConfiguration::ModelInputConfiguration(JsonView jsonValue) : 
     m_format(ModelInputDataFormat::NOT_SET),
     m_formatHasBeenSet(false),
-    m_isOpaque(false),
-    m_isOpaqueHasBeenSet(false),
+    m_useEventVariables(false),
+    m_useEventVariablesHasBeenSet(false),
     m_jsonInputTemplateHasBeenSet(false),
     m_csvInputTemplateHasBeenSet(false)
 {
@@ -48,11 +48,11 @@ ModelInputConfiguration& ModelInputConfiguration::operator =(JsonView jsonValue)
     m_formatHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("isOpaque"))
+  if(jsonValue.ValueExists("useEventVariables"))
   {
-    m_isOpaque = jsonValue.GetBool("isOpaque");
+    m_useEventVariables = jsonValue.GetBool("useEventVariables");
 
-    m_isOpaqueHasBeenSet = true;
+    m_useEventVariablesHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("jsonInputTemplate"))
@@ -81,9 +81,9 @@ JsonValue ModelInputConfiguration::Jsonize() const
    payload.WithString("format", ModelInputDataFormatMapper::GetNameForModelInputDataFormat(m_format));
   }
 
-  if(m_isOpaqueHasBeenSet)
+  if(m_useEventVariablesHasBeenSet)
   {
-   payload.WithBool("isOpaque", m_isOpaque);
+   payload.WithBool("useEventVariables", m_useEventVariables);
 
   }
 

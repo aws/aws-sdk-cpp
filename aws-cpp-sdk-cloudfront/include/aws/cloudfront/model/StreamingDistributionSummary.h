@@ -30,7 +30,7 @@ namespace Model
   /**
    * <p> A summary of the information for a CloudFront streaming
    * distribution.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/StreamingDistributionSummary">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/StreamingDistributionSummary">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDFRONT_API StreamingDistributionSummary

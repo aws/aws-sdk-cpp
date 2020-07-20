@@ -26,7 +26,7 @@ namespace Model
   /**
    * <p>A complex data type that includes the field patterns to match for field-level
    * encryption.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/FieldPatterns">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/FieldPatterns">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDFRONT_API FieldPatterns

@@ -13,7 +13,8 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 BatchCreateVariableRequest::BatchCreateVariableRequest() : 
-    m_variableEntriesHasBeenSet(false)
+    m_variableEntriesHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -29,6 +30,17 @@ Aws::String BatchCreateVariableRequest::SerializePayload() const
      variableEntriesJsonList[variableEntriesIndex].AsObject(m_variableEntries[variableEntriesIndex].Jsonize());
    }
    payload.WithArray("variableEntries", std::move(variableEntriesJsonList));
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   Array<JsonValue> tagsJsonList(m_tags.size());
+   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+   {
+     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+   }
+   payload.WithArray("tags", std::move(tagsJsonList));
 
   }
 

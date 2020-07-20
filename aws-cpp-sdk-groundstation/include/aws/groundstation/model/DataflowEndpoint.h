@@ -71,6 +71,27 @@ namespace Model
 
 
     /**
+     * <p>Maximum transmission unit (MTU) size in bytes of a dataflow endpoint.</p>
+     */
+    inline int GetMtu() const{ return m_mtu; }
+
+    /**
+     * <p>Maximum transmission unit (MTU) size in bytes of a dataflow endpoint.</p>
+     */
+    inline bool MtuHasBeenSet() const { return m_mtuHasBeenSet; }
+
+    /**
+     * <p>Maximum transmission unit (MTU) size in bytes of a dataflow endpoint.</p>
+     */
+    inline void SetMtu(int value) { m_mtuHasBeenSet = true; m_mtu = value; }
+
+    /**
+     * <p>Maximum transmission unit (MTU) size in bytes of a dataflow endpoint.</p>
+     */
+    inline DataflowEndpoint& WithMtu(int value) { SetMtu(value); return *this;}
+
+
+    /**
      * <p>Name of a dataflow endpoint.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
@@ -145,6 +166,9 @@ namespace Model
 
     SocketAddress m_address;
     bool m_addressHasBeenSet;
+
+    int m_mtu;
+    bool m_mtuHasBeenSet;
 
     Aws::String m_name;
     bool m_nameHasBeenSet;

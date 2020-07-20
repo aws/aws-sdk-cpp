@@ -11,6 +11,7 @@
 #include <aws/frauddetector/model/RuleExecutionMode.h>
 #include <aws/frauddetector/model/Rule.h>
 #include <aws/frauddetector/model/ModelVersion.h>
+#include <aws/frauddetector/model/Tag.h>
 #include <utility>
 
 namespace Aws
@@ -320,6 +321,47 @@ namespace Model
      */
     inline CreateDetectorVersionRequest& WithRuleExecutionMode(RuleExecutionMode&& value) { SetRuleExecutionMode(std::move(value)); return *this;}
 
+
+    /**
+     * <p>A collection of key and value pairs.</p>
+     */
+    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>A collection of key and value pairs.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>A collection of key and value pairs.</p>
+     */
+    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>A collection of key and value pairs.</p>
+     */
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>A collection of key and value pairs.</p>
+     */
+    inline CreateDetectorVersionRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>A collection of key and value pairs.</p>
+     */
+    inline CreateDetectorVersionRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>A collection of key and value pairs.</p>
+     */
+    inline CreateDetectorVersionRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+
+    /**
+     * <p>A collection of key and value pairs.</p>
+     */
+    inline CreateDetectorVersionRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_detectorId;
@@ -339,6 +381,9 @@ namespace Model
 
     RuleExecutionMode m_ruleExecutionMode;
     bool m_ruleExecutionModeHasBeenSet;
+
+    Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet;
   };
 
 } // namespace Model

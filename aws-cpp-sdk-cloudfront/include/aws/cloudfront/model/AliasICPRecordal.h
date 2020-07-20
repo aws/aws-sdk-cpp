@@ -33,7 +33,7 @@ namespace Model
    * href="https://docs.amazonaws.cn/en_us/aws/latest/userguide/accounts-and-credentials.html">
    * Signup, Accounts, and Credentials</a> in <i>Getting Started with AWS services in
    * China</i>.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/AliasICPRecordal">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/AliasICPRecordal">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDFRONT_API AliasICPRecordal

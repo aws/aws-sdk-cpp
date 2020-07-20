@@ -77,42 +77,42 @@ namespace Model
 
 
     /**
-     * <p>The model version. </p>
+     * <p>The model version number.</p>
      */
     inline const Aws::String& GetModelVersionNumber() const{ return m_modelVersionNumber; }
 
     /**
-     * <p>The model version. </p>
+     * <p>The model version number.</p>
      */
     inline bool ModelVersionNumberHasBeenSet() const { return m_modelVersionNumberHasBeenSet; }
 
     /**
-     * <p>The model version. </p>
+     * <p>The model version number.</p>
      */
     inline void SetModelVersionNumber(const Aws::String& value) { m_modelVersionNumberHasBeenSet = true; m_modelVersionNumber = value; }
 
     /**
-     * <p>The model version. </p>
+     * <p>The model version number.</p>
      */
     inline void SetModelVersionNumber(Aws::String&& value) { m_modelVersionNumberHasBeenSet = true; m_modelVersionNumber = std::move(value); }
 
     /**
-     * <p>The model version. </p>
+     * <p>The model version number.</p>
      */
     inline void SetModelVersionNumber(const char* value) { m_modelVersionNumberHasBeenSet = true; m_modelVersionNumber.assign(value); }
 
     /**
-     * <p>The model version. </p>
+     * <p>The model version number.</p>
      */
     inline DescribeModelVersionsRequest& WithModelVersionNumber(const Aws::String& value) { SetModelVersionNumber(value); return *this;}
 
     /**
-     * <p>The model version. </p>
+     * <p>The model version number.</p>
      */
     inline DescribeModelVersionsRequest& WithModelVersionNumber(Aws::String&& value) { SetModelVersionNumber(std::move(value)); return *this;}
 
     /**
-     * <p>The model version. </p>
+     * <p>The model version number.</p>
      */
     inline DescribeModelVersionsRequest& WithModelVersionNumber(const char* value) { SetModelVersionNumber(value); return *this;}
 

@@ -29,7 +29,7 @@ namespace Model
    * <p>A streaming distribution tells CloudFront where you want RTMP content to be
    * delivered from, and the details about how to track and manage content
    * delivery.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/StreamingDistribution">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/StreamingDistribution">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDFRONT_API StreamingDistribution

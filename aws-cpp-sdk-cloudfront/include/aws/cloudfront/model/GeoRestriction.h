@@ -28,7 +28,7 @@ namespace Model
    * <p>A complex type that controls the countries in which your content is
    * distributed. CloudFront determines the location of your users using
    * <code>MaxMind</code> GeoIP databases. </p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/GeoRestriction">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GeoRestriction">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDFRONT_API GeoRestriction

@@ -52,7 +52,9 @@ StartBuildRequest::StartBuildRequest() :
     m_logsConfigOverrideHasBeenSet(false),
     m_registryCredentialOverrideHasBeenSet(false),
     m_imagePullCredentialsTypeOverride(ImagePullCredentialsType::NOT_SET),
-    m_imagePullCredentialsTypeOverrideHasBeenSet(false)
+    m_imagePullCredentialsTypeOverrideHasBeenSet(false),
+    m_debugSessionEnabled(false),
+    m_debugSessionEnabledHasBeenSet(false)
 {
 }
 
@@ -254,6 +256,12 @@ Aws::String StartBuildRequest::SerializePayload() const
   if(m_imagePullCredentialsTypeOverrideHasBeenSet)
   {
    payload.WithString("imagePullCredentialsTypeOverride", ImagePullCredentialsTypeMapper::GetNameForImagePullCredentialsType(m_imagePullCredentialsTypeOverride));
+  }
+
+  if(m_debugSessionEnabledHasBeenSet)
+  {
+   payload.WithBool("debugSessionEnabled", m_debugSessionEnabled);
+
   }
 
   return payload.View().WriteReadable();

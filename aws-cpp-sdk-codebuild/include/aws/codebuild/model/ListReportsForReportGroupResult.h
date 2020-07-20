@@ -112,42 +112,42 @@ namespace Model
 
 
     /**
-     * <p> The list of returned report group ARNs. </p>
+     * <p> The list of report ARNs. </p>
      */
     inline const Aws::Vector<Aws::String>& GetReports() const{ return m_reports; }
 
     /**
-     * <p> The list of returned report group ARNs. </p>
+     * <p> The list of report ARNs. </p>
      */
     inline void SetReports(const Aws::Vector<Aws::String>& value) { m_reports = value; }
 
     /**
-     * <p> The list of returned report group ARNs. </p>
+     * <p> The list of report ARNs. </p>
      */
     inline void SetReports(Aws::Vector<Aws::String>&& value) { m_reports = std::move(value); }
 
     /**
-     * <p> The list of returned report group ARNs. </p>
+     * <p> The list of report ARNs. </p>
      */
     inline ListReportsForReportGroupResult& WithReports(const Aws::Vector<Aws::String>& value) { SetReports(value); return *this;}
 
     /**
-     * <p> The list of returned report group ARNs. </p>
+     * <p> The list of report ARNs. </p>
      */
     inline ListReportsForReportGroupResult& WithReports(Aws::Vector<Aws::String>&& value) { SetReports(std::move(value)); return *this;}
 
     /**
-     * <p> The list of returned report group ARNs. </p>
+     * <p> The list of report ARNs. </p>
      */
     inline ListReportsForReportGroupResult& AddReports(const Aws::String& value) { m_reports.push_back(value); return *this; }
 
     /**
-     * <p> The list of returned report group ARNs. </p>
+     * <p> The list of report ARNs. </p>
      */
     inline ListReportsForReportGroupResult& AddReports(Aws::String&& value) { m_reports.push_back(std::move(value)); return *this; }
 
     /**
-     * <p> The list of returned report group ARNs. </p>
+     * <p> The list of report ARNs. </p>
      */
     inline ListReportsForReportGroupResult& AddReports(const char* value) { m_reports.push_back(value); return *this; }
 

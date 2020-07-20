@@ -100,6 +100,27 @@ namespace Model
      */
     inline AntennaUplinkConfig& WithTargetEirp(Eirp&& value) { SetTargetEirp(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Whether or not uplink transmit is disabled.</p>
+     */
+    inline bool GetTransmitDisabled() const{ return m_transmitDisabled; }
+
+    /**
+     * <p>Whether or not uplink transmit is disabled.</p>
+     */
+    inline bool TransmitDisabledHasBeenSet() const { return m_transmitDisabledHasBeenSet; }
+
+    /**
+     * <p>Whether or not uplink transmit is disabled.</p>
+     */
+    inline void SetTransmitDisabled(bool value) { m_transmitDisabledHasBeenSet = true; m_transmitDisabled = value; }
+
+    /**
+     * <p>Whether or not uplink transmit is disabled.</p>
+     */
+    inline AntennaUplinkConfig& WithTransmitDisabled(bool value) { SetTransmitDisabled(value); return *this;}
+
   private:
 
     UplinkSpectrumConfig m_spectrumConfig;
@@ -107,6 +128,9 @@ namespace Model
 
     Eirp m_targetEirp;
     bool m_targetEirpHasBeenSet;
+
+    bool m_transmitDisabled;
+    bool m_transmitDisabledHasBeenSet;
   };
 
 } // namespace Model

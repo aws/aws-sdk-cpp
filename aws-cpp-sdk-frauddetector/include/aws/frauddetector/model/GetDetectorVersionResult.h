@@ -411,6 +411,42 @@ namespace Model
      */
     inline GetDetectorVersionResult& WithRuleExecutionMode(RuleExecutionMode&& value) { SetRuleExecutionMode(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The detector version ARN.</p>
+     */
+    inline const Aws::String& GetArn() const{ return m_arn; }
+
+    /**
+     * <p>The detector version ARN.</p>
+     */
+    inline void SetArn(const Aws::String& value) { m_arn = value; }
+
+    /**
+     * <p>The detector version ARN.</p>
+     */
+    inline void SetArn(Aws::String&& value) { m_arn = std::move(value); }
+
+    /**
+     * <p>The detector version ARN.</p>
+     */
+    inline void SetArn(const char* value) { m_arn.assign(value); }
+
+    /**
+     * <p>The detector version ARN.</p>
+     */
+    inline GetDetectorVersionResult& WithArn(const Aws::String& value) { SetArn(value); return *this;}
+
+    /**
+     * <p>The detector version ARN.</p>
+     */
+    inline GetDetectorVersionResult& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The detector version ARN.</p>
+     */
+    inline GetDetectorVersionResult& WithArn(const char* value) { SetArn(value); return *this;}
+
   private:
 
     Aws::String m_detectorId;
@@ -432,6 +468,8 @@ namespace Model
     Aws::String m_createdTime;
 
     RuleExecutionMode m_ruleExecutionMode;
+
+    Aws::String m_arn;
   };
 
 } // namespace Model

@@ -14,13 +14,15 @@ using namespace Aws::Utils;
 
 PutExternalModelRequest::PutExternalModelRequest() : 
     m_modelEndpointHasBeenSet(false),
+    m_eventTypeNameHasBeenSet(false),
     m_modelSource(ModelSource::NOT_SET),
     m_modelSourceHasBeenSet(false),
     m_roleHasBeenSet(false),
     m_inputConfigurationHasBeenSet(false),
     m_outputConfigurationHasBeenSet(false),
     m_modelEndpointStatus(ModelEndpointStatus::NOT_SET),
-    m_modelEndpointStatusHasBeenSet(false)
+    m_modelEndpointStatusHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -31,6 +33,12 @@ Aws::String PutExternalModelRequest::SerializePayload() const
   if(m_modelEndpointHasBeenSet)
   {
    payload.WithString("modelEndpoint", m_modelEndpoint);
+
+  }
+
+  if(m_eventTypeNameHasBeenSet)
+  {
+   payload.WithString("eventTypeName", m_eventTypeName);
 
   }
 
@@ -60,6 +68,17 @@ Aws::String PutExternalModelRequest::SerializePayload() const
   if(m_modelEndpointStatusHasBeenSet)
   {
    payload.WithString("modelEndpointStatus", ModelEndpointStatusMapper::GetNameForModelEndpointStatus(m_modelEndpointStatus));
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   Array<JsonValue> tagsJsonList(m_tags.size());
+   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+   {
+     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+   }
+   payload.WithArray("tags", std::move(tagsJsonList));
+
   }
 
   return payload.View().WriteReadable();

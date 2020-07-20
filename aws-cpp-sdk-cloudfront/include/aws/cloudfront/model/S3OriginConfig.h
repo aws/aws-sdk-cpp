@@ -27,7 +27,7 @@ namespace Model
    * origin is a custom origin or an S3 bucket that is configured as a website
    * endpoint, use the <code>CustomOriginConfig</code> element instead.</p><p><h3>See
    * Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/S3OriginConfig">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/S3OriginConfig">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDFRONT_API S3OriginConfig

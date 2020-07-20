@@ -23,46 +23,36 @@ namespace Model
 CacheBehavior::CacheBehavior() : 
     m_pathPatternHasBeenSet(false),
     m_targetOriginIdHasBeenSet(false),
-    m_forwardedValuesHasBeenSet(false),
     m_trustedSignersHasBeenSet(false),
     m_viewerProtocolPolicy(ViewerProtocolPolicy::NOT_SET),
     m_viewerProtocolPolicyHasBeenSet(false),
-    m_minTTL(0),
-    m_minTTLHasBeenSet(false),
     m_allowedMethodsHasBeenSet(false),
     m_smoothStreaming(false),
     m_smoothStreamingHasBeenSet(false),
-    m_defaultTTL(0),
-    m_defaultTTLHasBeenSet(false),
-    m_maxTTL(0),
-    m_maxTTLHasBeenSet(false),
     m_compress(false),
     m_compressHasBeenSet(false),
     m_lambdaFunctionAssociationsHasBeenSet(false),
-    m_fieldLevelEncryptionIdHasBeenSet(false)
+    m_fieldLevelEncryptionIdHasBeenSet(false),
+    m_cachePolicyIdHasBeenSet(false),
+    m_originRequestPolicyIdHasBeenSet(false)
 {
 }
 
 CacheBehavior::CacheBehavior(const XmlNode& xmlNode) : 
     m_pathPatternHasBeenSet(false),
     m_targetOriginIdHasBeenSet(false),
-    m_forwardedValuesHasBeenSet(false),
     m_trustedSignersHasBeenSet(false),
     m_viewerProtocolPolicy(ViewerProtocolPolicy::NOT_SET),
     m_viewerProtocolPolicyHasBeenSet(false),
-    m_minTTL(0),
-    m_minTTLHasBeenSet(false),
     m_allowedMethodsHasBeenSet(false),
     m_smoothStreaming(false),
     m_smoothStreamingHasBeenSet(false),
-    m_defaultTTL(0),
-    m_defaultTTLHasBeenSet(false),
-    m_maxTTL(0),
-    m_maxTTLHasBeenSet(false),
     m_compress(false),
     m_compressHasBeenSet(false),
     m_lambdaFunctionAssociationsHasBeenSet(false),
-    m_fieldLevelEncryptionIdHasBeenSet(false)
+    m_fieldLevelEncryptionIdHasBeenSet(false),
+    m_cachePolicyIdHasBeenSet(false),
+    m_originRequestPolicyIdHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -85,12 +75,6 @@ CacheBehavior& CacheBehavior::operator =(const XmlNode& xmlNode)
       m_targetOriginId = Aws::Utils::Xml::DecodeEscapedXmlText(targetOriginIdNode.GetText());
       m_targetOriginIdHasBeenSet = true;
     }
-    XmlNode forwardedValuesNode = resultNode.FirstChild("ForwardedValues");
-    if(!forwardedValuesNode.IsNull())
-    {
-      m_forwardedValues = forwardedValuesNode;
-      m_forwardedValuesHasBeenSet = true;
-    }
     XmlNode trustedSignersNode = resultNode.FirstChild("TrustedSigners");
     if(!trustedSignersNode.IsNull())
     {
@@ -103,12 +87,6 @@ CacheBehavior& CacheBehavior::operator =(const XmlNode& xmlNode)
       m_viewerProtocolPolicy = ViewerProtocolPolicyMapper::GetViewerProtocolPolicyForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(viewerProtocolPolicyNode.GetText()).c_str()).c_str());
       m_viewerProtocolPolicyHasBeenSet = true;
     }
-    XmlNode minTTLNode = resultNode.FirstChild("MinTTL");
-    if(!minTTLNode.IsNull())
-    {
-      m_minTTL = StringUtils::ConvertToInt64(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(minTTLNode.GetText()).c_str()).c_str());
-      m_minTTLHasBeenSet = true;
-    }
     XmlNode allowedMethodsNode = resultNode.FirstChild("AllowedMethods");
     if(!allowedMethodsNode.IsNull())
     {
@@ -120,18 +98,6 @@ CacheBehavior& CacheBehavior::operator =(const XmlNode& xmlNode)
     {
       m_smoothStreaming = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(smoothStreamingNode.GetText()).c_str()).c_str());
       m_smoothStreamingHasBeenSet = true;
-    }
-    XmlNode defaultTTLNode = resultNode.FirstChild("DefaultTTL");
-    if(!defaultTTLNode.IsNull())
-    {
-      m_defaultTTL = StringUtils::ConvertToInt64(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(defaultTTLNode.GetText()).c_str()).c_str());
-      m_defaultTTLHasBeenSet = true;
-    }
-    XmlNode maxTTLNode = resultNode.FirstChild("MaxTTL");
-    if(!maxTTLNode.IsNull())
-    {
-      m_maxTTL = StringUtils::ConvertToInt64(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(maxTTLNode.GetText()).c_str()).c_str());
-      m_maxTTLHasBeenSet = true;
     }
     XmlNode compressNode = resultNode.FirstChild("Compress");
     if(!compressNode.IsNull())
@@ -150,6 +116,18 @@ CacheBehavior& CacheBehavior::operator =(const XmlNode& xmlNode)
     {
       m_fieldLevelEncryptionId = Aws::Utils::Xml::DecodeEscapedXmlText(fieldLevelEncryptionIdNode.GetText());
       m_fieldLevelEncryptionIdHasBeenSet = true;
+    }
+    XmlNode cachePolicyIdNode = resultNode.FirstChild("CachePolicyId");
+    if(!cachePolicyIdNode.IsNull())
+    {
+      m_cachePolicyId = Aws::Utils::Xml::DecodeEscapedXmlText(cachePolicyIdNode.GetText());
+      m_cachePolicyIdHasBeenSet = true;
+    }
+    XmlNode originRequestPolicyIdNode = resultNode.FirstChild("OriginRequestPolicyId");
+    if(!originRequestPolicyIdNode.IsNull())
+    {
+      m_originRequestPolicyId = Aws::Utils::Xml::DecodeEscapedXmlText(originRequestPolicyIdNode.GetText());
+      m_originRequestPolicyIdHasBeenSet = true;
     }
   }
 
@@ -171,12 +149,6 @@ void CacheBehavior::AddToNode(XmlNode& parentNode) const
    targetOriginIdNode.SetText(m_targetOriginId);
   }
 
-  if(m_forwardedValuesHasBeenSet)
-  {
-   XmlNode forwardedValuesNode = parentNode.CreateChildElement("ForwardedValues");
-   m_forwardedValues.AddToNode(forwardedValuesNode);
-  }
-
   if(m_trustedSignersHasBeenSet)
   {
    XmlNode trustedSignersNode = parentNode.CreateChildElement("TrustedSigners");
@@ -187,14 +159,6 @@ void CacheBehavior::AddToNode(XmlNode& parentNode) const
   {
    XmlNode viewerProtocolPolicyNode = parentNode.CreateChildElement("ViewerProtocolPolicy");
    viewerProtocolPolicyNode.SetText(ViewerProtocolPolicyMapper::GetNameForViewerProtocolPolicy(m_viewerProtocolPolicy));
-  }
-
-  if(m_minTTLHasBeenSet)
-  {
-   XmlNode minTTLNode = parentNode.CreateChildElement("MinTTL");
-   ss << m_minTTL;
-   minTTLNode.SetText(ss.str());
-   ss.str("");
   }
 
   if(m_allowedMethodsHasBeenSet)
@@ -208,22 +172,6 @@ void CacheBehavior::AddToNode(XmlNode& parentNode) const
    XmlNode smoothStreamingNode = parentNode.CreateChildElement("SmoothStreaming");
    ss << std::boolalpha << m_smoothStreaming;
    smoothStreamingNode.SetText(ss.str());
-   ss.str("");
-  }
-
-  if(m_defaultTTLHasBeenSet)
-  {
-   XmlNode defaultTTLNode = parentNode.CreateChildElement("DefaultTTL");
-   ss << m_defaultTTL;
-   defaultTTLNode.SetText(ss.str());
-   ss.str("");
-  }
-
-  if(m_maxTTLHasBeenSet)
-  {
-   XmlNode maxTTLNode = parentNode.CreateChildElement("MaxTTL");
-   ss << m_maxTTL;
-   maxTTLNode.SetText(ss.str());
    ss.str("");
   }
 
@@ -245,6 +193,18 @@ void CacheBehavior::AddToNode(XmlNode& parentNode) const
   {
    XmlNode fieldLevelEncryptionIdNode = parentNode.CreateChildElement("FieldLevelEncryptionId");
    fieldLevelEncryptionIdNode.SetText(m_fieldLevelEncryptionId);
+  }
+
+  if(m_cachePolicyIdHasBeenSet)
+  {
+   XmlNode cachePolicyIdNode = parentNode.CreateChildElement("CachePolicyId");
+   cachePolicyIdNode.SetText(m_cachePolicyId);
+  }
+
+  if(m_originRequestPolicyIdHasBeenSet)
+  {
+   XmlNode originRequestPolicyIdNode = parentNode.CreateChildElement("OriginRequestPolicyId");
+   originRequestPolicyIdNode.SetText(m_originRequestPolicyId);
   }
 
 }

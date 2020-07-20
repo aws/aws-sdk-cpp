@@ -16,7 +16,8 @@ CreateVpcPeeringConnectionRequest::CreateVpcPeeringConnectionRequest() :
     m_peerOwnerIdHasBeenSet(false),
     m_peerVpcIdHasBeenSet(false),
     m_vpcIdHasBeenSet(false),
-    m_peerRegionHasBeenSet(false)
+    m_peerRegionHasBeenSet(false),
+    m_tagSpecificationsHasBeenSet(false)
 {
 }
 
@@ -47,6 +48,16 @@ Aws::String CreateVpcPeeringConnectionRequest::SerializePayload() const
   if(m_peerRegionHasBeenSet)
   {
     ss << "PeerRegion=" << StringUtils::URLEncode(m_peerRegion.c_str()) << "&";
+  }
+
+  if(m_tagSpecificationsHasBeenSet)
+  {
+    unsigned tagSpecificationsCount = 1;
+    for(auto& item : m_tagSpecifications)
+    {
+      item.OutputToStream(ss, "TagSpecification.", tagSpecificationsCount, "");
+      tagSpecificationsCount++;
+    }
   }
 
   ss << "Version=2016-11-15";

@@ -31,7 +31,7 @@ namespace Model
    * <p>A distribution tells CloudFront where you want content to be delivered from,
    * and the details about how to track and manage content delivery.</p><p><h3>See
    * Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/Distribution">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/Distribution">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDFRONT_API Distribution

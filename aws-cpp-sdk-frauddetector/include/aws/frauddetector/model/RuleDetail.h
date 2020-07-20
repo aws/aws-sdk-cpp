@@ -402,6 +402,47 @@ namespace Model
      */
     inline RuleDetail& WithCreatedTime(const char* value) { SetCreatedTime(value); return *this;}
 
+
+    /**
+     * <p>The rule ARN.</p>
+     */
+    inline const Aws::String& GetArn() const{ return m_arn; }
+
+    /**
+     * <p>The rule ARN.</p>
+     */
+    inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
+
+    /**
+     * <p>The rule ARN.</p>
+     */
+    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
+
+    /**
+     * <p>The rule ARN.</p>
+     */
+    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
+
+    /**
+     * <p>The rule ARN.</p>
+     */
+    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
+
+    /**
+     * <p>The rule ARN.</p>
+     */
+    inline RuleDetail& WithArn(const Aws::String& value) { SetArn(value); return *this;}
+
+    /**
+     * <p>The rule ARN.</p>
+     */
+    inline RuleDetail& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The rule ARN.</p>
+     */
+    inline RuleDetail& WithArn(const char* value) { SetArn(value); return *this;}
+
   private:
 
     Aws::String m_ruleId;
@@ -430,6 +471,9 @@ namespace Model
 
     Aws::String m_createdTime;
     bool m_createdTimeHasBeenSet;
+
+    Aws::String m_arn;
+    bool m_arnHasBeenSet;
   };
 
 } // namespace Model

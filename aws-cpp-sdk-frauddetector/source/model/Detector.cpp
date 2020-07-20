@@ -21,16 +21,20 @@ namespace Model
 Detector::Detector() : 
     m_detectorIdHasBeenSet(false),
     m_descriptionHasBeenSet(false),
+    m_eventTypeNameHasBeenSet(false),
     m_lastUpdatedTimeHasBeenSet(false),
-    m_createdTimeHasBeenSet(false)
+    m_createdTimeHasBeenSet(false),
+    m_arnHasBeenSet(false)
 {
 }
 
 Detector::Detector(JsonView jsonValue) : 
     m_detectorIdHasBeenSet(false),
     m_descriptionHasBeenSet(false),
+    m_eventTypeNameHasBeenSet(false),
     m_lastUpdatedTimeHasBeenSet(false),
-    m_createdTimeHasBeenSet(false)
+    m_createdTimeHasBeenSet(false),
+    m_arnHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -51,6 +55,13 @@ Detector& Detector::operator =(JsonView jsonValue)
     m_descriptionHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("eventTypeName"))
+  {
+    m_eventTypeName = jsonValue.GetString("eventTypeName");
+
+    m_eventTypeNameHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("lastUpdatedTime"))
   {
     m_lastUpdatedTime = jsonValue.GetString("lastUpdatedTime");
@@ -63,6 +74,13 @@ Detector& Detector::operator =(JsonView jsonValue)
     m_createdTime = jsonValue.GetString("createdTime");
 
     m_createdTimeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("arn"))
+  {
+    m_arn = jsonValue.GetString("arn");
+
+    m_arnHasBeenSet = true;
   }
 
   return *this;
@@ -84,6 +102,12 @@ JsonValue Detector::Jsonize() const
 
   }
 
+  if(m_eventTypeNameHasBeenSet)
+  {
+   payload.WithString("eventTypeName", m_eventTypeName);
+
+  }
+
   if(m_lastUpdatedTimeHasBeenSet)
   {
    payload.WithString("lastUpdatedTime", m_lastUpdatedTime);
@@ -93,6 +117,12 @@ JsonValue Detector::Jsonize() const
   if(m_createdTimeHasBeenSet)
   {
    payload.WithString("createdTime", m_createdTime);
+
+  }
+
+  if(m_arnHasBeenSet)
+  {
+   payload.WithString("arn", m_arn);
 
   }
 

@@ -37,7 +37,11 @@ DBEngineVersion::DBEngineVersion() :
     m_supportsReadReplicaHasBeenSet(false),
     m_supportedEngineModesHasBeenSet(false),
     m_supportedFeatureNamesHasBeenSet(false),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_supportsParallelQuery(false),
+    m_supportsParallelQueryHasBeenSet(false),
+    m_supportsGlobalDatabases(false),
+    m_supportsGlobalDatabasesHasBeenSet(false)
 {
 }
 
@@ -58,7 +62,11 @@ DBEngineVersion::DBEngineVersion(const XmlNode& xmlNode) :
     m_supportsReadReplicaHasBeenSet(false),
     m_supportedEngineModesHasBeenSet(false),
     m_supportedFeatureNamesHasBeenSet(false),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_supportsParallelQuery(false),
+    m_supportsParallelQueryHasBeenSet(false),
+    m_supportsGlobalDatabases(false),
+    m_supportsGlobalDatabasesHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -195,6 +203,18 @@ DBEngineVersion& DBEngineVersion::operator =(const XmlNode& xmlNode)
       m_status = Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText());
       m_statusHasBeenSet = true;
     }
+    XmlNode supportsParallelQueryNode = resultNode.FirstChild("SupportsParallelQuery");
+    if(!supportsParallelQueryNode.IsNull())
+    {
+      m_supportsParallelQuery = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(supportsParallelQueryNode.GetText()).c_str()).c_str());
+      m_supportsParallelQueryHasBeenSet = true;
+    }
+    XmlNode supportsGlobalDatabasesNode = resultNode.FirstChild("SupportsGlobalDatabases");
+    if(!supportsGlobalDatabasesNode.IsNull())
+    {
+      m_supportsGlobalDatabases = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(supportsGlobalDatabasesNode.GetText()).c_str()).c_str());
+      m_supportsGlobalDatabasesHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -309,6 +329,16 @@ void DBEngineVersion::OutputToStream(Aws::OStream& oStream, const char* location
       oStream << location << index << locationValue << ".Status=" << StringUtils::URLEncode(m_status.c_str()) << "&";
   }
 
+  if(m_supportsParallelQueryHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".SupportsParallelQuery=" << std::boolalpha << m_supportsParallelQuery << "&";
+  }
+
+  if(m_supportsGlobalDatabasesHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".SupportsGlobalDatabases=" << std::boolalpha << m_supportsGlobalDatabases << "&";
+  }
+
 }
 
 void DBEngineVersion::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -404,6 +434,14 @@ void DBEngineVersion::OutputToStream(Aws::OStream& oStream, const char* location
   if(m_statusHasBeenSet)
   {
       oStream << location << ".Status=" << StringUtils::URLEncode(m_status.c_str()) << "&";
+  }
+  if(m_supportsParallelQueryHasBeenSet)
+  {
+      oStream << location << ".SupportsParallelQuery=" << std::boolalpha << m_supportsParallelQuery << "&";
+  }
+  if(m_supportsGlobalDatabasesHasBeenSet)
+  {
+      oStream << location << ".SupportsGlobalDatabases=" << std::boolalpha << m_supportsGlobalDatabases << "&";
   }
 }
 

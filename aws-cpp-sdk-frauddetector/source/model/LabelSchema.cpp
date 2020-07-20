@@ -19,13 +19,11 @@ namespace Model
 {
 
 LabelSchema::LabelSchema() : 
-    m_labelKeyHasBeenSet(false),
     m_labelMapperHasBeenSet(false)
 {
 }
 
 LabelSchema::LabelSchema(JsonView jsonValue) : 
-    m_labelKeyHasBeenSet(false),
     m_labelMapperHasBeenSet(false)
 {
   *this = jsonValue;
@@ -33,13 +31,6 @@ LabelSchema::LabelSchema(JsonView jsonValue) :
 
 LabelSchema& LabelSchema::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("labelKey"))
-  {
-    m_labelKey = jsonValue.GetString("labelKey");
-
-    m_labelKeyHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("labelMapper"))
   {
     Aws::Map<Aws::String, JsonView> labelMapperJsonMap = jsonValue.GetObject("labelMapper").GetAllObjects();
@@ -63,12 +54,6 @@ LabelSchema& LabelSchema::operator =(JsonView jsonValue)
 JsonValue LabelSchema::Jsonize() const
 {
   JsonValue payload;
-
-  if(m_labelKeyHasBeenSet)
-  {
-   payload.WithString("labelKey", m_labelKey);
-
-  }
 
   if(m_labelMapperHasBeenSet)
   {

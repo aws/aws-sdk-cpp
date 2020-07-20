@@ -42,7 +42,7 @@ namespace Model
    * <p>For more information about updating the distribution configuration, see <a
    * href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/DistributionConfig.html">DistributionConfig</a>
    * in the <i>Amazon CloudFront API Reference</i>.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/TrustedSigners">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/TrustedSigners">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDFRONT_API TrustedSigners

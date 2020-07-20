@@ -23,15 +23,15 @@ ModelVersionDetail::ModelVersionDetail() :
     m_modelType(ModelTypeEnum::NOT_SET),
     m_modelTypeHasBeenSet(false),
     m_modelVersionNumberHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
     m_statusHasBeenSet(false),
+    m_trainingDataSource(TrainingDataSourceEnum::NOT_SET),
     m_trainingDataSourceHasBeenSet(false),
-    m_modelVariablesHasBeenSet(false),
-    m_labelSchemaHasBeenSet(false),
-    m_validationMetricsHasBeenSet(false),
-    m_trainingMetricsHasBeenSet(false),
+    m_trainingDataSchemaHasBeenSet(false),
+    m_externalEventsDetailHasBeenSet(false),
+    m_trainingResultHasBeenSet(false),
     m_lastUpdatedTimeHasBeenSet(false),
-    m_createdTimeHasBeenSet(false)
+    m_createdTimeHasBeenSet(false),
+    m_arnHasBeenSet(false)
 {
 }
 
@@ -40,15 +40,15 @@ ModelVersionDetail::ModelVersionDetail(JsonView jsonValue) :
     m_modelType(ModelTypeEnum::NOT_SET),
     m_modelTypeHasBeenSet(false),
     m_modelVersionNumberHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
     m_statusHasBeenSet(false),
+    m_trainingDataSource(TrainingDataSourceEnum::NOT_SET),
     m_trainingDataSourceHasBeenSet(false),
-    m_modelVariablesHasBeenSet(false),
-    m_labelSchemaHasBeenSet(false),
-    m_validationMetricsHasBeenSet(false),
-    m_trainingMetricsHasBeenSet(false),
+    m_trainingDataSchemaHasBeenSet(false),
+    m_externalEventsDetailHasBeenSet(false),
+    m_trainingResultHasBeenSet(false),
     m_lastUpdatedTimeHasBeenSet(false),
-    m_createdTimeHasBeenSet(false)
+    m_createdTimeHasBeenSet(false),
+    m_arnHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -76,13 +76,6 @@ ModelVersionDetail& ModelVersionDetail::operator =(JsonView jsonValue)
     m_modelVersionNumberHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("description"))
-  {
-    m_description = jsonValue.GetString("description");
-
-    m_descriptionHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = jsonValue.GetString("status");
@@ -92,46 +85,30 @@ ModelVersionDetail& ModelVersionDetail::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("trainingDataSource"))
   {
-    m_trainingDataSource = jsonValue.GetObject("trainingDataSource");
+    m_trainingDataSource = TrainingDataSourceEnumMapper::GetTrainingDataSourceEnumForName(jsonValue.GetString("trainingDataSource"));
 
     m_trainingDataSourceHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("modelVariables"))
+  if(jsonValue.ValueExists("trainingDataSchema"))
   {
-    Array<JsonView> modelVariablesJsonList = jsonValue.GetArray("modelVariables");
-    for(unsigned modelVariablesIndex = 0; modelVariablesIndex < modelVariablesJsonList.GetLength(); ++modelVariablesIndex)
-    {
-      m_modelVariables.push_back(modelVariablesJsonList[modelVariablesIndex].AsObject());
-    }
-    m_modelVariablesHasBeenSet = true;
+    m_trainingDataSchema = jsonValue.GetObject("trainingDataSchema");
+
+    m_trainingDataSchemaHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("labelSchema"))
+  if(jsonValue.ValueExists("externalEventsDetail"))
   {
-    m_labelSchema = jsonValue.GetObject("labelSchema");
+    m_externalEventsDetail = jsonValue.GetObject("externalEventsDetail");
 
-    m_labelSchemaHasBeenSet = true;
+    m_externalEventsDetailHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("validationMetrics"))
+  if(jsonValue.ValueExists("trainingResult"))
   {
-    Aws::Map<Aws::String, JsonView> validationMetricsJsonMap = jsonValue.GetObject("validationMetrics").GetAllObjects();
-    for(auto& validationMetricsItem : validationMetricsJsonMap)
-    {
-      m_validationMetrics[validationMetricsItem.first] = validationMetricsItem.second.AsString();
-    }
-    m_validationMetricsHasBeenSet = true;
-  }
+    m_trainingResult = jsonValue.GetObject("trainingResult");
 
-  if(jsonValue.ValueExists("trainingMetrics"))
-  {
-    Aws::Map<Aws::String, JsonView> trainingMetricsJsonMap = jsonValue.GetObject("trainingMetrics").GetAllObjects();
-    for(auto& trainingMetricsItem : trainingMetricsJsonMap)
-    {
-      m_trainingMetrics[trainingMetricsItem.first] = trainingMetricsItem.second.AsString();
-    }
-    m_trainingMetricsHasBeenSet = true;
+    m_trainingResultHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("lastUpdatedTime"))
@@ -146,6 +123,13 @@ ModelVersionDetail& ModelVersionDetail::operator =(JsonView jsonValue)
     m_createdTime = jsonValue.GetString("createdTime");
 
     m_createdTimeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("arn"))
+  {
+    m_arn = jsonValue.GetString("arn");
+
+    m_arnHasBeenSet = true;
   }
 
   return *this;
@@ -172,12 +156,6 @@ JsonValue ModelVersionDetail::Jsonize() const
 
   }
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("description", m_description);
-
-  }
-
   if(m_statusHasBeenSet)
   {
    payload.WithString("status", m_status);
@@ -186,46 +164,24 @@ JsonValue ModelVersionDetail::Jsonize() const
 
   if(m_trainingDataSourceHasBeenSet)
   {
-   payload.WithObject("trainingDataSource", m_trainingDataSource.Jsonize());
+   payload.WithString("trainingDataSource", TrainingDataSourceEnumMapper::GetNameForTrainingDataSourceEnum(m_trainingDataSource));
+  }
+
+  if(m_trainingDataSchemaHasBeenSet)
+  {
+   payload.WithObject("trainingDataSchema", m_trainingDataSchema.Jsonize());
 
   }
 
-  if(m_modelVariablesHasBeenSet)
+  if(m_externalEventsDetailHasBeenSet)
   {
-   Array<JsonValue> modelVariablesJsonList(m_modelVariables.size());
-   for(unsigned modelVariablesIndex = 0; modelVariablesIndex < modelVariablesJsonList.GetLength(); ++modelVariablesIndex)
-   {
-     modelVariablesJsonList[modelVariablesIndex].AsObject(m_modelVariables[modelVariablesIndex].Jsonize());
-   }
-   payload.WithArray("modelVariables", std::move(modelVariablesJsonList));
+   payload.WithObject("externalEventsDetail", m_externalEventsDetail.Jsonize());
 
   }
 
-  if(m_labelSchemaHasBeenSet)
+  if(m_trainingResultHasBeenSet)
   {
-   payload.WithObject("labelSchema", m_labelSchema.Jsonize());
-
-  }
-
-  if(m_validationMetricsHasBeenSet)
-  {
-   JsonValue validationMetricsJsonMap;
-   for(auto& validationMetricsItem : m_validationMetrics)
-   {
-     validationMetricsJsonMap.WithString(validationMetricsItem.first, validationMetricsItem.second);
-   }
-   payload.WithObject("validationMetrics", std::move(validationMetricsJsonMap));
-
-  }
-
-  if(m_trainingMetricsHasBeenSet)
-  {
-   JsonValue trainingMetricsJsonMap;
-   for(auto& trainingMetricsItem : m_trainingMetrics)
-   {
-     trainingMetricsJsonMap.WithString(trainingMetricsItem.first, trainingMetricsItem.second);
-   }
-   payload.WithObject("trainingMetrics", std::move(trainingMetricsJsonMap));
+   payload.WithObject("trainingResult", m_trainingResult.Jsonize());
 
   }
 
@@ -238,6 +194,12 @@ JsonValue ModelVersionDetail::Jsonize() const
   if(m_createdTimeHasBeenSet)
   {
    payload.WithString("createdTime", m_createdTime);
+
+  }
+
+  if(m_arnHasBeenSet)
+  {
+   payload.WithString("arn", m_arn);
 
   }
 

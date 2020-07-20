@@ -26,7 +26,7 @@ namespace Model
   /**
    * <p>A complex type that contains a Lambda function association.</p><p><h3>See
    * Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/LambdaFunctionAssociation">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/LambdaFunctionAssociation">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDFRONT_API LambdaFunctionAssociation
@@ -94,16 +94,16 @@ namespace Model
      * function executes when CloudFront receives a request from a viewer and before it
      * checks to see whether the requested object is in the edge cache. </p> </li> <li>
      * <p> <code>origin-request</code>: The function executes only when CloudFront
-     * forwards a request to your origin. When the requested object is in the edge
-     * cache, the function doesn't execute.</p> </li> <li> <p>
-     * <code>origin-response</code>: The function executes after CloudFront receives a
-     * response from the origin and before it caches the object in the response. When
-     * the requested object is in the edge cache, the function doesn't execute.</p>
-     * </li> <li> <p> <code>viewer-response</code>: The function executes before
-     * CloudFront returns the requested object to the viewer. The function executes
-     * regardless of whether the object was already in the edge cache.</p> <p>If the
-     * origin returns an HTTP status code other than HTTP 200 (OK), the function
-     * doesn't execute.</p> </li> </ul>
+     * sends a request to your origin. When the requested object is in the edge cache,
+     * the function doesn't execute.</p> </li> <li> <p> <code>origin-response</code>:
+     * The function executes after CloudFront receives a response from the origin and
+     * before it caches the object in the response. When the requested object is in the
+     * edge cache, the function doesn't execute.</p> </li> <li> <p>
+     * <code>viewer-response</code>: The function executes before CloudFront returns
+     * the requested object to the viewer. The function executes regardless of whether
+     * the object was already in the edge cache.</p> <p>If the origin returns an HTTP
+     * status code other than HTTP 200 (OK), the function doesn't execute.</p> </li>
+     * </ul>
      */
     inline const EventType& GetEventType() const{ return m_eventType; }
 
@@ -113,16 +113,16 @@ namespace Model
      * function executes when CloudFront receives a request from a viewer and before it
      * checks to see whether the requested object is in the edge cache. </p> </li> <li>
      * <p> <code>origin-request</code>: The function executes only when CloudFront
-     * forwards a request to your origin. When the requested object is in the edge
-     * cache, the function doesn't execute.</p> </li> <li> <p>
-     * <code>origin-response</code>: The function executes after CloudFront receives a
-     * response from the origin and before it caches the object in the response. When
-     * the requested object is in the edge cache, the function doesn't execute.</p>
-     * </li> <li> <p> <code>viewer-response</code>: The function executes before
-     * CloudFront returns the requested object to the viewer. The function executes
-     * regardless of whether the object was already in the edge cache.</p> <p>If the
-     * origin returns an HTTP status code other than HTTP 200 (OK), the function
-     * doesn't execute.</p> </li> </ul>
+     * sends a request to your origin. When the requested object is in the edge cache,
+     * the function doesn't execute.</p> </li> <li> <p> <code>origin-response</code>:
+     * The function executes after CloudFront receives a response from the origin and
+     * before it caches the object in the response. When the requested object is in the
+     * edge cache, the function doesn't execute.</p> </li> <li> <p>
+     * <code>viewer-response</code>: The function executes before CloudFront returns
+     * the requested object to the viewer. The function executes regardless of whether
+     * the object was already in the edge cache.</p> <p>If the origin returns an HTTP
+     * status code other than HTTP 200 (OK), the function doesn't execute.</p> </li>
+     * </ul>
      */
     inline bool EventTypeHasBeenSet() const { return m_eventTypeHasBeenSet; }
 
@@ -132,16 +132,16 @@ namespace Model
      * function executes when CloudFront receives a request from a viewer and before it
      * checks to see whether the requested object is in the edge cache. </p> </li> <li>
      * <p> <code>origin-request</code>: The function executes only when CloudFront
-     * forwards a request to your origin. When the requested object is in the edge
-     * cache, the function doesn't execute.</p> </li> <li> <p>
-     * <code>origin-response</code>: The function executes after CloudFront receives a
-     * response from the origin and before it caches the object in the response. When
-     * the requested object is in the edge cache, the function doesn't execute.</p>
-     * </li> <li> <p> <code>viewer-response</code>: The function executes before
-     * CloudFront returns the requested object to the viewer. The function executes
-     * regardless of whether the object was already in the edge cache.</p> <p>If the
-     * origin returns an HTTP status code other than HTTP 200 (OK), the function
-     * doesn't execute.</p> </li> </ul>
+     * sends a request to your origin. When the requested object is in the edge cache,
+     * the function doesn't execute.</p> </li> <li> <p> <code>origin-response</code>:
+     * The function executes after CloudFront receives a response from the origin and
+     * before it caches the object in the response. When the requested object is in the
+     * edge cache, the function doesn't execute.</p> </li> <li> <p>
+     * <code>viewer-response</code>: The function executes before CloudFront returns
+     * the requested object to the viewer. The function executes regardless of whether
+     * the object was already in the edge cache.</p> <p>If the origin returns an HTTP
+     * status code other than HTTP 200 (OK), the function doesn't execute.</p> </li>
+     * </ul>
      */
     inline void SetEventType(const EventType& value) { m_eventTypeHasBeenSet = true; m_eventType = value; }
 
@@ -151,16 +151,16 @@ namespace Model
      * function executes when CloudFront receives a request from a viewer and before it
      * checks to see whether the requested object is in the edge cache. </p> </li> <li>
      * <p> <code>origin-request</code>: The function executes only when CloudFront
-     * forwards a request to your origin. When the requested object is in the edge
-     * cache, the function doesn't execute.</p> </li> <li> <p>
-     * <code>origin-response</code>: The function executes after CloudFront receives a
-     * response from the origin and before it caches the object in the response. When
-     * the requested object is in the edge cache, the function doesn't execute.</p>
-     * </li> <li> <p> <code>viewer-response</code>: The function executes before
-     * CloudFront returns the requested object to the viewer. The function executes
-     * regardless of whether the object was already in the edge cache.</p> <p>If the
-     * origin returns an HTTP status code other than HTTP 200 (OK), the function
-     * doesn't execute.</p> </li> </ul>
+     * sends a request to your origin. When the requested object is in the edge cache,
+     * the function doesn't execute.</p> </li> <li> <p> <code>origin-response</code>:
+     * The function executes after CloudFront receives a response from the origin and
+     * before it caches the object in the response. When the requested object is in the
+     * edge cache, the function doesn't execute.</p> </li> <li> <p>
+     * <code>viewer-response</code>: The function executes before CloudFront returns
+     * the requested object to the viewer. The function executes regardless of whether
+     * the object was already in the edge cache.</p> <p>If the origin returns an HTTP
+     * status code other than HTTP 200 (OK), the function doesn't execute.</p> </li>
+     * </ul>
      */
     inline void SetEventType(EventType&& value) { m_eventTypeHasBeenSet = true; m_eventType = std::move(value); }
 
@@ -170,16 +170,16 @@ namespace Model
      * function executes when CloudFront receives a request from a viewer and before it
      * checks to see whether the requested object is in the edge cache. </p> </li> <li>
      * <p> <code>origin-request</code>: The function executes only when CloudFront
-     * forwards a request to your origin. When the requested object is in the edge
-     * cache, the function doesn't execute.</p> </li> <li> <p>
-     * <code>origin-response</code>: The function executes after CloudFront receives a
-     * response from the origin and before it caches the object in the response. When
-     * the requested object is in the edge cache, the function doesn't execute.</p>
-     * </li> <li> <p> <code>viewer-response</code>: The function executes before
-     * CloudFront returns the requested object to the viewer. The function executes
-     * regardless of whether the object was already in the edge cache.</p> <p>If the
-     * origin returns an HTTP status code other than HTTP 200 (OK), the function
-     * doesn't execute.</p> </li> </ul>
+     * sends a request to your origin. When the requested object is in the edge cache,
+     * the function doesn't execute.</p> </li> <li> <p> <code>origin-response</code>:
+     * The function executes after CloudFront receives a response from the origin and
+     * before it caches the object in the response. When the requested object is in the
+     * edge cache, the function doesn't execute.</p> </li> <li> <p>
+     * <code>viewer-response</code>: The function executes before CloudFront returns
+     * the requested object to the viewer. The function executes regardless of whether
+     * the object was already in the edge cache.</p> <p>If the origin returns an HTTP
+     * status code other than HTTP 200 (OK), the function doesn't execute.</p> </li>
+     * </ul>
      */
     inline LambdaFunctionAssociation& WithEventType(const EventType& value) { SetEventType(value); return *this;}
 
@@ -189,16 +189,16 @@ namespace Model
      * function executes when CloudFront receives a request from a viewer and before it
      * checks to see whether the requested object is in the edge cache. </p> </li> <li>
      * <p> <code>origin-request</code>: The function executes only when CloudFront
-     * forwards a request to your origin. When the requested object is in the edge
-     * cache, the function doesn't execute.</p> </li> <li> <p>
-     * <code>origin-response</code>: The function executes after CloudFront receives a
-     * response from the origin and before it caches the object in the response. When
-     * the requested object is in the edge cache, the function doesn't execute.</p>
-     * </li> <li> <p> <code>viewer-response</code>: The function executes before
-     * CloudFront returns the requested object to the viewer. The function executes
-     * regardless of whether the object was already in the edge cache.</p> <p>If the
-     * origin returns an HTTP status code other than HTTP 200 (OK), the function
-     * doesn't execute.</p> </li> </ul>
+     * sends a request to your origin. When the requested object is in the edge cache,
+     * the function doesn't execute.</p> </li> <li> <p> <code>origin-response</code>:
+     * The function executes after CloudFront receives a response from the origin and
+     * before it caches the object in the response. When the requested object is in the
+     * edge cache, the function doesn't execute.</p> </li> <li> <p>
+     * <code>viewer-response</code>: The function executes before CloudFront returns
+     * the requested object to the viewer. The function executes regardless of whether
+     * the object was already in the edge cache.</p> <p>If the origin returns an HTTP
+     * status code other than HTTP 200 (OK), the function doesn't execute.</p> </li>
+     * </ul>
      */
     inline LambdaFunctionAssociation& WithEventType(EventType&& value) { SetEventType(std::move(value)); return *this;}
 

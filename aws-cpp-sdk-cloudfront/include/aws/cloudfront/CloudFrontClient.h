@@ -12,43 +12,55 @@
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
-#include <aws/cloudfront/model/CreateCloudFrontOriginAccessIdentity2019_03_26Result.h>
-#include <aws/cloudfront/model/CreateDistribution2019_03_26Result.h>
-#include <aws/cloudfront/model/CreateDistributionWithTags2019_03_26Result.h>
-#include <aws/cloudfront/model/CreateFieldLevelEncryptionConfig2019_03_26Result.h>
-#include <aws/cloudfront/model/CreateFieldLevelEncryptionProfile2019_03_26Result.h>
-#include <aws/cloudfront/model/CreateInvalidation2019_03_26Result.h>
-#include <aws/cloudfront/model/CreatePublicKey2019_03_26Result.h>
-#include <aws/cloudfront/model/CreateStreamingDistribution2019_03_26Result.h>
-#include <aws/cloudfront/model/CreateStreamingDistributionWithTags2019_03_26Result.h>
-#include <aws/cloudfront/model/GetCloudFrontOriginAccessIdentity2019_03_26Result.h>
-#include <aws/cloudfront/model/GetCloudFrontOriginAccessIdentityConfig2019_03_26Result.h>
-#include <aws/cloudfront/model/GetDistribution2019_03_26Result.h>
-#include <aws/cloudfront/model/GetDistributionConfig2019_03_26Result.h>
-#include <aws/cloudfront/model/GetFieldLevelEncryption2019_03_26Result.h>
-#include <aws/cloudfront/model/GetFieldLevelEncryptionConfig2019_03_26Result.h>
-#include <aws/cloudfront/model/GetFieldLevelEncryptionProfile2019_03_26Result.h>
-#include <aws/cloudfront/model/GetFieldLevelEncryptionProfileConfig2019_03_26Result.h>
-#include <aws/cloudfront/model/GetInvalidation2019_03_26Result.h>
-#include <aws/cloudfront/model/GetPublicKey2019_03_26Result.h>
-#include <aws/cloudfront/model/GetPublicKeyConfig2019_03_26Result.h>
-#include <aws/cloudfront/model/GetStreamingDistribution2019_03_26Result.h>
-#include <aws/cloudfront/model/GetStreamingDistributionConfig2019_03_26Result.h>
-#include <aws/cloudfront/model/ListCloudFrontOriginAccessIdentities2019_03_26Result.h>
-#include <aws/cloudfront/model/ListDistributions2019_03_26Result.h>
-#include <aws/cloudfront/model/ListDistributionsByWebACLId2019_03_26Result.h>
-#include <aws/cloudfront/model/ListFieldLevelEncryptionConfigs2019_03_26Result.h>
-#include <aws/cloudfront/model/ListFieldLevelEncryptionProfiles2019_03_26Result.h>
-#include <aws/cloudfront/model/ListInvalidations2019_03_26Result.h>
-#include <aws/cloudfront/model/ListPublicKeys2019_03_26Result.h>
-#include <aws/cloudfront/model/ListStreamingDistributions2019_03_26Result.h>
-#include <aws/cloudfront/model/ListTagsForResource2019_03_26Result.h>
-#include <aws/cloudfront/model/UpdateCloudFrontOriginAccessIdentity2019_03_26Result.h>
-#include <aws/cloudfront/model/UpdateDistribution2019_03_26Result.h>
-#include <aws/cloudfront/model/UpdateFieldLevelEncryptionConfig2019_03_26Result.h>
-#include <aws/cloudfront/model/UpdateFieldLevelEncryptionProfile2019_03_26Result.h>
-#include <aws/cloudfront/model/UpdatePublicKey2019_03_26Result.h>
-#include <aws/cloudfront/model/UpdateStreamingDistribution2019_03_26Result.h>
+#include <aws/cloudfront/model/CreateCachePolicy2020_05_31Result.h>
+#include <aws/cloudfront/model/CreateCloudFrontOriginAccessIdentity2020_05_31Result.h>
+#include <aws/cloudfront/model/CreateDistribution2020_05_31Result.h>
+#include <aws/cloudfront/model/CreateDistributionWithTags2020_05_31Result.h>
+#include <aws/cloudfront/model/CreateFieldLevelEncryptionConfig2020_05_31Result.h>
+#include <aws/cloudfront/model/CreateFieldLevelEncryptionProfile2020_05_31Result.h>
+#include <aws/cloudfront/model/CreateInvalidation2020_05_31Result.h>
+#include <aws/cloudfront/model/CreateOriginRequestPolicy2020_05_31Result.h>
+#include <aws/cloudfront/model/CreatePublicKey2020_05_31Result.h>
+#include <aws/cloudfront/model/CreateStreamingDistribution2020_05_31Result.h>
+#include <aws/cloudfront/model/CreateStreamingDistributionWithTags2020_05_31Result.h>
+#include <aws/cloudfront/model/GetCachePolicy2020_05_31Result.h>
+#include <aws/cloudfront/model/GetCachePolicyConfig2020_05_31Result.h>
+#include <aws/cloudfront/model/GetCloudFrontOriginAccessIdentity2020_05_31Result.h>
+#include <aws/cloudfront/model/GetCloudFrontOriginAccessIdentityConfig2020_05_31Result.h>
+#include <aws/cloudfront/model/GetDistribution2020_05_31Result.h>
+#include <aws/cloudfront/model/GetDistributionConfig2020_05_31Result.h>
+#include <aws/cloudfront/model/GetFieldLevelEncryption2020_05_31Result.h>
+#include <aws/cloudfront/model/GetFieldLevelEncryptionConfig2020_05_31Result.h>
+#include <aws/cloudfront/model/GetFieldLevelEncryptionProfile2020_05_31Result.h>
+#include <aws/cloudfront/model/GetFieldLevelEncryptionProfileConfig2020_05_31Result.h>
+#include <aws/cloudfront/model/GetInvalidation2020_05_31Result.h>
+#include <aws/cloudfront/model/GetOriginRequestPolicy2020_05_31Result.h>
+#include <aws/cloudfront/model/GetOriginRequestPolicyConfig2020_05_31Result.h>
+#include <aws/cloudfront/model/GetPublicKey2020_05_31Result.h>
+#include <aws/cloudfront/model/GetPublicKeyConfig2020_05_31Result.h>
+#include <aws/cloudfront/model/GetStreamingDistribution2020_05_31Result.h>
+#include <aws/cloudfront/model/GetStreamingDistributionConfig2020_05_31Result.h>
+#include <aws/cloudfront/model/ListCachePolicies2020_05_31Result.h>
+#include <aws/cloudfront/model/ListCloudFrontOriginAccessIdentities2020_05_31Result.h>
+#include <aws/cloudfront/model/ListDistributions2020_05_31Result.h>
+#include <aws/cloudfront/model/ListDistributionsByCachePolicyId2020_05_31Result.h>
+#include <aws/cloudfront/model/ListDistributionsByOriginRequestPolicyId2020_05_31Result.h>
+#include <aws/cloudfront/model/ListDistributionsByWebACLId2020_05_31Result.h>
+#include <aws/cloudfront/model/ListFieldLevelEncryptionConfigs2020_05_31Result.h>
+#include <aws/cloudfront/model/ListFieldLevelEncryptionProfiles2020_05_31Result.h>
+#include <aws/cloudfront/model/ListInvalidations2020_05_31Result.h>
+#include <aws/cloudfront/model/ListOriginRequestPolicies2020_05_31Result.h>
+#include <aws/cloudfront/model/ListPublicKeys2020_05_31Result.h>
+#include <aws/cloudfront/model/ListStreamingDistributions2020_05_31Result.h>
+#include <aws/cloudfront/model/ListTagsForResource2020_05_31Result.h>
+#include <aws/cloudfront/model/UpdateCachePolicy2020_05_31Result.h>
+#include <aws/cloudfront/model/UpdateCloudFrontOriginAccessIdentity2020_05_31Result.h>
+#include <aws/cloudfront/model/UpdateDistribution2020_05_31Result.h>
+#include <aws/cloudfront/model/UpdateFieldLevelEncryptionConfig2020_05_31Result.h>
+#include <aws/cloudfront/model/UpdateFieldLevelEncryptionProfile2020_05_31Result.h>
+#include <aws/cloudfront/model/UpdateOriginRequestPolicy2020_05_31Result.h>
+#include <aws/cloudfront/model/UpdatePublicKey2020_05_31Result.h>
+#include <aws/cloudfront/model/UpdateStreamingDistribution2020_05_31Result.h>
 #include <aws/core/NoResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
@@ -95,192 +107,248 @@ namespace CloudFront
 
 namespace Model
 {
-        class CreateCloudFrontOriginAccessIdentity2019_03_26Request;
-        class CreateDistribution2019_03_26Request;
-        class CreateDistributionWithTags2019_03_26Request;
-        class CreateFieldLevelEncryptionConfig2019_03_26Request;
-        class CreateFieldLevelEncryptionProfile2019_03_26Request;
-        class CreateInvalidation2019_03_26Request;
-        class CreatePublicKey2019_03_26Request;
-        class CreateStreamingDistribution2019_03_26Request;
-        class CreateStreamingDistributionWithTags2019_03_26Request;
-        class DeleteCloudFrontOriginAccessIdentity2019_03_26Request;
-        class DeleteDistribution2019_03_26Request;
-        class DeleteFieldLevelEncryptionConfig2019_03_26Request;
-        class DeleteFieldLevelEncryptionProfile2019_03_26Request;
-        class DeletePublicKey2019_03_26Request;
-        class DeleteStreamingDistribution2019_03_26Request;
-        class GetCloudFrontOriginAccessIdentity2019_03_26Request;
-        class GetCloudFrontOriginAccessIdentityConfig2019_03_26Request;
-        class GetDistribution2019_03_26Request;
-        class GetDistributionConfig2019_03_26Request;
-        class GetFieldLevelEncryption2019_03_26Request;
-        class GetFieldLevelEncryptionConfig2019_03_26Request;
-        class GetFieldLevelEncryptionProfile2019_03_26Request;
-        class GetFieldLevelEncryptionProfileConfig2019_03_26Request;
-        class GetInvalidation2019_03_26Request;
-        class GetPublicKey2019_03_26Request;
-        class GetPublicKeyConfig2019_03_26Request;
-        class GetStreamingDistribution2019_03_26Request;
-        class GetStreamingDistributionConfig2019_03_26Request;
-        class ListCloudFrontOriginAccessIdentities2019_03_26Request;
-        class ListDistributions2019_03_26Request;
-        class ListDistributionsByWebACLId2019_03_26Request;
-        class ListFieldLevelEncryptionConfigs2019_03_26Request;
-        class ListFieldLevelEncryptionProfiles2019_03_26Request;
-        class ListInvalidations2019_03_26Request;
-        class ListPublicKeys2019_03_26Request;
-        class ListStreamingDistributions2019_03_26Request;
-        class ListTagsForResource2019_03_26Request;
-        class TagResource2019_03_26Request;
-        class UntagResource2019_03_26Request;
-        class UpdateCloudFrontOriginAccessIdentity2019_03_26Request;
-        class UpdateDistribution2019_03_26Request;
-        class UpdateFieldLevelEncryptionConfig2019_03_26Request;
-        class UpdateFieldLevelEncryptionProfile2019_03_26Request;
-        class UpdatePublicKey2019_03_26Request;
-        class UpdateStreamingDistribution2019_03_26Request;
+        class CreateCachePolicy2020_05_31Request;
+        class CreateCloudFrontOriginAccessIdentity2020_05_31Request;
+        class CreateDistribution2020_05_31Request;
+        class CreateDistributionWithTags2020_05_31Request;
+        class CreateFieldLevelEncryptionConfig2020_05_31Request;
+        class CreateFieldLevelEncryptionProfile2020_05_31Request;
+        class CreateInvalidation2020_05_31Request;
+        class CreateOriginRequestPolicy2020_05_31Request;
+        class CreatePublicKey2020_05_31Request;
+        class CreateStreamingDistribution2020_05_31Request;
+        class CreateStreamingDistributionWithTags2020_05_31Request;
+        class DeleteCachePolicy2020_05_31Request;
+        class DeleteCloudFrontOriginAccessIdentity2020_05_31Request;
+        class DeleteDistribution2020_05_31Request;
+        class DeleteFieldLevelEncryptionConfig2020_05_31Request;
+        class DeleteFieldLevelEncryptionProfile2020_05_31Request;
+        class DeleteOriginRequestPolicy2020_05_31Request;
+        class DeletePublicKey2020_05_31Request;
+        class DeleteStreamingDistribution2020_05_31Request;
+        class GetCachePolicy2020_05_31Request;
+        class GetCachePolicyConfig2020_05_31Request;
+        class GetCloudFrontOriginAccessIdentity2020_05_31Request;
+        class GetCloudFrontOriginAccessIdentityConfig2020_05_31Request;
+        class GetDistribution2020_05_31Request;
+        class GetDistributionConfig2020_05_31Request;
+        class GetFieldLevelEncryption2020_05_31Request;
+        class GetFieldLevelEncryptionConfig2020_05_31Request;
+        class GetFieldLevelEncryptionProfile2020_05_31Request;
+        class GetFieldLevelEncryptionProfileConfig2020_05_31Request;
+        class GetInvalidation2020_05_31Request;
+        class GetOriginRequestPolicy2020_05_31Request;
+        class GetOriginRequestPolicyConfig2020_05_31Request;
+        class GetPublicKey2020_05_31Request;
+        class GetPublicKeyConfig2020_05_31Request;
+        class GetStreamingDistribution2020_05_31Request;
+        class GetStreamingDistributionConfig2020_05_31Request;
+        class ListCachePolicies2020_05_31Request;
+        class ListCloudFrontOriginAccessIdentities2020_05_31Request;
+        class ListDistributions2020_05_31Request;
+        class ListDistributionsByCachePolicyId2020_05_31Request;
+        class ListDistributionsByOriginRequestPolicyId2020_05_31Request;
+        class ListDistributionsByWebACLId2020_05_31Request;
+        class ListFieldLevelEncryptionConfigs2020_05_31Request;
+        class ListFieldLevelEncryptionProfiles2020_05_31Request;
+        class ListInvalidations2020_05_31Request;
+        class ListOriginRequestPolicies2020_05_31Request;
+        class ListPublicKeys2020_05_31Request;
+        class ListStreamingDistributions2020_05_31Request;
+        class ListTagsForResource2020_05_31Request;
+        class TagResource2020_05_31Request;
+        class UntagResource2020_05_31Request;
+        class UpdateCachePolicy2020_05_31Request;
+        class UpdateCloudFrontOriginAccessIdentity2020_05_31Request;
+        class UpdateDistribution2020_05_31Request;
+        class UpdateFieldLevelEncryptionConfig2020_05_31Request;
+        class UpdateFieldLevelEncryptionProfile2020_05_31Request;
+        class UpdateOriginRequestPolicy2020_05_31Request;
+        class UpdatePublicKey2020_05_31Request;
+        class UpdateStreamingDistribution2020_05_31Request;
 
-        typedef Aws::Utils::Outcome<CreateCloudFrontOriginAccessIdentity2019_03_26Result, CloudFrontError> CreateCloudFrontOriginAccessIdentity2019_03_26Outcome;
-        typedef Aws::Utils::Outcome<CreateDistribution2019_03_26Result, CloudFrontError> CreateDistribution2019_03_26Outcome;
-        typedef Aws::Utils::Outcome<CreateDistributionWithTags2019_03_26Result, CloudFrontError> CreateDistributionWithTags2019_03_26Outcome;
-        typedef Aws::Utils::Outcome<CreateFieldLevelEncryptionConfig2019_03_26Result, CloudFrontError> CreateFieldLevelEncryptionConfig2019_03_26Outcome;
-        typedef Aws::Utils::Outcome<CreateFieldLevelEncryptionProfile2019_03_26Result, CloudFrontError> CreateFieldLevelEncryptionProfile2019_03_26Outcome;
-        typedef Aws::Utils::Outcome<CreateInvalidation2019_03_26Result, CloudFrontError> CreateInvalidation2019_03_26Outcome;
-        typedef Aws::Utils::Outcome<CreatePublicKey2019_03_26Result, CloudFrontError> CreatePublicKey2019_03_26Outcome;
-        typedef Aws::Utils::Outcome<CreateStreamingDistribution2019_03_26Result, CloudFrontError> CreateStreamingDistribution2019_03_26Outcome;
-        typedef Aws::Utils::Outcome<CreateStreamingDistributionWithTags2019_03_26Result, CloudFrontError> CreateStreamingDistributionWithTags2019_03_26Outcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, CloudFrontError> DeleteCloudFrontOriginAccessIdentity2019_03_26Outcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, CloudFrontError> DeleteDistribution2019_03_26Outcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, CloudFrontError> DeleteFieldLevelEncryptionConfig2019_03_26Outcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, CloudFrontError> DeleteFieldLevelEncryptionProfile2019_03_26Outcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, CloudFrontError> DeletePublicKey2019_03_26Outcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, CloudFrontError> DeleteStreamingDistribution2019_03_26Outcome;
-        typedef Aws::Utils::Outcome<GetCloudFrontOriginAccessIdentity2019_03_26Result, CloudFrontError> GetCloudFrontOriginAccessIdentity2019_03_26Outcome;
-        typedef Aws::Utils::Outcome<GetCloudFrontOriginAccessIdentityConfig2019_03_26Result, CloudFrontError> GetCloudFrontOriginAccessIdentityConfig2019_03_26Outcome;
-        typedef Aws::Utils::Outcome<GetDistribution2019_03_26Result, CloudFrontError> GetDistribution2019_03_26Outcome;
-        typedef Aws::Utils::Outcome<GetDistributionConfig2019_03_26Result, CloudFrontError> GetDistributionConfig2019_03_26Outcome;
-        typedef Aws::Utils::Outcome<GetFieldLevelEncryption2019_03_26Result, CloudFrontError> GetFieldLevelEncryption2019_03_26Outcome;
-        typedef Aws::Utils::Outcome<GetFieldLevelEncryptionConfig2019_03_26Result, CloudFrontError> GetFieldLevelEncryptionConfig2019_03_26Outcome;
-        typedef Aws::Utils::Outcome<GetFieldLevelEncryptionProfile2019_03_26Result, CloudFrontError> GetFieldLevelEncryptionProfile2019_03_26Outcome;
-        typedef Aws::Utils::Outcome<GetFieldLevelEncryptionProfileConfig2019_03_26Result, CloudFrontError> GetFieldLevelEncryptionProfileConfig2019_03_26Outcome;
-        typedef Aws::Utils::Outcome<GetInvalidation2019_03_26Result, CloudFrontError> GetInvalidation2019_03_26Outcome;
-        typedef Aws::Utils::Outcome<GetPublicKey2019_03_26Result, CloudFrontError> GetPublicKey2019_03_26Outcome;
-        typedef Aws::Utils::Outcome<GetPublicKeyConfig2019_03_26Result, CloudFrontError> GetPublicKeyConfig2019_03_26Outcome;
-        typedef Aws::Utils::Outcome<GetStreamingDistribution2019_03_26Result, CloudFrontError> GetStreamingDistribution2019_03_26Outcome;
-        typedef Aws::Utils::Outcome<GetStreamingDistributionConfig2019_03_26Result, CloudFrontError> GetStreamingDistributionConfig2019_03_26Outcome;
-        typedef Aws::Utils::Outcome<ListCloudFrontOriginAccessIdentities2019_03_26Result, CloudFrontError> ListCloudFrontOriginAccessIdentities2019_03_26Outcome;
-        typedef Aws::Utils::Outcome<ListDistributions2019_03_26Result, CloudFrontError> ListDistributions2019_03_26Outcome;
-        typedef Aws::Utils::Outcome<ListDistributionsByWebACLId2019_03_26Result, CloudFrontError> ListDistributionsByWebACLId2019_03_26Outcome;
-        typedef Aws::Utils::Outcome<ListFieldLevelEncryptionConfigs2019_03_26Result, CloudFrontError> ListFieldLevelEncryptionConfigs2019_03_26Outcome;
-        typedef Aws::Utils::Outcome<ListFieldLevelEncryptionProfiles2019_03_26Result, CloudFrontError> ListFieldLevelEncryptionProfiles2019_03_26Outcome;
-        typedef Aws::Utils::Outcome<ListInvalidations2019_03_26Result, CloudFrontError> ListInvalidations2019_03_26Outcome;
-        typedef Aws::Utils::Outcome<ListPublicKeys2019_03_26Result, CloudFrontError> ListPublicKeys2019_03_26Outcome;
-        typedef Aws::Utils::Outcome<ListStreamingDistributions2019_03_26Result, CloudFrontError> ListStreamingDistributions2019_03_26Outcome;
-        typedef Aws::Utils::Outcome<ListTagsForResource2019_03_26Result, CloudFrontError> ListTagsForResource2019_03_26Outcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, CloudFrontError> TagResource2019_03_26Outcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, CloudFrontError> UntagResource2019_03_26Outcome;
-        typedef Aws::Utils::Outcome<UpdateCloudFrontOriginAccessIdentity2019_03_26Result, CloudFrontError> UpdateCloudFrontOriginAccessIdentity2019_03_26Outcome;
-        typedef Aws::Utils::Outcome<UpdateDistribution2019_03_26Result, CloudFrontError> UpdateDistribution2019_03_26Outcome;
-        typedef Aws::Utils::Outcome<UpdateFieldLevelEncryptionConfig2019_03_26Result, CloudFrontError> UpdateFieldLevelEncryptionConfig2019_03_26Outcome;
-        typedef Aws::Utils::Outcome<UpdateFieldLevelEncryptionProfile2019_03_26Result, CloudFrontError> UpdateFieldLevelEncryptionProfile2019_03_26Outcome;
-        typedef Aws::Utils::Outcome<UpdatePublicKey2019_03_26Result, CloudFrontError> UpdatePublicKey2019_03_26Outcome;
-        typedef Aws::Utils::Outcome<UpdateStreamingDistribution2019_03_26Result, CloudFrontError> UpdateStreamingDistribution2019_03_26Outcome;
+        typedef Aws::Utils::Outcome<CreateCachePolicy2020_05_31Result, CloudFrontError> CreateCachePolicy2020_05_31Outcome;
+        typedef Aws::Utils::Outcome<CreateCloudFrontOriginAccessIdentity2020_05_31Result, CloudFrontError> CreateCloudFrontOriginAccessIdentity2020_05_31Outcome;
+        typedef Aws::Utils::Outcome<CreateDistribution2020_05_31Result, CloudFrontError> CreateDistribution2020_05_31Outcome;
+        typedef Aws::Utils::Outcome<CreateDistributionWithTags2020_05_31Result, CloudFrontError> CreateDistributionWithTags2020_05_31Outcome;
+        typedef Aws::Utils::Outcome<CreateFieldLevelEncryptionConfig2020_05_31Result, CloudFrontError> CreateFieldLevelEncryptionConfig2020_05_31Outcome;
+        typedef Aws::Utils::Outcome<CreateFieldLevelEncryptionProfile2020_05_31Result, CloudFrontError> CreateFieldLevelEncryptionProfile2020_05_31Outcome;
+        typedef Aws::Utils::Outcome<CreateInvalidation2020_05_31Result, CloudFrontError> CreateInvalidation2020_05_31Outcome;
+        typedef Aws::Utils::Outcome<CreateOriginRequestPolicy2020_05_31Result, CloudFrontError> CreateOriginRequestPolicy2020_05_31Outcome;
+        typedef Aws::Utils::Outcome<CreatePublicKey2020_05_31Result, CloudFrontError> CreatePublicKey2020_05_31Outcome;
+        typedef Aws::Utils::Outcome<CreateStreamingDistribution2020_05_31Result, CloudFrontError> CreateStreamingDistribution2020_05_31Outcome;
+        typedef Aws::Utils::Outcome<CreateStreamingDistributionWithTags2020_05_31Result, CloudFrontError> CreateStreamingDistributionWithTags2020_05_31Outcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, CloudFrontError> DeleteCachePolicy2020_05_31Outcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, CloudFrontError> DeleteCloudFrontOriginAccessIdentity2020_05_31Outcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, CloudFrontError> DeleteDistribution2020_05_31Outcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, CloudFrontError> DeleteFieldLevelEncryptionConfig2020_05_31Outcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, CloudFrontError> DeleteFieldLevelEncryptionProfile2020_05_31Outcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, CloudFrontError> DeleteOriginRequestPolicy2020_05_31Outcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, CloudFrontError> DeletePublicKey2020_05_31Outcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, CloudFrontError> DeleteStreamingDistribution2020_05_31Outcome;
+        typedef Aws::Utils::Outcome<GetCachePolicy2020_05_31Result, CloudFrontError> GetCachePolicy2020_05_31Outcome;
+        typedef Aws::Utils::Outcome<GetCachePolicyConfig2020_05_31Result, CloudFrontError> GetCachePolicyConfig2020_05_31Outcome;
+        typedef Aws::Utils::Outcome<GetCloudFrontOriginAccessIdentity2020_05_31Result, CloudFrontError> GetCloudFrontOriginAccessIdentity2020_05_31Outcome;
+        typedef Aws::Utils::Outcome<GetCloudFrontOriginAccessIdentityConfig2020_05_31Result, CloudFrontError> GetCloudFrontOriginAccessIdentityConfig2020_05_31Outcome;
+        typedef Aws::Utils::Outcome<GetDistribution2020_05_31Result, CloudFrontError> GetDistribution2020_05_31Outcome;
+        typedef Aws::Utils::Outcome<GetDistributionConfig2020_05_31Result, CloudFrontError> GetDistributionConfig2020_05_31Outcome;
+        typedef Aws::Utils::Outcome<GetFieldLevelEncryption2020_05_31Result, CloudFrontError> GetFieldLevelEncryption2020_05_31Outcome;
+        typedef Aws::Utils::Outcome<GetFieldLevelEncryptionConfig2020_05_31Result, CloudFrontError> GetFieldLevelEncryptionConfig2020_05_31Outcome;
+        typedef Aws::Utils::Outcome<GetFieldLevelEncryptionProfile2020_05_31Result, CloudFrontError> GetFieldLevelEncryptionProfile2020_05_31Outcome;
+        typedef Aws::Utils::Outcome<GetFieldLevelEncryptionProfileConfig2020_05_31Result, CloudFrontError> GetFieldLevelEncryptionProfileConfig2020_05_31Outcome;
+        typedef Aws::Utils::Outcome<GetInvalidation2020_05_31Result, CloudFrontError> GetInvalidation2020_05_31Outcome;
+        typedef Aws::Utils::Outcome<GetOriginRequestPolicy2020_05_31Result, CloudFrontError> GetOriginRequestPolicy2020_05_31Outcome;
+        typedef Aws::Utils::Outcome<GetOriginRequestPolicyConfig2020_05_31Result, CloudFrontError> GetOriginRequestPolicyConfig2020_05_31Outcome;
+        typedef Aws::Utils::Outcome<GetPublicKey2020_05_31Result, CloudFrontError> GetPublicKey2020_05_31Outcome;
+        typedef Aws::Utils::Outcome<GetPublicKeyConfig2020_05_31Result, CloudFrontError> GetPublicKeyConfig2020_05_31Outcome;
+        typedef Aws::Utils::Outcome<GetStreamingDistribution2020_05_31Result, CloudFrontError> GetStreamingDistribution2020_05_31Outcome;
+        typedef Aws::Utils::Outcome<GetStreamingDistributionConfig2020_05_31Result, CloudFrontError> GetStreamingDistributionConfig2020_05_31Outcome;
+        typedef Aws::Utils::Outcome<ListCachePolicies2020_05_31Result, CloudFrontError> ListCachePolicies2020_05_31Outcome;
+        typedef Aws::Utils::Outcome<ListCloudFrontOriginAccessIdentities2020_05_31Result, CloudFrontError> ListCloudFrontOriginAccessIdentities2020_05_31Outcome;
+        typedef Aws::Utils::Outcome<ListDistributions2020_05_31Result, CloudFrontError> ListDistributions2020_05_31Outcome;
+        typedef Aws::Utils::Outcome<ListDistributionsByCachePolicyId2020_05_31Result, CloudFrontError> ListDistributionsByCachePolicyId2020_05_31Outcome;
+        typedef Aws::Utils::Outcome<ListDistributionsByOriginRequestPolicyId2020_05_31Result, CloudFrontError> ListDistributionsByOriginRequestPolicyId2020_05_31Outcome;
+        typedef Aws::Utils::Outcome<ListDistributionsByWebACLId2020_05_31Result, CloudFrontError> ListDistributionsByWebACLId2020_05_31Outcome;
+        typedef Aws::Utils::Outcome<ListFieldLevelEncryptionConfigs2020_05_31Result, CloudFrontError> ListFieldLevelEncryptionConfigs2020_05_31Outcome;
+        typedef Aws::Utils::Outcome<ListFieldLevelEncryptionProfiles2020_05_31Result, CloudFrontError> ListFieldLevelEncryptionProfiles2020_05_31Outcome;
+        typedef Aws::Utils::Outcome<ListInvalidations2020_05_31Result, CloudFrontError> ListInvalidations2020_05_31Outcome;
+        typedef Aws::Utils::Outcome<ListOriginRequestPolicies2020_05_31Result, CloudFrontError> ListOriginRequestPolicies2020_05_31Outcome;
+        typedef Aws::Utils::Outcome<ListPublicKeys2020_05_31Result, CloudFrontError> ListPublicKeys2020_05_31Outcome;
+        typedef Aws::Utils::Outcome<ListStreamingDistributions2020_05_31Result, CloudFrontError> ListStreamingDistributions2020_05_31Outcome;
+        typedef Aws::Utils::Outcome<ListTagsForResource2020_05_31Result, CloudFrontError> ListTagsForResource2020_05_31Outcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, CloudFrontError> TagResource2020_05_31Outcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, CloudFrontError> UntagResource2020_05_31Outcome;
+        typedef Aws::Utils::Outcome<UpdateCachePolicy2020_05_31Result, CloudFrontError> UpdateCachePolicy2020_05_31Outcome;
+        typedef Aws::Utils::Outcome<UpdateCloudFrontOriginAccessIdentity2020_05_31Result, CloudFrontError> UpdateCloudFrontOriginAccessIdentity2020_05_31Outcome;
+        typedef Aws::Utils::Outcome<UpdateDistribution2020_05_31Result, CloudFrontError> UpdateDistribution2020_05_31Outcome;
+        typedef Aws::Utils::Outcome<UpdateFieldLevelEncryptionConfig2020_05_31Result, CloudFrontError> UpdateFieldLevelEncryptionConfig2020_05_31Outcome;
+        typedef Aws::Utils::Outcome<UpdateFieldLevelEncryptionProfile2020_05_31Result, CloudFrontError> UpdateFieldLevelEncryptionProfile2020_05_31Outcome;
+        typedef Aws::Utils::Outcome<UpdateOriginRequestPolicy2020_05_31Result, CloudFrontError> UpdateOriginRequestPolicy2020_05_31Outcome;
+        typedef Aws::Utils::Outcome<UpdatePublicKey2020_05_31Result, CloudFrontError> UpdatePublicKey2020_05_31Outcome;
+        typedef Aws::Utils::Outcome<UpdateStreamingDistribution2020_05_31Result, CloudFrontError> UpdateStreamingDistribution2020_05_31Outcome;
 
-        typedef std::future<CreateCloudFrontOriginAccessIdentity2019_03_26Outcome> CreateCloudFrontOriginAccessIdentity2019_03_26OutcomeCallable;
-        typedef std::future<CreateDistribution2019_03_26Outcome> CreateDistribution2019_03_26OutcomeCallable;
-        typedef std::future<CreateDistributionWithTags2019_03_26Outcome> CreateDistributionWithTags2019_03_26OutcomeCallable;
-        typedef std::future<CreateFieldLevelEncryptionConfig2019_03_26Outcome> CreateFieldLevelEncryptionConfig2019_03_26OutcomeCallable;
-        typedef std::future<CreateFieldLevelEncryptionProfile2019_03_26Outcome> CreateFieldLevelEncryptionProfile2019_03_26OutcomeCallable;
-        typedef std::future<CreateInvalidation2019_03_26Outcome> CreateInvalidation2019_03_26OutcomeCallable;
-        typedef std::future<CreatePublicKey2019_03_26Outcome> CreatePublicKey2019_03_26OutcomeCallable;
-        typedef std::future<CreateStreamingDistribution2019_03_26Outcome> CreateStreamingDistribution2019_03_26OutcomeCallable;
-        typedef std::future<CreateStreamingDistributionWithTags2019_03_26Outcome> CreateStreamingDistributionWithTags2019_03_26OutcomeCallable;
-        typedef std::future<DeleteCloudFrontOriginAccessIdentity2019_03_26Outcome> DeleteCloudFrontOriginAccessIdentity2019_03_26OutcomeCallable;
-        typedef std::future<DeleteDistribution2019_03_26Outcome> DeleteDistribution2019_03_26OutcomeCallable;
-        typedef std::future<DeleteFieldLevelEncryptionConfig2019_03_26Outcome> DeleteFieldLevelEncryptionConfig2019_03_26OutcomeCallable;
-        typedef std::future<DeleteFieldLevelEncryptionProfile2019_03_26Outcome> DeleteFieldLevelEncryptionProfile2019_03_26OutcomeCallable;
-        typedef std::future<DeletePublicKey2019_03_26Outcome> DeletePublicKey2019_03_26OutcomeCallable;
-        typedef std::future<DeleteStreamingDistribution2019_03_26Outcome> DeleteStreamingDistribution2019_03_26OutcomeCallable;
-        typedef std::future<GetCloudFrontOriginAccessIdentity2019_03_26Outcome> GetCloudFrontOriginAccessIdentity2019_03_26OutcomeCallable;
-        typedef std::future<GetCloudFrontOriginAccessIdentityConfig2019_03_26Outcome> GetCloudFrontOriginAccessIdentityConfig2019_03_26OutcomeCallable;
-        typedef std::future<GetDistribution2019_03_26Outcome> GetDistribution2019_03_26OutcomeCallable;
-        typedef std::future<GetDistributionConfig2019_03_26Outcome> GetDistributionConfig2019_03_26OutcomeCallable;
-        typedef std::future<GetFieldLevelEncryption2019_03_26Outcome> GetFieldLevelEncryption2019_03_26OutcomeCallable;
-        typedef std::future<GetFieldLevelEncryptionConfig2019_03_26Outcome> GetFieldLevelEncryptionConfig2019_03_26OutcomeCallable;
-        typedef std::future<GetFieldLevelEncryptionProfile2019_03_26Outcome> GetFieldLevelEncryptionProfile2019_03_26OutcomeCallable;
-        typedef std::future<GetFieldLevelEncryptionProfileConfig2019_03_26Outcome> GetFieldLevelEncryptionProfileConfig2019_03_26OutcomeCallable;
-        typedef std::future<GetInvalidation2019_03_26Outcome> GetInvalidation2019_03_26OutcomeCallable;
-        typedef std::future<GetPublicKey2019_03_26Outcome> GetPublicKey2019_03_26OutcomeCallable;
-        typedef std::future<GetPublicKeyConfig2019_03_26Outcome> GetPublicKeyConfig2019_03_26OutcomeCallable;
-        typedef std::future<GetStreamingDistribution2019_03_26Outcome> GetStreamingDistribution2019_03_26OutcomeCallable;
-        typedef std::future<GetStreamingDistributionConfig2019_03_26Outcome> GetStreamingDistributionConfig2019_03_26OutcomeCallable;
-        typedef std::future<ListCloudFrontOriginAccessIdentities2019_03_26Outcome> ListCloudFrontOriginAccessIdentities2019_03_26OutcomeCallable;
-        typedef std::future<ListDistributions2019_03_26Outcome> ListDistributions2019_03_26OutcomeCallable;
-        typedef std::future<ListDistributionsByWebACLId2019_03_26Outcome> ListDistributionsByWebACLId2019_03_26OutcomeCallable;
-        typedef std::future<ListFieldLevelEncryptionConfigs2019_03_26Outcome> ListFieldLevelEncryptionConfigs2019_03_26OutcomeCallable;
-        typedef std::future<ListFieldLevelEncryptionProfiles2019_03_26Outcome> ListFieldLevelEncryptionProfiles2019_03_26OutcomeCallable;
-        typedef std::future<ListInvalidations2019_03_26Outcome> ListInvalidations2019_03_26OutcomeCallable;
-        typedef std::future<ListPublicKeys2019_03_26Outcome> ListPublicKeys2019_03_26OutcomeCallable;
-        typedef std::future<ListStreamingDistributions2019_03_26Outcome> ListStreamingDistributions2019_03_26OutcomeCallable;
-        typedef std::future<ListTagsForResource2019_03_26Outcome> ListTagsForResource2019_03_26OutcomeCallable;
-        typedef std::future<TagResource2019_03_26Outcome> TagResource2019_03_26OutcomeCallable;
-        typedef std::future<UntagResource2019_03_26Outcome> UntagResource2019_03_26OutcomeCallable;
-        typedef std::future<UpdateCloudFrontOriginAccessIdentity2019_03_26Outcome> UpdateCloudFrontOriginAccessIdentity2019_03_26OutcomeCallable;
-        typedef std::future<UpdateDistribution2019_03_26Outcome> UpdateDistribution2019_03_26OutcomeCallable;
-        typedef std::future<UpdateFieldLevelEncryptionConfig2019_03_26Outcome> UpdateFieldLevelEncryptionConfig2019_03_26OutcomeCallable;
-        typedef std::future<UpdateFieldLevelEncryptionProfile2019_03_26Outcome> UpdateFieldLevelEncryptionProfile2019_03_26OutcomeCallable;
-        typedef std::future<UpdatePublicKey2019_03_26Outcome> UpdatePublicKey2019_03_26OutcomeCallable;
-        typedef std::future<UpdateStreamingDistribution2019_03_26Outcome> UpdateStreamingDistribution2019_03_26OutcomeCallable;
+        typedef std::future<CreateCachePolicy2020_05_31Outcome> CreateCachePolicy2020_05_31OutcomeCallable;
+        typedef std::future<CreateCloudFrontOriginAccessIdentity2020_05_31Outcome> CreateCloudFrontOriginAccessIdentity2020_05_31OutcomeCallable;
+        typedef std::future<CreateDistribution2020_05_31Outcome> CreateDistribution2020_05_31OutcomeCallable;
+        typedef std::future<CreateDistributionWithTags2020_05_31Outcome> CreateDistributionWithTags2020_05_31OutcomeCallable;
+        typedef std::future<CreateFieldLevelEncryptionConfig2020_05_31Outcome> CreateFieldLevelEncryptionConfig2020_05_31OutcomeCallable;
+        typedef std::future<CreateFieldLevelEncryptionProfile2020_05_31Outcome> CreateFieldLevelEncryptionProfile2020_05_31OutcomeCallable;
+        typedef std::future<CreateInvalidation2020_05_31Outcome> CreateInvalidation2020_05_31OutcomeCallable;
+        typedef std::future<CreateOriginRequestPolicy2020_05_31Outcome> CreateOriginRequestPolicy2020_05_31OutcomeCallable;
+        typedef std::future<CreatePublicKey2020_05_31Outcome> CreatePublicKey2020_05_31OutcomeCallable;
+        typedef std::future<CreateStreamingDistribution2020_05_31Outcome> CreateStreamingDistribution2020_05_31OutcomeCallable;
+        typedef std::future<CreateStreamingDistributionWithTags2020_05_31Outcome> CreateStreamingDistributionWithTags2020_05_31OutcomeCallable;
+        typedef std::future<DeleteCachePolicy2020_05_31Outcome> DeleteCachePolicy2020_05_31OutcomeCallable;
+        typedef std::future<DeleteCloudFrontOriginAccessIdentity2020_05_31Outcome> DeleteCloudFrontOriginAccessIdentity2020_05_31OutcomeCallable;
+        typedef std::future<DeleteDistribution2020_05_31Outcome> DeleteDistribution2020_05_31OutcomeCallable;
+        typedef std::future<DeleteFieldLevelEncryptionConfig2020_05_31Outcome> DeleteFieldLevelEncryptionConfig2020_05_31OutcomeCallable;
+        typedef std::future<DeleteFieldLevelEncryptionProfile2020_05_31Outcome> DeleteFieldLevelEncryptionProfile2020_05_31OutcomeCallable;
+        typedef std::future<DeleteOriginRequestPolicy2020_05_31Outcome> DeleteOriginRequestPolicy2020_05_31OutcomeCallable;
+        typedef std::future<DeletePublicKey2020_05_31Outcome> DeletePublicKey2020_05_31OutcomeCallable;
+        typedef std::future<DeleteStreamingDistribution2020_05_31Outcome> DeleteStreamingDistribution2020_05_31OutcomeCallable;
+        typedef std::future<GetCachePolicy2020_05_31Outcome> GetCachePolicy2020_05_31OutcomeCallable;
+        typedef std::future<GetCachePolicyConfig2020_05_31Outcome> GetCachePolicyConfig2020_05_31OutcomeCallable;
+        typedef std::future<GetCloudFrontOriginAccessIdentity2020_05_31Outcome> GetCloudFrontOriginAccessIdentity2020_05_31OutcomeCallable;
+        typedef std::future<GetCloudFrontOriginAccessIdentityConfig2020_05_31Outcome> GetCloudFrontOriginAccessIdentityConfig2020_05_31OutcomeCallable;
+        typedef std::future<GetDistribution2020_05_31Outcome> GetDistribution2020_05_31OutcomeCallable;
+        typedef std::future<GetDistributionConfig2020_05_31Outcome> GetDistributionConfig2020_05_31OutcomeCallable;
+        typedef std::future<GetFieldLevelEncryption2020_05_31Outcome> GetFieldLevelEncryption2020_05_31OutcomeCallable;
+        typedef std::future<GetFieldLevelEncryptionConfig2020_05_31Outcome> GetFieldLevelEncryptionConfig2020_05_31OutcomeCallable;
+        typedef std::future<GetFieldLevelEncryptionProfile2020_05_31Outcome> GetFieldLevelEncryptionProfile2020_05_31OutcomeCallable;
+        typedef std::future<GetFieldLevelEncryptionProfileConfig2020_05_31Outcome> GetFieldLevelEncryptionProfileConfig2020_05_31OutcomeCallable;
+        typedef std::future<GetInvalidation2020_05_31Outcome> GetInvalidation2020_05_31OutcomeCallable;
+        typedef std::future<GetOriginRequestPolicy2020_05_31Outcome> GetOriginRequestPolicy2020_05_31OutcomeCallable;
+        typedef std::future<GetOriginRequestPolicyConfig2020_05_31Outcome> GetOriginRequestPolicyConfig2020_05_31OutcomeCallable;
+        typedef std::future<GetPublicKey2020_05_31Outcome> GetPublicKey2020_05_31OutcomeCallable;
+        typedef std::future<GetPublicKeyConfig2020_05_31Outcome> GetPublicKeyConfig2020_05_31OutcomeCallable;
+        typedef std::future<GetStreamingDistribution2020_05_31Outcome> GetStreamingDistribution2020_05_31OutcomeCallable;
+        typedef std::future<GetStreamingDistributionConfig2020_05_31Outcome> GetStreamingDistributionConfig2020_05_31OutcomeCallable;
+        typedef std::future<ListCachePolicies2020_05_31Outcome> ListCachePolicies2020_05_31OutcomeCallable;
+        typedef std::future<ListCloudFrontOriginAccessIdentities2020_05_31Outcome> ListCloudFrontOriginAccessIdentities2020_05_31OutcomeCallable;
+        typedef std::future<ListDistributions2020_05_31Outcome> ListDistributions2020_05_31OutcomeCallable;
+        typedef std::future<ListDistributionsByCachePolicyId2020_05_31Outcome> ListDistributionsByCachePolicyId2020_05_31OutcomeCallable;
+        typedef std::future<ListDistributionsByOriginRequestPolicyId2020_05_31Outcome> ListDistributionsByOriginRequestPolicyId2020_05_31OutcomeCallable;
+        typedef std::future<ListDistributionsByWebACLId2020_05_31Outcome> ListDistributionsByWebACLId2020_05_31OutcomeCallable;
+        typedef std::future<ListFieldLevelEncryptionConfigs2020_05_31Outcome> ListFieldLevelEncryptionConfigs2020_05_31OutcomeCallable;
+        typedef std::future<ListFieldLevelEncryptionProfiles2020_05_31Outcome> ListFieldLevelEncryptionProfiles2020_05_31OutcomeCallable;
+        typedef std::future<ListInvalidations2020_05_31Outcome> ListInvalidations2020_05_31OutcomeCallable;
+        typedef std::future<ListOriginRequestPolicies2020_05_31Outcome> ListOriginRequestPolicies2020_05_31OutcomeCallable;
+        typedef std::future<ListPublicKeys2020_05_31Outcome> ListPublicKeys2020_05_31OutcomeCallable;
+        typedef std::future<ListStreamingDistributions2020_05_31Outcome> ListStreamingDistributions2020_05_31OutcomeCallable;
+        typedef std::future<ListTagsForResource2020_05_31Outcome> ListTagsForResource2020_05_31OutcomeCallable;
+        typedef std::future<TagResource2020_05_31Outcome> TagResource2020_05_31OutcomeCallable;
+        typedef std::future<UntagResource2020_05_31Outcome> UntagResource2020_05_31OutcomeCallable;
+        typedef std::future<UpdateCachePolicy2020_05_31Outcome> UpdateCachePolicy2020_05_31OutcomeCallable;
+        typedef std::future<UpdateCloudFrontOriginAccessIdentity2020_05_31Outcome> UpdateCloudFrontOriginAccessIdentity2020_05_31OutcomeCallable;
+        typedef std::future<UpdateDistribution2020_05_31Outcome> UpdateDistribution2020_05_31OutcomeCallable;
+        typedef std::future<UpdateFieldLevelEncryptionConfig2020_05_31Outcome> UpdateFieldLevelEncryptionConfig2020_05_31OutcomeCallable;
+        typedef std::future<UpdateFieldLevelEncryptionProfile2020_05_31Outcome> UpdateFieldLevelEncryptionProfile2020_05_31OutcomeCallable;
+        typedef std::future<UpdateOriginRequestPolicy2020_05_31Outcome> UpdateOriginRequestPolicy2020_05_31OutcomeCallable;
+        typedef std::future<UpdatePublicKey2020_05_31Outcome> UpdatePublicKey2020_05_31OutcomeCallable;
+        typedef std::future<UpdateStreamingDistribution2020_05_31Outcome> UpdateStreamingDistribution2020_05_31OutcomeCallable;
 } // namespace Model
 
   class CloudFrontClient;
 
-    typedef std::function<void(const CloudFrontClient*, const Model::CreateCloudFrontOriginAccessIdentity2019_03_26Request&, const Model::CreateCloudFrontOriginAccessIdentity2019_03_26Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateCloudFrontOriginAccessIdentity2019_03_26ResponseReceivedHandler;
-    typedef std::function<void(const CloudFrontClient*, const Model::CreateDistribution2019_03_26Request&, const Model::CreateDistribution2019_03_26Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDistribution2019_03_26ResponseReceivedHandler;
-    typedef std::function<void(const CloudFrontClient*, const Model::CreateDistributionWithTags2019_03_26Request&, const Model::CreateDistributionWithTags2019_03_26Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDistributionWithTags2019_03_26ResponseReceivedHandler;
-    typedef std::function<void(const CloudFrontClient*, const Model::CreateFieldLevelEncryptionConfig2019_03_26Request&, const Model::CreateFieldLevelEncryptionConfig2019_03_26Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateFieldLevelEncryptionConfig2019_03_26ResponseReceivedHandler;
-    typedef std::function<void(const CloudFrontClient*, const Model::CreateFieldLevelEncryptionProfile2019_03_26Request&, const Model::CreateFieldLevelEncryptionProfile2019_03_26Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateFieldLevelEncryptionProfile2019_03_26ResponseReceivedHandler;
-    typedef std::function<void(const CloudFrontClient*, const Model::CreateInvalidation2019_03_26Request&, const Model::CreateInvalidation2019_03_26Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateInvalidation2019_03_26ResponseReceivedHandler;
-    typedef std::function<void(const CloudFrontClient*, const Model::CreatePublicKey2019_03_26Request&, const Model::CreatePublicKey2019_03_26Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreatePublicKey2019_03_26ResponseReceivedHandler;
-    typedef std::function<void(const CloudFrontClient*, const Model::CreateStreamingDistribution2019_03_26Request&, const Model::CreateStreamingDistribution2019_03_26Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateStreamingDistribution2019_03_26ResponseReceivedHandler;
-    typedef std::function<void(const CloudFrontClient*, const Model::CreateStreamingDistributionWithTags2019_03_26Request&, const Model::CreateStreamingDistributionWithTags2019_03_26Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateStreamingDistributionWithTags2019_03_26ResponseReceivedHandler;
-    typedef std::function<void(const CloudFrontClient*, const Model::DeleteCloudFrontOriginAccessIdentity2019_03_26Request&, const Model::DeleteCloudFrontOriginAccessIdentity2019_03_26Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteCloudFrontOriginAccessIdentity2019_03_26ResponseReceivedHandler;
-    typedef std::function<void(const CloudFrontClient*, const Model::DeleteDistribution2019_03_26Request&, const Model::DeleteDistribution2019_03_26Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDistribution2019_03_26ResponseReceivedHandler;
-    typedef std::function<void(const CloudFrontClient*, const Model::DeleteFieldLevelEncryptionConfig2019_03_26Request&, const Model::DeleteFieldLevelEncryptionConfig2019_03_26Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteFieldLevelEncryptionConfig2019_03_26ResponseReceivedHandler;
-    typedef std::function<void(const CloudFrontClient*, const Model::DeleteFieldLevelEncryptionProfile2019_03_26Request&, const Model::DeleteFieldLevelEncryptionProfile2019_03_26Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteFieldLevelEncryptionProfile2019_03_26ResponseReceivedHandler;
-    typedef std::function<void(const CloudFrontClient*, const Model::DeletePublicKey2019_03_26Request&, const Model::DeletePublicKey2019_03_26Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeletePublicKey2019_03_26ResponseReceivedHandler;
-    typedef std::function<void(const CloudFrontClient*, const Model::DeleteStreamingDistribution2019_03_26Request&, const Model::DeleteStreamingDistribution2019_03_26Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteStreamingDistribution2019_03_26ResponseReceivedHandler;
-    typedef std::function<void(const CloudFrontClient*, const Model::GetCloudFrontOriginAccessIdentity2019_03_26Request&, const Model::GetCloudFrontOriginAccessIdentity2019_03_26Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCloudFrontOriginAccessIdentity2019_03_26ResponseReceivedHandler;
-    typedef std::function<void(const CloudFrontClient*, const Model::GetCloudFrontOriginAccessIdentityConfig2019_03_26Request&, const Model::GetCloudFrontOriginAccessIdentityConfig2019_03_26Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCloudFrontOriginAccessIdentityConfig2019_03_26ResponseReceivedHandler;
-    typedef std::function<void(const CloudFrontClient*, const Model::GetDistribution2019_03_26Request&, const Model::GetDistribution2019_03_26Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDistribution2019_03_26ResponseReceivedHandler;
-    typedef std::function<void(const CloudFrontClient*, const Model::GetDistributionConfig2019_03_26Request&, const Model::GetDistributionConfig2019_03_26Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDistributionConfig2019_03_26ResponseReceivedHandler;
-    typedef std::function<void(const CloudFrontClient*, const Model::GetFieldLevelEncryption2019_03_26Request&, const Model::GetFieldLevelEncryption2019_03_26Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetFieldLevelEncryption2019_03_26ResponseReceivedHandler;
-    typedef std::function<void(const CloudFrontClient*, const Model::GetFieldLevelEncryptionConfig2019_03_26Request&, const Model::GetFieldLevelEncryptionConfig2019_03_26Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetFieldLevelEncryptionConfig2019_03_26ResponseReceivedHandler;
-    typedef std::function<void(const CloudFrontClient*, const Model::GetFieldLevelEncryptionProfile2019_03_26Request&, const Model::GetFieldLevelEncryptionProfile2019_03_26Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetFieldLevelEncryptionProfile2019_03_26ResponseReceivedHandler;
-    typedef std::function<void(const CloudFrontClient*, const Model::GetFieldLevelEncryptionProfileConfig2019_03_26Request&, const Model::GetFieldLevelEncryptionProfileConfig2019_03_26Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetFieldLevelEncryptionProfileConfig2019_03_26ResponseReceivedHandler;
-    typedef std::function<void(const CloudFrontClient*, const Model::GetInvalidation2019_03_26Request&, const Model::GetInvalidation2019_03_26Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetInvalidation2019_03_26ResponseReceivedHandler;
-    typedef std::function<void(const CloudFrontClient*, const Model::GetPublicKey2019_03_26Request&, const Model::GetPublicKey2019_03_26Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetPublicKey2019_03_26ResponseReceivedHandler;
-    typedef std::function<void(const CloudFrontClient*, const Model::GetPublicKeyConfig2019_03_26Request&, const Model::GetPublicKeyConfig2019_03_26Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetPublicKeyConfig2019_03_26ResponseReceivedHandler;
-    typedef std::function<void(const CloudFrontClient*, const Model::GetStreamingDistribution2019_03_26Request&, const Model::GetStreamingDistribution2019_03_26Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetStreamingDistribution2019_03_26ResponseReceivedHandler;
-    typedef std::function<void(const CloudFrontClient*, const Model::GetStreamingDistributionConfig2019_03_26Request&, const Model::GetStreamingDistributionConfig2019_03_26Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetStreamingDistributionConfig2019_03_26ResponseReceivedHandler;
-    typedef std::function<void(const CloudFrontClient*, const Model::ListCloudFrontOriginAccessIdentities2019_03_26Request&, const Model::ListCloudFrontOriginAccessIdentities2019_03_26Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListCloudFrontOriginAccessIdentities2019_03_26ResponseReceivedHandler;
-    typedef std::function<void(const CloudFrontClient*, const Model::ListDistributions2019_03_26Request&, const Model::ListDistributions2019_03_26Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDistributions2019_03_26ResponseReceivedHandler;
-    typedef std::function<void(const CloudFrontClient*, const Model::ListDistributionsByWebACLId2019_03_26Request&, const Model::ListDistributionsByWebACLId2019_03_26Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDistributionsByWebACLId2019_03_26ResponseReceivedHandler;
-    typedef std::function<void(const CloudFrontClient*, const Model::ListFieldLevelEncryptionConfigs2019_03_26Request&, const Model::ListFieldLevelEncryptionConfigs2019_03_26Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListFieldLevelEncryptionConfigs2019_03_26ResponseReceivedHandler;
-    typedef std::function<void(const CloudFrontClient*, const Model::ListFieldLevelEncryptionProfiles2019_03_26Request&, const Model::ListFieldLevelEncryptionProfiles2019_03_26Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListFieldLevelEncryptionProfiles2019_03_26ResponseReceivedHandler;
-    typedef std::function<void(const CloudFrontClient*, const Model::ListInvalidations2019_03_26Request&, const Model::ListInvalidations2019_03_26Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListInvalidations2019_03_26ResponseReceivedHandler;
-    typedef std::function<void(const CloudFrontClient*, const Model::ListPublicKeys2019_03_26Request&, const Model::ListPublicKeys2019_03_26Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPublicKeys2019_03_26ResponseReceivedHandler;
-    typedef std::function<void(const CloudFrontClient*, const Model::ListStreamingDistributions2019_03_26Request&, const Model::ListStreamingDistributions2019_03_26Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListStreamingDistributions2019_03_26ResponseReceivedHandler;
-    typedef std::function<void(const CloudFrontClient*, const Model::ListTagsForResource2019_03_26Request&, const Model::ListTagsForResource2019_03_26Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResource2019_03_26ResponseReceivedHandler;
-    typedef std::function<void(const CloudFrontClient*, const Model::TagResource2019_03_26Request&, const Model::TagResource2019_03_26Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResource2019_03_26ResponseReceivedHandler;
-    typedef std::function<void(const CloudFrontClient*, const Model::UntagResource2019_03_26Request&, const Model::UntagResource2019_03_26Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResource2019_03_26ResponseReceivedHandler;
-    typedef std::function<void(const CloudFrontClient*, const Model::UpdateCloudFrontOriginAccessIdentity2019_03_26Request&, const Model::UpdateCloudFrontOriginAccessIdentity2019_03_26Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateCloudFrontOriginAccessIdentity2019_03_26ResponseReceivedHandler;
-    typedef std::function<void(const CloudFrontClient*, const Model::UpdateDistribution2019_03_26Request&, const Model::UpdateDistribution2019_03_26Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDistribution2019_03_26ResponseReceivedHandler;
-    typedef std::function<void(const CloudFrontClient*, const Model::UpdateFieldLevelEncryptionConfig2019_03_26Request&, const Model::UpdateFieldLevelEncryptionConfig2019_03_26Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateFieldLevelEncryptionConfig2019_03_26ResponseReceivedHandler;
-    typedef std::function<void(const CloudFrontClient*, const Model::UpdateFieldLevelEncryptionProfile2019_03_26Request&, const Model::UpdateFieldLevelEncryptionProfile2019_03_26Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateFieldLevelEncryptionProfile2019_03_26ResponseReceivedHandler;
-    typedef std::function<void(const CloudFrontClient*, const Model::UpdatePublicKey2019_03_26Request&, const Model::UpdatePublicKey2019_03_26Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdatePublicKey2019_03_26ResponseReceivedHandler;
-    typedef std::function<void(const CloudFrontClient*, const Model::UpdateStreamingDistribution2019_03_26Request&, const Model::UpdateStreamingDistribution2019_03_26Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateStreamingDistribution2019_03_26ResponseReceivedHandler;
+    typedef std::function<void(const CloudFrontClient*, const Model::CreateCachePolicy2020_05_31Request&, const Model::CreateCachePolicy2020_05_31Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateCachePolicy2020_05_31ResponseReceivedHandler;
+    typedef std::function<void(const CloudFrontClient*, const Model::CreateCloudFrontOriginAccessIdentity2020_05_31Request&, const Model::CreateCloudFrontOriginAccessIdentity2020_05_31Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateCloudFrontOriginAccessIdentity2020_05_31ResponseReceivedHandler;
+    typedef std::function<void(const CloudFrontClient*, const Model::CreateDistribution2020_05_31Request&, const Model::CreateDistribution2020_05_31Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDistribution2020_05_31ResponseReceivedHandler;
+    typedef std::function<void(const CloudFrontClient*, const Model::CreateDistributionWithTags2020_05_31Request&, const Model::CreateDistributionWithTags2020_05_31Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDistributionWithTags2020_05_31ResponseReceivedHandler;
+    typedef std::function<void(const CloudFrontClient*, const Model::CreateFieldLevelEncryptionConfig2020_05_31Request&, const Model::CreateFieldLevelEncryptionConfig2020_05_31Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateFieldLevelEncryptionConfig2020_05_31ResponseReceivedHandler;
+    typedef std::function<void(const CloudFrontClient*, const Model::CreateFieldLevelEncryptionProfile2020_05_31Request&, const Model::CreateFieldLevelEncryptionProfile2020_05_31Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateFieldLevelEncryptionProfile2020_05_31ResponseReceivedHandler;
+    typedef std::function<void(const CloudFrontClient*, const Model::CreateInvalidation2020_05_31Request&, const Model::CreateInvalidation2020_05_31Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateInvalidation2020_05_31ResponseReceivedHandler;
+    typedef std::function<void(const CloudFrontClient*, const Model::CreateOriginRequestPolicy2020_05_31Request&, const Model::CreateOriginRequestPolicy2020_05_31Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateOriginRequestPolicy2020_05_31ResponseReceivedHandler;
+    typedef std::function<void(const CloudFrontClient*, const Model::CreatePublicKey2020_05_31Request&, const Model::CreatePublicKey2020_05_31Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreatePublicKey2020_05_31ResponseReceivedHandler;
+    typedef std::function<void(const CloudFrontClient*, const Model::CreateStreamingDistribution2020_05_31Request&, const Model::CreateStreamingDistribution2020_05_31Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateStreamingDistribution2020_05_31ResponseReceivedHandler;
+    typedef std::function<void(const CloudFrontClient*, const Model::CreateStreamingDistributionWithTags2020_05_31Request&, const Model::CreateStreamingDistributionWithTags2020_05_31Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateStreamingDistributionWithTags2020_05_31ResponseReceivedHandler;
+    typedef std::function<void(const CloudFrontClient*, const Model::DeleteCachePolicy2020_05_31Request&, const Model::DeleteCachePolicy2020_05_31Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteCachePolicy2020_05_31ResponseReceivedHandler;
+    typedef std::function<void(const CloudFrontClient*, const Model::DeleteCloudFrontOriginAccessIdentity2020_05_31Request&, const Model::DeleteCloudFrontOriginAccessIdentity2020_05_31Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteCloudFrontOriginAccessIdentity2020_05_31ResponseReceivedHandler;
+    typedef std::function<void(const CloudFrontClient*, const Model::DeleteDistribution2020_05_31Request&, const Model::DeleteDistribution2020_05_31Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDistribution2020_05_31ResponseReceivedHandler;
+    typedef std::function<void(const CloudFrontClient*, const Model::DeleteFieldLevelEncryptionConfig2020_05_31Request&, const Model::DeleteFieldLevelEncryptionConfig2020_05_31Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteFieldLevelEncryptionConfig2020_05_31ResponseReceivedHandler;
+    typedef std::function<void(const CloudFrontClient*, const Model::DeleteFieldLevelEncryptionProfile2020_05_31Request&, const Model::DeleteFieldLevelEncryptionProfile2020_05_31Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteFieldLevelEncryptionProfile2020_05_31ResponseReceivedHandler;
+    typedef std::function<void(const CloudFrontClient*, const Model::DeleteOriginRequestPolicy2020_05_31Request&, const Model::DeleteOriginRequestPolicy2020_05_31Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteOriginRequestPolicy2020_05_31ResponseReceivedHandler;
+    typedef std::function<void(const CloudFrontClient*, const Model::DeletePublicKey2020_05_31Request&, const Model::DeletePublicKey2020_05_31Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeletePublicKey2020_05_31ResponseReceivedHandler;
+    typedef std::function<void(const CloudFrontClient*, const Model::DeleteStreamingDistribution2020_05_31Request&, const Model::DeleteStreamingDistribution2020_05_31Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteStreamingDistribution2020_05_31ResponseReceivedHandler;
+    typedef std::function<void(const CloudFrontClient*, const Model::GetCachePolicy2020_05_31Request&, const Model::GetCachePolicy2020_05_31Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCachePolicy2020_05_31ResponseReceivedHandler;
+    typedef std::function<void(const CloudFrontClient*, const Model::GetCachePolicyConfig2020_05_31Request&, const Model::GetCachePolicyConfig2020_05_31Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCachePolicyConfig2020_05_31ResponseReceivedHandler;
+    typedef std::function<void(const CloudFrontClient*, const Model::GetCloudFrontOriginAccessIdentity2020_05_31Request&, const Model::GetCloudFrontOriginAccessIdentity2020_05_31Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCloudFrontOriginAccessIdentity2020_05_31ResponseReceivedHandler;
+    typedef std::function<void(const CloudFrontClient*, const Model::GetCloudFrontOriginAccessIdentityConfig2020_05_31Request&, const Model::GetCloudFrontOriginAccessIdentityConfig2020_05_31Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCloudFrontOriginAccessIdentityConfig2020_05_31ResponseReceivedHandler;
+    typedef std::function<void(const CloudFrontClient*, const Model::GetDistribution2020_05_31Request&, const Model::GetDistribution2020_05_31Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDistribution2020_05_31ResponseReceivedHandler;
+    typedef std::function<void(const CloudFrontClient*, const Model::GetDistributionConfig2020_05_31Request&, const Model::GetDistributionConfig2020_05_31Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDistributionConfig2020_05_31ResponseReceivedHandler;
+    typedef std::function<void(const CloudFrontClient*, const Model::GetFieldLevelEncryption2020_05_31Request&, const Model::GetFieldLevelEncryption2020_05_31Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetFieldLevelEncryption2020_05_31ResponseReceivedHandler;
+    typedef std::function<void(const CloudFrontClient*, const Model::GetFieldLevelEncryptionConfig2020_05_31Request&, const Model::GetFieldLevelEncryptionConfig2020_05_31Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetFieldLevelEncryptionConfig2020_05_31ResponseReceivedHandler;
+    typedef std::function<void(const CloudFrontClient*, const Model::GetFieldLevelEncryptionProfile2020_05_31Request&, const Model::GetFieldLevelEncryptionProfile2020_05_31Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetFieldLevelEncryptionProfile2020_05_31ResponseReceivedHandler;
+    typedef std::function<void(const CloudFrontClient*, const Model::GetFieldLevelEncryptionProfileConfig2020_05_31Request&, const Model::GetFieldLevelEncryptionProfileConfig2020_05_31Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetFieldLevelEncryptionProfileConfig2020_05_31ResponseReceivedHandler;
+    typedef std::function<void(const CloudFrontClient*, const Model::GetInvalidation2020_05_31Request&, const Model::GetInvalidation2020_05_31Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetInvalidation2020_05_31ResponseReceivedHandler;
+    typedef std::function<void(const CloudFrontClient*, const Model::GetOriginRequestPolicy2020_05_31Request&, const Model::GetOriginRequestPolicy2020_05_31Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetOriginRequestPolicy2020_05_31ResponseReceivedHandler;
+    typedef std::function<void(const CloudFrontClient*, const Model::GetOriginRequestPolicyConfig2020_05_31Request&, const Model::GetOriginRequestPolicyConfig2020_05_31Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetOriginRequestPolicyConfig2020_05_31ResponseReceivedHandler;
+    typedef std::function<void(const CloudFrontClient*, const Model::GetPublicKey2020_05_31Request&, const Model::GetPublicKey2020_05_31Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetPublicKey2020_05_31ResponseReceivedHandler;
+    typedef std::function<void(const CloudFrontClient*, const Model::GetPublicKeyConfig2020_05_31Request&, const Model::GetPublicKeyConfig2020_05_31Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetPublicKeyConfig2020_05_31ResponseReceivedHandler;
+    typedef std::function<void(const CloudFrontClient*, const Model::GetStreamingDistribution2020_05_31Request&, const Model::GetStreamingDistribution2020_05_31Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetStreamingDistribution2020_05_31ResponseReceivedHandler;
+    typedef std::function<void(const CloudFrontClient*, const Model::GetStreamingDistributionConfig2020_05_31Request&, const Model::GetStreamingDistributionConfig2020_05_31Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetStreamingDistributionConfig2020_05_31ResponseReceivedHandler;
+    typedef std::function<void(const CloudFrontClient*, const Model::ListCachePolicies2020_05_31Request&, const Model::ListCachePolicies2020_05_31Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListCachePolicies2020_05_31ResponseReceivedHandler;
+    typedef std::function<void(const CloudFrontClient*, const Model::ListCloudFrontOriginAccessIdentities2020_05_31Request&, const Model::ListCloudFrontOriginAccessIdentities2020_05_31Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListCloudFrontOriginAccessIdentities2020_05_31ResponseReceivedHandler;
+    typedef std::function<void(const CloudFrontClient*, const Model::ListDistributions2020_05_31Request&, const Model::ListDistributions2020_05_31Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDistributions2020_05_31ResponseReceivedHandler;
+    typedef std::function<void(const CloudFrontClient*, const Model::ListDistributionsByCachePolicyId2020_05_31Request&, const Model::ListDistributionsByCachePolicyId2020_05_31Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDistributionsByCachePolicyId2020_05_31ResponseReceivedHandler;
+    typedef std::function<void(const CloudFrontClient*, const Model::ListDistributionsByOriginRequestPolicyId2020_05_31Request&, const Model::ListDistributionsByOriginRequestPolicyId2020_05_31Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDistributionsByOriginRequestPolicyId2020_05_31ResponseReceivedHandler;
+    typedef std::function<void(const CloudFrontClient*, const Model::ListDistributionsByWebACLId2020_05_31Request&, const Model::ListDistributionsByWebACLId2020_05_31Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDistributionsByWebACLId2020_05_31ResponseReceivedHandler;
+    typedef std::function<void(const CloudFrontClient*, const Model::ListFieldLevelEncryptionConfigs2020_05_31Request&, const Model::ListFieldLevelEncryptionConfigs2020_05_31Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListFieldLevelEncryptionConfigs2020_05_31ResponseReceivedHandler;
+    typedef std::function<void(const CloudFrontClient*, const Model::ListFieldLevelEncryptionProfiles2020_05_31Request&, const Model::ListFieldLevelEncryptionProfiles2020_05_31Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListFieldLevelEncryptionProfiles2020_05_31ResponseReceivedHandler;
+    typedef std::function<void(const CloudFrontClient*, const Model::ListInvalidations2020_05_31Request&, const Model::ListInvalidations2020_05_31Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListInvalidations2020_05_31ResponseReceivedHandler;
+    typedef std::function<void(const CloudFrontClient*, const Model::ListOriginRequestPolicies2020_05_31Request&, const Model::ListOriginRequestPolicies2020_05_31Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListOriginRequestPolicies2020_05_31ResponseReceivedHandler;
+    typedef std::function<void(const CloudFrontClient*, const Model::ListPublicKeys2020_05_31Request&, const Model::ListPublicKeys2020_05_31Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPublicKeys2020_05_31ResponseReceivedHandler;
+    typedef std::function<void(const CloudFrontClient*, const Model::ListStreamingDistributions2020_05_31Request&, const Model::ListStreamingDistributions2020_05_31Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListStreamingDistributions2020_05_31ResponseReceivedHandler;
+    typedef std::function<void(const CloudFrontClient*, const Model::ListTagsForResource2020_05_31Request&, const Model::ListTagsForResource2020_05_31Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResource2020_05_31ResponseReceivedHandler;
+    typedef std::function<void(const CloudFrontClient*, const Model::TagResource2020_05_31Request&, const Model::TagResource2020_05_31Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResource2020_05_31ResponseReceivedHandler;
+    typedef std::function<void(const CloudFrontClient*, const Model::UntagResource2020_05_31Request&, const Model::UntagResource2020_05_31Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResource2020_05_31ResponseReceivedHandler;
+    typedef std::function<void(const CloudFrontClient*, const Model::UpdateCachePolicy2020_05_31Request&, const Model::UpdateCachePolicy2020_05_31Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateCachePolicy2020_05_31ResponseReceivedHandler;
+    typedef std::function<void(const CloudFrontClient*, const Model::UpdateCloudFrontOriginAccessIdentity2020_05_31Request&, const Model::UpdateCloudFrontOriginAccessIdentity2020_05_31Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateCloudFrontOriginAccessIdentity2020_05_31ResponseReceivedHandler;
+    typedef std::function<void(const CloudFrontClient*, const Model::UpdateDistribution2020_05_31Request&, const Model::UpdateDistribution2020_05_31Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDistribution2020_05_31ResponseReceivedHandler;
+    typedef std::function<void(const CloudFrontClient*, const Model::UpdateFieldLevelEncryptionConfig2020_05_31Request&, const Model::UpdateFieldLevelEncryptionConfig2020_05_31Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateFieldLevelEncryptionConfig2020_05_31ResponseReceivedHandler;
+    typedef std::function<void(const CloudFrontClient*, const Model::UpdateFieldLevelEncryptionProfile2020_05_31Request&, const Model::UpdateFieldLevelEncryptionProfile2020_05_31Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateFieldLevelEncryptionProfile2020_05_31ResponseReceivedHandler;
+    typedef std::function<void(const CloudFrontClient*, const Model::UpdateOriginRequestPolicy2020_05_31Request&, const Model::UpdateOriginRequestPolicy2020_05_31Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateOriginRequestPolicy2020_05_31ResponseReceivedHandler;
+    typedef std::function<void(const CloudFrontClient*, const Model::UpdatePublicKey2020_05_31Request&, const Model::UpdatePublicKey2020_05_31Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdatePublicKey2020_05_31ResponseReceivedHandler;
+    typedef std::function<void(const CloudFrontClient*, const Model::UpdateStreamingDistribution2020_05_31Request&, const Model::UpdateStreamingDistribution2020_05_31Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateStreamingDistribution2020_05_31ResponseReceivedHandler;
 
   /**
    * <fullname>Amazon CloudFront</fullname> <p>This is the <i>Amazon CloudFront API
@@ -318,32 +386,77 @@ namespace Model
 
 
         /**
-         * <p>Creates a new origin access identity. If you're using Amazon S3 for your
-         * origin, you can use an origin access identity to require users to access your
-         * content using a CloudFront URL instead of the Amazon S3 URL. For more
-         * information about how to use origin access identities, see <a
-         * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
-         * Private Content through CloudFront</a> in the <i>Amazon CloudFront Developer
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/CreateCloudFrontOriginAccessIdentity2019_03_26">AWS
+         * <p>Creates a cache policy.</p> <p>After you create a cache policy, you can
+         * attach it to one or more cache behaviors. When it’s attached to a cache
+         * behavior, the cache policy determines the following:</p> <ul> <li> <p>The values
+         * that CloudFront includes in the <i>cache key</i>. These values can include HTTP
+         * headers, cookies, and URL query strings. CloudFront uses the cache key to find
+         * an object in its cache that it can return to the viewer.</p> </li> <li> <p>The
+         * default, minimum, and maximum time to live (TTL) values that you want objects to
+         * stay in the CloudFront cache.</p> </li> </ul> <p>The headers, cookies, and query
+         * strings that are included in the cache key are automatically included in
+         * requests that CloudFront sends to the origin. CloudFront sends a request when it
+         * can’t find an object in its cache that matches the request’s cache key. If you
+         * want to send values to the origin but <i>not</i> include them in the cache key,
+         * use <code>CreateOriginRequestPolicy</code>.</p> <p>For more information about
+         * cache policies, see <a
+         * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html">Controlling
+         * the cache key</a> in the <i>Amazon CloudFront Developer Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateCachePolicy2020_05_31">AWS
          * API Reference</a></p>
          */
-        virtual Model::CreateCloudFrontOriginAccessIdentity2019_03_26Outcome CreateCloudFrontOriginAccessIdentity2019_03_26(const Model::CreateCloudFrontOriginAccessIdentity2019_03_26Request& request) const;
+        virtual Model::CreateCachePolicy2020_05_31Outcome CreateCachePolicy2020_05_31(const Model::CreateCachePolicy2020_05_31Request& request) const;
 
         /**
-         * <p>Creates a new origin access identity. If you're using Amazon S3 for your
-         * origin, you can use an origin access identity to require users to access your
-         * content using a CloudFront URL instead of the Amazon S3 URL. For more
-         * information about how to use origin access identities, see <a
-         * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
-         * Private Content through CloudFront</a> in the <i>Amazon CloudFront Developer
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/CreateCloudFrontOriginAccessIdentity2019_03_26">AWS
+         * <p>Creates a cache policy.</p> <p>After you create a cache policy, you can
+         * attach it to one or more cache behaviors. When it’s attached to a cache
+         * behavior, the cache policy determines the following:</p> <ul> <li> <p>The values
+         * that CloudFront includes in the <i>cache key</i>. These values can include HTTP
+         * headers, cookies, and URL query strings. CloudFront uses the cache key to find
+         * an object in its cache that it can return to the viewer.</p> </li> <li> <p>The
+         * default, minimum, and maximum time to live (TTL) values that you want objects to
+         * stay in the CloudFront cache.</p> </li> </ul> <p>The headers, cookies, and query
+         * strings that are included in the cache key are automatically included in
+         * requests that CloudFront sends to the origin. CloudFront sends a request when it
+         * can’t find an object in its cache that matches the request’s cache key. If you
+         * want to send values to the origin but <i>not</i> include them in the cache key,
+         * use <code>CreateOriginRequestPolicy</code>.</p> <p>For more information about
+         * cache policies, see <a
+         * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html">Controlling
+         * the cache key</a> in the <i>Amazon CloudFront Developer Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateCachePolicy2020_05_31">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
-        virtual Model::CreateCloudFrontOriginAccessIdentity2019_03_26OutcomeCallable CreateCloudFrontOriginAccessIdentity2019_03_26Callable(const Model::CreateCloudFrontOriginAccessIdentity2019_03_26Request& request) const;
+        virtual Model::CreateCachePolicy2020_05_31OutcomeCallable CreateCachePolicy2020_05_31Callable(const Model::CreateCachePolicy2020_05_31Request& request) const;
+
+        /**
+         * <p>Creates a cache policy.</p> <p>After you create a cache policy, you can
+         * attach it to one or more cache behaviors. When it’s attached to a cache
+         * behavior, the cache policy determines the following:</p> <ul> <li> <p>The values
+         * that CloudFront includes in the <i>cache key</i>. These values can include HTTP
+         * headers, cookies, and URL query strings. CloudFront uses the cache key to find
+         * an object in its cache that it can return to the viewer.</p> </li> <li> <p>The
+         * default, minimum, and maximum time to live (TTL) values that you want objects to
+         * stay in the CloudFront cache.</p> </li> </ul> <p>The headers, cookies, and query
+         * strings that are included in the cache key are automatically included in
+         * requests that CloudFront sends to the origin. CloudFront sends a request when it
+         * can’t find an object in its cache that matches the request’s cache key. If you
+         * want to send values to the origin but <i>not</i> include them in the cache key,
+         * use <code>CreateOriginRequestPolicy</code>.</p> <p>For more information about
+         * cache policies, see <a
+         * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html">Controlling
+         * the cache key</a> in the <i>Amazon CloudFront Developer Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateCachePolicy2020_05_31">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateCachePolicy2020_05_31Async(const Model::CreateCachePolicy2020_05_31Request& request, const CreateCachePolicy2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a new origin access identity. If you're using Amazon S3 for your
@@ -353,12 +466,40 @@ namespace Model
          * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
          * Private Content through CloudFront</a> in the <i>Amazon CloudFront Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/CreateCloudFrontOriginAccessIdentity2019_03_26">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateCloudFrontOriginAccessIdentity2020_05_31">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateCloudFrontOriginAccessIdentity2020_05_31Outcome CreateCloudFrontOriginAccessIdentity2020_05_31(const Model::CreateCloudFrontOriginAccessIdentity2020_05_31Request& request) const;
+
+        /**
+         * <p>Creates a new origin access identity. If you're using Amazon S3 for your
+         * origin, you can use an origin access identity to require users to access your
+         * content using a CloudFront URL instead of the Amazon S3 URL. For more
+         * information about how to use origin access identities, see <a
+         * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
+         * Private Content through CloudFront</a> in the <i>Amazon CloudFront Developer
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateCloudFrontOriginAccessIdentity2020_05_31">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateCloudFrontOriginAccessIdentity2020_05_31OutcomeCallable CreateCloudFrontOriginAccessIdentity2020_05_31Callable(const Model::CreateCloudFrontOriginAccessIdentity2020_05_31Request& request) const;
+
+        /**
+         * <p>Creates a new origin access identity. If you're using Amazon S3 for your
+         * origin, you can use an origin access identity to require users to access your
+         * content using a CloudFront URL instead of the Amazon S3 URL. For more
+         * information about how to use origin access identities, see <a
+         * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
+         * Private Content through CloudFront</a> in the <i>Amazon CloudFront Developer
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateCloudFrontOriginAccessIdentity2020_05_31">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
-        virtual void CreateCloudFrontOriginAccessIdentity2019_03_26Async(const Model::CreateCloudFrontOriginAccessIdentity2019_03_26Request& request, const CreateCloudFrontOriginAccessIdentity2019_03_26ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+        virtual void CreateCloudFrontOriginAccessIdentity2020_05_31Async(const Model::CreateCloudFrontOriginAccessIdentity2020_05_31Request& request, const CreateCloudFrontOriginAccessIdentity2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a new web distribution. You create a CloudFront distribution to tell
@@ -375,10 +516,10 @@ namespace Model
          * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-overview-required-fields.html">Required
          * Fields for Create Distribution and Update Distribution</a> in the <i>Amazon
          * CloudFront Developer Guide</i>.</p> <p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/CreateDistribution2019_03_26">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateDistribution2020_05_31">AWS
          * API Reference</a></p>
          */
-        virtual Model::CreateDistribution2019_03_26Outcome CreateDistribution2019_03_26(const Model::CreateDistribution2019_03_26Request& request) const;
+        virtual Model::CreateDistribution2020_05_31Outcome CreateDistribution2020_05_31(const Model::CreateDistribution2020_05_31Request& request) const;
 
         /**
          * <p>Creates a new web distribution. You create a CloudFront distribution to tell
@@ -395,12 +536,12 @@ namespace Model
          * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-overview-required-fields.html">Required
          * Fields for Create Distribution and Update Distribution</a> in the <i>Amazon
          * CloudFront Developer Guide</i>.</p> <p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/CreateDistribution2019_03_26">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateDistribution2020_05_31">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
-        virtual Model::CreateDistribution2019_03_26OutcomeCallable CreateDistribution2019_03_26Callable(const Model::CreateDistribution2019_03_26Request& request) const;
+        virtual Model::CreateDistribution2020_05_31OutcomeCallable CreateDistribution2020_05_31Callable(const Model::CreateDistribution2020_05_31Request& request) const;
 
         /**
          * <p>Creates a new web distribution. You create a CloudFront distribution to tell
@@ -417,146 +558,225 @@ namespace Model
          * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-overview-required-fields.html">Required
          * Fields for Create Distribution and Update Distribution</a> in the <i>Amazon
          * CloudFront Developer Guide</i>.</p> <p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/CreateDistribution2019_03_26">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateDistribution2020_05_31">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
-        virtual void CreateDistribution2019_03_26Async(const Model::CreateDistribution2019_03_26Request& request, const CreateDistribution2019_03_26ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+        virtual void CreateDistribution2020_05_31Async(const Model::CreateDistribution2020_05_31Request& request, const CreateDistribution2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Create a new distribution with tags.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/CreateDistributionWithTags2019_03_26">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateDistributionWithTags2020_05_31">AWS
          * API Reference</a></p>
          */
-        virtual Model::CreateDistributionWithTags2019_03_26Outcome CreateDistributionWithTags2019_03_26(const Model::CreateDistributionWithTags2019_03_26Request& request) const;
+        virtual Model::CreateDistributionWithTags2020_05_31Outcome CreateDistributionWithTags2020_05_31(const Model::CreateDistributionWithTags2020_05_31Request& request) const;
 
         /**
          * <p>Create a new distribution with tags.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/CreateDistributionWithTags2019_03_26">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateDistributionWithTags2020_05_31">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
-        virtual Model::CreateDistributionWithTags2019_03_26OutcomeCallable CreateDistributionWithTags2019_03_26Callable(const Model::CreateDistributionWithTags2019_03_26Request& request) const;
+        virtual Model::CreateDistributionWithTags2020_05_31OutcomeCallable CreateDistributionWithTags2020_05_31Callable(const Model::CreateDistributionWithTags2020_05_31Request& request) const;
 
         /**
          * <p>Create a new distribution with tags.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/CreateDistributionWithTags2019_03_26">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateDistributionWithTags2020_05_31">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
-        virtual void CreateDistributionWithTags2019_03_26Async(const Model::CreateDistributionWithTags2019_03_26Request& request, const CreateDistributionWithTags2019_03_26ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+        virtual void CreateDistributionWithTags2020_05_31Async(const Model::CreateDistributionWithTags2020_05_31Request& request, const CreateDistributionWithTags2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Create a new field-level encryption configuration.</p><p><h3>See Also:</h3>  
          * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/CreateFieldLevelEncryptionConfig2019_03_26">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateFieldLevelEncryptionConfig2020_05_31">AWS
          * API Reference</a></p>
          */
-        virtual Model::CreateFieldLevelEncryptionConfig2019_03_26Outcome CreateFieldLevelEncryptionConfig2019_03_26(const Model::CreateFieldLevelEncryptionConfig2019_03_26Request& request) const;
+        virtual Model::CreateFieldLevelEncryptionConfig2020_05_31Outcome CreateFieldLevelEncryptionConfig2020_05_31(const Model::CreateFieldLevelEncryptionConfig2020_05_31Request& request) const;
 
         /**
          * <p>Create a new field-level encryption configuration.</p><p><h3>See Also:</h3>  
          * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/CreateFieldLevelEncryptionConfig2019_03_26">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateFieldLevelEncryptionConfig2020_05_31">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
-        virtual Model::CreateFieldLevelEncryptionConfig2019_03_26OutcomeCallable CreateFieldLevelEncryptionConfig2019_03_26Callable(const Model::CreateFieldLevelEncryptionConfig2019_03_26Request& request) const;
+        virtual Model::CreateFieldLevelEncryptionConfig2020_05_31OutcomeCallable CreateFieldLevelEncryptionConfig2020_05_31Callable(const Model::CreateFieldLevelEncryptionConfig2020_05_31Request& request) const;
 
         /**
          * <p>Create a new field-level encryption configuration.</p><p><h3>See Also:</h3>  
          * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/CreateFieldLevelEncryptionConfig2019_03_26">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateFieldLevelEncryptionConfig2020_05_31">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
-        virtual void CreateFieldLevelEncryptionConfig2019_03_26Async(const Model::CreateFieldLevelEncryptionConfig2019_03_26Request& request, const CreateFieldLevelEncryptionConfig2019_03_26ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+        virtual void CreateFieldLevelEncryptionConfig2020_05_31Async(const Model::CreateFieldLevelEncryptionConfig2020_05_31Request& request, const CreateFieldLevelEncryptionConfig2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Create a field-level encryption profile.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/CreateFieldLevelEncryptionProfile2019_03_26">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateFieldLevelEncryptionProfile2020_05_31">AWS
          * API Reference</a></p>
          */
-        virtual Model::CreateFieldLevelEncryptionProfile2019_03_26Outcome CreateFieldLevelEncryptionProfile2019_03_26(const Model::CreateFieldLevelEncryptionProfile2019_03_26Request& request) const;
+        virtual Model::CreateFieldLevelEncryptionProfile2020_05_31Outcome CreateFieldLevelEncryptionProfile2020_05_31(const Model::CreateFieldLevelEncryptionProfile2020_05_31Request& request) const;
 
         /**
          * <p>Create a field-level encryption profile.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/CreateFieldLevelEncryptionProfile2019_03_26">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateFieldLevelEncryptionProfile2020_05_31">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
-        virtual Model::CreateFieldLevelEncryptionProfile2019_03_26OutcomeCallable CreateFieldLevelEncryptionProfile2019_03_26Callable(const Model::CreateFieldLevelEncryptionProfile2019_03_26Request& request) const;
+        virtual Model::CreateFieldLevelEncryptionProfile2020_05_31OutcomeCallable CreateFieldLevelEncryptionProfile2020_05_31Callable(const Model::CreateFieldLevelEncryptionProfile2020_05_31Request& request) const;
 
         /**
          * <p>Create a field-level encryption profile.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/CreateFieldLevelEncryptionProfile2019_03_26">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateFieldLevelEncryptionProfile2020_05_31">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
-        virtual void CreateFieldLevelEncryptionProfile2019_03_26Async(const Model::CreateFieldLevelEncryptionProfile2019_03_26Request& request, const CreateFieldLevelEncryptionProfile2019_03_26ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+        virtual void CreateFieldLevelEncryptionProfile2020_05_31Async(const Model::CreateFieldLevelEncryptionProfile2020_05_31Request& request, const CreateFieldLevelEncryptionProfile2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Create a new invalidation. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/CreateInvalidation2019_03_26">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateInvalidation2020_05_31">AWS
          * API Reference</a></p>
          */
-        virtual Model::CreateInvalidation2019_03_26Outcome CreateInvalidation2019_03_26(const Model::CreateInvalidation2019_03_26Request& request) const;
+        virtual Model::CreateInvalidation2020_05_31Outcome CreateInvalidation2020_05_31(const Model::CreateInvalidation2020_05_31Request& request) const;
 
         /**
          * <p>Create a new invalidation. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/CreateInvalidation2019_03_26">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateInvalidation2020_05_31">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
-        virtual Model::CreateInvalidation2019_03_26OutcomeCallable CreateInvalidation2019_03_26Callable(const Model::CreateInvalidation2019_03_26Request& request) const;
+        virtual Model::CreateInvalidation2020_05_31OutcomeCallable CreateInvalidation2020_05_31Callable(const Model::CreateInvalidation2020_05_31Request& request) const;
 
         /**
          * <p>Create a new invalidation. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/CreateInvalidation2019_03_26">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateInvalidation2020_05_31">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
-        virtual void CreateInvalidation2019_03_26Async(const Model::CreateInvalidation2019_03_26Request& request, const CreateInvalidation2019_03_26ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+        virtual void CreateInvalidation2020_05_31Async(const Model::CreateInvalidation2020_05_31Request& request, const CreateInvalidation2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Creates an origin request policy.</p> <p>After you create an origin request
+         * policy, you can attach it to one or more cache behaviors. When it’s attached to
+         * a cache behavior, the origin request policy determines the values that
+         * CloudFront includes in requests that it sends to the origin. Each request that
+         * CloudFront sends to the origin includes the following:</p> <ul> <li> <p>The
+         * request body and the URL path (without the domain name) from the viewer
+         * request.</p> </li> <li> <p>The headers that CloudFront automatically includes in
+         * every origin request, including <code>Host</code>, <code>User-Agent</code>, and
+         * <code>X-Amz-Cf-Id</code>.</p> </li> <li> <p>All HTTP headers, cookies, and URL
+         * query strings that are specified in the cache policy or the origin request
+         * policy. These can include items from the viewer request and, in the case of
+         * headers, additional ones that are added by CloudFront.</p> </li> </ul>
+         * <p>CloudFront sends a request when it can’t find a valid object in its cache
+         * that matches the request. If you want to send values to the origin and also
+         * include them in the cache key, use <code>CreateCachePolicy</code>.</p> <p>For
+         * more information about origin request policies, see <a
+         * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-origin-requests.html">Controlling
+         * origin requests</a> in the <i>Amazon CloudFront Developer
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateOriginRequestPolicy2020_05_31">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateOriginRequestPolicy2020_05_31Outcome CreateOriginRequestPolicy2020_05_31(const Model::CreateOriginRequestPolicy2020_05_31Request& request) const;
+
+        /**
+         * <p>Creates an origin request policy.</p> <p>After you create an origin request
+         * policy, you can attach it to one or more cache behaviors. When it’s attached to
+         * a cache behavior, the origin request policy determines the values that
+         * CloudFront includes in requests that it sends to the origin. Each request that
+         * CloudFront sends to the origin includes the following:</p> <ul> <li> <p>The
+         * request body and the URL path (without the domain name) from the viewer
+         * request.</p> </li> <li> <p>The headers that CloudFront automatically includes in
+         * every origin request, including <code>Host</code>, <code>User-Agent</code>, and
+         * <code>X-Amz-Cf-Id</code>.</p> </li> <li> <p>All HTTP headers, cookies, and URL
+         * query strings that are specified in the cache policy or the origin request
+         * policy. These can include items from the viewer request and, in the case of
+         * headers, additional ones that are added by CloudFront.</p> </li> </ul>
+         * <p>CloudFront sends a request when it can’t find a valid object in its cache
+         * that matches the request. If you want to send values to the origin and also
+         * include them in the cache key, use <code>CreateCachePolicy</code>.</p> <p>For
+         * more information about origin request policies, see <a
+         * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-origin-requests.html">Controlling
+         * origin requests</a> in the <i>Amazon CloudFront Developer
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateOriginRequestPolicy2020_05_31">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateOriginRequestPolicy2020_05_31OutcomeCallable CreateOriginRequestPolicy2020_05_31Callable(const Model::CreateOriginRequestPolicy2020_05_31Request& request) const;
+
+        /**
+         * <p>Creates an origin request policy.</p> <p>After you create an origin request
+         * policy, you can attach it to one or more cache behaviors. When it’s attached to
+         * a cache behavior, the origin request policy determines the values that
+         * CloudFront includes in requests that it sends to the origin. Each request that
+         * CloudFront sends to the origin includes the following:</p> <ul> <li> <p>The
+         * request body and the URL path (without the domain name) from the viewer
+         * request.</p> </li> <li> <p>The headers that CloudFront automatically includes in
+         * every origin request, including <code>Host</code>, <code>User-Agent</code>, and
+         * <code>X-Amz-Cf-Id</code>.</p> </li> <li> <p>All HTTP headers, cookies, and URL
+         * query strings that are specified in the cache policy or the origin request
+         * policy. These can include items from the viewer request and, in the case of
+         * headers, additional ones that are added by CloudFront.</p> </li> </ul>
+         * <p>CloudFront sends a request when it can’t find a valid object in its cache
+         * that matches the request. If you want to send values to the origin and also
+         * include them in the cache key, use <code>CreateCachePolicy</code>.</p> <p>For
+         * more information about origin request policies, see <a
+         * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-origin-requests.html">Controlling
+         * origin requests</a> in the <i>Amazon CloudFront Developer
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateOriginRequestPolicy2020_05_31">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateOriginRequestPolicy2020_05_31Async(const Model::CreateOriginRequestPolicy2020_05_31Request& request, const CreateOriginRequestPolicy2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Add a new public key to CloudFront to use, for example, for field-level
          * encryption. You can add a maximum of 10 public keys with one AWS
          * account.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/CreatePublicKey2019_03_26">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreatePublicKey2020_05_31">AWS
          * API Reference</a></p>
          */
-        virtual Model::CreatePublicKey2019_03_26Outcome CreatePublicKey2019_03_26(const Model::CreatePublicKey2019_03_26Request& request) const;
+        virtual Model::CreatePublicKey2020_05_31Outcome CreatePublicKey2020_05_31(const Model::CreatePublicKey2020_05_31Request& request) const;
 
         /**
          * <p>Add a new public key to CloudFront to use, for example, for field-level
          * encryption. You can add a maximum of 10 public keys with one AWS
          * account.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/CreatePublicKey2019_03_26">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreatePublicKey2020_05_31">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
-        virtual Model::CreatePublicKey2019_03_26OutcomeCallable CreatePublicKey2019_03_26Callable(const Model::CreatePublicKey2019_03_26Request& request) const;
+        virtual Model::CreatePublicKey2020_05_31OutcomeCallable CreatePublicKey2020_05_31Callable(const Model::CreatePublicKey2020_05_31Request& request) const;
 
         /**
          * <p>Add a new public key to CloudFront to use, for example, for field-level
          * encryption. You can add a maximum of 10 public keys with one AWS
          * account.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/CreatePublicKey2019_03_26">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreatePublicKey2020_05_31">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
-        virtual void CreatePublicKey2019_03_26Async(const Model::CreatePublicKey2019_03_26Request& request, const CreatePublicKey2019_03_26ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+        virtual void CreatePublicKey2020_05_31Async(const Model::CreatePublicKey2020_05_31Request& request, const CreatePublicKey2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a new RTMP distribution. An RTMP distribution is similar to a web
@@ -584,10 +804,10 @@ namespace Model
          * these accidental deletions and to notify you when there's a mismatch between the
          * number of values you say you're specifying in the <code>Quantity</code> element
          * and the number of values specified.</p> <p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/CreateStreamingDistribution2019_03_26">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateStreamingDistribution2020_05_31">AWS
          * API Reference</a></p>
          */
-        virtual Model::CreateStreamingDistribution2019_03_26Outcome CreateStreamingDistribution2019_03_26(const Model::CreateStreamingDistribution2019_03_26Request& request) const;
+        virtual Model::CreateStreamingDistribution2020_05_31Outcome CreateStreamingDistribution2020_05_31(const Model::CreateStreamingDistribution2020_05_31Request& request) const;
 
         /**
          * <p>Creates a new RTMP distribution. An RTMP distribution is similar to a web
@@ -615,12 +835,12 @@ namespace Model
          * these accidental deletions and to notify you when there's a mismatch between the
          * number of values you say you're specifying in the <code>Quantity</code> element
          * and the number of values specified.</p> <p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/CreateStreamingDistribution2019_03_26">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateStreamingDistribution2020_05_31">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
-        virtual Model::CreateStreamingDistribution2019_03_26OutcomeCallable CreateStreamingDistribution2019_03_26Callable(const Model::CreateStreamingDistribution2019_03_26Request& request) const;
+        virtual Model::CreateStreamingDistribution2020_05_31OutcomeCallable CreateStreamingDistribution2020_05_31Callable(const Model::CreateStreamingDistribution2020_05_31Request& request) const;
 
         /**
          * <p>Creates a new RTMP distribution. An RTMP distribution is similar to a web
@@ -648,165 +868,248 @@ namespace Model
          * these accidental deletions and to notify you when there's a mismatch between the
          * number of values you say you're specifying in the <code>Quantity</code> element
          * and the number of values specified.</p> <p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/CreateStreamingDistribution2019_03_26">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateStreamingDistribution2020_05_31">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
-        virtual void CreateStreamingDistribution2019_03_26Async(const Model::CreateStreamingDistribution2019_03_26Request& request, const CreateStreamingDistribution2019_03_26ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+        virtual void CreateStreamingDistribution2020_05_31Async(const Model::CreateStreamingDistribution2020_05_31Request& request, const CreateStreamingDistribution2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Create a new streaming distribution with tags.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/CreateStreamingDistributionWithTags2019_03_26">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateStreamingDistributionWithTags2020_05_31">AWS
          * API Reference</a></p>
          */
-        virtual Model::CreateStreamingDistributionWithTags2019_03_26Outcome CreateStreamingDistributionWithTags2019_03_26(const Model::CreateStreamingDistributionWithTags2019_03_26Request& request) const;
+        virtual Model::CreateStreamingDistributionWithTags2020_05_31Outcome CreateStreamingDistributionWithTags2020_05_31(const Model::CreateStreamingDistributionWithTags2020_05_31Request& request) const;
 
         /**
          * <p>Create a new streaming distribution with tags.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/CreateStreamingDistributionWithTags2019_03_26">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateStreamingDistributionWithTags2020_05_31">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
-        virtual Model::CreateStreamingDistributionWithTags2019_03_26OutcomeCallable CreateStreamingDistributionWithTags2019_03_26Callable(const Model::CreateStreamingDistributionWithTags2019_03_26Request& request) const;
+        virtual Model::CreateStreamingDistributionWithTags2020_05_31OutcomeCallable CreateStreamingDistributionWithTags2020_05_31Callable(const Model::CreateStreamingDistributionWithTags2020_05_31Request& request) const;
 
         /**
          * <p>Create a new streaming distribution with tags.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/CreateStreamingDistributionWithTags2019_03_26">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateStreamingDistributionWithTags2020_05_31">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
-        virtual void CreateStreamingDistributionWithTags2019_03_26Async(const Model::CreateStreamingDistributionWithTags2019_03_26Request& request, const CreateStreamingDistributionWithTags2019_03_26ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+        virtual void CreateStreamingDistributionWithTags2020_05_31Async(const Model::CreateStreamingDistributionWithTags2020_05_31Request& request, const CreateStreamingDistributionWithTags2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes a cache policy.</p> <p>You cannot delete a cache policy if it’s
+         * attached to a cache behavior. First update your distributions to remove the
+         * cache policy from all cache behaviors, then delete the cache policy.</p> <p>To
+         * delete a cache policy, you must provide the policy’s identifier and version. To
+         * get these values, you can use <code>ListCachePolicies</code> or
+         * <code>GetCachePolicy</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteCachePolicy2020_05_31">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteCachePolicy2020_05_31Outcome DeleteCachePolicy2020_05_31(const Model::DeleteCachePolicy2020_05_31Request& request) const;
+
+        /**
+         * <p>Deletes a cache policy.</p> <p>You cannot delete a cache policy if it’s
+         * attached to a cache behavior. First update your distributions to remove the
+         * cache policy from all cache behaviors, then delete the cache policy.</p> <p>To
+         * delete a cache policy, you must provide the policy’s identifier and version. To
+         * get these values, you can use <code>ListCachePolicies</code> or
+         * <code>GetCachePolicy</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteCachePolicy2020_05_31">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteCachePolicy2020_05_31OutcomeCallable DeleteCachePolicy2020_05_31Callable(const Model::DeleteCachePolicy2020_05_31Request& request) const;
+
+        /**
+         * <p>Deletes a cache policy.</p> <p>You cannot delete a cache policy if it’s
+         * attached to a cache behavior. First update your distributions to remove the
+         * cache policy from all cache behaviors, then delete the cache policy.</p> <p>To
+         * delete a cache policy, you must provide the policy’s identifier and version. To
+         * get these values, you can use <code>ListCachePolicies</code> or
+         * <code>GetCachePolicy</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteCachePolicy2020_05_31">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteCachePolicy2020_05_31Async(const Model::DeleteCachePolicy2020_05_31Request& request, const DeleteCachePolicy2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Delete an origin access identity. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/DeleteCloudFrontOriginAccessIdentity2019_03_26">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteCloudFrontOriginAccessIdentity2020_05_31">AWS
          * API Reference</a></p>
          */
-        virtual Model::DeleteCloudFrontOriginAccessIdentity2019_03_26Outcome DeleteCloudFrontOriginAccessIdentity2019_03_26(const Model::DeleteCloudFrontOriginAccessIdentity2019_03_26Request& request) const;
+        virtual Model::DeleteCloudFrontOriginAccessIdentity2020_05_31Outcome DeleteCloudFrontOriginAccessIdentity2020_05_31(const Model::DeleteCloudFrontOriginAccessIdentity2020_05_31Request& request) const;
 
         /**
          * <p>Delete an origin access identity. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/DeleteCloudFrontOriginAccessIdentity2019_03_26">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteCloudFrontOriginAccessIdentity2020_05_31">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
-        virtual Model::DeleteCloudFrontOriginAccessIdentity2019_03_26OutcomeCallable DeleteCloudFrontOriginAccessIdentity2019_03_26Callable(const Model::DeleteCloudFrontOriginAccessIdentity2019_03_26Request& request) const;
+        virtual Model::DeleteCloudFrontOriginAccessIdentity2020_05_31OutcomeCallable DeleteCloudFrontOriginAccessIdentity2020_05_31Callable(const Model::DeleteCloudFrontOriginAccessIdentity2020_05_31Request& request) const;
 
         /**
          * <p>Delete an origin access identity. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/DeleteCloudFrontOriginAccessIdentity2019_03_26">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteCloudFrontOriginAccessIdentity2020_05_31">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
-        virtual void DeleteCloudFrontOriginAccessIdentity2019_03_26Async(const Model::DeleteCloudFrontOriginAccessIdentity2019_03_26Request& request, const DeleteCloudFrontOriginAccessIdentity2019_03_26ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+        virtual void DeleteCloudFrontOriginAccessIdentity2020_05_31Async(const Model::DeleteCloudFrontOriginAccessIdentity2020_05_31Request& request, const DeleteCloudFrontOriginAccessIdentity2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Delete a distribution. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/DeleteDistribution2019_03_26">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteDistribution2020_05_31">AWS
          * API Reference</a></p>
          */
-        virtual Model::DeleteDistribution2019_03_26Outcome DeleteDistribution2019_03_26(const Model::DeleteDistribution2019_03_26Request& request) const;
+        virtual Model::DeleteDistribution2020_05_31Outcome DeleteDistribution2020_05_31(const Model::DeleteDistribution2020_05_31Request& request) const;
 
         /**
          * <p>Delete a distribution. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/DeleteDistribution2019_03_26">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteDistribution2020_05_31">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
-        virtual Model::DeleteDistribution2019_03_26OutcomeCallable DeleteDistribution2019_03_26Callable(const Model::DeleteDistribution2019_03_26Request& request) const;
+        virtual Model::DeleteDistribution2020_05_31OutcomeCallable DeleteDistribution2020_05_31Callable(const Model::DeleteDistribution2020_05_31Request& request) const;
 
         /**
          * <p>Delete a distribution. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/DeleteDistribution2019_03_26">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteDistribution2020_05_31">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
-        virtual void DeleteDistribution2019_03_26Async(const Model::DeleteDistribution2019_03_26Request& request, const DeleteDistribution2019_03_26ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+        virtual void DeleteDistribution2020_05_31Async(const Model::DeleteDistribution2020_05_31Request& request, const DeleteDistribution2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Remove a field-level encryption configuration.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/DeleteFieldLevelEncryptionConfig2019_03_26">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteFieldLevelEncryptionConfig2020_05_31">AWS
          * API Reference</a></p>
          */
-        virtual Model::DeleteFieldLevelEncryptionConfig2019_03_26Outcome DeleteFieldLevelEncryptionConfig2019_03_26(const Model::DeleteFieldLevelEncryptionConfig2019_03_26Request& request) const;
+        virtual Model::DeleteFieldLevelEncryptionConfig2020_05_31Outcome DeleteFieldLevelEncryptionConfig2020_05_31(const Model::DeleteFieldLevelEncryptionConfig2020_05_31Request& request) const;
 
         /**
          * <p>Remove a field-level encryption configuration.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/DeleteFieldLevelEncryptionConfig2019_03_26">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteFieldLevelEncryptionConfig2020_05_31">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
-        virtual Model::DeleteFieldLevelEncryptionConfig2019_03_26OutcomeCallable DeleteFieldLevelEncryptionConfig2019_03_26Callable(const Model::DeleteFieldLevelEncryptionConfig2019_03_26Request& request) const;
+        virtual Model::DeleteFieldLevelEncryptionConfig2020_05_31OutcomeCallable DeleteFieldLevelEncryptionConfig2020_05_31Callable(const Model::DeleteFieldLevelEncryptionConfig2020_05_31Request& request) const;
 
         /**
          * <p>Remove a field-level encryption configuration.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/DeleteFieldLevelEncryptionConfig2019_03_26">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteFieldLevelEncryptionConfig2020_05_31">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
-        virtual void DeleteFieldLevelEncryptionConfig2019_03_26Async(const Model::DeleteFieldLevelEncryptionConfig2019_03_26Request& request, const DeleteFieldLevelEncryptionConfig2019_03_26ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+        virtual void DeleteFieldLevelEncryptionConfig2020_05_31Async(const Model::DeleteFieldLevelEncryptionConfig2020_05_31Request& request, const DeleteFieldLevelEncryptionConfig2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Remove a field-level encryption profile.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/DeleteFieldLevelEncryptionProfile2019_03_26">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteFieldLevelEncryptionProfile2020_05_31">AWS
          * API Reference</a></p>
          */
-        virtual Model::DeleteFieldLevelEncryptionProfile2019_03_26Outcome DeleteFieldLevelEncryptionProfile2019_03_26(const Model::DeleteFieldLevelEncryptionProfile2019_03_26Request& request) const;
+        virtual Model::DeleteFieldLevelEncryptionProfile2020_05_31Outcome DeleteFieldLevelEncryptionProfile2020_05_31(const Model::DeleteFieldLevelEncryptionProfile2020_05_31Request& request) const;
 
         /**
          * <p>Remove a field-level encryption profile.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/DeleteFieldLevelEncryptionProfile2019_03_26">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteFieldLevelEncryptionProfile2020_05_31">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
-        virtual Model::DeleteFieldLevelEncryptionProfile2019_03_26OutcomeCallable DeleteFieldLevelEncryptionProfile2019_03_26Callable(const Model::DeleteFieldLevelEncryptionProfile2019_03_26Request& request) const;
+        virtual Model::DeleteFieldLevelEncryptionProfile2020_05_31OutcomeCallable DeleteFieldLevelEncryptionProfile2020_05_31Callable(const Model::DeleteFieldLevelEncryptionProfile2020_05_31Request& request) const;
 
         /**
          * <p>Remove a field-level encryption profile.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/DeleteFieldLevelEncryptionProfile2019_03_26">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteFieldLevelEncryptionProfile2020_05_31">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
-        virtual void DeleteFieldLevelEncryptionProfile2019_03_26Async(const Model::DeleteFieldLevelEncryptionProfile2019_03_26Request& request, const DeleteFieldLevelEncryptionProfile2019_03_26ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+        virtual void DeleteFieldLevelEncryptionProfile2020_05_31Async(const Model::DeleteFieldLevelEncryptionProfile2020_05_31Request& request, const DeleteFieldLevelEncryptionProfile2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes an origin request policy.</p> <p>You cannot delete an origin request
+         * policy if it’s attached to any cache behaviors. First update your distributions
+         * to remove the origin request policy from all cache behaviors, then delete the
+         * origin request policy.</p> <p>To delete an origin request policy, you must
+         * provide the policy’s identifier and version. To get the identifier, you can use
+         * <code>ListOriginRequestPolicies</code> or
+         * <code>GetOriginRequestPolicy</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteOriginRequestPolicy2020_05_31">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteOriginRequestPolicy2020_05_31Outcome DeleteOriginRequestPolicy2020_05_31(const Model::DeleteOriginRequestPolicy2020_05_31Request& request) const;
+
+        /**
+         * <p>Deletes an origin request policy.</p> <p>You cannot delete an origin request
+         * policy if it’s attached to any cache behaviors. First update your distributions
+         * to remove the origin request policy from all cache behaviors, then delete the
+         * origin request policy.</p> <p>To delete an origin request policy, you must
+         * provide the policy’s identifier and version. To get the identifier, you can use
+         * <code>ListOriginRequestPolicies</code> or
+         * <code>GetOriginRequestPolicy</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteOriginRequestPolicy2020_05_31">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteOriginRequestPolicy2020_05_31OutcomeCallable DeleteOriginRequestPolicy2020_05_31Callable(const Model::DeleteOriginRequestPolicy2020_05_31Request& request) const;
+
+        /**
+         * <p>Deletes an origin request policy.</p> <p>You cannot delete an origin request
+         * policy if it’s attached to any cache behaviors. First update your distributions
+         * to remove the origin request policy from all cache behaviors, then delete the
+         * origin request policy.</p> <p>To delete an origin request policy, you must
+         * provide the policy’s identifier and version. To get the identifier, you can use
+         * <code>ListOriginRequestPolicies</code> or
+         * <code>GetOriginRequestPolicy</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteOriginRequestPolicy2020_05_31">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteOriginRequestPolicy2020_05_31Async(const Model::DeleteOriginRequestPolicy2020_05_31Request& request, const DeleteOriginRequestPolicy2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Remove a public key you previously added to CloudFront.</p><p><h3>See
          * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/DeletePublicKey2019_03_26">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeletePublicKey2020_05_31">AWS
          * API Reference</a></p>
          */
-        virtual Model::DeletePublicKey2019_03_26Outcome DeletePublicKey2019_03_26(const Model::DeletePublicKey2019_03_26Request& request) const;
+        virtual Model::DeletePublicKey2020_05_31Outcome DeletePublicKey2020_05_31(const Model::DeletePublicKey2020_05_31Request& request) const;
 
         /**
          * <p>Remove a public key you previously added to CloudFront.</p><p><h3>See
          * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/DeletePublicKey2019_03_26">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeletePublicKey2020_05_31">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
-        virtual Model::DeletePublicKey2019_03_26OutcomeCallable DeletePublicKey2019_03_26Callable(const Model::DeletePublicKey2019_03_26Request& request) const;
+        virtual Model::DeletePublicKey2020_05_31OutcomeCallable DeletePublicKey2020_05_31Callable(const Model::DeletePublicKey2020_05_31Request& request) const;
 
         /**
          * <p>Remove a public key you previously added to CloudFront.</p><p><h3>See
          * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/DeletePublicKey2019_03_26">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeletePublicKey2020_05_31">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
-        virtual void DeletePublicKey2019_03_26Async(const Model::DeletePublicKey2019_03_26Request& request, const DeletePublicKey2019_03_26ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+        virtual void DeletePublicKey2020_05_31Async(const Model::DeletePublicKey2020_05_31Request& request, const DeletePublicKey2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Delete a streaming distribution. To delete an RTMP distribution using the
@@ -838,10 +1141,10 @@ namespace Model
          * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/HowToDeleteDistribution.html">Deleting
          * a Distribution</a> in the <i>Amazon CloudFront Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/DeleteStreamingDistribution2019_03_26">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteStreamingDistribution2020_05_31">AWS
          * API Reference</a></p>
          */
-        virtual Model::DeleteStreamingDistribution2019_03_26Outcome DeleteStreamingDistribution2019_03_26(const Model::DeleteStreamingDistribution2019_03_26Request& request) const;
+        virtual Model::DeleteStreamingDistribution2020_05_31Outcome DeleteStreamingDistribution2020_05_31(const Model::DeleteStreamingDistribution2020_05_31Request& request) const;
 
         /**
          * <p>Delete a streaming distribution. To delete an RTMP distribution using the
@@ -873,12 +1176,12 @@ namespace Model
          * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/HowToDeleteDistribution.html">Deleting
          * a Distribution</a> in the <i>Amazon CloudFront Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/DeleteStreamingDistribution2019_03_26">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteStreamingDistribution2020_05_31">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
-        virtual Model::DeleteStreamingDistribution2019_03_26OutcomeCallable DeleteStreamingDistribution2019_03_26Callable(const Model::DeleteStreamingDistribution2019_03_26Request& request) const;
+        virtual Model::DeleteStreamingDistribution2020_05_31OutcomeCallable DeleteStreamingDistribution2020_05_31Callable(const Model::DeleteStreamingDistribution2020_05_31Request& request) const;
 
         /**
          * <p>Delete a streaming distribution. To delete an RTMP distribution using the
@@ -910,676 +1213,1093 @@ namespace Model
          * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/HowToDeleteDistribution.html">Deleting
          * a Distribution</a> in the <i>Amazon CloudFront Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/DeleteStreamingDistribution2019_03_26">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteStreamingDistribution2020_05_31">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
-        virtual void DeleteStreamingDistribution2019_03_26Async(const Model::DeleteStreamingDistribution2019_03_26Request& request, const DeleteStreamingDistribution2019_03_26ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+        virtual void DeleteStreamingDistribution2020_05_31Async(const Model::DeleteStreamingDistribution2020_05_31Request& request, const DeleteStreamingDistribution2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Gets a cache policy, including the following metadata:</p> <ul> <li> <p>The
+         * policy’s identifier.</p> </li> <li> <p>The date and time when the policy was
+         * last modified.</p> </li> </ul> <p>To get a cache policy, you must provide the
+         * policy’s identifier. If the cache policy is attached to a distribution’s cache
+         * behavior, you can get the policy’s identifier using
+         * <code>ListDistributions</code> or <code>GetDistribution</code>. If the cache
+         * policy is not attached to a cache behavior, you can get the identifier using
+         * <code>ListCachePolicies</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetCachePolicy2020_05_31">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetCachePolicy2020_05_31Outcome GetCachePolicy2020_05_31(const Model::GetCachePolicy2020_05_31Request& request) const;
+
+        /**
+         * <p>Gets a cache policy, including the following metadata:</p> <ul> <li> <p>The
+         * policy’s identifier.</p> </li> <li> <p>The date and time when the policy was
+         * last modified.</p> </li> </ul> <p>To get a cache policy, you must provide the
+         * policy’s identifier. If the cache policy is attached to a distribution’s cache
+         * behavior, you can get the policy’s identifier using
+         * <code>ListDistributions</code> or <code>GetDistribution</code>. If the cache
+         * policy is not attached to a cache behavior, you can get the identifier using
+         * <code>ListCachePolicies</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetCachePolicy2020_05_31">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetCachePolicy2020_05_31OutcomeCallable GetCachePolicy2020_05_31Callable(const Model::GetCachePolicy2020_05_31Request& request) const;
+
+        /**
+         * <p>Gets a cache policy, including the following metadata:</p> <ul> <li> <p>The
+         * policy’s identifier.</p> </li> <li> <p>The date and time when the policy was
+         * last modified.</p> </li> </ul> <p>To get a cache policy, you must provide the
+         * policy’s identifier. If the cache policy is attached to a distribution’s cache
+         * behavior, you can get the policy’s identifier using
+         * <code>ListDistributions</code> or <code>GetDistribution</code>. If the cache
+         * policy is not attached to a cache behavior, you can get the identifier using
+         * <code>ListCachePolicies</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetCachePolicy2020_05_31">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetCachePolicy2020_05_31Async(const Model::GetCachePolicy2020_05_31Request& request, const GetCachePolicy2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Gets a cache policy configuration.</p> <p>To get a cache policy
+         * configuration, you must provide the policy’s identifier. If the cache policy is
+         * attached to a distribution’s cache behavior, you can get the policy’s identifier
+         * using <code>ListDistributions</code> or <code>GetDistribution</code>. If the
+         * cache policy is not attached to a cache behavior, you can get the identifier
+         * using <code>ListCachePolicies</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetCachePolicyConfig2020_05_31">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetCachePolicyConfig2020_05_31Outcome GetCachePolicyConfig2020_05_31(const Model::GetCachePolicyConfig2020_05_31Request& request) const;
+
+        /**
+         * <p>Gets a cache policy configuration.</p> <p>To get a cache policy
+         * configuration, you must provide the policy’s identifier. If the cache policy is
+         * attached to a distribution’s cache behavior, you can get the policy’s identifier
+         * using <code>ListDistributions</code> or <code>GetDistribution</code>. If the
+         * cache policy is not attached to a cache behavior, you can get the identifier
+         * using <code>ListCachePolicies</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetCachePolicyConfig2020_05_31">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetCachePolicyConfig2020_05_31OutcomeCallable GetCachePolicyConfig2020_05_31Callable(const Model::GetCachePolicyConfig2020_05_31Request& request) const;
+
+        /**
+         * <p>Gets a cache policy configuration.</p> <p>To get a cache policy
+         * configuration, you must provide the policy’s identifier. If the cache policy is
+         * attached to a distribution’s cache behavior, you can get the policy’s identifier
+         * using <code>ListDistributions</code> or <code>GetDistribution</code>. If the
+         * cache policy is not attached to a cache behavior, you can get the identifier
+         * using <code>ListCachePolicies</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetCachePolicyConfig2020_05_31">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetCachePolicyConfig2020_05_31Async(const Model::GetCachePolicyConfig2020_05_31Request& request, const GetCachePolicyConfig2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Get the information about an origin access identity. </p><p><h3>See
          * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/GetCloudFrontOriginAccessIdentity2019_03_26">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetCloudFrontOriginAccessIdentity2020_05_31">AWS
          * API Reference</a></p>
          */
-        virtual Model::GetCloudFrontOriginAccessIdentity2019_03_26Outcome GetCloudFrontOriginAccessIdentity2019_03_26(const Model::GetCloudFrontOriginAccessIdentity2019_03_26Request& request) const;
+        virtual Model::GetCloudFrontOriginAccessIdentity2020_05_31Outcome GetCloudFrontOriginAccessIdentity2020_05_31(const Model::GetCloudFrontOriginAccessIdentity2020_05_31Request& request) const;
 
         /**
          * <p>Get the information about an origin access identity. </p><p><h3>See
          * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/GetCloudFrontOriginAccessIdentity2019_03_26">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetCloudFrontOriginAccessIdentity2020_05_31">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
-        virtual Model::GetCloudFrontOriginAccessIdentity2019_03_26OutcomeCallable GetCloudFrontOriginAccessIdentity2019_03_26Callable(const Model::GetCloudFrontOriginAccessIdentity2019_03_26Request& request) const;
+        virtual Model::GetCloudFrontOriginAccessIdentity2020_05_31OutcomeCallable GetCloudFrontOriginAccessIdentity2020_05_31Callable(const Model::GetCloudFrontOriginAccessIdentity2020_05_31Request& request) const;
 
         /**
          * <p>Get the information about an origin access identity. </p><p><h3>See
          * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/GetCloudFrontOriginAccessIdentity2019_03_26">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetCloudFrontOriginAccessIdentity2020_05_31">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
-        virtual void GetCloudFrontOriginAccessIdentity2019_03_26Async(const Model::GetCloudFrontOriginAccessIdentity2019_03_26Request& request, const GetCloudFrontOriginAccessIdentity2019_03_26ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+        virtual void GetCloudFrontOriginAccessIdentity2020_05_31Async(const Model::GetCloudFrontOriginAccessIdentity2020_05_31Request& request, const GetCloudFrontOriginAccessIdentity2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Get the configuration information about an origin access identity.
          * </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/GetCloudFrontOriginAccessIdentityConfig2019_03_26">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetCloudFrontOriginAccessIdentityConfig2020_05_31">AWS
          * API Reference</a></p>
          */
-        virtual Model::GetCloudFrontOriginAccessIdentityConfig2019_03_26Outcome GetCloudFrontOriginAccessIdentityConfig2019_03_26(const Model::GetCloudFrontOriginAccessIdentityConfig2019_03_26Request& request) const;
+        virtual Model::GetCloudFrontOriginAccessIdentityConfig2020_05_31Outcome GetCloudFrontOriginAccessIdentityConfig2020_05_31(const Model::GetCloudFrontOriginAccessIdentityConfig2020_05_31Request& request) const;
 
         /**
          * <p>Get the configuration information about an origin access identity.
          * </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/GetCloudFrontOriginAccessIdentityConfig2019_03_26">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetCloudFrontOriginAccessIdentityConfig2020_05_31">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
-        virtual Model::GetCloudFrontOriginAccessIdentityConfig2019_03_26OutcomeCallable GetCloudFrontOriginAccessIdentityConfig2019_03_26Callable(const Model::GetCloudFrontOriginAccessIdentityConfig2019_03_26Request& request) const;
+        virtual Model::GetCloudFrontOriginAccessIdentityConfig2020_05_31OutcomeCallable GetCloudFrontOriginAccessIdentityConfig2020_05_31Callable(const Model::GetCloudFrontOriginAccessIdentityConfig2020_05_31Request& request) const;
 
         /**
          * <p>Get the configuration information about an origin access identity.
          * </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/GetCloudFrontOriginAccessIdentityConfig2019_03_26">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetCloudFrontOriginAccessIdentityConfig2020_05_31">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
-        virtual void GetCloudFrontOriginAccessIdentityConfig2019_03_26Async(const Model::GetCloudFrontOriginAccessIdentityConfig2019_03_26Request& request, const GetCloudFrontOriginAccessIdentityConfig2019_03_26ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+        virtual void GetCloudFrontOriginAccessIdentityConfig2020_05_31Async(const Model::GetCloudFrontOriginAccessIdentityConfig2020_05_31Request& request, const GetCloudFrontOriginAccessIdentityConfig2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Get the information about a distribution.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/GetDistribution2019_03_26">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetDistribution2020_05_31">AWS
          * API Reference</a></p>
          */
-        virtual Model::GetDistribution2019_03_26Outcome GetDistribution2019_03_26(const Model::GetDistribution2019_03_26Request& request) const;
+        virtual Model::GetDistribution2020_05_31Outcome GetDistribution2020_05_31(const Model::GetDistribution2020_05_31Request& request) const;
 
         /**
          * <p>Get the information about a distribution.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/GetDistribution2019_03_26">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetDistribution2020_05_31">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
-        virtual Model::GetDistribution2019_03_26OutcomeCallable GetDistribution2019_03_26Callable(const Model::GetDistribution2019_03_26Request& request) const;
+        virtual Model::GetDistribution2020_05_31OutcomeCallable GetDistribution2020_05_31Callable(const Model::GetDistribution2020_05_31Request& request) const;
 
         /**
          * <p>Get the information about a distribution.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/GetDistribution2019_03_26">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetDistribution2020_05_31">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
-        virtual void GetDistribution2019_03_26Async(const Model::GetDistribution2019_03_26Request& request, const GetDistribution2019_03_26ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+        virtual void GetDistribution2020_05_31Async(const Model::GetDistribution2020_05_31Request& request, const GetDistribution2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Get the configuration information about a distribution. </p><p><h3>See
          * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/GetDistributionConfig2019_03_26">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetDistributionConfig2020_05_31">AWS
          * API Reference</a></p>
          */
-        virtual Model::GetDistributionConfig2019_03_26Outcome GetDistributionConfig2019_03_26(const Model::GetDistributionConfig2019_03_26Request& request) const;
+        virtual Model::GetDistributionConfig2020_05_31Outcome GetDistributionConfig2020_05_31(const Model::GetDistributionConfig2020_05_31Request& request) const;
 
         /**
          * <p>Get the configuration information about a distribution. </p><p><h3>See
          * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/GetDistributionConfig2019_03_26">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetDistributionConfig2020_05_31">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
-        virtual Model::GetDistributionConfig2019_03_26OutcomeCallable GetDistributionConfig2019_03_26Callable(const Model::GetDistributionConfig2019_03_26Request& request) const;
+        virtual Model::GetDistributionConfig2020_05_31OutcomeCallable GetDistributionConfig2020_05_31Callable(const Model::GetDistributionConfig2020_05_31Request& request) const;
 
         /**
          * <p>Get the configuration information about a distribution. </p><p><h3>See
          * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/GetDistributionConfig2019_03_26">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetDistributionConfig2020_05_31">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
-        virtual void GetDistributionConfig2019_03_26Async(const Model::GetDistributionConfig2019_03_26Request& request, const GetDistributionConfig2019_03_26ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+        virtual void GetDistributionConfig2020_05_31Async(const Model::GetDistributionConfig2020_05_31Request& request, const GetDistributionConfig2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Get the field-level encryption configuration information.</p><p><h3>See
          * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/GetFieldLevelEncryption2019_03_26">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetFieldLevelEncryption2020_05_31">AWS
          * API Reference</a></p>
          */
-        virtual Model::GetFieldLevelEncryption2019_03_26Outcome GetFieldLevelEncryption2019_03_26(const Model::GetFieldLevelEncryption2019_03_26Request& request) const;
+        virtual Model::GetFieldLevelEncryption2020_05_31Outcome GetFieldLevelEncryption2020_05_31(const Model::GetFieldLevelEncryption2020_05_31Request& request) const;
 
         /**
          * <p>Get the field-level encryption configuration information.</p><p><h3>See
          * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/GetFieldLevelEncryption2019_03_26">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetFieldLevelEncryption2020_05_31">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
-        virtual Model::GetFieldLevelEncryption2019_03_26OutcomeCallable GetFieldLevelEncryption2019_03_26Callable(const Model::GetFieldLevelEncryption2019_03_26Request& request) const;
+        virtual Model::GetFieldLevelEncryption2020_05_31OutcomeCallable GetFieldLevelEncryption2020_05_31Callable(const Model::GetFieldLevelEncryption2020_05_31Request& request) const;
 
         /**
          * <p>Get the field-level encryption configuration information.</p><p><h3>See
          * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/GetFieldLevelEncryption2019_03_26">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetFieldLevelEncryption2020_05_31">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
-        virtual void GetFieldLevelEncryption2019_03_26Async(const Model::GetFieldLevelEncryption2019_03_26Request& request, const GetFieldLevelEncryption2019_03_26ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+        virtual void GetFieldLevelEncryption2020_05_31Async(const Model::GetFieldLevelEncryption2020_05_31Request& request, const GetFieldLevelEncryption2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Get the field-level encryption configuration information.</p><p><h3>See
          * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/GetFieldLevelEncryptionConfig2019_03_26">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetFieldLevelEncryptionConfig2020_05_31">AWS
          * API Reference</a></p>
          */
-        virtual Model::GetFieldLevelEncryptionConfig2019_03_26Outcome GetFieldLevelEncryptionConfig2019_03_26(const Model::GetFieldLevelEncryptionConfig2019_03_26Request& request) const;
+        virtual Model::GetFieldLevelEncryptionConfig2020_05_31Outcome GetFieldLevelEncryptionConfig2020_05_31(const Model::GetFieldLevelEncryptionConfig2020_05_31Request& request) const;
 
         /**
          * <p>Get the field-level encryption configuration information.</p><p><h3>See
          * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/GetFieldLevelEncryptionConfig2019_03_26">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetFieldLevelEncryptionConfig2020_05_31">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
-        virtual Model::GetFieldLevelEncryptionConfig2019_03_26OutcomeCallable GetFieldLevelEncryptionConfig2019_03_26Callable(const Model::GetFieldLevelEncryptionConfig2019_03_26Request& request) const;
+        virtual Model::GetFieldLevelEncryptionConfig2020_05_31OutcomeCallable GetFieldLevelEncryptionConfig2020_05_31Callable(const Model::GetFieldLevelEncryptionConfig2020_05_31Request& request) const;
 
         /**
          * <p>Get the field-level encryption configuration information.</p><p><h3>See
          * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/GetFieldLevelEncryptionConfig2019_03_26">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetFieldLevelEncryptionConfig2020_05_31">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
-        virtual void GetFieldLevelEncryptionConfig2019_03_26Async(const Model::GetFieldLevelEncryptionConfig2019_03_26Request& request, const GetFieldLevelEncryptionConfig2019_03_26ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+        virtual void GetFieldLevelEncryptionConfig2020_05_31Async(const Model::GetFieldLevelEncryptionConfig2020_05_31Request& request, const GetFieldLevelEncryptionConfig2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Get the field-level encryption profile information.</p><p><h3>See Also:</h3> 
          * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/GetFieldLevelEncryptionProfile2019_03_26">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetFieldLevelEncryptionProfile2020_05_31">AWS
          * API Reference</a></p>
          */
-        virtual Model::GetFieldLevelEncryptionProfile2019_03_26Outcome GetFieldLevelEncryptionProfile2019_03_26(const Model::GetFieldLevelEncryptionProfile2019_03_26Request& request) const;
+        virtual Model::GetFieldLevelEncryptionProfile2020_05_31Outcome GetFieldLevelEncryptionProfile2020_05_31(const Model::GetFieldLevelEncryptionProfile2020_05_31Request& request) const;
 
         /**
          * <p>Get the field-level encryption profile information.</p><p><h3>See Also:</h3> 
          * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/GetFieldLevelEncryptionProfile2019_03_26">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetFieldLevelEncryptionProfile2020_05_31">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
-        virtual Model::GetFieldLevelEncryptionProfile2019_03_26OutcomeCallable GetFieldLevelEncryptionProfile2019_03_26Callable(const Model::GetFieldLevelEncryptionProfile2019_03_26Request& request) const;
+        virtual Model::GetFieldLevelEncryptionProfile2020_05_31OutcomeCallable GetFieldLevelEncryptionProfile2020_05_31Callable(const Model::GetFieldLevelEncryptionProfile2020_05_31Request& request) const;
 
         /**
          * <p>Get the field-level encryption profile information.</p><p><h3>See Also:</h3> 
          * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/GetFieldLevelEncryptionProfile2019_03_26">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetFieldLevelEncryptionProfile2020_05_31">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
-        virtual void GetFieldLevelEncryptionProfile2019_03_26Async(const Model::GetFieldLevelEncryptionProfile2019_03_26Request& request, const GetFieldLevelEncryptionProfile2019_03_26ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+        virtual void GetFieldLevelEncryptionProfile2020_05_31Async(const Model::GetFieldLevelEncryptionProfile2020_05_31Request& request, const GetFieldLevelEncryptionProfile2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Get the field-level encryption profile configuration
          * information.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/GetFieldLevelEncryptionProfileConfig2019_03_26">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetFieldLevelEncryptionProfileConfig2020_05_31">AWS
          * API Reference</a></p>
          */
-        virtual Model::GetFieldLevelEncryptionProfileConfig2019_03_26Outcome GetFieldLevelEncryptionProfileConfig2019_03_26(const Model::GetFieldLevelEncryptionProfileConfig2019_03_26Request& request) const;
+        virtual Model::GetFieldLevelEncryptionProfileConfig2020_05_31Outcome GetFieldLevelEncryptionProfileConfig2020_05_31(const Model::GetFieldLevelEncryptionProfileConfig2020_05_31Request& request) const;
 
         /**
          * <p>Get the field-level encryption profile configuration
          * information.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/GetFieldLevelEncryptionProfileConfig2019_03_26">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetFieldLevelEncryptionProfileConfig2020_05_31">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
-        virtual Model::GetFieldLevelEncryptionProfileConfig2019_03_26OutcomeCallable GetFieldLevelEncryptionProfileConfig2019_03_26Callable(const Model::GetFieldLevelEncryptionProfileConfig2019_03_26Request& request) const;
+        virtual Model::GetFieldLevelEncryptionProfileConfig2020_05_31OutcomeCallable GetFieldLevelEncryptionProfileConfig2020_05_31Callable(const Model::GetFieldLevelEncryptionProfileConfig2020_05_31Request& request) const;
 
         /**
          * <p>Get the field-level encryption profile configuration
          * information.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/GetFieldLevelEncryptionProfileConfig2019_03_26">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetFieldLevelEncryptionProfileConfig2020_05_31">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
-        virtual void GetFieldLevelEncryptionProfileConfig2019_03_26Async(const Model::GetFieldLevelEncryptionProfileConfig2019_03_26Request& request, const GetFieldLevelEncryptionProfileConfig2019_03_26ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+        virtual void GetFieldLevelEncryptionProfileConfig2020_05_31Async(const Model::GetFieldLevelEncryptionProfileConfig2020_05_31Request& request, const GetFieldLevelEncryptionProfileConfig2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Get the information about an invalidation. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/GetInvalidation2019_03_26">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetInvalidation2020_05_31">AWS
          * API Reference</a></p>
          */
-        virtual Model::GetInvalidation2019_03_26Outcome GetInvalidation2019_03_26(const Model::GetInvalidation2019_03_26Request& request) const;
+        virtual Model::GetInvalidation2020_05_31Outcome GetInvalidation2020_05_31(const Model::GetInvalidation2020_05_31Request& request) const;
 
         /**
          * <p>Get the information about an invalidation. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/GetInvalidation2019_03_26">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetInvalidation2020_05_31">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
-        virtual Model::GetInvalidation2019_03_26OutcomeCallable GetInvalidation2019_03_26Callable(const Model::GetInvalidation2019_03_26Request& request) const;
+        virtual Model::GetInvalidation2020_05_31OutcomeCallable GetInvalidation2020_05_31Callable(const Model::GetInvalidation2020_05_31Request& request) const;
 
         /**
          * <p>Get the information about an invalidation. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/GetInvalidation2019_03_26">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetInvalidation2020_05_31">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
-        virtual void GetInvalidation2019_03_26Async(const Model::GetInvalidation2019_03_26Request& request, const GetInvalidation2019_03_26ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+        virtual void GetInvalidation2020_05_31Async(const Model::GetInvalidation2020_05_31Request& request, const GetInvalidation2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Get the public key information.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/GetPublicKey2019_03_26">AWS
+         * <p>Gets an origin request policy, including the following metadata:</p> <ul>
+         * <li> <p>The policy’s identifier.</p> </li> <li> <p>The date and time when the
+         * policy was last modified.</p> </li> </ul> <p>To get an origin request policy,
+         * you must provide the policy’s identifier. If the origin request policy is
+         * attached to a distribution’s cache behavior, you can get the policy’s identifier
+         * using <code>ListDistributions</code> or <code>GetDistribution</code>. If the
+         * origin request policy is not attached to a cache behavior, you can get the
+         * identifier using <code>ListOriginRequestPolicies</code>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetOriginRequestPolicy2020_05_31">AWS
          * API Reference</a></p>
          */
-        virtual Model::GetPublicKey2019_03_26Outcome GetPublicKey2019_03_26(const Model::GetPublicKey2019_03_26Request& request) const;
+        virtual Model::GetOriginRequestPolicy2020_05_31Outcome GetOriginRequestPolicy2020_05_31(const Model::GetOriginRequestPolicy2020_05_31Request& request) const;
 
         /**
-         * <p>Get the public key information.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/GetPublicKey2019_03_26">AWS
+         * <p>Gets an origin request policy, including the following metadata:</p> <ul>
+         * <li> <p>The policy’s identifier.</p> </li> <li> <p>The date and time when the
+         * policy was last modified.</p> </li> </ul> <p>To get an origin request policy,
+         * you must provide the policy’s identifier. If the origin request policy is
+         * attached to a distribution’s cache behavior, you can get the policy’s identifier
+         * using <code>ListDistributions</code> or <code>GetDistribution</code>. If the
+         * origin request policy is not attached to a cache behavior, you can get the
+         * identifier using <code>ListOriginRequestPolicies</code>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetOriginRequestPolicy2020_05_31">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
-        virtual Model::GetPublicKey2019_03_26OutcomeCallable GetPublicKey2019_03_26Callable(const Model::GetPublicKey2019_03_26Request& request) const;
+        virtual Model::GetOriginRequestPolicy2020_05_31OutcomeCallable GetOriginRequestPolicy2020_05_31Callable(const Model::GetOriginRequestPolicy2020_05_31Request& request) const;
 
         /**
-         * <p>Get the public key information.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/GetPublicKey2019_03_26">AWS
+         * <p>Gets an origin request policy, including the following metadata:</p> <ul>
+         * <li> <p>The policy’s identifier.</p> </li> <li> <p>The date and time when the
+         * policy was last modified.</p> </li> </ul> <p>To get an origin request policy,
+         * you must provide the policy’s identifier. If the origin request policy is
+         * attached to a distribution’s cache behavior, you can get the policy’s identifier
+         * using <code>ListDistributions</code> or <code>GetDistribution</code>. If the
+         * origin request policy is not attached to a cache behavior, you can get the
+         * identifier using <code>ListOriginRequestPolicies</code>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetOriginRequestPolicy2020_05_31">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
-        virtual void GetPublicKey2019_03_26Async(const Model::GetPublicKey2019_03_26Request& request, const GetPublicKey2019_03_26ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+        virtual void GetOriginRequestPolicy2020_05_31Async(const Model::GetOriginRequestPolicy2020_05_31Request& request, const GetOriginRequestPolicy2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Return public key configuration informaation</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/GetPublicKeyConfig2019_03_26">AWS
+         * <p>Gets an origin request policy configuration.</p> <p>To get an origin request
+         * policy configuration, you must provide the policy’s identifier. If the origin
+         * request policy is attached to a distribution’s cache behavior, you can get the
+         * policy’s identifier using <code>ListDistributions</code> or
+         * <code>GetDistribution</code>. If the origin request policy is not attached to a
+         * cache behavior, you can get the identifier using
+         * <code>ListOriginRequestPolicies</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetOriginRequestPolicyConfig2020_05_31">AWS
          * API Reference</a></p>
          */
-        virtual Model::GetPublicKeyConfig2019_03_26Outcome GetPublicKeyConfig2019_03_26(const Model::GetPublicKeyConfig2019_03_26Request& request) const;
+        virtual Model::GetOriginRequestPolicyConfig2020_05_31Outcome GetOriginRequestPolicyConfig2020_05_31(const Model::GetOriginRequestPolicyConfig2020_05_31Request& request) const;
 
         /**
-         * <p>Return public key configuration informaation</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/GetPublicKeyConfig2019_03_26">AWS
+         * <p>Gets an origin request policy configuration.</p> <p>To get an origin request
+         * policy configuration, you must provide the policy’s identifier. If the origin
+         * request policy is attached to a distribution’s cache behavior, you can get the
+         * policy’s identifier using <code>ListDistributions</code> or
+         * <code>GetDistribution</code>. If the origin request policy is not attached to a
+         * cache behavior, you can get the identifier using
+         * <code>ListOriginRequestPolicies</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetOriginRequestPolicyConfig2020_05_31">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
-        virtual Model::GetPublicKeyConfig2019_03_26OutcomeCallable GetPublicKeyConfig2019_03_26Callable(const Model::GetPublicKeyConfig2019_03_26Request& request) const;
+        virtual Model::GetOriginRequestPolicyConfig2020_05_31OutcomeCallable GetOriginRequestPolicyConfig2020_05_31Callable(const Model::GetOriginRequestPolicyConfig2020_05_31Request& request) const;
 
         /**
-         * <p>Return public key configuration informaation</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/GetPublicKeyConfig2019_03_26">AWS
+         * <p>Gets an origin request policy configuration.</p> <p>To get an origin request
+         * policy configuration, you must provide the policy’s identifier. If the origin
+         * request policy is attached to a distribution’s cache behavior, you can get the
+         * policy’s identifier using <code>ListDistributions</code> or
+         * <code>GetDistribution</code>. If the origin request policy is not attached to a
+         * cache behavior, you can get the identifier using
+         * <code>ListOriginRequestPolicies</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetOriginRequestPolicyConfig2020_05_31">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
-        virtual void GetPublicKeyConfig2019_03_26Async(const Model::GetPublicKeyConfig2019_03_26Request& request, const GetPublicKeyConfig2019_03_26ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+        virtual void GetOriginRequestPolicyConfig2020_05_31Async(const Model::GetOriginRequestPolicyConfig2020_05_31Request& request, const GetOriginRequestPolicyConfig2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Get the public key information.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetPublicKey2020_05_31">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetPublicKey2020_05_31Outcome GetPublicKey2020_05_31(const Model::GetPublicKey2020_05_31Request& request) const;
+
+        /**
+         * <p>Get the public key information.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetPublicKey2020_05_31">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetPublicKey2020_05_31OutcomeCallable GetPublicKey2020_05_31Callable(const Model::GetPublicKey2020_05_31Request& request) const;
+
+        /**
+         * <p>Get the public key information.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetPublicKey2020_05_31">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetPublicKey2020_05_31Async(const Model::GetPublicKey2020_05_31Request& request, const GetPublicKey2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Return public key configuration informaation</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetPublicKeyConfig2020_05_31">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetPublicKeyConfig2020_05_31Outcome GetPublicKeyConfig2020_05_31(const Model::GetPublicKeyConfig2020_05_31Request& request) const;
+
+        /**
+         * <p>Return public key configuration informaation</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetPublicKeyConfig2020_05_31">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetPublicKeyConfig2020_05_31OutcomeCallable GetPublicKeyConfig2020_05_31Callable(const Model::GetPublicKeyConfig2020_05_31Request& request) const;
+
+        /**
+         * <p>Return public key configuration informaation</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetPublicKeyConfig2020_05_31">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetPublicKeyConfig2020_05_31Async(const Model::GetPublicKeyConfig2020_05_31Request& request, const GetPublicKeyConfig2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets information about a specified RTMP distribution, including the
          * distribution configuration.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/GetStreamingDistribution2019_03_26">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetStreamingDistribution2020_05_31">AWS
          * API Reference</a></p>
          */
-        virtual Model::GetStreamingDistribution2019_03_26Outcome GetStreamingDistribution2019_03_26(const Model::GetStreamingDistribution2019_03_26Request& request) const;
+        virtual Model::GetStreamingDistribution2020_05_31Outcome GetStreamingDistribution2020_05_31(const Model::GetStreamingDistribution2020_05_31Request& request) const;
 
         /**
          * <p>Gets information about a specified RTMP distribution, including the
          * distribution configuration.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/GetStreamingDistribution2019_03_26">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetStreamingDistribution2020_05_31">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
-        virtual Model::GetStreamingDistribution2019_03_26OutcomeCallable GetStreamingDistribution2019_03_26Callable(const Model::GetStreamingDistribution2019_03_26Request& request) const;
+        virtual Model::GetStreamingDistribution2020_05_31OutcomeCallable GetStreamingDistribution2020_05_31Callable(const Model::GetStreamingDistribution2020_05_31Request& request) const;
 
         /**
          * <p>Gets information about a specified RTMP distribution, including the
          * distribution configuration.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/GetStreamingDistribution2019_03_26">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetStreamingDistribution2020_05_31">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
-        virtual void GetStreamingDistribution2019_03_26Async(const Model::GetStreamingDistribution2019_03_26Request& request, const GetStreamingDistribution2019_03_26ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+        virtual void GetStreamingDistribution2020_05_31Async(const Model::GetStreamingDistribution2020_05_31Request& request, const GetStreamingDistribution2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Get the configuration information about a streaming distribution.
          * </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/GetStreamingDistributionConfig2019_03_26">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetStreamingDistributionConfig2020_05_31">AWS
          * API Reference</a></p>
          */
-        virtual Model::GetStreamingDistributionConfig2019_03_26Outcome GetStreamingDistributionConfig2019_03_26(const Model::GetStreamingDistributionConfig2019_03_26Request& request) const;
+        virtual Model::GetStreamingDistributionConfig2020_05_31Outcome GetStreamingDistributionConfig2020_05_31(const Model::GetStreamingDistributionConfig2020_05_31Request& request) const;
 
         /**
          * <p>Get the configuration information about a streaming distribution.
          * </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/GetStreamingDistributionConfig2019_03_26">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetStreamingDistributionConfig2020_05_31">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
-        virtual Model::GetStreamingDistributionConfig2019_03_26OutcomeCallable GetStreamingDistributionConfig2019_03_26Callable(const Model::GetStreamingDistributionConfig2019_03_26Request& request) const;
+        virtual Model::GetStreamingDistributionConfig2020_05_31OutcomeCallable GetStreamingDistributionConfig2020_05_31Callable(const Model::GetStreamingDistributionConfig2020_05_31Request& request) const;
 
         /**
          * <p>Get the configuration information about a streaming distribution.
          * </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/GetStreamingDistributionConfig2019_03_26">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetStreamingDistributionConfig2020_05_31">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
-        virtual void GetStreamingDistributionConfig2019_03_26Async(const Model::GetStreamingDistributionConfig2019_03_26Request& request, const GetStreamingDistributionConfig2019_03_26ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+        virtual void GetStreamingDistributionConfig2020_05_31Async(const Model::GetStreamingDistributionConfig2020_05_31Request& request, const GetStreamingDistributionConfig2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists origin access identities.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/ListCloudFrontOriginAccessIdentities2019_03_26">AWS
+         * <p>Gets a list of cache policies.</p> <p>You can optionally apply a filter to
+         * return only the managed policies created by AWS, or only the custom policies
+         * created in your AWS account.</p> <p>You can optionally specify the maximum
+         * number of items to receive in the response. If the total number of items in the
+         * list exceeds the maximum that you specify, or the default maximum, the response
+         * is paginated. To get the next page of items, send a subsequent request that
+         * specifies the <code>NextMarker</code> value from the current response as the
+         * <code>Marker</code> value in the subsequent request.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListCachePolicies2020_05_31">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListCloudFrontOriginAccessIdentities2019_03_26Outcome ListCloudFrontOriginAccessIdentities2019_03_26(const Model::ListCloudFrontOriginAccessIdentities2019_03_26Request& request) const;
+        virtual Model::ListCachePolicies2020_05_31Outcome ListCachePolicies2020_05_31(const Model::ListCachePolicies2020_05_31Request& request) const;
 
         /**
-         * <p>Lists origin access identities.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/ListCloudFrontOriginAccessIdentities2019_03_26">AWS
+         * <p>Gets a list of cache policies.</p> <p>You can optionally apply a filter to
+         * return only the managed policies created by AWS, or only the custom policies
+         * created in your AWS account.</p> <p>You can optionally specify the maximum
+         * number of items to receive in the response. If the total number of items in the
+         * list exceeds the maximum that you specify, or the default maximum, the response
+         * is paginated. To get the next page of items, send a subsequent request that
+         * specifies the <code>NextMarker</code> value from the current response as the
+         * <code>Marker</code> value in the subsequent request.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListCachePolicies2020_05_31">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
-        virtual Model::ListCloudFrontOriginAccessIdentities2019_03_26OutcomeCallable ListCloudFrontOriginAccessIdentities2019_03_26Callable(const Model::ListCloudFrontOriginAccessIdentities2019_03_26Request& request) const;
+        virtual Model::ListCachePolicies2020_05_31OutcomeCallable ListCachePolicies2020_05_31Callable(const Model::ListCachePolicies2020_05_31Request& request) const;
 
         /**
-         * <p>Lists origin access identities.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/ListCloudFrontOriginAccessIdentities2019_03_26">AWS
+         * <p>Gets a list of cache policies.</p> <p>You can optionally apply a filter to
+         * return only the managed policies created by AWS, or only the custom policies
+         * created in your AWS account.</p> <p>You can optionally specify the maximum
+         * number of items to receive in the response. If the total number of items in the
+         * list exceeds the maximum that you specify, or the default maximum, the response
+         * is paginated. To get the next page of items, send a subsequent request that
+         * specifies the <code>NextMarker</code> value from the current response as the
+         * <code>Marker</code> value in the subsequent request.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListCachePolicies2020_05_31">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
-        virtual void ListCloudFrontOriginAccessIdentities2019_03_26Async(const Model::ListCloudFrontOriginAccessIdentities2019_03_26Request& request, const ListCloudFrontOriginAccessIdentities2019_03_26ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+        virtual void ListCachePolicies2020_05_31Async(const Model::ListCachePolicies2020_05_31Request& request, const ListCachePolicies2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>List CloudFront distributions.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/ListDistributions2019_03_26">AWS
+         * <p>Lists origin access identities.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListCloudFrontOriginAccessIdentities2020_05_31">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListDistributions2019_03_26Outcome ListDistributions2019_03_26(const Model::ListDistributions2019_03_26Request& request) const;
+        virtual Model::ListCloudFrontOriginAccessIdentities2020_05_31Outcome ListCloudFrontOriginAccessIdentities2020_05_31(const Model::ListCloudFrontOriginAccessIdentities2020_05_31Request& request) const;
 
         /**
-         * <p>List CloudFront distributions.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/ListDistributions2019_03_26">AWS
+         * <p>Lists origin access identities.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListCloudFrontOriginAccessIdentities2020_05_31">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
-        virtual Model::ListDistributions2019_03_26OutcomeCallable ListDistributions2019_03_26Callable(const Model::ListDistributions2019_03_26Request& request) const;
+        virtual Model::ListCloudFrontOriginAccessIdentities2020_05_31OutcomeCallable ListCloudFrontOriginAccessIdentities2020_05_31Callable(const Model::ListCloudFrontOriginAccessIdentities2020_05_31Request& request) const;
 
         /**
-         * <p>List CloudFront distributions.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/ListDistributions2019_03_26">AWS
+         * <p>Lists origin access identities.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListCloudFrontOriginAccessIdentities2020_05_31">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
-        virtual void ListDistributions2019_03_26Async(const Model::ListDistributions2019_03_26Request& request, const ListDistributions2019_03_26ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+        virtual void ListCloudFrontOriginAccessIdentities2020_05_31Async(const Model::ListCloudFrontOriginAccessIdentities2020_05_31Request& request, const ListCloudFrontOriginAccessIdentities2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>List CloudFront distributions.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListDistributions2020_05_31">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListDistributions2020_05_31Outcome ListDistributions2020_05_31(const Model::ListDistributions2020_05_31Request& request) const;
+
+        /**
+         * <p>List CloudFront distributions.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListDistributions2020_05_31">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListDistributions2020_05_31OutcomeCallable ListDistributions2020_05_31Callable(const Model::ListDistributions2020_05_31Request& request) const;
+
+        /**
+         * <p>List CloudFront distributions.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListDistributions2020_05_31">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListDistributions2020_05_31Async(const Model::ListDistributions2020_05_31Request& request, const ListDistributions2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Gets a list of distribution IDs for distributions that have a cache behavior
+         * that’s associated with the specified cache policy.</p> <p>You can optionally
+         * specify the maximum number of items to receive in the response. If the total
+         * number of items in the list exceeds the maximum that you specify, or the default
+         * maximum, the response is paginated. To get the next page of items, send a
+         * subsequent request that specifies the <code>NextMarker</code> value from the
+         * current response as the <code>Marker</code> value in the subsequent
+         * request.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListDistributionsByCachePolicyId2020_05_31">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListDistributionsByCachePolicyId2020_05_31Outcome ListDistributionsByCachePolicyId2020_05_31(const Model::ListDistributionsByCachePolicyId2020_05_31Request& request) const;
+
+        /**
+         * <p>Gets a list of distribution IDs for distributions that have a cache behavior
+         * that’s associated with the specified cache policy.</p> <p>You can optionally
+         * specify the maximum number of items to receive in the response. If the total
+         * number of items in the list exceeds the maximum that you specify, or the default
+         * maximum, the response is paginated. To get the next page of items, send a
+         * subsequent request that specifies the <code>NextMarker</code> value from the
+         * current response as the <code>Marker</code> value in the subsequent
+         * request.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListDistributionsByCachePolicyId2020_05_31">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListDistributionsByCachePolicyId2020_05_31OutcomeCallable ListDistributionsByCachePolicyId2020_05_31Callable(const Model::ListDistributionsByCachePolicyId2020_05_31Request& request) const;
+
+        /**
+         * <p>Gets a list of distribution IDs for distributions that have a cache behavior
+         * that’s associated with the specified cache policy.</p> <p>You can optionally
+         * specify the maximum number of items to receive in the response. If the total
+         * number of items in the list exceeds the maximum that you specify, or the default
+         * maximum, the response is paginated. To get the next page of items, send a
+         * subsequent request that specifies the <code>NextMarker</code> value from the
+         * current response as the <code>Marker</code> value in the subsequent
+         * request.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListDistributionsByCachePolicyId2020_05_31">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListDistributionsByCachePolicyId2020_05_31Async(const Model::ListDistributionsByCachePolicyId2020_05_31Request& request, const ListDistributionsByCachePolicyId2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Gets a list of distribution IDs for distributions that have a cache behavior
+         * that’s associated with the specified origin request policy.</p> <p>You can
+         * optionally specify the maximum number of items to receive in the response. If
+         * the total number of items in the list exceeds the maximum that you specify, or
+         * the default maximum, the response is paginated. To get the next page of items,
+         * send a subsequent request that specifies the <code>NextMarker</code> value from
+         * the current response as the <code>Marker</code> value in the subsequent
+         * request.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListDistributionsByOriginRequestPolicyId2020_05_31">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListDistributionsByOriginRequestPolicyId2020_05_31Outcome ListDistributionsByOriginRequestPolicyId2020_05_31(const Model::ListDistributionsByOriginRequestPolicyId2020_05_31Request& request) const;
+
+        /**
+         * <p>Gets a list of distribution IDs for distributions that have a cache behavior
+         * that’s associated with the specified origin request policy.</p> <p>You can
+         * optionally specify the maximum number of items to receive in the response. If
+         * the total number of items in the list exceeds the maximum that you specify, or
+         * the default maximum, the response is paginated. To get the next page of items,
+         * send a subsequent request that specifies the <code>NextMarker</code> value from
+         * the current response as the <code>Marker</code> value in the subsequent
+         * request.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListDistributionsByOriginRequestPolicyId2020_05_31">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListDistributionsByOriginRequestPolicyId2020_05_31OutcomeCallable ListDistributionsByOriginRequestPolicyId2020_05_31Callable(const Model::ListDistributionsByOriginRequestPolicyId2020_05_31Request& request) const;
+
+        /**
+         * <p>Gets a list of distribution IDs for distributions that have a cache behavior
+         * that’s associated with the specified origin request policy.</p> <p>You can
+         * optionally specify the maximum number of items to receive in the response. If
+         * the total number of items in the list exceeds the maximum that you specify, or
+         * the default maximum, the response is paginated. To get the next page of items,
+         * send a subsequent request that specifies the <code>NextMarker</code> value from
+         * the current response as the <code>Marker</code> value in the subsequent
+         * request.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListDistributionsByOriginRequestPolicyId2020_05_31">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListDistributionsByOriginRequestPolicyId2020_05_31Async(const Model::ListDistributionsByOriginRequestPolicyId2020_05_31Request& request, const ListDistributionsByOriginRequestPolicyId2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>List the distributions that are associated with a specified AWS WAF web ACL.
          * </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/ListDistributionsByWebACLId2019_03_26">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListDistributionsByWebACLId2020_05_31">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListDistributionsByWebACLId2019_03_26Outcome ListDistributionsByWebACLId2019_03_26(const Model::ListDistributionsByWebACLId2019_03_26Request& request) const;
+        virtual Model::ListDistributionsByWebACLId2020_05_31Outcome ListDistributionsByWebACLId2020_05_31(const Model::ListDistributionsByWebACLId2020_05_31Request& request) const;
 
         /**
          * <p>List the distributions that are associated with a specified AWS WAF web ACL.
          * </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/ListDistributionsByWebACLId2019_03_26">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListDistributionsByWebACLId2020_05_31">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
-        virtual Model::ListDistributionsByWebACLId2019_03_26OutcomeCallable ListDistributionsByWebACLId2019_03_26Callable(const Model::ListDistributionsByWebACLId2019_03_26Request& request) const;
+        virtual Model::ListDistributionsByWebACLId2020_05_31OutcomeCallable ListDistributionsByWebACLId2020_05_31Callable(const Model::ListDistributionsByWebACLId2020_05_31Request& request) const;
 
         /**
          * <p>List the distributions that are associated with a specified AWS WAF web ACL.
          * </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/ListDistributionsByWebACLId2019_03_26">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListDistributionsByWebACLId2020_05_31">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
-        virtual void ListDistributionsByWebACLId2019_03_26Async(const Model::ListDistributionsByWebACLId2019_03_26Request& request, const ListDistributionsByWebACLId2019_03_26ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+        virtual void ListDistributionsByWebACLId2020_05_31Async(const Model::ListDistributionsByWebACLId2020_05_31Request& request, const ListDistributionsByWebACLId2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>List all field-level encryption configurations that have been created in
          * CloudFront for this account.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/ListFieldLevelEncryptionConfigs2019_03_26">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListFieldLevelEncryptionConfigs2020_05_31">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListFieldLevelEncryptionConfigs2019_03_26Outcome ListFieldLevelEncryptionConfigs2019_03_26(const Model::ListFieldLevelEncryptionConfigs2019_03_26Request& request) const;
+        virtual Model::ListFieldLevelEncryptionConfigs2020_05_31Outcome ListFieldLevelEncryptionConfigs2020_05_31(const Model::ListFieldLevelEncryptionConfigs2020_05_31Request& request) const;
 
         /**
          * <p>List all field-level encryption configurations that have been created in
          * CloudFront for this account.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/ListFieldLevelEncryptionConfigs2019_03_26">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListFieldLevelEncryptionConfigs2020_05_31">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
-        virtual Model::ListFieldLevelEncryptionConfigs2019_03_26OutcomeCallable ListFieldLevelEncryptionConfigs2019_03_26Callable(const Model::ListFieldLevelEncryptionConfigs2019_03_26Request& request) const;
+        virtual Model::ListFieldLevelEncryptionConfigs2020_05_31OutcomeCallable ListFieldLevelEncryptionConfigs2020_05_31Callable(const Model::ListFieldLevelEncryptionConfigs2020_05_31Request& request) const;
 
         /**
          * <p>List all field-level encryption configurations that have been created in
          * CloudFront for this account.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/ListFieldLevelEncryptionConfigs2019_03_26">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListFieldLevelEncryptionConfigs2020_05_31">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
-        virtual void ListFieldLevelEncryptionConfigs2019_03_26Async(const Model::ListFieldLevelEncryptionConfigs2019_03_26Request& request, const ListFieldLevelEncryptionConfigs2019_03_26ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+        virtual void ListFieldLevelEncryptionConfigs2020_05_31Async(const Model::ListFieldLevelEncryptionConfigs2020_05_31Request& request, const ListFieldLevelEncryptionConfigs2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Request a list of field-level encryption profiles that have been created in
          * CloudFront for this account.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/ListFieldLevelEncryptionProfiles2019_03_26">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListFieldLevelEncryptionProfiles2020_05_31">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListFieldLevelEncryptionProfiles2019_03_26Outcome ListFieldLevelEncryptionProfiles2019_03_26(const Model::ListFieldLevelEncryptionProfiles2019_03_26Request& request) const;
+        virtual Model::ListFieldLevelEncryptionProfiles2020_05_31Outcome ListFieldLevelEncryptionProfiles2020_05_31(const Model::ListFieldLevelEncryptionProfiles2020_05_31Request& request) const;
 
         /**
          * <p>Request a list of field-level encryption profiles that have been created in
          * CloudFront for this account.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/ListFieldLevelEncryptionProfiles2019_03_26">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListFieldLevelEncryptionProfiles2020_05_31">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
-        virtual Model::ListFieldLevelEncryptionProfiles2019_03_26OutcomeCallable ListFieldLevelEncryptionProfiles2019_03_26Callable(const Model::ListFieldLevelEncryptionProfiles2019_03_26Request& request) const;
+        virtual Model::ListFieldLevelEncryptionProfiles2020_05_31OutcomeCallable ListFieldLevelEncryptionProfiles2020_05_31Callable(const Model::ListFieldLevelEncryptionProfiles2020_05_31Request& request) const;
 
         /**
          * <p>Request a list of field-level encryption profiles that have been created in
          * CloudFront for this account.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/ListFieldLevelEncryptionProfiles2019_03_26">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListFieldLevelEncryptionProfiles2020_05_31">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
-        virtual void ListFieldLevelEncryptionProfiles2019_03_26Async(const Model::ListFieldLevelEncryptionProfiles2019_03_26Request& request, const ListFieldLevelEncryptionProfiles2019_03_26ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+        virtual void ListFieldLevelEncryptionProfiles2020_05_31Async(const Model::ListFieldLevelEncryptionProfiles2020_05_31Request& request, const ListFieldLevelEncryptionProfiles2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists invalidation batches. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/ListInvalidations2019_03_26">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListInvalidations2020_05_31">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListInvalidations2019_03_26Outcome ListInvalidations2019_03_26(const Model::ListInvalidations2019_03_26Request& request) const;
+        virtual Model::ListInvalidations2020_05_31Outcome ListInvalidations2020_05_31(const Model::ListInvalidations2020_05_31Request& request) const;
 
         /**
          * <p>Lists invalidation batches. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/ListInvalidations2019_03_26">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListInvalidations2020_05_31">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
-        virtual Model::ListInvalidations2019_03_26OutcomeCallable ListInvalidations2019_03_26Callable(const Model::ListInvalidations2019_03_26Request& request) const;
+        virtual Model::ListInvalidations2020_05_31OutcomeCallable ListInvalidations2020_05_31Callable(const Model::ListInvalidations2020_05_31Request& request) const;
 
         /**
          * <p>Lists invalidation batches. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/ListInvalidations2019_03_26">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListInvalidations2020_05_31">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
-        virtual void ListInvalidations2019_03_26Async(const Model::ListInvalidations2019_03_26Request& request, const ListInvalidations2019_03_26ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+        virtual void ListInvalidations2020_05_31Async(const Model::ListInvalidations2020_05_31Request& request, const ListInvalidations2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Gets a list of origin request policies.</p> <p>You can optionally apply a
+         * filter to return only the managed policies created by AWS, or only the custom
+         * policies created in your AWS account.</p> <p>You can optionally specify the
+         * maximum number of items to receive in the response. If the total number of items
+         * in the list exceeds the maximum that you specify, or the default maximum, the
+         * response is paginated. To get the next page of items, send a subsequent request
+         * that specifies the <code>NextMarker</code> value from the current response as
+         * the <code>Marker</code> value in the subsequent request.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListOriginRequestPolicies2020_05_31">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListOriginRequestPolicies2020_05_31Outcome ListOriginRequestPolicies2020_05_31(const Model::ListOriginRequestPolicies2020_05_31Request& request) const;
+
+        /**
+         * <p>Gets a list of origin request policies.</p> <p>You can optionally apply a
+         * filter to return only the managed policies created by AWS, or only the custom
+         * policies created in your AWS account.</p> <p>You can optionally specify the
+         * maximum number of items to receive in the response. If the total number of items
+         * in the list exceeds the maximum that you specify, or the default maximum, the
+         * response is paginated. To get the next page of items, send a subsequent request
+         * that specifies the <code>NextMarker</code> value from the current response as
+         * the <code>Marker</code> value in the subsequent request.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListOriginRequestPolicies2020_05_31">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListOriginRequestPolicies2020_05_31OutcomeCallable ListOriginRequestPolicies2020_05_31Callable(const Model::ListOriginRequestPolicies2020_05_31Request& request) const;
+
+        /**
+         * <p>Gets a list of origin request policies.</p> <p>You can optionally apply a
+         * filter to return only the managed policies created by AWS, or only the custom
+         * policies created in your AWS account.</p> <p>You can optionally specify the
+         * maximum number of items to receive in the response. If the total number of items
+         * in the list exceeds the maximum that you specify, or the default maximum, the
+         * response is paginated. To get the next page of items, send a subsequent request
+         * that specifies the <code>NextMarker</code> value from the current response as
+         * the <code>Marker</code> value in the subsequent request.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListOriginRequestPolicies2020_05_31">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListOriginRequestPolicies2020_05_31Async(const Model::ListOriginRequestPolicies2020_05_31Request& request, const ListOriginRequestPolicies2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>List all public keys that have been added to CloudFront for this
          * account.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/ListPublicKeys2019_03_26">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListPublicKeys2020_05_31">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListPublicKeys2019_03_26Outcome ListPublicKeys2019_03_26(const Model::ListPublicKeys2019_03_26Request& request) const;
+        virtual Model::ListPublicKeys2020_05_31Outcome ListPublicKeys2020_05_31(const Model::ListPublicKeys2020_05_31Request& request) const;
 
         /**
          * <p>List all public keys that have been added to CloudFront for this
          * account.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/ListPublicKeys2019_03_26">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListPublicKeys2020_05_31">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
-        virtual Model::ListPublicKeys2019_03_26OutcomeCallable ListPublicKeys2019_03_26Callable(const Model::ListPublicKeys2019_03_26Request& request) const;
+        virtual Model::ListPublicKeys2020_05_31OutcomeCallable ListPublicKeys2020_05_31Callable(const Model::ListPublicKeys2020_05_31Request& request) const;
 
         /**
          * <p>List all public keys that have been added to CloudFront for this
          * account.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/ListPublicKeys2019_03_26">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListPublicKeys2020_05_31">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
-        virtual void ListPublicKeys2019_03_26Async(const Model::ListPublicKeys2019_03_26Request& request, const ListPublicKeys2019_03_26ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+        virtual void ListPublicKeys2020_05_31Async(const Model::ListPublicKeys2020_05_31Request& request, const ListPublicKeys2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>List streaming distributions. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/ListStreamingDistributions2019_03_26">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListStreamingDistributions2020_05_31">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListStreamingDistributions2019_03_26Outcome ListStreamingDistributions2019_03_26(const Model::ListStreamingDistributions2019_03_26Request& request) const;
+        virtual Model::ListStreamingDistributions2020_05_31Outcome ListStreamingDistributions2020_05_31(const Model::ListStreamingDistributions2020_05_31Request& request) const;
 
         /**
          * <p>List streaming distributions. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/ListStreamingDistributions2019_03_26">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListStreamingDistributions2020_05_31">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
-        virtual Model::ListStreamingDistributions2019_03_26OutcomeCallable ListStreamingDistributions2019_03_26Callable(const Model::ListStreamingDistributions2019_03_26Request& request) const;
+        virtual Model::ListStreamingDistributions2020_05_31OutcomeCallable ListStreamingDistributions2020_05_31Callable(const Model::ListStreamingDistributions2020_05_31Request& request) const;
 
         /**
          * <p>List streaming distributions. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/ListStreamingDistributions2019_03_26">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListStreamingDistributions2020_05_31">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
-        virtual void ListStreamingDistributions2019_03_26Async(const Model::ListStreamingDistributions2019_03_26Request& request, const ListStreamingDistributions2019_03_26ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+        virtual void ListStreamingDistributions2020_05_31Async(const Model::ListStreamingDistributions2020_05_31Request& request, const ListStreamingDistributions2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>List tags for a CloudFront resource.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/ListTagsForResource2019_03_26">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListTagsForResource2020_05_31">AWS
          * API Reference</a></p>
          */
-        virtual Model::ListTagsForResource2019_03_26Outcome ListTagsForResource2019_03_26(const Model::ListTagsForResource2019_03_26Request& request) const;
+        virtual Model::ListTagsForResource2020_05_31Outcome ListTagsForResource2020_05_31(const Model::ListTagsForResource2020_05_31Request& request) const;
 
         /**
          * <p>List tags for a CloudFront resource.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/ListTagsForResource2019_03_26">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListTagsForResource2020_05_31">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
-        virtual Model::ListTagsForResource2019_03_26OutcomeCallable ListTagsForResource2019_03_26Callable(const Model::ListTagsForResource2019_03_26Request& request) const;
+        virtual Model::ListTagsForResource2020_05_31OutcomeCallable ListTagsForResource2020_05_31Callable(const Model::ListTagsForResource2020_05_31Request& request) const;
 
         /**
          * <p>List tags for a CloudFront resource.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/ListTagsForResource2019_03_26">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListTagsForResource2020_05_31">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
-        virtual void ListTagsForResource2019_03_26Async(const Model::ListTagsForResource2019_03_26Request& request, const ListTagsForResource2019_03_26ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+        virtual void ListTagsForResource2020_05_31Async(const Model::ListTagsForResource2020_05_31Request& request, const ListTagsForResource2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Add tags to a CloudFront resource.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/TagResource2019_03_26">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/TagResource2020_05_31">AWS
          * API Reference</a></p>
          */
-        virtual Model::TagResource2019_03_26Outcome TagResource2019_03_26(const Model::TagResource2019_03_26Request& request) const;
+        virtual Model::TagResource2020_05_31Outcome TagResource2020_05_31(const Model::TagResource2020_05_31Request& request) const;
 
         /**
          * <p>Add tags to a CloudFront resource.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/TagResource2019_03_26">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/TagResource2020_05_31">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
-        virtual Model::TagResource2019_03_26OutcomeCallable TagResource2019_03_26Callable(const Model::TagResource2019_03_26Request& request) const;
+        virtual Model::TagResource2020_05_31OutcomeCallable TagResource2020_05_31Callable(const Model::TagResource2020_05_31Request& request) const;
 
         /**
          * <p>Add tags to a CloudFront resource.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/TagResource2019_03_26">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/TagResource2020_05_31">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
-        virtual void TagResource2019_03_26Async(const Model::TagResource2019_03_26Request& request, const TagResource2019_03_26ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+        virtual void TagResource2020_05_31Async(const Model::TagResource2020_05_31Request& request, const TagResource2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Remove tags from a CloudFront resource.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/UntagResource2019_03_26">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UntagResource2020_05_31">AWS
          * API Reference</a></p>
          */
-        virtual Model::UntagResource2019_03_26Outcome UntagResource2019_03_26(const Model::UntagResource2019_03_26Request& request) const;
+        virtual Model::UntagResource2020_05_31Outcome UntagResource2020_05_31(const Model::UntagResource2020_05_31Request& request) const;
 
         /**
          * <p>Remove tags from a CloudFront resource.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/UntagResource2019_03_26">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UntagResource2020_05_31">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
-        virtual Model::UntagResource2019_03_26OutcomeCallable UntagResource2019_03_26Callable(const Model::UntagResource2019_03_26Request& request) const;
+        virtual Model::UntagResource2020_05_31OutcomeCallable UntagResource2020_05_31Callable(const Model::UntagResource2020_05_31Request& request) const;
 
         /**
          * <p>Remove tags from a CloudFront resource.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/UntagResource2019_03_26">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UntagResource2020_05_31">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
-        virtual void UntagResource2019_03_26Async(const Model::UntagResource2019_03_26Request& request, const UntagResource2019_03_26ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+        virtual void UntagResource2020_05_31Async(const Model::UntagResource2020_05_31Request& request, const UntagResource2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Update an origin access identity. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/UpdateCloudFrontOriginAccessIdentity2019_03_26">AWS
+         * <p>Updates a cache policy configuration.</p> <p>When you update a cache policy
+         * configuration, all the fields are updated with the values provided in the
+         * request. You cannot update some fields independent of others. To update a cache
+         * policy configuration:</p> <ol> <li> <p>Use <code>GetCachePolicyConfig</code> to
+         * get the current configuration.</p> </li> <li> <p>Locally modify the fields in
+         * the cache policy configuration that you want to update.</p> </li> <li> <p>Call
+         * <code>UpdateCachePolicy</code> by providing the entire cache policy
+         * configuration, including the fields that you modified and those that you
+         * didn’t.</p> </li> </ol><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateCachePolicy2020_05_31">AWS
          * API Reference</a></p>
          */
-        virtual Model::UpdateCloudFrontOriginAccessIdentity2019_03_26Outcome UpdateCloudFrontOriginAccessIdentity2019_03_26(const Model::UpdateCloudFrontOriginAccessIdentity2019_03_26Request& request) const;
+        virtual Model::UpdateCachePolicy2020_05_31Outcome UpdateCachePolicy2020_05_31(const Model::UpdateCachePolicy2020_05_31Request& request) const;
 
         /**
-         * <p>Update an origin access identity. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/UpdateCloudFrontOriginAccessIdentity2019_03_26">AWS
+         * <p>Updates a cache policy configuration.</p> <p>When you update a cache policy
+         * configuration, all the fields are updated with the values provided in the
+         * request. You cannot update some fields independent of others. To update a cache
+         * policy configuration:</p> <ol> <li> <p>Use <code>GetCachePolicyConfig</code> to
+         * get the current configuration.</p> </li> <li> <p>Locally modify the fields in
+         * the cache policy configuration that you want to update.</p> </li> <li> <p>Call
+         * <code>UpdateCachePolicy</code> by providing the entire cache policy
+         * configuration, including the fields that you modified and those that you
+         * didn’t.</p> </li> </ol><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateCachePolicy2020_05_31">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
-        virtual Model::UpdateCloudFrontOriginAccessIdentity2019_03_26OutcomeCallable UpdateCloudFrontOriginAccessIdentity2019_03_26Callable(const Model::UpdateCloudFrontOriginAccessIdentity2019_03_26Request& request) const;
+        virtual Model::UpdateCachePolicy2020_05_31OutcomeCallable UpdateCachePolicy2020_05_31Callable(const Model::UpdateCachePolicy2020_05_31Request& request) const;
 
         /**
-         * <p>Update an origin access identity. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/UpdateCloudFrontOriginAccessIdentity2019_03_26">AWS
+         * <p>Updates a cache policy configuration.</p> <p>When you update a cache policy
+         * configuration, all the fields are updated with the values provided in the
+         * request. You cannot update some fields independent of others. To update a cache
+         * policy configuration:</p> <ol> <li> <p>Use <code>GetCachePolicyConfig</code> to
+         * get the current configuration.</p> </li> <li> <p>Locally modify the fields in
+         * the cache policy configuration that you want to update.</p> </li> <li> <p>Call
+         * <code>UpdateCachePolicy</code> by providing the entire cache policy
+         * configuration, including the fields that you modified and those that you
+         * didn’t.</p> </li> </ol><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateCachePolicy2020_05_31">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
-        virtual void UpdateCloudFrontOriginAccessIdentity2019_03_26Async(const Model::UpdateCloudFrontOriginAccessIdentity2019_03_26Request& request, const UpdateCloudFrontOriginAccessIdentity2019_03_26ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+        virtual void UpdateCachePolicy2020_05_31Async(const Model::UpdateCachePolicy2020_05_31Request& request, const UpdateCachePolicy2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Update an origin access identity. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateCloudFrontOriginAccessIdentity2020_05_31">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateCloudFrontOriginAccessIdentity2020_05_31Outcome UpdateCloudFrontOriginAccessIdentity2020_05_31(const Model::UpdateCloudFrontOriginAccessIdentity2020_05_31Request& request) const;
+
+        /**
+         * <p>Update an origin access identity. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateCloudFrontOriginAccessIdentity2020_05_31">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateCloudFrontOriginAccessIdentity2020_05_31OutcomeCallable UpdateCloudFrontOriginAccessIdentity2020_05_31Callable(const Model::UpdateCloudFrontOriginAccessIdentity2020_05_31Request& request) const;
+
+        /**
+         * <p>Update an origin access identity. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateCloudFrontOriginAccessIdentity2020_05_31">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateCloudFrontOriginAccessIdentity2020_05_31Async(const Model::UpdateCloudFrontOriginAccessIdentity2020_05_31Request& request, const UpdateCloudFrontOriginAccessIdentity2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the configuration for a web distribution. </p>  <p>When
@@ -1633,10 +2353,10 @@ namespace Model
          * request to confirm that your changes have propagated. When propagation is
          * complete, the value of <code>Status</code> is <code>Deployed</code>.</p> </li>
          * </ol><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/UpdateDistribution2019_03_26">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateDistribution2020_05_31">AWS
          * API Reference</a></p>
          */
-        virtual Model::UpdateDistribution2019_03_26Outcome UpdateDistribution2019_03_26(const Model::UpdateDistribution2019_03_26Request& request) const;
+        virtual Model::UpdateDistribution2020_05_31Outcome UpdateDistribution2020_05_31(const Model::UpdateDistribution2020_05_31Request& request) const;
 
         /**
          * <p>Updates the configuration for a web distribution. </p>  <p>When
@@ -1690,12 +2410,12 @@ namespace Model
          * request to confirm that your changes have propagated. When propagation is
          * complete, the value of <code>Status</code> is <code>Deployed</code>.</p> </li>
          * </ol><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/UpdateDistribution2019_03_26">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateDistribution2020_05_31">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
-        virtual Model::UpdateDistribution2019_03_26OutcomeCallable UpdateDistribution2019_03_26Callable(const Model::UpdateDistribution2019_03_26Request& request) const;
+        virtual Model::UpdateDistribution2020_05_31OutcomeCallable UpdateDistribution2020_05_31Callable(const Model::UpdateDistribution2020_05_31Request& request) const;
 
         /**
          * <p>Updates the configuration for a web distribution. </p>  <p>When
@@ -1749,165 +2469,231 @@ namespace Model
          * request to confirm that your changes have propagated. When propagation is
          * complete, the value of <code>Status</code> is <code>Deployed</code>.</p> </li>
          * </ol><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/UpdateDistribution2019_03_26">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateDistribution2020_05_31">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
-        virtual void UpdateDistribution2019_03_26Async(const Model::UpdateDistribution2019_03_26Request& request, const UpdateDistribution2019_03_26ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+        virtual void UpdateDistribution2020_05_31Async(const Model::UpdateDistribution2020_05_31Request& request, const UpdateDistribution2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Update a field-level encryption configuration. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/UpdateFieldLevelEncryptionConfig2019_03_26">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateFieldLevelEncryptionConfig2020_05_31">AWS
          * API Reference</a></p>
          */
-        virtual Model::UpdateFieldLevelEncryptionConfig2019_03_26Outcome UpdateFieldLevelEncryptionConfig2019_03_26(const Model::UpdateFieldLevelEncryptionConfig2019_03_26Request& request) const;
+        virtual Model::UpdateFieldLevelEncryptionConfig2020_05_31Outcome UpdateFieldLevelEncryptionConfig2020_05_31(const Model::UpdateFieldLevelEncryptionConfig2020_05_31Request& request) const;
 
         /**
          * <p>Update a field-level encryption configuration. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/UpdateFieldLevelEncryptionConfig2019_03_26">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateFieldLevelEncryptionConfig2020_05_31">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
-        virtual Model::UpdateFieldLevelEncryptionConfig2019_03_26OutcomeCallable UpdateFieldLevelEncryptionConfig2019_03_26Callable(const Model::UpdateFieldLevelEncryptionConfig2019_03_26Request& request) const;
+        virtual Model::UpdateFieldLevelEncryptionConfig2020_05_31OutcomeCallable UpdateFieldLevelEncryptionConfig2020_05_31Callable(const Model::UpdateFieldLevelEncryptionConfig2020_05_31Request& request) const;
 
         /**
          * <p>Update a field-level encryption configuration. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/UpdateFieldLevelEncryptionConfig2019_03_26">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateFieldLevelEncryptionConfig2020_05_31">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
-        virtual void UpdateFieldLevelEncryptionConfig2019_03_26Async(const Model::UpdateFieldLevelEncryptionConfig2019_03_26Request& request, const UpdateFieldLevelEncryptionConfig2019_03_26ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+        virtual void UpdateFieldLevelEncryptionConfig2020_05_31Async(const Model::UpdateFieldLevelEncryptionConfig2020_05_31Request& request, const UpdateFieldLevelEncryptionConfig2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Update a field-level encryption profile. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/UpdateFieldLevelEncryptionProfile2019_03_26">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateFieldLevelEncryptionProfile2020_05_31">AWS
          * API Reference</a></p>
          */
-        virtual Model::UpdateFieldLevelEncryptionProfile2019_03_26Outcome UpdateFieldLevelEncryptionProfile2019_03_26(const Model::UpdateFieldLevelEncryptionProfile2019_03_26Request& request) const;
+        virtual Model::UpdateFieldLevelEncryptionProfile2020_05_31Outcome UpdateFieldLevelEncryptionProfile2020_05_31(const Model::UpdateFieldLevelEncryptionProfile2020_05_31Request& request) const;
 
         /**
          * <p>Update a field-level encryption profile. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/UpdateFieldLevelEncryptionProfile2019_03_26">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateFieldLevelEncryptionProfile2020_05_31">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
-        virtual Model::UpdateFieldLevelEncryptionProfile2019_03_26OutcomeCallable UpdateFieldLevelEncryptionProfile2019_03_26Callable(const Model::UpdateFieldLevelEncryptionProfile2019_03_26Request& request) const;
+        virtual Model::UpdateFieldLevelEncryptionProfile2020_05_31OutcomeCallable UpdateFieldLevelEncryptionProfile2020_05_31Callable(const Model::UpdateFieldLevelEncryptionProfile2020_05_31Request& request) const;
 
         /**
          * <p>Update a field-level encryption profile. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/UpdateFieldLevelEncryptionProfile2019_03_26">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateFieldLevelEncryptionProfile2020_05_31">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
-        virtual void UpdateFieldLevelEncryptionProfile2019_03_26Async(const Model::UpdateFieldLevelEncryptionProfile2019_03_26Request& request, const UpdateFieldLevelEncryptionProfile2019_03_26ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+        virtual void UpdateFieldLevelEncryptionProfile2020_05_31Async(const Model::UpdateFieldLevelEncryptionProfile2020_05_31Request& request, const UpdateFieldLevelEncryptionProfile2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Updates an origin request policy configuration.</p> <p>When you update an
+         * origin request policy configuration, all the fields are updated with the values
+         * provided in the request. You cannot update some fields independent of others. To
+         * update an origin request policy configuration:</p> <ol> <li> <p>Use
+         * <code>GetOriginRequestPolicyConfig</code> to get the current configuration.</p>
+         * </li> <li> <p>Locally modify the fields in the origin request policy
+         * configuration that you want to update.</p> </li> <li> <p>Call
+         * <code>UpdateOriginRequestPolicy</code> by providing the entire origin request
+         * policy configuration, including the fields that you modified and those that you
+         * didn’t.</p> </li> </ol><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateOriginRequestPolicy2020_05_31">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateOriginRequestPolicy2020_05_31Outcome UpdateOriginRequestPolicy2020_05_31(const Model::UpdateOriginRequestPolicy2020_05_31Request& request) const;
+
+        /**
+         * <p>Updates an origin request policy configuration.</p> <p>When you update an
+         * origin request policy configuration, all the fields are updated with the values
+         * provided in the request. You cannot update some fields independent of others. To
+         * update an origin request policy configuration:</p> <ol> <li> <p>Use
+         * <code>GetOriginRequestPolicyConfig</code> to get the current configuration.</p>
+         * </li> <li> <p>Locally modify the fields in the origin request policy
+         * configuration that you want to update.</p> </li> <li> <p>Call
+         * <code>UpdateOriginRequestPolicy</code> by providing the entire origin request
+         * policy configuration, including the fields that you modified and those that you
+         * didn’t.</p> </li> </ol><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateOriginRequestPolicy2020_05_31">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateOriginRequestPolicy2020_05_31OutcomeCallable UpdateOriginRequestPolicy2020_05_31Callable(const Model::UpdateOriginRequestPolicy2020_05_31Request& request) const;
+
+        /**
+         * <p>Updates an origin request policy configuration.</p> <p>When you update an
+         * origin request policy configuration, all the fields are updated with the values
+         * provided in the request. You cannot update some fields independent of others. To
+         * update an origin request policy configuration:</p> <ol> <li> <p>Use
+         * <code>GetOriginRequestPolicyConfig</code> to get the current configuration.</p>
+         * </li> <li> <p>Locally modify the fields in the origin request policy
+         * configuration that you want to update.</p> </li> <li> <p>Call
+         * <code>UpdateOriginRequestPolicy</code> by providing the entire origin request
+         * policy configuration, including the fields that you modified and those that you
+         * didn’t.</p> </li> </ol><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateOriginRequestPolicy2020_05_31">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateOriginRequestPolicy2020_05_31Async(const Model::UpdateOriginRequestPolicy2020_05_31Request& request, const UpdateOriginRequestPolicy2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Update public key information. Note that the only value you can change is the
          * comment.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/UpdatePublicKey2019_03_26">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdatePublicKey2020_05_31">AWS
          * API Reference</a></p>
          */
-        virtual Model::UpdatePublicKey2019_03_26Outcome UpdatePublicKey2019_03_26(const Model::UpdatePublicKey2019_03_26Request& request) const;
+        virtual Model::UpdatePublicKey2020_05_31Outcome UpdatePublicKey2020_05_31(const Model::UpdatePublicKey2020_05_31Request& request) const;
 
         /**
          * <p>Update public key information. Note that the only value you can change is the
          * comment.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/UpdatePublicKey2019_03_26">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdatePublicKey2020_05_31">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
-        virtual Model::UpdatePublicKey2019_03_26OutcomeCallable UpdatePublicKey2019_03_26Callable(const Model::UpdatePublicKey2019_03_26Request& request) const;
+        virtual Model::UpdatePublicKey2020_05_31OutcomeCallable UpdatePublicKey2020_05_31Callable(const Model::UpdatePublicKey2020_05_31Request& request) const;
 
         /**
          * <p>Update public key information. Note that the only value you can change is the
          * comment.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/UpdatePublicKey2019_03_26">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdatePublicKey2020_05_31">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
-        virtual void UpdatePublicKey2019_03_26Async(const Model::UpdatePublicKey2019_03_26Request& request, const UpdatePublicKey2019_03_26ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+        virtual void UpdatePublicKey2020_05_31Async(const Model::UpdatePublicKey2020_05_31Request& request, const UpdatePublicKey2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Update a streaming distribution. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/UpdateStreamingDistribution2019_03_26">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateStreamingDistribution2020_05_31">AWS
          * API Reference</a></p>
          */
-        virtual Model::UpdateStreamingDistribution2019_03_26Outcome UpdateStreamingDistribution2019_03_26(const Model::UpdateStreamingDistribution2019_03_26Request& request) const;
+        virtual Model::UpdateStreamingDistribution2020_05_31Outcome UpdateStreamingDistribution2020_05_31(const Model::UpdateStreamingDistribution2020_05_31Request& request) const;
 
         /**
          * <p>Update a streaming distribution. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/UpdateStreamingDistribution2019_03_26">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateStreamingDistribution2020_05_31">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
-        virtual Model::UpdateStreamingDistribution2019_03_26OutcomeCallable UpdateStreamingDistribution2019_03_26Callable(const Model::UpdateStreamingDistribution2019_03_26Request& request) const;
+        virtual Model::UpdateStreamingDistribution2020_05_31OutcomeCallable UpdateStreamingDistribution2020_05_31Callable(const Model::UpdateStreamingDistribution2020_05_31Request& request) const;
 
         /**
          * <p>Update a streaming distribution. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/UpdateStreamingDistribution2019_03_26">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateStreamingDistribution2020_05_31">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
-        virtual void UpdateStreamingDistribution2019_03_26Async(const Model::UpdateStreamingDistribution2019_03_26Request& request, const UpdateStreamingDistribution2019_03_26ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+        virtual void UpdateStreamingDistribution2020_05_31Async(const Model::UpdateStreamingDistribution2020_05_31Request& request, const UpdateStreamingDistribution2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
         void OverrideEndpoint(const Aws::String& endpoint);
   private:
         void init(const Aws::Client::ClientConfiguration& clientConfiguration);
-        void CreateCloudFrontOriginAccessIdentity2019_03_26AsyncHelper(const Model::CreateCloudFrontOriginAccessIdentity2019_03_26Request& request, const CreateCloudFrontOriginAccessIdentity2019_03_26ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateDistribution2019_03_26AsyncHelper(const Model::CreateDistribution2019_03_26Request& request, const CreateDistribution2019_03_26ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateDistributionWithTags2019_03_26AsyncHelper(const Model::CreateDistributionWithTags2019_03_26Request& request, const CreateDistributionWithTags2019_03_26ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateFieldLevelEncryptionConfig2019_03_26AsyncHelper(const Model::CreateFieldLevelEncryptionConfig2019_03_26Request& request, const CreateFieldLevelEncryptionConfig2019_03_26ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateFieldLevelEncryptionProfile2019_03_26AsyncHelper(const Model::CreateFieldLevelEncryptionProfile2019_03_26Request& request, const CreateFieldLevelEncryptionProfile2019_03_26ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateInvalidation2019_03_26AsyncHelper(const Model::CreateInvalidation2019_03_26Request& request, const CreateInvalidation2019_03_26ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreatePublicKey2019_03_26AsyncHelper(const Model::CreatePublicKey2019_03_26Request& request, const CreatePublicKey2019_03_26ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateStreamingDistribution2019_03_26AsyncHelper(const Model::CreateStreamingDistribution2019_03_26Request& request, const CreateStreamingDistribution2019_03_26ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateStreamingDistributionWithTags2019_03_26AsyncHelper(const Model::CreateStreamingDistributionWithTags2019_03_26Request& request, const CreateStreamingDistributionWithTags2019_03_26ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteCloudFrontOriginAccessIdentity2019_03_26AsyncHelper(const Model::DeleteCloudFrontOriginAccessIdentity2019_03_26Request& request, const DeleteCloudFrontOriginAccessIdentity2019_03_26ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteDistribution2019_03_26AsyncHelper(const Model::DeleteDistribution2019_03_26Request& request, const DeleteDistribution2019_03_26ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteFieldLevelEncryptionConfig2019_03_26AsyncHelper(const Model::DeleteFieldLevelEncryptionConfig2019_03_26Request& request, const DeleteFieldLevelEncryptionConfig2019_03_26ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteFieldLevelEncryptionProfile2019_03_26AsyncHelper(const Model::DeleteFieldLevelEncryptionProfile2019_03_26Request& request, const DeleteFieldLevelEncryptionProfile2019_03_26ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeletePublicKey2019_03_26AsyncHelper(const Model::DeletePublicKey2019_03_26Request& request, const DeletePublicKey2019_03_26ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteStreamingDistribution2019_03_26AsyncHelper(const Model::DeleteStreamingDistribution2019_03_26Request& request, const DeleteStreamingDistribution2019_03_26ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetCloudFrontOriginAccessIdentity2019_03_26AsyncHelper(const Model::GetCloudFrontOriginAccessIdentity2019_03_26Request& request, const GetCloudFrontOriginAccessIdentity2019_03_26ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetCloudFrontOriginAccessIdentityConfig2019_03_26AsyncHelper(const Model::GetCloudFrontOriginAccessIdentityConfig2019_03_26Request& request, const GetCloudFrontOriginAccessIdentityConfig2019_03_26ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetDistribution2019_03_26AsyncHelper(const Model::GetDistribution2019_03_26Request& request, const GetDistribution2019_03_26ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetDistributionConfig2019_03_26AsyncHelper(const Model::GetDistributionConfig2019_03_26Request& request, const GetDistributionConfig2019_03_26ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetFieldLevelEncryption2019_03_26AsyncHelper(const Model::GetFieldLevelEncryption2019_03_26Request& request, const GetFieldLevelEncryption2019_03_26ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetFieldLevelEncryptionConfig2019_03_26AsyncHelper(const Model::GetFieldLevelEncryptionConfig2019_03_26Request& request, const GetFieldLevelEncryptionConfig2019_03_26ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetFieldLevelEncryptionProfile2019_03_26AsyncHelper(const Model::GetFieldLevelEncryptionProfile2019_03_26Request& request, const GetFieldLevelEncryptionProfile2019_03_26ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetFieldLevelEncryptionProfileConfig2019_03_26AsyncHelper(const Model::GetFieldLevelEncryptionProfileConfig2019_03_26Request& request, const GetFieldLevelEncryptionProfileConfig2019_03_26ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetInvalidation2019_03_26AsyncHelper(const Model::GetInvalidation2019_03_26Request& request, const GetInvalidation2019_03_26ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetPublicKey2019_03_26AsyncHelper(const Model::GetPublicKey2019_03_26Request& request, const GetPublicKey2019_03_26ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetPublicKeyConfig2019_03_26AsyncHelper(const Model::GetPublicKeyConfig2019_03_26Request& request, const GetPublicKeyConfig2019_03_26ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetStreamingDistribution2019_03_26AsyncHelper(const Model::GetStreamingDistribution2019_03_26Request& request, const GetStreamingDistribution2019_03_26ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetStreamingDistributionConfig2019_03_26AsyncHelper(const Model::GetStreamingDistributionConfig2019_03_26Request& request, const GetStreamingDistributionConfig2019_03_26ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListCloudFrontOriginAccessIdentities2019_03_26AsyncHelper(const Model::ListCloudFrontOriginAccessIdentities2019_03_26Request& request, const ListCloudFrontOriginAccessIdentities2019_03_26ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListDistributions2019_03_26AsyncHelper(const Model::ListDistributions2019_03_26Request& request, const ListDistributions2019_03_26ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListDistributionsByWebACLId2019_03_26AsyncHelper(const Model::ListDistributionsByWebACLId2019_03_26Request& request, const ListDistributionsByWebACLId2019_03_26ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListFieldLevelEncryptionConfigs2019_03_26AsyncHelper(const Model::ListFieldLevelEncryptionConfigs2019_03_26Request& request, const ListFieldLevelEncryptionConfigs2019_03_26ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListFieldLevelEncryptionProfiles2019_03_26AsyncHelper(const Model::ListFieldLevelEncryptionProfiles2019_03_26Request& request, const ListFieldLevelEncryptionProfiles2019_03_26ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListInvalidations2019_03_26AsyncHelper(const Model::ListInvalidations2019_03_26Request& request, const ListInvalidations2019_03_26ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListPublicKeys2019_03_26AsyncHelper(const Model::ListPublicKeys2019_03_26Request& request, const ListPublicKeys2019_03_26ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListStreamingDistributions2019_03_26AsyncHelper(const Model::ListStreamingDistributions2019_03_26Request& request, const ListStreamingDistributions2019_03_26ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListTagsForResource2019_03_26AsyncHelper(const Model::ListTagsForResource2019_03_26Request& request, const ListTagsForResource2019_03_26ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void TagResource2019_03_26AsyncHelper(const Model::TagResource2019_03_26Request& request, const TagResource2019_03_26ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UntagResource2019_03_26AsyncHelper(const Model::UntagResource2019_03_26Request& request, const UntagResource2019_03_26ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateCloudFrontOriginAccessIdentity2019_03_26AsyncHelper(const Model::UpdateCloudFrontOriginAccessIdentity2019_03_26Request& request, const UpdateCloudFrontOriginAccessIdentity2019_03_26ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateDistribution2019_03_26AsyncHelper(const Model::UpdateDistribution2019_03_26Request& request, const UpdateDistribution2019_03_26ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateFieldLevelEncryptionConfig2019_03_26AsyncHelper(const Model::UpdateFieldLevelEncryptionConfig2019_03_26Request& request, const UpdateFieldLevelEncryptionConfig2019_03_26ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateFieldLevelEncryptionProfile2019_03_26AsyncHelper(const Model::UpdateFieldLevelEncryptionProfile2019_03_26Request& request, const UpdateFieldLevelEncryptionProfile2019_03_26ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdatePublicKey2019_03_26AsyncHelper(const Model::UpdatePublicKey2019_03_26Request& request, const UpdatePublicKey2019_03_26ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateStreamingDistribution2019_03_26AsyncHelper(const Model::UpdateStreamingDistribution2019_03_26Request& request, const UpdateStreamingDistribution2019_03_26ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateCachePolicy2020_05_31AsyncHelper(const Model::CreateCachePolicy2020_05_31Request& request, const CreateCachePolicy2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateCloudFrontOriginAccessIdentity2020_05_31AsyncHelper(const Model::CreateCloudFrontOriginAccessIdentity2020_05_31Request& request, const CreateCloudFrontOriginAccessIdentity2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateDistribution2020_05_31AsyncHelper(const Model::CreateDistribution2020_05_31Request& request, const CreateDistribution2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateDistributionWithTags2020_05_31AsyncHelper(const Model::CreateDistributionWithTags2020_05_31Request& request, const CreateDistributionWithTags2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateFieldLevelEncryptionConfig2020_05_31AsyncHelper(const Model::CreateFieldLevelEncryptionConfig2020_05_31Request& request, const CreateFieldLevelEncryptionConfig2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateFieldLevelEncryptionProfile2020_05_31AsyncHelper(const Model::CreateFieldLevelEncryptionProfile2020_05_31Request& request, const CreateFieldLevelEncryptionProfile2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateInvalidation2020_05_31AsyncHelper(const Model::CreateInvalidation2020_05_31Request& request, const CreateInvalidation2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateOriginRequestPolicy2020_05_31AsyncHelper(const Model::CreateOriginRequestPolicy2020_05_31Request& request, const CreateOriginRequestPolicy2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreatePublicKey2020_05_31AsyncHelper(const Model::CreatePublicKey2020_05_31Request& request, const CreatePublicKey2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateStreamingDistribution2020_05_31AsyncHelper(const Model::CreateStreamingDistribution2020_05_31Request& request, const CreateStreamingDistribution2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateStreamingDistributionWithTags2020_05_31AsyncHelper(const Model::CreateStreamingDistributionWithTags2020_05_31Request& request, const CreateStreamingDistributionWithTags2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteCachePolicy2020_05_31AsyncHelper(const Model::DeleteCachePolicy2020_05_31Request& request, const DeleteCachePolicy2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteCloudFrontOriginAccessIdentity2020_05_31AsyncHelper(const Model::DeleteCloudFrontOriginAccessIdentity2020_05_31Request& request, const DeleteCloudFrontOriginAccessIdentity2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteDistribution2020_05_31AsyncHelper(const Model::DeleteDistribution2020_05_31Request& request, const DeleteDistribution2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteFieldLevelEncryptionConfig2020_05_31AsyncHelper(const Model::DeleteFieldLevelEncryptionConfig2020_05_31Request& request, const DeleteFieldLevelEncryptionConfig2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteFieldLevelEncryptionProfile2020_05_31AsyncHelper(const Model::DeleteFieldLevelEncryptionProfile2020_05_31Request& request, const DeleteFieldLevelEncryptionProfile2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteOriginRequestPolicy2020_05_31AsyncHelper(const Model::DeleteOriginRequestPolicy2020_05_31Request& request, const DeleteOriginRequestPolicy2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeletePublicKey2020_05_31AsyncHelper(const Model::DeletePublicKey2020_05_31Request& request, const DeletePublicKey2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteStreamingDistribution2020_05_31AsyncHelper(const Model::DeleteStreamingDistribution2020_05_31Request& request, const DeleteStreamingDistribution2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetCachePolicy2020_05_31AsyncHelper(const Model::GetCachePolicy2020_05_31Request& request, const GetCachePolicy2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetCachePolicyConfig2020_05_31AsyncHelper(const Model::GetCachePolicyConfig2020_05_31Request& request, const GetCachePolicyConfig2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetCloudFrontOriginAccessIdentity2020_05_31AsyncHelper(const Model::GetCloudFrontOriginAccessIdentity2020_05_31Request& request, const GetCloudFrontOriginAccessIdentity2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetCloudFrontOriginAccessIdentityConfig2020_05_31AsyncHelper(const Model::GetCloudFrontOriginAccessIdentityConfig2020_05_31Request& request, const GetCloudFrontOriginAccessIdentityConfig2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetDistribution2020_05_31AsyncHelper(const Model::GetDistribution2020_05_31Request& request, const GetDistribution2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetDistributionConfig2020_05_31AsyncHelper(const Model::GetDistributionConfig2020_05_31Request& request, const GetDistributionConfig2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetFieldLevelEncryption2020_05_31AsyncHelper(const Model::GetFieldLevelEncryption2020_05_31Request& request, const GetFieldLevelEncryption2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetFieldLevelEncryptionConfig2020_05_31AsyncHelper(const Model::GetFieldLevelEncryptionConfig2020_05_31Request& request, const GetFieldLevelEncryptionConfig2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetFieldLevelEncryptionProfile2020_05_31AsyncHelper(const Model::GetFieldLevelEncryptionProfile2020_05_31Request& request, const GetFieldLevelEncryptionProfile2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetFieldLevelEncryptionProfileConfig2020_05_31AsyncHelper(const Model::GetFieldLevelEncryptionProfileConfig2020_05_31Request& request, const GetFieldLevelEncryptionProfileConfig2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetInvalidation2020_05_31AsyncHelper(const Model::GetInvalidation2020_05_31Request& request, const GetInvalidation2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetOriginRequestPolicy2020_05_31AsyncHelper(const Model::GetOriginRequestPolicy2020_05_31Request& request, const GetOriginRequestPolicy2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetOriginRequestPolicyConfig2020_05_31AsyncHelper(const Model::GetOriginRequestPolicyConfig2020_05_31Request& request, const GetOriginRequestPolicyConfig2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetPublicKey2020_05_31AsyncHelper(const Model::GetPublicKey2020_05_31Request& request, const GetPublicKey2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetPublicKeyConfig2020_05_31AsyncHelper(const Model::GetPublicKeyConfig2020_05_31Request& request, const GetPublicKeyConfig2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetStreamingDistribution2020_05_31AsyncHelper(const Model::GetStreamingDistribution2020_05_31Request& request, const GetStreamingDistribution2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetStreamingDistributionConfig2020_05_31AsyncHelper(const Model::GetStreamingDistributionConfig2020_05_31Request& request, const GetStreamingDistributionConfig2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListCachePolicies2020_05_31AsyncHelper(const Model::ListCachePolicies2020_05_31Request& request, const ListCachePolicies2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListCloudFrontOriginAccessIdentities2020_05_31AsyncHelper(const Model::ListCloudFrontOriginAccessIdentities2020_05_31Request& request, const ListCloudFrontOriginAccessIdentities2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListDistributions2020_05_31AsyncHelper(const Model::ListDistributions2020_05_31Request& request, const ListDistributions2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListDistributionsByCachePolicyId2020_05_31AsyncHelper(const Model::ListDistributionsByCachePolicyId2020_05_31Request& request, const ListDistributionsByCachePolicyId2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListDistributionsByOriginRequestPolicyId2020_05_31AsyncHelper(const Model::ListDistributionsByOriginRequestPolicyId2020_05_31Request& request, const ListDistributionsByOriginRequestPolicyId2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListDistributionsByWebACLId2020_05_31AsyncHelper(const Model::ListDistributionsByWebACLId2020_05_31Request& request, const ListDistributionsByWebACLId2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListFieldLevelEncryptionConfigs2020_05_31AsyncHelper(const Model::ListFieldLevelEncryptionConfigs2020_05_31Request& request, const ListFieldLevelEncryptionConfigs2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListFieldLevelEncryptionProfiles2020_05_31AsyncHelper(const Model::ListFieldLevelEncryptionProfiles2020_05_31Request& request, const ListFieldLevelEncryptionProfiles2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListInvalidations2020_05_31AsyncHelper(const Model::ListInvalidations2020_05_31Request& request, const ListInvalidations2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListOriginRequestPolicies2020_05_31AsyncHelper(const Model::ListOriginRequestPolicies2020_05_31Request& request, const ListOriginRequestPolicies2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListPublicKeys2020_05_31AsyncHelper(const Model::ListPublicKeys2020_05_31Request& request, const ListPublicKeys2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListStreamingDistributions2020_05_31AsyncHelper(const Model::ListStreamingDistributions2020_05_31Request& request, const ListStreamingDistributions2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListTagsForResource2020_05_31AsyncHelper(const Model::ListTagsForResource2020_05_31Request& request, const ListTagsForResource2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void TagResource2020_05_31AsyncHelper(const Model::TagResource2020_05_31Request& request, const TagResource2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UntagResource2020_05_31AsyncHelper(const Model::UntagResource2020_05_31Request& request, const UntagResource2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateCachePolicy2020_05_31AsyncHelper(const Model::UpdateCachePolicy2020_05_31Request& request, const UpdateCachePolicy2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateCloudFrontOriginAccessIdentity2020_05_31AsyncHelper(const Model::UpdateCloudFrontOriginAccessIdentity2020_05_31Request& request, const UpdateCloudFrontOriginAccessIdentity2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateDistribution2020_05_31AsyncHelper(const Model::UpdateDistribution2020_05_31Request& request, const UpdateDistribution2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateFieldLevelEncryptionConfig2020_05_31AsyncHelper(const Model::UpdateFieldLevelEncryptionConfig2020_05_31Request& request, const UpdateFieldLevelEncryptionConfig2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateFieldLevelEncryptionProfile2020_05_31AsyncHelper(const Model::UpdateFieldLevelEncryptionProfile2020_05_31Request& request, const UpdateFieldLevelEncryptionProfile2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateOriginRequestPolicy2020_05_31AsyncHelper(const Model::UpdateOriginRequestPolicy2020_05_31Request& request, const UpdateOriginRequestPolicy2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdatePublicKey2020_05_31AsyncHelper(const Model::UpdatePublicKey2020_05_31Request& request, const UpdatePublicKey2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateStreamingDistribution2020_05_31AsyncHelper(const Model::UpdateStreamingDistribution2020_05_31Request& request, const UpdateStreamingDistribution2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
         Aws::String m_uri;
         Aws::String m_configScheme;

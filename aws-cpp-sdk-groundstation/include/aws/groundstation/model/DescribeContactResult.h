@@ -7,9 +7,11 @@
 #include <aws/groundstation/GroundStation_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/groundstation/model/ContactStatus.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/groundstation/model/Elevation.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/groundstation/model/DataflowDetail.h>
 #include <utility>
 
 namespace Aws
@@ -101,6 +103,42 @@ namespace Model
      * <p>Status of a contact.</p>
      */
     inline DescribeContactResult& WithContactStatus(ContactStatus&& value) { SetContactStatus(std::move(value)); return *this;}
+
+
+    /**
+     * <p>List describing source and destination details for each dataflow edge.</p>
+     */
+    inline const Aws::Vector<DataflowDetail>& GetDataflowList() const{ return m_dataflowList; }
+
+    /**
+     * <p>List describing source and destination details for each dataflow edge.</p>
+     */
+    inline void SetDataflowList(const Aws::Vector<DataflowDetail>& value) { m_dataflowList = value; }
+
+    /**
+     * <p>List describing source and destination details for each dataflow edge.</p>
+     */
+    inline void SetDataflowList(Aws::Vector<DataflowDetail>&& value) { m_dataflowList = std::move(value); }
+
+    /**
+     * <p>List describing source and destination details for each dataflow edge.</p>
+     */
+    inline DescribeContactResult& WithDataflowList(const Aws::Vector<DataflowDetail>& value) { SetDataflowList(value); return *this;}
+
+    /**
+     * <p>List describing source and destination details for each dataflow edge.</p>
+     */
+    inline DescribeContactResult& WithDataflowList(Aws::Vector<DataflowDetail>&& value) { SetDataflowList(std::move(value)); return *this;}
+
+    /**
+     * <p>List describing source and destination details for each dataflow edge.</p>
+     */
+    inline DescribeContactResult& AddDataflowList(const DataflowDetail& value) { m_dataflowList.push_back(value); return *this; }
+
+    /**
+     * <p>List describing source and destination details for each dataflow edge.</p>
+     */
+    inline DescribeContactResult& AddDataflowList(DataflowDetail&& value) { m_dataflowList.push_back(std::move(value)); return *this; }
 
 
     /**
@@ -488,6 +526,8 @@ namespace Model
     Aws::String m_contactId;
 
     ContactStatus m_contactStatus;
+
+    Aws::Vector<DataflowDetail> m_dataflowList;
 
     Aws::Utils::DateTime m_endTime;
 

@@ -25,7 +25,7 @@ namespace Model
   /**
    * <p>Query argument-profile mapping for field-level encryption.</p><p><h3>See
    * Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/QueryArgProfile">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/QueryArgProfile">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDFRONT_API QueryArgProfile

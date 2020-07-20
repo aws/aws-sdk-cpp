@@ -69,22 +69,22 @@ namespace Model
 
 
     /**
-     * <p>Value of an EIRP.</p>
+     * <p>Value of an EIRP. Valid values are between 20.0 to 50.0 dBW.</p>
      */
     inline double GetValue() const{ return m_value; }
 
     /**
-     * <p>Value of an EIRP.</p>
+     * <p>Value of an EIRP. Valid values are between 20.0 to 50.0 dBW.</p>
      */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
 
     /**
-     * <p>Value of an EIRP.</p>
+     * <p>Value of an EIRP. Valid values are between 20.0 to 50.0 dBW.</p>
      */
     inline void SetValue(double value) { m_valueHasBeenSet = true; m_value = value; }
 
     /**
-     * <p>Value of an EIRP.</p>
+     * <p>Value of an EIRP. Valid values are between 20.0 to 50.0 dBW.</p>
      */
     inline Eirp& WithValue(double value) { SetValue(value); return *this;}
 

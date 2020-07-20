@@ -129,42 +129,42 @@ namespace Model
 
 
     /**
-     * <p>The friendly name of the AWS Firewall Manager policy.</p>
+     * <p>The name of the AWS Firewall Manager policy.</p>
      */
     inline const Aws::String& GetPolicyName() const{ return m_policyName; }
 
     /**
-     * <p>The friendly name of the AWS Firewall Manager policy.</p>
+     * <p>The name of the AWS Firewall Manager policy.</p>
      */
     inline bool PolicyNameHasBeenSet() const { return m_policyNameHasBeenSet; }
 
     /**
-     * <p>The friendly name of the AWS Firewall Manager policy.</p>
+     * <p>The name of the AWS Firewall Manager policy.</p>
      */
     inline void SetPolicyName(const Aws::String& value) { m_policyNameHasBeenSet = true; m_policyName = value; }
 
     /**
-     * <p>The friendly name of the AWS Firewall Manager policy.</p>
+     * <p>The name of the AWS Firewall Manager policy.</p>
      */
     inline void SetPolicyName(Aws::String&& value) { m_policyNameHasBeenSet = true; m_policyName = std::move(value); }
 
     /**
-     * <p>The friendly name of the AWS Firewall Manager policy.</p>
+     * <p>The name of the AWS Firewall Manager policy.</p>
      */
     inline void SetPolicyName(const char* value) { m_policyNameHasBeenSet = true; m_policyName.assign(value); }
 
     /**
-     * <p>The friendly name of the AWS Firewall Manager policy.</p>
+     * <p>The name of the AWS Firewall Manager policy.</p>
      */
     inline PolicyComplianceStatus& WithPolicyName(const Aws::String& value) { SetPolicyName(value); return *this;}
 
     /**
-     * <p>The friendly name of the AWS Firewall Manager policy.</p>
+     * <p>The name of the AWS Firewall Manager policy.</p>
      */
     inline PolicyComplianceStatus& WithPolicyName(Aws::String&& value) { SetPolicyName(std::move(value)); return *this;}
 
     /**
-     * <p>The friendly name of the AWS Firewall Manager policy.</p>
+     * <p>The name of the AWS Firewall Manager policy.</p>
      */
     inline PolicyComplianceStatus& WithPolicyName(const char* value) { SetPolicyName(value); return *this;}
 

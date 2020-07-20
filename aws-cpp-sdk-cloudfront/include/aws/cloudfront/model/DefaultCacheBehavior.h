@@ -6,7 +6,6 @@
 #pragma once
 #include <aws/cloudfront/CloudFront_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/cloudfront/model/ForwardedValues.h>
 #include <aws/cloudfront/model/TrustedSigners.h>
 #include <aws/cloudfront/model/ViewerProtocolPolicy.h>
 #include <aws/cloudfront/model/AllowedMethods.h>
@@ -32,7 +31,7 @@ namespace Model
    * a <code>CacheBehavior</code> element or if request URLs don’t match any of the
    * values of <code>PathPattern</code> in <code>CacheBehavior</code> elements. You
    * must create exactly one default cache behavior.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/DefaultCacheBehavior">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DefaultCacheBehavior">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDFRONT_API DefaultCacheBehavior
@@ -92,43 +91,6 @@ namespace Model
      * requests to when they use the default cache behavior.</p>
      */
     inline DefaultCacheBehavior& WithTargetOriginId(const char* value) { SetTargetOriginId(value); return *this;}
-
-
-    /**
-     * <p>A complex type that specifies how CloudFront handles query strings, cookies,
-     * and HTTP headers.</p>
-     */
-    inline const ForwardedValues& GetForwardedValues() const{ return m_forwardedValues; }
-
-    /**
-     * <p>A complex type that specifies how CloudFront handles query strings, cookies,
-     * and HTTP headers.</p>
-     */
-    inline bool ForwardedValuesHasBeenSet() const { return m_forwardedValuesHasBeenSet; }
-
-    /**
-     * <p>A complex type that specifies how CloudFront handles query strings, cookies,
-     * and HTTP headers.</p>
-     */
-    inline void SetForwardedValues(const ForwardedValues& value) { m_forwardedValuesHasBeenSet = true; m_forwardedValues = value; }
-
-    /**
-     * <p>A complex type that specifies how CloudFront handles query strings, cookies,
-     * and HTTP headers.</p>
-     */
-    inline void SetForwardedValues(ForwardedValues&& value) { m_forwardedValuesHasBeenSet = true; m_forwardedValues = std::move(value); }
-
-    /**
-     * <p>A complex type that specifies how CloudFront handles query strings, cookies,
-     * and HTTP headers.</p>
-     */
-    inline DefaultCacheBehavior& WithForwardedValues(const ForwardedValues& value) { SetForwardedValues(value); return *this;}
-
-    /**
-     * <p>A complex type that specifies how CloudFront handles query strings, cookies,
-     * and HTTP headers.</p>
-     */
-    inline DefaultCacheBehavior& WithForwardedValues(ForwardedValues&& value) { SetForwardedValues(std::move(value)); return *this;}
 
 
     /**
@@ -409,59 +371,6 @@ namespace Model
     inline DefaultCacheBehavior& WithViewerProtocolPolicy(ViewerProtocolPolicy&& value) { SetViewerProtocolPolicy(std::move(value)); return *this;}
 
 
-    /**
-     * <p>The minimum amount of time that you want objects to stay in CloudFront caches
-     * before CloudFront forwards another request to your origin to determine whether
-     * the object has been updated. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing
-     * How Long Content Stays in an Edge Cache (Expiration)</a> in the <i>Amazon
-     * CloudFront Developer Guide</i>.</p> <p>You must specify <code>0</code> for
-     * <code>MinTTL</code> if you configure CloudFront to forward all headers to your
-     * origin (under <code>Headers</code>, if you specify <code>1</code> for
-     * <code>Quantity</code> and <code>*</code> for <code>Name</code>).</p>
-     */
-    inline long long GetMinTTL() const{ return m_minTTL; }
-
-    /**
-     * <p>The minimum amount of time that you want objects to stay in CloudFront caches
-     * before CloudFront forwards another request to your origin to determine whether
-     * the object has been updated. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing
-     * How Long Content Stays in an Edge Cache (Expiration)</a> in the <i>Amazon
-     * CloudFront Developer Guide</i>.</p> <p>You must specify <code>0</code> for
-     * <code>MinTTL</code> if you configure CloudFront to forward all headers to your
-     * origin (under <code>Headers</code>, if you specify <code>1</code> for
-     * <code>Quantity</code> and <code>*</code> for <code>Name</code>).</p>
-     */
-    inline bool MinTTLHasBeenSet() const { return m_minTTLHasBeenSet; }
-
-    /**
-     * <p>The minimum amount of time that you want objects to stay in CloudFront caches
-     * before CloudFront forwards another request to your origin to determine whether
-     * the object has been updated. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing
-     * How Long Content Stays in an Edge Cache (Expiration)</a> in the <i>Amazon
-     * CloudFront Developer Guide</i>.</p> <p>You must specify <code>0</code> for
-     * <code>MinTTL</code> if you configure CloudFront to forward all headers to your
-     * origin (under <code>Headers</code>, if you specify <code>1</code> for
-     * <code>Quantity</code> and <code>*</code> for <code>Name</code>).</p>
-     */
-    inline void SetMinTTL(long long value) { m_minTTLHasBeenSet = true; m_minTTL = value; }
-
-    /**
-     * <p>The minimum amount of time that you want objects to stay in CloudFront caches
-     * before CloudFront forwards another request to your origin to determine whether
-     * the object has been updated. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing
-     * How Long Content Stays in an Edge Cache (Expiration)</a> in the <i>Amazon
-     * CloudFront Developer Guide</i>.</p> <p>You must specify <code>0</code> for
-     * <code>MinTTL</code> if you configure CloudFront to forward all headers to your
-     * origin (under <code>Headers</code>, if you specify <code>1</code> for
-     * <code>Quantity</code> and <code>*</code> for <code>Name</code>).</p>
-     */
-    inline DefaultCacheBehavior& WithMinTTL(long long value) { SetMinTTL(value); return *this;}
-
-
     
     inline const AllowedMethods& GetAllowedMethods() const{ return m_allowedMethods; }
 
@@ -520,112 +429,6 @@ namespace Model
      * value of <code>PathPattern</code>. </p>
      */
     inline DefaultCacheBehavior& WithSmoothStreaming(bool value) { SetSmoothStreaming(value); return *this;}
-
-
-    /**
-     * <p>The default amount of time that you want objects to stay in CloudFront caches
-     * before CloudFront forwards another request to your origin to determine whether
-     * the object has been updated. The value that you specify applies only when your
-     * origin does not add HTTP headers such as <code>Cache-Control max-age</code>,
-     * <code>Cache-Control s-maxage</code>, and <code>Expires</code> to objects. For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing
-     * How Long Content Stays in an Edge Cache (Expiration)</a> in the <i>Amazon
-     * CloudFront Developer Guide</i>.</p>
-     */
-    inline long long GetDefaultTTL() const{ return m_defaultTTL; }
-
-    /**
-     * <p>The default amount of time that you want objects to stay in CloudFront caches
-     * before CloudFront forwards another request to your origin to determine whether
-     * the object has been updated. The value that you specify applies only when your
-     * origin does not add HTTP headers such as <code>Cache-Control max-age</code>,
-     * <code>Cache-Control s-maxage</code>, and <code>Expires</code> to objects. For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing
-     * How Long Content Stays in an Edge Cache (Expiration)</a> in the <i>Amazon
-     * CloudFront Developer Guide</i>.</p>
-     */
-    inline bool DefaultTTLHasBeenSet() const { return m_defaultTTLHasBeenSet; }
-
-    /**
-     * <p>The default amount of time that you want objects to stay in CloudFront caches
-     * before CloudFront forwards another request to your origin to determine whether
-     * the object has been updated. The value that you specify applies only when your
-     * origin does not add HTTP headers such as <code>Cache-Control max-age</code>,
-     * <code>Cache-Control s-maxage</code>, and <code>Expires</code> to objects. For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing
-     * How Long Content Stays in an Edge Cache (Expiration)</a> in the <i>Amazon
-     * CloudFront Developer Guide</i>.</p>
-     */
-    inline void SetDefaultTTL(long long value) { m_defaultTTLHasBeenSet = true; m_defaultTTL = value; }
-
-    /**
-     * <p>The default amount of time that you want objects to stay in CloudFront caches
-     * before CloudFront forwards another request to your origin to determine whether
-     * the object has been updated. The value that you specify applies only when your
-     * origin does not add HTTP headers such as <code>Cache-Control max-age</code>,
-     * <code>Cache-Control s-maxage</code>, and <code>Expires</code> to objects. For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing
-     * How Long Content Stays in an Edge Cache (Expiration)</a> in the <i>Amazon
-     * CloudFront Developer Guide</i>.</p>
-     */
-    inline DefaultCacheBehavior& WithDefaultTTL(long long value) { SetDefaultTTL(value); return *this;}
-
-
-    /**
-     * <p>The maximum amount of time that you want objects to stay in CloudFront caches
-     * before CloudFront forwards another request to your origin to determine whether
-     * the object has been updated. The value that you specify applies only when your
-     * origin adds HTTP headers such as <code>Cache-Control max-age</code>,
-     * <code>Cache-Control s-maxage</code>, and <code>Expires</code> to objects. For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing
-     * How Long Content Stays in an Edge Cache (Expiration)</a> in the <i>Amazon
-     * CloudFront Developer Guide</i>.</p>
-     */
-    inline long long GetMaxTTL() const{ return m_maxTTL; }
-
-    /**
-     * <p>The maximum amount of time that you want objects to stay in CloudFront caches
-     * before CloudFront forwards another request to your origin to determine whether
-     * the object has been updated. The value that you specify applies only when your
-     * origin adds HTTP headers such as <code>Cache-Control max-age</code>,
-     * <code>Cache-Control s-maxage</code>, and <code>Expires</code> to objects. For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing
-     * How Long Content Stays in an Edge Cache (Expiration)</a> in the <i>Amazon
-     * CloudFront Developer Guide</i>.</p>
-     */
-    inline bool MaxTTLHasBeenSet() const { return m_maxTTLHasBeenSet; }
-
-    /**
-     * <p>The maximum amount of time that you want objects to stay in CloudFront caches
-     * before CloudFront forwards another request to your origin to determine whether
-     * the object has been updated. The value that you specify applies only when your
-     * origin adds HTTP headers such as <code>Cache-Control max-age</code>,
-     * <code>Cache-Control s-maxage</code>, and <code>Expires</code> to objects. For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing
-     * How Long Content Stays in an Edge Cache (Expiration)</a> in the <i>Amazon
-     * CloudFront Developer Guide</i>.</p>
-     */
-    inline void SetMaxTTL(long long value) { m_maxTTLHasBeenSet = true; m_maxTTL = value; }
-
-    /**
-     * <p>The maximum amount of time that you want objects to stay in CloudFront caches
-     * before CloudFront forwards another request to your origin to determine whether
-     * the object has been updated. The value that you specify applies only when your
-     * origin adds HTTP headers such as <code>Cache-Control max-age</code>,
-     * <code>Cache-Control s-maxage</code>, and <code>Expires</code> to objects. For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing
-     * How Long Content Stays in an Edge Cache (Expiration)</a> in the <i>Amazon
-     * CloudFront Developer Guide</i>.</p>
-     */
-    inline DefaultCacheBehavior& WithMaxTTL(long long value) { SetMaxTTL(value); return *this;}
 
 
     /**
@@ -758,13 +561,116 @@ namespace Model
      */
     inline DefaultCacheBehavior& WithFieldLevelEncryptionId(const char* value) { SetFieldLevelEncryptionId(value); return *this;}
 
+
+    /**
+     * <p>The unique identifier of the cache policy that is attached to the default
+     * cache behavior. For more information, see <a>CachePolicy</a>.</p>
+     */
+    inline const Aws::String& GetCachePolicyId() const{ return m_cachePolicyId; }
+
+    /**
+     * <p>The unique identifier of the cache policy that is attached to the default
+     * cache behavior. For more information, see <a>CachePolicy</a>.</p>
+     */
+    inline bool CachePolicyIdHasBeenSet() const { return m_cachePolicyIdHasBeenSet; }
+
+    /**
+     * <p>The unique identifier of the cache policy that is attached to the default
+     * cache behavior. For more information, see <a>CachePolicy</a>.</p>
+     */
+    inline void SetCachePolicyId(const Aws::String& value) { m_cachePolicyIdHasBeenSet = true; m_cachePolicyId = value; }
+
+    /**
+     * <p>The unique identifier of the cache policy that is attached to the default
+     * cache behavior. For more information, see <a>CachePolicy</a>.</p>
+     */
+    inline void SetCachePolicyId(Aws::String&& value) { m_cachePolicyIdHasBeenSet = true; m_cachePolicyId = std::move(value); }
+
+    /**
+     * <p>The unique identifier of the cache policy that is attached to the default
+     * cache behavior. For more information, see <a>CachePolicy</a>.</p>
+     */
+    inline void SetCachePolicyId(const char* value) { m_cachePolicyIdHasBeenSet = true; m_cachePolicyId.assign(value); }
+
+    /**
+     * <p>The unique identifier of the cache policy that is attached to the default
+     * cache behavior. For more information, see <a>CachePolicy</a>.</p>
+     */
+    inline DefaultCacheBehavior& WithCachePolicyId(const Aws::String& value) { SetCachePolicyId(value); return *this;}
+
+    /**
+     * <p>The unique identifier of the cache policy that is attached to the default
+     * cache behavior. For more information, see <a>CachePolicy</a>.</p>
+     */
+    inline DefaultCacheBehavior& WithCachePolicyId(Aws::String&& value) { SetCachePolicyId(std::move(value)); return *this;}
+
+    /**
+     * <p>The unique identifier of the cache policy that is attached to the default
+     * cache behavior. For more information, see <a>CachePolicy</a>.</p>
+     */
+    inline DefaultCacheBehavior& WithCachePolicyId(const char* value) { SetCachePolicyId(value); return *this;}
+
+
+    /**
+     * <p>The unique identifier of the origin request policy that is attached to the
+     * default cache behavior. For more information, see
+     * <a>OriginRequestPolicy</a>.</p>
+     */
+    inline const Aws::String& GetOriginRequestPolicyId() const{ return m_originRequestPolicyId; }
+
+    /**
+     * <p>The unique identifier of the origin request policy that is attached to the
+     * default cache behavior. For more information, see
+     * <a>OriginRequestPolicy</a>.</p>
+     */
+    inline bool OriginRequestPolicyIdHasBeenSet() const { return m_originRequestPolicyIdHasBeenSet; }
+
+    /**
+     * <p>The unique identifier of the origin request policy that is attached to the
+     * default cache behavior. For more information, see
+     * <a>OriginRequestPolicy</a>.</p>
+     */
+    inline void SetOriginRequestPolicyId(const Aws::String& value) { m_originRequestPolicyIdHasBeenSet = true; m_originRequestPolicyId = value; }
+
+    /**
+     * <p>The unique identifier of the origin request policy that is attached to the
+     * default cache behavior. For more information, see
+     * <a>OriginRequestPolicy</a>.</p>
+     */
+    inline void SetOriginRequestPolicyId(Aws::String&& value) { m_originRequestPolicyIdHasBeenSet = true; m_originRequestPolicyId = std::move(value); }
+
+    /**
+     * <p>The unique identifier of the origin request policy that is attached to the
+     * default cache behavior. For more information, see
+     * <a>OriginRequestPolicy</a>.</p>
+     */
+    inline void SetOriginRequestPolicyId(const char* value) { m_originRequestPolicyIdHasBeenSet = true; m_originRequestPolicyId.assign(value); }
+
+    /**
+     * <p>The unique identifier of the origin request policy that is attached to the
+     * default cache behavior. For more information, see
+     * <a>OriginRequestPolicy</a>.</p>
+     */
+    inline DefaultCacheBehavior& WithOriginRequestPolicyId(const Aws::String& value) { SetOriginRequestPolicyId(value); return *this;}
+
+    /**
+     * <p>The unique identifier of the origin request policy that is attached to the
+     * default cache behavior. For more information, see
+     * <a>OriginRequestPolicy</a>.</p>
+     */
+    inline DefaultCacheBehavior& WithOriginRequestPolicyId(Aws::String&& value) { SetOriginRequestPolicyId(std::move(value)); return *this;}
+
+    /**
+     * <p>The unique identifier of the origin request policy that is attached to the
+     * default cache behavior. For more information, see
+     * <a>OriginRequestPolicy</a>.</p>
+     */
+    inline DefaultCacheBehavior& WithOriginRequestPolicyId(const char* value) { SetOriginRequestPolicyId(value); return *this;}
+
   private:
 
     Aws::String m_targetOriginId;
     bool m_targetOriginIdHasBeenSet;
-
-    ForwardedValues m_forwardedValues;
-    bool m_forwardedValuesHasBeenSet;
 
     TrustedSigners m_trustedSigners;
     bool m_trustedSignersHasBeenSet;
@@ -772,20 +678,11 @@ namespace Model
     ViewerProtocolPolicy m_viewerProtocolPolicy;
     bool m_viewerProtocolPolicyHasBeenSet;
 
-    long long m_minTTL;
-    bool m_minTTLHasBeenSet;
-
     AllowedMethods m_allowedMethods;
     bool m_allowedMethodsHasBeenSet;
 
     bool m_smoothStreaming;
     bool m_smoothStreamingHasBeenSet;
-
-    long long m_defaultTTL;
-    bool m_defaultTTLHasBeenSet;
-
-    long long m_maxTTL;
-    bool m_maxTTLHasBeenSet;
 
     bool m_compress;
     bool m_compressHasBeenSet;
@@ -795,6 +692,12 @@ namespace Model
 
     Aws::String m_fieldLevelEncryptionId;
     bool m_fieldLevelEncryptionIdHasBeenSet;
+
+    Aws::String m_cachePolicyId;
+    bool m_cachePolicyIdHasBeenSet;
+
+    Aws::String m_originRequestPolicyId;
+    bool m_originRequestPolicyIdHasBeenSet;
   };
 
 } // namespace Model

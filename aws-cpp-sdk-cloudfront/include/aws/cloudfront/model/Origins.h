@@ -26,7 +26,7 @@ namespace Model
   /**
    * <p>A complex type that contains information about origins and origin groups for
    * this distribution. </p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/Origins">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/Origins">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDFRONT_API Origins

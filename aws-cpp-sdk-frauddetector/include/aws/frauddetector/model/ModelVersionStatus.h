@@ -23,6 +23,8 @@ namespace Model
     ACTIVE,
     INACTIVATE_IN_PROGRESS,
     INACTIVE,
+    DELETE_REQUESTED,
+    DELETE_IN_PROGRESS,
     ERROR_
   };
 

@@ -49,6 +49,12 @@ DescribeDetectorResult& DescribeDetectorResult::operator =(const Aws::AmazonWebS
 
   }
 
+  if(jsonValue.ValueExists("arn"))
+  {
+    m_arn = jsonValue.GetString("arn");
+
+  }
+
 
 
   return *this;

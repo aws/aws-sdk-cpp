@@ -1554,6 +1554,39 @@ namespace Model
      */
     inline StartBuildRequest& WithImagePullCredentialsTypeOverride(ImagePullCredentialsType&& value) { SetImagePullCredentialsTypeOverride(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Specifies if session debugging is enabled for this build. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/session-manager.html">Viewing
+     * a running build in Session Manager</a>.</p>
+     */
+    inline bool GetDebugSessionEnabled() const{ return m_debugSessionEnabled; }
+
+    /**
+     * <p>Specifies if session debugging is enabled for this build. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/session-manager.html">Viewing
+     * a running build in Session Manager</a>.</p>
+     */
+    inline bool DebugSessionEnabledHasBeenSet() const { return m_debugSessionEnabledHasBeenSet; }
+
+    /**
+     * <p>Specifies if session debugging is enabled for this build. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/session-manager.html">Viewing
+     * a running build in Session Manager</a>.</p>
+     */
+    inline void SetDebugSessionEnabled(bool value) { m_debugSessionEnabledHasBeenSet = true; m_debugSessionEnabled = value; }
+
+    /**
+     * <p>Specifies if session debugging is enabled for this build. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/session-manager.html">Viewing
+     * a running build in Session Manager</a>.</p>
+     */
+    inline StartBuildRequest& WithDebugSessionEnabled(bool value) { SetDebugSessionEnabled(value); return *this;}
+
   private:
 
     Aws::String m_projectName;
@@ -1645,6 +1678,9 @@ namespace Model
 
     ImagePullCredentialsType m_imagePullCredentialsTypeOverride;
     bool m_imagePullCredentialsTypeOverrideHasBeenSet;
+
+    bool m_debugSessionEnabled;
+    bool m_debugSessionEnabledHasBeenSet;
   };
 
 } // namespace Model

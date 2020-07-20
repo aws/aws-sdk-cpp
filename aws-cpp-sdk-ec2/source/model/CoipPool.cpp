@@ -24,7 +24,8 @@ CoipPool::CoipPool() :
     m_poolIdHasBeenSet(false),
     m_poolCidrsHasBeenSet(false),
     m_localGatewayRouteTableIdHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_poolArnHasBeenSet(false)
 {
 }
 
@@ -32,7 +33,8 @@ CoipPool::CoipPool(const XmlNode& xmlNode) :
     m_poolIdHasBeenSet(false),
     m_poolCidrsHasBeenSet(false),
     m_localGatewayRouteTableIdHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_poolArnHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -79,6 +81,12 @@ CoipPool& CoipPool::operator =(const XmlNode& xmlNode)
 
       m_tagsHasBeenSet = true;
     }
+    XmlNode poolArnNode = resultNode.FirstChild("poolArn");
+    if(!poolArnNode.IsNull())
+    {
+      m_poolArn = Aws::Utils::Xml::DecodeEscapedXmlText(poolArnNode.GetText());
+      m_poolArnHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -116,6 +124,11 @@ void CoipPool::OutputToStream(Aws::OStream& oStream, const char* location, unsig
       }
   }
 
+  if(m_poolArnHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".PoolArn=" << StringUtils::URLEncode(m_poolArn.c_str()) << "&";
+  }
+
 }
 
 void CoipPool::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -145,6 +158,10 @@ void CoipPool::OutputToStream(Aws::OStream& oStream, const char* location) const
         tagsSs << location <<  ".TagSet." << tagsIdx++;
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
+  }
+  if(m_poolArnHasBeenSet)
+  {
+      oStream << location << ".PoolArn=" << StringUtils::URLEncode(m_poolArn.c_str()) << "&";
   }
 }
 

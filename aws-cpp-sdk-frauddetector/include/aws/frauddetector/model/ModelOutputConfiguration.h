@@ -26,7 +26,8 @@ namespace Model
 {
 
   /**
-   * <p>Provides the model output configuration.</p><p><h3>See Also:</h3>   <a
+   * <p>Provides the Amazon Sagemaker model output configuration.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/ModelOutputConfiguration">AWS
    * API Reference</a></p>
    */

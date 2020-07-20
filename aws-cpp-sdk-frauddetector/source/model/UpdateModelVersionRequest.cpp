@@ -16,10 +16,9 @@ UpdateModelVersionRequest::UpdateModelVersionRequest() :
     m_modelIdHasBeenSet(false),
     m_modelType(ModelTypeEnum::NOT_SET),
     m_modelTypeHasBeenSet(false),
-    m_modelVersionNumberHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_status(ModelVersionStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+    m_majorVersionNumberHasBeenSet(false),
+    m_externalEventsDetailHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -38,21 +37,27 @@ Aws::String UpdateModelVersionRequest::SerializePayload() const
    payload.WithString("modelType", ModelTypeEnumMapper::GetNameForModelTypeEnum(m_modelType));
   }
 
-  if(m_modelVersionNumberHasBeenSet)
+  if(m_majorVersionNumberHasBeenSet)
   {
-   payload.WithString("modelVersionNumber", m_modelVersionNumber);
+   payload.WithString("majorVersionNumber", m_majorVersionNumber);
 
   }
 
-  if(m_descriptionHasBeenSet)
+  if(m_externalEventsDetailHasBeenSet)
   {
-   payload.WithString("description", m_description);
+   payload.WithObject("externalEventsDetail", m_externalEventsDetail.Jsonize());
 
   }
 
-  if(m_statusHasBeenSet)
+  if(m_tagsHasBeenSet)
   {
-   payload.WithString("status", ModelVersionStatusMapper::GetNameForModelVersionStatus(m_status));
+   Array<JsonValue> tagsJsonList(m_tags.size());
+   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+   {
+     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+   }
+   payload.WithArray("tags", std::move(tagsJsonList));
+
   }
 
   return payload.View().WriteReadable();
