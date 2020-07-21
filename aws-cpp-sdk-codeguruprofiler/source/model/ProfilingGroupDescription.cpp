@@ -26,6 +26,7 @@ ProfilingGroupDescription::ProfilingGroupDescription() :
     m_createdAtHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_profilingStatusHasBeenSet(false),
+    m_tagsHasBeenSet(false),
     m_updatedAtHasBeenSet(false)
 {
 }
@@ -38,6 +39,7 @@ ProfilingGroupDescription::ProfilingGroupDescription(JsonView jsonValue) :
     m_createdAtHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_profilingStatusHasBeenSet(false),
+    m_tagsHasBeenSet(false),
     m_updatedAtHasBeenSet(false)
 {
   *this = jsonValue;
@@ -87,6 +89,16 @@ ProfilingGroupDescription& ProfilingGroupDescription::operator =(JsonView jsonVa
     m_profilingStatusHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("tags"))
+  {
+    Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
+    for(auto& tagsItem : tagsJsonMap)
+    {
+      m_tags[tagsItem.first] = tagsItem.second.AsString();
+    }
+    m_tagsHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("updatedAt"))
   {
     m_updatedAt = jsonValue.GetString("updatedAt");
@@ -132,6 +144,17 @@ JsonValue ProfilingGroupDescription::Jsonize() const
   if(m_profilingStatusHasBeenSet)
   {
    payload.WithObject("profilingStatus", m_profilingStatus.Jsonize());
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   JsonValue tagsJsonMap;
+   for(auto& tagsItem : m_tags)
+   {
+     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+   }
+   payload.WithObject("tags", std::move(tagsJsonMap));
 
   }
 

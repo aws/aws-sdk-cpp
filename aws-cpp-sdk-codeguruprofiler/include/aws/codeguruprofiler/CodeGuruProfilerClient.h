@@ -25,11 +25,14 @@
 #include <aws/codeguruprofiler/model/ListFindingsReportsResult.h>
 #include <aws/codeguruprofiler/model/ListProfileTimesResult.h>
 #include <aws/codeguruprofiler/model/ListProfilingGroupsResult.h>
+#include <aws/codeguruprofiler/model/ListTagsForResourceResult.h>
 #include <aws/codeguruprofiler/model/PostAgentProfileResult.h>
 #include <aws/codeguruprofiler/model/PutPermissionResult.h>
 #include <aws/codeguruprofiler/model/RemoveNotificationChannelResult.h>
 #include <aws/codeguruprofiler/model/RemovePermissionResult.h>
 #include <aws/codeguruprofiler/model/SubmitFeedbackResult.h>
+#include <aws/codeguruprofiler/model/TagResourceResult.h>
+#include <aws/codeguruprofiler/model/UntagResourceResult.h>
 #include <aws/codeguruprofiler/model/UpdateProfilingGroupResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
@@ -84,11 +87,14 @@ namespace Model
         class ListFindingsReportsRequest;
         class ListProfileTimesRequest;
         class ListProfilingGroupsRequest;
+        class ListTagsForResourceRequest;
         class PostAgentProfileRequest;
         class PutPermissionRequest;
         class RemoveNotificationChannelRequest;
         class RemovePermissionRequest;
         class SubmitFeedbackRequest;
+        class TagResourceRequest;
+        class UntagResourceRequest;
         class UpdateProfilingGroupRequest;
 
         typedef Aws::Utils::Outcome<AddNotificationChannelsResult, CodeGuruProfilerError> AddNotificationChannelsOutcome;
@@ -105,11 +111,14 @@ namespace Model
         typedef Aws::Utils::Outcome<ListFindingsReportsResult, CodeGuruProfilerError> ListFindingsReportsOutcome;
         typedef Aws::Utils::Outcome<ListProfileTimesResult, CodeGuruProfilerError> ListProfileTimesOutcome;
         typedef Aws::Utils::Outcome<ListProfilingGroupsResult, CodeGuruProfilerError> ListProfilingGroupsOutcome;
+        typedef Aws::Utils::Outcome<ListTagsForResourceResult, CodeGuruProfilerError> ListTagsForResourceOutcome;
         typedef Aws::Utils::Outcome<PostAgentProfileResult, CodeGuruProfilerError> PostAgentProfileOutcome;
         typedef Aws::Utils::Outcome<PutPermissionResult, CodeGuruProfilerError> PutPermissionOutcome;
         typedef Aws::Utils::Outcome<RemoveNotificationChannelResult, CodeGuruProfilerError> RemoveNotificationChannelOutcome;
         typedef Aws::Utils::Outcome<RemovePermissionResult, CodeGuruProfilerError> RemovePermissionOutcome;
         typedef Aws::Utils::Outcome<SubmitFeedbackResult, CodeGuruProfilerError> SubmitFeedbackOutcome;
+        typedef Aws::Utils::Outcome<TagResourceResult, CodeGuruProfilerError> TagResourceOutcome;
+        typedef Aws::Utils::Outcome<UntagResourceResult, CodeGuruProfilerError> UntagResourceOutcome;
         typedef Aws::Utils::Outcome<UpdateProfilingGroupResult, CodeGuruProfilerError> UpdateProfilingGroupOutcome;
 
         typedef std::future<AddNotificationChannelsOutcome> AddNotificationChannelsOutcomeCallable;
@@ -126,11 +135,14 @@ namespace Model
         typedef std::future<ListFindingsReportsOutcome> ListFindingsReportsOutcomeCallable;
         typedef std::future<ListProfileTimesOutcome> ListProfileTimesOutcomeCallable;
         typedef std::future<ListProfilingGroupsOutcome> ListProfilingGroupsOutcomeCallable;
+        typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
         typedef std::future<PostAgentProfileOutcome> PostAgentProfileOutcomeCallable;
         typedef std::future<PutPermissionOutcome> PutPermissionOutcomeCallable;
         typedef std::future<RemoveNotificationChannelOutcome> RemoveNotificationChannelOutcomeCallable;
         typedef std::future<RemovePermissionOutcome> RemovePermissionOutcomeCallable;
         typedef std::future<SubmitFeedbackOutcome> SubmitFeedbackOutcomeCallable;
+        typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
+        typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
         typedef std::future<UpdateProfilingGroupOutcome> UpdateProfilingGroupOutcomeCallable;
 } // namespace Model
 
@@ -150,11 +162,14 @@ namespace Model
     typedef std::function<void(const CodeGuruProfilerClient*, const Model::ListFindingsReportsRequest&, const Model::ListFindingsReportsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListFindingsReportsResponseReceivedHandler;
     typedef std::function<void(const CodeGuruProfilerClient*, const Model::ListProfileTimesRequest&, const Model::ListProfileTimesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListProfileTimesResponseReceivedHandler;
     typedef std::function<void(const CodeGuruProfilerClient*, const Model::ListProfilingGroupsRequest&, const Model::ListProfilingGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListProfilingGroupsResponseReceivedHandler;
+    typedef std::function<void(const CodeGuruProfilerClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const CodeGuruProfilerClient*, const Model::PostAgentProfileRequest&, const Model::PostAgentProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PostAgentProfileResponseReceivedHandler;
     typedef std::function<void(const CodeGuruProfilerClient*, const Model::PutPermissionRequest&, const Model::PutPermissionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutPermissionResponseReceivedHandler;
     typedef std::function<void(const CodeGuruProfilerClient*, const Model::RemoveNotificationChannelRequest&, const Model::RemoveNotificationChannelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RemoveNotificationChannelResponseReceivedHandler;
     typedef std::function<void(const CodeGuruProfilerClient*, const Model::RemovePermissionRequest&, const Model::RemovePermissionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RemovePermissionResponseReceivedHandler;
     typedef std::function<void(const CodeGuruProfilerClient*, const Model::SubmitFeedbackRequest&, const Model::SubmitFeedbackOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SubmitFeedbackResponseReceivedHandler;
+    typedef std::function<void(const CodeGuruProfilerClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
+    typedef std::function<void(const CodeGuruProfilerClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const CodeGuruProfilerClient*, const Model::UpdateProfilingGroupRequest&, const Model::UpdateProfilingGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateProfilingGroupResponseReceivedHandler;
 
   /**
@@ -752,6 +767,34 @@ namespace Model
         virtual void ListProfilingGroupsAsync(const Model::ListProfilingGroupsRequest& request, const ListProfilingGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p> Returns a list of the tags that are assigned to a specified resource.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/ListTagsForResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
+
+        /**
+         * <p> Returns a list of the tags that are assigned to a specified resource.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/ListTagsForResource">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
+
+        /**
+         * <p> Returns a list of the tags that are assigned to a specified resource.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/ListTagsForResource">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p> Submits profiling data to an aggregated profile of a profiling group. To get
          * an aggregated profile that is created with this profiling data, use <a
          * href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_GetProfile.html">
@@ -985,6 +1028,59 @@ namespace Model
         virtual void SubmitFeedbackAsync(const Model::SubmitFeedbackRequest& request, const SubmitFeedbackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p> Use to assign one or more tags to a resource. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/TagResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
+
+        /**
+         * <p> Use to assign one or more tags to a resource. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/TagResource">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
+
+        /**
+         * <p> Use to assign one or more tags to a resource. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/TagResource">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p> Use to remove one or more tags from a resource. </p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/UntagResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
+
+        /**
+         * <p> Use to remove one or more tags from a resource. </p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/UntagResource">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
+
+        /**
+         * <p> Use to remove one or more tags from a resource. </p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/UntagResource">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Updates a profiling group.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/UpdateProfilingGroup">AWS
          * API Reference</a></p>
@@ -1027,11 +1123,14 @@ namespace Model
         void ListFindingsReportsAsyncHelper(const Model::ListFindingsReportsRequest& request, const ListFindingsReportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListProfileTimesAsyncHelper(const Model::ListProfileTimesRequest& request, const ListProfileTimesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListProfilingGroupsAsyncHelper(const Model::ListProfilingGroupsRequest& request, const ListProfilingGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PostAgentProfileAsyncHelper(const Model::PostAgentProfileRequest& request, const PostAgentProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutPermissionAsyncHelper(const Model::PutPermissionRequest& request, const PutPermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RemoveNotificationChannelAsyncHelper(const Model::RemoveNotificationChannelRequest& request, const RemoveNotificationChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RemovePermissionAsyncHelper(const Model::RemovePermissionRequest& request, const RemovePermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SubmitFeedbackAsyncHelper(const Model::SubmitFeedbackRequest& request, const SubmitFeedbackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateProfilingGroupAsyncHelper(const Model::UpdateProfilingGroupRequest& request, const UpdateProfilingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;

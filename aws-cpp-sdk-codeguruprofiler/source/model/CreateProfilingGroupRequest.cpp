@@ -21,7 +21,8 @@ CreateProfilingGroupRequest::CreateProfilingGroupRequest() :
     m_clientTokenHasBeenSet(true),
     m_computePlatform(ComputePlatform::NOT_SET),
     m_computePlatformHasBeenSet(false),
-    m_profilingGroupNameHasBeenSet(false)
+    m_profilingGroupNameHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -43,6 +44,17 @@ Aws::String CreateProfilingGroupRequest::SerializePayload() const
   if(m_profilingGroupNameHasBeenSet)
   {
    payload.WithString("profilingGroupName", m_profilingGroupName);
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   JsonValue tagsJsonMap;
+   for(auto& tagsItem : m_tags)
+   {
+     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+   }
+   payload.WithObject("tags", std::move(tagsJsonMap));
 
   }
 
