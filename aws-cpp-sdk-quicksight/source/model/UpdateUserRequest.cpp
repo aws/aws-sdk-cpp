@@ -18,7 +18,10 @@ UpdateUserRequest::UpdateUserRequest() :
     m_namespaceHasBeenSet(false),
     m_emailHasBeenSet(false),
     m_role(UserRole::NOT_SET),
-    m_roleHasBeenSet(false)
+    m_roleHasBeenSet(false),
+    m_customPermissionsNameHasBeenSet(false),
+    m_unapplyCustomPermissions(false),
+    m_unapplyCustomPermissionsHasBeenSet(false)
 {
 }
 
@@ -35,6 +38,18 @@ Aws::String UpdateUserRequest::SerializePayload() const
   if(m_roleHasBeenSet)
   {
    payload.WithString("Role", UserRoleMapper::GetNameForUserRole(m_role));
+  }
+
+  if(m_customPermissionsNameHasBeenSet)
+  {
+   payload.WithString("CustomPermissionsName", m_customPermissionsName);
+
+  }
+
+  if(m_unapplyCustomPermissionsHasBeenSet)
+  {
+   payload.WithBool("UnapplyCustomPermissions", m_unapplyCustomPermissions);
+
   }
 
   return payload.View().WriteReadable();

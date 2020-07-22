@@ -493,6 +493,135 @@ namespace Model
      */
     inline RegisterUserRequest& WithUserName(const char* value) { SetUserName(value); return *this;}
 
+
+    /**
+     * <p>(Enterprise edition only) The name of the custom permissions profile that you
+     * want to assign to this user. Currently, custom permissions profile names are
+     * assigned to permissions profiles in the QuickSight console. You use this API to
+     * assign the named set of permissions to a QuickSight user. </p> <p>Customizing
+     * permissions in the QuickSight UI allows you to control a user's access to the
+     * following operations:</p> <ul> <li> <p/> </li> <li> <p/> </li> <li> <p/> </li>
+     * <li> <p/> </li> </ul> <p>QuickSight custom permissions are applied through IAM
+     * policies. Therefore, they override the permissions typically granted by
+     * assigning QuickSight users to one of the default security cohorts (admin,
+     * author, reader) in QuickSight.</p> <p>This feature is available only to
+     * QuickSight Enterprise edition subscriptions that use SAML 2.0-Based Federation
+     * for Single Sign-On (SSO).</p>
+     */
+    inline const Aws::String& GetCustomPermissionsName() const{ return m_customPermissionsName; }
+
+    /**
+     * <p>(Enterprise edition only) The name of the custom permissions profile that you
+     * want to assign to this user. Currently, custom permissions profile names are
+     * assigned to permissions profiles in the QuickSight console. You use this API to
+     * assign the named set of permissions to a QuickSight user. </p> <p>Customizing
+     * permissions in the QuickSight UI allows you to control a user's access to the
+     * following operations:</p> <ul> <li> <p/> </li> <li> <p/> </li> <li> <p/> </li>
+     * <li> <p/> </li> </ul> <p>QuickSight custom permissions are applied through IAM
+     * policies. Therefore, they override the permissions typically granted by
+     * assigning QuickSight users to one of the default security cohorts (admin,
+     * author, reader) in QuickSight.</p> <p>This feature is available only to
+     * QuickSight Enterprise edition subscriptions that use SAML 2.0-Based Federation
+     * for Single Sign-On (SSO).</p>
+     */
+    inline bool CustomPermissionsNameHasBeenSet() const { return m_customPermissionsNameHasBeenSet; }
+
+    /**
+     * <p>(Enterprise edition only) The name of the custom permissions profile that you
+     * want to assign to this user. Currently, custom permissions profile names are
+     * assigned to permissions profiles in the QuickSight console. You use this API to
+     * assign the named set of permissions to a QuickSight user. </p> <p>Customizing
+     * permissions in the QuickSight UI allows you to control a user's access to the
+     * following operations:</p> <ul> <li> <p/> </li> <li> <p/> </li> <li> <p/> </li>
+     * <li> <p/> </li> </ul> <p>QuickSight custom permissions are applied through IAM
+     * policies. Therefore, they override the permissions typically granted by
+     * assigning QuickSight users to one of the default security cohorts (admin,
+     * author, reader) in QuickSight.</p> <p>This feature is available only to
+     * QuickSight Enterprise edition subscriptions that use SAML 2.0-Based Federation
+     * for Single Sign-On (SSO).</p>
+     */
+    inline void SetCustomPermissionsName(const Aws::String& value) { m_customPermissionsNameHasBeenSet = true; m_customPermissionsName = value; }
+
+    /**
+     * <p>(Enterprise edition only) The name of the custom permissions profile that you
+     * want to assign to this user. Currently, custom permissions profile names are
+     * assigned to permissions profiles in the QuickSight console. You use this API to
+     * assign the named set of permissions to a QuickSight user. </p> <p>Customizing
+     * permissions in the QuickSight UI allows you to control a user's access to the
+     * following operations:</p> <ul> <li> <p/> </li> <li> <p/> </li> <li> <p/> </li>
+     * <li> <p/> </li> </ul> <p>QuickSight custom permissions are applied through IAM
+     * policies. Therefore, they override the permissions typically granted by
+     * assigning QuickSight users to one of the default security cohorts (admin,
+     * author, reader) in QuickSight.</p> <p>This feature is available only to
+     * QuickSight Enterprise edition subscriptions that use SAML 2.0-Based Federation
+     * for Single Sign-On (SSO).</p>
+     */
+    inline void SetCustomPermissionsName(Aws::String&& value) { m_customPermissionsNameHasBeenSet = true; m_customPermissionsName = std::move(value); }
+
+    /**
+     * <p>(Enterprise edition only) The name of the custom permissions profile that you
+     * want to assign to this user. Currently, custom permissions profile names are
+     * assigned to permissions profiles in the QuickSight console. You use this API to
+     * assign the named set of permissions to a QuickSight user. </p> <p>Customizing
+     * permissions in the QuickSight UI allows you to control a user's access to the
+     * following operations:</p> <ul> <li> <p/> </li> <li> <p/> </li> <li> <p/> </li>
+     * <li> <p/> </li> </ul> <p>QuickSight custom permissions are applied through IAM
+     * policies. Therefore, they override the permissions typically granted by
+     * assigning QuickSight users to one of the default security cohorts (admin,
+     * author, reader) in QuickSight.</p> <p>This feature is available only to
+     * QuickSight Enterprise edition subscriptions that use SAML 2.0-Based Federation
+     * for Single Sign-On (SSO).</p>
+     */
+    inline void SetCustomPermissionsName(const char* value) { m_customPermissionsNameHasBeenSet = true; m_customPermissionsName.assign(value); }
+
+    /**
+     * <p>(Enterprise edition only) The name of the custom permissions profile that you
+     * want to assign to this user. Currently, custom permissions profile names are
+     * assigned to permissions profiles in the QuickSight console. You use this API to
+     * assign the named set of permissions to a QuickSight user. </p> <p>Customizing
+     * permissions in the QuickSight UI allows you to control a user's access to the
+     * following operations:</p> <ul> <li> <p/> </li> <li> <p/> </li> <li> <p/> </li>
+     * <li> <p/> </li> </ul> <p>QuickSight custom permissions are applied through IAM
+     * policies. Therefore, they override the permissions typically granted by
+     * assigning QuickSight users to one of the default security cohorts (admin,
+     * author, reader) in QuickSight.</p> <p>This feature is available only to
+     * QuickSight Enterprise edition subscriptions that use SAML 2.0-Based Federation
+     * for Single Sign-On (SSO).</p>
+     */
+    inline RegisterUserRequest& WithCustomPermissionsName(const Aws::String& value) { SetCustomPermissionsName(value); return *this;}
+
+    /**
+     * <p>(Enterprise edition only) The name of the custom permissions profile that you
+     * want to assign to this user. Currently, custom permissions profile names are
+     * assigned to permissions profiles in the QuickSight console. You use this API to
+     * assign the named set of permissions to a QuickSight user. </p> <p>Customizing
+     * permissions in the QuickSight UI allows you to control a user's access to the
+     * following operations:</p> <ul> <li> <p/> </li> <li> <p/> </li> <li> <p/> </li>
+     * <li> <p/> </li> </ul> <p>QuickSight custom permissions are applied through IAM
+     * policies. Therefore, they override the permissions typically granted by
+     * assigning QuickSight users to one of the default security cohorts (admin,
+     * author, reader) in QuickSight.</p> <p>This feature is available only to
+     * QuickSight Enterprise edition subscriptions that use SAML 2.0-Based Federation
+     * for Single Sign-On (SSO).</p>
+     */
+    inline RegisterUserRequest& WithCustomPermissionsName(Aws::String&& value) { SetCustomPermissionsName(std::move(value)); return *this;}
+
+    /**
+     * <p>(Enterprise edition only) The name of the custom permissions profile that you
+     * want to assign to this user. Currently, custom permissions profile names are
+     * assigned to permissions profiles in the QuickSight console. You use this API to
+     * assign the named set of permissions to a QuickSight user. </p> <p>Customizing
+     * permissions in the QuickSight UI allows you to control a user's access to the
+     * following operations:</p> <ul> <li> <p/> </li> <li> <p/> </li> <li> <p/> </li>
+     * <li> <p/> </li> </ul> <p>QuickSight custom permissions are applied through IAM
+     * policies. Therefore, they override the permissions typically granted by
+     * assigning QuickSight users to one of the default security cohorts (admin,
+     * author, reader) in QuickSight.</p> <p>This feature is available only to
+     * QuickSight Enterprise edition subscriptions that use SAML 2.0-Based Federation
+     * for Single Sign-On (SSO).</p>
+     */
+    inline RegisterUserRequest& WithCustomPermissionsName(const char* value) { SetCustomPermissionsName(value); return *this;}
+
   private:
 
     IdentityType m_identityType;
@@ -518,6 +647,9 @@ namespace Model
 
     Aws::String m_userName;
     bool m_userNameHasBeenSet;
+
+    Aws::String m_customPermissionsName;
+    bool m_customPermissionsNameHasBeenSet;
   };
 
 } // namespace Model

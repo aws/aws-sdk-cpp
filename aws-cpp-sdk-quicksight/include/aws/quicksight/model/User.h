@@ -342,6 +342,47 @@ namespace Model
      */
     inline User& WithPrincipalId(const char* value) { SetPrincipalId(value); return *this;}
 
+
+    /**
+     * <p>The custom permissions profile associated with this user.</p>
+     */
+    inline const Aws::String& GetCustomPermissionsName() const{ return m_customPermissionsName; }
+
+    /**
+     * <p>The custom permissions profile associated with this user.</p>
+     */
+    inline bool CustomPermissionsNameHasBeenSet() const { return m_customPermissionsNameHasBeenSet; }
+
+    /**
+     * <p>The custom permissions profile associated with this user.</p>
+     */
+    inline void SetCustomPermissionsName(const Aws::String& value) { m_customPermissionsNameHasBeenSet = true; m_customPermissionsName = value; }
+
+    /**
+     * <p>The custom permissions profile associated with this user.</p>
+     */
+    inline void SetCustomPermissionsName(Aws::String&& value) { m_customPermissionsNameHasBeenSet = true; m_customPermissionsName = std::move(value); }
+
+    /**
+     * <p>The custom permissions profile associated with this user.</p>
+     */
+    inline void SetCustomPermissionsName(const char* value) { m_customPermissionsNameHasBeenSet = true; m_customPermissionsName.assign(value); }
+
+    /**
+     * <p>The custom permissions profile associated with this user.</p>
+     */
+    inline User& WithCustomPermissionsName(const Aws::String& value) { SetCustomPermissionsName(value); return *this;}
+
+    /**
+     * <p>The custom permissions profile associated with this user.</p>
+     */
+    inline User& WithCustomPermissionsName(Aws::String&& value) { SetCustomPermissionsName(std::move(value)); return *this;}
+
+    /**
+     * <p>The custom permissions profile associated with this user.</p>
+     */
+    inline User& WithCustomPermissionsName(const char* value) { SetCustomPermissionsName(value); return *this;}
+
   private:
 
     Aws::String m_arn;
@@ -364,6 +405,9 @@ namespace Model
 
     Aws::String m_principalId;
     bool m_principalIdHasBeenSet;
+
+    Aws::String m_customPermissionsName;
+    bool m_customPermissionsNameHasBeenSet;
   };
 
 } // namespace Model

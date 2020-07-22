@@ -40,6 +40,47 @@ namespace Model
 
 
     /**
+     * <p>The namespace associated with the row-level permissions dataset.</p>
+     */
+    inline const Aws::String& GetNamespace() const{ return m_namespace; }
+
+    /**
+     * <p>The namespace associated with the row-level permissions dataset.</p>
+     */
+    inline bool NamespaceHasBeenSet() const { return m_namespaceHasBeenSet; }
+
+    /**
+     * <p>The namespace associated with the row-level permissions dataset.</p>
+     */
+    inline void SetNamespace(const Aws::String& value) { m_namespaceHasBeenSet = true; m_namespace = value; }
+
+    /**
+     * <p>The namespace associated with the row-level permissions dataset.</p>
+     */
+    inline void SetNamespace(Aws::String&& value) { m_namespaceHasBeenSet = true; m_namespace = std::move(value); }
+
+    /**
+     * <p>The namespace associated with the row-level permissions dataset.</p>
+     */
+    inline void SetNamespace(const char* value) { m_namespaceHasBeenSet = true; m_namespace.assign(value); }
+
+    /**
+     * <p>The namespace associated with the row-level permissions dataset.</p>
+     */
+    inline RowLevelPermissionDataSet& WithNamespace(const Aws::String& value) { SetNamespace(value); return *this;}
+
+    /**
+     * <p>The namespace associated with the row-level permissions dataset.</p>
+     */
+    inline RowLevelPermissionDataSet& WithNamespace(Aws::String&& value) { SetNamespace(std::move(value)); return *this;}
+
+    /**
+     * <p>The namespace associated with the row-level permissions dataset.</p>
+     */
+    inline RowLevelPermissionDataSet& WithNamespace(const char* value) { SetNamespace(value); return *this;}
+
+
+    /**
      * <p>The Amazon Resource Name (ARN) of the permission dataset.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
@@ -111,6 +152,9 @@ namespace Model
     inline RowLevelPermissionDataSet& WithPermissionPolicy(RowLevelPermissionPolicy&& value) { SetPermissionPolicy(std::move(value)); return *this;}
 
   private:
+
+    Aws::String m_namespace;
+    bool m_namespaceHasBeenSet;
 
     Aws::String m_arn;
     bool m_arnHasBeenSet;

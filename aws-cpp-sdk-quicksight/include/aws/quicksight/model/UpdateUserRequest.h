@@ -265,6 +265,104 @@ namespace Model
      */
     inline UpdateUserRequest& WithRole(UserRole&& value) { SetRole(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The name of the custom permissions profile that you want to assign to this
+     * user. Currently, custom permissions profile names are assigned to permissions
+     * profiles in the QuickSight console. You use this API to assign the named set of
+     * permissions to a QuickSight user. </p>
+     */
+    inline const Aws::String& GetCustomPermissionsName() const{ return m_customPermissionsName; }
+
+    /**
+     * <p>The name of the custom permissions profile that you want to assign to this
+     * user. Currently, custom permissions profile names are assigned to permissions
+     * profiles in the QuickSight console. You use this API to assign the named set of
+     * permissions to a QuickSight user. </p>
+     */
+    inline bool CustomPermissionsNameHasBeenSet() const { return m_customPermissionsNameHasBeenSet; }
+
+    /**
+     * <p>The name of the custom permissions profile that you want to assign to this
+     * user. Currently, custom permissions profile names are assigned to permissions
+     * profiles in the QuickSight console. You use this API to assign the named set of
+     * permissions to a QuickSight user. </p>
+     */
+    inline void SetCustomPermissionsName(const Aws::String& value) { m_customPermissionsNameHasBeenSet = true; m_customPermissionsName = value; }
+
+    /**
+     * <p>The name of the custom permissions profile that you want to assign to this
+     * user. Currently, custom permissions profile names are assigned to permissions
+     * profiles in the QuickSight console. You use this API to assign the named set of
+     * permissions to a QuickSight user. </p>
+     */
+    inline void SetCustomPermissionsName(Aws::String&& value) { m_customPermissionsNameHasBeenSet = true; m_customPermissionsName = std::move(value); }
+
+    /**
+     * <p>The name of the custom permissions profile that you want to assign to this
+     * user. Currently, custom permissions profile names are assigned to permissions
+     * profiles in the QuickSight console. You use this API to assign the named set of
+     * permissions to a QuickSight user. </p>
+     */
+    inline void SetCustomPermissionsName(const char* value) { m_customPermissionsNameHasBeenSet = true; m_customPermissionsName.assign(value); }
+
+    /**
+     * <p>The name of the custom permissions profile that you want to assign to this
+     * user. Currently, custom permissions profile names are assigned to permissions
+     * profiles in the QuickSight console. You use this API to assign the named set of
+     * permissions to a QuickSight user. </p>
+     */
+    inline UpdateUserRequest& WithCustomPermissionsName(const Aws::String& value) { SetCustomPermissionsName(value); return *this;}
+
+    /**
+     * <p>The name of the custom permissions profile that you want to assign to this
+     * user. Currently, custom permissions profile names are assigned to permissions
+     * profiles in the QuickSight console. You use this API to assign the named set of
+     * permissions to a QuickSight user. </p>
+     */
+    inline UpdateUserRequest& WithCustomPermissionsName(Aws::String&& value) { SetCustomPermissionsName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the custom permissions profile that you want to assign to this
+     * user. Currently, custom permissions profile names are assigned to permissions
+     * profiles in the QuickSight console. You use this API to assign the named set of
+     * permissions to a QuickSight user. </p>
+     */
+    inline UpdateUserRequest& WithCustomPermissionsName(const char* value) { SetCustomPermissionsName(value); return *this;}
+
+
+    /**
+     * <p>A flag that you use to indicate that you want to remove all custom
+     * permissions from this user. Using this parameter resets the user to the state it
+     * was in before a custom permissions profile was applied. This parameter defaults
+     * to NULL and it doesn't accept any other value.</p>
+     */
+    inline bool GetUnapplyCustomPermissions() const{ return m_unapplyCustomPermissions; }
+
+    /**
+     * <p>A flag that you use to indicate that you want to remove all custom
+     * permissions from this user. Using this parameter resets the user to the state it
+     * was in before a custom permissions profile was applied. This parameter defaults
+     * to NULL and it doesn't accept any other value.</p>
+     */
+    inline bool UnapplyCustomPermissionsHasBeenSet() const { return m_unapplyCustomPermissionsHasBeenSet; }
+
+    /**
+     * <p>A flag that you use to indicate that you want to remove all custom
+     * permissions from this user. Using this parameter resets the user to the state it
+     * was in before a custom permissions profile was applied. This parameter defaults
+     * to NULL and it doesn't accept any other value.</p>
+     */
+    inline void SetUnapplyCustomPermissions(bool value) { m_unapplyCustomPermissionsHasBeenSet = true; m_unapplyCustomPermissions = value; }
+
+    /**
+     * <p>A flag that you use to indicate that you want to remove all custom
+     * permissions from this user. Using this parameter resets the user to the state it
+     * was in before a custom permissions profile was applied. This parameter defaults
+     * to NULL and it doesn't accept any other value.</p>
+     */
+    inline UpdateUserRequest& WithUnapplyCustomPermissions(bool value) { SetUnapplyCustomPermissions(value); return *this;}
+
   private:
 
     Aws::String m_userName;
@@ -281,6 +379,12 @@ namespace Model
 
     UserRole m_role;
     bool m_roleHasBeenSet;
+
+    Aws::String m_customPermissionsName;
+    bool m_customPermissionsNameHasBeenSet;
+
+    bool m_unapplyCustomPermissions;
+    bool m_unapplyCustomPermissionsHasBeenSet;
   };
 
 } // namespace Model

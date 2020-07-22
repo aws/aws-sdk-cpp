@@ -21,6 +21,7 @@
 #include <aws/quicksight/QuickSightEndpoint.h>
 #include <aws/quicksight/QuickSightErrorMarshaller.h>
 #include <aws/quicksight/model/CancelIngestionRequest.h>
+#include <aws/quicksight/model/CreateAccountCustomizationRequest.h>
 #include <aws/quicksight/model/CreateDashboardRequest.h>
 #include <aws/quicksight/model/CreateDataSetRequest.h>
 #include <aws/quicksight/model/CreateDataSourceRequest.h>
@@ -28,22 +29,27 @@
 #include <aws/quicksight/model/CreateGroupMembershipRequest.h>
 #include <aws/quicksight/model/CreateIAMPolicyAssignmentRequest.h>
 #include <aws/quicksight/model/CreateIngestionRequest.h>
+#include <aws/quicksight/model/CreateNamespaceRequest.h>
 #include <aws/quicksight/model/CreateTemplateRequest.h>
 #include <aws/quicksight/model/CreateTemplateAliasRequest.h>
 #include <aws/quicksight/model/CreateThemeRequest.h>
 #include <aws/quicksight/model/CreateThemeAliasRequest.h>
+#include <aws/quicksight/model/DeleteAccountCustomizationRequest.h>
 #include <aws/quicksight/model/DeleteDashboardRequest.h>
 #include <aws/quicksight/model/DeleteDataSetRequest.h>
 #include <aws/quicksight/model/DeleteDataSourceRequest.h>
 #include <aws/quicksight/model/DeleteGroupRequest.h>
 #include <aws/quicksight/model/DeleteGroupMembershipRequest.h>
 #include <aws/quicksight/model/DeleteIAMPolicyAssignmentRequest.h>
+#include <aws/quicksight/model/DeleteNamespaceRequest.h>
 #include <aws/quicksight/model/DeleteTemplateRequest.h>
 #include <aws/quicksight/model/DeleteTemplateAliasRequest.h>
 #include <aws/quicksight/model/DeleteThemeRequest.h>
 #include <aws/quicksight/model/DeleteThemeAliasRequest.h>
 #include <aws/quicksight/model/DeleteUserRequest.h>
 #include <aws/quicksight/model/DeleteUserByPrincipalIdRequest.h>
+#include <aws/quicksight/model/DescribeAccountCustomizationRequest.h>
+#include <aws/quicksight/model/DescribeAccountSettingsRequest.h>
 #include <aws/quicksight/model/DescribeDashboardRequest.h>
 #include <aws/quicksight/model/DescribeDashboardPermissionsRequest.h>
 #include <aws/quicksight/model/DescribeDataSetRequest.h>
@@ -53,6 +59,7 @@
 #include <aws/quicksight/model/DescribeGroupRequest.h>
 #include <aws/quicksight/model/DescribeIAMPolicyAssignmentRequest.h>
 #include <aws/quicksight/model/DescribeIngestionRequest.h>
+#include <aws/quicksight/model/DescribeNamespaceRequest.h>
 #include <aws/quicksight/model/DescribeTemplateRequest.h>
 #include <aws/quicksight/model/DescribeTemplateAliasRequest.h>
 #include <aws/quicksight/model/DescribeTemplatePermissionsRequest.h>
@@ -61,6 +68,7 @@
 #include <aws/quicksight/model/DescribeThemePermissionsRequest.h>
 #include <aws/quicksight/model/DescribeUserRequest.h>
 #include <aws/quicksight/model/GetDashboardEmbedUrlRequest.h>
+#include <aws/quicksight/model/GetSessionEmbedUrlRequest.h>
 #include <aws/quicksight/model/ListDashboardVersionsRequest.h>
 #include <aws/quicksight/model/ListDashboardsRequest.h>
 #include <aws/quicksight/model/ListDataSetsRequest.h>
@@ -70,6 +78,7 @@
 #include <aws/quicksight/model/ListIAMPolicyAssignmentsRequest.h>
 #include <aws/quicksight/model/ListIAMPolicyAssignmentsForUserRequest.h>
 #include <aws/quicksight/model/ListIngestionsRequest.h>
+#include <aws/quicksight/model/ListNamespacesRequest.h>
 #include <aws/quicksight/model/ListTagsForResourceRequest.h>
 #include <aws/quicksight/model/ListTemplateAliasesRequest.h>
 #include <aws/quicksight/model/ListTemplateVersionsRequest.h>
@@ -83,6 +92,8 @@
 #include <aws/quicksight/model/SearchDashboardsRequest.h>
 #include <aws/quicksight/model/TagResourceRequest.h>
 #include <aws/quicksight/model/UntagResourceRequest.h>
+#include <aws/quicksight/model/UpdateAccountCustomizationRequest.h>
+#include <aws/quicksight/model/UpdateAccountSettingsRequest.h>
 #include <aws/quicksight/model/UpdateDashboardRequest.h>
 #include <aws/quicksight/model/UpdateDashboardPermissionsRequest.h>
 #include <aws/quicksight/model/UpdateDashboardPublishedVersionRequest.h>
@@ -217,6 +228,40 @@ void QuickSightClient::CancelIngestionAsync(const CancelIngestionRequest& reques
 void QuickSightClient::CancelIngestionAsyncHelper(const CancelIngestionRequest& request, const CancelIngestionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, CancelIngestion(request), context);
+}
+
+CreateAccountCustomizationOutcome QuickSightClient::CreateAccountCustomization(const CreateAccountCustomizationRequest& request) const
+{
+  if (!request.AwsAccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateAccountCustomization", "Required field: AwsAccountId, is not set");
+    return CreateAccountCustomizationOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AwsAccountId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/accounts/";
+  ss << request.GetAwsAccountId();
+  ss << "/customizations";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return CreateAccountCustomizationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateAccountCustomizationOutcomeCallable QuickSightClient::CreateAccountCustomizationCallable(const CreateAccountCustomizationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateAccountCustomizationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateAccountCustomization(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void QuickSightClient::CreateAccountCustomizationAsync(const CreateAccountCustomizationRequest& request, const CreateAccountCustomizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateAccountCustomizationAsyncHelper( request, handler, context ); } );
+}
+
+void QuickSightClient::CreateAccountCustomizationAsyncHelper(const CreateAccountCustomizationRequest& request, const CreateAccountCustomizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateAccountCustomization(request), context);
 }
 
 CreateDashboardOutcome QuickSightClient::CreateDashboard(const CreateDashboardRequest& request) const
@@ -510,6 +555,39 @@ void QuickSightClient::CreateIngestionAsyncHelper(const CreateIngestionRequest& 
   handler(this, request, CreateIngestion(request), context);
 }
 
+CreateNamespaceOutcome QuickSightClient::CreateNamespace(const CreateNamespaceRequest& request) const
+{
+  if (!request.AwsAccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateNamespace", "Required field: AwsAccountId, is not set");
+    return CreateNamespaceOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AwsAccountId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/accounts/";
+  ss << request.GetAwsAccountId();
+  uri.SetPath(uri.GetPath() + ss.str());
+  return CreateNamespaceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateNamespaceOutcomeCallable QuickSightClient::CreateNamespaceCallable(const CreateNamespaceRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateNamespaceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateNamespace(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void QuickSightClient::CreateNamespaceAsync(const CreateNamespaceRequest& request, const CreateNamespaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateNamespaceAsyncHelper( request, handler, context ); } );
+}
+
+void QuickSightClient::CreateNamespaceAsyncHelper(const CreateNamespaceRequest& request, const CreateNamespaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateNamespace(request), context);
+}
+
 CreateTemplateOutcome QuickSightClient::CreateTemplate(const CreateTemplateRequest& request) const
 {
   if (!request.AwsAccountIdHasBeenSet())
@@ -682,6 +760,40 @@ void QuickSightClient::CreateThemeAliasAsync(const CreateThemeAliasRequest& requ
 void QuickSightClient::CreateThemeAliasAsyncHelper(const CreateThemeAliasRequest& request, const CreateThemeAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, CreateThemeAlias(request), context);
+}
+
+DeleteAccountCustomizationOutcome QuickSightClient::DeleteAccountCustomization(const DeleteAccountCustomizationRequest& request) const
+{
+  if (!request.AwsAccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteAccountCustomization", "Required field: AwsAccountId, is not set");
+    return DeleteAccountCustomizationOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AwsAccountId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/accounts/";
+  ss << request.GetAwsAccountId();
+  ss << "/customizations";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DeleteAccountCustomizationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteAccountCustomizationOutcomeCallable QuickSightClient::DeleteAccountCustomizationCallable(const DeleteAccountCustomizationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteAccountCustomizationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteAccountCustomization(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void QuickSightClient::DeleteAccountCustomizationAsync(const DeleteAccountCustomizationRequest& request, const DeleteAccountCustomizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteAccountCustomizationAsyncHelper( request, handler, context ); } );
+}
+
+void QuickSightClient::DeleteAccountCustomizationAsyncHelper(const DeleteAccountCustomizationRequest& request, const DeleteAccountCustomizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteAccountCustomization(request), context);
 }
 
 DeleteDashboardOutcome QuickSightClient::DeleteDashboard(const DeleteDashboardRequest& request) const
@@ -952,6 +1064,46 @@ void QuickSightClient::DeleteIAMPolicyAssignmentAsyncHelper(const DeleteIAMPolic
   handler(this, request, DeleteIAMPolicyAssignment(request), context);
 }
 
+DeleteNamespaceOutcome QuickSightClient::DeleteNamespace(const DeleteNamespaceRequest& request) const
+{
+  if (!request.AwsAccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteNamespace", "Required field: AwsAccountId, is not set");
+    return DeleteNamespaceOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AwsAccountId]", false));
+  }
+  if (!request.NamespaceHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteNamespace", "Required field: Namespace, is not set");
+    return DeleteNamespaceOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Namespace]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/accounts/";
+  ss << request.GetAwsAccountId();
+  ss << "/namespaces/";
+  ss << request.GetNamespace();
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DeleteNamespaceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteNamespaceOutcomeCallable QuickSightClient::DeleteNamespaceCallable(const DeleteNamespaceRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteNamespaceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteNamespace(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void QuickSightClient::DeleteNamespaceAsync(const DeleteNamespaceRequest& request, const DeleteNamespaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteNamespaceAsyncHelper( request, handler, context ); } );
+}
+
+void QuickSightClient::DeleteNamespaceAsyncHelper(const DeleteNamespaceRequest& request, const DeleteNamespaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteNamespace(request), context);
+}
+
 DeleteTemplateOutcome QuickSightClient::DeleteTemplate(const DeleteTemplateRequest& request) const
 {
   if (!request.AwsAccountIdHasBeenSet())
@@ -1218,6 +1370,74 @@ void QuickSightClient::DeleteUserByPrincipalIdAsync(const DeleteUserByPrincipalI
 void QuickSightClient::DeleteUserByPrincipalIdAsyncHelper(const DeleteUserByPrincipalIdRequest& request, const DeleteUserByPrincipalIdResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteUserByPrincipalId(request), context);
+}
+
+DescribeAccountCustomizationOutcome QuickSightClient::DescribeAccountCustomization(const DescribeAccountCustomizationRequest& request) const
+{
+  if (!request.AwsAccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeAccountCustomization", "Required field: AwsAccountId, is not set");
+    return DescribeAccountCustomizationOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AwsAccountId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/accounts/";
+  ss << request.GetAwsAccountId();
+  ss << "/customizations";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DescribeAccountCustomizationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeAccountCustomizationOutcomeCallable QuickSightClient::DescribeAccountCustomizationCallable(const DescribeAccountCustomizationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeAccountCustomizationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeAccountCustomization(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void QuickSightClient::DescribeAccountCustomizationAsync(const DescribeAccountCustomizationRequest& request, const DescribeAccountCustomizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeAccountCustomizationAsyncHelper( request, handler, context ); } );
+}
+
+void QuickSightClient::DescribeAccountCustomizationAsyncHelper(const DescribeAccountCustomizationRequest& request, const DescribeAccountCustomizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeAccountCustomization(request), context);
+}
+
+DescribeAccountSettingsOutcome QuickSightClient::DescribeAccountSettings(const DescribeAccountSettingsRequest& request) const
+{
+  if (!request.AwsAccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeAccountSettings", "Required field: AwsAccountId, is not set");
+    return DescribeAccountSettingsOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AwsAccountId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/accounts/";
+  ss << request.GetAwsAccountId();
+  ss << "/settings";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DescribeAccountSettingsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeAccountSettingsOutcomeCallable QuickSightClient::DescribeAccountSettingsCallable(const DescribeAccountSettingsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeAccountSettingsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeAccountSettings(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void QuickSightClient::DescribeAccountSettingsAsync(const DescribeAccountSettingsRequest& request, const DescribeAccountSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeAccountSettingsAsyncHelper( request, handler, context ); } );
+}
+
+void QuickSightClient::DescribeAccountSettingsAsyncHelper(const DescribeAccountSettingsRequest& request, const DescribeAccountSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeAccountSettings(request), context);
 }
 
 DescribeDashboardOutcome QuickSightClient::DescribeDashboard(const DescribeDashboardRequest& request) const
@@ -1604,6 +1824,46 @@ void QuickSightClient::DescribeIngestionAsyncHelper(const DescribeIngestionReque
   handler(this, request, DescribeIngestion(request), context);
 }
 
+DescribeNamespaceOutcome QuickSightClient::DescribeNamespace(const DescribeNamespaceRequest& request) const
+{
+  if (!request.AwsAccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeNamespace", "Required field: AwsAccountId, is not set");
+    return DescribeNamespaceOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AwsAccountId]", false));
+  }
+  if (!request.NamespaceHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeNamespace", "Required field: Namespace, is not set");
+    return DescribeNamespaceOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Namespace]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/accounts/";
+  ss << request.GetAwsAccountId();
+  ss << "/namespaces/";
+  ss << request.GetNamespace();
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DescribeNamespaceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeNamespaceOutcomeCallable QuickSightClient::DescribeNamespaceCallable(const DescribeNamespaceRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeNamespaceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeNamespace(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void QuickSightClient::DescribeNamespaceAsync(const DescribeNamespaceRequest& request, const DescribeNamespaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeNamespaceAsyncHelper( request, handler, context ); } );
+}
+
+void QuickSightClient::DescribeNamespaceAsyncHelper(const DescribeNamespaceRequest& request, const DescribeNamespaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeNamespace(request), context);
+}
+
 DescribeTemplateOutcome QuickSightClient::DescribeTemplate(const DescribeTemplateRequest& request) const
 {
   if (!request.AwsAccountIdHasBeenSet())
@@ -1951,6 +2211,40 @@ void QuickSightClient::GetDashboardEmbedUrlAsync(const GetDashboardEmbedUrlReque
 void QuickSightClient::GetDashboardEmbedUrlAsyncHelper(const GetDashboardEmbedUrlRequest& request, const GetDashboardEmbedUrlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetDashboardEmbedUrl(request), context);
+}
+
+GetSessionEmbedUrlOutcome QuickSightClient::GetSessionEmbedUrl(const GetSessionEmbedUrlRequest& request) const
+{
+  if (!request.AwsAccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetSessionEmbedUrl", "Required field: AwsAccountId, is not set");
+    return GetSessionEmbedUrlOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AwsAccountId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/accounts/";
+  ss << request.GetAwsAccountId();
+  ss << "/session-embed-url";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return GetSessionEmbedUrlOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetSessionEmbedUrlOutcomeCallable QuickSightClient::GetSessionEmbedUrlCallable(const GetSessionEmbedUrlRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetSessionEmbedUrlOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetSessionEmbedUrl(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void QuickSightClient::GetSessionEmbedUrlAsync(const GetSessionEmbedUrlRequest& request, const GetSessionEmbedUrlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetSessionEmbedUrlAsyncHelper( request, handler, context ); } );
+}
+
+void QuickSightClient::GetSessionEmbedUrlAsyncHelper(const GetSessionEmbedUrlRequest& request, const GetSessionEmbedUrlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetSessionEmbedUrl(request), context);
 }
 
 ListDashboardVersionsOutcome QuickSightClient::ListDashboardVersions(const ListDashboardVersionsRequest& request) const
@@ -2313,6 +2607,40 @@ void QuickSightClient::ListIngestionsAsync(const ListIngestionsRequest& request,
 void QuickSightClient::ListIngestionsAsyncHelper(const ListIngestionsRequest& request, const ListIngestionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListIngestions(request), context);
+}
+
+ListNamespacesOutcome QuickSightClient::ListNamespaces(const ListNamespacesRequest& request) const
+{
+  if (!request.AwsAccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListNamespaces", "Required field: AwsAccountId, is not set");
+    return ListNamespacesOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AwsAccountId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/accounts/";
+  ss << request.GetAwsAccountId();
+  ss << "/namespaces";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return ListNamespacesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListNamespacesOutcomeCallable QuickSightClient::ListNamespacesCallable(const ListNamespacesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListNamespacesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListNamespaces(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void QuickSightClient::ListNamespacesAsync(const ListNamespacesRequest& request, const ListNamespacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListNamespacesAsyncHelper( request, handler, context ); } );
+}
+
+void QuickSightClient::ListNamespacesAsyncHelper(const ListNamespacesRequest& request, const ListNamespacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListNamespaces(request), context);
 }
 
 ListTagsForResourceOutcome QuickSightClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -2816,6 +3144,74 @@ void QuickSightClient::UntagResourceAsync(const UntagResourceRequest& request, c
 void QuickSightClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UntagResource(request), context);
+}
+
+UpdateAccountCustomizationOutcome QuickSightClient::UpdateAccountCustomization(const UpdateAccountCustomizationRequest& request) const
+{
+  if (!request.AwsAccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateAccountCustomization", "Required field: AwsAccountId, is not set");
+    return UpdateAccountCustomizationOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AwsAccountId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/accounts/";
+  ss << request.GetAwsAccountId();
+  ss << "/customizations";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return UpdateAccountCustomizationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateAccountCustomizationOutcomeCallable QuickSightClient::UpdateAccountCustomizationCallable(const UpdateAccountCustomizationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateAccountCustomizationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateAccountCustomization(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void QuickSightClient::UpdateAccountCustomizationAsync(const UpdateAccountCustomizationRequest& request, const UpdateAccountCustomizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateAccountCustomizationAsyncHelper( request, handler, context ); } );
+}
+
+void QuickSightClient::UpdateAccountCustomizationAsyncHelper(const UpdateAccountCustomizationRequest& request, const UpdateAccountCustomizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateAccountCustomization(request), context);
+}
+
+UpdateAccountSettingsOutcome QuickSightClient::UpdateAccountSettings(const UpdateAccountSettingsRequest& request) const
+{
+  if (!request.AwsAccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateAccountSettings", "Required field: AwsAccountId, is not set");
+    return UpdateAccountSettingsOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AwsAccountId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/accounts/";
+  ss << request.GetAwsAccountId();
+  ss << "/settings";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return UpdateAccountSettingsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateAccountSettingsOutcomeCallable QuickSightClient::UpdateAccountSettingsCallable(const UpdateAccountSettingsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateAccountSettingsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateAccountSettings(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void QuickSightClient::UpdateAccountSettingsAsync(const UpdateAccountSettingsRequest& request, const UpdateAccountSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateAccountSettingsAsyncHelper( request, handler, context ); } );
+}
+
+void QuickSightClient::UpdateAccountSettingsAsyncHelper(const UpdateAccountSettingsRequest& request, const UpdateAccountSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateAccountSettings(request), context);
 }
 
 UpdateDashboardOutcome QuickSightClient::UpdateDashboard(const UpdateDashboardRequest& request) const

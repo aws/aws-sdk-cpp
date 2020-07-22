@@ -38,6 +38,7 @@
 #include <aws/medialive/model/DescribeChannelRequest.h>
 #include <aws/medialive/model/DescribeInputRequest.h>
 #include <aws/medialive/model/DescribeInputDeviceRequest.h>
+#include <aws/medialive/model/DescribeInputDeviceThumbnailRequest.h>
 #include <aws/medialive/model/DescribeInputSecurityGroupRequest.h>
 #include <aws/medialive/model/DescribeMultiplexRequest.h>
 #include <aws/medialive/model/DescribeMultiplexProgramRequest.h>
@@ -722,6 +723,45 @@ void MediaLiveClient::DescribeInputDeviceAsync(const DescribeInputDeviceRequest&
 void MediaLiveClient::DescribeInputDeviceAsyncHelper(const DescribeInputDeviceRequest& request, const DescribeInputDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribeInputDevice(request), context);
+}
+
+DescribeInputDeviceThumbnailOutcome MediaLiveClient::DescribeInputDeviceThumbnail(const DescribeInputDeviceThumbnailRequest& request) const
+{
+  if (!request.InputDeviceIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeInputDeviceThumbnail", "Required field: InputDeviceId, is not set");
+    return DescribeInputDeviceThumbnailOutcome(Aws::Client::AWSError<MediaLiveErrors>(MediaLiveErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [InputDeviceId]", false));
+  }
+  if (!request.AcceptHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeInputDeviceThumbnail", "Required field: Accept, is not set");
+    return DescribeInputDeviceThumbnailOutcome(Aws::Client::AWSError<MediaLiveErrors>(MediaLiveErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Accept]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/prod/inputDevices/";
+  ss << request.GetInputDeviceId();
+  ss << "/thumbnailData";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DescribeInputDeviceThumbnailOutcome(MakeRequestWithUnparsedResponse(uri, request, Aws::Http::HttpMethod::HTTP_GET));
+}
+
+DescribeInputDeviceThumbnailOutcomeCallable MediaLiveClient::DescribeInputDeviceThumbnailCallable(const DescribeInputDeviceThumbnailRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeInputDeviceThumbnailOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeInputDeviceThumbnail(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void MediaLiveClient::DescribeInputDeviceThumbnailAsync(const DescribeInputDeviceThumbnailRequest& request, const DescribeInputDeviceThumbnailResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeInputDeviceThumbnailAsyncHelper( request, handler, context ); } );
+}
+
+void MediaLiveClient::DescribeInputDeviceThumbnailAsyncHelper(const DescribeInputDeviceThumbnailRequest& request, const DescribeInputDeviceThumbnailResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeInputDeviceThumbnail(request), context);
 }
 
 DescribeInputSecurityGroupOutcome MediaLiveClient::DescribeInputSecurityGroup(const DescribeInputSecurityGroupRequest& request) const

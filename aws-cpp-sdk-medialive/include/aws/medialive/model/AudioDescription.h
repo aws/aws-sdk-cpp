@@ -263,58 +263,58 @@ Note
 
 
     /**
-     * Indicates the language of the audio output track. Only used if
-     * languageControlMode is useConfigured, or there is no ISO 639 language code
-     * specified in the input.
+     * RFC 5646 language code representing the language of the audio output track. Only
+     * used if languageControlMode is useConfigured, or there is no ISO 639 language
+     * code specified in the input.
      */
     inline const Aws::String& GetLanguageCode() const{ return m_languageCode; }
 
     /**
-     * Indicates the language of the audio output track. Only used if
-     * languageControlMode is useConfigured, or there is no ISO 639 language code
-     * specified in the input.
+     * RFC 5646 language code representing the language of the audio output track. Only
+     * used if languageControlMode is useConfigured, or there is no ISO 639 language
+     * code specified in the input.
      */
     inline bool LanguageCodeHasBeenSet() const { return m_languageCodeHasBeenSet; }
 
     /**
-     * Indicates the language of the audio output track. Only used if
-     * languageControlMode is useConfigured, or there is no ISO 639 language code
-     * specified in the input.
+     * RFC 5646 language code representing the language of the audio output track. Only
+     * used if languageControlMode is useConfigured, or there is no ISO 639 language
+     * code specified in the input.
      */
     inline void SetLanguageCode(const Aws::String& value) { m_languageCodeHasBeenSet = true; m_languageCode = value; }
 
     /**
-     * Indicates the language of the audio output track. Only used if
-     * languageControlMode is useConfigured, or there is no ISO 639 language code
-     * specified in the input.
+     * RFC 5646 language code representing the language of the audio output track. Only
+     * used if languageControlMode is useConfigured, or there is no ISO 639 language
+     * code specified in the input.
      */
     inline void SetLanguageCode(Aws::String&& value) { m_languageCodeHasBeenSet = true; m_languageCode = std::move(value); }
 
     /**
-     * Indicates the language of the audio output track. Only used if
-     * languageControlMode is useConfigured, or there is no ISO 639 language code
-     * specified in the input.
+     * RFC 5646 language code representing the language of the audio output track. Only
+     * used if languageControlMode is useConfigured, or there is no ISO 639 language
+     * code specified in the input.
      */
     inline void SetLanguageCode(const char* value) { m_languageCodeHasBeenSet = true; m_languageCode.assign(value); }
 
     /**
-     * Indicates the language of the audio output track. Only used if
-     * languageControlMode is useConfigured, or there is no ISO 639 language code
-     * specified in the input.
+     * RFC 5646 language code representing the language of the audio output track. Only
+     * used if languageControlMode is useConfigured, or there is no ISO 639 language
+     * code specified in the input.
      */
     inline AudioDescription& WithLanguageCode(const Aws::String& value) { SetLanguageCode(value); return *this;}
 
     /**
-     * Indicates the language of the audio output track. Only used if
-     * languageControlMode is useConfigured, or there is no ISO 639 language code
-     * specified in the input.
+     * RFC 5646 language code representing the language of the audio output track. Only
+     * used if languageControlMode is useConfigured, or there is no ISO 639 language
+     * code specified in the input.
      */
     inline AudioDescription& WithLanguageCode(Aws::String&& value) { SetLanguageCode(std::move(value)); return *this;}
 
     /**
-     * Indicates the language of the audio output track. Only used if
-     * languageControlMode is useConfigured, or there is no ISO 639 language code
-     * specified in the input.
+     * RFC 5646 language code representing the language of the audio output track. Only
+     * used if languageControlMode is useConfigured, or there is no ISO 639 language
+     * code specified in the input.
      */
     inline AudioDescription& WithLanguageCode(const char* value) { SetLanguageCode(value); return *this;}
 

@@ -22,7 +22,8 @@ RegisterUserRequest::RegisterUserRequest() :
     m_sessionNameHasBeenSet(false),
     m_awsAccountIdHasBeenSet(false),
     m_namespaceHasBeenSet(false),
-    m_userNameHasBeenSet(false)
+    m_userNameHasBeenSet(false),
+    m_customPermissionsNameHasBeenSet(false)
 {
 }
 
@@ -61,6 +62,12 @@ Aws::String RegisterUserRequest::SerializePayload() const
   if(m_userNameHasBeenSet)
   {
    payload.WithString("UserName", m_userName);
+
+  }
+
+  if(m_customPermissionsNameHasBeenSet)
+  {
+   payload.WithString("CustomPermissionsName", m_customPermissionsName);
 
   }
 

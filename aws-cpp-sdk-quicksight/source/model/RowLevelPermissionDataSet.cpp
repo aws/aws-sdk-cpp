@@ -19,6 +19,7 @@ namespace Model
 {
 
 RowLevelPermissionDataSet::RowLevelPermissionDataSet() : 
+    m_namespaceHasBeenSet(false),
     m_arnHasBeenSet(false),
     m_permissionPolicy(RowLevelPermissionPolicy::NOT_SET),
     m_permissionPolicyHasBeenSet(false)
@@ -26,6 +27,7 @@ RowLevelPermissionDataSet::RowLevelPermissionDataSet() :
 }
 
 RowLevelPermissionDataSet::RowLevelPermissionDataSet(JsonView jsonValue) : 
+    m_namespaceHasBeenSet(false),
     m_arnHasBeenSet(false),
     m_permissionPolicy(RowLevelPermissionPolicy::NOT_SET),
     m_permissionPolicyHasBeenSet(false)
@@ -35,6 +37,13 @@ RowLevelPermissionDataSet::RowLevelPermissionDataSet(JsonView jsonValue) :
 
 RowLevelPermissionDataSet& RowLevelPermissionDataSet::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("Namespace"))
+  {
+    m_namespace = jsonValue.GetString("Namespace");
+
+    m_namespaceHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
@@ -55,6 +64,12 @@ RowLevelPermissionDataSet& RowLevelPermissionDataSet::operator =(JsonView jsonVa
 JsonValue RowLevelPermissionDataSet::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_namespaceHasBeenSet)
+  {
+   payload.WithString("Namespace", m_namespace);
+
+  }
 
   if(m_arnHasBeenSet)
   {

@@ -28,7 +28,8 @@ User::User() :
     m_identityTypeHasBeenSet(false),
     m_active(false),
     m_activeHasBeenSet(false),
-    m_principalIdHasBeenSet(false)
+    m_principalIdHasBeenSet(false),
+    m_customPermissionsNameHasBeenSet(false)
 {
 }
 
@@ -42,7 +43,8 @@ User::User(JsonView jsonValue) :
     m_identityTypeHasBeenSet(false),
     m_active(false),
     m_activeHasBeenSet(false),
-    m_principalIdHasBeenSet(false)
+    m_principalIdHasBeenSet(false),
+    m_customPermissionsNameHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -98,6 +100,13 @@ User& User::operator =(JsonView jsonValue)
     m_principalIdHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("CustomPermissionsName"))
+  {
+    m_customPermissionsName = jsonValue.GetString("CustomPermissionsName");
+
+    m_customPermissionsNameHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -142,6 +151,12 @@ JsonValue User::Jsonize() const
   if(m_principalIdHasBeenSet)
   {
    payload.WithString("PrincipalId", m_principalId);
+
+  }
+
+  if(m_customPermissionsNameHasBeenSet)
+  {
+   payload.WithString("CustomPermissionsName", m_customPermissionsName);
 
   }
 
