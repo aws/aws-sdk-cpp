@@ -28,7 +28,9 @@ WorkspaceImage::WorkspaceImage() :
     m_requiredTenancy(WorkspaceImageRequiredTenancy::NOT_SET),
     m_requiredTenancyHasBeenSet(false),
     m_errorCodeHasBeenSet(false),
-    m_errorMessageHasBeenSet(false)
+    m_errorMessageHasBeenSet(false),
+    m_createdHasBeenSet(false),
+    m_ownerAccountIdHasBeenSet(false)
 {
 }
 
@@ -42,7 +44,9 @@ WorkspaceImage::WorkspaceImage(JsonView jsonValue) :
     m_requiredTenancy(WorkspaceImageRequiredTenancy::NOT_SET),
     m_requiredTenancyHasBeenSet(false),
     m_errorCodeHasBeenSet(false),
-    m_errorMessageHasBeenSet(false)
+    m_errorMessageHasBeenSet(false),
+    m_createdHasBeenSet(false),
+    m_ownerAccountIdHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -105,6 +109,20 @@ WorkspaceImage& WorkspaceImage::operator =(JsonView jsonValue)
     m_errorMessageHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Created"))
+  {
+    m_created = jsonValue.GetDouble("Created");
+
+    m_createdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("OwnerAccountId"))
+  {
+    m_ownerAccountId = jsonValue.GetString("OwnerAccountId");
+
+    m_ownerAccountIdHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -155,6 +173,17 @@ JsonValue WorkspaceImage::Jsonize() const
   if(m_errorMessageHasBeenSet)
   {
    payload.WithString("ErrorMessage", m_errorMessage);
+
+  }
+
+  if(m_createdHasBeenSet)
+  {
+   payload.WithDouble("Created", m_created.SecondsWithMSPrecision());
+  }
+
+  if(m_ownerAccountIdHasBeenSet)
+  {
+   payload.WithString("OwnerAccountId", m_ownerAccountId);
 
   }
 

@@ -7,6 +7,7 @@
 #include <aws/workspaces/WorkSpaces_EXPORTS.h>
 #include <aws/workspaces/WorkSpacesRequest.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/workspaces/model/ImageType.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
@@ -82,6 +83,37 @@ namespace Model
 
 
     /**
+     * <p>The type (owned or shared) of the image.</p>
+     */
+    inline const ImageType& GetImageType() const{ return m_imageType; }
+
+    /**
+     * <p>The type (owned or shared) of the image.</p>
+     */
+    inline bool ImageTypeHasBeenSet() const { return m_imageTypeHasBeenSet; }
+
+    /**
+     * <p>The type (owned or shared) of the image.</p>
+     */
+    inline void SetImageType(const ImageType& value) { m_imageTypeHasBeenSet = true; m_imageType = value; }
+
+    /**
+     * <p>The type (owned or shared) of the image.</p>
+     */
+    inline void SetImageType(ImageType&& value) { m_imageTypeHasBeenSet = true; m_imageType = std::move(value); }
+
+    /**
+     * <p>The type (owned or shared) of the image.</p>
+     */
+    inline DescribeWorkspaceImagesRequest& WithImageType(const ImageType& value) { SetImageType(value); return *this;}
+
+    /**
+     * <p>The type (owned or shared) of the image.</p>
+     */
+    inline DescribeWorkspaceImagesRequest& WithImageType(ImageType&& value) { SetImageType(std::move(value)); return *this;}
+
+
+    /**
      * <p>If you received a <code>NextToken</code> from a previous call that was
      * paginated, provide this token to receive the next set of results.</p>
      */
@@ -154,6 +186,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_imageIds;
     bool m_imageIdsHasBeenSet;
+
+    ImageType m_imageType;
+    bool m_imageTypeHasBeenSet;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;

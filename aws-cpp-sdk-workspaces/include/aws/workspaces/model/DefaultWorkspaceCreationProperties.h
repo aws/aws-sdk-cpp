@@ -172,50 +172,66 @@ namespace Model
 
 
     /**
-     * <p>The identifier of any security groups to apply to WorkSpaces when they are
-     * created.</p>
+     * <p>The identifier of the default security group to apply to WorkSpaces when they
+     * are created. For more information, see <a
+     * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/amazon-workspaces-security-groups.html">
+     * Security Groups for Your WorkSpaces</a>.</p>
      */
     inline const Aws::String& GetCustomSecurityGroupId() const{ return m_customSecurityGroupId; }
 
     /**
-     * <p>The identifier of any security groups to apply to WorkSpaces when they are
-     * created.</p>
+     * <p>The identifier of the default security group to apply to WorkSpaces when they
+     * are created. For more information, see <a
+     * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/amazon-workspaces-security-groups.html">
+     * Security Groups for Your WorkSpaces</a>.</p>
      */
     inline bool CustomSecurityGroupIdHasBeenSet() const { return m_customSecurityGroupIdHasBeenSet; }
 
     /**
-     * <p>The identifier of any security groups to apply to WorkSpaces when they are
-     * created.</p>
+     * <p>The identifier of the default security group to apply to WorkSpaces when they
+     * are created. For more information, see <a
+     * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/amazon-workspaces-security-groups.html">
+     * Security Groups for Your WorkSpaces</a>.</p>
      */
     inline void SetCustomSecurityGroupId(const Aws::String& value) { m_customSecurityGroupIdHasBeenSet = true; m_customSecurityGroupId = value; }
 
     /**
-     * <p>The identifier of any security groups to apply to WorkSpaces when they are
-     * created.</p>
+     * <p>The identifier of the default security group to apply to WorkSpaces when they
+     * are created. For more information, see <a
+     * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/amazon-workspaces-security-groups.html">
+     * Security Groups for Your WorkSpaces</a>.</p>
      */
     inline void SetCustomSecurityGroupId(Aws::String&& value) { m_customSecurityGroupIdHasBeenSet = true; m_customSecurityGroupId = std::move(value); }
 
     /**
-     * <p>The identifier of any security groups to apply to WorkSpaces when they are
-     * created.</p>
+     * <p>The identifier of the default security group to apply to WorkSpaces when they
+     * are created. For more information, see <a
+     * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/amazon-workspaces-security-groups.html">
+     * Security Groups for Your WorkSpaces</a>.</p>
      */
     inline void SetCustomSecurityGroupId(const char* value) { m_customSecurityGroupIdHasBeenSet = true; m_customSecurityGroupId.assign(value); }
 
     /**
-     * <p>The identifier of any security groups to apply to WorkSpaces when they are
-     * created.</p>
+     * <p>The identifier of the default security group to apply to WorkSpaces when they
+     * are created. For more information, see <a
+     * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/amazon-workspaces-security-groups.html">
+     * Security Groups for Your WorkSpaces</a>.</p>
      */
     inline DefaultWorkspaceCreationProperties& WithCustomSecurityGroupId(const Aws::String& value) { SetCustomSecurityGroupId(value); return *this;}
 
     /**
-     * <p>The identifier of any security groups to apply to WorkSpaces when they are
-     * created.</p>
+     * <p>The identifier of the default security group to apply to WorkSpaces when they
+     * are created. For more information, see <a
+     * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/amazon-workspaces-security-groups.html">
+     * Security Groups for Your WorkSpaces</a>.</p>
      */
     inline DefaultWorkspaceCreationProperties& WithCustomSecurityGroupId(Aws::String&& value) { SetCustomSecurityGroupId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of any security groups to apply to WorkSpaces when they are
-     * created.</p>
+     * <p>The identifier of the default security group to apply to WorkSpaces when they
+     * are created. For more information, see <a
+     * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/amazon-workspaces-security-groups.html">
+     * Security Groups for Your WorkSpaces</a>.</p>
      */
     inline DefaultWorkspaceCreationProperties& WithCustomSecurityGroupId(const char* value) { SetCustomSecurityGroupId(value); return *this;}
 

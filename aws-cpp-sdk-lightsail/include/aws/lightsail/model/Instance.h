@@ -204,37 +204,37 @@ namespace Model
 
     /**
      * <p>The timestamp when the instance was created (e.g.,
-     * <code>1479734909.17</code>).</p>
+     * <code>1479734909.17</code>) in Unix time format.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
 
     /**
      * <p>The timestamp when the instance was created (e.g.,
-     * <code>1479734909.17</code>).</p>
+     * <code>1479734909.17</code>) in Unix time format.</p>
      */
     inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
 
     /**
      * <p>The timestamp when the instance was created (e.g.,
-     * <code>1479734909.17</code>).</p>
+     * <code>1479734909.17</code>) in Unix time format.</p>
      */
     inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
 
     /**
      * <p>The timestamp when the instance was created (e.g.,
-     * <code>1479734909.17</code>).</p>
+     * <code>1479734909.17</code>) in Unix time format.</p>
      */
     inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
 
     /**
      * <p>The timestamp when the instance was created (e.g.,
-     * <code>1479734909.17</code>).</p>
+     * <code>1479734909.17</code>) in Unix time format.</p>
      */
     inline Instance& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
 
     /**
      * <p>The timestamp when the instance was created (e.g.,
-     * <code>1479734909.17</code>).</p>
+     * <code>1479734909.17</code>) in Unix time format.</p>
      */
     inline Instance& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
 

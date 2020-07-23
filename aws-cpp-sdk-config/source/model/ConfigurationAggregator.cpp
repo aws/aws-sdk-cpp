@@ -24,7 +24,8 @@ ConfigurationAggregator::ConfigurationAggregator() :
     m_accountAggregationSourcesHasBeenSet(false),
     m_organizationAggregationSourceHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false)
+    m_lastUpdatedTimeHasBeenSet(false),
+    m_createdByHasBeenSet(false)
 {
 }
 
@@ -34,7 +35,8 @@ ConfigurationAggregator::ConfigurationAggregator(JsonView jsonValue) :
     m_accountAggregationSourcesHasBeenSet(false),
     m_organizationAggregationSourceHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false)
+    m_lastUpdatedTimeHasBeenSet(false),
+    m_createdByHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -86,6 +88,13 @@ ConfigurationAggregator& ConfigurationAggregator::operator =(JsonView jsonValue)
     m_lastUpdatedTimeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("CreatedBy"))
+  {
+    m_createdBy = jsonValue.GetString("CreatedBy");
+
+    m_createdByHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -130,6 +139,12 @@ JsonValue ConfigurationAggregator::Jsonize() const
   if(m_lastUpdatedTimeHasBeenSet)
   {
    payload.WithDouble("LastUpdatedTime", m_lastUpdatedTime.SecondsWithMSPrecision());
+  }
+
+  if(m_createdByHasBeenSet)
+  {
+   payload.WithString("CreatedBy", m_createdBy);
+
   }
 
   return payload;

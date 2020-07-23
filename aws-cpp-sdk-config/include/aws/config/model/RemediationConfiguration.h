@@ -163,42 +163,66 @@ namespace Model
 
 
     /**
-     * <p>Version of the target. For example, version of the SSM document.</p>
+     * <p>Version of the target. For example, version of the SSM document.</p> 
+     * <p>If you make backward incompatible changes to the SSM document, you must call
+     * PutRemediationConfiguration API again to ensure the remediations can run.</p>
+     * 
      */
     inline const Aws::String& GetTargetVersion() const{ return m_targetVersion; }
 
     /**
-     * <p>Version of the target. For example, version of the SSM document.</p>
+     * <p>Version of the target. For example, version of the SSM document.</p> 
+     * <p>If you make backward incompatible changes to the SSM document, you must call
+     * PutRemediationConfiguration API again to ensure the remediations can run.</p>
+     * 
      */
     inline bool TargetVersionHasBeenSet() const { return m_targetVersionHasBeenSet; }
 
     /**
-     * <p>Version of the target. For example, version of the SSM document.</p>
+     * <p>Version of the target. For example, version of the SSM document.</p> 
+     * <p>If you make backward incompatible changes to the SSM document, you must call
+     * PutRemediationConfiguration API again to ensure the remediations can run.</p>
+     * 
      */
     inline void SetTargetVersion(const Aws::String& value) { m_targetVersionHasBeenSet = true; m_targetVersion = value; }
 
     /**
-     * <p>Version of the target. For example, version of the SSM document.</p>
+     * <p>Version of the target. For example, version of the SSM document.</p> 
+     * <p>If you make backward incompatible changes to the SSM document, you must call
+     * PutRemediationConfiguration API again to ensure the remediations can run.</p>
+     * 
      */
     inline void SetTargetVersion(Aws::String&& value) { m_targetVersionHasBeenSet = true; m_targetVersion = std::move(value); }
 
     /**
-     * <p>Version of the target. For example, version of the SSM document.</p>
+     * <p>Version of the target. For example, version of the SSM document.</p> 
+     * <p>If you make backward incompatible changes to the SSM document, you must call
+     * PutRemediationConfiguration API again to ensure the remediations can run.</p>
+     * 
      */
     inline void SetTargetVersion(const char* value) { m_targetVersionHasBeenSet = true; m_targetVersion.assign(value); }
 
     /**
-     * <p>Version of the target. For example, version of the SSM document.</p>
+     * <p>Version of the target. For example, version of the SSM document.</p> 
+     * <p>If you make backward incompatible changes to the SSM document, you must call
+     * PutRemediationConfiguration API again to ensure the remediations can run.</p>
+     * 
      */
     inline RemediationConfiguration& WithTargetVersion(const Aws::String& value) { SetTargetVersion(value); return *this;}
 
     /**
-     * <p>Version of the target. For example, version of the SSM document.</p>
+     * <p>Version of the target. For example, version of the SSM document.</p> 
+     * <p>If you make backward incompatible changes to the SSM document, you must call
+     * PutRemediationConfiguration API again to ensure the remediations can run.</p>
+     * 
      */
     inline RemediationConfiguration& WithTargetVersion(Aws::String&& value) { SetTargetVersion(std::move(value)); return *this;}
 
     /**
-     * <p>Version of the target. For example, version of the SSM document.</p>
+     * <p>Version of the target. For example, version of the SSM document.</p> 
+     * <p>If you make backward incompatible changes to the SSM document, you must call
+     * PutRemediationConfiguration API again to ensure the remediations can run.</p>
+     * 
      */
     inline RemediationConfiguration& WithTargetVersion(const char* value) { SetTargetVersion(value); return *this;}
 
@@ -361,7 +385,8 @@ namespace Model
      * <p>The maximum number of failed attempts for auto-remediation. If you do not
      * select a number, the default is 5.</p> <p>For example, if you specify
      * MaximumAutomaticAttempts as 5 with RetryAttemptsSeconds as 50 seconds, AWS
-     * Config throws an exception after the 5th failed attempt within 50 seconds.</p>
+     * Config will put a RemediationException on your behalf for the failing resource
+     * after the 5th failed attempt within 50 seconds.</p>
      */
     inline int GetMaximumAutomaticAttempts() const{ return m_maximumAutomaticAttempts; }
 
@@ -369,7 +394,8 @@ namespace Model
      * <p>The maximum number of failed attempts for auto-remediation. If you do not
      * select a number, the default is 5.</p> <p>For example, if you specify
      * MaximumAutomaticAttempts as 5 with RetryAttemptsSeconds as 50 seconds, AWS
-     * Config throws an exception after the 5th failed attempt within 50 seconds.</p>
+     * Config will put a RemediationException on your behalf for the failing resource
+     * after the 5th failed attempt within 50 seconds.</p>
      */
     inline bool MaximumAutomaticAttemptsHasBeenSet() const { return m_maximumAutomaticAttemptsHasBeenSet; }
 
@@ -377,7 +403,8 @@ namespace Model
      * <p>The maximum number of failed attempts for auto-remediation. If you do not
      * select a number, the default is 5.</p> <p>For example, if you specify
      * MaximumAutomaticAttempts as 5 with RetryAttemptsSeconds as 50 seconds, AWS
-     * Config throws an exception after the 5th failed attempt within 50 seconds.</p>
+     * Config will put a RemediationException on your behalf for the failing resource
+     * after the 5th failed attempt within 50 seconds.</p>
      */
     inline void SetMaximumAutomaticAttempts(int value) { m_maximumAutomaticAttemptsHasBeenSet = true; m_maximumAutomaticAttempts = value; }
 
@@ -385,7 +412,8 @@ namespace Model
      * <p>The maximum number of failed attempts for auto-remediation. If you do not
      * select a number, the default is 5.</p> <p>For example, if you specify
      * MaximumAutomaticAttempts as 5 with RetryAttemptsSeconds as 50 seconds, AWS
-     * Config throws an exception after the 5th failed attempt within 50 seconds.</p>
+     * Config will put a RemediationException on your behalf for the failing resource
+     * after the 5th failed attempt within 50 seconds.</p>
      */
     inline RemediationConfiguration& WithMaximumAutomaticAttempts(int value) { SetMaximumAutomaticAttempts(value); return *this;}
 
@@ -395,7 +423,7 @@ namespace Model
      * select a number, the default is 60 seconds. </p> <p>For example, if you specify
      * RetryAttemptsSeconds as 50 seconds and MaximumAutomaticAttempts as 5, AWS Config
      * will run auto-remediations 5 times within 50 seconds before throwing an
-     * exception. </p>
+     * exception.</p>
      */
     inline long long GetRetryAttemptSeconds() const{ return m_retryAttemptSeconds; }
 
@@ -404,7 +432,7 @@ namespace Model
      * select a number, the default is 60 seconds. </p> <p>For example, if you specify
      * RetryAttemptsSeconds as 50 seconds and MaximumAutomaticAttempts as 5, AWS Config
      * will run auto-remediations 5 times within 50 seconds before throwing an
-     * exception. </p>
+     * exception.</p>
      */
     inline bool RetryAttemptSecondsHasBeenSet() const { return m_retryAttemptSecondsHasBeenSet; }
 
@@ -413,7 +441,7 @@ namespace Model
      * select a number, the default is 60 seconds. </p> <p>For example, if you specify
      * RetryAttemptsSeconds as 50 seconds and MaximumAutomaticAttempts as 5, AWS Config
      * will run auto-remediations 5 times within 50 seconds before throwing an
-     * exception. </p>
+     * exception.</p>
      */
     inline void SetRetryAttemptSeconds(long long value) { m_retryAttemptSecondsHasBeenSet = true; m_retryAttemptSeconds = value; }
 
@@ -422,7 +450,7 @@ namespace Model
      * select a number, the default is 60 seconds. </p> <p>For example, if you specify
      * RetryAttemptsSeconds as 50 seconds and MaximumAutomaticAttempts as 5, AWS Config
      * will run auto-remediations 5 times within 50 seconds before throwing an
-     * exception. </p>
+     * exception.</p>
      */
     inline RemediationConfiguration& WithRetryAttemptSeconds(long long value) { SetRetryAttemptSeconds(value); return *this;}
 

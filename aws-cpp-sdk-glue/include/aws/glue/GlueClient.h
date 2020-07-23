@@ -2973,8 +2973,11 @@ namespace Model
 
         /**
          * <p>Retrieves the security configurations for the resource policies set on
-         * individual resources, and also the account-level policy.</p><p><h3>See
-         * Also:</h3>   <a
+         * individual resources, and also the account-level policy.</p> <p>This operation
+         * also returns the Data Catalog resource policy. However, if you enabled metadata
+         * encryption in Data Catalog settings, and you do not have permission on the AWS
+         * KMS key, the operation can't return the Data Catalog resource
+         * policy.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetResourcePolicies">AWS
          * API Reference</a></p>
          */
@@ -2982,8 +2985,11 @@ namespace Model
 
         /**
          * <p>Retrieves the security configurations for the resource policies set on
-         * individual resources, and also the account-level policy.</p><p><h3>See
-         * Also:</h3>   <a
+         * individual resources, and also the account-level policy.</p> <p>This operation
+         * also returns the Data Catalog resource policy. However, if you enabled metadata
+         * encryption in Data Catalog settings, and you do not have permission on the AWS
+         * KMS key, the operation can't return the Data Catalog resource
+         * policy.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetResourcePolicies">AWS
          * API Reference</a></p>
          *
@@ -2993,8 +2999,11 @@ namespace Model
 
         /**
          * <p>Retrieves the security configurations for the resource policies set on
-         * individual resources, and also the account-level policy.</p><p><h3>See
-         * Also:</h3>   <a
+         * individual resources, and also the account-level policy.</p> <p>This operation
+         * also returns the Data Catalog resource policy. However, if you enabled metadata
+         * encryption in Data Catalog settings, and you do not have permission on the AWS
+         * KMS key, the operation can't return the Data Catalog resource
+         * policy.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetResourcePolicies">AWS
          * API Reference</a></p>
          *

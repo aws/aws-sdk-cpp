@@ -26,6 +26,8 @@ CreateFileSystemLustreConfiguration::CreateFileSystemLustreConfiguration() :
     m_importedFileChunkSizeHasBeenSet(false),
     m_deploymentType(LustreDeploymentType::NOT_SET),
     m_deploymentTypeHasBeenSet(false),
+    m_autoImportPolicy(AutoImportPolicyType::NOT_SET),
+    m_autoImportPolicyHasBeenSet(false),
     m_perUnitStorageThroughput(0),
     m_perUnitStorageThroughputHasBeenSet(false),
     m_dailyAutomaticBackupStartTimeHasBeenSet(false),
@@ -44,6 +46,8 @@ CreateFileSystemLustreConfiguration::CreateFileSystemLustreConfiguration(JsonVie
     m_importedFileChunkSizeHasBeenSet(false),
     m_deploymentType(LustreDeploymentType::NOT_SET),
     m_deploymentTypeHasBeenSet(false),
+    m_autoImportPolicy(AutoImportPolicyType::NOT_SET),
+    m_autoImportPolicyHasBeenSet(false),
     m_perUnitStorageThroughput(0),
     m_perUnitStorageThroughputHasBeenSet(false),
     m_dailyAutomaticBackupStartTimeHasBeenSet(false),
@@ -90,6 +94,13 @@ CreateFileSystemLustreConfiguration& CreateFileSystemLustreConfiguration::operat
     m_deploymentType = LustreDeploymentTypeMapper::GetLustreDeploymentTypeForName(jsonValue.GetString("DeploymentType"));
 
     m_deploymentTypeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AutoImportPolicy"))
+  {
+    m_autoImportPolicy = AutoImportPolicyTypeMapper::GetAutoImportPolicyTypeForName(jsonValue.GetString("AutoImportPolicy"));
+
+    m_autoImportPolicyHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("PerUnitStorageThroughput"))
@@ -154,6 +165,11 @@ JsonValue CreateFileSystemLustreConfiguration::Jsonize() const
   if(m_deploymentTypeHasBeenSet)
   {
    payload.WithString("DeploymentType", LustreDeploymentTypeMapper::GetNameForLustreDeploymentType(m_deploymentType));
+  }
+
+  if(m_autoImportPolicyHasBeenSet)
+  {
+   payload.WithString("AutoImportPolicy", AutoImportPolicyTypeMapper::GetNameForAutoImportPolicyType(m_autoImportPolicy));
   }
 
   if(m_perUnitStorageThroughputHasBeenSet)

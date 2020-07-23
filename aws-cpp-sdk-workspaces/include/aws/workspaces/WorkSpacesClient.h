@@ -28,6 +28,7 @@
 #include <aws/workspaces/model/DescribeTagsResult.h>
 #include <aws/workspaces/model/DescribeWorkspaceBundlesResult.h>
 #include <aws/workspaces/model/DescribeWorkspaceDirectoriesResult.h>
+#include <aws/workspaces/model/DescribeWorkspaceImagePermissionsResult.h>
 #include <aws/workspaces/model/DescribeWorkspaceImagesResult.h>
 #include <aws/workspaces/model/DescribeWorkspaceSnapshotsResult.h>
 #include <aws/workspaces/model/DescribeWorkspacesResult.h>
@@ -52,6 +53,7 @@
 #include <aws/workspaces/model/StopWorkspacesResult.h>
 #include <aws/workspaces/model/TerminateWorkspacesResult.h>
 #include <aws/workspaces/model/UpdateRulesOfIpGroupResult.h>
+#include <aws/workspaces/model/UpdateWorkspaceImagePermissionResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
 #include <future>
@@ -108,6 +110,7 @@ namespace Model
         class DescribeTagsRequest;
         class DescribeWorkspaceBundlesRequest;
         class DescribeWorkspaceDirectoriesRequest;
+        class DescribeWorkspaceImagePermissionsRequest;
         class DescribeWorkspaceImagesRequest;
         class DescribeWorkspaceSnapshotsRequest;
         class DescribeWorkspacesRequest;
@@ -132,6 +135,7 @@ namespace Model
         class StopWorkspacesRequest;
         class TerminateWorkspacesRequest;
         class UpdateRulesOfIpGroupRequest;
+        class UpdateWorkspaceImagePermissionRequest;
 
         typedef Aws::Utils::Outcome<AssociateIpGroupsResult, WorkSpacesError> AssociateIpGroupsOutcome;
         typedef Aws::Utils::Outcome<AuthorizeIpRulesResult, WorkSpacesError> AuthorizeIpRulesOutcome;
@@ -150,6 +154,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribeTagsResult, WorkSpacesError> DescribeTagsOutcome;
         typedef Aws::Utils::Outcome<DescribeWorkspaceBundlesResult, WorkSpacesError> DescribeWorkspaceBundlesOutcome;
         typedef Aws::Utils::Outcome<DescribeWorkspaceDirectoriesResult, WorkSpacesError> DescribeWorkspaceDirectoriesOutcome;
+        typedef Aws::Utils::Outcome<DescribeWorkspaceImagePermissionsResult, WorkSpacesError> DescribeWorkspaceImagePermissionsOutcome;
         typedef Aws::Utils::Outcome<DescribeWorkspaceImagesResult, WorkSpacesError> DescribeWorkspaceImagesOutcome;
         typedef Aws::Utils::Outcome<DescribeWorkspaceSnapshotsResult, WorkSpacesError> DescribeWorkspaceSnapshotsOutcome;
         typedef Aws::Utils::Outcome<DescribeWorkspacesResult, WorkSpacesError> DescribeWorkspacesOutcome;
@@ -174,6 +179,7 @@ namespace Model
         typedef Aws::Utils::Outcome<StopWorkspacesResult, WorkSpacesError> StopWorkspacesOutcome;
         typedef Aws::Utils::Outcome<TerminateWorkspacesResult, WorkSpacesError> TerminateWorkspacesOutcome;
         typedef Aws::Utils::Outcome<UpdateRulesOfIpGroupResult, WorkSpacesError> UpdateRulesOfIpGroupOutcome;
+        typedef Aws::Utils::Outcome<UpdateWorkspaceImagePermissionResult, WorkSpacesError> UpdateWorkspaceImagePermissionOutcome;
 
         typedef std::future<AssociateIpGroupsOutcome> AssociateIpGroupsOutcomeCallable;
         typedef std::future<AuthorizeIpRulesOutcome> AuthorizeIpRulesOutcomeCallable;
@@ -192,6 +198,7 @@ namespace Model
         typedef std::future<DescribeTagsOutcome> DescribeTagsOutcomeCallable;
         typedef std::future<DescribeWorkspaceBundlesOutcome> DescribeWorkspaceBundlesOutcomeCallable;
         typedef std::future<DescribeWorkspaceDirectoriesOutcome> DescribeWorkspaceDirectoriesOutcomeCallable;
+        typedef std::future<DescribeWorkspaceImagePermissionsOutcome> DescribeWorkspaceImagePermissionsOutcomeCallable;
         typedef std::future<DescribeWorkspaceImagesOutcome> DescribeWorkspaceImagesOutcomeCallable;
         typedef std::future<DescribeWorkspaceSnapshotsOutcome> DescribeWorkspaceSnapshotsOutcomeCallable;
         typedef std::future<DescribeWorkspacesOutcome> DescribeWorkspacesOutcomeCallable;
@@ -216,6 +223,7 @@ namespace Model
         typedef std::future<StopWorkspacesOutcome> StopWorkspacesOutcomeCallable;
         typedef std::future<TerminateWorkspacesOutcome> TerminateWorkspacesOutcomeCallable;
         typedef std::future<UpdateRulesOfIpGroupOutcome> UpdateRulesOfIpGroupOutcomeCallable;
+        typedef std::future<UpdateWorkspaceImagePermissionOutcome> UpdateWorkspaceImagePermissionOutcomeCallable;
 } // namespace Model
 
   class WorkSpacesClient;
@@ -237,6 +245,7 @@ namespace Model
     typedef std::function<void(const WorkSpacesClient*, const Model::DescribeTagsRequest&, const Model::DescribeTagsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeTagsResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesClient*, const Model::DescribeWorkspaceBundlesRequest&, const Model::DescribeWorkspaceBundlesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeWorkspaceBundlesResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesClient*, const Model::DescribeWorkspaceDirectoriesRequest&, const Model::DescribeWorkspaceDirectoriesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeWorkspaceDirectoriesResponseReceivedHandler;
+    typedef std::function<void(const WorkSpacesClient*, const Model::DescribeWorkspaceImagePermissionsRequest&, const Model::DescribeWorkspaceImagePermissionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeWorkspaceImagePermissionsResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesClient*, const Model::DescribeWorkspaceImagesRequest&, const Model::DescribeWorkspaceImagesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeWorkspaceImagesResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesClient*, const Model::DescribeWorkspaceSnapshotsRequest&, const Model::DescribeWorkspaceSnapshotsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeWorkspaceSnapshotsResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesClient*, const Model::DescribeWorkspacesRequest&, const Model::DescribeWorkspacesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeWorkspacesResponseReceivedHandler;
@@ -261,6 +270,7 @@ namespace Model
     typedef std::function<void(const WorkSpacesClient*, const Model::StopWorkspacesRequest&, const Model::StopWorkspacesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopWorkspacesResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesClient*, const Model::TerminateWorkspacesRequest&, const Model::TerminateWorkspacesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TerminateWorkspacesResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesClient*, const Model::UpdateRulesOfIpGroupRequest&, const Model::UpdateRulesOfIpGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateRulesOfIpGroupResponseReceivedHandler;
+    typedef std::function<void(const WorkSpacesClient*, const Model::UpdateWorkspaceImagePermissionRequest&, const Model::UpdateWorkspaceImagePermissionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateWorkspaceImagePermissionResponseReceivedHandler;
 
   /**
    * <fullname>Amazon WorkSpaces Service</fullname> <p>Amazon WorkSpaces enables you
@@ -555,7 +565,7 @@ namespace Model
 
         /**
          * <p>Deletes the specified image from your account. To delete an image, you must
-         * first delete any bundles that are associated with the image and un-share the
+         * first delete any bundles that are associated with the image and unshare the
          * image if it is shared with other accounts. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DeleteWorkspaceImage">AWS
          * API Reference</a></p>
@@ -564,7 +574,7 @@ namespace Model
 
         /**
          * <p>Deletes the specified image from your account. To delete an image, you must
-         * first delete any bundles that are associated with the image and un-share the
+         * first delete any bundles that are associated with the image and unshare the
          * image if it is shared with other accounts. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DeleteWorkspaceImage">AWS
          * API Reference</a></p>
@@ -575,7 +585,7 @@ namespace Model
 
         /**
          * <p>Deletes the specified image from your account. To delete an image, you must
-         * first delete any bundles that are associated with the image and un-share the
+         * first delete any bundles that are associated with the image and unshare the
          * image if it is shared with other accounts. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DeleteWorkspaceImage">AWS
          * API Reference</a></p>
@@ -816,6 +826,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeWorkspaceDirectoriesAsync(const Model::DescribeWorkspaceDirectoriesRequest& request, const DescribeWorkspaceDirectoriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Describes the permissions that the owner of an image has granted to other AWS
+         * accounts for an image.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeWorkspaceImagePermissions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeWorkspaceImagePermissionsOutcome DescribeWorkspaceImagePermissions(const Model::DescribeWorkspaceImagePermissionsRequest& request) const;
+
+        /**
+         * <p>Describes the permissions that the owner of an image has granted to other AWS
+         * accounts for an image.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeWorkspaceImagePermissions">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeWorkspaceImagePermissionsOutcomeCallable DescribeWorkspaceImagePermissionsCallable(const Model::DescribeWorkspaceImagePermissionsRequest& request) const;
+
+        /**
+         * <p>Describes the permissions that the owner of an image has granted to other AWS
+         * accounts for an image.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeWorkspaceImagePermissions">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeWorkspaceImagePermissionsAsync(const Model::DescribeWorkspaceImagePermissionsRequest& request, const DescribeWorkspaceImagePermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves a list that describes one or more specified images, if the image
@@ -1251,14 +1289,20 @@ namespace Model
         virtual void ModifyWorkspaceCreationPropertiesAsync(const Model::ModifyWorkspaceCreationPropertiesRequest& request, const ModifyWorkspaceCreationPropertiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Modifies the specified WorkSpace properties.</p><p><h3>See Also:</h3>   <a
+         * <p>Modifies the specified WorkSpace properties. For important information about
+         * how to modify the size of the root and user volumes, see <a
+         * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/modify-workspaces.html">
+         * Modify a WorkSpace</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ModifyWorkspaceProperties">AWS
          * API Reference</a></p>
          */
         virtual Model::ModifyWorkspacePropertiesOutcome ModifyWorkspaceProperties(const Model::ModifyWorkspacePropertiesRequest& request) const;
 
         /**
-         * <p>Modifies the specified WorkSpace properties.</p><p><h3>See Also:</h3>   <a
+         * <p>Modifies the specified WorkSpace properties. For important information about
+         * how to modify the size of the root and user volumes, see <a
+         * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/modify-workspaces.html">
+         * Modify a WorkSpace</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ModifyWorkspaceProperties">AWS
          * API Reference</a></p>
          *
@@ -1267,7 +1311,10 @@ namespace Model
         virtual Model::ModifyWorkspacePropertiesOutcomeCallable ModifyWorkspacePropertiesCallable(const Model::ModifyWorkspacePropertiesRequest& request) const;
 
         /**
-         * <p>Modifies the specified WorkSpace properties.</p><p><h3>See Also:</h3>   <a
+         * <p>Modifies the specified WorkSpace properties. For important information about
+         * how to modify the size of the root and user volumes, see <a
+         * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/modify-workspaces.html">
+         * Modify a WorkSpace</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ModifyWorkspaceProperties">AWS
          * API Reference</a></p>
          *
@@ -1352,9 +1399,9 @@ namespace Model
         /**
          * <p>Rebuilds the specified WorkSpace.</p> <p>You cannot rebuild a WorkSpace
          * unless its state is <code>AVAILABLE</code>, <code>ERROR</code>,
-         * <code>UNHEALTHY</code>, or <code>STOPPED</code>.</p> <p>Rebuilding a WorkSpace
-         * is a potentially destructive action that can result in the loss of data. For
-         * more information, see <a
+         * <code>UNHEALTHY</code>, <code>STOPPED</code>, or <code>REBOOTING</code>.</p>
+         * <p>Rebuilding a WorkSpace is a potentially destructive action that can result in
+         * the loss of data. For more information, see <a
          * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/reset-workspace.html">Rebuild
          * a WorkSpace</a>.</p> <p>This operation is asynchronous and returns before the
          * WorkSpaces have been completely rebuilt.</p><p><h3>See Also:</h3>   <a
@@ -1366,9 +1413,9 @@ namespace Model
         /**
          * <p>Rebuilds the specified WorkSpace.</p> <p>You cannot rebuild a WorkSpace
          * unless its state is <code>AVAILABLE</code>, <code>ERROR</code>,
-         * <code>UNHEALTHY</code>, or <code>STOPPED</code>.</p> <p>Rebuilding a WorkSpace
-         * is a potentially destructive action that can result in the loss of data. For
-         * more information, see <a
+         * <code>UNHEALTHY</code>, <code>STOPPED</code>, or <code>REBOOTING</code>.</p>
+         * <p>Rebuilding a WorkSpace is a potentially destructive action that can result in
+         * the loss of data. For more information, see <a
          * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/reset-workspace.html">Rebuild
          * a WorkSpace</a>.</p> <p>This operation is asynchronous and returns before the
          * WorkSpaces have been completely rebuilt.</p><p><h3>See Also:</h3>   <a
@@ -1382,9 +1429,9 @@ namespace Model
         /**
          * <p>Rebuilds the specified WorkSpace.</p> <p>You cannot rebuild a WorkSpace
          * unless its state is <code>AVAILABLE</code>, <code>ERROR</code>,
-         * <code>UNHEALTHY</code>, or <code>STOPPED</code>.</p> <p>Rebuilding a WorkSpace
-         * is a potentially destructive action that can result in the loss of data. For
-         * more information, see <a
+         * <code>UNHEALTHY</code>, <code>STOPPED</code>, or <code>REBOOTING</code>.</p>
+         * <p>Rebuilding a WorkSpace is a potentially destructive action that can result in
+         * the loss of data. For more information, see <a
          * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/reset-workspace.html">Rebuild
          * a WorkSpace</a>.</p> <p>This operation is asynchronous and returns before the
          * WorkSpaces have been completely rebuilt.</p><p><h3>See Also:</h3>   <a
@@ -1642,6 +1689,55 @@ namespace Model
          */
         virtual void UpdateRulesOfIpGroupAsync(const Model::UpdateRulesOfIpGroupRequest& request, const UpdateRulesOfIpGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
+        /**
+         * <p>Shares or unshares an image with one account by specifying whether that
+         * account has permission to copy the image. If the copy image permission is
+         * granted, the image is shared with that account. If the copy image permission is
+         * revoked, the image is unshared with the account.</p>  <ul> <li> <p>To
+         * delete an image that has been shared, you must unshare the image before you
+         * delete it.</p> </li> <li> <p>Sharing Bring Your Own License (BYOL) images across
+         * AWS accounts isn't supported at this time in the AWS GovCloud (US-West) Region.
+         * To share BYOL images across accounts in the AWS GovCloud (US-West) Region,
+         * contact AWS Support.</p> </li> </ul> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/UpdateWorkspaceImagePermission">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateWorkspaceImagePermissionOutcome UpdateWorkspaceImagePermission(const Model::UpdateWorkspaceImagePermissionRequest& request) const;
+
+        /**
+         * <p>Shares or unshares an image with one account by specifying whether that
+         * account has permission to copy the image. If the copy image permission is
+         * granted, the image is shared with that account. If the copy image permission is
+         * revoked, the image is unshared with the account.</p>  <ul> <li> <p>To
+         * delete an image that has been shared, you must unshare the image before you
+         * delete it.</p> </li> <li> <p>Sharing Bring Your Own License (BYOL) images across
+         * AWS accounts isn't supported at this time in the AWS GovCloud (US-West) Region.
+         * To share BYOL images across accounts in the AWS GovCloud (US-West) Region,
+         * contact AWS Support.</p> </li> </ul> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/UpdateWorkspaceImagePermission">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateWorkspaceImagePermissionOutcomeCallable UpdateWorkspaceImagePermissionCallable(const Model::UpdateWorkspaceImagePermissionRequest& request) const;
+
+        /**
+         * <p>Shares or unshares an image with one account by specifying whether that
+         * account has permission to copy the image. If the copy image permission is
+         * granted, the image is shared with that account. If the copy image permission is
+         * revoked, the image is unshared with the account.</p>  <ul> <li> <p>To
+         * delete an image that has been shared, you must unshare the image before you
+         * delete it.</p> </li> <li> <p>Sharing Bring Your Own License (BYOL) images across
+         * AWS accounts isn't supported at this time in the AWS GovCloud (US-West) Region.
+         * To share BYOL images across accounts in the AWS GovCloud (US-West) Region,
+         * contact AWS Support.</p> </li> </ul> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/UpdateWorkspaceImagePermission">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateWorkspaceImagePermissionAsync(const Model::UpdateWorkspaceImagePermissionRequest& request, const UpdateWorkspaceImagePermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
 
       void OverrideEndpoint(const Aws::String& endpoint);
     private:
@@ -1663,6 +1759,7 @@ namespace Model
         void DescribeTagsAsyncHelper(const Model::DescribeTagsRequest& request, const DescribeTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeWorkspaceBundlesAsyncHelper(const Model::DescribeWorkspaceBundlesRequest& request, const DescribeWorkspaceBundlesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeWorkspaceDirectoriesAsyncHelper(const Model::DescribeWorkspaceDirectoriesRequest& request, const DescribeWorkspaceDirectoriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeWorkspaceImagePermissionsAsyncHelper(const Model::DescribeWorkspaceImagePermissionsRequest& request, const DescribeWorkspaceImagePermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeWorkspaceImagesAsyncHelper(const Model::DescribeWorkspaceImagesRequest& request, const DescribeWorkspaceImagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeWorkspaceSnapshotsAsyncHelper(const Model::DescribeWorkspaceSnapshotsRequest& request, const DescribeWorkspaceSnapshotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeWorkspacesAsyncHelper(const Model::DescribeWorkspacesRequest& request, const DescribeWorkspacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1687,6 +1784,7 @@ namespace Model
         void StopWorkspacesAsyncHelper(const Model::StopWorkspacesRequest& request, const StopWorkspacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void TerminateWorkspacesAsyncHelper(const Model::TerminateWorkspacesRequest& request, const TerminateWorkspacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateRulesOfIpGroupAsyncHelper(const Model::UpdateRulesOfIpGroupRequest& request, const UpdateRulesOfIpGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateWorkspaceImagePermissionAsyncHelper(const Model::UpdateWorkspaceImagePermissionRequest& request, const UpdateWorkspaceImagePermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;
       Aws::String m_configScheme;

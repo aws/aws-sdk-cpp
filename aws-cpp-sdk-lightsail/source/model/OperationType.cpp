@@ -75,6 +75,15 @@ namespace Aws
         static const int GetContactMethods_HASH = HashingUtils::HashString("GetContactMethods");
         static const int SendContactMethodVerification_HASH = HashingUtils::HashString("SendContactMethodVerification");
         static const int DeleteContactMethod_HASH = HashingUtils::HashString("DeleteContactMethod");
+        static const int CreateDistribution_HASH = HashingUtils::HashString("CreateDistribution");
+        static const int UpdateDistribution_HASH = HashingUtils::HashString("UpdateDistribution");
+        static const int DeleteDistribution_HASH = HashingUtils::HashString("DeleteDistribution");
+        static const int ResetDistributionCache_HASH = HashingUtils::HashString("ResetDistributionCache");
+        static const int AttachCertificateToDistribution_HASH = HashingUtils::HashString("AttachCertificateToDistribution");
+        static const int DetachCertificateFromDistribution_HASH = HashingUtils::HashString("DetachCertificateFromDistribution");
+        static const int UpdateDistributionBundle_HASH = HashingUtils::HashString("UpdateDistributionBundle");
+        static const int CreateCertificate_HASH = HashingUtils::HashString("CreateCertificate");
+        static const int DeleteCertificate_HASH = HashingUtils::HashString("DeleteCertificate");
 
 
         OperationType GetOperationTypeForName(const Aws::String& name)
@@ -300,6 +309,42 @@ namespace Aws
           {
             return OperationType::DeleteContactMethod;
           }
+          else if (hashCode == CreateDistribution_HASH)
+          {
+            return OperationType::CreateDistribution;
+          }
+          else if (hashCode == UpdateDistribution_HASH)
+          {
+            return OperationType::UpdateDistribution;
+          }
+          else if (hashCode == DeleteDistribution_HASH)
+          {
+            return OperationType::DeleteDistribution;
+          }
+          else if (hashCode == ResetDistributionCache_HASH)
+          {
+            return OperationType::ResetDistributionCache;
+          }
+          else if (hashCode == AttachCertificateToDistribution_HASH)
+          {
+            return OperationType::AttachCertificateToDistribution;
+          }
+          else if (hashCode == DetachCertificateFromDistribution_HASH)
+          {
+            return OperationType::DetachCertificateFromDistribution;
+          }
+          else if (hashCode == UpdateDistributionBundle_HASH)
+          {
+            return OperationType::UpdateDistributionBundle;
+          }
+          else if (hashCode == CreateCertificate_HASH)
+          {
+            return OperationType::CreateCertificate;
+          }
+          else if (hashCode == DeleteCertificate_HASH)
+          {
+            return OperationType::DeleteCertificate;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -424,6 +469,24 @@ namespace Aws
             return "SendContactMethodVerification";
           case OperationType::DeleteContactMethod:
             return "DeleteContactMethod";
+          case OperationType::CreateDistribution:
+            return "CreateDistribution";
+          case OperationType::UpdateDistribution:
+            return "UpdateDistribution";
+          case OperationType::DeleteDistribution:
+            return "DeleteDistribution";
+          case OperationType::ResetDistributionCache:
+            return "ResetDistributionCache";
+          case OperationType::AttachCertificateToDistribution:
+            return "AttachCertificateToDistribution";
+          case OperationType::DetachCertificateFromDistribution:
+            return "DetachCertificateFromDistribution";
+          case OperationType::UpdateDistributionBundle:
+            return "UpdateDistributionBundle";
+          case OperationType::CreateCertificate:
+            return "CreateCertificate";
+          case OperationType::DeleteCertificate:
+            return "DeleteCertificate";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

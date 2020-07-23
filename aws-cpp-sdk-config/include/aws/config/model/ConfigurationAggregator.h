@@ -258,6 +258,47 @@ namespace Model
      */
     inline ConfigurationAggregator& WithLastUpdatedTime(Aws::Utils::DateTime&& value) { SetLastUpdatedTime(std::move(value)); return *this;}
 
+
+    /**
+     * <p>AWS service that created the configuration aggregator.</p>
+     */
+    inline const Aws::String& GetCreatedBy() const{ return m_createdBy; }
+
+    /**
+     * <p>AWS service that created the configuration aggregator.</p>
+     */
+    inline bool CreatedByHasBeenSet() const { return m_createdByHasBeenSet; }
+
+    /**
+     * <p>AWS service that created the configuration aggregator.</p>
+     */
+    inline void SetCreatedBy(const Aws::String& value) { m_createdByHasBeenSet = true; m_createdBy = value; }
+
+    /**
+     * <p>AWS service that created the configuration aggregator.</p>
+     */
+    inline void SetCreatedBy(Aws::String&& value) { m_createdByHasBeenSet = true; m_createdBy = std::move(value); }
+
+    /**
+     * <p>AWS service that created the configuration aggregator.</p>
+     */
+    inline void SetCreatedBy(const char* value) { m_createdByHasBeenSet = true; m_createdBy.assign(value); }
+
+    /**
+     * <p>AWS service that created the configuration aggregator.</p>
+     */
+    inline ConfigurationAggregator& WithCreatedBy(const Aws::String& value) { SetCreatedBy(value); return *this;}
+
+    /**
+     * <p>AWS service that created the configuration aggregator.</p>
+     */
+    inline ConfigurationAggregator& WithCreatedBy(Aws::String&& value) { SetCreatedBy(std::move(value)); return *this;}
+
+    /**
+     * <p>AWS service that created the configuration aggregator.</p>
+     */
+    inline ConfigurationAggregator& WithCreatedBy(const char* value) { SetCreatedBy(value); return *this;}
+
   private:
 
     Aws::String m_configurationAggregatorName;
@@ -277,6 +318,9 @@ namespace Model
 
     Aws::Utils::DateTime m_lastUpdatedTime;
     bool m_lastUpdatedTimeHasBeenSet;
+
+    Aws::String m_createdBy;
+    bool m_createdByHasBeenSet;
   };
 
 } // namespace Model

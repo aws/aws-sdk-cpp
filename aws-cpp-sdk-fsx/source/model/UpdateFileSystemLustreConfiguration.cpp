@@ -22,7 +22,9 @@ UpdateFileSystemLustreConfiguration::UpdateFileSystemLustreConfiguration() :
     m_weeklyMaintenanceStartTimeHasBeenSet(false),
     m_dailyAutomaticBackupStartTimeHasBeenSet(false),
     m_automaticBackupRetentionDays(0),
-    m_automaticBackupRetentionDaysHasBeenSet(false)
+    m_automaticBackupRetentionDaysHasBeenSet(false),
+    m_autoImportPolicy(AutoImportPolicyType::NOT_SET),
+    m_autoImportPolicyHasBeenSet(false)
 {
 }
 
@@ -30,7 +32,9 @@ UpdateFileSystemLustreConfiguration::UpdateFileSystemLustreConfiguration(JsonVie
     m_weeklyMaintenanceStartTimeHasBeenSet(false),
     m_dailyAutomaticBackupStartTimeHasBeenSet(false),
     m_automaticBackupRetentionDays(0),
-    m_automaticBackupRetentionDaysHasBeenSet(false)
+    m_automaticBackupRetentionDaysHasBeenSet(false),
+    m_autoImportPolicy(AutoImportPolicyType::NOT_SET),
+    m_autoImportPolicyHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -58,6 +62,13 @@ UpdateFileSystemLustreConfiguration& UpdateFileSystemLustreConfiguration::operat
     m_automaticBackupRetentionDaysHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("AutoImportPolicy"))
+  {
+    m_autoImportPolicy = AutoImportPolicyTypeMapper::GetAutoImportPolicyTypeForName(jsonValue.GetString("AutoImportPolicy"));
+
+    m_autoImportPolicyHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -81,6 +92,11 @@ JsonValue UpdateFileSystemLustreConfiguration::Jsonize() const
   {
    payload.WithInteger("AutomaticBackupRetentionDays", m_automaticBackupRetentionDays);
 
+  }
+
+  if(m_autoImportPolicyHasBeenSet)
+  {
+   payload.WithString("AutoImportPolicy", AutoImportPolicyTypeMapper::GetNameForAutoImportPolicyType(m_autoImportPolicy));
   }
 
   return payload;

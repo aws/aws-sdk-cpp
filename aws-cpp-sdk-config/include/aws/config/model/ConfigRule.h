@@ -231,7 +231,7 @@ namespace Model
      * resource ID, or a combination of a tag key and value. Specify a scope to
      * constrain the resources that can trigger an evaluation for the rule. If you do
      * not specify a scope, evaluations are triggered when any resource in the
-     * recording group changes.</p>
+     * recording group changes.</p>  <p>The scope can be empty. </p> 
      */
     inline const Scope& GetScope() const{ return m_scope; }
 
@@ -241,7 +241,7 @@ namespace Model
      * resource ID, or a combination of a tag key and value. Specify a scope to
      * constrain the resources that can trigger an evaluation for the rule. If you do
      * not specify a scope, evaluations are triggered when any resource in the
-     * recording group changes.</p>
+     * recording group changes.</p>  <p>The scope can be empty. </p> 
      */
     inline bool ScopeHasBeenSet() const { return m_scopeHasBeenSet; }
 
@@ -251,7 +251,7 @@ namespace Model
      * resource ID, or a combination of a tag key and value. Specify a scope to
      * constrain the resources that can trigger an evaluation for the rule. If you do
      * not specify a scope, evaluations are triggered when any resource in the
-     * recording group changes.</p>
+     * recording group changes.</p>  <p>The scope can be empty. </p> 
      */
     inline void SetScope(const Scope& value) { m_scopeHasBeenSet = true; m_scope = value; }
 
@@ -261,7 +261,7 @@ namespace Model
      * resource ID, or a combination of a tag key and value. Specify a scope to
      * constrain the resources that can trigger an evaluation for the rule. If you do
      * not specify a scope, evaluations are triggered when any resource in the
-     * recording group changes.</p>
+     * recording group changes.</p>  <p>The scope can be empty. </p> 
      */
     inline void SetScope(Scope&& value) { m_scopeHasBeenSet = true; m_scope = std::move(value); }
 
@@ -271,7 +271,7 @@ namespace Model
      * resource ID, or a combination of a tag key and value. Specify a scope to
      * constrain the resources that can trigger an evaluation for the rule. If you do
      * not specify a scope, evaluations are triggered when any resource in the
-     * recording group changes.</p>
+     * recording group changes.</p>  <p>The scope can be empty. </p> 
      */
     inline ConfigRule& WithScope(const Scope& value) { SetScope(value); return *this;}
 
@@ -281,7 +281,7 @@ namespace Model
      * resource ID, or a combination of a tag key and value. Specify a scope to
      * constrain the resources that can trigger an evaluation for the rule. If you do
      * not specify a scope, evaluations are triggered when any resource in the
-     * recording group changes.</p>
+     * recording group changes.</p>  <p>The scope can be empty. </p> 
      */
     inline ConfigRule& WithScope(Scope&& value) { SetScope(std::move(value)); return *this;}
 

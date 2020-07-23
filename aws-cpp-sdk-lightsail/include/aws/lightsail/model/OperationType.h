@@ -70,7 +70,16 @@ namespace Model
     CreateContactMethod,
     GetContactMethods,
     SendContactMethodVerification,
-    DeleteContactMethod
+    DeleteContactMethod,
+    CreateDistribution,
+    UpdateDistribution,
+    DeleteDistribution,
+    ResetDistributionCache,
+    AttachCertificateToDistribution,
+    DetachCertificateFromDistribution,
+    UpdateDistributionBundle,
+    CreateCertificate,
+    DeleteCertificate
   };
 
 namespace OperationTypeMapper

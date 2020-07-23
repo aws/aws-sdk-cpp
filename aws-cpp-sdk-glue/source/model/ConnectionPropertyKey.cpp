@@ -38,6 +38,9 @@ namespace Aws
         static const int CUSTOM_JDBC_CERT_STRING_HASH = HashingUtils::HashString("CUSTOM_JDBC_CERT_STRING");
         static const int CONNECTION_URL_HASH = HashingUtils::HashString("CONNECTION_URL");
         static const int KAFKA_BOOTSTRAP_SERVERS_HASH = HashingUtils::HashString("KAFKA_BOOTSTRAP_SERVERS");
+        static const int KAFKA_SSL_ENABLED_HASH = HashingUtils::HashString("KAFKA_SSL_ENABLED");
+        static const int KAFKA_CUSTOM_CERT_HASH = HashingUtils::HashString("KAFKA_CUSTOM_CERT");
+        static const int KAFKA_SKIP_CUSTOM_CERT_VALIDATION_HASH = HashingUtils::HashString("KAFKA_SKIP_CUSTOM_CERT_VALIDATION");
 
 
         ConnectionPropertyKey GetConnectionPropertyKeyForName(const Aws::String& name)
@@ -115,6 +118,18 @@ namespace Aws
           {
             return ConnectionPropertyKey::KAFKA_BOOTSTRAP_SERVERS;
           }
+          else if (hashCode == KAFKA_SSL_ENABLED_HASH)
+          {
+            return ConnectionPropertyKey::KAFKA_SSL_ENABLED;
+          }
+          else if (hashCode == KAFKA_CUSTOM_CERT_HASH)
+          {
+            return ConnectionPropertyKey::KAFKA_CUSTOM_CERT;
+          }
+          else if (hashCode == KAFKA_SKIP_CUSTOM_CERT_VALIDATION_HASH)
+          {
+            return ConnectionPropertyKey::KAFKA_SKIP_CUSTOM_CERT_VALIDATION;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -165,6 +180,12 @@ namespace Aws
             return "CONNECTION_URL";
           case ConnectionPropertyKey::KAFKA_BOOTSTRAP_SERVERS:
             return "KAFKA_BOOTSTRAP_SERVERS";
+          case ConnectionPropertyKey::KAFKA_SSL_ENABLED:
+            return "KAFKA_SSL_ENABLED";
+          case ConnectionPropertyKey::KAFKA_CUSTOM_CERT:
+            return "KAFKA_CUSTOM_CERT";
+          case ConnectionPropertyKey::KAFKA_SKIP_CUSTOM_CERT_VALIDATION:
+            return "KAFKA_SKIP_CUSTOM_CERT_VALIDATION";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

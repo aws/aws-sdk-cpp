@@ -31,7 +31,9 @@ namespace Model
     ExportSnapshotRecord,
     CloudFormationStackRecord,
     Alarm,
-    ContactMethod
+    ContactMethod,
+    Distribution,
+    Certificate
   };
 
 namespace ResourceTypeMapper

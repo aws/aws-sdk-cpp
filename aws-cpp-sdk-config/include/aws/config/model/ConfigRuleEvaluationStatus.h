@@ -343,22 +343,34 @@ namespace Model
     inline ConfigRuleEvaluationStatus& WithFirstActivatedTime(Aws::Utils::DateTime&& value) { SetFirstActivatedTime(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p>The time that you last turned off the AWS Config rule.</p>
+     */
     inline const Aws::Utils::DateTime& GetLastDeactivatedTime() const{ return m_lastDeactivatedTime; }
 
-    
+    /**
+     * <p>The time that you last turned off the AWS Config rule.</p>
+     */
     inline bool LastDeactivatedTimeHasBeenSet() const { return m_lastDeactivatedTimeHasBeenSet; }
 
-    
+    /**
+     * <p>The time that you last turned off the AWS Config rule.</p>
+     */
     inline void SetLastDeactivatedTime(const Aws::Utils::DateTime& value) { m_lastDeactivatedTimeHasBeenSet = true; m_lastDeactivatedTime = value; }
 
-    
+    /**
+     * <p>The time that you last turned off the AWS Config rule.</p>
+     */
     inline void SetLastDeactivatedTime(Aws::Utils::DateTime&& value) { m_lastDeactivatedTimeHasBeenSet = true; m_lastDeactivatedTime = std::move(value); }
 
-    
+    /**
+     * <p>The time that you last turned off the AWS Config rule.</p>
+     */
     inline ConfigRuleEvaluationStatus& WithLastDeactivatedTime(const Aws::Utils::DateTime& value) { SetLastDeactivatedTime(value); return *this;}
 
-    
+    /**
+     * <p>The time that you last turned off the AWS Config rule.</p>
+     */
     inline ConfigRuleEvaluationStatus& WithLastDeactivatedTime(Aws::Utils::DateTime&& value) { SetLastDeactivatedTime(std::move(value)); return *this;}
 
 

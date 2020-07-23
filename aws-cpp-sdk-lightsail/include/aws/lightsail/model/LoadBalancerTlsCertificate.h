@@ -605,32 +605,254 @@ namespace Model
 
 
     /**
-     * <p>The reason for the SSL/TLS certificate validation failure.</p>
+     * <p>The validation failure reason, if any, of the certificate.</p> <p>The
+     * following failure reasons are possible:</p> <ul> <li> <p> <b>
+     * <code>NO_AVAILABLE_CONTACTS</code> </b> - This failure applies to email
+     * validation, which is not available for Lightsail certificates.</p> </li> <li>
+     * <p> <b> <code>ADDITIONAL_VERIFICATION_REQUIRED</code> </b> - Lightsail requires
+     * additional information to process this certificate request. This can happen as a
+     * fraud-protection measure, such as when the domain ranks within the Alexa top
+     * 1000 websites. To provide the required information, use the <a
+     * href="https://console.aws.amazon.com/support/home">AWS Support Center</a> to
+     * contact AWS Support.</p>  <p>You cannot request a certificate for
+     * Amazon-owned domain names such as those ending in amazonaws.com, cloudfront.net,
+     * or elasticbeanstalk.com.</p>  </li> <li> <p> <b>
+     * <code>DOMAIN_NOT_ALLOWED</code> </b> - One or more of the domain names in the
+     * certificate request was reported as an unsafe domain by <a
+     * href="https://www.virustotal.com/gui/home/url">VirusTotal</a>. To correct the
+     * problem, search for your domain name on the <a
+     * href="https://www.virustotal.com/gui/home/url">VirusTotal</a> website. If your
+     * domain is reported as suspicious, see <a
+     * href="https://www.google.com/webmasters/hacked/?hl=en">Google Help for Hacked
+     * Websites</a> to learn what you can do.</p> <p>If you believe that the result is
+     * a false positive, notify the organization that is reporting the domain.
+     * VirusTotal is an aggregate of several antivirus and URL scanners and cannot
+     * remove your domain from a block list itself. After you correct the problem and
+     * the VirusTotal registry has been updated, request a new certificate.</p> <p>If
+     * you see this error and your domain is not included in the VirusTotal list, visit
+     * the <a href="https://console.aws.amazon.com/support/home">AWS Support Center</a>
+     * and create a case.</p> </li> <li> <p> <b> <code>INVALID_PUBLIC_DOMAIN</code>
+     * </b> - One or more of the domain names in the certificate request is not valid.
+     * Typically, this is because a domain name in the request is not a valid top-level
+     * domain. Try to request a certificate again, correcting any spelling errors or
+     * typos that were in the failed request, and ensure that all domain names in the
+     * request are for valid top-level domains. For example, you cannot request a
+     * certificate for <code>example.invalidpublicdomain</code> because
+     * <code>invalidpublicdomain</code> is not a valid top-level domain.</p> </li> <li>
+     * <p> <b> <code>OTHER</code> </b> - Typically, this failure occurs when there is a
+     * typographical error in one or more of the domain names in the certificate
+     * request. Try to request a certificate again, correcting any spelling errors or
+     * typos that were in the failed request. </p> </li> </ul>
      */
     inline const LoadBalancerTlsCertificateFailureReason& GetFailureReason() const{ return m_failureReason; }
 
     /**
-     * <p>The reason for the SSL/TLS certificate validation failure.</p>
+     * <p>The validation failure reason, if any, of the certificate.</p> <p>The
+     * following failure reasons are possible:</p> <ul> <li> <p> <b>
+     * <code>NO_AVAILABLE_CONTACTS</code> </b> - This failure applies to email
+     * validation, which is not available for Lightsail certificates.</p> </li> <li>
+     * <p> <b> <code>ADDITIONAL_VERIFICATION_REQUIRED</code> </b> - Lightsail requires
+     * additional information to process this certificate request. This can happen as a
+     * fraud-protection measure, such as when the domain ranks within the Alexa top
+     * 1000 websites. To provide the required information, use the <a
+     * href="https://console.aws.amazon.com/support/home">AWS Support Center</a> to
+     * contact AWS Support.</p>  <p>You cannot request a certificate for
+     * Amazon-owned domain names such as those ending in amazonaws.com, cloudfront.net,
+     * or elasticbeanstalk.com.</p>  </li> <li> <p> <b>
+     * <code>DOMAIN_NOT_ALLOWED</code> </b> - One or more of the domain names in the
+     * certificate request was reported as an unsafe domain by <a
+     * href="https://www.virustotal.com/gui/home/url">VirusTotal</a>. To correct the
+     * problem, search for your domain name on the <a
+     * href="https://www.virustotal.com/gui/home/url">VirusTotal</a> website. If your
+     * domain is reported as suspicious, see <a
+     * href="https://www.google.com/webmasters/hacked/?hl=en">Google Help for Hacked
+     * Websites</a> to learn what you can do.</p> <p>If you believe that the result is
+     * a false positive, notify the organization that is reporting the domain.
+     * VirusTotal is an aggregate of several antivirus and URL scanners and cannot
+     * remove your domain from a block list itself. After you correct the problem and
+     * the VirusTotal registry has been updated, request a new certificate.</p> <p>If
+     * you see this error and your domain is not included in the VirusTotal list, visit
+     * the <a href="https://console.aws.amazon.com/support/home">AWS Support Center</a>
+     * and create a case.</p> </li> <li> <p> <b> <code>INVALID_PUBLIC_DOMAIN</code>
+     * </b> - One or more of the domain names in the certificate request is not valid.
+     * Typically, this is because a domain name in the request is not a valid top-level
+     * domain. Try to request a certificate again, correcting any spelling errors or
+     * typos that were in the failed request, and ensure that all domain names in the
+     * request are for valid top-level domains. For example, you cannot request a
+     * certificate for <code>example.invalidpublicdomain</code> because
+     * <code>invalidpublicdomain</code> is not a valid top-level domain.</p> </li> <li>
+     * <p> <b> <code>OTHER</code> </b> - Typically, this failure occurs when there is a
+     * typographical error in one or more of the domain names in the certificate
+     * request. Try to request a certificate again, correcting any spelling errors or
+     * typos that were in the failed request. </p> </li> </ul>
      */
     inline bool FailureReasonHasBeenSet() const { return m_failureReasonHasBeenSet; }
 
     /**
-     * <p>The reason for the SSL/TLS certificate validation failure.</p>
+     * <p>The validation failure reason, if any, of the certificate.</p> <p>The
+     * following failure reasons are possible:</p> <ul> <li> <p> <b>
+     * <code>NO_AVAILABLE_CONTACTS</code> </b> - This failure applies to email
+     * validation, which is not available for Lightsail certificates.</p> </li> <li>
+     * <p> <b> <code>ADDITIONAL_VERIFICATION_REQUIRED</code> </b> - Lightsail requires
+     * additional information to process this certificate request. This can happen as a
+     * fraud-protection measure, such as when the domain ranks within the Alexa top
+     * 1000 websites. To provide the required information, use the <a
+     * href="https://console.aws.amazon.com/support/home">AWS Support Center</a> to
+     * contact AWS Support.</p>  <p>You cannot request a certificate for
+     * Amazon-owned domain names such as those ending in amazonaws.com, cloudfront.net,
+     * or elasticbeanstalk.com.</p>  </li> <li> <p> <b>
+     * <code>DOMAIN_NOT_ALLOWED</code> </b> - One or more of the domain names in the
+     * certificate request was reported as an unsafe domain by <a
+     * href="https://www.virustotal.com/gui/home/url">VirusTotal</a>. To correct the
+     * problem, search for your domain name on the <a
+     * href="https://www.virustotal.com/gui/home/url">VirusTotal</a> website. If your
+     * domain is reported as suspicious, see <a
+     * href="https://www.google.com/webmasters/hacked/?hl=en">Google Help for Hacked
+     * Websites</a> to learn what you can do.</p> <p>If you believe that the result is
+     * a false positive, notify the organization that is reporting the domain.
+     * VirusTotal is an aggregate of several antivirus and URL scanners and cannot
+     * remove your domain from a block list itself. After you correct the problem and
+     * the VirusTotal registry has been updated, request a new certificate.</p> <p>If
+     * you see this error and your domain is not included in the VirusTotal list, visit
+     * the <a href="https://console.aws.amazon.com/support/home">AWS Support Center</a>
+     * and create a case.</p> </li> <li> <p> <b> <code>INVALID_PUBLIC_DOMAIN</code>
+     * </b> - One or more of the domain names in the certificate request is not valid.
+     * Typically, this is because a domain name in the request is not a valid top-level
+     * domain. Try to request a certificate again, correcting any spelling errors or
+     * typos that were in the failed request, and ensure that all domain names in the
+     * request are for valid top-level domains. For example, you cannot request a
+     * certificate for <code>example.invalidpublicdomain</code> because
+     * <code>invalidpublicdomain</code> is not a valid top-level domain.</p> </li> <li>
+     * <p> <b> <code>OTHER</code> </b> - Typically, this failure occurs when there is a
+     * typographical error in one or more of the domain names in the certificate
+     * request. Try to request a certificate again, correcting any spelling errors or
+     * typos that were in the failed request. </p> </li> </ul>
      */
     inline void SetFailureReason(const LoadBalancerTlsCertificateFailureReason& value) { m_failureReasonHasBeenSet = true; m_failureReason = value; }
 
     /**
-     * <p>The reason for the SSL/TLS certificate validation failure.</p>
+     * <p>The validation failure reason, if any, of the certificate.</p> <p>The
+     * following failure reasons are possible:</p> <ul> <li> <p> <b>
+     * <code>NO_AVAILABLE_CONTACTS</code> </b> - This failure applies to email
+     * validation, which is not available for Lightsail certificates.</p> </li> <li>
+     * <p> <b> <code>ADDITIONAL_VERIFICATION_REQUIRED</code> </b> - Lightsail requires
+     * additional information to process this certificate request. This can happen as a
+     * fraud-protection measure, such as when the domain ranks within the Alexa top
+     * 1000 websites. To provide the required information, use the <a
+     * href="https://console.aws.amazon.com/support/home">AWS Support Center</a> to
+     * contact AWS Support.</p>  <p>You cannot request a certificate for
+     * Amazon-owned domain names such as those ending in amazonaws.com, cloudfront.net,
+     * or elasticbeanstalk.com.</p>  </li> <li> <p> <b>
+     * <code>DOMAIN_NOT_ALLOWED</code> </b> - One or more of the domain names in the
+     * certificate request was reported as an unsafe domain by <a
+     * href="https://www.virustotal.com/gui/home/url">VirusTotal</a>. To correct the
+     * problem, search for your domain name on the <a
+     * href="https://www.virustotal.com/gui/home/url">VirusTotal</a> website. If your
+     * domain is reported as suspicious, see <a
+     * href="https://www.google.com/webmasters/hacked/?hl=en">Google Help for Hacked
+     * Websites</a> to learn what you can do.</p> <p>If you believe that the result is
+     * a false positive, notify the organization that is reporting the domain.
+     * VirusTotal is an aggregate of several antivirus and URL scanners and cannot
+     * remove your domain from a block list itself. After you correct the problem and
+     * the VirusTotal registry has been updated, request a new certificate.</p> <p>If
+     * you see this error and your domain is not included in the VirusTotal list, visit
+     * the <a href="https://console.aws.amazon.com/support/home">AWS Support Center</a>
+     * and create a case.</p> </li> <li> <p> <b> <code>INVALID_PUBLIC_DOMAIN</code>
+     * </b> - One or more of the domain names in the certificate request is not valid.
+     * Typically, this is because a domain name in the request is not a valid top-level
+     * domain. Try to request a certificate again, correcting any spelling errors or
+     * typos that were in the failed request, and ensure that all domain names in the
+     * request are for valid top-level domains. For example, you cannot request a
+     * certificate for <code>example.invalidpublicdomain</code> because
+     * <code>invalidpublicdomain</code> is not a valid top-level domain.</p> </li> <li>
+     * <p> <b> <code>OTHER</code> </b> - Typically, this failure occurs when there is a
+     * typographical error in one or more of the domain names in the certificate
+     * request. Try to request a certificate again, correcting any spelling errors or
+     * typos that were in the failed request. </p> </li> </ul>
      */
     inline void SetFailureReason(LoadBalancerTlsCertificateFailureReason&& value) { m_failureReasonHasBeenSet = true; m_failureReason = std::move(value); }
 
     /**
-     * <p>The reason for the SSL/TLS certificate validation failure.</p>
+     * <p>The validation failure reason, if any, of the certificate.</p> <p>The
+     * following failure reasons are possible:</p> <ul> <li> <p> <b>
+     * <code>NO_AVAILABLE_CONTACTS</code> </b> - This failure applies to email
+     * validation, which is not available for Lightsail certificates.</p> </li> <li>
+     * <p> <b> <code>ADDITIONAL_VERIFICATION_REQUIRED</code> </b> - Lightsail requires
+     * additional information to process this certificate request. This can happen as a
+     * fraud-protection measure, such as when the domain ranks within the Alexa top
+     * 1000 websites. To provide the required information, use the <a
+     * href="https://console.aws.amazon.com/support/home">AWS Support Center</a> to
+     * contact AWS Support.</p>  <p>You cannot request a certificate for
+     * Amazon-owned domain names such as those ending in amazonaws.com, cloudfront.net,
+     * or elasticbeanstalk.com.</p>  </li> <li> <p> <b>
+     * <code>DOMAIN_NOT_ALLOWED</code> </b> - One or more of the domain names in the
+     * certificate request was reported as an unsafe domain by <a
+     * href="https://www.virustotal.com/gui/home/url">VirusTotal</a>. To correct the
+     * problem, search for your domain name on the <a
+     * href="https://www.virustotal.com/gui/home/url">VirusTotal</a> website. If your
+     * domain is reported as suspicious, see <a
+     * href="https://www.google.com/webmasters/hacked/?hl=en">Google Help for Hacked
+     * Websites</a> to learn what you can do.</p> <p>If you believe that the result is
+     * a false positive, notify the organization that is reporting the domain.
+     * VirusTotal is an aggregate of several antivirus and URL scanners and cannot
+     * remove your domain from a block list itself. After you correct the problem and
+     * the VirusTotal registry has been updated, request a new certificate.</p> <p>If
+     * you see this error and your domain is not included in the VirusTotal list, visit
+     * the <a href="https://console.aws.amazon.com/support/home">AWS Support Center</a>
+     * and create a case.</p> </li> <li> <p> <b> <code>INVALID_PUBLIC_DOMAIN</code>
+     * </b> - One or more of the domain names in the certificate request is not valid.
+     * Typically, this is because a domain name in the request is not a valid top-level
+     * domain. Try to request a certificate again, correcting any spelling errors or
+     * typos that were in the failed request, and ensure that all domain names in the
+     * request are for valid top-level domains. For example, you cannot request a
+     * certificate for <code>example.invalidpublicdomain</code> because
+     * <code>invalidpublicdomain</code> is not a valid top-level domain.</p> </li> <li>
+     * <p> <b> <code>OTHER</code> </b> - Typically, this failure occurs when there is a
+     * typographical error in one or more of the domain names in the certificate
+     * request. Try to request a certificate again, correcting any spelling errors or
+     * typos that were in the failed request. </p> </li> </ul>
      */
     inline LoadBalancerTlsCertificate& WithFailureReason(const LoadBalancerTlsCertificateFailureReason& value) { SetFailureReason(value); return *this;}
 
     /**
-     * <p>The reason for the SSL/TLS certificate validation failure.</p>
+     * <p>The validation failure reason, if any, of the certificate.</p> <p>The
+     * following failure reasons are possible:</p> <ul> <li> <p> <b>
+     * <code>NO_AVAILABLE_CONTACTS</code> </b> - This failure applies to email
+     * validation, which is not available for Lightsail certificates.</p> </li> <li>
+     * <p> <b> <code>ADDITIONAL_VERIFICATION_REQUIRED</code> </b> - Lightsail requires
+     * additional information to process this certificate request. This can happen as a
+     * fraud-protection measure, such as when the domain ranks within the Alexa top
+     * 1000 websites. To provide the required information, use the <a
+     * href="https://console.aws.amazon.com/support/home">AWS Support Center</a> to
+     * contact AWS Support.</p>  <p>You cannot request a certificate for
+     * Amazon-owned domain names such as those ending in amazonaws.com, cloudfront.net,
+     * or elasticbeanstalk.com.</p>  </li> <li> <p> <b>
+     * <code>DOMAIN_NOT_ALLOWED</code> </b> - One or more of the domain names in the
+     * certificate request was reported as an unsafe domain by <a
+     * href="https://www.virustotal.com/gui/home/url">VirusTotal</a>. To correct the
+     * problem, search for your domain name on the <a
+     * href="https://www.virustotal.com/gui/home/url">VirusTotal</a> website. If your
+     * domain is reported as suspicious, see <a
+     * href="https://www.google.com/webmasters/hacked/?hl=en">Google Help for Hacked
+     * Websites</a> to learn what you can do.</p> <p>If you believe that the result is
+     * a false positive, notify the organization that is reporting the domain.
+     * VirusTotal is an aggregate of several antivirus and URL scanners and cannot
+     * remove your domain from a block list itself. After you correct the problem and
+     * the VirusTotal registry has been updated, request a new certificate.</p> <p>If
+     * you see this error and your domain is not included in the VirusTotal list, visit
+     * the <a href="https://console.aws.amazon.com/support/home">AWS Support Center</a>
+     * and create a case.</p> </li> <li> <p> <b> <code>INVALID_PUBLIC_DOMAIN</code>
+     * </b> - One or more of the domain names in the certificate request is not valid.
+     * Typically, this is because a domain name in the request is not a valid top-level
+     * domain. Try to request a certificate again, correcting any spelling errors or
+     * typos that were in the failed request, and ensure that all domain names in the
+     * request are for valid top-level domains. For example, you cannot request a
+     * certificate for <code>example.invalidpublicdomain</code> because
+     * <code>invalidpublicdomain</code> is not a valid top-level domain.</p> </li> <li>
+     * <p> <b> <code>OTHER</code> </b> - Typically, this failure occurs when there is a
+     * typographical error in one or more of the domain names in the certificate
+     * request. Try to request a certificate again, correcting any spelling errors or
+     * typos that were in the failed request. </p> </li> </ul>
      */
     inline LoadBalancerTlsCertificate& WithFailureReason(LoadBalancerTlsCertificateFailureReason&& value) { SetFailureReason(std::move(value)); return *this;}
 
@@ -708,50 +930,42 @@ namespace Model
 
 
     /**
-     * <p>The algorithm that was used to generate the key pair (the public and private
-     * key).</p>
+     * <p>The algorithm used to generate the key pair (the public and private key).</p>
      */
     inline const Aws::String& GetKeyAlgorithm() const{ return m_keyAlgorithm; }
 
     /**
-     * <p>The algorithm that was used to generate the key pair (the public and private
-     * key).</p>
+     * <p>The algorithm used to generate the key pair (the public and private key).</p>
      */
     inline bool KeyAlgorithmHasBeenSet() const { return m_keyAlgorithmHasBeenSet; }
 
     /**
-     * <p>The algorithm that was used to generate the key pair (the public and private
-     * key).</p>
+     * <p>The algorithm used to generate the key pair (the public and private key).</p>
      */
     inline void SetKeyAlgorithm(const Aws::String& value) { m_keyAlgorithmHasBeenSet = true; m_keyAlgorithm = value; }
 
     /**
-     * <p>The algorithm that was used to generate the key pair (the public and private
-     * key).</p>
+     * <p>The algorithm used to generate the key pair (the public and private key).</p>
      */
     inline void SetKeyAlgorithm(Aws::String&& value) { m_keyAlgorithmHasBeenSet = true; m_keyAlgorithm = std::move(value); }
 
     /**
-     * <p>The algorithm that was used to generate the key pair (the public and private
-     * key).</p>
+     * <p>The algorithm used to generate the key pair (the public and private key).</p>
      */
     inline void SetKeyAlgorithm(const char* value) { m_keyAlgorithmHasBeenSet = true; m_keyAlgorithm.assign(value); }
 
     /**
-     * <p>The algorithm that was used to generate the key pair (the public and private
-     * key).</p>
+     * <p>The algorithm used to generate the key pair (the public and private key).</p>
      */
     inline LoadBalancerTlsCertificate& WithKeyAlgorithm(const Aws::String& value) { SetKeyAlgorithm(value); return *this;}
 
     /**
-     * <p>The algorithm that was used to generate the key pair (the public and private
-     * key).</p>
+     * <p>The algorithm used to generate the key pair (the public and private key).</p>
      */
     inline LoadBalancerTlsCertificate& WithKeyAlgorithm(Aws::String&& value) { SetKeyAlgorithm(std::move(value)); return *this;}
 
     /**
-     * <p>The algorithm that was used to generate the key pair (the public and private
-     * key).</p>
+     * <p>The algorithm used to generate the key pair (the public and private key).</p>
      */
     inline LoadBalancerTlsCertificate& WithKeyAlgorithm(const char* value) { SetKeyAlgorithm(value); return *this;}
 
@@ -819,100 +1033,112 @@ namespace Model
 
 
     /**
-     * <p>An object containing information about the status of Lightsail's managed
-     * renewal for the certificate.</p>
+     * <p>An object that describes the status of the certificate renewal managed by
+     * Lightsail.</p>
      */
     inline const LoadBalancerTlsCertificateRenewalSummary& GetRenewalSummary() const{ return m_renewalSummary; }
 
     /**
-     * <p>An object containing information about the status of Lightsail's managed
-     * renewal for the certificate.</p>
+     * <p>An object that describes the status of the certificate renewal managed by
+     * Lightsail.</p>
      */
     inline bool RenewalSummaryHasBeenSet() const { return m_renewalSummaryHasBeenSet; }
 
     /**
-     * <p>An object containing information about the status of Lightsail's managed
-     * renewal for the certificate.</p>
+     * <p>An object that describes the status of the certificate renewal managed by
+     * Lightsail.</p>
      */
     inline void SetRenewalSummary(const LoadBalancerTlsCertificateRenewalSummary& value) { m_renewalSummaryHasBeenSet = true; m_renewalSummary = value; }
 
     /**
-     * <p>An object containing information about the status of Lightsail's managed
-     * renewal for the certificate.</p>
+     * <p>An object that describes the status of the certificate renewal managed by
+     * Lightsail.</p>
      */
     inline void SetRenewalSummary(LoadBalancerTlsCertificateRenewalSummary&& value) { m_renewalSummaryHasBeenSet = true; m_renewalSummary = std::move(value); }
 
     /**
-     * <p>An object containing information about the status of Lightsail's managed
-     * renewal for the certificate.</p>
+     * <p>An object that describes the status of the certificate renewal managed by
+     * Lightsail.</p>
      */
     inline LoadBalancerTlsCertificate& WithRenewalSummary(const LoadBalancerTlsCertificateRenewalSummary& value) { SetRenewalSummary(value); return *this;}
 
     /**
-     * <p>An object containing information about the status of Lightsail's managed
-     * renewal for the certificate.</p>
+     * <p>An object that describes the status of the certificate renewal managed by
+     * Lightsail.</p>
      */
     inline LoadBalancerTlsCertificate& WithRenewalSummary(LoadBalancerTlsCertificateRenewalSummary&& value) { SetRenewalSummary(std::move(value)); return *this;}
 
 
     /**
-     * <p>The reason the certificate was revoked. Valid values are below.</p>
+     * <p>The reason the certificate was revoked. This value is present only when the
+     * certificate status is <code>REVOKED</code>.</p>
      */
     inline const LoadBalancerTlsCertificateRevocationReason& GetRevocationReason() const{ return m_revocationReason; }
 
     /**
-     * <p>The reason the certificate was revoked. Valid values are below.</p>
+     * <p>The reason the certificate was revoked. This value is present only when the
+     * certificate status is <code>REVOKED</code>.</p>
      */
     inline bool RevocationReasonHasBeenSet() const { return m_revocationReasonHasBeenSet; }
 
     /**
-     * <p>The reason the certificate was revoked. Valid values are below.</p>
+     * <p>The reason the certificate was revoked. This value is present only when the
+     * certificate status is <code>REVOKED</code>.</p>
      */
     inline void SetRevocationReason(const LoadBalancerTlsCertificateRevocationReason& value) { m_revocationReasonHasBeenSet = true; m_revocationReason = value; }
 
     /**
-     * <p>The reason the certificate was revoked. Valid values are below.</p>
+     * <p>The reason the certificate was revoked. This value is present only when the
+     * certificate status is <code>REVOKED</code>.</p>
      */
     inline void SetRevocationReason(LoadBalancerTlsCertificateRevocationReason&& value) { m_revocationReasonHasBeenSet = true; m_revocationReason = std::move(value); }
 
     /**
-     * <p>The reason the certificate was revoked. Valid values are below.</p>
+     * <p>The reason the certificate was revoked. This value is present only when the
+     * certificate status is <code>REVOKED</code>.</p>
      */
     inline LoadBalancerTlsCertificate& WithRevocationReason(const LoadBalancerTlsCertificateRevocationReason& value) { SetRevocationReason(value); return *this;}
 
     /**
-     * <p>The reason the certificate was revoked. Valid values are below.</p>
+     * <p>The reason the certificate was revoked. This value is present only when the
+     * certificate status is <code>REVOKED</code>.</p>
      */
     inline LoadBalancerTlsCertificate& WithRevocationReason(LoadBalancerTlsCertificateRevocationReason&& value) { SetRevocationReason(std::move(value)); return *this;}
 
 
     /**
-     * <p>The timestamp when the SSL/TLS certificate was revoked.</p>
+     * <p>The timestamp when the certificate was revoked. This value is present only
+     * when the certificate status is <code>REVOKED</code>.</p>
      */
     inline const Aws::Utils::DateTime& GetRevokedAt() const{ return m_revokedAt; }
 
     /**
-     * <p>The timestamp when the SSL/TLS certificate was revoked.</p>
+     * <p>The timestamp when the certificate was revoked. This value is present only
+     * when the certificate status is <code>REVOKED</code>.</p>
      */
     inline bool RevokedAtHasBeenSet() const { return m_revokedAtHasBeenSet; }
 
     /**
-     * <p>The timestamp when the SSL/TLS certificate was revoked.</p>
+     * <p>The timestamp when the certificate was revoked. This value is present only
+     * when the certificate status is <code>REVOKED</code>.</p>
      */
     inline void SetRevokedAt(const Aws::Utils::DateTime& value) { m_revokedAtHasBeenSet = true; m_revokedAt = value; }
 
     /**
-     * <p>The timestamp when the SSL/TLS certificate was revoked.</p>
+     * <p>The timestamp when the certificate was revoked. This value is present only
+     * when the certificate status is <code>REVOKED</code>.</p>
      */
     inline void SetRevokedAt(Aws::Utils::DateTime&& value) { m_revokedAtHasBeenSet = true; m_revokedAt = std::move(value); }
 
     /**
-     * <p>The timestamp when the SSL/TLS certificate was revoked.</p>
+     * <p>The timestamp when the certificate was revoked. This value is present only
+     * when the certificate status is <code>REVOKED</code>.</p>
      */
     inline LoadBalancerTlsCertificate& WithRevokedAt(const Aws::Utils::DateTime& value) { SetRevokedAt(value); return *this;}
 
     /**
-     * <p>The timestamp when the SSL/TLS certificate was revoked.</p>
+     * <p>The timestamp when the certificate was revoked. This value is present only
+     * when the certificate status is <code>REVOKED</code>.</p>
      */
     inline LoadBalancerTlsCertificate& WithRevokedAt(Aws::Utils::DateTime&& value) { SetRevokedAt(std::move(value)); return *this;}
 
@@ -1049,92 +1275,65 @@ namespace Model
 
 
     /**
-     * <p>One or more domains or subdomains included in the certificate. This list
-     * contains the domain names that are bound to the public key that is contained in
-     * the certificate. The subject alternative names include the canonical domain name
-     * (CNAME) of the certificate and additional domain names that can be used to
-     * connect to the website, such as <code>example.com</code>,
-     * <code>www.example.com</code>, or <code>m.example.com</code>.</p>
+     * <p>An array of strings that specify the alternate domains (e.g.,
+     * <code>example2.com</code>) and subdomains (e.g., <code>blog.example.com</code>)
+     * for the certificate.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSubjectAlternativeNames() const{ return m_subjectAlternativeNames; }
 
     /**
-     * <p>One or more domains or subdomains included in the certificate. This list
-     * contains the domain names that are bound to the public key that is contained in
-     * the certificate. The subject alternative names include the canonical domain name
-     * (CNAME) of the certificate and additional domain names that can be used to
-     * connect to the website, such as <code>example.com</code>,
-     * <code>www.example.com</code>, or <code>m.example.com</code>.</p>
+     * <p>An array of strings that specify the alternate domains (e.g.,
+     * <code>example2.com</code>) and subdomains (e.g., <code>blog.example.com</code>)
+     * for the certificate.</p>
      */
     inline bool SubjectAlternativeNamesHasBeenSet() const { return m_subjectAlternativeNamesHasBeenSet; }
 
     /**
-     * <p>One or more domains or subdomains included in the certificate. This list
-     * contains the domain names that are bound to the public key that is contained in
-     * the certificate. The subject alternative names include the canonical domain name
-     * (CNAME) of the certificate and additional domain names that can be used to
-     * connect to the website, such as <code>example.com</code>,
-     * <code>www.example.com</code>, or <code>m.example.com</code>.</p>
+     * <p>An array of strings that specify the alternate domains (e.g.,
+     * <code>example2.com</code>) and subdomains (e.g., <code>blog.example.com</code>)
+     * for the certificate.</p>
      */
     inline void SetSubjectAlternativeNames(const Aws::Vector<Aws::String>& value) { m_subjectAlternativeNamesHasBeenSet = true; m_subjectAlternativeNames = value; }
 
     /**
-     * <p>One or more domains or subdomains included in the certificate. This list
-     * contains the domain names that are bound to the public key that is contained in
-     * the certificate. The subject alternative names include the canonical domain name
-     * (CNAME) of the certificate and additional domain names that can be used to
-     * connect to the website, such as <code>example.com</code>,
-     * <code>www.example.com</code>, or <code>m.example.com</code>.</p>
+     * <p>An array of strings that specify the alternate domains (e.g.,
+     * <code>example2.com</code>) and subdomains (e.g., <code>blog.example.com</code>)
+     * for the certificate.</p>
      */
     inline void SetSubjectAlternativeNames(Aws::Vector<Aws::String>&& value) { m_subjectAlternativeNamesHasBeenSet = true; m_subjectAlternativeNames = std::move(value); }
 
     /**
-     * <p>One or more domains or subdomains included in the certificate. This list
-     * contains the domain names that are bound to the public key that is contained in
-     * the certificate. The subject alternative names include the canonical domain name
-     * (CNAME) of the certificate and additional domain names that can be used to
-     * connect to the website, such as <code>example.com</code>,
-     * <code>www.example.com</code>, or <code>m.example.com</code>.</p>
+     * <p>An array of strings that specify the alternate domains (e.g.,
+     * <code>example2.com</code>) and subdomains (e.g., <code>blog.example.com</code>)
+     * for the certificate.</p>
      */
     inline LoadBalancerTlsCertificate& WithSubjectAlternativeNames(const Aws::Vector<Aws::String>& value) { SetSubjectAlternativeNames(value); return *this;}
 
     /**
-     * <p>One or more domains or subdomains included in the certificate. This list
-     * contains the domain names that are bound to the public key that is contained in
-     * the certificate. The subject alternative names include the canonical domain name
-     * (CNAME) of the certificate and additional domain names that can be used to
-     * connect to the website, such as <code>example.com</code>,
-     * <code>www.example.com</code>, or <code>m.example.com</code>.</p>
+     * <p>An array of strings that specify the alternate domains (e.g.,
+     * <code>example2.com</code>) and subdomains (e.g., <code>blog.example.com</code>)
+     * for the certificate.</p>
      */
     inline LoadBalancerTlsCertificate& WithSubjectAlternativeNames(Aws::Vector<Aws::String>&& value) { SetSubjectAlternativeNames(std::move(value)); return *this;}
 
     /**
-     * <p>One or more domains or subdomains included in the certificate. This list
-     * contains the domain names that are bound to the public key that is contained in
-     * the certificate. The subject alternative names include the canonical domain name
-     * (CNAME) of the certificate and additional domain names that can be used to
-     * connect to the website, such as <code>example.com</code>,
-     * <code>www.example.com</code>, or <code>m.example.com</code>.</p>
+     * <p>An array of strings that specify the alternate domains (e.g.,
+     * <code>example2.com</code>) and subdomains (e.g., <code>blog.example.com</code>)
+     * for the certificate.</p>
      */
     inline LoadBalancerTlsCertificate& AddSubjectAlternativeNames(const Aws::String& value) { m_subjectAlternativeNamesHasBeenSet = true; m_subjectAlternativeNames.push_back(value); return *this; }
 
     /**
-     * <p>One or more domains or subdomains included in the certificate. This list
-     * contains the domain names that are bound to the public key that is contained in
-     * the certificate. The subject alternative names include the canonical domain name
-     * (CNAME) of the certificate and additional domain names that can be used to
-     * connect to the website, such as <code>example.com</code>,
-     * <code>www.example.com</code>, or <code>m.example.com</code>.</p>
+     * <p>An array of strings that specify the alternate domains (e.g.,
+     * <code>example2.com</code>) and subdomains (e.g., <code>blog.example.com</code>)
+     * for the certificate.</p>
      */
     inline LoadBalancerTlsCertificate& AddSubjectAlternativeNames(Aws::String&& value) { m_subjectAlternativeNamesHasBeenSet = true; m_subjectAlternativeNames.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>One or more domains or subdomains included in the certificate. This list
-     * contains the domain names that are bound to the public key that is contained in
-     * the certificate. The subject alternative names include the canonical domain name
-     * (CNAME) of the certificate and additional domain names that can be used to
-     * connect to the website, such as <code>example.com</code>,
-     * <code>www.example.com</code>, or <code>m.example.com</code>.</p>
+     * <p>An array of strings that specify the alternate domains (e.g.,
+     * <code>example2.com</code>) and subdomains (e.g., <code>blog.example.com</code>)
+     * for the certificate.</p>
      */
     inline LoadBalancerTlsCertificate& AddSubjectAlternativeNames(const char* value) { m_subjectAlternativeNamesHasBeenSet = true; m_subjectAlternativeNames.push_back(value); return *this; }
 

@@ -5,7 +5,10 @@
 
 #pragma once
 #include <aws/fsx/FSx_EXPORTS.h>
+#include <aws/fsx/model/DataRepositoryLifecycle.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/fsx/model/AutoImportPolicyType.h>
+#include <aws/fsx/model/DataRepositoryFailureDetails.h>
 #include <utility>
 
 namespace Aws
@@ -37,6 +40,79 @@ namespace Model
     DataRepositoryConfiguration(Aws::Utils::Json::JsonView jsonValue);
     DataRepositoryConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * <p>Describes the state of the file system's S3 durable data repository, if it is
+     * configured with an S3 repository. The lifecycle can have the following
+     * values:</p> <ul> <li> <p> <code>CREATING</code> - Amazon FSx is creating the new
+     * data repository.</p> </li> <li> <p> <code>AVAILABLE</code> - The data repository
+     * is available for use.</p> </li> <li> <p> <code>MISCONFIGURED</code> - The data
+     * repository is in a failed but recoverable state.</p> </li> <li> <p>
+     * <code>UPDATING</code> - The data repository is undergoing a customer initiated
+     * update.</p> </li> </ul>
+     */
+    inline const DataRepositoryLifecycle& GetLifecycle() const{ return m_lifecycle; }
+
+    /**
+     * <p>Describes the state of the file system's S3 durable data repository, if it is
+     * configured with an S3 repository. The lifecycle can have the following
+     * values:</p> <ul> <li> <p> <code>CREATING</code> - Amazon FSx is creating the new
+     * data repository.</p> </li> <li> <p> <code>AVAILABLE</code> - The data repository
+     * is available for use.</p> </li> <li> <p> <code>MISCONFIGURED</code> - The data
+     * repository is in a failed but recoverable state.</p> </li> <li> <p>
+     * <code>UPDATING</code> - The data repository is undergoing a customer initiated
+     * update.</p> </li> </ul>
+     */
+    inline bool LifecycleHasBeenSet() const { return m_lifecycleHasBeenSet; }
+
+    /**
+     * <p>Describes the state of the file system's S3 durable data repository, if it is
+     * configured with an S3 repository. The lifecycle can have the following
+     * values:</p> <ul> <li> <p> <code>CREATING</code> - Amazon FSx is creating the new
+     * data repository.</p> </li> <li> <p> <code>AVAILABLE</code> - The data repository
+     * is available for use.</p> </li> <li> <p> <code>MISCONFIGURED</code> - The data
+     * repository is in a failed but recoverable state.</p> </li> <li> <p>
+     * <code>UPDATING</code> - The data repository is undergoing a customer initiated
+     * update.</p> </li> </ul>
+     */
+    inline void SetLifecycle(const DataRepositoryLifecycle& value) { m_lifecycleHasBeenSet = true; m_lifecycle = value; }
+
+    /**
+     * <p>Describes the state of the file system's S3 durable data repository, if it is
+     * configured with an S3 repository. The lifecycle can have the following
+     * values:</p> <ul> <li> <p> <code>CREATING</code> - Amazon FSx is creating the new
+     * data repository.</p> </li> <li> <p> <code>AVAILABLE</code> - The data repository
+     * is available for use.</p> </li> <li> <p> <code>MISCONFIGURED</code> - The data
+     * repository is in a failed but recoverable state.</p> </li> <li> <p>
+     * <code>UPDATING</code> - The data repository is undergoing a customer initiated
+     * update.</p> </li> </ul>
+     */
+    inline void SetLifecycle(DataRepositoryLifecycle&& value) { m_lifecycleHasBeenSet = true; m_lifecycle = std::move(value); }
+
+    /**
+     * <p>Describes the state of the file system's S3 durable data repository, if it is
+     * configured with an S3 repository. The lifecycle can have the following
+     * values:</p> <ul> <li> <p> <code>CREATING</code> - Amazon FSx is creating the new
+     * data repository.</p> </li> <li> <p> <code>AVAILABLE</code> - The data repository
+     * is available for use.</p> </li> <li> <p> <code>MISCONFIGURED</code> - The data
+     * repository is in a failed but recoverable state.</p> </li> <li> <p>
+     * <code>UPDATING</code> - The data repository is undergoing a customer initiated
+     * update.</p> </li> </ul>
+     */
+    inline DataRepositoryConfiguration& WithLifecycle(const DataRepositoryLifecycle& value) { SetLifecycle(value); return *this;}
+
+    /**
+     * <p>Describes the state of the file system's S3 durable data repository, if it is
+     * configured with an S3 repository. The lifecycle can have the following
+     * values:</p> <ul> <li> <p> <code>CREATING</code> - Amazon FSx is creating the new
+     * data repository.</p> </li> <li> <p> <code>AVAILABLE</code> - The data repository
+     * is available for use.</p> </li> <li> <p> <code>MISCONFIGURED</code> - The data
+     * repository is in a failed but recoverable state.</p> </li> <li> <p>
+     * <code>UPDATING</code> - The data repository is undergoing a customer initiated
+     * update.</p> </li> </ul>
+     */
+    inline DataRepositoryConfiguration& WithLifecycle(DataRepositoryLifecycle&& value) { SetLifecycle(std::move(value)); return *this;}
 
 
     /**
@@ -201,7 +277,144 @@ namespace Model
      */
     inline DataRepositoryConfiguration& WithImportedFileChunkSize(int value) { SetImportedFileChunkSize(value); return *this;}
 
+
+    /**
+     * <p>Describes the data repository's <code>AutoImportPolicy</code>. AutoImport
+     * enables your FSx for Lustre file system to automatically update its contents
+     * with changes that have been made to its linked Amazon S3 data repository. The
+     * policy can have the following values:</p> <ul> <li> <p> <code>NONE</code> -
+     * (Default) Autoimport is turned off, Changes to your S3 repository will not be
+     * reflected on the FSx file system.</p> </li> <li> <p> <code>NEW</code> -
+     * Autoimport is turned on; only new files in the linked S3 repository will be
+     * imported to the FSx file system. Updates to existing files and deleted files
+     * will not be imported to the FSx file system.</p> </li> <li> <p>
+     * <code>NEW_CHANGED</code> - Autoimport is turned on; new files and changes to
+     * existing files in the linked S3 repository will be imported to the FSx file
+     * system. Files deleted in S3 are not deleted in the FSx file system.</p> </li>
+     * <li> <p> <code>NEW_CHANGED_DELETED</code> - Autoimport is turned on; new files,
+     * changes to existing files, and deleted files in the linked S3 repository will be
+     * imported to the FSx file system. </p> </li> </ul>
+     */
+    inline const AutoImportPolicyType& GetAutoImportPolicy() const{ return m_autoImportPolicy; }
+
+    /**
+     * <p>Describes the data repository's <code>AutoImportPolicy</code>. AutoImport
+     * enables your FSx for Lustre file system to automatically update its contents
+     * with changes that have been made to its linked Amazon S3 data repository. The
+     * policy can have the following values:</p> <ul> <li> <p> <code>NONE</code> -
+     * (Default) Autoimport is turned off, Changes to your S3 repository will not be
+     * reflected on the FSx file system.</p> </li> <li> <p> <code>NEW</code> -
+     * Autoimport is turned on; only new files in the linked S3 repository will be
+     * imported to the FSx file system. Updates to existing files and deleted files
+     * will not be imported to the FSx file system.</p> </li> <li> <p>
+     * <code>NEW_CHANGED</code> - Autoimport is turned on; new files and changes to
+     * existing files in the linked S3 repository will be imported to the FSx file
+     * system. Files deleted in S3 are not deleted in the FSx file system.</p> </li>
+     * <li> <p> <code>NEW_CHANGED_DELETED</code> - Autoimport is turned on; new files,
+     * changes to existing files, and deleted files in the linked S3 repository will be
+     * imported to the FSx file system. </p> </li> </ul>
+     */
+    inline bool AutoImportPolicyHasBeenSet() const { return m_autoImportPolicyHasBeenSet; }
+
+    /**
+     * <p>Describes the data repository's <code>AutoImportPolicy</code>. AutoImport
+     * enables your FSx for Lustre file system to automatically update its contents
+     * with changes that have been made to its linked Amazon S3 data repository. The
+     * policy can have the following values:</p> <ul> <li> <p> <code>NONE</code> -
+     * (Default) Autoimport is turned off, Changes to your S3 repository will not be
+     * reflected on the FSx file system.</p> </li> <li> <p> <code>NEW</code> -
+     * Autoimport is turned on; only new files in the linked S3 repository will be
+     * imported to the FSx file system. Updates to existing files and deleted files
+     * will not be imported to the FSx file system.</p> </li> <li> <p>
+     * <code>NEW_CHANGED</code> - Autoimport is turned on; new files and changes to
+     * existing files in the linked S3 repository will be imported to the FSx file
+     * system. Files deleted in S3 are not deleted in the FSx file system.</p> </li>
+     * <li> <p> <code>NEW_CHANGED_DELETED</code> - Autoimport is turned on; new files,
+     * changes to existing files, and deleted files in the linked S3 repository will be
+     * imported to the FSx file system. </p> </li> </ul>
+     */
+    inline void SetAutoImportPolicy(const AutoImportPolicyType& value) { m_autoImportPolicyHasBeenSet = true; m_autoImportPolicy = value; }
+
+    /**
+     * <p>Describes the data repository's <code>AutoImportPolicy</code>. AutoImport
+     * enables your FSx for Lustre file system to automatically update its contents
+     * with changes that have been made to its linked Amazon S3 data repository. The
+     * policy can have the following values:</p> <ul> <li> <p> <code>NONE</code> -
+     * (Default) Autoimport is turned off, Changes to your S3 repository will not be
+     * reflected on the FSx file system.</p> </li> <li> <p> <code>NEW</code> -
+     * Autoimport is turned on; only new files in the linked S3 repository will be
+     * imported to the FSx file system. Updates to existing files and deleted files
+     * will not be imported to the FSx file system.</p> </li> <li> <p>
+     * <code>NEW_CHANGED</code> - Autoimport is turned on; new files and changes to
+     * existing files in the linked S3 repository will be imported to the FSx file
+     * system. Files deleted in S3 are not deleted in the FSx file system.</p> </li>
+     * <li> <p> <code>NEW_CHANGED_DELETED</code> - Autoimport is turned on; new files,
+     * changes to existing files, and deleted files in the linked S3 repository will be
+     * imported to the FSx file system. </p> </li> </ul>
+     */
+    inline void SetAutoImportPolicy(AutoImportPolicyType&& value) { m_autoImportPolicyHasBeenSet = true; m_autoImportPolicy = std::move(value); }
+
+    /**
+     * <p>Describes the data repository's <code>AutoImportPolicy</code>. AutoImport
+     * enables your FSx for Lustre file system to automatically update its contents
+     * with changes that have been made to its linked Amazon S3 data repository. The
+     * policy can have the following values:</p> <ul> <li> <p> <code>NONE</code> -
+     * (Default) Autoimport is turned off, Changes to your S3 repository will not be
+     * reflected on the FSx file system.</p> </li> <li> <p> <code>NEW</code> -
+     * Autoimport is turned on; only new files in the linked S3 repository will be
+     * imported to the FSx file system. Updates to existing files and deleted files
+     * will not be imported to the FSx file system.</p> </li> <li> <p>
+     * <code>NEW_CHANGED</code> - Autoimport is turned on; new files and changes to
+     * existing files in the linked S3 repository will be imported to the FSx file
+     * system. Files deleted in S3 are not deleted in the FSx file system.</p> </li>
+     * <li> <p> <code>NEW_CHANGED_DELETED</code> - Autoimport is turned on; new files,
+     * changes to existing files, and deleted files in the linked S3 repository will be
+     * imported to the FSx file system. </p> </li> </ul>
+     */
+    inline DataRepositoryConfiguration& WithAutoImportPolicy(const AutoImportPolicyType& value) { SetAutoImportPolicy(value); return *this;}
+
+    /**
+     * <p>Describes the data repository's <code>AutoImportPolicy</code>. AutoImport
+     * enables your FSx for Lustre file system to automatically update its contents
+     * with changes that have been made to its linked Amazon S3 data repository. The
+     * policy can have the following values:</p> <ul> <li> <p> <code>NONE</code> -
+     * (Default) Autoimport is turned off, Changes to your S3 repository will not be
+     * reflected on the FSx file system.</p> </li> <li> <p> <code>NEW</code> -
+     * Autoimport is turned on; only new files in the linked S3 repository will be
+     * imported to the FSx file system. Updates to existing files and deleted files
+     * will not be imported to the FSx file system.</p> </li> <li> <p>
+     * <code>NEW_CHANGED</code> - Autoimport is turned on; new files and changes to
+     * existing files in the linked S3 repository will be imported to the FSx file
+     * system. Files deleted in S3 are not deleted in the FSx file system.</p> </li>
+     * <li> <p> <code>NEW_CHANGED_DELETED</code> - Autoimport is turned on; new files,
+     * changes to existing files, and deleted files in the linked S3 repository will be
+     * imported to the FSx file system. </p> </li> </ul>
+     */
+    inline DataRepositoryConfiguration& WithAutoImportPolicy(AutoImportPolicyType&& value) { SetAutoImportPolicy(std::move(value)); return *this;}
+
+
+    
+    inline const DataRepositoryFailureDetails& GetFailureDetails() const{ return m_failureDetails; }
+
+    
+    inline bool FailureDetailsHasBeenSet() const { return m_failureDetailsHasBeenSet; }
+
+    
+    inline void SetFailureDetails(const DataRepositoryFailureDetails& value) { m_failureDetailsHasBeenSet = true; m_failureDetails = value; }
+
+    
+    inline void SetFailureDetails(DataRepositoryFailureDetails&& value) { m_failureDetailsHasBeenSet = true; m_failureDetails = std::move(value); }
+
+    
+    inline DataRepositoryConfiguration& WithFailureDetails(const DataRepositoryFailureDetails& value) { SetFailureDetails(value); return *this;}
+
+    
+    inline DataRepositoryConfiguration& WithFailureDetails(DataRepositoryFailureDetails&& value) { SetFailureDetails(std::move(value)); return *this;}
+
   private:
+
+    DataRepositoryLifecycle m_lifecycle;
+    bool m_lifecycleHasBeenSet;
 
     Aws::String m_importPath;
     bool m_importPathHasBeenSet;
@@ -211,6 +424,12 @@ namespace Model
 
     int m_importedFileChunkSize;
     bool m_importedFileChunkSizeHasBeenSet;
+
+    AutoImportPolicyType m_autoImportPolicy;
+    bool m_autoImportPolicyHasBeenSet;
+
+    DataRepositoryFailureDetails m_failureDetails;
+    bool m_failureDetailsHasBeenSet;
   };
 
 } // namespace Model

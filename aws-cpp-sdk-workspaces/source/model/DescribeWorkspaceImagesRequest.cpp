@@ -14,6 +14,8 @@ using namespace Aws::Utils;
 
 DescribeWorkspaceImagesRequest::DescribeWorkspaceImagesRequest() : 
     m_imageIdsHasBeenSet(false),
+    m_imageType(ImageType::NOT_SET),
+    m_imageTypeHasBeenSet(false),
     m_nextTokenHasBeenSet(false),
     m_maxResults(0),
     m_maxResultsHasBeenSet(false)
@@ -33,6 +35,11 @@ Aws::String DescribeWorkspaceImagesRequest::SerializePayload() const
    }
    payload.WithArray("ImageIds", std::move(imageIdsJsonList));
 
+  }
+
+  if(m_imageTypeHasBeenSet)
+  {
+   payload.WithString("ImageType", ImageTypeMapper::GetNameForImageType(m_imageType));
   }
 
   if(m_nextTokenHasBeenSet)

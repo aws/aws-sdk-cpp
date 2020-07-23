@@ -1051,11 +1051,9 @@ namespace Model
 
         /**
          * <p>Creates a proposal to associate the specified virtual private gateway or
-         * transit gateway with the specified Direct Connect gateway.</p> <p>You can only
+         * transit gateway with the specified Direct Connect gateway.</p> <p>You can
          * associate a Direct Connect gateway and virtual private gateway or transit
-         * gateway when the account that owns the Direct Connect gateway and the account
-         * that owns the virtual private gateway or transit gateway have the same AWS Payer
-         * ID.</p><p><h3>See Also:</h3>   <a
+         * gateway that is owned by any AWS account. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreateDirectConnectGatewayAssociationProposal">AWS
          * API Reference</a></p>
          */
@@ -1063,11 +1061,9 @@ namespace Model
 
         /**
          * <p>Creates a proposal to associate the specified virtual private gateway or
-         * transit gateway with the specified Direct Connect gateway.</p> <p>You can only
+         * transit gateway with the specified Direct Connect gateway.</p> <p>You can
          * associate a Direct Connect gateway and virtual private gateway or transit
-         * gateway when the account that owns the Direct Connect gateway and the account
-         * that owns the virtual private gateway or transit gateway have the same AWS Payer
-         * ID.</p><p><h3>See Also:</h3>   <a
+         * gateway that is owned by any AWS account. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreateDirectConnectGatewayAssociationProposal">AWS
          * API Reference</a></p>
          *
@@ -1077,11 +1073,9 @@ namespace Model
 
         /**
          * <p>Creates a proposal to associate the specified virtual private gateway or
-         * transit gateway with the specified Direct Connect gateway.</p> <p>You can only
+         * transit gateway with the specified Direct Connect gateway.</p> <p>You can
          * associate a Direct Connect gateway and virtual private gateway or transit
-         * gateway when the account that owns the Direct Connect gateway and the account
-         * that owns the virtual private gateway or transit gateway have the same AWS Payer
-         * ID.</p><p><h3>See Also:</h3>   <a
+         * gateway that is owned by any AWS account. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreateDirectConnectGatewayAssociationProposal">AWS
          * API Reference</a></p>
          *

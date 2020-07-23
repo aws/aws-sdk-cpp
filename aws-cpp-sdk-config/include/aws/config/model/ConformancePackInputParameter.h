@@ -25,8 +25,8 @@ namespace Model
 
   /**
    * <p>Input parameters in the form of key-value pairs for the conformance pack,
-   * both of which you define. Keys can have a maximum character length of 128
-   * characters, and values can have a maximum length of 256
+   * both of which you define. Keys can have a maximum character length of 255
+   * characters, and values can have a maximum length of 4096
    * characters.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ConformancePackInputParameter">AWS
    * API Reference</a></p>

@@ -107,43 +107,67 @@ namespace Model
 
 
     /**
-     * <p>The size of the root volume.</p>
+     * <p>The size of the root volume. For important information about how to modify
+     * the size of the root and user volumes, see <a
+     * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/modify-workspaces.html">Modify
+     * a WorkSpace</a>.</p>
      */
     inline int GetRootVolumeSizeGib() const{ return m_rootVolumeSizeGib; }
 
     /**
-     * <p>The size of the root volume.</p>
+     * <p>The size of the root volume. For important information about how to modify
+     * the size of the root and user volumes, see <a
+     * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/modify-workspaces.html">Modify
+     * a WorkSpace</a>.</p>
      */
     inline bool RootVolumeSizeGibHasBeenSet() const { return m_rootVolumeSizeGibHasBeenSet; }
 
     /**
-     * <p>The size of the root volume.</p>
+     * <p>The size of the root volume. For important information about how to modify
+     * the size of the root and user volumes, see <a
+     * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/modify-workspaces.html">Modify
+     * a WorkSpace</a>.</p>
      */
     inline void SetRootVolumeSizeGib(int value) { m_rootVolumeSizeGibHasBeenSet = true; m_rootVolumeSizeGib = value; }
 
     /**
-     * <p>The size of the root volume.</p>
+     * <p>The size of the root volume. For important information about how to modify
+     * the size of the root and user volumes, see <a
+     * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/modify-workspaces.html">Modify
+     * a WorkSpace</a>.</p>
      */
     inline WorkspaceProperties& WithRootVolumeSizeGib(int value) { SetRootVolumeSizeGib(value); return *this;}
 
 
     /**
-     * <p>The size of the user storage.</p>
+     * <p>The size of the user storage. For important information about how to modify
+     * the size of the root and user volumes, see <a
+     * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/modify-workspaces.html">Modify
+     * a WorkSpace</a>.</p>
      */
     inline int GetUserVolumeSizeGib() const{ return m_userVolumeSizeGib; }
 
     /**
-     * <p>The size of the user storage.</p>
+     * <p>The size of the user storage. For important information about how to modify
+     * the size of the root and user volumes, see <a
+     * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/modify-workspaces.html">Modify
+     * a WorkSpace</a>.</p>
      */
     inline bool UserVolumeSizeGibHasBeenSet() const { return m_userVolumeSizeGibHasBeenSet; }
 
     /**
-     * <p>The size of the user storage.</p>
+     * <p>The size of the user storage. For important information about how to modify
+     * the size of the root and user volumes, see <a
+     * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/modify-workspaces.html">Modify
+     * a WorkSpace</a>.</p>
      */
     inline void SetUserVolumeSizeGib(int value) { m_userVolumeSizeGibHasBeenSet = true; m_userVolumeSizeGib = value; }
 
     /**
-     * <p>The size of the user storage.</p>
+     * <p>The size of the user storage. For important information about how to modify
+     * the size of the root and user volumes, see <a
+     * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/modify-workspaces.html">Modify
+     * a WorkSpace</a>.</p>
      */
     inline WorkspaceProperties& WithUserVolumeSizeGib(int value) { SetUserVolumeSizeGib(value); return *this;}
 

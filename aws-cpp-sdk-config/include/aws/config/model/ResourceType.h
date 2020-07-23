@@ -105,7 +105,10 @@ namespace Model
     AWS_ServiceCatalog_Portfolio,
     AWS_SQS_Queue,
     AWS_KMS_Key,
-    AWS_QLDB_Ledger
+    AWS_QLDB_Ledger,
+    AWS_SecretsManager_Secret,
+    AWS_SNS_Topic,
+    AWS_SSM_FileData
   };
 
 namespace ResourceTypeMapper

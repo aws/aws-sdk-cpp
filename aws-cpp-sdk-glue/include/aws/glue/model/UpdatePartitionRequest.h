@@ -168,78 +168,90 @@ namespace Model
 
 
     /**
-     * <p>A list of the values defining the partition.</p>
+     * <p>List of partition key values that define the partition to update.</p>
      */
     inline const Aws::Vector<Aws::String>& GetPartitionValueList() const{ return m_partitionValueList; }
 
     /**
-     * <p>A list of the values defining the partition.</p>
+     * <p>List of partition key values that define the partition to update.</p>
      */
     inline bool PartitionValueListHasBeenSet() const { return m_partitionValueListHasBeenSet; }
 
     /**
-     * <p>A list of the values defining the partition.</p>
+     * <p>List of partition key values that define the partition to update.</p>
      */
     inline void SetPartitionValueList(const Aws::Vector<Aws::String>& value) { m_partitionValueListHasBeenSet = true; m_partitionValueList = value; }
 
     /**
-     * <p>A list of the values defining the partition.</p>
+     * <p>List of partition key values that define the partition to update.</p>
      */
     inline void SetPartitionValueList(Aws::Vector<Aws::String>&& value) { m_partitionValueListHasBeenSet = true; m_partitionValueList = std::move(value); }
 
     /**
-     * <p>A list of the values defining the partition.</p>
+     * <p>List of partition key values that define the partition to update.</p>
      */
     inline UpdatePartitionRequest& WithPartitionValueList(const Aws::Vector<Aws::String>& value) { SetPartitionValueList(value); return *this;}
 
     /**
-     * <p>A list of the values defining the partition.</p>
+     * <p>List of partition key values that define the partition to update.</p>
      */
     inline UpdatePartitionRequest& WithPartitionValueList(Aws::Vector<Aws::String>&& value) { SetPartitionValueList(std::move(value)); return *this;}
 
     /**
-     * <p>A list of the values defining the partition.</p>
+     * <p>List of partition key values that define the partition to update.</p>
      */
     inline UpdatePartitionRequest& AddPartitionValueList(const Aws::String& value) { m_partitionValueListHasBeenSet = true; m_partitionValueList.push_back(value); return *this; }
 
     /**
-     * <p>A list of the values defining the partition.</p>
+     * <p>List of partition key values that define the partition to update.</p>
      */
     inline UpdatePartitionRequest& AddPartitionValueList(Aws::String&& value) { m_partitionValueListHasBeenSet = true; m_partitionValueList.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>A list of the values defining the partition.</p>
+     * <p>List of partition key values that define the partition to update.</p>
      */
     inline UpdatePartitionRequest& AddPartitionValueList(const char* value) { m_partitionValueListHasBeenSet = true; m_partitionValueList.push_back(value); return *this; }
 
 
     /**
-     * <p>The new partition object to update the partition to.</p>
+     * <p>The new partition object to update the partition to.</p> <p>The
+     * <code>Values</code> property can't be changed. If you want to change the
+     * partition key values for a partition, delete and recreate the partition.</p>
      */
     inline const PartitionInput& GetPartitionInput() const{ return m_partitionInput; }
 
     /**
-     * <p>The new partition object to update the partition to.</p>
+     * <p>The new partition object to update the partition to.</p> <p>The
+     * <code>Values</code> property can't be changed. If you want to change the
+     * partition key values for a partition, delete and recreate the partition.</p>
      */
     inline bool PartitionInputHasBeenSet() const { return m_partitionInputHasBeenSet; }
 
     /**
-     * <p>The new partition object to update the partition to.</p>
+     * <p>The new partition object to update the partition to.</p> <p>The
+     * <code>Values</code> property can't be changed. If you want to change the
+     * partition key values for a partition, delete and recreate the partition.</p>
      */
     inline void SetPartitionInput(const PartitionInput& value) { m_partitionInputHasBeenSet = true; m_partitionInput = value; }
 
     /**
-     * <p>The new partition object to update the partition to.</p>
+     * <p>The new partition object to update the partition to.</p> <p>The
+     * <code>Values</code> property can't be changed. If you want to change the
+     * partition key values for a partition, delete and recreate the partition.</p>
      */
     inline void SetPartitionInput(PartitionInput&& value) { m_partitionInputHasBeenSet = true; m_partitionInput = std::move(value); }
 
     /**
-     * <p>The new partition object to update the partition to.</p>
+     * <p>The new partition object to update the partition to.</p> <p>The
+     * <code>Values</code> property can't be changed. If you want to change the
+     * partition key values for a partition, delete and recreate the partition.</p>
      */
     inline UpdatePartitionRequest& WithPartitionInput(const PartitionInput& value) { SetPartitionInput(value); return *this;}
 
     /**
-     * <p>The new partition object to update the partition to.</p>
+     * <p>The new partition object to update the partition to.</p> <p>The
+     * <code>Values</code> property can't be changed. If you want to change the
+     * partition key values for a partition, delete and recreate the partition.</p>
      */
     inline UpdatePartitionRequest& WithPartitionInput(PartitionInput&& value) { SetPartitionInput(std::move(value)); return *this;}
 

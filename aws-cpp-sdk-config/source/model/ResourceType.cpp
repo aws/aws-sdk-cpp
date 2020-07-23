@@ -110,6 +110,9 @@ namespace Aws
         static const int AWS_SQS_Queue_HASH = HashingUtils::HashString("AWS::SQS::Queue");
         static const int AWS_KMS_Key_HASH = HashingUtils::HashString("AWS::KMS::Key");
         static const int AWS_QLDB_Ledger_HASH = HashingUtils::HashString("AWS::QLDB::Ledger");
+        static const int AWS_SecretsManager_Secret_HASH = HashingUtils::HashString("AWS::SecretsManager::Secret");
+        static const int AWS_SNS_Topic_HASH = HashingUtils::HashString("AWS::SNS::Topic");
+        static const int AWS_SSM_FileData_HASH = HashingUtils::HashString("AWS::SSM::FileData");
 
 
         ResourceType GetResourceTypeForName(const Aws::String& name)
@@ -475,6 +478,18 @@ namespace Aws
           {
             return ResourceType::AWS_QLDB_Ledger;
           }
+          else if (hashCode == AWS_SecretsManager_Secret_HASH)
+          {
+            return ResourceType::AWS_SecretsManager_Secret;
+          }
+          else if (hashCode == AWS_SNS_Topic_HASH)
+          {
+            return ResourceType::AWS_SNS_Topic;
+          }
+          else if (hashCode == AWS_SSM_FileData_HASH)
+          {
+            return ResourceType::AWS_SSM_FileData;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -669,6 +684,12 @@ namespace Aws
             return "AWS::KMS::Key";
           case ResourceType::AWS_QLDB_Ledger:
             return "AWS::QLDB::Ledger";
+          case ResourceType::AWS_SecretsManager_Secret:
+            return "AWS::SecretsManager::Secret";
+          case ResourceType::AWS_SNS_Topic:
+            return "AWS::SNS::Topic";
+          case ResourceType::AWS_SSM_FileData:
+            return "AWS::SSM::FileData";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)
