@@ -19,12 +19,14 @@ namespace Model
 {
 
 MemberDefinition::MemberDefinition() : 
-    m_cognitoMemberDefinitionHasBeenSet(false)
+    m_cognitoMemberDefinitionHasBeenSet(false),
+    m_oidcMemberDefinitionHasBeenSet(false)
 {
 }
 
 MemberDefinition::MemberDefinition(JsonView jsonValue) : 
-    m_cognitoMemberDefinitionHasBeenSet(false)
+    m_cognitoMemberDefinitionHasBeenSet(false),
+    m_oidcMemberDefinitionHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -38,6 +40,13 @@ MemberDefinition& MemberDefinition::operator =(JsonView jsonValue)
     m_cognitoMemberDefinitionHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("OidcMemberDefinition"))
+  {
+    m_oidcMemberDefinition = jsonValue.GetObject("OidcMemberDefinition");
+
+    m_oidcMemberDefinitionHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -48,6 +57,12 @@ JsonValue MemberDefinition::Jsonize() const
   if(m_cognitoMemberDefinitionHasBeenSet)
   {
    payload.WithObject("CognitoMemberDefinition", m_cognitoMemberDefinition.Jsonize());
+
+  }
+
+  if(m_oidcMemberDefinitionHasBeenSet)
+  {
+   payload.WithObject("OidcMemberDefinition", m_oidcMemberDefinition.Jsonize());
 
   }
 

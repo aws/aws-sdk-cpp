@@ -84,43 +84,37 @@ namespace Model
 
     /**
      * <p>The date and time, in UTC and extended ISO 8601 format, when the free trial
-     * period started for the account. This value is null if the account didn't
-     * participate in the free trial.</p>
+     * started for the account.</p>
      */
     inline const Aws::Utils::DateTime& GetFreeTrialStartDate() const{ return m_freeTrialStartDate; }
 
     /**
      * <p>The date and time, in UTC and extended ISO 8601 format, when the free trial
-     * period started for the account. This value is null if the account didn't
-     * participate in the free trial.</p>
+     * started for the account.</p>
      */
     inline bool FreeTrialStartDateHasBeenSet() const { return m_freeTrialStartDateHasBeenSet; }
 
     /**
      * <p>The date and time, in UTC and extended ISO 8601 format, when the free trial
-     * period started for the account. This value is null if the account didn't
-     * participate in the free trial.</p>
+     * started for the account.</p>
      */
     inline void SetFreeTrialStartDate(const Aws::Utils::DateTime& value) { m_freeTrialStartDateHasBeenSet = true; m_freeTrialStartDate = value; }
 
     /**
      * <p>The date and time, in UTC and extended ISO 8601 format, when the free trial
-     * period started for the account. This value is null if the account didn't
-     * participate in the free trial.</p>
+     * started for the account.</p>
      */
     inline void SetFreeTrialStartDate(Aws::Utils::DateTime&& value) { m_freeTrialStartDateHasBeenSet = true; m_freeTrialStartDate = std::move(value); }
 
     /**
      * <p>The date and time, in UTC and extended ISO 8601 format, when the free trial
-     * period started for the account. This value is null if the account didn't
-     * participate in the free trial.</p>
+     * started for the account.</p>
      */
     inline UsageRecord& WithFreeTrialStartDate(const Aws::Utils::DateTime& value) { SetFreeTrialStartDate(value); return *this;}
 
     /**
      * <p>The date and time, in UTC and extended ISO 8601 format, when the free trial
-     * period started for the account. This value is null if the account didn't
-     * participate in the free trial.</p>
+     * started for the account.</p>
      */
     inline UsageRecord& WithFreeTrialStartDate(Aws::Utils::DateTime&& value) { SetFreeTrialStartDate(std::move(value)); return *this;}
 

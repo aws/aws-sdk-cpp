@@ -8,6 +8,7 @@
 #include <aws/sagemaker/SageMakerRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/sagemaker/model/SourceIpConfig.h>
+#include <aws/sagemaker/model/OidcConfig.h>
 #include <utility>
 
 namespace Aws
@@ -140,6 +141,43 @@ namespace Model
      */
     inline UpdateWorkforceRequest& WithSourceIpConfig(SourceIpConfig&& value) { SetSourceIpConfig(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Use this parameter to update your OIDC Identity Provider (IdP) configuration
+     * for a workforce made using your own IdP.</p>
+     */
+    inline const OidcConfig& GetOidcConfig() const{ return m_oidcConfig; }
+
+    /**
+     * <p>Use this parameter to update your OIDC Identity Provider (IdP) configuration
+     * for a workforce made using your own IdP.</p>
+     */
+    inline bool OidcConfigHasBeenSet() const { return m_oidcConfigHasBeenSet; }
+
+    /**
+     * <p>Use this parameter to update your OIDC Identity Provider (IdP) configuration
+     * for a workforce made using your own IdP.</p>
+     */
+    inline void SetOidcConfig(const OidcConfig& value) { m_oidcConfigHasBeenSet = true; m_oidcConfig = value; }
+
+    /**
+     * <p>Use this parameter to update your OIDC Identity Provider (IdP) configuration
+     * for a workforce made using your own IdP.</p>
+     */
+    inline void SetOidcConfig(OidcConfig&& value) { m_oidcConfigHasBeenSet = true; m_oidcConfig = std::move(value); }
+
+    /**
+     * <p>Use this parameter to update your OIDC Identity Provider (IdP) configuration
+     * for a workforce made using your own IdP.</p>
+     */
+    inline UpdateWorkforceRequest& WithOidcConfig(const OidcConfig& value) { SetOidcConfig(value); return *this;}
+
+    /**
+     * <p>Use this parameter to update your OIDC Identity Provider (IdP) configuration
+     * for a workforce made using your own IdP.</p>
+     */
+    inline UpdateWorkforceRequest& WithOidcConfig(OidcConfig&& value) { SetOidcConfig(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_workforceName;
@@ -147,6 +185,9 @@ namespace Model
 
     SourceIpConfig m_sourceIpConfig;
     bool m_sourceIpConfigHasBeenSet;
+
+    OidcConfig m_oidcConfig;
+    bool m_oidcConfigHasBeenSet;
   };
 
 } // namespace Model

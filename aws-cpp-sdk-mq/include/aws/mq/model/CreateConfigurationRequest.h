@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/mq/MQ_EXPORTS.h>
 #include <aws/mq/MQRequest.h>
+#include <aws/mq/model/AuthenticationStrategy.h>
 #include <aws/mq/model/EngineType.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
@@ -37,6 +38,37 @@ namespace Model
     inline virtual const char* GetServiceRequestName() const override { return "CreateConfiguration"; }
 
     Aws::String SerializePayload() const override;
+
+
+    /**
+     * The authentication strategy associated with the configuration.
+     */
+    inline const AuthenticationStrategy& GetAuthenticationStrategy() const{ return m_authenticationStrategy; }
+
+    /**
+     * The authentication strategy associated with the configuration.
+     */
+    inline bool AuthenticationStrategyHasBeenSet() const { return m_authenticationStrategyHasBeenSet; }
+
+    /**
+     * The authentication strategy associated with the configuration.
+     */
+    inline void SetAuthenticationStrategy(const AuthenticationStrategy& value) { m_authenticationStrategyHasBeenSet = true; m_authenticationStrategy = value; }
+
+    /**
+     * The authentication strategy associated with the configuration.
+     */
+    inline void SetAuthenticationStrategy(AuthenticationStrategy&& value) { m_authenticationStrategyHasBeenSet = true; m_authenticationStrategy = std::move(value); }
+
+    /**
+     * The authentication strategy associated with the configuration.
+     */
+    inline CreateConfigurationRequest& WithAuthenticationStrategy(const AuthenticationStrategy& value) { SetAuthenticationStrategy(value); return *this;}
+
+    /**
+     * The authentication strategy associated with the configuration.
+     */
+    inline CreateConfigurationRequest& WithAuthenticationStrategy(AuthenticationStrategy&& value) { SetAuthenticationStrategy(std::move(value)); return *this;}
 
 
     /**
@@ -256,6 +288,9 @@ namespace Model
     inline CreateConfigurationRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
   private:
+
+    AuthenticationStrategy m_authenticationStrategy;
+    bool m_authenticationStrategyHasBeenSet;
 
     EngineType m_engineType;
     bool m_engineTypeHasBeenSet;

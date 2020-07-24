@@ -19,6 +19,8 @@ namespace Model
 {
 
 UsageStatisticsFilter::UsageStatisticsFilter() : 
+    m_comparator(UsageStatisticsFilterComparator::NOT_SET),
+    m_comparatorHasBeenSet(false),
     m_key(UsageStatisticsFilterKey::NOT_SET),
     m_keyHasBeenSet(false),
     m_valuesHasBeenSet(false)
@@ -26,6 +28,8 @@ UsageStatisticsFilter::UsageStatisticsFilter() :
 }
 
 UsageStatisticsFilter::UsageStatisticsFilter(JsonView jsonValue) : 
+    m_comparator(UsageStatisticsFilterComparator::NOT_SET),
+    m_comparatorHasBeenSet(false),
     m_key(UsageStatisticsFilterKey::NOT_SET),
     m_keyHasBeenSet(false),
     m_valuesHasBeenSet(false)
@@ -35,6 +39,13 @@ UsageStatisticsFilter::UsageStatisticsFilter(JsonView jsonValue) :
 
 UsageStatisticsFilter& UsageStatisticsFilter::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("comparator"))
+  {
+    m_comparator = UsageStatisticsFilterComparatorMapper::GetUsageStatisticsFilterComparatorForName(jsonValue.GetString("comparator"));
+
+    m_comparatorHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("key"))
   {
     m_key = UsageStatisticsFilterKeyMapper::GetUsageStatisticsFilterKeyForName(jsonValue.GetString("key"));
@@ -58,6 +69,11 @@ UsageStatisticsFilter& UsageStatisticsFilter::operator =(JsonView jsonValue)
 JsonValue UsageStatisticsFilter::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_comparatorHasBeenSet)
+  {
+   payload.WithString("comparator", UsageStatisticsFilterComparatorMapper::GetNameForUsageStatisticsFilterComparator(m_comparator));
+  }
 
   if(m_keyHasBeenSet)
   {

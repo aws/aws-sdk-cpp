@@ -22,7 +22,11 @@ Workforce::Workforce() :
     m_workforceNameHasBeenSet(false),
     m_workforceArnHasBeenSet(false),
     m_lastUpdatedDateHasBeenSet(false),
-    m_sourceIpConfigHasBeenSet(false)
+    m_sourceIpConfigHasBeenSet(false),
+    m_subDomainHasBeenSet(false),
+    m_cognitoConfigHasBeenSet(false),
+    m_oidcConfigHasBeenSet(false),
+    m_createDateHasBeenSet(false)
 {
 }
 
@@ -30,7 +34,11 @@ Workforce::Workforce(JsonView jsonValue) :
     m_workforceNameHasBeenSet(false),
     m_workforceArnHasBeenSet(false),
     m_lastUpdatedDateHasBeenSet(false),
-    m_sourceIpConfigHasBeenSet(false)
+    m_sourceIpConfigHasBeenSet(false),
+    m_subDomainHasBeenSet(false),
+    m_cognitoConfigHasBeenSet(false),
+    m_oidcConfigHasBeenSet(false),
+    m_createDateHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -65,6 +73,34 @@ Workforce& Workforce::operator =(JsonView jsonValue)
     m_sourceIpConfigHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("SubDomain"))
+  {
+    m_subDomain = jsonValue.GetString("SubDomain");
+
+    m_subDomainHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("CognitoConfig"))
+  {
+    m_cognitoConfig = jsonValue.GetObject("CognitoConfig");
+
+    m_cognitoConfigHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("OidcConfig"))
+  {
+    m_oidcConfig = jsonValue.GetObject("OidcConfig");
+
+    m_oidcConfigHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("CreateDate"))
+  {
+    m_createDate = jsonValue.GetDouble("CreateDate");
+
+    m_createDateHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -93,6 +129,29 @@ JsonValue Workforce::Jsonize() const
   {
    payload.WithObject("SourceIpConfig", m_sourceIpConfig.Jsonize());
 
+  }
+
+  if(m_subDomainHasBeenSet)
+  {
+   payload.WithString("SubDomain", m_subDomain);
+
+  }
+
+  if(m_cognitoConfigHasBeenSet)
+  {
+   payload.WithObject("CognitoConfig", m_cognitoConfig.Jsonize());
+
+  }
+
+  if(m_oidcConfigHasBeenSet)
+  {
+   payload.WithObject("OidcConfig", m_oidcConfig.Jsonize());
+
+  }
+
+  if(m_createDateHasBeenSet)
+  {
+   payload.WithDouble("CreateDate", m_createDate.SecondsWithMSPrecision());
   }
 
   return payload;

@@ -20,6 +20,8 @@ namespace Model
 
 Configuration::Configuration() : 
     m_arnHasBeenSet(false),
+    m_authenticationStrategy(AuthenticationStrategy::NOT_SET),
+    m_authenticationStrategyHasBeenSet(false),
     m_createdHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_engineType(EngineType::NOT_SET),
@@ -34,6 +36,8 @@ Configuration::Configuration() :
 
 Configuration::Configuration(JsonView jsonValue) : 
     m_arnHasBeenSet(false),
+    m_authenticationStrategy(AuthenticationStrategy::NOT_SET),
+    m_authenticationStrategyHasBeenSet(false),
     m_createdHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_engineType(EngineType::NOT_SET),
@@ -54,6 +58,13 @@ Configuration& Configuration::operator =(JsonView jsonValue)
     m_arn = jsonValue.GetString("arn");
 
     m_arnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("authenticationStrategy"))
+  {
+    m_authenticationStrategy = AuthenticationStrategyMapper::GetAuthenticationStrategyForName(jsonValue.GetString("authenticationStrategy"));
+
+    m_authenticationStrategyHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("created"))
@@ -126,6 +137,11 @@ JsonValue Configuration::Jsonize() const
   {
    payload.WithString("arn", m_arn);
 
+  }
+
+  if(m_authenticationStrategyHasBeenSet)
+  {
+   payload.WithString("authenticationStrategy", AuthenticationStrategyMapper::GetNameForAuthenticationStrategy(m_authenticationStrategy));
   }
 
   if(m_createdHasBeenSet)

@@ -14,7 +14,8 @@ using namespace Aws::Utils;
 
 UpdateWorkforceRequest::UpdateWorkforceRequest() : 
     m_workforceNameHasBeenSet(false),
-    m_sourceIpConfigHasBeenSet(false)
+    m_sourceIpConfigHasBeenSet(false),
+    m_oidcConfigHasBeenSet(false)
 {
 }
 
@@ -31,6 +32,12 @@ Aws::String UpdateWorkforceRequest::SerializePayload() const
   if(m_sourceIpConfigHasBeenSet)
   {
    payload.WithObject("SourceIpConfig", m_sourceIpConfig.Jsonize());
+
+  }
+
+  if(m_oidcConfigHasBeenSet)
+  {
+   payload.WithObject("OidcConfig", m_oidcConfig.Jsonize());
 
   }
 

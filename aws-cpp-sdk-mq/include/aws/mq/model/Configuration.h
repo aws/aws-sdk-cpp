@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/mq/MQ_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mq/model/AuthenticationStrategy.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/mq/model/EngineType.h>
 #include <aws/mq/model/ConfigurationRevision.h>
@@ -80,6 +81,37 @@ namespace Model
      * Required. The ARN of the configuration.
      */
     inline Configuration& WithArn(const char* value) { SetArn(value); return *this;}
+
+
+    /**
+     * The authentication strategy associated with the configuration.
+     */
+    inline const AuthenticationStrategy& GetAuthenticationStrategy() const{ return m_authenticationStrategy; }
+
+    /**
+     * The authentication strategy associated with the configuration.
+     */
+    inline bool AuthenticationStrategyHasBeenSet() const { return m_authenticationStrategyHasBeenSet; }
+
+    /**
+     * The authentication strategy associated with the configuration.
+     */
+    inline void SetAuthenticationStrategy(const AuthenticationStrategy& value) { m_authenticationStrategyHasBeenSet = true; m_authenticationStrategy = value; }
+
+    /**
+     * The authentication strategy associated with the configuration.
+     */
+    inline void SetAuthenticationStrategy(AuthenticationStrategy&& value) { m_authenticationStrategyHasBeenSet = true; m_authenticationStrategy = std::move(value); }
+
+    /**
+     * The authentication strategy associated with the configuration.
+     */
+    inline Configuration& WithAuthenticationStrategy(const AuthenticationStrategy& value) { SetAuthenticationStrategy(value); return *this;}
+
+    /**
+     * The authentication strategy associated with the configuration.
+     */
+    inline Configuration& WithAuthenticationStrategy(AuthenticationStrategy&& value) { SetAuthenticationStrategy(std::move(value)); return *this;}
 
 
     /**
@@ -446,6 +478,9 @@ namespace Model
 
     Aws::String m_arn;
     bool m_arnHasBeenSet;
+
+    AuthenticationStrategy m_authenticationStrategy;
+    bool m_authenticationStrategyHasBeenSet;
 
     Aws::Utils::DateTime m_created;
     bool m_createdHasBeenSet;

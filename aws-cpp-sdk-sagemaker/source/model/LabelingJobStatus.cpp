@@ -20,6 +20,7 @@ namespace Aws
       namespace LabelingJobStatusMapper
       {
 
+        static const int Initializing_HASH = HashingUtils::HashString("Initializing");
         static const int InProgress_HASH = HashingUtils::HashString("InProgress");
         static const int Completed_HASH = HashingUtils::HashString("Completed");
         static const int Failed_HASH = HashingUtils::HashString("Failed");
@@ -30,7 +31,11 @@ namespace Aws
         LabelingJobStatus GetLabelingJobStatusForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == InProgress_HASH)
+          if (hashCode == Initializing_HASH)
+          {
+            return LabelingJobStatus::Initializing;
+          }
+          else if (hashCode == InProgress_HASH)
           {
             return LabelingJobStatus::InProgress;
           }
@@ -64,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case LabelingJobStatus::Initializing:
+            return "Initializing";
           case LabelingJobStatus::InProgress:
             return "InProgress";
           case LabelingJobStatus::Completed:

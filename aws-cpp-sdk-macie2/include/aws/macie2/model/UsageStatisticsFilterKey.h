@@ -16,7 +16,10 @@ namespace Model
   enum class UsageStatisticsFilterKey
   {
     NOT_SET,
-    accountId
+    accountId,
+    serviceLimit,
+    freeTrialStartDate,
+    total
   };
 
 namespace UsageStatisticsFilterKeyMapper

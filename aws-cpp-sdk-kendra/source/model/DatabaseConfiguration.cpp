@@ -24,7 +24,8 @@ DatabaseConfiguration::DatabaseConfiguration() :
     m_connectionConfigurationHasBeenSet(false),
     m_vpcConfigurationHasBeenSet(false),
     m_columnConfigurationHasBeenSet(false),
-    m_aclConfigurationHasBeenSet(false)
+    m_aclConfigurationHasBeenSet(false),
+    m_sqlConfigurationHasBeenSet(false)
 {
 }
 
@@ -34,7 +35,8 @@ DatabaseConfiguration::DatabaseConfiguration(JsonView jsonValue) :
     m_connectionConfigurationHasBeenSet(false),
     m_vpcConfigurationHasBeenSet(false),
     m_columnConfigurationHasBeenSet(false),
-    m_aclConfigurationHasBeenSet(false)
+    m_aclConfigurationHasBeenSet(false),
+    m_sqlConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -76,6 +78,13 @@ DatabaseConfiguration& DatabaseConfiguration::operator =(JsonView jsonValue)
     m_aclConfigurationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("SqlConfiguration"))
+  {
+    m_sqlConfiguration = jsonValue.GetObject("SqlConfiguration");
+
+    m_sqlConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -109,6 +118,12 @@ JsonValue DatabaseConfiguration::Jsonize() const
   if(m_aclConfigurationHasBeenSet)
   {
    payload.WithObject("AclConfiguration", m_aclConfiguration.Jsonize());
+
+  }
+
+  if(m_sqlConfigurationHasBeenSet)
+  {
+   payload.WithObject("SqlConfiguration", m_sqlConfiguration.Jsonize());
 
   }
 

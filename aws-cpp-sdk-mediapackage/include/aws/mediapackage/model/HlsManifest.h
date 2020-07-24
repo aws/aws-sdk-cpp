@@ -51,6 +51,12 @@ markers (comments) taken directly from the input HTTP Live Streaming (HLS)
 "SCTE35_ENHANCED" generates ad markers and blackout tags based on
      * SCTE-35
 messages in the input source.
+"DATERANGE" inserts EXT-X-DATERANGE tags
+     * to signal ad and program transition events 
+in HLS and CMAF manifests. For this
+     * option, you must set a programDateTimeIntervalSeconds value 
+that is greater
+     * than 0.
 
      */
     inline const AdMarkers& GetAdMarkers() const{ return m_adMarkers; }
@@ -67,6 +73,12 @@ markers (comments) taken directly from the input HTTP Live Streaming (HLS)
 "SCTE35_ENHANCED" generates ad markers and blackout tags based on
      * SCTE-35
 messages in the input source.
+"DATERANGE" inserts EXT-X-DATERANGE tags
+     * to signal ad and program transition events 
+in HLS and CMAF manifests. For this
+     * option, you must set a programDateTimeIntervalSeconds value 
+that is greater
+     * than 0.
 
      */
     inline bool AdMarkersHasBeenSet() const { return m_adMarkersHasBeenSet; }
@@ -83,6 +95,12 @@ markers (comments) taken directly from the input HTTP Live Streaming (HLS)
 "SCTE35_ENHANCED" generates ad markers and blackout tags based on
      * SCTE-35
 messages in the input source.
+"DATERANGE" inserts EXT-X-DATERANGE tags
+     * to signal ad and program transition events 
+in HLS and CMAF manifests. For this
+     * option, you must set a programDateTimeIntervalSeconds value 
+that is greater
+     * than 0.
 
      */
     inline void SetAdMarkers(const AdMarkers& value) { m_adMarkersHasBeenSet = true; m_adMarkers = value; }
@@ -99,6 +117,12 @@ markers (comments) taken directly from the input HTTP Live Streaming (HLS)
 "SCTE35_ENHANCED" generates ad markers and blackout tags based on
      * SCTE-35
 messages in the input source.
+"DATERANGE" inserts EXT-X-DATERANGE tags
+     * to signal ad and program transition events 
+in HLS and CMAF manifests. For this
+     * option, you must set a programDateTimeIntervalSeconds value 
+that is greater
+     * than 0.
 
      */
     inline void SetAdMarkers(AdMarkers&& value) { m_adMarkersHasBeenSet = true; m_adMarkers = std::move(value); }
@@ -115,6 +139,12 @@ markers (comments) taken directly from the input HTTP Live Streaming (HLS)
 "SCTE35_ENHANCED" generates ad markers and blackout tags based on
      * SCTE-35
 messages in the input source.
+"DATERANGE" inserts EXT-X-DATERANGE tags
+     * to signal ad and program transition events 
+in HLS and CMAF manifests. For this
+     * option, you must set a programDateTimeIntervalSeconds value 
+that is greater
+     * than 0.
 
      */
     inline HlsManifest& WithAdMarkers(const AdMarkers& value) { SetAdMarkers(value); return *this;}
@@ -131,6 +161,12 @@ markers (comments) taken directly from the input HTTP Live Streaming (HLS)
 "SCTE35_ENHANCED" generates ad markers and blackout tags based on
      * SCTE-35
 messages in the input source.
+"DATERANGE" inserts EXT-X-DATERANGE tags
+     * to signal ad and program transition events 
+in HLS and CMAF manifests. For this
+     * option, you must set a programDateTimeIntervalSeconds value 
+that is greater
+     * than 0.
 
      */
     inline HlsManifest& WithAdMarkers(AdMarkers&& value) { SetAdMarkers(std::move(value)); return *this;}

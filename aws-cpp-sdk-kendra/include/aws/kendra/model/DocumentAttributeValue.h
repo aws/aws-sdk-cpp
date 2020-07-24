@@ -149,32 +149,32 @@ namespace Model
 
 
     /**
-     * <p>A date value expressed as seconds from the Unix epoch.</p>
+     * <p>A date expressed as an ISO 8601 string.</p>
      */
     inline const Aws::Utils::DateTime& GetDateValue() const{ return m_dateValue; }
 
     /**
-     * <p>A date value expressed as seconds from the Unix epoch.</p>
+     * <p>A date expressed as an ISO 8601 string.</p>
      */
     inline bool DateValueHasBeenSet() const { return m_dateValueHasBeenSet; }
 
     /**
-     * <p>A date value expressed as seconds from the Unix epoch.</p>
+     * <p>A date expressed as an ISO 8601 string.</p>
      */
     inline void SetDateValue(const Aws::Utils::DateTime& value) { m_dateValueHasBeenSet = true; m_dateValue = value; }
 
     /**
-     * <p>A date value expressed as seconds from the Unix epoch.</p>
+     * <p>A date expressed as an ISO 8601 string.</p>
      */
     inline void SetDateValue(Aws::Utils::DateTime&& value) { m_dateValueHasBeenSet = true; m_dateValue = std::move(value); }
 
     /**
-     * <p>A date value expressed as seconds from the Unix epoch.</p>
+     * <p>A date expressed as an ISO 8601 string.</p>
      */
     inline DocumentAttributeValue& WithDateValue(const Aws::Utils::DateTime& value) { SetDateValue(value); return *this;}
 
     /**
-     * <p>A date value expressed as seconds from the Unix epoch.</p>
+     * <p>A date expressed as an ISO 8601 string.</p>
      */
     inline DocumentAttributeValue& WithDateValue(Aws::Utils::DateTime&& value) { SetDateValue(std::move(value)); return *this;}
 

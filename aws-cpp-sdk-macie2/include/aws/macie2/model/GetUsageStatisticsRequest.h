@@ -36,42 +36,58 @@ namespace Model
 
 
     /**
-     * <p>The criteria to use to filter the query results.</p>
+     * <p>An array of objects, one for each condition to use to filter the query
+     * results. If the array contains more than one object, Amazon Macie uses an AND
+     * operator to join the conditions specified by the objects.</p>
      */
     inline const Aws::Vector<UsageStatisticsFilter>& GetFilterBy() const{ return m_filterBy; }
 
     /**
-     * <p>The criteria to use to filter the query results.</p>
+     * <p>An array of objects, one for each condition to use to filter the query
+     * results. If the array contains more than one object, Amazon Macie uses an AND
+     * operator to join the conditions specified by the objects.</p>
      */
     inline bool FilterByHasBeenSet() const { return m_filterByHasBeenSet; }
 
     /**
-     * <p>The criteria to use to filter the query results.</p>
+     * <p>An array of objects, one for each condition to use to filter the query
+     * results. If the array contains more than one object, Amazon Macie uses an AND
+     * operator to join the conditions specified by the objects.</p>
      */
     inline void SetFilterBy(const Aws::Vector<UsageStatisticsFilter>& value) { m_filterByHasBeenSet = true; m_filterBy = value; }
 
     /**
-     * <p>The criteria to use to filter the query results.</p>
+     * <p>An array of objects, one for each condition to use to filter the query
+     * results. If the array contains more than one object, Amazon Macie uses an AND
+     * operator to join the conditions specified by the objects.</p>
      */
     inline void SetFilterBy(Aws::Vector<UsageStatisticsFilter>&& value) { m_filterByHasBeenSet = true; m_filterBy = std::move(value); }
 
     /**
-     * <p>The criteria to use to filter the query results.</p>
+     * <p>An array of objects, one for each condition to use to filter the query
+     * results. If the array contains more than one object, Amazon Macie uses an AND
+     * operator to join the conditions specified by the objects.</p>
      */
     inline GetUsageStatisticsRequest& WithFilterBy(const Aws::Vector<UsageStatisticsFilter>& value) { SetFilterBy(value); return *this;}
 
     /**
-     * <p>The criteria to use to filter the query results.</p>
+     * <p>An array of objects, one for each condition to use to filter the query
+     * results. If the array contains more than one object, Amazon Macie uses an AND
+     * operator to join the conditions specified by the objects.</p>
      */
     inline GetUsageStatisticsRequest& WithFilterBy(Aws::Vector<UsageStatisticsFilter>&& value) { SetFilterBy(std::move(value)); return *this;}
 
     /**
-     * <p>The criteria to use to filter the query results.</p>
+     * <p>An array of objects, one for each condition to use to filter the query
+     * results. If the array contains more than one object, Amazon Macie uses an AND
+     * operator to join the conditions specified by the objects.</p>
      */
     inline GetUsageStatisticsRequest& AddFilterBy(const UsageStatisticsFilter& value) { m_filterByHasBeenSet = true; m_filterBy.push_back(value); return *this; }
 
     /**
-     * <p>The criteria to use to filter the query results.</p>
+     * <p>An array of objects, one for each condition to use to filter the query
+     * results. If the array contains more than one object, Amazon Macie uses an AND
+     * operator to join the conditions specified by the objects.</p>
      */
     inline GetUsageStatisticsRequest& AddFilterBy(UsageStatisticsFilter&& value) { m_filterByHasBeenSet = true; m_filterBy.push_back(std::move(value)); return *this; }
 

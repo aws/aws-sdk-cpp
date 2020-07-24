@@ -38,58 +38,58 @@ namespace Model
 
 
     /**
-     * The customer master key (CMK) to use for the AWS Key Management Service (KMS).
-     * This key is used to encrypt your data at rest. If not provided, Amazon MQ will
-     * use a default CMK to encrypt your data.
+     * The symmetric customer master key (CMK) to use for the AWS Key Management
+     * Service (KMS). This key is used to encrypt your data at rest. If not provided,
+     * Amazon MQ will use a default CMK to encrypt your data.
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
-     * The customer master key (CMK) to use for the AWS Key Management Service (KMS).
-     * This key is used to encrypt your data at rest. If not provided, Amazon MQ will
-     * use a default CMK to encrypt your data.
+     * The symmetric customer master key (CMK) to use for the AWS Key Management
+     * Service (KMS). This key is used to encrypt your data at rest. If not provided,
+     * Amazon MQ will use a default CMK to encrypt your data.
      */
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
-     * The customer master key (CMK) to use for the AWS Key Management Service (KMS).
-     * This key is used to encrypt your data at rest. If not provided, Amazon MQ will
-     * use a default CMK to encrypt your data.
+     * The symmetric customer master key (CMK) to use for the AWS Key Management
+     * Service (KMS). This key is used to encrypt your data at rest. If not provided,
+     * Amazon MQ will use a default CMK to encrypt your data.
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
     /**
-     * The customer master key (CMK) to use for the AWS Key Management Service (KMS).
-     * This key is used to encrypt your data at rest. If not provided, Amazon MQ will
-     * use a default CMK to encrypt your data.
+     * The symmetric customer master key (CMK) to use for the AWS Key Management
+     * Service (KMS). This key is used to encrypt your data at rest. If not provided,
+     * Amazon MQ will use a default CMK to encrypt your data.
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
     /**
-     * The customer master key (CMK) to use for the AWS Key Management Service (KMS).
-     * This key is used to encrypt your data at rest. If not provided, Amazon MQ will
-     * use a default CMK to encrypt your data.
+     * The symmetric customer master key (CMK) to use for the AWS Key Management
+     * Service (KMS). This key is used to encrypt your data at rest. If not provided,
+     * Amazon MQ will use a default CMK to encrypt your data.
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
     /**
-     * The customer master key (CMK) to use for the AWS Key Management Service (KMS).
-     * This key is used to encrypt your data at rest. If not provided, Amazon MQ will
-     * use a default CMK to encrypt your data.
+     * The symmetric customer master key (CMK) to use for the AWS Key Management
+     * Service (KMS). This key is used to encrypt your data at rest. If not provided,
+     * Amazon MQ will use a default CMK to encrypt your data.
      */
     inline EncryptionOptions& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
-     * The customer master key (CMK) to use for the AWS Key Management Service (KMS).
-     * This key is used to encrypt your data at rest. If not provided, Amazon MQ will
-     * use a default CMK to encrypt your data.
+     * The symmetric customer master key (CMK) to use for the AWS Key Management
+     * Service (KMS). This key is used to encrypt your data at rest. If not provided,
+     * Amazon MQ will use a default CMK to encrypt your data.
      */
     inline EncryptionOptions& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
-     * The customer master key (CMK) to use for the AWS Key Management Service (KMS).
-     * This key is used to encrypt your data at rest. If not provided, Amazon MQ will
-     * use a default CMK to encrypt your data.
+     * The symmetric customer master key (CMK) to use for the AWS Key Management
+     * Service (KMS). This key is used to encrypt your data at rest. If not provided,
+     * Amazon MQ will use a default CMK to encrypt your data.
      */
     inline EncryptionOptions& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 

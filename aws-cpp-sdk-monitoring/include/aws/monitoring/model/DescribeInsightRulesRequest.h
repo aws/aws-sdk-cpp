@@ -79,25 +79,25 @@ namespace Model
 
     /**
      * <p>This parameter is not currently used. Reserved for future use. If it is used
-     * in the future, the maximum value may be different.</p>
+     * in the future, the maximum value might be different.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
      * <p>This parameter is not currently used. Reserved for future use. If it is used
-     * in the future, the maximum value may be different.</p>
+     * in the future, the maximum value might be different.</p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
      * <p>This parameter is not currently used. Reserved for future use. If it is used
-     * in the future, the maximum value may be different.</p>
+     * in the future, the maximum value might be different.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
      * <p>This parameter is not currently used. Reserved for future use. If it is used
-     * in the future, the maximum value may be different.</p>
+     * in the future, the maximum value might be different.</p>
      */
     inline DescribeInsightRulesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 

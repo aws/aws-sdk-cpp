@@ -187,50 +187,50 @@ namespace Model
 
 
     /**
-     * <p>The name for the composite alarm. This name must be unique within your AWS
-     * account.</p>
+     * <p>The name for the composite alarm. This name must be unique within the
+     * Region.</p>
      */
     inline const Aws::String& GetAlarmName() const{ return m_alarmName; }
 
     /**
-     * <p>The name for the composite alarm. This name must be unique within your AWS
-     * account.</p>
+     * <p>The name for the composite alarm. This name must be unique within the
+     * Region.</p>
      */
     inline bool AlarmNameHasBeenSet() const { return m_alarmNameHasBeenSet; }
 
     /**
-     * <p>The name for the composite alarm. This name must be unique within your AWS
-     * account.</p>
+     * <p>The name for the composite alarm. This name must be unique within the
+     * Region.</p>
      */
     inline void SetAlarmName(const Aws::String& value) { m_alarmNameHasBeenSet = true; m_alarmName = value; }
 
     /**
-     * <p>The name for the composite alarm. This name must be unique within your AWS
-     * account.</p>
+     * <p>The name for the composite alarm. This name must be unique within the
+     * Region.</p>
      */
     inline void SetAlarmName(Aws::String&& value) { m_alarmNameHasBeenSet = true; m_alarmName = std::move(value); }
 
     /**
-     * <p>The name for the composite alarm. This name must be unique within your AWS
-     * account.</p>
+     * <p>The name for the composite alarm. This name must be unique within the
+     * Region.</p>
      */
     inline void SetAlarmName(const char* value) { m_alarmNameHasBeenSet = true; m_alarmName.assign(value); }
 
     /**
-     * <p>The name for the composite alarm. This name must be unique within your AWS
-     * account.</p>
+     * <p>The name for the composite alarm. This name must be unique within the
+     * Region.</p>
      */
     inline PutCompositeAlarmRequest& WithAlarmName(const Aws::String& value) { SetAlarmName(value); return *this;}
 
     /**
-     * <p>The name for the composite alarm. This name must be unique within your AWS
-     * account.</p>
+     * <p>The name for the composite alarm. This name must be unique within the
+     * Region.</p>
      */
     inline PutCompositeAlarmRequest& WithAlarmName(Aws::String&& value) { SetAlarmName(std::move(value)); return *this;}
 
     /**
-     * <p>The name for the composite alarm. This name must be unique within your AWS
-     * account.</p>
+     * <p>The name for the composite alarm. This name must be unique within the
+     * Region.</p>
      */
     inline PutCompositeAlarmRequest& WithAlarmName(const char* value) { SetAlarmName(value); return *this;}
 

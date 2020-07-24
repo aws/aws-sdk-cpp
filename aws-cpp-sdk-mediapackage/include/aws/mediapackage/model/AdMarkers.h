@@ -18,7 +18,8 @@ namespace Model
     NOT_SET,
     NONE,
     SCTE35_ENHANCED,
-    PASSTHROUGH
+    PASSTHROUGH,
+    DATERANGE
   };
 
 namespace AdMarkersMapper

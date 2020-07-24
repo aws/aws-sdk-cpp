@@ -14,6 +14,7 @@ using namespace Aws::Utils;
 
 CreateWorkteamRequest::CreateWorkteamRequest() : 
     m_workteamNameHasBeenSet(false),
+    m_workforceNameHasBeenSet(false),
     m_memberDefinitionsHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_notificationConfigurationHasBeenSet(false),
@@ -28,6 +29,12 @@ Aws::String CreateWorkteamRequest::SerializePayload() const
   if(m_workteamNameHasBeenSet)
   {
    payload.WithString("WorkteamName", m_workteamName);
+
+  }
+
+  if(m_workforceNameHasBeenSet)
+  {
+   payload.WithString("WorkforceName", m_workforceName);
 
   }
 

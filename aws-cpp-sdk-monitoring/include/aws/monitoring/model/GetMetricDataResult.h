@@ -117,7 +117,7 @@ namespace Model
 
     /**
      * <p>Contains a message about this <code>GetMetricData</code> operation, if the
-     * operation results in such a message. An example of a message that may be
+     * operation results in such a message. An example of a message that might be
      * returned is <code>Maximum number of allowed metrics exceeded</code>. If there is
      * a message, as much of the operation as possible is still executed.</p> <p>A
      * message appears here only if it is related to the global
@@ -129,7 +129,7 @@ namespace Model
 
     /**
      * <p>Contains a message about this <code>GetMetricData</code> operation, if the
-     * operation results in such a message. An example of a message that may be
+     * operation results in such a message. An example of a message that might be
      * returned is <code>Maximum number of allowed metrics exceeded</code>. If there is
      * a message, as much of the operation as possible is still executed.</p> <p>A
      * message appears here only if it is related to the global
@@ -141,7 +141,7 @@ namespace Model
 
     /**
      * <p>Contains a message about this <code>GetMetricData</code> operation, if the
-     * operation results in such a message. An example of a message that may be
+     * operation results in such a message. An example of a message that might be
      * returned is <code>Maximum number of allowed metrics exceeded</code>. If there is
      * a message, as much of the operation as possible is still executed.</p> <p>A
      * message appears here only if it is related to the global
@@ -153,7 +153,7 @@ namespace Model
 
     /**
      * <p>Contains a message about this <code>GetMetricData</code> operation, if the
-     * operation results in such a message. An example of a message that may be
+     * operation results in such a message. An example of a message that might be
      * returned is <code>Maximum number of allowed metrics exceeded</code>. If there is
      * a message, as much of the operation as possible is still executed.</p> <p>A
      * message appears here only if it is related to the global
@@ -165,7 +165,7 @@ namespace Model
 
     /**
      * <p>Contains a message about this <code>GetMetricData</code> operation, if the
-     * operation results in such a message. An example of a message that may be
+     * operation results in such a message. An example of a message that might be
      * returned is <code>Maximum number of allowed metrics exceeded</code>. If there is
      * a message, as much of the operation as possible is still executed.</p> <p>A
      * message appears here only if it is related to the global
@@ -177,7 +177,7 @@ namespace Model
 
     /**
      * <p>Contains a message about this <code>GetMetricData</code> operation, if the
-     * operation results in such a message. An example of a message that may be
+     * operation results in such a message. An example of a message that might be
      * returned is <code>Maximum number of allowed metrics exceeded</code>. If there is
      * a message, as much of the operation as possible is still executed.</p> <p>A
      * message appears here only if it is related to the global
@@ -189,7 +189,7 @@ namespace Model
 
     /**
      * <p>Contains a message about this <code>GetMetricData</code> operation, if the
-     * operation results in such a message. An example of a message that may be
+     * operation results in such a message. An example of a message that might be
      * returned is <code>Maximum number of allowed metrics exceeded</code>. If there is
      * a message, as much of the operation as possible is still executed.</p> <p>A
      * message appears here only if it is related to the global

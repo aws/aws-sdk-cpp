@@ -13,12 +13,15 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 UpdateBrokerRequest::UpdateBrokerRequest() : 
+    m_authenticationStrategy(AuthenticationStrategy::NOT_SET),
+    m_authenticationStrategyHasBeenSet(false),
     m_autoMinorVersionUpgrade(false),
     m_autoMinorVersionUpgradeHasBeenSet(false),
     m_brokerIdHasBeenSet(false),
     m_configurationHasBeenSet(false),
     m_engineVersionHasBeenSet(false),
     m_hostInstanceTypeHasBeenSet(false),
+    m_ldapServerMetadataHasBeenSet(false),
     m_logsHasBeenSet(false),
     m_securityGroupsHasBeenSet(false)
 {
@@ -27,6 +30,11 @@ UpdateBrokerRequest::UpdateBrokerRequest() :
 Aws::String UpdateBrokerRequest::SerializePayload() const
 {
   JsonValue payload;
+
+  if(m_authenticationStrategyHasBeenSet)
+  {
+   payload.WithString("authenticationStrategy", AuthenticationStrategyMapper::GetNameForAuthenticationStrategy(m_authenticationStrategy));
+  }
 
   if(m_autoMinorVersionUpgradeHasBeenSet)
   {
@@ -49,6 +57,12 @@ Aws::String UpdateBrokerRequest::SerializePayload() const
   if(m_hostInstanceTypeHasBeenSet)
   {
    payload.WithString("hostInstanceType", m_hostInstanceType);
+
+  }
+
+  if(m_ldapServerMetadataHasBeenSet)
+  {
+   payload.WithObject("ldapServerMetadata", m_ldapServerMetadata.Jsonize());
 
   }
 

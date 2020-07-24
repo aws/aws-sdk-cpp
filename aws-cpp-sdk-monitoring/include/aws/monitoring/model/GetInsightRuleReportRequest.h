@@ -220,7 +220,7 @@ namespace Model
      * report. You can specify one or more of the following metrics:</p> <ul> <li> <p>
      * <code>UniqueContributors</code> -- the number of unique contributors for each
      * data point.</p> </li> <li> <p> <code>MaxContributorValue</code> -- the value of
-     * the top contributor for each data point. The identity of the contributor may
+     * the top contributor for each data point. The identity of the contributor might
      * change for each data point in the graph.</p> <p>If this rule aggregates by
      * COUNT, the top contributor for each data point is the contributor with the most
      * occurrences in that period. If the rule aggregates by SUM, the top contributor
@@ -243,7 +243,7 @@ namespace Model
      * report. You can specify one or more of the following metrics:</p> <ul> <li> <p>
      * <code>UniqueContributors</code> -- the number of unique contributors for each
      * data point.</p> </li> <li> <p> <code>MaxContributorValue</code> -- the value of
-     * the top contributor for each data point. The identity of the contributor may
+     * the top contributor for each data point. The identity of the contributor might
      * change for each data point in the graph.</p> <p>If this rule aggregates by
      * COUNT, the top contributor for each data point is the contributor with the most
      * occurrences in that period. If the rule aggregates by SUM, the top contributor
@@ -266,7 +266,7 @@ namespace Model
      * report. You can specify one or more of the following metrics:</p> <ul> <li> <p>
      * <code>UniqueContributors</code> -- the number of unique contributors for each
      * data point.</p> </li> <li> <p> <code>MaxContributorValue</code> -- the value of
-     * the top contributor for each data point. The identity of the contributor may
+     * the top contributor for each data point. The identity of the contributor might
      * change for each data point in the graph.</p> <p>If this rule aggregates by
      * COUNT, the top contributor for each data point is the contributor with the most
      * occurrences in that period. If the rule aggregates by SUM, the top contributor
@@ -289,7 +289,7 @@ namespace Model
      * report. You can specify one or more of the following metrics:</p> <ul> <li> <p>
      * <code>UniqueContributors</code> -- the number of unique contributors for each
      * data point.</p> </li> <li> <p> <code>MaxContributorValue</code> -- the value of
-     * the top contributor for each data point. The identity of the contributor may
+     * the top contributor for each data point. The identity of the contributor might
      * change for each data point in the graph.</p> <p>If this rule aggregates by
      * COUNT, the top contributor for each data point is the contributor with the most
      * occurrences in that period. If the rule aggregates by SUM, the top contributor
@@ -312,7 +312,7 @@ namespace Model
      * report. You can specify one or more of the following metrics:</p> <ul> <li> <p>
      * <code>UniqueContributors</code> -- the number of unique contributors for each
      * data point.</p> </li> <li> <p> <code>MaxContributorValue</code> -- the value of
-     * the top contributor for each data point. The identity of the contributor may
+     * the top contributor for each data point. The identity of the contributor might
      * change for each data point in the graph.</p> <p>If this rule aggregates by
      * COUNT, the top contributor for each data point is the contributor with the most
      * occurrences in that period. If the rule aggregates by SUM, the top contributor
@@ -335,7 +335,7 @@ namespace Model
      * report. You can specify one or more of the following metrics:</p> <ul> <li> <p>
      * <code>UniqueContributors</code> -- the number of unique contributors for each
      * data point.</p> </li> <li> <p> <code>MaxContributorValue</code> -- the value of
-     * the top contributor for each data point. The identity of the contributor may
+     * the top contributor for each data point. The identity of the contributor might
      * change for each data point in the graph.</p> <p>If this rule aggregates by
      * COUNT, the top contributor for each data point is the contributor with the most
      * occurrences in that period. If the rule aggregates by SUM, the top contributor
@@ -358,7 +358,7 @@ namespace Model
      * report. You can specify one or more of the following metrics:</p> <ul> <li> <p>
      * <code>UniqueContributors</code> -- the number of unique contributors for each
      * data point.</p> </li> <li> <p> <code>MaxContributorValue</code> -- the value of
-     * the top contributor for each data point. The identity of the contributor may
+     * the top contributor for each data point. The identity of the contributor might
      * change for each data point in the graph.</p> <p>If this rule aggregates by
      * COUNT, the top contributor for each data point is the contributor with the most
      * occurrences in that period. If the rule aggregates by SUM, the top contributor
@@ -381,7 +381,7 @@ namespace Model
      * report. You can specify one or more of the following metrics:</p> <ul> <li> <p>
      * <code>UniqueContributors</code> -- the number of unique contributors for each
      * data point.</p> </li> <li> <p> <code>MaxContributorValue</code> -- the value of
-     * the top contributor for each data point. The identity of the contributor may
+     * the top contributor for each data point. The identity of the contributor might
      * change for each data point in the graph.</p> <p>If this rule aggregates by
      * COUNT, the top contributor for each data point is the contributor with the most
      * occurrences in that period. If the rule aggregates by SUM, the top contributor
@@ -404,7 +404,7 @@ namespace Model
      * report. You can specify one or more of the following metrics:</p> <ul> <li> <p>
      * <code>UniqueContributors</code> -- the number of unique contributors for each
      * data point.</p> </li> <li> <p> <code>MaxContributorValue</code> -- the value of
-     * the top contributor for each data point. The identity of the contributor may
+     * the top contributor for each data point. The identity of the contributor might
      * change for each data point in the graph.</p> <p>If this rule aggregates by
      * COUNT, the top contributor for each data point is the contributor with the most
      * occurrences in that period. If the rule aggregates by SUM, the top contributor

@@ -17,7 +17,7 @@ PutExternalModelRequest::PutExternalModelRequest() :
     m_eventTypeNameHasBeenSet(false),
     m_modelSource(ModelSource::NOT_SET),
     m_modelSourceHasBeenSet(false),
-    m_roleHasBeenSet(false),
+    m_invokeModelEndpointRoleArnHasBeenSet(false),
     m_inputConfigurationHasBeenSet(false),
     m_outputConfigurationHasBeenSet(false),
     m_modelEndpointStatus(ModelEndpointStatus::NOT_SET),
@@ -47,9 +47,9 @@ Aws::String PutExternalModelRequest::SerializePayload() const
    payload.WithString("modelSource", ModelSourceMapper::GetNameForModelSource(m_modelSource));
   }
 
-  if(m_roleHasBeenSet)
+  if(m_invokeModelEndpointRoleArnHasBeenSet)
   {
-   payload.WithObject("role", m_role.Jsonize());
+   payload.WithString("invokeModelEndpointRoleArn", m_invokeModelEndpointRoleArn);
 
   }
 

@@ -122,7 +122,7 @@ namespace Model
      * <code>"relative/path/to/custdata-1",</code> </p> <p>
      * <code>"relative/path/custdata-2",</code> </p> <p> <code>...</code> </p> <p>
      * <code>"relative/path/custdata-N"</code> </p> <p> <code>]</code> </p> <p> The
-     * preceding JSON matches the following <code>s3Uris</code>: </p> <p>
+     * preceding JSON matches the following <code>S3Uris</code>: </p> <p>
      * <code>s3://customer_bucket/some/prefix/relative/path/to/custdata-1</code> </p>
      * <p> <code>s3://customer_bucket/some/prefix/relative/path/custdata-2</code> </p>
      * <p> <code>...</code> </p> <p>
@@ -145,7 +145,7 @@ namespace Model
      * <code>"relative/path/to/custdata-1",</code> </p> <p>
      * <code>"relative/path/custdata-2",</code> </p> <p> <code>...</code> </p> <p>
      * <code>"relative/path/custdata-N"</code> </p> <p> <code>]</code> </p> <p> The
-     * preceding JSON matches the following <code>s3Uris</code>: </p> <p>
+     * preceding JSON matches the following <code>S3Uris</code>: </p> <p>
      * <code>s3://customer_bucket/some/prefix/relative/path/to/custdata-1</code> </p>
      * <p> <code>s3://customer_bucket/some/prefix/relative/path/custdata-2</code> </p>
      * <p> <code>...</code> </p> <p>
@@ -168,7 +168,7 @@ namespace Model
      * <code>"relative/path/to/custdata-1",</code> </p> <p>
      * <code>"relative/path/custdata-2",</code> </p> <p> <code>...</code> </p> <p>
      * <code>"relative/path/custdata-N"</code> </p> <p> <code>]</code> </p> <p> The
-     * preceding JSON matches the following <code>s3Uris</code>: </p> <p>
+     * preceding JSON matches the following <code>S3Uris</code>: </p> <p>
      * <code>s3://customer_bucket/some/prefix/relative/path/to/custdata-1</code> </p>
      * <p> <code>s3://customer_bucket/some/prefix/relative/path/custdata-2</code> </p>
      * <p> <code>...</code> </p> <p>
@@ -191,7 +191,7 @@ namespace Model
      * <code>"relative/path/to/custdata-1",</code> </p> <p>
      * <code>"relative/path/custdata-2",</code> </p> <p> <code>...</code> </p> <p>
      * <code>"relative/path/custdata-N"</code> </p> <p> <code>]</code> </p> <p> The
-     * preceding JSON matches the following <code>s3Uris</code>: </p> <p>
+     * preceding JSON matches the following <code>S3Uris</code>: </p> <p>
      * <code>s3://customer_bucket/some/prefix/relative/path/to/custdata-1</code> </p>
      * <p> <code>s3://customer_bucket/some/prefix/relative/path/custdata-2</code> </p>
      * <p> <code>...</code> </p> <p>
@@ -214,7 +214,7 @@ namespace Model
      * <code>"relative/path/to/custdata-1",</code> </p> <p>
      * <code>"relative/path/custdata-2",</code> </p> <p> <code>...</code> </p> <p>
      * <code>"relative/path/custdata-N"</code> </p> <p> <code>]</code> </p> <p> The
-     * preceding JSON matches the following <code>s3Uris</code>: </p> <p>
+     * preceding JSON matches the following <code>S3Uris</code>: </p> <p>
      * <code>s3://customer_bucket/some/prefix/relative/path/to/custdata-1</code> </p>
      * <p> <code>s3://customer_bucket/some/prefix/relative/path/custdata-2</code> </p>
      * <p> <code>...</code> </p> <p>
@@ -237,7 +237,7 @@ namespace Model
      * <code>"relative/path/to/custdata-1",</code> </p> <p>
      * <code>"relative/path/custdata-2",</code> </p> <p> <code>...</code> </p> <p>
      * <code>"relative/path/custdata-N"</code> </p> <p> <code>]</code> </p> <p> The
-     * preceding JSON matches the following <code>s3Uris</code>: </p> <p>
+     * preceding JSON matches the following <code>S3Uris</code>: </p> <p>
      * <code>s3://customer_bucket/some/prefix/relative/path/to/custdata-1</code> </p>
      * <p> <code>s3://customer_bucket/some/prefix/relative/path/custdata-2</code> </p>
      * <p> <code>...</code> </p> <p>
@@ -260,7 +260,7 @@ namespace Model
      * <code>"relative/path/to/custdata-1",</code> </p> <p>
      * <code>"relative/path/custdata-2",</code> </p> <p> <code>...</code> </p> <p>
      * <code>"relative/path/custdata-N"</code> </p> <p> <code>]</code> </p> <p> The
-     * preceding JSON matches the following <code>s3Uris</code>: </p> <p>
+     * preceding JSON matches the following <code>S3Uris</code>: </p> <p>
      * <code>s3://customer_bucket/some/prefix/relative/path/to/custdata-1</code> </p>
      * <p> <code>s3://customer_bucket/some/prefix/relative/path/custdata-2</code> </p>
      * <p> <code>...</code> </p> <p>
@@ -283,7 +283,7 @@ namespace Model
      * <code>"relative/path/to/custdata-1",</code> </p> <p>
      * <code>"relative/path/custdata-2",</code> </p> <p> <code>...</code> </p> <p>
      * <code>"relative/path/custdata-N"</code> </p> <p> <code>]</code> </p> <p> The
-     * preceding JSON matches the following <code>s3Uris</code>: </p> <p>
+     * preceding JSON matches the following <code>S3Uris</code>: </p> <p>
      * <code>s3://customer_bucket/some/prefix/relative/path/to/custdata-1</code> </p>
      * <p> <code>s3://customer_bucket/some/prefix/relative/path/custdata-2</code> </p>
      * <p> <code>...</code> </p> <p>

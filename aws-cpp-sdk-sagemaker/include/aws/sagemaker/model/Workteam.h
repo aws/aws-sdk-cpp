@@ -165,6 +165,47 @@ namespace Model
 
 
     /**
+     * <p>The Amazon Resource Name (ARN) of the workforce.</p>
+     */
+    inline const Aws::String& GetWorkforceArn() const{ return m_workforceArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the workforce.</p>
+     */
+    inline bool WorkforceArnHasBeenSet() const { return m_workforceArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the workforce.</p>
+     */
+    inline void SetWorkforceArn(const Aws::String& value) { m_workforceArnHasBeenSet = true; m_workforceArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the workforce.</p>
+     */
+    inline void SetWorkforceArn(Aws::String&& value) { m_workforceArnHasBeenSet = true; m_workforceArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the workforce.</p>
+     */
+    inline void SetWorkforceArn(const char* value) { m_workforceArnHasBeenSet = true; m_workforceArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the workforce.</p>
+     */
+    inline Workteam& WithWorkforceArn(const Aws::String& value) { SetWorkforceArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the workforce.</p>
+     */
+    inline Workteam& WithWorkforceArn(Aws::String&& value) { SetWorkforceArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the workforce.</p>
+     */
+    inline Workteam& WithWorkforceArn(const char* value) { SetWorkforceArn(value); return *this;}
+
+
+    /**
      * <p>The Amazon Marketplace identifier for a vendor's work team.</p>
      */
     inline const Aws::Vector<Aws::String>& GetProductListingIds() const{ return m_productListingIds; }
@@ -408,6 +449,9 @@ namespace Model
 
     Aws::String m_workteamArn;
     bool m_workteamArnHasBeenSet;
+
+    Aws::String m_workforceArn;
+    bool m_workforceArnHasBeenSet;
 
     Aws::Vector<Aws::String> m_productListingIds;
     bool m_productListingIdsHasBeenSet;

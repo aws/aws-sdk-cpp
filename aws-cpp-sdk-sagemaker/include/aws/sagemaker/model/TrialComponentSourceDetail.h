@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/sagemaker/model/TrainingJob.h>
 #include <aws/sagemaker/model/ProcessingJob.h>
+#include <aws/sagemaker/model/TransformJob.h>
 #include <utility>
 
 namespace Aws
@@ -149,6 +150,43 @@ namespace Model
      */
     inline TrialComponentSourceDetail& WithProcessingJob(ProcessingJob&& value) { SetProcessingJob(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Information about a transform job that's the source of the trial
+     * component.</p>
+     */
+    inline const TransformJob& GetTransformJob() const{ return m_transformJob; }
+
+    /**
+     * <p>Information about a transform job that's the source of the trial
+     * component.</p>
+     */
+    inline bool TransformJobHasBeenSet() const { return m_transformJobHasBeenSet; }
+
+    /**
+     * <p>Information about a transform job that's the source of the trial
+     * component.</p>
+     */
+    inline void SetTransformJob(const TransformJob& value) { m_transformJobHasBeenSet = true; m_transformJob = value; }
+
+    /**
+     * <p>Information about a transform job that's the source of the trial
+     * component.</p>
+     */
+    inline void SetTransformJob(TransformJob&& value) { m_transformJobHasBeenSet = true; m_transformJob = std::move(value); }
+
+    /**
+     * <p>Information about a transform job that's the source of the trial
+     * component.</p>
+     */
+    inline TrialComponentSourceDetail& WithTransformJob(const TransformJob& value) { SetTransformJob(value); return *this;}
+
+    /**
+     * <p>Information about a transform job that's the source of the trial
+     * component.</p>
+     */
+    inline TrialComponentSourceDetail& WithTransformJob(TransformJob&& value) { SetTransformJob(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_sourceArn;
@@ -159,6 +197,9 @@ namespace Model
 
     ProcessingJob m_processingJob;
     bool m_processingJobHasBeenSet;
+
+    TransformJob m_transformJob;
+    bool m_transformJobHasBeenSet;
   };
 
 } // namespace Model

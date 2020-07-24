@@ -23,6 +23,7 @@ namespace Model
     ml_c5,
     ml_p2,
     ml_p3,
+    ml_g4dn,
     ml_inf1,
     jetson_tx1,
     jetson_tx2,
@@ -38,7 +39,9 @@ namespace Model
     qcs605,
     qcs603,
     sitara_am57x,
-    amba_cv22
+    amba_cv22,
+    x86_win32,
+    x86_win64
   };
 
 namespace TargetDeviceMapper

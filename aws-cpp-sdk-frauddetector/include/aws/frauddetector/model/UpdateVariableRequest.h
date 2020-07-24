@@ -158,42 +158,58 @@ namespace Model
 
 
     /**
-     * <p>The variable type.</p>
+     * <p>The variable type. For more information see <a
+     * href="https://docs.aws.amazon.com/frauddetector/latest/ug/create-a-variable.html#variable-types">Variable
+     * types</a>.</p>
      */
     inline const Aws::String& GetVariableType() const{ return m_variableType; }
 
     /**
-     * <p>The variable type.</p>
+     * <p>The variable type. For more information see <a
+     * href="https://docs.aws.amazon.com/frauddetector/latest/ug/create-a-variable.html#variable-types">Variable
+     * types</a>.</p>
      */
     inline bool VariableTypeHasBeenSet() const { return m_variableTypeHasBeenSet; }
 
     /**
-     * <p>The variable type.</p>
+     * <p>The variable type. For more information see <a
+     * href="https://docs.aws.amazon.com/frauddetector/latest/ug/create-a-variable.html#variable-types">Variable
+     * types</a>.</p>
      */
     inline void SetVariableType(const Aws::String& value) { m_variableTypeHasBeenSet = true; m_variableType = value; }
 
     /**
-     * <p>The variable type.</p>
+     * <p>The variable type. For more information see <a
+     * href="https://docs.aws.amazon.com/frauddetector/latest/ug/create-a-variable.html#variable-types">Variable
+     * types</a>.</p>
      */
     inline void SetVariableType(Aws::String&& value) { m_variableTypeHasBeenSet = true; m_variableType = std::move(value); }
 
     /**
-     * <p>The variable type.</p>
+     * <p>The variable type. For more information see <a
+     * href="https://docs.aws.amazon.com/frauddetector/latest/ug/create-a-variable.html#variable-types">Variable
+     * types</a>.</p>
      */
     inline void SetVariableType(const char* value) { m_variableTypeHasBeenSet = true; m_variableType.assign(value); }
 
     /**
-     * <p>The variable type.</p>
+     * <p>The variable type. For more information see <a
+     * href="https://docs.aws.amazon.com/frauddetector/latest/ug/create-a-variable.html#variable-types">Variable
+     * types</a>.</p>
      */
     inline UpdateVariableRequest& WithVariableType(const Aws::String& value) { SetVariableType(value); return *this;}
 
     /**
-     * <p>The variable type.</p>
+     * <p>The variable type. For more information see <a
+     * href="https://docs.aws.amazon.com/frauddetector/latest/ug/create-a-variable.html#variable-types">Variable
+     * types</a>.</p>
      */
     inline UpdateVariableRequest& WithVariableType(Aws::String&& value) { SetVariableType(std::move(value)); return *this;}
 
     /**
-     * <p>The variable type.</p>
+     * <p>The variable type. For more information see <a
+     * href="https://docs.aws.amazon.com/frauddetector/latest/ug/create-a-variable.html#variable-types">Variable
+     * types</a>.</p>
      */
     inline UpdateVariableRequest& WithVariableType(const char* value) { SetVariableType(value); return *this;}
 

@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/mq/MQ_EXPORTS.h>
+#include <aws/mq/model/AuthenticationStrategy.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/mq/model/BrokerState.h>
@@ -13,6 +14,7 @@
 #include <aws/mq/model/DeploymentMode.h>
 #include <aws/mq/model/EncryptionOptions.h>
 #include <aws/mq/model/EngineType.h>
+#include <aws/mq/model/LdapServerMetadataOutput.h>
 #include <aws/mq/model/LogsSummary.h>
 #include <aws/mq/model/WeeklyStartTime.h>
 #include <aws/mq/model/BrokerStorageType.h>
@@ -43,6 +45,32 @@ namespace Model
     DescribeBrokerResult();
     DescribeBrokerResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     DescribeBrokerResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
+
+    /**
+     * The authentication strategy used to secure the broker.
+     */
+    inline const AuthenticationStrategy& GetAuthenticationStrategy() const{ return m_authenticationStrategy; }
+
+    /**
+     * The authentication strategy used to secure the broker.
+     */
+    inline void SetAuthenticationStrategy(const AuthenticationStrategy& value) { m_authenticationStrategy = value; }
+
+    /**
+     * The authentication strategy used to secure the broker.
+     */
+    inline void SetAuthenticationStrategy(AuthenticationStrategy&& value) { m_authenticationStrategy = std::move(value); }
+
+    /**
+     * The authentication strategy used to secure the broker.
+     */
+    inline DescribeBrokerResult& WithAuthenticationStrategy(const AuthenticationStrategy& value) { SetAuthenticationStrategy(value); return *this;}
+
+    /**
+     * The authentication strategy used to secure the broker.
+     */
+    inline DescribeBrokerResult& WithAuthenticationStrategy(AuthenticationStrategy&& value) { SetAuthenticationStrategy(std::move(value)); return *this;}
 
 
     /**
@@ -473,6 +501,37 @@ namespace Model
 
 
     /**
+     * The metadata of the LDAP server used to authenticate and authorize connections
+     * to the broker.
+     */
+    inline const LdapServerMetadataOutput& GetLdapServerMetadata() const{ return m_ldapServerMetadata; }
+
+    /**
+     * The metadata of the LDAP server used to authenticate and authorize connections
+     * to the broker.
+     */
+    inline void SetLdapServerMetadata(const LdapServerMetadataOutput& value) { m_ldapServerMetadata = value; }
+
+    /**
+     * The metadata of the LDAP server used to authenticate and authorize connections
+     * to the broker.
+     */
+    inline void SetLdapServerMetadata(LdapServerMetadataOutput&& value) { m_ldapServerMetadata = std::move(value); }
+
+    /**
+     * The metadata of the LDAP server used to authenticate and authorize connections
+     * to the broker.
+     */
+    inline DescribeBrokerResult& WithLdapServerMetadata(const LdapServerMetadataOutput& value) { SetLdapServerMetadata(value); return *this;}
+
+    /**
+     * The metadata of the LDAP server used to authenticate and authorize connections
+     * to the broker.
+     */
+    inline DescribeBrokerResult& WithLdapServerMetadata(LdapServerMetadataOutput&& value) { SetLdapServerMetadata(std::move(value)); return *this;}
+
+
+    /**
      * The list of information about logs currently enabled and pending to be deployed
      * for the specified broker.
      */
@@ -527,6 +586,32 @@ namespace Model
      * The parameters that determine the WeeklyStartTime.
      */
     inline DescribeBrokerResult& WithMaintenanceWindowStartTime(WeeklyStartTime&& value) { SetMaintenanceWindowStartTime(std::move(value)); return *this;}
+
+
+    /**
+     * The authentication strategy that will be applied when the broker is rebooted.
+     */
+    inline const AuthenticationStrategy& GetPendingAuthenticationStrategy() const{ return m_pendingAuthenticationStrategy; }
+
+    /**
+     * The authentication strategy that will be applied when the broker is rebooted.
+     */
+    inline void SetPendingAuthenticationStrategy(const AuthenticationStrategy& value) { m_pendingAuthenticationStrategy = value; }
+
+    /**
+     * The authentication strategy that will be applied when the broker is rebooted.
+     */
+    inline void SetPendingAuthenticationStrategy(AuthenticationStrategy&& value) { m_pendingAuthenticationStrategy = std::move(value); }
+
+    /**
+     * The authentication strategy that will be applied when the broker is rebooted.
+     */
+    inline DescribeBrokerResult& WithPendingAuthenticationStrategy(const AuthenticationStrategy& value) { SetPendingAuthenticationStrategy(value); return *this;}
+
+    /**
+     * The authentication strategy that will be applied when the broker is rebooted.
+     */
+    inline DescribeBrokerResult& WithPendingAuthenticationStrategy(AuthenticationStrategy&& value) { SetPendingAuthenticationStrategy(std::move(value)); return *this;}
 
 
     /**
@@ -627,6 +712,37 @@ namespace Model
      * https://docs.aws.amazon.com/amazon-mq/latest/developer-guide//broker.html#broker-instance-types
      */
     inline DescribeBrokerResult& WithPendingHostInstanceType(const char* value) { SetPendingHostInstanceType(value); return *this;}
+
+
+    /**
+     * The metadata of the LDAP server that will be used to authenticate and authorize
+     * connections to the broker once it is rebooted.
+     */
+    inline const LdapServerMetadataOutput& GetPendingLdapServerMetadata() const{ return m_pendingLdapServerMetadata; }
+
+    /**
+     * The metadata of the LDAP server that will be used to authenticate and authorize
+     * connections to the broker once it is rebooted.
+     */
+    inline void SetPendingLdapServerMetadata(const LdapServerMetadataOutput& value) { m_pendingLdapServerMetadata = value; }
+
+    /**
+     * The metadata of the LDAP server that will be used to authenticate and authorize
+     * connections to the broker once it is rebooted.
+     */
+    inline void SetPendingLdapServerMetadata(LdapServerMetadataOutput&& value) { m_pendingLdapServerMetadata = std::move(value); }
+
+    /**
+     * The metadata of the LDAP server that will be used to authenticate and authorize
+     * connections to the broker once it is rebooted.
+     */
+    inline DescribeBrokerResult& WithPendingLdapServerMetadata(const LdapServerMetadataOutput& value) { SetPendingLdapServerMetadata(value); return *this;}
+
+    /**
+     * The metadata of the LDAP server that will be used to authenticate and authorize
+     * connections to the broker once it is rebooted.
+     */
+    inline DescribeBrokerResult& WithPendingLdapServerMetadata(LdapServerMetadataOutput&& value) { SetPendingLdapServerMetadata(std::move(value)); return *this;}
 
 
     /**
@@ -927,6 +1043,8 @@ namespace Model
 
   private:
 
+    AuthenticationStrategy m_authenticationStrategy;
+
     bool m_autoMinorVersionUpgrade;
 
     Aws::String m_brokerArn;
@@ -953,13 +1071,19 @@ namespace Model
 
     Aws::String m_hostInstanceType;
 
+    LdapServerMetadataOutput m_ldapServerMetadata;
+
     LogsSummary m_logs;
 
     WeeklyStartTime m_maintenanceWindowStartTime;
 
+    AuthenticationStrategy m_pendingAuthenticationStrategy;
+
     Aws::String m_pendingEngineVersion;
 
     Aws::String m_pendingHostInstanceType;
+
+    LdapServerMetadataOutput m_pendingLdapServerMetadata;
 
     Aws::Vector<Aws::String> m_pendingSecurityGroups;
 

@@ -8,6 +8,9 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/sagemaker/model/TargetDevice.h>
+#include <aws/sagemaker/model/TargetPlatformOs.h>
+#include <aws/sagemaker/model/TargetPlatformArch.h>
+#include <aws/sagemaker/model/TargetPlatformAccelerator.h>
 #include <aws/sagemaker/model/CompilationJobStatus.h>
 #include <utility>
 
@@ -216,40 +219,151 @@ namespace Model
 
 
     /**
-     * <p>The type of device that the model will run on after compilation has
+     * <p>The type of device that the model will run on after the compilation job has
      * completed.</p>
      */
     inline const TargetDevice& GetCompilationTargetDevice() const{ return m_compilationTargetDevice; }
 
     /**
-     * <p>The type of device that the model will run on after compilation has
+     * <p>The type of device that the model will run on after the compilation job has
      * completed.</p>
      */
     inline bool CompilationTargetDeviceHasBeenSet() const { return m_compilationTargetDeviceHasBeenSet; }
 
     /**
-     * <p>The type of device that the model will run on after compilation has
+     * <p>The type of device that the model will run on after the compilation job has
      * completed.</p>
      */
     inline void SetCompilationTargetDevice(const TargetDevice& value) { m_compilationTargetDeviceHasBeenSet = true; m_compilationTargetDevice = value; }
 
     /**
-     * <p>The type of device that the model will run on after compilation has
+     * <p>The type of device that the model will run on after the compilation job has
      * completed.</p>
      */
     inline void SetCompilationTargetDevice(TargetDevice&& value) { m_compilationTargetDeviceHasBeenSet = true; m_compilationTargetDevice = std::move(value); }
 
     /**
-     * <p>The type of device that the model will run on after compilation has
+     * <p>The type of device that the model will run on after the compilation job has
      * completed.</p>
      */
     inline CompilationJobSummary& WithCompilationTargetDevice(const TargetDevice& value) { SetCompilationTargetDevice(value); return *this;}
 
     /**
-     * <p>The type of device that the model will run on after compilation has
+     * <p>The type of device that the model will run on after the compilation job has
      * completed.</p>
      */
     inline CompilationJobSummary& WithCompilationTargetDevice(TargetDevice&& value) { SetCompilationTargetDevice(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The type of OS that the model will run on after the compilation job has
+     * completed.</p>
+     */
+    inline const TargetPlatformOs& GetCompilationTargetPlatformOs() const{ return m_compilationTargetPlatformOs; }
+
+    /**
+     * <p>The type of OS that the model will run on after the compilation job has
+     * completed.</p>
+     */
+    inline bool CompilationTargetPlatformOsHasBeenSet() const { return m_compilationTargetPlatformOsHasBeenSet; }
+
+    /**
+     * <p>The type of OS that the model will run on after the compilation job has
+     * completed.</p>
+     */
+    inline void SetCompilationTargetPlatformOs(const TargetPlatformOs& value) { m_compilationTargetPlatformOsHasBeenSet = true; m_compilationTargetPlatformOs = value; }
+
+    /**
+     * <p>The type of OS that the model will run on after the compilation job has
+     * completed.</p>
+     */
+    inline void SetCompilationTargetPlatformOs(TargetPlatformOs&& value) { m_compilationTargetPlatformOsHasBeenSet = true; m_compilationTargetPlatformOs = std::move(value); }
+
+    /**
+     * <p>The type of OS that the model will run on after the compilation job has
+     * completed.</p>
+     */
+    inline CompilationJobSummary& WithCompilationTargetPlatformOs(const TargetPlatformOs& value) { SetCompilationTargetPlatformOs(value); return *this;}
+
+    /**
+     * <p>The type of OS that the model will run on after the compilation job has
+     * completed.</p>
+     */
+    inline CompilationJobSummary& WithCompilationTargetPlatformOs(TargetPlatformOs&& value) { SetCompilationTargetPlatformOs(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The type of architecture that the model will run on after the compilation job
+     * has completed.</p>
+     */
+    inline const TargetPlatformArch& GetCompilationTargetPlatformArch() const{ return m_compilationTargetPlatformArch; }
+
+    /**
+     * <p>The type of architecture that the model will run on after the compilation job
+     * has completed.</p>
+     */
+    inline bool CompilationTargetPlatformArchHasBeenSet() const { return m_compilationTargetPlatformArchHasBeenSet; }
+
+    /**
+     * <p>The type of architecture that the model will run on after the compilation job
+     * has completed.</p>
+     */
+    inline void SetCompilationTargetPlatformArch(const TargetPlatformArch& value) { m_compilationTargetPlatformArchHasBeenSet = true; m_compilationTargetPlatformArch = value; }
+
+    /**
+     * <p>The type of architecture that the model will run on after the compilation job
+     * has completed.</p>
+     */
+    inline void SetCompilationTargetPlatformArch(TargetPlatformArch&& value) { m_compilationTargetPlatformArchHasBeenSet = true; m_compilationTargetPlatformArch = std::move(value); }
+
+    /**
+     * <p>The type of architecture that the model will run on after the compilation job
+     * has completed.</p>
+     */
+    inline CompilationJobSummary& WithCompilationTargetPlatformArch(const TargetPlatformArch& value) { SetCompilationTargetPlatformArch(value); return *this;}
+
+    /**
+     * <p>The type of architecture that the model will run on after the compilation job
+     * has completed.</p>
+     */
+    inline CompilationJobSummary& WithCompilationTargetPlatformArch(TargetPlatformArch&& value) { SetCompilationTargetPlatformArch(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The type of accelerator that the model will run on after the compilation job
+     * has completed.</p>
+     */
+    inline const TargetPlatformAccelerator& GetCompilationTargetPlatformAccelerator() const{ return m_compilationTargetPlatformAccelerator; }
+
+    /**
+     * <p>The type of accelerator that the model will run on after the compilation job
+     * has completed.</p>
+     */
+    inline bool CompilationTargetPlatformAcceleratorHasBeenSet() const { return m_compilationTargetPlatformAcceleratorHasBeenSet; }
+
+    /**
+     * <p>The type of accelerator that the model will run on after the compilation job
+     * has completed.</p>
+     */
+    inline void SetCompilationTargetPlatformAccelerator(const TargetPlatformAccelerator& value) { m_compilationTargetPlatformAcceleratorHasBeenSet = true; m_compilationTargetPlatformAccelerator = value; }
+
+    /**
+     * <p>The type of accelerator that the model will run on after the compilation job
+     * has completed.</p>
+     */
+    inline void SetCompilationTargetPlatformAccelerator(TargetPlatformAccelerator&& value) { m_compilationTargetPlatformAcceleratorHasBeenSet = true; m_compilationTargetPlatformAccelerator = std::move(value); }
+
+    /**
+     * <p>The type of accelerator that the model will run on after the compilation job
+     * has completed.</p>
+     */
+    inline CompilationJobSummary& WithCompilationTargetPlatformAccelerator(const TargetPlatformAccelerator& value) { SetCompilationTargetPlatformAccelerator(value); return *this;}
+
+    /**
+     * <p>The type of accelerator that the model will run on after the compilation job
+     * has completed.</p>
+     */
+    inline CompilationJobSummary& WithCompilationTargetPlatformAccelerator(TargetPlatformAccelerator&& value) { SetCompilationTargetPlatformAccelerator(std::move(value)); return *this;}
 
 
     /**
@@ -332,6 +446,15 @@ namespace Model
 
     TargetDevice m_compilationTargetDevice;
     bool m_compilationTargetDeviceHasBeenSet;
+
+    TargetPlatformOs m_compilationTargetPlatformOs;
+    bool m_compilationTargetPlatformOsHasBeenSet;
+
+    TargetPlatformArch m_compilationTargetPlatformArch;
+    bool m_compilationTargetPlatformArchHasBeenSet;
+
+    TargetPlatformAccelerator m_compilationTargetPlatformAccelerator;
+    bool m_compilationTargetPlatformAcceleratorHasBeenSet;
 
     Aws::Utils::DateTime m_lastModifiedTime;
     bool m_lastModifiedTimeHasBeenSet;

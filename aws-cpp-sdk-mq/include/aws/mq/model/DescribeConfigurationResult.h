@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/mq/MQ_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mq/model/AuthenticationStrategy.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/mq/model/EngineType.h>
 #include <aws/mq/model/ConfigurationRevision.h>
@@ -70,6 +71,32 @@ namespace Model
      * Required. The ARN of the configuration.
      */
     inline DescribeConfigurationResult& WithArn(const char* value) { SetArn(value); return *this;}
+
+
+    /**
+     * The authentication strategy associated with the configuration.
+     */
+    inline const AuthenticationStrategy& GetAuthenticationStrategy() const{ return m_authenticationStrategy; }
+
+    /**
+     * The authentication strategy associated with the configuration.
+     */
+    inline void SetAuthenticationStrategy(const AuthenticationStrategy& value) { m_authenticationStrategy = value; }
+
+    /**
+     * The authentication strategy associated with the configuration.
+     */
+    inline void SetAuthenticationStrategy(AuthenticationStrategy&& value) { m_authenticationStrategy = std::move(value); }
+
+    /**
+     * The authentication strategy associated with the configuration.
+     */
+    inline DescribeConfigurationResult& WithAuthenticationStrategy(const AuthenticationStrategy& value) { SetAuthenticationStrategy(value); return *this;}
+
+    /**
+     * The authentication strategy associated with the configuration.
+     */
+    inline DescribeConfigurationResult& WithAuthenticationStrategy(AuthenticationStrategy&& value) { SetAuthenticationStrategy(std::move(value)); return *this;}
 
 
     /**
@@ -390,6 +417,8 @@ namespace Model
   private:
 
     Aws::String m_arn;
+
+    AuthenticationStrategy m_authenticationStrategy;
 
     Aws::Utils::DateTime m_created;
 

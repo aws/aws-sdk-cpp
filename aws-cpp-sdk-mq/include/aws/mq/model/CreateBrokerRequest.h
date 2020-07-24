@@ -6,11 +6,13 @@
 #pragma once
 #include <aws/mq/MQ_EXPORTS.h>
 #include <aws/mq/MQRequest.h>
+#include <aws/mq/model/AuthenticationStrategy.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/mq/model/ConfigurationId.h>
 #include <aws/mq/model/DeploymentMode.h>
 #include <aws/mq/model/EncryptionOptions.h>
 #include <aws/mq/model/EngineType.h>
+#include <aws/mq/model/LdapServerMetadataInput.h>
 #include <aws/mq/model/Logs.h>
 #include <aws/mq/model/WeeklyStartTime.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -44,6 +46,37 @@ namespace Model
     inline virtual const char* GetServiceRequestName() const override { return "CreateBroker"; }
 
     Aws::String SerializePayload() const override;
+
+
+    /**
+     * The authentication strategy used to secure the broker.
+     */
+    inline const AuthenticationStrategy& GetAuthenticationStrategy() const{ return m_authenticationStrategy; }
+
+    /**
+     * The authentication strategy used to secure the broker.
+     */
+    inline bool AuthenticationStrategyHasBeenSet() const { return m_authenticationStrategyHasBeenSet; }
+
+    /**
+     * The authentication strategy used to secure the broker.
+     */
+    inline void SetAuthenticationStrategy(const AuthenticationStrategy& value) { m_authenticationStrategyHasBeenSet = true; m_authenticationStrategy = value; }
+
+    /**
+     * The authentication strategy used to secure the broker.
+     */
+    inline void SetAuthenticationStrategy(AuthenticationStrategy&& value) { m_authenticationStrategyHasBeenSet = true; m_authenticationStrategy = std::move(value); }
+
+    /**
+     * The authentication strategy used to secure the broker.
+     */
+    inline CreateBrokerRequest& WithAuthenticationStrategy(const AuthenticationStrategy& value) { SetAuthenticationStrategy(value); return *this;}
+
+    /**
+     * The authentication strategy used to secure the broker.
+     */
+    inline CreateBrokerRequest& WithAuthenticationStrategy(AuthenticationStrategy&& value) { SetAuthenticationStrategy(std::move(value)); return *this;}
 
 
     /**
@@ -434,6 +467,43 @@ namespace Model
 
 
     /**
+     * The metadata of the LDAP server used to authenticate and authorize connections
+     * to the broker.
+     */
+    inline const LdapServerMetadataInput& GetLdapServerMetadata() const{ return m_ldapServerMetadata; }
+
+    /**
+     * The metadata of the LDAP server used to authenticate and authorize connections
+     * to the broker.
+     */
+    inline bool LdapServerMetadataHasBeenSet() const { return m_ldapServerMetadataHasBeenSet; }
+
+    /**
+     * The metadata of the LDAP server used to authenticate and authorize connections
+     * to the broker.
+     */
+    inline void SetLdapServerMetadata(const LdapServerMetadataInput& value) { m_ldapServerMetadataHasBeenSet = true; m_ldapServerMetadata = value; }
+
+    /**
+     * The metadata of the LDAP server used to authenticate and authorize connections
+     * to the broker.
+     */
+    inline void SetLdapServerMetadata(LdapServerMetadataInput&& value) { m_ldapServerMetadataHasBeenSet = true; m_ldapServerMetadata = std::move(value); }
+
+    /**
+     * The metadata of the LDAP server used to authenticate and authorize connections
+     * to the broker.
+     */
+    inline CreateBrokerRequest& WithLdapServerMetadata(const LdapServerMetadataInput& value) { SetLdapServerMetadata(value); return *this;}
+
+    /**
+     * The metadata of the LDAP server used to authenticate and authorize connections
+     * to the broker.
+     */
+    inline CreateBrokerRequest& WithLdapServerMetadata(LdapServerMetadataInput&& value) { SetLdapServerMetadata(std::move(value)); return *this;}
+
+
+    /**
      * Enables Amazon CloudWatch logging for brokers.
      */
     inline const Logs& GetLogs() const{ return m_logs; }
@@ -811,6 +881,9 @@ namespace Model
 
   private:
 
+    AuthenticationStrategy m_authenticationStrategy;
+    bool m_authenticationStrategyHasBeenSet;
+
     bool m_autoMinorVersionUpgrade;
     bool m_autoMinorVersionUpgradeHasBeenSet;
 
@@ -837,6 +910,9 @@ namespace Model
 
     Aws::String m_hostInstanceType;
     bool m_hostInstanceTypeHasBeenSet;
+
+    LdapServerMetadataInput m_ldapServerMetadata;
+    bool m_ldapServerMetadataHasBeenSet;
 
     Logs m_logs;
     bool m_logsHasBeenSet;

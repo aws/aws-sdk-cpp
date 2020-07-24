@@ -22,6 +22,8 @@ namespace Aws
 
         static const int accountId_HASH = HashingUtils::HashString("accountId");
         static const int total_HASH = HashingUtils::HashString("total");
+        static const int serviceLimitValue_HASH = HashingUtils::HashString("serviceLimitValue");
+        static const int freeTrialStartDate_HASH = HashingUtils::HashString("freeTrialStartDate");
 
 
         UsageStatisticsSortKey GetUsageStatisticsSortKeyForName(const Aws::String& name)
@@ -34,6 +36,14 @@ namespace Aws
           else if (hashCode == total_HASH)
           {
             return UsageStatisticsSortKey::total;
+          }
+          else if (hashCode == serviceLimitValue_HASH)
+          {
+            return UsageStatisticsSortKey::serviceLimitValue;
+          }
+          else if (hashCode == freeTrialStartDate_HASH)
+          {
+            return UsageStatisticsSortKey::freeTrialStartDate;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -53,6 +63,10 @@ namespace Aws
             return "accountId";
           case UsageStatisticsSortKey::total:
             return "total";
+          case UsageStatisticsSortKey::serviceLimitValue:
+            return "serviceLimitValue";
+          case UsageStatisticsSortKey::freeTrialStartDate:
+            return "freeTrialStartDate";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

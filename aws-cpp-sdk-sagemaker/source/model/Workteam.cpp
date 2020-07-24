@@ -22,6 +22,7 @@ Workteam::Workteam() :
     m_workteamNameHasBeenSet(false),
     m_memberDefinitionsHasBeenSet(false),
     m_workteamArnHasBeenSet(false),
+    m_workforceArnHasBeenSet(false),
     m_productListingIdsHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_subDomainHasBeenSet(false),
@@ -35,6 +36,7 @@ Workteam::Workteam(JsonView jsonValue) :
     m_workteamNameHasBeenSet(false),
     m_memberDefinitionsHasBeenSet(false),
     m_workteamArnHasBeenSet(false),
+    m_workforceArnHasBeenSet(false),
     m_productListingIdsHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_subDomainHasBeenSet(false),
@@ -69,6 +71,13 @@ Workteam& Workteam::operator =(JsonView jsonValue)
     m_workteamArn = jsonValue.GetString("WorkteamArn");
 
     m_workteamArnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("WorkforceArn"))
+  {
+    m_workforceArn = jsonValue.GetString("WorkforceArn");
+
+    m_workforceArnHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("ProductListingIds"))
@@ -143,6 +152,12 @@ JsonValue Workteam::Jsonize() const
   if(m_workteamArnHasBeenSet)
   {
    payload.WithString("WorkteamArn", m_workteamArn);
+
+  }
+
+  if(m_workforceArnHasBeenSet)
+  {
+   payload.WithString("WorkforceArn", m_workforceArn);
 
   }
 

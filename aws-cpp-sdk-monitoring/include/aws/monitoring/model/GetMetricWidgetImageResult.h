@@ -34,27 +34,32 @@ namespace Model
 
 
     /**
-     * <p>The image of the graph, in the output format specified.</p>
+     * <p>The image of the graph, in the output format specified. The output is
+     * base64-encoded.</p>
      */
     inline const Aws::Utils::ByteBuffer& GetMetricWidgetImage() const{ return m_metricWidgetImage; }
 
     /**
-     * <p>The image of the graph, in the output format specified.</p>
+     * <p>The image of the graph, in the output format specified. The output is
+     * base64-encoded.</p>
      */
     inline void SetMetricWidgetImage(const Aws::Utils::ByteBuffer& value) { m_metricWidgetImage = value; }
 
     /**
-     * <p>The image of the graph, in the output format specified.</p>
+     * <p>The image of the graph, in the output format specified. The output is
+     * base64-encoded.</p>
      */
     inline void SetMetricWidgetImage(Aws::Utils::ByteBuffer&& value) { m_metricWidgetImage = std::move(value); }
 
     /**
-     * <p>The image of the graph, in the output format specified.</p>
+     * <p>The image of the graph, in the output format specified. The output is
+     * base64-encoded.</p>
      */
     inline GetMetricWidgetImageResult& WithMetricWidgetImage(const Aws::Utils::ByteBuffer& value) { SetMetricWidgetImage(value); return *this;}
 
     /**
-     * <p>The image of the graph, in the output format specified.</p>
+     * <p>The image of the graph, in the output format specified. The output is
+     * base64-encoded.</p>
      */
     inline GetMetricWidgetImageResult& WithMetricWidgetImage(Aws::Utils::ByteBuffer&& value) { SetMetricWidgetImage(std::move(value)); return *this;}
 

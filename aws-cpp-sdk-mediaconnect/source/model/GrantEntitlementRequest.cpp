@@ -23,6 +23,8 @@ GrantEntitlementRequest::GrantEntitlementRequest() :
     m_dataTransferSubscriberFeePercentHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_encryptionHasBeenSet(false),
+    m_entitlementStatus(EntitlementStatus::NOT_SET),
+    m_entitlementStatusHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_subscribersHasBeenSet(false)
 {
@@ -33,6 +35,8 @@ GrantEntitlementRequest::GrantEntitlementRequest(JsonView jsonValue) :
     m_dataTransferSubscriberFeePercentHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_encryptionHasBeenSet(false),
+    m_entitlementStatus(EntitlementStatus::NOT_SET),
+    m_entitlementStatusHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_subscribersHasBeenSet(false)
 {
@@ -60,6 +64,13 @@ GrantEntitlementRequest& GrantEntitlementRequest::operator =(JsonView jsonValue)
     m_encryption = jsonValue.GetObject("encryption");
 
     m_encryptionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("entitlementStatus"))
+  {
+    m_entitlementStatus = EntitlementStatusMapper::GetEntitlementStatusForName(jsonValue.GetString("entitlementStatus"));
+
+    m_entitlementStatusHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("name"))
@@ -102,6 +113,11 @@ JsonValue GrantEntitlementRequest::Jsonize() const
   {
    payload.WithObject("encryption", m_encryption.Jsonize());
 
+  }
+
+  if(m_entitlementStatusHasBeenSet)
+  {
+   payload.WithString("entitlementStatus", EntitlementStatusMapper::GetNameForEntitlementStatus(m_entitlementStatus));
   }
 
   if(m_nameHasBeenSet)

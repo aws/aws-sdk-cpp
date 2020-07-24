@@ -26,6 +26,12 @@ CompilationJobSummary::CompilationJobSummary() :
     m_compilationEndTimeHasBeenSet(false),
     m_compilationTargetDevice(TargetDevice::NOT_SET),
     m_compilationTargetDeviceHasBeenSet(false),
+    m_compilationTargetPlatformOs(TargetPlatformOs::NOT_SET),
+    m_compilationTargetPlatformOsHasBeenSet(false),
+    m_compilationTargetPlatformArch(TargetPlatformArch::NOT_SET),
+    m_compilationTargetPlatformArchHasBeenSet(false),
+    m_compilationTargetPlatformAccelerator(TargetPlatformAccelerator::NOT_SET),
+    m_compilationTargetPlatformAcceleratorHasBeenSet(false),
     m_lastModifiedTimeHasBeenSet(false),
     m_compilationJobStatus(CompilationJobStatus::NOT_SET),
     m_compilationJobStatusHasBeenSet(false)
@@ -40,6 +46,12 @@ CompilationJobSummary::CompilationJobSummary(JsonView jsonValue) :
     m_compilationEndTimeHasBeenSet(false),
     m_compilationTargetDevice(TargetDevice::NOT_SET),
     m_compilationTargetDeviceHasBeenSet(false),
+    m_compilationTargetPlatformOs(TargetPlatformOs::NOT_SET),
+    m_compilationTargetPlatformOsHasBeenSet(false),
+    m_compilationTargetPlatformArch(TargetPlatformArch::NOT_SET),
+    m_compilationTargetPlatformArchHasBeenSet(false),
+    m_compilationTargetPlatformAccelerator(TargetPlatformAccelerator::NOT_SET),
+    m_compilationTargetPlatformAcceleratorHasBeenSet(false),
     m_lastModifiedTimeHasBeenSet(false),
     m_compilationJobStatus(CompilationJobStatus::NOT_SET),
     m_compilationJobStatusHasBeenSet(false)
@@ -89,6 +101,27 @@ CompilationJobSummary& CompilationJobSummary::operator =(JsonView jsonValue)
     m_compilationTargetDevice = TargetDeviceMapper::GetTargetDeviceForName(jsonValue.GetString("CompilationTargetDevice"));
 
     m_compilationTargetDeviceHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("CompilationTargetPlatformOs"))
+  {
+    m_compilationTargetPlatformOs = TargetPlatformOsMapper::GetTargetPlatformOsForName(jsonValue.GetString("CompilationTargetPlatformOs"));
+
+    m_compilationTargetPlatformOsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("CompilationTargetPlatformArch"))
+  {
+    m_compilationTargetPlatformArch = TargetPlatformArchMapper::GetTargetPlatformArchForName(jsonValue.GetString("CompilationTargetPlatformArch"));
+
+    m_compilationTargetPlatformArchHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("CompilationTargetPlatformAccelerator"))
+  {
+    m_compilationTargetPlatformAccelerator = TargetPlatformAcceleratorMapper::GetTargetPlatformAcceleratorForName(jsonValue.GetString("CompilationTargetPlatformAccelerator"));
+
+    m_compilationTargetPlatformAcceleratorHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("LastModifiedTime"))
@@ -142,6 +175,21 @@ JsonValue CompilationJobSummary::Jsonize() const
   if(m_compilationTargetDeviceHasBeenSet)
   {
    payload.WithString("CompilationTargetDevice", TargetDeviceMapper::GetNameForTargetDevice(m_compilationTargetDevice));
+  }
+
+  if(m_compilationTargetPlatformOsHasBeenSet)
+  {
+   payload.WithString("CompilationTargetPlatformOs", TargetPlatformOsMapper::GetNameForTargetPlatformOs(m_compilationTargetPlatformOs));
+  }
+
+  if(m_compilationTargetPlatformArchHasBeenSet)
+  {
+   payload.WithString("CompilationTargetPlatformArch", TargetPlatformArchMapper::GetNameForTargetPlatformArch(m_compilationTargetPlatformArch));
+  }
+
+  if(m_compilationTargetPlatformAcceleratorHasBeenSet)
+  {
+   payload.WithString("CompilationTargetPlatformAccelerator", TargetPlatformAcceleratorMapper::GetNameForTargetPlatformAccelerator(m_compilationTargetPlatformAccelerator));
   }
 
   if(m_lastModifiedTimeHasBeenSet)

@@ -35,7 +35,6 @@
 #include <aws/frauddetector/model/GetModelVersionResult.h>
 #include <aws/frauddetector/model/GetModelsResult.h>
 #include <aws/frauddetector/model/GetOutcomesResult.h>
-#include <aws/frauddetector/model/GetPredictionResult.h>
 #include <aws/frauddetector/model/GetRulesResult.h>
 #include <aws/frauddetector/model/GetVariablesResult.h>
 #include <aws/frauddetector/model/ListTagsForResourceResult.h>
@@ -119,7 +118,6 @@ namespace Model
         class GetModelVersionRequest;
         class GetModelsRequest;
         class GetOutcomesRequest;
-        class GetPredictionRequest;
         class GetRulesRequest;
         class GetVariablesRequest;
         class ListTagsForResourceRequest;
@@ -166,7 +164,6 @@ namespace Model
         typedef Aws::Utils::Outcome<GetModelVersionResult, FraudDetectorError> GetModelVersionOutcome;
         typedef Aws::Utils::Outcome<GetModelsResult, FraudDetectorError> GetModelsOutcome;
         typedef Aws::Utils::Outcome<GetOutcomesResult, FraudDetectorError> GetOutcomesOutcome;
-        typedef Aws::Utils::Outcome<GetPredictionResult, FraudDetectorError> GetPredictionOutcome;
         typedef Aws::Utils::Outcome<GetRulesResult, FraudDetectorError> GetRulesOutcome;
         typedef Aws::Utils::Outcome<GetVariablesResult, FraudDetectorError> GetVariablesOutcome;
         typedef Aws::Utils::Outcome<ListTagsForResourceResult, FraudDetectorError> ListTagsForResourceOutcome;
@@ -213,7 +210,6 @@ namespace Model
         typedef std::future<GetModelVersionOutcome> GetModelVersionOutcomeCallable;
         typedef std::future<GetModelsOutcome> GetModelsOutcomeCallable;
         typedef std::future<GetOutcomesOutcome> GetOutcomesOutcomeCallable;
-        typedef std::future<GetPredictionOutcome> GetPredictionOutcomeCallable;
         typedef std::future<GetRulesOutcome> GetRulesOutcomeCallable;
         typedef std::future<GetVariablesOutcome> GetVariablesOutcomeCallable;
         typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
@@ -263,7 +259,6 @@ namespace Model
     typedef std::function<void(const FraudDetectorClient*, const Model::GetModelVersionRequest&, const Model::GetModelVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetModelVersionResponseReceivedHandler;
     typedef std::function<void(const FraudDetectorClient*, const Model::GetModelsRequest&, const Model::GetModelsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetModelsResponseReceivedHandler;
     typedef std::function<void(const FraudDetectorClient*, const Model::GetOutcomesRequest&, const Model::GetOutcomesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetOutcomesResponseReceivedHandler;
-    typedef std::function<void(const FraudDetectorClient*, const Model::GetPredictionRequest&, const Model::GetPredictionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetPredictionResponseReceivedHandler;
     typedef std::function<void(const FraudDetectorClient*, const Model::GetRulesRequest&, const Model::GetRulesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetRulesResponseReceivedHandler;
     typedef std::function<void(const FraudDetectorClient*, const Model::GetVariablesRequest&, const Model::GetVariablesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetVariablesResponseReceivedHandler;
     typedef std::function<void(const FraudDetectorClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
@@ -1096,37 +1091,6 @@ namespace Model
         virtual void GetOutcomesAsync(const Model::GetOutcomesRequest& request, const GetOutcomesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Evaluates an event against a detector version. If a version ID is not
-         * provided, the detector’s (<code>ACTIVE</code>) version is used. </p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/GetPrediction">AWS
-         * API Reference</a></p>
-         */
-        virtual Model::GetPredictionOutcome GetPrediction(const Model::GetPredictionRequest& request) const;
-
-        /**
-         * <p>Evaluates an event against a detector version. If a version ID is not
-         * provided, the detector’s (<code>ACTIVE</code>) version is used. </p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/GetPrediction">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetPredictionOutcomeCallable GetPredictionCallable(const Model::GetPredictionRequest& request) const;
-
-        /**
-         * <p>Evaluates an event against a detector version. If a version ID is not
-         * provided, the detector’s (<code>ACTIVE</code>) version is used. </p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/GetPrediction">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetPredictionAsync(const Model::GetPredictionRequest& request, const GetPredictionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
-
-        /**
          * <p>Get all rules for a detector (paginated) if <code>ruleId</code> and
          * <code>ruleVersion</code> are not specified. Gets all rules for the detector and
          * the <code>ruleId</code> if present (paginated). Gets a specific rule if both the
@@ -1835,7 +1799,6 @@ namespace Model
         void GetModelVersionAsyncHelper(const Model::GetModelVersionRequest& request, const GetModelVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetModelsAsyncHelper(const Model::GetModelsRequest& request, const GetModelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetOutcomesAsyncHelper(const Model::GetOutcomesRequest& request, const GetOutcomesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetPredictionAsyncHelper(const Model::GetPredictionRequest& request, const GetPredictionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetRulesAsyncHelper(const Model::GetRulesRequest& request, const GetRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetVariablesAsyncHelper(const Model::GetVariablesRequest& request, const GetVariablesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

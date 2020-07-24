@@ -122,6 +122,39 @@ namespace Model
      */
     inline Search& WithDisplayable(bool value) { SetDisplayable(value); return *this;}
 
+
+    /**
+     * <p>Determines whether the field can be used to sort the results of a query. If
+     * you specify sorting on a field that does not have <code>Sortable</code> set to
+     * <code>true</code>, Amazon Kendra returns an exception. The default is
+     * <code>false</code>.</p>
+     */
+    inline bool GetSortable() const{ return m_sortable; }
+
+    /**
+     * <p>Determines whether the field can be used to sort the results of a query. If
+     * you specify sorting on a field that does not have <code>Sortable</code> set to
+     * <code>true</code>, Amazon Kendra returns an exception. The default is
+     * <code>false</code>.</p>
+     */
+    inline bool SortableHasBeenSet() const { return m_sortableHasBeenSet; }
+
+    /**
+     * <p>Determines whether the field can be used to sort the results of a query. If
+     * you specify sorting on a field that does not have <code>Sortable</code> set to
+     * <code>true</code>, Amazon Kendra returns an exception. The default is
+     * <code>false</code>.</p>
+     */
+    inline void SetSortable(bool value) { m_sortableHasBeenSet = true; m_sortable = value; }
+
+    /**
+     * <p>Determines whether the field can be used to sort the results of a query. If
+     * you specify sorting on a field that does not have <code>Sortable</code> set to
+     * <code>true</code>, Amazon Kendra returns an exception. The default is
+     * <code>false</code>.</p>
+     */
+    inline Search& WithSortable(bool value) { SetSortable(value); return *this;}
+
   private:
 
     bool m_facetable;
@@ -132,6 +165,9 @@ namespace Model
 
     bool m_displayable;
     bool m_displayableHasBeenSet;
+
+    bool m_sortable;
+    bool m_sortableHasBeenSet;
   };
 
 } // namespace Model

@@ -210,20 +210,24 @@ namespace Model
          * <p>For Amazon FSx for Lustre file systems, you can create a backup only for file
          * systems with the following configuration:</p> <ul> <li> <p>a Persistent
          * deployment type</p> </li> <li> <p>is <i>not</i> linked to an Amazon S3 data
-         * respository.</p> </li> </ul> <p>For more information, see <a
-         * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/lustre-backups.html">https://docs.aws.amazon.com/fsx/latest/LustreGuide/lustre-backups.html</a>.</p>
-         * <p>If a backup with the specified client request token exists, and the
-         * parameters match, this operation returns the description of the existing backup.
-         * If a backup specified client request token exists, and the parameters don't
-         * match, this operation returns <code>IncompatibleParameterError</code>. If a
-         * backup with the specified client request token doesn't exist,
-         * <code>CreateBackup</code> does the following: </p> <ul> <li> <p>Creates a new
-         * Amazon FSx backup with an assigned ID, and an initial lifecycle state of
-         * <code>CREATING</code>.</p> </li> <li> <p>Returns the description of the
-         * backup.</p> </li> </ul> <p>By using the idempotent operation, you can retry a
-         * <code>CreateBackup</code> operation without the risk of creating an extra
-         * backup. This approach can be useful when an initial call fails in a way that
-         * makes it unclear whether a backup was created. If you use the same client
+         * respository.</p> </li> </ul> <p>For more information about backing up Amazon FSx
+         * for Lustre file systems, see <a
+         * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/using-backups-fsx.html">Working
+         * with FSx for Lustre backups</a>.</p> <p>For more information about backing up
+         * Amazon FSx for Lustre file systems, see <a
+         * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/using-backups.html">Working
+         * with FSx for Windows backups</a>.</p> <p>If a backup with the specified client
+         * request token exists, and the parameters match, this operation returns the
+         * description of the existing backup. If a backup specified client request token
+         * exists, and the parameters don't match, this operation returns
+         * <code>IncompatibleParameterError</code>. If a backup with the specified client
+         * request token doesn't exist, <code>CreateBackup</code> does the following: </p>
+         * <ul> <li> <p>Creates a new Amazon FSx backup with an assigned ID, and an initial
+         * lifecycle state of <code>CREATING</code>.</p> </li> <li> <p>Returns the
+         * description of the backup.</p> </li> </ul> <p>By using the idempotent operation,
+         * you can retry a <code>CreateBackup</code> operation without the risk of creating
+         * an extra backup. This approach can be useful when an initial call fails in a way
+         * that makes it unclear whether a backup was created. If you use the same client
          * request token and the initial call created a backup, the operation returns a
          * successful result because all the parameters are the same.</p> <p>The
          * <code>CreateBackup</code> operation returns while the backup's lifecycle state
@@ -242,20 +246,24 @@ namespace Model
          * <p>For Amazon FSx for Lustre file systems, you can create a backup only for file
          * systems with the following configuration:</p> <ul> <li> <p>a Persistent
          * deployment type</p> </li> <li> <p>is <i>not</i> linked to an Amazon S3 data
-         * respository.</p> </li> </ul> <p>For more information, see <a
-         * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/lustre-backups.html">https://docs.aws.amazon.com/fsx/latest/LustreGuide/lustre-backups.html</a>.</p>
-         * <p>If a backup with the specified client request token exists, and the
-         * parameters match, this operation returns the description of the existing backup.
-         * If a backup specified client request token exists, and the parameters don't
-         * match, this operation returns <code>IncompatibleParameterError</code>. If a
-         * backup with the specified client request token doesn't exist,
-         * <code>CreateBackup</code> does the following: </p> <ul> <li> <p>Creates a new
-         * Amazon FSx backup with an assigned ID, and an initial lifecycle state of
-         * <code>CREATING</code>.</p> </li> <li> <p>Returns the description of the
-         * backup.</p> </li> </ul> <p>By using the idempotent operation, you can retry a
-         * <code>CreateBackup</code> operation without the risk of creating an extra
-         * backup. This approach can be useful when an initial call fails in a way that
-         * makes it unclear whether a backup was created. If you use the same client
+         * respository.</p> </li> </ul> <p>For more information about backing up Amazon FSx
+         * for Lustre file systems, see <a
+         * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/using-backups-fsx.html">Working
+         * with FSx for Lustre backups</a>.</p> <p>For more information about backing up
+         * Amazon FSx for Lustre file systems, see <a
+         * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/using-backups.html">Working
+         * with FSx for Windows backups</a>.</p> <p>If a backup with the specified client
+         * request token exists, and the parameters match, this operation returns the
+         * description of the existing backup. If a backup specified client request token
+         * exists, and the parameters don't match, this operation returns
+         * <code>IncompatibleParameterError</code>. If a backup with the specified client
+         * request token doesn't exist, <code>CreateBackup</code> does the following: </p>
+         * <ul> <li> <p>Creates a new Amazon FSx backup with an assigned ID, and an initial
+         * lifecycle state of <code>CREATING</code>.</p> </li> <li> <p>Returns the
+         * description of the backup.</p> </li> </ul> <p>By using the idempotent operation,
+         * you can retry a <code>CreateBackup</code> operation without the risk of creating
+         * an extra backup. This approach can be useful when an initial call fails in a way
+         * that makes it unclear whether a backup was created. If you use the same client
          * request token and the initial call created a backup, the operation returns a
          * successful result because all the parameters are the same.</p> <p>The
          * <code>CreateBackup</code> operation returns while the backup's lifecycle state
@@ -276,20 +284,24 @@ namespace Model
          * <p>For Amazon FSx for Lustre file systems, you can create a backup only for file
          * systems with the following configuration:</p> <ul> <li> <p>a Persistent
          * deployment type</p> </li> <li> <p>is <i>not</i> linked to an Amazon S3 data
-         * respository.</p> </li> </ul> <p>For more information, see <a
-         * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/lustre-backups.html">https://docs.aws.amazon.com/fsx/latest/LustreGuide/lustre-backups.html</a>.</p>
-         * <p>If a backup with the specified client request token exists, and the
-         * parameters match, this operation returns the description of the existing backup.
-         * If a backup specified client request token exists, and the parameters don't
-         * match, this operation returns <code>IncompatibleParameterError</code>. If a
-         * backup with the specified client request token doesn't exist,
-         * <code>CreateBackup</code> does the following: </p> <ul> <li> <p>Creates a new
-         * Amazon FSx backup with an assigned ID, and an initial lifecycle state of
-         * <code>CREATING</code>.</p> </li> <li> <p>Returns the description of the
-         * backup.</p> </li> </ul> <p>By using the idempotent operation, you can retry a
-         * <code>CreateBackup</code> operation without the risk of creating an extra
-         * backup. This approach can be useful when an initial call fails in a way that
-         * makes it unclear whether a backup was created. If you use the same client
+         * respository.</p> </li> </ul> <p>For more information about backing up Amazon FSx
+         * for Lustre file systems, see <a
+         * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/using-backups-fsx.html">Working
+         * with FSx for Lustre backups</a>.</p> <p>For more information about backing up
+         * Amazon FSx for Lustre file systems, see <a
+         * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/using-backups.html">Working
+         * with FSx for Windows backups</a>.</p> <p>If a backup with the specified client
+         * request token exists, and the parameters match, this operation returns the
+         * description of the existing backup. If a backup specified client request token
+         * exists, and the parameters don't match, this operation returns
+         * <code>IncompatibleParameterError</code>. If a backup with the specified client
+         * request token doesn't exist, <code>CreateBackup</code> does the following: </p>
+         * <ul> <li> <p>Creates a new Amazon FSx backup with an assigned ID, and an initial
+         * lifecycle state of <code>CREATING</code>.</p> </li> <li> <p>Returns the
+         * description of the backup.</p> </li> </ul> <p>By using the idempotent operation,
+         * you can retry a <code>CreateBackup</code> operation without the risk of creating
+         * an extra backup. This approach can be useful when an initial call fails in a way
+         * that makes it unclear whether a backup was created. If you use the same client
          * request token and the initial call created a backup, the operation returns a
          * successful result because all the parameters are the same.</p> <p>The
          * <code>CreateBackup</code> operation returns while the backup's lifecycle state
@@ -1021,15 +1033,17 @@ namespace Model
 
         /**
          * <p>Use this operation to update the configuration of an existing Amazon FSx file
-         * system. For an Amazon FSx for Lustre file system, you can update only the
-         * WeeklyMaintenanceStartTime. For an Amazon for Windows File Server file system,
-         * you can update the following properties:</p> <ul> <li>
-         * <p>AutomaticBackupRetentionDays</p> </li> <li>
+         * system. You can update multiple properties in a single request.</p> <p>For
+         * Amazon FSx for Windows File Server file systems, you can update the following
+         * properties:</p> <ul> <li> <p>AutomaticBackupRetentionDays</p> </li> <li>
          * <p>DailyAutomaticBackupStartTime</p> </li> <li>
          * <p>SelfManagedActiveDirectoryConfiguration</p> </li> <li> <p>StorageCapacity</p>
          * </li> <li> <p>ThroughputCapacity</p> </li> <li>
-         * <p>WeeklyMaintenanceStartTime</p> </li> </ul> <p>You can update multiple
-         * properties in a single request.</p><p><h3>See Also:</h3>   <a
+         * <p>WeeklyMaintenanceStartTime</p> </li> </ul> <p>For Amazon FSx for Lustre file
+         * systems, you can update the following properties:</p> <ul> <li>
+         * <p>AutoImportPolicy</p> </li> <li> <p>AutomaticBackupRetentionDays</p> </li>
+         * <li> <p>DailyAutomaticBackupStartTime</p> </li> <li>
+         * <p>WeeklyMaintenanceStartTime</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/UpdateFileSystem">AWS
          * API Reference</a></p>
          */
@@ -1037,15 +1051,17 @@ namespace Model
 
         /**
          * <p>Use this operation to update the configuration of an existing Amazon FSx file
-         * system. For an Amazon FSx for Lustre file system, you can update only the
-         * WeeklyMaintenanceStartTime. For an Amazon for Windows File Server file system,
-         * you can update the following properties:</p> <ul> <li>
-         * <p>AutomaticBackupRetentionDays</p> </li> <li>
+         * system. You can update multiple properties in a single request.</p> <p>For
+         * Amazon FSx for Windows File Server file systems, you can update the following
+         * properties:</p> <ul> <li> <p>AutomaticBackupRetentionDays</p> </li> <li>
          * <p>DailyAutomaticBackupStartTime</p> </li> <li>
          * <p>SelfManagedActiveDirectoryConfiguration</p> </li> <li> <p>StorageCapacity</p>
          * </li> <li> <p>ThroughputCapacity</p> </li> <li>
-         * <p>WeeklyMaintenanceStartTime</p> </li> </ul> <p>You can update multiple
-         * properties in a single request.</p><p><h3>See Also:</h3>   <a
+         * <p>WeeklyMaintenanceStartTime</p> </li> </ul> <p>For Amazon FSx for Lustre file
+         * systems, you can update the following properties:</p> <ul> <li>
+         * <p>AutoImportPolicy</p> </li> <li> <p>AutomaticBackupRetentionDays</p> </li>
+         * <li> <p>DailyAutomaticBackupStartTime</p> </li> <li>
+         * <p>WeeklyMaintenanceStartTime</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/UpdateFileSystem">AWS
          * API Reference</a></p>
          *
@@ -1055,15 +1071,17 @@ namespace Model
 
         /**
          * <p>Use this operation to update the configuration of an existing Amazon FSx file
-         * system. For an Amazon FSx for Lustre file system, you can update only the
-         * WeeklyMaintenanceStartTime. For an Amazon for Windows File Server file system,
-         * you can update the following properties:</p> <ul> <li>
-         * <p>AutomaticBackupRetentionDays</p> </li> <li>
+         * system. You can update multiple properties in a single request.</p> <p>For
+         * Amazon FSx for Windows File Server file systems, you can update the following
+         * properties:</p> <ul> <li> <p>AutomaticBackupRetentionDays</p> </li> <li>
          * <p>DailyAutomaticBackupStartTime</p> </li> <li>
          * <p>SelfManagedActiveDirectoryConfiguration</p> </li> <li> <p>StorageCapacity</p>
          * </li> <li> <p>ThroughputCapacity</p> </li> <li>
-         * <p>WeeklyMaintenanceStartTime</p> </li> </ul> <p>You can update multiple
-         * properties in a single request.</p><p><h3>See Also:</h3>   <a
+         * <p>WeeklyMaintenanceStartTime</p> </li> </ul> <p>For Amazon FSx for Lustre file
+         * systems, you can update the following properties:</p> <ul> <li>
+         * <p>AutoImportPolicy</p> </li> <li> <p>AutomaticBackupRetentionDays</p> </li>
+         * <li> <p>DailyAutomaticBackupStartTime</p> </li> <li>
+         * <p>WeeklyMaintenanceStartTime</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/UpdateFileSystem">AWS
          * API Reference</a></p>
          *

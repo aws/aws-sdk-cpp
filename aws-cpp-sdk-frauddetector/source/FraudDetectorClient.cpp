@@ -43,7 +43,6 @@
 #include <aws/frauddetector/model/GetModelVersionRequest.h>
 #include <aws/frauddetector/model/GetModelsRequest.h>
 #include <aws/frauddetector/model/GetOutcomesRequest.h>
-#include <aws/frauddetector/model/GetPredictionRequest.h>
 #include <aws/frauddetector/model/GetRulesRequest.h>
 #include <aws/frauddetector/model/GetVariablesRequest.h>
 #include <aws/frauddetector/model/ListTagsForResourceRequest.h>
@@ -782,33 +781,6 @@ void FraudDetectorClient::GetOutcomesAsync(const GetOutcomesRequest& request, co
 void FraudDetectorClient::GetOutcomesAsyncHelper(const GetOutcomesRequest& request, const GetOutcomesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetOutcomes(request), context);
-}
-
-GetPredictionOutcome FraudDetectorClient::GetPrediction(const GetPredictionRequest& request) const
-{
-  Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
-  return GetPredictionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
-}
-
-GetPredictionOutcomeCallable FraudDetectorClient::GetPredictionCallable(const GetPredictionRequest& request) const
-{
-  auto task = Aws::MakeShared< std::packaged_task< GetPredictionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetPrediction(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
-}
-
-void FraudDetectorClient::GetPredictionAsync(const GetPredictionRequest& request, const GetPredictionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  m_executor->Submit( [this, request, handler, context](){ this->GetPredictionAsyncHelper( request, handler, context ); } );
-}
-
-void FraudDetectorClient::GetPredictionAsyncHelper(const GetPredictionRequest& request, const GetPredictionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetPrediction(request), context);
 }
 
 GetRulesOutcome FraudDetectorClient::GetRules(const GetRulesRequest& request) const

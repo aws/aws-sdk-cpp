@@ -303,42 +303,42 @@ namespace Model
     /**
      * <p>The total number of objects that are in the bucket, grouped by server-side
      * encryption type. This includes a grouping that reports the total number of
-     * objects that aren't encrypted.</p>
+     * objects that aren't encrypted or use client-side encryption.</p>
      */
     inline const ObjectCountByEncryptionType& GetObjectCountByEncryptionType() const{ return m_objectCountByEncryptionType; }
 
     /**
      * <p>The total number of objects that are in the bucket, grouped by server-side
      * encryption type. This includes a grouping that reports the total number of
-     * objects that aren't encrypted.</p>
+     * objects that aren't encrypted or use client-side encryption.</p>
      */
     inline bool ObjectCountByEncryptionTypeHasBeenSet() const { return m_objectCountByEncryptionTypeHasBeenSet; }
 
     /**
      * <p>The total number of objects that are in the bucket, grouped by server-side
      * encryption type. This includes a grouping that reports the total number of
-     * objects that aren't encrypted.</p>
+     * objects that aren't encrypted or use client-side encryption.</p>
      */
     inline void SetObjectCountByEncryptionType(const ObjectCountByEncryptionType& value) { m_objectCountByEncryptionTypeHasBeenSet = true; m_objectCountByEncryptionType = value; }
 
     /**
      * <p>The total number of objects that are in the bucket, grouped by server-side
      * encryption type. This includes a grouping that reports the total number of
-     * objects that aren't encrypted.</p>
+     * objects that aren't encrypted or use client-side encryption.</p>
      */
     inline void SetObjectCountByEncryptionType(ObjectCountByEncryptionType&& value) { m_objectCountByEncryptionTypeHasBeenSet = true; m_objectCountByEncryptionType = std::move(value); }
 
     /**
      * <p>The total number of objects that are in the bucket, grouped by server-side
      * encryption type. This includes a grouping that reports the total number of
-     * objects that aren't encrypted.</p>
+     * objects that aren't encrypted or use client-side encryption.</p>
      */
     inline BucketMetadata& WithObjectCountByEncryptionType(const ObjectCountByEncryptionType& value) { SetObjectCountByEncryptionType(value); return *this;}
 
     /**
      * <p>The total number of objects that are in the bucket, grouped by server-side
      * encryption type. This includes a grouping that reports the total number of
-     * objects that aren't encrypted.</p>
+     * objects that aren't encrypted or use client-side encryption.</p>
      */
     inline BucketMetadata& WithObjectCountByEncryptionType(ObjectCountByEncryptionType&& value) { SetObjectCountByEncryptionType(std::move(value)); return *this;}
 

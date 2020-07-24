@@ -14,7 +14,9 @@ ListMetricsRequest::ListMetricsRequest() :
     m_namespaceHasBeenSet(false),
     m_metricNameHasBeenSet(false),
     m_dimensionsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
+    m_nextTokenHasBeenSet(false),
+    m_recentlyActive(RecentlyActive::NOT_SET),
+    m_recentlyActiveHasBeenSet(false)
 {
 }
 
@@ -45,6 +47,11 @@ Aws::String ListMetricsRequest::SerializePayload() const
   if(m_nextTokenHasBeenSet)
   {
     ss << "NextToken=" << StringUtils::URLEncode(m_nextToken.c_str()) << "&";
+  }
+
+  if(m_recentlyActiveHasBeenSet)
+  {
+    ss << "RecentlyActive=" << RecentlyActiveMapper::GetNameForRecentlyActive(m_recentlyActive) << "&";
   }
 
   ss << "Version=2010-08-01";

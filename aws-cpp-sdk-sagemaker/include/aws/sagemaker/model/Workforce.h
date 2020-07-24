@@ -8,6 +8,8 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/sagemaker/model/SourceIpConfig.h>
+#include <aws/sagemaker/model/CognitoConfig.h>
+#include <aws/sagemaker/model/OidcConfigForResponse.h>
 #include <utility>
 
 namespace Aws
@@ -46,58 +48,42 @@ namespace Model
 
 
     /**
-     * <p>The name of the private workforce whose access you want to restrict.
-     * <code>WorkforceName</code> is automatically set to <code>default</code> when a
-     * workforce is created and cannot be modified. </p>
+     * <p>The name of the private workforce.</p>
      */
     inline const Aws::String& GetWorkforceName() const{ return m_workforceName; }
 
     /**
-     * <p>The name of the private workforce whose access you want to restrict.
-     * <code>WorkforceName</code> is automatically set to <code>default</code> when a
-     * workforce is created and cannot be modified. </p>
+     * <p>The name of the private workforce.</p>
      */
     inline bool WorkforceNameHasBeenSet() const { return m_workforceNameHasBeenSet; }
 
     /**
-     * <p>The name of the private workforce whose access you want to restrict.
-     * <code>WorkforceName</code> is automatically set to <code>default</code> when a
-     * workforce is created and cannot be modified. </p>
+     * <p>The name of the private workforce.</p>
      */
     inline void SetWorkforceName(const Aws::String& value) { m_workforceNameHasBeenSet = true; m_workforceName = value; }
 
     /**
-     * <p>The name of the private workforce whose access you want to restrict.
-     * <code>WorkforceName</code> is automatically set to <code>default</code> when a
-     * workforce is created and cannot be modified. </p>
+     * <p>The name of the private workforce.</p>
      */
     inline void SetWorkforceName(Aws::String&& value) { m_workforceNameHasBeenSet = true; m_workforceName = std::move(value); }
 
     /**
-     * <p>The name of the private workforce whose access you want to restrict.
-     * <code>WorkforceName</code> is automatically set to <code>default</code> when a
-     * workforce is created and cannot be modified. </p>
+     * <p>The name of the private workforce.</p>
      */
     inline void SetWorkforceName(const char* value) { m_workforceNameHasBeenSet = true; m_workforceName.assign(value); }
 
     /**
-     * <p>The name of the private workforce whose access you want to restrict.
-     * <code>WorkforceName</code> is automatically set to <code>default</code> when a
-     * workforce is created and cannot be modified. </p>
+     * <p>The name of the private workforce.</p>
      */
     inline Workforce& WithWorkforceName(const Aws::String& value) { SetWorkforceName(value); return *this;}
 
     /**
-     * <p>The name of the private workforce whose access you want to restrict.
-     * <code>WorkforceName</code> is automatically set to <code>default</code> when a
-     * workforce is created and cannot be modified. </p>
+     * <p>The name of the private workforce.</p>
      */
     inline Workforce& WithWorkforceName(Aws::String&& value) { SetWorkforceName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the private workforce whose access you want to restrict.
-     * <code>WorkforceName</code> is automatically set to <code>default</code> when a
-     * workforce is created and cannot be modified. </p>
+     * <p>The name of the private workforce.</p>
      */
     inline Workforce& WithWorkforceName(const char* value) { SetWorkforceName(value); return *this;}
 
@@ -234,6 +220,158 @@ namespace Model
      */
     inline Workforce& WithSourceIpConfig(SourceIpConfig&& value) { SetSourceIpConfig(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The subdomain for your OIDC Identity Provider.</p>
+     */
+    inline const Aws::String& GetSubDomain() const{ return m_subDomain; }
+
+    /**
+     * <p>The subdomain for your OIDC Identity Provider.</p>
+     */
+    inline bool SubDomainHasBeenSet() const { return m_subDomainHasBeenSet; }
+
+    /**
+     * <p>The subdomain for your OIDC Identity Provider.</p>
+     */
+    inline void SetSubDomain(const Aws::String& value) { m_subDomainHasBeenSet = true; m_subDomain = value; }
+
+    /**
+     * <p>The subdomain for your OIDC Identity Provider.</p>
+     */
+    inline void SetSubDomain(Aws::String&& value) { m_subDomainHasBeenSet = true; m_subDomain = std::move(value); }
+
+    /**
+     * <p>The subdomain for your OIDC Identity Provider.</p>
+     */
+    inline void SetSubDomain(const char* value) { m_subDomainHasBeenSet = true; m_subDomain.assign(value); }
+
+    /**
+     * <p>The subdomain for your OIDC Identity Provider.</p>
+     */
+    inline Workforce& WithSubDomain(const Aws::String& value) { SetSubDomain(value); return *this;}
+
+    /**
+     * <p>The subdomain for your OIDC Identity Provider.</p>
+     */
+    inline Workforce& WithSubDomain(Aws::String&& value) { SetSubDomain(std::move(value)); return *this;}
+
+    /**
+     * <p>The subdomain for your OIDC Identity Provider.</p>
+     */
+    inline Workforce& WithSubDomain(const char* value) { SetSubDomain(value); return *this;}
+
+
+    /**
+     * <p>The configuration of an Amazon Cognito workforce. A single Cognito workforce
+     * is created using and corresponds to a single <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html">
+     * Amazon Cognito user pool</a>.</p>
+     */
+    inline const CognitoConfig& GetCognitoConfig() const{ return m_cognitoConfig; }
+
+    /**
+     * <p>The configuration of an Amazon Cognito workforce. A single Cognito workforce
+     * is created using and corresponds to a single <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html">
+     * Amazon Cognito user pool</a>.</p>
+     */
+    inline bool CognitoConfigHasBeenSet() const { return m_cognitoConfigHasBeenSet; }
+
+    /**
+     * <p>The configuration of an Amazon Cognito workforce. A single Cognito workforce
+     * is created using and corresponds to a single <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html">
+     * Amazon Cognito user pool</a>.</p>
+     */
+    inline void SetCognitoConfig(const CognitoConfig& value) { m_cognitoConfigHasBeenSet = true; m_cognitoConfig = value; }
+
+    /**
+     * <p>The configuration of an Amazon Cognito workforce. A single Cognito workforce
+     * is created using and corresponds to a single <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html">
+     * Amazon Cognito user pool</a>.</p>
+     */
+    inline void SetCognitoConfig(CognitoConfig&& value) { m_cognitoConfigHasBeenSet = true; m_cognitoConfig = std::move(value); }
+
+    /**
+     * <p>The configuration of an Amazon Cognito workforce. A single Cognito workforce
+     * is created using and corresponds to a single <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html">
+     * Amazon Cognito user pool</a>.</p>
+     */
+    inline Workforce& WithCognitoConfig(const CognitoConfig& value) { SetCognitoConfig(value); return *this;}
+
+    /**
+     * <p>The configuration of an Amazon Cognito workforce. A single Cognito workforce
+     * is created using and corresponds to a single <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html">
+     * Amazon Cognito user pool</a>.</p>
+     */
+    inline Workforce& WithCognitoConfig(CognitoConfig&& value) { SetCognitoConfig(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The configuration of an OIDC Identity Provider (IdP) private workforce.</p>
+     */
+    inline const OidcConfigForResponse& GetOidcConfig() const{ return m_oidcConfig; }
+
+    /**
+     * <p>The configuration of an OIDC Identity Provider (IdP) private workforce.</p>
+     */
+    inline bool OidcConfigHasBeenSet() const { return m_oidcConfigHasBeenSet; }
+
+    /**
+     * <p>The configuration of an OIDC Identity Provider (IdP) private workforce.</p>
+     */
+    inline void SetOidcConfig(const OidcConfigForResponse& value) { m_oidcConfigHasBeenSet = true; m_oidcConfig = value; }
+
+    /**
+     * <p>The configuration of an OIDC Identity Provider (IdP) private workforce.</p>
+     */
+    inline void SetOidcConfig(OidcConfigForResponse&& value) { m_oidcConfigHasBeenSet = true; m_oidcConfig = std::move(value); }
+
+    /**
+     * <p>The configuration of an OIDC Identity Provider (IdP) private workforce.</p>
+     */
+    inline Workforce& WithOidcConfig(const OidcConfigForResponse& value) { SetOidcConfig(value); return *this;}
+
+    /**
+     * <p>The configuration of an OIDC Identity Provider (IdP) private workforce.</p>
+     */
+    inline Workforce& WithOidcConfig(OidcConfigForResponse&& value) { SetOidcConfig(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The date that the workforce is created.</p>
+     */
+    inline const Aws::Utils::DateTime& GetCreateDate() const{ return m_createDate; }
+
+    /**
+     * <p>The date that the workforce is created.</p>
+     */
+    inline bool CreateDateHasBeenSet() const { return m_createDateHasBeenSet; }
+
+    /**
+     * <p>The date that the workforce is created.</p>
+     */
+    inline void SetCreateDate(const Aws::Utils::DateTime& value) { m_createDateHasBeenSet = true; m_createDate = value; }
+
+    /**
+     * <p>The date that the workforce is created.</p>
+     */
+    inline void SetCreateDate(Aws::Utils::DateTime&& value) { m_createDateHasBeenSet = true; m_createDate = std::move(value); }
+
+    /**
+     * <p>The date that the workforce is created.</p>
+     */
+    inline Workforce& WithCreateDate(const Aws::Utils::DateTime& value) { SetCreateDate(value); return *this;}
+
+    /**
+     * <p>The date that the workforce is created.</p>
+     */
+    inline Workforce& WithCreateDate(Aws::Utils::DateTime&& value) { SetCreateDate(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_workforceName;
@@ -247,6 +385,18 @@ namespace Model
 
     SourceIpConfig m_sourceIpConfig;
     bool m_sourceIpConfigHasBeenSet;
+
+    Aws::String m_subDomain;
+    bool m_subDomainHasBeenSet;
+
+    CognitoConfig m_cognitoConfig;
+    bool m_cognitoConfigHasBeenSet;
+
+    OidcConfigForResponse m_oidcConfig;
+    bool m_oidcConfigHasBeenSet;
+
+    Aws::Utils::DateTime m_createDate;
+    bool m_createDateHasBeenSet;
   };
 
 } // namespace Model

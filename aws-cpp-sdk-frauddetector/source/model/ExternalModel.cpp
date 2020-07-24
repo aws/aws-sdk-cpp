@@ -23,7 +23,7 @@ ExternalModel::ExternalModel() :
     m_eventTypeNameHasBeenSet(false),
     m_modelSource(ModelSource::NOT_SET),
     m_modelSourceHasBeenSet(false),
-    m_roleHasBeenSet(false),
+    m_invokeModelEndpointRoleArnHasBeenSet(false),
     m_inputConfigurationHasBeenSet(false),
     m_outputConfigurationHasBeenSet(false),
     m_modelEndpointStatus(ModelEndpointStatus::NOT_SET),
@@ -39,7 +39,7 @@ ExternalModel::ExternalModel(JsonView jsonValue) :
     m_eventTypeNameHasBeenSet(false),
     m_modelSource(ModelSource::NOT_SET),
     m_modelSourceHasBeenSet(false),
-    m_roleHasBeenSet(false),
+    m_invokeModelEndpointRoleArnHasBeenSet(false),
     m_inputConfigurationHasBeenSet(false),
     m_outputConfigurationHasBeenSet(false),
     m_modelEndpointStatus(ModelEndpointStatus::NOT_SET),
@@ -74,11 +74,11 @@ ExternalModel& ExternalModel::operator =(JsonView jsonValue)
     m_modelSourceHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("role"))
+  if(jsonValue.ValueExists("invokeModelEndpointRoleArn"))
   {
-    m_role = jsonValue.GetObject("role");
+    m_invokeModelEndpointRoleArn = jsonValue.GetString("invokeModelEndpointRoleArn");
 
-    m_roleHasBeenSet = true;
+    m_invokeModelEndpointRoleArnHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("inputConfiguration"))
@@ -147,9 +147,9 @@ JsonValue ExternalModel::Jsonize() const
    payload.WithString("modelSource", ModelSourceMapper::GetNameForModelSource(m_modelSource));
   }
 
-  if(m_roleHasBeenSet)
+  if(m_invokeModelEndpointRoleArnHasBeenSet)
   {
-   payload.WithObject("role", m_role.Jsonize());
+   payload.WithString("invokeModelEndpointRoleArn", m_invokeModelEndpointRoleArn);
 
   }
 

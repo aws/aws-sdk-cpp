@@ -16,6 +16,8 @@ UpdateFlowEntitlementRequest::UpdateFlowEntitlementRequest() :
     m_descriptionHasBeenSet(false),
     m_encryptionHasBeenSet(false),
     m_entitlementArnHasBeenSet(false),
+    m_entitlementStatus(EntitlementStatus::NOT_SET),
+    m_entitlementStatusHasBeenSet(false),
     m_flowArnHasBeenSet(false),
     m_subscribersHasBeenSet(false)
 {
@@ -35,6 +37,11 @@ Aws::String UpdateFlowEntitlementRequest::SerializePayload() const
   {
    payload.WithObject("encryption", m_encryption.Jsonize());
 
+  }
+
+  if(m_entitlementStatusHasBeenSet)
+  {
+   payload.WithString("entitlementStatus", EntitlementStatusMapper::GetNameForEntitlementStatus(m_entitlementStatus));
   }
 
   if(m_subscribersHasBeenSet)

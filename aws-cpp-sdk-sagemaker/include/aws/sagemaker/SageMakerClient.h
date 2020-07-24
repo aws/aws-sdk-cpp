@@ -39,6 +39,7 @@
 #include <aws/sagemaker/model/CreateTrialResult.h>
 #include <aws/sagemaker/model/CreateTrialComponentResult.h>
 #include <aws/sagemaker/model/CreateUserProfileResult.h>
+#include <aws/sagemaker/model/CreateWorkforceResult.h>
 #include <aws/sagemaker/model/CreateWorkteamResult.h>
 #include <aws/sagemaker/model/DeleteExperimentResult.h>
 #include <aws/sagemaker/model/DeleteFlowDefinitionResult.h>
@@ -46,6 +47,7 @@
 #include <aws/sagemaker/model/DeleteTagsResult.h>
 #include <aws/sagemaker/model/DeleteTrialResult.h>
 #include <aws/sagemaker/model/DeleteTrialComponentResult.h>
+#include <aws/sagemaker/model/DeleteWorkforceResult.h>
 #include <aws/sagemaker/model/DeleteWorkteamResult.h>
 #include <aws/sagemaker/model/DescribeAlgorithmResult.h>
 #include <aws/sagemaker/model/DescribeAppResult.h>
@@ -106,6 +108,7 @@
 #include <aws/sagemaker/model/ListTrialComponentsResult.h>
 #include <aws/sagemaker/model/ListTrialsResult.h>
 #include <aws/sagemaker/model/ListUserProfilesResult.h>
+#include <aws/sagemaker/model/ListWorkforcesResult.h>
 #include <aws/sagemaker/model/ListWorkteamsResult.h>
 #include <aws/sagemaker/model/RenderUiTemplateResult.h>
 #include <aws/sagemaker/model/SearchResult.h>
@@ -190,6 +193,7 @@ namespace Model
         class CreateTrialRequest;
         class CreateTrialComponentRequest;
         class CreateUserProfileRequest;
+        class CreateWorkforceRequest;
         class CreateWorkteamRequest;
         class DeleteAlgorithmRequest;
         class DeleteAppRequest;
@@ -209,6 +213,7 @@ namespace Model
         class DeleteTrialRequest;
         class DeleteTrialComponentRequest;
         class DeleteUserProfileRequest;
+        class DeleteWorkforceRequest;
         class DeleteWorkteamRequest;
         class DescribeAlgorithmRequest;
         class DescribeAppRequest;
@@ -269,6 +274,7 @@ namespace Model
         class ListTrialComponentsRequest;
         class ListTrialsRequest;
         class ListUserProfilesRequest;
+        class ListWorkforcesRequest;
         class ListWorkteamsRequest;
         class RenderUiTemplateRequest;
         class SearchRequest;
@@ -325,6 +331,7 @@ namespace Model
         typedef Aws::Utils::Outcome<CreateTrialResult, SageMakerError> CreateTrialOutcome;
         typedef Aws::Utils::Outcome<CreateTrialComponentResult, SageMakerError> CreateTrialComponentOutcome;
         typedef Aws::Utils::Outcome<CreateUserProfileResult, SageMakerError> CreateUserProfileOutcome;
+        typedef Aws::Utils::Outcome<CreateWorkforceResult, SageMakerError> CreateWorkforceOutcome;
         typedef Aws::Utils::Outcome<CreateWorkteamResult, SageMakerError> CreateWorkteamOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerError> DeleteAlgorithmOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerError> DeleteAppOutcome;
@@ -344,6 +351,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DeleteTrialResult, SageMakerError> DeleteTrialOutcome;
         typedef Aws::Utils::Outcome<DeleteTrialComponentResult, SageMakerError> DeleteTrialComponentOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerError> DeleteUserProfileOutcome;
+        typedef Aws::Utils::Outcome<DeleteWorkforceResult, SageMakerError> DeleteWorkforceOutcome;
         typedef Aws::Utils::Outcome<DeleteWorkteamResult, SageMakerError> DeleteWorkteamOutcome;
         typedef Aws::Utils::Outcome<DescribeAlgorithmResult, SageMakerError> DescribeAlgorithmOutcome;
         typedef Aws::Utils::Outcome<DescribeAppResult, SageMakerError> DescribeAppOutcome;
@@ -404,6 +412,7 @@ namespace Model
         typedef Aws::Utils::Outcome<ListTrialComponentsResult, SageMakerError> ListTrialComponentsOutcome;
         typedef Aws::Utils::Outcome<ListTrialsResult, SageMakerError> ListTrialsOutcome;
         typedef Aws::Utils::Outcome<ListUserProfilesResult, SageMakerError> ListUserProfilesOutcome;
+        typedef Aws::Utils::Outcome<ListWorkforcesResult, SageMakerError> ListWorkforcesOutcome;
         typedef Aws::Utils::Outcome<ListWorkteamsResult, SageMakerError> ListWorkteamsOutcome;
         typedef Aws::Utils::Outcome<RenderUiTemplateResult, SageMakerError> RenderUiTemplateOutcome;
         typedef Aws::Utils::Outcome<SearchResult, SageMakerError> SearchOutcome;
@@ -460,6 +469,7 @@ namespace Model
         typedef std::future<CreateTrialOutcome> CreateTrialOutcomeCallable;
         typedef std::future<CreateTrialComponentOutcome> CreateTrialComponentOutcomeCallable;
         typedef std::future<CreateUserProfileOutcome> CreateUserProfileOutcomeCallable;
+        typedef std::future<CreateWorkforceOutcome> CreateWorkforceOutcomeCallable;
         typedef std::future<CreateWorkteamOutcome> CreateWorkteamOutcomeCallable;
         typedef std::future<DeleteAlgorithmOutcome> DeleteAlgorithmOutcomeCallable;
         typedef std::future<DeleteAppOutcome> DeleteAppOutcomeCallable;
@@ -479,6 +489,7 @@ namespace Model
         typedef std::future<DeleteTrialOutcome> DeleteTrialOutcomeCallable;
         typedef std::future<DeleteTrialComponentOutcome> DeleteTrialComponentOutcomeCallable;
         typedef std::future<DeleteUserProfileOutcome> DeleteUserProfileOutcomeCallable;
+        typedef std::future<DeleteWorkforceOutcome> DeleteWorkforceOutcomeCallable;
         typedef std::future<DeleteWorkteamOutcome> DeleteWorkteamOutcomeCallable;
         typedef std::future<DescribeAlgorithmOutcome> DescribeAlgorithmOutcomeCallable;
         typedef std::future<DescribeAppOutcome> DescribeAppOutcomeCallable;
@@ -539,6 +550,7 @@ namespace Model
         typedef std::future<ListTrialComponentsOutcome> ListTrialComponentsOutcomeCallable;
         typedef std::future<ListTrialsOutcome> ListTrialsOutcomeCallable;
         typedef std::future<ListUserProfilesOutcome> ListUserProfilesOutcomeCallable;
+        typedef std::future<ListWorkforcesOutcome> ListWorkforcesOutcomeCallable;
         typedef std::future<ListWorkteamsOutcome> ListWorkteamsOutcomeCallable;
         typedef std::future<RenderUiTemplateOutcome> RenderUiTemplateOutcomeCallable;
         typedef std::future<SearchOutcome> SearchOutcomeCallable;
@@ -598,6 +610,7 @@ namespace Model
     typedef std::function<void(const SageMakerClient*, const Model::CreateTrialRequest&, const Model::CreateTrialOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateTrialResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::CreateTrialComponentRequest&, const Model::CreateTrialComponentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateTrialComponentResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::CreateUserProfileRequest&, const Model::CreateUserProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateUserProfileResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::CreateWorkforceRequest&, const Model::CreateWorkforceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateWorkforceResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::CreateWorkteamRequest&, const Model::CreateWorkteamOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateWorkteamResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DeleteAlgorithmRequest&, const Model::DeleteAlgorithmOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAlgorithmResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DeleteAppRequest&, const Model::DeleteAppOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAppResponseReceivedHandler;
@@ -617,6 +630,7 @@ namespace Model
     typedef std::function<void(const SageMakerClient*, const Model::DeleteTrialRequest&, const Model::DeleteTrialOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteTrialResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DeleteTrialComponentRequest&, const Model::DeleteTrialComponentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteTrialComponentResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DeleteUserProfileRequest&, const Model::DeleteUserProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteUserProfileResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::DeleteWorkforceRequest&, const Model::DeleteWorkforceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteWorkforceResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DeleteWorkteamRequest&, const Model::DeleteWorkteamOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteWorkteamResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DescribeAlgorithmRequest&, const Model::DescribeAlgorithmOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAlgorithmResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DescribeAppRequest&, const Model::DescribeAppOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAppResponseReceivedHandler;
@@ -677,6 +691,7 @@ namespace Model
     typedef std::function<void(const SageMakerClient*, const Model::ListTrialComponentsRequest&, const Model::ListTrialComponentsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTrialComponentsResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::ListTrialsRequest&, const Model::ListTrialsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTrialsResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::ListUserProfilesRequest&, const Model::ListUserProfilesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListUserProfilesResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::ListWorkforcesRequest&, const Model::ListWorkforcesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListWorkforcesResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::ListWorkteamsRequest&, const Model::ListWorkteamsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListWorkteamsResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::RenderUiTemplateRequest&, const Model::RenderUiTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RenderUiTemplateResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::SearchRequest&, const Model::SearchOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SearchResponseReceivedHandler;
@@ -1013,11 +1028,11 @@ namespace Model
          * body, you provide the following:</p> <ul> <li> <p>A name for the compilation
          * job</p> </li> <li> <p> Information about the input model artifacts </p> </li>
          * <li> <p>The output location for the compiled model and the device (target) that
-         * the model runs on </p> </li> <li> <p> <code>The Amazon Resource Name (ARN) of
-         * the IAM role that Amazon SageMaker assumes to perform the model compilation
-         * job</code> </p> </li> </ul> <p>You can also provide a <code>Tag</code> to track
-         * the model compilation job's resource use and costs. The response body contains
-         * the <code>CompilationJobArn</code> for the compiled job.</p> <p>To stop a model
+         * the model runs on </p> </li> <li> <p>The Amazon Resource Name (ARN) of the IAM
+         * role that Amazon SageMaker assumes to perform the model compilation job. </p>
+         * </li> </ul> <p>You can also provide a <code>Tag</code> to track the model
+         * compilation job's resource use and costs. The response body contains the
+         * <code>CompilationJobArn</code> for the compiled job.</p> <p>To stop a model
          * compilation job, use <a>StopCompilationJob</a>. To get information about a
          * particular model compilation job, use <a>DescribeCompilationJob</a>. To get
          * information about multiple model compilation jobs, use
@@ -1037,11 +1052,11 @@ namespace Model
          * body, you provide the following:</p> <ul> <li> <p>A name for the compilation
          * job</p> </li> <li> <p> Information about the input model artifacts </p> </li>
          * <li> <p>The output location for the compiled model and the device (target) that
-         * the model runs on </p> </li> <li> <p> <code>The Amazon Resource Name (ARN) of
-         * the IAM role that Amazon SageMaker assumes to perform the model compilation
-         * job</code> </p> </li> </ul> <p>You can also provide a <code>Tag</code> to track
-         * the model compilation job's resource use and costs. The response body contains
-         * the <code>CompilationJobArn</code> for the compiled job.</p> <p>To stop a model
+         * the model runs on </p> </li> <li> <p>The Amazon Resource Name (ARN) of the IAM
+         * role that Amazon SageMaker assumes to perform the model compilation job. </p>
+         * </li> </ul> <p>You can also provide a <code>Tag</code> to track the model
+         * compilation job's resource use and costs. The response body contains the
+         * <code>CompilationJobArn</code> for the compiled job.</p> <p>To stop a model
          * compilation job, use <a>StopCompilationJob</a>. To get information about a
          * particular model compilation job, use <a>DescribeCompilationJob</a>. To get
          * information about multiple model compilation jobs, use
@@ -1063,11 +1078,11 @@ namespace Model
          * body, you provide the following:</p> <ul> <li> <p>A name for the compilation
          * job</p> </li> <li> <p> Information about the input model artifacts </p> </li>
          * <li> <p>The output location for the compiled model and the device (target) that
-         * the model runs on </p> </li> <li> <p> <code>The Amazon Resource Name (ARN) of
-         * the IAM role that Amazon SageMaker assumes to perform the model compilation
-         * job</code> </p> </li> </ul> <p>You can also provide a <code>Tag</code> to track
-         * the model compilation job's resource use and costs. The response body contains
-         * the <code>CompilationJobArn</code> for the compiled job.</p> <p>To stop a model
+         * the model runs on </p> </li> <li> <p>The Amazon Resource Name (ARN) of the IAM
+         * role that Amazon SageMaker assumes to perform the model compilation job. </p>
+         * </li> </ul> <p>You can also provide a <code>Tag</code> to track the model
+         * compilation job's resource use and costs. The response body contains the
+         * <code>CompilationJobArn</code> for the compiled job.</p> <p>To stop a model
          * compilation job, use <a>StopCompilationJob</a>. To get information about a
          * particular model compilation job, use <a>DescribeCompilationJob</a>. To get
          * information about multiple model compilation jobs, use
@@ -1398,12 +1413,12 @@ namespace Model
         virtual void CreateEndpointConfigAsync(const Model::CreateEndpointConfigRequest& request, const CreateEndpointConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates an Amazon SageMaker <i>experiment</i>. An experiment is a collection
-         * of <i>trials</i> that are observed, compared and evaluated as a group. A trial
-         * is a set of steps, called <i>trial components</i>, that produce a machine
-         * learning model.</p> <p>The goal of an experiment is to determine the components
-         * that produce the best model. Multiple trials are performed, each one isolating
-         * and measuring the impact of a change to one or more inputs, while keeping the
+         * <p>Creates an SageMaker <i>experiment</i>. An experiment is a collection of
+         * <i>trials</i> that are observed, compared and evaluated as a group. A trial is a
+         * set of steps, called <i>trial components</i>, that produce a machine learning
+         * model.</p> <p>The goal of an experiment is to determine the components that
+         * produce the best model. Multiple trials are performed, each one isolating and
+         * measuring the impact of a change to one or more inputs, while keeping the
          * remaining inputs constant.</p> <p>When you use Amazon SageMaker Studio or the
          * Amazon SageMaker Python SDK, all experiments, trials, and trial components are
          * automatically tracked, logged, and indexed. When you use the AWS SDK for Python
@@ -1422,12 +1437,12 @@ namespace Model
         virtual Model::CreateExperimentOutcome CreateExperiment(const Model::CreateExperimentRequest& request) const;
 
         /**
-         * <p>Creates an Amazon SageMaker <i>experiment</i>. An experiment is a collection
-         * of <i>trials</i> that are observed, compared and evaluated as a group. A trial
-         * is a set of steps, called <i>trial components</i>, that produce a machine
-         * learning model.</p> <p>The goal of an experiment is to determine the components
-         * that produce the best model. Multiple trials are performed, each one isolating
-         * and measuring the impact of a change to one or more inputs, while keeping the
+         * <p>Creates an SageMaker <i>experiment</i>. An experiment is a collection of
+         * <i>trials</i> that are observed, compared and evaluated as a group. A trial is a
+         * set of steps, called <i>trial components</i>, that produce a machine learning
+         * model.</p> <p>The goal of an experiment is to determine the components that
+         * produce the best model. Multiple trials are performed, each one isolating and
+         * measuring the impact of a change to one or more inputs, while keeping the
          * remaining inputs constant.</p> <p>When you use Amazon SageMaker Studio or the
          * Amazon SageMaker Python SDK, all experiments, trials, and trial components are
          * automatically tracked, logged, and indexed. When you use the AWS SDK for Python
@@ -1448,12 +1463,12 @@ namespace Model
         virtual Model::CreateExperimentOutcomeCallable CreateExperimentCallable(const Model::CreateExperimentRequest& request) const;
 
         /**
-         * <p>Creates an Amazon SageMaker <i>experiment</i>. An experiment is a collection
-         * of <i>trials</i> that are observed, compared and evaluated as a group. A trial
-         * is a set of steps, called <i>trial components</i>, that produce a machine
-         * learning model.</p> <p>The goal of an experiment is to determine the components
-         * that produce the best model. Multiple trials are performed, each one isolating
-         * and measuring the impact of a change to one or more inputs, while keeping the
+         * <p>Creates an SageMaker <i>experiment</i>. An experiment is a collection of
+         * <i>trials</i> that are observed, compared and evaluated as a group. A trial is a
+         * set of steps, called <i>trial components</i>, that produce a machine learning
+         * model.</p> <p>The goal of an experiment is to determine the components that
+         * produce the best model. Multiple trials are performed, each one isolating and
+         * measuring the impact of a change to one or more inputs, while keeping the
          * remaining inputs constant.</p> <p>When you use Amazon SageMaker Studio or the
          * Amazon SageMaker Python SDK, all experiments, trials, and trial components are
          * automatically tracked, logged, and indexed. When you use the AWS SDK for Python
@@ -2517,6 +2532,76 @@ namespace Model
         virtual void CreateUserProfileAsync(const Model::CreateUserProfileRequest& request, const CreateUserProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Use this operation to create a workforce. This operation will return an error
+         * if a workforce already exists in the AWS Region that you specify. You can only
+         * create one workforce in each AWS Region.</p> <p>If you want to create a new
+         * workforce in an AWS Region where the a workforce already exists, use the API
+         * operation to delete the existing workforce and then use this operation to create
+         * a new workforce.</p> <p>To create a private workforce using Amazon Cognito, you
+         * must specify a Cognito user pool in <code>CognitoConfig</code>. You can also
+         * create an Amazon Cognito workforce using the Amazon SageMaker console. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-workforce-create-private.html">
+         * Create a Private Workforce (Amazon Cognito)</a>.</p> <p>To create a private
+         * workforce using your own OIDC Identity Provider (IdP), specify your IdP
+         * configuration in <code>OidcConfig</code>. You must create a OIDC IdP workforce
+         * using this API operation. For more information, see <a
+         * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-workforce-create-private-oidc.html">
+         * Create a Private Workforce (OIDC IdP)</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateWorkforce">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateWorkforceOutcome CreateWorkforce(const Model::CreateWorkforceRequest& request) const;
+
+        /**
+         * <p>Use this operation to create a workforce. This operation will return an error
+         * if a workforce already exists in the AWS Region that you specify. You can only
+         * create one workforce in each AWS Region.</p> <p>If you want to create a new
+         * workforce in an AWS Region where the a workforce already exists, use the API
+         * operation to delete the existing workforce and then use this operation to create
+         * a new workforce.</p> <p>To create a private workforce using Amazon Cognito, you
+         * must specify a Cognito user pool in <code>CognitoConfig</code>. You can also
+         * create an Amazon Cognito workforce using the Amazon SageMaker console. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-workforce-create-private.html">
+         * Create a Private Workforce (Amazon Cognito)</a>.</p> <p>To create a private
+         * workforce using your own OIDC Identity Provider (IdP), specify your IdP
+         * configuration in <code>OidcConfig</code>. You must create a OIDC IdP workforce
+         * using this API operation. For more information, see <a
+         * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-workforce-create-private-oidc.html">
+         * Create a Private Workforce (OIDC IdP)</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateWorkforce">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateWorkforceOutcomeCallable CreateWorkforceCallable(const Model::CreateWorkforceRequest& request) const;
+
+        /**
+         * <p>Use this operation to create a workforce. This operation will return an error
+         * if a workforce already exists in the AWS Region that you specify. You can only
+         * create one workforce in each AWS Region.</p> <p>If you want to create a new
+         * workforce in an AWS Region where the a workforce already exists, use the API
+         * operation to delete the existing workforce and then use this operation to create
+         * a new workforce.</p> <p>To create a private workforce using Amazon Cognito, you
+         * must specify a Cognito user pool in <code>CognitoConfig</code>. You can also
+         * create an Amazon Cognito workforce using the Amazon SageMaker console. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-workforce-create-private.html">
+         * Create a Private Workforce (Amazon Cognito)</a>.</p> <p>To create a private
+         * workforce using your own OIDC Identity Provider (IdP), specify your IdP
+         * configuration in <code>OidcConfig</code>. You must create a OIDC IdP workforce
+         * using this API operation. For more information, see <a
+         * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-workforce-create-private-oidc.html">
+         * Create a Private Workforce (OIDC IdP)</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateWorkforce">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateWorkforceAsync(const Model::CreateWorkforceRequest& request, const CreateWorkforceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Creates a new work team for labeling your data. A work team is defined by one
          * or more Amazon Cognito user pools. You must first create the user pools before
          * you can create a work team.</p> <p>You cannot create more than 25 work teams in
@@ -2811,22 +2896,22 @@ namespace Model
         virtual void DeleteFlowDefinitionAsync(const Model::DeleteFlowDefinitionRequest& request, const DeleteFlowDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Use this operation to delete a worker task template
-         * (<code>HumanTaskUi</code>).</p> <p> To see a list of human task user interfaces
-         * (work task templates) in your account, use . When you delete a worker task
-         * template, it no longer appears when you call
-         * <code>ListHumanTaskUis</code>.</p><p><h3>See Also:</h3>   <a
+         * <p>Use this operation to delete a human task user interface (worker task
+         * template).</p> <p> To see a list of human task user interfaces (work task
+         * templates) in your account, use . When you delete a worker task template, it no
+         * longer appears when you call <code>ListHumanTaskUis</code>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteHumanTaskUi">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteHumanTaskUiOutcome DeleteHumanTaskUi(const Model::DeleteHumanTaskUiRequest& request) const;
 
         /**
-         * <p>Use this operation to delete a worker task template
-         * (<code>HumanTaskUi</code>).</p> <p> To see a list of human task user interfaces
-         * (work task templates) in your account, use . When you delete a worker task
-         * template, it no longer appears when you call
-         * <code>ListHumanTaskUis</code>.</p><p><h3>See Also:</h3>   <a
+         * <p>Use this operation to delete a human task user interface (worker task
+         * template).</p> <p> To see a list of human task user interfaces (work task
+         * templates) in your account, use . When you delete a worker task template, it no
+         * longer appears when you call <code>ListHumanTaskUis</code>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteHumanTaskUi">AWS
          * API Reference</a></p>
          *
@@ -2835,11 +2920,11 @@ namespace Model
         virtual Model::DeleteHumanTaskUiOutcomeCallable DeleteHumanTaskUiCallable(const Model::DeleteHumanTaskUiRequest& request) const;
 
         /**
-         * <p>Use this operation to delete a worker task template
-         * (<code>HumanTaskUi</code>).</p> <p> To see a list of human task user interfaces
-         * (work task templates) in your account, use . When you delete a worker task
-         * template, it no longer appears when you call
-         * <code>ListHumanTaskUis</code>.</p><p><h3>See Also:</h3>   <a
+         * <p>Use this operation to delete a human task user interface (worker task
+         * template).</p> <p> To see a list of human task user interfaces (work task
+         * templates) in your account, use . When you delete a worker task template, it no
+         * longer appears when you call <code>ListHumanTaskUis</code>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteHumanTaskUi">AWS
          * API Reference</a></p>
          *
@@ -3149,6 +3234,40 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteUserProfileAsync(const Model::DeleteUserProfileRequest& request, const DeleteUserProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Use this operation to delete a workforce.</p> <p>If you want to create a new
+         * workforce in an AWS Region where the a workforce already exists, use this
+         * operation to delete the existing workforce and then use to create a new
+         * workforce.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteWorkforce">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteWorkforceOutcome DeleteWorkforce(const Model::DeleteWorkforceRequest& request) const;
+
+        /**
+         * <p>Use this operation to delete a workforce.</p> <p>If you want to create a new
+         * workforce in an AWS Region where the a workforce already exists, use this
+         * operation to delete the existing workforce and then use to create a new
+         * workforce.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteWorkforce">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteWorkforceOutcomeCallable DeleteWorkforceCallable(const Model::DeleteWorkforceRequest& request) const;
+
+        /**
+         * <p>Use this operation to delete a workforce.</p> <p>If you want to create a new
+         * workforce in an AWS Region where the a workforce already exists, use this
+         * operation to delete the existing workforce and then use to create a new
+         * workforce.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteWorkforce">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteWorkforceAsync(const Model::DeleteWorkforceRequest& request, const DeleteWorkforceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes an existing work team. This operation can't be undone.</p><p><h3>See
@@ -4870,6 +4989,37 @@ namespace Model
         virtual void ListUserProfilesAsync(const Model::ListUserProfilesRequest& request, const ListUserProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Use this operation to list all private and vendor workforces in an AWS
+         * Region. Note that you can only have one private workforce per AWS
+         * Region.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListWorkforces">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListWorkforcesOutcome ListWorkforces(const Model::ListWorkforcesRequest& request) const;
+
+        /**
+         * <p>Use this operation to list all private and vendor workforces in an AWS
+         * Region. Note that you can only have one private workforce per AWS
+         * Region.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListWorkforces">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListWorkforcesOutcomeCallable ListWorkforcesCallable(const Model::ListWorkforcesRequest& request) const;
+
+        /**
+         * <p>Use this operation to list all private and vendor workforces in an AWS
+         * Region. Note that you can only have one private workforce per AWS
+         * Region.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListWorkforces">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListWorkforcesAsync(const Model::ListWorkforcesRequest& request, const ListWorkforcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Gets a list of work teams that you have defined in a region. The list may be
          * empty if no work team satisfies the filter specified in the
          * <code>NameContains</code> parameter.</p><p><h3>See Also:</h3>   <a
@@ -5825,6 +5975,7 @@ namespace Model
         void CreateTrialAsyncHelper(const Model::CreateTrialRequest& request, const CreateTrialResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateTrialComponentAsyncHelper(const Model::CreateTrialComponentRequest& request, const CreateTrialComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateUserProfileAsyncHelper(const Model::CreateUserProfileRequest& request, const CreateUserProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateWorkforceAsyncHelper(const Model::CreateWorkforceRequest& request, const CreateWorkforceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateWorkteamAsyncHelper(const Model::CreateWorkteamRequest& request, const CreateWorkteamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteAlgorithmAsyncHelper(const Model::DeleteAlgorithmRequest& request, const DeleteAlgorithmResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteAppAsyncHelper(const Model::DeleteAppRequest& request, const DeleteAppResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -5844,6 +5995,7 @@ namespace Model
         void DeleteTrialAsyncHelper(const Model::DeleteTrialRequest& request, const DeleteTrialResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteTrialComponentAsyncHelper(const Model::DeleteTrialComponentRequest& request, const DeleteTrialComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteUserProfileAsyncHelper(const Model::DeleteUserProfileRequest& request, const DeleteUserProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteWorkforceAsyncHelper(const Model::DeleteWorkforceRequest& request, const DeleteWorkforceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteWorkteamAsyncHelper(const Model::DeleteWorkteamRequest& request, const DeleteWorkteamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeAlgorithmAsyncHelper(const Model::DescribeAlgorithmRequest& request, const DescribeAlgorithmResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeAppAsyncHelper(const Model::DescribeAppRequest& request, const DescribeAppResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -5904,6 +6056,7 @@ namespace Model
         void ListTrialComponentsAsyncHelper(const Model::ListTrialComponentsRequest& request, const ListTrialComponentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTrialsAsyncHelper(const Model::ListTrialsRequest& request, const ListTrialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListUserProfilesAsyncHelper(const Model::ListUserProfilesRequest& request, const ListUserProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListWorkforcesAsyncHelper(const Model::ListWorkforcesRequest& request, const ListWorkforcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListWorkteamsAsyncHelper(const Model::ListWorkteamsRequest& request, const ListWorkteamsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RenderUiTemplateAsyncHelper(const Model::RenderUiTemplateRequest& request, const RenderUiTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SearchAsyncHelper(const Model::SearchRequest& request, const SearchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

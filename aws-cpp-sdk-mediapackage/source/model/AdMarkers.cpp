@@ -23,6 +23,7 @@ namespace Aws
         static const int NONE_HASH = HashingUtils::HashString("NONE");
         static const int SCTE35_ENHANCED_HASH = HashingUtils::HashString("SCTE35_ENHANCED");
         static const int PASSTHROUGH_HASH = HashingUtils::HashString("PASSTHROUGH");
+        static const int DATERANGE_HASH = HashingUtils::HashString("DATERANGE");
 
 
         AdMarkers GetAdMarkersForName(const Aws::String& name)
@@ -39,6 +40,10 @@ namespace Aws
           else if (hashCode == PASSTHROUGH_HASH)
           {
             return AdMarkers::PASSTHROUGH;
+          }
+          else if (hashCode == DATERANGE_HASH)
+          {
+            return AdMarkers::DATERANGE;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -60,6 +65,8 @@ namespace Aws
             return "SCTE35_ENHANCED";
           case AdMarkers::PASSTHROUGH:
             return "PASSTHROUGH";
+          case AdMarkers::DATERANGE:
+            return "DATERANGE";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

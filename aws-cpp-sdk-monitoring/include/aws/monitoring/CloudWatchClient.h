@@ -356,7 +356,7 @@ namespace Model
         virtual void DeleteAnomalyDetectorAsync(const Model::DeleteAnomalyDetectorRequest& request, const DeleteAnomalyDetectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes all dashboards that you specify. You may specify up to 100 dashboards
+         * <p>Deletes all dashboards that you specify. You can specify up to 100 dashboards
          * to delete. If there is an error during this call, no dashboards are
          * deleted.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DeleteDashboards">AWS
@@ -365,7 +365,7 @@ namespace Model
         virtual Model::DeleteDashboardsOutcome DeleteDashboards(const Model::DeleteDashboardsRequest& request) const;
 
         /**
-         * <p>Deletes all dashboards that you specify. You may specify up to 100 dashboards
+         * <p>Deletes all dashboards that you specify. You can specify up to 100 dashboards
          * to delete. If there is an error during this call, no dashboards are
          * deleted.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DeleteDashboards">AWS
@@ -376,7 +376,7 @@ namespace Model
         virtual Model::DeleteDashboardsOutcomeCallable DeleteDashboardsCallable(const Model::DeleteDashboardsRequest& request) const;
 
         /**
-         * <p>Deletes all dashboards that you specify. You may specify up to 100 dashboards
+         * <p>Deletes all dashboards that you specify. You can specify up to 100 dashboards
          * to delete. If there is an error during this call, no dashboards are
          * deleted.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DeleteDashboards">AWS
@@ -389,7 +389,7 @@ namespace Model
         /**
          * <p>Permanently deletes the specified Contributor Insights rules.</p> <p>If you
          * create a rule, delete it, and then re-create it with the same name, historical
-         * data from the first time the rule was created may or may not be
+         * data from the first time the rule was created might not be
          * available.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DeleteInsightRules">AWS
          * API Reference</a></p>
@@ -399,7 +399,7 @@ namespace Model
         /**
          * <p>Permanently deletes the specified Contributor Insights rules.</p> <p>If you
          * create a rule, delete it, and then re-create it with the same name, historical
-         * data from the first time the rule was created may or may not be
+         * data from the first time the rule was created might not be
          * available.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DeleteInsightRules">AWS
          * API Reference</a></p>
@@ -411,7 +411,7 @@ namespace Model
         /**
          * <p>Permanently deletes the specified Contributor Insights rules.</p> <p>If you
          * create a rule, delete it, and then re-create it with the same name, historical
-         * data from the first time the rule was created may or may not be
+         * data from the first time the rule was created might not be
          * available.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DeleteInsightRules">AWS
          * API Reference</a></p>
@@ -750,7 +750,7 @@ namespace Model
          * following:</p> <ul> <li> <p> <code>UniqueContributors</code> -- the number of
          * unique contributors for each data point.</p> </li> <li> <p>
          * <code>MaxContributorValue</code> -- the value of the top contributor for each
-         * data point. The identity of the contributor may change for each data point in
+         * data point. The identity of the contributor might change for each data point in
          * the graph.</p> <p>If this rule aggregates by COUNT, the top contributor for each
          * data point is the contributor with the most occurrences in that period. If the
          * rule aggregates by SUM, the top contributor is the contributor with the highest
@@ -778,7 +778,7 @@ namespace Model
          * following:</p> <ul> <li> <p> <code>UniqueContributors</code> -- the number of
          * unique contributors for each data point.</p> </li> <li> <p>
          * <code>MaxContributorValue</code> -- the value of the top contributor for each
-         * data point. The identity of the contributor may change for each data point in
+         * data point. The identity of the contributor might change for each data point in
          * the graph.</p> <p>If this rule aggregates by COUNT, the top contributor for each
          * data point is the contributor with the most occurrences in that period. If the
          * rule aggregates by SUM, the top contributor is the contributor with the highest
@@ -808,7 +808,7 @@ namespace Model
          * following:</p> <ul> <li> <p> <code>UniqueContributors</code> -- the number of
          * unique contributors for each data point.</p> </li> <li> <p>
          * <code>MaxContributorValue</code> -- the value of the top contributor for each
-         * data point. The identity of the contributor may change for each data point in
+         * data point. The identity of the contributor might change for each data point in
          * the graph.</p> <p>If this rule aggregates by COUNT, the top contributor for each
          * data point is the contributor with the most occurrences in that period. If the
          * rule aggregates by SUM, the top contributor is the contributor with the highest
@@ -860,10 +860,10 @@ namespace Model
          * resolution of 1 hour.</p> <p>If you omit <code>Unit</code> in your request, all
          * data that was collected with any unit is returned, along with the corresponding
          * units that were specified when the data was reported to CloudWatch. If you
-         * specify a unit, the operation returns only data data that was collected with
-         * that unit specified. If you specify a unit that does not match the data
-         * collected, the results of the operation are null. CloudWatch does not perform
-         * unit conversions.</p><p><h3>See Also:</h3>   <a
+         * specify a unit, the operation returns only data that was collected with that
+         * unit specified. If you specify a unit that does not match the data collected,
+         * the results of the operation are null. CloudWatch does not perform unit
+         * conversions.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/GetMetricData">AWS
          * API Reference</a></p>
          */
@@ -899,10 +899,10 @@ namespace Model
          * resolution of 1 hour.</p> <p>If you omit <code>Unit</code> in your request, all
          * data that was collected with any unit is returned, along with the corresponding
          * units that were specified when the data was reported to CloudWatch. If you
-         * specify a unit, the operation returns only data data that was collected with
-         * that unit specified. If you specify a unit that does not match the data
-         * collected, the results of the operation are null. CloudWatch does not perform
-         * unit conversions.</p><p><h3>See Also:</h3>   <a
+         * specify a unit, the operation returns only data that was collected with that
+         * unit specified. If you specify a unit that does not match the data collected,
+         * the results of the operation are null. CloudWatch does not perform unit
+         * conversions.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/GetMetricData">AWS
          * API Reference</a></p>
          *
@@ -940,10 +940,10 @@ namespace Model
          * resolution of 1 hour.</p> <p>If you omit <code>Unit</code> in your request, all
          * data that was collected with any unit is returned, along with the corresponding
          * units that were specified when the data was reported to CloudWatch. If you
-         * specify a unit, the operation returns only data data that was collected with
-         * that unit specified. If you specify a unit that does not match the data
-         * collected, the results of the operation are null. CloudWatch does not perform
-         * unit conversions.</p><p><h3>See Also:</h3>   <a
+         * specify a unit, the operation returns only data that was collected with that
+         * unit specified. If you specify a unit that does not match the data collected,
+         * the results of the operation are null. CloudWatch does not perform unit
+         * conversions.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/GetMetricData">AWS
          * API Reference</a></p>
          *
@@ -1186,9 +1186,14 @@ namespace Model
          * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricStatistics.html">GetMetricStatistics</a>
          * to obtain statistical data.</p> <p>Up to 500 results are returned for any one
          * call. To retrieve additional results, use the returned token with subsequent
-         * calls.</p> <p>After you create a metric, allow up to fifteen minutes before the
-         * metric appears. Statistics about the metric, however, are available sooner using
-         * <a
+         * calls.</p> <p>After you create a metric, allow up to 15 minutes before the
+         * metric appears. You can see statistics about the metric sooner by using <a
+         * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricData.html">GetMetricData</a>
+         * or <a
+         * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricStatistics.html">GetMetricStatistics</a>.</p>
+         * <p> <code>ListMetrics</code> doesn't return information about metrics if those
+         * metrics haven't reported data in the past two weeks. To retrieve those metrics,
+         * use <a
          * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricData.html">GetMetricData</a>
          * or <a
          * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricStatistics.html">GetMetricStatistics</a>.</p><p><h3>See
@@ -1205,9 +1210,14 @@ namespace Model
          * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricStatistics.html">GetMetricStatistics</a>
          * to obtain statistical data.</p> <p>Up to 500 results are returned for any one
          * call. To retrieve additional results, use the returned token with subsequent
-         * calls.</p> <p>After you create a metric, allow up to fifteen minutes before the
-         * metric appears. Statistics about the metric, however, are available sooner using
-         * <a
+         * calls.</p> <p>After you create a metric, allow up to 15 minutes before the
+         * metric appears. You can see statistics about the metric sooner by using <a
+         * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricData.html">GetMetricData</a>
+         * or <a
+         * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricStatistics.html">GetMetricStatistics</a>.</p>
+         * <p> <code>ListMetrics</code> doesn't return information about metrics if those
+         * metrics haven't reported data in the past two weeks. To retrieve those metrics,
+         * use <a
          * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricData.html">GetMetricData</a>
          * or <a
          * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricStatistics.html">GetMetricStatistics</a>.</p><p><h3>See
@@ -1226,9 +1236,14 @@ namespace Model
          * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricStatistics.html">GetMetricStatistics</a>
          * to obtain statistical data.</p> <p>Up to 500 results are returned for any one
          * call. To retrieve additional results, use the returned token with subsequent
-         * calls.</p> <p>After you create a metric, allow up to fifteen minutes before the
-         * metric appears. Statistics about the metric, however, are available sooner using
-         * <a
+         * calls.</p> <p>After you create a metric, allow up to 15 minutes before the
+         * metric appears. You can see statistics about the metric sooner by using <a
+         * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricData.html">GetMetricData</a>
+         * or <a
+         * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricStatistics.html">GetMetricStatistics</a>.</p>
+         * <p> <code>ListMetrics</code> doesn't return information about metrics if those
+         * metrics haven't reported data in the past two weeks. To retrieve those metrics,
+         * use <a
          * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricData.html">GetMetricData</a>
          * or <a
          * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricStatistics.html">GetMetricStatistics</a>.</p><p><h3>See
@@ -1491,8 +1506,8 @@ namespace Model
          * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/ContributorInsights.html">Using
          * Contributor Insights to Analyze High-Cardinality Data</a>.</p> <p>If you create
          * a rule, delete it, and then re-create it with the same name, historical data
-         * from the first time the rule was created may or may not be
-         * available.</p><p><h3>See Also:</h3>   <a
+         * from the first time the rule was created might not be available.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/PutInsightRule">AWS
          * API Reference</a></p>
          */
@@ -1505,8 +1520,8 @@ namespace Model
          * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/ContributorInsights.html">Using
          * Contributor Insights to Analyze High-Cardinality Data</a>.</p> <p>If you create
          * a rule, delete it, and then re-create it with the same name, historical data
-         * from the first time the rule was created may or may not be
-         * available.</p><p><h3>See Also:</h3>   <a
+         * from the first time the rule was created might not be available.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/PutInsightRule">AWS
          * API Reference</a></p>
          *
@@ -1521,8 +1536,8 @@ namespace Model
          * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/ContributorInsights.html">Using
          * Contributor Insights to Analyze High-Cardinality Data</a>.</p> <p>If you create
          * a rule, delete it, and then re-create it with the same name, historical data
-         * from the first time the rule was created may or may not be
-         * available.</p><p><h3>See Also:</h3>   <a
+         * from the first time the rule was created might not be available.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/PutInsightRule">AWS
          * API Reference</a></p>
          *
@@ -1801,12 +1816,12 @@ namespace Model
          * <b>History</b> tab in the Amazon CloudWatch console or through <a
          * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DescribeAlarmHistory.html">DescribeAlarmHistory</a>.</p>
          * <p>If you use <code>SetAlarmState</code> on a composite alarm, the composite
-         * alarm is not guaranteed to return to its actual state. It will return to its
-         * actual state only once any of its children alarms change state. It is also
-         * re-evaluated if you update its configuration.</p> <p>If an alarm triggers EC2
-         * Auto Scaling policies or application Auto Scaling policies, you must include
-         * information in the <code>StateReasonData</code> parameter to enable the policy
-         * to take the correct action.</p><p><h3>See Also:</h3>   <a
+         * alarm is not guaranteed to return to its actual state. It returns to its actual
+         * state only once any of its children alarms change state. It is also reevaluated
+         * if you update its configuration.</p> <p>If an alarm triggers EC2 Auto Scaling
+         * policies or application Auto Scaling policies, you must include information in
+         * the <code>StateReasonData</code> parameter to enable the policy to take the
+         * correct action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/SetAlarmState">AWS
          * API Reference</a></p>
          */
@@ -1823,12 +1838,12 @@ namespace Model
          * <b>History</b> tab in the Amazon CloudWatch console or through <a
          * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DescribeAlarmHistory.html">DescribeAlarmHistory</a>.</p>
          * <p>If you use <code>SetAlarmState</code> on a composite alarm, the composite
-         * alarm is not guaranteed to return to its actual state. It will return to its
-         * actual state only once any of its children alarms change state. It is also
-         * re-evaluated if you update its configuration.</p> <p>If an alarm triggers EC2
-         * Auto Scaling policies or application Auto Scaling policies, you must include
-         * information in the <code>StateReasonData</code> parameter to enable the policy
-         * to take the correct action.</p><p><h3>See Also:</h3>   <a
+         * alarm is not guaranteed to return to its actual state. It returns to its actual
+         * state only once any of its children alarms change state. It is also reevaluated
+         * if you update its configuration.</p> <p>If an alarm triggers EC2 Auto Scaling
+         * policies or application Auto Scaling policies, you must include information in
+         * the <code>StateReasonData</code> parameter to enable the policy to take the
+         * correct action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/SetAlarmState">AWS
          * API Reference</a></p>
          *
@@ -1847,12 +1862,12 @@ namespace Model
          * <b>History</b> tab in the Amazon CloudWatch console or through <a
          * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DescribeAlarmHistory.html">DescribeAlarmHistory</a>.</p>
          * <p>If you use <code>SetAlarmState</code> on a composite alarm, the composite
-         * alarm is not guaranteed to return to its actual state. It will return to its
-         * actual state only once any of its children alarms change state. It is also
-         * re-evaluated if you update its configuration.</p> <p>If an alarm triggers EC2
-         * Auto Scaling policies or application Auto Scaling policies, you must include
-         * information in the <code>StateReasonData</code> parameter to enable the policy
-         * to take the correct action.</p><p><h3>See Also:</h3>   <a
+         * alarm is not guaranteed to return to its actual state. It returns to its actual
+         * state only once any of its children alarms change state. It is also reevaluated
+         * if you update its configuration.</p> <p>If an alarm triggers EC2 Auto Scaling
+         * policies or application Auto Scaling policies, you must include information in
+         * the <code>StateReasonData</code> parameter to enable the policy to take the
+         * correct action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/SetAlarmState">AWS
          * API Reference</a></p>
          *
@@ -1864,7 +1879,7 @@ namespace Model
          * <p>Assigns one or more tags (key-value pairs) to the specified CloudWatch
          * resource. Currently, the only CloudWatch resources that can be tagged are alarms
          * and Contributor Insights rules.</p> <p>Tags can help you organize and categorize
-         * your resources. You can also use them to scope user permissions, by granting a
+         * your resources. You can also use them to scope user permissions by granting a
          * user permission to access or change only resources with certain tag values.</p>
          * <p>Tags don't have any semantic meaning to AWS and are interpreted strictly as
          * strings of characters.</p> <p>You can use the <code>TagResource</code> action
@@ -1883,7 +1898,7 @@ namespace Model
          * <p>Assigns one or more tags (key-value pairs) to the specified CloudWatch
          * resource. Currently, the only CloudWatch resources that can be tagged are alarms
          * and Contributor Insights rules.</p> <p>Tags can help you organize and categorize
-         * your resources. You can also use them to scope user permissions, by granting a
+         * your resources. You can also use them to scope user permissions by granting a
          * user permission to access or change only resources with certain tag values.</p>
          * <p>Tags don't have any semantic meaning to AWS and are interpreted strictly as
          * strings of characters.</p> <p>You can use the <code>TagResource</code> action
@@ -1904,7 +1919,7 @@ namespace Model
          * <p>Assigns one or more tags (key-value pairs) to the specified CloudWatch
          * resource. Currently, the only CloudWatch resources that can be tagged are alarms
          * and Contributor Insights rules.</p> <p>Tags can help you organize and categorize
-         * your resources. You can also use them to scope user permissions, by granting a
+         * your resources. You can also use them to scope user permissions by granting a
          * user permission to access or change only resources with certain tag values.</p>
          * <p>Tags don't have any semantic meaning to AWS and are interpreted strictly as
          * strings of characters.</p> <p>You can use the <code>TagResource</code> action

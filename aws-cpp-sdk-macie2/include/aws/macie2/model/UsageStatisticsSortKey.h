@@ -17,7 +17,9 @@ namespace Model
   {
     NOT_SET,
     accountId,
-    total
+    total,
+    serviceLimitValue,
+    freeTrialStartDate
   };
 
 namespace UsageStatisticsSortKeyMapper

@@ -17,20 +17,24 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 DescribeBrokerResult::DescribeBrokerResult() : 
+    m_authenticationStrategy(AuthenticationStrategy::NOT_SET),
     m_autoMinorVersionUpgrade(false),
     m_brokerState(BrokerState::NOT_SET),
     m_deploymentMode(DeploymentMode::NOT_SET),
     m_engineType(EngineType::NOT_SET),
+    m_pendingAuthenticationStrategy(AuthenticationStrategy::NOT_SET),
     m_publiclyAccessible(false),
     m_storageType(BrokerStorageType::NOT_SET)
 {
 }
 
 DescribeBrokerResult::DescribeBrokerResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
+    m_authenticationStrategy(AuthenticationStrategy::NOT_SET),
     m_autoMinorVersionUpgrade(false),
     m_brokerState(BrokerState::NOT_SET),
     m_deploymentMode(DeploymentMode::NOT_SET),
     m_engineType(EngineType::NOT_SET),
+    m_pendingAuthenticationStrategy(AuthenticationStrategy::NOT_SET),
     m_publiclyAccessible(false),
     m_storageType(BrokerStorageType::NOT_SET)
 {
@@ -40,6 +44,12 @@ DescribeBrokerResult::DescribeBrokerResult(const Aws::AmazonWebServiceResult<Jso
 DescribeBrokerResult& DescribeBrokerResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
+  if(jsonValue.ValueExists("authenticationStrategy"))
+  {
+    m_authenticationStrategy = AuthenticationStrategyMapper::GetAuthenticationStrategyForName(jsonValue.GetString("authenticationStrategy"));
+
+  }
+
   if(jsonValue.ValueExists("autoMinorVersionUpgrade"))
   {
     m_autoMinorVersionUpgrade = jsonValue.GetBool("autoMinorVersionUpgrade");
@@ -121,6 +131,12 @@ DescribeBrokerResult& DescribeBrokerResult::operator =(const Aws::AmazonWebServi
 
   }
 
+  if(jsonValue.ValueExists("ldapServerMetadata"))
+  {
+    m_ldapServerMetadata = jsonValue.GetObject("ldapServerMetadata");
+
+  }
+
   if(jsonValue.ValueExists("logs"))
   {
     m_logs = jsonValue.GetObject("logs");
@@ -133,6 +149,12 @@ DescribeBrokerResult& DescribeBrokerResult::operator =(const Aws::AmazonWebServi
 
   }
 
+  if(jsonValue.ValueExists("pendingAuthenticationStrategy"))
+  {
+    m_pendingAuthenticationStrategy = AuthenticationStrategyMapper::GetAuthenticationStrategyForName(jsonValue.GetString("pendingAuthenticationStrategy"));
+
+  }
+
   if(jsonValue.ValueExists("pendingEngineVersion"))
   {
     m_pendingEngineVersion = jsonValue.GetString("pendingEngineVersion");
@@ -142,6 +164,12 @@ DescribeBrokerResult& DescribeBrokerResult::operator =(const Aws::AmazonWebServi
   if(jsonValue.ValueExists("pendingHostInstanceType"))
   {
     m_pendingHostInstanceType = jsonValue.GetString("pendingHostInstanceType");
+
+  }
+
+  if(jsonValue.ValueExists("pendingLdapServerMetadata"))
+  {
+    m_pendingLdapServerMetadata = jsonValue.GetObject("pendingLdapServerMetadata");
 
   }
 

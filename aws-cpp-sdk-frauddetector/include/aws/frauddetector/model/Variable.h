@@ -81,32 +81,44 @@ namespace Model
 
 
     /**
-     * <p>The data type of the variable.</p>
+     * <p>The data type of the variable. For more information see <a
+     * href="https://docs.aws.amazon.com/frauddetector/latest/ug/create-a-variable.html#variable-types">Variable
+     * types</a>.</p>
      */
     inline const DataType& GetDataType() const{ return m_dataType; }
 
     /**
-     * <p>The data type of the variable.</p>
+     * <p>The data type of the variable. For more information see <a
+     * href="https://docs.aws.amazon.com/frauddetector/latest/ug/create-a-variable.html#variable-types">Variable
+     * types</a>.</p>
      */
     inline bool DataTypeHasBeenSet() const { return m_dataTypeHasBeenSet; }
 
     /**
-     * <p>The data type of the variable.</p>
+     * <p>The data type of the variable. For more information see <a
+     * href="https://docs.aws.amazon.com/frauddetector/latest/ug/create-a-variable.html#variable-types">Variable
+     * types</a>.</p>
      */
     inline void SetDataType(const DataType& value) { m_dataTypeHasBeenSet = true; m_dataType = value; }
 
     /**
-     * <p>The data type of the variable.</p>
+     * <p>The data type of the variable. For more information see <a
+     * href="https://docs.aws.amazon.com/frauddetector/latest/ug/create-a-variable.html#variable-types">Variable
+     * types</a>.</p>
      */
     inline void SetDataType(DataType&& value) { m_dataTypeHasBeenSet = true; m_dataType = std::move(value); }
 
     /**
-     * <p>The data type of the variable.</p>
+     * <p>The data type of the variable. For more information see <a
+     * href="https://docs.aws.amazon.com/frauddetector/latest/ug/create-a-variable.html#variable-types">Variable
+     * types</a>.</p>
      */
     inline Variable& WithDataType(const DataType& value) { SetDataType(value); return *this;}
 
     /**
-     * <p>The data type of the variable.</p>
+     * <p>The data type of the variable. For more information see <a
+     * href="https://docs.aws.amazon.com/frauddetector/latest/ug/create-a-variable.html#variable-types">Variable
+     * types</a>.</p>
      */
     inline Variable& WithDataType(DataType&& value) { SetDataType(std::move(value)); return *this;}
 

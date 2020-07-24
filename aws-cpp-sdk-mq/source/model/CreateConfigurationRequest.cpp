@@ -13,6 +13,8 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 CreateConfigurationRequest::CreateConfigurationRequest() : 
+    m_authenticationStrategy(AuthenticationStrategy::NOT_SET),
+    m_authenticationStrategyHasBeenSet(false),
     m_engineType(EngineType::NOT_SET),
     m_engineTypeHasBeenSet(false),
     m_engineVersionHasBeenSet(false),
@@ -24,6 +26,11 @@ CreateConfigurationRequest::CreateConfigurationRequest() :
 Aws::String CreateConfigurationRequest::SerializePayload() const
 {
   JsonValue payload;
+
+  if(m_authenticationStrategyHasBeenSet)
+  {
+   payload.WithString("authenticationStrategy", AuthenticationStrategyMapper::GetNameForAuthenticationStrategy(m_authenticationStrategy));
+  }
 
   if(m_engineTypeHasBeenSet)
   {

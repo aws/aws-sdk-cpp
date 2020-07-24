@@ -135,116 +135,140 @@ namespace Model
 
 
     /**
-     * <p>Use this property to turn the Autoimport feature on and off. AutoImport
-     * enables your FSx for Lustre file system to automatically update its contents
-     * with changes that have been made to its linked Amazon S3 data repository. You
-     * can set the policy to have one the following values:</p> <ul> <li> <p>
-     * <code>NONE</code> - (Default) Autoimport is turned off. Changes to your S3
-     * repository will not be reflected on the FSx file system.</p> </li> <li> <p>
-     * <code>NEW</code> - Autoimport is turned on; only new files in the linked S3
-     * repository will be imported to the FSx file system. Updates to existing files
-     * and deleted files will not be imported to the FSx file system.</p> </li> <li>
-     * <p> <code>NEW_CHANGED</code> - Autoimport is turned on; new files and changes to
-     * existing files in the linked S3 repository will be imported to the FSx file
-     * system. Files deleted in S3 are not deleted in the FSx file system.</p> </li>
-     * <li> <p> <code>NEW_CHANGED_DELETED</code> - Autoimport is turned on; new files,
-     * changes to existing files, and deleted files in the linked S3 repository will be
-     * imported to the FSx file system. </p> </li> </ul>
+     * <p> (Optional) Use this property to configure the AutoImport feature on the file
+     * system's linked Amazon S3 data repository. You use AutoImport to update the
+     * contents of your FSx for Lustre file system automatically with changes that
+     * occur in the linked S3 data repository. <code>AutoImportPolicy</code> can have
+     * the following values:</p> <ul> <li> <p> <code>NONE</code> - (Default) AutoImport
+     * is off. Changes in the linked data repository are not reflected on the FSx file
+     * system.</p> </li> <li> <p> <code>NEW</code> - AutoImport is on. New files in the
+     * linked data repository that do not currently exist in the FSx file system are
+     * automatically imported. Updates to existing FSx files are not imported to the
+     * FSx file system. Files deleted from the linked data repository are not deleted
+     * from the FSx file system.</p> </li> <li> <p> <code>NEW_CHANGED</code> -
+     * AutoImport is on. New files in the linked S3 data repository that do not
+     * currently exist in the FSx file system are automatically imported. Changes to
+     * existing FSx files in the linked repository are also automatically imported to
+     * the FSx file system. Files deleted from the linked data repository are not
+     * deleted from the FSx file system. </p> </li> </ul> <p>For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/autoimport-data-repo.html">Automatically
+     * import updates from your S3 bucket</a>.</p>
      */
     inline const AutoImportPolicyType& GetAutoImportPolicy() const{ return m_autoImportPolicy; }
 
     /**
-     * <p>Use this property to turn the Autoimport feature on and off. AutoImport
-     * enables your FSx for Lustre file system to automatically update its contents
-     * with changes that have been made to its linked Amazon S3 data repository. You
-     * can set the policy to have one the following values:</p> <ul> <li> <p>
-     * <code>NONE</code> - (Default) Autoimport is turned off. Changes to your S3
-     * repository will not be reflected on the FSx file system.</p> </li> <li> <p>
-     * <code>NEW</code> - Autoimport is turned on; only new files in the linked S3
-     * repository will be imported to the FSx file system. Updates to existing files
-     * and deleted files will not be imported to the FSx file system.</p> </li> <li>
-     * <p> <code>NEW_CHANGED</code> - Autoimport is turned on; new files and changes to
-     * existing files in the linked S3 repository will be imported to the FSx file
-     * system. Files deleted in S3 are not deleted in the FSx file system.</p> </li>
-     * <li> <p> <code>NEW_CHANGED_DELETED</code> - Autoimport is turned on; new files,
-     * changes to existing files, and deleted files in the linked S3 repository will be
-     * imported to the FSx file system. </p> </li> </ul>
+     * <p> (Optional) Use this property to configure the AutoImport feature on the file
+     * system's linked Amazon S3 data repository. You use AutoImport to update the
+     * contents of your FSx for Lustre file system automatically with changes that
+     * occur in the linked S3 data repository. <code>AutoImportPolicy</code> can have
+     * the following values:</p> <ul> <li> <p> <code>NONE</code> - (Default) AutoImport
+     * is off. Changes in the linked data repository are not reflected on the FSx file
+     * system.</p> </li> <li> <p> <code>NEW</code> - AutoImport is on. New files in the
+     * linked data repository that do not currently exist in the FSx file system are
+     * automatically imported. Updates to existing FSx files are not imported to the
+     * FSx file system. Files deleted from the linked data repository are not deleted
+     * from the FSx file system.</p> </li> <li> <p> <code>NEW_CHANGED</code> -
+     * AutoImport is on. New files in the linked S3 data repository that do not
+     * currently exist in the FSx file system are automatically imported. Changes to
+     * existing FSx files in the linked repository are also automatically imported to
+     * the FSx file system. Files deleted from the linked data repository are not
+     * deleted from the FSx file system. </p> </li> </ul> <p>For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/autoimport-data-repo.html">Automatically
+     * import updates from your S3 bucket</a>.</p>
      */
     inline bool AutoImportPolicyHasBeenSet() const { return m_autoImportPolicyHasBeenSet; }
 
     /**
-     * <p>Use this property to turn the Autoimport feature on and off. AutoImport
-     * enables your FSx for Lustre file system to automatically update its contents
-     * with changes that have been made to its linked Amazon S3 data repository. You
-     * can set the policy to have one the following values:</p> <ul> <li> <p>
-     * <code>NONE</code> - (Default) Autoimport is turned off. Changes to your S3
-     * repository will not be reflected on the FSx file system.</p> </li> <li> <p>
-     * <code>NEW</code> - Autoimport is turned on; only new files in the linked S3
-     * repository will be imported to the FSx file system. Updates to existing files
-     * and deleted files will not be imported to the FSx file system.</p> </li> <li>
-     * <p> <code>NEW_CHANGED</code> - Autoimport is turned on; new files and changes to
-     * existing files in the linked S3 repository will be imported to the FSx file
-     * system. Files deleted in S3 are not deleted in the FSx file system.</p> </li>
-     * <li> <p> <code>NEW_CHANGED_DELETED</code> - Autoimport is turned on; new files,
-     * changes to existing files, and deleted files in the linked S3 repository will be
-     * imported to the FSx file system. </p> </li> </ul>
+     * <p> (Optional) Use this property to configure the AutoImport feature on the file
+     * system's linked Amazon S3 data repository. You use AutoImport to update the
+     * contents of your FSx for Lustre file system automatically with changes that
+     * occur in the linked S3 data repository. <code>AutoImportPolicy</code> can have
+     * the following values:</p> <ul> <li> <p> <code>NONE</code> - (Default) AutoImport
+     * is off. Changes in the linked data repository are not reflected on the FSx file
+     * system.</p> </li> <li> <p> <code>NEW</code> - AutoImport is on. New files in the
+     * linked data repository that do not currently exist in the FSx file system are
+     * automatically imported. Updates to existing FSx files are not imported to the
+     * FSx file system. Files deleted from the linked data repository are not deleted
+     * from the FSx file system.</p> </li> <li> <p> <code>NEW_CHANGED</code> -
+     * AutoImport is on. New files in the linked S3 data repository that do not
+     * currently exist in the FSx file system are automatically imported. Changes to
+     * existing FSx files in the linked repository are also automatically imported to
+     * the FSx file system. Files deleted from the linked data repository are not
+     * deleted from the FSx file system. </p> </li> </ul> <p>For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/autoimport-data-repo.html">Automatically
+     * import updates from your S3 bucket</a>.</p>
      */
     inline void SetAutoImportPolicy(const AutoImportPolicyType& value) { m_autoImportPolicyHasBeenSet = true; m_autoImportPolicy = value; }
 
     /**
-     * <p>Use this property to turn the Autoimport feature on and off. AutoImport
-     * enables your FSx for Lustre file system to automatically update its contents
-     * with changes that have been made to its linked Amazon S3 data repository. You
-     * can set the policy to have one the following values:</p> <ul> <li> <p>
-     * <code>NONE</code> - (Default) Autoimport is turned off. Changes to your S3
-     * repository will not be reflected on the FSx file system.</p> </li> <li> <p>
-     * <code>NEW</code> - Autoimport is turned on; only new files in the linked S3
-     * repository will be imported to the FSx file system. Updates to existing files
-     * and deleted files will not be imported to the FSx file system.</p> </li> <li>
-     * <p> <code>NEW_CHANGED</code> - Autoimport is turned on; new files and changes to
-     * existing files in the linked S3 repository will be imported to the FSx file
-     * system. Files deleted in S3 are not deleted in the FSx file system.</p> </li>
-     * <li> <p> <code>NEW_CHANGED_DELETED</code> - Autoimport is turned on; new files,
-     * changes to existing files, and deleted files in the linked S3 repository will be
-     * imported to the FSx file system. </p> </li> </ul>
+     * <p> (Optional) Use this property to configure the AutoImport feature on the file
+     * system's linked Amazon S3 data repository. You use AutoImport to update the
+     * contents of your FSx for Lustre file system automatically with changes that
+     * occur in the linked S3 data repository. <code>AutoImportPolicy</code> can have
+     * the following values:</p> <ul> <li> <p> <code>NONE</code> - (Default) AutoImport
+     * is off. Changes in the linked data repository are not reflected on the FSx file
+     * system.</p> </li> <li> <p> <code>NEW</code> - AutoImport is on. New files in the
+     * linked data repository that do not currently exist in the FSx file system are
+     * automatically imported. Updates to existing FSx files are not imported to the
+     * FSx file system. Files deleted from the linked data repository are not deleted
+     * from the FSx file system.</p> </li> <li> <p> <code>NEW_CHANGED</code> -
+     * AutoImport is on. New files in the linked S3 data repository that do not
+     * currently exist in the FSx file system are automatically imported. Changes to
+     * existing FSx files in the linked repository are also automatically imported to
+     * the FSx file system. Files deleted from the linked data repository are not
+     * deleted from the FSx file system. </p> </li> </ul> <p>For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/autoimport-data-repo.html">Automatically
+     * import updates from your S3 bucket</a>.</p>
      */
     inline void SetAutoImportPolicy(AutoImportPolicyType&& value) { m_autoImportPolicyHasBeenSet = true; m_autoImportPolicy = std::move(value); }
 
     /**
-     * <p>Use this property to turn the Autoimport feature on and off. AutoImport
-     * enables your FSx for Lustre file system to automatically update its contents
-     * with changes that have been made to its linked Amazon S3 data repository. You
-     * can set the policy to have one the following values:</p> <ul> <li> <p>
-     * <code>NONE</code> - (Default) Autoimport is turned off. Changes to your S3
-     * repository will not be reflected on the FSx file system.</p> </li> <li> <p>
-     * <code>NEW</code> - Autoimport is turned on; only new files in the linked S3
-     * repository will be imported to the FSx file system. Updates to existing files
-     * and deleted files will not be imported to the FSx file system.</p> </li> <li>
-     * <p> <code>NEW_CHANGED</code> - Autoimport is turned on; new files and changes to
-     * existing files in the linked S3 repository will be imported to the FSx file
-     * system. Files deleted in S3 are not deleted in the FSx file system.</p> </li>
-     * <li> <p> <code>NEW_CHANGED_DELETED</code> - Autoimport is turned on; new files,
-     * changes to existing files, and deleted files in the linked S3 repository will be
-     * imported to the FSx file system. </p> </li> </ul>
+     * <p> (Optional) Use this property to configure the AutoImport feature on the file
+     * system's linked Amazon S3 data repository. You use AutoImport to update the
+     * contents of your FSx for Lustre file system automatically with changes that
+     * occur in the linked S3 data repository. <code>AutoImportPolicy</code> can have
+     * the following values:</p> <ul> <li> <p> <code>NONE</code> - (Default) AutoImport
+     * is off. Changes in the linked data repository are not reflected on the FSx file
+     * system.</p> </li> <li> <p> <code>NEW</code> - AutoImport is on. New files in the
+     * linked data repository that do not currently exist in the FSx file system are
+     * automatically imported. Updates to existing FSx files are not imported to the
+     * FSx file system. Files deleted from the linked data repository are not deleted
+     * from the FSx file system.</p> </li> <li> <p> <code>NEW_CHANGED</code> -
+     * AutoImport is on. New files in the linked S3 data repository that do not
+     * currently exist in the FSx file system are automatically imported. Changes to
+     * existing FSx files in the linked repository are also automatically imported to
+     * the FSx file system. Files deleted from the linked data repository are not
+     * deleted from the FSx file system. </p> </li> </ul> <p>For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/autoimport-data-repo.html">Automatically
+     * import updates from your S3 bucket</a>.</p>
      */
     inline UpdateFileSystemLustreConfiguration& WithAutoImportPolicy(const AutoImportPolicyType& value) { SetAutoImportPolicy(value); return *this;}
 
     /**
-     * <p>Use this property to turn the Autoimport feature on and off. AutoImport
-     * enables your FSx for Lustre file system to automatically update its contents
-     * with changes that have been made to its linked Amazon S3 data repository. You
-     * can set the policy to have one the following values:</p> <ul> <li> <p>
-     * <code>NONE</code> - (Default) Autoimport is turned off. Changes to your S3
-     * repository will not be reflected on the FSx file system.</p> </li> <li> <p>
-     * <code>NEW</code> - Autoimport is turned on; only new files in the linked S3
-     * repository will be imported to the FSx file system. Updates to existing files
-     * and deleted files will not be imported to the FSx file system.</p> </li> <li>
-     * <p> <code>NEW_CHANGED</code> - Autoimport is turned on; new files and changes to
-     * existing files in the linked S3 repository will be imported to the FSx file
-     * system. Files deleted in S3 are not deleted in the FSx file system.</p> </li>
-     * <li> <p> <code>NEW_CHANGED_DELETED</code> - Autoimport is turned on; new files,
-     * changes to existing files, and deleted files in the linked S3 repository will be
-     * imported to the FSx file system. </p> </li> </ul>
+     * <p> (Optional) Use this property to configure the AutoImport feature on the file
+     * system's linked Amazon S3 data repository. You use AutoImport to update the
+     * contents of your FSx for Lustre file system automatically with changes that
+     * occur in the linked S3 data repository. <code>AutoImportPolicy</code> can have
+     * the following values:</p> <ul> <li> <p> <code>NONE</code> - (Default) AutoImport
+     * is off. Changes in the linked data repository are not reflected on the FSx file
+     * system.</p> </li> <li> <p> <code>NEW</code> - AutoImport is on. New files in the
+     * linked data repository that do not currently exist in the FSx file system are
+     * automatically imported. Updates to existing FSx files are not imported to the
+     * FSx file system. Files deleted from the linked data repository are not deleted
+     * from the FSx file system.</p> </li> <li> <p> <code>NEW_CHANGED</code> -
+     * AutoImport is on. New files in the linked S3 data repository that do not
+     * currently exist in the FSx file system are automatically imported. Changes to
+     * existing FSx files in the linked repository are also automatically imported to
+     * the FSx file system. Files deleted from the linked data repository are not
+     * deleted from the FSx file system. </p> </li> </ul> <p>For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/autoimport-data-repo.html">Automatically
+     * import updates from your S3 bucket</a>.</p>
      */
     inline UpdateFileSystemLustreConfiguration& WithAutoImportPolicy(AutoImportPolicyType&& value) { SetAutoImportPolicy(std::move(value)); return *this;}
 

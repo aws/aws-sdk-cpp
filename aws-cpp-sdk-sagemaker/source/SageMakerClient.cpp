@@ -48,6 +48,7 @@
 #include <aws/sagemaker/model/CreateTrialRequest.h>
 #include <aws/sagemaker/model/CreateTrialComponentRequest.h>
 #include <aws/sagemaker/model/CreateUserProfileRequest.h>
+#include <aws/sagemaker/model/CreateWorkforceRequest.h>
 #include <aws/sagemaker/model/CreateWorkteamRequest.h>
 #include <aws/sagemaker/model/DeleteAlgorithmRequest.h>
 #include <aws/sagemaker/model/DeleteAppRequest.h>
@@ -67,6 +68,7 @@
 #include <aws/sagemaker/model/DeleteTrialRequest.h>
 #include <aws/sagemaker/model/DeleteTrialComponentRequest.h>
 #include <aws/sagemaker/model/DeleteUserProfileRequest.h>
+#include <aws/sagemaker/model/DeleteWorkforceRequest.h>
 #include <aws/sagemaker/model/DeleteWorkteamRequest.h>
 #include <aws/sagemaker/model/DescribeAlgorithmRequest.h>
 #include <aws/sagemaker/model/DescribeAppRequest.h>
@@ -127,6 +129,7 @@
 #include <aws/sagemaker/model/ListTrialComponentsRequest.h>
 #include <aws/sagemaker/model/ListTrialsRequest.h>
 #include <aws/sagemaker/model/ListUserProfilesRequest.h>
+#include <aws/sagemaker/model/ListWorkforcesRequest.h>
 #include <aws/sagemaker/model/ListWorkteamsRequest.h>
 #include <aws/sagemaker/model/RenderUiTemplateRequest.h>
 #include <aws/sagemaker/model/SearchRequest.h>
@@ -983,6 +986,33 @@ void SageMakerClient::CreateUserProfileAsyncHelper(const CreateUserProfileReques
   handler(this, request, CreateUserProfile(request), context);
 }
 
+CreateWorkforceOutcome SageMakerClient::CreateWorkforce(const CreateWorkforceRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return CreateWorkforceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateWorkforceOutcomeCallable SageMakerClient::CreateWorkforceCallable(const CreateWorkforceRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateWorkforceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateWorkforce(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SageMakerClient::CreateWorkforceAsync(const CreateWorkforceRequest& request, const CreateWorkforceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateWorkforceAsyncHelper( request, handler, context ); } );
+}
+
+void SageMakerClient::CreateWorkforceAsyncHelper(const CreateWorkforceRequest& request, const CreateWorkforceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateWorkforce(request), context);
+}
+
 CreateWorkteamOutcome SageMakerClient::CreateWorkteam(const CreateWorkteamRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -1494,6 +1524,33 @@ void SageMakerClient::DeleteUserProfileAsync(const DeleteUserProfileRequest& req
 void SageMakerClient::DeleteUserProfileAsyncHelper(const DeleteUserProfileRequest& request, const DeleteUserProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteUserProfile(request), context);
+}
+
+DeleteWorkforceOutcome SageMakerClient::DeleteWorkforce(const DeleteWorkforceRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DeleteWorkforceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteWorkforceOutcomeCallable SageMakerClient::DeleteWorkforceCallable(const DeleteWorkforceRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteWorkforceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteWorkforce(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SageMakerClient::DeleteWorkforceAsync(const DeleteWorkforceRequest& request, const DeleteWorkforceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteWorkforceAsyncHelper( request, handler, context ); } );
+}
+
+void SageMakerClient::DeleteWorkforceAsyncHelper(const DeleteWorkforceRequest& request, const DeleteWorkforceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteWorkforce(request), context);
 }
 
 DeleteWorkteamOutcome SageMakerClient::DeleteWorkteam(const DeleteWorkteamRequest& request) const
@@ -3114,6 +3171,33 @@ void SageMakerClient::ListUserProfilesAsync(const ListUserProfilesRequest& reque
 void SageMakerClient::ListUserProfilesAsyncHelper(const ListUserProfilesRequest& request, const ListUserProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListUserProfiles(request), context);
+}
+
+ListWorkforcesOutcome SageMakerClient::ListWorkforces(const ListWorkforcesRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return ListWorkforcesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListWorkforcesOutcomeCallable SageMakerClient::ListWorkforcesCallable(const ListWorkforcesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListWorkforcesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListWorkforces(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SageMakerClient::ListWorkforcesAsync(const ListWorkforcesRequest& request, const ListWorkforcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListWorkforcesAsyncHelper( request, handler, context ); } );
+}
+
+void SageMakerClient::ListWorkforcesAsyncHelper(const ListWorkforcesRequest& request, const ListWorkforcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListWorkforces(request), context);
 }
 
 ListWorkteamsOutcome SageMakerClient::ListWorkteams(const ListWorkteamsRequest& request) const

@@ -7,6 +7,7 @@
 #include <aws/mediaconnect/MediaConnect_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/mediaconnect/model/Encryption.h>
+#include <aws/mediaconnect/model/EntitlementStatus.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <utility>
 
@@ -180,6 +181,37 @@ namespace Model
 
 
     /**
+     * An indication of whether the entitlement is enabled.
+     */
+    inline const EntitlementStatus& GetEntitlementStatus() const{ return m_entitlementStatus; }
+
+    /**
+     * An indication of whether the entitlement is enabled.
+     */
+    inline bool EntitlementStatusHasBeenSet() const { return m_entitlementStatusHasBeenSet; }
+
+    /**
+     * An indication of whether the entitlement is enabled.
+     */
+    inline void SetEntitlementStatus(const EntitlementStatus& value) { m_entitlementStatusHasBeenSet = true; m_entitlementStatus = value; }
+
+    /**
+     * An indication of whether the entitlement is enabled.
+     */
+    inline void SetEntitlementStatus(EntitlementStatus&& value) { m_entitlementStatusHasBeenSet = true; m_entitlementStatus = std::move(value); }
+
+    /**
+     * An indication of whether the entitlement is enabled.
+     */
+    inline Entitlement& WithEntitlementStatus(const EntitlementStatus& value) { SetEntitlementStatus(value); return *this;}
+
+    /**
+     * An indication of whether the entitlement is enabled.
+     */
+    inline Entitlement& WithEntitlementStatus(EntitlementStatus&& value) { SetEntitlementStatus(std::move(value)); return *this;}
+
+
+    /**
      * The name of the entitlement.
      */
     inline const Aws::String& GetName() const{ return m_name; }
@@ -296,6 +328,9 @@ namespace Model
 
     Aws::String m_entitlementArn;
     bool m_entitlementArnHasBeenSet;
+
+    EntitlementStatus m_entitlementStatus;
+    bool m_entitlementStatusHasBeenSet;
 
     Aws::String m_name;
     bool m_nameHasBeenSet;

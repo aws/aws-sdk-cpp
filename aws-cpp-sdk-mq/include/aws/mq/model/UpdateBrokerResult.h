@@ -5,8 +5,10 @@
 
 #pragma once
 #include <aws/mq/MQ_EXPORTS.h>
+#include <aws/mq/model/AuthenticationStrategy.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/mq/model/ConfigurationId.h>
+#include <aws/mq/model/LdapServerMetadataOutput.h>
 #include <aws/mq/model/Logs.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <utility>
@@ -33,6 +35,32 @@ namespace Model
     UpdateBrokerResult();
     UpdateBrokerResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     UpdateBrokerResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
+
+    /**
+     * The authentication strategy used to secure the broker.
+     */
+    inline const AuthenticationStrategy& GetAuthenticationStrategy() const{ return m_authenticationStrategy; }
+
+    /**
+     * The authentication strategy used to secure the broker.
+     */
+    inline void SetAuthenticationStrategy(const AuthenticationStrategy& value) { m_authenticationStrategy = value; }
+
+    /**
+     * The authentication strategy used to secure the broker.
+     */
+    inline void SetAuthenticationStrategy(AuthenticationStrategy&& value) { m_authenticationStrategy = std::move(value); }
+
+    /**
+     * The authentication strategy used to secure the broker.
+     */
+    inline UpdateBrokerResult& WithAuthenticationStrategy(const AuthenticationStrategy& value) { SetAuthenticationStrategy(value); return *this;}
+
+    /**
+     * The authentication strategy used to secure the broker.
+     */
+    inline UpdateBrokerResult& WithAuthenticationStrategy(AuthenticationStrategy&& value) { SetAuthenticationStrategy(std::move(value)); return *this;}
 
 
     /**
@@ -214,6 +242,37 @@ namespace Model
 
 
     /**
+     * The metadata of the LDAP server used to authenticate and authorize connections
+     * to the broker.
+     */
+    inline const LdapServerMetadataOutput& GetLdapServerMetadata() const{ return m_ldapServerMetadata; }
+
+    /**
+     * The metadata of the LDAP server used to authenticate and authorize connections
+     * to the broker.
+     */
+    inline void SetLdapServerMetadata(const LdapServerMetadataOutput& value) { m_ldapServerMetadata = value; }
+
+    /**
+     * The metadata of the LDAP server used to authenticate and authorize connections
+     * to the broker.
+     */
+    inline void SetLdapServerMetadata(LdapServerMetadataOutput&& value) { m_ldapServerMetadata = std::move(value); }
+
+    /**
+     * The metadata of the LDAP server used to authenticate and authorize connections
+     * to the broker.
+     */
+    inline UpdateBrokerResult& WithLdapServerMetadata(const LdapServerMetadataOutput& value) { SetLdapServerMetadata(value); return *this;}
+
+    /**
+     * The metadata of the LDAP server used to authenticate and authorize connections
+     * to the broker.
+     */
+    inline UpdateBrokerResult& WithLdapServerMetadata(LdapServerMetadataOutput&& value) { SetLdapServerMetadata(std::move(value)); return *this;}
+
+
+    /**
      * The list of information about logs to be enabled for the specified broker.
      */
     inline const Logs& GetLogs() const{ return m_logs; }
@@ -289,6 +348,8 @@ namespace Model
 
   private:
 
+    AuthenticationStrategy m_authenticationStrategy;
+
     bool m_autoMinorVersionUpgrade;
 
     Aws::String m_brokerId;
@@ -298,6 +359,8 @@ namespace Model
     Aws::String m_engineVersion;
 
     Aws::String m_hostInstanceType;
+
+    LdapServerMetadataOutput m_ldapServerMetadata;
 
     Logs m_logs;
 

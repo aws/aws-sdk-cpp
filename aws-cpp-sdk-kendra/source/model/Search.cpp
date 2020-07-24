@@ -24,7 +24,9 @@ Search::Search() :
     m_searchable(false),
     m_searchableHasBeenSet(false),
     m_displayable(false),
-    m_displayableHasBeenSet(false)
+    m_displayableHasBeenSet(false),
+    m_sortable(false),
+    m_sortableHasBeenSet(false)
 {
 }
 
@@ -34,7 +36,9 @@ Search::Search(JsonView jsonValue) :
     m_searchable(false),
     m_searchableHasBeenSet(false),
     m_displayable(false),
-    m_displayableHasBeenSet(false)
+    m_displayableHasBeenSet(false),
+    m_sortable(false),
+    m_sortableHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -62,6 +66,13 @@ Search& Search::operator =(JsonView jsonValue)
     m_displayableHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Sortable"))
+  {
+    m_sortable = jsonValue.GetBool("Sortable");
+
+    m_sortableHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -84,6 +95,12 @@ JsonValue Search::Jsonize() const
   if(m_displayableHasBeenSet)
   {
    payload.WithBool("Displayable", m_displayable);
+
+  }
+
+  if(m_sortableHasBeenSet)
+  {
+   payload.WithBool("Sortable", m_sortable);
 
   }
 

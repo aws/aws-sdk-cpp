@@ -17,11 +17,13 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 UpdateBrokerResult::UpdateBrokerResult() : 
+    m_authenticationStrategy(AuthenticationStrategy::NOT_SET),
     m_autoMinorVersionUpgrade(false)
 {
 }
 
 UpdateBrokerResult::UpdateBrokerResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
+    m_authenticationStrategy(AuthenticationStrategy::NOT_SET),
     m_autoMinorVersionUpgrade(false)
 {
   *this = result;
@@ -30,6 +32,12 @@ UpdateBrokerResult::UpdateBrokerResult(const Aws::AmazonWebServiceResult<JsonVal
 UpdateBrokerResult& UpdateBrokerResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
+  if(jsonValue.ValueExists("authenticationStrategy"))
+  {
+    m_authenticationStrategy = AuthenticationStrategyMapper::GetAuthenticationStrategyForName(jsonValue.GetString("authenticationStrategy"));
+
+  }
+
   if(jsonValue.ValueExists("autoMinorVersionUpgrade"))
   {
     m_autoMinorVersionUpgrade = jsonValue.GetBool("autoMinorVersionUpgrade");
@@ -57,6 +65,12 @@ UpdateBrokerResult& UpdateBrokerResult::operator =(const Aws::AmazonWebServiceRe
   if(jsonValue.ValueExists("hostInstanceType"))
   {
     m_hostInstanceType = jsonValue.GetString("hostInstanceType");
+
+  }
+
+  if(jsonValue.ValueExists("ldapServerMetadata"))
+  {
+    m_ldapServerMetadata = jsonValue.GetObject("ldapServerMetadata");
 
   }
 

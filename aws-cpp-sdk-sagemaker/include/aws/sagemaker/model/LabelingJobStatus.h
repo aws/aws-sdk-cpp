@@ -16,6 +16,7 @@ namespace Model
   enum class LabelingJobStatus
   {
     NOT_SET,
+    Initializing,
     InProgress,
     Completed,
     Failed,

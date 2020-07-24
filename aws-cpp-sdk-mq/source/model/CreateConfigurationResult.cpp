@@ -16,11 +16,13 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateConfigurationResult::CreateConfigurationResult()
+CreateConfigurationResult::CreateConfigurationResult() : 
+    m_authenticationStrategy(AuthenticationStrategy::NOT_SET)
 {
 }
 
-CreateConfigurationResult::CreateConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+CreateConfigurationResult::CreateConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
+    m_authenticationStrategy(AuthenticationStrategy::NOT_SET)
 {
   *this = result;
 }
@@ -31,6 +33,12 @@ CreateConfigurationResult& CreateConfigurationResult::operator =(const Aws::Amaz
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
+
+  }
+
+  if(jsonValue.ValueExists("authenticationStrategy"))
+  {
+    m_authenticationStrategy = AuthenticationStrategyMapper::GetAuthenticationStrategyForName(jsonValue.GetString("authenticationStrategy"));
 
   }
 

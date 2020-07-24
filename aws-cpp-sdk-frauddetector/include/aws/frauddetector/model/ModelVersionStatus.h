@@ -16,16 +16,8 @@ namespace Model
   enum class ModelVersionStatus
   {
     NOT_SET,
-    TRAINING_IN_PROGRESS,
-    TRAINING_COMPLETE,
-    ACTIVATE_REQUESTED,
-    ACTIVATE_IN_PROGRESS,
     ACTIVE,
-    INACTIVATE_IN_PROGRESS,
-    INACTIVE,
-    DELETE_REQUESTED,
-    DELETE_IN_PROGRESS,
-    ERROR_
+    INACTIVE
   };
 
 namespace ModelVersionStatusMapper

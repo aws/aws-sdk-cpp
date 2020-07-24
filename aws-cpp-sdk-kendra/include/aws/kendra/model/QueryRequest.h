@@ -10,6 +10,7 @@
 #include <aws/kendra/model/AttributeFilter.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/kendra/model/QueryResultType.h>
+#include <aws/kendra/model/SortingConfiguration.h>
 #include <aws/kendra/model/Facet.h>
 #include <utility>
 
@@ -404,6 +405,67 @@ namespace Model
      */
     inline QueryRequest& WithPageSize(int value) { SetPageSize(value); return *this;}
 
+
+    /**
+     * <p>Provides information that determines how the results of the query are sorted.
+     * You can set the field that Amazon Kendra should sort the results on, and specify
+     * whether the results should be sorted in ascending or descending order. In the
+     * case of ties in sorting the results, the results are sorted by relevance.</p>
+     * <p>If you don't provide sorting configuration, the results are sorted by the
+     * relevance that Amazon Kendra determines for the result.</p>
+     */
+    inline const SortingConfiguration& GetSortingConfiguration() const{ return m_sortingConfiguration; }
+
+    /**
+     * <p>Provides information that determines how the results of the query are sorted.
+     * You can set the field that Amazon Kendra should sort the results on, and specify
+     * whether the results should be sorted in ascending or descending order. In the
+     * case of ties in sorting the results, the results are sorted by relevance.</p>
+     * <p>If you don't provide sorting configuration, the results are sorted by the
+     * relevance that Amazon Kendra determines for the result.</p>
+     */
+    inline bool SortingConfigurationHasBeenSet() const { return m_sortingConfigurationHasBeenSet; }
+
+    /**
+     * <p>Provides information that determines how the results of the query are sorted.
+     * You can set the field that Amazon Kendra should sort the results on, and specify
+     * whether the results should be sorted in ascending or descending order. In the
+     * case of ties in sorting the results, the results are sorted by relevance.</p>
+     * <p>If you don't provide sorting configuration, the results are sorted by the
+     * relevance that Amazon Kendra determines for the result.</p>
+     */
+    inline void SetSortingConfiguration(const SortingConfiguration& value) { m_sortingConfigurationHasBeenSet = true; m_sortingConfiguration = value; }
+
+    /**
+     * <p>Provides information that determines how the results of the query are sorted.
+     * You can set the field that Amazon Kendra should sort the results on, and specify
+     * whether the results should be sorted in ascending or descending order. In the
+     * case of ties in sorting the results, the results are sorted by relevance.</p>
+     * <p>If you don't provide sorting configuration, the results are sorted by the
+     * relevance that Amazon Kendra determines for the result.</p>
+     */
+    inline void SetSortingConfiguration(SortingConfiguration&& value) { m_sortingConfigurationHasBeenSet = true; m_sortingConfiguration = std::move(value); }
+
+    /**
+     * <p>Provides information that determines how the results of the query are sorted.
+     * You can set the field that Amazon Kendra should sort the results on, and specify
+     * whether the results should be sorted in ascending or descending order. In the
+     * case of ties in sorting the results, the results are sorted by relevance.</p>
+     * <p>If you don't provide sorting configuration, the results are sorted by the
+     * relevance that Amazon Kendra determines for the result.</p>
+     */
+    inline QueryRequest& WithSortingConfiguration(const SortingConfiguration& value) { SetSortingConfiguration(value); return *this;}
+
+    /**
+     * <p>Provides information that determines how the results of the query are sorted.
+     * You can set the field that Amazon Kendra should sort the results on, and specify
+     * whether the results should be sorted in ascending or descending order. In the
+     * case of ties in sorting the results, the results are sorted by relevance.</p>
+     * <p>If you don't provide sorting configuration, the results are sorted by the
+     * relevance that Amazon Kendra determines for the result.</p>
+     */
+    inline QueryRequest& WithSortingConfiguration(SortingConfiguration&& value) { SetSortingConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_indexId;
@@ -429,6 +491,9 @@ namespace Model
 
     int m_pageSize;
     bool m_pageSizeHasBeenSet;
+
+    SortingConfiguration m_sortingConfiguration;
+    bool m_sortingConfigurationHasBeenSet;
   };
 
 } // namespace Model

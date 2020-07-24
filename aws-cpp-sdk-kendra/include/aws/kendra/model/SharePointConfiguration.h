@@ -370,7 +370,7 @@ namespace Model
 
 
     /**
-     * <p>A list of regulary expression patterns. Documents that match the patterns are
+     * <p>A list of regular expression patterns. Documents that match the patterns are
      * excluded from the index. Documents that don't match the patterns are included in
      * the index. If a document matches both an exclusion pattern and an inclusion
      * pattern, the document is not included in the index.</p> <p>The regex is applied
@@ -379,7 +379,7 @@ namespace Model
     inline const Aws::Vector<Aws::String>& GetExclusionPatterns() const{ return m_exclusionPatterns; }
 
     /**
-     * <p>A list of regulary expression patterns. Documents that match the patterns are
+     * <p>A list of regular expression patterns. Documents that match the patterns are
      * excluded from the index. Documents that don't match the patterns are included in
      * the index. If a document matches both an exclusion pattern and an inclusion
      * pattern, the document is not included in the index.</p> <p>The regex is applied
@@ -388,7 +388,7 @@ namespace Model
     inline bool ExclusionPatternsHasBeenSet() const { return m_exclusionPatternsHasBeenSet; }
 
     /**
-     * <p>A list of regulary expression patterns. Documents that match the patterns are
+     * <p>A list of regular expression patterns. Documents that match the patterns are
      * excluded from the index. Documents that don't match the patterns are included in
      * the index. If a document matches both an exclusion pattern and an inclusion
      * pattern, the document is not included in the index.</p> <p>The regex is applied
@@ -397,7 +397,7 @@ namespace Model
     inline void SetExclusionPatterns(const Aws::Vector<Aws::String>& value) { m_exclusionPatternsHasBeenSet = true; m_exclusionPatterns = value; }
 
     /**
-     * <p>A list of regulary expression patterns. Documents that match the patterns are
+     * <p>A list of regular expression patterns. Documents that match the patterns are
      * excluded from the index. Documents that don't match the patterns are included in
      * the index. If a document matches both an exclusion pattern and an inclusion
      * pattern, the document is not included in the index.</p> <p>The regex is applied
@@ -406,7 +406,7 @@ namespace Model
     inline void SetExclusionPatterns(Aws::Vector<Aws::String>&& value) { m_exclusionPatternsHasBeenSet = true; m_exclusionPatterns = std::move(value); }
 
     /**
-     * <p>A list of regulary expression patterns. Documents that match the patterns are
+     * <p>A list of regular expression patterns. Documents that match the patterns are
      * excluded from the index. Documents that don't match the patterns are included in
      * the index. If a document matches both an exclusion pattern and an inclusion
      * pattern, the document is not included in the index.</p> <p>The regex is applied
@@ -415,7 +415,7 @@ namespace Model
     inline SharePointConfiguration& WithExclusionPatterns(const Aws::Vector<Aws::String>& value) { SetExclusionPatterns(value); return *this;}
 
     /**
-     * <p>A list of regulary expression patterns. Documents that match the patterns are
+     * <p>A list of regular expression patterns. Documents that match the patterns are
      * excluded from the index. Documents that don't match the patterns are included in
      * the index. If a document matches both an exclusion pattern and an inclusion
      * pattern, the document is not included in the index.</p> <p>The regex is applied
@@ -424,7 +424,7 @@ namespace Model
     inline SharePointConfiguration& WithExclusionPatterns(Aws::Vector<Aws::String>&& value) { SetExclusionPatterns(std::move(value)); return *this;}
 
     /**
-     * <p>A list of regulary expression patterns. Documents that match the patterns are
+     * <p>A list of regular expression patterns. Documents that match the patterns are
      * excluded from the index. Documents that don't match the patterns are included in
      * the index. If a document matches both an exclusion pattern and an inclusion
      * pattern, the document is not included in the index.</p> <p>The regex is applied
@@ -433,7 +433,7 @@ namespace Model
     inline SharePointConfiguration& AddExclusionPatterns(const Aws::String& value) { m_exclusionPatternsHasBeenSet = true; m_exclusionPatterns.push_back(value); return *this; }
 
     /**
-     * <p>A list of regulary expression patterns. Documents that match the patterns are
+     * <p>A list of regular expression patterns. Documents that match the patterns are
      * excluded from the index. Documents that don't match the patterns are included in
      * the index. If a document matches both an exclusion pattern and an inclusion
      * pattern, the document is not included in the index.</p> <p>The regex is applied
@@ -442,7 +442,7 @@ namespace Model
     inline SharePointConfiguration& AddExclusionPatterns(Aws::String&& value) { m_exclusionPatternsHasBeenSet = true; m_exclusionPatterns.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>A list of regulary expression patterns. Documents that match the patterns are
+     * <p>A list of regular expression patterns. Documents that match the patterns are
      * excluded from the index. Documents that don't match the patterns are included in
      * the index. If a document matches both an exclusion pattern and an inclusion
      * pattern, the document is not included in the index.</p> <p>The regex is applied

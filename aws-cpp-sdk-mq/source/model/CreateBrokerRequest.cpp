@@ -13,6 +13,8 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 CreateBrokerRequest::CreateBrokerRequest() : 
+    m_authenticationStrategy(AuthenticationStrategy::NOT_SET),
+    m_authenticationStrategyHasBeenSet(false),
     m_autoMinorVersionUpgrade(false),
     m_autoMinorVersionUpgradeHasBeenSet(false),
     m_brokerNameHasBeenSet(false),
@@ -26,6 +28,7 @@ CreateBrokerRequest::CreateBrokerRequest() :
     m_engineTypeHasBeenSet(false),
     m_engineVersionHasBeenSet(false),
     m_hostInstanceTypeHasBeenSet(false),
+    m_ldapServerMetadataHasBeenSet(false),
     m_logsHasBeenSet(false),
     m_maintenanceWindowStartTimeHasBeenSet(false),
     m_publiclyAccessible(false),
@@ -42,6 +45,11 @@ CreateBrokerRequest::CreateBrokerRequest() :
 Aws::String CreateBrokerRequest::SerializePayload() const
 {
   JsonValue payload;
+
+  if(m_authenticationStrategyHasBeenSet)
+  {
+   payload.WithString("authenticationStrategy", AuthenticationStrategyMapper::GetNameForAuthenticationStrategy(m_authenticationStrategy));
+  }
 
   if(m_autoMinorVersionUpgradeHasBeenSet)
   {
@@ -92,6 +100,12 @@ Aws::String CreateBrokerRequest::SerializePayload() const
   if(m_hostInstanceTypeHasBeenSet)
   {
    payload.WithString("hostInstanceType", m_hostInstanceType);
+
+  }
+
+  if(m_ldapServerMetadataHasBeenSet)
+  {
+   payload.WithObject("ldapServerMetadata", m_ldapServerMetadata.Jsonize());
 
   }
 

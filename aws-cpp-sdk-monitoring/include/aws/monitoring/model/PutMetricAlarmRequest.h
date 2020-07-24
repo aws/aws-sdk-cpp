@@ -44,42 +44,42 @@ namespace Model
   public:
 
     /**
-     * <p>The name for the alarm. This name must be unique within your AWS account.</p>
+     * <p>The name for the alarm. This name must be unique within the Region.</p>
      */
     inline const Aws::String& GetAlarmName() const{ return m_alarmName; }
 
     /**
-     * <p>The name for the alarm. This name must be unique within your AWS account.</p>
+     * <p>The name for the alarm. This name must be unique within the Region.</p>
      */
     inline bool AlarmNameHasBeenSet() const { return m_alarmNameHasBeenSet; }
 
     /**
-     * <p>The name for the alarm. This name must be unique within your AWS account.</p>
+     * <p>The name for the alarm. This name must be unique within the Region.</p>
      */
     inline void SetAlarmName(const Aws::String& value) { m_alarmNameHasBeenSet = true; m_alarmName = value; }
 
     /**
-     * <p>The name for the alarm. This name must be unique within your AWS account.</p>
+     * <p>The name for the alarm. This name must be unique within the Region.</p>
      */
     inline void SetAlarmName(Aws::String&& value) { m_alarmNameHasBeenSet = true; m_alarmName = std::move(value); }
 
     /**
-     * <p>The name for the alarm. This name must be unique within your AWS account.</p>
+     * <p>The name for the alarm. This name must be unique within the Region.</p>
      */
     inline void SetAlarmName(const char* value) { m_alarmNameHasBeenSet = true; m_alarmName.assign(value); }
 
     /**
-     * <p>The name for the alarm. This name must be unique within your AWS account.</p>
+     * <p>The name for the alarm. This name must be unique within the Region.</p>
      */
     inline PutMetricAlarmRequest& WithAlarmName(const Aws::String& value) { SetAlarmName(value); return *this;}
 
     /**
-     * <p>The name for the alarm. This name must be unique within your AWS account.</p>
+     * <p>The name for the alarm. This name must be unique within the Region.</p>
      */
     inline PutMetricAlarmRequest& WithAlarmName(Aws::String&& value) { SetAlarmName(std::move(value)); return *this;}
 
     /**
-     * <p>The name for the alarm. This name must be unique within your AWS account.</p>
+     * <p>The name for the alarm. This name must be unique within the Region.</p>
      */
     inline PutMetricAlarmRequest& WithAlarmName(const char* value) { SetAlarmName(value); return *this;}
 
@@ -1021,7 +1021,7 @@ namespace Model
      * metric that does not have sub-minute resolution, the alarm still attempts to
      * gather data at the period rate that you specify. In this case, it does not
      * receive data for the attempts that do not correspond to a one-minute data
-     * resolution, and the alarm may often lapse into INSUFFICENT_DATA status.
+     * resolution, and the alarm might often lapse into INSUFFICENT_DATA status.
      * Specifying 10 or 30 also sets this alarm as a high-resolution alarm, which has a
      * higher charge than other alarms. For more information about pricing, see <a
      * href="https://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch
@@ -1043,7 +1043,7 @@ namespace Model
      * metric that does not have sub-minute resolution, the alarm still attempts to
      * gather data at the period rate that you specify. In this case, it does not
      * receive data for the attempts that do not correspond to a one-minute data
-     * resolution, and the alarm may often lapse into INSUFFICENT_DATA status.
+     * resolution, and the alarm might often lapse into INSUFFICENT_DATA status.
      * Specifying 10 or 30 also sets this alarm as a high-resolution alarm, which has a
      * higher charge than other alarms. For more information about pricing, see <a
      * href="https://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch
@@ -1065,7 +1065,7 @@ namespace Model
      * metric that does not have sub-minute resolution, the alarm still attempts to
      * gather data at the period rate that you specify. In this case, it does not
      * receive data for the attempts that do not correspond to a one-minute data
-     * resolution, and the alarm may often lapse into INSUFFICENT_DATA status.
+     * resolution, and the alarm might often lapse into INSUFFICENT_DATA status.
      * Specifying 10 or 30 also sets this alarm as a high-resolution alarm, which has a
      * higher charge than other alarms. For more information about pricing, see <a
      * href="https://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch
@@ -1087,7 +1087,7 @@ namespace Model
      * metric that does not have sub-minute resolution, the alarm still attempts to
      * gather data at the period rate that you specify. In this case, it does not
      * receive data for the attempts that do not correspond to a one-minute data
-     * resolution, and the alarm may often lapse into INSUFFICENT_DATA status.
+     * resolution, and the alarm might often lapse into INSUFFICENT_DATA status.
      * Specifying 10 or 30 also sets this alarm as a high-resolution alarm, which has a
      * higher charge than other alarms. For more information about pricing, see <a
      * href="https://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch
@@ -1106,10 +1106,10 @@ namespace Model
      * Metric data points that specify a unit of measure, such as Percent, are
      * aggregated separately.</p> <p>If you don't specify <code>Unit</code>, CloudWatch
      * retrieves all unit types that have been published for the metric and attempts to
-     * evaluate the alarm. Usually metrics are published with only one unit, so the
-     * alarm will work as intended.</p> <p>However, if the metric is published with
+     * evaluate the alarm. Usually, metrics are published with only one unit, so the
+     * alarm works as intended.</p> <p>However, if the metric is published with
      * multiple types of units and you don't specify a unit, the alarm's behavior is
-     * not defined and will behave un-predictably.</p> <p>We recommend omitting
+     * not defined and it behaves predictably.</p> <p>We recommend omitting
      * <code>Unit</code> so that you don't inadvertently specify an incorrect unit that
      * is not published for this metric. Doing so causes the alarm to be stuck in the
      * <code>INSUFFICIENT DATA</code> state.</p>
@@ -1124,10 +1124,10 @@ namespace Model
      * Metric data points that specify a unit of measure, such as Percent, are
      * aggregated separately.</p> <p>If you don't specify <code>Unit</code>, CloudWatch
      * retrieves all unit types that have been published for the metric and attempts to
-     * evaluate the alarm. Usually metrics are published with only one unit, so the
-     * alarm will work as intended.</p> <p>However, if the metric is published with
+     * evaluate the alarm. Usually, metrics are published with only one unit, so the
+     * alarm works as intended.</p> <p>However, if the metric is published with
      * multiple types of units and you don't specify a unit, the alarm's behavior is
-     * not defined and will behave un-predictably.</p> <p>We recommend omitting
+     * not defined and it behaves predictably.</p> <p>We recommend omitting
      * <code>Unit</code> so that you don't inadvertently specify an incorrect unit that
      * is not published for this metric. Doing so causes the alarm to be stuck in the
      * <code>INSUFFICIENT DATA</code> state.</p>
@@ -1142,10 +1142,10 @@ namespace Model
      * Metric data points that specify a unit of measure, such as Percent, are
      * aggregated separately.</p> <p>If you don't specify <code>Unit</code>, CloudWatch
      * retrieves all unit types that have been published for the metric and attempts to
-     * evaluate the alarm. Usually metrics are published with only one unit, so the
-     * alarm will work as intended.</p> <p>However, if the metric is published with
+     * evaluate the alarm. Usually, metrics are published with only one unit, so the
+     * alarm works as intended.</p> <p>However, if the metric is published with
      * multiple types of units and you don't specify a unit, the alarm's behavior is
-     * not defined and will behave un-predictably.</p> <p>We recommend omitting
+     * not defined and it behaves predictably.</p> <p>We recommend omitting
      * <code>Unit</code> so that you don't inadvertently specify an incorrect unit that
      * is not published for this metric. Doing so causes the alarm to be stuck in the
      * <code>INSUFFICIENT DATA</code> state.</p>
@@ -1160,10 +1160,10 @@ namespace Model
      * Metric data points that specify a unit of measure, such as Percent, are
      * aggregated separately.</p> <p>If you don't specify <code>Unit</code>, CloudWatch
      * retrieves all unit types that have been published for the metric and attempts to
-     * evaluate the alarm. Usually metrics are published with only one unit, so the
-     * alarm will work as intended.</p> <p>However, if the metric is published with
+     * evaluate the alarm. Usually, metrics are published with only one unit, so the
+     * alarm works as intended.</p> <p>However, if the metric is published with
      * multiple types of units and you don't specify a unit, the alarm's behavior is
-     * not defined and will behave un-predictably.</p> <p>We recommend omitting
+     * not defined and it behaves predictably.</p> <p>We recommend omitting
      * <code>Unit</code> so that you don't inadvertently specify an incorrect unit that
      * is not published for this metric. Doing so causes the alarm to be stuck in the
      * <code>INSUFFICIENT DATA</code> state.</p>
@@ -1178,10 +1178,10 @@ namespace Model
      * Metric data points that specify a unit of measure, such as Percent, are
      * aggregated separately.</p> <p>If you don't specify <code>Unit</code>, CloudWatch
      * retrieves all unit types that have been published for the metric and attempts to
-     * evaluate the alarm. Usually metrics are published with only one unit, so the
-     * alarm will work as intended.</p> <p>However, if the metric is published with
+     * evaluate the alarm. Usually, metrics are published with only one unit, so the
+     * alarm works as intended.</p> <p>However, if the metric is published with
      * multiple types of units and you don't specify a unit, the alarm's behavior is
-     * not defined and will behave un-predictably.</p> <p>We recommend omitting
+     * not defined and it behaves predictably.</p> <p>We recommend omitting
      * <code>Unit</code> so that you don't inadvertently specify an incorrect unit that
      * is not published for this metric. Doing so causes the alarm to be stuck in the
      * <code>INSUFFICIENT DATA</code> state.</p>
@@ -1196,10 +1196,10 @@ namespace Model
      * Metric data points that specify a unit of measure, such as Percent, are
      * aggregated separately.</p> <p>If you don't specify <code>Unit</code>, CloudWatch
      * retrieves all unit types that have been published for the metric and attempts to
-     * evaluate the alarm. Usually metrics are published with only one unit, so the
-     * alarm will work as intended.</p> <p>However, if the metric is published with
+     * evaluate the alarm. Usually, metrics are published with only one unit, so the
+     * alarm works as intended.</p> <p>However, if the metric is published with
      * multiple types of units and you don't specify a unit, the alarm's behavior is
-     * not defined and will behave un-predictably.</p> <p>We recommend omitting
+     * not defined and it behaves predictably.</p> <p>We recommend omitting
      * <code>Unit</code> so that you don't inadvertently specify an incorrect unit that
      * is not published for this metric. Doing so causes the alarm to be stuck in the
      * <code>INSUFFICIENT DATA</code> state.</p>
@@ -1719,7 +1719,7 @@ namespace Model
     /**
      * <p>A list of key-value pairs to associate with the alarm. You can associate as
      * many as 50 tags with an alarm.</p> <p>Tags can help you organize and categorize
-     * your resources. You can also use them to scope user permissions, by granting a
+     * your resources. You can also use them to scope user permissions by granting a
      * user permission to access or change only resources with certain tag values.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
@@ -1727,7 +1727,7 @@ namespace Model
     /**
      * <p>A list of key-value pairs to associate with the alarm. You can associate as
      * many as 50 tags with an alarm.</p> <p>Tags can help you organize and categorize
-     * your resources. You can also use them to scope user permissions, by granting a
+     * your resources. You can also use them to scope user permissions by granting a
      * user permission to access or change only resources with certain tag values.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
@@ -1735,7 +1735,7 @@ namespace Model
     /**
      * <p>A list of key-value pairs to associate with the alarm. You can associate as
      * many as 50 tags with an alarm.</p> <p>Tags can help you organize and categorize
-     * your resources. You can also use them to scope user permissions, by granting a
+     * your resources. You can also use them to scope user permissions by granting a
      * user permission to access or change only resources with certain tag values.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
@@ -1743,7 +1743,7 @@ namespace Model
     /**
      * <p>A list of key-value pairs to associate with the alarm. You can associate as
      * many as 50 tags with an alarm.</p> <p>Tags can help you organize and categorize
-     * your resources. You can also use them to scope user permissions, by granting a
+     * your resources. You can also use them to scope user permissions by granting a
      * user permission to access or change only resources with certain tag values.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
@@ -1751,7 +1751,7 @@ namespace Model
     /**
      * <p>A list of key-value pairs to associate with the alarm. You can associate as
      * many as 50 tags with an alarm.</p> <p>Tags can help you organize and categorize
-     * your resources. You can also use them to scope user permissions, by granting a
+     * your resources. You can also use them to scope user permissions by granting a
      * user permission to access or change only resources with certain tag values.</p>
      */
     inline PutMetricAlarmRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
@@ -1759,7 +1759,7 @@ namespace Model
     /**
      * <p>A list of key-value pairs to associate with the alarm. You can associate as
      * many as 50 tags with an alarm.</p> <p>Tags can help you organize and categorize
-     * your resources. You can also use them to scope user permissions, by granting a
+     * your resources. You can also use them to scope user permissions by granting a
      * user permission to access or change only resources with certain tag values.</p>
      */
     inline PutMetricAlarmRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
@@ -1767,7 +1767,7 @@ namespace Model
     /**
      * <p>A list of key-value pairs to associate with the alarm. You can associate as
      * many as 50 tags with an alarm.</p> <p>Tags can help you organize and categorize
-     * your resources. You can also use them to scope user permissions, by granting a
+     * your resources. You can also use them to scope user permissions by granting a
      * user permission to access or change only resources with certain tag values.</p>
      */
     inline PutMetricAlarmRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
@@ -1775,7 +1775,7 @@ namespace Model
     /**
      * <p>A list of key-value pairs to associate with the alarm. You can associate as
      * many as 50 tags with an alarm.</p> <p>Tags can help you organize and categorize
-     * your resources. You can also use them to scope user permissions, by granting a
+     * your resources. You can also use them to scope user permissions by granting a
      * user permission to access or change only resources with certain tag values.</p>
      */
     inline PutMetricAlarmRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }

@@ -38,50 +38,42 @@ namespace Model
   public:
 
     /**
-     * <p>The name for the alarm. This name must be unique within the AWS account. The
-     * maximum length is 255 characters.</p>
+     * <p>The name of the alarm.</p>
      */
     inline const Aws::String& GetAlarmName() const{ return m_alarmName; }
 
     /**
-     * <p>The name for the alarm. This name must be unique within the AWS account. The
-     * maximum length is 255 characters.</p>
+     * <p>The name of the alarm.</p>
      */
     inline bool AlarmNameHasBeenSet() const { return m_alarmNameHasBeenSet; }
 
     /**
-     * <p>The name for the alarm. This name must be unique within the AWS account. The
-     * maximum length is 255 characters.</p>
+     * <p>The name of the alarm.</p>
      */
     inline void SetAlarmName(const Aws::String& value) { m_alarmNameHasBeenSet = true; m_alarmName = value; }
 
     /**
-     * <p>The name for the alarm. This name must be unique within the AWS account. The
-     * maximum length is 255 characters.</p>
+     * <p>The name of the alarm.</p>
      */
     inline void SetAlarmName(Aws::String&& value) { m_alarmNameHasBeenSet = true; m_alarmName = std::move(value); }
 
     /**
-     * <p>The name for the alarm. This name must be unique within the AWS account. The
-     * maximum length is 255 characters.</p>
+     * <p>The name of the alarm.</p>
      */
     inline void SetAlarmName(const char* value) { m_alarmNameHasBeenSet = true; m_alarmName.assign(value); }
 
     /**
-     * <p>The name for the alarm. This name must be unique within the AWS account. The
-     * maximum length is 255 characters.</p>
+     * <p>The name of the alarm.</p>
      */
     inline SetAlarmStateRequest& WithAlarmName(const Aws::String& value) { SetAlarmName(value); return *this;}
 
     /**
-     * <p>The name for the alarm. This name must be unique within the AWS account. The
-     * maximum length is 255 characters.</p>
+     * <p>The name of the alarm.</p>
      */
     inline SetAlarmStateRequest& WithAlarmName(Aws::String&& value) { SetAlarmName(std::move(value)); return *this;}
 
     /**
-     * <p>The name for the alarm. This name must be unique within the AWS account. The
-     * maximum length is 255 characters.</p>
+     * <p>The name of the alarm.</p>
      */
     inline SetAlarmStateRequest& WithAlarmName(const char* value) { SetAlarmName(value); return *this;}
 

@@ -21,14 +21,18 @@ namespace Model
 OutputConfig::OutputConfig() : 
     m_s3OutputLocationHasBeenSet(false),
     m_targetDevice(TargetDevice::NOT_SET),
-    m_targetDeviceHasBeenSet(false)
+    m_targetDeviceHasBeenSet(false),
+    m_targetPlatformHasBeenSet(false),
+    m_compilerOptionsHasBeenSet(false)
 {
 }
 
 OutputConfig::OutputConfig(JsonView jsonValue) : 
     m_s3OutputLocationHasBeenSet(false),
     m_targetDevice(TargetDevice::NOT_SET),
-    m_targetDeviceHasBeenSet(false)
+    m_targetDeviceHasBeenSet(false),
+    m_targetPlatformHasBeenSet(false),
+    m_compilerOptionsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -49,6 +53,20 @@ OutputConfig& OutputConfig::operator =(JsonView jsonValue)
     m_targetDeviceHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("TargetPlatform"))
+  {
+    m_targetPlatform = jsonValue.GetObject("TargetPlatform");
+
+    m_targetPlatformHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("CompilerOptions"))
+  {
+    m_compilerOptions = jsonValue.GetString("CompilerOptions");
+
+    m_compilerOptionsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -65,6 +83,18 @@ JsonValue OutputConfig::Jsonize() const
   if(m_targetDeviceHasBeenSet)
   {
    payload.WithString("TargetDevice", TargetDeviceMapper::GetNameForTargetDevice(m_targetDevice));
+  }
+
+  if(m_targetPlatformHasBeenSet)
+  {
+   payload.WithObject("TargetPlatform", m_targetPlatform.Jsonize());
+
+  }
+
+  if(m_compilerOptionsHasBeenSet)
+  {
+   payload.WithString("CompilerOptions", m_compilerOptions);
+
   }
 
   return payload;

@@ -80,6 +80,47 @@ namespace Model
 
 
     /**
+     * <p>The name of the workforce.</p>
+     */
+    inline const Aws::String& GetWorkforceName() const{ return m_workforceName; }
+
+    /**
+     * <p>The name of the workforce.</p>
+     */
+    inline bool WorkforceNameHasBeenSet() const { return m_workforceNameHasBeenSet; }
+
+    /**
+     * <p>The name of the workforce.</p>
+     */
+    inline void SetWorkforceName(const Aws::String& value) { m_workforceNameHasBeenSet = true; m_workforceName = value; }
+
+    /**
+     * <p>The name of the workforce.</p>
+     */
+    inline void SetWorkforceName(Aws::String&& value) { m_workforceNameHasBeenSet = true; m_workforceName = std::move(value); }
+
+    /**
+     * <p>The name of the workforce.</p>
+     */
+    inline void SetWorkforceName(const char* value) { m_workforceNameHasBeenSet = true; m_workforceName.assign(value); }
+
+    /**
+     * <p>The name of the workforce.</p>
+     */
+    inline CreateWorkteamRequest& WithWorkforceName(const Aws::String& value) { SetWorkforceName(value); return *this;}
+
+    /**
+     * <p>The name of the workforce.</p>
+     */
+    inline CreateWorkteamRequest& WithWorkforceName(Aws::String&& value) { SetWorkforceName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the workforce.</p>
+     */
+    inline CreateWorkteamRequest& WithWorkforceName(const char* value) { SetWorkforceName(value); return *this;}
+
+
+    /**
      * <p>A list of <code>MemberDefinition</code> objects that contains objects that
      * identify the Amazon Cognito user pool that makes up the work team. For more
      * information, see <a
@@ -330,6 +371,9 @@ namespace Model
 
     Aws::String m_workteamName;
     bool m_workteamNameHasBeenSet;
+
+    Aws::String m_workforceName;
+    bool m_workforceNameHasBeenSet;
 
     Aws::Vector<MemberDefinition> m_memberDefinitions;
     bool m_memberDefinitionsHasBeenSet;

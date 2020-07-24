@@ -8,7 +8,6 @@
 #include <aws/frauddetector/FraudDetectorRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/frauddetector/model/ModelSource.h>
-#include <aws/frauddetector/model/Role.h>
 #include <aws/frauddetector/model/ModelInputConfiguration.h>
 #include <aws/frauddetector/model/ModelOutputConfiguration.h>
 #include <aws/frauddetector/model/ModelEndpointStatus.h>
@@ -157,32 +156,42 @@ namespace Model
     /**
      * <p>The IAM role used to invoke the model endpoint.</p>
      */
-    inline const Role& GetRole() const{ return m_role; }
+    inline const Aws::String& GetInvokeModelEndpointRoleArn() const{ return m_invokeModelEndpointRoleArn; }
 
     /**
      * <p>The IAM role used to invoke the model endpoint.</p>
      */
-    inline bool RoleHasBeenSet() const { return m_roleHasBeenSet; }
+    inline bool InvokeModelEndpointRoleArnHasBeenSet() const { return m_invokeModelEndpointRoleArnHasBeenSet; }
 
     /**
      * <p>The IAM role used to invoke the model endpoint.</p>
      */
-    inline void SetRole(const Role& value) { m_roleHasBeenSet = true; m_role = value; }
+    inline void SetInvokeModelEndpointRoleArn(const Aws::String& value) { m_invokeModelEndpointRoleArnHasBeenSet = true; m_invokeModelEndpointRoleArn = value; }
 
     /**
      * <p>The IAM role used to invoke the model endpoint.</p>
      */
-    inline void SetRole(Role&& value) { m_roleHasBeenSet = true; m_role = std::move(value); }
+    inline void SetInvokeModelEndpointRoleArn(Aws::String&& value) { m_invokeModelEndpointRoleArnHasBeenSet = true; m_invokeModelEndpointRoleArn = std::move(value); }
 
     /**
      * <p>The IAM role used to invoke the model endpoint.</p>
      */
-    inline PutExternalModelRequest& WithRole(const Role& value) { SetRole(value); return *this;}
+    inline void SetInvokeModelEndpointRoleArn(const char* value) { m_invokeModelEndpointRoleArnHasBeenSet = true; m_invokeModelEndpointRoleArn.assign(value); }
 
     /**
      * <p>The IAM role used to invoke the model endpoint.</p>
      */
-    inline PutExternalModelRequest& WithRole(Role&& value) { SetRole(std::move(value)); return *this;}
+    inline PutExternalModelRequest& WithInvokeModelEndpointRoleArn(const Aws::String& value) { SetInvokeModelEndpointRoleArn(value); return *this;}
+
+    /**
+     * <p>The IAM role used to invoke the model endpoint.</p>
+     */
+    inline PutExternalModelRequest& WithInvokeModelEndpointRoleArn(Aws::String&& value) { SetInvokeModelEndpointRoleArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The IAM role used to invoke the model endpoint.</p>
+     */
+    inline PutExternalModelRequest& WithInvokeModelEndpointRoleArn(const char* value) { SetInvokeModelEndpointRoleArn(value); return *this;}
 
 
     /**
@@ -329,8 +338,8 @@ namespace Model
     ModelSource m_modelSource;
     bool m_modelSourceHasBeenSet;
 
-    Role m_role;
-    bool m_roleHasBeenSet;
+    Aws::String m_invokeModelEndpointRoleArn;
+    bool m_invokeModelEndpointRoleArnHasBeenSet;
 
     ModelInputConfiguration m_inputConfiguration;
     bool m_inputConfigurationHasBeenSet;

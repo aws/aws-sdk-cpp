@@ -8,6 +8,7 @@
 #include <aws/monitoring/CloudWatchRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/monitoring/model/RecentlyActive.h>
 #include <aws/monitoring/model/DimensionFilter.h>
 #include <utility>
 
@@ -209,6 +210,67 @@ namespace Model
      */
     inline ListMetricsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
+    /**
+     * <p>To filter the results to show only metrics that have had data points
+     * published in the past three hours, specify this parameter with a value of
+     * <code>PT3H</code>. This is the only valid value for this parameter.</p> <p>The
+     * results that are returned are an approximation of the value you specify. There
+     * is a low probability that the returned results include metrics with last
+     * published data as much as 40 minutes more than the specified time interval.</p>
+     */
+    inline const RecentlyActive& GetRecentlyActive() const{ return m_recentlyActive; }
+
+    /**
+     * <p>To filter the results to show only metrics that have had data points
+     * published in the past three hours, specify this parameter with a value of
+     * <code>PT3H</code>. This is the only valid value for this parameter.</p> <p>The
+     * results that are returned are an approximation of the value you specify. There
+     * is a low probability that the returned results include metrics with last
+     * published data as much as 40 minutes more than the specified time interval.</p>
+     */
+    inline bool RecentlyActiveHasBeenSet() const { return m_recentlyActiveHasBeenSet; }
+
+    /**
+     * <p>To filter the results to show only metrics that have had data points
+     * published in the past three hours, specify this parameter with a value of
+     * <code>PT3H</code>. This is the only valid value for this parameter.</p> <p>The
+     * results that are returned are an approximation of the value you specify. There
+     * is a low probability that the returned results include metrics with last
+     * published data as much as 40 minutes more than the specified time interval.</p>
+     */
+    inline void SetRecentlyActive(const RecentlyActive& value) { m_recentlyActiveHasBeenSet = true; m_recentlyActive = value; }
+
+    /**
+     * <p>To filter the results to show only metrics that have had data points
+     * published in the past three hours, specify this parameter with a value of
+     * <code>PT3H</code>. This is the only valid value for this parameter.</p> <p>The
+     * results that are returned are an approximation of the value you specify. There
+     * is a low probability that the returned results include metrics with last
+     * published data as much as 40 minutes more than the specified time interval.</p>
+     */
+    inline void SetRecentlyActive(RecentlyActive&& value) { m_recentlyActiveHasBeenSet = true; m_recentlyActive = std::move(value); }
+
+    /**
+     * <p>To filter the results to show only metrics that have had data points
+     * published in the past three hours, specify this parameter with a value of
+     * <code>PT3H</code>. This is the only valid value for this parameter.</p> <p>The
+     * results that are returned are an approximation of the value you specify. There
+     * is a low probability that the returned results include metrics with last
+     * published data as much as 40 minutes more than the specified time interval.</p>
+     */
+    inline ListMetricsRequest& WithRecentlyActive(const RecentlyActive& value) { SetRecentlyActive(value); return *this;}
+
+    /**
+     * <p>To filter the results to show only metrics that have had data points
+     * published in the past three hours, specify this parameter with a value of
+     * <code>PT3H</code>. This is the only valid value for this parameter.</p> <p>The
+     * results that are returned are an approximation of the value you specify. There
+     * is a low probability that the returned results include metrics with last
+     * published data as much as 40 minutes more than the specified time interval.</p>
+     */
+    inline ListMetricsRequest& WithRecentlyActive(RecentlyActive&& value) { SetRecentlyActive(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_namespace;
@@ -222,6 +284,9 @@ namespace Model
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+
+    RecentlyActive m_recentlyActive;
+    bool m_recentlyActiveHasBeenSet;
   };
 
 } // namespace Model

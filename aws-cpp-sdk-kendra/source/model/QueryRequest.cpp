@@ -23,7 +23,8 @@ QueryRequest::QueryRequest() :
     m_pageNumber(0),
     m_pageNumberHasBeenSet(false),
     m_pageSize(0),
-    m_pageSizeHasBeenSet(false)
+    m_pageSizeHasBeenSet(false),
+    m_sortingConfigurationHasBeenSet(false)
 {
 }
 
@@ -85,6 +86,12 @@ Aws::String QueryRequest::SerializePayload() const
   if(m_pageSizeHasBeenSet)
   {
    payload.WithInteger("PageSize", m_pageSize);
+
+  }
+
+  if(m_sortingConfigurationHasBeenSet)
+  {
+   payload.WithObject("SortingConfiguration", m_sortingConfiguration.Jsonize());
 
   }
 

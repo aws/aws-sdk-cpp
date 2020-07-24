@@ -24,6 +24,8 @@ Entitlement::Entitlement() :
     m_descriptionHasBeenSet(false),
     m_encryptionHasBeenSet(false),
     m_entitlementArnHasBeenSet(false),
+    m_entitlementStatus(EntitlementStatus::NOT_SET),
+    m_entitlementStatusHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_subscribersHasBeenSet(false)
 {
@@ -35,6 +37,8 @@ Entitlement::Entitlement(JsonView jsonValue) :
     m_descriptionHasBeenSet(false),
     m_encryptionHasBeenSet(false),
     m_entitlementArnHasBeenSet(false),
+    m_entitlementStatus(EntitlementStatus::NOT_SET),
+    m_entitlementStatusHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_subscribersHasBeenSet(false)
 {
@@ -69,6 +73,13 @@ Entitlement& Entitlement::operator =(JsonView jsonValue)
     m_entitlementArn = jsonValue.GetString("entitlementArn");
 
     m_entitlementArnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("entitlementStatus"))
+  {
+    m_entitlementStatus = EntitlementStatusMapper::GetEntitlementStatusForName(jsonValue.GetString("entitlementStatus"));
+
+    m_entitlementStatusHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("name"))
@@ -117,6 +128,11 @@ JsonValue Entitlement::Jsonize() const
   {
    payload.WithString("entitlementArn", m_entitlementArn);
 
+  }
+
+  if(m_entitlementStatusHasBeenSet)
+  {
+   payload.WithString("entitlementStatus", EntitlementStatusMapper::GetNameForEntitlementStatus(m_entitlementStatus));
   }
 
   if(m_nameHasBeenSet)
