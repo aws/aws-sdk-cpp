@@ -20,13 +20,37 @@ namespace Model
 
 KafkaSettings::KafkaSettings() : 
     m_brokerHasBeenSet(false),
-    m_topicHasBeenSet(false)
+    m_topicHasBeenSet(false),
+    m_messageFormat(MessageFormatValue::NOT_SET),
+    m_messageFormatHasBeenSet(false),
+    m_includeTransactionDetails(false),
+    m_includeTransactionDetailsHasBeenSet(false),
+    m_includePartitionValue(false),
+    m_includePartitionValueHasBeenSet(false),
+    m_partitionIncludeSchemaTable(false),
+    m_partitionIncludeSchemaTableHasBeenSet(false),
+    m_includeTableAlterOperations(false),
+    m_includeTableAlterOperationsHasBeenSet(false),
+    m_includeControlDetails(false),
+    m_includeControlDetailsHasBeenSet(false)
 {
 }
 
 KafkaSettings::KafkaSettings(JsonView jsonValue) : 
     m_brokerHasBeenSet(false),
-    m_topicHasBeenSet(false)
+    m_topicHasBeenSet(false),
+    m_messageFormat(MessageFormatValue::NOT_SET),
+    m_messageFormatHasBeenSet(false),
+    m_includeTransactionDetails(false),
+    m_includeTransactionDetailsHasBeenSet(false),
+    m_includePartitionValue(false),
+    m_includePartitionValueHasBeenSet(false),
+    m_partitionIncludeSchemaTable(false),
+    m_partitionIncludeSchemaTableHasBeenSet(false),
+    m_includeTableAlterOperations(false),
+    m_includeTableAlterOperationsHasBeenSet(false),
+    m_includeControlDetails(false),
+    m_includeControlDetailsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -47,6 +71,48 @@ KafkaSettings& KafkaSettings::operator =(JsonView jsonValue)
     m_topicHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("MessageFormat"))
+  {
+    m_messageFormat = MessageFormatValueMapper::GetMessageFormatValueForName(jsonValue.GetString("MessageFormat"));
+
+    m_messageFormatHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("IncludeTransactionDetails"))
+  {
+    m_includeTransactionDetails = jsonValue.GetBool("IncludeTransactionDetails");
+
+    m_includeTransactionDetailsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("IncludePartitionValue"))
+  {
+    m_includePartitionValue = jsonValue.GetBool("IncludePartitionValue");
+
+    m_includePartitionValueHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("PartitionIncludeSchemaTable"))
+  {
+    m_partitionIncludeSchemaTable = jsonValue.GetBool("PartitionIncludeSchemaTable");
+
+    m_partitionIncludeSchemaTableHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("IncludeTableAlterOperations"))
+  {
+    m_includeTableAlterOperations = jsonValue.GetBool("IncludeTableAlterOperations");
+
+    m_includeTableAlterOperationsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("IncludeControlDetails"))
+  {
+    m_includeControlDetails = jsonValue.GetBool("IncludeControlDetails");
+
+    m_includeControlDetailsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -63,6 +129,41 @@ JsonValue KafkaSettings::Jsonize() const
   if(m_topicHasBeenSet)
   {
    payload.WithString("Topic", m_topic);
+
+  }
+
+  if(m_messageFormatHasBeenSet)
+  {
+   payload.WithString("MessageFormat", MessageFormatValueMapper::GetNameForMessageFormatValue(m_messageFormat));
+  }
+
+  if(m_includeTransactionDetailsHasBeenSet)
+  {
+   payload.WithBool("IncludeTransactionDetails", m_includeTransactionDetails);
+
+  }
+
+  if(m_includePartitionValueHasBeenSet)
+  {
+   payload.WithBool("IncludePartitionValue", m_includePartitionValue);
+
+  }
+
+  if(m_partitionIncludeSchemaTableHasBeenSet)
+  {
+   payload.WithBool("PartitionIncludeSchemaTable", m_partitionIncludeSchemaTable);
+
+  }
+
+  if(m_includeTableAlterOperationsHasBeenSet)
+  {
+   payload.WithBool("IncludeTableAlterOperations", m_includeTableAlterOperations);
+
+  }
+
+  if(m_includeControlDetailsHasBeenSet)
+  {
+   payload.WithBool("IncludeControlDetails", m_includeControlDetails);
 
   }
 

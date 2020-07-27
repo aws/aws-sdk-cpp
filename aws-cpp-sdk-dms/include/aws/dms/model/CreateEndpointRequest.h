@@ -19,6 +19,12 @@
 #include <aws/dms/model/ElasticsearchSettings.h>
 #include <aws/dms/model/NeptuneSettings.h>
 #include <aws/dms/model/RedshiftSettings.h>
+#include <aws/dms/model/PostgreSQLSettings.h>
+#include <aws/dms/model/MySQLSettings.h>
+#include <aws/dms/model/OracleSettings.h>
+#include <aws/dms/model/SybaseSettings.h>
+#include <aws/dms/model/MicrosoftSQLServerSettings.h>
+#include <aws/dms/model/IBMDb2Settings.h>
 #include <aws/dms/model/Tag.h>
 #include <utility>
 
@@ -1319,6 +1325,396 @@ namespace Model
     
     inline CreateEndpointRequest& WithRedshiftSettings(RedshiftSettings&& value) { SetRedshiftSettings(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Settings in JSON format for the source and target PostgreSQL endpoint. For
+     * information about other available settings, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.ConnectionAttrib">Extra
+     * connection attributes when using PostgreSQL as a source for AWS DMS</a> and <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.PostgreSQL.ConnectionAttrib">
+     * Extra connection attributes when using PostgreSQL as a target for AWS DMS</a> in
+     * the <i>AWS Database Migration Service User Guide.</i> </p>
+     */
+    inline const PostgreSQLSettings& GetPostgreSQLSettings() const{ return m_postgreSQLSettings; }
+
+    /**
+     * <p>Settings in JSON format for the source and target PostgreSQL endpoint. For
+     * information about other available settings, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.ConnectionAttrib">Extra
+     * connection attributes when using PostgreSQL as a source for AWS DMS</a> and <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.PostgreSQL.ConnectionAttrib">
+     * Extra connection attributes when using PostgreSQL as a target for AWS DMS</a> in
+     * the <i>AWS Database Migration Service User Guide.</i> </p>
+     */
+    inline bool PostgreSQLSettingsHasBeenSet() const { return m_postgreSQLSettingsHasBeenSet; }
+
+    /**
+     * <p>Settings in JSON format for the source and target PostgreSQL endpoint. For
+     * information about other available settings, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.ConnectionAttrib">Extra
+     * connection attributes when using PostgreSQL as a source for AWS DMS</a> and <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.PostgreSQL.ConnectionAttrib">
+     * Extra connection attributes when using PostgreSQL as a target for AWS DMS</a> in
+     * the <i>AWS Database Migration Service User Guide.</i> </p>
+     */
+    inline void SetPostgreSQLSettings(const PostgreSQLSettings& value) { m_postgreSQLSettingsHasBeenSet = true; m_postgreSQLSettings = value; }
+
+    /**
+     * <p>Settings in JSON format for the source and target PostgreSQL endpoint. For
+     * information about other available settings, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.ConnectionAttrib">Extra
+     * connection attributes when using PostgreSQL as a source for AWS DMS</a> and <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.PostgreSQL.ConnectionAttrib">
+     * Extra connection attributes when using PostgreSQL as a target for AWS DMS</a> in
+     * the <i>AWS Database Migration Service User Guide.</i> </p>
+     */
+    inline void SetPostgreSQLSettings(PostgreSQLSettings&& value) { m_postgreSQLSettingsHasBeenSet = true; m_postgreSQLSettings = std::move(value); }
+
+    /**
+     * <p>Settings in JSON format for the source and target PostgreSQL endpoint. For
+     * information about other available settings, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.ConnectionAttrib">Extra
+     * connection attributes when using PostgreSQL as a source for AWS DMS</a> and <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.PostgreSQL.ConnectionAttrib">
+     * Extra connection attributes when using PostgreSQL as a target for AWS DMS</a> in
+     * the <i>AWS Database Migration Service User Guide.</i> </p>
+     */
+    inline CreateEndpointRequest& WithPostgreSQLSettings(const PostgreSQLSettings& value) { SetPostgreSQLSettings(value); return *this;}
+
+    /**
+     * <p>Settings in JSON format for the source and target PostgreSQL endpoint. For
+     * information about other available settings, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.ConnectionAttrib">Extra
+     * connection attributes when using PostgreSQL as a source for AWS DMS</a> and <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.PostgreSQL.ConnectionAttrib">
+     * Extra connection attributes when using PostgreSQL as a target for AWS DMS</a> in
+     * the <i>AWS Database Migration Service User Guide.</i> </p>
+     */
+    inline CreateEndpointRequest& WithPostgreSQLSettings(PostgreSQLSettings&& value) { SetPostgreSQLSettings(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Settings in JSON format for the source and target MySQL endpoint. For
+     * information about other available settings, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MySQL.ConnectionAttrib">Extra
+     * connection attributes when using MySQL as a source for AWS DMS</a> and <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.MySQL.ConnectionAttrib">Extra
+     * connection attributes when using a MySQL-compatible database as a target for AWS
+     * DMS</a> in the <i>AWS Database Migration Service User Guide.</i> </p>
+     */
+    inline const MySQLSettings& GetMySQLSettings() const{ return m_mySQLSettings; }
+
+    /**
+     * <p>Settings in JSON format for the source and target MySQL endpoint. For
+     * information about other available settings, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MySQL.ConnectionAttrib">Extra
+     * connection attributes when using MySQL as a source for AWS DMS</a> and <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.MySQL.ConnectionAttrib">Extra
+     * connection attributes when using a MySQL-compatible database as a target for AWS
+     * DMS</a> in the <i>AWS Database Migration Service User Guide.</i> </p>
+     */
+    inline bool MySQLSettingsHasBeenSet() const { return m_mySQLSettingsHasBeenSet; }
+
+    /**
+     * <p>Settings in JSON format for the source and target MySQL endpoint. For
+     * information about other available settings, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MySQL.ConnectionAttrib">Extra
+     * connection attributes when using MySQL as a source for AWS DMS</a> and <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.MySQL.ConnectionAttrib">Extra
+     * connection attributes when using a MySQL-compatible database as a target for AWS
+     * DMS</a> in the <i>AWS Database Migration Service User Guide.</i> </p>
+     */
+    inline void SetMySQLSettings(const MySQLSettings& value) { m_mySQLSettingsHasBeenSet = true; m_mySQLSettings = value; }
+
+    /**
+     * <p>Settings in JSON format for the source and target MySQL endpoint. For
+     * information about other available settings, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MySQL.ConnectionAttrib">Extra
+     * connection attributes when using MySQL as a source for AWS DMS</a> and <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.MySQL.ConnectionAttrib">Extra
+     * connection attributes when using a MySQL-compatible database as a target for AWS
+     * DMS</a> in the <i>AWS Database Migration Service User Guide.</i> </p>
+     */
+    inline void SetMySQLSettings(MySQLSettings&& value) { m_mySQLSettingsHasBeenSet = true; m_mySQLSettings = std::move(value); }
+
+    /**
+     * <p>Settings in JSON format for the source and target MySQL endpoint. For
+     * information about other available settings, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MySQL.ConnectionAttrib">Extra
+     * connection attributes when using MySQL as a source for AWS DMS</a> and <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.MySQL.ConnectionAttrib">Extra
+     * connection attributes when using a MySQL-compatible database as a target for AWS
+     * DMS</a> in the <i>AWS Database Migration Service User Guide.</i> </p>
+     */
+    inline CreateEndpointRequest& WithMySQLSettings(const MySQLSettings& value) { SetMySQLSettings(value); return *this;}
+
+    /**
+     * <p>Settings in JSON format for the source and target MySQL endpoint. For
+     * information about other available settings, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MySQL.ConnectionAttrib">Extra
+     * connection attributes when using MySQL as a source for AWS DMS</a> and <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.MySQL.ConnectionAttrib">Extra
+     * connection attributes when using a MySQL-compatible database as a target for AWS
+     * DMS</a> in the <i>AWS Database Migration Service User Guide.</i> </p>
+     */
+    inline CreateEndpointRequest& WithMySQLSettings(MySQLSettings&& value) { SetMySQLSettings(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Settings in JSON format for the source and target Oracle endpoint. For
+     * information about other available settings, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.ConnectionAttrib">Extra
+     * connection attributes when using Oracle as a source for AWS DMS</a> and <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Oracle.ConnectionAttrib">
+     * Extra connection attributes when using Oracle as a target for AWS DMS</a> in the
+     * <i>AWS Database Migration Service User Guide.</i> </p>
+     */
+    inline const OracleSettings& GetOracleSettings() const{ return m_oracleSettings; }
+
+    /**
+     * <p>Settings in JSON format for the source and target Oracle endpoint. For
+     * information about other available settings, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.ConnectionAttrib">Extra
+     * connection attributes when using Oracle as a source for AWS DMS</a> and <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Oracle.ConnectionAttrib">
+     * Extra connection attributes when using Oracle as a target for AWS DMS</a> in the
+     * <i>AWS Database Migration Service User Guide.</i> </p>
+     */
+    inline bool OracleSettingsHasBeenSet() const { return m_oracleSettingsHasBeenSet; }
+
+    /**
+     * <p>Settings in JSON format for the source and target Oracle endpoint. For
+     * information about other available settings, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.ConnectionAttrib">Extra
+     * connection attributes when using Oracle as a source for AWS DMS</a> and <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Oracle.ConnectionAttrib">
+     * Extra connection attributes when using Oracle as a target for AWS DMS</a> in the
+     * <i>AWS Database Migration Service User Guide.</i> </p>
+     */
+    inline void SetOracleSettings(const OracleSettings& value) { m_oracleSettingsHasBeenSet = true; m_oracleSettings = value; }
+
+    /**
+     * <p>Settings in JSON format for the source and target Oracle endpoint. For
+     * information about other available settings, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.ConnectionAttrib">Extra
+     * connection attributes when using Oracle as a source for AWS DMS</a> and <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Oracle.ConnectionAttrib">
+     * Extra connection attributes when using Oracle as a target for AWS DMS</a> in the
+     * <i>AWS Database Migration Service User Guide.</i> </p>
+     */
+    inline void SetOracleSettings(OracleSettings&& value) { m_oracleSettingsHasBeenSet = true; m_oracleSettings = std::move(value); }
+
+    /**
+     * <p>Settings in JSON format for the source and target Oracle endpoint. For
+     * information about other available settings, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.ConnectionAttrib">Extra
+     * connection attributes when using Oracle as a source for AWS DMS</a> and <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Oracle.ConnectionAttrib">
+     * Extra connection attributes when using Oracle as a target for AWS DMS</a> in the
+     * <i>AWS Database Migration Service User Guide.</i> </p>
+     */
+    inline CreateEndpointRequest& WithOracleSettings(const OracleSettings& value) { SetOracleSettings(value); return *this;}
+
+    /**
+     * <p>Settings in JSON format for the source and target Oracle endpoint. For
+     * information about other available settings, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.ConnectionAttrib">Extra
+     * connection attributes when using Oracle as a source for AWS DMS</a> and <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Oracle.ConnectionAttrib">
+     * Extra connection attributes when using Oracle as a target for AWS DMS</a> in the
+     * <i>AWS Database Migration Service User Guide.</i> </p>
+     */
+    inline CreateEndpointRequest& WithOracleSettings(OracleSettings&& value) { SetOracleSettings(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Settings in JSON format for the source and target SAP ASE endpoint. For
+     * information about other available settings, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.SAP.ConnectionAttrib">Extra
+     * connection attributes when using SAP ASE as a source for AWS DMS</a> and <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.SAP.ConnectionAttrib">Extra
+     * connection attributes when using SAP ASE as a target for AWS DMS</a> in the
+     * <i>AWS Database Migration Service User Guide.</i> </p>
+     */
+    inline const SybaseSettings& GetSybaseSettings() const{ return m_sybaseSettings; }
+
+    /**
+     * <p>Settings in JSON format for the source and target SAP ASE endpoint. For
+     * information about other available settings, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.SAP.ConnectionAttrib">Extra
+     * connection attributes when using SAP ASE as a source for AWS DMS</a> and <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.SAP.ConnectionAttrib">Extra
+     * connection attributes when using SAP ASE as a target for AWS DMS</a> in the
+     * <i>AWS Database Migration Service User Guide.</i> </p>
+     */
+    inline bool SybaseSettingsHasBeenSet() const { return m_sybaseSettingsHasBeenSet; }
+
+    /**
+     * <p>Settings in JSON format for the source and target SAP ASE endpoint. For
+     * information about other available settings, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.SAP.ConnectionAttrib">Extra
+     * connection attributes when using SAP ASE as a source for AWS DMS</a> and <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.SAP.ConnectionAttrib">Extra
+     * connection attributes when using SAP ASE as a target for AWS DMS</a> in the
+     * <i>AWS Database Migration Service User Guide.</i> </p>
+     */
+    inline void SetSybaseSettings(const SybaseSettings& value) { m_sybaseSettingsHasBeenSet = true; m_sybaseSettings = value; }
+
+    /**
+     * <p>Settings in JSON format for the source and target SAP ASE endpoint. For
+     * information about other available settings, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.SAP.ConnectionAttrib">Extra
+     * connection attributes when using SAP ASE as a source for AWS DMS</a> and <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.SAP.ConnectionAttrib">Extra
+     * connection attributes when using SAP ASE as a target for AWS DMS</a> in the
+     * <i>AWS Database Migration Service User Guide.</i> </p>
+     */
+    inline void SetSybaseSettings(SybaseSettings&& value) { m_sybaseSettingsHasBeenSet = true; m_sybaseSettings = std::move(value); }
+
+    /**
+     * <p>Settings in JSON format for the source and target SAP ASE endpoint. For
+     * information about other available settings, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.SAP.ConnectionAttrib">Extra
+     * connection attributes when using SAP ASE as a source for AWS DMS</a> and <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.SAP.ConnectionAttrib">Extra
+     * connection attributes when using SAP ASE as a target for AWS DMS</a> in the
+     * <i>AWS Database Migration Service User Guide.</i> </p>
+     */
+    inline CreateEndpointRequest& WithSybaseSettings(const SybaseSettings& value) { SetSybaseSettings(value); return *this;}
+
+    /**
+     * <p>Settings in JSON format for the source and target SAP ASE endpoint. For
+     * information about other available settings, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.SAP.ConnectionAttrib">Extra
+     * connection attributes when using SAP ASE as a source for AWS DMS</a> and <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.SAP.ConnectionAttrib">Extra
+     * connection attributes when using SAP ASE as a target for AWS DMS</a> in the
+     * <i>AWS Database Migration Service User Guide.</i> </p>
+     */
+    inline CreateEndpointRequest& WithSybaseSettings(SybaseSettings&& value) { SetSybaseSettings(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Settings in JSON format for the source and target Microsoft SQL Server
+     * endpoint. For information about other available settings, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.SQLServer.ConnectionAttrib">Extra
+     * connection attributes when using SQL Server as a source for AWS DMS</a> and <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.SQLServer.ConnectionAttrib">
+     * Extra connection attributes when using SQL Server as a target for AWS DMS</a> in
+     * the <i>AWS Database Migration Service User Guide.</i> </p>
+     */
+    inline const MicrosoftSQLServerSettings& GetMicrosoftSQLServerSettings() const{ return m_microsoftSQLServerSettings; }
+
+    /**
+     * <p>Settings in JSON format for the source and target Microsoft SQL Server
+     * endpoint. For information about other available settings, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.SQLServer.ConnectionAttrib">Extra
+     * connection attributes when using SQL Server as a source for AWS DMS</a> and <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.SQLServer.ConnectionAttrib">
+     * Extra connection attributes when using SQL Server as a target for AWS DMS</a> in
+     * the <i>AWS Database Migration Service User Guide.</i> </p>
+     */
+    inline bool MicrosoftSQLServerSettingsHasBeenSet() const { return m_microsoftSQLServerSettingsHasBeenSet; }
+
+    /**
+     * <p>Settings in JSON format for the source and target Microsoft SQL Server
+     * endpoint. For information about other available settings, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.SQLServer.ConnectionAttrib">Extra
+     * connection attributes when using SQL Server as a source for AWS DMS</a> and <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.SQLServer.ConnectionAttrib">
+     * Extra connection attributes when using SQL Server as a target for AWS DMS</a> in
+     * the <i>AWS Database Migration Service User Guide.</i> </p>
+     */
+    inline void SetMicrosoftSQLServerSettings(const MicrosoftSQLServerSettings& value) { m_microsoftSQLServerSettingsHasBeenSet = true; m_microsoftSQLServerSettings = value; }
+
+    /**
+     * <p>Settings in JSON format for the source and target Microsoft SQL Server
+     * endpoint. For information about other available settings, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.SQLServer.ConnectionAttrib">Extra
+     * connection attributes when using SQL Server as a source for AWS DMS</a> and <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.SQLServer.ConnectionAttrib">
+     * Extra connection attributes when using SQL Server as a target for AWS DMS</a> in
+     * the <i>AWS Database Migration Service User Guide.</i> </p>
+     */
+    inline void SetMicrosoftSQLServerSettings(MicrosoftSQLServerSettings&& value) { m_microsoftSQLServerSettingsHasBeenSet = true; m_microsoftSQLServerSettings = std::move(value); }
+
+    /**
+     * <p>Settings in JSON format for the source and target Microsoft SQL Server
+     * endpoint. For information about other available settings, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.SQLServer.ConnectionAttrib">Extra
+     * connection attributes when using SQL Server as a source for AWS DMS</a> and <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.SQLServer.ConnectionAttrib">
+     * Extra connection attributes when using SQL Server as a target for AWS DMS</a> in
+     * the <i>AWS Database Migration Service User Guide.</i> </p>
+     */
+    inline CreateEndpointRequest& WithMicrosoftSQLServerSettings(const MicrosoftSQLServerSettings& value) { SetMicrosoftSQLServerSettings(value); return *this;}
+
+    /**
+     * <p>Settings in JSON format for the source and target Microsoft SQL Server
+     * endpoint. For information about other available settings, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.SQLServer.ConnectionAttrib">Extra
+     * connection attributes when using SQL Server as a source for AWS DMS</a> and <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.SQLServer.ConnectionAttrib">
+     * Extra connection attributes when using SQL Server as a target for AWS DMS</a> in
+     * the <i>AWS Database Migration Service User Guide.</i> </p>
+     */
+    inline CreateEndpointRequest& WithMicrosoftSQLServerSettings(MicrosoftSQLServerSettings&& value) { SetMicrosoftSQLServerSettings(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Settings in JSON format for the source IBM Db2 LUW endpoint. For information
+     * about other available settings, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.DB2.ConnectionAttrib">Extra
+     * connection attributes when using Db2 LUW as a source for AWS DMS</a> in the
+     * <i>AWS Database Migration Service User Guide.</i> </p>
+     */
+    inline const IBMDb2Settings& GetIBMDb2Settings() const{ return m_iBMDb2Settings; }
+
+    /**
+     * <p>Settings in JSON format for the source IBM Db2 LUW endpoint. For information
+     * about other available settings, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.DB2.ConnectionAttrib">Extra
+     * connection attributes when using Db2 LUW as a source for AWS DMS</a> in the
+     * <i>AWS Database Migration Service User Guide.</i> </p>
+     */
+    inline bool IBMDb2SettingsHasBeenSet() const { return m_iBMDb2SettingsHasBeenSet; }
+
+    /**
+     * <p>Settings in JSON format for the source IBM Db2 LUW endpoint. For information
+     * about other available settings, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.DB2.ConnectionAttrib">Extra
+     * connection attributes when using Db2 LUW as a source for AWS DMS</a> in the
+     * <i>AWS Database Migration Service User Guide.</i> </p>
+     */
+    inline void SetIBMDb2Settings(const IBMDb2Settings& value) { m_iBMDb2SettingsHasBeenSet = true; m_iBMDb2Settings = value; }
+
+    /**
+     * <p>Settings in JSON format for the source IBM Db2 LUW endpoint. For information
+     * about other available settings, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.DB2.ConnectionAttrib">Extra
+     * connection attributes when using Db2 LUW as a source for AWS DMS</a> in the
+     * <i>AWS Database Migration Service User Guide.</i> </p>
+     */
+    inline void SetIBMDb2Settings(IBMDb2Settings&& value) { m_iBMDb2SettingsHasBeenSet = true; m_iBMDb2Settings = std::move(value); }
+
+    /**
+     * <p>Settings in JSON format for the source IBM Db2 LUW endpoint. For information
+     * about other available settings, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.DB2.ConnectionAttrib">Extra
+     * connection attributes when using Db2 LUW as a source for AWS DMS</a> in the
+     * <i>AWS Database Migration Service User Guide.</i> </p>
+     */
+    inline CreateEndpointRequest& WithIBMDb2Settings(const IBMDb2Settings& value) { SetIBMDb2Settings(value); return *this;}
+
+    /**
+     * <p>Settings in JSON format for the source IBM Db2 LUW endpoint. For information
+     * about other available settings, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.DB2.ConnectionAttrib">Extra
+     * connection attributes when using Db2 LUW as a source for AWS DMS</a> in the
+     * <i>AWS Database Migration Service User Guide.</i> </p>
+     */
+    inline CreateEndpointRequest& WithIBMDb2Settings(IBMDb2Settings&& value) { SetIBMDb2Settings(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_endpointIdentifier;
@@ -1392,6 +1788,24 @@ namespace Model
 
     RedshiftSettings m_redshiftSettings;
     bool m_redshiftSettingsHasBeenSet;
+
+    PostgreSQLSettings m_postgreSQLSettings;
+    bool m_postgreSQLSettingsHasBeenSet;
+
+    MySQLSettings m_mySQLSettings;
+    bool m_mySQLSettingsHasBeenSet;
+
+    OracleSettings m_oracleSettings;
+    bool m_oracleSettingsHasBeenSet;
+
+    SybaseSettings m_sybaseSettings;
+    bool m_sybaseSettingsHasBeenSet;
+
+    MicrosoftSQLServerSettings m_microsoftSQLServerSettings;
+    bool m_microsoftSQLServerSettingsHasBeenSet;
+
+    IBMDb2Settings m_iBMDb2Settings;
+    bool m_iBMDb2SettingsHasBeenSet;
   };
 
 } // namespace Model

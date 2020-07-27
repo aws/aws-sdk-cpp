@@ -20,7 +20,6 @@ namespace Model
 
 ExternalModel::ExternalModel() : 
     m_modelEndpointHasBeenSet(false),
-    m_eventTypeNameHasBeenSet(false),
     m_modelSource(ModelSource::NOT_SET),
     m_modelSourceHasBeenSet(false),
     m_invokeModelEndpointRoleArnHasBeenSet(false),
@@ -36,7 +35,6 @@ ExternalModel::ExternalModel() :
 
 ExternalModel::ExternalModel(JsonView jsonValue) : 
     m_modelEndpointHasBeenSet(false),
-    m_eventTypeNameHasBeenSet(false),
     m_modelSource(ModelSource::NOT_SET),
     m_modelSourceHasBeenSet(false),
     m_invokeModelEndpointRoleArnHasBeenSet(false),
@@ -58,13 +56,6 @@ ExternalModel& ExternalModel::operator =(JsonView jsonValue)
     m_modelEndpoint = jsonValue.GetString("modelEndpoint");
 
     m_modelEndpointHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("eventTypeName"))
-  {
-    m_eventTypeName = jsonValue.GetString("eventTypeName");
-
-    m_eventTypeNameHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("modelSource"))
@@ -133,12 +124,6 @@ JsonValue ExternalModel::Jsonize() const
   if(m_modelEndpointHasBeenSet)
   {
    payload.WithString("modelEndpoint", m_modelEndpoint);
-
-  }
-
-  if(m_eventTypeNameHasBeenSet)
-  {
-   payload.WithString("eventTypeName", m_eventTypeName);
 
   }
 

@@ -573,8 +573,9 @@ namespace Model
      * a Python shell job (<code>JobCommand.Name</code>="pythonshell"), you can
      * allocate either 0.0625 or 1 DPU. The default is 0.0625 DPU.</p> </li> <li>
      * <p>When you specify an Apache Spark ETL job
-     * (<code>JobCommand.Name</code>="glueetl"), you can allocate from 2 to 100 DPUs.
-     * The default is 10 DPUs. This job type cannot have a fractional DPU
+     * (<code>JobCommand.Name</code>="glueetl") or Apache Spark streaming ETL job
+     * (<code>JobCommand.Name</code>="gluestreaming"), you can allocate from 2 to 100
+     * DPUs. The default is 10 DPUs. This job type cannot have a fractional DPU
      * allocation.</p> </li> </ul>
      */
     inline double GetMaxCapacity() const{ return m_maxCapacity; }
@@ -591,8 +592,9 @@ namespace Model
      * a Python shell job (<code>JobCommand.Name</code>="pythonshell"), you can
      * allocate either 0.0625 or 1 DPU. The default is 0.0625 DPU.</p> </li> <li>
      * <p>When you specify an Apache Spark ETL job
-     * (<code>JobCommand.Name</code>="glueetl"), you can allocate from 2 to 100 DPUs.
-     * The default is 10 DPUs. This job type cannot have a fractional DPU
+     * (<code>JobCommand.Name</code>="glueetl") or Apache Spark streaming ETL job
+     * (<code>JobCommand.Name</code>="gluestreaming"), you can allocate from 2 to 100
+     * DPUs. The default is 10 DPUs. This job type cannot have a fractional DPU
      * allocation.</p> </li> </ul>
      */
     inline bool MaxCapacityHasBeenSet() const { return m_maxCapacityHasBeenSet; }
@@ -609,8 +611,9 @@ namespace Model
      * a Python shell job (<code>JobCommand.Name</code>="pythonshell"), you can
      * allocate either 0.0625 or 1 DPU. The default is 0.0625 DPU.</p> </li> <li>
      * <p>When you specify an Apache Spark ETL job
-     * (<code>JobCommand.Name</code>="glueetl"), you can allocate from 2 to 100 DPUs.
-     * The default is 10 DPUs. This job type cannot have a fractional DPU
+     * (<code>JobCommand.Name</code>="glueetl") or Apache Spark streaming ETL job
+     * (<code>JobCommand.Name</code>="gluestreaming"), you can allocate from 2 to 100
+     * DPUs. The default is 10 DPUs. This job type cannot have a fractional DPU
      * allocation.</p> </li> </ul>
      */
     inline void SetMaxCapacity(double value) { m_maxCapacityHasBeenSet = true; m_maxCapacity = value; }
@@ -627,8 +630,9 @@ namespace Model
      * a Python shell job (<code>JobCommand.Name</code>="pythonshell"), you can
      * allocate either 0.0625 or 1 DPU. The default is 0.0625 DPU.</p> </li> <li>
      * <p>When you specify an Apache Spark ETL job
-     * (<code>JobCommand.Name</code>="glueetl"), you can allocate from 2 to 100 DPUs.
-     * The default is 10 DPUs. This job type cannot have a fractional DPU
+     * (<code>JobCommand.Name</code>="glueetl") or Apache Spark streaming ETL job
+     * (<code>JobCommand.Name</code>="gluestreaming"), you can allocate from 2 to 100
+     * DPUs. The default is 10 DPUs. This job type cannot have a fractional DPU
      * allocation.</p> </li> </ul>
      */
     inline JobUpdate& WithMaxCapacity(double value) { SetMaxCapacity(value); return *this;}

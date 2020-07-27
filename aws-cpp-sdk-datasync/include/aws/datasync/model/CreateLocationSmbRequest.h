@@ -46,7 +46,7 @@ namespace Model
      * a path that's exported by the SMB server, or a subdirectory of that path. The
      * path should be such that it can be mounted by other SMB clients in your
      * network.</p>  <p> <code>Subdirectory</code> must be specified with forward
-     * slashes. For example <code>/path/to/folder</code>.</p>  <p>To transfer
+     * slashes. For example, <code>/path/to/folder</code>.</p>  <p>To transfer
      * all the data in the folder you specified, DataSync needs to have permissions to
      * mount the SMB share, as well as to access all the data in that share. To ensure
      * this, either ensure that the user/password specified belongs to the user who can
@@ -64,7 +64,7 @@ namespace Model
      * a path that's exported by the SMB server, or a subdirectory of that path. The
      * path should be such that it can be mounted by other SMB clients in your
      * network.</p>  <p> <code>Subdirectory</code> must be specified with forward
-     * slashes. For example <code>/path/to/folder</code>.</p>  <p>To transfer
+     * slashes. For example, <code>/path/to/folder</code>.</p>  <p>To transfer
      * all the data in the folder you specified, DataSync needs to have permissions to
      * mount the SMB share, as well as to access all the data in that share. To ensure
      * this, either ensure that the user/password specified belongs to the user who can
@@ -82,7 +82,7 @@ namespace Model
      * a path that's exported by the SMB server, or a subdirectory of that path. The
      * path should be such that it can be mounted by other SMB clients in your
      * network.</p>  <p> <code>Subdirectory</code> must be specified with forward
-     * slashes. For example <code>/path/to/folder</code>.</p>  <p>To transfer
+     * slashes. For example, <code>/path/to/folder</code>.</p>  <p>To transfer
      * all the data in the folder you specified, DataSync needs to have permissions to
      * mount the SMB share, as well as to access all the data in that share. To ensure
      * this, either ensure that the user/password specified belongs to the user who can
@@ -100,7 +100,7 @@ namespace Model
      * a path that's exported by the SMB server, or a subdirectory of that path. The
      * path should be such that it can be mounted by other SMB clients in your
      * network.</p>  <p> <code>Subdirectory</code> must be specified with forward
-     * slashes. For example <code>/path/to/folder</code>.</p>  <p>To transfer
+     * slashes. For example, <code>/path/to/folder</code>.</p>  <p>To transfer
      * all the data in the folder you specified, DataSync needs to have permissions to
      * mount the SMB share, as well as to access all the data in that share. To ensure
      * this, either ensure that the user/password specified belongs to the user who can
@@ -118,7 +118,7 @@ namespace Model
      * a path that's exported by the SMB server, or a subdirectory of that path. The
      * path should be such that it can be mounted by other SMB clients in your
      * network.</p>  <p> <code>Subdirectory</code> must be specified with forward
-     * slashes. For example <code>/path/to/folder</code>.</p>  <p>To transfer
+     * slashes. For example, <code>/path/to/folder</code>.</p>  <p>To transfer
      * all the data in the folder you specified, DataSync needs to have permissions to
      * mount the SMB share, as well as to access all the data in that share. To ensure
      * this, either ensure that the user/password specified belongs to the user who can
@@ -136,7 +136,7 @@ namespace Model
      * a path that's exported by the SMB server, or a subdirectory of that path. The
      * path should be such that it can be mounted by other SMB clients in your
      * network.</p>  <p> <code>Subdirectory</code> must be specified with forward
-     * slashes. For example <code>/path/to/folder</code>.</p>  <p>To transfer
+     * slashes. For example, <code>/path/to/folder</code>.</p>  <p>To transfer
      * all the data in the folder you specified, DataSync needs to have permissions to
      * mount the SMB share, as well as to access all the data in that share. To ensure
      * this, either ensure that the user/password specified belongs to the user who can
@@ -154,7 +154,7 @@ namespace Model
      * a path that's exported by the SMB server, or a subdirectory of that path. The
      * path should be such that it can be mounted by other SMB clients in your
      * network.</p>  <p> <code>Subdirectory</code> must be specified with forward
-     * slashes. For example <code>/path/to/folder</code>.</p>  <p>To transfer
+     * slashes. For example, <code>/path/to/folder</code>.</p>  <p>To transfer
      * all the data in the folder you specified, DataSync needs to have permissions to
      * mount the SMB share, as well as to access all the data in that share. To ensure
      * this, either ensure that the user/password specified belongs to the user who can
@@ -172,7 +172,7 @@ namespace Model
      * a path that's exported by the SMB server, or a subdirectory of that path. The
      * path should be such that it can be mounted by other SMB clients in your
      * network.</p>  <p> <code>Subdirectory</code> must be specified with forward
-     * slashes. For example <code>/path/to/folder</code>.</p>  <p>To transfer
+     * slashes. For example, <code>/path/to/folder</code>.</p>  <p>To transfer
      * all the data in the folder you specified, DataSync needs to have permissions to
      * mount the SMB share, as well as to access all the data in that share. To ensure
      * this, either ensure that the user/password specified belongs to the user who can

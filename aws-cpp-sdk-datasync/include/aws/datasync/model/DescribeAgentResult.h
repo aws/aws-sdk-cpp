@@ -213,31 +213,31 @@ namespace Model
 
     /**
      * <p>The type of endpoint that your agent is connected to. If the endpoint is a
-     * VPC endpoint, the agent is not accessible over the public Internet. </p>
+     * VPC endpoint, the agent is not accessible over the public internet. </p>
      */
     inline const EndpointType& GetEndpointType() const{ return m_endpointType; }
 
     /**
      * <p>The type of endpoint that your agent is connected to. If the endpoint is a
-     * VPC endpoint, the agent is not accessible over the public Internet. </p>
+     * VPC endpoint, the agent is not accessible over the public internet. </p>
      */
     inline void SetEndpointType(const EndpointType& value) { m_endpointType = value; }
 
     /**
      * <p>The type of endpoint that your agent is connected to. If the endpoint is a
-     * VPC endpoint, the agent is not accessible over the public Internet. </p>
+     * VPC endpoint, the agent is not accessible over the public internet. </p>
      */
     inline void SetEndpointType(EndpointType&& value) { m_endpointType = std::move(value); }
 
     /**
      * <p>The type of endpoint that your agent is connected to. If the endpoint is a
-     * VPC endpoint, the agent is not accessible over the public Internet. </p>
+     * VPC endpoint, the agent is not accessible over the public internet. </p>
      */
     inline DescribeAgentResult& WithEndpointType(const EndpointType& value) { SetEndpointType(value); return *this;}
 
     /**
      * <p>The type of endpoint that your agent is connected to. If the endpoint is a
-     * VPC endpoint, the agent is not accessible over the public Internet. </p>
+     * VPC endpoint, the agent is not accessible over the public internet. </p>
      */
     inline DescribeAgentResult& WithEndpointType(EndpointType&& value) { SetEndpointType(std::move(value)); return *this;}
 

@@ -58,85 +58,85 @@ namespace Model
 
 
     /**
-     * <p>Total number of Actions which timed out.</p>
+     * <p>Total number of Actions that timed out.</p>
      */
     inline int GetTimeoutActions() const{ return m_timeoutActions; }
 
     /**
-     * <p>Total number of Actions which timed out.</p>
+     * <p>Total number of Actions that timed out.</p>
      */
     inline bool TimeoutActionsHasBeenSet() const { return m_timeoutActionsHasBeenSet; }
 
     /**
-     * <p>Total number of Actions which timed out.</p>
+     * <p>Total number of Actions that timed out.</p>
      */
     inline void SetTimeoutActions(int value) { m_timeoutActionsHasBeenSet = true; m_timeoutActions = value; }
 
     /**
-     * <p>Total number of Actions which timed out.</p>
+     * <p>Total number of Actions that timed out.</p>
      */
     inline WorkflowRunStatistics& WithTimeoutActions(int value) { SetTimeoutActions(value); return *this;}
 
 
     /**
-     * <p>Total number of Actions which have failed.</p>
+     * <p>Total number of Actions that have failed.</p>
      */
     inline int GetFailedActions() const{ return m_failedActions; }
 
     /**
-     * <p>Total number of Actions which have failed.</p>
+     * <p>Total number of Actions that have failed.</p>
      */
     inline bool FailedActionsHasBeenSet() const { return m_failedActionsHasBeenSet; }
 
     /**
-     * <p>Total number of Actions which have failed.</p>
+     * <p>Total number of Actions that have failed.</p>
      */
     inline void SetFailedActions(int value) { m_failedActionsHasBeenSet = true; m_failedActions = value; }
 
     /**
-     * <p>Total number of Actions which have failed.</p>
+     * <p>Total number of Actions that have failed.</p>
      */
     inline WorkflowRunStatistics& WithFailedActions(int value) { SetFailedActions(value); return *this;}
 
 
     /**
-     * <p>Total number of Actions which have stopped.</p>
+     * <p>Total number of Actions that have stopped.</p>
      */
     inline int GetStoppedActions() const{ return m_stoppedActions; }
 
     /**
-     * <p>Total number of Actions which have stopped.</p>
+     * <p>Total number of Actions that have stopped.</p>
      */
     inline bool StoppedActionsHasBeenSet() const { return m_stoppedActionsHasBeenSet; }
 
     /**
-     * <p>Total number of Actions which have stopped.</p>
+     * <p>Total number of Actions that have stopped.</p>
      */
     inline void SetStoppedActions(int value) { m_stoppedActionsHasBeenSet = true; m_stoppedActions = value; }
 
     /**
-     * <p>Total number of Actions which have stopped.</p>
+     * <p>Total number of Actions that have stopped.</p>
      */
     inline WorkflowRunStatistics& WithStoppedActions(int value) { SetStoppedActions(value); return *this;}
 
 
     /**
-     * <p>Total number of Actions which have succeeded.</p>
+     * <p>Total number of Actions that have succeeded.</p>
      */
     inline int GetSucceededActions() const{ return m_succeededActions; }
 
     /**
-     * <p>Total number of Actions which have succeeded.</p>
+     * <p>Total number of Actions that have succeeded.</p>
      */
     inline bool SucceededActionsHasBeenSet() const { return m_succeededActionsHasBeenSet; }
 
     /**
-     * <p>Total number of Actions which have succeeded.</p>
+     * <p>Total number of Actions that have succeeded.</p>
      */
     inline void SetSucceededActions(int value) { m_succeededActionsHasBeenSet = true; m_succeededActions = value; }
 
     /**
-     * <p>Total number of Actions which have succeeded.</p>
+     * <p>Total number of Actions that have succeeded.</p>
      */
     inline WorkflowRunStatistics& WithSucceededActions(int value) { SetSucceededActions(value); return *this;}
 

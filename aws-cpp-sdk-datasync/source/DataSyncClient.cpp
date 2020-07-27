@@ -25,6 +25,7 @@
 #include <aws/datasync/model/CreateLocationEfsRequest.h>
 #include <aws/datasync/model/CreateLocationFsxWindowsRequest.h>
 #include <aws/datasync/model/CreateLocationNfsRequest.h>
+#include <aws/datasync/model/CreateLocationObjectStorageRequest.h>
 #include <aws/datasync/model/CreateLocationS3Request.h>
 #include <aws/datasync/model/CreateLocationSmbRequest.h>
 #include <aws/datasync/model/CreateTaskRequest.h>
@@ -35,6 +36,7 @@
 #include <aws/datasync/model/DescribeLocationEfsRequest.h>
 #include <aws/datasync/model/DescribeLocationFsxWindowsRequest.h>
 #include <aws/datasync/model/DescribeLocationNfsRequest.h>
+#include <aws/datasync/model/DescribeLocationObjectStorageRequest.h>
 #include <aws/datasync/model/DescribeLocationS3Request.h>
 #include <aws/datasync/model/DescribeLocationSmbRequest.h>
 #include <aws/datasync/model/DescribeTaskRequest.h>
@@ -255,6 +257,33 @@ void DataSyncClient::CreateLocationNfsAsync(const CreateLocationNfsRequest& requ
 void DataSyncClient::CreateLocationNfsAsyncHelper(const CreateLocationNfsRequest& request, const CreateLocationNfsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, CreateLocationNfs(request), context);
+}
+
+CreateLocationObjectStorageOutcome DataSyncClient::CreateLocationObjectStorage(const CreateLocationObjectStorageRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return CreateLocationObjectStorageOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateLocationObjectStorageOutcomeCallable DataSyncClient::CreateLocationObjectStorageCallable(const CreateLocationObjectStorageRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateLocationObjectStorageOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateLocationObjectStorage(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DataSyncClient::CreateLocationObjectStorageAsync(const CreateLocationObjectStorageRequest& request, const CreateLocationObjectStorageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateLocationObjectStorageAsyncHelper( request, handler, context ); } );
+}
+
+void DataSyncClient::CreateLocationObjectStorageAsyncHelper(const CreateLocationObjectStorageRequest& request, const CreateLocationObjectStorageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateLocationObjectStorage(request), context);
 }
 
 CreateLocationS3Outcome DataSyncClient::CreateLocationS3(const CreateLocationS3Request& request) const
@@ -525,6 +554,33 @@ void DataSyncClient::DescribeLocationNfsAsync(const DescribeLocationNfsRequest& 
 void DataSyncClient::DescribeLocationNfsAsyncHelper(const DescribeLocationNfsRequest& request, const DescribeLocationNfsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribeLocationNfs(request), context);
+}
+
+DescribeLocationObjectStorageOutcome DataSyncClient::DescribeLocationObjectStorage(const DescribeLocationObjectStorageRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DescribeLocationObjectStorageOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeLocationObjectStorageOutcomeCallable DataSyncClient::DescribeLocationObjectStorageCallable(const DescribeLocationObjectStorageRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeLocationObjectStorageOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeLocationObjectStorage(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DataSyncClient::DescribeLocationObjectStorageAsync(const DescribeLocationObjectStorageRequest& request, const DescribeLocationObjectStorageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeLocationObjectStorageAsyncHelper( request, handler, context ); } );
+}
+
+void DataSyncClient::DescribeLocationObjectStorageAsyncHelper(const DescribeLocationObjectStorageRequest& request, const DescribeLocationObjectStorageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeLocationObjectStorage(request), context);
 }
 
 DescribeLocationS3Outcome DataSyncClient::DescribeLocationS3(const DescribeLocationS3Request& request) const

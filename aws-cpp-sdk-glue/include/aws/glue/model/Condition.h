@@ -121,50 +121,44 @@ namespace Model
 
 
     /**
-     * <p>The condition state. Currently, the only job states that a trigger can listen
-     * for are <code>SUCCEEDED</code>, <code>STOPPED</code>, <code>FAILED</code>, and
-     * <code>TIMEOUT</code>. The only crawler states that a trigger can listen for are
-     * <code>SUCCEEDED</code>, <code>FAILED</code>, and <code>CANCELLED</code>.</p>
+     * <p>The condition state. Currently, the values supported are
+     * <code>SUCCEEDED</code>, <code>STOPPED</code>, <code>TIMEOUT</code>, and
+     * <code>FAILED</code>.</p>
      */
     inline const JobRunState& GetState() const{ return m_state; }
 
     /**
-     * <p>The condition state. Currently, the only job states that a trigger can listen
-     * for are <code>SUCCEEDED</code>, <code>STOPPED</code>, <code>FAILED</code>, and
-     * <code>TIMEOUT</code>. The only crawler states that a trigger can listen for are
-     * <code>SUCCEEDED</code>, <code>FAILED</code>, and <code>CANCELLED</code>.</p>
+     * <p>The condition state. Currently, the values supported are
+     * <code>SUCCEEDED</code>, <code>STOPPED</code>, <code>TIMEOUT</code>, and
+     * <code>FAILED</code>.</p>
      */
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
 
     /**
-     * <p>The condition state. Currently, the only job states that a trigger can listen
-     * for are <code>SUCCEEDED</code>, <code>STOPPED</code>, <code>FAILED</code>, and
-     * <code>TIMEOUT</code>. The only crawler states that a trigger can listen for are
-     * <code>SUCCEEDED</code>, <code>FAILED</code>, and <code>CANCELLED</code>.</p>
+     * <p>The condition state. Currently, the values supported are
+     * <code>SUCCEEDED</code>, <code>STOPPED</code>, <code>TIMEOUT</code>, and
+     * <code>FAILED</code>.</p>
      */
     inline void SetState(const JobRunState& value) { m_stateHasBeenSet = true; m_state = value; }
 
     /**
-     * <p>The condition state. Currently, the only job states that a trigger can listen
-     * for are <code>SUCCEEDED</code>, <code>STOPPED</code>, <code>FAILED</code>, and
-     * <code>TIMEOUT</code>. The only crawler states that a trigger can listen for are
-     * <code>SUCCEEDED</code>, <code>FAILED</code>, and <code>CANCELLED</code>.</p>
+     * <p>The condition state. Currently, the values supported are
+     * <code>SUCCEEDED</code>, <code>STOPPED</code>, <code>TIMEOUT</code>, and
+     * <code>FAILED</code>.</p>
      */
     inline void SetState(JobRunState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
 
     /**
-     * <p>The condition state. Currently, the only job states that a trigger can listen
-     * for are <code>SUCCEEDED</code>, <code>STOPPED</code>, <code>FAILED</code>, and
-     * <code>TIMEOUT</code>. The only crawler states that a trigger can listen for are
-     * <code>SUCCEEDED</code>, <code>FAILED</code>, and <code>CANCELLED</code>.</p>
+     * <p>The condition state. Currently, the values supported are
+     * <code>SUCCEEDED</code>, <code>STOPPED</code>, <code>TIMEOUT</code>, and
+     * <code>FAILED</code>.</p>
      */
     inline Condition& WithState(const JobRunState& value) { SetState(value); return *this;}
 
     /**
-     * <p>The condition state. Currently, the only job states that a trigger can listen
-     * for are <code>SUCCEEDED</code>, <code>STOPPED</code>, <code>FAILED</code>, and
-     * <code>TIMEOUT</code>. The only crawler states that a trigger can listen for are
-     * <code>SUCCEEDED</code>, <code>FAILED</code>, and <code>CANCELLED</code>.</p>
+     * <p>The condition state. Currently, the values supported are
+     * <code>SUCCEEDED</code>, <code>STOPPED</code>, <code>TIMEOUT</code>, and
+     * <code>FAILED</code>.</p>
      */
     inline Condition& WithState(JobRunState&& value) { SetState(std::move(value)); return *this;}
 

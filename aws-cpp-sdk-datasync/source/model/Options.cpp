@@ -42,7 +42,9 @@ Options::Options() :
     m_taskQueueing(TaskQueueing::NOT_SET),
     m_taskQueueingHasBeenSet(false),
     m_logLevel(LogLevel::NOT_SET),
-    m_logLevelHasBeenSet(false)
+    m_logLevelHasBeenSet(false),
+    m_transferMode(TransferMode::NOT_SET),
+    m_transferModeHasBeenSet(false)
 {
 }
 
@@ -70,7 +72,9 @@ Options::Options(JsonView jsonValue) :
     m_taskQueueing(TaskQueueing::NOT_SET),
     m_taskQueueingHasBeenSet(false),
     m_logLevel(LogLevel::NOT_SET),
-    m_logLevelHasBeenSet(false)
+    m_logLevelHasBeenSet(false),
+    m_transferMode(TransferMode::NOT_SET),
+    m_transferModeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -161,6 +165,13 @@ Options& Options::operator =(JsonView jsonValue)
     m_logLevelHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("TransferMode"))
+  {
+    m_transferMode = TransferModeMapper::GetTransferModeForName(jsonValue.GetString("TransferMode"));
+
+    m_transferModeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -227,6 +238,11 @@ JsonValue Options::Jsonize() const
   if(m_logLevelHasBeenSet)
   {
    payload.WithString("LogLevel", LogLevelMapper::GetNameForLogLevel(m_logLevel));
+  }
+
+  if(m_transferModeHasBeenSet)
+  {
+   payload.WithString("TransferMode", TransferModeMapper::GetNameForTransferMode(m_transferMode));
   }
 
   return payload;

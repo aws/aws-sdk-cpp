@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/frauddetector/FraudDetector_EXPORTS.h>
-#include <aws/frauddetector/model/ModelInputDataFormat.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/frauddetector/model/ModelInputDataFormat.h>
 #include <utility>
 
 namespace Aws
@@ -36,6 +36,47 @@ namespace Model
     ModelInputConfiguration(Aws::Utils::Json::JsonView jsonValue);
     ModelInputConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * <p>The event type name.</p>
+     */
+    inline const Aws::String& GetEventTypeName() const{ return m_eventTypeName; }
+
+    /**
+     * <p>The event type name.</p>
+     */
+    inline bool EventTypeNameHasBeenSet() const { return m_eventTypeNameHasBeenSet; }
+
+    /**
+     * <p>The event type name.</p>
+     */
+    inline void SetEventTypeName(const Aws::String& value) { m_eventTypeNameHasBeenSet = true; m_eventTypeName = value; }
+
+    /**
+     * <p>The event type name.</p>
+     */
+    inline void SetEventTypeName(Aws::String&& value) { m_eventTypeNameHasBeenSet = true; m_eventTypeName = std::move(value); }
+
+    /**
+     * <p>The event type name.</p>
+     */
+    inline void SetEventTypeName(const char* value) { m_eventTypeNameHasBeenSet = true; m_eventTypeName.assign(value); }
+
+    /**
+     * <p>The event type name.</p>
+     */
+    inline ModelInputConfiguration& WithEventTypeName(const Aws::String& value) { SetEventTypeName(value); return *this;}
+
+    /**
+     * <p>The event type name.</p>
+     */
+    inline ModelInputConfiguration& WithEventTypeName(Aws::String&& value) { SetEventTypeName(std::move(value)); return *this;}
+
+    /**
+     * <p>The event type name.</p>
+     */
+    inline ModelInputConfiguration& WithEventTypeName(const char* value) { SetEventTypeName(value); return *this;}
 
 
     /**
@@ -216,6 +257,9 @@ namespace Model
     inline ModelInputConfiguration& WithCsvInputTemplate(const char* value) { SetCsvInputTemplate(value); return *this;}
 
   private:
+
+    Aws::String m_eventTypeName;
+    bool m_eventTypeNameHasBeenSet;
 
     ModelInputDataFormat m_format;
     bool m_formatHasBeenSet;

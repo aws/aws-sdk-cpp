@@ -16,6 +16,7 @@
 #include <aws/datasync/model/PosixPermissions.h>
 #include <aws/datasync/model/TaskQueueing.h>
 #include <aws/datasync/model/LogLevel.h>
+#include <aws/datasync/model/TransferMode.h>
 #include <utility>
 
 namespace Aws
@@ -58,60 +59,90 @@ namespace Model
     /**
      * <p>A value that determines whether a data integrity verification should be
      * performed at the end of a task execution after all data and metadata have been
-     * transferred. </p> <p>Default value: POINT_IN_TIME_CONSISTENT.</p>
-     * <p>POINT_IN_TIME_CONSISTENT: Perform verification (recommended). </p>
-     * <p>ONLY_FILES_TRANSFERRED: Perform verification on only files that were
-     * transferred.</p> <p>NONE: Skip verification.</p>
+     * transferred. For more information, see <a>create-task</a> </p> <p>Default value:
+     * POINT_IN_TIME_CONSISTENT.</p> <p>ONLY_FILES_TRANSFERRED (recommended): Perform
+     * verification only on files that were transferred. </p>
+     * <p>POINT_IN_TIME_CONSISTENT: Scan the entire source and entire destination at
+     * the end of the transfer to verify that source and destination are fully
+     * synchronized. This option isn't supported when transferring to S3 Glacier or S3
+     * Glacier Deep Archive storage classes.</p> <p>NONE: No additional verification is
+     * done at the end of the transfer, but all data transmissions are
+     * integrity-checked with checksum verification during the transfer.</p>
      */
     inline const VerifyMode& GetVerifyMode() const{ return m_verifyMode; }
 
     /**
      * <p>A value that determines whether a data integrity verification should be
      * performed at the end of a task execution after all data and metadata have been
-     * transferred. </p> <p>Default value: POINT_IN_TIME_CONSISTENT.</p>
-     * <p>POINT_IN_TIME_CONSISTENT: Perform verification (recommended). </p>
-     * <p>ONLY_FILES_TRANSFERRED: Perform verification on only files that were
-     * transferred.</p> <p>NONE: Skip verification.</p>
+     * transferred. For more information, see <a>create-task</a> </p> <p>Default value:
+     * POINT_IN_TIME_CONSISTENT.</p> <p>ONLY_FILES_TRANSFERRED (recommended): Perform
+     * verification only on files that were transferred. </p>
+     * <p>POINT_IN_TIME_CONSISTENT: Scan the entire source and entire destination at
+     * the end of the transfer to verify that source and destination are fully
+     * synchronized. This option isn't supported when transferring to S3 Glacier or S3
+     * Glacier Deep Archive storage classes.</p> <p>NONE: No additional verification is
+     * done at the end of the transfer, but all data transmissions are
+     * integrity-checked with checksum verification during the transfer.</p>
      */
     inline bool VerifyModeHasBeenSet() const { return m_verifyModeHasBeenSet; }
 
     /**
      * <p>A value that determines whether a data integrity verification should be
      * performed at the end of a task execution after all data and metadata have been
-     * transferred. </p> <p>Default value: POINT_IN_TIME_CONSISTENT.</p>
-     * <p>POINT_IN_TIME_CONSISTENT: Perform verification (recommended). </p>
-     * <p>ONLY_FILES_TRANSFERRED: Perform verification on only files that were
-     * transferred.</p> <p>NONE: Skip verification.</p>
+     * transferred. For more information, see <a>create-task</a> </p> <p>Default value:
+     * POINT_IN_TIME_CONSISTENT.</p> <p>ONLY_FILES_TRANSFERRED (recommended): Perform
+     * verification only on files that were transferred. </p>
+     * <p>POINT_IN_TIME_CONSISTENT: Scan the entire source and entire destination at
+     * the end of the transfer to verify that source and destination are fully
+     * synchronized. This option isn't supported when transferring to S3 Glacier or S3
+     * Glacier Deep Archive storage classes.</p> <p>NONE: No additional verification is
+     * done at the end of the transfer, but all data transmissions are
+     * integrity-checked with checksum verification during the transfer.</p>
      */
     inline void SetVerifyMode(const VerifyMode& value) { m_verifyModeHasBeenSet = true; m_verifyMode = value; }
 
     /**
      * <p>A value that determines whether a data integrity verification should be
      * performed at the end of a task execution after all data and metadata have been
-     * transferred. </p> <p>Default value: POINT_IN_TIME_CONSISTENT.</p>
-     * <p>POINT_IN_TIME_CONSISTENT: Perform verification (recommended). </p>
-     * <p>ONLY_FILES_TRANSFERRED: Perform verification on only files that were
-     * transferred.</p> <p>NONE: Skip verification.</p>
+     * transferred. For more information, see <a>create-task</a> </p> <p>Default value:
+     * POINT_IN_TIME_CONSISTENT.</p> <p>ONLY_FILES_TRANSFERRED (recommended): Perform
+     * verification only on files that were transferred. </p>
+     * <p>POINT_IN_TIME_CONSISTENT: Scan the entire source and entire destination at
+     * the end of the transfer to verify that source and destination are fully
+     * synchronized. This option isn't supported when transferring to S3 Glacier or S3
+     * Glacier Deep Archive storage classes.</p> <p>NONE: No additional verification is
+     * done at the end of the transfer, but all data transmissions are
+     * integrity-checked with checksum verification during the transfer.</p>
      */
     inline void SetVerifyMode(VerifyMode&& value) { m_verifyModeHasBeenSet = true; m_verifyMode = std::move(value); }
 
     /**
      * <p>A value that determines whether a data integrity verification should be
      * performed at the end of a task execution after all data and metadata have been
-     * transferred. </p> <p>Default value: POINT_IN_TIME_CONSISTENT.</p>
-     * <p>POINT_IN_TIME_CONSISTENT: Perform verification (recommended). </p>
-     * <p>ONLY_FILES_TRANSFERRED: Perform verification on only files that were
-     * transferred.</p> <p>NONE: Skip verification.</p>
+     * transferred. For more information, see <a>create-task</a> </p> <p>Default value:
+     * POINT_IN_TIME_CONSISTENT.</p> <p>ONLY_FILES_TRANSFERRED (recommended): Perform
+     * verification only on files that were transferred. </p>
+     * <p>POINT_IN_TIME_CONSISTENT: Scan the entire source and entire destination at
+     * the end of the transfer to verify that source and destination are fully
+     * synchronized. This option isn't supported when transferring to S3 Glacier or S3
+     * Glacier Deep Archive storage classes.</p> <p>NONE: No additional verification is
+     * done at the end of the transfer, but all data transmissions are
+     * integrity-checked with checksum verification during the transfer.</p>
      */
     inline Options& WithVerifyMode(const VerifyMode& value) { SetVerifyMode(value); return *this;}
 
     /**
      * <p>A value that determines whether a data integrity verification should be
      * performed at the end of a task execution after all data and metadata have been
-     * transferred. </p> <p>Default value: POINT_IN_TIME_CONSISTENT.</p>
-     * <p>POINT_IN_TIME_CONSISTENT: Perform verification (recommended). </p>
-     * <p>ONLY_FILES_TRANSFERRED: Perform verification on only files that were
-     * transferred.</p> <p>NONE: Skip verification.</p>
+     * transferred. For more information, see <a>create-task</a> </p> <p>Default value:
+     * POINT_IN_TIME_CONSISTENT.</p> <p>ONLY_FILES_TRANSFERRED (recommended): Perform
+     * verification only on files that were transferred. </p>
+     * <p>POINT_IN_TIME_CONSISTENT: Scan the entire source and entire destination at
+     * the end of the transfer to verify that source and destination are fully
+     * synchronized. This option isn't supported when transferring to S3 Glacier or S3
+     * Glacier Deep Archive storage classes.</p> <p>NONE: No additional verification is
+     * done at the end of the transfer, but all data transmissions are
+     * integrity-checked with checksum verification during the transfer.</p>
      */
     inline Options& WithVerifyMode(VerifyMode&& value) { SetVerifyMode(std::move(value)); return *this;}
 
@@ -678,8 +709,8 @@ namespace Model
     /**
      * <p>A value that determines whether tasks should be queued before executing the
      * tasks. If set to <code>ENABLED</code>, the tasks will be queued. The default is
-     * <code>ENABLED</code>.</p> <p>If you use the same agent to run multiple tasks you
-     * can enable the tasks to run in series. For more information see
+     * <code>ENABLED</code>.</p> <p>If you use the same agent to run multiple tasks,
+     * you can enable the tasks to run in series. For more information, see
      * <a>queue-task-execution</a>.</p>
      */
     inline const TaskQueueing& GetTaskQueueing() const{ return m_taskQueueing; }
@@ -687,8 +718,8 @@ namespace Model
     /**
      * <p>A value that determines whether tasks should be queued before executing the
      * tasks. If set to <code>ENABLED</code>, the tasks will be queued. The default is
-     * <code>ENABLED</code>.</p> <p>If you use the same agent to run multiple tasks you
-     * can enable the tasks to run in series. For more information see
+     * <code>ENABLED</code>.</p> <p>If you use the same agent to run multiple tasks,
+     * you can enable the tasks to run in series. For more information, see
      * <a>queue-task-execution</a>.</p>
      */
     inline bool TaskQueueingHasBeenSet() const { return m_taskQueueingHasBeenSet; }
@@ -696,8 +727,8 @@ namespace Model
     /**
      * <p>A value that determines whether tasks should be queued before executing the
      * tasks. If set to <code>ENABLED</code>, the tasks will be queued. The default is
-     * <code>ENABLED</code>.</p> <p>If you use the same agent to run multiple tasks you
-     * can enable the tasks to run in series. For more information see
+     * <code>ENABLED</code>.</p> <p>If you use the same agent to run multiple tasks,
+     * you can enable the tasks to run in series. For more information, see
      * <a>queue-task-execution</a>.</p>
      */
     inline void SetTaskQueueing(const TaskQueueing& value) { m_taskQueueingHasBeenSet = true; m_taskQueueing = value; }
@@ -705,8 +736,8 @@ namespace Model
     /**
      * <p>A value that determines whether tasks should be queued before executing the
      * tasks. If set to <code>ENABLED</code>, the tasks will be queued. The default is
-     * <code>ENABLED</code>.</p> <p>If you use the same agent to run multiple tasks you
-     * can enable the tasks to run in series. For more information see
+     * <code>ENABLED</code>.</p> <p>If you use the same agent to run multiple tasks,
+     * you can enable the tasks to run in series. For more information, see
      * <a>queue-task-execution</a>.</p>
      */
     inline void SetTaskQueueing(TaskQueueing&& value) { m_taskQueueingHasBeenSet = true; m_taskQueueing = std::move(value); }
@@ -714,8 +745,8 @@ namespace Model
     /**
      * <p>A value that determines whether tasks should be queued before executing the
      * tasks. If set to <code>ENABLED</code>, the tasks will be queued. The default is
-     * <code>ENABLED</code>.</p> <p>If you use the same agent to run multiple tasks you
-     * can enable the tasks to run in series. For more information see
+     * <code>ENABLED</code>.</p> <p>If you use the same agent to run multiple tasks,
+     * you can enable the tasks to run in series. For more information, see
      * <a>queue-task-execution</a>.</p>
      */
     inline Options& WithTaskQueueing(const TaskQueueing& value) { SetTaskQueueing(value); return *this;}
@@ -723,66 +754,133 @@ namespace Model
     /**
      * <p>A value that determines whether tasks should be queued before executing the
      * tasks. If set to <code>ENABLED</code>, the tasks will be queued. The default is
-     * <code>ENABLED</code>.</p> <p>If you use the same agent to run multiple tasks you
-     * can enable the tasks to run in series. For more information see
+     * <code>ENABLED</code>.</p> <p>If you use the same agent to run multiple tasks,
+     * you can enable the tasks to run in series. For more information, see
      * <a>queue-task-execution</a>.</p>
      */
     inline Options& WithTaskQueueing(TaskQueueing&& value) { SetTaskQueueing(std::move(value)); return *this;}
 
 
     /**
-     * <p>A value that determines the type of logs DataSync will deliver to your AWS
-     * CloudWatch Logs file. If set to <code>OFF</code>, no logs will be delivered.
-     * <code>BASIC</code> will deliver a few logs per transfer operation and
-     * <code>TRANSFER</code> will deliver a verbose log that contains logs for every
-     * file that is transferred.</p>
+     * <p>A value that determines the type of logs that DataSync publishes to a log
+     * stream in the Amazon CloudWatch log group that you provide. For more information
+     * about providing a log group for DataSync, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/API_CreateTask.html#DataSync-CreateTask-request-CloudWatchLogGroupArn">CloudWatchLogGroupArn</a>.
+     * If set to <code>OFF</code>, no logs are published. <code>BASIC</code> publishes
+     * logs on errors for individual files transferred, and <code>TRANSFER</code>
+     * publishes logs for every file or object that is transferred and integrity
+     * checked.</p>
      */
     inline const LogLevel& GetLogLevel() const{ return m_logLevel; }
 
     /**
-     * <p>A value that determines the type of logs DataSync will deliver to your AWS
-     * CloudWatch Logs file. If set to <code>OFF</code>, no logs will be delivered.
-     * <code>BASIC</code> will deliver a few logs per transfer operation and
-     * <code>TRANSFER</code> will deliver a verbose log that contains logs for every
-     * file that is transferred.</p>
+     * <p>A value that determines the type of logs that DataSync publishes to a log
+     * stream in the Amazon CloudWatch log group that you provide. For more information
+     * about providing a log group for DataSync, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/API_CreateTask.html#DataSync-CreateTask-request-CloudWatchLogGroupArn">CloudWatchLogGroupArn</a>.
+     * If set to <code>OFF</code>, no logs are published. <code>BASIC</code> publishes
+     * logs on errors for individual files transferred, and <code>TRANSFER</code>
+     * publishes logs for every file or object that is transferred and integrity
+     * checked.</p>
      */
     inline bool LogLevelHasBeenSet() const { return m_logLevelHasBeenSet; }
 
     /**
-     * <p>A value that determines the type of logs DataSync will deliver to your AWS
-     * CloudWatch Logs file. If set to <code>OFF</code>, no logs will be delivered.
-     * <code>BASIC</code> will deliver a few logs per transfer operation and
-     * <code>TRANSFER</code> will deliver a verbose log that contains logs for every
-     * file that is transferred.</p>
+     * <p>A value that determines the type of logs that DataSync publishes to a log
+     * stream in the Amazon CloudWatch log group that you provide. For more information
+     * about providing a log group for DataSync, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/API_CreateTask.html#DataSync-CreateTask-request-CloudWatchLogGroupArn">CloudWatchLogGroupArn</a>.
+     * If set to <code>OFF</code>, no logs are published. <code>BASIC</code> publishes
+     * logs on errors for individual files transferred, and <code>TRANSFER</code>
+     * publishes logs for every file or object that is transferred and integrity
+     * checked.</p>
      */
     inline void SetLogLevel(const LogLevel& value) { m_logLevelHasBeenSet = true; m_logLevel = value; }
 
     /**
-     * <p>A value that determines the type of logs DataSync will deliver to your AWS
-     * CloudWatch Logs file. If set to <code>OFF</code>, no logs will be delivered.
-     * <code>BASIC</code> will deliver a few logs per transfer operation and
-     * <code>TRANSFER</code> will deliver a verbose log that contains logs for every
-     * file that is transferred.</p>
+     * <p>A value that determines the type of logs that DataSync publishes to a log
+     * stream in the Amazon CloudWatch log group that you provide. For more information
+     * about providing a log group for DataSync, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/API_CreateTask.html#DataSync-CreateTask-request-CloudWatchLogGroupArn">CloudWatchLogGroupArn</a>.
+     * If set to <code>OFF</code>, no logs are published. <code>BASIC</code> publishes
+     * logs on errors for individual files transferred, and <code>TRANSFER</code>
+     * publishes logs for every file or object that is transferred and integrity
+     * checked.</p>
      */
     inline void SetLogLevel(LogLevel&& value) { m_logLevelHasBeenSet = true; m_logLevel = std::move(value); }
 
     /**
-     * <p>A value that determines the type of logs DataSync will deliver to your AWS
-     * CloudWatch Logs file. If set to <code>OFF</code>, no logs will be delivered.
-     * <code>BASIC</code> will deliver a few logs per transfer operation and
-     * <code>TRANSFER</code> will deliver a verbose log that contains logs for every
-     * file that is transferred.</p>
+     * <p>A value that determines the type of logs that DataSync publishes to a log
+     * stream in the Amazon CloudWatch log group that you provide. For more information
+     * about providing a log group for DataSync, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/API_CreateTask.html#DataSync-CreateTask-request-CloudWatchLogGroupArn">CloudWatchLogGroupArn</a>.
+     * If set to <code>OFF</code>, no logs are published. <code>BASIC</code> publishes
+     * logs on errors for individual files transferred, and <code>TRANSFER</code>
+     * publishes logs for every file or object that is transferred and integrity
+     * checked.</p>
      */
     inline Options& WithLogLevel(const LogLevel& value) { SetLogLevel(value); return *this;}
 
     /**
-     * <p>A value that determines the type of logs DataSync will deliver to your AWS
-     * CloudWatch Logs file. If set to <code>OFF</code>, no logs will be delivered.
-     * <code>BASIC</code> will deliver a few logs per transfer operation and
-     * <code>TRANSFER</code> will deliver a verbose log that contains logs for every
-     * file that is transferred.</p>
+     * <p>A value that determines the type of logs that DataSync publishes to a log
+     * stream in the Amazon CloudWatch log group that you provide. For more information
+     * about providing a log group for DataSync, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/API_CreateTask.html#DataSync-CreateTask-request-CloudWatchLogGroupArn">CloudWatchLogGroupArn</a>.
+     * If set to <code>OFF</code>, no logs are published. <code>BASIC</code> publishes
+     * logs on errors for individual files transferred, and <code>TRANSFER</code>
+     * publishes logs for every file or object that is transferred and integrity
+     * checked.</p>
      */
     inline Options& WithLogLevel(LogLevel&& value) { SetLogLevel(std::move(value)); return *this;}
+
+
+    /**
+     * <p>TransferMode has two values: CHANGED and ALL. CHANGED performs an
+     * "incremental" or "delta sync", it compares file modification time between source
+     * and destination to determine which files need to be transferred. ALL skips
+     * destination inventory and transfers all files discovered on the source.</p>
+     */
+    inline const TransferMode& GetTransferMode() const{ return m_transferMode; }
+
+    /**
+     * <p>TransferMode has two values: CHANGED and ALL. CHANGED performs an
+     * "incremental" or "delta sync", it compares file modification time between source
+     * and destination to determine which files need to be transferred. ALL skips
+     * destination inventory and transfers all files discovered on the source.</p>
+     */
+    inline bool TransferModeHasBeenSet() const { return m_transferModeHasBeenSet; }
+
+    /**
+     * <p>TransferMode has two values: CHANGED and ALL. CHANGED performs an
+     * "incremental" or "delta sync", it compares file modification time between source
+     * and destination to determine which files need to be transferred. ALL skips
+     * destination inventory and transfers all files discovered on the source.</p>
+     */
+    inline void SetTransferMode(const TransferMode& value) { m_transferModeHasBeenSet = true; m_transferMode = value; }
+
+    /**
+     * <p>TransferMode has two values: CHANGED and ALL. CHANGED performs an
+     * "incremental" or "delta sync", it compares file modification time between source
+     * and destination to determine which files need to be transferred. ALL skips
+     * destination inventory and transfers all files discovered on the source.</p>
+     */
+    inline void SetTransferMode(TransferMode&& value) { m_transferModeHasBeenSet = true; m_transferMode = std::move(value); }
+
+    /**
+     * <p>TransferMode has two values: CHANGED and ALL. CHANGED performs an
+     * "incremental" or "delta sync", it compares file modification time between source
+     * and destination to determine which files need to be transferred. ALL skips
+     * destination inventory and transfers all files discovered on the source.</p>
+     */
+    inline Options& WithTransferMode(const TransferMode& value) { SetTransferMode(value); return *this;}
+
+    /**
+     * <p>TransferMode has two values: CHANGED and ALL. CHANGED performs an
+     * "incremental" or "delta sync", it compares file modification time between source
+     * and destination to determine which files need to be transferred. ALL skips
+     * destination inventory and transfers all files discovered on the source.</p>
+     */
+    inline Options& WithTransferMode(TransferMode&& value) { SetTransferMode(std::move(value)); return *this;}
 
   private:
 
@@ -821,6 +919,9 @@ namespace Model
 
     LogLevel m_logLevel;
     bool m_logLevelHasBeenSet;
+
+    TransferMode m_transferMode;
+    bool m_transferModeHasBeenSet;
   };
 
 } // namespace Model

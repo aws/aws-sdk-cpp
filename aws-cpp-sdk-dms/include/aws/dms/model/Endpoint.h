@@ -17,6 +17,12 @@
 #include <aws/dms/model/ElasticsearchSettings.h>
 #include <aws/dms/model/NeptuneSettings.h>
 #include <aws/dms/model/RedshiftSettings.h>
+#include <aws/dms/model/PostgreSQLSettings.h>
+#include <aws/dms/model/MySQLSettings.h>
+#include <aws/dms/model/OracleSettings.h>
+#include <aws/dms/model/SybaseSettings.h>
+#include <aws/dms/model/MicrosoftSQLServerSettings.h>
+#include <aws/dms/model/IBMDb2Settings.h>
 #include <utility>
 
 namespace Aws
@@ -866,37 +872,37 @@ namespace Model
 
 
     /**
-     * <p>The settings for the target DynamoDB database. For more information, see the
+     * <p>The settings for the DynamoDB target endpoint. For more information, see the
      * <code>DynamoDBSettings</code> structure.</p>
      */
     inline const DynamoDbSettings& GetDynamoDbSettings() const{ return m_dynamoDbSettings; }
 
     /**
-     * <p>The settings for the target DynamoDB database. For more information, see the
+     * <p>The settings for the DynamoDB target endpoint. For more information, see the
      * <code>DynamoDBSettings</code> structure.</p>
      */
     inline bool DynamoDbSettingsHasBeenSet() const { return m_dynamoDbSettingsHasBeenSet; }
 
     /**
-     * <p>The settings for the target DynamoDB database. For more information, see the
+     * <p>The settings for the DynamoDB target endpoint. For more information, see the
      * <code>DynamoDBSettings</code> structure.</p>
      */
     inline void SetDynamoDbSettings(const DynamoDbSettings& value) { m_dynamoDbSettingsHasBeenSet = true; m_dynamoDbSettings = value; }
 
     /**
-     * <p>The settings for the target DynamoDB database. For more information, see the
+     * <p>The settings for the DynamoDB target endpoint. For more information, see the
      * <code>DynamoDBSettings</code> structure.</p>
      */
     inline void SetDynamoDbSettings(DynamoDbSettings&& value) { m_dynamoDbSettingsHasBeenSet = true; m_dynamoDbSettings = std::move(value); }
 
     /**
-     * <p>The settings for the target DynamoDB database. For more information, see the
+     * <p>The settings for the DynamoDB target endpoint. For more information, see the
      * <code>DynamoDBSettings</code> structure.</p>
      */
     inline Endpoint& WithDynamoDbSettings(const DynamoDbSettings& value) { SetDynamoDbSettings(value); return *this;}
 
     /**
-     * <p>The settings for the target DynamoDB database. For more information, see the
+     * <p>The settings for the DynamoDB target endpoint. For more information, see the
      * <code>DynamoDBSettings</code> structure.</p>
      */
     inline Endpoint& WithDynamoDbSettings(DynamoDbSettings&& value) { SetDynamoDbSettings(std::move(value)); return *this;}
@@ -1257,6 +1263,228 @@ namespace Model
      */
     inline Endpoint& WithRedshiftSettings(RedshiftSettings&& value) { SetRedshiftSettings(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The settings for the PostgreSQL source and target endpoint. For more
+     * information, see the <code>PostgreSQLSettings</code> structure.</p>
+     */
+    inline const PostgreSQLSettings& GetPostgreSQLSettings() const{ return m_postgreSQLSettings; }
+
+    /**
+     * <p>The settings for the PostgreSQL source and target endpoint. For more
+     * information, see the <code>PostgreSQLSettings</code> structure.</p>
+     */
+    inline bool PostgreSQLSettingsHasBeenSet() const { return m_postgreSQLSettingsHasBeenSet; }
+
+    /**
+     * <p>The settings for the PostgreSQL source and target endpoint. For more
+     * information, see the <code>PostgreSQLSettings</code> structure.</p>
+     */
+    inline void SetPostgreSQLSettings(const PostgreSQLSettings& value) { m_postgreSQLSettingsHasBeenSet = true; m_postgreSQLSettings = value; }
+
+    /**
+     * <p>The settings for the PostgreSQL source and target endpoint. For more
+     * information, see the <code>PostgreSQLSettings</code> structure.</p>
+     */
+    inline void SetPostgreSQLSettings(PostgreSQLSettings&& value) { m_postgreSQLSettingsHasBeenSet = true; m_postgreSQLSettings = std::move(value); }
+
+    /**
+     * <p>The settings for the PostgreSQL source and target endpoint. For more
+     * information, see the <code>PostgreSQLSettings</code> structure.</p>
+     */
+    inline Endpoint& WithPostgreSQLSettings(const PostgreSQLSettings& value) { SetPostgreSQLSettings(value); return *this;}
+
+    /**
+     * <p>The settings for the PostgreSQL source and target endpoint. For more
+     * information, see the <code>PostgreSQLSettings</code> structure.</p>
+     */
+    inline Endpoint& WithPostgreSQLSettings(PostgreSQLSettings&& value) { SetPostgreSQLSettings(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The settings for the MySQL source and target endpoint. For more information,
+     * see the <code>MySQLSettings</code> structure.</p>
+     */
+    inline const MySQLSettings& GetMySQLSettings() const{ return m_mySQLSettings; }
+
+    /**
+     * <p>The settings for the MySQL source and target endpoint. For more information,
+     * see the <code>MySQLSettings</code> structure.</p>
+     */
+    inline bool MySQLSettingsHasBeenSet() const { return m_mySQLSettingsHasBeenSet; }
+
+    /**
+     * <p>The settings for the MySQL source and target endpoint. For more information,
+     * see the <code>MySQLSettings</code> structure.</p>
+     */
+    inline void SetMySQLSettings(const MySQLSettings& value) { m_mySQLSettingsHasBeenSet = true; m_mySQLSettings = value; }
+
+    /**
+     * <p>The settings for the MySQL source and target endpoint. For more information,
+     * see the <code>MySQLSettings</code> structure.</p>
+     */
+    inline void SetMySQLSettings(MySQLSettings&& value) { m_mySQLSettingsHasBeenSet = true; m_mySQLSettings = std::move(value); }
+
+    /**
+     * <p>The settings for the MySQL source and target endpoint. For more information,
+     * see the <code>MySQLSettings</code> structure.</p>
+     */
+    inline Endpoint& WithMySQLSettings(const MySQLSettings& value) { SetMySQLSettings(value); return *this;}
+
+    /**
+     * <p>The settings for the MySQL source and target endpoint. For more information,
+     * see the <code>MySQLSettings</code> structure.</p>
+     */
+    inline Endpoint& WithMySQLSettings(MySQLSettings&& value) { SetMySQLSettings(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The settings for the Oracle source and target endpoint. For more information,
+     * see the <code>OracleSettings</code> structure.</p>
+     */
+    inline const OracleSettings& GetOracleSettings() const{ return m_oracleSettings; }
+
+    /**
+     * <p>The settings for the Oracle source and target endpoint. For more information,
+     * see the <code>OracleSettings</code> structure.</p>
+     */
+    inline bool OracleSettingsHasBeenSet() const { return m_oracleSettingsHasBeenSet; }
+
+    /**
+     * <p>The settings for the Oracle source and target endpoint. For more information,
+     * see the <code>OracleSettings</code> structure.</p>
+     */
+    inline void SetOracleSettings(const OracleSettings& value) { m_oracleSettingsHasBeenSet = true; m_oracleSettings = value; }
+
+    /**
+     * <p>The settings for the Oracle source and target endpoint. For more information,
+     * see the <code>OracleSettings</code> structure.</p>
+     */
+    inline void SetOracleSettings(OracleSettings&& value) { m_oracleSettingsHasBeenSet = true; m_oracleSettings = std::move(value); }
+
+    /**
+     * <p>The settings for the Oracle source and target endpoint. For more information,
+     * see the <code>OracleSettings</code> structure.</p>
+     */
+    inline Endpoint& WithOracleSettings(const OracleSettings& value) { SetOracleSettings(value); return *this;}
+
+    /**
+     * <p>The settings for the Oracle source and target endpoint. For more information,
+     * see the <code>OracleSettings</code> structure.</p>
+     */
+    inline Endpoint& WithOracleSettings(OracleSettings&& value) { SetOracleSettings(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The settings for the SAP ASE source and target endpoint. For more
+     * information, see the <code>SybaseSettings</code> structure.</p>
+     */
+    inline const SybaseSettings& GetSybaseSettings() const{ return m_sybaseSettings; }
+
+    /**
+     * <p>The settings for the SAP ASE source and target endpoint. For more
+     * information, see the <code>SybaseSettings</code> structure.</p>
+     */
+    inline bool SybaseSettingsHasBeenSet() const { return m_sybaseSettingsHasBeenSet; }
+
+    /**
+     * <p>The settings for the SAP ASE source and target endpoint. For more
+     * information, see the <code>SybaseSettings</code> structure.</p>
+     */
+    inline void SetSybaseSettings(const SybaseSettings& value) { m_sybaseSettingsHasBeenSet = true; m_sybaseSettings = value; }
+
+    /**
+     * <p>The settings for the SAP ASE source and target endpoint. For more
+     * information, see the <code>SybaseSettings</code> structure.</p>
+     */
+    inline void SetSybaseSettings(SybaseSettings&& value) { m_sybaseSettingsHasBeenSet = true; m_sybaseSettings = std::move(value); }
+
+    /**
+     * <p>The settings for the SAP ASE source and target endpoint. For more
+     * information, see the <code>SybaseSettings</code> structure.</p>
+     */
+    inline Endpoint& WithSybaseSettings(const SybaseSettings& value) { SetSybaseSettings(value); return *this;}
+
+    /**
+     * <p>The settings for the SAP ASE source and target endpoint. For more
+     * information, see the <code>SybaseSettings</code> structure.</p>
+     */
+    inline Endpoint& WithSybaseSettings(SybaseSettings&& value) { SetSybaseSettings(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The settings for the Microsoft SQL Server source and target endpoint. For
+     * more information, see the <code>MicrosoftSQLServerSettings</code> structure.</p>
+     */
+    inline const MicrosoftSQLServerSettings& GetMicrosoftSQLServerSettings() const{ return m_microsoftSQLServerSettings; }
+
+    /**
+     * <p>The settings for the Microsoft SQL Server source and target endpoint. For
+     * more information, see the <code>MicrosoftSQLServerSettings</code> structure.</p>
+     */
+    inline bool MicrosoftSQLServerSettingsHasBeenSet() const { return m_microsoftSQLServerSettingsHasBeenSet; }
+
+    /**
+     * <p>The settings for the Microsoft SQL Server source and target endpoint. For
+     * more information, see the <code>MicrosoftSQLServerSettings</code> structure.</p>
+     */
+    inline void SetMicrosoftSQLServerSettings(const MicrosoftSQLServerSettings& value) { m_microsoftSQLServerSettingsHasBeenSet = true; m_microsoftSQLServerSettings = value; }
+
+    /**
+     * <p>The settings for the Microsoft SQL Server source and target endpoint. For
+     * more information, see the <code>MicrosoftSQLServerSettings</code> structure.</p>
+     */
+    inline void SetMicrosoftSQLServerSettings(MicrosoftSQLServerSettings&& value) { m_microsoftSQLServerSettingsHasBeenSet = true; m_microsoftSQLServerSettings = std::move(value); }
+
+    /**
+     * <p>The settings for the Microsoft SQL Server source and target endpoint. For
+     * more information, see the <code>MicrosoftSQLServerSettings</code> structure.</p>
+     */
+    inline Endpoint& WithMicrosoftSQLServerSettings(const MicrosoftSQLServerSettings& value) { SetMicrosoftSQLServerSettings(value); return *this;}
+
+    /**
+     * <p>The settings for the Microsoft SQL Server source and target endpoint. For
+     * more information, see the <code>MicrosoftSQLServerSettings</code> structure.</p>
+     */
+    inline Endpoint& WithMicrosoftSQLServerSettings(MicrosoftSQLServerSettings&& value) { SetMicrosoftSQLServerSettings(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The settings for the IBM Db2 LUW source endpoint. For more information, see
+     * the <code>IBMDb2Settings</code> structure. </p>
+     */
+    inline const IBMDb2Settings& GetIBMDb2Settings() const{ return m_iBMDb2Settings; }
+
+    /**
+     * <p>The settings for the IBM Db2 LUW source endpoint. For more information, see
+     * the <code>IBMDb2Settings</code> structure. </p>
+     */
+    inline bool IBMDb2SettingsHasBeenSet() const { return m_iBMDb2SettingsHasBeenSet; }
+
+    /**
+     * <p>The settings for the IBM Db2 LUW source endpoint. For more information, see
+     * the <code>IBMDb2Settings</code> structure. </p>
+     */
+    inline void SetIBMDb2Settings(const IBMDb2Settings& value) { m_iBMDb2SettingsHasBeenSet = true; m_iBMDb2Settings = value; }
+
+    /**
+     * <p>The settings for the IBM Db2 LUW source endpoint. For more information, see
+     * the <code>IBMDb2Settings</code> structure. </p>
+     */
+    inline void SetIBMDb2Settings(IBMDb2Settings&& value) { m_iBMDb2SettingsHasBeenSet = true; m_iBMDb2Settings = std::move(value); }
+
+    /**
+     * <p>The settings for the IBM Db2 LUW source endpoint. For more information, see
+     * the <code>IBMDb2Settings</code> structure. </p>
+     */
+    inline Endpoint& WithIBMDb2Settings(const IBMDb2Settings& value) { SetIBMDb2Settings(value); return *this;}
+
+    /**
+     * <p>The settings for the IBM Db2 LUW source endpoint. For more information, see
+     * the <code>IBMDb2Settings</code> structure. </p>
+     */
+    inline Endpoint& WithIBMDb2Settings(IBMDb2Settings&& value) { SetIBMDb2Settings(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_endpointIdentifier;
@@ -1336,6 +1564,24 @@ namespace Model
 
     RedshiftSettings m_redshiftSettings;
     bool m_redshiftSettingsHasBeenSet;
+
+    PostgreSQLSettings m_postgreSQLSettings;
+    bool m_postgreSQLSettingsHasBeenSet;
+
+    MySQLSettings m_mySQLSettings;
+    bool m_mySQLSettingsHasBeenSet;
+
+    OracleSettings m_oracleSettings;
+    bool m_oracleSettingsHasBeenSet;
+
+    SybaseSettings m_sybaseSettings;
+    bool m_sybaseSettingsHasBeenSet;
+
+    MicrosoftSQLServerSettings m_microsoftSQLServerSettings;
+    bool m_microsoftSQLServerSettingsHasBeenSet;
+
+    IBMDb2Settings m_iBMDb2Settings;
+    bool m_iBMDb2SettingsHasBeenSet;
   };
 
 } // namespace Model

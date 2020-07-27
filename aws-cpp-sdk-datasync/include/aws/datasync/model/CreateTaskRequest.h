@@ -126,81 +126,49 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that is
-     * used to monitor and log events in the task. </p> <p>For more information on
-     * these groups, see Working with Log Groups and Log Streams in the <i>Amazon
-     * CloudWatch User Guide.</i> </p> <p>For more information about how to use
-     * CloudWatch Logs with DataSync, see Monitoring Your Task in the <i>AWS DataSync
-     * User Guide.</i> </p>
+     * used to monitor and log events in the task. </p>
      */
     inline const Aws::String& GetCloudWatchLogGroupArn() const{ return m_cloudWatchLogGroupArn; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that is
-     * used to monitor and log events in the task. </p> <p>For more information on
-     * these groups, see Working with Log Groups and Log Streams in the <i>Amazon
-     * CloudWatch User Guide.</i> </p> <p>For more information about how to use
-     * CloudWatch Logs with DataSync, see Monitoring Your Task in the <i>AWS DataSync
-     * User Guide.</i> </p>
+     * used to monitor and log events in the task. </p>
      */
     inline bool CloudWatchLogGroupArnHasBeenSet() const { return m_cloudWatchLogGroupArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that is
-     * used to monitor and log events in the task. </p> <p>For more information on
-     * these groups, see Working with Log Groups and Log Streams in the <i>Amazon
-     * CloudWatch User Guide.</i> </p> <p>For more information about how to use
-     * CloudWatch Logs with DataSync, see Monitoring Your Task in the <i>AWS DataSync
-     * User Guide.</i> </p>
+     * used to monitor and log events in the task. </p>
      */
     inline void SetCloudWatchLogGroupArn(const Aws::String& value) { m_cloudWatchLogGroupArnHasBeenSet = true; m_cloudWatchLogGroupArn = value; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that is
-     * used to monitor and log events in the task. </p> <p>For more information on
-     * these groups, see Working with Log Groups and Log Streams in the <i>Amazon
-     * CloudWatch User Guide.</i> </p> <p>For more information about how to use
-     * CloudWatch Logs with DataSync, see Monitoring Your Task in the <i>AWS DataSync
-     * User Guide.</i> </p>
+     * used to monitor and log events in the task. </p>
      */
     inline void SetCloudWatchLogGroupArn(Aws::String&& value) { m_cloudWatchLogGroupArnHasBeenSet = true; m_cloudWatchLogGroupArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that is
-     * used to monitor and log events in the task. </p> <p>For more information on
-     * these groups, see Working with Log Groups and Log Streams in the <i>Amazon
-     * CloudWatch User Guide.</i> </p> <p>For more information about how to use
-     * CloudWatch Logs with DataSync, see Monitoring Your Task in the <i>AWS DataSync
-     * User Guide.</i> </p>
+     * used to monitor and log events in the task. </p>
      */
     inline void SetCloudWatchLogGroupArn(const char* value) { m_cloudWatchLogGroupArnHasBeenSet = true; m_cloudWatchLogGroupArn.assign(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that is
-     * used to monitor and log events in the task. </p> <p>For more information on
-     * these groups, see Working with Log Groups and Log Streams in the <i>Amazon
-     * CloudWatch User Guide.</i> </p> <p>For more information about how to use
-     * CloudWatch Logs with DataSync, see Monitoring Your Task in the <i>AWS DataSync
-     * User Guide.</i> </p>
+     * used to monitor and log events in the task. </p>
      */
     inline CreateTaskRequest& WithCloudWatchLogGroupArn(const Aws::String& value) { SetCloudWatchLogGroupArn(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that is
-     * used to monitor and log events in the task. </p> <p>For more information on
-     * these groups, see Working with Log Groups and Log Streams in the <i>Amazon
-     * CloudWatch User Guide.</i> </p> <p>For more information about how to use
-     * CloudWatch Logs with DataSync, see Monitoring Your Task in the <i>AWS DataSync
-     * User Guide.</i> </p>
+     * used to monitor and log events in the task. </p>
      */
     inline CreateTaskRequest& WithCloudWatchLogGroupArn(Aws::String&& value) { SetCloudWatchLogGroupArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that is
-     * used to monitor and log events in the task. </p> <p>For more information on
-     * these groups, see Working with Log Groups and Log Streams in the <i>Amazon
-     * CloudWatch User Guide.</i> </p> <p>For more information about how to use
-     * CloudWatch Logs with DataSync, see Monitoring Your Task in the <i>AWS DataSync
-     * User Guide.</i> </p>
+     * used to monitor and log events in the task. </p>
      */
     inline CreateTaskRequest& WithCloudWatchLogGroupArn(const char* value) { SetCloudWatchLogGroupArn(value); return *this;}
 
@@ -260,8 +228,8 @@ namespace Model
      * You can configure these options to preserve metadata such as user ID (UID) and
      * group ID (GID), file permissions, data integrity verification, and so on.</p>
      * <p>For each individual task execution, you can override these options by
-     * specifying the <code>OverrideOptions</code> before starting a the task
-     * execution. For more information, see the operation. </p>
+     * specifying the <code>OverrideOptions</code> before starting the task execution.
+     * For more information, see the operation. </p>
      */
     inline const Options& GetOptions() const{ return m_options; }
 
@@ -271,8 +239,8 @@ namespace Model
      * You can configure these options to preserve metadata such as user ID (UID) and
      * group ID (GID), file permissions, data integrity verification, and so on.</p>
      * <p>For each individual task execution, you can override these options by
-     * specifying the <code>OverrideOptions</code> before starting a the task
-     * execution. For more information, see the operation. </p>
+     * specifying the <code>OverrideOptions</code> before starting the task execution.
+     * For more information, see the operation. </p>
      */
     inline bool OptionsHasBeenSet() const { return m_optionsHasBeenSet; }
 
@@ -282,8 +250,8 @@ namespace Model
      * You can configure these options to preserve metadata such as user ID (UID) and
      * group ID (GID), file permissions, data integrity verification, and so on.</p>
      * <p>For each individual task execution, you can override these options by
-     * specifying the <code>OverrideOptions</code> before starting a the task
-     * execution. For more information, see the operation. </p>
+     * specifying the <code>OverrideOptions</code> before starting the task execution.
+     * For more information, see the operation. </p>
      */
     inline void SetOptions(const Options& value) { m_optionsHasBeenSet = true; m_options = value; }
 
@@ -293,8 +261,8 @@ namespace Model
      * You can configure these options to preserve metadata such as user ID (UID) and
      * group ID (GID), file permissions, data integrity verification, and so on.</p>
      * <p>For each individual task execution, you can override these options by
-     * specifying the <code>OverrideOptions</code> before starting a the task
-     * execution. For more information, see the operation. </p>
+     * specifying the <code>OverrideOptions</code> before starting the task execution.
+     * For more information, see the operation. </p>
      */
     inline void SetOptions(Options&& value) { m_optionsHasBeenSet = true; m_options = std::move(value); }
 
@@ -304,8 +272,8 @@ namespace Model
      * You can configure these options to preserve metadata such as user ID (UID) and
      * group ID (GID), file permissions, data integrity verification, and so on.</p>
      * <p>For each individual task execution, you can override these options by
-     * specifying the <code>OverrideOptions</code> before starting a the task
-     * execution. For more information, see the operation. </p>
+     * specifying the <code>OverrideOptions</code> before starting the task execution.
+     * For more information, see the operation. </p>
      */
     inline CreateTaskRequest& WithOptions(const Options& value) { SetOptions(value); return *this;}
 
@@ -315,8 +283,8 @@ namespace Model
      * You can configure these options to preserve metadata such as user ID (UID) and
      * group ID (GID), file permissions, data integrity verification, and so on.</p>
      * <p>For each individual task execution, you can override these options by
-     * specifying the <code>OverrideOptions</code> before starting a the task
-     * execution. For more information, see the operation. </p>
+     * specifying the <code>OverrideOptions</code> before starting the task execution.
+     * For more information, see the operation. </p>
      */
     inline CreateTaskRequest& WithOptions(Options&& value) { SetOptions(std::move(value)); return *this;}
 

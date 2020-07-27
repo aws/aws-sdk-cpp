@@ -671,12 +671,13 @@ namespace Model
      * pricing page</a>.</p> <p>Do not set <code>Max Capacity</code> if using
      * <code>WorkerType</code> and <code>NumberOfWorkers</code>.</p> <p>The value that
      * can be allocated for <code>MaxCapacity</code> depends on whether you are running
-     * a Python shell job or an Apache Spark ETL job:</p> <ul> <li> <p>When you specify
-     * a Python shell job (<code>JobCommand.Name</code>="pythonshell"), you can
-     * allocate either 0.0625 or 1 DPU. The default is 0.0625 DPU.</p> </li> <li>
-     * <p>When you specify an Apache Spark ETL job
-     * (<code>JobCommand.Name</code>="glueetl"), you can allocate from 2 to 100 DPUs.
-     * The default is 10 DPUs. This job type cannot have a fractional DPU
+     * a Python shell job, an Apache Spark ETL job, or an Apache Spark streaming ETL
+     * job:</p> <ul> <li> <p>When you specify a Python shell job
+     * (<code>JobCommand.Name</code>="pythonshell"), you can allocate either 0.0625 or
+     * 1 DPU. The default is 0.0625 DPU.</p> </li> <li> <p>When you specify an Apache
+     * Spark ETL job (<code>JobCommand.Name</code>="glueetl") or Apache Spark streaming
+     * ETL job (<code>JobCommand.Name</code>="gluestreaming"), you can allocate from 2
+     * to 100 DPUs. The default is 10 DPUs. This job type cannot have a fractional DPU
      * allocation.</p> </li> </ul>
      */
     inline double GetMaxCapacity() const{ return m_maxCapacity; }
@@ -689,12 +690,13 @@ namespace Model
      * pricing page</a>.</p> <p>Do not set <code>Max Capacity</code> if using
      * <code>WorkerType</code> and <code>NumberOfWorkers</code>.</p> <p>The value that
      * can be allocated for <code>MaxCapacity</code> depends on whether you are running
-     * a Python shell job or an Apache Spark ETL job:</p> <ul> <li> <p>When you specify
-     * a Python shell job (<code>JobCommand.Name</code>="pythonshell"), you can
-     * allocate either 0.0625 or 1 DPU. The default is 0.0625 DPU.</p> </li> <li>
-     * <p>When you specify an Apache Spark ETL job
-     * (<code>JobCommand.Name</code>="glueetl"), you can allocate from 2 to 100 DPUs.
-     * The default is 10 DPUs. This job type cannot have a fractional DPU
+     * a Python shell job, an Apache Spark ETL job, or an Apache Spark streaming ETL
+     * job:</p> <ul> <li> <p>When you specify a Python shell job
+     * (<code>JobCommand.Name</code>="pythonshell"), you can allocate either 0.0625 or
+     * 1 DPU. The default is 0.0625 DPU.</p> </li> <li> <p>When you specify an Apache
+     * Spark ETL job (<code>JobCommand.Name</code>="glueetl") or Apache Spark streaming
+     * ETL job (<code>JobCommand.Name</code>="gluestreaming"), you can allocate from 2
+     * to 100 DPUs. The default is 10 DPUs. This job type cannot have a fractional DPU
      * allocation.</p> </li> </ul>
      */
     inline bool MaxCapacityHasBeenSet() const { return m_maxCapacityHasBeenSet; }
@@ -707,12 +709,13 @@ namespace Model
      * pricing page</a>.</p> <p>Do not set <code>Max Capacity</code> if using
      * <code>WorkerType</code> and <code>NumberOfWorkers</code>.</p> <p>The value that
      * can be allocated for <code>MaxCapacity</code> depends on whether you are running
-     * a Python shell job or an Apache Spark ETL job:</p> <ul> <li> <p>When you specify
-     * a Python shell job (<code>JobCommand.Name</code>="pythonshell"), you can
-     * allocate either 0.0625 or 1 DPU. The default is 0.0625 DPU.</p> </li> <li>
-     * <p>When you specify an Apache Spark ETL job
-     * (<code>JobCommand.Name</code>="glueetl"), you can allocate from 2 to 100 DPUs.
-     * The default is 10 DPUs. This job type cannot have a fractional DPU
+     * a Python shell job, an Apache Spark ETL job, or an Apache Spark streaming ETL
+     * job:</p> <ul> <li> <p>When you specify a Python shell job
+     * (<code>JobCommand.Name</code>="pythonshell"), you can allocate either 0.0625 or
+     * 1 DPU. The default is 0.0625 DPU.</p> </li> <li> <p>When you specify an Apache
+     * Spark ETL job (<code>JobCommand.Name</code>="glueetl") or Apache Spark streaming
+     * ETL job (<code>JobCommand.Name</code>="gluestreaming"), you can allocate from 2
+     * to 100 DPUs. The default is 10 DPUs. This job type cannot have a fractional DPU
      * allocation.</p> </li> </ul>
      */
     inline void SetMaxCapacity(double value) { m_maxCapacityHasBeenSet = true; m_maxCapacity = value; }
@@ -725,12 +728,13 @@ namespace Model
      * pricing page</a>.</p> <p>Do not set <code>Max Capacity</code> if using
      * <code>WorkerType</code> and <code>NumberOfWorkers</code>.</p> <p>The value that
      * can be allocated for <code>MaxCapacity</code> depends on whether you are running
-     * a Python shell job or an Apache Spark ETL job:</p> <ul> <li> <p>When you specify
-     * a Python shell job (<code>JobCommand.Name</code>="pythonshell"), you can
-     * allocate either 0.0625 or 1 DPU. The default is 0.0625 DPU.</p> </li> <li>
-     * <p>When you specify an Apache Spark ETL job
-     * (<code>JobCommand.Name</code>="glueetl"), you can allocate from 2 to 100 DPUs.
-     * The default is 10 DPUs. This job type cannot have a fractional DPU
+     * a Python shell job, an Apache Spark ETL job, or an Apache Spark streaming ETL
+     * job:</p> <ul> <li> <p>When you specify a Python shell job
+     * (<code>JobCommand.Name</code>="pythonshell"), you can allocate either 0.0625 or
+     * 1 DPU. The default is 0.0625 DPU.</p> </li> <li> <p>When you specify an Apache
+     * Spark ETL job (<code>JobCommand.Name</code>="glueetl") or Apache Spark streaming
+     * ETL job (<code>JobCommand.Name</code>="gluestreaming"), you can allocate from 2
+     * to 100 DPUs. The default is 10 DPUs. This job type cannot have a fractional DPU
      * allocation.</p> </li> </ul>
      */
     inline Job& WithMaxCapacity(double value) { SetMaxCapacity(value); return *this;}

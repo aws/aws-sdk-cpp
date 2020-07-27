@@ -25,7 +25,9 @@ namespace Model
 {
 
   /**
-   * <p>Describes a command filter.</p><p><h3>See Also:</h3>   <a
+   * <p>Describes a command filter.</p>  <p>An instance ID can't be specified
+   * when a command status is <code>Pending</code> because the command hasn't run on
+   * the instance yet.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CommandFilter">AWS
    * API Reference</a></p>
    */

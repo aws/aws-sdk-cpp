@@ -14,7 +14,6 @@ using namespace Aws::Utils;
 
 PutExternalModelRequest::PutExternalModelRequest() : 
     m_modelEndpointHasBeenSet(false),
-    m_eventTypeNameHasBeenSet(false),
     m_modelSource(ModelSource::NOT_SET),
     m_modelSourceHasBeenSet(false),
     m_invokeModelEndpointRoleArnHasBeenSet(false),
@@ -33,12 +32,6 @@ Aws::String PutExternalModelRequest::SerializePayload() const
   if(m_modelEndpointHasBeenSet)
   {
    payload.WithString("modelEndpoint", m_modelEndpoint);
-
-  }
-
-  if(m_eventTypeNameHasBeenSet)
-  {
-   payload.WithString("eventTypeName", m_eventTypeName);
 
   }
 

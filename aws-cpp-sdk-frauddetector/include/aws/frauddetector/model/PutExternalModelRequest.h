@@ -82,47 +82,6 @@ namespace Model
 
 
     /**
-     * <p>The event type name.</p>
-     */
-    inline const Aws::String& GetEventTypeName() const{ return m_eventTypeName; }
-
-    /**
-     * <p>The event type name.</p>
-     */
-    inline bool EventTypeNameHasBeenSet() const { return m_eventTypeNameHasBeenSet; }
-
-    /**
-     * <p>The event type name.</p>
-     */
-    inline void SetEventTypeName(const Aws::String& value) { m_eventTypeNameHasBeenSet = true; m_eventTypeName = value; }
-
-    /**
-     * <p>The event type name.</p>
-     */
-    inline void SetEventTypeName(Aws::String&& value) { m_eventTypeNameHasBeenSet = true; m_eventTypeName = std::move(value); }
-
-    /**
-     * <p>The event type name.</p>
-     */
-    inline void SetEventTypeName(const char* value) { m_eventTypeNameHasBeenSet = true; m_eventTypeName.assign(value); }
-
-    /**
-     * <p>The event type name.</p>
-     */
-    inline PutExternalModelRequest& WithEventTypeName(const Aws::String& value) { SetEventTypeName(value); return *this;}
-
-    /**
-     * <p>The event type name.</p>
-     */
-    inline PutExternalModelRequest& WithEventTypeName(Aws::String&& value) { SetEventTypeName(std::move(value)); return *this;}
-
-    /**
-     * <p>The event type name.</p>
-     */
-    inline PutExternalModelRequest& WithEventTypeName(const char* value) { SetEventTypeName(value); return *this;}
-
-
-    /**
      * <p>The source of the model.</p>
      */
     inline const ModelSource& GetModelSource() const{ return m_modelSource; }
@@ -331,9 +290,6 @@ namespace Model
 
     Aws::String m_modelEndpoint;
     bool m_modelEndpointHasBeenSet;
-
-    Aws::String m_eventTypeName;
-    bool m_eventTypeNameHasBeenSet;
 
     ModelSource m_modelSource;
     bool m_modelSourceHasBeenSet;

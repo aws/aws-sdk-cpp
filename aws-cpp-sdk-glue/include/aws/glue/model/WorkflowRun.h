@@ -44,42 +44,42 @@ namespace Model
 
 
     /**
-     * <p>Name of the workflow which was executed.</p>
+     * <p>Name of the workflow that was executed.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>Name of the workflow which was executed.</p>
+     * <p>Name of the workflow that was executed.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>Name of the workflow which was executed.</p>
+     * <p>Name of the workflow that was executed.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>Name of the workflow which was executed.</p>
+     * <p>Name of the workflow that was executed.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>Name of the workflow which was executed.</p>
+     * <p>Name of the workflow that was executed.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>Name of the workflow which was executed.</p>
+     * <p>Name of the workflow that was executed.</p>
      */
     inline WorkflowRun& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>Name of the workflow which was executed.</p>
+     * <p>Name of the workflow that was executed.</p>
      */
     inline WorkflowRun& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>Name of the workflow which was executed.</p>
+     * <p>Name of the workflow that was executed.</p>
      */
     inline WorkflowRun& WithName(const char* value) { SetName(value); return *this;}
 
@@ -123,6 +123,47 @@ namespace Model
      * <p>The ID of this workflow run.</p>
      */
     inline WorkflowRun& WithWorkflowRunId(const char* value) { SetWorkflowRunId(value); return *this;}
+
+
+    /**
+     * <p>The ID of the previous workflow run.</p>
+     */
+    inline const Aws::String& GetPreviousRunId() const{ return m_previousRunId; }
+
+    /**
+     * <p>The ID of the previous workflow run.</p>
+     */
+    inline bool PreviousRunIdHasBeenSet() const { return m_previousRunIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the previous workflow run.</p>
+     */
+    inline void SetPreviousRunId(const Aws::String& value) { m_previousRunIdHasBeenSet = true; m_previousRunId = value; }
+
+    /**
+     * <p>The ID of the previous workflow run.</p>
+     */
+    inline void SetPreviousRunId(Aws::String&& value) { m_previousRunIdHasBeenSet = true; m_previousRunId = std::move(value); }
+
+    /**
+     * <p>The ID of the previous workflow run.</p>
+     */
+    inline void SetPreviousRunId(const char* value) { m_previousRunIdHasBeenSet = true; m_previousRunId.assign(value); }
+
+    /**
+     * <p>The ID of the previous workflow run.</p>
+     */
+    inline WorkflowRun& WithPreviousRunId(const Aws::String& value) { SetPreviousRunId(value); return *this;}
+
+    /**
+     * <p>The ID of the previous workflow run.</p>
+     */
+    inline WorkflowRun& WithPreviousRunId(Aws::String&& value) { SetPreviousRunId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the previous workflow run.</p>
+     */
+    inline WorkflowRun& WithPreviousRunId(const char* value) { SetPreviousRunId(value); return *this;}
 
 
     /**
@@ -358,6 +399,9 @@ namespace Model
 
     Aws::String m_workflowRunId;
     bool m_workflowRunIdHasBeenSet;
+
+    Aws::String m_previousRunId;
+    bool m_previousRunIdHasBeenSet;
 
     Aws::Map<Aws::String, Aws::String> m_workflowRunProperties;
     bool m_workflowRunPropertiesHasBeenSet;

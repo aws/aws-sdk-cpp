@@ -121,6 +121,7 @@
 #include <aws/glue/model/PutResourcePolicyRequest.h>
 #include <aws/glue/model/PutWorkflowRunPropertiesRequest.h>
 #include <aws/glue/model/ResetJobBookmarkRequest.h>
+#include <aws/glue/model/ResumeWorkflowRunRequest.h>
 #include <aws/glue/model/SearchTablesRequest.h>
 #include <aws/glue/model/StartCrawlerRequest.h>
 #include <aws/glue/model/StartCrawlerScheduleRequest.h>
@@ -2950,6 +2951,33 @@ void GlueClient::ResetJobBookmarkAsync(const ResetJobBookmarkRequest& request, c
 void GlueClient::ResetJobBookmarkAsyncHelper(const ResetJobBookmarkRequest& request, const ResetJobBookmarkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ResetJobBookmark(request), context);
+}
+
+ResumeWorkflowRunOutcome GlueClient::ResumeWorkflowRun(const ResumeWorkflowRunRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return ResumeWorkflowRunOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ResumeWorkflowRunOutcomeCallable GlueClient::ResumeWorkflowRunCallable(const ResumeWorkflowRunRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ResumeWorkflowRunOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ResumeWorkflowRun(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GlueClient::ResumeWorkflowRunAsync(const ResumeWorkflowRunRequest& request, const ResumeWorkflowRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ResumeWorkflowRunAsyncHelper( request, handler, context ); } );
+}
+
+void GlueClient::ResumeWorkflowRunAsyncHelper(const ResumeWorkflowRunRequest& request, const ResumeWorkflowRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ResumeWorkflowRun(request), context);
 }
 
 SearchTablesOutcome GlueClient::SearchTables(const SearchTablesRequest& request) const

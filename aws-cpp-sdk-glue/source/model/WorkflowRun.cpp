@@ -21,6 +21,7 @@ namespace Model
 WorkflowRun::WorkflowRun() : 
     m_nameHasBeenSet(false),
     m_workflowRunIdHasBeenSet(false),
+    m_previousRunIdHasBeenSet(false),
     m_workflowRunPropertiesHasBeenSet(false),
     m_startedOnHasBeenSet(false),
     m_completedOnHasBeenSet(false),
@@ -34,6 +35,7 @@ WorkflowRun::WorkflowRun() :
 WorkflowRun::WorkflowRun(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
     m_workflowRunIdHasBeenSet(false),
+    m_previousRunIdHasBeenSet(false),
     m_workflowRunPropertiesHasBeenSet(false),
     m_startedOnHasBeenSet(false),
     m_completedOnHasBeenSet(false),
@@ -59,6 +61,13 @@ WorkflowRun& WorkflowRun::operator =(JsonView jsonValue)
     m_workflowRunId = jsonValue.GetString("WorkflowRunId");
 
     m_workflowRunIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("PreviousRunId"))
+  {
+    m_previousRunId = jsonValue.GetString("PreviousRunId");
+
+    m_previousRunIdHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("WorkflowRunProperties"))
@@ -122,6 +131,12 @@ JsonValue WorkflowRun::Jsonize() const
   if(m_workflowRunIdHasBeenSet)
   {
    payload.WithString("WorkflowRunId", m_workflowRunId);
+
+  }
+
+  if(m_previousRunIdHasBeenSet)
+  {
+   payload.WithString("PreviousRunId", m_previousRunId);
 
   }
 

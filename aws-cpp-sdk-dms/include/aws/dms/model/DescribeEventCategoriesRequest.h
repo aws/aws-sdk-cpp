@@ -89,42 +89,42 @@ namespace Model
 
 
     /**
-     * <p>Filters applied to the action.</p>
+     * <p>Filters applied to the event categories.</p>
      */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
 
     /**
-     * <p>Filters applied to the action.</p>
+     * <p>Filters applied to the event categories.</p>
      */
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
     /**
-     * <p>Filters applied to the action.</p>
+     * <p>Filters applied to the event categories.</p>
      */
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
-     * <p>Filters applied to the action.</p>
+     * <p>Filters applied to the event categories.</p>
      */
     inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
     /**
-     * <p>Filters applied to the action.</p>
+     * <p>Filters applied to the event categories.</p>
      */
     inline DescribeEventCategoriesRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
 
     /**
-     * <p>Filters applied to the action.</p>
+     * <p>Filters applied to the event categories.</p>
      */
     inline DescribeEventCategoriesRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
 
     /**
-     * <p>Filters applied to the action.</p>
+     * <p>Filters applied to the event categories.</p>
      */
     inline DescribeEventCategoriesRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
     /**
-     * <p>Filters applied to the action.</p>
+     * <p>Filters applied to the event categories.</p>
      */
     inline DescribeEventCategoriesRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 

@@ -45,7 +45,7 @@ namespace Model
      * system is used to read data from the EFS source location or write data to the
      * EFS destination. By default, AWS DataSync uses the root directory.</p> 
      * <p> <code>Subdirectory</code> must be specified with forward slashes. For
-     * example <code>/path/to/folder</code>.</p> 
+     * example, <code>/path/to/folder</code>.</p> 
      */
     inline const Aws::String& GetSubdirectory() const{ return m_subdirectory; }
 
@@ -54,7 +54,7 @@ namespace Model
      * system is used to read data from the EFS source location or write data to the
      * EFS destination. By default, AWS DataSync uses the root directory.</p> 
      * <p> <code>Subdirectory</code> must be specified with forward slashes. For
-     * example <code>/path/to/folder</code>.</p> 
+     * example, <code>/path/to/folder</code>.</p> 
      */
     inline bool SubdirectoryHasBeenSet() const { return m_subdirectoryHasBeenSet; }
 
@@ -63,7 +63,7 @@ namespace Model
      * system is used to read data from the EFS source location or write data to the
      * EFS destination. By default, AWS DataSync uses the root directory.</p> 
      * <p> <code>Subdirectory</code> must be specified with forward slashes. For
-     * example <code>/path/to/folder</code>.</p> 
+     * example, <code>/path/to/folder</code>.</p> 
      */
     inline void SetSubdirectory(const Aws::String& value) { m_subdirectoryHasBeenSet = true; m_subdirectory = value; }
 
@@ -72,7 +72,7 @@ namespace Model
      * system is used to read data from the EFS source location or write data to the
      * EFS destination. By default, AWS DataSync uses the root directory.</p> 
      * <p> <code>Subdirectory</code> must be specified with forward slashes. For
-     * example <code>/path/to/folder</code>.</p> 
+     * example, <code>/path/to/folder</code>.</p> 
      */
     inline void SetSubdirectory(Aws::String&& value) { m_subdirectoryHasBeenSet = true; m_subdirectory = std::move(value); }
 
@@ -81,7 +81,7 @@ namespace Model
      * system is used to read data from the EFS source location or write data to the
      * EFS destination. By default, AWS DataSync uses the root directory.</p> 
      * <p> <code>Subdirectory</code> must be specified with forward slashes. For
-     * example <code>/path/to/folder</code>.</p> 
+     * example, <code>/path/to/folder</code>.</p> 
      */
     inline void SetSubdirectory(const char* value) { m_subdirectoryHasBeenSet = true; m_subdirectory.assign(value); }
 
@@ -90,7 +90,7 @@ namespace Model
      * system is used to read data from the EFS source location or write data to the
      * EFS destination. By default, AWS DataSync uses the root directory.</p> 
      * <p> <code>Subdirectory</code> must be specified with forward slashes. For
-     * example <code>/path/to/folder</code>.</p> 
+     * example, <code>/path/to/folder</code>.</p> 
      */
     inline CreateLocationEfsRequest& WithSubdirectory(const Aws::String& value) { SetSubdirectory(value); return *this;}
 
@@ -99,7 +99,7 @@ namespace Model
      * system is used to read data from the EFS source location or write data to the
      * EFS destination. By default, AWS DataSync uses the root directory.</p> 
      * <p> <code>Subdirectory</code> must be specified with forward slashes. For
-     * example <code>/path/to/folder</code>.</p> 
+     * example, <code>/path/to/folder</code>.</p> 
      */
     inline CreateLocationEfsRequest& WithSubdirectory(Aws::String&& value) { SetSubdirectory(std::move(value)); return *this;}
 
@@ -108,7 +108,7 @@ namespace Model
      * system is used to read data from the EFS source location or write data to the
      * EFS destination. By default, AWS DataSync uses the root directory.</p> 
      * <p> <code>Subdirectory</code> must be specified with forward slashes. For
-     * example <code>/path/to/folder</code>.</p> 
+     * example, <code>/path/to/folder</code>.</p> 
      */
     inline CreateLocationEfsRequest& WithSubdirectory(const char* value) { SetSubdirectory(value); return *this;}
 

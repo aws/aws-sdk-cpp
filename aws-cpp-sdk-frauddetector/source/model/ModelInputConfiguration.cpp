@@ -19,6 +19,7 @@ namespace Model
 {
 
 ModelInputConfiguration::ModelInputConfiguration() : 
+    m_eventTypeNameHasBeenSet(false),
     m_format(ModelInputDataFormat::NOT_SET),
     m_formatHasBeenSet(false),
     m_useEventVariables(false),
@@ -29,6 +30,7 @@ ModelInputConfiguration::ModelInputConfiguration() :
 }
 
 ModelInputConfiguration::ModelInputConfiguration(JsonView jsonValue) : 
+    m_eventTypeNameHasBeenSet(false),
     m_format(ModelInputDataFormat::NOT_SET),
     m_formatHasBeenSet(false),
     m_useEventVariables(false),
@@ -41,6 +43,13 @@ ModelInputConfiguration::ModelInputConfiguration(JsonView jsonValue) :
 
 ModelInputConfiguration& ModelInputConfiguration::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("eventTypeName"))
+  {
+    m_eventTypeName = jsonValue.GetString("eventTypeName");
+
+    m_eventTypeNameHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("format"))
   {
     m_format = ModelInputDataFormatMapper::GetModelInputDataFormatForName(jsonValue.GetString("format"));
@@ -75,6 +84,12 @@ ModelInputConfiguration& ModelInputConfiguration::operator =(JsonView jsonValue)
 JsonValue ModelInputConfiguration::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_eventTypeNameHasBeenSet)
+  {
+   payload.WithString("eventTypeName", m_eventTypeName);
+
+  }
 
   if(m_formatHasBeenSet)
   {

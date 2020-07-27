@@ -267,82 +267,82 @@ namespace Model
 
 
     /**
-     * <p>The ID of the VPC (Virtual Private Cloud) endpoint that the agent has access
+     * <p>The ID of the VPC (virtual private cloud) endpoint that the agent has access
      * to. This is the client-side VPC endpoint, also called a PrivateLink. If you
      * don't have a PrivateLink VPC endpoint, see <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-service.html#create-endpoint-service">Creating
-     * a VPC Endpoint Service Configuration</a> in the AWS VPC User Guide.</p> <p>VPC
-     * endpoint ID looks like this: <code>vpce-01234d5aff67890e1</code>.</p>
+     * a VPC Endpoint Service Configuration</a> in the Amazon VPC User Guide.</p>
+     * <p>VPC endpoint ID looks like this: <code>vpce-01234d5aff67890e1</code>.</p>
      */
     inline const Aws::String& GetVpcEndpointId() const{ return m_vpcEndpointId; }
 
     /**
-     * <p>The ID of the VPC (Virtual Private Cloud) endpoint that the agent has access
+     * <p>The ID of the VPC (virtual private cloud) endpoint that the agent has access
      * to. This is the client-side VPC endpoint, also called a PrivateLink. If you
      * don't have a PrivateLink VPC endpoint, see <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-service.html#create-endpoint-service">Creating
-     * a VPC Endpoint Service Configuration</a> in the AWS VPC User Guide.</p> <p>VPC
-     * endpoint ID looks like this: <code>vpce-01234d5aff67890e1</code>.</p>
+     * a VPC Endpoint Service Configuration</a> in the Amazon VPC User Guide.</p>
+     * <p>VPC endpoint ID looks like this: <code>vpce-01234d5aff67890e1</code>.</p>
      */
     inline bool VpcEndpointIdHasBeenSet() const { return m_vpcEndpointIdHasBeenSet; }
 
     /**
-     * <p>The ID of the VPC (Virtual Private Cloud) endpoint that the agent has access
+     * <p>The ID of the VPC (virtual private cloud) endpoint that the agent has access
      * to. This is the client-side VPC endpoint, also called a PrivateLink. If you
      * don't have a PrivateLink VPC endpoint, see <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-service.html#create-endpoint-service">Creating
-     * a VPC Endpoint Service Configuration</a> in the AWS VPC User Guide.</p> <p>VPC
-     * endpoint ID looks like this: <code>vpce-01234d5aff67890e1</code>.</p>
+     * a VPC Endpoint Service Configuration</a> in the Amazon VPC User Guide.</p>
+     * <p>VPC endpoint ID looks like this: <code>vpce-01234d5aff67890e1</code>.</p>
      */
     inline void SetVpcEndpointId(const Aws::String& value) { m_vpcEndpointIdHasBeenSet = true; m_vpcEndpointId = value; }
 
     /**
-     * <p>The ID of the VPC (Virtual Private Cloud) endpoint that the agent has access
+     * <p>The ID of the VPC (virtual private cloud) endpoint that the agent has access
      * to. This is the client-side VPC endpoint, also called a PrivateLink. If you
      * don't have a PrivateLink VPC endpoint, see <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-service.html#create-endpoint-service">Creating
-     * a VPC Endpoint Service Configuration</a> in the AWS VPC User Guide.</p> <p>VPC
-     * endpoint ID looks like this: <code>vpce-01234d5aff67890e1</code>.</p>
+     * a VPC Endpoint Service Configuration</a> in the Amazon VPC User Guide.</p>
+     * <p>VPC endpoint ID looks like this: <code>vpce-01234d5aff67890e1</code>.</p>
      */
     inline void SetVpcEndpointId(Aws::String&& value) { m_vpcEndpointIdHasBeenSet = true; m_vpcEndpointId = std::move(value); }
 
     /**
-     * <p>The ID of the VPC (Virtual Private Cloud) endpoint that the agent has access
+     * <p>The ID of the VPC (virtual private cloud) endpoint that the agent has access
      * to. This is the client-side VPC endpoint, also called a PrivateLink. If you
      * don't have a PrivateLink VPC endpoint, see <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-service.html#create-endpoint-service">Creating
-     * a VPC Endpoint Service Configuration</a> in the AWS VPC User Guide.</p> <p>VPC
-     * endpoint ID looks like this: <code>vpce-01234d5aff67890e1</code>.</p>
+     * a VPC Endpoint Service Configuration</a> in the Amazon VPC User Guide.</p>
+     * <p>VPC endpoint ID looks like this: <code>vpce-01234d5aff67890e1</code>.</p>
      */
     inline void SetVpcEndpointId(const char* value) { m_vpcEndpointIdHasBeenSet = true; m_vpcEndpointId.assign(value); }
 
     /**
-     * <p>The ID of the VPC (Virtual Private Cloud) endpoint that the agent has access
+     * <p>The ID of the VPC (virtual private cloud) endpoint that the agent has access
      * to. This is the client-side VPC endpoint, also called a PrivateLink. If you
      * don't have a PrivateLink VPC endpoint, see <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-service.html#create-endpoint-service">Creating
-     * a VPC Endpoint Service Configuration</a> in the AWS VPC User Guide.</p> <p>VPC
-     * endpoint ID looks like this: <code>vpce-01234d5aff67890e1</code>.</p>
+     * a VPC Endpoint Service Configuration</a> in the Amazon VPC User Guide.</p>
+     * <p>VPC endpoint ID looks like this: <code>vpce-01234d5aff67890e1</code>.</p>
      */
     inline CreateAgentRequest& WithVpcEndpointId(const Aws::String& value) { SetVpcEndpointId(value); return *this;}
 
     /**
-     * <p>The ID of the VPC (Virtual Private Cloud) endpoint that the agent has access
+     * <p>The ID of the VPC (virtual private cloud) endpoint that the agent has access
      * to. This is the client-side VPC endpoint, also called a PrivateLink. If you
      * don't have a PrivateLink VPC endpoint, see <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-service.html#create-endpoint-service">Creating
-     * a VPC Endpoint Service Configuration</a> in the AWS VPC User Guide.</p> <p>VPC
-     * endpoint ID looks like this: <code>vpce-01234d5aff67890e1</code>.</p>
+     * a VPC Endpoint Service Configuration</a> in the Amazon VPC User Guide.</p>
+     * <p>VPC endpoint ID looks like this: <code>vpce-01234d5aff67890e1</code>.</p>
      */
     inline CreateAgentRequest& WithVpcEndpointId(Aws::String&& value) { SetVpcEndpointId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the VPC (Virtual Private Cloud) endpoint that the agent has access
+     * <p>The ID of the VPC (virtual private cloud) endpoint that the agent has access
      * to. This is the client-side VPC endpoint, also called a PrivateLink. If you
      * don't have a PrivateLink VPC endpoint, see <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-service.html#create-endpoint-service">Creating
-     * a VPC Endpoint Service Configuration</a> in the AWS VPC User Guide.</p> <p>VPC
-     * endpoint ID looks like this: <code>vpce-01234d5aff67890e1</code>.</p>
+     * a VPC Endpoint Service Configuration</a> in the Amazon VPC User Guide.</p>
+     * <p>VPC endpoint ID looks like this: <code>vpce-01234d5aff67890e1</code>.</p>
      */
     inline CreateAgentRequest& WithVpcEndpointId(const char* value) { SetVpcEndpointId(value); return *this;}
 
