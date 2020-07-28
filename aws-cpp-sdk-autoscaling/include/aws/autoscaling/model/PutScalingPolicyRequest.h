@@ -179,7 +179,7 @@ namespace Model
 
 
     /**
-     * <p>Specifies how the scaling adjustment is interpreted (either an absolute
+     * <p>Specifies how the scaling adjustment is interpreted (for example, an absolute
      * number or a percentage). The valid values are <code>ChangeInCapacity</code>,
      * <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.</p>
      * <p>Required if the policy type is <code>StepScaling</code> or
@@ -190,7 +190,7 @@ namespace Model
     inline const Aws::String& GetAdjustmentType() const{ return m_adjustmentType; }
 
     /**
-     * <p>Specifies how the scaling adjustment is interpreted (either an absolute
+     * <p>Specifies how the scaling adjustment is interpreted (for example, an absolute
      * number or a percentage). The valid values are <code>ChangeInCapacity</code>,
      * <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.</p>
      * <p>Required if the policy type is <code>StepScaling</code> or
@@ -201,7 +201,7 @@ namespace Model
     inline bool AdjustmentTypeHasBeenSet() const { return m_adjustmentTypeHasBeenSet; }
 
     /**
-     * <p>Specifies how the scaling adjustment is interpreted (either an absolute
+     * <p>Specifies how the scaling adjustment is interpreted (for example, an absolute
      * number or a percentage). The valid values are <code>ChangeInCapacity</code>,
      * <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.</p>
      * <p>Required if the policy type is <code>StepScaling</code> or
@@ -212,7 +212,7 @@ namespace Model
     inline void SetAdjustmentType(const Aws::String& value) { m_adjustmentTypeHasBeenSet = true; m_adjustmentType = value; }
 
     /**
-     * <p>Specifies how the scaling adjustment is interpreted (either an absolute
+     * <p>Specifies how the scaling adjustment is interpreted (for example, an absolute
      * number or a percentage). The valid values are <code>ChangeInCapacity</code>,
      * <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.</p>
      * <p>Required if the policy type is <code>StepScaling</code> or
@@ -223,7 +223,7 @@ namespace Model
     inline void SetAdjustmentType(Aws::String&& value) { m_adjustmentTypeHasBeenSet = true; m_adjustmentType = std::move(value); }
 
     /**
-     * <p>Specifies how the scaling adjustment is interpreted (either an absolute
+     * <p>Specifies how the scaling adjustment is interpreted (for example, an absolute
      * number or a percentage). The valid values are <code>ChangeInCapacity</code>,
      * <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.</p>
      * <p>Required if the policy type is <code>StepScaling</code> or
@@ -234,7 +234,7 @@ namespace Model
     inline void SetAdjustmentType(const char* value) { m_adjustmentTypeHasBeenSet = true; m_adjustmentType.assign(value); }
 
     /**
-     * <p>Specifies how the scaling adjustment is interpreted (either an absolute
+     * <p>Specifies how the scaling adjustment is interpreted (for example, an absolute
      * number or a percentage). The valid values are <code>ChangeInCapacity</code>,
      * <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.</p>
      * <p>Required if the policy type is <code>StepScaling</code> or
@@ -245,7 +245,7 @@ namespace Model
     inline PutScalingPolicyRequest& WithAdjustmentType(const Aws::String& value) { SetAdjustmentType(value); return *this;}
 
     /**
-     * <p>Specifies how the scaling adjustment is interpreted (either an absolute
+     * <p>Specifies how the scaling adjustment is interpreted (for example, an absolute
      * number or a percentage). The valid values are <code>ChangeInCapacity</code>,
      * <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.</p>
      * <p>Required if the policy type is <code>StepScaling</code> or
@@ -256,7 +256,7 @@ namespace Model
     inline PutScalingPolicyRequest& WithAdjustmentType(Aws::String&& value) { SetAdjustmentType(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies how the scaling adjustment is interpreted (either an absolute
+     * <p>Specifies how the scaling adjustment is interpreted (for example, an absolute
      * number or a percentage). The valid values are <code>ChangeInCapacity</code>,
      * <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.</p>
      * <p>Required if the policy type is <code>StepScaling</code> or

@@ -8,6 +8,8 @@
 #include <aws/ec2/EC2Request.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/GatewayType.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/ec2/model/TagSpecification.h>
 #include <utility>
 
 namespace Aws
@@ -113,6 +115,47 @@ namespace Model
 
 
     /**
+     * <p>The tags to apply to the virtual private gateway.</p>
+     */
+    inline const Aws::Vector<TagSpecification>& GetTagSpecifications() const{ return m_tagSpecifications; }
+
+    /**
+     * <p>The tags to apply to the virtual private gateway.</p>
+     */
+    inline bool TagSpecificationsHasBeenSet() const { return m_tagSpecificationsHasBeenSet; }
+
+    /**
+     * <p>The tags to apply to the virtual private gateway.</p>
+     */
+    inline void SetTagSpecifications(const Aws::Vector<TagSpecification>& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = value; }
+
+    /**
+     * <p>The tags to apply to the virtual private gateway.</p>
+     */
+    inline void SetTagSpecifications(Aws::Vector<TagSpecification>&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = std::move(value); }
+
+    /**
+     * <p>The tags to apply to the virtual private gateway.</p>
+     */
+    inline CreateVpnGatewayRequest& WithTagSpecifications(const Aws::Vector<TagSpecification>& value) { SetTagSpecifications(value); return *this;}
+
+    /**
+     * <p>The tags to apply to the virtual private gateway.</p>
+     */
+    inline CreateVpnGatewayRequest& WithTagSpecifications(Aws::Vector<TagSpecification>&& value) { SetTagSpecifications(std::move(value)); return *this;}
+
+    /**
+     * <p>The tags to apply to the virtual private gateway.</p>
+     */
+    inline CreateVpnGatewayRequest& AddTagSpecifications(const TagSpecification& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(value); return *this; }
+
+    /**
+     * <p>The tags to apply to the virtual private gateway.</p>
+     */
+    inline CreateVpnGatewayRequest& AddTagSpecifications(TagSpecification&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(std::move(value)); return *this; }
+
+
+    /**
      * <p>A private Autonomous System Number (ASN) for the Amazon side of a BGP
      * session. If you're using a 16-bit ASN, it must be in the 64512 to 65534 range.
      * If you're using a 32-bit ASN, it must be in the 4200000000 to 4294967294
@@ -184,6 +227,9 @@ namespace Model
 
     GatewayType m_type;
     bool m_typeHasBeenSet;
+
+    Aws::Vector<TagSpecification> m_tagSpecifications;
+    bool m_tagSpecificationsHasBeenSet;
 
     long long m_amazonSideAsn;
     bool m_amazonSideAsnHasBeenSet;

@@ -30,7 +30,8 @@ CreateLaunchConfigurationRequest::CreateLaunchConfigurationRequest() :
     m_ebsOptimizedHasBeenSet(false),
     m_associatePublicIpAddress(false),
     m_associatePublicIpAddressHasBeenSet(false),
-    m_placementTenancyHasBeenSet(false)
+    m_placementTenancyHasBeenSet(false),
+    m_metadataOptionsHasBeenSet(false)
 {
 }
 
@@ -143,6 +144,11 @@ Aws::String CreateLaunchConfigurationRequest::SerializePayload() const
   if(m_placementTenancyHasBeenSet)
   {
     ss << "PlacementTenancy=" << StringUtils::URLEncode(m_placementTenancy.c_str()) << "&";
+  }
+
+  if(m_metadataOptionsHasBeenSet)
+  {
+    m_metadataOptions.OutputToStream(ss, "MetadataOptions");
   }
 
   ss << "Version=2011-01-01";

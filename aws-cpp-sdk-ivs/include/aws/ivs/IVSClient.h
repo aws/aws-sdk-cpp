@@ -150,15 +150,23 @@ namespace Model
    * is REST compatible, using a standard HTTP API and an <a
    * href="http://aws.amazon.com/sns">AWS SNS</a> event stream for responses. JSON is
    * used for both requests and responses, including errors.</p> <p>The API is an AWS
-   * regional service, currently in these regions: us-west-2, us-east-2, and
+   * regional service, currently in these regions: us-west-2, us-east-1, and
    * eu-west-1.</p> <p> <i> <b>All API request parameters and URLs are case
    * sensitive. </b> </i> </p> <p>For a summary of notable documentation changes in
    * each release, see <a
    * href="https://docs.aws.amazon.com/ivs/latest/userguide/doc-history.html">
-   * Document History</a>.</p> <p> <b>Allowed Header Values</b> </p> <ul> <li> <p>
-   * <code> <b>Accept:</b> </code> application/json</p> </li> <li> <p> <code>
-   * <b>Accept-Encoding:</b> </code> gzip, deflate</p> </li> <li> <p> <code>
-   * <b>Content-Type:</b> </code>application/json</p> </li> </ul> <p>
+   * Document History</a>.</p> <p> <b>Service Endpoints</b> </p> <p>The following are
+   * the Amazon IVS service endpoints (all HTTPS): </p> <p>Region name: US West
+   * (Oregon)</p> <ul> <li> <p>Region: <code>us-west-2</code> </p> </li> <li>
+   * <p>Endpoint: <code>ivs.us-west-2.amazonaws.com</code> </p> </li> </ul> <p>Region
+   * name: US East (Virginia)</p> <ul> <li> <p>Region: <code>us-east-1</code> </p>
+   * </li> <li> <p>Endpoint: <code>ivs.us-east-1.amazonaws.com</code> </p> </li>
+   * </ul> <p>Region name: EU West (Dublin)</p> <ul> <li> <p>Region:
+   * <code>eu-west-1</code> </p> </li> <li> <p>Endpoint:
+   * <code>ivs.eu-west-1.amazonaws.com</code> </p> </li> </ul> <p> <b>Allowed Header
+   * Values</b> </p> <ul> <li> <p> <code> <b>Accept:</b> </code> application/json</p>
+   * </li> <li> <p> <code> <b>Accept-Encoding:</b> </code> gzip, deflate</p> </li>
+   * <li> <p> <code> <b>Content-Type:</b> </code>application/json</p> </li> </ul> <p>
    * <b>Resources</b> </p> <p>The following resources contain information about your
    * IVS live stream (see <a
    * href="https://docs.aws.amazon.com/ivs/latest/userguide/GSIVS.html"> Getting
@@ -184,36 +192,38 @@ namespace Model
    * following resources support tagging: Channels and Stream Keys.</p> <p> <b>API
    * Endpoints</b> </p> <p> <a>Channel</a>:</p> <ul> <li> <p> <a>CreateChannel</a> —
    * Creates a new channel and an associated stream key to start streaming.</p> </li>
-   * <li> <p> <a>GetChannel</a> — Gets the channel configuration for a specified
+   * <li> <p> <a>GetChannel</a> — Gets the channel configuration for the specified
    * channel ARN (Amazon Resource Name).</p> </li> <li> <p> <a>BatchGetChannel</a> —
    * Performs <a>GetChannel</a> on multiple ARNs simultaneously.</p> </li> <li> <p>
-   * <a>ListChannels</a> — Gets summary information about channels. This list can be
+   * <a>ListChannels</a> — Gets summary information about all channels in your
+   * account, in the AWS region where the API request is processed. This list can be
    * filtered to match a specified string.</p> </li> <li> <p> <a>UpdateChannel</a> —
    * Updates a channel's configuration. This does not affect an ongoing stream of
    * this channel. You must stop and restart the stream for the changes to take
-   * effect.</p> </li> <li> <p> <a>DeleteChannel</a> — Deletes a specified
+   * effect.</p> </li> <li> <p> <a>DeleteChannel</a> — Deletes the specified
    * channel.</p> </li> </ul> <p> <a>StreamKey</a>:</p> <ul> <li> <p>
-   * <a>CreateStreamKey</a> — Creates a stream key, used to initiate a stream, for a
-   * specified channel ARN.</p> </li> <li> <p> <a>GetStreamKey</a> — Gets stream key
-   * information for the specified ARN.</p> </li> <li> <p> <a>BatchGetStreamKey</a> —
-   * Performs <a>GetStreamKey</a> on multiple ARNs simultaneously.</p> </li> <li> <p>
-   * <a>ListStreamKeys</a> — Gets a list of stream keys. The list can be filtered to
-   * a particular channel.</p> </li> <li> <p> <a>DeleteStreamKey</a> — Deletes the
-   * stream key for a specified ARN, so it can no longer be used to stream.</p> </li>
-   * </ul> <p> <a>Stream</a>:</p> <ul> <li> <p> <a>GetStream</a> — Gets information
-   * about the active (live) stream on a specified channel.</p> </li> <li> <p>
-   * <a>ListStreams</a> — Gets summary information about live streams.</p> </li> <li>
-   * <p> <a>StopStream</a> — Disconnects a streamer on a specified channel. This
-   * disconnects the incoming RTMP stream from the client. Can be used in conjunction
-   * with <a>DeleteStreamKey</a> to prevent further streaming to a channel.</p> </li>
-   * <li> <p> <a>PutMetadata</a> Inserts metadata into an RTMP stream for a specified
+   * <a>CreateStreamKey</a> — Creates a stream key, used to initiate a stream, for
+   * the specified channel ARN.</p> </li> <li> <p> <a>GetStreamKey</a> — Gets stream
+   * key information for the specified ARN.</p> </li> <li> <p>
+   * <a>BatchGetStreamKey</a> — Performs <a>GetStreamKey</a> on multiple ARNs
+   * simultaneously.</p> </li> <li> <p> <a>ListStreamKeys</a> — Gets summary
+   * information about stream keys for the specified channel.</p> </li> <li> <p>
+   * <a>DeleteStreamKey</a> — Deletes the stream key for the specified ARN, so it can
+   * no longer be used to stream.</p> </li> </ul> <p> <a>Stream</a>:</p> <ul> <li>
+   * <p> <a>GetStream</a> — Gets information about the active (live) stream on a
+   * specified channel.</p> </li> <li> <p> <a>ListStreams</a> — Gets summary
+   * information about live streams in your account, in the AWS region where the API
+   * request is processed.</p> </li> <li> <p> <a>StopStream</a> — Disconnects the
+   * incoming RTMPS stream for the specified channel. Can be used in conjunction with
+   * <a>DeleteStreamKey</a> to prevent further streaming to a channel.</p> </li> <li>
+   * <p> <a>PutMetadata</a> — Inserts metadata into an RTMPS stream for the specified
    * channel. A maximum of 5 requests per second per channel is allowed, each with a
    * maximum 1KB payload.</p> </li> </ul> <p> <a
    * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> AWS
-   * Tags</a>:</p> <ul> <li> <p> <a>TagResource</a> — Adds or updates tags for an AWS
-   * resource with a specified ARN.</p> </li> <li> <p> <a>UntagResource</a> — Removes
-   * tags from a resource with a specified ARN.</p> </li> <li> <p>
-   * <a>ListTagsForResource</a> — Gets information about AWS tags for a specified
+   * Tags</a>:</p> <ul> <li> <p> <a>TagResource</a> — Adds or updates tags for the
+   * AWS resource with the specified ARN.</p> </li> <li> <p> <a>UntagResource</a> —
+   * Removes tags from the resource with the specified ARN.</p> </li> <li> <p>
+   * <a>ListTagsForResource</a> — Gets information about AWS tags for the specified
    * ARN.</p> </li> </ul>
    */
   class AWS_IVS_API IVSClient : public Aws::Client::AWSJsonClient
@@ -330,7 +340,7 @@ namespace Model
         virtual void CreateChannelAsync(const Model::CreateChannelRequest& request, const CreateChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a stream key, used to initiate a stream, for a specified channel
+         * <p>Creates a stream key, used to initiate a stream, for the specified channel
          * ARN.</p> <p>Note that <a>CreateChannel</a> creates a stream key. If you
          * subsequently use CreateStreamKey on the same channel, it will fail because a
          * stream key already exists and there is a limit of 1 stream key per channel. To
@@ -342,7 +352,7 @@ namespace Model
         virtual Model::CreateStreamKeyOutcome CreateStreamKey(const Model::CreateStreamKeyRequest& request) const;
 
         /**
-         * <p>Creates a stream key, used to initiate a stream, for a specified channel
+         * <p>Creates a stream key, used to initiate a stream, for the specified channel
          * ARN.</p> <p>Note that <a>CreateChannel</a> creates a stream key. If you
          * subsequently use CreateStreamKey on the same channel, it will fail because a
          * stream key already exists and there is a limit of 1 stream key per channel. To
@@ -356,7 +366,7 @@ namespace Model
         virtual Model::CreateStreamKeyOutcomeCallable CreateStreamKeyCallable(const Model::CreateStreamKeyRequest& request) const;
 
         /**
-         * <p>Creates a stream key, used to initiate a stream, for a specified channel
+         * <p>Creates a stream key, used to initiate a stream, for the specified channel
          * ARN.</p> <p>Note that <a>CreateChannel</a> creates a stream key. If you
          * subsequently use CreateStreamKey on the same channel, it will fail because a
          * stream key already exists and there is a limit of 1 stream key per channel. To
@@ -370,7 +380,7 @@ namespace Model
         virtual void CreateStreamKeyAsync(const Model::CreateStreamKeyRequest& request, const CreateStreamKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes a specified channel and its associated stream keys.</p><p><h3>See
+         * <p>Deletes the specified channel and its associated stream keys.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/DeleteChannel">AWS
          * API Reference</a></p>
@@ -378,7 +388,7 @@ namespace Model
         virtual Model::DeleteChannelOutcome DeleteChannel(const Model::DeleteChannelRequest& request) const;
 
         /**
-         * <p>Deletes a specified channel and its associated stream keys.</p><p><h3>See
+         * <p>Deletes the specified channel and its associated stream keys.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/DeleteChannel">AWS
          * API Reference</a></p>
@@ -388,7 +398,7 @@ namespace Model
         virtual Model::DeleteChannelOutcomeCallable DeleteChannelCallable(const Model::DeleteChannelRequest& request) const;
 
         /**
-         * <p>Deletes a specified channel and its associated stream keys.</p><p><h3>See
+         * <p>Deletes the specified channel and its associated stream keys.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/DeleteChannel">AWS
          * API Reference</a></p>
@@ -398,7 +408,7 @@ namespace Model
         virtual void DeleteChannelAsync(const Model::DeleteChannelRequest& request, const DeleteChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes the stream key for a specified ARN, so it can no longer be used to
+         * <p>Deletes the stream key for the specified ARN, so it can no longer be used to
          * stream.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/DeleteStreamKey">AWS
          * API Reference</a></p>
@@ -406,7 +416,7 @@ namespace Model
         virtual Model::DeleteStreamKeyOutcome DeleteStreamKey(const Model::DeleteStreamKeyRequest& request) const;
 
         /**
-         * <p>Deletes the stream key for a specified ARN, so it can no longer be used to
+         * <p>Deletes the stream key for the specified ARN, so it can no longer be used to
          * stream.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/DeleteStreamKey">AWS
          * API Reference</a></p>
@@ -416,7 +426,7 @@ namespace Model
         virtual Model::DeleteStreamKeyOutcomeCallable DeleteStreamKeyCallable(const Model::DeleteStreamKeyRequest& request) const;
 
         /**
-         * <p>Deletes the stream key for a specified ARN, so it can no longer be used to
+         * <p>Deletes the stream key for the specified ARN, so it can no longer be used to
          * stream.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/DeleteStreamKey">AWS
          * API Reference</a></p>
@@ -426,7 +436,7 @@ namespace Model
         virtual void DeleteStreamKeyAsync(const Model::DeleteStreamKeyRequest& request, const DeleteStreamKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets the channel configuration for a specified channel ARN. See also
+         * <p>Gets the channel configuration for the specified channel ARN. See also
          * <a>BatchGetChannel</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/GetChannel">AWS API
          * Reference</a></p>
@@ -434,7 +444,7 @@ namespace Model
         virtual Model::GetChannelOutcome GetChannel(const Model::GetChannelRequest& request) const;
 
         /**
-         * <p>Gets the channel configuration for a specified channel ARN. See also
+         * <p>Gets the channel configuration for the specified channel ARN. See also
          * <a>BatchGetChannel</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/GetChannel">AWS API
          * Reference</a></p>
@@ -444,7 +454,7 @@ namespace Model
         virtual Model::GetChannelOutcomeCallable GetChannelCallable(const Model::GetChannelRequest& request) const;
 
         /**
-         * <p>Gets the channel configuration for a specified channel ARN. See also
+         * <p>Gets the channel configuration for the specified channel ARN. See also
          * <a>BatchGetChannel</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/GetChannel">AWS API
          * Reference</a></p>
@@ -507,7 +517,8 @@ namespace Model
         virtual void GetStreamKeyAsync(const Model::GetStreamKeyRequest& request, const GetStreamKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets summary information about channels. This list can be filtered to match a
+         * <p>Gets summary information about all channels in your account, in the AWS
+         * region where the API request is processed. This list can be filtered to match a
          * specified string.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/ListChannels">AWS
          * API Reference</a></p>
@@ -515,7 +526,8 @@ namespace Model
         virtual Model::ListChannelsOutcome ListChannels(const Model::ListChannelsRequest& request) const;
 
         /**
-         * <p>Gets summary information about channels. This list can be filtered to match a
+         * <p>Gets summary information about all channels in your account, in the AWS
+         * region where the API request is processed. This list can be filtered to match a
          * specified string.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/ListChannels">AWS
          * API Reference</a></p>
@@ -525,7 +537,8 @@ namespace Model
         virtual Model::ListChannelsOutcomeCallable ListChannelsCallable(const Model::ListChannelsRequest& request) const;
 
         /**
-         * <p>Gets summary information about channels. This list can be filtered to match a
+         * <p>Gets summary information about all channels in your account, in the AWS
+         * region where the API request is processed. This list can be filtered to match a
          * specified string.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/ListChannels">AWS
          * API Reference</a></p>
@@ -535,16 +548,16 @@ namespace Model
         virtual void ListChannelsAsync(const Model::ListChannelsRequest& request, const ListChannelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets summary information about stream keys. The list can be filtered to a
-         * particular channel.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets summary information about stream keys for the specified
+         * channel.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/ListStreamKeys">AWS
          * API Reference</a></p>
          */
         virtual Model::ListStreamKeysOutcome ListStreamKeys(const Model::ListStreamKeysRequest& request) const;
 
         /**
-         * <p>Gets summary information about stream keys. The list can be filtered to a
-         * particular channel.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets summary information about stream keys for the specified
+         * channel.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/ListStreamKeys">AWS
          * API Reference</a></p>
          *
@@ -553,8 +566,8 @@ namespace Model
         virtual Model::ListStreamKeysOutcomeCallable ListStreamKeysCallable(const Model::ListStreamKeysRequest& request) const;
 
         /**
-         * <p>Gets summary information about stream keys. The list can be filtered to a
-         * particular channel.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets summary information about stream keys for the specified
+         * channel.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/ListStreamKeys">AWS
          * API Reference</a></p>
          *
@@ -563,14 +576,16 @@ namespace Model
         virtual void ListStreamKeysAsync(const Model::ListStreamKeysRequest& request, const ListStreamKeysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets summary information about live streams.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets summary information about live streams in your account, in the AWS
+         * region where the API request is processed.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/ListStreams">AWS API
          * Reference</a></p>
          */
         virtual Model::ListStreamsOutcome ListStreams(const Model::ListStreamsRequest& request) const;
 
         /**
-         * <p>Gets summary information about live streams.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets summary information about live streams in your account, in the AWS
+         * region where the API request is processed.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/ListStreams">AWS API
          * Reference</a></p>
          *
@@ -579,7 +594,8 @@ namespace Model
         virtual Model::ListStreamsOutcomeCallable ListStreamsCallable(const Model::ListStreamsRequest& request) const;
 
         /**
-         * <p>Gets summary information about live streams.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets summary information about live streams in your account, in the AWS
+         * region where the API request is processed.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/ListStreams">AWS API
          * Reference</a></p>
          *
@@ -588,16 +604,16 @@ namespace Model
         virtual void ListStreamsAsync(const Model::ListStreamsRequest& request, const ListStreamsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets information about the tags for a specified ARN.</p><p><h3>See Also:</h3>
-         * <a
+         * <p>Gets information about AWS tags for the specified ARN.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/ListTagsForResource">AWS
          * API Reference</a></p>
          */
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
         /**
-         * <p>Gets information about the tags for a specified ARN.</p><p><h3>See Also:</h3>
-         * <a
+         * <p>Gets information about AWS tags for the specified ARN.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/ListTagsForResource">AWS
          * API Reference</a></p>
          *
@@ -606,8 +622,8 @@ namespace Model
         virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
 
         /**
-         * <p>Gets information about the tags for a specified ARN.</p><p><h3>See Also:</h3>
-         * <a
+         * <p>Gets information about AWS tags for the specified ARN.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/ListTagsForResource">AWS
          * API Reference</a></p>
          *
@@ -616,8 +632,8 @@ namespace Model
         virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Inserts metadata into an RTMP stream for a specified channel. A maximum of 5
-         * requests per second per channel is allowed, each with a maximum 1KB
+         * <p>Inserts metadata into an RTMPS stream for the specified channel. A maximum of
+         * 5 requests per second per channel is allowed, each with a maximum 1KB
          * payload.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/PutMetadata">AWS API
          * Reference</a></p>
@@ -625,8 +641,8 @@ namespace Model
         virtual Model::PutMetadataOutcome PutMetadata(const Model::PutMetadataRequest& request) const;
 
         /**
-         * <p>Inserts metadata into an RTMP stream for a specified channel. A maximum of 5
-         * requests per second per channel is allowed, each with a maximum 1KB
+         * <p>Inserts metadata into an RTMPS stream for the specified channel. A maximum of
+         * 5 requests per second per channel is allowed, each with a maximum 1KB
          * payload.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/PutMetadata">AWS API
          * Reference</a></p>
@@ -636,8 +652,8 @@ namespace Model
         virtual Model::PutMetadataOutcomeCallable PutMetadataCallable(const Model::PutMetadataRequest& request) const;
 
         /**
-         * <p>Inserts metadata into an RTMP stream for a specified channel. A maximum of 5
-         * requests per second per channel is allowed, each with a maximum 1KB
+         * <p>Inserts metadata into an RTMPS stream for the specified channel. A maximum of
+         * 5 requests per second per channel is allowed, each with a maximum 1KB
          * payload.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/PutMetadata">AWS API
          * Reference</a></p>
@@ -647,26 +663,24 @@ namespace Model
         virtual void PutMetadataAsync(const Model::PutMetadataRequest& request, const PutMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Disconnects the stream for the specified channel. This disconnects the
-         * incoming RTMP stream from the client. Can be used in conjunction with
-         * <a>DeleteStreamKey</a> to prevent further streaming to a channel.</p> 
-         * <p>Many streaming client-software libraries automatically reconnect a dropped
-         * RTMP session, so to stop the stream permanently, you may want to first revoke
-         * the <code>streamKey</code> attached to the channel.</p> <p><h3>See
-         * Also:</h3>   <a
+         * <p>Disconnects the incoming RTMPS stream for the specified channel. Can be used
+         * in conjunction with <a>DeleteStreamKey</a> to prevent further streaming to a
+         * channel.</p>  <p>Many streaming client-software libraries automatically
+         * reconnect a dropped RTMPS session, so to stop the stream permanently, you may
+         * want to first revoke the <code>streamKey</code> attached to the channel.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/StopStream">AWS API
          * Reference</a></p>
          */
         virtual Model::StopStreamOutcome StopStream(const Model::StopStreamRequest& request) const;
 
         /**
-         * <p>Disconnects the stream for the specified channel. This disconnects the
-         * incoming RTMP stream from the client. Can be used in conjunction with
-         * <a>DeleteStreamKey</a> to prevent further streaming to a channel.</p> 
-         * <p>Many streaming client-software libraries automatically reconnect a dropped
-         * RTMP session, so to stop the stream permanently, you may want to first revoke
-         * the <code>streamKey</code> attached to the channel.</p> <p><h3>See
-         * Also:</h3>   <a
+         * <p>Disconnects the incoming RTMPS stream for the specified channel. Can be used
+         * in conjunction with <a>DeleteStreamKey</a> to prevent further streaming to a
+         * channel.</p>  <p>Many streaming client-software libraries automatically
+         * reconnect a dropped RTMPS session, so to stop the stream permanently, you may
+         * want to first revoke the <code>streamKey</code> attached to the channel.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/StopStream">AWS API
          * Reference</a></p>
          *
@@ -675,13 +689,12 @@ namespace Model
         virtual Model::StopStreamOutcomeCallable StopStreamCallable(const Model::StopStreamRequest& request) const;
 
         /**
-         * <p>Disconnects the stream for the specified channel. This disconnects the
-         * incoming RTMP stream from the client. Can be used in conjunction with
-         * <a>DeleteStreamKey</a> to prevent further streaming to a channel.</p> 
-         * <p>Many streaming client-software libraries automatically reconnect a dropped
-         * RTMP session, so to stop the stream permanently, you may want to first revoke
-         * the <code>streamKey</code> attached to the channel.</p> <p><h3>See
-         * Also:</h3>   <a
+         * <p>Disconnects the incoming RTMPS stream for the specified channel. Can be used
+         * in conjunction with <a>DeleteStreamKey</a> to prevent further streaming to a
+         * channel.</p>  <p>Many streaming client-software libraries automatically
+         * reconnect a dropped RTMPS session, so to stop the stream permanently, you may
+         * want to first revoke the <code>streamKey</code> attached to the channel.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/StopStream">AWS API
          * Reference</a></p>
          *
@@ -690,16 +703,16 @@ namespace Model
         virtual void StopStreamAsync(const Model::StopStreamRequest& request, const StopStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Adds or updates tags for a resource with a specified ARN.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Adds or updates tags for the AWS resource with the specified
+         * ARN.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/TagResource">AWS API
          * Reference</a></p>
          */
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
         /**
-         * <p>Adds or updates tags for a resource with a specified ARN.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Adds or updates tags for the AWS resource with the specified
+         * ARN.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/TagResource">AWS API
          * Reference</a></p>
          *
@@ -708,8 +721,8 @@ namespace Model
         virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
 
         /**
-         * <p>Adds or updates tags for a resource with a specified ARN.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Adds or updates tags for the AWS resource with the specified
+         * ARN.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/TagResource">AWS API
          * Reference</a></p>
          *
@@ -718,16 +731,16 @@ namespace Model
         virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Removes tags for a resource with a specified ARN.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Removes tags from the resource with the specified ARN.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/UntagResource">AWS
          * API Reference</a></p>
          */
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
         /**
-         * <p>Removes tags for a resource with a specified ARN.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Removes tags from the resource with the specified ARN.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/UntagResource">AWS
          * API Reference</a></p>
          *
@@ -736,8 +749,8 @@ namespace Model
         virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
 
         /**
-         * <p>Removes tags for a resource with a specified ARN.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Removes tags from the resource with the specified ARN.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/UntagResource">AWS
          * API Reference</a></p>
          *

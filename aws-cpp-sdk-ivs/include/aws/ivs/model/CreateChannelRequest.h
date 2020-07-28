@@ -108,62 +108,86 @@ namespace Model
 
 
     /**
-     * <p>Channel type, which determines the allowable resolution and bitrate.
-     * <code>STANDARD</code>: The stream is transcoded; resolution (width, in landscape
-     * orientation) can be up to 1080p or the input source resolution, whichever is
-     * lower; and bitrate can be up to 8.5 Mbps. <code>BASIC</code>: The stream is
-     * transfixed; resolution can be up to 480p; and bitrate can be up to 1.5 Mbps.
-     * Default: <code>STANDARD</code>.</p>
+     * <p>Channel type, which determines the allowable resolution and bitrate. <i>If
+     * you exceed the allowable resolution or bitrate, the stream probably will
+     * disconnect immediately.</i> Valid values:</p> <ul> <li> <p>
+     * <code>STANDARD</code>: Multiple qualities are generated from the original input,
+     * to automatically give viewers the best experience for their devices and network
+     * conditions. Vertical resolution can be up to 1080 and bitrate can be up to 8.5
+     * Mbps.</p> </li> <li> <p> <code>BASIC</code>: Amazon IVS delivers the original
+     * input to viewers. The viewer’s video-quality choice is limited to the original
+     * input. Vertical resolution can be up to 480 and bitrate can be up to 1.5
+     * Mbps.</p> </li> </ul> <p>Default: <code>STANDARD</code>.</p>
      */
     inline const ChannelType& GetType() const{ return m_type; }
 
     /**
-     * <p>Channel type, which determines the allowable resolution and bitrate.
-     * <code>STANDARD</code>: The stream is transcoded; resolution (width, in landscape
-     * orientation) can be up to 1080p or the input source resolution, whichever is
-     * lower; and bitrate can be up to 8.5 Mbps. <code>BASIC</code>: The stream is
-     * transfixed; resolution can be up to 480p; and bitrate can be up to 1.5 Mbps.
-     * Default: <code>STANDARD</code>.</p>
+     * <p>Channel type, which determines the allowable resolution and bitrate. <i>If
+     * you exceed the allowable resolution or bitrate, the stream probably will
+     * disconnect immediately.</i> Valid values:</p> <ul> <li> <p>
+     * <code>STANDARD</code>: Multiple qualities are generated from the original input,
+     * to automatically give viewers the best experience for their devices and network
+     * conditions. Vertical resolution can be up to 1080 and bitrate can be up to 8.5
+     * Mbps.</p> </li> <li> <p> <code>BASIC</code>: Amazon IVS delivers the original
+     * input to viewers. The viewer’s video-quality choice is limited to the original
+     * input. Vertical resolution can be up to 480 and bitrate can be up to 1.5
+     * Mbps.</p> </li> </ul> <p>Default: <code>STANDARD</code>.</p>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
-     * <p>Channel type, which determines the allowable resolution and bitrate.
-     * <code>STANDARD</code>: The stream is transcoded; resolution (width, in landscape
-     * orientation) can be up to 1080p or the input source resolution, whichever is
-     * lower; and bitrate can be up to 8.5 Mbps. <code>BASIC</code>: The stream is
-     * transfixed; resolution can be up to 480p; and bitrate can be up to 1.5 Mbps.
-     * Default: <code>STANDARD</code>.</p>
+     * <p>Channel type, which determines the allowable resolution and bitrate. <i>If
+     * you exceed the allowable resolution or bitrate, the stream probably will
+     * disconnect immediately.</i> Valid values:</p> <ul> <li> <p>
+     * <code>STANDARD</code>: Multiple qualities are generated from the original input,
+     * to automatically give viewers the best experience for their devices and network
+     * conditions. Vertical resolution can be up to 1080 and bitrate can be up to 8.5
+     * Mbps.</p> </li> <li> <p> <code>BASIC</code>: Amazon IVS delivers the original
+     * input to viewers. The viewer’s video-quality choice is limited to the original
+     * input. Vertical resolution can be up to 480 and bitrate can be up to 1.5
+     * Mbps.</p> </li> </ul> <p>Default: <code>STANDARD</code>.</p>
      */
     inline void SetType(const ChannelType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>Channel type, which determines the allowable resolution and bitrate.
-     * <code>STANDARD</code>: The stream is transcoded; resolution (width, in landscape
-     * orientation) can be up to 1080p or the input source resolution, whichever is
-     * lower; and bitrate can be up to 8.5 Mbps. <code>BASIC</code>: The stream is
-     * transfixed; resolution can be up to 480p; and bitrate can be up to 1.5 Mbps.
-     * Default: <code>STANDARD</code>.</p>
+     * <p>Channel type, which determines the allowable resolution and bitrate. <i>If
+     * you exceed the allowable resolution or bitrate, the stream probably will
+     * disconnect immediately.</i> Valid values:</p> <ul> <li> <p>
+     * <code>STANDARD</code>: Multiple qualities are generated from the original input,
+     * to automatically give viewers the best experience for their devices and network
+     * conditions. Vertical resolution can be up to 1080 and bitrate can be up to 8.5
+     * Mbps.</p> </li> <li> <p> <code>BASIC</code>: Amazon IVS delivers the original
+     * input to viewers. The viewer’s video-quality choice is limited to the original
+     * input. Vertical resolution can be up to 480 and bitrate can be up to 1.5
+     * Mbps.</p> </li> </ul> <p>Default: <code>STANDARD</code>.</p>
      */
     inline void SetType(ChannelType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p>Channel type, which determines the allowable resolution and bitrate.
-     * <code>STANDARD</code>: The stream is transcoded; resolution (width, in landscape
-     * orientation) can be up to 1080p or the input source resolution, whichever is
-     * lower; and bitrate can be up to 8.5 Mbps. <code>BASIC</code>: The stream is
-     * transfixed; resolution can be up to 480p; and bitrate can be up to 1.5 Mbps.
-     * Default: <code>STANDARD</code>.</p>
+     * <p>Channel type, which determines the allowable resolution and bitrate. <i>If
+     * you exceed the allowable resolution or bitrate, the stream probably will
+     * disconnect immediately.</i> Valid values:</p> <ul> <li> <p>
+     * <code>STANDARD</code>: Multiple qualities are generated from the original input,
+     * to automatically give viewers the best experience for their devices and network
+     * conditions. Vertical resolution can be up to 1080 and bitrate can be up to 8.5
+     * Mbps.</p> </li> <li> <p> <code>BASIC</code>: Amazon IVS delivers the original
+     * input to viewers. The viewer’s video-quality choice is limited to the original
+     * input. Vertical resolution can be up to 480 and bitrate can be up to 1.5
+     * Mbps.</p> </li> </ul> <p>Default: <code>STANDARD</code>.</p>
      */
     inline CreateChannelRequest& WithType(const ChannelType& value) { SetType(value); return *this;}
 
     /**
-     * <p>Channel type, which determines the allowable resolution and bitrate.
-     * <code>STANDARD</code>: The stream is transcoded; resolution (width, in landscape
-     * orientation) can be up to 1080p or the input source resolution, whichever is
-     * lower; and bitrate can be up to 8.5 Mbps. <code>BASIC</code>: The stream is
-     * transfixed; resolution can be up to 480p; and bitrate can be up to 1.5 Mbps.
-     * Default: <code>STANDARD</code>.</p>
+     * <p>Channel type, which determines the allowable resolution and bitrate. <i>If
+     * you exceed the allowable resolution or bitrate, the stream probably will
+     * disconnect immediately.</i> Valid values:</p> <ul> <li> <p>
+     * <code>STANDARD</code>: Multiple qualities are generated from the original input,
+     * to automatically give viewers the best experience for their devices and network
+     * conditions. Vertical resolution can be up to 1080 and bitrate can be up to 8.5
+     * Mbps.</p> </li> <li> <p> <code>BASIC</code>: Amazon IVS delivers the original
+     * input to viewers. The viewer’s video-quality choice is limited to the original
+     * input. Vertical resolution can be up to 480 and bitrate can be up to 1.5
+     * Mbps.</p> </li> </ul> <p>Default: <code>STANDARD</code>.</p>
      */
     inline CreateChannelRequest& WithType(ChannelType&& value) { SetType(std::move(value)); return *this;}
 

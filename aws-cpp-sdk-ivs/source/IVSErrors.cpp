@@ -13,6 +13,7 @@
 #include <aws/ivs/model/ResourceNotFoundException.h>
 #include <aws/ivs/model/InternalServerException.h>
 #include <aws/ivs/model/ValidationException.h>
+#include <aws/ivs/model/PendingVerification.h>
 #include <aws/ivs/model/AccessDeniedException.h>
 #include <aws/ivs/model/ChannelNotBroadcasting.h>
 
@@ -67,6 +68,12 @@ template<> AWS_IVS_API ValidationException IVSError::GetModeledError()
   return ValidationException(this->GetJsonPayload().View());
 }
 
+template<> AWS_IVS_API PendingVerification IVSError::GetModeledError()
+{
+  assert(this->GetErrorType() == IVSErrors::PENDING_VERIFICATION);
+  return PendingVerification(this->GetJsonPayload().View());
+}
+
 template<> AWS_IVS_API AccessDeniedException IVSError::GetModeledError()
 {
   assert(this->GetErrorType() == IVSErrors::ACCESS_DENIED);
@@ -86,6 +93,7 @@ static const int CONFLICT_HASH = HashingUtils::HashString("ConflictException");
 static const int SERVICE_QUOTA_EXCEEDED_HASH = HashingUtils::HashString("ServiceQuotaExceededException");
 static const int STREAM_UNAVAILABLE_HASH = HashingUtils::HashString("StreamUnavailable");
 static const int INTERNAL_SERVER_HASH = HashingUtils::HashString("InternalServerException");
+static const int PENDING_VERIFICATION_HASH = HashingUtils::HashString("PendingVerification");
 static const int CHANNEL_NOT_BROADCASTING_HASH = HashingUtils::HashString("ChannelNotBroadcasting");
 
 
@@ -108,6 +116,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == INTERNAL_SERVER_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(IVSErrors::INTERNAL_SERVER), false);
+  }
+  else if (hashCode == PENDING_VERIFICATION_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(IVSErrors::PENDING_VERIFICATION), false);
   }
   else if (hashCode == CHANNEL_NOT_BROADCASTING_HASH)
   {

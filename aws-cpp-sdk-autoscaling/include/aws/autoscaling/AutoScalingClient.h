@@ -727,8 +727,13 @@ namespace Model
          * Set Up a Scaled and Load-Balanced Application</a> in the <i>Amazon EC2 Auto
          * Scaling User Guide</i>. For more information, see <a
          * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/AutoScalingGroup.html">Auto
-         * Scaling Groups</a> in the <i>Amazon EC2 Auto Scaling User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * Scaling Groups</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+         * <p>Every Auto Scaling group has three size parameters
+         * (<code>DesiredCapacity</code>, <code>MaxSize</code>, and <code>MinSize</code>).
+         * Usually, you set these sizes based on a specific number of instances. However,
+         * if you configure a mixed instances policy that defines weights for the instance
+         * types, you must specify these sizes with the same units that you use for
+         * weighting instances.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/CreateAutoScalingGroup">AWS
          * API Reference</a></p>
          */
@@ -749,8 +754,13 @@ namespace Model
          * Set Up a Scaled and Load-Balanced Application</a> in the <i>Amazon EC2 Auto
          * Scaling User Guide</i>. For more information, see <a
          * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/AutoScalingGroup.html">Auto
-         * Scaling Groups</a> in the <i>Amazon EC2 Auto Scaling User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * Scaling Groups</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+         * <p>Every Auto Scaling group has three size parameters
+         * (<code>DesiredCapacity</code>, <code>MaxSize</code>, and <code>MinSize</code>).
+         * Usually, you set these sizes based on a specific number of instances. However,
+         * if you configure a mixed instances policy that defines weights for the instance
+         * types, you must specify these sizes with the same units that you use for
+         * weighting instances.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/CreateAutoScalingGroup">AWS
          * API Reference</a></p>
          *
@@ -773,8 +783,13 @@ namespace Model
          * Set Up a Scaled and Load-Balanced Application</a> in the <i>Amazon EC2 Auto
          * Scaling User Guide</i>. For more information, see <a
          * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/AutoScalingGroup.html">Auto
-         * Scaling Groups</a> in the <i>Amazon EC2 Auto Scaling User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * Scaling Groups</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+         * <p>Every Auto Scaling group has three size parameters
+         * (<code>DesiredCapacity</code>, <code>MaxSize</code>, and <code>MinSize</code>).
+         * Usually, you set these sizes based on a specific number of instances. However,
+         * if you configure a mixed instances policy that defines weights for the instance
+         * types, you must specify these sizes with the same units that you use for
+         * weighting instances.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/CreateAutoScalingGroup">AWS
          * API Reference</a></p>
          *

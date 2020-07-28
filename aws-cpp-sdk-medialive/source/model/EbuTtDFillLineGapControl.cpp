@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/medialive/model/H265ScanType.h>
+#include <aws/medialive/model/EbuTtDFillLineGapControl.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
@@ -17,42 +17,42 @@ namespace Aws
   {
     namespace Model
     {
-      namespace H265ScanTypeMapper
+      namespace EbuTtDFillLineGapControlMapper
       {
 
-        static const int INTERLACED_HASH = HashingUtils::HashString("INTERLACED");
-        static const int PROGRESSIVE_HASH = HashingUtils::HashString("PROGRESSIVE");
+        static const int DISABLED_HASH = HashingUtils::HashString("DISABLED");
+        static const int ENABLED_HASH = HashingUtils::HashString("ENABLED");
 
 
-        H265ScanType GetH265ScanTypeForName(const Aws::String& name)
+        EbuTtDFillLineGapControl GetEbuTtDFillLineGapControlForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == INTERLACED_HASH)
+          if (hashCode == DISABLED_HASH)
           {
-            return H265ScanType::INTERLACED;
+            return EbuTtDFillLineGapControl::DISABLED;
           }
-          else if (hashCode == PROGRESSIVE_HASH)
+          else if (hashCode == ENABLED_HASH)
           {
-            return H265ScanType::PROGRESSIVE;
+            return EbuTtDFillLineGapControl::ENABLED;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
             overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<H265ScanType>(hashCode);
+            return static_cast<EbuTtDFillLineGapControl>(hashCode);
           }
 
-          return H265ScanType::NOT_SET;
+          return EbuTtDFillLineGapControl::NOT_SET;
         }
 
-        Aws::String GetNameForH265ScanType(H265ScanType enumValue)
+        Aws::String GetNameForEbuTtDFillLineGapControl(EbuTtDFillLineGapControl enumValue)
         {
           switch(enumValue)
           {
-          case H265ScanType::INTERLACED:
-            return "INTERLACED";
-          case H265ScanType::PROGRESSIVE:
-            return "PROGRESSIVE";
+          case EbuTtDFillLineGapControl::DISABLED:
+            return "DISABLED";
+          case EbuTtDFillLineGapControl::ENABLED:
+            return "ENABLED";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)
@@ -64,7 +64,7 @@ namespace Aws
           }
         }
 
-      } // namespace H265ScanTypeMapper
+      } // namespace EbuTtDFillLineGapControlMapper
     } // namespace Model
   } // namespace MediaLive
 } // namespace Aws

@@ -303,8 +303,8 @@ namespace Model
      * instances policy that uses instance weighting, Amazon EC2 Auto Scaling may need
      * to go above <code>MaxSize</code> to meet your capacity requirements. In this
      * event, Amazon EC2 Auto Scaling will never go above <code>MaxSize</code> by more
-     * than your maximum instance weight (weights that define how many capacity units
-     * each instance contributes to the capacity of the group).</p> 
+     * than your largest instance weight (weights that define how many units each
+     * instance contributes to the desired capacity of the group).</p> 
      */
     inline int GetMaxSize() const{ return m_maxSize; }
 
@@ -313,8 +313,8 @@ namespace Model
      * instances policy that uses instance weighting, Amazon EC2 Auto Scaling may need
      * to go above <code>MaxSize</code> to meet your capacity requirements. In this
      * event, Amazon EC2 Auto Scaling will never go above <code>MaxSize</code> by more
-     * than your maximum instance weight (weights that define how many capacity units
-     * each instance contributes to the capacity of the group).</p> 
+     * than your largest instance weight (weights that define how many units each
+     * instance contributes to the desired capacity of the group).</p> 
      */
     inline bool MaxSizeHasBeenSet() const { return m_maxSizeHasBeenSet; }
 
@@ -323,8 +323,8 @@ namespace Model
      * instances policy that uses instance weighting, Amazon EC2 Auto Scaling may need
      * to go above <code>MaxSize</code> to meet your capacity requirements. In this
      * event, Amazon EC2 Auto Scaling will never go above <code>MaxSize</code> by more
-     * than your maximum instance weight (weights that define how many capacity units
-     * each instance contributes to the capacity of the group).</p> 
+     * than your largest instance weight (weights that define how many units each
+     * instance contributes to the desired capacity of the group).</p> 
      */
     inline void SetMaxSize(int value) { m_maxSizeHasBeenSet = true; m_maxSize = value; }
 
@@ -333,8 +333,8 @@ namespace Model
      * instances policy that uses instance weighting, Amazon EC2 Auto Scaling may need
      * to go above <code>MaxSize</code> to meet your capacity requirements. In this
      * event, Amazon EC2 Auto Scaling will never go above <code>MaxSize</code> by more
-     * than your maximum instance weight (weights that define how many capacity units
-     * each instance contributes to the capacity of the group).</p> 
+     * than your largest instance weight (weights that define how many units each
+     * instance contributes to the desired capacity of the group).</p> 
      */
     inline UpdateAutoScalingGroupRequest& WithMaxSize(int value) { SetMaxSize(value); return *this;}
 

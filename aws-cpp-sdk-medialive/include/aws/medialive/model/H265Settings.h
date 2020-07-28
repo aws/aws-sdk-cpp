@@ -10,6 +10,7 @@
 #include <aws/medialive/model/H265AlternativeTransferFunction.h>
 #include <aws/medialive/model/H265ColorMetadata.h>
 #include <aws/medialive/model/H265ColorSpaceSettings.h>
+#include <aws/medialive/model/H265FilterSettings.h>
 #include <aws/medialive/model/FixedAfd.h>
 #include <aws/medialive/model/H265FlickerAq.h>
 #include <aws/medialive/model/H265GopSizeUnits.h>
@@ -285,6 +286,37 @@ namespace Model
      * Color Space settings
      */
     inline H265Settings& WithColorSpaceSettings(H265ColorSpaceSettings&& value) { SetColorSpaceSettings(std::move(value)); return *this;}
+
+
+    /**
+     * Optional filters that you can apply to an encode.
+     */
+    inline const H265FilterSettings& GetFilterSettings() const{ return m_filterSettings; }
+
+    /**
+     * Optional filters that you can apply to an encode.
+     */
+    inline bool FilterSettingsHasBeenSet() const { return m_filterSettingsHasBeenSet; }
+
+    /**
+     * Optional filters that you can apply to an encode.
+     */
+    inline void SetFilterSettings(const H265FilterSettings& value) { m_filterSettingsHasBeenSet = true; m_filterSettings = value; }
+
+    /**
+     * Optional filters that you can apply to an encode.
+     */
+    inline void SetFilterSettings(H265FilterSettings&& value) { m_filterSettingsHasBeenSet = true; m_filterSettings = std::move(value); }
+
+    /**
+     * Optional filters that you can apply to an encode.
+     */
+    inline H265Settings& WithFilterSettings(const H265FilterSettings& value) { SetFilterSettings(value); return *this;}
+
+    /**
+     * Optional filters that you can apply to an encode.
+     */
+    inline H265Settings& WithFilterSettings(H265FilterSettings&& value) { SetFilterSettings(std::move(value)); return *this;}
 
 
     /**
@@ -1113,6 +1145,9 @@ This field is optional; when
 
     H265ColorSpaceSettings m_colorSpaceSettings;
     bool m_colorSpaceSettingsHasBeenSet;
+
+    H265FilterSettings m_filterSettings;
+    bool m_filterSettingsHasBeenSet;
 
     FixedAfd m_fixedAfd;
     bool m_fixedAfdHasBeenSet;

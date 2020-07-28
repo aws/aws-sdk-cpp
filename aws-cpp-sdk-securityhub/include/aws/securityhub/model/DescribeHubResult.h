@@ -103,11 +103,38 @@ namespace Model
      */
     inline DescribeHubResult& WithSubscribedAt(const char* value) { SetSubscribedAt(value); return *this;}
 
+
+    /**
+     * <p>Whether to automatically enable new controls when they are added to standards
+     * that are enabled.</p> <p>If set to <code>true</code>, then new controls for
+     * enabled standards are enabled automatically. If set to <code>false</code>, then
+     * new controls are not enabled.</p>
+     */
+    inline bool GetAutoEnableControls() const{ return m_autoEnableControls; }
+
+    /**
+     * <p>Whether to automatically enable new controls when they are added to standards
+     * that are enabled.</p> <p>If set to <code>true</code>, then new controls for
+     * enabled standards are enabled automatically. If set to <code>false</code>, then
+     * new controls are not enabled.</p>
+     */
+    inline void SetAutoEnableControls(bool value) { m_autoEnableControls = value; }
+
+    /**
+     * <p>Whether to automatically enable new controls when they are added to standards
+     * that are enabled.</p> <p>If set to <code>true</code>, then new controls for
+     * enabled standards are enabled automatically. If set to <code>false</code>, then
+     * new controls are not enabled.</p>
+     */
+    inline DescribeHubResult& WithAutoEnableControls(bool value) { SetAutoEnableControls(value); return *this;}
+
   private:
 
     Aws::String m_hubArn;
 
     Aws::String m_subscribedAt;
+
+    bool m_autoEnableControls;
   };
 
 } // namespace Model

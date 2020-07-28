@@ -272,56 +272,56 @@ namespace Model
 
 
     /**
-     * <p>Specifies how the scaling adjustment is interpreted (either an absolute
+     * <p>Specifies how the scaling adjustment is interpreted (for example, an absolute
      * number or a percentage). The valid values are <code>ChangeInCapacity</code>,
      * <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.</p>
      */
     inline const Aws::String& GetAdjustmentType() const{ return m_adjustmentType; }
 
     /**
-     * <p>Specifies how the scaling adjustment is interpreted (either an absolute
+     * <p>Specifies how the scaling adjustment is interpreted (for example, an absolute
      * number or a percentage). The valid values are <code>ChangeInCapacity</code>,
      * <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.</p>
      */
     inline bool AdjustmentTypeHasBeenSet() const { return m_adjustmentTypeHasBeenSet; }
 
     /**
-     * <p>Specifies how the scaling adjustment is interpreted (either an absolute
+     * <p>Specifies how the scaling adjustment is interpreted (for example, an absolute
      * number or a percentage). The valid values are <code>ChangeInCapacity</code>,
      * <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.</p>
      */
     inline void SetAdjustmentType(const Aws::String& value) { m_adjustmentTypeHasBeenSet = true; m_adjustmentType = value; }
 
     /**
-     * <p>Specifies how the scaling adjustment is interpreted (either an absolute
+     * <p>Specifies how the scaling adjustment is interpreted (for example, an absolute
      * number or a percentage). The valid values are <code>ChangeInCapacity</code>,
      * <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.</p>
      */
     inline void SetAdjustmentType(Aws::String&& value) { m_adjustmentTypeHasBeenSet = true; m_adjustmentType = std::move(value); }
 
     /**
-     * <p>Specifies how the scaling adjustment is interpreted (either an absolute
+     * <p>Specifies how the scaling adjustment is interpreted (for example, an absolute
      * number or a percentage). The valid values are <code>ChangeInCapacity</code>,
      * <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.</p>
      */
     inline void SetAdjustmentType(const char* value) { m_adjustmentTypeHasBeenSet = true; m_adjustmentType.assign(value); }
 
     /**
-     * <p>Specifies how the scaling adjustment is interpreted (either an absolute
+     * <p>Specifies how the scaling adjustment is interpreted (for example, an absolute
      * number or a percentage). The valid values are <code>ChangeInCapacity</code>,
      * <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.</p>
      */
     inline ScalingPolicy& WithAdjustmentType(const Aws::String& value) { SetAdjustmentType(value); return *this;}
 
     /**
-     * <p>Specifies how the scaling adjustment is interpreted (either an absolute
+     * <p>Specifies how the scaling adjustment is interpreted (for example, an absolute
      * number or a percentage). The valid values are <code>ChangeInCapacity</code>,
      * <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.</p>
      */
     inline ScalingPolicy& WithAdjustmentType(Aws::String&& value) { SetAdjustmentType(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies how the scaling adjustment is interpreted (either an absolute
+     * <p>Specifies how the scaling adjustment is interpreted (for example, an absolute
      * number or a percentage). The valid values are <code>ChangeInCapacity</code>,
      * <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.</p>
      */

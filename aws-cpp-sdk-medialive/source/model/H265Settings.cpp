@@ -32,6 +32,7 @@ H265Settings::H265Settings() :
     m_colorMetadata(H265ColorMetadata::NOT_SET),
     m_colorMetadataHasBeenSet(false),
     m_colorSpaceSettingsHasBeenSet(false),
+    m_filterSettingsHasBeenSet(false),
     m_fixedAfd(FixedAfd::NOT_SET),
     m_fixedAfdHasBeenSet(false),
     m_flickerAq(H265FlickerAq::NOT_SET),
@@ -91,6 +92,7 @@ H265Settings::H265Settings(JsonView jsonValue) :
     m_colorMetadata(H265ColorMetadata::NOT_SET),
     m_colorMetadataHasBeenSet(false),
     m_colorSpaceSettingsHasBeenSet(false),
+    m_filterSettingsHasBeenSet(false),
     m_fixedAfd(FixedAfd::NOT_SET),
     m_fixedAfdHasBeenSet(false),
     m_flickerAq(H265FlickerAq::NOT_SET),
@@ -186,6 +188,13 @@ H265Settings& H265Settings::operator =(JsonView jsonValue)
     m_colorSpaceSettings = jsonValue.GetObject("colorSpaceSettings");
 
     m_colorSpaceSettingsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("filterSettings"))
+  {
+    m_filterSettings = jsonValue.GetObject("filterSettings");
+
+    m_filterSettingsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("fixedAfd"))
@@ -377,6 +386,12 @@ JsonValue H265Settings::Jsonize() const
   if(m_colorSpaceSettingsHasBeenSet)
   {
    payload.WithObject("colorSpaceSettings", m_colorSpaceSettings.Jsonize());
+
+  }
+
+  if(m_filterSettingsHasBeenSet)
+  {
+   payload.WithObject("filterSettings", m_filterSettings.Jsonize());
 
   }
 

@@ -3353,42 +3353,58 @@ namespace Model
 
 
     /**
-     * <p>The workflow state of a finding.</p>
+     * <p>The workflow state of a finding.</p> <p>Note that this field is deprecated.
+     * To search for a finding based on its workflow status, use
+     * <code>WorkflowStatus</code>.</p>
      */
     inline const Aws::Vector<StringFilter>& GetWorkflowState() const{ return m_workflowState; }
 
     /**
-     * <p>The workflow state of a finding.</p>
+     * <p>The workflow state of a finding.</p> <p>Note that this field is deprecated.
+     * To search for a finding based on its workflow status, use
+     * <code>WorkflowStatus</code>.</p>
      */
     inline bool WorkflowStateHasBeenSet() const { return m_workflowStateHasBeenSet; }
 
     /**
-     * <p>The workflow state of a finding.</p>
+     * <p>The workflow state of a finding.</p> <p>Note that this field is deprecated.
+     * To search for a finding based on its workflow status, use
+     * <code>WorkflowStatus</code>.</p>
      */
     inline void SetWorkflowState(const Aws::Vector<StringFilter>& value) { m_workflowStateHasBeenSet = true; m_workflowState = value; }
 
     /**
-     * <p>The workflow state of a finding.</p>
+     * <p>The workflow state of a finding.</p> <p>Note that this field is deprecated.
+     * To search for a finding based on its workflow status, use
+     * <code>WorkflowStatus</code>.</p>
      */
     inline void SetWorkflowState(Aws::Vector<StringFilter>&& value) { m_workflowStateHasBeenSet = true; m_workflowState = std::move(value); }
 
     /**
-     * <p>The workflow state of a finding.</p>
+     * <p>The workflow state of a finding.</p> <p>Note that this field is deprecated.
+     * To search for a finding based on its workflow status, use
+     * <code>WorkflowStatus</code>.</p>
      */
     inline AwsSecurityFindingFilters& WithWorkflowState(const Aws::Vector<StringFilter>& value) { SetWorkflowState(value); return *this;}
 
     /**
-     * <p>The workflow state of a finding.</p>
+     * <p>The workflow state of a finding.</p> <p>Note that this field is deprecated.
+     * To search for a finding based on its workflow status, use
+     * <code>WorkflowStatus</code>.</p>
      */
     inline AwsSecurityFindingFilters& WithWorkflowState(Aws::Vector<StringFilter>&& value) { SetWorkflowState(std::move(value)); return *this;}
 
     /**
-     * <p>The workflow state of a finding.</p>
+     * <p>The workflow state of a finding.</p> <p>Note that this field is deprecated.
+     * To search for a finding based on its workflow status, use
+     * <code>WorkflowStatus</code>.</p>
      */
     inline AwsSecurityFindingFilters& AddWorkflowState(const StringFilter& value) { m_workflowStateHasBeenSet = true; m_workflowState.push_back(value); return *this; }
 
     /**
-     * <p>The workflow state of a finding.</p>
+     * <p>The workflow state of a finding.</p> <p>Note that this field is deprecated.
+     * To search for a finding based on its workflow status, use
+     * <code>WorkflowStatus</code>.</p>
      */
     inline AwsSecurityFindingFilters& AddWorkflowState(StringFilter&& value) { m_workflowStateHasBeenSet = true; m_workflowState.push_back(std::move(value)); return *this; }
 

@@ -61,6 +61,7 @@
 #include <aws/securityhub/model/UpdateActionTargetRequest.h>
 #include <aws/securityhub/model/UpdateFindingsRequest.h>
 #include <aws/securityhub/model/UpdateInsightRequest.h>
+#include <aws/securityhub/model/UpdateSecurityHubConfigurationRequest.h>
 #include <aws/securityhub/model/UpdateStandardsControlRequest.h>
 
 using namespace Aws;
@@ -1305,6 +1306,33 @@ void SecurityHubClient::UpdateInsightAsync(const UpdateInsightRequest& request, 
 void SecurityHubClient::UpdateInsightAsyncHelper(const UpdateInsightRequest& request, const UpdateInsightResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateInsight(request), context);
+}
+
+UpdateSecurityHubConfigurationOutcome SecurityHubClient::UpdateSecurityHubConfiguration(const UpdateSecurityHubConfigurationRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/accounts";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return UpdateSecurityHubConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateSecurityHubConfigurationOutcomeCallable SecurityHubClient::UpdateSecurityHubConfigurationCallable(const UpdateSecurityHubConfigurationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateSecurityHubConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateSecurityHubConfiguration(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SecurityHubClient::UpdateSecurityHubConfigurationAsync(const UpdateSecurityHubConfigurationRequest& request, const UpdateSecurityHubConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateSecurityHubConfigurationAsyncHelper( request, handler, context ); } );
+}
+
+void SecurityHubClient::UpdateSecurityHubConfigurationAsyncHelper(const UpdateSecurityHubConfigurationRequest& request, const UpdateSecurityHubConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateSecurityHubConfiguration(request), context);
 }
 
 UpdateStandardsControlOutcome SecurityHubClient::UpdateStandardsControl(const UpdateStandardsControlRequest& request) const

@@ -13,19 +13,19 @@ namespace MediaLive
 {
 namespace Model
 {
-  enum class H265ScanType
+  enum class EbuTtDFillLineGapControl
   {
     NOT_SET,
-    INTERLACED,
-    PROGRESSIVE
+    DISABLED,
+    ENABLED
   };
 
-namespace H265ScanTypeMapper
+namespace EbuTtDFillLineGapControlMapper
 {
-AWS_MEDIALIVE_API H265ScanType GetH265ScanTypeForName(const Aws::String& name);
+AWS_MEDIALIVE_API EbuTtDFillLineGapControl GetEbuTtDFillLineGapControlForName(const Aws::String& name);
 
-AWS_MEDIALIVE_API Aws::String GetNameForH265ScanType(H265ScanType value);
-} // namespace H265ScanTypeMapper
+AWS_MEDIALIVE_API Aws::String GetNameForEbuTtDFillLineGapControl(EbuTtDFillLineGapControl value);
+} // namespace EbuTtDFillLineGapControlMapper
 } // namespace Model
 } // namespace MediaLive
 } // namespace Aws

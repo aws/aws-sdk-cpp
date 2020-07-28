@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/medialive/model/H265ScanType.h>
+#include <aws/medialive/model/EbuTtDDestinationStyleControl.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
@@ -17,42 +17,42 @@ namespace Aws
   {
     namespace Model
     {
-      namespace H265ScanTypeMapper
+      namespace EbuTtDDestinationStyleControlMapper
       {
 
-        static const int INTERLACED_HASH = HashingUtils::HashString("INTERLACED");
-        static const int PROGRESSIVE_HASH = HashingUtils::HashString("PROGRESSIVE");
+        static const int EXCLUDE_HASH = HashingUtils::HashString("EXCLUDE");
+        static const int INCLUDE_HASH = HashingUtils::HashString("INCLUDE");
 
 
-        H265ScanType GetH265ScanTypeForName(const Aws::String& name)
+        EbuTtDDestinationStyleControl GetEbuTtDDestinationStyleControlForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == INTERLACED_HASH)
+          if (hashCode == EXCLUDE_HASH)
           {
-            return H265ScanType::INTERLACED;
+            return EbuTtDDestinationStyleControl::EXCLUDE;
           }
-          else if (hashCode == PROGRESSIVE_HASH)
+          else if (hashCode == INCLUDE_HASH)
           {
-            return H265ScanType::PROGRESSIVE;
+            return EbuTtDDestinationStyleControl::INCLUDE;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
             overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<H265ScanType>(hashCode);
+            return static_cast<EbuTtDDestinationStyleControl>(hashCode);
           }
 
-          return H265ScanType::NOT_SET;
+          return EbuTtDDestinationStyleControl::NOT_SET;
         }
 
-        Aws::String GetNameForH265ScanType(H265ScanType enumValue)
+        Aws::String GetNameForEbuTtDDestinationStyleControl(EbuTtDDestinationStyleControl enumValue)
         {
           switch(enumValue)
           {
-          case H265ScanType::INTERLACED:
-            return "INTERLACED";
-          case H265ScanType::PROGRESSIVE:
-            return "PROGRESSIVE";
+          case EbuTtDDestinationStyleControl::EXCLUDE:
+            return "EXCLUDE";
+          case EbuTtDDestinationStyleControl::INCLUDE:
+            return "INCLUDE";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)
@@ -64,7 +64,7 @@ namespace Aws
           }
         }
 
-      } // namespace H265ScanTypeMapper
+      } // namespace EbuTtDDestinationStyleControlMapper
     } // namespace Model
   } // namespace MediaLive
 } // namespace Aws

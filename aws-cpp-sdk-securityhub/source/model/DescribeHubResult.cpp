@@ -16,11 +16,13 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeHubResult::DescribeHubResult()
+DescribeHubResult::DescribeHubResult() : 
+    m_autoEnableControls(false)
 {
 }
 
-DescribeHubResult::DescribeHubResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+DescribeHubResult::DescribeHubResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
+    m_autoEnableControls(false)
 {
   *this = result;
 }
@@ -37,6 +39,12 @@ DescribeHubResult& DescribeHubResult::operator =(const Aws::AmazonWebServiceResu
   if(jsonValue.ValueExists("SubscribedAt"))
   {
     m_subscribedAt = jsonValue.GetString("SubscribedAt");
+
+  }
+
+  if(jsonValue.ValueExists("AutoEnableControls"))
+  {
+    m_autoEnableControls = jsonValue.GetBool("AutoEnableControls");
 
   }
 

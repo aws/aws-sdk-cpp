@@ -62,9 +62,12 @@ namespace Model
    * account. The used value is the count of the DB subnet groups in the account.</p>
    * </li> <li> <p> <code>EventSubscriptions</code> - The number of event
    * subscriptions per account. The used value is the count of the event
-   * subscriptions in the account.</p> </li> <li> <p> <code>ManualSnapshots</code> -
-   * The number of manual DB snapshots per account. The used value is the count of
-   * the manual DB snapshots in the account.</p> </li> <li> <p>
+   * subscriptions in the account.</p> </li> <li> <p>
+   * <code>ManualClusterSnapshots</code> - The number of manual DB cluster snapshots
+   * per account. The used value is the count of the manual DB cluster snapshots in
+   * the account.</p> </li> <li> <p> <code>ManualSnapshots</code> - The number of
+   * manual DB instance snapshots per account. The used value is the count of the
+   * manual DB instance snapshots in the account.</p> </li> <li> <p>
    * <code>OptionGroups</code> - The number of DB option groups per account,
    * excluding default option groups. The used value is the count of nondefault DB
    * option groups in the account.</p> </li> <li> <p>

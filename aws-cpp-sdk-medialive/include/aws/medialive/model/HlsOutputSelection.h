@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     MANIFESTS_AND_SEGMENTS,
-    SEGMENTS_ONLY
+    SEGMENTS_ONLY,
+    VARIANT_MANIFESTS_AND_SEGMENTS
   };
 
 namespace HlsOutputSelectionMapper

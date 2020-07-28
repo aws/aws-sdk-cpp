@@ -33,27 +33,27 @@ namespace Model
 
 
     /**
-     * <p>Stream key used to authenticate an RTMP stream for ingestion.</p>
+     * <p>Stream key used to authenticate an RTMPS stream for ingestion.</p>
      */
     inline const StreamKey& GetStreamKey() const{ return m_streamKey; }
 
     /**
-     * <p>Stream key used to authenticate an RTMP stream for ingestion.</p>
+     * <p>Stream key used to authenticate an RTMPS stream for ingestion.</p>
      */
     inline void SetStreamKey(const StreamKey& value) { m_streamKey = value; }
 
     /**
-     * <p>Stream key used to authenticate an RTMP stream for ingestion.</p>
+     * <p>Stream key used to authenticate an RTMPS stream for ingestion.</p>
      */
     inline void SetStreamKey(StreamKey&& value) { m_streamKey = std::move(value); }
 
     /**
-     * <p>Stream key used to authenticate an RTMP stream for ingestion.</p>
+     * <p>Stream key used to authenticate an RTMPS stream for ingestion.</p>
      */
     inline CreateStreamKeyResult& WithStreamKey(const StreamKey& value) { SetStreamKey(value); return *this;}
 
     /**
-     * <p>Stream key used to authenticate an RTMP stream for ingestion.</p>
+     * <p>Stream key used to authenticate an RTMPS stream for ingestion.</p>
      */
     inline CreateStreamKeyResult& WithStreamKey(StreamKey&& value) { SetStreamKey(std::move(value)); return *this;}
 

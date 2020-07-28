@@ -22,6 +22,7 @@ CaptionDestinationSettings::CaptionDestinationSettings() :
     m_aribDestinationSettingsHasBeenSet(false),
     m_burnInDestinationSettingsHasBeenSet(false),
     m_dvbSubDestinationSettingsHasBeenSet(false),
+    m_ebuTtDDestinationSettingsHasBeenSet(false),
     m_embeddedDestinationSettingsHasBeenSet(false),
     m_embeddedPlusScte20DestinationSettingsHasBeenSet(false),
     m_rtmpCaptionInfoDestinationSettingsHasBeenSet(false),
@@ -38,6 +39,7 @@ CaptionDestinationSettings::CaptionDestinationSettings(JsonView jsonValue) :
     m_aribDestinationSettingsHasBeenSet(false),
     m_burnInDestinationSettingsHasBeenSet(false),
     m_dvbSubDestinationSettingsHasBeenSet(false),
+    m_ebuTtDDestinationSettingsHasBeenSet(false),
     m_embeddedDestinationSettingsHasBeenSet(false),
     m_embeddedPlusScte20DestinationSettingsHasBeenSet(false),
     m_rtmpCaptionInfoDestinationSettingsHasBeenSet(false),
@@ -72,6 +74,13 @@ CaptionDestinationSettings& CaptionDestinationSettings::operator =(JsonView json
     m_dvbSubDestinationSettings = jsonValue.GetObject("dvbSubDestinationSettings");
 
     m_dvbSubDestinationSettingsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ebuTtDDestinationSettings"))
+  {
+    m_ebuTtDDestinationSettings = jsonValue.GetObject("ebuTtDDestinationSettings");
+
+    m_ebuTtDDestinationSettingsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("embeddedDestinationSettings"))
@@ -159,6 +168,12 @@ JsonValue CaptionDestinationSettings::Jsonize() const
   if(m_dvbSubDestinationSettingsHasBeenSet)
   {
    payload.WithObject("dvbSubDestinationSettings", m_dvbSubDestinationSettings.Jsonize());
+
+  }
+
+  if(m_ebuTtDDestinationSettingsHasBeenSet)
+  {
+   payload.WithObject("ebuTtDDestinationSettings", m_ebuTtDDestinationSettings.Jsonize());
 
   }
 

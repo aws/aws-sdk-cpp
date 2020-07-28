@@ -41,7 +41,8 @@ LaunchConfiguration::LaunchConfiguration() :
     m_ebsOptimizedHasBeenSet(false),
     m_associatePublicIpAddress(false),
     m_associatePublicIpAddressHasBeenSet(false),
-    m_placementTenancyHasBeenSet(false)
+    m_placementTenancyHasBeenSet(false),
+    m_metadataOptionsHasBeenSet(false)
 {
 }
 
@@ -66,7 +67,8 @@ LaunchConfiguration::LaunchConfiguration(const XmlNode& xmlNode) :
     m_ebsOptimizedHasBeenSet(false),
     m_associatePublicIpAddress(false),
     m_associatePublicIpAddressHasBeenSet(false),
-    m_placementTenancyHasBeenSet(false)
+    m_placementTenancyHasBeenSet(false),
+    m_metadataOptionsHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -209,6 +211,12 @@ LaunchConfiguration& LaunchConfiguration::operator =(const XmlNode& xmlNode)
       m_placementTenancy = Aws::Utils::Xml::DecodeEscapedXmlText(placementTenancyNode.GetText());
       m_placementTenancyHasBeenSet = true;
     }
+    XmlNode metadataOptionsNode = resultNode.FirstChild("MetadataOptions");
+    if(!metadataOptionsNode.IsNull())
+    {
+      m_metadataOptions = metadataOptionsNode;
+      m_metadataOptionsHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -327,6 +335,13 @@ void LaunchConfiguration::OutputToStream(Aws::OStream& oStream, const char* loca
       oStream << location << index << locationValue << ".PlacementTenancy=" << StringUtils::URLEncode(m_placementTenancy.c_str()) << "&";
   }
 
+  if(m_metadataOptionsHasBeenSet)
+  {
+      Aws::StringStream metadataOptionsLocationAndMemberSs;
+      metadataOptionsLocationAndMemberSs << location << index << locationValue << ".MetadataOptions";
+      m_metadataOptions.OutputToStream(oStream, metadataOptionsLocationAndMemberSs.str().c_str());
+  }
+
 }
 
 void LaunchConfiguration::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -422,6 +437,12 @@ void LaunchConfiguration::OutputToStream(Aws::OStream& oStream, const char* loca
   if(m_placementTenancyHasBeenSet)
   {
       oStream << location << ".PlacementTenancy=" << StringUtils::URLEncode(m_placementTenancy.c_str()) << "&";
+  }
+  if(m_metadataOptionsHasBeenSet)
+  {
+      Aws::String metadataOptionsLocationAndMember(location);
+      metadataOptionsLocationAndMember += ".MetadataOptions";
+      m_metadataOptions.OutputToStream(oStream, metadataOptionsLocationAndMember.c_str());
   }
 }
 

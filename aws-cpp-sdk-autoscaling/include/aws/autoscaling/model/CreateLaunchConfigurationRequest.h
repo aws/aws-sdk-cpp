@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/autoscaling/model/InstanceMonitoring.h>
+#include <aws/autoscaling/model/InstanceMetadataOptions.h>
 #include <aws/autoscaling/model/BlockDeviceMapping.h>
 #include <utility>
 
@@ -1476,6 +1477,55 @@ namespace Model
      */
     inline CreateLaunchConfigurationRequest& WithPlacementTenancy(const char* value) { SetPlacementTenancy(value); return *this;}
 
+
+    /**
+     * <p>The metadata options for the instances. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance
+     * Metadata and User Data</a> in the <i>Amazon EC2 User Guide for Linux
+     * Instances</i>.</p>
+     */
+    inline const InstanceMetadataOptions& GetMetadataOptions() const{ return m_metadataOptions; }
+
+    /**
+     * <p>The metadata options for the instances. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance
+     * Metadata and User Data</a> in the <i>Amazon EC2 User Guide for Linux
+     * Instances</i>.</p>
+     */
+    inline bool MetadataOptionsHasBeenSet() const { return m_metadataOptionsHasBeenSet; }
+
+    /**
+     * <p>The metadata options for the instances. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance
+     * Metadata and User Data</a> in the <i>Amazon EC2 User Guide for Linux
+     * Instances</i>.</p>
+     */
+    inline void SetMetadataOptions(const InstanceMetadataOptions& value) { m_metadataOptionsHasBeenSet = true; m_metadataOptions = value; }
+
+    /**
+     * <p>The metadata options for the instances. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance
+     * Metadata and User Data</a> in the <i>Amazon EC2 User Guide for Linux
+     * Instances</i>.</p>
+     */
+    inline void SetMetadataOptions(InstanceMetadataOptions&& value) { m_metadataOptionsHasBeenSet = true; m_metadataOptions = std::move(value); }
+
+    /**
+     * <p>The metadata options for the instances. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance
+     * Metadata and User Data</a> in the <i>Amazon EC2 User Guide for Linux
+     * Instances</i>.</p>
+     */
+    inline CreateLaunchConfigurationRequest& WithMetadataOptions(const InstanceMetadataOptions& value) { SetMetadataOptions(value); return *this;}
+
+    /**
+     * <p>The metadata options for the instances. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance
+     * Metadata and User Data</a> in the <i>Amazon EC2 User Guide for Linux
+     * Instances</i>.</p>
+     */
+    inline CreateLaunchConfigurationRequest& WithMetadataOptions(InstanceMetadataOptions&& value) { SetMetadataOptions(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_launchConfigurationName;
@@ -1531,6 +1581,9 @@ namespace Model
 
     Aws::String m_placementTenancy;
     bool m_placementTenancyHasBeenSet;
+
+    InstanceMetadataOptions m_metadataOptions;
+    bool m_metadataOptionsHasBeenSet;
   };
 
 } // namespace Model
