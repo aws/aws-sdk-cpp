@@ -26,7 +26,7 @@ namespace Model
 {
 
   /**
-   * <p>A complex type that contains information about the Amazon Route 53 DNS
+   * <p>A complex type that contains information about the Amazon Route 53 DNS
    * records that you want AWS Cloud Map to create when you register an
    * instance.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/DnsConfig">AWS
@@ -42,267 +42,273 @@ namespace Model
 
 
     /**
-     * <p>The routing policy that you want to apply to all Route 53 DNS records that
+     * <p>The routing policy that you want to apply to all Route 53 DNS records that
      * AWS Cloud Map creates when you register an instance and specify this
      * service.</p>  <p>If you want to use this service to register instances
      * that create alias records, specify <code>WEIGHTED</code> for the routing
      * policy.</p>  <p>You can specify the following values:</p> <p>
      * <b>MULTIVALUE</b> </p> <p>If you define a health check for the service and the
-     * health check is healthy, Route 53 returns the applicable value for up to eight
+     * health check is healthy, Route 53 returns the applicable value for up to eight
      * instances.</p> <p>For example, suppose the service includes configurations for
-     * one A record and a health check, and you use the service to register 10
-     * instances. Route 53 responds to DNS queries with IP addresses for up to eight
-     * healthy instances. If fewer than eight instances are healthy, Route 53 responds
-     * to every DNS query with the IP addresses for all of the healthy instances.</p>
-     * <p>If you don't define a health check for the service, Route 53 assumes that all
-     * instances are healthy and returns the values for up to eight instances.</p>
-     * <p>For more information about the multivalue routing policy, see <a
+     * one <code>A</code> record and a health check, and you use the service to
+     * register 10 instances. Route 53 responds to DNS queries with IP addresses for up
+     * to eight healthy instances. If fewer than eight instances are healthy, Route 53
+     * responds to every DNS query with the IP addresses for all of the healthy
+     * instances.</p> <p>If you don't define a health check for the service, Route 53
+     * assumes that all instances are healthy and returns the values for up to eight
+     * instances.</p> <p>For more information about the multivalue routing policy, see
+     * <a
      * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html#routing-policy-multivalue">Multivalue
-     * Answer Routing</a> in the <i>Route 53 Developer Guide</i>.</p> <p>
-     * <b>WEIGHTED</b> </p> <p>Route 53 returns the applicable value from one randomly
+     * Answer Routing</a> in the <i>Route 53 Developer Guide</i>.</p> <p>
+     * <b>WEIGHTED</b> </p> <p>Route 53 returns the applicable value from one randomly
      * selected instance from among the instances that you registered using the same
      * service. Currently, all records have the same weight, so you can't route more or
      * less traffic to any instances.</p> <p>For example, suppose the service includes
-     * configurations for one A record and a health check, and you use the service to
-     * register 10 instances. Route 53 responds to DNS queries with the IP address for
-     * one randomly selected instance from among the healthy instances. If no instances
-     * are healthy, Route 53 responds to DNS queries as if all of the instances were
-     * healthy.</p> <p>If you don't define a health check for the service, Route 53
-     * assumes that all instances are healthy and returns the applicable value for one
-     * randomly selected instance.</p> <p>For more information about the weighted
-     * routing policy, see <a
+     * configurations for one <code>A</code> record and a health check, and you use the
+     * service to register 10 instances. Route 53 responds to DNS queries with the IP
+     * address for one randomly selected instance from among the healthy instances. If
+     * no instances are healthy, Route 53 responds to DNS queries as if all of the
+     * instances were healthy.</p> <p>If you don't define a health check for the
+     * service, Route 53 assumes that all instances are healthy and returns the
+     * applicable value for one randomly selected instance.</p> <p>For more information
+     * about the weighted routing policy, see <a
      * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html#routing-policy-weighted">Weighted
-     * Routing</a> in the <i>Route 53 Developer Guide</i>.</p>
+     * Routing</a> in the <i>Route 53 Developer Guide</i>.</p>
      */
     inline const RoutingPolicy& GetRoutingPolicy() const{ return m_routingPolicy; }
 
     /**
-     * <p>The routing policy that you want to apply to all Route 53 DNS records that
+     * <p>The routing policy that you want to apply to all Route 53 DNS records that
      * AWS Cloud Map creates when you register an instance and specify this
      * service.</p>  <p>If you want to use this service to register instances
      * that create alias records, specify <code>WEIGHTED</code> for the routing
      * policy.</p>  <p>You can specify the following values:</p> <p>
      * <b>MULTIVALUE</b> </p> <p>If you define a health check for the service and the
-     * health check is healthy, Route 53 returns the applicable value for up to eight
+     * health check is healthy, Route 53 returns the applicable value for up to eight
      * instances.</p> <p>For example, suppose the service includes configurations for
-     * one A record and a health check, and you use the service to register 10
-     * instances. Route 53 responds to DNS queries with IP addresses for up to eight
-     * healthy instances. If fewer than eight instances are healthy, Route 53 responds
-     * to every DNS query with the IP addresses for all of the healthy instances.</p>
-     * <p>If you don't define a health check for the service, Route 53 assumes that all
-     * instances are healthy and returns the values for up to eight instances.</p>
-     * <p>For more information about the multivalue routing policy, see <a
+     * one <code>A</code> record and a health check, and you use the service to
+     * register 10 instances. Route 53 responds to DNS queries with IP addresses for up
+     * to eight healthy instances. If fewer than eight instances are healthy, Route 53
+     * responds to every DNS query with the IP addresses for all of the healthy
+     * instances.</p> <p>If you don't define a health check for the service, Route 53
+     * assumes that all instances are healthy and returns the values for up to eight
+     * instances.</p> <p>For more information about the multivalue routing policy, see
+     * <a
      * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html#routing-policy-multivalue">Multivalue
-     * Answer Routing</a> in the <i>Route 53 Developer Guide</i>.</p> <p>
-     * <b>WEIGHTED</b> </p> <p>Route 53 returns the applicable value from one randomly
+     * Answer Routing</a> in the <i>Route 53 Developer Guide</i>.</p> <p>
+     * <b>WEIGHTED</b> </p> <p>Route 53 returns the applicable value from one randomly
      * selected instance from among the instances that you registered using the same
      * service. Currently, all records have the same weight, so you can't route more or
      * less traffic to any instances.</p> <p>For example, suppose the service includes
-     * configurations for one A record and a health check, and you use the service to
-     * register 10 instances. Route 53 responds to DNS queries with the IP address for
-     * one randomly selected instance from among the healthy instances. If no instances
-     * are healthy, Route 53 responds to DNS queries as if all of the instances were
-     * healthy.</p> <p>If you don't define a health check for the service, Route 53
-     * assumes that all instances are healthy and returns the applicable value for one
-     * randomly selected instance.</p> <p>For more information about the weighted
-     * routing policy, see <a
+     * configurations for one <code>A</code> record and a health check, and you use the
+     * service to register 10 instances. Route 53 responds to DNS queries with the IP
+     * address for one randomly selected instance from among the healthy instances. If
+     * no instances are healthy, Route 53 responds to DNS queries as if all of the
+     * instances were healthy.</p> <p>If you don't define a health check for the
+     * service, Route 53 assumes that all instances are healthy and returns the
+     * applicable value for one randomly selected instance.</p> <p>For more information
+     * about the weighted routing policy, see <a
      * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html#routing-policy-weighted">Weighted
-     * Routing</a> in the <i>Route 53 Developer Guide</i>.</p>
+     * Routing</a> in the <i>Route 53 Developer Guide</i>.</p>
      */
     inline bool RoutingPolicyHasBeenSet() const { return m_routingPolicyHasBeenSet; }
 
     /**
-     * <p>The routing policy that you want to apply to all Route 53 DNS records that
+     * <p>The routing policy that you want to apply to all Route 53 DNS records that
      * AWS Cloud Map creates when you register an instance and specify this
      * service.</p>  <p>If you want to use this service to register instances
      * that create alias records, specify <code>WEIGHTED</code> for the routing
      * policy.</p>  <p>You can specify the following values:</p> <p>
      * <b>MULTIVALUE</b> </p> <p>If you define a health check for the service and the
-     * health check is healthy, Route 53 returns the applicable value for up to eight
+     * health check is healthy, Route 53 returns the applicable value for up to eight
      * instances.</p> <p>For example, suppose the service includes configurations for
-     * one A record and a health check, and you use the service to register 10
-     * instances. Route 53 responds to DNS queries with IP addresses for up to eight
-     * healthy instances. If fewer than eight instances are healthy, Route 53 responds
-     * to every DNS query with the IP addresses for all of the healthy instances.</p>
-     * <p>If you don't define a health check for the service, Route 53 assumes that all
-     * instances are healthy and returns the values for up to eight instances.</p>
-     * <p>For more information about the multivalue routing policy, see <a
+     * one <code>A</code> record and a health check, and you use the service to
+     * register 10 instances. Route 53 responds to DNS queries with IP addresses for up
+     * to eight healthy instances. If fewer than eight instances are healthy, Route 53
+     * responds to every DNS query with the IP addresses for all of the healthy
+     * instances.</p> <p>If you don't define a health check for the service, Route 53
+     * assumes that all instances are healthy and returns the values for up to eight
+     * instances.</p> <p>For more information about the multivalue routing policy, see
+     * <a
      * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html#routing-policy-multivalue">Multivalue
-     * Answer Routing</a> in the <i>Route 53 Developer Guide</i>.</p> <p>
-     * <b>WEIGHTED</b> </p> <p>Route 53 returns the applicable value from one randomly
+     * Answer Routing</a> in the <i>Route 53 Developer Guide</i>.</p> <p>
+     * <b>WEIGHTED</b> </p> <p>Route 53 returns the applicable value from one randomly
      * selected instance from among the instances that you registered using the same
      * service. Currently, all records have the same weight, so you can't route more or
      * less traffic to any instances.</p> <p>For example, suppose the service includes
-     * configurations for one A record and a health check, and you use the service to
-     * register 10 instances. Route 53 responds to DNS queries with the IP address for
-     * one randomly selected instance from among the healthy instances. If no instances
-     * are healthy, Route 53 responds to DNS queries as if all of the instances were
-     * healthy.</p> <p>If you don't define a health check for the service, Route 53
-     * assumes that all instances are healthy and returns the applicable value for one
-     * randomly selected instance.</p> <p>For more information about the weighted
-     * routing policy, see <a
+     * configurations for one <code>A</code> record and a health check, and you use the
+     * service to register 10 instances. Route 53 responds to DNS queries with the IP
+     * address for one randomly selected instance from among the healthy instances. If
+     * no instances are healthy, Route 53 responds to DNS queries as if all of the
+     * instances were healthy.</p> <p>If you don't define a health check for the
+     * service, Route 53 assumes that all instances are healthy and returns the
+     * applicable value for one randomly selected instance.</p> <p>For more information
+     * about the weighted routing policy, see <a
      * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html#routing-policy-weighted">Weighted
-     * Routing</a> in the <i>Route 53 Developer Guide</i>.</p>
+     * Routing</a> in the <i>Route 53 Developer Guide</i>.</p>
      */
     inline void SetRoutingPolicy(const RoutingPolicy& value) { m_routingPolicyHasBeenSet = true; m_routingPolicy = value; }
 
     /**
-     * <p>The routing policy that you want to apply to all Route 53 DNS records that
+     * <p>The routing policy that you want to apply to all Route 53 DNS records that
      * AWS Cloud Map creates when you register an instance and specify this
      * service.</p>  <p>If you want to use this service to register instances
      * that create alias records, specify <code>WEIGHTED</code> for the routing
      * policy.</p>  <p>You can specify the following values:</p> <p>
      * <b>MULTIVALUE</b> </p> <p>If you define a health check for the service and the
-     * health check is healthy, Route 53 returns the applicable value for up to eight
+     * health check is healthy, Route 53 returns the applicable value for up to eight
      * instances.</p> <p>For example, suppose the service includes configurations for
-     * one A record and a health check, and you use the service to register 10
-     * instances. Route 53 responds to DNS queries with IP addresses for up to eight
-     * healthy instances. If fewer than eight instances are healthy, Route 53 responds
-     * to every DNS query with the IP addresses for all of the healthy instances.</p>
-     * <p>If you don't define a health check for the service, Route 53 assumes that all
-     * instances are healthy and returns the values for up to eight instances.</p>
-     * <p>For more information about the multivalue routing policy, see <a
+     * one <code>A</code> record and a health check, and you use the service to
+     * register 10 instances. Route 53 responds to DNS queries with IP addresses for up
+     * to eight healthy instances. If fewer than eight instances are healthy, Route 53
+     * responds to every DNS query with the IP addresses for all of the healthy
+     * instances.</p> <p>If you don't define a health check for the service, Route 53
+     * assumes that all instances are healthy and returns the values for up to eight
+     * instances.</p> <p>For more information about the multivalue routing policy, see
+     * <a
      * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html#routing-policy-multivalue">Multivalue
-     * Answer Routing</a> in the <i>Route 53 Developer Guide</i>.</p> <p>
-     * <b>WEIGHTED</b> </p> <p>Route 53 returns the applicable value from one randomly
+     * Answer Routing</a> in the <i>Route 53 Developer Guide</i>.</p> <p>
+     * <b>WEIGHTED</b> </p> <p>Route 53 returns the applicable value from one randomly
      * selected instance from among the instances that you registered using the same
      * service. Currently, all records have the same weight, so you can't route more or
      * less traffic to any instances.</p> <p>For example, suppose the service includes
-     * configurations for one A record and a health check, and you use the service to
-     * register 10 instances. Route 53 responds to DNS queries with the IP address for
-     * one randomly selected instance from among the healthy instances. If no instances
-     * are healthy, Route 53 responds to DNS queries as if all of the instances were
-     * healthy.</p> <p>If you don't define a health check for the service, Route 53
-     * assumes that all instances are healthy and returns the applicable value for one
-     * randomly selected instance.</p> <p>For more information about the weighted
-     * routing policy, see <a
+     * configurations for one <code>A</code> record and a health check, and you use the
+     * service to register 10 instances. Route 53 responds to DNS queries with the IP
+     * address for one randomly selected instance from among the healthy instances. If
+     * no instances are healthy, Route 53 responds to DNS queries as if all of the
+     * instances were healthy.</p> <p>If you don't define a health check for the
+     * service, Route 53 assumes that all instances are healthy and returns the
+     * applicable value for one randomly selected instance.</p> <p>For more information
+     * about the weighted routing policy, see <a
      * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html#routing-policy-weighted">Weighted
-     * Routing</a> in the <i>Route 53 Developer Guide</i>.</p>
+     * Routing</a> in the <i>Route 53 Developer Guide</i>.</p>
      */
     inline void SetRoutingPolicy(RoutingPolicy&& value) { m_routingPolicyHasBeenSet = true; m_routingPolicy = std::move(value); }
 
     /**
-     * <p>The routing policy that you want to apply to all Route 53 DNS records that
+     * <p>The routing policy that you want to apply to all Route 53 DNS records that
      * AWS Cloud Map creates when you register an instance and specify this
      * service.</p>  <p>If you want to use this service to register instances
      * that create alias records, specify <code>WEIGHTED</code> for the routing
      * policy.</p>  <p>You can specify the following values:</p> <p>
      * <b>MULTIVALUE</b> </p> <p>If you define a health check for the service and the
-     * health check is healthy, Route 53 returns the applicable value for up to eight
+     * health check is healthy, Route 53 returns the applicable value for up to eight
      * instances.</p> <p>For example, suppose the service includes configurations for
-     * one A record and a health check, and you use the service to register 10
-     * instances. Route 53 responds to DNS queries with IP addresses for up to eight
-     * healthy instances. If fewer than eight instances are healthy, Route 53 responds
-     * to every DNS query with the IP addresses for all of the healthy instances.</p>
-     * <p>If you don't define a health check for the service, Route 53 assumes that all
-     * instances are healthy and returns the values for up to eight instances.</p>
-     * <p>For more information about the multivalue routing policy, see <a
+     * one <code>A</code> record and a health check, and you use the service to
+     * register 10 instances. Route 53 responds to DNS queries with IP addresses for up
+     * to eight healthy instances. If fewer than eight instances are healthy, Route 53
+     * responds to every DNS query with the IP addresses for all of the healthy
+     * instances.</p> <p>If you don't define a health check for the service, Route 53
+     * assumes that all instances are healthy and returns the values for up to eight
+     * instances.</p> <p>For more information about the multivalue routing policy, see
+     * <a
      * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html#routing-policy-multivalue">Multivalue
-     * Answer Routing</a> in the <i>Route 53 Developer Guide</i>.</p> <p>
-     * <b>WEIGHTED</b> </p> <p>Route 53 returns the applicable value from one randomly
+     * Answer Routing</a> in the <i>Route 53 Developer Guide</i>.</p> <p>
+     * <b>WEIGHTED</b> </p> <p>Route 53 returns the applicable value from one randomly
      * selected instance from among the instances that you registered using the same
      * service. Currently, all records have the same weight, so you can't route more or
      * less traffic to any instances.</p> <p>For example, suppose the service includes
-     * configurations for one A record and a health check, and you use the service to
-     * register 10 instances. Route 53 responds to DNS queries with the IP address for
-     * one randomly selected instance from among the healthy instances. If no instances
-     * are healthy, Route 53 responds to DNS queries as if all of the instances were
-     * healthy.</p> <p>If you don't define a health check for the service, Route 53
-     * assumes that all instances are healthy and returns the applicable value for one
-     * randomly selected instance.</p> <p>For more information about the weighted
-     * routing policy, see <a
+     * configurations for one <code>A</code> record and a health check, and you use the
+     * service to register 10 instances. Route 53 responds to DNS queries with the IP
+     * address for one randomly selected instance from among the healthy instances. If
+     * no instances are healthy, Route 53 responds to DNS queries as if all of the
+     * instances were healthy.</p> <p>If you don't define a health check for the
+     * service, Route 53 assumes that all instances are healthy and returns the
+     * applicable value for one randomly selected instance.</p> <p>For more information
+     * about the weighted routing policy, see <a
      * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html#routing-policy-weighted">Weighted
-     * Routing</a> in the <i>Route 53 Developer Guide</i>.</p>
+     * Routing</a> in the <i>Route 53 Developer Guide</i>.</p>
      */
     inline DnsConfig& WithRoutingPolicy(const RoutingPolicy& value) { SetRoutingPolicy(value); return *this;}
 
     /**
-     * <p>The routing policy that you want to apply to all Route 53 DNS records that
+     * <p>The routing policy that you want to apply to all Route 53 DNS records that
      * AWS Cloud Map creates when you register an instance and specify this
      * service.</p>  <p>If you want to use this service to register instances
      * that create alias records, specify <code>WEIGHTED</code> for the routing
      * policy.</p>  <p>You can specify the following values:</p> <p>
      * <b>MULTIVALUE</b> </p> <p>If you define a health check for the service and the
-     * health check is healthy, Route 53 returns the applicable value for up to eight
+     * health check is healthy, Route 53 returns the applicable value for up to eight
      * instances.</p> <p>For example, suppose the service includes configurations for
-     * one A record and a health check, and you use the service to register 10
-     * instances. Route 53 responds to DNS queries with IP addresses for up to eight
-     * healthy instances. If fewer than eight instances are healthy, Route 53 responds
-     * to every DNS query with the IP addresses for all of the healthy instances.</p>
-     * <p>If you don't define a health check for the service, Route 53 assumes that all
-     * instances are healthy and returns the values for up to eight instances.</p>
-     * <p>For more information about the multivalue routing policy, see <a
+     * one <code>A</code> record and a health check, and you use the service to
+     * register 10 instances. Route 53 responds to DNS queries with IP addresses for up
+     * to eight healthy instances. If fewer than eight instances are healthy, Route 53
+     * responds to every DNS query with the IP addresses for all of the healthy
+     * instances.</p> <p>If you don't define a health check for the service, Route 53
+     * assumes that all instances are healthy and returns the values for up to eight
+     * instances.</p> <p>For more information about the multivalue routing policy, see
+     * <a
      * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html#routing-policy-multivalue">Multivalue
-     * Answer Routing</a> in the <i>Route 53 Developer Guide</i>.</p> <p>
-     * <b>WEIGHTED</b> </p> <p>Route 53 returns the applicable value from one randomly
+     * Answer Routing</a> in the <i>Route 53 Developer Guide</i>.</p> <p>
+     * <b>WEIGHTED</b> </p> <p>Route 53 returns the applicable value from one randomly
      * selected instance from among the instances that you registered using the same
      * service. Currently, all records have the same weight, so you can't route more or
      * less traffic to any instances.</p> <p>For example, suppose the service includes
-     * configurations for one A record and a health check, and you use the service to
-     * register 10 instances. Route 53 responds to DNS queries with the IP address for
-     * one randomly selected instance from among the healthy instances. If no instances
-     * are healthy, Route 53 responds to DNS queries as if all of the instances were
-     * healthy.</p> <p>If you don't define a health check for the service, Route 53
-     * assumes that all instances are healthy and returns the applicable value for one
-     * randomly selected instance.</p> <p>For more information about the weighted
-     * routing policy, see <a
+     * configurations for one <code>A</code> record and a health check, and you use the
+     * service to register 10 instances. Route 53 responds to DNS queries with the IP
+     * address for one randomly selected instance from among the healthy instances. If
+     * no instances are healthy, Route 53 responds to DNS queries as if all of the
+     * instances were healthy.</p> <p>If you don't define a health check for the
+     * service, Route 53 assumes that all instances are healthy and returns the
+     * applicable value for one randomly selected instance.</p> <p>For more information
+     * about the weighted routing policy, see <a
      * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html#routing-policy-weighted">Weighted
-     * Routing</a> in the <i>Route 53 Developer Guide</i>.</p>
+     * Routing</a> in the <i>Route 53 Developer Guide</i>.</p>
      */
     inline DnsConfig& WithRoutingPolicy(RoutingPolicy&& value) { SetRoutingPolicy(std::move(value)); return *this;}
 
 
     /**
-     * <p>An array that contains one <code>DnsRecord</code> object for each Route 53
+     * <p>An array that contains one <code>DnsRecord</code> object for each Route 53
      * DNS record that you want AWS Cloud Map to create when you register an
      * instance.</p>
      */
     inline const Aws::Vector<DnsRecord>& GetDnsRecords() const{ return m_dnsRecords; }
 
     /**
-     * <p>An array that contains one <code>DnsRecord</code> object for each Route 53
+     * <p>An array that contains one <code>DnsRecord</code> object for each Route 53
      * DNS record that you want AWS Cloud Map to create when you register an
      * instance.</p>
      */
     inline bool DnsRecordsHasBeenSet() const { return m_dnsRecordsHasBeenSet; }
 
     /**
-     * <p>An array that contains one <code>DnsRecord</code> object for each Route 53
+     * <p>An array that contains one <code>DnsRecord</code> object for each Route 53
      * DNS record that you want AWS Cloud Map to create when you register an
      * instance.</p>
      */
     inline void SetDnsRecords(const Aws::Vector<DnsRecord>& value) { m_dnsRecordsHasBeenSet = true; m_dnsRecords = value; }
 
     /**
-     * <p>An array that contains one <code>DnsRecord</code> object for each Route 53
+     * <p>An array that contains one <code>DnsRecord</code> object for each Route 53
      * DNS record that you want AWS Cloud Map to create when you register an
      * instance.</p>
      */
     inline void SetDnsRecords(Aws::Vector<DnsRecord>&& value) { m_dnsRecordsHasBeenSet = true; m_dnsRecords = std::move(value); }
 
     /**
-     * <p>An array that contains one <code>DnsRecord</code> object for each Route 53
+     * <p>An array that contains one <code>DnsRecord</code> object for each Route 53
      * DNS record that you want AWS Cloud Map to create when you register an
      * instance.</p>
      */
     inline DnsConfig& WithDnsRecords(const Aws::Vector<DnsRecord>& value) { SetDnsRecords(value); return *this;}
 
     /**
-     * <p>An array that contains one <code>DnsRecord</code> object for each Route 53
+     * <p>An array that contains one <code>DnsRecord</code> object for each Route 53
      * DNS record that you want AWS Cloud Map to create when you register an
      * instance.</p>
      */
     inline DnsConfig& WithDnsRecords(Aws::Vector<DnsRecord>&& value) { SetDnsRecords(std::move(value)); return *this;}
 
     /**
-     * <p>An array that contains one <code>DnsRecord</code> object for each Route 53
+     * <p>An array that contains one <code>DnsRecord</code> object for each Route 53
      * DNS record that you want AWS Cloud Map to create when you register an
      * instance.</p>
      */
     inline DnsConfig& AddDnsRecords(const DnsRecord& value) { m_dnsRecordsHasBeenSet = true; m_dnsRecords.push_back(value); return *this; }
 
     /**
-     * <p>An array that contains one <code>DnsRecord</code> object for each Route 53
+     * <p>An array that contains one <code>DnsRecord</code> object for each Route 53
      * DNS record that you want AWS Cloud Map to create when you register an
      * instance.</p>
      */

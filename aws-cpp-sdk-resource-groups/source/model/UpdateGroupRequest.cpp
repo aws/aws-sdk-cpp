@@ -13,7 +13,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 UpdateGroupRequest::UpdateGroupRequest() : 
-    m_groupNameHasBeenSet(false),
+    m_groupHasBeenSet(false),
     m_descriptionHasBeenSet(false)
 {
 }
@@ -21,6 +21,12 @@ UpdateGroupRequest::UpdateGroupRequest() :
 Aws::String UpdateGroupRequest::SerializePayload() const
 {
   JsonValue payload;
+
+  if(m_groupHasBeenSet)
+  {
+   payload.WithString("Group", m_group);
+
+  }
 
   if(m_descriptionHasBeenSet)
   {

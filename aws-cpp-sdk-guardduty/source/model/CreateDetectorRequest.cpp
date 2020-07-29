@@ -19,6 +19,7 @@ CreateDetectorRequest::CreateDetectorRequest() :
     m_clientTokenHasBeenSet(true),
     m_findingPublishingFrequency(FindingPublishingFrequency::NOT_SET),
     m_findingPublishingFrequencyHasBeenSet(false),
+    m_dataSourcesHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
@@ -42,6 +43,12 @@ Aws::String CreateDetectorRequest::SerializePayload() const
   if(m_findingPublishingFrequencyHasBeenSet)
   {
    payload.WithString("findingPublishingFrequency", FindingPublishingFrequencyMapper::GetNameForFindingPublishingFrequency(m_findingPublishingFrequency));
+  }
+
+  if(m_dataSourcesHasBeenSet)
+  {
+   payload.WithObject("dataSources", m_dataSources.Jsonize());
+
   }
 
   if(m_tagsHasBeenSet)

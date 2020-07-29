@@ -213,10 +213,10 @@ namespace Model
         /**
          * <p>Creates an HTTP namespace. Service instances that you register using an HTTP
          * namespace can be discovered using a <code>DiscoverInstances</code> request but
-         * can't be discovered using DNS. </p> <p>For the current limit on the number of
+         * can't be discovered using DNS. </p> <p>For the current quota on the number of
          * namespaces that you can create using the same AWS account, see <a
          * href="https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">AWS
-         * Cloud Map Limits</a> in the <i>AWS Cloud Map Developer Guide</i>.</p><p><h3>See
+         * Cloud Map quotas</a> in the <i>AWS Cloud Map Developer Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/CreateHttpNamespace">AWS
          * API Reference</a></p>
@@ -226,10 +226,10 @@ namespace Model
         /**
          * <p>Creates an HTTP namespace. Service instances that you register using an HTTP
          * namespace can be discovered using a <code>DiscoverInstances</code> request but
-         * can't be discovered using DNS. </p> <p>For the current limit on the number of
+         * can't be discovered using DNS. </p> <p>For the current quota on the number of
          * namespaces that you can create using the same AWS account, see <a
          * href="https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">AWS
-         * Cloud Map Limits</a> in the <i>AWS Cloud Map Developer Guide</i>.</p><p><h3>See
+         * Cloud Map quotas</a> in the <i>AWS Cloud Map Developer Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/CreateHttpNamespace">AWS
          * API Reference</a></p>
@@ -241,10 +241,10 @@ namespace Model
         /**
          * <p>Creates an HTTP namespace. Service instances that you register using an HTTP
          * namespace can be discovered using a <code>DiscoverInstances</code> request but
-         * can't be discovered using DNS. </p> <p>For the current limit on the number of
+         * can't be discovered using DNS. </p> <p>For the current quota on the number of
          * namespaces that you can create using the same AWS account, see <a
          * href="https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">AWS
-         * Cloud Map Limits</a> in the <i>AWS Cloud Map Developer Guide</i>.</p><p><h3>See
+         * Cloud Map quotas</a> in the <i>AWS Cloud Map Developer Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/CreateHttpNamespace">AWS
          * API Reference</a></p>
@@ -258,7 +258,7 @@ namespace Model
          * specified Amazon VPC. The namespace defines your service naming scheme. For
          * example, if you name your namespace <code>example.com</code> and name your
          * service <code>backend</code>, the resulting DNS name for the service will be
-         * <code>backend.example.com</code>. For the current limit on the number of
+         * <code>backend.example.com</code>. For the current quota on the number of
          * namespaces that you can create using the same AWS account, see <a
          * href="https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">AWS
          * Cloud Map Limits</a> in the <i>AWS Cloud Map Developer Guide</i>.</p><p><h3>See
@@ -273,7 +273,7 @@ namespace Model
          * specified Amazon VPC. The namespace defines your service naming scheme. For
          * example, if you name your namespace <code>example.com</code> and name your
          * service <code>backend</code>, the resulting DNS name for the service will be
-         * <code>backend.example.com</code>. For the current limit on the number of
+         * <code>backend.example.com</code>. For the current quota on the number of
          * namespaces that you can create using the same AWS account, see <a
          * href="https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">AWS
          * Cloud Map Limits</a> in the <i>AWS Cloud Map Developer Guide</i>.</p><p><h3>See
@@ -290,7 +290,7 @@ namespace Model
          * specified Amazon VPC. The namespace defines your service naming scheme. For
          * example, if you name your namespace <code>example.com</code> and name your
          * service <code>backend</code>, the resulting DNS name for the service will be
-         * <code>backend.example.com</code>. For the current limit on the number of
+         * <code>backend.example.com</code>. For the current quota on the number of
          * namespaces that you can create using the same AWS account, see <a
          * href="https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">AWS
          * Cloud Map Limits</a> in the <i>AWS Cloud Map Developer Guide</i>.</p><p><h3>See
@@ -307,7 +307,7 @@ namespace Model
          * internet. The namespace defines your service naming scheme. For example, if you
          * name your namespace <code>example.com</code> and name your service
          * <code>backend</code>, the resulting DNS name for the service will be
-         * <code>backend.example.com</code>. For the current limit on the number of
+         * <code>backend.example.com</code>. For the current quota on the number of
          * namespaces that you can create using the same AWS account, see <a
          * href="https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">AWS
          * Cloud Map Limits</a> in the <i>AWS Cloud Map Developer Guide</i>.</p><p><h3>See
@@ -322,7 +322,7 @@ namespace Model
          * internet. The namespace defines your service naming scheme. For example, if you
          * name your namespace <code>example.com</code> and name your service
          * <code>backend</code>, the resulting DNS name for the service will be
-         * <code>backend.example.com</code>. For the current limit on the number of
+         * <code>backend.example.com</code>. For the current quota on the number of
          * namespaces that you can create using the same AWS account, see <a
          * href="https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">AWS
          * Cloud Map Limits</a> in the <i>AWS Cloud Map Developer Guide</i>.</p><p><h3>See
@@ -339,7 +339,7 @@ namespace Model
          * internet. The namespace defines your service naming scheme. For example, if you
          * name your namespace <code>example.com</code> and name your service
          * <code>backend</code>, the resulting DNS name for the service will be
-         * <code>backend.example.com</code>. For the current limit on the number of
+         * <code>backend.example.com</code>. For the current quota on the number of
          * namespaces that you can create using the same AWS account, see <a
          * href="https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">AWS
          * Cloud Map Limits</a> in the <i>AWS Cloud Map Developer Guide</i>.</p><p><h3>See
@@ -354,13 +354,15 @@ namespace Model
         /**
          * <p>Creates a service, which defines the configuration for the following
          * entities:</p> <ul> <li> <p>For public and private DNS namespaces, one of the
-         * following combinations of DNS records in Amazon Route 53:</p> <ul> <li> <p>A</p>
-         * </li> <li> <p>AAAA</p> </li> <li> <p>A and AAAA</p> </li> <li> <p>SRV</p> </li>
-         * <li> <p>CNAME</p> </li> </ul> </li> <li> <p>Optionally, a health check</p> </li>
-         * </ul> <p>After you create the service, you can submit a <a
+         * following combinations of DNS records in Amazon Route 53:</p> <ul> <li> <p>
+         * <code>A</code> </p> </li> <li> <p> <code>AAAA</code> </p> </li> <li> <p>
+         * <code>A</code> and <code>AAAA</code> </p> </li> <li> <p> <code>SRV</code> </p>
+         * </li> <li> <p> <code>CNAME</code> </p> </li> </ul> </li> <li> <p>Optionally, a
+         * health check</p> </li> </ul> <p>After you create the service, you can submit a
+         * <a
          * href="https://docs.aws.amazon.com/cloud-map/latest/api/API_RegisterInstance.html">RegisterInstance</a>
          * request, and AWS Cloud Map uses the values in the configuration to create the
-         * specified entities.</p> <p>For the current limit on the number of instances that
+         * specified entities.</p> <p>For the current quota on the number of instances that
          * you can register using the same namespace and using the same service, see <a
          * href="https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">AWS
          * Cloud Map Limits</a> in the <i>AWS Cloud Map Developer Guide</i>.</p><p><h3>See
@@ -373,13 +375,15 @@ namespace Model
         /**
          * <p>Creates a service, which defines the configuration for the following
          * entities:</p> <ul> <li> <p>For public and private DNS namespaces, one of the
-         * following combinations of DNS records in Amazon Route 53:</p> <ul> <li> <p>A</p>
-         * </li> <li> <p>AAAA</p> </li> <li> <p>A and AAAA</p> </li> <li> <p>SRV</p> </li>
-         * <li> <p>CNAME</p> </li> </ul> </li> <li> <p>Optionally, a health check</p> </li>
-         * </ul> <p>After you create the service, you can submit a <a
+         * following combinations of DNS records in Amazon Route 53:</p> <ul> <li> <p>
+         * <code>A</code> </p> </li> <li> <p> <code>AAAA</code> </p> </li> <li> <p>
+         * <code>A</code> and <code>AAAA</code> </p> </li> <li> <p> <code>SRV</code> </p>
+         * </li> <li> <p> <code>CNAME</code> </p> </li> </ul> </li> <li> <p>Optionally, a
+         * health check</p> </li> </ul> <p>After you create the service, you can submit a
+         * <a
          * href="https://docs.aws.amazon.com/cloud-map/latest/api/API_RegisterInstance.html">RegisterInstance</a>
          * request, and AWS Cloud Map uses the values in the configuration to create the
-         * specified entities.</p> <p>For the current limit on the number of instances that
+         * specified entities.</p> <p>For the current quota on the number of instances that
          * you can register using the same namespace and using the same service, see <a
          * href="https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">AWS
          * Cloud Map Limits</a> in the <i>AWS Cloud Map Developer Guide</i>.</p><p><h3>See
@@ -394,13 +398,15 @@ namespace Model
         /**
          * <p>Creates a service, which defines the configuration for the following
          * entities:</p> <ul> <li> <p>For public and private DNS namespaces, one of the
-         * following combinations of DNS records in Amazon Route 53:</p> <ul> <li> <p>A</p>
-         * </li> <li> <p>AAAA</p> </li> <li> <p>A and AAAA</p> </li> <li> <p>SRV</p> </li>
-         * <li> <p>CNAME</p> </li> </ul> </li> <li> <p>Optionally, a health check</p> </li>
-         * </ul> <p>After you create the service, you can submit a <a
+         * following combinations of DNS records in Amazon Route 53:</p> <ul> <li> <p>
+         * <code>A</code> </p> </li> <li> <p> <code>AAAA</code> </p> </li> <li> <p>
+         * <code>A</code> and <code>AAAA</code> </p> </li> <li> <p> <code>SRV</code> </p>
+         * </li> <li> <p> <code>CNAME</code> </p> </li> </ul> </li> <li> <p>Optionally, a
+         * health check</p> </li> </ul> <p>After you create the service, you can submit a
+         * <a
          * href="https://docs.aws.amazon.com/cloud-map/latest/api/API_RegisterInstance.html">RegisterInstance</a>
          * request, and AWS Cloud Map uses the values in the configuration to create the
-         * specified entities.</p> <p>For the current limit on the number of instances that
+         * specified entities.</p> <p>For the current quota on the number of instances that
          * you can register using the same namespace and using the same service, see <a
          * href="https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">AWS
          * Cloud Map Limits</a> in the <i>AWS Cloud Map Developer Guide</i>.</p><p><h3>See
@@ -469,7 +475,7 @@ namespace Model
         virtual void DeleteServiceAsync(const Model::DeleteServiceRequest& request, const DeleteServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes the Amazon Route 53 DNS records and health check, if any, that AWS
+         * <p>Deletes the Amazon Route 53 DNS records and health check, if any, that AWS
          * Cloud Map created for the specified instance.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/DeregisterInstance">AWS
          * API Reference</a></p>
@@ -477,7 +483,7 @@ namespace Model
         virtual Model::DeregisterInstanceOutcome DeregisterInstance(const Model::DeregisterInstanceRequest& request) const;
 
         /**
-         * <p>Deletes the Amazon Route 53 DNS records and health check, if any, that AWS
+         * <p>Deletes the Amazon Route 53 DNS records and health check, if any, that AWS
          * Cloud Map created for the specified instance.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/DeregisterInstance">AWS
          * API Reference</a></p>
@@ -487,7 +493,7 @@ namespace Model
         virtual Model::DeregisterInstanceOutcomeCallable DeregisterInstanceCallable(const Model::DeregisterInstanceRequest& request) const;
 
         /**
-         * <p>Deletes the Amazon Route 53 DNS records and health check, if any, that AWS
+         * <p>Deletes the Amazon Route 53 DNS records and health check, if any, that AWS
          * Cloud Map created for the specified instance.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/DeregisterInstance">AWS
          * API Reference</a></p>
@@ -835,7 +841,7 @@ namespace Model
          * healthy</b>: returns all the records</p> </li> <li> <p> <b>If the health check
          * is unhealthy</b>: returns the applicable value for the last healthy instance</p>
          * </li> <li> <p> <b>If you didn't specify a health check configuration</b>:
-         * returns all the records</p> </li> </ul> <p>For the current limit on the number
+         * returns all the records</p> </li> </ul> <p>For the current quota on the number
          * of instances that you can register using the same namespace and using the same
          * service, see <a
          * href="https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">AWS
@@ -865,7 +871,7 @@ namespace Model
          * healthy</b>: returns all the records</p> </li> <li> <p> <b>If the health check
          * is unhealthy</b>: returns the applicable value for the last healthy instance</p>
          * </li> <li> <p> <b>If you didn't specify a health check configuration</b>:
-         * returns all the records</p> </li> </ul> <p>For the current limit on the number
+         * returns all the records</p> </li> </ul> <p>For the current quota on the number
          * of instances that you can register using the same namespace and using the same
          * service, see <a
          * href="https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">AWS
@@ -897,7 +903,7 @@ namespace Model
          * healthy</b>: returns all the records</p> </li> <li> <p> <b>If the health check
          * is unhealthy</b>: returns the applicable value for the last healthy instance</p>
          * </li> <li> <p> <b>If you didn't specify a health check configuration</b>:
-         * returns all the records</p> </li> </ul> <p>For the current limit on the number
+         * returns all the records</p> </li> </ul> <p>For the current quota on the number
          * of instances that you can register using the same namespace and using the same
          * service, see <a
          * href="https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">AWS
@@ -972,7 +978,7 @@ namespace Model
          * <code>UpdateInstanceCustomHealthStatus</code> to change the status only for
          * custom health checks, which you define using
          * <code>HealthCheckCustomConfig</code> when you create a service. You can't use it
-         * to change the status for Route 53 health checks, which you define using
+         * to change the status for Route 53 health checks, which you define using
          * <code>HealthCheckConfig</code>.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/cloud-map/latest/api/API_HealthCheckCustomConfig.html">HealthCheckCustomConfig</a>.</p><p><h3>See
          * Also:</h3>   <a
@@ -987,7 +993,7 @@ namespace Model
          * <code>UpdateInstanceCustomHealthStatus</code> to change the status only for
          * custom health checks, which you define using
          * <code>HealthCheckCustomConfig</code> when you create a service. You can't use it
-         * to change the status for Route 53 health checks, which you define using
+         * to change the status for Route 53 health checks, which you define using
          * <code>HealthCheckConfig</code>.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/cloud-map/latest/api/API_HealthCheckCustomConfig.html">HealthCheckCustomConfig</a>.</p><p><h3>See
          * Also:</h3>   <a
@@ -1004,7 +1010,7 @@ namespace Model
          * <code>UpdateInstanceCustomHealthStatus</code> to change the status only for
          * custom health checks, which you define using
          * <code>HealthCheckCustomConfig</code> when you create a service. You can't use it
-         * to change the status for Route 53 health checks, which you define using
+         * to change the status for Route 53 health checks, which you define using
          * <code>HealthCheckConfig</code>.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/cloud-map/latest/api/API_HealthCheckCustomConfig.html">HealthCheckCustomConfig</a>.</p><p><h3>See
          * Also:</h3>   <a

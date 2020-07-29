@@ -16,7 +16,8 @@ CreateGroupRequest::CreateGroupRequest() :
     m_nameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_resourceQueryHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_configurationHasBeenSet(false)
 {
 }
 
@@ -50,6 +51,17 @@ Aws::String CreateGroupRequest::SerializePayload() const
      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
    }
    payload.WithObject("Tags", std::move(tagsJsonMap));
+
+  }
+
+  if(m_configurationHasBeenSet)
+  {
+   Array<JsonValue> configurationJsonList(m_configuration.size());
+   for(unsigned configurationIndex = 0; configurationIndex < configurationJsonList.GetLength(); ++configurationIndex)
+   {
+     configurationJsonList[configurationIndex].AsObject(m_configuration[configurationIndex].Jsonize());
+   }
+   payload.WithArray("Configuration", std::move(configurationJsonList));
 
   }
 

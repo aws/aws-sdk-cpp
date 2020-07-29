@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/guardduty/model/FindingPublishingFrequency.h>
 #include <aws/guardduty/model/DetectorStatus.h>
+#include <aws/guardduty/model/DataSourceConfigurationsResult.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
@@ -196,6 +197,32 @@ namespace Model
 
 
     /**
+     * <p>An object that describes which data sources are enabled for the detector.</p>
+     */
+    inline const DataSourceConfigurationsResult& GetDataSources() const{ return m_dataSources; }
+
+    /**
+     * <p>An object that describes which data sources are enabled for the detector.</p>
+     */
+    inline void SetDataSources(const DataSourceConfigurationsResult& value) { m_dataSources = value; }
+
+    /**
+     * <p>An object that describes which data sources are enabled for the detector.</p>
+     */
+    inline void SetDataSources(DataSourceConfigurationsResult&& value) { m_dataSources = std::move(value); }
+
+    /**
+     * <p>An object that describes which data sources are enabled for the detector.</p>
+     */
+    inline GetDetectorResult& WithDataSources(const DataSourceConfigurationsResult& value) { SetDataSources(value); return *this;}
+
+    /**
+     * <p>An object that describes which data sources are enabled for the detector.</p>
+     */
+    inline GetDetectorResult& WithDataSources(DataSourceConfigurationsResult&& value) { SetDataSources(std::move(value)); return *this;}
+
+
+    /**
      * <p>The tags of the detector resource.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
@@ -266,6 +293,8 @@ namespace Model
     DetectorStatus m_status;
 
     Aws::String m_updatedAt;
+
+    DataSourceConfigurationsResult m_dataSources;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
   };

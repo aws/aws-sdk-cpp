@@ -232,49 +232,57 @@ namespace Model
 
     /**
      * <p>The tag to associate with the image. This parameter is required for images
-     * that use the Docker Image Manifest V2 Schema 2 or OCI formats.</p>
+     * that use the Docker Image Manifest V2 Schema 2 or Open Container Initiative
+     * (OCI) formats.</p>
      */
     inline const Aws::String& GetImageTag() const{ return m_imageTag; }
 
     /**
      * <p>The tag to associate with the image. This parameter is required for images
-     * that use the Docker Image Manifest V2 Schema 2 or OCI formats.</p>
+     * that use the Docker Image Manifest V2 Schema 2 or Open Container Initiative
+     * (OCI) formats.</p>
      */
     inline bool ImageTagHasBeenSet() const { return m_imageTagHasBeenSet; }
 
     /**
      * <p>The tag to associate with the image. This parameter is required for images
-     * that use the Docker Image Manifest V2 Schema 2 or OCI formats.</p>
+     * that use the Docker Image Manifest V2 Schema 2 or Open Container Initiative
+     * (OCI) formats.</p>
      */
     inline void SetImageTag(const Aws::String& value) { m_imageTagHasBeenSet = true; m_imageTag = value; }
 
     /**
      * <p>The tag to associate with the image. This parameter is required for images
-     * that use the Docker Image Manifest V2 Schema 2 or OCI formats.</p>
+     * that use the Docker Image Manifest V2 Schema 2 or Open Container Initiative
+     * (OCI) formats.</p>
      */
     inline void SetImageTag(Aws::String&& value) { m_imageTagHasBeenSet = true; m_imageTag = std::move(value); }
 
     /**
      * <p>The tag to associate with the image. This parameter is required for images
-     * that use the Docker Image Manifest V2 Schema 2 or OCI formats.</p>
+     * that use the Docker Image Manifest V2 Schema 2 or Open Container Initiative
+     * (OCI) formats.</p>
      */
     inline void SetImageTag(const char* value) { m_imageTagHasBeenSet = true; m_imageTag.assign(value); }
 
     /**
      * <p>The tag to associate with the image. This parameter is required for images
-     * that use the Docker Image Manifest V2 Schema 2 or OCI formats.</p>
+     * that use the Docker Image Manifest V2 Schema 2 or Open Container Initiative
+     * (OCI) formats.</p>
      */
     inline PutImageRequest& WithImageTag(const Aws::String& value) { SetImageTag(value); return *this;}
 
     /**
      * <p>The tag to associate with the image. This parameter is required for images
-     * that use the Docker Image Manifest V2 Schema 2 or OCI formats.</p>
+     * that use the Docker Image Manifest V2 Schema 2 or Open Container Initiative
+     * (OCI) formats.</p>
      */
     inline PutImageRequest& WithImageTag(Aws::String&& value) { SetImageTag(std::move(value)); return *this;}
 
     /**
      * <p>The tag to associate with the image. This parameter is required for images
-     * that use the Docker Image Manifest V2 Schema 2 or OCI formats.</p>
+     * that use the Docker Image Manifest V2 Schema 2 or Open Container Initiative
+     * (OCI) formats.</p>
      */
     inline PutImageRequest& WithImageTag(const char* value) { SetImageTag(value); return *this;}
 

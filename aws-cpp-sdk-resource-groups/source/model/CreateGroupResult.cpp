@@ -49,6 +49,12 @@ CreateGroupResult& CreateGroupResult::operator =(const Aws::AmazonWebServiceResu
     }
   }
 
+  if(jsonValue.ValueExists("GroupConfiguration"))
+  {
+    m_groupConfiguration = jsonValue.GetObject("GroupConfiguration");
+
+  }
+
 
 
   return *this;

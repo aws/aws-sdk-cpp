@@ -33,27 +33,32 @@ namespace Model
 
 
     /**
-     * <p>The resource query associated with the resource group after the update.</p>
+     * <p>The updated resource query associated with the resource group after the
+     * update.</p>
      */
     inline const GroupQuery& GetGroupQuery() const{ return m_groupQuery; }
 
     /**
-     * <p>The resource query associated with the resource group after the update.</p>
+     * <p>The updated resource query associated with the resource group after the
+     * update.</p>
      */
     inline void SetGroupQuery(const GroupQuery& value) { m_groupQuery = value; }
 
     /**
-     * <p>The resource query associated with the resource group after the update.</p>
+     * <p>The updated resource query associated with the resource group after the
+     * update.</p>
      */
     inline void SetGroupQuery(GroupQuery&& value) { m_groupQuery = std::move(value); }
 
     /**
-     * <p>The resource query associated with the resource group after the update.</p>
+     * <p>The updated resource query associated with the resource group after the
+     * update.</p>
      */
     inline UpdateGroupQueryResult& WithGroupQuery(const GroupQuery& value) { SetGroupQuery(value); return *this;}
 
     /**
-     * <p>The resource query associated with the resource group after the update.</p>
+     * <p>The updated resource query associated with the resource group after the
+     * update.</p>
      */
     inline UpdateGroupQueryResult& WithGroupQuery(GroupQuery&& value) { SetGroupQuery(std::move(value)); return *this;}
 

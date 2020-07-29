@@ -9,6 +9,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/ecr/model/ImageTagMutability.h>
 #include <aws/ecr/model/ImageScanningConfiguration.h>
+#include <aws/ecr/model/EncryptionConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -204,50 +205,50 @@ namespace Model
 
 
     /**
-     * <p>The URI for the repository. You can use this URI for Docker <code>push</code>
-     * or <code>pull</code> operations.</p>
+     * <p>The URI for the repository. You can use this URI for container image
+     * <code>push</code> and <code>pull</code> operations.</p>
      */
     inline const Aws::String& GetRepositoryUri() const{ return m_repositoryUri; }
 
     /**
-     * <p>The URI for the repository. You can use this URI for Docker <code>push</code>
-     * or <code>pull</code> operations.</p>
+     * <p>The URI for the repository. You can use this URI for container image
+     * <code>push</code> and <code>pull</code> operations.</p>
      */
     inline bool RepositoryUriHasBeenSet() const { return m_repositoryUriHasBeenSet; }
 
     /**
-     * <p>The URI for the repository. You can use this URI for Docker <code>push</code>
-     * or <code>pull</code> operations.</p>
+     * <p>The URI for the repository. You can use this URI for container image
+     * <code>push</code> and <code>pull</code> operations.</p>
      */
     inline void SetRepositoryUri(const Aws::String& value) { m_repositoryUriHasBeenSet = true; m_repositoryUri = value; }
 
     /**
-     * <p>The URI for the repository. You can use this URI for Docker <code>push</code>
-     * or <code>pull</code> operations.</p>
+     * <p>The URI for the repository. You can use this URI for container image
+     * <code>push</code> and <code>pull</code> operations.</p>
      */
     inline void SetRepositoryUri(Aws::String&& value) { m_repositoryUriHasBeenSet = true; m_repositoryUri = std::move(value); }
 
     /**
-     * <p>The URI for the repository. You can use this URI for Docker <code>push</code>
-     * or <code>pull</code> operations.</p>
+     * <p>The URI for the repository. You can use this URI for container image
+     * <code>push</code> and <code>pull</code> operations.</p>
      */
     inline void SetRepositoryUri(const char* value) { m_repositoryUriHasBeenSet = true; m_repositoryUri.assign(value); }
 
     /**
-     * <p>The URI for the repository. You can use this URI for Docker <code>push</code>
-     * or <code>pull</code> operations.</p>
+     * <p>The URI for the repository. You can use this URI for container image
+     * <code>push</code> and <code>pull</code> operations.</p>
      */
     inline Repository& WithRepositoryUri(const Aws::String& value) { SetRepositoryUri(value); return *this;}
 
     /**
-     * <p>The URI for the repository. You can use this URI for Docker <code>push</code>
-     * or <code>pull</code> operations.</p>
+     * <p>The URI for the repository. You can use this URI for container image
+     * <code>push</code> and <code>pull</code> operations.</p>
      */
     inline Repository& WithRepositoryUri(Aws::String&& value) { SetRepositoryUri(std::move(value)); return *this;}
 
     /**
-     * <p>The URI for the repository. You can use this URI for Docker <code>push</code>
-     * or <code>pull</code> operations.</p>
+     * <p>The URI for the repository. You can use this URI for container image
+     * <code>push</code> and <code>pull</code> operations.</p>
      */
     inline Repository& WithRepositoryUri(const char* value) { SetRepositoryUri(value); return *this;}
 
@@ -338,6 +339,43 @@ namespace Model
     
     inline Repository& WithImageScanningConfiguration(ImageScanningConfiguration&& value) { SetImageScanningConfiguration(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The encryption configuration for the repository. This determines how the
+     * contents of your repository are encrypted at rest.</p>
+     */
+    inline const EncryptionConfiguration& GetEncryptionConfiguration() const{ return m_encryptionConfiguration; }
+
+    /**
+     * <p>The encryption configuration for the repository. This determines how the
+     * contents of your repository are encrypted at rest.</p>
+     */
+    inline bool EncryptionConfigurationHasBeenSet() const { return m_encryptionConfigurationHasBeenSet; }
+
+    /**
+     * <p>The encryption configuration for the repository. This determines how the
+     * contents of your repository are encrypted at rest.</p>
+     */
+    inline void SetEncryptionConfiguration(const EncryptionConfiguration& value) { m_encryptionConfigurationHasBeenSet = true; m_encryptionConfiguration = value; }
+
+    /**
+     * <p>The encryption configuration for the repository. This determines how the
+     * contents of your repository are encrypted at rest.</p>
+     */
+    inline void SetEncryptionConfiguration(EncryptionConfiguration&& value) { m_encryptionConfigurationHasBeenSet = true; m_encryptionConfiguration = std::move(value); }
+
+    /**
+     * <p>The encryption configuration for the repository. This determines how the
+     * contents of your repository are encrypted at rest.</p>
+     */
+    inline Repository& WithEncryptionConfiguration(const EncryptionConfiguration& value) { SetEncryptionConfiguration(value); return *this;}
+
+    /**
+     * <p>The encryption configuration for the repository. This determines how the
+     * contents of your repository are encrypted at rest.</p>
+     */
+    inline Repository& WithEncryptionConfiguration(EncryptionConfiguration&& value) { SetEncryptionConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_repositoryArn;
@@ -360,6 +398,9 @@ namespace Model
 
     ImageScanningConfiguration m_imageScanningConfiguration;
     bool m_imageScanningConfigurationHasBeenSet;
+
+    EncryptionConfiguration m_encryptionConfiguration;
+    bool m_encryptionConfigurationHasBeenSet;
   };
 
 } // namespace Model

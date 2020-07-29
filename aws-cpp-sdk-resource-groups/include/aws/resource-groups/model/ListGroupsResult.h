@@ -35,87 +35,108 @@ namespace Model
 
 
     /**
-     * <p>A list of GroupIdentifier objects. Each identifier is an object that contains
-     * both the GroupName and the GroupArn.</p>
+     * <p>A list of <a>GroupIdentifier</a> objects. Each identifier is an object that
+     * contains both the <code>Name</code> and the <code>GroupArn</code>.</p>
      */
     inline const Aws::Vector<GroupIdentifier>& GetGroupIdentifiers() const{ return m_groupIdentifiers; }
 
     /**
-     * <p>A list of GroupIdentifier objects. Each identifier is an object that contains
-     * both the GroupName and the GroupArn.</p>
+     * <p>A list of <a>GroupIdentifier</a> objects. Each identifier is an object that
+     * contains both the <code>Name</code> and the <code>GroupArn</code>.</p>
      */
     inline void SetGroupIdentifiers(const Aws::Vector<GroupIdentifier>& value) { m_groupIdentifiers = value; }
 
     /**
-     * <p>A list of GroupIdentifier objects. Each identifier is an object that contains
-     * both the GroupName and the GroupArn.</p>
+     * <p>A list of <a>GroupIdentifier</a> objects. Each identifier is an object that
+     * contains both the <code>Name</code> and the <code>GroupArn</code>.</p>
      */
     inline void SetGroupIdentifiers(Aws::Vector<GroupIdentifier>&& value) { m_groupIdentifiers = std::move(value); }
 
     /**
-     * <p>A list of GroupIdentifier objects. Each identifier is an object that contains
-     * both the GroupName and the GroupArn.</p>
+     * <p>A list of <a>GroupIdentifier</a> objects. Each identifier is an object that
+     * contains both the <code>Name</code> and the <code>GroupArn</code>.</p>
      */
     inline ListGroupsResult& WithGroupIdentifiers(const Aws::Vector<GroupIdentifier>& value) { SetGroupIdentifiers(value); return *this;}
 
     /**
-     * <p>A list of GroupIdentifier objects. Each identifier is an object that contains
-     * both the GroupName and the GroupArn.</p>
+     * <p>A list of <a>GroupIdentifier</a> objects. Each identifier is an object that
+     * contains both the <code>Name</code> and the <code>GroupArn</code>.</p>
      */
     inline ListGroupsResult& WithGroupIdentifiers(Aws::Vector<GroupIdentifier>&& value) { SetGroupIdentifiers(std::move(value)); return *this;}
 
     /**
-     * <p>A list of GroupIdentifier objects. Each identifier is an object that contains
-     * both the GroupName and the GroupArn.</p>
+     * <p>A list of <a>GroupIdentifier</a> objects. Each identifier is an object that
+     * contains both the <code>Name</code> and the <code>GroupArn</code>.</p>
      */
     inline ListGroupsResult& AddGroupIdentifiers(const GroupIdentifier& value) { m_groupIdentifiers.push_back(value); return *this; }
 
     /**
-     * <p>A list of GroupIdentifier objects. Each identifier is an object that contains
-     * both the GroupName and the GroupArn.</p>
+     * <p>A list of <a>GroupIdentifier</a> objects. Each identifier is an object that
+     * contains both the <code>Name</code> and the <code>GroupArn</code>.</p>
      */
     inline ListGroupsResult& AddGroupIdentifiers(GroupIdentifier&& value) { m_groupIdentifiers.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>The NextToken value to include in a subsequent <code>ListGroups</code>
-     * request, to get more results.</p>
+     * <p>If present, indicates that more output is available than is included in the
+     * current response. Use this value in the <code>NextToken</code> request parameter
+     * in a subsequent call to the operation to get the next part of the output. You
+     * should repeat this until the <code>NextToken</code> response element comes back
+     * as <code>null</code>.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>The NextToken value to include in a subsequent <code>ListGroups</code>
-     * request, to get more results.</p>
+     * <p>If present, indicates that more output is available than is included in the
+     * current response. Use this value in the <code>NextToken</code> request parameter
+     * in a subsequent call to the operation to get the next part of the output. You
+     * should repeat this until the <code>NextToken</code> response element comes back
+     * as <code>null</code>.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
     /**
-     * <p>The NextToken value to include in a subsequent <code>ListGroups</code>
-     * request, to get more results.</p>
+     * <p>If present, indicates that more output is available than is included in the
+     * current response. Use this value in the <code>NextToken</code> request parameter
+     * in a subsequent call to the operation to get the next part of the output. You
+     * should repeat this until the <code>NextToken</code> response element comes back
+     * as <code>null</code>.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
-     * <p>The NextToken value to include in a subsequent <code>ListGroups</code>
-     * request, to get more results.</p>
+     * <p>If present, indicates that more output is available than is included in the
+     * current response. Use this value in the <code>NextToken</code> request parameter
+     * in a subsequent call to the operation to get the next part of the output. You
+     * should repeat this until the <code>NextToken</code> response element comes back
+     * as <code>null</code>.</p>
      */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
     /**
-     * <p>The NextToken value to include in a subsequent <code>ListGroups</code>
-     * request, to get more results.</p>
+     * <p>If present, indicates that more output is available than is included in the
+     * current response. Use this value in the <code>NextToken</code> request parameter
+     * in a subsequent call to the operation to get the next part of the output. You
+     * should repeat this until the <code>NextToken</code> response element comes back
+     * as <code>null</code>.</p>
      */
     inline ListGroupsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>The NextToken value to include in a subsequent <code>ListGroups</code>
-     * request, to get more results.</p>
+     * <p>If present, indicates that more output is available than is included in the
+     * current response. Use this value in the <code>NextToken</code> request parameter
+     * in a subsequent call to the operation to get the next part of the output. You
+     * should repeat this until the <code>NextToken</code> response element comes back
+     * as <code>null</code>.</p>
      */
     inline ListGroupsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>The NextToken value to include in a subsequent <code>ListGroups</code>
-     * request, to get more results.</p>
+     * <p>If present, indicates that more output is available than is included in the
+     * current response. Use this value in the <code>NextToken</code> request parameter
+     * in a subsequent call to the operation to get the next part of the output. You
+     * should repeat this until the <code>NextToken</code> response element comes back
+     * as <code>null</code>.</p>
      */
     inline ListGroupsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

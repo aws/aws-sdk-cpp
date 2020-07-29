@@ -26,8 +26,9 @@ namespace Model
 {
 
   /**
-   * <p>A filter name and value pair that is used to obtain more specific results
-   * from a list of groups.</p><p><h3>See Also:</h3>   <a
+   * <p>A filter collection that you can use to restrict the results from a
+   * <code>List</code> operation to only those you want to include.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/GroupFilter">AWS
    * API Reference</a></p>
    */

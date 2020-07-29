@@ -21,12 +21,14 @@ namespace Model
 {
 
 CapacityReservationTarget::CapacityReservationTarget() : 
-    m_capacityReservationIdHasBeenSet(false)
+    m_capacityReservationIdHasBeenSet(false),
+    m_capacityReservationResourceGroupArnHasBeenSet(false)
 {
 }
 
 CapacityReservationTarget::CapacityReservationTarget(const XmlNode& xmlNode) : 
-    m_capacityReservationIdHasBeenSet(false)
+    m_capacityReservationIdHasBeenSet(false),
+    m_capacityReservationResourceGroupArnHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -43,6 +45,12 @@ CapacityReservationTarget& CapacityReservationTarget::operator =(const XmlNode& 
       m_capacityReservationId = Aws::Utils::Xml::DecodeEscapedXmlText(capacityReservationIdNode.GetText());
       m_capacityReservationIdHasBeenSet = true;
     }
+    XmlNode capacityReservationResourceGroupArnNode = resultNode.FirstChild("CapacityReservationResourceGroupArn");
+    if(!capacityReservationResourceGroupArnNode.IsNull())
+    {
+      m_capacityReservationResourceGroupArn = Aws::Utils::Xml::DecodeEscapedXmlText(capacityReservationResourceGroupArnNode.GetText());
+      m_capacityReservationResourceGroupArnHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -55,6 +63,11 @@ void CapacityReservationTarget::OutputToStream(Aws::OStream& oStream, const char
       oStream << location << index << locationValue << ".CapacityReservationId=" << StringUtils::URLEncode(m_capacityReservationId.c_str()) << "&";
   }
 
+  if(m_capacityReservationResourceGroupArnHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".CapacityReservationResourceGroupArn=" << StringUtils::URLEncode(m_capacityReservationResourceGroupArn.c_str()) << "&";
+  }
+
 }
 
 void CapacityReservationTarget::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -62,6 +75,10 @@ void CapacityReservationTarget::OutputToStream(Aws::OStream& oStream, const char
   if(m_capacityReservationIdHasBeenSet)
   {
       oStream << location << ".CapacityReservationId=" << StringUtils::URLEncode(m_capacityReservationId.c_str()) << "&";
+  }
+  if(m_capacityReservationResourceGroupArnHasBeenSet)
+  {
+      oStream << location << ".CapacityReservationResourceGroupArn=" << StringUtils::URLEncode(m_capacityReservationResourceGroupArn.c_str()) << "&";
   }
 }
 

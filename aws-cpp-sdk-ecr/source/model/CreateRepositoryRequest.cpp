@@ -17,7 +17,8 @@ CreateRepositoryRequest::CreateRepositoryRequest() :
     m_tagsHasBeenSet(false),
     m_imageTagMutability(ImageTagMutability::NOT_SET),
     m_imageTagMutabilityHasBeenSet(false),
-    m_imageScanningConfigurationHasBeenSet(false)
+    m_imageScanningConfigurationHasBeenSet(false),
+    m_encryptionConfigurationHasBeenSet(false)
 {
 }
 
@@ -50,6 +51,12 @@ Aws::String CreateRepositoryRequest::SerializePayload() const
   if(m_imageScanningConfigurationHasBeenSet)
   {
    payload.WithObject("imageScanningConfiguration", m_imageScanningConfiguration.Jsonize());
+
+  }
+
+  if(m_encryptionConfigurationHasBeenSet)
+  {
+   payload.WithObject("encryptionConfiguration", m_encryptionConfiguration.Jsonize());
 
   }
 

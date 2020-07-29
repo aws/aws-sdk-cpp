@@ -103,32 +103,38 @@ namespace Model
 
 
     /**
-     * <p>Information about the target Capacity Reservation.</p>
+     * <p>Information about the target Capacity Reservation or Capacity Reservation
+     * group.</p>
      */
     inline const CapacityReservationTargetResponse& GetCapacityReservationTarget() const{ return m_capacityReservationTarget; }
 
     /**
-     * <p>Information about the target Capacity Reservation.</p>
+     * <p>Information about the target Capacity Reservation or Capacity Reservation
+     * group.</p>
      */
     inline bool CapacityReservationTargetHasBeenSet() const { return m_capacityReservationTargetHasBeenSet; }
 
     /**
-     * <p>Information about the target Capacity Reservation.</p>
+     * <p>Information about the target Capacity Reservation or Capacity Reservation
+     * group.</p>
      */
     inline void SetCapacityReservationTarget(const CapacityReservationTargetResponse& value) { m_capacityReservationTargetHasBeenSet = true; m_capacityReservationTarget = value; }
 
     /**
-     * <p>Information about the target Capacity Reservation.</p>
+     * <p>Information about the target Capacity Reservation or Capacity Reservation
+     * group.</p>
      */
     inline void SetCapacityReservationTarget(CapacityReservationTargetResponse&& value) { m_capacityReservationTargetHasBeenSet = true; m_capacityReservationTarget = std::move(value); }
 
     /**
-     * <p>Information about the target Capacity Reservation.</p>
+     * <p>Information about the target Capacity Reservation or Capacity Reservation
+     * group.</p>
      */
     inline LaunchTemplateCapacityReservationSpecificationResponse& WithCapacityReservationTarget(const CapacityReservationTargetResponse& value) { SetCapacityReservationTarget(value); return *this;}
 
     /**
-     * <p>Information about the target Capacity Reservation.</p>
+     * <p>Information about the target Capacity Reservation or Capacity Reservation
+     * group.</p>
      */
     inline LaunchTemplateCapacityReservationSpecificationResponse& WithCapacityReservationTarget(CapacityReservationTargetResponse&& value) { SetCapacityReservationTarget(std::move(value)); return *this;}
 

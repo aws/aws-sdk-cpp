@@ -5,6 +5,8 @@
 
 #pragma once
 #include <aws/guardduty/GuardDuty_EXPORTS.h>
+#include <aws/guardduty/model/OrganizationDataSourceConfigurationsResult.h>
+#include <utility>
 
 namespace Aws
 {
@@ -67,11 +69,44 @@ namespace Model
      */
     inline DescribeOrganizationConfigurationResult& WithMemberAccountLimitReached(bool value) { SetMemberAccountLimitReached(value); return *this;}
 
+
+    /**
+     * <p>An object that describes which data sources are enabled automatically for
+     * member accounts.</p>
+     */
+    inline const OrganizationDataSourceConfigurationsResult& GetDataSources() const{ return m_dataSources; }
+
+    /**
+     * <p>An object that describes which data sources are enabled automatically for
+     * member accounts.</p>
+     */
+    inline void SetDataSources(const OrganizationDataSourceConfigurationsResult& value) { m_dataSources = value; }
+
+    /**
+     * <p>An object that describes which data sources are enabled automatically for
+     * member accounts.</p>
+     */
+    inline void SetDataSources(OrganizationDataSourceConfigurationsResult&& value) { m_dataSources = std::move(value); }
+
+    /**
+     * <p>An object that describes which data sources are enabled automatically for
+     * member accounts.</p>
+     */
+    inline DescribeOrganizationConfigurationResult& WithDataSources(const OrganizationDataSourceConfigurationsResult& value) { SetDataSources(value); return *this;}
+
+    /**
+     * <p>An object that describes which data sources are enabled automatically for
+     * member accounts.</p>
+     */
+    inline DescribeOrganizationConfigurationResult& WithDataSources(OrganizationDataSourceConfigurationsResult&& value) { SetDataSources(std::move(value)); return *this;}
+
   private:
 
     bool m_autoEnable;
 
     bool m_memberAccountLimitReached;
+
+    OrganizationDataSourceConfigurationsResult m_dataSources;
   };
 
 } // namespace Model

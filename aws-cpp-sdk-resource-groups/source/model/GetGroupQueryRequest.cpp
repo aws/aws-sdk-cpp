@@ -13,13 +13,21 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 GetGroupQueryRequest::GetGroupQueryRequest() : 
-    m_groupNameHasBeenSet(false)
+    m_groupHasBeenSet(false)
 {
 }
 
 Aws::String GetGroupQueryRequest::SerializePayload() const
 {
-  return {};
+  JsonValue payload;
+
+  if(m_groupHasBeenSet)
+  {
+   payload.WithString("Group", m_group);
+
+  }
+
+  return payload.View().WriteReadable();
 }
 
 

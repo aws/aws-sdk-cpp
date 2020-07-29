@@ -8,6 +8,7 @@
 #include <aws/guardduty/GuardDutyRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/guardduty/model/FindingPublishingFrequency.h>
+#include <aws/guardduty/model/DataSourceConfigurations.h>
 #include <utility>
 
 namespace Aws
@@ -131,6 +132,37 @@ namespace Model
      */
     inline UpdateDetectorRequest& WithFindingPublishingFrequency(FindingPublishingFrequency&& value) { SetFindingPublishingFrequency(std::move(value)); return *this;}
 
+
+    /**
+     * <p>An object that describes which data sources will be updated.</p>
+     */
+    inline const DataSourceConfigurations& GetDataSources() const{ return m_dataSources; }
+
+    /**
+     * <p>An object that describes which data sources will be updated.</p>
+     */
+    inline bool DataSourcesHasBeenSet() const { return m_dataSourcesHasBeenSet; }
+
+    /**
+     * <p>An object that describes which data sources will be updated.</p>
+     */
+    inline void SetDataSources(const DataSourceConfigurations& value) { m_dataSourcesHasBeenSet = true; m_dataSources = value; }
+
+    /**
+     * <p>An object that describes which data sources will be updated.</p>
+     */
+    inline void SetDataSources(DataSourceConfigurations&& value) { m_dataSourcesHasBeenSet = true; m_dataSources = std::move(value); }
+
+    /**
+     * <p>An object that describes which data sources will be updated.</p>
+     */
+    inline UpdateDetectorRequest& WithDataSources(const DataSourceConfigurations& value) { SetDataSources(value); return *this;}
+
+    /**
+     * <p>An object that describes which data sources will be updated.</p>
+     */
+    inline UpdateDetectorRequest& WithDataSources(DataSourceConfigurations&& value) { SetDataSources(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_detectorId;
@@ -141,6 +173,9 @@ namespace Model
 
     FindingPublishingFrequency m_findingPublishingFrequency;
     bool m_findingPublishingFrequencyHasBeenSet;
+
+    DataSourceConfigurations m_dataSources;
+    bool m_dataSourcesHasBeenSet;
   };
 
 } // namespace Model

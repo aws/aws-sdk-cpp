@@ -26,7 +26,8 @@ Repository::Repository() :
     m_createdAtHasBeenSet(false),
     m_imageTagMutability(ImageTagMutability::NOT_SET),
     m_imageTagMutabilityHasBeenSet(false),
-    m_imageScanningConfigurationHasBeenSet(false)
+    m_imageScanningConfigurationHasBeenSet(false),
+    m_encryptionConfigurationHasBeenSet(false)
 {
 }
 
@@ -38,7 +39,8 @@ Repository::Repository(JsonView jsonValue) :
     m_createdAtHasBeenSet(false),
     m_imageTagMutability(ImageTagMutability::NOT_SET),
     m_imageTagMutabilityHasBeenSet(false),
-    m_imageScanningConfigurationHasBeenSet(false)
+    m_imageScanningConfigurationHasBeenSet(false),
+    m_encryptionConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -94,6 +96,13 @@ Repository& Repository::operator =(JsonView jsonValue)
     m_imageScanningConfigurationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("encryptionConfiguration"))
+  {
+    m_encryptionConfiguration = jsonValue.GetObject("encryptionConfiguration");
+
+    m_encryptionConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -138,6 +147,12 @@ JsonValue Repository::Jsonize() const
   if(m_imageScanningConfigurationHasBeenSet)
   {
    payload.WithObject("imageScanningConfiguration", m_imageScanningConfiguration.Jsonize());
+
+  }
+
+  if(m_encryptionConfigurationHasBeenSet)
+  {
+   payload.WithObject("encryptionConfiguration", m_encryptionConfiguration.Jsonize());
 
   }
 

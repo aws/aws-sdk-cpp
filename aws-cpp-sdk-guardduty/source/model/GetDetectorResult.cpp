@@ -62,6 +62,12 @@ GetDetectorResult& GetDetectorResult::operator =(const Aws::AmazonWebServiceResu
 
   }
 
+  if(jsonValue.ValueExists("dataSources"))
+  {
+    m_dataSources = jsonValue.GetObject("dataSources");
+
+  }
+
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();

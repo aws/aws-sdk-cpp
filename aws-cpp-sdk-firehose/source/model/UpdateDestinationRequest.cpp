@@ -19,7 +19,8 @@ UpdateDestinationRequest::UpdateDestinationRequest() :
     m_extendedS3DestinationUpdateHasBeenSet(false),
     m_redshiftDestinationUpdateHasBeenSet(false),
     m_elasticsearchDestinationUpdateHasBeenSet(false),
-    m_splunkDestinationUpdateHasBeenSet(false)
+    m_splunkDestinationUpdateHasBeenSet(false),
+    m_httpEndpointDestinationUpdateHasBeenSet(false)
 {
 }
 
@@ -66,6 +67,12 @@ Aws::String UpdateDestinationRequest::SerializePayload() const
   if(m_splunkDestinationUpdateHasBeenSet)
   {
    payload.WithObject("SplunkDestinationUpdate", m_splunkDestinationUpdate.Jsonize());
+
+  }
+
+  if(m_httpEndpointDestinationUpdateHasBeenSet)
+  {
+   payload.WithObject("HttpEndpointDestinationUpdate", m_httpEndpointDestinationUpdate.Jsonize());
 
   }
 

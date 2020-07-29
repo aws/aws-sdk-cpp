@@ -31,7 +31,8 @@ namespace Model
    * to run in On-Demand capacity or to run in any <code>open</code> Capacity
    * Reservation that has matching attributes (instance type, platform, Availability
    * Zone). Use the <code>CapacityReservationTarget</code> parameter to explicitly
-   * target a specific Capacity Reservation.</p><p><h3>See Also:</h3>   <a
+   * target a specific Capacity Reservation or a Capacity Reservation
+   * group.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/LaunchTemplateCapacityReservationSpecificationRequest">AWS
    * API Reference</a></p>
    */
@@ -108,32 +109,38 @@ namespace Model
 
 
     /**
-     * <p>Information about the target Capacity Reservation.</p>
+     * <p>Information about the target Capacity Reservation or Capacity Reservation
+     * group.</p>
      */
     inline const CapacityReservationTarget& GetCapacityReservationTarget() const{ return m_capacityReservationTarget; }
 
     /**
-     * <p>Information about the target Capacity Reservation.</p>
+     * <p>Information about the target Capacity Reservation or Capacity Reservation
+     * group.</p>
      */
     inline bool CapacityReservationTargetHasBeenSet() const { return m_capacityReservationTargetHasBeenSet; }
 
     /**
-     * <p>Information about the target Capacity Reservation.</p>
+     * <p>Information about the target Capacity Reservation or Capacity Reservation
+     * group.</p>
      */
     inline void SetCapacityReservationTarget(const CapacityReservationTarget& value) { m_capacityReservationTargetHasBeenSet = true; m_capacityReservationTarget = value; }
 
     /**
-     * <p>Information about the target Capacity Reservation.</p>
+     * <p>Information about the target Capacity Reservation or Capacity Reservation
+     * group.</p>
      */
     inline void SetCapacityReservationTarget(CapacityReservationTarget&& value) { m_capacityReservationTargetHasBeenSet = true; m_capacityReservationTarget = std::move(value); }
 
     /**
-     * <p>Information about the target Capacity Reservation.</p>
+     * <p>Information about the target Capacity Reservation or Capacity Reservation
+     * group.</p>
      */
     inline LaunchTemplateCapacityReservationSpecificationRequest& WithCapacityReservationTarget(const CapacityReservationTarget& value) { SetCapacityReservationTarget(value); return *this;}
 
     /**
-     * <p>Information about the target Capacity Reservation.</p>
+     * <p>Information about the target Capacity Reservation or Capacity Reservation
+     * group.</p>
      */
     inline LaunchTemplateCapacityReservationSpecificationRequest& WithCapacityReservationTarget(CapacityReservationTarget&& value) { SetCapacityReservationTarget(std::move(value)); return *this;}
 

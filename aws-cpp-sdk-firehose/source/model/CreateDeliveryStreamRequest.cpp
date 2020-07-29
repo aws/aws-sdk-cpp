@@ -22,6 +22,7 @@ CreateDeliveryStreamRequest::CreateDeliveryStreamRequest() :
     m_redshiftDestinationConfigurationHasBeenSet(false),
     m_elasticsearchDestinationConfigurationHasBeenSet(false),
     m_splunkDestinationConfigurationHasBeenSet(false),
+    m_httpEndpointDestinationConfigurationHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
@@ -74,6 +75,12 @@ Aws::String CreateDeliveryStreamRequest::SerializePayload() const
   if(m_splunkDestinationConfigurationHasBeenSet)
   {
    payload.WithObject("SplunkDestinationConfiguration", m_splunkDestinationConfiguration.Jsonize());
+
+  }
+
+  if(m_httpEndpointDestinationConfigurationHasBeenSet)
+  {
+   payload.WithObject("HttpEndpointDestinationConfiguration", m_httpEndpointDestinationConfiguration.Jsonize());
 
   }
 

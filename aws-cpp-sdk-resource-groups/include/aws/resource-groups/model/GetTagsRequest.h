@@ -33,50 +33,42 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the resource group for which you want a list of tags. The resource
-     * must exist within the account you are using.</p>
+     * <p>The ARN of the resource group whose tags you want to retrieve.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
 
     /**
-     * <p>The ARN of the resource group for which you want a list of tags. The resource
-     * must exist within the account you are using.</p>
+     * <p>The ARN of the resource group whose tags you want to retrieve.</p>
      */
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
 
     /**
-     * <p>The ARN of the resource group for which you want a list of tags. The resource
-     * must exist within the account you are using.</p>
+     * <p>The ARN of the resource group whose tags you want to retrieve.</p>
      */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /**
-     * <p>The ARN of the resource group for which you want a list of tags. The resource
-     * must exist within the account you are using.</p>
+     * <p>The ARN of the resource group whose tags you want to retrieve.</p>
      */
     inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
 
     /**
-     * <p>The ARN of the resource group for which you want a list of tags. The resource
-     * must exist within the account you are using.</p>
+     * <p>The ARN of the resource group whose tags you want to retrieve.</p>
      */
     inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
 
     /**
-     * <p>The ARN of the resource group for which you want a list of tags. The resource
-     * must exist within the account you are using.</p>
+     * <p>The ARN of the resource group whose tags you want to retrieve.</p>
      */
     inline GetTagsRequest& WithArn(const Aws::String& value) { SetArn(value); return *this;}
 
     /**
-     * <p>The ARN of the resource group for which you want a list of tags. The resource
-     * must exist within the account you are using.</p>
+     * <p>The ARN of the resource group whose tags you want to retrieve.</p>
      */
     inline GetTagsRequest& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the resource group for which you want a list of tags. The resource
-     * must exist within the account you are using.</p>
+     * <p>The ARN of the resource group whose tags you want to retrieve.</p>
      */
     inline GetTagsRequest& WithArn(const char* value) { SetArn(value); return *this;}
 

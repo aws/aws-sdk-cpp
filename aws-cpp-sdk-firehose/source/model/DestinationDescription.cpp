@@ -24,7 +24,8 @@ DestinationDescription::DestinationDescription() :
     m_extendedS3DestinationDescriptionHasBeenSet(false),
     m_redshiftDestinationDescriptionHasBeenSet(false),
     m_elasticsearchDestinationDescriptionHasBeenSet(false),
-    m_splunkDestinationDescriptionHasBeenSet(false)
+    m_splunkDestinationDescriptionHasBeenSet(false),
+    m_httpEndpointDestinationDescriptionHasBeenSet(false)
 {
 }
 
@@ -34,7 +35,8 @@ DestinationDescription::DestinationDescription(JsonView jsonValue) :
     m_extendedS3DestinationDescriptionHasBeenSet(false),
     m_redshiftDestinationDescriptionHasBeenSet(false),
     m_elasticsearchDestinationDescriptionHasBeenSet(false),
-    m_splunkDestinationDescriptionHasBeenSet(false)
+    m_splunkDestinationDescriptionHasBeenSet(false),
+    m_httpEndpointDestinationDescriptionHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -83,6 +85,13 @@ DestinationDescription& DestinationDescription::operator =(JsonView jsonValue)
     m_splunkDestinationDescriptionHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("HttpEndpointDestinationDescription"))
+  {
+    m_httpEndpointDestinationDescription = jsonValue.GetObject("HttpEndpointDestinationDescription");
+
+    m_httpEndpointDestinationDescriptionHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -123,6 +132,12 @@ JsonValue DestinationDescription::Jsonize() const
   if(m_splunkDestinationDescriptionHasBeenSet)
   {
    payload.WithObject("SplunkDestinationDescription", m_splunkDestinationDescription.Jsonize());
+
+  }
+
+  if(m_httpEndpointDestinationDescriptionHasBeenSet)
+  {
+   payload.WithObject("HttpEndpointDestinationDescription", m_httpEndpointDestinationDescription.Jsonize());
 
   }
 

@@ -44,6 +44,12 @@ DescribeOrganizationConfigurationResult& DescribeOrganizationConfigurationResult
 
   }
 
+  if(jsonValue.ValueExists("dataSources"))
+  {
+    m_dataSources = jsonValue.GetObject("dataSources");
+
+  }
+
 
 
   return *this;

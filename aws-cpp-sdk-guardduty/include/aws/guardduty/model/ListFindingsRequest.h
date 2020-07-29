@@ -94,6 +94,7 @@ namespace Model
      * <p>resource.instanceDetails.iamInstanceProfile.id</p> </li> <li>
      * <p>resource.instanceDetails.imageId</p> </li> <li>
      * <p>resource.instanceDetails.instanceId</p> </li> <li>
+     * <p>resource.instanceDetails.outpostArn</p> </li> <li>
      * <p>resource.instanceDetails.networkInterfaces.ipv6Addresses</p> </li> <li>
      * <p>resource.instanceDetails.networkInterfaces.privateIpAddresses.privateIpAddress</p>
      * </li> <li> <p>resource.instanceDetails.networkInterfaces.publicDnsName</p> </li>
@@ -119,7 +120,8 @@ namespace Model
      * <p>service.action.networkConnectionAction.connectionDirection</p> </li> <li>
      * <p>service.action.networkConnectionAction.localPortDetails.port</p> </li> <li>
      * <p>service.action.networkConnectionAction.protocol</p> </li> <li>
-     * <p>service.action.networkConnectionAction.remoteIpDetails.city.cityName</p>
+     * <p>service.action.networkConnectionAction.localIpDetails.ipAddressV4</p> </li>
+     * <li> <p>service.action.networkConnectionAction.remoteIpDetails.city.cityName</p>
      * </li> <li>
      * <p>service.action.networkConnectionAction.remoteIpDetails.country.countryName</p>
      * </li> <li>
@@ -150,6 +152,7 @@ namespace Model
      * <p>resource.instanceDetails.iamInstanceProfile.id</p> </li> <li>
      * <p>resource.instanceDetails.imageId</p> </li> <li>
      * <p>resource.instanceDetails.instanceId</p> </li> <li>
+     * <p>resource.instanceDetails.outpostArn</p> </li> <li>
      * <p>resource.instanceDetails.networkInterfaces.ipv6Addresses</p> </li> <li>
      * <p>resource.instanceDetails.networkInterfaces.privateIpAddresses.privateIpAddress</p>
      * </li> <li> <p>resource.instanceDetails.networkInterfaces.publicDnsName</p> </li>
@@ -175,7 +178,8 @@ namespace Model
      * <p>service.action.networkConnectionAction.connectionDirection</p> </li> <li>
      * <p>service.action.networkConnectionAction.localPortDetails.port</p> </li> <li>
      * <p>service.action.networkConnectionAction.protocol</p> </li> <li>
-     * <p>service.action.networkConnectionAction.remoteIpDetails.city.cityName</p>
+     * <p>service.action.networkConnectionAction.localIpDetails.ipAddressV4</p> </li>
+     * <li> <p>service.action.networkConnectionAction.remoteIpDetails.city.cityName</p>
      * </li> <li>
      * <p>service.action.networkConnectionAction.remoteIpDetails.country.countryName</p>
      * </li> <li>
@@ -206,6 +210,7 @@ namespace Model
      * <p>resource.instanceDetails.iamInstanceProfile.id</p> </li> <li>
      * <p>resource.instanceDetails.imageId</p> </li> <li>
      * <p>resource.instanceDetails.instanceId</p> </li> <li>
+     * <p>resource.instanceDetails.outpostArn</p> </li> <li>
      * <p>resource.instanceDetails.networkInterfaces.ipv6Addresses</p> </li> <li>
      * <p>resource.instanceDetails.networkInterfaces.privateIpAddresses.privateIpAddress</p>
      * </li> <li> <p>resource.instanceDetails.networkInterfaces.publicDnsName</p> </li>
@@ -231,7 +236,8 @@ namespace Model
      * <p>service.action.networkConnectionAction.connectionDirection</p> </li> <li>
      * <p>service.action.networkConnectionAction.localPortDetails.port</p> </li> <li>
      * <p>service.action.networkConnectionAction.protocol</p> </li> <li>
-     * <p>service.action.networkConnectionAction.remoteIpDetails.city.cityName</p>
+     * <p>service.action.networkConnectionAction.localIpDetails.ipAddressV4</p> </li>
+     * <li> <p>service.action.networkConnectionAction.remoteIpDetails.city.cityName</p>
      * </li> <li>
      * <p>service.action.networkConnectionAction.remoteIpDetails.country.countryName</p>
      * </li> <li>
@@ -262,6 +268,7 @@ namespace Model
      * <p>resource.instanceDetails.iamInstanceProfile.id</p> </li> <li>
      * <p>resource.instanceDetails.imageId</p> </li> <li>
      * <p>resource.instanceDetails.instanceId</p> </li> <li>
+     * <p>resource.instanceDetails.outpostArn</p> </li> <li>
      * <p>resource.instanceDetails.networkInterfaces.ipv6Addresses</p> </li> <li>
      * <p>resource.instanceDetails.networkInterfaces.privateIpAddresses.privateIpAddress</p>
      * </li> <li> <p>resource.instanceDetails.networkInterfaces.publicDnsName</p> </li>
@@ -287,7 +294,8 @@ namespace Model
      * <p>service.action.networkConnectionAction.connectionDirection</p> </li> <li>
      * <p>service.action.networkConnectionAction.localPortDetails.port</p> </li> <li>
      * <p>service.action.networkConnectionAction.protocol</p> </li> <li>
-     * <p>service.action.networkConnectionAction.remoteIpDetails.city.cityName</p>
+     * <p>service.action.networkConnectionAction.localIpDetails.ipAddressV4</p> </li>
+     * <li> <p>service.action.networkConnectionAction.remoteIpDetails.city.cityName</p>
      * </li> <li>
      * <p>service.action.networkConnectionAction.remoteIpDetails.country.countryName</p>
      * </li> <li>
@@ -318,6 +326,7 @@ namespace Model
      * <p>resource.instanceDetails.iamInstanceProfile.id</p> </li> <li>
      * <p>resource.instanceDetails.imageId</p> </li> <li>
      * <p>resource.instanceDetails.instanceId</p> </li> <li>
+     * <p>resource.instanceDetails.outpostArn</p> </li> <li>
      * <p>resource.instanceDetails.networkInterfaces.ipv6Addresses</p> </li> <li>
      * <p>resource.instanceDetails.networkInterfaces.privateIpAddresses.privateIpAddress</p>
      * </li> <li> <p>resource.instanceDetails.networkInterfaces.publicDnsName</p> </li>
@@ -343,7 +352,8 @@ namespace Model
      * <p>service.action.networkConnectionAction.connectionDirection</p> </li> <li>
      * <p>service.action.networkConnectionAction.localPortDetails.port</p> </li> <li>
      * <p>service.action.networkConnectionAction.protocol</p> </li> <li>
-     * <p>service.action.networkConnectionAction.remoteIpDetails.city.cityName</p>
+     * <p>service.action.networkConnectionAction.localIpDetails.ipAddressV4</p> </li>
+     * <li> <p>service.action.networkConnectionAction.remoteIpDetails.city.cityName</p>
      * </li> <li>
      * <p>service.action.networkConnectionAction.remoteIpDetails.country.countryName</p>
      * </li> <li>
@@ -374,6 +384,7 @@ namespace Model
      * <p>resource.instanceDetails.iamInstanceProfile.id</p> </li> <li>
      * <p>resource.instanceDetails.imageId</p> </li> <li>
      * <p>resource.instanceDetails.instanceId</p> </li> <li>
+     * <p>resource.instanceDetails.outpostArn</p> </li> <li>
      * <p>resource.instanceDetails.networkInterfaces.ipv6Addresses</p> </li> <li>
      * <p>resource.instanceDetails.networkInterfaces.privateIpAddresses.privateIpAddress</p>
      * </li> <li> <p>resource.instanceDetails.networkInterfaces.publicDnsName</p> </li>
@@ -399,7 +410,8 @@ namespace Model
      * <p>service.action.networkConnectionAction.connectionDirection</p> </li> <li>
      * <p>service.action.networkConnectionAction.localPortDetails.port</p> </li> <li>
      * <p>service.action.networkConnectionAction.protocol</p> </li> <li>
-     * <p>service.action.networkConnectionAction.remoteIpDetails.city.cityName</p>
+     * <p>service.action.networkConnectionAction.localIpDetails.ipAddressV4</p> </li>
+     * <li> <p>service.action.networkConnectionAction.remoteIpDetails.city.cityName</p>
      * </li> <li>
      * <p>service.action.networkConnectionAction.remoteIpDetails.country.countryName</p>
      * </li> <li>

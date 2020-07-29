@@ -23,12 +23,15 @@
 #include <aws/resource-groups/model/CreateGroupRequest.h>
 #include <aws/resource-groups/model/DeleteGroupRequest.h>
 #include <aws/resource-groups/model/GetGroupRequest.h>
+#include <aws/resource-groups/model/GetGroupConfigurationRequest.h>
 #include <aws/resource-groups/model/GetGroupQueryRequest.h>
 #include <aws/resource-groups/model/GetTagsRequest.h>
+#include <aws/resource-groups/model/GroupResourcesRequest.h>
 #include <aws/resource-groups/model/ListGroupResourcesRequest.h>
 #include <aws/resource-groups/model/ListGroupsRequest.h>
 #include <aws/resource-groups/model/SearchResourcesRequest.h>
 #include <aws/resource-groups/model/TagRequest.h>
+#include <aws/resource-groups/model/UngroupResourcesRequest.h>
 #include <aws/resource-groups/model/UntagRequest.h>
 #include <aws/resource-groups/model/UpdateGroupRequest.h>
 #include <aws/resource-groups/model/UpdateGroupQueryRequest.h>
@@ -134,17 +137,11 @@ void ResourceGroupsClient::CreateGroupAsyncHelper(const CreateGroupRequest& requ
 
 DeleteGroupOutcome ResourceGroupsClient::DeleteGroup(const DeleteGroupRequest& request) const
 {
-  if (!request.GroupNameHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("DeleteGroup", "Required field: GroupName, is not set");
-    return DeleteGroupOutcome(Aws::Client::AWSError<ResourceGroupsErrors>(ResourceGroupsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [GroupName]", false));
-  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
-  ss << "/groups/";
-  ss << request.GetGroupName();
+  ss << "/delete-group";
   uri.SetPath(uri.GetPath() + ss.str());
-  return DeleteGroupOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+  return DeleteGroupOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteGroupOutcomeCallable ResourceGroupsClient::DeleteGroupCallable(const DeleteGroupRequest& request) const
@@ -167,17 +164,11 @@ void ResourceGroupsClient::DeleteGroupAsyncHelper(const DeleteGroupRequest& requ
 
 GetGroupOutcome ResourceGroupsClient::GetGroup(const GetGroupRequest& request) const
 {
-  if (!request.GroupNameHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("GetGroup", "Required field: GroupName, is not set");
-    return GetGroupOutcome(Aws::Client::AWSError<ResourceGroupsErrors>(ResourceGroupsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [GroupName]", false));
-  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
-  ss << "/groups/";
-  ss << request.GetGroupName();
+  ss << "/get-group";
   uri.SetPath(uri.GetPath() + ss.str());
-  return GetGroupOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  return GetGroupOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetGroupOutcomeCallable ResourceGroupsClient::GetGroupCallable(const GetGroupRequest& request) const
@@ -198,20 +189,40 @@ void ResourceGroupsClient::GetGroupAsyncHelper(const GetGroupRequest& request, c
   handler(this, request, GetGroup(request), context);
 }
 
-GetGroupQueryOutcome ResourceGroupsClient::GetGroupQuery(const GetGroupQueryRequest& request) const
+GetGroupConfigurationOutcome ResourceGroupsClient::GetGroupConfiguration(const GetGroupConfigurationRequest& request) const
 {
-  if (!request.GroupNameHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("GetGroupQuery", "Required field: GroupName, is not set");
-    return GetGroupQueryOutcome(Aws::Client::AWSError<ResourceGroupsErrors>(ResourceGroupsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [GroupName]", false));
-  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
-  ss << "/groups/";
-  ss << request.GetGroupName();
-  ss << "/query";
+  ss << "/get-group-configuration";
   uri.SetPath(uri.GetPath() + ss.str());
-  return GetGroupQueryOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  return GetGroupConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetGroupConfigurationOutcomeCallable ResourceGroupsClient::GetGroupConfigurationCallable(const GetGroupConfigurationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetGroupConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetGroupConfiguration(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ResourceGroupsClient::GetGroupConfigurationAsync(const GetGroupConfigurationRequest& request, const GetGroupConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetGroupConfigurationAsyncHelper( request, handler, context ); } );
+}
+
+void ResourceGroupsClient::GetGroupConfigurationAsyncHelper(const GetGroupConfigurationRequest& request, const GetGroupConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetGroupConfiguration(request), context);
+}
+
+GetGroupQueryOutcome ResourceGroupsClient::GetGroupQuery(const GetGroupQueryRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/get-group-query";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return GetGroupQueryOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetGroupQueryOutcomeCallable ResourceGroupsClient::GetGroupQueryCallable(const GetGroupQueryRequest& request) const
@@ -266,18 +277,38 @@ void ResourceGroupsClient::GetTagsAsyncHelper(const GetTagsRequest& request, con
   handler(this, request, GetTags(request), context);
 }
 
-ListGroupResourcesOutcome ResourceGroupsClient::ListGroupResources(const ListGroupResourcesRequest& request) const
+GroupResourcesOutcome ResourceGroupsClient::GroupResources(const GroupResourcesRequest& request) const
 {
-  if (!request.GroupNameHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("ListGroupResources", "Required field: GroupName, is not set");
-    return ListGroupResourcesOutcome(Aws::Client::AWSError<ResourceGroupsErrors>(ResourceGroupsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [GroupName]", false));
-  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
-  ss << "/groups/";
-  ss << request.GetGroupName();
-  ss << "/resource-identifiers-list";
+  ss << "/group-resources";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return GroupResourcesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+GroupResourcesOutcomeCallable ResourceGroupsClient::GroupResourcesCallable(const GroupResourcesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GroupResourcesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GroupResources(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ResourceGroupsClient::GroupResourcesAsync(const GroupResourcesRequest& request, const GroupResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GroupResourcesAsyncHelper( request, handler, context ); } );
+}
+
+void ResourceGroupsClient::GroupResourcesAsyncHelper(const GroupResourcesRequest& request, const GroupResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GroupResources(request), context);
+}
+
+ListGroupResourcesOutcome ResourceGroupsClient::ListGroupResources(const ListGroupResourcesRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/list-group-resources";
   uri.SetPath(uri.GetPath() + ss.str());
   return ListGroupResourcesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
@@ -388,6 +419,33 @@ void ResourceGroupsClient::TagAsyncHelper(const TagRequest& request, const TagRe
   handler(this, request, Tag(request), context);
 }
 
+UngroupResourcesOutcome ResourceGroupsClient::UngroupResources(const UngroupResourcesRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/ungroup-resources";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return UngroupResourcesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+UngroupResourcesOutcomeCallable ResourceGroupsClient::UngroupResourcesCallable(const UngroupResourcesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UngroupResourcesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UngroupResources(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ResourceGroupsClient::UngroupResourcesAsync(const UngroupResourcesRequest& request, const UngroupResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UngroupResourcesAsyncHelper( request, handler, context ); } );
+}
+
+void ResourceGroupsClient::UngroupResourcesAsyncHelper(const UngroupResourcesRequest& request, const UngroupResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UngroupResources(request), context);
+}
+
 UntagOutcome ResourceGroupsClient::Untag(const UntagRequest& request) const
 {
   if (!request.ArnHasBeenSet())
@@ -424,17 +482,11 @@ void ResourceGroupsClient::UntagAsyncHelper(const UntagRequest& request, const U
 
 UpdateGroupOutcome ResourceGroupsClient::UpdateGroup(const UpdateGroupRequest& request) const
 {
-  if (!request.GroupNameHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("UpdateGroup", "Required field: GroupName, is not set");
-    return UpdateGroupOutcome(Aws::Client::AWSError<ResourceGroupsErrors>(ResourceGroupsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [GroupName]", false));
-  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
-  ss << "/groups/";
-  ss << request.GetGroupName();
+  ss << "/update-group";
   uri.SetPath(uri.GetPath() + ss.str());
-  return UpdateGroupOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+  return UpdateGroupOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateGroupOutcomeCallable ResourceGroupsClient::UpdateGroupCallable(const UpdateGroupRequest& request) const
@@ -457,18 +509,11 @@ void ResourceGroupsClient::UpdateGroupAsyncHelper(const UpdateGroupRequest& requ
 
 UpdateGroupQueryOutcome ResourceGroupsClient::UpdateGroupQuery(const UpdateGroupQueryRequest& request) const
 {
-  if (!request.GroupNameHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("UpdateGroupQuery", "Required field: GroupName, is not set");
-    return UpdateGroupQueryOutcome(Aws::Client::AWSError<ResourceGroupsErrors>(ResourceGroupsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [GroupName]", false));
-  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
-  ss << "/groups/";
-  ss << request.GetGroupName();
-  ss << "/query";
+  ss << "/update-group-query";
   uri.SetPath(uri.GetPath() + ss.str());
-  return UpdateGroupQueryOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+  return UpdateGroupQueryOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateGroupQueryOutcomeCallable ResourceGroupsClient::UpdateGroupQueryCallable(const UpdateGroupQueryRequest& request) const

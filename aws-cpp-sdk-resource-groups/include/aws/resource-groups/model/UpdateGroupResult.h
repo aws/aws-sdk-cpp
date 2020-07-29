@@ -33,27 +33,27 @@ namespace Model
 
 
     /**
-     * <p>The full description of the resource group after it has been updated.</p>
+     * <p>The update description of the resource group.</p>
      */
     inline const Group& GetGroup() const{ return m_group; }
 
     /**
-     * <p>The full description of the resource group after it has been updated.</p>
+     * <p>The update description of the resource group.</p>
      */
     inline void SetGroup(const Group& value) { m_group = value; }
 
     /**
-     * <p>The full description of the resource group after it has been updated.</p>
+     * <p>The update description of the resource group.</p>
      */
     inline void SetGroup(Group&& value) { m_group = std::move(value); }
 
     /**
-     * <p>The full description of the resource group after it has been updated.</p>
+     * <p>The update description of the resource group.</p>
      */
     inline UpdateGroupResult& WithGroup(const Group& value) { SetGroup(value); return *this;}
 
     /**
-     * <p>The full description of the resource group after it has been updated.</p>
+     * <p>The update description of the resource group.</p>
      */
     inline UpdateGroupResult& WithGroup(Group&& value) { SetGroup(std::move(value)); return *this;}
 

@@ -21,7 +21,8 @@ namespace Model
     ImageTagDoesNotMatchDigest,
     ImageNotFound,
     MissingDigestAndTag,
-    ImageReferencedByManifestList
+    ImageReferencedByManifestList,
+    KmsError
   };
 
 namespace ImageFailureCodeMapper

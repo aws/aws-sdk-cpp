@@ -10,6 +10,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ecr/model/ImageTagMutability.h>
 #include <aws/ecr/model/ImageScanningConfiguration.h>
+#include <aws/ecr/model/EncryptionConfiguration.h>
 #include <aws/ecr/model/Tag.h>
 #include <utility>
 
@@ -224,46 +225,83 @@ namespace Model
 
 
     /**
-     * <p>The image scanning configuration for the repository. This setting determines
-     * whether images are scanned for known vulnerabilities after being pushed to the
+     * <p>The image scanning configuration for the repository. This determines whether
+     * images are scanned for known vulnerabilities after being pushed to the
      * repository.</p>
      */
     inline const ImageScanningConfiguration& GetImageScanningConfiguration() const{ return m_imageScanningConfiguration; }
 
     /**
-     * <p>The image scanning configuration for the repository. This setting determines
-     * whether images are scanned for known vulnerabilities after being pushed to the
+     * <p>The image scanning configuration for the repository. This determines whether
+     * images are scanned for known vulnerabilities after being pushed to the
      * repository.</p>
      */
     inline bool ImageScanningConfigurationHasBeenSet() const { return m_imageScanningConfigurationHasBeenSet; }
 
     /**
-     * <p>The image scanning configuration for the repository. This setting determines
-     * whether images are scanned for known vulnerabilities after being pushed to the
+     * <p>The image scanning configuration for the repository. This determines whether
+     * images are scanned for known vulnerabilities after being pushed to the
      * repository.</p>
      */
     inline void SetImageScanningConfiguration(const ImageScanningConfiguration& value) { m_imageScanningConfigurationHasBeenSet = true; m_imageScanningConfiguration = value; }
 
     /**
-     * <p>The image scanning configuration for the repository. This setting determines
-     * whether images are scanned for known vulnerabilities after being pushed to the
+     * <p>The image scanning configuration for the repository. This determines whether
+     * images are scanned for known vulnerabilities after being pushed to the
      * repository.</p>
      */
     inline void SetImageScanningConfiguration(ImageScanningConfiguration&& value) { m_imageScanningConfigurationHasBeenSet = true; m_imageScanningConfiguration = std::move(value); }
 
     /**
-     * <p>The image scanning configuration for the repository. This setting determines
-     * whether images are scanned for known vulnerabilities after being pushed to the
+     * <p>The image scanning configuration for the repository. This determines whether
+     * images are scanned for known vulnerabilities after being pushed to the
      * repository.</p>
      */
     inline CreateRepositoryRequest& WithImageScanningConfiguration(const ImageScanningConfiguration& value) { SetImageScanningConfiguration(value); return *this;}
 
     /**
-     * <p>The image scanning configuration for the repository. This setting determines
-     * whether images are scanned for known vulnerabilities after being pushed to the
+     * <p>The image scanning configuration for the repository. This determines whether
+     * images are scanned for known vulnerabilities after being pushed to the
      * repository.</p>
      */
     inline CreateRepositoryRequest& WithImageScanningConfiguration(ImageScanningConfiguration&& value) { SetImageScanningConfiguration(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The encryption configuration for the repository. This determines how the
+     * contents of your repository are encrypted at rest.</p>
+     */
+    inline const EncryptionConfiguration& GetEncryptionConfiguration() const{ return m_encryptionConfiguration; }
+
+    /**
+     * <p>The encryption configuration for the repository. This determines how the
+     * contents of your repository are encrypted at rest.</p>
+     */
+    inline bool EncryptionConfigurationHasBeenSet() const { return m_encryptionConfigurationHasBeenSet; }
+
+    /**
+     * <p>The encryption configuration for the repository. This determines how the
+     * contents of your repository are encrypted at rest.</p>
+     */
+    inline void SetEncryptionConfiguration(const EncryptionConfiguration& value) { m_encryptionConfigurationHasBeenSet = true; m_encryptionConfiguration = value; }
+
+    /**
+     * <p>The encryption configuration for the repository. This determines how the
+     * contents of your repository are encrypted at rest.</p>
+     */
+    inline void SetEncryptionConfiguration(EncryptionConfiguration&& value) { m_encryptionConfigurationHasBeenSet = true; m_encryptionConfiguration = std::move(value); }
+
+    /**
+     * <p>The encryption configuration for the repository. This determines how the
+     * contents of your repository are encrypted at rest.</p>
+     */
+    inline CreateRepositoryRequest& WithEncryptionConfiguration(const EncryptionConfiguration& value) { SetEncryptionConfiguration(value); return *this;}
+
+    /**
+     * <p>The encryption configuration for the repository. This determines how the
+     * contents of your repository are encrypted at rest.</p>
+     */
+    inline CreateRepositoryRequest& WithEncryptionConfiguration(EncryptionConfiguration&& value) { SetEncryptionConfiguration(std::move(value)); return *this;}
 
   private:
 
@@ -278,6 +316,9 @@ namespace Model
 
     ImageScanningConfiguration m_imageScanningConfiguration;
     bool m_imageScanningConfigurationHasBeenSet;
+
+    EncryptionConfiguration m_encryptionConfiguration;
+    bool m_encryptionConfigurationHasBeenSet;
   };
 
 } // namespace Model

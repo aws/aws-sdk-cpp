@@ -11,6 +11,7 @@
 #include <aws/firehose/model/RedshiftDestinationUpdate.h>
 #include <aws/firehose/model/ElasticsearchDestinationUpdate.h>
 #include <aws/firehose/model/SplunkDestinationUpdate.h>
+#include <aws/firehose/model/HttpEndpointDestinationUpdate.h>
 #include <utility>
 
 namespace Aws
@@ -324,6 +325,37 @@ namespace Model
      */
     inline UpdateDestinationRequest& WithSplunkDestinationUpdate(SplunkDestinationUpdate&& value) { SetSplunkDestinationUpdate(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Describes an update to the specified HTTP endpoint destination.</p>
+     */
+    inline const HttpEndpointDestinationUpdate& GetHttpEndpointDestinationUpdate() const{ return m_httpEndpointDestinationUpdate; }
+
+    /**
+     * <p>Describes an update to the specified HTTP endpoint destination.</p>
+     */
+    inline bool HttpEndpointDestinationUpdateHasBeenSet() const { return m_httpEndpointDestinationUpdateHasBeenSet; }
+
+    /**
+     * <p>Describes an update to the specified HTTP endpoint destination.</p>
+     */
+    inline void SetHttpEndpointDestinationUpdate(const HttpEndpointDestinationUpdate& value) { m_httpEndpointDestinationUpdateHasBeenSet = true; m_httpEndpointDestinationUpdate = value; }
+
+    /**
+     * <p>Describes an update to the specified HTTP endpoint destination.</p>
+     */
+    inline void SetHttpEndpointDestinationUpdate(HttpEndpointDestinationUpdate&& value) { m_httpEndpointDestinationUpdateHasBeenSet = true; m_httpEndpointDestinationUpdate = std::move(value); }
+
+    /**
+     * <p>Describes an update to the specified HTTP endpoint destination.</p>
+     */
+    inline UpdateDestinationRequest& WithHttpEndpointDestinationUpdate(const HttpEndpointDestinationUpdate& value) { SetHttpEndpointDestinationUpdate(value); return *this;}
+
+    /**
+     * <p>Describes an update to the specified HTTP endpoint destination.</p>
+     */
+    inline UpdateDestinationRequest& WithHttpEndpointDestinationUpdate(HttpEndpointDestinationUpdate&& value) { SetHttpEndpointDestinationUpdate(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_deliveryStreamName;
@@ -346,6 +378,9 @@ namespace Model
 
     SplunkDestinationUpdate m_splunkDestinationUpdate;
     bool m_splunkDestinationUpdateHasBeenSet;
+
+    HttpEndpointDestinationUpdate m_httpEndpointDestinationUpdate;
+    bool m_httpEndpointDestinationUpdateHasBeenSet;
   };
 
 } // namespace Model

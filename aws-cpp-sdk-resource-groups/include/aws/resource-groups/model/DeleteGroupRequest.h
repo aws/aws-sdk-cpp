@@ -33,49 +33,49 @@ namespace Model
 
 
     /**
-     * <p>The name of the resource group to delete.</p>
+     * <p>The name or the ARN of the resource group to delete.</p>
      */
-    inline const Aws::String& GetGroupName() const{ return m_groupName; }
+    inline const Aws::String& GetGroup() const{ return m_group; }
 
     /**
-     * <p>The name of the resource group to delete.</p>
+     * <p>The name or the ARN of the resource group to delete.</p>
      */
-    inline bool GroupNameHasBeenSet() const { return m_groupNameHasBeenSet; }
+    inline bool GroupHasBeenSet() const { return m_groupHasBeenSet; }
 
     /**
-     * <p>The name of the resource group to delete.</p>
+     * <p>The name or the ARN of the resource group to delete.</p>
      */
-    inline void SetGroupName(const Aws::String& value) { m_groupNameHasBeenSet = true; m_groupName = value; }
+    inline void SetGroup(const Aws::String& value) { m_groupHasBeenSet = true; m_group = value; }
 
     /**
-     * <p>The name of the resource group to delete.</p>
+     * <p>The name or the ARN of the resource group to delete.</p>
      */
-    inline void SetGroupName(Aws::String&& value) { m_groupNameHasBeenSet = true; m_groupName = std::move(value); }
+    inline void SetGroup(Aws::String&& value) { m_groupHasBeenSet = true; m_group = std::move(value); }
 
     /**
-     * <p>The name of the resource group to delete.</p>
+     * <p>The name or the ARN of the resource group to delete.</p>
      */
-    inline void SetGroupName(const char* value) { m_groupNameHasBeenSet = true; m_groupName.assign(value); }
+    inline void SetGroup(const char* value) { m_groupHasBeenSet = true; m_group.assign(value); }
 
     /**
-     * <p>The name of the resource group to delete.</p>
+     * <p>The name or the ARN of the resource group to delete.</p>
      */
-    inline DeleteGroupRequest& WithGroupName(const Aws::String& value) { SetGroupName(value); return *this;}
+    inline DeleteGroupRequest& WithGroup(const Aws::String& value) { SetGroup(value); return *this;}
 
     /**
-     * <p>The name of the resource group to delete.</p>
+     * <p>The name or the ARN of the resource group to delete.</p>
      */
-    inline DeleteGroupRequest& WithGroupName(Aws::String&& value) { SetGroupName(std::move(value)); return *this;}
+    inline DeleteGroupRequest& WithGroup(Aws::String&& value) { SetGroup(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the resource group to delete.</p>
+     * <p>The name or the ARN of the resource group to delete.</p>
      */
-    inline DeleteGroupRequest& WithGroupName(const char* value) { SetGroupName(value); return *this;}
+    inline DeleteGroupRequest& WithGroup(const char* value) { SetGroup(value); return *this;}
 
   private:
 
-    Aws::String m_groupName;
-    bool m_groupNameHasBeenSet;
+    Aws::String m_group;
+    bool m_groupHasBeenSet;
   };
 
 } // namespace Model

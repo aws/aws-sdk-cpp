@@ -17,7 +17,8 @@ UpdateDetectorRequest::UpdateDetectorRequest() :
     m_enable(false),
     m_enableHasBeenSet(false),
     m_findingPublishingFrequency(FindingPublishingFrequency::NOT_SET),
-    m_findingPublishingFrequencyHasBeenSet(false)
+    m_findingPublishingFrequencyHasBeenSet(false),
+    m_dataSourcesHasBeenSet(false)
 {
 }
 
@@ -34,6 +35,12 @@ Aws::String UpdateDetectorRequest::SerializePayload() const
   if(m_findingPublishingFrequencyHasBeenSet)
   {
    payload.WithString("findingPublishingFrequency", FindingPublishingFrequencyMapper::GetNameForFindingPublishingFrequency(m_findingPublishingFrequency));
+  }
+
+  if(m_dataSourcesHasBeenSet)
+  {
+   payload.WithObject("dataSources", m_dataSources.Jsonize());
+
   }
 
   return payload.View().WriteReadable();

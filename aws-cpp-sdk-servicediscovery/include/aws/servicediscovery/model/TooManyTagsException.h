@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>The list of tags on the resource is over the limit. The maximum number of
+   * <p>The list of tags on the resource is over the quota. The maximum number of
    * tags that can be applied to a resource is 50.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/TooManyTagsException">AWS
    * API Reference</a></p>

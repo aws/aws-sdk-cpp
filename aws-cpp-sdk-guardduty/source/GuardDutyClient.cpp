@@ -50,6 +50,7 @@
 #include <aws/guardduty/model/GetIPSetRequest.h>
 #include <aws/guardduty/model/GetInvitationsCountRequest.h>
 #include <aws/guardduty/model/GetMasterAccountRequest.h>
+#include <aws/guardduty/model/GetMemberDetectorsRequest.h>
 #include <aws/guardduty/model/GetMembersRequest.h>
 #include <aws/guardduty/model/GetThreatIntelSetRequest.h>
 #include <aws/guardduty/model/InviteMembersRequest.h>
@@ -72,6 +73,7 @@
 #include <aws/guardduty/model/UpdateFilterRequest.h>
 #include <aws/guardduty/model/UpdateFindingsFeedbackRequest.h>
 #include <aws/guardduty/model/UpdateIPSetRequest.h>
+#include <aws/guardduty/model/UpdateMemberDetectorsRequest.h>
 #include <aws/guardduty/model/UpdateOrganizationConfigurationRequest.h>
 #include <aws/guardduty/model/UpdatePublishingDestinationRequest.h>
 #include <aws/guardduty/model/UpdateThreatIntelSetRequest.h>
@@ -1166,6 +1168,40 @@ void GuardDutyClient::GetMasterAccountAsyncHelper(const GetMasterAccountRequest&
   handler(this, request, GetMasterAccount(request), context);
 }
 
+GetMemberDetectorsOutcome GuardDutyClient::GetMemberDetectors(const GetMemberDetectorsRequest& request) const
+{
+  if (!request.DetectorIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetMemberDetectors", "Required field: DetectorId, is not set");
+    return GetMemberDetectorsOutcome(Aws::Client::AWSError<GuardDutyErrors>(GuardDutyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DetectorId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/detector/";
+  ss << request.GetDetectorId();
+  ss << "/member/detector/get";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return GetMemberDetectorsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetMemberDetectorsOutcomeCallable GuardDutyClient::GetMemberDetectorsCallable(const GetMemberDetectorsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetMemberDetectorsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetMemberDetectors(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GuardDutyClient::GetMemberDetectorsAsync(const GetMemberDetectorsRequest& request, const GetMemberDetectorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetMemberDetectorsAsyncHelper( request, handler, context ); } );
+}
+
+void GuardDutyClient::GetMemberDetectorsAsyncHelper(const GetMemberDetectorsRequest& request, const GetMemberDetectorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetMemberDetectors(request), context);
+}
+
 GetMembersOutcome GuardDutyClient::GetMembers(const GetMembersRequest& request) const
 {
   if (!request.DetectorIdHasBeenSet())
@@ -1910,6 +1946,40 @@ void GuardDutyClient::UpdateIPSetAsync(const UpdateIPSetRequest& request, const 
 void GuardDutyClient::UpdateIPSetAsyncHelper(const UpdateIPSetRequest& request, const UpdateIPSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateIPSet(request), context);
+}
+
+UpdateMemberDetectorsOutcome GuardDutyClient::UpdateMemberDetectors(const UpdateMemberDetectorsRequest& request) const
+{
+  if (!request.DetectorIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateMemberDetectors", "Required field: DetectorId, is not set");
+    return UpdateMemberDetectorsOutcome(Aws::Client::AWSError<GuardDutyErrors>(GuardDutyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DetectorId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/detector/";
+  ss << request.GetDetectorId();
+  ss << "/member/detector/update";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return UpdateMemberDetectorsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateMemberDetectorsOutcomeCallable GuardDutyClient::UpdateMemberDetectorsCallable(const UpdateMemberDetectorsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateMemberDetectorsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateMemberDetectors(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GuardDutyClient::UpdateMemberDetectorsAsync(const UpdateMemberDetectorsRequest& request, const UpdateMemberDetectorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateMemberDetectorsAsyncHelper( request, handler, context ); } );
+}
+
+void GuardDutyClient::UpdateMemberDetectorsAsyncHelper(const UpdateMemberDetectorsRequest& request, const UpdateMemberDetectorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateMemberDetectors(request), context);
 }
 
 UpdateOrganizationConfigurationOutcome GuardDutyClient::UpdateOrganizationConfiguration(const UpdateOrganizationConfigurationRequest& request) const

@@ -26,6 +26,7 @@ namespace Aws
         static const int ImageNotFound_HASH = HashingUtils::HashString("ImageNotFound");
         static const int MissingDigestAndTag_HASH = HashingUtils::HashString("MissingDigestAndTag");
         static const int ImageReferencedByManifestList_HASH = HashingUtils::HashString("ImageReferencedByManifestList");
+        static const int KmsError_HASH = HashingUtils::HashString("KmsError");
 
 
         ImageFailureCode GetImageFailureCodeForName(const Aws::String& name)
@@ -55,6 +56,10 @@ namespace Aws
           {
             return ImageFailureCode::ImageReferencedByManifestList;
           }
+          else if (hashCode == KmsError_HASH)
+          {
+            return ImageFailureCode::KmsError;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -81,6 +86,8 @@ namespace Aws
             return "MissingDigestAndTag";
           case ImageFailureCode::ImageReferencedByManifestList:
             return "ImageReferencedByManifestList";
+          case ImageFailureCode::KmsError:
+            return "KmsError";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

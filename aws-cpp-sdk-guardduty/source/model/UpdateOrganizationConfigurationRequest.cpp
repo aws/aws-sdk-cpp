@@ -15,7 +15,8 @@ using namespace Aws::Utils;
 UpdateOrganizationConfigurationRequest::UpdateOrganizationConfigurationRequest() : 
     m_detectorIdHasBeenSet(false),
     m_autoEnable(false),
-    m_autoEnableHasBeenSet(false)
+    m_autoEnableHasBeenSet(false),
+    m_dataSourcesHasBeenSet(false)
 {
 }
 
@@ -26,6 +27,12 @@ Aws::String UpdateOrganizationConfigurationRequest::SerializePayload() const
   if(m_autoEnableHasBeenSet)
   {
    payload.WithBool("autoEnable", m_autoEnable);
+
+  }
+
+  if(m_dataSourcesHasBeenSet)
+  {
+   payload.WithObject("dataSources", m_dataSources.Jsonize());
 
   }
 

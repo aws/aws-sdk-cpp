@@ -33,7 +33,8 @@ namespace Model
    * to run as an On-Demand Instance or to run in any <code>open</code> Capacity
    * Reservation that has matching attributes (instance type, platform, Availability
    * Zone). Use the <code>CapacityReservationTarget</code> parameter to explicitly
-   * target a specific Capacity Reservation.</p><p><h3>See Also:</h3>   <a
+   * target a specific Capacity Reservation or a Capacity Reservation
+   * group.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CapacityReservationSpecification">AWS
    * API Reference</a></p>
    */
@@ -55,8 +56,6 @@ namespace Model
      * (instance type, platform, Availability Zone).</p> </li> <li> <p>
      * <code>none</code> - The instance avoids running in a Capacity Reservation even
      * if one is available. The instance runs as an On-Demand Instance.</p> </li> </ul>
-     * <p>When <code>CapacityReservationPreference</code> is not specified, it defaults
-     * to <code>open</code>.</p>
      */
     inline const CapacityReservationPreference& GetCapacityReservationPreference() const{ return m_capacityReservationPreference; }
 
@@ -67,8 +66,6 @@ namespace Model
      * (instance type, platform, Availability Zone).</p> </li> <li> <p>
      * <code>none</code> - The instance avoids running in a Capacity Reservation even
      * if one is available. The instance runs as an On-Demand Instance.</p> </li> </ul>
-     * <p>When <code>CapacityReservationPreference</code> is not specified, it defaults
-     * to <code>open</code>.</p>
      */
     inline bool CapacityReservationPreferenceHasBeenSet() const { return m_capacityReservationPreferenceHasBeenSet; }
 
@@ -79,8 +76,6 @@ namespace Model
      * (instance type, platform, Availability Zone).</p> </li> <li> <p>
      * <code>none</code> - The instance avoids running in a Capacity Reservation even
      * if one is available. The instance runs as an On-Demand Instance.</p> </li> </ul>
-     * <p>When <code>CapacityReservationPreference</code> is not specified, it defaults
-     * to <code>open</code>.</p>
      */
     inline void SetCapacityReservationPreference(const CapacityReservationPreference& value) { m_capacityReservationPreferenceHasBeenSet = true; m_capacityReservationPreference = value; }
 
@@ -91,8 +86,6 @@ namespace Model
      * (instance type, platform, Availability Zone).</p> </li> <li> <p>
      * <code>none</code> - The instance avoids running in a Capacity Reservation even
      * if one is available. The instance runs as an On-Demand Instance.</p> </li> </ul>
-     * <p>When <code>CapacityReservationPreference</code> is not specified, it defaults
-     * to <code>open</code>.</p>
      */
     inline void SetCapacityReservationPreference(CapacityReservationPreference&& value) { m_capacityReservationPreferenceHasBeenSet = true; m_capacityReservationPreference = std::move(value); }
 
@@ -103,8 +96,6 @@ namespace Model
      * (instance type, platform, Availability Zone).</p> </li> <li> <p>
      * <code>none</code> - The instance avoids running in a Capacity Reservation even
      * if one is available. The instance runs as an On-Demand Instance.</p> </li> </ul>
-     * <p>When <code>CapacityReservationPreference</code> is not specified, it defaults
-     * to <code>open</code>.</p>
      */
     inline CapacityReservationSpecification& WithCapacityReservationPreference(const CapacityReservationPreference& value) { SetCapacityReservationPreference(value); return *this;}
 
@@ -115,39 +106,43 @@ namespace Model
      * (instance type, platform, Availability Zone).</p> </li> <li> <p>
      * <code>none</code> - The instance avoids running in a Capacity Reservation even
      * if one is available. The instance runs as an On-Demand Instance.</p> </li> </ul>
-     * <p>When <code>CapacityReservationPreference</code> is not specified, it defaults
-     * to <code>open</code>.</p>
      */
     inline CapacityReservationSpecification& WithCapacityReservationPreference(CapacityReservationPreference&& value) { SetCapacityReservationPreference(std::move(value)); return *this;}
 
 
     /**
-     * <p>Information about the target Capacity Reservation.</p>
+     * <p>Information about the target Capacity Reservation or Capacity Reservation
+     * group.</p>
      */
     inline const CapacityReservationTarget& GetCapacityReservationTarget() const{ return m_capacityReservationTarget; }
 
     /**
-     * <p>Information about the target Capacity Reservation.</p>
+     * <p>Information about the target Capacity Reservation or Capacity Reservation
+     * group.</p>
      */
     inline bool CapacityReservationTargetHasBeenSet() const { return m_capacityReservationTargetHasBeenSet; }
 
     /**
-     * <p>Information about the target Capacity Reservation.</p>
+     * <p>Information about the target Capacity Reservation or Capacity Reservation
+     * group.</p>
      */
     inline void SetCapacityReservationTarget(const CapacityReservationTarget& value) { m_capacityReservationTargetHasBeenSet = true; m_capacityReservationTarget = value; }
 
     /**
-     * <p>Information about the target Capacity Reservation.</p>
+     * <p>Information about the target Capacity Reservation or Capacity Reservation
+     * group.</p>
      */
     inline void SetCapacityReservationTarget(CapacityReservationTarget&& value) { m_capacityReservationTargetHasBeenSet = true; m_capacityReservationTarget = std::move(value); }
 
     /**
-     * <p>Information about the target Capacity Reservation.</p>
+     * <p>Information about the target Capacity Reservation or Capacity Reservation
+     * group.</p>
      */
     inline CapacityReservationSpecification& WithCapacityReservationTarget(const CapacityReservationTarget& value) { SetCapacityReservationTarget(value); return *this;}
 
     /**
-     * <p>Information about the target Capacity Reservation.</p>
+     * <p>Information about the target Capacity Reservation or Capacity Reservation
+     * group.</p>
      */
     inline CapacityReservationSpecification& WithCapacityReservationTarget(CapacityReservationTarget&& value) { SetCapacityReservationTarget(std::move(value)); return *this;}
 

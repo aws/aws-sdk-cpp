@@ -289,37 +289,37 @@ namespace Model
 
 
     /**
-     * <p>A complex type that contains information about the Route 53 DNS records that
+     * <p>A complex type that contains information about the Route 53 DNS records that
      * you want AWS Cloud Map to create when you register an instance.</p>
      */
     inline const DnsConfig& GetDnsConfig() const{ return m_dnsConfig; }
 
     /**
-     * <p>A complex type that contains information about the Route 53 DNS records that
+     * <p>A complex type that contains information about the Route 53 DNS records that
      * you want AWS Cloud Map to create when you register an instance.</p>
      */
     inline bool DnsConfigHasBeenSet() const { return m_dnsConfigHasBeenSet; }
 
     /**
-     * <p>A complex type that contains information about the Route 53 DNS records that
+     * <p>A complex type that contains information about the Route 53 DNS records that
      * you want AWS Cloud Map to create when you register an instance.</p>
      */
     inline void SetDnsConfig(const DnsConfig& value) { m_dnsConfigHasBeenSet = true; m_dnsConfig = value; }
 
     /**
-     * <p>A complex type that contains information about the Route 53 DNS records that
+     * <p>A complex type that contains information about the Route 53 DNS records that
      * you want AWS Cloud Map to create when you register an instance.</p>
      */
     inline void SetDnsConfig(DnsConfig&& value) { m_dnsConfigHasBeenSet = true; m_dnsConfig = std::move(value); }
 
     /**
-     * <p>A complex type that contains information about the Route 53 DNS records that
+     * <p>A complex type that contains information about the Route 53 DNS records that
      * you want AWS Cloud Map to create when you register an instance.</p>
      */
     inline Service& WithDnsConfig(const DnsConfig& value) { SetDnsConfig(value); return *this;}
 
     /**
-     * <p>A complex type that contains information about the Route 53 DNS records that
+     * <p>A complex type that contains information about the Route 53 DNS records that
      * you want AWS Cloud Map to create when you register an instance.</p>
      */
     inline Service& WithDnsConfig(DnsConfig&& value) { SetDnsConfig(std::move(value)); return *this;}
@@ -330,8 +330,8 @@ namespace Model
      * settings for an optional health check. If you specify settings for a health
      * check, AWS Cloud Map associates the health check with the records that you
      * specify in <code>DnsConfig</code>.</p> <p>For information about the charges for
-     * health checks, see <a href="http://aws.amazon.com/route53/pricing/">Amazon Route
-     * 53 Pricing</a>.</p>
+     * health checks, see <a href="http://aws.amazon.com/route53/pricing/">Amazon
+     * Route 53 Pricing</a>.</p>
      */
     inline const HealthCheckConfig& GetHealthCheckConfig() const{ return m_healthCheckConfig; }
 
@@ -340,8 +340,8 @@ namespace Model
      * settings for an optional health check. If you specify settings for a health
      * check, AWS Cloud Map associates the health check with the records that you
      * specify in <code>DnsConfig</code>.</p> <p>For information about the charges for
-     * health checks, see <a href="http://aws.amazon.com/route53/pricing/">Amazon Route
-     * 53 Pricing</a>.</p>
+     * health checks, see <a href="http://aws.amazon.com/route53/pricing/">Amazon
+     * Route 53 Pricing</a>.</p>
      */
     inline bool HealthCheckConfigHasBeenSet() const { return m_healthCheckConfigHasBeenSet; }
 
@@ -350,8 +350,8 @@ namespace Model
      * settings for an optional health check. If you specify settings for a health
      * check, AWS Cloud Map associates the health check with the records that you
      * specify in <code>DnsConfig</code>.</p> <p>For information about the charges for
-     * health checks, see <a href="http://aws.amazon.com/route53/pricing/">Amazon Route
-     * 53 Pricing</a>.</p>
+     * health checks, see <a href="http://aws.amazon.com/route53/pricing/">Amazon
+     * Route 53 Pricing</a>.</p>
      */
     inline void SetHealthCheckConfig(const HealthCheckConfig& value) { m_healthCheckConfigHasBeenSet = true; m_healthCheckConfig = value; }
 
@@ -360,8 +360,8 @@ namespace Model
      * settings for an optional health check. If you specify settings for a health
      * check, AWS Cloud Map associates the health check with the records that you
      * specify in <code>DnsConfig</code>.</p> <p>For information about the charges for
-     * health checks, see <a href="http://aws.amazon.com/route53/pricing/">Amazon Route
-     * 53 Pricing</a>.</p>
+     * health checks, see <a href="http://aws.amazon.com/route53/pricing/">Amazon
+     * Route 53 Pricing</a>.</p>
      */
     inline void SetHealthCheckConfig(HealthCheckConfig&& value) { m_healthCheckConfigHasBeenSet = true; m_healthCheckConfig = std::move(value); }
 
@@ -370,8 +370,8 @@ namespace Model
      * settings for an optional health check. If you specify settings for a health
      * check, AWS Cloud Map associates the health check with the records that you
      * specify in <code>DnsConfig</code>.</p> <p>For information about the charges for
-     * health checks, see <a href="http://aws.amazon.com/route53/pricing/">Amazon Route
-     * 53 Pricing</a>.</p>
+     * health checks, see <a href="http://aws.amazon.com/route53/pricing/">Amazon
+     * Route 53 Pricing</a>.</p>
      */
     inline Service& WithHealthCheckConfig(const HealthCheckConfig& value) { SetHealthCheckConfig(value); return *this;}
 
@@ -380,8 +380,8 @@ namespace Model
      * settings for an optional health check. If you specify settings for a health
      * check, AWS Cloud Map associates the health check with the records that you
      * specify in <code>DnsConfig</code>.</p> <p>For information about the charges for
-     * health checks, see <a href="http://aws.amazon.com/route53/pricing/">Amazon Route
-     * 53 Pricing</a>.</p>
+     * health checks, see <a href="http://aws.amazon.com/route53/pricing/">Amazon
+     * Route 53 Pricing</a>.</p>
      */
     inline Service& WithHealthCheckConfig(HealthCheckConfig&& value) { SetHealthCheckConfig(std::move(value)); return *this;}
 

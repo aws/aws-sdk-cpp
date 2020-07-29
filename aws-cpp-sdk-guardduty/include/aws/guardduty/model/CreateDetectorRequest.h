@@ -8,6 +8,7 @@
 #include <aws/guardduty/GuardDutyRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/guardduty/model/FindingPublishingFrequency.h>
+#include <aws/guardduty/model/DataSourceConfigurations.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
@@ -135,6 +136,43 @@ namespace Model
 
 
     /**
+     * <p>An object that describes which data sources will be enabled for the
+     * detector.</p>
+     */
+    inline const DataSourceConfigurations& GetDataSources() const{ return m_dataSources; }
+
+    /**
+     * <p>An object that describes which data sources will be enabled for the
+     * detector.</p>
+     */
+    inline bool DataSourcesHasBeenSet() const { return m_dataSourcesHasBeenSet; }
+
+    /**
+     * <p>An object that describes which data sources will be enabled for the
+     * detector.</p>
+     */
+    inline void SetDataSources(const DataSourceConfigurations& value) { m_dataSourcesHasBeenSet = true; m_dataSources = value; }
+
+    /**
+     * <p>An object that describes which data sources will be enabled for the
+     * detector.</p>
+     */
+    inline void SetDataSources(DataSourceConfigurations&& value) { m_dataSourcesHasBeenSet = true; m_dataSources = std::move(value); }
+
+    /**
+     * <p>An object that describes which data sources will be enabled for the
+     * detector.</p>
+     */
+    inline CreateDetectorRequest& WithDataSources(const DataSourceConfigurations& value) { SetDataSources(value); return *this;}
+
+    /**
+     * <p>An object that describes which data sources will be enabled for the
+     * detector.</p>
+     */
+    inline CreateDetectorRequest& WithDataSources(DataSourceConfigurations&& value) { SetDataSources(std::move(value)); return *this;}
+
+
+    /**
      * <p>The tags to be added to a new detector resource.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
@@ -209,6 +247,9 @@ namespace Model
 
     FindingPublishingFrequency m_findingPublishingFrequency;
     bool m_findingPublishingFrequencyHasBeenSet;
+
+    DataSourceConfigurations m_dataSources;
+    bool m_dataSourcesHasBeenSet;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet;

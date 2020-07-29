@@ -16,7 +16,8 @@ namespace Model
   enum class GroupFilterName
   {
     NOT_SET,
-    resource_type
+    resource_type,
+    configuration_type
   };
 
 namespace GroupFilterNameMapper

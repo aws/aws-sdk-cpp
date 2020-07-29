@@ -6,6 +6,7 @@
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/ecr/ECRErrors.h>
+#include <aws/ecr/model/KmsException.h>
 #include <aws/ecr/model/InvalidLayerPartException.h>
 
 using namespace Aws::Client;
@@ -17,6 +18,12 @@ namespace Aws
 {
 namespace ECR
 {
+template<> AWS_ECR_API KmsException ECRError::GetModeledError()
+{
+  assert(this->GetErrorType() == ECRErrors::KMS);
+  return KmsException(this->GetJsonPayload().View());
+}
+
 template<> AWS_ECR_API InvalidLayerPartException ECRError::GetModeledError()
 {
   assert(this->GetErrorType() == ECRErrors::INVALID_LAYER_PART);
@@ -48,6 +55,7 @@ static const int LIFECYCLE_POLICY_PREVIEW_IN_PROGRESS_HASH = HashingUtils::HashS
 static const int EMPTY_UPLOAD_HASH = HashingUtils::HashString("EmptyUploadException");
 static const int REPOSITORY_ALREADY_EXISTS_HASH = HashingUtils::HashString("RepositoryAlreadyExistsException");
 static const int UNSUPPORTED_IMAGE_TYPE_HASH = HashingUtils::HashString("UnsupportedImageTypeException");
+static const int KMS_HASH = HashingUtils::HashString("KmsException");
 static const int IMAGE_ALREADY_EXISTS_HASH = HashingUtils::HashString("ImageAlreadyExistsException");
 static const int LAYER_ALREADY_EXISTS_HASH = HashingUtils::HashString("LayerAlreadyExistsException");
 static const int TOO_MANY_TAGS_HASH = HashingUtils::HashString("TooManyTagsException");
@@ -146,6 +154,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == UNSUPPORTED_IMAGE_TYPE_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ECRErrors::UNSUPPORTED_IMAGE_TYPE), false);
+  }
+  else if (hashCode == KMS_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ECRErrors::KMS), false);
   }
   else if (hashCode == IMAGE_ALREADY_EXISTS_HASH)
   {

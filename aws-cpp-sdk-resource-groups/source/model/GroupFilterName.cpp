@@ -21,6 +21,7 @@ namespace Aws
       {
 
         static const int resource_type_HASH = HashingUtils::HashString("resource-type");
+        static const int configuration_type_HASH = HashingUtils::HashString("configuration-type");
 
 
         GroupFilterName GetGroupFilterNameForName(const Aws::String& name)
@@ -29,6 +30,10 @@ namespace Aws
           if (hashCode == resource_type_HASH)
           {
             return GroupFilterName::resource_type;
+          }
+          else if (hashCode == configuration_type_HASH)
+          {
+            return GroupFilterName::configuration_type;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -46,6 +51,8 @@ namespace Aws
           {
           case GroupFilterName::resource_type:
             return "resource-type";
+          case GroupFilterName::configuration_type:
+            return "configuration-type";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -14,12 +14,15 @@
 #include <aws/resource-groups/model/CreateGroupResult.h>
 #include <aws/resource-groups/model/DeleteGroupResult.h>
 #include <aws/resource-groups/model/GetGroupResult.h>
+#include <aws/resource-groups/model/GetGroupConfigurationResult.h>
 #include <aws/resource-groups/model/GetGroupQueryResult.h>
 #include <aws/resource-groups/model/GetTagsResult.h>
+#include <aws/resource-groups/model/GroupResourcesResult.h>
 #include <aws/resource-groups/model/ListGroupResourcesResult.h>
 #include <aws/resource-groups/model/ListGroupsResult.h>
 #include <aws/resource-groups/model/SearchResourcesResult.h>
 #include <aws/resource-groups/model/TagResult.h>
+#include <aws/resource-groups/model/UngroupResourcesResult.h>
 #include <aws/resource-groups/model/UntagResult.h>
 #include <aws/resource-groups/model/UpdateGroupResult.h>
 #include <aws/resource-groups/model/UpdateGroupQueryResult.h>
@@ -65,12 +68,15 @@ namespace Model
         class CreateGroupRequest;
         class DeleteGroupRequest;
         class GetGroupRequest;
+        class GetGroupConfigurationRequest;
         class GetGroupQueryRequest;
         class GetTagsRequest;
+        class GroupResourcesRequest;
         class ListGroupResourcesRequest;
         class ListGroupsRequest;
         class SearchResourcesRequest;
         class TagRequest;
+        class UngroupResourcesRequest;
         class UntagRequest;
         class UpdateGroupRequest;
         class UpdateGroupQueryRequest;
@@ -78,12 +84,15 @@ namespace Model
         typedef Aws::Utils::Outcome<CreateGroupResult, ResourceGroupsError> CreateGroupOutcome;
         typedef Aws::Utils::Outcome<DeleteGroupResult, ResourceGroupsError> DeleteGroupOutcome;
         typedef Aws::Utils::Outcome<GetGroupResult, ResourceGroupsError> GetGroupOutcome;
+        typedef Aws::Utils::Outcome<GetGroupConfigurationResult, ResourceGroupsError> GetGroupConfigurationOutcome;
         typedef Aws::Utils::Outcome<GetGroupQueryResult, ResourceGroupsError> GetGroupQueryOutcome;
         typedef Aws::Utils::Outcome<GetTagsResult, ResourceGroupsError> GetTagsOutcome;
+        typedef Aws::Utils::Outcome<GroupResourcesResult, ResourceGroupsError> GroupResourcesOutcome;
         typedef Aws::Utils::Outcome<ListGroupResourcesResult, ResourceGroupsError> ListGroupResourcesOutcome;
         typedef Aws::Utils::Outcome<ListGroupsResult, ResourceGroupsError> ListGroupsOutcome;
         typedef Aws::Utils::Outcome<SearchResourcesResult, ResourceGroupsError> SearchResourcesOutcome;
         typedef Aws::Utils::Outcome<TagResult, ResourceGroupsError> TagOutcome;
+        typedef Aws::Utils::Outcome<UngroupResourcesResult, ResourceGroupsError> UngroupResourcesOutcome;
         typedef Aws::Utils::Outcome<UntagResult, ResourceGroupsError> UntagOutcome;
         typedef Aws::Utils::Outcome<UpdateGroupResult, ResourceGroupsError> UpdateGroupOutcome;
         typedef Aws::Utils::Outcome<UpdateGroupQueryResult, ResourceGroupsError> UpdateGroupQueryOutcome;
@@ -91,12 +100,15 @@ namespace Model
         typedef std::future<CreateGroupOutcome> CreateGroupOutcomeCallable;
         typedef std::future<DeleteGroupOutcome> DeleteGroupOutcomeCallable;
         typedef std::future<GetGroupOutcome> GetGroupOutcomeCallable;
+        typedef std::future<GetGroupConfigurationOutcome> GetGroupConfigurationOutcomeCallable;
         typedef std::future<GetGroupQueryOutcome> GetGroupQueryOutcomeCallable;
         typedef std::future<GetTagsOutcome> GetTagsOutcomeCallable;
+        typedef std::future<GroupResourcesOutcome> GroupResourcesOutcomeCallable;
         typedef std::future<ListGroupResourcesOutcome> ListGroupResourcesOutcomeCallable;
         typedef std::future<ListGroupsOutcome> ListGroupsOutcomeCallable;
         typedef std::future<SearchResourcesOutcome> SearchResourcesOutcomeCallable;
         typedef std::future<TagOutcome> TagOutcomeCallable;
+        typedef std::future<UngroupResourcesOutcome> UngroupResourcesOutcomeCallable;
         typedef std::future<UntagOutcome> UntagOutcomeCallable;
         typedef std::future<UpdateGroupOutcome> UpdateGroupOutcomeCallable;
         typedef std::future<UpdateGroupQueryOutcome> UpdateGroupQueryOutcomeCallable;
@@ -107,12 +119,15 @@ namespace Model
     typedef std::function<void(const ResourceGroupsClient*, const Model::CreateGroupRequest&, const Model::CreateGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateGroupResponseReceivedHandler;
     typedef std::function<void(const ResourceGroupsClient*, const Model::DeleteGroupRequest&, const Model::DeleteGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteGroupResponseReceivedHandler;
     typedef std::function<void(const ResourceGroupsClient*, const Model::GetGroupRequest&, const Model::GetGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetGroupResponseReceivedHandler;
+    typedef std::function<void(const ResourceGroupsClient*, const Model::GetGroupConfigurationRequest&, const Model::GetGroupConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetGroupConfigurationResponseReceivedHandler;
     typedef std::function<void(const ResourceGroupsClient*, const Model::GetGroupQueryRequest&, const Model::GetGroupQueryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetGroupQueryResponseReceivedHandler;
     typedef std::function<void(const ResourceGroupsClient*, const Model::GetTagsRequest&, const Model::GetTagsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetTagsResponseReceivedHandler;
+    typedef std::function<void(const ResourceGroupsClient*, const Model::GroupResourcesRequest&, const Model::GroupResourcesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GroupResourcesResponseReceivedHandler;
     typedef std::function<void(const ResourceGroupsClient*, const Model::ListGroupResourcesRequest&, const Model::ListGroupResourcesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListGroupResourcesResponseReceivedHandler;
     typedef std::function<void(const ResourceGroupsClient*, const Model::ListGroupsRequest&, const Model::ListGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListGroupsResponseReceivedHandler;
     typedef std::function<void(const ResourceGroupsClient*, const Model::SearchResourcesRequest&, const Model::SearchResourcesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SearchResourcesResponseReceivedHandler;
     typedef std::function<void(const ResourceGroupsClient*, const Model::TagRequest&, const Model::TagOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResponseReceivedHandler;
+    typedef std::function<void(const ResourceGroupsClient*, const Model::UngroupResourcesRequest&, const Model::UngroupResourcesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UngroupResourcesResponseReceivedHandler;
     typedef std::function<void(const ResourceGroupsClient*, const Model::UntagRequest&, const Model::UntagOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResponseReceivedHandler;
     typedef std::function<void(const ResourceGroupsClient*, const Model::UpdateGroupRequest&, const Model::UpdateGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateGroupResponseReceivedHandler;
     typedef std::function<void(const ResourceGroupsClient*, const Model::UpdateGroupQueryRequest&, const Model::UpdateGroupQueryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateGroupQueryResponseReceivedHandler;
@@ -173,16 +188,18 @@ namespace Model
 
 
         /**
-         * <p>Creates a group with a specified name, description, and resource
-         * query.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a resource group with the specified name and description. You can
+         * optionally include a resource query, or a service configuration.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/CreateGroup">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateGroupOutcome CreateGroup(const Model::CreateGroupRequest& request) const;
 
         /**
-         * <p>Creates a group with a specified name, description, and resource
-         * query.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a resource group with the specified name and description. You can
+         * optionally include a resource query, or a service configuration.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/CreateGroup">AWS
          * API Reference</a></p>
          *
@@ -191,8 +208,9 @@ namespace Model
         virtual Model::CreateGroupOutcomeCallable CreateGroupCallable(const Model::CreateGroupRequest& request) const;
 
         /**
-         * <p>Creates a group with a specified name, description, and resource
-         * query.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a resource group with the specified name and description. You can
+         * optionally include a resource query, or a service configuration.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/CreateGroup">AWS
          * API Reference</a></p>
          *
@@ -201,8 +219,8 @@ namespace Model
         virtual void CreateGroupAsync(const Model::CreateGroupRequest& request, const CreateGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes a specified resource group. Deleting a resource group does not delete
-         * resources that are members of the group; it only deletes the group
+         * <p>Deletes the specified resource group. Deleting a resource group does not
+         * delete any resources that are members of the group; it only deletes the group
          * structure.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/DeleteGroup">AWS
          * API Reference</a></p>
@@ -210,8 +228,8 @@ namespace Model
         virtual Model::DeleteGroupOutcome DeleteGroup(const Model::DeleteGroupRequest& request) const;
 
         /**
-         * <p>Deletes a specified resource group. Deleting a resource group does not delete
-         * resources that are members of the group; it only deletes the group
+         * <p>Deletes the specified resource group. Deleting a resource group does not
+         * delete any resources that are members of the group; it only deletes the group
          * structure.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/DeleteGroup">AWS
          * API Reference</a></p>
@@ -221,8 +239,8 @@ namespace Model
         virtual Model::DeleteGroupOutcomeCallable DeleteGroupCallable(const Model::DeleteGroupRequest& request) const;
 
         /**
-         * <p>Deletes a specified resource group. Deleting a resource group does not delete
-         * resources that are members of the group; it only deletes the group
+         * <p>Deletes the specified resource group. Deleting a resource group does not
+         * delete any resources that are members of the group; it only deletes the group
          * structure.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/DeleteGroup">AWS
          * API Reference</a></p>
@@ -260,7 +278,50 @@ namespace Model
         virtual void GetGroupAsync(const Model::GetGroupRequest& request, const GetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns the resource query associated with the specified resource
+         * <p>Returns the service configuration associated with the specified resource
+         * group. AWS Resource Groups supports configurations for the following resource
+         * group types:</p> <ul> <li> <p> <code>AWS::EC2::CapacityReservationPool</code> -
+         * Amazon EC2 capacity reservation pools. For more information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/capacity-reservations-using.html#create-cr-group">Working
+         * with capacity reservation groups</a> in the <i>EC2 Users Guide</i>.</p> </li>
+         * </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/GetGroupConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetGroupConfigurationOutcome GetGroupConfiguration(const Model::GetGroupConfigurationRequest& request) const;
+
+        /**
+         * <p>Returns the service configuration associated with the specified resource
+         * group. AWS Resource Groups supports configurations for the following resource
+         * group types:</p> <ul> <li> <p> <code>AWS::EC2::CapacityReservationPool</code> -
+         * Amazon EC2 capacity reservation pools. For more information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/capacity-reservations-using.html#create-cr-group">Working
+         * with capacity reservation groups</a> in the <i>EC2 Users Guide</i>.</p> </li>
+         * </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/GetGroupConfiguration">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetGroupConfigurationOutcomeCallable GetGroupConfigurationCallable(const Model::GetGroupConfigurationRequest& request) const;
+
+        /**
+         * <p>Returns the service configuration associated with the specified resource
+         * group. AWS Resource Groups supports configurations for the following resource
+         * group types:</p> <ul> <li> <p> <code>AWS::EC2::CapacityReservationPool</code> -
+         * Amazon EC2 capacity reservation pools. For more information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/capacity-reservations-using.html#create-cr-group">Working
+         * with capacity reservation groups</a> in the <i>EC2 Users Guide</i>.</p> </li>
+         * </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/GetGroupConfiguration">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetGroupConfigurationAsync(const Model::GetGroupConfigurationRequest& request, const GetGroupConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Retrieves the resource query associated with the specified resource
          * group.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/GetGroupQuery">AWS
          * API Reference</a></p>
@@ -268,7 +329,7 @@ namespace Model
         virtual Model::GetGroupQueryOutcome GetGroupQuery(const Model::GetGroupQueryRequest& request) const;
 
         /**
-         * <p>Returns the resource query associated with the specified resource
+         * <p>Retrieves the resource query associated with the specified resource
          * group.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/GetGroupQuery">AWS
          * API Reference</a></p>
@@ -278,7 +339,7 @@ namespace Model
         virtual Model::GetGroupQueryOutcomeCallable GetGroupQueryCallable(const Model::GetGroupQueryRequest& request) const;
 
         /**
-         * <p>Returns the resource query associated with the specified resource
+         * <p>Retrieves the resource query associated with the specified resource
          * group.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/GetGroupQuery">AWS
          * API Reference</a></p>
@@ -314,6 +375,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetTagsAsync(const Model::GetTagsRequest& request, const GetTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Adds the specified resources to the specified group.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/GroupResources">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GroupResourcesOutcome GroupResources(const Model::GroupResourcesRequest& request) const;
+
+        /**
+         * <p>Adds the specified resources to the specified group.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/GroupResources">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GroupResourcesOutcomeCallable GroupResourcesCallable(const Model::GroupResourcesRequest& request) const;
+
+        /**
+         * <p>Adds the specified resources to the specified group.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/GroupResources">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GroupResourcesAsync(const Model::GroupResourcesRequest& request, const GroupResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of ARNs of resources that are members of a specified resource
@@ -405,7 +494,11 @@ namespace Model
         /**
          * <p>Adds tags to a resource group with the specified ARN. Existing tags on a
          * resource group are not changed if they are not specified in the request
-         * parameters.</p><p><h3>See Also:</h3>   <a
+         * parameters.</p>  <p>Do not store personally identifiable information
+         * (PII) or other confidential or sensitive information in tags. We use tags to
+         * provide you with billing and administration services. Tags are not intended to
+         * be used for private or sensitive data.</p> <p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/Tag">AWS
          * API Reference</a></p>
          */
@@ -414,7 +507,11 @@ namespace Model
         /**
          * <p>Adds tags to a resource group with the specified ARN. Existing tags on a
          * resource group are not changed if they are not specified in the request
-         * parameters.</p><p><h3>See Also:</h3>   <a
+         * parameters.</p>  <p>Do not store personally identifiable information
+         * (PII) or other confidential or sensitive information in tags. We use tags to
+         * provide you with billing and administration services. Tags are not intended to
+         * be used for private or sensitive data.</p> <p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/Tag">AWS
          * API Reference</a></p>
          *
@@ -425,7 +522,11 @@ namespace Model
         /**
          * <p>Adds tags to a resource group with the specified ARN. Existing tags on a
          * resource group are not changed if they are not specified in the request
-         * parameters.</p><p><h3>See Also:</h3>   <a
+         * parameters.</p>  <p>Do not store personally identifiable information
+         * (PII) or other confidential or sensitive information in tags. We use tags to
+         * provide you with billing and administration services. Tags are not intended to
+         * be used for private or sensitive data.</p> <p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/Tag">AWS
          * API Reference</a></p>
          *
@@ -434,16 +535,42 @@ namespace Model
         virtual void TagAsync(const Model::TagRequest& request, const TagResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes specified tags from a specified resource.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Removes the specified resources from the specified group.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/UngroupResources">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UngroupResourcesOutcome UngroupResources(const Model::UngroupResourcesRequest& request) const;
+
+        /**
+         * <p>Removes the specified resources from the specified group.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/UngroupResources">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UngroupResourcesOutcomeCallable UngroupResourcesCallable(const Model::UngroupResourcesRequest& request) const;
+
+        /**
+         * <p>Removes the specified resources from the specified group.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/UngroupResources">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UngroupResourcesAsync(const Model::UngroupResourcesRequest& request, const UngroupResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes tags from a specified resource group.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/Untag">AWS
          * API Reference</a></p>
          */
         virtual Model::UntagOutcome Untag(const Model::UntagRequest& request) const;
 
         /**
-         * <p>Deletes specified tags from a specified resource.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Deletes tags from a specified resource group.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/Untag">AWS
          * API Reference</a></p>
          *
@@ -452,8 +579,7 @@ namespace Model
         virtual Model::UntagOutcomeCallable UntagCallable(const Model::UntagRequest& request) const;
 
         /**
-         * <p>Deletes specified tags from a specified resource.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Deletes tags from a specified resource group.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/Untag">AWS
          * API Reference</a></p>
          *
@@ -462,16 +588,16 @@ namespace Model
         virtual void UntagAsync(const Model::UntagRequest& request, const UntagResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates an existing group with a new or changed description. You cannot
-         * update the name of a resource group.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates the description for an existing group. You cannot update the name of
+         * a resource group.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/UpdateGroup">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateGroupOutcome UpdateGroup(const Model::UpdateGroupRequest& request) const;
 
         /**
-         * <p>Updates an existing group with a new or changed description. You cannot
-         * update the name of a resource group.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates the description for an existing group. You cannot update the name of
+         * a resource group.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/UpdateGroup">AWS
          * API Reference</a></p>
          *
@@ -480,8 +606,8 @@ namespace Model
         virtual Model::UpdateGroupOutcomeCallable UpdateGroupCallable(const Model::UpdateGroupRequest& request) const;
 
         /**
-         * <p>Updates an existing group with a new or changed description. You cannot
-         * update the name of a resource group.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates the description for an existing group. You cannot update the name of
+         * a resource group.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/UpdateGroup">AWS
          * API Reference</a></p>
          *
@@ -521,12 +647,15 @@ namespace Model
         void CreateGroupAsyncHelper(const Model::CreateGroupRequest& request, const CreateGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteGroupAsyncHelper(const Model::DeleteGroupRequest& request, const DeleteGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetGroupAsyncHelper(const Model::GetGroupRequest& request, const GetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetGroupConfigurationAsyncHelper(const Model::GetGroupConfigurationRequest& request, const GetGroupConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetGroupQueryAsyncHelper(const Model::GetGroupQueryRequest& request, const GetGroupQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetTagsAsyncHelper(const Model::GetTagsRequest& request, const GetTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GroupResourcesAsyncHelper(const Model::GroupResourcesRequest& request, const GroupResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListGroupResourcesAsyncHelper(const Model::ListGroupResourcesRequest& request, const ListGroupResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListGroupsAsyncHelper(const Model::ListGroupsRequest& request, const ListGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SearchResourcesAsyncHelper(const Model::SearchResourcesRequest& request, const SearchResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void TagAsyncHelper(const Model::TagRequest& request, const TagResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UngroupResourcesAsyncHelper(const Model::UngroupResourcesRequest& request, const UngroupResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UntagAsyncHelper(const Model::UntagRequest& request, const UntagResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateGroupAsyncHelper(const Model::UpdateGroupRequest& request, const UpdateGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateGroupQueryAsyncHelper(const Model::UpdateGroupQueryRequest& request, const UpdateGroupQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

@@ -474,32 +474,44 @@ namespace Model
 
 
     /**
-     * <p>Enables or disables Amazon S3 backup mode.</p>
+     * <p>You can update a delivery stream to enable Amazon S3 backup if it is
+     * disabled. If backup is enabled, you can't update the delivery stream to disable
+     * it. </p>
      */
     inline const S3BackupMode& GetS3BackupMode() const{ return m_s3BackupMode; }
 
     /**
-     * <p>Enables or disables Amazon S3 backup mode.</p>
+     * <p>You can update a delivery stream to enable Amazon S3 backup if it is
+     * disabled. If backup is enabled, you can't update the delivery stream to disable
+     * it. </p>
      */
     inline bool S3BackupModeHasBeenSet() const { return m_s3BackupModeHasBeenSet; }
 
     /**
-     * <p>Enables or disables Amazon S3 backup mode.</p>
+     * <p>You can update a delivery stream to enable Amazon S3 backup if it is
+     * disabled. If backup is enabled, you can't update the delivery stream to disable
+     * it. </p>
      */
     inline void SetS3BackupMode(const S3BackupMode& value) { m_s3BackupModeHasBeenSet = true; m_s3BackupMode = value; }
 
     /**
-     * <p>Enables or disables Amazon S3 backup mode.</p>
+     * <p>You can update a delivery stream to enable Amazon S3 backup if it is
+     * disabled. If backup is enabled, you can't update the delivery stream to disable
+     * it. </p>
      */
     inline void SetS3BackupMode(S3BackupMode&& value) { m_s3BackupModeHasBeenSet = true; m_s3BackupMode = std::move(value); }
 
     /**
-     * <p>Enables or disables Amazon S3 backup mode.</p>
+     * <p>You can update a delivery stream to enable Amazon S3 backup if it is
+     * disabled. If backup is enabled, you can't update the delivery stream to disable
+     * it. </p>
      */
     inline ExtendedS3DestinationUpdate& WithS3BackupMode(const S3BackupMode& value) { SetS3BackupMode(value); return *this;}
 
     /**
-     * <p>Enables or disables Amazon S3 backup mode.</p>
+     * <p>You can update a delivery stream to enable Amazon S3 backup if it is
+     * disabled. If backup is enabled, you can't update the delivery stream to disable
+     * it. </p>
      */
     inline ExtendedS3DestinationUpdate& WithS3BackupMode(S3BackupMode&& value) { SetS3BackupMode(std::move(value)); return *this;}
 
